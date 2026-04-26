@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Mission Arc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;overflow:hidden;width:100vw;height:100vh;font-family:'Space Mono',monospace;color:#fff;}
+  #scene{position:absolute;inset:0;}
+  #hud{position:absolute;inset:0;pointer-events:none;}
+  #hud>*{pointer-events:auto;}
+  .hud-panel{background:rgba(4,4,12,0.82);border:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(12px);border-radius:6px;}
+  .hud-label{font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);margin-bottom:3px;}
+  .hud-value{font-size:14px;font-weight:700;color:#fff;line-height:1.2;}
+  .hud-unit{font-size:8px;color:rgba(255,255,255,0.35);font-weight:400;margin-left:2px;}
+  .hud-sub{font-size:8px;color:rgba(255,255,255,0.3);margin-top:1px;}
+  .tel-row{margin-bottom:14px;}
+  .tel-row:last-child{margin-bottom:0;}
+  .bar-track{width:100%;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;margin-top:5px;}
+  .bar-fill{height:100%;border-radius:2px;transition:width 0.3s;}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  @keyframes arrivalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  #arrival{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:420px;background:rgba(4,4,12,0.97);border:1px solid rgba(68,102,255,0.4);
+    border-radius:8px;padding:0;overflow:hidden;animation:arrivalIn 0.6s ease;}
+  .speed-btn{background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:3px;
+    color:rgba(255,255,255,0.4);font-family:'Space Mono',monospace;font-size:8px;
+    padding:4px 9px;cursor:pointer;transition:all 0.15s;}
+  .speed-btn.active{border-color:rgba(68,102,255,0.7);color:#7b9cff;}
+  .speed-btn:hover:not(.active){border-color:rgba(255,255,255,0.3);}
+  #play-btn{background:rgba(68,102,255,0.25);border:1px solid rgba(68,102,255,0.5);
+    border-radius:50%;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;
+    justify-content:center;font-size:13px;transition:all 0.15s;}
+  #play-btn:hover{background:rgba(68,102,255,0.4);}
+</style>
+</head>
+<body>
+
+<div id="scene"></div>
+<canvas id="scene2d" style="position:absolute;inset:0;width:100%;height:100%;display:none;"></canvas>
+
+<div id="hud">
+
+  <!-- NAV -->
+  <div style="position:absolute;top:0;left:0;right:0;height:52px;background:rgba(4,4,12,0.88);
+    border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(14px);
+    display:flex;align-items:center;justify-content:space-between;padding:0 24px;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+    <div style="display:flex;gap:3px;">
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">EXPLORE</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">PLAN</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.2);border:1px solid rgba(68,102,255,0.45);border-radius:3px;">FLY</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">MISSIONS</div>
+    </div>
+    <!-- Right side: toggle + badge -->
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="display:flex;align-items:center;background:rgba(4,4,12,0.85);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:3px;gap:2px;">
+        <button id="tab-3d" onclick="setView('3d')" style="padding:5px 14px;font-size:8px;letter-spacing:2px;font-weight:700;border-radius:16px;cursor:pointer;background:rgba(68,102,255,0.35);color:#fff;border:none;font-family:'Space Mono',monospace;box-shadow:0 0 12px rgba(68,102,255,0.3);">3D</button>
+        <button id="tab-2d" onclick="setView('2d')" style="padding:5px 14px;font-size:8px;letter-spacing:2px;font-weight:700;border-radius:16px;cursor:pointer;background:transparent;color:rgba(255,255,255,0.38);border:none;font-family:'Space Mono',monospace;">2D</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:7px;height:7px;border-radius:50%;background:#4ecdc4;box-shadow:0 0 8px #4ecdc4;animation:pulse 1.5s infinite;"></div>
+        <span id="mission-status-label" style="font-size:8px;letter-spacing:2px;color:#4ecdc4;">MISSION ACTIVE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP LEFT: Mission identity + MET -->
+  <div class="hud-panel" style="position:absolute;top:66px;left:22px;padding:14px 18px;min-width:220px;">
+    <div style="font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.3);margin-bottom:2px;">EARTH → MARS</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:#fff;line-height:1;">ORRERY-1</div>
+    <div style="font-size:8px;color:rgba(255,255,255,0.3);margin-top:2px;letter-spacing:1px;">Falcon Heavy · 2,500 kg payload</div>
+    <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="hud-label">MISSION DATE</div>
+      <div id="hud-date" class="hud-value" style="font-size:12px;">—</div>
+      <div class="hud-label" style="margin-top:8px;">ELAPSED</div>
+      <div id="hud-elapsed" class="hud-value" style="font-size:12px;color:#7b9cff;">—</div>
+    </div>
+  </div>
+
+  <!-- LEFT PANEL: Telemetry -->
+  <div class="hud-panel" style="position:absolute;top:230px;left:22px;padding:16px 18px;width:220px;">
+    <div style="font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.3);margin-bottom:14px;">NAVIGATION</div>
+
+    <div class="tel-row">
+      <div class="hud-label">HELIOCENTRIC VELOCITY</div>
+      <div class="hud-value"><span id="hud-vel">—</span><span class="hud-unit">km/s</span></div>
+    </div>
+    <div class="tel-row">
+      <div class="hud-label">DISTANCE FROM EARTH</div>
+      <div class="hud-value" style="font-size:11px;"><span id="hud-dist-e">—</span><span class="hud-unit">M km</span></div>
+      <div class="hud-sub" id="hud-lightmin-e">—</div>
+    </div>
+    <div class="tel-row">
+      <div class="hud-label">DISTANCE FROM MARS</div>
+      <div class="hud-value" style="font-size:11px;"><span id="hud-dist-m">—</span><span class="hud-unit">M km</span></div>
+      <div class="hud-sub" id="hud-lightmin-m">—</div>
+    </div>
+    <div class="tel-row" style="margin-bottom:0;">
+      <div class="hud-label">SUN DISTANCE</div>
+      <div class="hud-value" style="font-size:11px;"><span id="hud-dist-sun">—</span><span class="hud-unit">AU</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Systems -->
+  <div class="hud-panel" style="position:absolute;top:66px;right:22px;padding:16px 18px;width:220px;">
+    <div style="font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.3);margin-bottom:14px;">SYSTEMS</div>
+
+    <div class="tel-row">
+      <div class="hud-label">PROPELLANT REMAINING</div>
+      <div style="display:flex;align-items:baseline;gap:4px;">
+        <div class="hud-value"><span id="hud-fuel-pct">—</span><span class="hud-unit">%</span></div>
+        <div style="font-size:8px;color:rgba(255,255,255,0.3);" id="hud-fuel-kg"></div>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="fuel-bar" style="background:#4ecdc4;width:100%;"></div></div>
+    </div>
+
+    <div class="tel-row">
+      <div class="hud-label">Δv BUDGET REMAINING</div>
+      <div class="hud-value"><span id="hud-dv-rem">—</span><span class="hud-unit">km/s</span></div>
+      <div class="bar-track"><div class="bar-fill" id="dv-bar" style="background:#7b9cff;width:100%;"></div></div>
+    </div>
+
+    <div class="tel-row" style="margin-bottom:0;">
+      <div class="hud-label">ETA MARS ARRIVAL</div>
+      <div class="hud-value" id="hud-eta" style="font-size:12px;">—</div>
+    </div>
+
+    <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
+      <div class="hud-label">MISSION PHASE</div>
+      <div id="hud-phase" style="font-size:9px;letter-spacing:2px;font-weight:700;color:#4ecdc4;margin-top:3px;">TRANS-MARS INJECTION</div>
+    </div>
+  </div>
+
+  <!-- PROGRESS TIMELINE: bottom -->
+  <div class="hud-panel" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+    padding:12px 20px;display:flex;align-items:center;gap:16px;min-width:520px;">
+
+    <!-- Play/pause -->
+    <div id="play-btn" onclick="togglePlay()">▶</div>
+
+    <!-- Speed -->
+    <div style="display:flex;gap:4px;">
+      <button class="speed-btn" onclick="setSpeed(1)">1d/s</button>
+      <button class="speed-btn active" onclick="setSpeed(7)">7d/s</button>
+      <button class="speed-btn" onclick="setSpeed(30)">30d/s</button>
+    </div>
+
+    <div style="width:1px;height:24px;background:rgba(255,255,255,0.08);"></div>
+
+    <!-- Timeline -->
+    <div style="flex:1;min-width:200px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
+        <span style="font-size:7px;color:rgba(255,255,255,0.3);letter-spacing:1px;" id="tl-dep">DEP</span>
+        <span style="font-size:7px;color:rgba(255,255,255,0.3);letter-spacing:1px;">259 DAYS</span>
+        <span style="font-size:7px;color:rgba(255,255,255,0.3);letter-spacing:1px;" id="tl-arr">ARR</span>
+      </div>
+      <div style="width:100%;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;position:relative;cursor:pointer;" onclick="scrubTimeline(event,this)" id="timeline-track">
+        <div id="timeline-fill" style="height:100%;background:linear-gradient(to right,#4466ff,#4ecdc4);border-radius:2px;width:0%;transition:width 0.1s;"></div>
+        <div id="timeline-thumb" style="position:absolute;top:50%;width:10px;height:10px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);left:0%;transition:left 0.1s;box-shadow:0 0 6px rgba(68,102,255,0.8);"></div>
+      </div>
+    </div>
+
+    <div style="width:1px;height:24px;background:rgba(255,255,255,0.08);"></div>
+
+    <!-- Camera reset -->
+    <button class="speed-btn" onclick="resetCamera()" style="white-space:nowrap;">⟳ CAMERA</button>
+  </div>
+
+  <!-- ARRIVAL PANEL -->
+  <div id="arrival">
+    <div style="background:rgba(68,102,255,0.15);border-bottom:1px solid rgba(68,102,255,0.3);padding:20px 24px;">
+      <div style="font-size:9px;letter-spacing:3px;color:#7b9cff;margin-bottom:4px;">MISSION COMPLETE</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:3px;color:#fff;line-height:1;">MARS ARRIVAL</div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:1px;">ORRERY-1 · Falcon Heavy</div>
+    </div>
+    <div style="padding:20px 24px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;">
+          <div class="hud-label">DEPARTURE</div><div class="hud-value" style="font-size:11px;" id="arr-dep">—</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;">
+          <div class="hud-label">ARRIVAL</div><div class="hud-value" style="font-size:11px;" id="arr-arrv">—</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;">
+          <div class="hud-label">TRANSIT TIME</div><div class="hud-value" id="arr-tof">259 days</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;">
+          <div class="hud-label">Δv USED</div><div class="hud-value" style="color:#4ecdc4;">5.82 km/s</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;grid-column:span 2;">
+          <div class="hud-label">PAYLOAD DELIVERED TO MARS ORBIT</div><div class="hud-value" style="color:#4ecdc4;">2,500 kg</div>
+        </div>
+      </div>
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:16px;">
+        Mission successful. Your spacecraft has completed the 259-day journey across 401 million kilometres of interplanetary space and entered Mars orbit.
+      </p>
+      <div style="display:flex;gap:8px;">
+        <button onclick="replayMission()" style="flex:1;padding:11px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:4px;color:rgba(255,255,255,0.7);font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;cursor:pointer;">↩ REPLAY</button>
+        <button style="flex:2;padding:11px;background:#1a33bb;border:1px solid rgba(68,102,255,0.6);border-radius:4px;color:#fff;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;cursor:pointer;font-weight:700;">SAVE TO MISSIONS →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════
+// MISSION DATA
+// ═══════════════════════════════════════════════════════════════
+const MISSION = {
+  name:"ORRERY-1", vehicle:"Falcon Heavy", payload_kg:2500,
+  dep_day:333, arr_day:592, tof:259,
+  dv_dep:3.61, dv_arr:2.21, dv_total:5.82,
+  isp:311,
+  mass_init:16715,   // kg (payload + propellant)
+  mass_post_tmi:5135, // kg (after Trans-Mars Injection burn)
+  mass_final:2500,    // kg (after Mars Orbit Insertion)
+};
+
+// ── Orbital constants ─────────────────────────────────────────
+const MU = 4*Math.PI*Math.PI; // AU³/yr²
+const EARTH_A0=1.678, EARTH_W=2*Math.PI/365.25;
+const MARS_A0=5.136,  MARS_W=2*Math.PI/686.97;
+const R_EARTH=1.0, R_MARS=1.524;
+const A_TRANSFER=(R_EARTH+R_MARS)/2; // 1.262 AU
+const AU_KM=149597870.7, AU_LMIN=8.317, AU_YR_KMS=4.7404;
+
+// ── Planet position ────────────────────────────────────────────
+function getPos(a0, omega, day) {
+  const ang = a0 + omega*day;
+  const r = (a0===EARTH_A0)?R_EARTH:R_MARS;
+  return new THREE.Vector3(Math.cos(ang)*r, 0, Math.sin(ang)*r);
+}
+
+// ── Transfer arc (Bezier) ─────────────────────────────────────
+const earthDep = getPos(EARTH_A0, EARTH_W, MISSION.dep_day);
+const marsArr  = getPos(MARS_A0,  MARS_W,  MISSION.arr_day);
+const midPt    = new THREE.Vector3().addVectors(earthDep,marsArr).multiplyScalar(0.5);
+const dir      = new THREE.Vector3().subVectors(marsArr,earthDep);
+const perp     = new THREE.Vector3(0,1,0).cross(dir).normalize().multiplyScalar(42);
+const ctrlPt   = midPt.clone().add(perp);
+const CURVE    = new THREE.QuadraticBezierCurve3(earthDep, ctrlPt, marsArr);
+const ARC_PTS  = CURVE.getPoints(200);
+
+// ── Simulation state ──────────────────────────────────────────
+let simDay    = MISSION.dep_day;
+let simSpeed  = 7; // days/sec
+let isPlaying = true;
+let lastRaf   = performance.now();
+let arrived   = false;
+let trailPts  = [];
+
+// ── Three.js ──────────────────────────────────────────────────
+const scene    = new THREE.Scene();
+const camera   = new THREE.PerspectiveCamera(52, innerWidth/innerHeight, 0.01, 5000);
+const renderer = new THREE.WebGLRenderer({antialias:true,alpha:false});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.setClearColor(0x04040c,1);
+document.getElementById('scene').appendChild(renderer.domElement);
+
+window.addEventListener('resize',()=>{
+  camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth,innerHeight);
+});
+
+// Lighting
+scene.add(new THREE.PointLight(0xfff4d0,3.2,1800,1.2));
+scene.add(new THREE.AmbientLight(0x111133,0.9));
+
+// Stars
+const sp=new Float32Array(2800*3);
+for(let i=0;i<2800;i++){
+  const r=2800+Math.random()*600,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);
+  sp[i*3]=r*Math.sin(p)*Math.cos(t); sp[i*3+1]=r*Math.sin(p)*Math.sin(t); sp[i*3+2]=r*Math.cos(p);
+}
+const sGeo=new THREE.BufferGeometry(); sGeo.setAttribute('position',new THREE.BufferAttribute(sp,3));
+scene.add(new THREE.Points(sGeo,new THREE.PointsMaterial({color:0xdde4ff,size:1.2,sizeAttenuation:false,transparent:true,opacity:0.65})));
+
+// Sun
+const sunMesh=new THREE.Mesh(new THREE.SphereGeometry(14,32,32),new THREE.MeshBasicMaterial({color:0xfff0a0}));
+scene.add(sunMesh);
+for(let i=0;i<4;i++){
+  const r=18+i*14,m=new THREE.MeshBasicMaterial({color:[0xffdd66,0xff9922,0xff6600,0xff3300][i],transparent:true,opacity:[0.18,0.09,0.04,0.02][i],side:THREE.BackSide,blending:THREE.AdditiveBlending,depthWrite:false});
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(r,16,16),m));
+}
+
+// Planet materials
+const earthMat=new THREE.MeshPhongMaterial({color:0x3a8fcc,emissive:0x3a8fcc,emissiveIntensity:0.15,shininess:20});
+const marsMat =new THREE.MeshPhongMaterial({color:0xc1440e,emissive:0xc1440e,emissiveIntensity:0.15,shininess:20});
+const earthMesh=new THREE.Mesh(new THREE.SphereGeometry(4.5,24,24),earthMat); scene.add(earthMesh);
+const marsMesh =new THREE.Mesh(new THREE.SphereGeometry(3.5,24,24),marsMat);  scene.add(marsMesh);
+
+// Earth orbit ring
+const eOrbit=new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+  Array.from({length:129},(_,i)=>{const a=i/128*Math.PI*2;return new THREE.Vector3(Math.cos(a)*R_EARTH,0,Math.sin(a)*R_EARTH);})),
+  new THREE.LineBasicMaterial({color:0x4b9cd3,transparent:true,opacity:0.12}));
+scene.add(eOrbit);
+
+// Mars orbit ring
+const mOrbit=new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+  Array.from({length:129},(_,i)=>{const a=i/128*Math.PI*2;return new THREE.Vector3(Math.cos(a)*R_MARS,0,Math.sin(a)*R_MARS);})),
+  new THREE.LineBasicMaterial({color:0xc1440e,transparent:true,opacity:0.12}));
+scene.add(mOrbit);
+
+// Transfer arc (dashed-look: use just the line for now)
+const arcGeo=new THREE.BufferGeometry().setFromPoints(ARC_PTS);
+const arcLine=new THREE.Line(arcGeo,new THREE.LineBasicMaterial({color:0x4466ff,transparent:true,opacity:0.5,blending:THREE.AdditiveBlending}));
+scene.add(arcLine);
+
+// Arc glow (wider, more transparent)
+const arcGlow=new THREE.Line(arcGeo,new THREE.LineBasicMaterial({color:0x4466ff,transparent:true,opacity:0.12,blending:THREE.AdditiveBlending,linewidth:3}));
+scene.add(arcGlow);
+
+// Departure marker (Earth at dep)
+const depMarker=new THREE.Mesh(new THREE.SphereGeometry(1.2,12,12),new THREE.MeshBasicMaterial({color:0x4b9cd3,blending:THREE.AdditiveBlending}));
+depMarker.position.copy(earthDep); scene.add(depMarker);
+
+// Arrival marker (Mars at arr)
+const arrMarker=new THREE.Mesh(new THREE.SphereGeometry(1.0,12,12),new THREE.MeshBasicMaterial({color:0xc1440e,blending:THREE.AdditiveBlending}));
+arrMarker.position.copy(marsArr); scene.add(arrMarker);
+// Arrival ring
+const arrRingGeo=new THREE.RingGeometry(2,3.2,48);
+const arrRingMat=new THREE.MeshBasicMaterial({color:0xc1440e,transparent:true,opacity:0.4,side:THREE.DoubleSide,blending:THREE.AdditiveBlending});
+const arrRing=new THREE.Mesh(arrRingGeo,arrRingMat); arrRing.position.copy(marsArr); arrRing.rotation.x=Math.PI/2; scene.add(arrRing);
+
+// Spacecraft
+const scGroup=new THREE.Group();
+const scMesh=new THREE.Mesh(new THREE.SphereGeometry(1.8,16,16),new THREE.MeshBasicMaterial({color:0xffffff,blending:THREE.AdditiveBlending}));
+scGroup.add(scMesh);
+// Engine glow
+const scGlowMat=new THREE.MeshBasicMaterial({color:0x4466ff,transparent:true,opacity:0.5,side:THREE.BackSide,blending:THREE.AdditiveBlending,depthWrite:false});
+scGroup.add(new THREE.Mesh(new THREE.SphereGeometry(4,12,12),scGlowMat));
+scene.add(scGroup);
+
+// Trail geometry (dynamic)
+const MAX_TRAIL=120;
+let trailPositions=new Float32Array(MAX_TRAIL*3);
+const trailGeo=new THREE.BufferGeometry();
+trailGeo.setAttribute('position',new THREE.BufferAttribute(trailPositions,3));
+trailGeo.setDrawRange(0,0);
+const trailLine=new THREE.Line(trailGeo,new THREE.LineBasicMaterial({color:0x4466ff,transparent:true,opacity:0.55,blending:THREE.AdditiveBlending}));
+scene.add(trailLine);
+
+// ── Camera orbit ───────────────────────────────────────────────
+let camTheta=0.8, camPhi=1.1, camR=420;
+let isDrag=false, dragMoved=false, lmx=0, lmy=0;
+let autoOrbit=true, autoOrbitTimeout=null;
+
+function updateCamera(){
+  camera.position.set(camR*Math.sin(camPhi)*Math.sin(camTheta), camR*Math.cos(camPhi), camR*Math.sin(camPhi)*Math.cos(camTheta));
+  camera.lookAt(0,0,0);
+}
+updateCamera();
+
+const el=renderer.domElement;
+el.addEventListener('mousedown',e=>{isDrag=true;dragMoved=false;lmx=e.clientX;lmy=e.clientY;autoOrbit=false;clearTimeout(autoOrbitTimeout);el.style.cursor='grabbing';});
+window.addEventListener('mousemove',e=>{if(!isDrag)return;const dx=e.clientX-lmx,dy=e.clientY-lmy;if(Math.abs(dx)>2||Math.abs(dy)>2)dragMoved=true;camTheta-=dx*0.005;camPhi=Math.max(0.1,Math.min(Math.PI/2.1,camPhi+dy*0.004));lmx=e.clientX;lmy=e.clientY;updateCamera();});
+window.addEventListener('mouseup',()=>{isDrag=false;el.style.cursor='grab';autoOrbitTimeout=setTimeout(()=>{autoOrbit=true;},4000);});
+el.addEventListener('wheel',e=>{camR=Math.max(80,Math.min(1200,camR+e.deltaY*0.5));updateCamera();},{passive:true});
+el.addEventListener('touchstart',e=>{if(e.touches.length===1){isDrag=true;dragMoved=false;lmx=e.touches[0].clientX;lmy=e.touches[0].clientY;autoOrbit=false;}},{passive:true});
+el.addEventListener('touchmove',e=>{if(!isDrag||e.touches.length!==1)return;const dx=e.touches[0].clientX-lmx,dy=e.touches[0].clientY-lmy;camTheta-=dx*0.005;camPhi=Math.max(0.1,Math.min(Math.PI/2.1,camPhi+dy*0.004));lmx=e.touches[0].clientX;lmy=e.touches[0].clientY;updateCamera();},{passive:true});
+el.addEventListener('touchend',()=>{isDrag=false;});
+el.style.cursor='grab';
+
+window.resetCamera=()=>{camTheta=0.8;camPhi=1.1;camR=420;autoOrbit=true;updateCamera();};
+
+// ── Controls ───────────────────────────────────────────────────
+window.togglePlay=()=>{
+  isPlaying=!isPlaying;
+  document.getElementById('play-btn').textContent=isPlaying?'⏸':'▶';
+};
+window.setSpeed=s=>{
+  simSpeed=s;
+  document.querySelectorAll('.speed-btn:not(:last-child)').forEach(b=>b.classList.toggle('active',b.textContent===s+'d/s'));
+};
+window.scrubTimeline=(e,el)=>{
+  const r=el.getBoundingClientRect();
+  const t=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  simDay=MISSION.dep_day+t*MISSION.tof;
+  arrived=false; document.getElementById('arrival').style.display='none';
+};
+window.replayMission=()=>{
+  simDay=MISSION.dep_day; arrived=false; isPlaying=true;
+  document.getElementById('arrival').style.display='none';
+  document.getElementById('play-btn').textContent='⏸';
+  trailPts=[];
+};
+
+// ── Date utility ───────────────────────────────────────────────
+function dayToStr(d){
+  const dt=new Date(2026,0,1); dt.setDate(dt.getDate()+Math.round(d));
+  return dt.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+}
+
+// ── Fuel/Δv model ─────────────────────────────────────────────
+function getFuelPct(t){
+  // t=0: departure, t=1: arrival
+  // Burn profile: 0-2% depletes 78% (TMI), 98-100% depletes remaining 18.5%
+  if(t<0.01) return 100-t/0.01*78;         // TMI burn: 100→22%
+  if(t<0.98) return 22;                      // cruise: coast
+  return 22-(t-0.98)/0.02*22;              // MOI burn: 22→0%
+}
+function getDvRem(t){
+  if(t<0.01) return MISSION.dv_total-t/0.01*MISSION.dv_dep;
+  if(t<0.98) return MISSION.dv_arr;
+  return MISSION.dv_arr-(t-0.98)/0.02*MISSION.dv_arr;
+}
+function getPhase(t){
+  if(t<0.01) return {label:'TRANS-MARS INJECTION',color:'#ff9966'};
+  if(t<0.98) return {label:'CRUISE · COASTING',color:'#4ecdc4'};
+  if(t<1)    return {label:'MARS ORBIT INSERTION',color:'#ff6666'};
+  return {label:'MISSION COMPLETE',color:'#4ecdc4'};
+}
+
+// ── Main animation loop ───────────────────────────────────────
+let frame=0;
+function animate(now){
+  requestAnimationFrame(animate);
+  const dt=Math.min((now-lastRaf)/1000,0.05); lastRaf=now; frame++;
+
+  // Advance simulation
+  if(isPlaying&&!arrived){
+    simDay+=dt*simSpeed;
+    if(simDay>=MISSION.arr_day){ simDay=MISSION.arr_day; triggerArrival(); }
+  }
+
+  const progress=Math.max(0,Math.min(1,(simDay-MISSION.dep_day)/MISSION.tof));
+
+  // Auto orbit camera
+  if(autoOrbit){ camTheta+=dt*0.018; updateCamera(); }
+
+  // Planet positions
+  const ep=getPos(EARTH_A0,EARTH_W,simDay);
+  const mp=getPos(MARS_A0, MARS_W, simDay);
+  earthMesh.position.copy(ep); earthMesh.rotation.y+=dt*0.4;
+  marsMesh.position.copy(mp);  marsMesh.rotation.y+=dt*0.25;
+
+  // Spacecraft position
+  const scPos=CURVE.getPoint(progress);
+  scGroup.position.copy(scPos);
+
+  // Trail
+  if(frame%3===0&&progress>0&&progress<1){
+    trailPts.push(scPos.clone());
+    if(trailPts.length>MAX_TRAIL) trailPts.shift();
+    for(let i=0;i<trailPts.length;i++){
+      trailPositions[i*3]=trailPts[i].x; trailPositions[i*3+1]=trailPts[i].y; trailPositions[i*3+2]=trailPts[i].z;
+    }
+    trailGeo.attributes.position.needsUpdate=true;
+    trailGeo.setDrawRange(0,trailPts.length);
+  }
+
+  // Spacecraft glow: brighter during burns
+  const isBurn=progress<0.01||progress>0.98;
+  scGlowMat.opacity=isBurn?0.8:0.3;
+  scGlowMat.color.setHex(isBurn?0xff6622:0x4466ff);
+
+  // Pulse arrival ring
+  const p2=0.5+0.5*Math.sin(frame*0.08);
+  arrRingMat.opacity=0.2+p2*0.3;
+  arrRing.scale.setScalar(1+p2*0.15);
+
+  // ── Telemetry ──────────────────────────────────────────────
+  // Heliocentric distance
+  const rSun=scPos.length(); // AU
+  // Heliocentric velocity (vis-viva)
+  const vH=Math.sqrt(Math.max(0,MU*(2/rSun-1/A_TRANSFER)))*AU_YR_KMS; // km/s
+  // Distance from Earth (current position)
+  const dE=scPos.distanceTo(ep)*AU_KM/1e6; // M km
+  const dM=scPos.distanceTo(mp)*AU_KM/1e6;
+  const lightMinE=scPos.distanceTo(ep)*AU_LMIN;
+  const lightMinM=scPos.distanceTo(mp)*AU_LMIN;
+  const fuel=getFuelPct(progress);
+  const dvRem=getDvRem(progress);
+  const phase=getPhase(progress);
+  const daysLeft=Math.max(0,Math.round(MISSION.arr_day-simDay));
+  const elapsed=Math.round(simDay-MISSION.dep_day);
+
+  // Update HUD (every frame for smooth animation)
+  document.getElementById('hud-date').textContent=dayToStr(simDay);
+  document.getElementById('hud-elapsed').textContent='MET +'+elapsed+' days';
+  document.getElementById('hud-vel').textContent=vH.toFixed(2);
+  document.getElementById('hud-dist-e').textContent=dE.toFixed(1);
+  document.getElementById('hud-lightmin-e').textContent=lightMinE.toFixed(2)+' light-minutes to Earth';
+  document.getElementById('hud-dist-m').textContent=dM.toFixed(1);
+  document.getElementById('hud-lightmin-m').textContent=lightMinM.toFixed(2)+' light-minutes to Mars';
+  document.getElementById('hud-dist-sun').textContent=rSun.toFixed(3);
+  document.getElementById('hud-fuel-pct').textContent=Math.round(fuel);
+  document.getElementById('hud-fuel-kg').textContent='~'+Math.round(fuel/100*(MISSION.mass_init-MISSION.mass_final))+'kg';
+  document.getElementById('fuel-bar').style.width=fuel+'%';
+  document.getElementById('fuel-bar').style.background=fuel>40?'#4ecdc4':fuel>15?'#f0b428':'#ff4444';
+  document.getElementById('hud-dv-rem').textContent=dvRem.toFixed(2);
+  document.getElementById('dv-bar').style.width=(dvRem/MISSION.dv_total*100)+'%';
+  document.getElementById('hud-eta').textContent=daysLeft>0?daysLeft+' days':'ARRIVAL';
+  document.getElementById('hud-phase').textContent=phase.label;
+  document.getElementById('hud-phase').style.color=phase.color;
+  document.getElementById('timeline-fill').style.width=(progress*100)+'%';
+  document.getElementById('timeline-thumb').style.left=(progress*100)+'%';
+  document.getElementById('tl-dep').textContent=dayToStr(MISSION.dep_day).split(',')[0];
+  document.getElementById('tl-arr').textContent=dayToStr(MISSION.arr_day).split(',')[0];
+
+  renderer.render(scene,camera);
+  if(currentView==='2d') draw2d(progress);
+}
+requestAnimationFrame(animate);
+
+// ═══════════════════════════════════════════════════════════════
+// 2D RENDERER
+// ═══════════════════════════════════════════════════════════════
+const c2  = document.getElementById('scene2d');
+const ctx2 = c2.getContext('2d');
+let currentView = '3d';
+const STARS_2D = Array.from({length:200},(_,i)=>({x:((i*137.508*31+i*71)%1800),y:((i*137.508*17+i*53)%1000),r:i%5===0?1.4:i%3===0?0.9:0.5,o:0.12+(i%5)*0.08}));
+
+function resize2d(){c2.width=innerWidth;c2.height=innerHeight;}
+resize2d();
+window.addEventListener('resize',resize2d);
+
+function draw2d(progress){
+  const W=c2.width, H=c2.height, cx=W/2, cy=H/2, scale=Math.min(W,H)*0.38;
+  ctx2.fillStyle='#04040c'; ctx2.fillRect(0,0,W,H);
+
+  // Stars
+  STARS_2D.forEach(s=>{
+    ctx2.beginPath(); ctx2.arc(s.x%W,s.y%H,s.r,0,Math.PI*2);
+    ctx2.fillStyle=`rgba(210,215,255,${s.o})`; ctx2.fill();
+  });
+
+  // Ecliptic plane label
+  ctx2.font="bold 8px 'Space Mono',monospace";
+  ctx2.fillStyle="rgba(255,255,255,0.1)";
+  ctx2.fillText("ECLIPTIC PLANE · TOP-DOWN VIEW", 22, H-28);
+
+  // Orbit rings
+  ctx2.beginPath(); ctx2.arc(cx,cy,R_EARTH*scale,0,Math.PI*2);
+  ctx2.strokeStyle='rgba(75,156,211,0.18)'; ctx2.lineWidth=0.8; ctx2.stroke();
+  ctx2.beginPath(); ctx2.arc(cx,cy,R_MARS*scale,0,Math.PI*2);
+  ctx2.strokeStyle='rgba(193,68,14,0.18)'; ctx2.lineWidth=0.8; ctx2.stroke();
+
+  // Transfer arc
+  ctx2.beginPath();
+  ARC_PTS.forEach((p,i)=>{
+    const px=cx+p.x*scale, py=cy+p.z*scale;
+    i===0?ctx2.moveTo(px,py):ctx2.lineTo(px,py);
+  });
+  ctx2.strokeStyle='rgba(68,102,255,0.55)'; ctx2.lineWidth=1.5; ctx2.setLineDash([5,4]); ctx2.stroke(); ctx2.setLineDash([]);
+
+  // Trail
+  if(trailPts.length>1){
+    ctx2.beginPath();
+    trailPts.forEach((p,i)=>{
+      const px=cx+p.x*scale, py=cy+p.z*scale;
+      i===0?ctx2.moveTo(px,py):ctx2.lineTo(px,py);
+    });
+    ctx2.strokeStyle='rgba(68,102,255,0.6)'; ctx2.lineWidth=1.5; ctx2.stroke();
+  }
+
+  // Sun glow
+  const sg=ctx2.createRadialGradient(cx,cy,0,cx,cy,60);
+  sg.addColorStop(0,'rgba(255,230,130,0.9)'); sg.addColorStop(0.3,'rgba(255,160,40,0.3)'); sg.addColorStop(1,'transparent');
+  ctx2.beginPath(); ctx2.arc(cx,cy,60,0,Math.PI*2); ctx2.fillStyle=sg; ctx2.fill();
+  ctx2.beginPath(); ctx2.arc(cx,cy,14,0,Math.PI*2); ctx2.fillStyle='#fff8e7'; ctx2.fill();
+
+  // Departure ghost: Earth at dep
+  const depE=earthDep, depPx=cx+depE.x*scale, depPy=cy+depE.z*scale;
+  ctx2.beginPath(); ctx2.arc(depPx,depPy,5,0,Math.PI*2);
+  ctx2.strokeStyle='rgba(75,156,211,0.35)'; ctx2.lineWidth=1.2; ctx2.stroke();
+
+  // Arrival ghost: Mars at arr
+  const arrM=marsArr, arrPx=cx+arrM.x*scale, arrPy=cy+arrM.z*scale;
+  ctx2.beginPath(); ctx2.arc(arrPx,arrPy,4,0,Math.PI*2);
+  ctx2.strokeStyle='rgba(193,68,14,0.35)'; ctx2.lineWidth=1.2; ctx2.stroke();
+
+  // Live Earth
+  const ep2=getPos(EARTH_A0,EARTH_W,simDay);
+  const ePx=cx+ep2.x*scale, ePy=cy+ep2.z*scale;
+  const eg=ctx2.createRadialGradient(ePx,ePy,0,ePx,ePy,14);
+  eg.addColorStop(0,'rgba(75,156,211,0.6)'); eg.addColorStop(1,'transparent');
+  ctx2.beginPath(); ctx2.arc(ePx,ePy,14,0,Math.PI*2); ctx2.fillStyle=eg; ctx2.fill();
+  ctx2.beginPath(); ctx2.arc(ePx,ePy,5.5,0,Math.PI*2); ctx2.fillStyle='#4b9cd3'; ctx2.fill();
+  ctx2.font="bold 8px 'Space Mono',monospace"; ctx2.fillStyle='rgba(255,255,255,0.55)'; ctx2.textAlign='center';
+  ctx2.fillText('EARTH',ePx,ePy-12);
+
+  // Live Mars
+  const mp2=getPos(MARS_A0,MARS_W,simDay);
+  const mPx=cx+mp2.x*scale, mPy=cy+mp2.z*scale;
+  const mg=ctx2.createRadialGradient(mPx,mPy,0,mPx,mPy,12);
+  mg.addColorStop(0,'rgba(193,68,14,0.6)'); mg.addColorStop(1,'transparent');
+  ctx2.beginPath(); ctx2.arc(mPx,mPy,12,0,Math.PI*2); ctx2.fillStyle=mg; ctx2.fill();
+  ctx2.beginPath(); ctx2.arc(mPx,mPy,4,0,Math.PI*2); ctx2.fillStyle='#c1440e'; ctx2.fill();
+  ctx2.fillText('MARS',mPx,mPy-10);
+
+  // Spacecraft
+  const sc2=CURVE.getPoint(progress);
+  const scX=cx+sc2.x*scale, scY=cy+sc2.z*scale;
+  const scGr=ctx2.createRadialGradient(scX,scY,0,scX,scY,10);
+  scGr.addColorStop(0,'rgba(255,255,255,1)'); scGr.addColorStop(0.4,'rgba(68,102,255,0.6)'); scGr.addColorStop(1,'transparent');
+  ctx2.beginPath(); ctx2.arc(scX,scY,10,0,Math.PI*2); ctx2.fillStyle=scGr; ctx2.fill();
+  ctx2.beginPath(); ctx2.arc(scX,scY,2.5,0,Math.PI*2); ctx2.fillStyle='#fff'; ctx2.fill();
+  ctx2.fillStyle='rgba(255,255,255,0.7)';
+  ctx2.fillText('S/C',scX,scY-13);
+
+  // Progress text
+  ctx2.textAlign='left'; ctx2.font="8px 'Space Mono',monospace";
+  ctx2.fillStyle='rgba(68,102,255,0.7)';
+  ctx2.fillText('TRANSFER ARC · '+Math.round(progress*100)+'% COMPLETE', 22, H-44);
+}
+
+// ── View toggle ────────────────────────────────────────────────
+window.setView = v => {
+  currentView = v;
+  document.getElementById('scene').style.opacity    = v==='3d'?'1':'0';
+  document.getElementById('scene').style.pointerEvents = v==='3d'?'auto':'none';
+  document.getElementById('scene2d').style.display  = v==='2d'?'block':'none';
+  document.getElementById('tab-3d').style.background= v==='3d'?'rgba(68,102,255,0.35)':'transparent';
+  document.getElementById('tab-3d').style.color     = v==='3d'?'#fff':'rgba(255,255,255,0.38)';
+  document.getElementById('tab-3d').style.boxShadow = v==='3d'?'0 0 12px rgba(68,102,255,0.3)':'none';
+  document.getElementById('tab-2d').style.background= v==='2d'?'rgba(68,102,255,0.35)':'transparent';
+  document.getElementById('tab-2d').style.color     = v==='2d'?'#fff':'rgba(255,255,255,0.38)';
+  document.getElementById('tab-2d').style.boxShadow = v==='2d'?'0 0 12px rgba(68,102,255,0.3)':'none';
+};
+
+function triggerArrival(){
+  if(arrived) return;
+  arrived=true; isPlaying=false;
+  document.getElementById('play-btn').textContent='▶';
+  document.getElementById('mission-status-label').textContent='MISSION COMPLETE';
+  document.getElementById('mission-status-label').style.color='#4ecdc4';
+  document.getElementById('arr-dep').textContent=dayToStr(MISSION.dep_day);
+  document.getElementById('arr-arrv').textContent=dayToStr(MISSION.arr_day);
+  document.getElementById('arr-tof').textContent=MISSION.tof+' days';
+  // Zoom camera toward Mars
+  const mp=getPos(MARS_A0,MARS_W,MISSION.arr_day);
+  const zoomTarget=mp.clone().multiplyScalar(120/mp.length());
+  const startR=camR;
+  let zoomT=0;
+  function zoomIn(){
+    zoomT+=0.016;
+    camR=startR+(80-startR)*Math.min(1,zoomT/1.2);
+    updateCamera();
+    if(zoomT<1.2) requestAnimationFrame(zoomIn);
+    else {
+      setTimeout(()=>{ document.getElementById('arrival').style.display='block'; }, 200);
+    }
+  }
+  autoOrbit=false; requestAnimationFrame(zoomIn);
+}
+</script>
+</body>
+</html>

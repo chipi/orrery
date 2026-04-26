@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Earth Orbit</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;overflow:hidden;width:100vw;height:100vh;font-family:'Space Mono',monospace;color:#fff;}
+  #r2d,#r3d{position:absolute;inset:0;width:100%;height:100%;transition:opacity 0.4s;}
+  #r3d canvas{display:block;width:100%!important;height:100%!important;}
+  #ui{position:absolute;inset:0;z-index:10;pointer-events:none;}
+  #ui>*{pointer-events:auto;}
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+  .link-row:hover{background:rgba(255,255,255,0.07)!important;}
+  .vtab{padding:5px 14px;font-size:8px;letter-spacing:2px;font-weight:700;border-radius:16px;cursor:pointer;transition:all 0.2s;color:rgba(255,255,255,0.38);background:transparent;border:none;font-family:'Space Mono',monospace;}
+  .vtab.active{color:#fff;background:rgba(68,102,255,0.35);box-shadow:0 0 12px rgba(68,102,255,0.3);}
+  .regime-tag{font-size:7px;letter-spacing:2px;font-weight:700;padding:3px 7px;border-radius:3px;}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  @keyframes fadeIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+  #planet-label{position:absolute;pointer-events:none;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#fff;text-shadow:0 0 8px rgba(68,102,255,0.8);white-space:nowrap;transform:translateX(-50%);z-index:15;transition:opacity 0.15s;}
+</style>
+</head>
+<body>
+
+<canvas id="r2d" style="opacity:0;pointer-events:none;"></canvas>
+<div id="r3d"></div>
+<div id="planet-label" style="opacity:0;"></div>
+
+<div id="ui">
+  <!-- NAV -->
+  <div style="position:absolute;top:0;left:0;right:0;height:52px;background:rgba(4,4,12,0.9);border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+    <div style="display:flex;gap:3px;">
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">EXPLORE</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(78,205,196,0.15);border:1px solid rgba(78,205,196,0.4);border-radius:3px;">EARTH ORBIT</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">PLAN</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">FLY</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">MISSIONS</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="display:flex;align-items:center;background:rgba(4,4,12,0.85);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:3px;gap:2px;">
+        <button class="vtab active" id="tab-3d" onclick="setView('3d')">3D</button>
+        <button class="vtab" id="tab-2d" onclick="setView('2d')">2D</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:#4ecdc4;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></div>
+        <span style="font-size:8px;color:rgba(255,255,255,0.28);letter-spacing:1px;">EARTH VICINITY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGIME LEGEND -->
+  <div style="position:absolute;top:62px;left:50%;transform:translateX(-50%);display:flex;gap:6px;align-items:center;">
+    <div class="regime-tag" style="background:rgba(78,205,196,0.1);color:#4ecdc4;border:1px solid rgba(78,205,196,0.25);">LEO 160–2,000 km</div>
+    <div class="regime-tag" style="background:rgba(68,102,255,0.1);color:#7b9cff;border:1px solid rgba(68,102,255,0.25);">MEO 2K–36K km</div>
+    <div class="regime-tag" style="background:rgba(255,200,80,0.1);color:#ffc850;border:1px solid rgba(255,200,80,0.25);">GEO 35,786 km</div>
+    <div class="regime-tag" style="background:rgba(255,140,60,0.1);color:#ff8c3c;border:1px solid rgba(255,140,60,0.25);">HEO elliptical</div>
+    <div class="regime-tag" style="background:rgba(200,200,220,0.07);color:rgba(200,200,220,0.7);border:1px solid rgba(200,200,220,0.15);">MOON 384,400 km</div>
+    <div class="regime-tag" style="background:rgba(255,215,0,0.08);color:#ffd700;border:1px solid rgba(255,215,0,0.2);">L2 1,500,000 km</div>
+  </div>
+
+  <!-- DETAIL PANEL -->
+  <div id="panel" style="position:absolute;top:52px;right:0;bottom:68px;width:320px;background:rgba(4,4,12,0.96);border-left:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(18px);display:none;flex-direction:column;animation:fadeIn 0.22s ease;overflow:hidden;"></div>
+
+  <!-- BOTTOM BAR -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:68px;background:rgba(4,4,12,0.88);border-top:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(14px);display:flex;align-items:center;padding:0 22px;gap:14px;">
+    <span style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.22);">SPEED</span>
+    <div id="sbtns" style="display:flex;gap:4px;"></div>
+    <div style="width:1px;height:28px;background:rgba(255,255,255,0.08);margin:0 4px;"></div>
+    <div style="font-size:8px;letter-spacing:1.5px;color:rgba(255,255,255,0.22);">SCALE: <span style="color:#4ecdc4;">LOGARITHMIC</span></div>
+    <div style="flex:1;"></div>
+    <div style="font-size:7px;letter-spacing:1.5px;color:rgba(255,255,255,0.14);">DRAG TO ORBIT · SCROLL TO ZOOM · CLICK TO EXPLORE</div>
+  </div>
+
+  <!-- Corner -->
+  <div style="position:absolute;bottom:80px;left:22px;">
+    <div style="font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.07);font-weight:700;">EARTH ORBITAL NEIGHBORHOOD</div>
+    <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.05);margin-top:2px;">LOG SCALE · ISS TO L2 · 3,750× RANGE</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════
+// SCALE MODEL
+// Log scale: vis_r = EARTH_R + K * log10(1 + alt_km / 100)
+// ═══════════════════════════════════════════════════════════════
+const EARTH_VIS = 38;  // px, visual Earth radius
+const LOG_K     = 54;  // px per decade of altitude
+
+function altToVis(alt_km) {
+  return EARTH_VIS + LOG_K * Math.log10(1 + alt_km / 100);
+}
+
+// Simulation: ISS (92 min) orbits once every ~12 sim-seconds at 1× speed
+const SIM_BASE = 92 * 60 / 12; // = 460 seconds per real second at 1×
+let simSpeed = 1, simT = 0, lastTime = performance.now();
+
+function periodToOmega(period_min) {
+  if (!period_min) return 0;
+  return (2 * Math.PI / (period_min * 60)) * SIM_BASE;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ORBITAL OBJECTS
+// ═══════════════════════════════════════════════════════════════
+const TIER={intro:{label:"INTRO",bg:"#0d2e2b",color:"#4ecdc4",dot:"#4ecdc4"},core:{label:"CORE",bg:"#0d1535",color:"#7b9cff",dot:"#4466ff"},deep:{label:"DEEP",bg:"#2e0d0d",color:"#ff9090",dot:"#ff4444"}};
+
+const REGIMES = {
+  LEO:   { color:"#4ecdc4",  bg:"rgba(78,205,196,0.06)"  },
+  MEO:   { color:"#7b9cff",  bg:"rgba(68,102,255,0.05)"  },
+  GEO:   { color:"#ffc850",  bg:"rgba(255,200,80,0.06)"  },
+  HEO:   { color:"#ff8c3c",  bg:"rgba(255,140,60,0.05)"  },
+  MOON:  { color:"#aaaacc",  bg:"rgba(170,170,200,0.04)" },
+  L2:    { color:"#ffd700",  bg:"rgba(255,215,0,0.05)"   },
+};
+
+const OBJECTS = [
+  { id:"iss", name:"International Space Station", short:"ISS",
+    regime:"LEO", alt:408, inclination:51.6, period:92.9, count:1,
+    color:"#4ecdc4", size3:2.5, agencies:["NASA","ESA","JAXA","ROSCOSMOS","CSA"],
+    launched:1998, status:"ACTIVE", crew:7,
+    description:"Humanity's permanent home in orbit. 420 tonnes, 109-metre wingspan. Built by 16 nations across 42 flights. Has hosted 273 people from 21 countries. Visible to the naked eye from Earth — the brightest object in the night sky after the Moon and Venus.",
+    scale_fact:"The ISS orbits at 408 km. You could drive there in 4 hours at motorway speed. It feels impossibly far — it is impossibly close.",
+    links:[
+      {l:"ISS — Wikipedia",u:"https://en.wikipedia.org/wiki/International_Space_Station",t:"intro"},
+      {l:"NASA ISS live tracker",u:"https://spotthestation.nasa.gov/",t:"intro"},
+      {l:"ISS orbital mechanics (NASA)",u:"https://www.nasa.gov/reference/international-space-station-facts-and-figures/",t:"core"},
+    ]},
+  { id:"tiangong", name:"Tiangong Space Station", short:"Tiangong",
+    regime:"LEO", alt:389, inclination:41.5, period:91.5, count:1,
+    color:"#DE2910", size3:2.2, agencies:["CNSA"],
+    launched:2021, status:"ACTIVE", crew:3,
+    description:"China's independent space station. Core module Tianhe launched April 2021. Fully assembled 2022. Operates independently from the ISS — the only other permanently inhabited station.",
+    scale_fact:"39 metres long. 180 tonnes. China built this with no international partners after being excluded from ISS agreements.",
+    links:[
+      {l:"Tiangong — Wikipedia",u:"https://en.wikipedia.org/wiki/Tiangong_space_station",t:"intro"},
+      {l:"China Manned Space program",u:"https://en.wikipedia.org/wiki/Chinese_large_modular_space_station",t:"intro"},
+    ]},
+  { id:"hubble", name:"Hubble Space Telescope", short:"Hubble",
+    regime:"LEO", alt:547, inclination:28.5, period:95.4, count:1,
+    color:"#7b9cff", size3:2.0, agencies:["NASA","ESA"],
+    launched:1990, status:"ACTIVE", crew:0,
+    description:"The telescope that changed how humanity sees the universe. Launched 1990 with a flawed mirror — corrected by Space Shuttle astronauts in 1993. Has since observed 1.4 million celestial objects. Operating 34+ years.",
+    scale_fact:"Hubble orbits 547 km up — just above the ISS. Low Earth Orbit is crammed with infrastructure we've completely forgotten about.",
+    links:[
+      {l:"Hubble Space Telescope — Wikipedia",u:"https://en.wikipedia.org/wiki/Hubble_Space_Telescope",t:"intro"},
+      {l:"NASA Hubble gallery",u:"https://hubblesite.org/images/gallery",t:"intro"},
+      {l:"Hubble servicing missions (NASA)",u:"https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/",t:"core"},
+    ]},
+  { id:"gps", name:"GPS Constellation", short:"GPS",
+    regime:"MEO", alt:20200, inclination:55, period:717.9, count:4,
+    color:"#0B3D91", size3:1.8, agencies:["NASA","USAF"],
+    launched:1978, status:"ACTIVE", crew:0,
+    description:"31 active satellites at 20,200 km. Every navigation app, every drone, every ship at sea depends on this constellation. Originally military, opened to civilians in 1983. Signal accuracy: 30 cm for civilian use, 1 cm for military.",
+    scale_fact:"GPS is 50× higher than the ISS. You've never looked up and seen it — but it knows exactly where you are.",
+    links:[
+      {l:"GPS — Wikipedia",u:"https://en.wikipedia.org/wiki/Global_Positioning_System",t:"intro"},
+      {l:"GPS.gov (official)",u:"https://www.gps.gov/",t:"intro"},
+      {l:"GNSS constellations comparison",u:"https://en.wikipedia.org/wiki/Global_navigation_satellite_system",t:"core"},
+    ]},
+  { id:"galileo", name:"Galileo Constellation", short:"Galileo",
+    regime:"MEO", alt:23222, inclination:56, period:844.8, count:4,
+    color:"#1C3C8A", size3:1.8, agencies:["ESA"],
+    launched:2011, status:"ACTIVE", crew:0,
+    description:"Europe's navigation constellation. 30 operational satellites. Provides more accurate civilian positioning than GPS — 1 metre accuracy commercially available. Controlled by European Commission, not any single nation or military.",
+    scale_fact:"Four independent global navigation systems now exist: GPS (USA), GLONASS (Russia), Galileo (EU), BeiDou (China). Every major power wanted their own.",
+    links:[
+      {l:"Galileo (satellite navigation) — Wikipedia",u:"https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)",t:"intro"},
+      {l:"ESA Galileo overview",u:"https://www.esa.int/Applications/Navigation/Galileo",t:"intro"},
+    ]},
+  { id:"glonass", name:"GLONASS Constellation", short:"GLONASS",
+    regime:"MEO", alt:19100, inclination:64.8, period:675.7, count:4,
+    color:"#003087", size3:1.8, agencies:["ROSCOSMOS"],
+    launched:1982, status:"ACTIVE", crew:0,
+    description:"Russia's global navigation system. Designed during the Cold War, launched 1982. Uses a higher inclination than GPS — better coverage of polar regions. Russia opened it to civilian use in 2007.",
+    scale_fact:"The high inclination (64.8°) means GLONASS provides better coverage of Russia and the Arctic — geography shaped the orbital design.",
+    links:[
+      {l:"GLONASS — Wikipedia",u:"https://en.wikipedia.org/wiki/GLONASS",t:"intro"},
+    ]},
+  { id:"beidou", name:"BeiDou Constellation", short:"BeiDou",
+    regime:"MEO", alt:21528, inclination:55, period:760, count:4,
+    color:"#DE2910", size3:1.8, agencies:["CNSA"],
+    launched:2000, status:"ACTIVE", crew:0,
+    description:"China's global navigation satellite system. 46+ satellites across MEO, GEO, and IGSO orbits. Provides global coverage since 2020. Also functions as a messaging service — satellites relay short texts.",
+    scale_fact:"BeiDou's three-orbit-type architecture is unique — it uses satellites at three different altitudes simultaneously.",
+    links:[
+      {l:"BeiDou — Wikipedia",u:"https://en.wikipedia.org/wiki/BeiDou",t:"intro"},
+    ]},
+  { id:"geo", name:"GEO Belt", short:"GEO",
+    regime:"GEO", alt:35786, inclination:0, period:1436, count:6,
+    color:"#ffc850", size3:1.5, agencies:["NASA","ESA"],
+    launched:1963, status:"ACTIVE", crew:0,
+    description:"The geostationary ring. At exactly 35,786 km, orbital period equals Earth's rotation — satellites appear fixed in the sky. GOES weather satellites, Meteosat, thousands of communications satellites. The specific altitude where physics and utility perfectly align.",
+    scale_fact:"35,786 km is not a round number by design — it's the exact altitude where gravity and orbital speed balance to give a 24-hour period. Physics chose it.",
+    links:[
+      {l:"Geostationary orbit — Wikipedia",u:"https://en.wikipedia.org/wiki/Geostationary_orbit",t:"intro"},
+      {l:"Clarke orbit (the inventor) — Wikipedia",u:"https://en.wikipedia.org/wiki/Arthur_C._Clarke",t:"intro"},
+      {l:"GOES weather system (NOAA)",u:"https://www.goes.noaa.gov/",t:"core"},
+    ]},
+  { id:"chandra", name:"Chandra X-ray Observatory", short:"Chandra",
+    regime:"HEO", alt:133000, alt_peri:9942, alt_apo:133000, period:3808, inclination:76.7, count:1,
+    elliptical:true, ecc:0.8, color:"#ff8c3c", size3:1.8, agencies:["NASA"],
+    launched:1999, status:"ACTIVE", crew:0,
+    description:"NASA's X-ray eye. Its extreme elliptical orbit swings from 9,942 km to 133,600 km — one third of the way to the Moon. This takes it outside Earth's radiation belts for long, clean observations. Sees black holes, neutron stars, supernovae — the violent high-energy universe invisible to optical telescopes.",
+    scale_fact:"Chandra was too large for a direct GEO orbit. Engineers used the highly elliptical orbit as a creative solution — turning a constraint into a scientific advantage.",
+    links:[
+      {l:"Chandra X-ray Observatory — Wikipedia",u:"https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory",t:"intro"},
+      {l:"Chandra image gallery (NASA)",u:"https://chandra.harvard.edu/photo/category.html",t:"intro"},
+      {l:"X-ray astronomy — Wikipedia",u:"https://en.wikipedia.org/wiki/X-ray_astronomy",t:"core"},
+    ]},
+  { id:"xmm", name:"XMM-Newton", short:"XMM-Newton",
+    regime:"HEO", alt:113946, alt_peri:7365, alt_apo:113946, period:3168, inclination:40, count:1,
+    elliptical:true, ecc:0.77, color:"#FFD700", size3:1.8, agencies:["ESA"],
+    launched:1999, status:"ACTIVE", crew:0,
+    description:"ESA's X-ray multi-mirror mission. 3 telescopes in one spacecraft. Like Chandra, uses a highly elliptical orbit to escape Earth's radiation. Over 1,000 peer-reviewed papers published from its data. Launched the same year as Chandra — two observatories, two continents, the same invisible sky.",
+    scale_fact:"XMM-Newton and Chandra are diplomatic parallels — NASA and ESA each built their own X-ray observatory rather than collaborating on one. Science got two telescopes.",
+    links:[
+      {l:"XMM-Newton — Wikipedia",u:"https://en.wikipedia.org/wiki/XMM-Newton",t:"intro"},
+      {l:"ESA XMM-Newton science",u:"https://www.cosmos.esa.int/web/xmm-newton",t:"core"},
+    ]},
+  { id:"lro", name:"Lunar Reconnaissance Orbiter", short:"LRO",
+    regime:"MOON", alt:384450, inclination:90, period:7380, count:1,
+    color:"#aaaacc", size3:1.5, agencies:["NASA"],
+    launched:2009, status:"ACTIVE", crew:0,
+    description:"Orbiting the Moon since 2009. Mapping the surface at 50 cm resolution — good enough to see the Apollo descent stages still sitting on the surface. Found water ice at the poles. Identified 200+ potential Artemis landing sites. A scout for the return.",
+    scale_fact:"The Moon is 384,400 km away — almost 1,000 times farther than the ISS. On this logarithmic map it looks close. In reality, no human has been there since 1972.",
+    links:[
+      {l:"Lunar Reconnaissance Orbiter — Wikipedia",u:"https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter",t:"intro"},
+      {l:"LRO camera images (LROC)",u:"https://www.lroc.asu.edu/",t:"intro"},
+      {l:"Water on the Moon — Wikipedia",u:"https://en.wikipedia.org/wiki/Lunar_water",t:"core"},
+    ]},
+  { id:"jwst", name:"James Webb Space Telescope", short:"JWST",
+    regime:"L2", alt:1500000, inclination:null, period:null, count:1,
+    color:"#ffd700", size3:2.2, agencies:["NASA","ESA","CSA"],
+    launched:2022, status:"ACTIVE", crew:0,
+    description:"At the Sun-Earth L2 Lagrange point — 1.5 million km from Earth. Never to be serviced. Sees light from 13.4 billion years ago, from the first stars and galaxies after the Big Bang. 25 years to build. The most complex scientific instrument ever deployed. It works.",
+    scale_fact:"JWST is 3,676 times farther from Earth than the ISS. The Hubble servicing missions took 10 days. JWST cannot be serviced at all — it was designed to be perfect first time.",
+    links:[
+      {l:"James Webb Space Telescope — Wikipedia",u:"https://en.wikipedia.org/wiki/James_Webb_Space_Telescope",t:"intro"},
+      {l:"JWST image gallery (NASA)",u:"https://webbtelescope.org/news/first-images",t:"intro"},
+      {l:"L2 Lagrange point — Wikipedia",u:"https://en.wikipedia.org/wiki/Lagrange_point",t:"core"},
+      {l:"JWST science papers (NASA/STScI)",u:"https://www.stsci.edu/jwst/science-execution/approved-programs",t:"deep"},
+    ]},
+  { id:"gaia", name:"Gaia", short:"Gaia",
+    regime:"L2", alt:1500000, inclination:null, period:null, count:1,
+    color:"#FFD700", size3:1.8, agencies:["ESA"],
+    launched:2013, status:"ACTIVE", crew:0,
+    description:"ESA's stellar cartographer at L2. Mapping 1.8 billion stars — measuring positions to 7 microarcseconds. Has measured distances to stars 30,000 light-years away with the precision of a human hair's width at 1,000 km distance. The most detailed map of the Milky Way ever made.",
+    scale_fact:"Gaia sits alongside JWST at L2. The Lagrange point is valuable real estate — gravitationally stable, thermally stable, permanently facing away from the Sun.",
+    links:[
+      {l:"Gaia (spacecraft) — Wikipedia",u:"https://en.wikipedia.org/wiki/Gaia_(spacecraft)",t:"intro"},
+      {l:"Gaia data release (ESA)",u:"https://www.cosmos.esa.int/web/gaia/data-release-3",t:"core"},
+      {l:"L2 Lagrange point — Wikipedia",u:"https://en.wikipedia.org/wiki/Lagrange_point",t:"core"},
+    ]},
+];
+
+// ── State ──────────────────────────────────────────────────────
+let sel=null, panelOpen=false, hovObj=null, simSpeedVal=1, currentView='3d', frameN=0;
+
+// ── 2D setup ──────────────────────────────────────────────────
+const c2=document.getElementById('r2d');
+const ctx2=c2.getContext('2d');
+const STARS=Array.from({length:180},(_,i)=>({x:((i*137.508*31+i*71)%1800),y:((i*137.508*17+i*53)%1000),r:i%5===0?1.4:i%3===0?0.9:0.5,o:0.12+(i%5)*0.08}));
+
+function resize2d(){c2.width=innerWidth;c2.height=innerHeight;}
+resize2d();
+window.addEventListener('resize',()=>{resize2d();if(currentView==='2d')draw2d();});
+
+c2.addEventListener('click',e=>{
+  if(currentView!=='2d')return;
+  const cx=c2.width/2,cy=c2.height/2;
+  const mx=e.clientX-cx,my=e.clientY-cy;
+  let best=null,bestD=Infinity;
+  OBJECTS.forEach(o=>{
+    const vr=altToVis(o.alt);
+    const n=o.count||1;
+    for(let i=0;i<n;i++){
+      const a=o.angleOffsets?o.angleOffsets[i]:0;
+      const ang=simT*periodToOmega(o.period)+a;
+      const ox=Math.cos(ang)*vr,oy=Math.sin(ang)*vr;
+      const d=Math.hypot(mx-ox,my-oy);
+      if(d<18&&d<bestD){bestD=d;best=o;}
+    }
+  });
+  if(best){sel=best;panelOpen=true;renderPanel();}
+  else{panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+
+c2.addEventListener('mousemove',e=>{
+  if(currentView!=='2d')return;
+  const cx=c2.width/2,cy=c2.height/2,mx=e.clientX-cx,my=e.clientY-cy;
+  let best=null,bestD=Infinity;
+  OBJECTS.forEach(o=>{
+    const vr=altToVis(o.alt);
+    const ang=simT*periodToOmega(o.period);
+    const d=Math.hypot(mx-Math.cos(ang)*vr,my-Math.sin(ang)*vr);
+    if(d<18&&d<bestD){bestD=d;best=o;}
+  });
+  hovObj=best;
+  c2.style.cursor=best?'pointer':'default';
+});
+
+function draw2d(){
+  const W=c2.width,H=c2.height,cx=W/2,cy=H/2;
+  ctx2.fillStyle='#04040c';ctx2.fillRect(0,0,W,H);
+  STARS.forEach(s=>{ctx2.beginPath();ctx2.arc(s.x%W,s.y%H,s.r,0,Math.PI*2);ctx2.fillStyle=`rgba(210,215,255,${s.o})`;ctx2.fill();});
+
+  // Regime rings (background bands)
+  const regimeBands=[
+    {minAlt:160,maxAlt:2000,regime:'LEO'},{minAlt:2000,maxAlt:35000,regime:'MEO'},
+    {minAlt:35000,maxAlt:36500,regime:'GEO'},{minAlt:36500,maxAlt:200000,regime:'HEO'},
+    {minAlt:300000,maxAlt:500000,regime:'MOON'},{minAlt:1300000,maxAlt:1700000,regime:'L2'},
+  ];
+  regimeBands.forEach(b=>{
+    const ri=altToVis(b.minAlt),ro=altToVis(b.maxAlt);
+    const rg=REGIMES[b.regime];
+    ctx2.beginPath();ctx2.arc(cx,cy,ro,0,Math.PI*2);ctx2.arc(cx,cy,ri,0,Math.PI*2,true);
+    ctx2.fillStyle=rg.bg;ctx2.fill('evenodd');
+  });
+
+  // Orbit rings + regime labels
+  OBJECTS.filter((o,i,arr)=>arr.findIndex(x=>x.regime===o.regime)===i).forEach(o=>{
+    const vr=altToVis(o.alt);
+    const rg=REGIMES[o.regime];
+    const isSel=sel?.id===o.id;
+    ctx2.beginPath();ctx2.arc(cx,cy,vr,0,Math.PI*2);
+    ctx2.strokeStyle=isSel?rg.color+'66':'rgba(255,255,255,0.04)';ctx2.lineWidth=isSel?1.5:0.5;ctx2.stroke();
+  });
+  // All orbit rings
+  OBJECTS.forEach(o=>{
+    const vr=altToVis(o.alt);
+    const isSel=sel?.id===o.id;
+    if(isSel){ctx2.beginPath();ctx2.arc(cx,cy,vr,0,Math.PI*2);ctx2.strokeStyle='rgba(255,255,255,0.15)';ctx2.lineWidth=1;ctx2.stroke();}
+  });
+
+  // Regime labels (at right edge)
+  const labeled={};
+  OBJECTS.forEach(o=>{
+    if(labeled[o.regime])return;
+    labeled[o.regime]=true;
+    const vr=altToVis(o.alt);
+    const rg=REGIMES[o.regime];
+    ctx2.font="bold 7px 'Space Mono',monospace";ctx2.fillStyle=rg.color;ctx2.textAlign='left';
+    ctx2.fillText(o.regime,cx+vr+6,cy-3);
+  });
+
+  // Earth
+  const eg=ctx2.createRadialGradient(cx,cy,0,cx,cy,EARTH_VIS*1.5);
+  eg.addColorStop(0,'#1a6a9a');eg.addColorStop(0.4,'#1a5a7a');eg.addColorStop(0.7,'#0a3050');eg.addColorStop(1,'rgba(0,30,60,0)');
+  ctx2.beginPath();ctx2.arc(cx,cy,EARTH_VIS*1.5,0,Math.PI*2);ctx2.fillStyle=eg;ctx2.fill();
+  const eg2=ctx2.createRadialGradient(cx,cy,0,cx,cy,EARTH_VIS);
+  eg2.addColorStop(0,'#2a8fcc');eg2.addColorStop(0.5,'#1a6a9a');eg2.addColorStop(1,'#0a3050');
+  ctx2.beginPath();ctx2.arc(cx,cy,EARTH_VIS,0,Math.PI*2);ctx2.fillStyle=eg2;ctx2.fill();
+  ctx2.font="bold 7px 'Space Mono',monospace";ctx2.fillStyle='rgba(255,255,255,0.4)';ctx2.textAlign='center';
+  ctx2.fillText('EARTH',cx,cy+EARTH_VIS+12);
+
+  // Objects
+  OBJECTS.forEach(o=>{
+    const vr=altToVis(o.alt);
+    const omega=periodToOmega(o.period);
+    const n=o.count||1;
+    const rg=REGIMES[o.regime];
+    const isSel=sel?.id===o.id,isHov=hovObj?.id===o.id;
+    for(let i=0;i<n;i++){
+      const baseOffset=(i/n)*Math.PI*2;
+      const ang=simT*omega+baseOffset;
+      const px=cx+Math.cos(ang)*vr,py=cy+Math.sin(ang)*vr;
+      // Glow
+      const gr=ctx2.createRadialGradient(px,py,0,px,py,10);
+      gr.addColorStop(0,o.color+'99');gr.addColorStop(1,'transparent');
+      ctx2.beginPath();ctx2.arc(px,py,10,0,Math.PI*2);ctx2.fillStyle=gr;ctx2.fill();
+      // Dot
+      if(isSel){const p=0.5+0.5*Math.sin(simT*5);ctx2.beginPath();ctx2.arc(px,py,5+p*2,0,Math.PI*2);ctx2.strokeStyle=`rgba(255,255,255,${0.3+p*0.3})`;ctx2.lineWidth=1;ctx2.stroke();}
+      ctx2.beginPath();ctx2.arc(px,py,n>1?2.5:3.5,0,Math.PI*2);ctx2.fillStyle=o.color;ctx2.fill();
+      // Always-visible label for first satellite of each object
+      if(i===0){
+        ctx2.save();
+        ctx2.font=`${isSel?'bold ':''}7px 'Space Mono',monospace`;
+        ctx2.fillStyle=isSel?'#fff':isHov?o.color:(o.color+'cc');
+        ctx2.textAlign='left';
+        if(isSel){ctx2.shadowColor=o.color;ctx2.shadowBlur=6;}
+        ctx2.fillText(o.short,px+6,py+3);
+        ctx2.restore();
+      }
+    }
+  });
+
+  // Scale fact overlay (bottom right if selected)
+  if(sel?.scale_fact){
+    ctx2.save();
+    const text=sel.scale_fact;
+    ctx2.font="italic 11px 'Crimson Pro',serif";
+    const tw=ctx2.measureText(text).width;
+    ctx2.fillStyle='rgba(4,4,12,0.8)';ctx2.fillRect(W-tw-36,H-100,tw+16,28);
+    ctx2.fillStyle='rgba(255,255,255,0.35)';ctx2.textAlign='right';
+    ctx2.fillText(text,W-20,H-82);
+    ctx2.restore();
+  }
+}
+
+// ── 3D setup ──────────────────────────────────────────────────
+const scene3=new THREE.Scene();
+const camera3=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,5000);
+const renderer3=new THREE.WebGLRenderer({antialias:true});
+renderer3.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer3.setSize(innerWidth,innerHeight);
+renderer3.setClearColor(0x04040c,1);
+document.getElementById('r3d').appendChild(renderer3.domElement);
+
+window.addEventListener('resize',()=>{
+  camera3.aspect=innerWidth/innerHeight;camera3.updateProjectionMatrix();
+  renderer3.setSize(innerWidth,innerHeight);
+});
+
+// Stars 3D
+const sp3=new Float32Array(2000*3);
+for(let i=0;i<2000;i++){const r=2000+Math.random()*500,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);sp3[i*3]=r*Math.sin(p)*Math.cos(t);sp3[i*3+1]=r*Math.sin(p)*Math.sin(t);sp3[i*3+2]=r*Math.cos(p);}
+const sGeo3=new THREE.BufferGeometry();sGeo3.setAttribute('position',new THREE.BufferAttribute(sp3,3));
+scene3.add(new THREE.Points(sGeo3,new THREE.PointsMaterial({color:0xdde4ff,size:1.2,sizeAttenuation:false,transparent:true,opacity:0.65})));
+
+// Lights
+scene3.add(new THREE.PointLight(0xffffff,1.2,1000));
+scene3.add(new THREE.AmbientLight(0x223355,0.8));
+const sunDir=new THREE.DirectionalLight(0xfff4e0,0.8);sunDir.position.set(500,200,300);scene3.add(sunDir);
+
+// Earth 3D
+const earthGeo3=new THREE.SphereGeometry(EARTH_VIS,32,32);
+const earthMat3=new THREE.MeshPhongMaterial({color:0x1a6a9a,emissive:0x0a3050,emissiveIntensity:0.3,shininess:20,specular:0x112244});
+const earthMesh3=new THREE.Mesh(earthGeo3,earthMat3);scene3.add(earthMesh3);
+// Load real Earth texture (NASA/Three.js public assets, public domain)
+new THREE.TextureLoader().load(
+  'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg',
+  tex=>{ earthMat3.map=tex; earthMat3.color.set(0xffffff); earthMat3.emissive.set(0x112233); earthMat3.emissiveIntensity=0.15; earthMat3.needsUpdate=true; },
+  undefined,
+  ()=>{ /* fallback — keep procedural blue */ }
+);
+// Atmosphere glow
+const atmMat=new THREE.MeshBasicMaterial({color:0x4499cc,transparent:true,opacity:0.12,side:THREE.BackSide,blending:THREE.AdditiveBlending,depthWrite:false});
+scene3.add(new THREE.Mesh(new THREE.SphereGeometry(EARTH_VIS*1.08,32,32),atmMat));
+
+// Build 3D orbit rings and object meshes
+const obj3D={};
+const clickMeshes3=[];
+
+OBJECTS.forEach(o=>{
+  const vr=altToVis(o.alt);
+  const rg=REGIMES[o.regime];
+  const incRad=((o.inclination)||0)*Math.PI/180;
+
+  // Orbit ring (inclined)
+  const pts=[];
+  for(let i=0;i<=128;i++){const a=i/128*Math.PI*2;pts.push(new THREE.Vector3(Math.cos(a)*vr,Math.sin(a)*vr*Math.cos(incRad),Math.sin(a)*vr*Math.sin(incRad)));}
+  // Apply inclination rotation around X axis (ascending node simplification)
+  const ringGeo=new THREE.BufferGeometry().setFromPoints(pts);
+  const ringMat=new THREE.LineBasicMaterial({color:parseInt(rg.color.replace('#','0x')),transparent:true,opacity:0.08,depthWrite:false});
+  const ring=new THREE.LineLoop(ringGeo,ringMat);scene3.add(ring);
+
+  // Object meshes
+  const n=o.count||1;
+  const meshes=[];
+  for(let i=0;i<n;i++){
+    // Glow sphere
+    const gMat=new THREE.MeshBasicMaterial({color:parseInt(o.color.replace('#','0x')),transparent:true,opacity:0.4,blending:THREE.AdditiveBlending,depthWrite:false});
+    const gMesh=new THREE.Mesh(new THREE.SphereGeometry(o.size3*2,8,8),gMat);scene3.add(gMesh);
+    // Main dot
+    const dMat=new THREE.MeshBasicMaterial({color:parseInt(o.color.replace('#','0x'))});
+    const dMesh=new THREE.Mesh(new THREE.SphereGeometry(o.size3,8,8),dMat);
+    dMesh.userData.obj=o; scene3.add(dMesh);
+    // Hit sphere
+    const hMesh=new THREE.Mesh(new THREE.SphereGeometry(o.size3*4,8,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0}));
+    hMesh.userData.obj=o; scene3.add(hMesh); clickMeshes3.push(hMesh);
+    meshes.push({gMesh,dMesh,hMesh});
+  }
+  obj3D[o.id]={ring,ringMat,meshes,incRad,vr};
+});
+
+// Camera orbit 3D
+let camT3=0.6,camP3=1.0,camR3=420,isDrag3=false,dragMoved3=false,lmx3=0,lmy3=0,autoOrbit3=true;
+function updateCam3(){camera3.position.set(camR3*Math.sin(camP3)*Math.sin(camT3),camR3*Math.cos(camP3),camR3*Math.sin(camP3)*Math.cos(camT3));camera3.lookAt(0,0,0);}
+updateCam3();
+const el3=renderer3.domElement;
+el3.addEventListener('mousedown',e=>{isDrag3=true;dragMoved3=false;lmx3=e.clientX;lmy3=e.clientY;autoOrbit3=false;el3.style.cursor='grabbing';});
+window.addEventListener('mousemove',e=>{
+  if(isDrag3){const dx=e.clientX-lmx3,dy=e.clientY-lmy3;if(Math.abs(dx)+Math.abs(dy)>2)dragMoved3=true;camT3-=dx*0.005;camP3=Math.max(0.08,Math.min(Math.PI*0.48,camP3+dy*0.004));lmx3=e.clientX;lmy3=e.clientY;updateCam3();}
+  if(currentView==='3d'){
+    const ray=new THREE.Raycaster();const rect=el3.getBoundingClientRect();
+    ray.setFromCamera(new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),camera3);
+    const hits=ray.intersectObjects(clickMeshes3);
+    hovObj=hits.length>0?hits[0].object.userData.obj:null;
+    el3.style.cursor=hovObj?'pointer':(isDrag3?'grabbing':'grab');
+    const lbl=document.getElementById('planet-label');
+    if(hovObj){const p=new THREE.Vector3();hits[0].object.getWorldPosition(p);p.project(camera3);lbl.style.left=((p.x+1)/2*innerWidth)+'px';lbl.style.top=((-p.y+1)/2*innerHeight-20)+'px';lbl.textContent=hovObj.short;lbl.style.opacity='1';}
+    else lbl.style.opacity='0';
+  }
+});
+window.addEventListener('mouseup',()=>{isDrag3=false;el3.style.cursor=hovObj?'pointer':'grab';setTimeout(()=>{autoOrbit3=true;},4000);});
+el3.addEventListener('wheel',e=>{camR3=Math.max(80,Math.min(1000,camR3+e.deltaY*0.5));updateCam3();},{passive:true});
+el3.addEventListener('click',e=>{
+  if(dragMoved3||currentView!=='3d')return;
+  const ray=new THREE.Raycaster();const rect=el3.getBoundingClientRect();
+  ray.setFromCamera(new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),camera3);
+  const hits=ray.intersectObjects(clickMeshes3);
+  if(hits.length>0){sel=hits[0].object.userData.obj;panelOpen=true;renderPanel();}
+  else{panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+el3.style.cursor='grab';
+
+// ── 3D floating labels ────────────────────────────────────────
+const lbl3Container=document.createElement('div');
+lbl3Container.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:8;';
+document.getElementById('r3d').appendChild(lbl3Container);
+const labels3D={};
+OBJECTS.forEach(o=>{
+  const d=document.createElement('div');
+  d.textContent=o.short;
+  d.style.cssText=`position:absolute;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;color:${o.color};opacity:0.6;pointer-events:none;white-space:nowrap;transform:translate(7px,-50%);text-shadow:0 0 8px ${o.color}55;transition:opacity 0.2s;`;
+  lbl3Container.appendChild(d);
+  labels3D[o.id]=d;
+});
+
+function draw3d(dt){
+  earthMesh3.rotation.y+=dt*0.05;
+  // Update object positions
+  OBJECTS.forEach(o=>{
+    const d=obj3D[o.id];if(!d)return;
+    const omega=periodToOmega(o.period);
+    const vr=d.vr;
+    const incRad=d.incRad;
+    d.ringMat.opacity=sel?.id===o.id?0.25:0.07;
+    d.meshes.forEach((m,i)=>{
+      const n=d.meshes.length;
+      const baseOff=(i/n)*Math.PI*2;
+      const ang=simT*omega+baseOff;
+      const x=Math.cos(ang)*vr;
+      const y=Math.sin(ang)*vr*Math.sin(incRad);
+      const z=Math.sin(ang)*vr*Math.cos(incRad);
+      m.dMesh.position.set(x,y,z);
+      m.gMesh.position.set(x,y,z);
+      m.hMesh.position.set(x,y,z);
+      // Pulse selected
+      if(sel?.id===o.id){const p=0.5+0.5*Math.sin(simT*5);m.gMesh.material.opacity=0.4+p*0.4;}
+      else m.gMesh.material.opacity=0.3;
+    });
+  });
+  if(autoOrbit3){camT3+=dt*0.012;updateCam3();}
+  // Update 3D labels
+  OBJECTS.forEach(o=>{
+    const d=obj3D[o.id]; const lbl=labels3D[o.id];
+    if(!d||!d.meshes.length||!lbl) return;
+    const wp=d.meshes[0].dMesh.position.clone().project(camera3);
+    if(wp.z>1){lbl.style.opacity='0';return;}
+    lbl.style.left=((wp.x+1)/2*innerWidth)+'px';
+    lbl.style.top=((-wp.y+1)/2*innerHeight)+'px';
+    lbl.style.opacity=sel?.id===o.id?'1':hovObj?.id===o.id?'0.9':'0.55';
+    lbl.style.fontWeight=sel?.id===o.id?'700':'400';
+    lbl.style.color=sel?.id===o.id?'#fff':o.color;
+  });
+  renderer3.render(scene3,camera3);
+}
+
+// ── View toggle ───────────────────────────────────────────────
+window.setView=v=>{
+  currentView=v;
+  document.getElementById('r2d').style.opacity=v==='2d'?'1':'0';
+  document.getElementById('r2d').style.pointerEvents=v==='2d'?'auto':'none';
+  document.getElementById('r3d').style.opacity=v==='3d'?'1':'0';
+  document.getElementById('r3d').style.pointerEvents=v==='3d'?'auto':'none';
+  document.getElementById('tab-2d').className='vtab'+(v==='2d'?' active':'');
+  document.getElementById('tab-3d').className='vtab'+(v==='3d'?' active':'');
+  document.getElementById('planet-label').style.opacity='0';
+};
+
+// ── Speed buttons ─────────────────────────────────────────────
+[0.25,1,5,20].forEach(s=>{
+  const b=document.createElement('button');b.id='sp'+s;
+  b.style.cssText=`padding:4px 9px;font-size:8px;font-family:'Space Mono',monospace;background:transparent;border:1px solid ${simSpeedVal===s?'rgba(68,102,255,0.7)':'rgba(255,255,255,0.12)'};border-radius:3px;color:${simSpeedVal===s?'#7b9cff':'rgba(255,255,255,0.38)'};cursor:pointer;transition:all 0.15s;`;
+  b.textContent=s+'×';b.onclick=()=>{simSpeedVal=s;[0.25,1,5,20].forEach(x=>{const e=document.getElementById('sp'+x);e.style.borderColor=simSpeedVal===x?'rgba(68,102,255,0.7)':'rgba(255,255,255,0.12)';e.style.color=simSpeedVal===x?'#7b9cff':'rgba(255,255,255,0.38)';});};
+  document.getElementById('sbtns').appendChild(b);
+});
+
+// ── Panel ─────────────────────────────────────────────────────
+function renderPanel(){
+  const pnl=document.getElementById('panel');
+  if(!panelOpen||!sel){pnl.style.display='none';return;}
+  pnl.style.display='flex';pnl.style.flexDirection='column';
+  const rg=REGIMES[sel.regime];
+  const tc={};Object.keys(TIER).forEach(t=>{tc[t]=(sel.links||[]).filter(l=>l.t===t).length;});
+  const badges=Object.entries(TIER).filter(([t])=>tc[t]>0).map(([t,v])=>`<div style="font-size:7px;padding:2px 6px;background:${v.bg};color:${v.color};border-radius:2px;border:1px solid ${v.color}33;">${v.label} ${tc[t]}</div>`).join('');
+  const links=Object.entries(TIER).map(([tk,tv])=>{const ls=(sel.links||[]).filter(l=>l.t===tk);if(!ls.length)return'';return`<div style="margin-bottom:12px;"><div style="font-size:7px;letter-spacing:2px;color:${tv.color};margin-bottom:5px;display:flex;align-items:center;gap:6px;"><div style="flex:1;height:1px;background:${tv.dot}33;"></div>${tv.label}<div style="flex:1;height:1px;background:${tv.dot}33;"></div></div>${ls.map(lk=>`<a href="${lk.u}" target="_blank" rel="noopener" class="link-row" style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:4px;text-decoration:none;margin-bottom:2px;background:transparent;"><div style="width:5px;height:5px;border-radius:50%;background:${tv.dot};flex-shrink:0;"></div><span style="font-size:9px;color:rgba(255,255,255,0.65);flex:1;line-height:1.45;font-family:'Space Mono',monospace;">${lk.l}</span><span style="font-size:9px;color:rgba(255,255,255,0.2);">↗</span></a>`).join('')}</div>`;}).join('');
+
+  pnl.innerHTML=`
+    <div style="padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+            <div style="font-size:7px;letter-spacing:2px;color:${rg.color};font-weight:700;">${sel.regime}</div>
+            <div style="width:1px;height:10px;background:rgba(255,255,255,0.15);"></div>
+            <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);">${sel.type||''}</div>
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#fff;line-height:1.05;">${sel.name}</div>
+          <div style="font-size:8px;color:rgba(255,255,255,0.3);margin-top:3px;letter-spacing:1px;">${sel.agencies.join(' · ')} · ${sel.launched}</div>
+        </div>
+        <div onclick="closePanel()" style="width:26px;height:26px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:14px;flex-shrink:0;user-select:none;">×</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">ALTITUDE</div>
+          <div style="font-size:11px;color:#fff;font-weight:700;">${sel.alt.toLocaleString()} km</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">PERIOD</div>
+          <div style="font-size:11px;color:#fff;font-weight:700;">${sel.period?sel.period+' min':'L2 orbit'}</div>
+        </div>
+        ${sel.inclination!=null?`<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">INCLINATION</div>
+          <div style="font-size:11px;color:#fff;font-weight:700;">${sel.inclination}°</div>
+        </div>`:''}
+        ${sel.crew!=null?`<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">CREW</div>
+          <div style="font-size:11px;color:#fff;font-weight:700;">${sel.crew===0?'Uncrewed':sel.crew+' people'}</div>
+        </div>`:''}
+      </div>
+    </div>
+
+    <div style="padding:12px 20px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:${sel.scale_fact?'10':'0'}px;">${sel.description}</p>
+      ${sel.scale_fact?`<div style="padding:8px 11px;background:rgba(${REGIMES[sel.regime].color.replace('#','').match(/../g).map(h=>parseInt(h,16)).join(',')},0.08);border-left:3px solid ${rg.color};border-radius:2px;font-family:'Crimson Pro',serif;font-style:italic;font-size:11px;color:${rg.color};line-height:1.5;">${sel.scale_fact}</div>`:''}
+    </div>
+
+    ${sel.links&&sel.links.length?`<div style="flex:1;overflow-y:auto;padding:12px 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.25);">KNOWLEDGE BASE</div>
+        <div style="display:flex;gap:4px;">${badges}</div>
+      </div>
+      ${links}
+    </div>`:'<div style="flex:1;"></div>'}
+    <div style="padding:10px 20px;border-top:1px solid rgba(255,255,255,0.06);font-size:7px;color:rgba(255,255,255,0.14);text-align:center;letter-spacing:1px;flex-shrink:0;">All orbital data: publicly sourced · For educational use</div>`;
+}
+window.closePanel=()=>{panelOpen=false;document.getElementById('panel').style.display='none';};
+
+// ── Main loop ─────────────────────────────────────────────────
+function animate(now){
+  requestAnimationFrame(animate);
+  const dt=Math.min((now-lastTime)/1000,0.05);lastTime=now;
+  simT+=dt*simSpeedVal; frameN++;
+  if(currentView==='2d') draw2d();
+  else draw3d(dt*simSpeedVal);
+}
+animate(performance.now());
+</script>
+</body>
+</html>

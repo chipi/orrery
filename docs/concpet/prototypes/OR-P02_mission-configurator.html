@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Mission Configurator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;overflow:hidden;width:100vw;height:100vh;font-family:'Space Mono',monospace;color:#fff;}
+  canvas{display:block;}
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+  .step{display:flex;align-items:center;gap:10px;padding:0 8px;cursor:default;}
+  .step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0;}
+  .step-active .step-num{background:rgba(68,102,255,0.8);color:#fff;}
+  .step-done .step-num{background:rgba(78,205,196,0.4);color:#4ecdc4;}
+  .step-todo .step-num{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.3);}
+  .step-label{font-size:8px;letter-spacing:2px;font-weight:700;}
+  .step-active .step-label{color:#fff;}
+  .step-done .step-label{color:#4ecdc4;}
+  .step-todo .step-label{color:rgba(255,255,255,0.25);}
+  .step-div{width:30px;height:1px;background:rgba(255,255,255,0.1);}
+  .stat-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:10px 12px;}
+  .stat-key{font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.28);margin-bottom:4px;}
+  .stat-val{font-size:13px;color:#fff;font-weight:700;}
+  .cta-btn{width:100%;padding:14px;background:#1a33bb;border:1px solid rgba(68,102,255,0.6);border-radius:4px;cursor:pointer;color:#fff;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;transition:background 0.2s;}
+  .cta-btn:hover{background:#2244cc;}
+  .cta-btn:disabled{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.2);cursor:default;}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  #loading{position:absolute;inset:0;background:#04040c;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;}
+  #loading-bar{width:280px;height:2px;background:rgba(255,255,255,0.08);border-radius:2px;margin-top:16px;overflow:hidden;}
+  #loading-fill{height:100%;background:#4466ff;border-radius:2px;transition:width 0.1s;}
+</style>
+</head>
+<body>
+
+<!-- Loading screen -->
+<div id="loading">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:4px;color:rgba(255,255,255,0.5);">COMPUTING LAMBERT SOLUTIONS</div>
+  <div id="loading-bar"><div id="loading-fill" style="width:0%"></div></div>
+  <div id="loading-pct" style="font-size:8px;color:rgba(255,255,255,0.2);margin-top:8px;letter-spacing:2px;">0%</div>
+</div>
+
+<!-- Main app -->
+<div id="app" style="display:none;height:100vh;display:flex;flex-direction:column;">
+
+  <!-- NAV -->
+  <div style="height:52px;background:rgba(4,4,12,0.95);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 24px;flex-shrink:0;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+    <div style="display:flex;gap:3px;">
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;" onclick="window.location='OR-P01_solar-system-explorer.html'">EXPLORE</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.2);border:1px solid rgba(68,102,255,0.45);border-radius:3px;">PLAN</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">FLY</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">MISSIONS</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:7px;">
+      <div style="width:6px;height:6px;border-radius:50%;background:#4ecdc4;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></div>
+      <span style="font-size:8px;color:rgba(255,255,255,0.28);letter-spacing:1px;">EARTH → MARS</span>
+    </div>
+  </div>
+
+  <!-- STEP INDICATOR -->
+  <div style="height:44px;background:rgba(4,4,12,0.9);border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;gap:0;flex-shrink:0;">
+    <div class="step step-active">
+      <div class="step-num">1</div>
+      <div class="step-label">LAUNCH WINDOW</div>
+    </div>
+    <div class="step-div"></div>
+    <div class="step step-todo">
+      <div class="step-num">2</div>
+      <div class="step-label">ROCKET &amp; PAYLOAD</div>
+    </div>
+    <div class="step-div"></div>
+    <div class="step step-todo">
+      <div class="step-num">3</div>
+      <div class="step-label">MISSION REVIEW</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div style="flex:1;display:flex;overflow:hidden;min-height:0;">
+
+    <!-- PLOT AREA -->
+    <div style="flex:1;position:relative;min-width:0;">
+      <canvas id="plot" style="width:100%;height:100%;"></canvas>
+    </div>
+
+    <!-- SIDE PANEL -->
+    <div id="side" style="width:300px;flex-shrink:0;background:rgba(4,4,12,0.97);border-left:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;overflow:hidden;">
+
+      <!-- Panel header -->
+      <div style="padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div style="font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.25);margin-bottom:4px;">STEP 1 OF 3</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:#fff;line-height:1;">LAUNCH WINDOW</div>
+        <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.5;margin-top:8px;">Each coloured cell is a mission. Blue cells cost less fuel. Click to select your departure and arrival dates.</p>
+      </div>
+
+      <!-- Selection or empty state -->
+      <div id="sel-content" style="flex:1;overflow-y:auto;padding:16px 20px;">
+        <div id="empty-state" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;opacity:0.35;">
+          <div style="font-size:32px;">⊕</div>
+          <div style="font-size:9px;letter-spacing:2px;text-align:center;line-height:1.8;">HOVER THE PLOT<br>TO EXPLORE WINDOWS<br>CLICK TO SELECT</div>
+        </div>
+        <div id="sel-data" style="display:none;animation:fadeIn 0.2s;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+            <div class="stat-box"><div class="stat-key">DEPARTURE</div><div class="stat-val" id="s-dep" style="font-size:11px;">—</div></div>
+            <div class="stat-box"><div class="stat-key">ARRIVAL</div><div class="stat-val" id="s-arr" style="font-size:11px;">—</div></div>
+            <div class="stat-box"><div class="stat-key">TRANSIT TIME</div><div class="stat-val" id="s-tof">—</div></div>
+            <div class="stat-box"><div class="stat-key">Δv REQUIRED</div><div class="stat-val" id="s-dv" style="color:#4ecdc4;">—</div></div>
+            <div class="stat-box" style="grid-column:span 2;"><div class="stat-key">C3 ENERGY</div><div class="stat-val" id="s-c3" style="font-size:11px;">—</div></div>
+          </div>
+          <!-- Window quality -->
+          <div id="s-quality" style="padding:10px 12px;border-radius:4px;margin-bottom:12px;font-size:9px;letter-spacing:1px;line-height:1.6;"></div>
+          <!-- Mini solar system -->
+          <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:8px;">DEPARTURE GEOMETRY</div>
+          <canvas id="mini" width="260" height="200" style="width:100%;border-radius:4px;background:#07070f;border:1px solid rgba(255,255,255,0.06);"></canvas>
+          <div style="font-size:7px;color:rgba(255,255,255,0.2);margin-top:6px;text-align:center;letter-spacing:1px;">EARTH → MARS TRANSFER ARC AT SELECTED DATE</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="padding:14px 20px;border-top:1px solid rgba(255,255,255,0.06);">
+        <button class="cta-btn" id="cta" disabled>
+          <span>▶</span><span>CONFIGURE ROCKET</span>
+        </button>
+        <div id="cta-hint" style="font-size:8px;color:rgba(255,255,255,0.2);text-align:center;margin-top:8px;letter-spacing:1px;">Select a launch window to continue</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// CONSTANTS & ORBITAL MECHANICS
+// ═══════════════════════════════════════════════════════════════
+const MU = 4 * Math.PI * Math.PI;     // AU³/yr² (μ_sun in natural units)
+const AU_YR_KMS = 4.7404;             // 1 AU/yr = 4.7404 km/s
+const R_EARTH = 1.0;                  // AU
+const R_MARS  = 1.524;                // AU
+
+// Epoch: Jan 1, 2026. Planet angles (radians) computed from J2000 elements.
+// Earth mean longitude at J2000 = 100.46° → propagated to Jan 1 2026
+// (9497 days after J2000, 365.25 day period)
+const EPOCH_YEAR = 2026;
+const EARTH_A0 = 1.678;              // rad at Jan 1 2026
+const MARS_A0  = 5.136;              // rad at Jan 1 2026
+const EARTH_W  = 2*Math.PI/365.25;   // rad/day
+const MARS_W   = 2*Math.PI/686.97;   // rad/day
+
+// Plot grid dimensions
+const DEP_DAYS = 1460;    // 4 years departure range
+const TOF_MIN  = 80;      // days
+const TOF_MAX  = 520;     // days
+const GRID_W   = 140;     // departure cells
+const GRID_H   = 80;      // TOF cells
+
+// ── Lambert solver ─────────────────────────────────────────────
+// Lagrange-Gauss short-way TOF formula
+function lambertTOF(a, s, c) {
+  if (a <= s/2 + 1e-9) return 1e9;
+  const sinAlpha = Math.sqrt(Math.min(1, s / (2*a)));
+  const sinBeta  = Math.sqrt(Math.max(0, (s-c) / (2*a)));
+  const alpha = 2 * Math.asin(sinAlpha);
+  const beta  = 2 * Math.asin(sinBeta);
+  return Math.sqrt(a*a*a / MU) * ((alpha - Math.sin(alpha)) - (beta - Math.sin(beta)));
+}
+
+function computeDv(dep_day, tof_day) {
+  const arr_day = dep_day + tof_day;
+  const tof_yr  = tof_day / 365.25;
+
+  // Planet positions (simplified circular orbits)
+  const tE = EARTH_A0 + EARTH_W * dep_day;
+  const tM = MARS_A0  + MARS_W  * arr_day;
+  const r1x = R_EARTH * Math.cos(tE),  r1y = R_EARTH * Math.sin(tE);
+  const r2x = R_MARS  * Math.cos(tM),  r2y = R_MARS  * Math.sin(tM);
+  const r1 = R_EARTH, r2 = R_MARS;
+
+  // Chord and semi-perimeter
+  const cx = r2x-r1x, cy = r2y-r1y;
+  const c = Math.sqrt(cx*cx+cy*cy);
+  const s = (r1+r2+c)/2;
+
+  // Minimum energy semi-major axis
+  const a_min = s/2 + 1e-6;
+
+  // Parabolic time (minimum achievable TOF)
+  const t_par = (Math.pow(s,1.5) - Math.pow(Math.abs(s-c),1.5)) * Math.sqrt(2/MU) / 3;
+  if (tof_yr < t_par * 0.98) return 28; // Not physically achievable
+
+  // Bisect to find semi-major axis a such that lambertTOF(a,s,c) = tof_yr
+  // lambertTOF decreases as a increases → larger a = faster transfer
+  let a_lo = a_min, a_hi = 200.0;
+
+  // Check bounds
+  if (lambertTOF(a_lo, s, c) < tof_yr) return 28; // TOF too long for short-way
+  if (lambertTOF(a_hi, s, c) > tof_yr) return 28; // TOF too short (parabolic limit)
+
+  for (let i = 0; i < 52; i++) {
+    const a_mid = (a_lo + a_hi) / 2;
+    if (lambertTOF(a_mid, s, c) > tof_yr) a_lo = a_mid;
+    else a_hi = a_mid;
+  }
+  const a = (a_lo + a_hi) / 2;
+  if (!isFinite(a) || a <= 0) return 28;
+
+  // Vis-viva Δv (heliocentric, coplanar approximation)
+  const v_dep = Math.sqrt(Math.max(0, MU*(2/r1 - 1/a)));
+  const v_arr = Math.sqrt(Math.max(0, MU*(2/r2 - 1/a)));
+  const v_earth = Math.sqrt(MU/r1);
+  const v_mars  = Math.sqrt(MU/r2);
+
+  const dv = (Math.abs(v_dep - v_earth) + Math.abs(v_mars - v_arr)) * AU_YR_KMS;
+  return Math.max(3.2, Math.min(dv, 28));
+}
+
+// ── Grid precomputation (chunked for loading bar) ───────────────
+const dvGrid = Array.from({length:GRID_H}, () => new Float32Array(GRID_W));
+let gridDone = false;
+
+function precomputeGrid(callback) {
+  let row = 0;
+  function chunk() {
+    const end = Math.min(row + 5, GRID_H);
+    for (let j = row; j < end; j++) {
+      const tof = TOF_MIN + (j / (GRID_H-1)) * (TOF_MAX - TOF_MIN);
+      for (let i = 0; i < GRID_W; i++) {
+        const dep = (i / (GRID_W-1)) * DEP_DAYS;
+        dvGrid[j][i] = computeDv(dep, tof);
+      }
+    }
+    row = end;
+    const pct = Math.round((row/GRID_H)*100);
+    document.getElementById('loading-fill').style.width = pct + '%';
+    document.getElementById('loading-pct').textContent = pct + '%';
+    if (row < GRID_H) requestAnimationFrame(chunk);
+    else callback();
+  }
+  requestAnimationFrame(chunk);
+}
+
+// ── Color mapping ───────────────────────────────────────────────
+function dvToRGB(dv) {
+  const t = Math.max(0, Math.min(1, (dv - 3.2) / 13));
+  const stops = [
+    [0.00, [8,  14, 90]],
+    [0.12, [16, 60, 180]],
+    [0.28, [20, 160, 210]],
+    [0.42, [24, 200, 120]],
+    [0.56, [200, 220, 30]],
+    [0.70, [240, 130, 20]],
+    [0.84, [220, 40,  20]],
+    [1.00, [120, 10,  10]],
+  ];
+  for (let i = 0; i < stops.length-1; i++) {
+    const [t0, c0] = stops[i], [t1, c1] = stops[i+1];
+    if (t >= t0 && t <= t1) {
+      const f = (t-t0)/(t1-t0);
+      return [c0[0]+f*(c1[0]-c0[0]), c0[1]+f*(c1[1]-c0[1]), c0[2]+f*(c1[2]-c0[2])];
+    }
+  }
+  return [120,10,10];
+}
+
+function dvToHex(dv) {
+  const [r,g,b] = dvToRGB(dv);
+  return `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+}
+
+// ── Date utilities ───────────────────────────────────────────────
+function dayToDate(day) {
+  const d = new Date(EPOCH_YEAR, 0, 1);
+  d.setDate(d.getDate() + Math.round(day));
+  return d;
+}
+function dayToStr(day) {
+  return dayToDate(day).toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});
+}
+function dayToShort(day) {
+  return dayToDate(day).toLocaleDateString('en-US',{year:'2-digit',month:'short'});
+}
+
+// ── Canvas setup ─────────────────────────────────────────────────
+const plotCanvas = document.getElementById('plot');
+const pCtx = plotCanvas.getContext('2d');
+
+// Margins
+const ML = 72, MR = 24, MT = 36, MB = 52;
+let PW, PH; // plot width/height
+
+function resizePlot() {
+  plotCanvas.width  = plotCanvas.offsetWidth;
+  plotCanvas.height = plotCanvas.offsetHeight;
+  PW = plotCanvas.width  - ML - MR;
+  PH = plotCanvas.height - MT - MB;
+}
+
+// ── Heatmap rendering ─────────────────────────────────────────────
+let heatmapCache = null;
+
+function buildHeatmapImage() {
+  const img = pCtx.createImageData(PW, PH);
+  for (let py = 0; py < PH; py++) {
+    for (let px = 0; px < PW; px++) {
+      // Bilinear interpolation from grid
+      const gx = (px / PW) * (GRID_W - 1);
+      const gy = (py / PH) * (GRID_H - 1); // y=0 at top = long TOF or short TOF?
+      // Y=0 at top of plot = max TOF (bottom axis), so flip:
+      const gy2 = (GRID_H-1) - gy; // flip so top of canvas = high TOF
+      const i0 = Math.floor(gx), i1 = Math.min(i0+1, GRID_W-1);
+      const j0 = Math.floor(gy2), j1 = Math.min(j0+1, GRID_H-1);
+      const fx = gx-i0, fy = gy2-j0;
+      const v00 = dvGrid[j0]?.[i0]??28, v10 = dvGrid[j0]?.[i1]??28;
+      const v01 = dvGrid[j1]?.[i0]??28, v11 = dvGrid[j1]?.[i1]??28;
+      const dv = v00*(1-fx)*(1-fy) + v10*fx*(1-fy) + v01*(1-fx)*fy + v11*fx*fy;
+      const [r,g,b] = dvToRGB(dv);
+      const idx = (py*PW+px)*4;
+      img.data[idx]=r; img.data[idx+1]=g; img.data[idx+2]=b; img.data[idx+3]=255;
+    }
+  }
+  heatmapCache = img;
+}
+
+// ── Contour lines ──────────────────────────────────────────────────
+function drawContours(levels=[5,6,7,8,10,14]) {
+  // Simple marching squares lite — draw horizontal scan lines where dv crosses level
+  pCtx.save();
+  levels.forEach(lv => {
+    pCtx.beginPath();
+    pCtx.strokeStyle = lv <= 6 ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.14)';
+    pCtx.lineWidth = lv <= 6 ? 1.2 : 0.6;
+    for (let j = 0; j < GRID_H-1; j++) {
+      for (let i = 0; i < GRID_W-1; i++) {
+        const v0=dvGrid[j][i], v1=dvGrid[j][i+1], v2=dvGrid[j+1][i];
+        // Check if level crosses between (j,i) and (j,i+1)
+        if ((v0<lv)!==(v1<lv)) {
+          const frac=(lv-v0)/(v1-v0);
+          const px=ML+(i+frac)/(GRID_W-1)*PW;
+          const py_grid=j/(GRID_H-1);
+          const py2=(1-py_grid)*PH+MT;
+          pCtx.moveTo(px, py2); pCtx.lineTo(px, py2-0.5);
+        }
+        if ((v0<lv)!==(v2<lv)) {
+          const frac=(lv-v0)/(v2-v0);
+          const gx=i/(GRID_W-1)*PW+ML;
+          const py_grid=(j+frac)/(GRID_H-1);
+          const py2=(1-py_grid)*PH+MT;
+          pCtx.moveTo(gx, py2); pCtx.lineTo(gx+0.5, py2);
+        }
+      }
+    }
+    pCtx.stroke();
+  });
+  pCtx.restore();
+}
+
+// ── Axis labels ────────────────────────────────────────────────────
+function drawAxes() {
+  pCtx.save();
+  pCtx.font = "8px 'Space Mono',monospace";
+  pCtx.fillStyle = 'rgba(255,255,255,0.38)';
+  pCtx.textAlign = 'center';
+
+  // X axis: departure dates every ~91 days (3 months)
+  const xTicks = [];
+  for (let d = 0; d <= DEP_DAYS; d += 91) {
+    const x = ML + (d/DEP_DAYS)*PW;
+    const label = dayToShort(d);
+    xTicks.push({x, label, d});
+  }
+  xTicks.forEach(({x,label}) => {
+    pCtx.beginPath();
+    pCtx.strokeStyle='rgba(255,255,255,0.12)';pCtx.lineWidth=0.5;
+    pCtx.moveTo(x,MT);pCtx.lineTo(x,MT+PH);pCtx.stroke();
+    pCtx.fillText(label, x, MT+PH+18);
+  });
+
+  // Y axis: flight duration
+  pCtx.textAlign='right';
+  for (let tof = 100; tof <= 500; tof += 60) {
+    const frac=(tof-TOF_MIN)/(TOF_MAX-TOF_MIN);
+    const y = MT + (1-frac)*PH;
+    pCtx.beginPath();
+    pCtx.strokeStyle='rgba(255,255,255,0.08)';pCtx.lineWidth=0.5;
+    pCtx.moveTo(ML,y);pCtx.lineTo(ML+PW,y);pCtx.stroke();
+    pCtx.fillStyle='rgba(255,255,255,0.38)';
+    pCtx.fillText(tof+'d', ML-8, y+3);
+  }
+
+  // Axis titles
+  pCtx.fillStyle='rgba(255,255,255,0.25)';
+  pCtx.textAlign='center';
+  pCtx.font="7px 'Space Mono',monospace";
+  pCtx.fillText('DEPARTURE DATE', ML+PW/2, MT+PH+36);
+
+  pCtx.save();
+  pCtx.translate(14, MT+PH/2);
+  pCtx.rotate(-Math.PI/2);
+  pCtx.fillText('FLIGHT DURATION (DAYS)', 0, 0);
+  pCtx.restore();
+
+  // Border
+  pCtx.strokeStyle='rgba(255,255,255,0.1)';pCtx.lineWidth=1;
+  pCtx.strokeRect(ML,MT,PW,PH);
+
+  pCtx.restore();
+}
+
+// ── Window annotations ────────────────────────────────────────────
+// Known optimal windows (from phase angle calculation):
+// 2026 window: dep ≈ day 333 (Dec 1 2026), optimal TOF ≈ 259d
+// 2029 window: dep ≈ day 1113 (Jan 2029)
+const WINDOWS = [
+  {dep:310, tof:259, label:'2026 WINDOW', quality:'EXCELLENT'},
+  {dep:1090,tof:259, label:'2029 WINDOW', quality:'GOOD'},
+];
+
+function drawAnnotations() {
+  pCtx.save();
+  WINDOWS.forEach(w => {
+    if (w.dep < 0 || w.dep > DEP_DAYS) return;
+    const px = ML + (w.dep/DEP_DAYS)*PW;
+    const tofFrac = (w.tof-TOF_MIN)/(TOF_MAX-TOF_MIN);
+    const py = MT + (1-tofFrac)*PH;
+
+    // Window label line
+    pCtx.strokeStyle='rgba(255,255,255,0.3)';pCtx.lineWidth=1;
+    pCtx.setLineDash([3,3]);
+    pCtx.beginPath();pCtx.moveTo(px,MT+8);pCtx.lineTo(px,MT+20);pCtx.stroke();
+    pCtx.setLineDash([]);
+
+    // Label box
+    pCtx.font="bold 8px 'Space Mono',monospace";
+    const tw = pCtx.measureText(w.label).width;
+    pCtx.fillStyle='rgba(4,4,12,0.8)';
+    pCtx.fillRect(px-tw/2-4, MT+2, tw+8, 14);
+    pCtx.fillStyle='rgba(255,255,255,0.65)';
+    pCtx.textAlign='center';
+    pCtx.fillText(w.label, px, MT+12);
+  });
+  pCtx.restore();
+}
+
+// ── Color legend ──────────────────────────────────────────────────
+function drawLegend() {
+  pCtx.save();
+  const lx = ML+PW-160, ly = MT+10, lw = 150, lh = 12;
+  const grad = pCtx.createLinearGradient(lx,0,lx+lw,0);
+  [[0,'#080e5a'],[0.15,'#103cb4'],[0.3,'#14a0d2'],[0.45,'#18c878'],
+   [0.6,'#c8dc1e'],[0.75,'#f08214'],[0.9,'#dc2814'],[1,'#780a0a']].forEach(([s,c])=>grad.addColorStop(s,c));
+  pCtx.fillStyle=grad;pCtx.fillRect(lx,ly,lw,lh);
+  pCtx.strokeStyle='rgba(255,255,255,0.15)';pCtx.lineWidth=0.5;pCtx.strokeRect(lx,ly,lw,lh);
+  pCtx.font="7px 'Space Mono',monospace";pCtx.fillStyle='rgba(255,255,255,0.5)';
+  pCtx.textAlign='left'; pCtx.fillText('3.5', lx, ly+lh+10);
+  pCtx.textAlign='center';pCtx.fillText('Δv  km/s', lx+lw/2, ly+lh+10);
+  pCtx.textAlign='right'; pCtx.fillText('16+', lx+lw, ly+lh+10);
+  pCtx.restore();
+}
+
+// ── Interaction state ─────────────────────────────────────────────
+let hovCell = null; // {ci, ji, dep, tof, dv}
+let selCell = null;
+
+function pixelToCell(mx, my) {
+  const fx=(mx-ML)/PW, fy=(my-MT)/PH;
+  if (fx<0||fx>1||fy<0||fy>1) return null;
+  const ci=Math.round(fx*(GRID_W-1));
+  const ji=Math.round((1-fy)*(GRID_H-1)); // flip Y
+  const dep=(ci/(GRID_W-1))*DEP_DAYS;
+  const tof=TOF_MIN+(ji/(GRID_H-1))*(TOF_MAX-TOF_MIN);
+  const dv=dvGrid[ji]?.[ci]??28;
+  return {ci,ji,dep,tof,dv};
+}
+
+function cellToPixel(ci, ji) {
+  return {
+    px: ML + (ci/(GRID_W-1))*PW,
+    py: MT + (1-ji/(GRID_H-1))*PH
+  };
+}
+
+function drawCrosshair(cell, isSelected=false) {
+  if (!cell) return;
+  const {px,py}=cellToPixel(cell.ci,cell.ji);
+  pCtx.save();
+  // Crosshair lines
+  pCtx.strokeStyle=isSelected?'rgba(255,255,255,0.9)':'rgba(255,255,255,0.45)';
+  pCtx.lineWidth=isSelected?1.5:0.8;
+  pCtx.setLineDash([3,3]);
+  pCtx.beginPath();pCtx.moveTo(ML,py);pCtx.lineTo(ML+PW,py);pCtx.stroke();
+  pCtx.beginPath();pCtx.moveTo(px,MT);pCtx.lineTo(px,MT+PH);pCtx.stroke();
+  pCtx.setLineDash([]);
+  // Center dot
+  pCtx.beginPath();pCtx.arc(px,py,isSelected?5:3.5,0,Math.PI*2);
+  pCtx.fillStyle=isSelected?'#fff':'rgba(255,255,255,0.8)';pCtx.fill();
+  if (isSelected) {
+    pCtx.strokeStyle='rgba(68,102,255,0.8)';pCtx.lineWidth=2;pCtx.stroke();
+  }
+  pCtx.restore();
+}
+
+function drawTooltip(cell) {
+  if (!cell) return;
+  const {px,py,dep,tof,dv}=cell;
+  const {px:cpx,py:cpy}=cellToPixel(cell.ci,cell.ji);
+  pCtx.save();
+  const text1=dayToShort(dep)+' dep';
+  const text2=Math.round(tof)+'d · '+dv.toFixed(1)+' km/s';
+  pCtx.font="bold 9px 'Space Mono',monospace";
+  const tw=Math.max(pCtx.measureText(text1).width,pCtx.measureText(text2).width);
+  let tx=cpx+12,ty=cpy-32;
+  if(tx+tw+12>ML+PW) tx=cpx-tw-24;
+  if(ty<MT+4) ty=cpy+12;
+  pCtx.fillStyle='rgba(4,4,12,0.9)';
+  pCtx.strokeStyle='rgba(255,255,255,0.15)';pCtx.lineWidth=0.8;
+  roundRect(pCtx, tx-6,ty-14,tw+12,36,4);
+  pCtx.fill();pCtx.stroke();
+  pCtx.fillStyle='rgba(255,255,255,0.8)';
+  pCtx.fillText(text1,tx,ty);
+  pCtx.fillStyle=dvToHex(dv);
+  pCtx.fillText(text2,tx,ty+14);
+  pCtx.restore();
+}
+
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
+
+// ── Full render ────────────────────────────────────────────────────
+function render() {
+  pCtx.clearRect(0,0,plotCanvas.width,plotCanvas.height);
+  pCtx.fillStyle='#06060f';pCtx.fillRect(ML,MT,PW,PH);
+  if (heatmapCache) pCtx.putImageData(heatmapCache, ML, MT);
+  drawContours();
+  drawAxes();
+  drawAnnotations();
+  drawLegend();
+  if (selCell) drawCrosshair(selCell,true);
+  if (hovCell && (!selCell || hovCell.ci!==selCell.ci || hovCell.ji!==selCell.ji)) drawCrosshair(hovCell,false);
+  if (hovCell) drawTooltip(hovCell);
+}
+
+// ── Mouse interaction ──────────────────────────────────────────────
+plotCanvas.addEventListener('mousemove', e => {
+  const r=plotCanvas.getBoundingClientRect();
+  const mx=(e.clientX-r.left)*(plotCanvas.width/r.width);
+  const my=(e.clientY-r.top)*(plotCanvas.height/r.height);
+  hovCell=pixelToCell(mx,my);
+  plotCanvas.style.cursor=hovCell?'crosshair':'default';
+  render();
+});
+plotCanvas.addEventListener('mouseleave',()=>{hovCell=null;render();});
+plotCanvas.addEventListener('click', e => {
+  if (!hovCell) return;
+  selCell={...hovCell};
+  updatePanel(selCell);
+  render();
+});
+
+// ── Side panel ─────────────────────────────────────────────────────
+function windowQuality(dv) {
+  if (dv < 5.5) return {label:'EXCELLENT WINDOW',color:'rgba(78,205,196,0.15)',border:'rgba(78,205,196,0.3)',text:'#4ecdc4',
+    note:'Low Δv — minimum fuel cost. This is a prime launch opportunity.'};
+  if (dv < 7.0) return {label:'GOOD WINDOW',color:'rgba(68,102,255,0.12)',border:'rgba(68,102,255,0.3)',text:'#7b9cff',
+    note:'Reasonable Δv. A practical mission profile with good payload margin.'};
+  if (dv < 9.0) return {label:'MARGINAL WINDOW',color:'rgba(240,180,40,0.12)',border:'rgba(240,180,40,0.3)',text:'#f0b428',
+    note:'Higher Δv. Payload must be reduced. Vehicles at their limit.'};
+  return {label:'EXPENSIVE WINDOW',color:'rgba(220,40,40,0.12)',border:'rgba(220,40,40,0.3)',text:'#ff6060',
+    note:'Very high Δv. Most vehicles cannot make this transfer. Wait for a better window.'};
+}
+
+function updatePanel(cell) {
+  const dep=cell.dep, tof=Math.round(cell.tof), arr=dep+tof, dv=cell.dv;
+  document.getElementById('empty-state').style.display='none';
+  document.getElementById('sel-data').style.display='block';
+  document.getElementById('s-dep').textContent=dayToStr(dep);
+  document.getElementById('s-arr').textContent=dayToStr(arr);
+  document.getElementById('s-tof').textContent=tof+' days';
+  document.getElementById('s-dv').textContent=dv.toFixed(2)+' km/s';
+  document.getElementById('s-dv').style.color=dvToHex(dv);
+  // C3 energy: C3 = (v_hyp)² = (dv_departure)² roughly
+  const c3=((dv*0.65)**2).toFixed(1);
+  document.getElementById('s-c3').textContent=c3+' km²/s²  (characteristic energy)';
+  const q=windowQuality(dv);
+  document.getElementById('s-quality').innerHTML=`<div style="font-weight:700;color:${q.text};letter-spacing:2px;margin-bottom:4px;">${q.label}</div><div style="color:rgba(255,255,255,0.5);font-size:9px;line-height:1.6;">${q.note}</div>`;
+  document.getElementById('s-quality').style.cssText+=`background:${q.color};border:1px solid ${q.border};border-radius:4px;padding:10px 12px;margin-bottom:12px;font-size:9px;letter-spacing:1px;line-height:1.6;`;
+  document.getElementById('cta').disabled=false;
+  document.getElementById('cta-hint').textContent='Window locked · '+dayToStr(dep)+' departure';
+  drawMiniSolarSystem(dep, dep+tof);
+}
+
+// ── Mini solar system ──────────────────────────────────────────────
+function drawMiniSolarSystem(dep_day, arr_day) {
+  const mc=document.getElementById('mini');
+  const mCtx=mc.getContext('2d');
+  const W=mc.width, H=mc.height, cx=W/2, cy=H/2;
+  const scale=78; // px per AU
+
+  mCtx.fillStyle='#07070f';mCtx.fillRect(0,0,W,H);
+
+  // Orbit circles
+  [R_EARTH,R_MARS].forEach((r,i)=>{
+    mCtx.beginPath();mCtx.arc(cx,cy,r*scale,0,Math.PI*2);
+    mCtx.strokeStyle=i===0?'rgba(75,156,211,0.2)':'rgba(193,68,14,0.2)';
+    mCtx.lineWidth=0.8;mCtx.stroke();
+  });
+
+  // Transfer arc
+  const tE=EARTH_A0+EARTH_W*dep_day, tM=MARS_A0+MARS_W*arr_day;
+  const ePos={x:cx+Math.cos(tE)*R_EARTH*scale,y:cy+Math.sin(tE)*R_EARTH*scale};
+  const mPos={x:cx+Math.cos(tM)*R_MARS*scale, y:cy+Math.sin(tM)*R_MARS*scale};
+  const midX=(ePos.x+mPos.x)/2, midY=(ePos.y+mPos.y)/2;
+  const dx=mPos.x-ePos.x,dy=mPos.y-ePos.y,len=Math.sqrt(dx*dx+dy*dy)||1;
+  const cpx=midX-(dy/len)*22, cpy=midY+(dx/len)*22;
+  mCtx.beginPath();mCtx.moveTo(ePos.x,ePos.y);mCtx.quadraticCurveTo(cpx,cpy,mPos.x,mPos.y);
+  mCtx.strokeStyle='rgba(68,102,255,0.7)';mCtx.lineWidth=1.5;mCtx.setLineDash([4,3]);mCtx.stroke();mCtx.setLineDash([]);
+
+  // Sun
+  const sg=mCtx.createRadialGradient(cx,cy,0,cx,cy,14);
+  sg.addColorStop(0,'#fff8e7');sg.addColorStop(0.5,'#ffe060');sg.addColorStop(1,'rgba(255,140,0,0)');
+  mCtx.beginPath();mCtx.arc(cx,cy,14,0,Math.PI*2);mCtx.fillStyle=sg;mCtx.fill();
+
+  // Earth
+  mCtx.beginPath();mCtx.arc(ePos.x,ePos.y,5.5,0,Math.PI*2);mCtx.fillStyle='#4b9cd3';mCtx.fill();
+  mCtx.font="bold 7px 'Space Mono'";mCtx.fillStyle='rgba(255,255,255,0.7)';mCtx.textAlign='center';
+  mCtx.fillText('DEP',ePos.x,ePos.y-9);
+
+  // Mars at arrival
+  mCtx.beginPath();mCtx.arc(mPos.x,mPos.y,4,0,Math.PI*2);mCtx.fillStyle='#c1440e';mCtx.fill();
+  mCtx.fillText('ARR',mPos.x,mPos.y-8);
+
+  // Mars at departure (ghost)
+  const tM0=MARS_A0+MARS_W*dep_day;
+  const mPos0={x:cx+Math.cos(tM0)*R_MARS*scale,y:cy+Math.sin(tM0)*R_MARS*scale};
+  mCtx.beginPath();mCtx.arc(mPos0.x,mPos0.y,4,0,Math.PI*2);
+  mCtx.strokeStyle='rgba(193,68,14,0.4)';mCtx.lineWidth=1;mCtx.stroke();
+}
+
+// ── Resize handler ─────────────────────────────────────────────────
+window.addEventListener('resize',()=>{
+  resizePlot();
+  if (gridDone) {buildHeatmapImage();render();}
+});
+
+// ── Init ───────────────────────────────────────────────────────────
+document.getElementById('app').style.display='none';
+
+precomputeGrid(() => {
+  gridDone=true;
+  document.getElementById('loading').style.display='none';
+  document.getElementById('app').style.display='flex';
+  resizePlot();
+  buildHeatmapImage();
+  render();
+});
+</script>
+</body>
+</html>

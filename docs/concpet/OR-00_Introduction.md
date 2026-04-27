@@ -39,9 +39,9 @@ Open any of the six HTML prototype files directly in a browser. No server requir
 
 | File | Screen | What it demonstrates |
 |---|---|---|
-| `OR-P01_solar-system-explorer.html` | Solar System Explorer | 3D/2D toggle, planet detail panels, Kuiper Belt, comets, Planet Nine |
+| `OR-P01_solar-system-explorer.html` | Solar System Explorer | 3D/2D toggle, planet detail panels with OVERVIEW/TECHNICAL/LEARN/SIZES tabs, Kuiper Belt, comets, Planet Nine. Technical tab shows full Keplerian elements, live vis-viva velocity, axial tilt — per planet. |
 | `OR-P02_mission-configurator.html` | Mission Configurator | Real Lambert solver, 11,200-cell porkchop plot, window selection |
-| `OR-P03_mission-arc.html` | Mission Arc | Live telemetry, vis-viva velocity, fuel model, timeline scrubber |
+| `OR-P03_mission-arc.html` | Mission Arc | Free-return Mars flyby trajectory (509 days, no landing). Real Keplerian arc — outbound and return legs. CAPCOM mode: mission event ticker, signal delay, anomaly monitor. Past/future arc distinction. Rocket icon. |
 | `OR-P04_mission-library.html` | Mission Library | 28 missions (Mars + Moon), filter system, gallery, educational links |
 | `OR-P05_earth-orbit.html` | Earth Orbit Viewer | Logarithmic scale, ISS to JWST, orbital regime legend |
 | `OR-P06_moon-map.html` | Moon Map | 16 landing sites, 3D sphere, 2D flat map, capability ladder context |

@@ -69,15 +69,29 @@ Orrery is not a collection of visualisations. It is a coherent experience with a
 
 **OR-P06 Moon Map** is the prologue. The road to Mars starts here — with humanity's first steps on another world, the capabilities they proved, and the resources they found.
 
-**OR-P01 Solar System Explorer** is Act 1. You see the geometry. You understand the problem. Earth and Mars are not always in the same place. The 26-month window is not arbitrary.
+**OR-P01 Solar System Explorer** is Act 1. You see the geometry. You understand the problem. Earth and Mars are not always in the same place. The 26-month window is not arbitrary. Click any planet and the TECHNICAL tab shows the full Keplerian mechanics — eccentricity, inclination, axial tilt, live orbital velocity from the vis-viva equation. A SIZES tab shows all planets to true relative scale. The Sun is clickable, with a panel explaining our position in the galaxy.
 
 **OR-P02 Mission Configurator** is Act 2. The porkchop plot. 11,200 trajectories computed from a real Lambert solver. You select a launch vehicle. The rocket equation solves. You can fail — not enough delta-v is a real outcome.
 
-**OR-P03 Mission Arc** is Act 3. The spacecraft flies. Live telemetry. A gradient trail across the transfer orbit. Distance in light-minutes. Fuel percentage dropping. Earth getting smaller.
+**OR-P03 Mission Arc** is Act 3. The spacecraft flies a real free-return trajectory — Earth departure, Mars flyby at 300 km altitude, return to Earth. 509 days total. No landing. Real Keplerian arc, not a Bezier approximation. CAPCOM mode shows a mission event ticker, signal delay in light-minutes, and an anomaly monitor. The spacecraft icon is a rocket oriented along its velocity vector. Past trajectory is solid; future is dashed.
 
 **OR-P04 Mission Library** is the archive. Every mission replayable. Every agency. Every outcome. Sixty years of spaceflight in one catalogue, filtered any way you want.
 
 **OR-P05 Earth Orbit** is the context. What humanity has already placed around Earth — from the ISS to JWST — shown on a logarithmic scale that makes the 3,750× range of distances legible on a single screen.
+
+---
+
+## What was built beyond the original six screens
+
+Two features originally planned as standalone Phase 2 screens were merged into existing prototypes during development — a better outcome than separate files.
+
+**Planet Technical Mode** is now a TECHNICAL tab inside OR-P01's planet detail panel. Every planet shows its full Keplerian element set, live vis-viva orbital velocity, eccentricity visualiser, and per-planet axial tilt explanation. A SIZES tab shows all planets at true relative scale. The Sun is clickable with a panel covering solar physics and our position in the Milky Way.
+
+**CAPCOM Mission Arc** is now a toggle in OR-P03's nav bar. The mission scenario was updated to a **free-return Mars flyby** — 509 days, no landing — an Artemis II analogue at interplanetary scale. The Keplerian arc is real on both legs. CAPCOM mode adds a 13-event mission ticker, signal delay, and anomaly monitor.
+
+## Deferred to Phase 2
+
+**Launch Sequence (OR-P09)** — the 12 minutes from pad to orbit insertion — is designed but not yet built. A schematic version (ascent profile, stage separation callouts, CAPCOM events) is achievable within the current Three.js stack. A cinematic version requires cloud rendering infrastructure. The full spec is in OR-04 section 8.
 
 ---
 

@@ -779,16 +779,43 @@ Phase 1 is the six prototype screens, connected by a router, bundled for offline
 
 Phase 2 is explicitly out of scope for the initial build. It is listed here so architectural decisions in Phase 1 do not accidentally prevent it.
 
-| Feature | Technical prerequisite |
-|---|---|
-| Mission sharing via URL | URL serialisation of arc state (section 5.7) |
-| Rocket configurator | Form state, validation, Tsiolkovsky solver (already in OR-P02) |
-| Moon arc screen | New screen, Earth-Moon Lambert variant, shorter timescale telemetry |
-| User-saved missions | LocalStorage or server-side persistence; requires auth design |
-| History API routing | Server-side redirect config added to nginx |
-| Mobile layout | CSS breakpoints, touch-first interaction redesign |
-| Accessibility | ARIA roles, keyboard navigation, `prefers-reduced-motion` |
-| Three.js upgrade | Full audit of four 3D screens, breaking change testing |
+| Feature | Screen | Technical prerequisite |
+|---|---|---|
+| Mission sharing via URL | OR-P03 | URL serialisation of arc state (section 5.7) |
+| Rocket configurator | OR-P02 | Form state, validation, Tsiolkovsky solver (already in OR-P02) |
+| Moon arc screen | New | Earth-Moon Lambert variant, shorter timescale telemetry |
+| User-saved missions | All | LocalStorage or server-side persistence; requires auth design |
+| History API routing | All | Server-side redirect config added to nginx |
+| Mobile layout | All | CSS breakpoints, touch-first interaction redesign |
+| Accessibility | All | ARIA roles, keyboard navigation, `prefers-reduced-motion` |
+| Three.js upgrade | All 3D | Full audit of four 3D screens, breaking change testing |
+| **Launch Sequence** | OR-P09 | Deferred — schematic version scoped below |
+| ~~Planet Technical Mode~~ | ~~OR-P07~~ | **Merged into OR-P01** — TECHNICAL tab in planet detail panel |
+| ~~CAPCOM Mission Arc~~ | ~~OR-P08~~ | **Merged into OR-P03** — CAPCOM toggle in mission arc |
+
+### ~~OR-P07~~ — Planet Technical Mode *(merged into OR-P01)*
+
+The TECHNICAL tab is now part of the OR-P01 detail panel — no separate screen needed. Clicking any planet opens OVERVIEW / TECHNICAL / LEARN / SIZES tabs. The TECHNICAL tab shows the full Keplerian element set (a, e, T, inclination, axial tilt, rotation period), a live vis-viva velocity readout, an eccentricity shape visualiser, and per-planet axial tilt callouts. A floating tooltip shows velocity and distance data on hover in both 2D and 3D. The Sun is now clickable with its own panel covering solar physics and galaxy context.
+
+### ~~OR-P08~~ — CAPCOM Mission Arc *(merged into OR-P03)*
+
+CAPCOM is now a toggle button in the OR-P03 nav bar — no separate screen needed. The mission scenario was changed to a **free-return Mars flyby** (analogous to Artemis II's lunar free-return): 259 days outbound, Mars closest approach at ~300 km, 250 days return. Total 509 days. No MOI burn. The Keplerian arc is real — both legs computed from orbital elements, not Bezier curves. CAPCOM mode shows a 13-event mission ticker, signal delay in light-minutes, and an anomaly monitor.
+
+### OR-P09 — Launch Sequence
+
+A new screen between the mission configurator (OR-P02) and the interplanetary arc (OR-P03), covering the part of spaceflight that Orrery currently skips: the first 12 minutes from the launch pad to orbit insertion.
+
+**What it shows:**
+
+A schematic side-view of the launch sequence — educational in character, not cinematic. The rocket climbs out of atmosphere with CAPCOM-style event markers overlaid: T+0 IGNITION, T+76s MAX-Q, T+2:36 MECO, T+2:38 STAGE SEP, T+8:30 FAIRING SEP, T+9:00 ORBIT INSERTION. Altitude and velocity plot against a reference atmosphere profile. Stage separation shown as the first stage peeling away, the second stage continuing, and — for Falcon Heavy / Starship — the booster return arc.
+
+**Why this completes the narrative:**
+
+Orrery currently goes: configure mission → fly interplanetary arc. The jump from "launch window selected" to "spacecraft cruising at 31 km/s" skips the most dramatic 12 minutes of any space mission. The launch sequence screen closes that gap: configure → launch → cruise → arrive. The user sees how the rocket gets from the ground to the interplanetary trajectory they just computed.
+
+**Cinematic quality — open question:**
+
+A schematic launch sequence (diagram quality, event callouts, altitude/velocity telemetry) is achievable within the current Three.js / Canvas stack. Cinematic quality — rocket plumes, atmospheric glow, stage separation with physics — requires either purpose-built 3D models and a more capable renderer, or integration with an on-demand cloud rendering API. This is an open architectural question for Phase 2. Candidates include Spline (browser-native 3D with asset hosting), cloud-hosted WebGL scenes via a CDN, or procedural generation using Three.js with custom shader materials. The schematic version ships first; the cinematic upgrade is an enhancement that can be layered on without changing the data or navigation architecture.
 
 ---
 

@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "moon-site.schema.json",
+  "title": "MoonSites",
+  "description": "Lunar landing sites. Single file at data/moon-sites.json. Per-locale editorial in data/i18n/[locale]/moon-sites/[id].json. The `agency` enum is the operating org (drives branding and logo); `nation` is the country (drives PRD-006's 'five nations' framing — Soviet missions are ROSCOSMOS-attributed for branding continuity but USSR-attributed for the historical narrative).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "agency",
+      "nation",
+      "year",
+      "lat",
+      "lon",
+      "crewed",
+      "status",
+      "surface_status",
+      "samples_kg",
+      "data_quality",
+      "credit",
+      "links"
+    ],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "agency": { "enum": ["NASA", "ROSCOSMOS", "CNSA", "ISRO", "JAXA"] },
+      "nation": { "enum": ["USA", "USSR", "Russia", "China", "India", "Japan"] },
+      "year": { "type": "integer", "minimum": 1957, "maximum": 2100, "description": "Year of landing or planned launch" },
+      "landing_date": {
+        "type": "string",
+        "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+        "description": "ISO 8601 calendar date of touchdown (UTC); omit for PLANNED missions"
+      },
+      "lat": { "type": "number", "minimum": -90, "maximum": 90, "description": "Selenographic latitude (degrees, +N)" },
+      "lon": { "type": "number", "minimum": -180, "maximum": 180, "description": "Selenographic longitude (degrees, +E in IAU convention)" },
+      "crewed": { "type": "boolean" },
+      "status": { "enum": ["FLOWN", "PLANNED"] },
+      "surface_status": {
+        "enum": ["completed", "ongoing", "planned"],
+        "description": "completed = mission ended; ongoing = lander/rover still active; planned = not yet launched"
+      },
+      "surface_duration_days": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Total time on surface (days). Omitted for ongoing or planned missions."
+      },
+      "eva_duration_hours": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Total EVA time across all spacewalks (hours). Crewed missions only."
+      },
+      "samples_kg": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Mass of returned samples (kg); 0 if no return"
+      },
+      "data_quality": { "enum": ["good", "partial", "reconstructed"] },
+      "credit": { "type": "string", "minLength": 1 },
+      "links": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["l", "u", "t"],
+          "properties": {
+            "l": { "type": "string", "minLength": 1 },
+            "u": { "type": "string", "format": "uri" },
+            "t": { "enum": ["intro", "core", "deep"] }
+          }
+        }
+      }
+    }
+  }
+}

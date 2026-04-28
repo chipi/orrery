@@ -1,0 +1,9 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "mission_type": "Uncrewed Lander · Rover (Far Side)",
+  "site_name": "Von Kármán Crater",
+  "crew": [],
+  "left": "Chang'e 4 lander · Yutu-2 rover (still active)",
+  "fact": "The first spacecraft to land on the Moon's far side — technically and operationally the hardest lunar landing ever attempted. Required a relay satellite (Queqiao) at L2 since the far side has no direct radio contact with Earth. Yutu-2 has driven 1.9+ km, still active. The far side had never been visited.",
+  "capability": "Demonstrated relay-satellite communications architecture for operations beyond direct line-of-sight — the exact pattern any Mars far-side or polar mission will need."
+}

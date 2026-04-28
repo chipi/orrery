@@ -1,0 +1,9 @@
+{
+  "name": "Apollo 11",
+  "mission_type": "Crewed Lander",
+  "site_name": "Mare Tranquillitatis",
+  "crew": ["Neil Armstrong", "Buzz Aldrin"],
+  "left": "Descent stage · ALSEP · laser retroreflector · flag · plaque: 'We came in peace for all mankind'",
+  "fact": "The first humans on the Moon. Watched live by ~600 million people — a fifth of humanity. The laser retroreflector placed by Armstrong and Aldrin still receives pulses today, measuring the Earth-Moon distance to millimetre precision. Footprints in the airless regolith will survive unchanged for a million years.",
+  "capability": "First human landing — proved crewed planetary surface operations are possible. The capability ladder for Mars begins here."
+}

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Moon Map</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;overflow:hidden;width:100vw;height:100vh;font-family:'Space Mono',monospace;color:#fff;}
+  #r2d,#r3d{position:absolute;inset:0;width:100%;height:100%;transition:opacity 0.4s;}
+  #r3d canvas{display:block;width:100%!important;height:100%!important;}
+  #ui{position:absolute;inset:0;z-index:10;pointer-events:none;}
+  #ui>*{pointer-events:auto;}
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:2px;}
+  .vtab{padding:5px 14px;font-size:8px;letter-spacing:2px;font-weight:700;border-radius:16px;cursor:pointer;transition:all 0.2s;color:rgba(255,255,255,0.38);background:transparent;border:none;font-family:'Space Mono',monospace;}
+  .vtab.active{color:#fff;background:rgba(68,102,255,0.35);box-shadow:0 0 12px rgba(68,102,255,0.3);}
+  .filter-btn{padding:4px 11px;font-size:7px;letter-spacing:2px;font-weight:700;border-radius:3px;cursor:pointer;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.35);font-family:'Space Mono',monospace;transition:all 0.15s;}
+  .filter-btn.active{border-color:rgba(255,255,255,0.4);color:#fff;background:rgba(255,255,255,0.07);}
+  .filter-btn:hover:not(.active){border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  @keyframes slideIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+  .link-row:hover{background:rgba(255,255,255,0.06)!important;}
+</style>
+</head>
+<body>
+
+<canvas id="r2d" style="opacity:0;pointer-events:none;"></canvas>
+<div id="r3d"></div>
+
+<div id="ui">
+  <!-- NAV -->
+  <div style="position:absolute;top:0;left:0;right:0;height:52px;background:rgba(4,4,12,0.92);border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:20;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+    <div style="display:flex;gap:3px;align-items:center;"><span style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.28);border:1px solid rgba(68,102,255,0.55);border-radius:3px;">MOON</span><a href="P01_solar-system-explorer.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">EXPLORE</a><a href="P02_mission-configurator.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">PLAN</a><a href="P03_mission-arc.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">FLY</a><a href="P04_mission-library.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">MISSIONS</a><a href="P05_earth-orbit.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">EARTH</a></div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">MISSIONS</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(200,200,255,0.12);border:1px solid rgba(200,200,255,0.3);border-radius:3px;">MOON</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="display:flex;align-items:center;background:rgba(4,4,12,0.85);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:3px;gap:2px;">
+        <button class="vtab active" id="tab-3d" onclick="setView('3d')">3D</button>
+        <button class="vtab" id="tab-2d" onclick="setView('2d')">2D MAP</button>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.25);letter-spacing:1px;">16 LANDINGS · 5 NATIONS</div>
+    </div>
+  </div>
+
+  <!-- FILTER STRIP -->
+  <div style="position:absolute;top:62px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:5px;background:rgba(4,4,12,0.82);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:7px 12px;backdrop-filter:blur(12px);">
+    <span style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-right:4px;">AGENCY</span>
+    <button class="filter-btn active" data-agency="all" onclick="setAgency(this)">ALL</button>
+    <button class="filter-btn" data-agency="NASA" onclick="setAgency(this)">NASA</button>
+    <button class="filter-btn" data-agency="ROSCOSMOS" onclick="setAgency(this)">ROSCOSMOS</button>
+    <button class="filter-btn" data-agency="CNSA" onclick="setAgency(this)">CNSA</button>
+    <button class="filter-btn" data-agency="ISRO" onclick="setAgency(this)">ISRO</button>
+    <button class="filter-btn" data-agency="JAXA" onclick="setAgency(this)">JAXA</button>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.08);margin:0 4px;"></div>
+    <button class="filter-btn" data-agency="crewed" onclick="setAgency(this)">CREWED ONLY</button>
+    <button class="filter-btn" data-agency="planned" onclick="setAgency(this)">PLANNED</button>
+  </div>
+
+  <!-- PANEL -->
+  <div id="panel" style="position:absolute;top:52px;right:0;bottom:60px;width:330px;background:rgba(4,4,12,0.97);border-left:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(18px);display:none;flex-direction:column;animation:slideIn 0.22s ease;overflow:hidden;"></div>
+
+  <!-- ROAD TO MARS FOOTER -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:60px;background:rgba(4,4,12,0.88);border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;padding:0 24px;gap:20px;">
+    <div style="display:flex;align-items:center;gap:8px;"><div style="width:6px;height:6px;border-radius:50%;background:#c8a060;box-shadow:0 0 8px #c8a060;"></div><span style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.3);">THE ROAD TO MARS STARTS HERE</span></div>
+    <div style="width:1px;height:28px;background:rgba(255,255,255,0.07);"></div>
+    <div style="font-size:7px;color:rgba(255,255,255,0.18);letter-spacing:1px;">Only 12 humans have ever walked on another world · Last visit: December 1972 · Next: 2026+</div>
+    <div style="flex:1;"></div>
+    <div style="font-size:7px;color:rgba(255,255,255,0.12);letter-spacing:1px;" id="hint2d">DRAG TO ORBIT · CLICK A SITE</div>
+  </div>
+
+  <!-- 3D Labels container (populated by JS) -->
+  <div id="lbl3d" style="position:absolute;inset:0;pointer-events:none;z-index:5;"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════
+// LANDING SITES DATA
+// ═══════════════════════════════════════════════════════════════
+const AGENCY_CSS={NASA:"#4b9cd3",ROSCOSMOS:"#cc4444",CNSA:"#ff5555",ISRO:"#ff8c3c",JAXA:"#5588ff",PLANNED:"#7b9cff"};
+// Agency logos (Wikimedia Commons — nominative educational use)
+const LOGOS={
+  NASA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png",      bg:"#0B3D91",abbr:"NASA"},
+  ROSCOSMOS: {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Roscosmos_logo_en.svg/200px-Roscosmos_logo_en.svg.png", bg:"#0d0d1a",abbr:"RSC"},
+  CNSA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/CNSA_logo.svg/200px-CNSA_logo.svg.png",      bg:"#DE2910",abbr:"CNSA"},
+  ISRO:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Indian_Space_Research_Organisation_Logo.svg/200px-Indian_Space_Research_Organisation_Logo.svg.png", bg:"#1a1a2e",abbr:"ISRO"},
+  JAXA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/JAXA_logo_2020.svg/200px-JAXA_logo_2020.svg.png",  bg:"#0062AC",abbr:"JAXA"},
+  PLANNED:   {img:null, bg:"rgba(68,102,255,0.15)",abbr:"TBD"},
+};
+function logoHTML(agency,w=52,h=52,r=8){
+  const l=LOGOS[agency]||{bg:"#1a1a2e",abbr:agency.slice(0,4),img:null};
+  const fs=w>40?(l.abbr.length>3?9:11):(l.abbr.length>3?6:7);
+  return `<div style="position:relative;width:${w}px;height:${h}px;border-radius:${r}px;background:${l.bg};overflow:hidden;flex-shrink:0;">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:${fs}px;font-weight:700;color:rgba(255,255,255,0.5);">${l.abbr}</div>
+    ${l.img?`<img src="${l.img}" alt="${agency}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:${w>40?'5px':'3px'};">`:''}
+  </div>`;
+}
+
+// Gallery data — NASA missions use Images API; others use curated URLs
+const GALLERY={
+  apollo11:{query:"Apollo 11 moon landing astronaut surface"},
+  apollo12:{query:"Apollo 12 moon Ocean Storms Conrad Bean"},
+  apollo14:{query:"Apollo 14 moon Fra Mauro Shepard Mitchell"},
+  apollo15:{query:"Apollo 15 Hadley Apennine rover Scott Irwin"},
+  apollo16:{query:"Apollo 16 Descartes moon Young Duke"},
+  apollo17:{query:"Apollo 17 Taurus Littrow Cernan Schmitt"},
+  artemis3:{query:"Artemis moon mission astronaut NASA"},
+  luna9:   {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Luna_9_first_photograph_from_the_Moon.jpg/640px-Luna_9_first_photograph_from_the_Moon.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Luna_9_lander.jpg/640px-Luna_9_lander.jpg"]},
+  luna17:  {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Lunokhod_1_on_the_Moon.jpg/640px-Lunokhod_1_on_the_Moon.jpg","https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Luna17.jpg/640px-Luna17.jpg"]},
+  luna24:  {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Luna_24_soil_sample.jpg/640px-Luna_24_soil_sample.jpg"]},
+  change3: {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Yutu_rover_after_deployment.jpg/640px-Yutu_rover_after_deployment.jpg"]},
+  change4: {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Chang%27e_4_lander_on_the_far_side_of_the_Moon.jpg/640px-Chang%27e_4_lander_on_the_far_side_of_the_Moon.jpg"]},
+  change5: {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Chang%27e_5_on_the_Moon.jpg/640px-Chang%27e_5_on_the_Moon.jpg"]},
+  change6: {imgs:[]},
+  chandrayaan3:{imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Chandrayaan-3_Pragyan_rover_on_Moon.jpg/640px-Chandrayaan-3_Pragyan_rover_on_Moon.jpg"]},
+  slim:    {imgs:["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/SLIM_on_Moon_by_LEV-2.jpg/640px-SLIM_on_Moon_by_LEV-2.jpg"]},
+};
+let panelTab='details';
+
+
+const SITES=[
+  // ── Soviet / Roscosmos ──────────────────────────────────────
+  {id:"luna9",      name:"Luna 9",              agency:"ROSCOSMOS", year:1966, lat:7.08,  lon:-64.37, crewed:false, status:"FLOWN",
+   type:"Uncrewed Soft Lander", site:"Oceanus Procellarum", crew:null, surface:"3 days", samples:"0",
+   left:"Lander shell, cameras, battery",
+   fact:"The first spacecraft to achieve a soft landing on the Moon and transmit photographs from the surface. Nine panoramic images ended the debate about whether landers would sink into deep lunar dust. A defining moment — the Moon could be reached.",
+   links:[{l:"Luna 9 — Wikipedia",u:"https://en.wikipedia.org/wiki/Luna_9",t:"intro"}]},
+  {id:"luna17",     name:"Luna 17 / Lunokhod 1", agency:"ROSCOSMOS", year:1970, lat:38.28, lon:-35.0,  crewed:false, status:"FLOWN",
+   type:"Uncrewed Rover", site:"Mare Imbrium", crew:null, surface:"322 days", samples:"0",
+   left:"Lunokhod 1 rover (322 kg), descent stage",
+   fact:"The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
+   links:[{l:"Lunokhod 1 — Wikipedia",u:"https://en.wikipedia.org/wiki/Lunokhod_1",t:"intro"},{l:"LRO finds Lunokhod — NASA",u:"https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html",t:"intro"}]},
+  {id:"luna24",     name:"Luna 24",             agency:"ROSCOSMOS", year:1976, lat:12.25, lon:62.20,  crewed:false, status:"FLOWN",
+   type:"Uncrewed Sample Return", site:"Mare Crisium", crew:null, surface:"~2 days", samples:"170 g",
+   left:"Descent stage, drill apparatus",
+   fact:"The last Soviet lunar mission — and the last uncrewed Moon landing until China's Chang'e 3 in 2013: a gap of 37 years. Returned 170 g of samples including minerals containing water, foreshadowing the later discovery of lunar water ice.",
+   links:[{l:"Luna 24 — Wikipedia",u:"https://en.wikipedia.org/wiki/Luna_24",t:"intro"}]},
+
+  // ── NASA Apollo ────────────────────────────────────────────
+  {id:"apollo11",   name:"Apollo 11",            agency:"NASA", year:1969, lat:0.67,  lon:23.47,  crewed:true,  status:"FLOWN",
+   type:"Crewed Lander", site:"Mare Tranquillitatis", crew:["Neil Armstrong","Buzz Aldrin"], surface:"2h 31m EVA", samples:"21.5 kg",
+   left:"Descent stage · ALSEP · laser retroreflector · flag · plaque: 'We came in peace for all mankind'",
+   fact:"The first humans on the Moon. Watched live by ~600 million people — a fifth of humanity. The laser retroreflector placed by Armstrong and Aldrin still receives pulses today, measuring the Earth-Moon distance to millimetre precision. Footprints in the airless regolith will survive unchanged for a million years.",
+   links:[{l:"Apollo 11 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_11",t:"intro"},{l:"Lunar retroreflectors still active — NASA",u:"https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/",t:"core"}]},
+  {id:"apollo12",   name:"Apollo 12",            agency:"NASA", year:1969, lat:-3.01, lon:-23.42, crewed:true,  status:"FLOWN",
+   type:"Crewed Lander", site:"Oceanus Procellarum", crew:["Pete Conrad","Alan Bean"], surface:"7h 45m EVA", samples:"34.3 kg",
+   left:"Descent stage · ALSEP · flag · retrieved parts of Surveyor 3",
+   fact:"The precision landing — Conrad touched down within 183 m of the uncrewed Surveyor 3 probe (1967). They retrieved pieces of it for return to Earth, showing spacecraft survive years on the Moon undamaged by radiation or micrometeorites. A proof-of-concept for future rendezvous missions.",
+   links:[{l:"Apollo 12 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_12",t:"intro"}]},
+  {id:"apollo14",   name:"Apollo 14",            agency:"NASA", year:1971, lat:-3.65, lon:-17.47, crewed:true,  status:"FLOWN",
+   type:"Crewed Lander", site:"Fra Mauro", crew:["Alan Shepard","Edgar Mitchell"], surface:"9h 23m EVA", samples:"42.9 kg",
+   left:"Descent stage · ALSEP · flag · two golf balls",
+   fact:"Alan Shepard, the first American in space (1961), became the only person to play golf on the Moon. He smuggled a club head and two balls aboard. He claimed one 'went miles and miles' — LRO images suggest about 40 metres. Still: the furthest sporting achievement in history.",
+   links:[{l:"Apollo 14 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_14",t:"intro"}]},
+  {id:"apollo15",   name:"Apollo 15",            agency:"NASA", year:1971, lat:26.13, lon:3.63,   crewed:true,  status:"FLOWN",
+   type:"Crewed Lander · Rover", site:"Hadley-Apennine", crew:["David Scott","James Irwin"], surface:"18h 35m EVA", samples:"77 kg",
+   left:"Descent stage · ALSEP · LRV rover · flag · Fallen Astronaut sculpture",
+   fact:"First mission with the Lunar Roving Vehicle — drove 27.9 km. Scott left a small aluminium figurine, 'Fallen Astronaut', and a plaque listing all astronauts and cosmonauts who died in the space race. It is the only artwork on the Moon, left without public announcement at the time.",
+   links:[{l:"Apollo 15 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_15",t:"intro"},{l:"Fallen Astronaut — Wikipedia",u:"https://en.wikipedia.org/wiki/Fallen_Astronaut",t:"intro"}]},
+  {id:"apollo16",   name:"Apollo 16",            agency:"NASA", year:1972, lat:-8.97, lon:15.50,  crewed:true,  status:"FLOWN",
+   type:"Crewed Lander · Rover", site:"Descartes Highlands", crew:["John Young","Charles Duke"], surface:"20h 14m EVA", samples:"94.7 kg",
+   left:"Descent stage · ALSEP · LRV rover · flag · Duke family photo",
+   fact:"The only mission to land in the lunar highlands. Charles Duke left a photo of his family sealed in a bag on the lunar surface. On the back he wrote: 'This is the family of Astronaut Duke from Planet Earth. Landed on the Moon, April 1972.' It will outlast civilisation.",
+   links:[{l:"Apollo 16 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_16",t:"intro"}]},
+  {id:"apollo17",   name:"Apollo 17",            agency:"NASA", year:1972, lat:20.19, lon:30.77,  crewed:true,  status:"FLOWN",
+   type:"Crewed Lander · Rover", site:"Taurus-Littrow Valley", crew:["Gene Cernan","Harrison Schmitt"], surface:"22h 04m EVA", samples:"110.5 kg",
+   left:"Descent stage · ALSEP · LRV rover · flag · plaque: 'Here Man completed his first explorations of the Moon. May the spirit of peace in which we came be reflected in the lives of all mankind.'",
+   fact:"The last time humans visited the Moon. Gene Cernan was the last person to walk on its surface. Before climbing the ladder, he said: 'We leave as we came, and God willing, we shall return.' Harrison Schmitt, the only trained geologist on the Moon, collected samples that reshaped our understanding of lunar geology.",
+   links:[{l:"Apollo 17 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_17",t:"intro"},{l:"Cernan's last words — NASA",u:"https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/",t:"intro"}]},
+
+  // ── CNSA ───────────────────────────────────────────────────
+  {id:"change3",    name:"Chang'e 3 / Yutu",    agency:"CNSA", year:2013, lat:44.12, lon:-19.51, crewed:false, status:"FLOWN",
+   type:"Uncrewed Lander · Rover", site:"Mare Imbrium", crew:null, surface:"31 months (lander)", samples:"0",
+   left:"Chang'e 3 lander (still active 2024) · Yutu rover",
+   fact:"China's first lunar landing — the first soft landing anywhere on the Moon in 37 years. The Chang'e 3 lander is still alive, making it the longest-surviving lunar lander ever. Yutu drove 114 m before its drive mechanism failed, but its instruments continued returning science data.",
+   links:[{l:"Chang'e 3 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_3",t:"intro"}]},
+  {id:"change4",    name:"Chang'e 4 / Yutu-2",  agency:"CNSA", year:2019, lat:-45.5, lon:177.6,  crewed:false, status:"FLOWN",
+   type:"Uncrewed Lander · Rover (FAR SIDE)", site:"Von Kármán Crater", crew:null, surface:"Ongoing", samples:"0",
+   left:"Chang'e 4 lander · Yutu-2 rover (still active)",
+   fact:"The first spacecraft to land on the Moon's far side — technically and operationally the hardest lunar landing ever attempted. Required a relay satellite (Queqiao) at L2 since the far side has no direct radio contact with Earth. Yutu-2 has driven 1.9+ km, still active. The far side had never been visited.",
+   links:[{l:"Chang'e 4 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_4",t:"intro"},{l:"Lunar far side — Wikipedia",u:"https://en.wikipedia.org/wiki/Far_side_of_the_Moon",t:"core"}]},
+  {id:"change5",    name:"Chang'e 5",           agency:"CNSA", year:2020, lat:43.10, lon:-51.80, crewed:false, status:"FLOWN",
+   type:"Uncrewed Sample Return", site:"Mons Rümker", crew:null, surface:"~2 days", samples:"1.731 kg",
+   left:"Descent stage, drilling equipment",
+   fact:"First lunar sample return in 44 years — ending a gap since Luna 24 (1976). Returned 1.731 kg from a geologically young region (2 billion years old vs 3–4 billion for Apollo samples). Rewrote our model of lunar volcanism: the Moon was geologically active much more recently than thought.",
+   links:[{l:"Chang'e 5 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_5",t:"intro"}]},
+  {id:"change6",    name:"Chang'e 6",           agency:"CNSA", year:2024, lat:-41.6, lon:-153.9, crewed:false, status:"FLOWN",
+   type:"Uncrewed Sample Return (FAR SIDE)", site:"Apollo Crater (far side)", crew:null, surface:"~2 days", samples:"1.9 kg",
+   left:"Descent stage",
+   fact:"First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
+   links:[{l:"Chang'e 6 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_6",t:"intro"}]},
+
+  // ── ISRO ───────────────────────────────────────────────────
+  {id:"chandrayaan3", name:"Chandrayaan-3",     agency:"ISRO", year:2023, lat:-69.37, lon:32.35, crewed:false, status:"FLOWN",
+   type:"Uncrewed Lander · Rover", site:"Shiv Shakti Point (South Pole region)", crew:null, surface:"14 days", samples:"0",
+   left:"Vikram lander · Pragyan rover",
+   fact:"First spacecraft to land near the lunar south pole — the most contested territory in current space exploration, where permanently shadowed craters harbour water ice. Pragyan confirmed the presence of sulfur at the surface for the first time. India became the fourth nation to soft-land on the Moon, and the first to reach the poles.",
+   links:[{l:"Chandrayaan-3 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chandrayaan-3",t:"intro"},{l:"Lunar south pole water ice — NASA",u:"https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon",t:"core"}]},
+
+  // ── JAXA ───────────────────────────────────────────────────
+  {id:"slim",       name:"SLIM",               agency:"JAXA", year:2024, lat:-13.31, lon:25.24, crewed:false, status:"FLOWN",
+   type:"Precision Lander", site:"Near Shioli Crater", crew:null, surface:"Intermittent", samples:"0",
+   left:"SLIM lander · two micro-rovers (LEV-1, LEV-2)",
+   fact:"Japan's Smart Lander demonstrated pinpoint precision landing — targeting within 100 m accuracy vs the km-scale standard of all previous missions. Landed tilted, losing primary power, but eventually the solar panels faced the sun and operations resumed. Japan became the fifth nation to achieve a lunar soft landing.",
+   links:[{l:"SLIM — Wikipedia",u:"https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon",t:"intro"}]},
+
+  // ── PLANNED ────────────────────────────────────────────────
+  {id:"artemis3",   name:"Artemis III",         agency:"PLANNED", year:"2026+", lat:-89.5, lon:0,  crewed:true, status:"PLANNED",
+   type:"Crewed Lander (Planned)", site:"Lunar South Pole (site TBD)", crew:["TBD — first woman and first POC on Moon"], surface:"~7 days planned", samples:"TBD",
+   left:"TBD",
+   fact:"The first crewed lunar landing since Apollo 17 in 1972 — a 54-year gap. Targets the south pole for its water ice deposits, which may enable refuelling for future deep space missions. Will land the first woman and first person of colour on the Moon. If it happens on schedule, it begins the sustained human presence that leads to Mars.",
+   links:[{l:"Artemis III — Wikipedia",u:"https://en.wikipedia.org/wiki/Artemis_3",t:"intro"},{l:"Artemis program — NASA",u:"https://www.nasa.gov/humans-in-space/artemis/",t:"intro"},{l:"Lunar south pole water ice (Science, 2018)",u:"https://www.science.org/doi/10.1126/science.aap8637",t:"deep"}]},
+];
+
+// ── Mare regions (for 2D map drawing) ────────────────────────
+const MARE=[
+  {cx:-55,cy:10,rx:38,ry:28,label:"Oceanus Procellarum"},
+  {cx:-25,cy:30,rx:20,ry:16,label:"Mare Imbrium"},
+  {cx:25, cy:5, rx:16,ry:11,label:"Mare Tranquillitatis"},
+  {cx:60, cy:17,rx:11,ry:8, label:"Mare Crisium"},
+  {cx:18, cy:27,rx:13,ry:11,label:"Mare Serenitatis"},
+  {cx:50, cy:-4,rx:13,ry:11,label:"Mare Fecunditatis"},
+  {cx:-5, cy:15,rx:10,ry:8, label:"Mare Vaporum"},
+  {cx:5,  cy:45,rx:9, ry:6, label:"Mare Frigoris (partial)"},
+  {cx:-35,cy:-12,rx:10,ry:7,label:"Mare Humorum"},
+  {cx:25, cy:-25,rx:8,ry:6, label:"Mare Nectaris"},
+];
+
+// ═══════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════
+const MOON_R=120;
+function latLonTo3D(lat,lon,r){
+  const phi=(90-lat)*Math.PI/180;
+  const theta=lon*Math.PI/180;
+  return new THREE.Vector3(r*Math.sin(phi)*Math.sin(theta),r*Math.cos(phi),r*Math.sin(phi)*Math.cos(theta));
+}
+function latLonTo2D(lat,lon,W,H){return{x:(lon+180)/360*W,y:(90-lat)/180*H};}
+
+// ═══════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════
+let sel=null, panelOpen=false, agencyFilter='all', currentView='3d';
+let lastTime=performance.now(), frame=0;
+
+// ═══════════════════════════════════════════════════════════════
+// 2D RENDERER
+// ═══════════════════════════════════════════════════════════════
+const c2=document.getElementById('r2d');
+const ctx2=c2.getContext('2d');
+function resize2d(){c2.width=innerWidth;c2.height=innerHeight;}
+resize2d();
+window.addEventListener('resize',()=>{resize2d();if(currentView==='2d')draw2d();});
+
+function draw2d(){
+  const W=c2.width,H=c2.height;
+  const mapH=Math.min(H-140,W/2.2); // map height
+  const mapW=mapH*2;
+  const mx=(W-mapW)/2, my=(H-mapH)/2+10;
+
+  ctx2.fillStyle='#04040c';ctx2.fillRect(0,0,W,H);
+
+  // ── Stars ──
+  for(let i=0;i<150;i++){const sx=(i*137.5*31+i*71)%W,sy=(i*137.5*17+i*53)%H,r=i%5===0?1.2:0.5;ctx2.beginPath();ctx2.arc(sx,sy,r,0,Math.PI*2);ctx2.fillStyle=`rgba(210,215,255,${0.1+i%4*0.05})`;ctx2.fill();}
+
+  // ── Moon map background ──
+  ctx2.fillStyle='#2a2a2e';ctx2.fillRect(mx,my,mapW,mapH);
+
+  // Highlands texture (subtle noise-like pattern)
+  for(let i=0;i<600;i++){const fx=mx+Math.random()*mapW,fy=my+Math.random()*mapH,fr=1+Math.random()*3;ctx2.beginPath();ctx2.arc(fx,fy,fr,0,Math.PI*2);ctx2.fillStyle=`rgba(255,255,255,${0.01+Math.random()*0.02})`;ctx2.fill();}
+
+  // ── Mare (dark regions) ──
+  MARE.forEach(m=>{
+    const cx2d=mx+(m.cx+180)/360*mapW, cy2d=my+(90-m.cy)/180*mapH;
+    const rx2d=m.rx/360*mapW, ry2d=m.ry/180*mapH;
+    ctx2.beginPath();ctx2.ellipse(cx2d,cy2d,rx2d,ry2d,0,0,Math.PI*2);
+    ctx2.fillStyle='rgba(10,10,15,0.55)';ctx2.fill();
+  });
+
+  // ── South pole highlight ──
+  const spY=my+mapH*0.98;
+  ctx2.fillStyle='rgba(123,156,255,0.06)';ctx2.fillRect(mx,spY-mapH*0.12,mapW,mapH*0.12);
+  ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.fillStyle='rgba(123,156,255,0.4)';ctx2.textAlign='center';
+  ctx2.fillText('SOUTH POLE REGION · WATER ICE · ARTEMIS TARGET',mx+mapW/2,spY-4);ctx2.restore();
+
+  // ── Far side dividers ──
+  const leftEdge=mx,rightEdge=mx+mapW,centerX=mx+mapW/2;
+  // Near/far boundary lines
+  ctx2.strokeStyle='rgba(255,255,255,0.08)';ctx2.lineWidth=1;ctx2.setLineDash([4,8]);
+  ctx2.beginPath();ctx2.moveTo(mx+mapW*0.25,my);ctx2.lineTo(mx+mapW*0.25,my+mapH);ctx2.stroke();
+  ctx2.beginPath();ctx2.moveTo(mx+mapW*0.75,my);ctx2.lineTo(mx+mapW*0.75,my+mapH);ctx2.stroke();
+  ctx2.setLineDash([]);
+  ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.textAlign='center';
+  ctx2.fillStyle='rgba(255,255,255,0.12)';
+  ctx2.fillText('FAR SIDE',mx+mapW*0.125,my+mapH+14);
+  ctx2.fillText('NEAR SIDE',mx+mapW*0.5,my+mapH+14);
+  ctx2.fillText('FAR SIDE',mx+mapW*0.875,my+mapH+14);ctx2.restore();
+
+  // ── Grid lines ──
+  ctx2.strokeStyle='rgba(255,255,255,0.05)';ctx2.lineWidth=0.5;
+  for(let lon=-180;lon<=180;lon+=30){const x=mx+(lon+180)/360*mapW;ctx2.beginPath();ctx2.moveTo(x,my);ctx2.lineTo(x,my+mapH);ctx2.stroke();}
+  for(let lat=-90;lat<=90;lat+=30){const y=my+(90-lat)/180*mapH;ctx2.beginPath();ctx2.moveTo(mx,y);ctx2.lineTo(mx+mapW,y);ctx2.stroke();}
+  // Equator and prime meridian bolder
+  ctx2.strokeStyle='rgba(255,255,255,0.12)';ctx2.lineWidth=0.7;
+  ctx2.beginPath();ctx2.moveTo(mx,my+mapH/2);ctx2.lineTo(mx+mapW,my+mapH/2);ctx2.stroke();
+  ctx2.beginPath();ctx2.moveTo(centerX,my);ctx2.lineTo(centerX,my+mapH);ctx2.stroke();
+
+  // ── Map border ──
+  ctx2.strokeStyle='rgba(255,255,255,0.15)';ctx2.lineWidth=1;ctx2.strokeRect(mx,my,mapW,mapH);
+
+  // ── Coordinate labels ──
+  ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.fillStyle='rgba(255,255,255,0.2)';ctx2.textAlign='center';
+  ctx2.fillText('0°',centerX,my-5);
+  ctx2.fillText('90°E',mx+mapW*0.75,my-5);
+  ctx2.fillText('90°W',mx+mapW*0.25,my-5);
+  ctx2.textAlign='right';
+  ctx2.fillText('45°N',mx-4,my+mapH*0.25+3);
+  ctx2.fillText('0°',mx-4,my+mapH/2+3);
+  ctx2.fillText('45°S',mx-4,my+mapH*0.75+3);ctx2.restore();
+
+  // ── Landing sites ──
+  const filteredSites=getFilteredSites();
+  filteredSites.forEach(s=>{
+    const {x,y}=latLonTo2D(s.lat,s.lon,mapW,mapH);
+    const px=mx+x, py=my+y;
+    const isSel=sel?.id===s.id;
+    const col=AGENCY_CSS[s.agency]||'#aaa';
+    const isPlanned=s.status==='PLANNED';
+
+    // Glow
+    const g=ctx2.createRadialGradient(px,py,0,px,py,12);
+    g.addColorStop(0,col+'88');g.addColorStop(1,'transparent');
+    ctx2.beginPath();ctx2.arc(px,py,12,0,Math.PI*2);ctx2.fillStyle=g;ctx2.fill();
+
+    // Pin
+    if(isPlanned){ctx2.beginPath();ctx2.arc(px,py,5,0,Math.PI*2);ctx2.strokeStyle=col;ctx2.lineWidth=1.5;ctx2.setLineDash([3,2]);ctx2.stroke();ctx2.setLineDash([]);}
+    else{ctx2.beginPath();ctx2.arc(px,py,isSel?6:4.5,0,Math.PI*2);ctx2.fillStyle=isSel?'#fff':col;ctx2.fill();}
+
+    // Selection ring
+    if(isSel){const p=0.5+0.5*Math.sin(frame*0.1);ctx2.beginPath();ctx2.arc(px,py,8+p*2,0,Math.PI*2);ctx2.strokeStyle=`rgba(255,255,255,${0.4+p*0.3})`;ctx2.lineWidth=1;ctx2.stroke();}
+
+    // Label — always visible
+    ctx2.save();
+    const shortName=s.name.split('/')[0].split(' ').slice(0,2).join(' ');
+    ctx2.font=`${isSel?'bold ':''}8px 'Space Mono',monospace`;
+    if(isSel){ctx2.shadowColor=col;ctx2.shadowBlur=8;}
+    else{ctx2.shadowColor='rgba(0,0,0,0.8)';ctx2.shadowBlur=4;}
+    ctx2.fillStyle=isSel?'#fff':col;ctx2.textAlign='left';
+    ctx2.fillText(shortName,px+8,py+3);ctx2.restore();
+  });
+
+  // ── Title ──
+  ctx2.save();ctx2.font="bold 9px 'Space Mono',monospace";ctx2.fillStyle="rgba(255,255,255,0.08)";ctx2.textAlign='left';
+  ctx2.fillText("LUNAR SURFACE · CYLINDRICAL PROJECTION · NEARSIDE CENTER",mx,my+mapH+28);ctx2.restore();
+}
+
+// 2D click
+c2.addEventListener('click',e=>{
+  if(currentView!=='2d')return;
+  const W=c2.width,H=c2.height;
+  const mapH=Math.min(H-140,W/2.2),mapW=mapH*2;
+  const mx2=(W-mapW)/2,my2=(H-mapH)/2+10;
+  let best=null,bestD=Infinity;
+  SITES.forEach(s=>{
+    const {x,y}=latLonTo2D(s.lat,s.lon,mapW,mapH);
+    const d=Math.hypot(e.clientX-(mx2+x),e.clientY-(my2+y));
+    if(d<18&&d<bestD){bestD=d;best=s;}
+  });
+  if(best){sel=best;panelOpen=true;renderPanel();}
+  else if(panelOpen){panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+c2.addEventListener('mousemove',e=>{
+  if(currentView!=='2d')return;
+  const W=c2.width,H=c2.height;
+  const mapH=Math.min(H-140,W/2.2),mapW=mapH*2;
+  const mx2=(W-mapW)/2,my2=(H-mapH)/2+10;
+  let hit=false;
+  SITES.forEach(s=>{
+    const{x,y}=latLonTo2D(s.lat,s.lon,mapW,mapH);
+    if(Math.hypot(e.clientX-(mx2+x),e.clientY-(my2+y))<16)hit=true;
+  });
+  c2.style.cursor=hit?'pointer':'default';
+});
+
+// ═══════════════════════════════════════════════════════════════
+// 3D RENDERER
+// ═══════════════════════════════════════════════════════════════
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,1,5000);
+const renderer3=new THREE.WebGLRenderer({antialias:true});
+renderer3.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer3.setSize(innerWidth,innerHeight);
+renderer3.setClearColor(0x04040c,1);
+document.getElementById('r3d').appendChild(renderer3.domElement);
+
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer3.setSize(innerWidth,innerHeight);});
+
+// Stars
+const sp=new Float32Array(2500*3);for(let i=0;i<2500;i++){const r=2000+Math.random()*500,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);sp[i*3]=r*Math.sin(p)*Math.cos(t);sp[i*3+1]=r*Math.sin(p)*Math.sin(t);sp[i*3+2]=r*Math.cos(p);}
+const sGeo=new THREE.BufferGeometry();sGeo.setAttribute('position',new THREE.BufferAttribute(sp,3));
+scene.add(new THREE.Points(sGeo,new THREE.PointsMaterial({color:0xdde4ff,size:1.2,sizeAttenuation:false,transparent:true,opacity:0.65})));
+
+// Lighting — Sun direction
+scene.add(new THREE.AmbientLight(0x223344,0.8));
+const sunL=new THREE.DirectionalLight(0xfff8e7,1.4);sunL.position.set(600,200,800);scene.add(sunL);
+const fillL=new THREE.DirectionalLight(0x334466,0.25);fillL.position.set(-400,100,-300);scene.add(fillL);
+
+// Moon sphere
+const moonGeo=new THREE.SphereGeometry(MOON_R,64,64);
+const moonMat=new THREE.MeshPhongMaterial({color:0xaaaaaa,shininess:5,specular:0x111111});
+const moonMesh=new THREE.Mesh(moonGeo,moonMat);scene.add(moonMesh);
+
+// Load real Moon texture
+new THREE.TextureLoader().load(
+  'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/moon_1024.jpg',
+  tex=>{moonMat.map=tex;moonMat.color.set(0xffffff);moonMat.needsUpdate=true;}
+);
+
+// ── Landing site pins 3D ───────────────────────────────────────
+const pinMeshes3=[],pinHitMeshes=[];
+const pinObjs={};
+
+SITES.forEach(s=>{
+  const pos=latLonTo3D(s.lat,s.lon,MOON_R);
+  const col=parseInt((AGENCY_CSS[s.agency]||'#888888').replace('#','0x'));
+  const isPlanned=s.status==='PLANNED';
+
+  // Pin stem (thin cylinder from surface outward)
+  const stemH=6,stemR=0.4;
+  const stemMat=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:isPlanned?0.4:0.7});
+  const stem=new THREE.Mesh(new THREE.CylinderGeometry(stemR,stemR,stemH,6),stemMat);
+  // Position: center of stem is at surface + stemH/2 in normal direction
+  const normal=pos.clone().normalize();
+  const stemPos=pos.clone().add(normal.clone().multiplyScalar(stemH/2));
+  stem.position.copy(stemPos);
+  stem.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),normal);
+  scene.add(stem);
+
+  // Pin head
+  const headMat=new THREE.MeshBasicMaterial({color:col,transparent:isPlanned,opacity:isPlanned?0.55:1,blending:THREE.AdditiveBlending});
+  const headPos=pos.clone().add(normal.clone().multiplyScalar(stemH+2.5));
+  const head=new THREE.Mesh(new THREE.SphereGeometry(isPlanned?1.2:1.8,8,8),headMat);
+  head.position.copy(headPos);scene.add(head);
+
+  // Glow
+  const glowMat=new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:0.3,blending:THREE.AdditiveBlending,depthWrite:false});
+  const glow=new THREE.Mesh(new THREE.SphereGeometry(4,8,8),glowMat);glow.position.copy(headPos);scene.add(glow);
+
+  // Hit sphere (larger, invisible)
+  const hitMat=new THREE.MeshBasicMaterial({transparent:true,opacity:0});
+  const hit=new THREE.Mesh(new THREE.SphereGeometry(8,6,6),hitMat);hit.position.copy(headPos);
+  hit.userData.site=s;scene.add(hit);pinHitMeshes.push(hit);
+
+  pinObjs[s.id]={head,glow,headMat,glowMat,hit};
+});
+
+// 3D Label divs
+const lblContainer=document.getElementById('lbl3d');
+const lblEls={};
+SITES.forEach(s=>{
+  const d=document.createElement('div');
+  const col=AGENCY_CSS[s.agency]||'#aaa';
+  const short=s.name.split('/')[0].replace('Apollo ','A').replace('Chang\'e ','CE').replace('Chandrayaan-','C3-').replace('Artemis ','Ar');
+  d.textContent=short;
+  d.style.cssText=`position:absolute;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1px;color:${col};opacity:0;pointer-events:none;white-space:nowrap;transform:translate(8px,-50%);text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 8px ${col}88;transition:opacity 0.15s;font-weight:600;`;
+  lblContainer.appendChild(d);
+  lblEls[s.id]=d;
+});
+
+// ── Camera orbit ──────────────────────────────────────────────
+let camT=0.3,camP=1.1,camR=340,isDrag=false,dragMoved=false,lmx=0,lmy=0,autoOrbit=true;
+function updateCam(){camera.position.set(camR*Math.sin(camP)*Math.sin(camT),camR*Math.cos(camP),camR*Math.sin(camP)*Math.cos(camT));camera.lookAt(0,0,0);}
+updateCam();
+
+const el3=renderer3.domElement;
+el3.addEventListener('mousedown',e=>{isDrag=true;dragMoved=false;lmx=e.clientX;lmy=e.clientY;autoOrbit=false;el3.style.cursor='grabbing';});
+window.addEventListener('mousemove',e=>{
+  if(isDrag){const dx=e.clientX-lmx,dy=e.clientY-lmy;if(Math.abs(dx)+Math.abs(dy)>2)dragMoved=true;camT-=dx*0.005;camP=Math.max(0.1,Math.min(Math.PI*0.49,camP+dy*0.004));lmx=e.clientX;lmy=e.clientY;updateCam();}
+});
+window.addEventListener('mouseup',()=>{isDrag=false;el3.style.cursor='grab';setTimeout(()=>{autoOrbit=true;},5000);});
+el3.addEventListener('wheel',e=>{camR=Math.max(160,Math.min(800,camR+e.deltaY*0.5));updateCam();},{passive:true});
+el3.addEventListener('click',e=>{
+  if(dragMoved||currentView!=='3d')return;
+  const rect=el3.getBoundingClientRect();
+  const ray=new THREE.Raycaster();
+  ray.setFromCamera(new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),camera);
+  const hits=ray.intersectObjects(pinHitMeshes);
+  if(hits.length){sel=hits[0].object.userData.site;panelOpen=true;renderPanel();}
+  else if(panelOpen){panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+el3.style.cursor='grab';
+
+// ── 3D draw ───────────────────────────────────────────────────
+function draw3d(dt){
+  if(autoOrbit) {camT+=dt*0.008;updateCam();}
+  const filtered=getFilteredSites();
+  const filteredIds=new Set(filtered.map(s=>s.id));
+
+  SITES.forEach(s=>{
+    const obj=pinObjs[s.id]; if(!obj) return;
+    const visible=filteredIds.has(s.id);
+    obj.head.visible=visible;obj.glow.visible=visible;obj.hit.visible=visible;
+    const isSel=sel?.id===s.id;
+    const p=0.5+0.5*Math.sin(frame*0.1);
+    obj.glowMat.opacity=isSel?0.6+p*0.3:0.25;
+    if(isSel){obj.head.scale.setScalar(1.3+p*0.2);}else{obj.head.scale.setScalar(1);}
+
+    // Label positioning
+    const lbl=lblEls[s.id]; if(!lbl) return;
+    if(!visible){lbl.style.opacity='0';return;}
+    const wp=obj.head.position.clone().project(camera);
+    if(wp.z>1){lbl.style.opacity='0';return;}
+    lbl.style.left=((wp.x+1)/2*innerWidth)+'px';
+    lbl.style.top=((-wp.y+1)/2*innerHeight)+'px';
+    lbl.style.opacity=isSel?'1':'0.75';
+    lbl.style.color=isSel?'#fff':(AGENCY_CSS[s.agency]||'#aaa');
+    lbl.style.fontWeight=isSel?'700':'400';
+  });
+
+  renderer3.render(scene,camera);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FILTER
+// ═══════════════════════════════════════════════════════════════
+function getFilteredSites(){
+  return SITES.filter(s=>{
+    if(agencyFilter==='all') return true;
+    if(agencyFilter==='crewed') return s.crewed;
+    if(agencyFilter==='planned') return s.status==='PLANNED';
+    return s.agency===agencyFilter;
+  });
+}
+window.setAgency=btn=>{
+  agencyFilter=btn.dataset.agency;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn));
+};
+
+// ═══════════════════════════════════════════════════════════════
+// PANEL
+// ═══════════════════════════════════════════════════════════════
+const TIER={intro:{label:"INTRO",bg:"#0d2e2b",color:"#4ecdc4",dot:"#4ecdc4"},core:{label:"CORE",bg:"#0d1535",color:"#7b9cff",dot:"#4466ff"},deep:{label:"DEEP",bg:"#2e0d0d",color:"#ff9090",dot:"#ff4444"}};
+
+function renderPanel(){
+  const pnl=document.getElementById('panel');
+  if(!panelOpen||!sel){pnl.style.display='none';return;}
+  pnl.style.display='flex';pnl.style.flexDirection='column';
+  const s=sel;
+  const col=AGENCY_CSS[s.agency]||'#aaa';
+  const isPlanned=s.status==='PLANNED';
+  const tc={};Object.keys(TIER).forEach(t=>{tc[t]=(s.links||[]).filter(l=>l.t===t).length;});
+  const badges=Object.entries(TIER).filter(([t])=>tc[t]>0).map(([t,v])=>`<div style="font-size:7px;padding:2px 6px;background:${v.bg};color:${v.color};border-radius:2px;border:1px solid ${v.color}33;">${v.label}</div>`).join('');
+  const links=Object.entries(TIER).map(([tk,tv])=>{const ls=(s.links||[]).filter(l=>l.t===tk);if(!ls.length)return'';return`<div style="margin-bottom:12px;"><div style="font-size:7px;letter-spacing:2px;color:${tv.color};margin-bottom:5px;display:flex;align-items:center;gap:6px;"><div style="flex:1;height:1px;background:${tv.dot}33;"></div>${tv.label}<div style="flex:1;height:1px;background:${tv.dot}33;"></div></div>${ls.map(lk=>`<a href="${lk.u}" target="_blank" rel="noopener" class="link-row" style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:4px;text-decoration:none;margin-bottom:2px;background:transparent;"><div style="width:5px;height:5px;border-radius:50%;background:${tv.dot};flex-shrink:0;"></div><span style="font-size:9px;color:rgba(255,255,255,0.65);flex:1;line-height:1.45;font-family:'Space Mono',monospace;">${lk.l}</span><span style="color:rgba(255,255,255,0.2);font-size:9px;">↗</span></a>`).join('')}</div>`;}).join('');
+
+  pnl.innerHTML=`
+    <!-- Header with logo -->
+    <div style="padding:14px 18px 12px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:8px;">
+        ${logoHTML(s.agency,48,48,8)}
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px;">
+            <div style="font-size:7px;letter-spacing:2px;color:${col};font-weight:700;">${s.agency}</div>
+            <div style="width:1px;height:10px;background:rgba(255,255,255,0.15);"></div>
+            <div style="font-size:7px;color:rgba(255,255,255,0.35);">${s.year}</div>
+            ${isPlanned?`<div style="font-size:7px;padding:2px 7px;background:rgba(123,156,255,0.12);color:#7b9cff;border:1px solid rgba(123,156,255,0.3);border-radius:2px;">PLANNED</div>`:''}
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:${s.name.length>18?20:26}px;letter-spacing:2px;color:#fff;line-height:1.1;">${s.name}</div>
+          <div style="font-size:7px;color:rgba(255,255,255,0.3);margin-top:2px;">${s.type}</div>
+        </div>
+        <div onclick="closePanel()" style="width:22px;height:22px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:13px;user-select:none;flex-shrink:0;">×</div>
+      </div>
+      <div style="font-size:8px;color:rgba(255,255,255,0.4);display:flex;align-items:center;gap:4px;">
+        <span>📍</span><span>${s.site}</span>
+        <span style="color:rgba(255,255,255,0.2);margin-left:6px;">${s.lat.toFixed(2)}°, ${s.lon.toFixed(2)}°</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 18px;flex-shrink:0;">
+      <button id="ptab-details" onclick="switchPanelTab('details')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid ${panelTab==='details'?'#4466ff':'transparent'};color:${panelTab==='details'?'#fff':'rgba(255,255,255,0.35)'};cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">OVERVIEW</button>
+      <button id="ptab-gallery" onclick="switchPanelTab('gallery')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid ${panelTab==='gallery'?'#4466ff':'transparent'};color:${panelTab==='gallery'?'#fff':'rgba(255,255,255,0.35)'};cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">GALLERY</button>
+      <button id="ptab-links" onclick="switchPanelTab('links')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid ${panelTab==='links'?'#4466ff':'transparent'};color:${panelTab==='links'?'#fff':'rgba(255,255,255,0.35)'};cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">LEARN</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="panel-content" style="flex:1;overflow-y:auto;"></div>
+
+    <div style="padding:6px 18px;border-top:1px solid rgba(255,255,255,0.06);font-size:6px;color:rgba(255,255,255,0.12);text-align:center;letter-spacing:1px;flex-shrink:0;">
+      ${s.lat.toFixed(2)}°${s.lat>=0?'N':'S'} · ${Math.abs(s.lon).toFixed(2)}°${s.lon>=0?'E':'W'} · Lunar coordinate system
+    </div>`;
+
+  renderPanelTab();
+}
+
+window.switchPanelTab=tab=>{
+  panelTab=tab;
+  // Update tab button styles
+  ['details','gallery','links'].forEach(t=>{
+    const b=document.getElementById('ptab-'+t);
+    if(!b)return;
+    const active=t===tab;
+    b.style.borderBottomColor=active?'#4466ff':'transparent';
+    b.style.color=active?'#fff':'rgba(255,255,255,0.35)';
+  });
+  renderPanelTab();
+};
+
+function renderPanelTab(){
+  const s=sel; if(!s) return;
+  const col=AGENCY_CSS[s.agency]||'#aaa';
+  const el=document.getElementById('panel-content'); if(!el) return;
+  const tc={};Object.keys(TIER).forEach(t=>{tc[t]=(s.links||[]).filter(l=>l.t===t).length;});
+  const badges=Object.entries(TIER).filter(([t])=>tc[t]>0).map(([t,v])=>`<div style="font-size:7px;padding:2px 6px;background:${v.bg};color:${v.color};border-radius:2px;border:1px solid ${v.color}33;">${v.label}</div>`).join('');
+  const links=Object.entries(TIER).map(([tk,tv])=>{const ls=(s.links||[]).filter(l=>l.t===tk);if(!ls.length)return'';return`<div style="margin-bottom:12px;"><div style="font-size:7px;letter-spacing:2px;color:${tv.color};margin-bottom:5px;display:flex;align-items:center;gap:6px;"><div style="flex:1;height:1px;background:${tv.dot}33;"></div>${tv.label}<div style="flex:1;height:1px;background:${tv.dot}33;"></div></div>${ls.map(lk=>`<a href="${lk.u}" target="_blank" rel="noopener" class="link-row" style="display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:4px;text-decoration:none;margin-bottom:2px;background:transparent;"><div style="width:5px;height:5px;border-radius:50%;background:${tv.dot};flex-shrink:0;"></div><span style="font-size:9px;color:rgba(255,255,255,0.65);flex:1;line-height:1.45;font-family:'Space Mono',monospace;">${lk.l}</span><span style="color:rgba(255,255,255,0.2);font-size:9px;">↗</span></a>`).join('')}</div>`;}).join('');
+
+  if(panelTab==='details'){
+    el.innerHTML=`<div style="padding:12px 18px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">CREW</div>
+          <div style="font-size:9px;color:#fff;font-weight:700;line-height:1.4;">${s.crew?s.crew.join(' · '):'Uncrewed'}</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">SURFACE TIME</div>
+          <div style="font-size:9px;color:#fff;font-weight:700;">${s.surface}</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;grid-column:span 2;">
+          <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">SAMPLES RETURNED</div>
+          <div style="font-size:9px;color:#fff;font-weight:700;">${s.samples}</div>
+        </div>
+      </div>
+      <div style="padding:9px 11px;background:rgba(${col.replace('#','').match(/../g).map(h=>parseInt(h,16)).join(',')},0.07);border-left:3px solid ${col};border-radius:2px;margin-bottom:10px;">
+        <div style="font-size:6px;letter-spacing:2px;color:${col};margin-bottom:4px;">STILL ON THE SURFACE</div>
+        <div style="font-size:9px;color:rgba(255,255,255,0.55);line-height:1.5;">${s.left||'Unknown'}</div>
+      </div>
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.65;">${s.fact}</p>
+    </div>`;
+  } else if(panelTab==='gallery'){
+    el.innerHTML=`<div style="padding:12px 18px;" id="gallery-inner"><div style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">LOADING...</div></div>`;
+    renderGallery(s);
+  } else {
+    el.innerHTML=s.links&&s.links.length
+      ?`<div style="padding:12px 18px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.22);">KNOWLEDGE BASE</div><div style="display:flex;gap:4px;">${badges}</div></div>${links}</div>`
+      :`<div style="padding:24px 18px;text-align:center;color:rgba(255,255,255,0.18);font-size:9px;letter-spacing:2px;">LINKS COMING IN OR-03</div>`;
+  }
+}
+
+function renderGallery(s){
+  const gi=document.getElementById('gallery-inner'); if(!gi) return;
+  const gd=GALLERY[s.id];
+  const credit=s.agency==='NASA'?'© NASA — U.S. Government work · Public domain'
+    :s.agency==='ROSCOSMOS'?'© Roscosmos / Soviet Space Program — Historical archive'
+    :s.agency==='CNSA'?'© CNSA — Official release — cnsa.gov.cn'
+    :s.agency==='ISRO'?'© ISRO — Educational use — isro.gov.in'
+    :s.agency==='JAXA'?'© JAXA — jaxa.jp'
+    :'Mission imagery';
+
+  if(!gd){gi.innerHTML=`<div style="text-align:center;padding:20px;"><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.18);">GALLERY CURATED IN OR-03</div><p style="margin-top:8px;font-family:'Crimson Pro',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.6;">Mission imagery will be sourced from official archives with full attribution.</p></div>`;return;}
+
+  if(gd.query){
+    // NASA Images API
+    gi.innerHTML=`<div style="font-size:7px;color:rgba(255,255,255,0.2);letter-spacing:2px;margin-bottom:8px;">NASA IMAGE LIBRARY · LIVE</div><div id="gal-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px;"><div style="grid-column:span 3;color:rgba(255,255,255,0.2);font-size:8px;">Loading…</div></div><div style="font-size:6.5px;color:rgba(255,255,255,0.18);line-height:1.5;">${credit}</div>`;
+    fetch('https://images-api.nasa.gov/search?q='+encodeURIComponent(gd.query)+'&media_type=image&page_size=9')
+      .then(r=>r.json()).then(data=>{
+        const items=(data.collection&&data.collection.items)||[];
+        const g=document.getElementById('gal-grid');if(!g)return;
+        if(!items.length){g.innerHTML=`<div style="grid-column:span 3;color:rgba(255,255,255,0.2);font-size:8px;">No images found</div>`;return;}
+        g.innerHTML=items.slice(0,9).map(item=>{
+          const th=item.links&&item.links[0]&&item.links[0].href;
+          const ti=(item.data&&item.data[0]&&item.data[0].title)||'';
+          return th?`<div style="aspect-ratio:1;overflow:hidden;border-radius:3px;background:#0a0a18;cursor:pointer;" title="${ti}" onclick="window.open('${th}','_blank')"><img src="${th}" alt="${ti}" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>`:'';
+        }).join('');
+      }).catch(()=>{const g=document.getElementById('gal-grid');if(g)g.innerHTML=`<div style="grid-column:span 3;color:rgba(255,255,255,0.2);font-size:8px;">Gallery requires internet access</div>`;});
+  } else if(gd.imgs&&gd.imgs.length){
+    // Curated Wikimedia images
+    gi.innerHTML=`<div style="font-size:7px;color:rgba(255,255,255,0.2);letter-spacing:2px;margin-bottom:8px;">CURATED · WIKIMEDIA COMMONS</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:8px;">
+      ${gd.imgs.map(u=>`<div style="aspect-ratio:1;overflow:hidden;border-radius:3px;background:#0a0a18;cursor:pointer;" onclick="window.open('${u}','_blank')"><img src="${u}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.parentElement.style.display='none'"></div>`).join('')}
+    </div>
+    <div style="font-size:6.5px;color:rgba(255,255,255,0.18);line-height:1.5;">${credit}<br>Source: Wikimedia Commons · Click to open full size</div>`;
+  } else {
+    gi.innerHTML=`<div style="text-align:center;padding:20px;"><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.18);">IMAGERY BEING SOURCED</div><p style="margin-top:8px;font-family:'Crimson Pro',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,0.25);line-height:1.6;">Gallery will be populated in OR-03 data catalog research session.</p></div>`;
+  }
+}
+
+window.closePanel=()=>{panelOpen=false;document.getElementById('panel').style.display='none';};
+
+// ═══════════════════════════════════════════════════════════════
+// VIEW TOGGLE
+// ═══════════════════════════════════════════════════════════════
+window.setView=v=>{
+  currentView=v;
+  document.getElementById('r2d').style.opacity=v==='2d'?'1':'0';
+  document.getElementById('r2d').style.pointerEvents=v==='2d'?'auto':'none';
+  document.getElementById('r3d').style.opacity=v==='3d'?'1':'0';
+  document.getElementById('r3d').style.pointerEvents=v==='3d'?'auto':'none';
+  document.getElementById('lbl3d').style.opacity=v==='3d'?'1':'0';
+  document.getElementById('tab-2d').className='vtab'+(v==='2d'?' active':'');
+  document.getElementById('tab-3d').className='vtab'+(v==='3d'?' active':'');
+  document.getElementById('hint2d').textContent=v==='2d'?'CLICK A LANDING SITE':'DRAG TO ORBIT · CLICK A SITE';
+};
+
+// ═══════════════════════════════════════════════════════════════
+// ANIMATE
+// ═══════════════════════════════════════════════════════════════
+function animate(now){
+  requestAnimationFrame(animate);
+  const dt=Math.min((now-lastTime)/1000,0.05);lastTime=now;frame++;
+  if(currentView==='3d') draw3d(dt);
+  else draw2d();
+}
+requestAnimationFrame(animate);
+</script>
+</body>
+</html>

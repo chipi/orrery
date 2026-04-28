@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Mission Library</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;width:100vw;height:100vh;overflow:hidden;font-family:'Space Mono',monospace;color:#fff;}
+  ::-webkit-scrollbar{width:5px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.12);border-radius:3px;}
+  #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;padding:18px 22px 40px;}
+  .card{background:rgba(10,10,20,0.97);border:1px solid rgba(255,255,255,0.07);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.15s,box-shadow 0.2s;cursor:pointer;}
+  .card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-2px);}
+  .card.selected{border-color:rgba(68,102,255,0.7);box-shadow:0 0 20px rgba(68,102,255,0.2);}
+  .pill{display:inline-flex;align-items:center;padding:3px 8px;border-radius:3px;font-size:7px;letter-spacing:2px;font-weight:700;}
+  .filter-btn{padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;border-radius:3px;cursor:pointer;border:1px solid rgba(255,255,255,0.1);background:transparent;color:rgba(255,255,255,0.35);font-family:'Space Mono',monospace;transition:all 0.15s;}
+  .filter-btn.active{background:rgba(68,102,255,0.25);border-color:rgba(68,102,255,0.5);color:#fff;}
+  .filter-btn:hover:not(.active){border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);}
+  .replay-btn{width:100%;padding:10px;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:2px;font-weight:700;cursor:pointer;border-radius:4px;transition:all 0.15s;}
+  .replay-btn.flown{background:#1a33bb;border:1px solid rgba(68,102,255,0.6);color:#fff;}
+  .replay-btn.flown:hover{background:#2244cc;}
+  .replay-btn.planned{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.4);cursor:default;}
+  .replay-btn.mine{background:rgba(78,205,196,0.15);border:1px solid rgba(78,205,196,0.4);color:#4ecdc4;}
+  .replay-btn.mine:hover{background:rgba(78,205,196,0.25);}
+  .logo-main{width:52px;height:52px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .logo-collab{width:22px;height:22px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-size:6px;font-weight:700;letter-spacing:1px;}
+  /* Preview panel */
+  #preview{position:fixed;top:52px;right:0;bottom:0;width:360px;background:rgba(4,4,12,0.98);border-left:1px solid rgba(68,102,255,0.3);backdrop-filter:blur(18px);display:none;flex-direction:column;z-index:50;transition:transform 0.3s ease;transform:translateX(100%);}
+  #preview.open{display:flex;transform:translateX(0);}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .card{animation:fadeUp 0.25s ease both;}
+  .section-label{grid-column:1/-1;padding:6px 0 4px;font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.22);border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:2px;}
+</style>
+</head>
+<body>
+<div style="height:100vh;display:flex;flex-direction:column;overflow:hidden;">
+
+  <!-- NAV -->
+  <div style="height:52px;background:rgba(4,4,12,0.97);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 22px;flex-shrink:0;z-index:60;position:relative;">
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.2);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+    <div style="display:flex;gap:3px;align-items:center;"><a href="P06_moon-map.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">MOON</a><a href="P01_solar-system-explorer.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">EXPLORE</a><a href="P02_mission-configurator.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">PLAN</a><a href="P03_mission-arc.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">FLY</a><span style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.28);border:1px solid rgba(68,102,255,0.55);border-radius:3px;">MISSIONS</span><a href="P05_earth-orbit.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">EARTH</a></div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;cursor:pointer;">FLY</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.2);border:1px solid rgba(68,102,255,0.45);border-radius:3px;">MISSIONS</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:6px;height:6px;border-radius:50%;background:#4ecdc4;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></div>
+      <span style="font-size:8px;color:rgba(255,255,255,0.3);letter-spacing:1px;">LIVE · TODAY</span>
+    </div>
+  </div>
+
+  <!-- HEADER STATS -->
+  <div style="background:rgba(4,4,12,0.92);border-bottom:1px solid rgba(255,255,255,0.06);padding:10px 22px;display:flex;align-items:center;gap:0;flex-shrink:0;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;margin-right:22px;color:rgba(255,255,255,0.8);">MISSION LIBRARY</div>
+    <div style="display:flex;gap:18px;margin-right:auto;">
+      <div style="text-align:center;"><div style="font-size:15px;font-weight:700;">16</div><div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:1px;">TOTAL</div></div>
+      <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+      <div style="text-align:center;"><div style="font-size:15px;font-weight:700;color:#4ecdc4;">7</div><div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:1px;">ACTIVE</div></div>
+      <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+      <div style="text-align:center;"><div style="font-size:15px;font-weight:700;color:#7b9cff;">4</div><div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:1px;">PLANNED</div></div>
+      <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+      <div style="text-align:center;"><div style="font-size:15px;font-weight:700;color:#ff9966;">2</div><div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:1px;">PRIVATE</div></div>
+      <div style="width:1px;background:rgba(255,255,255,0.07);"></div>
+      <div style="text-align:center;"><div style="font-size:15px;font-weight:700;color:rgba(255,255,255,0.5);">8</div><div style="font-size:6px;color:rgba(255,255,255,0.3);letter-spacing:1px;">AGENCIES</div></div>
+    </div>
+    <div style="font-size:11px;color:rgba(255,255,255,0.2);font-family:'Crimson Pro',serif;font-style:italic;">Mars has a ~50% mission success rate. Every attempt belongs here.</div>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div style="background:rgba(4,4,12,0.9);border-bottom:1px solid rgba(255,255,255,0.05);padding:9px 22px;display:flex;align-items:center;gap:6px;flex-shrink:0;flex-wrap:wrap;">
+    <span style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.22);margin-right:2px;">DESTINATION</span>
+    <button class="filter-btn active" data-group="dest" data-val="all" onclick="doFilter(this)">ALL</button>
+    <button class="filter-btn" data-group="dest" data-val="MARS" onclick="doFilter(this)">🔴 MARS</button>
+    <button class="filter-btn" data-group="dest" data-val="MOON" onclick="doFilter(this)">🌕 MOON</button>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.08);margin:0 4px;"></div>
+    <span style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.22);margin-right:2px;">STATUS</span>
+    <button class="filter-btn active" data-group="status" data-val="all" onclick="doFilter(this)">ALL</button>
+    <button class="filter-btn" data-group="status" data-val="FLOWN" onclick="doFilter(this)">FLOWN</button>
+    <button class="filter-btn" data-group="status" data-val="ACTIVE" onclick="doFilter(this)">ACTIVE</button>
+    <button class="filter-btn" data-group="status" data-val="PLANNED" onclick="doFilter(this)">PLANNED</button>
+    <button class="filter-btn" data-group="status" data-val="MINE" onclick="doFilter(this)">MINE</button>
+    <div style="width:1px;height:16px;background:rgba(255,255,255,0.07);margin:0 4px;"></div>
+    <span style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.22);margin-right:2px;">AGENCY</span>
+    <button class="filter-btn active" data-group="agency" data-val="all" onclick="doFilter(this)">ALL</button>
+    <button class="filter-btn" data-group="agency" data-val="NASA" onclick="doFilter(this)">NASA</button>
+    <button class="filter-btn" data-group="agency" data-val="ESA" onclick="doFilter(this)">ESA</button>
+    <button class="filter-btn" data-group="agency" data-val="CNSA" onclick="doFilter(this)">CNSA</button>
+    <button class="filter-btn" data-group="agency" data-val="ISRO" onclick="doFilter(this)">ISRO</button>
+    <button class="filter-btn" data-group="agency" data-val="ROSCOSMOS" onclick="doFilter(this)">ROSCOSMOS</button>
+    <button class="filter-btn" data-group="agency" data-val="UAE" onclick="doFilter(this)">UAE</button>
+    <button class="filter-btn" data-group="agency" data-val="JAXA" onclick="doFilter(this)">JAXA</button>
+    <button class="filter-btn" data-group="agency" data-val="SpaceX" onclick="doFilter(this)" style="color:rgba(255,200,100,0.6);border-color:rgba(255,200,100,0.2);">⚡ SpaceX</button>
+    <button class="filter-btn" data-group="agency" data-val="PRIVATE" onclick="doFilter(this)">ALL PRIVATE</button>
+  </div>
+
+  <!-- MAIN: grid + preview panel -->
+  <div style="flex:1;display:flex;overflow:hidden;position:relative;">
+    <div id="scroll-area" style="flex:1;overflow-y:auto;transition:margin-right 0.3s;">
+      <div id="grid"></div>
+    </div>
+
+    <!-- PREVIEW PANEL -->
+    <div id="preview">
+      <div id="prev-header" style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div>
+            <div id="prev-agency-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;"></div>
+            <div id="prev-name" style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;line-height:1;"></div>
+            <div id="prev-meta" style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:4px;letter-spacing:1px;"></div>
+          </div>
+          <div onclick="closePreview()" style="width:26px;height:26px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);font-size:14px;flex-shrink:0;">×</div>
+        </div>
+      </div>
+
+      <!-- 2D Trajectory canvas -->
+      <div style="padding:14px 20px 0;flex-shrink:0;">
+        <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:8px;">DEPARTURE GEOMETRY · ECLIPTIC PLANE</div>
+        <canvas id="prev-canvas" width="320" height="220" style="width:100%;border-radius:6px;background:#06060f;border:1px solid rgba(255,255,255,0.06);display:block;"></canvas>
+        <div id="prev-canvas-label" style="font-size:7px;color:rgba(255,255,255,0.2);text-align:center;margin-top:5px;letter-spacing:1px;"></div>
+      </div>
+
+      <!-- Tabs -->
+      <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 20px;flex-shrink:0;margin-top:12px;">
+        <button class="prev-tab active" id="tab-overview" onclick="switchTab('overview')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid #4466ff;color:#fff;cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">OVERVIEW</button>
+        <button class="prev-tab" id="tab-gallery" onclick="switchTab('gallery')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.35);cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">GALLERY</button>
+        <button class="prev-tab" id="tab-learn" onclick="switchTab('learn')" style="padding:8px 14px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid transparent;color:rgba(255,255,255,0.35);cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;">LEARN</button>
+      </div>
+
+      <!-- Stats -->
+      <div id="prev-stats" style="flex:1;overflow-y:auto;"></div>
+
+      <!-- Actions -->
+      <div style="padding:12px 20px;border-top:1px solid rgba(255,255,255,0.07);flex-shrink:0;">
+        <button id="prev-fly-btn" style="width:100%;padding:13px;background:#1a33bb;border:1px solid rgba(68,102,255,0.6);border-radius:4px;cursor:pointer;color:#fff;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;font-weight:700;margin-bottom:8px;transition:background 0.15s;" onmouseover="this.style.background='#2244cc'" onmouseout="this.style.background='#1a33bb'">▶ FLY THIS MISSION</button>
+        <div id="prev-credit" style="font-size:7px;color:rgba(255,255,255,0.18);text-align:center;letter-spacing:1px;line-height:1.6;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// AGENCY LOGOS — real logos via Wikimedia Commons
+//
+// TRADEMARK NOTICE: logos used for identification/attribution only (nominative use).
+// Real img loads on top of always-visible text fallback. Never breaks.
+const LOGOS = {
+  NASA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png",      bg:"#0B3D91",              color:"#fff",     abbr:"NASA"},
+  ESA:       {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/ESA_logo_simple.svg/200px-ESA_logo_simple.svg.png", bg:"#1C3C8A",    color:"#FFD700",  abbr:"ESA"},
+  CNSA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/CNSA_logo.svg/200px-CNSA_logo.svg.png",      bg:"#DE2910",              color:"#FFDE00",  abbr:"CNSA"},
+  ISRO:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Indian_Space_Research_Organisation_Logo.svg/200px-Indian_Space_Research_Organisation_Logo.svg.png", bg:"#1a1a2e", color:"#FF6B00", abbr:"ISRO"},
+  ROSCOSMOS: {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Roscosmos_logo_en.svg/200px-Roscosmos_logo_en.svg.png", bg:"#0d0d1a", color:"#fff",     abbr:"RSC"},
+  UAE:       {img:"https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/Mohammed_Bin_Rashid_Space_Centre_Logo.png/200px-Mohammed_Bin_Rashid_Space_Centre_Logo.png", bg:"#fff", color:"#00732F", abbr:"MBRSC"},
+  JAXA:      {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/JAXA_logo_2020.svg/200px-JAXA_logo_2020.svg.png",  bg:"#0062AC",             color:"#fff",     abbr:"JAXA"},
+  SpaceX:    {img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/200px-SpaceX-Logo.svg.png",   bg:"#000",                 color:"#fff",     abbr:"SpX"},
+  YOU:       {img:null,  bg:"rgba(78,205,196,0.08)", color:"#4ecdc4", abbr:"YOU"},
+};
+
+function logoHTML(agency, w=52, h=52, r=8) {
+  const l = LOGOS[agency] || {bg:"#1a1a2e", color:"rgba(255,255,255,0.4)", abbr:agency.slice(0,4), img:null};
+  const fs = w>40 ? (l.abbr.length>3?9:11) : (l.abbr.length>3?6:7);
+  return `<div style="position:relative;width:${w}px;height:${h}px;border-radius:${r}px;background:${l.bg};overflow:hidden;flex-shrink:0;">
+    <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:${fs}px;font-weight:700;letter-spacing:1px;color:${l.color};">${l.abbr}</div>
+    ${l.img?`<img src="${l.img}" alt="${agency}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:${w>40?'5px':'3px'};">`:''}
+  </div>`;
+}
+
+// Collaborator abbreviations for secondary display
+const COLLAB_LOGOS = {
+  NASA:{bg:"#0B3D91",text:"NASA"}, ESA:{bg:"#1C3C8A",text:"ESA"},
+  JPL:{bg:"#0B3D91",text:"JPL"}, CNES:{bg:"#003189",text:"CNES"},
+  DLR:{bg:"#1C3C8A",text:"DLR"}, ASI:{bg:"#006699",text:"ASI"},
+  JAXA:{bg:"#0062AC",text:"JAXA"}, CSA:{bg:"#FF0000",text:"CSA"},
+};
+
+// ═══════════════════════════════════════════════════════════════
+// MISSION DATA
+// ═══════════════════════════════════════════════════════════════
+// j2000: days from Jan 1.5 2000 — used for orbital position computation
+const MISSIONS = [
+  { id:"orrery-1",  name:"ORRERY-1",       agency:"YOU",       sector:"mine",  dest:"MOON",  color:"#4ecdc4",
+    year:2026,  type:"CARGO · ORBITER",   status:"MINE",    dep:"Dec 1, 2026",  arr:"Aug 17, 2027", tof:259, j2000:9465,
+    vehicle:"Falcon Heavy",  dv:"5.82 km/s", payload:"2,500 kg",
+    collabs:[],
+    first:null,
+    description:"Your mission. Planned via the Orrery configurator. 2026 Hohmann window, 259-day transit.",
+    data_quality:"perfect", credit:"Your mission data" },
+
+  { id:"mariner-4", name:"Mariner 4",       agency:"NASA",      sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:1964,  type:"FLYBY",             status:"FLOWN",   dep:"Nov 28, 1964", arr:"Jul 15, 1965", tof:228, j2000:-12820,
+    vehicle:"Atlas-Agena D", dv:"~5.9 km/s", payload:"261 kg",
+    collabs:[],
+    first:"First images of another planet's surface",
+    description:"21 grainy frames that ended the dream of Martian canals and civilisations. A cold, cratered, airless world — but ours to explore.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain" },
+
+  { id:"mars-3",    name:"Mars 3",          agency:"ROSCOSMOS", sector:"gov",   dest:"MARS",  color:"#003087",
+    year:1971,  type:"ORBITER + LANDER",  status:"FLOWN",   dep:"May 28, 1971", arr:"Dec 2, 1971",  tof:188, j2000:-10445,
+    vehicle:"Proton-K / D",  dv:"~5.5 km/s", payload:"1,210 kg",
+    collabs:[],
+    first:"First soft landing on Mars · 14.5 seconds of transmission",
+    description:"Landed. Transmitted for 14.5 seconds. Then silence, forever. A single unreadable frame is all that remains. The silence is the story.",
+    data_quality:"reconstructed",
+    data_note:"Orbital elements reconstructed from published specs. No usable surface imagery. TASS archive photos used for team credit.",
+    credit:"© Soviet Space Program / Roscosmos — Historical archive" },
+
+  { id:"viking-1",  name:"Viking 1",        agency:"NASA",      sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:1975,  type:"ORBITER + LANDER",  status:"FLOWN",   dep:"Aug 20, 1975", arr:"Jun 19, 1976", tof:303, j2000:-8899,
+    vehicle:"Titan IIIE-Centaur", dv:"~5.7 km/s", payload:"883 kg lander",
+    collabs:[],
+    first:"First successful Mars landing",
+    description:"Operated for over 6 years. Its biology experiments remain scientifically contested. Did it find life? The debate continues.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain" },
+
+  { id:"pathfinder",name:"Mars Pathfinder", agency:"NASA",      sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:1996,  type:"LANDER + ROVER",    status:"FLOWN",   dep:"Dec 4, 1996",  arr:"Jul 4, 1997",  tof:212, j2000:-1123,
+    vehicle:"Delta II 7925", dv:"~6.0 km/s", payload:"264 kg + 10.6 kg rover",
+    collabs:[],
+    first:"First Mars rover (Sojourner)",
+    description:"Landed on July 4th by design. Sojourner rover proved the concept. Returned 16,500 images. Named all its rocks after scientists.",
+    data_quality:"good", credit:"© NASA/JPL — U.S. Government work, public domain" },
+
+  { id:"mars-express", name:"Mars Express",  agency:"ESA",     sector:"gov",   dest:"MARS",  color:"#1C3C8A",
+    year:2003,  type:"ORBITER · ACTIVE",  status:"ACTIVE",  dep:"Jun 2, 2003",  arr:"Dec 25, 2003", tof:206, j2000:1248,
+    vehicle:"Soyuz-FG/Fregat", dv:"~5.8 km/s", payload:"666 kg",
+    collabs:["NASA"],
+    first:"First European Mars mission",
+    description:"Still operating after 20+ years. Has mapped virtually the entire Martian surface in stereo 3D. Confirmed subsurface liquid water.",
+    data_quality:"good", credit:"© ESA — CC BY-SA 3.0 IGO — esa.int/Mars_Express" },
+
+  { id:"curiosity",  name:"Curiosity",       agency:"NASA",    sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:2011,  type:"ROVER · ACTIVE",    status:"ACTIVE",  dep:"Nov 26, 2011", arr:"Aug 6, 2012",  tof:253, j2000:4347,
+    vehicle:"Atlas V 541", dv:"~6.1 km/s", payload:"899 kg",
+    collabs:[],
+    first:"First nuclear-powered Mars rover",
+    description:"Still roving Gale Crater 12+ years later. Confirmed Mars once had liquid water. Sky crane landing — the most audacious entry ever attempted.",
+    data_quality:"good", credit:"© NASA/JPL-Caltech/MSSS — U.S. Government work, public domain",
+    gallery_query:"curiosity rover mars gale crater",
+    links:[
+      {l:"Curiosity — Wikipedia", u:"https://en.wikipedia.org/wiki/Curiosity_(rover)", t:"intro"},
+      {l:"NASA Mars Science Laboratory", u:"https://science.nasa.gov/mission/msl-curiosity/", t:"intro"},
+      {l:"Gale Crater — Wikipedia", u:"https://en.wikipedia.org/wiki/Gale_(crater)", t:"intro"},
+      {l:"Sky Crane landing system — Wikipedia", u:"https://en.wikipedia.org/wiki/Sky_crane_(landing_system)", t:"core"},
+      {l:"Mars habitability: Curiosity findings (Science, 2013)", u:"https://www.science.org/doi/10.1126/science.1237356", t:"deep"},
+      {l:"MSL Entry, Descent and Landing (NASA)", u:"https://www.nasa.gov/sites/default/files/files/MSL_Landing_Press_Kit.pdf", t:"deep"},
+    ]},
+
+  { id:"maven",      name:"MAVEN",           agency:"NASA",    sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:2013,  type:"ORBITER · ACTIVE",  status:"ACTIVE",  dep:"Nov 18, 2013", arr:"Sep 22, 2014", tof:308, j2000:4969,
+    vehicle:"Atlas V 401", dv:"~5.9 km/s", payload:"809 kg",
+    collabs:[],
+    first:"Determined Mars atmospheric loss mechanism",
+    description:"Solved the mystery of Mars's missing atmosphere. The solar wind stripped it away over billions of years — turning a warm, wet world cold and dry.",
+    data_quality:"good", credit:"© NASA/GSFC — U.S. Government work, public domain" },
+
+  { id:"mangalyaan", name:"Mangalyaan",      agency:"ISRO",    sector:"gov",   dest:"MARS",  color:"#FF6B00",
+    year:2013,  type:"ORBITER",           status:"FLOWN",   dep:"Nov 5, 2013",  arr:"Sep 24, 2014", tof:323, j2000:4962,
+    vehicle:"PSLV-C25", dv:"~5.7 km/s", payload:"15 kg science",
+    collabs:["NASA"],
+    first:"First Asian Mars mission · Cheapest Mars mission per km²",
+    description:"Built in 15 months for $74M — less than the film Gravity. First Asian nation to reach Mars orbit. First space agency to succeed on its maiden attempt. Lost contact 2022.",
+    data_quality:"partial",
+    data_note:"Science imagery available via ISRO public releases. Mission lost contact April 2022.",
+    credit:"© ISRO — Educational use permitted — isro.gov.in" },
+
+  { id:"insight",    name:"InSight",         agency:"NASA",    sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:2018,  type:"LANDER",            status:"FLOWN",   dep:"May 5, 2018",  arr:"Nov 26, 2018", tof:205, j2000:6699,
+    vehicle:"Atlas V 401", dv:"~6.3 km/s", payload:"358 kg",
+    collabs:["ESA","CNES","DLR"],
+    first:"First seismometer on Mars",
+    description:"Heard Mars breathe — detected marsquakes and measured the planet's interior for the first time. Dust killed it. Solar panels buried. Retired December 2022.",
+    data_quality:"good", credit:"© NASA/JPL-Caltech — U.S. Government work, public domain" },
+
+  { id:"hope",       name:"Hope Probe",      agency:"UAE",     sector:"gov",   dest:"MARS",  color:"#00732F",
+    year:2020,  type:"ORBITER · ACTIVE",  status:"ACTIVE",  dep:"Jul 19, 2020", arr:"Feb 9, 2021",  tof:205, j2000:7500,
+    vehicle:"H-IIA 202 (JAXA)", dv:"~6.0 km/s", payload:"1,350 kg",
+    collabs:["JAXA"],
+    first:"First Arab interplanetary mission",
+    description:"Studies Mars's full atmosphere across all seasons and times of day simultaneously — a complete climate portrait no previous mission attempted. UAE built this in 6 years.",
+    data_quality:"good", credit:"© MBRSC / UAE Space Agency — mbrsc.ae" },
+
+  { id:"tianwen-1",  name:"Tianwen-1",       agency:"CNSA",    sector:"gov",   dest:"MARS",  color:"#DE2910",
+    year:2020,  type:"ORBITER + ROVER",   status:"ACTIVE",  dep:"Jul 23, 2020", arr:"Feb 10, 2021", tof:202, j2000:7508,
+    vehicle:"Long March 5", dv:"~6.1 km/s", payload:"5,000 kg",
+    collabs:[],
+    first:"First nation to orbit, land and rove Mars on first attempt",
+    description:"Zhurong rover operated 358 sols before going dormant. China accomplished orbit+landing+roving in one mission — something no other country has done.",
+    data_quality:"partial",
+    data_note:"Selected data released through CNSA official channels. Zhurong status uncertain as of 2023.",
+    credit:"© CNSA/CLEP — Official release — cnsa.gov.cn" },
+
+  { id:"perseverance",name:"Perseverance",   agency:"NASA",    sector:"gov",   dest:"MARS",  color:"#0B3D91",
+    year:2020,  type:"ROVER · ACTIVE",    status:"ACTIVE",  dep:"Jul 30, 2020", arr:"Feb 18, 2021", tof:203, j2000:7511,
+    vehicle:"Atlas V 541", dv:"~6.0 km/s", payload:"1,025 kg",
+    collabs:["ESA"],
+    first:"First Mars helicopter · First oxygen production on Mars",
+    description:"Caching samples in Jezero Crater for eventual Earth return. Ingenuity helicopter has flown 72+ times. MOXIE produced oxygen from the Martian atmosphere.",
+    data_quality:"good", credit:"© NASA/JPL-Caltech — U.S. Government work, public domain",
+    gallery_query:"perseverance rover jezero crater mars 2020",
+    links:[
+      {l:"Perseverance — Wikipedia", u:"https://en.wikipedia.org/wiki/Perseverance_(rover)", t:"intro"},
+      {l:"Ingenuity helicopter — Wikipedia", u:"https://en.wikipedia.org/wiki/Ingenuity_(helicopter)", t:"intro"},
+      {l:"Jezero Crater — Wikipedia", u:"https://en.wikipedia.org/wiki/Jezero_(crater)", t:"intro"},
+      {l:"MOXIE oxygen production — Wikipedia", u:"https://en.wikipedia.org/wiki/MOXIE", t:"core"},
+      {l:"Mars Sample Return overview — NASA", u:"https://science.nasa.gov/mission/mars-sample-return/", t:"core"},
+      {l:"Jezero Crater habitability (Science, 2021)", u:"https://www.science.org/doi/10.1126/science.abf4831", t:"deep"},
+    ]},
+
+  { id:"mmx",        name:"MMX",             agency:"JAXA",    sector:"gov",   dest:"MARS",  color:"#0062AC",
+    year:"2026", type:"PHOBOS SAMPLE RETURN", status:"PLANNED", dep:"2026 TBD", arr:"~2027", tof:null, j2000:null,
+    vehicle:"H3", dv:"~TBD", payload:"~4,000 kg",
+    collabs:["NASA","ESA","CNES"],
+    first:"First sample return from the Mars system",
+    description:"Martian Moons eXploration. Will collect samples from Phobos and return them to Earth in 2031. International collaboration — the most complex sample return ever planned.",
+    data_quality:"planned",
+    data_note:"Launch readiness scheduled 2026. Trajectory based on published JAXA mission design.",
+    credit:"© JAXA — jaxa.jp/projects/mmx" },
+
+  { id:"starship-demo", name:"Starship Demo", agency:"SpaceX", sector:"private",dest:"MARS", color:"#005288",
+    year:"2026–28", type:"UNCREWED CARGO", status:"PLANNED", dep:"Late 2026 TBD", arr:"~2027", tof:null, j2000:null,
+    vehicle:"Starship / Super Heavy", dv:"~5.5 km/s", payload:"Up to 100,000 kg",
+    collabs:[],
+    first:"First private Mars mission",
+    description:"Two uncrewed Starships before any crew. Land. Survive. Prove propellant production on Mars. If successful, the most significant Mars event since Viking. Private sector reaches Mars first.",
+    data_quality:"planned",
+    data_note:"Based on SpaceX published specifications. Dates TBD. Mass figures assume full orbital refuelling.",
+    credit:"© SpaceX — spacex.com — All rights reserved · Used for educational identification only" },
+
+  { id:"starship-crew", name:"Starship Crew 1", agency:"SpaceX", sector:"private", color:"#005288",
+    year:"2029+", type:"CREWED · SURFACE", status:"PLANNED", dep:"2029 TBD", arr:"~2030", tof:"~200d", j2000:null,
+    vehicle:"Starship / Super Heavy", dv:"~5.5 km/s", payload:"Crew + 100t cargo",
+    collabs:[],
+    first:"First humans on Mars — if it happens",
+    description:"The most audacious mission in the history of spaceflight. Musk targets 2029. If the demos succeed and Starship operates reliably, private sector lands humans on Mars before any government.",
+    data_quality:"planned",
+    data_note:"Highly speculative. Based on stated SpaceX objectives. Timeline, crew, surface duration all unconfirmed.",
+    credit:"© SpaceX — spacex.com — All rights reserved · Used for educational identification only" },
+];
+
+// ═══════════════════════════════════════════════════════════════
+// ORBITAL MECHANICS (for 2D trajectory preview)
+// ═══════════════════════════════════════════════════════════════
+const MU=4*Math.PI*Math.PI;
+const EARTH_L0=1.753, EARTH_W=2*Math.PI/365.25; // rad, rad/day (J2000)
+const MARS_L0=6.203,  MARS_W=2*Math.PI/686.97;
+const R_EARTH=1.0, R_MARS=1.524;
+
+function getPlanetPos2D(L0, omega, j2000_day) {
+  const ang = L0 + omega * j2000_day;
+  const r = (L0===EARTH_L0)?R_EARTH:R_MARS;
+  return {x:Math.cos(ang)*r, y:Math.sin(ang)*r};
+}
+
+function drawTrajectory(m) {
+  const canvas=document.getElementById('prev-canvas');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.width, H=canvas.height;
+  const cx=W/2, cy=H/2;
+  const scale=Math.min(W,H)*0.35;
+
+  ctx.fillStyle='#06060f'; ctx.fillRect(0,0,W,H);
+
+  // Moon missions — draw Earth-Moon diagram (not solar-system scale)
+  if(m.dest==='MOON'){
+    ctx.fillStyle='#06060f';ctx.fillRect(0,0,W,H);
+    // Earth
+    const ex=W*0.22,ey=H/2;
+    const eg=ctx.createRadialGradient(ex,ey,0,ex,ey,22);
+    eg.addColorStop(0,'#4b9cd3');eg.addColorStop(0.5,'#1a6a9a');eg.addColorStop(1,'rgba(0,30,60,0)');
+    ctx.beginPath();ctx.arc(ex,ey,22,0,Math.PI*2);ctx.fillStyle=eg;ctx.fill();
+    ctx.beginPath();ctx.arc(ex,ey,12,0,Math.PI*2);ctx.fillStyle='#4b9cd3';ctx.fill();
+    ctx.font="8px 'Space Mono',monospace";ctx.fillStyle='rgba(255,255,255,0.6)';ctx.textAlign='center';
+    ctx.fillText('EARTH',ex,ey+28);
+    // Moon
+    const mx2=W*0.78,my2=H/2;
+    const mg=ctx.createRadialGradient(mx2,my2,0,mx2,my2,18);
+    mg.addColorStop(0,'#aaa');mg.addColorStop(0.5,'#666');mg.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.beginPath();ctx.arc(mx2,my2,18,0,Math.PI*2);ctx.fillStyle=mg;ctx.fill();
+    ctx.beginPath();ctx.arc(mx2,my2,10,0,Math.PI*2);ctx.fillStyle='#999';ctx.fill();
+    ctx.fillText('MOON',mx2,my2+28);
+    // Arc
+    const cpx=W/2,cpy=H/2-40;
+    ctx.beginPath();ctx.moveTo(ex,ey);ctx.quadraticCurveTo(cpx,cpy,mx2,my2);
+    ctx.strokeStyle='rgba(68,102,255,0.6)';ctx.lineWidth=1.5;ctx.setLineDash([5,4]);ctx.stroke();ctx.setLineDash([]);
+    // Arrow
+    const adx=mx2-cpx,ady=my2-cpy,al=Math.sqrt(adx*adx+ady*ady)||1;
+    const ax=mx2,ay=my2,ux=adx/al,uy=ady/al;
+    ctx.beginPath();ctx.moveTo(ax-ux*10-uy*4,ay-uy*10+ux*4);ctx.lineTo(ax,ay);ctx.lineTo(ax-ux*10+uy*4,ay-uy*10-ux*4);
+    ctx.strokeStyle='rgba(68,102,255,0.8)';ctx.lineWidth=1.5;ctx.stroke();
+    // Labels
+    ctx.fillStyle='rgba(68,102,255,0.7)';ctx.font="7px 'Space Mono',monospace";ctx.textAlign='center';
+    ctx.fillText('EARTH → MOON · '+( m.tof ? m.tof+'d TRANSIT' : 'TRANSIT TIME VARIES' ),W/2,H-10);
+    document.getElementById('prev-canvas-label').textContent='Earth–Moon transfer · not to scale with solar system view';
+    return;
+  }
+  if(!m.j2000) {
+    // Planned Mars mission — show schematic
+    ctx.fillStyle='rgba(255,255,255,0.15)';
+    ctx.font="9px 'Space Mono',monospace";
+    ctx.textAlign='center';
+    ctx.fillText('TRAJECTORY TBD', W/2, H/2-8);
+    ctx.fillText('2026 WINDOW ESTIMATED', W/2, H/2+8);
+    document.getElementById('prev-canvas-label').textContent='Planned mission · trajectory estimated';
+    return;
+  }
+
+  const dep=m.j2000, arr=m.j2000+m.tof;
+  const earthDep=getPlanetPos2D(EARTH_L0,EARTH_W,dep);
+  const marsArr =getPlanetPos2D(MARS_L0, MARS_W, arr);
+  const marsDep =getPlanetPos2D(MARS_L0, MARS_W, dep);
+
+  // Orbit rings
+  [[R_EARTH,'rgba(75,156,211,0.2)'],[R_MARS,'rgba(193,68,14,0.2)']].forEach(([r,c])=>{
+    ctx.beginPath(); ctx.arc(cx,cy,r*scale,0,Math.PI*2);
+    ctx.strokeStyle=c; ctx.lineWidth=0.8; ctx.stroke();
+  });
+
+  // Bezier transfer arc
+  const midX=(cx+earthDep.x*scale+cx+marsArr.x*scale)/2;
+  const midY=(cy+earthDep.y*scale+cy+marsArr.y*scale)/2;
+  const dx=(marsArr.x-earthDep.x), dy=(marsArr.y-earthDep.y);
+  const len=Math.sqrt(dx*dx+dy*dy)||1;
+  const cpX=midX-(-dy/len)*scale*0.28, cpY=midY-(dx/len)*scale*0.28;
+  ctx.beginPath();
+  ctx.moveTo(cx+earthDep.x*scale, cy+earthDep.y*scale);
+  ctx.quadraticCurveTo(cpX,cpY, cx+marsArr.x*scale, cy+marsArr.y*scale);
+  ctx.strokeStyle='rgba(68,102,255,0.65)'; ctx.lineWidth=1.5;
+  ctx.setLineDash([5,3]); ctx.stroke(); ctx.setLineDash([]);
+
+  // Arrow tip
+  const tdx=marsArr.x*scale-cpX+cx, tdy=marsArr.y*scale-cpY+cy;
+  const tl=Math.sqrt(tdx*tdx+tdy*tdy)||1;
+  const ux=tdx/tl, uy=tdy/tl;
+  const ax=cx+marsArr.x*scale, ay=cy+marsArr.y*scale;
+  ctx.beginPath(); ctx.moveTo(ax-ux*8-uy*4,ay-uy*8+ux*4); ctx.lineTo(ax,ay); ctx.lineTo(ax-ux*8+uy*4,ay-uy*8-ux*4);
+  ctx.strokeStyle='rgba(68,102,255,0.8)'; ctx.lineWidth=1.5; ctx.stroke();
+
+  // Sun
+  const sg=ctx.createRadialGradient(cx,cy,0,cx,cy,16);
+  sg.addColorStop(0,'#fff8e7'); sg.addColorStop(0.5,'#ffe060'); sg.addColorStop(1,'rgba(255,140,0,0)');
+  ctx.beginPath(); ctx.arc(cx,cy,16,0,Math.PI*2); ctx.fillStyle=sg; ctx.fill();
+
+  // Earth at departure
+  const ex=cx+earthDep.x*scale, ey=cy+earthDep.y*scale;
+  ctx.beginPath(); ctx.arc(ex,ey,5,0,Math.PI*2); ctx.fillStyle='#4b9cd3'; ctx.fill();
+  ctx.font="bold 8px 'Space Mono'"; ctx.fillStyle='rgba(255,255,255,0.6)'; ctx.textAlign='center';
+  ctx.fillText('DEP',ex,ey-9);
+
+  // Mars at arrival
+  const max=cx+marsArr.x*scale, may=cy+marsArr.y*scale;
+  ctx.beginPath(); ctx.arc(max,may,4,0,Math.PI*2); ctx.fillStyle='#c1440e'; ctx.fill();
+  ctx.fillText('ARR',max,may-8);
+
+  // Mars at departure (ghost)
+  const mdx=cx+marsDep.x*scale, mdy=cy+marsDep.y*scale;
+  ctx.beginPath(); ctx.arc(mdx,mdy,4,0,Math.PI*2);
+  ctx.strokeStyle='rgba(193,68,14,0.35)'; ctx.lineWidth=1; ctx.stroke();
+
+  // Transit label
+  ctx.fillStyle='rgba(255,255,255,0.25)'; ctx.font="7px 'Space Mono'"; ctx.textAlign='left';
+  ctx.fillText(m.tof+'d transit · '+m.dep, 8, H-8);
+
+  document.getElementById('prev-canvas-label').textContent=
+    `Earth (blue) → Mars (red) · ${m.tof} day transfer · ${m.year}`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// FILTER STATE
+// ═══════════════════════════════════════════════════════════════
+let fStatus='all', fAgency='all', fDest='all', selectedId=null;
+
+function doFilter(btn){
+  const g=btn.dataset.group, v=btn.dataset.val;
+  document.querySelectorAll(`.filter-btn[data-group="${g}"]`).forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(g==='status') fStatus=v;
+  else if(g==='dest') fDest=v;
+  else fAgency=v;
+  closePreview(); render();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// CARD HTML
+// ═══════════════════════════════════════════════════════════════
+function statusPill(s){
+  const map={ACTIVE:['rgba(78,205,196,0.15)','#4ecdc4','rgba(78,205,196,0.3)','● ACTIVE'],
+             FLOWN: ['rgba(255,255,255,0.06)','rgba(255,255,255,0.45)','rgba(255,255,255,0.12)','FLOWN'],
+             PLANNED:['rgba(123,156,255,0.1)','#7b9cff','rgba(123,156,255,0.3)','◌ PLANNED'],
+             MINE:  ['rgba(78,205,196,0.1)','#4ecdc4','rgba(78,205,196,0.25)','★ MINE']};
+  const [bg,col,brd,label]=map[s]||['transparent','#fff','rgba(255,255,255,0.1)',s];
+  return `<div class="pill" style="background:${bg};color:${col};border:1px solid ${brd};">${label}</div>`;
+}
+function qualityBadge(q,note){
+  if(q==='reconstructed') return `<div class="pill" style="background:rgba(240,80,40,0.1);color:#ff8060;border:1px solid rgba(240,80,40,0.3);margin-top:5px;" title="${note||''}">◈ RECONSTRUCTED</div>`;
+  if(q==='partial')       return `<div class="pill" style="background:rgba(240,180,40,0.1);color:#f0b428;border:1px solid rgba(240,180,40,0.3);margin-top:5px;" title="${note||''}">⚠ PARTIAL DATA</div>`;
+  if(q==='planned')       return `<div class="pill" style="background:rgba(123,156,255,0.08);color:#7b9cff;border:1px solid rgba(123,156,255,0.2);margin-top:5px;">◌ PLANNED</div>`;
+  return '';
+}
+
+function cardHTML(m, delay){
+  const collabRow=m.collabs&&m.collabs.length?`<div style="display:flex;align-items:center;gap:4px;margin-top:7px;">
+    <div style="font-size:6px;letter-spacing:1px;color:rgba(255,255,255,0.2);margin-right:2px;">+ collab:</div>
+    ${m.collabs.map(c=>{const cl=COLLAB_LOGOS[c]||{bg:'#333',text:c};return `<div class="logo-collab" style="background:${cl.bg};" title="${c}"><span style="font-size:5.5px;color:#fff;font-weight:700;letter-spacing:0.5px;">${cl.text}</span></div>`;}).join('')}
+  </div>`:'';
+  const privateBadge=m.sector==='private'?`<div class="pill" style="background:rgba(255,153,0,0.12);color:#ff9940;border:1px solid rgba(255,153,0,0.3);">⚡ PRIVATE</div>`:'';
+
+  return `<div class="card${selectedId===m.id?' selected':''}" style="animation-delay:${delay}ms;border-top:3px solid ${m.color}80;" onclick="selectMission('${m.id}')">
+    <!-- Header -->
+    <div style="padding:13px 14px 10px;display:flex;gap:12px;align-items:flex-start;">
+      ${logoHTML(m.agency, 52, 52, 8)}
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:5px;">
+          ${statusPill(m.status)} ${privateBadge}
+          <div class="pill" style="background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.07);">${m.type}</div>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:2px;line-height:1.05;">${m.name}</div>
+        <div style="font-size:7px;color:rgba(255,255,255,0.3);letter-spacing:1px;margin-top:2px;">${m.agency} · ${m.year}</div>
+        ${collabRow}
+        ${qualityBadge(m.data_quality, m.data_note)}
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.04);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
+      <div style="padding:7px 10px;background:#07070f;"><div style="font-size:6px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">DEPART</div><div style="font-size:9px;color:#fff;font-weight:700;margin-top:1px;">${m.dep.length>12?m.dep.substring(0,12)+'…':m.dep}</div></div>
+      <div style="padding:7px 10px;background:#07070f;"><div style="font-size:6px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">TRANSIT</div><div style="font-size:9px;color:#fff;font-weight:700;margin-top:1px;">${m.tof?m.tof+'d':'TBD'}</div></div>
+      <div style="padding:7px 10px;background:#07070f;"><div style="font-size:6px;letter-spacing:1.5px;color:rgba(255,255,255,0.25);">Δv</div><div style="font-size:9px;color:#fff;font-weight:700;margin-top:1px;">${m.dv||'TBD'}</div></div>
+    </div>
+
+    <!-- Description -->
+    <div style="padding:10px 14px;flex:1;">
+      ${m.first?`<div style="font-size:7px;letter-spacing:1px;color:${m.color};margin-bottom:5px;opacity:0.85;">${m.first}</div>`:''}
+      <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:11.5px;color:rgba(255,255,255,0.52);line-height:1.55;">${m.description}</p>
+    </div>
+    <div style="padding:4px 14px 12px;font-size:7px;color:rgba(255,255,255,0.18);letter-spacing:1px;">CLICK TO PREVIEW ›</div>
+  </div>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// PREVIEW PANEL
+// ═══════════════════════════════════════════════════════════════
+function selectMission(id){
+  if(selectedId===id){ closePreview(); return; }
+  selectedId=id;
+  const m=MISSIONS.find(x=>x.id===id);
+  const panel=document.getElementById('preview');
+
+  // Agency row
+  document.getElementById('prev-agency-row').innerHTML=
+    `${logoHTML(m.agency, 36, 36, 6)}
+     <div><div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.3);">${m.agency}</div>
+     <div style="font-size:8px;color:rgba(255,255,255,0.6);letter-spacing:1px;">${m.year}</div></div>
+     ${m.sector==='private'?`<div class="pill" style="background:rgba(255,153,0,0.12);color:#ff9940;border:1px solid rgba(255,153,0,0.25);margin-left:4px;">⚡ PRIVATE</div>`:statusPill(m.status)}`;
+  document.getElementById('prev-name').textContent=m.name;
+  document.getElementById('prev-meta').textContent=`${m.type} · ${m.vehicle||'Vehicle TBD'}`;
+
+  // Reset tabs to OVERVIEW
+  currentMission=m; activeTab='overview';
+  document.querySelectorAll('.prev-tab').forEach(b=>{const a=b.id==='tab-overview';b.style.borderBottomColor=a?'#4466ff':'transparent';b.style.color=a?'#fff':'rgba(255,255,255,0.35)';});
+
+  // Credit
+  document.getElementById('prev-credit').innerHTML=`<div style="font-size:7px;color:rgba(255,255,255,0.18);text-align:center;letter-spacing:1px;line-height:1.6;">${m.credit||m.agency}</div><div style="font-size:6px;color:rgba(255,255,255,0.1);margin-top:2px;text-align:center;">Logos are trademarks of their agencies · educational identification only</div>`;
+
+  // Fly button
+  const flyBtn=document.getElementById('prev-fly-btn');
+  if(m.status==='PLANNED'){ flyBtn.textContent='◌ TRAJECTORY TBD'; flyBtn.style.background='rgba(255,255,255,0.04)'; flyBtn.style.borderColor='rgba(255,255,255,0.1)'; flyBtn.style.color='rgba(255,255,255,0.3)'; flyBtn.style.cursor='default'; }
+  else if(m.sector==='mine'){ flyBtn.textContent='▶ REPLAY MY MISSION'; flyBtn.style.background='rgba(78,205,196,0.2)'; flyBtn.style.borderColor='rgba(78,205,196,0.4)'; flyBtn.style.color='#4ecdc4'; flyBtn.style.cursor='pointer'; }
+  else { flyBtn.textContent='▶ FLY THIS MISSION'; flyBtn.style.background='#1a33bb'; flyBtn.style.borderColor='rgba(68,102,255,0.6)'; flyBtn.style.color='#fff'; flyBtn.style.cursor='pointer'; }
+
+  // Draw trajectory + render overview
+  drawTrajectory(m);
+  renderOverview(m);
+
+  // Open panel + shift scroll area
+  panel.classList.add('open');
+  document.getElementById('scroll-area').style.marginRight='360px';
+
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('selected'));
+  render();
+}
+
+function closePreview(){
+  selectedId=null;
+  document.getElementById('preview').classList.remove('open');
+  document.getElementById('scroll-area').style.marginRight='0';
+  render();
+}
+window.closePreview=closePreview;
+
+// ═══════════════════════════════════════════════════════════════
+// RENDER GRID
+// ═══════════════════════════════════════════════════════════════
+function render(){
+  const filtered=MISSIONS.filter(m=>{
+    const sOk=fStatus==='all'||(fStatus==='MINE'&&m.sector==='mine')||(fStatus!=='MINE'&&m.status===fStatus);
+    const aOk=fAgency==='all'||(fAgency==='PRIVATE'&&m.sector==='private')||m.agency===fAgency;
+    const dOk=fDest==='all'||m.dest===fDest;
+    return sOk&&aOk&&dOk;
+  });
+  const mine=filtered.filter(m=>m.sector==='mine');
+  const active=filtered.filter(m=>m.status==='ACTIVE');
+  const planned=filtered.filter(m=>m.status==='PLANNED');
+  const flown=filtered.filter(m=>m.status==='FLOWN');
+  let html='',delay=0;
+  if(mine.length){html+=`<div class="section-label">YOUR MISSIONS</div>`;mine.forEach(m=>{html+=cardHTML(m,delay);delay+=35;});}
+  if(active.length){const destLabel=fDest==='MOON'?'MOON · CURRENTLY ACTIVE':fDest==='MARS'?'MARS · CURRENTLY ACTIVE':'CURRENTLY ACTIVE — MARS & MOON';html+=`<div class="section-label">${destLabel}</div>`;active.forEach(m=>{html+=cardHTML(m,delay);delay+=35;});}
+  if(planned.length){html+=`<div class="section-label">PLANNED & UPCOMING · PRIVATE SECTOR INCLUDED</div>`;planned.forEach(m=>{html+=cardHTML(m,delay);delay+=35;});}
+  if(flown.length){const archLabel=fDest==='MOON'?'MOON · MISSION ARCHIVE':fDest==='MARS'?'MARS · MISSION ARCHIVE':'MISSION ARCHIVE — PATH TO MARS';html+=`<div class="section-label">${archLabel}</div>`;flown.forEach(m=>{html+=cardHTML(m,delay);delay+=35;});}
+  if(!filtered.length) html=`<div style="grid-column:1/-1;text-align:center;padding:60px;color:rgba(255,255,255,0.15);font-size:9px;letter-spacing:2px;">NO MISSIONS MATCH THIS FILTER</div>`;
+  document.getElementById('grid').innerHTML=html;
+}
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+const TIER={intro:{label:"INTRO",bg:"#0d2e2b",color:"#4ecdc4",dot:"#4ecdc4"},core:{label:"CORE",bg:"#0d1535",color:"#7b9cff",dot:"#4466ff"},deep:{label:"DEEP",bg:"#2e0d0d",color:"#ff9090",dot:"#ff4444"}};
+let activeTab='overview'; let currentMission=null;
+
+window.switchTab=tab=>{
+  activeTab=tab;
+  document.querySelectorAll('.prev-tab').forEach(b=>{const a=b.id==='tab-'+tab;b.style.borderBottomColor=a?'#4466ff':'transparent';b.style.color=a?'#fff':'rgba(255,255,255,0.35)';});
+  if(currentMission){if(tab==='overview')renderOverview(currentMission);else if(tab==='gallery')renderGallery(currentMission);else renderLearn(currentMission);}
+};
+
+function renderOverview(m){
+  const ch=m.collabs&&m.collabs.length?`<div style="grid-column:span 2;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:5px;">COLLABORATION</div><div style="display:flex;gap:6px;">${m.collabs.map(c=>{const cl=COLLAB_LOGOS[c]||{bg:'#333',text:c};return`<div style="display:flex;align-items:center;gap:5px;"><div class="logo-collab" style="background:${cl.bg};"><span style="font-size:5.5px;color:#fff;font-weight:700;">${cl.text}</span></div><span style="font-size:8px;color:rgba(255,255,255,0.5);">${c}</span></div>`;}).join('')}</div></div>`:'';
+  document.getElementById('prev-stats').innerHTML=`<div style="padding:14px 20px;"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:9px 11px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">DEPARTURE</div><div style="font-size:10px;color:#fff;font-weight:700;">${m.dep}</div></div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:9px 11px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">ARRIVAL</div><div style="font-size:10px;color:#fff;font-weight:700;">${m.arr}</div></div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:9px 11px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">TRANSIT</div><div style="font-size:10px;color:#fff;font-weight:700;">${m.tof?m.tof+'d':'TBD'}</div></div>
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:9px 11px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">PAYLOAD</div><div style="font-size:10px;color:#fff;font-weight:700;">${m.payload||'TBD'}</div></div>
+    ${ch}</div>
+    ${m.first?`<div style="padding:9px 11px;background:rgba(255,255,255,0.03);border-left:3px solid ${m.color};border-radius:2px;margin-bottom:10px;"><div style="font-size:7px;letter-spacing:1.5px;color:${m.color};">${m.first}</div></div>`:''}
+    <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:${m.data_note?'10':'0'}px;">${m.description}</p>
+    ${m.data_note?`<div style="padding:8px 10px;background:rgba(255,255,255,0.02);border-left:2px solid rgba(255,255,255,0.12);border-radius:2px;font-size:8px;color:rgba(255,255,255,0.3);line-height:1.5;">${m.data_note}</div>`:''}
+  </div>`;
+}
+
+function renderGallery(m){
+  const el=document.getElementById('prev-stats');
+  if(!m.gallery_query){el.innerHTML=`<div style="padding:24px 20px;text-align:center;"><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px;">GALLERY COMING IN OR-03</div><p style="font-size:10px;color:rgba(255,255,255,0.15);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.6;">Mission imagery will be curated from NASA Image Library, ESA archives, and agency press releases with full attribution.</p></div>`;return;}
+  el.innerHTML=`<div style="padding:14px 20px;"><div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:10px;">NASA IMAGE LIBRARY · LIVE FETCH</div><div id="gal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:8px;"><div style="grid-column:span 3;font-size:8px;color:rgba(255,255,255,0.2);padding:10px 0;">Loading…</div></div><div style="font-size:7px;color:rgba(255,255,255,0.15);line-height:1.5;">© NASA — U.S. Government work · Public domain<br>Source: images-api.nasa.gov · Click to open full size</div></div>`;
+  fetch(`https://images-api.nasa.gov/search?q=${encodeURIComponent(m.gallery_query)}&media_type=image&page_size=9`)
+    .then(r=>r.json()).then(data=>{
+      const items=(data.collection&&data.collection.items)||[
+  // ══════════════════════════════════════════════════════════════
+  // MOON MISSIONS — the road to Mars starts here
+  // ══════════════════════════════════════════════════════════════
+
+  // ── Soviet / Roscosmos ───────────────────────────────────────
+  { id:"luna9m",   name:"Luna 9",              agency:"ROSCOSMOS", agency_full:"Soviet Space Program",
+    sector:"gov",  dest:"MOON",  color:"#003087",
+    year:1966, type:"UNCREWED SOFT LANDER",  status:"FLOWN",
+    dep:"Jan 31, 1966", arr:"Feb 3, 1966", tof:3, j2000:null,
+    vehicle:"Molniya-M", dv:"~3.1 km/s", payload:"99 kg lander",
+    collabs:[],
+    first:"First soft landing on the Moon · First surface photographs from another body",
+    description:"Nine panoramic images transmitted across three days. Ended the debate about whether landers would sink into deep dust. The Moon was reachable. Everything that followed began here.",
+    data_quality:"good", credit:"© Soviet Space Program / Roscosmos — Historical archive",
+    gallery_query:"Luna 9 Soviet Moon soft landing",
+    links:[
+      {l:"Luna 9 — Wikipedia",u:"https://en.wikipedia.org/wiki/Luna_9",t:"intro"},
+    ]},
+
+  { id:"lunokhod1m", name:"Luna 17 / Lunokhod 1", agency:"ROSCOSMOS", agency_full:"Soviet Space Program",
+    sector:"gov",  dest:"MOON",  color:"#003087",
+    year:1970, type:"UNCREWED ROVER",        status:"FLOWN",
+    dep:"Nov 10, 1970", arr:"Nov 15, 1970", tof:5, j2000:null,
+    vehicle:"Proton-K", dv:"~3.1 km/s", payload:"756 kg",
+    collabs:[],
+    first:"First rover to operate on another world",
+    description:"Drove 10.5 km over 322 days. Photographed over 20,000 images. Lost to history until 2010, when LRO spotted it still sitting exactly where it stopped. Remote driving on another world, solved in 1970.",
+    data_quality:"good", credit:"© Soviet Space Program / Roscosmos — Historical archive",
+    gallery_query:"Lunokhod 1 rover Soviet Moon Mare Imbrium",
+    links:[
+      {l:"Lunokhod 1 — Wikipedia",u:"https://en.wikipedia.org/wiki/Lunokhod_1",t:"intro"},
+    ]},
+
+  { id:"luna24m",  name:"Luna 24",             agency:"ROSCOSMOS", agency_full:"Soviet Space Program",
+    sector:"gov",  dest:"MOON",  color:"#003087",
+    year:1976, type:"UNCREWED SAMPLE RETURN", status:"FLOWN",
+    dep:"Aug 9, 1976",  arr:"Aug 14, 1976", tof:5, j2000:null,
+    vehicle:"Proton-K", dv:"~3.1 km/s", payload:"~5,800 kg",
+    collabs:[],
+    first:"Last Soviet lunar mission · Samples contained water-bearing minerals",
+    description:"Returned 170g of samples from Mare Crisium including minerals containing water — foreshadowing the later discovery of lunar ice. The Soviet programme ended here. No nation returned to the Moon's surface for 37 years.",
+    data_quality:"good", credit:"© Soviet Space Program / Roscosmos — Historical archive",
+    gallery_query:"Luna 24 Soviet Moon sample return",
+    links:[
+      {l:"Luna 24 — Wikipedia",u:"https://en.wikipedia.org/wiki/Luna_24",t:"intro"},
+    ]},
+
+  // ── NASA Apollo ──────────────────────────────────────────────
+  { id:"apollo11m", name:"Apollo 11",           agency:"NASA", agency_full:"NASA / JSC",
+    sector:"gov",  dest:"MOON",  color:"#0B3D91",
+    year:1969, type:"CREWED LANDER",          status:"FLOWN",
+    dep:"Jul 16, 1969", arr:"Jul 20, 1969", tof:4, j2000:null,
+    vehicle:"Saturn V", dv:"~3.1 km/s (TLI)", payload:"2,800 kg lander",
+    collabs:[],
+    first:"First humans on the Moon · Laser retroreflector still used today",
+    description:"Watched live by ~600 million people — a fifth of humanity. The retroreflector Armstrong and Aldrin placed still receives laser pulses from Earth, measuring the Moon's distance to millimetre precision. Footprints in the airless regolith will survive unchanged for a million years.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain",
+    gallery_query:"Apollo 11 moon landing astronaut surface tranquility",
+    links:[
+      {l:"Apollo 11 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_11",t:"intro"},
+      {l:"NASA Apollo 11 — nasa.gov",u:"https://www.nasa.gov/mission/apollo-11/",t:"intro"},
+      {l:"Lunar retroreflectors — still active (NASA)",u:"https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/",t:"core"},
+    ]},
+
+  { id:"apollo17m", name:"Apollo 17",           agency:"NASA", agency_full:"NASA / JSC",
+    sector:"gov",  dest:"MOON",  color:"#0B3D91",
+    year:1972, type:"CREWED LANDER · ROVER",  status:"FLOWN",
+    dep:"Dec 7, 1972",  arr:"Dec 11, 1972", tof:4, j2000:null,
+    vehicle:"Saturn V", dv:"~3.1 km/s (TLI)", payload:"~2,800 kg lander",
+    collabs:[],
+    first:"Last humans on the Moon · Only geologist to walk on another world",
+    description:"Cernan's last words before climbing the ladder: 'We leave as we came, and God willing, we shall return.' Harrison Schmitt, the only trained geologist on the Moon, collected samples that reshaped our understanding of lunar geology. Nobody has been back since.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain",
+    gallery_query:"Apollo 17 moon Taurus Littrow Cernan Schmitt rover",
+    links:[
+      {l:"Apollo 17 — Wikipedia",u:"https://en.wikipedia.org/wiki/Apollo_17",t:"intro"},
+      {l:"Cernan's last words (NASA)",u:"https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/",t:"intro"},
+    ]},
+
+  // ── NASA robotic (strategic) ─────────────────────────────────
+  { id:"clementine", name:"Clementine",         agency:"NASA", agency_full:"NASA / DoD / BMDO",
+    sector:"gov",  dest:"MOON",  color:"#0B3D91",
+    year:1994, type:"ORBITER",                status:"FLOWN",
+    dep:"Jan 25, 1994", arr:"Feb 19, 1994", tof:25, j2000:null,
+    vehicle:"Titan IIG", dv:"~3.1 km/s", payload:"227 kg",
+    collabs:[],
+    first:"First evidence of water ice at the lunar south pole",
+    description:"A joint NASA-DoD technology demonstrator that accidentally changed lunar science. Radar data suggested ice in permanently shadowed craters at the south pole. Contested at first, but confirmed later. The entire strategic value of the south pole as a future base location traces back to this mission.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain",
+    gallery_query:"Clementine lunar south pole ice Moon 1994",
+    links:[
+      {l:"Clementine — Wikipedia",u:"https://en.wikipedia.org/wiki/Clementine_(spacecraft)",t:"intro"},
+      {l:"Lunar south pole — NASA",u:"https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon",t:"core"},
+    ]},
+
+  { id:"lro",      name:"Lunar Reconnaissance Orbiter", agency:"NASA", agency_full:"NASA / GSFC",
+    sector:"gov",  dest:"MOON",  color:"#0B3D91",
+    year:2009, type:"ORBITER · ACTIVE",       status:"ACTIVE",
+    dep:"Jun 18, 2009", arr:"Jun 23, 2009", tof:5, j2000:null,
+    vehicle:"Atlas V 401", dv:"~3.1 km/s", payload:"1,018 kg",
+    collabs:[],
+    first:"50 cm resolution Moon map · Found Apollo descent stages from orbit",
+    description:"Has been mapping the Moon continuously since 2009. Found water ice at the poles. Spotted every Apollo and Soviet lander from orbit. Identified 200+ potential Artemis landing sites. LRO is why we know where to go next.",
+    data_quality:"good", credit:"© NASA — U.S. Government work, public domain",
+    gallery_query:"Lunar Reconnaissance Orbiter Moon LRO surface Apollo",
+    links:[
+      {l:"LRO — Wikipedia",u:"https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter",t:"intro"},
+      {l:"LROC image gallery — ASU",u:"https://www.lroc.asu.edu/",t:"core"},
+    ]},
+
+  // ── ISRO ────────────────────────────────────────────────────
+  { id:"chandrayaan1", name:"Chandrayaan-1",    agency:"ISRO", agency_full:"ISRO / NASA",
+    sector:"gov",  dest:"MOON",  color:"#FF6B00",
+    year:2008, type:"ORBITER",                status:"FLOWN",
+    dep:"Oct 22, 2008", arr:"Nov 8, 2008", tof:17, j2000:null,
+    vehicle:"PSLV-C11", dv:"~3.1 km/s", payload:"1,380 kg",
+    collabs:["NASA"],
+    first:"Confirmed water ice at lunar poles (with NASA Moon Mineralogy Mapper)",
+    description:"India's first Moon mission. Carried NASA's Moon Mineralogy Mapper instrument, which definitively confirmed the presence of water ice in permanently shadowed polar craters in 2009. The scientific result that made the south pole the most contested real estate in space.",
+    data_quality:"good", credit:"© ISRO — Educational use — isro.gov.in",
+    gallery_query:"Chandrayaan-1 Moon India ISRO lunar orbit",
+    links:[
+      {l:"Chandrayaan-1 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chandrayaan-1",t:"intro"},
+      {l:"Water ice confirmed (Science, 2009)",u:"https://www.science.org/doi/10.1126/science.1178658",t:"deep"},
+    ]},
+
+  { id:"chandrayaan3m", name:"Chandrayaan-3",   agency:"ISRO", agency_full:"ISRO",
+    sector:"gov",  dest:"MOON",  color:"#FF6B00",
+    year:2023, type:"LANDER · ROVER",         status:"FLOWN",
+    dep:"Jul 14, 2023", arr:"Aug 23, 2023", tof:40, j2000:null,
+    vehicle:"LVM3-M4", dv:"~3.1 km/s", payload:"~3,900 kg",
+    collabs:[],
+    first:"First spacecraft to land near the lunar south pole",
+    description:"Confirmed sulfur at the lunar surface for the first time. India became the fourth nation to soft-land on the Moon — and the first to reach the poles. The south pole was the target because of water ice. That ice is why this matters for Mars: it is the refuelling stop on the road outward.",
+    data_quality:"good", credit:"© ISRO — Educational use — isro.gov.in",
+    gallery_query:"Chandrayaan-3 Vikram lander Pragyan rover Moon south pole India",
+    links:[
+      {l:"Chandrayaan-3 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chandrayaan-3",t:"intro"},
+      {l:"Lunar south pole water ice (Science, 2018)",u:"https://www.science.org/doi/10.1126/science.aap8637",t:"deep"},
+    ]},
+
+  // ── CNSA ────────────────────────────────────────────────────
+  { id:"change4m",  name:"Chang'e 4 / Yutu-2", agency:"CNSA", agency_full:"CNSA / CLEP",
+    sector:"gov",  dest:"MOON",  color:"#DE2910",
+    year:2019, type:"LANDER · ROVER · ACTIVE",status:"ACTIVE",
+    dep:"Dec 7, 2018",  arr:"Jan 3, 2019",  tof:27, j2000:null,
+    vehicle:"Long March 3B", dv:"~3.1 km/s", payload:"~3,780 kg",
+    collabs:[],
+    first:"First landing on the lunar far side · Required a relay satellite at L2",
+    description:"Technically the most complex lunar landing ever attempted — the far side has no direct radio contact with Earth, requiring a relay satellite (Queqiao) parked at the Earth-Moon L2 point. Yutu-2 has driven 1.9+ km and is still active. The far side had never been visited.",
+    data_quality:"partial", data_note:"Selected science data released through CNSA official channels.",
+    credit:"© CNSA/CLEP — Official release",
+    gallery_query:"Chang'e 4 far side Moon Yutu-2 rover Von Karman",
+    links:[
+      {l:"Chang'e 4 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_4",t:"intro"},
+      {l:"Lunar far side — Wikipedia",u:"https://en.wikipedia.org/wiki/Far_side_of_the_Moon",t:"core"},
+    ]},
+
+  { id:"change5m",  name:"Chang'e 5",           agency:"CNSA", agency_full:"CNSA / CLEP",
+    sector:"gov",  dest:"MOON",  color:"#DE2910",
+    year:2020, type:"SAMPLE RETURN",          status:"FLOWN",
+    dep:"Nov 23, 2020", arr:"Dec 1, 2020",  tof:8, j2000:null,
+    vehicle:"Long March 5", dv:"~3.1 km/s", payload:"~8,200 kg",
+    collabs:[],
+    first:"First lunar sample return in 44 years",
+    description:"Ended a 44-year gap since Luna 24 (1976). Returned 1.731 kg from a geologically young region — proving the Moon was volcanically active far more recently than thought. The capability to return samples from the Moon is the same capability needed to return samples from Mars.",
+    data_quality:"good", credit:"© CNSA/CLEP — Official release — cnsa.gov.cn",
+    gallery_query:"Chang'e 5 Moon sample return China 2020",
+    links:[
+      {l:"Chang'e 5 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_5",t:"intro"},
+    ]},
+
+  { id:"change6m",  name:"Chang'e 6",           agency:"CNSA", agency_full:"CNSA / CLEP",
+    sector:"gov",  dest:"MOON",  color:"#DE2910",
+    year:2024, type:"FAR SIDE SAMPLE RETURN", status:"FLOWN",
+    dep:"May 3, 2024",  arr:"Jun 1, 2024",  tof:29, j2000:null,
+    vehicle:"Long March 5", dv:"~3.1 km/s", payload:"~8,200 kg",
+    collabs:["ESA","JAXA"],
+    first:"First sample return from the lunar far side",
+    description:"The most scientifically significant lunar mission since Apollo. Far-side material — thicker crust, older surface, different composition — was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different. Chang'e 6 carried instruments from ESA, France, and Pakistan.",
+    data_quality:"good", credit:"© CNSA/CLEP — Official release — cnsa.gov.cn",
+    gallery_query:"Chang'e 6 far side Moon sample return 2024",
+    links:[
+      {l:"Chang'e 6 — Wikipedia",u:"https://en.wikipedia.org/wiki/Chang%27e_6",t:"intro"},
+    ]},
+
+  // ── JAXA ────────────────────────────────────────────────────
+  { id:"slimm",    name:"SLIM",                 agency:"JAXA", agency_full:"JAXA",
+    sector:"gov",  dest:"MOON",  color:"#0062AC",
+    year:2024, type:"PRECISION LANDER",        status:"FLOWN",
+    dep:"Sep 6, 2023",  arr:"Jan 19, 2024",  tof:135, j2000:null,
+    vehicle:"H-IIA 202", dv:"~3.1 km/s", payload:"~700 kg",
+    collabs:[],
+    first:"First precision lunar landing (100m accuracy demonstrated)",
+    description:"Japan's Smart Lander proved pin-point landing technology — targeting within 100m vs the km-scale standard of all previous missions. Landed tilted, losing primary power, but solar panels eventually faced the sun and operations resumed. Japan became the fifth nation to land on the Moon. Precision landing is essential for future missions targeting specific resource deposits.",
+    data_quality:"good", credit:"© JAXA — jaxa.jp",
+    gallery_query:"SLIM Smart Lander Japan Moon 2024 precision",
+    links:[
+      {l:"SLIM — Wikipedia",u:"https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon",t:"intro"},
+    ]},
+
+  // ── PLANNED ─────────────────────────────────────────────────
+  { id:"artemis3m", name:"Artemis III",          agency:"NASA", agency_full:"NASA / ESA / CSA",
+    sector:"gov",  dest:"MOON",  color:"#0B3D91",
+    year:"2026+", type:"CREWED LANDER (PLANNED)", status:"PLANNED",
+    dep:"2026 TBD", arr:"~2026", tof:4, j2000:null,
+    vehicle:"SLS Block 1B + Starship HLS", dv:"~3.1 km/s", payload:"Crew",
+    collabs:["ESA","CSA"],
+    first:"First humans on the Moon since 1972 · First woman and first POC on the Moon",
+    description:"The return. Targets the south pole for water ice — which may enable in-situ propellant production, making the Moon a refuelling depot for deep space missions. If it happens, it closes a 54-year gap. If it establishes a sustained presence, it changes the economics of reaching Mars permanently.",
+    data_quality:"planned", data_note:"Mission architecture confirmed. Starship HLS selected as lunar lander. Landing site TBD pending site survey.",
+    credit:"© NASA — nasa.gov/artemis",
+    gallery_query:"Artemis moon astronaut south pole NASA lunar",
+    links:[
+      {l:"Artemis III — Wikipedia",u:"https://en.wikipedia.org/wiki/Artemis_3",t:"intro"},
+      {l:"Artemis program — NASA",u:"https://www.nasa.gov/humans-in-space/artemis/",t:"intro"},
+      {l:"Lunar south pole water ice (Science, 2018)",u:"https://www.science.org/doi/10.1126/science.aap8637",t:"deep"},
+    ]},
+];
+      const g=document.getElementById('gal'); if(!g) return;
+      if(!items.length){g.innerHTML=`<div style="grid-column:span 3;color:rgba(255,255,255,0.2);font-size:8px;">No images found</div>`;return;}
+      g.innerHTML=items.slice(0,9).map(item=>{
+        const th=item.links&&item.links[0]&&item.links[0].href;
+        const ti=item.data&&item.data[0]&&item.data[0].title||'';
+        const ce=item.data&&item.data[0]&&item.data[0].center||'NASA';
+        return th?`<div style="position:relative;aspect-ratio:1;overflow:hidden;border-radius:3px;background:#0a0a18;cursor:pointer;" title="${ti}" onclick="window.open('${th}','_blank')"><img src="${th}" alt="${ti}" style="width:100%;height:100%;object-fit:cover;" loading="lazy"><div style="position:absolute;bottom:0;left:0;right:0;padding:3px;background:rgba(0,0,0,0.7);font-size:5.5px;color:rgba(255,255,255,0.5);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">${ce}</div></div>`:'';
+      }).join('');
+    }).catch(()=>{const g=document.getElementById('gal');if(g)g.innerHTML=`<div style="grid-column:span 3;color:rgba(255,255,255,0.2);font-size:8px;padding:10px 0;">Gallery requires internet · open file via browser</div>`;});
+}
+
+function renderLearn(m){
+  const el=document.getElementById('prev-stats');
+  if(!m.links||!m.links.length){el.innerHTML=`<div style="padding:24px 20px;text-align:center;"><div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);margin-bottom:8px;">LINKS COMING IN OR-03</div><p style="font-size:10px;color:rgba(255,255,255,0.15);font-family:'Crimson Pro',serif;font-style:italic;line-height:1.6;">Each mission will have curated INTRO / CORE / DEEP reading lists when the data catalog is built.</p></div>`;return;}
+  const tc={};Object.keys(TIER).forEach(t=>{tc[t]=(m.links||[]).filter(l=>l.t===t).length;});
+  const badges=Object.entries(TIER).filter(([t])=>tc[t]>0).map(([t,v])=>`<div style="font-size:7px;padding:2px 6px;background:${v.bg};color:${v.color};border-radius:2px;border:1px solid ${v.color}33;">${v.label} ${tc[t]}</div>`).join('');
+  const links=Object.entries(TIER).map(([tk,tv])=>{const ls=(m.links||[]).filter(l=>l.t===tk);if(!ls.length)return'';return`<div style="margin-bottom:14px;"><div style="font-size:7px;letter-spacing:2px;color:${tv.color};margin-bottom:6px;display:flex;align-items:center;gap:6px;"><div style="flex:1;height:1px;background:${tv.dot}33;"></div>${tv.label}<div style="flex:1;height:1px;background:${tv.dot}33;"></div></div>${ls.map(lk=>`<a href="${lk.u}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:4px;text-decoration:none;margin-bottom:3px;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'"><div style="width:5px;height:5px;border-radius:50%;background:${tv.dot};flex-shrink:0;"></div><span style="font-size:10px;color:rgba(255,255,255,0.68);flex:1;line-height:1.45;font-family:'Space Mono',monospace;">${lk.l}</span><span style="font-size:9px;color:rgba(255,255,255,0.2);">↗</span></a>`).join('')}</div>`;}).join('');
+  el.innerHTML=`<div style="padding:14px 20px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.25);">KNOWLEDGE BASE</div><div style="display:flex;gap:4px;">${badges}</div></div><div style="display:flex;gap:8px;margin-bottom:12px;padding:7px 10px;background:rgba(255,255,255,0.02);border-radius:4px;">${Object.entries(TIER).map(([t,v])=>`<div style="display:flex;align-items:center;gap:4px;"><div style="width:5px;height:5px;border-radius:50%;background:${v.dot};"></div><span style="font-size:7px;color:${v.color};">${v.label}</span></div>`).join('')}</div>${links}</div>`;
+}
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Orrery — Solar System Explorer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#04040c;overflow:hidden;width:100vw;height:100vh;font-family:'Space Mono',monospace;}
+  #r2d,#r3d{position:absolute;inset:0;width:100%;height:100%;transition:opacity 0.5s ease;}
+  #r3d canvas{display:block;width:100%!important;height:100%!important;}
+  #ui{position:absolute;inset:0;z-index:10;pointer-events:none;}
+  #ui *{pointer-events:auto;}
+  ::-webkit-scrollbar{width:4px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+  .link-row:hover{background:rgba(255,255,255,0.07)!important;}
+  .plan-btn:hover{background:#1e3dcc!important;}
+  .planet-pill{transition:all 0.18s;user-select:none;cursor:pointer;}
+  .planet-pill:hover{background:rgba(255,255,255,0.08)!important;}
+  @keyframes fadeIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  /* View toggle */
+  #view-toggle{
+    display:flex;align-items:center;
+    background:rgba(4,4,12,0.85);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;padding:3px;gap:2px;
+    backdrop-filter:blur(12px);
+  }
+  .vtab{
+    padding:5px 14px;font-size:8px;letter-spacing:2px;font-weight:700;
+    border-radius:16px;cursor:pointer;transition:all 0.2s;
+    color:rgba(255,255,255,0.38);background:transparent;border:none;
+    font-family:'Space Mono',monospace;
+  }
+  .vtab.active{
+    color:#fff;background:rgba(68,102,255,0.35);
+    box-shadow:0 0 12px rgba(68,102,255,0.3);
+  }
+  .vtab:hover:not(.active){color:rgba(255,255,255,0.7);}
+
+  /* Planet label */
+  #planet-label{
+    position:absolute;pointer-events:none;
+    font-family:'Space Mono',monospace;font-size:9px;letter-spacing:2px;color:#fff;
+    text-shadow:0 0 10px rgba(68,102,255,0.9);white-space:nowrap;
+    transform:translateX(-50%);z-index:15;transition:opacity 0.15s;
+  }
+</style>
+</head>
+<body>
+
+<!-- 2D Canvas -->
+<canvas id="r2d"></canvas>
+
+<!-- 3D Container -->
+<div id="r3d"></div>
+
+<!-- Hover label -->
+<div id="planet-label" style="opacity:0;"></div>
+
+<!-- Technical tooltip — data only, no name -->
+<div id="tooltip2d" style="position:absolute;display:none;background:rgba(4,4,16,0.93);border:1px solid rgba(68,102,255,0.4);border-radius:4px;padding:7px 11px;pointer-events:none;z-index:50;min-width:145px;">
+  <div id="tooltip-vel"  style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(200,210,240,0.85);margin-bottom:2px;"></div>
+  <div id="tooltip-dist" style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(200,210,240,0.85);margin-bottom:2px;"></div>
+  <div id="tooltip-pos"  style="font-family:'Space Mono',monospace;font-size:6px;color:rgba(100,130,255,0.8);letter-spacing:1px;"></div>
+</div>
+
+<!-- UI overlay -->
+<div id="ui">
+
+  <!-- NAV -->
+  <div style="position:absolute;top:0;left:0;right:0;height:52px;
+    background:rgba(4,4,12,0.88);border-bottom:1px solid rgba(255,255,255,0.07);
+    backdrop-filter:blur(14px);display:flex;align-items:center;
+    justify-content:space-between;padding:0 24px;">
+
+    <div style="display:flex;align-items:baseline;gap:12px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;color:#fff;">ORRERY</span>
+      <span style="font-size:8px;color:rgba(255,255,255,0.22);letter-spacing:2px;">MISSION SIMULATOR</span>
+    </div>
+
+    <div style="display:flex;gap:3px;align-items:center;"><a href="P06_moon-map.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">MOON</a><span style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:#fff;background:rgba(68,102,255,0.28);border:1px solid rgba(68,102,255,0.55);border-radius:3px;">EXPLORE</span><a href="P02_mission-configurator.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">PLAN</a><a href="P03_mission-arc.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">FLY</a><a href="P04_mission-library.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">MISSIONS</a><a href="P05_earth-orbit.html" style="padding:5px 12px;font-size:7px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.28);text-decoration:none;border-radius:3px;border:1px solid transparent;transition:all 0.15s;" onmouseover="this.style.color='rgba(255,255,255,0.85)';this.style.borderColor='rgba(255,255,255,0.12)'" onmouseout="this.style.color='rgba(255,255,255,0.28)';this.style.borderColor='transparent'">EARTH</a></div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">FLY</div>
+      <div style="padding:5px 13px;font-size:8px;letter-spacing:2px;font-weight:700;color:rgba(255,255,255,0.25);border-radius:3px;">MISSIONS</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:14px;">
+      <!-- VIEW TOGGLE -->
+      <div id="view-toggle">
+        <button class="vtab active" id="tab-3d" onclick="setView('3d')">3D</button>
+        <button class="vtab" id="tab-2d" onclick="setView('2d')">2D</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:#4ecdc4;box-shadow:0 0 8px #4ecdc4;animation:pulse 2s infinite;"></div>
+        <span style="font-size:8px;color:rgba(255,255,255,0.28);letter-spacing:1px;">LIVE · TODAY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANET PILLS -->
+  <div id="pills" style="position:absolute;top:62px;left:50%;transform:translateX(-50%);
+    display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:0 8px;max-width:820px;"></div>
+
+  <!-- DETAIL PANEL -->
+  <div id="panel" style="position:absolute;top:52px;right:0;bottom:68px;width:314px;
+    background:rgba(4,4,12,0.96);border-left:1px solid rgba(255,255,255,0.07);
+    backdrop-filter:blur(18px);display:none;flex-direction:column;
+    animation:fadeIn 0.22s ease;overflow:hidden;"></div>
+
+  <!-- BOTTOM BAR -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:68px;
+    background:rgba(4,4,12,0.88);border-top:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(14px);display:flex;align-items:center;
+    padding:0 22px;gap:14px;">
+    <span style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.22);">SPEED</span>
+    <div id="sbtns" style="display:flex;gap:4px;"></div>
+    <div style="width:1px;height:28px;background:rgba(255,255,255,0.08);margin:0 4px;"></div>
+    <div style="width:6px;height:6px;border-radius:50%;background:#4ecdc4;"></div>
+    <span id="sdate" style="font-size:8px;letter-spacing:1.5px;color:rgba(255,255,255,0.28);">SIM DATE · 2026</span>
+    <div style="flex:1;"></div>
+    <span id="hint" style="font-size:7px;letter-spacing:1.5px;color:rgba(255,255,255,0.14);">DRAG TO ORBIT · SCROLL TO ZOOM · CLICK TO EXPLORE</span>
+  </div>
+
+  <!-- Corner -->
+  <div style="position:absolute;bottom:80px;left:22px;">
+    <div style="font-size:7px;letter-spacing:3px;color:rgba(255,255,255,0.07);font-weight:700;">SOLAR SYSTEM EXPLORER</div>
+    <div style="font-size:7px;letter-spacing:2px;color:rgba(255,255,255,0.05);margin-top:2px;">KEPLERIAN MECHANICS · J2000 · INCLINED ORBITS</div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SHARED DATA
+// ═══════════════════════════════════════════════════════════════════
+const PLANETS = [
+  {id:"mercury",name:"Mercury",orbitR:52, size3:2.8,size2:3,  color3:0xb5b5b5,css:"#b5b5b5",period:0.241, a0:0.5, inc:7.0,  type:"Terrestrial planet",    au:"0.39 AU",orb:"88 days",    fact:"Surface temperatures swing 610°C in a single day. No atmosphere — just raw exposure to space.",missionable:false,
+    links:[{l:"Mercury — Wikipedia",u:"https://en.wikipedia.org/wiki/Mercury_(planet)",t:"intro"},{l:"NASA Mercury Fact Sheet",u:"https://nssdc.gsfc.nasa.gov/planetary/factsheet/mercuryfact.html",t:"intro"}]},
+  {id:"venus",  name:"Venus",  orbitR:83, size3:5.0, size2:5,  color3:0xe8cda0,css:"#e8cda0",period:0.615, a0:2.1, inc:3.4,  type:"Terrestrial planet",    au:"0.72 AU",orb:"225 days",   fact:"Surface pressure 90× Earth's. Soviet Venera probes lasted 23–127 minutes before being crushed.",missionable:false,
+    links:[{l:"Venus — Wikipedia",u:"https://en.wikipedia.org/wiki/Venus",t:"intro"}]},
+  {id:"earth",  name:"Earth",  orbitR:113,size3:5.2, size2:5.5,color3:0x3a8fcc,css:"#4b9cd3",period:1.0,   a0:0,   inc:0.0,  type:"Home · Reference orbit", au:"1.0 AU", orb:"365.25 days",fact:"Every human who has ever lived did so here. The reference orbit by which all others are measured.",missionable:false,
+    links:[{l:"Kepler's Laws — Wikipedia",u:"https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",t:"intro"},{l:"Orbital Mechanics — Wikipedia",u:"https://en.wikipedia.org/wiki/Orbital_mechanics",t:"intro"},{l:"Delta-v — Wikipedia",u:"https://en.wikipedia.org/wiki/Delta-v",t:"core"}]},
+  {id:"mars",   name:"Mars",   orbitR:155,size3:3.8, size2:4,  color3:0xc1440e,css:"#c1440e",period:1.881, a0:1.8, inc:1.85, type:"Mission target",         au:"1.52 AU",orb:"687 days",   fact:"Earth–Mars launch windows open every 26 months — driven by orbital resonance. Miss the window and wait two years.",missionable:true,
+    links:[
+      {l:"Hohmann Transfer Orbit — Wikipedia",u:"https://en.wikipedia.org/wiki/Hohmann_transfer_orbit",t:"intro"},
+      {l:"NASA JPL: Calculating Launch Windows",u:"https://www.jpl.nasa.gov/edu/resources/lesson-plan/lets-go-to-mars-calculating-launch-windows/",t:"intro"},
+      {l:"Porkchop Plot — Wikipedia",u:"https://en.wikipedia.org/wiki/Porkchop_plot",t:"core"},
+      {l:"Tsiolkovsky Rocket Equation — Wikipedia",u:"https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",t:"core"},
+      {l:"NASA Glenn: Ideal Rocket Equation",u:"https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ideal-rocket-equation/",t:"core"},
+      {l:"MIT OCW 16.00x: Rocket Equation",u:"https://openlearninglibrary.mit.edu/courses/course-v1:MITx+16.00x+2T2019/jump_to_id/3eba51ca3dda4f23b4c679ac74576d47",t:"core"},
+      {l:"Delta-v Budget — Wikipedia",u:"https://en.wikipedia.org/wiki/Delta-v_budget",t:"deep"},
+      {l:"JPL: Earth-Mars Opportunities 2026–2045 (PDF)",u:"https://ntrs.nasa.gov/citations/20100037210",t:"deep"},
+      {l:"Specific Impulse — Wikipedia",u:"https://en.wikipedia.org/wiki/Specific_impulse",t:"deep"},
+    ]},
+  {id:"jupiter",name:"Jupiter",orbitR:248,size3:13.5,size2:13, color3:0xc88b3a,css:"#c88b3a",period:11.86, a0:1.2, inc:1.3,  type:"Gas giant",             au:"5.2 AU", orb:"11.9 yrs",  fact:"Jupiter's gravity sculpted the asteroid belt — preventing a fifth rocky planet. Without it, Mars would be far larger.",missionable:false,
+    links:[{l:"Jupiter — Wikipedia",u:"https://en.wikipedia.org/wiki/Jupiter",t:"intro"},{l:"Galilean Moons — Wikipedia",u:"https://en.wikipedia.org/wiki/Galilean_moons",t:"intro"}]},
+  {id:"saturn", name:"Saturn", orbitR:320,size3:11.0,size2:11, color3:0xe4d191,css:"#e4d191",period:29.46, a0:3.5, inc:2.49, type:"Gas giant · Rings",     au:"9.58 AU",orb:"29.5 yrs",  fact:"Saturn's density is 0.687 g/cm³ — less than water. Its ring system spans 282,000 km but is only ~10 metres thick.",missionable:false,hasRings:true,
+    links:[{l:"Saturn — Wikipedia",u:"https://en.wikipedia.org/wiki/Saturn",t:"intro"},{l:"Cassini Mission — NASA",u:"https://science.nasa.gov/mission/cassini/",t:"intro"}]},
+  {id:"uranus", name:"Uranus", orbitR:378,size3:7.5, size2:7.5,color3:0x7de8e8,css:"#7de8e8",period:84.01, a0:5.1, inc:0.77, type:"Ice giant",             au:"19.2 AU",orb:"84 yrs",    fact:"Uranus rotates on its side — axial tilt 98°. Its north pole points almost directly at the sun for half its 84-year orbit.",missionable:false,
+    links:[{l:"Uranus — Wikipedia",u:"https://en.wikipedia.org/wiki/Uranus",t:"intro"}]},
+  {id:"neptune",name:"Neptune",orbitR:430,size3:7.0, size2:7,  color3:0x3f54ba,css:"#3f54ba",period:164.8, a0:2.8, inc:1.77, type:"Ice giant",             au:"30.1 AU",orb:"165 yrs",   fact:"Voyager 2 flew past Neptune in 1989 after a 12-year journey. It remains the only spacecraft ever to visit.",missionable:false,
+    links:[{l:"Neptune — Wikipedia",u:"https://en.wikipedia.org/wiki/Neptune",t:"intro"},{l:"Voyager 2 — NASA",u:"https://science.nasa.gov/mission/voyager-2/",t:"intro"}]},
+];
+
+const SUN_OBJ={
+  id:"sun", name:"The Sun", label:"The Sun", type:"STAR · G-TYPE MAIN SEQUENCE",
+  css:"#fff8c0", orbitR:0, a0:0, period:1, size2:14, inc:0, au:"0 AU (centre of solar system)", orb:"N/A",
+  fact:"The Sun contains 99.86% of all mass in the solar system. Its gravity holds everything — from Mercury to the Oort Cloud — in orbit. Every second, the Sun fuses 600 million tonnes of hydrogen into helium, releasing energy that has sustained life on Earth for 4.5 billion years.",
+  missionable:false,
+  links:[
+    {l:"The Sun — Wikipedia",u:"https://en.wikipedia.org/wiki/Sun",t:"intro"},
+    {l:"NASA Solar System Exploration — The Sun",u:"https://science.nasa.gov/sun/",t:"intro"},
+    {l:"The Planetary Society — The Sun",u:"https://www.planetary.org/worlds/sun",t:"intro"},
+    {l:"Milky Way and our position in it — ESA",u:"https://www.esa.int/Science_Exploration/Space_Science/Herschel/The_Milky_Way_galaxy",t:"core"},
+    {l:"Solar physics — MIT OCW",u:"https://ocw.mit.edu/courses/8-282j-introduction-to-astronomy-spring-2006/",t:"core"},
+    {l:"Heliosphere — Wikipedia",u:"https://en.wikipedia.org/wiki/Heliosphere",t:"core"},
+    {l:"Solar Standard Model — NASA ADS",u:"https://ui.adsabs.harvard.edu/abs/1995RvMP...67..781B",t:"deep"},
+  ]
+};
+const TIER={intro:{label:"INTRO",bg:"#0d2e2b",color:"#4ecdc4",dot:"#4ecdc4"},core:{label:"CORE",bg:"#0d1535",color:"#7b9cff",dot:"#4466ff"},deep:{label:"DEEP",bg:"#2e0d0d",color:"#ff9090",dot:"#ff4444"}};
+const STARS_2D=Array.from({length:200},(_,i)=>({x:((i*137.508*31+i*71)%1400),y:((i*137.508*17+i*53)%900),r:i%5===0?1.4:i%3===0?0.9:0.5,o:0.15+(i%5)*0.1}));
+
+// ── AU → pixel scale (matches existing planet orbitR values) ──
+const AU_PX=[[0,15],[0.387,52],[0.723,83],[1.0,113],[1.524,155],[2.2,192],[3.2,237],[5.2,248],[9.54,320],[19.2,378],[30.07,430],[39.5,448],[50,470],[80,498],[150,512]];
+function auToPx(au){for(let i=0;i<AU_PX.length-1;i++){const[a0,p0]=AU_PX[i],[a1,p1]=AU_PX[i+1];if(au>=a0&&au<=a1)return p0+(au-a0)/(a1-a0)*(p1-p0);}return 512;}
+
+// ── Small solar system bodies (panel-compatible) ───────────────
+const SMALL = [
+  { id:"ceres",    name:"Ceres",    label:"Ceres",    orbitR:auToPx(2.77), a0:1.2, period:4.61,  inc:10.59, css:"#c8b090", size3:1.4,
+    type:"Dwarf Planet · Asteroid Belt", au:"2.77 AU", orb:"4.6 years",
+    fact:"The largest object in the asteroid belt and the only dwarf planet in the inner solar system. Visited by NASA's Dawn spacecraft 2015–2018, which revealed mysterious bright spots — salt deposits from ancient liquid water.",
+    links:[
+      {l:"Ceres — Wikipedia",u:"https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)",t:"intro"},
+      {l:"Dawn mission — NASA",u:"https://www.nasa.gov/mission/dawn/",t:"intro"},
+      {l:"Dwarf planet definition — IAU",u:"https://www.iau.org/public/themes/pluto/",t:"core"},
+    ], missionable:false },
+  { id:"vesta",    name:"Vesta",    label:"Vesta",    orbitR:auToPx(2.36), a0:3.5, period:3.63,  inc:7.14,  css:"#a8a8b8", size3:1.2,
+    type:"Asteroid · Asteroid Belt", au:"2.36 AU", orb:"3.6 years",
+    fact:"Second-largest asteroid and the most massive rocky body in the belt. Unlike most asteroids, Vesta differentiated into layers — iron core, rocky mantle, basaltic crust — making it more like a small planet than a rubble pile. Dawn orbited it 2011–2012.",
+    links:[
+      {l:"Vesta — Wikipedia",u:"https://en.wikipedia.org/wiki/4_Vesta",t:"intro"},
+      {l:"Dawn at Vesta — NASA",u:"https://dawn.jpl.nasa.gov/",t:"intro"},
+      {l:"Asteroid belt — Wikipedia",u:"https://en.wikipedia.org/wiki/Asteroid_belt",t:"core"},
+    ], missionable:false },
+  { id:"pluto",    name:"Pluto",    label:"Pluto",    orbitR:448,          a0:0.8, period:248,   inc:17.14, css:"#c8a060", size3:1.8,
+    type:"Dwarf Planet · Kuiper Belt", au:"39.5 AU avg", orb:"248 years",
+    fact:"Demoted from planet to dwarf planet in 2006 when Eris's discovery forced a redefinition. New Horizons flyby in 2015 revealed a geologically active world — nitrogen ice plains, a 3.5 km mountain range of water ice, and a heart-shaped glacier named Tombaugh Regio.",
+    links:[
+      {l:"Pluto — Wikipedia",u:"https://en.wikipedia.org/wiki/Pluto",t:"intro"},
+      {l:"New Horizons flyby — NASA",u:"https://www.nasa.gov/mission/new-horizons/",t:"intro"},
+      {l:"Kuiper Belt — Wikipedia",u:"https://en.wikipedia.org/wiki/Kuiper_belt",t:"core"},
+      {l:"Pluto geology (Science, 2016)",u:"https://www.science.org/doi/10.1126/science.aad9189",t:"deep"},
+    ], missionable:false },
+  { id:"eris",     name:"Eris",     label:"Eris",     orbitR:461,          a0:2.2, period:559,   inc:44.04, css:"#c8c8d8", size3:1.6,
+    type:"Dwarf Planet · Scattered Disc", au:"38–97 AU", orb:"559 years",
+    fact:"The discovery of Eris in 2005 directly caused Pluto's reclassification — Eris is 27% more massive than Pluto and was briefly called the 'tenth planet'. Its highly elliptical orbit takes it to 97 AU, nearly into the Oort Cloud. Surface temperature: −243°C.",
+    links:[
+      {l:"Eris — Wikipedia",u:"https://en.wikipedia.org/wiki/Eris_(dwarf_planet)",t:"intro"},
+      {l:"Scattered disc — Wikipedia",u:"https://en.wikipedia.org/wiki/Scattered_disc",t:"core"},
+    ], missionable:false },
+  { id:"makemake", name:"Makemake", label:"Makemake", orbitR:453,          a0:4.1, period:310,   inc:28.96, css:"#d4b090", size3:1.4,
+    type:"Dwarf Planet · Kuiper Belt", au:"45.8 AU", orb:"310 years",
+    fact:"Third-largest known KBO. Named after the creator deity of the Rapa Nui people of Easter Island. Has no atmosphere despite its size, and a small moon discovered in 2016. Barely explored — no spacecraft has ever visited.",
+    links:[
+      {l:"Makemake — Wikipedia",u:"https://en.wikipedia.org/wiki/Makemake",t:"intro"},
+    ], missionable:false },
+  { id:"haumea",   name:"Haumea",   label:"Haumea",   orbitR:457,          a0:5.5, period:284,   inc:28.19, css:"#b8b8c8", size3:1.4,
+    type:"Dwarf Planet · Kuiper Belt", au:"35–51 AU", orb:"284 years",
+    fact:"The strangest dwarf planet. It spins so fast — one rotation every 3.9 hours, the fastest of any known body over 100 km — that it has been squashed into an elongated egg shape. It has two moons and a ring system, unique among KBOs.",
+    links:[
+      {l:"Haumea — Wikipedia",u:"https://en.wikipedia.org/wiki/Haumea",t:"intro"},
+      {l:"Haumea ring discovery (Nature, 2017)",u:"https://www.nature.com/articles/nature22955",t:"deep"},
+    ], missionable:false },
+];
+
+// ── Comets (panel-compatible) ──────────────────────────────────
+const COMETS = [
+  { id:"halley", name:"Halley's Comet", label:"Halley's",
+    q:auToPx(0.586), Q:auToPx(35.1), period:75.3, a0:2.4, rot:0.15, inc:162.3,
+    css:"#88ffcc", color3:0x88ffcc,
+    type:"Periodic Comet · Halley-type", au:"0.59–35.1 AU", orb:"75–76 years",
+    status:"NEAR APHELION · LAST PERIHELION 1986 · NEXT 2061",
+    fact:"The most famous comet. Known to humanity since at least 240 BC. Its retrograde orbit — inclination 162°, travelling opposite to the planets — suggests an Oort Cloud origin. Observed at every perihelion since 1531. Next visible from Earth: 2061.",
+    links:[
+      {l:"Halley's Comet — Wikipedia",u:"https://en.wikipedia.org/wiki/Halley%27s_Comet",t:"intro"},
+      {l:"Historical records of Halley's — Wikipedia",u:"https://en.wikipedia.org/wiki/Halley%27s_Comet#Appearances_in_history",t:"intro"},
+      {l:"Giotto mission (ESA 1986)",u:"https://www.esa.int/Science_Exploration/Space_Science/Giotto_overview",t:"core"},
+    ], missionable:false },
+  { id:"67p", name:"67P/Churyumov-Gerasimenko", label:"67P",
+    q:auToPx(1.21), Q:auToPx(5.68), period:6.44, a0:1.5, rot:2.2, inc:7.0,
+    css:"#ffcc66", color3:0xffcc66,
+    type:"Periodic Comet · Jupiter-family", au:"1.21–5.68 AU", orb:"6.4 years",
+    status:"JUPITER-FAMILY COMET · PERIOD 6.4 YRS",
+    fact:"The most closely studied comet in history. ESA's Rosetta spacecraft orbited it for over 2 years (2014–2016) and deployed the Philae lander — the first ever soft landing on a comet. A 4 km rubber-duck-shaped body releasing jets of gas and dust, active even far from the Sun.",
+    links:[
+      {l:"67P — Wikipedia",u:"https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko",t:"intro"},
+      {l:"Rosetta mission — ESA",u:"https://www.esa.int/Science_Exploration/Space_Science/Rosetta",t:"intro"},
+      {l:"Philae landing — ESA",u:"https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Philae",t:"core"},
+    ], missionable:false },
+  { id:"oumuamua", name:"ʻOumuamua", label:"ʻOumuamua",
+    q:auToPx(0.255), Q:null, period:null, a0:3.8, rot:Math.PI*0.6, inc:122.7,
+    css:"#ff8888", color3:0xff8888,
+    type:"Interstellar Object · Departed", au:"0.255 AU at closest", orb:"Hyperbolic — not bound",
+    status:"INTERSTELLAR · DEPARTED 2018",
+    fact:"The first confirmed interstellar object — it came from outside our solar system. Discovered October 2017. Its origin remains unknown. It accelerated away from the Sun faster than solar radiation pressure alone can explain — a mystery still unsolved. It is now beyond Neptune and receding.",
+    links:[
+      {l:"ʻOumuamua — Wikipedia",u:"https://en.wikipedia.org/wiki/%CA%BBOumuamua",t:"intro"},
+      {l:"Interstellar objects — Wikipedia",u:"https://en.wikipedia.org/wiki/Interstellar_object",t:"core"},
+      {l:"ʻOumuamua mystery (Nature Astronomy, 2018)",u:"https://www.nature.com/articles/s41550-018-0564-3",t:"deep"},
+    ], missionable:false },
+];
+
+// ── Extra clickable regions ────────────────────────────────────
+const EXTRAS = [
+  { id:"kuiperbelt", name:"Kuiper Belt", label:"Kuiper Belt",
+    type:"Trans-Neptunian Region", au:"30–50 AU", orb:"N/A",
+    css:"#8ca0d4", inc:0,
+    fact:"A vast disc of icy bodies beyond Neptune, stretching from 30 to 50 AU. Contains hundreds of thousands of objects larger than 100 km, including the dwarf planets Pluto, Eris, Makemake, and Haumea. The source of short-period comets. First predicted in 1943, first confirmed 1992.",
+    links:[
+      {l:"Kuiper Belt — Wikipedia",u:"https://en.wikipedia.org/wiki/Kuiper_belt",t:"intro"},
+      {l:"Trans-Neptunian objects — Wikipedia",u:"https://en.wikipedia.org/wiki/Trans-Neptunian_object",t:"intro"},
+      {l:"Kuiper Belt origins (Annual Review, 2002)",u:"https://www.annualreviews.org/doi/abs/10.1146/annurev.astro.40.060401.093800",t:"deep"},
+    ], missionable:false },
+  { id:"planetnine", name:"Planet Nine", label:"Planet Nine?",
+    type:"Hypothetical Planet · Unconfirmed", au:"~400–800 AU (estimated)", orb:"~10,000–20,000 years",
+    css:"#a070e0", inc:30,
+    fact:"A hypothetical planet proposed in 2016 by Batygin and Brown to explain the clustered orbits of extreme trans-Neptunian objects. If it exists, it is estimated to be 5–10 Earth masses, 2–4× Earth's radius, and orbiting at 400–800 AU. It has not been directly observed. The search continues.",
+    links:[
+      {l:"Planet Nine hypothesis — Wikipedia",u:"https://en.wikipedia.org/wiki/Planet_Nine",t:"intro"},
+      {l:"Batygin & Brown (2016) — AJ",u:"https://iopscience.iop.org/article/10.3847/0004-6256/151/2/22",t:"deep"},
+    ], missionable:false },
+];
+
+
+// ── Shared state ─────────────────────────────────────────────────────────────
+let sel = PLANETS[3];
+let panelOpen = true;
+let panelTab = "overview";
+let simT = 0;
+let simSpeed = 1;
+let lastTime = performance.now();
+let frame = 0;
+let currentView = '3d'; // '2d' or '3d'
+let hoveredPlanet = null;
+
+function getPlanetPos(p, t) {
+  const a = p.a0 + (2*Math.PI*t)/p.period;
+  const inc = p.inc*Math.PI/180;
+  const x = Math.cos(a)*p.orbitR;
+  const zf = Math.sin(a)*p.orbitR;
+  return {x3:x, y3:zf*Math.sin(inc), z3:zf*Math.cos(inc), x2:x, y2:zf};
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// 2D RENDERER
+// ═══════════════════════════════════════════════════════════════════
+const c2 = document.getElementById('r2d');
+const ctx2 = c2.getContext('2d');
+
+function resize2d(){c2.width=window.innerWidth;c2.height=window.innerHeight;}
+resize2d();
+
+// ── 2D: drag to pan + zoom ────────────────────────────────────
+let zoom2d=1, zx2d=0, zy2d=0, isDrag2d=false, drag2dX=0, drag2dY=0;
+c2.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const f=e.deltaY>0?0.88:1.14;
+  const r=c2.getBoundingClientRect();
+  const mx=e.clientX-r.left, my=e.clientY-r.top;
+  const W=c2.width,H=c2.height;
+  // Zoom anchored to cursor: keep world point under cursor fixed
+  zx2d=(mx-W/2)*(1-f)+zx2d*f;
+  zy2d=(my-H/2)*(1-f)+zy2d*f;
+  zoom2d=Math.max(0.12,Math.min(5,zoom2d*f));
+},{passive:false});
+c2.addEventListener('mousedown',e=>{isDrag2d=true;drag2dX=e.clientX;drag2dY=e.clientY;c2.style.cursor='grabbing';});
+window.addEventListener('mouseup',()=>{isDrag2d=false;if(currentView==='2d')c2.style.cursor='grab';});
+window.addEventListener('mousemove',e=>{if(!isDrag2d||currentView!=='2d')return;zx2d+=(e.clientX-drag2dX);zy2d+=(e.clientY-drag2dY);drag2dX=e.clientX;drag2dY=e.clientY;});
+c2.style.cursor='grab';
+
+// ── 2D click hit detection ────────────────────────────────────
+c2.addEventListener('click',e=>{
+  if(currentView!=='2d')return;
+  const W=c2.width,H=c2.height;
+  const r=c2.getBoundingClientRect();
+  // Transform: translate(W/2+zx2d, H/2+zy2d) scale(zoom2d)
+  // So world = (screen - center_offset) / zoom2d
+  const wx=(e.clientX-r.left-(W/2+zx2d))/zoom2d;
+  const wy=(e.clientY-r.top -(H/2+zy2d))/zoom2d;
+  const bcx=0, bcy=0;
+  let best=null, bestD=Infinity;
+  // Sun
+  const sd=Math.hypot(wx-bcx, wy-bcy);
+  if(sd<20){best={...SUN_OBJ,_px:bcx,_py:bcy};bestD=sd;}
+  // Planets
+  PLANETS.forEach(p=>{
+    const ang=p.a0+simT*(2*Math.PI/p.period);
+    const px=bcx+Math.cos(ang)*p.orbitR, py=bcy+Math.sin(ang)*p.orbitR;
+    const d=Math.hypot(wx-px,wy-py);
+    if(d<p.size2*2.5+8&&d<bestD){bestD=d;best={...p,_px:px,_py:py};}
+  });
+  // Small bodies
+  SMALL.forEach(s=>{
+    const sp2=getSmallPos(s);
+    const px=bcx+sp2.x, py=bcy+sp2.y;
+    const d=Math.hypot(wx-px,wy-py);
+    if(d<12&&d<bestD){bestD=d;best={...s,_px:px,_py:py};}
+  });
+  // Kuiper belt / Planet Nine regions
+  const dc=Math.hypot(wx-bcx,wy-bcy);
+  if(dc>434&&dc<484&&bestD===Infinity){best=EXTRAS[0];}
+  const pnR=Math.min(W,H)*0.49;
+  if(Math.abs(dc-pnR)<14&&bestD===Infinity){best=EXTRAS[1];}
+  if(best){sel=best;panelOpen=true;panelTab='overview';renderPanel();}
+  else if(panelOpen){panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+
+// ── 2D position helpers ────────────────────────────────────────
+function getSmallPos(s){
+  const a=s.a0+(2*Math.PI/s.period)*simT;
+  return {x:Math.cos(a)*s.orbitR, y:Math.sin(a)*s.orbitR};
+}
+function getCometPos(c){
+  const omega=c.period?2*Math.PI/c.period:0;
+  const r=c.period?(c.q+c.Q)/2:c.q;
+  const a=c.a0+simT*omega;
+  return {x:Math.cos(a+c.rot)*r, y:Math.sin(a+c.rot)*r};
+}
+
+// ── 2D draw ────────────────────────────────────────────────────
+function draw2d(){
+  try{
+  const W=c2.width, H=c2.height, cx=0, cy=0;
+  ctx2.fillStyle='#04040c'; ctx2.fillRect(0,0,W,H);
+  // Stars in screen space (before zoom transform)
+  for(let i=0;i<200;i++){const sx=(i*137.5*31+i*71)%W,sy=(i*137.5*17+i*53)%H;ctx2.beginPath();ctx2.arc(sx,sy,i%8===0?1.2:0.5,0,Math.PI*2);ctx2.fillStyle=`rgba(210,215,255,${0.06+i%5*0.04})`;ctx2.fill();}
+
+  ctx2.save();
+  // Anchor solar system centre to canvas centre; pan and zoom applied on top
+  ctx2.translate(W/2+zx2d, H/2+zy2d);
+  ctx2.scale(zoom2d,zoom2d);
+
+  // Orbit rings
+  PLANETS.forEach(p=>{
+    const isSel=sel?.id===p.id;
+    ctx2.beginPath();ctx2.arc(cx,cy,p.orbitR,0,Math.PI*2);
+    ctx2.strokeStyle=isSel?'rgba(68,102,255,0.3)':'rgba(255,255,255,0.05)';
+    ctx2.lineWidth=isSel?1.5:0.5; ctx2.stroke();
+  });
+  // Small body inclined ellipse orbits
+  SMALL.forEach(s=>{
+    const isSel=sel?.id===s.id;
+    const inclRad=(s.inc||0)*Math.PI/180;
+    ctx2.save(); ctx2.translate(cx,cy);
+    ctx2.beginPath(); ctx2.ellipse(0,0,s.orbitR,s.orbitR*Math.cos(inclRad),0,0,Math.PI*2);
+    ctx2.strokeStyle=isSel?s.css+'88':'rgba(255,255,255,0.03)';
+    ctx2.lineWidth=isSel?1:0.4; ctx2.setLineDash([2,4]); ctx2.stroke(); ctx2.setLineDash([]); ctx2.restore();
+  });
+  // Asteroid belt
+  for(let i=0;i<280;i++){const a=(i/280)*Math.PI*2+simT*0.016,r=192+(i%38)*1.1;ctx2.beginPath();ctx2.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r,0.85,0,Math.PI*2);ctx2.fillStyle=`rgba(185,162,110,${0.05+(i%7)*0.03})`;ctx2.fill();}
+  // Kuiper Belt
+  for(let i=0;i<500;i++){const a=(i/500)*Math.PI*2+simT*0.003,r=438+(i%44)*0.9;ctx2.beginPath();ctx2.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r,0.75,0,Math.PI*2);ctx2.fillStyle=`rgba(140,160,210,${0.035+(i%9)*0.018})`;ctx2.fill();}
+  // Planet Nine ring
+  const pnR=Math.min(W,H)*0.49;
+  ctx2.beginPath();ctx2.arc(cx,cy,pnR,0,Math.PI*2);ctx2.strokeStyle='rgba(160,120,220,0.14)';ctx2.lineWidth=1;ctx2.setLineDash([4,9]);ctx2.stroke();ctx2.setLineDash([]);
+  ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.fillStyle='rgba(160,120,220,0.32)';ctx2.textAlign='center';ctx2.fillText('PLANET NINE? · HYPOTHETICAL · ~600 AU',cx,cy-pnR-6);ctx2.restore();
+
+  // Comet orbits
+  COMETS.forEach(c=>{
+    if(!c.Q)return;
+    const a=(c.q+c.Q)/2,cc2=(c.Q-c.q)/2,b=Math.sqrt(Math.max(0,a*a-cc2*cc2));
+    ctx2.save();ctx2.translate(cx+cc2,cy);ctx2.rotate(c.rot);
+    ctx2.beginPath();ctx2.ellipse(0,0,a,b,0,0,Math.PI*2);
+    ctx2.strokeStyle=c.css+'44';ctx2.lineWidth=0.8;ctx2.setLineDash([3,6]);ctx2.stroke();ctx2.setLineDash([]);ctx2.restore();
+    const omega=c.period?2*Math.PI/c.period:0,ang2=c.a0+simT*omega,r2=c.period?(c.q+c.Q)/2:c.q;
+    const px=cx+Math.cos(ang2+c.rot)*r2,py=cy+Math.sin(ang2+c.rot)*r2;
+    ctx2.beginPath();ctx2.arc(px,py,3,0,Math.PI*2);ctx2.fillStyle=c.css;ctx2.fill();
+    ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.fillStyle=c.css+'99';ctx2.textAlign='left';ctx2.fillText(c.label,px+5,py+3);ctx2.restore();
+  });
+
+  // Sun
+  if(sel?.id==='sun'){const sp=0.5+0.5*Math.sin(frame*0.06);ctx2.beginPath();ctx2.arc(cx,cy,22+sp*4,0,Math.PI*2);ctx2.strokeStyle='rgba(255,220,80,'+(0.4+sp*0.3)+')';ctx2.lineWidth=1.5;ctx2.stroke();}
+  for(let r=90;r>0;r-=6){const sg=ctx2.createRadialGradient(cx,cy,0,cx,cy,r);sg.addColorStop(0,`rgba(255,228,130,${0.012*(90/r)})`);sg.addColorStop(1,'rgba(255,120,0,0)');ctx2.beginPath();ctx2.arc(cx,cy,r,0,Math.PI*2);ctx2.fillStyle=sg;ctx2.fill();}
+  ctx2.beginPath();ctx2.arc(cx,cy,14,0,Math.PI*2);ctx2.fillStyle='#fff8e7';ctx2.fill();
+  ctx2.save();ctx2.font="7px 'Space Mono',monospace";ctx2.fillStyle='rgba(255,220,100,0.5)';ctx2.textAlign='center';ctx2.fillText('SUN',cx,cy+22);ctx2.restore();
+
+  // Small bodies
+  SMALL.forEach(s=>{
+    const sp2=getSmallPos(s);
+    const px=cx+sp2.x, py=cy+sp2.y;
+    const isSel=sel?.id===s.id;
+    const gr=ctx2.createRadialGradient(px,py,0,px,py,7);gr.addColorStop(0,s.css+'99');gr.addColorStop(1,'transparent');
+    ctx2.beginPath();ctx2.arc(px,py,7,0,Math.PI*2);ctx2.fillStyle=gr;ctx2.fill();
+    ctx2.beginPath();ctx2.arc(px,py,isSel?3:2,0,Math.PI*2);ctx2.fillStyle=s.css;ctx2.fill();
+    if(isSel){ctx2.beginPath();ctx2.arc(px,py,9,0,Math.PI*2);ctx2.strokeStyle=s.css+'88';ctx2.lineWidth=1;ctx2.stroke();}
+    ctx2.save();ctx2.font=`${isSel?'bold ':''}7px 'Space Mono',monospace`;ctx2.fillStyle=s.css+'bb';ctx2.textAlign='left';ctx2.fillText(s.label,px+5,py+3);ctx2.restore();
+  });
+
+  // Planets — realistic per-planet shading
+  PLANETS.forEach(p=>{
+    const ang=p.a0+simT*(2*Math.PI/p.period);
+    const pr=Math.max(3,p.size2||5);
+    const px=cx+Math.cos(ang)*p.orbitR, py=cy+Math.sin(ang)*p.orbitR;
+    const isSel=sel?.id===p.id;
+    // Outer glow
+    try{
+      const gl=ctx2.createRadialGradient(px,py,0,px,py,pr*4);
+      gl.addColorStop(0,p.css+'55');gl.addColorStop(1,'rgba(0,0,0,0)');
+      ctx2.beginPath();ctx2.arc(px,py,pr*4,0,Math.PI*2);ctx2.fillStyle=gl;ctx2.fill();
+    }catch(e){}
+    // Selection ring
+    if(isSel){const pulse=0.5+0.5*Math.sin(frame*0.08);ctx2.beginPath();ctx2.arc(px,py,pr+10+pulse*3,0,Math.PI*2);ctx2.strokeStyle='rgba(255,255,255,'+(0.35+pulse*0.25)+')';ctx2.lineWidth=1.5;ctx2.stroke();}
+    // Saturn rings behind
+    if(p.id==='saturn'){ctx2.save();ctx2.translate(px,py);ctx2.scale(1,0.3);ctx2.beginPath();ctx2.ellipse(0,0,pr+14,pr+14,0,0,Math.PI*2);ctx2.strokeStyle='rgba(228,209,145,0.22)';ctx2.lineWidth=7;ctx2.stroke();ctx2.restore();}
+    // Planet sphere — use per-planet flat colour + simple shading
+    ctx2.beginPath();ctx2.arc(px,py,pr,0,Math.PI*2);
+    try{
+      const sg=ctx2.createRadialGradient(px-pr*0.3,py-pr*0.3,pr*0.1,px,py,pr);
+      if(p.id==='earth'){sg.addColorStop(0,'#6ab8e8');sg.addColorStop(1,'#0d3050');}
+      else if(p.id==='mars'){sg.addColorStop(0,'#e0704a');sg.addColorStop(1,'#7a2000');}
+      else if(p.id==='jupiter'){sg.addColorStop(0,'#deb878');sg.addColorStop(1,'#6a3a0e');}
+      else if(p.id==='saturn'){sg.addColorStop(0,'#ece8b0');sg.addColorStop(1,'#9a8830');}
+      else if(p.id==='venus'){sg.addColorStop(0,'#f0e0a0');sg.addColorStop(1,'#9a7820');}
+      else if(p.id==='uranus'){sg.addColorStop(0,'#a8f0f0');sg.addColorStop(1,'#207878');}
+      else if(p.id==='neptune'){sg.addColorStop(0,'#6080d8');sg.addColorStop(1,'#101858');}
+      else if(p.id==='mercury'){sg.addColorStop(0,'#d0c8c0');sg.addColorStop(1,'#504840');}
+      else{sg.addColorStop(0,p.css);sg.addColorStop(1,p.css+'88');}
+      ctx2.fillStyle=sg;
+    }catch(e){ ctx2.fillStyle=p.css; }
+    ctx2.fill();
+    // Jupiter bands
+    if(p.id==='jupiter'&&pr>6){ctx2.save();ctx2.beginPath();ctx2.arc(px,py,pr,0,Math.PI*2);ctx2.clip();[[pr*0.22,'rgba(160,90,40,0.28)'],[pr*0.65,'rgba(140,80,30,0.28)']].forEach(([dy,col])=>{ctx2.fillStyle=col;ctx2.fillRect(px-pr,py-dy-pr*0.07,pr*2,pr*0.14);});ctx2.restore();}
+    // Saturn rings front
+    if(p.id==='saturn'){ctx2.save();ctx2.translate(px,py);ctx2.scale(1,0.3);ctx2.beginPath();ctx2.ellipse(0,0,pr+14,pr+14,0,0,Math.PI*2);ctx2.strokeStyle='rgba(228,209,145,0.5)';ctx2.lineWidth=3.5;ctx2.stroke();ctx2.restore();}
+    // Specular
+    ctx2.beginPath();ctx2.arc(px-pr*0.28,py-pr*0.28,pr*0.2,0,Math.PI*2);ctx2.fillStyle='rgba(255,255,255,0.18)';ctx2.fill();
+    // Label
+    ctx2.save();ctx2.font=(isSel?'bold ':'')+'8px "Space Mono",monospace';
+    ctx2.shadowColor=isSel?p.css:'rgba(0,0,0,0.9)';ctx2.shadowBlur=isSel?8:6;
+    ctx2.fillStyle=isSel?'#fff':p.css+'cc';ctx2.textAlign='left';ctx2.fillText(p.name,px+pr+5,py+3);ctx2.restore();
+    // Store for tooltip
+    p._px=px; p._py=py;
+  });
+
+  // Tooltip — technical data next to selected body (no name)
+  const tt=document.getElementById('tooltip2d');
+  const ttSel=sel&&(sel._px!==undefined);
+  if(ttSel&&currentView==='2d'){
+    const kep=KEPLERIAN[sel.id];
+    // Convert world coords to screen coords: screen = world*zoom + (W/2+zx2d)
+    const tpx=sel._px*zoom2d+(W/2+zx2d)+((sel.size2||4)*zoom2d)+10;
+    const tpy=sel._py*zoom2d+(H/2+zy2d)-22;
+    tt.style.left=Math.min(tpx,W-170)+'px'; tt.style.top=Math.max(tpy,60)+'px';
+    tt.style.display='block'; tt.style.borderColor=(sel.css||'#4466ff')+'80';
+    if(kep){
+      const vv=(Math.sqrt(4*Math.PI*Math.PI*(2/kep.a-1/kep.a))*4.7404).toFixed(2);
+      document.getElementById('tooltip-vel').textContent='~'+vv+' km/s';
+      document.getElementById('tooltip-dist').textContent=(kep.a*149.6).toFixed(0)+' M km from Sun';
+      document.getElementById('tooltip-pos').textContent='e='+kep.e.toFixed(3)+' · i='+kep.incl.toFixed(1)+'° · tilt='+kep.axial.toFixed(1)+'°';
+    } else if(sel.au){
+      document.getElementById('tooltip-vel').textContent=sel.orb||'';
+      document.getElementById('tooltip-dist').textContent=sel.au||'';
+      document.getElementById('tooltip-pos').textContent=sel.inc!=null?'i='+sel.inc.toFixed(2)+'°':'';
+    }
+  } else if(tt){ tt.style.display='none'; }
+
+  ctx2.restore(); // close zoom transform
+  // Bottom label in screen space
+  ctx2.save();ctx2.font="8px 'Space Mono',monospace";ctx2.fillStyle='rgba(255,255,255,0.08)';ctx2.fillText('ECLIPTIC PLANE · TOP-DOWN · SCROLL TO ZOOM · DRAG TO PAN',22,H-10);ctx2.restore();
+  }catch(err){console.error('draw2d error:',err);}
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// 3D RENDERER
+// ═══════════════════════════════════════════════════════════════════
+const r3d = document.getElementById('r3d');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(55,window.innerWidth/window.innerHeight,0.5,8000);
+const renderer3=new THREE.WebGLRenderer({antialias:true,alpha:false});
+renderer3.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer3.setSize(window.innerWidth,window.innerHeight);
+renderer3.setClearColor(0x04040c,1);
+r3d.appendChild(renderer3.domElement);
+
+window.addEventListener('resize',()=>{
+  camera.aspect=window.innerWidth/window.innerHeight;camera.updateProjectionMatrix();
+  renderer3.setSize(window.innerWidth,window.innerHeight);resize2d();
+});
+
+scene.add(new THREE.PointLight(0xfff4d0,3.5,2500,1.2));
+scene.add(new THREE.AmbientLight(0x111133,0.8));
+const fill=new THREE.DirectionalLight(0x223366,0.3);fill.position.set(-200,100,-200);scene.add(fill);
+
+// Sun
+const sunMesh=new THREE.Mesh(new THREE.SphereGeometry(18,32,32),new THREE.MeshBasicMaterial({color:0xfff0a0}));scene.add(sunMesh);
+for(let i=0;i<4;i++){const r=22+i*18,m=new THREE.MeshBasicMaterial({color:[0xffdd66,0xff9922,0xff6600,0xff4400][i],transparent:true,opacity:[0.18,0.08,0.04,0.02][i],side:THREE.BackSide,blending:THREE.AdditiveBlending,depthWrite:false});scene.add(new THREE.Mesh(new THREE.SphereGeometry(r,16,16),m));}
+
+// Stars
+const sp=new Float32Array(3000*3);for(let i=0;i<3000;i++){const r=3000+Math.random()*1000,t=Math.random()*Math.PI*2,p=Math.acos(2*Math.random()-1);sp[i*3]=r*Math.sin(p)*Math.cos(t);sp[i*3+1]=r*Math.sin(p)*Math.sin(t);sp[i*3+2]=r*Math.cos(p);}
+const starGeo=new THREE.BufferGeometry();starGeo.setAttribute('position',new THREE.BufferAttribute(sp,3));scene.add(new THREE.Points(starGeo,new THREE.PointsMaterial({color:0xdde4ff,size:1.2,sizeAttenuation:false,transparent:true,opacity:0.7})));
+
+// Asteroid belt
+const bp=new Float32Array(1800*3);for(let i=0;i<1800;i++){const a=Math.random()*Math.PI*2,r=195+Math.random()*42;bp[i*3]=Math.cos(a)*r;bp[i*3+1]=(Math.random()-0.5)*8;bp[i*3+2]=Math.sin(a)*r;}
+const bGeo=new THREE.BufferGeometry();bGeo.setAttribute('position',new THREE.BufferAttribute(bp,3));scene.add(new THREE.Points(bGeo,new THREE.PointsMaterial({color:0xb8a470,size:1.0,sizeAttenuation:true,transparent:true,opacity:0.5})));
+
+// Kuiper Belt 3D — bluish-grey, inclined ~4°
+const kp=new Float32Array(2500*3);
+for(let i=0;i<2500;i++){const a=Math.random()*Math.PI*2,r=438+Math.random()*42;kp[i*3]=Math.cos(a)*r;kp[i*3+1]=(Math.random()-0.5)*14;kp[i*3+2]=Math.sin(a)*r;}
+const kGeo=new THREE.BufferGeometry();kGeo.setAttribute('position',new THREE.BufferAttribute(kp,3));
+scene.add(new THREE.Points(kGeo,new THREE.PointsMaterial({color:0x8ca0d4,size:0.85,sizeAttenuation:true,transparent:true,opacity:0.4})));
+
+// Comet orbit ellipses 3D
+function addCometOrbit3D(c){
+  if(!c.Q)return;
+  const a=(c.q+c.Q)/2,cc=(c.Q-c.q)/2,b=Math.sqrt(Math.max(0,a*a-cc*cc));
+  const inc=c.inc*Math.PI/180;
+  const pts=[];
+  for(let i=0;i<=100;i++){
+    const ang=i/100*Math.PI*2;
+    const ex=Math.cos(ang)*a-cc;
+    const ey=Math.sin(ang)*b;
+    const xr=ex*Math.cos(c.rot)-ey*Math.sin(c.rot);
+    const yr=ex*Math.sin(c.rot)+ey*Math.cos(c.rot);
+    pts.push(new THREE.Vector3(xr, yr*Math.sin(inc), yr*Math.cos(inc)));
+  }
+  const mat=new THREE.LineBasicMaterial({color:parseInt(c.css.replace('#','0x')),transparent:true,opacity:0.2,depthWrite:false,blending:THREE.AdditiveBlending});
+  scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),mat));
+}
+COMETS.forEach(addCometOrbit3D);
+
+// Orbit lines
+const orbitMats={};
+PLANETS.forEach(p=>{
+  const inc=p.inc*Math.PI/180,pts=[];
+  for(let i=0;i<=128;i++){const a=(i/128)*Math.PI*2,x=Math.cos(a)*p.orbitR,zf=Math.sin(a)*p.orbitR;pts.push(new THREE.Vector3(x,zf*Math.sin(inc),zf*Math.cos(inc)));}
+  const mat=new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.06,depthWrite:false});
+  scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts),mat));
+  orbitMats[p.id]=mat;
+});
+
+// Planet objects
+const pObjs={},pMeshes=[];
+PLANETS.forEach(p=>{
+  const g=new THREE.Group();
+  const mat=new THREE.MeshPhongMaterial({color:p.color3,emissive:p.color3,emissiveIntensity:0.12,shininess:25,specular:0x444444});
+  const mesh=new THREE.Mesh(new THREE.SphereGeometry(p.size3,32,32),mat);mesh.userData.planet=p;g.add(mesh);
+  const hm=new THREE.Mesh(new THREE.SphereGeometry(Math.max(p.size3*2.2,10),8,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0}));hm.userData.planet=p;g.add(hm);pMeshes.push(hm);
+  if(p.hasRings){const rg=new THREE.RingGeometry(p.size3*1.4,p.size3*2.6,64);const rm=new THREE.MeshBasicMaterial({color:0xe4d191,transparent:true,opacity:0.45,side:THREE.DoubleSide,depthWrite:false});const r=new THREE.Mesh(rg,rm);r.rotation.x=Math.PI/2.2;g.add(r);}
+  const pm=new THREE.MeshBasicMaterial({color:0x4466ff,transparent:true,opacity:0,side:THREE.DoubleSide,depthWrite:false});
+  const pulse=new THREE.Mesh(new THREE.RingGeometry(p.size3+3,p.size3+5,48),pm);g.add(pulse);
+  scene.add(g);
+  pObjs[p.id]={g,mesh,mat,pulse,pulseMat:pm};
+});
+
+// Small body meshes 3D — added AFTER pMeshes is declared above
+const smallMeshes3={};
+SMALL.forEach(s=>{
+  const smat=new THREE.MeshBasicMaterial({color:parseInt(s.css.replace('#','0x'))});
+  const sm=new THREE.Mesh(new THREE.SphereGeometry(s.size3,8,8),smat);
+  sm.userData.planet={...s,links:[],missionable:false};
+  scene.add(sm);
+  const shm=new THREE.Mesh(new THREE.SphereGeometry(Math.max(s.size3*2.5,8),6,6),new THREE.MeshBasicMaterial({transparent:true,opacity:0}));
+  shm.userData.planet=sm.userData.planet; scene.add(shm); pMeshes.push(shm);
+  smallMeshes3[s.id]=sm;
+});
+
+// 3D label container — positioned AFTER r3d canvas exists
+const lbl3d=document.createElement('div');
+lbl3d.style.cssText='position:absolute;inset:0;pointer-events:none;z-index:8;';
+document.getElementById('r3d').appendChild(lbl3d);
+const planetLabels3D={};
+[...PLANETS,...SMALL].forEach(p=>{
+  const d=document.createElement('div');
+  d.textContent=(p.name||p.id).toUpperCase();
+  const col=p.css||'#ffffff';
+  d.style.cssText=`position:absolute;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:1.5px;color:${col};opacity:0;pointer-events:none;white-space:nowrap;transform:translate(7px,-50%);text-shadow:0 0 8px ${col}55;transition:opacity 0.2s;`;
+  lbl3d.appendChild(d);
+  planetLabels3D[p.id]=d;
+});
+
+let arcLine=null;
+function updateArc(){
+  if(arcLine){scene.remove(arcLine);arcLine=null;}
+  if(!sel||sel.id!=='mars')return;
+  const ep=getPlanetPos(PLANETS[2],simT),mp=getPlanetPos(PLANETS[3],simT);
+  const ev=new THREE.Vector3(ep.x3,ep.y3,ep.z3),mv=new THREE.Vector3(mp.x3,mp.y3,mp.z3);
+  const mid=new THREE.Vector3().addVectors(ev,mv).multiplyScalar(0.5);
+  const dir=new THREE.Vector3().subVectors(mv,ev);
+  const perp=new THREE.Vector3(0,1,0).cross(dir).normalize().multiplyScalar(35);
+  const ctrl=mid.clone().add(perp);
+  const curve=new THREE.QuadraticBezierCurve3(ev,ctrl,mv);
+  const geo=new THREE.BufferGeometry().setFromPoints(curve.getPoints(80));
+  arcLine=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0x4466ff,transparent:true,opacity:0.45,blending:THREE.AdditiveBlending,depthWrite:false}));
+  scene.add(arcLine);
+}
+
+// Camera orbit
+let isDrag=false,dragMoved=false,lmx=0,lmy=0,camT=0.6,camP=1.05,camR=680;
+function updateCam(){camera.position.set(camR*Math.sin(camP)*Math.sin(camT),camR*Math.cos(camP),camR*Math.sin(camP)*Math.cos(camT));camera.lookAt(0,0,0);}
+updateCam();
+
+const el3=renderer3.domElement;
+el3.addEventListener('mousedown',e=>{isDrag=true;dragMoved=false;lmx=e.clientX;lmy=e.clientY;el3.style.cursor='grabbing';});
+window.addEventListener('mousemove',e=>{
+  if(isDrag){const dx=e.clientX-lmx,dy=e.clientY-lmy;if(Math.abs(dx)>2||Math.abs(dy)>2)dragMoved=true;camT-=dx*0.006;camP=Math.max(0.08,Math.min(Math.PI*0.48,camP+dy*0.005));lmx=e.clientX;lmy=e.clientY;updateCam();}
+  if(currentView==='3d'){
+    const rect=el3.getBoundingClientRect(),mx=((e.clientX-rect.left)/rect.width)*2-1,my=-((e.clientY-rect.top)/rect.height)*2+1;
+    const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(mx,my),camera);
+    const hits=ray.intersectObjects(pMeshes);
+    hoveredPlanet=hits.length>0?hits[0].object.userData.planet:null;
+    el3.style.cursor=hoveredPlanet?'pointer':(isDrag?'grabbing':'grab');
+    updateLabel(e.clientX,e.clientY,hoveredPlanet);
+  }
+});
+window.addEventListener('mouseup',()=>{isDrag=false;});
+el3.addEventListener('wheel',e=>{camR=Math.max(120,Math.min(1400,camR+e.deltaY*0.7));updateCam();},{passive:true});
+el3.addEventListener('click',e=>{
+  if(dragMoved||currentView!=='3d')return;
+  const rect=el3.getBoundingClientRect(),mx=((e.clientX-rect.left)/rect.width)*2-1,my=-((e.clientY-rect.top)/rect.height)*2+1;
+  const ray=new THREE.Raycaster();ray.setFromCamera(new THREE.Vector2(mx,my),camera);
+  const hits=ray.intersectObjects(pMeshes);
+  if(hits.length>0){const p=hits[0].object.userData.planet;sel=p;panelOpen=true;renderPills();renderPanel();updateArc();}
+  else{panelOpen=false;document.getElementById('panel').style.display='none';}
+});
+el3.addEventListener('touchstart',e=>{if(e.touches.length===1){isDrag=true;dragMoved=false;lmx=e.touches[0].clientX;lmy=e.touches[0].clientY;}},{passive:true});
+el3.addEventListener('touchmove',e=>{if(isDrag&&e.touches.length===1){const dx=e.touches[0].clientX-lmx,dy=e.touches[0].clientY-lmy;if(Math.abs(dx)>3||Math.abs(dy)>3)dragMoved=true;camT-=dx*0.006;camP=Math.max(0.08,Math.min(Math.PI*0.48,camP+dy*0.005));lmx=e.touches[0].clientX;lmy=e.touches[0].clientY;updateCam();}},{passive:true});
+el3.addEventListener('touchend',()=>{isDrag=false;});
+
+function draw3d(){
+  PLANETS.forEach(p=>{
+    const pos=getPlanetPos(p,simT),obj=pObjs[p.id];
+    obj.g.position.set(pos.x3,pos.y3,pos.z3);
+    obj.mesh.rotation.y+=0.005;
+    orbitMats[p.id].opacity=sel?.id===p.id?0.22:0.06;
+    const pulse=0.5+0.5*Math.sin(simT*6);
+    obj.pulseMat.opacity=sel?.id===p.id?0.28+pulse*0.28:0;
+    if(sel?.id===p.id){obj.pulse.scale.setScalar(1+pulse*0.15);obj.pulse.lookAt(camera.position);}
+    obj.mat.emissiveIntensity=hoveredPlanet?.id===p.id?0.38:(sel?.id===p.id?0.2:0.1);
+  });
+  // Small bodies
+  SMALL.forEach(s=>{
+    const ang=s.a0+(2*Math.PI/s.period)*simT;
+    const inc=s.inc*Math.PI/180;
+    const x=Math.cos(ang)*s.orbitR,zf=Math.sin(ang)*s.orbitR;
+    const m=smallMeshes3[s.id];
+    if(m) m.position.set(x,zf*Math.sin(inc),zf*Math.cos(inc));
+    // also update hit mesh (next in pMeshes — shared position)
+    const hm=pMeshes.find(pm=>pm.userData.planet?.id===s.id);
+    if(hm&&m) hm.position.copy(m.position);
+  });
+  // Update all 3D labels
+  [...PLANETS,...SMALL].forEach(p=>{
+    const lbl=planetLabels3D[p.id]; if(!lbl) return;
+    let wp;
+    if(pObjs[p.id]) wp=pObjs[p.id].g.position.clone().project(camera);
+    else if(smallMeshes3[p.id]) wp=smallMeshes3[p.id].position.clone().project(camera);
+    else return;
+    if(wp.z>1){lbl.style.opacity='0';return;}
+    lbl.style.left=((wp.x+1)/2*innerWidth)+'px';
+    lbl.style.top=((-wp.y+1)/2*innerHeight)+'px';
+    const isSel=sel?.id===p.id, isHov=hoveredPlanet?.id===p.id;
+    lbl.style.opacity=isSel?'1':isHov?'0.9':'0.5';
+    lbl.style.fontWeight=isSel?'700':'400';
+    lbl.style.color=isSel?'#fff':(p.css||p.color||'#fff');
+  });
+  if(frame%8===0&&sel?.id==='mars')updateArc();
+  renderer3.render(scene,camera);
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// VIEW TOGGLE
+// ═══════════════════════════════════════════════════════════════════
+function setView(v){
+  currentView=v;
+  document.getElementById('r2d').style.opacity=v==='2d'?'1':'0';
+  document.getElementById('r3d').style.opacity=v==='3d'?'1':'0';
+  document.getElementById('r2d').style.pointerEvents=v==='2d'?'auto':'none';
+  document.getElementById('r3d').style.pointerEvents=v==='3d'?'auto':'none';
+  document.getElementById('tab-2d').className='vtab'+(v==='2d'?' active':'');
+  document.getElementById('tab-3d').className='vtab'+(v==='3d'?' active':'');
+  document.getElementById('hint').textContent=v==='3d'
+    ?'DRAG TO ORBIT · SCROLL TO ZOOM · CLICK TO EXPLORE'
+    :'CLICK ANY PLANET TO EXPLORE';
+}
+window.setView=setView;
+setView('3d');
+
+// ═══════════════════════════════════════════════════════════════════
+// LABEL
+// ═══════════════════════════════════════════════════════════════════
+const labelEl=document.getElementById('planet-label');
+function updateLabel(cx,cy,planet){
+  // Just hide the old name label — we use tooltip2d for data instead
+  const labelEl=document.getElementById('planet-label');
+  if(labelEl) labelEl.style.opacity='0';
+  const tt=document.getElementById('tooltip2d');
+  if(!planet){if(tt)tt.style.display='none';return;}
+  if(tt){
+    const kep=KEPLERIAN[planet.id];
+    if(kep){
+      const vv=(Math.sqrt(4*Math.PI*Math.PI*(2/kep.a-1/kep.a))*4.7404).toFixed(2);
+      document.getElementById('tooltip-vel').textContent='~'+vv+' km/s orbital velocity';
+      document.getElementById('tooltip-dist').textContent=(kep.a*149.6).toFixed(0)+' M km from Sun';
+      document.getElementById('tooltip-pos').textContent='e='+kep.e.toFixed(3)+' · i='+kep.incl.toFixed(1)+'° · tilt='+kep.axial.toFixed(1)+'°';
+      tt.style.left=Math.min(cx+18,window.innerWidth-160)+'px';
+      tt.style.top=Math.max(cy-18,60)+'px';
+      tt.style.display='block';
+      tt.style.borderColor=(planet.css||'#4466ff')+'80';
+    } else { tt.style.display='none'; }
+  }
+}
+
+// ── Colour helpers for planet gradients ───────────────────────
+function lighten(hex){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return'#'+[Math.min(255,r+60),Math.min(255,g+60),Math.min(255,b+60)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+function darken(hex){
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return'#'+[Math.max(0,r-60),Math.max(0,g-60),Math.max(0,b-60)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// SPEED BUTTONS
+// ═══════════════════════════════════════════════════════════════════
+[0.25,1,5,25].forEach(s=>{
+  const b=document.createElement('button');b.id='sb'+s;
+  b.style.cssText=`padding:4px 9px;font-size:8px;font-family:'Space Mono',monospace;background:transparent;border:1px solid ${simSpeed===s?'rgba(68,102,255,0.7)':'rgba(255,255,255,0.12)'};border-radius:3px;color:${simSpeed===s?'#7b9cff':'rgba(255,255,255,0.38)'};cursor:pointer;transition:all 0.15s;`;
+  b.textContent=s+'×';b.onclick=()=>{simSpeed=s;[0.25,1,5,25].forEach(x=>{const e=document.getElementById('sb'+x);e.style.borderColor=simSpeed===x?'rgba(68,102,255,0.7)':'rgba(255,255,255,0.12)';e.style.color=simSpeed===x?'#7b9cff':'rgba(255,255,255,0.38)';});};
+  document.getElementById('sbtns').appendChild(b);
+});
+
+// ═══════════════════════════════════════════════════════════════════
+// PILLS
+// ═══════════════════════════════════════════════════════════════════
+function renderPills(){
+  document.getElementById('pills').innerHTML=PLANETS.map(p=>
+    `<div class="planet-pill" onclick="selPlanet('${p.id}')" style="padding:4px 9px;font-size:7px;letter-spacing:2px;color:${sel?.id===p.id?'#fff':'rgba(255,255,255,0.3)'};background:${sel?.id===p.id?'rgba(68,102,255,0.2)':'transparent'};border:1px solid ${sel?.id===p.id?'rgba(68,102,255,0.4)':'rgba(255,255,255,0.07)'};border-radius:2px;display:flex;align-items:center;gap:5px;">
+      <div style="width:5px;height:5px;border-radius:50%;background:${p.css};flex-shrink:0;"></div>${p.name.toUpperCase()}</div>`
+  ).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// PANEL
+// ═══════════════════════════════════════════════════════════════════
+
+// ── Keplerian data for TECHNICAL tab ────────────────────────
+const KEPLERIAN = {
+  sun:{a:0,e:0,T:0,incl:0,axial:7.25,rot:25.05,bio:"The Sun rotates differentially — its equator takes 25 days, its poles 35 days. It is a middle-aged star, halfway through its 10-billion-year main-sequence life. In 5 billion years it will expand into a red giant and engulf the inner planets."},
+  mercury:{a:0.387,e:0.206,T:87.97,  incl:7.00,  axial:0.034,  rot:58.65,
+    bio:"The smallest planet. Its highly elliptical orbit (e=0.206) makes it accelerate noticeably near perihelion. Despite being closest to the Sun, Venus is hotter."},
+  venus:  {a:0.723,e:0.007,T:224.70, incl:3.39,  axial:177.4,  rot:243.02,
+    bio:"Rotates retrograde — backwards and so slowly that a Venusian day is longer than its year. The 177.4° axial tilt is why: Venus is essentially upside down."},
+  earth:  {a:1.000,e:0.017,T:365.25, incl:0.00,  axial:23.44,  rot:0.9973,
+    bio:"The 23.44° axial tilt creates the seasons — not distance from the Sun. Earth is actually closer to the Sun in January than July."},
+  mars:   {a:1.524,e:0.093,T:686.97, incl:1.85,  axial:25.19,  rot:1.026,
+    bio:"The highest eccentricity of the inner planets (e=0.093). Mars is 25% farther from Earth at aphelion vs perihelion — this is why launch windows matter so much."},
+  jupiter:{a:5.203,e:0.049,T:4332.6, incl:1.30,  axial:3.12,   rot:0.414,
+    bio:"Rotates in just 10 hours despite its enormous size, creating powerful magnetic fields. More massive than all other planets combined."},
+  saturn: {a:9.537,e:0.057,T:10759., incl:2.49,  axial:26.73,  rot:0.444,
+    bio:"The least dense planet — it would float on water. Ring system spans 282,000 km but is only metres thick. The 26.73° tilt means Earth sees the rings at different angles across Saturn's 29-year orbit."},
+  uranus: {a:19.19,e:0.046,T:30688., incl:0.77,  axial:97.77,  rot:0.718,
+    bio:"Tipped almost on its side (97.77°). Each pole gets 42 years of continuous sunlight, then 42 years of darkness. Almost certainly caused by an ancient massive collision."},
+  neptune:{a:30.07,e:0.010,T:60182., incl:1.77,  axial:28.32,  rot:0.671,
+    bio:"Windiest planet — 2,100 km/h surface winds. Discovered by mathematical prediction before direct observation, because Uranus's orbit showed an unseen gravitational influence."},
+  // Small bodies
+  ceres:  {a:2.769,e:0.075,T:1682.,  incl:10.59, axial:4.0,    rot:0.378, bio:"Largest object in the asteroid belt. Classified as a dwarf planet since 2006. Dawn spacecraft confirmed water ice at its poles."},
+  pluto:  {a:39.48,e:0.249,T:90560., incl:17.14, axial:122.5,  rot:6.387, bio:"Largest known Kuiper Belt object. Its highly inclined, eccentric orbit means it is sometimes closer to the Sun than Neptune."},
+};
+function techVisViva(a_au, r_au){
+  const MU=4*Math.PI*Math.PI;
+  return (Math.sqrt(MU*(2/r_au-1/a_au))*4.7404).toFixed(2);
+}
+function statCell(label,value,vc='rgba(195,200,232,1)'){
+  return`<div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:8px 10px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:3px;">${label}</div><div style="font-size:10px;font-weight:700;color:${vc};">${value}</div></div>`;
+}
+window._EXTRA_LINKS_DATA = {"earth": [["The Planetary Society \u2014 Earth", "https://www.planetary.org/worlds/earth", "intro"], ["Crash Course Astronomy: Earth", "https://www.youtube.com/watch?v=b_oFOWTU_L8", "intro"], ["NASA Earth Observatory", "https://earthobservatory.nasa.gov/", "core"], ["Orbital mechanics \u2014 MIT OCW", "https://ocw.mit.edu/courses/16-07-dynamics-fall-2009/", "core"]], "mars": [["The Planetary Society \u2014 Mars", "https://www.planetary.org/worlds/mars", "intro"], ["Universe Today \u2014 Mars", "https://www.universetoday.com/36392/mars/", "core"], ["JPL Horizons \u2014 Mars ephemeris", "https://ssd.jpl.nasa.gov/horizons/", "deep"]], "jupiter": [["The Planetary Society \u2014 Jupiter", "https://www.planetary.org/worlds/jupiter", "intro"], ["Sky and Telescope \u2014 Jupiter", "https://skyandtelescope.org/observing/celestial-objects-to-watch/jupiter/", "core"]], "saturn": [["The Planetary Society \u2014 Saturn", "https://www.planetary.org/worlds/saturn", "intro"], ["Cassini mission science \u2014 NASA", "https://science.nasa.gov/mission/cassini/", "core"]], "mercury": [["The Planetary Society \u2014 Mercury", "https://www.planetary.org/worlds/mercury", "intro"], ["BepiColombo \u2014 ESA", "https://sci.esa.int/web/bepicolombo", "core"]], "venus": [["The Planetary Society \u2014 Venus", "https://www.planetary.org/worlds/venus", "intro"], ["ESA Venus Express", "https://sci.esa.int/web/venus-express", "core"]], "uranus": [["The Planetary Society \u2014 Uranus", "https://www.planetary.org/worlds/uranus", "intro"], ["Sky and Telescope \u2014 Uranus", "https://skyandtelescope.org/observing/celestial-objects-to-watch/uranus/", "core"]], "neptune": [["The Planetary Society \u2014 Neptune", "https://www.planetary.org/worlds/neptune", "intro"], ["Voyager 2 at Neptune \u2014 NASA", "https://science.nasa.gov/mission/voyager-2/", "core"]], "pluto": [["The Planetary Society \u2014 Pluto", "https://www.planetary.org/worlds/pluto", "intro"], ["New Horizons \u2014 NASA", "https://science.nasa.gov/mission/new-horizons/", "core"]], "ceres": [["Dawn mission \u2014 NASA", "https://science.nasa.gov/mission/dawn/", "core"]]}
+
+function renderSizeCanvas(sel){
+  // Vertical layout — Jupiter fills most of the panel height
+  const CNV_W=290, CNV_H=380;
+  const cnv=document.createElement('canvas'); cnv.width=CNV_W; cnv.height=CNV_H;
+  cnv.style.cssText='width:100%;height:auto;display:block;';
+  const ctx=cnv.getContext('2d');
+  ctx.fillStyle='#06061a'; ctx.fillRect(0,0,CNV_W,CNV_H);
+
+  const sizes=[
+    {id:'jupiter', n:'Jupiter',  r:69911, col:'#c88b3a', km:'69,911 km'},
+    {id:'saturn',  n:'Saturn',   r:58232, col:'#e4d191', km:'58,232 km'},
+    {id:'uranus',  n:'Uranus',   r:25362, col:'#7de8e8', km:'25,362 km'},
+    {id:'neptune', n:'Neptune',  r:24622, col:'#4466bb', km:'24,622 km'},
+    {id:'earth',   n:'Earth',    r:6371,  col:'#4b9cd3', km:'6,371 km'},
+    {id:'venus',   n:'Venus',    r:6052,  col:'#e8cda0', km:'6,052 km'},
+    {id:'mars',    n:'Mars',     r:3390,  col:'#c1440e', km:'3,390 km'},
+    {id:'mercury', n:'Mercury',  r:2440,  col:'#c8c8c8', km:'2,440 km'},
+    {id:'pluto',   n:'Pluto',    r:1188,  col:'#c8a060', km:'1,188 km'},
+    {id:'ceres',   n:'Ceres',    r:476,   col:'#a09080', km:'476 km'},
+  ];
+  const maxR=69911;
+  const maxVR=72; // Jupiter visual radius in px
+  const scale=maxVR/maxR;
+
+  let y=10;
+  const LABEL_X=16, BAR_X=88, BAR_MAX=CNV_W-BAR_X-16;
+
+  // Header
+  ctx.font='6px "Space Mono",monospace'; ctx.fillStyle='rgba(255,255,255,0.18)';
+  ctx.textAlign='left'; ctx.fillText('PLANET SIZE COMPARISON · TRUE RELATIVE RADII', LABEL_X, y+6);
+  y+=18;
+
+  sizes.forEach(s=>{
+    const vr=Math.max(1.5, s.r*scale);
+    const isThis=sel&&sel.id===s.id;
+    const rowH=Math.max(vr*2+6, 18);
+    const cy2=y+rowH/2;
+
+    // Row highlight for selected
+    if(isThis){
+      ctx.fillStyle='rgba(68,102,255,0.08)';
+      ctx.fillRect(0,y,CNV_W,rowH);
+      ctx.strokeStyle='rgba(68,102,255,0.25)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(CNV_W,y);ctx.stroke();
+    }
+
+    // Name label
+    ctx.font=(isThis?'bold ':'')+`${Math.min(8,6+vr*0.05)}px "Space Mono",monospace`;
+    ctx.fillStyle=isThis?'#fff':s.col+'cc';
+    ctx.textAlign='left';
+    ctx.fillText(s.n, LABEL_X, cy2+3);
+
+    // Size bar
+    const barW=Math.max(2,s.r/maxR*BAR_MAX);
+    ctx.fillStyle='rgba(255,255,255,0.05)';
+    ctx.fillRect(BAR_X,cy2-2.5,BAR_MAX,5);
+    const bg=ctx.createLinearGradient(BAR_X,0,BAR_X+barW,0);
+    bg.addColorStop(0,s.col+'cc'); bg.addColorStop(1,s.col+'44');
+    ctx.fillStyle=bg;
+    ctx.fillRect(BAR_X,cy2-2.5,barW,5);
+
+    // Planet circle
+    const circleX=BAR_X+barW+vr+4;
+    if(circleX+vr<CNV_W-2){
+      const g=ctx.createRadialGradient(circleX-vr*0.3,cy2-vr*0.3,vr*0.05,circleX,cy2,vr);
+      g.addColorStop(0,s.col+'ee'); g.addColorStop(1,s.col+'44');
+      ctx.beginPath();ctx.arc(circleX,cy2,vr,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
+      if(isThis){ctx.strokeStyle='rgba(255,255,255,0.7)';ctx.lineWidth=1;ctx.stroke();}
+    }
+
+    // km label right-aligned
+    ctx.font=`6px "Space Mono",monospace`;
+    ctx.fillStyle=isThis?'rgba(255,255,255,0.55)':'rgba(255,255,255,0.2)';
+    ctx.textAlign='right';
+    ctx.fillText(s.km, CNV_W-4, cy2+3);
+
+    y+=rowH+3;
+    if(y>CNV_H-10) return;
+  });
+
+  // Source note
+  ctx.font='5px "Space Mono",monospace'; ctx.fillStyle='rgba(255,255,255,0.1)';
+  ctx.textAlign='left'; ctx.fillText('Source: IAU · NASA · radii are mean values', LABEL_X, CNV_H-4);
+  return cnv;
+}
+window.switchPlanetTab = function(tab){
+  panelTab=tab;
+  renderPanel();
+  if(tab==='sizes'){setTimeout(()=>{const slot=document.getElementById('size-canvas-slot');if(slot&&sel&&!slot.hasChildNodes())slot.appendChild(renderSizeCanvas(sel));},10);}
+};
+
+function renderPanel(){
+  const pnl=document.getElementById('panel');
+  if(!panelOpen||!sel){pnl.style.display='none';return;}
+  pnl.style.display='flex';pnl.style.flexDirection='column';
+  const col=sel.css;
+  const kep=KEPLERIAN[sel.id]||null;
+  const hasTech=!!kep;
+  const tc={};Object.keys(TIER).forEach(t=>{tc[t]=(sel.links||[]).filter(l=>l.t===t).length;});
+  const badges=Object.entries(TIER).filter(([t])=>tc[t]>0).map(([t,v])=>`<div style="font-size:7px;padding:2px 6px;background:${v.bg};color:${v.color};border-radius:2px;border:1px solid ${v.color}33;">${v.label}</div>`).join('');
+  const EXTRA_LINKS_PLANET=window._EXTRA_LINKS_DATA?.[sel.id]||[];const allLinks=[...(sel.links||[]),...EXTRA_LINKS_PLANET.map(([l,u,t])=>({l,u,t}))];const links=Object.entries(TIER).map(([tk,tv])=>{const ls=allLinks.filter(l=>l.t===tk);if(!ls.length)return'';return`<div style="margin-bottom:14px;"><div style="font-size:7px;letter-spacing:2px;color:${tv.color};margin-bottom:6px;display:flex;align-items:center;gap:6px;"><div style="flex:1;height:1px;background:${tv.dot}33;"></div>${tv.label}<div style="flex:1;height:1px;background:${tv.dot}33;"></div></div>${ls.map(lk=>`<a href="${lk.u}" target="_blank" rel="noopener" class="link-row" style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:4px;text-decoration:none;margin-bottom:3px;background:transparent;"><div style="width:5px;height:5px;border-radius:50%;background:${tv.dot};flex-shrink:0;"></div><span style="font-size:10px;color:rgba(255,255,255,0.68);flex:1;line-height:1.45;font-family:'Space Mono',monospace;">${lk.l}</span><span style="font-size:9px;color:rgba(255,255,255,0.2);">↗</span></a>`).join('')}</div>`;}).join('');
+
+  // Build technical tab content
+  let techContent='';
+  if(kep){
+    const vv=techVisViva(kep.a, kep.a); // at mean distance
+    techContent=`
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;">
+        ${statCell('SEMI-MAJOR AXIS',kep.a.toFixed(4)+' AU')}
+        ${statCell('ORBITAL PERIOD',kep.T.toFixed(1)+' days')}
+        ${statCell('ECCENTRICITY','e = '+kep.e.toFixed(4))}
+        ${statCell('INCLINATION TO ECLIPTIC',kep.incl.toFixed(2)+'°','#4ecdc4')}
+        ${statCell('PERIHELION',(kep.a*(1-kep.e)).toFixed(4)+' AU')}
+        ${statCell('APHELION',(kep.a*(1+kep.e)).toFixed(4)+' AU')}
+        ${statCell('AXIAL TILT',kep.axial.toFixed(2)+'°',kep.axial>10?'#ffc850':'rgba(195,200,232,1)')}
+        ${statCell('MEAN ORBITAL VELOCITY',vv+' km/s')}
+      </div>
+      <div style="margin-bottom:12px;padding:10px 11px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:4px;">
+        <div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.22);margin-bottom:6px;">ORBIT SHAPE · e=${kep.e.toFixed(3)} · perihelion speed vs aphelion: ×${((1+kep.e)/(1-kep.e)).toFixed(2)}</div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:${Math.max(50,70-Math.round(kep.e*180))}px;height:26px;border:1.5px solid ${col};border-radius:50%;flex-shrink:0;"></div>
+          <div style="font-size:8px;color:rgba(255,255,255,0.4);">${kep.e<0.05?'Nearly circular':kep.e<0.1?'Slightly elliptical':kep.e<0.2?'Notably elliptical':'Highly elliptical'}</div>
+        </div>
+      </div>
+      ${kep.axial>5?`<div style="padding:9px 11px;background:rgba(255,200,80,0.05);border-left:3px solid #ffc850;border-radius:2px;margin-bottom:10px;">
+        <div style="font-size:6px;letter-spacing:2px;color:#ffc850;margin-bottom:4px;">AXIAL TILT · ${kep.axial.toFixed(2)}°</div>
+        <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;">${kep.bio}</p>
+      </div>`:`<p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:11px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:10px;">${kep.bio}</p>`}
+      <div style="font-size:7px;color:rgba(255,255,255,0.15);line-height:1.8;">Source: IAU · JPL Planetary Fact Sheets · J2000 epoch</div>`;
+  }
+
+  const tabStyle=(t)=>`padding:7px 16px;font-size:7px;letter-spacing:2px;font-weight:700;background:transparent;border:none;border-bottom:2px solid ${panelTab===t?'#4466ff':'transparent'};color:${panelTab===t?'#fff':'rgba(255,255,255,0.35)'};cursor:pointer;font-family:'Space Mono',monospace;margin-bottom:-1px;`;
+
+  pnl.innerHTML=`
+    <!-- Header -->
+    <div style="padding:16px 20px 12px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div><div style="font-size:8px;letter-spacing:3px;color:rgba(255,255,255,0.25);margin-bottom:3px;">${(sel.type||'').toUpperCase()}</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:${sel.name.length>12?28:42}px;letter-spacing:3px;color:#fff;line-height:1;">${sel.name}</div></div>
+        <div style="display:flex;gap:6px;margin-top:4px;align-items:center;">
+          <div style="width:22px;height:22px;border-radius:50%;background:${col};box-shadow:0 0 12px ${col}66;border:2px solid ${col};"></div>
+          <div onclick="closePanel()" style="width:24px;height:24px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:50%;color:rgba(255,255,255,0.5);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">×</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px;">
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:7px 10px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:2px;">FROM SUN</div><div style="font-size:11px;color:#fff;font-weight:700;">${sel.au||'—'}</div></div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:4px;padding:7px 10px;"><div style="font-size:6px;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-bottom:2px;">ORBITAL PERIOD</div><div style="font-size:11px;color:#fff;font-weight:700;">${sel.orb||'—'}</div></div>
+      </div>
+    </div>
+    <!-- Tabs -->
+    <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.07);padding:0 18px;flex-shrink:0;">
+      <button style="${tabStyle('overview')}" onclick="switchPlanetTab('overview')">OVERVIEW</button>
+      ${hasTech?`<button style="${tabStyle('technical')}" onclick="switchPlanetTab('technical')">TECHNICAL</button>`:''}
+      <button style="${tabStyle('learn')}" onclick="switchPlanetTab('learn')">LEARN</button>
+      <button style="${tabStyle('sizes')}" onclick="switchPlanetTab('sizes')">SIZES</button>
+    </div>
+    <!-- Content -->
+    <div style="flex:1;overflow-y:auto;padding:12px 20px;">
+      ${panelTab==='overview'?`
+        <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:12px;">${sel.fact}</p>
+        ${sel.status?`<div style="font-size:7px;letter-spacing:2px;color:${col};padding:8px 11px;border-left:3px solid ${col};background:rgba(255,255,255,0.02);border-radius:2px;">${sel.status}</div>`:''}
+      `:panelTab==='technical'?techContent:panelTab==='sizes'?'<div id="size-canvas-slot"></div>':`
+        <div style="margin-bottom:10px;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;"><div style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.25);">KNOWLEDGE BASE</div><div style="display:flex;gap:4px;">${badges}</div></div>${links}</div>
+      `}
+    </div>
+    ${sel.missionable?`<div style="padding:12px 20px;border-top:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+      <button class="plan-btn" style="width:100%;padding:12px;background:#1a33bb;border:1px solid rgba(68,102,255,0.55);border-radius:4px;cursor:pointer;color:#fff;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;font-weight:700;">▶ PLAN A MISSION TO MARS</button>
+    </div>`:''}`;
+}
+
+
+// ── 3D hover tooltip ──────────────────────────────────────────
+const ray3d=new THREE.Raycaster();
+renderer3.domElement.addEventListener('mousemove',e=>{
+  if(currentView!=='3d')return;
+  const rect=renderer3.domElement.getBoundingClientRect();
+  ray3d.setFromCamera(new THREE.Vector2(
+    ((e.clientX-rect.left)/rect.width)*2-1,
+    -((e.clientY-rect.top)/rect.height)*2+1
+  ),camera);
+  const hits=ray3d.intersectObjects(pMeshes.map?pMeshes:Object.values(pMeshes)).filter(h=>h.object.userData.planet);
+  const tt=document.getElementById('tooltip2d');
+  if(hits.length&&tt){
+    const p=hits[0].object.userData.planet;
+    const kep=KEPLERIAN[p.id];
+    tt.style.left=Math.min(e.clientX+14,window.innerWidth-170)+'px';
+    tt.style.top=Math.max(e.clientY-22,60)+'px';
+    tt.style.display='block';
+    tt.style.borderColor=(p.css||'#4466ff')+'80';
+    if(kep){
+      const vv=(Math.sqrt(4*Math.PI*Math.PI*(2/kep.a-1/kep.a))*4.7404).toFixed(2);
+      document.getElementById('tooltip-vel').textContent='~'+vv+' km/s orbital velocity';
+      document.getElementById('tooltip-dist').textContent=(kep.a*149.6).toFixed(0)+' M km from Sun';
+      document.getElementById('tooltip-pos').textContent='e='+kep.e.toFixed(3)+' · i='+kep.incl.toFixed(1)+'° · tilt='+kep.axial.toFixed(1)+'°';
+    } else if(p.au){
+      document.getElementById('tooltip-vel').textContent=p.au;
+      document.getElementById('tooltip-dist').textContent=p.orb||'';
+      document.getElementById('tooltip-pos').textContent=p.inc!=null?'i='+p.inc.toFixed(2)+'°':'';
+    }
+  } else if(tt&&!isDrag){
+    tt.style.display='none';
+  }
+});
+renderer3.domElement.addEventListener('mouseleave',()=>{const tt=document.getElementById('tooltip2d');if(tt)tt.style.display='none';});
+
+window.selPlanet=id=>{sel=PLANETS.find(p=>p.id===id);panelOpen=true;renderPills();renderPanel();updateArc();};
+window.closePanel=()=>{panelOpen=false;document.getElementById('panel').style.display='none';};
+
+renderPills();renderPanel();updateArc();
+el3.style.cursor='grab';
+
+// ═══════════════════════════════════════════════════════════════════
+// MAIN LOOP
+// ═══════════════════════════════════════════════════════════════════
+function animate(now){
+  requestAnimationFrame(animate);
+  const dt=Math.min((now-lastTime)/1000,0.05);lastTime=now;
+  simT+=dt*0.04*simSpeed;frame++;
+  if(currentView==='2d')draw2d();
+  else draw3d();
+  if(frame%20===0){
+    const yr=2026+Math.floor(simT),d=String(Math.floor((simT%1)*365)).padStart(3,'0');
+    document.getElementById('sdate').textContent=`SIM DATE · ${yr}.${d}`;
+  }
+}
+animate(performance.now());
+</script>
+</body>
+</html>

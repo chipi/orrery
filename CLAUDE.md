@@ -97,11 +97,12 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │       ├── mission.ts      ← Mission, MissionIndex interfaces
 │       └── planet.ts
 │
-├── public/
+├── static/                 ← SvelteKit static dir (copied to build/ root)
 │   ├── fonts/              ← self-hosted (fetched at build)
 │   ├── textures/           ← planet textures (fetched at build)
 │   ├── logos/              ← agency logos (fetched at build)
-│   └── images/missions/    ← NASA imagery (fetched at build)
+│   ├── images/missions/    ← NASA imagery (fetched at build)
+│   └── .nojekyll           ← required for GitHub Pages
 │
 ├── scripts/
 │   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images

@@ -125,7 +125,7 @@ AUPYR_TO_KMS = 4.7404                 // km/s per AU/yr
 
 Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes the constraint.
 
-- **Browser-only.** No server-side logic. No backend. No API server. nginx serves static files only. The application must work as `file://` (with caveats for fetch) and as `http://localhost`.
+- **Browser-only.** No server-side logic. No backend. No API server. The host (GitHub Pages today; nginx, Cloudflare Pages, or any static host in future per ADR-014) serves static files only. The application must work as `http://localhost` and from any static host.
 
 - **No user data.** No accounts. No login. No `localStorage`. No `sessionStorage`. No cookies for user preferences. State is session-only and resets on reload.
 
@@ -168,7 +168,7 @@ Locked technical choices. Each entry points to its ADR.
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
 | Mission data format | Static JSON files in `data/` | ADR-006 |
-| Data serving | Separate nginx volume (local) / CDN (prod) | ADR-007 |
+| Data serving | Same static host as the bundle (GH Pages today); separate nginx volume optional for self-hosted nginx per ADR-007's scope note | ADR-007 |
 | Lambert solver execution | Web Worker | ADR-008 |
 | Mission scenario type | Free-return flyby (no landing) | ADR-009 |
 | Transfer arc computation | Keplerian half-ellipses | ADR-010 |

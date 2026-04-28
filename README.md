@@ -51,7 +51,7 @@ Six documents fully specify the concept, data, design, and architecture.
 
 **If you want to add a mission:** read 03. Mission data is plain JSON — no JavaScript required.
 
-**If you want to build:** read 04. The production stack is Vite + vanilla JS + Three.js r128, deployable as a single nginx container.
+**If you want to build:** read 04 for original concept-package context, then `docs/adr/TA.md` and `CLAUDE.md` for the locked production stack: SvelteKit + TypeScript (strict) + Three.js r128 + Vite, deployed as a fully static site (GitHub Pages preview today, production hosting TBD per ADR-014). Concept-package details about Docker Compose / vanilla JS describe Phase 1 and are superseded.
 
 ## Physics
 
@@ -78,7 +78,7 @@ Images come from NASA's public domain library (live API), ESA CC BY-SA IGO archi
 | 2D rendering | Canvas API |
 | Data | Static JSON files |
 | Fonts | Self-hosted (Google Fonts subset) |
-| Deployment | Docker Compose + nginx |
+| Deployment | GitHub Pages preview on every push to `main`; production hosting TBD per ADR-014 |
 | Gallery | NASA Images API (CORS open, degrades gracefully offline) |
 
 ## Contributing

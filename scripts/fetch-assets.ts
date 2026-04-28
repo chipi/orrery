@@ -7,7 +7,7 @@
  * The script:
  *  1. Requests CSS from Google Fonts API for each family.
  *  2. Extracts woff2 URLs from the CSS.
- *  3. Downloads each woff2 to public/fonts/.
+ *  3. Downloads each woff2 to static/fonts/.
  *  4. Rewrites the CSS to point to local /fonts/ paths.
  *  5. Writes a combined src/lib/styles/fonts.css.
  *

@@ -1,9 +1,5 @@
 /**
- * Validates all data files in data/ against their JSON schemas (ADR-019).
- *
- * Slice 2a scope: mission base files + mission-index + mission overlays.
- * Slice 2b will extend this to validate planet, rocket, earth-object, and
- * moon-site records and their overlays as those schemas are written.
+ * Validates all data files under static/data/ against their JSON schemas (ADR-019).
  *
  * Run via: npm run validate-data
  * CI: blocks PR on any validation failure.
@@ -14,11 +10,12 @@ import addFormats from 'ajv-formats';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
+const DATA_ROOT = 'static/data';
 const ajv = new Ajv({ allErrors: true, strict: true });
 addFormats(ajv);
 
 function loadSchema(name: string): AnySchema {
-  return JSON.parse(readFileSync(join('data/schemas', name), 'utf8'));
+  return JSON.parse(readFileSync(join(DATA_ROOT, 'schemas', name), 'utf8'));
 }
 
 const missionSchema = loadSchema('mission.schema.json');
@@ -82,54 +79,40 @@ function listJson(dir: string): string[] {
 console.log('Validating data...');
 
 // 0. Reference data
-validateFile('data/planets.json', validatePlanets);
-validateFile('data/rockets.json', validateRockets);
-validateFile('data/earth-objects.json', validateEarthObjects);
-validateFile('data/moon-sites.json', validateMoonSites);
+validateFile(join(DATA_ROOT, 'planets.json'), validatePlanets);
+validateFile(join(DATA_ROOT, 'rockets.json'), validateRockets);
+validateFile(join(DATA_ROOT, 'earth-objects.json'), validateEarthObjects);
+validateFile(join(DATA_ROOT, 'moon-sites.json'), validateMoonSites);
 
 // 1. Mission index
-validateFile('data/missions/index.json', validateMissionIndex);
+validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
 // 2. Mission base files (per destination)
 for (const dest of ['mars', 'moon']) {
-  for (const file of listJson(`data/missions/${dest}`)) {
+  for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
   }
 }
 
-// 3. Mission overlay files (per locale, per destination)
-const i18nDir = 'data/i18n';
+// 3. Locale overlays
+const i18nDir = join(DATA_ROOT, 'i18n');
 if (existsSync(i18nDir)) {
   for (const locale of readdirSync(i18nDir)) {
+    // Mission overlays
     for (const dest of ['mars', 'moon']) {
       for (const file of listJson(join(i18nDir, locale, 'missions', dest))) {
         validateFile(file, validateMissionOverlay);
       }
     }
-  }
-}
-
-// 4. Rocket overlay files (per locale)
-if (existsSync(i18nDir)) {
-  for (const locale of readdirSync(i18nDir)) {
+    // Rocket overlays
     for (const file of listJson(join(i18nDir, locale, 'rockets'))) {
       validateFile(file, validateRocketOverlay);
     }
-  }
-}
-
-// 5. Earth-object overlay files (per locale)
-if (existsSync(i18nDir)) {
-  for (const locale of readdirSync(i18nDir)) {
+    // Earth-object overlays
     for (const file of listJson(join(i18nDir, locale, 'earth-objects'))) {
       validateFile(file, validateEarthObjectOverlay);
     }
-  }
-}
-
-// 6. Moon-site overlay files (per locale)
-if (existsSync(i18nDir)) {
-  for (const locale of readdirSync(i18nDir)) {
+    // Moon-site overlays
     for (const file of listJson(join(i18nDir, locale, 'moon-sites'))) {
       validateFile(file, validateMoonSiteOverlay);
     }

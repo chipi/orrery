@@ -1,0 +1,140 @@
+<script lang="ts">
+  import { fly } from 'svelte/transition';
+  import type { Snippet } from 'svelte';
+
+  type Props = {
+    open: boolean;
+    onClose: () => void;
+    title?: string;
+    children?: Snippet;
+  };
+  let { open, onClose, title, children }: Props = $props();
+
+  $effect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  });
+
+  let touchStartY = $state(0);
+  let touchDeltaY = $state(0);
+
+  function onTouchStart(e: TouchEvent) {
+    touchStartY = e.touches[0].clientY;
+    touchDeltaY = 0;
+  }
+
+  function onTouchMove(e: TouchEvent) {
+    const delta = e.touches[0].clientY - touchStartY;
+    touchDeltaY = Math.max(0, delta);
+  }
+
+  function onTouchEnd() {
+    if (touchDeltaY > 80) onClose();
+    touchDeltaY = 0;
+  }
+</script>
+
+{#if open}
+  <aside
+    class="panel"
+    aria-label={title ?? 'Detail panel'}
+    style:transform={touchDeltaY > 0 ? `translateY(${touchDeltaY}px)` : ''}
+    ontouchstart={onTouchStart}
+    ontouchmove={onTouchMove}
+    ontouchend={onTouchEnd}
+    in:fly={{ y: 14, x: 14, duration: 220 }}
+    out:fly={{ y: 14, x: 14, duration: 160 }}
+  >
+    <header>
+      <span class="title">{title ?? ''}</span>
+      <button class="close" onclick={onClose} aria-label="Close panel">×</button>
+    </header>
+    <div class="content">
+      {@render children?.()}
+    </div>
+  </aside>
+{/if}
+
+<style>
+  .panel {
+    position: fixed;
+    background: var(--color-panel-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Desktop: right drawer */
+  @media (min-width: 768px) {
+    .panel {
+      top: var(--nav-height);
+      right: 0;
+      bottom: 0;
+      width: var(--panel-width);
+      border-left: 1px solid var(--color-border);
+    }
+  }
+
+  /* Mobile: bottom sheet */
+  @media (max-width: 767px) {
+    .panel {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 80vh;
+      border-top: 1px solid var(--color-border);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--color-text);
+  }
+
+  .close {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--color-text-dim);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .close:hover {
+    color: var(--color-text);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .content {
+    overflow-y: auto;
+    padding: 14px 18px;
+    flex: 1;
+  }
+</style>

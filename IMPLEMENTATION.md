@@ -138,6 +138,12 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ---
 
+## Scope expansion (April 2026)
+
+A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.
+
+---
+
 ## What is not in scope for v1.0
 
 - User accounts or saved missions

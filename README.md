@@ -36,6 +36,8 @@ An internet connection is required for full fidelity (Three.js CDN, Google Fonts
 
 ## Documentation
 
+The full architecture and concept docs are published at **<https://chipi.github.io/orrery/docs/>** — a VitePress-built site with search, sidebar navigation, and access to the six original prototype HTMLs (see ADR-021 for the docs-site architecture).
+
 Six documents fully specify the concept, data, design, and architecture.
 
 | Document | Contents |

@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v1.3 · April 2026*
+*Orrery · Reference document · v1.4 · April 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update §stack and §map when decisions are locked.
 
@@ -214,6 +214,7 @@ State board for all RFCs and ADRs.
 | ADR-018 | Mobile-first design, bottom sheet panels | Accepted |
 | ADR-019 | JSON schema validation on PR via ajv | Accepted |
 | ADR-020 | Canonical mission JSON schema | Accepted (closes RFC-002) |
+| ADR-021 | Documentation site at /docs/ via VitePress | Accepted |
 
 ---
 
@@ -225,3 +226,4 @@ State board for all RFCs and ADRs.
 | v1.1 | April 2026 | Stack updated: TypeScript (ADR-011), SvelteKit (ADR-012), History API routing (ADR-013), GitHub Actions + GH Pages (ADR-014), Vitest + Playwright (ADR-015), build-time assets (ADR-016), Paraglide i18n (ADR-017), mobile-first (ADR-018), ajv validation (ADR-019). ADR-002/003/004/005 marked superseded. |
 | v1.2 | April 2026 | §components rewritten to match post-pivot stack: SvelteKit router (ADR-013), TypeScript file extensions, `src/routes/*/+page.svelte` page modules, Svelte components for Nav and Panel. §map updated: RFC-001 closed (superseded by ADR-013); RFC-004 closing-evidence URL corrected to History API form. |
 | v1.3 | April 2026 | RFC-002 closed early at Slice 2 entry into ADR-020 (canonical mission JSON schema). §map updated; data-serving §stack row reflects ADR-007's self-hosted-nginx-only scope note; §constraints "browser-only" reworded to be host-agnostic. |
+| v1.4 | April 2026 | ADR-021 added: documentation site at /docs/ via VitePress, deployed alongside the app on GitHub Pages. Scope expansion outside the original six slices. |

@@ -23,7 +23,7 @@ The production build extracts, connects, and deploys what the prototypes demonst
 - Six route stubs: `/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`
 - `Nav.svelte` component shared across all routes — all six links, active state, mobile-responsive (44px touch targets)
 - `Panel.svelte` component — bottom sheet on mobile, right drawer on desktop
-- Three.js r128 bundled locally (`public/vendor/three.min.js`)
+- Three.js r128 installed via npm (`three@0.128.0`), bundled by Vite per ADR-012
 - Google Fonts self-hosted (fetched by `scripts/fetch-assets.ts`)
 - History API routing working; GitHub Pages `404.html` redirect in place
 - Paraglide-js wired up — `src/lib/i18n/en-US.json` with all nav/UI strings

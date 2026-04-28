@@ -1,5 +1,5 @@
 # IA — Information Architecture
-*Orrery · Reference document · v1.0 · April 2026*
+*Orrery · Reference document · v1.1 · April 2026*
 
 This is the reference document for the UX plane. UXSes anchor to it by section. When surfaces, navigation, tokens, or shell regions change, this document is amended.
 
@@ -7,7 +7,7 @@ This is the reference document for the UX plane. UXSes anchor to it by section. 
 
 ## §overview
 
-Six screens, one persistent nav bar, one hash-based router. No login state. No user data. No persistence between sessions.
+Six screens, one persistent nav bar, SvelteKit's History API router. No login state. No user data. No persistence between sessions.
 
 The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mission Configurator (Act 2) → Mission Arc (Act 3) → Mission Library (archive) → Earth Orbit (context). The nav bar presents all six destinations at all times. There is no enforced sequence.
 
@@ -17,12 +17,12 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 
 | Surface | Route | File | Primary canvas |
 |---|---|---|---|
-| Moon Map | `#/moon` | `src/screens/moon.js` | Three.js sphere + Canvas 2D flat map |
-| Solar System Explorer | `#/explore` | `src/screens/explore.js` | Three.js 3D + Canvas 2D toggle |
-| Mission Configurator | `#/plan` | `src/screens/plan.js` | Canvas 2D porkchop plot |
-| Mission Arc | `#/fly` | `src/screens/fly.js` | Three.js 3D + Canvas 2D toggle |
-| Mission Library | `#/missions` | `src/screens/missions.js` | CSS grid card layout |
-| Earth Orbit | `#/earth` | `src/screens/earth.js` | Canvas 2D logarithmic scale |
+| Moon Map | `/moon` | `src/routes/moon/+page.svelte` | Three.js sphere + Canvas 2D flat map |
+| Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle |
+| Mission Configurator | `/plan` | `src/routes/plan/+page.svelte` | Canvas 2D porkchop plot |
+| Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
+| Mission Library | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
+| Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
 
 ---
 
@@ -47,34 +47,34 @@ Right region: screen-specific controls (3D/2D toggle on explore and fly, CAPCOM 
 
 ## §navigation
 
-Hash-based routing. Format: `#/[screen]` with optional query params for mission IDs.
+History API routing via SvelteKit's built-in router. Format: `/[screen]` with optional query params for mission IDs.
 
 | Pattern | Example | Used by |
 |---|---|---|
-| `#/[screen]` | `#/explore` | All screens |
-| `#/fly?mission=[id]` | `#/fly?mission=curiosity` | Mission Arc (loads specific mission) |
-| `#/missions?dest=[MARS\|MOON]` | `#/missions?dest=MARS` | Mission Library (pre-filtered) |
+| `/[screen]` | `/explore` | All screens |
+| `/fly?mission=[id]` | `/fly?mission=curiosity` | Mission Arc (loads specific mission) |
+| `/missions?dest=[MARS\|MOON]` | `/missions?dest=MARS` | Mission Library (pre-filtered) |
 
 Navigation triggers: nav bar links, "PLAN A MISSION" button in explore screen, "FLY THIS MISSION" button in missions screen.
 
-The router is hash-based in v1. History API routing is an open question (RFC-001) — the architecture must not assume history API is available.
+History API routing is locked in ADR-013 (superseding ADR-004). RFC-001 is closed — SvelteKit's router replaces the hand-written router originally proposed.
 
 ---
 
 ## §url-structure
 
 ```
-#/moon               Moon Map
-#/explore            Solar System Explorer
-#/plan               Mission Configurator
-#/fly                Mission Arc (default scenario: ORRERY-1 free-return)
-#/fly?mission=id     Mission Arc (specific mission from library)
-#/missions           Mission Library (all missions)
-#/missions?dest=MARS Mission Library (Mars only)
-#/earth              Earth Orbit
+/moon                Moon Map
+/explore             Solar System Explorer
+/plan                Mission Configurator
+/fly                 Mission Arc (default scenario: ORRERY-1 free-return)
+/fly?mission=id      Mission Arc (specific mission from library)
+/missions            Mission Library (all missions)
+/missions?dest=MARS  Mission Library (Mars only)
+/earth               Earth Orbit
 ```
 
-No server-side routing. All routes are handled client-side. The nginx config serves `index.html` for all paths.
+Routes resolve client-side via SvelteKit's router. Servers must serve `index.html` for unmatched paths (`try_files $uri /index.html` in nginx, `404.html` SPA-redirect on GitHub Pages — see ADR-014).
 
 ---
 
@@ -171,7 +171,7 @@ The one exception is URL-encoded state: mission ID and filter params in the URL 
 
 ## §entry-points
 
-The application has one entry point: `index.html` loads `src/main.js` which initialises the router and renders the current route. Deep-linking to any route is supported by serving `index.html` for all paths in nginx.
+SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+layout.svelte` is the root layout that wraps all routes. Deep-linking to any route is supported by the server-side catch-all (`try_files $uri /index.html` for nginx, `404.html` SPA-redirect for GitHub Pages per ADR-014).
 
 ---
 
@@ -206,3 +206,4 @@ The application has one entry point: `index.html` loads `src/main.js` which init
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | April 2026 | Initial version — surfaces, tokens, shell regions extracted from 05_Design_System.md and six prototypes |
+| v1.1 | April 2026 | §overview, §surfaces, §navigation, §url-structure, §entry-points updated to reflect History API routing (ADR-013) and SvelteKit routes/components (ADR-012). Hash-routing examples replaced with clean URLs. |

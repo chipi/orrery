@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v1.0 · April 2026*
+*Orrery · Reference document · v1.2 · April 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update §stack and §map when decisions are locked.
 
@@ -9,23 +9,23 @@ This is the reference document for the technical plane. RFCs anchor to it by sec
 
 The subsystems of the production application.
 
-**Router** — hash-based client-side router. Reads `window.location.hash`, maps to screen module, handles query params for mission IDs and filters. See RFC-001, ADR-004.
+**Router** — SvelteKit's built-in router using the History API. File-based routing in `src/routes/`. Clean URLs: `/explore`, `/fly?mission=curiosity`, `/missions?dest=MARS`. GitHub Pages deploy uses a `404.html` SPA-redirect workaround per ADR-014. See ADR-012, ADR-013.
 
-**Data client** (`src/lib/data.js`) — fetch and cache layer for all JSON data files. Returns JSON as-is. Never transforms data. Cache is a `Map` keyed by URL, session-only. Exposes: `getMissionIndex()`, `getMission(id, dest)`, `filterMissions({dest, status, agency})`, `planets()`, `rockets()`, `earthObjects()`. See ADR-006, ADR-007.
+**Data client** (`src/lib/data.ts`) — fetch and cache layer for all JSON data files. Returns JSON as-is, except for the locale-overlay merge for mission content per ADR-017. Cache is a `Map` keyed by URL, session-only. Exposes: `getMissionIndex()`, `getMission(id, dest)`, `filterMissions({dest, status, agency})`, `planets()`, `rockets()`, `earthObjects()`. See ADR-006, ADR-017.
 
-**Nav bar component** (`src/components/nav.js`) — shared across all six screens. Renders the 52px bar with wordmark, screen links, and a slot for screen-specific right-region controls. Active screen highlighted in blue. All other screens link to their hash route.
+**Nav bar component** (`src/components/Nav.svelte`) — shared across all six screens. Renders the 52px bar with wordmark, screen links, and a slot for screen-specific right-region controls. Active screen highlighted in blue. All other screens link to their route via `<a href>`.
 
-**Right panel component** (`src/components/panel.js`) — shared detail panel used by explore, missions, and moon screens. Renders header, tab strip (OVERVIEW/TECHNICAL/LEARN/SIZES), scrollable content area, and optional action footer. Panel content is injected by each screen.
+**Right panel component** (`src/components/Panel.svelte`) — shared detail panel used by explore, missions, and moon screens. Bottom sheet on mobile, right drawer on desktop per ADR-018. Renders header, tab strip (OVERVIEW/TECHNICAL/LEARN/SIZES), scrollable content area, and optional action footer. Panel content is injected by each screen.
 
-**Orbital library** (`src/lib/orbital.js`) — Keplerian mechanics. `keplerPos(a, e, L0, T, t)` returns position at time t (days from J2000). `visViva(a, r)` returns orbital velocity in km/s. `auToPx(a)` returns visual radius for 2D rendering. All constants from IAU; see §contracts.
+**Orbital library** (`src/lib/orbital.ts`) — Keplerian mechanics. `keplerPos(a, e, L0, T, t)` returns position at time t (days from J2000). `visViva(a, r)` returns orbital velocity in km/s. All constants from IAU; see §contracts.
 
-**Scale library** (`src/lib/scale.js`) — rendering scale functions. `auToPx(a_au)` — compressed log-linear scale for solar system 2D. `altToVis(alt_km)` — logarithmic scale for Earth orbit viewer: `38 + 54 * log10(1 + alt_km / 100)`.
+**Scale library** (`src/lib/scale.ts`) — rendering scale functions. `auToPx(a_au)` — compressed log-linear scale for solar system 2D. `altToVis(alt_km)` — logarithmic scale for Earth orbit viewer: `38 + 54 * log10(1 + alt_km / 100)`.
 
-**Lambert library** (`src/lib/lambert.js`) — Lagrange-Gauss short-way Lambert solver. Called only from the Lambert worker, never from the main thread. See ADR-008, RFC-003.
+**Lambert library** (`src/lib/lambert.ts`) — Lagrange-Gauss short-way Lambert solver. Called only from the Lambert worker, never from the main thread. See ADR-008, RFC-003.
 
-**Lambert worker** (`src/workers/lambert.worker.js`) — runs the Lambert solver off the main thread. Receives a message with departure date range, arrival date range, and step counts. Posts back the full porkchop grid (delta-v values for each cell). See RFC-003.
+**Lambert worker** (`src/workers/lambert.worker.ts`) — runs the Lambert solver off the main thread. Receives a message with departure date range, arrival date range, and step counts. Posts back the full porkchop grid (delta-v values for each cell). See RFC-003.
 
-**Six screen modules** (`src/screens/[moon|explore|plan|fly|missions|earth].js`) — one module per screen. Each initialises its canvas/renderer, loads data, handles user interaction, and owns its HUD or panel state. Screens do not share mutable state directly — they use the shared data client and the URL hash.
+**Six route pages** (`src/routes/[moon|explore|plan|fly|missions|earth]/+page.svelte`) — one SvelteKit page component per screen. Each initialises its canvas/renderer in `onMount()`, loads data via the data client, handles user interaction, and owns its HUD or panel state. Pages do not share mutable state directly — they use the shared data client and URL search params (`$page.url.searchParams`).
 
 ---
 
@@ -183,10 +183,10 @@ State board for all RFCs and ADRs.
 
 | RFC | Title | Status | Closes into | Closing evidence |
 |---|---|---|---|---|
-| RFC-001 | Router design — hash vs history, param handling | Draft v0.1 | ADR (pending) | Slice 1 gate: router handles all six routes + mission ID params |
+| RFC-001 | Router design — hash vs history, param handling | Closed · superseded by ADR-013 | ADR-013 | Pre-empted by ADR-013 (SvelteKit router); see RFC-001 closure note |
 | RFC-002 | Mission JSON schema — events array, field canonicalisation | Draft v0.1 | ADR (pending) | Slice 4 gate: schema exercised by three mission types in fly screen |
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Draft v0.1 | ADR (pending) | Slice 3 gate: worker running in production with porkchop plot |
-| RFC-004 | Mission URL sharing — serialisation, back-button | Draft v0.1 | ADR (pending) | Slice 4 gate: `#/fly?mission=id` works end-to-end |
+| RFC-004 | Mission URL sharing — serialisation, back-button | Draft v0.1 | ADR (pending) | Slice 4 gate: `/fly?mission=id` works end-to-end |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Draft v0.1 | ADR (pending) | Slice 6 gate: all six screens pass WCAG 2.1 AA on nav and panels |
 | RFC-006 | Porkchop plot mobile interaction model | Draft v0.1 | ADR (pending) | Slice 3 gate: mobile interaction tested on real devices |
 
@@ -222,3 +222,4 @@ State board for all RFCs and ADRs.
 |---|---|---|
 | v1.0 | April 2026 | Initial version — components, contracts, constraints, and stack extracted from 04_Technical_Architecture.md and six prototypes |
 | v1.1 | April 2026 | Stack updated: TypeScript (ADR-011), SvelteKit (ADR-012), History API routing (ADR-013), GitHub Actions + GH Pages (ADR-014), Vitest + Playwright (ADR-015), build-time assets (ADR-016), Paraglide i18n (ADR-017), mobile-first (ADR-018), ajv validation (ADR-019). ADR-002/003/004/005 marked superseded. |
+| v1.2 | April 2026 | §components rewritten to match post-pivot stack: SvelteKit router (ADR-013), TypeScript file extensions, `src/routes/*/+page.svelte` page modules, Svelte components for Nav and Panel. §map updated: RFC-001 closed (superseded by ADR-013); RFC-004 closing-evidence URL corrected to History API form. |

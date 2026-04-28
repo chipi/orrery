@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rocket.schema.json",
+  "title": "Rockets",
+  "description": "Launch vehicles available in the Mission Configurator. Single file at data/rockets.json. Per-locale editorial content in data/i18n/[locale]/rockets/[id].json (rocket-overlay schema).",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "agency",
+      "agency_full",
+      "sector",
+      "status",
+      "color",
+      "payload_to_leo_kg",
+      "payload_to_mars_kg",
+      "delta_v_capability_km_s",
+      "isp_s",
+      "credit",
+      "links"
+    ],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "agency": { "type": "string", "minLength": 1 },
+      "agency_full": { "type": "string", "minLength": 1 },
+      "sector": { "enum": ["gov", "private"] },
+      "status": { "enum": ["ACTIVE", "RETIRED", "PLANNED"] },
+      "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+      "first_flight": {
+        "type": "integer",
+        "minimum": 1957,
+        "maximum": 2100,
+        "description": "Year of first orbital flight; omit for PLANNED vehicles"
+      },
+      "payload_to_leo_kg": { "type": "number", "exclusiveMinimum": 0 },
+      "payload_to_mars_kg": { "type": "number", "exclusiveMinimum": 0 },
+      "delta_v_capability_km_s": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Cumulative ∆v from LEO to upper-stage burnout for trans-Mars injection"
+      },
+      "isp_s": { "type": "number", "exclusiveMinimum": 0, "description": "Upper-stage Isp (specific impulse, seconds)" },
+      "credit": { "type": "string", "minLength": 1 },
+      "links": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["l", "u", "t"],
+          "properties": {
+            "l": { "type": "string", "minLength": 1 },
+            "u": { "type": "string", "format": "uri" },
+            "t": { "enum": ["intro", "core", "deep"] }
+          }
+        }
+      }
+    }
+  }
+}

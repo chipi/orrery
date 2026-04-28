@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rocket-overlay.schema.json",
+  "title": "RocketOverlay",
+  "description": "Editorial overlay per launch vehicle per locale. One file at data/i18n/[locale]/rockets/[id].json. Merged with base record at fetch time (ADR-017).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "type", "first", "description"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "minLength": 1, "description": "Vehicle classification (e.g., \"Heavy-lift, expendable\")" },
+    "first": { "type": "string", "minLength": 1, "description": "One-line first-of-its-kind statement" },
+    "description": { "type": "string", "minLength": 1 }
+  }
+}

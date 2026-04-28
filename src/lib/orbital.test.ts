@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { visViva, keplerPos } from './orbital';
+import { visViva, keplerPos, MU_SUN, AU_TO_KM, AU_TO_LMIN, AUPYR_TO_KMS } from './orbital';
+import planetsData from '$data/planets.json';
 
 describe('visViva', () => {
   it('Earth at 1 AU ≈ 29.78 km/s', () => {
@@ -36,5 +37,20 @@ describe('keplerPos', () => {
   it('returned x,y satisfy x² + y² = r²', () => {
     const p = keplerPos(1.524, 0.093, 1.5, 686.97, 100);
     expect(Math.sqrt(p.x ** 2 + p.y ** 2)).toBeCloseTo(p.r, 10);
+  });
+});
+
+describe('orbital constants match data/planets.json', () => {
+  it('MU_SUN matches planets.json constants.mu_sun', () => {
+    expect(MU_SUN).toBeCloseTo(planetsData.constants.mu_sun, 10);
+  });
+  it('AU_TO_KM matches planets.json constants.au_to_km', () => {
+    expect(AU_TO_KM).toBe(planetsData.constants.au_to_km);
+  });
+  it('AU_TO_LMIN matches planets.json constants.au_to_lmin', () => {
+    expect(AU_TO_LMIN).toBe(planetsData.constants.au_to_lmin);
+  });
+  it('AUPYR_TO_KMS matches planets.json constants.aupyr_to_kms', () => {
+    expect(AUPYR_TO_KMS).toBe(planetsData.constants.aupyr_to_kms);
   });
 });

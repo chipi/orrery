@@ -24,10 +24,12 @@ function loadSchema(name: string): AnySchema {
 const missionSchema = loadSchema('mission.schema.json');
 const missionIndexSchema = loadSchema('mission-index.schema.json');
 const missionOverlaySchema = loadSchema('mission-overlay.schema.json');
+const planetsSchema = loadSchema('planets.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
 const validateMissionOverlay = ajv.compile(missionOverlaySchema);
+const validatePlanets = ajv.compile(planetsSchema);
 
 let failed = 0;
 let passed = 0;
@@ -65,7 +67,10 @@ function listJson(dir: string): string[] {
     .map((f) => join(dir, f));
 }
 
-console.log('Validating mission data...');
+console.log('Validating data...');
+
+// 0. Reference data
+validateFile('data/planets.json', validatePlanets);
 
 // 1. Mission index
 validateFile('data/missions/index.json', validateMissionIndex);

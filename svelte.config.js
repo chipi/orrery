@@ -20,6 +20,8 @@ const config = {
     alias: {
       $types: './src/types',
       '$types/*': './src/types/*',
+      $data: './data',
+      '$data/*': './data/*',
     },
   },
 };

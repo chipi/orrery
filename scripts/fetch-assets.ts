@@ -33,7 +33,7 @@ const BASE_URL = 'https://fonts.googleapis.com/css2';
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36';
 
-const FONTS_DIR = 'public/fonts';
+const FONTS_DIR = 'static/fonts';
 const CSS_OUT = 'src/lib/styles/fonts.css';
 
 async function fetchFontCss(font: FontDef): Promise<string> {

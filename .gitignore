@@ -1,32 +1,14 @@
-# Dependencies
 node_modules/
-.pnp
-.pnp.js
-
-# Build output
 dist/
 build/
-
-# Environment
 .env
 .env.local
-.env.*.local
-
-# Editor
+.svelte-kit/
 .vscode/
 .idea/
 *.swp
-*.swo
 .DS_Store
 Thumbs.db
-
-# Logs
 *.log
-npm-debug.log*
-
-# Cache
 .cache/
 .vite/
-
-# OS
-*.DS_Store

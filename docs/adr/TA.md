@@ -139,6 +139,14 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **JSON data is never transformed by the client.** `data.js` returns data as-is from JSON files. Transformation (filtering, sorting) happens at the call site. The data client is a fetch/cache layer, not a data access object.
 
+- **No runtime third-party URLs.** All external assets (fonts, textures, logos, mission imagery) are resolved at build time. The production bundle fetches nothing from external URLs at runtime. See ADR-016.
+
+- **Mobile-first.** All UI components are designed at mobile size first. The base CSS targets viewports below 768px. Desktop is a progressive enhancement. See ADR-018.
+
+- **i18n from the start.** No hardcoded UI strings in component files. All user-facing text goes through Paraglide-js. Mission content strings live in locale overlay files, never in base data files. See ADR-017.
+
+- **TypeScript strict mode.** `strict: true` in `tsconfig.json`. No `any` types without explicit justification. See ADR-011.
+
 ---
 
 ## §stack
@@ -147,13 +155,20 @@ Locked technical choices. Each entry points to its ADR.
 
 | Concern | Choice | ADR |
 |---|---|---|
+| Language | TypeScript, strict mode | ADR-011 |
+| Framework | SvelteKit | ADR-012 |
 | 3D rendering | Three.js r128, local bundle | ADR-001 |
-| Framework | None — vanilla JS | ADR-002 |
-| Bundler | Vite | ADR-003 |
-| Routing | Hash-based (`#/route`) | ADR-004 |
-| Deployment | nginx + Docker Compose | ADR-005 |
+| Bundler | Vite (via SvelteKit) | ADR-012 |
+| Routing | History API via SvelteKit router | ADR-013 |
+| CI + preview hosting | GitHub Actions + GitHub Pages | ADR-014 |
+| Unit / integration tests | Vitest | ADR-015 |
+| End-to-end tests | Playwright | ADR-015 |
+| External assets | Resolved at build time via GH Actions | ADR-016 |
+| i18n | Paraglide-js (UI) + locale overlay files (content) | ADR-017 |
+| Design approach | Mobile-first, bottom sheet panels | ADR-018 |
+| Data validation | ajv JSON schema on PR | ADR-019 |
 | Mission data format | Static JSON files in `data/` | ADR-006 |
-| Data serving | Separate nginx volume | ADR-007 |
+| Data serving | Separate nginx volume (local) / CDN (prod) | ADR-007 |
 | Lambert solver execution | Web Worker | ADR-008 |
 | Mission scenario type | Free-return flyby (no landing) | ADR-009 |
 | Transfer arc computation | Keplerian half-ellipses | ADR-010 |
@@ -173,21 +188,31 @@ State board for all RFCs and ADRs.
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Draft v0.1 | ADR (pending) | Slice 3 gate: worker running in production with porkchop plot |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Draft v0.1 | ADR (pending) | Slice 4 gate: `#/fly?mission=id` works end-to-end |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Draft v0.1 | ADR (pending) | Slice 6 gate: all six screens pass WCAG 2.1 AA on nav and panels |
+| RFC-006 | Porkchop plot mobile interaction model | Draft v0.1 | ADR (pending) | Slice 3 gate: mobile interaction tested on real devices |
 
 ### ADRs
 
 | ADR | Title | Status |
 |---|---|---|
 | ADR-001 | Three.js r128 as 3D renderer | Accepted |
-| ADR-002 | Vanilla JS — no framework | Accepted |
-| ADR-003 | Vite as bundler | Accepted |
-| ADR-004 | Hash-based client-side routing | Accepted |
-| ADR-005 | nginx + Docker Compose deployment | Accepted |
+| ADR-002 | Vanilla JS — no framework | Superseded by ADR-011, ADR-012 |
+| ADR-003 | Vite as bundler | Superseded by ADR-012 |
+| ADR-004 | Hash-based client-side routing | Superseded by ADR-013 |
+| ADR-005 | nginx + Docker Compose deployment | Superseded by ADR-014 |
 | ADR-006 | JSON files for mission data | Accepted |
 | ADR-007 | Separate nginx volume for data directory | Accepted |
 | ADR-008 | Lambert solver in Web Worker | Accepted |
 | ADR-009 | Free-return flyby as mission scenario | Accepted |
 | ADR-010 | Keplerian half-ellipses for transfer arc | Accepted |
+| ADR-011 | TypeScript throughout | Accepted |
+| ADR-012 | SvelteKit as application framework | Accepted |
+| ADR-013 | History API routing | Accepted |
+| ADR-014 | GitHub Actions CI + GitHub Pages preview | Accepted |
+| ADR-015 | Vitest + Playwright testing | Accepted |
+| ADR-016 | All external assets resolved at build time | Accepted |
+| ADR-017 | Paraglide-js i18n + locale overlay architecture | Accepted |
+| ADR-018 | Mobile-first design, bottom sheet panels | Accepted |
+| ADR-019 | JSON schema validation on PR via ajv | Accepted |
 
 ---
 
@@ -196,3 +221,4 @@ State board for all RFCs and ADRs.
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | April 2026 | Initial version — components, contracts, constraints, and stack extracted from 04_Technical_Architecture.md and six prototypes |
+| v1.1 | April 2026 | Stack updated: TypeScript (ADR-011), SvelteKit (ADR-012), History API routing (ADR-013), GitHub Actions + GH Pages (ADR-014), Vitest + Playwright (ADR-015), build-time assets (ADR-016), Paraglide i18n (ADR-017), mobile-first (ADR-018), ajv validation (ADR-019). ADR-002/003/004/005 marked superseded. |

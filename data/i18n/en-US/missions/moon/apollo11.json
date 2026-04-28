@@ -1,0 +1,15 @@
+{
+  "name": "Apollo 11",
+  "type": "CREWED LANDER · FLOWN",
+  "first": "First humans on another celestial body",
+  "description": "The mission that fulfilled Kennedy's 1961 commitment to put a man on the Moon by the end of the decade. Armstrong and Aldrin spent 21 hours 36 minutes on the lunar surface — 2.5 hours of EVA, 21.55 kg of samples, and a single commemorative plaque. The laser retroreflector they installed at Mare Tranquillitatis still receives pulses today, measuring the Earth-Moon distance to millimetre precision. The mission was watched live by ~600 million people, one fifth of humanity at the time.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Saturn V (AS-506) from Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "Trans-lunar injection burn — S-IVB stage propels CSM/LM toward Moon.", "type": "nominal" },
+    { "met": 3, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 4, "label": "TOUCHDOWN", "note": "Lunar Module Eagle lands at Mare Tranquillitatis 1969-07-20 20:17:40 UTC.", "type": "nominal" },
+    { "met": 4.3, "label": "FIRST STEP", "note": "Armstrong steps onto lunar surface; 'one small step for [a] man'.", "type": "info" },
+    { "met": 5, "label": "ASCENT", "note": "Eagle lifts off after 21h 36m on surface.", "type": "nominal" },
+    { "met": 8, "label": "SPLASHDOWN", "note": "CM Columbia returns crew to Pacific Ocean 1969-07-24.", "type": "nominal" }
+  ]
+}

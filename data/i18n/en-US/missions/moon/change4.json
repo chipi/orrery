@@ -1,0 +1,12 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "FAR-SIDE LANDER · ROVER · ACTIVE",
+  "first": "First soft-landing on the lunar far side",
+  "description": "The lunar far side has no direct radio line of sight to Earth. To land a spacecraft there, China first launched the Queqiao relay satellite to a halo orbit around Earth-Moon Lagrange point L2 — a vantage point that sees both the far side and Earth simultaneously. With that infrastructure in place, Chang'e 4 became the first spacecraft to soft-land on the far side. The Yutu-2 rover has been operating since January 2019 and has driven 1.9+ km, the longest traverse by any lunar rover.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang.", "type": "nominal" },
+    { "met": 4, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 27, "label": "TOUCHDOWN", "note": "Lander touches down at Von Kármán Crater 2019-01-03 — first spacecraft on the far side. All comms via Queqiao relay at Earth-Moon L2.", "type": "nominal" },
+    { "met": 27.01, "label": "YUTU-2 DEPLOYED", "note": "Rover rolls down ramp.", "type": "info" }
+  ]
+}

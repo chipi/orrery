@@ -1,0 +1,21 @@
+{
+  "id": "luna24",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1976,
+  "status": "FLOWN",
+  "departure_date": "1976-08-09",
+  "arrival_date": "1976-08-18",
+  "transit_days": 9,
+  "vehicle": "Proton-K / D",
+  "payload": "4800 kg launch mass; 1900 kg lander; 0.170 kg sample returned",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). Last successful uncrewed lunar landing for 37 years (until Chang'e 3 in 2013).",
+  "links": [
+    { "l": "Luna 24 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_24", "t": "intro" }
+  ]
+}

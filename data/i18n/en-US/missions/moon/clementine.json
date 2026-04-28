@@ -1,0 +1,13 @@
+{
+  "name": "Clementine",
+  "type": "ORBITER · FLOWN",
+  "first": "Joint NASA-DoD lunar mission; first hints of water ice at lunar poles",
+  "description": "Designed primarily as a Strategic Defense Initiative technology demonstrator, Clementine spent 10 weeks in lunar orbit returning the first systematic global topographic and multispectral map of the Moon. Bistatic radar measurements at the lunar south pole produced the first tantalising hints of water ice — confirmed years later by Lunar Prospector and Chandrayaan-1. The follow-on mission to flyby the asteroid Geographos failed when a thruster malfunction depleted the spacecraft's propellant.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Titan II G from Vandenberg AFB.", "type": "nominal" },
+    { "met": 25, "label": "MOI", "note": "Lunar orbit insertion 1994-02-19.", "type": "nominal" },
+    { "met": 30, "label": "MAPPING BEGIN", "note": "Systematic multispectral and topographic mapping starts.", "type": "info" },
+    { "met": 95, "label": "DEPARTURE", "note": "Departs lunar orbit for Geographos asteroid flyby.", "type": "nominal" },
+    { "met": 100, "label": "THRUSTER FAIL", "note": "Onboard thruster malfunction depletes propellant; asteroid encounter cancelled.", "type": "warning" }
+  ]
+}

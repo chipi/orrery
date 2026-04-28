@@ -1,0 +1,23 @@
+{
+  "id": "artemis3",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2027,
+  "status": "PLANNED",
+  "departure_date": "2027-09-01",
+  "arrival_date": "2027-09-05",
+  "transit_days": 4,
+  "vehicle": "SLS Block 1 (crew launch) + Starship HLS (lunar lander)",
+  "payload": "Orion + 4-person crew; HLS pre-positioned at NRHO",
+  "delta_v": "~7 km/s (round trip)",
+  "data_quality": "partial",
+  "credit": "© NASA — Artemis program. Architecture: SLS launches Orion to Near-Rectilinear Halo Orbit (NRHO) where it docks with a pre-positioned Starship Human Landing System; 2 crew descend to surface, 2 remain in NRHO. Specific landing site TBD; 13 candidate regions in south polar zone.",
+  "links": [
+    { "l": "Artemis III — Wikipedia", "u": "https://en.wikipedia.org/wiki/Artemis_3", "t": "intro" },
+    { "l": "Artemis program (NASA)", "u": "https://www.nasa.gov/humans-in-space/artemis/", "t": "intro" },
+    { "l": "Lunar south pole water ice (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aap8637", "t": "deep" }
+  ]
+}

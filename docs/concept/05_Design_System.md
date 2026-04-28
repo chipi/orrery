@@ -1,11 +1,11 @@
-# OR-05 · Orrery — Design System
-*April 2026 · v1.0 · Part of the Orrery Concept Package (OR-00 through OR-05)*
+# 05 · Orrery — Design System
+*April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
 ---
 
 ## Purpose
 
-This document captures the visual language, component patterns, and interaction conventions established through six prototype screens. It is the reference for building new screens consistently and the primary input for OR-04 Technical Architecture — particularly where design decisions constrain technical choices.
+This document captures the visual language, component patterns, and interaction conventions established through six prototype screens. It is the reference for building new screens consistently and the primary input for 04 Technical Architecture — particularly where design decisions constrain technical choices.
 
 Every pattern here was arrived at through iteration, not specification upfront. The prototypes are the ground truth. This document distills them.
 
@@ -224,7 +224,7 @@ inactive:  background: transparent;
 
 The toggle controls `opacity` and `pointer-events` on two sibling elements — the canvas (2D) and the renderer div (3D). Transition is 0.4–0.5s ease on opacity.
 
-This pattern appears on OR-P01, OR-P03, OR-P05, and OR-P06. It must be identical on every screen.
+This pattern appears on P01, P03, P05, and P06. It must be identical on every screen.
 
 ### 5.3 Detail panel (right slide-in)
 
@@ -353,53 +353,53 @@ All HUD panels: `background: rgba(4,4,12,0.82); border: 1px solid rgba(255,255,2
 
 ## 6. Screen patterns
 
-### 6.1 Solar system explorer (OR-P01)
+### 6.1 Solar system explorer (P01)
 
 Full-screen 3D/2D. Detail panel slides in from right (314px). Planet pills strip below nav. Bottom bar with speed controls and sim date. The 3D view is the default — the 2D top-down view is educationally valuable for showing ecliptic geometry.
 
 **Notable:** Planet labels are HTML overlay divs, not canvas text or Three.js sprites, positioned using `position.clone().project(camera)`. This is the correct pattern for all 3D screens.
 
-![OR-P01 Solar System Explorer — Earth selected, detail panel open](screenshots/p01_solar_system.png)
+![P01 Solar System Explorer — Earth selected, detail panel open](screenshots/p01_solar_system.png)
 
-### 6.2 Mission configurator (OR-P02)
+### 6.2 Mission configurator (P02)
 
 The only screen without a 3D view — the porkchop plot is inherently 2D. The canvas is the hero. Right column shows the selected trajectory mini-diagram and mission parameters. Step indicator at top.
 
 **Notable:** The heatmap is rendered via direct pixel manipulation (`ImageData`) for performance — 11,200 cells cannot be drawn as DOM elements.
 
-![OR-P02 Mission Configurator — 2026 window selected, compatible vehicles panel](screenshots/p02_porkchop.png)
+![P02 Mission Configurator — 2026 window selected, compatible vehicles panel](screenshots/p02_porkchop.png)
 
-### 6.3 Mission arc (OR-P03)
+### 6.3 Mission arc (P03)
 
 Full-screen 3D/2D with HUD overlay. The HUD panels have `pointer-events: none` on the container with `pointer-events: auto` on individual elements — so the 3D canvas receives clicks and drags through the HUD.
 
 **Notable:** The arrival state zooms the camera and renders a centred modal panel — the only use of a centred overlay in the product.
 
-![OR-P03 Mission Arc — mid-flight, dual HUD panels, timeline scrubber, gradient transfer arc](screenshots/p03_mission_arc.png)
+![P03 Mission Arc — mid-flight, dual HUD panels, timeline scrubber, gradient transfer arc](screenshots/p03_mission_arc.png)
 
-### 6.4 Mission library (OR-P04)
+### 6.4 Mission library (P04)
 
 Scrollable card grid. Preview panel is `position: fixed; right: 0` at z-index 50 — it does not affect the grid layout, but the scroll area has `margin-right: 360px` when the panel is open (JS-controlled). This gives the grid a smooth resize animation.
 
 **Notable:** The preview panel has its own tab system (OVERVIEW | GALLERY | LEARN) independent of the main nav. Tab state is JS-managed, not URL-based.
 
-![OR-P04 Mission Library — Curiosity selected, full detail panel with stats, description, and knowledge base](screenshots/p04_mission_library.png)
+![P04 Mission Library — Curiosity selected, full detail panel with stats, description, and knowledge base](screenshots/p04_mission_library.png)
 
-### 6.5 Earth orbit viewer (OR-P05)
+### 6.5 Earth orbit viewer (P05)
 
 Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls. The log scale is the central design decision — the legend makes it explicit.
 
-**Notable:** HTML label overlays for orbital objects in 3D use the same `project()` pattern as OR-P01, but with a graceful opacity fade when objects pass behind the body. Labels disappear at `wp.z > 1`.
+**Notable:** HTML label overlays for orbital objects in 3D use the same `project()` pattern as P01, but with a graceful opacity fade when objects pass behind the body. Labels disappear at `wp.z > 1`.
 
-![OR-P05 Earth Orbit Viewer — ISS selected, log-scale display from ISS to JWST, regime legend](screenshots/p05_earth_orbit.png)
+![P05 Earth Orbit Viewer — ISS selected, log-scale display from ISS to JWST, regime legend](screenshots/p05_earth_orbit.png)
 
-### 6.6 Moon map (OR-P06)
+### 6.6 Moon map (P06)
 
 Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not the Moon rotating. The 2D flat map uses a cylindrical projection (near side centred at 0° longitude). Filter strip replaces the planet pills. Agency filter stacks with status filter.
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 
-![OR-P06 Moon Map — 2D cylindrical projection, Apollo 11 selected, landing site detail panel](screenshots/p06_moon_map.png)
+![P06 Moon Map — 2D cylindrical projection, Apollo 11 selected, landing site detail panel](screenshots/p06_moon_map.png)
 
 ---
 
@@ -407,7 +407,7 @@ Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not t
 
 ### 7.1 Camera orbit (3D views)
 
-Consistent across OR-P01, OR-P03, OR-P05, OR-P06:
+Consistent across P01, P03, P05, P06:
 
 - **Mouse drag:** `camTheta += dx * 0.005–0.006; camPhi = clamp(camPhi + dy * 0.004–0.005)`
 - **Scroll:** `camR = clamp(camR + deltaY * 0.5–0.7, min, max)`
@@ -538,7 +538,7 @@ For the Moon map 2D view, the map is centred within the canvas with padding, not
 
 ## 10. Design decisions with technical implications
 
-These are design choices that directly constrain the technical architecture (OR-04). Each creates a requirement.
+These are design choices that directly constrain the technical architecture (04). Each creates a requirement.
 
 ### 10.1 Three.js CDN dependency
 
@@ -549,7 +549,7 @@ All six screens load Three.js from Cloudflare CDN. This means:
 ### 10.2 Real-time orbital computation
 
 The porkchop plot computes 11,200 Lambert solutions at startup. This is ~2 seconds on a modern browser. It happens once — but it happens in the main thread, which blocks rendering during that window.
-- **OR-04 implication:** The Lambert solver should be moved to a Web Worker in the production build. The prototype accepts the blocking; the product cannot.
+- **04 implication:** The Lambert solver should be moved to a Web Worker in the production build. The prototype accepts the blocking; the product cannot.
 
 ### 10.3 External API calls (NASA Images)
 
@@ -561,29 +561,29 @@ The gallery tab fetches from `images-api.nasa.gov` at runtime. This means:
 ### 10.4 Font loading
 
 Three Google Fonts families are loaded on every screen. In offline/Docker deployments, these will fail to load.
-- **OR-04 implication:** Fonts must be self-hosted in the production bundle. The system font fallbacks (`monospace`, `serif`, `sans-serif`) are acceptable degradations but will break the typographic character of the product.
+- **04 implication:** Fonts must be self-hosted in the production bundle. The system font fallbacks (`monospace`, `serif`, `sans-serif`) are acceptable degradations but will break the typographic character of the product.
 
 ### 10.5 Logo images from Wikimedia
 
 Agency logos are hotlinked from `upload.wikimedia.org`. The fallback (abbreviation text) is always visible — the design degrades gracefully.
-- **OR-04 implication:** Production deployment should host logo files locally. The Wikimedia URLs are stable but should not be relied upon for production availability.
+- **04 implication:** Production deployment should host logo files locally. The Wikimedia URLs are stable but should not be relied upon for production availability.
 
 ### 10.6 No shared state between screens
 
 Each screen is a standalone HTML file. There is no shared state, no routing, no session management. This is appropriate for Phase 1 (prototypes) but limits the product:
-- Mission planned in OR-P02 is not automatically passed to OR-P03
+- Mission planned in P02 is not automatically passed to P03
 - The `/fly?id=curiosity` URL routing is defined but not implemented between files
-- **OR-04 implication:** Phase 2 requires a client-side router and shared application state. The URL routing convention (`/fly`, `/fly?id=...`, `/missions`, `/earth`) must be formalised.
+- **04 implication:** Phase 2 requires a client-side router and shared application state. The URL routing convention (`/fly`, `/fly?id=...`, `/missions`, `/earth`) must be formalised.
 
 ### 10.7 Simulation time is local state
 
 `simT` advances in `requestAnimationFrame` based on wall-clock time. There is no way to share or persist simulation time.
-- **OR-04 implication:** If "share my mission" is ever implemented, simulation state must be serialisable to URL parameters or a JSON file.
+- **04 implication:** If "share my mission" is ever implemented, simulation state must be serialisable to URL parameters or a JSON file.
 
 ### 10.8 The log scale for Earth orbit is a UI decision
 
-The `altToVis()` function in OR-P05 uses a logarithmic formula to map altitude to pixel radius. This is a design decision that makes ISS and JWST visible on the same screen. Any change to this formula changes the visual layout of the entire screen.
-- **OR-04 implication:** The scale function must be documented as a design constant (it is in OR-03), not a magic number in code.
+The `altToVis()` function in P05 uses a logarithmic formula to map altitude to pixel radius. This is a design decision that makes ISS and JWST visible on the same screen. Any change to this formula changes the visual layout of the entire screen.
+- **04 implication:** The scale function must be documented as a design constant (it is in 03), not a magic number in code.
 
 ---
 
@@ -592,12 +592,12 @@ The `altToVis()` function in OR-P05 uses a logarithmic formula to map altitude t
 These are features implied by the current screens but not yet designed:
 
 1. **Mission share / export** — "Share this mission" link that encodes parameters in the URL. The mission arc needs a serialisable state format.
-2. **Rocket configurator panel** — currently hardcoded in OR-P03. The full configurator (OR-P02 → OR-P03 handoff) needs a designed transition.
-3. **Moon mission arc** — OR-P03 only supports Mars missions. A Moon fly screen with a 3-day Earth-Moon arc needs its own telemetry model (much shorter distances, different scale).
+2. **Rocket configurator panel** — currently hardcoded in P03. The full configurator (P02 → P03 handoff) needs a designed transition.
+3. **Moon mission arc** — P03 only supports Mars missions. A Moon fly screen with a 3-day Earth-Moon arc needs its own telemetry model (much shorter distances, different scale).
 4. **Mobile layout** — all six screens are desktop-only. Touch interactions are partially implemented in camera orbit but the card grid, panel system, and HUD are not mobile-adapted.
 5. **Accessibility** — no ARIA roles, no keyboard navigation, no reduced-motion support. Phase 2 requirement.
 
 ---
 
-*Orrery · OR-05 Design System · April 2026 · Living document*
-*← OR-04 Technical Architecture · OR-02 Project Concept →*
+*Orrery · 05 Design System · April 2026 · Living document*
+*← 04 Technical Architecture · 02 Project Concept →*

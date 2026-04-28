@@ -1,5 +1,5 @@
-# OR-02 · Orrery — Project Concept
-*April 2026 · v1.0 · Part of the Orrery Concept Package (OR-00 through OR-05)*
+# 02 · Orrery — Project Concept
+*April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
 ---
 
@@ -67,17 +67,17 @@ The detail panel that slides in from the right is the heart of the interface. Ev
 
 Orrery is not a collection of visualisations. It is a coherent experience with a narrative arc.
 
-**OR-P06 Moon Map** is the prologue. The road to Mars starts here — with humanity's first steps on another world, the capabilities they proved, and the resources they found.
+**P06 Moon Map** is the prologue. The road to Mars starts here — with humanity's first steps on another world, the capabilities they proved, and the resources they found.
 
-**OR-P01 Solar System Explorer** is Act 1. You see the geometry. You understand the problem. Earth and Mars are not always in the same place. The 26-month window is not arbitrary. Click any planet and the TECHNICAL tab shows the full Keplerian mechanics — eccentricity, inclination, axial tilt, live orbital velocity from the vis-viva equation. A SIZES tab shows all planets to true relative scale. The Sun is clickable, with a panel explaining our position in the galaxy.
+**P01 Solar System Explorer** is Act 1. You see the geometry. You understand the problem. Earth and Mars are not always in the same place. The 26-month window is not arbitrary. Click any planet and the TECHNICAL tab shows the full Keplerian mechanics — eccentricity, inclination, axial tilt, live orbital velocity from the vis-viva equation. A SIZES tab shows all planets to true relative scale. The Sun is clickable, with a panel explaining our position in the galaxy.
 
-**OR-P02 Mission Configurator** is Act 2. The porkchop plot. 11,200 trajectories computed from a real Lambert solver. You select a launch vehicle. The rocket equation solves. You can fail — not enough delta-v is a real outcome.
+**P02 Mission Configurator** is Act 2. The porkchop plot. 11,200 trajectories computed from a real Lambert solver. You select a launch vehicle. The rocket equation solves. You can fail — not enough delta-v is a real outcome.
 
-**OR-P03 Mission Arc** is Act 3. The spacecraft flies a real free-return trajectory — Earth departure, Mars flyby at 300 km altitude, return to Earth. 509 days total. No landing. Real Keplerian arc, not a Bezier approximation. CAPCOM mode shows a mission event ticker, signal delay in light-minutes, and an anomaly monitor. The spacecraft icon is a rocket oriented along its velocity vector. Past trajectory is solid; future is dashed.
+**P03 Mission Arc** is Act 3. The spacecraft flies a real free-return trajectory — Earth departure, Mars flyby at 300 km altitude, return to Earth. 509 days total. No landing. Real Keplerian arc, not a Bezier approximation. CAPCOM mode shows a mission event ticker, signal delay in light-minutes, and an anomaly monitor. The spacecraft icon is a rocket oriented along its velocity vector. Past trajectory is solid; future is dashed.
 
-**OR-P04 Mission Library** is the archive. Every mission replayable. Every agency. Every outcome. Sixty years of spaceflight in one catalogue, filtered any way you want.
+**P04 Mission Library** is the archive. Every mission replayable. Every agency. Every outcome. Sixty years of spaceflight in one catalogue, filtered any way you want.
 
-**OR-P05 Earth Orbit** is the context. What humanity has already placed around Earth — from the ISS to JWST — shown on a logarithmic scale that makes the 3,750× range of distances legible on a single screen.
+**P05 Earth Orbit** is the context. What humanity has already placed around Earth — from the ISS to JWST — shown on a logarithmic scale that makes the 3,750× range of distances legible on a single screen.
 
 ---
 
@@ -85,13 +85,13 @@ Orrery is not a collection of visualisations. It is a coherent experience with a
 
 Two features originally planned as standalone Phase 2 screens were merged into existing prototypes during development — a better outcome than separate files.
 
-**Planet Technical Mode** is now a TECHNICAL tab inside OR-P01's planet detail panel. Every planet shows its full Keplerian element set, live vis-viva orbital velocity, eccentricity visualiser, and per-planet axial tilt explanation. A SIZES tab shows all planets at true relative scale. The Sun is clickable with a panel covering solar physics and our position in the Milky Way.
+**Planet Technical Mode** is now a TECHNICAL tab inside P01's planet detail panel. Every planet shows its full Keplerian element set, live vis-viva orbital velocity, eccentricity visualiser, and per-planet axial tilt explanation. A SIZES tab shows all planets at true relative scale. The Sun is clickable with a panel covering solar physics and our position in the Milky Way.
 
-**CAPCOM Mission Arc** is now a toggle in OR-P03's nav bar. The mission scenario was updated to a **free-return Mars flyby** — 509 days, no landing — an Artemis II analogue at interplanetary scale. The Keplerian arc is real on both legs. CAPCOM mode adds a 13-event mission ticker, signal delay, and anomaly monitor.
+**CAPCOM Mission Arc** is now a toggle in P03's nav bar. The mission scenario was updated to a **free-return Mars flyby** — 509 days, no landing — an Artemis II analogue at interplanetary scale. The Keplerian arc is real on both legs. CAPCOM mode adds a 13-event mission ticker, signal delay, and anomaly monitor.
 
 ## Deferred to Phase 2
 
-**Launch Sequence (OR-P09)** — the 12 minutes from pad to orbit insertion — is designed but not yet built. A schematic version (ascent profile, stage separation callouts, CAPCOM events) is achievable within the current Three.js stack. A cinematic version requires cloud rendering infrastructure. The full spec is in OR-04 section 8.
+**Launch Sequence (P09)** — the 12 minutes from pad to orbit insertion — is designed but not yet built. A schematic version (ascent profile, stage separation callouts, CAPCOM events) is achievable within the current Three.js stack. A cinematic version requires cloud rendering infrastructure. The full spec is in 04 section 8.
 
 ---
 
@@ -167,15 +167,15 @@ This document is part of a five-document concept package that fully specifies Or
 
 | Document | Contents |
 |---|---|
-| **OR-01 Vision** | Product vision, scope, audience, credit philosophy |
-| **OR-02 Project Concept** | This document — full synthesis of what Orrery is |
-| **OR-03 Data Catalog** | Every data source, constant, schema, and API |
-| **OR-04 Technical Architecture** | Stack, repo structure, router, data layer, deployment |
-| **OR-05 Design System** | Colour, typography, components, screen patterns, screenshots |
+| **01 Vision** | Product vision, scope, audience, credit philosophy |
+| **02 Project Concept** | This document — full synthesis of what Orrery is |
+| **03 Data Catalog** | Every data source, constant, schema, and API |
+| **04 Technical Architecture** | Stack, repo structure, router, data layer, deployment |
+| **05 Design System** | Colour, typography, components, screen patterns, screenshots |
 
-Six working prototypes accompany the package: OR-P01 through OR-P06, one per screen. Every design decision in OR-05 and every data decision in OR-03 is grounded in what those prototypes actually do. The package was written after the prototypes, not before.
+Six working prototypes accompany the package: P01 through P06, one per screen. Every design decision in 05 and every data decision in 03 is grounded in what those prototypes actually do. The package was written after the prototypes, not before.
 
 ---
 
-*Orrery · OR-02 Project Concept · April 2026*
-*← OR-01 Vision · OR-03 Data Catalog →*
+*Orrery · 02 Project Concept · April 2026*
+*← 01 Vision · 03 Data Catalog →*

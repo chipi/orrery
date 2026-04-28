@@ -1,5 +1,5 @@
-# OR-01 · Orrery — Product Vision & Positioning
-*April 2026 · v1.0 · Part of the Orrery Concept Package (OR-00 through OR-05)*
+# 01 · Orrery — Product Vision & Positioning
+*April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
 ---
 
@@ -142,7 +142,7 @@ This is not a legal footnote. It is a design principle.
 
 Orrery takes pride in assembly — in finding the right sources, attributing them correctly, and presenting them in a way that serves learners. The science belongs to the scientists. The images belong to the agencies that built the missions. Orrery's contribution is the curation, the interaction design, and the editorial voice that makes the whole comprehensible.
 
-In practice: every image displayed carries a credit. Every data source is documented in OR-03. Every agency logo has a trademark notice. Any future monetisation of Orrery will not include advertising. The product is a space to think, not a space to sell.
+In practice: every image displayed carries a credit. Every data source is documented in 03. Every agency logo has a trademark notice. Any future monetisation of Orrery will not include advertising. The product is a space to think, not a space to sell.
 
 ---
 
@@ -184,5 +184,5 @@ No agency, no launch provider, and no company has paid to appear in Orrery. Spac
 
 ---
 
-*Orrery · OR-01 Product Vision & Positioning · April 2026 · Living document*
-*Next: OR-03 Data Catalog →*
+*Orrery · 01 Product Vision & Positioning · April 2026 · Living document*
+*Next: 03 Data Catalog →*

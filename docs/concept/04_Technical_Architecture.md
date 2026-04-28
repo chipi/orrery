@@ -1,13 +1,13 @@
-# OR-04 · Orrery — Technical Architecture
-*April 2026 · v1.0 · Part of the Orrery Concept Package (OR-00 through OR-05)*
+# 04 · Orrery — Technical Architecture
+*April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
 ---
 
 ## Purpose
 
-This document defines the technical architecture for building Orrery as a production-grade, self-hostable web application. It is written after the six prototypes (OR-P01 through OR-P06) and after OR-05 Design System — meaning every decision here is grounded in what the UI actually needs, not what was aspirationally planned.
+This document defines the technical architecture for building Orrery as a production-grade, self-hostable web application. It is written after the six prototypes (P01 through P06) and after 05 Design System — meaning every decision here is grounded in what the UI actually needs, not what was aspirationally planned.
 
-Section 10 of OR-05 identified eight design decisions that create direct technical requirements. This document responds to all eight and organises them into a coherent architecture.
+Section 10 of 05 identified eight design decisions that create direct technical requirements. This document responds to all eight and organises them into a coherent architecture.
 
 ---
 
@@ -35,7 +35,7 @@ The primary rendering targets are Three.js (3D) and Canvas 2D (porkchop plot, Mo
 
 ### 2.2 3D rendering — Three.js r128
 
-Three.js r128 is pinned. It is used across four screens (OR-P01, OR-P03, OR-P05, OR-P06). The CDN reference `https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js` must be replaced with a locally bundled copy in production.
+Three.js r128 is pinned. It is used across four screens (P01, P03, P05, P06). The CDN reference `https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js` must be replaced with a locally bundled copy in production.
 
 **Why r128 specifically:** Later versions (r140+) introduced breaking changes to `WebGLRenderer` initialisation and `MeshStandardMaterial` defaults. An upgrade would require testing all four 3D screens. This is a Phase 2 task if a specific Three.js feature is needed.
 
@@ -43,7 +43,7 @@ Three.js r128 is pinned. It is used across four screens (OR-P01, OR-P03, OR-P05,
 
 ### 2.3 2D rendering — Canvas API
 
-The porkchop plot (OR-P02) and Moon map flat view (OR-P06) use raw Canvas 2D. The porkchop heatmap uses `ImageData` for direct pixel manipulation — the only way to render 11,200 cells at interactive speed. This cannot be replaced with SVG or DOM elements.
+The porkchop plot (P02) and Moon map flat view (P06) use raw Canvas 2D. The porkchop heatmap uses `ImageData` for direct pixel manipulation — the only way to render 11,200 cells at interactive speed. This cannot be replaced with SVG or DOM elements.
 
 **Decision: Canvas 2D for all 2D rendering. No charting library.**
 
@@ -114,12 +114,12 @@ orrery/
 │   │   └── lambert.worker.js   ← Lambert solver (off main thread)
 │   │
 │   ├── screens/
-│   │   ├── explorer/           ← OR-P01 Solar system
-│   │   ├── configurator/       ← OR-P02 Porkchop
-│   │   ├── arc/                ← OR-P03 Mission arc
-│   │   ├── library/            ← OR-P04 Mission library
-│   │   ├── earth/              ← OR-P05 Earth orbit
-│   │   └── moon/               ← OR-P06 Moon map
+│   │   ├── explorer/           ← P01 Solar system
+│   │   ├── configurator/       ← P02 Porkchop
+│   │   ├── arc/                ← P03 Mission arc
+│   │   ├── library/            ← P04 Mission library
+│   │   ├── earth/              ← P05 Earth orbit
+│   │   └── moon/               ← P06 Moon map
 │   │
 │   ├── components/
 │   │   ├── nav.js              ← Shared navigation bar
@@ -136,10 +136,10 @@ orrery/
 │       └── images.js           ← NASA Images API client
 │
 └── docs/
-    ├── OR-01_Orrery_Vision.md
-    ├── OR-03_Data_Catalog.md
-    ├── OR-04_Technical_Architecture.md   ← this file
-    └── OR-05_Design_System.md
+    ├── 01_Orrery_Vision.md
+    ├── 03_Data_Catalog.md
+    ├── 04_Technical_Architecture.md   ← this file
+    └── 05_Design_System.md
 ```
 
 ---
@@ -192,10 +192,10 @@ route(); // initial load
 
 ### 4.3 State handoff — configurator to arc
 
-The mission configurator (OR-P02) must pass a trajectory solution to the mission arc (OR-P03). In Phase 1 this uses `sessionStorage`. In Phase 2 it is URL-serialised.
+The mission configurator (P02) must pass a trajectory solution to the mission arc (P03). In Phase 1 this uses `sessionStorage`. In Phase 2 it is URL-serialised.
 
 ```javascript
-// When user confirms a trajectory in OR-P02:
+// When user confirms a trajectory in P02:
 sessionStorage.setItem('orrery:planned-mission', JSON.stringify({
   dep: '2026-10-15',       // ISO date
   tof: 280,                // days
@@ -206,19 +206,19 @@ sessionStorage.setItem('orrery:planned-mission', JSON.stringify({
 }));
 location.hash = '/fly';
 
-// OR-P03 reads on mount:
+// P03 reads on mount:
 const mission = JSON.parse(sessionStorage.getItem('orrery:planned-mission'));
 ```
 
 ---
 
-## 5. Responding to OR-05 design decisions
+## 5. Responding to 05 design decisions
 
-OR-05 section 10 identified eight design decisions with technical implications. Each is addressed below.
+05 section 10 identified eight design decisions with technical implications. Each is addressed below.
 
 ### 5.1 Lambert solver — Web Worker
 
-**OR-05 finding:** The porkchop plot computes 11,200 Lambert solutions on the main thread, blocking rendering for ~2 seconds at startup.
+**05 finding:** The porkchop plot computes 11,200 Lambert solutions on the main thread, blocking rendering for ~2 seconds at startup.
 
 **Architecture response:** The Lambert solver moves to a dedicated Web Worker in production. The main thread sends grid parameters; the worker returns the completed heatmap as a `Float32Array` of delta-v values; the main thread renders it.
 
@@ -244,7 +244,7 @@ The main thread shows a loading state ("Computing 11,200 trajectories…") while
 
 ### 5.2 Three.js — local bundle
 
-**OR-05 finding:** All 3D screens load Three.js from Cloudflare CDN. Offline use fails.
+**05 finding:** All 3D screens load Three.js from Cloudflare CDN. Offline use fails.
 
 **Architecture response:** `npm install three@0.128.0` (exact version). Vite bundles it. The CDN script tags in the prototype files are replaced with ES module imports.
 
@@ -260,7 +260,7 @@ import * as THREE from 'three'; // resolved by Vite to node_modules/three
 
 ### 5.3 Fonts — self-hosted
 
-**OR-05 finding:** Google Fonts are loaded via CDN. Offline deployments will fall back to system monospace/serif — which breaks the typographic character of the product.
+**05 finding:** Google Fonts are loaded via CDN. Offline deployments will fall back to system monospace/serif — which breaks the typographic character of the product.
 
 **Architecture response:** Download all four weights at build time and serve from `public/fonts/`. Use `@font-face` with `font-display: swap` so text renders immediately in the system fallback and transitions when the custom font loads.
 
@@ -286,7 +286,7 @@ npx google-fonts-helper \
 
 ### 5.4 Agency logos — local hosting
 
-**OR-05 finding:** Agency logos are hotlinked from `upload.wikimedia.org`. The text abbreviation fallback is always visible, so this degrades gracefully, but production should not depend on Wikimedia availability.
+**05 finding:** Agency logos are hotlinked from `upload.wikimedia.org`. The text abbreviation fallback is always visible, so this degrades gracefully, but production should not depend on Wikimedia availability.
 
 **Architecture response:** Download SVG/PNG logos to `public/logos/` at project setup. The `logoHTML()` component references `/logos/nasa.svg` instead of the Wikimedia URL. The text fallback remains as a loading state and offline fallback.
 
@@ -303,11 +303,11 @@ const LOGOS = {
 };
 ```
 
-Trademark notices are added to every panel footer per OR-03 credit format reference.
+Trademark notices are added to every panel footer per 03 credit format reference.
 
 ### 5.5 NASA Images API — CORS open, graceful degradation
 
-**OR-05 finding:** The gallery tab fetches from `images-api.nasa.gov` at runtime. CORS is open. Offline deployments fail gracefully.
+**05 finding:** The gallery tab fetches from `images-api.nasa.gov` at runtime. CORS is open. Offline deployments fail gracefully.
 
 **Architecture response:** No change to the API call pattern. The gallery already shows a placeholder when the fetch fails. In production, add a 5-second timeout and a `try/catch` that renders the placeholder — both are already partially implemented in the prototypes.
 
@@ -331,11 +331,11 @@ export async function fetchNASAImages(query, count = 9) {
 }
 ```
 
-For non-NASA missions, curated static image URLs are defined in the mission data objects (`gallery_imgs` field per OR-03 schema). These load as regular `<img>` tags with `onerror` fallback.
+For non-NASA missions, curated static image URLs are defined in the mission data objects (`gallery_imgs` field per 03 schema). These load as regular `<img>` tags with `onerror` fallback.
 
 ### 5.6 Client-side router and shared state
 
-**OR-05 finding:** No shared state between screens. Mission planned in OR-P02 is not passed to OR-P03 automatically.
+**05 finding:** No shared state between screens. Mission planned in P02 is not passed to P03 automatically.
 
 **Architecture response:** The router (section 4) and `sessionStorage` state handoff (section 4.3) solve this for Phase 1. Shared state that persists across sessions is a Phase 2 requirement.
 
@@ -359,7 +359,7 @@ export const state = {
 
 ### 5.7 URL-serialisable state — mission sharing
 
-**OR-05 finding:** `simT` is local state. Mission sharing requires URL-serialisable parameters.
+**05 finding:** `simT` is local state. Mission sharing requires URL-serialisable parameters.
 
 **Architecture response:** The URL schema in section 4.1 defines the serialisation format. A planned mission can be encoded as:
 
@@ -371,9 +371,9 @@ The arc screen reads these parameters on mount and reconstructs the trajectory. 
 
 ### 5.8 Scale functions — design constants in code
 
-**OR-05 finding:** The `auToPx()` and `altToVis()` functions contain magic numbers that are design constants, documented in OR-03 but not isolated in code.
+**05 finding:** The `auToPx()` and `altToVis()` functions contain magic numbers that are design constants, documented in 03 but not isolated in code.
 
-**Architecture response:** Both functions live in `src/lib/scale.js` with explicit documentation linking to OR-03.
+**Architecture response:** Both functions live in `src/lib/scale.js` with explicit documentation linking to 03.
 
 ```javascript
 // src/lib/scale.js
@@ -382,7 +382,7 @@ The arc screen reads these parameters on mount and reconstructs the trajectory. 
  * Maps an orbital radius in AU to a visual pixel radius.
  * Uses manually compressed scale anchors to keep all planets
  * visible on screen while preserving relative ordering.
- * See OR-03 section 1.7 for the full anchor table.
+ * See 03 section 1.7 for the full anchor table.
  */
 export function auToPx(au) {
   const ANCHORS = [
@@ -408,7 +408,7 @@ export function auToPx(au) {
  * Earth orbit viewer. Logarithmic scale to show ISS through JWST
  * on the same screen (3,750× range).
  * Formula: EARTH_VIS_R + LOG_K × log₁₀(1 + alt_km / 100)
- * See OR-03 section 1.8 for derivation.
+ * See 03 section 1.8 for derivation.
  */
 const EARTH_VIS_R = 38; // px — visual Earth radius
 const LOG_K       = 54; // px per decade of altitude
@@ -505,7 +505,7 @@ This keeps the initial page load fast. Fetching 30 lightweight index entries is 
 
 ### 6.3 Individual mission file
 
-Each mission file is the full record conforming to the OR-03 schema. Example:
+Each mission file is the full record conforming to the 03 schema. Example:
 
 ```json
 {
@@ -781,29 +781,29 @@ Phase 2 is explicitly out of scope for the initial build. It is listed here so a
 
 | Feature | Screen | Technical prerequisite |
 |---|---|---|
-| Mission sharing via URL | OR-P03 | URL serialisation of arc state (section 5.7) |
-| Rocket configurator | OR-P02 | Form state, validation, Tsiolkovsky solver (already in OR-P02) |
+| Mission sharing via URL | P03 | URL serialisation of arc state (section 5.7) |
+| Rocket configurator | P02 | Form state, validation, Tsiolkovsky solver (already in P02) |
 | Moon arc screen | New | Earth-Moon Lambert variant, shorter timescale telemetry |
 | User-saved missions | All | LocalStorage or server-side persistence; requires auth design |
 | History API routing | All | Server-side redirect config added to nginx |
 | Mobile layout | All | CSS breakpoints, touch-first interaction redesign |
 | Accessibility | All | ARIA roles, keyboard navigation, `prefers-reduced-motion` |
 | Three.js upgrade | All 3D | Full audit of four 3D screens, breaking change testing |
-| **Launch Sequence** | OR-P09 | Deferred — schematic version scoped below |
-| ~~Planet Technical Mode~~ | ~~OR-P07~~ | **Merged into OR-P01** — TECHNICAL tab in planet detail panel |
-| ~~CAPCOM Mission Arc~~ | ~~OR-P08~~ | **Merged into OR-P03** — CAPCOM toggle in mission arc |
+| **Launch Sequence** | P09 | Deferred — schematic version scoped below |
+| ~~Planet Technical Mode~~ | ~~P07~~ | **Merged into P01** — TECHNICAL tab in planet detail panel |
+| ~~CAPCOM Mission Arc~~ | ~~P08~~ | **Merged into P03** — CAPCOM toggle in mission arc |
 
-### ~~OR-P07~~ — Planet Technical Mode *(merged into OR-P01)*
+### ~~P07~~ — Planet Technical Mode *(merged into P01)*
 
-The TECHNICAL tab is now part of the OR-P01 detail panel — no separate screen needed. Clicking any planet opens OVERVIEW / TECHNICAL / LEARN / SIZES tabs. The TECHNICAL tab shows the full Keplerian element set (a, e, T, inclination, axial tilt, rotation period), a live vis-viva velocity readout, an eccentricity shape visualiser, and per-planet axial tilt callouts. A floating tooltip shows velocity and distance data on hover in both 2D and 3D. The Sun is now clickable with its own panel covering solar physics and galaxy context.
+The TECHNICAL tab is now part of the P01 detail panel — no separate screen needed. Clicking any planet opens OVERVIEW / TECHNICAL / LEARN / SIZES tabs. The TECHNICAL tab shows the full Keplerian element set (a, e, T, inclination, axial tilt, rotation period), a live vis-viva velocity readout, an eccentricity shape visualiser, and per-planet axial tilt callouts. A floating tooltip shows velocity and distance data on hover in both 2D and 3D. The Sun is now clickable with its own panel covering solar physics and galaxy context.
 
-### ~~OR-P08~~ — CAPCOM Mission Arc *(merged into OR-P03)*
+### ~~P08~~ — CAPCOM Mission Arc *(merged into P03)*
 
-CAPCOM is now a toggle button in the OR-P03 nav bar — no separate screen needed. The mission scenario was changed to a **free-return Mars flyby** (analogous to Artemis II's lunar free-return): 259 days outbound, Mars closest approach at ~300 km, 250 days return. Total 509 days. No MOI burn. The Keplerian arc is real — both legs computed from orbital elements, not Bezier curves. CAPCOM mode shows a 13-event mission ticker, signal delay in light-minutes, and an anomaly monitor.
+CAPCOM is now a toggle button in the P03 nav bar — no separate screen needed. The mission scenario was changed to a **free-return Mars flyby** (analogous to Artemis II's lunar free-return): 259 days outbound, Mars closest approach at ~300 km, 250 days return. Total 509 days. No MOI burn. The Keplerian arc is real — both legs computed from orbital elements, not Bezier curves. CAPCOM mode shows a 13-event mission ticker, signal delay in light-minutes, and an anomaly monitor.
 
-### OR-P09 — Launch Sequence
+### P09 — Launch Sequence
 
-A new screen between the mission configurator (OR-P02) and the interplanetary arc (OR-P03), covering the part of spaceflight that Orrery currently skips: the first 12 minutes from the launch pad to orbit insertion.
+A new screen between the mission configurator (P02) and the interplanetary arc (P03), covering the part of spaceflight that Orrery currently skips: the first 12 minutes from the launch pad to orbit insertion.
 
 **What it shows:**
 
@@ -837,7 +837,7 @@ A schematic launch sequence (diagram quality, event callouts, altitude/velocity 
 
 These are not blockers for Phase 1 but must be resolved before Phase 2 begins:
 
-1. **Moon arc telemetry model.** The mission arc (OR-P03) uses a solar-system-scale vis-viva model. A Moon arc needs an Earth-Moon scale, different Δv ranges, and a 3-day transit rather than 259 days. It is a new screen, not a variation of OR-P03.
+1. **Moon arc telemetry model.** The mission arc (P03) uses a solar-system-scale vis-viva model. A Moon arc needs an Earth-Moon scale, different Δv ranges, and a 3-day transit rather than 259 days. It is a new screen, not a variation of P03.
 
 2. **Mission sharing format.** URL parameters work for simple missions. A complex configured mission (custom vehicle, custom payload, multi-burn trajectory) needs a more compact serialisation — possibly base64-encoded JSON.
 
@@ -849,5 +849,5 @@ These are not blockers for Phase 1 but must be resolved before Phase 2 begins:
 
 ---
 
-*Orrery · OR-04 Technical Architecture · April 2026 · Living document*
-*← OR-03 Data Catalog · OR-05 Design System →*
+*Orrery · 04 Technical Architecture · April 2026 · Living document*
+*← 03 Data Catalog · 05 Design System →*

@@ -1,5 +1,5 @@
-# OR-03 · Orrery — Data Catalog
-*April 2026 · v1.0 · Part of the Orrery Concept Package (OR-00 through OR-05)*
+# 03 · Orrery — Data Catalog
+*April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
 ---
 
@@ -98,7 +98,7 @@ Planets are not shown at true scale — they would be invisible. The visual orbi
 | Neptune | 30.07 AU | 430 px | — |
 | Kuiper Belt | 30–50 AU | 438–470 px | — |
 
-The scale is manually compressed (not a pure power law) to keep all planets visible on a single screen while preserving relative ordering. The `auToPx()` function in OR-P01 implements a linear interpolation between these anchor points.
+The scale is manually compressed (not a pure power law) to keep all planets visible on a single screen while preserving relative ordering. The `auToPx()` function in P01 implements a linear interpolation between these anchor points.
 
 ### 1.8 Visual scale — Earth orbit viewer
 
@@ -269,7 +269,7 @@ All Wikimedia Commons images carry their own license per file. Before adding an 
 2. The original source (prefer agency-released over third-party photographs)
 3. The attribution requirements
 
-**Research task (OR-03 phase):** Curate and verify 3–5 Wikimedia Commons URLs per non-NASA mission for the gallery panels. Document source, license, and attribution per image.
+**Research task (03 phase):** Curate and verify 3–5 Wikimedia Commons URLs per non-NASA mission for the gallery panels. Document source, license, and attribution per image.
 
 ### 4.6 Soviet/Russian archive — special case
 
@@ -341,7 +341,7 @@ All agency logos are used under **nominative use** — for identification and at
 
 ## 7. Earth orbit data
 
-### 7.1 Orbital objects in OR-P05
+### 7.1 Orbital objects in P05
 
 All data from publicly available sources. Altitudes are mean values; actual orbits vary.
 
@@ -415,7 +415,7 @@ Orrery uses a three-tier educational link system, colour-coded consistently acro
 
 ## 10. One-off research plan for sparse missions
 
-The following missions require dedicated research sessions to fill gaps before OR-02 (formal project concept) is finalised. Each session produces: curated image URLs, verified orbital data, and updated `data_note` text.
+The following missions require dedicated research sessions to fill gaps before 02 (formal project concept) is finalised. Each session produces: curated image URLs, verified orbital data, and updated `data_note` text.
 
 | Mission | Gap | Research approach | Priority |
 |---|---|---|---|
@@ -458,5 +458,5 @@ Every image, logo, and data source in Orrery uses one of the following credit fo
 
 ---
 
-*Orrery · OR-03 Data Catalog · April 2026 · Living document*
-*Next: OR-04 Technical Architecture →*
+*Orrery · 03 Data Catalog · April 2026 · Living document*
+*Next: 04 Technical Architecture →*

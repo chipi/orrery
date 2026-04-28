@@ -34,6 +34,14 @@ export default [
     },
   },
   {
-    ignores: ['build/', '.svelte-kit/', 'dist/', 'node_modules/', 'src/lib/paraglide/'],
+    ignores: [
+      'build/',
+      '.svelte-kit/',
+      'dist/',
+      'node_modules/',
+      'src/lib/paraglide/',
+      'docs/.vitepress/dist/',
+      'docs/.vitepress/cache/',
+    ],
   },
 ];

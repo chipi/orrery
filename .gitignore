@@ -1,6 +1,8 @@
 node_modules/
 dist/
 build/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
 .env
 .env.local
 .svelte-kit/

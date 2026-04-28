@@ -20,6 +20,9 @@
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",
     "validate-data": "tsx scripts/validate-data.ts",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
+    "docs:preview": "vitepress preview docs",
     "ci": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run build"
   },
   "devDependencies": {
@@ -45,6 +48,8 @@
     "typescript": "5.7.2",
     "typescript-eslint": "8.18.2",
     "vite": "5.4.11",
+    "vitepress": "1.5.0",
+    "vitepress-sidebar": "1.25.2",
     "vitest": "2.1.8"
   },
   "dependencies": {

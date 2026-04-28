@@ -1,0 +1,22 @@
+{
+  "id": "mangalyaan",
+  "agency": "ISRO",
+  "agency_full": "Indian Space Research Organisation",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#FF9933",
+  "year": 2013,
+  "status": "FLOWN",
+  "departure_date": "2013-11-05",
+  "arrival_date": "2014-09-24",
+  "transit_days": 324,
+  "vehicle": "PSLV-XL (C25)",
+  "payload": "1337 kg",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© ISRO. India's first interplanetary mission, succeeded on first attempt — at one-tenth the cost of MAVEN. Communication ended 2022 after spacecraft propellant exhausted.",
+  "links": [
+    { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
+    { "l": "MOM (ISRO)", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html", "t": "intro" }
+  ]
+}

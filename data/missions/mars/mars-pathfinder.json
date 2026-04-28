@@ -1,0 +1,23 @@
+{
+  "id": "mars-pathfinder",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 1996,
+  "status": "FLOWN",
+  "departure_date": "1996-12-04",
+  "arrival_date": "1997-07-04",
+  "transit_days": 212,
+  "vehicle": "Delta II 7925",
+  "payload": "890 kg (lander + cruise stage at launch)",
+  "delta_v": "~5.2 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL — public domain. First use of airbag landing system; first wheels (Sojourner) on another planet.",
+  "links": [
+    { "l": "Mars Pathfinder — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder", "t": "intro" },
+    { "l": "Mars Pathfinder (NASA)", "u": "https://science.nasa.gov/mission/mars-pathfinder/", "t": "intro" },
+    { "l": "Sojourner rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Sojourner_(rover)", "t": "core" }
+  ]
+}

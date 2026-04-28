@@ -1,0 +1,12 @@
+{
+  "name": "Mariner 4",
+  "type": "FLYBY · FLOWN",
+  "first": "First spacecraft to reach Mars and return close-up images of another planet",
+  "description": "The mission that ended dreams of a habitable Mars. Mariner 4's 22 grainy images, taken during a 25-minute closest approach at 9,846 km altitude, showed a cratered surface resembling the Moon — no canals, no vegetation, no obvious life. The atmosphere was 100× thinner than expected. The discovery reshaped Mars in the public imagination from sister-Earth to dead world. Tracking the spacecraft also produced the first measurement of the solar wind's structure between planets.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Atlas LV-3 Agena-D lifts off from Cape Canaveral LC-12.", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "First mid-course correction completed; trajectory locked.", "type": "nominal" },
+    { "met": 228, "label": "MARS FLYBY", "note": "Closest approach 9,846 km. 22 images returned over 8 hours during data playback.", "type": "nominal" },
+    { "met": 228.5, "label": "FIRST IMAGES", "note": "First close-up images of another planet ever returned to Earth.", "type": "info" }
+  ]
+}

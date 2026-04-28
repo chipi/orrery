@@ -1,0 +1,22 @@
+{
+  "id": "starship-demo",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp.",
+  "sector": "private",
+  "dest": "MARS",
+  "color": "#005288",
+  "year": 2026,
+  "status": "PLANNED",
+  "departure_date": "2026-12-01",
+  "arrival_date": "2027-09-01",
+  "transit_days": 274,
+  "vehicle": "Starship (Super Heavy + Starship upper stage, expended)",
+  "payload": "~100000 kg (target with on-orbit refilling architecture)",
+  "delta_v": "~13 km/s",
+  "data_quality": "partial",
+  "credit": "© SpaceX — Mars architecture target. Specific demo manifest, mass, and trajectory subject to ongoing iteration. Date is the late-2026 Mars window NET; will likely slip into 2028-2029 based on Starship development pace.",
+  "links": [
+    { "l": "Starship — SpaceX", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" },
+    { "l": "SpaceX Mars program — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "core" }
+  ]
+}

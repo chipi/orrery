@@ -1,0 +1,22 @@
+{
+  "id": "mariner4",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 1964,
+  "status": "FLOWN",
+  "departure_date": "1964-11-28",
+  "arrival_date": "1965-07-15",
+  "transit_days": 228,
+  "vehicle": "Atlas LV-3 Agena-D",
+  "payload": "261 kg",
+  "delta_v": "~3.6 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL — public domain. Mission timeline from NSSDCA archive.",
+  "links": [
+    { "l": "Mariner 4 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mariner_4", "t": "intro" },
+    { "l": "Mariner 4 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A", "t": "core" }
+  ]
+}

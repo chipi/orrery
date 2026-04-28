@@ -1,0 +1,12 @@
+{
+  "name": "Starship Demo",
+  "type": "UNCREWED MARS DEMO · PLANNED",
+  "first": "First fully reusable launch system to attempt Mars landing",
+  "description": "An uncrewed demonstration of the Starship Mars architecture: launch on Super Heavy, refill in LEO from a tanker variant, then trans-Mars injection of a fully-fuelled Starship and powered descent to the Martian surface. SpaceX's stated target is a 2026-2027 launch window; engineering reality (Starship still working through orbital flight reliability and on-orbit refilling has not been demonstrated) makes 2028 or later more likely. If it succeeds, it inverts the Mars payload economics — from thousands of kg to one hundred tonnes per landing.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Starship from Boca Chica or Cape Canaveral — first super-heavy interplanetary launch.", "type": "nominal" },
+    { "met": 1, "label": "ORBITAL REFILLING", "note": "Tanker rendezvous and propellant transfer in LEO over multiple flights.", "type": "nominal" },
+    { "met": 2, "label": "TMI BURN", "note": "Trans-Mars injection from fully-fuelled LEO state.", "type": "nominal" },
+    { "met": 274, "label": "MARS LANDING", "note": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.", "type": "info" }
+  ]
+}

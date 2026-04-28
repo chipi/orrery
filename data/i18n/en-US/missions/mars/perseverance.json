@@ -1,0 +1,15 @@
+{
+  "name": "Perseverance",
+  "type": "ROVER · ACTIVE",
+  "first": "First helicopter on another planet (Ingenuity); first sample caching for Mars Sample Return",
+  "description": "Perseverance is the most ambitious Mars surface mission ever flown. Mars Sample Return depends on it — the rover is collecting and caching samples in tubes that a future mission will retrieve and bring to Earth. Ingenuity, the first helicopter on another planet, flew 72 missions before retiring with damaged rotors in January 2024 — proving controlled flight is possible in Mars's thin atmosphere. MOXIE, an oxygen-from-CO2 demonstrator, produced the first locally-made oxygen on another planet, a rehearsal for crewed Mars missions.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Atlas V 541 from Cape Canaveral SLC-41 — same vehicle class as Curiosity.", "type": "nominal" },
+    { "met": 1, "label": "TMI BURN", "note": "Trans-Mars injection.", "type": "nominal" },
+    { "met": 9, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 203, "label": "EDL", "note": "Sky-crane delivers rover to Jezero Crater 2021-02-18 — site of an ancient river delta.", "type": "nominal" },
+    { "met": 203.01, "label": "TOUCHDOWN", "note": "Perseverance touches down at Jezero 20:55 UTC.", "type": "nominal" },
+    { "met": 271, "label": "INGENUITY FIRST FLIGHT", "note": "First powered controlled flight on another planet — 39.1 seconds at up to 5 m altitude.", "type": "info" },
+    { "met": 1278, "label": "INGENUITY RETIRED", "note": "Rotor blade damaged on 72nd flight 2024-01-18; helicopter remains operational as a comms relay.", "type": "info" }
+  ]
+}

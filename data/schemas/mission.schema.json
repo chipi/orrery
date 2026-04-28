@@ -33,8 +33,16 @@
     "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
     "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
     "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },
-    "departure_date": { "type": "string", "minLength": 1 },
-    "arrival_date": { "type": "string", "minLength": 1 },
+    "departure_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO 8601 date of launch (UTC)"
+    },
+    "arrival_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO 8601 date of Mars arrival (orbit insertion or landing as appropriate). For PLANNED missions, use the current NET (no-earlier-than) target."
+    },
     "transit_days": { "type": "integer", "minimum": 0 },
     "vehicle": { "type": "string", "minLength": 1 },
     "payload": { "type": "string", "minLength": 1 },

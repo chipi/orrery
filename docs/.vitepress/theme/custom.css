@@ -1,0 +1,14 @@
+/* Orrery brand accent — matches src/lib/styles/tokens.css --color-accent. */
+:root {
+  --vp-c-brand-1: #4466ff;
+  --vp-c-brand-2: #5577ff;
+  --vp-c-brand-3: #6688ff;
+  --vp-c-brand-soft: rgba(68, 102, 255, 0.16);
+}
+
+.dark {
+  --vp-c-brand-1: #5e7fff;
+  --vp-c-brand-2: #6688ff;
+  --vp-c-brand-3: #7799ff;
+  --vp-c-brand-soft: rgba(94, 127, 255, 0.2);
+}

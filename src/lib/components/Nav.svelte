@@ -1,17 +1,18 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { base } from '$app/paths';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
   let { right }: Props = $props();
 
   const links = [
-    { href: '/moon', label: 'MOON' },
-    { href: '/explore', label: 'EXPLORE' },
-    { href: '/plan', label: 'PLAN' },
-    { href: '/fly', label: 'FLY' },
-    { href: '/missions', label: 'MISSIONS' },
-    { href: '/earth', label: 'EARTH' },
+    { href: `${base}/moon`, label: 'MOON' },
+    { href: `${base}/explore`, label: 'EXPLORE' },
+    { href: `${base}/plan`, label: 'PLAN' },
+    { href: `${base}/fly`, label: 'FLY' },
+    { href: `${base}/missions`, label: 'MISSIONS' },
+    { href: `${base}/earth`, label: 'EARTH' },
   ];
 
   function isActive(href: string, pathname: string): boolean {

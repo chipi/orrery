@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
-const ghPages = process.env.GITHUB_PAGES === 'true';
+const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -15,7 +15,7 @@ const config = {
       strict: true,
     }),
     paths: {
-      base: ghPages ? '/orrery' : '',
+      base,
     },
   },
 };

@@ -19,7 +19,8 @@
     "test": "npm run i18n:compile && vitest run --passWithNoTests",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",
-    "ci": "npm run typecheck && npm run lint && npm run test && npm run build"
+    "validate-data": "tsx scripts/validate-data.ts",
+    "ci": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run build"
   },
   "devDependencies": {
     "@eslint/js": "9.17.0",
@@ -28,6 +29,8 @@
     "@sveltejs/kit": "2.10.1",
     "@sveltejs/vite-plugin-svelte": "4.0.4",
     "@types/three": "0.128.0",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
     "eslint": "9.17.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.46.1",

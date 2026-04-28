@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mission.schema.json",
+  "title": "Mission",
+  "description": "Base mission record (language-neutral) per ADR-020. One file per mission at data/missions/[dest]/[id].json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "agency",
+    "agency_full",
+    "sector",
+    "dest",
+    "color",
+    "year",
+    "status",
+    "departure_date",
+    "arrival_date",
+    "transit_days",
+    "vehicle",
+    "payload",
+    "delta_v",
+    "data_quality",
+    "credit",
+    "links"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "agency": { "type": "string", "minLength": 1 },
+    "agency_full": { "type": "string", "minLength": 1 },
+    "sector": { "enum": ["gov", "private"] },
+    "dest": { "enum": ["MARS", "MOON"] },
+    "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+    "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
+    "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },
+    "departure_date": { "type": "string", "minLength": 1 },
+    "arrival_date": { "type": "string", "minLength": 1 },
+    "transit_days": { "type": "integer", "minimum": 0 },
+    "vehicle": { "type": "string", "minLength": 1 },
+    "payload": { "type": "string", "minLength": 1 },
+    "delta_v": { "type": "string", "minLength": 1 },
+    "data_quality": { "enum": ["good", "partial", "reconstructed"] },
+    "credit": { "type": "string", "minLength": 1 },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["l", "u", "t"],
+        "properties": {
+          "l": { "type": "string", "minLength": 1 },
+          "u": { "type": "string", "format": "uri" },
+          "t": { "enum": ["intro", "core", "deep"] }
+        }
+      }
+    }
+  }
+}

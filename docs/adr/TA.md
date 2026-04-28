@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v1.2 · April 2026*
+*Orrery · Reference document · v1.3 · April 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update §stack and §map when decisions are locked.
 
@@ -184,7 +184,7 @@ State board for all RFCs and ADRs.
 | RFC | Title | Status | Closes into | Closing evidence |
 |---|---|---|---|---|
 | RFC-001 | Router design — hash vs history, param handling | Closed · superseded by ADR-013 | ADR-013 | Pre-empted by ADR-013 (SvelteKit router); see RFC-001 closure note |
-| RFC-002 | Mission JSON schema — events array, field canonicalisation | Draft v0.1 | ADR (pending) | Slice 4 gate: schema exercised by three mission types in fly screen |
+| RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before 28 mission files written |
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Draft v0.1 | ADR (pending) | Slice 3 gate: worker running in production with porkchop plot |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Draft v0.1 | ADR (pending) | Slice 4 gate: `/fly?mission=id` works end-to-end |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Draft v0.1 | ADR (pending) | Slice 6 gate: all six screens pass WCAG 2.1 AA on nav and panels |
@@ -213,6 +213,7 @@ State board for all RFCs and ADRs.
 | ADR-017 | Paraglide-js i18n + locale overlay architecture | Accepted |
 | ADR-018 | Mobile-first design, bottom sheet panels | Accepted |
 | ADR-019 | JSON schema validation on PR via ajv | Accepted |
+| ADR-020 | Canonical mission JSON schema | Accepted (closes RFC-002) |
 
 ---
 
@@ -223,3 +224,4 @@ State board for all RFCs and ADRs.
 | v1.0 | April 2026 | Initial version — components, contracts, constraints, and stack extracted from 04_Technical_Architecture.md and six prototypes |
 | v1.1 | April 2026 | Stack updated: TypeScript (ADR-011), SvelteKit (ADR-012), History API routing (ADR-013), GitHub Actions + GH Pages (ADR-014), Vitest + Playwright (ADR-015), build-time assets (ADR-016), Paraglide i18n (ADR-017), mobile-first (ADR-018), ajv validation (ADR-019). ADR-002/003/004/005 marked superseded. |
 | v1.2 | April 2026 | §components rewritten to match post-pivot stack: SvelteKit router (ADR-013), TypeScript file extensions, `src/routes/*/+page.svelte` page modules, Svelte components for Nav and Panel. §map updated: RFC-001 closed (superseded by ADR-013); RFC-004 closing-evidence URL corrected to History API form. |
+| v1.3 | April 2026 | RFC-002 closed early at Slice 2 entry into ADR-020 (canonical mission JSON schema). §map updated; data-serving §stack row reflects ADR-007's self-hosted-nginx-only scope note; §constraints "browser-only" reworded to be host-agnostic. |

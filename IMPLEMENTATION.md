@@ -56,9 +56,9 @@ The production build extracts, connects, and deploys what the prototypes demonst
 - CI `validate-data` step added to `ci.yml` — blocks PR on schema failure
 - Vitest integration tests: `getMissionIndex()` returns 28 entries, `filterMissions({dest:'MARS'})` returns 14
 
-**RFC gates:** RFC-002 deliberation in progress (schema not yet exercised by fly screen)
+**RFC gates:** RFC-002 closes early at this slice into ADR-020 — schema is locked before 28 mission files are written, avoiding rework risk.
 
-**ADRs confirmed:** ADR-006, ADR-007, ADR-017, ADR-019
+**ADRs confirmed:** ADR-006, ADR-007, ADR-017, ADR-019, ADR-020 (RFC-002 closure)
 
 ---
 
@@ -99,7 +99,7 @@ The production build extracts, connects, and deploys what the prototypes demonst
 - Playwright e2e: mission library → click mission → fly screen loads correct mission
 - Mobile: mission cards single-column, bottom sheet detail panel
 
-**RFC gates:** RFC-002 closes (schema exercised by three mission types), RFC-004 closes (URL sharing end-to-end)
+**RFC gates:** RFC-004 closes (URL sharing end-to-end). *(RFC-002 closed early in Slice 2 — see ADR-020.)*
 
 **ADRs from RFC closures written at this slice**
 

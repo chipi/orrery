@@ -22,3 +22,4 @@
 | ADR-017 | Paraglide-js i18n + locale overlay architecture | Accepted | Apr 2026 |
 | ADR-018 | Mobile-first design, bottom sheet panels | Accepted | Apr 2026 |
 | ADR-019 | JSON schema validation on PR via ajv | Accepted | Apr 2026 |
+| ADR-020 | Canonical mission JSON schema | Accepted (closes RFC-002) | Apr 2026 |

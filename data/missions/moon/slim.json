@@ -1,0 +1,22 @@
+{
+  "id": "slim",
+  "agency": "JAXA",
+  "agency_full": "Japan Aerospace Exploration Agency",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#003087",
+  "year": 2024,
+  "status": "ACTIVE",
+  "departure_date": "2023-09-06",
+  "arrival_date": "2024-01-19",
+  "transit_days": 135,
+  "vehicle": "H-IIA 202",
+  "payload": "730 kg launch mass; 200 kg lander; 2 micro-rovers (LEV-1, LEV-2)",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© JAXA — Smart Lander for Investigating Moon. Demonstrated pinpoint landing within 100 m of target (vs km-scale standard). Long transit used a low-energy ballistic trajectory to save propellant.",
+  "links": [
+    { "l": "SLIM — Wikipedia", "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon", "t": "intro" },
+    { "l": "SLIM (JAXA)", "u": "https://global.jaxa.jp/projects/sas/slim/", "t": "intro" }
+  ]
+}

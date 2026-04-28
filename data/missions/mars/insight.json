@@ -1,0 +1,23 @@
+{
+  "id": "insight",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2018,
+  "status": "FLOWN",
+  "departure_date": "2018-05-05",
+  "arrival_date": "2018-11-26",
+  "transit_days": 205,
+  "vehicle": "Atlas V 401",
+  "payload": "694 kg lander",
+  "delta_v": "~5.5 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL — public domain. Mission ended 2022-12-15 after dust accumulation on solar panels reduced power below operational threshold.",
+  "links": [
+    { "l": "InSight — Wikipedia", "u": "https://en.wikipedia.org/wiki/InSight", "t": "intro" },
+    { "l": "InSight (NASA)", "u": "https://science.nasa.gov/mission/insight/", "t": "intro" },
+    { "l": "Marsquake catalogue (ETH Zurich)", "u": "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service", "t": "deep" }
+  ]
+}

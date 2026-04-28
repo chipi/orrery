@@ -1,0 +1,9 @@
+{
+  "name": "Luna 17 / Lunokhod 1",
+  "mission_type": "Uncrewed Rover",
+  "site_name": "Mare Imbrium",
+  "crew": [],
+  "left": "Lunokhod 1 rover (322 kg), descent stage",
+  "fact": "The first remote-controlled rover to operate on another world. Drove 10.5 km over 322 days, photographing over 20,000 images. Lost to history until 2010, when the Lunar Reconnaissance Orbiter spotted it from orbit — still sitting exactly where it stopped.",
+  "capability": "First teleoperated rover — established the architecture every Mars rover from Sojourner to Perseverance has built on."
+}

@@ -1,0 +1,23 @@
+{
+  "id": "lro",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Goddard Space Flight Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2009,
+  "status": "ACTIVE",
+  "departure_date": "2009-06-18",
+  "arrival_date": "2009-06-23",
+  "transit_days": 5,
+  "vehicle": "Atlas V 401",
+  "payload": "1916 kg launch mass",
+  "delta_v": "~4 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / GSFC / ASU — public domain. 50 cm/pixel surface resolution. Has imaged every Apollo descent stage and the resting positions of every lost-then-found Soviet asset including Luna 17/Lunokhod 1.",
+  "links": [
+    { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
+    { "l": "LRO mission (NASA)", "u": "https://science.nasa.gov/mission/lro/", "t": "intro" },
+    { "l": "LROC image archive (Arizona State)", "u": "https://www.lroc.asu.edu/", "t": "core" }
+  ]
+}

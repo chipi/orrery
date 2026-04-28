@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "earth-object-overlay.schema.json",
+  "title": "EarthObjectOverlay",
+  "description": "Editorial overlay per Earth-orbit object per locale. Per ADR-017, merged with base record at fetch time.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "short", "description", "scale_fact"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "short": { "type": "string", "minLength": 1, "description": "Short label for tight UI contexts" },
+    "description": { "type": "string", "minLength": 1 },
+    "scale_fact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The educational moment for PRD-005 — a single sentence that makes the object's place on the log scale legible"
+    }
+  }
+}

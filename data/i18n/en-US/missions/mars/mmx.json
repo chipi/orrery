@@ -1,0 +1,13 @@
+{
+  "name": "MMX",
+  "type": "PHOBOS SAMPLE RETURN · PLANNED",
+  "first": "First sample return from a Martian moon",
+  "description": "Martian Moons eXploration is JAXA's plan to land on Phobos, scoop ~10 g of regolith, and bring it home. The samples may settle a long-debated question: are Phobos and Deimos captured asteroids, or fragments from an ancient impact on Mars itself? The mission also includes a German-French rover for Phobos surface mobility — a wholly different operations model from anything the Hayabusa missions did at Itokawa or Ryugu. Launch was planned for 2024 but slipped to 2026 due to delays in JAXA's H3 launch vehicle.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "H3-24L from Tanegashima — JAXA's new heavy lifter.", "type": "nominal" },
+    { "met": 334, "label": "MARS ORBIT INSERTION", "note": "Capture into Mars orbit; transfer to Phobos quasi-orbit over following months.", "type": "nominal" },
+    { "met": 600, "label": "ROVER DEPLOY", "note": "DLR/CNES rover (~25 kg) released onto Phobos surface for in-situ studies.", "type": "info" },
+    { "met": 1100, "label": "PHOBOS SAMPLE", "note": "MMX touches down on Phobos; ~10 g of regolith collected.", "type": "info" },
+    { "met": 1500, "label": "EARTH RETURN", "note": "Sample re-entry capsule arrives at Earth ~2031.", "type": "info" }
+  ]
+}

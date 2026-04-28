@@ -1,0 +1,12 @@
+{
+  "name": "Luna 9",
+  "type": "UNCREWED LANDER · FLOWN",
+  "first": "First soft-landing on the Moon; first photographs from the lunar surface",
+  "description": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine panoramic images returned over 8 minutes settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Molniya-M from Baikonur 1966-01-31.", "type": "nominal" },
+    { "met": 3, "label": "TOUCHDOWN", "note": "Soft-landing at Oceanus Procellarum 1966-02-03 18:45 UTC. First soft-landing on another world.", "type": "nominal" },
+    { "met": 3.01, "label": "FIRST IMAGES", "note": "Nine panoramic images returned in three transmission sessions.", "type": "info" },
+    { "met": 6, "label": "SIGNAL LOSS", "note": "Battery depleted; final transmission 1966-02-06.", "type": "warning" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "change6",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration / China Academy of Space Technology",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2024,
+  "status": "FLOWN",
+  "departure_date": "2024-05-03",
+  "arrival_date": "2024-06-02",
+  "transit_days": 30,
+  "vehicle": "Long March 5",
+  "payload": "8200 kg launch mass; 1.935 kg sample returned",
+  "delta_v": "~5 km/s",
+  "data_quality": "good",
+  "credit": "© CNSA. First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Required Queqiao-2 relay satellite for far-side operations. Samples returned to Earth 2024-06-25.",
+  "links": [
+    { "l": "Chang'e 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_6", "t": "intro" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "mission-index.schema.json",
+  "title": "MissionIndex",
+  "description": "Lightweight manifest of all missions. Single file at data/missions/index.json. Each entry mirrors the language-neutral subset of the full base record.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["id", "agency", "dest", "status", "year", "sector", "color"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "agency": { "type": "string", "minLength": 1 },
+      "dest": { "enum": ["MARS", "MOON"] },
+      "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },
+      "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
+      "sector": { "enum": ["gov", "private"] },
+      "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+    }
+  }
+}

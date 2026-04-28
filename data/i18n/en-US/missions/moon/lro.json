@@ -1,0 +1,12 @@
+{
+  "name": "Lunar Reconnaissance Orbiter",
+  "type": "ORBITER · ACTIVE",
+  "first": "Highest-resolution lunar maps ever made",
+  "description": "Orbiting the Moon since 2009 at 50 km mean lunar altitude, LRO's narrow-angle camera images at 50 cm/pixel — high enough to see Apollo descent stages, rover tracks, and astronaut footpaths still preserved in the regolith. It found Lunokhod 1 thirty-nine years after the rover went dark. It identified 200+ candidate landing sites for Artemis. The water ice deposits at the lunar south pole that drive every modern lunar programme were quantified by LRO instruments. A scout mission that became the foundation of the modern lunar era.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Atlas V 401 from Cape Canaveral SLC-41 (carried LCROSS impactor as secondary).", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion 2009-06-23.", "type": "nominal" },
+    { "met": 90, "label": "PRIME MISSION", "note": "1-year exploration phase (NASA programme) begins.", "type": "info" },
+    { "met": 455, "label": "EXTENDED SCIENCE", "note": "Mission extended to multi-year science phase under NASA SMD.", "type": "info" }
+  ]
+}

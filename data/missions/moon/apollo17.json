@@ -1,0 +1,22 @@
+{
+  "id": "apollo17",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1972,
+  "status": "FLOWN",
+  "departure_date": "1972-12-07",
+  "arrival_date": "1972-12-11",
+  "transit_days": 4,
+  "vehicle": "Saturn V (AS-512)",
+  "payload": "48609 kg launched (CSM America + LM Challenger)",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 17 mission report. Public domain. Last crewed lunar landing of the 20th century. Touchdown at Taurus-Littrow Valley 1972-12-11 19:54 UTC.",
+  "links": [
+    { "l": "Apollo 17 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_17", "t": "intro" },
+    { "l": "Apollo 17 mission overview (NASA)", "u": "https://www.nasa.gov/mission/apollo-17/", "t": "intro" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "luna9",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1966,
+  "status": "FLOWN",
+  "departure_date": "1966-01-31",
+  "arrival_date": "1966-02-03",
+  "transit_days": 3,
+  "vehicle": "Molniya-M",
+  "payload": "1583 kg launch mass; 99 kg lander capsule",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). First soft-landing on the Moon and first photographs from the lunar surface.",
+  "links": [
+    { "l": "Luna 9 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_9", "t": "intro" },
+    { "l": "Luna 9 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A", "t": "core" }
+  ]
+}

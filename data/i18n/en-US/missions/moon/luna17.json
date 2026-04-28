@@ -1,0 +1,13 @@
+{
+  "name": "Luna 17 / Lunokhod 1",
+  "type": "ROVER · FLOWN",
+  "first": "First teleoperated rover to operate on another world",
+  "description": "The first wheels on the Moon — driven from a control room in Crimea. Lunokhod 1 was a 322 kg pressurised tub mounted on eight independently-driven wheels, controlled by a five-person team in real time across the 2.5-second light-speed delay. It drove 10.5 km over 11 lunar days (322 Earth days), photographed 20,000+ scenes, and operated long past its 90-day design lifetime. Lost to history in the 1970s, located again in 2010 when NASA's Lunar Reconnaissance Orbiter spotted it sitting where it stopped.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Proton-K with Blok-D upper stage from Baikonur.", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion; orbital corrections to descent inclination.", "type": "nominal" },
+    { "met": 7, "label": "TOUCHDOWN", "note": "Soft-landing at Mare Imbrium 1970-11-17.", "type": "nominal" },
+    { "met": 7.005, "label": "ROVER DEPLOYED", "note": "Lunokhod 1 rolls down ramps onto lunar surface.", "type": "info" },
+    { "met": 329, "label": "FINAL CONTACT", "note": "Last command session 1971-09-14; rover preserved in cold lunar night.", "type": "info" }
+  ]
+}

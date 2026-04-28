@@ -1,0 +1,14 @@
+{
+  "name": "Viking 1",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "First fully successful Mars landing; first long-duration surface science",
+  "description": "The mission that gave us our first sustained look at the Martian surface. Viking 1's lander operated for 6 years 4 months at Chryse Planitia — running biology experiments designed to detect life (results ambiguous; one experiment produced a positive signal still debated decades later), measuring weather, returning panoramic images, and analysing soil composition. The orbiter mapped 97% of Mars at 100m resolution and helped scout landing sites for missions still decades away.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Titan IIIE-Centaur from Cape Canaveral LC-41.", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "First trajectory correction.", "type": "nominal" },
+    { "met": 304, "label": "MARS ORBIT INSERTION", "note": "Orbiter captures into Mars orbit; lander remains attached for site survey.", "type": "nominal" },
+    { "met": 335, "label": "LANDER SEPARATION", "note": "Lander detaches for descent to Chryse Planitia.", "type": "nominal" },
+    { "met": 335.05, "label": "TOUCHDOWN", "note": "Lander touches down 1976-07-20, exactly 7 years after Apollo 11.", "type": "nominal" },
+    { "met": 335.1, "label": "FIRST PANORAMA", "note": "First high-resolution surface images returned.", "type": "info" }
+  ]
+}

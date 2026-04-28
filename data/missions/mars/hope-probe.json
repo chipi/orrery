@@ -1,0 +1,22 @@
+{
+  "id": "hope-probe",
+  "agency": "UAESA",
+  "agency_full": "United Arab Emirates Space Agency / Mohammed bin Rashid Space Centre",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#00833F",
+  "year": 2020,
+  "status": "ACTIVE",
+  "departure_date": "2020-07-19",
+  "arrival_date": "2021-02-09",
+  "transit_days": 205,
+  "vehicle": "H-IIA 202 (from Tanegashima)",
+  "payload": "1500 kg",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© UAE Space Agency / MBRSC. First Arab interplanetary mission. Studies Mars atmospheric dynamics from a science orbit not covered by other Mars orbiters.",
+  "links": [
+    { "l": "Emirates Mars Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission", "t": "intro" },
+    { "l": "Hope Probe (MBRSC)", "u": "https://www.mbrsc.ae/our-projects/space-exploration/", "t": "intro" }
+  ]
+}

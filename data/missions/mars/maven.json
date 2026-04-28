@@ -1,0 +1,22 @@
+{
+  "id": "maven",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Goddard Space Flight Center",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2013,
+  "status": "ACTIVE",
+  "departure_date": "2013-11-18",
+  "arrival_date": "2014-09-21",
+  "transit_days": 308,
+  "vehicle": "Atlas V 401",
+  "payload": "2454 kg",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / Goddard — public domain. Studies how Mars lost its atmosphere; serves as relay for surface assets.",
+  "links": [
+    { "l": "MAVEN — Wikipedia", "u": "https://en.wikipedia.org/wiki/MAVEN", "t": "intro" },
+    { "l": "MAVEN mission (NASA)", "u": "https://science.nasa.gov/mission/maven/", "t": "intro" }
+  ]
+}

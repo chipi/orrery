@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "moon-site-overlay.schema.json",
+  "title": "MoonSiteOverlay",
+  "description": "Editorial overlay per moon site per locale. Includes the `capability` callout per PRD-006 — what this mission proved that Mars exploration depends on.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "mission_type", "site_name", "crew", "left", "fact", "capability"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "mission_type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "e.g. 'Uncrewed Soft Lander', 'Crewed Lander · Rover'"
+    },
+    "site_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Selenographic location (e.g. 'Mare Tranquillitatis', 'Von Kármán Crater')"
+    },
+    "crew": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "description": "Astronaut names; empty array for uncrewed"
+    },
+    "left": {
+      "type": "string",
+      "minLength": 1,
+      "description": "What hardware remains on the surface — the 'still on the surface' panel block per UXS-006"
+    },
+    "fact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Rich editorial paragraph — what makes this mission significant"
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line statement connecting this mission to Mars readiness, per PRD-006's capability ladder framing"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "change4",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration / China Academy of Space Technology",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2018,
+  "status": "ACTIVE",
+  "departure_date": "2018-12-07",
+  "arrival_date": "2019-01-03",
+  "transit_days": 27,
+  "vehicle": "Long March 3B",
+  "payload": "3780 kg launch mass; 140 kg Yutu-2 rover",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© CNSA. First soft-landing on the lunar far side — required the Queqiao relay satellite at Earth-Moon L2 for communications. Yutu-2 has driven 1.9+ km, longest-operating lunar rover by traverse.",
+  "links": [
+    { "l": "Chang'e 4 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_4", "t": "intro" },
+    { "l": "Queqiao relay — Wikipedia", "u": "https://en.wikipedia.org/wiki/Queqiao_relay_satellite", "t": "core" }
+  ]
+}

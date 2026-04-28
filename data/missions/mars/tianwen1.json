@@ -1,0 +1,22 @@
+{
+  "id": "tianwen1",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration / China Aerospace Science and Technology Corp.",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#DE2910",
+  "year": 2020,
+  "status": "ACTIVE",
+  "departure_date": "2020-07-23",
+  "arrival_date": "2021-02-10",
+  "transit_days": 202,
+  "vehicle": "Long March 5",
+  "payload": "5000 kg (orbiter + lander + Zhurong rover)",
+  "delta_v": "~5 km/s",
+  "data_quality": "good",
+  "credit": "© CNSA. First mission to deliver an orbiter, lander, and rover to Mars in a single launch. Lander/rover touchdown 2021-05-14 at Utopia Planitia. Zhurong rover went into hibernation 2022-05; orbiter remains active.",
+  "links": [
+    { "l": "Tianwen-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tianwen-1", "t": "intro" },
+    { "l": "Zhurong rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)", "t": "intro" }
+  ]
+}

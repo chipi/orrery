@@ -1,0 +1,270 @@
+[
+  {
+    "id": "iss",
+    "body": "EARTH",
+    "regime": "LEO",
+    "earth_distance_km": 408,
+    "altitude_km": 408,
+    "period_min": 92.68,
+    "inclination": 51.64,
+    "count": 1,
+    "color": "#4ecdc4",
+    "agencies": ["NASA", "ESA", "JAXA", "ROSCOSMOS", "CSA"],
+    "launched": 1998,
+    "status": "ACTIVE",
+    "crew": 7,
+    "credit": "© NASA — facts and figures (public domain)",
+    "links": [
+      { "l": "ISS — Wikipedia", "u": "https://en.wikipedia.org/wiki/International_Space_Station", "t": "intro" },
+      { "l": "NASA ISS live tracker", "u": "https://spotthestation.nasa.gov/", "t": "intro" },
+      { "l": "ISS facts and figures (NASA)", "u": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/", "t": "core" }
+    ]
+  },
+  {
+    "id": "tiangong",
+    "body": "EARTH",
+    "regime": "LEO",
+    "earth_distance_km": 389,
+    "altitude_km": 389,
+    "period_min": 91.5,
+    "inclination": 41.5,
+    "count": 1,
+    "color": "#DE2910",
+    "agencies": ["CNSA"],
+    "launched": 2021,
+    "status": "ACTIVE",
+    "crew": 3,
+    "credit": "© CMSA — public release materials",
+    "links": [
+      { "l": "Tiangong — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tiangong_space_station", "t": "intro" },
+      { "l": "China Manned Space program", "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station", "t": "intro" }
+    ]
+  },
+  {
+    "id": "hubble",
+    "body": "EARTH",
+    "regime": "LEO",
+    "earth_distance_km": 538,
+    "altitude_km": 538,
+    "period_min": 95.42,
+    "inclination": 28.47,
+    "count": 1,
+    "color": "#7b9cff",
+    "agencies": ["NASA", "ESA"],
+    "launched": 1990,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / STScI / ESA — public domain (NASA portion). Altitude is mean as of 2024; orbit decays ~2 km/year and will require either reboost or controlled deorbit by ~2034.",
+    "links": [
+      { "l": "Hubble Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "t": "intro" },
+      { "l": "Hubble image gallery (NASA)", "u": "https://hubblesite.org/images/gallery", "t": "intro" },
+      { "l": "Hubble servicing missions (NASA)", "u": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/", "t": "core" }
+    ]
+  },
+  {
+    "id": "gps",
+    "body": "EARTH",
+    "regime": "MEO",
+    "earth_distance_km": 20180,
+    "altitude_km": 20180,
+    "period_min": 717.97,
+    "inclination": 55,
+    "count": 4,
+    "color": "#0B3D91",
+    "agencies": ["USAF", "USSF"],
+    "launched": 1978,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© U.S. Space Force / GPS.gov (public domain). Period is half a sidereal day (ground-track repeats twice per day).",
+    "links": [
+      { "l": "GPS — Wikipedia", "u": "https://en.wikipedia.org/wiki/Global_Positioning_System", "t": "intro" },
+      { "l": "GPS.gov (official)", "u": "https://www.gps.gov/", "t": "intro" },
+      { "l": "GNSS constellations comparison", "u": "https://en.wikipedia.org/wiki/Global_navigation_satellite_system", "t": "core" }
+    ]
+  },
+  {
+    "id": "galileo",
+    "body": "EARTH",
+    "regime": "MEO",
+    "earth_distance_km": 23222,
+    "altitude_km": 23222,
+    "period_min": 844.7,
+    "inclination": 56,
+    "count": 4,
+    "color": "#1C3C8A",
+    "agencies": ["ESA"],
+    "launched": 2011,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA / European Commission",
+    "links": [
+      { "l": "Galileo — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)", "t": "intro" },
+      { "l": "ESA Galileo overview", "u": "https://www.esa.int/Applications/Navigation/Galileo", "t": "intro" }
+    ]
+  },
+  {
+    "id": "glonass",
+    "body": "EARTH",
+    "regime": "MEO",
+    "earth_distance_km": 19130,
+    "altitude_km": 19130,
+    "period_min": 675.7,
+    "inclination": 64.8,
+    "count": 4,
+    "color": "#003087",
+    "agencies": ["ROSCOSMOS"],
+    "launched": 1982,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© Roscosmos / Russian Space Forces",
+    "links": [
+      { "l": "GLONASS — Wikipedia", "u": "https://en.wikipedia.org/wiki/GLONASS", "t": "intro" }
+    ]
+  },
+  {
+    "id": "beidou",
+    "body": "EARTH",
+    "regime": "MEO",
+    "earth_distance_km": 21528,
+    "altitude_km": 21528,
+    "period_min": 773,
+    "inclination": 55,
+    "count": 4,
+    "color": "#DE2910",
+    "agencies": ["CNSA"],
+    "launched": 2000,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© China Satellite Navigation Office. Note: BeiDou-3 spans MEO (shown), GEO, and IGSO orbits; only MEO is plotted here.",
+    "links": [
+      { "l": "BeiDou — Wikipedia", "u": "https://en.wikipedia.org/wiki/BeiDou", "t": "intro" }
+    ]
+  },
+  {
+    "id": "geo",
+    "body": "EARTH",
+    "regime": "GEO",
+    "earth_distance_km": 35786,
+    "altitude_km": 35786,
+    "period_min": 1436.07,
+    "inclination": 0,
+    "count": 6,
+    "color": "#ffc850",
+    "agencies": ["NOAA", "NASA", "ESA"],
+    "launched": 1963,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NOAA / NASA / ESA — collective representation of the geostationary belt. Period is one sidereal day.",
+    "links": [
+      { "l": "Geostationary orbit — Wikipedia", "u": "https://en.wikipedia.org/wiki/Geostationary_orbit", "t": "intro" },
+      { "l": "Arthur C. Clarke (proposed GEO 1945)", "u": "https://en.wikipedia.org/wiki/Arthur_C._Clarke", "t": "intro" },
+      { "l": "GOES weather system (NOAA)", "u": "https://www.goes.noaa.gov/", "t": "core" }
+    ]
+  },
+  {
+    "id": "chandra",
+    "body": "EARTH",
+    "regime": "HEO",
+    "earth_distance_km": 133000,
+    "altitude_km": 133000,
+    "perigee_altitude_km": 9942,
+    "apogee_altitude_km": 133000,
+    "ecc": 0.74,
+    "elliptical": true,
+    "period_min": 3808.6,
+    "inclination": 76.7,
+    "count": 1,
+    "color": "#ff8c3c",
+    "agencies": ["NASA"],
+    "launched": 1999,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / SAO / CXC — public domain (NASA portion). altitude_km here represents apoapsis (the prototype's chosen visual placement for elliptical orbits).",
+    "links": [
+      { "l": "Chandra X-ray Observatory — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory", "t": "intro" },
+      { "l": "Chandra image gallery (NASA)", "u": "https://chandra.harvard.edu/photo/category.html", "t": "intro" },
+      { "l": "X-ray astronomy — Wikipedia", "u": "https://en.wikipedia.org/wiki/X-ray_astronomy", "t": "core" }
+    ]
+  },
+  {
+    "id": "xmm",
+    "body": "EARTH",
+    "regime": "HEO",
+    "earth_distance_km": 113946,
+    "altitude_km": 113946,
+    "perigee_altitude_km": 7365,
+    "apogee_altitude_km": 113946,
+    "ecc": 0.77,
+    "elliptical": true,
+    "period_min": 2880,
+    "inclination": 40,
+    "count": 1,
+    "color": "#FFD700",
+    "agencies": ["ESA"],
+    "launched": 1999,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA — XMM-Newton mission. Period is 48 h (originally 47.86 h, drifts slightly).",
+    "links": [
+      { "l": "XMM-Newton — Wikipedia", "u": "https://en.wikipedia.org/wiki/XMM-Newton", "t": "intro" },
+      { "l": "ESA XMM-Newton science", "u": "https://www.cosmos.esa.int/web/xmm-newton", "t": "core" }
+    ]
+  },
+  {
+    "id": "lro",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 50,
+    "inclination": 90,
+    "count": 1,
+    "color": "#aaaacc",
+    "agencies": ["NASA"],
+    "launched": 2009,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / GSFC / ASU — public domain. altitude_km is mean lunar altitude (LRO's actual orbital altitude around the Moon, not Earth-distance). period_min omitted because LRO's Earth-relative apparent motion follows the Moon's 27.32-day sidereal period; LRO's actual ~113 min lunar orbital period would be a misleading number on the /earth log scale.",
+    "links": [
+      { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
+      { "l": "LRO camera images (LROC)", "u": "https://www.lroc.asu.edu/", "t": "intro" },
+      { "l": "Water on the Moon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_water", "t": "core" }
+    ]
+  },
+  {
+    "id": "jwst",
+    "body": "SUN_EARTH_L2",
+    "regime": "L2",
+    "earth_distance_km": 1500000,
+    "count": 1,
+    "color": "#ffd700",
+    "agencies": ["NASA", "ESA", "CSA"],
+    "launched": 2022,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / ESA / CSA / STScI — public domain (NASA portion). JWST is in a halo orbit around Sun-Earth L2; the listed distance is the L2 point's mean distance from Earth.",
+    "links": [
+      { "l": "James Webb Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope", "t": "intro" },
+      { "l": "JWST first images (NASA)", "u": "https://webbtelescope.org/news/first-images", "t": "intro" },
+      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" },
+      { "l": "JWST approved programs", "u": "https://www.stsci.edu/jwst/science-execution/approved-programs", "t": "deep" }
+    ]
+  },
+  {
+    "id": "gaia",
+    "body": "SUN_EARTH_L2",
+    "regime": "L2",
+    "earth_distance_km": 1500000,
+    "count": 1,
+    "color": "#FFD700",
+    "agencies": ["ESA"],
+    "launched": 2013,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA / Gaia / DPAC. Like JWST, in a Lissajous orbit around Sun-Earth L2.",
+    "links": [
+      { "l": "Gaia — Wikipedia", "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)", "t": "intro" },
+      { "l": "Gaia data release (ESA)", "u": "https://www.cosmos.esa.int/web/gaia/data-release-3", "t": "core" },
+      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" }
+    ]
+  }
+]

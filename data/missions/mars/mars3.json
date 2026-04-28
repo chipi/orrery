@@ -1,0 +1,22 @@
+{
+  "id": "mars3",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#cc4444",
+  "year": 1971,
+  "status": "FLOWN",
+  "departure_date": "1971-05-28",
+  "arrival_date": "1971-12-02",
+  "transit_days": 188,
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander combined)",
+  "delta_v": "~5.5 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). Lander achieved soft-landing then transmitted for ~110 s before signal loss during a global dust storm.",
+  "links": [
+    { "l": "Mars 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
+    { "l": "Mars 3 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A", "t": "core" }
+  ]
+}

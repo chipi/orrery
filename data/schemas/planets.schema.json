@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "planets.schema.json",
+  "title": "Planets",
+  "description": "Heliocentric orbital constants and the eight planets, J2000 epoch. Single file at data/planets.json. Constants must match src/lib/orbital.ts (cross-checked by orbital.test.ts).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["constants", "planets"],
+  "properties": {
+    "constants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mu_sun", "au_to_km", "au_to_lmin", "aupyr_to_kms"],
+      "properties": {
+        "mu_sun": { "type": "number", "exclusiveMinimum": 0, "description": "AU³/yr² (= 4π²)" },
+        "au_to_km": { "type": "number", "exclusiveMinimum": 0 },
+        "au_to_lmin": { "type": "number", "exclusiveMinimum": 0 },
+        "aupyr_to_kms": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "planets": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "a", "e", "T", "L0", "incl", "axialTilt", "rotPeriod"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "a": { "type": "number", "exclusiveMinimum": 0, "description": "Semi-major axis (AU)" },
+          "e": { "type": "number", "minimum": 0, "exclusiveMaximum": 1, "description": "Eccentricity" },
+          "T": { "type": "number", "exclusiveMinimum": 0, "description": "Orbital period (days)" },
+          "L0": { "type": "number", "description": "Mean longitude at J2000 epoch (radians)" },
+          "incl": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180,
+            "description": "Inclination to ecliptic (degrees)"
+          },
+          "axialTilt": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "description": "Axial tilt (degrees); >90 indicates retrograde rotation"
+          },
+          "rotPeriod": {
+            "type": "number",
+            "description": "Sidereal rotation period (days); negative for retrograde rotation"
+          }
+        }
+      }
+    }
+  }
+}

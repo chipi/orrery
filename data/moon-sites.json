@@ -1,0 +1,316 @@
+[
+  {
+    "id": "luna9",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1966,
+    "landing_date": "1966-02-03",
+    "lat": 7.08,
+    "lon": -64.37,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 3,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical) — declassified materials. Position: Oceanus Procellarum, NASA's Lunar and Planetary Institute catalogue.",
+    "links": [
+      { "l": "Luna 9 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_9", "t": "intro" },
+      { "l": "Luna 9 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A", "t": "core" }
+    ]
+  },
+  {
+    "id": "luna17",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1970,
+    "landing_date": "1970-11-17",
+    "lat": 38.28,
+    "lon": -35.0,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 322,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical). Lunokhod 1 location confirmed in 2010 by NASA Lunar Reconnaissance Orbiter imagery.",
+    "links": [
+      { "l": "Lunokhod 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunokhod_1", "t": "intro" },
+      { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" }
+    ]
+  },
+  {
+    "id": "luna24",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1976,
+    "landing_date": "1976-08-18",
+    "lat": 12.25,
+    "lon": 62.20,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 1,
+    "samples_kg": 0.170,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical). Sample mass: 170 g of regolith returned to Earth 1976-08-22.",
+    "links": [
+      { "l": "Luna 24 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_24", "t": "intro" }
+    ]
+  },
+  {
+    "id": "apollo11",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1969,
+    "landing_date": "1969-07-20",
+    "lat": 0.67,
+    "lon": 23.47,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 0.9,
+    "eva_duration_hours": 2.52,
+    "samples_kg": 21.55,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 11 mission report. Public domain. Lunar laser retroreflector still active.",
+    "links": [
+      { "l": "Apollo 11 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_11", "t": "intro" },
+      { "l": "Lunar laser ranging (NASA)", "u": "https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/", "t": "core" }
+    ]
+  },
+  {
+    "id": "apollo12",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1969,
+    "landing_date": "1969-11-19",
+    "lat": -3.01,
+    "lon": -23.42,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 1.31,
+    "eva_duration_hours": 7.75,
+    "samples_kg": 34.4,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 12 mission report. Public domain. Surveyor 3 components retrieved by Conrad and Bean.",
+    "links": [
+      { "l": "Apollo 12 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_12", "t": "intro" }
+    ]
+  },
+  {
+    "id": "apollo14",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1971,
+    "landing_date": "1971-02-05",
+    "lat": -3.65,
+    "lon": -17.47,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 1.39,
+    "eva_duration_hours": 9.38,
+    "samples_kg": 42.8,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 14 mission report. Public domain.",
+    "links": [
+      { "l": "Apollo 14 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_14", "t": "intro" }
+    ]
+  },
+  {
+    "id": "apollo15",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1971,
+    "landing_date": "1971-07-30",
+    "lat": 26.13,
+    "lon": 3.63,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 2.83,
+    "eva_duration_hours": 18.58,
+    "samples_kg": 77.3,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 15 mission report. Public domain. Fallen Astronaut sculpture left on the surface.",
+    "links": [
+      { "l": "Apollo 15 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_15", "t": "intro" },
+      { "l": "Fallen Astronaut — Wikipedia", "u": "https://en.wikipedia.org/wiki/Fallen_Astronaut", "t": "intro" }
+    ]
+  },
+  {
+    "id": "apollo16",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1972,
+    "landing_date": "1972-04-21",
+    "lat": -8.97,
+    "lon": 15.50,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 2.96,
+    "eva_duration_hours": 20.23,
+    "samples_kg": 95.7,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 16 mission report. Public domain.",
+    "links": [
+      { "l": "Apollo 16 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_16", "t": "intro" }
+    ]
+  },
+  {
+    "id": "apollo17",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1972,
+    "landing_date": "1972-12-11",
+    "lat": 20.19,
+    "lon": 30.77,
+    "crewed": true,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 3.12,
+    "eva_duration_hours": 22.08,
+    "samples_kg": 110.5,
+    "data_quality": "good",
+    "credit": "© NASA — Apollo 17 mission report. Public domain. Last crewed lunar landing of the 20th century.",
+    "links": [
+      { "l": "Apollo 17 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_17", "t": "intro" },
+      { "l": "Cernan, last man on the Moon (NASA)", "u": "https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/", "t": "intro" }
+    ]
+  },
+  {
+    "id": "change3",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2013,
+    "landing_date": "2013-12-14",
+    "lat": 44.12,
+    "lon": -19.51,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "ongoing",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© CNSA / National Space Science Data Center. Lander remains active; longest-surviving lunar lander.",
+    "links": [
+      { "l": "Chang'e 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_3", "t": "intro" }
+    ]
+  },
+  {
+    "id": "change4",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2019,
+    "landing_date": "2019-01-03",
+    "lat": -45.5,
+    "lon": 177.6,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "ongoing",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© CNSA / Beijing Aerospace Control Center. First soft landing on the lunar far side; Yutu-2 still active.",
+    "links": [
+      { "l": "Chang'e 4 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_4", "t": "intro" },
+      { "l": "Far side of the Moon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Far_side_of_the_Moon", "t": "core" }
+    ]
+  },
+  {
+    "id": "change5",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2020,
+    "landing_date": "2020-12-01",
+    "lat": 43.10,
+    "lon": -51.80,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 2,
+    "samples_kg": 1.731,
+    "data_quality": "good",
+    "credit": "© CNSA. Sample mass 1.731 kg returned to Earth 2020-12-16; first lunar samples since Luna 24 (1976).",
+    "links": [
+      { "l": "Chang'e 5 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_5", "t": "intro" }
+    ]
+  },
+  {
+    "id": "change6",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2024,
+    "landing_date": "2024-06-02",
+    "lat": -41.6,
+    "lon": -153.9,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 2,
+    "samples_kg": 1.935,
+    "data_quality": "good",
+    "credit": "© CNSA. First sample return from the lunar far side; samples returned to Earth 2024-06-25.",
+    "links": [
+      { "l": "Chang'e 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_6", "t": "intro" }
+    ]
+  },
+  {
+    "id": "chandrayaan3",
+    "agency": "ISRO",
+    "nation": "India",
+    "year": 2023,
+    "landing_date": "2023-08-23",
+    "lat": -69.37,
+    "lon": 32.35,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 14,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© ISRO — Chandrayaan-3 mission. First spacecraft to soft-land near the lunar south pole.",
+    "links": [
+      { "l": "Chandrayaan-3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-3", "t": "intro" },
+      { "l": "Lunar water ice (NASA)", "u": "https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon", "t": "core" }
+    ]
+  },
+  {
+    "id": "slim",
+    "agency": "JAXA",
+    "nation": "Japan",
+    "year": 2024,
+    "landing_date": "2024-01-19",
+    "lat": -13.31,
+    "lon": 25.24,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "ongoing",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© JAXA — Smart Lander for Investigating Moon. Landed tilted; intermittent operations as solar panels rotate into sunlight.",
+    "links": [
+      { "l": "SLIM — Wikipedia", "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon", "t": "intro" }
+    ]
+  },
+  {
+    "id": "artemis3",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2027,
+    "lat": -89.5,
+    "lon": 0,
+    "crewed": true,
+    "status": "PLANNED",
+    "surface_status": "planned",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© NASA — Artemis program. Planned launch NET 2027; specific landing site within the south polar region TBD. Will be the first crewed lunar landing since Apollo 17 in December 1972 — a 55-year gap.",
+    "links": [
+      { "l": "Artemis III — Wikipedia", "u": "https://en.wikipedia.org/wiki/Artemis_3", "t": "intro" },
+      { "l": "Artemis program (NASA)", "u": "https://www.nasa.gov/humans-in-space/artemis/", "t": "intro" },
+      { "l": "Lunar south pole water ice (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aap8637", "t": "deep" }
+    ]
+  }
+]

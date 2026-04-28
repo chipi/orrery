@@ -1,0 +1,23 @@
+{
+  "id": "viking1",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Langley Research Center",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 1975,
+  "status": "FLOWN",
+  "departure_date": "1975-08-20",
+  "arrival_date": "1976-06-19",
+  "transit_days": 304,
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3527 kg (orbiter + lander)",
+  "delta_v": "~4.5 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / Langley / JPL — public domain. Lander touchdown 1976-07-20; operated 6 years 4 months. Orbiter operated 4 years 1 month.",
+  "links": [
+    { "l": "Viking 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_1", "t": "intro" },
+    { "l": "Viking program (NASA)", "u": "https://science.nasa.gov/mission/viking-1/", "t": "intro" },
+    { "l": "Viking 1 (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A", "t": "core" }
+  ]
+}

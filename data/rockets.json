@@ -1,0 +1,121 @@
+[
+  {
+    "id": "falcon-heavy",
+    "agency": "SpaceX",
+    "agency_full": "Space Exploration Technologies Corp.",
+    "sector": "private",
+    "status": "ACTIVE",
+    "color": "#005288",
+    "first_flight": 2018,
+    "payload_to_leo_kg": 63800,
+    "payload_to_mars_kg": 13000,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 9.4,
+    "isp_s": 348,
+    "data_quality": "good",
+    "credit": "© SpaceX — Falcon User's Guide (publicly published spec sheet)",
+    "links": [
+      { "l": "Falcon Heavy — SpaceX", "u": "https://www.spacex.com/vehicles/falcon-heavy/", "t": "intro" },
+      { "l": "Falcon Heavy — Wikipedia", "u": "https://en.wikipedia.org/wiki/Falcon_Heavy", "t": "intro" }
+    ]
+  },
+  {
+    "id": "starship",
+    "agency": "SpaceX",
+    "agency_full": "Space Exploration Technologies Corp.",
+    "sector": "private",
+    "status": "ACTIVE",
+    "color": "#005288",
+    "first_flight": 2023,
+    "payload_to_leo_kg": 150000,
+    "payload_to_mars_kg": 100000,
+    "payload_to_mars_definition": "mars_surface",
+    "delta_v_capability_km_s": 13.0,
+    "isp_s": 380,
+    "data_quality": "partial",
+    "credit": "© SpaceX — Starship technical overview. Mars-surface number assumes on-orbit propellant transfer per published architecture; without refilling, Starship cannot reach Mars.",
+    "links": [
+      { "l": "Starship — SpaceX", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" },
+      { "l": "SpaceX Mars Architecture — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "core" }
+    ]
+  },
+  {
+    "id": "sls-block-1",
+    "agency": "NASA",
+    "agency_full": "National Aeronautics and Space Administration",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#0B3D91",
+    "first_flight": 2022,
+    "payload_to_leo_kg": 95000,
+    "payload_to_mars_kg": 17000,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.9,
+    "isp_s": 462,
+    "data_quality": "good",
+    "credit": "© NASA — SLS reference guide; U.S. Government work, public domain",
+    "links": [
+      { "l": "SLS — NASA", "u": "https://www.nasa.gov/reference/sls/", "t": "intro" },
+      { "l": "SLS — Wikipedia", "u": "https://en.wikipedia.org/wiki/Space_Launch_System", "t": "intro" }
+    ]
+  },
+  {
+    "id": "atlas-v-541",
+    "agency": "ULA",
+    "agency_full": "United Launch Alliance",
+    "sector": "private",
+    "status": "RETIRED",
+    "color": "#0058A0",
+    "first_flight": 2010,
+    "payload_to_leo_kg": 17443,
+    "payload_to_mars_kg": 3839,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.5,
+    "isp_s": 451,
+    "data_quality": "good",
+    "credit": "© ULA — Atlas V User's Guide rev. 11. Mars number is MSL/Curiosity's actual launch mass (2011-11-26).",
+    "links": [
+      { "l": "Atlas V — ULA", "u": "https://www.ulalaunch.com/rockets/atlas-v", "t": "intro" },
+      { "l": "Atlas V — Wikipedia", "u": "https://en.wikipedia.org/wiki/Atlas_V", "t": "intro" }
+    ]
+  },
+  {
+    "id": "long-march-5",
+    "agency": "CNSA",
+    "agency_full": "China National Space Administration",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#DE2910",
+    "first_flight": 2016,
+    "payload_to_leo_kg": 25000,
+    "payload_to_mars_kg": 5000,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.5,
+    "isp_s": 430,
+    "data_quality": "good",
+    "credit": "© CNSA / CASC — Long March 5 public release. Mars number is Tianwen-1's demonstrated launch mass (2020-07-23).",
+    "links": [
+      { "l": "Long March 5 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Long_March_5", "t": "intro" }
+    ]
+  },
+  {
+    "id": "ariane-6",
+    "agency": "ESA",
+    "agency_full": "European Space Agency / Arianespace",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#003299",
+    "first_flight": 2024,
+    "payload_to_leo_kg": 21500,
+    "payload_to_mars_kg": 5500,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.4,
+    "isp_s": 446,
+    "data_quality": "partial",
+    "credit": "© ESA / Arianespace — Ariane 6 user manual. Mars number derived from GTO capability; Ariane 6 has not yet flown a planetary mission.",
+    "links": [
+      { "l": "Ariane 6 — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6", "t": "intro" },
+      { "l": "Ariane 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ariane_6", "t": "intro" }
+    ]
+  }
+]

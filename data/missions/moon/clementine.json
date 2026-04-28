@@ -1,0 +1,22 @@
+{
+  "id": "clementine",
+  "agency": "NASA",
+  "agency_full": "U.S. Naval Research Laboratory / NASA (joint Department of Defense-NASA mission)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1994,
+  "status": "FLOWN",
+  "departure_date": "1994-01-25",
+  "arrival_date": "1994-02-19",
+  "transit_days": 25,
+  "vehicle": "Titan II G",
+  "payload": "424 kg dry mass; 1690 kg launch mass with propellant",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© U.S. NRL / NASA — declassified DoD mission. Purpose: technology demonstration for SDI, mapped Moon as bonus. Found first hints of water ice at lunar poles.",
+  "links": [
+    { "l": "Clementine — Wikipedia", "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)", "t": "intro" },
+    { "l": "Clementine (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1994-004A", "t": "core" }
+  ]
+}

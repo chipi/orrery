@@ -1,0 +1,23 @@
+{
+  "id": "apollo11",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1969,
+  "status": "FLOWN",
+  "departure_date": "1969-07-16",
+  "arrival_date": "1969-07-20",
+  "transit_days": 4,
+  "vehicle": "Saturn V (AS-506)",
+  "payload": "46782 kg launched (CSM Columbia + LM Eagle)",
+  "delta_v": "~6 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 11 mission report. Public domain. First crewed landing on another celestial body. Touchdown at Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
+  "links": [
+    { "l": "Apollo 11 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_11", "t": "intro" },
+    { "l": "Apollo 11 mission overview (NASA)", "u": "https://www.nasa.gov/mission/apollo-11/", "t": "intro" },
+    { "l": "Lunar laser ranging (NASA)", "u": "https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/", "t": "core" }
+  ]
+}

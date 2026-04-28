@@ -1,0 +1,6 @@
+{
+  "name": "GPS Constellation",
+  "short": "GPS",
+  "description": "31 active satellites at 20,200 km. Every navigation app, every drone, every ship at sea depends on this constellation. Originally military, opened to civilians in 1983. Signal accuracy: 30 cm for civilian use, 1 cm for military.",
+  "scale_fact": "GPS is 50× higher than the ISS. You've never looked up and seen it — but it knows exactly where you are."
+}

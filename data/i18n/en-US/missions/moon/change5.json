@@ -1,0 +1,15 @@
+{
+  "name": "Chang'e 5",
+  "type": "SAMPLE RETURN · FLOWN",
+  "first": "First lunar sample return in 44 years (since Luna 24, 1976)",
+  "description": "Chang'e 5 was the first sample return from the Moon since the Soviet Union's Luna 24 in 1976 — a 44-year gap. The architecture: orbiter + lander + ascent vehicle + sample-return capsule, all in one launch. The lander touched down at Mons Rümker, drilled and scooped 1.731 kg of regolith, lifted off, rendezvoused and docked with the orbiter (the first robotic lunar rendezvous), and the capsule returned to Earth. The samples are from a region only 2 billion years old — much younger than any Apollo or Luna sample, rewriting models of lunar volcanism.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Long March 5 from Wenchang.", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 8, "label": "TOUCHDOWN", "note": "Lander descends to Mons Rümker (Oceanus Procellarum) 2020-12-01.", "type": "nominal" },
+    { "met": 8.5, "label": "SAMPLING", "note": "1.731 kg collected via scoop and drill.", "type": "info" },
+    { "met": 10, "label": "ASCENT", "note": "Ascent vehicle lifts off lunar surface.", "type": "nominal" },
+    { "met": 11, "label": "RENDEZVOUS", "note": "First robotic lunar rendezvous; sample container transferred to orbiter.", "type": "info" },
+    { "met": 23, "label": "EARTH RETURN", "note": "Sample capsule lands in Inner Mongolia 2020-12-16.", "type": "info" }
+  ]
+}

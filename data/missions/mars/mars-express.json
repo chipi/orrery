@@ -1,0 +1,22 @@
+{
+  "id": "mars-express",
+  "agency": "ESA",
+  "agency_full": "European Space Agency",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#003299",
+  "year": 2003,
+  "status": "ACTIVE",
+  "departure_date": "2003-06-02",
+  "arrival_date": "2003-12-25",
+  "transit_days": 206,
+  "vehicle": "Soyuz-FG / Fregat",
+  "payload": "1183 kg (1123 kg orbiter + 60 kg Beagle 2 lander)",
+  "delta_v": "~4.5 km/s",
+  "data_quality": "good",
+  "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first interplanetary spacecraft and longest-running non-NASA Mars mission.",
+  "links": [
+    { "l": "Mars Express — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Express", "t": "intro" },
+    { "l": "Mars Express (ESA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express", "t": "intro" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "curiosity",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2011,
+  "status": "ACTIVE",
+  "departure_date": "2011-11-26",
+  "arrival_date": "2012-08-06",
+  "transit_days": 254,
+  "vehicle": "Atlas V 541",
+  "payload": "3839 kg launch mass (899 kg rover on surface)",
+  "delta_v": "~6.1 km/s",
+  "data_quality": "good",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First nuclear-powered (RTG) Mars rover. Sky-crane EDL architecture.",
+  "links": [
+    { "l": "Curiosity (rover) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)", "t": "intro" },
+    { "l": "Mars Science Laboratory (NASA)", "u": "https://science.nasa.gov/mission/msl-curiosity/", "t": "intro" },
+    { "l": "Sky crane EDL — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Science_Laboratory#Entry,_descent_and_landing", "t": "core" }
+  ]
+}

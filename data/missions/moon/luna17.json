@@ -1,0 +1,22 @@
+{
+  "id": "luna17",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1970,
+  "status": "FLOWN",
+  "departure_date": "1970-11-10",
+  "arrival_date": "1970-11-17",
+  "transit_days": 7,
+  "vehicle": "Proton-K / D",
+  "payload": "5660 kg launch mass; 322 kg Lunokhod 1 rover",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). Delivered Lunokhod 1, the first remote-controlled rover to operate on another world.",
+  "links": [
+    { "l": "Lunokhod 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunokhod_1", "t": "intro" },
+    { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" }
+  ]
+}

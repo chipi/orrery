@@ -1,0 +1,21 @@
+{
+  "id": "change5",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration / China Academy of Space Technology",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2020,
+  "status": "FLOWN",
+  "departure_date": "2020-11-23",
+  "arrival_date": "2020-12-01",
+  "transit_days": 8,
+  "vehicle": "Long March 5",
+  "payload": "8200 kg launch mass; 1.731 kg sample returned",
+  "delta_v": "~5 km/s",
+  "data_quality": "good",
+  "credit": "© CNSA. First lunar sample return in 44 years — ending a gap since Luna 24 (1976). Returned 1.731 kg from Mons Rümker, a geologically young (2 Ga) volcanic region.",
+  "links": [
+    { "l": "Chang'e 5 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_5", "t": "intro" }
+  ]
+}

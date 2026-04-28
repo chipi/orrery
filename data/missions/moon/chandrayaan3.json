@@ -1,0 +1,21 @@
+{
+  "id": "chandrayaan3",
+  "agency": "ISRO",
+  "agency_full": "Indian Space Research Organisation",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#FF9933",
+  "year": 2023,
+  "status": "FLOWN",
+  "departure_date": "2023-07-14",
+  "arrival_date": "2023-08-23",
+  "transit_days": 40,
+  "vehicle": "LVM3 M4 (formerly GSLV Mk III)",
+  "payload": "3900 kg launch mass; 1726 kg lander+rover",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© ISRO — Chandrayaan-3 mission. First soft-landing near the lunar south pole — region with permanently shadowed craters and water ice deposits. Followed Chandrayaan-2's lander failure in 2019.",
+  "links": [
+    { "l": "Chandrayaan-3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-3", "t": "intro" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "chandrayaan1",
+  "agency": "ISRO",
+  "agency_full": "Indian Space Research Organisation",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#FF9933",
+  "year": 2008,
+  "status": "FLOWN",
+  "departure_date": "2008-10-22",
+  "arrival_date": "2008-11-08",
+  "transit_days": 17,
+  "vehicle": "PSLV-XL (C11)",
+  "payload": "1380 kg launch mass; 35 kg Moon Impact Probe",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© ISRO. India's first lunar mission. Mission ended 2009-08-29 after radio contact lost. Discovered water molecules in lunar soil — confirmed by NASA's M3 instrument hosted on the spacecraft.",
+  "links": [
+    { "l": "Chandrayaan-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-1", "t": "intro" },
+    { "l": "Lunar water molecules (Science 2009)", "u": "https://www.science.org/doi/10.1126/science.1178658", "t": "deep" }
+  ]
+}

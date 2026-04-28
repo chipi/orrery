@@ -27,6 +27,8 @@ const missionOverlaySchema = loadSchema('mission-overlay.schema.json');
 const planetsSchema = loadSchema('planets.schema.json');
 const rocketSchema = loadSchema('rocket.schema.json');
 const rocketOverlaySchema = loadSchema('rocket-overlay.schema.json');
+const earthObjectSchema = loadSchema('earth-object.schema.json');
+const earthObjectOverlaySchema = loadSchema('earth-object-overlay.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -34,6 +36,8 @@ const validateMissionOverlay = ajv.compile(missionOverlaySchema);
 const validatePlanets = ajv.compile(planetsSchema);
 const validateRockets = ajv.compile(rocketSchema);
 const validateRocketOverlay = ajv.compile(rocketOverlaySchema);
+const validateEarthObjects = ajv.compile(earthObjectSchema);
+const validateEarthObjectOverlay = ajv.compile(earthObjectOverlaySchema);
 
 let failed = 0;
 let passed = 0;
@@ -76,6 +80,7 @@ console.log('Validating data...');
 // 0. Reference data
 validateFile('data/planets.json', validatePlanets);
 validateFile('data/rockets.json', validateRockets);
+validateFile('data/earth-objects.json', validateEarthObjects);
 
 // 1. Mission index
 validateFile('data/missions/index.json', validateMissionIndex);
@@ -104,6 +109,15 @@ if (existsSync(i18nDir)) {
   for (const locale of readdirSync(i18nDir)) {
     for (const file of listJson(join(i18nDir, locale, 'rockets'))) {
       validateFile(file, validateRocketOverlay);
+    }
+  }
+}
+
+// 5. Earth-object overlay files (per locale)
+if (existsSync(i18nDir)) {
+  for (const locale of readdirSync(i18nDir)) {
+    for (const file of listJson(join(i18nDir, locale, 'earth-objects'))) {
+      validateFile(file, validateEarthObjectOverlay);
     }
   }
 }

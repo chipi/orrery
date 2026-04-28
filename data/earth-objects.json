@@ -1,0 +1,247 @@
+[
+  {
+    "id": "iss",
+    "regime": "LEO",
+    "alt": 408,
+    "period": 92.9,
+    "inclination": 51.6,
+    "count": 1,
+    "color": "#4ecdc4",
+    "agencies": ["NASA", "ESA", "JAXA", "ROSCOSMOS", "CSA"],
+    "launched": 1998,
+    "status": "ACTIVE",
+    "crew": 7,
+    "credit": "© NASA — facts and figures (public domain)",
+    "links": [
+      { "l": "ISS — Wikipedia", "u": "https://en.wikipedia.org/wiki/International_Space_Station", "t": "intro" },
+      { "l": "NASA ISS live tracker", "u": "https://spotthestation.nasa.gov/", "t": "intro" },
+      { "l": "ISS facts and figures (NASA)", "u": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/", "t": "core" }
+    ]
+  },
+  {
+    "id": "tiangong",
+    "regime": "LEO",
+    "alt": 389,
+    "period": 91.5,
+    "inclination": 41.5,
+    "count": 1,
+    "color": "#DE2910",
+    "agencies": ["CNSA"],
+    "launched": 2021,
+    "status": "ACTIVE",
+    "crew": 3,
+    "credit": "© CMSA — public release materials",
+    "links": [
+      { "l": "Tiangong — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tiangong_space_station", "t": "intro" },
+      { "l": "China Manned Space program", "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station", "t": "intro" }
+    ]
+  },
+  {
+    "id": "hubble",
+    "regime": "LEO",
+    "alt": 547,
+    "period": 95.4,
+    "inclination": 28.5,
+    "count": 1,
+    "color": "#7b9cff",
+    "agencies": ["NASA", "ESA"],
+    "launched": 1990,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / STScI / ESA — public domain (NASA portion)",
+    "links": [
+      { "l": "Hubble Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "t": "intro" },
+      { "l": "Hubble image gallery (NASA)", "u": "https://hubblesite.org/images/gallery", "t": "intro" },
+      { "l": "Hubble servicing missions (NASA)", "u": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/", "t": "core" }
+    ]
+  },
+  {
+    "id": "gps",
+    "regime": "MEO",
+    "alt": 20200,
+    "period": 717.9,
+    "inclination": 55,
+    "count": 4,
+    "color": "#0B3D91",
+    "agencies": ["NASA", "USAF"],
+    "launched": 1978,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© U.S. Space Force / GPS.gov (public domain)",
+    "links": [
+      { "l": "GPS — Wikipedia", "u": "https://en.wikipedia.org/wiki/Global_Positioning_System", "t": "intro" },
+      { "l": "GPS.gov (official)", "u": "https://www.gps.gov/", "t": "intro" },
+      { "l": "GNSS constellations comparison", "u": "https://en.wikipedia.org/wiki/Global_navigation_satellite_system", "t": "core" }
+    ]
+  },
+  {
+    "id": "galileo",
+    "regime": "MEO",
+    "alt": 23222,
+    "period": 844.8,
+    "inclination": 56,
+    "count": 4,
+    "color": "#1C3C8A",
+    "agencies": ["ESA"],
+    "launched": 2011,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA / European Commission",
+    "links": [
+      { "l": "Galileo — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)", "t": "intro" },
+      { "l": "ESA Galileo overview", "u": "https://www.esa.int/Applications/Navigation/Galileo", "t": "intro" }
+    ]
+  },
+  {
+    "id": "glonass",
+    "regime": "MEO",
+    "alt": 19100,
+    "period": 675.7,
+    "inclination": 64.8,
+    "count": 4,
+    "color": "#003087",
+    "agencies": ["ROSCOSMOS"],
+    "launched": 1982,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© Roscosmos / Russian Space Forces",
+    "links": [
+      { "l": "GLONASS — Wikipedia", "u": "https://en.wikipedia.org/wiki/GLONASS", "t": "intro" }
+    ]
+  },
+  {
+    "id": "beidou",
+    "regime": "MEO",
+    "alt": 21528,
+    "period": 760,
+    "inclination": 55,
+    "count": 4,
+    "color": "#DE2910",
+    "agencies": ["CNSA"],
+    "launched": 2000,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© China Satellite Navigation Office",
+    "links": [
+      { "l": "BeiDou — Wikipedia", "u": "https://en.wikipedia.org/wiki/BeiDou", "t": "intro" }
+    ]
+  },
+  {
+    "id": "geo",
+    "regime": "GEO",
+    "alt": 35786,
+    "period": 1436,
+    "inclination": 0,
+    "count": 6,
+    "color": "#ffc850",
+    "agencies": ["NASA", "ESA"],
+    "launched": 1963,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NOAA / NASA / ESA — collective representation of the geostationary belt",
+    "links": [
+      { "l": "Geostationary orbit — Wikipedia", "u": "https://en.wikipedia.org/wiki/Geostationary_orbit", "t": "intro" },
+      { "l": "Arthur C. Clarke (proposed GEO 1945)", "u": "https://en.wikipedia.org/wiki/Arthur_C._Clarke", "t": "intro" },
+      { "l": "GOES weather system (NOAA)", "u": "https://www.goes.noaa.gov/", "t": "core" }
+    ]
+  },
+  {
+    "id": "chandra",
+    "regime": "HEO",
+    "alt": 133000,
+    "alt_peri": 9942,
+    "alt_apo": 133000,
+    "ecc": 0.8,
+    "elliptical": true,
+    "period": 3808,
+    "inclination": 76.7,
+    "count": 1,
+    "color": "#ff8c3c",
+    "agencies": ["NASA"],
+    "launched": 1999,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / SAO / CXC — public domain (NASA portion)",
+    "links": [
+      { "l": "Chandra X-ray Observatory — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory", "t": "intro" },
+      { "l": "Chandra image gallery (NASA)", "u": "https://chandra.harvard.edu/photo/category.html", "t": "intro" },
+      { "l": "X-ray astronomy — Wikipedia", "u": "https://en.wikipedia.org/wiki/X-ray_astronomy", "t": "core" }
+    ]
+  },
+  {
+    "id": "xmm",
+    "regime": "HEO",
+    "alt": 113946,
+    "alt_peri": 7365,
+    "alt_apo": 113946,
+    "ecc": 0.77,
+    "elliptical": true,
+    "period": 3168,
+    "inclination": 40,
+    "count": 1,
+    "color": "#FFD700",
+    "agencies": ["ESA"],
+    "launched": 1999,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA — XMM-Newton mission",
+    "links": [
+      { "l": "XMM-Newton — Wikipedia", "u": "https://en.wikipedia.org/wiki/XMM-Newton", "t": "intro" },
+      { "l": "ESA XMM-Newton science", "u": "https://www.cosmos.esa.int/web/xmm-newton", "t": "core" }
+    ]
+  },
+  {
+    "id": "lro",
+    "regime": "MOON",
+    "alt": 384450,
+    "period": 7380,
+    "inclination": 90,
+    "count": 1,
+    "color": "#aaaacc",
+    "agencies": ["NASA"],
+    "launched": 2009,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / GSFC / ASU — public domain",
+    "links": [
+      { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
+      { "l": "LRO camera images (LROC)", "u": "https://www.lroc.asu.edu/", "t": "intro" },
+      { "l": "Water on the Moon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_water", "t": "core" }
+    ]
+  },
+  {
+    "id": "jwst",
+    "regime": "L2",
+    "alt": 1500000,
+    "count": 1,
+    "color": "#ffd700",
+    "agencies": ["NASA", "ESA", "CSA"],
+    "launched": 2022,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© NASA / ESA / CSA / STScI — public domain (NASA portion)",
+    "links": [
+      { "l": "James Webb Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope", "t": "intro" },
+      { "l": "JWST first images (NASA)", "u": "https://webbtelescope.org/news/first-images", "t": "intro" },
+      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" },
+      { "l": "JWST approved programs", "u": "https://www.stsci.edu/jwst/science-execution/approved-programs", "t": "deep" }
+    ]
+  },
+  {
+    "id": "gaia",
+    "regime": "L2",
+    "alt": 1500000,
+    "count": 1,
+    "color": "#FFD700",
+    "agencies": ["ESA"],
+    "launched": 2013,
+    "status": "ACTIVE",
+    "crew": 0,
+    "credit": "© ESA / Gaia / DPAC",
+    "links": [
+      { "l": "Gaia — Wikipedia", "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)", "t": "intro" },
+      { "l": "Gaia data release (ESA)", "u": "https://www.cosmos.esa.int/web/gaia/data-release-3", "t": "core" },
+      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" }
+    ]
+  }
+]

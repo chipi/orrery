@@ -13,9 +13,9 @@ The subsystems of the production application.
 
 **Data client** (`src/lib/data.ts`) — fetch and cache layer for all JSON data files. Returns JSON as-is, except for the locale-overlay merge for mission content per ADR-017. Cache is a `Map` keyed by URL, session-only. Exposes: `getMissionIndex()`, `getMission(id, dest)`, `filterMissions({dest, status, agency})`, `planets()`, `rockets()`, `earthObjects()`. See ADR-006, ADR-017.
 
-**Nav bar component** (`src/components/Nav.svelte`) — shared across all six screens. Renders the 52px bar with wordmark, screen links, and a slot for screen-specific right-region controls. Active screen highlighted in blue. All other screens link to their route via `<a href>`.
+**Nav bar component** (`src/lib/components/Nav.svelte`) — shared across all six screens. Renders the 52px bar with wordmark, screen links, and a slot for screen-specific right-region controls. Active screen highlighted in blue. All other screens link to their route via `<a href>`.
 
-**Right panel component** (`src/components/Panel.svelte`) — shared detail panel used by explore, missions, and moon screens. Bottom sheet on mobile, right drawer on desktop per ADR-018. Renders header, tab strip (OVERVIEW/TECHNICAL/LEARN/SIZES), scrollable content area, and optional action footer. Panel content is injected by each screen.
+**Right panel component** (`src/lib/components/Panel.svelte`) — shared detail panel used by explore, missions, and moon screens. Bottom sheet on mobile, right drawer on desktop per ADR-018. Renders header, tab strip (OVERVIEW/TECHNICAL/LEARN/SIZES), scrollable content area, and optional action footer. Panel content is injected by each screen.
 
 **Orbital library** (`src/lib/orbital.ts`) — Keplerian mechanics. `keplerPos(a, e, L0, T, t)` returns position at time t (days from J2000). `visViva(a, r)` returns orbital velocity in km/s. All constants from IAU; see §contracts.
 

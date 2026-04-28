@@ -1,18 +1,17 @@
 <script lang="ts">
+  import '$lib/styles/app.css';
+  import Nav from '$lib/components/Nav.svelte';
+
   let { children } = $props();
 </script>
 
-{@render children?.()}
+<Nav />
+<main>
+  {@render children?.()}
+</main>
 
 <style>
-  :global(body) {
-    margin: 0;
-    background: #04040c;
-    color: #ffffff;
-    font-family: system-ui, sans-serif;
-    min-height: 100vh;
-  }
-  :global(*) {
-    box-sizing: border-box;
+  main {
+    min-height: calc(100vh - var(--nav-height));
   }
 </style>

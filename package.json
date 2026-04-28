@@ -26,6 +26,7 @@
     "@sveltejs/adapter-static": "3.0.6",
     "@sveltejs/kit": "2.10.1",
     "@sveltejs/vite-plugin-svelte": "4.0.4",
+    "@types/three": "0.128.0",
     "eslint": "9.17.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-svelte": "2.46.1",
@@ -39,5 +40,8 @@
     "typescript-eslint": "8.18.2",
     "vite": "5.4.11",
     "vitest": "2.1.8"
+  },
+  "dependencies": {
+    "three": "0.128.0"
   }
 }

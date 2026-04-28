@@ -19,6 +19,10 @@ export default [
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
     },
   },
   {
@@ -30,6 +34,6 @@ export default [
     },
   },
   {
-    ignores: ['build/', '.svelte-kit/', 'dist/', 'node_modules/'],
+    ignores: ['build/', '.svelte-kit/', 'dist/', 'node_modules/', 'src/lib/paraglide/'],
   },
 ];

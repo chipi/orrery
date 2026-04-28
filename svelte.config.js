@@ -17,6 +17,10 @@ const config = {
     paths: {
       base,
     },
+    alias: {
+      $types: './src/types',
+      '$types/*': './src/types/*',
+    },
   },
 };
 

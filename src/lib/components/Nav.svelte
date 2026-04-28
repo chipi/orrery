@@ -1,18 +1,19 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
   let { right }: Props = $props();
 
   const links = [
-    { href: `${base}/moon`, label: 'MOON' },
-    { href: `${base}/explore`, label: 'EXPLORE' },
-    { href: `${base}/plan`, label: 'PLAN' },
-    { href: `${base}/fly`, label: 'FLY' },
-    { href: `${base}/missions`, label: 'MISSIONS' },
-    { href: `${base}/earth`, label: 'EARTH' },
+    { href: `${base}/moon`, label: m.nav_moon() },
+    { href: `${base}/explore`, label: m.nav_explore() },
+    { href: `${base}/plan`, label: m.nav_plan() },
+    { href: `${base}/fly`, label: m.nav_fly() },
+    { href: `${base}/missions`, label: m.nav_missions() },
+    { href: `${base}/earth`, label: m.nav_earth() },
   ];
 
   function isActive(href: string, pathname: string): boolean {
@@ -23,7 +24,7 @@
 <nav>
   <div class="left">
     <span class="wordmark">ORRERY</span>
-    <span class="subtitle">MISSION SIMULATOR</span>
+    <span class="subtitle">{m.nav_subtitle()}</span>
   </div>
 
   <div class="center">

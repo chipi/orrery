@@ -21,6 +21,10 @@ jobs:
       - run: npm run build
         env:
           VITE_BASE: /orrery/
+      - run: npm run docs:build
+        env:
+          DOCS_BASE: /orrery/docs/
+      - run: cp -R docs/.vitepress/dist build/docs
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

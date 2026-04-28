@@ -8,4 +8,6 @@ docs/
 .github/
 *.md
 src/lib/paraglide/
+src/lib/styles/fonts.css
 project.inlang/
+public/fonts/

@@ -18,6 +18,7 @@
     "typecheck": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "test": "npm run i18n:compile && vitest run --passWithNoTests",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
+    "fetch-assets": "tsx scripts/fetch-assets.ts",
     "ci": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "devDependencies": {
@@ -36,6 +37,7 @@
     "svelte": "5.16.0",
     "svelte-check": "4.1.1",
     "tslib": "2.8.1",
+    "tsx": "4.19.2",
     "typescript": "5.7.2",
     "typescript-eslint": "8.18.2",
     "vite": "5.4.11",

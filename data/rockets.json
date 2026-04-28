@@ -8,9 +8,11 @@
     "color": "#005288",
     "first_flight": 2018,
     "payload_to_leo_kg": 63800,
-    "payload_to_mars_kg": 16800,
+    "payload_to_mars_kg": 13000,
+    "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 9.4,
     "isp_s": 348,
+    "data_quality": "good",
     "credit": "© SpaceX — Falcon User's Guide (publicly published spec sheet)",
     "links": [
       { "l": "Falcon Heavy — SpaceX", "u": "https://www.spacex.com/vehicles/falcon-heavy/", "t": "intro" },
@@ -27,9 +29,11 @@
     "first_flight": 2023,
     "payload_to_leo_kg": 150000,
     "payload_to_mars_kg": 100000,
+    "payload_to_mars_definition": "mars_surface",
     "delta_v_capability_km_s": 13.0,
     "isp_s": 380,
-    "credit": "© SpaceX — Starship technical overview (publicly published)",
+    "data_quality": "partial",
+    "credit": "© SpaceX — Starship technical overview. Mars-surface number assumes on-orbit propellant transfer per published architecture; without refilling, Starship cannot reach Mars.",
     "links": [
       { "l": "Starship — SpaceX", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" },
       { "l": "SpaceX Mars Architecture — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "core" }
@@ -44,9 +48,11 @@
     "color": "#0B3D91",
     "first_flight": 2022,
     "payload_to_leo_kg": 95000,
-    "payload_to_mars_kg": 27000,
+    "payload_to_mars_kg": 17000,
+    "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.9,
     "isp_s": 462,
+    "data_quality": "good",
     "credit": "© NASA — SLS reference guide; U.S. Government work, public domain",
     "links": [
       { "l": "SLS — NASA", "u": "https://www.nasa.gov/reference/sls/", "t": "intro" },
@@ -63,9 +69,11 @@
     "first_flight": 2010,
     "payload_to_leo_kg": 17443,
     "payload_to_mars_kg": 3839,
+    "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.5,
     "isp_s": 451,
-    "credit": "© ULA — Atlas V User's Guide rev. 11 (publicly published)",
+    "data_quality": "good",
+    "credit": "© ULA — Atlas V User's Guide rev. 11. Mars number is MSL/Curiosity's actual launch mass (2011-11-26).",
     "links": [
       { "l": "Atlas V — ULA", "u": "https://www.ulalaunch.com/rockets/atlas-v", "t": "intro" },
       { "l": "Atlas V — Wikipedia", "u": "https://en.wikipedia.org/wiki/Atlas_V", "t": "intro" }
@@ -81,9 +89,11 @@
     "first_flight": 2016,
     "payload_to_leo_kg": 25000,
     "payload_to_mars_kg": 5000,
+    "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.5,
     "isp_s": 430,
-    "credit": "© CNSA / CASC — Long March 5 public release materials",
+    "data_quality": "good",
+    "credit": "© CNSA / CASC — Long March 5 public release. Mars number is Tianwen-1's demonstrated launch mass (2020-07-23).",
     "links": [
       { "l": "Long March 5 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Long_March_5", "t": "intro" }
     ]
@@ -97,10 +107,12 @@
     "color": "#003299",
     "first_flight": 2024,
     "payload_to_leo_kg": 21500,
-    "payload_to_mars_kg": 5000,
+    "payload_to_mars_kg": 5500,
+    "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.4,
     "isp_s": 446,
-    "credit": "© ESA / Arianespace — Ariane 6 user manual (publicly published)",
+    "data_quality": "partial",
+    "credit": "© ESA / Arianespace — Ariane 6 user manual. Mars number derived from GTO capability; Ariane 6 has not yet flown a planetary mission.",
     "links": [
       { "l": "Ariane 6 — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6", "t": "intro" },
       { "l": "Ariane 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ariane_6", "t": "intro" }

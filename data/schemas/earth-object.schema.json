@@ -2,15 +2,16 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "earth-object.schema.json",
   "title": "EarthObjects",
-  "description": "Objects in Earth's orbital neighbourhood (LEO through L2). Single file at data/earth-objects.json; per-locale editorial in data/i18n/[locale]/earth-objects/[id].json. The `alt` field is altitude above Earth's surface in km; for cislunar and Lagrange-point objects, alt is distance from Earth (the simplification chosen by the P05 prototype for log-scale visual placement).",
+  "description": "Objects in Earth's orbital neighbourhood (LEO through L2). Single file at data/earth-objects.json. Per-locale editorial in data/i18n/[locale]/earth-objects/[id].json. Field semantics (precision pass): `body` says what the object orbits or is positioned at (Earth, Moon, Sun-Earth-L2). `earth_distance_km` is distance from Earth's surface used by /earth screen for log-scale placement (= altitude_km when body is EARTH). `altitude_km` is altitude above the body's surface (LRO 50 km lunar altitude, ISS 408 km Earth altitude); omitted for L2 objects since Lagrange points are not body surfaces.",
   "type": "array",
   "items": {
     "type": "object",
     "additionalProperties": false,
     "required": [
       "id",
+      "body",
       "regime",
-      "alt",
+      "earth_distance_km",
       "count",
       "color",
       "agencies",
@@ -22,14 +23,44 @@
     ],
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "body": {
+        "enum": ["EARTH", "MOON", "SUN_EARTH_L2"],
+        "description": "Body the object orbits, or Lagrange point at which it is stationed"
+      },
       "regime": { "enum": ["LEO", "MEO", "GEO", "HEO", "MOON", "L2"] },
-      "alt": { "type": "number", "exclusiveMinimum": 0, "description": "Altitude above Earth's surface in km, or Earth-distance for cislunar/L2 objects" },
-      "alt_peri": { "type": "number", "minimum": 0, "description": "Perigee altitude (km) — only for elliptical orbits" },
-      "alt_apo": { "type": "number", "minimum": 0, "description": "Apogee altitude (km) — only for elliptical orbits" },
-      "ecc": { "type": "number", "minimum": 0, "exclusiveMaximum": 1, "description": "Eccentricity — only for elliptical orbits" },
+      "earth_distance_km": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Distance from Earth's surface for /earth log-scale placement; equals altitude_km for body=EARTH; for MOON ≈ 384,400; for SUN_EARTH_L2 ≈ 1,500,000"
+      },
+      "altitude_km": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Altitude above the body's surface. Required when body has a meaningful surface (EARTH, MOON); omitted for SUN_EARTH_L2"
+      },
+      "perigee_altitude_km": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Periapsis altitude (above body surface) — only for elliptical orbits"
+      },
+      "apogee_altitude_km": {
+        "type": "number",
+        "minimum": 0,
+        "description": "Apoapsis altitude (above body surface) — only for elliptical orbits"
+      },
+      "ecc": { "type": "number", "minimum": 0, "exclusiveMaximum": 1 },
       "elliptical": { "type": "boolean" },
-      "period": { "type": "number", "exclusiveMinimum": 0, "description": "Orbital period in minutes; omitted for L2 (object orbits the Sun, not Earth)" },
-      "inclination": { "type": "number", "minimum": -90, "maximum": 180, "description": "Inclination in degrees; omitted for L2" },
+      "period_min": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Orbital period in minutes around the object's body. Omitted for L2 objects (which orbit the Sun, not Earth) and for objects whose Earth-relative motion is best described by their parent body's period (e.g. LRO follows the Moon's 27.32-day period)."
+      },
+      "inclination": {
+        "type": "number",
+        "minimum": -90,
+        "maximum": 180,
+        "description": "Inclination in degrees relative to body equator; omitted for L2"
+      },
       "count": { "type": "integer", "minimum": 1, "description": "Number of dots to render (full constellations like GPS show as a sample subset)" },
       "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
       "agencies": {

@@ -16,8 +16,10 @@
       "color",
       "payload_to_leo_kg",
       "payload_to_mars_kg",
+      "payload_to_mars_definition",
       "delta_v_capability_km_s",
       "isp_s",
+      "data_quality",
       "credit",
       "links"
     ],
@@ -36,12 +38,20 @@
       },
       "payload_to_leo_kg": { "type": "number", "exclusiveMinimum": 0 },
       "payload_to_mars_kg": { "type": "number", "exclusiveMinimum": 0 },
+      "payload_to_mars_definition": {
+        "enum": ["tmi", "mars_orbit", "mars_surface"],
+        "description": "What payload_to_mars_kg actually measures: trans-Mars injection (mass on Mars trajectory), Mars orbit insertion (mass captured into Mars orbit), or Mars surface (mass landed). The same vehicle can have very different numbers depending on which is meant."
+      },
       "delta_v_capability_km_s": {
         "type": "number",
         "exclusiveMinimum": 0,
         "description": "Cumulative ∆v from LEO to upper-stage burnout for trans-Mars injection"
       },
       "isp_s": { "type": "number", "exclusiveMinimum": 0, "description": "Upper-stage Isp (specific impulse, seconds)" },
+      "data_quality": {
+        "enum": ["good", "partial", "reconstructed"],
+        "description": "Confidence in the spec values. 'good' = published vendor user guide or demonstrated. 'partial' = derived from related figures or vendor target. 'reconstructed' = back-calculated from a single demonstrated mission."
+      },
       "credit": { "type": "string", "minLength": 1 },
       "links": {
         "type": "array",

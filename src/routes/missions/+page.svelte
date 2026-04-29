@@ -17,12 +17,21 @@
   // on first load (RFC-004). Updates write back to the URL via goto().
   let destFilter: Destination | 'ALL' = $state('ALL');
   let statusFilter: MissionStatus | 'ALL' = $state('ALL');
+  let agencyFilter: string = $state('ALL');
+
+  // Agencies are derived from the loaded mission set so the filter
+  // always reflects what's actually in the data — no hardcoded list
+  // to drift.
+  let agencies = $derived(
+    Array.from(new Set(missions.map((m) => m.agency).filter(Boolean))).sort(),
+  );
 
   let filtered = $derived(
     missions.filter(
       (mission) =>
         (destFilter === 'ALL' || mission.dest === destFilter) &&
-        (statusFilter === 'ALL' || mission.status === statusFilter),
+        (statusFilter === 'ALL' || mission.status === statusFilter) &&
+        (agencyFilter === 'ALL' || mission.agency === agencyFilter),
     ),
   );
 
@@ -30,15 +39,18 @@
   function applyUrlFilters(url: URL) {
     const dest = url.searchParams.get('dest')?.toUpperCase();
     const status = url.searchParams.get('status')?.toUpperCase();
+    const agency = url.searchParams.get('agency');
     destFilter = dest === 'MARS' || dest === 'MOON' ? dest : 'ALL';
     statusFilter =
       status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
+    agencyFilter = agency ?? 'ALL';
   }
 
   function pushFiltersToUrl() {
     const params = new URLSearchParams();
     if (destFilter !== 'ALL') params.set('dest', destFilter);
     if (statusFilter !== 'ALL') params.set('status', statusFilter);
+    if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -55,6 +67,11 @@
 
   function setStatus(value: MissionStatus | 'ALL') {
     statusFilter = value;
+    pushFiltersToUrl();
+  }
+
+  function setAgency(value: string) {
+    agencyFilter = value;
     pushFiltersToUrl();
   }
 
@@ -178,6 +195,30 @@
         onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
       >
     </div>
+
+    {#if agencies.length > 0}
+      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
+        <span class="filter-label">{m.lib_filter_agency_label()}</span>
+        <button
+          type="button"
+          class="pill"
+          class:active={agencyFilter === 'ALL'}
+          role="radio"
+          aria-checked={agencyFilter === 'ALL'}
+          onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
+        >
+        {#each agencies as agency (agency)}
+          <button
+            type="button"
+            class="pill"
+            class:active={agencyFilter === agency}
+            role="radio"
+            aria-checked={agencyFilter === agency}
+            onclick={() => setAgency(agency)}>{agency}</button
+          >
+        {/each}
+      </div>
+    {/if}
   </nav>
 
   {#if loadFailed}

@@ -2,7 +2,7 @@
   "$schema": "https://inlang.com/schema/inlang-message-format",
 
   "nav_moon": "MOON",
-  "nav_explore": "EXPLORE",
+  "nav_explore": "OUR SOLAR SYSTEM",
   "nav_plan": "PLAN",
   "nav_fly": "FLY",
   "nav_missions": "MISSIONS",
@@ -74,6 +74,8 @@
   "lib_filter_dest_all": "ALL",
   "lib_filter_dest_mars": "MARS",
   "lib_filter_dest_moon": "MOON",
+  "lib_filter_agency_label": "AGENCY",
+  "lib_filter_agency_all": "ALL",
   "lib_filter_status_label": "STATUS",
   "lib_filter_status_all": "ALL",
   "lib_filter_status_active": "ACTIVE",

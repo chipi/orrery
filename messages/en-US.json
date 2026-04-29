@@ -67,5 +67,20 @@
 
   "sizes_header": "PLANET SIZE COMPARISON · TRUE RELATIVE RADII",
   "sizes_source": "Source: IAU · NASA · radii are mean values",
-  "sizes_canvas_label": "Planet size comparison"
+  "sizes_canvas_label": "Planet size comparison",
+
+  "lib_title": "MISSION LIBRARY",
+  "lib_filter_dest_label": "DESTINATION",
+  "lib_filter_dest_all": "ALL",
+  "lib_filter_dest_mars": "MARS",
+  "lib_filter_dest_moon": "MOON",
+  "lib_filter_status_label": "STATUS",
+  "lib_filter_status_all": "ALL",
+  "lib_filter_status_active": "ACTIVE",
+  "lib_filter_status_flown": "FLOWN",
+  "lib_filter_status_planned": "PLANNED",
+  "lib_count_total": "{count} TOTAL",
+  "lib_count_filtered": "{count} VISIBLE",
+  "lib_card_year": "{year}",
+  "lib_empty": "No missions match the current filters."
 }

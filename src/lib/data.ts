@@ -63,6 +63,28 @@ export async function filterMissions(filters: MissionFilter = {}): Promise<Missi
   );
 }
 
+/**
+ * Returns every mission with its locale overlay merged. Used by the
+ * /missions library to render cards with the editorial fields (name,
+ * type, first) without having to round-trip per-card.
+ *
+ * Fetches in parallel — 28 missions × ~2 KB each = ~56 KB total, well
+ * within reason for a one-shot library load. The cache then services
+ * any subsequent `getMission(id, dest)` call instantly.
+ */
+export async function getMissionsForLibrary(locale = 'en-US'): Promise<Mission[]> {
+  const index = await getMissionIndex();
+  const missions = await Promise.all(
+    index.map(async (entry) => {
+      const merged = await getMission(entry.id, entry.dest, locale);
+      // Fall back to the index entry if the per-mission file is missing
+      // for some reason — better an under-decorated card than a crash.
+      return merged ?? ({ ...entry } as Mission);
+    }),
+  );
+  return missions;
+}
+
 export async function planets(): Promise<PlanetsData> {
   return get<PlanetsData>('planets.json');
 }

@@ -21,7 +21,9 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 ## Try it
 
-Open any prototype directly in a browser — no server required:
+**Live:** <https://chipi.github.io/orrery/> — every screen, fully offline-capable after first load.
+
+The original concept-package prototypes still ship in `docs/prototypes/` and open directly in a browser:
 
 ```
 docs/prototypes/P01_solar-system-explorer.html
@@ -32,7 +34,41 @@ docs/prototypes/P05_earth-orbit.html
 docs/prototypes/P06_moon-map.html
 ```
 
-An internet connection is required for full fidelity (Three.js CDN, Google Fonts, NASA Images API). The production build described in 04 self-hosts all dependencies for offline use.
+The prototypes pull from CDN; the production build (above) self-hosts every asset per ADR-016.
+
+## Getting started
+
+Requirements: Node 20+, npm 10+.
+
+```bash
+git clone https://github.com/chipi/orrery
+cd orrery
+npm install
+```
+
+### Development
+
+```bash
+npm run dev              # dev server at http://localhost:5173
+npm run test             # Vitest unit tests
+npm run test:e2e         # Playwright e2e (build runs first)
+npm run typecheck        # svelte-check + i18n compile
+npm run lint             # prettier + eslint
+npm run validate-data    # ajv schema check + doc-system gating sentences
+npm run ci               # everything above except e2e — what GH Actions runs on every PR
+```
+
+### Build
+
+```bash
+npm run build            # production SPA in ./build (adapter-static)
+npm run preview          # serve ./build at http://localhost:4173
+npm run docs:build       # VitePress docs site at docs/.vitepress/dist
+```
+
+### Deploy
+
+Push to `main` — `.github/workflows/preview.yml` builds the app + docs and publishes to GitHub Pages. A weekly cron rebuild keeps mission imagery fresh (Mondays 06:00 UTC).
 
 ## Documentation
 

@@ -199,7 +199,7 @@ State board for all RFCs and ADRs.
 | RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before 28 mission files written |
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Decided · closed by ADR-022 | ADR-022 | Closed at Slice 3 (3a-8) |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Decided · closed by ADR-024 | ADR-024 | Closed at Slice 4 (4a-6) |
-| RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Draft v0.1 | ADR (pending) | Slice 6 gate: all six screens pass WCAG 2.1 AA on nav and panels |
+| RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |
 | RFC-006 | Porkchop plot mobile interaction model | Decided · closed by ADR-023 | ADR-023 | Closed at Slice 3 (3a-8) |
 
 ### ADRs
@@ -230,6 +230,7 @@ State board for all RFCs and ADRs.
 | ADR-022 | Lambert worker message protocol | Accepted (closes RFC-003) |
 | ADR-023 | Porkchop plot mobile interaction (RFC-006 Option C) | Accepted (closes RFC-006) |
 | ADR-024 | Mission URL sharing | Accepted (closes RFC-004) |
+| ADR-025 | Accessibility tier-1 contract | Accepted (closes RFC-005) |
 
 ---
 
@@ -244,3 +245,4 @@ State board for all RFCs and ADRs.
 | v1.4 | April 2026 | ADR-021 added: documentation site at /docs/ via VitePress, deployed alongside the app on GitHub Pages. Scope expansion outside the original six slices. |
 | v1.5 | April 2026 | RFC-003 closed by ADR-022 (Lambert worker message protocol — id-based cancellation, every-10-row progress, single result message). RFC-006 closed by ADR-023 (porkchop mobile interaction — Option C magnifier with 5×5 cell window, 140 px bubble). Both closures land alongside the /plan implementation in slice checkpoint 3a-8. §map updated. |
 | v1.6 | April 2026 | RFC-004 closed by ADR-024 (mission URL sharing — `/fly?mission=id` and `/missions?dest=...&status=...` URL contract, replaceState for filter toggles, no localStorage). Lands with /missions + /fly in Slice 4. §map updated. |
+| v1.7 | April 2026 | RFC-005 closed by ADR-025 (accessibility tier-1: prefers-reduced-motion stops auto-orbit/auto-rotate/auto-play across canvas screens; nav aria-label; panel focus management + role=tablist/tab/tabpanel; canvas aria-labels direct screen-reader users to detail panels; tier-2 work — canvas-object keyboard nav, full screen-reader description, high-contrast mode — explicitly deferred to v2). Lands with Slice 6. §map updated. |

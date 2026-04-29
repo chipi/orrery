@@ -2,7 +2,7 @@
 
 | Doc | Title | Status | Date |
 |---|---|---|---|
-| TA | Technical Authority | v1.6 | Apr 2026 |
+| TA | Technical Authority | v1.7 | Apr 2026 |
 | ADR-001 | Three.js r128 as 3D renderer | Accepted | Apr 2026 |
 | ADR-002 | Vanilla JS, no framework | Superseded by ADR-011, ADR-012 | Apr 2026 |
 | ADR-003 | Vite as bundler | Superseded by ADR-012 | Apr 2026 |
@@ -27,3 +27,4 @@
 | ADR-022 | Lambert worker message protocol | Accepted (closes RFC-003) | Apr 2026 |
 | ADR-023 | Porkchop plot mobile interaction (RFC-006 Option C) | Accepted (closes RFC-006) | Apr 2026 |
 | ADR-024 | Mission URL sharing | Accepted (closes RFC-004) | Apr 2026 |
+| ADR-025 | Accessibility tier-1 contract | Accepted (closes RFC-005) | Apr 2026 |

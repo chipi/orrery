@@ -3,7 +3,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import LambertWorker from '../../workers/lambert.worker?worker';
-  import type { LambertGrid, LambertProgress, LambertRequest } from '../../workers/lambert.worker';
+  import type { LambertGrid, LambertProgress, LambertRequest } from '$lib/lambert-grid';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { getRockets } from '$lib/data';
   import type { Rocket } from '$types/rocket';

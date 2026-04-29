@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { solveLambert } from './lambert';
+import { solveLambert, lambertTOF } from './lambert';
 
 const MU_SUN = 4 * Math.PI ** 2;
 const AU_PER_YR_TO_KMS = 4.7404;
@@ -47,5 +47,71 @@ describe('solveLambert', () => {
     const v2Check = Math.sqrt(MU_SUN * (2 / r2mag - 1 / r!.a));
     expect(r!.v1).toBeCloseTo(v1Check, 6);
     expect(r!.v2).toBeCloseTo(v2Check, 6);
+  });
+
+  // Round-trip: feed the returned `a` back into lambertTOF and verify it
+  // reproduces the input TOF. This is the strongest physical correctness
+  // check — vis-viva self-consistency only verifies the final velocity
+  // calc, not the bisection's choice of `a`.
+  it('round-trip: lambertTOF(solveLambert(...).a) ≈ input TOF', () => {
+    const cases = [
+      { tof: 200 / 365.25 }, // fast transfer
+      { tof: 240 / 365.25 }, // mid
+      { tof: 250 / 365.25 }, // near min-energy
+    ];
+    for (const { tof } of cases) {
+      const r = solveLambert(r1, r2, tof, MU_SUN);
+      expect(r).not.toBeNull();
+      const r1mag = Math.hypot(r1[0], r1[1]);
+      const r2mag = Math.hypot(r2[0], r2[1]);
+      const cChord = Math.hypot(r2[0] - r1[0], r2[1] - r1[1]);
+      const sSemi = (r1mag + r2mag + cChord) / 2;
+      const tofRecomputed = lambertTOF(r!.a, sSemi, cChord, MU_SUN);
+      expect(tofRecomputed).toBeCloseTo(tof, 4); // 4 sig fig — bisection's 52 iters
+    }
+  });
+});
+
+describe('solveLambert — degenerate geometries', () => {
+  it('handles aligned positions (r1 ≈ r2 direction) without throwing', () => {
+    const r1Local: [number, number] = [1.0, 0];
+    const r2Local: [number, number] = [1.524, 0];
+    // Same-direction transfers have small chord; short-way Lambert is
+    // typically infeasible at this geometry. The solver should return
+    // null cleanly rather than throw or NaN.
+    const result = solveLambert(r1Local, r2Local, 100 / 365.25, MU_SUN);
+    expect(result === null || Number.isFinite(result.a)).toBe(true);
+  });
+
+  it('handles opposite positions (r2 = -r1) without throwing', () => {
+    const r1Local: [number, number] = [1.0, 0];
+    const r2Local: [number, number] = [-1.524, 0];
+    const result = solveLambert(r1Local, r2Local, 250 / 365.25, MU_SUN);
+    if (result) {
+      expect(Number.isFinite(result.a)).toBe(true);
+      expect(Number.isFinite(result.v1)).toBe(true);
+      expect(Number.isFinite(result.v2)).toBe(true);
+    }
+  });
+
+  it('handles small angular separation (a few degrees) without NaN', () => {
+    const angle = (5 * Math.PI) / 180;
+    const r1Local: [number, number] = [1.0, 0];
+    const r2Local: [number, number] = [1.524 * Math.cos(angle), 1.524 * Math.sin(angle)];
+    const result = solveLambert(r1Local, r2Local, 100 / 365.25, MU_SUN);
+    expect(result === null || Number.isFinite(result.a)).toBe(true);
+  });
+
+  it('respects mu — different mu produces a different transfer ellipse', () => {
+    // Different mu must produce different `a` for the same geometry/TOF.
+    // We use a 1.2× scaling so the solver remains in its feasible bisection
+    // window for both — too large a multiplier shifts the parabolic minimum
+    // past our test TOF and short-way Lambert returns null cleanly.
+    const tof = 220 / 365.25;
+    const a1 = solveLambert(r1, r2, tof, MU_SUN)?.a;
+    const a2 = solveLambert(r1, r2, tof, MU_SUN * 1.2)?.a;
+    expect(a1).toBeDefined();
+    expect(a2).toBeDefined();
+    if (a1 && a2) expect(Math.abs(a1 - a2)).toBeGreaterThan(0.01);
   });
 });

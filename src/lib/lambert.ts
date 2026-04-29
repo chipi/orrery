@@ -24,8 +24,12 @@ export interface LambertResult {
   v2: number;
 }
 
-/** Lagrange-Gauss short-way TOF as a function of semi-major axis. */
-function lambertTOF(a: number, s: number, c: number, mu: number): number {
+/**
+ * Lagrange-Gauss short-way TOF as a function of semi-major axis.
+ * Exported primarily for round-trip testing — the inverse of
+ * `solveLambert`. Production code should not normally need it.
+ */
+export function lambertTOF(a: number, s: number, c: number, mu: number): number {
   if (a <= s / 2 + 1e-9) return 1e9;
   const sinAlpha = Math.sqrt(Math.min(1, s / (2 * a)));
   const sinBeta = Math.sqrt(Math.max(0, (s - c) / (2 * a)));

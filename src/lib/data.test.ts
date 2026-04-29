@@ -7,6 +7,7 @@ import {
   filterMissions,
   planets,
   getPlanets,
+  getRockets,
   getSun,
   rockets,
   earthObjects,
@@ -190,6 +191,28 @@ describe('getPlanets', () => {
     expect(list).toHaveLength(8);
     expect(list[2].id).toBe('earth');
     expect(list[2].fact).toContain('Every human');
+  });
+});
+
+describe('getRockets', () => {
+  it('returns 6 rockets merged with en-US overlay (name + description)', async () => {
+    const list = await getRockets();
+    expect(list).toHaveLength(6);
+    const falcon = list.find((r) => r.id === 'falcon-heavy');
+    expect(falcon).toBeDefined();
+    // Base data
+    expect(falcon!.delta_v_capability_km_s).toBeCloseTo(9.4, 2);
+    expect(falcon!.agency).toBe('SpaceX');
+    // Overlay-merged fields
+    expect(falcon!.name).toBe('Falcon Heavy');
+    expect(falcon!.description).toContain('Three-core');
+  });
+
+  it('falls back to en-US when locale overlay missing', async () => {
+    const list = await getRockets('fr');
+    expect(list).toHaveLength(6);
+    const starship = list.find((r) => r.id === 'starship');
+    expect(starship?.name).toBe('Starship');
   });
 });
 

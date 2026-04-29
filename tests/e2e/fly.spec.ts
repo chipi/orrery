@@ -146,6 +146,43 @@ test.describe('/missions → /fly end-to-end (RFC-004)', () => {
   });
 });
 
+test.describe('/fly — 3D scene actually renders (regression for black-screen bug)', () => {
+  test('?mission=curiosity renders non-bg pixels in 3D mode', async ({ page }) => {
+    await page.goto('/fly?mission=curiosity');
+    // Wait for HUD to confirm load.
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
+      timeout: 10_000,
+    });
+    // Wait a beat for the Three.js animate loop to paint a frame with
+    // Earth + Mars + spacecraft + arc Lines visible.
+    await page.waitForTimeout(800);
+    // The 3D layer is a div with a child WebGL canvas. Sample several
+    // pixels from the centre region — at least one should be non-bg.
+    const hasContent = await page.evaluate(() => {
+      const layers = document.querySelectorAll<HTMLElement>('.layer');
+      const threeLayer = Array.from(layers).find((l) => l.tagName === 'DIV');
+      const canvas = threeLayer?.querySelector('canvas') as HTMLCanvasElement | null;
+      if (!canvas || canvas.width === 0) return false;
+      const gl = canvas.getContext('webgl2') ?? canvas.getContext('webgl');
+      if (!gl) return false;
+      const w = canvas.width;
+      const h = canvas.height;
+      const px = new Uint8Array(4);
+      // Sample 20 random points; if any has non-bg colour, scene is rendering.
+      for (let i = 0; i < 20; i++) {
+        const x = Math.floor(Math.random() * w);
+        const y = Math.floor(Math.random() * h);
+        gl.readPixels(x, y, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
+        // bg = #04040c. Allow 6 unit tolerance for anti-aliasing.
+        const isBg = Math.abs(px[0] - 4) < 6 && Math.abs(px[1] - 4) < 6 && Math.abs(px[2] - 12) < 8;
+        if (!isBg) return true;
+      }
+      return false;
+    });
+    expect(hasContent).toBe(true);
+  });
+});
+
 test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
   test('?dest=jupiter&type=flyby&dep=N&tof=N renders a Jupiter trajectory', async ({ page }) => {
     // Synthesised /plan → /fly path: dest + dep + tof, no mission.

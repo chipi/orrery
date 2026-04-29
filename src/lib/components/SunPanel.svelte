@@ -1,6 +1,7 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import type { LocalizedSun } from '$types/sun';
+  import * as m from '$lib/paraglide/messages';
 
   type Tab = 'overview' | 'technical';
 
@@ -27,11 +28,11 @@
       <div class="name">{sun.name}</div>
       <div class="stat-row">
         <div class="stat">
-          <div class="stat-label">SPECTRAL CLASS</div>
+          <div class="stat-label">{m.sun_label_spectral_class()}</div>
           <div class="stat-value">{sun.spectral_class}</div>
         </div>
         <div class="stat">
-          <div class="stat-label">SYSTEM MASS</div>
+          <div class="stat-label">{m.sun_label_system_mass()}</div>
           <div class="stat-value">{sun.mass_fraction_pct.toFixed(2)}%</div>
         </div>
       </div>
@@ -43,14 +44,14 @@
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
-        aria-selected={tab === 'overview'}>OVERVIEW</button
+        aria-selected={tab === 'overview'}>{m.panel_tab_overview()}</button
       >
       <button
         type="button"
         class:active={tab === 'technical'}
         onclick={() => (tab = 'technical')}
         role="tab"
-        aria-selected={tab === 'technical'}>TECHNICAL</button
+        aria-selected={tab === 'technical'}>{m.panel_tab_technical()}</button
       >
     </div>
 
@@ -61,44 +62,48 @@
       {:else}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">RADIUS</div>
+            <div class="cell-label">{m.sun_label_radius()}</div>
             <div class="cell-value">{(sun.radius_km / 1000).toFixed(0)},700 km</div>
-            <div class="cell-sub">{radiusEarth.toFixed(0)}× Earth</div>
+            <div class="cell-sub">{m.sun_radius_earth({ value: radiusEarth.toFixed(0) })}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">MASS</div>
+            <div class="cell-label">{m.sun_label_mass()}</div>
             <div class="cell-value">2 × 10³⁰ kg</div>
-            <div class="cell-sub">{solarMassesEarth.toExponential(2)}× Earth</div>
+            <div class="cell-sub">
+              {m.sun_mass_earth({ value: solarMassesEarth.toExponential(2) })}
+            </div>
           </div>
           <div class="cell">
-            <div class="cell-label">SURFACE TEMP</div>
+            <div class="cell-label">{m.sun_label_surface_temp()}</div>
             <div class="cell-value gold">{sun.surface_temp_k.toFixed(0)} K</div>
           </div>
           <div class="cell">
-            <div class="cell-label">CORE TEMP</div>
+            <div class="cell-label">{m.sun_label_core_temp()}</div>
             <div class="cell-value gold">{(sun.core_temp_k / 1e6).toFixed(1)} M K</div>
           </div>
           <div class="cell">
-            <div class="cell-label">LUMINOSITY</div>
+            <div class="cell-label">{m.sun_label_luminosity()}</div>
             <div class="cell-value">{luminositySolar.toFixed(2)} L☉</div>
           </div>
           <div class="cell">
-            <div class="cell-label">AGE</div>
+            <div class="cell-label">{m.sun_label_age()}</div>
             <div class="cell-value">{sun.age_gyr.toFixed(1)} Gyr</div>
-            <div class="cell-sub">~{remainingGyr.toFixed(1)} Gyr remaining</div>
+            <div class="cell-sub">{m.sun_age_remaining({ value: remainingGyr.toFixed(1) })}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">AXIAL TILT</div>
+            <div class="cell-label">{m.panel_label_axial_tilt()}</div>
             <div class="cell-value">{sun.axial_tilt.toFixed(2)}°</div>
           </div>
           <div class="cell">
-            <div class="cell-label">ROTATION</div>
+            <div class="cell-label">{m.sun_label_rotation()}</div>
             <div class="cell-value">{sun.equatorial_rot_days.toFixed(1)} d</div>
-            <div class="cell-sub">poles {sun.polar_rot_days.toFixed(1)} d (differential)</div>
+            <div class="cell-sub">
+              {m.sun_rot_diff({ value: sun.polar_rot_days.toFixed(1) })}
+            </div>
           </div>
         </div>
 
-        <div class="src">Source: NASA · IAU · absolute magnitude {sun.absolute_magnitude}</div>
+        <div class="src">{m.sun_source_nasa({ mag: sun.absolute_magnitude.toString() })}</div>
       {/if}
     </div>
   {/if}

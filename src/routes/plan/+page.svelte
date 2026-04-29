@@ -7,6 +7,7 @@
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { getRockets } from '$lib/data';
   import type { Rocket } from '$types/rocket';
+  import * as m from '$lib/paraglide/messages';
 
   // ─── Grid contract (matches Issue #3 / RFC-003) ──────────────────
   const DEP_RANGE: [number, number] = [0, 1460]; // 4 years from epoch (Jan 1 2026)
@@ -159,7 +160,7 @@
     }
     ctx.font = "8px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
-    ctx.fillText('DEPARTURE WINDOW · 2026 — 2030', ML + PW / 2, MT + PH + 26);
+    ctx.fillText(m.plan_axis_departure_window(), ML + PW / 2, MT + PH + 26);
 
     ctx.font = "9px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
@@ -184,14 +185,14 @@
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('TIME OF FLIGHT (DAYS)', 0, 0);
+    ctx.fillText(m.plan_axis_tof_label(), 0, 0);
     ctx.restore();
 
     ctx.font = "9px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
-    ctx.fillText('PORKCHOP · EARTH → MARS · ∆v km/s', ML, 6);
+    ctx.fillText(m.plan_plot_title(), ML, 6);
   }
 
   // ─── Pointer hit-test → grid cell ────────────────────────────────
@@ -414,7 +415,7 @@
       ontouchmove={onTouchMove}
       ontouchend={onTouchEnd}
       ontouchcancel={onTouchEnd}
-      aria-label="Earth–Mars porkchop plot"
+      aria-label={m.plan_canvas_label()}
     ></canvas>
 
     {#if mag}
@@ -431,7 +432,7 @@
 
     {#if computing}
       <div class="loading" role="status" aria-live="polite">
-        <div class="loading-title">COMPUTING LAMBERT SOLUTIONS</div>
+        <div class="loading-title">{m.plan_loading_title()}</div>
         <div class="loading-bar">
           <div class="loading-fill" style:width="{progress * 100}%"></div>
         </div>
@@ -440,38 +441,35 @@
     {/if}
   </div>
 
-  <aside class="right-panel" aria-label="Mission summary">
+  <aside class="right-panel" aria-label={m.plan_panel_label()}>
     {#if !readout}
       <div class="empty">
-        <div class="empty-title">PICK A LAUNCH WINDOW</div>
-        <p class="empty-hint">
-          Tap a cell on the porkchop plot. Cool blue zones are cheap; hot red zones are expensive
-          launch energy.
-        </p>
-        <p class="empty-hint">On mobile, touch and hold the plot to open the magnifier.</p>
+        <div class="empty-title">{m.plan_empty_title()}</div>
+        <p class="empty-hint">{m.plan_empty_hint_desktop()}</p>
+        <p class="empty-hint">{m.plan_empty_hint_mobile()}</p>
       </div>
     {:else}
       <div class="row">
-        <span class="label">DEPARTURE</span>
+        <span class="label">{m.plan_label_departure()}</span>
         <span class="value">{readout.dep}</span>
       </div>
       <div class="row">
-        <span class="label">ARRIVAL</span>
+        <span class="label">{m.plan_label_arrival()}</span>
         <span class="value">{readout.arr}</span>
       </div>
       <div class="row">
-        <span class="label">TRANSIT</span>
-        <span class="value">{readout.tof.toFixed(0)} days</span>
+        <span class="label">{m.plan_label_transit()}</span>
+        <span class="value">{m.plan_transit_days({ count: readout.tof.toFixed(0) })}</span>
       </div>
       <div class="row strong">
-        <span class="label">∆V REQUIRED</span>
+        <span class="label">{m.plan_label_dv_required()}</span>
         <span class="value">{readout.dv.toFixed(2)} km/s</span>
       </div>
 
       <div class="divider"></div>
 
       <label class="vehicle">
-        <span class="label">VEHICLE</span>
+        <span class="label">{m.plan_label_vehicle()}</span>
         <select bind:value={selectedRocketId}>
           {#each rocketList as r (r.id)}
             <option value={r.id}>
@@ -483,7 +481,7 @@
 
       {#if selectedRocket}
         <div class="row">
-          <span class="label">VEHICLE ∆V</span>
+          <span class="label">{m.plan_label_vehicle_dv()}</span>
           <span class="value">{dvBudget.toFixed(2)} km/s</span>
         </div>
 
@@ -494,16 +492,16 @@
           ></div>
           <div class="budget-label">
             {#if viable}
-              {(dvBudget - readout.dv).toFixed(2)} km/s margin
+              {m.plan_budget_margin({ value: (dvBudget - readout.dv).toFixed(2) })}
             {:else}
-              −{dvDeficit.toFixed(2)} km/s deficit
+              {m.plan_budget_deficit({ value: dvDeficit.toFixed(2) })}
             {/if}
           </div>
         </div>
       {/if}
 
       <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
-        ▶ FLY MISSION
+        {m.plan_fly_button()}
       </button>
     {/if}
   </aside>

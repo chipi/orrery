@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
 
   // True relative radii (km, IAU mean values).
   type SizeEntry = {
@@ -53,7 +54,7 @@
     ctx.font = '6px "Space Mono", monospace';
     ctx.fillStyle = 'rgba(255,255,255,0.18)';
     ctx.textAlign = 'left';
-    ctx.fillText('PLANET SIZE COMPARISON · TRUE RELATIVE RADII', LABEL_X, y + 6);
+    ctx.fillText(m.sizes_header(), LABEL_X, y + 6);
     y += 16;
 
     for (const s of SIZES) {
@@ -116,7 +117,7 @@
     ctx.font = '5px "Space Mono", monospace';
     ctx.fillStyle = 'rgba(255,255,255,0.1)';
     ctx.textAlign = 'left';
-    ctx.fillText('Source: IAU · NASA · radii are mean values', LABEL_X, cssH - 4);
+    ctx.fillText(m.sizes_source(), LABEL_X, cssH - 4);
   }
 
   onMount(() => {
@@ -132,7 +133,7 @@
   });
 </script>
 
-<canvas bind:this={canvas} aria-label="Planet size comparison"></canvas>
+<canvas bind:this={canvas} aria-label={m.sizes_canvas_label()}></canvas>
 
 <style>
   canvas {

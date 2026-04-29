@@ -2,6 +2,7 @@
   import Panel from './Panel.svelte';
   import SizesCanvas from './SizesCanvas.svelte';
   import type { LocalizedPlanet } from '$types/planet';
+  import * as m from '$lib/paraglide/messages';
 
   type Tab = 'overview' | 'technical' | 'sizes';
 
@@ -40,12 +41,12 @@
     !planet
       ? ''
       : planet.e < 0.05
-        ? 'Nearly circular'
+        ? m.panel_orbit_shape_circular()
         : planet.e < 0.1
-          ? 'Slightly elliptical'
+          ? m.panel_orbit_shape_slightly()
           : planet.e < 0.2
-            ? 'Notably elliptical'
-            : 'Highly elliptical',
+            ? m.panel_orbit_shape_notably()
+            : m.panel_orbit_shape_highly(),
   );
   let mkmFromSun = $derived(planet ? planet.a * AU_TO_MKM : 0);
   let auLabel = $derived(planet ? `${planet.a.toFixed(2)} AU` : '');
@@ -65,11 +66,11 @@
       <div class="name">{planet.name}</div>
       <div class="stat-row">
         <div class="stat">
-          <div class="stat-label">FROM SUN</div>
+          <div class="stat-label">{m.panel_label_from_sun()}</div>
           <div class="stat-value">{auLabel}</div>
         </div>
         <div class="stat">
-          <div class="stat-label">ORBITAL PERIOD</div>
+          <div class="stat-label">{m.panel_label_orbital_period()}</div>
           <div class="stat-value">{periodLabel}</div>
         </div>
       </div>
@@ -81,21 +82,21 @@
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
-        aria-selected={tab === 'overview'}>OVERVIEW</button
+        aria-selected={tab === 'overview'}>{m.panel_tab_overview()}</button
       >
       <button
         type="button"
         class:active={tab === 'technical'}
         onclick={() => (tab = 'technical')}
         role="tab"
-        aria-selected={tab === 'technical'}>TECHNICAL</button
+        aria-selected={tab === 'technical'}>{m.panel_tab_technical()}</button
       >
       <button
         type="button"
         class:active={tab === 'sizes'}
         onclick={() => (tab = 'sizes')}
         role="tab"
-        aria-selected={tab === 'sizes'}>SIZES</button
+        aria-selected={tab === 'sizes'}>{m.panel_tab_sizes()}</button
       >
     </div>
 
@@ -106,44 +107,44 @@
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">SEMI-MAJOR AXIS</div>
+            <div class="cell-label">{m.panel_label_semi_major_axis()}</div>
             <div class="cell-value">{planet.a.toFixed(4)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">ORBITAL PERIOD</div>
+            <div class="cell-label">{m.panel_label_orbital_period()}</div>
             <div class="cell-value">{planet.T.toFixed(1)} days</div>
           </div>
           <div class="cell">
-            <div class="cell-label">ECCENTRICITY</div>
+            <div class="cell-label">{m.panel_label_eccentricity()}</div>
             <div class="cell-value">e = {planet.e.toFixed(4)}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">INCLINATION</div>
+            <div class="cell-label">{m.panel_label_inclination()}</div>
             <div class="cell-value teal">{planet.incl.toFixed(2)}°</div>
           </div>
           <div class="cell">
-            <div class="cell-label">PERIHELION</div>
+            <div class="cell-label">{m.panel_label_perihelion()}</div>
             <div class="cell-value">{perihelion.toFixed(4)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">APHELION</div>
+            <div class="cell-label">{m.panel_label_aphelion()}</div>
             <div class="cell-value">{aphelion.toFixed(4)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">AXIAL TILT</div>
+            <div class="cell-label">{m.panel_label_axial_tilt()}</div>
             <div class="cell-value" class:gold={planet.axialTilt > 10}>
               {planet.axialTilt.toFixed(2)}°
             </div>
           </div>
           <div class="cell">
-            <div class="cell-label">MEAN VELOCITY</div>
+            <div class="cell-label">{m.panel_label_mean_velocity()}</div>
             <div class="cell-value">{meanVelKms.toFixed(2)} km/s</div>
           </div>
         </div>
 
         <div class="shape-row">
           <div class="shape-meta">
-            ORBIT SHAPE · e={planet.e.toFixed(3)} · perihelion vs aphelion ×{speedRatio.toFixed(2)}
+            {m.panel_orbit_shape_meta({ e: planet.e.toFixed(3), ratio: speedRatio.toFixed(2) })}
           </div>
           <div class="shape-display">
             <div
@@ -155,12 +156,15 @@
         </div>
 
         <div class="dist-row">
-          <span
-            >{mkmFromSun.toFixed(0)} M km from Sun · rotation {planet.rotPeriod.toFixed(2)} days</span
-          >
+          <span>
+            {m.panel_dist_row({
+              mkm: mkmFromSun.toFixed(0),
+              rot: planet.rotPeriod.toFixed(2),
+            })}
+          </span>
         </div>
 
-        <div class="src">Source: IAU · JPL Planetary Fact Sheets · J2000 epoch</div>
+        <div class="src">{m.panel_source_iau()}</div>
       {:else if tab === 'sizes'}
         <SizesCanvas highlightId={planet.id} />
       {/if}
@@ -169,7 +173,7 @@
     {#if planet.missionable && onPlanMission}
       <div class="cta-bar">
         <button type="button" class="cta" onclick={onPlanMission}>
-          ▶ PLAN A MISSION TO {planet.name.toUpperCase()}
+          {m.panel_plan_mission_cta({ name: planet.name.toUpperCase() })}
         </button>
       </div>
     {/if}

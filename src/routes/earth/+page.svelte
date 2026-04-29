@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { getEarthObjects } from '$lib/data';
   import { altToVis } from '$lib/scale';
+  import { deriveRegimeBounds } from '$lib/earth-regimes';
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -108,14 +109,7 @@
     ctx.restore();
 
     // Regime bands — derived from data per regime min/max altitude.
-    const regimeBounds = new Map<string, { min: number; max: number }>();
-    for (const obj of objects) {
-      const a = obj.altitude_km ?? obj.earth_distance_km;
-      const r = obj.regime;
-      const b = regimeBounds.get(r);
-      if (!b) regimeBounds.set(r, { min: a, max: a });
-      else regimeBounds.set(r, { min: Math.min(b.min, a), max: Math.max(b.max, a) });
-    }
+    const regimeBounds = deriveRegimeBounds(objects);
     for (const [regime, b] of regimeBounds.entries()) {
       const visMin = altToVis(b.min);
       const visMax = altToVis(b.max);

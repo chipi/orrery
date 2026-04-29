@@ -4,6 +4,7 @@
   import * as THREE from 'three';
   import { getMoonSites } from '$lib/data';
   import { onReducedMotionChange } from '$lib/reduced-motion';
+  import { latLonToUnitSphere, latLonToEquirect } from '$lib/moon-projection';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -126,12 +127,7 @@
       }
       markers.length = 0;
       for (const site of sites) {
-        // lat/lon → cartesian on unit sphere
-        const lat = (site.lat * Math.PI) / 180;
-        const lon = (site.lon * Math.PI) / 180;
-        const x = Math.cos(lat) * Math.cos(lon);
-        const y = Math.sin(lat);
-        const z = -Math.cos(lat) * Math.sin(lon); // -sin so +lon is east
+        const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
         const r = moonRadius * 1.03;
         const color = colorFor(site);
         const mesh = new THREE.Mesh(
@@ -342,9 +338,9 @@
 
       // Site markers
       sitePos2d.clear();
+      const region = { x0, y0, mapW, mapH };
       for (const site of sites) {
-        const x = x0 + ((site.lon + 180) / 360) * mapW;
-        const y = y0 + ((90 - site.lat) / 180) * mapH;
+        const { x, y } = latLonToEquirect(site.lat, site.lon, region);
         const color = colorFor(site);
         const isSel = selected?.id === site.id;
 

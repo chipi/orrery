@@ -226,7 +226,7 @@ Closes RFC-007 / ADR-026. /plan extends from Earth → Mars only to Earth → 5 
 
 ---
 
-## v0.1.7 — Mission flight params + timeline navigator (2026-04-29)
+## v0.1.9 — Mission flight params + timeline navigator (2026-04-30)
 
 Closes RFC-009 / ADR-027. Extends every mission record with a structured `flight` sub-object (launch C3, arrival V∞, orbit-insertion ∆v, MET-stamped events). Surfaces it on `/missions` (new FLIGHT tab + timeline navigator above the card grid) and `/fly` (per-mission flight-params HUD readout). Honesty rule: sparse / unknown data renders as `—` with a per-mission `flight_data_quality` flag and a caveat banner — never as fake numbers.
 
@@ -237,7 +237,7 @@ Closes RFC-009 / ADR-027. Extends every mission record with a structured `flight
 - **1.7a-5** — Populated remaining 25 missions with appropriate `flight_data_quality`. Apollo 11 / 17, Mariner 4, Curiosity, Perseverance, MAVEN, InSight, Mars Express, Mangalyaan, MOM, Hope Probe, Tianwen-1, Mars Pathfinder, Viking 1, LRO, Clementine, Chandrayaan-1, Chandrayaan-3, Chang'e 4, Chang'e 5, Chang'e 6, SLIM at `measured` or `sparse`; Mars 3, Luna 9, Luna 17, Luna 24 at `sparse`; MMX, Starship Demo, Artemis 3 at `unknown`.
 - **1.7a-6** — Tests + docs roll-up. 8 new e2e tests covering FLIGHT tab content + sparse/unknown caveats + timeline navigator + ?from=&to= URL sync + range clamping.
 
-**State at v0.1.7:** **201 unit tests** (unchanged) + **64 e2e tests** (was 56, +8), all green. ~3 KB of flight data added per measured mission, ~25 KB total across 28 missions. No regression on existing OVERVIEW / GALLERY / LEARN tabs or any /fly behaviour.
+**State at v0.1.9:** **201 unit tests** (unchanged) + **64 e2e tests** (was 56, +8), all green. ~3 KB of flight data added per measured mission, ~25 KB total across 28 missions. No regression on existing OVERVIEW / GALLERY / LEARN tabs or any /fly behaviour.
 
 **Honesty rule (PA §promises):** never invent flight data. A mission with `flight_data_quality: "sparse"` carries the flag forever — better to show `—` and cite the gap than to pretend the data exists. The caveat banner is structural: amber-tinted, plain-language, i18n-keyed.
 

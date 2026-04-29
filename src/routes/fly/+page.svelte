@@ -756,7 +756,7 @@
     </div>
     <div class="hud-row">
       <span class="hud-key">{m.fly_hud_met()}</span>
-      <span class="hud-val">DAY {Math.round(met)}</span>
+      <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
     </div>
   </aside>
 
@@ -1063,8 +1063,8 @@
     }
   }
   .play-btn {
-    min-width: 36px;
-    min-height: 36px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 6px 10px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1088,7 +1088,8 @@
     gap: 4px;
   }
   .speed-pill {
-    min-height: 36px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 6px 10px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);

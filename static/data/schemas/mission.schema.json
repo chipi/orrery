@@ -46,7 +46,11 @@
     "transit_days": { "type": "integer", "minimum": 0 },
     "vehicle": { "type": "string", "minLength": 1 },
     "payload": { "type": "string", "minLength": 1 },
-    "delta_v": { "type": "string", "minLength": 1 },
+    "delta_v": {
+      "type": "string",
+      "pattern": "^~?\\d+(\\.\\d+)?\\s*km/s(\\s*\\([^)]+\\))?$",
+      "description": "Total mission ∆v in km/s. Tilde prefix marks an estimate; an optional annotation in parens (e.g., \"(round trip)\", \"(TLI only)\") is allowed. Schema enforces the format so /fly's parseDeltaV() helper has no malformed input to guard against."
+    },
     "data_quality": { "enum": ["good", "partial", "reconstructed"] },
     "credit": { "type": "string", "minLength": 1 },
     "links": {

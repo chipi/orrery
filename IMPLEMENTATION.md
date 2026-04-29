@@ -210,6 +210,22 @@ User feedback after v0.1.0 revealed two screens needed redesign before v0.2.0 th
 
 ---
 
+## v0.1.6 — Multi-destination porkchop (2026-04-29)
+
+Closes RFC-007 / ADR-026. /plan extends from Earth → Mars only to Earth → 5 destinations (Mercury, Venus, Mars, Jupiter, Saturn) with a LANDING/FLYBY toggle for inner planets.
+
+- **1.6a-1 + 1.6a-2** — Foundation. New `static/data/schemas/porkchop.schema.json`, `scripts/precompute-porkchops.ts`, and 5 per-destination JSON files in `static/data/porkchop/`. `lambert-grid.constants.ts` extended with a `DESTINATIONS` map keyed by `DestinationId`. `computePorkchopGrid()` parameterised over destination (back-compat: defaults to `'mars'`). 7 new unit tests.
+- **1.6a-3 + 1.6a-4** — `/plan` rewrite. Worker dependency dropped — pre-computed grids load via `$lib/data#getPorkchopGrid`. Destination `<select>` + LANDING/FLYBY pill row above the porkchop. URL contract `?dest=...&type=...` mirrors the `/missions` filter pattern. LANDING ∆v adds destination's `dv_orbit_insertion.LANDING` to the cell value. Y-axis switches between days (inner) and years (outer) per the loaded grid's `tof_axis_unit`.
+- **1.6a-5** — `/fly` outbound-only arcs for non-Mars destinations. New `destinationPos()` + `outboundArc(depPos, steps, destA)` in `mission-arc.ts` with signed-eccentricity handling for inner planets. New `applyPlanSelection()` synthesises a one-way trajectory when `/fly` receives `?dest&dep&tof` without `?mission=`. Per-frame flyby ring tracks the active destination.
+- **1.6a-6** — Tests. 8 new unit tests for `getPorkchopGrid` + 4 new e2e tests covering Jupiter render, gas-giant LANDING disabled state, Mars LANDING+FLYBY, destination-switch URL sync.
+- **1.6a-7** — Docs roll-up + v0.1.6 tag + GitHub Release.
+
+**State at v0.1.6:** **193 unit tests** (was 185, +8) + **91 e2e tests** (was 87, +4), all green. ~610 KB of pre-computed grid data in the bundle. Worker stays in the build for any future custom-range computation but is dormant for the 5 default destinations. Mars regression-tested across the e2e suite.
+
+**Deferred to v0.3.0** (its own milestone + RFC-008): Uranus, Neptune, Pluto, Ceres, Eris, Makemake, Haumea. Multi-decade transfer-time axes + Lambert convergence at extreme distances + (open question) gravity-assist support.
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

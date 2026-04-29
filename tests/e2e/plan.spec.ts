@@ -152,9 +152,7 @@ test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
     await expect(canvas).toBeVisible();
   });
 
-  test('LANDING pill is disabled with aria-disabled when dest is a gas giant', async ({
-    page,
-  }) => {
+  test('LANDING pill is disabled with aria-disabled when dest is a gas giant', async ({ page }) => {
     await page.goto('/plan?dest=jupiter');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
     const landingPill = page.getByRole('radio', { name: /LANDING/ });

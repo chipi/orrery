@@ -11,6 +11,8 @@ import {
   getRockets,
   getSun,
   getScenario,
+  getEarthObjects,
+  getMoonSites,
   rockets,
   earthObjects,
   moonSites,
@@ -262,6 +264,62 @@ describe('getMissionsForLibrary', () => {
     const lib = await getMissionsForLibrary();
     const all = await filterMissions();
     expect(lib).toHaveLength(all.length);
+  });
+});
+
+describe('getEarthObjects', () => {
+  it('returns 13 objects merged with their en-US overlay', async () => {
+    const list = await getEarthObjects();
+    expect(list).toHaveLength(13);
+    const iss = list.find((o) => o.id === 'iss');
+    expect(iss).toBeDefined();
+    expect(iss!.altitude_km).toBe(408);
+    expect(iss!.regime).toBe('LEO');
+    // Overlay-merged fields
+    expect(iss!.name).toBe('International Space Station');
+    expect(iss!.short).toBe('ISS');
+    expect(iss!.scale_fact).toContain('408 km');
+  });
+
+  it('falls back to en-US when locale overlay missing', async () => {
+    const list = await getEarthObjects('fr');
+    expect(list).toHaveLength(13);
+    const iss = list.find((o) => o.id === 'iss');
+    expect(iss?.short).toBe('ISS');
+  });
+
+  it('count parity with the base earthObjects() reference', async () => {
+    const merged = await getEarthObjects();
+    const base = await earthObjects();
+    expect(merged).toHaveLength(base.length);
+  });
+});
+
+describe('getMoonSites', () => {
+  it('returns 16 sites merged with their en-US overlay', async () => {
+    const list = await getMoonSites();
+    expect(list).toHaveLength(16);
+    const apollo11 = list.find((s) => s.id === 'apollo11');
+    expect(apollo11).toBeDefined();
+    expect(apollo11!.year).toBe(1969);
+    expect(apollo11!.lat).toBeCloseTo(0.67, 2);
+    // Overlay-merged fields
+    expect(apollo11!.name).toBe('Apollo 11');
+    expect(apollo11!.crew).toEqual(['Neil Armstrong', 'Buzz Aldrin']);
+    expect(apollo11!.left).toContain('flag');
+  });
+
+  it('every nation matches the IA-defined enum', async () => {
+    const list = await getMoonSites();
+    const allowed = new Set(['USA', 'USSR', 'Russia', 'China', 'India', 'Japan']);
+    for (const s of list) {
+      expect(allowed.has(s.nation)).toBe(true);
+    }
+  });
+
+  it('falls back to en-US when locale overlay missing', async () => {
+    const list = await getMoonSites('fr');
+    expect(list).toHaveLength(16);
   });
 });
 

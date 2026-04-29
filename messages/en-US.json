@@ -135,5 +135,19 @@
   "fly_load_failed": "Failed to load mission. Showing default ORRERY-1 free-return.",
   "fly_panel_identity": "MISSION IDENTITY",
   "fly_panel_navigation": "NAVIGATION",
-  "fly_panel_systems": "SYSTEMS"
+  "fly_panel_systems": "SYSTEMS",
+  "fly_capcom_toggle": "CAPCOM",
+  "fly_capcom_panel_label": "CAPCOM monitoring",
+  "fly_capcom_events_title": "MISSION EVENTS",
+  "fly_capcom_comms_title": "COMMUNICATIONS",
+  "fly_capcom_anomaly_title": "ANOMALY MONITOR",
+  "fly_capcom_signal_delay": "ONE-WAY",
+  "fly_capcom_rtt": "ROUND TRIP",
+  "fly_capcom_lmin": "{value} l-min",
+  "fly_capcom_anomaly_nominal": "NOMINAL",
+  "fly_capcom_anomaly_caution": "CAUTION",
+  "fly_capcom_anomaly_critical": "CRITICAL",
+  "fly_capcom_anomaly_value": "{label} · ∆v margin {value} km/s",
+  "fly_capcom_no_events": "No events recorded for this mission.",
+  "fly_capcom_event_at": "T+{day}d"
 }

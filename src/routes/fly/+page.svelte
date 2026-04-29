@@ -13,8 +13,66 @@
   } from '$lib/mission-arc';
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
   import { getMission } from '$lib/data';
-  import type { Mission } from '$types/mission';
+  import type { Mission, MissionEvent } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
+
+  // ─── ORRERY-1 default events (in lieu of overlay JSON) ───────────
+  // These match the prototype P03's MISSION_EVENTS array. When a real
+  // mission is loaded via ?mission=id, its `events` array from the
+  // overlay replaces this default.
+  const ORRERY1_EVENTS: MissionEvent[] = [
+    {
+      met: 0,
+      label: 'LAUNCH',
+      note: 'Falcon Heavy lifts off. Free-return — no landing.',
+      type: 'nominal',
+    },
+    {
+      met: 0.4,
+      label: 'TMI BURN',
+      note: 'Trans-Mars Injection: 3.61 km/s. Escape velocity achieved.',
+      type: 'nominal',
+    },
+    {
+      met: 1,
+      label: 'DAY 1 CHECK',
+      note: 'First systems health check complete. All nominal.',
+      type: 'nominal',
+    },
+    { met: 60, label: 'TCM-1', note: 'Mid-course correction 1: 35 m/s.', type: 'nominal' },
+    { met: 200, label: 'CRUISE', note: 'Outbound cruise. Earth growing distant.', type: 'info' },
+    {
+      met: 259,
+      label: 'MARS FLYBY',
+      note: 'Closest approach: ~300 km altitude. Gravity assist initiates return.',
+      type: 'nominal',
+    },
+    {
+      met: 260,
+      label: 'RETURN TRAJECTORY',
+      note: 'Free-return gravity assist complete. Spacecraft on Earth trajectory.',
+      type: 'nominal',
+    },
+    {
+      met: 310,
+      label: 'MID-COURSE 3',
+      note: 'TCM-3: 22 m/s. Return trajectory corrected.',
+      type: 'nominal',
+    },
+    { met: 400, label: 'HALFWAY HOME', note: 'Past midpoint of return journey.', type: 'info' },
+    {
+      met: 480,
+      label: 'RE-ENTRY PREP',
+      note: 'Final approach. Heat shield checks.',
+      type: 'nominal',
+    },
+    {
+      met: 509,
+      label: 'EARTH ARRIVAL',
+      note: 'Atmospheric entry. Mission complete.',
+      type: 'nominal',
+    },
+  ];
 
   // ─── Default ORRERY-1 free-return per ADR-009 ────────────────────
   // Timeline below maps "epoch days" to the prototype's reference
@@ -60,6 +118,8 @@
     },
     isFromData: false,
   });
+  let missionEvents: MissionEvent[] = $state(ORRERY1_EVENTS);
+  let capcomOpen = $state(false);
 
   // ─── Arc geometries — static, anchored to the default ORRERY-1 ─
   // Per-mission trajectories aren't in the data layer (real Mars
@@ -141,6 +201,37 @@
   // optimal-burn schedule. 4a-5 will refine.
   let dvRemaining = $derived(Math.max(0, mission.dv_total - mission.dv_used));
 
+  // ─── CAPCOM derivations ──────────────────────────────────────────
+  // Past events (met ≤ current met), most-recent-first.
+  let pastEvents = $derived(
+    missionEvents
+      .filter((e) => e.met <= met)
+      .slice()
+      .reverse(),
+  );
+  // Anomaly state — collapses past `warning` events into a worst-case
+  // banner. CAUTION when a warning is present, NOMINAL otherwise; we
+  // promote to CRITICAL when ∆v margin drops below 0.3 km/s (the
+  // prototype's threshold).
+  let anomalyLevel = $derived<'nominal' | 'caution' | 'critical'>(
+    dvRemaining < 0.3
+      ? 'critical'
+      : pastEvents.some((e) => e.type === 'warning')
+        ? 'caution'
+        : 'nominal',
+  );
+  let anomalyLabel = $derived(
+    anomalyLevel === 'critical'
+      ? m.fly_capcom_anomaly_critical()
+      : anomalyLevel === 'caution'
+        ? m.fly_capcom_anomaly_caution()
+        : m.fly_capcom_anomaly_nominal(),
+  );
+
+  function toggleCapcom() {
+    capcomOpen = !capcomOpen;
+  }
+
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
@@ -189,6 +280,12 @@
     };
     mission.dv_used = mission.dv_total * 0.94;
     simDay = mission.timeline.dep_day;
+    // Replace the default events with the loaded mission's overlay
+    // events if they exist; otherwise keep ORRERY-1 defaults so the
+    // CAPCOM panel is never empty.
+    if (m.events && m.events.length > 0) {
+      missionEvents = m.events;
+    }
   }
 
   function loadMissionFromUrl(url: URL) {
@@ -723,9 +820,68 @@
     </div>
   </div>
 
+  <button
+    class="capcom-toggle"
+    class:active={capcomOpen}
+    type="button"
+    onclick={toggleCapcom}
+    aria-pressed={capcomOpen}
+    aria-label={m.fly_capcom_toggle()}
+  >
+    {m.fly_capcom_toggle()}
+  </button>
+
   <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
     {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
   </button>
+
+  {#if capcomOpen}
+    <aside class="capcom-panel" aria-label={m.fly_capcom_panel_label()}>
+      <section class="capcom-section">
+        <h3>{m.fly_capcom_anomaly_title()}</h3>
+        <div class="anomaly anomaly-{anomalyLevel}">
+          <span class="anomaly-dot" aria-hidden="true"></span>
+          <span class="anomaly-label">{anomalyLabel}</span>
+          <span class="anomaly-detail">
+            ∆v margin {dvRemaining.toFixed(2)} km/s
+          </span>
+        </div>
+      </section>
+
+      <section class="capcom-section">
+        <h3>{m.fly_capcom_comms_title()}</h3>
+        <div class="comm-row">
+          <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
+          <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span>
+        </div>
+        <div class="comm-row">
+          <span class="comm-key">{m.fly_capcom_rtt()}</span>
+          <span class="comm-val"
+            >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
+          >
+        </div>
+      </section>
+
+      <section class="capcom-section capcom-events">
+        <h3>{m.fly_capcom_events_title()}</h3>
+        {#if pastEvents.length === 0}
+          <p class="empty">{m.fly_capcom_no_events()}</p>
+        {:else}
+          <ul>
+            {#each pastEvents as event (event.met + event.label)}
+              <li class="event event-{event.type}">
+                <span class="event-time">
+                  {m.fly_capcom_event_at({ day: Math.round(event.met).toString() })}
+                </span>
+                <span class="event-label">{event.label}</span>
+                <p class="event-note">{event.note}</p>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </section>
+    </aside>
+  {/if}
 </div>
 
 <style>
@@ -953,5 +1109,195 @@
   .toggle:focus-visible {
     border-color: #4466ff;
     outline: none;
+  }
+
+  .capcom-toggle {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    right: 70px;
+    z-index: 35;
+    min-width: 56px;
+    min-height: 44px;
+    padding: 0 14px;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: #4ecdc4;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .capcom-toggle.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: #4ecdc4;
+    color: #fff;
+  }
+  .capcom-toggle:hover,
+  .capcom-toggle:focus-visible {
+    border-color: #4ecdc4;
+    outline: none;
+  }
+  /* Hide the navigation HUD when CAPCOM is open + at the same right
+     position; CAPCOM takes priority. */
+  @media (min-width: 768px) {
+    .capcom-toggle {
+      right: 130px;
+    }
+  }
+
+  .capcom-panel {
+    position: fixed;
+    z-index: 32;
+    background: rgba(8, 10, 22, 0.96);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    padding: 14px 16px;
+    overflow-y: auto;
+    font-family: 'Space Mono', monospace;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  /* Desktop — right drawer above the systems HUD */
+  @media (min-width: 768px) {
+    .capcom-panel {
+      top: calc(var(--nav-height) + 12px);
+      right: 16px;
+      width: 320px;
+      max-height: calc(100vh - var(--nav-height) - 30px);
+    }
+  }
+  /* Mobile — bottom sheet */
+  @media (max-width: 767px) {
+    .capcom-panel {
+      bottom: 70px;
+      left: 16px;
+      right: 16px;
+      max-height: 50vh;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  .capcom-section {
+    margin-bottom: 14px;
+  }
+  .capcom-section h3 {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(78, 205, 196, 0.6);
+    margin: 0 0 6px;
+  }
+
+  .anomaly {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+  .anomaly-nominal {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.4);
+    background: rgba(78, 205, 196, 0.06);
+  }
+  .anomaly-caution {
+    color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.5);
+    background: rgba(255, 200, 80, 0.08);
+  }
+  .anomaly-critical {
+    color: #c1440e;
+    border-color: rgba(193, 68, 14, 0.6);
+    background: rgba(193, 68, 14, 0.12);
+  }
+  .anomaly-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+  .anomaly-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .anomaly-detail {
+    margin-left: auto;
+    font-size: 8px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .comm-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 9px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+  .comm-key {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .comm-val {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .capcom-events ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .event {
+    padding: 6px 10px;
+    border-left: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 3px 3px 0;
+  }
+  .event-nominal {
+    border-left-color: rgba(78, 205, 196, 0.5);
+  }
+  .event-info {
+    border-left-color: rgba(68, 102, 255, 0.5);
+  }
+  .event-warning {
+    border-left-color: #ffc850;
+    background: rgba(255, 200, 80, 0.05);
+  }
+  .event-time {
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+    margin-right: 8px;
+  }
+  .event-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .event-note {
+    margin: 4px 0 0;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .empty {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
   }
 </style>

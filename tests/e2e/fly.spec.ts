@@ -183,6 +183,24 @@ test.describe('/fly — 3D scene actually renders (regression for black-screen b
   });
 });
 
+test.describe('/fly — /plan default-Mars selection (v0.1.9 regression)', () => {
+  test('?type=landing&dep=N&tof=N (no explicit dest) loads Mars selection, not the demo', async ({
+    page,
+  }) => {
+    // /plan omits ?dest= when the user picked Mars (the default),
+    // so /fly's /plan-driven branch must coalesce missing dest to mars.
+    // Previous bug: the branch required a non-empty dest param and
+    // fell through to the ORRERY DEMO scenario.
+    await page.goto('/fly?type=landing&dep=200&tof=250');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).not.toContainText(/ORRERY DEMO/i, { timeout: 10_000 });
+    // The synthesised mission name follows the EARTH → MARS · LANDING
+    // template from applyPlanSelection.
+    await expect(id).toContainText(/MARS/i);
+    await expect(id).toContainText(/LANDING/i);
+  });
+});
+
 test.describe('/fly — Moon-mission mode (v0.1.8)', () => {
   test('?mission=apollo11 renders Earth-Moon scene (not Earth-Mars)', async ({ page }) => {
     await page.goto('/fly?mission=apollo11');

@@ -531,24 +531,21 @@
     const tofParam = url.searchParams.get('tof');
     const myLoadId = ++currentLoadId;
 
-    // /plan-driven entry: dest + dep + tof set, no mission. Synthesise
-    // an outbound-only arc to the chosen destination. URL params are
-    // inherently untyped strings, so we narrow with hasOwnProperty
-    // before casting to DestinationId.
-    if (
-      !id &&
-      destParam &&
-      Object.prototype.hasOwnProperty.call(DESTINATIONS, destParam) &&
-      depParam !== null &&
-      tofParam !== null
-    ) {
-      const dest = destParam as DestinationId;
-      const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
-      const depDay = Number(depParam);
-      const tofDays = Number(tofParam);
-      if (Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0) {
-        applyPlanSelection(dest, type, depDay, tofDays);
-        return;
+    // /plan-driven entry: dep + tof set (no mission). dest is
+    // optional — /plan omits it when the user picked the default
+    // (Mars), so we coalesce missing/empty dest to 'mars'. Synthesise
+    // an outbound-only arc to the chosen destination.
+    if (!id && depParam !== null && tofParam !== null) {
+      const destResolved = destParam || 'mars';
+      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, destResolved)) {
+        const dest = destResolved as DestinationId;
+        const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
+        const depDay = Number(depParam);
+        const tofDays = Number(tofParam);
+        if (Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0) {
+          applyPlanSelection(dest, type, depDay, tofDays);
+          return;
+        }
       }
     }
 

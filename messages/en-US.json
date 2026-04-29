@@ -199,5 +199,7 @@
   "moon_load_failed": "Failed to load Moon landing sites.",
 
   "nav_aria_label": "Main navigation",
-  "panel_close": "Close panel"
+  "panel_close": "Close panel",
+  "panel_default_label": "Detail panel",
+  "earth_label": "EARTH"
 }

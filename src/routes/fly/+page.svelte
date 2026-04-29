@@ -14,7 +14,7 @@
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
   import { parseDeltaV } from '$lib/parse-delta-v';
-  import { prefersReducedMotion } from '$lib/reduced-motion';
+  import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
@@ -92,8 +92,13 @@
   let simDay = $state(ARC_TIMELINE.dep_day);
   let simSpeed = $state(7); // days/sec
   // ADR-025: reduced-motion users start paused. They can press play
-  // to step forward manually if they want.
+  // to step forward manually. We also subscribe to changes so an
+  // OS-level toggle mid-session pauses the sim live (post-v1.0
+  // audit — /explore + /moon already did this; /fly was init-only).
   let isPlaying = $state(!prefersReducedMotion());
+  const stopReducedMotionWatch = onReducedMotionChange((reduced) => {
+    if (reduced && isPlaying) isPlaying = false;
+  });
   let cleanup: (() => void) | undefined;
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -786,7 +791,10 @@
     };
   });
 
-  onDestroy(() => cleanup?.());
+  onDestroy(() => {
+    cleanup?.();
+    stopReducedMotionWatch();
+  });
 </script>
 
 <svelte:head><title>Mission Arc · Orrery</title></svelte:head>
@@ -811,7 +819,13 @@
   {/if}
 
   <!-- Identity HUD (top-left) -->
-  <aside class="hud hud-identity" aria-label={m.fly_panel_identity()} data-testid="mission-name">
+  <aside
+    class="hud hud-identity"
+    role="status"
+    aria-live="polite"
+    aria-label={m.fly_panel_identity()}
+    data-testid="mission-name"
+  >
     <span class="hud-title">{mission.name}</span>
     <span class="hud-phase phase-{phase}">{phaseLabel}</span>
     <div class="hud-row">

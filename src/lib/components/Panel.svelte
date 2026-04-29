@@ -61,7 +61,7 @@
 {#if open}
   <aside
     class="panel"
-    aria-label={title ?? 'Detail panel'}
+    aria-label={title ?? m.panel_default_label()}
     style:transform={touchDeltaY > 0 ? `translateY(${touchDeltaY}px)` : ''}
     ontouchstart={onTouchStart}
     ontouchmove={onTouchMove}

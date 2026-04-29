@@ -286,7 +286,8 @@
     margin-right: 4px;
   }
   .pill {
-    min-height: 32px;
+    min-height: 44px;
+    min-width: 44px;
     padding: 6px 14px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1);

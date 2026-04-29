@@ -95,7 +95,7 @@
     ctx.font = "9px 'Space Mono',monospace";
     ctx.fillStyle = 'rgba(75,156,211,0.7)';
     ctx.textAlign = 'center';
-    ctx.fillText('EARTH', earthCx, earthCy + EARTH_VIS + 14);
+    ctx.fillText(m.earth_label(), earthCx, earthCy + EARTH_VIS + 14);
 
     // Right-side rotated axis label
     ctx.save();
@@ -175,28 +175,36 @@
     }
   }
 
-  let raf = 0;
-  function loop() {
-    raf = requestAnimationFrame(loop);
-    draw();
+  // /earth is a static log-scale diagram — nothing time-dependent.
+  // Post-v1.0 audit caught a 60 fps rAF loop wasting CPU + battery
+  // on every frame even though the canvas never changes between
+  // frames. Render is now event-driven: once after data loads, on
+  // window resize, on selection change.
+  function scheduleDraw() {
+    requestAnimationFrame(draw);
   }
 
   onMount(() => {
     getEarthObjects()
       .then((list) => {
         objects = list;
+        scheduleDraw();
       })
       .catch((err) => {
         console.error('Failed to load earth objects:', err);
         loadFailed = true;
       });
-    loop();
-    const onResize = () => draw();
+    scheduleDraw(); // first frame for the empty/Earth-only paint
+    const onResize = scheduleDraw;
     window.addEventListener('resize', onResize);
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('resize', onResize);
-    };
+    return () => window.removeEventListener('resize', onResize);
+  });
+
+  // Redraw on selection change so the white selection ring updates
+  // without polling.
+  $effect(() => {
+    void selected;
+    scheduleDraw();
   });
 </script>
 

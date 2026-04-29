@@ -1030,7 +1030,10 @@
           const x = Math.cos(angle) * planet.orbitR;
           const zf = Math.sin(angle) * planet.orbitR;
           group.position.set(x, zf * Math.sin(inc), zf * Math.cos(inc));
-          mesh.rotation.y += 0.005;
+          // ADR-025: gate the per-frame axial spin under reduced-motion
+          // alongside the orbit advance. The audit caught this bypass
+          // in v1.0 — planets kept spinning even with simT frozen.
+          if (!reducedMotion) mesh.rotation.y += 0.005;
         });
 
         // Track selected planet with the 3D selection ring (lying in

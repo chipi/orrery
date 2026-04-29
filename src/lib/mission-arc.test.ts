@@ -82,6 +82,88 @@ describe('outboundArc', () => {
     expect(arcY[0].x).toBeCloseTo(0, 6);
     expect(arcY[0].z).toBeCloseTo(R_EARTH_AU, 4);
   });
+
+  // ─── Multi-destination support (v0.1.6 / ADR-026) ─────────────────
+
+  it('outer-planet (Jupiter): arc starts at Earth, ends at Jupiter orbit', () => {
+    const R_JUP = 5.20336; // planets.json
+    const arcJ = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_JUP);
+    expect(Math.hypot(arcJ[0].x, arcJ[0].z)).toBeCloseTo(R_EARTH_AU, 4);
+    expect(Math.hypot(arcJ[arcJ.length - 1].x, arcJ[arcJ.length - 1].z)).toBeCloseTo(R_JUP, 3);
+  });
+
+  it('inner-planet (Mercury): signed eccentricity flips perihelion to Mercury, aphelion to Earth', () => {
+    const R_MER = 0.3871; // planets.json
+    const arcM = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_MER);
+    // ν=0 at Earth (aphelion of the inner-planet transfer ellipse).
+    expect(Math.hypot(arcM[0].x, arcM[0].z)).toBeCloseTo(R_EARTH_AU, 4);
+    // ν=π at Mercury (perihelion).
+    expect(Math.hypot(arcM[arcM.length - 1].x, arcM[arcM.length - 1].z)).toBeCloseTo(R_MER, 3);
+  });
+
+  it('inner-planet (Venus): signed eccentricity arc starts at Earth, ends at Venus', () => {
+    const R_VEN = 0.72333; // planets.json
+    const arcV = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_VEN);
+    expect(Math.hypot(arcV[0].x, arcV[0].z)).toBeCloseTo(R_EARTH_AU, 4);
+    expect(Math.hypot(arcV[arcV.length - 1].x, arcV[arcV.length - 1].z)).toBeCloseTo(R_VEN, 3);
+  });
+
+  it('inner-planet arc midpoint lies inside Earth orbit (between aphelion and perihelion)', () => {
+    const R_VEN = 0.72333;
+    const arcV = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_VEN);
+    const mid = arcV[100];
+    const r = Math.hypot(mid.x, mid.z);
+    expect(r).toBeLessThan(R_EARTH_AU);
+    expect(r).toBeGreaterThan(R_VEN);
+  });
+
+  it('outer-planet arc midpoint lies outside Earth orbit (between perihelion and aphelion)', () => {
+    const R_SAT = 9.53707;
+    const arcS = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_SAT);
+    const mid = arcS[100];
+    const r = Math.hypot(mid.x, mid.z);
+    expect(r).toBeGreaterThan(R_EARTH_AU);
+    expect(r).toBeLessThan(R_SAT);
+  });
+
+  it('default destA preserves backward-compat with Mars-only signature', () => {
+    const arcDefault = outboundArc({ x: R_EARTH_AU, z: 0 }, 200);
+    const arcMars = outboundArc({ x: R_EARTH_AU, z: 0 }, 200, R_MARS_AU);
+    for (let i = 0; i < arcDefault.length; i++) {
+      expect(arcDefault[i].x).toBeCloseTo(arcMars[i].x, 6);
+      expect(arcDefault[i].z).toBeCloseTo(arcMars[i].z, 6);
+    }
+  });
+});
+
+describe('destinationPos (v0.1.6)', () => {
+  it('returns a position on the destination orbit for each of the 5 destinations', () => {
+    const expectedRadii: Record<string, number> = {
+      mercury: 0.3871,
+      venus: 0.72333,
+      mars: 1.52366,
+      jupiter: 5.20336,
+      saturn: 9.53707,
+    };
+    // Use a dynamic import inside the test so the file loads its
+    // dependency lazily — keeps top-of-file import block tidy.
+    return import('./mission-arc').then(({ destinationPos }) => {
+      for (const id of ['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const) {
+        const p = destinationPos(0, id);
+        expect(Math.hypot(p.x, p.z)).toBeCloseTo(expectedRadii[id], 3);
+      }
+    });
+  });
+
+  it('Mars at any day matches marsPos exactly', async () => {
+    const { destinationPos } = await import('./mission-arc');
+    for (const day of [0, 100, 500, 1000]) {
+      const a = destinationPos(day, 'mars');
+      const b = marsPos(day);
+      expect(a.x).toBeCloseTo(b.x, 9);
+      expect(a.z).toBeCloseTo(b.z, 9);
+    }
+  });
 });
 
 describe('returnArc', () => {

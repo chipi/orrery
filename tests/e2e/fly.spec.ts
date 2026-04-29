@@ -145,3 +145,29 @@ test.describe('/missions → /fly end-to-end (RFC-004)', () => {
     await expect(id).toContainText(/Curiosity/i, { timeout: 10_000 });
   });
 });
+
+test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
+  test('?dest=jupiter&type=flyby&dep=N&tof=N renders a Jupiter trajectory', async ({ page }) => {
+    // Synthesised /plan → /fly path: dest + dep + tof, no mission.
+    await page.goto('/fly?dest=jupiter&type=flyby&dep=200&tof=900');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/JUPITER/i, { timeout: 10_000 });
+    await expect(id).toContainText(/FLYBY/i);
+    // Canvas painted (basic sanity).
+    const threeCanvas = page.locator('.layer:not(canvas) canvas').first();
+    await expect(threeCanvas).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('?dest=mercury&type=landing identifies Mercury + LANDING in HUD', async ({ page }) => {
+    await page.goto('/fly?dest=mercury&type=landing&dep=400&tof=180');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/MERCURY/i, { timeout: 10_000 });
+    await expect(id).toContainText(/LANDING/i);
+  });
+
+  test('default /fly (no params) still loads ORRERY DEMO scenario', async ({ page }) => {
+    await page.goto('/fly');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/ORRERY DEMO/, { timeout: 10_000 });
+  });
+});

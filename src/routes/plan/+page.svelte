@@ -64,7 +64,6 @@
 
   let rocketList: Rocket[] = $state([]);
   let selectedRocketId = $state<string | null>(null);
-  let explainerOpen = $state(false);
 
   // ─── Plot geometry ───────────────────────────────────────────────
   const ML = 64;
@@ -592,46 +591,36 @@
   </div>
 
   <aside class="right-panel" aria-label={m.plan_panel_label()}>
-    <!-- Educational primer: collapsed by default; toggle reveals a short
-         what/how/legend block. Sits at the top of the panel so it's
-         visible whether or not the user has clicked a cell yet. -->
-    <button
-      type="button"
-      class="explainer-toggle"
-      onclick={() => (explainerOpen = !explainerOpen)}
-      aria-expanded={explainerOpen}
-    >
-      <span class="explainer-icon" aria-hidden="true">{explainerOpen ? '×' : 'ⓘ'}</span>
-      {explainerOpen ? m.plan_explainer_close() : m.plan_explainer_toggle()}
-    </button>
-    {#if explainerOpen}
-      <section class="explainer">
-        <h3>{m.plan_explainer_title()}</h3>
-        <p class="explainer-intro">{m.plan_explainer_intro()}</p>
-        <dl class="explainer-list">
-          <dt>{m.plan_explainer_x_axis()}</dt>
-          <dd>{m.plan_explainer_x_desc()}</dd>
-          <dt>{m.plan_explainer_y_axis()}</dt>
-          <dd>{m.plan_explainer_y_desc()}</dd>
-          <dt>{m.plan_explainer_color()}</dt>
-          <dd>
-            {m.plan_explainer_color_desc()}
-            <div class="color-bar" aria-hidden="true">
-              <span class="cb-stop teal"></span>
-              <span class="cb-stop blue"></span>
-              <span class="cb-stop yellow"></span>
-              <span class="cb-stop orange"></span>
-              <span class="cb-stop red"></span>
-            </div>
-            <div class="color-bar-labels" aria-hidden="true">
-              <span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span>
-            </div>
-          </dd>
-          <dt>{m.plan_explainer_how_to()}</dt>
-          <dd>{m.plan_explainer_how_to_desc()}</dd>
-        </dl>
-      </section>
-    {/if}
+    <!-- Educational primer — always visible at the top of the right
+         panel so the porkchop is interpretable on first paint, before
+         the user has clicked any cell. -->
+    <section class="explainer">
+      <h3>{m.plan_explainer_title()}</h3>
+      <p class="explainer-intro">{m.plan_explainer_intro()}</p>
+      <dl class="explainer-list">
+        <dt>{m.plan_explainer_x_axis()}</dt>
+        <dd>{m.plan_explainer_x_desc()}</dd>
+        <dt>{m.plan_explainer_y_axis()}</dt>
+        <dd>{m.plan_explainer_y_desc()}</dd>
+        <dt>{m.plan_explainer_color()}</dt>
+        <dd>
+          {m.plan_explainer_color_desc()}
+          <div class="color-bar" aria-hidden="true">
+            <span class="cb-stop teal"></span>
+            <span class="cb-stop blue"></span>
+            <span class="cb-stop yellow"></span>
+            <span class="cb-stop orange"></span>
+            <span class="cb-stop red"></span>
+          </div>
+          <div class="color-bar-labels" aria-hidden="true">
+            <span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span>
+          </div>
+        </dd>
+        <dt>{m.plan_explainer_how_to()}</dt>
+        <dd>{m.plan_explainer_how_to_desc()}</dd>
+      </dl>
+    </section>
+    <hr class="panel-divider" aria-hidden="true" />
 
     {#if !readout}
       <div class="empty">
@@ -672,19 +661,23 @@
 
       {#if selectedRocket}
         <!-- Rocket reference photo (Wikimedia Commons, fetched at build).
-             onerror hides cleanly if a particular vehicle has no image
-             (e.g., Ariane 6 — pre-launch coverage gap as of 2026). -->
-        <figure class="rocket-photo">
-          <img
-            src="{base}/images/rockets/{selectedRocket.id}.jpg"
-            alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
-            loading="lazy"
-            onerror={(e) => {
-              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-              if (fig) fig.style.display = 'none';
-            }}
-          />
-        </figure>
+             {#key} forces a re-mount on rocket change so a previous
+             onerror's display:none doesn't persist into the next
+             rocket selection (Ariane 6 has no image; users would
+             otherwise see all subsequent figures stay hidden). -->
+        {#key selectedRocket.id}
+          <figure class="rocket-photo">
+            <img
+              src="{base}/images/rockets/{selectedRocket.id}.jpg"
+              alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
+              loading="lazy"
+              onerror={(e) => {
+                const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+                if (fig) fig.style.display = 'none';
+              }}
+            />
+          </figure>
+        {/key}
 
         <div class="row">
           <span class="label">{m.plan_label_vehicle_dv()}</span>
@@ -900,33 +893,10 @@
     overflow-y: auto;
   }
 
-  .explainer-toggle {
-    align-self: flex-start;
-    min-height: 44px;
-    padding: 8px 14px;
-    background: rgba(68, 102, 255, 0.08);
-    border: 1px solid rgba(68, 102, 255, 0.35);
-    color: rgba(255, 255, 255, 0.85);
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.15s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .explainer-toggle:hover,
-  .explainer-toggle:focus-visible {
-    border-color: #4466ff;
-    background: rgba(68, 102, 255, 0.18);
-    outline: none;
-  }
-  .explainer-icon {
-    font-size: 14px;
-    opacity: 0.85;
+  .panel-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 6px 0 4px;
   }
 
   .explainer {

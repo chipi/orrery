@@ -74,7 +74,6 @@
     scenarioToLoaded(defaultScenarioBase, defaultScenarioOverlay),
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
-  let capcomOpen = $state(false);
 
   // ─── Arc geometries — recomputed per loaded mission ──────────────
   // Each mission gets its own outbound arc anchored to *its* actual
@@ -243,10 +242,6 @@
         ? m.fly_capcom_anomaly_caution()
         : m.fly_capcom_anomaly_nominal(),
   );
-
-  function toggleCapcom() {
-    capcomOpen = !capcomOpen;
-  }
 
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
@@ -1101,22 +1096,14 @@
     </div>
   </div>
 
-  <button
-    class="capcom-toggle"
-    class:active={capcomOpen}
-    type="button"
-    onclick={toggleCapcom}
-    aria-pressed={capcomOpen}
-    aria-label={m.fly_capcom_toggle()}
-  >
-    {m.fly_capcom_toggle()}
-  </button>
-
   <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
     {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
   </button>
 
-  {#if capcomOpen}
+  <!-- CAPCOM panel is always present when a mission is loaded
+       (v0.1.7 — toggle removed; the panel sits permanently to the
+       right under the 2D/3D button so it can never overlap it). -->
+  {#if mission}
     <aside class="capcom-panel" aria-label={m.fly_capcom_panel_label()}>
       <section class="capcom-section">
         <h3>{m.fly_capcom_anomaly_title()}</h3>
@@ -1438,36 +1425,6 @@
     outline: none;
   }
 
-  .capcom-toggle {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    right: 76px;
-    z-index: 35;
-    min-width: 56px;
-    min-height: 44px;
-    padding: 0 14px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: #4ecdc4;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .capcom-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
-    color: #fff;
-  }
-  .capcom-toggle:hover,
-  .capcom-toggle:focus-visible {
-    border-color: #4ecdc4;
-    outline: none;
-  }
-
   .capcom-panel {
     position: fixed;
     z-index: 32;
@@ -1480,13 +1437,15 @@
     font-family: 'Space Mono', monospace;
     color: rgba(255, 255, 255, 0.85);
   }
-  /* Desktop — right drawer above the systems HUD */
+  /* Desktop — right drawer; sits below the 2D/3D toggle button so it
+     never overlaps. The toggle is at top: nav+12, height 44px, so the
+     panel starts at nav+12+44+12. */
   @media (min-width: 768px) {
     .capcom-panel {
-      top: calc(var(--nav-height) + 12px);
+      top: calc(var(--nav-height) + 68px);
       right: 16px;
       width: 320px;
-      max-height: calc(100vh - var(--nav-height) - 30px);
+      max-height: calc(100vh - var(--nav-height) - 88px);
     }
   }
   /* Mobile — bottom sheet */

@@ -89,7 +89,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── lib/
 │   │   ├── data.ts         ← fetch + cache + i18n merge
 │   │   ├── orbital.ts      ← keplerPos(), visViva()
-│   │   ├── scale.ts        ← auToPx(), altToVis()
+│   │   ├── scale.ts        ← auToPx(), altToOrbitRadius()
 │   │   └── lambert.ts      ← solver (worker only)
 │   ├── workers/
 │   │   └── lambert.worker.ts
@@ -100,12 +100,15 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── static/                 ← SvelteKit static dir (copied to build/ root)
 │   ├── fonts/              ← self-hosted (fetched at build)
 │   ├── textures/           ← planet textures (fetched at build)
-│   ├── logos/              ← agency logos (fetched at build)
-│   ├── images/missions/    ← NASA imagery (fetched at build)
+│   ├── logos/              ← agency logos (fetched at build, Wikimedia Commons)
+│   ├── images/missions/    ← NASA Images API + Wikimedia mission cover photos
+│   ├── images/rockets/     ← Wikimedia rocket reference photos
+│   ├── data/porkchop/      ← pre-computed per-destination porkchop grids (ADR-026)
 │   └── .nojekyll           ← required for GitHub Pages
 │
 ├── scripts/
 │   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images
+│   ├── precompute-porkchops.ts ← pre-computes 5 per-destination porkchop grids (ADR-026)
 │   └── validate-data.ts    ← ajv validation of all data/ JSON files
 │
 ├── tests/                  ← Playwright e2e tests
@@ -245,7 +248,8 @@ build       → npm run build (SvelteKit)
 typecheck   → tsc --noEmit
 lint        → eslint src/
 test        → vitest run
-validate    → node scripts/validate-data.ts (ajv schema check)
+validate    → npm run validate-data (ajv schema check across 113 data files)
+precompute  → npm run precompute-porkchops (5 porkchop grids; chained into build)
 doc-check   → grep checks from guide §18
 ```
 

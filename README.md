@@ -14,7 +14,7 @@ The name comes from a mechanical model of the solar system. That is exactly what
 |---|---|
 | **Moon Map** | 16 landing sites across 5 nations — the capability ladder that made Mars possible |
 | **Solar System Explorer** | Real-time 3D/2D orrery — planets, Kuiper Belt, comets, Earth orbital neighbourhood |
-| **Mission Configurator** | Real Lambert solver, 11,200-cell porkchop plot, launch window selection |
+| **Mission Configurator** | Real Lambert solver, 11,200-cell porkchop plot per destination — Earth → Mercury / Venus / Mars / Jupiter / Saturn with LANDING / FLYBY toggle (ADR-026) |
 | **Mission Arc** | Fly your mission — live telemetry, transfer arc, fuel model, timeline scrubber |
 | **Mission Library** | 28 historical missions (Mars + Moon) — every agency, every outcome, replayable |
 | **Earth Orbit** | ISS to JWST on a logarithmic scale — the infrastructure that makes space possible |

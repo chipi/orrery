@@ -23,7 +23,7 @@ The subsystems of the production application.
 
 **Lambert library** (`src/lib/lambert.ts`) — Lagrange-Gauss short-way Lambert solver. Called only from the Lambert worker, never from the main thread. See ADR-008, RFC-003.
 
-**Lambert worker** (`src/workers/lambert.worker.ts`) — runs the Lambert solver off the main thread. Receives a message with departure date range, arrival date range, and step counts. Posts back the full porkchop grid (delta-v values for each cell). See RFC-003.
+**Lambert worker** (`src/workers/lambert.worker.ts`) — runs the Lambert solver off the main thread. Receives a message with departure date range, arrival date range, step counts, and an optional `destinationId` ('mercury' | 'venus' | 'mars' | 'jupiter' | 'saturn'; defaults to 'mars' for back-compat). Posts back the full porkchop grid (delta-v values for each cell). See RFC-003 + ADR-026.
 
 **Six route pages** (`src/routes/[moon|explore|plan|fly|missions|earth]/+page.svelte`) — one SvelteKit page component per screen. Each initialises its canvas/renderer in `onMount()`, loads data via the data client, handles user interaction, and owns its HUD or panel state. Pages do not share mutable state directly — they use the shared data client and URL search params (`$page.url.searchParams`).
 
@@ -98,15 +98,28 @@ Data shapes between components.
 
 ### Lambert worker message protocol
 
-Locked by ADR-022 (closes RFC-003). Every message carries a monotonic
-`id` so a new request implicitly cancels any in-flight computation —
-the main thread discards stale messages, the worker bails before
-posting stale results.
+Locked by ADR-022 (closes RFC-003); generalised over destination by
+ADR-026 (closes RFC-007). Every message carries a monotonic `id` so a
+new request implicitly cancels any in-flight computation — the main
+thread discards stale messages, the worker bails before posting stale
+results.
 
 **Main → Worker (request):**
 ```json
-{ "id": 1, "depRange": [0, 1460], "arrRange": [80, 520], "steps": [112, 100] }
+{
+  "id": 1,
+  "depRange": [0, 1460],
+  "arrRange": [80, 520],
+  "steps": [112, 100],
+  "destinationId": "mars"
+}
 ```
+
+`destinationId` is optional (defaults to `"mars"` for back-compat with
+the pre-v0.1.6 contract); valid values: `"mercury" | "venus" | "mars"
+| "jupiter" | "saturn"`. The worker reads the destination's
+heliocentric ephemerides (a, T, L0) from `static/data/planets.json`
+via `lambert-grid.constants.ts`.
 
 **Worker → Main (progress, every 10 rows):**
 ```json
@@ -121,6 +134,12 @@ posting stale results.
 Failed cells (Lambert solver returned no solution) carry the sentinel
 `28` km/s — clamps into the deepest red of the colour scale so they
 render as visually unreachable.
+
+**Note (v0.1.6):** the worker is dormant for the 5 default destinations
+because their grids are pre-computed at build time and committed to
+`static/data/porkchop/earth-to-{id}.json` per ADR-016 + ADR-026. The
+worker stays in the bundle for any future custom-range computation
+(e.g. user-driven date-range editor).
 
 ### Orbital constants
 
@@ -182,6 +201,8 @@ Locked technical choices. Each entry points to its ADR.
 | Mission data format | Static JSON files in `data/` | ADR-006 |
 | Data serving | Same static host as the bundle (GH Pages today); separate nginx volume optional for self-hosted nginx per ADR-007's scope note | ADR-007 |
 | Lambert solver execution | Web Worker | ADR-008 |
+| Lambert worker contract | id-based cancellation, every-10-row progress, single result message; `destinationId` parameter for multi-destination | ADR-022, ADR-026 |
+| Porkchop grids | Pre-computed at build time per ADR-016; 5 destinations × 11,200 cells; ~610 KB total committed at `static/data/porkchop/` | ADR-026 |
 | Mission scenario type | Free-return flyby (no landing) | ADR-009 |
 | Transfer arc computation | Keplerian half-ellipses | ADR-010 |
 
@@ -201,6 +222,7 @@ State board for all RFCs and ADRs.
 | RFC-004 | Mission URL sharing — serialisation, back-button | Decided · closed by ADR-024 | ADR-024 | Closed at Slice 4 (4a-6) |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |
 | RFC-006 | Porkchop plot mobile interaction model | Decided · closed by ADR-023 | ADR-023 | Closed at Slice 3 (3a-8) |
+| RFC-007 | Multi-destination porkchop — destination scope, mission-type semantics, transfer-time ranges | Decided · closed by ADR-026 | ADR-026 | Closed at v0.1.6 |
 
 ### ADRs
 
@@ -231,6 +253,7 @@ State board for all RFCs and ADRs.
 | ADR-023 | Porkchop plot mobile interaction (RFC-006 Option C) | Accepted (closes RFC-006) |
 | ADR-024 | Mission URL sharing | Accepted (closes RFC-004) |
 | ADR-025 | Accessibility tier-1 contract | Accepted (closes RFC-005) |
+| ADR-026 | Multi-destination porkchop — data, semantics, selectors | Accepted (closes RFC-007) |
 
 ---
 
@@ -246,3 +269,4 @@ State board for all RFCs and ADRs.
 | v1.5 | April 2026 | RFC-003 closed by ADR-022 (Lambert worker message protocol — id-based cancellation, every-10-row progress, single result message). RFC-006 closed by ADR-023 (porkchop mobile interaction — Option C magnifier with 5×5 cell window, 140 px bubble). Both closures land alongside the /plan implementation in slice checkpoint 3a-8. §map updated. |
 | v1.6 | April 2026 | RFC-004 closed by ADR-024 (mission URL sharing — `/fly?mission=id` and `/missions?dest=...&status=...` URL contract, replaceState for filter toggles, no localStorage). Lands with /missions + /fly in Slice 4. §map updated. |
 | v1.7 | April 2026 | RFC-005 closed by ADR-025 (accessibility tier-1: prefers-reduced-motion stops auto-orbit/auto-rotate/auto-play across canvas screens; nav aria-label; panel focus management + role=tablist/tab/tabpanel; canvas aria-labels direct screen-reader users to detail panels; tier-2 work — canvas-object keyboard nav, full screen-reader description, high-contrast mode — explicitly deferred to v2). Lands with Slice 6. §map updated. |
+| v1.8 | April 2026 | RFC-007 closed by ADR-026 (multi-destination porkchop — Earth → 5 destinations: Mercury, Venus, Mars, Jupiter, Saturn; LANDING + FLYBY for inner planets, FLYBY-only for gas giants with disabled-LANDING tooltip; per-destination transfer-time ranges; Y-axis auto-switches days→years above 730d; URL contract `?dest=...&type=...`; pre-computed grids at build time per ADR-016 (~610 KB total); Lambert worker generalised over destinationId). Uranus, Neptune, Pluto, dwarf planets deferred to v0.3.0 + RFC-008. §components/Lambert-worker contract updated; §constraints stack row reflects multi-destination. Lands with v0.1.6. |

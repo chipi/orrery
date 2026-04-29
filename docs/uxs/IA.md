@@ -64,14 +64,16 @@ History API routing is locked in ADR-013 (superseding ADR-004). RFC-001 is close
 ## §url-structure
 
 ```
-/moon                Moon Map
-/explore             Solar System Explorer
-/plan                Mission Configurator
-/fly                 Mission Arc (default scenario: ORRERY-1 free-return)
-/fly?mission=id      Mission Arc (specific mission from library)
-/missions            Mission Library (all missions)
-/missions?dest=MARS  Mission Library (Mars only)
-/earth               Earth Orbit
+/explore                                       Solar System Explorer
+/plan                                          Mission Configurator (Mars default)
+/plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby
+/fly                                           Mission Arc (default scenario: ORRERY DEMO free-return)
+/fly?mission=id                                Mission Arc (specific mission from library)
+/fly?dest=jupiter&type=flyby&dep=N&tof=N       Mission Arc (synthesised from /plan selection, ADR-026)
+/missions                                      Mission Library (all missions)
+/missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Library filtered (ADR-024)
+/earth                                         Earth Orbit
+/moon                                          Moon Map
 ```
 
 Routes resolve client-side via SvelteKit's router. Servers must serve `index.html` for unmatched paths (`try_files $uri /index.html` in nginx, `404.html` SPA-redirect on GitHub Pages — see ADR-014).

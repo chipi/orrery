@@ -4,7 +4,7 @@ import { test, expect } from '@playwright/test';
  * /fly — Mission Arc.
  *
  * Covers:
- *   - default ORRERY-1 free-return loads with the HUDs populated
+ *   - default ORRERY DEMO free-return loads with the HUDs populated
  *   - 3D/2D toggle works (both views render the trajectory)
  *   - timeline scrubber drives spacecraft position
  *   - speed pills change selection
@@ -14,11 +14,11 @@ import { test, expect } from '@playwright/test';
  */
 
 test.describe('/fly — default mission', () => {
-  test('default loads with ORRERY-1 in the identity HUD', async ({ page }) => {
+  test('default loads with ORRERY DEMO in the identity HUD', async ({ page }) => {
     await page.goto('/fly');
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toBeVisible();
-    await expect(id).toContainText(/ORRERY-1/);
+    await expect(id).toContainText(/ORRERY DEMO/);
     await expect(id).toContainText(/Falcon Heavy/);
   });
 
@@ -71,7 +71,7 @@ test.describe('/fly — default mission', () => {
     await expect(scrub).toBeVisible();
     await scrub.fill('0.5');
     // After scrubbing to mid-mission, the MET should reflect roughly
-    // half of the total (~250 days for ORRERY-1 → render shows DAY ~254).
+    // half of the total (~250 days for ORRERY DEMO → render shows DAY ~254).
     await expect(id).toContainText(/DAY \d{2,}/);
   });
 
@@ -120,7 +120,7 @@ test.describe('/fly — CAPCOM mode', () => {
     await expect(panel).toContainText(/ANOMALY MONITOR/i);
   });
 
-  test('CAPCOM panel surfaces ORRERY-1 events for the default mission', async ({ page }) => {
+  test('CAPCOM panel surfaces ORRERY DEMO events for the default mission', async ({ page }) => {
     await page.goto('/fly');
     await page.getByRole('button', { name: /capcom/i }).click();
     const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });

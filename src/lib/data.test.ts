@@ -324,11 +324,11 @@ describe('getMoonSites', () => {
 });
 
 describe('getScenario', () => {
-  it('returns the ORRERY-1 scenario merged with its en-US overlay', async () => {
+  it('returns the ORRERY DEMO scenario merged with its en-US overlay', async () => {
     const s = await getScenario('orrery-1');
     expect(s).not.toBeNull();
     expect(s!.id).toBe('orrery-1');
-    expect(s!.name).toBe('ORRERY-1');
+    expect(s!.name).toBe('ORRERY DEMO');
     expect(s!.vehicle).toBe('Falcon Heavy');
     expect(s!.dep_day).toBe(333);
     expect(s!.flyby_day).toBe(592);
@@ -349,7 +349,7 @@ describe('getScenario', () => {
   it('falls back to en-US for missing locale', async () => {
     const s = await getScenario('orrery-1', 'fr');
     expect(s).not.toBeNull();
-    expect(s!.name).toBe('ORRERY-1');
+    expect(s!.name).toBe('ORRERY DEMO');
   });
 });
 

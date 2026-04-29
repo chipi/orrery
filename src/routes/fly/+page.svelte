@@ -10,10 +10,12 @@
     spacecraftPos,
     spacecraftHeading,
     type MissionTimeline,
+    type Vec2,
   } from '$lib/mission-arc';
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
   import { parseDeltaV } from '$lib/parse-delta-v';
+  import { dateToSimDay } from '$lib/sim-day';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
@@ -67,29 +69,49 @@
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
   let capcomOpen = $state(false);
 
-  // ─── Arc geometries — anchored to the canonical scenario's timeline ─
-  // Per-mission trajectories aren't in the data layer for historical
-  // missions (real Mars landings aren't free-returns; their detailed
-  // flight profiles belong in slice 5+ if added). The arc renders
-  // the canonical free-return shape regardless of which mission is
-  // loaded; HUDs surface the loaded record's identity strings around it.
+  // ─── Arc geometries — recomputed per loaded mission ──────────────
+  // Each mission gets its own outbound arc anchored to *its* actual
+  // launch window (Earth/Mars phases at the mission's departure date).
+  // Free-return scenarios additionally render a long-CCW return arc;
+  // historical Mars-bound missions land there and don't return, so
+  // their retPts is empty (no return arc rendered).
   const ARC_STEPS = 200;
-  const ARC_TIMELINE: MissionTimeline = {
+
+  function buildArcs(
+    timeline: MissionTimeline,
+    isFreeReturn: boolean,
+  ): { out: Vec2[]; ret: Vec2[] } {
+    const earthDep = earthPos(timeline.dep_day);
+    const out = outboundArc(earthDep, ARC_STEPS);
+    if (!isFreeReturn) return { out, ret: [] };
+    const marsArr = marsPos(timeline.flyby_day);
+    const earthRet = earthPos(timeline.arr_day);
+    const ret = returnArc(marsArr, earthRet, ARC_STEPS);
+    return { out, ret };
+  }
+
+  // Initial timeline + arc come from the default ORRERY DEMO scenario
+  // (which is a free-return). Mutated by applyMissionAsLoaded /
+  // applyScenarioAsLoaded as the user navigates.
+  // The initial-arc computation deliberately reads the static-imported
+  // scenario values rather than the reactive `arcTimeline` state to
+  // avoid Svelte's "state referenced in its own scope" warning.
+  const INITIAL_TIMELINE: MissionTimeline = {
     dep_day: defaultScenarioBase.dep_day,
     flyby_day: defaultScenarioBase.flyby_day,
     arr_day: defaultScenarioBase.arr_day,
   };
-  const earthDep = earthPos(ARC_TIMELINE.dep_day);
-  const marsArr = marsPos(ARC_TIMELINE.flyby_day);
-  const earthRet = earthPos(ARC_TIMELINE.arr_day);
-  const OUT_PTS = outboundArc(earthDep, ARC_STEPS);
-  const RET_PTS = returnArc(marsArr, earthRet, ARC_STEPS);
+  const INITIAL_ARCS = buildArcs(INITIAL_TIMELINE, true);
+  let arcTimeline: MissionTimeline = $state({ ...INITIAL_TIMELINE });
+  let isFreeReturn = $state(true);
+  let outPts: Vec2[] = $state(INITIAL_ARCS.out);
+  let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
-  let simDay = $state(ARC_TIMELINE.dep_day);
+  let simDay = $state(INITIAL_TIMELINE.dep_day);
   let simSpeed = $state(7); // days/sec
   // ADR-025: reduced-motion users start paused. They can press play
   // to step forward manually. We also subscribe to changes so an
@@ -101,9 +123,34 @@
   });
   let cleanup: (() => void) | undefined;
 
+  // ─── Three.js handles hoisted out of onMount ───────────────────────
+  // The outbound + return arcs need to react to outPts/retPts state
+  // changes triggered by mission loading. Holding the Line refs at
+  // component scope lets a $effect mutate their geometry without
+  // tearing down the whole scene.
+  let outLine: THREE.Line | undefined;
+  let retLine: THREE.Line | undefined;
+  const SCALE_3D = 80;
+
+  // Update the Three.js Line geometry whenever the arc-point arrays
+  // change. The Line objects are created in onMount, so this effect
+  // is a no-op on first run (outLine/retLine still undefined). Once
+  // mounted, every mission load re-uploads new vertex positions.
+  $effect(() => {
+    if (!outLine || !retLine) return;
+    const outVecs = outPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+    const retVecs = retPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+    outLine.geometry.dispose();
+    outLine.geometry = new THREE.BufferGeometry().setFromPoints(outVecs);
+    // setDrawRange resets when geometry swaps; the per-frame animate
+    // tick will re-clamp it next paint.
+    retLine.geometry.dispose();
+    retLine.geometry = new THREE.BufferGeometry().setFromPoints(retVecs);
+  });
+
   // Animation always rides the free-return arc; HUDs surface the
   // loaded mission's identity strings around it.
-  let scState = $derived(spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS));
+  let scState = $derived(spacecraftPos(simDay, arcTimeline, outPts, retPts));
   let phase = $derived(scState.phase);
   let phaseLabel = $derived(
     phase === 'pre-launch'
@@ -145,8 +192,8 @@
   // start, mapped to the loaded mission's apparent transit time so the
   // user-visible "DAY 138" feels right whether they loaded Curiosity
   // (254 days) or the default ORRERY-1 (509 days).
-  const ARC_TOTAL_DAYS = ARC_TIMELINE.arr_day - ARC_TIMELINE.dep_day;
-  let arcProgress = $derived((simDay - ARC_TIMELINE.dep_day) / ARC_TOTAL_DAYS);
+  let arcTotalDays = $derived(arcTimeline.arr_day - arcTimeline.dep_day);
+  let arcProgress = $derived((simDay - arcTimeline.dep_day) / arcTotalDays);
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
   let met = $derived(Math.max(0, arcProgress * totalDays));
   // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
@@ -215,7 +262,7 @@
   }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
-    simDay = ARC_TIMELINE.dep_day + t * ARC_TOTAL_DAYS;
+    simDay = arcTimeline.dep_day + t * arcTotalDays;
   }
 
   // ─── Mission loading from URL (?mission=id) ──────────────────────
@@ -226,14 +273,32 @@
   let currentLoadId = 0;
 
   function applyMissionAsLoaded(m: Mission) {
-    // Real historical missions don't carry a free-return geometry, so
-    // we surface their identity in the HUDs while the spacecraft rides
-    // the canonical free-return arc geometry. The "flyby day" for a
-    // landing is approximated as 95% of the transit time so the arc's
-    // closest-approach marker still fires somewhere meaningful.
+    // Per-mission arc geometry: parse the mission's actual departure
+    // date into a sim-day count so Earth's heliocentric phase at
+    // launch matches reality. transit_days drives arr_day; flyby_day
+    // is 95% of transit (closest approach for landers).
+    //
+    // Historical Mars missions don't return to Earth — we render only
+    // the outbound arc. Free-return scenarios get both arcs (handled
+    // by applyScenarioAsLoaded).
     const totalT = m.transit_days || 250;
     const flybyOffset = Math.floor(totalT * 0.95);
     const dvTotal = parseDeltaV(m.delta_v, defaultScenarioBase.dv_total_km_s);
+    // Fall back to the default scenario's dep_day if the mission's
+    // departure_date is missing or unparseable (defence in depth —
+    // schema requires the field, but the helper returns null on
+    // anything that doesn't match YYYY-MM-DD).
+    const depDay = dateToSimDay(m.departure_date) ?? defaultScenarioBase.dep_day;
+    const newTimeline: MissionTimeline = {
+      dep_day: depDay,
+      flyby_day: depDay + flybyOffset,
+      arr_day: depDay + totalT,
+    };
+    arcTimeline = newTimeline;
+    isFreeReturn = false;
+    const arcs = buildArcs(newTimeline, false);
+    outPts = arcs.out;
+    retPts = arcs.ret;
     mission = {
       name: m.name ?? m.id,
       vehicle: m.vehicle ?? '—',
@@ -242,11 +307,7 @@
       dv_used: dvTotal * 0.94,
       dep_label: m.departure_date ?? defaultScenarioOverlay.dep_label,
       arr_label: m.arrival_date ?? defaultScenarioOverlay.arr_label,
-      timeline: {
-        dep_day: ARC_TIMELINE.dep_day,
-        flyby_day: ARC_TIMELINE.dep_day + flybyOffset,
-        arr_day: ARC_TIMELINE.dep_day + totalT,
-      },
+      timeline: newTimeline,
       isFromData: true,
     };
     simDay = mission.timeline.dep_day;
@@ -256,6 +317,16 @@
   }
 
   function applyScenarioAsLoaded(s: LocalizedScenario) {
+    const newTimeline: MissionTimeline = {
+      dep_day: s.dep_day,
+      flyby_day: s.flyby_day,
+      arr_day: s.arr_day,
+    };
+    arcTimeline = newTimeline;
+    isFreeReturn = true; // ORRERY DEMO + future free-return scenarios
+    const arcs = buildArcs(newTimeline, true);
+    outPts = arcs.out;
+    retPts = arcs.ret;
     mission = {
       name: s.name,
       vehicle: s.vehicle,
@@ -264,7 +335,7 @@
       dv_used: s.dv_used_km_s,
       dep_label: s.dep_label,
       arr_label: s.arr_label,
-      timeline: { dep_day: s.dep_day, flyby_day: s.flyby_day, arr_day: s.arr_day },
+      timeline: newTimeline,
       isFromData: true,
     };
     simDay = mission.timeline.dep_day;
@@ -323,9 +394,8 @@
     if (!container || !canvas2d) return;
 
     // ──────────────────────────────────────────────────────────────
-    // 3D — Three.js scene. Units = AU × SCALE_3D.
+    // 3D — Three.js scene. Units = AU × SCALE_3D (component scope).
     // ──────────────────────────────────────────────────────────────
-    const SCALE_3D = 80;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       55,
@@ -411,13 +481,13 @@
     // = nothing in 3D (the 2D mode has the dashed-future treatment;
     // 3D keeps it cleaner without dashed segments since LineDashedMaterial
     // requires geometry.computeLineDistances which is awkward to update).
-    const outVecs = OUT_PTS.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-    const retVecs = RET_PTS.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-    const outLine = new THREE.Line(
+    const outVecs = outPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+    const retVecs = retPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+    outLine = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(outVecs),
       new THREE.LineBasicMaterial({ color: 0x4466ff, transparent: true, opacity: 0.7 }),
     );
-    const retLine = new THREE.Line(
+    retLine = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints(retVecs),
       new THREE.LineBasicMaterial({ color: 0x9966ff, transparent: true, opacity: 0.7 }),
     );
@@ -483,7 +553,6 @@
       }),
     );
     returnRing.rotation.x = Math.PI / 2;
-    returnRing.position.set(earthRet.x * 80, 0, earthRet.z * 80);
     returnRing.visible = false;
     scene.add(returnRing);
 
@@ -632,7 +701,7 @@
       ctx2.fill();
 
       // Past/future split — past solid, future dashed at low opacity.
-      function drawSplit(pts: typeof OUT_PTS, t: number, past: string, future: string) {
+      function drawSplit(pts: Vec2[], t: number, past: string, future: string) {
         const split = Math.max(0, Math.min(pts.length - 1, Math.floor(t * (pts.length - 1))));
         if (split > 0) {
           ctx2.beginPath();
@@ -657,14 +726,9 @@
         ctx2.setLineDash([]);
       }
 
-      const sc = spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
-      drawSplit(OUT_PTS, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
-      drawSplit(
-        RET_PTS,
-        Math.max(0, (sc.progress - 0.5) / 0.5),
-        '#9966ff',
-        'rgba(153,102,255,0.2)',
-      );
+      const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
+      drawSplit(outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
+      drawSplit(retPts, Math.max(0, (sc.progress - 0.5) / 0.5), '#9966ff', 'rgba(153,102,255,0.2)');
 
       // Earth + Mars at simDay
       const ePos = earthPos(simDay);
@@ -679,7 +743,7 @@
       ctx2.fill();
 
       // Spacecraft chevron
-      const heading = spacecraftHeading(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
+      const heading = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
       const sx = cx + sc.pos.x * SCALE_2D;
       const sy = cy + sc.pos.z * SCALE_2D;
       ctx2.save();
@@ -695,13 +759,15 @@
       ctx2.fill();
       ctx2.restore();
 
-      // Flyby ring near Mars
+      // Flyby ring near Mars — recompute per-mission arrival position
+      // from the live arcTimeline.
       if (sc.progress >= 0.45 && sc.progress <= 0.55) {
+        const marsArrLive = marsPos(arcTimeline.flyby_day);
         const pulse = 0.5 + 0.5 * Math.sin(simDay * 0.5);
         ctx2.beginPath();
         ctx2.arc(
-          cx + marsArr.x * SCALE_2D,
-          cy + marsArr.z * SCALE_2D,
+          cx + marsArrLive.x * SCALE_2D,
+          cy + marsArrLive.z * SCALE_2D,
           14 + pulse * 3,
           0,
           Math.PI * 2,
@@ -728,7 +794,7 @@
       lastTime = now;
       if (isPlaying) {
         simDay += dt * simSpeed;
-        if (simDay > ARC_TIMELINE.arr_day + 30) simDay = ARC_TIMELINE.dep_day;
+        if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
 
       const ePos = earthPos(simDay);
@@ -736,32 +802,44 @@
       earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
       marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
 
-      const sc = spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
+      const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
       scGroup.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
-      const h = spacecraftHeading(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
+      const h = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
       scGroup.lookAt(scGroup.position.x + h.x * SCALE_3D, 0, scGroup.position.z + h.z * SCALE_3D);
 
-      const splitOut = Math.max(
-        2,
-        Math.min(outVecs.length, Math.floor(Math.min(1, sc.progress / 0.5) * outVecs.length)),
-      );
-      outLine.geometry.setDrawRange(0, splitOut);
-      const splitRet = Math.max(
-        2,
-        Math.min(
-          retVecs.length,
-          Math.floor(Math.max(0, (sc.progress - 0.5) / 0.5) * retVecs.length),
-        ),
-      );
-      retLine.geometry.setDrawRange(0, splitRet);
+      // Geometry length tracks the live outPts/retPts arrays (which
+      // change when a new mission loads). Guard against the ts-narrowing
+      // case where outLine/retLine are still being created on first tick.
+      if (outLine) {
+        const splitOut = Math.max(
+          2,
+          Math.min(outPts.length, Math.floor(Math.min(1, sc.progress / 0.5) * outPts.length)),
+        );
+        outLine.geometry.setDrawRange(0, splitOut);
+      }
+      if (retLine) {
+        const splitRet = Math.max(
+          2,
+          Math.min(
+            retPts.length,
+            Math.floor(Math.max(0, (sc.progress - 0.5) / 0.5) * retPts.length),
+          ),
+        );
+        retLine.geometry.setDrawRange(0, splitRet);
+      }
 
-      flybyRing.position.set(marsArr.x * SCALE_3D, 0, marsArr.z * SCALE_3D);
+      // marsArr / earthRet are recomputed per-frame from the live
+      // arcTimeline so these markers track per-mission launch windows.
+      const marsArrLive = marsPos(arcTimeline.flyby_day);
+      const earthRetLive = earthPos(arcTimeline.arr_day);
+      flybyRing.position.set(marsArrLive.x * SCALE_3D, 0, marsArrLive.z * SCALE_3D);
       flybyRing.visible = sc.progress >= 0.45 && sc.progress <= 0.55;
       // RETURN marker — fades in once we're past the flyby and on the
       // return leg, fades back out at the very end (last 5% of the
       // progress so the marker doesn't overlap with the rendered
       // spacecraft mesh at touchdown).
-      returnRing.visible = sc.progress >= 0.5 && sc.progress <= 0.95;
+      returnRing.position.set(earthRetLive.x * SCALE_3D, 0, earthRetLive.z * SCALE_3D);
+      returnRing.visible = isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();

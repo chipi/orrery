@@ -144,9 +144,9 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ## Slice 6 — Polish and ship ✅ COMPLETE
 
-*Goal: fully offline, accessible, production-ready, v1.0 tagged.*
+*Goal: fully offline, accessible, production-ready, v0.1.0 tagged.*
 
-**Status (2026-04-29):** complete. v1.0.0 tagged and pushed. Live at https://chipi.github.io/orrery/.
+**Status (2026-04-29):** complete. v0.1.0 tagged and pushed. Live at https://chipi.github.io/orrery/.
 
 **What landed:**
 - ✅ `prefers-reduced-motion` honoured on /explore (sim freezes), /fly (auto-play defaults off), /moon (auto-rotate stops). User-initiated drag still works. Helper in `src/lib/reduced-motion.ts`.
@@ -161,7 +161,7 @@ The production build extracts, connects, and deploys what the prototypes demonst
 - ✅ Dependabot config (`.github/dependabot.yml`) — npm + github-actions, weekly, versioning-strategy=increase-if-necessary so Three.js r128 doesn't bump unattended
 - ✅ Doc-system gating-sentence checks in `scripts/validate-data.ts` — every PRD has "Why this is a PRD", every RFC has "Why this is an RFC", every ADR has `> Status ·`
 - ✅ README rewritten with Live link + Getting Started / Development / Build / Deploy sections
-- ✅ `v1.0.0` tagged
+- ✅ `v0.1.0` tagged
 
 **RFCs closed at this slice:** RFC-005 → ADR-025 (accessibility tier-1 contract). All six RFCs from the original concept package are now closed.
 
@@ -174,28 +174,27 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ---
 
-## Final state at v1.0.0
+## Post-Slice-6 audit (2026-04-29)
 
-- **Six screens shipping**, all in production at https://chipi.github.io/orrery/
-- **125 unit tests** + **87 e2e tests** (1 mobile-only skip), all green
-- **108 data files** ajv-schema-validated
-- **25 ADRs** locked, **6 RFCs** closed (RFC-001 → ADR-013, RFC-002 → ADR-020, RFC-003 → ADR-022, RFC-004 → ADR-024, RFC-005 → ADR-025, RFC-006 → ADR-023)
-- **TA.md at v1.7**
-- Tagged `v1.0.0`
-
----
-
-## Post-v1.0 audit (2026-04-29) — v1.0.1
-
-A 5-batch audit ran against the v1.0.0 codebase covering tests, drift, and code quality (20 findings).
+A 5-batch audit ran against the slice-6 codebase covering tests, drift, and code quality (20 findings). All landed before the `v0.1.0` tag.
 
 - **Batch 1** (`9bd1693`) — ADR-025 breaches + i18n: planet axial spin gated under reduced-motion in /explore; identity HUD now `role="status" aria-live="polite"`; /fly subscribes to OS preference flips (was init-only); /missions filter pills bumped to 44px; hardcoded `'EARTH'` and Panel default label routed through Paraglide; /earth render switched from 60fps rAF to event-driven (data load, resize, selection change).
 - **Batch 2** (`b23285f`) — testing backfill: `reduced-motion.test.ts` (8 tests, jsdom-pragma) + 6 new tests for `getEarthObjects` / `getMoonSites` (overlay merge, locale fallback). jsdom@26 added as a pinned dev-dep.
 - **Batch 3** (`b2c8de8`) — pure helper extraction: `$lib/earth-regimes` (`deriveRegimeBounds`) + `$lib/moon-projection` (`latLonToUnitSphere`, `latLonToEquirect`). Routes import the helpers; 19 new unit tests.
 - **Batch 4** — closed as no-op: `enterTwoDMode` and `getCanvas2dContext` were 2-callsite premature abstractions; `/moon` per-frame marker length-check is O(1) and correct; canvas `role="img"` is rejected by Svelte's a11y plugin.
-- **Batch 5** — this commit: stale test counts in IMPLEMENTATION.md corrected; v1.0.1 tag.
+- **Batch 5** (`ba5bc11`) — stale test counts corrected in IMPLEMENTATION.md.
 
-**Final state at v1.0.1:** **144 unit tests** (was 125, +19) + **87 e2e tests**, all green. Six pure helper modules (`orbital`, `scale`, `lambert`, `mission-arc`, `parse-delta-v`, `earth-regimes`, `moon-projection`, `reduced-motion`) — every Slice 4–6 feature now has a testable lib.
+---
+
+## Final state at v0.1.0
+
+- **Six screens shipping**, all in production at https://chipi.github.io/orrery/
+- **144 unit tests** + **87 e2e tests** (1 mobile-only skip), all green
+- **108 data files** ajv-schema-validated
+- **25 ADRs** locked, **6 RFCs** closed (RFC-001 → ADR-013, RFC-002 → ADR-020, RFC-003 → ADR-022, RFC-004 → ADR-024, RFC-005 → ADR-025, RFC-006 → ADR-023)
+- **TA.md at v1.7**
+- Eight pure helper modules: `orbital`, `scale`, `lambert`, `mission-arc`, `parse-delta-v`, `earth-regimes`, `moon-projection`, `reduced-motion`
+- Tagged `v0.1.0`
 
 ---
 
@@ -205,7 +204,7 @@ A documentation site was added outside the original six-slice plan, locked in **
 
 ---
 
-## What is not in scope for v1.0
+## What is not in scope for v0.1.0
 
 - User accounts or saved missions
 - Languages other than English (i18n architecture in place; translations not yet)

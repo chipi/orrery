@@ -1,0 +1,1 @@
+const r=[[0,15],[.387,52],[.723,83],[1,113],[1.524,155],[2.2,192],[3.2,237],[5.2,248],[9.54,320],[19.2,378],[30.07,430],[39.5,448],[50,470],[80,498],[150,512]];function s(t){for(let n=0;n<r.length-1;n++){const[o,a]=r[n],[e,i]=r[n+1];if(t>=o&&t<=e)return a+(t-o)/(e-o)*(i-a)}return 512}function c(t){return 8.5+5.2*Math.log10(1+t/200)}export{c as a,s as b};

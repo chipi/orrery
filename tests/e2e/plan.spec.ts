@@ -116,6 +116,75 @@ test.describe('/plan — porkchop computes and renders', () => {
   });
 });
 
+test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
+  test('Jupiter porkchop renders when ?dest=jupiter is set', async ({ page }) => {
+    await page.goto('/plan?dest=jupiter');
+    // Loading spinner clears once the pre-computed grid loads.
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    // Destination selector reflects the URL param.
+    const destSelect = page.locator('.dest-select');
+    await expect(destSelect).toHaveValue('jupiter');
+    // Canvas painted (sample non-bg pixel near centre, like the existing test).
+    const canvas = page.locator('canvas.porkchop');
+    await page.waitForFunction(
+      () => {
+        const c = document.querySelector('canvas.porkchop') as HTMLCanvasElement | null;
+        if (!c || c.width === 0) return false;
+        const ctx = c.getContext('2d');
+        if (!ctx) return false;
+        const data = ctx.getImageData(
+          Math.floor(c.width * 0.5),
+          Math.floor(c.height * 0.5),
+          5,
+          5,
+        ).data;
+        for (let i = 0; i < data.length; i += 4) {
+          const isBg =
+            Math.abs(data[i] - 4) < 6 &&
+            Math.abs(data[i + 1] - 4) < 6 &&
+            Math.abs(data[i + 2] - 12) < 8;
+          if (!isBg) return true;
+        }
+        return false;
+      },
+      { timeout: 8_000 },
+    );
+    await expect(canvas).toBeVisible();
+  });
+
+  test('LANDING pill is disabled with aria-disabled when dest is a gas giant', async ({
+    page,
+  }) => {
+    await page.goto('/plan?dest=jupiter');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const landingPill = page.getByRole('radio', { name: /LANDING/ });
+    await expect(landingPill).toHaveAttribute('aria-disabled', 'true');
+    await expect(landingPill).toBeDisabled();
+  });
+
+  test('LANDING + FLYBY both selectable on Mars', async ({ page }) => {
+    await page.goto('/plan?dest=mars');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    const landingPill = page.getByRole('radio', { name: /LANDING/ });
+    const flybyPill = page.getByRole('radio', { name: /FLYBY/ });
+    await expect(landingPill).not.toBeDisabled();
+    await expect(flybyPill).not.toBeDisabled();
+  });
+
+  test('switching destination updates URL and porkchop ranges', async ({ page }) => {
+    await page.goto('/plan');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    await page.locator('.dest-select').selectOption('saturn');
+    // URL reflects the change (replaceState).
+    await expect(page).toHaveURL(/dest=saturn/);
+    // Loading spinner clears for the new grid.
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    // LANDING pill should now be disabled (Saturn is a gas giant).
+    const landingPill = page.getByRole('radio', { name: /LANDING/ });
+    await expect(landingPill).toBeDisabled();
+  });
+});
+
 test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {
   test.skip(({ browserName }) => browserName !== 'chromium', 'magnifier is touch-only');
 

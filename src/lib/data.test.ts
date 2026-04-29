@@ -13,6 +13,7 @@ import {
   getScenario,
   getEarthObjects,
   getMoonSites,
+  getPorkchopGrid,
   rockets,
   earthObjects,
   moonSites,
@@ -350,6 +351,53 @@ describe('getScenario', () => {
     const s = await getScenario('orrery-1', 'fr');
     expect(s).not.toBeNull();
     expect(s!.name).toBe('ORRERY DEMO');
+  });
+});
+
+describe('getPorkchopGrid (v0.1.6 / ADR-026)', () => {
+  it.each(['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const)(
+    'returns a valid grid for %s',
+    async (id) => {
+      const g = await getPorkchopGrid(id);
+      expect(g).not.toBeNull();
+      if (!g) return;
+      expect(g.destination).toBe(id);
+      expect(g.steps).toEqual([112, 100]);
+      expect(g.grid).toHaveLength(100); // 100 rows (TOF axis)
+      expect(g.grid[0]).toHaveLength(112); // 112 cols (dep axis)
+      // Ranges declared per ADR-026 §Destination scope
+      expect(g.dep_range_days).toEqual([0, 1460]);
+      expect(g.tof_range_days[1]).toBeGreaterThan(g.tof_range_days[0]);
+    },
+  );
+
+  it('inner planets offer LANDING + FLYBY; gas giants only FLYBY', async () => {
+    for (const id of ['mercury', 'venus', 'mars'] as const) {
+      const g = await getPorkchopGrid(id);
+      expect(g?.mission_types.sort()).toEqual(['FLYBY', 'LANDING']);
+    }
+    for (const id of ['jupiter', 'saturn'] as const) {
+      const g = await getPorkchopGrid(id);
+      expect(g?.mission_types).toEqual(['FLYBY']);
+    }
+  });
+
+  it('Jupiter and Saturn render in years; inner planets in days', async () => {
+    for (const id of ['mercury', 'venus', 'mars'] as const) {
+      const g = await getPorkchopGrid(id);
+      expect(g?.tof_axis_unit).toBe('days');
+    }
+    for (const id of ['jupiter', 'saturn'] as const) {
+      const g = await getPorkchopGrid(id);
+      expect(g?.tof_axis_unit).toBe('years');
+    }
+  });
+
+  it('LANDING dv_orbit_insertion is positive for inner planets', async () => {
+    for (const id of ['mercury', 'venus', 'mars'] as const) {
+      const g = await getPorkchopGrid(id);
+      expect(g?.dv_orbit_insertion.LANDING).toBeGreaterThan(0);
+    }
   });
 });
 

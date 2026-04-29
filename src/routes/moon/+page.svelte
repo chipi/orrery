@@ -403,11 +403,27 @@
     el3d.addEventListener('touchend', onTouchEnd);
     el3d.addEventListener('touchcancel', onTouchEnd);
 
-    // 2D context
+    // 2D context + lunar disc photos for the orthographic discs.
+    // Loading async; until ready, draw2d falls back to the gradient.
     const c2 = canvas2d;
     const _maybeCtx = c2.getContext('2d');
     if (!_maybeCtx) throw new Error('2D context unavailable');
     const ctx2: CanvasRenderingContext2D = _maybeCtx;
+
+    const moonNearImg = new Image();
+    moonNearImg.src = `${base}/textures/moon_near.jpg`;
+    const moonFarImg = new Image();
+    moonFarImg.src = `${base}/textures/moon_far.jpg`;
+    let nearReady = false;
+    let farReady = false;
+    moonNearImg.onload = () => {
+      nearReady = true;
+      if (view === '2d') draw2d();
+    };
+    moonFarImg.onload = () => {
+      farReady = true;
+      if (view === '2d') draw2d();
+    };
 
     function draw2d() {
       // Defensive resize
@@ -449,23 +465,32 @@
         labelColor: string,
         isFarSide: boolean,
       ) => {
-        // Moon body — radial gradient grey, brighter at the centre to
-        // suggest a sun-lit sphere from the viewer's direction.
-        const grad = ctx2.createRadialGradient(
-          cx - discR * 0.25,
-          cy - discR * 0.25,
-          discR * 0.05,
-          cx,
-          cy,
-          discR,
-        );
-        grad.addColorStop(0, '#cdcdc8');
-        grad.addColorStop(0.6, '#7c7a76');
-        grad.addColorStop(1, '#28272a');
+        // Moon body — real photo of this hemisphere clipped to a circle
+        // (v0.1.8). Falls back to grey gradient until images load.
+        const img = isFarSide ? moonFarImg : moonNearImg;
+        const ready = isFarSide ? farReady : nearReady;
+        ctx2.save();
         ctx2.beginPath();
         ctx2.arc(cx, cy, discR, 0, Math.PI * 2);
-        ctx2.fillStyle = grad;
-        ctx2.fill();
+        ctx2.clip();
+        if (ready && img.naturalWidth > 0) {
+          ctx2.drawImage(img, cx - discR, cy - discR, discR * 2, discR * 2);
+        } else {
+          const grad = ctx2.createRadialGradient(
+            cx - discR * 0.25,
+            cy - discR * 0.25,
+            discR * 0.05,
+            cx,
+            cy,
+            discR,
+          );
+          grad.addColorStop(0, '#cdcdc8');
+          grad.addColorStop(0.6, '#7c7a76');
+          grad.addColorStop(1, '#28272a');
+          ctx2.fillStyle = grad;
+          ctx2.fillRect(cx - discR, cy - discR, discR * 2, discR * 2);
+        }
+        ctx2.restore();
 
         // Limb shadow ring
         ctx2.beginPath();

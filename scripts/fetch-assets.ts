@@ -220,6 +220,50 @@ async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
   await writeFile(dest, buffer);
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// LUNAR DISC PHOTOS — v0.1.8
+//
+// Square disc shots of each lunar hemisphere, used by /moon's 2D
+// orthographic view as the disc background (replacing the previous
+// grey gradient). Fetched via Wikimedia Special:FilePath?width=800
+// to keep file size manageable.
+// ──────────────────────────────────────────────────────────────────────
+
+const LUNAR_DISC_PHOTOS: { id: string; filename: string; license: string }[] = [
+  {
+    id: 'moon_near',
+    filename: 'Full_Moon_Luc_Viatour.jpg',
+    license: 'CC BY-SA 3.0 — Luc Viatour',
+  },
+  {
+    id: 'moon_far',
+    filename: 'Moon_Farside_LRO.jpg',
+    license: 'Public domain (NASA LRO)',
+  },
+];
+
+async function fetchLunarDiscPhotos(): Promise<number> {
+  await mkdir(TEXTURES_DIR, { recursive: true });
+  let downloaded = 0;
+  for (let i = 0; i < LUNAR_DISC_PHOTOS.length; i++) {
+    const photo = LUNAR_DISC_PHOTOS[i];
+    const localPath = join(TEXTURES_DIR, `${photo.id}.jpg`);
+    const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(photo.filename)}?width=800`;
+    console.log(`  ${photo.id}.jpg…`);
+    try {
+      await downloadFromWikimedia(url, localPath);
+      downloaded++;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`    ⚠ skipped ${photo.id}: ${msg}`);
+    }
+    if (i < LUNAR_DISC_PHOTOS.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+    }
+  }
+  return downloaded;
+}
+
 async function fetchAgencyLogos(): Promise<number> {
   await mkdir(LOGOS_DIR, { recursive: true });
   let downloaded = 0;
@@ -563,6 +607,10 @@ async function main() {
   console.log('Fetching textures:');
   const textureCount = await fetchTextures();
   console.log(`  → ${textureCount} texture files in ${TEXTURES_DIR}\n`);
+
+  console.log('Fetching lunar disc photos:');
+  const lunarCount = await fetchLunarDiscPhotos();
+  console.log(`  → ${lunarCount} lunar disc files in ${TEXTURES_DIR}\n`);
 
   console.log('Fetching agency logos:');
   const logoCount = await fetchAgencyLogos();

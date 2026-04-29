@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import { getMissionsForLibrary } from '$lib/data';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
+  import MissionPanel from '$lib/components/MissionPanel.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // ─── State ───────────────────────────────────────────────────────
@@ -56,11 +57,23 @@
     pushFiltersToUrl();
   }
 
-  // ─── Card click → Slice 4a-2 will open a panel; for now just record
-  //     the selection so the visual selected state is verifiable.
+  // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
+  let panelOpen = $state(false);
+
+  let selectedMission = $derived(
+    selectedId ? (missions.find((mission) => mission.id === selectedId) ?? null) : null,
+  );
+
   function selectMission(id: string) {
     selectedId = id;
+    panelOpen = true;
+  }
+  function closePanel() {
+    panelOpen = false;
+  }
+  function flyMission(id: string) {
+    goto(`${base}/fly?mission=${id}`);
   }
 
   // ─── Load ────────────────────────────────────────────────────────
@@ -209,6 +222,8 @@
     </ul>
   {/if}
 </div>
+
+<MissionPanel mission={selectedMission} open={panelOpen} onClose={closePanel} onFly={flyMission} />
 
 <style>
   .library {

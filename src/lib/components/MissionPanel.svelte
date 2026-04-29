@@ -1,0 +1,434 @@
+<script lang="ts">
+  import Panel from './Panel.svelte';
+  import type { Mission } from '$types/mission';
+  import * as m from '$lib/paraglide/messages';
+
+  type Tab = 'overview' | 'learn';
+
+  type Props = {
+    mission: Mission | null;
+    open: boolean;
+    onClose: () => void;
+    onFly?: (id: string) => void;
+  };
+  let { mission, open, onClose, onFly }: Props = $props();
+
+  let tab: Tab = $state('overview');
+
+  // Reset to OVERVIEW each time a different mission is selected.
+  let lastId = $state<string | null>(null);
+  $effect(() => {
+    if (mission && mission.id !== lastId) {
+      tab = 'overview';
+      lastId = mission.id;
+    }
+  });
+
+  // Group links by tier for the LEARN tab. The mission JSON stores
+  // links in a flat array with a `t` (tier) discriminator.
+  let linksByTier = $derived.by(() => {
+    if (!mission?.links) return { intro: [], core: [], deep: [] };
+    const out = {
+      intro: [] as typeof mission.links,
+      core: [] as typeof mission.links,
+      deep: [] as typeof mission.links,
+    };
+    for (const link of mission.links) out[link.t].push(link);
+    return out;
+  });
+
+  function flyMission() {
+    if (mission && onFly) onFly(mission.id);
+  }
+</script>
+
+<Panel {open} {onClose} title={mission?.name ?? mission?.id ?? ''}>
+  {#if mission}
+    <div class="head">
+      <div class="agency-row">
+        <span class="agency-badge" style:background-color={mission.color}>{mission.agency}</span>
+        <span class="status status-{mission.status.toLowerCase()}">{mission.status}</span>
+        {#if mission.data_quality === 'partial'}
+          <span class="quality">{m.mp_data_quality_partial()}</span>
+        {:else if mission.data_quality === 'reconstructed'}
+          <span class="quality">{m.mp_data_quality_reconstructed()}</span>
+        {/if}
+      </div>
+      <h1 class="name">{mission.name ?? mission.id}</h1>
+      {#if mission.type}
+        <p class="type">{mission.type}</p>
+      {/if}
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button
+        type="button"
+        class:active={tab === 'overview'}
+        onclick={() => (tab = 'overview')}
+        role="tab"
+        aria-selected={tab === 'overview'}>{m.mp_tab_overview()}</button
+      >
+      <button
+        type="button"
+        class:active={tab === 'learn'}
+        onclick={() => (tab = 'learn')}
+        role="tab"
+        aria-selected={tab === 'learn'}>{m.mp_tab_learn()}</button
+      >
+    </div>
+
+    <div class="tab-content">
+      {#if tab === 'overview'}
+        <div class="grid">
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_departure()}</div>
+            <div class="cell-value">{mission.departure_date ?? '—'}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_arrival()}</div>
+            <div class="cell-value">{mission.arrival_date ?? '—'}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_transit()}</div>
+            <div class="cell-value">
+              {mission.transit_days
+                ? m.mp_transit_days({ count: mission.transit_days.toString() })
+                : '—'}
+            </div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_year()}</div>
+            <div class="cell-value">{mission.year}</div>
+          </div>
+          <div class="cell wide">
+            <div class="cell-label">{m.mp_label_vehicle()}</div>
+            <div class="cell-value">{mission.vehicle ?? '—'}</div>
+          </div>
+          <div class="cell wide">
+            <div class="cell-label">{m.mp_label_payload()}</div>
+            <div class="cell-value">{mission.payload ?? '—'}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_delta_v()}</div>
+            <div class="cell-value">{mission.delta_v ?? '—'}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.mp_label_agency()}</div>
+            <div class="cell-value short">{mission.agency_full ?? mission.agency}</div>
+          </div>
+        </div>
+
+        {#if mission.first}
+          <div class="first">{mission.first}</div>
+        {/if}
+
+        {#if mission.description}
+          <p class="editorial">{mission.description}</p>
+        {/if}
+
+        {#if mission.credit}
+          <div class="credit">{mission.credit}</div>
+        {/if}
+      {:else if tab === 'learn'}
+        {#if !mission.links || mission.links.length === 0}
+          <p class="empty-tab">{m.mp_no_links()}</p>
+        {:else}
+          {#if linksByTier.intro.length > 0}
+            <section class="link-tier tier-intro">
+              <h3>{m.mp_links_intro()}</h3>
+              <ul>
+                {#each linksByTier.intro as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.core.length > 0}
+            <section class="link-tier tier-core">
+              <h3>{m.mp_links_core()}</h3>
+              <ul>
+                {#each linksByTier.core as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.deep.length > 0}
+            <section class="link-tier tier-deep">
+              <h3>{m.mp_links_deep()}</h3>
+              <ul>
+                {#each linksByTier.deep as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+        {/if}
+      {/if}
+    </div>
+
+    {#if mission.status !== 'PLANNED' && onFly}
+      <div class="cta-bar">
+        <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
+          {m.mp_fly_button()}
+        </button>
+      </div>
+    {/if}
+  {/if}
+</Panel>
+
+<style>
+  .head {
+    padding: 0 0 12px 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 12px;
+  }
+  .agency-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .agency-badge,
+  .status,
+  .quality {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+  .agency-badge {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .status {
+    border: 1px solid;
+  }
+  .status-active {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.4);
+    background: rgba(78, 205, 196, 0.08);
+  }
+  .status-flown {
+    color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .status-planned {
+    color: #4466ff;
+    border-color: rgba(68, 102, 255, 0.4);
+    background: rgba(68, 102, 255, 0.08);
+  }
+  .quality {
+    color: #ffc850;
+    border: 1px solid rgba(255, 200, 80, 0.4);
+    background: rgba(255, 200, 80, 0.08);
+  }
+
+  .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: var(--color-text);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .type {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  .tabs button {
+    padding: 10px 14px;
+    min-height: 44px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    margin-bottom: -1px;
+  }
+  .tabs button.active {
+    color: var(--color-text);
+    border-bottom-color: #4466ff;
+  }
+  .tabs button:hover:not(.active) {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .tab-content {
+    flex: 1;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    margin-bottom: 14px;
+  }
+  .cell {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 10px;
+  }
+  .cell.wide {
+    grid-column: 1 / -1;
+  }
+  .cell-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 6px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.25);
+    margin-bottom: 3px;
+  }
+  .cell-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--color-text);
+    font-weight: 700;
+  }
+  .cell-value.short {
+    font-size: 9px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .first {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 10px 12px;
+    background: rgba(68, 102, 255, 0.08);
+    border-left: 3px solid #4466ff;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  .editorial {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+    margin: 0 0 14px;
+  }
+
+  .credit {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.25);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 10px;
+  }
+
+  .link-tier {
+    margin-bottom: 14px;
+  }
+  .link-tier h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+  }
+  .tier-intro h3 {
+    color: #4ecdc4;
+  }
+  .tier-core h3 {
+    color: #4466ff;
+  }
+  .tier-deep h3 {
+    color: #ffc850;
+  }
+  .link-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .link-tier a {
+    display: block;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-decoration: none;
+    line-height: 1.5;
+    min-height: 44px;
+    transition: all 0.15s;
+  }
+  .link-tier a:hover,
+  .link-tier a:focus-visible {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+  }
+
+  .empty-tab {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+
+  .cta-bar {
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+    margin-top: 12px;
+  }
+  .cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: #1a33bb;
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta:hover,
+  .cta:focus-visible {
+    background: #2244dd;
+    border-color: #4466ff;
+    outline: none;
+  }
+</style>

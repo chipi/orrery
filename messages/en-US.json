@@ -82,5 +82,26 @@
   "lib_count_total": "{count} TOTAL",
   "lib_count_filtered": "{count} VISIBLE",
   "lib_card_year": "{year}",
-  "lib_empty": "No missions match the current filters."
+  "lib_empty": "No missions match the current filters.",
+
+  "mp_tab_overview": "OVERVIEW",
+  "mp_tab_learn": "LEARN",
+  "mp_label_departure": "DEPARTURE",
+  "mp_label_arrival": "ARRIVAL",
+  "mp_label_transit": "TRANSIT",
+  "mp_label_vehicle": "VEHICLE",
+  "mp_label_payload": "PAYLOAD",
+  "mp_label_delta_v": "∆V",
+  "mp_label_agency": "AGENCY",
+  "mp_label_status": "STATUS",
+  "mp_label_year": "YEAR",
+  "mp_transit_days": "{count} days",
+  "mp_links_intro": "INTRO",
+  "mp_links_core": "CORE",
+  "mp_links_deep": "DEEP",
+  "mp_no_links": "No external links recorded for this mission.",
+  "mp_fly_button": "▶ FLY THIS MISSION",
+  "mp_fly_unavailable": "FLIGHT DATA UNAVAILABLE",
+  "mp_data_quality_partial": "PARTIAL DATA",
+  "mp_data_quality_reconstructed": "RECONSTRUCTED"
 }

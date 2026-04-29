@@ -142,8 +142,9 @@
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
   let met = $derived(Math.max(0, arcProgress * totalDays));
   // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
-  // surface the prototype's headline numbers without re-running an
-  // optimal-burn schedule. 4a-5 will refine.
+  // surface the scenario's headline numbers without re-running an
+  // optimal-burn schedule. A future slice with per-burn data could
+  // refine this into a live consume-as-you-go ledger.
   let dvRemaining = $derived(Math.max(0, mission.dv_total - mission.dv_used));
 
   // ─── CAPCOM derivations ──────────────────────────────────────────

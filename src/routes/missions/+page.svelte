@@ -11,6 +11,7 @@
   // ─── State ───────────────────────────────────────────────────────
   let missions: Mission[] = $state([]);
   let loading = $state(true);
+  let loadFailed = $state(false);
 
   // Filters: parsed from URL query so /missions?dest=MARS pre-applies
   // on first load (RFC-004). Updates write back to the URL via goto().
@@ -87,6 +88,7 @@
       .catch((err) => {
         console.error('Failed to load mission library:', err);
         loading = false;
+        loadFailed = true;
       });
   });
 
@@ -178,7 +180,9 @@
     </div>
   </nav>
 
-  {#if loading}
+  {#if loadFailed}
+    <div class="load-banner" role="alert">{m.lib_load_failed()}</div>
+  {:else if loading}
     <div class="loading" role="status" aria-live="polite">Loading…</div>
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
@@ -453,5 +457,18 @@
     font-size: 9px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.4);
+  }
+
+  .load-banner {
+    margin: 24px 0;
+    padding: 12px 16px;
+    background: rgba(193, 68, 14, 0.15);
+    border: 1px solid rgba(193, 68, 14, 0.5);
+    border-radius: 4px;
+    color: #ffc850;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
   }
 </style>

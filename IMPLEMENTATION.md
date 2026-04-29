@@ -108,10 +108,20 @@ The production build extracts, connects, and deploys what the prototypes demonst
 **RFC gates closed at this slice:** RFC-004 → ADR-024.
 
 **Variances from original plan:**
-- Per-mission trajectories aren't in the data layer (real Mars missions are landings, not free-returns). Arc geometry stays anchored to ORRERY-1; HUDs surface the loaded mission's identity. Decision documented inline + commit `98daf6f`.
+- Per-mission trajectories aren't in the data layer (real Mars missions are landings, not free-returns). Arc geometry stays anchored to the canonical ORRERY-1 free-return scenario; HUDs surface the loaded mission's identity. Decision documented inline + commit `98daf6f`.
 - GALLERY tab on MissionPanel deferred to Slice 5 polish — depends on the NASA Images API fetch step from ADR-016 which only fonts + textures have implemented so far.
 - ∆v ledger is naive (static `dv_used = dv_total × 0.94`); per-burn accounting needs burn-schedule data we don't have.
 - CAPCOM CRITICAL threshold (∆v margin < 0.3 km/s) is hardcoded from the prototype; real missions would tune per-vehicle.
+
+**Post-Slice-4 audit (2026-04-29) — 6 batches, 24 findings closed:**
+- Batch 1 (`ff9b3ce`): ORRERY-1 migrated from hardcoded constants in `/fly` to a new `static/data/scenarios/orrery-1.json` + locale overlay, with new `Scenario` / `ScenarioOverlay` types, `getScenario(id, locale)` data API, and a strict ajv schema. Closes the architectural inconsistency where the canonical scenario was the only "mission" not in the data layer.
+- Batch 2 (`ff9b3ce`): /fly now has the `$effect($page.url)` re-sync ADR-024 mandates (back/forward navigation between `?mission=` values now updates the HUD). Mission-load race guarded by a monotonic `currentLoadId`. Scrubber pauses playback during drag to stop simDay races against the rAF tick.
+- Batch 3 (`597b0a3`): mission `delta_v` schema tightened to a strict regex; final hardcoded HUD string ("DAY {n}") routed through Paraglide; speed pills + play button bumped from 36px to 44px touch targets.
+- Batch 4 (`a88bfad`): composite spacecraft (nose cone + cylinder body + nozzle) replacing single cone per UXS-003; teal RETURN crosshair at Earth-arrival position; two-finger pinch-zoom on /fly 3D mirroring /explore; ADR-010 updated with an "Implementation note (Slice 4)" reconciling the return arc's cosine profile with the original Keplerian-half-ellipse decision.
+- Batch 5 (`90b1466`): 18 new unit tests + 2 new e2e tests. `parseDeltaV` extracted into `$lib/parse-delta-v` with full coverage; `getMissionsForLibrary` and `getScenario` directly tested; `mission-arc` edge cases (pre-launch / post-arrival / tiny transit / phase-boundary heading) covered; /fly 2D pixel-sample regression test mirrors the /explore pattern.
+- Batch 6 (this commit): /missions error banner (`role="alert"`) for load failures; stale `4a-5 will refine` comment removed; this section added.
+
+**Final state:** 111 unit + 73 e2e (1 mobile-only skip), 110 validated data files, all green. `delta_v` field strictly schema-validated.
 
 ---
 

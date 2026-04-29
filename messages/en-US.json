@@ -83,6 +83,7 @@
   "lib_count_filtered": "{count} VISIBLE",
   "lib_card_year": "{year}",
   "lib_empty": "No missions match the current filters.",
+  "lib_load_failed": "Failed to load the mission library. Try refreshing the page.",
 
   "mp_tab_overview": "OVERVIEW",
   "mp_tab_learn": "LEARN",

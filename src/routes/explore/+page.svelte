@@ -33,6 +33,8 @@
     a0: number;
     inc: number;
     hasRings?: boolean;
+    /** Filename in static/textures/. ADR-016: assets are local. */
+    texture: string;
   };
 
   const PLANETS: PlanetVisual[] = [
@@ -47,6 +49,7 @@
       period: 0.241,
       a0: 0.5,
       inc: 7.0,
+      texture: '2k_mercury.jpg',
     },
     {
       id: 'venus',
@@ -59,6 +62,7 @@
       period: 0.615,
       a0: 2.1,
       inc: 3.4,
+      texture: '2k_venus_atmosphere.jpg',
     },
     {
       id: 'earth',
@@ -71,6 +75,7 @@
       period: 1.0,
       a0: 0,
       inc: 0.0,
+      texture: '2k_earth_daymap.jpg',
     },
     {
       id: 'mars',
@@ -83,6 +88,7 @@
       period: 1.881,
       a0: 1.8,
       inc: 1.85,
+      texture: '2k_mars.jpg',
     },
     {
       id: 'jupiter',
@@ -95,6 +101,7 @@
       period: 11.86,
       a0: 1.2,
       inc: 1.3,
+      texture: '2k_jupiter.jpg',
     },
     {
       id: 'saturn',
@@ -108,6 +115,7 @@
       a0: 3.5,
       inc: 2.49,
       hasRings: true,
+      texture: '2k_saturn.jpg',
     },
     {
       id: 'uranus',
@@ -120,6 +128,7 @@
       period: 84.01,
       a0: 5.1,
       inc: 0.77,
+      texture: '2k_uranus.jpg',
     },
     {
       id: 'neptune',
@@ -132,6 +141,7 @@
       period: 164.8,
       a0: 2.8,
       inc: 1.77,
+      texture: '2k_neptune.jpg',
     },
   ];
 
@@ -220,9 +230,14 @@
     fill.position.set(-200, 100, -200);
     scene.add(fill);
 
+    const textureLoader = new THREE.TextureLoader();
+    const loadTexture = (file: string): THREE.Texture =>
+      textureLoader.load(`${base}/textures/${file}`);
+
+    const sunMap = loadTexture('2k_sun.jpg');
     const sunMesh = new THREE.Mesh(
       new THREE.SphereGeometry(18, 32, 32),
-      new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
+      new THREE.MeshBasicMaterial({ map: sunMap, color: 0xfff0a0 }),
     );
     sunMesh.userData = { planetId: '__sun__' };
     scene.add(sunMesh);
@@ -319,11 +334,12 @@
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
       const mat = new THREE.MeshPhongMaterial({
-        color: p.color3,
+        map: loadTexture(p.texture),
+        color: 0xffffff,
         emissive: p.color3,
-        emissiveIntensity: 0.12,
+        emissiveIntensity: 0.06,
         shininess: 25,
-        specular: 0x444444,
+        specular: 0x222222,
       });
       const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3, 32, 32), mat);
       mesh.userData = { planetId: p.id };
@@ -987,13 +1003,29 @@
       c2.removeEventListener('touchend', on2dTouchEnd);
       window.removeEventListener('resize', onResize);
 
+      // Dispose any textures attached to materials before disposing
+      // the materials themselves — Three.js doesn't cascade.
+      const disposeMatTextures = (m: THREE.Material) => {
+        const mat = m as THREE.Material & {
+          map?: THREE.Texture | null;
+          emissiveMap?: THREE.Texture | null;
+          normalMap?: THREE.Texture | null;
+        };
+        mat.map?.dispose();
+        mat.emissiveMap?.dispose();
+        mat.normalMap?.dispose();
+      };
       scene.traverse((obj) => {
         if (obj instanceof THREE.Mesh) {
           obj.geometry?.dispose();
           if (Array.isArray(obj.material)) {
-            obj.material.forEach((m) => m.dispose());
-          } else {
-            obj.material?.dispose();
+            obj.material.forEach((m) => {
+              disposeMatTextures(m);
+              m.dispose();
+            });
+          } else if (obj.material) {
+            disposeMatTextures(obj.material);
+            obj.material.dispose();
           }
         }
       });

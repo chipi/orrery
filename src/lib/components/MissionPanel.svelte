@@ -1,9 +1,10 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { getMissionGallery } from '$lib/data';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'learn';
+  type Tab = 'overview' | 'learn' | 'gallery';
 
   type Props = {
     mission: Mission | null;
@@ -14,13 +15,23 @@
   let { mission, open, onClose, onFly }: Props = $props();
 
   let tab: Tab = $state('overview');
+  let gallery: string[] = $state([]);
+  let lightboxSrc = $state<string | null>(null);
 
-  // Reset to OVERVIEW each time a different mission is selected.
+  // Reset to OVERVIEW each time a different mission is selected; also
+  // (re-)load the photo gallery for the new mission.
   let lastId = $state<string | null>(null);
   $effect(() => {
     if (mission && mission.id !== lastId) {
       tab = 'overview';
       lastId = mission.id;
+      lightboxSrc = null;
+      gallery = [];
+      void getMissionGallery(mission.id).then((urls) => {
+        // Guard: if the user clicked another mission in the meantime,
+        // discard this load.
+        if (mission && mission.id === lastId) gallery = urls;
+      });
     }
   });
 
@@ -70,6 +81,17 @@
         aria-selected={tab === 'overview'}
         aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
       >
+      {#if gallery.length > 0}
+        <button
+          type="button"
+          id="mp-tab-gallery"
+          class:active={tab === 'gallery'}
+          onclick={() => (tab = 'gallery')}
+          role="tab"
+          aria-selected={tab === 'gallery'}
+          aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
+        >
+      {/if}
       <button
         type="button"
         id="mp-tab-learn"
@@ -85,7 +107,11 @@
       class="tab-content"
       role="tabpanel"
       id="mp-tabpanel"
-      aria-labelledby={tab === 'overview' ? 'mp-tab-overview' : 'mp-tab-learn'}
+      aria-labelledby={tab === 'overview'
+        ? 'mp-tab-overview'
+        : tab === 'gallery'
+          ? 'mp-tab-gallery'
+          : 'mp-tab-learn'}
     >
       {#if tab === 'overview'}
         <div class="grid">
@@ -137,6 +163,24 @@
 
         {#if mission.credit}
           <div class="credit">{mission.credit}</div>
+        {/if}
+      {:else if tab === 'gallery'}
+        {#if gallery.length === 0}
+          <p class="empty-tab">{m.mp_gallery_empty()}</p>
+        {:else}
+          <div class="gallery-grid" aria-label={m.mp_gallery_aria()}>
+            {#each gallery as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (lightboxSrc = src)}
+                aria-label={mission.name ?? mission.id}
+              >
+                <img {src} alt="" loading="lazy" />
+              </button>
+            {/each}
+          </div>
+          <p class="gallery-credit">{m.mp_gallery_credit()}</p>
         {/if}
       {:else if tab === 'learn'}
         {#if !mission.links || mission.links.length === 0}
@@ -191,6 +235,22 @@
     {/if}
   {/if}
 </Panel>
+
+{#if lightboxSrc}
+  <!-- Lightbox overlay: clickable backdrop dismisses; outer is a
+       <button> so role+keyboard are implicit, satisfying svelte's
+       a11y plugin. The image inside is non-interactive (alt="" since
+       the gallery context already labels it). -->
+  <button
+    type="button"
+    class="lightbox"
+    aria-label="Close gallery preview"
+    onclick={() => (lightboxSrc = null)}
+  >
+    <img src={lightboxSrc} alt="" />
+    <span class="lightbox-close" aria-hidden="true">×</span>
+  </button>
+{/if}
 
 <style>
   .head {
@@ -438,6 +498,81 @@
   .cta:focus-visible {
     background: #2244dd;
     border-color: #4466ff;
+    outline: none;
+  }
+
+  /* Gallery tab: thumbnail grid + click-to-enlarge lightbox */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .gallery-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      transform 120ms;
+  }
+  .gallery-thumb:hover,
+  .gallery-thumb:focus-visible {
+    border-color: rgba(68, 102, 255, 0.6);
+    transform: scale(1.02);
+    outline: none;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-credit {
+    margin: 4px 0 0;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 4, 12, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:focus-visible {
+    border-color: rgba(255, 255, 255, 0.5);
     outline: none;
   }
 </style>

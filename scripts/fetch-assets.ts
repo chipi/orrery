@@ -328,17 +328,22 @@ async function fetchRocketImages(): Promise<number> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// MISSION IMAGERY — NASA Images API
+// MISSION IMAGERY — NASA Images API + per-mission gallery (v0.1.8)
 //
 // Source: NASA Images API (https://images-api.nasa.gov). All NASA-
 // originated content is public domain; third-party material that
 // occasionally appears in their library is identified per-item and
 // skipped (we filter by `nasa` in the credit field).
 //
-// We query once per mission id (the same id used in mission JSON),
-// take the first image-type result, and save its thumbnail-rendered
-// JPEG as `static/images/missions/{id}.jpg`. Missing missions
-// (no API match) leave the file absent — UI degrades to text-only.
+// v0.1.8 expansion: instead of one cover photo per mission, we fetch
+// up to MISSION_GALLERY_MAX (5) photos per mission and save them as
+// `static/images/missions/{id}/01.jpg`, `02.jpg`, ... A manifest
+// JSON at `static/data/mission-galleries.json` lists the count per
+// mission so the UI knows how many to render.
+//
+// The first photo (`01.jpg`) is also used as the card cover (the
+// existing `static/images/missions/{id}.jpg` files become a single
+// alias to `{id}/01.jpg`).
 //
 // Rate limits: NASA API is generous for anonymous use (~100 req/h).
 // We throttle to 600ms between requests as a courtesy.
@@ -383,8 +388,10 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
 ];
 
 const MISSIONS_DIR = 'static/images/missions';
+const MISSION_GALLERIES_MANIFEST = 'static/data/mission-galleries.json';
 const NASA_API_BASE = 'https://images-api.nasa.gov';
 const NASA_API_DELAY_MS = 600;
+const MISSION_GALLERY_MAX = 5;
 
 interface NasaApiItem {
   data: { title?: string; secondary_creator?: string }[];
@@ -394,21 +401,22 @@ interface NasaApiResponse {
   collection: { items: NasaApiItem[] };
 }
 
-async function fetchMissionImage(query: string, dest: string): Promise<void> {
+/** Walk NASA Images API results, picking up to `max` distinct
+ *  preview links that look NASA-originated. Returns the URL list. */
+async function fetchNasaGalleryUrls(query: string, max: number): Promise<string[]> {
   const searchUrl = `${NASA_API_BASE}/search?q=${encodeURIComponent(query)}&media_type=image`;
   const res = await fetch(searchUrl);
   if (!res.ok) throw new Error(`Search HTTP ${res.status}`);
   const json = (await res.json()) as NasaApiResponse;
   const items = json.collection?.items ?? [];
   if (items.length === 0) throw new Error('No results');
-  // Walk the first 5 items; pick the first that has a usable preview
-  // link AND looks NASA-originated (PD). Skip third-party items where
-  // the secondary_creator is non-NASA.
-  for (const item of items.slice(0, 5)) {
+  const urls: string[] = [];
+  const seen = new Set<string>();
+  // Walk up to 25 items; collect distinct NASA-credited preview links.
+  for (const item of items.slice(0, 25)) {
+    if (urls.length >= max) break;
     const meta = item.data?.[0];
     const credit = (meta?.secondary_creator ?? '').toLowerCase();
-    // Accept NASA / JPL / GSFC / ESA(NASA-collab) / DOD-NASA shared. Skip
-    // pure third-party uploads that crept into the library.
     const isOk =
       !credit ||
       credit.includes('nasa') ||
@@ -418,18 +426,15 @@ async function fetchMissionImage(query: string, dest: string): Promise<void> {
       credit.includes('msss') ||
       credit.includes('asu');
     if (!isOk) continue;
-    // Prefer "preview" rel, fallback to first link.
     const previewLink =
       item.links.find((l) => l.render === 'image' || l.rel === 'preview')?.href ??
       item.links[0]?.href;
-    if (!previewLink) continue;
-    const imgRes = await fetch(previewLink);
-    if (!imgRes.ok) continue;
-    const buffer = Buffer.from(await imgRes.arrayBuffer());
-    await writeFile(dest, buffer);
-    return;
+    if (!previewLink || seen.has(previewLink)) continue;
+    seen.add(previewLink);
+    urls.push(previewLink);
   }
-  throw new Error('No NASA-licensed image in first 5 results');
+  if (urls.length === 0) throw new Error('No NASA-licensed images in results');
+  return urls;
 }
 
 // Wikimedia fallback for missions not in NASA's library (mostly
@@ -449,43 +454,90 @@ const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   luna24: 'Moon_map_of_sample_return_sites.png',
 };
 
-async function fetchMissionFromWikimedia(filename: string, dest: string): Promise<void> {
-  const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(filename)}?width=800`;
-  await downloadFromWikimedia(url, dest);
-}
-
 async function fetchMissionImages(): Promise<number> {
   await mkdir(MISSIONS_DIR, { recursive: true });
-  let downloaded = 0;
-  // Pass 1: NASA Images API for the bulk of missions.
+  await mkdir('static/data', { recursive: true });
+
+  /** Manifest: { missionId: count } so the UI knows how many photos
+   *  it has and renders thumbnails 01..N. Empty entries mean no
+   *  gallery (UI degrades to text-only). */
+  const manifest: Record<string, number> = {};
+  let totalPhotos = 0;
+
   for (let i = 0; i < MISSION_IMAGE_QUERIES.length; i++) {
     const m = MISSION_IMAGE_QUERIES[i];
-    const localPath = join(MISSIONS_DIR, `${m.id}.jpg`);
-    console.log(`  ${m.id}.jpg…`);
+    const missionDir = join(MISSIONS_DIR, m.id);
+    await mkdir(missionDir, { recursive: true });
+    process.stdout.write(`  ${m.id}…`);
+
+    let urls: string[] = [];
     try {
-      await fetchMissionImage(m.query, localPath);
-      downloaded++;
+      urls = await fetchNasaGalleryUrls(m.query, MISSION_GALLERY_MAX);
     } catch {
-      // Fall through to Wikimedia fallback.
+      // NASA API returned nothing usable. Fall through to Wikimedia
+      // fallback if curated; that's a single-image gallery.
       const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
       if (fallback) {
         try {
-          await fetchMissionFromWikimedia(fallback, localPath);
-          console.log(`    ↳ wikimedia fallback OK`);
-          downloaded++;
+          const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
+          await downloadFromWikimedia(url, join(missionDir, '01.jpg'));
+          // Mirror as the legacy cover at static/images/missions/{id}.jpg
+          // so existing /missions card paths keep working.
+          await downloadFromWikimedia(url, join(MISSIONS_DIR, `${m.id}.jpg`));
+          manifest[m.id] = 1;
+          totalPhotos++;
+          process.stdout.write(' wikimedia (1)\n');
+          continue;
         } catch (err2) {
           const msg = err2 instanceof Error ? err2.message : String(err2);
-          console.warn(`    ⚠ skipped ${m.id}: nasa+wikimedia both failed (${msg})`);
+          process.stdout.write(` ⚠ skipped (nasa+wikimedia: ${msg})\n`);
+          manifest[m.id] = 0;
+          continue;
         }
       } else {
-        console.warn(`    ⚠ skipped ${m.id}: nasa returned no results, no wikimedia fallback`);
+        process.stdout.write(' ⚠ skipped (no api results, no fallback)\n');
+        manifest[m.id] = 0;
+        continue;
       }
     }
+
+    // Download each URL → 01.jpg, 02.jpg, ...
+    let saved = 0;
+    for (let n = 0; n < urls.length; n++) {
+      const filename = `${String(n + 1).padStart(2, '0')}.jpg`;
+      try {
+        const imgRes = await fetch(urls[n]);
+        if (!imgRes.ok) continue;
+        const buffer = Buffer.from(await imgRes.arrayBuffer());
+        await writeFile(join(missionDir, filename), buffer);
+        // Mirror the first image as the legacy cover at
+        // static/images/missions/{id}.jpg for /missions card.
+        if (n === 0) {
+          await writeFile(join(MISSIONS_DIR, `${m.id}.jpg`), buffer);
+        }
+        saved++;
+      } catch {
+        // Single-image fail; continue with the rest.
+      }
+    }
+    manifest[m.id] = saved;
+    totalPhotos += saved;
+    process.stdout.write(` ${saved}\n`);
+
     if (i < MISSION_IMAGE_QUERIES.length - 1) {
       await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
     }
   }
-  return downloaded;
+
+  // Write the manifest (sorted keys → byte-identical re-runs).
+  const sortedManifest: Record<string, number> = {};
+  for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
+  await writeFile(MISSION_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  console.log(
+    `  → manifest written to ${MISSION_GALLERIES_MANIFEST} (${totalPhotos} photos total)`,
+  );
+
+  return totalPhotos;
 }
 
 // ──────────────────────────────────────────────────────────────────────

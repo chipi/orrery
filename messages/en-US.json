@@ -115,6 +115,10 @@
 
   "mp_tab_overview": "OVERVIEW",
   "mp_tab_learn": "LEARN",
+  "mp_tab_gallery": "GALLERY",
+  "mp_gallery_empty": "No photos available for this mission yet.",
+  "mp_gallery_aria": "Mission photo gallery",
+  "mp_gallery_credit": "Source: NASA Images API + Wikimedia Commons (public domain / CC).",
   "mp_label_departure": "DEPARTURE",
   "mp_label_arrival": "ARRIVAL",
   "mp_label_transit": "TRANSIT",

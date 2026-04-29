@@ -1437,15 +1437,16 @@
     font-family: 'Space Mono', monospace;
     color: rgba(255, 255, 255, 0.85);
   }
-  /* Desktop — right drawer; sits below the 2D/3D toggle button so it
-     never overlaps. The toggle is at top: nav+12, height 44px, so the
-     panel starts at nav+12+44+12. */
+  /* Desktop — bottom-right docked. Sits above the scrubber (bottom 14
+     + ~64px tall = top edge ~78px) and away from the 2D/3D toggle
+     button at top-right. Max height clamps to half the viewport so
+     the panel never grows into the canvas viewing area. */
   @media (min-width: 768px) {
     .capcom-panel {
-      top: calc(var(--nav-height) + 68px);
+      bottom: 86px;
       right: 16px;
       width: 320px;
-      max-height: calc(100vh - var(--nav-height) - 88px);
+      max-height: 50vh;
     }
   }
   /* Mobile — bottom sheet */

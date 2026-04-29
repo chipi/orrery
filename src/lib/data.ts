@@ -255,6 +255,29 @@ export async function getPorkchopGrid(destinationId: DestinationId): Promise<Por
   }
 }
 
+/**
+ * Mission photo gallery (v0.1.8). Returns the list of image URLs for
+ * a mission's gallery tab. Manifest at
+ * `static/data/mission-galleries.json` is generated at build by
+ * `scripts/fetch-assets.ts` (NASA Images API + Wikimedia fallback).
+ *
+ * Returns an empty array when no gallery exists for the mission —
+ * the UI hides the gallery tab in that case.
+ */
+export async function getMissionGallery(missionId: string): Promise<string[]> {
+  try {
+    const map = await get<Record<string, number>>('mission-galleries.json');
+    const count = map[missionId] ?? 0;
+    if (count === 0) return [];
+    return Array.from(
+      { length: count },
+      (_, i) => `${base}/images/missions/${missionId}/${String(i + 1).padStart(2, '0')}.jpg`,
+    );
+  } catch {
+    return [];
+  }
+}
+
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */
 export function __resetCache(): void {
   cache.clear();

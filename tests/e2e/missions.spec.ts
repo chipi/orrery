@@ -73,4 +73,20 @@ test.describe('/missions — library', () => {
     await page.locator('[data-testid="fly-mission-btn"]').click();
     await expect(page).toHaveURL(/\/fly\?mission=curiosity/);
   });
+
+  test('GALLERY tab renders thumbnails for a NASA mission (v0.1.8)', async ({ page }) => {
+    await page.goto('/missions');
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(28, {
+      timeout: 10_000,
+    });
+    await page.locator('[data-testid="mission-card-curiosity"]').click();
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible();
+    // Manifest has Curiosity at 5 photos; gallery tab + 5 thumbs render.
+    const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
+    await expect(galleryTab).toBeVisible({ timeout: 5_000 });
+    await galleryTab.click();
+    const thumbs = panel.locator('.gallery-thumb');
+    await expect(thumbs).toHaveCount(5, { timeout: 5_000 });
+  });
 });

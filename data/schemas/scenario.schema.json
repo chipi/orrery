@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "scenario.schema.json",
+  "title": "Scenario",
+  "description": "A synthesized teaching trajectory (e.g., ORRERY-1 free-return). Distinct from historical missions in static/data/missions/ — scenarios are educational constructs, never appear in the mission library, and exist only to be flown via /fly?mission=[id].",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "vehicle",
+    "payload",
+    "dep_day",
+    "flyby_day",
+    "arr_day",
+    "dv_total_km_s",
+    "dv_used_km_s"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Lowercase URL slug. Used as the scenario filename and the ?mission= URL param."
+    },
+    "vehicle": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Launch vehicle (e.g., \"Falcon Heavy\")."
+    },
+    "payload": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Spacecraft / payload description."
+    },
+    "dep_day": {
+      "type": "integer",
+      "description": "Departure simulation-day, anchored to the prototype's epoch reference (Earth dep at day 333)."
+    },
+    "flyby_day": {
+      "type": "integer",
+      "description": "Mars flyby simulation-day."
+    },
+    "arr_day": {
+      "type": "integer",
+      "description": "Earth return simulation-day."
+    },
+    "dv_total_km_s": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "description": "Total ∆v budget for the mission, km/s."
+    },
+    "dv_used_km_s": {
+      "type": "number",
+      "minimum": 0,
+      "description": "∆v consumed by burns. Must not exceed dv_total_km_s."
+    }
+  }
+}

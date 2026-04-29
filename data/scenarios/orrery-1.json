@@ -1,0 +1,10 @@
+{
+  "id": "orrery-1",
+  "vehicle": "Falcon Heavy",
+  "payload": "2,500 kg crew capsule",
+  "dep_day": 333,
+  "flyby_day": 592,
+  "arr_day": 842,
+  "dv_total_km_s": 3.86,
+  "dv_used_km_s": 3.61
+}

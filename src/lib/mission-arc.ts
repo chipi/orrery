@@ -14,14 +14,18 @@
  */
 
 import {
+  DESTINATIONS,
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
   MARS_A0,
   MARS_MEAN_MOTION_RAD_PER_DAY,
   R_EARTH_AU,
   R_MARS_AU,
+  type DestinationId,
 } from './lambert-grid.constants';
 
+/** Mars-specific Hohmann transfer constants — kept as named exports for
+ *  back-compat with /fly free-return rendering (ORRERY DEMO scenario). */
 export const A_TRANSFER = (R_EARTH_AU + R_MARS_AU) / 2;
 export const E_TRANSFER = (R_MARS_AU - R_EARTH_AU) / (R_MARS_AU + R_EARTH_AU);
 
@@ -40,19 +44,46 @@ export function marsPos(day: number): Vec2 {
   return { x: Math.cos(angle) * R_MARS_AU, z: Math.sin(angle) * R_MARS_AU };
 }
 
+/** Heliocentric position of any supported destination on a given
+ *  simulation day. v0.1.6 — used by /fly to render outbound arcs to
+ *  non-Mars destinations. */
+export function destinationPos(day: number, id: DestinationId): Vec2 {
+  const d = DESTINATIONS[id];
+  const angle = d.a0 + d.meanMotionRadPerDay * day;
+  return { x: Math.cos(angle) * d.a, z: Math.sin(angle) * d.a };
+}
+
 /**
- * Outbound half-ellipse from Earth (perihelion, ν=0) to Mars (aphelion, ν=π).
- * The ellipse's perihelion direction is rotated to match the departure
- * angle — i.e., perihelion sits at Earth's actual launch position.
+ * Outbound half-ellipse from Earth (ν=0) to the destination (ν=π).
+ * The ellipse's line of apsides is rotated so the start sits at
+ * Earth's actual launch position (depPos).
+ *
+ * Outer destinations (Mars, Jupiter, Saturn): perihelion at Earth
+ * (ν=0), aphelion at destination (ν=π). e is the standard positive
+ * eccentricity.
+ *
+ * Inner destinations (Mercury, Venus): the geometry flips — aphelion
+ * at Earth (ν=0), perihelion at destination (ν=π). We encode this
+ * with a signed eccentricity (negative for inner targets) so the
+ * conic equation r = a(1−e²)/(1+e·cos ν) gives r = R_EARTH at ν=0
+ * regardless of direction.
+ *
+ * Defaults to Mars's transfer ellipse for back-compat with the
+ * original Mars-only signature.
  *
  * Returns `steps + 1` points sweeping ν: 0 → π.
  */
-export function outboundArc(depPos: Vec2, steps: number): Vec2[] {
+export function outboundArc(depPos: Vec2, steps: number, destA = R_MARS_AU): Vec2[] {
   const depAngle = Math.atan2(depPos.z, depPos.x);
+  const a = (R_EARTH_AU + destA) / 2;
+  // Signed eccentricity: positive for outer destinations, negative
+  // for inner. Both keep ν=0 at Earth, ν=π at destination.
+  const eSigned = (destA - R_EARTH_AU) / (destA + R_EARTH_AU);
+  const eSqr = eSigned * eSigned;
   const pts: Vec2[] = [];
   for (let i = 0; i <= steps; i++) {
     const nu = (Math.PI * i) / steps;
-    const r = (A_TRANSFER * (1 - E_TRANSFER * E_TRANSFER)) / (1 + E_TRANSFER * Math.cos(nu));
+    const r = (a * (1 - eSqr)) / (1 + eSigned * Math.cos(nu));
     const xl = r * Math.cos(nu);
     const zl = r * Math.sin(nu);
     pts.push({

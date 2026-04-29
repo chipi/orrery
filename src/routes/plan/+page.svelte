@@ -378,13 +378,16 @@
   let viable = $derived(readout !== null && dvBudget > 0 && dvDeficit <= 0);
 
   function flyMission() {
-    if (!viable) return;
-    // Pass destination + mission type so /fly renders the correct
-    // outbound arc (per ADR-026 §FLY-button experience). Mars +
-    // LANDING falls through to the existing default (no extra params).
+    if (!viable || !readout || !selected) return;
+    // Pass destination + mission type + the selected cell's dep_day
+    // and tof so /fly can build the right outbound arc per ADR-026
+    // §FLY-button experience. Mars stays the default destination if
+    // omitted; dep/tof are required for non-Mars destinations.
     const params = new URLSearchParams();
     if (destinationId !== 'mars') params.set('dest', destinationId);
     params.set('type', missionType.toLowerCase());
+    params.set('dep', String(Math.round(depDays[selected.i])));
+    params.set('tof', String(Math.round(arrDays[selected.j])));
     goto(`${base}/fly?${params.toString()}`);
   }
 

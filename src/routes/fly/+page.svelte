@@ -6,6 +6,7 @@
   import {
     earthPos,
     marsPos,
+    destinationPos,
     outboundArc,
     returnArc,
     spacecraftPos,
@@ -13,7 +14,12 @@
     type MissionTimeline,
     type Vec2,
   } from '$lib/mission-arc';
-  import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
+  import {
+    DESTINATIONS,
+    R_EARTH_AU,
+    R_MARS_AU,
+    type DestinationId,
+  } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
@@ -81,10 +87,14 @@
   function buildArcs(
     timeline: MissionTimeline,
     isFreeReturn: boolean,
+    destinationId: DestinationId = 'mars',
   ): { out: Vec2[]; ret: Vec2[] } {
     const earthDep = earthPos(timeline.dep_day);
-    const out = outboundArc(earthDep, ARC_STEPS);
+    const destA = DESTINATIONS[destinationId].a;
+    const out = outboundArc(earthDep, ARC_STEPS, destA);
     if (!isFreeReturn) return { out, ret: [] };
+    // Free-return is Mars-only by design (ORRERY DEMO scenario):
+    // the long-CCW return arc has no analogue for other destinations.
     const marsArr = marsPos(timeline.flyby_day);
     const earthRet = earthPos(timeline.arr_day);
     const ret = returnArc(marsArr, earthRet, ARC_STEPS);
@@ -105,6 +115,7 @@
   const INITIAL_ARCS = buildArcs(INITIAL_TIMELINE, true);
   let arcTimeline: MissionTimeline = $state({ ...INITIAL_TIMELINE });
   let isFreeReturn = $state(true);
+  let activeDestination = $state<DestinationId>('mars');
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
 
@@ -343,10 +354,67 @@
     missionEvents = s.events;
   }
 
+  /**
+   * /plan-driven entry: when /fly receives `?dest=...&type=...&dep=N&tof=N`
+   * (no `?mission=`), we synthesise a one-way trajectory for the
+   * chosen destination instead of falling through to the ORRERY DEMO
+   * scenario. Per ADR-026 §FLY-button experience.
+   */
+  function applyPlanSelection(
+    dest: DestinationId,
+    type: 'LANDING' | 'FLYBY',
+    depDay: number,
+    tofDays: number,
+  ) {
+    const flybyOffset = Math.floor(tofDays * 0.95);
+    const newTimeline: MissionTimeline = {
+      dep_day: depDay,
+      flyby_day: depDay + flybyOffset,
+      arr_day: depDay + tofDays,
+    };
+    arcTimeline = newTimeline;
+    isFreeReturn = false;
+    activeDestination = dest;
+    const arcs = buildArcs(newTimeline, false, dest);
+    outPts = arcs.out;
+    retPts = arcs.ret;
+    const destLabel = dest.charAt(0).toUpperCase() + dest.slice(1);
+    mission = {
+      name: `EARTH → ${destLabel.toUpperCase()} · ${type}`,
+      vehicle: '—',
+      payload: '—',
+      dv_total: defaultScenarioBase.dv_total_km_s,
+      dv_used: defaultScenarioBase.dv_total_km_s * 0.94,
+      dep_label: `Day ${depDay}`,
+      arr_label: `Day ${depDay + tofDays}`,
+      timeline: newTimeline,
+      isFromData: true,
+    };
+    simDay = newTimeline.dep_day;
+    missionEvents = [];
+  }
+
   async function loadMissionFromUrl(url: URL): Promise<void> {
     loadFailed = false;
     const id = url.searchParams.get('mission');
+    const destParam = (url.searchParams.get('dest') ?? '').toLowerCase();
+    const typeParam = (url.searchParams.get('type') ?? '').toUpperCase();
+    const depParam = url.searchParams.get('dep');
+    const tofParam = url.searchParams.get('tof');
     const myLoadId = ++currentLoadId;
+
+    // /plan-driven entry: dest + dep + tof set, no mission. Synthesise
+    // an outbound-only arc to the chosen destination.
+    if (!id && destParam && destParam in DESTINATIONS && depParam !== null && tofParam !== null) {
+      const dest = destParam as DestinationId;
+      const type = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
+      const depDay = Number(depParam);
+      const tofDays = Number(tofParam);
+      if (Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0) {
+        applyPlanSelection(dest, type, depDay, tofDays);
+        return;
+      }
+    }
 
     if (!id) {
       // No ?mission= param → fetch the locale overlay for the default
@@ -763,7 +831,7 @@
       // Flyby ring near Mars — recompute per-mission arrival position
       // from the live arcTimeline.
       if (sc.progress >= 0.45 && sc.progress <= 0.55) {
-        const marsArrLive = marsPos(arcTimeline.flyby_day);
+        const marsArrLive = destinationPos(arcTimeline.flyby_day, activeDestination);
         const pulse = 0.5 + 0.5 * Math.sin(simDay * 0.5);
         ctx2.beginPath();
         ctx2.arc(
@@ -831,7 +899,7 @@
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.
-      const marsArrLive = marsPos(arcTimeline.flyby_day);
+      const marsArrLive = destinationPos(arcTimeline.flyby_day, activeDestination);
       const earthRetLive = earthPos(arcTimeline.arr_day);
       flybyRing.position.set(marsArrLive.x * SCALE_3D, 0, marsArrLive.z * SCALE_3D);
       flybyRing.visible = sc.progress >= 0.45 && sc.progress <= 0.55;

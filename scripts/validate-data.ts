@@ -146,4 +146,60 @@ if (existsSync(i18nDir)) {
 }
 
 console.log(`\n${passed} files passed, ${failed} failed.`);
-if (failed > 0) process.exit(1);
+
+// ──────────────────────────────────────────────────────────────────────
+// Doc-system gating-sentence checks (Slice 6 / RFC-005 closure).
+//
+// PRDs must answer "Why this is a PRD"; RFCs must answer "Why this is
+// an RFC"; ADRs must carry a "Status" field. These are scriptable
+// versions of the doc-discipline rules — a PR that strips them fails
+// CI here instead of in human review.
+// ──────────────────────────────────────────────────────────────────────
+
+let docFailed = 0;
+
+function checkDocsHaveText(
+  globDir: string,
+  mustInclude: string,
+  label: string,
+  options: { skipClosedDecided?: boolean; excludeFiles?: string[] } = {},
+) {
+  if (!existsSync(globDir)) return;
+  const exclude = new Set(['index.md', ...(options.excludeFiles ?? [])]);
+  const files = readdirSync(globDir).filter((f) => f.endsWith('.md') && !exclude.has(f));
+  for (const f of files) {
+    const path = join(globDir, f);
+    const content = readFileSync(path, 'utf8');
+    // Some early RFCs predate the gating-sentence template and are
+    // already Closed / Decided / Superseded — they shouldn't be
+    // re-templated retroactively. Skip them when the option is set.
+    if (options.skipClosedDecided && /Status\s*·\s*(Closed|Decided|Superseded)/i.test(content)) {
+      continue;
+    }
+    if (!content.includes(mustInclude)) {
+      console.error(`\n  ✗ ${path}\n      missing required ${label}: "${mustInclude}"`);
+      docFailed++;
+    }
+  }
+}
+
+console.log('\nValidating doc-system gating sentences...');
+checkDocsHaveText('docs/prd', 'Why this is a PRD', 'PRD gating sentence', {
+  // PA.md is the Product Authority reference (mirrors TA.md), not a PRD.
+  excludeFiles: ['PA.md'],
+});
+checkDocsHaveText('docs/rfc', 'Why this is an RFC', 'RFC gating sentence', {
+  skipClosedDecided: true,
+});
+// ADRs must carry a `> Status ·` line at the top per the project's
+// ADR template. TA.md isn't an ADR — it's the Technical Authority
+// reference doc that lives in the same folder.
+checkDocsHaveText('docs/adr', '> Status ·', 'ADR Status field', {
+  excludeFiles: ['TA.md'],
+});
+
+if (docFailed > 0) {
+  console.error(`\n${docFailed} doc-system check(s) failed.`);
+}
+
+if (failed + docFailed > 0) process.exit(1);

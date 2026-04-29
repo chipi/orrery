@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Weekly rebuild keeps NASA mission imagery + any external assets
+  # fresh per ADR-016 — Mondays 06:00 UTC catches a new week's
+  # featured imagery without a manual push.
+  schedule:
+    - cron: '0 6 * * 1'
 
 permissions:
   contents: write

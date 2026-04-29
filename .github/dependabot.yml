@@ -1,0 +1,34 @@
+# Dependabot — npm + GitHub Actions
+# Enabled per Slice 6 / Issue #6 deliverable. Weekly cadence keeps
+# noise low; CI must pass before merging.
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    commit-message:
+      prefix: deps
+      include: scope
+    # Pin tight per project convention — keep major bumps as separate
+    # PRs that get explicit review (Three.js r128 lock per ADR-001
+    # is not safe to bump unattended).
+    versioning-strategy: increase-if-necessary
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    labels:
+      - dependencies
+      - github-actions
+    commit-message:
+      prefix: ci
+      include: scope

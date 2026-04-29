@@ -108,11 +108,11 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
 });
 
 test.describe('/fly — CAPCOM mode', () => {
-  test('CAPCOM toggle opens the monitoring panel', async ({ page }) => {
+  test('CAPCOM panel is always visible when a mission is loaded (v0.1.7)', async ({ page }) => {
     await page.goto('/fly');
-    const toggle = page.getByRole('button', { name: /capcom/i });
-    await expect(toggle).toBeVisible();
-    await toggle.click();
+    // No toggle button — CAPCOM panel renders directly per ADR-026
+    // batch (v0.1.7 audit feedback). Panel sits below the 2D/3D
+    // toggle on desktop so it can never overlap.
     const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
     await expect(panel).toBeVisible();
     await expect(panel).toContainText(/MISSION EVENTS/i);
@@ -122,8 +122,8 @@ test.describe('/fly — CAPCOM mode', () => {
 
   test('CAPCOM panel surfaces ORRERY DEMO events for the default mission', async ({ page }) => {
     await page.goto('/fly');
-    await page.getByRole('button', { name: /capcom/i }).click();
     const panel = page.getByRole('complementary', { name: /CAPCOM monitoring/i });
+    await expect(panel).toBeVisible();
     // Skip ahead so events have fired.
     await page.getByRole('button', { name: /pause/i }).click();
     await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.3');

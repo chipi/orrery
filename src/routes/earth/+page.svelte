@@ -79,6 +79,14 @@
     const sun = new THREE.DirectionalLight(0xfff4d0, 1.4);
     sun.position.set(120, 60, 100);
     scene.add(sun);
+    // Fill light + earthshine — gives MeshStandardMaterial's metallic
+    // surfaces (silver bodies, gold MLI on JWST) something to reflect
+    // when the directional sun hits the back face of a spacecraft.
+    const fill = new THREE.DirectionalLight(0x668fff, 0.45);
+    fill.position.set(-80, -30, -120);
+    scene.add(fill);
+    const earthshine = new THREE.HemisphereLight(0x4b9cd3, 0x080a14, 0.35);
+    scene.add(earthshine);
 
     // Stars
     const STAR_COUNT = 1500;

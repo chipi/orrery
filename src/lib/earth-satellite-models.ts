@@ -3,38 +3,100 @@ import * as THREE from 'three';
 /**
  * Per-spacecraft 3D model builders for the /earth scene.
  *
- * Each builder approximates the *silhouette* of a real spacecraft using
- * Three.js primitives — the rendered scale (~0.5–1.5 scene units) only
- * shows silhouette + 2–3 distinguishing features, not surface detail.
+ * Each builder approximates the silhouette + surface treatment of a
+ * real spacecraft using Three.js primitives. v0.1.7 upgrade: PBR
+ * materials (`MeshStandardMaterial` with real metalness/roughness)
+ * replace the flat-shaded `MeshPhongMaterial` defaults so reflective
+ * surfaces (silver bodies, gold MLI) actually sheen against the
+ * scene's directional sunlight.
  *
  * Reference shapes verified against:
  *   - NASA 3D Resources (https://nasa3d.arc.nasa.gov)
  *   - ESA spacecraft factsheets
  *   - CMSA Tiangong public-release imagery
  *
- * Color convention: the `color` parameter (from earth-objects.json)
- * tints the spacecraft body. Solar panels are uniformly dark blue (real
- * arrays are ~3% reflective dark navy/black); reflective surfaces use
- * a near-white silver. This makes nation-coding visible in the body
- * while the panels stay realistic.
+ * Real spacecraft color palette (most are white-MLI bodies with a
+ * coloured accent panel + gold thermal blanketing where heat must
+ * leave fast; solar arrays are deep navy with mid-roughness):
+ *   - body: near-white MLI for most thermal blankets
+ *   - gold: kapton MLI on JWST, parts of LRO, etc.
+ *   - dark navy: solar-array silicon
+ *   - silver: bare aluminium structural elements (truss, antennas)
+ *
+ * The `color` parameter (from earth-objects.json) tints accent panels
+ * + emissive glow rings only — keeps nation/agency colour visible at
+ * the small render scale without painting the entire body in flag
+ * colours (which would look unrealistic).
  */
 
-const PANEL_COLOR = 0x0b1840; // solar-array dark navy
-const SILVER = 0xcccccc;
-const GOLD = 0xd4af37;
-const DARK_GREY = 0x222222;
+const PANEL_COLOR = 0x0b1840; // solar-array deep navy
+const MLI_WHITE = 0xeeeeee; // multi-layer insulation thermal blanket
+const SILVER = 0xb8b8b8; // bare aluminium / structural
+const GOLD = 0xd4af37; // kapton thermal blanket
+const DARK = 0x1a1a1a; // sensor apertures, anti-reflective coatings
 
-function bodyMat(color: string): THREE.MeshPhongMaterial {
-  return new THREE.MeshPhongMaterial({
+function bodyMat(color: string): THREE.MeshStandardMaterial {
+  // PBR body material: near-white MLI thermal blanket with a subtle
+  // tint of the spacecraft's accent colour. Keeps the body realistic
+  // while the accent ring (drawn separately) carries the nation-code
+  // signal.
+  return new THREE.MeshStandardMaterial({
+    color: MLI_WHITE,
+    metalness: 0.15,
+    roughness: 0.55,
+    emissive: color,
+    emissiveIntensity: 0.06,
+  });
+}
+
+function accentMat(color: string): THREE.MeshStandardMaterial {
+  // Bright accent piece — small panels, instrument boxes — coloured
+  // by the spacecraft's nation tint to keep agency identity visible.
+  return new THREE.MeshStandardMaterial({
     color,
-    shininess: 30,
+    metalness: 0.25,
+    roughness: 0.45,
     emissive: color,
     emissiveIntensity: 0.18,
   });
 }
 
-function panelMat(): THREE.MeshPhongMaterial {
-  return new THREE.MeshPhongMaterial({ color: PANEL_COLOR, shininess: 60 });
+function panelMat(): THREE.MeshStandardMaterial {
+  // Solar arrays — deep navy, mid-rough, slightly metallic for cell
+  // glint.
+  return new THREE.MeshStandardMaterial({
+    color: PANEL_COLOR,
+    metalness: 0.35,
+    roughness: 0.3,
+  });
+}
+
+function silverMat(): THREE.MeshStandardMaterial {
+  // Bare aluminium / steel — high metalness, low roughness.
+  return new THREE.MeshStandardMaterial({
+    color: SILVER,
+    metalness: 0.85,
+    roughness: 0.25,
+  });
+}
+
+function goldMat(): THREE.MeshStandardMaterial {
+  // Kapton-gold thermal blanket — high metalness, mid roughness.
+  return new THREE.MeshStandardMaterial({
+    color: GOLD,
+    metalness: 0.9,
+    roughness: 0.35,
+    emissive: GOLD,
+    emissiveIntensity: 0.08,
+  });
+}
+
+function darkMat(): THREE.MeshStandardMaterial {
+  return new THREE.MeshStandardMaterial({
+    color: DARK,
+    metalness: 0.4,
+    roughness: 0.6,
+  });
 }
 
 // ─── Per-spacecraft builders ────────────────────────────────────────
@@ -50,10 +112,7 @@ function buildISS(color: string): THREE.Group {
   g.add(truss);
   // Pressurised modules — 3 cylinders at center, perpendicular to truss.
   for (const dz of [-0.18, 0, 0.18]) {
-    const mod = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.1, 0.1, 0.5, 12),
-      new THREE.MeshPhongMaterial({ color: SILVER, shininess: 40 }),
-    );
+    const mod = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.5, 12), silverMat());
     mod.rotation.x = Math.PI / 2;
     mod.position.set(0, 0, dz);
     g.add(mod);
@@ -71,11 +130,15 @@ function buildISS(color: string): THREE.Group {
   for (const dx of [-0.4, 0.4]) {
     const rad = new THREE.Mesh(
       new THREE.BoxGeometry(0.18, 0.02, 0.4),
-      new THREE.MeshPhongMaterial({ color: 0xffffff }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, metalness: 0.4, roughness: 0.5 }),
     );
     rad.position.set(dx, 0.18, 0);
     g.add(rad);
   }
+  // Nation-coloured accent stripe along the truss centreline — keeps
+  // agency colour visible against the white-MLI station body.
+  const accent = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.05, 0.05), accentMat(color));
+  g.add(accent);
   return g;
 }
 
@@ -85,7 +148,7 @@ function buildISS(color: string): THREE.Group {
 function buildTiangong(color: string): THREE.Group {
   const g = new THREE.Group();
   const mat = bodyMat(color);
-  const moduleMat = new THREE.MeshPhongMaterial({ color: SILVER, shininess: 40 });
+  const moduleMat = silverMat();
   // Core module (Tianhe) — long cylinder along X.
   const core = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 1.2, 16), mat);
   core.rotation.z = Math.PI / 2;
@@ -111,26 +174,17 @@ function buildHubble(color: string): THREE.Group {
   const g = new THREE.Group();
   const mat = bodyMat(color);
   // Main tube — silver-tinted cylinder.
-  const tube = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.22, 0.22, 1.0, 16),
-    new THREE.MeshPhongMaterial({ color: SILVER, shininess: 50 }),
-  );
+  const tube = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 1.0, 16), silverMat());
   tube.rotation.z = Math.PI / 2;
   g.add(tube);
   // Aperture door — slightly conical at one end.
-  const door = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.24, 0.22, 0.1, 16),
-    new THREE.MeshBasicMaterial({ color: DARK_GREY }),
-  );
+  const door = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.22, 0.1, 16), darkMat());
   door.rotation.z = Math.PI / 2;
   door.position.x = 0.55;
   g.add(door);
   // Gold solar arrays — flat panels along sides.
   for (const dy of [-0.28, 0.28]) {
-    const wing = new THREE.Mesh(
-      new THREE.BoxGeometry(0.7, 0.02, 0.5),
-      new THREE.MeshPhongMaterial({ color: GOLD, shininess: 60 }),
-    );
+    const wing = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.02, 0.5), goldMat());
     wing.position.y = dy;
     g.add(wing);
   }
@@ -154,24 +208,21 @@ function buildJWST(color: string): THREE.Group {
   // Five-sided cylinder rendered nearly flat = pentagonal disc.
   const shield = new THREE.Mesh(
     new THREE.CylinderGeometry(0.85, 0.95, 0.04, 5),
-    new THREE.MeshPhongMaterial({ color: SILVER, shininess: 80, side: THREE.DoubleSide }),
+    new THREE.MeshStandardMaterial({
+      color: SILVER,
+      metalness: 0.95,
+      roughness: 0.18,
+      side: THREE.DoubleSide,
+    }),
   );
   shield.position.y = -0.1;
   g.add(shield);
   // Primary mirror — hexagonal gold disc above the sunshield.
-  const mirror = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.5, 0.5, 0.04, 6),
-    new THREE.MeshPhongMaterial({
-      color: GOLD,
-      shininess: 100,
-      emissive: GOLD,
-      emissiveIntensity: 0.25,
-    }),
-  );
+  const mirror = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.5, 0.04, 6), goldMat());
   mirror.position.y = 0.25;
   g.add(mirror);
   // Secondary mirror tripod — 3 thin cylinders converging above primary.
-  const tripodMat = new THREE.MeshPhongMaterial({ color: 0x888888 });
+  const tripodMat = silverMat();
   for (let i = 0; i < 3; i++) {
     const ang = (i / 3) * Math.PI * 2;
     const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 0.5, 4), tripodMat);
@@ -196,7 +247,7 @@ function buildChandra(color: string): THREE.Group {
   // Telescope tube — long cone-cylinder taper (wider at instrument end).
   const tube = new THREE.Mesh(
     new THREE.CylinderGeometry(0.08, 0.18, 1.4, 16),
-    new THREE.MeshPhongMaterial({ color: 0x1a1a2e, shininess: 30 }),
+    new THREE.MeshStandardMaterial({ color: 0x1a1a2e, metalness: 0.55, roughness: 0.55 }),
   );
   tube.rotation.z = Math.PI / 2;
   g.add(tube);
@@ -209,7 +260,7 @@ function buildChandra(color: string): THREE.Group {
   // Aperture marker — small dark circle at narrow end.
   const aperture = new THREE.Mesh(
     new THREE.CylinderGeometry(0.09, 0.09, 0.04, 12),
-    new THREE.MeshBasicMaterial({ color: 0x000000 }),
+    new THREE.MeshStandardMaterial({ color: 0x000000, metalness: 0.0, roughness: 0.95 }),
   );
   aperture.rotation.z = Math.PI / 2;
   aperture.position.x = 0.72;
@@ -231,7 +282,7 @@ function buildXMM(color: string): THREE.Group {
   // Telescope tube — long white cylinder.
   const tube = new THREE.Mesh(
     new THREE.CylinderGeometry(0.18, 0.18, 1.1, 16),
-    new THREE.MeshPhongMaterial({ color: 0xeeeeee, shininess: 40 }),
+    new THREE.MeshStandardMaterial({ color: 0xeeeeee, metalness: 0.5, roughness: 0.4 }),
   );
   tube.rotation.z = Math.PI / 2;
   g.add(tube);
@@ -258,7 +309,12 @@ function buildGaia(color: string): THREE.Group {
   // Sunshade — large flat circular disc, multi-layer silver foil.
   const shade = new THREE.Mesh(
     new THREE.CylinderGeometry(0.85, 0.85, 0.04, 32),
-    new THREE.MeshPhongMaterial({ color: SILVER, shininess: 80, side: THREE.DoubleSide }),
+    new THREE.MeshStandardMaterial({
+      color: SILVER,
+      metalness: 0.95,
+      roughness: 0.18,
+      side: THREE.DoubleSide,
+    }),
   );
   g.add(shade);
   // Instrument body — cylindrical drum on top of sunshade.
@@ -267,10 +323,7 @@ function buildGaia(color: string): THREE.Group {
   g.add(drum);
   // Top of drum (telescope apertures, 2 visible from above).
   for (const dz of [-0.15, 0.15]) {
-    const aperture = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.08, 0.08, 0.05, 12),
-      new THREE.MeshBasicMaterial({ color: DARK_GREY }),
-    );
+    const aperture = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.05, 12), darkMat());
     aperture.position.set(0, 0.45, dz);
     g.add(aperture);
   }
@@ -295,10 +348,7 @@ function buildLRO(color: string): THREE.Group {
   boom.position.set(-0.25, 0.25, 0);
   boom.rotation.z = Math.PI / 4;
   g.add(boom);
-  const dish = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.18, 0.18, 0.04, 16),
-    new THREE.MeshPhongMaterial({ color: SILVER }),
-  );
+  const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.04, 16), silverMat());
   dish.position.set(-0.4, 0.4, 0);
   dish.rotation.x = Math.PI / 2;
   g.add(dish);
@@ -317,7 +367,12 @@ function buildGEOComsat(color: string): THREE.Group {
   // Parabolic dish — earthward-facing.
   const dish = new THREE.Mesh(
     new THREE.SphereGeometry(0.32, 16, 8, 0, Math.PI * 2, 0, Math.PI / 2.3),
-    new THREE.MeshPhongMaterial({ color: SILVER, side: THREE.DoubleSide, shininess: 60 }),
+    new THREE.MeshStandardMaterial({
+      color: SILVER,
+      metalness: 0.85,
+      roughness: 0.3,
+      side: THREE.DoubleSide,
+    }),
   );
   dish.position.y = -0.3;
   dish.rotation.x = Math.PI;

@@ -63,8 +63,9 @@ describe('buildSatelliteModel', () => {
     g.traverse((obj) => {
       if (obj instanceof THREE.Mesh) meshCount++;
     });
-    // truss(1) + 3 modules + 8 wing panels + 2 radiator panels = 14
-    expect(meshCount).toBe(14);
+    // truss(1) + 3 modules + 8 wing panels + 2 radiator panels +
+    // 1 accent stripe (v0.1.7) = 15
+    expect(meshCount).toBe(15);
   });
 
   it('JWST model has hexagonal mirror + sunshield + tripod + secondary', () => {

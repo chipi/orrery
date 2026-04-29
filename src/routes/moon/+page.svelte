@@ -4,7 +4,7 @@
   import * as THREE from 'three';
   import { getMoonSites } from '$lib/data';
   import { onReducedMotionChange } from '$lib/reduced-motion';
-  import { latLonToUnitSphere, latLonToEquirect } from '$lib/moon-projection';
+  import { latLonToUnitSphere } from '$lib/moon-projection';
   import { categoriseMoonMarker } from '$lib/moon-marker-category';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
@@ -422,89 +422,141 @@
       ctx2.fillStyle = '#04040c';
       ctx2.fillRect(0, 0, W, H);
 
-      // Equirectangular map area — leave a margin for the lat/lon
-      // gridlines and nation legend. lon spans -180..180, lat -90..90.
-      const margin = 36;
-      const mapW = W - margin * 2;
-      const mapH = H - margin * 2 - 60; // bottom legend
-      const x0 = margin;
-      const y0 = margin;
-
-      // Map background — subtle moon-grey gradient instead of texture
-      // (the equirectangular flat-map projection at 2K resolution would
-      // require a separate flat-map texture; the colour fill keeps the
-      // 2D view legible without doubling the texture asset).
-      const gr = ctx2.createLinearGradient(x0, y0, x0, y0 + mapH);
-      gr.addColorStop(0, '#1a1a1f');
-      gr.addColorStop(1, '#101012');
-      ctx2.fillStyle = gr;
-      ctx2.fillRect(x0, y0, mapW, mapH);
-      ctx2.strokeStyle = 'rgba(255,255,255,0.1)';
-      ctx2.lineWidth = 1;
-      ctx2.strokeRect(x0 + 0.5, y0 + 0.5, mapW - 1, mapH - 1);
-
-      // Lat/Lon grid
-      ctx2.strokeStyle = 'rgba(255,255,255,0.06)';
-      ctx2.lineWidth = 0.5;
-      ctx2.font = "7px 'Space Mono',monospace";
-      ctx2.fillStyle = 'rgba(255,255,255,0.3)';
-      ctx2.textAlign = 'center';
-      for (let lon = -150; lon <= 150; lon += 30) {
-        const x = x0 + ((lon + 180) / 360) * mapW;
+      // v0.1.8 — two side-by-side orthographic moon discs (near + far
+      // side) instead of an equirectangular flat map. Each disc shows
+      // the moon as a sphere viewed straight-on; sites project via
+      // (sin lon · cos lat, -sin lat) and are visible when their
+      // hemisphere is the one being shown.
+      const stars = 80;
+      for (let i = 0; i < stars; i++) {
+        const sx = (i * 137.5 * 31 + i * 71) % W;
+        const sy = (i * 137.5 * 17 + i * 53) % H;
         ctx2.beginPath();
-        ctx2.moveTo(x, y0);
-        ctx2.lineTo(x, y0 + mapH);
-        ctx2.stroke();
-        ctx2.fillText(`${lon}°`, x, y0 + mapH + 12);
-      }
-      ctx2.textAlign = 'right';
-      for (let lat = -60; lat <= 60; lat += 30) {
-        const y = y0 + ((90 - lat) / 180) * mapH;
-        ctx2.beginPath();
-        ctx2.moveTo(x0, y);
-        ctx2.lineTo(x0 + mapW, y);
-        ctx2.stroke();
-        ctx2.fillText(`${lat}°`, x0 - 4, y + 3);
+        ctx2.arc(sx, sy, i % 8 === 0 ? 1.2 : 0.5, 0, Math.PI * 2);
+        ctx2.fillStyle = `rgba(210,215,255,${0.06 + (i % 5) * 0.04})`;
+        ctx2.fill();
       }
 
-      // Site markers
-      sitePos2d.clear();
-      const region = { x0, y0, mapW, mapH };
-      for (const site of sites) {
-        const { x, y } = latLonToEquirect(site.lat, site.lon, region);
-        const color = colorFor(site);
-        const isSel = selected?.id === site.id;
+      const discR = Math.min(W * 0.2, H * 0.42);
+      const yMid = H * 0.46;
+      const nearCx = W * 0.27;
+      const farCx = W * 0.73;
 
-        // Glow
-        const gl = ctx2.createRadialGradient(x, y, 0, x, y, 10);
-        gl.addColorStop(0, color + '99');
-        gl.addColorStop(1, 'transparent');
+      const drawDisc = (
+        cx: number,
+        cy: number,
+        labelText: string,
+        labelColor: string,
+        isFarSide: boolean,
+      ) => {
+        // Moon body — radial gradient grey, brighter at the centre to
+        // suggest a sun-lit sphere from the viewer's direction.
+        const grad = ctx2.createRadialGradient(
+          cx - discR * 0.25,
+          cy - discR * 0.25,
+          discR * 0.05,
+          cx,
+          cy,
+          discR,
+        );
+        grad.addColorStop(0, '#cdcdc8');
+        grad.addColorStop(0.6, '#7c7a76');
+        grad.addColorStop(1, '#28272a');
         ctx2.beginPath();
-        ctx2.arc(x, y, 10, 0, Math.PI * 2);
-        ctx2.fillStyle = gl;
+        ctx2.arc(cx, cy, discR, 0, Math.PI * 2);
+        ctx2.fillStyle = grad;
         ctx2.fill();
 
-        if (isSel) {
+        // Limb shadow ring
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, discR + 0.5, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(255,255,255,0.1)';
+        ctx2.lineWidth = 1;
+        ctx2.stroke();
+
+        // Faint latitude bands at ±30, ±60 — visible as horizontal
+        // chord arcs across the disc.
+        ctx2.strokeStyle = 'rgba(255,255,255,0.08)';
+        ctx2.lineWidth = 0.5;
+        for (const lat of [-60, -30, 0, 30, 60]) {
+          const y = cy - Math.sin((lat * Math.PI) / 180) * discR;
+          const halfWidth = Math.cos((lat * Math.PI) / 180) * discR;
           ctx2.beginPath();
-          ctx2.arc(x, y, 9, 0, Math.PI * 2);
-          ctx2.strokeStyle = '#fff';
-          ctx2.lineWidth = 1.5;
+          ctx2.moveTo(cx - halfWidth, y);
+          ctx2.lineTo(cx + halfWidth, y);
           ctx2.stroke();
         }
 
-        ctx2.beginPath();
-        ctx2.arc(x, y, 4, 0, Math.PI * 2);
-        ctx2.fillStyle = color;
-        ctx2.fill();
+        // Disc label
+        ctx2.font = "bold 9px 'Space Mono',monospace";
+        ctx2.fillStyle = labelColor;
+        ctx2.textAlign = 'center';
+        ctx2.fillText(labelText, cx, cy + discR + 24);
 
-        sitePos2d.set(site.id, { x, y });
-      }
+        // Site markers — only the ones on this hemisphere.
+        for (const site of sites) {
+          const latRad = (site.lat * Math.PI) / 180;
+          const lonRad = (site.lon * Math.PI) / 180;
+          const z = Math.cos(latRad) * Math.cos(lonRad);
+          const onThisSide = isFarSide ? z < 0 : z > 0;
+          if (!onThisSide) continue;
 
-      // Nation legend (bottom-left)
-      const legendY = H - 36;
+          // Project: x flows with sin(lon); far-side mirrors so
+          // longitudes >90 stay readable left-to-right.
+          let xLocal = Math.sin(lonRad) * Math.cos(latRad);
+          if (isFarSide) xLocal = -xLocal;
+          const yLocal = -Math.sin(latRad);
+          const px = cx + xLocal * discR;
+          const py = cy + yLocal * discR;
+
+          const color = colorFor(site);
+          const isSel = selected?.id === site.id;
+
+          // Glow
+          const gl = ctx2.createRadialGradient(px, py, 0, px, py, 10);
+          gl.addColorStop(0, color + '99');
+          gl.addColorStop(1, 'transparent');
+          ctx2.beginPath();
+          ctx2.arc(px, py, 10, 0, Math.PI * 2);
+          ctx2.fillStyle = gl;
+          ctx2.fill();
+
+          if (isSel) {
+            ctx2.beginPath();
+            ctx2.arc(px, py, 9, 0, Math.PI * 2);
+            ctx2.strokeStyle = '#fff';
+            ctx2.lineWidth = 1.5;
+            ctx2.stroke();
+          }
+
+          ctx2.beginPath();
+          ctx2.arc(px, py, 4, 0, Math.PI * 2);
+          ctx2.fillStyle = color;
+          ctx2.fill();
+
+          // Site label
+          ctx2.font = "7px 'Space Mono',monospace";
+          ctx2.fillStyle = color + 'cc';
+          ctx2.shadowColor = 'rgba(0,0,0,0.85)';
+          ctx2.shadowBlur = 4;
+          ctx2.textAlign = 'left';
+          ctx2.fillText(site.name ?? site.id, px + 6, py + 3);
+          ctx2.shadowBlur = 0;
+
+          sitePos2d.set(site.id, { x: px, y: py });
+        }
+      };
+
+      sitePos2d.clear();
+      drawDisc(nearCx, yMid, 'NEAR SIDE · EARTH-FACING', 'rgba(220,220,200,0.85)', false);
+      drawDisc(farCx, yMid, 'FAR SIDE', 'rgba(220,220,200,0.85)', true);
+
+      // Nation legend (bottom)
+      const legendY = H - 32;
       ctx2.font = "bold 7px 'Space Mono',monospace";
       ctx2.textAlign = 'left';
-      let legendX = margin;
+      ctx2.shadowBlur = 0;
+      let legendX = 36;
       for (const [nation, color] of Object.entries(NATION_COLORS)) {
         ctx2.beginPath();
         ctx2.arc(legendX + 5, legendY + 6, 3, 0, Math.PI * 2);

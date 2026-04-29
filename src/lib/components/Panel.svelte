@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import type { Snippet } from 'svelte';
+  import * as m from '$lib/paraglide/messages';
 
   type Props = {
     open: boolean;
@@ -70,7 +71,7 @@
   >
     <header>
       <span class="title">{title ?? ''}</span>
-      <button bind:this={closeButton} class="close" onclick={onClose} aria-label="Close panel"
+      <button bind:this={closeButton} class="close" onclick={onClose} aria-label={m.panel_close()}
         >×</button
       >
     </header>

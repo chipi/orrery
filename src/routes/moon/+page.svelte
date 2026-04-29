@@ -3,6 +3,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getMoonSites } from '$lib/data';
+  import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -412,6 +413,10 @@
 
     let lastTime = performance.now();
     let rafId = 0;
+    let reducedMotion = false;
+    const stopReducedMotionWatch = onReducedMotionChange((r) => {
+      reducedMotion = r;
+    });
     const animate = (now: number) => {
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
@@ -421,7 +426,9 @@
       // when the data loads). Could optimise but 16 markers is trivial.
       if (sites.length !== markers.length) rebuildMarkers();
 
-      moonMesh.rotation.y += dt * 0.05; // slow auto-rotate; reduced-motion override lands in 6a-1
+      // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
+      // Drag-to-orbit still works.
+      if (!reducedMotion) moonMesh.rotation.y += dt * 0.05;
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();
@@ -430,6 +437,7 @@
 
     cleanup = () => {
       cancelAnimationFrame(rafId);
+      stopReducedMotionWatch();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);

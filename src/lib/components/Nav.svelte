@@ -21,7 +21,7 @@
   }
 </script>
 
-<nav>
+<nav aria-label={m.nav_aria_label()}>
   <div class="left">
     <span class="wordmark">ORRERY</span>
     <span class="subtitle">{m.nav_subtitle()}</span>

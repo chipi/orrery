@@ -196,5 +196,8 @@
   "moon_days": "{value} days",
   "moon_hours": "{value} h",
   "moon_kg": "{value} kg",
-  "moon_load_failed": "Failed to load Moon landing sites."
+  "moon_load_failed": "Failed to load Moon landing sites.",
+
+  "nav_aria_label": "Main navigation",
+  "panel_close": "Close panel"
 }

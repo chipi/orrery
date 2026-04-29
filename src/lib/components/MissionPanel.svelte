@@ -63,21 +63,30 @@
     <div class="tabs" role="tablist">
       <button
         type="button"
+        id="mp-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
-        aria-selected={tab === 'overview'}>{m.mp_tab_overview()}</button
+        aria-selected={tab === 'overview'}
+        aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
       >
       <button
         type="button"
+        id="mp-tab-learn"
         class:active={tab === 'learn'}
         onclick={() => (tab = 'learn')}
         role="tab"
-        aria-selected={tab === 'learn'}>{m.mp_tab_learn()}</button
+        aria-selected={tab === 'learn'}
+        aria-controls="mp-tabpanel">{m.mp_tab_learn()}</button
       >
     </div>
 
-    <div class="tab-content">
+    <div
+      class="tab-content"
+      role="tabpanel"
+      id="mp-tabpanel"
+      aria-labelledby={tab === 'overview' ? 'mp-tab-overview' : 'mp-tab-learn'}
+    >
       {#if tab === 'overview'}
         <div class="grid">
           <div class="cell">

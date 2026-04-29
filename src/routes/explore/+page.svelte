@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getPlanets, getSun } from '$lib/data';
+  import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';
   import type { LocalizedSun } from '$types/sun';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
@@ -1010,11 +1011,17 @@
     let simT = 0;
     let lastTime = performance.now();
     let rafId = 0;
+    let reducedMotion = false;
+    const stopReducedMotionWatch = onReducedMotionChange((r) => {
+      reducedMotion = r;
+    });
     const animate = (now: number) => {
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
-      simT += dt * 0.04;
+      // ADR-025: when prefers-reduced-motion is set we freeze sim
+      // time. User-initiated camera drag still works.
+      if (!reducedMotion) simT += dt * 0.04;
 
       if (view === '3d') {
         planetObjs.forEach(({ group, mesh, planet }) => {
@@ -1058,6 +1065,7 @@
 
     cleanup = () => {
       cancelAnimationFrame(rafId);
+      stopReducedMotionWatch();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);
       window.removeEventListener('mouseup', on3dMouseUp);

@@ -79,28 +79,34 @@
     <div class="tabs" role="tablist">
       <button
         type="button"
+        id="pp-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
-        aria-selected={tab === 'overview'}>{m.panel_tab_overview()}</button
+        aria-selected={tab === 'overview'}
+        aria-controls="pp-tabpanel">{m.panel_tab_overview()}</button
       >
       <button
         type="button"
+        id="pp-tab-technical"
         class:active={tab === 'technical'}
         onclick={() => (tab = 'technical')}
         role="tab"
-        aria-selected={tab === 'technical'}>{m.panel_tab_technical()}</button
+        aria-selected={tab === 'technical'}
+        aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
       >
       <button
         type="button"
+        id="pp-tab-sizes"
         class:active={tab === 'sizes'}
         onclick={() => (tab = 'sizes')}
         role="tab"
-        aria-selected={tab === 'sizes'}>{m.panel_tab_sizes()}</button
+        aria-selected={tab === 'sizes'}
+        aria-controls="pp-tabpanel">{m.panel_tab_sizes()}</button
       >
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content" role="tabpanel" id="pp-tabpanel" aria-labelledby="pp-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>

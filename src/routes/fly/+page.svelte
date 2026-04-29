@@ -14,6 +14,7 @@
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
   import { parseDeltaV } from '$lib/parse-delta-v';
+  import { prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
@@ -90,7 +91,9 @@
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let simDay = $state(ARC_TIMELINE.dep_day);
   let simSpeed = $state(7); // days/sec
-  let isPlaying = $state(true);
+  // ADR-025: reduced-motion users start paused. They can press play
+  // to step forward manually if they want.
+  let isPlaying = $state(!prefersReducedMotion());
   let cleanup: (() => void) | undefined;
 
   // Animation always rides the free-return arc; HUDs surface the

@@ -41,21 +41,25 @@
     <div class="tabs" role="tablist">
       <button
         type="button"
+        id="sp-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
-        aria-selected={tab === 'overview'}>{m.panel_tab_overview()}</button
+        aria-selected={tab === 'overview'}
+        aria-controls="sp-tabpanel">{m.panel_tab_overview()}</button
       >
       <button
         type="button"
+        id="sp-tab-technical"
         class:active={tab === 'technical'}
         onclick={() => (tab = 'technical')}
         role="tab"
-        aria-selected={tab === 'technical'}>{m.panel_tab_technical()}</button
+        aria-selected={tab === 'technical'}
+        aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
       >
     </div>
 
-    <div class="tab-content">
+    <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>

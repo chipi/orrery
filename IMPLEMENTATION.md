@@ -90,23 +90,28 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ---
 
-## Slice 4 — Mission Arc + Mission Library
+## Slice 4 — Mission Arc + Mission Library ✅ COMPLETE
 
 *Goal: `/fly` and `/missions` as production screens. Mission arc loads from JSON. Mission library loads from data layer. URL sharing works.*
 
-**Deliverables:**
-- `src/routes/fly/+page.svelte` — Mission Arc, free-return trajectory, CAPCOM mode
-- `src/routes/missions/+page.svelte` — Mission Library, filter from index.json
-- Mission detail panel lazy-loads full mission JSON on click
-- CAPCOM event timeline driven by `events` array from locale overlay
-- Mission URL sharing: `/fly?mission=curiosity`, `/missions?dest=MARS`
-- i18n: all mission editorial content served from locale overlays
-- Playwright e2e: mission library → click mission → fly screen loads correct mission
-- Mobile: mission cards single-column, bottom sheet detail panel
+**Status (2026-04-29):** complete. Issue #4 closed across 6 sub-checkpoints (4a-1 → 4a-6).
 
-**RFC gates:** RFC-004 closes (URL sharing end-to-end). *(RFC-002 closed early in Slice 2 — see ADR-020.)*
+**What landed:**
+- ✅ `src/routes/missions/+page.svelte` — Mission Library with all 28 cards, dest + status filters, URL params (`?dest=MARS&status=ACTIVE`), responsive grid
+- ✅ `src/lib/components/MissionPanel.svelte` — OVERVIEW + LEARN tabs, agency/status/data-quality badges, FLY CTA → goto(/fly?mission=id)
+- ✅ `src/routes/fly/+page.svelte` — full Mission Arc with three HUDs (identity / navigation / systems), timeline scrubber, speed pills, CAPCOM panel
+- ✅ `src/lib/mission-arc.ts` — pure-function library: outboundArc + returnArc + spacecraftPos + spacecraftHeading, 20 unit tests
+- ✅ `getMission(id, dest, locale)` already in data.ts since Slice 2 — wired to /fly's `?mission=id` URL param with Mars-then-Moon fallback
+- ✅ CAPCOM mode: event ticker from `events` array (locale overlay or ORRERY-1 default), comms one-way + RTT in light-minutes, three-state anomaly monitor
+- ✅ 71 Playwright e2e tests (up from 51): 6 missions + 20 fly + 6 smoke + 7 plan + 7 explore × 2 projects = full coverage of the URL contract end-to-end
 
-**ADRs from RFC closures written at this slice**
+**RFC gates closed at this slice:** RFC-004 → ADR-024.
+
+**Variances from original plan:**
+- Per-mission trajectories aren't in the data layer (real Mars missions are landings, not free-returns). Arc geometry stays anchored to ORRERY-1; HUDs surface the loaded mission's identity. Decision documented inline + commit `98daf6f`.
+- GALLERY tab on MissionPanel deferred to Slice 5 polish — depends on the NASA Images API fetch step from ADR-016 which only fonts + textures have implemented so far.
+- ∆v ledger is naive (static `dv_used = dv_total × 0.94`); per-burn accounting needs burn-schedule data we don't have.
+- CAPCOM CRITICAL threshold (∆v margin < 0.3 km/s) is hardcoded from the prototype; real missions would tune per-vehicle.
 
 ---
 

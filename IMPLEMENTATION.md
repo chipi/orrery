@@ -177,11 +177,25 @@ The production build extracts, connects, and deploys what the prototypes demonst
 ## Final state at v1.0.0
 
 - **Six screens shipping**, all in production at https://chipi.github.io/orrery/
-- **111 unit tests** + **87 e2e tests** (1 mobile-only skip), all green
+- **125 unit tests** + **87 e2e tests** (1 mobile-only skip), all green
 - **108 data files** ajv-schema-validated
 - **25 ADRs** locked, **6 RFCs** closed (RFC-001 → ADR-013, RFC-002 → ADR-020, RFC-003 → ADR-022, RFC-004 → ADR-024, RFC-005 → ADR-025, RFC-006 → ADR-023)
 - **TA.md at v1.7**
 - Tagged `v1.0.0`
+
+---
+
+## Post-v1.0 audit (2026-04-29) — v1.0.1
+
+A 5-batch audit ran against the v1.0.0 codebase covering tests, drift, and code quality (20 findings).
+
+- **Batch 1** (`9bd1693`) — ADR-025 breaches + i18n: planet axial spin gated under reduced-motion in /explore; identity HUD now `role="status" aria-live="polite"`; /fly subscribes to OS preference flips (was init-only); /missions filter pills bumped to 44px; hardcoded `'EARTH'` and Panel default label routed through Paraglide; /earth render switched from 60fps rAF to event-driven (data load, resize, selection change).
+- **Batch 2** (`b23285f`) — testing backfill: `reduced-motion.test.ts` (8 tests, jsdom-pragma) + 6 new tests for `getEarthObjects` / `getMoonSites` (overlay merge, locale fallback). jsdom@26 added as a pinned dev-dep.
+- **Batch 3** (`b2c8de8`) — pure helper extraction: `$lib/earth-regimes` (`deriveRegimeBounds`) + `$lib/moon-projection` (`latLonToUnitSphere`, `latLonToEquirect`). Routes import the helpers; 19 new unit tests.
+- **Batch 4** — closed as no-op: `enterTwoDMode` and `getCanvas2dContext` were 2-callsite premature abstractions; `/moon` per-frame marker length-check is O(1) and correct; canvas `role="img"` is rejected by Svelte's a11y plugin.
+- **Batch 5** — this commit: stale test counts in IMPLEMENTATION.md corrected; v1.0.1 tag.
+
+**Final state at v1.0.1:** **144 unit tests** (was 125, +19) + **87 e2e tests**, all green. Six pure helper modules (`orbital`, `scale`, `lambert`, `mission-arc`, `parse-delta-v`, `earth-regimes`, `moon-projection`, `reduced-motion`) — every Slice 4–6 feature now has a testable lib.
 
 ---
 

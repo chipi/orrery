@@ -10,6 +10,11 @@
   import * as m from '$lib/paraglide/messages';
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
+  // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
+  // mapping is 1:1 (USA→nasa, China→cnsa, India→isro, USSR→roscosmos,
+  // Japan→jaxa). Russia is distinct from any agency token. Kept inline
+  // because the 2D legend draws into a 2D canvas, which can't read CSS
+  // custom properties without a getComputedStyle call per frame.
   const NATION_COLORS: Record<string, string> = {
     USA: '#0B3D91',
     USSR: '#8B0000',

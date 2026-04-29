@@ -13,6 +13,7 @@
   } from '$lib/mission-arc';
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
+  import { parseDeltaV } from '$lib/parse-delta-v';
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
@@ -223,7 +224,7 @@
     // closest-approach marker still fires somewhere meaningful.
     const totalT = m.transit_days || 250;
     const flybyOffset = Math.floor(totalT * 0.95);
-    const dvTotal = parseDeltaV(m.delta_v);
+    const dvTotal = parseDeltaV(m.delta_v, defaultScenarioBase.dv_total_km_s);
     mission = {
       name: m.name ?? m.id,
       vehicle: m.vehicle ?? '—',
@@ -259,20 +260,6 @@
     };
     simDay = mission.timeline.dep_day;
     missionEvents = s.events;
-  }
-
-  /**
-   * Best-effort numeric parse of the `delta_v` string field on
-   * historical Mission records. Falls back to the default scenario's
-   * dv_total when malformed. Replaces the inline regex from before;
-   * extracted so we can unit-test it (Batch 5).
-   */
-  function parseDeltaV(raw: string | undefined): number {
-    if (!raw) return defaultScenarioBase.dv_total_km_s;
-    const match = raw.match(/[0-9]+(?:\.[0-9]+)?/);
-    if (!match) return defaultScenarioBase.dv_total_km_s;
-    const v = parseFloat(match[0]);
-    return Number.isFinite(v) && v > 0 ? v : defaultScenarioBase.dv_total_km_s;
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {

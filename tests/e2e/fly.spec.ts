@@ -30,6 +30,37 @@ test.describe('/fly — default mission', () => {
     await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
   });
 
+  test('2D mode renders non-blank pixels (regression test)', async ({ page }) => {
+    await page.goto('/fly');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+    const canvas2d = page.locator('canvas.layer');
+    await expect(canvas2d).toBeVisible({ timeout: 5_000 });
+    // Wait until the 2D draw loop has painted at least one frame —
+    // mirror the /explore pattern: poll a region near the canvas
+    // centre (Sun glow) for any non-background pixel.
+    await page.waitForFunction(
+      () => {
+        const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
+        if (!c || c.width === 0 || c.height === 0) return false;
+        const ctx = c.getContext('2d');
+        if (!ctx) return false;
+        const cx = Math.floor(c.width / 2);
+        const cy = Math.floor(c.height / 2);
+        const data = ctx.getImageData(cx - 4, cy - 4, 9, 9).data;
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
+          const isBg = Math.abs(r - 4) < 6 && Math.abs(g - 4) < 6 && Math.abs(b - 12) < 8;
+          if (!isBg) return true;
+        }
+        return false;
+      },
+      { timeout: 7_000 },
+    );
+  });
+
   test('timeline scrubber moves simDay forward', async ({ page }) => {
     await page.goto('/fly');
     const id = page.locator('[data-testid="mission-name"]');

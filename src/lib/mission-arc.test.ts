@@ -161,4 +161,52 @@ describe('spacecraftHeading', () => {
     const h = spacecraftHeading(timeline.dep_day + 50, timeline, out, ret);
     expect(Math.hypot(h.x, h.z)).toBeCloseTo(1, 6);
   });
+
+  it('returns a finite unit vector at every phase', () => {
+    for (const day of [
+      timeline.dep_day - 100, // pre-launch
+      timeline.dep_day, // launch
+      timeline.flyby_day - 1, // late outbound
+      timeline.flyby_day + 1, // early return
+      timeline.arr_day, // arrival
+      timeline.arr_day + 100, // post-arrival
+    ]) {
+      const h = spacecraftHeading(day, timeline, out, ret);
+      expect(Number.isFinite(h.x)).toBe(true);
+      expect(Number.isFinite(h.z)).toBe(true);
+      expect(Math.hypot(h.x, h.z)).toBeCloseTo(1, 4);
+    }
+  });
+});
+
+describe('spacecraftPos — edge cases (audit batch 5)', () => {
+  const timeline = { dep_day: 333, flyby_day: 333 + 259, arr_day: 333 + 509 };
+  const out = outboundArc({ x: R_EARTH_AU, z: 0 }, 200);
+  const ret = returnArc({ x: R_MARS_AU, z: 0 }, { x: -1, z: 0 }, 200);
+
+  it('returns a finite position at day 0 (far before launch)', () => {
+    const s = spacecraftPos(0, timeline, out, ret);
+    expect(s.phase).toBe('pre-launch');
+    expect(Number.isFinite(s.pos.x)).toBe(true);
+    expect(Number.isFinite(s.pos.z)).toBe(true);
+    expect(s.progress).toBe(0);
+  });
+
+  it('returns the arrival position at day arr_day + 1000', () => {
+    const s = spacecraftPos(timeline.arr_day + 1000, timeline, out, ret);
+    expect(s.phase).toBe('arrived');
+    expect(s.progress).toBe(1);
+    // Position should be the last point on the return arc.
+    expect(s.pos).toEqual(ret[ret.length - 1]);
+  });
+
+  it('handles a very short transit timeline without producing NaN', () => {
+    const tiny = { dep_day: 0, flyby_day: 5, arr_day: 10 };
+    const tinyOut = outboundArc({ x: R_EARTH_AU, z: 0 }, 50);
+    const tinyRet = returnArc({ x: R_MARS_AU, z: 0 }, { x: -1, z: 0 }, 50);
+    const s = spacecraftPos(7, tiny, tinyOut, tinyRet);
+    expect(Number.isFinite(s.pos.x)).toBe(true);
+    expect(Number.isFinite(s.pos.z)).toBe(true);
+    expect(['outbound', 'return']).toContain(s.phase);
+  });
 });

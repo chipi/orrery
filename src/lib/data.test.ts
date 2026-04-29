@@ -4,11 +4,13 @@ import { join } from 'node:path';
 import {
   getMissionIndex,
   getMission,
+  getMissionsForLibrary,
   filterMissions,
   planets,
   getPlanets,
   getRockets,
   getSun,
+  getScenario,
   rockets,
   earthObjects,
   moonSites,
@@ -231,6 +233,65 @@ describe('getSun', () => {
     const sun = await getSun('fr');
     expect(sun.name).toBe('The Sun');
     expect(sun.spectral_class).toBe('G2V');
+  });
+});
+
+describe('getMissionsForLibrary', () => {
+  it('returns all 28 missions merged with their en-US overlays', async () => {
+    const list = await getMissionsForLibrary();
+    expect(list).toHaveLength(28);
+    // Every mission should have its base fields…
+    for (const m of list) {
+      expect(m.id).toBeTruthy();
+      expect(['MARS', 'MOON']).toContain(m.dest);
+      expect(m.year).toBeGreaterThan(1900);
+    }
+    // …and a sample has the overlay fields merged in.
+    const curiosity = list.find((m) => m.id === 'curiosity');
+    expect(curiosity).toBeDefined();
+    expect(curiosity!.name).toBe('Curiosity');
+    expect(curiosity!.first).toContain('nuclear-powered');
+  });
+
+  it('falls back to en-US for missing locale', async () => {
+    const list = await getMissionsForLibrary('fr');
+    expect(list).toHaveLength(28);
+  });
+
+  it('count matches what filterMissions reports', async () => {
+    const lib = await getMissionsForLibrary();
+    const all = await filterMissions();
+    expect(lib).toHaveLength(all.length);
+  });
+});
+
+describe('getScenario', () => {
+  it('returns the ORRERY-1 scenario merged with its en-US overlay', async () => {
+    const s = await getScenario('orrery-1');
+    expect(s).not.toBeNull();
+    expect(s!.id).toBe('orrery-1');
+    expect(s!.name).toBe('ORRERY-1');
+    expect(s!.vehicle).toBe('Falcon Heavy');
+    expect(s!.dep_day).toBe(333);
+    expect(s!.flyby_day).toBe(592);
+    expect(s!.arr_day).toBe(842);
+    expect(s!.dv_total_km_s).toBeCloseTo(3.86, 2);
+    expect(s!.events.length).toBeGreaterThanOrEqual(11);
+    // Verifies the overlay fix from the audit — at least one
+    // warning-typed event in the default scenario so the CAPCOM
+    // anomaly monitor reaches CAUTION as the user scrubs forward.
+    expect(s!.events.some((e) => e.type === 'warning')).toBe(true);
+  });
+
+  it('returns null for an unknown scenario id', async () => {
+    const s = await getScenario('does-not-exist');
+    expect(s).toBeNull();
+  });
+
+  it('falls back to en-US for missing locale', async () => {
+    const s = await getScenario('orrery-1', 'fr');
+    expect(s).not.toBeNull();
+    expect(s!.name).toBe('ORRERY-1');
   });
 });
 

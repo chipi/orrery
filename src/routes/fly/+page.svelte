@@ -151,11 +151,18 @@
 
   // ─── Three.js handles hoisted out of onMount ───────────────────────
   // The outbound + return arcs need to react to outPts/retPts state
-  // changes triggered by mission loading. Holding the Line refs at
-  // component scope lets a $effect mutate their geometry without
+  // changes triggered by mission loading. Holding the Mesh refs at
+  // component scope lets a $effect rebuild their TubeGeometry without
   // tearing down the whole scene.
-  let outLine: THREE.Line | undefined;
-  let retLine: THREE.Line | undefined;
+  //
+  // v0.1.9: switched from THREE.Line (1px on most platforms; barely
+  // visible) to THREE.Mesh with TubeGeometry — gives a thick glowing
+  // path that reads clearly across viewports. drawRange-based "trim
+  // future part" semantics dropped: the full mission path now stays
+  // visible so users can see start + end + curve at all times.
+  let outLine: THREE.Mesh | undefined;
+  let retLine: THREE.Mesh | undefined;
+  let rebuildTubeGeometry: ((pts: Vec2[], radius: number) => THREE.BufferGeometry) | undefined;
   // Camera reset callback assigned inside onMount; applyMissionAsLoaded /
   // applyPlanSelection call it so each new mission gets a fresh frame
   // showing the new launch + arrival positions.
@@ -166,41 +173,50 @@
   // a visibly distinct anchor pair, not just a different arc curve.
   let depMarker: THREE.Mesh | undefined;
   let arrMarker: THREE.Mesh | undefined;
+  let depLabelSprite: THREE.Sprite | undefined;
+  let arrLabelSprite: THREE.Sprite | undefined;
   const SCALE_3D = 80;
 
-  // Update the Three.js Line geometry whenever the arc-point arrays
-  // change. The Line objects are created in onMount, so this effect
-  // is a no-op on first run (outLine/retLine still undefined). Once
-  // mounted, every mission load re-uploads new vertex positions.
+  // Update the Three.js Tube geometry whenever the arc-point arrays
+  // change. The Mesh refs are created in onMount, so this effect is
+  // a no-op on first run (outLine/retLine still undefined). Once
+  // mounted, every mission load rebuilds the tube along the new
+  // CatmullRom curve.
   $effect(() => {
-    if (!outLine || !retLine) return;
-    const outVecs = outPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-    const retVecs = retPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+    if (!outLine || !retLine || !rebuildTubeGeometry) return;
     outLine.geometry.dispose();
-    outLine.geometry = new THREE.BufferGeometry().setFromPoints(outVecs);
-    // setDrawRange resets when geometry swaps; the per-frame animate
-    // tick will re-clamp it next paint.
+    outLine.geometry = rebuildTubeGeometry(outPts, 0.6);
     retLine.geometry.dispose();
-    retLine.geometry = new THREE.BufferGeometry().setFromPoints(retVecs);
+    retLine.geometry = rebuildTubeGeometry(retPts, 0.5);
   });
 
-  // Position the per-mission DEPARTURE + ARRIVAL anchor rings
-  // whenever arcTimeline or activeDestination changes. The rings are
-  // created in onMount; this effect is a no-op until they exist.
-  // For Moon missions, the markers anchor to the local Earth-Moon
-  // scene (origin + last arc point) instead of the heliocentric frame.
+  // Position the per-mission DEPARTURE + ARRIVAL anchor rings + their
+  // labels whenever arcTimeline or activeDestination changes. The
+  // rings + sprites are created in onMount; this effect is a no-op
+  // until they exist. Sprites float ~6u above the marker rings so
+  // they don't z-fight with the ring geometry.
   $effect(() => {
-    if (!depMarker || !arrMarker) return;
+    if (!depMarker || !arrMarker || !depLabelSprite || !arrLabelSprite) return;
+    let depX = 0;
+    let depZ = 0;
+    let arrX = 0;
+    let arrZ = 0;
     if (isMoonMission && outPts.length > 0) {
       const last = outPts[outPts.length - 1];
-      depMarker.position.set(0, 0, 0);
-      arrMarker.position.set(last.x * SCALE_3D, 0, last.z * SCALE_3D);
+      arrX = last.x * SCALE_3D;
+      arrZ = last.z * SCALE_3D;
     } else {
       const dep = earthPos(arcTimeline.dep_day);
       const arr = destinationPos(arcTimeline.arr_day, activeDestination);
-      depMarker.position.set(dep.x * SCALE_3D, 0, dep.z * SCALE_3D);
-      arrMarker.position.set(arr.x * SCALE_3D, 0, arr.z * SCALE_3D);
+      depX = dep.x * SCALE_3D;
+      depZ = dep.z * SCALE_3D;
+      arrX = arr.x * SCALE_3D;
+      arrZ = arr.z * SCALE_3D;
     }
+    depMarker.position.set(depX, 0, depZ);
+    arrMarker.position.set(arrX, 0, arrZ);
+    depLabelSprite.position.set(depX, 6, depZ);
+    arrLabelSprite.position.set(arrX, 6, arrZ);
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -349,40 +365,66 @@
     isFreeReturn = false;
     activeDestination = 'mars';
     isMoonMission = m.dest === 'MOON';
+    // Detect missions that physically return the spacecraft (or its
+    // sample) to Earth. Drives the second tube-mesh rendering of the
+    // return arc. Sample-return missions: Luna 24, Chang'e 5/6.
+    // Crewed missions: Apollo, Artemis 3.
+    const missionType = (m.type ?? '').toUpperCase();
+    const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
     if (isMoonMission) {
       // Earth-Moon trajectory: small visual arc from Earth (origin) to
       // the Moon's exaggerated position. The Moon is placed at a
       // sweep angle determined by the mission's flyby_day modulo the
-      // sidereal lunar month, so missions launched at different phases
-      // of the lunar cycle show the Moon at different positions.
+      // sidereal lunar month.
       const moonAngle =
         ((newTimeline.flyby_day % MOON_ORBITAL_PERIOD_DAYS) / MOON_ORBITAL_PERIOD_DAYS) *
         2 *
         Math.PI;
       const moonX = Math.cos(moonAngle) * MOON_VISUAL_DISTANCE;
       const moonZ = Math.sin(moonAngle) * MOON_VISUAL_DISTANCE;
-      // Build a 2D arc curving from Earth (origin) to Moon (moonX, moonZ).
-      // Quarter-ellipse curve for a teaching-clean trajectory shape.
       const arcSteps = 200;
       const moonOut: Vec2[] = [];
       for (let i = 0; i <= arcSteps; i++) {
         const t = i / arcSteps;
-        // Bezier-style quadratic curve via control point at 50% offset perpendicular
+        // Quadratic Bezier with off-axis control point — gives a
+        // gentle curving departure trajectory.
         const ctrlX = moonX * 0.5 + -moonZ * 0.18;
         const ctrlZ = moonZ * 0.5 + moonX * 0.18;
         const ix = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlX + t * t * moonX;
         const iz = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlZ + t * t * moonZ;
-        // /fly's animation uses Vec2 in AU; we encode our scene-units
-        // by dividing by SCALE_3D so the per-frame `pos.x * SCALE_3D`
-        // arithmetic comes out at the right scene magnitude.
         moonOut.push({ x: ix / SCALE_3D, z: iz / SCALE_3D });
       }
       outPts = moonOut;
-      retPts = [];
+      // Return arc for round-trip Moon missions: mirrored curve back
+      // to Earth, slightly offset so it doesn't overlap the outbound
+      // line.
+      if (isReturnTrip) {
+        const moonRet: Vec2[] = [];
+        for (let i = 0; i <= arcSteps; i++) {
+          const t = i / arcSteps;
+          const ctrlX = moonX * 0.5 + moonZ * 0.18;
+          const ctrlZ = moonZ * 0.5 + -moonX * 0.18;
+          const ix = (1 - t) * (1 - t) * moonX + 2 * (1 - t) * t * ctrlX + t * t * 0;
+          const iz = (1 - t) * (1 - t) * moonZ + 2 * (1 - t) * t * ctrlZ + t * t * 0;
+          moonRet.push({ x: ix / SCALE_3D, z: iz / SCALE_3D });
+        }
+        retPts = moonRet;
+      } else {
+        retPts = [];
+      }
     } else {
       const arcs = buildArcs(newTimeline, false);
       outPts = arcs.out;
-      retPts = arcs.ret;
+      // Return arc for round-trip Mars missions (e.g., MMX which
+      // returns from Phobos): mirror the outbound arc back to Earth.
+      // For now, no Mars sample-return missions are FLOWN; MMX is
+      // PLANNED. The branch is here for completeness.
+      if (isReturnTrip) {
+        const earthRet = earthPos(newTimeline.arr_day + (totalT - flybyOffset));
+        retPts = returnArc(destinationPos(newTimeline.flyby_day, 'mars'), earthRet, 200);
+      } else {
+        retPts = arcs.ret;
+      }
     }
     resetCamera?.();
     mission = {
@@ -644,18 +686,31 @@
     // = nothing in 3D (the 2D mode has the dashed-future treatment;
     // 3D keeps it cleaner without dashed segments since LineDashedMaterial
     // requires geometry.computeLineDistances which is awkward to update).
-    const outVecs = outPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-    const retVecs = retPts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-    outLine = new THREE.Line(
-      new THREE.BufferGeometry().setFromPoints(outVecs),
-      new THREE.LineBasicMaterial({ color: 0x4466ff, transparent: true, opacity: 0.7 }),
-    );
-    retLine = new THREE.Line(
-      new THREE.BufferGeometry().setFromPoints(retVecs),
-      new THREE.LineBasicMaterial({ color: 0x9966ff, transparent: true, opacity: 0.7 }),
-    );
+    /** Build a TubeGeometry from arc points (in AU). Returns null
+     *  when the arc has too few points — caller falls back to an
+     *  empty placeholder geometry so the Mesh refs stay non-null. */
+    const buildTubeGeometry = (pts: Vec2[], radius: number): THREE.BufferGeometry => {
+      if (pts.length < 2) return new THREE.BufferGeometry();
+      const vecs = pts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
+      const curve = new THREE.CatmullRomCurve3(vecs, false);
+      return new THREE.TubeGeometry(curve, Math.max(64, pts.length), radius, 8, false);
+    };
+    const outMat = new THREE.MeshBasicMaterial({
+      color: 0x4488ff,
+      transparent: true,
+      opacity: 0.92,
+    });
+    const retMat = new THREE.MeshBasicMaterial({
+      color: 0x9966ff,
+      transparent: true,
+      opacity: 0.85,
+    });
+    outLine = new THREE.Mesh(buildTubeGeometry(outPts, 0.6), outMat);
+    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), retMat);
     scene.add(outLine);
     scene.add(retLine);
+    // Hoist the builder so the $effect can re-use it on mission swap.
+    rebuildTubeGeometry = buildTubeGeometry;
 
     // Earth + Mars meshes
     const earthMesh = new THREE.Mesh(
@@ -730,35 +785,67 @@
     returnRing.visible = false;
     scene.add(returnRing);
 
-    // DEPARTURE + ARRIVAL anchor markers (v0.1.8) — fixed rings at
-    // Earth-on-departure-day and destination-on-arrival-day. These
-    // make each mission visually distinct: even when two Mars missions
-    // have similar Hohmann arcs, the launch + landing positions sit
-    // at different points on the planets' orbits depending on when
-    // the mission was launched. Updated by a $effect when arcTimeline
-    // / activeDestination changes.
+    // DEPARTURE + ARRIVAL anchor markers — fixed rings at the
+    // mission's launch and landing positions. v0.1.9: scaled up
+    // (radius 5u vs 3u) and given Sprite labels ("LAUNCH", "ARRIVAL")
+    // so each mission's start + end are unambiguous regardless of
+    // camera angle. Updated by a $effect when arcTimeline /
+    // activeDestination / isMoonMission changes.
     depMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(3.0, 0.22, 8, 48),
+      new THREE.TorusGeometry(5.0, 0.35, 12, 64),
       new THREE.MeshBasicMaterial({
         color: 0x4b9cd3,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.85,
         depthWrite: false,
       }),
     );
     depMarker.rotation.x = Math.PI / 2;
     scene.add(depMarker);
     arrMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(3.0, 0.22, 8, 48),
+      new THREE.TorusGeometry(5.0, 0.35, 12, 64),
       new THREE.MeshBasicMaterial({
         color: 0xc1440e,
         transparent: true,
-        opacity: 0.65,
+        opacity: 0.85,
         depthWrite: false,
       }),
     );
     arrMarker.rotation.x = Math.PI / 2;
     scene.add(arrMarker);
+
+    // Sprite labels — billboard text floating above each marker so
+    // the user always sees "LAUNCH" / "ARRIVAL" regardless of view
+    // angle. Texture rebuilt when activeDestination changes (so
+    // ARRIVAL → MARS / JUPITER / MOON / etc. gets the right name).
+    const buildLabelSprite = (text: string, colorHex: string): THREE.Sprite => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 256;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.font = "bold 28px 'Space Mono', monospace";
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+        ctx.shadowBlur = 6;
+        ctx.fillStyle = colorHex;
+        ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+      }
+      const texture = new THREE.Texture(canvas);
+      texture.needsUpdate = true;
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      const sprite = new THREE.Sprite(
+        new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false }),
+      );
+      sprite.scale.set(28, 7, 1);
+      return sprite;
+    };
+    depLabelSprite = buildLabelSprite('LAUNCH', '#4b9cd3');
+    arrLabelSprite = buildLabelSprite('ARRIVAL', '#c1440e');
+    scene.add(depLabelSprite);
+    scene.add(arrLabelSprite);
 
     // Camera
     let camR = 360;
@@ -1039,26 +1126,9 @@
       const h = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
       scGroup.lookAt(scGroup.position.x + h.x * SCALE_3D, 0, scGroup.position.z + h.z * SCALE_3D);
 
-      // Geometry length tracks the live outPts/retPts arrays (which
-      // change when a new mission loads). Guard against the ts-narrowing
-      // case where outLine/retLine are still being created on first tick.
-      if (outLine) {
-        const splitOut = Math.max(
-          2,
-          Math.min(outPts.length, Math.floor(Math.min(1, sc.progress / 0.5) * outPts.length)),
-        );
-        outLine.geometry.setDrawRange(0, splitOut);
-      }
-      if (retLine) {
-        const splitRet = Math.max(
-          2,
-          Math.min(
-            retPts.length,
-            Math.floor(Math.max(0, (sc.progress - 0.5) / 0.5) * retPts.length),
-          ),
-        );
-        retLine.geometry.setDrawRange(0, splitRet);
-      }
+      // v0.1.9: TubeGeometry replaces the old THREE.Line; the full
+      // mission path is always visible (start + end + curve readable
+      // at a glance), so no per-frame drawRange trim is needed.
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.

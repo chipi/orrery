@@ -12,12 +12,12 @@ The six screens:
 
 | Route | Screen | File |
 |---|---|---|
-| `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
 | `/explore` | Solar System Explorer | `src/routes/explore/+page.svelte` |
 | `/plan` | Mission Configurator | `src/routes/plan/+page.svelte` |
 | `/fly` | Mission Arc | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Library | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
+| `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
 
 ---
 

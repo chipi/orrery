@@ -8,12 +8,12 @@
   let { right }: Props = $props();
 
   const links = [
-    { href: `${base}/moon`, label: m.nav_moon() },
     { href: `${base}/explore`, label: m.nav_explore() },
     { href: `${base}/plan`, label: m.nav_plan() },
     { href: `${base}/fly`, label: m.nav_fly() },
     { href: `${base}/missions`, label: m.nav_missions() },
     { href: `${base}/earth`, label: m.nav_earth() },
+    { href: `${base}/moon`, label: m.nav_moon() },
   ];
 
   function isActive(href: string, pathname: string): boolean {

@@ -28,6 +28,7 @@ const earthObjectSchema = loadSchema('earth-object.schema.json');
 const earthObjectOverlaySchema = loadSchema('earth-object-overlay.schema.json');
 const moonSiteSchema = loadSchema('moon-site.schema.json');
 const moonSiteOverlaySchema = loadSchema('moon-site-overlay.schema.json');
+const planetOverlaySchema = loadSchema('planet-overlay.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -39,6 +40,7 @@ const validateEarthObjects = ajv.compile(earthObjectSchema);
 const validateEarthObjectOverlay = ajv.compile(earthObjectOverlaySchema);
 const validateMoonSites = ajv.compile(moonSiteSchema);
 const validateMoonSiteOverlay = ajv.compile(moonSiteOverlaySchema);
+const validatePlanetOverlay = ajv.compile(planetOverlaySchema);
 
 let failed = 0;
 let passed = 0;
@@ -115,6 +117,10 @@ if (existsSync(i18nDir)) {
     // Moon-site overlays
     for (const file of listJson(join(i18nDir, locale, 'moon-sites'))) {
       validateFile(file, validateMoonSiteOverlay);
+    }
+    // Planet overlays
+    for (const file of listJson(join(i18nDir, locale, 'planets'))) {
+      validateFile(file, validatePlanetOverlay);
     }
   }
 }

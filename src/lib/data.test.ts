@@ -6,6 +6,7 @@ import {
   getMission,
   filterMissions,
   planets,
+  getPlanets,
   rockets,
   earthObjects,
   moonSites,
@@ -156,6 +157,38 @@ describe('reference data', () => {
   it('moonSites() returns 16 sites', async () => {
     const data = await moonSites();
     expect(data).toHaveLength(16);
+  });
+});
+
+describe('getPlanets', () => {
+  it('returns 8 planets merged with en-US overlay', async () => {
+    const list = await getPlanets();
+    expect(list).toHaveLength(8);
+    const earth = list.find((p) => p.id === 'earth');
+    expect(earth).toBeDefined();
+    expect(earth!.a).toBeCloseTo(1.0, 4); // base orbital data
+    expect(earth!.type).toBe('Home · Reference orbit'); // overlay
+    expect(earth!.fact).toContain('Every human');
+    expect(earth!.bio).toContain('axial tilt');
+  });
+
+  it('Mars overlay marks the planet as missionable', async () => {
+    const list = await getPlanets();
+    const mars = list.find((p) => p.id === 'mars');
+    expect(mars?.missionable).toBe(true);
+  });
+
+  it('non-mission planets do not carry the missionable flag', async () => {
+    const list = await getPlanets();
+    const venus = list.find((p) => p.id === 'venus');
+    expect(venus?.missionable).toBeUndefined();
+  });
+
+  it('falls back to en-US when locale overlay missing', async () => {
+    const list = await getPlanets('fr');
+    expect(list).toHaveLength(8);
+    expect(list[2].id).toBe('earth');
+    expect(list[2].fact).toContain('Every human');
   });
 });
 

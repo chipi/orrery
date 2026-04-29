@@ -8,7 +8,7 @@
 
 import { base } from '$app/paths';
 import type { Mission, MissionIndex } from '$types/mission';
-import type { PlanetsData } from '$types/planet';
+import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { MoonSite } from '$types/moon-site';
@@ -64,6 +64,34 @@ export async function filterMissions(filters: MissionFilter = {}): Promise<Missi
 
 export async function planets(): Promise<PlanetsData> {
   return get<PlanetsData>('planets.json');
+}
+
+/**
+ * Returns the 8 planets merged with their per-locale editorial overlay.
+ * Order matches `planets.json` (Mercury → Neptune). The id is the
+ * lowercase planet name and is used as the URL slug & overlay filename.
+ *
+ * If a locale overlay is missing, falls back to en-US. If en-US itself
+ * is missing for any planet, a hard error is thrown — overlays are part
+ * of the editorial contract, not optional decoration.
+ */
+export async function getPlanets(locale = 'en-US'): Promise<LocalizedPlanet[]> {
+  const baseData = await planets();
+  const merged: LocalizedPlanet[] = [];
+  for (const p of baseData.planets) {
+    const id = p.name.toLowerCase();
+    const overlay = await get<PlanetOverlay>(`i18n/${locale}/planets/${id}.json`).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<PlanetOverlay>(`i18n/en-US/planets/${id}.json`).catch(() => null));
+    if (!fallback) {
+      throw new Error(`Missing planet overlay for ${id} (locale ${locale}, no en-US fallback)`);
+    }
+    merged.push({ ...p, ...fallback, id });
+  }
+  return merged;
 }
 
 export async function rockets(): Promise<Rocket[]> {

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "planet-overlay.schema.json",
+  "title": "PlanetOverlay",
+  "description": "Editorial overlay per planet per locale. One file at data/i18n/[locale]/planets/[id].json where id is the lowercase planet name. Merged with base record from planets.json at fetch time (ADR-017). Surfaced by the /explore panel.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "type", "fact", "bio"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name (matches base entry but available in user's locale)."
+    },
+    "type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line classification (e.g., \"Terrestrial planet\", \"Gas giant · Rings\")."
+    },
+    "fact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-paragraph editorial summary shown in the OVERVIEW tab."
+    },
+    "bio": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Editorial paragraph contextualising the orbit/axial-tilt/rotation data shown in the TECHNICAL tab."
+    },
+    "missionable": {
+      "type": "boolean",
+      "description": "When true, the panel surfaces the \"PLAN A MISSION\" CTA."
+    }
+  }
+}

@@ -10,6 +10,7 @@ import { base } from '$app/paths';
 import type { Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
 import type { LocalizedSun, Sun, SunOverlay } from '$types/sun';
+import type { LocalizedScenario, Scenario, ScenarioOverlay } from '$types/scenario';
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { MoonSite } from '$types/moon-site';
@@ -164,6 +165,33 @@ export async function getSun(locale = 'en-US'): Promise<LocalizedSun> {
     throw new Error(`Missing Sun overlay (locale ${locale}, no en-US fallback)`);
   }
   return { ...baseRecord, ...fallback };
+}
+
+/**
+ * Returns a synthesized teaching scenario merged with its locale
+ * overlay. Scenarios live in `static/data/scenarios/` (not the
+ * mission library) — see `src/types/scenario.ts` for the rationale.
+ *
+ * Returns null if the scenario id is unknown so callers can fall
+ * back gracefully (the /fly route does this when ?mission=id points
+ * at a real mission rather than a scenario).
+ */
+export async function getScenario(id: string, locale = 'en-US'): Promise<LocalizedScenario | null> {
+  try {
+    const baseRecord = await get<Scenario>(`scenarios/${id}.json`);
+    const overlay = await get<ScenarioOverlay>(`i18n/${locale}/scenarios/${id}.json`).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<ScenarioOverlay>(`i18n/en-US/scenarios/${id}.json`).catch(() => null));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
 }
 
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */

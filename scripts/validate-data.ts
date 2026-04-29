@@ -31,6 +31,8 @@ const moonSiteOverlaySchema = loadSchema('moon-site-overlay.schema.json');
 const planetOverlaySchema = loadSchema('planet-overlay.schema.json');
 const sunSchema = loadSchema('sun.schema.json');
 const sunOverlaySchema = loadSchema('sun-overlay.schema.json');
+const scenarioSchema = loadSchema('scenario.schema.json');
+const scenarioOverlaySchema = loadSchema('scenario-overlay.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -45,6 +47,8 @@ const validateMoonSiteOverlay = ajv.compile(moonSiteOverlaySchema);
 const validatePlanetOverlay = ajv.compile(planetOverlaySchema);
 const validateSun = ajv.compile(sunSchema);
 const validateSunOverlay = ajv.compile(sunOverlaySchema);
+const validateScenario = ajv.compile(scenarioSchema);
+const validateScenarioOverlay = ajv.compile(scenarioOverlaySchema);
 
 let failed = 0;
 let passed = 0;
@@ -91,6 +95,11 @@ validateFile(join(DATA_ROOT, 'earth-objects.json'), validateEarthObjects);
 validateFile(join(DATA_ROOT, 'moon-sites.json'), validateMoonSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 
+// Scenario base records
+for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
+  validateFile(file, validateScenario);
+}
+
 // 1. Mission index
 validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
@@ -129,6 +138,10 @@ if (existsSync(i18nDir)) {
     }
     // Sun overlay
     validateFile(join(i18nDir, locale, 'sun.json'), validateSunOverlay);
+    // Scenario overlays
+    for (const file of listJson(join(i18nDir, locale, 'scenarios'))) {
+      validateFile(file, validateScenarioOverlay);
+    }
   }
 }
 

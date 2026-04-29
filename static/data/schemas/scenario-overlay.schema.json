@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "scenario-overlay.schema.json",
+  "title": "ScenarioOverlay",
+  "description": "Editorial overlay per scenario per locale (ADR-017). Lives at data/i18n/[locale]/scenarios/[id].json. Merged with the base scenario record at fetch time. Carries every user-facing string surfaced in the /fly identity HUD and CAPCOM event ticker.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "dep_label", "arr_label", "events"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Display name (e.g., \"ORRERY-1\")."
+    },
+    "dep_label": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short label for the departure event (\"Earth dep\" in en-US)."
+    },
+    "arr_label": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short label for the arrival event (\"Earth return\")."
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["met", "label", "note", "type"],
+        "properties": {
+          "met": { "type": "number", "minimum": 0, "description": "Mission Elapsed Time in days since departure." },
+          "label": { "type": "string", "minLength": 1 },
+          "note": { "type": "string", "minLength": 1 },
+          "type": { "enum": ["nominal", "info", "warning"] }
+        }
+      }
+    }
+  }
+}

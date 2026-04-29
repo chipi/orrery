@@ -12,84 +12,21 @@
     type MissionTimeline,
   } from '$lib/mission-arc';
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
-  import { getMission } from '$lib/data';
+  import { getMission, getScenario } from '$lib/data';
   import type { Mission, MissionEvent } from '$types/mission';
+  import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
 
-  // ─── ORRERY-1 default events (in lieu of overlay JSON) ───────────
-  // These match the prototype P03's MISSION_EVENTS array. When a real
-  // mission is loaded via ?mission=id, its `events` array from the
-  // overlay replaces this default.
-  const ORRERY1_EVENTS: MissionEvent[] = [
-    {
-      met: 0,
-      label: 'LAUNCH',
-      note: 'Falcon Heavy lifts off. Free-return — no landing.',
-      type: 'nominal',
-    },
-    {
-      met: 0.4,
-      label: 'TMI BURN',
-      note: 'Trans-Mars Injection: 3.61 km/s. Escape velocity achieved.',
-      type: 'nominal',
-    },
-    {
-      met: 1,
-      label: 'DAY 1 CHECK',
-      note: 'First systems health check complete. All nominal.',
-      type: 'nominal',
-    },
-    { met: 60, label: 'TCM-1', note: 'Mid-course correction 1: 35 m/s.', type: 'nominal' },
-    { met: 200, label: 'CRUISE', note: 'Outbound cruise. Earth growing distant.', type: 'info' },
-    {
-      met: 259,
-      label: 'MARS FLYBY',
-      note: 'Closest approach: ~300 km altitude. Gravity assist initiates return.',
-      type: 'nominal',
-    },
-    {
-      met: 260,
-      label: 'RETURN TRAJECTORY',
-      note: 'Free-return gravity assist complete. Spacecraft on Earth trajectory.',
-      type: 'nominal',
-    },
-    {
-      met: 310,
-      label: 'MID-COURSE 3',
-      note: 'TCM-3: 22 m/s. Return trajectory corrected.',
-      type: 'nominal',
-    },
-    { met: 400, label: 'HALFWAY HOME', note: 'Past midpoint of return journey.', type: 'info' },
-    {
-      met: 480,
-      label: 'RE-ENTRY PREP',
-      note: 'Final approach. Heat shield checks.',
-      type: 'nominal',
-    },
-    {
-      met: 509,
-      label: 'EARTH ARRIVAL',
-      note: 'Atmospheric entry. Mission complete.',
-      type: 'nominal',
-    },
-  ];
+  // ─── Default scenario (ORRERY-1 free-return per ADR-009) ─────────
+  // Static-imported so the Three.js scene can initialise synchronously
+  // at onMount. The runtime fetch via `getScenario()` happens too,
+  // pulling in the editorial overlay for whichever locale the user
+  // has — when other locales ship, the overlay swap is a one-line
+  // change without restructuring the scene.
+  import defaultScenarioBase from '$data/scenarios/orrery-1.json';
+  import defaultScenarioOverlay from '$data/i18n/en-US/scenarios/orrery-1.json';
 
-  // ─── Default ORRERY-1 free-return per ADR-009 ────────────────────
-  // Timeline below maps "epoch days" to the prototype's reference
-  // (Earth dep at day 333, flyby at 592, return at 842 — same dates
-  // the porkchop and explore screens animate around).
-  const DEFAULT_MISSION = {
-    name: 'ORRERY-1',
-    vehicle: 'Falcon Heavy',
-    payload: '2,500 kg crew capsule',
-    dv_total: 3.86,
-    dv_used: 3.61,
-    dep_label: 'Earth dep',
-    arr_label: 'Earth return',
-    dep_day: 333,
-    flyby_day: 333 + 259,
-    arr_day: 333 + 509,
-  };
+  const DEFAULT_SCENARIO_ID = 'orrery-1';
 
   type LoadedMission = {
     name: string;
@@ -103,47 +40,54 @@
     isFromData: boolean;
   };
 
-  let mission: LoadedMission = $state({
-    name: DEFAULT_MISSION.name,
-    vehicle: DEFAULT_MISSION.vehicle,
-    payload: DEFAULT_MISSION.payload,
-    dv_total: DEFAULT_MISSION.dv_total,
-    dv_used: DEFAULT_MISSION.dv_used,
-    dep_label: DEFAULT_MISSION.dep_label,
-    arr_label: DEFAULT_MISSION.arr_label,
-    timeline: {
-      dep_day: DEFAULT_MISSION.dep_day,
-      flyby_day: DEFAULT_MISSION.flyby_day,
-      arr_day: DEFAULT_MISSION.arr_day,
-    },
-    isFromData: false,
-  });
-  let missionEvents: MissionEvent[] = $state(ORRERY1_EVENTS);
+  // Bootstrapped from the static import; replaced by getScenario() in
+  // onMount once the locale-overlay-aware fetch resolves.
+  function scenarioToLoaded(
+    s: typeof defaultScenarioBase,
+    o: typeof defaultScenarioOverlay,
+  ): LoadedMission {
+    return {
+      name: o.name,
+      vehicle: s.vehicle,
+      payload: s.payload,
+      dv_total: s.dv_total_km_s,
+      dv_used: s.dv_used_km_s,
+      dep_label: o.dep_label,
+      arr_label: o.arr_label,
+      timeline: { dep_day: s.dep_day, flyby_day: s.flyby_day, arr_day: s.arr_day },
+      isFromData: true,
+    };
+  }
+
+  let mission: LoadedMission = $state(
+    scenarioToLoaded(defaultScenarioBase, defaultScenarioOverlay),
+  );
+  let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
   let capcomOpen = $state(false);
 
-  // ─── Arc geometries — static, anchored to the default ORRERY-1 ─
-  // Per-mission trajectories aren't in the data layer (real Mars
-  // landings aren't free-returns; their detailed flight profiles
-  // belong in slice 5+ if we ever add them). The arc shows the
-  // canonical free-return shape regardless of which mission is
-  // loaded; the HUDs above carry the mission's actual identity.
+  // ─── Arc geometries — anchored to the canonical scenario's timeline ─
+  // Per-mission trajectories aren't in the data layer for historical
+  // missions (real Mars landings aren't free-returns; their detailed
+  // flight profiles belong in slice 5+ if added). The arc renders
+  // the canonical free-return shape regardless of which mission is
+  // loaded; HUDs surface the loaded record's identity strings around it.
   const ARC_STEPS = 200;
-  const earthDep = earthPos(DEFAULT_MISSION.dep_day);
-  const marsArr = marsPos(DEFAULT_MISSION.flyby_day);
-  const earthRet = earthPos(DEFAULT_MISSION.arr_day);
+  const ARC_TIMELINE: MissionTimeline = {
+    dep_day: defaultScenarioBase.dep_day,
+    flyby_day: defaultScenarioBase.flyby_day,
+    arr_day: defaultScenarioBase.arr_day,
+  };
+  const earthDep = earthPos(ARC_TIMELINE.dep_day);
+  const marsArr = marsPos(ARC_TIMELINE.flyby_day);
+  const earthRet = earthPos(ARC_TIMELINE.arr_day);
   const OUT_PTS = outboundArc(earthDep, ARC_STEPS);
   const RET_PTS = returnArc(marsArr, earthRet, ARC_STEPS);
-  const ARC_TIMELINE: MissionTimeline = {
-    dep_day: DEFAULT_MISSION.dep_day,
-    flyby_day: DEFAULT_MISSION.flyby_day,
-    arr_day: DEFAULT_MISSION.arr_day,
-  };
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
-  let simDay = $state(DEFAULT_MISSION.dep_day);
+  let simDay = $state(ARC_TIMELINE.dep_day);
   let simSpeed = $state(7); // days/sec
   let isPlaying = $state(true);
   let cleanup: (() => void) | undefined;
@@ -242,73 +186,145 @@
     simSpeed = v;
     isPlaying = true;
   }
+  // ─── Scrubber ──────────────────────────────────────────────────
+  // Pause-on-scrub: writing to simDay while isPlaying is true would
+  // race the rAF tick (next frame increments simDay over the user's
+  // input). Pausing for the duration of the drag stops that.
+  let wasPlayingBeforeScrub = false;
+  function onScrubStart() {
+    if (isPlaying) {
+      wasPlayingBeforeScrub = true;
+      isPlaying = false;
+    } else {
+      wasPlayingBeforeScrub = false;
+    }
+  }
+  function onScrubEnd() {
+    if (wasPlayingBeforeScrub) isPlaying = true;
+    wasPlayingBeforeScrub = false;
+  }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
     simDay = ARC_TIMELINE.dep_day + t * ARC_TOTAL_DAYS;
   }
 
   // ─── Mission loading from URL (?mission=id) ──────────────────────
+  // Race-guarded by a monotonic loadId — if a newer URL change comes
+  // in while a previous load is in flight, the older promise resolves
+  // into a no-op rather than overwriting the newer state.
   let loadFailed = $state(false);
+  let currentLoadId = 0;
 
-  function applyLoadedMission(m: Mission) {
-    // Without a per-mission `dest` shape change, we map the data
-    // record onto the LoadedMission shape: transit_days drives the
-    // total timeline; the flyby day is the midpoint for non-flyby
-    // missions (a reasonable default — the actual flyby tag is only
-    // meaningful for free-returns and not present in real Mars
-    // missions, which are landings).
+  function applyMissionAsLoaded(m: Mission) {
+    // Real historical missions don't carry a free-return geometry, so
+    // we surface their identity in the HUDs while the spacecraft rides
+    // the canonical free-return arc geometry. The "flyby day" for a
+    // landing is approximated as 95% of the transit time so the arc's
+    // closest-approach marker still fires somewhere meaningful.
     const totalT = m.transit_days || 250;
-    const isFreeReturn = m.id === 'orrery-1';
-    const flybyOffset = isFreeReturn ? 259 : Math.floor(totalT * 0.95);
+    const flybyOffset = Math.floor(totalT * 0.95);
+    const dvTotal = parseDeltaV(m.delta_v);
     mission = {
       name: m.name ?? m.id,
       vehicle: m.vehicle ?? '—',
       payload: m.payload ?? '—',
-      dv_total:
-        typeof m.delta_v === 'string'
-          ? parseFloat(m.delta_v.replace(/[^\d.]/g, '')) || DEFAULT_MISSION.dv_total
-          : DEFAULT_MISSION.dv_total,
-      dv_used: 0,
-      dep_label: m.departure_date ?? DEFAULT_MISSION.dep_label,
-      arr_label: m.arrival_date ?? DEFAULT_MISSION.arr_label,
+      dv_total: dvTotal,
+      dv_used: dvTotal * 0.94,
+      dep_label: m.departure_date ?? defaultScenarioOverlay.dep_label,
+      arr_label: m.arrival_date ?? defaultScenarioOverlay.arr_label,
       timeline: {
-        dep_day: 333,
-        flyby_day: 333 + flybyOffset,
-        arr_day: 333 + (isFreeReturn ? 509 : totalT),
+        dep_day: ARC_TIMELINE.dep_day,
+        flyby_day: ARC_TIMELINE.dep_day + flybyOffset,
+        arr_day: ARC_TIMELINE.dep_day + totalT,
       },
       isFromData: true,
     };
-    mission.dv_used = mission.dv_total * 0.94;
     simDay = mission.timeline.dep_day;
-    // Replace the default events with the loaded mission's overlay
-    // events if they exist; otherwise keep ORRERY-1 defaults so the
-    // CAPCOM panel is never empty.
     if (m.events && m.events.length > 0) {
       missionEvents = m.events;
     }
   }
 
-  function loadMissionFromUrl(url: URL) {
-    const id = url.searchParams.get('mission');
-    if (!id) return;
-    // Try Mars first, then Moon — a single missionId is unique
-    // across the index so the second attempt only fires for Moon-
-    // dest missions.
-    getMission(id, 'mars').then((m1) => {
-      if (m1) {
-        applyLoadedMission(m1);
-        return;
-      }
-      getMission(id, 'moon').then((m2) => {
-        if (m2) applyLoadedMission(m2);
-        else loadFailed = true;
-      });
-    });
+  function applyScenarioAsLoaded(s: LocalizedScenario) {
+    mission = {
+      name: s.name,
+      vehicle: s.vehicle,
+      payload: s.payload,
+      dv_total: s.dv_total_km_s,
+      dv_used: s.dv_used_km_s,
+      dep_label: s.dep_label,
+      arr_label: s.arr_label,
+      timeline: { dep_day: s.dep_day, flyby_day: s.flyby_day, arr_day: s.arr_day },
+      isFromData: true,
+    };
+    simDay = mission.timeline.dep_day;
+    missionEvents = s.events;
   }
+
+  /**
+   * Best-effort numeric parse of the `delta_v` string field on
+   * historical Mission records. Falls back to the default scenario's
+   * dv_total when malformed. Replaces the inline regex from before;
+   * extracted so we can unit-test it (Batch 5).
+   */
+  function parseDeltaV(raw: string | undefined): number {
+    if (!raw) return defaultScenarioBase.dv_total_km_s;
+    const match = raw.match(/[0-9]+(?:\.[0-9]+)?/);
+    if (!match) return defaultScenarioBase.dv_total_km_s;
+    const v = parseFloat(match[0]);
+    return Number.isFinite(v) && v > 0 ? v : defaultScenarioBase.dv_total_km_s;
+  }
+
+  async function loadMissionFromUrl(url: URL): Promise<void> {
+    loadFailed = false;
+    const id = url.searchParams.get('mission');
+    const myLoadId = ++currentLoadId;
+
+    if (!id) {
+      // No ?mission= param → fetch the locale overlay for the default
+      // scenario (so non-en-US locales get translated strings); fall
+      // back to the static import if even that fails.
+      const s = await getScenario(DEFAULT_SCENARIO_ID);
+      if (myLoadId !== currentLoadId) return; // newer load superseded us
+      if (s) applyScenarioAsLoaded(s);
+      return;
+    }
+
+    // Try scenarios first (synthesized teaching trajectories), then
+    // historical missions on Mars, then Moon.
+    const scenario = await getScenario(id);
+    if (myLoadId !== currentLoadId) return;
+    if (scenario) {
+      applyScenarioAsLoaded(scenario);
+      return;
+    }
+
+    const mars = await getMission(id, 'mars');
+    if (myLoadId !== currentLoadId) return;
+    if (mars) {
+      applyMissionAsLoaded(mars);
+      return;
+    }
+
+    const moon = await getMission(id, 'moon');
+    if (myLoadId !== currentLoadId) return;
+    if (moon) {
+      applyMissionAsLoaded(moon);
+      return;
+    }
+
+    loadFailed = true;
+  }
+
+  // Re-sync mission whenever the URL changes (back/forward, or
+  // cross-route navigation that lands here with a different ?mission=).
+  // ADR-024 contract: "URL is the source of truth on entry."
+  $effect(() => {
+    void loadMissionFromUrl($page.url);
+  });
 
   onMount(() => {
     if (!container || !canvas2d) return;
-    loadMissionFromUrl($page.url);
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene. Units = AU × SCALE_3D.
@@ -803,6 +819,9 @@
       step="0.001"
       value={Math.max(0, Math.min(1, arcProgress))}
       oninput={onScrub}
+      onpointerdown={onScrubStart}
+      onpointerup={onScrubEnd}
+      onpointercancel={onScrubEnd}
       class="scrub"
       aria-label={m.fly_scrub_label()}
     />

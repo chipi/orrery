@@ -62,26 +62,31 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ---
 
-## Slice 3 — Solar System Explorer + Mission Configurator
+## Slice 3 — Solar System Explorer + Mission Configurator ✅ COMPLETE
 
 *Goal: `/explore` and `/plan` running as production screens with local assets, data from JSON, all prototype functionality preserved.*
 
-**Deliverables:**
-- `scripts/fetch-assets.ts` complete — planet textures, agency logos, mission imagery all fetched at build time
-- `src/routes/explore/+page.svelte` — Solar System Explorer extracted from prototype
-- `src/routes/plan/+page.svelte` — Mission Configurator extracted from prototype
-- `src/lib/orbital.ts` fully typed — `keplerPos()`, `visViva()`, `auToPx()`
-- `src/lib/lambert.ts` typed — solver callable from worker
-- `src/workers/lambert.worker.ts` — typed, message protocol per RFC-003 proposal
-- `src/lib/scale.ts` — `auToPx()`, `altToVis()`
-- TECHNICAL tab, SIZES tab, Sun panel all working
-- Porkchop plot: 11,200 cells, Lambert worker, progress bar
-- Mobile: planet detail panel as bottom sheet, explore nav works on touch, pinch-zoom on 2D canvas
-- RFC-006: porkchop mobile interaction tested on real devices
+**Status (2026-04-29):** complete. Issue #3 closed across 8 sub-checkpoints (3a-1 → 3a-8). Live at https://chipi.github.io/orrery/.
 
-**RFC gates:** RFC-001 closes (router confirmed), RFC-003 closes (Lambert worker protocol confirmed), RFC-006 closes (porkchop mobile interaction locked)
+**What landed:**
+- ✅ `scripts/fetch-assets.ts` — fonts (Slice 1) + planet/moon textures (Slice 3 / 3a-2). Agency logos and mission imagery deferred to Slice 4 per the staged ADR-016 plan.
+- ✅ `src/routes/explore/+page.svelte` — 3D Three.js scene + 2D Canvas top-down + 3D/2D toggle, click-pick, selection ring, hover tooltip, Sun click → SunPanel, Kuiper Belt + Planet Nine
+- ✅ `src/routes/plan/+page.svelte` — porkchop plot (112×100, ~1.5s compute), Lambert worker integration, vehicle selector, ∆v budget bar, FLY button, RFC-006 Option C magnifier on mobile
+- ✅ Math libraries: `src/lib/orbital.ts`, `src/lib/scale.ts`, `src/lib/lambert.ts`, `src/lib/porkchop.ts` all typed
+- ✅ `src/workers/lambert.worker.ts` typed, contract locked by ADR-022
+- ✅ Components: `Panel.svelte`, `PlanetPanel.svelte`, `SunPanel.svelte`, `SizesCanvas.svelte`
+- ✅ Data layer extended: `getPlanets(locale)`, `getSun(locale)`, `getRockets(locale)` with locale-overlay merging; planet + sun overlay schemas + 9 en-US overlay files
+- ✅ Mobile: bottom-sheet panels on ≤767px, magnifier on touch, single-finger orbit on /explore (two-finger pinch deferred to slice 3 polish — flagged in audit)
+- ✅ 55 unit tests + 40 Playwright e2e tests (added in slice 3 polish, pulled forward from Slice 6)
 
-**ADRs from RFC closures written at this slice**
+**RFC gates closed at this slice:** RFC-001 (pre-empted by ADR-013 in Slice 1), RFC-003 → ADR-022, RFC-006 → ADR-023.
+
+**Variances from original plan, documented for future-me:**
+- 3a-2 textures sourced from Solar System Scope (CC BY 4.0) instead of three.js r128 examples (which don't carry the named 2k_*.jpg files). Decision in commit `70b552a`.
+- 3a-5 LEARN tab deferred — depends on a curated link catalog with no schema yet. Will land in Slice 4 polish alongside the mission credits subsystem.
+- 3a-6 small bodies + comets (Pluto, Ceres, Eris, Makemake, Haumea, Halley, 67P, ʻOumuamua) deferred to Slice 4 to co-ship with the missions that visit them (New Horizons, Dawn, Rosetta).
+- 3a-6 3D-mode Kuiper Belt + Planet Nine rendering deferred to Slice 4 polish. 2D mode has both.
+- "Real-device" mobile validation per RFC-006 closing-evidence is via Playwright Pixel 5 emulation in `tests/e2e/`. Real iOS/Android user testing tracked for Slice 6.
 
 ---
 

@@ -1,7 +1,7 @@
 /**
  * Lambert worker — runs the porkchop computation off the main thread (ADR-008).
  *
- * Protocol per RFC-003 (closure pending in 3a-8 ADR):
+ * Protocol per RFC-003, locked in ADR-022 (2026-04-28):
  *   Main → Worker: { id, depRange, arrRange, steps }
  *   Worker → Main: { id, progress }                        (every 10 rows)
  *   Worker → Main: { id, grid, depDays, arrDays }          (final result)

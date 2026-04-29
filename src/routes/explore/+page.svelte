@@ -399,9 +399,14 @@
       else selectPlanet(id);
     };
 
-    // ── 3D hover tooltip — live vis-viva at current heliocentric r ──
-    // No planet name in the tooltip — the panel + the planet itself
-    // already carry that. Tooltip surfaces transient orbital state.
+    // ── 3D hover tooltip — mean orbital velocity (vis-viva at r=a) ──
+    // The /explore visualisation uses circular orbits at compressed
+    // radii (orbitR), not Keplerian r(t), so the live r is constant
+    // per planet. Vis-viva at r=a simplifies to sqrt(μ/a). When we
+    // ship a true Kepler simulation (slice 4+ for /fly), we'll plumb
+    // the current r through to this tooltip so it varies in real time
+    // along the orbit. Until then the value matches the panel's
+    // MEAN VELOCITY cell — which is intentional, not a bug.
     const ray3dHover = new THREE.Raycaster();
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
@@ -420,9 +425,9 @@
       const id = hits[0].object.userData.planetId as string;
       const planet = planetById.get(id);
       if (!planet) return;
-      // r ≈ a (mean distance approximation; the visual orbit is circular).
-      // mu_sun ≈ 4π² in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
-      const v = Math.sqrt(4 * Math.PI ** 2 * (2 / planet.a - 1 / planet.a)) * 4.7404;
+      // Mean velocity at r=a; vis-viva collapses to sqrt(μ/a). μ ≈ 4π²
+      // in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
+      const v = Math.sqrt((4 * Math.PI ** 2) / planet.a) * 4.7404;
       hoverData = {
         name: planet.name,
         velocity: `~${v.toFixed(2)} km/s orbital velocity`,

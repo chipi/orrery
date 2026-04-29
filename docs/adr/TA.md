@@ -98,17 +98,29 @@ Data shapes between components.
 
 ### Lambert worker message protocol
 
-**Main → Worker:**
+Locked by ADR-022 (closes RFC-003). Every message carries a monotonic
+`id` so a new request implicitly cancels any in-flight computation —
+the main thread discards stale messages, the worker bails before
+posting stale results.
+
+**Main → Worker (request):**
 ```json
-{ "depRange": [depStart, depEnd], "arrRange": [arrStart, arrEnd], "steps": [112, 100] }
+{ "id": 1, "depRange": [0, 1460], "arrRange": [80, 520], "steps": [112, 100] }
 ```
 
-**Worker → Main:**
+**Worker → Main (progress, every 10 rows):**
 ```json
-{ "grid": [[dv, ...], ...], "depDays": [...], "arrDays": [...] }
+{ "id": 1, "progress": 0.42 }
 ```
 
-See RFC-003 for open questions on progress reporting and cancellation.
+**Worker → Main (final result):**
+```json
+{ "id": 1, "grid": [[dv, ...], ...], "depDays": [...], "arrDays": [...] }
+```
+
+Failed cells (Lambert solver returned no solution) carry the sentinel
+`28` km/s — clamps into the deepest red of the colour scale so they
+render as visually unreachable.
 
 ### Orbital constants
 

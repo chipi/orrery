@@ -1,6 +1,11 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { getPlanets } from '$lib/data';
+  import type { LocalizedPlanet } from '$types/planet';
+  import PlanetPanel from '$lib/components/PlanetPanel.svelte';
 
   // ──────────────────────────────────────────────────────────────────
   // Planet visual config — compressed orbital radii & display sizes,
@@ -131,10 +136,39 @@
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let view: '3d' | '2d' = $state('3d');
+  let localizedPlanets: LocalizedPlanet[] = $state([]);
+  let selectedId: string | null = $state(null);
+  let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
+
+  // Lookup keyed by id; reactive to localizedPlanets.
+  let planetById = $derived(new Map(localizedPlanets.map((p) => [p.id, p])));
+  let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
+
+  function selectPlanet(id: string) {
+    selectedId = id;
+    panelOpen = true;
+  }
+
+  function closePanel() {
+    panelOpen = false;
+  }
+
+  function onPlanMission() {
+    if (selectedPlanet?.missionable) {
+      goto(`${base}/plan`);
+    }
+  }
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Async-load localised planet data; safe to run alongside scene setup.
+    getPlanets()
+      .then((p) => {
+        localizedPlanets = p;
+      })
+      .catch((err) => console.error('Failed to load planets:', err));
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene
@@ -265,6 +299,7 @@
         specular: 0x444444,
       });
       const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3, 32, 32), mat);
+      mesh.userData = { planetId: p.id };
       group.add(mesh);
       if (p.hasRings) {
         const rg = new THREE.RingGeometry(p.size3 * 1.4, p.size3 * 2.6, 64);
@@ -283,6 +318,21 @@
       return { group, mesh, planet: p };
     });
 
+    // Selection ring (3D) — single torus reused for whichever planet is
+    // selected. Hidden when nothing is selected. Pulses by modulating
+    // material opacity in the animation loop.
+    const selRingGeo = new THREE.TorusGeometry(1, 0.18, 12, 64);
+    const selRingMat = new THREE.MeshBasicMaterial({
+      color: 0x4466ff,
+      transparent: true,
+      opacity: 0.5,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    });
+    const selRing = new THREE.Mesh(selRingGeo, selRingMat);
+    selRing.visible = false;
+    scene.add(selRing);
+
     let camR = 680;
     let camP = 1.05;
     let camT = 0.6;
@@ -300,51 +350,95 @@
     let isDrag3d = false;
     let lmx3d = 0;
     let lmy3d = 0;
+    let dragMoved3d = false;
+    let downX3d = 0;
+    let downY3d = 0;
+
+    const ray3d = new THREE.Raycaster();
+    const planetMeshes = planetObjs.map((o) => o.mesh);
+
+    const tryPick3d = (e: MouseEvent) => {
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray3d.intersectObjects(planetMeshes, false);
+      const hit = hits.find((h) => typeof h.object.userData.planetId === 'string');
+      if (hit) {
+        selectPlanet(hit.object.userData.planetId as string);
+      }
+    };
 
     const on3dMouseDown = (e: MouseEvent) => {
       isDrag3d = true;
+      dragMoved3d = false;
       lmx3d = e.clientX;
       lmy3d = e.clientY;
+      downX3d = e.clientX;
+      downY3d = e.clientY;
       el3d.style.cursor = 'grabbing';
     };
     const on3dMouseMove = (e: MouseEvent) => {
       if (!isDrag3d) return;
       const dx = e.clientX - lmx3d;
       const dy = e.clientY - lmy3d;
+      if (Math.abs(e.clientX - downX3d) + Math.abs(e.clientY - downY3d) > 4) {
+        dragMoved3d = true;
+      }
       camT -= dx * 0.006;
       camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
       lmx3d = e.clientX;
       lmy3d = e.clientY;
       updateCam();
     };
-    const on3dMouseUp = () => {
+    const on3dMouseUp = (e: MouseEvent) => {
+      const wasDrag = dragMoved3d;
       isDrag3d = false;
       el3d.style.cursor = 'grab';
+      if (!wasDrag && view === '3d') tryPick3d(e);
     };
     const on3dWheel = (e: WheelEvent) => {
       camR = Math.max(120, Math.min(1400, camR + e.deltaY * 0.7));
       updateCam();
     };
     let touchActive3d = false;
+    let touchMoved3d = false;
+    let touchDownX3d = 0;
+    let touchDownY3d = 0;
     const on3dTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
         touchActive3d = true;
+        touchMoved3d = false;
         lmx3d = e.touches[0].clientX;
         lmy3d = e.touches[0].clientY;
+        touchDownX3d = lmx3d;
+        touchDownY3d = lmy3d;
       }
     };
     const on3dTouchMove = (e: TouchEvent) => {
       if (!touchActive3d || e.touches.length !== 1) return;
       const dx = e.touches[0].clientX - lmx3d;
       const dy = e.touches[0].clientY - lmy3d;
+      if (
+        Math.abs(e.touches[0].clientX - touchDownX3d) +
+          Math.abs(e.touches[0].clientY - touchDownY3d) >
+        6
+      ) {
+        touchMoved3d = true;
+      }
       camT -= dx * 0.006;
       camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
       lmx3d = e.touches[0].clientX;
       lmy3d = e.touches[0].clientY;
       updateCam();
     };
-    const on3dTouchEnd = () => {
+    const on3dTouchEnd = (e: TouchEvent) => {
+      const wasMoved = touchMoved3d;
       touchActive3d = false;
+      if (!wasMoved && view === '3d' && e.changedTouches.length === 1) {
+        const t = e.changedTouches[0];
+        tryPick3d({ clientX: t.clientX, clientY: t.clientY } as MouseEvent);
+      }
     };
 
     el3d.style.cursor = 'grab';
@@ -370,6 +464,12 @@
     let isDrag2d = false;
     let drag2dX = 0;
     let drag2dY = 0;
+    let drag2dMoved = false;
+    let drag2dDownX = 0;
+    let drag2dDownY = 0;
+
+    // World-space planet positions, updated by draw2d each frame.
+    const planet2dPos = new Map<string, { x: number; y: number }>();
 
     const resize2d = () => {
       c2.width = c2.clientWidth;
@@ -389,40 +489,87 @@
       zy2d = (my - H / 2) * (1 - f) + zy2d * f;
       zoom2d = Math.max(0.12, Math.min(5, zoom2d * f));
     };
+    const tryPick2d = (clientX: number, clientY: number) => {
+      const rect = c2.getBoundingClientRect();
+      const W = c2.width;
+      const H = c2.height;
+      // Inverse of the canvas transform: world = (screen - centre) / zoom
+      const wx = (clientX - rect.left - (W / 2 + zx2d)) / zoom2d;
+      const wy = (clientY - rect.top - (H / 2 + zy2d)) / zoom2d;
+      let best: { id: string; d: number } | null = null;
+      for (const p of PLANETS) {
+        const pos = planet2dPos.get(p.id);
+        if (!pos) continue;
+        const dx = wx - pos.x;
+        const dy = wy - pos.y;
+        const d = Math.hypot(dx, dy);
+        // Hit radius scales with zoom inverse so small bodies remain pickable.
+        const hitR = Math.max(p.size2 * 2.5, 8 / zoom2d);
+        if (d < hitR && (!best || d < best.d)) best = { id: p.id, d };
+      }
+      if (best) selectPlanet(best.id);
+    };
+
     const on2dMouseDown = (e: MouseEvent) => {
       isDrag2d = true;
+      drag2dMoved = false;
       drag2dX = e.clientX;
       drag2dY = e.clientY;
+      drag2dDownX = e.clientX;
+      drag2dDownY = e.clientY;
       c2.style.cursor = 'grabbing';
     };
-    const on2dMouseUp = () => {
+    const on2dMouseUp = (e: MouseEvent) => {
+      const wasMoved = drag2dMoved;
       isDrag2d = false;
       if (view === '2d') c2.style.cursor = 'grab';
+      if (!wasMoved && view === '2d') tryPick2d(e.clientX, e.clientY);
     };
     const on2dMouseMove = (e: MouseEvent) => {
       if (!isDrag2d || view !== '2d') return;
+      if (Math.abs(e.clientX - drag2dDownX) + Math.abs(e.clientY - drag2dDownY) > 4) {
+        drag2dMoved = true;
+      }
       zx2d += e.clientX - drag2dX;
       zy2d += e.clientY - drag2dY;
       drag2dX = e.clientX;
       drag2dY = e.clientY;
     };
     let touchActive2d = false;
+    let touch2dMoved = false;
+    let touch2dDownX = 0;
+    let touch2dDownY = 0;
     const on2dTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
         touchActive2d = true;
+        touch2dMoved = false;
         drag2dX = e.touches[0].clientX;
         drag2dY = e.touches[0].clientY;
+        touch2dDownX = drag2dX;
+        touch2dDownY = drag2dY;
       }
     };
     const on2dTouchMove = (e: TouchEvent) => {
       if (!touchActive2d || e.touches.length !== 1) return;
+      if (
+        Math.abs(e.touches[0].clientX - touch2dDownX) +
+          Math.abs(e.touches[0].clientY - touch2dDownY) >
+        6
+      ) {
+        touch2dMoved = true;
+      }
       zx2d += e.touches[0].clientX - drag2dX;
       zy2d += e.touches[0].clientY - drag2dY;
       drag2dX = e.touches[0].clientX;
       drag2dY = e.touches[0].clientY;
     };
-    const on2dTouchEnd = () => {
+    const on2dTouchEnd = (e: TouchEvent) => {
+      const wasMoved = touch2dMoved;
       touchActive2d = false;
+      if (!wasMoved && view === '2d' && e.changedTouches.length === 1) {
+        const t = e.changedTouches[0];
+        tryPick2d(t.clientX, t.clientY);
+      }
     };
 
     c2.style.cursor = 'grab';
@@ -460,12 +607,13 @@
       ctx2.translate(W / 2 + zx2d, H / 2 + zy2d);
       ctx2.scale(zoom2d, zoom2d);
 
-      // Orbit rings
+      // Orbit rings (highlighted for the selected planet)
       PLANETS.forEach((p) => {
+        const isSel = selectedId === p.id;
         ctx2.beginPath();
         ctx2.arc(0, 0, p.orbitR, 0, Math.PI * 2);
-        ctx2.strokeStyle = 'rgba(255,255,255,0.05)';
-        ctx2.lineWidth = 0.5;
+        ctx2.strokeStyle = isSel ? 'rgba(68,102,255,0.3)' : 'rgba(255,255,255,0.05)';
+        ctx2.lineWidth = isSel ? 1.5 : 0.5;
         ctx2.stroke();
       });
 
@@ -506,6 +654,19 @@
         const pr = Math.max(3, p.size2);
         const px = Math.cos(ang) * p.orbitR;
         const py = Math.sin(ang) * p.orbitR;
+        planet2dPos.set(p.id, { x: px, y: py });
+
+        const isSel = selectedId === p.id;
+
+        // Selection ring (pulsing) — drawn before sphere so it sits behind glow
+        if (isSel) {
+          const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+          ctx2.beginPath();
+          ctx2.arc(px, py, pr + 10 + pulse * 3, 0, Math.PI * 2);
+          ctx2.strokeStyle = `rgba(68,102,255,${0.55 + pulse * 0.3})`;
+          ctx2.lineWidth = 1.5;
+          ctx2.stroke();
+        }
 
         // Outer glow
         const gl = ctx2.createRadialGradient(px, py, 0, px, py, pr * 4);
@@ -656,6 +817,30 @@
           group.position.set(x, zf * Math.sin(inc), zf * Math.cos(inc));
           mesh.rotation.y += 0.005;
         });
+
+        // Track selected planet with the 3D selection ring (lying in
+        // the planet's orbital plane). Hidden when nothing is selected.
+        if (selectedId) {
+          const selObj = planetObjs.find((o) => o.planet.id === selectedId);
+          if (selObj) {
+            const ringR = selObj.planet.size3 * 1.9;
+            selRing.scale.set(ringR, ringR, 1);
+            selRing.position.copy(selObj.group.position);
+            // Lay flat in the ecliptic plane (XZ), then tilt to the planet's
+            // orbital inclination so the ring matches the local orbit normal.
+            selRing.rotation.set(Math.PI / 2, 0, 0);
+            const incRad = (selObj.planet.inc * Math.PI) / 180;
+            selRing.rotateZ(incRad);
+            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+            selRingMat.opacity = 0.35 + pulse * 0.45;
+            selRing.visible = true;
+          } else {
+            selRing.visible = false;
+          }
+        } else {
+          selRing.visible = false;
+        }
+
         renderer.render(scene, camera);
       } else {
         draw2d();
@@ -714,6 +899,13 @@
     {view === '3d' ? '2D' : '3D'}
   </button>
 </div>
+
+<PlanetPanel
+  planet={selectedPlanet}
+  open={panelOpen}
+  onClose={closePanel}
+  onPlanMission={selectedPlanet?.missionable ? onPlanMission : undefined}
+/>
 
 <style>
   .explore {

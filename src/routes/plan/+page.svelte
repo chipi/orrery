@@ -526,6 +526,21 @@
       </label>
 
       {#if selectedRocket}
+        <!-- Rocket reference photo (Wikimedia Commons, fetched at build).
+             onerror hides cleanly if a particular vehicle has no image
+             (e.g., Ariane 6 — pre-launch coverage gap as of 2026). -->
+        <figure class="rocket-photo">
+          <img
+            src="{base}/images/rockets/{selectedRocket.id}.jpg"
+            alt="{selectedRocket.name ?? selectedRocket.id} reference photo"
+            loading="lazy"
+            onerror={(e) => {
+              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+              if (fig) fig.style.display = 'none';
+            }}
+          />
+        </figure>
+
         <div class="row">
           <span class="label">{m.plan_label_vehicle_dv()}</span>
           <span class="value">{dvBudget.toFixed(2)} km/s</span>
@@ -827,6 +842,22 @@
   .vehicle select:focus-visible {
     outline: 1px solid #4466ff;
     outline-offset: 2px;
+  }
+
+  .rocket-photo {
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    aspect-ratio: 16 / 9;
+  }
+  .rocket-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .budget {

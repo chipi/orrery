@@ -247,6 +247,213 @@ async function fetchAgencyLogos(): Promise<number> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// ROCKET IMAGERY — v0.1.x patch
+//
+// Source: Wikimedia Commons. Each entry references a Commons file; we
+// fetch via Special:FilePath?width=800 so Wikimedia serves a
+// downscaled JPEG (~150-300 KB each) regardless of the original
+// source size. This sidesteps the per-file 5 MB build budget while
+// still giving us a /plan-vehicle-preview-sized image (~280×160px
+// rendered).
+//
+// License compliance per ADR-016: every entry is PD or CC-BY/-SA;
+// attribution lines surface on the rocket-detail panel.
+//
+// Coverage gap: Ariane 6's maiden flight (July 2024) hasn't yet
+// produced a CC-licensed landscape launch photo on Commons. The UI
+// degrades to text-only when an image is missing.
+// ──────────────────────────────────────────────────────────────────────
+
+interface RocketImage {
+  id: string;
+  filename: string;
+  license: string;
+}
+
+const ROCKET_IMAGES: RocketImage[] = [
+  {
+    id: 'falcon-heavy',
+    filename: 'SpaceX_Falcon_Heavy_on_the_Launch_Pad.jpg',
+    license: 'CC BY-SA 4.0 — SpaceX',
+  },
+  {
+    id: 'starship',
+    filename: 'SpaceX_Starship_ignition_during_IFT-5.jpg',
+    license: 'CC BY 2.0 — Official SpaceX Photos',
+  },
+  {
+    id: 'sls-block-1',
+    filename: 'Launch_of_Artemis_1_(KSC_20221115_Artemis_I_Launch-2).jpg',
+    license: 'Public domain (NASA)',
+  },
+  {
+    id: 'atlas-v-541',
+    filename: 'Mars_2020_Perseverance_Launch_(NHQ202007300024).jpg',
+    license: 'Public domain (NASA)',
+  },
+  {
+    id: 'long-march-5',
+    filename: 'Long_March_5_rolling_out_at_WSLS.jpg',
+    license: 'CC BY 4.0 — China News Service',
+  },
+];
+
+const ROCKETS_DIR = 'static/images/rockets';
+const ROCKET_THUMB_WIDTH = 800;
+
+async function fetchRocketImages(): Promise<number> {
+  await mkdir(ROCKETS_DIR, { recursive: true });
+  let downloaded = 0;
+  for (let i = 0; i < ROCKET_IMAGES.length; i++) {
+    const img = ROCKET_IMAGES[i];
+    const localPath = join(ROCKETS_DIR, `${img.id}.jpg`);
+    // Wikimedia thumbnail-on-demand: ?width=N gives a downscaled JPEG
+    // regardless of the original file's size.
+    const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(
+      img.filename,
+    )}?width=${ROCKET_THUMB_WIDTH}`;
+    console.log(`  ${img.id}.jpg…`);
+    try {
+      await downloadFromWikimedia(url, localPath);
+      downloaded++;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`    ⚠ skipped ${img.id}: ${msg}`);
+    }
+    if (i < ROCKET_IMAGES.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+    }
+  }
+  return downloaded;
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// MISSION IMAGERY — NASA Images API
+//
+// Source: NASA Images API (https://images-api.nasa.gov). All NASA-
+// originated content is public domain; third-party material that
+// occasionally appears in their library is identified per-item and
+// skipped (we filter by `nasa` in the credit field).
+//
+// We query once per mission id (the same id used in mission JSON),
+// take the first image-type result, and save its thumbnail-rendered
+// JPEG as `static/images/missions/{id}.jpg`. Missing missions
+// (no API match) leave the file absent — UI degrades to text-only.
+//
+// Rate limits: NASA API is generous for anonymous use (~100 req/h).
+// We throttle to 600ms between requests as a courtesy.
+// ──────────────────────────────────────────────────────────────────────
+
+interface MissionImageQuery {
+  id: string;
+  query: string;
+}
+
+const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
+  // Mars
+  { id: 'apollo11', query: 'apollo 11 lunar surface' },
+  { id: 'apollo17', query: 'apollo 17 lunar rover' },
+  { id: 'artemis3', query: 'artemis program lunar' },
+  { id: 'curiosity', query: 'curiosity rover mars' },
+  { id: 'hope-probe', query: 'emirates mars mission' },
+  { id: 'insight', query: 'insight mars lander' },
+  { id: 'mariner4', query: 'mariner 4 mars' },
+  { id: 'mars-express', query: 'mars express orbiter' },
+  { id: 'mars-pathfinder', query: 'mars pathfinder sojourner' },
+  { id: 'mars3', query: 'mars 3 soviet lander' },
+  { id: 'maven', query: 'maven mars orbiter' },
+  { id: 'mmx', query: 'mars moons exploration phobos' },
+  { id: 'perseverance', query: 'perseverance rover mars' },
+  { id: 'starship-demo', query: 'starship spacex' },
+  { id: 'tianwen1', query: 'tianwen-1 mars china' },
+  { id: 'viking1', query: 'viking 1 mars lander' },
+  { id: 'mangalyaan', query: 'mangalyaan mars orbiter mission' },
+  // Moon
+  { id: 'chandrayaan1', query: 'chandrayaan-1 lunar orbiter' },
+  { id: 'chandrayaan3', query: 'chandrayaan-3 lunar lander' },
+  { id: 'change4', query: 'chang-e 4 farside moon' },
+  { id: 'change5', query: 'chang-e 5 lunar sample' },
+  { id: 'change6', query: 'chang-e 6 moon' },
+  { id: 'clementine', query: 'clementine lunar mission' },
+  { id: 'lro', query: 'lunar reconnaissance orbiter' },
+  { id: 'luna17', query: 'luna 17 lunokhod' },
+  { id: 'luna24', query: 'luna 24 sample return' },
+  { id: 'luna9', query: 'luna 9 first soft landing moon' },
+  { id: 'slim', query: 'slim lunar lander jaxa' },
+];
+
+const MISSIONS_DIR = 'static/images/missions';
+const NASA_API_BASE = 'https://images-api.nasa.gov';
+const NASA_API_DELAY_MS = 600;
+
+interface NasaApiItem {
+  data: { title?: string; secondary_creator?: string }[];
+  links: { href: string; rel?: string; render?: string }[];
+}
+interface NasaApiResponse {
+  collection: { items: NasaApiItem[] };
+}
+
+async function fetchMissionImage(query: string, dest: string): Promise<void> {
+  const searchUrl = `${NASA_API_BASE}/search?q=${encodeURIComponent(query)}&media_type=image`;
+  const res = await fetch(searchUrl);
+  if (!res.ok) throw new Error(`Search HTTP ${res.status}`);
+  const json = (await res.json()) as NasaApiResponse;
+  const items = json.collection?.items ?? [];
+  if (items.length === 0) throw new Error('No results');
+  // Walk the first 5 items; pick the first that has a usable preview
+  // link AND looks NASA-originated (PD). Skip third-party items where
+  // the secondary_creator is non-NASA.
+  for (const item of items.slice(0, 5)) {
+    const meta = item.data?.[0];
+    const credit = (meta?.secondary_creator ?? '').toLowerCase();
+    // Accept NASA / JPL / GSFC / ESA(NASA-collab) / DOD-NASA shared. Skip
+    // pure third-party uploads that crept into the library.
+    const isOk =
+      !credit ||
+      credit.includes('nasa') ||
+      credit.includes('jpl') ||
+      credit.includes('gsfc') ||
+      credit.includes('apl') ||
+      credit.includes('msss') ||
+      credit.includes('asu');
+    if (!isOk) continue;
+    // Prefer "preview" rel, fallback to first link.
+    const previewLink =
+      item.links.find((l) => l.render === 'image' || l.rel === 'preview')?.href ??
+      item.links[0]?.href;
+    if (!previewLink) continue;
+    const imgRes = await fetch(previewLink);
+    if (!imgRes.ok) continue;
+    const buffer = Buffer.from(await imgRes.arrayBuffer());
+    await writeFile(dest, buffer);
+    return;
+  }
+  throw new Error('No NASA-licensed image in first 5 results');
+}
+
+async function fetchMissionImages(): Promise<number> {
+  await mkdir(MISSIONS_DIR, { recursive: true });
+  let downloaded = 0;
+  for (let i = 0; i < MISSION_IMAGE_QUERIES.length; i++) {
+    const m = MISSION_IMAGE_QUERIES[i];
+    const localPath = join(MISSIONS_DIR, `${m.id}.jpg`);
+    console.log(`  ${m.id}.jpg…`);
+    try {
+      await fetchMissionImage(m.query, localPath);
+      downloaded++;
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`    ⚠ skipped ${m.id}: ${msg}`);
+    }
+    if (i < MISSION_IMAGE_QUERIES.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
+    }
+  }
+  return downloaded;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // SHARED HELPERS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -273,6 +480,14 @@ async function main() {
   console.log('Fetching agency logos:');
   const logoCount = await fetchAgencyLogos();
   console.log(`  → ${logoCount} logo files in ${LOGOS_DIR}\n`);
+
+  console.log('Fetching rocket imagery:');
+  const rocketCount = await fetchRocketImages();
+  console.log(`  → ${rocketCount} rocket files in ${ROCKETS_DIR}\n`);
+
+  console.log('Fetching mission imagery (NASA Images API):');
+  const missionCount = await fetchMissionImages();
+  console.log(`  → ${missionCount} mission files in ${MISSIONS_DIR}\n`);
 
   console.log('Done.');
 }

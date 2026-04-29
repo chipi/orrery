@@ -248,6 +248,20 @@
             onclick={() => selectMission(mission.id)}
           >
             <div class="card-accent" aria-hidden="true"></div>
+            <!-- Mission cover image (NASA Images API at build time).
+                 onerror hides the figure when the file is missing
+                 (esp. for non-NASA missions that aren't in the API). -->
+            <figure class="card-photo">
+              <img
+                src="{base}/images/missions/{mission.id}.jpg"
+                alt=""
+                loading="lazy"
+                onerror={(e) => {
+                  const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+                  if (fig) fig.style.display = 'none';
+                }}
+              />
+            </figure>
             <div class="card-body">
               <header class="card-head">
                 <span class="agency-badge" style:background-color={mission.color}>
@@ -403,6 +417,7 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 4px 1fr;
+    grid-template-rows: auto 1fr;
     cursor: pointer;
     color: inherit;
     font-family: inherit;
@@ -426,8 +441,29 @@
   }
   .card-accent {
     background: var(--accent);
+    grid-row: 1 / span 2;
+  }
+  .card-photo {
+    grid-column: 2;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  .card:hover .card-photo img {
+    transform: scale(1.04);
   }
   .card-body {
+    grid-column: 2;
     padding: 12px 14px 14px;
     display: flex;
     flex-direction: column;

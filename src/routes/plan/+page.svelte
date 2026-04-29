@@ -1,8 +1,12 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import LambertWorker from '../../workers/lambert.worker?worker';
   import type { LambertGrid, LambertProgress, LambertRequest } from '../../workers/lambert.worker';
-  import { dvToRGB, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import { getRockets } from '$lib/data';
+  import type { Rocket } from '$types/rocket';
 
   // ─── Grid contract (matches Issue #3 / RFC-003) ──────────────────
   const DEP_RANGE: [number, number] = [0, 1460]; // 4 years from epoch (Jan 1 2026)
@@ -20,12 +24,19 @@
   let selected = $state<{ i: number; j: number } | null>(null);
   let hoverCell = $state<{ i: number; j: number } | null>(null);
 
+  // RFC-006 Option C magnifier (mobile)
+  let mag = $state<{ x: number; y: number; i: number; j: number } | null>(null);
+  const MAG_RADIUS = 70; // px
+  const MAG_GRID = 5; // 5×5 cell region
+
+  let rocketList: Rocket[] = $state([]);
+  let selectedRocketId = $state<string | null>(null);
+
   let worker: Worker | undefined;
   let nextId = 1;
   let currentId = 0;
 
   // ─── Plot geometry ───────────────────────────────────────────────
-  // Margins reserve room for axis labels (left = TOF, bottom = dep date).
   const ML = 64;
   const MR = 18;
   const MT = 24;
@@ -49,7 +60,6 @@
 
   function onWorkerMessage(e: MessageEvent<LambertProgress | LambertGrid>) {
     const msg = e.data;
-    // Drop messages from a previous (cancelled) request.
     if (msg.id !== currentId) return;
     if ('grid' in msg) {
       grid = msg.grid;
@@ -64,16 +74,12 @@
   }
 
   // ─── Heatmap rendering ───────────────────────────────────────────
-  // We build the heatmap into an offscreen ImageData at GRID_W × GRID_H
-  // and paint it via drawImage, scaled by the canvas's actual plot area.
-  // This stays sharp at HiDPI without computing per-pixel.
   let heatBitmap: ImageBitmap | null = null;
 
   async function buildHeatmapBitmap() {
     if (!grid) return;
     const img = new ImageData(GRID_W, GRID_H);
     for (let j = 0; j < GRID_H; j++) {
-      // Flip Y so high-TOF cells render at the top of the plot.
       const srcRow = grid[GRID_H - 1 - j];
       for (let i = 0; i < GRID_W; i++) {
         const dv = srcRow[i];
@@ -106,19 +112,16 @@
     const PH = cssH - MT - MB;
     if (PW <= 0 || PH <= 0) return;
 
-    // Heatmap
     if (heatBitmap) {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
       ctx.drawImage(heatBitmap, ML, MT, PW, PH);
     }
 
-    // Border
     ctx.strokeStyle = 'rgba(255,255,255,0.2)';
     ctx.lineWidth = 1;
     ctx.strokeRect(ML + 0.5, MT + 0.5, PW - 1, PH - 1);
 
-    // Selected / hovered cell crosshair
     const cellW = PW / GRID_W;
     const cellH = PH / GRID_H;
     const drawCellHighlight = (
@@ -135,15 +138,11 @@
     if (hoverCell && (!selected || hoverCell.i !== selected.i || hoverCell.j !== selected.j)) {
       drawCellHighlight(hoverCell, 'rgba(255,255,255,0.45)', 1);
     }
-    if (selected) {
-      drawCellHighlight(selected, '#fff', 2);
-    }
+    if (selected) drawCellHighlight(selected, '#fff', 2);
 
     // Axes
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
     ctx.font = "9px 'Space Mono', monospace";
-
-    // X axis (departure date)
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     const xTicks = 5;
@@ -162,7 +161,6 @@
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillText('DEPARTURE WINDOW · 2026 — 2030', ML + PW / 2, MT + PH + 26);
 
-    // Y axis (TOF)
     ctx.font = "9px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
     ctx.textAlign = 'right';
@@ -171,7 +169,6 @@
     for (let i = 0; i <= yTicks; i++) {
       const t = i / yTicks;
       const y = MT + t * PH;
-      // top of plot = max TOF
       const tof = TOF_RANGE[1] - t * (TOF_RANGE[1] - TOF_RANGE[0]);
       ctx.beginPath();
       ctx.moveTo(ML, y);
@@ -190,7 +187,6 @@
     ctx.fillText('TIME OF FLIGHT (DAYS)', 0, 0);
     ctx.restore();
 
-    // Title
     ctx.font = "9px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
@@ -199,7 +195,7 @@
   }
 
   // ─── Pointer hit-test → grid cell ────────────────────────────────
-  function cellFromPointer(clientX: number, clientY: number): { i: number; j: number } | null {
+  function cellFromCanvas(clientX: number, clientY: number): { i: number; j: number } | null {
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
     const cssW = canvas.clientWidth;
@@ -210,15 +206,16 @@
     const y = clientY - rect.top - MT;
     if (x < 0 || y < 0 || x > PW || y > PH) return null;
     const i = Math.min(GRID_W - 1, Math.max(0, Math.floor((x / PW) * GRID_W)));
-    // Flip y because top of plot = high TOF.
     const jVisual = Math.floor((y / PH) * GRID_H);
     const j = Math.min(GRID_H - 1, Math.max(0, GRID_H - 1 - jVisual));
     return { i, j };
   }
 
+  // ─── Desktop pointer events ──────────────────────────────────────
   function onPointerMove(e: PointerEvent) {
     if (!grid) return;
-    hoverCell = cellFromPointer(e.clientX, e.clientY);
+    if (e.pointerType === 'touch') return; // Touch handled separately
+    hoverCell = cellFromCanvas(e.clientX, e.clientY);
     drawPlot();
   }
   function onPointerLeave() {
@@ -227,31 +224,163 @@
   }
   function onClick(e: MouseEvent) {
     if (!grid) return;
-    const cell = cellFromPointer(e.clientX, e.clientY);
+    const cell = cellFromCanvas(e.clientX, e.clientY);
     if (cell) {
       selected = cell;
       drawPlot();
     }
   }
 
-  // ─── Selected cell readout (lightweight; right panel + FLY in 3a-8) ──
+  // ─── Touch events — RFC-006 Option C magnifier ────────────────────
+  // Touch & hold opens a magnifier bubble showing 5×5 cells centred on
+  // the touch point at large scale. Slide to navigate, lift to select
+  // the centre cell.
+  function updateMagFromTouch(t: Touch) {
+    if (!canvas || !grid) return;
+    const rect = canvas.getBoundingClientRect();
+    const cell = cellFromCanvas(t.clientX, t.clientY);
+    if (!cell) {
+      mag = null;
+      return;
+    }
+    mag = {
+      x: t.clientX - rect.left,
+      y: t.clientY - rect.top,
+      i: cell.i,
+      j: cell.j,
+    };
+  }
+  function onTouchStart(e: TouchEvent) {
+    if (e.touches.length !== 1 || !grid) return;
+    e.preventDefault();
+    updateMagFromTouch(e.touches[0]);
+  }
+  function onTouchMove(e: TouchEvent) {
+    if (e.touches.length !== 1 || !grid) return;
+    e.preventDefault();
+    updateMagFromTouch(e.touches[0]);
+  }
+  function onTouchEnd(e: TouchEvent) {
+    if (!grid) return;
+    e.preventDefault();
+    if (mag) {
+      selected = { i: mag.i, j: mag.j };
+      mag = null;
+      drawPlot();
+    }
+  }
+
+  // ─── Selected cell readout ───────────────────────────────────────
   type Readout = { dep: string; tof: number; arr: string; dv: number };
   let readout: Readout | null = $derived.by(() => {
     if (!selected || !grid) return null;
-    const i = selected.i;
-    const j = selected.j;
     return {
-      dep: dayToLongDate(depDays[i]),
-      tof: arrDays[j],
-      arr: dayToLongDate(depDays[i] + arrDays[j]),
-      dv: grid[j][i],
+      dep: dayToLongDate(depDays[selected.i]),
+      tof: arrDays[selected.j],
+      arr: dayToLongDate(depDays[selected.i] + arrDays[selected.j]),
+      dv: grid[selected.j][selected.i],
     };
+  });
+
+  // ─── Vehicle selection + Δv budget ───────────────────────────────
+  let selectedRocket = $derived(rocketList.find((r) => r.id === selectedRocketId) ?? null);
+  let dvBudget = $derived(selectedRocket?.delta_v_capability_km_s ?? 0);
+  let dvDeficit = $derived(readout && dvBudget ? readout.dv - dvBudget : 0);
+  let viable = $derived(readout !== null && dvBudget > 0 && dvDeficit <= 0);
+
+  function flyMission() {
+    if (!viable) return;
+    goto(`${base}/fly`);
+  }
+
+  // ─── Magnifier render (separate canvas overlay) ──────────────────
+  let magCanvas: HTMLCanvasElement | undefined = $state();
+
+  function drawMag() {
+    if (!magCanvas || !mag || !grid) return;
+    const ctx = magCanvas.getContext('2d');
+    if (!ctx) return;
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    const sz = MAG_RADIUS * 2;
+    magCanvas.width = Math.floor(sz * dpr);
+    magCanvas.height = Math.floor(sz * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, sz, sz);
+
+    // Circular clip
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(MAG_RADIUS, MAG_RADIUS, MAG_RADIUS, 0, Math.PI * 2);
+    ctx.clip();
+
+    ctx.fillStyle = '#04040c';
+    ctx.fillRect(0, 0, sz, sz);
+
+    const halfWindow = Math.floor(MAG_GRID / 2);
+    const cellSize = sz / MAG_GRID;
+    for (let dy = -halfWindow; dy <= halfWindow; dy++) {
+      for (let dx = -halfWindow; dx <= halfWindow; dx++) {
+        const i = mag.i + dx;
+        const j = mag.j - dy; // Flip so dy positive = visually up
+        if (i < 0 || i >= GRID_W || j < 0 || j >= GRID_H) continue;
+        const dv = grid[j][i];
+        ctx.fillStyle = dvToCss(dv);
+        ctx.fillRect(
+          (dx + halfWindow) * cellSize,
+          (dy + halfWindow) * cellSize,
+          cellSize + 1,
+          cellSize + 1,
+        );
+      }
+    }
+
+    // Centre crosshair (the cell that will be selected on lift)
+    const cx = MAG_RADIUS;
+    const cy = MAG_RADIUS;
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(cx - cellSize / 2, cy - cellSize / 2, cellSize, cellSize);
+
+    ctx.restore();
+
+    // Outer ring
+    ctx.strokeStyle = 'rgba(68,102,255,0.7)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(MAG_RADIUS, MAG_RADIUS, MAG_RADIUS - 1, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Δv label inside the magnifier
+    const dv = grid[mag.j][mag.i];
+    ctx.font = "bold 11px 'Space Mono', monospace";
+    ctx.fillStyle = '#fff';
+    ctx.textAlign = 'center';
+    ctx.shadowColor = 'rgba(0,0,0,0.85)';
+    ctx.shadowBlur = 4;
+    ctx.fillText(`${dv.toFixed(1)} km/s`, MAG_RADIUS, sz - 10);
+  }
+
+  $effect(() => {
+    if (mag) drawMag();
+  });
+
+  $effect(() => {
+    if (grid) {
+      void buildHeatmapBitmap().then(() => drawPlot());
+    }
   });
 
   onMount(() => {
     worker = new LambertWorker();
     worker.addEventListener('message', onWorkerMessage);
     startCompute();
+
+    getRockets().then((list) => {
+      rocketList = list;
+      // Default to a vehicle that can actually reach Mars (Falcon Heavy, SLS, Starship).
+      const mars = list.find((r) => r.payload_to_mars_kg > 0);
+      selectedRocketId = mars?.id ?? list[0]?.id ?? null;
+    });
 
     const onResize = () => drawPlot();
     window.addEventListener('resize', onResize);
@@ -269,71 +398,156 @@
     }
     if (heatBitmap) heatBitmap.close();
   });
-
-  // Rebuild bitmap whenever the grid changes; redraw on bitmap availability.
-  $effect(() => {
-    if (grid) {
-      void buildHeatmapBitmap().then(() => drawPlot());
-    }
-  });
 </script>
 
 <svelte:head><title>Mission Configurator · Orrery</title></svelte:head>
 
 <div class="plan">
-  <canvas
-    bind:this={canvas}
-    onpointermove={onPointerMove}
-    onpointerleave={onPointerLeave}
-    onclick={onClick}
-    aria-label="Earth–Mars porkchop plot"
-  ></canvas>
+  <div class="plot-area">
+    <canvas
+      class="porkchop"
+      bind:this={canvas}
+      onpointermove={onPointerMove}
+      onpointerleave={onPointerLeave}
+      onclick={onClick}
+      ontouchstart={onTouchStart}
+      ontouchmove={onTouchMove}
+      ontouchend={onTouchEnd}
+      ontouchcancel={onTouchEnd}
+      aria-label="Earth–Mars porkchop plot"
+    ></canvas>
 
-  {#if computing}
-    <div class="loading" role="status" aria-live="polite">
-      <div class="loading-title">COMPUTING LAMBERT SOLUTIONS</div>
-      <div class="loading-bar">
-        <div class="loading-fill" style:width="{progress * 100}%"></div>
-      </div>
-      <div class="loading-pct">{Math.round(progress * 100)}%</div>
-    </div>
-  {/if}
+    {#if mag}
+      <canvas
+        class="magnifier"
+        bind:this={magCanvas}
+        style:left="{mag.x - MAG_RADIUS}px"
+        style:top="{mag.y - MAG_RADIUS - 90}px"
+        style:width="{MAG_RADIUS * 2}px"
+        style:height="{MAG_RADIUS * 2}px"
+        aria-hidden="true"
+      ></canvas>
+    {/if}
 
-  {#if readout}
-    <div class="readout">
-      <div class="readout-row">
-        <span class="readout-label">DEPARTURE</span>
-        <span class="readout-value">{readout.dep}</span>
+    {#if computing}
+      <div class="loading" role="status" aria-live="polite">
+        <div class="loading-title">COMPUTING LAMBERT SOLUTIONS</div>
+        <div class="loading-bar">
+          <div class="loading-fill" style:width="{progress * 100}%"></div>
+        </div>
+        <div class="loading-pct">{Math.round(progress * 100)}%</div>
       </div>
-      <div class="readout-row">
-        <span class="readout-label">ARRIVAL</span>
-        <span class="readout-value">{readout.arr}</span>
+    {/if}
+  </div>
+
+  <aside class="right-panel" aria-label="Mission summary">
+    {#if !readout}
+      <div class="empty">
+        <div class="empty-title">PICK A LAUNCH WINDOW</div>
+        <p class="empty-hint">
+          Tap a cell on the porkchop plot. Cool blue zones are cheap; hot red zones are expensive
+          launch energy.
+        </p>
+        <p class="empty-hint">On mobile, touch and hold the plot to open the magnifier.</p>
       </div>
-      <div class="readout-row">
-        <span class="readout-label">TRANSIT</span>
-        <span class="readout-value">{readout.tof.toFixed(0)} days</span>
+    {:else}
+      <div class="row">
+        <span class="label">DEPARTURE</span>
+        <span class="value">{readout.dep}</span>
       </div>
-      <div class="readout-row">
-        <span class="readout-label">∆V</span>
-        <span class="readout-value strong">{readout.dv.toFixed(2)} km/s</span>
+      <div class="row">
+        <span class="label">ARRIVAL</span>
+        <span class="value">{readout.arr}</span>
       </div>
-      <div class="readout-hint">Pick a cell. Right panel + FLY land in 3a-8.</div>
-    </div>
-  {/if}
+      <div class="row">
+        <span class="label">TRANSIT</span>
+        <span class="value">{readout.tof.toFixed(0)} days</span>
+      </div>
+      <div class="row strong">
+        <span class="label">∆V REQUIRED</span>
+        <span class="value">{readout.dv.toFixed(2)} km/s</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <label class="vehicle">
+        <span class="label">VEHICLE</span>
+        <select bind:value={selectedRocketId}>
+          {#each rocketList as r (r.id)}
+            <option value={r.id}>
+              {r.name ?? r.id} — {r.delta_v_capability_km_s.toFixed(1)} km/s
+            </option>
+          {/each}
+        </select>
+      </label>
+
+      {#if selectedRocket}
+        <div class="row">
+          <span class="label">VEHICLE ∆V</span>
+          <span class="value">{dvBudget.toFixed(2)} km/s</span>
+        </div>
+
+        <div class="budget" class:viable class:deficit={!viable}>
+          <div
+            class="budget-fill"
+            style:width="{Math.min(100, (readout.dv / Math.max(dvBudget, readout.dv)) * 100)}%"
+          ></div>
+          <div class="budget-label">
+            {#if viable}
+              {(dvBudget - readout.dv).toFixed(2)} km/s margin
+            {:else}
+              −{dvDeficit.toFixed(2)} km/s deficit
+            {/if}
+          </div>
+        </div>
+      {/if}
+
+      <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
+        ▶ FLY MISSION
+      </button>
+    {/if}
+  </aside>
 </div>
 
 <style>
   .plan {
     position: absolute;
     inset: var(--nav-height) 0 0 0;
+    display: grid;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .plan {
+      grid-template-columns: 1fr 314px;
+    }
+  }
+  @media (max-width: 767px) {
+    .plan {
+      grid-template-rows: 1fr auto;
+    }
+  }
+
+  .plot-area {
+    position: relative;
     overflow: hidden;
   }
 
-  canvas {
+  .porkchop {
     width: 100%;
     height: 100%;
     display: block;
     cursor: crosshair;
+    touch-action: none;
+  }
+
+  .magnifier {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    box-shadow:
+      0 4px 20px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    z-index: 5;
   }
 
   .loading {
@@ -374,47 +588,152 @@
     letter-spacing: 2px;
   }
 
-  /* Lightweight readout — full right panel + vehicle UX in 3a-8. */
-  .readout {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    padding: 12px 14px;
-    min-width: 220px;
-    backdrop-filter: blur(6px);
-    z-index: 5;
+  .right-panel {
+    background: rgba(8, 10, 22, 0.95);
+    border-left: 1px solid var(--color-border);
+    padding: 18px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
   }
-  .readout-row {
+  @media (max-width: 767px) {
+    .right-panel {
+      border-left: none;
+      border-top: 1px solid var(--color-border);
+      max-height: 50vh;
+    }
+  }
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .empty-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--color-text);
+  }
+  .empty-hint {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .row {
     display: flex;
     justify-content: space-between;
     gap: 12px;
-    margin-bottom: 6px;
+    align-items: baseline;
   }
-  .readout-label {
+  .row.strong .value {
+    color: #4ecdc4;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .label {
     font-family: 'Space Mono', monospace;
     font-size: 7px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.35);
   }
-  .readout-value {
+  .value {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.85);
   }
-  .readout-value.strong {
-    color: #4ecdc4;
-    font-weight: 700;
+
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 6px 0;
   }
-  .readout-hint {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.3);
+
+  .vehicle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .vehicle select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--color-text);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .vehicle select:focus-visible {
+    outline: 1px solid #4466ff;
+    outline-offset: 2px;
+  }
+
+  .budget {
+    position: relative;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 4px;
+  }
+  .budget-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    background: linear-gradient(to right, #4ecdc4, #4ecdc488);
+    transition: width 200ms;
+  }
+  .budget.deficit .budget-fill {
+    background: linear-gradient(to right, #c1440e, #c1440e88);
+  }
+  .budget-label {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    line-height: 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  .fly {
     margin-top: 8px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: #1a33bb;
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .fly:hover:not(:disabled),
+  .fly:focus-visible:not(:disabled) {
+    background: #2244dd;
+    border-color: #4466ff;
+    outline: none;
+  }
+  .fly:disabled {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.25);
+    cursor: not-allowed;
   }
 </style>

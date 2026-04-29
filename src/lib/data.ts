@@ -99,6 +99,27 @@ export async function rockets(): Promise<Rocket[]> {
   return get<Rocket[]>('rockets.json');
 }
 
+/**
+ * Rockets merged with their per-locale editorial overlay (name, type,
+ * first, description). Fallback chain mirrors getPlanets / getMission.
+ */
+export async function getRockets(locale = 'en-US'): Promise<Rocket[]> {
+  const baseList = await rockets();
+  const merged: Rocket[] = [];
+  for (const r of baseList) {
+    const overlay = await get<Partial<Rocket>>(`i18n/${locale}/rockets/${r.id}.json`).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<Partial<Rocket>>(`i18n/en-US/rockets/${r.id}.json`).catch(() => null));
+    merged.push(fallback ? { ...r, ...fallback } : r);
+  }
+  return merged;
+}
+
 export async function earthObjects(): Promise<EarthObject[]> {
   return get<EarthObject[]>('earth-objects.json');
 }

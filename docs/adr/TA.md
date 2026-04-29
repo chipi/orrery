@@ -185,10 +185,10 @@ State board for all RFCs and ADRs.
 |---|---|---|---|---|
 | RFC-001 | Router design — hash vs history, param handling | Closed · superseded by ADR-013 | ADR-013 | Pre-empted by ADR-013 (SvelteKit router); see RFC-001 closure note |
 | RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before 28 mission files written |
-| RFC-003 | Lambert worker — message protocol, progress, cancellation | Draft v0.1 | ADR (pending) | Slice 3 gate: worker running in production with porkchop plot |
+| RFC-003 | Lambert worker — message protocol, progress, cancellation | Decided · closed by ADR-022 | ADR-022 | Closed at Slice 3 (3a-8) |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Draft v0.1 | ADR (pending) | Slice 4 gate: `/fly?mission=id` works end-to-end |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Draft v0.1 | ADR (pending) | Slice 6 gate: all six screens pass WCAG 2.1 AA on nav and panels |
-| RFC-006 | Porkchop plot mobile interaction model | Draft v0.1 | ADR (pending) | Slice 3 gate: mobile interaction tested on real devices |
+| RFC-006 | Porkchop plot mobile interaction model | Decided · closed by ADR-023 | ADR-023 | Closed at Slice 3 (3a-8) |
 
 ### ADRs
 
@@ -215,6 +215,8 @@ State board for all RFCs and ADRs.
 | ADR-019 | JSON schema validation on PR via ajv | Accepted |
 | ADR-020 | Canonical mission JSON schema | Accepted (closes RFC-002) |
 | ADR-021 | Documentation site at /docs/ via VitePress | Accepted |
+| ADR-022 | Lambert worker message protocol | Accepted (closes RFC-003) |
+| ADR-023 | Porkchop plot mobile interaction (RFC-006 Option C) | Accepted (closes RFC-006) |
 
 ---
 
@@ -227,3 +229,4 @@ State board for all RFCs and ADRs.
 | v1.2 | April 2026 | §components rewritten to match post-pivot stack: SvelteKit router (ADR-013), TypeScript file extensions, `src/routes/*/+page.svelte` page modules, Svelte components for Nav and Panel. §map updated: RFC-001 closed (superseded by ADR-013); RFC-004 closing-evidence URL corrected to History API form. |
 | v1.3 | April 2026 | RFC-002 closed early at Slice 2 entry into ADR-020 (canonical mission JSON schema). §map updated; data-serving §stack row reflects ADR-007's self-hosted-nginx-only scope note; §constraints "browser-only" reworded to be host-agnostic. |
 | v1.4 | April 2026 | ADR-021 added: documentation site at /docs/ via VitePress, deployed alongside the app on GitHub Pages. Scope expansion outside the original six slices. |
+| v1.5 | April 2026 | RFC-003 closed by ADR-022 (Lambert worker message protocol — id-based cancellation, every-10-row progress, single result message). RFC-006 closed by ADR-023 (porkchop mobile interaction — Option C magnifier with 5×5 cell window, 140 px bubble). Both closures land alongside the /plan implementation in slice checkpoint 3a-8. §map updated. |

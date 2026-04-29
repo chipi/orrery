@@ -440,13 +440,27 @@
     );
     scene.add(marsMesh);
 
-    // Spacecraft cone — points along velocity
-    const scGeo = new THREE.ConeGeometry(0.9, 2.4, 12);
-    scGeo.rotateZ(-Math.PI / 2);
-    const scMesh = new THREE.Mesh(scGeo, new THREE.MeshBasicMaterial({ color: 0xffffff }));
-    scene.add(scMesh);
+    // Spacecraft — composite per UXS-003: nose cone + cylindrical body
+    // + inverted nozzle cone, all grouped so we can rotate the group
+    // along velocity. Default tip points along +X; lookAt() in the
+    // animation loop orients per heading.
+    const scGroup = new THREE.Group();
+    const scMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const noseGeo = new THREE.ConeGeometry(0.7, 1.4, 12);
+    noseGeo.rotateZ(-Math.PI / 2);
+    noseGeo.translate(1.4, 0, 0);
+    const nose = new THREE.Mesh(noseGeo, scMaterial);
+    const bodyGeo = new THREE.CylinderGeometry(0.7, 0.7, 1.4, 12);
+    bodyGeo.rotateZ(-Math.PI / 2);
+    const body = new THREE.Mesh(bodyGeo, scMaterial);
+    const nozzleGeo = new THREE.ConeGeometry(0.85, 0.7, 12);
+    nozzleGeo.rotateZ(Math.PI / 2); // point against velocity (back-end nozzle)
+    nozzleGeo.translate(-1.0, 0, 0);
+    const nozzle = new THREE.Mesh(nozzleGeo, scMaterial);
+    scGroup.add(nose, body, nozzle);
+    scene.add(scGroup);
 
-    // Flyby ring
+    // Flyby ring — gold torus around Mars at closest approach
     const flybyRing = new THREE.Mesh(
       new THREE.TorusGeometry(4.0, 0.18, 8, 48),
       new THREE.MeshBasicMaterial({
@@ -459,6 +473,23 @@
     flybyRing.rotation.x = Math.PI / 2;
     flybyRing.visible = false;
     scene.add(flybyRing);
+
+    // RETURN marker — cyan crosshair ring at Earth-arrival position so
+    // the user can see where the spacecraft is heading on the return
+    // leg. Visible during the return phase only (progress ≥ 0.5).
+    const returnRing = new THREE.Mesh(
+      new THREE.TorusGeometry(3.4, 0.16, 8, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0x4ecdc4,
+        transparent: true,
+        opacity: 0.55,
+        depthWrite: false,
+      }),
+    );
+    returnRing.rotation.x = Math.PI / 2;
+    returnRing.position.set(earthRet.x * 80, 0, earthRet.z * 80);
+    returnRing.visible = false;
+    scene.add(returnRing);
 
     // Camera
     let camR = 360;
@@ -500,11 +531,52 @@
       camR = Math.max(80, Math.min(900, camR + e.deltaY * 0.5));
       updateCam();
     };
+    // Touch — single-finger orbit + two-finger pinch-zoom per
+    // CLAUDE.md mobile rules. Same pattern as /explore.
+    let touchActive = false;
+    let pinchPrev = 0;
+    const touchDist = (a: Touch, b: Touch) =>
+      Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 1) {
+        touchActive = true;
+        lmx = e.touches[0].clientX;
+        lmy = e.touches[0].clientY;
+      } else if (e.touches.length === 2) {
+        touchActive = false;
+        pinchPrev = touchDist(e.touches[0], e.touches[1]);
+      }
+    };
+    const onTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 2 && pinchPrev > 0) {
+        const dist = touchDist(e.touches[0], e.touches[1]);
+        const ratio = pinchPrev / dist;
+        camR = Math.max(80, Math.min(900, camR * ratio));
+        updateCam();
+        pinchPrev = dist;
+        return;
+      }
+      if (!touchActive || e.touches.length !== 1) return;
+      camT -= (e.touches[0].clientX - lmx) * 0.005;
+      camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + (e.touches[0].clientY - lmy) * 0.005));
+      lmx = e.touches[0].clientX;
+      lmy = e.touches[0].clientY;
+      updateCam();
+    };
+    const onTouchEnd = (e: TouchEvent) => {
+      if (e.touches.length < 2) pinchPrev = 0;
+      if (e.touches.length === 0) touchActive = false;
+    };
+
     el3d.style.cursor = 'grab';
     el3d.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     el3d.addEventListener('wheel', onWheel, { passive: true });
+    el3d.addEventListener('touchstart', onTouchStart, { passive: true });
+    el3d.addEventListener('touchmove', onTouchMove, { passive: true });
+    el3d.addEventListener('touchend', onTouchEnd);
+    el3d.addEventListener('touchcancel', onTouchEnd);
 
     // 2D context. Pull the non-null reference into a separate local
     // so TS narrowing survives across the draw2d closure.
@@ -669,9 +741,9 @@
       marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
 
       const sc = spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
-      scMesh.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      scGroup.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
       const h = spacecraftHeading(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
-      scMesh.lookAt(scMesh.position.x + h.x * SCALE_3D, 0, scMesh.position.z + h.z * SCALE_3D);
+      scGroup.lookAt(scGroup.position.x + h.x * SCALE_3D, 0, scGroup.position.z + h.z * SCALE_3D);
 
       const splitOut = Math.max(
         2,
@@ -689,6 +761,11 @@
 
       flybyRing.position.set(marsArr.x * SCALE_3D, 0, marsArr.z * SCALE_3D);
       flybyRing.visible = sc.progress >= 0.45 && sc.progress <= 0.55;
+      // RETURN marker — fades in once we're past the flyby and on the
+      // return leg, fades back out at the very end (last 5% of the
+      // progress so the marker doesn't overlap with the rendered
+      // spacecraft mesh at touchdown).
+      returnRing.visible = sc.progress >= 0.5 && sc.progress <= 0.95;
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();
@@ -701,6 +778,10 @@
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
       el3d.removeEventListener('wheel', onWheel);
+      el3d.removeEventListener('touchstart', onTouchStart);
+      el3d.removeEventListener('touchmove', onTouchMove);
+      el3d.removeEventListener('touchend', onTouchEnd);
+      el3d.removeEventListener('touchcancel', onTouchEnd);
       window.removeEventListener('resize', onResize);
       scene.traverse((obj) => {
         if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {

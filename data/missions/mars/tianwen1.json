@@ -18,5 +18,39 @@
   "links": [
     { "l": "Tianwen-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tianwen-1", "t": "intro" },
     { "l": "Zhurong rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Long March 5 YZ-1 upper stage",
+      "c3_km2_s2": 14.5,
+      "mass_at_tli_kg": 5000,
+      "source": "CNSA Tianwen-1 Project Report (2021); CAST mission overview"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "CNSA Tianwen-1 Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.7,
+      "periapsis_km": 265,
+      "inclination_deg": 87.0,
+      "orbit_insertion_dv_km_s": 1.10,
+      "source": "CNSA Tianwen-1 MOI Report (2021-02)"
+    },
+    "totals": {
+      "total_dv_km_s": 5.0,
+      "tli_or_tmi_dv_km_s": 3.5,
+      "source": "CNSA Tianwen-1 Project Report (2021)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 30, "type": "tcm" },
+      { "met_days": 100, "type": "tcm" },
+      { "met_days": 200, "type": "tcm" },
+      { "met_days": 202, "type": "arrival" },
+      { "met_days": 295, "type": "edl_or_oi" }
+    ]
+  }
 }

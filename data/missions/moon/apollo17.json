@@ -18,5 +18,37 @@
   "links": [
     { "l": "Apollo 17 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_17", "t": "intro" },
     { "l": "Apollo 17 mission overview (NASA)", "u": "https://www.nasa.gov/mission/apollo-17/", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Saturn V S-IVB (third stage)",
+      "mass_at_tli_kg": 48609,
+      "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.86,
+      "periapsis_km": 110,
+      "inclination_deg": 28.5,
+      "orbit_insertion_dv_km_s": 0.91,
+      "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)"
+    },
+    "totals": {
+      "total_dv_km_s": 7.3,
+      "tli_or_tmi_dv_km_s": 3.18,
+      "source": "Apollo 17 Mission Report ∆v ledger; CSM + LM combined"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.13, "type": "tli_or_tmi" },
+      { "met_days": 1.5, "type": "tcm" },
+      { "met_days": 3.4, "type": "arrival" },
+      { "met_days": 4.6, "type": "edl_or_oi" },
+      { "met_days": 12.6, "type": "earth_return" }
+    ]
+  }
 }

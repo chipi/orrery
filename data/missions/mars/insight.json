@@ -19,5 +19,40 @@
     { "l": "InSight — Wikipedia", "u": "https://en.wikipedia.org/wiki/InSight", "t": "intro" },
     { "l": "InSight (NASA)", "u": "https://science.nasa.gov/mission/insight/", "t": "intro" },
     { "l": "Marsquake catalogue (ETH Zurich)", "u": "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service", "t": "deep" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 401)",
+      "c3_km2_s2": 10.51,
+      "mass_at_tli_kg": 694,
+      "source": "NASA InSight Press Kit (2018-05)"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "NASA InSight Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.59,
+      "entry_velocity_km_s": 5.5,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "JPL InSight EDL Reconstruction (2018-11)"
+    },
+    "totals": {
+      "total_dv_km_s": 5.5,
+      "tli_or_tmi_dv_km_s": 3.6,
+      "source": "NASA InSight Press Kit (2018-05)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 22, "type": "tcm" },
+      { "met_days": 80, "type": "tcm" },
+      { "met_days": 200, "type": "tcm" },
+      { "met_days": 205, "type": "arrival" },
+      { "met_days": 205.005, "type": "edl_or_oi" }
+    ]
+  }
 }

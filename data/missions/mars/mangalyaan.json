@@ -18,5 +18,38 @@
   "links": [
     { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
     { "l": "MOM (ISRO)", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "PSLV PS4 fourth stage",
+      "mass_at_tli_kg": 1337,
+      "source": "ISRO MOM Mission Report (2014); MOM used multi-burn Earth-orbit raising before TMI"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "ISRO MOM Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.65,
+      "periapsis_km": 421,
+      "inclination_deg": 150.0,
+      "orbit_insertion_dv_km_s": 1.10,
+      "source": "ISRO MOM MOI Report (2014-09); highly elliptical orbit"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "tli_or_tmi_dv_km_s": 1.45,
+      "source": "ISRO MOM Mission Report (2014); low TMI ∆v due to Earth-orbit raising strategy"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 30, "type": "tli_or_tmi" },
+      { "met_days": 50, "type": "tcm" },
+      { "met_days": 150, "type": "tcm" },
+      { "met_days": 250, "type": "tcm" },
+      { "met_days": 324, "type": "arrival" },
+      { "met_days": 324.005, "type": "edl_or_oi" }
+    ]
+  }
 }

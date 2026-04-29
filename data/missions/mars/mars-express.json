@@ -18,5 +18,39 @@
   "links": [
     { "l": "Mars Express — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Express", "t": "intro" },
     { "l": "Mars Express (ESA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Fregat upper stage",
+      "c3_km2_s2": 10.5,
+      "mass_at_tli_kg": 1183,
+      "source": "ESA Mars Express Press Kit (2003-06); Soyuz-Fregat User's Manual"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "ESA Mars Express Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.9,
+      "periapsis_km": 250,
+      "inclination_deg": 86.3,
+      "orbit_insertion_dv_km_s": 0.81,
+      "source": "ESA Mars Express MOI Report (2003-12)"
+    },
+    "totals": {
+      "total_dv_km_s": 4.5,
+      "tli_or_tmi_dv_km_s": 3.6,
+      "source": "ESA Mars Express Press Kit (2003-06)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 25, "type": "tcm" },
+      { "met_days": 110, "type": "tcm" },
+      { "met_days": 200, "type": "tcm" },
+      { "met_days": 206, "type": "arrival" },
+      { "met_days": 206.01, "type": "edl_or_oi" }
+    ]
+  }
 }

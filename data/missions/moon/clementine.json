@@ -18,5 +18,35 @@
   "links": [
     { "l": "Clementine — Wikipedia", "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)", "t": "intro" },
     { "l": "Clementine (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1994-004A", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Titan II Star-37 upper stage",
+      "mass_at_tli_kg": 1690,
+      "source": "NASA NSSDCA Clementine archive; NRL Clementine Mission Report (1994)"
+    },
+    "cruise": {
+      "tcm_count": 3,
+      "source": "NRL Clementine Mission Report (1994); used phasing loops + lunar gravity assist"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 425,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.56,
+      "source": "NRL Clementine Mission Report (1994); polar mapping orbit"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "source": "NRL Clementine Mission Report (1994)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.5, "type": "tli_or_tmi" },
+      { "met_days": 7, "type": "tcm" },
+      { "met_days": 25, "type": "arrival" },
+      { "met_days": 25.05, "type": "edl_or_oi" }
+    ]
+  }
 }

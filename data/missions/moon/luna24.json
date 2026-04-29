@@ -17,5 +17,29 @@
   "credit": "© Soviet Academy of Sciences (historical). Last successful uncrewed lunar landing for 37 years (until Chang'e 3 in 2013).",
   "links": [
     { "l": "Luna 24 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_24", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "sparse",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Blok-D upper stage",
+      "mass_at_tli_kg": 4800,
+      "source": "NASA NSSDCA Luna 24 archive; Soviet records fragmentary"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 115,
+      "source": "NASA NSSDCA Luna 24 archive"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "source": "NASA NSSDCA Luna 24 archive (estimated; sample-return round trip)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.1, "type": "tli_or_tmi" },
+      { "met_days": 5, "type": "arrival" },
+      { "met_days": 6, "type": "edl_or_oi" },
+      { "met_days": 9, "type": "earth_return" }
+    ]
+  }
 }

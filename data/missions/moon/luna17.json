@@ -18,5 +18,28 @@
   "links": [
     { "l": "Lunokhod 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunokhod_1", "t": "intro" },
     { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "sparse",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Blok-D upper stage",
+      "mass_at_tli_kg": 5660,
+      "source": "NASA NSSDCA Luna 17 archive; Soviet records fragmentary"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 85,
+      "source": "NASA NSSDCA Luna 17 archive"
+    },
+    "totals": {
+      "total_dv_km_s": 3.0,
+      "source": "NASA NSSDCA Luna 17 archive (estimated)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.1, "type": "tli_or_tmi" },
+      { "met_days": 5, "type": "arrival" },
+      { "met_days": 7, "type": "edl_or_oi" }
+    ]
+  }
 }

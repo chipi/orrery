@@ -18,5 +18,35 @@
   "links": [
     { "l": "Chandrayaan-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-1", "t": "intro" },
     { "l": "Lunar water molecules (Science 2009)", "u": "https://www.science.org/doi/10.1126/science.1178658", "t": "deep" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "PSLV PS4 fourth stage",
+      "mass_at_tli_kg": 1380,
+      "source": "ISRO Chandrayaan-1 Mission Report (2009); used multi-burn Earth-orbit raising"
+    },
+    "cruise": {
+      "tcm_count": 5,
+      "source": "ISRO Chandrayaan-1 Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 100,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.87,
+      "source": "ISRO Chandrayaan-1 LOI Report (2008-11)"
+    },
+    "totals": {
+      "total_dv_km_s": 3.0,
+      "source": "ISRO Chandrayaan-1 Mission Report (2009)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 8, "type": "tli_or_tmi" },
+      { "met_days": 12, "type": "tcm" },
+      { "met_days": 17, "type": "arrival" },
+      { "met_days": 17.01, "type": "edl_or_oi" }
+    ]
+  }
 }

@@ -18,5 +18,35 @@
   "links": [
     { "l": "SLIM — Wikipedia", "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon", "t": "intro" },
     { "l": "SLIM (JAXA)", "u": "https://global.jaxa.jp/projects/sas/slim/", "t": "intro" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "H-IIA 2nd stage",
+      "mass_at_tli_kg": 730,
+      "source": "JAXA SLIM Project Brief (2023)"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "JAXA SLIM Mission Operations Report; long ballistic transit for propellant economy"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.82,
+      "periapsis_km": 100,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.75,
+      "source": "JAXA SLIM LOI Report (2023-12)"
+    },
+    "totals": {
+      "total_dv_km_s": 3.0,
+      "source": "JAXA SLIM Project Brief (2023)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.05, "type": "tli_or_tmi" },
+      { "met_days": 30, "type": "tcm" },
+      { "met_days": 110, "type": "arrival" },
+      { "met_days": 135, "type": "edl_or_oi" }
+    ]
+  }
 }

@@ -19,5 +19,43 @@
     { "l": "Curiosity (rover) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)", "t": "intro" },
     { "l": "Mars Science Laboratory (NASA)", "u": "https://science.nasa.gov/mission/msl-curiosity/", "t": "intro" },
     { "l": "Sky crane EDL — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Science_Laboratory#Entry,_descent_and_landing", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 541)",
+      "c3_km2_s2": 11.4,
+      "declination_deg": 36.0,
+      "mass_at_tli_kg": 3839,
+      "source": "NASA MSL Press Kit (2011-11); Lock et al., 'Trajectory Design and Targeting for MSL', AAS 11-205"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "peak_heliocentric_speed_km_s": 33.4,
+      "source": "JPL MSL EDL Reconstruction (2013)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.43,
+      "entry_velocity_km_s": 5.845,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "NASA MSL Press Kit (2012-08); JPL MSL EDL Telemetry"
+    },
+    "totals": {
+      "total_dv_km_s": 6.1,
+      "tli_or_tmi_dv_km_s": 3.94,
+      "source": "computed from MSL ∆v ledger (NASA MSL Press Kit, 2011-11)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 12, "type": "tcm" },
+      { "met_days": 76, "type": "tcm" },
+      { "met_days": 110, "type": "tcm" },
+      { "met_days": 211, "type": "tcm" },
+      { "met_days": 254, "type": "arrival" },
+      { "met_days": 254.005, "type": "edl_or_oi" }
+    ]
+  }
 }

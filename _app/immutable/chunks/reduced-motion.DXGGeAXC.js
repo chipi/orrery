@@ -1,0 +1,1 @@
+function o(){return typeof window>"u"||!window.matchMedia?!1:window.matchMedia("(prefers-reduced-motion: reduce)").matches}function t(d){if(typeof window>"u"||!window.matchMedia)return d(!1),()=>{};const e=window.matchMedia("(prefers-reduced-motion: reduce)"),n=()=>d(e.matches);return n(),e.addEventListener("change",n),()=>e.removeEventListener("change",n)}export{t as o,o as p};

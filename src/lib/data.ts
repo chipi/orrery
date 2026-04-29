@@ -147,8 +147,53 @@ export async function earthObjects(): Promise<EarthObject[]> {
   return get<EarthObject[]>('earth-objects.json');
 }
 
+/**
+ * Earth-orbit objects merged with their per-locale editorial overlay
+ * (name, short, description, scale_fact). Used by /earth.
+ */
+export async function getEarthObjects(locale = 'en-US'): Promise<EarthObject[]> {
+  const baseList = await earthObjects();
+  const merged: EarthObject[] = [];
+  for (const o of baseList) {
+    const overlay = await get<Partial<EarthObject>>(
+      `i18n/${locale}/earth-objects/${o.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<Partial<EarthObject>>(`i18n/en-US/earth-objects/${o.id}.json`).catch(
+            () => null,
+          ));
+    merged.push(fallback ? { ...o, ...fallback } : o);
+  }
+  return merged;
+}
+
 export async function moonSites(): Promise<MoonSite[]> {
   return get<MoonSite[]>('moon-sites.json');
+}
+
+/**
+ * Moon landing sites merged with their per-locale editorial overlay
+ * (name, mission_type, site_name, crew, left, fact, capability).
+ * Used by /moon.
+ */
+export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
+  const baseList = await moonSites();
+  const merged: MoonSite[] = [];
+  for (const s of baseList) {
+    const overlay = await get<Partial<MoonSite>>(`i18n/${locale}/moon-sites/${s.id}.json`).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
+    merged.push(fallback ? { ...s, ...fallback } : s);
+  }
+  return merged;
 }
 
 /**

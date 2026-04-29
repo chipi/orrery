@@ -6,6 +6,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere, latLonToEquirect } from '$lib/moon-projection';
   import { categoriseMoonMarker } from '$lib/moon-marker-category';
+  import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -242,6 +243,16 @@
         group.traverse((obj) => {
           if (obj instanceof THREE.Mesh) obj.userData = { siteId: site.id };
         });
+        // Label with leader line, floating radially outward (along the
+        // group's local +Y, which is surface-normal away from Moon
+        // centre after the tangent-orient quat above).
+        const label = buildLabel({
+          text: site.name ?? site.id,
+          color: colorFor(site),
+          offset: new THREE.Vector3(0, 3.2, 0),
+          size: 1.6,
+        });
+        group.add(label.group);
         moonMesh.add(group);
         markers.push({ group, siteId: site.id });
       }

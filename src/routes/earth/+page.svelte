@@ -6,6 +6,8 @@
   import { altToOrbitRadius } from '$lib/scale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
+  import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import { buildLabel } from '$lib/three-label';
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -152,82 +154,6 @@
     type SatObj = { group: THREE.Group; id: string; orbitR: number; phase: number };
     const sats: SatObj[] = [];
 
-    function buildSatGeometry(
-      category: ReturnType<typeof categoriseEarthSatellite>,
-      color: string,
-    ): THREE.Group {
-      const group = new THREE.Group();
-      const mat = new THREE.MeshPhongMaterial({
-        color,
-        shininess: 30,
-        emissive: color,
-        emissiveIntensity: 0.2,
-      });
-      const panelMat = new THREE.MeshPhongMaterial({ color: 0x0b1840, shininess: 60 });
-      switch (category) {
-        case 'station': {
-          // Cube body + four solar-panel wings (cross pattern).
-          const body = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.45, 0.7), mat);
-          group.add(body);
-          for (const dx of [-0.9, 0.9]) {
-            const wing = new THREE.Mesh(new THREE.BoxGeometry(1.0, 0.04, 0.55), panelMat);
-            wing.position.set(dx, 0, 0);
-            group.add(wing);
-          }
-          break;
-        }
-        case 'constellation': {
-          // 6 dots arranged on a small inclined ring representing the cluster.
-          const ringR = 0.5;
-          for (let i = 0; i < 6; i++) {
-            const ang = (i / 6) * Math.PI * 2;
-            const dot = new THREE.Mesh(new THREE.SphereGeometry(0.18, 8, 8), mat);
-            dot.position.set(Math.cos(ang) * ringR, Math.sin(ang) * ringR * 0.6, 0);
-            group.add(dot);
-          }
-          break;
-        }
-        case 'telescope': {
-          // Cylinder scope + small lens cap; recognisable Hubble silhouette.
-          const tube = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.9, 12), mat);
-          tube.rotation.z = Math.PI / 2; // lay scope on its side
-          group.add(tube);
-          const lens = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.26, 0.26, 0.06, 12),
-            new THREE.MeshBasicMaterial({ color: 0x222222 }),
-          );
-          lens.rotation.z = Math.PI / 2;
-          lens.position.x = 0.48;
-          group.add(lens);
-          // Small solar panels on the side
-          const panel = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.04, 0.32), panelMat);
-          panel.position.set(-0.1, 0.3, 0);
-          group.add(panel);
-          break;
-        }
-        case 'comsat': {
-          // Cube body + parabolic dish (cone-as-paraboloid approximation).
-          const body = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.4, 0.4), mat);
-          group.add(body);
-          const dish = new THREE.Mesh(
-            new THREE.ConeGeometry(0.5, 0.15, 16, 1, true),
-            new THREE.MeshPhongMaterial({ color, side: THREE.DoubleSide }),
-          );
-          dish.position.set(0, 0.32, 0);
-          dish.rotation.x = Math.PI;
-          group.add(dish);
-          break;
-        }
-        case 'moon-orbiter': {
-          // Tiny probe; rendered near the Moon, not on a regime ring.
-          const probe = new THREE.Mesh(new THREE.OctahedronGeometry(0.25), mat);
-          group.add(probe);
-          break;
-        }
-      }
-      return group;
-    }
-
     function rebuildSats() {
       for (const s of sats) {
         s.group.traverse((obj) => {
@@ -244,7 +170,10 @@
       for (let i = 0; i < objects.length; i++) {
         const o = objects[i];
         const category = categoriseEarthSatellite(o.id);
-        const group = buildSatGeometry(category, o.color);
+        // Per-spacecraft 3D model (built from primitives, see
+        // $lib/earth-satellite-models). Falls back to a generic probe
+        // for unknown ids.
+        const group = buildSatelliteModel(o.id, o.color);
 
         // Phase angle distributes objects around their regime ring so
         // they don't pile up at +X. Deterministic so the visual is
@@ -265,6 +194,17 @@
         group.traverse((obj) => {
           if (obj instanceof THREE.Mesh) obj.userData = { id: o.id };
         });
+
+        // Label with leader-line — tag floats above the spacecraft
+        // (offset chosen so text doesn't z-fight with the model body).
+        const label = buildLabel({
+          text: o.short ?? o.name ?? o.id,
+          color: o.color,
+          offset: new THREE.Vector3(0, 1.8, 0),
+          size: 1.2,
+        });
+        group.add(label.group);
+
         scene.add(group);
         sats.push({ group, id: o.id, orbitR, phase });
       }

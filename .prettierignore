@@ -11,3 +11,5 @@ src/lib/paraglide/
 src/lib/styles/fonts.css
 project.inlang/
 static/fonts/
+playwright-report/
+test-results/

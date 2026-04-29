@@ -42,6 +42,8 @@ export default [
       'src/lib/paraglide/',
       'docs/.vitepress/dist/',
       'docs/.vitepress/cache/',
+      'playwright-report/',
+      'test-results/',
     ],
   },
 ];

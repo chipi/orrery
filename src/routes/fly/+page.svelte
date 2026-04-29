@@ -118,8 +118,20 @@
   let arcTimeline: MissionTimeline = $state({ ...INITIAL_TIMELINE });
   let isFreeReturn = $state(true);
   let activeDestination = $state<DestinationId>('mars');
+  let isMoonMission = $state(false);
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
+
+  // Earth-Moon scene constants for Moon-mode rendering. The Moon
+  // orbits Earth at ~384,000 km (0.0026 AU). At the heliocentric
+  // SCALE_3D = 80, that's 0.21 scene units — too small to see
+  // alongside Earth's 2.6-unit mesh. So Moon-mode uses a separate,
+  // exaggerated Earth-Moon scale where Earth sits at the origin and
+  // the Moon at MOON_VISUAL_DISTANCE units away. Educational
+  // compromise: distances aren't to-scale, but the spacecraft path
+  // and timing relative to the Moon's orbital motion are accurate.
+  const MOON_VISUAL_DISTANCE = 100;
+  const MOON_ORBITAL_PERIOD_DAYS = 27.32;
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
@@ -175,12 +187,20 @@
   // Position the per-mission DEPARTURE + ARRIVAL anchor rings
   // whenever arcTimeline or activeDestination changes. The rings are
   // created in onMount; this effect is a no-op until they exist.
+  // For Moon missions, the markers anchor to the local Earth-Moon
+  // scene (origin + last arc point) instead of the heliocentric frame.
   $effect(() => {
     if (!depMarker || !arrMarker) return;
-    const dep = earthPos(arcTimeline.dep_day);
-    const arr = destinationPos(arcTimeline.arr_day, activeDestination);
-    depMarker.position.set(dep.x * SCALE_3D, 0, dep.z * SCALE_3D);
-    arrMarker.position.set(arr.x * SCALE_3D, 0, arr.z * SCALE_3D);
+    if (isMoonMission && outPts.length > 0) {
+      const last = outPts[outPts.length - 1];
+      depMarker.position.set(0, 0, 0);
+      arrMarker.position.set(last.x * SCALE_3D, 0, last.z * SCALE_3D);
+    } else {
+      const dep = earthPos(arcTimeline.dep_day);
+      const arr = destinationPos(arcTimeline.arr_day, activeDestination);
+      depMarker.position.set(dep.x * SCALE_3D, 0, dep.z * SCALE_3D);
+      arrMarker.position.set(arr.x * SCALE_3D, 0, arr.z * SCALE_3D);
+    }
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -328,9 +348,42 @@
     arcTimeline = newTimeline;
     isFreeReturn = false;
     activeDestination = 'mars';
-    const arcs = buildArcs(newTimeline, false);
-    outPts = arcs.out;
-    retPts = arcs.ret;
+    isMoonMission = m.dest === 'MOON';
+    if (isMoonMission) {
+      // Earth-Moon trajectory: small visual arc from Earth (origin) to
+      // the Moon's exaggerated position. The Moon is placed at a
+      // sweep angle determined by the mission's flyby_day modulo the
+      // sidereal lunar month, so missions launched at different phases
+      // of the lunar cycle show the Moon at different positions.
+      const moonAngle =
+        ((newTimeline.flyby_day % MOON_ORBITAL_PERIOD_DAYS) / MOON_ORBITAL_PERIOD_DAYS) *
+        2 *
+        Math.PI;
+      const moonX = Math.cos(moonAngle) * MOON_VISUAL_DISTANCE;
+      const moonZ = Math.sin(moonAngle) * MOON_VISUAL_DISTANCE;
+      // Build a 2D arc curving from Earth (origin) to Moon (moonX, moonZ).
+      // Quarter-ellipse curve for a teaching-clean trajectory shape.
+      const arcSteps = 200;
+      const moonOut: Vec2[] = [];
+      for (let i = 0; i <= arcSteps; i++) {
+        const t = i / arcSteps;
+        // Bezier-style quadratic curve via control point at 50% offset perpendicular
+        const ctrlX = moonX * 0.5 + -moonZ * 0.18;
+        const ctrlZ = moonZ * 0.5 + moonX * 0.18;
+        const ix = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlX + t * t * moonX;
+        const iz = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlZ + t * t * moonZ;
+        // /fly's animation uses Vec2 in AU; we encode our scene-units
+        // by dividing by SCALE_3D so the per-frame `pos.x * SCALE_3D`
+        // arithmetic comes out at the right scene magnitude.
+        moonOut.push({ x: ix / SCALE_3D, z: iz / SCALE_3D });
+      }
+      outPts = moonOut;
+      retPts = [];
+    } else {
+      const arcs = buildArcs(newTimeline, false);
+      outPts = arcs.out;
+      retPts = arcs.ret;
+    }
     resetCamera?.();
     mission = {
       name: m.name ?? m.id,
@@ -357,6 +410,7 @@
     };
     arcTimeline = newTimeline;
     isFreeReturn = true; // ORRERY DEMO + future free-return scenarios
+    isMoonMission = false;
     const arcs = buildArcs(newTimeline, true);
     outPts = arcs.out;
     retPts = arcs.ret;
@@ -405,6 +459,7 @@
     arcTimeline = newTimeline;
     isFreeReturn = false;
     activeDestination = dest;
+    isMoonMission = false;
     const arcs = buildArcs(newTimeline, false, dest);
     outPts = arcs.out;
     retPts = arcs.ret;
@@ -613,6 +668,17 @@
       new THREE.MeshPhongMaterial({ color: 0xc1440e, emissive: 0xc1440e, emissiveIntensity: 0.2 }),
     );
     scene.add(marsMesh);
+
+    // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
+    // Hidden by default; shown only when isMoonMission is true.
+    const moonTexLoader = new THREE.TextureLoader();
+    const moonTex = moonTexLoader.load(`${base}/textures/2k_moon.jpg`);
+    const moonMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(2.0, 32, 32),
+      new THREE.MeshPhongMaterial({ map: moonTex, color: 0xffffff, shininess: 4 }),
+    );
+    moonMesh.visible = false;
+    scene.add(moonMesh);
 
     // Spacecraft — composite per UXS-003: nose cone + cylindrical body
     // + inverted nozzle cone, all grouped so we can rotate the group
@@ -947,10 +1013,26 @@
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
 
-      const ePos = earthPos(simDay);
-      const mPos = marsPos(simDay);
-      earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-      marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+      // Moon-mode rendering (v0.1.8): Earth fixed at origin, Moon at
+      // an exaggerated visual distance, Mars + heliocentric Sun
+      // hidden, spacecraft animates along the Earth→Moon arc whose
+      // points were precomputed in applyMissionAsLoaded.
+      if (isMoonMission) {
+        earthMesh.position.set(0, 0, 0);
+        marsMesh.visible = false;
+        moonMesh.visible = true;
+        // Moon position: from the precomputed last point of outPts
+        // (= moon endpoint), in scene-units.
+        const lastPt = outPts[outPts.length - 1];
+        if (lastPt) moonMesh.position.set(lastPt.x * SCALE_3D, 0, lastPt.z * SCALE_3D);
+      } else {
+        marsMesh.visible = true;
+        moonMesh.visible = false;
+        const ePos = earthPos(simDay);
+        const mPos = marsPos(simDay);
+        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+      }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
       scGroup.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);

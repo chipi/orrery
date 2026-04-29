@@ -183,6 +183,37 @@ test.describe('/fly — 3D scene actually renders (regression for black-screen b
   });
 });
 
+test.describe('/fly — Moon-mission mode (v0.1.8)', () => {
+  test('?mission=apollo11 renders Earth-Moon scene (not Earth-Mars)', async ({ page }) => {
+    await page.goto('/fly?mission=apollo11');
+    // HUD identifies Apollo 11.
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/Apollo 11/i, { timeout: 10_000 });
+    // Wait for the scene to paint.
+    await page.waitForTimeout(800);
+    // Verify the canvas isn't black — i.e. Moon-mode actually renders
+    // something (Moon mesh + arc + markers).
+    const hasContent = await page.evaluate(() => {
+      const layers = document.querySelectorAll<HTMLElement>('.layer');
+      const threeLayer = Array.from(layers).find((l) => l.tagName === 'DIV');
+      const canvas = threeLayer?.querySelector('canvas') as HTMLCanvasElement | null;
+      if (!canvas || canvas.width === 0) return false;
+      const gl = canvas.getContext('webgl2') ?? canvas.getContext('webgl');
+      if (!gl) return false;
+      const px = new Uint8Array(4);
+      for (let i = 0; i < 20; i++) {
+        const x = Math.floor(Math.random() * canvas.width);
+        const y = Math.floor(Math.random() * canvas.height);
+        gl.readPixels(x, y, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px);
+        const isBg = Math.abs(px[0] - 4) < 6 && Math.abs(px[1] - 4) < 6 && Math.abs(px[2] - 12) < 8;
+        if (!isBg) return true;
+      }
+      return false;
+    });
+    expect(hasContent).toBe(true);
+  });
+});
+
 test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
   test('?dest=jupiter&type=flyby&dep=N&tof=N renders a Jupiter trajectory', async ({ page }) => {
     // Synthesised /plan → /fly path: dest + dep + tof, no mission.

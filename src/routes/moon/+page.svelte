@@ -239,9 +239,23 @@
         const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
         group.quaternion.copy(quat);
         group.userData = { siteId: site.id };
-        // Make every child mesh pickable by raycasting against the group.
+
+        // Invisible hit sphere — gives the click target a much larger
+        // effective radius (3u vs the visible marker's ~0.6u) so the
+        // user can grab a marker without the moon's rotation making
+        // it slip away. Material is non-rendering but raycast-active.
+        const hitSphere = new THREE.Mesh(
+          new THREE.SphereGeometry(3.0, 8, 8),
+          new THREE.MeshBasicMaterial({ visible: false }),
+        );
+        hitSphere.userData = { siteId: site.id };
+        group.add(hitSphere);
+
+        // Make every child (mesh + label sprite) pickable.
         group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh) obj.userData = { siteId: site.id };
+          if (obj instanceof THREE.Mesh || obj instanceof THREE.Sprite) {
+            obj.userData = { siteId: site.id };
+          }
         });
         // Label with leader line, floating radially outward (along the
         // group's local +Y, which is surface-normal away from Moon
@@ -541,7 +555,10 @@
 
       // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
       // Drag-to-orbit still works.
-      if (!reducedMotion) moonMesh.rotation.y += dt * 0.05;
+      // v0.1.7+: rotation slowed (was 0.05 rad/s) so users have time
+      // to track and click moving labels. ADR-025 reduced-motion gate
+      // still applies.
+      if (!reducedMotion) moonMesh.rotation.y += dt * 0.015;
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();
@@ -598,9 +615,11 @@
     aria-label={m.moon_canvas_label()}
   ></canvas>
 
-  <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-    {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-  </button>
+  {#if !panelOpen}
+    <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
+      {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+    </button>
+  {/if}
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>

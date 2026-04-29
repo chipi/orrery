@@ -199,8 +199,23 @@
           group.position.set(Math.cos(phase) * orbitR, 0, Math.sin(phase) * orbitR);
         }
         group.userData = { id: o.id };
+
+        // Invisible hit sphere — gives the click target a much larger
+        // effective radius (3u vs the visible model's ~0.5u) so the
+        // user can grab a moving spacecraft without millimetre-perfect
+        // pointer accuracy. Material is non-rendering but
+        // raycast-active.
+        const hitSphere = new THREE.Mesh(
+          new THREE.SphereGeometry(3.0, 8, 8),
+          new THREE.MeshBasicMaterial({ visible: false }),
+        );
+        hitSphere.userData = { id: o.id };
+        group.add(hitSphere);
+
         group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh) obj.userData = { id: o.id };
+          if (obj instanceof THREE.Mesh || obj instanceof THREE.Sprite) {
+            obj.userData = { id: o.id };
+          }
         });
 
         // Label with leader-line — tag floats above the spacecraft
@@ -541,11 +556,14 @@
 
       // ADR-025: gate axial Earth rotation + slow satellite drift under
       // reduced-motion. User-initiated drag/zoom still works.
+      // v0.1.7+: motion intentionally slow (0.015 rad/s) so satellite
+      // labels stay clickable as they drift — fast orbital sweep made
+      // hit-targeting frustrating per user feedback.
       if (!reducedMotion) {
-        earthMesh.rotation.y += dt * 0.05;
+        earthMesh.rotation.y += dt * 0.02;
         for (const s of sats) {
           if (s.id === 'lro') continue;
-          s.phase += dt * 0.05;
+          s.phase += dt * 0.015;
           s.group.position.set(Math.cos(s.phase) * s.orbitR, 0, Math.sin(s.phase) * s.orbitR);
         }
       }
@@ -605,9 +623,11 @@
     aria-label={m.earth_canvas_label()}
   ></canvas>
 
-  <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-    {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
-  </button>
+  {#if !panelOpen}
+    <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
+      {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
+    </button>
+  {/if}
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.earth_load_failed()}</div>

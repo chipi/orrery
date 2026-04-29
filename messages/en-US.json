@@ -103,5 +103,13 @@
   "mp_fly_button": "▶ FLY THIS MISSION",
   "mp_fly_unavailable": "FLIGHT DATA UNAVAILABLE",
   "mp_data_quality_partial": "PARTIAL DATA",
-  "mp_data_quality_reconstructed": "RECONSTRUCTED"
+  "mp_data_quality_reconstructed": "RECONSTRUCTED",
+
+  "fly_mission_default": "ORRERY-1",
+  "fly_phase_pre_launch": "PRE-LAUNCH",
+  "fly_phase_outbound": "OUTBOUND",
+  "fly_phase_return": "RETURN",
+  "fly_phase_arrived": "ARRIVED",
+  "fly_label_view_3d": "3D",
+  "fly_label_view_2d": "2D"
 }

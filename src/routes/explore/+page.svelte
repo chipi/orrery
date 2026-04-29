@@ -664,8 +664,19 @@
     // ──────────────────────────────────────────────────────────────
 
     const draw2d = () => {
+      // Defensive sync: the canvas is `display: none` while view='3d',
+      // so its clientWidth/clientHeight are 0 at onMount and resize2d()
+      // sets c2.width=c2.height=0. When the user toggles to 2D the
+      // canvas's layout size becomes non-zero again — re-pick it up
+      // here so the very first frame after the toggle isn't blank.
+      // Cheap: a single property compare on the hot path.
+      if (c2.width !== c2.clientWidth || c2.height !== c2.clientHeight) {
+        c2.width = c2.clientWidth;
+        c2.height = c2.clientHeight;
+      }
       const W = c2.width;
       const H = c2.height;
+      if (W === 0 || H === 0) return; // Layout still pending; skip frame.
       ctx2.fillStyle = '#04040c';
       ctx2.fillRect(0, 0, W, H);
 
@@ -1000,7 +1011,13 @@
 <div class="explore">
   <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
   <canvas class="layer" bind:this={canvas2d} class:hidden={view !== '2d'}></canvas>
-  <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
+  <button
+    class="toggle"
+    class:panel-shifted={panelOpen || sunPanelOpen}
+    type="button"
+    onclick={toggleView}
+    aria-pressed={view === '2d'}
+  >
     {view === '3d' ? '2D' : '3D'}
   </button>
 
@@ -1045,10 +1062,10 @@
     display: block;
   }
   .toggle {
-    position: absolute;
-    top: 12px;
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
     right: 16px;
-    z-index: 25;
+    z-index: 35;
     min-width: 44px;
     min-height: 44px;
     padding: 0 14px;
@@ -1063,13 +1080,22 @@
     backdrop-filter: blur(6px);
     transition:
       border-color 120ms,
-      background 120ms;
+      background 120ms,
+      right 200ms;
   }
   .toggle:hover,
   .toggle:focus-visible {
     border-color: #4466ff;
     background: rgba(20, 26, 50, 0.95);
     outline: none;
+  }
+  /* When a detail panel is open on desktop, shift the toggle left so
+     it clears the right-drawer (314px wide). On mobile the panel is a
+     bottom-sheet and never overlaps the top-right toggle. */
+  @media (min-width: 768px) {
+    .toggle.panel-shifted {
+      right: calc(var(--panel-width, 314px) + 16px);
+    }
   }
   .tooltip {
     position: absolute;

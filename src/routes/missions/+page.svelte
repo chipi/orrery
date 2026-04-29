@@ -6,7 +6,14 @@
   import { getMissionsForLibrary } from '$lib/data';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
+  import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import * as m from '$lib/paraglide/messages';
+
+  // Timeline navigator bounds (ADR-027). Match the constants in
+  // TimelineNavigator.svelte; copied here so the URL coercion logic
+  // doesn't need a cross-component import dance.
+  const TIMELINE_MIN_YEAR = 1957;
+  const TIMELINE_MAX_YEAR = 2030;
 
   // ─── State ───────────────────────────────────────────────────────
   let missions: Mission[] = $state([]);
@@ -18,6 +25,10 @@
   let destFilter: Destination | 'ALL' = $state('ALL');
   let statusFilter: MissionStatus | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
+  // Timeline navigator year window (ADR-027). Default = full range
+  // = no year filter applied.
+  let fromYear: number = $state(TIMELINE_MIN_YEAR);
+  let toYear: number = $state(TIMELINE_MAX_YEAR);
 
   // Agencies are derived from the loaded mission set so the filter
   // always reflects what's actually in the data — no hardcoded list
@@ -31,7 +42,9 @@
       (mission) =>
         (destFilter === 'ALL' || mission.dest === destFilter) &&
         (statusFilter === 'ALL' || mission.status === statusFilter) &&
-        (agencyFilter === 'ALL' || mission.agency === agencyFilter),
+        (agencyFilter === 'ALL' || mission.agency === agencyFilter) &&
+        mission.year >= fromYear &&
+        mission.year <= toYear,
     ),
   );
 
@@ -44,6 +57,18 @@
     statusFilter =
       status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
     agencyFilter = agency ?? 'ALL';
+    // Timeline year-window: out-of-range / non-numeric values clamp
+    // to the legal bounds per ADR-027 §URL contract.
+    const fromRaw = url.searchParams.get('from');
+    const toRaw = url.searchParams.get('to');
+    const fromParsed = fromRaw ? parseInt(fromRaw, 10) : NaN;
+    const toParsed = toRaw ? parseInt(toRaw, 10) : NaN;
+    fromYear = Number.isFinite(fromParsed)
+      ? Math.max(TIMELINE_MIN_YEAR, Math.min(TIMELINE_MAX_YEAR, fromParsed))
+      : TIMELINE_MIN_YEAR;
+    toYear = Number.isFinite(toParsed)
+      ? Math.max(fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
+      : TIMELINE_MAX_YEAR;
   }
 
   function pushFiltersToUrl() {
@@ -51,6 +76,8 @@
     if (destFilter !== 'ALL') params.set('dest', destFilter);
     if (statusFilter !== 'ALL') params.set('status', statusFilter);
     if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
+    if (fromYear !== TIMELINE_MIN_YEAR) params.set('from', String(fromYear));
+    if (toYear !== TIMELINE_MAX_YEAR) params.set('to', String(toYear));
     const qs = params.toString();
     const target = `${base}/missions${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -58,6 +85,15 @@
       // every filter toggle.
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
+  }
+
+  // Timeline drag handler — debounced via the existing reactive flow
+  // so a long drag doesn't thrash the URL. (Svelte 5's $derived reacts
+  // synchronously per assignment; goto() is debounced inside SvelteKit.)
+  function setYearWindow(from: number, to: number) {
+    fromYear = from;
+    toYear = to;
+    pushFiltersToUrl();
   }
 
   function setDest(value: Destination | 'ALL') {
@@ -138,6 +174,14 @@
       {/if}
     </div>
   </header>
+
+  <TimelineNavigator
+    {missions}
+    {fromYear}
+    {toYear}
+    onChange={setYearWindow}
+    onSelectMission={selectMission}
+  />
 
   <nav class="filters" aria-label="Mission filters">
     <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>

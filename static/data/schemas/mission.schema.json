@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "mission.schema.json",
   "title": "Mission",
-  "description": "Base mission record (language-neutral) per ADR-020. One file per mission at data/missions/[dest]/[id].json.",
+  "description": "Base mission record (language-neutral) per ADR-020. One file per mission at data/missions/[dest]/[id].json. v0.1.7 (ADR-027) extends with optional flight + flight_data_quality fields.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -63,6 +63,81 @@
           "l": { "type": "string", "minLength": 1 },
           "u": { "type": "string", "format": "uri" },
           "t": { "enum": ["intro", "core", "deep"] }
+        }
+      }
+    },
+    "flight_data_quality": {
+      "enum": ["measured", "reconstructed", "sparse", "unknown"],
+      "description": "Honesty flag (ADR-027). measured = full public records (NASA press kit, JPL TR); reconstructed = post-hoc engineering reconstruction; sparse = fragmentary public records; unknown = data not yet researched or mission not flown."
+    },
+    "flight": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Structured flight parameters per ADR-027. Every sub-object is optional; missing = unknown (renders as em-dash in the UI).",
+      "properties": {
+        "launch": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "vehicle_stage": { "type": "string", "minLength": 1 },
+            "c3_km2_s2": { "type": "number", "minimum": 0, "maximum": 200 },
+            "declination_deg": { "type": "number", "minimum": -90, "maximum": 90 },
+            "mass_at_tli_kg": { "type": "number", "minimum": 0, "maximum": 500000 },
+            "source": { "type": "string", "minLength": 1 }
+          }
+        },
+        "cruise": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tcm_count": { "type": "integer", "minimum": 0, "maximum": 30 },
+            "peak_heliocentric_speed_km_s": { "type": "number", "minimum": 0, "maximum": 100 },
+            "source": { "type": "string", "minLength": 1 }
+          }
+        },
+        "arrival": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "v_infinity_km_s": { "type": "number", "minimum": 0, "maximum": 50 },
+            "entry_velocity_km_s": { "type": "number", "minimum": 0, "maximum": 50 },
+            "periapsis_km": { "type": ["number", "null"], "minimum": 0, "maximum": 1000000 },
+            "inclination_deg": { "type": ["number", "null"], "minimum": 0, "maximum": 180 },
+            "orbit_insertion_dv_km_s": { "type": ["number", "null"], "minimum": 0, "maximum": 20 },
+            "source": { "type": "string", "minLength": 1 }
+          }
+        },
+        "totals": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "total_dv_km_s": { "type": "number", "minimum": 0, "maximum": 50 },
+            "tli_or_tmi_dv_km_s": { "type": "number", "minimum": 0, "maximum": 20 },
+            "source": { "type": "string", "minLength": 1 }
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["met_days", "type"],
+            "properties": {
+              "met_days": { "type": "number", "minimum": 0 },
+              "type": {
+                "enum": [
+                  "launch",
+                  "tli_or_tmi",
+                  "tcm",
+                  "arrival",
+                  "edl_or_oi",
+                  "flyby",
+                  "earth_return",
+                  "anomaly"
+                ]
+              }
+            }
+          }
         }
       }
     }

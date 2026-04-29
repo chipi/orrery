@@ -18,5 +18,6 @@
   "links": [
     { "l": "Starship — SpaceX", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" },
     { "l": "SpaceX Mars program — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "unknown"
 }

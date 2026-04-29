@@ -19,5 +19,37 @@
     { "l": "Apollo 11 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_11", "t": "intro" },
     { "l": "Apollo 11 mission overview (NASA)", "u": "https://www.nasa.gov/mission/apollo-11/", "t": "intro" },
     { "l": "Lunar laser ranging (NASA)", "u": "https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Saturn V S-IVB (third stage)",
+      "mass_at_tli_kg": 46782,
+      "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); 'Saturn V Launch Vehicle Flight Evaluation Report — AS-506' (NASA TM-X-62558)"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); only MCC-2 was performed"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.86,
+      "periapsis_km": 110,
+      "inclination_deg": 1.25,
+      "orbit_insertion_dv_km_s": 0.89,
+      "source": "Apollo 11 Mission Report (NASA MSC-00171, 1969); LOI burn parameters per CSM Trajectory Reconstruction"
+    },
+    "totals": {
+      "total_dv_km_s": 7.2,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "Apollo 11 Mission Report ∆v ledger (NASA MSC-00171, 1969); CSM + LM combined"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.117, "type": "tli_or_tmi" },
+      { "met_days": 1.4, "type": "tcm" },
+      { "met_days": 3.13, "type": "arrival" },
+      { "met_days": 4.25, "type": "edl_or_oi" },
+      { "met_days": 8.13, "type": "earth_return" }
+    ]
+  }
 }

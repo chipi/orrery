@@ -19,5 +19,38 @@
     { "l": "Viking 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_1", "t": "intro" },
     { "l": "Viking program (NASA)", "u": "https://science.nasa.gov/mission/viking-1/", "t": "intro" },
     { "l": "Viking 1 (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur D-1T upper stage",
+      "c3_km2_s2": 11.65,
+      "mass_at_tli_kg": 3527,
+      "source": "NASA TM-78420 'Viking Lander Atmospheric Reconstruction'; Viking 1 Press Kit (1975-08)"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "Viking 1 Mission Operations Report (NASA, 1976)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.7,
+      "periapsis_km": 1500,
+      "inclination_deg": 38.0,
+      "orbit_insertion_dv_km_s": 1.62,
+      "source": "Viking 1 Mission Operations Report; orbiter MOI on 1976-06-19"
+    },
+    "totals": {
+      "total_dv_km_s": 4.5,
+      "tli_or_tmi_dv_km_s": 3.85,
+      "source": "Viking 1 Press Kit (NASA, 1975-08)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 30, "type": "tcm" },
+      { "met_days": 200, "type": "tcm" },
+      { "met_days": 304, "type": "arrival" },
+      { "met_days": 335, "type": "edl_or_oi" }
+    ]
+  }
 }

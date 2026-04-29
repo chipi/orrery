@@ -4,7 +4,7 @@
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'learn' | 'gallery';
+  type Tab = 'overview' | 'flight' | 'learn' | 'gallery';
 
   type Props = {
     mission: Mission | null;
@@ -34,6 +34,62 @@
       });
     }
   });
+
+  // FLIGHT tab visibility: only render when the mission has any
+  // flight-params data (or an explicit data-quality flag), so missions
+  // not yet populated (slice 1.7a-5 in progress) silently fall back to
+  // the OVERVIEW / GALLERY / LEARN-only tab set.
+  let hasFlightData = $derived(
+    mission != null && (mission.flight != null || mission.flight_data_quality != null),
+  );
+
+  // Map of `flight_data_quality !== "measured"` → caveat banner text.
+  // null when measured / missing — banner hides entirely.
+  let flightCaveat = $derived.by(() => {
+    if (!mission) return null;
+    const q = mission.flight_data_quality;
+    if (q === 'reconstructed') return m.mp_flight_caveat_reconstructed();
+    if (q === 'sparse') return m.mp_flight_caveat_sparse();
+    if (q === 'unknown') return m.mp_flight_caveat_unknown();
+    return null;
+  });
+
+  // Render a possibly-undefined-or-null numeric value as a localised
+  // string, or em-dash for missing. Honest by construction (ADR-027 §2).
+  function fmtNum(value: number | null | undefined, fractionDigits = 2): string {
+    if (value == null) return '—';
+    return value.toFixed(fractionDigits);
+  }
+  function fmtInt(value: number | null | undefined): string {
+    if (value == null) return '—';
+    return Math.round(value).toLocaleString();
+  }
+
+  // Map an event type enum to its localised label so the EVENTS list
+  // reads in the active locale. Falls back to the raw enum if the
+  // i18n key is missing for some reason.
+  function eventLabel(type: string): string {
+    switch (type) {
+      case 'launch':
+        return m.mp_flight_event_launch();
+      case 'tli_or_tmi':
+        return m.mp_flight_event_tli_or_tmi();
+      case 'tcm':
+        return m.mp_flight_event_tcm();
+      case 'arrival':
+        return m.mp_flight_event_arrival();
+      case 'edl_or_oi':
+        return m.mp_flight_event_edl_or_oi();
+      case 'flyby':
+        return m.mp_flight_event_flyby();
+      case 'earth_return':
+        return m.mp_flight_event_earth_return();
+      case 'anomaly':
+        return m.mp_flight_event_anomaly();
+      default:
+        return type.toUpperCase();
+    }
+  }
 
   // Group links by tier for the LEARN tab. The mission JSON stores
   // links in a flat array with a `t` (tier) discriminator.
@@ -81,6 +137,17 @@
         aria-selected={tab === 'overview'}
         aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
       >
+      {#if hasFlightData}
+        <button
+          type="button"
+          id="mp-tab-flight"
+          class:active={tab === 'flight'}
+          onclick={() => (tab = 'flight')}
+          role="tab"
+          aria-selected={tab === 'flight'}
+          aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
+        >
+      {/if}
       {#if gallery.length > 0}
         <button
           type="button"
@@ -109,9 +176,11 @@
       id="mp-tabpanel"
       aria-labelledby={tab === 'overview'
         ? 'mp-tab-overview'
-        : tab === 'gallery'
-          ? 'mp-tab-gallery'
-          : 'mp-tab-learn'}
+        : tab === 'flight'
+          ? 'mp-tab-flight'
+          : tab === 'gallery'
+            ? 'mp-tab-gallery'
+            : 'mp-tab-learn'}
     >
       {#if tab === 'overview'}
         <div class="grid">
@@ -163,6 +232,167 @@
 
         {#if mission.credit}
           <div class="credit">{mission.credit}</div>
+        {/if}
+      {:else if tab === 'flight'}
+        {#if flightCaveat}
+          <div class="flight-caveat" role="note">{flightCaveat}</div>
+        {/if}
+        {#if mission.flight}
+          {#if mission.flight.launch}
+            <section class="flight-section">
+              <h3>{m.mp_flight_section_launch()}</h3>
+              <dl class="flight-rows">
+                {#if mission.flight.launch.vehicle_stage}
+                  <dt>{m.mp_flight_label_vehicle_stage()}</dt>
+                  <dd>{mission.flight.launch.vehicle_stage}</dd>
+                {/if}
+                <dt>{m.mp_flight_label_c3()}</dt>
+                <dd class="numeric">
+                  {mission.flight.launch.c3_km2_s2 != null
+                    ? m.mp_flight_unit_c3({ value: fmtNum(mission.flight.launch.c3_km2_s2, 2) })
+                    : '—'}
+                </dd>
+                <dt>{m.mp_flight_label_dla()}</dt>
+                <dd class="numeric">
+                  {mission.flight.launch.declination_deg != null
+                    ? m.mp_flight_unit_deg({
+                        value: fmtNum(mission.flight.launch.declination_deg, 1),
+                      })
+                    : '—'}
+                </dd>
+                <dt>{m.mp_flight_label_mass_at_tli()}</dt>
+                <dd class="numeric">
+                  {mission.flight.launch.mass_at_tli_kg != null
+                    ? m.mp_flight_unit_kg({ value: fmtInt(mission.flight.launch.mass_at_tli_kg) })
+                    : '—'}
+                </dd>
+              </dl>
+              {#if mission.flight.launch.source}
+                <p class="flight-source">
+                  {m.mp_flight_source_prefix()}
+                  {mission.flight.launch.source}
+                </p>
+              {/if}
+            </section>
+          {/if}
+          {#if mission.flight.cruise}
+            <section class="flight-section">
+              <h3>{m.mp_flight_section_cruise()}</h3>
+              <dl class="flight-rows">
+                <dt>{m.mp_flight_label_tcm_count()}</dt>
+                <dd class="numeric">{fmtInt(mission.flight.cruise.tcm_count)}</dd>
+                <dt>{m.mp_flight_label_peak_speed()}</dt>
+                <dd class="numeric">
+                  {mission.flight.cruise.peak_heliocentric_speed_km_s != null
+                    ? m.mp_flight_unit_kms({
+                        value: fmtNum(mission.flight.cruise.peak_heliocentric_speed_km_s, 1),
+                      })
+                    : '—'}
+                </dd>
+              </dl>
+              {#if mission.flight.cruise.source}
+                <p class="flight-source">
+                  {m.mp_flight_source_prefix()}
+                  {mission.flight.cruise.source}
+                </p>
+              {/if}
+            </section>
+          {/if}
+          {#if mission.flight.arrival}
+            <section class="flight-section">
+              <h3>{m.mp_flight_section_arrival()}</h3>
+              <dl class="flight-rows">
+                <dt>{m.mp_flight_label_v_infinity()}</dt>
+                <dd class="numeric">
+                  {mission.flight.arrival.v_infinity_km_s != null
+                    ? m.mp_flight_unit_kms({
+                        value: fmtNum(mission.flight.arrival.v_infinity_km_s, 2),
+                      })
+                    : '—'}
+                </dd>
+                {#if mission.flight.arrival.entry_velocity_km_s != null}
+                  <dt>{m.mp_flight_label_entry_velocity()}</dt>
+                  <dd class="numeric">
+                    {m.mp_flight_unit_kms({
+                      value: fmtNum(mission.flight.arrival.entry_velocity_km_s, 2),
+                    })}
+                  </dd>
+                {/if}
+                <dt>{m.mp_flight_label_periapsis()}</dt>
+                <dd class="numeric">
+                  {mission.flight.arrival.periapsis_km != null
+                    ? m.mp_flight_unit_km({ value: fmtInt(mission.flight.arrival.periapsis_km) })
+                    : '—'}
+                </dd>
+                <dt>{m.mp_flight_label_inclination()}</dt>
+                <dd class="numeric">
+                  {mission.flight.arrival.inclination_deg != null
+                    ? m.mp_flight_unit_deg({
+                        value: fmtNum(mission.flight.arrival.inclination_deg, 1),
+                      })
+                    : '—'}
+                </dd>
+                <dt>{m.mp_flight_label_oi_dv()}</dt>
+                <dd class="numeric">
+                  {mission.flight.arrival.orbit_insertion_dv_km_s != null
+                    ? m.mp_flight_unit_kms({
+                        value: fmtNum(mission.flight.arrival.orbit_insertion_dv_km_s, 2),
+                      })
+                    : '—'}
+                </dd>
+              </dl>
+              {#if mission.flight.arrival.source}
+                <p class="flight-source">
+                  {m.mp_flight_source_prefix()}
+                  {mission.flight.arrival.source}
+                </p>
+              {/if}
+            </section>
+          {/if}
+          {#if mission.flight.totals}
+            <section class="flight-section">
+              <h3>{m.mp_flight_section_totals()}</h3>
+              <dl class="flight-rows">
+                <dt>{m.mp_flight_label_total_dv()}</dt>
+                <dd class="numeric accent-dv">
+                  {mission.flight.totals.total_dv_km_s != null
+                    ? m.mp_flight_unit_kms({
+                        value: fmtNum(mission.flight.totals.total_dv_km_s, 2),
+                      })
+                    : '—'}
+                </dd>
+                <dt>{m.mp_flight_label_tli_dv()}</dt>
+                <dd class="numeric">
+                  {mission.flight.totals.tli_or_tmi_dv_km_s != null
+                    ? m.mp_flight_unit_kms({
+                        value: fmtNum(mission.flight.totals.tli_or_tmi_dv_km_s, 2),
+                      })
+                    : '—'}
+                </dd>
+              </dl>
+              {#if mission.flight.totals.source}
+                <p class="flight-source">
+                  {m.mp_flight_source_prefix()}
+                  {mission.flight.totals.source}
+                </p>
+              {/if}
+            </section>
+          {/if}
+          {#if mission.flight.events && mission.flight.events.length > 0}
+            <section class="flight-section">
+              <h3>{m.mp_flight_section_events()}</h3>
+              <ol class="flight-events">
+                {#each mission.flight.events as evt, i (i)}
+                  <li>
+                    <span class="event-met"
+                      >{m.mp_flight_event_met({ day: fmtNum(evt.met_days, 2) })}</span
+                    >
+                    <span class="event-type">{eventLabel(evt.type)}</span>
+                  </li>
+                {/each}
+              </ol>
+            </section>
+          {/if}
         {/if}
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
@@ -574,5 +804,98 @@
   .lightbox-close:focus-visible {
     border-color: rgba(255, 255, 255, 0.5);
     outline: none;
+  }
+
+  /* FLIGHT tab (v0.1.7 / ADR-027 / UXS-004 §Extension) */
+  .flight-caveat {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #ffc850;
+    background: rgba(255, 200, 80, 0.18);
+    border: 1px solid #ffc850;
+    border-radius: 4px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .flight-section {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .flight-section:last-of-type {
+    border-bottom: none;
+  }
+  .flight-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: rgba(220, 230, 255, 0.95);
+    margin: 0 0 8px;
+  }
+  .flight-rows {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 14px;
+    row-gap: 6px;
+    margin: 0;
+  }
+  .flight-rows dt {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(180, 200, 255, 0.55);
+    align-self: center;
+  }
+  .flight-rows dd {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: #fff;
+    margin: 0;
+    align-self: center;
+  }
+  .flight-rows dd.numeric {
+    font-weight: 700;
+  }
+  .flight-rows dd.accent-dv {
+    color: #ffc850;
+  }
+  .flight-source {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 10px;
+    color: rgba(180, 200, 255, 0.5);
+    margin: 6px 0 0;
+    line-height: 1.4;
+  }
+  .flight-events {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .flight-events li {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 12px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 2px solid rgba(78, 205, 196, 0.4);
+    border-radius: 2px;
+  }
+  .flight-events .event-met {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #4ecdc4;
+    font-weight: 700;
+  }
+  .flight-events .event-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
   }
 </style>

@@ -257,3 +257,39 @@ test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
     await expect(id).toContainText(/ORRERY DEMO/, { timeout: 10_000 });
   });
 });
+
+test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
+  test('?mission=curiosity surfaces real C3 and total ∆v in the HUD', async ({ page }) => {
+    await page.goto('/fly?mission=curiosity');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
+      timeout: 10_000,
+    });
+    // FLIGHT PARAMS section title shows on desktop viewport.
+    const flightHud = page.locator('.hud-flight-params');
+    await expect(flightHud).toBeVisible();
+    await expect(flightHud).toContainText(/FLIGHT PARAMS/);
+    await expect(flightHud).toContainText(/11\.40 km²\/s²/);
+    await expect(flightHud).toContainText(/6\.10 km\/s/);
+  });
+
+  test('?mission=mars3 shows sparse-data caveat banner in HUD', async ({ page }) => {
+    await page.goto('/fly?mission=mars3');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
+      timeout: 10_000,
+    });
+    const flightHud = page.locator('.hud-flight-params');
+    await expect(flightHud).toBeVisible();
+    await expect(flightHud).toContainText(/SPARSE PUBLIC RECORDS/i);
+  });
+
+  test('default ORRERY DEMO has no FLIGHT PARAMS group (no regression)', async ({ page }) => {
+    await page.goto('/fly');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/ORRERY DEMO/, {
+      timeout: 10_000,
+    });
+    // The demo scenario carries no flight sub-object, so the FLIGHT
+    // PARAMS HUD group should not render.
+    const flightHud = page.locator('.hud-flight-params');
+    await expect(flightHud).toHaveCount(0);
+  });
+});

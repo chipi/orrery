@@ -40,6 +40,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
 | Mission data | Static JSON files in `data/` | ADR-006 |
+| Mission flight params | Optional `flight` sub-object + `flight_data_quality` honesty flag | ADR-027 |
 | Lambert solver | Web Worker | ADR-008 |
 | Mission scenario | Free-return flyby | ADR-009 |
 | Transfer arc | Keplerian half-ellipses | ADR-010 |

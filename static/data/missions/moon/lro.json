@@ -19,5 +19,36 @@
     { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
     { "l": "LRO mission (NASA)", "u": "https://science.nasa.gov/mission/lro/", "t": "intro" },
     { "l": "LROC image archive (Arizona State)", "u": "https://www.lroc.asu.edu/", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 401)",
+      "mass_at_tli_kg": 1916,
+      "source": "NASA LRO Press Kit (2009-06)"
+    },
+    "cruise": {
+      "tcm_count": 5,
+      "source": "NASA LRO Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 30,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.84,
+      "source": "NASA LRO LOI Report (2009-06); low-altitude polar mapping orbit"
+    },
+    "totals": {
+      "total_dv_km_s": 4.0,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "NASA LRO Press Kit (2009-06)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.05, "type": "tli_or_tmi" },
+      { "met_days": 1, "type": "tcm" },
+      { "met_days": 5, "type": "arrival" },
+      { "met_days": 5.01, "type": "edl_or_oi" }
+    ]
+  }
 }

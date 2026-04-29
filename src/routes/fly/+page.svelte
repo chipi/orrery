@@ -24,7 +24,7 @@
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
-  import type { Mission, MissionEvent } from '$types/mission';
+  import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
 
@@ -49,6 +49,10 @@
     arr_label: string;
     timeline: MissionTimeline;
     isFromData: boolean;
+    /** Real flight params from the mission JSON (ADR-027). Optional;
+     *  surfaces in the FLIGHT PARAMS HUD group when present. */
+    flight?: FlightParams;
+    flight_data_quality?: FlightDataQuality;
   };
 
   // Bootstrapped from the static import; replaced by getScenario() in
@@ -162,6 +166,13 @@
   // visible so users can see start + end + curve at all times.
   let outLine: THREE.Mesh | undefined;
   let retLine: THREE.Mesh | undefined;
+  // v0.1.10: each arc is rendered as a pair of tubes — "future" is the
+  // full dim path, "past" is the bright path whose drawRange grows
+  // each frame from 0 → end as the spacecraft progresses. The
+  // resulting visual is a glowing trail behind the spacecraft over a
+  // muted preview of the path ahead.
+  let outLineFuture: THREE.Mesh | undefined;
+  let retLineFuture: THREE.Mesh | undefined;
   let rebuildTubeGeometry: ((pts: Vec2[], radius: number) => THREE.BufferGeometry) | undefined;
   // Camera reset callback assigned inside onMount; applyMissionAsLoaded /
   // applyPlanSelection call it so each new mission gets a fresh frame
@@ -175,7 +186,42 @@
   let arrMarker: THREE.Mesh | undefined;
   let depLabelSprite: THREE.Sprite | undefined;
   let arrLabelSprite: THREE.Sprite | undefined;
+  // Refresh-callback for the LAUNCH / ARRIVAL sprite textures. Assigned
+  // in onMount; called from a $effect whenever the mission or its
+  // dates change so each mission shows its actual launch/arrival
+  // labels — e.g. "LAUNCH · 2011-11-26" and "MARS · 2012-08-06".
+  let refreshLabelSprites:
+    | ((
+        depLine1: string,
+        depLine2: string,
+        depColor: string,
+        arrLine1: string,
+        arrLine2: string,
+        arrColor: string,
+      ) => void)
+    | undefined;
   const SCALE_3D = 80;
+
+  // Per-destination accent for the ARRIVAL sprite. Earth blue (#4b9cd3)
+  // is reserved for LAUNCH so the two sprites always read as a pair.
+  const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = {
+    mercury: '#b8b8b8',
+    venus: '#e8d175',
+    mars: '#c1440e',
+    jupiter: '#d4a373',
+    saturn: '#e8c890',
+    moon: '#cfcfcf',
+  };
+
+  // Per-destination camera reset distance, scene units. Tuned so the
+  // destination's orbit ring fills a comfortable fraction of the view.
+  // Scene scale: 1 AU = SCALE_3D = 80 units. Moon-mode is a separate
+  // Earth-Moon scale where the Moon sits at MOON_VISUAL_DISTANCE = 100.
+  function cameraDistanceFor(destinationId: DestinationId, moonMode: boolean): number {
+    if (moonMode) return 220;
+    const orbitUnits = DESTINATIONS[destinationId].a * SCALE_3D;
+    return Math.max(180, orbitUnits * 2.0);
+  }
 
   // Update the Three.js Tube geometry whenever the arc-point arrays
   // change. The Mesh refs are created in onMount, so this effect is
@@ -183,11 +229,15 @@
   // mounted, every mission load rebuilds the tube along the new
   // CatmullRom curve.
   $effect(() => {
-    if (!outLine || !retLine || !rebuildTubeGeometry) return;
+    if (!outLine || !retLine || !outLineFuture || !retLineFuture || !rebuildTubeGeometry) return;
     outLine.geometry.dispose();
     outLine.geometry = rebuildTubeGeometry(outPts, 0.6);
+    outLineFuture.geometry.dispose();
+    outLineFuture.geometry = rebuildTubeGeometry(outPts, 0.6);
     retLine.geometry.dispose();
     retLine.geometry = rebuildTubeGeometry(retPts, 0.5);
+    retLineFuture.geometry.dispose();
+    retLineFuture.geometry = rebuildTubeGeometry(retPts, 0.5);
   });
 
   // Position the per-mission DEPARTURE + ARRIVAL anchor rings + their
@@ -217,6 +267,27 @@
     arrMarker.position.set(arrX, 0, arrZ);
     depLabelSprite.position.set(depX, 6, depZ);
     arrLabelSprite.position.set(arrX, 6, arrZ);
+  });
+
+  // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
+  // mission's identity changes. Each sprite gets a two-line texture:
+  // LAUNCH      | <destination-name>
+  // <dep date>  | <arr date>
+  // This makes each mission's start + end self-describing in 3D.
+  $effect(() => {
+    if (!refreshLabelSprites) return;
+    const arrName = isMoonMission ? 'MOON' : activeDestination.toUpperCase();
+    const arrColor = isMoonMission
+      ? DESTINATION_LABEL_COLORS.moon
+      : DESTINATION_LABEL_COLORS[activeDestination];
+    refreshLabelSprites(
+      'LAUNCH',
+      mission.dep_label || '—',
+      '#4b9cd3',
+      arrName,
+      mission.arr_label || '—',
+      arrColor,
+    );
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -299,6 +370,22 @@
         ? m.fly_capcom_anomaly_caution()
         : m.fly_capcom_anomaly_nominal(),
   );
+
+  // FLIGHT PARAMS HUD readout (ADR-027). Visible only when the loaded
+  // mission has structured flight data; missing fields render as `—`
+  // (em-dash) — never fake numbers.
+  let hasFlightParams = $derived(mission.flight != null);
+  let flightCaveat = $derived.by<string | null>(() => {
+    const q = mission.flight_data_quality;
+    if (q === 'reconstructed') return m.fly_flight_caveat_reconstructed();
+    if (q === 'sparse') return m.fly_flight_caveat_sparse();
+    if (q === 'unknown') return m.fly_flight_caveat_unknown();
+    return null;
+  });
+  function fmtNumOrDash(value: number | null | undefined, digits = 2): string {
+    if (value == null) return '—';
+    return value.toFixed(digits);
+  }
 
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
@@ -427,16 +514,21 @@
       }
     }
     resetCamera?.();
+    // Prefer the structured `flight.totals.total_dv_km_s` when present
+    // (per ADR-027 backward-compat shim); fall back to parseDeltaV().
+    const dvTotalCanonical = m.flight?.totals?.total_dv_km_s ?? dvTotal;
     mission = {
       name: m.name ?? m.id,
       vehicle: m.vehicle ?? '—',
       payload: m.payload ?? '—',
-      dv_total: dvTotal,
-      dv_used: dvTotal * 0.94,
+      dv_total: dvTotalCanonical,
+      dv_used: dvTotalCanonical * 0.94,
       dep_label: m.departure_date ?? defaultScenarioOverlay.dep_label,
       arr_label: m.arrival_date ?? defaultScenarioOverlay.arr_label,
       timeline: newTimeline,
       isFromData: true,
+      flight: m.flight,
+      flight_data_quality: m.flight_data_quality,
     };
     simDay = mission.timeline.dep_day;
     if (m.events && m.events.length > 0) {
@@ -452,10 +544,12 @@
     };
     arcTimeline = newTimeline;
     isFreeReturn = true; // ORRERY DEMO + future free-return scenarios
+    activeDestination = 'mars';
     isMoonMission = false;
     const arcs = buildArcs(newTimeline, true);
     outPts = arcs.out;
     retPts = arcs.ret;
+    resetCamera?.();
     mission = {
       name: s.name,
       vehicle: s.vehicle,
@@ -692,19 +786,40 @@
       const curve = new THREE.CatmullRomCurve3(vecs, false);
       return new THREE.TubeGeometry(curve, Math.max(64, pts.length), radius, 8, false);
     };
+    // v0.1.10: each arc is a pair of tube meshes. The *future* mesh is
+    // a dim full-length preview; the *past* mesh is bright and its
+    // drawRange grows each frame from 0 → full so the spacecraft
+    // leaves a glowing wake behind it. Both pairs share the same
+    // CatmullRom curve so they stay perfectly co-linear.
     const outMat = new THREE.MeshBasicMaterial({
       color: 0x4488ff,
       transparent: true,
-      opacity: 0.92,
+      opacity: 0.95,
+    });
+    const outFutureMat = new THREE.MeshBasicMaterial({
+      color: 0x4488ff,
+      transparent: true,
+      opacity: 0.22,
+      depthWrite: false,
     });
     const retMat = new THREE.MeshBasicMaterial({
       color: 0x9966ff,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.9,
     });
+    const retFutureMat = new THREE.MeshBasicMaterial({
+      color: 0x9966ff,
+      transparent: true,
+      opacity: 0.2,
+      depthWrite: false,
+    });
+    outLineFuture = new THREE.Mesh(buildTubeGeometry(outPts, 0.6), outFutureMat);
     outLine = new THREE.Mesh(buildTubeGeometry(outPts, 0.6), outMat);
+    retLineFuture = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), retFutureMat);
     retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), retMat);
+    scene.add(outLineFuture);
     scene.add(outLine);
+    scene.add(retLineFuture);
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
     rebuildTubeGeometry = buildTubeGeometry;
@@ -812,23 +927,36 @@
     scene.add(arrMarker);
 
     // Sprite labels — billboard text floating above each marker so
-    // the user always sees "LAUNCH" / "ARRIVAL" regardless of view
-    // angle. Texture rebuilt when activeDestination changes (so
-    // ARRIVAL → MARS / JUPITER / MOON / etc. gets the right name).
-    const buildLabelSprite = (text: string, colorHex: string): THREE.Sprite => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 256;
-      canvas.height = 64;
+    // the user always sees "LAUNCH · <date>" / "<DEST> · <date>"
+    // regardless of view angle. Two-line texture: top = identity
+    // (LAUNCH or destination name), bottom = the mission's dep_label
+    // / arr_label date. Texture is redrawn into a single canvas owned
+    // by each sprite each time refreshLabelSprites is called — no
+    // texture allocation per mission swap.
+    const drawLabelTexture = (
+      canvas: HTMLCanvasElement,
+      line1: string,
+      line2: string,
+      colorHex: string,
+    ): void => {
       const ctx = canvas.getContext('2d');
-      if (ctx) {
-        ctx.font = "bold 28px 'Space Mono', monospace";
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
-        ctx.shadowBlur = 6;
-        ctx.fillStyle = colorHex;
-        ctx.fillText(text, canvas.width / 2, canvas.height / 2);
-      }
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+      ctx.shadowBlur = 8;
+      ctx.fillStyle = colorHex;
+      ctx.font = "bold 28px 'Space Mono', monospace";
+      ctx.fillText(line1, canvas.width / 2, canvas.height * 0.32);
+      ctx.font = "20px 'Space Mono', monospace";
+      ctx.fillStyle = '#e6ecff';
+      ctx.fillText(line2, canvas.width / 2, canvas.height * 0.7);
+    };
+    const buildLabelSprite = (): { sprite: THREE.Sprite; canvas: HTMLCanvasElement } => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 320;
+      canvas.height = 96;
       const texture = new THREE.Texture(canvas);
       texture.needsUpdate = true;
       texture.minFilter = THREE.LinearFilter;
@@ -836,13 +964,32 @@
       const sprite = new THREE.Sprite(
         new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false }),
       );
-      sprite.scale.set(28, 7, 1);
-      return sprite;
+      sprite.scale.set(34, 10, 1);
+      return { sprite, canvas };
     };
-    depLabelSprite = buildLabelSprite('LAUNCH', '#4b9cd3');
-    arrLabelSprite = buildLabelSprite('ARRIVAL', '#c1440e');
+    const dep = buildLabelSprite();
+    const arr = buildLabelSprite();
+    depLabelSprite = dep.sprite;
+    arrLabelSprite = arr.sprite;
+    const depCanvas = dep.canvas;
+    const arrCanvas = arr.canvas;
+    drawLabelTexture(depCanvas, 'LAUNCH', '—', '#4b9cd3');
+    drawLabelTexture(arrCanvas, 'ARRIVAL', '—', '#c1440e');
+    (depLabelSprite.material.map as THREE.Texture).needsUpdate = true;
+    (arrLabelSprite.material.map as THREE.Texture).needsUpdate = true;
     scene.add(depLabelSprite);
     scene.add(arrLabelSprite);
+
+    // Hoist the refresh callback so the $effect (defined at component
+    // scope) can re-render the sprite textures on every mission swap.
+    refreshLabelSprites = (depLine1, depLine2, depColor, arrLine1, arrLine2, arrColor) => {
+      drawLabelTexture(depCanvas, depLine1, depLine2, depColor);
+      drawLabelTexture(arrCanvas, arrLine1, arrLine2, arrColor);
+      const depTex = (depLabelSprite!.material as THREE.SpriteMaterial).map;
+      const arrTex = (arrLabelSprite!.material as THREE.SpriteMaterial).map;
+      if (depTex) depTex.needsUpdate = true;
+      if (arrTex) arrTex.needsUpdate = true;
+    };
 
     // Camera
     let camR = 360;
@@ -859,12 +1006,14 @@
     updateCam();
 
     // Expose a camera-reset callback so applyMissionAsLoaded /
-    // applyPlanSelection can frame each new mission afresh. Restoring
-    // (camR, camP, camT) to the initial values gives a consistent
+    // applyPlanSelection can frame each new mission afresh. camR is
+    // computed per-destination so the destination's orbit ring fills
+    // a comfortable fraction of the view: ~180u for Mars, ~830u for
+    // Saturn, 220u for Moon-mode. (camP, camT) restore to a consistent
     // wide overhead frame regardless of how the user had panned the
     // last mission.
     resetCamera = () => {
-      camR = 360;
+      camR = cameraDistanceFor(activeDestination, isMoonMission);
       camP = 1.05;
       camT = 0.6;
       updateCam();
@@ -1123,9 +1272,24 @@
       const h = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
       scGroup.lookAt(scGroup.position.x + h.x * SCALE_3D, 0, scGroup.position.z + h.z * SCALE_3D);
 
-      // v0.1.9: TubeGeometry replaces the old THREE.Line; the full
-      // mission path is always visible (start + end + curve readable
-      // at a glance), so no per-frame drawRange trim is needed.
+      // v0.1.10: drawRange-driven progress trail on the *past* tube of
+      // each arc. The *future* tubes always render full at low
+      // opacity so the user sees the full mission path; the past
+      // tubes overlay them at high opacity, growing from 0 → end as
+      // the spacecraft progresses. For free-return scenarios the
+      // overall progress 0→0.5 spans outbound, 0.5→1 spans return.
+      // For one-way missions outPts is the only arc; retPts is empty.
+      const hasReturn = retPts.length > 0;
+      const outFraction = hasReturn ? Math.min(1, sc.progress / 0.5) : sc.progress;
+      const retFraction = hasReturn ? Math.max(0, (sc.progress - 0.5) / 0.5) : 0;
+      if (outLine && outLine.geometry.index) {
+        const total = outLine.geometry.index.count;
+        outLine.geometry.setDrawRange(0, Math.max(0, Math.floor(total * outFraction)));
+      }
+      if (retLine && retLine.geometry.index) {
+        const total = retLine.geometry.index.count;
+        retLine.geometry.setDrawRange(0, Math.max(0, Math.floor(total * retFraction)));
+      }
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.
@@ -1249,6 +1413,45 @@
         <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
       </div>
     </aside>
+
+    {#if hasFlightParams && mission.flight}
+      <!-- FLIGHT PARAMS HUD (v0.1.7 / ADR-027). Surfaces real per-mission
+           launch C3, arrival V∞, and total ∆v sourced from the mission's
+           public flight record. Sparse-data caveat banner shows above
+           when flight_data_quality ≠ "measured". -->
+      <aside class="hud hud-flight-params" aria-label={m.fly_panel_flight_params()}>
+        {#if flightCaveat}
+          <div class="flight-caveat-banner" role="note">{flightCaveat}</div>
+        {/if}
+        <div class="hud-section-title">{m.fly_panel_flight_params()}</div>
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_c3()}</span>
+          <span class="hud-val accent-c3">
+            {mission.flight.launch?.c3_km2_s2 != null
+              ? m.fly_hud_unit_c3({ value: fmtNumOrDash(mission.flight.launch.c3_km2_s2, 2) })
+              : '—'}
+          </span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_v_infinity()}</span>
+          <span class="hud-val accent-vinf">
+            {mission.flight.arrival?.v_infinity_km_s != null
+              ? m.fly_hud_kms({
+                  value: fmtNumOrDash(mission.flight.arrival.v_infinity_km_s, 2),
+                })
+              : '—'}
+          </span>
+        </div>
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_total_dv()}</span>
+          <span class="hud-val accent-dv">
+            {mission.flight.totals?.total_dv_km_s != null
+              ? m.fly_hud_kms({ value: fmtNumOrDash(mission.flight.totals.total_dv_km_s, 2) })
+              : '—'}
+          </span>
+        </div>
+      </aside>
+    {/if}
 
     <!-- Systems HUD (bottom-right) -->
     <aside class="hud hud-systems" aria-label={m.fly_panel_systems()}>
@@ -1554,7 +1757,8 @@
   }
   @media (max-width: 767px) {
     .hud-navigation,
-    .hud-systems {
+    .hud-systems,
+    .hud-flight-params {
       display: none;
     }
     .hud-stack {
@@ -1563,6 +1767,39 @@
     .scrubber {
       right: 16px;
     }
+  }
+
+  /* FLIGHT PARAMS HUD (v0.1.7 / ADR-027 / UXS-003 §Extension) */
+  .hud-flight-params {
+    margin-top: 6px;
+  }
+  .hud-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(220, 230, 255, 0.95);
+    margin-bottom: 6px;
+  }
+  .flight-caveat-banner {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #ffc850;
+    background: rgba(255, 200, 80, 0.18);
+    border: 1px solid #ffc850;
+    border-radius: 3px;
+    padding: 5px 7px;
+    margin-bottom: 7px;
+    line-height: 1.4;
+  }
+  .accent-c3 {
+    color: #4b9cd3;
+  }
+  .accent-vinf {
+    color: #4ecdc4;
+  }
+  .accent-dv {
+    color: #ffc850;
   }
   @media (min-width: 768px) {
     /* Scrubber spans full width below the stack on desktop, since the

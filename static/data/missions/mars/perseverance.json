@@ -20,5 +20,43 @@
     { "l": "Mars 2020 (NASA)", "u": "https://science.nasa.gov/mission/mars-2020-perseverance/", "t": "intro" },
     { "l": "Ingenuity helicopter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ingenuity_(helicopter)", "t": "core" },
     { "l": "Mars Sample Return architecture", "u": "https://mars.nasa.gov/msr/", "t": "deep" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Centaur upper stage (Atlas V 541)",
+      "c3_km2_s2": 14.79,
+      "declination_deg": 16.7,
+      "mass_at_tli_kg": 3649,
+      "source": "NASA Mars 2020 Press Kit (2020-07); ULA Atlas V 541 mission overview"
+    },
+    "cruise": {
+      "tcm_count": 5,
+      "peak_heliocentric_speed_km_s": 33.5,
+      "source": "JPL Mars 2020 EDL Reconstruction (2021)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.4,
+      "entry_velocity_km_s": 5.4,
+      "periapsis_km": null,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": null,
+      "source": "NASA Mars 2020 Press Kit (2021-02); JPL Mars 2020 EDL Telemetry"
+    },
+    "totals": {
+      "total_dv_km_s": 6.1,
+      "tli_or_tmi_dv_km_s": 3.85,
+      "source": "computed from Mars 2020 ∆v ledger (NASA Press Kit, 2020-07)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 15, "type": "tcm" },
+      { "met_days": 60, "type": "tcm" },
+      { "met_days": 140, "type": "tcm" },
+      { "met_days": 180, "type": "tcm" },
+      { "met_days": 203, "type": "arrival" },
+      { "met_days": 203.005, "type": "edl_or_oi" }
+    ]
+  }
 }

@@ -18,5 +18,35 @@
   "links": [
     { "l": "Chang'e 4 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_4", "t": "intro" },
     { "l": "Queqiao relay — Wikipedia", "u": "https://en.wikipedia.org/wiki/Queqiao_relay_satellite", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Long March 3B third stage",
+      "mass_at_tli_kg": 3780,
+      "source": "CNSA Chang'e 4 Mission Report (2019)"
+    },
+    "cruise": {
+      "tcm_count": 4,
+      "source": "CNSA Chang'e 4 Mission Operations Report"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 100,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.78,
+      "source": "CNSA Chang'e 4 LOI Report (2018-12)"
+    },
+    "totals": {
+      "total_dv_km_s": 3.0,
+      "source": "CNSA Chang'e 4 Mission Report (2019)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.05, "type": "tli_or_tmi" },
+      { "met_days": 5, "type": "tcm" },
+      { "met_days": 5, "type": "arrival" },
+      { "met_days": 27, "type": "edl_or_oi" }
+    ]
+  }
 }

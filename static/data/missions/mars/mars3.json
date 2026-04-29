@@ -18,5 +18,33 @@
   "links": [
     { "l": "Mars 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
     { "l": "Mars 3 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A", "t": "core" }
-  ]
+  ],
+  "flight_data_quality": "sparse",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Blok-D upper stage",
+      "mass_at_tli_kg": 4650,
+      "source": "NASA NSSDCA Mars 3 archive; Soviet records fragmentary"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "NASA NSSDCA Mars 3 archive"
+    },
+    "arrival": {
+      "v_infinity_km_s": 5.7,
+      "periapsis_km": 1500,
+      "inclination_deg": 60.0,
+      "source": "NASA NSSDCA Mars 3 archive; orbital parameters approximate"
+    },
+    "totals": {
+      "total_dv_km_s": 5.5,
+      "source": "NASA NSSDCA Mars 3 archive (estimated)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 188, "type": "arrival" },
+      { "met_days": 188.01, "type": "edl_or_oi" }
+    ]
+  }
 }

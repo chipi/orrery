@@ -17,17 +17,15 @@
 
 import { solveLambert } from './lambert';
 import {
+  DESTINATIONS,
   EARTH_A0,
   EARTH_MEAN_MOTION_RAD_PER_DAY,
-  MARS_A0,
-  MARS_MEAN_MOTION_RAD_PER_DAY,
   MU_SUN,
   R_EARTH_AU,
-  R_MARS_AU,
+  type DestinationId,
 } from './lambert-grid.constants';
 
 const V_EARTH_CIRC = Math.sqrt(MU_SUN / R_EARTH_AU);
-const V_MARS_CIRC = Math.sqrt(MU_SUN / R_MARS_AU);
 const AU_PER_YR_TO_KMS = 4.7404;
 
 /** Sentinel ∆v for cells where Lambert returned no solution. Clamps
@@ -43,6 +41,9 @@ export interface LambertRequest {
   arrRange: [number, number];
   /** Cell counts [width, height] */
   steps: [number, number];
+  /** Destination planet. Defaults to 'mars' (back-compat with the
+   *  pre-v0.1.6 worker shape). ADR-026 §Lambert worker change. */
+  destinationId?: DestinationId;
 }
 
 export interface LambertProgress {
@@ -78,6 +79,8 @@ export function computePorkchopGrid(
   const [w, h] = req.steps;
   const [depStart, depEnd] = req.depRange;
   const [tofStart, tofEnd] = req.arrRange;
+  const destination = DESTINATIONS[req.destinationId ?? 'mars'];
+  const vDestCirc = Math.sqrt(MU_SUN / destination.a);
 
   const depDays: number[] = new Array(w);
   const arrDays: number[] = new Array(h);
@@ -99,7 +102,7 @@ export function computePorkchopGrid(
     for (let i = 0; i < w; i++) {
       const depDay = depDays[i];
       const arrDay = depDay + tofDay;
-      grid[j][i] = computeDv(depDay, arrDay, tofYr);
+      grid[j][i] = computeDv(depDay, arrDay, tofYr, destination, vDestCirc);
     }
 
     if (j % 10 === 0 || j === h - 1) {
@@ -111,19 +114,25 @@ export function computePorkchopGrid(
   return { grid, depDays, arrDays };
 }
 
-/** Heliocentric ∆v (km/s) for an Earth → Mars transfer using the
- * simplified circular-orbit model. Returns DV_FAILED when Lambert
+/** Heliocentric ∆v (km/s) for an Earth → destination transfer using
+ * the simplified circular-orbit model. Returns DV_FAILED when Lambert
  * can't find a feasible transfer. */
-function computeDv(depDay: number, arrDay: number, tofYr: number): number {
+function computeDv(
+  depDay: number,
+  arrDay: number,
+  tofYr: number,
+  destination: { a: number; a0: number; meanMotionRadPerDay: number },
+  vDestCirc: number,
+): number {
   const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * depDay;
-  const tM = MARS_A0 + MARS_MEAN_MOTION_RAD_PER_DAY * arrDay;
+  const tD = destination.a0 + destination.meanMotionRadPerDay * arrDay;
   const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2: [number, number] = [R_MARS_AU * Math.cos(tM), R_MARS_AU * Math.sin(tM)];
+  const r2: [number, number] = [destination.a * Math.cos(tD), destination.a * Math.sin(tD)];
 
   const result = solveLambert(r1, r2, tofYr, MU_SUN);
   if (!result) return DV_FAILED;
 
-  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + Math.abs(V_MARS_CIRC - result.v2);
+  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + Math.abs(vDestCirc - result.v2);
   const dvKmS = dvAuPerYr * AU_PER_YR_TO_KMS;
   return Math.max(3.2, Math.min(dvKmS, DV_FAILED));
 }

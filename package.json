@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "npm run i18n:compile && vite dev",
-    "build": "npm run i18n:compile && vite build",
+    "build": "npm run i18n:compile && npm run precompute-porkchops && vite build",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -21,6 +21,7 @@
     "test:e2e:ui": "npm run build && playwright test --ui",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",
+    "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
     "validate-data": "tsx scripts/validate-data.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",

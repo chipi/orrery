@@ -1,9 +1,14 @@
 /**
- * Earth + Mars constants for the porkchop grid computation. Values
- * are sourced directly from `static/data/planets.json` at build time
- * via Vite's JSON import — keeps the worker in sync with the data
- * layer without runtime fetches (workers can't use SvelteKit's
+ * Heliocentric ephemerides + the µ_Sun constant for Lambert + porkchop
+ * geometry. Sourced directly from `static/data/planets.json` at build
+ * time via Vite's JSON import — keeps the worker in sync with the
+ * data layer without runtime fetches (workers can't use SvelteKit's
  * `$lib/data` client; Vite resolves JSON imports statically).
+ *
+ * v0.1.6 (ADR-026) extends from Earth + Mars to Earth + 5 destinations
+ * (Mercury, Venus, Mars, Jupiter, Saturn). Earth/Mars exports stay for
+ * backward compatibility with mission-arc and the worker. New code
+ * should reach for `DESTINATIONS[id]` instead.
  *
  * Audit note (2026-04-29): previously these constants were hardcoded
  * in `src/workers/lambert.worker.ts` with a small numeric drift
@@ -46,3 +51,38 @@ export const MARS_A0 = MARS.L0;
 export const EARTH_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / EARTH.T;
 /** Mars mean motion, rad/day. */
 export const MARS_MEAN_MOTION_RAD_PER_DAY = (2 * Math.PI) / MARS.T;
+
+// ─── Multi-destination support (ADR-026, v0.1.6) ──────────────────
+
+export type DestinationId = 'mercury' | 'venus' | 'mars' | 'jupiter' | 'saturn';
+
+export interface DestinationConstants {
+  id: DestinationId;
+  /** Heliocentric distance, AU. Circular-orbit approximation. */
+  a: number;
+  /** Mean longitude at epoch, rad. */
+  a0: number;
+  /** Mean motion, rad/day. */
+  meanMotionRadPerDay: number;
+}
+
+function buildDestination(id: DestinationId, name: string): DestinationConstants {
+  const p = planet(name);
+  return {
+    id,
+    a: p.a,
+    a0: p.L0,
+    meanMotionRadPerDay: (2 * Math.PI) / p.T,
+  };
+}
+
+/** Lookup table for porkchop / arc destinations. Mars stays in step
+ *  with the legacy MARS_* exports above so a misedit shows up as a
+ *  test failure rather than a silent drift. */
+export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
+  mercury: buildDestination('mercury', 'Mercury'),
+  venus: buildDestination('venus', 'Venus'),
+  mars: buildDestination('mars', 'Mars'),
+  jupiter: buildDestination('jupiter', 'Jupiter'),
+  saturn: buildDestination('saturn', 'Saturn'),
+};

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
+  import { base } from '$app/paths';
   import * as THREE from 'three';
   import {
     earthPos,
@@ -896,75 +897,84 @@
     <div class="load-banner" role="alert">{m.fly_load_failed()}</div>
   {/if}
 
-  <!-- Identity HUD (top-left) -->
-  <aside
-    class="hud hud-identity"
-    role="status"
-    aria-live="polite"
-    aria-label={m.fly_panel_identity()}
-    data-testid="mission-name"
-  >
-    <span class="hud-title">{mission.name}</span>
-    <span class="hud-phase phase-{phase}">{phaseLabel}</span>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_vehicle()}</span>
-      <span class="hud-val">{mission.vehicle}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_dep()}</span>
-      <span class="hud-val">{mission.dep_label}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_arr()}</span>
-      <span class="hud-val">{mission.arr_label}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_met()}</span>
-      <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
-    </div>
-  </aside>
+  <!-- Left-side HUD stack: identity → navigation → systems. Replaces
+       the previous scattered top-left/top-right/bottom-right layout
+       that conflicted with the CAPCOM toggle. -->
+  <div class="hud-stack">
+    <aside
+      class="hud hud-identity"
+      role="status"
+      aria-live="polite"
+      aria-label={m.fly_panel_identity()}
+      data-testid="mission-name"
+    >
+      <span class="hud-title">{mission.name}</span>
+      <span class="hud-phase phase-{phase}">{phaseLabel}</span>
+      {#if mission.name === 'ORRERY DEMO'}
+        <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
+        <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>
+      {/if}
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_vehicle()}</span>
+        <span class="hud-val">{mission.vehicle}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_dep()}</span>
+        <span class="hud-val">{mission.dep_label}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_arr()}</span>
+        <span class="hud-val">{mission.arr_label}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_met()}</span>
+        <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
+      </div>
+    </aside>
 
-  <!-- Navigation HUD (top-right, but we also have toggle there) -->
-  <aside class="hud hud-navigation" aria-label={m.fly_panel_navigation()}>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_velocity()}</span>
-      <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_dist_earth()}</span>
-      <span class="hud-val">{m.fly_hud_mkm({ value: distFromEarthMkm.toFixed(0) })}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">·</span>
-      <span class="hud-val dim">{m.fly_hud_lmin({ value: signalDelayMin.toFixed(1) })}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_dist_mars()}</span>
-      <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
-    </div>
-  </aside>
+    <!-- Navigation HUD (left stack, below identity) -->
+    <aside class="hud hud-navigation" aria-label={m.fly_panel_navigation()}>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_velocity()}</span>
+        <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_dist_earth()}</span>
+        <span class="hud-val">{m.fly_hud_mkm({ value: distFromEarthMkm.toFixed(0) })}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">·</span>
+        <span class="hud-val dim">{m.fly_hud_lmin({ value: signalDelayMin.toFixed(1) })}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_dist_mars()}</span>
+        <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
+      </div>
+    </aside>
 
-  <!-- Systems HUD (bottom-right) -->
-  <aside class="hud hud-systems" aria-label={m.fly_panel_systems()}>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_dv_used()}</span>
-      <span class="hud-val">{m.fly_hud_kms({ value: mission.dv_used.toFixed(2) })}</span>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
-      <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
-    </div>
-    <div class="dv-bar" aria-hidden="true">
-      <div
-        class="dv-fill"
-        style:width="{Math.min(100, (mission.dv_used / Math.max(0.01, mission.dv_total)) * 100)}%"
-      ></div>
-    </div>
-    <div class="hud-row">
-      <span class="hud-key">{m.fly_hud_eta()}</span>
-      <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span>
-    </div>
-  </aside>
+    <!-- Systems HUD (bottom-right) -->
+    <aside class="hud hud-systems" aria-label={m.fly_panel_systems()}>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_dv_used()}</span>
+        <span class="hud-val">{m.fly_hud_kms({ value: mission.dv_used.toFixed(2) })}</span>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
+        <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
+      </div>
+      <div class="dv-bar" aria-hidden="true">
+        <div
+          class="dv-fill"
+          style:width="{Math.min(100, (mission.dv_used / Math.max(0.01, mission.dv_total)) * 100)}%"
+        ></div>
+      </div>
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_eta()}</span>
+        <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span
+        >
+      </div>
+    </aside>
+  </div>
 
   <!-- Timeline scrubber (bottom-left) -->
   <div class="scrubber" aria-label={m.fly_scrub_label()}>
@@ -1103,9 +1113,21 @@
     border-radius: 4px;
   }
 
-  .hud {
+  .hud-stack {
     position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 16px;
+    bottom: 80px;
     z-index: 30;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+    /* Stack stretches the full viewport height between nav and scrubber;
+       individual .hud children re-enable pointer events. */
+  }
+  .hud {
+    pointer-events: auto;
     padding: 10px 14px;
     background: rgba(8, 10, 22, 0.88);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1116,21 +1138,44 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
+    width: 220px;
     display: flex;
     flex-direction: column;
     gap: 4px;
   }
-  .hud-identity {
-    top: calc(var(--nav-height) + 12px);
-    left: 16px;
-  }
-  .hud-navigation {
-    top: calc(var(--nav-height) + 12px);
-    right: 70px;
-  }
+  /* Systems HUD pinned to the bottom of the stack so it sits just
+     above the scrubber instead of crowding identity/navigation. */
   .hud-systems {
-    bottom: 70px;
-    right: 16px;
+    margin-top: auto;
+  }
+  .hud-demo-hint {
+    margin: 4px 0 6px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: rgba(255, 200, 80, 0.85);
+    line-height: 1.4;
+  }
+  .hud-demo-cta {
+    align-self: flex-start;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    background: rgba(68, 102, 255, 0.18);
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .hud-demo-cta:hover,
+  .hud-demo-cta:focus-visible {
+    background: rgba(68, 102, 255, 0.32);
+    border-color: #4466ff;
+    outline: none;
   }
 
   .hud-title {
@@ -1206,7 +1251,7 @@
     position: fixed;
     bottom: 14px;
     left: 16px;
-    right: 240px;
+    right: 16px;
     z-index: 30;
     display: flex;
     align-items: center;
@@ -1222,6 +1267,16 @@
     .hud-systems {
       display: none;
     }
+    .hud-stack {
+      bottom: auto;
+    }
+    .scrubber {
+      right: 16px;
+    }
+  }
+  @media (min-width: 768px) {
+    /* Scrubber spans full width below the stack on desktop, since the
+       right side no longer carries a fixed-position systems HUD. */
     .scrubber {
       right: 16px;
     }
@@ -1298,7 +1353,7 @@
   .capcom-toggle {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    right: 70px;
+    right: 76px;
     z-index: 35;
     min-width: 56px;
     min-height: 44px;
@@ -1323,13 +1378,6 @@
   .capcom-toggle:focus-visible {
     border-color: #4ecdc4;
     outline: none;
-  }
-  /* Hide the navigation HUD when CAPCOM is open + at the same right
-     position; CAPCOM takes priority. */
-  @media (min-width: 768px) {
-    .capcom-toggle {
-      right: 130px;
-    }
   }
 
   .capcom-panel {

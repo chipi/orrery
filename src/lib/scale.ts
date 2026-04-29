@@ -42,14 +42,21 @@ export function auToPx(au: number): number {
 }
 
 /**
- * Earth-orbit log scale: altitude (km) → vertical px from Earth's surface.
- * Ranges from ISS (408 km) to JWST at L2 (1.5M km) on a single legible axis.
+ * Earth-orbit 3D scene scale: altitude (km) → scene-units from Earth
+ * centre. Used by /earth to place satellites on a single legible scene
+ * spanning LEO (~408 km) → L2 (~1.5M km).
  *
- * Formula: 38 + 54 * log10(1 + alt_km / 100)
- *  - 38 px baseline ensures objects above ground render visibly
- *  - 54 px per decade of altitude
- *  - Verified against P05 prototype.
+ * Earth is rendered at radius 8 units. The 0.5-unit surface gap keeps
+ * LEO visibly separated from the ground; the log compression keeps GEO
+ * inside the camera frame while preserving the LEO/MEO/GEO order.
+ *
+ * Reference radii at canonical altitudes:
+ *   ISS (408 km)      → ~10.9
+ *   GPS (20180 km)    → ~19.4
+ *   GEO (35786 km)    → ~20.5
+ *   Moon (384400 km)  → ~25.6
+ *   L2 (1.5M km)      → ~28.6
  */
-export function altToVis(altKm: number): number {
-  return 38 + 54 * Math.log10(1 + altKm / 100);
+export function altToOrbitRadius(altKm: number): number {
+  return 8.5 + 5.2 * Math.log10(1 + altKm / 200);
 }

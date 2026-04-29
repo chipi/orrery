@@ -153,7 +153,10 @@
   "fly_capcom_no_events": "No events recorded for this mission.",
   "fly_capcom_event_at": "T+{day}d",
 
-  "earth_canvas_label": "Earth orbit diagram on logarithmic scale from ISS to JWST. Click any object for details.",
+  "earth_canvas_label": "Earth and its satellites in 3D. Drag to orbit, pinch or scroll to zoom, click any object for details.",
+  "earth_label_view_2d": "2D",
+  "earth_label_view_3d": "3D",
+  "earth_moon_link_hint": "Open Moon Map →",
   "earth_regime_leo": "LEO",
   "earth_regime_meo": "MEO",
   "earth_regime_geo": "GEO",

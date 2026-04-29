@@ -198,6 +198,18 @@ A 5-batch audit ran against the slice-6 codebase covering tests, drift, and code
 
 ---
 
+## v0.1.1 — UX patches (2026-04-29)
+
+User feedback after v0.1.0 revealed two screens needed redesign before v0.2.0 themes could begin.
+
+- **Nav reorder** (`af02a0e`): /moon moved from first to last tab so the audience progression reads /explore → /plan → /fly → /missions → /earth → /moon (close-to-home pair last).
+- **Moon-marker rework** (after `af02a0e`): per-mission-category Three.js geometry replaces the previous identical low-poly spheres — crewed (cone + flag), rover (box-on-wheels), sample-return (octahedron + spike), orbiter (floating torus + tether), lander (octahedron + antenna). Markers now parented to `moonMesh` so they rotate with the sphere (previous bug: markers stayed in scene-space while moon spun underneath, breaking spatial reference). New helper `$lib/moon-marker-category` + tests.
+- **/earth full redesign**: replaces the 1D vertical log-scale stack with a 3D dual-mode scene mirroring /moon's pattern. Earth at origin (textured sphere), 13 satellites with per-category geometry (station, constellation cluster, telescope scope, comsat dish, moon-orbiter probe), Moon rendered at compressed orbital distance with click-through to /moon, regime rings color-coded by altitude, 2D top-down toggle. Replaces the deleted `altToVis` with `altToOrbitRadius` calibrated for the 3D scene. New helper `$lib/earth-satellite-category` + tests.
+
+**State at v0.1.1:** **161 unit tests** (was 144, +17) + **87 e2e tests**, all green. Ten pure helper modules (added `moon-marker-category` + `earth-satellite-category`).
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

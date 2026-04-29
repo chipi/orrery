@@ -1,26 +1,45 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * /earth — Earth Orbit log-scale viewer.
+ * /earth — Earth & satellites in 3D + 2D top-down view.
+ *
+ * Mirrors the /moon dual-mode pattern (post-v0.1.0 redesign): Three.js
+ * scene by default with a 2D toggle button.
  */
 
 test.describe('/earth', () => {
-  test('loads with non-blank canvas (regression for blank-canvas class of bug)', async ({
-    page,
-  }) => {
+  test('default loads in 3D mode with the WebGL canvas sized', async ({ page }) => {
     await page.goto('/earth');
-    const canvas = page.locator('canvas').first();
-    await expect(canvas).toBeVisible({ timeout: 5_000 });
+    const threeCanvas = page.locator('.layer:not(canvas) canvas').first();
+    await expect(threeCanvas).toBeVisible({ timeout: 5_000 });
+    const dim = await threeCanvas.evaluate((el: HTMLCanvasElement) => ({
+      w: el.width,
+      h: el.height,
+    }));
+    expect(dim.w).toBeGreaterThan(0);
+    expect(dim.h).toBeGreaterThan(0);
+  });
+
+  test('2D toggle reveals a top-down concentric-ring view', async ({ page }) => {
+    await page.goto('/earth');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+    const flat = page.locator('canvas.layer');
+    await expect(flat).toBeVisible({ timeout: 5_000 });
+    // Wait until the 2D map has painted at least one frame (Earth disc
+    // is the most reliable non-bg signal — sits dead-centre).
     await page.waitForFunction(
       () => {
-        const c = document.querySelector('canvas') as HTMLCanvasElement | null;
+        const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
         if (!c || c.width === 0 || c.height === 0) return false;
         const ctx = c.getContext('2d');
         if (!ctx) return false;
-        // Earth at the bottom is the most reliable non-bg signal.
-        const cx = Math.floor(c.width / 2);
-        const cy = c.height - 60;
-        const data = ctx.getImageData(cx - 4, cy - 4, 9, 9).data;
+        const data = ctx.getImageData(
+          Math.floor(c.width * 0.5),
+          Math.floor(c.height * 0.5),
+          5,
+          5,
+        ).data;
         for (let i = 0; i < data.length; i += 4) {
           const isBg =
             Math.abs(data[i] - 4) < 6 &&
@@ -34,23 +53,25 @@ test.describe('/earth', () => {
     );
   });
 
-  test('clicking the canvas near ISS opens the panel', async ({ page }) => {
+  test('clicking a satellite in 2D mode opens the panel', async ({ page }) => {
     await page.goto('/earth');
-    const canvas = page.locator('canvas').first();
-    const box = await canvas.boundingBox();
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    const flat = page.locator('canvas.layer');
+    await expect(flat).toBeVisible();
+    await page.waitForTimeout(600); // let objects populate
+    const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
-    // ISS is at the lowest altitude — closest to Earth at the bottom.
-    // altToVis(408) ≈ 38 + 54·log10(1+4.08) ≈ 38 + 54·0.708 ≈ 76.
-    // Earth centre is 40 px from the bottom, so ISS sits ~76 px above
-    // Earth centre = bottom - 40 - 76 ≈ bottom - 116.
-    const cx = box.width / 2;
-    const cy = box.height - 116;
-    // Wait briefly for the canvas to draw + objects to populate.
-    await page.waitForTimeout(400);
-    await canvas.click({ position: { x: cx, y: cy } });
+    // The 2D layout is: Earth at centre, sats on rings, phase = i*2.4 rad.
+    // ISS is index 0 → phase 0 (sits at +X). Its radius is altToOrbitRadius(408)
+    // ≈ 10.9 scene units; pxPerUnit = min(W,H)/70.
+    const pxPerUnit = Math.min(box.width, box.height) / 70;
+    const issR = 10.9 * pxPerUnit;
+    const cx = box.width / 2 + issR;
+    const cy = box.height / 2;
+    await flat.click({ position: { x: cx, y: cy } });
     const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible();
+    await expect(panel).toBeVisible({ timeout: 5_000 });
   });
 
   test('no console errors on load', async ({ page }) => {

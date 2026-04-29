@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { auToPx, altToVis } from './scale';
+import { auToPx, altToOrbitRadius } from './scale';
 
 describe('auToPx', () => {
   it('returns exact lookup value at Earth (1 AU)', () => {
@@ -31,31 +31,53 @@ describe('auToPx', () => {
   });
 });
 
-describe('altToVis', () => {
-  it('returns 38 px at 0 km altitude (ground baseline)', () => {
-    expect(altToVis(0)).toBe(38);
+describe('altToOrbitRadius', () => {
+  it('returns 8.5 (Earth radius + 0.5 surface gap) at 0 km', () => {
+    expect(altToOrbitRadius(0)).toBeCloseTo(8.5, 6);
   });
 
-  it('places ISS (408 km) above ground but below GEO', () => {
-    const iss = altToVis(408);
-    const geo = altToVis(35786);
-    expect(iss).toBeGreaterThan(38);
-    expect(iss).toBeLessThan(geo);
+  it('places ISS (408 km) just above Earth surface (8.5)', () => {
+    const iss = altToOrbitRadius(408);
+    expect(iss).toBeGreaterThan(8.5);
+    expect(iss).toBeLessThan(12);
   });
 
-  it('JWST at L2 (1.5M km) maps significantly higher than the Moon (~384400 km)', () => {
-    const moon = altToVis(384400);
-    const jwst = altToVis(1500000);
+  it('places GEO (35786 km) inside the inner camera frame (under 25u)', () => {
+    const geo = altToOrbitRadius(35786);
+    expect(geo).toBeGreaterThan(18);
+    expect(geo).toBeLessThan(25);
+  });
+
+  it('places Moon (~384400 km) farther out than GEO', () => {
+    const geo = altToOrbitRadius(35786);
+    const moon = altToOrbitRadius(384400);
+    expect(moon).toBeGreaterThan(geo);
+  });
+
+  it('JWST at L2 (1.5M km) farther out than Moon', () => {
+    const moon = altToOrbitRadius(384400);
+    const jwst = altToOrbitRadius(1500000);
     expect(jwst).toBeGreaterThan(moon);
-    expect(jwst - moon).toBeGreaterThan(20); // at least 20 px separation
   });
 
   it('is monotonically increasing', () => {
-    let prev = altToVis(100);
-    for (const a of [400, 20000, 35786, 384400, 1500000]) {
-      const next = altToVis(a);
+    let prev = altToOrbitRadius(0);
+    for (const a of [408, 20000, 35786, 384400, 1500000]) {
+      const next = altToOrbitRadius(a);
       expect(next).toBeGreaterThan(prev);
       prev = next;
     }
+  });
+
+  it('preserves LEO < MEO < GEO < HEO < MOON < L2 ordering', () => {
+    const r = [
+      altToOrbitRadius(408), // LEO
+      altToOrbitRadius(20180), // MEO
+      altToOrbitRadius(35786), // GEO
+      altToOrbitRadius(133000), // HEO
+      altToOrbitRadius(384400), // MOON
+      altToOrbitRadius(1500000), // L2
+    ];
+    for (let i = 1; i < r.length; i++) expect(r[i]).toBeGreaterThan(r[i - 1]);
   });
 });

@@ -91,6 +91,9 @@
   ): { out: Vec2[]; ret: Vec2[] } {
     const earthDep = earthPos(timeline.dep_day);
     const destA = DESTINATIONS[destinationId].a;
+    // outboundArc handles inner planets (Mercury, Venus) via signed
+    // eccentricity internally — we just pass the destination's
+    // heliocentric distance and the arc geometry flips automatically.
     const out = outboundArc(earthDep, ARC_STEPS, destA);
     if (!isFreeReturn) return { out, ret: [] };
     // Free-return is Mars-only by design (ORRERY DEMO scenario):
@@ -294,7 +297,7 @@
     // the outbound arc. Free-return scenarios get both arcs (handled
     // by applyScenarioAsLoaded).
     const totalT = m.transit_days || 250;
-    const flybyOffset = Math.floor(totalT * 0.95);
+    const flybyOffset = Math.floor(totalT * FLYBY_OFFSET_FRACTION);
     const dvTotal = parseDeltaV(m.delta_v, defaultScenarioBase.dv_total_km_s);
     // Fall back to the default scenario's dep_day if the mission's
     // departure_date is missing or unparseable (defence in depth —
@@ -360,13 +363,22 @@
    * chosen destination instead of falling through to the ORRERY DEMO
    * scenario. Per ADR-026 §FLY-button experience.
    */
+  /** Closest-approach moment as a fraction of total transit time. The
+   *  arc renders the spacecraft's flyby position at this offset. 0.95
+   *  is a teaching simplification — actual closest-approach varies
+   *  per Lambert solution but isn't returned by the pre-computed grid
+   *  or the synthesised /plan-driven path. Document'd here so a future
+   *  improvement (real closest-approach from the solver) has a single
+   *  knob to update. */
+  const FLYBY_OFFSET_FRACTION = 0.95;
+
   function applyPlanSelection(
     dest: DestinationId,
     type: 'LANDING' | 'FLYBY',
     depDay: number,
     tofDays: number,
   ) {
-    const flybyOffset = Math.floor(tofDays * 0.95);
+    const flybyOffset = Math.floor(tofDays * FLYBY_OFFSET_FRACTION);
     const newTimeline: MissionTimeline = {
       dep_day: depDay,
       flyby_day: depDay + flybyOffset,
@@ -404,10 +416,18 @@
     const myLoadId = ++currentLoadId;
 
     // /plan-driven entry: dest + dep + tof set, no mission. Synthesise
-    // an outbound-only arc to the chosen destination.
-    if (!id && destParam && destParam in DESTINATIONS && depParam !== null && tofParam !== null) {
+    // an outbound-only arc to the chosen destination. URL params are
+    // inherently untyped strings, so we narrow with hasOwnProperty
+    // before casting to DestinationId.
+    if (
+      !id &&
+      destParam &&
+      Object.prototype.hasOwnProperty.call(DESTINATIONS, destParam) &&
+      depParam !== null &&
+      tofParam !== null
+    ) {
       const dest = destParam as DestinationId;
-      const type = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
+      const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
       const depDay = Number(depParam);
       const tofDays = Number(tofParam);
       if (Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0) {

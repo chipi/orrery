@@ -26,3 +26,22 @@ a {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 2px;
 }
+
+/* ADR-025 tier-1 — global reduced-motion catch-all.
+ *
+ * Canvas screens (/explore, /fly, /moon, /earth) gate their unsolicited
+ * motion in JS via `$lib/reduced-motion`. This rule covers the
+ * non-canvas screens (/plan, /missions) where hover transitions and
+ * any future CSS animations should also collapse when the OS
+ * preference is set. User-initiated motion (drag, scroll) is unaffected.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

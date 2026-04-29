@@ -1,15 +1,26 @@
 /**
  * Lambert worker — runs the porkchop computation off the main thread (ADR-008).
  *
- * Protocol per RFC-003, locked in ADR-022 (2026-04-28):
- *   Main → Worker: { id, depRange, arrRange, steps }
+ * **DORMANT as of v0.1.6 (ADR-026).** The 5 default destinations
+ * (Mercury, Venus, Mars, Jupiter, Saturn) ship with pre-computed grids
+ * at `static/data/porkchop/`, so /plan loads them directly via
+ * `$lib/data#getPorkchopGrid` without spinning up a worker. This file
+ * is preserved for future custom-range computation (e.g. user-driven
+ * date-range editor outside the [0, 1460]d default window) — when
+ * such a feature lands, /plan can re-import via Vite's `?worker`
+ * suffix:
+ *
+ *   import LambertWorker from '$workers/lambert.worker?worker';
+ *
+ * Protocol per RFC-003 + ADR-022, generalised by ADR-026:
+ *   Main → Worker: { id, depRange, arrRange, steps, destinationId? }
  *   Worker → Main: { id, progress }                        (every 10 rows)
  *   Worker → Main: { id, grid, depDays, arrDays }          (final result)
  *
- * Cancellation by monotonic id: if a new request arrives mid-computation,
- * the worker compares its current id against the latest request and bails
- * before posting stale results. The main thread also checks the id on
- * received messages and discards anything not matching the current request.
+ * `destinationId` defaults to 'mars' for back-compat with the
+ * pre-v0.1.6 contract. Cancellation by monotonic id: if a new request
+ * arrives mid-computation, the worker compares its current id against
+ * the latest request and bails before posting stale results.
  *
  * The actual grid math lives in `$lib/lambert-grid.ts` so it can be
  * unit-tested without a Worker context. This file is the thin shell

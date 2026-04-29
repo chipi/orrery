@@ -5,6 +5,7 @@
   import { getMoonSites } from '$lib/data';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere, latLonToEquirect } from '$lib/moon-projection';
+  import { categoriseMoonMarker } from '$lib/moon-marker-category';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -119,30 +120,130 @@
     );
     scene.add(moonMesh);
 
-    // Site markers — small spheres anchored on the surface, lifted
-    // slightly (1.04× radius) so they don't z-fight with the texture.
-    type MarkerObj = { mesh: THREE.Mesh; siteId: string };
+    // Site markers — per-category geometry, anchored on the surface,
+    // parented to moonMesh so they rotate with the sphere (post-v0.1.0
+    // fix: previously markers floated in scene-space while the moon
+    // spun underneath, breaking spatial reference). Markers are
+    // tangent-aligned via lookAt(origin) so they "stand up" from the
+    // surface instead of pointing along world axes.
+    type MarkerObj = { group: THREE.Group; siteId: string };
     const markers: MarkerObj[] = [];
+
+    function buildMarkerForCategory(
+      category: ReturnType<typeof categoriseMoonMarker>,
+      color: string,
+    ): THREE.Group {
+      const group = new THREE.Group();
+      const mat = new THREE.MeshPhongMaterial({
+        color,
+        shininess: 30,
+        emissive: color,
+        emissiveIntensity: 0.15,
+      });
+      const baseMat = new THREE.MeshPhongMaterial({ color: 0xeeeeee, shininess: 20 });
+      switch (category) {
+        case 'crewed': {
+          // Tall lunar-module-style cone + small flag pole. Largest of all.
+          const body = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1.4, 6), mat);
+          body.position.y = 0.7;
+          group.add(body);
+          const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.0, 4), baseMat);
+          pole.position.set(0.55, 0.5, 0);
+          group.add(pole);
+          const flag = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.25, 0.02), mat);
+          flag.position.set(0.78, 0.9, 0);
+          group.add(flag);
+          break;
+        }
+        case 'rover': {
+          // Squat box-on-wheels — low profile.
+          const body = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.35, 0.5), mat);
+          body.position.y = 0.3;
+          group.add(body);
+          for (const dx of [-0.3, 0.3]) {
+            for (const dz of [-0.2, 0.2]) {
+              const wheel = new THREE.Mesh(
+                new THREE.SphereGeometry(0.12, 6, 6),
+                new THREE.MeshPhongMaterial({ color: 0x222222 }),
+              );
+              wheel.position.set(dx, 0.12, dz);
+              group.add(wheel);
+            }
+          }
+          break;
+        }
+        case 'sample-return': {
+          // Lander base + vertical return-trail spike rising above.
+          const base = new THREE.Mesh(new THREE.OctahedronGeometry(0.45), mat);
+          base.position.y = 0.45;
+          group.add(base);
+          const spike = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.02, 0.08, 1.4, 6),
+            new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.65 }),
+          );
+          spike.position.y = 1.5;
+          group.add(spike);
+          break;
+        }
+        case 'orbiter': {
+          // Hovering torus above the surface — never touched down.
+          const ring = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.1, 6, 16), mat);
+          ring.position.y = 1.5;
+          ring.rotation.x = Math.PI / 2;
+          group.add(ring);
+          // A faint dashed line down to the surface to anchor it visually.
+          const tether = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.02, 0.02, 1.5, 4),
+            new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.25 }),
+          );
+          tether.position.y = 0.75;
+          group.add(tether);
+          break;
+        }
+        default: {
+          // 'lander' — octahedron probe.
+          const body = new THREE.Mesh(new THREE.OctahedronGeometry(0.55), mat);
+          body.position.y = 0.55;
+          group.add(body);
+          const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.6, 4), baseMat);
+          antenna.position.y = 1.2;
+          group.add(antenna);
+          break;
+        }
+      }
+      return group;
+    }
+
     function rebuildMarkers() {
-      // Clear old
       for (const mk of markers) {
-        mk.mesh.geometry.dispose();
-        if (!Array.isArray(mk.mesh.material)) mk.mesh.material.dispose();
-        scene.remove(mk.mesh);
+        mk.group.traverse((obj) => {
+          if (obj instanceof THREE.Mesh) {
+            obj.geometry?.dispose();
+            if (Array.isArray(obj.material)) obj.material.forEach((m) => m.dispose());
+            else obj.material?.dispose();
+          }
+        });
+        moonMesh.remove(mk.group);
       }
       markers.length = 0;
       for (const site of sites) {
         const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
-        const r = moonRadius * 1.03;
-        const color = colorFor(site);
-        const mesh = new THREE.Mesh(
-          new THREE.SphereGeometry(0.6, 12, 12),
-          new THREE.MeshBasicMaterial({ color }),
-        );
-        mesh.position.set(x * r, y * r, z * r);
-        mesh.userData = { siteId: site.id };
-        scene.add(mesh);
-        markers.push({ mesh, siteId: site.id });
+        const r = moonRadius;
+        const category = categoriseMoonMarker(site.mission_type);
+        const group = buildMarkerForCategory(category, colorFor(site));
+        // Anchor on the surface; orient the group so +Y points away from
+        // Moon centre (radially outward), so cone-style markers stand up.
+        group.position.set(x * r, y * r, z * r);
+        const up = new THREE.Vector3(x, y, z);
+        const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
+        group.quaternion.copy(quat);
+        group.userData = { siteId: site.id };
+        // Make every child mesh pickable by raycasting against the group.
+        group.traverse((obj) => {
+          if (obj instanceof THREE.Mesh) obj.userData = { siteId: site.id };
+        });
+        moonMesh.add(group);
+        markers.push({ group, siteId: site.id });
       }
     }
 
@@ -175,8 +276,8 @@
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const hits = ray.intersectObjects(
-        markers.map((mk) => mk.mesh),
-        false,
+        markers.map((mk) => mk.group),
+        true,
       );
       const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
       if (hit) selectSite(hit.object.userData.siteId as string);

@@ -144,6 +144,16 @@
   // tearing down the whole scene.
   let outLine: THREE.Line | undefined;
   let retLine: THREE.Line | undefined;
+  // Camera reset callback assigned inside onMount; applyMissionAsLoaded /
+  // applyPlanSelection call it so each new mission gets a fresh frame
+  // showing the new launch + arrival positions.
+  let resetCamera: (() => void) | undefined;
+  // Departure + arrival markers — per-mission fixed rings at Earth's
+  // position on dep_day and Mars's (or destination's) position on
+  // arr_day. Updated whenever a new mission loads so each mission has
+  // a visibly distinct anchor pair, not just a different arc curve.
+  let depMarker: THREE.Mesh | undefined;
+  let arrMarker: THREE.Mesh | undefined;
   const SCALE_3D = 80;
 
   // Update the Three.js Line geometry whenever the arc-point arrays
@@ -160,6 +170,17 @@
     // tick will re-clamp it next paint.
     retLine.geometry.dispose();
     retLine.geometry = new THREE.BufferGeometry().setFromPoints(retVecs);
+  });
+
+  // Position the per-mission DEPARTURE + ARRIVAL anchor rings
+  // whenever arcTimeline or activeDestination changes. The rings are
+  // created in onMount; this effect is a no-op until they exist.
+  $effect(() => {
+    if (!depMarker || !arrMarker) return;
+    const dep = earthPos(arcTimeline.dep_day);
+    const arr = destinationPos(arcTimeline.arr_day, activeDestination);
+    depMarker.position.set(dep.x * SCALE_3D, 0, dep.z * SCALE_3D);
+    arrMarker.position.set(arr.x * SCALE_3D, 0, arr.z * SCALE_3D);
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -306,9 +327,11 @@
     };
     arcTimeline = newTimeline;
     isFreeReturn = false;
+    activeDestination = 'mars';
     const arcs = buildArcs(newTimeline, false);
     outPts = arcs.out;
     retPts = arcs.ret;
+    resetCamera?.();
     mission = {
       name: m.name ?? m.id,
       vehicle: m.vehicle ?? '—',
@@ -385,6 +408,7 @@
     const arcs = buildArcs(newTimeline, false, dest);
     outPts = arcs.out;
     retPts = arcs.ret;
+    resetCamera?.();
     const destLabel = dest.charAt(0).toUpperCase() + dest.slice(1);
     mission = {
       name: `EARTH → ${destLabel.toUpperCase()} · ${type}`,
@@ -640,6 +664,36 @@
     returnRing.visible = false;
     scene.add(returnRing);
 
+    // DEPARTURE + ARRIVAL anchor markers (v0.1.8) — fixed rings at
+    // Earth-on-departure-day and destination-on-arrival-day. These
+    // make each mission visually distinct: even when two Mars missions
+    // have similar Hohmann arcs, the launch + landing positions sit
+    // at different points on the planets' orbits depending on when
+    // the mission was launched. Updated by a $effect when arcTimeline
+    // / activeDestination changes.
+    depMarker = new THREE.Mesh(
+      new THREE.TorusGeometry(3.0, 0.22, 8, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0x4b9cd3,
+        transparent: true,
+        opacity: 0.65,
+        depthWrite: false,
+      }),
+    );
+    depMarker.rotation.x = Math.PI / 2;
+    scene.add(depMarker);
+    arrMarker = new THREE.Mesh(
+      new THREE.TorusGeometry(3.0, 0.22, 8, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0xc1440e,
+        transparent: true,
+        opacity: 0.65,
+        depthWrite: false,
+      }),
+    );
+    arrMarker.rotation.x = Math.PI / 2;
+    scene.add(arrMarker);
+
     // Camera
     let camR = 360;
     let camP = 1.05;
@@ -653,6 +707,18 @@
       camera.lookAt(0, 0, 0);
     };
     updateCam();
+
+    // Expose a camera-reset callback so applyMissionAsLoaded /
+    // applyPlanSelection can frame each new mission afresh. Restoring
+    // (camR, camP, camT) to the initial values gives a consistent
+    // wide overhead frame regardless of how the user had panned the
+    // last mission.
+    resetCamera = () => {
+      camR = 360;
+      camP = 1.05;
+      camT = 0.6;
+      updateCam();
+    };
 
     const el3d = renderer.domElement;
     let isDrag = false;

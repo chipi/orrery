@@ -381,6 +381,17 @@
     if (!_maybeCtx) throw new Error('2D context unavailable');
     const ctx2: CanvasRenderingContext2D = _maybeCtx;
 
+    // Apollo 17 Blue Marble photo for the 2D Earth disc (v0.1.9).
+    // Replaces the previous blue radial gradient. Async load; falls
+    // back to the gradient until ready.
+    const earthDiscImg = new Image();
+    earthDiscImg.src = `${base}/textures/earth_disc.jpg`;
+    let earthDiscReady = false;
+    earthDiscImg.onload = () => {
+      earthDiscReady = true;
+      if (view === '2d') draw2d();
+    };
+
     function draw2d() {
       if (c2.width !== c2.clientWidth || c2.height !== c2.clientHeight) {
         c2.width = c2.clientWidth;
@@ -432,14 +443,29 @@
         ctx2.fillText(o.regime, cx + r + 4, cy);
       }
 
-      // Earth disc
-      const eg = ctx2.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, EARTH_RADIUS * pxPerUnit);
-      eg.addColorStop(0, '#6ab8e8');
-      eg.addColorStop(1, '#0d3050');
+      // Earth disc — Apollo 17 Blue Marble clipped to a circle, with
+      // a gradient fallback while the image loads.
+      const earthR = EARTH_RADIUS * pxPerUnit;
+      ctx2.save();
       ctx2.beginPath();
-      ctx2.arc(cx, cy, EARTH_RADIUS * pxPerUnit, 0, Math.PI * 2);
-      ctx2.fillStyle = eg;
-      ctx2.fill();
+      ctx2.arc(cx, cy, earthR, 0, Math.PI * 2);
+      ctx2.clip();
+      if (earthDiscReady && earthDiscImg.naturalWidth > 0) {
+        ctx2.drawImage(earthDiscImg, cx - earthR, cy - earthR, earthR * 2, earthR * 2);
+      } else {
+        const eg = ctx2.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, earthR);
+        eg.addColorStop(0, '#6ab8e8');
+        eg.addColorStop(1, '#0d3050');
+        ctx2.fillStyle = eg;
+        ctx2.fillRect(cx - earthR, cy - earthR, earthR * 2, earthR * 2);
+      }
+      ctx2.restore();
+      // Limb shadow ring
+      ctx2.beginPath();
+      ctx2.arc(cx, cy, earthR + 0.5, 0, Math.PI * 2);
+      ctx2.strokeStyle = 'rgba(255,255,255,0.12)';
+      ctx2.lineWidth = 1;
+      ctx2.stroke();
 
       // Moon disc + label
       const moonRpx = altToOrbitRadius(MOON_DISTANCE_KM) * pxPerUnit;

@@ -221,12 +221,12 @@ async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// LUNAR DISC PHOTOS — v0.1.8
+// PLANET DISC PHOTOS — v0.1.8 + v0.1.9
 //
-// Square disc shots of each lunar hemisphere, used by /moon's 2D
-// orthographic view as the disc background (replacing the previous
-// grey gradient). Fetched via Wikimedia Special:FilePath?width=800
-// to keep file size manageable.
+// Square disc shots used as 2D-mode disc backgrounds on /moon
+// (replacing the previous grey gradient) and /earth (replacing the
+// blue radial gradient). Fetched via Wikimedia Special:FilePath?width=800
+// to keep file sizes manageable.
 // ──────────────────────────────────────────────────────────────────────
 
 const LUNAR_DISC_PHOTOS: { id: string; filename: string; license: string }[] = [
@@ -239,6 +239,11 @@ const LUNAR_DISC_PHOTOS: { id: string; filename: string; license: string }[] = [
     id: 'moon_far',
     filename: 'Moon_Farside_LRO.jpg',
     license: 'Public domain (NASA LRO)',
+  },
+  {
+    id: 'earth_disc',
+    filename: 'The_Blue_Marble,_AS17-148-22727.jpg',
+    license: 'Public domain (NASA Apollo 17 — AS17-148-22727)',
   },
 ];
 

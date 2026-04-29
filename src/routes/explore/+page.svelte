@@ -164,9 +164,72 @@
     color: string;
     mission_visited: string | null;
   };
-  const SMALL_BODIES: SmallBody[] = (smallBodiesData.bodies as SmallBody[]).filter(
-    (b) => b.type !== 'interstellar', // Oumuamua's hyperbolic trajectory needs special handling, skip for now
-  );
+  const SMALL_BODIES: SmallBody[] = smallBodiesData.bodies as SmallBody[];
+
+  /**
+   * Sample points along a body's trajectory in heliocentric AU-pixel
+   * coordinates. Closed elliptic orbits return a full ring; hyperbolic
+   * (interstellar) trajectories return an open curve over the valid
+   * true-anomaly interval (where 1 + e·cos ν > 0).
+   *
+   * Used by both 2D and 3D rendering. Pure function — `auToPx` is the
+   * only side-input.
+   */
+  function sampleOrbitPoints(b: SmallBody, steps: number): { x: number; z: number }[] {
+    const pts: { x: number; z: number }[] = [];
+    const cosL = Math.cos(b.L0);
+    const sinL = Math.sin(b.L0);
+    if (b.type === 'interstellar') {
+      // Hyperbolic: r = |a|(e²-1)/(1+e·cos ν). Sample ν in the valid
+      // interval; render as an open polyline (NOT closed).
+      const absA = Math.abs(b.a);
+      const semiLatus = absA * (b.e * b.e - 1);
+      const nuMax = Math.acos(-1 / b.e) * 0.985; // shy of asymptote so we don't get +∞
+      for (let i = 0; i <= steps; i++) {
+        const nu = -nuMax + (2 * nuMax * i) / steps;
+        const rAu = semiLatus / (1 + b.e * Math.cos(nu));
+        const xL = Math.cos(nu) * auToPx(rAu);
+        const zL = Math.sin(nu) * auToPx(rAu);
+        pts.push({ x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL });
+      }
+    } else {
+      // Closed ellipse with foci offset toward Sun.
+      const semiMajor = auToPx(b.a);
+      const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
+      for (let i = 0; i <= steps; i++) {
+        const a = (i / steps) * Math.PI * 2;
+        const xL = Math.cos(a) * semiMajor - semiMajor * b.e;
+        const zL = Math.sin(a) * semiMinor;
+        pts.push({ x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL });
+      }
+    }
+    return pts;
+  }
+
+  /**
+   * Body position for a given simT (years from epoch). Interstellar
+   * bodies pin to perihelion (no time evolution — they passed through
+   * once in 2017 and are gone). Closed orbits advance with simT.
+   */
+  function smallBodyPosition(b: SmallBody, simT: number): { x: number; z: number } {
+    const cosL = Math.cos(b.L0);
+    const sinL = Math.sin(b.L0);
+    if (b.type === 'interstellar') {
+      // Pin at perihelion (ν=0): a fixed teaching marker.
+      const absA = Math.abs(b.a);
+      const semiLatus = absA * (b.e * b.e - 1);
+      const rAu = semiLatus / (1 + b.e); // ν=0
+      const xL = auToPx(rAu);
+      return { x: xL * cosL, z: xL * sinL };
+    }
+    const semiMajor = auToPx(b.a);
+    const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
+    const Tyr = b.T / 365.25;
+    const ang = b.L0 + simT * ((2 * Math.PI) / Tyr);
+    const xL = Math.cos(ang) * semiMajor - semiMajor * b.e;
+    const zL = Math.sin(ang) * semiMinor;
+    return { x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL };
+  }
 
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
@@ -394,28 +457,20 @@
       body: SmallBody;
     };
     const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES.map((b) => {
-      const semiMajor = auToPx(b.a);
-      const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
-      // Orbit ellipse — sample 128 points on the body-frame ellipse,
-      // shift by foci offset toward the Sun, rotate by L0.
-      const cosL = Math.cos(b.L0);
-      const sinL = Math.sin(b.L0);
-      const orbitPts: THREE.Vector3[] = [];
-      for (let i = 0; i <= 128; i++) {
-        const a = (i / 128) * Math.PI * 2;
-        const xL = Math.cos(a) * semiMajor - semiMajor * b.e;
-        const zL = Math.sin(a) * semiMinor;
-        orbitPts.push(new THREE.Vector3(xL * cosL - zL * sinL, 0, xL * sinL + zL * cosL));
-      }
+      // Orbit path — closed ellipse for dwarf/comet, open hyperbola
+      // for interstellar bodies. Use Line (open) for interstellar so
+      // the trajectory doesn't visually close back on itself.
+      const orbitPts = sampleOrbitPoints(b, 128).map((p) => new THREE.Vector3(p.x, 0, p.z));
+      const trajColor =
+        b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c;
+      const TrajCtor = b.type === 'interstellar' ? THREE.Line : THREE.LineLoop;
       scene.add(
-        new THREE.LineLoop(
+        new TrajCtor(
           new THREE.BufferGeometry().setFromPoints(orbitPts),
-          new THREE.LineDashedMaterial({
-            color: b.type === 'comet' ? 0x88ddff : 0xc8b48c,
+          new THREE.LineBasicMaterial({
+            color: trajColor,
             transparent: true,
-            opacity: 0.22,
-            dashSize: 4,
-            gapSize: 8,
+            opacity: b.type === 'interstellar' ? 0.4 : 0.22,
             depthWrite: false,
           }),
         ),
@@ -888,28 +943,28 @@
         ctx2.stroke();
       });
 
-      // Small-body orbit rings (dwarf planets + comets) — dashed line
-      // distinguishes them from major planets. Comets get a more
-      // eccentric ellipse since their `e` is meaningful (Halley 0.967).
+      // Small-body orbit paths — closed dashed ellipses for dwarfs and
+      // comets, open hyperbola for interstellar (Oumuamua). Uses
+      // sampleOrbitPoints so the math stays consistent with 3D mode.
       SMALL_BODIES.forEach((b) => {
-        const semiMajorPx = auToPx(b.a);
-        const semiMinorPx = semiMajorPx * Math.sqrt(1 - b.e * b.e);
+        const pts = sampleOrbitPoints(b, 96);
         ctx2.save();
-        // Approximate orbit orientation by L0 + small inclination tilt
-        ctx2.rotate(b.L0);
         ctx2.beginPath();
-        ctx2.ellipse(
-          -semiMajorPx * b.e, // foci offset toward Sun
-          0,
-          semiMajorPx,
-          semiMinorPx,
-          0,
-          0,
-          Math.PI * 2,
-        );
-        ctx2.strokeStyle = b.type === 'comet' ? 'rgba(136,221,255,0.18)' : 'rgba(200,180,140,0.14)';
-        ctx2.lineWidth = 0.6;
-        ctx2.setLineDash([3, 6]);
+        for (let i = 0; i < pts.length; i++) {
+          if (i === 0) ctx2.moveTo(pts[i].x, pts[i].z);
+          else ctx2.lineTo(pts[i].x, pts[i].z);
+        }
+        if (b.type === 'interstellar') {
+          // Open hyperbolic trajectory — solid faint orange.
+          ctx2.strokeStyle = 'rgba(255,136,102,0.45)';
+          ctx2.lineWidth = 0.8;
+        } else {
+          ctx2.strokeStyle =
+            b.type === 'comet' ? 'rgba(136,221,255,0.18)' : 'rgba(200,180,140,0.14)';
+          ctx2.lineWidth = 0.6;
+          ctx2.setLineDash([3, 6]);
+          ctx2.closePath();
+        }
         ctx2.stroke();
         ctx2.setLineDash([]);
         ctx2.restore();
@@ -1097,24 +1152,11 @@
         ctx2.restore();
       });
 
-      // Small bodies — dots + labels at compressed positions. Position
-      // is approximated as Keplerian on each body's own ellipse with
-      // L0 phase + simT advancing by the body's period. Dwarf planets
-      // get a 2px dot, comets get a tiny tail in the direction of
-      // anti-solar motion.
+      // Small bodies — dots + labels. Closed-orbit bodies advance with
+      // simT; interstellar visitors stay pinned at perihelion (since
+      // they passed through once and are gone).
       SMALL_BODIES.forEach((b) => {
-        const semiMajorPx = auToPx(b.a);
-        const semiMinorPx = semiMajorPx * Math.sqrt(1 - b.e * b.e);
-        // Period in years (T is in days in the JSON)
-        const Tyr = b.T / 365.25;
-        const ang = b.L0 + simT * ((2 * Math.PI) / Tyr);
-        // Body-frame ellipse → world-frame via L0 rotation + foci offset
-        const xLocal = Math.cos(ang) * semiMajorPx - semiMajorPx * b.e;
-        const yLocal = Math.sin(ang) * semiMinorPx;
-        const cosL = Math.cos(b.L0);
-        const sinL = Math.sin(b.L0);
-        const px = xLocal * cosL - yLocal * sinL;
-        const py = xLocal * sinL + yLocal * cosL;
+        const { x: px, z: py } = smallBodyPosition(b, simT);
 
         // Glow
         const gl = ctx2.createRadialGradient(px, py, 0, px, py, 6);
@@ -1213,20 +1255,11 @@
           if (!reducedMotion) mesh.rotation.y += 0.005;
         });
 
-        // Small bodies — same Keplerian-ellipse math as the 2D path,
-        // applied to the 3D meshes. Comet tails get rebuilt per-frame
-        // pointing anti-solar from the body's current position.
+        // Small bodies — closed ellipse advance for dwarfs/comets,
+        // pinned-to-perihelion for interstellar visitors (Oumuamua).
+        // Comet tails recompute per-frame pointing anti-solar.
         smallBodyObjs.forEach(({ mesh, tail, body }) => {
-          const semiMajor = auToPx(body.a);
-          const semiMinor = semiMajor * Math.sqrt(1 - body.e * body.e);
-          const Tyr = body.T / 365.25;
-          const ang = body.L0 + simT * ((2 * Math.PI) / Tyr);
-          const cosL = Math.cos(body.L0);
-          const sinL = Math.sin(body.L0);
-          const xL = Math.cos(ang) * semiMajor - semiMajor * body.e;
-          const zL = Math.sin(ang) * semiMinor;
-          const px = xL * cosL - zL * sinL;
-          const pz = xL * sinL + zL * cosL;
+          const { x: px, z: pz } = smallBodyPosition(body, simT);
           mesh.position.set(px, 0, pz);
 
           if (tail) {

@@ -125,36 +125,63 @@ The production build extracts, connects, and deploys what the prototypes demonst
 
 ---
 
-## Slice 5 — Earth Orbit + Moon Map
+## Slice 5 — Earth Orbit + Moon Map ✅ COMPLETE
 
 *Goal: `/earth` and `/moon` as production screens. All assets local.*
 
-**Deliverables:**
-- `src/routes/earth/+page.svelte` — Earth Orbit logarithmic scale viewer
-- `src/routes/moon/+page.svelte` — Moon Map 3D sphere + 2D flat map
-- Moon site data in `data/moon-sites.json` with i18n overlays
-- Earth orbit objects from `data/earth-objects.json`
-- Mobile: touch orbit on 3D sphere, bottom sheet for site/object detail
-- Playwright e2e: all six screens load without console errors
+**Status (2026-04-29):** complete. Issue #5 closed. Both screens live at https://chipi.github.io/orrery/.
+
+**What landed:**
+- ✅ `src/routes/earth/+page.svelte` — vertical Canvas 2D, log-scale via `altToVis()`, regime bands (LEO/MEO/GEO/HEO/MOON/L2) derived from data, click → Panel with the `scale_fact` italic block per PRD-005
+- ✅ `src/routes/moon/+page.svelte` — Three.js textured sphere using existing `2k_moon.jpg`, 16 site markers as small coloured spheres on a 1.03× shell to avoid z-fighting, equirectangular 2D flat map with lat/lon grid + nation legend, "STILL ON THE SURFACE" block per UXS-006
+- ✅ `getEarthObjects(locale)` + `getMoonSites(locale)` in data.ts merging with overlays (already present from Slice 2)
+- ✅ Touch: drag-to-orbit + two-finger pinch-zoom on the 3D sphere; click hit-test on 2D
+- ✅ 14 new e2e tests (`tests/e2e/{earth,moon}.spec.ts`): pixel-sample regression, click → panel flow, "STILL ON THE SURFACE" block visible, zero console errors
+
+**Variances:** 2D moon map uses a colour-fill background instead of an equirectangular texture (UXS-006 left this open; the fill keeps the asset surface simple — a flat-projection moon texture could be added in v2 if needed).
 
 ---
 
-## Slice 6 — Polish and ship
+## Slice 6 — Polish and ship ✅ COMPLETE
 
 *Goal: fully offline, accessible, production-ready, v1.0 tagged.*
 
-**Deliverables:**
-- `prefers-reduced-motion` respected across all Three.js animations
-- ARIA roles and keyboard navigation on nav bar, panels, mission library
-- Weekly GitHub Actions schedule: rebuild to refresh NASA mission imagery
-- `scripts/validate-data.ts` extended with Markdown doc-system checks (§18 checklist)
-- Dependabot enabled for npm security updates
-- README updated with install, dev, build, deploy instructions
-- `v1.0.0` tag — production deployment decision made and executed
+**Status (2026-04-29):** complete. v1.0.0 tagged and pushed. Live at https://chipi.github.io/orrery/.
 
-**RFC gates:** RFC-005 closes (accessibility approach confirmed)
+**What landed:**
+- ✅ `prefers-reduced-motion` honoured on /explore (sim freezes), /fly (auto-play defaults off), /moon (auto-rotate stops). User-initiated drag still works. Helper in `src/lib/reduced-motion.ts`.
+- ✅ Nav: `<nav aria-label={m.nav_aria_label()}>`, focus-visible globally
+- ✅ Panel: focus management (close-button on open, restore on close), Escape closes
+- ✅ Tab strip ARIA: `role="tablist"` / `role="tab"` (with `aria-selected`, `id`, `aria-controls`) / `role="tabpanel"` (with `id`, `aria-labelledby`) on PlanetPanel + SunPanel + MissionPanel
+- ✅ Filter pills (`role="radiogroup"` / `role="radio"` / `aria-checked`)
+- ✅ Canvas screens: honest aria-labels directing screen-reader users to the panel
+- ✅ Live regions: hover tooltip (status/polite), HUD phase changes (status/polite), load-failure banners (alert)
+- ✅ 44 × 44 px touch targets across every interactive element
+- ✅ `prefers-reduced-motion` weekly rebuild cron in `.github/workflows/preview.yml` (Mon 06:00 UTC)
+- ✅ Dependabot config (`.github/dependabot.yml`) — npm + github-actions, weekly, versioning-strategy=increase-if-necessary so Three.js r128 doesn't bump unattended
+- ✅ Doc-system gating-sentence checks in `scripts/validate-data.ts` — every PRD has "Why this is a PRD", every RFC has "Why this is an RFC", every ADR has `> Status ·`
+- ✅ README rewritten with Live link + Getting Started / Development / Build / Deploy sections
+- ✅ `v1.0.0` tagged
 
-**ADR from RFC-005 closure written at this slice**
+**RFCs closed at this slice:** RFC-005 → ADR-025 (accessibility tier-1 contract). All six RFCs from the original concept package are now closed.
+
+**Tier-2 work explicitly deferred to v2** per ADR-025:
+- Canvas-object keyboard navigation (tabbing between planets/missions/sites within a canvas)
+- Full screen-reader description of canvas content
+- High-contrast mode
+- Locales other than en-US (architecture is in place — content task)
+- PWA manifest + service worker
+
+---
+
+## Final state at v1.0.0
+
+- **Six screens shipping**, all in production at https://chipi.github.io/orrery/
+- **111 unit tests** + **87 e2e tests** (1 mobile-only skip), all green
+- **108 data files** ajv-schema-validated
+- **25 ADRs** locked, **6 RFCs** closed (RFC-001 → ADR-013, RFC-002 → ADR-020, RFC-003 → ADR-022, RFC-004 → ADR-024, RFC-005 → ADR-025, RFC-006 → ADR-023)
+- **TA.md at v1.7**
+- Tagged `v1.0.0`
 
 ---
 

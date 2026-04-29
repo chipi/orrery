@@ -7,6 +7,7 @@ import {
   filterMissions,
   planets,
   getPlanets,
+  getSun,
   rockets,
   earthObjects,
   moonSites,
@@ -189,6 +190,24 @@ describe('getPlanets', () => {
     expect(list).toHaveLength(8);
     expect(list[2].id).toBe('earth');
     expect(list[2].fact).toContain('Every human');
+  });
+});
+
+describe('getSun', () => {
+  it('returns Sun astrophysical figures + en-US overlay', async () => {
+    const sun = await getSun();
+    expect(sun.spectral_class).toBe('G2V');
+    expect(sun.mass_fraction_pct).toBeCloseTo(99.86, 2);
+    expect(sun.surface_temp_k).toBe(5778);
+    expect(sun.name).toBe('The Sun');
+    expect(sun.fact).toContain('99.86');
+    expect(sun.bio).toContain('main-sequence');
+  });
+
+  it('falls back to en-US for missing locale', async () => {
+    const sun = await getSun('fr');
+    expect(sun.name).toBe('The Sun');
+    expect(sun.spectral_class).toBe('G2V');
   });
 });
 

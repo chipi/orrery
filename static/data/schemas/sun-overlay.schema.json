@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sun-overlay.schema.json",
+  "title": "SunOverlay",
+  "description": "Editorial overlay for the Sun per locale (ADR-017). One file at data/i18n/[locale]/sun.json. Merged with sun.json at fetch time.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "type", "fact", "bio"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line classification (e.g., \"STAR · G-type main sequence\")."
+    },
+    "fact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-paragraph editorial summary surfaced in the OVERVIEW tab."
+    },
+    "bio": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Editorial paragraph contextualising the astrophysical figures shown in the TECHNICAL tab."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sun.schema.json",
+  "title": "Sun",
+  "description": "Astrophysical figures for the Sun. Distinct from planets.json because the Sun is not a planet — it has no orbital parameters around the solar-system barycentre relevant at this scale. Locale overlay (sun-overlay.schema.json) carries the editorial strings.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mass_kg",
+    "radius_km",
+    "luminosity_w",
+    "surface_temp_k",
+    "core_temp_k",
+    "age_gyr",
+    "axial_tilt",
+    "equatorial_rot_days",
+    "polar_rot_days",
+    "spectral_class",
+    "absolute_magnitude",
+    "mass_fraction_pct"
+  ],
+  "properties": {
+    "mass_kg": { "type": "number", "exclusiveMinimum": 0 },
+    "radius_km": { "type": "number", "exclusiveMinimum": 0 },
+    "luminosity_w": { "type": "number", "exclusiveMinimum": 0 },
+    "surface_temp_k": { "type": "number", "exclusiveMinimum": 0 },
+    "core_temp_k": { "type": "number", "exclusiveMinimum": 0 },
+    "age_gyr": { "type": "number", "exclusiveMinimum": 0 },
+    "axial_tilt": {
+      "type": "number",
+      "description": "Tilt of the rotation axis to the ecliptic, degrees."
+    },
+    "equatorial_rot_days": {
+      "type": "number",
+      "description": "Sidereal rotation period at the equator, days. The Sun rotates differentially."
+    },
+    "polar_rot_days": {
+      "type": "number",
+      "description": "Sidereal rotation period near the poles, days."
+    },
+    "spectral_class": { "type": "string", "minLength": 1 },
+    "absolute_magnitude": { "type": "number" },
+    "mass_fraction_pct": {
+      "type": "number",
+      "description": "Percent of the solar system's mass contained in the Sun (~99.86)."
+    }
+  }
+}

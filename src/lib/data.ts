@@ -9,6 +9,7 @@
 import { base } from '$app/paths';
 import type { Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
+import type { LocalizedSun, Sun, SunOverlay } from '$types/sun';
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { MoonSite } from '$types/moon-site';
@@ -104,6 +105,22 @@ export async function earthObjects(): Promise<EarthObject[]> {
 
 export async function moonSites(): Promise<MoonSite[]> {
   return get<MoonSite[]>('moon-sites.json');
+}
+
+/**
+ * Returns the Sun's astrophysical figures merged with its locale
+ * overlay. Falls back to en-US when a locale overlay is missing.
+ */
+export async function getSun(locale = 'en-US'): Promise<LocalizedSun> {
+  const baseRecord = await get<Sun>('sun.json');
+  const overlay = await get<SunOverlay>(`i18n/${locale}/sun.json`).catch(() => null);
+  const fallback =
+    overlay ??
+    (locale === 'en-US' ? null : await get<SunOverlay>('i18n/en-US/sun.json').catch(() => null));
+  if (!fallback) {
+    throw new Error(`Missing Sun overlay (locale ${locale}, no en-US fallback)`);
+  }
+  return { ...baseRecord, ...fallback };
 }
 
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */

@@ -3,9 +3,11 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getPlanets } from '$lib/data';
+  import { getPlanets, getSun } from '$lib/data';
   import type { LocalizedPlanet } from '$types/planet';
+  import type { LocalizedSun } from '$types/sun';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
+  import SunPanel from '$lib/components/SunPanel.svelte';
 
   // ──────────────────────────────────────────────────────────────────
   // Planet visual config — compressed orbital radii & display sizes,
@@ -137,8 +139,18 @@
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let view: '3d' | '2d' = $state('3d');
   let localizedPlanets: LocalizedPlanet[] = $state([]);
+  let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
   let panelOpen = $state(false);
+  let sunPanelOpen = $state(false);
+  let hoverData: {
+    name: string;
+    velocity: string;
+    distance: string;
+    extras: string;
+    x: number;
+    y: number;
+  } | null = $state(null);
   let cleanup: (() => void) | undefined;
 
   // Lookup keyed by id; reactive to localizedPlanets.
@@ -148,10 +160,20 @@
   function selectPlanet(id: string) {
     selectedId = id;
     panelOpen = true;
+    sunPanelOpen = false;
+  }
+
+  function selectSun() {
+    sunPanelOpen = true;
+    panelOpen = false;
   }
 
   function closePanel() {
     panelOpen = false;
+  }
+
+  function closeSunPanel() {
+    sunPanelOpen = false;
   }
 
   function onPlanMission() {
@@ -163,12 +185,17 @@
   onMount(() => {
     if (!container || !canvas2d) return;
 
-    // Async-load localised planet data; safe to run alongside scene setup.
+    // Async-load localised planet + sun data; safe to run alongside scene setup.
     getPlanets()
       .then((p) => {
         localizedPlanets = p;
       })
       .catch((err) => console.error('Failed to load planets:', err));
+    getSun()
+      .then((s) => {
+        localizedSun = s;
+      })
+      .catch((err) => console.error('Failed to load sun:', err));
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene
@@ -193,12 +220,12 @@
     fill.position.set(-200, 100, -200);
     scene.add(fill);
 
-    scene.add(
-      new THREE.Mesh(
-        new THREE.SphereGeometry(18, 32, 32),
-        new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
-      ),
+    const sunMesh = new THREE.Mesh(
+      new THREE.SphereGeometry(18, 32, 32),
+      new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
     );
+    sunMesh.userData = { planetId: '__sun__' };
+    scene.add(sunMesh);
     const glowConfigs: Array<{ r: number; color: number; opacity: number }> = [
       { r: 22, color: 0xffdd66, opacity: 0.18 },
       { r: 40, color: 0xff9922, opacity: 0.08 },
@@ -356,17 +383,57 @@
 
     const ray3d = new THREE.Raycaster();
     const planetMeshes = planetObjs.map((o) => o.mesh);
+    // Sun is included so it can be picked but it's never the selectedPlanet.
+    const pickables: THREE.Object3D[] = [...planetMeshes, sunMesh];
 
     const tryPick3d = (e: MouseEvent) => {
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      const hits = ray3d.intersectObjects(planetMeshes, false);
+      const hits = ray3d.intersectObjects(pickables, false);
       const hit = hits.find((h) => typeof h.object.userData.planetId === 'string');
-      if (hit) {
-        selectPlanet(hit.object.userData.planetId as string);
+      if (!hit) return;
+      const id = hit.object.userData.planetId as string;
+      if (id === '__sun__') selectSun();
+      else selectPlanet(id);
+    };
+
+    // ── 3D hover tooltip — live vis-viva at current heliocentric r ──
+    // No planet name in the tooltip — the panel + the planet itself
+    // already carry that. Tooltip surfaces transient orbital state.
+    const ray3dHover = new THREE.Raycaster();
+    const onHover = (e: MouseEvent) => {
+      if (view !== '3d' || isDrag3d) {
+        if (hoverData) hoverData = null;
+        return;
       }
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+      ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const hits = ray3dHover.intersectObjects(planetMeshes, false);
+      if (hits.length === 0) {
+        if (hoverData) hoverData = null;
+        return;
+      }
+      const id = hits[0].object.userData.planetId as string;
+      const planet = planetById.get(id);
+      if (!planet) return;
+      // r ≈ a (mean distance approximation; the visual orbit is circular).
+      // mu_sun ≈ 4π² in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
+      const v = Math.sqrt(4 * Math.PI ** 2 * (2 / planet.a - 1 / planet.a)) * 4.7404;
+      hoverData = {
+        name: planet.name,
+        velocity: `~${v.toFixed(2)} km/s orbital velocity`,
+        distance: `${(planet.a * 149.5978707).toFixed(0)} M km from Sun`,
+        extras: `e=${planet.e.toFixed(3)} · i=${planet.incl.toFixed(1)}° · tilt=${planet.axialTilt.toFixed(1)}°`,
+        x: e.clientX,
+        y: e.clientY,
+      };
+    };
+    const onHoverLeave = () => {
+      hoverData = null;
     };
 
     const on3dMouseDown = (e: MouseEvent) => {
@@ -449,6 +516,8 @@
     el3d.addEventListener('touchstart', on3dTouchStart, { passive: true });
     el3d.addEventListener('touchmove', on3dTouchMove, { passive: true });
     el3d.addEventListener('touchend', on3dTouchEnd);
+    el3d.addEventListener('mousemove', onHover);
+    el3d.addEventListener('mouseleave', onHoverLeave);
 
     // ──────────────────────────────────────────────────────────────
     // 2D — Canvas top-down view (pan + zoom)
@@ -496,6 +565,13 @@
       // Inverse of the canvas transform: world = (screen - centre) / zoom
       const wx = (clientX - rect.left - (W / 2 + zx2d)) / zoom2d;
       const wy = (clientY - rect.top - (H / 2 + zy2d)) / zoom2d;
+
+      // Sun first — sits at world origin, draw radius 14 + glow halo.
+      if (Math.hypot(wx, wy) < Math.max(20, 14 / zoom2d)) {
+        selectSun();
+        return;
+      }
+
       let best: { id: string; d: number } | null = null;
       for (const p of PLANETS) {
         const pos = planet2dPos.get(p.id);
@@ -626,6 +702,33 @@
         ctx2.fillStyle = `rgba(185,162,110,${0.05 + (i % 7) * 0.03})`;
         ctx2.fill();
       }
+
+      // Kuiper Belt — icy bodies beyond Neptune (30–50 AU).
+      for (let i = 0; i < 500; i++) {
+        const a = (i / 500) * Math.PI * 2 + simT * 0.003;
+        const r = 438 + (i % 44) * 0.9;
+        ctx2.beginPath();
+        ctx2.arc(Math.cos(a) * r, Math.sin(a) * r, 0.75, 0, Math.PI * 2);
+        ctx2.fillStyle = `rgba(140,160,210,${0.035 + (i % 9) * 0.018})`;
+        ctx2.fill();
+      }
+
+      // Planet Nine — hypothetical, ~600 AU. Drawn as a dashed ring with
+      // a small caption that floats above. Visible only at moderate zoom.
+      const pnR = Math.min(W, H) * 0.49;
+      ctx2.beginPath();
+      ctx2.arc(0, 0, pnR, 0, Math.PI * 2);
+      ctx2.strokeStyle = 'rgba(160,120,220,0.14)';
+      ctx2.lineWidth = 1;
+      ctx2.setLineDash([4, 9]);
+      ctx2.stroke();
+      ctx2.setLineDash([]);
+      ctx2.save();
+      ctx2.font = "7px 'Space Mono',monospace";
+      ctx2.fillStyle = 'rgba(160,120,220,0.32)';
+      ctx2.textAlign = 'center';
+      ctx2.fillText('PLANET NINE? · HYPOTHETICAL · ~600 AU', 0, -pnR - 6);
+      ctx2.restore();
 
       // Sun glow + core
       for (let r = 90; r > 0; r -= 6) {
@@ -857,6 +960,8 @@
       el3d.removeEventListener('touchstart', on3dTouchStart);
       el3d.removeEventListener('touchmove', on3dTouchMove);
       el3d.removeEventListener('touchend', on3dTouchEnd);
+      el3d.removeEventListener('mousemove', onHover);
+      el3d.removeEventListener('mouseleave', onHoverLeave);
       c2.removeEventListener('wheel', on2dWheel);
       c2.removeEventListener('mousedown', on2dMouseDown);
       window.removeEventListener('mouseup', on2dMouseUp);
@@ -898,6 +1003,18 @@
   <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
     {view === '3d' ? '2D' : '3D'}
   </button>
+
+  {#if hoverData && view === '3d'}
+    <div
+      class="tooltip"
+      style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 200)}px"
+      style:top="{Math.max(hoverData.y - 60, 60)}px"
+    >
+      <div class="tt-line">{hoverData.velocity}</div>
+      <div class="tt-line dim">{hoverData.distance}</div>
+      <div class="tt-line dim">{hoverData.extras}</div>
+    </div>
+  {/if}
 </div>
 
 <PlanetPanel
@@ -906,6 +1023,8 @@
   onClose={closePanel}
   onPlanMission={selectedPlanet?.missionable ? onPlanMission : undefined}
 />
+
+<SunPanel sun={localizedSun} open={sunPanelOpen} onClose={closeSunPanel} />
 
 <style>
   .explore {
@@ -951,5 +1070,26 @@
     border-color: #4466ff;
     background: rgba(20, 26, 50, 0.95);
     outline: none;
+  }
+  .tooltip {
+    position: absolute;
+    z-index: 24;
+    min-width: 170px;
+    pointer-events: none;
+    background: rgba(8, 10, 22, 0.92);
+    border: 1px solid rgba(68, 102, 255, 0.5);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-family: 'Space Mono', monospace;
+    backdrop-filter: blur(6px);
+  }
+  .tt-line {
+    font-size: 9px;
+    line-height: 1.5;
+    color: rgba(230, 235, 255, 0.85);
+  }
+  .tt-line.dim {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 8px;
   }
 </style>

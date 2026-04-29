@@ -384,6 +384,73 @@
       return { group, mesh, planet: p };
     });
 
+    // ── Small bodies (3D) ─────────────────────────────────────────
+    // Mirrors the 2D treatment: eccentric ellipse + foci offset + L0
+    // rotation, plus a small sphere mesh per body. Comets get a faint
+    // anti-solar tail line that updates each frame.
+    type SmallBodyObj = {
+      mesh: THREE.Mesh;
+      tail?: THREE.Line;
+      body: SmallBody;
+    };
+    const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES.map((b) => {
+      const semiMajor = auToPx(b.a);
+      const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
+      // Orbit ellipse — sample 128 points on the body-frame ellipse,
+      // shift by foci offset toward the Sun, rotate by L0.
+      const cosL = Math.cos(b.L0);
+      const sinL = Math.sin(b.L0);
+      const orbitPts: THREE.Vector3[] = [];
+      for (let i = 0; i <= 128; i++) {
+        const a = (i / 128) * Math.PI * 2;
+        const xL = Math.cos(a) * semiMajor - semiMajor * b.e;
+        const zL = Math.sin(a) * semiMinor;
+        orbitPts.push(new THREE.Vector3(xL * cosL - zL * sinL, 0, xL * sinL + zL * cosL));
+      }
+      scene.add(
+        new THREE.LineLoop(
+          new THREE.BufferGeometry().setFromPoints(orbitPts),
+          new THREE.LineDashedMaterial({
+            color: b.type === 'comet' ? 0x88ddff : 0xc8b48c,
+            transparent: true,
+            opacity: 0.22,
+            dashSize: 4,
+            gapSize: 8,
+            depthWrite: false,
+          }),
+        ),
+      );
+
+      // Body mesh — tiny coloured sphere.
+      const colorInt = parseInt(b.color.slice(1), 16);
+      const mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(b.type === 'comet' ? 1.2 : 1.8, 12, 12),
+        new THREE.MeshPhongMaterial({
+          color: colorInt,
+          emissive: colorInt,
+          emissiveIntensity: 0.5,
+        }),
+      );
+      mesh.userData = { smallBodyId: b.id };
+      scene.add(mesh);
+
+      // Comet tail (line, recomputed per frame in animate).
+      let tail: THREE.Line | undefined;
+      if (b.type === 'comet') {
+        const tailGeo = new THREE.BufferGeometry().setFromPoints([
+          new THREE.Vector3(),
+          new THREE.Vector3(),
+        ]);
+        tail = new THREE.Line(
+          tailGeo,
+          new THREE.LineBasicMaterial({ color: colorInt, transparent: true, opacity: 0.6 }),
+        );
+        scene.add(tail);
+      }
+
+      return { mesh, tail, body: b };
+    });
+
     // Selection ring (3D) — single torus reused for whichever planet is
     // selected. Hidden when nothing is selected. Pulses by modulating
     // material opacity in the animation loop.
@@ -1144,6 +1211,37 @@
           // alongside the orbit advance. The audit caught this bypass
           // in v1.0 — planets kept spinning even with simT frozen.
           if (!reducedMotion) mesh.rotation.y += 0.005;
+        });
+
+        // Small bodies — same Keplerian-ellipse math as the 2D path,
+        // applied to the 3D meshes. Comet tails get rebuilt per-frame
+        // pointing anti-solar from the body's current position.
+        smallBodyObjs.forEach(({ mesh, tail, body }) => {
+          const semiMajor = auToPx(body.a);
+          const semiMinor = semiMajor * Math.sqrt(1 - body.e * body.e);
+          const Tyr = body.T / 365.25;
+          const ang = body.L0 + simT * ((2 * Math.PI) / Tyr);
+          const cosL = Math.cos(body.L0);
+          const sinL = Math.sin(body.L0);
+          const xL = Math.cos(ang) * semiMajor - semiMajor * body.e;
+          const zL = Math.sin(ang) * semiMinor;
+          const px = xL * cosL - zL * sinL;
+          const pz = xL * sinL + zL * cosL;
+          mesh.position.set(px, 0, pz);
+
+          if (tail) {
+            const distFromSun = Math.hypot(px, pz);
+            if (distFromSun > 0) {
+              const tailLen = 12;
+              const tx = px + (px / distFromSun) * tailLen;
+              const tz = pz + (pz / distFromSun) * tailLen;
+              tail.geometry.dispose();
+              tail.geometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(px, 0, pz),
+                new THREE.Vector3(tx, 0, tz),
+              ]);
+            }
+          }
         });
 
         // Track selected planet with the 3D selection ring (lying in

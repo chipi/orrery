@@ -432,9 +432,32 @@ async function fetchMissionImage(query: string, dest: string): Promise<void> {
   throw new Error('No NASA-licensed image in first 5 results');
 }
 
+// Wikimedia fallback for missions not in NASA's library (mostly
+// non-NASA: CNSA, JAXA, ROSCOSMOS, ISRO, MBRSC). Curated filenames
+// verified to exist on Commons; CC-BY/-SA or PD licensed.
+const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
+  change5: "Chang'e_5_as_seen_by_LRO_02.png",
+  change4: 'ChangE-4_-_PCAM.png',
+  change6: "Chang'e_6_mockup_at_IAC_2024_02.jpg",
+  slim: 'M1460739214L_JAXA_SLIM_landing_site_imaged_by_Lunar_Reconnaissance_Orbiter_Camera_(LROC).png',
+  'hope-probe': 'نجاح_وصول_مسبار_الأمل_لمدار_المريخ.jpg',
+  mangalyaan: 'Mars_Orbiter_Mission_-_India_-_ArtistsConcept.jpg',
+  tianwen1: 'Orbital_trajectory_of_Tianwen-1_around_Mars.png',
+  chandrayaan3: 'Chandrayaan_3_Vikram_lander_stereo_(53167467822)_crop.png',
+  chandrayaan1: 'Chandrayaan-1-01.jpg',
+  luna9: 'Luna_9_Space_Probe_1.jpg',
+  luna24: 'Moon_map_of_sample_return_sites.png',
+};
+
+async function fetchMissionFromWikimedia(filename: string, dest: string): Promise<void> {
+  const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(filename)}?width=800`;
+  await downloadFromWikimedia(url, dest);
+}
+
 async function fetchMissionImages(): Promise<number> {
   await mkdir(MISSIONS_DIR, { recursive: true });
   let downloaded = 0;
+  // Pass 1: NASA Images API for the bulk of missions.
   for (let i = 0; i < MISSION_IMAGE_QUERIES.length; i++) {
     const m = MISSION_IMAGE_QUERIES[i];
     const localPath = join(MISSIONS_DIR, `${m.id}.jpg`);
@@ -442,9 +465,21 @@ async function fetchMissionImages(): Promise<number> {
     try {
       await fetchMissionImage(m.query, localPath);
       downloaded++;
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      console.warn(`    ⚠ skipped ${m.id}: ${msg}`);
+    } catch {
+      // Fall through to Wikimedia fallback.
+      const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
+      if (fallback) {
+        try {
+          await fetchMissionFromWikimedia(fallback, localPath);
+          console.log(`    ↳ wikimedia fallback OK`);
+          downloaded++;
+        } catch (err2) {
+          const msg = err2 instanceof Error ? err2.message : String(err2);
+          console.warn(`    ⚠ skipped ${m.id}: nasa+wikimedia both failed (${msg})`);
+        }
+      } else {
+        console.warn(`    ⚠ skipped ${m.id}: nasa returned no results, no wikimedia fallback`);
+      }
     }
     if (i < MISSION_IMAGE_QUERIES.length - 1) {
       await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));

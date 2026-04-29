@@ -1,0 +1,7 @@
+{
+  "name": "Mars",
+  "type": "Mission target",
+  "fact": "Earth–Mars launch windows open every 26 months — driven by orbital resonance. Miss the window and wait two years.",
+  "bio": "The highest eccentricity of the inner planets (e=0.093). Mars is 25% farther from Earth at aphelion vs perihelion — this is why launch windows matter so much.",
+  "missionable": true
+}

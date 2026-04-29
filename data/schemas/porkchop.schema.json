@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "porkchop.schema.json",
+  "title": "Pre-computed porkchop grid",
+  "description": "A pre-computed Lambert porkchop for an Earth → destination transfer. Generated at build time by scripts/precompute-porkchops.ts; consumed by /plan via $lib/data#getPorkchopGrid. ADR-026 §Data file contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "destination",
+    "dep_range_days",
+    "tof_range_days",
+    "steps",
+    "mission_types",
+    "dv_orbit_insertion",
+    "tof_axis_unit",
+    "grid",
+    "credit"
+  ],
+  "properties": {
+    "destination": {
+      "type": "string",
+      "enum": ["mercury", "venus", "mars", "jupiter", "saturn"],
+      "description": "Destination planet id. Matches the DestinationId enum in $lib/lambert-grid.constants."
+    },
+    "dep_range_days": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Departure-day range [start, end] in days from epoch."
+    },
+    "tof_range_days": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Transfer-time range [start, end] in days. Per-destination calibration; Mars stays [80, 520] for no-regression."
+    },
+    "steps": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Grid dimensions [width, height]. Locked to [112, 100] across all destinations so the mobile magnifier (ADR-023) stays valid."
+    },
+    "mission_types": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["LANDING", "FLYBY"] },
+      "minItems": 1,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "description": "Mission types offered for this destination. Inner planets get both; gas giants FLYBY only (ADR-026 §Mission-type semantics)."
+    },
+    "dv_orbit_insertion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "LANDING": { "type": "number", "minimum": 0 },
+        "FLYBY": { "type": "number", "minimum": 0 }
+      },
+      "description": "Per-mission-type ∆v added to each cell when displayed. FLYBY is always 0; LANDING is destination-specific (Mars ≈ 4.1, Venus ≈ 3.7, Mercury ≈ 8.6 km/s)."
+    },
+    "tof_axis_unit": {
+      "type": "string",
+      "enum": ["days", "years"],
+      "description": "Y-axis tick label unit. ADR-026 §Y-axis units: auto-switch to years when tof_range_days[1] > 730."
+    },
+    "grid": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "number" }
+      },
+      "description": "2D grid of ∆v values, indexed [row][col]. row = TOF axis (height = steps[1]); col = departure axis (width = steps[0]). Values are in km/s; sentinel 28 is used for cells where Lambert returned no solution."
+    },
+    "credit": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Provenance + how the grid was computed. Required so future readers can trace the values back."
+    }
+  }
+}

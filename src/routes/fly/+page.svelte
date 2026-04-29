@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { page } from '$app/stores';
   import * as THREE from 'three';
   import {
     earthPos,
@@ -11,35 +12,86 @@
     type MissionTimeline,
   } from '$lib/mission-arc';
   import { R_EARTH_AU, R_MARS_AU } from '$lib/lambert-grid.constants';
+  import { getMission } from '$lib/data';
+  import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
 
-  // ─── ORRERY-1 mission timeline (per ADR-009) ─────────────────────
-  // 4a-4 will replace this with mission data loaded from the URL
-  // ?mission=id parameter; for the skeleton we hardcode the default.
-  const timeline: MissionTimeline = {
+  // ─── Default ORRERY-1 free-return per ADR-009 ────────────────────
+  // Timeline below maps "epoch days" to the prototype's reference
+  // (Earth dep at day 333, flyby at 592, return at 842 — same dates
+  // the porkchop and explore screens animate around).
+  const DEFAULT_MISSION = {
+    name: 'ORRERY-1',
+    vehicle: 'Falcon Heavy',
+    payload: '2,500 kg crew capsule',
+    dv_total: 3.86,
+    dv_used: 3.61,
+    dep_label: 'Earth dep',
+    arr_label: 'Earth return',
     dep_day: 333,
-    flyby_day: 333 + 259, // 592
-    arr_day: 333 + 509, // 842
+    flyby_day: 333 + 259,
+    arr_day: 333 + 509,
   };
 
-  // ─── Pre-compute arc geometries (same data drives 3D + 2D) ───────
+  type LoadedMission = {
+    name: string;
+    vehicle: string;
+    payload: string;
+    dv_total: number;
+    dv_used: number;
+    dep_label: string;
+    arr_label: string;
+    timeline: MissionTimeline;
+    isFromData: boolean;
+  };
+
+  let mission: LoadedMission = $state({
+    name: DEFAULT_MISSION.name,
+    vehicle: DEFAULT_MISSION.vehicle,
+    payload: DEFAULT_MISSION.payload,
+    dv_total: DEFAULT_MISSION.dv_total,
+    dv_used: DEFAULT_MISSION.dv_used,
+    dep_label: DEFAULT_MISSION.dep_label,
+    arr_label: DEFAULT_MISSION.arr_label,
+    timeline: {
+      dep_day: DEFAULT_MISSION.dep_day,
+      flyby_day: DEFAULT_MISSION.flyby_day,
+      arr_day: DEFAULT_MISSION.arr_day,
+    },
+    isFromData: false,
+  });
+
+  // ─── Arc geometries — static, anchored to the default ORRERY-1 ─
+  // Per-mission trajectories aren't in the data layer (real Mars
+  // landings aren't free-returns; their detailed flight profiles
+  // belong in slice 5+ if we ever add them). The arc shows the
+  // canonical free-return shape regardless of which mission is
+  // loaded; the HUDs above carry the mission's actual identity.
   const ARC_STEPS = 200;
-  const earthDep = earthPos(timeline.dep_day);
-  const marsArr = marsPos(timeline.flyby_day);
-  const earthRet = earthPos(timeline.arr_day);
+  const earthDep = earthPos(DEFAULT_MISSION.dep_day);
+  const marsArr = marsPos(DEFAULT_MISSION.flyby_day);
+  const earthRet = earthPos(DEFAULT_MISSION.arr_day);
   const OUT_PTS = outboundArc(earthDep, ARC_STEPS);
   const RET_PTS = returnArc(marsArr, earthRet, ARC_STEPS);
+  const ARC_TIMELINE: MissionTimeline = {
+    dep_day: DEFAULT_MISSION.dep_day,
+    flyby_day: DEFAULT_MISSION.flyby_day,
+    arr_day: DEFAULT_MISSION.arr_day,
+  };
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
-  let simDay = $state(timeline.dep_day);
+  let simDay = $state(DEFAULT_MISSION.dep_day);
   let simSpeed = $state(7); // days/sec
   let isPlaying = $state(true);
   let cleanup: (() => void) | undefined;
 
-  let phase = $derived(spacecraftPos(simDay, timeline, OUT_PTS, RET_PTS).phase);
+  // Animation always rides the free-return arc; HUDs surface the
+  // loaded mission's identity strings around it.
+  let scState = $derived(spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS));
+  let phase = $derived(scState.phase);
   let phaseLabel = $derived(
     phase === 'pre-launch'
       ? m.fly_phase_pre_launch()
@@ -50,15 +102,116 @@
           : m.fly_phase_arrived(),
   );
 
+  // ─── Live derived navigation values ──────────────────────────────
+  // Heliocentric speed using vis-viva on the Hohmann transfer ellipse.
+  // The arcs are not perfectly Keplerian (return arc uses a cosine
+  // radius profile) so we report a smooth approximation: linear
+  // interpolation between Earth and Mars circular speeds based on
+  // current heliocentric distance.
+  const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
+  const AU_PER_YR_TO_KMS = 4.7404;
+  const AU_TO_KM = 149_597_870.7;
+  const C_LIGHT_KM_S = 299_792.458;
+
+  let scR = $derived(Math.hypot(scState.pos.x, scState.pos.z));
+  let heliocentricKms = $derived(
+    Math.sqrt(MU_SUN_AU3_YR2 * (2 / scR - 1 / ((R_EARTH_AU + R_MARS_AU) / 2))) * AU_PER_YR_TO_KMS,
+  );
+
+  let earthNow = $derived(earthPos(simDay));
+  let marsNow = $derived(marsPos(simDay));
+  let distFromEarthAu = $derived(
+    Math.hypot(scState.pos.x - earthNow.x, scState.pos.z - earthNow.z),
+  );
+  let distFromMarsAu = $derived(Math.hypot(scState.pos.x - marsNow.x, scState.pos.z - marsNow.z));
+  let distFromEarthMkm = $derived((distFromEarthAu * AU_TO_KM) / 1_000_000);
+  let distFromMarsMkm = $derived((distFromMarsAu * AU_TO_KM) / 1_000_000);
+  let signalDelayMin = $derived((distFromEarthAu * AU_TO_KM) / C_LIGHT_KM_S / 60);
+
+  // Mission elapsed time = days since the simulation departed the arc's
+  // start, mapped to the loaded mission's apparent transit time so the
+  // user-visible "DAY 138" feels right whether they loaded Curiosity
+  // (254 days) or the default ORRERY-1 (509 days).
+  const ARC_TOTAL_DAYS = ARC_TIMELINE.arr_day - ARC_TIMELINE.dep_day;
+  let arcProgress = $derived((simDay - ARC_TIMELINE.dep_day) / ARC_TOTAL_DAYS);
+  let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
+  let met = $derived(Math.max(0, arcProgress * totalDays));
+  // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
+  // surface the prototype's headline numbers without re-running an
+  // optimal-burn schedule. 4a-5 will refine.
+  let dvRemaining = $derived(Math.max(0, mission.dv_total - mission.dv_used));
+
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
   function togglePlay() {
     isPlaying = !isPlaying;
   }
+  function setSpeed(v: number) {
+    simSpeed = v;
+    isPlaying = true;
+  }
+  function onScrub(event: Event) {
+    const t = parseFloat((event.target as HTMLInputElement).value);
+    simDay = ARC_TIMELINE.dep_day + t * ARC_TOTAL_DAYS;
+  }
+
+  // ─── Mission loading from URL (?mission=id) ──────────────────────
+  let loadFailed = $state(false);
+
+  function applyLoadedMission(m: Mission) {
+    // Without a per-mission `dest` shape change, we map the data
+    // record onto the LoadedMission shape: transit_days drives the
+    // total timeline; the flyby day is the midpoint for non-flyby
+    // missions (a reasonable default — the actual flyby tag is only
+    // meaningful for free-returns and not present in real Mars
+    // missions, which are landings).
+    const totalT = m.transit_days || 250;
+    const isFreeReturn = m.id === 'orrery-1';
+    const flybyOffset = isFreeReturn ? 259 : Math.floor(totalT * 0.95);
+    mission = {
+      name: m.name ?? m.id,
+      vehicle: m.vehicle ?? '—',
+      payload: m.payload ?? '—',
+      dv_total:
+        typeof m.delta_v === 'string'
+          ? parseFloat(m.delta_v.replace(/[^\d.]/g, '')) || DEFAULT_MISSION.dv_total
+          : DEFAULT_MISSION.dv_total,
+      dv_used: 0,
+      dep_label: m.departure_date ?? DEFAULT_MISSION.dep_label,
+      arr_label: m.arrival_date ?? DEFAULT_MISSION.arr_label,
+      timeline: {
+        dep_day: 333,
+        flyby_day: 333 + flybyOffset,
+        arr_day: 333 + (isFreeReturn ? 509 : totalT),
+      },
+      isFromData: true,
+    };
+    mission.dv_used = mission.dv_total * 0.94;
+    simDay = mission.timeline.dep_day;
+  }
+
+  function loadMissionFromUrl(url: URL) {
+    const id = url.searchParams.get('mission');
+    if (!id) return;
+    // Try Mars first, then Moon — a single missionId is unique
+    // across the index so the second attempt only fires for Moon-
+    // dest missions.
+    getMission(id, 'mars').then((m1) => {
+      if (m1) {
+        applyLoadedMission(m1);
+        return;
+      }
+      getMission(id, 'moon').then((m2) => {
+        if (m2) applyLoadedMission(m2);
+        else loadFailed = true;
+      });
+    });
+  }
 
   onMount(() => {
     if (!container || !canvas2d) return;
+    loadMissionFromUrl($page.url);
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene. Units = AU × SCALE_3D.
@@ -323,7 +476,7 @@
         ctx2.setLineDash([]);
       }
 
-      const sc = spacecraftPos(simDay, timeline, OUT_PTS, RET_PTS);
+      const sc = spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
       drawSplit(OUT_PTS, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
       drawSplit(
         RET_PTS,
@@ -345,7 +498,7 @@
       ctx2.fill();
 
       // Spacecraft chevron
-      const heading = spacecraftHeading(simDay, timeline, OUT_PTS, RET_PTS);
+      const heading = spacecraftHeading(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
       const sx = cx + sc.pos.x * SCALE_2D;
       const sy = cy + sc.pos.z * SCALE_2D;
       ctx2.save();
@@ -394,7 +547,7 @@
       lastTime = now;
       if (isPlaying) {
         simDay += dt * simSpeed;
-        if (simDay > timeline.arr_day + 30) simDay = timeline.dep_day;
+        if (simDay > ARC_TIMELINE.arr_day + 30) simDay = ARC_TIMELINE.dep_day;
       }
 
       const ePos = earthPos(simDay);
@@ -402,9 +555,9 @@
       earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
       marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
 
-      const sc = spacecraftPos(simDay, timeline, OUT_PTS, RET_PTS);
+      const sc = spacecraftPos(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
       scMesh.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
-      const h = spacecraftHeading(simDay, timeline, OUT_PTS, RET_PTS);
+      const h = spacecraftHeading(simDay, ARC_TIMELINE, OUT_PTS, RET_PTS);
       scMesh.lookAt(scMesh.position.x + h.x * SCALE_3D, 0, scMesh.position.z + h.z * SCALE_3D);
 
       const splitOut = Math.max(
@@ -468,13 +621,106 @@
     aria-label="2D mission arc top-down view."
   ></canvas>
 
-  <div class="hud-strip" role="status" aria-live="polite" data-testid="mission-name">
-    <span class="hud-mission">{m.fly_mission_default()}</span>
+  {#if loadFailed}
+    <div class="load-banner" role="alert">{m.fly_load_failed()}</div>
+  {/if}
+
+  <!-- Identity HUD (top-left) -->
+  <aside class="hud hud-identity" aria-label={m.fly_panel_identity()} data-testid="mission-name">
+    <span class="hud-title">{mission.name}</span>
     <span class="hud-phase phase-{phase}">{phaseLabel}</span>
-    <span class="hud-day">DAY {Math.round(simDay - timeline.dep_day)}</span>
-    <button class="hud-play" onclick={togglePlay} type="button" aria-label="Play / pause">
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_vehicle()}</span>
+      <span class="hud-val">{mission.vehicle}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_dep()}</span>
+      <span class="hud-val">{mission.dep_label}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_arr()}</span>
+      <span class="hud-val">{mission.arr_label}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_met()}</span>
+      <span class="hud-val">DAY {Math.round(met)}</span>
+    </div>
+  </aside>
+
+  <!-- Navigation HUD (top-right, but we also have toggle there) -->
+  <aside class="hud hud-navigation" aria-label={m.fly_panel_navigation()}>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_velocity()}</span>
+      <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_dist_earth()}</span>
+      <span class="hud-val">{m.fly_hud_mkm({ value: distFromEarthMkm.toFixed(0) })}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">·</span>
+      <span class="hud-val dim">{m.fly_hud_lmin({ value: signalDelayMin.toFixed(1) })}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_dist_mars()}</span>
+      <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
+    </div>
+  </aside>
+
+  <!-- Systems HUD (bottom-right) -->
+  <aside class="hud hud-systems" aria-label={m.fly_panel_systems()}>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_dv_used()}</span>
+      <span class="hud-val">{m.fly_hud_kms({ value: mission.dv_used.toFixed(2) })}</span>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
+      <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
+    </div>
+    <div class="dv-bar" aria-hidden="true">
+      <div
+        class="dv-fill"
+        style:width="{Math.min(100, (mission.dv_used / Math.max(0.01, mission.dv_total)) * 100)}%"
+      ></div>
+    </div>
+    <div class="hud-row">
+      <span class="hud-key">{m.fly_hud_eta()}</span>
+      <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span>
+    </div>
+  </aside>
+
+  <!-- Timeline scrubber (bottom-left) -->
+  <div class="scrubber" aria-label={m.fly_scrub_label()}>
+    <button
+      type="button"
+      class="play-btn"
+      onclick={togglePlay}
+      aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
+    >
       {isPlaying ? '⏸' : '▶'}
     </button>
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.001"
+      value={Math.max(0, Math.min(1, arcProgress))}
+      oninput={onScrub}
+      class="scrub"
+      aria-label={m.fly_scrub_label()}
+    />
+    <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+      {#each [1, 7, 30, 90] as sp}
+        <button
+          type="button"
+          class="speed-pill"
+          class:active={simSpeed === sp}
+          onclick={() => setSpeed(sp)}
+        >
+          {sp}×
+        </button>
+      {/each}
+    </div>
   </div>
 
   <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
@@ -502,34 +748,68 @@
     display: block;
   }
 
-  .hud-strip {
+  .load-banner {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    left: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    padding: 8px 16px;
+    background: rgba(193, 68, 14, 0.2);
+    border: 1px solid rgba(193, 68, 14, 0.5);
+    color: #ffc850;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+  }
+
+  .hud {
+    position: fixed;
     z-index: 30;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 8px 14px;
-    background: rgba(8, 10, 22, 0.85);
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.88);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     backdrop-filter: blur(6px);
     font-family: 'Space Mono', monospace;
     font-size: 9px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
-  .hud-mission {
+  .hud-identity {
+    top: calc(var(--nav-height) + 12px);
+    left: 16px;
+  }
+  .hud-navigation {
+    top: calc(var(--nav-height) + 12px);
+    right: 70px;
+  }
+  .hud-systems {
+    bottom: 70px;
+    right: 16px;
+  }
+
+  .hud-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 2px;
   }
   .hud-phase {
+    align-self: flex-start;
     padding: 2px 8px;
     border-radius: 3px;
     border: 1px solid;
     font-weight: 700;
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
   }
   .phase-pre-launch {
     color: rgba(255, 255, 255, 0.5);
@@ -547,24 +827,108 @@
     color: #4ecdc4;
     border-color: rgba(78, 205, 196, 0.5);
   }
-  .hud-day {
-    color: rgba(255, 255, 255, 0.55);
+
+  .hud-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
   }
-  .hud-play {
-    min-width: 28px;
-    min-height: 28px;
-    padding: 4px 8px;
+  .hud-key {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .hud-val {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+  }
+  .hud-val.dim {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+  .hud-val.teal {
+    color: #4ecdc4;
+  }
+
+  .dv-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 4px 0 6px;
+  }
+  .dv-fill {
+    height: 100%;
+    background: linear-gradient(to right, #4466ff, #4466ff88);
+  }
+
+  .scrubber {
+    position: fixed;
+    bottom: 14px;
+    left: 16px;
+    right: 240px;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+  }
+  @media (max-width: 767px) {
+    .hud-navigation,
+    .hud-systems {
+      display: none;
+    }
+    .scrubber {
+      right: 16px;
+    }
+  }
+  .play-btn {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px 10px;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     color: #fff;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
   }
-  .hud-play:hover,
-  .hud-play:focus-visible {
+  .play-btn:hover,
+  .play-btn:focus-visible {
     border-color: #4466ff;
     outline: none;
+  }
+  .scrub {
+    flex: 1;
+    accent-color: #4466ff;
+    height: 36px;
+  }
+  .speed-group {
+    display: flex;
+    gap: 4px;
+  }
+  .speed-pill {
+    min-height: 36px;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .speed-pill.active {
+    background: rgba(68, 102, 255, 0.2);
+    border-color: rgba(68, 102, 255, 0.5);
+    color: #fff;
   }
 
   .toggle {

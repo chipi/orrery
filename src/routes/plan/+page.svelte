@@ -372,6 +372,10 @@
   });
 
   onMount(() => {
+    // Order matters: attach the message listener before any postMessage
+    // so we can't miss a response. (Workers actually run async so a
+    // message can't physically arrive before the synchronous addListener
+    // line, but explicit ordering documents the intent.)
     worker = new LambertWorker();
     worker.addEventListener('message', onWorkerMessage);
     startCompute();

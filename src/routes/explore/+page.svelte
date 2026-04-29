@@ -493,6 +493,11 @@
     let touchMoved3d = false;
     let touchDownX3d = 0;
     let touchDownY3d = 0;
+    let pinchPrev3d = 0; // Previous two-finger distance for pinch-zoom.
+
+    const touchDist = (a: Touch, b: Touch) =>
+      Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+
     const on3dTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
         touchActive3d = true;
@@ -501,9 +506,26 @@
         lmy3d = e.touches[0].clientY;
         touchDownX3d = lmx3d;
         touchDownY3d = lmy3d;
+      } else if (e.touches.length === 2) {
+        // Switching to pinch — clear single-touch state so subsequent
+        // pinch deltas don't get treated as orbit drag.
+        touchActive3d = false;
+        pinchPrev3d = touchDist(e.touches[0], e.touches[1]);
       }
     };
     const on3dTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 2) {
+        // Pinch-zoom on the camera radius. Per CLAUDE.md mobile rules:
+        // 3D screens are single-finger orbit + two-finger zoom.
+        const dist = touchDist(e.touches[0], e.touches[1]);
+        if (pinchPrev3d > 0) {
+          const ratio = pinchPrev3d / dist;
+          camR = Math.max(120, Math.min(1400, camR * ratio));
+          updateCam();
+        }
+        pinchPrev3d = dist;
+        return;
+      }
       if (!touchActive3d || e.touches.length !== 1) return;
       const dx = e.touches[0].clientX - lmx3d;
       const dy = e.touches[0].clientY - lmy3d;
@@ -521,9 +543,18 @@
       updateCam();
     };
     const on3dTouchEnd = (e: TouchEvent) => {
+      // Reset pinch state when fingers lift below 2.
+      if (e.touches.length < 2) pinchPrev3d = 0;
       const wasMoved = touchMoved3d;
-      touchActive3d = false;
-      if (!wasMoved && view === '3d' && e.changedTouches.length === 1) {
+      const wasActive = touchActive3d;
+      if (e.touches.length === 0) touchActive3d = false;
+      if (
+        wasActive &&
+        !wasMoved &&
+        view === '3d' &&
+        e.changedTouches.length === 1 &&
+        e.touches.length === 0
+      ) {
         const t = e.changedTouches[0];
         tryPick3d({ clientX: t.clientX, clientY: t.clientY } as MouseEvent);
       }
@@ -636,6 +667,9 @@
     let touch2dMoved = false;
     let touch2dDownX = 0;
     let touch2dDownY = 0;
+    let pinchPrev2d = 0;
+    let pinchCenter2d: { x: number; y: number } | null = null;
+
     const on2dTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
         touchActive2d = true;
@@ -644,9 +678,37 @@
         drag2dY = e.touches[0].clientY;
         touch2dDownX = drag2dX;
         touch2dDownY = drag2dY;
+      } else if (e.touches.length === 2) {
+        touchActive2d = false;
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        pinchPrev2d = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+        pinchCenter2d = { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
       }
     };
     const on2dTouchMove = (e: TouchEvent) => {
+      if (e.touches.length === 2 && pinchCenter2d) {
+        // Pinch-zoom on the 2D canvas, anchored at the gesture centre
+        // so the world point under the fingers stays put. Mirrors the
+        // wheel-zoom math in on2dWheel.
+        const t1 = e.touches[0];
+        const t2 = e.touches[1];
+        const dist = Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+        if (pinchPrev2d > 0) {
+          const f = pinchPrev2d / dist;
+          const rect = c2.getBoundingClientRect();
+          const mx = pinchCenter2d.x - rect.left;
+          const my = pinchCenter2d.y - rect.top;
+          const W = c2.width;
+          const H = c2.height;
+          zx2d = (mx - W / 2) * (1 - f) + zx2d * f;
+          zy2d = (my - H / 2) * (1 - f) + zy2d * f;
+          zoom2d = Math.max(0.12, Math.min(5, zoom2d / f));
+        }
+        pinchPrev2d = dist;
+        pinchCenter2d = { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
+        return;
+      }
       if (!touchActive2d || e.touches.length !== 1) return;
       if (
         Math.abs(e.touches[0].clientX - touch2dDownX) +
@@ -661,9 +723,20 @@
       drag2dY = e.touches[0].clientY;
     };
     const on2dTouchEnd = (e: TouchEvent) => {
+      if (e.touches.length < 2) {
+        pinchPrev2d = 0;
+        pinchCenter2d = null;
+      }
       const wasMoved = touch2dMoved;
-      touchActive2d = false;
-      if (!wasMoved && view === '2d' && e.changedTouches.length === 1) {
+      const wasActive = touchActive2d;
+      if (e.touches.length === 0) touchActive2d = false;
+      if (
+        wasActive &&
+        !wasMoved &&
+        view === '2d' &&
+        e.changedTouches.length === 1 &&
+        e.touches.length === 0
+      ) {
         const t = e.changedTouches[0];
         tryPick2d(t.clientX, t.clientY);
       }
@@ -1046,8 +1119,19 @@
 <svelte:head><title>Solar System Explorer · Orrery</title></svelte:head>
 
 <div class="explore">
-  <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
-  <canvas class="layer" bind:this={canvas2d} class:hidden={view !== '2d'}></canvas>
+  <div
+    class="layer"
+    bind:this={container}
+    class:hidden={view !== '3d'}
+    role="region"
+    aria-label="3D solar system. Drag to orbit, scroll or pinch to zoom, click planets and Sun for details."
+  ></div>
+  <canvas
+    class="layer"
+    bind:this={canvas2d}
+    class:hidden={view !== '2d'}
+    aria-label="2D top-down solar system. Drag to pan, scroll or pinch to zoom, tap planets and Sun for details."
+  ></canvas>
   <button
     class="toggle"
     class:panel-shifted={panelOpen || sunPanelOpen}
@@ -1061,6 +1145,9 @@
   {#if hoverData && view === '3d'}
     <div
       class="tooltip"
+      role="status"
+      aria-live="polite"
+      aria-label="{hoverData.name} — {hoverData.velocity}, {hoverData.distance}, {hoverData.extras}"
       style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 200)}px"
       style:top="{Math.max(hoverData.y - 60, 60)}px"
     >
@@ -1091,6 +1178,9 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    /* Disable native touch gestures (scroll, pinch-zoom of the page) so
+       the canvas owns single-finger orbit + two-finger pinch. */
+    touch-action: none;
   }
   .layer.hidden {
     display: none;

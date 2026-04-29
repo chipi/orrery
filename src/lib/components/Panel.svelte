@@ -10,13 +10,32 @@
   };
   let { open, onClose, title, children }: Props = $props();
 
+  let closeButton: HTMLButtonElement | undefined = $state();
+  let previousActiveElement: HTMLElement | null = null;
+
   $effect(() => {
     if (!open) return;
+    // Capture whatever was focused before the panel opened so we can
+    // restore it on close. The cleanup function (returned below) runs
+    // when `open` flips back to false.
+    previousActiveElement = (
+      typeof document !== 'undefined' ? document.activeElement : null
+    ) as HTMLElement | null;
+    // Move focus into the panel (the close button is a safe landing —
+    // every panel has one and it's predictable for keyboard users).
+    queueMicrotask(() => closeButton?.focus());
+
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
+    return () => {
+      window.removeEventListener('keydown', handler);
+      // Restore focus to whatever was active before the panel opened
+      // (typically the canvas or the planet that triggered the open).
+      previousActiveElement?.focus?.();
+      previousActiveElement = null;
+    };
   });
 
   let touchStartY = $state(0);
@@ -51,7 +70,9 @@
   >
     <header>
       <span class="title">{title ?? ''}</span>
-      <button class="close" onclick={onClose} aria-label="Close panel">×</button>
+      <button bind:this={closeButton} class="close" onclick={onClose} aria-label="Close panel"
+        >×</button
+      >
     </header>
     <div class="content">
       {@render children?.()}

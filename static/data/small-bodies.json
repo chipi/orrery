@@ -1,0 +1,102 @@
+{
+  "bodies": [
+    {
+      "id": "ceres",
+      "name": "Ceres",
+      "type": "dwarf",
+      "a": 2.766,
+      "e": 0.0758,
+      "T": 1681.6,
+      "L0": 1.4,
+      "incl": 10.59,
+      "color": "#7c8b9a",
+      "mission_visited": "Dawn (NASA, 2015)"
+    },
+    {
+      "id": "pluto",
+      "name": "Pluto",
+      "type": "dwarf",
+      "a": 39.482,
+      "e": 0.2488,
+      "T": 90560,
+      "L0": 4.17,
+      "incl": 17.16,
+      "color": "#c8a98a",
+      "mission_visited": "New Horizons (NASA, 2015 flyby)"
+    },
+    {
+      "id": "haumea",
+      "name": "Haumea",
+      "type": "dwarf",
+      "a": 43.13,
+      "e": 0.1912,
+      "T": 103410,
+      "L0": 0.7,
+      "incl": 28.19,
+      "color": "#dcdcd0",
+      "mission_visited": null
+    },
+    {
+      "id": "makemake",
+      "name": "Makemake",
+      "type": "dwarf",
+      "a": 45.79,
+      "e": 0.156,
+      "T": 113220,
+      "L0": 5.2,
+      "incl": 29.0,
+      "color": "#c87a4a",
+      "mission_visited": null
+    },
+    {
+      "id": "eris",
+      "name": "Eris",
+      "type": "dwarf",
+      "a": 67.78,
+      "e": 0.4407,
+      "T": 203830,
+      "L0": 1.95,
+      "incl": 44.04,
+      "color": "#dcdcdc",
+      "mission_visited": null
+    },
+    {
+      "id": "halley",
+      "name": "Halley's Comet",
+      "type": "comet",
+      "a": 17.834,
+      "e": 0.967,
+      "T": 27520,
+      "L0": 1.18,
+      "incl": 162.3,
+      "color": "#88ddff",
+      "mission_visited": "Giotto (ESA, 1986 flyby)",
+      "next_perihelion": "2061-07-28"
+    },
+    {
+      "id": "67p",
+      "name": "67P/Churyumov–Gerasimenko",
+      "type": "comet",
+      "a": 3.464,
+      "e": 0.6406,
+      "T": 2354.8,
+      "L0": 5.5,
+      "incl": 7.04,
+      "color": "#aabbff",
+      "mission_visited": "Rosetta + Philae lander (ESA, 2014)"
+    },
+    {
+      "id": "oumuamua",
+      "name": "ʻOumuamua",
+      "type": "interstellar",
+      "a": -1.272,
+      "e": 1.2,
+      "T": 0,
+      "L0": 4.0,
+      "incl": 122.7,
+      "color": "#ff8866",
+      "mission_visited": null,
+      "note": "Hyperbolic trajectory — first known interstellar object. 2017 visit only; will not return."
+    }
+  ]
+}

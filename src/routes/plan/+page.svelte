@@ -32,6 +32,7 @@
 
   let rocketList: Rocket[] = $state([]);
   let selectedRocketId = $state<string | null>(null);
+  let explainerOpen = $state(false);
 
   let worker: Worker | undefined;
   let nextId = 1;
@@ -446,6 +447,47 @@
   </div>
 
   <aside class="right-panel" aria-label={m.plan_panel_label()}>
+    <!-- Educational primer: collapsed by default; toggle reveals a short
+         what/how/legend block. Sits at the top of the panel so it's
+         visible whether or not the user has clicked a cell yet. -->
+    <button
+      type="button"
+      class="explainer-toggle"
+      onclick={() => (explainerOpen = !explainerOpen)}
+      aria-expanded={explainerOpen}
+    >
+      <span class="explainer-icon" aria-hidden="true">{explainerOpen ? '×' : 'ⓘ'}</span>
+      {explainerOpen ? m.plan_explainer_close() : m.plan_explainer_toggle()}
+    </button>
+    {#if explainerOpen}
+      <section class="explainer">
+        <h3>{m.plan_explainer_title()}</h3>
+        <p class="explainer-intro">{m.plan_explainer_intro()}</p>
+        <dl class="explainer-list">
+          <dt>{m.plan_explainer_x_axis()}</dt>
+          <dd>{m.plan_explainer_x_desc()}</dd>
+          <dt>{m.plan_explainer_y_axis()}</dt>
+          <dd>{m.plan_explainer_y_desc()}</dd>
+          <dt>{m.plan_explainer_color()}</dt>
+          <dd>
+            {m.plan_explainer_color_desc()}
+            <div class="color-bar" aria-hidden="true">
+              <span class="cb-stop teal"></span>
+              <span class="cb-stop blue"></span>
+              <span class="cb-stop yellow"></span>
+              <span class="cb-stop orange"></span>
+              <span class="cb-stop red"></span>
+            </div>
+            <div class="color-bar-labels" aria-hidden="true">
+              <span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span>
+            </div>
+          </dd>
+          <dt>{m.plan_explainer_how_to()}</dt>
+          <dd>{m.plan_explainer_how_to_desc()}</dd>
+        </dl>
+      </section>
+    {/if}
+
     {#if !readout}
       <div class="empty">
         <div class="empty-title">{m.plan_empty_title()}</div>
@@ -598,6 +640,115 @@
     flex-direction: column;
     gap: 10px;
     overflow-y: auto;
+  }
+
+  .explainer-toggle {
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 8px 14px;
+    background: rgba(68, 102, 255, 0.08);
+    border: 1px solid rgba(68, 102, 255, 0.35);
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .explainer-toggle:hover,
+  .explainer-toggle:focus-visible {
+    border-color: #4466ff;
+    background: rgba(68, 102, 255, 0.18);
+    outline: none;
+  }
+  .explainer-icon {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  .explainer {
+    padding: 14px 14px 12px;
+    background: rgba(68, 102, 255, 0.04);
+    border: 1px solid rgba(68, 102, 255, 0.25);
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .explainer h3 {
+    margin: 0 0 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #4466ff;
+    font-weight: 700;
+  }
+  .explainer-intro {
+    margin: 0 0 10px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.45;
+  }
+  .explainer-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .explainer-list dt {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(78, 205, 196, 0.85);
+    font-weight: 700;
+    margin-bottom: 1px;
+  }
+  .explainer-list dd {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .color-bar {
+    display: flex;
+    height: 8px;
+    margin: 6px 0 2px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .color-bar .cb-stop {
+    flex: 1;
+    height: 100%;
+  }
+  .color-bar .teal {
+    background: #4ecdc4;
+  }
+  .color-bar .blue {
+    background: #4466ff;
+  }
+  .color-bar .yellow {
+    background: #ffc850;
+  }
+  .color-bar .orange {
+    background: #ff8c3c;
+  }
+  .color-bar .red {
+    background: #c1440e;
+  }
+  .color-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
   }
   @media (max-width: 767px) {
     .right-panel {

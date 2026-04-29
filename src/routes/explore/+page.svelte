@@ -4,6 +4,8 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getPlanets, getSun } from '$lib/data';
+  import { auToPx } from '$lib/scale';
+  import smallBodiesData from '$data/small-bodies.json';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';
   import type { LocalizedSun } from '$types/sun';
@@ -145,6 +147,26 @@
       texture: '2k_neptune.jpg',
     },
   ];
+
+  // Small bodies: dwarf planets, comets, the one known interstellar
+  // visitor. Visual model is intentionally minimal — labelled dots on
+  // dashed orbit rings (no textures, no clickable panel yet) since the
+  // primary signal is "these objects exist in our solar system."
+  type SmallBody = {
+    id: string;
+    name: string;
+    type: 'dwarf' | 'comet' | 'interstellar';
+    a: number;
+    e: number;
+    T: number;
+    L0: number;
+    incl: number;
+    color: string;
+    mission_visited: string | null;
+  };
+  const SMALL_BODIES: SmallBody[] = (smallBodiesData.bodies as SmallBody[]).filter(
+    (b) => b.type !== 'interstellar', // Oumuamua's hyperbolic trajectory needs special handling, skip for now
+  );
 
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
@@ -799,6 +821,33 @@
         ctx2.stroke();
       });
 
+      // Small-body orbit rings (dwarf planets + comets) — dashed line
+      // distinguishes them from major planets. Comets get a more
+      // eccentric ellipse since their `e` is meaningful (Halley 0.967).
+      SMALL_BODIES.forEach((b) => {
+        const semiMajorPx = auToPx(b.a);
+        const semiMinorPx = semiMajorPx * Math.sqrt(1 - b.e * b.e);
+        ctx2.save();
+        // Approximate orbit orientation by L0 + small inclination tilt
+        ctx2.rotate(b.L0);
+        ctx2.beginPath();
+        ctx2.ellipse(
+          -semiMajorPx * b.e, // foci offset toward Sun
+          0,
+          semiMajorPx,
+          semiMinorPx,
+          0,
+          0,
+          Math.PI * 2,
+        );
+        ctx2.strokeStyle = b.type === 'comet' ? 'rgba(136,221,255,0.18)' : 'rgba(200,180,140,0.14)';
+        ctx2.lineWidth = 0.6;
+        ctx2.setLineDash([3, 6]);
+        ctx2.stroke();
+        ctx2.setLineDash([]);
+        ctx2.restore();
+      });
+
       // Asteroid belt
       for (let i = 0; i < 280; i++) {
         const a = (i / 280) * Math.PI * 2 + simT * 0.016;
@@ -978,6 +1027,67 @@
         ctx2.fillStyle = p.css + 'cc';
         ctx2.textAlign = 'left';
         ctx2.fillText(p.name, px + pr + 5, py + 3);
+        ctx2.restore();
+      });
+
+      // Small bodies — dots + labels at compressed positions. Position
+      // is approximated as Keplerian on each body's own ellipse with
+      // L0 phase + simT advancing by the body's period. Dwarf planets
+      // get a 2px dot, comets get a tiny tail in the direction of
+      // anti-solar motion.
+      SMALL_BODIES.forEach((b) => {
+        const semiMajorPx = auToPx(b.a);
+        const semiMinorPx = semiMajorPx * Math.sqrt(1 - b.e * b.e);
+        // Period in years (T is in days in the JSON)
+        const Tyr = b.T / 365.25;
+        const ang = b.L0 + simT * ((2 * Math.PI) / Tyr);
+        // Body-frame ellipse → world-frame via L0 rotation + foci offset
+        const xLocal = Math.cos(ang) * semiMajorPx - semiMajorPx * b.e;
+        const yLocal = Math.sin(ang) * semiMinorPx;
+        const cosL = Math.cos(b.L0);
+        const sinL = Math.sin(b.L0);
+        const px = xLocal * cosL - yLocal * sinL;
+        const py = xLocal * sinL + yLocal * cosL;
+
+        // Glow
+        const gl = ctx2.createRadialGradient(px, py, 0, px, py, 6);
+        gl.addColorStop(0, b.color + '88');
+        gl.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx2.beginPath();
+        ctx2.arc(px, py, 6, 0, Math.PI * 2);
+        ctx2.fillStyle = gl;
+        ctx2.fill();
+
+        // Comet tail — simple line pointing away from Sun.
+        if (b.type === 'comet') {
+          const distFromSun = Math.hypot(px, py);
+          if (distFromSun > 0) {
+            const tailLen = 18;
+            const tx = px + (px / distFromSun) * tailLen;
+            const ty = py + (py / distFromSun) * tailLen;
+            ctx2.beginPath();
+            ctx2.moveTo(px, py);
+            ctx2.lineTo(tx, ty);
+            ctx2.strokeStyle = `${b.color}88`;
+            ctx2.lineWidth = 1.5;
+            ctx2.stroke();
+          }
+        }
+
+        // Body dot
+        ctx2.beginPath();
+        ctx2.arc(px, py, b.type === 'comet' ? 1.6 : 2.2, 0, Math.PI * 2);
+        ctx2.fillStyle = b.color;
+        ctx2.fill();
+
+        // Label
+        ctx2.save();
+        ctx2.font = "7px 'Space Mono',monospace";
+        ctx2.shadowColor = 'rgba(0,0,0,0.9)';
+        ctx2.shadowBlur = 5;
+        ctx2.fillStyle = b.color + 'aa';
+        ctx2.textAlign = 'left';
+        ctx2.fillText(b.name, px + 5, py + 2);
         ctx2.restore();
       });
 

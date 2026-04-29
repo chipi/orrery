@@ -75,6 +75,14 @@
     pushFiltersToUrl();
   }
 
+  // Agency logo path. SVGs are fetched at build by scripts/fetch-assets.ts
+  // (Wikimedia Commons, public-domain). The img has onerror to hide
+  // gracefully when a logo file is missing — UI degrades to text-only
+  // badge without breaking the layout.
+  function logoFor(agency: string): string {
+    return `${base}/logos/${agency.toLowerCase()}.svg`;
+  }
+
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
   let panelOpen = $state(false);
@@ -243,6 +251,13 @@
             <div class="card-body">
               <header class="card-head">
                 <span class="agency-badge" style:background-color={mission.color}>
+                  <img
+                    src={logoFor(mission.agency)}
+                    alt=""
+                    class="agency-logo"
+                    aria-hidden="true"
+                    onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+                  />
                   {mission.agency}
                 </span>
                 <span class="card-status status-{mission.status.toLowerCase()}">
@@ -426,6 +441,9 @@
     margin-bottom: 4px;
   }
   .agency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
     font-family: 'Space Mono', monospace;
     font-size: 7px;
     letter-spacing: 2px;
@@ -434,6 +452,17 @@
     border-radius: 3px;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .agency-logo {
+    height: 14px;
+    width: auto;
+    max-width: 18px;
+    object-fit: contain;
+    /* White-tint the SVG so dark logos remain legible against the
+       coloured agency badge background. CSS filter avoids needing a
+       per-agency variant. */
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
   }
   .card-status {
     font-family: 'Space Mono', monospace;

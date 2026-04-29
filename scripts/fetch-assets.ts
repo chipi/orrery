@@ -1,9 +1,10 @@
 /**
  * Fetches external assets at build time per ADR-016.
  *
- * Slice 1 scope: Google Fonts (Bebas Neue, Space Mono, Crimson Pro).
- * Slice 3 scope: planet textures + moon texture from Three.js r128 examples.
- * Slice 4+ will extend with agency logos and NASA mission imagery.
+ * Slice 1: Google Fonts (Bebas Neue, Space Mono, Crimson Pro).
+ * Slice 3: planet textures + moon texture from Solar System Scope.
+ * v0.1.x patches: agency logos from Wikimedia Commons.
+ * Future: NASA Images API for per-mission imagery; rocket reference imagery.
  *
  * Run via: npm run fetch-assets
  */
@@ -124,6 +125,128 @@ async function fetchTextures(): Promise<number> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// AGENCY LOGOS — v0.1.x patch
+//
+// Source: Wikimedia Commons. All listed logos are public domain (NASA,
+// ESA, JAXA, ISRO, ROSCOSMOS, CNSA — government symbols / agency
+// emblems) or PD-trivial (SpaceX wordmark). License compliance per
+// ADR-016: no third-party runtime dependencies; logos fetched at build
+// and committed.
+//
+// If Wikimedia changes a file path, the fetch will fail gracefully —
+// this script logs a warning and continues. The UI falls back to a
+// text-only agency badge when an image is missing.
+// ──────────────────────────────────────────────────────────────────────
+
+interface AgencyLogo {
+  id: string;
+  /**
+   * Wikimedia Commons filename (case-sensitive, must include extension).
+   * Resolved via Special:FilePath which is stable across hash-bucket
+   * moves — direct upload.wikimedia.org URLs change when files are
+   * recategorised.
+   */
+  filename: string;
+  ext: 'svg' | 'png';
+  license: string;
+}
+
+const AGENCY_LOGOS: AgencyLogo[] = [
+  {
+    id: 'nasa',
+    filename: 'NASA_logo.svg',
+    ext: 'svg',
+    license: 'Public domain (US Government work)',
+  },
+  {
+    id: 'esa',
+    filename: 'ESA_logo_simple.svg',
+    ext: 'svg',
+    license: 'Permissive — ESA agency emblem',
+  },
+  {
+    id: 'roscosmos',
+    filename: 'Roscosmos_logo_en.svg',
+    ext: 'svg',
+    license: 'Public domain (Russian Federal Space Agency)',
+  },
+  {
+    id: 'cnsa',
+    filename: 'Insignia_of_CNSA.svg',
+    ext: 'svg',
+    license: 'Public domain (PRC government)',
+  },
+  {
+    id: 'isro',
+    filename: 'Indian_Space_Research_Organisation_Logo.svg',
+    ext: 'svg',
+    license: 'Public domain (Government of India)',
+  },
+  {
+    id: 'jaxa',
+    filename: 'Jaxa_logo.svg',
+    ext: 'svg',
+    license: 'Public domain (Japanese government agency)',
+  },
+  {
+    id: 'spacex',
+    filename: 'SpaceX-Logo.svg',
+    ext: 'svg',
+    license: 'PD-trivial (simple wordmark)',
+  },
+  {
+    id: 'uaesa',
+    filename: 'UAE_Space_Agency_logo.svg',
+    ext: 'svg',
+    license: 'Permissive — UAE agency emblem',
+  },
+];
+
+const WIKIMEDIA_FILEPATH_BASE = 'https://commons.wikimedia.org/wiki/Special:FilePath';
+
+const LOGOS_DIR = 'static/logos';
+
+// Wikimedia requires a descriptive User-Agent (not a generic
+// HTTP-client UA) and rate-limits anonymous bulk downloads. The
+// guidance is roughly one request per second for scripts.
+const WIKIMEDIA_UA =
+  'OrreryBuildBot/0.1 (https://github.com/chipi/orrery; contact: marko.dragoljevic@gmail.com)';
+const WIKIMEDIA_DELAY_MS = 1100;
+
+async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
+  const res = await fetch(url, { headers: { 'User-Agent': WIKIMEDIA_UA } });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const buffer = Buffer.from(await res.arrayBuffer());
+  await writeFile(dest, buffer);
+}
+
+async function fetchAgencyLogos(): Promise<number> {
+  await mkdir(LOGOS_DIR, { recursive: true });
+  let downloaded = 0;
+  for (let i = 0; i < AGENCY_LOGOS.length; i++) {
+    const logo = AGENCY_LOGOS[i];
+    const localPath = join(LOGOS_DIR, `${logo.id}.${logo.ext}`);
+    const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(logo.filename)}`;
+    console.log(`  ${logo.id}.${logo.ext}…`);
+    try {
+      await downloadFromWikimedia(url, localPath);
+      downloaded++;
+    } catch (err) {
+      // Don't break the build for a missing logo. Wikimedia URLs
+      // occasionally rename files; log and continue. The UI degrades
+      // gracefully to text-only badges.
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`    ⚠ skipped ${logo.id}: ${msg}`);
+    }
+    // Throttle to stay under Wikimedia's anonymous-script rate limit.
+    if (i < AGENCY_LOGOS.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+    }
+  }
+  return downloaded;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // SHARED HELPERS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -146,6 +269,10 @@ async function main() {
   console.log('Fetching textures:');
   const textureCount = await fetchTextures();
   console.log(`  → ${textureCount} texture files in ${TEXTURES_DIR}\n`);
+
+  console.log('Fetching agency logos:');
+  const logoCount = await fetchAgencyLogos();
+  console.log(`  → ${logoCount} logo files in ${LOGOS_DIR}\n`);
 
   console.log('Done.');
 }

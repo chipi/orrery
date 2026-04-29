@@ -1,29 +1,61 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
   import { base } from '$app/paths';
-  import LambertWorker from '../../workers/lambert.worker?worker';
-  import type { LambertGrid, LambertProgress, LambertRequest } from '$lib/lambert-grid';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
-  import { getRockets } from '$lib/data';
+  import { getRockets, getPorkchopGrid } from '$lib/data';
   import type { Rocket } from '$types/rocket';
+  import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
+  import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
 
-  // ─── Grid contract (matches Issue #3 / RFC-003) ──────────────────
-  const DEP_RANGE: [number, number] = [0, 1460]; // 4 years from epoch (Jan 1 2026)
-  const TOF_RANGE: [number, number] = [80, 520]; // 80 → 520 days
-  const STEPS: [number, number] = [112, 100]; // 112 dep × 100 tof — 11,200 cells
-  const [GRID_W, GRID_H] = STEPS;
+  const DESTINATION_IDS: DestinationId[] = ['mercury', 'venus', 'mars', 'jupiter', 'saturn'];
+  const GAS_GIANTS: DestinationId[] = ['jupiter', 'saturn'];
 
-  // ─── State ───────────────────────────────────────────────────────
-  let canvas: HTMLCanvasElement | undefined = $state();
-  let progress = $state(0);
+  // ─── Grid state — driven by loaded JSON (v0.1.6 / ADR-026) ───────
+  // The pre-computed grid file declares its own dep_range / tof_range
+  // / steps / mission_types / dv_orbit_insertion / tof_axis_unit. The
+  // /plan UI is now a pure consumer of those values per destination.
+  let activeGrid = $state<PorkchopGrid | null>(null);
+  let destinationId = $state<DestinationId>('mars');
+  let missionType = $state<MissionType>('LANDING');
+  let loadId = 0;
   let computing = $state(true);
-  let grid: number[][] | null = $state(null);
-  let depDays: number[] = $state([]);
-  let arrDays: number[] = $state([]);
+  let progress = $state(0);
+  let loadFailed = $state(false);
+
+  let canvas: HTMLCanvasElement | undefined = $state();
   let selected = $state<{ i: number; j: number } | null>(null);
   let hoverCell = $state<{ i: number; j: number } | null>(null);
+
+  // Reactive grid view: rows + cols + cell counts come from the loaded
+  // file. Fall back to safe defaults when the grid is still loading
+  // so derived expressions don't crash.
+  let GRID_W = $derived(activeGrid?.steps[0] ?? 112);
+  let GRID_H = $derived(activeGrid?.steps[1] ?? 100);
+  let DEP_RANGE = $derived(activeGrid?.dep_range_days ?? [0, 1460]);
+  let TOF_RANGE = $derived(activeGrid?.tof_range_days ?? [80, 520]);
+  let TOF_AXIS_UNIT = $derived(activeGrid?.tof_axis_unit ?? 'days');
+  let MISSION_TYPES = $derived(
+    activeGrid?.mission_types ?? (['LANDING', 'FLYBY'] as MissionType[]),
+  );
+  let DV_ORBIT_INSERTION = $derived(activeGrid?.dv_orbit_insertion ?? {});
+  let grid: number[][] | null = $derived(activeGrid?.grid ?? null);
+  let depDays: number[] = $derived.by(() => {
+    if (!activeGrid) return [];
+    const [w] = activeGrid.steps;
+    const [a, b] = activeGrid.dep_range_days;
+    return Array.from({ length: w }, (_, i) => a + (i / (w - 1)) * (b - a));
+  });
+  let arrDays: number[] = $derived.by(() => {
+    if (!activeGrid) return [];
+    const [, h] = activeGrid.steps;
+    const [a, b] = activeGrid.tof_range_days;
+    return Array.from({ length: h }, (_, j) => a + (j / (h - 1)) * (b - a));
+  });
+
+  let isLandingAvailable = $derived(MISSION_TYPES.includes('LANDING'));
 
   // RFC-006 Option C magnifier (mobile)
   let mag = $state<{ x: number; y: number; i: number; j: number } | null>(null);
@@ -34,45 +66,87 @@
   let selectedRocketId = $state<string | null>(null);
   let explainerOpen = $state(false);
 
-  let worker: Worker | undefined;
-  let nextId = 1;
-  let currentId = 0;
-
   // ─── Plot geometry ───────────────────────────────────────────────
   const ML = 64;
   const MR = 18;
   const MT = 24;
   const MB = 44;
 
-  function startCompute() {
-    if (!worker) return;
-    currentId = nextId++;
-    progress = 0;
-    computing = true;
-    grid = null;
-    selected = null;
-    const req: LambertRequest = {
-      id: currentId,
-      depRange: DEP_RANGE,
-      arrRange: TOF_RANGE,
-      steps: STEPS,
-    };
-    worker.postMessage(req);
+  // ─── URL ↔ filter sync (mirrors /missions pattern) ───────────────
+  // ?dest=jupiter&type=flyby pre-applies on first load; selector
+  // changes write back via replaceState (no history pollution).
+  function applyUrlFilters(url: URL) {
+    const dest = (url.searchParams.get('dest') ?? '').toLowerCase();
+    if ((DESTINATION_IDS as string[]).includes(dest)) {
+      destinationId = dest as DestinationId;
+    } else {
+      destinationId = 'mars';
+    }
+    const type = (url.searchParams.get('type') ?? '').toUpperCase();
+    if (type === 'LANDING' || type === 'FLYBY') {
+      missionType = type as MissionType;
+    } else {
+      missionType = GAS_GIANTS.includes(destinationId) ? 'FLYBY' : 'LANDING';
+    }
+    coerceMissionType();
   }
 
-  function onWorkerMessage(e: MessageEvent<LambertProgress | LambertGrid>) {
-    const msg = e.data;
-    if (msg.id !== currentId) return;
-    if ('grid' in msg) {
-      grid = msg.grid;
-      depDays = msg.depDays;
-      arrDays = msg.arrDays;
-      computing = false;
-      progress = 1;
-      drawPlot();
-    } else {
-      progress = msg.progress;
+  /** Coerce missionType to the first valid type for the active grid
+   *  if the current selection is invalid (e.g. LANDING on Jupiter). */
+  function coerceMissionType() {
+    if (!MISSION_TYPES.includes(missionType)) {
+      missionType = MISSION_TYPES[0];
+      pushFiltersToUrl();
     }
+  }
+
+  function pushFiltersToUrl() {
+    const params = new URLSearchParams();
+    if (destinationId !== 'mars') params.set('dest', destinationId);
+    if (missionType !== (GAS_GIANTS.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
+      params.set('type', missionType.toLowerCase());
+    }
+    const qs = params.toString();
+    const target = `${base}/plan${qs ? `?${qs}` : ''}`;
+    if (target !== $page.url.pathname + $page.url.search) {
+      goto(target, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  }
+
+  function setDestination(value: DestinationId) {
+    destinationId = value;
+    // Reset mission type per the destination's defaults.
+    missionType = GAS_GIANTS.includes(value) ? 'FLYBY' : 'LANDING';
+    pushFiltersToUrl();
+  }
+
+  function setMissionType(value: MissionType) {
+    if (!MISSION_TYPES.includes(value)) return; // disabled pill
+    missionType = value;
+    pushFiltersToUrl();
+  }
+
+  // ─── Grid loading — pre-computed JSONs per ADR-026 ───────────────
+  // Each destination's grid is committed at static/data/porkchop/.
+  // Race-guarded by monotonic loadId — if the user switches destination
+  // while a load is in flight, the older promise resolves into a no-op.
+  async function loadGrid(id: DestinationId) {
+    const myId = ++loadId;
+    progress = 0;
+    computing = true;
+    selected = null;
+    loadFailed = false;
+    const result = await getPorkchopGrid(id);
+    if (myId !== loadId) return; // superseded by a newer load
+    if (!result) {
+      loadFailed = true;
+      computing = false;
+      return;
+    }
+    activeGrid = result;
+    computing = false;
+    progress = 1;
+    coerceMissionType();
   }
 
   // ─── Heatmap rendering ───────────────────────────────────────────
@@ -163,6 +237,8 @@
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillText(m.plan_axis_departure_window(), ML + PW / 2, MT + PH + 26);
 
+    // Y-axis ticks. Outer-planet grids (Jupiter, Saturn) render TOF
+    // in years (per ADR-026 §Y-axis units, auto-switch threshold = 730d).
     ctx.font = "9px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
     ctx.textAlign = 'right';
@@ -177,7 +253,9 @@
       ctx.lineTo(ML - 4, y);
       ctx.strokeStyle = 'rgba(255,255,255,0.3)';
       ctx.stroke();
-      ctx.fillText(`${tof.toFixed(0)} d`, ML - 7, y);
+      const label =
+        TOF_AXIS_UNIT === 'years' ? `${(tof / 365.25).toFixed(0)}y` : `${tof.toFixed(0)} d`;
+      ctx.fillText(label, ML - 7, y);
     }
     ctx.save();
     ctx.translate(14, MT + PH / 2);
@@ -186,7 +264,11 @@
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(m.plan_axis_tof_label(), 0, 0);
+    ctx.fillText(
+      TOF_AXIS_UNIT === 'years' ? m.plan_axis_tof_label_years() : m.plan_axis_tof_label(),
+      0,
+      0,
+    );
     ctx.restore();
 
     ctx.font = "9px 'Space Mono', monospace";
@@ -273,14 +355,19 @@
   }
 
   // ─── Selected cell readout ───────────────────────────────────────
+  // dv = raw cell ∆v (heliocentric Lambert) + per-mission-type
+  // orbit-insertion cost (per ADR-026 §Mission-type semantics).
+  // FLYBY adds 0; LANDING adds the destination's dv_orbit_insertion.LANDING.
   type Readout = { dep: string; tof: number; arr: string; dv: number };
   let readout: Readout | null = $derived.by(() => {
     if (!selected || !grid) return null;
+    const cellDv = grid[selected.j][selected.i];
+    const insertionDv = DV_ORBIT_INSERTION[missionType] ?? 0;
     return {
       dep: dayToLongDate(depDays[selected.i]),
       tof: arrDays[selected.j],
       arr: dayToLongDate(depDays[selected.i] + arrDays[selected.j]),
-      dv: grid[selected.j][selected.i],
+      dv: cellDv + insertionDv,
     };
   });
 
@@ -292,7 +379,13 @@
 
   function flyMission() {
     if (!viable) return;
-    goto(`${base}/fly`);
+    // Pass destination + mission type so /fly renders the correct
+    // outbound arc (per ADR-026 §FLY-button experience). Mars +
+    // LANDING falls through to the existing default (no extra params).
+    const params = new URLSearchParams();
+    if (destinationId !== 'mars') params.set('dest', destinationId);
+    params.set('type', missionType.toLowerCase());
+    goto(`${base}/fly?${params.toString()}`);
   }
 
   // ─── Magnifier render (separate canvas overlay) ──────────────────
@@ -366,20 +459,28 @@
     if (mag) drawMag();
   });
 
+  // Rebuild the heatmap bitmap whenever the active grid swaps.
+  // Reading `activeGrid` here makes the effect react to destination changes.
   $effect(() => {
-    if (grid) {
+    if (activeGrid) {
       void buildHeatmapBitmap().then(() => drawPlot());
     }
   });
 
+  // Re-load the grid whenever destinationId changes (post-mount + on
+  // URL changes via applyUrlFilters). $effect handles the initial load
+  // too — destinationId is initialised from the URL at script setup.
+  $effect(() => {
+    void loadGrid(destinationId);
+  });
+
+  // Re-sync from URL on back/forward navigation per the /missions pattern.
+  $effect(() => {
+    applyUrlFilters($page.url);
+  });
+
   onMount(() => {
-    // Order matters: attach the message listener before any postMessage
-    // so we can't miss a response. (Workers actually run async so a
-    // message can't physically arrive before the synchronous addListener
-    // line, but explicit ordering documents the intent.)
-    worker = new LambertWorker();
-    worker.addEventListener('message', onWorkerMessage);
-    startCompute();
+    applyUrlFilters($page.url);
 
     getRockets().then((list) => {
       rocketList = list;
@@ -397,11 +498,6 @@
   });
 
   onDestroy(() => {
-    if (worker) {
-      worker.removeEventListener('message', onWorkerMessage);
-      worker.terminate();
-      worker = undefined;
-    }
     if (heatBitmap) heatBitmap.close();
   });
 </script>
@@ -410,6 +506,50 @@
 
 <div class="plan">
   <div class="plot-area">
+    <!-- Destination + mission-type selectors (v0.1.6 / ADR-026 §URL contract).
+         Sits between the nav bar and the porkchop canvas. Mobile collapses
+         the row below 768px (see CSS) so the canvas stays the focal point. -->
+    <div class="selector-bar">
+      <label class="dest-label">
+        <span class="selector-key">{m.plan_label_destination()}</span>
+        <select
+          bind:value={destinationId}
+          onchange={() => setDestination(destinationId)}
+          class="dest-select"
+        >
+          <option value="mercury">{m.plan_destination_mercury()}</option>
+          <option value="venus">{m.plan_destination_venus()}</option>
+          <option value="mars">{m.plan_destination_mars()}</option>
+          <option value="jupiter">{m.plan_destination_jupiter()}</option>
+          <option value="saturn">{m.plan_destination_saturn()}</option>
+        </select>
+      </label>
+      <div class="mission-type-group" role="radiogroup" aria-label={m.plan_label_mission_type()}>
+        <button
+          type="button"
+          class="mission-type-pill"
+          class:active={missionType === 'LANDING' && isLandingAvailable}
+          role="radio"
+          aria-checked={missionType === 'LANDING'}
+          aria-disabled={!isLandingAvailable}
+          disabled={!isLandingAvailable}
+          title={!isLandingAvailable ? m.plan_mission_type_disabled_gas_giant() : ''}
+          onclick={() => setMissionType('LANDING')}
+        >
+          {m.plan_mission_type_landing()}
+        </button>
+        <button
+          type="button"
+          class="mission-type-pill"
+          class:active={missionType === 'FLYBY'}
+          role="radio"
+          aria-checked={missionType === 'FLYBY'}
+          onclick={() => setMissionType('FLYBY')}
+        >
+          {m.plan_mission_type_flyby()}
+        </button>
+      </div>
+    </div>
     <canvas
       class="porkchop"
       bind:this={canvas}
@@ -443,6 +583,8 @@
         </div>
         <div class="loading-pct">{Math.round(progress * 100)}%</div>
       </div>
+    {:else if loadFailed}
+      <div class="load-banner" role="alert">{m.plan_load_failed()}</div>
     {/if}
   </div>
 
@@ -589,6 +731,88 @@
   .plot-area {
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .selector-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex: 0 0 auto;
+  }
+  .dest-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+  }
+  .selector-key {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+  }
+  .dest-select {
+    min-height: 44px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .dest-select:focus-visible {
+    outline: 2px solid #4466ff;
+    outline-offset: 1px;
+  }
+  .mission-type-group {
+    display: inline-flex;
+    gap: 6px;
+  }
+  .mission-type-pill {
+    min-width: 64px;
+    min-height: 44px;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.12s;
+  }
+  .mission-type-pill:hover:not(:disabled),
+  .mission-type-pill:focus-visible:not(:disabled) {
+    border-color: rgba(68, 102, 255, 0.55);
+    color: var(--color-text);
+    outline: none;
+  }
+  .mission-type-pill.active {
+    background: rgba(68, 102, 255, 0.2);
+    border-color: #4466ff;
+    color: #fff;
+  }
+  .mission-type-pill:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+  @media (max-width: 767px) {
+    .selector-bar {
+      gap: 8px;
+      padding: 8px 12px;
+    }
   }
 
   .porkchop {
@@ -597,6 +821,22 @@
     display: block;
     cursor: crosshair;
     touch-action: none;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+  .load-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 18px;
+    background: rgba(193, 68, 14, 0.18);
+    border: 1px solid rgba(193, 68, 14, 0.55);
+    color: #ffc850;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-radius: 4px;
   }
 
   .magnifier {

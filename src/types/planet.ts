@@ -49,6 +49,8 @@ export interface PlanetOverlay {
   bio: string;
   /** When true, the panel surfaces the "PLAN A MISSION" CTA. */
   missionable?: boolean;
+  /** Tiered learn-more links surfaced in the LEARN tab (v0.1.10). */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
 }
 
 /**

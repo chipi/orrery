@@ -1,10 +1,11 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import SizesCanvas from './SizesCanvas.svelte';
+  import { getPlanetGallery } from '$lib/data';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'technical' | 'sizes';
+  type Tab = 'overview' | 'technical' | 'sizes' | 'gallery' | 'learn';
 
   type Props = {
     planet: LocalizedPlanet | null;
@@ -15,15 +16,35 @@
   let { planet, open, onClose, onPlanMission }: Props = $props();
 
   let tab: Tab = $state('overview');
+  let gallery: string[] = $state([]);
+  let lightboxSrc = $state<string | null>(null);
 
-  // Reset to overview each time a different planet is selected.
+  // Reset to overview + reload gallery each time a different planet is selected.
   let lastId = $state<string | null>(null);
   $effect(() => {
     if (planet && planet.id !== lastId) {
       tab = 'overview';
       lastId = planet.id;
+      lightboxSrc = null;
+      gallery = [];
+      void getPlanetGallery(planet.id).then((urls) => {
+        if (planet && planet.id === lastId) gallery = urls;
+      });
     }
   });
+
+  // Group LEARN-tab links by tier (intro/core/deep).
+  let linksByTier = $derived.by(() => {
+    if (!planet?.links) return { intro: [], core: [], deep: [] };
+    const out = {
+      intro: [] as NonNullable<typeof planet.links>,
+      core: [] as NonNullable<typeof planet.links>,
+      deep: [] as NonNullable<typeof planet.links>,
+    };
+    for (const link of planet.links) out[link.t].push(link);
+    return out;
+  });
+  let hasLinks = $derived((planet?.links?.length ?? 0) > 0);
 
   // ─── Derived technical figures (canonical, IAU-grounded) ─────────
   // mu_sun ≈ 4π² in AU³/yr², AU/yr → km/s = 4.7404 (IAU 2012).
@@ -104,6 +125,28 @@
         aria-selected={tab === 'sizes'}
         aria-controls="pp-tabpanel">{m.panel_tab_sizes()}</button
       >
+      {#if gallery.length > 0}
+        <button
+          type="button"
+          id="pp-tab-gallery"
+          class:active={tab === 'gallery'}
+          onclick={() => (tab = 'gallery')}
+          role="tab"
+          aria-selected={tab === 'gallery'}
+          aria-controls="pp-tabpanel">{m.panel_tab_gallery()}</button
+        >
+      {/if}
+      {#if hasLinks}
+        <button
+          type="button"
+          id="pp-tab-learn"
+          class:active={tab === 'learn'}
+          onclick={() => (tab = 'learn')}
+          role="tab"
+          aria-selected={tab === 'learn'}
+          aria-controls="pp-tabpanel">{m.panel_tab_learn()}</button
+        >
+      {/if}
     </div>
 
     <div class="tab-content" role="tabpanel" id="pp-tabpanel" aria-labelledby="pp-tab-{tab}">
@@ -173,8 +216,79 @@
         <div class="src">{m.panel_source_iau()}</div>
       {:else if tab === 'sizes'}
         <SizesCanvas highlightId={planet.id} />
+      {:else if tab === 'gallery'}
+        {#if gallery.length === 0}
+          <p class="empty-tab">{m.panel_gallery_empty()}</p>
+        {:else}
+          <div class="gallery-grid" aria-label="{planet.name} photo gallery">
+            {#each gallery as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (lightboxSrc = src)}
+                aria-label={planet.name}
+              >
+                <img {src} alt="" loading="lazy" />
+              </button>
+            {/each}
+          </div>
+          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+        {/if}
+      {:else if tab === 'learn'}
+        {#if !hasLinks}
+          <p class="empty-tab">{m.panel_no_links()}</p>
+        {:else}
+          {#if linksByTier.intro.length > 0}
+            <section class="link-tier tier-intro">
+              <h3>{m.panel_links_intro()}</h3>
+              <ul>
+                {#each linksByTier.intro as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.core.length > 0}
+            <section class="link-tier tier-core">
+              <h3>{m.panel_links_core()}</h3>
+              <ul>
+                {#each linksByTier.core as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.deep.length > 0}
+            <section class="link-tier tier-deep">
+              <h3>{m.panel_links_deep()}</h3>
+              <ul>
+                {#each linksByTier.deep as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+        {/if}
       {/if}
     </div>
+
+    {#if lightboxSrc}
+      <button
+        type="button"
+        class="lightbox"
+        aria-label="Close gallery preview"
+        onclick={() => (lightboxSrc = null)}
+      >
+        <img src={lightboxSrc} alt="" />
+        <span class="lightbox-close" aria-hidden="true">×</span>
+      </button>
+    {/if}
 
     {#if planet.missionable && onPlanMission}
       <div class="cta-bar">
@@ -369,5 +483,131 @@
     background: #2244dd;
     border-color: #4466ff;
     outline: none;
+  }
+
+  /* GALLERY + LEARN tab shared styles (v0.1.10) */
+  .empty-tab {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .gallery-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      transform 120ms;
+  }
+  .gallery-thumb:hover,
+  .gallery-thumb:focus-visible {
+    border-color: rgba(68, 102, 255, 0.6);
+    transform: scale(1.02);
+    outline: none;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-credit {
+    margin: 4px 0 0;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .link-tier {
+    margin-bottom: 14px;
+  }
+  .link-tier h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+  }
+  .tier-intro h3 {
+    color: #4ecdc4;
+  }
+  .tier-core h3 {
+    color: #4466ff;
+  }
+  .tier-deep h3 {
+    color: #ffc850;
+  }
+  .link-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .link-tier a {
+    display: block;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-decoration: none;
+    line-height: 1.5;
+    min-height: 44px;
+    transition: all 0.15s;
+  }
+  .link-tier a:hover,
+  .link-tier a:focus-visible {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+  }
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 4, 12, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

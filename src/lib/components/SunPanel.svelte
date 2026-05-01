@@ -1,9 +1,10 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { getSunGallery } from '$lib/data';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'technical';
+  type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
 
   type Props = {
     sun: LocalizedSun | null;
@@ -13,12 +14,40 @@
   let { sun, open, onClose }: Props = $props();
 
   let tab: Tab = $state('overview');
+  let gallery: string[] = $state([]);
+  let galleryLoaded = $state(false);
+  let lightboxSrc = $state<string | null>(null);
+
+  // Load gallery on first open. Sun is a singleton, so this fires once.
+  // Guard with `galleryLoaded` so the empty-result case doesn't re-fire
+  // the effect (assigning gallery=[] would re-trigger the read on
+  // gallery.length and cause an infinite loop).
+  $effect(() => {
+    if (sun && !galleryLoaded) {
+      galleryLoaded = true;
+      void getSunGallery().then((urls) => {
+        gallery = urls;
+      });
+    }
+  });
 
   // Derived presentation values (no source of truth lives here).
   let solarMassesEarth = $derived(sun ? sun.mass_kg / 5.972e24 : 0);
   let radiusEarth = $derived(sun ? sun.radius_km / 6371 : 0);
   let luminositySolar = $derived(sun ? sun.luminosity_w / 3.828e26 : 0);
   let remainingGyr = $derived(sun ? Math.max(0, 10 - sun.age_gyr) : 0);
+
+  let linksByTier = $derived.by(() => {
+    if (!sun?.links) return { intro: [], core: [], deep: [] };
+    const out = {
+      intro: [] as NonNullable<typeof sun.links>,
+      core: [] as NonNullable<typeof sun.links>,
+      deep: [] as NonNullable<typeof sun.links>,
+    };
+    for (const link of sun.links) out[link.t].push(link);
+    return out;
+  });
+  let hasLinks = $derived((sun?.links?.length ?? 0) > 0);
 </script>
 
 <Panel {open} {onClose} title={sun?.name ?? ''}>
@@ -57,13 +86,35 @@
         aria-selected={tab === 'technical'}
         aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if gallery.length > 0}
+        <button
+          type="button"
+          id="sp-tab-gallery"
+          class:active={tab === 'gallery'}
+          onclick={() => (tab = 'gallery')}
+          role="tab"
+          aria-selected={tab === 'gallery'}
+          aria-controls="sp-tabpanel">{m.panel_tab_gallery()}</button
+        >
+      {/if}
+      {#if hasLinks}
+        <button
+          type="button"
+          id="sp-tab-learn"
+          class:active={tab === 'learn'}
+          onclick={() => (tab = 'learn')}
+          role="tab"
+          aria-selected={tab === 'learn'}
+          aria-controls="sp-tabpanel">{m.panel_tab_learn()}</button
+        >
+      {/if}
     </div>
 
     <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
-      {:else}
+      {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
             <div class="cell-label">{m.sun_label_radius()}</div>
@@ -108,8 +159,78 @@
         </div>
 
         <div class="src">{m.sun_source_nasa({ mag: sun.absolute_magnitude.toString() })}</div>
+      {:else if tab === 'gallery'}
+        {#if gallery.length === 0}
+          <p class="empty-tab">{m.panel_gallery_empty()}</p>
+        {:else}
+          <div class="gallery-grid" aria-label="The Sun photo gallery">
+            {#each gallery as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (lightboxSrc = src)}
+                aria-label={sun.name}
+              >
+                <img {src} alt="" loading="lazy" />
+              </button>
+            {/each}
+          </div>
+          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+        {/if}
+      {:else if tab === 'learn'}
+        {#if !hasLinks}
+          <p class="empty-tab">{m.panel_no_links()}</p>
+        {:else}
+          {#if linksByTier.intro.length > 0}
+            <section class="link-tier tier-intro">
+              <h3>{m.panel_links_intro()}</h3>
+              <ul>
+                {#each linksByTier.intro as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.core.length > 0}
+            <section class="link-tier tier-core">
+              <h3>{m.panel_links_core()}</h3>
+              <ul>
+                {#each linksByTier.core as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if linksByTier.deep.length > 0}
+            <section class="link-tier tier-deep">
+              <h3>{m.panel_links_deep()}</h3>
+              <ul>
+                {#each linksByTier.deep as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+        {/if}
       {/if}
     </div>
+    {#if lightboxSrc}
+      <button
+        type="button"
+        class="lightbox"
+        aria-label="Close gallery preview"
+        onclick={() => (lightboxSrc = null)}
+      >
+        <img src={lightboxSrc} alt="" />
+        <span class="lightbox-close" aria-hidden="true">×</span>
+      </button>
+    {/if}
   {/if}
 </Panel>
 
@@ -223,5 +344,125 @@
     font-size: 7px;
     color: rgba(255, 255, 255, 0.15);
     line-height: 1.8;
+  }
+
+  /* GALLERY + LEARN tab shared styles (v0.1.10) */
+  .empty-tab {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .gallery-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+    cursor: pointer;
+  }
+  .gallery-thumb:hover,
+  .gallery-thumb:focus-visible {
+    border-color: rgba(255, 200, 80, 0.6);
+    outline: none;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-credit {
+    margin: 4px 0 0;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .link-tier {
+    margin-bottom: 14px;
+  }
+  .link-tier h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+  }
+  .tier-intro h3 {
+    color: #4ecdc4;
+  }
+  .tier-core h3 {
+    color: #4466ff;
+  }
+  .tier-deep h3 {
+    color: #ffc850;
+  }
+  .link-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .link-tier a {
+    display: block;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-decoration: none;
+    line-height: 1.5;
+    min-height: 44px;
+  }
+  .link-tier a:hover,
+  .link-tier a:focus-visible {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+  }
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 4, 12, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

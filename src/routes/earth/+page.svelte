@@ -2,7 +2,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getEarthObjects } from '$lib/data';
+  import { getEarthObjects, getEarthObjectGallery } from '$lib/data';
   import { altToOrbitRadius } from '$lib/scale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
@@ -32,6 +32,40 @@
   let selected: EarthObject | null = $state(null);
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
+
+  // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
+  type PanelTab = 'overview' | 'gallery' | 'learn';
+  let panelTab: PanelTab = $state('overview');
+  let panelGallery: string[] = $state([]);
+  let panelLightbox = $state<string | null>(null);
+  let lastSelectedId = $state<string | null>(null);
+  $effect(() => {
+    if (selected && selected.id !== lastSelectedId) {
+      panelTab = 'overview';
+      panelLightbox = null;
+      panelGallery = [];
+      lastSelectedId = selected.id;
+      void getEarthObjectGallery(selected.id).then((urls) => {
+        if (selected && selected.id === lastSelectedId) panelGallery = urls;
+      });
+    }
+  });
+  type PanelLinks = NonNullable<EarthObject['links']>;
+  let panelLinksByTier = $derived.by(() => {
+    const links = selected?.links;
+    if (!links) return { intro: [] as PanelLinks, core: [] as PanelLinks, deep: [] as PanelLinks };
+    const out = {
+      intro: [] as PanelLinks,
+      core: [] as PanelLinks,
+      deep: [] as PanelLinks,
+    };
+    for (const link of links) out[link.t].push(link);
+    return out;
+  });
+  let panelHasLinks = $derived.by(() => {
+    const sel = selected as EarthObject | null;
+    return sel != null && sel.links.length > 0;
+  });
 
   function selectObject(id: string) {
     const o = objects.find((x) => x.id === id);
@@ -675,60 +709,161 @@
         <h1 class="name">{selected.name ?? selected.id}</h1>
       </div>
 
-      <div class="grid">
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_alt()}</div>
-          <div class="cell-value">
-            {m.earth_alt_km({
-              value: (selected.altitude_km ?? selected.earth_distance_km).toLocaleString('en-US'),
-            })}
-          </div>
-        </div>
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_period()}</div>
-          <div class="cell-value">
-            {selected.period_min
-              ? m.earth_period_min({ value: selected.period_min.toFixed(0) })
-              : '—'}
-          </div>
-        </div>
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_inclination()}</div>
-          <div class="cell-value">
-            {selected.inclination !== undefined
-              ? m.earth_inclination_deg({ value: selected.inclination.toFixed(1) })
-              : '—'}
-          </div>
-        </div>
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_launched()}</div>
-          <div class="cell-value">{selected.launched}</div>
-        </div>
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_count()}</div>
-          <div class="cell-value">{selected.count}</div>
-        </div>
-        <div class="cell">
-          <div class="cell-label">{m.earth_panel_crew()}</div>
-          <div class="cell-value">{selected.crew}</div>
-        </div>
+      <div class="tabs" role="tablist">
+        <button
+          type="button"
+          class:active={panelTab === 'overview'}
+          onclick={() => (panelTab = 'overview')}
+          role="tab"
+          aria-selected={panelTab === 'overview'}>{m.panel_tab_overview()}</button
+        >
+        {#if panelGallery.length > 0}
+          <button
+            type="button"
+            class:active={panelTab === 'gallery'}
+            onclick={() => (panelTab = 'gallery')}
+            role="tab"
+            aria-selected={panelTab === 'gallery'}>{m.panel_tab_gallery()}</button
+          >
+        {/if}
+        {#if panelHasLinks}
+          <button
+            type="button"
+            class:active={panelTab === 'learn'}
+            onclick={() => (panelTab = 'learn')}
+            role="tab"
+            aria-selected={panelTab === 'learn'}>{m.panel_tab_learn()}</button
+          >
+        {/if}
       </div>
 
-      {#if selected.scale_fact}
-        <div class="scale-fact" style:--accent={selected.color}>
-          {selected.scale_fact}
+      {#if panelTab === 'overview'}
+        <div class="grid">
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_alt()}</div>
+            <div class="cell-value">
+              {m.earth_alt_km({
+                value: (selected.altitude_km ?? selected.earth_distance_km).toLocaleString('en-US'),
+              })}
+            </div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_period()}</div>
+            <div class="cell-value">
+              {selected.period_min
+                ? m.earth_period_min({ value: selected.period_min.toFixed(0) })
+                : '—'}
+            </div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_inclination()}</div>
+            <div class="cell-value">
+              {selected.inclination !== undefined
+                ? m.earth_inclination_deg({ value: selected.inclination.toFixed(1) })
+                : '—'}
+            </div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_launched()}</div>
+            <div class="cell-value">{selected.launched}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_count()}</div>
+            <div class="cell-value">{selected.count}</div>
+          </div>
+          <div class="cell">
+            <div class="cell-label">{m.earth_panel_crew()}</div>
+            <div class="cell-value">{selected.crew}</div>
+          </div>
         </div>
-      {/if}
 
-      {#if selected.description}
-        <p class="editorial">{selected.description}</p>
-      {/if}
+        {#if selected.scale_fact}
+          <div class="scale-fact" style:--accent={selected.color}>
+            {selected.scale_fact}
+          </div>
+        {/if}
 
-      {#if selected.credit}
-        <div class="credit">{selected.credit}</div>
+        {#if selected.description}
+          <p class="editorial">{selected.description}</p>
+        {/if}
+
+        {#if selected.credit}
+          <div class="credit">{selected.credit}</div>
+        {/if}
+      {:else if panelTab === 'gallery'}
+        {#if panelGallery.length === 0}
+          <p class="empty-tab">{m.panel_gallery_empty()}</p>
+        {:else}
+          <div class="gallery-grid" aria-label="{selected.name ?? selected.id} photo gallery">
+            {#each panelGallery as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (panelLightbox = src)}
+                aria-label={selected.name ?? selected.id}
+              >
+                <img {src} alt="" loading="lazy" />
+              </button>
+            {/each}
+          </div>
+          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+        {/if}
+      {:else if panelTab === 'learn'}
+        {#if !panelHasLinks}
+          <p class="empty-tab">{m.panel_no_links()}</p>
+        {:else}
+          {#if panelLinksByTier.intro.length > 0}
+            <section class="link-tier tier-intro">
+              <h3>{m.panel_links_intro()}</h3>
+              <ul>
+                {#each panelLinksByTier.intro as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if panelLinksByTier.core.length > 0}
+            <section class="link-tier tier-core">
+              <h3>{m.panel_links_core()}</h3>
+              <ul>
+                {#each panelLinksByTier.core as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+          {#if panelLinksByTier.deep.length > 0}
+            <section class="link-tier tier-deep">
+              <h3>{m.panel_links_deep()}</h3>
+              <ul>
+                {#each panelLinksByTier.deep as link (link.u)}
+                  <li>
+                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/if}
+        {/if}
       {/if}
     {/if}
   </Panel>
+
+  {#if panelLightbox}
+    <button
+      type="button"
+      class="lightbox"
+      aria-label="Close gallery preview"
+      onclick={() => (panelLightbox = null)}
+    >
+      <img src={panelLightbox} alt="" />
+      <span class="lightbox-close" aria-hidden="true">×</span>
+    </button>
+  {/if}
 </div>
 
 <style>
@@ -891,5 +1026,150 @@
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
+  }
+
+  /* Detail-panel tabs (v0.1.10) */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+  .tabs button {
+    padding: 10px 14px;
+    min-height: 44px;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    margin-bottom: -1px;
+  }
+  .tabs button.active {
+    color: #fff;
+    border-bottom-color: #4466ff;
+  }
+  .empty-tab {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .gallery-thumb {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0;
+    cursor: pointer;
+  }
+  .gallery-thumb:hover,
+  .gallery-thumb:focus-visible {
+    border-color: rgba(68, 102, 255, 0.6);
+    outline: none;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-credit {
+    margin: 4px 0 0;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .link-tier {
+    margin-bottom: 14px;
+  }
+  .link-tier h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+  }
+  .tier-intro h3 {
+    color: #4ecdc4;
+  }
+  .tier-core h3 {
+    color: #4466ff;
+  }
+  .tier-deep h3 {
+    color: #ffc850;
+  }
+  .link-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .link-tier a {
+    display: block;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    text-decoration: none;
+    line-height: 1.5;
+    min-height: 44px;
+  }
+  .link-tier a:hover,
+  .link-tier a:focus-visible {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    outline: none;
+  }
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(2, 4, 12, 0.92);
+    backdrop-filter: blur(8px);
+    cursor: zoom-out;
+    border: none;
+    padding: 0;
+  }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>

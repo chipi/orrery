@@ -2,5 +2,12 @@
   "name": "Mercury",
   "type": "Terrestrial planet",
   "fact": "Surface temperatures swing 610°C in a single day. No atmosphere — just raw exposure to space.",
-  "bio": "The smallest planet. Its highly elliptical orbit (e=0.206) makes it accelerate noticeably near perihelion. Despite being closest to the Sun, Venus is hotter."
+  "bio": "The smallest planet. Its highly elliptical orbit (e=0.206) makes it accelerate noticeably near perihelion. Despite being closest to the Sun, Venus is hotter.",
+  "links": [
+    { "l": "Mercury — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "Mercury (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "MESSENGER mission overview (NASA)", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "BepiColombo (ESA / JAXA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "Mercury's molten core (Nature Geoscience 2019)", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
 }

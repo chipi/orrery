@@ -2,5 +2,12 @@
   "name": "Jupiter",
   "type": "Gas giant",
   "fact": "Jupiter's gravity sculpted the asteroid belt — preventing a fifth rocky planet. Without it, Mars would be far larger.",
-  "bio": "Rotates in just 10 hours despite its enormous size, creating powerful magnetic fields. More massive than all other planets combined."
+  "bio": "Rotates in just 10 hours despite its enormous size, creating powerful magnetic fields. More massive than all other planets combined.",
+  "links": [
+    { "l": "Jupiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
+    { "l": "Jupiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "Juno mission (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "Galilean moons — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
+    { "l": "Jupiter's deep interior (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
 }

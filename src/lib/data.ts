@@ -278,6 +278,63 @@ export async function getMissionGallery(missionId: string): Promise<string[]> {
   }
 }
 
+/**
+ * Generic photo-gallery loader (v0.1.10). Mirrors getMissionGallery
+ * for planets, the sun, earth-objects, and moon-sites — every panel
+ * with a GALLERY tab uses the same manifest pattern.
+ *
+ * @param category — "planets" | "earth-objects" | "moon-sites" (image folder root)
+ * @param manifestFile — name of the per-category manifest JSON (e.g. "planet-galleries.json")
+ * @param id — entity id (planet name lowercased, earth-object id, moon-site id)
+ *
+ * Returns an empty array when no images exist — the UI hides the
+ * GALLERY tab in that case.
+ */
+async function getCategoryGallery(
+  category: string,
+  manifestFile: string,
+  id: string,
+): Promise<string[]> {
+  try {
+    const map = await get<Record<string, number>>(manifestFile);
+    const count = map[id] ?? 0;
+    if (count === 0) return [];
+    return Array.from(
+      { length: count },
+      (_, i) => `${base}/images/${category}/${id}/${String(i + 1).padStart(2, '0')}.jpg`,
+    );
+  } catch {
+    return [];
+  }
+}
+
+export async function getPlanetGallery(planetId: string): Promise<string[]> {
+  return getCategoryGallery('planets', 'planet-galleries.json', planetId);
+}
+
+export async function getSunGallery(): Promise<string[]> {
+  // Sun is a single entity — use a flat count manifest.
+  try {
+    const data = await get<{ count: number }>('sun-gallery.json');
+    const count = data.count ?? 0;
+    if (count === 0) return [];
+    return Array.from(
+      { length: count },
+      (_, i) => `${base}/images/sun/${String(i + 1).padStart(2, '0')}.jpg`,
+    );
+  } catch {
+    return [];
+  }
+}
+
+export async function getEarthObjectGallery(objectId: string): Promise<string[]> {
+  return getCategoryGallery('earth-objects', 'earth-object-galleries.json', objectId);
+}
+
+export async function getMoonSiteGallery(siteId: string): Promise<string[]> {
+  return getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
+}
+
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */
 export function __resetCache(): void {
   cache.clear();

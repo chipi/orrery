@@ -31,6 +31,8 @@ export interface SunOverlay {
   type: string;
   fact: string;
   bio: string;
+  /** Tiered learn-more links surfaced in the LEARN tab (v0.1.10). */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
 }
 
 /** Sun base record merged with its locale overlay. */

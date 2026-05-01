@@ -22,6 +22,20 @@
       "type": "string",
       "minLength": 1,
       "description": "Editorial paragraph contextualising the astrophysical figures shown in the TECHNICAL tab."
+    },
+    "links": {
+      "type": "array",
+      "description": "Tiered learn-more links for the LEARN tab (v0.1.10). Same shape as mission.links — intro / core / deep tiers.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["l", "u", "t"],
+        "properties": {
+          "l": { "type": "string", "minLength": 1 },
+          "u": { "type": "string", "format": "uri" },
+          "t": { "enum": ["intro", "core", "deep"] }
+        }
+      }
     }
   }
 }

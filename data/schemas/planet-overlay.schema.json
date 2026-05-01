@@ -30,6 +30,20 @@
     "missionable": {
       "type": "boolean",
       "description": "When true, the panel surfaces the \"PLAN A MISSION\" CTA."
+    },
+    "links": {
+      "type": "array",
+      "description": "Tiered learn-more links for the LEARN tab (v0.1.10). Same shape as mission.links — intro / core / deep tiers.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["l", "u", "t"],
+        "properties": {
+          "l": { "type": "string", "minLength": 1 },
+          "u": { "type": "string", "format": "uri" },
+          "t": { "enum": ["intro", "core", "deep"] }
+        }
+      }
     }
   }
 }

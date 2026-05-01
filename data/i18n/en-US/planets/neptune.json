@@ -2,5 +2,12 @@
   "name": "Neptune",
   "type": "Ice giant",
   "fact": "Voyager 2 flew past Neptune in 1989 after a 12-year journey. It remains the only spacecraft ever to visit.",
-  "bio": "Windiest planet — 2,100 km/h surface winds. Discovered by mathematical prediction before direct observation, because Uranus's orbit showed an unseen gravitational influence."
+  "bio": "Windiest planet — 2,100 km/h surface winds. Discovered by mathematical prediction before direct observation, because Uranus's orbit showed an unseen gravitational influence.",
+  "links": [
+    { "l": "Neptune — Wikipedia", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "Neptune (NASA Solar System Exploration)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "Voyager 2 at Neptune (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "Discovery of Neptune — Wikipedia", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "Neptune's interior model (Icarus 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
 }

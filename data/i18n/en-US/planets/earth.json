@@ -2,5 +2,12 @@
   "name": "Earth",
   "type": "Home · Reference orbit",
   "fact": "Every human who has ever lived did so here. The reference orbit by which all others are measured.",
-  "bio": "The 23.44° axial tilt creates the seasons — not distance from the Sun. Earth is actually closer to the Sun in January than July."
+  "bio": "The 23.44° axial tilt creates the seasons — not distance from the Sun. Earth is actually closer to the Sun in January than July.",
+  "links": [
+    { "l": "Earth — Wikipedia", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
+    { "l": "Earth (NASA Solar System Exploration)", "u": "https://science.nasa.gov/earth/", "t": "intro" },
+    { "l": "Earth Observing System (NASA)", "u": "https://eospso.nasa.gov/", "t": "core" },
+    { "l": "Why Earth has seasons (NASA Climate Kids)", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
+    { "l": "Pale Blue Dot — Carl Sagan reflection (Planetary Society)", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+  ]
 }

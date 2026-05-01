@@ -2,5 +2,12 @@
   "name": "Saturn",
   "type": "Gas giant · Rings",
   "fact": "Saturn's density is 0.687 g/cm³ — less than water. Its ring system spans 282,000 km but is only ~10 metres thick.",
-  "bio": "The least dense planet — it would float on water. The ring system spans 282,000 km but is only metres thick. The 26.73° tilt means Earth sees the rings at different angles across Saturn's 29-year orbit."
+  "bio": "The least dense planet — it would float on water. The ring system spans 282,000 km but is only metres thick. The 26.73° tilt means Earth sees the rings at different angles across Saturn's 29-year orbit.",
+  "links": [
+    { "l": "Saturn — Wikipedia", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
+    { "l": "Saturn (NASA Solar System Exploration)", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "Cassini mission archive (NASA)", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "Rings of Saturn — Wikipedia", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
+    { "l": "Saturn's rings are young (Science 2019)", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
 }

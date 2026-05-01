@@ -2,5 +2,12 @@
   "name": "Venus",
   "type": "Terrestrial planet",
   "fact": "Surface pressure 90× Earth's. Soviet Venera probes lasted 23–127 minutes before being crushed.",
-  "bio": "Rotates retrograde — backwards and so slowly that a Venusian day is longer than its year. The 177.4° axial tilt is why: Venus is essentially upside down."
+  "bio": "Rotates retrograde — backwards and so slowly that a Venusian day is longer than its year. The 177.4° axial tilt is why: Venus is essentially upside down.",
+  "links": [
+    { "l": "Venus — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
+    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "Venera program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
+    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "Venus's runaway greenhouse (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
 }

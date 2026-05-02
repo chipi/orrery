@@ -1462,6 +1462,9 @@
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
         <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>
+        <a href="{base}/missions" class="hud-demo-cta hud-demo-cta-secondary"
+          >{m.fly_demo_replay_cta()}</a
+        >
       {/if}
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_vehicle()}</span>
@@ -1781,6 +1784,15 @@
     background: rgba(68, 102, 255, 0.32);
     border-color: #4466ff;
     outline: none;
+  }
+  .hud-demo-cta-secondary {
+    background: rgba(78, 205, 196, 0.14);
+    border-color: rgba(78, 205, 196, 0.5);
+  }
+  .hud-demo-cta-secondary:hover,
+  .hud-demo-cta-secondary:focus-visible {
+    background: rgba(78, 205, 196, 0.28);
+    border-color: #4ecdc4;
   }
 
   .hud-title {

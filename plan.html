@@ -15,31 +15,31 @@
     
 		<link href="./_app/immutable/assets/0.B8KXCtFx.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/8.BS2quaGW.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.BP3_QNU-.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.Coc-1JVC.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Db5qG_Ih.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.DJIzAwPl.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/runtime.DxZI23Oc.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.DHiL2lme.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.LyII4VBb.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.eDOsNICy.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.CehgZENk.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/render.BiZCh8ys.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.CMKfpkNe.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.Ddylfvt3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/this.wPwsoe7h.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/store.CubG7bqz.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.zNC-qGG3.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.BuaEztGn.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/snippet.Rj51pnkH.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.CkntCw34.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.Dx7MnaBS.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/messages.RciD-TdP.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/8.Bs3W5yxR.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/data.egcpr6xU.js"><!--[--><!--]--><title>Mission Configurator · Orrery</title>
+		<link rel="modulepreload" href="./_app/immutable/nodes/8.Cb6PS2wE.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/data.27aYF6-E.js"><!--[--><!--]--><title>Mission Configurator · Orrery</title>
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents"><!--[--><!--[--><!----><nav aria-label="Main navigation" class="svelte-qesxe9"><div class="left svelte-qesxe9"><span class="wordmark svelte-qesxe9">ORRERY</span> <span class="subtitle svelte-qesxe9">MISSION SIMULATOR</span></div> <div class="center svelte-qesxe9"><!--[--><a href="./explore" class="link svelte-qesxe9 ">OUR SOLAR SYSTEM</a><a href="./plan" class="link svelte-qesxe9 ">PLAN</a><a href="./fly" class="link svelte-qesxe9 ">FLY</a><a href="./missions" class="link svelte-qesxe9 ">MISSIONS</a><a href="./earth" class="link svelte-qesxe9 ">EARTH</a><a href="./moon" class="link svelte-qesxe9 ">MOON</a><!--]--></div> <div class="right svelte-qesxe9"><button type="button" class="contrast-toggle svelte-qesxe9 " aria-label="Toggle high-contrast mode" aria-pressed="false" title="Toggle high-contrast mode">Aa</button> <!----></div></nav><!----> <main class="svelte-yjdjt8"><!----><div class="plan svelte-sp85c6"><div class="plot-area svelte-sp85c6"><div class="selector-bar svelte-sp85c6"><label class="dest-label svelte-sp85c6"><span class="selector-key svelte-sp85c6">DESTINATION</span> <select class="dest-select svelte-sp85c6"><option value="mercury">Mercury</option><option value="venus">Venus</option><option value="mars">Mars</option><option value="jupiter">Jupiter</option><option value="saturn">Saturn</option></select></label> <div class="mission-type-group svelte-sp85c6" role="radiogroup" aria-label="TYPE"><button type="button" class="mission-type-pill svelte-sp85c6 active" role="radio" aria-checked="true" aria-disabled="false" title="">LANDING</button> <button type="button" class="mission-type-pill svelte-sp85c6 " role="radio" aria-checked="false">FLYBY</button></div></div> <canvas class="porkchop svelte-sp85c6" aria-label="Earth–Mars porkchop plot"></canvas> <!--[!--><!--]--> <!--[--><div class="loading svelte-sp85c6" role="status" aria-live="polite"><div class="loading-title svelte-sp85c6">COMPUTING LAMBERT SOLUTIONS</div> <div class="loading-bar svelte-sp85c6"><div style="width: 0%;" class="loading-fill svelte-sp85c6"></div></div> <div class="loading-pct svelte-sp85c6">0%</div></div><!--]--></div> <aside class="right-panel svelte-sp85c6" aria-label="Mission summary"><section class="explainer svelte-sp85c6"><h3 class="svelte-sp85c6">READING THE PORKCHOP</h3> <p class="explainer-intro svelte-sp85c6">Each cell asks: "if I launch on date X and arrive on date X+TOF, how much fuel does it take?" Lower numbers = cheaper missions.</p> <dl class="explainer-list svelte-sp85c6"><dt class="svelte-sp85c6">X · departure date</dt> <dd class="svelte-sp85c6">When you launch from Earth.</dd> <dt class="svelte-sp85c6">Y · time of flight</dt> <dd class="svelte-sp85c6">How long the trip takes (in days).</dd> <dt class="svelte-sp85c6">Color · launch ∆v</dt> <dd class="svelte-sp85c6">Cool teal = cheap (~3 km/s). Yellow = moderate. Red = very expensive (>9 km/s). <div class="color-bar svelte-sp85c6" aria-hidden="true"><span class="cb-stop teal svelte-sp85c6"></span> <span class="cb-stop blue svelte-sp85c6"></span> <span class="cb-stop yellow svelte-sp85c6"></span> <span class="cb-stop orange svelte-sp85c6"></span> <span class="cb-stop red svelte-sp85c6"></span></div> <div class="color-bar-labels svelte-sp85c6" aria-hidden="true"><span>3</span><span>5</span><span>7</span><span>9</span><span>11+ km/s</span></div></dd> <dt class="svelte-sp85c6">How to use it</dt> <dd class="svelte-sp85c6">Click a cool-colored region near the natural Hohmann minimum (~250-day TOF, every ~26 months) — that's the cheapest launch window. The right panel shows the exact dates and ∆v.</dd></dl></section> <hr class="panel-divider svelte-sp85c6" aria-hidden="true"> <!--[--><div class="empty svelte-sp85c6"><div class="empty-title svelte-sp85c6">PICK A LAUNCH WINDOW</div> <p class="empty-hint svelte-sp85c6">Tap a cell on the porkchop plot. Cool blue zones are cheap; hot red zones are expensive launch energy.</p> <p class="empty-hint svelte-sp85c6">On mobile, touch and hold the plot to open the magnifier.</p></div><!--]--></aside></div><!----><!----></main> <!--[!--><!--]--> <!--[!--><!--]--><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1987hej = {
+					__sveltekit_1pe8y6q = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/orrery"
 					};
@@ -49,8 +49,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.BP3_QNU-.js"),
-						import("./_app/immutable/entry/app.eDOsNICy.js")
+						import("./_app/immutable/entry/start.Db5qG_Ih.js"),
+						import("./_app/immutable/entry/app.CehgZENk.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 8],

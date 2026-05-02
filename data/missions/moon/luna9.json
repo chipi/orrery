@@ -17,7 +17,8 @@
   "credit": "© Soviet Academy of Sciences (historical). First soft-landing on the Moon and first photographs from the lunar surface.",
   "links": [
     { "l": "Luna 9 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_9", "t": "intro" },
-    { "l": "Luna 9 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A", "t": "core" }
+    { "l": "Luna 9 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A", "t": "core" },
+    { "l": "Harvey — Russian Planetary Exploration (Springer 2007, ch. 2)", "u": "https://link.springer.com/book/10.1007/978-0-387-46343-8", "t": "deep" }
   ],
   "flight_data_quality": "sparse",
   "flight": {
@@ -26,13 +27,23 @@
       "mass_at_tli_kg": 1583,
       "source": "NASA NSSDCA Luna 9 archive; Soviet records fragmentary"
     },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "Harvey 'Russian Planetary Exploration' (2007); single mid-course correction recorded"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.86,
+      "source": "NASA NSSDCA Luna 9 archive; direct-descent trajectory (no lunar orbit); retrorocket fired ~75 km altitude"
+    },
     "totals": {
       "total_dv_km_s": 3.0,
-      "source": "NASA NSSDCA Luna 9 archive (estimated)"
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "Harvey 2007; reconstructed Molniya-M lunar capability + descent retro burn"
     },
     "events": [
       { "met_days": 0, "type": "launch" },
       { "met_days": 0.01, "type": "tli_or_tmi" },
+      { "met_days": 1.5, "type": "tcm" },
       { "met_days": 3, "type": "arrival" },
       { "met_days": 3.005, "type": "edl_or_oi" }
     ]

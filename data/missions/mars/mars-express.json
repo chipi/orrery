@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© ESA. Beagle 2 lander reached the surface but never deployed solar panels fully, lost. Orbiter remains active 20+ years — Europe's first interplanetary spacecraft and longest-running non-NASA Mars mission.",
   "links": [
-    { "l": "Mars Express — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Express", "t": "intro" },
-    { "l": "Mars Express (ESA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express", "t": "intro" }
+    {
+      "l": "Mars Express — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Express",
+      "t": "intro"
+    },
+    {
+      "l": "Mars Express (ESA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -44,13 +52,38 @@
       "source": "ESA Mars Express Press Kit (2003-06)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 25, "type": "tcm" },
-      { "met_days": 110, "type": "tcm" },
-      { "met_days": 200, "type": "tcm" },
-      { "met_days": 206, "type": "arrival" },
-      { "met_days": 206.01, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 25,
+        "type": "tcm"
+      },
+      {
+        "met_days": 47.38,
+        "type": "tcm"
+      },
+      {
+        "met_days": 110,
+        "type": "tcm"
+      },
+      {
+        "met_days": 200,
+        "type": "tcm"
+      },
+      {
+        "met_days": 206,
+        "type": "arrival"
+      },
+      {
+        "met_days": 206.01,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

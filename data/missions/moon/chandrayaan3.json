@@ -16,7 +16,11 @@
   "data_quality": "good",
   "credit": "© ISRO — Chandrayaan-3 mission. First soft-landing near the lunar south pole — region with permanently shadowed craters and water ice deposits. Followed Chandrayaan-2's lander failure in 2019.",
   "links": [
-    { "l": "Chandrayaan-3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-3", "t": "intro" }
+    {
+      "l": "Chandrayaan-3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-3",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -41,11 +45,46 @@
       "source": "ISRO Chandrayaan-3 Mission Report (2023)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 21, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 35, "type": "arrival" },
-      { "met_days": 40, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 21,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 23.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 25.3,
+        "type": "tcm"
+      },
+      {
+        "met_days": 27.1,
+        "type": "tcm"
+      },
+      {
+        "met_days": 28.9,
+        "type": "tcm"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 30.7,
+        "type": "tcm"
+      },
+      {
+        "met_days": 35,
+        "type": "arrival"
+      },
+      {
+        "met_days": 40,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

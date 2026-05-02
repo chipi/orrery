@@ -16,10 +16,26 @@
   "data_quality": "good",
   "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First helicopter on another planet (Ingenuity, retired 2024-01). Caching samples for future Mars Sample Return.",
   "links": [
-    { "l": "Perseverance (rover) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)", "t": "intro" },
-    { "l": "Mars 2020 (NASA)", "u": "https://science.nasa.gov/mission/mars-2020-perseverance/", "t": "intro" },
-    { "l": "Ingenuity helicopter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ingenuity_(helicopter)", "t": "core" },
-    { "l": "Mars Sample Return architecture", "u": "https://mars.nasa.gov/msr/", "t": "deep" }
+    {
+      "l": "Perseverance (rover) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)",
+      "t": "intro"
+    },
+    {
+      "l": "Mars 2020 (NASA)",
+      "u": "https://science.nasa.gov/mission/mars-2020-perseverance/",
+      "t": "intro"
+    },
+    {
+      "l": "Ingenuity helicopter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ingenuity_(helicopter)",
+      "t": "core"
+    },
+    {
+      "l": "Mars Sample Return architecture",
+      "u": "https://mars.nasa.gov/msr/",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -49,14 +65,42 @@
       "source": "computed from Mars 2020 ∆v ledger (NASA Press Kit, 2020-07)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 15, "type": "tcm" },
-      { "met_days": 60, "type": "tcm" },
-      { "met_days": 140, "type": "tcm" },
-      { "met_days": 180, "type": "tcm" },
-      { "met_days": 203, "type": "arrival" },
-      { "met_days": 203.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 15,
+        "type": "tcm"
+      },
+      {
+        "met_days": 40.6,
+        "type": "tcm"
+      },
+      {
+        "met_days": 60,
+        "type": "tcm"
+      },
+      {
+        "met_days": 140,
+        "type": "tcm"
+      },
+      {
+        "met_days": 180,
+        "type": "tcm"
+      },
+      {
+        "met_days": 203,
+        "type": "arrival"
+      },
+      {
+        "met_days": 203.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

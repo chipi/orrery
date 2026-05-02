@@ -16,9 +16,21 @@
   "data_quality": "good",
   "credit": "© NASA / Langley / JPL — public domain. Lander touchdown 1976-07-20; operated 6 years 4 months. Orbiter operated 4 years 1 month.",
   "links": [
-    { "l": "Viking 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_1", "t": "intro" },
-    { "l": "Viking program (NASA)", "u": "https://science.nasa.gov/mission/viking-1/", "t": "intro" },
-    { "l": "Viking 1 (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A", "t": "core" }
+    {
+      "l": "Viking 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_1",
+      "t": "intro"
+    },
+    {
+      "l": "Viking program (NASA)",
+      "u": "https://science.nasa.gov/mission/viking-1/",
+      "t": "intro"
+    },
+    {
+      "l": "Viking 1 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -45,12 +57,38 @@
       "source": "Viking 1 Press Kit (NASA, 1975-08)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 200, "type": "tcm" },
-      { "met_days": 304, "type": "arrival" },
-      { "met_days": 335, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 69.92,
+        "type": "tcm"
+      },
+      {
+        "met_days": 124.64,
+        "type": "tcm"
+      },
+      {
+        "met_days": 200,
+        "type": "tcm"
+      },
+      {
+        "met_days": 304,
+        "type": "arrival"
+      },
+      {
+        "met_days": 335,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

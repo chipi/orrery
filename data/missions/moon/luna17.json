@@ -17,7 +17,8 @@
   "credit": "© Soviet Academy of Sciences (historical). Delivered Lunokhod 1, the first remote-controlled rover to operate on another world.",
   "links": [
     { "l": "Lunokhod 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunokhod_1", "t": "intro" },
-    { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" }
+    { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" },
+    { "l": "Mishin et al. — Lunokhod operational summary (IKI archive)", "u": "https://en.wikipedia.org/wiki/Lunokhod_programme", "t": "deep" }
   ],
   "flight_data_quality": "sparse",
   "flight": {
@@ -26,18 +27,27 @@
       "mass_at_tli_kg": 5660,
       "source": "NASA NSSDCA Luna 17 archive; Soviet records fragmentary"
     },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "Harvey 'Russian Planetary Exploration' (2007); two mid-course corrections recorded"
+    },
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 85,
-      "source": "NASA NSSDCA Luna 17 archive"
+      "inclination_deg": 141.0,
+      "orbit_insertion_dv_km_s": 0.75,
+      "source": "NASA NSSDCA Luna 17 archive; LOI placed Luna 17 in 85 × 141 km parking orbit before descent"
     },
     "totals": {
       "total_dv_km_s": 3.0,
-      "source": "NASA NSSDCA Luna 17 archive (estimated)"
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Harvey 2007; reconstructed Proton-K/D capability + LOI + descent"
     },
     "events": [
       { "met_days": 0, "type": "launch" },
       { "met_days": 0.1, "type": "tli_or_tmi" },
+      { "met_days": 1.5, "type": "tcm" },
+      { "met_days": 4, "type": "tcm" },
       { "met_days": 5, "type": "arrival" },
       { "met_days": 7, "type": "edl_or_oi" }
     ]

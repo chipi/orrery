@@ -16,7 +16,11 @@
   "data_quality": "good",
   "credit": "© CNSA. First lunar sample return in 44 years — ending a gap since Luna 24 (1976). Returned 1.731 kg from Mons Rümker, a geologically young (2 Ga) volcanic region.",
   "links": [
-    { "l": "Chang'e 5 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_5", "t": "intro" }
+    {
+      "l": "Chang'e 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_5",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -33,7 +37,7 @@
       "v_infinity_km_s": 0.85,
       "periapsis_km": 200,
       "inclination_deg": 88.0,
-      "orbit_insertion_dv_km_s": 0.80,
+      "orbit_insertion_dv_km_s": 0.8,
       "source": "CNSA Chang'e 5 LOI Report (2020-11)"
     },
     "totals": {
@@ -42,12 +46,46 @@
       "source": "CNSA Chang'e 5 Mission Report (2021); sample-return round trip"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.05, "type": "tli_or_tmi" },
-      { "met_days": 3, "type": "tcm" },
-      { "met_days": 5, "type": "arrival" },
-      { "met_days": 8, "type": "edl_or_oi" },
-      { "met_days": 23, "type": "earth_return" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.05,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.04,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.78,
+        "type": "tcm"
+      },
+      {
+        "met_days": 2.52,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3.27,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5,
+        "type": "arrival"
+      },
+      {
+        "met_days": 8,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 23,
+        "type": "earth_return"
+      }
     ]
   }
 }

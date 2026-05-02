@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© ISRO. India's first interplanetary mission, succeeded on first attempt — at one-tenth the cost of MAVEN. Communication ended 2022 after spacecraft propellant exhausted.",
   "links": [
-    { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
-    { "l": "MOM (ISRO)", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html", "t": "intro" }
+    {
+      "l": "Mars Orbiter Mission — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission",
+      "t": "intro"
+    },
+    {
+      "l": "MOM (ISRO)",
+      "u": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -34,7 +42,7 @@
       "v_infinity_km_s": 2.65,
       "periapsis_km": 421,
       "inclination_deg": 150.0,
-      "orbit_insertion_dv_km_s": 1.10,
+      "orbit_insertion_dv_km_s": 1.1,
       "source": "ISRO MOM MOI Report (2014-09); highly elliptical orbit"
     },
     "totals": {
@@ -43,13 +51,38 @@
       "source": "ISRO MOM Mission Report (2014); low TMI ∆v due to Earth-orbit raising strategy"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 30, "type": "tli_or_tmi" },
-      { "met_days": 50, "type": "tcm" },
-      { "met_days": 150, "type": "tcm" },
-      { "met_days": 250, "type": "tcm" },
-      { "met_days": 324, "type": "arrival" },
-      { "met_days": 324.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 30,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 50,
+        "type": "tcm"
+      },
+      {
+        "met_days": 97.62,
+        "type": "tcm"
+      },
+      {
+        "met_days": 150,
+        "type": "tcm"
+      },
+      {
+        "met_days": 250,
+        "type": "tcm"
+      },
+      {
+        "met_days": 324,
+        "type": "arrival"
+      },
+      {
+        "met_days": 324.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

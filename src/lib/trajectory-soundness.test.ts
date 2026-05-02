@@ -174,18 +174,8 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
         if (arcs.isMoon) {
           const expected = moonPositionAtMet(arcs.timeline.flyby_day);
           // Moon-mode arc terminates at moonPos / SCALE_3D.
-          expectCloseTo(
-            last.x,
-            expected.x / SCALE_3D,
-            5 / SCALE_3D,
-            `${m.id} Moon-mode last.x`,
-          );
-          expectCloseTo(
-            last.z,
-            expected.z / SCALE_3D,
-            5 / SCALE_3D,
-            `${m.id} Moon-mode last.z`,
-          );
+          expectCloseTo(last.x, expected.x / SCALE_3D, 5 / SCALE_3D, `${m.id} Moon-mode last.x`);
+          expectCloseTo(last.z, expected.z / SCALE_3D, 5 / SCALE_3D, `${m.id} Moon-mode last.z`);
         } else {
           // Mars-bound: arc terminates near the destination orbit ring.
           // V∞ shaping (ADR-030) bends eccentricity without re-deriving

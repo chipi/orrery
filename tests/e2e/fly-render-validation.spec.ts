@@ -206,9 +206,7 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
 
 test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
   for (const c of CASES) {
-    test(`${c.id}: HUD readouts derive consistently from spacecraft position`, async ({
-      page,
-    }) => {
+    test(`${c.id}: HUD readouts derive consistently from spacecraft position`, async ({ page }) => {
       await page.goto(`/fly?mission=${c.id}`);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,

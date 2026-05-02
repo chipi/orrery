@@ -326,16 +326,10 @@
   // (the spacecraft co-orbits with Earth around the Sun during the
   // transit), and (b) scale fake-AU → real AU when displaying
   // FROM EARTH + signal delay. FROM MARS is hidden in Moon-mode.
-  const MOON_FAKE_TO_REAL_AU =
-    384_400 / AU_TO_KM / (MOON_VISUAL_DISTANCE / SCALE_3D);
-  let scR = $derived(
-    isMoonMission ? R_EARTH_AU : Math.hypot(scState.pos.x, scState.pos.z),
-  );
+  const MOON_FAKE_TO_REAL_AU = 384_400 / AU_TO_KM / (MOON_VISUAL_DISTANCE / SCALE_3D);
+  let scR = $derived(isMoonMission ? R_EARTH_AU : Math.hypot(scState.pos.x, scState.pos.z));
   let heliocentricKms = $derived(
-    flyHeliocentricSpeed(
-      scR,
-      isMoonMission ? R_EARTH_AU : (R_EARTH_AU + R_MARS_AU) / 2,
-    ),
+    flyHeliocentricSpeed(scR, isMoonMission ? R_EARTH_AU : (R_EARTH_AU + R_MARS_AU) / 2),
   );
 
   let earthNow = $derived(earthPos(simDay));

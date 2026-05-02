@@ -740,6 +740,21 @@
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
   {/if}
 
+  <!-- Nation legend overlay. The 2D view paints this directly into
+       the canvas (line 617 of the 2D draw); the 3D view is a Three.js
+       scene that can't host text reliably, so we mirror the legend as
+       a CSS overlay. Same NATION_COLORS keep the two views in sync. -->
+  {#if view === '3d'}
+    <div class="legend-3d" aria-label="Nation legend">
+      {#each Object.entries(NATION_COLORS) as [nation, color] (nation)}
+        <span class="legend-item">
+          <span class="legend-dot" style:background={color}></span>
+          {nation}
+        </span>
+      {/each}
+    </div>
+  {/if}
+
   <Panel
     open={panelOpen}
     title={selected?.name ?? selected?.id ?? ''}
@@ -994,6 +1009,39 @@
     font-size: 9px;
     letter-spacing: 2px;
     border-radius: 4px;
+  }
+
+  .legend-3d {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 6px 14px;
+    background: rgba(8, 10, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 5;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px currentColor;
   }
 
   .head {

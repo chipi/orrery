@@ -1,14 +1,19 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getPlanets, getSun } from '$lib/data';
+  import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { auToPx } from '$lib/scale';
+  import { earthPos, outboundArc, type Vec2 } from '$lib/mission-arc';
+  import { dateToSimDay } from '$lib/sim-day';
+  import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
   import smallBodiesData from '$data/small-bodies.json';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';
   import type { LocalizedSun } from '$types/sun';
+  import type { Mission } from '$types/mission';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
 
@@ -248,6 +253,44 @@
     y: number;
   } | null = $state(null);
   let cleanup: (() => void) | undefined;
+
+  // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
+  // When `/explore?mission=ID` is loaded, fetch the mission and
+  // compute its outbound arc once. Rendered as a 2D Canvas line in
+  // draw2d (3D rendering is stretch — deferred to a follow-up).
+  let overlayMission: Mission | null = $state(null);
+  let overlayArcPx: { x: number; z: number }[] = $state([]);
+  let overlayArrivalPx: { x: number; z: number } | null = $state(null);
+  $effect(() => {
+    const id = $page.url.searchParams.get('mission');
+    if (!id) {
+      overlayMission = null;
+      overlayArcPx = [];
+      overlayArrivalPx = null;
+      return;
+    }
+    let cancelled = false;
+    void (async () => {
+      const idx = await getMissionIndex();
+      const entry = idx.find((m) => m.id === id);
+      if (!entry || cancelled) return;
+      const dest = entry.dest === 'MARS' ? 'mars' : 'mars'; // overlay is Mars-only for now
+      const mission = await getMission(id, entry.dest);
+      if (!mission || cancelled) return;
+      const depDay = dateToSimDay(mission.departure_date) ?? 0;
+      const earthDep = earthPos(depDay);
+      const destA = DESTINATIONS[dest as DestinationId].a;
+      const vInf = mission.flight?.arrival?.v_infinity_km_s;
+      const arc: Vec2[] = outboundArc(earthDep, 120, destA, vInf);
+      overlayMission = mission;
+      overlayArcPx = arc.map((p) => ({ x: auToPx(p.x), z: auToPx(p.z) }));
+      const arr = arc[arc.length - 1];
+      overlayArrivalPx = { x: auToPx(arr.x), z: auToPx(arr.z) };
+    })();
+    return () => {
+      cancelled = true;
+    };
+  });
 
   // Lookup keyed by id; reactive to localizedPlanets.
   let planetById = $derived(new Map(localizedPlanets.map((p) => [p.id, p])));
@@ -942,6 +985,36 @@
         ctx2.lineWidth = isSel ? 1.5 : 0.5;
         ctx2.stroke();
       });
+
+      // Mission overlay arc (Theme A.A1) — drawn after orbit rings
+      // but before planets so the arc sits behind the planet dots.
+      if (overlayArcPx.length > 1 && overlayMission) {
+        const accent = overlayMission.color || '#4ecdc4';
+        ctx2.save();
+        ctx2.beginPath();
+        ctx2.moveTo(overlayArcPx[0].x, overlayArcPx[0].z);
+        for (let i = 1; i < overlayArcPx.length; i++) {
+          ctx2.lineTo(overlayArcPx[i].x, overlayArcPx[i].z);
+        }
+        ctx2.strokeStyle = accent;
+        ctx2.lineWidth = 1.6;
+        ctx2.shadowColor = accent;
+        ctx2.shadowBlur = 6;
+        ctx2.stroke();
+        // Departure node (teal) + arrival node (gold) per UXS-001 §Extension.
+        ctx2.shadowBlur = 4;
+        ctx2.fillStyle = '#4ecdc4';
+        ctx2.beginPath();
+        ctx2.arc(overlayArcPx[0].x, overlayArcPx[0].z, 4, 0, Math.PI * 2);
+        ctx2.fill();
+        if (overlayArrivalPx) {
+          ctx2.fillStyle = '#ffc850';
+          ctx2.beginPath();
+          ctx2.arc(overlayArrivalPx.x, overlayArrivalPx.z, 4, 0, Math.PI * 2);
+          ctx2.fill();
+        }
+        ctx2.restore();
+      }
 
       // Small-body orbit paths — closed dashed ellipses for dwarfs and
       // comets, open hyperbola for interstellar (Oumuamua). Uses

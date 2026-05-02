@@ -630,11 +630,10 @@ const SUN_QUERIES: GalleryQuery[] = [{ id: 'sun', query: 'solar dynamics observa
 
 const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   { id: 'iss', query: 'international space station' },
-  {
-    id: 'tiangong',
-    query: 'tiangong space station china',
-    wikimediaFallback: 'Tiangong_Space_Station_(rendered).jpg',
-  },
+  // Tiangong: NASA library credits Tiangong photos to CNSA (filtered out
+  // by our credit-allowlist); Wikimedia filenames for CNSA assets are
+  // too volatile to rely on. Honest empty state per ADR-016 § ethics.
+  { id: 'tiangong', query: 'tiangong space station china' },
   { id: 'hubble', query: 'hubble space telescope' },
   {
     id: 'gps',
@@ -665,11 +664,9 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   },
   { id: 'lro', query: 'lunar reconnaissance orbiter', copyFromMission: 'lro' },
   { id: 'jwst', query: 'james webb space telescope' },
-  {
-    id: 'gaia',
-    query: 'gaia spacecraft milky way',
-    wikimediaFallback: 'Gaia_spacecraft_animation.jpg',
-  },
+  // Gaia: ESA mission; NASA library has no official imagery; Wikimedia
+  // filenames don't resolve reliably. Honest empty state.
+  { id: 'gaia', query: 'gaia spacecraft milky way' },
 ];
 
 const MOON_SITE_QUERIES: GalleryQuery[] = [

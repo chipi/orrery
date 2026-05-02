@@ -68,6 +68,10 @@
     for (const link of links) out[link.t].push(link);
     return out;
   });
+  // The `as MoonSite | null` cast guards against a Svelte 5 flow-
+  // analysis quirk where `selected` is narrowed to `never` after the
+  // earlier $derived.by reads it inside another closure. The cast
+  // restores the union type for length-checking.
   let panelHasLinks = $derived.by(() => {
     const sel = selected as MoonSite | null;
     return sel != null && sel.links.length > 0;

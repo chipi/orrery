@@ -1,11 +1,10 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import SizesCanvas from './SizesCanvas.svelte';
   import { getPlanetGallery } from '$lib/data';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
 
-  type Tab = 'overview' | 'technical' | 'sizes' | 'gallery' | 'learn';
+  type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
 
   type Props = {
     planet: LocalizedPlanet | null;
@@ -116,15 +115,6 @@
         aria-selected={tab === 'technical'}
         aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
       >
-      <button
-        type="button"
-        id="pp-tab-sizes"
-        class:active={tab === 'sizes'}
-        onclick={() => (tab = 'sizes')}
-        role="tab"
-        aria-selected={tab === 'sizes'}
-        aria-controls="pp-tabpanel">{m.panel_tab_sizes()}</button
-      >
       {#if gallery.length > 0}
         <button
           type="button"
@@ -214,8 +204,6 @@
         </div>
 
         <div class="src">{m.panel_source_iau()}</div>
-      {:else if tab === 'sizes'}
-        <SizesCanvas highlightId={planet.id} />
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>

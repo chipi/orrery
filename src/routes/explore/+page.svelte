@@ -16,6 +16,8 @@
   import type { Mission } from '$types/mission';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
+  import SizesCanvas from '$lib/components/SizesCanvas.svelte';
+  import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
   // Planet visual config — compressed orbital radii & display sizes,
@@ -244,6 +246,20 @@
   let selectedId: string | null = $state(null);
   let panelOpen = $state(false);
   let sunPanelOpen = $state(false);
+  let sizesOpen = $state(false);
+
+  // ESC closes the sizes overlay. Using a window listener here (gated
+  // by sizesOpen) so the dialog is keyboard-dismissible without a
+  // svelte:window element inside the {#if} block, which prettier
+  // doesn't like nested.
+  $effect(() => {
+    if (!sizesOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') sizesOpen = false;
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
   let hoverData: {
     name: string;
     velocity: string;
@@ -1474,6 +1490,39 @@
   >
     {view === '3d' ? '2D' : '3D'}
   </button>
+  <button
+    class="toggle sizes-toggle"
+    class:panel-shifted={panelOpen || sunPanelOpen}
+    type="button"
+    onclick={() => (sizesOpen = !sizesOpen)}
+    aria-pressed={sizesOpen}
+    aria-label={m.explore_sizes_toggle()}
+    data-testid="sizes-toggle"
+  >
+    {m.explore_sizes_toggle()}
+  </button>
+
+  {#if sizesOpen}
+    <!-- Size comparison overlay — modal-style, mirrors selected planet
+         (if any) so the user keeps context. ESC + backdrop click close. -->
+    <button
+      type="button"
+      class="sizes-backdrop"
+      aria-label={m.explore_sizes_close()}
+      onclick={() => (sizesOpen = false)}
+    ></button>
+    <div class="sizes-card" role="dialog" aria-modal="true" aria-label={m.explore_sizes_toggle()}>
+      <button
+        type="button"
+        class="sizes-close"
+        aria-label={m.explore_sizes_close()}
+        onclick={() => (sizesOpen = false)}>×</button
+      >
+      <div class="sizes-canvas-wrap">
+        <SizesCanvas highlightId={selectedId} />
+      </div>
+    </div>
+  {/if}
 
   {#if hoverData && view === '3d'}
     <div
@@ -1549,6 +1598,66 @@
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
+  .sizes-toggle {
+    /* Sit just below the 2D/3D toggle. min-height 44px + 8px gap. */
+    top: calc(var(--nav-height) + 12px + 44px + 8px);
+  }
+
+  .sizes-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 4, 12, 0.78);
+    backdrop-filter: blur(4px);
+    z-index: 60;
+    border: 0;
+    cursor: pointer;
+    /* Reset button defaults so it behaves as a click target only. */
+    padding: 0;
+    margin: 0;
+  }
+  .sizes-card {
+    position: fixed;
+    z-index: 61;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(8, 10, 22, 0.96);
+    border: 1px solid rgba(68, 102, 255, 0.4);
+    border-radius: 8px;
+    padding: 18px 18px 14px;
+    width: min(640px, calc(100vw - 48px));
+    max-height: calc(100vh - 48px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  }
+  .sizes-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+  }
+  .sizes-close:hover,
+  .sizes-close:focus-visible {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    outline: none;
+  }
+  .sizes-canvas-wrap {
+    width: 100%;
+    height: min(540px, calc(100vh - 110px));
+  }
+  .sizes-canvas-wrap :global(canvas) {
+    width: 100%;
+    height: 100%;
+  }
+
   /* When a detail panel is open on desktop, shift the toggle left so
      it clears the right-drawer (314px wide). On mobile the panel is a
      bottom-sheet and never overlaps the top-right toggle. */

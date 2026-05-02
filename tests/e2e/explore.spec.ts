@@ -116,10 +116,12 @@ test.describe('/explore — load and toggle', () => {
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 
     await page.goto('/explore');
-    // Use the .toggle class — the text content flips between "2D" and
-    // "3D" each click, which races Svelte's reactive update on slow
-    // viewports if we re-resolve by name.
-    const toggle = page.locator('button.toggle');
+    // Use button.toggle:not(.sizes-toggle) — the SIZES overlay toggle
+    // also wears the .toggle class but we want only the 2D/3D one
+    // here. The text content flips between "2D" and "3D" each click,
+    // which races Svelte's reactive update on slow viewports if we
+    // re-resolve by name.
+    const toggle = page.locator('button.toggle:not(.sizes-toggle)');
     await expect(toggle).toBeVisible();
     for (let i = 0; i < 6; i++) {
       await toggle.click();
@@ -180,21 +182,20 @@ test.describe('/explore — selection and panel', () => {
     await expect(panel).toContainText(/ECCENTRICITY/);
   });
 
-  test('the SIZES tab renders without errors after switching to it', async ({ page }) => {
-    // Same Earth-position determinism as the test above — freeze simT
-    // via reduced-motion so the click reliably hits Earth on CI.
-    await page.emulateMedia({ reducedMotion: 'reduce' });
+  test('SIZES overlay opens via toggle button + closes via ESC', async ({ page }) => {
+    // SIZES is no longer a per-planet tab (each planet panel was
+    // rendering the same chart) — it's now a single global overlay
+    // toggled from a button next to the 2D/3D toggle. The chart
+    // highlights whichever planet panel is open, if any.
     await page.goto('/explore');
-    await enterTwoDMode(page);
-    const canvas2d = page.locator('canvas.layer');
-    const box = await canvas2d.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
-    await page.getByRole('tab', { name: /sizes/i }).click();
-    // SizesCanvas renders a canvas with aria-label
+    const toggle = page.getByTestId('sizes-toggle');
+    await expect(toggle).toBeVisible();
+    await toggle.click();
     const sizesCanvas = page.getByLabel(/Planet size comparison/i);
     await expect(sizesCanvas).toBeVisible();
+    // ESC dismisses the overlay.
+    await page.keyboard.press('Escape');
+    await expect(sizesCanvas).toBeHidden();
   });
 
   test('toggle stays accessible when panel is open (regression for the desktop panel-shift)', async ({

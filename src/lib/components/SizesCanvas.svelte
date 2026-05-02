@@ -43,7 +43,12 @@
     ctx.fillRect(0, 0, cssW, cssH);
 
     const maxR = SIZES[0].r;
-    const maxVR = 60;
+    // Scale max-visual-radius (Jupiter, the biggest dot) to fit cssH.
+    // Total content height at maxVR M is approximately 5.08*M + 144
+    // (sum of 8 row heights + header + padding + row gaps), so the
+    // largest M that fits is (cssH - 144) / 5.08. Cap at 60 (the
+    // tuned maximum) so wide panels don't make the dots cartoonish.
+    const maxVR = Math.max(14, Math.min(60, (cssH - 144) / 5.08));
     const scale = maxVR / maxR;
 
     const LABEL_X = 12;

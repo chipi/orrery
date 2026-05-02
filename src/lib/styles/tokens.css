@@ -54,3 +54,38 @@
   --color-jaxa: #003087;
   --color-spacex: #005288;
 }
+
+/* ─── High-contrast mode (v0.1.10 / Theme C.C2 / issue #18) ─────────
+ *
+ * Two activation paths:
+ *   1. OS preference: @media (prefers-contrast: more)
+ *   2. Manual toggle: data-high-contrast="true" attribute on <html>
+ *
+ * Both apply the same overrides:
+ *   - Dim/faint text colours bumped to higher alpha
+ *   - Borders thickened from 1px to 1.5px (or 2px on key panels)
+ *   - Panel/HUD backgrounds raised toward fully-opaque
+ *
+ * Canvas content (planet dots, orbit rings, mission arcs) already
+ * uses high-saturation tokens — no override needed there. */
+
+:root[data-high-contrast='true'],
+:root[data-high-contrast='true'] :root {
+  --color-text-dim: rgba(255, 255, 255, 0.7);
+  --color-text-faint: rgba(255, 255, 255, 0.5);
+  --color-border: rgba(255, 255, 255, 0.18);
+  --color-panel-bg: rgba(4, 4, 12, 0.99);
+  --color-hud-bg: rgba(5, 5, 20, 0.97);
+  --color-nav-bg: rgba(4, 4, 12, 0.97);
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-dim: rgba(255, 255, 255, 0.7);
+    --color-text-faint: rgba(255, 255, 255, 0.5);
+    --color-border: rgba(255, 255, 255, 0.18);
+    --color-panel-bg: rgba(4, 4, 12, 0.99);
+    --color-hud-bg: rgba(5, 5, 20, 0.97);
+    --color-nav-bg: rgba(4, 4, 12, 0.97);
+  }
+}

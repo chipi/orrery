@@ -41,7 +41,6 @@ const A_TRANSFER_MARS = (R_EARTH_AU + R_MARS_AU) / 2;
 // Tolerances ---------------------------------------------------------------
 const HELIO_TOL_KMS = 0.02; // hud rounds to 0.0001, our compute also; gap is float drift
 const SIGNAL_TOL_MIN = 0.05;
-const POS_TOL_AU = 1e-4;
 
 interface MissionCase {
   id: string;

@@ -23,7 +23,6 @@ import { join } from 'node:path';
 import { earthPos, destinationPos, outboundArc, returnArc, spacecraftPos } from './mission-arc';
 import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './fly-physics';
 import { dateToSimDay } from './sim-day';
-import { MOON_VISUAL_DISTANCE } from './fly-physics-constants';
 import { expectCloseTo } from './test-helpers/expect-close';
 import type { Mission } from '$types/mission';
 
@@ -238,9 +237,6 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
       });
 
       // ─── (h) Round-trip checks ────────────────────────────────────
-      if (false /* placeholder; populated below per-mission */) {
-        // Type discriminator handled at runtime via arcs.isReturnTrip
-      }
       it('round-trip: retPts is non-empty AND midpoint differs from outbound midpoint', () => {
         if (!arcs.isReturnTrip) return; // one-way mission — skip
         if (arcs.ret.length !== ARC_STEPS + 1) {

@@ -474,7 +474,7 @@
   <button
     type="button"
     class="lightbox"
-    aria-label="Close gallery preview"
+    aria-label={m.panel_lightbox_close()}
     onclick={() => (lightboxSrc = null)}
   >
     <img src={lightboxSrc} alt="" />
@@ -549,37 +549,7 @@
     margin: 0;
   }
 
-  .tabs {
-    display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    margin-bottom: 14px;
-    flex-shrink: 0;
-  }
-  .tabs button {
-    padding: 10px 14px;
-    min-height: 44px;
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.35);
-    cursor: pointer;
-    margin-bottom: -1px;
-  }
-  .tabs button.active {
-    color: var(--color-text);
-    border-bottom-color: #4466ff;
-  }
-  .tabs button:hover:not(.active) {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .tab-content {
-    flex: 1;
-  }
+  /* .tabs / .tab-content moved to src/lib/styles/panel-tabs.css (v0.1.10) */
 
   .grid {
     display: grid;
@@ -645,61 +615,7 @@
     padding-top: 10px;
   }
 
-  .link-tier {
-    margin-bottom: 14px;
-  }
-  .link-tier h3 {
-    font-family: 'Space Mono', monospace;
-    font-size: 7px;
-    letter-spacing: 2px;
-    margin: 0 0 6px;
-  }
-  .tier-intro h3 {
-    color: #4ecdc4;
-  }
-  .tier-core h3 {
-    color: #4466ff;
-  }
-  .tier-deep h3 {
-    color: #ffc850;
-  }
-  .link-tier ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .link-tier a {
-    display: block;
-    padding: 8px 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.75);
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    text-decoration: none;
-    line-height: 1.5;
-    min-height: 44px;
-    transition: all 0.15s;
-  }
-  .link-tier a:hover,
-  .link-tier a:focus-visible {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    outline: none;
-  }
-
-  .empty-tab {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    margin: 0;
-  }
+  /* .link-tier / .tier-* / .empty-tab moved to panel-tabs.css */
 
   .cta-bar {
     padding: 12px 0 0;
@@ -731,80 +647,7 @@
     outline: none;
   }
 
-  /* Gallery tab: thumbnail grid + click-to-enlarge lightbox */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    margin-bottom: 10px;
-  }
-  .gallery-thumb {
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 3px;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      transform 120ms;
-  }
-  .gallery-thumb:hover,
-  .gallery-thumb:focus-visible {
-    border-color: rgba(68, 102, 255, 0.6);
-    transform: scale(1.02);
-    outline: none;
-  }
-  .gallery-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .gallery-credit {
-    margin: 4px 0 0;
-    font-size: 7px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(2, 4, 12, 0.92);
-    backdrop-filter: blur(8px);
-    cursor: zoom-out;
-  }
-  .lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 4px;
-  }
-  .lightbox-close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 44px;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .lightbox-close:hover,
-  .lightbox-close:focus-visible {
-    border-color: rgba(255, 255, 255, 0.5);
-    outline: none;
-  }
+  /* .gallery-credit / .lightbox / .lightbox-close moved to panel-tabs.css */
 
   /* FLIGHT tab (v0.1.7 / ADR-027 / UXS-004 §Extension) */
   .flight-caveat {

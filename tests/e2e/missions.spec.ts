@@ -82,12 +82,14 @@ test.describe('/missions — library', () => {
     await page.locator('[data-testid="mission-card-curiosity"]').click();
     const panel = page.getByRole('complementary');
     await expect(panel).toBeVisible();
-    // Manifest has Curiosity at 5 photos; gallery tab + 5 thumbs render.
+    // Gallery tab renders at least one thumbnail. Asserting on the
+    // first thumbnail (not an exact count) keeps the test stable when
+    // the manifest count drifts up or down per fetch-assets reruns.
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
     const thumbs = panel.locator('.gallery-thumb');
-    await expect(thumbs).toHaveCount(5, { timeout: 5_000 });
+    await expect(thumbs.first()).toBeVisible({ timeout: 5_000 });
   });
 });
 

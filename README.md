@@ -12,12 +12,12 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 | Screen | What it shows |
 |---|---|
-| **Moon Map** | 16 landing sites across 5 nations — the capability ladder that made Mars possible |
-| **Solar System Explorer** | Real-time 3D/2D orrery — planets, Kuiper Belt, comets, Earth orbital neighbourhood |
+| **Moon Map** | 16 landing sites across 5 nations — the capability ladder that made Mars possible. Site detail panels: OVERVIEW · GALLERY · LEARN tabs |
+| **Solar System Explorer** | Real-time 3D/2D orrery — planets, Kuiper Belt, comets, Earth orbital neighbourhood. PlanetPanel + SunPanel: OVERVIEW · TECHNICAL · SIZES · GALLERY · LEARN |
 | **Mission Configurator** | Real Lambert solver, 11,200-cell porkchop plot per destination — Earth → Mercury / Venus / Mars / Jupiter / Saturn with LANDING / FLYBY toggle (ADR-026) |
-| **Mission Arc** | Fly your mission — live telemetry, transfer arc, fuel model, timeline scrubber |
-| **Mission Library** | 28 historical missions (Mars + Moon) — every agency, every outcome, replayable |
-| **Earth Orbit** | ISS to JWST on a logarithmic scale — the infrastructure that makes space possible |
+| **Mission Arc** | Fly your mission — live telemetry, transfer arc, fuel model, timeline scrubber. FLIGHT PARAMS HUD surfaces real per-mission C3 / V∞ / total ∆v (ADR-027) |
+| **Mission Library** | 28 historical missions (Mars + Moon) — every agency, every outcome, replayable. Mission panels: OVERVIEW · FLIGHT · GALLERY · LEARN. Timeline navigator (1957→2030) above the card grid scrubs the year window |
+| **Earth Orbit** | ISS to JWST on a logarithmic scale — the infrastructure that makes space possible. Object panels: OVERVIEW · GALLERY · LEARN |
 
 ## Try it
 

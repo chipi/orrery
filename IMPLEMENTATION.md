@@ -247,6 +247,26 @@ Closes RFC-009 / ADR-027. Extends every mission record with a structured `flight
 
 ---
 
+## v0.1.10 — Panel galleries: GALLERY + LEARN tabs (2026-05-02)
+
+The MissionPanel tab pattern (v0.1.7) extends to every detail panel in the app. PlanetPanel, SunPanel, and the inline panels on `/earth` and `/moon` gain GALLERY (photo grid + lightbox) and LEARN (tiered intro/core/deep links) tabs. 128 photos populated across the four new categories.
+
+- **1.10a-1** — Schema + types. `planet-overlay.schema.json` and `sun-overlay.schema.json` allow optional `links[]`. `PlanetOverlay` + `SunOverlay` TS types extend with optional `links`. Empty manifest scaffolds (`planet-galleries.json`, `sun-gallery.json`, `earth-object-galleries.json`, `moon-site-galleries.json`) avoid console 404s while photos catch up.
+- **1.10a-2** — Curated link sets. 8 planet overlays + sun overlay get 5-link tiered curation each (Wikipedia + NASA mission pages + peer-reviewed papers). Earth-objects and moon-sites already carried `links` in their base records — now surfaced.
+- **1.10a-3** — Tab UI. PlanetPanel + SunPanel + `/earth` + `/moon` get the OVERVIEW / (existing tabs) / GALLERY / LEARN structure. `data.ts` gains `getPlanetGallery / getSunGallery / getEarthObjectGallery / getMoonSiteGallery`. New shared i18n keys: `panel_tab_gallery / _learn`, `panel_links_intro/core/deep`, `panel_gallery_empty / _credit / _aria`, `panel_no_links`, `panel_lightbox_close`.
+- **1.10a-4** — Photo population. `scripts/fetch-assets.ts` extends with a generic `fetchPanelGallery` over four new query lists. Source: NASA Images API + curated Wikimedia Commons fallbacks. For moon-site IDs that match a mission ID (apollo11, change5, luna9 …) the script copies existing `missions/{id}/*.jpg` instead of re-downloading. Result: 40 planets + 5 sun + 39 earth-objects + 44 moon-sites = 128 new photos, ~18 MB.
+- **1.10a-5** — Audit cleanup. Deep review across docs/specs/code/tests caught: ~250 lines of CSS duplicated across 5 surfaces (extracted to `src/lib/styles/panel-tabs.css`, net −723 LOC); hardcoded "Close gallery preview" aria-label in 5 places (i18n keys added); brittle `toHaveCount(5)` e2e assertion (switched to `first().toBeVisible()`).
+
+**Bugfix found en route:** SunPanel's gallery `$effect` read `gallery.length` inside its body; once the empty manifest landed, `gallery = []` re-triggered the effect → infinite loop → `/explore` page hang. Fixed with a one-shot `galleryLoaded` guard.
+
+**State at v0.1.10:** **201 unit tests + 64 e2e tests** (1 skipped), all green. ~18 MB of new image content; gallery manifests committed alongside images. No regression on missions GALLERY/LEARN tabs (v0.1.8 baseline).
+
+**Honesty rule preserved:** entries with empty galleries (tiangong, gaia — Wikimedia filenames not findable) keep their GALLERY tab hidden rather than showing broken thumbnails.
+
+**Deferred (issues open):** outbound-arc V∞ hook (carries from v0.1.9), mobile pinch-zoom on timeline (carries from v0.1.9), PRD-001/005/006 + UXS-001/005/006 §Extension polish, README mention. Tracked in v0.1.10 audit issue.
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

@@ -213,3 +213,54 @@ test.describe('/explore — selection and panel', () => {
     await toggle.click(); // Should switch back to 3D without throwing.
   });
 });
+
+/**
+ * v0.1.10 — GALLERY + LEARN tabs on PlanetPanel + SunPanel.
+ */
+test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
+  test('Earth panel exposes GALLERY tab with thumbnails', async ({ page }) => {
+    await page.goto('/explore');
+    await enterTwoDMode(page);
+    const canvas2d = page.locator('canvas.layer');
+    const box = await canvas2d.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible();
+    const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
+    await expect(galleryTab).toBeVisible({ timeout: 5_000 });
+    await galleryTab.click();
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('Earth panel LEARN tab shows tiered links', async ({ page }) => {
+    await page.goto('/explore');
+    await enterTwoDMode(page);
+    const canvas2d = page.locator('canvas.layer');
+    const box = await canvas2d.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible();
+    await page.getByRole('tab', { name: /^LEARN$/ }).click();
+    // Earth overlay carries 5 links across intro/core/deep tiers.
+    await expect(panel).toContainText(/INTRO/);
+    await expect(panel.locator('.link-tier a').first()).toBeVisible();
+  });
+
+  test('Sun panel exposes GALLERY + LEARN tabs', async ({ page }) => {
+    await page.goto('/explore');
+    await enterTwoDMode(page);
+    const canvas2d = page.locator('canvas.layer');
+    const box = await canvas2d.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toContainText(/The Sun/i);
+    await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByRole('tab', { name: /^LEARN$/ })).toBeVisible();
+  });
+});

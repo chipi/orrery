@@ -82,4 +82,42 @@ test.describe('/earth', () => {
     await page.waitForTimeout(800);
     expect(errors, errors.join('\n')).toEqual([]);
   });
+
+  /* ── v0.1.10 — GALLERY + LEARN tabs on the object detail panel ── */
+  test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page }) => {
+    await page.goto('/earth');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    const flat = page.locator('canvas.layer');
+    await page.waitForTimeout(600);
+    const box = await flat.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    const pxPerUnit = Math.min(box.width, box.height) / 70;
+    const issR = 10.9 * pxPerUnit;
+    await flat.click({ position: { x: box.width / 2 + issR, y: box.height / 2 } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
+    await expect(galleryTab).toBeVisible({ timeout: 5_000 });
+    await galleryTab.click();
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {
+    await page.goto('/earth');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    const flat = page.locator('canvas.layer');
+    await page.waitForTimeout(600);
+    const box = await flat.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    const pxPerUnit = Math.min(box.width, box.height) / 70;
+    const issR = 10.9 * pxPerUnit;
+    await flat.click({ position: { x: box.width / 2 + issR, y: box.height / 2 } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    await page.getByRole('tab', { name: /^LEARN$/ }).click();
+    await expect(panel).toContainText(/INTRO/);
+    await expect(panel.locator('.link-tier a').first()).toBeVisible();
+  });
 });

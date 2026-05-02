@@ -87,4 +87,52 @@ test.describe('/moon', () => {
     await page.waitForTimeout(800);
     expect(errors, errors.join('\n')).toEqual([]);
   });
+
+  /* ── v0.1.10 — GALLERY + LEARN tabs on the site detail panel ── */
+  test('Apollo 11 site GALLERY tab shows mission photos (v0.1.10)', async ({ page }) => {
+    await page.goto('/moon');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    const flat = page.locator('canvas.layer');
+    await page.waitForTimeout(500);
+    const box = await flat.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    const cx = box.width * 0.27;
+    const cy = box.height * 0.46;
+    const discR = Math.min(box.width * 0.2, box.height * 0.42);
+    const lonRad = (23.47 * Math.PI) / 180;
+    const latRad = (0.67 * Math.PI) / 180;
+    const px = cx + Math.sin(lonRad) * Math.cos(latRad) * discR;
+    const py = cy - Math.sin(latRad) * discR;
+    await flat.click({ position: { x: px, y: py } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
+    await expect(galleryTab).toBeVisible({ timeout: 5_000 });
+    await galleryTab.click();
+    // Apollo 11 site copies its 5 photos from images/missions/apollo11/
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {
+    await page.goto('/moon');
+    await page.getByRole('button', { name: /^2d$/i }).click();
+    const flat = page.locator('canvas.layer');
+    await page.waitForTimeout(500);
+    const box = await flat.boundingBox();
+    expect(box).not.toBeNull();
+    if (!box) return;
+    const cx = box.width * 0.27;
+    const cy = box.height * 0.46;
+    const discR = Math.min(box.width * 0.2, box.height * 0.42);
+    const lonRad = (23.47 * Math.PI) / 180;
+    const latRad = (0.67 * Math.PI) / 180;
+    const px = cx + Math.sin(lonRad) * Math.cos(latRad) * discR;
+    const py = cy - Math.sin(latRad) * discR;
+    await flat.click({ position: { x: px, y: py } });
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    await page.getByRole('tab', { name: /^LEARN$/ }).click();
+    await expect(panel.locator('.link-tier a').first()).toBeVisible({ timeout: 5_000 });
+  });
 });

@@ -14,6 +14,10 @@ import {
   getEarthObjects,
   getMoonSites,
   getPorkchopGrid,
+  getPlanetGallery,
+  getSunGallery,
+  getEarthObjectGallery,
+  getMoonSiteGallery,
   rockets,
   earthObjects,
   moonSites,
@@ -398,6 +402,46 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026)', () => {
       const g = await getPorkchopGrid(id);
       expect(g?.dv_orbit_insertion.LANDING).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('panel gallery loaders (v0.1.10)', () => {
+  it('getPlanetGallery returns count-many URLs for Mars', async () => {
+    const urls = await getPlanetGallery('mars');
+    expect(urls.length).toBeGreaterThan(0);
+    expect(urls[0]).toMatch(/\/images\/planets\/mars\/01\.jpg$/);
+    // Filenames are zero-padded to two digits.
+    if (urls.length >= 2) expect(urls[1]).toMatch(/02\.jpg$/);
+  });
+
+  it('getPlanetGallery returns [] for an unknown id', async () => {
+    const urls = await getPlanetGallery('not-a-planet');
+    expect(urls).toEqual([]);
+  });
+
+  it('getSunGallery returns count-many URLs', async () => {
+    const urls = await getSunGallery();
+    expect(urls.length).toBeGreaterThan(0);
+    expect(urls[0]).toMatch(/\/images\/sun\/01\.jpg$/);
+  });
+
+  it('getEarthObjectGallery returns URLs for a populated entity (iss)', async () => {
+    const urls = await getEarthObjectGallery('iss');
+    expect(urls.length).toBeGreaterThan(0);
+    expect(urls[0]).toMatch(/\/images\/earth-objects\/iss\/01\.jpg$/);
+  });
+
+  it('getEarthObjectGallery returns [] for an empty manifest entry (tiangong)', async () => {
+    // tiangong stayed at count=0 — Wikimedia fallback didn't resolve.
+    // The honesty rule: empty array → UI hides the GALLERY tab.
+    const urls = await getEarthObjectGallery('tiangong');
+    expect(urls).toEqual([]);
+  });
+
+  it('getMoonSiteGallery returns URLs for Apollo 11 (copied from missions)', async () => {
+    const urls = await getMoonSiteGallery('apollo11');
+    expect(urls.length).toBeGreaterThan(0);
+    expect(urls[0]).toMatch(/\/images\/moon-sites\/apollo11\/01\.jpg$/);
   });
 });
 

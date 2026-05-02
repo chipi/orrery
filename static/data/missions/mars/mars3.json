@@ -17,7 +17,8 @@
   "credit": "© Soviet Academy of Sciences (historical). Lander achieved soft-landing then transmitted for ~110 s before signal loss during a global dust storm.",
   "links": [
     { "l": "Mars 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
-    { "l": "Mars 3 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A", "t": "core" }
+    { "l": "Mars 3 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A", "t": "core" },
+    { "l": "Siddiqi — Beyond Earth (NASA SP-2018-4041, ch. on Soviet Mars program)", "u": "https://www.nasa.gov/wp-content/uploads/2018/12/beyond_earth_tagged.pdf", "t": "deep" }
   ],
   "flight_data_quality": "sparse",
   "flight": {
@@ -28,23 +29,27 @@
     },
     "cruise": {
       "tcm_count": 2,
-      "source": "NASA NSSDCA Mars 3 archive"
+      "source": "NASA NSSDCA Mars 3 archive; both TCMs occurred mid-cruise"
     },
     "arrival": {
       "v_infinity_km_s": 5.7,
       "periapsis_km": 1500,
       "inclination_deg": 60.0,
-      "source": "NASA NSSDCA Mars 3 archive; orbital parameters approximate"
+      "source": "NASA NSSDCA Mars 3 archive; orbital parameters approximate; lander descent ∆v ~1.5 km/s estimated from comparable Soviet probes"
     },
     "totals": {
       "total_dv_km_s": 5.5,
-      "source": "NASA NSSDCA Mars 3 archive (estimated)"
+      "tli_or_tmi_dv_km_s": 3.6,
+      "source": "Siddiqi 'Beyond Earth' (NASA SP-2018-4041); reconstructed from Proton-K/D capability + cruise + Mars insertion"
     },
     "events": [
       { "met_days": 0, "type": "launch" },
       { "met_days": 0.005, "type": "tli_or_tmi" },
+      { "met_days": 30, "type": "tcm" },
+      { "met_days": 150, "type": "tcm" },
       { "met_days": 188, "type": "arrival" },
-      { "met_days": 188.01, "type": "edl_or_oi" }
+      { "met_days": 188.01, "type": "edl_or_oi" },
+      { "met_days": 188.013, "type": "anomaly" }
     ]
   }
 }

@@ -16,7 +16,11 @@
   "data_quality": "good",
   "credit": "© CNSA. First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Required Queqiao-2 relay satellite for far-side operations. Samples returned to Earth 2024-06-25.",
   "links": [
-    { "l": "Chang'e 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chang%27e_6", "t": "intro" }
+    {
+      "l": "Chang'e 6 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_6",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -42,12 +46,46 @@
       "source": "CNSA Chang'e 6 Mission Report (2024); sample-return round trip"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.05, "type": "tli_or_tmi" },
-      { "met_days": 3, "type": "tcm" },
-      { "met_days": 5, "type": "arrival" },
-      { "met_days": 30, "type": "edl_or_oi" },
-      { "met_days": 53, "type": "earth_return" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.05,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.04,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.78,
+        "type": "tcm"
+      },
+      {
+        "met_days": 2.52,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3.27,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5,
+        "type": "arrival"
+      },
+      {
+        "met_days": 30,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 53,
+        "type": "earth_return"
+      }
     ]
   }
 }

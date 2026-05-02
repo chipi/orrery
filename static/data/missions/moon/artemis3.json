@@ -16,9 +16,74 @@
   "data_quality": "partial",
   "credit": "© NASA — Artemis program. Architecture: SLS launches Orion to Near-Rectilinear Halo Orbit (NRHO) where it docks with a pre-positioned Starship Human Landing System; 2 crew descend to surface, 2 remain in NRHO. Specific landing site TBD; 13 candidate regions in south polar zone.",
   "links": [
-    { "l": "Artemis III — Wikipedia", "u": "https://en.wikipedia.org/wiki/Artemis_3", "t": "intro" },
-    { "l": "Artemis program (NASA)", "u": "https://www.nasa.gov/humans-in-space/artemis/", "t": "intro" },
-    { "l": "Lunar south pole water ice (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aap8637", "t": "deep" }
+    {
+      "l": "Artemis III — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_3",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis program (NASA)",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/",
+      "t": "intro"
+    },
+    {
+      "l": "Lunar south pole water ice (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aap8637",
+      "t": "deep"
+    }
   ],
-  "flight_data_quality": "unknown"
+  "flight_data_quality": "sparse",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
+      "mass_at_tli_kg": 26500,
+      "source": "NASA Artemis 3 mission profile (planned; ICPS performs TLI for Orion). Crewed mass + service module + LAS jettisoned"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "NASA Artemis architecture documents (planned-mission target; outbound TCM + NRHO insertion correction)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 3000,
+      "inclination_deg": 90.0,
+      "orbit_insertion_dv_km_s": 0.45,
+      "source": "NASA Artemis 3 mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)"
+    },
+    "totals": {
+      "total_dv_km_s": 7.2,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "NASA Artemis architecture (planned); SLS-Orion + HLS combined ledger"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.13,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.48,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 4,
+        "type": "arrival"
+      },
+      {
+        "met_days": 5,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 11,
+        "type": "earth_return"
+      }
+    ]
+  }
 }

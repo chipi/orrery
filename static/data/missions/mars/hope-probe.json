@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© UAE Space Agency / MBRSC. First Arab interplanetary mission. Studies Mars atmospheric dynamics from a science orbit not covered by other Mars orbiters.",
   "links": [
-    { "l": "Emirates Mars Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission", "t": "intro" },
-    { "l": "Hope Probe (MBRSC)", "u": "https://www.mbrsc.ae/our-projects/space-exploration/", "t": "intro" }
+    {
+      "l": "Emirates Mars Mission — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission",
+      "t": "intro"
+    },
+    {
+      "l": "Hope Probe (MBRSC)",
+      "u": "https://www.mbrsc.ae/our-projects/space-exploration/",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -44,12 +52,42 @@
       "source": "MBRSC Hope Probe Mission Press Kit (2020-07)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 25, "type": "tcm" },
-      { "met_days": 100, "type": "tcm" },
-      { "met_days": 205, "type": "arrival" },
-      { "met_days": 205.01, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 25,
+        "type": "tcm"
+      },
+      {
+        "met_days": 41.0,
+        "type": "tcm"
+      },
+      {
+        "met_days": 71.75,
+        "type": "tcm"
+      },
+      {
+        "met_days": 100,
+        "type": "tcm"
+      },
+      {
+        "met_days": 102.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 205,
+        "type": "arrival"
+      },
+      {
+        "met_days": 205.01,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© U.S. NRL / NASA — declassified DoD mission. Purpose: technology demonstration for SDI, mapped Moon as bonus. Found first hints of water ice at lunar poles.",
   "links": [
-    { "l": "Clementine — Wikipedia", "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)", "t": "intro" },
-    { "l": "Clementine (NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1994-004A", "t": "core" }
+    {
+      "l": "Clementine — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Clementine (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1994-004A",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -42,11 +50,34 @@
       "source": "NRL Clementine Mission Report (1994)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.5, "type": "tli_or_tmi" },
-      { "met_days": 7, "type": "tcm" },
-      { "met_days": 25, "type": "arrival" },
-      { "met_days": 25.05, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.5,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 7,
+        "type": "tcm"
+      },
+      {
+        "met_days": 7.24,
+        "type": "tcm"
+      },
+      {
+        "met_days": 12.75,
+        "type": "tcm"
+      },
+      {
+        "met_days": 25,
+        "type": "arrival"
+      },
+      {
+        "met_days": 25.05,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

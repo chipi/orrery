@@ -210,4 +210,34 @@ if (docFailed > 0) {
   console.error(`\n${docFailed} doc-system check(s) failed.`);
 }
 
-if (failed + docFailed > 0) process.exit(1);
+// ─── Mission flight-data consistency (v0.1.10 / issue #31) ─────────
+// For each mission with a populated `flight.cruise.tcm_count`, the
+// number of `events[].type === 'tcm'` must match. Catches drift when
+// one side is updated without the other.
+let missionDriftFailed = 0;
+console.log('\nValidating mission flight-data consistency (v0.1.10)...');
+for (const dest of ['mars', 'moon']) {
+  const dir = join(DATA_ROOT, 'missions', dest);
+  if (!existsSync(dir)) continue;
+  for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+    const m = JSON.parse(readFileSync(join(dir, file), 'utf8')) as {
+      flight?: {
+        cruise?: { tcm_count?: number };
+        events?: Array<{ type: string }>;
+      };
+    };
+    const target = m.flight?.cruise?.tcm_count;
+    if (target == null) continue;
+    const events = m.flight?.events ?? [];
+    const actual = events.filter((e) => e.type === 'tcm').length;
+    if (actual !== target) {
+      console.error(`  ✗ ${dest}/${file}: tcm_count=${target} but events.tcm.length=${actual}`);
+      missionDriftFailed++;
+    }
+  }
+}
+if (missionDriftFailed === 0) {
+  console.log('  ✓ All flight-data tcm-counts consistent');
+}
+
+if (failed + docFailed + missionDriftFailed > 0) process.exit(1);

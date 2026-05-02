@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© ISRO. India's first lunar mission. Mission ended 2009-08-29 after radio contact lost. Discovered water molecules in lunar soil — confirmed by NASA's M3 instrument hosted on the spacecraft.",
   "links": [
-    { "l": "Chandrayaan-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandrayaan-1", "t": "intro" },
-    { "l": "Lunar water molecules (Science 2009)", "u": "https://www.science.org/doi/10.1126/science.1178658", "t": "deep" }
+    {
+      "l": "Chandrayaan-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-1",
+      "t": "intro"
+    },
+    {
+      "l": "Lunar water molecules (Science 2009)",
+      "u": "https://www.science.org/doi/10.1126/science.1178658",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -42,11 +50,42 @@
       "source": "ISRO Chandrayaan-1 Mission Report (2009)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 8, "type": "tli_or_tmi" },
-      { "met_days": 12, "type": "tcm" },
-      { "met_days": 17, "type": "arrival" },
-      { "met_days": 17.01, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 8,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 9.8,
+        "type": "tcm"
+      },
+      {
+        "met_days": 11.15,
+        "type": "tcm"
+      },
+      {
+        "met_days": 12,
+        "type": "tcm"
+      },
+      {
+        "met_days": 12.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 13.85,
+        "type": "tcm"
+      },
+      {
+        "met_days": 17,
+        "type": "arrival"
+      },
+      {
+        "met_days": 17.01,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

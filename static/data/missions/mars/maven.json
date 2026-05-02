@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© NASA / Goddard — public domain. Studies how Mars lost its atmosphere; serves as relay for surface assets.",
   "links": [
-    { "l": "MAVEN — Wikipedia", "u": "https://en.wikipedia.org/wiki/MAVEN", "t": "intro" },
-    { "l": "MAVEN mission (NASA)", "u": "https://science.nasa.gov/mission/maven/", "t": "intro" }
+    {
+      "l": "MAVEN — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/MAVEN",
+      "t": "intro"
+    },
+    {
+      "l": "MAVEN mission (NASA)",
+      "u": "https://science.nasa.gov/mission/maven/",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -44,13 +52,46 @@
       "source": "NASA MAVEN Press Kit (2013-11)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 100, "type": "tcm" },
-      { "met_days": 200, "type": "tcm" },
-      { "met_days": 308, "type": "arrival" },
-      { "met_days": 308.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 55.0,
+        "type": "tcm"
+      },
+      {
+        "met_days": 94.6,
+        "type": "tcm"
+      },
+      {
+        "met_days": 100,
+        "type": "tcm"
+      },
+      {
+        "met_days": 134.2,
+        "type": "tcm"
+      },
+      {
+        "met_days": 200,
+        "type": "tcm"
+      },
+      {
+        "met_days": 308,
+        "type": "arrival"
+      },
+      {
+        "met_days": 308.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

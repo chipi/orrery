@@ -16,9 +16,21 @@
   "data_quality": "good",
   "credit": "© NASA / JPL — public domain. Mission ended 2022-12-15 after dust accumulation on solar panels reduced power below operational threshold.",
   "links": [
-    { "l": "InSight — Wikipedia", "u": "https://en.wikipedia.org/wiki/InSight", "t": "intro" },
-    { "l": "InSight (NASA)", "u": "https://science.nasa.gov/mission/insight/", "t": "intro" },
-    { "l": "Marsquake catalogue (ETH Zurich)", "u": "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service", "t": "deep" }
+    {
+      "l": "InSight — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/InSight",
+      "t": "intro"
+    },
+    {
+      "l": "InSight (NASA)",
+      "u": "https://science.nasa.gov/mission/insight/",
+      "t": "intro"
+    },
+    {
+      "l": "Marsquake catalogue (ETH Zurich)",
+      "u": "https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -46,13 +58,38 @@
       "source": "NASA InSight Press Kit (2018-05)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 22, "type": "tcm" },
-      { "met_days": 80, "type": "tcm" },
-      { "met_days": 200, "type": "tcm" },
-      { "met_days": 205, "type": "arrival" },
-      { "met_days": 205.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 22,
+        "type": "tcm"
+      },
+      {
+        "met_days": 47.15,
+        "type": "tcm"
+      },
+      {
+        "met_days": 80,
+        "type": "tcm"
+      },
+      {
+        "met_days": 200,
+        "type": "tcm"
+      },
+      {
+        "met_days": 205,
+        "type": "arrival"
+      },
+      {
+        "met_days": 205.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

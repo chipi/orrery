@@ -16,9 +16,21 @@
   "data_quality": "good",
   "credit": "© NASA / GSFC / ASU — public domain. 50 cm/pixel surface resolution. Has imaged every Apollo descent stage and the resting positions of every lost-then-found Soviet asset including Luna 17/Lunokhod 1.",
   "links": [
-    { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
-    { "l": "LRO mission (NASA)", "u": "https://science.nasa.gov/mission/lro/", "t": "intro" },
-    { "l": "LROC image archive (Arizona State)", "u": "https://www.lroc.asu.edu/", "t": "core" }
+    {
+      "l": "Lunar Reconnaissance Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "LRO mission (NASA)",
+      "u": "https://science.nasa.gov/mission/lro/",
+      "t": "intro"
+    },
+    {
+      "l": "LROC image archive (Arizona State)",
+      "u": "https://www.lroc.asu.edu/",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -44,11 +56,42 @@
       "source": "NASA LRO Press Kit (2009-06)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.05, "type": "tli_or_tmi" },
-      { "met_days": 1, "type": "tcm" },
-      { "met_days": 5, "type": "arrival" },
-      { "met_days": 5.01, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.05,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.04,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.78,
+        "type": "tcm"
+      },
+      {
+        "met_days": 2.52,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3.27,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5,
+        "type": "arrival"
+      },
+      {
+        "met_days": 5.01,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

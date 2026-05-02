@@ -16,9 +16,21 @@
   "data_quality": "good",
   "credit": "© NASA / JPL — public domain. First use of airbag landing system; first wheels (Sojourner) on another planet.",
   "links": [
-    { "l": "Mars Pathfinder — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder", "t": "intro" },
-    { "l": "Mars Pathfinder (NASA)", "u": "https://science.nasa.gov/mission/mars-pathfinder/", "t": "intro" },
-    { "l": "Sojourner rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Sojourner_(rover)", "t": "core" }
+    {
+      "l": "Mars Pathfinder — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder",
+      "t": "intro"
+    },
+    {
+      "l": "Mars Pathfinder (NASA)",
+      "u": "https://science.nasa.gov/mission/mars-pathfinder/",
+      "t": "intro"
+    },
+    {
+      "l": "Sojourner rover — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sojourner_(rover)",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -46,12 +58,38 @@
       "source": "NASA Mars Pathfinder Press Kit (1996-12)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 100, "type": "tcm" },
-      { "met_days": 212, "type": "arrival" },
-      { "met_days": 212.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 48.76,
+        "type": "tcm"
+      },
+      {
+        "met_days": 86.92,
+        "type": "tcm"
+      },
+      {
+        "met_days": 100,
+        "type": "tcm"
+      },
+      {
+        "met_days": 212,
+        "type": "arrival"
+      },
+      {
+        "met_days": 212.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

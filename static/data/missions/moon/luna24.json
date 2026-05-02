@@ -16,7 +16,21 @@
   "data_quality": "good",
   "credit": "© Soviet Academy of Sciences (historical). Last successful uncrewed lunar landing for 37 years (until Chang'e 3 in 2013).",
   "links": [
-    { "l": "Luna 24 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_24", "t": "intro" }
+    {
+      "l": "Luna 24 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Luna_24",
+      "t": "intro"
+    },
+    {
+      "l": "Luna 24 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1976-081A",
+      "t": "core"
+    },
+    {
+      "l": "Barsukov et al. — Luna 24 sample analysis (Geokhimiya 1977)",
+      "u": "https://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?bibcode=1977Geokh..N1107B",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "sparse",
   "flight": {
@@ -25,21 +39,55 @@
       "mass_at_tli_kg": 4800,
       "source": "NASA NSSDCA Luna 24 archive; Soviet records fragmentary"
     },
+    "cruise": {
+      "tcm_count": 3,
+      "source": "Harvey 2007; two outbound mid-course corrections + one return TEI correction"
+    },
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 115,
-      "source": "NASA NSSDCA Luna 24 archive"
+      "inclination_deg": 120.0,
+      "orbit_insertion_dv_km_s": 0.7,
+      "source": "NASA NSSDCA Luna 24 archive; 115 × 120 km parking orbit before descent to Mare Crisium"
     },
     "totals": {
       "total_dv_km_s": 3.5,
-      "source": "NASA NSSDCA Luna 24 archive (estimated; sample-return round trip)"
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Harvey 2007; sample-return round trip ledger reconstructed: TLI + LOI + descent + ascent + TEI"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.1, "type": "tli_or_tmi" },
-      { "met_days": 5, "type": "arrival" },
-      { "met_days": 6, "type": "edl_or_oi" },
-      { "met_days": 9, "type": "earth_return" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.1,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 4,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5,
+        "type": "arrival"
+      },
+      {
+        "met_days": 6,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 7,
+        "type": "tcm"
+      },
+      {
+        "met_days": 9,
+        "type": "earth_return"
+      }
     ]
   }
 }

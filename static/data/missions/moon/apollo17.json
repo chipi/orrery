@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© NASA — Apollo 17 mission report. Public domain. Last crewed lunar landing of the 20th century. Touchdown at Taurus-Littrow Valley 1972-12-11 19:54 UTC.",
   "links": [
-    { "l": "Apollo 17 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Apollo_17", "t": "intro" },
-    { "l": "Apollo 17 mission overview (NASA)", "u": "https://www.nasa.gov/mission/apollo-17/", "t": "intro" }
+    {
+      "l": "Apollo 17 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_17",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 17 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-17/",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -43,12 +51,34 @@
       "source": "Apollo 17 Mission Report ∆v ledger; CSM + LM combined"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.13, "type": "tli_or_tmi" },
-      { "met_days": 1.5, "type": "tcm" },
-      { "met_days": 3.4, "type": "arrival" },
-      { "met_days": 4.6, "type": "edl_or_oi" },
-      { "met_days": 12.6, "type": "earth_return" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.13,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.27,
+        "type": "tcm"
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3.4,
+        "type": "arrival"
+      },
+      {
+        "met_days": 4.6,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 12.6,
+        "type": "earth_return"
+      }
     ]
   }
 }

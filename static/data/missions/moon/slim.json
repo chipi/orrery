@@ -16,8 +16,16 @@
   "data_quality": "good",
   "credit": "© JAXA — Smart Lander for Investigating Moon. Demonstrated pinpoint landing within 100 m of target (vs km-scale standard). Long transit used a low-energy ballistic trajectory to save propellant.",
   "links": [
-    { "l": "SLIM — Wikipedia", "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon", "t": "intro" },
-    { "l": "SLIM (JAXA)", "u": "https://global.jaxa.jp/projects/sas/slim/", "t": "intro" }
+    {
+      "l": "SLIM — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon",
+      "t": "intro"
+    },
+    {
+      "l": "SLIM (JAXA)",
+      "u": "https://global.jaxa.jp/projects/sas/slim/",
+      "t": "intro"
+    }
   ],
   "flight_data_quality": "measured",
   "flight": {
@@ -42,11 +50,38 @@
       "source": "JAXA SLIM Project Brief (2023)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.05, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 110, "type": "arrival" },
-      { "met_days": 135, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.05,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 25.34,
+        "type": "tcm"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 45.13,
+        "type": "tcm"
+      },
+      {
+        "met_days": 64.92,
+        "type": "tcm"
+      },
+      {
+        "met_days": 110,
+        "type": "arrival"
+      },
+      {
+        "met_days": 135,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

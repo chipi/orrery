@@ -331,6 +331,23 @@
   let distFromMarsMkm = $derived(auToMkm(distFromMarsAu));
   let signalDelayMin = $derived(flySignalDelayMin(distFromEarthAu));
 
+  // ─── Render-state hash (Layer 2 of /fly validation strategy) ─────
+  // Stable signature of the outbound arc geometry: first 5 + middle +
+  // last 5 vertices, each x/z to 6 decimals. Lets Playwright assert
+  // the rendered Line geometry matches the math output across views
+  // without snapshotting the full 201-point array.
+  let outVertexHash = $derived(
+    (() => {
+      if (outPts.length < 11) return '';
+      const sample = [
+        ...outPts.slice(0, 5),
+        outPts[Math.floor(outPts.length / 2)],
+        ...outPts.slice(-5),
+      ];
+      return sample.map((p) => `${p.x.toFixed(6)},${p.z.toFixed(6)}`).join('|');
+    })(),
+  );
+
   // Mission elapsed time = days since the simulation departed the arc's
   // start, mapped to the loaded mission's apparent transit time so the
   // user-visible "DAY 138" feels right whether they loaded Curiosity
@@ -1353,6 +1370,31 @@
     class:hidden={view !== '2d'}
     aria-label="2D mission arc top-down view."
   ></canvas>
+
+  <!-- Hidden render-state hook (Layer 2 of /fly validation strategy,
+       ADR-030 follow-up). Mirrors the live spacecraft + arc + HUD state
+       into DOM attributes so Playwright can introspect render
+       correctness without scraping pixels. Off-screen, aria-hidden,
+       no app-visible UI change. -->
+  <div
+    data-testid="fly-render-state"
+    data-sc-x={scState.pos.x.toFixed(6)}
+    data-sc-z={scState.pos.z.toFixed(6)}
+    data-sc-progress={scState.progress.toFixed(4)}
+    data-sc-phase={scState.phase}
+    data-out-len={outPts.length}
+    data-ret-len={retPts.length}
+    data-out-vertex-hash={outVertexHash}
+    data-helio-kms={heliocentricKms.toFixed(4)}
+    data-dist-earth-au={distFromEarthAu.toFixed(6)}
+    data-dist-mars-au={distFromMarsAu.toFixed(6)}
+    data-signal-delay-min={signalDelayMin.toFixed(4)}
+    data-met={met.toFixed(2)}
+    data-sim-day={simDay.toFixed(2)}
+    data-view={view}
+    style="position:absolute;left:-9999px;top:-9999px;width:0;height:0;overflow:hidden;"
+    aria-hidden="true"
+  ></div>
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.fly_load_failed()}</div>

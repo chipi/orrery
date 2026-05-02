@@ -282,7 +282,7 @@
   {:else}
     <ul class="grid" aria-label="Mission cards">
       {#each filtered as mission (mission.id)}
-        <li>
+        <li class="card-li">
           <button
             type="button"
             class="card"
@@ -335,6 +335,17 @@
               {/if}
             </div>
           </button>
+          <!-- Trajectory thumbnail (v0.1.11 / Theme A.A2) — appears on
+               desktop hover. Pre-rendered at build time by
+               scripts/fetch-assets.ts. Mobile users discover the
+               trajectory via the FLY button + /fly screen instead. -->
+          <aside class="card-thumbnail" aria-hidden="true">
+            <img
+              src="{base}/images/missions/thumbnails/{mission.id}.png"
+              alt=""
+              loading="lazy"
+            />
+          </aside>
         </li>
       {/each}
     </ul>
@@ -449,6 +460,49 @@
   @media (min-width: 1280px) {
     .grid {
       grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Card list-item wrapper — needed so the absolutely-positioned
+   * thumbnail can be a sibling of the card button without breaking
+   * the grid-cell layout. */
+  .card-li {
+    position: relative;
+  }
+  .card-thumbnail {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translate(-50%, 8px);
+    width: 240px;
+    height: 120px;
+    background: rgba(4, 4, 12, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    padding: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 140ms ease,
+      transform 140ms ease,
+      visibility 140ms;
+    z-index: 5;
+  }
+  .card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 2px;
+  }
+  /* Reveal on hover (desktop). Mobile devices without :hover get the
+   * existing FLY button to navigate to /fly for the full trajectory. */
+  @media (hover: hover) {
+    .card-li:hover .card-thumbnail {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
     }
   }
 

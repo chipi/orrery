@@ -9,8 +9,12 @@
  * Run via: npm run fetch-assets
  */
 
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
+import { createCanvas } from 'canvas';
+import { earthPos, destinationPos, outboundArc, type Vec2 } from '../src/lib/mission-arc.js';
+import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.js';
+import { dateToSimDay } from '../src/lib/sim-day.js';
 
 // ──────────────────────────────────────────────────────────────────────
 // FONTS — Slice 1
@@ -602,8 +606,6 @@ async function fetchMissionImages(): Promise<number> {
 // of re-downloading — saves bandwidth + keeps galleries consistent.
 // ──────────────────────────────────────────────────────────────────────
 
-import { readdir, copyFile } from 'node:fs/promises';
-
 const PANEL_GALLERY_MAX = 5;
 
 interface GalleryQuery {
@@ -801,6 +803,203 @@ async function fetchPanelGallery(
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// MISSION TRAJECTORY THUMBNAILS — v0.1.11 / Theme A.A2
+//
+// 240×120 PNG previews rendered at build time using node-canvas.
+// Mars-bound missions get a heliocentric view: Sun, Earth orbit,
+// destination orbit, and the outbound arc (uses real V∞ when present
+// per mission.flight.arrival.v_infinity_km_s — same code path as
+// /explore overlay rings + /fly trajectory).
+//
+// Moon-bound missions get a cislunar view: Earth at canvas centre +
+// Moon orbit ring + a curved arc to a Moon position derived from
+// transit_days (matches the /fly Moon-mode geometry).
+//
+// PNGs land at static/images/missions/thumbnails/{id}.png. Per
+// CLAUDE.md ADR-016 these are build-time assets — no runtime canvas
+// → image work needed.
+// ──────────────────────────────────────────────────────────────────────
+
+const THUMBNAILS_DIR = 'static/images/missions/thumbnails';
+const THUMBNAIL_W = 240;
+const THUMBNAIL_H = 120;
+const THUMBNAIL_PX_PER_AU = 11; // tuned so Saturn (9.5 AU) just fits in width
+
+interface MissionThumbnailRecord {
+  id: string;
+  dest: 'MARS' | 'MOON';
+  color: string;
+  departure_date: string;
+  transit_days: number;
+  flight?: { arrival?: { v_infinity_km_s?: number } };
+}
+
+function paintHeliocentricThumbnail(
+  ctx: import('canvas').CanvasRenderingContext2D,
+  destinationId: DestinationId,
+  depDay: number,
+  arrivalVInf: number | undefined,
+  missionColor: string,
+): void {
+  const cx = THUMBNAIL_W / 2;
+  const cy = THUMBNAIL_H / 2;
+  const destA = DESTINATIONS[destinationId].a;
+
+  // Background
+  ctx.fillStyle = '#04040c';
+  ctx.fillRect(0, 0, THUMBNAIL_W, THUMBNAIL_H);
+
+  // Faint orbit rings (Earth + destination). Auto-clamp scale so the
+  // largest orbit fits with margin.
+  const maxAu = Math.max(R_EARTH_AU, destA);
+  const scale = Math.min(THUMBNAIL_PX_PER_AU, (Math.min(cx, cy) - 8) / maxAu);
+
+  const orbits: Array<[number, string]> = [
+    [R_EARTH_AU, 'rgba(75,156,211,0.35)'],
+    [destA, 'rgba(193,68,14,0.35)'],
+  ];
+  for (const [au, stroke] of orbits) {
+    ctx.beginPath();
+    ctx.arc(cx, cy, au * scale, 0, Math.PI * 2);
+    ctx.strokeStyle = stroke;
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+  }
+
+  // Sun
+  ctx.fillStyle = '#fff8c0';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Outbound arc — same code path as /fly + /explore overlay
+  const earthDep = earthPos(depDay);
+  const arc = outboundArc(earthDep, 80, destA, arrivalVInf);
+
+  ctx.beginPath();
+  arc.forEach((p, i) => {
+    const x = cx + p.x * scale;
+    const y = cy + p.z * scale;
+    if (i === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = missionColor;
+  ctx.lineWidth = 1.4;
+  ctx.shadowColor = missionColor;
+  ctx.shadowBlur = 4;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // Departure node (teal) + arrival node (gold)
+  const dep = arc[0];
+  const arr = arc[arc.length - 1];
+  ctx.fillStyle = '#4ecdc4';
+  ctx.beginPath();
+  ctx.arc(cx + dep.x * scale, cy + dep.z * scale, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#ffc850';
+  ctx.beginPath();
+  ctx.arc(cx + arr.x * scale, cy + arr.z * scale, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function paintCislunarThumbnail(
+  ctx: import('canvas').CanvasRenderingContext2D,
+  transitDays: number,
+  missionColor: string,
+): void {
+  const cx = THUMBNAIL_W * 0.32;
+  const cy = THUMBNAIL_H / 2;
+  const moonRadiusPx = 70; // visual
+
+  // Background
+  ctx.fillStyle = '#04040c';
+  ctx.fillRect(0, 0, THUMBNAIL_W, THUMBNAIL_H);
+
+  // Moon orbit ring (centred on Earth)
+  ctx.beginPath();
+  ctx.arc(cx, cy, moonRadiusPx, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(170,170,204,0.3)';
+  ctx.lineWidth = 0.6;
+  ctx.stroke();
+
+  // Earth
+  ctx.fillStyle = '#3a8fcc';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Moon — position derived from transit_days (so Apollo 11's 4-day
+  // transit and SLIM's 135-day transit render at distinct angles).
+  const moonAngle = ((transitDays % 27.32) / 27.32) * Math.PI * 2;
+  const moonX = cx + Math.cos(moonAngle) * moonRadiusPx;
+  const moonY = cy + Math.sin(moonAngle) * moonRadiusPx;
+  ctx.fillStyle = '#cfcfcf';
+  ctx.beginPath();
+  ctx.arc(moonX, moonY, 3, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Quadratic-Bezier arc Earth → Moon (same shape as /fly Moon-mode)
+  const ctrlX = (cx + moonX) / 2 + (cy - moonY) * 0.18;
+  const ctrlY = (cy + moonY) / 2 + (moonX - cx) * 0.18;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy);
+  ctx.quadraticCurveTo(ctrlX, ctrlY, moonX, moonY);
+  ctx.strokeStyle = missionColor;
+  ctx.lineWidth = 1.4;
+  ctx.shadowColor = missionColor;
+  ctx.shadowBlur = 4;
+  ctx.stroke();
+  ctx.shadowBlur = 0;
+
+  // Departure node + arrival node
+  ctx.fillStyle = '#4ecdc4';
+  ctx.beginPath();
+  ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = '#ffc850';
+  ctx.beginPath();
+  ctx.arc(moonX, moonY, 2.5, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+async function fetchMissionThumbnails(): Promise<number> {
+  await mkdir(THUMBNAILS_DIR, { recursive: true });
+  let saved = 0;
+
+  for (const dest of ['mars', 'moon'] as const) {
+    const dir = `static/data/missions/${dest}`;
+    const files = (await readdir(dir)).filter((f) => f.endsWith('.json'));
+    for (const file of files) {
+      const raw = await readFile(join(dir, file), 'utf8');
+      const m = JSON.parse(raw) as MissionThumbnailRecord;
+      const canvas = createCanvas(THUMBNAIL_W, THUMBNAIL_H);
+      const ctx = canvas.getContext('2d');
+      const depDay = dateToSimDay(m.departure_date) ?? 0;
+      const color = m.color || '#4ecdc4';
+
+      if (m.dest === 'MARS') {
+        const vInf = m.flight?.arrival?.v_infinity_km_s;
+        // All current Mars-bound missions target Mars itself; outer-
+        // planet missions are the v0.3.0 follow-up.
+        paintHeliocentricThumbnail(ctx, 'mars', depDay, vInf, color);
+      } else {
+        paintCislunarThumbnail(ctx, m.transit_days, color);
+      }
+
+      const buffer = canvas.toBuffer('image/png');
+      await writeFile(join(THUMBNAILS_DIR, `${m.id}.png`), buffer);
+      saved++;
+      process.stdout.write(`  ${m.id} `);
+    }
+  }
+
+  process.stdout.write('\n');
+  console.log(`  → ${saved} thumbnails written to ${THUMBNAILS_DIR}`);
+  return saved;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // SHARED HELPERS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -878,6 +1077,10 @@ async function main() {
     'static/data/moon-site-galleries.json',
     'count-map',
   );
+  console.log('');
+
+  console.log('Rendering mission trajectory thumbnails:');
+  await fetchMissionThumbnails();
   console.log('');
 
   console.log('Done.');

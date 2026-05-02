@@ -1653,31 +1653,39 @@
        right under the 2D/3D button so it can never overlap it). -->
   {#if mission}
     <aside class="capcom-panel" aria-label={m.fly_capcom_panel_label()}>
-      <section class="capcom-section">
-        <h3>{m.fly_capcom_anomaly_title()}</h3>
-        <div class="anomaly anomaly-{anomalyLevel}">
-          <span class="anomaly-dot" aria-hidden="true"></span>
-          <span class="anomaly-label">{anomalyLabel}</span>
-          <span class="anomaly-detail">
-            ∆v margin {dvRemaining.toFixed(2)} km/s
-          </span>
-        </div>
-      </section>
+      <!-- Static header: anomaly + comms always visible. The events
+           section below scrolls independently so the most-recent
+           events stay readable as the timeline accumulates. -->
+      <div class="capcom-header">
+        <section class="capcom-section">
+          <h3>{m.fly_capcom_anomaly_title()}</h3>
+          <div class="anomaly anomaly-{anomalyLevel}">
+            <span class="anomaly-dot" aria-hidden="true"></span>
+            <span class="anomaly-label">{anomalyLabel}</span>
+            <span class="anomaly-detail">
+              ∆v margin {dvRemaining.toFixed(2)} km/s
+            </span>
+          </div>
+        </section>
 
-      <section class="capcom-section">
-        <h3>{m.fly_capcom_comms_title()}</h3>
-        <div class="comm-row">
-          <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
-          <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span>
-        </div>
-        <div class="comm-row">
-          <span class="comm-key">{m.fly_capcom_rtt()}</span>
-          <span class="comm-val"
-            >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
-          >
-        </div>
-      </section>
+        <section class="capcom-section">
+          <h3>{m.fly_capcom_comms_title()}</h3>
+          <div class="comm-row">
+            <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
+            <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span>
+          </div>
+          <div class="comm-row">
+            <span class="comm-key">{m.fly_capcom_rtt()}</span>
+            <span class="comm-val"
+              >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
+            >
+          </div>
+        </section>
+      </div>
 
+      <!-- Scrolling events feed — latest at top (pastEvents is already
+           reversed in the $derived above). New entries appear at the
+           top so the eye doesn't have to chase them. -->
       <section class="capcom-section capcom-events">
         <h3>{m.fly_capcom_events_title()}</h3>
         {#if pastEvents.length === 0}
@@ -2024,23 +2032,32 @@
     border-radius: 4px;
     backdrop-filter: blur(8px);
     padding: 14px 16px;
-    overflow-y: auto;
+    /* Flex column — header is fixed-height, events fill the rest and
+       scroll independently so the most-recent items stay readable. */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
     font-family: 'Space Mono', monospace;
     color: rgba(255, 255, 255, 0.85);
   }
-  /* Desktop — bottom-right docked. Sits above the scrubber (bottom 14
-     + ~64px tall = top edge ~78px) and away from the 2D/3D toggle
-     button at top-right. Max height clamps to half the viewport so
-     the panel never grows into the canvas viewing area. */
+  .capcom-header {
+    flex-shrink: 0;
+  }
+  /* Desktop — start just under the 2D/3D toggle (nav-height + 12 +
+     44 + 8 = nav-height + 64) and stretch down to the scrubber. The
+     extra height is the v0.x.x ask: more room for events as the
+     mission unfolds. */
   @media (min-width: 768px) {
     .capcom-panel {
+      top: calc(var(--nav-height) + 64px);
       bottom: 86px;
       right: 16px;
       width: 320px;
-      max-height: 50vh;
     }
   }
-  /* Mobile — bottom sheet */
+  /* Mobile — bottom sheet (unchanged; mobile already had a tall panel
+     because it stretches edge-to-edge above the scrubber). */
   @media (max-width: 767px) {
     .capcom-panel {
       bottom: 70px;
@@ -2050,6 +2067,13 @@
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
     }
+  }
+  .capcom-events {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    /* Counter-act the .capcom-section's bottom margin — we want the
+       events list to butt up against the panel bottom. */
+    margin-bottom: 0;
   }
 
   .capcom-section {

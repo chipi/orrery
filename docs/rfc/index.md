@@ -9,5 +9,5 @@
 | RFC-005 | Accessibility approach | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |
 | RFC-006 | Porkchop plot mobile interaction | Decided · closed by ADR-023 | ADR-023 | Closed at Slice 3 (3a-8) |
 | RFC-007 | Multi-destination porkchop | Decided · closed by ADR-026 | ADR-026 | v0.1.6 |
-| RFC-008 | Outer planets + dwarfs (reserved) | Open · v0.3.0 | TBD | v0.3.0 |
+| RFC-008 | Outer planets + dwarf planets in /plan | Decided · closed by ADR-028 | ADR-028 | v0.3.0 |
 | RFC-009 | Mission flight params + timeline navigator | Closed · closed by ADR-027 | ADR-027 | v0.1.9 |

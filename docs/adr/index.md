@@ -30,3 +30,4 @@
 | ADR-025 | Accessibility tier-1 contract | Accepted (closes RFC-005) | Apr 2026 |
 | ADR-026 | Multi-destination porkchop | Accepted (closes RFC-007) | Apr 2026 |
 | ADR-027 | Mission flight params + timeline navigator | Accepted (closes RFC-009) | Apr 2026 |
+| ADR-028 | Outer planets + dwarf planets in /plan | Accepted (closes RFC-008) | May 2026 |

@@ -37,6 +37,7 @@
     "@sveltejs/vite-plugin-svelte": "4.0.4",
     "@types/node": "22.10.2",
     "@types/three": "0.128.0",
+    "@vite-pwa/sveltekit": "^1.1.0",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
     "canvas": "^3.2.3",

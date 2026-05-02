@@ -183,3 +183,26 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
     await expect(toHandle).toHaveAttribute('aria-valuenow', '2030');
   });
 });
+
+test.describe('/missions — flight-data quality badge (v0.1.13)', () => {
+  test('Curiosity card shows MEASURED badge', async ({ page }) => {
+    await page.goto('/missions');
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(28, {
+      timeout: 10_000,
+    });
+    const card = page.locator('[data-testid="mission-card-curiosity"]');
+    await expect(card.locator('.card-quality.quality-measured')).toBeVisible();
+  });
+
+  test('Mars 3 card shows SPARSE badge', async ({ page }) => {
+    await page.goto('/missions');
+    const card = page.locator('[data-testid="mission-card-mars3"]');
+    await expect(card.locator('.card-quality.quality-sparse')).toBeVisible({ timeout: 5_000 });
+  });
+
+  test('Starship Demo card shows UNKNOWN badge', async ({ page }) => {
+    await page.goto('/missions');
+    const card = page.locator('[data-testid="mission-card-starship-demo"]');
+    await expect(card.locator('.card-quality.quality-unknown')).toBeVisible({ timeout: 5_000 });
+  });
+});

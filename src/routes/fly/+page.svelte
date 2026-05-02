@@ -23,6 +23,7 @@
   import { getMission, getScenario } from '$lib/data';
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
+  import { mergeFlightEvents } from '$lib/mission-event-merge';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
@@ -390,6 +391,15 @@
     return value.toFixed(digits);
   }
 
+  // NEXT EVENT row (v0.1.13). The first event whose met > current met,
+  // surfaced as "T+Nd · LABEL" in the FLIGHT PARAMS HUD. Displays "—"
+  // when all events have passed or no events are loaded.
+  let nextFlightEvent = $derived.by(() => {
+    const events = missionEvents;
+    if (!events || events.length === 0) return null;
+    return events.find((e) => e.met > met) ?? null;
+  });
+
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
@@ -539,9 +549,11 @@
       flight_data_quality: m.flight_data_quality,
     };
     simDay = mission.timeline.dep_day;
-    if (m.events && m.events.length > 0) {
-      missionEvents = m.events;
-    }
+    // v0.1.13 — fuse editorial overlay events with structural flight
+    // events from mission.flight.events[]. Missions with measured /
+    // sparse flight data (issue #31) now contribute TCMs, EDL, etc.
+    // to the CAPCOM ticker even if their editorial overlay is sparse.
+    missionEvents = mergeFlightEvents(m.events, m.flight?.events);
   }
 
   function applyScenarioAsLoaded(s: LocalizedScenario) {
@@ -1456,6 +1468,21 @@
             {mission.flight.totals?.total_dv_km_s != null
               ? m.fly_hud_kms({ value: fmtNumOrDash(mission.flight.totals.total_dv_km_s, 2) })
               : '—'}
+          </span>
+        </div>
+        <!-- NEXT EVENT row (v0.1.13). Reads from the merged events
+             list (mergeFlightEvents fuses editorial + structural). -->
+        <div class="hud-row" data-testid="fly-next-event">
+          <span class="hud-key">{m.fly_hud_next_event()}</span>
+          <span class="hud-val accent-vinf">
+            {#if nextFlightEvent}
+              {m.fly_hud_event_t_plus({
+                day: Math.round(nextFlightEvent.met - met).toString(),
+              })}
+              · {nextFlightEvent.label}
+            {:else}
+              —
+            {/if}
           </span>
         </div>
       </aside>

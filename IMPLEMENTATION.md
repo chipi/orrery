@@ -293,6 +293,19 @@ Phase 2 of the multi-phase polish plan. Closes Theme C from issue #18.
 
 ---
 
+## v0.1.13 — Flight-data re-use across /fly + /missions (2026-05-02)
+
+Phase 3 of the multi-phase polish plan. Surfaces the rich flight data populated by issue #31 in two new places.
+
+- **1.13a-1** — `/fly` CAPCOM ticker reads structural events. New pure helper `src/lib/mission-event-merge.ts#mergeFlightEvents()` fuses editorial overlay events with `mission.flight.events[]`. Editorial events take precedence at MET collisions (within 0.05 day tolerance). Sparse-data missions (Mars 3, Luna 9/17/24, Apollo 17) now show their TCMs + EDL + anomalies in the ticker even when their editorial overlay is bare.
+- **1.13a-2** — NEXT EVENT row in /fly FLIGHT PARAMS HUD. Derived from the merged events list; shows `T+Nd · LABEL` for the next upcoming event. Ticks down naturally as `simDay` advances.
+- **1.13a-3** — `/missions` cards show flight-data-quality badge. Inline next to the existing status badge in `.card-head`. Four colour-coded states: `MEASURED` (teal), `SPARSE` (gold), `RECONSTRUCTED` (orange), `UNKNOWN` (grey).
+- **1.13a-4** — Tests. 7 new unit tests for `mergeFlightEvents` (empty inputs, editorial passthrough, structural fallback, MET collision dedup, sort order, anomaly typing, label-map override). 5 new e2e: NEXT EVENT visible on Curiosity, Mars 3 ticker, three quality-badge cards.
+
+**State at v0.1.13:** **214 unit tests** (was 207, +7) **+ 82 e2e** (was 77, +5), all green. No new dependencies; all work uses existing infrastructure.
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

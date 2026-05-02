@@ -292,4 +292,29 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
     const flightHud = page.locator('.hud-flight-params');
     await expect(flightHud).toHaveCount(0);
   });
+
+  /* ── v0.1.13 — NEXT EVENT row in /fly HUD ──────────────────────── */
+  test('?mission=curiosity surfaces a NEXT EVENT row', async ({ page }) => {
+    await page.goto('/fly?mission=curiosity');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
+      timeout: 10_000,
+    });
+    const nextEvent = page.locator('[data-testid="fly-next-event"]');
+    await expect(nextEvent).toBeVisible();
+    // At simDay = dep_day, the next event is the launch or TLI burn
+    // (both very early). The label should match one of the canonical
+    // mission events.
+    await expect(nextEvent).toContainText(/T\+\d+d/i);
+  });
+
+  test('Mars 3 (sparse-data) surfaces structural events in the ticker', async ({ page }) => {
+    await page.goto('/fly?mission=mars3');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
+      timeout: 10_000,
+    });
+    // Mars 3's editorial overlay is sparse but its flight.events has
+    // structural TCMs + EDL + anomaly. The merged ticker shows them.
+    const nextEvent = page.locator('[data-testid="fly-next-event"]');
+    await expect(nextEvent).toBeVisible();
+  });
 });

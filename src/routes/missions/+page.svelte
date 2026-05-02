@@ -321,6 +321,24 @@
                 <span class="card-status status-{mission.status.toLowerCase()}">
                   {mission.status}
                 </span>
+                {#if mission.flight_data_quality}
+                  <span
+                    class="card-quality quality-{mission.flight_data_quality}"
+                    title={m.lib_flight_data_quality_aria({
+                      q: mission.flight_data_quality.toUpperCase(),
+                    })}
+                  >
+                    {#if mission.flight_data_quality === 'measured'}
+                      {m.lib_flight_data_quality_measured()}
+                    {:else if mission.flight_data_quality === 'sparse'}
+                      {m.lib_flight_data_quality_sparse()}
+                    {:else if mission.flight_data_quality === 'reconstructed'}
+                      {m.lib_flight_data_quality_reconstructed()}
+                    {:else}
+                      {m.lib_flight_data_quality_unknown()}
+                    {/if}
+                  </span>
+                {/if}
               </header>
               <h2 class="card-name">{mission.name ?? mission.id}</h2>
               {#if mission.type}
@@ -617,6 +635,38 @@
     color: #4466ff;
     border-color: rgba(68, 102, 255, 0.4);
     background: rgba(68, 102, 255, 0.08);
+  }
+
+  /* Flight-data quality badge (v0.1.13). Sits next to .card-status
+   * inside .card-head. Same visual scale; semantic colour scheme. */
+  .card-quality {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+  .quality-measured {
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.35);
+    background: rgba(78, 205, 196, 0.06);
+  }
+  .quality-sparse {
+    color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.4);
+    background: rgba(255, 200, 80, 0.08);
+  }
+  .quality-reconstructed {
+    color: #ff9966;
+    border-color: rgba(255, 153, 102, 0.4);
+    background: rgba(255, 153, 102, 0.08);
+  }
+  .quality-unknown {
+    color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
   }
 
   .card-name {

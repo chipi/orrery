@@ -812,6 +812,15 @@
         return;
       }
 
+      // Generous hit radius — Mercury sweeps ~54 px/s in screen space at
+      // default sim speed, so a tight pixel-perfect click radius makes
+      // the inner planets effectively unclickable. The 18 px floor (in
+      // world units after the zoom inverse) gives a ~330 ms aim window
+      // on the fastest body without overlapping neighbouring orbits.
+      // (Small bodies — dwarfs, comets, interstellar — are added here
+      // when their detail panel lands; for now this only widens the
+      // existing planets-only pick.)
+      const FLOOR = 18;
       let best: { id: string; d: number } | null = null;
       for (const p of PLANETS) {
         const pos = planet2dPos.get(p.id);
@@ -819,8 +828,7 @@
         const dx = wx - pos.x;
         const dy = wy - pos.y;
         const d = Math.hypot(dx, dy);
-        // Hit radius scales with zoom inverse so small bodies remain pickable.
-        const hitR = Math.max(p.size2 * 2.5, 8 / zoom2d);
+        const hitR = Math.max(p.size2 * 3.5, FLOOR / zoom2d);
         if (d < hitR && (!best || d < best.d)) best = { id: p.id, d };
       }
       if (best) selectPlanet(best.id);

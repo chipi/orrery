@@ -259,6 +259,18 @@ test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
 });
 
 test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
+  // The .hud-flight-params + NEXT EVENT row are desktop-only —
+  // CLAUDE.md mobile-first rules + the @media (max-width: 767px)
+  // CSS rule in +page.svelte hide both on mobile to keep the bottom-
+  // sheet panel layout uncluttered. Skip the whole block on mobile
+  // viewports so CI doesn't flag the by-design hidden state.
+  test.beforeEach(async ({ viewport }) => {
+    test.skip(
+      !!viewport && viewport.width < 768,
+      'FLIGHT PARAMS HUD is desktop-only (mobile uses bottom-sheet panel)',
+    );
+  });
+
   test('?mission=curiosity surfaces real C3 and total ∆v in the HUD', async ({ page }) => {
     await page.goto('/fly?mission=curiosity');
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {

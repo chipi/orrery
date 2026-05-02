@@ -152,6 +152,13 @@ test.describe('/explore — selection and panel', () => {
   });
 
   test('clicking Earth in 2D opens the planet panel with TECHNICAL data', async ({ page }) => {
+    // Earth's orbitR is 113 in world space and at simT=0 it sits at
+    // (W/2 + 113, H/2). simT advances at 0.04 scale, so on slow CI a
+    // 6+ second test gap can rotate Earth ~90° off that spot and the
+    // click misses entirely. Emulating reduced-motion freezes simT
+    // (per the gate in /explore's animate loop) so the click hits a
+    // deterministic position.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page);
 
@@ -160,12 +167,6 @@ test.describe('/explore — selection and panel', () => {
     expect(box).not.toBeNull();
     if (!box) return;
 
-    // Earth's orbitR is 113 in world space; at default zoom (1) and pan
-    // (0,0), it sits at (W/2 + 113, H/2). simT advances slowly (0.04
-    // scale) — at t=0 Earth is at angle a0=0 = (113, 0) from origin.
-    // Click slightly off-centre at that location with a small tolerance
-    // window. The hit-test in tryPick2d uses a generous radius so we
-    // don't need pixel precision.
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
 
     const panel = page.getByRole('complementary');
@@ -180,6 +181,9 @@ test.describe('/explore — selection and panel', () => {
   });
 
   test('the SIZES tab renders without errors after switching to it', async ({ page }) => {
+    // Same Earth-position determinism as the test above — freeze simT
+    // via reduced-motion so the click reliably hits Earth on CI.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');

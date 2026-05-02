@@ -32,6 +32,7 @@
     moonReturnArc as flyMoonReturnArc,
     signalDelayMin as flySignalDelayMin,
   } from '$lib/fly-physics';
+  import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
@@ -316,16 +317,38 @@
   );
 
   // ─── Live derived navigation values ──────────────────────────────
-  // Heliocentric speed using vis-viva on the Hohmann transfer ellipse.
-  // Live derived navigation values — pure functions in fly-physics.ts
-  // (extracted in v0.2.0 / ADR-030). The .svelte file is the consumer;
-  // tests + the validation harness exercise the same code paths.
-  let scR = $derived(Math.hypot(scState.pos.x, scState.pos.z));
-  let heliocentricKms = $derived(flyHeliocentricSpeed(scR, (R_EARTH_AU + R_MARS_AU) / 2));
+  // Pure functions in fly-physics.ts (v0.2.0 / ADR-030).
+  //
+  // Moon-mode caveat: the cislunar arc lives in Earth-centred scene
+  // units / SCALE_3D = "fake AU" (Moon at 1.25 fake-AU vs the real
+  // ~0.00257 AU). For HUD honesty we (a) use Earth's heliocentric
+  // radius for vis-viva so HELIO ΔV reads ~29.78 km/s consistently
+  // (the spacecraft co-orbits with Earth around the Sun during the
+  // transit), and (b) scale fake-AU → real AU when displaying
+  // FROM EARTH + signal delay. FROM MARS is hidden in Moon-mode.
+  const MOON_FAKE_TO_REAL_AU =
+    384_400 / AU_TO_KM / (MOON_VISUAL_DISTANCE / SCALE_3D);
+  let scR = $derived(
+    isMoonMission ? R_EARTH_AU : Math.hypot(scState.pos.x, scState.pos.z),
+  );
+  let heliocentricKms = $derived(
+    flyHeliocentricSpeed(
+      scR,
+      isMoonMission ? R_EARTH_AU : (R_EARTH_AU + R_MARS_AU) / 2,
+    ),
+  );
 
   let earthNow = $derived(earthPos(simDay));
   let marsNow = $derived(marsPos(simDay));
-  let distFromEarthAu = $derived(distanceBetween(scState.pos, earthNow));
+  let distFromEarthAu = $derived(
+    isMoonMission
+      ? Math.hypot(scState.pos.x, scState.pos.z) * MOON_FAKE_TO_REAL_AU
+      : distanceBetween(scState.pos, earthNow),
+  );
+  // distFromMarsAu is meaningless for Moon-mode (the cislunar arc
+  // doesn't traverse Mars's orbit) so the FROM MARS HUD row is
+  // hidden. We still compute a finite value here so the e2e
+  // render-state hook stays parseable.
   let distFromMarsAu = $derived(distanceBetween(scState.pos, marsNow));
   let distFromEarthMkm = $derived(auToMkm(distFromEarthAu));
   let distFromMarsMkm = $derived(auToMkm(distFromMarsAu));
@@ -724,26 +747,25 @@
     scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
     scene.add(new THREE.AmbientLight(0x111133, 0.8));
 
-    // Sun
-    scene.add(
-      new THREE.Mesh(
-        new THREE.SphereGeometry(8, 32, 32),
-        new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
-      ),
+    // Sun (named so Moon-mode can hide it — the cislunar scene is
+    // Earth-centred with the Moon at scaled distance, no Sun reference).
+    const sunCore = new THREE.Mesh(
+      new THREE.SphereGeometry(8, 32, 32),
+      new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
     );
-    scene.add(
-      new THREE.Mesh(
-        new THREE.SphereGeometry(20, 32, 32),
-        new THREE.MeshBasicMaterial({
-          color: 0xff9922,
-          transparent: true,
-          opacity: 0.06,
-          side: THREE.BackSide,
-          blending: THREE.AdditiveBlending,
-          depthWrite: false,
-        }),
-      ),
+    scene.add(sunCore);
+    const sunGlow = new THREE.Mesh(
+      new THREE.SphereGeometry(20, 32, 32),
+      new THREE.MeshBasicMaterial({
+        color: 0xff9922,
+        transparent: true,
+        opacity: 0.06,
+        side: THREE.BackSide,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
     );
+    scene.add(sunGlow);
 
     // Stars
     const STAR_COUNT = 2000;
@@ -785,8 +807,10 @@
         new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.18 }),
       );
     };
-    scene.add(orbit(R_EARTH_AU, 0x4b9cd3));
-    scene.add(orbit(R_MARS_AU, 0xc1440e));
+    const earthOrbitLine = orbit(R_EARTH_AU, 0x4b9cd3);
+    const marsOrbitLine = orbit(R_MARS_AU, 0xc1440e);
+    scene.add(earthOrbitLine);
+    scene.add(marsOrbitLine);
 
     // Outbound + return arcs as Lines whose drawRange we trim each
     // frame to fade the future part. Past = solid full-opacity, future
@@ -1140,30 +1164,33 @@
         ctx2.fill();
       }
 
-      // Earth + Mars orbits
-      ctx2.beginPath();
-      ctx2.arc(cx, cy, R_EARTH_AU * SCALE_2D, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(75,156,211,0.35)';
-      ctx2.lineWidth = 1;
-      ctx2.stroke();
-      ctx2.beginPath();
-      ctx2.arc(cx, cy, R_MARS_AU * SCALE_2D, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(193,68,14,0.35)';
-      ctx2.lineWidth = 1;
-      ctx2.stroke();
+      // Earth + Mars orbits + Sun (Mars-bound only — Moon-mode is
+      // Earth-centered; rings + Sun would be misleading reference
+      // points for a cislunar transit).
+      if (!isMoonMission) {
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, R_EARTH_AU * SCALE_2D, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(75,156,211,0.35)';
+        ctx2.lineWidth = 1;
+        ctx2.stroke();
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, R_MARS_AU * SCALE_2D, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(193,68,14,0.35)';
+        ctx2.lineWidth = 1;
+        ctx2.stroke();
 
-      // Sun glow + core
-      const sg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 30);
-      sg.addColorStop(0, 'rgba(255,228,130,0.4)');
-      sg.addColorStop(1, 'rgba(255,120,0,0)');
-      ctx2.beginPath();
-      ctx2.arc(cx, cy, 30, 0, Math.PI * 2);
-      ctx2.fillStyle = sg;
-      ctx2.fill();
-      ctx2.beginPath();
-      ctx2.arc(cx, cy, 6, 0, Math.PI * 2);
-      ctx2.fillStyle = '#fff8e7';
-      ctx2.fill();
+        const sg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 30);
+        sg.addColorStop(0, 'rgba(255,228,130,0.4)');
+        sg.addColorStop(1, 'rgba(255,120,0,0)');
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 30, 0, Math.PI * 2);
+        ctx2.fillStyle = sg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 6, 0, Math.PI * 2);
+        ctx2.fillStyle = '#fff8e7';
+        ctx2.fill();
+      }
 
       // Past/future split — past solid, future dashed at low opacity.
       function drawSplit(pts: Vec2[], t: number, past: string, future: string) {
@@ -1195,17 +1222,33 @@
       drawSplit(outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
       drawSplit(retPts, Math.max(0, (sc.progress - 0.5) / 0.5), '#9966ff', 'rgba(153,102,255,0.2)');
 
-      // Earth + Mars at simDay
-      const ePos = earthPos(simDay);
-      const mPos = marsPos(simDay);
-      ctx2.beginPath();
-      ctx2.arc(cx + ePos.x * SCALE_2D, cy + ePos.z * SCALE_2D, 5, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
-      ctx2.fill();
-      ctx2.beginPath();
-      ctx2.arc(cx + mPos.x * SCALE_2D, cy + mPos.z * SCALE_2D, 4, 0, Math.PI * 2);
-      ctx2.fillStyle = '#c1440e';
-      ctx2.fill();
+      // Bodies at simDay. Moon-mode: Earth at canvas centre, Moon at
+      // the arc's terminal point. Mars-bound: Earth + Mars at their
+      // heliocentric positions.
+      if (isMoonMission) {
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 5, 0, Math.PI * 2);
+        ctx2.fillStyle = '#4b9cd3';
+        ctx2.fill();
+        const moonPt = outPts[outPts.length - 1];
+        if (moonPt) {
+          ctx2.beginPath();
+          ctx2.arc(cx + moonPt.x * SCALE_2D, cy + moonPt.z * SCALE_2D, 3, 0, Math.PI * 2);
+          ctx2.fillStyle = '#cccccc';
+          ctx2.fill();
+        }
+      } else {
+        const ePos = earthPos(simDay);
+        const mPos = marsPos(simDay);
+        ctx2.beginPath();
+        ctx2.arc(cx + ePos.x * SCALE_2D, cy + ePos.z * SCALE_2D, 5, 0, Math.PI * 2);
+        ctx2.fillStyle = '#4b9cd3';
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(cx + mPos.x * SCALE_2D, cy + mPos.z * SCALE_2D, 4, 0, Math.PI * 2);
+        ctx2.fillStyle = '#c1440e';
+        ctx2.fill();
+      }
 
       // Spacecraft chevron
       const heading = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
@@ -1263,12 +1306,17 @@
       }
 
       // Moon-mode rendering (v0.1.8): Earth fixed at origin, Moon at
-      // an exaggerated visual distance, Mars + heliocentric Sun
-      // hidden, spacecraft animates along the Earth→Moon arc whose
-      // points were precomputed in applyMissionAsLoaded.
+      // an exaggerated visual distance, Sun + orbit rings + Mars
+      // hidden so the cislunar scene reads as Earth-centered. The
+      // spacecraft animates along the Earth→Moon arc whose points
+      // were precomputed in applyMissionAsLoaded.
       if (isMoonMission) {
         earthMesh.position.set(0, 0, 0);
         marsMesh.visible = false;
+        sunCore.visible = false;
+        sunGlow.visible = false;
+        earthOrbitLine.visible = false;
+        marsOrbitLine.visible = false;
         moonMesh.visible = true;
         // Moon position: from the precomputed last point of outPts
         // (= moon endpoint), in scene-units.
@@ -1276,6 +1324,10 @@
         if (lastPt) moonMesh.position.set(lastPt.x * SCALE_3D, 0, lastPt.z * SCALE_3D);
       } else {
         marsMesh.visible = true;
+        sunCore.visible = true;
+        sunGlow.visible = true;
+        earthOrbitLine.visible = true;
+        marsOrbitLine.visible = true;
         moonMesh.visible = false;
         const ePos = earthPos(simDay);
         const mPos = marsPos(simDay);
@@ -1443,16 +1495,26 @@
       </div>
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_dist_earth()}</span>
-        <span class="hud-val">{m.fly_hud_mkm({ value: distFromEarthMkm.toFixed(0) })}</span>
+        <span class="hud-val"
+          >{m.fly_hud_mkm({
+            value: distFromEarthMkm < 1 ? distFromEarthMkm.toFixed(2) : distFromEarthMkm.toFixed(0),
+          })}</span
+        >
       </div>
       <div class="hud-row">
         <span class="hud-key">·</span>
-        <span class="hud-val dim">{m.fly_hud_lmin({ value: signalDelayMin.toFixed(1) })}</span>
+        <span class="hud-val dim"
+          >{m.fly_hud_lmin({
+            value: signalDelayMin < 1 ? signalDelayMin.toFixed(2) : signalDelayMin.toFixed(1),
+          })}</span
+        >
       </div>
-      <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_dist_mars()}</span>
-        <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
-      </div>
+      {#if !isMoonMission}
+        <div class="hud-row">
+          <span class="hud-key">{m.fly_hud_dist_mars()}</span>
+          <span class="hud-val">{m.fly_hud_mkm({ value: distFromMarsMkm.toFixed(0) })}</span>
+        </div>
+      {/if}
     </aside>
 
     {#if hasFlightParams && mission.flight}

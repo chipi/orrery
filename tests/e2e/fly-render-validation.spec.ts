@@ -227,28 +227,29 @@ test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
       );
       const s = await readRenderState(page);
 
-      // Layer 4a: heliocentric speed = vis-viva(scR, A_TRANSFER_MARS)
-      // for Mars-bound; for Moon-mode, the formula is the same
-      // (heliocentricSpeed in fly-physics.ts uses the same a value
-      // because the cislunar arc is rendered in heliocentric AU after
-      // the SCALE_3D division — though the Moon-mode arc lies very
-      // close to Earth's orbit so r ≈ 1 AU and v ≈ 29.78 km/s).
-      const scR = Math.hypot(s.scX, s.scZ);
-      const predictedHelio = visViva(scR, A_TRANSFER_MARS);
+      // Layer 4a: heliocentric speed.
+      //   Mars-bound: vis-viva on the local arc radius using the
+      //               Earth-Mars Hohmann semi-major axis.
+      //   Moon-mode:  the spacecraft co-orbits with Earth around the
+      //               Sun; /fly evaluates vis-viva at r=a=R_EARTH_AU
+      //               so HELIO ΔV reads ~29.78 km/s consistently
+      //               throughout the cislunar transit (real Apollo
+      //               heliocentric speed varied by ~1 km/s).
+      const scR = c.isMoon ? R_EARTH_AU : Math.hypot(s.scX, s.scZ);
+      const aTransfer = c.isMoon ? R_EARTH_AU : A_TRANSFER_MARS;
+      const predictedHelio = visViva(scR, aTransfer);
       expect(Math.abs(s.helioKms - predictedHelio)).toBeLessThan(HELIO_TOL_KMS);
 
       // Layer 4b: signal delay derives from dist-from-Earth.
       const predictedDelay = signalDelayFromDistAu(s.distEarthAu);
       expect(Math.abs(s.signalDelayMin - predictedDelay)).toBeLessThan(SIGNAL_TOL_MIN);
 
-      // Layer 4c: distances are non-negative + bounded.
+      // Layer 4c: dist-from-Earth is non-negative + bounded.
+      //   Mars-bound caps at ~1.5 AU (Earth-Mars Hohmann reach).
+      //   Moon-mode caps at ~0.003 AU (real Earth-Moon distance).
       expect(s.distEarthAu).toBeGreaterThanOrEqual(0);
-      expect(s.distMarsAu).toBeGreaterThanOrEqual(0);
-      // Spacecraft can't be more than ~3 AU from either body in any
-      // mission in the catalogue (Mars Hohmann max ~ 1.5 AU, Moon-mode
-      // arcs hug Earth).
-      expect(s.distEarthAu).toBeLessThan(3.0);
-      expect(s.distMarsAu).toBeLessThan(3.0);
+      const distEarthCap = c.isMoon ? 0.005 : 3.0;
+      expect(s.distEarthAu).toBeLessThan(distEarthCap);
     });
   }
 });

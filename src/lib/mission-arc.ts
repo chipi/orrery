@@ -73,12 +73,40 @@ export function destinationPos(day: number, id: DestinationId): Vec2 {
  *
  * Returns `steps + 1` points sweeping ν: 0 → π.
  */
-export function outboundArc(depPos: Vec2, steps: number, destA = R_MARS_AU): Vec2[] {
+export function outboundArc(
+  depPos: Vec2,
+  steps: number,
+  destA = R_MARS_AU,
+  arrivalVInfKms?: number,
+): Vec2[] {
   const depAngle = Math.atan2(depPos.z, depPos.x);
   const a = (R_EARTH_AU + destA) / 2;
   // Signed eccentricity: positive for outer destinations, negative
   // for inner. Both keep ν=0 at Earth, ν=π at destination.
-  const eSigned = (destA - R_EARTH_AU) / (destA + R_EARTH_AU);
+  let eSigned = (destA - R_EARTH_AU) / (destA + R_EARTH_AU);
+
+  // V∞ shaping (v0.1.10 / closes carry-over from v0.1.9 ADR-027). When
+  // a real arrival V∞ is supplied (from `mission.flight.arrival
+  // .v_infinity_km_s`), bend the arc slightly so two missions to the
+  // same dest+dates render visibly distinct trajectories. The bend is
+  // a visual approximation, not a true Lambert solution — full
+  // re-solve would belong in the Lambert worker.
+  if (arrivalVInfKms != null && arrivalVInfKms > 0) {
+    // Compute the Hohmann-baseline V∞ for the destination via vis-viva.
+    // µ_Sun = 4π² in AU³/yr²; AU/yr → km/s = 4.7404 (IAU 2012).
+    const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
+    const AUPYR_TO_KMS = 4.7404;
+    const vTransferArrival = Math.sqrt(MU_SUN_AU3_YR2 * (2 / destA - 1 / a)) * AUPYR_TO_KMS;
+    const vDestCircular = Math.sqrt(MU_SUN_AU3_YR2 / destA) * AUPYR_TO_KMS;
+    const hohmannVInfKms = Math.abs(vTransferArrival - vDestCircular);
+    if (hohmannVInfKms > 0.1) {
+      const ratio = arrivalVInfKms / hohmannVInfKms;
+      // Clamp the bend so a 3× V∞ doesn't render an unphysical loop.
+      const bend = Math.max(-0.4, Math.min(0.6, ratio - 1));
+      eSigned += Math.sign(eSigned || 1) * bend * 0.12;
+    }
+  }
+
   const eSqr = eSigned * eSigned;
   const pts: Vec2[] = [];
   for (let i = 0; i <= steps; i++) {

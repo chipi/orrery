@@ -91,13 +91,16 @@
     timeline: MissionTimeline,
     isFreeReturn: boolean,
     destinationId: DestinationId = 'mars',
+    arrivalVInfKms?: number,
   ): { out: Vec2[]; ret: Vec2[] } {
     const earthDep = earthPos(timeline.dep_day);
     const destA = DESTINATIONS[destinationId].a;
     // outboundArc handles inner planets (Mercury, Venus) via signed
     // eccentricity internally — we just pass the destination's
     // heliocentric distance and the arc geometry flips automatically.
-    const out = outboundArc(earthDep, ARC_STEPS, destA);
+    // arrivalVInfKms (v0.1.10) bends the arc when the loaded mission
+    // has real V∞ data so two same-dest+dates missions look distinct.
+    const out = outboundArc(earthDep, ARC_STEPS, destA, arrivalVInfKms);
     if (!isFreeReturn) return { out, ret: [] };
     // Free-return is Mars-only by design (ORRERY DEMO scenario):
     // the long-CCW return arc has no analogue for other destinations.
@@ -500,7 +503,12 @@
         retPts = [];
       }
     } else {
-      const arcs = buildArcs(newTimeline, false);
+      // Pass real arrival V∞ when the mission has flight data so the
+      // outbound arc shape reflects the mission's actual transfer
+      // energy (v0.1.10). Falls back to the Hohmann baseline geometry
+      // when V∞ is absent.
+      const vInfKms = m.flight?.arrival?.v_infinity_km_s;
+      const arcs = buildArcs(newTimeline, false, 'mars', vInfKms);
       outPts = arcs.out;
       // Return arc for round-trip Mars missions (e.g., MMX which
       // returns from Phobos): mirror the outbound arc back to Earth.

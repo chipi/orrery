@@ -8,9 +8,11 @@
    * Reduced-motion users get a paired (from/to) number-input variant
    * that controls the same year-window (per ADR-025 tier-1).
    *
-   * Pinch-zoom on mobile is intentionally not yet implemented — the
-   * base drag-handle range is the load-bearing UX. A follow-up slice
-   * can layer pinch-zoom over the same year-window state.
+   * Pinch-zoom on mobile (v0.1.10): two-finger pinch on the strip
+   * widens or narrows the year window symmetrically around the pinch
+   * midpoint, clamped to [MIN_YEAR, MAX_YEAR]. Inverse-pinch (spread)
+   * zooms out; pinch-in zooms in. The same year-window state drives
+   * filtering, so URL sync + reduced-motion variant Just Work.
    */
   import type { Mission } from '$types/mission';
   import { prefersReducedMotion, onReducedMotionChange } from '$lib/reduced-motion';
@@ -103,6 +105,70 @@
     onChange(MIN_YEAR, MAX_YEAR);
   }
 
+  // ─── Pinch-zoom (mobile, two-finger) ─────────────────────────────
+  // Track two active pointers; the strip's effective year-window
+  // adjusts symmetrically around the pinch midpoint. Pure scale
+  // factor is `currentDistance / startDistance`.
+  type PinchState = {
+    pointers: Map<number, number>; // pointerId → clientX
+    startDistance: number;
+    startFrom: number;
+    startTo: number;
+    midpointYear: number;
+  };
+  let pinch: PinchState | null = null;
+
+  function onStripPointerDown(e: PointerEvent) {
+    if (e.pointerType !== 'touch') return;
+    if (!pinch) pinch = mkPinch();
+    pinch.pointers.set(e.pointerId, e.clientX);
+    if (pinch.pointers.size === 2) {
+      const xs = Array.from(pinch.pointers.values());
+      pinch.startDistance = Math.max(1, Math.abs(xs[1] - xs[0]));
+      pinch.startFrom = fromYear;
+      pinch.startTo = toYear;
+      const midX = (xs[0] + xs[1]) / 2;
+      pinch.midpointYear = pointerToYear(midX);
+      // Cancel any in-progress single-touch drag — pinch takes over.
+      dragging = null;
+    }
+  }
+  function onStripPointerMove(e: PointerEvent) {
+    if (e.pointerType !== 'touch' || !pinch || !pinch.pointers.has(e.pointerId)) return;
+    pinch.pointers.set(e.pointerId, e.clientX);
+    if (pinch.pointers.size !== 2) return;
+    const xs = Array.from(pinch.pointers.values());
+    const dist = Math.max(1, Math.abs(xs[1] - xs[0]));
+    const scale = dist / pinch.startDistance;
+    // New window width = old width / scale (pinch in shrinks window
+    // visually but selects more years; spread out widens).
+    const startSpan = pinch.startTo - pinch.startFrom;
+    const newSpan = Math.max(1, Math.min(MAX_YEAR - MIN_YEAR, Math.round(startSpan / scale)));
+    // Centre the new window on the pinch midpoint, clamped to bounds.
+    const halfSpan = newSpan / 2;
+    let nextFrom = Math.round(pinch.midpointYear - halfSpan);
+    let nextTo = Math.round(pinch.midpointYear + halfSpan);
+    if (nextFrom < MIN_YEAR) {
+      nextTo += MIN_YEAR - nextFrom;
+      nextFrom = MIN_YEAR;
+    }
+    if (nextTo > MAX_YEAR) {
+      nextFrom -= nextTo - MAX_YEAR;
+      nextTo = MAX_YEAR;
+    }
+    nextFrom = Math.max(MIN_YEAR, nextFrom);
+    nextTo = Math.min(MAX_YEAR, nextTo);
+    if (nextTo > nextFrom) onChange(nextFrom, nextTo);
+  }
+  function onStripPointerUp(e: PointerEvent) {
+    if (!pinch) return;
+    pinch.pointers.delete(e.pointerId);
+    if (pinch.pointers.size < 2) pinch = null;
+  }
+  function mkPinch(): PinchState {
+    return { pointers: new Map(), startDistance: 0, startFrom: 0, startTo: 0, midpointYear: 0 };
+  }
+
   // Reduced-motion variant: input-pair updates write straight to the
   // year window, clamped to the legal bounds.
   function onFromInput(e: Event) {
@@ -158,9 +224,19 @@
       bind:this={strip}
       onclick={onStripClick}
       role="presentation"
-      onpointermove={onHandleMove}
-      onpointerup={onHandleUp}
-      onpointercancel={onHandleUp}
+      onpointerdown={onStripPointerDown}
+      onpointermove={(e) => {
+        onHandleMove(e);
+        onStripPointerMove(e);
+      }}
+      onpointerup={(e) => {
+        onHandleUp(e);
+        onStripPointerUp(e);
+      }}
+      onpointercancel={(e) => {
+        onHandleUp(e);
+        onStripPointerUp(e);
+      }}
     >
       <div
         class="window"

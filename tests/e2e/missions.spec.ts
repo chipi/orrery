@@ -128,18 +128,17 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
     await expect(panel).toContainText(/SPARSE PUBLIC RECORDS/i);
   });
 
-  test('FLIGHT tab is hidden for missions without flight data', async ({ page }) => {
-    // All 28 missions have flight_data_quality set in v0.1.7, so the
-    // FLIGHT tab should appear on every mission. This test guards
-    // against a regression where a future mission addition forgets it.
+  test('FLIGHT tab fires the unknown-data caveat for unresearched missions', async ({ page }) => {
+    // After issue #31, only Starship Demo carries flight_data_quality:
+    // "unknown" — MMX + Artemis 3 were promoted to "sparse" with
+    // planned-mission caveats. This test guards the unknown-data path.
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(28, {
       timeout: 10_000,
     });
-    await page.locator('[data-testid="mission-card-artemis3"]').click();
+    await page.locator('[data-testid="mission-card-starship-demo"]').click();
     const panel = page.getByRole('complementary');
     await expect(panel).toBeVisible();
-    // artemis3 is "unknown" → tab still renders, caveat banner fires.
     await page.getByRole('tab', { name: /^FLIGHT$/ }).click();
     await expect(panel).toContainText(/FLIGHT DATA NOT YET RESEARCHED/i);
   });

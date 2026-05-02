@@ -12,7 +12,7 @@
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
-import { earthPos, destinationPos, outboundArc, type Vec2 } from '../src/lib/mission-arc.js';
+import { earthPos, outboundArc } from '../src/lib/mission-arc.js';
 import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.js';
 import { dateToSimDay } from '../src/lib/sim-day.js';
 

@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getEarthObjects, getEarthObjectGallery } from '$lib/data';
@@ -32,6 +34,57 @@
   let selected: EarthObject | null = $state(null);
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
+
+  // ─── Year scrubber + arrival pulse (Theme A.A4 / v0.1.11) ─────────
+  // simYear filters object visibility (only objects with
+  // launched <= simYear render). When the scrubber crosses an
+  // object's launched year, a 600 ms teal glow pulse is triggered.
+  // URL sync: ?year=2009 pre-applies the cursor on load.
+  const SIMYEAR_MIN = 1957;
+  const SIMYEAR_MAX = 2030;
+  let simYear = $state<number>(SIMYEAR_MAX);
+  // Map<id, timestamp_ms> of recently-revealed objects. Pulse runs
+  // for 600 ms then the entry is dropped on the next frame.
+  const pulseSet = new Map<string, number>();
+  // Track the previous year so we can detect crossings even when the
+  // user drags or jumps to a new year.
+  let prevSimYear = $state<number>(SIMYEAR_MAX);
+
+  $effect(() => {
+    const yearParam = $page.url.searchParams.get('year');
+    const parsed = yearParam ? parseInt(yearParam, 10) : NaN;
+    if (Number.isFinite(parsed)) {
+      simYear = Math.max(SIMYEAR_MIN, Math.min(SIMYEAR_MAX, parsed));
+    }
+  });
+
+  function onYearChange(e: Event) {
+    const v = parseInt((e.target as HTMLInputElement).value, 10);
+    if (!Number.isFinite(v)) return;
+    const next = Math.max(SIMYEAR_MIN, Math.min(SIMYEAR_MAX, v));
+    // Detect newly-revealed objects (launched in (prevSimYear, next])
+    if (next > prevSimYear) {
+      const now = performance.now();
+      for (const o of objects) {
+        if (o.launched > prevSimYear && o.launched <= next) {
+          pulseSet.set(o.id, now);
+        }
+      }
+    }
+    prevSimYear = next;
+    simYear = next;
+    // URL sync — replaceState so we don't pollute history per drag tick
+    const params = new URLSearchParams($page.url.searchParams);
+    if (next === SIMYEAR_MAX) params.delete('year');
+    else params.set('year', String(next));
+    const qs = params.toString();
+    const target = `${base}/earth${qs ? `?${qs}` : ''}`;
+    if (target !== $page.url.pathname + $page.url.search) {
+      void goto(target, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  }
+
+  let visibleObjects = $derived(objects.filter((o) => o.launched <= simYear));
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
   type PanelTab = 'overview' | 'gallery' | 'learn';
@@ -522,8 +575,12 @@
 
       // Satellites
       pos2d.clear();
+      const nowMs = performance.now();
       for (let i = 0; i < objects.length; i++) {
         const o = objects[i];
+        // Year-scrubber filter (v0.1.11). Hide objects whose launched
+        // year is past the current simYear cursor.
+        if (o.launched > simYear) continue;
         const category = categoriseEarthSatellite(o.id);
         const phase = (i * 2.4) % (Math.PI * 2);
         let r: number;
@@ -562,6 +619,25 @@
         ctx2.arc(x, y, dotR, 0, Math.PI * 2);
         ctx2.fillStyle = o.color;
         ctx2.fill();
+
+        // Arrival pulse (v0.1.11) — 600 ms expanding teal ring when
+        // simYear crosses an object's launched year. Drops itself
+        // after the animation completes so it doesn't accumulate.
+        const pulseStart = pulseSet.get(o.id);
+        if (pulseStart != null) {
+          const pulseAge = nowMs - pulseStart;
+          if (pulseAge < 600) {
+            const t = pulseAge / 600;
+            const ringR = dotR + 4 + t * 18;
+            ctx2.beginPath();
+            ctx2.arc(x, y, ringR, 0, Math.PI * 2);
+            ctx2.strokeStyle = `rgba(78,205,196,${(1 - t) * 0.7})`;
+            ctx2.lineWidth = 2 - t * 1.5;
+            ctx2.stroke();
+          } else {
+            pulseSet.delete(o.id);
+          }
+        }
 
         ctx2.font = "9px 'Space Mono',monospace";
         ctx2.fillStyle = 'rgba(255,255,255,0.7)';
@@ -624,6 +700,14 @@
       // v0.1.7+: motion intentionally slow (0.015 rad/s) so satellite
       // labels stay clickable as they drift — fast orbital sweep made
       // hit-targeting frustrating per user feedback.
+      // Year-scrubber: hide satellites whose launched year is past
+      // the simYear cursor. Visibility flag is cheaper than rebuilding
+      // the geometry on every drag tick.
+      for (const s of sats) {
+        const obj = objects.find((o) => o.id === s.id);
+        if (obj) s.group.visible = obj.launched <= simYear;
+      }
+
       if (!reducedMotion) {
         earthMesh.rotation.y += dt * 0.02;
         for (const s of sats) {
@@ -693,6 +777,29 @@
       {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
     </button>
   {/if}
+
+  <!-- Year scrubber (Theme A.A4 / v0.1.11). Drives object visibility
+       in both 2D + 3D views; pulse animation fires when cursor
+       crosses an object's launched year. -->
+  <div class="year-scrubber" role="group" aria-label="Earth-orbit timeline">
+    <span class="year-scrubber-label">{m.earth_year_scrubber_label()}</span>
+    <input
+      type="range"
+      min={SIMYEAR_MIN}
+      max={SIMYEAR_MAX}
+      value={simYear}
+      oninput={onYearChange}
+      aria-label={m.earth_year_scrubber_aria({
+        min: String(SIMYEAR_MIN),
+        max: String(SIMYEAR_MAX),
+      })}
+      aria-valuenow={simYear}
+    />
+    <span class="year-scrubber-value">{simYear}</span>
+    <span class="year-scrubber-count"
+      >· {m.earth_year_visible({ count: String(visibleObjects.length) })}</span
+    >
+  </div>
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.earth_load_failed()}</div>
@@ -893,6 +1000,55 @@
   :global(.earth canvas) {
     display: block;
   }
+  /* Year scrubber (Theme A.A4 / v0.1.11) */
+  .year-scrubber {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 35;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 6px 14px;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(68, 102, 255, 0.4);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(220, 230, 255, 0.85);
+  }
+  .year-scrubber input[type='range'] {
+    width: 220px;
+    accent-color: #4ecdc4;
+    min-height: 32px;
+    cursor: ew-resize;
+  }
+  .year-scrubber-label {
+    color: rgba(180, 200, 255, 0.55);
+  }
+  .year-scrubber-value {
+    color: #4ecdc4;
+    font-weight: 700;
+    min-width: 4ch;
+    text-align: right;
+  }
+  .year-scrubber-count {
+    color: rgba(180, 200, 255, 0.55);
+    font-size: 10px;
+  }
+  @media (max-width: 767px) {
+    .year-scrubber input[type='range'] {
+      width: 140px;
+    }
+    .year-scrubber-count {
+      display: none;
+    }
+  }
+
   .toggle {
     position: fixed;
     top: calc(var(--nav-height) + 12px);

@@ -267,6 +267,20 @@ The MissionPanel tab pattern (v0.1.7) extends to every detail panel in the app. 
 
 ---
 
+## v0.1.11 — Hover thumbnails + Earth year scrubber (2026-05-02)
+
+Phase 1 of the multi-phase polish plan (`docs/...` plan file). Closes Theme A.A2 + A.A4 from issue #16.
+
+- **1.11a-1** — Hover trajectory thumbnails on /missions cards. New `fetchMissionThumbnails()` step in `scripts/fetch-assets.ts` renders 28 PNGs (240×120, ~5 KB each) at build time using node-canvas + the shared `mission-arc.ts` math. Mars-bound: heliocentric view; Moon-bound: cislunar Bezier view. Cards gain a `.card-thumbnail` sibling that reveals on desktop hover (140 ms fade). Mobile users navigate via the FLY button — no long-press affordance needed.
+- **1.11a-2** — `/earth` year scrubber + arrival pulse. Native `<input type="range">` above the canvas (1957..2030) drives `simYear` state. Both 2D `draw2d()` and 3D `sats[]` filter visibility by `o.launched <= simYear`. When `simYear` crosses an object's launched year, a 600 ms expanding teal ring pulses around the dot in 2D. URL sync: `?year=2009`. Reduced-motion: native input gives keyboard + screen-reader access; pulse animation collapses via the global `prefers-reduced-motion: reduce` rule.
+- **1.11a-3** — Tests. 2 new e2e for the scrubber (URL pre-apply, out-of-range clamp). One existing test updated post-#31 promotion of artemis3 from unknown → sparse.
+
+**State at v0.1.11:** **207 unit tests** + **73 e2e** (was 71, +2), all green. ~140 KB of new image data (28 thumbnails). New devDependency: `canvas` (native module — Python 3 + build tools required for install).
+
+**Deferred from Theme A:** A1 (mission overlay rings on /explore) shipped in v0.1.10; A3 (HUD reflow) considered naturally addressed by prior /fly polish. Issue #16 fully closed.
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

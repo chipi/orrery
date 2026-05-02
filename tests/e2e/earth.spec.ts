@@ -120,4 +120,19 @@ test.describe('/earth', () => {
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
+
+  /* ── v0.1.11 — Year scrubber (Theme A.A4) ──────────────────────── */
+  test('year scrubber renders + URL pre-applies on load', async ({ page }) => {
+    await page.goto('/earth?year=2009');
+    const slider = page.getByRole('slider', { name: /Earth-orbit timeline/i });
+    await expect(slider).toBeVisible({ timeout: 5_000 });
+    await expect(slider).toHaveAttribute('aria-valuenow', '2009');
+  });
+
+  test('year scrubber clamps out-of-range URL values', async ({ page }) => {
+    await page.goto('/earth?year=1900');
+    const slider = page.getByRole('slider', { name: /Earth-orbit timeline/i });
+    await expect(slider).toBeVisible({ timeout: 5_000 });
+    await expect(slider).toHaveAttribute('aria-valuenow', '1957');
+  });
 });

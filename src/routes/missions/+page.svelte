@@ -340,11 +340,7 @@
                scripts/fetch-assets.ts. Mobile users discover the
                trajectory via the FLY button + /fly screen instead. -->
           <aside class="card-thumbnail" aria-hidden="true">
-            <img
-              src="{base}/images/missions/thumbnails/{mission.id}.png"
-              alt=""
-              loading="lazy"
-            />
+            <img src="{base}/images/missions/thumbnails/{mission.id}.png" alt="" loading="lazy" />
           </aside>
         </li>
       {/each}

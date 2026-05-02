@@ -279,6 +279,15 @@
     arrMarker.position.set(arrX, 0, arrZ);
     depLabelSprite.position.set(depX, 6, depZ);
     arrLabelSprite.position.set(arrX, 6, arrZ);
+    // Moon-mode: hide the dep/arr torus rings + label sprites — the
+    // Earth + Moon meshes already mark the start/end of the cislunar
+    // trajectory and the 5u torus rings dwarf the 2-2.6u celestial
+    // bodies, making the whole scene read as "two giant rings" instead
+    // of "Earth → Moon arc".
+    depMarker.visible = !isMoonMission;
+    arrMarker.visible = !isMoonMission;
+    depLabelSprite.visible = !isMoonMission;
+    arrLabelSprite.visible = !isMoonMission;
   });
 
   // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
@@ -1355,16 +1364,22 @@
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.
+      // Moon-mode uses Earth-centred fake-AU coords so a heliocentric
+      // marsArr / earthRet would render the rings off in heliocentric
+      // space (visible because the camera is also looking at origin).
+      // Hide them entirely for Moon missions — Earth + Moon meshes
+      // already mark the start/end of the cislunar trajectory.
       const marsArrLive = destinationPos(arcTimeline.flyby_day, activeDestination);
       const earthRetLive = earthPos(arcTimeline.arr_day);
       flybyRing.position.set(marsArrLive.x * SCALE_3D, 0, marsArrLive.z * SCALE_3D);
-      flybyRing.visible = sc.progress >= 0.45 && sc.progress <= 0.55;
+      flybyRing.visible = !isMoonMission && sc.progress >= 0.45 && sc.progress <= 0.55;
       // RETURN marker — fades in once we're past the flyby and on the
       // return leg, fades back out at the very end (last 5% of the
       // progress so the marker doesn't overlap with the rendered
       // spacecraft mesh at touchdown).
       returnRing.position.set(earthRetLive.x * SCALE_3D, 0, earthRetLive.z * SCALE_3D);
-      returnRing.visible = isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
+      returnRing.visible =
+        !isMoonMission && isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();

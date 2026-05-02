@@ -30,10 +30,27 @@ test('porkchop refreshes when destination changes', async ({ page }) => {
   const marsUrl = page.url();
   const marsSelect = await page.locator('select.dest-select').inputValue();
 
-  await page.screenshot({ path: '/tmp/porkchop-mars.png' });
+  // Click a cell so the right-panel rocket section renders.
+  const canvasBox = await page.locator('canvas').first().boundingBox();
+  if (canvasBox) {
+    await page.mouse.click(
+      canvasBox.x + canvasBox.width * 0.4,
+      canvasBox.y + canvasBox.height * 0.7,
+    );
+    await page.waitForTimeout(500);
+  }
+
+  // Rocket image must render at the figure's 16:9 aspect ratio (the
+  // right-panel flex column was squashing it to ~2px tall before the
+  // flex-shrink: 0 fix on .rocket-photo).
+  const rocketFigHeight = await page.evaluate(() => {
+    const fig = document.querySelector('figure.rocket-photo') as HTMLElement | null;
+    return fig?.clientHeight ?? 0;
+  });
+  expect(rocketFigHeight).toBeGreaterThan(100);
+
   await page.selectOption('select.dest-select', 'jupiter');
   await page.waitForTimeout(2500);
-  await page.screenshot({ path: '/tmp/porkchop-jupiter.png' });
 
   const jupiterHash = await sample();
   const jupiterUrl = page.url();

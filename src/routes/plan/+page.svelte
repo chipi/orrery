@@ -1065,6 +1065,7 @@
     overflow: hidden;
     background: rgba(0, 0, 0, 0.4);
     aspect-ratio: 16 / 9;
+    flex-shrink: 0;
   }
   .rocket-photo img {
     width: 100%;

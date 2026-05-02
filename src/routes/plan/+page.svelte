@@ -274,7 +274,7 @@
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
-    ctx.fillText(m.plan_plot_title(), ML, 6);
+    ctx.fillText(m.plan_plot_title({ dest: destinationId.toUpperCase() }), ML, 6);
   }
 
   // ─── Pointer hit-test → grid cell ────────────────────────────────

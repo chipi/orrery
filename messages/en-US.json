@@ -31,7 +31,7 @@
   "plan_destination_saturn": "Saturn",
   "plan_axis_tof_label_years": "TIME OF FLIGHT (YEARS)",
   "plan_loading_title": "COMPUTING LAMBERT SOLUTIONS",
-  "plan_plot_title": "PORKCHOP · EARTH → MARS · ∆v km/s",
+  "plan_plot_title": "PORKCHOP · EARTH → {dest} · ∆v km/s",
   "plan_axis_departure_window": "DEPARTURE WINDOW · 2026 — 2030",
   "plan_axis_tof_label": "TIME OF FLIGHT (DAYS)",
   "plan_empty_title": "PICK A LAUNCH WINDOW",

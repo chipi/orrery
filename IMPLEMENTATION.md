@@ -281,6 +281,18 @@ Phase 1 of the multi-phase polish plan (`docs/...` plan file). Closes Theme A.A2
 
 ---
 
+## v0.1.12 — PWA service worker + high-contrast toggle (2026-05-02)
+
+Phase 2 of the multi-phase polish plan. Closes Theme C from issue #18.
+
+- **1.12a-1** — Service worker via `@vite-pwa/sveltekit` (new dev-dep). New ADR-029 documents the decision: precache shell+textures+fonts+logos+images; stale-while-revalidate for mission JSON + i18n overlays; network-first for gallery/manifest files; porkchop grids excluded (browser HTTP cache only). Update toast + visit-counter-deferred install prompt (3+ unique routes per CLAUDE.md "no surprises") in `+layout.svelte`. SW lands in `build/sw.js` + `workbox-*.js`.
+- **1.12a-2** — Manual high-contrast toggle. New `src/lib/high-contrast.ts` mirrors `reduced-motion.ts` (matchMedia + MutationObserver subscription). New "Aa" button in Nav right-section toggles `data-high-contrast` on `<html>`; CSS hooks already shipped in v0.1.10's `tokens.css`. Both OS preference + manual override paths active.
+- **1.12a-3** — 4 new e2e tests (manifest served, SW file served, manifest link in head, toggle flips html attribute). 207 unit + 77 e2e all green.
+
+**Deferred:** Lighthouse CI gate (needs separate `lhci` config + baseline scoring). iOS install path stays manual via the share sheet (Safari ignores `beforeinstallprompt`); documented in ADR-029.
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

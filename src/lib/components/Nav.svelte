@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { onDestroy, onMount } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
+  import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
@@ -19,6 +21,24 @@
   function isActive(href: string, pathname: string): boolean {
     return pathname === href || pathname.startsWith(href + '/');
   }
+
+  // ─── High-contrast toggle (Theme C.C2 / v0.1.12 / ADR-029) ─────────
+  // The CSS hooks live in tokens.css (data-high-contrast attribute on
+  // <html> + @media (prefers-contrast: more)). The button just flips
+  // the attribute; tokens.css handles the rest.
+  let hiContrast = $state(false);
+  let stopWatch: (() => void) | undefined;
+  onMount(() => {
+    stopWatch = onHighContrastChange((v) => {
+      hiContrast = v;
+    });
+  });
+  onDestroy(() => stopWatch?.());
+
+  function onToggleHiContrast() {
+    toggleHighContrast();
+    // hiContrast updates via the MutationObserver in onHighContrastChange.
+  }
 </script>
 
 <nav aria-label={m.nav_aria_label()}>
@@ -34,6 +54,17 @@
   </div>
 
   <div class="right">
+    <button
+      type="button"
+      class="contrast-toggle"
+      class:active={hiContrast}
+      aria-label={m.nav_high_contrast_aria()}
+      aria-pressed={hiContrast}
+      title={m.nav_high_contrast_aria()}
+      onclick={onToggleHiContrast}
+    >
+      Aa
+    </button>
     {@render right?.()}
   </div>
 </nav>
@@ -115,6 +146,36 @@
     align-items: center;
     gap: 14px;
     flex-shrink: 0;
+  }
+
+  .contrast-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .contrast-toggle:hover,
+  .contrast-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    outline: none;
+  }
+  .contrast-toggle.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.6);
+    color: #4ecdc4;
   }
 
   /* Mobile: 44px touch targets per ADR-018, hide subtitle on narrow screens */

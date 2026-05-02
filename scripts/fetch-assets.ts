@@ -590,6 +590,220 @@ async function fetchMissionImages(): Promise<number> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// PANEL GALLERIES — planets, sun, earth-objects, moon-sites (v0.1.10)
+//
+// Mirrors the mission-imagery flow but parameterised over category +
+// query list + manifest path. Each entity gets up to PANEL_GALLERY_MAX
+// photos; the per-category manifest tracks the count so the UI hides
+// the GALLERY tab when no photos are available.
+//
+// For moon-sites whose id matches a mission id (apollo11, change5,
+// luna9, etc.) we copy the existing missions/{id}/*.jpg files instead
+// of re-downloading — saves bandwidth + keeps galleries consistent.
+// ──────────────────────────────────────────────────────────────────────
+
+import { readdir, copyFile } from 'node:fs/promises';
+
+const PANEL_GALLERY_MAX = 5;
+
+interface GalleryQuery {
+  id: string;
+  query: string;
+  /** When set, skip NASA API and copy images from `static/images/missions/{copyFromMission}/` instead. */
+  copyFromMission?: string;
+  /** Wikimedia Commons filename used when NASA API returns nothing. */
+  wikimediaFallback?: string;
+}
+
+const PLANET_QUERIES: GalleryQuery[] = [
+  { id: 'mercury', query: 'mercury planet messenger' },
+  { id: 'venus', query: 'venus planet magellan' },
+  { id: 'earth', query: 'earth from space apollo' },
+  { id: 'mars', query: 'mars planet rover' },
+  { id: 'jupiter', query: 'jupiter great red spot juno' },
+  { id: 'saturn', query: 'saturn rings cassini' },
+  { id: 'uranus', query: 'uranus voyager' },
+  { id: 'neptune', query: 'neptune voyager 2' },
+];
+
+const SUN_QUERIES: GalleryQuery[] = [{ id: 'sun', query: 'solar dynamics observatory sun corona' }];
+
+const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
+  { id: 'iss', query: 'international space station' },
+  {
+    id: 'tiangong',
+    query: 'tiangong space station china',
+    wikimediaFallback: 'Tiangong_Space_Station_(rendered).jpg',
+  },
+  { id: 'hubble', query: 'hubble space telescope' },
+  {
+    id: 'gps',
+    query: 'gps satellite navstar',
+    wikimediaFallback: 'Navstar-2F.jpg',
+  },
+  {
+    id: 'galileo',
+    query: 'galileo navigation satellite',
+    wikimediaFallback: 'Galileo-IOV-PFM.jpg',
+  },
+  {
+    id: 'glonass',
+    query: 'glonass satellite',
+    wikimediaFallback: 'GLONASS-K_satellite.jpg',
+  },
+  {
+    id: 'beidou',
+    query: 'beidou navigation satellite',
+    wikimediaFallback: 'BeiDou_2.svg',
+  },
+  { id: 'geo', query: 'geostationary satellite' },
+  { id: 'chandra', query: 'chandra x-ray observatory' },
+  {
+    id: 'xmm',
+    query: 'xmm newton x-ray',
+    wikimediaFallback: 'XMM-Newton-spacecraft.jpg',
+  },
+  { id: 'lro', query: 'lunar reconnaissance orbiter', copyFromMission: 'lro' },
+  { id: 'jwst', query: 'james webb space telescope' },
+  {
+    id: 'gaia',
+    query: 'gaia spacecraft milky way',
+    wikimediaFallback: 'Gaia_spacecraft_animation.jpg',
+  },
+];
+
+const MOON_SITE_QUERIES: GalleryQuery[] = [
+  { id: 'luna9', query: 'luna 9', copyFromMission: 'luna9' },
+  { id: 'luna17', query: 'lunokhod 1 luna 17', copyFromMission: 'luna17' },
+  { id: 'luna24', query: 'luna 24', copyFromMission: 'luna24' },
+  { id: 'apollo11', query: 'apollo 11', copyFromMission: 'apollo11' },
+  { id: 'apollo12', query: 'apollo 12 lunar surface' },
+  { id: 'apollo14', query: 'apollo 14 alan shepard' },
+  { id: 'apollo15', query: 'apollo 15 lunar rover' },
+  { id: 'apollo16', query: 'apollo 16 descartes' },
+  { id: 'apollo17', query: 'apollo 17', copyFromMission: 'apollo17' },
+  {
+    id: 'change3',
+    query: 'chinese chang-e 3 lunar',
+    wikimediaFallback: 'Yutu_rover.jpg',
+  },
+  { id: 'change4', query: 'change 4 farside', copyFromMission: 'change4' },
+  { id: 'change5', query: 'change 5 lunar', copyFromMission: 'change5' },
+  { id: 'change6', query: 'change 6 lunar', copyFromMission: 'change6' },
+  { id: 'chandrayaan3', query: 'chandrayaan 3 vikram', copyFromMission: 'chandrayaan3' },
+  { id: 'slim', query: 'slim moon lander jaxa', copyFromMission: 'slim' },
+  { id: 'artemis3', query: 'artemis lunar landing', copyFromMission: 'artemis3' },
+];
+
+/**
+ * Generic gallery fetcher. For each entry: copy from missions if
+ * configured, otherwise fetch from NASA Images API, finally fall back
+ * to the curated Wikimedia filename if both fail. Writes the count
+ * manifest so the UI can render thumbnails.
+ */
+async function fetchPanelGallery(
+  label: string,
+  queries: GalleryQuery[],
+  outputDir: string,
+  manifestPath: string,
+  manifestShape: 'count-map' | 'singleton',
+): Promise<number> {
+  await mkdir(outputDir, { recursive: true });
+  const manifest: Record<string, number> = {};
+  let totalPhotos = 0;
+
+  for (let i = 0; i < queries.length; i++) {
+    const q = queries[i];
+    const entityDir = manifestShape === 'singleton' ? outputDir : join(outputDir, q.id);
+    await mkdir(entityDir, { recursive: true });
+    process.stdout.write(`  ${q.id}…`);
+
+    // Path 1 — copy from missions/{id}/ when configured.
+    if (q.copyFromMission) {
+      const sourceDir = join(MISSIONS_DIR, q.copyFromMission);
+      try {
+        const files = (await readdir(sourceDir)).filter((f) => /^\d{2}\.jpg$/.test(f)).sort();
+        let saved = 0;
+        for (const file of files) {
+          await copyFile(join(sourceDir, file), join(entityDir, file));
+          saved++;
+        }
+        if (saved > 0) {
+          manifest[q.id] = saved;
+          totalPhotos += saved;
+          process.stdout.write(` copied from missions (${saved})\n`);
+          continue;
+        }
+        process.stdout.write(' no mission images, falling back to NASA…');
+      } catch {
+        process.stdout.write(' missions/ unavailable, falling back to NASA…');
+      }
+    }
+
+    // Path 2 — NASA Images API search.
+    let urls: string[] = [];
+    try {
+      urls = await fetchNasaGalleryUrls(q.query, PANEL_GALLERY_MAX);
+    } catch {
+      // Path 3 — Wikimedia fallback (single image).
+      if (q.wikimediaFallback) {
+        try {
+          const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(q.wikimediaFallback)}?width=800`;
+          await downloadFromWikimedia(url, join(entityDir, '01.jpg'));
+          manifest[q.id] = 1;
+          totalPhotos++;
+          process.stdout.write(' wikimedia (1)\n');
+          continue;
+        } catch (err2) {
+          const msg = err2 instanceof Error ? err2.message : String(err2);
+          process.stdout.write(` ⚠ skipped (nasa+wikimedia: ${msg})\n`);
+          manifest[q.id] = 0;
+          continue;
+        }
+      } else {
+        process.stdout.write(' ⚠ skipped (no api results, no fallback)\n');
+        manifest[q.id] = 0;
+        continue;
+      }
+    }
+
+    let saved = 0;
+    for (let n = 0; n < urls.length; n++) {
+      const filename = `${String(n + 1).padStart(2, '0')}.jpg`;
+      try {
+        const imgRes = await fetch(urls[n]);
+        if (!imgRes.ok) continue;
+        const buffer = Buffer.from(await imgRes.arrayBuffer());
+        await writeFile(join(entityDir, filename), buffer);
+        saved++;
+      } catch {
+        // Single-image fail; continue with the rest.
+      }
+    }
+    manifest[q.id] = saved;
+    totalPhotos += saved;
+    process.stdout.write(` ${saved}\n`);
+
+    if (i < queries.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
+    }
+  }
+
+  // Write manifest. Singleton shape → `{count: N}`; count-map → sorted `{id: count}`.
+  if (manifestShape === 'singleton') {
+    const id = queries[0]?.id ?? 'sun';
+    const count = manifest[id] ?? 0;
+    await writeFile(manifestPath, JSON.stringify({ count }, null, 2) + '\n');
+  } else {
+    const sorted: Record<string, number> = {};
+    for (const k of Object.keys(manifest).sort()) sorted[k] = manifest[k];
+    await writeFile(manifestPath, JSON.stringify(sorted, null, 2) + '\n');
+  }
+  console.log(`  → ${label} manifest: ${manifestPath} (${totalPhotos} photos total)`);
+  return totalPhotos;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // SHARED HELPERS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -628,6 +842,46 @@ async function main() {
   console.log('Fetching mission imagery (NASA Images API):');
   const missionCount = await fetchMissionImages();
   console.log(`  → ${missionCount} mission files in ${MISSIONS_DIR}\n`);
+
+  console.log('Fetching planet galleries:');
+  await fetchPanelGallery(
+    'planets',
+    PLANET_QUERIES,
+    'static/images/planets',
+    'static/data/planet-galleries.json',
+    'count-map',
+  );
+  console.log('');
+
+  console.log('Fetching sun gallery:');
+  await fetchPanelGallery(
+    'sun',
+    SUN_QUERIES,
+    'static/images/sun',
+    'static/data/sun-gallery.json',
+    'singleton',
+  );
+  console.log('');
+
+  console.log('Fetching earth-object galleries:');
+  await fetchPanelGallery(
+    'earth-objects',
+    EARTH_OBJECT_QUERIES,
+    'static/images/earth-objects',
+    'static/data/earth-object-galleries.json',
+    'count-map',
+  );
+  console.log('');
+
+  console.log('Fetching moon-site galleries:');
+  await fetchPanelGallery(
+    'moon-sites',
+    MOON_SITE_QUERIES,
+    'static/images/moon-sites',
+    'static/data/moon-site-galleries.json',
+    'count-map',
+  );
+  console.log('');
 
   console.log('Done.');
 }

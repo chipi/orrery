@@ -24,6 +24,14 @@
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
   import { mergeFlightEvents } from '$lib/mission-event-merge';
+  import {
+    auToMkm,
+    distanceBetween,
+    heliocentricSpeed as flyHeliocentricSpeed,
+    moonOutboundArc as flyMoonOutboundArc,
+    moonReturnArc as flyMoonReturnArc,
+    signalDelayMin as flySignalDelayMin,
+  } from '$lib/fly-physics';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
@@ -138,8 +146,7 @@
   // the Moon at MOON_VISUAL_DISTANCE units away. Educational
   // compromise: distances aren't to-scale, but the spacecraft path
   // and timing relative to the Moon's orbital motion are accurate.
-  const MOON_VISUAL_DISTANCE = 100;
-  const MOON_ORBITAL_PERIOD_DAYS = 27.32;
+  // Constants live in $lib/fly-physics-constants (v0.2.0 / ADR-030).
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
@@ -310,29 +317,19 @@
 
   // ─── Live derived navigation values ──────────────────────────────
   // Heliocentric speed using vis-viva on the Hohmann transfer ellipse.
-  // The arcs are not perfectly Keplerian (return arc uses a cosine
-  // radius profile) so we report a smooth approximation: linear
-  // interpolation between Earth and Mars circular speeds based on
-  // current heliocentric distance.
-  const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
-  const AU_PER_YR_TO_KMS = 4.7404;
-  const AU_TO_KM = 149_597_870.7;
-  const C_LIGHT_KM_S = 299_792.458;
-
+  // Live derived navigation values — pure functions in fly-physics.ts
+  // (extracted in v0.2.0 / ADR-030). The .svelte file is the consumer;
+  // tests + the validation harness exercise the same code paths.
   let scR = $derived(Math.hypot(scState.pos.x, scState.pos.z));
-  let heliocentricKms = $derived(
-    Math.sqrt(MU_SUN_AU3_YR2 * (2 / scR - 1 / ((R_EARTH_AU + R_MARS_AU) / 2))) * AU_PER_YR_TO_KMS,
-  );
+  let heliocentricKms = $derived(flyHeliocentricSpeed(scR, (R_EARTH_AU + R_MARS_AU) / 2));
 
   let earthNow = $derived(earthPos(simDay));
   let marsNow = $derived(marsPos(simDay));
-  let distFromEarthAu = $derived(
-    Math.hypot(scState.pos.x - earthNow.x, scState.pos.z - earthNow.z),
-  );
-  let distFromMarsAu = $derived(Math.hypot(scState.pos.x - marsNow.x, scState.pos.z - marsNow.z));
-  let distFromEarthMkm = $derived((distFromEarthAu * AU_TO_KM) / 1_000_000);
-  let distFromMarsMkm = $derived((distFromMarsAu * AU_TO_KM) / 1_000_000);
-  let signalDelayMin = $derived((distFromEarthAu * AU_TO_KM) / C_LIGHT_KM_S / 60);
+  let distFromEarthAu = $derived(distanceBetween(scState.pos, earthNow));
+  let distFromMarsAu = $derived(distanceBetween(scState.pos, marsNow));
+  let distFromEarthMkm = $derived(auToMkm(distFromEarthAu));
+  let distFromMarsMkm = $derived(auToMkm(distFromMarsAu));
+  let signalDelayMin = $derived(flySignalDelayMin(distFromEarthAu));
 
   // Mission elapsed time = days since the simulation departed the arc's
   // start, mapped to the loaded mission's apparent transit time so the
@@ -476,42 +473,24 @@
       // the Moon's exaggerated position. The Moon is placed at a
       // sweep angle determined by the mission's flyby_day modulo the
       // sidereal lunar month.
-      const moonAngle =
-        ((newTimeline.flyby_day % MOON_ORBITAL_PERIOD_DAYS) / MOON_ORBITAL_PERIOD_DAYS) *
-        2 *
-        Math.PI;
-      const moonX = Math.cos(moonAngle) * MOON_VISUAL_DISTANCE;
-      const moonZ = Math.sin(moonAngle) * MOON_VISUAL_DISTANCE;
-      const arcSteps = 200;
-      const moonOut: Vec2[] = [];
-      for (let i = 0; i <= arcSteps; i++) {
-        const t = i / arcSteps;
-        // Quadratic Bezier with off-axis control point — gives a
-        // gentle curving departure trajectory.
-        const ctrlX = moonX * 0.5 + -moonZ * 0.18;
-        const ctrlZ = moonZ * 0.5 + moonX * 0.18;
-        const ix = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlX + t * t * moonX;
-        const iz = (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * ctrlZ + t * t * moonZ;
-        moonOut.push({ x: ix / SCALE_3D, z: iz / SCALE_3D });
-      }
-      outPts = moonOut;
-      // Return arc for round-trip Moon missions: mirrored curve back
-      // to Earth, slightly offset so it doesn't overlap the outbound
-      // line.
-      if (isReturnTrip) {
-        const moonRet: Vec2[] = [];
-        for (let i = 0; i <= arcSteps; i++) {
-          const t = i / arcSteps;
-          const ctrlX = moonX * 0.5 + moonZ * 0.18;
-          const ctrlZ = moonZ * 0.5 + -moonX * 0.18;
-          const ix = (1 - t) * (1 - t) * moonX + 2 * (1 - t) * t * ctrlX + t * t * 0;
-          const iz = (1 - t) * (1 - t) * moonZ + 2 * (1 - t) * t * ctrlZ + t * t * 0;
-          moonRet.push({ x: ix / SCALE_3D, z: iz / SCALE_3D });
-        }
-        retPts = moonRet;
-      } else {
-        retPts = [];
-      }
+      // Moon-mode arc geometry now lives in $lib/fly-physics
+      // (v0.2.0 / ADR-030). flyMoonOutboundArc() + flyMoonReturnArc()
+      // produce points in scene coordinates; we divide by SCALE_3D
+      // to land in AU-space (the rest of the arc rendering expects AU).
+      const moonPos = {
+        x: Math.cos(((newTimeline.flyby_day % 27.32) / 27.32) * Math.PI * 2) * 100,
+        z: Math.sin(((newTimeline.flyby_day % 27.32) / 27.32) * Math.PI * 2) * 100,
+      };
+      outPts = flyMoonOutboundArc(moonPos, 200).map((p) => ({
+        x: p.x / SCALE_3D,
+        z: p.z / SCALE_3D,
+      }));
+      retPts = isReturnTrip
+        ? flyMoonReturnArc(moonPos, 200).map((p) => ({
+            x: p.x / SCALE_3D,
+            z: p.z / SCALE_3D,
+          }))
+        : [];
     } else {
       // Pass real arrival V∞ when the mission has flight data so the
       // outbound arc shape reflects the mission's actual transfer

@@ -306,6 +306,22 @@ Phase 3 of the multi-phase polish plan. Surfaces the rich flight data populated 
 
 ---
 
+## v0.2.0 — /fly trajectory math: isolation + per-mission validation (2026-05-02)
+
+Phase 4 of the multi-phase polish plan — the largest. Extracts every numeric formula previously inline in `src/routes/fly/+page.svelte` into pure modules + adds a per-mission validation harness against the golden values from issue #31. **Minor version bump** because this touches the trajectory core. ADR-030 locks the contract.
+
+- **2.0a-1** — `src/lib/fly-physics.ts` collects all extracted functions: `heliocentricSpeed`, `distanceBetween`, `auToKm`/`auToMkm`, `signalDelayMin`, `missionElapsedDays`, `dvRemaining`, `moonPositionAtMet`, `moonOutboundArc`, `moonReturnArc`. Constants centralised in `src/lib/fly-physics-constants.ts`. `+page.svelte` is now a consumer; the math is testable.
+- **2.0a-2** — V∞ shaping + Moon Bezier test gaps closed. 4 new tests for `outboundArc()` V∞ shaping (baseline passthrough, energetic bend-out, Hohmann-matched, extreme clamp). 6 new tests for the extracted Moon arcs.
+- **2.0a-3** — `src/lib/fly-physics-validation.test.ts` walks 10 real missions (9 measured + 1 sparse) and asserts peak heliocentric speed within tolerance against `mission.flight.cruise.peak_heliocentric_speed_km_s`. Per-mission tolerance bands reflect the Hohmann-approximation envelope (1.5 km/s energetic, 2.0 km/s flybys, 3.0 km/s sparse).
+- **2.0a-4** — `src/lib/test-helpers/expect-close.ts` provides `expectCloseTo(computed, golden, tolerance, description)` with descriptive errors. Reusable for any future per-mission validation.
+- **2.0a-5** — ADR-030 documents the pure-function boundary + tolerance philosophy + future-work hooks.
+
+**State at v0.2.0:** **251 unit tests** (was 214, +37) **+ 82 e2e**, all green. No new dependencies. /fly math is now testable independently of Three.js + Canvas2D rendering.
+
+**Multi-phase plan complete.** v0.1.10 → v0.1.11 → v0.1.12 → v0.1.13 → v0.2.0 shipped sequentially per the planning file at `~/.claude/plans/merry-sniffing-nest.md`. Next track: v0.3.0 outer-planet implementation (RFC-008 + ADR-028 already deliberated).
+
+---
+
 ## Scope expansion (April 2026)
 
 A documentation site was added outside the original six-slice plan, locked in **ADR-021**. VitePress builds `docs/` into a static site deployed at `https://chipi.github.io/orrery/docs/` alongside the main app. Three checkpoints (3a-docs-1, -2, -3) and ADR-021 (3a-docs-4) landed late-April 2026.

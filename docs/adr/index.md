@@ -32,3 +32,4 @@
 | ADR-027 | Mission flight params + timeline navigator | Accepted (closes RFC-009) | Apr 2026 |
 | ADR-028 | Outer planets + dwarf planets in /plan | Accepted (closes RFC-008) | May 2026 |
 | ADR-029 | Service worker via @vite-pwa/sveltekit | Accepted (closes Theme C.C1) | May 2026 |
+| ADR-030 | /fly trajectory math: pure-function isolation + per-mission validation | Accepted | May 2026 |

@@ -1,0 +1,22 @@
+{
+  "name": "Orrery — Mission Simulator",
+  "short_name": "Orrery",
+  "description": "A browser-based solar system explorer and Mars mission simulator with real Lambert orbital mechanics. 28 historical missions, 5-destination porkchop, real flight params.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#04040c",
+  "background_color": "#04040c",
+  "lang": "en-US",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "logos/nasa.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "science", "utilities"]
+}

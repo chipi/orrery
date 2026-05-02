@@ -3,40 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
     <title>Orrery</title>
 
+    <!-- PWA manifest (v0.1.10 / Theme C.C1 / issue #18). Manifest-only
+         install support; no service worker yet — offline-first
+         behaviour already comes from the static-deploy + browser cache. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="logos/nasa.svg" type="image/svg+xml" />
+
     
-		<link href="./_app/immutable/assets/0.D4bn0gMM.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.BRZjyJ4X.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/3.BCOD1PhH.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/Panel.BNuZPd-M.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.y1ws5lpH.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.CHOugzJr.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.B9O4inY7.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.B_gZsPIC.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/runtime.C0_T-c5J.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/paths.-BiVB0ny.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/paths.CGmbW-rC.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.CM_KpHBu.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.CpikeBTl.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/render.CEoqyEoO.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/disclose-version.DkHLrpTF.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index-client.t-f3oYb3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/store.XvvNR-dZ.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.kuiPtAnV.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.Dr_887kR.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/snippet.Zg49KJ99.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/messages.BHEQ3_Ka.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.BVUkJdkq.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.Dblv-XiV.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/data.Dv3G8-LM.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/three.module.4wXp8TzE.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/messages.CTOdY-FH.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.CLluJQ_v.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.3Yxw4UIu.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/data.C4Gm4uEg.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/three.module.B1Zn2-W2.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scale.DGhm9l0f.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/reduced-motion.DXGGeAXC.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/three-label.CdffH5AB.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Panel.B4dxNtNv.js"><!--[--><!--]--><title>Earth Orbit · Orrery</title>
+		<link rel="modulepreload" href="./_app/immutable/chunks/three-label.LBCZizIx.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Panel.SB1q7udd.js"><!--[--><!--]--><title>Earth Orbit · Orrery</title>
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents"><!--[--><!--[--><!----><nav aria-label="Main navigation" class="svelte-rvaurj"><div class="left svelte-rvaurj"><span class="wordmark svelte-rvaurj">ORRERY</span> <span class="subtitle svelte-rvaurj">MISSION SIMULATOR</span></div> <div class="center svelte-rvaurj"><!--[--><a href="./explore" class="link svelte-rvaurj ">OUR SOLAR SYSTEM</a><a href="./plan" class="link svelte-rvaurj ">PLAN</a><a href="./fly" class="link svelte-rvaurj ">FLY</a><a href="./missions" class="link svelte-rvaurj ">MISSIONS</a><a href="./earth" class="link svelte-rvaurj ">EARTH</a><a href="./moon" class="link svelte-rvaurj ">MOON</a><!--]--></div> <div class="right svelte-rvaurj"><!----></div></nav><!----> <main class="svelte-b0bfbg"><!----><div class="earth svelte-db34ih"><div class="layer svelte-db34ih "></div> <canvas class="layer svelte-db34ih hidden" aria-label="Earth and its satellites in 3D. Drag to orbit, pinch or scroll to zoom, click any object for details."></canvas> <!--[--><button class="toggle svelte-db34ih" type="button" aria-pressed="false">2D</button><!--]--> <!--[!--><!--]--> <!--[!--><!--]--><!----> <!--[!--><!--]--></div><!----><!----></main><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_1w8a2hg = {
+					__sveltekit_1oi2mb7 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/orrery"
 					};
@@ -46,8 +53,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.y1ws5lpH.js"),
-						import("./_app/immutable/entry/app.CM_KpHBu.js")
+						import("./_app/immutable/entry/start.B9O4inY7.js"),
+						import("./_app/immutable/entry/app.CpikeBTl.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],

@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
     <title>Orrery</title>
 
+    <!-- PWA manifest (v0.1.10 / Theme C.C1 / issue #18). Manifest-only
+         install support; no service worker yet — offline-first
+         behaviour already comes from the static-deploy + browser cache. -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="logos/nasa.svg" type="image/svg+xml" />
+
     
-		<link rel="modulepreload" href="/orrery/_app/immutable/entry/start.y1ws5lpH.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/entry.CHOugzJr.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/entry/start.B9O4inY7.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/entry.B_gZsPIC.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/runtime.C0_T-c5J.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/paths.-BiVB0ny.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/paths.CGmbW-rC.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/entry/app.CM_KpHBu.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/entry/app.CpikeBTl.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/render.CEoqyEoO.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/disclose-version.DkHLrpTF.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/index-client.t-f3oYb3.js">
@@ -21,7 +28,7 @@
     <div style="display: contents">
 			<script>
 				{
-					__sveltekit_1w8a2hg = {
+					__sveltekit_1oi2mb7 = {
 						base: "/orrery",
 						assets: "/orrery"
 					};
@@ -29,8 +36,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/orrery/_app/immutable/entry/start.y1ws5lpH.js"),
-						import("/orrery/_app/immutable/entry/app.CM_KpHBu.js")
+						import("/orrery/_app/immutable/entry/start.B9O4inY7.js"),
+						import("/orrery/_app/immutable/entry/app.CpikeBTl.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});

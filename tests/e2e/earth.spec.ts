@@ -58,20 +58,30 @@ test.describe('/earth', () => {
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible();
-    await page.waitForTimeout(600); // let objects populate
+    await page.waitForTimeout(800); // let objects populate
+    // Sweep the canvas in a grid until a click opens the right-panel.
+    // Now that satellites occupy inclined orbits (v0.x.x), their 2D
+    // projection isn't on a clean ring at phase=i*2.4 anymore —
+    // hardcoding ISS's old position no longer hits.
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
-    // The 2D layout is: Earth at centre, sats on rings, phase = i*2.4 rad.
-    // ISS is index 0 → phase 0 (sits at +X). Its radius is altToOrbitRadius(408)
-    // ≈ 10.9 scene units; pxPerUnit = min(W,H)/70.
-    const pxPerUnit = Math.min(box.width, box.height) / 70;
-    const issR = 10.9 * pxPerUnit;
-    const cx = box.width / 2 + issR;
-    const cy = box.height / 2;
-    await flat.click({ position: { x: cx, y: cy } });
+    const cx = box.x + box.width / 2;
+    const cy = box.y + box.height / 2;
     const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible({ timeout: 5_000 });
+    let opened = false;
+    outer: for (let r = 60; r < Math.min(box.width, box.height) / 2 - 20; r += 12) {
+      for (let theta = 0; theta < Math.PI * 2; theta += Math.PI / 12) {
+        await page.mouse.click(cx + Math.cos(theta) * r, cy + Math.sin(theta) * r);
+        if (await panel.isVisible().catch(() => false)) {
+          opened = true;
+          break outer;
+        }
+      }
+    }
+    expect(opened, 'expected at least one click within the satellite cluster to open a panel').toBe(
+      true,
+    );
   });
 
   test('no console errors on load', async ({ page }) => {
@@ -84,19 +94,44 @@ test.describe('/earth', () => {
   });
 
   /* ── v0.1.10 — GALLERY + LEARN tabs on the object detail panel ── */
-  test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page }) => {
+  // Compute ISS's 2D position from the same hash + incl math used by
+  // the renderer (inclined orbits — v0.x.x — moved satellites off
+  // the equatorial ring so a fixed (cx + R, cy) click no longer
+  // hits ISS reliably).
+  function hashToAngle(s: string): number {
+    let h = 0;
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return ((h % 360) / 360) * Math.PI * 2;
+  }
+
+  async function openIssPanel(page: import('@playwright/test').Page) {
     await page.goto('/earth');
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
-    await page.waitForTimeout(600);
+    await page.waitForTimeout(800);
     const box = await flat.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
+    if (!box) throw new Error('canvas not found');
+    // ISS: id="iss", inclination=51.64°, index 0 → phase=0.
+    // 2D = projection onto equatorial plane, then node-rotation.
+    const inclRad = (51.64 * Math.PI) / 180;
+    const nodeRad = hashToAngle('iss');
     const pxPerUnit = Math.min(box.width, box.height) / 70;
-    const issR = 10.9 * pxPerUnit;
-    await flat.click({ position: { x: box.width / 2 + issR, y: box.height / 2 } });
+    const orbitR = 10.9 * pxPerUnit;
+    const phase = 0;
+    const lx = Math.cos(phase) * orbitR;
+    const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
+    const cn = Math.cos(nodeRad);
+    const sn = Math.sin(nodeRad);
+    const issX = box.x + box.width / 2 + (lx * cn + lz * sn);
+    const issY = box.y + box.height / 2 - (-lx * sn + lz * cn);
+    await page.mouse.click(issX, issY);
     const panel = page.getByRole('complementary');
     await expect(panel).toBeVisible({ timeout: 5_000 });
+    return panel;
+  }
+
+  test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page }) => {
+    const panel = await openIssPanel(page);
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
@@ -104,18 +139,7 @@ test.describe('/earth', () => {
   });
 
   test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {
-    await page.goto('/earth');
-    await page.getByRole('button', { name: /^2d$/i }).click();
-    const flat = page.locator('canvas.layer');
-    await page.waitForTimeout(600);
-    const box = await flat.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    const pxPerUnit = Math.min(box.width, box.height) / 70;
-    const issR = 10.9 * pxPerUnit;
-    await flat.click({ position: { x: box.width / 2 + issR, y: box.height / 2 } });
-    const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible({ timeout: 5_000 });
+    const panel = await openIssPanel(page);
     await page.getByRole('tab', { name: /^LEARN$/ }).click();
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();

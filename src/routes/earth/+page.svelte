@@ -251,7 +251,23 @@
       }
     }
 
-    type SatObj = { group: THREE.Group; id: string; orbitR: number; phase: number };
+    type SatObj = {
+      group: THREE.Group;
+      id: string;
+      orbitR: number;
+      phase: number;
+      inclRad: number;
+      nodeRad: number;
+    };
+
+    // Stable hash → [0, 2π) so each orbit's ascending-node longitude
+    // is deterministic but visually spread out (otherwise every
+    // 51.6° orbit shares a single tilt and they all overlap).
+    function hashToAngle(s: string): number {
+      let h = 0;
+      for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+      return ((h % 360) / 360) * Math.PI * 2;
+    }
     const sats: SatObj[] = [];
 
     function rebuildSats() {
@@ -281,6 +297,13 @@
         const phase = (i * 2.4) % (Math.PI * 2);
 
         let orbitR: number;
+        // Inclination tilts the orbit out of the equatorial plane.
+        // ISS=51.6°, GPS≈55°, Molniya 63.4°, polar≈90°, geostat=0°.
+        // Each orbit also gets a deterministic node-longitude offset
+        // (rotation around Y) so concentric orbits don't all share
+        // a single tilt axis.
+        const inclRad = ((o.inclination ?? 0) * Math.PI) / 180;
+        const nodeRad = hashToAngle(o.id);
         if (category === 'moon-orbiter') {
           // LRO sits next to the Moon mesh.
           group.position.set(moonR + 2.5, 1, 0);
@@ -288,7 +311,14 @@
         } else {
           const alt = o.altitude_km ?? o.earth_distance_km;
           orbitR = altToOrbitRadius(alt);
-          group.position.set(Math.cos(phase) * orbitR, 0, Math.sin(phase) * orbitR);
+          // Position: orbit plane is the xy-plane rotated by inclRad
+          // around the X axis, then by nodeRad around the Y axis.
+          const lx = Math.cos(phase) * orbitR;
+          const ly = Math.sin(phase) * orbitR * Math.sin(inclRad);
+          const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
+          const cn = Math.cos(nodeRad);
+          const sn = Math.sin(nodeRad);
+          group.position.set(lx * cn + lz * sn, ly, -lx * sn + lz * cn);
         }
         group.userData = { id: o.id };
 
@@ -321,7 +351,7 @@
         group.add(label.group);
 
         scene.add(group);
-        sats.push({ group, id: o.id, orbitR, phase });
+        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad });
       }
     }
 
@@ -593,8 +623,19 @@
         } else {
           const alt = o.altitude_km ?? o.earth_distance_km;
           r = altToOrbitRadius(alt) * pxPerUnit;
-          x = cx + Math.cos(phase) * r;
-          y = cy - Math.sin(phase) * r;
+          // 2D top-down view = projection of the 3D inclined orbit
+          // onto the equatorial plane. With incl=0 (geostationary) we
+          // get the full circle; with incl=90 (polar) the projection
+          // collapses to a line through Earth. Same incl + nodeRad
+          // values as the 3D scene keep the two views in sync.
+          const inclRad = ((o.inclination ?? 0) * Math.PI) / 180;
+          const nodeRad = hashToAngle(o.id);
+          const lx = Math.cos(phase) * r;
+          const lz = Math.sin(phase) * r * Math.cos(inclRad);
+          const cn = Math.cos(nodeRad);
+          const sn = Math.sin(nodeRad);
+          x = cx + (lx * cn + lz * sn);
+          y = cy - (-lx * sn + lz * cn);
         }
         const dotR = 4 + Math.min(2, Math.log10(Math.max(1, o.count)));
         const isSel = selected?.id === o.id;
@@ -713,7 +754,15 @@
         for (const s of sats) {
           if (s.id === 'lro') continue;
           s.phase += dt * 0.015;
-          s.group.position.set(Math.cos(s.phase) * s.orbitR, 0, Math.sin(s.phase) * s.orbitR);
+          // Mirror the same incl + node-rotation as the initial spawn
+          // so the orbit-plane geometry is consistent across the
+          // first paint and the rAF tick.
+          const lx = Math.cos(s.phase) * s.orbitR;
+          const ly = Math.sin(s.phase) * s.orbitR * Math.sin(s.inclRad);
+          const lz = Math.sin(s.phase) * s.orbitR * Math.cos(s.inclRad);
+          const cn = Math.cos(s.nodeRad);
+          const sn = Math.sin(s.nodeRad);
+          s.group.position.set(lx * cn + lz * sn, ly, -lx * sn + lz * cn);
         }
       }
 

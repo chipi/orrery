@@ -507,6 +507,123 @@ const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   luna24: 'Moon_map_of_sample_return_sites.png',
 };
 
+// Gallery-mode top-up for missions where NASA's library has zero or
+// few NASA-credited results — typically every non-NASA mission.
+// Each entry is an additional 2–4 Wikimedia Commons filenames that
+// fill out the mission's GALLERY tab beyond the single-image cover
+// fallback above. Same CC/PD licensing constraint as the cover list.
+//
+// Files are tried in order; the script stops once the gallery hits
+// MISSION_GALLERY_MAX or the list is exhausted. Missions that already
+// hit max via NASA results don't trigger this path.
+const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
+  change4: [
+    "Chang'e_4_lander.jpg",
+    "Chang'e_4_Lander-_A_Closer_Look_(01_m1303619844lr_closC5A1C).jpg",
+    'The_first_panorama_from_the_far_side_of_the_moon.jpg',
+    "Chang'e_4_Rover_Comes_into_View_(LROC1091_-_content_M1303570617_LRmos_warp_1100p_crop).png",
+  ],
+  change5: [
+    "Chang'e_5_Moon_Sample.png",
+    "Chang'e_5-_After_Blast_Off_(LROC1186_-_content_M1367366229LR_mos_str01_1100x1100).png",
+    'Chang-e_5_lander_ascender_assembly_test.png',
+    "Returner_and_Main_Parachute_of_Chang'e_5.jpg",
+  ],
+  change6: [
+    "Chang'e_6_lunar_samples_at_IAC_2024_01.jpg",
+    "First_Look-_Chang'e_6_(LROC1374).jpg",
+    "Lunar_soil_sample_collected_by_Chang'e_6_display_on_Expo_2025.jpg",
+  ],
+  chandrayaan1: [
+    'PSLV-C11_launch2.jpg',
+    'Chandrayaan1_Spacecraft_Discovery_Moon_Water.jpg',
+    'Water_Detected_at_High_Latitudes_on_the_Moon.jpg',
+  ],
+  chandrayaan3: [
+    'Chandrayaan3-landed.jpg',
+    'Chandrayaan-3,_LVM3_M4_lifting_off_from_SDSC_SHAR.jpg',
+    'Vikram_Simulation.jpg',
+    'VIKRAM&PRAGYANMODEL.jpg',
+  ],
+  mangalyaan: [
+    'Mars_Orbiter_Mission.jpg',
+    'India_as_seen_by_Mars_Colour_Camera_(MCC)_during_the_Mars_Orbiter_Mission_(MOM)_journey_towards_Mars.png',
+    'Mars_Orbiter_Mission_in_cleanroom_(1).jpg',
+    'PM_witnesses_the_insertion_of_Mars_Orbiter_Mission_into_Martian_orbit.jpg',
+  ],
+  slim: [
+    'SLIM_half_scale_model.png',
+    'SLIM_landing_site.jpg',
+    'SLIM-LandingShockAbsorber-TestUsed.jpg',
+    'SLIM-LEV1-LEV2-JAXA-SagamiharaCampus-AdvancedFacilityForSpaceExploration-SpaceExplorationField.jpg',
+  ],
+  'hope-probe': [
+    'Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg',
+    'Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg',
+    'المركبة_الفضائية_العربية_الإماراتية_(الأمل).jpg',
+  ],
+  luna9: ['First_Photo_from_the_Surface_of_the_Moon.jpg'],
+  luna17: [
+    'Luna_17_lander.png',
+    'M127159138LC_Luna_17_lander.jpg',
+    'Lunokhod_1_Revisited_(LROC402_-_M175502049R_L17_thumb).png',
+    'LROC_Coordinates_of_Robotic_Spacecraft_-_2013_Update_(LROC650_-_M175502049RE_luna17).png',
+  ],
+  luna24: [
+    'Mare_Crisium-_Failure_then_Success_(LROC461_-_luna23_24_regional).png',
+    'Soviet_Union_Lunar_Sample_Return_Missions_(LROCM119449091RE_L24_ano).png',
+    'Luna24_rev_fig.png',
+  ],
+  mars3: [
+    'Mars_3_surface_transmission.jpg',
+    '1972._Марс-3.jpg',
+    'PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg',
+    'Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg',
+  ],
+  clementine: [
+    'Clementine_lunar.jpg',
+    "Clementine_Fully_Deployed_(Artist's_Concept)_(PIA18159).jpg",
+    'Clementine_final_checks.jpg',
+    'Appleton_cráter_(Clementine).jpg',
+  ],
+};
+
+/** Top up a mission's gallery from WIKIMEDIA_MISSION_GALLERY_FALLBACK
+ *  starting at slot `nextIndex` (1-based). Returns the new total
+ *  count of saved images. Skips silently if a single file errors so
+ *  one bad URL doesn't tank the whole top-up. */
+async function topUpWikimediaGallery(
+  missionId: string,
+  missionDir: string,
+  nextIndex: number,
+  legacyCoverPath: string,
+  hasLegacyCover: boolean,
+): Promise<number> {
+  const list = WIKIMEDIA_MISSION_GALLERY_FALLBACK[missionId];
+  if (!list || list.length === 0) return nextIndex - 1;
+  let saved = nextIndex - 1;
+  for (const filename of list) {
+    if (saved >= MISSION_GALLERY_MAX) break;
+    const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
+    const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(filename)}?width=800`;
+    try {
+      await downloadFromWikimedia(url, join(missionDir, slot));
+      // If this is the very first image saved (no NASA + no cover
+      // fallback), also write the legacy cover so /missions cards
+      // don't 404.
+      if (saved === 0 && !hasLegacyCover) {
+        await downloadFromWikimedia(url, legacyCoverPath);
+      }
+      saved++;
+      // Politeness — Commons guidance is ~1 req/sec.
+      await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+    } catch {
+      // Skip this entry; try the next.
+    }
+  }
+  return saved;
+}
+
 async function fetchMissionImages(): Promise<number> {
   await mkdir(MISSIONS_DIR, { recursive: true });
   await mkdir('static/data', { recursive: true });
@@ -524,11 +641,14 @@ async function fetchMissionImages(): Promise<number> {
     process.stdout.write(`  ${m.id}…`);
 
     let urls: string[] = [];
+    let saved = 0;
+    let hasLegacyCover = false;
+    const legacyCoverPath = join(MISSIONS_DIR, `${m.id}.jpg`);
     try {
       urls = await fetchNasaGalleryUrls(m.query, MISSION_GALLERY_MAX);
     } catch {
       // NASA API returned nothing usable. Fall through to Wikimedia
-      // fallback if curated; that's a single-image gallery.
+      // single-image cover fallback.
       const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
       if (fallback) {
         try {
@@ -536,26 +656,18 @@ async function fetchMissionImages(): Promise<number> {
           await downloadFromWikimedia(url, join(missionDir, '01.jpg'));
           // Mirror as the legacy cover at static/images/missions/{id}.jpg
           // so existing /missions card paths keep working.
-          await downloadFromWikimedia(url, join(MISSIONS_DIR, `${m.id}.jpg`));
-          manifest[m.id] = 1;
-          totalPhotos++;
-          process.stdout.write(' wikimedia (1)\n');
-          continue;
+          await downloadFromWikimedia(url, legacyCoverPath);
+          saved = 1;
+          hasLegacyCover = true;
+          process.stdout.write(' wikimedia-cover');
         } catch (err2) {
           const msg = err2 instanceof Error ? err2.message : String(err2);
-          process.stdout.write(` ⚠ skipped (nasa+wikimedia: ${msg})\n`);
-          manifest[m.id] = 0;
-          continue;
+          process.stdout.write(` ⚠ cover skipped (${msg})`);
         }
-      } else {
-        process.stdout.write(' ⚠ skipped (no api results, no fallback)\n');
-        manifest[m.id] = 0;
-        continue;
       }
     }
 
-    // Download each URL → 01.jpg, 02.jpg, ...
-    let saved = 0;
+    // Download NASA URLs (if any) → 01.jpg, 02.jpg, ...
     for (let n = 0; n < urls.length; n++) {
       const filename = `${String(n + 1).padStart(2, '0')}.jpg`;
       try {
@@ -563,16 +675,33 @@ async function fetchMissionImages(): Promise<number> {
         if (!imgRes.ok) continue;
         const buffer = Buffer.from(await imgRes.arrayBuffer());
         await writeFile(join(missionDir, filename), buffer);
-        // Mirror the first image as the legacy cover at
-        // static/images/missions/{id}.jpg for /missions card.
         if (n === 0) {
-          await writeFile(join(MISSIONS_DIR, `${m.id}.jpg`), buffer);
+          await writeFile(legacyCoverPath, buffer);
+          hasLegacyCover = true;
         }
         saved++;
       } catch {
         // Single-image fail; continue with the rest.
       }
     }
+
+    // Top up from the curated Wikimedia gallery list when NASA + cover
+    // fallback together fell short of MISSION_GALLERY_MAX. This is the
+    // path that lifts non-US missions from 1 → 4–5 images.
+    if (saved < MISSION_GALLERY_MAX && WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]) {
+      const after = await topUpWikimediaGallery(
+        m.id,
+        missionDir,
+        saved + 1,
+        legacyCoverPath,
+        hasLegacyCover,
+      );
+      if (after > saved) {
+        process.stdout.write(` +${after - saved} wikimedia-gallery`);
+        saved = after;
+      }
+    }
+
     manifest[m.id] = saved;
     totalPhotos += saved;
     process.stdout.write(` ${saved}\n`);

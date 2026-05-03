@@ -1034,13 +1034,17 @@
       ctx2.translate(W / 2 + zx2d, H / 2 + zy2d);
       ctx2.scale(zoom2d, zoom2d);
 
-      // Orbit rings (highlighted for the selected planet)
+      // Orbit rings (highlighted for the selected planet). Tonal
+      // balance matches the 3D LineBasicMaterial (white opacity 0.06,
+      // 1u line) so the two views read with the same emphasis. The
+      // previous 0.05 opacity at 0.5 lineWidth was nearly invisible
+      // on most monitors due to subpixel anti-aliasing.
       PLANETS.forEach((p) => {
         const isSel = selectedId === p.id;
         ctx2.beginPath();
         ctx2.arc(0, 0, p.orbitR, 0, Math.PI * 2);
-        ctx2.strokeStyle = isSel ? 'rgba(68,102,255,0.3)' : 'rgba(255,255,255,0.05)';
-        ctx2.lineWidth = isSel ? 1.5 : 0.5;
+        ctx2.strokeStyle = isSel ? 'rgba(68,102,255,0.55)' : 'rgba(255,255,255,0.18)';
+        ctx2.lineWidth = isSel ? 1.5 : 1;
         ctx2.stroke();
       });
 

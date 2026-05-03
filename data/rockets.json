@@ -12,6 +12,7 @@
     "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 9.4,
     "isp_s": 348,
+    "launch_site": "Kennedy Space Center LC-39A · Florida, USA",
     "data_quality": "good",
     "credit": "© SpaceX — Falcon User's Guide (publicly published spec sheet)",
     "links": [
@@ -32,6 +33,7 @@
     "payload_to_mars_definition": "mars_surface",
     "delta_v_capability_km_s": 13.0,
     "isp_s": 380,
+    "launch_site": "Starbase / Boca Chica · Texas, USA",
     "data_quality": "partial",
     "credit": "© SpaceX — Starship technical overview. Mars-surface number assumes on-orbit propellant transfer per published architecture; without refilling, Starship cannot reach Mars.",
     "links": [
@@ -52,6 +54,7 @@
     "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.9,
     "isp_s": 462,
+    "launch_site": "Kennedy Space Center LC-39B · Florida, USA",
     "data_quality": "good",
     "credit": "© NASA — SLS reference guide; U.S. Government work, public domain",
     "links": [
@@ -72,6 +75,7 @@
     "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.5,
     "isp_s": 451,
+    "launch_site": "Cape Canaveral SLC-41 · Florida, USA",
     "data_quality": "good",
     "credit": "© ULA — Atlas V User's Guide rev. 11. Mars number is MSL/Curiosity's actual launch mass (2011-11-26).",
     "links": [
@@ -92,6 +96,7 @@
     "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.5,
     "isp_s": 430,
+    "launch_site": "Wenchang Space Launch Site · Hainan, China",
     "data_quality": "good",
     "credit": "© CNSA / CASC — Long March 5 public release. Mars number is Tianwen-1's demonstrated launch mass (2020-07-23).",
     "links": [
@@ -111,11 +116,156 @@
     "payload_to_mars_definition": "tmi",
     "delta_v_capability_km_s": 8.4,
     "isp_s": 446,
+    "launch_site": "Guiana Space Centre ELA-4 · Kourou, French Guiana",
     "data_quality": "partial",
     "credit": "© ESA / Arianespace — Ariane 6 user manual. Mars number derived from GTO capability; Ariane 6 has not yet flown a planetary mission.",
     "links": [
       { "l": "Ariane 6 — ESA", "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6", "t": "intro" },
       { "l": "Ariane 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Ariane_6", "t": "intro" }
+    ]
+  },
+  {
+    "id": "lvm3",
+    "agency": "ISRO",
+    "agency_full": "Indian Space Research Organisation",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#FF9933",
+    "first_flight": 2017,
+    "payload_to_leo_kg": 10000,
+    "payload_to_mars_kg": 4000,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.5,
+    "isp_s": 443,
+    "launch_site": "Satish Dhawan Space Centre SLP · Sriharikota, India",
+    "data_quality": "good",
+    "credit": "© ISRO — LVM3 (formerly GSLV Mk III) public spec; Chandrayaan-3 reference mass (2023-07-14).",
+    "links": [
+      { "l": "LVM3 — ISRO", "u": "https://www.isro.gov.in/LVM3.html", "t": "intro" },
+      { "l": "LVM3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/LVM3", "t": "intro" }
+    ]
+  },
+  {
+    "id": "pslv-xl",
+    "agency": "ISRO",
+    "agency_full": "Indian Space Research Organisation",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#FF9933",
+    "first_flight": 2008,
+    "payload_to_leo_kg": 3800,
+    "payload_to_mars_kg": 1340,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.0,
+    "isp_s": 425,
+    "launch_site": "Satish Dhawan Space Centre FLP · Sriharikota, India",
+    "data_quality": "good",
+    "credit": "© ISRO — PSLV-XL spec sheet. Mars number is Mangalyaan's demonstrated TMI mass (2013-11-05).",
+    "links": [
+      { "l": "PSLV — ISRO", "u": "https://www.isro.gov.in/PSLV.html", "t": "intro" },
+      { "l": "PSLV — Wikipedia", "u": "https://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle", "t": "intro" }
+    ]
+  },
+  {
+    "id": "h3",
+    "agency": "JAXA",
+    "agency_full": "Japan Aerospace Exploration Agency",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#003087",
+    "first_flight": 2023,
+    "payload_to_leo_kg": 6500,
+    "payload_to_mars_kg": 1900,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.4,
+    "isp_s": 440,
+    "launch_site": "Tanegashima Space Center LP-2 · Kagoshima, Japan",
+    "data_quality": "partial",
+    "credit": "© JAXA — H3 reference design; Mars number derived from announced GTO capability (planetary missions pending).",
+    "links": [
+      { "l": "H3 — JAXA", "u": "https://global.jaxa.jp/projects/rockets/h3/", "t": "intro" },
+      { "l": "H3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/H3_(rocket)", "t": "intro" }
+    ]
+  },
+  {
+    "id": "h-iia",
+    "agency": "JAXA",
+    "agency_full": "Japan Aerospace Exploration Agency / Mitsubishi Heavy Industries",
+    "sector": "gov",
+    "status": "RETIRED",
+    "color": "#003087",
+    "first_flight": 2001,
+    "payload_to_leo_kg": 10000,
+    "payload_to_mars_kg": 1500,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.3,
+    "isp_s": 440,
+    "launch_site": "Tanegashima Space Center LP-1 · Kagoshima, Japan",
+    "data_quality": "good",
+    "credit": "© JAXA / MHI — H-IIA spec; Mars-relevant flights include Hope Probe (2020) and SLIM (2023).",
+    "links": [
+      { "l": "H-IIA — Wikipedia", "u": "https://en.wikipedia.org/wiki/H-IIA", "t": "intro" }
+    ]
+  },
+  {
+    "id": "long-march-3b",
+    "agency": "CNSA",
+    "agency_full": "China National Space Administration",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#DE2910",
+    "first_flight": 1996,
+    "payload_to_leo_kg": 11500,
+    "payload_to_mars_kg": 1400,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.0,
+    "isp_s": 442,
+    "launch_site": "Xichang Satellite Launch Center · Sichuan, China",
+    "data_quality": "good",
+    "credit": "© CNSA / CASC — Long March 3B public spec; Chang'e 4 reference mass (2018-12-08).",
+    "links": [
+      { "l": "Long March 3B — Wikipedia", "u": "https://en.wikipedia.org/wiki/Long_March_3B", "t": "intro" }
+    ]
+  },
+  {
+    "id": "soyuz-fregat",
+    "agency": "Roscosmos",
+    "agency_full": "State Space Corporation Roscosmos / Arianespace",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#cc4444",
+    "first_flight": 2000,
+    "payload_to_leo_kg": 9000,
+    "payload_to_mars_kg": 1200,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.0,
+    "isp_s": 326,
+    "launch_site": "Baikonur Cosmodrome Site 31 · Kazakhstan",
+    "data_quality": "good",
+    "credit": "© Roscosmos / Arianespace — Soyuz with Fregat upper stage; Mars number is Mars Express's demonstrated TMI mass (2003-06-02).",
+    "links": [
+      { "l": "Soyuz-FG — Wikipedia", "u": "https://en.wikipedia.org/wiki/Soyuz-FG", "t": "intro" },
+      { "l": "Fregat — Wikipedia", "u": "https://en.wikipedia.org/wiki/Fregat", "t": "intro" }
+    ]
+  },
+  {
+    "id": "proton-m",
+    "agency": "Roscosmos",
+    "agency_full": "State Space Corporation Roscosmos",
+    "sector": "gov",
+    "status": "ACTIVE",
+    "color": "#cc4444",
+    "first_flight": 2001,
+    "payload_to_leo_kg": 23000,
+    "payload_to_mars_kg": 5000,
+    "payload_to_mars_definition": "tmi",
+    "delta_v_capability_km_s": 8.4,
+    "isp_s": 359,
+    "launch_site": "Baikonur Cosmodrome Site 200/39 · Kazakhstan",
+    "data_quality": "good",
+    "credit": "© Roscosmos — Proton-M / Briz-M public spec; historical Proton-K variant launched Luna 24 (1976) and Mars 3 (1971).",
+    "links": [
+      { "l": "Proton (rocket family) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Proton_(rocket_family)", "t": "intro" }
     ]
   }
 ]

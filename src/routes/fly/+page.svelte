@@ -259,30 +259,24 @@
   // they don't z-fight with the ring geometry.
   $effect(() => {
     if (!depMarker || !arrMarker || !depLabelSprite || !arrLabelSprite) return;
-    let depX = 0;
-    let depZ = 0;
-    let arrX = 0;
-    let arrZ = 0;
-    if (isMoonMission && outPts.length > 0) {
-      const last = outPts[outPts.length - 1];
-      arrX = last.x * SCALE_3D;
-      arrZ = last.z * SCALE_3D;
-    } else {
-      const dep = earthPos(arcTimeline.dep_day);
-      const arr = destinationPos(arcTimeline.arr_day, activeDestination);
-      depX = dep.x * SCALE_3D;
-      depZ = dep.z * SCALE_3D;
-      arrX = arr.x * SCALE_3D;
-      arrZ = arr.z * SCALE_3D;
-    }
+    if (outPts.length === 0) return;
+    // Anchor markers to outPts itself — the arc IS the geometry, so
+    // dep/arr markers must sit at outPts[0] and outPts[N-1]. Previously
+    // we computed them via earthPos(dep_day) / destinationPos(arr_day)
+    // which is the same heliocentric calc but disconnected from the
+    // arc's actual endpoints — for V∞-shaped arcs the arc terminus
+    // lands a few hundredths of an AU off the destination orbit and
+    // the marker drifted off the arc visibly.
+    const first = outPts[0];
+    const last = outPts[outPts.length - 1];
+    const depX = first.x * SCALE_3D;
+    const depZ = first.z * SCALE_3D;
+    const arrX = last.x * SCALE_3D;
+    const arrZ = last.z * SCALE_3D;
     depMarker.position.set(depX, 0, depZ);
     arrMarker.position.set(arrX, 0, arrZ);
     depLabelSprite.position.set(depX, 6, depZ);
     arrLabelSprite.position.set(arrX, 6, arrZ);
-    // Markers + labels visible for ALL missions — they're the persistent
-    // "where does this mission start and end" anchors the user looks for.
-    // The earlier Moon-mode hide was over-aggressive feedback from the
-    // initial cislunar pass; users want them back.
     depMarker.visible = true;
     arrMarker.visible = true;
     depLabelSprite.visible = true;
@@ -895,25 +889,61 @@
     moonMesh.visible = false;
     scene.add(moonMesh);
 
-    // Spacecraft — composite per UXS-003: nose cone + cylindrical body
-    // + inverted nozzle cone, all grouped so we can rotate the group
-    // along velocity. Default tip points along +X; lookAt() in the
-    // animation loop orients per heading.
-    const scGroup = new THREE.Group();
-    const scMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    const noseGeo = new THREE.ConeGeometry(0.7, 1.4, 12);
-    noseGeo.rotateZ(-Math.PI / 2);
-    noseGeo.translate(1.4, 0, 0);
-    const nose = new THREE.Mesh(noseGeo, scMaterial);
-    const bodyGeo = new THREE.CylinderGeometry(0.7, 0.7, 1.4, 12);
-    bodyGeo.rotateZ(-Math.PI / 2);
-    const body = new THREE.Mesh(bodyGeo, scMaterial);
-    const nozzleGeo = new THREE.ConeGeometry(0.85, 0.7, 12);
-    nozzleGeo.rotateZ(Math.PI / 2); // point against velocity (back-end nozzle)
-    nozzleGeo.translate(-1.0, 0, 0);
-    const nozzle = new THREE.Mesh(nozzleGeo, scMaterial);
-    scGroup.add(nose, body, nozzle);
-    scene.add(scGroup);
+    // Spacecraft — small camera-facing sprite glyph (yellow chevron ▶)
+    // sitting at sc.pos. Replaces the v0.x.x 3D rocket mesh which had
+    // a 4.5u local-frame extent and read as "flying parallel to the
+    // arc" because its nose tip was 2.8u ahead of sc.pos along the
+    // heading vector — the tube's 0.6u radius couldn't hide the cut
+    // chord. A sprite has no extent along the camera axis and no
+    // lookAt rotation: sc.pos is the dead-centre of the rendered glyph.
+    const SC_GLYPH_PX = 64;
+    const scTexCanvas = document.createElement('canvas');
+    scTexCanvas.width = SC_GLYPH_PX;
+    scTexCanvas.height = SC_GLYPH_PX;
+    {
+      const tctx = scTexCanvas.getContext('2d')!;
+      tctx.clearRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
+      // Glow halo so the glyph reads against the dark background even
+      // when the bright tube passes behind it.
+      const glow = tctx.createRadialGradient(
+        SC_GLYPH_PX / 2,
+        SC_GLYPH_PX / 2,
+        4,
+        SC_GLYPH_PX / 2,
+        SC_GLYPH_PX / 2,
+        SC_GLYPH_PX / 2,
+      );
+      glow.addColorStop(0, 'rgba(255,200,80,0.45)');
+      glow.addColorStop(1, 'rgba(255,200,80,0)');
+      tctx.fillStyle = glow;
+      tctx.fillRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
+      // Stylized chevron — bold V shape pointing right. Filled solid
+      // gold (#ffc850) on top of the halo.
+      tctx.beginPath();
+      tctx.moveTo(SC_GLYPH_PX * 0.78, SC_GLYPH_PX * 0.5);
+      tctx.lineTo(SC_GLYPH_PX * 0.3, SC_GLYPH_PX * 0.22);
+      tctx.lineTo(SC_GLYPH_PX * 0.42, SC_GLYPH_PX * 0.5);
+      tctx.lineTo(SC_GLYPH_PX * 0.3, SC_GLYPH_PX * 0.78);
+      tctx.closePath();
+      tctx.fillStyle = '#ffc850';
+      tctx.shadowColor = 'rgba(255,200,80,0.8)';
+      tctx.shadowBlur = 6;
+      tctx.fill();
+    }
+    const scTex = new THREE.CanvasTexture(scTexCanvas);
+    scTex.minFilter = THREE.LinearFilter;
+    scTex.magFilter = THREE.LinearFilter;
+    const scSprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: scTex,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false, // always render on top of arc tube
+      }),
+    );
+    scSprite.scale.set(4, 4, 1);
+    scSprite.renderOrder = 999;
+    scene.add(scSprite);
 
     // Flyby ring — gold torus around Mars at closest approach
     const flybyRing = new THREE.Mesh(
@@ -1283,36 +1313,45 @@
         ctx2.fill();
       }
 
-      // Spacecraft chevron
+      // Spacecraft glyph — gold chevron sitting at sc.pos. The
+      // heading rotation is preserved so the glyph points along the
+      // direction of travel (eye reads "moving" from a glance), but
+      // the shape is small enough (~6 px) that any heading drift
+      // doesn't drag it off the arc visually. Matches the 3D sprite.
       const heading = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
       const sx = cx + sc.pos.x * SCALE_2D;
       const sy = cy + sc.pos.z * SCALE_2D;
       ctx2.save();
       ctx2.translate(sx, sy);
       ctx2.rotate(Math.atan2(heading.z, heading.x));
+      // Halo
+      const sg = ctx2.createRadialGradient(0, 0, 0, 0, 0, 10);
+      sg.addColorStop(0, 'rgba(255,200,80,0.35)');
+      sg.addColorStop(1, 'rgba(255,200,80,0)');
       ctx2.beginPath();
-      ctx2.moveTo(7, 0);
-      ctx2.lineTo(-5, 4);
-      ctx2.lineTo(-3, 0);
-      ctx2.lineTo(-5, -4);
+      ctx2.arc(0, 0, 10, 0, Math.PI * 2);
+      ctx2.fillStyle = sg;
+      ctx2.fill();
+      // Chevron ▶
+      ctx2.beginPath();
+      ctx2.moveTo(6, 0);
+      ctx2.lineTo(-4, 4);
+      ctx2.lineTo(-2, 0);
+      ctx2.lineTo(-4, -4);
       ctx2.closePath();
-      ctx2.fillStyle = '#fff';
+      ctx2.fillStyle = '#ffc850';
       ctx2.fill();
       ctx2.restore();
 
-      // Flyby ring near Mars — recompute per-mission arrival position
-      // from the live arcTimeline.
-      if (sc.progress >= 0.45 && sc.progress <= 0.55) {
-        const marsArrLive = destinationPos(arcTimeline.flyby_day, activeDestination);
+      // Flyby ring — anchored to the arc's flyby waypoint instead of
+      // Mars's heliocentric position so the ring always sits on the
+      // arc the spacecraft is flying. Same indexing the 3D side uses.
+      if (sc.progress >= 0.45 && sc.progress <= 0.55 && outPts.length > 0) {
+        const flybyIdx = Math.floor(0.95 * (outPts.length - 1));
+        const fp = outPts[flybyIdx];
         const pulse = 0.5 + 0.5 * Math.sin(simDay * 0.5);
         ctx2.beginPath();
-        ctx2.arc(
-          cx + marsArrLive.x * SCALE_2D,
-          cy + marsArrLive.z * SCALE_2D,
-          14 + pulse * 3,
-          0,
-          Math.PI * 2,
-        );
+        ctx2.arc(cx + fp.x * SCALE_2D, cy + fp.z * SCALE_2D, 14 + pulse * 3, 0, Math.PI * 2);
         ctx2.strokeStyle = `rgba(255,200,80,${0.5 + pulse * 0.3})`;
         ctx2.lineWidth = 1.5;
         ctx2.stroke();
@@ -1369,9 +1408,10 @@
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
-      scGroup.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
-      const h = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
-      scGroup.lookAt(scGroup.position.x + h.x * SCALE_3D, 0, scGroup.position.z + h.z * SCALE_3D);
+      // Sprite glyph sits at sc.pos. No lookAt — sprites face the
+      // camera by construction so the glyph is always centred on the
+      // arc regardless of curvature.
+      scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
 
       // v0.1.10: drawRange-driven progress trail on the *past* tube of
       // each arc. The *future* tubes always render full at low
@@ -1380,16 +1420,21 @@
       // the spacecraft progresses. For free-return scenarios the
       // overall progress 0→0.5 spans outbound, 0.5→1 spans return.
       // For one-way missions outPts is the only arc; retPts is empty.
-      const hasReturn = retPts.length > 0;
-      const outFraction = hasReturn ? Math.min(1, sc.progress / 0.5) : sc.progress;
-      const retFraction = hasReturn ? Math.max(0, (sc.progress - 0.5) / 0.5) : 0;
+      // sc.progress goes 0 → 0.5 across outbound and 0.5 → 1 across
+      // return, so the bright/dim split for the outbound tube must
+      // map [0, 0.5] → [0, 1] (i.e. sc.progress * 2). The previous
+      // formula used a hasReturn ternary that left one-way missions
+      // showing only half the tube as "visited" at arrival. Using the
+      // doubled formula uniformly covers both cases.
+      const outFraction = Math.min(1, sc.progress * 2);
+      const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
       if (outLine && outLine.geometry.index) {
         const total = outLine.geometry.index.count;
-        outLine.geometry.setDrawRange(0, Math.max(0, Math.floor(total * outFraction)));
+        outLine.geometry.setDrawRange(0, Math.max(0, Math.round(total * outFraction)));
       }
       if (retLine && retLine.geometry.index) {
         const total = retLine.geometry.index.count;
-        retLine.geometry.setDrawRange(0, Math.max(0, Math.floor(total * retFraction)));
+        retLine.geometry.setDrawRange(0, Math.max(0, Math.round(total * retFraction)));
       }
 
       // marsArr / earthRet are recomputed per-frame from the live
@@ -1399,15 +1444,22 @@
       // space (visible because the camera is also looking at origin).
       // Hide them entirely for Moon missions — Earth + Moon meshes
       // already mark the start/end of the cislunar trajectory.
-      const marsArrLive = destinationPos(arcTimeline.flyby_day, activeDestination);
-      const earthRetLive = earthPos(arcTimeline.arr_day);
-      flybyRing.position.set(marsArrLive.x * SCALE_3D, 0, marsArrLive.z * SCALE_3D);
+      // Flyby + return rings now anchor to the *arc's own waypoints*
+      // (outPts at the flyby index, retPts terminus for return),
+      // instead of recomputing heliocentric Mars/Earth per frame. The
+      // previous formula made the gold ring "blink near Mars" while
+      // neither the spacecraft nor the arc was actually there — the
+      // V∞-shaped arc and Mars's live position diverge by ~0.05 AU.
+      if (outPts.length > 0) {
+        const flybyIdx = Math.floor(0.95 * (outPts.length - 1));
+        const fp = outPts[flybyIdx];
+        flybyRing.position.set(fp.x * SCALE_3D, 0, fp.z * SCALE_3D);
+      }
       flybyRing.visible = !isMoonMission && sc.progress >= 0.45 && sc.progress <= 0.55;
-      // RETURN marker — fades in once we're past the flyby and on the
-      // return leg, fades back out at the very end (last 5% of the
-      // progress so the marker doesn't overlap with the rendered
-      // spacecraft mesh at touchdown).
-      returnRing.position.set(earthRetLive.x * SCALE_3D, 0, earthRetLive.z * SCALE_3D);
+      if (retPts.length > 0) {
+        const rp = retPts[retPts.length - 1];
+        returnRing.position.set(rp.x * SCALE_3D, 0, rp.z * SCALE_3D);
+      }
       returnRing.visible =
         !isMoonMission && isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
 

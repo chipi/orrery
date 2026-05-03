@@ -155,15 +155,27 @@ export function returnArc(marsArr: Vec2, earthRet: Vec2, steps: number): Vec2[] 
 
 /**
  * Spacecraft heliocentric position at the given simulation day, given
- * the mission timeline. Linear-interpolated along whichever arc we're
- * currently on (out vs return). The arc's index is rounded to the
- * nearest sample so the trail/heading line up with the rendered
- * geometry.
+ * the mission timeline. Linearly interpolates between adjacent
+ * waypoints on whichever arc we're currently on (out vs return) so
+ * the spacecraft glides smoothly along the rendered curve instead of
+ * snapping to one waypoint at a time. Endpoints (depDay, arrDay)
+ * still resolve to exact waypoint values, preserving the trajectory-
+ * soundness invariants that depend on `pos === out[0]` at depDay.
  */
 export interface MissionTimeline {
   dep_day: number;
   flyby_day: number;
   arr_day: number;
+}
+
+function lerpPoint(arc: Vec2[], t: number): Vec2 {
+  const last = arc.length - 1;
+  const f = Math.max(0, Math.min(1, t)) * last;
+  const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+  const frac = f - i;
+  const a = arc[i];
+  const b = arc[i + 1];
+  return { x: a.x + (b.x - a.x) * frac, z: a.z + (b.z - a.z) * frac };
 }
 
 export function spacecraftPos(
@@ -177,13 +189,11 @@ export function spacecraftPos(
   }
   if (day <= timeline.flyby_day) {
     const t = (day - timeline.dep_day) / (timeline.flyby_day - timeline.dep_day);
-    const i = Math.min(out.length - 1, Math.floor(t * (out.length - 1)));
-    return { pos: out[i], phase: 'outbound', progress: t * 0.5 };
+    return { pos: lerpPoint(out, t), phase: 'outbound', progress: t * 0.5 };
   }
   if (day <= timeline.arr_day) {
     const t = (day - timeline.flyby_day) / (timeline.arr_day - timeline.flyby_day);
-    const i = Math.min(ret.length - 1, Math.floor(t * (ret.length - 1)));
-    return { pos: ret[i], phase: 'return', progress: 0.5 + t * 0.5 };
+    return { pos: lerpPoint(ret, t), phase: 'return', progress: 0.5 + t * 0.5 };
   }
   return { pos: ret[ret.length - 1], phase: 'arrived', progress: 1 };
 }

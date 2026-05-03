@@ -1,0 +1,54 @@
+{
+  "id": "blue-moon-mk1",
+  "agency": "Blue Origin",
+  "agency_full": "Blue Origin Federation, LLC",
+  "sector": "private",
+  "dest": "MOON",
+  "color": "#00264D",
+  "year": 2025,
+  "status": "PLANNED",
+  "departure_date": "2025-12-01",
+  "arrival_date": "2025-12-05",
+  "transit_days": 4,
+  "vehicle": "New Glenn (1st stage reusable + 2nd stage expendable)",
+  "payload": "~3000 kg cargo to lunar surface (CLPS payloads)",
+  "delta_v": "~6 km/s",
+  "data_quality": "partial",
+  "credit": "© Blue Origin / NASA — Blue Moon Mark 1 cargo lunar lander, contracted under NASA's CLPS program. NET 2025 first flight (subject to slip). Single-stage BE-7-powered lander; refuelable architecture intended for the Mark 2 crewed variant supporting Artemis V.",
+  "links": [
+    { "l": "Blue Moon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)", "t": "intro" },
+    { "l": "Blue Moon (Blue Origin)", "u": "https://www.blueorigin.com/blue-moon", "t": "intro" },
+    { "l": "NASA CLPS contract awards", "u": "https://www.nasa.gov/commercial-lunar-payload-services/", "t": "core" }
+  ],
+  "flight_data_quality": "sparse",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "New Glenn 2nd stage (TLI burn)",
+      "mass_at_tli_kg": 16000,
+      "source": "Blue Origin Blue Moon technical brief; New Glenn payload-to-TLI capacity per Blue Origin published capability"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "Blue Moon Mark 1 mission profile (planned)"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 100,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0.85,
+      "source": "Blue Moon LOI burn parameters per Blue Origin published architecture (planned)"
+    },
+    "totals": {
+      "total_dv_km_s": 6.0,
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Blue Moon Mark 1 ∆v ledger (planned cargo descent)"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.2, "type": "tli_or_tmi" },
+      { "met_days": 1.5, "type": "tcm" },
+      { "met_days": 4, "type": "arrival" },
+      { "met_days": 4.1, "type": "edl_or_oi" }
+    ]
+  }
+}

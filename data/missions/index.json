@@ -7,12 +7,14 @@
   { "id": "curiosity", "agency": "NASA", "dest": "MARS", "status": "ACTIVE", "year": 2011, "sector": "gov", "color": "#0B3D91" },
   { "id": "maven", "agency": "NASA", "dest": "MARS", "status": "ACTIVE", "year": 2013, "sector": "gov", "color": "#0B3D91" },
   { "id": "mangalyaan", "agency": "ISRO", "dest": "MARS", "status": "FLOWN", "year": 2013, "sector": "gov", "color": "#FF9933" },
+  { "id": "inspiration-mars", "agency": "Inspiration Mars", "dest": "MARS", "status": "PLANNED", "year": 2018, "sector": "private", "color": "#8B4513" },
   { "id": "insight", "agency": "NASA", "dest": "MARS", "status": "FLOWN", "year": 2018, "sector": "gov", "color": "#0B3D91" },
   { "id": "hope-probe", "agency": "UAESA", "dest": "MARS", "status": "ACTIVE", "year": 2020, "sector": "gov", "color": "#00833F" },
   { "id": "tianwen1", "agency": "CNSA", "dest": "MARS", "status": "ACTIVE", "year": 2020, "sector": "gov", "color": "#DE2910" },
   { "id": "perseverance", "agency": "NASA", "dest": "MARS", "status": "ACTIVE", "year": 2020, "sector": "gov", "color": "#0B3D91" },
   { "id": "mmx", "agency": "JAXA", "dest": "MARS", "status": "PLANNED", "year": 2026, "sector": "gov", "color": "#003087" },
   { "id": "starship-demo", "agency": "SpaceX", "dest": "MARS", "status": "PLANNED", "year": 2026, "sector": "private", "color": "#005288" },
+  { "id": "starship-mars-crew", "agency": "SpaceX", "dest": "MARS", "status": "PLANNED", "year": 2031, "sector": "private", "color": "#005288" },
   { "id": "luna9", "agency": "ROSCOSMOS", "dest": "MOON", "status": "FLOWN", "year": 1966, "sector": "gov", "color": "#cc4444" },
   { "id": "apollo11", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 1969, "sector": "gov", "color": "#0B3D91" },
   { "id": "luna17", "agency": "ROSCOSMOS", "dest": "MOON", "status": "FLOWN", "year": 1970, "sector": "gov", "color": "#cc4444" },
@@ -26,5 +28,7 @@
   { "id": "chandrayaan3", "agency": "ISRO", "dest": "MOON", "status": "FLOWN", "year": 2023, "sector": "gov", "color": "#FF9933" },
   { "id": "slim", "agency": "JAXA", "dest": "MOON", "status": "ACTIVE", "year": 2024, "sector": "gov", "color": "#003087" },
   { "id": "change6", "agency": "CNSA", "dest": "MOON", "status": "FLOWN", "year": 2024, "sector": "gov", "color": "#DE2910" },
+  { "id": "blue-moon-mk1", "agency": "Blue Origin", "dest": "MOON", "status": "PLANNED", "year": 2025, "sector": "private", "color": "#00264D" },
+  { "id": "artemis2", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 2026, "sector": "gov", "color": "#0B3D91" },
   { "id": "artemis3", "agency": "NASA", "dest": "MOON", "status": "PLANNED", "year": 2027, "sector": "gov", "color": "#0B3D91" }
 ]

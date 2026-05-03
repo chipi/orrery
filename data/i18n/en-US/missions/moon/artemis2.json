@@ -1,0 +1,14 @@
+{
+  "name": "Artemis II",
+  "type": "CREWED FLYBY · FLOWN",
+  "first": "First crewed flight beyond low-Earth orbit since Apollo 17 (1972) — and the mission that inspired this project",
+  "description": "The Artemis program's first crewed flight, and the spark that became Orrery. NASA's SLS Block 1 launched an Orion spacecraft with four astronauts — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS), and CSA's Jeremy Hansen (MS) — onto a hybrid free-return trajectory that swung them around the Moon's far side at roughly 9,200 km altitude and returned them to Earth without any lunar-orbit insertion burn. A 10-day mission ending with Pacific splashdown. Qualified Orion's life-support, navigation, and re-entry systems for crewed flight ahead of the Artemis III surface landing.",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion lifts off from KSC LC-39B with four crew aboard.", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "Trans-lunar injection burn by ICPS — Orion separates onto cislunar trajectory.", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 4, "label": "LUNAR FLYBY", "note": "Closest approach over the far side, ~9,200 km altitude. No orbit insertion — free-return geometry slings Orion back to Earth.", "type": "info" },
+    { "met": 6, "label": "TCM-2", "note": "Return trajectory correction.", "type": "nominal" },
+    { "met": 10, "label": "SPLASHDOWN", "note": "Orion re-entry and Pacific Ocean splashdown.", "type": "info" }
+  ]
+}

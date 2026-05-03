@@ -1,0 +1,23 @@
+{
+  "id": "inspiration-mars",
+  "agency": "Inspiration Mars",
+  "agency_full": "Inspiration Mars Foundation",
+  "sector": "private",
+  "dest": "MARS",
+  "color": "#8B4513",
+  "year": 2018,
+  "status": "PLANNED",
+  "departure_date": "2018-01-05",
+  "arrival_date": "2019-05-21",
+  "transit_days": 248,
+  "vehicle": "Concept: Falcon Heavy + modified Dragon (or equivalent)",
+  "payload": "2-person crew (~6000 kg habitat + life support for 501 days)",
+  "delta_v": "~3.6 km/s (free-return; no orbit insertion)",
+  "data_quality": "partial",
+  "credit": "© Inspiration Mars Foundation — 2013 concept by Dennis Tito for a 501-day crewed Mars free-return flyby in the 2018 launch window. Trajectory uses Earth → Mars flyby → Earth free-return geometry; no Mars orbit insertion. Programme did not proceed to flight; included here as a published architecture for cislunar/cismartian free-return reference.",
+  "links": [
+    { "l": "Inspiration Mars Foundation — Wikipedia", "u": "https://en.wikipedia.org/wiki/Inspiration_Mars_Foundation", "t": "intro" },
+    { "l": "A crewed mission to Mars... in 501 days (Tito et al., IEEE Aerospace 2013)", "u": "https://ieeexplore.ieee.org/document/6497418", "t": "deep" }
+  ],
+  "flight_data_quality": "unknown"
+}

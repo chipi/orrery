@@ -2,9 +2,10 @@
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
 
-  // True relative radii (km, IAU mean values). Ordered by orbital
-  // distance (Mercury → Neptune) for the horizontal scene below —
-  // matches the natural mental model when scanning left to right.
+  // True relative radii (km, IAU mean values). Ordered by descending
+  // SIZE (Jupiter → Mercury) so the diorama reads as a clean
+  // "biggest to smallest" rank. Inner-planet labels then never
+  // overlap because the giants are far from them on the canvas.
   type SizeEntry = {
     id: string;
     name: string;
@@ -14,14 +15,14 @@
   };
 
   const SIZES: SizeEntry[] = [
-    { id: 'mercury', name: 'Mercury', r: 2440, col: '#c8c8c8', km: '2,440 km' },
-    { id: 'venus', name: 'Venus', r: 6052, col: '#e8cda0', km: '6,052 km' },
-    { id: 'earth', name: 'Earth', r: 6371, col: '#4b9cd3', km: '6,371 km' },
-    { id: 'mars', name: 'Mars', r: 3390, col: '#c1440e', km: '3,390 km' },
     { id: 'jupiter', name: 'Jupiter', r: 69911, col: '#c88b3a', km: '69,911 km' },
     { id: 'saturn', name: 'Saturn', r: 58232, col: '#e4d191', km: '58,232 km' },
     { id: 'uranus', name: 'Uranus', r: 25362, col: '#7de8e8', km: '25,362 km' },
     { id: 'neptune', name: 'Neptune', r: 24622, col: '#4466bb', km: '24,622 km' },
+    { id: 'earth', name: 'Earth', r: 6371, col: '#4b9cd3', km: '6,371 km' },
+    { id: 'venus', name: 'Venus', r: 6052, col: '#e8cda0', km: '6,052 km' },
+    { id: 'mars', name: 'Mars', r: 3390, col: '#c1440e', km: '3,390 km' },
+    { id: 'mercury', name: 'Mercury', r: 2440, col: '#c8c8c8', km: '2,440 km' },
   ];
 
   type Props = { highlightId: string | null };
@@ -69,7 +70,10 @@
     const padX = 16;
     const padTop = 32;
     const padBottom = 56; // room for name + diameter + scale note
-    const gapPx = 14;
+    // Bigger gap helps the inner-planet cluster (Earth/Venus/Mars/
+    // Mercury) breathe — at the small end the planet bodies are 2-6
+    // px wide so the gap is what gives the labels room to land.
+    const gapPx = 28;
     const usableW = cssW - 2 * padX - gapPx * (SIZES.length - 1);
     const sumR = SIZES.reduce((acc, s) => acc + s.r, 0);
     // First scale candidate: fit horizontally.

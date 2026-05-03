@@ -1697,7 +1697,12 @@
   }
   .sizes-canvas-wrap {
     width: 100%;
-    height: min(540px, calc(100vh - 110px));
+    /* The diorama renders Jupiter at maxVR ≈ 70 px tall; total
+       content fills ~320 px (header + bodies + 2 label rows + source).
+       A rectangular 16:9-ish frame avoids the bottom-half emptiness
+       that came with the previous 540 px container. */
+    aspect-ratio: 16 / 7;
+    max-height: calc(100vh - 110px);
   }
   .sizes-canvas-wrap :global(canvas) {
     width: 100%;

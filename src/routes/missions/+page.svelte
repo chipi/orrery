@@ -292,18 +292,31 @@
             onclick={() => selectMission(mission.id)}
           >
             <div class="card-accent" aria-hidden="true"></div>
-            <!-- Mission cover image (NASA Images API at build time).
-                 onerror hides the figure when the file is missing
-                 (esp. for non-NASA missions that aren't in the API). -->
+            <!-- Mission cover image + trajectory thumbnail. The
+                 trajectory image (pre-rendered at build time, see
+                 scripts/fetch-assets.ts) overlays the cover photo on
+                 hover so the card itself flips to the flight preview
+                 — replaces the v0.1.11 floating popup since the
+                 in-place swap uses the existing card real estate
+                 instead of competing with neighbouring tiles for
+                 viewport space. -->
             <figure class="card-photo">
               <img
+                class="card-cover"
                 src="{base}/images/missions/{mission.id}.jpg"
                 alt=""
                 loading="lazy"
                 onerror={(e) => {
                   const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                  if (fig) fig.style.display = 'none';
+                  if (fig) fig.classList.add('cover-missing');
                 }}
+              />
+              <img
+                class="card-trajectory"
+                src="{base}/images/missions/thumbnails/{mission.id}.png"
+                alt=""
+                loading="lazy"
+                aria-hidden="true"
               />
             </figure>
             <div class="card-body">
@@ -353,13 +366,6 @@
               {/if}
             </div>
           </button>
-          <!-- Trajectory thumbnail (v0.1.11 / Theme A.A2) — appears on
-               desktop hover. Pre-rendered at build time by
-               scripts/fetch-assets.ts. Mobile users discover the
-               trajectory via the FLY button + /fly screen instead. -->
-          <aside class="card-thumbnail" aria-hidden="true">
-            <img src="{base}/images/missions/thumbnails/{mission.id}.png" alt="" loading="lazy" />
-          </aside>
         </li>
       {/each}
     </ul>
@@ -483,41 +489,35 @@
   .card-li {
     position: relative;
   }
-  .card-thumbnail {
+  /* Trajectory image stacks on top of the cover photo and fades in
+     on hover (desktop). Mobile devices without :hover get the FLY
+     button to /fly for the full trajectory — no in-card swap. */
+  .card-trajectory {
     position: absolute;
-    bottom: calc(100% + 6px);
-    left: 50%;
-    transform: translate(-50%, 8px);
-    width: 240px;
-    height: 120px;
-    background: rgba(4, 4, 12, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    padding: 4px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
-    pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity 140ms ease,
-      transform 140ms ease,
-      visibility 140ms;
-    z-index: 5;
-  }
-  .card-thumbnail img {
+    inset: 0;
     width: 100%;
     height: 100%;
-    display: block;
-    border-radius: 2px;
+    object-fit: cover;
+    background: rgba(4, 4, 12, 0.92);
+    opacity: 0;
+    transition: opacity 160ms ease;
+    pointer-events: none;
   }
-  /* Reveal on hover (desktop). Mobile devices without :hover get the
-   * existing FLY button to navigate to /fly for the full trajectory. */
   @media (hover: hover) {
-    .card-li:hover .card-thumbnail {
+    .card:hover .card-trajectory,
+    .card:focus-visible .card-trajectory {
       opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, 0);
     }
+  }
+  /* When the cover photo's onerror fires, the trajectory is the only
+     thing in the figure — make it always visible so the card is not
+     blank. The class is set imperatively via onerror, so wrap in
+     :global() to keep Svelte's CSS purger from dropping the rule. */
+  :global(.card-photo.cover-missing .card-trajectory) {
+    opacity: 1;
+  }
+  :global(.card-photo.cover-missing .card-cover) {
+    display: none;
   }
 
   .card {
@@ -561,6 +561,7 @@
     padding: 0;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    position: relative;
     background: rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }

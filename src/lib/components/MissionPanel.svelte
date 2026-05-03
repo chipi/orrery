@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { base } from '$app/paths';
   import { getMissionGallery } from '$lib/data';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
@@ -234,6 +235,21 @@
           <div class="credit">{mission.credit}</div>
         {/if}
       {:else if tab === 'flight'}
+        <!-- Trajectory thumbnail at the top of the FLIGHT tab — same
+             pre-rendered image used by /missions card hover, mounted
+             here so the panel is self-contained (read flight data and
+             see the path it produces in one place). -->
+        <figure class="flight-thumbnail">
+          <img
+            src="{base}/images/missions/thumbnails/{mission.id}.png"
+            alt=""
+            loading="lazy"
+            onerror={(e) => {
+              const fig = (e.currentTarget as HTMLImageElement).closest('figure');
+              if (fig) fig.style.display = 'none';
+            }}
+          />
+        </figure>
         {#if flightCaveat}
           <div class="flight-caveat" role="note">{flightCaveat}</div>
         {/if}
@@ -650,6 +666,22 @@
   /* .gallery-credit / .lightbox / .lightbox-close moved to panel-tabs.css */
 
   /* FLIGHT tab (v0.1.7 / ADR-027 / UXS-004 §Extension) */
+  .flight-thumbnail {
+    margin: 0 0 12px;
+    padding: 4px;
+    background: rgba(4, 4, 12, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .flight-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+  }
   .flight-caveat {
     font-family: 'Space Mono', monospace;
     font-size: 9px;

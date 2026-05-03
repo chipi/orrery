@@ -279,15 +279,20 @@
     arrMarker.position.set(arrX, 0, arrZ);
     depLabelSprite.position.set(depX, 6, depZ);
     arrLabelSprite.position.set(arrX, 6, arrZ);
-    // Moon-mode: hide the dep/arr torus rings + label sprites — the
-    // Earth + Moon meshes already mark the start/end of the cislunar
-    // trajectory and the 5u torus rings dwarf the 2-2.6u celestial
-    // bodies, making the whole scene read as "two giant rings" instead
-    // of "Earth → Moon arc".
-    depMarker.visible = !isMoonMission;
-    arrMarker.visible = !isMoonMission;
-    depLabelSprite.visible = !isMoonMission;
-    arrLabelSprite.visible = !isMoonMission;
+    // Markers + labels visible for ALL missions — they're the persistent
+    // "where does this mission start and end" anchors the user looks for.
+    // The earlier Moon-mode hide was over-aggressive feedback from the
+    // initial cislunar pass; users want them back.
+    depMarker.visible = true;
+    arrMarker.visible = true;
+    depLabelSprite.visible = true;
+    arrLabelSprite.visible = true;
+    // Scale the markers down in Moon-mode so the 5u torus doesn't
+    // dwarf the 2u Moon mesh sitting inside it. Mars-bound keeps the
+    // original 1.0 scale where the destination orbit is ~120u out.
+    const markerScale = isMoonMission ? 0.4 : 1;
+    depMarker.scale.set(markerScale, markerScale, markerScale);
+    arrMarker.scale.set(markerScale, markerScale, markerScale);
   });
 
   // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
@@ -1227,18 +1232,43 @@
 
       // Bodies at simDay. Moon-mode: Earth at canvas centre, Moon at
       // the arc's terminal point. Mars-bound: Earth + Mars at their
-      // heliocentric positions.
+      // heliocentric positions. Both modes draw labelled discs so
+      // start + end points are unambiguous on screen.
       if (isMoonMission) {
+        // Earth at canvas center — disc + halo + label.
+        const eg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 14);
+        eg.addColorStop(0, 'rgba(75,156,211,0.9)');
+        eg.addColorStop(1, 'rgba(75,156,211,0)');
         ctx2.beginPath();
-        ctx2.arc(cx, cy, 5, 0, Math.PI * 2);
+        ctx2.arc(cx, cy, 14, 0, Math.PI * 2);
+        ctx2.fillStyle = eg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 6, 0, Math.PI * 2);
         ctx2.fillStyle = '#4b9cd3';
         ctx2.fill();
+        ctx2.font = "9px 'Space Mono', monospace";
+        ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx2.textAlign = 'left';
+        ctx2.fillText('EARTH', cx + 11, cy + 3);
+        // Moon at the arc terminus — same treatment, white disc.
         const moonPt = outPts[outPts.length - 1];
         if (moonPt) {
+          const mx = cx + moonPt.x * SCALE_2D;
+          const my = cy + moonPt.z * SCALE_2D;
+          const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 10);
+          mg.addColorStop(0, 'rgba(220,220,220,0.85)');
+          mg.addColorStop(1, 'rgba(220,220,220,0)');
           ctx2.beginPath();
-          ctx2.arc(cx + moonPt.x * SCALE_2D, cy + moonPt.z * SCALE_2D, 3, 0, Math.PI * 2);
-          ctx2.fillStyle = '#cccccc';
+          ctx2.arc(mx, my, 10, 0, Math.PI * 2);
+          ctx2.fillStyle = mg;
           ctx2.fill();
+          ctx2.beginPath();
+          ctx2.arc(mx, my, 4, 0, Math.PI * 2);
+          ctx2.fillStyle = '#dddddd';
+          ctx2.fill();
+          ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+          ctx2.fillText('MOON', mx + 9, my + 3);
         }
       } else {
         const ePos = earthPos(simDay);

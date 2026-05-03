@@ -260,6 +260,28 @@
     selectedSmallBodyId ? (smallBodyById.get(selectedSmallBodyId) ?? null) : null,
   );
 
+  // ─── Layers (issue #32) ──────────────────────────────────────────
+  // Four toggleable visibility layers — Sun is always on (centre of
+  // the scene). All default to true so first paint matches today.
+  // Runtime-only state per CLAUDE.md (no localStorage).
+  let layers = $state({
+    planets: true,
+    dwarfs: true,
+    comets: true,
+    interstellar: true,
+  });
+  let layersOpen = $state(false);
+
+  // ESC closes any open dropdown — sizes overlay or layers panel.
+  $effect(() => {
+    if (!layersOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') layersOpen = false;
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by sizesOpen) so the dialog is keyboard-dismissible without a
   // svelte:window element inside the {#if} block, which prettier
@@ -478,6 +500,9 @@
       ),
     );
 
+    // Planet orbit rings — refs kept so the LAYERS panel can toggle
+    // the entire planets layer (rings + bodies) in lockstep.
+    const planetOrbitLines: THREE.LineLoop[] = [];
     PLANETS.forEach((p) => {
       const inc = (p.inc * Math.PI) / 180;
       const pts: THREE.Vector3[] = [];
@@ -493,7 +518,9 @@
         opacity: 0.06,
         depthWrite: false,
       });
-      scene.add(new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat));
+      const line = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat);
+      planetOrbitLines.push(line);
+      scene.add(line);
     });
 
     type PlanetObj = { group: THREE.Group; mesh: THREE.Mesh; planet: PlanetVisual };
@@ -534,27 +561,28 @@
     type SmallBodyObj = {
       mesh: THREE.Mesh;
       tail?: THREE.Line;
+      orbit: THREE.Object3D;
       body: SmallBody;
     };
     const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES.map((b) => {
       // Orbit path — closed ellipse for dwarf/comet, open hyperbola
       // for interstellar bodies. Use Line (open) for interstellar so
-      // the trajectory doesn't visually close back on itself.
+      // the trajectory doesn't visually close back on itself. Ref
+      // captured so the LAYERS panel can hide it with the body.
       const orbitPts = sampleOrbitPoints(b, 128).map((p) => new THREE.Vector3(p.x, 0, p.z));
       const trajColor =
         b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c;
       const TrajCtor = b.type === 'interstellar' ? THREE.Line : THREE.LineLoop;
-      scene.add(
-        new TrajCtor(
-          new THREE.BufferGeometry().setFromPoints(orbitPts),
-          new THREE.LineBasicMaterial({
-            color: trajColor,
-            transparent: true,
-            opacity: b.type === 'interstellar' ? 0.4 : 0.22,
-            depthWrite: false,
-          }),
-        ),
+      const orbit = new TrajCtor(
+        new THREE.BufferGeometry().setFromPoints(orbitPts),
+        new THREE.LineBasicMaterial({
+          color: trajColor,
+          transparent: true,
+          opacity: b.type === 'interstellar' ? 0.4 : 0.22,
+          depthWrite: false,
+        }),
       );
+      scene.add(orbit);
 
       // Body mesh — tiny coloured sphere.
       const colorInt = parseInt(b.color.slice(1), 16);
@@ -583,7 +611,7 @@
         scene.add(tail);
       }
 
-      return { mesh, tail, body: b };
+      return { mesh, tail, orbit, body: b };
     });
 
     // Selection ring (3D) — single torus reused for whichever planet is
@@ -1081,7 +1109,11 @@
       // Small-body orbit paths — closed dashed ellipses for dwarfs and
       // comets, open hyperbola for interstellar (Oumuamua). Uses
       // sampleOrbitPoints so the math stays consistent with 3D mode.
+      // Each type gated by its layer flag (issue #32).
       SMALL_BODIES.forEach((b) => {
+        if (b.type === 'dwarf' && !layers.dwarfs) return;
+        if (b.type === 'comet' && !layers.comets) return;
+        if (b.type === 'interstellar' && !layers.interstellar) return;
         const pts = sampleOrbitPoints(b, 96);
         ctx2.save();
         ctx2.beginPath();
@@ -1090,7 +1122,6 @@
           else ctx2.lineTo(pts[i].x, pts[i].z);
         }
         if (b.type === 'interstellar') {
-          // Open hyperbolic trajectory — solid faint orange.
           ctx2.strokeStyle = 'rgba(255,136,102,0.45)';
           ctx2.lineWidth = 0.8;
         } else {
@@ -1163,135 +1194,143 @@
       ctx2.fillText('SUN', 0, 22);
       ctx2.restore();
 
-      // Planets
-      PLANETS.forEach((p) => {
-        const ang = p.a0 + simT * ((2 * Math.PI) / p.period);
-        const pr = Math.max(3, p.size2);
-        const px = Math.cos(ang) * p.orbitR;
-        const py = Math.sin(ang) * p.orbitR;
-        planet2dPos.set(p.id, { x: px, y: py });
+      // Planets — gated by the PLANETS layer (issue #32). When the
+      // layer is off we skip drawing AND populating planet2dPos so
+      // the pick logic ignores invisible bodies too.
+      if (!layers.planets) planet2dPos.clear();
+      if (layers.planets)
+        PLANETS.forEach((p) => {
+          const ang = p.a0 + simT * ((2 * Math.PI) / p.period);
+          const pr = Math.max(3, p.size2);
+          const px = Math.cos(ang) * p.orbitR;
+          const py = Math.sin(ang) * p.orbitR;
+          planet2dPos.set(p.id, { x: px, y: py });
 
-        const isSel = selectedId === p.id;
+          const isSel = selectedId === p.id;
 
-        // Selection ring (pulsing) — drawn before sphere so it sits behind glow
-        if (isSel) {
-          const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+          // Selection ring (pulsing) — drawn before sphere so it sits behind glow
+          if (isSel) {
+            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+            ctx2.beginPath();
+            ctx2.arc(px, py, pr + 10 + pulse * 3, 0, Math.PI * 2);
+            ctx2.strokeStyle = `rgba(68,102,255,${0.55 + pulse * 0.3})`;
+            ctx2.lineWidth = 1.5;
+            ctx2.stroke();
+          }
+
+          // Outer glow
+          const gl = ctx2.createRadialGradient(px, py, 0, px, py, pr * 4);
+          gl.addColorStop(0, p.css + '55');
+          gl.addColorStop(1, 'rgba(0,0,0,0)');
           ctx2.beginPath();
-          ctx2.arc(px, py, pr + 10 + pulse * 3, 0, Math.PI * 2);
-          ctx2.strokeStyle = `rgba(68,102,255,${0.55 + pulse * 0.3})`;
-          ctx2.lineWidth = 1.5;
-          ctx2.stroke();
-        }
+          ctx2.arc(px, py, pr * 4, 0, Math.PI * 2);
+          ctx2.fillStyle = gl;
+          ctx2.fill();
 
-        // Outer glow
-        const gl = ctx2.createRadialGradient(px, py, 0, px, py, pr * 4);
-        gl.addColorStop(0, p.css + '55');
-        gl.addColorStop(1, 'rgba(0,0,0,0)');
-        ctx2.beginPath();
-        ctx2.arc(px, py, pr * 4, 0, Math.PI * 2);
-        ctx2.fillStyle = gl;
-        ctx2.fill();
+          // Saturn rings (behind sphere)
+          if (p.id === 'saturn') {
+            ctx2.save();
+            ctx2.translate(px, py);
+            ctx2.scale(1, 0.3);
+            ctx2.beginPath();
+            ctx2.ellipse(0, 0, pr + 14, pr + 14, 0, 0, Math.PI * 2);
+            ctx2.strokeStyle = 'rgba(228,209,145,0.22)';
+            ctx2.lineWidth = 7;
+            ctx2.stroke();
+            ctx2.restore();
+          }
 
-        // Saturn rings (behind sphere)
-        if (p.id === 'saturn') {
-          ctx2.save();
-          ctx2.translate(px, py);
-          ctx2.scale(1, 0.3);
-          ctx2.beginPath();
-          ctx2.ellipse(0, 0, pr + 14, pr + 14, 0, 0, Math.PI * 2);
-          ctx2.strokeStyle = 'rgba(228,209,145,0.22)';
-          ctx2.lineWidth = 7;
-          ctx2.stroke();
-          ctx2.restore();
-        }
-
-        // Planet sphere with per-planet shading
-        ctx2.beginPath();
-        ctx2.arc(px, py, pr, 0, Math.PI * 2);
-        const sg = ctx2.createRadialGradient(px - pr * 0.3, py - pr * 0.3, pr * 0.1, px, py, pr);
-        if (p.id === 'earth') {
-          sg.addColorStop(0, '#6ab8e8');
-          sg.addColorStop(1, '#0d3050');
-        } else if (p.id === 'mars') {
-          sg.addColorStop(0, '#e0704a');
-          sg.addColorStop(1, '#7a2000');
-        } else if (p.id === 'jupiter') {
-          sg.addColorStop(0, '#deb878');
-          sg.addColorStop(1, '#6a3a0e');
-        } else if (p.id === 'saturn') {
-          sg.addColorStop(0, '#ece8b0');
-          sg.addColorStop(1, '#9a8830');
-        } else if (p.id === 'venus') {
-          sg.addColorStop(0, '#f0e0a0');
-          sg.addColorStop(1, '#9a7820');
-        } else if (p.id === 'uranus') {
-          sg.addColorStop(0, '#a8f0f0');
-          sg.addColorStop(1, '#207878');
-        } else if (p.id === 'neptune') {
-          sg.addColorStop(0, '#6080d8');
-          sg.addColorStop(1, '#101858');
-        } else if (p.id === 'mercury') {
-          sg.addColorStop(0, '#d0c8c0');
-          sg.addColorStop(1, '#504840');
-        } else {
-          sg.addColorStop(0, p.css);
-          sg.addColorStop(1, p.css + '88');
-        }
-        ctx2.fillStyle = sg;
-        ctx2.fill();
-
-        // Jupiter bands
-        if (p.id === 'jupiter' && pr > 6) {
-          ctx2.save();
+          // Planet sphere with per-planet shading
           ctx2.beginPath();
           ctx2.arc(px, py, pr, 0, Math.PI * 2);
-          ctx2.clip();
-          const bands: Array<[number, string]> = [
-            [pr * 0.22, 'rgba(160,90,40,0.28)'],
-            [pr * 0.65, 'rgba(140,80,30,0.28)'],
-          ];
-          for (const [dy, col] of bands) {
-            ctx2.fillStyle = col;
-            ctx2.fillRect(px - pr, py - dy - pr * 0.07, pr * 2, pr * 0.14);
+          const sg = ctx2.createRadialGradient(px - pr * 0.3, py - pr * 0.3, pr * 0.1, px, py, pr);
+          if (p.id === 'earth') {
+            sg.addColorStop(0, '#6ab8e8');
+            sg.addColorStop(1, '#0d3050');
+          } else if (p.id === 'mars') {
+            sg.addColorStop(0, '#e0704a');
+            sg.addColorStop(1, '#7a2000');
+          } else if (p.id === 'jupiter') {
+            sg.addColorStop(0, '#deb878');
+            sg.addColorStop(1, '#6a3a0e');
+          } else if (p.id === 'saturn') {
+            sg.addColorStop(0, '#ece8b0');
+            sg.addColorStop(1, '#9a8830');
+          } else if (p.id === 'venus') {
+            sg.addColorStop(0, '#f0e0a0');
+            sg.addColorStop(1, '#9a7820');
+          } else if (p.id === 'uranus') {
+            sg.addColorStop(0, '#a8f0f0');
+            sg.addColorStop(1, '#207878');
+          } else if (p.id === 'neptune') {
+            sg.addColorStop(0, '#6080d8');
+            sg.addColorStop(1, '#101858');
+          } else if (p.id === 'mercury') {
+            sg.addColorStop(0, '#d0c8c0');
+            sg.addColorStop(1, '#504840');
+          } else {
+            sg.addColorStop(0, p.css);
+            sg.addColorStop(1, p.css + '88');
           }
-          ctx2.restore();
-        }
+          ctx2.fillStyle = sg;
+          ctx2.fill();
 
-        // Saturn rings (front)
-        if (p.id === 'saturn') {
-          ctx2.save();
-          ctx2.translate(px, py);
-          ctx2.scale(1, 0.3);
+          // Jupiter bands
+          if (p.id === 'jupiter' && pr > 6) {
+            ctx2.save();
+            ctx2.beginPath();
+            ctx2.arc(px, py, pr, 0, Math.PI * 2);
+            ctx2.clip();
+            const bands: Array<[number, string]> = [
+              [pr * 0.22, 'rgba(160,90,40,0.28)'],
+              [pr * 0.65, 'rgba(140,80,30,0.28)'],
+            ];
+            for (const [dy, col] of bands) {
+              ctx2.fillStyle = col;
+              ctx2.fillRect(px - pr, py - dy - pr * 0.07, pr * 2, pr * 0.14);
+            }
+            ctx2.restore();
+          }
+
+          // Saturn rings (front)
+          if (p.id === 'saturn') {
+            ctx2.save();
+            ctx2.translate(px, py);
+            ctx2.scale(1, 0.3);
+            ctx2.beginPath();
+            ctx2.ellipse(0, 0, pr + 14, pr + 14, 0, 0, Math.PI * 2);
+            ctx2.strokeStyle = 'rgba(228,209,145,0.5)';
+            ctx2.lineWidth = 3.5;
+            ctx2.stroke();
+            ctx2.restore();
+          }
+
+          // Specular highlight
           ctx2.beginPath();
-          ctx2.ellipse(0, 0, pr + 14, pr + 14, 0, 0, Math.PI * 2);
-          ctx2.strokeStyle = 'rgba(228,209,145,0.5)';
-          ctx2.lineWidth = 3.5;
-          ctx2.stroke();
+          ctx2.arc(px - pr * 0.28, py - pr * 0.28, pr * 0.2, 0, Math.PI * 2);
+          ctx2.fillStyle = 'rgba(255,255,255,0.18)';
+          ctx2.fill();
+
+          // Label
+          ctx2.save();
+          ctx2.font = "8px 'Space Mono',monospace";
+          ctx2.shadowColor = 'rgba(0,0,0,0.9)';
+          ctx2.shadowBlur = 6;
+          ctx2.fillStyle = p.css + 'cc';
+          ctx2.textAlign = 'left';
+          ctx2.fillText(p.name, px + pr + 5, py + 3);
           ctx2.restore();
-        }
-
-        // Specular highlight
-        ctx2.beginPath();
-        ctx2.arc(px - pr * 0.28, py - pr * 0.28, pr * 0.2, 0, Math.PI * 2);
-        ctx2.fillStyle = 'rgba(255,255,255,0.18)';
-        ctx2.fill();
-
-        // Label
-        ctx2.save();
-        ctx2.font = "8px 'Space Mono',monospace";
-        ctx2.shadowColor = 'rgba(0,0,0,0.9)';
-        ctx2.shadowBlur = 6;
-        ctx2.fillStyle = p.css + 'cc';
-        ctx2.textAlign = 'left';
-        ctx2.fillText(p.name, px + pr + 5, py + 3);
-        ctx2.restore();
-      });
+        });
 
       // Small bodies — dots + labels. Closed-orbit bodies advance with
       // simT; interstellar visitors stay pinned at perihelion (since
-      // they passed through once and are gone).
+      // they passed through once and are gone). Gated per-type by
+      // the dwarfs/comets/interstellar layer flags (issue #32).
       smallBody2dPos.clear();
       SMALL_BODIES.forEach((b) => {
+        if (b.type === 'dwarf' && !layers.dwarfs) return;
+        if (b.type === 'comet' && !layers.comets) return;
+        if (b.type === 'interstellar' && !layers.interstellar) return;
         const { x: px, z: py } = smallBodyPosition(b, simT);
         smallBody2dPos.set(b.id, { x: px, y: py });
 
@@ -1380,6 +1419,24 @@
       if (!reducedMotion) simT += dt * 0.04;
 
       if (view === '3d') {
+        // Apply layer visibility (issue #32). Cheap — just sets the
+        // .visible flag on the existing scene refs each frame so
+        // toggling the LAYERS panel takes effect on the very next
+        // tick without rebuilding any geometry.
+        for (const line of planetOrbitLines) line.visible = layers.planets;
+        for (const o of planetObjs) o.group.visible = layers.planets;
+        for (const o of smallBodyObjs) {
+          const on =
+            o.body.type === 'dwarf'
+              ? layers.dwarfs
+              : o.body.type === 'comet'
+                ? layers.comets
+                : layers.interstellar;
+          o.mesh.visible = on;
+          o.orbit.visible = on;
+          if (o.tail) o.tail.visible = on;
+        }
+
         planetObjs.forEach(({ group, mesh, planet }) => {
           const angle = planet.a0 + (2 * Math.PI * simT) / planet.period;
           const inc = (planet.inc * Math.PI) / 180;
@@ -1542,6 +1599,48 @@
     {m.explore_sizes_toggle()}
   </button>
 
+  <button
+    class="toggle layers-toggle"
+    class:panel-shifted={panelOpen || sunPanelOpen}
+    class:layers-active={layersOpen}
+    type="button"
+    onclick={() => (layersOpen = !layersOpen)}
+    aria-pressed={layersOpen}
+    aria-label="Toggle visibility layers"
+    data-testid="layers-toggle"
+  >
+    LAYERS
+  </button>
+
+  {#if layersOpen}
+    <!-- LAYERS panel — 4 checkboxes for visibility groups. Closes on
+         ESC or by clicking the toggle again. Sized to fit content,
+         positioned just below the LAYERS button. -->
+    <div
+      class="layers-panel"
+      class:panel-shifted={panelOpen || sunPanelOpen}
+      role="dialog"
+      aria-label="Visibility layers"
+    >
+      <label class="layer-row">
+        <input type="checkbox" bind:checked={layers.planets} />
+        <span class="layer-name">PLANETS</span>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" bind:checked={layers.dwarfs} />
+        <span class="layer-name">DWARFS</span>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" bind:checked={layers.comets} />
+        <span class="layer-name">COMETS</span>
+      </label>
+      <label class="layer-row">
+        <input type="checkbox" bind:checked={layers.interstellar} />
+        <span class="layer-name">INTERSTELLAR</span>
+      </label>
+    </div>
+  {/if}
+
   {#if sizesOpen}
     <!-- Size comparison overlay — modal-style, mirrors selected planet
          (if any) so the user keeps context. ESC + backdrop click close. -->
@@ -1647,6 +1746,59 @@
   .sizes-toggle {
     /* Sit just below the 2D/3D toggle. min-height 44px + 8px gap. */
     top: calc(var(--nav-height) + 12px + 44px + 8px);
+  }
+
+  .layers-toggle {
+    /* Below the SIZES toggle — 2 stacked toggles + the 2D/3D one. */
+    top: calc(var(--nav-height) + 12px + 2 * (44px + 8px));
+  }
+  .layers-toggle.layers-active {
+    border-color: #4ecdc4;
+    background: rgba(20, 30, 50, 0.95);
+  }
+
+  .layers-panel {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px + 3 * (44px + 8px));
+    right: 16px;
+    z-index: 36;
+    background: rgba(8, 10, 22, 0.96);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+  }
+  .layer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+  .layer-row input[type='checkbox'] {
+    width: 14px;
+    height: 14px;
+    accent-color: #4ecdc4;
+    cursor: pointer;
+  }
+  .layer-name {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .layer-row:hover .layer-name {
+    color: #fff;
+  }
+  @media (min-width: 768px) {
+    .layers-panel.panel-shifted {
+      right: calc(var(--panel-width, 314px) + 16px);
+    }
   }
 
   .sizes-backdrop {

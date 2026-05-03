@@ -121,7 +121,7 @@ test.describe('/explore — load and toggle', () => {
     // here. The text content flips between "2D" and "3D" each click,
     // which races Svelte's reactive update on slow viewports if we
     // re-resolve by name.
-    const toggle = page.locator('button.toggle:not(.sizes-toggle)');
+    const toggle = page.locator('button.toggle:not(.sizes-toggle):not(.layers-toggle)');
     await expect(toggle).toBeVisible();
     for (let i = 0; i < 6; i++) {
       await toggle.click();

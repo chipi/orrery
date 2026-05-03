@@ -10,7 +10,11 @@
       "L0": 1.4,
       "incl": 10.59,
       "color": "#7c8b9a",
-      "mission_visited": "Dawn (NASA, 2015)"
+      "radius_km": 469.7,
+      "discovered": "1801",
+      "mission_visited": "Dawn (NASA, 2015)",
+      "description": "Largest object in the asteroid belt and the only dwarf planet in the inner solar system. Surface ice and water-rich crust suggest a buried ocean. NASA's Dawn spacecraft orbited Ceres from 2015 to 2018, mapping its bright spots in Occator crater (now known to be sodium-carbonate salt deposits left by briny upwelling).",
+      "wiki": "https://en.wikipedia.org/wiki/Ceres_(dwarf_planet)"
     },
     {
       "id": "pluto",
@@ -22,7 +26,11 @@
       "L0": 4.17,
       "incl": 17.16,
       "color": "#c8a98a",
-      "mission_visited": "New Horizons (NASA, 2015 flyby)"
+      "radius_km": 1188.3,
+      "discovered": "1930",
+      "mission_visited": "New Horizons (NASA, 2015 flyby)",
+      "description": "Reclassified as a dwarf planet in 2006 alongside the formal definition of 'planet'. Has a complex thin atmosphere, a heart-shaped nitrogen-ice plain (Sputnik Planitia), water-ice mountains, and a system of five moons led by Charon. New Horizons revealed unexpected geological youth — fewer craters than predicted.",
+      "wiki": "https://en.wikipedia.org/wiki/Pluto"
     },
     {
       "id": "haumea",
@@ -34,7 +42,11 @@
       "L0": 0.7,
       "incl": 28.19,
       "color": "#dcdcd0",
-      "mission_visited": null
+      "radius_km": 816,
+      "discovered": "2004",
+      "mission_visited": null,
+      "description": "Trans-Neptunian dwarf planet rotating once every 3.9 hours — the fastest rotation of any large solar-system body. Centrifugal force has stretched it into a triaxial ellipsoid roughly twice as long as it is wide. Has two known moons (Hi'iaka, Namaka) and is the only TNO with a confirmed ring.",
+      "wiki": "https://en.wikipedia.org/wiki/Haumea"
     },
     {
       "id": "makemake",
@@ -46,7 +58,11 @@
       "L0": 5.2,
       "incl": 29.0,
       "color": "#c87a4a",
-      "mission_visited": null
+      "radius_km": 715,
+      "discovered": "2005",
+      "mission_visited": null,
+      "description": "Third-largest dwarf planet beyond Neptune, named for the Rapa Nui creator god. Surface coated in frozen methane, ethane, and possibly nitrogen. Has one tiny moon (MK2) discovered in 2016 — its existence had been masked by Makemake's reflective glare in earlier observations.",
+      "wiki": "https://en.wikipedia.org/wiki/Makemake"
     },
     {
       "id": "eris",
@@ -58,7 +74,11 @@
       "L0": 1.95,
       "incl": 44.04,
       "color": "#dcdcdc",
-      "mission_visited": null
+      "radius_km": 1163,
+      "discovered": "2005",
+      "mission_visited": null,
+      "description": "Most massive known dwarf planet — slightly smaller than Pluto by radius but ~27% more massive. Its 2005 discovery prompted the IAU to formalise the 'dwarf planet' category in 2006, simultaneously demoting Pluto. Lies in the scattered disk on a highly inclined, eccentric orbit reaching past 97 AU at aphelion.",
+      "wiki": "https://en.wikipedia.org/wiki/Eris_(dwarf_planet)"
     },
     {
       "id": "halley",
@@ -70,8 +90,12 @@
       "L0": 1.18,
       "incl": 162.3,
       "color": "#88ddff",
+      "radius_km": 5.5,
+      "discovered": "Antiquity (named 1705)",
       "mission_visited": "Giotto (ESA, 1986 flyby)",
-      "next_perihelion": "2061-07-28"
+      "next_perihelion": "2061-07-28",
+      "description": "Most famous short-period comet — visible from Earth roughly every 76 years. Edmond Halley correctly predicted its 1759 return based on Newton's gravity, the first such forecast in history. ESA's Giotto flew within 600 km of the nucleus in 1986, returning the first close-up image of a cometary core. Returns next in 2061.",
+      "wiki": "https://en.wikipedia.org/wiki/Halley%27s_Comet"
     },
     {
       "id": "67p",
@@ -83,7 +107,11 @@
       "L0": 5.5,
       "incl": 7.04,
       "color": "#aabbff",
-      "mission_visited": "Rosetta + Philae lander (ESA, 2014)"
+      "radius_km": 2.0,
+      "discovered": "1969",
+      "mission_visited": "Rosetta + Philae lander (ESA, 2014)",
+      "description": "Jupiter-family comet with a striking double-lobe 'rubber duck' shape. ESA's Rosetta mission orbited 67P from 2014 to 2016, accompanying it through perihelion. The Philae lander touched down in November 2014 — the first soft landing on a comet, although it bounced into shadow before its primary battery depleted.",
+      "wiki": "https://en.wikipedia.org/wiki/67P/Churyumov%E2%80%93Gerasimenko"
     },
     {
       "id": "oumuamua",
@@ -95,8 +123,12 @@
       "L0": 4.0,
       "incl": 122.7,
       "color": "#ff8866",
+      "radius_km": 0.1,
+      "discovered": "2017",
       "mission_visited": null,
-      "note": "Hyperbolic trajectory — first known interstellar object. 2017 visit only; will not return."
+      "note": "Hyperbolic trajectory — first known interstellar object. 2017 visit only; will not return.",
+      "description": "First known interstellar object to visit our solar system. Detected in October 2017 by the Pan-STARRS survey three weeks after closest approach to the Sun. Its hyperbolic trajectory (eccentricity ~1.2) confirmed it originated outside the solar system. Highly elongated, dark red, and showing non-gravitational acceleration of unknown cause. Already on its way out — will not return.",
+      "wiki": "https://en.wikipedia.org/wiki/%CA%BBOumuamua"
     }
   ]
 }

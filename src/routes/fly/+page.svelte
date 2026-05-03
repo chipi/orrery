@@ -1401,10 +1401,25 @@
         earthOrbitLine.visible = true;
         marsOrbitLine.visible = true;
         moonMesh.visible = false;
-        const ePos = earthPos(simDay);
-        const mPos = marsPos(simDay);
-        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-        marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+        // Earth + Mars stay locked to the arc's actual endpoints
+        // (outPts[0] and outPts[N-1]) instead of their live
+        // heliocentric positions. /fly visualises a single mission
+        // and the user expects Earth + arc-start, Mars + arc-end +
+        // flyby ring to converge at the same point. The arc IS the
+        // ground truth; the planets sit where the trajectory says
+        // they're meeting the spacecraft.
+        if (outPts.length > 0) {
+          const ePt = outPts[0];
+          const mPt = outPts[outPts.length - 1];
+          earthMesh.position.set(ePt.x * SCALE_3D, 0, ePt.z * SCALE_3D);
+          marsMesh.position.set(mPt.x * SCALE_3D, 0, mPt.z * SCALE_3D);
+        } else {
+          // First-paint fallback before mission data lands.
+          const ePos = earthPos(simDay);
+          const mPos = marsPos(simDay);
+          earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+          marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+        }
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);

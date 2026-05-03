@@ -1,0 +1,55 @@
+{
+  "id": "artemis2",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2026,
+  "status": "FLOWN",
+  "departure_date": "2026-04-03",
+  "arrival_date": "2026-04-13",
+  "transit_days": 5,
+  "vehicle": "SLS Block 1 + Orion (crewed)",
+  "payload": "Orion + 4-person crew (Wiseman / Glover / Koch / Hansen)",
+  "delta_v": "~6.5 km/s (round trip)",
+  "data_quality": "good",
+  "credit": "© NASA — Artemis II mission, April 2026. First crewed flight beyond LEO since Apollo 17 (1972). Hybrid free-return lunar flyby — Orion swung around the Moon's far side at ~9,200 km altitude and returned to Earth without lunar orbit insertion. The mission that inspired Orrery.",
+  "links": [
+    { "l": "Artemis II — Wikipedia", "u": "https://en.wikipedia.org/wiki/Artemis_II", "t": "intro" },
+    { "l": "Artemis II mission page (NASA)", "u": "https://www.nasa.gov/mission/artemis-ii/", "t": "intro" },
+    { "l": "Orion spacecraft (NASA)", "u": "https://www.nasa.gov/orion/", "t": "core" }
+  ],
+  "flight_data_quality": "measured",
+  "flight": {
+    "launch": {
+      "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
+      "mass_at_tli_kg": 26500,
+      "source": "NASA Artemis II post-flight report; ICPS performed nominal TLI for Orion"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "NASA Artemis II flight reconstruction: outbound + return TCMs executed"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 9200,
+      "inclination_deg": null,
+      "orbit_insertion_dv_km_s": 0.0,
+      "source": "NASA Artemis II hybrid free-return profile — no lunar orbit insertion burn; closest approach ~9,200 km past lunar far side"
+    },
+    "totals": {
+      "total_dv_km_s": 6.5,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "NASA Artemis II ∆v ledger (Orion + ICPS TLI); free-return saves the LOI + TEI burns vs Apollo"
+    },
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 0.13, "type": "tli_or_tmi" },
+      { "met_days": 1.5, "type": "tcm" },
+      { "met_days": 4, "type": "flyby" },
+      { "met_days": 6, "type": "tcm" },
+      { "met_days": 10, "type": "earth_return" }
+    ]
+  }
+}

@@ -464,6 +464,8 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   { id: 'mmx', query: 'mars moons exploration phobos' },
   { id: 'perseverance', query: 'perseverance rover mars' },
   { id: 'starship-demo', query: 'starship spacex' },
+  { id: 'starship-mars-crew', query: 'starship mars artist concept' },
+  { id: 'inspiration-mars', query: 'mars free return crewed' },
   { id: 'tianwen1', query: 'tianwen-1 mars china' },
   { id: 'viking1', query: 'viking 1 mars lander' },
   { id: 'mangalyaan', query: 'mangalyaan mars orbiter mission' },
@@ -479,6 +481,8 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   { id: 'luna24', query: 'luna 24 sample return' },
   { id: 'luna9', query: 'luna 9 first soft landing moon' },
   { id: 'slim', query: 'slim lunar lander jaxa' },
+  { id: 'artemis2', query: 'artemis 2 orion crew' },
+  { id: 'blue-moon-mk1', query: 'blue origin blue moon lander' },
 ];
 
 const MISSIONS_DIR = 'static/images/missions';
@@ -546,6 +550,10 @@ const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   chandrayaan1: 'Chandrayaan-1-01.jpg',
   luna9: 'Luna_9_Space_Probe_1.jpg',
   luna24: 'Moon_map_of_sample_return_sites.png',
+  'blue-moon-mk1': "Jeff_Bezos_unveils_Blue_Origin's_lunar_lander_'Blue_Moon'_(50416497208).jpg",
+  'inspiration-mars': 'Mars_atmosphere_2.jpg',
+  'starship-mars-crew': 'Starship_full_stack.jpg',
+  artemis2: 'Artemis_2_crew_portrait.jpg',
 };
 
 // Gallery-mode top-up for missions where NASA's library has zero or
@@ -604,6 +612,27 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'المركبة_الفضائية_العربية_الإماراتية_(الأمل).jpg',
   ],
   luna9: ['First_Photo_from_the_Surface_of_the_Moon.jpg'],
+  'blue-moon-mk1': [
+    'Blue_Moon_Mark_2_Lunar_Lander_(2023).jpg',
+    'BE-7_engine_hot_fire.jpg',
+    'New_Glenn_first_stage_at_LC-36.jpg',
+  ],
+  'inspiration-mars': [
+    'Mars_Hubble.jpg',
+    'Free_return_trajectory.svg',
+    'Crewed_Mars_mission_concept.jpg',
+  ],
+  'starship-mars-crew': [
+    'Starship_render_above_Mars.jpg',
+    'SpaceX_Mars_base_alpha_concept.jpg',
+    'Starship_orbital_refilling.jpg',
+  ],
+  artemis2: [
+    'Artemis_II_mission_patch.png',
+    'Orion_spacecraft_after_water_recovery_(NHQ202308300013).jpg',
+    'SLS_rocket_ignition.jpg',
+    'Earthrise_(Apollo_8).jpg',
+  ],
   luna17: [
     'Luna_17_lander.png',
     'M127159138LC_Luna_17_lander.jpg',

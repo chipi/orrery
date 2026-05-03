@@ -1,0 +1,13 @@
+{
+  "name": "Blue Moon MK1",
+  "type": "CARGO LANDER · PLANNED",
+  "first": "First flight of Blue Origin's Blue Moon lunar lander architecture",
+  "description": "Blue Origin's first cargo Blue Moon lander, contracted under NASA's Commercial Lunar Payload Services (CLPS) program. A single-stage descent vehicle powered by the BE-7 cryogenic engine, designed to deliver up to ~3 tonnes of payload to the lunar surface. Launches on Blue Origin's New Glenn from Cape Canaveral, performs trans-lunar injection on the New Glenn second stage, then executes lunar orbit insertion and powered descent. The Mark 1 cargo flight precedes the human-rated Mark 2, which is contracted to support NASA's Artemis V crewed lunar landing.",
+  "events": [
+    { "met": 0, "label": "NEW GLENN LAUNCH", "note": "Lifts off from Cape Canaveral LC-36; first stage returns for downrange recovery.", "type": "nominal" },
+    { "met": 0.2, "label": "TLI", "note": "New Glenn second stage performs trans-lunar injection burn.", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 4, "label": "LOI", "note": "Lunar orbit insertion via BE-7 main engine.", "type": "nominal" },
+    { "met": 4.1, "label": "POWERED DESCENT", "note": "BE-7 throttled descent to lunar surface — first Blue Origin lunar touchdown.", "type": "info" }
+  ]
+}

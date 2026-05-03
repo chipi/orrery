@@ -19,3 +19,6 @@ Thumbs.db
 playwright-report/
 test-results/
 playwright/.cache/
+
+# Claude Code local state (per-user; runtime locks etc.)
+.claude/

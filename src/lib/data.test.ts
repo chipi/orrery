@@ -57,9 +57,9 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 28 missions', async () => {
+  it('returns 32 missions', async () => {
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(28);
+    expect(missions).toHaveLength(32);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -76,15 +76,15 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 14', async () => {
+  it('MARS filter returns 16', async () => {
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(14);
+    expect(mars).toHaveLength(16);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 14', async () => {
+  it('MOON filter returns 16', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(14);
+    expect(moon).toHaveLength(16);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -155,9 +155,9 @@ describe('reference data', () => {
     expect(data.constants.mu_sun).toBeCloseTo(39.4784, 3);
   });
 
-  it('rockets() returns 6 vehicles', async () => {
+  it('rockets() returns 13 vehicles', async () => {
     const data = await rockets();
-    expect(data).toHaveLength(6);
+    expect(data).toHaveLength(13);
   });
 
   it('earthObjects() returns 13 objects', async () => {
@@ -204,9 +204,9 @@ describe('getPlanets', () => {
 });
 
 describe('getRockets', () => {
-  it('returns 6 rockets merged with en-US overlay (name + description)', async () => {
+  it('returns 13 rockets merged with en-US overlay (name + description)', async () => {
     const list = await getRockets();
-    expect(list).toHaveLength(6);
+    expect(list).toHaveLength(13);
     const falcon = list.find((r) => r.id === 'falcon-heavy');
     expect(falcon).toBeDefined();
     // Base data
@@ -219,7 +219,7 @@ describe('getRockets', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getRockets('fr');
-    expect(list).toHaveLength(6);
+    expect(list).toHaveLength(13);
     const starship = list.find((r) => r.id === 'starship');
     expect(starship?.name).toBe('Starship');
   });
@@ -244,9 +244,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 28 missions merged with their en-US overlays', async () => {
+  it('returns all 32 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(28);
+    expect(list).toHaveLength(32);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -262,7 +262,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('fr');
-    expect(list).toHaveLength(28);
+    expect(list).toHaveLength(32);
   });
 
   it('count matches what filterMissions reports', async () => {

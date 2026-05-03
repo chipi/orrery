@@ -13,6 +13,16 @@ import { defineConfig } from 'vitest/config';
  * by adapter-static; we tell the plugin not to generate one.
  */
 export default defineConfig({
+  server: {
+    port: 5273,
+    strictPort: true,
+    // Allow imports from static/ — used by $data/ alias for build-time
+    // JSON imports (planets, small-bodies, scenarios). Without this,
+    // Vite's default fs.allow excludes static/ and dev-only 404s flood
+    // the console.
+    fs: { allow: ['static'] },
+  },
+  preview: { port: 5273, strictPort: true },
   plugins: [
     sveltekit(),
     SvelteKitPWA({

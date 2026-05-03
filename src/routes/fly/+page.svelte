@@ -7,7 +7,7 @@
     earthPos,
     marsPos,
     destinationPos,
-    outboundArc,
+    transferEllipse,
     returnArc,
     spacecraftPos,
     spacecraftHeading,
@@ -28,8 +28,6 @@
     auToMkm,
     distanceBetween,
     heliocentricSpeed as flyHeliocentricSpeed,
-    moonOutboundArc as flyMoonOutboundArc,
-    moonReturnArc as flyMoonReturnArc,
     signalDelayMin as flySignalDelayMin,
   } from '$lib/fly-physics';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -37,6 +35,27 @@
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+
+  // Polyline curve: getPoint(t) returns piecewise-linear interp
+  // between control points — exactly mirrors lerpPoint(out, t)
+  // used to position the spacecraft. Replaces CatmullRomCurve3
+  // (centripetal parameterisation: getPoint(t) drifts off the
+  // control-point lerp because adjacent-chord lengths vary on a
+  // ν-uniformly-sampled ellipse). The mismatch made the 3D past-
+  // tube drawRange run ahead of the spacecraft sprite.
+  class PolylineCurve3 extends THREE.Curve<THREE.Vector3> {
+    points: THREE.Vector3[];
+    constructor(points: THREE.Vector3[]) {
+      super();
+      this.points = points;
+    }
+    getPoint(t: number, target = new THREE.Vector3()): THREE.Vector3 {
+      const last = this.points.length - 1;
+      const f = Math.max(0, Math.min(1, t)) * last;
+      const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+      return target.lerpVectors(this.points[i], this.points[i + 1], f - i);
+    }
+  }
 
   // ─── Default scenario (ORRERY-1 free-return per ADR-009) ─────────
   // Static-imported so the Three.js scene can initialise synchronously
@@ -48,6 +67,12 @@
   import defaultScenarioOverlay from '$data/i18n/en-US/scenarios/orrery-1.json';
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
+  // Whitelist of synthesised teaching scenarios (live in
+  // static/data/scenarios/). Used to gate the getScenario() probe
+  // when ?mission=id is supplied so we don't 404 on every real
+  // mission ID — most ?mission= values are historical missions, not
+  // scenarios, and the server log was full of dev-time 404 noise.
+  const KNOWN_SCENARIO_IDS = new Set<string>([DEFAULT_SCENARIO_ID]);
 
   type LoadedMission = {
     name: string;
@@ -95,28 +120,91 @@
   // Free-return scenarios additionally render a long-CCW return arc;
   // historical Mars-bound missions land there and don't return, so
   // their retPts is empty (no return arc rendered).
-  const ARC_STEPS = 200;
+  // 600 segments: enough that the linear-interp spacecraft position
+  // sits visually on the CatmullRom-splined tube (chord-vs-spline gap
+  // is sub-pixel between adjacent waypoints at this density).
+  const ARC_STEPS = 600;
+
+  // Moon's heliocentric visual orbit radius around Earth, in AU. Real
+  // is 0.0026 AU (~0.21 scene units) — too small to see at the same
+  // SCALE_3D where Mars sits 80 units from the Sun. Exaggerated to
+  // 0.15 AU (~12 scene units) so cislunar missions read clearly while
+  // staying inside the Earth-orbit ring's visual footprint.
+  const MOON_FLY_RADIUS_AU = 0.15;
+  // Sidereal lunar month — Moon's heliocentric visual orbit period.
+  const MOON_PERIOD_DAYS = 27.32;
+
+  /** Heliocentric position of the Moon at simDay (live), with the
+   *  exaggerated MOON_FLY_RADIUS_AU offset. */
+  function moonHelioPos(day: number): Vec2 {
+    const earth = earthPos(day);
+    const angle = ((day % MOON_PERIOD_DAYS) / MOON_PERIOD_DAYS) * Math.PI * 2;
+    return {
+      x: earth.x + Math.cos(angle) * MOON_FLY_RADIUS_AU,
+      z: earth.z + Math.sin(angle) * MOON_FLY_RADIUS_AU,
+    };
+  }
+
+  /** Cislunar trajectory in heliocentric AU. Both endpoints are
+   *  pinned exactly (start at depDay, end at arrDay); intermediate
+   *  points ride Earth's orbital motion + linearly blend the
+   *  Earth-relative offset from start-offset to end-offset. For 4-day
+   *  Apollo this is essentially a slow drift along Earth's orbit + a
+   *  small hop, which reads correctly at the heliocentric scale used
+   *  by the rest of /fly. Symmetric: pass start=Earth, end=Moon for
+   *  outbound; start=Moon, end=Earth for return. */
+  function moonHelioArc(
+    depDay: number,
+    arrDay: number,
+    start: Vec2,
+    end: Vec2,
+    steps: number,
+  ): Vec2[] {
+    const startOffX = start.x - earthPos(depDay).x;
+    const startOffZ = start.z - earthPos(depDay).z;
+    const endOffX = end.x - earthPos(arrDay).x;
+    const endOffZ = end.z - earthPos(arrDay).z;
+    const pts: Vec2[] = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = i / steps;
+      const earthAtT = earthPos(depDay + t * (arrDay - depDay));
+      const offX = startOffX + (endOffX - startOffX) * t;
+      const offZ = startOffZ + (endOffZ - startOffZ) * t;
+      pts.push({ x: earthAtT.x + offX, z: earthAtT.z + offZ });
+    }
+    return pts;
+  }
 
   function buildArcs(
     timeline: MissionTimeline,
     isFreeReturn: boolean,
     destinationId: DestinationId = 'mars',
-    arrivalVInfKms?: number,
+    // arrivalVInfKms is unused now — transferEllipse pins both
+    // endpoints geometrically. Kept for caller back-compat; remove on
+    // the next /plan + /fly cleanup pass.
+    _arrivalVInfKms?: number,
   ): { out: Vec2[]; ret: Vec2[] } {
+    // Outbound: true two-point Keplerian ellipse with Sun at one focus.
+    // Both endpoints land EXACTLY on live planet positions — Earth at
+    // dep_day, destination at arr_day (or flyby_day for free-return).
+    // Replaces the older outboundArc + post-hoc rotation, which could
+    // only pin one endpoint.
     const earthDep = earthPos(timeline.dep_day);
-    const destA = DESTINATIONS[destinationId].a;
-    // outboundArc handles inner planets (Mercury, Venus) via signed
-    // eccentricity internally — we just pass the destination's
-    // heliocentric distance and the arc geometry flips automatically.
-    // arrivalVInfKms (v0.1.10) bends the arc when the loaded mission
-    // has real V∞ data so two same-dest+dates missions look distinct.
-    const out = outboundArc(earthDep, ARC_STEPS, destA, arrivalVInfKms);
+    // Outbound terminates at flyby_day for free-return AND round-trip
+    // Mars / Moon (the destination rendezvous is mid-mission). For
+    // one-way landings flyby_day == arr_day so this is also the
+    // landing day. Always using flyby_day keeps the math uniform.
+    const destArr =
+      destinationId === 'mars'
+        ? marsPos(timeline.flyby_day)
+        : destinationPos(timeline.flyby_day, destinationId);
+    const out = transferEllipse(earthDep, destArr, ARC_STEPS);
     if (!isFreeReturn) return { out, ret: [] };
-    // Free-return is Mars-only by design (ORRERY DEMO scenario):
-    // the long-CCW return arc has no analogue for other destinations.
-    const marsArr = marsPos(timeline.flyby_day);
+    // Free-return Mars: return arc starts at the outbound terminus
+    // (== Mars at flyby_day) and ends at live Earth at arr_day, so
+    // re-entry visually meets Earth.
     const earthRet = earthPos(timeline.arr_day);
-    const ret = returnArc(marsArr, earthRet, ARC_STEPS);
+    const ret = returnArc(out[out.length - 1], earthRet, ARC_STEPS);
     return { out, ret };
   }
 
@@ -230,7 +318,10 @@
   // Scene scale: 1 AU = SCALE_3D = 80 units. Moon-mode is a separate
   // Earth-Moon scale where the Moon sits at MOON_VISUAL_DISTANCE = 100.
   function cameraDistanceFor(destinationId: DestinationId, moonMode: boolean): number {
-    if (moonMode) return 220;
+    // Moon-mode: tight zoom on the Earth+Moon system (Apollo arc spans
+    // ~12 scene units). Sun stays in the heliocentric model but is
+    // intentionally off-camera unless the user pans out.
+    if (moonMode) return 50;
     const orbitUnits = DESTINATIONS[destinationId].a * SCALE_3D;
     return Math.max(180, orbitUnits * 2.0);
   }
@@ -241,15 +332,27 @@
   // mounted, every mission load rebuilds the tube along the new
   // CatmullRom curve.
   $effect(() => {
+    // Read reactive state FIRST so Svelte 5 registers outPts + retPts
+    // as deps even on the bail-out path (refs not yet defined). Without
+    // these locals the $effect would never re-run on mission load — its
+    // initial run hits the early-return before reading either array,
+    // so no deps get tracked, and subsequent retPts mutations are
+    // ignored. That left the previous mission's return tube visible
+    // (e.g. ORRERY DEMO's purple loop persisting after Curiosity loads).
+    const outArc = outPts;
+    const retArc = retPts;
     if (!outLine || !retLine || !outLineFuture || !retLineFuture || !rebuildTubeGeometry) return;
     outLine.geometry.dispose();
-    outLine.geometry = rebuildTubeGeometry(outPts, 0.6);
+    outLine.geometry = rebuildTubeGeometry(outArc, 0.6);
     outLineFuture.geometry.dispose();
-    outLineFuture.geometry = rebuildTubeGeometry(outPts, 0.6);
+    outLineFuture.geometry = rebuildTubeGeometry(outArc, 0.6);
     retLine.geometry.dispose();
-    retLine.geometry = rebuildTubeGeometry(retPts, 0.5);
+    retLine.geometry = rebuildTubeGeometry(retArc, 0.5);
     retLineFuture.geometry.dispose();
-    retLineFuture.geometry = rebuildTubeGeometry(retPts, 0.5);
+    retLineFuture.geometry = rebuildTubeGeometry(retArc, 0.5);
+    const hasReturn = retArc.length >= 2;
+    retLine.visible = hasReturn;
+    retLineFuture.visible = hasReturn;
   });
 
   // Position the per-mission DEPARTURE + ARRIVAL anchor rings + their
@@ -258,17 +361,23 @@
   // until they exist. Sprites float ~6u above the marker rings so
   // they don't z-fight with the ring geometry.
   $effect(() => {
+    // Read state FIRST so Svelte 5 tracks outPts + isMoonMission as
+    // deps even on the bail-out path (refs not yet defined). Same
+    // tracking-bug shape as the arc-rebuild $effect: the initial run
+    // early-returns before reading either, so subsequent mission
+    // loads never re-run this effect and the markers stay invisible.
+    const arc = outPts;
+    // Touch isMoonMission so it stays a tracked dep — Moon-mode swaps
+    // change marker placement via the new heliocentric arc geometry.
+    void isMoonMission;
     if (!depMarker || !arrMarker || !depLabelSprite || !arrLabelSprite) return;
-    if (outPts.length === 0) return;
+    if (arc.length === 0) return;
     // Anchor markers to outPts itself — the arc IS the geometry, so
-    // dep/arr markers must sit at outPts[0] and outPts[N-1]. Previously
-    // we computed them via earthPos(dep_day) / destinationPos(arr_day)
-    // which is the same heliocentric calc but disconnected from the
-    // arc's actual endpoints — for V∞-shaped arcs the arc terminus
-    // lands a few hundredths of an AU off the destination orbit and
-    // the marker drifted off the arc visibly.
-    const first = outPts[0];
-    const last = outPts[outPts.length - 1];
+    // dep/arr markers must sit at outPts[0] and outPts[N-1] which now
+    // coincide with the live planet positions at dep_day / arr_day
+    // (transferEllipse pins both endpoints).
+    const first = arc[0];
+    const last = arc[arc.length - 1];
     const depX = first.x * SCALE_3D;
     const depZ = first.z * SCALE_3D;
     const arrX = last.x * SCALE_3D;
@@ -281,12 +390,9 @@
     arrMarker.visible = true;
     depLabelSprite.visible = true;
     arrLabelSprite.visible = true;
-    // Scale the markers down in Moon-mode so the 5u torus doesn't
-    // dwarf the 2u Moon mesh sitting inside it. Mars-bound keeps the
-    // original 1.0 scale where the destination orbit is ~120u out.
-    const markerScale = isMoonMission ? 0.4 : 1;
-    depMarker.scale.set(markerScale, markerScale, markerScale);
-    arrMarker.scale.set(markerScale, markerScale, markerScale);
+    // Markers stay at full scale in both modes now — Moon-mode is
+    // also heliocentric (Earth+Moon both ~1 AU from Sun), so the
+    // 12-unit torus reads identically against Earth-orbit framing.
   });
 
   // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
@@ -295,19 +401,19 @@
   // <dep date>  | <arr date>
   // This makes each mission's start + end self-describing in 3D.
   $effect(() => {
+    // Read state first so deps are tracked across re-runs (same
+    // shape as the marker / arc-rebuild effects above).
+    const moonMode = isMoonMission;
+    const dest = activeDestination;
+    const depLabel = mission.dep_label || '—';
+    const arrLabel = mission.arr_label || '—';
     if (!refreshLabelSprites) return;
-    const arrName = isMoonMission ? 'MOON' : activeDestination.toUpperCase();
-    const arrColor = isMoonMission
-      ? DESTINATION_LABEL_COLORS.moon
-      : DESTINATION_LABEL_COLORS[activeDestination];
-    refreshLabelSprites(
-      'LAUNCH',
-      mission.dep_label || '—',
-      '#4b9cd3',
-      arrName,
-      mission.arr_label || '—',
-      arrColor,
-    );
+    // Label both ends "LAUNCH" / "ARRIVAL" to match the 2D canvas
+    // anchor labels — the destination is already implied by the arc
+    // colour (Mars-red torus etc.) and the date stamp on line 2.
+    const arrName = 'ARRIVAL';
+    const arrColor = moonMode ? DESTINATION_LABEL_COLORS.moon : DESTINATION_LABEL_COLORS[dest];
+    refreshLabelSprites('LAUNCH', depLabel, '#4b9cd3', arrName, arrLabel, arrColor);
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -481,57 +587,81 @@
   function applyMissionAsLoaded(m: Mission) {
     // Per-mission arc geometry: parse the mission's actual departure
     // date into a sim-day count so Earth's heliocentric phase at
-    // launch matches reality. transit_days drives arr_day; flyby_day
-    // is 95% of transit (closest approach for landers).
+    // launch matches reality. transit_days drives arr_day. For
+    // one-way landings flyby_day == arr_day (landing IS arrival,
+    // there is no separate flyby waypoint); for sample-return /
+    // crewed round-trips flyby_day is 95% of transit (closest
+    // approach before the return burn). The previous unconditional
+    // 0.95*tof flyby left one-way missions with a "rocket waits"
+    // gap between scrub 0.95 and 1.0 — the spacecraft hit the arc
+    // terminus at flyby_day and idled there until arr_day.
     //
     // Historical Mars missions don't return to Earth — we render only
     // the outbound arc. Free-return scenarios get both arcs (handled
     // by applyScenarioAsLoaded).
     const totalT = m.transit_days || 250;
-    const flybyOffset = Math.floor(totalT * FLYBY_OFFSET_FRACTION);
     const dvTotal = parseDeltaV(m.delta_v, defaultScenarioBase.dv_total_km_s);
     // Fall back to the default scenario's dep_day if the mission's
     // departure_date is missing or unparseable (defence in depth —
     // schema requires the field, but the helper returns null on
     // anything that doesn't match YYYY-MM-DD).
     const depDay = dateToSimDay(m.departure_date) ?? defaultScenarioBase.dep_day;
+    const missionType = (m.type ?? '').toUpperCase();
+    const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
+    // For one-way landings (Curiosity, Chandrayaan-3, etc.) the mission
+    // ends at destination touchdown — flyby_day == arr_day so the
+    // spacecraft doesn't idle between scrub 0.95 and 1.0. For round-
+    // trips (Apollo, Luna 24) transit_days is the one-way leg, so the
+    // full mission spans 2× transit_days: arrives at destination at
+    // flyby_day = dep + transit, returns to Earth at arr_day = dep +
+    // 2*transit. The scrub bar then maps cleanly: scrub 0..0.5 outbound,
+    // 0.5..1.0 return.
+    const flybyOffset = totalT;
+    const arrOffset = isReturnTrip ? totalT * 2 : totalT;
     const newTimeline: MissionTimeline = {
       dep_day: depDay,
       flyby_day: depDay + flybyOffset,
-      arr_day: depDay + totalT,
+      arr_day: depDay + arrOffset,
     };
     arcTimeline = newTimeline;
     isFreeReturn = false;
     activeDestination = 'mars';
     isMoonMission = m.dest === 'MOON';
-    // Detect missions that physically return the spacecraft (or its
-    // sample) to Earth. Drives the second tube-mesh rendering of the
-    // return arc. Sample-return missions: Luna 24, Chang'e 5/6.
-    // Crewed missions: Apollo, Artemis 3.
-    const missionType = (m.type ?? '').toUpperCase();
-    const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
+    // isReturnTrip is computed above (it gates flybyOffset). Sample-
+    // return missions: Luna 24, Chang'e 5/6. Crewed: Apollo, Artemis 3.
+    // Drives the second tube-mesh rendering of the return arc below.
     if (isMoonMission) {
-      // Earth-Moon trajectory: small visual arc from Earth (origin) to
-      // the Moon's exaggerated position. The Moon is placed at a
-      // sweep angle determined by the mission's flyby_day modulo the
-      // sidereal lunar month.
-      // Moon-mode arc geometry now lives in $lib/fly-physics
-      // (v0.2.0 / ADR-030). flyMoonOutboundArc() + flyMoonReturnArc()
-      // produce points in scene coordinates; we divide by SCALE_3D
-      // to land in AU-space (the rest of the arc rendering expects AU).
-      const moonPos = {
-        x: Math.cos(((newTimeline.flyby_day % 27.32) / 27.32) * Math.PI * 2) * 100,
-        z: Math.sin(((newTimeline.flyby_day % 27.32) / 27.32) * Math.PI * 2) * 100,
-      };
-      outPts = flyMoonOutboundArc(moonPos, 200).map((p) => ({
-        x: p.x / SCALE_3D,
-        z: p.z / SCALE_3D,
-      }));
+      // Apollo / cislunar: heliocentric arc from live Earth at dep_day
+      // to live Moon at flyby_day (Moon arrival). The trajectory
+      // rides Earth's orbital motion + adds a small lateral hop to
+      // the Moon, so it reads at the same heliocentric scale as Mars
+      // missions (Sun + Earth orbit visible, Moon orbiting Earth at
+      // MOON_FLY_RADIUS_AU). Replaces the prior Earth-centred Bezier
+      // which hid the Sun and lost heliocentric context.
+      const earthAtDep = earthPos(newTimeline.dep_day);
+      const moonAtFlyby = moonHelioPos(newTimeline.flyby_day);
+      outPts = moonHelioArc(
+        newTimeline.dep_day,
+        newTimeline.flyby_day,
+        earthAtDep,
+        moonAtFlyby,
+        ARC_STEPS,
+      );
+      // Crewed / sample-return cislunar return leg: Moon-at-flyby →
+      // live Earth at arr_day. Timeline math sets arr_day = dep +
+      // 2*transit_days for round-trips, so this leg has the same
+      // duration as outbound and arrives at the live Earth heliocentric
+      // position eight days after launch (Apollo) or longer for sample-
+      // return cadence missions.
+      const earthAtReturnArr = earthPos(newTimeline.arr_day);
       retPts = isReturnTrip
-        ? flyMoonReturnArc(moonPos, 200).map((p) => ({
-            x: p.x / SCALE_3D,
-            z: p.z / SCALE_3D,
-          }))
+        ? moonHelioArc(
+            newTimeline.flyby_day,
+            newTimeline.arr_day,
+            moonAtFlyby,
+            earthAtReturnArr,
+            ARC_STEPS,
+          )
         : [];
     } else {
       // Pass real arrival V∞ when the mission has flight data so the
@@ -546,8 +676,11 @@
       // For now, no Mars sample-return missions are FLOWN; MMX is
       // PLANNED. The branch is here for completeness.
       if (isReturnTrip) {
-        const earthRet = earthPos(newTimeline.arr_day + (totalT - flybyOffset));
-        retPts = returnArc(destinationPos(newTimeline.flyby_day, 'mars'), earthRet, 200);
+        // Round-trip Mars (e.g. MMX): return arc starts at outbound
+        // terminus (= live Mars at flyby_day) and ends at live Earth
+        // at arr_day (= dep + 2*transit_days for round-trips).
+        const earthRet = earthPos(newTimeline.arr_day);
+        retPts = returnArc(arcs.out[arcs.out.length - 1], earthRet, ARC_STEPS);
       } else {
         retPts = arcs.ret;
       }
@@ -570,6 +703,11 @@
       flight_data_quality: m.flight_data_quality,
     };
     simDay = mission.timeline.dep_day;
+    // Moon missions are 4-12 days vs Mars's 200+ — drop the default
+    // sim speed from 7×→1× so a 4-day Apollo plays in 4 sec instead
+    // of half a second. The Moon-mode speed pills use a slower [0.1,
+    // 0.5, 1, 3] preset (vs Mars [1, 7, 30, 90]); 1× is in both sets.
+    simSpeed = isMoonMission ? 1 : 7;
     // v0.1.13 — fuse editorial overlay events with structural flight
     // events from mission.flight.events[]. Missions with measured /
     // sparse flight data (issue #31) now contribute TCMs, EDL, etc.
@@ -694,13 +832,17 @@
       return;
     }
 
-    // Try scenarios first (synthesized teaching trajectories), then
-    // historical missions on Mars, then Moon.
-    const scenario = await getScenario(id);
-    if (myLoadId !== currentLoadId) return;
-    if (scenario) {
-      applyScenarioAsLoaded(scenario);
-      return;
+    // Try scenarios first (synthesised teaching trajectories), then
+    // historical missions on Mars, then Moon. Gate the probe with the
+    // known-scenarios whitelist so real mission IDs (e.g. "curiosity")
+    // don't trigger a 404 round-trip and dev-server error log noise.
+    if (KNOWN_SCENARIO_IDS.has(id)) {
+      const scenario = await getScenario(id);
+      if (myLoadId !== currentLoadId) return;
+      if (scenario) {
+        applyScenarioAsLoaded(scenario);
+        return;
+      }
     }
 
     const mars = await getMission(id, 'mars');
@@ -795,7 +937,9 @@
       ),
     );
 
-    // Earth orbit + Mars orbit
+    // Earth orbit + Mars orbit. Opacity 0.4 reads clearly against the
+    // dark background — was 0.18 before but on monitors with high
+    // ambient light the rings disappeared into the starfield.
     const orbit = (radius: number, color: number) => {
       const pts: THREE.Vector3[] = [];
       for (let i = 0; i <= 128; i++) {
@@ -806,7 +950,7 @@
       }
       return new THREE.LineLoop(
         new THREE.BufferGeometry().setFromPoints(pts),
-        new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.18 }),
+        new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.4 }),
       );
     };
     const earthOrbitLine = orbit(R_EARTH_AU, 0x4b9cd3);
@@ -825,8 +969,11 @@
     const buildTubeGeometry = (pts: Vec2[], radius: number): THREE.BufferGeometry => {
       if (pts.length < 2) return new THREE.BufferGeometry();
       const vecs = pts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-      const curve = new THREE.CatmullRomCurve3(vecs, false);
-      return new THREE.TubeGeometry(curve, Math.max(64, pts.length), radius, 8, false);
+      const curve = new PolylineCurve3(vecs);
+      // tubularSegments == waypoint count - 1 so each segment of the
+      // tube spans exactly one input chord — drawRange now maps 1:1
+      // to the lerpPoint index space the spacecraft uses.
+      return new THREE.TubeGeometry(curve, pts.length - 1, radius, 8, false);
     };
     // v0.1.10: each arc is a pair of tube meshes. The *future* mesh is
     // a dim full-length preview; the *past* mesh is bright and its
@@ -982,7 +1129,7 @@
     // camera angle. Updated by a $effect when arcTimeline /
     // activeDestination / isMoonMission changes.
     depMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(5.0, 0.35, 12, 64),
+      new THREE.TorusGeometry(12, 0.25, 12, 64),
       new THREE.MeshBasicMaterial({
         color: 0x4b9cd3,
         transparent: true,
@@ -993,7 +1140,7 @@
     depMarker.rotation.x = Math.PI / 2;
     scene.add(depMarker);
     arrMarker = new THREE.Mesh(
-      new THREE.TorusGeometry(5.0, 0.35, 12, 64),
+      new THREE.TorusGeometry(12, 0.25, 12, 64),
       new THREE.MeshBasicMaterial({
         color: 0xc1440e,
         transparent: true,
@@ -1073,13 +1220,23 @@
     let camR = 360;
     let camP = 1.05;
     let camT = 0.6;
+    // Camera target — origin (Sun) for Mars / heliocentric framings;
+    // live Earth heliocentric position for Moon-mode so the Earth+Moon
+    // system stays centered as Earth orbits the Sun.
+    const camTarget = new THREE.Vector3(0, 0, 0);
     const updateCam = () => {
+      if (isMoonMission) {
+        const ePos = earthPos(simDay);
+        camTarget.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+      } else {
+        camTarget.set(0, 0, 0);
+      }
       camera.position.set(
-        camR * Math.sin(camP) * Math.sin(camT),
-        camR * Math.cos(camP),
-        camR * Math.sin(camP) * Math.cos(camT),
+        camTarget.x + camR * Math.sin(camP) * Math.sin(camT),
+        camTarget.y + camR * Math.cos(camP),
+        camTarget.z + camR * Math.sin(camP) * Math.cos(camT),
       );
-      camera.lookAt(0, 0, 0);
+      camera.lookAt(camTarget);
     };
     updateCam();
 
@@ -1191,7 +1348,16 @@
 
       const cx = W / 2;
       const cy = H / 2;
-      const SCALE_2D = Math.min(W, H) / 4;
+      const BASE_SCALE_2D = Math.min(W, H) / 4;
+      // Moon-mode 2D mirrors 3D camera: origin is live Earth (so the
+      // Earth+Moon system stays centred as Earth orbits the Sun) and
+      // the scale is zoomed 6× so the 0.15 AU Moon offset reads as
+      // ~90 px instead of ~30 px. Mars-mode keeps Sun-centred origin
+      // at canvas centre and the original scale.
+      const originAU = isMoonMission ? earthPos(simDay) : { x: 0, z: 0 };
+      const SCALE_2D = isMoonMission ? BASE_SCALE_2D * 6 : BASE_SCALE_2D;
+      const ptX = (au: number) => cx + (au - originAU.x) * SCALE_2D;
+      const ptZ = (au: number) => cy + (au - originAU.z) * SCALE_2D;
 
       for (let i = 0; i < 150; i++) {
         const sx = (i * 137.5 * 31 + i * 71) % W;
@@ -1232,12 +1398,13 @@
 
       // Past/future split — past solid, future dashed at low opacity.
       function drawSplit(pts: Vec2[], t: number, past: string, future: string) {
+        if (pts.length < 2) return;
         const split = Math.max(0, Math.min(pts.length - 1, Math.floor(t * (pts.length - 1))));
         if (split > 0) {
           ctx2.beginPath();
-          ctx2.moveTo(cx + pts[0].x * SCALE_2D, cy + pts[0].z * SCALE_2D);
+          ctx2.moveTo(ptX(pts[0].x), ptZ(pts[0].z));
           for (let i = 1; i <= split; i++) {
-            ctx2.lineTo(cx + pts[i].x * SCALE_2D, cy + pts[i].z * SCALE_2D);
+            ctx2.lineTo(ptX(pts[i].x), ptZ(pts[i].z));
           }
           ctx2.strokeStyle = past;
           ctx2.lineWidth = 2;
@@ -1245,9 +1412,9 @@
           ctx2.stroke();
         }
         ctx2.beginPath();
-        ctx2.moveTo(cx + pts[split].x * SCALE_2D, cy + pts[split].z * SCALE_2D);
+        ctx2.moveTo(ptX(pts[split].x), ptZ(pts[split].z));
         for (let i = split + 1; i < pts.length; i++) {
-          ctx2.lineTo(cx + pts[i].x * SCALE_2D, cy + pts[i].z * SCALE_2D);
+          ctx2.lineTo(ptX(pts[i].x), ptZ(pts[i].z));
         }
         ctx2.strokeStyle = future;
         ctx2.lineWidth = 1.5;
@@ -1260,57 +1427,126 @@
       drawSplit(outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
       drawSplit(retPts, Math.max(0, (sc.progress - 0.5) / 0.5), '#9966ff', 'rgba(153,102,255,0.2)');
 
-      // Bodies at simDay. Moon-mode: Earth at canvas centre, Moon at
-      // the arc's terminal point. Mars-bound: Earth + Mars at their
-      // heliocentric positions. Both modes draw labelled discs so
-      // start + end points are unambiguous on screen.
+      // Bodies at simDay. Moon-mode: heliocentric like Mars but
+      // viewport-centred on live Earth (originAU above). Live Earth +
+      // Moon discs and the launch / arrival anchor rings are all
+      // drawn through ptX/ptZ so they share the same coordinate frame
+      // as the trajectory tube.
       if (isMoonMission) {
-        // Earth at canvas center — disc + halo + label.
-        const eg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 14);
-        eg.addColorStop(0, 'rgba(75,156,211,0.9)');
+        const eLive = earthPos(simDay);
+        const mLive = moonHelioPos(simDay);
+        const eAnchor = outPts.length > 0 ? outPts[0] : eLive;
+        const mAnchor = outPts.length > 0 ? outPts[outPts.length - 1] : mLive;
+        // LAUNCH anchor ring (where Earth was at depDay).
+        ctx2.beginPath();
+        ctx2.arc(ptX(eAnchor.x), ptZ(eAnchor.z), 14, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
+        ctx2.lineWidth = 1.2;
+        ctx2.stroke();
+        ctx2.font = "bold 9px 'Space Mono', monospace";
+        ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx2.textAlign = 'left';
+        ctx2.fillText('LAUNCH', ptX(eAnchor.x) + 18, ptZ(eAnchor.z) + 3);
+        // ARRIVAL anchor ring (where Moon will be at arrDay).
+        ctx2.beginPath();
+        ctx2.arc(ptX(mAnchor.x), ptZ(mAnchor.z), 13, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(220,220,220,0.7)';
+        ctx2.lineWidth = 1.2;
+        ctx2.stroke();
+        ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx2.fillText('ARRIVAL', ptX(mAnchor.x) + 16, ptZ(mAnchor.z) + 3);
+        // Live Earth — halo + disc.
+        const ex = ptX(eLive.x);
+        const ey = ptZ(eLive.z);
+        const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
+        eg.addColorStop(0, 'rgba(75,156,211,0.6)');
         eg.addColorStop(1, 'rgba(75,156,211,0)');
         ctx2.beginPath();
-        ctx2.arc(cx, cy, 14, 0, Math.PI * 2);
+        ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
         ctx2.fillStyle = eg;
         ctx2.fill();
         ctx2.beginPath();
-        ctx2.arc(cx, cy, 6, 0, Math.PI * 2);
+        ctx2.arc(ex, ey, 6, 0, Math.PI * 2);
         ctx2.fillStyle = '#4b9cd3';
         ctx2.fill();
-        ctx2.font = "9px 'Space Mono', monospace";
+        ctx2.fillText('EARTH', ex + 11, ey + 3);
+        // Live Moon — halo + disc.
+        const mx = ptX(mLive.x);
+        const my = ptZ(mLive.z);
+        const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 10);
+        mg.addColorStop(0, 'rgba(220,220,220,0.5)');
+        mg.addColorStop(1, 'rgba(220,220,220,0)');
+        ctx2.beginPath();
+        ctx2.arc(mx, my, 10, 0, Math.PI * 2);
+        ctx2.fillStyle = mg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(mx, my, 4, 0, Math.PI * 2);
+        ctx2.fillStyle = '#dddddd';
+        ctx2.fill();
+        ctx2.fillText('MOON', mx + 9, my + 3);
+      } else {
+        // Mars-bound: live Earth + Mars orbit the Sun as the spacecraft
+        // flies; the launch / arrival anchors stay pinned to outPts[0]
+        // and outPts[N-1]. Two pieces of state to read separately so
+        // the user can watch Mars travel toward the ARRIVAL ring as the
+        // rocket transits.
+        const eLive = earthPos(simDay);
+        const mLive = marsPos(simDay);
+        const eAnchor = outPts.length > 0 ? outPts[0] : eLive;
+        const mAnchor = outPts.length > 0 ? outPts[outPts.length - 1] : mLive;
+        const ex = ptX(eLive.x);
+        const ey = ptZ(eLive.z);
+        const mx = ptX(mLive.x);
+        const my = ptZ(mLive.z);
+        const eAx = ptX(eAnchor.x);
+        const eAy = ptZ(eAnchor.z);
+        const mAx = ptX(mAnchor.x);
+        const mAy = ptZ(mAnchor.z);
+        // LAUNCH anchor ring (where Earth was at depDay).
+        ctx2.beginPath();
+        ctx2.arc(eAx, eAy, 12, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
+        ctx2.lineWidth = 1.2;
+        ctx2.stroke();
+        ctx2.font = "bold 9px 'Space Mono', monospace";
         ctx2.fillStyle = 'rgba(255,255,255,0.85)';
         ctx2.textAlign = 'left';
-        ctx2.fillText('EARTH', cx + 11, cy + 3);
-        // Moon at the arc terminus — same treatment, white disc.
-        const moonPt = outPts[outPts.length - 1];
-        if (moonPt) {
-          const mx = cx + moonPt.x * SCALE_2D;
-          const my = cy + moonPt.z * SCALE_2D;
-          const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 10);
-          mg.addColorStop(0, 'rgba(220,220,220,0.85)');
-          mg.addColorStop(1, 'rgba(220,220,220,0)');
-          ctx2.beginPath();
-          ctx2.arc(mx, my, 10, 0, Math.PI * 2);
-          ctx2.fillStyle = mg;
-          ctx2.fill();
-          ctx2.beginPath();
-          ctx2.arc(mx, my, 4, 0, Math.PI * 2);
-          ctx2.fillStyle = '#dddddd';
-          ctx2.fill();
-          ctx2.fillStyle = 'rgba(255,255,255,0.85)';
-          ctx2.fillText('MOON', mx + 9, my + 3);
-        }
-      } else {
-        const ePos = earthPos(simDay);
-        const mPos = marsPos(simDay);
+        ctx2.fillText('LAUNCH', eAx + 16, eAy + 3);
+        // ARRIVAL anchor ring (where the arc terminates).
         ctx2.beginPath();
-        ctx2.arc(cx + ePos.x * SCALE_2D, cy + ePos.z * SCALE_2D, 5, 0, Math.PI * 2);
+        ctx2.arc(mAx, mAy, 11, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(193,68,14,0.7)';
+        ctx2.lineWidth = 1.2;
+        ctx2.stroke();
+        ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx2.fillText('ARRIVAL', mAx + 14, mAy + 3);
+        // Live Earth — halo + disc.
+        const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
+        eg.addColorStop(0, 'rgba(75,156,211,0.6)');
+        eg.addColorStop(1, 'rgba(75,156,211,0)');
+        ctx2.beginPath();
+        ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
+        ctx2.fillStyle = eg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(ex, ey, 5, 0, Math.PI * 2);
         ctx2.fillStyle = '#4b9cd3';
         ctx2.fill();
+        ctx2.fillText('EARTH', ex + 9, ey + 3);
+        // Live Mars — halo + disc.
+        const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 12);
+        mg.addColorStop(0, 'rgba(193,68,14,0.6)');
+        mg.addColorStop(1, 'rgba(193,68,14,0)');
         ctx2.beginPath();
-        ctx2.arc(cx + mPos.x * SCALE_2D, cy + mPos.z * SCALE_2D, 4, 0, Math.PI * 2);
+        ctx2.arc(mx, my, 12, 0, Math.PI * 2);
+        ctx2.fillStyle = mg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(mx, my, 4, 0, Math.PI * 2);
         ctx2.fillStyle = '#c1440e';
         ctx2.fill();
+        ctx2.fillText('MARS', mx + 9, my + 3);
       }
 
       // Spacecraft glyph — gold chevron sitting at sc.pos. The
@@ -1319,8 +1555,8 @@
       // the shape is small enough (~6 px) that any heading drift
       // doesn't drag it off the arc visually. Matches the 3D sprite.
       const heading = spacecraftHeading(simDay, arcTimeline, outPts, retPts);
-      const sx = cx + sc.pos.x * SCALE_2D;
-      const sy = cy + sc.pos.z * SCALE_2D;
+      const sx = ptX(sc.pos.x);
+      const sy = ptZ(sc.pos.z);
       ctx2.save();
       ctx2.translate(sx, sy);
       ctx2.rotate(Math.atan2(heading.z, heading.x));
@@ -1376,24 +1612,30 @@
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
       }
+      // Moon-mode: re-aim the camera at the live Earth heliocentric
+      // position each frame so the Earth+Moon system stays centred as
+      // Earth orbits the Sun. Mars-mode keeps the static Sun-centred
+      // framing — early-bail to avoid the heliocentric position recompute.
+      if (isMoonMission) updateCam();
 
-      // Moon-mode rendering (v0.1.8): Earth fixed at origin, Moon at
-      // an exaggerated visual distance, Sun + orbit rings + Mars
-      // hidden so the cislunar scene reads as Earth-centered. The
-      // spacecraft animates along the Earth→Moon arc whose points
-      // were precomputed in applyMissionAsLoaded.
+      // Moon-mode rendering: heliocentric, same framing as Mars.
+      // Sun + Earth orbit visible in the background; Earth at its
+      // live heliocentric position; Moon orbits Earth at the
+      // exaggerated MOON_FLY_RADIUS_AU (real Earth-Moon distance is
+      // sub-pixel at this scale). The cislunar arc runs from
+      // Earth-at-dep to Moon-at-arr in heliocentric AU. Mars + Mars
+      // orbit hidden so the scene focuses on Earth+Moon.
       if (isMoonMission) {
-        earthMesh.position.set(0, 0, 0);
         marsMesh.visible = false;
-        sunCore.visible = false;
-        sunGlow.visible = false;
-        earthOrbitLine.visible = false;
+        sunCore.visible = true;
+        sunGlow.visible = true;
+        earthOrbitLine.visible = true;
         marsOrbitLine.visible = false;
         moonMesh.visible = true;
-        // Moon position: from the precomputed last point of outPts
-        // (= moon endpoint), in scene-units.
-        const lastPt = outPts[outPts.length - 1];
-        if (lastPt) moonMesh.position.set(lastPt.x * SCALE_3D, 0, lastPt.z * SCALE_3D);
+        const ePos = earthPos(simDay);
+        const mPos = moonHelioPos(simDay);
+        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        moonMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
       } else {
         marsMesh.visible = true;
         sunCore.visible = true;
@@ -1401,25 +1643,18 @@
         earthOrbitLine.visible = true;
         marsOrbitLine.visible = true;
         moonMesh.visible = false;
-        // Earth + Mars stay locked to the arc's actual endpoints
-        // (outPts[0] and outPts[N-1]) instead of their live
-        // heliocentric positions. /fly visualises a single mission
-        // and the user expects Earth + arc-start, Mars + arc-end +
-        // flyby ring to converge at the same point. The arc IS the
-        // ground truth; the planets sit where the trajectory says
-        // they're meeting the spacecraft.
-        if (outPts.length > 0) {
-          const ePt = outPts[0];
-          const mPt = outPts[outPts.length - 1];
-          earthMesh.position.set(ePt.x * SCALE_3D, 0, ePt.z * SCALE_3D);
-          marsMesh.position.set(mPt.x * SCALE_3D, 0, mPt.z * SCALE_3D);
-        } else {
-          // First-paint fallback before mission data lands.
-          const ePos = earthPos(simDay);
-          const mPos = marsPos(simDay);
-          earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
-          marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
-        }
+        // Earth + Mars orbit the Sun in real time as the spacecraft
+        // flies. The fixed convergence points (where Earth was at
+        // launch and where Mars will be at arrival) are marked by
+        // the persistent LAUNCH / ARRIVAL anchor rings, which stay
+        // pinned to outPts[0] and outPts[N-1] in the marker $effect.
+        // Separating "live planet body" from "mission anchor" lets
+        // the user watch Mars travel along its orbit toward the
+        // arrival ring as the spacecraft transits.
+        const ePos = earthPos(simDay);
+        const mPos = marsPos(simDay);
+        earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
@@ -1728,7 +1963,7 @@
       aria-label={m.fly_scrub_label()}
     />
     <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
-      {#each [1, 7, 30, 90] as sp}
+      {#each isMoonMission ? [0.1, 0.5, 1, 3] : [1, 7, 30, 90] as sp}
         <button
           type="button"
           class="speed-pill"

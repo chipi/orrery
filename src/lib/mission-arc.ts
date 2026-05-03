@@ -123,6 +123,90 @@ export function outboundArc(
 }
 
 /**
+ * Transfer ellipse — true Keplerian arc from p1 to p2 with Sun at
+ * one focus. Both endpoints land EXACTLY on the input positions, so
+ * /fly can pin the arc start to live earthPos(dep_day) and the arc
+ * end to live destPos(arr_day) without drift.
+ *
+ * Semi-major axis is the Hohmann-style baseline a = (r1 + r2) / 2.
+ * Not a Lambert solution — TOF is not constrained — but visually a
+ * proper ellipse with Sun at focus, sweeping from p1 to p2 in the
+ * CCW (prograde) direction. Replaces the older outboundArc +
+ * post-hoc rotation, which could only pin one endpoint.
+ *
+ * Direction: prograde (CCW) sweep from p1's heliocentric angle to
+ * p2's heliocentric angle. For inner planets (Venus, Mercury) where
+ * p2's r is smaller than p1's, the arc still works — perihelion
+ * shifts toward the inner planet automatically.
+ */
+export function transferEllipse(p1: Vec2, p2: Vec2, steps: number): Vec2[] {
+  const r1 = Math.hypot(p1.x, p1.z);
+  const r2 = Math.hypot(p2.x, p2.z);
+  const dx = p2.x - p1.x;
+  const dz = p2.z - p1.z;
+  const chord = Math.hypot(dx, dz);
+  const a = (r1 + r2) / 2;
+
+  // F2 (other focus) lies at the intersection of two circles:
+  //   |P - p1| = 2a - r1
+  //   |P - p2| = 2a - r2
+  // Solved in the chord's local frame.
+  const rA = 2 * a - r1;
+  const rB = 2 * a - r2;
+  const aProj = (chord * chord + rA * rA - rB * rB) / (2 * chord);
+  const hSqr = rA * rA - aProj * aProj;
+  const h = Math.sqrt(Math.max(0, hSqr));
+  const mx = p1.x + (dx * aProj) / chord;
+  const mz = p1.z + (dz * aProj) / chord;
+  const perpX = -dz / chord;
+  const perpZ = dx / chord;
+  const F2candidates: Vec2[] = [
+    { x: mx + h * perpX, z: mz + h * perpZ },
+    { x: mx - h * perpX, z: mz - h * perpZ },
+  ];
+
+  // CCW transfer angle in heliocentric frame, in [0, 2π).
+  const ang1 = Math.atan2(p1.z, p1.x);
+  const ang2 = Math.atan2(p2.z, p2.x);
+  let desiredSweep = ang2 - ang1;
+  while (desiredSweep <= 0) desiredSweep += 2 * Math.PI;
+  while (desiredSweep > 2 * Math.PI) desiredSweep -= 2 * Math.PI;
+
+  // Pick the F2 whose resulting elliptic CCW sweep from p1 to p2
+  // matches the desired heliocentric transfer angle most closely.
+  // The two candidates produce mirror-image ellipses; only one has
+  // the CCW arc that flows in the prograde direction.
+  let best: { F2: Vec2; sweep: number; nu1: number; periAngle: number } | null = null;
+  for (const F2 of F2candidates) {
+    const periAngle = Math.atan2(-F2.z, -F2.x);
+    const nu1 = ang1 - periAngle;
+    const nu2 = ang2 - periAngle;
+    let sweep = nu2 - nu1;
+    while (sweep <= 0) sweep += 2 * Math.PI;
+    while (sweep > 2 * Math.PI) sweep -= 2 * Math.PI;
+    const err = Math.abs(sweep - desiredSweep);
+    if (!best || err < Math.abs(best.sweep - desiredSweep)) {
+      best = { F2, sweep, nu1, periAngle };
+    }
+  }
+  // Guaranteed by the loop above; assert for type narrowing.
+  if (!best) throw new Error('transferEllipse: no focus solution');
+
+  const cMag = Math.hypot(best.F2.x, best.F2.z) / 2;
+  const e = cMag / a;
+  const p = a * (1 - e * e);
+
+  const pts: Vec2[] = [];
+  for (let i = 0; i <= steps; i++) {
+    const nu = best.nu1 + (best.sweep * i) / steps;
+    const r = p / (1 + e * Math.cos(nu));
+    const ang = nu + best.periAngle;
+    pts.push({ x: r * Math.cos(ang), z: r * Math.sin(ang) });
+  }
+  return pts;
+}
+
+/**
  * Return arc — parametric sweep from Mars flyby to Earth arrival.
  * Per ADR-009 + the P03 prototype's implementation, this takes the
  * LONG CCW path (≈321.5°) so the spacecraft loops around most of the
@@ -169,6 +253,8 @@ export interface MissionTimeline {
 }
 
 function lerpPoint(arc: Vec2[], t: number): Vec2 {
+  if (arc.length === 0) return { x: 0, z: 0 };
+  if (arc.length === 1) return { x: arc[0].x, z: arc[0].z };
   const last = arc.length - 1;
   const f = Math.max(0, Math.min(1, t)) * last;
   const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
@@ -184,15 +270,24 @@ export function spacecraftPos(
   out: Vec2[],
   ret: Vec2[],
 ): { pos: Vec2; phase: 'pre-launch' | 'outbound' | 'return' | 'arrived'; progress: number } {
+  // One-way mission detection — ret arc is empty, so flyby_day == arr_day.
+  const isOneWay = ret.length === 0;
+  const outTerminus = out.length > 0 ? out[out.length - 1] : { x: 0, z: 0 };
+
   if (day <= timeline.dep_day) {
-    return { pos: out[0], phase: 'pre-launch', progress: 0 };
+    return { pos: out.length > 0 ? out[0] : { x: 0, z: 0 }, phase: 'pre-launch', progress: 0 };
   }
   if (day <= timeline.flyby_day) {
-    const t = (day - timeline.dep_day) / (timeline.flyby_day - timeline.dep_day);
+    const span = timeline.flyby_day - timeline.dep_day;
+    const t = span > 0 ? (day - timeline.dep_day) / span : 1;
     return { pos: lerpPoint(out, t), phase: 'outbound', progress: t * 0.5 };
   }
+  if (isOneWay) {
+    return { pos: outTerminus, phase: 'arrived', progress: 1 };
+  }
   if (day <= timeline.arr_day) {
-    const t = (day - timeline.flyby_day) / (timeline.arr_day - timeline.flyby_day);
+    const span = timeline.arr_day - timeline.flyby_day;
+    const t = span > 0 ? (day - timeline.flyby_day) / span : 1;
     return { pos: lerpPoint(ret, t), phase: 'return', progress: 0.5 + t * 0.5 };
   }
   return { pos: ret[ret.length - 1], phase: 'arrived', progress: 1 };
@@ -216,17 +311,22 @@ export function spacecraftHeading(
     const i = Math.min(out.length - 2, Math.floor(t * (out.length - 1)));
     return tangent(out, i);
   }
-  if (phase === 'return') {
+  if (phase === 'return' && ret.length >= 2) {
     const t = (day - timeline.flyby_day) / (timeline.arr_day - timeline.flyby_day);
     const i = Math.min(ret.length - 2, Math.floor(t * (ret.length - 1)));
     return tangent(ret, i);
   }
-  return tangent(ret, ret.length - 2);
+  // Arrived (or empty return): hold last outbound heading.
+  if (ret.length >= 2) return tangent(ret, ret.length - 2);
+  if (out.length >= 2) return tangent(out, out.length - 2);
+  return { x: 1, z: 0 };
 }
 
 function tangent(arc: Vec2[], i: number): Vec2 {
-  const a = arc[i];
-  const b = arc[Math.min(i + 1, arc.length - 1)];
+  if (arc.length < 2) return { x: 1, z: 0 };
+  const safeI = Math.max(0, Math.min(arc.length - 2, i));
+  const a = arc[safeI];
+  const b = arc[safeI + 1];
   const dx = b.x - a.x;
   const dz = b.z - a.z;
   const mag = Math.hypot(dx, dz) || 1;

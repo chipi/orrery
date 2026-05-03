@@ -1,0 +1,24 @@
+{
+  "id": "starship-mars-crew",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp.",
+  "sector": "private",
+  "dest": "MARS",
+  "color": "#005288",
+  "year": 2031,
+  "status": "PLANNED",
+  "departure_date": "2031-09-15",
+  "arrival_date": "2032-04-15",
+  "transit_days": 213,
+  "vehicle": "Starship (Super Heavy + Starship + on-orbit refilling tanker fleet)",
+  "payload": "Crew of ~10 + ISRU equipment + return propellant production hardware",
+  "delta_v": "~21 km/s (round trip with Mars surface refuelling)",
+  "data_quality": "partial",
+  "credit": "© SpaceX — Long-term crewed Mars architecture per Elon Musk's IAC presentations (2016 / 2017 / 2024) and SpaceX Mars program statements. Round-trip enabled by ISRU propellant production on the Mars surface (CH₄ + LOX from CO₂ + H₂O). Date is illustrative — the 2031 Mars launch window is one of several long-term targets discussed by SpaceX; actual schedule depends on Starship maturation, prior cargo missions, and ISRU validation. Round-trip arc is the conceptual architecture, not a flight plan.",
+  "links": [
+    { "l": "SpaceX Mars program — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "intro" },
+    { "l": "Making Life Multi-Planetary (Musk, IAC 2017)", "u": "https://www.spacex.com/media/making_life_multiplanetary_transcript_2017.pdf", "t": "core" },
+    { "l": "Starship overview (SpaceX)", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" }
+  ],
+  "flight_data_quality": "unknown"
+}

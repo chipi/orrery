@@ -17,6 +17,7 @@
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
+  import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
@@ -156,9 +157,8 @@
   ];
 
   // Small bodies: dwarf planets, comets, the one known interstellar
-  // visitor. Visual model is intentionally minimal — labelled dots on
-  // dashed orbit rings (no textures, no clickable panel yet) since the
-  // primary signal is "these objects exist in our solar system."
+  // visitor. Clickable on the 2D view since v0.x.x — same data drives
+  // the SmallBodyPanel's overview/technical/learn tabs.
   type SmallBody = {
     id: string;
     name: string;
@@ -169,9 +169,16 @@
     L0: number;
     incl: number;
     color: string;
-    mission_visited: string | null;
+    radius_km?: number;
+    discovered?: string;
+    mission_visited?: string | null;
+    next_perihelion?: string;
+    description?: string;
+    wiki?: string;
+    note?: string;
   };
   const SMALL_BODIES: SmallBody[] = smallBodiesData.bodies as SmallBody[];
+  const smallBodyById = new Map(SMALL_BODIES.map((b) => [b.id, b]));
 
   /**
    * Sample points along a body's trajectory in heliocentric AU-pixel
@@ -247,6 +254,11 @@
   let panelOpen = $state(false);
   let sunPanelOpen = $state(false);
   let sizesOpen = $state(false);
+  let selectedSmallBodyId: string | null = $state(null);
+  let smallBodyPanelOpen = $state(false);
+  let selectedSmallBody = $derived(
+    selectedSmallBodyId ? (smallBodyById.get(selectedSmallBodyId) ?? null) : null,
+  );
 
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by sizesOpen) so the dialog is keyboard-dismissible without a
@@ -316,11 +328,20 @@
     selectedId = id;
     panelOpen = true;
     sunPanelOpen = false;
+    smallBodyPanelOpen = false;
   }
 
   function selectSun() {
     sunPanelOpen = true;
     panelOpen = false;
+    smallBodyPanelOpen = false;
+  }
+
+  function selectSmallBody(id: string) {
+    selectedSmallBodyId = id;
+    smallBodyPanelOpen = true;
+    panelOpen = false;
+    sunPanelOpen = false;
   }
 
   function closePanel() {
@@ -795,6 +816,7 @@
 
     // World-space planet positions, updated by draw2d each frame.
     const planet2dPos = new Map<string, { x: number; y: number }>();
+    const smallBody2dPos = new Map<string, { x: number; y: number }>();
 
     const resize2d = () => {
       c2.width = c2.clientWidth;
@@ -833,11 +855,8 @@
       // the inner planets effectively unclickable. The 18 px floor (in
       // world units after the zoom inverse) gives a ~330 ms aim window
       // on the fastest body without overlapping neighbouring orbits.
-      // (Small bodies — dwarfs, comets, interstellar — are added here
-      // when their detail panel lands; for now this only widens the
-      // existing planets-only pick.)
       const FLOOR = 18;
-      let best: { id: string; d: number } | null = null;
+      let best: { id: string; d: number; kind: 'planet' | 'small' } | null = null;
       for (const p of PLANETS) {
         const pos = planet2dPos.get(p.id);
         if (!pos) continue;
@@ -845,9 +864,24 @@
         const dy = wy - pos.y;
         const d = Math.hypot(dx, dy);
         const hitR = Math.max(p.size2 * 3.5, FLOOR / zoom2d);
-        if (d < hitR && (!best || d < best.d)) best = { id: p.id, d };
+        if (d < hitR && (!best || d < best.d)) best = { id: p.id, d, kind: 'planet' };
       }
-      if (best) selectPlanet(best.id);
+      // Small bodies (dwarfs, comets, interstellar) — same generous
+      // floor. They're drawn as 1.6/2.2px dots and tend to sit alone
+      // on their orbit rings, so a wide hit radius is safe.
+      for (const b of SMALL_BODIES) {
+        const pos = smallBody2dPos.get(b.id);
+        if (!pos) continue;
+        const dx = wx - pos.x;
+        const dy = wy - pos.y;
+        const d = Math.hypot(dx, dy);
+        const drawR = b.type === 'comet' ? 1.6 : 2.2;
+        const hitR = Math.max(drawR * 4, FLOOR / zoom2d);
+        if (d < hitR && (!best || d < best.d)) best = { id: b.id, d, kind: 'small' };
+      }
+      if (!best) return;
+      if (best.kind === 'planet') selectPlanet(best.id);
+      else selectSmallBody(best.id);
     };
 
     const on2dMouseDown = (e: MouseEvent) => {
@@ -1252,8 +1286,10 @@
       // Small bodies — dots + labels. Closed-orbit bodies advance with
       // simT; interstellar visitors stay pinned at perihelion (since
       // they passed through once and are gone).
+      smallBody2dPos.clear();
       SMALL_BODIES.forEach((b) => {
         const { x: px, z: py } = smallBodyPosition(b, simT);
+        smallBody2dPos.set(b.id, { x: px, y: py });
 
         // Glow
         const gl = ctx2.createRadialGradient(px, py, 0, px, py, 6);
@@ -1548,6 +1584,12 @@
 />
 
 <SunPanel sun={localizedSun} open={sunPanelOpen} onClose={closeSunPanel} />
+
+<SmallBodyPanel
+  body={selectedSmallBody}
+  open={smallBodyPanelOpen}
+  onClose={() => (smallBodyPanelOpen = false)}
+/>
 
 <style>
   .explore {

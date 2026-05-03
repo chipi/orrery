@@ -663,8 +663,7 @@
         <!-- Rocket reference photo (Wikimedia Commons, fetched at build).
              {#key} forces a re-mount on rocket change so a previous
              onerror's display:none doesn't persist into the next
-             rocket selection (Ariane 6 has no image; users would
-             otherwise see all subsequent figures stay hidden). -->
+             rocket selection. -->
         {#key selectedRocket.id}
           <figure class="rocket-photo">
             <img
@@ -678,6 +677,13 @@
             />
           </figure>
         {/key}
+
+        {#if selectedRocket.launch_site}
+          <div class="row launch-site">
+            <span class="label">LAUNCH SITE</span>
+            <span class="value">{selectedRocket.launch_site}</span>
+          </div>
+        {/if}
 
         <div class="row">
           <span class="label">{m.plan_label_vehicle_dv()}</span>

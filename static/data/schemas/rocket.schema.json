@@ -48,6 +48,11 @@
         "description": "Cumulative ∆v from LEO to upper-stage burnout for trans-Mars injection"
       },
       "isp_s": { "type": "number", "exclusiveMinimum": 0, "description": "Upper-stage Isp (specific impulse, seconds)" },
+      "launch_site": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Default launch facility — shown next to the rocket in /plan."
+      },
       "data_quality": {
         "enum": ["good", "partial", "reconstructed"],
         "description": "Confidence in the spec values. 'good' = published vendor user guide or demonstrated. 'partial' = derived from related figures or vendor target. 'reconstructed' = back-calculated from a single demonstrated mission."

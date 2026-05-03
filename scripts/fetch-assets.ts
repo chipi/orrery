@@ -349,6 +349,47 @@ const ROCKET_IMAGES: RocketImage[] = [
     filename: 'Long_March_5_rolling_out_at_WSLS.jpg',
     license: 'CC BY 4.0 — China News Service',
   },
+  {
+    id: 'ariane-6',
+    filename: 'Ariane_6_on_pad.jpg',
+    license: 'CC BY-SA — ESA / Wikimedia',
+  },
+  {
+    id: 'lvm3',
+    filename:
+      'LVM3_M4,_Chandrayaan-3_-_Launch_vehicle_lifting_off_from_the_Second_Launch_Pad_(SLP)_of_SDSC-SHAR,_Sriharikota_(edit).jpg',
+    license: 'Government Open Data License — India / ISRO',
+  },
+  {
+    id: 'pslv-xl',
+    filename: 'PSLV-C11_launch2.jpg',
+    license: 'Government Open Data License — India / ISRO',
+  },
+  {
+    id: 'h3',
+    filename: '2024.11.04 H3ロケット4号機きらめき３号打上げ.jpg',
+    license: 'CC BY 4.0 — JAXA',
+  },
+  {
+    id: 'h-iia',
+    filename: 'H-IIA_F12_launching_IGS-R2.jpg',
+    license: 'CC BY 4.0 — JAXA',
+  },
+  {
+    id: 'long-march-3b',
+    filename: 'The_Launch_of_Long_March_3B_Rocket.jpg',
+    license: 'CC BY 4.0 — China',
+  },
+  {
+    id: 'soyuz-fregat',
+    filename: 'Soyuz_TMA-5_launch.jpg',
+    license: 'Public domain (NASA)',
+  },
+  {
+    id: 'proton-m',
+    filename: 'Proton-K-Zarya.jpg',
+    license: 'Public domain (NASA)',
+  },
 ];
 
 const ROCKETS_DIR = 'static/images/rockets';

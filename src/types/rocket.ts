@@ -20,6 +20,9 @@ export interface Rocket {
   data_quality: DataQuality;
   credit: string;
   links: Array<{ l: string; u: string; t: LinkTier }>;
+  /** Default launch facility — shown next to the rocket in /plan so
+   *  users can see where the vehicle physically lifts off from.  */
+  launch_site?: string;
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   type?: string;

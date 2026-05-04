@@ -12,9 +12,9 @@
 
   const links = [
     { href: `${base}/explore`, label: m.nav_explore() },
+    { href: `${base}/missions`, label: m.nav_missions() },
     { href: `${base}/plan`, label: m.nav_plan() },
     { href: `${base}/fly`, label: m.nav_fly() },
-    { href: `${base}/missions`, label: m.nav_missions() },
     { href: `${base}/earth`, label: m.nav_earth() },
     { href: `${base}/moon`, label: m.nav_moon() },
   ];

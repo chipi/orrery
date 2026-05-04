@@ -34,12 +34,12 @@
   --font-editorial: 'Crimson Pro', serif;
 
   /* Sizes */
-  --size-nav-title: 26px;
-  --size-label: 8px;
-  --size-link: 7px;
+  --size-nav-title: 30px;
+  --size-label: 10px;
+  --size-link: 12px;
 
   /* Spacing */
-  --nav-height: 52px;
+  --nav-height: 60px;
   --panel-width: 314px;
   --bottom-bar-h: 68px;
   --border-radius: 4px;

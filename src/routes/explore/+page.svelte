@@ -190,32 +190,46 @@
    * Used by both 2D and 3D rendering. Pure function — `auToPx` is the
    * only side-input.
    */
-  function sampleOrbitPoints(b: SmallBody, steps: number): { x: number; z: number }[] {
-    const pts: { x: number; z: number }[] = [];
+  function sampleOrbitPoints(b: SmallBody, steps: number): { x: number; y: number; z: number }[] {
+    // Build the orbit in two stages so inclination renders correctly
+    // in 3D: (1) generate points in the orbit's local plane (xL, 0, zL)
+    // — closed ellipse for dwarfs/comets, open hyperbola for
+    // interstellar visitors. (2) tilt out of the ecliptic by `incl`
+    // around the local X-axis (line of nodes is arbitrary without Ω,
+    // which we don't carry — visually this still gives Pluto its
+    // 17° lift, ʻOumuamua its 122° plunge, etc.). (3) rotate the
+    // tilted plane about Y by L0 so the perihelion direction sits
+    // where the data wants it. The 2D top-down view consumes only
+    // {x, z} and ignores y, so a flat ecliptic projection still
+    // works for 2D mode.
+    const pts: { x: number; y: number; z: number }[] = [];
     const cosL = Math.cos(b.L0);
     const sinL = Math.sin(b.L0);
+    const incRad = ((b.incl ?? 0) * Math.PI) / 180;
+    const cosI = Math.cos(incRad);
+    const sinI = Math.sin(incRad);
+    function pushTilted(xL: number, zL: number) {
+      // Tilt around local X: (xL, 0, zL) → (xL, -zL·sinI, zL·cosI)
+      const yT = -zL * sinI;
+      const zT = zL * cosI;
+      // Rotate about world Y by L0.
+      pts.push({ x: xL * cosL - zT * sinL, y: yT, z: xL * sinL + zT * cosL });
+    }
     if (b.type === 'interstellar') {
-      // Hyperbolic: r = |a|(e²-1)/(1+e·cos ν). Sample ν in the valid
-      // interval; render as an open polyline (NOT closed).
       const absA = Math.abs(b.a);
       const semiLatus = absA * (b.e * b.e - 1);
-      const nuMax = Math.acos(-1 / b.e) * 0.985; // shy of asymptote so we don't get +∞
+      const nuMax = Math.acos(-1 / b.e) * 0.985;
       for (let i = 0; i <= steps; i++) {
         const nu = -nuMax + (2 * nuMax * i) / steps;
         const rAu = semiLatus / (1 + b.e * Math.cos(nu));
-        const xL = Math.cos(nu) * auToPx(rAu);
-        const zL = Math.sin(nu) * auToPx(rAu);
-        pts.push({ x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL });
+        pushTilted(Math.cos(nu) * auToPx(rAu), Math.sin(nu) * auToPx(rAu));
       }
     } else {
-      // Closed ellipse with foci offset toward Sun.
       const semiMajor = auToPx(b.a);
       const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
       for (let i = 0; i <= steps; i++) {
         const a = (i / steps) * Math.PI * 2;
-        const xL = Math.cos(a) * semiMajor - semiMajor * b.e;
-        const zL = Math.sin(a) * semiMinor;
-        pts.push({ x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL });
+        pushTilted(Math.cos(a) * semiMajor - semiMajor * b.e, Math.sin(a) * semiMinor);
       }
     }
     return pts;
@@ -226,16 +240,23 @@
    * bodies pin to perihelion (no time evolution — they passed through
    * once in 2017 and are gone). Closed orbits advance with simT.
    */
-  function smallBodyPosition(b: SmallBody, simT: number): { x: number; z: number } {
+  function smallBodyPosition(b: SmallBody, simT: number): { x: number; y: number; z: number } {
+    // Mirrors the same tilt-then-rotate transform as sampleOrbitPoints
+    // so the body sits exactly on the rendered orbit ring in 3D. 2D
+    // callers ignore y (top-down ecliptic projection).
     const cosL = Math.cos(b.L0);
     const sinL = Math.sin(b.L0);
+    const incRad = ((b.incl ?? 0) * Math.PI) / 180;
+    const cosI = Math.cos(incRad);
+    const sinI = Math.sin(incRad);
     if (b.type === 'interstellar') {
-      // Pin at perihelion (ν=0): a fixed teaching marker.
+      // Pin at perihelion (ν=0). zL=0 at perihelion under our
+      // line-of-nodes-along-X convention, so y=0 here too.
       const absA = Math.abs(b.a);
       const semiLatus = absA * (b.e * b.e - 1);
-      const rAu = semiLatus / (1 + b.e); // ν=0
+      const rAu = semiLatus / (1 + b.e);
       const xL = auToPx(rAu);
-      return { x: xL * cosL, z: xL * sinL };
+      return { x: xL * cosL, y: 0, z: xL * sinL };
     }
     const semiMajor = auToPx(b.a);
     const semiMinor = semiMajor * Math.sqrt(1 - b.e * b.e);
@@ -243,7 +264,9 @@
     const ang = b.L0 + simT * ((2 * Math.PI) / Tyr);
     const xL = Math.cos(ang) * semiMajor - semiMajor * b.e;
     const zL = Math.sin(ang) * semiMinor;
-    return { x: xL * cosL - zL * sinL, z: xL * sinL + zL * cosL };
+    const yT = -zL * sinI;
+    const zT = zL * cosI;
+    return { x: xL * cosL - zT * sinL, y: yT, z: xL * sinL + zT * cosL };
   }
 
   let container: HTMLDivElement | undefined = $state();
@@ -565,7 +588,7 @@
       // for interstellar bodies. Use Line (open) for interstellar so
       // the trajectory doesn't visually close back on itself. Ref
       // captured so the LAYERS panel can hide it with the body.
-      const orbitPts = sampleOrbitPoints(b, 128).map((p) => new THREE.Vector3(p.x, 0, p.z));
+      const orbitPts = sampleOrbitPoints(b, 128).map((p) => new THREE.Vector3(p.x, p.y, p.z));
       const trajColor =
         b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c;
       const TrajCtor = b.type === 'interstellar' ? THREE.Line : THREE.LineLoop;
@@ -1509,20 +1532,28 @@
         // pinned-to-perihelion for interstellar visitors (Oumuamua).
         // Comet tails recompute per-frame pointing anti-solar.
         smallBodyObjs.forEach(({ mesh, pickAid, tail, body }) => {
-          const { x: px, z: pz } = smallBodyPosition(body, simT);
-          mesh.position.set(px, 0, pz);
-          pickAid.position.set(px, 0, pz);
+          const { x: px, y: py, z: pz } = smallBodyPosition(body, simT);
+          mesh.position.set(px, py, pz);
+          pickAid.position.set(px, py, pz);
 
           if (tail) {
-            const distFromSun = Math.hypot(px, pz);
-            if (distFromSun > 0) {
+            // 3D anti-solar tail: take the body's heliocentric position
+            // vector, normalise it, and extend by tailLen so the comet
+            // tail points away from the Sun in full 3D — important now
+            // that y is non-zero for inclined orbits.
+            const dist = Math.hypot(px, py, pz);
+            if (dist > 0) {
               const tailLen = 12;
-              const tx = px + (px / distFromSun) * tailLen;
-              const tz = pz + (pz / distFromSun) * tailLen;
+              const ux = px / dist;
+              const uy = py / dist;
+              const uz = pz / dist;
+              const tx = px + ux * tailLen;
+              const ty = py + uy * tailLen;
+              const tz = pz + uz * tailLen;
               tail.geometry.dispose();
               tail.geometry = new THREE.BufferGeometry().setFromPoints([
-                new THREE.Vector3(px, 0, pz),
-                new THREE.Vector3(tx, 0, tz),
+                new THREE.Vector3(px, py, pz),
+                new THREE.Vector3(tx, ty, tz),
               ]);
             }
           }

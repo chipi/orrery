@@ -1,6 +1,30 @@
 {
   "name": "orrery",
-  "version": "0.0.1",
+  "version": "0.3.0",
+  "description": "Browser-based solar system explorer + Mars / lunar mission simulator. Real Keplerian orbital mechanics, real missions from Luna 9 to Artemis II, fully static SPA.",
+  "homepage": "https://chipi.github.io/orrery/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chipi/orrery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chipi/orrery/issues"
+  },
+  "author": "Marko Dragoljević",
+  "keywords": [
+    "orrery",
+    "solar-system",
+    "orbital-mechanics",
+    "mars",
+    "moon",
+    "spaceflight",
+    "education",
+    "kepler",
+    "lambert",
+    "porkchop",
+    "sveltekit",
+    "threejs"
+  ],
   "private": true,
   "license": "MIT",
   "type": "module",

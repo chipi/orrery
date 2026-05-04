@@ -217,7 +217,7 @@ State board for all RFCs and ADRs.
 | RFC | Title | Status | Closes into | Closing evidence |
 |---|---|---|---|---|
 | RFC-001 | Router design — hash vs history, param handling | Closed · superseded by ADR-013 | ADR-013 | Pre-empted by ADR-013 (SvelteKit router); see RFC-001 closure note |
-| RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before 28 mission files written |
+| RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before mission files were written (28 at v0.1, 32 at v0.3) |
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Decided · closed by ADR-022 | ADR-022 | Closed at Slice 3 (3a-8) |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Decided · closed by ADR-024 | ADR-024 | Closed at Slice 4 (4a-6) |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |

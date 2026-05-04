@@ -766,17 +766,30 @@
     depDay: number,
     tofDays: number,
   ) {
-    const flybyOffset = Math.floor(tofDays * FLYBY_OFFSET_FRACTION);
+    // FLYBY = free-return: outbound terminates at the destination
+    // encounter (flyby_day == depDay + tofDays — the porkchop's TOF is
+    // the time-to-target), and the return leg sweeps back to Earth at
+    // a synthesised arr_day. We don't have a precise return-leg ToF
+    // from the porkchop (it solves outbound only), so we approximate
+    // total mission duration as 2× outbound — close enough for the
+    // educational visual; the returnArc geometry adjusts to whatever
+    // Earth position arr_day picks out.
+    //
+    // LANDING = one-way: outbound terminates at flyby_day = 0.95·tof
+    // for the visual flyby waypoint, arr_day = dep + tof for landing.
+    const isFlyby = type === 'FLYBY';
+    const flybyOffset = isFlyby ? tofDays : Math.floor(tofDays * FLYBY_OFFSET_FRACTION);
+    const arrOffset = isFlyby ? tofDays * 2 : tofDays;
     const newTimeline: MissionTimeline = {
       dep_day: depDay,
       flyby_day: depDay + flybyOffset,
-      arr_day: depDay + tofDays,
+      arr_day: depDay + arrOffset,
     };
     arcTimeline = newTimeline;
-    isFreeReturn = false;
+    isFreeReturn = isFlyby;
     activeDestination = dest;
     isMoonMission = false;
-    const arcs = buildArcs(newTimeline, false, dest);
+    const arcs = buildArcs(newTimeline, isFlyby, dest);
     outPts = arcs.out;
     retPts = arcs.ret;
     resetCamera?.();
@@ -788,7 +801,7 @@
       dv_total: defaultScenarioBase.dv_total_km_s,
       dv_used: defaultScenarioBase.dv_total_km_s * 0.94,
       dep_label: `Day ${depDay}`,
-      arr_label: `Day ${depDay + tofDays}`,
+      arr_label: `Day ${depDay + arrOffset}`,
       timeline: newTimeline,
       isFromData: true,
     };

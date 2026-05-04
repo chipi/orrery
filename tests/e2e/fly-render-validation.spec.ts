@@ -128,7 +128,11 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
         timeout: 10_000,
       });
       const s = await readRenderState(page);
-      expect(s.outLen).toBe(201);
+      // ARC_STEPS in src/routes/fly/+page.svelte was bumped to 600 in
+      // v0.3 (transferEllipse ships at higher resolution so the
+      // spacecraft sits visually on the splined tube). outPts has
+      // ARC_STEPS + 1 vertices.
+      expect(s.outLen).toBe(601);
       expect(s.outVertexHash.length).toBeGreaterThan(0);
       // Hash format: 11 vertices (5 + 1 + 5) separated by '|', each
       // "x,z" with 6-decimal floats. So 10 separators.

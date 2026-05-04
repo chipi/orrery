@@ -20,7 +20,7 @@
     R_MARS_AU,
     type DestinationId,
   } from '$lib/lambert-grid.constants';
-  import { getMission, getScenario } from '$lib/data';
+  import { getMission, getMissionIndex, getScenario } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
@@ -847,18 +847,23 @@
       }
     }
 
-    const mars = await getMission(id, 'mars', locale);
+    // Look the id up in the mission index first so we know which dest
+    // folder to fetch. The previous implementation probed mars/ then
+    // moon/ unconditionally, which leaked a 404 to the SvelteKit server
+    // log (and the smoke test) for every Moon mission. The index is
+    // tiny and aggressively cached by data.ts, so this is essentially
+    // free.
+    const idx = await getMissionIndex();
     if (myLoadId !== currentLoadId) return;
-    if (mars) {
-      applyMissionAsLoaded(mars);
-      return;
-    }
-
-    const moon = await getMission(id, 'moon', locale);
-    if (myLoadId !== currentLoadId) return;
-    if (moon) {
-      applyMissionAsLoaded(moon);
-      return;
+    const entry = idx.find((m) => m.id === id);
+    if (entry) {
+      const dest = entry.dest === 'MARS' ? 'mars' : 'moon';
+      const m = await getMission(id, dest, locale);
+      if (myLoadId !== currentLoadId) return;
+      if (m) {
+        applyMissionAsLoaded(m);
+        return;
+      }
     }
 
     loadFailed = true;

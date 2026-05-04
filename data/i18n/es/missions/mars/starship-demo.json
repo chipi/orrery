@@ -1,0 +1,12 @@
+{
+  "name": "Starship Demo",
+  "type": "DEMO MARCIANA NO TRIPULADA · PLANIFICADA",
+  "first": "Primer sistema de lanzamiento totalmente reutilizable que intenta aterrizar en Marte",
+  "description": "Una demostración no tripulada de la arquitectura Starship a Marte: lanzamiento sobre Super Heavy, repostaje en LEO desde una variante cisterna, luego inyección transmarciana de una Starship totalmente cargada y descenso propulsado a la superficie marciana. El objetivo declarado de SpaceX es la ventana de lanzamiento de 2026-2027; la realidad de la ingeniería (Starship aún resolviendo la fiabilidad de vuelo orbital y el repostaje en órbita aún no demostrado) hace más probable 2028 o más tarde. Si tiene éxito, invierte la economía de carga útil a Marte — de miles de kg a cien toneladas por aterrizaje.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Starship desde Boca Chica o Cape Canaveral — primer lanzamiento interplanetario súper-pesado.", "type": "nominal" },
+    { "met": 1, "label": "REPOSTAJE ORBITAL", "note": "Encuentro con cisternas y transferencia de propelente en LEO a lo largo de varios vuelos.", "type": "nominal" },
+    { "met": 2, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana desde un estado en LEO totalmente cargado.", "type": "nominal" },
+    { "met": 274, "label": "ATERRIZAJE EN MARTE", "note": "Descenso propulsado a la superficie de Marte — sin paracaídas, sin airbags, sin grúa aérea.", "type": "info" }
+  ]
+}

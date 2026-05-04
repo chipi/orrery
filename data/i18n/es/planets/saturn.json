@@ -1,0 +1,13 @@
+{
+  "name": "Saturno",
+  "type": "Gigante gaseoso · Anillos",
+  "fact": "La densidad de Saturno es 0,687 g/cm³ — menos que el agua. Su sistema de anillos abarca 282 000 km pero solo tiene ~10 metros de espesor.",
+  "bio": "El planeta menos denso — flotaría sobre el agua. El sistema de anillos abarca 282 000 km pero solo tiene metros de espesor. La inclinación de 26,73° hace que la Tierra vea los anillos en distintos ángulos a lo largo de la órbita de 29 años de Saturno.",
+  "links": [
+    { "l": "Saturno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Saturno_(planeta)", "t": "intro" },
+    { "l": "Saturno (NASA Solar System Exploration)", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "Archivo de la misión Cassini (NASA)", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "Anillos de Saturno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Anillos_de_Saturno", "t": "core" },
+    { "l": "Los anillos de Saturno son jóvenes (Science 2019)", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "InSight",
+  "type": "ATERRIZADOR · VOLADA",
+  "first": "Primer sismómetro en Marte; primer lanzamiento interplanetario desde la Costa Oeste de EE. UU.",
+  "description": "InSight le dio a Marte su primer estetoscopio. Su sismómetro, desplegado por un brazo robótico sobre el regolito, registró más de 1300 martemotos — incluido uno de magnitud 5 en 2022, el más grande jamás detectado en otro planeta. Los datos revelaron la estructura interior de Marte: un núcleo fundido de 1800 km de radio, una corteza gruesa y una sorprendente estratificación del manto. El experimento de flujo de calor con el \"topo\" falló cuando el regolito resultó demasiado cohesivo para su diseño autoperforador. La misión terminó cuando la acumulación de polvo en los paneles solares redujo la energía por debajo del umbral operativo.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 401 desde Vandenberg AFB — primera misión interplanetaria lanzada desde la Costa Oeste de EE. UU.", "type": "nominal" },
+    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 205, "label": "EDA", "note": "Entrada atmosférica, paracaídas, aterrizaje con cohetes de descenso terminal en Elysium Planitia.", "type": "nominal" },
+    { "met": 205.01, "label": "ATERRIZAJE", "note": "El aterrizador llega 2018-11-26 19:54 UTC.", "type": "nominal" },
+    { "met": 213, "label": "SISMÓMETRO DESPLEGADO", "note": "El brazo robótico coloca el instrumento SEIS sobre la superficie y lo protege del viento.", "type": "info" },
+    { "met": 1683, "label": "FIN DE MISIÓN", "note": "Última transmisión de baja energía 2022-12-15. Paneles solares demasiado cubiertos de polvo para recargarse.", "type": "warning" }
+  ]
+}

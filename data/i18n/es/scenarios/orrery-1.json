@@ -1,0 +1,19 @@
+{
+  "name": "ORRERY DEMO",
+  "dep_label": "Salida desde la Tierra",
+  "arr_label": "Retorno a la Tierra",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Falcon Heavy despega. Retorno libre — sin aterrizaje.", "type": "nominal" },
+    { "met": 0.4, "label": "ENCENDIDO ITM", "note": "Inyección Transmarciana: 3,61 km/s. Velocidad de escape alcanzada.", "type": "nominal" },
+    { "met": 1, "label": "REVISIÓN DÍA 1", "note": "Primera revisión de salud de sistemas completa. Todo nominal.", "type": "nominal" },
+    { "met": 60, "label": "MCT-1", "note": "Corrección de medio curso 1: 35 m/s.", "type": "nominal" },
+    { "met": 200, "label": "TRÁNSITO", "note": "Tránsito de salida. La Tierra se aleja.", "type": "info" },
+    { "met": 220, "label": "FALLO DE COMS", "note": "Breve pérdida de señal en banda X (8 s). DSN reanuda. Causa: oclusión por penacho de propulsor. Sin pérdida de datos.", "type": "warning" },
+    { "met": 259, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima: ~300 km de altitud. Asistencia gravitatoria inicia el retorno.", "type": "nominal" },
+    { "met": 260, "label": "TRAYECTORIA DE RETORNO", "note": "Asistencia gravitatoria de retorno libre completa. Nave en trayectoria a la Tierra.", "type": "nominal" },
+    { "met": 310, "label": "MEDIO CURSO 3", "note": "MCT-3: 22 m/s. Trayectoria de retorno corregida.", "type": "nominal" },
+    { "met": 400, "label": "MITAD DEL REGRESO", "note": "Pasado el punto medio del viaje de regreso.", "type": "info" },
+    { "met": 480, "label": "PREP. REENTRADA", "note": "Aproximación final. Verificación del escudo térmico.", "type": "nominal" },
+    { "met": 509, "label": "LLEGADA A LA TIERRA", "note": "Entrada atmosférica. Misión completa.", "type": "nominal" }
+  ]
+}

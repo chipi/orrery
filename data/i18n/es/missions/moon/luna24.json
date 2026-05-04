@@ -1,0 +1,14 @@
+{
+  "name": "Luna 24",
+  "type": "RETORNO DE MUESTRAS · VOLADA",
+  "first": "Última misión lunar soviética; último aterrizaje lunar no tripulado durante 37 años",
+  "description": "La última misión lunar de la Unión Soviética y el último aterrizaje lunar no tripulado hasta el Chang'e 3 chino en 2013 — un hueco de 37 años. El núcleo perforado extrajo regolito desde 2 m de profundidad y devolvió 170 g a la Tierra. Entre las muestras: minerales que contenían trazas de agua, prefigurando el descubrimiento de depósitos sustanciales de hielo de agua lunar 30 años después. Luna 24 también marcó el cierre del programa lunar soviético; los recursos se trasladaron a Marte y Venus.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Proton-K desde Baikonur 1976-08-09.", "type": "nominal" },
+    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
+    { "met": 9, "label": "ATERRIZAJE", "note": "Aterrizaje suave en Mare Crisium 1976-08-18.", "type": "nominal" },
+    { "met": 9.5, "label": "PERFORACIÓN", "note": "Núcleo de muestra extraído desde 2 m de profundidad.", "type": "info" },
+    { "met": 10, "label": "ASCENSO", "note": "La etapa de ascenso despega; inyección transterrestre.", "type": "nominal" },
+    { "met": 13, "label": "RETORNO A LA TIERRA", "note": "La cápsula aterriza en Surgut, URSS 1976-08-22 con 170 g de regolito.", "type": "info" }
+  ]
+}

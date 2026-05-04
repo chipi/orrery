@@ -1,0 +1,12 @@
+{
+  "name": "Hope Probe",
+  "type": "ORBITADOR · ACTIVA",
+  "first": "Primera misión interplanetaria árabe",
+  "description": "La Misión Marciana de los Emiratos — Al Amal, \"Esperanza\" — se concibió en 2014 para conmemorar el 50 aniversario de la federación de los EAU en 2021. El equipo del MBRSC se asoció con la Universidad de Colorado, Arizona State y UC Berkeley para diseñar e integrar la nave, pero la construyeron ellos mismos. La órbita científica (un día de duración, 27 000 km × 43 000 km) cubre todas las longitudes y horas del día, capturando patrones meteorológicos que ningún otro orbitador marciano puede resolver. La misión tuvo éxito al primer intento, convirtiendo a los EAU en la quinta agencia en llegar a Marte.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "H-IIA 202 desde Tanegashima — Mitsubishi Heavy Industries proporcionó el lanzamiento.", "type": "nominal" },
+    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 205, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Encendido de propulsores de 27 minutos captura a Hope en órbita marciana 2021-02-09.", "type": "nominal" },
+    { "met": 250, "label": "ÓRBITA CIENTÍFICA", "note": "Maniobras de ajuste sitúan a Hope en su órbita científica de 55 horas.", "type": "info" }
+  ]
+}

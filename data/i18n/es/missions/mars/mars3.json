@@ -1,0 +1,13 @@
+{
+  "name": "Mars 3",
+  "type": "ORBITADOR · ATERRIZADOR · VOLADA",
+  "first": "Primera nave en realizar un aterrizaje suave en Marte",
+  "description": "La audaz misión doble de la Unión Soviética a Marte en 1971 — Mars 2 y Mars 3 lanzados con 9 días de diferencia. El aterrizador de Mars 2 se estrelló; el de Mars 3 logró el primer aterrizaje suave en Marte pero solo transmitió durante ~110 segundos antes de la pérdida de señal, posiblemente debido a la tormenta de polvo global que asolaba el planeta en ese momento. El orbitador operó durante 8 meses, devolviendo cientos de imágenes y mediciones atmosféricas. A pesar de la breve misión en superficie, Mars 3 demostró que el problema del descenso y aterrizaje en Marte tenía solución.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Proton-K con etapa superior Blok-D desde Baikonur.", "type": "nominal" },
+    { "met": 188, "label": "INSERCIÓN ORBITAL DEL ORBITADOR", "note": "El orbitador captura en órbita marciana durante una tormenta de polvo global.", "type": "nominal" },
+    { "met": 188.05, "label": "SEPARACIÓN DEL ATERRIZADOR", "note": "El aterrizador se separa y comienza la entrada atmosférica.", "type": "nominal" },
+    { "met": 188.1, "label": "CONTACTO CON SUPERFICIE", "note": "Primer aterrizaje suave en Marte; comienza la transmisión.", "type": "nominal" },
+    { "met": 188.101, "label": "PÉRDIDA DE SEÑAL", "note": "Tras ~110 segundos, la señal se interrumpe permanentemente. Causa no confirmada; principal sospechoso es la tormenta de polvo.", "type": "warning" }
+  ]
+}

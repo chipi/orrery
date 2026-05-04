@@ -1,0 +1,13 @@
+{
+  "name": "Blue Moon MK1",
+  "type": "ATERRIZADOR DE CARGA · PLANIFICADA",
+  "first": "Primer vuelo de la arquitectura del aterrizador lunar Blue Moon de Blue Origin",
+  "description": "El primer aterrizador lunar Blue Moon de carga de Blue Origin, contratado bajo el programa CLPS (Commercial Lunar Payload Services) de la NASA. Un vehículo de descenso de una sola etapa propulsado por el motor criogénico BE-7, diseñado para entregar hasta ~3 toneladas de carga útil a la superficie lunar. Se lanza en el New Glenn de Blue Origin desde Cape Canaveral, realiza la inyección translunar con la segunda etapa del New Glenn, y luego ejecuta la inserción en órbita lunar y el descenso propulsado. El vuelo de carga Mark 1 precede al Mark 2 con calificación humana, contratado para apoyar el aterrizaje lunar tripulado del Artemis V de la NASA.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO NEW GLENN", "note": "Despega desde Cape Canaveral LC-36; la primera etapa regresa para recuperación.", "type": "nominal" },
+    { "met": 0.2, "label": "ITL", "note": "La segunda etapa del New Glenn realiza el encendido de inyección translunar.", "type": "nominal" },
+    { "met": 1.5, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 4, "label": "ILO", "note": "Inserción en órbita lunar mediante el motor principal BE-7.", "type": "nominal" },
+    { "met": 4.1, "label": "DESCENSO PROPULSADO", "note": "Descenso del BE-7 modulado a la superficie lunar — primer aterrizaje lunar de Blue Origin.", "type": "info" }
+  ]
+}

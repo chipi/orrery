@@ -1,0 +1,13 @@
+{
+  "name": "Mars Express",
+  "type": "ORBITADOR · ACTIVA",
+  "first": "Primera misión interplanetaria de Europa; orbitador marciano no-NASA de mayor duración",
+  "description": "La primera misión de la ESA a un planeta que no fuera la Tierra. El orbitador ha producido el registro continuo más largo de la atmósfera de Marte, mapeando depósitos de hielo de agua, plumas de metano y el clima tridimensional del planeta. Beagle 2, el aterrizador británico que transportaba, llegó a la superficie pero nunca desplegó completamente los paneles solares — declarado perdido en 2004, encontrado intacto por el Mars Reconnaissance Orbiter de la NASA en 2015. El orbitador está en su tercera década de operaciones.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Soyuz-FG / Fregat desde Baikonur.", "type": "nominal" },
+    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 200, "label": "LIBERACIÓN DE BEAGLE 2", "note": "El aterrizador se separa del orbitador para el descenso independiente.", "type": "nominal" },
+    { "met": 206, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Encendido del motor principal de 37 minutos captura al orbitador en órbita marciana el día de Navidad de 2003.", "type": "nominal" },
+    { "met": 212, "label": "BEAGLE 2 EN SILENCIO", "note": "Primera señal esperada no recibida; el aterrizador se da por perdido.", "type": "warning" }
+  ]
+}

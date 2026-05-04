@@ -1,0 +1,13 @@
+{
+  "name": "El Sol",
+  "type": "Estrella · Secuencia principal de tipo G",
+  "fact": "El Sol contiene el 99,86 % de toda la masa del sistema solar. Su gravedad mantiene en órbita todo — desde Mercurio hasta la nube de Oort. Cada segundo fusiona 600 millones de toneladas de hidrógeno en helio, liberando la energía que ha sostenido la vida en la Tierra durante 4500 millones de años.",
+  "bio": "Una estrella de secuencia principal de tipo G de 4600 millones de años, a la mitad de su vida de 10 000 millones de años. El Sol rota diferencialmente — su ecuador tarda 25 días, sus polos 35. En unos 5000 millones de años agotará el hidrógeno de su núcleo, se expandirá hasta convertirse en una gigante roja y engullirá a los planetas interiores. La influencia gravitatoria del Sol define la heliosfera hasta aproximadamente 120 UA.",
+  "links": [
+    { "l": "Sol — Wikipedia", "u": "https://es.wikipedia.org/wiki/Sol", "t": "intro" },
+    { "l": "El Sol (NASA Solar System Exploration)", "u": "https://science.nasa.gov/sun/", "t": "intro" },
+    { "l": "Parker Solar Probe (NASA)", "u": "https://science.nasa.gov/mission/parker-solar-probe/", "t": "core" },
+    { "l": "Solar Dynamics Observatory (NASA)", "u": "https://sdo.gsfc.nasa.gov/", "t": "core" },
+    { "l": "Modelo Solar Estándar (Annual Review of Astronomy 2022)", "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029", "t": "deep" }
+  ]
+}

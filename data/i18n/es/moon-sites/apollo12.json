@@ -1,0 +1,9 @@
+{
+  "name": "Apollo 12",
+  "mission_type": "Aterrizador tripulado",
+  "site_name": "Oceanus Procellarum",
+  "crew": ["Pete Conrad", "Alan Bean"],
+  "left": "Etapa de descenso · ALSEP · bandera · piezas recuperadas del Surveyor 3",
+  "fact": "El aterrizaje de precisión — Conrad tomó tierra a 183 m de la sonda no tripulada Surveyor 3 (1967). Recuperaron piezas para devolverlas a la Tierra, demostrando que las naves sobreviven años en la Luna sin daños por radiación o micrometeoritos. Una prueba de concepto para futuras misiones de encuentro.",
+  "capability": "Primer aterrizaje de precisión en un punto designado — el prerrequisito para cualquier arquitectura de retorno de muestras con encuentro, incluido Marte."
+}

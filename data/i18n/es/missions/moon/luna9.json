@@ -1,0 +1,12 @@
+{
+  "name": "Luna 9",
+  "type": "ATERRIZADOR NO TRIPULADO · VOLADA",
+  "first": "Primer aterrizaje suave en la Luna; primeras fotografías desde la superficie lunar",
+  "description": "Tras 11 fracasos soviéticos y 5 misiones Ranger estadounidenses diseñadas únicamente para estrellarse, Luna 9 se convirtió en la primera nave en aterrizar suavemente en otro mundo. Las nueve imágenes panorámicas devueltas a lo largo de 8 minutos zanjaron un debate científico que duraba mucho tiempo: la superficie de la Luna era sólida, no un mar de polvo lo suficientemente profundo como para tragarse un aterrizador. La misión duró 3 días antes de que se agotara la batería. En unos pocos meses, todas las misiones rumbo a la Luna posteriores adoptaron el aterrizaje suave como referencia.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Molniya-M desde Baikonur 1966-01-31.", "type": "nominal" },
+    { "met": 3, "label": "ATERRIZAJE", "note": "Aterrizaje suave en Oceanus Procellarum 1966-02-03 18:45 UTC. Primer aterrizaje suave en otro mundo.", "type": "nominal" },
+    { "met": 3.01, "label": "PRIMERAS IMÁGENES", "note": "Nueve imágenes panorámicas devueltas en tres sesiones de transmisión.", "type": "info" },
+    { "met": 6, "label": "PÉRDIDA DE SEÑAL", "note": "Batería agotada; última transmisión 1966-02-06.", "type": "warning" }
+  ]
+}

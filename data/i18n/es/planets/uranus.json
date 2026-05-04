@@ -1,0 +1,13 @@
+{
+  "name": "Urano",
+  "type": "Gigante helado",
+  "fact": "Urano rota de lado — inclinación axial de 98°. Su polo norte apunta casi directamente al Sol durante la mitad de su órbita de 84 años.",
+  "bio": "Inclinado casi sobre un costado (97,77°). Cada polo recibe 42 años de luz solar continua, luego 42 años de oscuridad. Casi seguro causado por una colisión masiva antigua.",
+  "links": [
+    { "l": "Urano — Wikipedia", "u": "https://es.wikipedia.org/wiki/Urano_(planeta)", "t": "intro" },
+    { "l": "Urano (NASA Solar System Exploration)", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
+    { "l": "Voyager 2 en Urano (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
+    { "l": "Uranus Orbiter and Probe — Decadal Survey", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
+    { "l": "Origen de la inclinación de Urano (Astrophysical Journal 2020)", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+  ]
+}

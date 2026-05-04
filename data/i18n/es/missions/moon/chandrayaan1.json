@@ -1,0 +1,12 @@
+{
+  "name": "Chandrayaan-1",
+  "type": "ORBITADOR · VOLADA",
+  "first": "Primera misión lunar de India; confirmó agua extendida en la Luna",
+  "description": "La primera nave interplanetaria de la ISRO. El orbitador entregó la Sonda de Impacto Lunar a la superficie — el primer objeto indio en otro mundo — y llevó 11 instrumentos de 6 países. El instrumento Moon Mineralogy Mapper (M3) de la NASA, alojado en Chandrayaan-1, hizo el descubrimiento que reescribió los libros de texto: las moléculas de agua están extendidas por toda la superficie lunar, no solo encerradas en cráteres polares en sombra. La misión terminó abruptamente en agosto de 2009 cuando la ISRO perdió la comunicación con la nave.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "PSLV-XL (C11) desde Sriharikota.", "type": "nominal" },
+    { "met": 17, "label": "ILO", "note": "Inserción en órbita lunar 2008-11-08.", "type": "nominal" },
+    { "met": 24, "label": "IMPACTO MIP", "note": "La Sonda de Impacto Lunar dirigida a un aterrizaje duro cerca del polo sur.", "type": "info" },
+    { "met": 320, "label": "CONTACTO PERDIDO", "note": "Comunicación perdida 2009-08-29; 312 días de operaciones.", "type": "warning" }
+  ]
+}

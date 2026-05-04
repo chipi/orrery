@@ -1,0 +1,6 @@
+{
+  "name": "Cinturón GEO",
+  "short": "GEO",
+  "description": "El anillo geoestacionario. A exactamente 35 786 km, el período orbital iguala a la rotación de la Tierra — los satélites parecen fijos en el cielo. Satélites meteorológicos GOES, Meteosat, miles de satélites de comunicaciones. La altitud específica donde la física y la utilidad se alinean perfectamente.",
+  "scale_fact": "35 786 km no es un número redondo por diseño — es la altitud exacta donde la gravedad y la velocidad orbital se equilibran para dar un período de 24 horas. La física la eligió."
+}

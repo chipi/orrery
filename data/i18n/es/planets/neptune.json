@@ -1,0 +1,13 @@
+{
+  "name": "Neptuno",
+  "type": "Gigante helado",
+  "fact": "La Voyager 2 sobrevoló Neptuno en 1989 tras un viaje de 12 años. Sigue siendo la única nave que jamás lo ha visitado.",
+  "bio": "El planeta más ventoso — vientos en superficie de 2100 km/h. Descubierto por predicción matemática antes de la observación directa, porque la órbita de Urano mostraba una influencia gravitatoria invisible.",
+  "links": [
+    { "l": "Neptuno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Neptuno_(planeta)", "t": "intro" },
+    { "l": "Neptuno (NASA Solar System Exploration)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "Voyager 2 en Neptuno (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "Descubrimiento de Neptuno — Wikipedia", "u": "https://es.wikipedia.org/wiki/Descubrimiento_de_Neptuno", "t": "core" },
+    { "l": "Modelo del interior de Neptuno (Icarus 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

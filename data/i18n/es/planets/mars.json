@@ -1,0 +1,14 @@
+{
+  "name": "Marte",
+  "type": "Objetivo de misión",
+  "fact": "Las ventanas de lanzamiento Tierra–Marte se abren cada 26 meses — impulsadas por la resonancia orbital. Pierde la ventana y espera dos años.",
+  "bio": "La excentricidad más alta de los planetas interiores (e=0,093). Marte está un 25 % más lejos de la Tierra en afelio que en perihelio — por eso las ventanas de lanzamiento importan tanto.",
+  "missionable": true,
+  "links": [
+    { "l": "Marte — Wikipedia", "u": "https://es.wikipedia.org/wiki/Marte_(planeta)", "t": "intro" },
+    { "l": "Marte (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mars/", "t": "intro" },
+    { "l": "Programa de Exploración de Marte (NASA)", "u": "https://mars.nasa.gov/", "t": "core" },
+    { "l": "Ventanas de lanzamiento Tierra-Marte — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
+    { "l": "Historia climática de Marte (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+  ]
+}

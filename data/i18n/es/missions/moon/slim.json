@@ -1,0 +1,14 @@
+{
+  "name": "SLIM",
+  "type": "ATERRIZADOR DE PRECISIÓN · ACTIVA",
+  "first": "Primer aterrizaje de precisión a menos de 100 m del objetivo en otro mundo",
+  "description": "Hasta SLIM, los aterrizajes lunares tenían una precisión de objetivo del orden del kilómetro. El Smart Lander de la JAXA demostró una precisión de 100 m — la requerida para que misiones tripuladas se acoplen con cargas pre-posicionadas, para que vehículos de ascenso de retorno de muestras encuentren a sus compañeros orbitales, y para cualquier arquitectura futura que dependa de aterrizar en sitios específicos científicamente valiosos. SLIM también fue pionero en la transferencia balística de baja energía a la Luna, tardando 135 días en llegar pero usando menos propelente que las trayectorias directas. Una demostración de la paciencia que las misiones interplanetarias pueden permitirse cuando el cronograma no es la restricción dominante.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "H-IIA 202 desde Tanegashima 2023-09-06.", "type": "nominal" },
+    { "met": 90, "label": "TRANSFERENCIA BALÍSTICA", "note": "Trayectoria de captura balística de baja energía en curso.", "type": "info" },
+    { "met": 130, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
+    { "met": 135, "label": "ATERRIZAJE", "note": "Aterrizaje suave en el cráter Shioli 2024-01-19 15:20 UTC. Dentro de la precisión objetivo: ~55 m del centro.", "type": "nominal" },
+    { "met": 135.01, "label": "ATERRIZAJE INCLINADO", "note": "El aterrizador queda apoyado de morro debido a una anomalía del motor durante el descenso final. Paneles solares inicialmente en sombra.", "type": "warning" },
+    { "met": 144, "label": "ENERGÍA RECUPERADA", "note": "Cambia el ángulo solar; los paneles generan energía; operaciones reanudadas durante un día lunar.", "type": "info" }
+  ]
+}

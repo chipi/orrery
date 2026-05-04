@@ -31,7 +31,7 @@
   // Fixed timeline range (ADR-027 §timeline-navigator). Bound to the
   // launch-cadence epoch so the visual story "1957 → today" is intact.
   const MIN_YEAR = 1957;
-  const MAX_YEAR = 2030;
+  const MAX_YEAR = 2035;
 
   let strip: HTMLDivElement | undefined = $state();
   // Handle currently being dragged: 'from' / 'to' / null.
@@ -56,8 +56,8 @@
 
   // Decade ticks for the strip's axis. Mobile collapses to fewer
   // labels; the parent stylesheet handles which set is shown.
-  const DECADE_TICKS_DESKTOP = [1957, 1965, 1975, 1985, 1995, 2005, 2015, 2025, 2030];
-  const DECADE_TICKS_MOBILE = [1957, 1980, 2000, 2020, 2030];
+  const DECADE_TICKS_DESKTOP = [1957, 1965, 1975, 1985, 1995, 2005, 2015, 2025, 2035];
+  const DECADE_TICKS_MOBILE = [1957, 1980, 2000, 2020, 2035];
 
   // ─── Drag interaction (mouse + touch) ────────────────────────────
   function pointerToYear(clientX: number): number {

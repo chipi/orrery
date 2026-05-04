@@ -14,7 +14,7 @@
   // TimelineNavigator.svelte; copied here so the URL coercion logic
   // doesn't need a cross-component import dance.
   const TIMELINE_MIN_YEAR = 1957;
-  const TIMELINE_MAX_YEAR = 2030;
+  const TIMELINE_MAX_YEAR = 2035;
 
   // ─── State ───────────────────────────────────────────────────────
   let missions: Mission[] = $state([]);

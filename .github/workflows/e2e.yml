@@ -9,6 +9,16 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# When a newer push to main lands while an earlier e2e is still running,
+# cancel the older run rather than letting it complete after the new
+# code is already on main. Without this, fast-consecutive pushes leave
+# a string of "cancelled" runs as the latest workflow status, which
+# renders as a red/grey badge on the README even though every commit
+# eventually passes. Pre-empting cleanly keeps the badge accurate.
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   e2e:
     runs-on: ubuntu-latest

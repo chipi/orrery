@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: [main]
 
+# Cancel earlier in-flight runs on the same ref when a newer push or
+# PR update lands. Keeps the latest commit's status as the source of
+# truth and prevents stale "cancelled" entries from polling the README
+# badge. Per-PR runs cancel cleanly when a new commit pushes to the
+# same PR; main runs cancel cleanly when fast-consecutive pushes land.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci:
     runs-on: ubuntu-latest

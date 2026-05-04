@@ -337,6 +337,59 @@ A documentation site was added outside the original six-slice plan, locked in **
 - Mars landing scenario — free-return only (ADR-009)
 - Social sharing meta tags, PWA manifest — Slice 6 stretch
 
+> **Updates** — Languages other than English: Spanish shipped in v0.3.0; Wave 1 / 2 / 3 continuations tracked on `v0.4.0` milestone (#36 / #37 / #38).
+> Mars landing scenarios: shipped (Curiosity, Perseverance, Mars 3, Viking 1, etc.) per `transferEllipse` — no longer free-return-only.
+> PWA manifest + service worker: shipped in v0.1.12 per ADR-029.
+
 ---
 
-*Orrery · IMPLEMENTATION.md · April 2026*
+## v0.3.0 — i18n closure + heliocentric Apollo + Mariner 4 / Apollo II / concept missions (2026-05-04)
+
+Three large work-streams shipped together. Tagged `v0.3.0`.
+
+### /fly trajectory overhaul
+- New `transferEllipse(p1, p2, steps)` in `src/lib/mission-arc.ts` — true two-point Keplerian arc with Sun at one focus; both endpoints pin to live planet positions. Replaces the old `outboundArc + post-hoc rotation` that could only pin one endpoint. Spacecraft now visibly meets Mars / Moon at arrival.
+- Polyline-based TubeGeometry in /fly so the past-tube drawRange progresses in lock-step with the spacecraft sprite (CatmullRomCurve3 centripetal parameterisation drifted relative to `lerpPoint`-based sc position; replaced with a custom `PolylineCurve3`).
+- `$effect` dependency-tracking fix: refs not yet defined on first run prevented Svelte 5 from registering state deps; the marker + arc-rebuild effects silently skipped subsequent mission swaps. Fixed by reading state into locals before the early-return.
+- Round-trip timeline math: `arr_day = dep + 2*transit_days` for crewed / sample-return missions so scrub maps cleanly across the full mission.
+
+### Apollo / cislunar reframe
+- Moon-mode now heliocentric like Mars (Sun + Earth orbit visible, Moon orbits Earth at the exaggerated `MOON_FLY_RADIUS_AU = 0.15`).
+- Camera follows live Earth, zoomed tight (50u). Sim-speed pills swap to `[0.1, 0.5, 1, 3]×` with 1× default.
+- `moonHelioArc(dep, arr, start, end, steps)` — cislunar trajectory in heliocentric AU; rides Earth's orbital motion + lateral hop to Moon.
+
+### Four new missions (32 total)
+- **Artemis II** (NASA, FLOWN April 2026 — the project's inspiration)
+- **Inspiration Mars** (Tito 2013 free-return concept)
+- **Starship Mars Crew** (SpaceX crewed Mars round-trip concept)
+- **Blue Moon MK1** (Blue Origin cargo lunar lander)
+- All four wired into `fetch-assets` queries + Wikimedia fallbacks; cover, gallery, and trajectory thumbnails downloaded.
+
+### i18n closure (Phases A · B · C)
+**Phase A — docs.** ADR-031 (language list + Wave structure), ADR-032 (font / script — Wave 1; CJK + RTL deferred), ADR-033 (LLM-only translation workflow). RFC-010 → Closed. New `docs/i18n-style-guide.md` with per-language glossary tables (universal symbols, proper nouns, astronomy + orbital-mechanics terms, mission-domain terms).
+
+**Phase B — foundation.** New `src/lib/locale.ts` (`SUPPORTED_LOCALES`, `resolveLocale(url, navigatorLanguage)`, `localeFromPage($page)` — SSR/prerender-safe per ADR-017). New `src/lib/components/LocalePicker.svelte` mounted in Nav (44×44 px, native names, URL `?lang=` only — **no localStorage** per CLAUDE.md / RFC-010 maintainer-decisions). New `src/lib/format.ts` with `Intl.NumberFormat` wrappers (`formatKm`, `formatKmPerSec`, …). Layout-stage `setLanguageTag` in `$effect.pre` so Paraglide picks up the URL locale BEFORE descendant components render their `m.foo()` calls.
+
+**Phase C — Spanish content.** All 277 UI strings translated in `messages/es.json`. 77 editorial overlays under `static/data/i18n/es/` (32 missions + 8 planets + 6 rockets + 1 sun + 1 scenario + 13 earth-objects + 16 moon-sites). Mission and agency proper nouns kept in original (Curiosity, Tianwen-1, Apollo, etc.). New `tests/e2e/i18n-es.spec.ts` smoke per screen.
+
+### Other polish
+- Small bodies (5 dwarfs · 2 comets · 1 interstellar) in `/explore` are now clickable in 3D — added pickAid invisible spheres for click ergonomics, extended hover raycaster, layer-toggle wired to pickAid visibility.
+- Every panel-gallery body has ≥3 photos. Wikimedia filenames sourced via Commons API search rather than guessed.
+- 3D `/fly` torus tube radius dropped 0.7→0.25 (markers no longer dwarf planets).
+- Doc gating sentences added to PRD-007 + RFC-010 to satisfy `validate-data` doc-system check.
+
+**State at v0.3.0:** **560 unit tests** (was 251, +309 — locale, format, expanded gallery + i18n harness) **+ 88+ e2e**, all green. 198 JSON files schema-valid. Lint + typecheck clean.
+
+---
+
+## v0.4.0 backlog
+
+Tracked under `v0.4.0` milestone:
+- **#36** Wave 1 continuation languages — French / German / Portuguese-BR / Italian
+- **#37** Wave 2 — CJK locales (Mandarin / Japanese / Korean) — gated on follow-up CJK font ADR
+- **#38** Wave 3 — Hindi / Arabic-RTL / Russian — gated on follow-up RTL CSS ADR
+- **#30** v0.1.10 audit cleanup — drift fixes carried over
+
+---
+
+*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.3.0*

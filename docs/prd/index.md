@@ -9,3 +9,4 @@
 | PRD-004 | Mission Library | Draft v0.1 | all three |
 | PRD-005 | Earth Orbit Viewer | Draft v0.1 | curious learner, STEM student |
 | PRD-006 | Moon Map | Draft v0.1 | curious learner, STEM student |
+| PRD-007 | Multi-Language Support | Draft v0.1 | all audiences (cross-cutting) |

@@ -1,6 +1,11 @@
 # Orrery — Documentation
 
-This directory contains the full documentation for Orrery, organised into five sections.
+This directory contains the full documentation for Orrery, organised into five sections plus a user guide and translator guide.
+
+## Read first
+
+- **[`user-guide.md`](user-guide.md)** — read-this-first walk-through of the live app, screen by screen, with screenshots. Start here if you want to use Orrery.
+- **[`i18n-style-guide.md`](i18n-style-guide.md)** — binding glossary for translators (per ADR-033).
 
 ## Concept package
 
@@ -24,11 +29,13 @@ Four folders, three planes:
 
 | I want to... | Read... |
 |---|---|
+| Use Orrery | `user-guide.md` |
 | Understand what Orrery is | `concept/02_Project_Concept.md` |
-| See it working | `prototypes/P01_solar-system-explorer.html` |
+| See the original concept | `prototypes/P01_solar-system-explorer.html` |
 | Understand the audiences and promises | `prd/PA.md` |
 | See the design system | `uxs/IA.md` + any `UXS-NNN.md` |
 | Understand the tech stack | `adr/TA.md` |
 | Find open technical questions | `rfc/index.md` |
 | Find locked decisions | `adr/index.md` |
+| Translate Orrery into a new language | `i18n-style-guide.md` |
 | Understand what to build next | `../IMPLEMENTATION.md` |

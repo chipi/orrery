@@ -33,3 +33,6 @@
 | ADR-028 | Outer planets + dwarf planets in /plan | Accepted (closes RFC-008) | May 2026 |
 | ADR-029 | Service worker via @vite-pwa/sveltekit | Accepted (closes Theme C.C1) | May 2026 |
 | ADR-030 | /fly trajectory math: pure-function isolation + per-mission validation | Accepted | May 2026 |
+| ADR-031 | i18n language list and rollout waves | Accepted (closes RFC-010) | May 2026 |
+| ADR-032 | Font and script strategy (Wave 1) | Accepted (closes RFC-010) | May 2026 |
+| ADR-033 | Translation workflow: LLM-only first-pass | Accepted (closes RFC-010) | May 2026 |

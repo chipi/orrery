@@ -1,6 +1,8 @@
 # 04 · Orrery — Technical Architecture
 *April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
+> **Historical note (May 2026)** — this doc describes the originally-proposed Phase 1 stack (vanilla JS + Vite + Docker Compose). The production app has since adopted SvelteKit + TypeScript-strict + GitHub Pages. For the locked production stack see [`../adr/TA.md`](../adr/TA.md) and the ADR index — in particular ADR-011 (TypeScript), ADR-012 (SvelteKit), ADR-013 (History API routing), ADR-014 (CI / Pages), ADR-016 (build-time assets), ADR-017 (Paraglide-js + locale overlays). This doc is preserved as the founding architectural narrative.
+
 ---
 
 ## Purpose

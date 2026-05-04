@@ -11,3 +11,4 @@
 | RFC-007 | Multi-destination porkchop | Decided · closed by ADR-026 | ADR-026 | v0.1.6 |
 | RFC-008 | Outer planets + dwarf planets in /plan | Decided · closed by ADR-028 | ADR-028 | v0.3.0 |
 | RFC-009 | Mission flight params + timeline navigator | Closed · closed by ADR-027 | ADR-027 | v0.1.9 |
+| RFC-010 | Translation & internationalisation strategy | Closed · closed by ADR-031 / ADR-032 / ADR-033 | ADR-031 / 032 / 033 | v0.3.x |

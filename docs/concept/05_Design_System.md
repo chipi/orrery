@@ -1,6 +1,8 @@
 # 05 · Orrery — Design System
 *April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
+> **Historical note (May 2026)** — this doc captures the design system as it stood at prototype stage (April 2026). The production app preserves the design language but ships additional surfaces (locale picker in Nav, REFERENCES diorama, LAYERS panel in /explore, CAPCOM panel in /fly, timeline navigator in /missions, mobile bottom-sheet panels per ADR-018, panel galleries via ADR-026 / ADR-027). For current screens see [`../user-guide.md`](../user-guide.md). The "Three.js from CDN" / "six independent HTML files" lines below are superseded by ADR-016 + ADR-012.
+
 ---
 
 ## Purpose

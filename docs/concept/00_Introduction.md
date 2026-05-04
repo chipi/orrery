@@ -1,6 +1,8 @@
 # 00 · Orrery — Introduction & Reader's Guide
 *April 2026 · v1.0 · Part of the Orrery Concept Package (00 through 05)*
 
+> **Historical note (May 2026)** — this concept package describes Orrery as it was at the prototype stage (April 2026). The production app has since landed in v0.3 with **32 missions** (16 Mars + 16 Moon, including Artemis II and Inspiration Mars), Spanish localisation, the heliocentric Apollo / cislunar reframe, and the i18n architecture closure (ADR-031 / 032 / 033). For the current state, read [`../user-guide.md`](../user-guide.md) and [`../adr/index.md`](../adr/index.md). The concept package is the founding narrative — preserved as a historical artefact.
+
 ---
 
 ## What this package is

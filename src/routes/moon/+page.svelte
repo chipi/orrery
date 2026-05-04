@@ -15,18 +15,28 @@
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
-  // mapping is 1:1 (USA→nasa, China→cnsa, India→isro, USSR→roscosmos,
-  // Japan→jaxa). Russia is distinct from any agency token. Kept inline
-  // because the 2D legend draws into a 2D canvas, which can't read CSS
-  // custom properties without a getComputedStyle call per frame.
+  // mapping is 1:1 (USA→nasa, China→cnsa, India→isro, Russia→roscosmos,
+  // Japan→jaxa). USSR + Russia share a single legend entry/colour
+  // because Roscosmos is the legal/programmatic continuation of the
+  // Soviet space programme (Roscosmos was founded in 1992 from the
+  // Soviet ministry's lunar/Mars assets); their landers belong to the
+  // same lineage on a moon map. Inline (not from --color-*) because
+  // the 2D canvas legend can't read CSS custom properties cheaply.
   const NATION_COLORS: Record<string, string> = {
     USA: '#0B3D91',
-    USSR: '#8B0000',
-    Russia: '#cc4444',
+    'USSR/Russia': '#8B0000',
     China: '#DE2910',
     India: '#FF9933',
     Japan: '#003087',
   };
+
+  // Resolve a site's nation field to a legend key. USSR + Russia
+  // collapse to one entry so the lineage reads as a single space
+  // programme on the legend.
+  function nationKey(nation: string): string {
+    if (nation === 'USSR' || nation === 'Russia') return 'USSR/Russia';
+    return nation;
+  }
 
   let view: '3d' | '2d' = $state('3d');
   let container: HTMLDivElement | undefined = $state();
@@ -38,7 +48,7 @@
   let cleanup: (() => void) | undefined;
 
   function colorFor(site: MoonSite): string {
-    return NATION_COLORS[site.nation] ?? '#888';
+    return NATION_COLORS[nationKey(site.nation)] ?? '#888';
   }
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────

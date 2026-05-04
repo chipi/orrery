@@ -271,18 +271,6 @@
     comets: true,
     interstellar: true,
   });
-  let layersOpen = $state(false);
-
-  // ESC closes any open dropdown — sizes overlay or layers panel.
-  $effect(() => {
-    if (!layersOpen) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') layersOpen = false;
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  });
-
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by sizesOpen) so the dialog is keyboard-dismissible without a
   // svelte:window element inside the {#if} block, which prettier
@@ -1647,68 +1635,68 @@
     class:hidden={view !== '2d'}
     aria-label="2D top-down solar system. Drag to pan, scroll or pinch to zoom, tap planets and Sun for details."
   ></canvas>
-  <button
-    class="toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
-    type="button"
-    onclick={toggleView}
-    aria-pressed={view === '2d'}
-  >
-    {view === '3d' ? '2D' : '3D'}
-  </button>
-  <button
-    class="toggle sizes-toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
-    type="button"
-    onclick={() => (sizesOpen = !sizesOpen)}
-    aria-pressed={sizesOpen}
-    aria-label={m.explore_sizes_toggle()}
-    data-testid="sizes-toggle"
-  >
-    {m.explore_sizes_toggle()}
-  </button>
-
-  <button
-    class="toggle layers-toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
-    class:layers-active={layersOpen}
-    type="button"
-    onclick={() => (layersOpen = !layersOpen)}
-    aria-pressed={layersOpen}
-    aria-label="Toggle visibility layers"
-    data-testid="layers-toggle"
-  >
-    LAYERS
-  </button>
-
-  {#if layersOpen}
-    <!-- LAYERS panel — 4 checkboxes for visibility groups. Closes on
-         ESC or by clicking the toggle again. Sized to fit content,
-         positioned just below the LAYERS button. -->
-    <div
-      class="layers-panel"
-      class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
-      role="dialog"
-      aria-label="Visibility layers"
-    >
-      <label class="layer-row">
-        <input type="checkbox" bind:checked={layers.planets} />
-        <span class="layer-name">PLANETS</span>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" bind:checked={layers.dwarfs} />
-        <span class="layer-name">DWARFS</span>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" bind:checked={layers.comets} />
-        <span class="layer-name">COMETS</span>
-      </label>
-      <label class="layer-row">
-        <input type="checkbox" bind:checked={layers.interstellar} />
-        <span class="layer-name">INTERSTELLAR</span>
-      </label>
+  <!-- HUD controls cluster (top-left). Two rows: mode toggles
+       (2D/3D + SIZES) and visibility-layer chips. Sits on the
+       opposite side of the detail panel so they never collide. -->
+  <div class="hud-controls" role="group" aria-label="View controls">
+    <div class="ctrl-row">
+      <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
+        {view === '3d' ? '2D' : '3D'}
+      </button>
+      <button
+        class="toggle sizes-toggle"
+        type="button"
+        onclick={() => (sizesOpen = !sizesOpen)}
+        aria-pressed={sizesOpen}
+        aria-label={m.explore_sizes_toggle()}
+        data-testid="sizes-toggle"
+      >
+        {m.explore_sizes_toggle()}
+      </button>
     </div>
-  {/if}
+    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.planets}
+        aria-pressed={layers.planets}
+        onclick={() => (layers.planets = !layers.planets)}
+        data-testid="layer-planets"
+      >
+        PLANETS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.dwarfs}
+        aria-pressed={layers.dwarfs}
+        onclick={() => (layers.dwarfs = !layers.dwarfs)}
+        data-testid="layer-dwarfs"
+      >
+        DWARFS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.comets}
+        aria-pressed={layers.comets}
+        onclick={() => (layers.comets = !layers.comets)}
+        data-testid="layer-comets"
+      >
+        COMETS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.interstellar}
+        aria-pressed={layers.interstellar}
+        onclick={() => (layers.interstellar = !layers.interstellar)}
+        data-testid="layer-interstellar"
+      >
+        ISM
+      </button>
+    </div>
+  </div>
 
   {#if sizesOpen}
     <!-- Size comparison overlay — modal-style, mirrors selected planet
@@ -1784,11 +1772,27 @@
   :global(.explore canvas) {
     display: block;
   }
-  .toggle {
+  /* HUD controls cluster — top-left, opposite the detail panel.
+     Two rows (mode toggles + visibility chips). Stays under the nav
+     but always above the canvas. Pinned to the left so it never
+     collides with the right-drawer detail panel on desktop. */
+  .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    right: 16px;
+    left: 16px;
     z-index: 35;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none; /* children re-enable */
+  }
+  .ctrl-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    pointer-events: auto;
+  }
+  .toggle {
     min-width: 44px;
     min-height: 44px;
     padding: 0 14px;
@@ -1803,8 +1807,7 @@
     backdrop-filter: blur(6px);
     transition:
       border-color 120ms,
-      background 120ms,
-      right 200ms;
+      background 120ms;
   }
   .toggle:hover,
   .toggle:focus-visible {
@@ -1812,61 +1815,63 @@
     background: rgba(20, 26, 50, 0.95);
     outline: none;
   }
-  .sizes-toggle {
-    /* Sit just below the 2D/3D toggle. min-height 44px + 8px gap. */
-    top: calc(var(--nav-height) + 12px + 44px + 8px);
-  }
 
-  .layers-toggle {
-    /* Below the SIZES toggle — 2 stacked toggles + the 2D/3D one. */
-    top: calc(var(--nav-height) + 12px + 2 * (44px + 8px));
-  }
-  .layers-toggle.layers-active {
-    border-color: #4ecdc4;
-    background: rgba(20, 30, 50, 0.95);
-  }
-
-  .layers-panel {
-    position: fixed;
-    top: calc(var(--nav-height) + 12px + 3 * (44px + 8px));
-    right: 16px;
-    z-index: 36;
-    background: rgba(8, 10, 22, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    border-radius: 4px;
-    backdrop-filter: blur(8px);
-    padding: 10px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 160px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
-  }
-  .layer-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 4px 0;
-  }
-  .layer-row input[type='checkbox'] {
-    width: 14px;
-    height: 14px;
-    accent-color: #4ecdc4;
-    cursor: pointer;
-  }
-  .layer-name {
+  /* Layer chips — always-visible visibility toggles. Inactive chips
+     are dim outlines; active chips are filled with the teal accent
+     so the on-state is obvious. 32 px tall keeps them subordinate to
+     the 44 px primary toggles above. */
+  .chip {
+    min-height: 32px;
+    padding: 0 10px;
+    background: rgba(8, 10, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.55);
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
   }
-  .layer-row:hover .layer-name {
+  .chip:hover,
+  .chip:focus-visible {
     color: #fff;
+    border-color: rgba(78, 205, 196, 0.6);
+    outline: none;
   }
-  @media (min-width: 768px) {
-    .layers-panel.panel-shifted {
-      right: calc(var(--panel-width, 314px) + 16px);
+  .chip.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.7);
+    color: #4ecdc4;
+  }
+  .chip.active:hover,
+  .chip.active:focus-visible {
+    color: #fff;
+    background: rgba(78, 205, 196, 0.32);
+    border-color: #4ecdc4;
+  }
+
+  /* Mobile: shrink the chip row so 4 chips fit comfortably at 375 px,
+     and tighten the cluster's left gutter. */
+  @media (max-width: 500px) {
+    .hud-controls {
+      left: 8px;
+      top: calc(var(--nav-height) + 8px);
+      gap: 6px;
+    }
+    .toggle {
+      padding: 0 10px;
+      font-size: 12px;
+    }
+    .chip {
+      padding: 0 8px;
+      font-size: 9px;
+      letter-spacing: 1.2px;
+      min-height: 30px;
     }
   }
 
@@ -1930,14 +1935,6 @@
     height: 100%;
   }
 
-  /* When a detail panel is open on desktop, shift the toggle left so
-     it clears the right-drawer (314px wide). On mobile the panel is a
-     bottom-sheet and never overlaps the top-right toggle. */
-  @media (min-width: 768px) {
-    .toggle.panel-shifted {
-      right: calc(var(--panel-width, 314px) + 16px);
-    }
-  }
   .tooltip {
     position: absolute;
     z-index: 24;

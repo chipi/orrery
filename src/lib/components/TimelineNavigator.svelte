@@ -2,7 +2,7 @@
   /**
    * TimelineNavigator — horizontal mission timeline at the top of
    * /missions (v0.1.7 / ADR-027 / UXS-004 §Extension). Mission dots
-   * laid out 1957 → 2030, two drag handles bound a year window, and
+   * laid out 1957 → 2035, two drag handles bound a year window, and
    * the parent filters the card grid below to the windowed range.
    *
    * Reduced-motion users get a paired (from/to) number-input variant

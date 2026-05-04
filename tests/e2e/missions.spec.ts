@@ -156,7 +156,7 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
     await expect(fromHandle).toBeVisible();
     await expect(toHandle).toBeVisible();
     await expect(fromHandle).toHaveAttribute('aria-valuenow', '1957');
-    await expect(toHandle).toHaveAttribute('aria-valuenow', '2030');
+    await expect(toHandle).toHaveAttribute('aria-valuenow', '2035');
   });
 
   test('?from=1969&to=1976 pre-applies window on load', async ({ page }) => {
@@ -180,7 +180,7 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
     const fromHandle = page.getByRole('slider', { name: /FROM/i });
     const toHandle = page.getByRole('slider', { name: /TO/i });
     await expect(fromHandle).toHaveAttribute('aria-valuenow', '1957');
-    await expect(toHandle).toHaveAttribute('aria-valuenow', '2030');
+    await expect(toHandle).toHaveAttribute('aria-valuenow', '2035');
   });
 });
 

@@ -1792,6 +1792,12 @@
     gap: 6px;
     pointer-events: auto;
   }
+  .ctrl-row.chips {
+    /* Layer chips stack vertically so their on/off state reads as a
+       compact left-edge column rather than a wide horizontal strip. */
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .toggle {
     min-width: 44px;
     min-height: 44px;

@@ -17,7 +17,7 @@ import { test, expect } from '@playwright/test';
 const ROUTES = [
   { path: '/explore', token: 'NUESTRO SISTEMA SOLAR' },
   { path: '/plan', token: 'DESTINO' },
-  { path: '/fly', token: 'SIMULADOR DE MISIONES' },
+  { path: '/fly', token: 'VEHÍCULO' },
   { path: '/missions', token: 'BIBLIOTECA DE MISIONES' },
   { path: '/earth', token: 'TIERRA' },
   { path: '/moon', token: 'LUNA' },

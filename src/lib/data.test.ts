@@ -431,11 +431,13 @@ describe('panel gallery loaders (v0.1.10)', () => {
     expect(urls[0]).toMatch(/\/images\/earth-objects\/iss\/01\.jpg$/);
   });
 
-  it('getEarthObjectGallery returns [] for an empty manifest entry (tiangong)', async () => {
-    // tiangong stayed at count=0 — Wikimedia fallback didn't resolve.
-    // The honesty rule: empty array → UI hides the GALLERY tab.
+  it('getEarthObjectGallery returns 3+ URLs for tiangong (post v0.3 top-up)', async () => {
+    // tiangong's manifest count was bumped from 0 to 3 in v0.3 once
+    // Wikimedia API search produced verified filenames (Chinese
+    // Tiangong Space Station, Rear view, Basic experiment cabinet).
+    // Updates here every time the GALLERY_MIN_TARGET changes.
     const urls = await getEarthObjectGallery('tiangong');
-    expect(urls).toEqual([]);
+    expect(urls.length).toBeGreaterThanOrEqual(3);
   });
 
   it('getMoonSiteGallery returns URLs for Apollo 11 (copied from missions)', async () => {

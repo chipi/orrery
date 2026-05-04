@@ -562,6 +562,12 @@
     // anti-solar tail line that updates each frame.
     type SmallBodyObj = {
       mesh: THREE.Mesh;
+      /** Invisible larger sphere co-located with `mesh` for raycaster
+       *  pick assistance — small bodies are 1.2-1.8 unit spheres next
+       *  to Earth's 2.6, so a tight pixel-perfect click radius makes
+       *  them effectively unclickable in 3D. The pickAid widens the
+       *  hit target without bloating the visible body. */
+      pickAid: THREE.Mesh;
       tail?: THREE.Line;
       orbit: THREE.Object3D;
       body: SmallBody;
@@ -599,6 +605,17 @@
       mesh.userData = { smallBodyId: b.id };
       scene.add(mesh);
 
+      // Pick aid — invisible sphere ~3× the body's visible radius.
+      // Carries the same userData so a raycast hit routes through the
+      // existing selectSmallBody() flow. Visibility tracks the body's
+      // layer toggle so hidden bodies stay unselectable.
+      const pickAid = new THREE.Mesh(
+        new THREE.SphereGeometry(b.type === 'comet' ? 4 : 5, 8, 8),
+        new THREE.MeshBasicMaterial({ visible: false, depthWrite: false }),
+      );
+      pickAid.userData = { smallBodyId: b.id };
+      scene.add(pickAid);
+
       // Comet tail (line, recomputed per frame in animate).
       let tail: THREE.Line | undefined;
       if (b.type === 'comet') {
@@ -613,7 +630,7 @@
         scene.add(tail);
       }
 
-      return { mesh, tail, orbit, body: b };
+      return { mesh, pickAid, tail, orbit, body: b };
     });
 
     // Selection ring (3D) — single torus reused for whichever planet is
@@ -654,8 +671,21 @@
 
     const ray3d = new THREE.Raycaster();
     const planetMeshes = planetObjs.map((o) => o.mesh);
-    // Sun is included so it can be picked but it's never the selectedPlanet.
-    const pickables: THREE.Object3D[] = [...planetMeshes, sunMesh];
+    const smallBodyMeshes = smallBodyObjs.map((o) => o.mesh);
+    const smallBodyPickAids = smallBodyObjs.map((o) => o.pickAid);
+    // Pickables: Sun (never selected planet), all planets, all small
+    // bodies (visible mesh + invisible pickAid). The pickAid widens
+    // the click target for the 1.2-1.8u small-body spheres so they're
+    // not effectively unclickable in 3D. Raycaster respects
+    // `.visible: false` on the visible mesh; the LAYERS panel toggles
+    // both `mesh.visible` and `pickAid.visible` for hidden bodies so
+    // they can't be selected when filtered out.
+    const pickables: THREE.Object3D[] = [
+      ...planetMeshes,
+      sunMesh,
+      ...smallBodyMeshes,
+      ...smallBodyPickAids,
+    ];
 
     const tryPick3d = (e: MouseEvent) => {
       const rect = el3d.getBoundingClientRect();
@@ -663,11 +693,17 @@
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const hits = ray3d.intersectObjects(pickables, false);
-      const hit = hits.find((h) => typeof h.object.userData.planetId === 'string');
+      const hit = hits.find(
+        (h) =>
+          typeof h.object.userData.planetId === 'string' ||
+          typeof h.object.userData.smallBodyId === 'string',
+      );
       if (!hit) return;
-      const id = hit.object.userData.planetId as string;
-      if (id === '__sun__') selectSun();
-      else selectPlanet(id);
+      const planetId = hit.object.userData.planetId as string | undefined;
+      const smallBodyId = hit.object.userData.smallBodyId as string | undefined;
+      if (planetId === '__sun__') selectSun();
+      else if (planetId) selectPlanet(planetId);
+      else if (smallBodyId) selectSmallBody(smallBodyId);
     };
 
     // ── 3D hover tooltip — mean orbital velocity (vis-viva at r=a) ──
@@ -679,6 +715,14 @@
     // along the orbit. Until then the value matches the panel's
     // MEAN VELOCITY cell — which is intentional, not a bug.
     const ray3dHover = new THREE.Raycaster();
+    // Hover targets mirror click pickables minus the Sun (Sun has its
+    // own hover handling via SunPanel) so dwarfs / comets / interstellar
+    // bodies get the same vis-viva velocity tooltip as planets.
+    const hoverTargets: THREE.Object3D[] = [
+      ...planetMeshes,
+      ...smallBodyMeshes,
+      ...smallBodyPickAids,
+    ];
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
         if (hoverData) hoverData = null;
@@ -688,25 +732,46 @@
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      const hits = ray3dHover.intersectObjects(planetMeshes, false);
+      const hits = ray3dHover.intersectObjects(hoverTargets, false);
       if (hits.length === 0) {
         if (hoverData) hoverData = null;
         return;
       }
-      const id = hits[0].object.userData.planetId as string;
-      const planet = planetById.get(id);
-      if (!planet) return;
-      // Mean velocity at r=a; vis-viva collapses to sqrt(μ/a). μ ≈ 4π²
-      // in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
-      const v = Math.sqrt((4 * Math.PI ** 2) / planet.a) * 4.7404;
-      hoverData = {
-        name: planet.name,
-        velocity: `~${v.toFixed(2)} km/s orbital velocity`,
-        distance: `${(planet.a * 149.5978707).toFixed(0)} M km from Sun`,
-        extras: `e=${planet.e.toFixed(3)} · i=${planet.incl.toFixed(1)}° · tilt=${planet.axialTilt.toFixed(1)}°`,
-        x: e.clientX,
-        y: e.clientY,
-      };
+      const planetId = hits[0].object.userData.planetId as string | undefined;
+      const smallBodyId = hits[0].object.userData.smallBodyId as string | undefined;
+      // Mean velocity via vis-viva at r=a; collapses to sqrt(μ/a).
+      // μ ≈ 4π² in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
+      if (planetId) {
+        const planet = planetById.get(planetId);
+        if (!planet) return;
+        const v = Math.sqrt((4 * Math.PI ** 2) / planet.a) * 4.7404;
+        hoverData = {
+          name: planet.name,
+          velocity: `~${v.toFixed(2)} km/s orbital velocity`,
+          distance: `${(planet.a * 149.5978707).toFixed(0)} M km from Sun`,
+          extras: `e=${planet.e.toFixed(3)} · i=${planet.incl.toFixed(1)}° · tilt=${planet.axialTilt.toFixed(1)}°`,
+          x: e.clientX,
+          y: e.clientY,
+        };
+      } else if (smallBodyId) {
+        const body = smallBodyById.get(smallBodyId);
+        if (!body) return;
+        const v = Math.sqrt((4 * Math.PI ** 2) / body.a) * 4.7404;
+        const typeLabel =
+          body.type === 'dwarf'
+            ? 'dwarf planet'
+            : body.type === 'comet'
+              ? 'comet'
+              : 'interstellar object';
+        hoverData = {
+          name: body.name,
+          velocity: `~${v.toFixed(2)} km/s mean orbital velocity`,
+          distance: `${(body.a * 149.5978707).toFixed(0)} M km semi-major axis · ${typeLabel}`,
+          extras: `e=${body.e.toFixed(3)} · i=${body.incl.toFixed(1)}°`,
+          x: e.clientX,
+          y: e.clientY,
+        };
+      }
     };
     const onHoverLeave = () => {
       hoverData = null;
@@ -1435,6 +1500,7 @@
                 ? layers.comets
                 : layers.interstellar;
           o.mesh.visible = on;
+          o.pickAid.visible = on;
           o.orbit.visible = on;
           if (o.tail) o.tail.visible = on;
         }
@@ -1454,9 +1520,10 @@
         // Small bodies — closed ellipse advance for dwarfs/comets,
         // pinned-to-perihelion for interstellar visitors (Oumuamua).
         // Comet tails recompute per-frame pointing anti-solar.
-        smallBodyObjs.forEach(({ mesh, tail, body }) => {
+        smallBodyObjs.forEach(({ mesh, pickAid, tail, body }) => {
           const { x: px, z: pz } = smallBodyPosition(body, simT);
           mesh.position.set(px, 0, pz);
+          pickAid.position.set(px, 0, pz);
 
           if (tail) {
             const distFromSun = Math.hypot(px, pz);

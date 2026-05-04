@@ -129,7 +129,7 @@
   .option {
     width: 100%;
     min-height: 44px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -138,9 +138,13 @@
     border: none;
     border-radius: 3px;
     color: var(--color-text);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
+    /* Match the nav wordmark / HUD aesthetic — Bebas Neue display
+       face with wide letter-spacing reads as part of the same UI
+       family as the rest of the chrome (avoids the Crimson Pro
+       italic that felt editorial-out-of-place in a control). */
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 2px;
     cursor: pointer;
     text-align: left;
   }
@@ -151,14 +155,16 @@
     color: #4ecdc4;
   }
   .option .native {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    letter-spacing: 0;
+    /* Inherits display font from .option. No italic — UI label, not
+       editorial body text. */
+    color: inherit;
   }
   .option .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.55);
   }
   .option.active .tag {
     color: #4ecdc4;

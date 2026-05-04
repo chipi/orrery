@@ -1662,6 +1662,7 @@
         aria-pressed={layers.planets}
         onclick={() => (layers.planets = !layers.planets)}
         data-testid="layer-planets"
+        title="Toggle visibility of the 8 major planet orbits"
       >
         PLANETS
       </button>
@@ -1672,6 +1673,7 @@
         aria-pressed={layers.dwarfs}
         onclick={() => (layers.dwarfs = !layers.dwarfs)}
         data-testid="layer-dwarfs"
+        title="Toggle visibility of dwarf planets (Pluto, Eris, Ceres, Haumea, Makemake)"
       >
         DWARFS
       </button>
@@ -1682,6 +1684,7 @@
         aria-pressed={layers.comets}
         onclick={() => (layers.comets = !layers.comets)}
         data-testid="layer-comets"
+        title="Toggle visibility of comet trajectories (Halley, Hale-Bopp, etc.)"
       >
         COMETS
       </button>
@@ -1692,6 +1695,7 @@
         aria-pressed={layers.interstellar}
         onclick={() => (layers.interstellar = !layers.interstellar)}
         data-testid="layer-interstellar"
+        title="Interstellar visitors — toggle visibility of objects passing through the Solar System (e.g. ʻOumuamua)"
       >
         ISM
       </button>
@@ -1828,6 +1832,10 @@
      the 44 px primary toggles above. */
   .chip {
     min-height: 32px;
+    /* Fixed min-width keeps all four chips aligned to a single column
+       width regardless of label length, so the stack reads as a tidy
+       on/off rail rather than a ragged list. */
+    min-width: 110px;
     padding: 0 10px;
     background: rgba(8, 10, 22, 0.65);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -1835,6 +1843,7 @@
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 1.5px;
+    text-align: center;
     border-radius: 999px;
     cursor: pointer;
     backdrop-filter: blur(6px);

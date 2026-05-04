@@ -1,0 +1,14 @@
+{
+  "name": "Chandrayaan-3",
+  "type": "ATERRIZADOR · RÓVER · VOLADA",
+  "first": "Primer aterrizaje suave cerca del polo sur lunar",
+  "description": "Tras la pérdida del aterrizador Vikram de Chandrayaan-2 en 2019, la tercera misión lunar de la ISRO fue deliberadamente conservadora — centrada en el aterrizador en lugar de llevar un orbitador. Vikram tomó tierra a 69,4° S de latitud, lo más cerca que cualquier nave ha llegado a un polo lunar. El róver Pragyan detectó azufre en la superficie lunar por primera vez y realizó mediciones térmicas in situ. India se convirtió en la cuarta nación en aterrizar suavemente en la Luna y la primera en las regiones polares donde probablemente ocurrirá la futura minería de hielo de agua.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "LVM3 M4 (antes GSLV Mk III) desde Sriharikota.", "type": "nominal" },
+    { "met": 22, "label": "ILO", "note": "Inserción en órbita lunar (se usaron múltiples encendidos de elevación de órbita terrestre y lunar).", "type": "nominal" },
+    { "met": 38, "label": "SEPARACIÓN DEL ATERRIZADOR", "note": "El aterrizador Vikram se separa del módulo de propulsión.", "type": "nominal" },
+    { "met": 40, "label": "ATERRIZAJE", "note": "Vikram aterriza en Shiv Shakti Point cerca del polo sur 2023-08-23 12:33 UTC.", "type": "nominal" },
+    { "met": 40.5, "label": "DESPLIEGUE DE PRAGYAN", "note": "El róver baja por la rampa; comienza la ciencia en superficie.", "type": "info" },
+    { "met": 53, "label": "NOCHE LUNAR", "note": "Aterrizador/róver puestos en hibernación al comenzar la noche lunar.", "type": "info" }
+  ]
+}

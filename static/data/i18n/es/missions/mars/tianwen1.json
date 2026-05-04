@@ -1,0 +1,12 @@
+{
+  "name": "Tianwen-1",
+  "type": "ORBITADOR · ATERRIZADOR · RÓVER · ACTIVA",
+  "first": "Primera misión en entregar orbitador, aterrizador y róver a Marte en un solo lanzamiento",
+  "description": "La primera misión china a Marte logró lo que ninguna agencia había intentado en un solo lanzamiento: inserción orbital, entrada atmosférica, aterrizaje suave y despliegue del róver. El róver Zhurong operó 358 soles en Utopia Planitia, recorriendo 1,9 km, antes de entrar en hibernación planificada en mayo de 2022; no ha despertado desde entonces (probablemente por acumulación de polvo en los paneles solares). El orbitador permanece activo, mapeando el planeta a alta resolución y sirviendo de retransmisor para los activos de superficie.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang — primer lanzamiento interplanetario súper-pesado de China.", "type": "nominal" },
+    { "met": 202, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "El encendido del motor captura a la nave en órbita marciana.", "type": "nominal" },
+    { "met": 295, "label": "ATERRIZAJE DE ZHURONG", "note": "Aterrizador/róver desciende a Utopia Planitia el 2021-05-14; Zhurong baja de la rampa el 2021-05-22.", "type": "nominal" },
+    { "met": 651, "label": "HIBERNACIÓN DE ZHURONG", "note": "El róver entra en hibernación planificada en mayo de 2022; el orbitador continúa operaciones.", "type": "info" }
+  ]
+}

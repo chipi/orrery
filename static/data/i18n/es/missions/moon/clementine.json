@@ -1,0 +1,13 @@
+{
+  "name": "Clementine",
+  "type": "ORBITADOR · VOLADA",
+  "first": "Misión lunar conjunta NASA-DoD; primeros indicios de hielo de agua en los polos lunares",
+  "description": "Diseñada principalmente como demostrador tecnológico de la Iniciativa de Defensa Estratégica, Clementine pasó 10 semanas en órbita lunar devolviendo el primer mapa topográfico y multiespectral global sistemático de la Luna. Las mediciones de radar biestático en el polo sur lunar produjeron los primeros indicios tentadores de hielo de agua — confirmados años después por el Lunar Prospector y Chandrayaan-1. La misión de seguimiento para sobrevolar el asteroide Geographos falló cuando un mal funcionamiento de un propulsor agotó el propelente de la nave.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Titan II G desde Vandenberg AFB.", "type": "nominal" },
+    { "met": 25, "label": "ILO", "note": "Inserción en órbita lunar 1994-02-19.", "type": "nominal" },
+    { "met": 30, "label": "INICIO DE MAPEO", "note": "Comienza el mapeo multiespectral y topográfico sistemático.", "type": "info" },
+    { "met": 95, "label": "PARTIDA", "note": "Sale de la órbita lunar para el sobrevuelo del asteroide Geographos.", "type": "nominal" },
+    { "met": 100, "label": "FALLO DE PROPULSOR", "note": "Mal funcionamiento de propulsor a bordo agota el propelente; encuentro con el asteroide cancelado.", "type": "warning" }
+  ]
+}

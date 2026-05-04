@@ -1,9 +1,22 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { page } from '$app/stores';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
+  import { setLanguageTag } from '$lib/paraglide/runtime';
+  import { localeFromPage, isSupportedLocale } from '$lib/locale';
 
   let { children } = $props();
+
+  // Apply the resolved locale to Paraglide BEFORE descendant
+  // components render their `m.foo()` calls. $effect.pre runs
+  // synchronously before each DOM update — early enough that the
+  // first paint of a `?lang=es` URL renders in Spanish, not in
+  // en-US fallback that gets corrected on the second tick.
+  $effect.pre(() => {
+    const code = localeFromPage($page);
+    if (isSupportedLocale(code)) setLanguageTag(code);
+  });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────
   // Register on mount; show an update toast when a new SW is waiting.

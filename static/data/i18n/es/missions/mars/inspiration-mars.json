@@ -1,0 +1,14 @@
+{
+  "name": "Inspiration Mars",
+  "type": "SOBREVUELO TRIPULADO · CONCEPTO",
+  "first": "Primera misión propuesta de retorno libre tripulada a Marte (concepto, nunca voló)",
+  "description": "Un concepto de misión de 2013 de la Inspiration Mars Foundation de Dennis Tito para un sobrevuelo tripulado de retorno libre a Marte de 501 días apuntando a la ventana de lanzamiento de 2018. Una tripulación de dos personas (se contemplaba una pareja casada por estabilidad psicológica) se lanzaría en un Falcon Heavy o equivalente a una trayectoria heliocéntrica que rodea Marte sin inserción orbital y usa la gravedad del planeta para impulsarse de regreso a la Tierra. La geometría de retorno libre minimiza el ∆v — sin inserción en órbita marciana ni encendido transterrestre — a costa de un tránsito más largo y una ventana de lanzamiento de un único intento. El concepto no avanzó al desarrollo; sigue siendo una arquitectura de referencia publicada para vuelos tripulados cismarcianos.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Lanzamiento conceptual en Falcon Heavy (o equivalente) hacia trayectoria transmarciana.", "type": "nominal" },
+    { "met": 1, "label": "ITM", "note": "Encendido de inyección transmarciana — órbita heliocéntrica rumbo a Marte.", "type": "nominal" },
+    { "met": 30, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 228, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima a Marte (~100 km de altitud en el concepto original). Sin inserción orbital — la asistencia gravitatoria configura la trayectoria de retorno a la Tierra.", "type": "info" },
+    { "met": 350, "label": "MEDIO CURSO", "note": "Corrección de trayectoria en la fase de retorno.", "type": "nominal" },
+    { "met": 501, "label": "REENTRADA TERRESTRE", "note": "La cápsula de retorno reingresa en la atmósfera terrestre a ~14,2 km/s — entre las reentradas tripuladas más rápidas jamás propuestas.", "type": "info" }
+  ]
+}

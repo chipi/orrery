@@ -1,0 +1,12 @@
+{
+  "name": "MAVEN",
+  "type": "ORBITADOR · ACTIVA",
+  "first": "Primera misión dedicada a estudiar cómo Marte perdió su atmósfera",
+  "description": "MAVEN — Mars Atmosphere and Volatile Evolution — responde a la pregunta de \"¿adónde se fue el aire de Marte?\". Su órbita elíptica se sumerge en la atmósfera superior, muestreando iones y neutros mientras el viento solar los arranca. Hallazgos: Marte pierde unos 100 g de atmósfera por segundo al espacio — durante miles de millones de años eso basta para explicar el clima desaparecido. La nave también sirve como retransmisor crítico para los activos de superficie, incluidos Curiosity y Perseverance.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 401 desde Cape Canaveral SLC-41.", "type": "nominal" },
+    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 308, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Encendido del motor principal de 33 minutos captura a MAVEN en una órbita científica elíptica de 35 horas.", "type": "nominal" },
+    { "met": 350, "label": "PRIMERA CIENCIA", "note": "Comienza las campañas de \"inmersión profunda\" para muestrear la atmósfera a altitudes de periapsis ~125 km.", "type": "info" }
+  ]
+}

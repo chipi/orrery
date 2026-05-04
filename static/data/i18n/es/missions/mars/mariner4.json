@@ -1,0 +1,12 @@
+{
+  "name": "Mariner 4",
+  "type": "SOBREVUELO · VOLADA",
+  "first": "Primera nave en alcanzar Marte y devolver imágenes de cerca de otro planeta",
+  "description": "La misión que terminó con los sueños de un Marte habitable. Las 22 imágenes granuladas de Mariner 4, tomadas durante una aproximación máxima de 25 minutos a 9846 km de altitud, mostraron una superficie cratérica parecida a la Luna — sin canales, sin vegetación, sin vida obvia. La atmósfera era 100× más fina de lo esperado. El descubrimiento reformuló a Marte en la imaginación pública, de planeta hermano de la Tierra a mundo muerto. El seguimiento de la nave también produjo la primera medición de la estructura del viento solar entre planetas.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas LV-3 Agena-D despega desde Cape Canaveral LC-12.", "type": "nominal" },
+    { "met": 7, "label": "MCT-1", "note": "Primera corrección de trayectoria completada; trayectoria fijada.", "type": "nominal" },
+    { "met": 228, "label": "SOBREVUELO DE MARTE", "note": "Aproximación máxima 9846 km. 22 imágenes devueltas a lo largo de 8 horas durante la reproducción de datos.", "type": "nominal" },
+    { "met": 228.5, "label": "PRIMERAS IMÁGENES", "note": "Primeras imágenes de cerca de otro planeta jamás devueltas a la Tierra.", "type": "info" }
+  ]
+}

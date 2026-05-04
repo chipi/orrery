@@ -1,0 +1,12 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "ATERRIZADOR EN CARA OCULTA · RÓVER · ACTIVA",
+  "first": "Primer aterrizaje suave en la cara oculta de la Luna",
+  "description": "La cara oculta de la Luna no tiene línea de visión de radio directa con la Tierra. Para aterrizar una nave allí, China primero lanzó el satélite retransmisor Queqiao a una órbita halo alrededor del punto de Lagrange Tierra-Luna L2 — un punto de observación que ve simultáneamente la cara oculta y la Tierra. Con esa infraestructura en marcha, Chang'e 4 se convirtió en la primera nave en aterrizar suavemente en la cara oculta. El róver Yutu-2 ha estado operando desde enero de 2019 y ha recorrido más de 1,9 km, el recorrido más largo de cualquier róver lunar.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 3B desde Xichang.", "type": "nominal" },
+    { "met": 4, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
+    { "met": 27, "label": "ATERRIZAJE", "note": "El aterrizador toma tierra en el cráter Von Kármán 2019-01-03 — primera nave en la cara oculta. Todas las comunicaciones a través del retransmisor Queqiao en L2 Tierra-Luna.", "type": "nominal" },
+    { "met": 27.01, "label": "DESPLIEGUE DE YUTU-2", "note": "El róver baja por la rampa.", "type": "info" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Venus",
+  "type": "Planeta terrestre",
+  "fact": "Presión en superficie 90× la terrestre. Las sondas soviéticas Venera duraron entre 23 y 127 minutos antes de ser aplastadas.",
+  "bio": "Rota en sentido retrógrado — al revés y tan lentamente que un día venusiano es más largo que su año. La inclinación axial de 177,4° es la causa: Venus está esencialmente al revés.",
+  "links": [
+    { "l": "Venus — Wikipedia", "u": "https://es.wikipedia.org/wiki/Venus_(planeta)", "t": "intro" },
+    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "Programa Venera — Wikipedia", "u": "https://es.wikipedia.org/wiki/Programa_Venera", "t": "core" },
+    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "El efecto invernadero descontrolado de Venus (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
+}

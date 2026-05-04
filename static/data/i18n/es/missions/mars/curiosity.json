@@ -1,0 +1,15 @@
+{
+  "name": "Curiosity",
+  "type": "RÓVER · ACTIVA",
+  "first": "Primer róver marciano a propulsión nuclear; primer aterrizaje con grúa aérea",
+  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está propulsado por plutonio y ha recorrido más de 32 km subiendo el Monte Sharp desde que aterrizó en el cráter Gale en 2012. Sus instrumentos confirmaron que Marte tuvo en su día condiciones habitables — agua corriente, compuestos orgánicos complejos, la química que necesitaría la vida. La secuencia EDA de los \"siete minutos de terror\", que termina con una grúa aérea bajando el róver con cables, es ahora el estándar de la NASA para entregar grandes cargas útiles a la superficie marciana.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 541 despega desde Cape Canaveral SLC-41.", "type": "nominal" },
+    { "met": 1, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana (3,61 km/s de ∆v) lanza a MSL a una trayectoria heliocéntrica rumbo a Marte.", "type": "nominal" },
+    { "met": 16, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 119, "label": "MCT-3", "note": "Última corrección antes de la EDA; la trayectoria apunta a la elipse de aterrizaje del cráter Gale.", "type": "nominal" },
+    { "met": 254, "label": "EDA — SIETE MINUTOS DE TERROR", "note": "Entrada atmosférica, paracaídas supersónico, retrocohetes de la grúa aérea, róver bajado con cables.", "type": "nominal" },
+    { "met": 254.005, "label": "ATERRIZAJE", "note": "Curiosity llega a Aeolis Palus, cráter Gale, 2012-08-06 05:17:57 UTC.", "type": "nominal" },
+    { "met": 254.01, "label": "PRIMERAS IMÁGENES", "note": "La Hazcam devuelve la primera imagen de baja resolución de la superficie.", "type": "info" }
+  ]
+}

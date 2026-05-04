@@ -1,0 +1,13 @@
+{
+  "name": "Luna 17 / Lunokhod 1",
+  "type": "RÓVER · VOLADA",
+  "first": "Primer róver teleoperado en operar en otro mundo",
+  "description": "Las primeras ruedas en la Luna — conducidas desde una sala de control en Crimea. Lunokhod 1 era una tina presurizada de 322 kg montada sobre ocho ruedas de tracción independiente, controlada por un equipo de cinco personas en tiempo real a través del retraso de 2,5 segundos por la velocidad de la luz. Recorrió 10,5 km a lo largo de 11 días lunares (322 días terrestres), fotografió más de 20 000 escenas y operó mucho más allá de su vida útil de diseño de 90 días. Perdido para la historia en los años 70, fue localizado de nuevo en 2010 cuando el Lunar Reconnaissance Orbiter de la NASA lo descubrió justo donde se detuvo.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Proton-K con etapa superior Blok-D desde Baikonur.", "type": "nominal" },
+    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar; correcciones orbitales para la inclinación de descenso.", "type": "nominal" },
+    { "met": 7, "label": "ATERRIZAJE", "note": "Aterrizaje suave en Mare Imbrium 1970-11-17.", "type": "nominal" },
+    { "met": 7.005, "label": "DESPLIEGUE DEL RÓVER", "note": "Lunokhod 1 baja por las rampas a la superficie lunar.", "type": "info" },
+    { "met": 329, "label": "ÚLTIMO CONTACTO", "note": "Última sesión de mando 1971-09-14; el róver se conserva en la fría noche lunar.", "type": "info" }
+  ]
+}

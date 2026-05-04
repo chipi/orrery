@@ -1,0 +1,14 @@
+{
+  "name": "Chang'e 6",
+  "type": "RETORNO DE MUESTRAS DE LA CARA OCULTA · VOLADA",
+  "first": "Primer retorno de muestras de la cara oculta de la Luna",
+  "description": "Combina las arquitecturas de Chang'e 4 (comunicaciones con la cara oculta) y Chang'e 5 (retorno de muestras). El satélite retransmisor Queqiao-2 se lanzó primero (marzo de 2024) para apoyar la misión. Chang'e 6 luego recogió 1,935 kg del cráter Apollo en la cara oculta — material con composición muy diferente a cualquier muestra lunar devuelta anteriormente. Los dos hemisferios de la Luna son radicalmente distintos (la cara oculta tiene una corteza más gruesa, menos mares); estas muestras pueden por fin explicar por qué.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 5 desde Wenchang.", "type": "nominal" },
+    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
+    { "met": 30, "label": "ATERRIZAJE", "note": "El aterrizador desciende al cráter Apollo (cara oculta) 2024-06-02. Todas las comunicaciones a través del retransmisor Queqiao-2.", "type": "nominal" },
+    { "met": 32, "label": "MUESTREO", "note": "1,935 kg recogidos del regolito de la cara oculta.", "type": "info" },
+    { "met": 34, "label": "ASCENSO", "note": "El vehículo de ascenso despega; encuentro con el orbitador.", "type": "nominal" },
+    { "met": 53, "label": "RETORNO A LA TIERRA", "note": "La cápsula aterriza en Mongolia Interior 2024-06-25 con las primeras muestras de la cara oculta jamás recuperadas.", "type": "info" }
+  ]
+}

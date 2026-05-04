@@ -1,0 +1,15 @@
+{
+  "name": "Artemis III",
+  "type": "ATERRIZADOR TRIPULADO · PLANIFICADA",
+  "first": "Primer aterrizaje lunar tripulado desde el Apollo 17 (1972)",
+  "description": "El primer aterrizaje lunar tripulado en más de medio siglo. Arquitectura: el SLS Block 1 de la NASA lanza Orion con 4 tripulantes a una Órbita Halo Casi-Rectilínea (NRHO) alrededor de la Luna. Pre-posicionado en NRHO está un Sistema de Aterrizaje Humano Starship (HLS) de SpaceX, repostado en órbita baja terrestre por cisternas antes de su inyección translunar. La tripulación de Orion se transfiere al HLS; 2 astronautas descienden a la región del polo sur lunar para ~6,5 días de operaciones en superficie mientras 2 permanecen en NRHO. Tras las operaciones de superficie, el HLS asciende a NRHO para la transferencia a Orion y el retorno a la Tierra. Aterrizará a la primera mujer y la primera persona de color en la Luna.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO SLS", "note": "Orion despega desde KSC LC-39B con tripulación de 4.", "type": "nominal" },
+    { "met": 1, "label": "ITL", "note": "Inyección translunar.", "type": "nominal" },
+    { "met": 4, "label": "LLEGADA A NRHO", "note": "Orion llega a la Órbita Halo Casi-Rectilínea; encuentro con la Starship HLS pre-posicionada.", "type": "nominal" },
+    { "met": 5, "label": "DESCENSO", "note": "2 tripulantes se transfieren al HLS; descenso propulsado al polo sur lunar.", "type": "info" },
+    { "met": 12, "label": "ASCENSO", "note": "Ascenso del HLS a NRHO tras ~6,5 días de operaciones en superficie.", "type": "nominal" },
+    { "met": 14, "label": "ITT", "note": "Inyección transterrestre desde NRHO.", "type": "nominal" },
+    { "met": 18, "label": "AMERIZAJE", "note": "Orion ameriza en el océano Pacífico.", "type": "info" }
+  ]
+}

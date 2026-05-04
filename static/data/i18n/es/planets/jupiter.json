@@ -1,0 +1,13 @@
+{
+  "name": "Júpiter",
+  "type": "Gigante gaseoso",
+  "fact": "La gravedad de Júpiter esculpió el cinturón de asteroides — impidiendo un quinto planeta rocoso. Sin él, Marte sería mucho más grande.",
+  "bio": "Rota en solo 10 horas a pesar de su enorme tamaño, generando potentes campos magnéticos. Más masivo que todos los demás planetas juntos.",
+  "links": [
+    { "l": "Júpiter — Wikipedia", "u": "https://es.wikipedia.org/wiki/J%C3%BApiter_(planeta)", "t": "intro" },
+    { "l": "Júpiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "Misión Juno (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "Lunas galileanas — Wikipedia", "u": "https://es.wikipedia.org/wiki/Sat%C3%A9lites_galileanos", "t": "core" },
+    { "l": "Interior profundo de Júpiter (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
+}

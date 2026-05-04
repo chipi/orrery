@@ -1,0 +1,13 @@
+{
+  "name": "Mars Pathfinder",
+  "type": "ATERRIZADOR · RÓVER · VOLADA",
+  "first": "Primeras ruedas en Marte; demostró el aterrizaje con airbags",
+  "description": "La misión que demostró que las misiones interplanetarias baratas podían funcionar. Pathfinder usó un novedoso sistema de aterrizaje con airbags — rebotando docenas de veces por la superficie antes de detenerse — y entregó a Sojourner, el primer róver en operar en otro planeta. Sojourner recorrió 100 m, examinó una docena de rocas y trabajó mucho más allá de su vida útil de diseño de 7 días. Pathfinder operó 2 meses y 27 días; el éxito de la misión revivió el programa interplanetario de la NASA tras los fracasos de los años 90.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Delta II 7925 desde Cape Canaveral.", "type": "nominal" },
+    { "met": 30, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 212, "label": "EDA", "note": "Entrada atmosférica directa — sin inserción orbital. Escudo térmico, paracaídas, retrocohetes, luego inflado de airbags.", "type": "nominal" },
+    { "met": 212.01, "label": "ATERRIZAJE", "note": "El aterrizador rebota 15 veces por Ares Vallis antes de detenerse.", "type": "nominal" },
+    { "met": 213, "label": "DESPLIEGUE DE SOJOURNER", "note": "Primeras ruedas en otro planeta.", "type": "info" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Apollo 11",
+  "type": "ATERRIZADOR TRIPULADO · VOLADA",
+  "first": "Primeros humanos en otro cuerpo celeste",
+  "description": "La misión que cumplió el compromiso de Kennedy en 1961 de poner a un hombre en la Luna antes del final de la década. Armstrong y Aldrin pasaron 21 horas y 36 minutos en la superficie lunar — 2,5 horas de EVA, 21,55 kg de muestras y una única placa conmemorativa. El retrorreflector láser que instalaron en Mare Tranquillitatis sigue recibiendo pulsos hoy, midiendo la distancia Tierra-Luna con precisión milimétrica. La misión fue vista en directo por ~600 millones de personas, una quinta parte de la humanidad de entonces.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Saturn V (AS-506) desde Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.", "type": "nominal" },
+    { "met": 0.13, "label": "ITL", "note": "Encendido de inyección translunar — la etapa S-IVB impulsa al CSM/LM hacia la Luna.", "type": "nominal" },
+    { "met": 3, "label": "ILO", "note": "Inserción en órbita lunar.", "type": "nominal" },
+    { "met": 4, "label": "ATERRIZAJE", "note": "El Módulo Lunar Eagle aterriza en Mare Tranquillitatis 1969-07-20 20:17:40 UTC.", "type": "nominal" },
+    { "met": 4.3, "label": "PRIMER PASO", "note": "Armstrong pisa la superficie lunar; \"un pequeño paso para [un] hombre\".", "type": "info" },
+    { "met": 5, "label": "ASCENSO", "note": "Eagle despega tras 21h 36m en superficie.", "type": "nominal" },
+    { "met": 8, "label": "AMERIZAJE", "note": "El módulo de mando Columbia devuelve a la tripulación al océano Pacífico el 1969-07-24.", "type": "nominal" }
+  ]
+}

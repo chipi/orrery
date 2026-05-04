@@ -1,0 +1,15 @@
+{
+  "name": "Perseverance",
+  "type": "RÓVER · ACTIVA",
+  "first": "Primer helicóptero en otro planeta (Ingenuity); primer almacenamiento de muestras para Mars Sample Return",
+  "description": "Perseverance es la misión de superficie marciana más ambiciosa jamás volada. Mars Sample Return depende de él — el róver está recogiendo y almacenando muestras en tubos que una misión futura recuperará y traerá a la Tierra. Ingenuity, el primer helicóptero en otro planeta, voló 72 misiones antes de retirarse con los rotores dañados en enero de 2024 — demostrando que el vuelo controlado es posible en la fina atmósfera marciana. MOXIE, un demostrador que produce oxígeno a partir de CO2, generó el primer oxígeno fabricado localmente en otro planeta, un ensayo para misiones tripuladas a Marte.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 541 desde Cape Canaveral SLC-41 — la misma clase de vehículo que Curiosity.", "type": "nominal" },
+    { "met": 1, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana.", "type": "nominal" },
+    { "met": 9, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 203, "label": "EDA", "note": "La grúa aérea entrega el róver al cráter Jezero el 2021-02-18 — sitio de un antiguo delta fluvial.", "type": "nominal" },
+    { "met": 203.01, "label": "ATERRIZAJE", "note": "Perseverance aterriza en Jezero a las 20:55 UTC.", "type": "nominal" },
+    { "met": 271, "label": "PRIMER VUELO DE INGENUITY", "note": "Primer vuelo controlado y propulsado en otro planeta — 39,1 segundos hasta 5 m de altitud.", "type": "info" },
+    { "met": 1278, "label": "INGENUITY RETIRADO", "note": "Pala del rotor dañada en el vuelo 72 el 2024-01-18; el helicóptero permanece operativo como retransmisor.", "type": "info" }
+  ]
+}

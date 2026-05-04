@@ -1,0 +1,13 @@
+{
+  "name": "MMX",
+  "type": "RETORNO DE MUESTRAS DE FOBOS · PLANIFICADA",
+  "first": "Primer retorno de muestras de una luna marciana",
+  "description": "Martian Moons eXploration es el plan de la JAXA para aterrizar en Fobos, recoger ~10 g de regolito y traerlo a casa. Las muestras pueden zanjar una pregunta debatida durante décadas: ¿son Fobos y Deimos asteroides capturados, o fragmentos de un impacto antiguo en el propio Marte? La misión también incluye un róver germano-francés para movilidad en la superficie de Fobos — un modelo de operaciones completamente distinto al de cualquiera de las misiones Hayabusa en Itokawa o Ryugu. El lanzamiento estaba previsto para 2024 pero se retrasó hasta 2026 por demoras en el lanzador H3 de la JAXA.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "H3-24L desde Tanegashima — el nuevo lanzador pesado de la JAXA.", "type": "nominal" },
+    { "met": 334, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Captura en órbita marciana; transferencia a cuasi-órbita de Fobos durante los meses siguientes.", "type": "nominal" },
+    { "met": 600, "label": "DESPLIEGUE DEL RÓVER", "note": "Un róver del DLR/CNES (~25 kg) se libera sobre la superficie de Fobos para estudios in situ.", "type": "info" },
+    { "met": 1100, "label": "MUESTRA DE FOBOS", "note": "MMX se posa en Fobos; se recogen ~10 g de regolito.", "type": "info" },
+    { "met": 1500, "label": "RETORNO A LA TIERRA", "note": "La cápsula de reentrada con la muestra llega a la Tierra ~2031.", "type": "info" }
+  ]
+}

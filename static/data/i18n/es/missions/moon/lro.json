@@ -1,0 +1,12 @@
+{
+  "name": "Lunar Reconnaissance Orbiter",
+  "type": "ORBITADOR · ACTIVA",
+  "first": "Mapas lunares de la mayor resolución jamás realizados",
+  "description": "Orbitando la Luna desde 2009 a 50 km de altitud lunar media, la cámara de ángulo estrecho del LRO toma imágenes a 50 cm/píxel — suficiente para ver las etapas de descenso del Apollo, las huellas de los róvers y las pisadas de los astronautas todavía conservadas en el regolito. Encontró al Lunokhod 1 treinta y nueve años después de que el róver se apagara. Identificó más de 200 lugares candidatos para Artemis. Los depósitos de hielo de agua en el polo sur lunar que impulsan cada programa lunar moderno fueron cuantificados por instrumentos del LRO. Una misión exploratoria que se convirtió en el cimiento de la era lunar moderna.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO", "note": "Atlas V 401 desde Cape Canaveral SLC-41 (llevaba el impactador LCROSS como secundario).", "type": "nominal" },
+    { "met": 5, "label": "ILO", "note": "Inserción en órbita lunar 2009-06-23.", "type": "nominal" },
+    { "met": 90, "label": "MISIÓN PRIMARIA", "note": "Comienza la fase de exploración de 1 año (programa NASA).", "type": "info" },
+    { "met": 455, "label": "CIENCIA EXTENDIDA", "note": "Misión extendida a fase científica de varios años bajo NASA SMD.", "type": "info" }
+  ]
+}

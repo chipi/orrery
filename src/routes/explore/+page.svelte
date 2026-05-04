@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
   import { earthPos, outboundArc, type Vec2 } from '$lib/mission-arc';
   import { dateToSimDay } from '$lib/sim-day';
@@ -325,7 +326,7 @@
       const entry = idx.find((m) => m.id === id);
       if (!entry || cancelled) return;
       const dest = entry.dest === 'MARS' ? 'mars' : 'mars'; // overlay is Mars-only for now
-      const mission = await getMission(id, entry.dest);
+      const mission = await getMission(id, entry.dest, localeFromPage($page));
       if (!mission || cancelled) return;
       const depDay = dateToSimDay(mission.departure_date) ?? 0;
       const earthDep = earthPos(depDay);
@@ -384,12 +385,13 @@
     if (!container || !canvas2d) return;
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
-    getPlanets()
+    const initialLocale = localeFromPage($page);
+    getPlanets(initialLocale)
       .then((p) => {
         localizedPlanets = p;
       })
       .catch((err) => console.error('Failed to load planets:', err));
-    getSun()
+    getSun(initialLocale)
       .then((s) => {
         localizedSun = s;
       })

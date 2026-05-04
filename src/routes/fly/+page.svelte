@@ -21,6 +21,7 @@
     type DestinationId,
   } from '$lib/lambert-grid.constants';
   import { getMission, getScenario } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
   import { parseDeltaV } from '$lib/parse-delta-v';
   import { dateToSimDay } from '$lib/sim-day';
   import { mergeFlightEvents } from '$lib/mission-event-merge';
@@ -822,11 +823,12 @@
       }
     }
 
+    const locale = localeFromPage($page);
     if (!id) {
       // No ?mission= param → fetch the locale overlay for the default
       // scenario (so non-en-US locales get translated strings); fall
       // back to the static import if even that fails.
-      const s = await getScenario(DEFAULT_SCENARIO_ID);
+      const s = await getScenario(DEFAULT_SCENARIO_ID, locale);
       if (myLoadId !== currentLoadId) return; // newer load superseded us
       if (s) applyScenarioAsLoaded(s);
       return;
@@ -837,7 +839,7 @@
     // known-scenarios whitelist so real mission IDs (e.g. "curiosity")
     // don't trigger a 404 round-trip and dev-server error log noise.
     if (KNOWN_SCENARIO_IDS.has(id)) {
-      const scenario = await getScenario(id);
+      const scenario = await getScenario(id, locale);
       if (myLoadId !== currentLoadId) return;
       if (scenario) {
         applyScenarioAsLoaded(scenario);
@@ -845,14 +847,14 @@
       }
     }
 
-    const mars = await getMission(id, 'mars');
+    const mars = await getMission(id, 'mars', locale);
     if (myLoadId !== currentLoadId) return;
     if (mars) {
       applyMissionAsLoaded(mars);
       return;
     }
 
-    const moon = await getMission(id, 'moon');
+    const moon = await getMission(id, 'moon', locale);
     if (myLoadId !== currentLoadId) return;
     if (moon) {
       applyMissionAsLoaded(moon);

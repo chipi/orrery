@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { getRockets, getPorkchopGrid } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
   import type { Rocket } from '$types/rocket';
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
   import type { DestinationId } from '$lib/lambert-grid.constants';
@@ -484,7 +485,7 @@
   onMount(() => {
     applyUrlFilters($page.url);
 
-    getRockets().then((list) => {
+    getRockets(localeFromPage($page)).then((list) => {
       rocketList = list;
       // Default to a vehicle that can actually reach Mars (Falcon Heavy, SLS, Starship).
       const mars = list.find((r) => r.payload_to_mars_kg > 0);

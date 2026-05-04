@@ -1,7 +1,10 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { getMissionGallery } from '$lib/data';
+  import { formatNumber } from '$lib/format';
+  import { localeFromPage } from '$lib/locale';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
 
@@ -63,7 +66,7 @@
   }
   function fmtInt(value: number | null | undefined): string {
     if (value == null) return '—';
-    return Math.round(value).toLocaleString();
+    return formatNumber(Math.round(value), localeFromPage($page));
   }
 
   // Map an event type enum to its localised label so the EVENTS list

@@ -4,6 +4,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { getMissionsForLibrary } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
@@ -141,7 +142,14 @@
   // ─── Load ────────────────────────────────────────────────────────
   onMount(() => {
     applyUrlFilters($page.url);
-    getMissionsForLibrary()
+  });
+  // Re-fetch when the URL `?lang=` changes so locale switches replace
+  // the merged mission overlay set without a full page reload.
+  $effect(() => {
+    const locale = localeFromPage($page);
+    loading = true;
+    loadFailed = false;
+    getMissionsForLibrary(locale)
       .then((list) => {
         missions = list;
         loading = false;

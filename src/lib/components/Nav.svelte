@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
+  import LocalePicker from '$lib/components/LocalePicker.svelte';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
@@ -54,6 +55,7 @@
   </div>
 
   <div class="right">
+    <LocalePicker />
     <button
       type="button"
       class="contrast-toggle"

@@ -1,8 +1,10 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getMoonSites, getMoonSiteGallery } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { categoriseMoonMarker } from '$lib/moon-marker-category';
@@ -94,7 +96,7 @@
   onMount(() => {
     if (!container || !canvas2d) return;
 
-    getMoonSites()
+    getMoonSites(localeFromPage($page))
       .then((list) => {
         sites = list;
       })

@@ -1,5 +1,8 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import Panel from './Panel.svelte';
+  import { formatKm } from '$lib/format';
+  import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
@@ -151,7 +154,7 @@
             <div class="cell">
               <div class="cell-label">RADIUS</div>
               <div class="cell-value">
-                {body.radius_km.toLocaleString()} km
+                {formatKm(body.radius_km, localeFromPage($page))}
               </div>
             </div>
           {/if}

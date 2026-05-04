@@ -5,6 +5,8 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { getEarthObjects, getEarthObjectGallery } from '$lib/data';
+  import { formatNumber } from '$lib/format';
+  import { localeFromPage } from '$lib/locale';
   import { altToOrbitRadius } from '$lib/scale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
@@ -142,7 +144,10 @@
   onMount(() => {
     if (!container || !canvas2d) return;
 
-    getEarthObjects()
+    // Initial load uses the URL locale; the $effect below re-fetches
+    // on locale change so a `?lang=` swap rebuilds the editorial
+    // overlay set without a full page reload.
+    getEarthObjects(localeFromPage($page))
       .then((list) => {
         objects = list;
       })
@@ -904,7 +909,10 @@
             <div class="cell-label">{m.earth_panel_alt()}</div>
             <div class="cell-value">
               {m.earth_alt_km({
-                value: (selected.altitude_km ?? selected.earth_distance_km).toLocaleString('en-US'),
+                value: formatNumber(
+                  selected.altitude_km ?? selected.earth_distance_km,
+                  localeFromPage($page),
+                ),
               })}
             </div>
           </div>

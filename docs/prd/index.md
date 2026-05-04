@@ -10,3 +10,6 @@
 | PRD-005 | Earth Orbit Viewer | Draft v0.1 | curious learner, STEM student |
 | PRD-006 | Moon Map | Draft v0.1 | curious learner, STEM student |
 | PRD-007 | Multi-Language Support | Draft v0.1 | all audiences (cross-cutting) |
+| PRD-008 | Science (in-app encyclopedia) | Draft v0.1 | curious learner, STEM student |
+| PRD-009 | Mars Surface Map | Draft v0.1 | curious learner, STEM student, space enthusiast |
+| PRD-010 | ISS Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |

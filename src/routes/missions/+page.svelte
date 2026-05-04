@@ -113,11 +113,24 @@
   }
 
   // Agency logo path. SVGs are fetched at build by scripts/fetch-assets.ts
-  // (Wikimedia Commons, public-domain). The img has onerror to hide
-  // gracefully when a logo file is missing — UI degrades to text-only
-  // badge without breaking the layout.
-  function logoFor(agency: string): string {
-    return `${base}/logos/${agency.toLowerCase()}.svg`;
+  // (Wikimedia Commons, public-domain). Only the eight agencies whose
+  // logos ship with the build appear in the whitelist below — any
+  // agency outside it (Inspiration Mars, Blue Origin, etc.) returns
+  // null and the <img> is omitted entirely so the browser never fires
+  // a 404 for a known-missing logo (which the smoke-test asserts on).
+  const KNOWN_AGENCY_LOGOS = new Set([
+    'nasa',
+    'esa',
+    'jaxa',
+    'isro',
+    'cnsa',
+    'roscosmos',
+    'spacex',
+    'uaesa',
+  ]);
+  function logoFor(agency: string): string | null {
+    const key = agency.toLowerCase();
+    return KNOWN_AGENCY_LOGOS.has(key) ? `${base}/logos/${key}.svg` : null;
   }
 
   // ─── Card click → open MissionPanel ──────────────────────────────
@@ -330,13 +343,16 @@
             <div class="card-body">
               <header class="card-head">
                 <span class="agency-badge" style:background-color={mission.color}>
-                  <img
-                    src={logoFor(mission.agency)}
-                    alt=""
-                    class="agency-logo"
-                    aria-hidden="true"
-                    onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                  />
+                  {#if logoFor(mission.agency)}
+                    <img
+                      src={logoFor(mission.agency)}
+                      alt=""
+                      class="agency-logo"
+                      aria-hidden="true"
+                      onerror={(e) =>
+                        ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+                    />
+                  {/if}
                   {mission.agency}
                 </span>
                 <span class="card-status status-{mission.status.toLowerCase()}">

@@ -1,15 +1,15 @@
 {
-  "beidou": 1,
+  "beidou": 3,
   "chandra": 5,
-  "gaia": 0,
-  "galileo": 1,
+  "gaia": 3,
+  "galileo": 3,
   "geo": 5,
-  "glonass": 1,
-  "gps": 1,
+  "glonass": 3,
+  "gps": 3,
   "hubble": 5,
   "iss": 5,
   "jwst": 5,
   "lro": 5,
-  "tiangong": 0,
+  "tiangong": 3,
   "xmm": 5
 }

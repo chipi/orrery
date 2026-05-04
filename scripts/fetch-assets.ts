@@ -814,7 +814,16 @@ interface GalleryQuery {
   copyFromMission?: string;
   /** Wikimedia Commons filename used when NASA API returns nothing. */
   wikimediaFallback?: string;
+  /** Curated Wikimedia Commons filenames used to top up the gallery
+   *  when NASA + single fallback fall short of GALLERY_MIN_TARGET.
+   *  Tried in order; missing files are skipped gracefully. */
+  wikimediaGallery?: string[];
 }
+
+/** Per ADR-016 + #17 follow-up: every panel gallery should carry at
+ *  least 3 photos. Lower than NASA's PANEL_GALLERY_MAX so we top up
+ *  thin galleries from Wikimedia without overshadowing NASA results. */
+const GALLERY_MIN_TARGET = 3;
 
 const PLANET_QUERIES: GalleryQuery[] = [
   { id: 'mercury', query: 'mercury planet messenger' },
@@ -831,30 +840,57 @@ const SUN_QUERIES: GalleryQuery[] = [{ id: 'sun', query: 'solar dynamics observa
 
 const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   { id: 'iss', query: 'international space station' },
-  // Tiangong: NASA library credits Tiangong photos to CNSA (filtered out
-  // by our credit-allowlist); Wikimedia filenames for CNSA assets are
-  // too volatile to rely on. Honest empty state per ADR-016 § ethics.
-  { id: 'tiangong', query: 'tiangong space station china' },
+  {
+    id: 'tiangong',
+    query: 'tiangong space station china',
+    // NASA library credits Tiangong photos to CNSA (filtered out by
+    // our credit-allowlist). Top up entirely from Wikimedia. Filenames
+    // verified via Commons API search 2026-05-04.
+    wikimediaGallery: [
+      'Chinese Tiangong Space Station.jpg',
+      'Rear view of Tiangong Space Station.jpg',
+      'Basic space experiment cabinet of Tiangong space station.jpg',
+    ],
+  },
   { id: 'hubble', query: 'hubble space telescope' },
   {
     id: 'gps',
     query: 'gps satellite navstar',
     wikimediaFallback: 'Navstar-2F.jpg',
+    wikimediaGallery: ['Navstar-2F.jpg', 'GPS_Satellite_NASA_art-iif.jpg', 'ConstellationGPS.gif'],
   },
   {
     id: 'galileo',
     query: 'galileo navigation satellite',
     wikimediaFallback: 'Galileo-IOV-PFM.jpg',
+    wikimediaGallery: [
+      'Galileo-IOV-PFM.jpg',
+      'Galileo satellite model.jpg',
+      'Galileo launch on Soyuz, 21 Oct 2011 (6266227357).jpg',
+      'Galileo sat constallation.gif',
+    ],
   },
   {
     id: 'glonass',
     query: 'glonass satellite',
     wikimediaFallback: 'GLONASS-K_satellite.jpg',
+    wikimediaGallery: [
+      'GLONASS-K_satellite.jpg',
+      'Glonass K model at Cebit 2011 Satellite, sideview 1.jpg',
+      'Glonass-receiver.jpg',
+      'Comparison satellite navigation orbits.svg',
+    ],
   },
   {
     id: 'beidou',
     query: 'beidou navigation satellite',
     wikimediaFallback: 'BeiDou_2.svg',
+    wikimediaGallery: [
+      'BeiDou_2.svg',
+      'Beidou-3 Satellite Mockup.jpg',
+      'Chinese news rendering of Beidou satellite.png',
+      'Beidou satellite mockup at FING UNLP 03.jpg',
+    ],
   },
   { id: 'geo', query: 'geostationary satellite' },
   { id: 'chandra', query: 'chandra x-ray observatory' },
@@ -865,13 +901,31 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   },
   { id: 'lro', query: 'lunar reconnaissance orbiter', copyFromMission: 'lro' },
   { id: 'jwst', query: 'james webb space telescope' },
-  // Gaia: ESA mission; NASA library has no official imagery; Wikimedia
-  // filenames don't resolve reliably. Honest empty state.
-  { id: 'gaia', query: 'gaia spacecraft milky way' },
+  {
+    id: 'gaia',
+    query: 'gaia spacecraft milky way',
+    // NASA library has no official Gaia imagery (ESA mission). Top up
+    // entirely from Wikimedia. Filenames verified via Commons API
+    // search 2026-05-04.
+    wikimediaGallery: [
+      'Maquette de Gaia salon du Bourget 2013 DSC 0191.JPG',
+      'Gaia spacecraft 360 Gaia Sky.jpg',
+      'Gaia spacecraft sizes.svg',
+    ],
+  },
 ];
 
 const MOON_SITE_QUERIES: GalleryQuery[] = [
-  { id: 'luna9', query: 'luna 9', copyFromMission: 'luna9' },
+  {
+    id: 'luna9',
+    query: 'luna 9',
+    copyFromMission: 'luna9',
+    wikimediaGallery: [
+      'Luna 9 Space Probe.jpg',
+      'Luna 9 proposed 2026 landing site.png',
+      'First Photo from the Surface of the Moon.jpg',
+    ],
+  },
   { id: 'luna17', query: 'lunokhod 1 luna 17', copyFromMission: 'luna17' },
   { id: 'luna24', query: 'luna 24', copyFromMission: 'luna24' },
   { id: 'apollo11', query: 'apollo 11', copyFromMission: 'apollo11' },
@@ -884,6 +938,12 @@ const MOON_SITE_QUERIES: GalleryQuery[] = [
     id: 'change3',
     query: 'chinese chang-e 3 lunar',
     wikimediaFallback: 'Yutu_rover.jpg',
+    wikimediaGallery: [
+      'Yutu_rover.jpg',
+      "Chang'e 3 Lander and Rover From Above (LROC637).gif",
+      "Location of the Chang'e-3 landing site.jpg",
+      "Chang'e 3 landing site.png",
+    ],
   },
   { id: 'change4', query: 'change 4 farside', copyFromMission: 'change4' },
   { id: 'change5', query: 'change 5 lunar', copyFromMission: 'change5' },
@@ -940,32 +1000,27 @@ async function fetchPanelGallery(
 
     // Path 2 — NASA Images API search.
     let urls: string[] = [];
+    let saved = 0;
     try {
       urls = await fetchNasaGalleryUrls(q.query, PANEL_GALLERY_MAX);
     } catch {
-      // Path 3 — Wikimedia fallback (single image).
+      // NASA returned nothing usable. Single-image cover via
+      // wikimediaFallback comes first; the multi-file wikimediaGallery
+      // top-up below brings the total up to GALLERY_MIN_TARGET when
+      // available.
       if (q.wikimediaFallback) {
         try {
           const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(q.wikimediaFallback)}?width=800`;
           await downloadFromWikimedia(url, join(entityDir, '01.jpg'));
-          manifest[q.id] = 1;
-          totalPhotos++;
-          process.stdout.write(' wikimedia (1)\n');
-          continue;
-        } catch (err2) {
-          const msg = err2 instanceof Error ? err2.message : String(err2);
-          process.stdout.write(` ⚠ skipped (nasa+wikimedia: ${msg})\n`);
-          manifest[q.id] = 0;
-          continue;
+          saved = 1;
+          process.stdout.write(' wikimedia-cover');
+        } catch {
+          // Fall through to wikimediaGallery top-up below.
         }
-      } else {
-        process.stdout.write(' ⚠ skipped (no api results, no fallback)\n');
-        manifest[q.id] = 0;
-        continue;
       }
     }
 
-    let saved = 0;
+    // Download NASA URLs (if any) → 01.jpg, 02.jpg, ...
     for (let n = 0; n < urls.length; n++) {
       const filename = `${String(n + 1).padStart(2, '0')}.jpg`;
       try {
@@ -978,6 +1033,32 @@ async function fetchPanelGallery(
         // Single-image fail; continue with the rest.
       }
     }
+
+    // Top up from the curated Wikimedia gallery list when NASA + cover
+    // fallback fell short of GALLERY_MIN_TARGET. Same shape as
+    // topUpWikimediaGallery for missions: filenames tried in order,
+    // missing files skipped silently.
+    if (saved < GALLERY_MIN_TARGET && q.wikimediaGallery && q.wikimediaGallery.length > 0) {
+      const before = saved;
+      for (const fname of q.wikimediaGallery) {
+        if (saved >= GALLERY_MIN_TARGET) break;
+        const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
+        try {
+          const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fname)}?width=800`;
+          await downloadFromWikimedia(url, join(entityDir, slot));
+          saved++;
+        } catch {
+          // Skip missing file; continue with the next candidate.
+        }
+        await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+      }
+      if (saved > before) process.stdout.write(` +${saved - before} wikimedia-gallery`);
+    }
+
+    if (saved === 0) {
+      process.stdout.write(' ⚠ skipped (no images)');
+    }
+
     manifest[q.id] = saved;
     totalPhotos += saved;
     process.stdout.write(` ${saved}\n`);

@@ -1649,7 +1649,7 @@
   ></canvas>
   <button
     class="toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen}
+    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
     type="button"
     onclick={toggleView}
     aria-pressed={view === '2d'}
@@ -1658,7 +1658,7 @@
   </button>
   <button
     class="toggle sizes-toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen}
+    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
     type="button"
     onclick={() => (sizesOpen = !sizesOpen)}
     aria-pressed={sizesOpen}
@@ -1670,7 +1670,7 @@
 
   <button
     class="toggle layers-toggle"
-    class:panel-shifted={panelOpen || sunPanelOpen}
+    class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
     class:layers-active={layersOpen}
     type="button"
     onclick={() => (layersOpen = !layersOpen)}
@@ -1687,7 +1687,7 @@
          positioned just below the LAYERS button. -->
     <div
       class="layers-panel"
-      class:panel-shifted={panelOpen || sunPanelOpen}
+      class:panel-shifted={panelOpen || sunPanelOpen || smallBodyPanelOpen}
       role="dialog"
       aria-label="Visibility layers"
     >

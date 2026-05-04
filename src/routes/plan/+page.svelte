@@ -65,6 +65,58 @@
 
   let rocketList: Rocket[] = $state([]);
   let selectedRocketId = $state<string | null>(null);
+  // Sticky-after-manual-pick. Once the user picks a rocket from the
+  // dropdown the auto-suggester stops overriding it. Reset when the
+  // destination or mission type changes (a different mission has
+  // different ∆v requirements; the prior pick may not even be viable).
+  let userPickedRocket = $state(false);
+
+  // Educational primer collapse. Open by default so the porkchop is
+  // interpretable on first load; auto-collapses the moment the user
+  // selects a cell (readout becomes truthy) so the rocket / mission
+  // detail rows fit the panel without vertical scroll. The user can
+  // re-open it manually via the disclosure triangle — that stays
+  // open until the next selection.
+  let explainerOpen = $state(true);
+  $effect(() => {
+    if (readout) explainerOpen = false;
+  });
+
+  /**
+   * Pick the most-fitting rocket for a given ∆v requirement: the
+   * cheapest viable one (smallest capability that still covers the
+   * mission), falling back to the most-capable rocket if nothing in
+   * the catalogue is viable. Returns null if the list is empty.
+   *
+   * "Cheapest viable" varies naturally with the porkchop cell — a
+   * 5 km/s low-energy transfer picks Falcon Heavy; an 11 km/s direct
+   * picks Starship. So the suggested rocket isn't a constant default,
+   * it tracks the mission the user is configuring.
+   */
+  function suggestRocket(list: Rocket[], dvNeeded: number): string | null {
+    if (list.length === 0) return null;
+    const viable = list.filter((r) => r.delta_v_capability_km_s >= dvNeeded);
+    if (viable.length > 0) {
+      const cheapest = viable.reduce((a, b) =>
+        a.delta_v_capability_km_s < b.delta_v_capability_km_s ? a : b,
+      );
+      return cheapest.id;
+    }
+    const mostCapable = list.reduce((a, b) =>
+      a.delta_v_capability_km_s > b.delta_v_capability_km_s ? a : b,
+    );
+    return mostCapable.id;
+  }
+
+  // Auto-suggest a rocket whenever the ∆v requirement changes — but
+  // only if the user hasn't manually picked one. Manual pick is sticky
+  // until destination / mission type changes.
+  $effect(() => {
+    if (userPickedRocket) return;
+    if (rocketList.length === 0 || !readout) return;
+    const id = suggestRocket(rocketList, readout.dv);
+    if (id && id !== selectedRocketId) selectedRocketId = id;
+  });
 
   // ─── Plot geometry ───────────────────────────────────────────────
   const ML = 64;
@@ -117,12 +169,16 @@
     destinationId = value;
     // Reset mission type per the destination's defaults.
     missionType = GAS_GIANTS.includes(value) ? 'FLYBY' : 'LANDING';
+    // Different destination = different ∆v regime; let the auto-suggester
+    // pick a fitting rocket again instead of holding onto the prior pick.
+    userPickedRocket = false;
     pushFiltersToUrl();
   }
 
   function setMissionType(value: MissionType) {
     if (!MISSION_TYPES.includes(value)) return; // disabled pill
     missionType = value;
+    userPickedRocket = false;
     pushFiltersToUrl();
   }
 
@@ -487,9 +543,10 @@
 
     getRockets(localeFromPage($page)).then((list) => {
       rocketList = list;
-      // Default to a vehicle that can actually reach Mars (Falcon Heavy, SLS, Starship).
-      const mars = list.find((r) => r.payload_to_mars_kg > 0);
-      selectedRocketId = mars?.id ?? list[0]?.id ?? null;
+      // Initial pick: no porkchop cell selected yet, so use a typical
+      // Mars-class ∆v as the seed (~10 km/s). The $effect that watches
+      // readout will refine this the moment the user clicks any cell.
+      selectedRocketId = suggestRocket(list, 10) ?? list[0]?.id ?? null;
     });
 
     const onResize = () => drawPlot();
@@ -592,11 +649,14 @@
   </div>
 
   <aside class="right-panel" aria-label={m.plan_panel_label()}>
-    <!-- Educational primer — always visible at the top of the right
-         panel so the porkchop is interpretable on first paint, before
-         the user has clicked any cell. -->
-    <section class="explainer">
-      <h3>{m.plan_explainer_title()}</h3>
+    <!-- Educational primer. Collapsible <details> so the porkchop is
+         interpretable on first paint (open by default) but auto-folds
+         on cell-selection to free vertical space for rocket + mission
+         details. User can manually expand at any time. -->
+    <details class="explainer" bind:open={explainerOpen}>
+      <summary>
+        <span class="explainer-title">{m.plan_explainer_title()}</span>
+      </summary>
       <p class="explainer-intro">{m.plan_explainer_intro()}</p>
       <dl class="explainer-list">
         <dt>{m.plan_explainer_x_axis()}</dt>
@@ -620,7 +680,7 @@
         <dt>{m.plan_explainer_how_to()}</dt>
         <dd>{m.plan_explainer_how_to_desc()}</dd>
       </dl>
-    </section>
+    </details>
     <hr class="panel-divider" aria-hidden="true" />
 
     {#if !readout}
@@ -651,7 +711,12 @@
 
       <label class="vehicle">
         <span class="label">{m.plan_label_vehicle()}</span>
-        <select bind:value={selectedRocketId}>
+        <select
+          bind:value={selectedRocketId}
+          onchange={() => {
+            userPickedRocket = true;
+          }}
+        >
           {#each rocketList as r (r.id)}
             <option value={r.id}>
               {r.name ?? r.id} — {r.delta_v_capability_km_s.toFixed(1)} km/s
@@ -683,6 +748,26 @@
           <div class="row launch-site">
             <span class="label">LAUNCH SITE</span>
             <span class="value">{selectedRocket.launch_site}</span>
+          </div>
+        {/if}
+
+        {#if selectedRocket.links && selectedRocket.links.length > 0}
+          <!-- Learn-more links: agency / official source first, Wikipedia
+               as fallback. Each rocket carries at least one link in the
+               base rockets.json data; render up to two so the row stays
+               compact in the right panel. -->
+          <div class="rocket-links">
+            {#each selectedRocket.links.slice(0, 2) as link (link.u)}
+              <a
+                class="rocket-link"
+                href={link.u}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="{link.l} (opens in new tab)"
+              >
+                {link.l} ↗
+              </a>
+            {/each}
           </div>
         {/if}
 
@@ -907,19 +992,47 @@
   }
 
   .explainer {
-    padding: 14px 14px 12px;
+    padding: 10px 14px 12px;
     background: rgba(68, 102, 255, 0.04);
     border: 1px solid rgba(68, 102, 255, 0.25);
     border-radius: 4px;
     margin-bottom: 8px;
   }
-  .explainer h3 {
-    margin: 0 0 8px;
+  .explainer > summary {
+    /* Custom marker (▾) styled to match the HUD aesthetic. The native
+       triangle is hidden via list-style: none + ::-webkit-details-marker
+       so we can render our own glyph that flips when open. */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    cursor: pointer;
+    padding: 4px 0;
+    user-select: none;
+  }
+  .explainer > summary::-webkit-details-marker {
+    display: none;
+  }
+  .explainer > summary::before {
+    content: '▸';
+    font-size: 10px;
+    color: rgba(68, 102, 255, 0.85);
+    transition: transform 150ms ease;
+    display: inline-block;
+  }
+  .explainer[open] > summary::before {
+    transform: rotate(90deg);
+  }
+  .explainer-title {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
+    font-size: 9px;
     letter-spacing: 2px;
     color: #4466ff;
     font-weight: 700;
+  }
+  .explainer[open] > .explainer-intro,
+  .explainer[open] > .explainer-list {
+    margin-top: 6px;
   }
   .explainer-intro {
     margin: 0 0 10px;
@@ -1018,6 +1131,31 @@
     justify-content: space-between;
     gap: 12px;
     align-items: baseline;
+  }
+  .rocket-links {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 2px 0 4px;
+  }
+  .rocket-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--color-tier-intro);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    padding: 1px 0;
+    align-self: flex-start;
+    transition:
+      color 120ms,
+      border-color 120ms;
+  }
+  .rocket-link:hover,
+  .rocket-link:focus-visible {
+    color: #fff;
+    border-bottom-color: #4ecdc4;
+    outline: none;
   }
   .row.strong .value {
     color: #4ecdc4;

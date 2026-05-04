@@ -266,6 +266,7 @@ Before writing code for any feature, check:
 2. `docs/rfc/` — is it being deliberated?
 3. `docs/prd/` — what is the user-value argument?
 4. `docs/uxs/` — what does it look like?
+5. `docs/i18n-style-guide.md` — for any user-facing string, what's the per-language translation convention? (Binding for translation work per ADR-033.)
 
 When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
 

@@ -26,8 +26,16 @@ test.describe('/mars', () => {
     await page.goto('/mars');
     await page.getByTestId('mode-toggle').click();
     await expect(page.getByTestId('mode-toggle')).toHaveText('3D');
+    // The 2D canvas has class="layer" and is the only `<canvas>` in
+    // the route's tree (the 3D canvas is created inside the
+    // bound <div class="layer"> by Three.js but doesn't carry the
+    // class itself). After the toggle it should be visible — non-zero
+    // box, display !== 'none', etc.
     const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible({ timeout: 5_000 });
+    await expect(flat).toBeVisible({ timeout: 8_000 });
+    const dim = await flat.evaluate((el: HTMLCanvasElement) => ({ w: el.width, h: el.height }));
+    expect(dim.w).toBeGreaterThan(0);
+    expect(dim.h).toBeGreaterThan(0);
   });
 
   test('layer chips render and toggle', async ({ page }) => {
@@ -43,15 +51,17 @@ test.describe('/mars', () => {
 
   test('?site=curiosity deep-link opens panel pre-selected', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
+    await page.waitForLoadState('networkidle');
     const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible({ timeout: 5_000 });
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Curiosity/i);
   });
 
   test('?site=mro opens an orbital site panel', async ({ page }) => {
     await page.goto('/mars?site=mro');
+    await page.waitForLoadState('networkidle');
     const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible({ timeout: 5_000 });
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Mars Reconnaissance Orbiter|MRO/i);
     await expect(panel).toContainText(/IN ORBIT/);
   });

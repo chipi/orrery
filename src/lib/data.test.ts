@@ -324,16 +324,7 @@ describe('getMoonSites', () => {
     // nation 'Europe'), so the legend grows beyond the original five
     // nations. Both the original surface set and the orbiters share the
     // same nation enum from src/types/surface-site.ts.
-    const allowed = new Set([
-      'USA',
-      'USSR',
-      'Russia',
-      'China',
-      'India',
-      'Japan',
-      'Europe',
-      'UAE',
-    ]);
+    const allowed = new Set(['USA', 'USSR', 'Russia', 'China', 'India', 'Japan', 'Europe', 'UAE']);
     for (const s of list) {
       expect(allowed.has(s.nation)).toBe(true);
     }

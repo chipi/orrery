@@ -111,6 +111,11 @@
     getMarsSites(localeFromPage($page))
       .then((list) => {
         sites = list;
+        // Apply ?site= deep-link directly after data lands (deterministic
+        // timing, no $effect ordering surprises). selectSite is a no-op
+        // when the id is unknown.
+        const siteParam = $page.url.searchParams.get('site');
+        if (siteParam) selectSite(siteParam);
       })
       .catch((err) => {
         console.error('Failed to load Mars sites:', err);
@@ -362,12 +367,6 @@
       if (sites.length === 0) return;
       rebuildSurfaceMarkers();
       rebuildOrbitalMarkers();
-
-      // Apply ?site= deep-link once data is loaded.
-      const siteParam = $page.url.searchParams.get('site');
-      if (siteParam && !panelOpen) {
-        selectSite(siteParam);
-      }
     });
 
     // Visibility toggles wired to layer state.
@@ -555,9 +554,16 @@
     marsImage.src = `${base}/textures/2k_mars.jpg`;
 
     function size2d() {
-      if (!container || !canvas2d) return { W: 0, H: 0 };
-      const W = container.clientWidth;
-      const H = container.clientHeight;
+      if (!canvas2d) return { W: 0, H: 0 };
+      // Read from the canvas's own bounding box rather than the 3D
+      // container — when view='2d' the 3D container has display:none,
+      // so its clientWidth/Height collapse to 0 and the canvas would
+      // size to 0×0. The canvas itself, with width:100% / height:100%
+      // anchored to .mars (position:absolute inset:nav 0 0 0), gets
+      // proper dimensions from its containing block.
+      const rect = canvas2d.getBoundingClientRect();
+      const W = Math.max(1, Math.round(rect.width));
+      const H = Math.max(1, Math.round(rect.height));
       const ratio = window.devicePixelRatio || 1;
       canvas2d.width = W * ratio;
       canvas2d.height = H * ratio;

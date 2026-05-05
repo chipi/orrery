@@ -1,0 +1,538 @@
+[
+  {
+    "id": "mars2",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1971,
+    "landing_date": "1971-11-27",
+    "lat": -45,
+    "lon": 313,
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© Soviet Academy of Sciences (historical) — landing site approximate, NSSDCA catalogue.",
+    "links": [
+      { "l": "Mars 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_2", "t": "intro" },
+      { "l": "Mars 2 — NASA NSSDCA", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A", "t": "core" }
+    ]
+  },
+  {
+    "id": "mars3",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1971,
+    "landing_date": "1971-12-02",
+    "lat": -45,
+    "lon": 202,
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "surface_duration_days": 0.00016,
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© Soviet Academy of Sciences — first soft landing on Mars; transmitted ~14.5 s before signal loss. Coordinates: NSSDCA.",
+    "mission_id": "mars3",
+    "links": [
+      { "l": "Mars 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
+      { "l": "Mars 3 — NASA NSSDCA", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049C", "t": "core" }
+    ]
+  },
+  {
+    "id": "mars6",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1974,
+    "landing_date": "1974-03-12",
+    "lat": -23.9,
+    "lon": -19.4,
+    "crewed": false,
+    "status": "LOST",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© Soviet Academy of Sciences — communications lost during atmospheric descent; first telemetry from a Mars lander. Coordinates: NSSDCA.",
+    "links": [
+      { "l": "Mars 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_6", "t": "intro" }
+    ]
+  },
+  {
+    "id": "viking1-lander",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1976,
+    "landing_date": "1976-07-20",
+    "lat": 22.27,
+    "lon": 312.05,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 2245,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA / Viking Project — Chryse Planitia landing site, NASA Planetary Data System.",
+    "mission_id": "viking1",
+    "links": [
+      { "l": "Viking program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_program", "t": "intro" },
+      { "l": "Viking 1 — NASA", "u": "https://science.nasa.gov/mission/viking-1/", "t": "core" }
+    ]
+  },
+  {
+    "id": "viking2-lander",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1976,
+    "landing_date": "1976-09-03",
+    "lat": 47.97,
+    "lon": 134.0,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 1281,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA / Viking Project — Utopia Planitia landing site.",
+    "links": [
+      { "l": "Viking 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_2", "t": "intro" },
+      { "l": "Viking 2 — NASA", "u": "https://science.nasa.gov/mission/viking-2/", "t": "core" }
+    ]
+  },
+  {
+    "id": "mars-pathfinder",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1997,
+    "landing_date": "1997-07-04",
+    "lat": 19.13,
+    "lon": -33.22,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 85,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Ares Vallis landing site; deployed Sojourner rover.",
+    "mission_id": "mars-pathfinder",
+    "links": [
+      { "l": "Mars Pathfinder — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder", "t": "intro" },
+      { "l": "Mars Pathfinder — NASA", "u": "https://science.nasa.gov/mission/mars-pathfinder/", "t": "core" }
+    ]
+  },
+  {
+    "id": "beagle2",
+    "kind": "surface",
+    "agency": "ESA",
+    "nation": "Europe",
+    "year": 2003,
+    "landing_date": "2003-12-25",
+    "lat": 11.53,
+    "lon": 90.43,
+    "crewed": false,
+    "status": "LOST",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© ESA / UK Space Agency — UK-led lander aboard Mars Express. Wreckage located in 2015 by NASA's MRO/HiRISE imaging at Isidis Planitia.",
+    "links": [
+      { "l": "Beagle 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Beagle_2", "t": "intro" },
+      { "l": "Beagle 2 found — ESA news", "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Beagle-2_lander_found_on_Mars", "t": "core" }
+    ]
+  },
+  {
+    "id": "spirit",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2004,
+    "landing_date": "2004-01-04",
+    "lat": -14.57,
+    "lon": 175.47,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 2208,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Gusev Crater landing site; rover stuck 2009, last contact 2010.",
+    "links": [
+      { "l": "Spirit — Wikipedia", "u": "https://en.wikipedia.org/wiki/Spirit_(rover)", "t": "intro" },
+      { "l": "MER — NASA", "u": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/", "t": "core" }
+    ]
+  },
+  {
+    "id": "opportunity",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2004,
+    "landing_date": "2004-01-25",
+    "lat": -1.95,
+    "lon": -5.53,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 5352,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Meridiani Planum landing site; 45.16 km traverse total. Last contact during 2018 global dust storm.",
+    "links": [
+      { "l": "Opportunity — Wikipedia", "u": "https://en.wikipedia.org/wiki/Opportunity_(rover)", "t": "intro" },
+      { "l": "Opportunity end-of-mission — NASA", "u": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/", "t": "core" }
+    ]
+  },
+  {
+    "id": "phoenix",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2008,
+    "landing_date": "2008-05-25",
+    "lat": 68.22,
+    "lon": -125.7,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 157,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL/U. of Arizona — northern polar plain; first to confirm subsurface water ice on Mars.",
+    "links": [
+      { "l": "Phoenix lander — Wikipedia", "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)", "t": "intro" },
+      { "l": "Phoenix — NASA", "u": "https://science.nasa.gov/mission/phoenix/", "t": "core" }
+    ]
+  },
+  {
+    "id": "curiosity",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2012,
+    "landing_date": "2012-08-06",
+    "lat": -4.59,
+    "lon": 137.44,
+    "crewed": false,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Gale Crater landing site; nuclear-powered rover (RTG), still operational.",
+    "mission_id": "curiosity",
+    "links": [
+      { "l": "Curiosity rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)", "t": "intro" },
+      { "l": "MSL — NASA", "u": "https://science.nasa.gov/mission/msl-curiosity/", "t": "core" }
+    ]
+  },
+  {
+    "id": "schiaparelli",
+    "kind": "surface",
+    "agency": "ESA",
+    "nation": "Europe",
+    "year": 2016,
+    "landing_date": "2016-10-19",
+    "lat": -2.07,
+    "lon": 6.21,
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© ESA / Roscosmos — ExoMars 2016 EDM. Premature parachute release caused free-fall impact at Meridiani Planum.",
+    "links": [
+      { "l": "Schiaparelli EDM — Wikipedia", "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM", "t": "intro" },
+      { "l": "Schiaparelli — ESA", "u": "https://www.esa.int/Science_Exploration/Space_Science/ExoMars/ExoMars_in_brief", "t": "core" }
+    ]
+  },
+  {
+    "id": "insight",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2018,
+    "landing_date": "2018-11-26",
+    "lat": 4.5,
+    "lon": 135.62,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 1440,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Elysium Planitia landing site; first dedicated seismograph on Mars.",
+    "mission_id": "insight",
+    "links": [
+      { "l": "InSight — Wikipedia", "u": "https://en.wikipedia.org/wiki/InSight", "t": "intro" },
+      { "l": "InSight — NASA", "u": "https://science.nasa.gov/mission/insight/", "t": "core" }
+    ]
+  },
+  {
+    "id": "perseverance",
+    "kind": "surface",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2021,
+    "landing_date": "2021-02-18",
+    "lat": 18.44,
+    "lon": 77.45,
+    "crewed": false,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Jezero Crater landing site; carries the Ingenuity helicopter (88 flights, retired Jan 2024).",
+    "mission_id": "perseverance",
+    "links": [
+      { "l": "Perseverance — Wikipedia", "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)", "t": "intro" },
+      { "l": "Mars 2020 — NASA", "u": "https://science.nasa.gov/mission/mars-2020-perseverance/", "t": "core" }
+    ]
+  },
+  {
+    "id": "zhurong",
+    "kind": "surface",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2021,
+    "landing_date": "2021-05-14",
+    "lat": 25.1,
+    "lon": 109.93,
+    "crewed": false,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "surface_duration_days": 358,
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© CNSA / China National Space Administration — Utopia Planitia landing site of Tianwen-1 lander + Zhurong rover.",
+    "mission_id": "tianwen1",
+    "links": [
+      { "l": "Zhurong rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)", "t": "intro" },
+      { "l": "Tianwen-1 — Nature", "u": "https://www.nature.com/articles/d41586-021-01357-5", "t": "core" }
+    ]
+  },
+  {
+    "id": "exomars-rosalind-franklin",
+    "kind": "surface",
+    "agency": "ESA",
+    "nation": "Europe",
+    "year": 2028,
+    "lat": 18.2,
+    "lon": -35.05,
+    "crewed": false,
+    "status": "PLANNED",
+    "surface_status": "planned",
+    "samples_kg": 0,
+    "data_quality": "partial",
+    "credit": "© ESA / NASA — Oxia Planum target site for the Rosalind Franklin rover; launch planned 2028 after the 2022 cancellation of Russian collaboration.",
+    "links": [
+      { "l": "Rosalind Franklin rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Rosalind_Franklin_(rover)", "t": "intro" },
+      { "l": "ExoMars — ESA", "u": "https://exploration.esa.int/web/mars/-/45084-exomars-rover", "t": "core" }
+    ]
+  },
+  {
+    "id": "mariner9",
+    "kind": "orbiter",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1971,
+    "altitude_km": 1394,
+    "inclination_deg": 64.4,
+    "eccentricity": 0.6,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "data_quality": "good",
+    "credit": "© NASA/JPL — first spacecraft to orbit another planet; 7,329 images returned in 1971-72.",
+    "links": [
+      { "l": "Mariner 9 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mariner_9", "t": "intro" },
+      { "l": "Mariner 9 — NASA NSSDCA", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-051A", "t": "core" }
+    ]
+  },
+  {
+    "id": "mars3-orbiter",
+    "kind": "orbiter",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1971,
+    "altitude_km": 1500,
+    "inclination_deg": 60,
+    "eccentricity": 0.985,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "data_quality": "partial",
+    "credit": "© Soviet Academy of Sciences — orbiter component of Mars 3 mission, returned data through 1972.",
+    "mission_id": "mars3",
+    "links": [
+      { "l": "Mars 3 orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" }
+    ]
+  },
+  {
+    "id": "viking1-orbiter",
+    "kind": "orbiter",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 1976,
+    "altitude_km": 1500,
+    "inclination_deg": 39.3,
+    "eccentricity": 0.91,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "data_quality": "good",
+    "credit": "© NASA / Viking Project — orbiter operated through 1980, 50,000+ images returned.",
+    "mission_id": "viking1",
+    "links": [
+      { "l": "Viking program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Viking_program", "t": "intro" }
+    ]
+  },
+  {
+    "id": "mars-odyssey",
+    "kind": "orbiter",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2001,
+    "altitude_km": 400,
+    "inclination_deg": 93.06,
+    "eccentricity": 0.0091,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — longest continuously-active spacecraft in orbit around another planet (since 2001).",
+    "links": [
+      { "l": "Mars Odyssey — Wikipedia", "u": "https://en.wikipedia.org/wiki/2001_Mars_Odyssey", "t": "intro" },
+      { "l": "Mars Odyssey — NASA", "u": "https://science.nasa.gov/mission/mars-odyssey/", "t": "core" }
+    ]
+  },
+  {
+    "id": "mars-express",
+    "kind": "orbiter",
+    "agency": "ESA",
+    "nation": "Europe",
+    "year": 2003,
+    "altitude_km": 250,
+    "inclination_deg": 86.9,
+    "eccentricity": 0.94,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© ESA — first European interplanetary mission; carried Beagle 2; HRSC stereo camera maps Martian topography.",
+    "mission_id": "mars-express",
+    "links": [
+      { "l": "Mars Express — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Express", "t": "intro" },
+      { "l": "Mars Express — ESA", "u": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express", "t": "core" }
+    ]
+  },
+  {
+    "id": "mro",
+    "kind": "orbiter",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2006,
+    "altitude_km": 255,
+    "inclination_deg": 92.65,
+    "eccentricity": 0.011,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© NASA/JPL-Caltech — Mars Reconnaissance Orbiter; HiRISE camera resolves objects ≥30 cm on the surface (used to find Beagle 2's wreckage).",
+    "links": [
+      { "l": "MRO — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Reconnaissance_Orbiter", "t": "intro" },
+      { "l": "MRO — NASA", "u": "https://science.nasa.gov/mission/mars-reconnaissance-orbiter/", "t": "core" }
+    ]
+  },
+  {
+    "id": "maven",
+    "kind": "orbiter",
+    "agency": "NASA",
+    "nation": "USA",
+    "year": 2014,
+    "altitude_km": 150,
+    "inclination_deg": 75,
+    "eccentricity": 0.69,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© NASA/U. Colorado/LASP — Mars Atmosphere and Volatile EvolutioN; studies how Mars lost its atmosphere to space.",
+    "mission_id": "maven",
+    "links": [
+      { "l": "MAVEN — Wikipedia", "u": "https://en.wikipedia.org/wiki/MAVEN", "t": "intro" },
+      { "l": "MAVEN — NASA", "u": "https://science.nasa.gov/mission/maven/", "t": "core" }
+    ]
+  },
+  {
+    "id": "mangalyaan",
+    "kind": "orbiter",
+    "agency": "ISRO",
+    "nation": "India",
+    "year": 2014,
+    "altitude_km": 372,
+    "inclination_deg": 150,
+    "eccentricity": 0.916,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "data_quality": "good",
+    "credit": "© ISRO — India's first interplanetary mission; first Asian spacecraft to reach Mars orbit on a maiden attempt. Lost contact April 2022.",
+    "mission_id": "mangalyaan",
+    "links": [
+      { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
+      { "l": "MOM — ISRO", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission.html", "t": "core" }
+    ]
+  },
+  {
+    "id": "tgo",
+    "kind": "orbiter",
+    "agency": "ESA",
+    "nation": "Europe",
+    "year": 2016,
+    "altitude_km": 400,
+    "inclination_deg": 74,
+    "eccentricity": 0.0,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© ESA / Roscosmos — ExoMars Trace Gas Orbiter; characterises atmospheric methane and other trace gases.",
+    "links": [
+      { "l": "ExoMars Trace Gas Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/ExoMars_Trace_Gas_Orbiter", "t": "intro" },
+      { "l": "TGO — ESA", "u": "https://www.esa.int/Science_Exploration/Space_Science/ExoMars/Trace_Gas_Orbiter_factsheet", "t": "core" }
+    ]
+  },
+  {
+    "id": "tianwen1-orbiter",
+    "kind": "orbiter",
+    "agency": "CNSA",
+    "nation": "China",
+    "year": 2021,
+    "altitude_km": 265,
+    "inclination_deg": 87,
+    "eccentricity": 0.96,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© CNSA — orbiter component of Tianwen-1; relays Zhurong telemetry, conducts global imaging and radar mapping.",
+    "mission_id": "tianwen1",
+    "links": [
+      { "l": "Tianwen-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tianwen-1", "t": "intro" }
+    ]
+  },
+  {
+    "id": "hope",
+    "kind": "orbiter",
+    "agency": "UAESA",
+    "nation": "UAE",
+    "year": 2021,
+    "altitude_km": 20000,
+    "inclination_deg": 25,
+    "eccentricity": 0.366,
+    "status": "ACTIVE",
+    "surface_status": "ongoing",
+    "data_quality": "good",
+    "credit": "© Mohammed Bin Rashid Space Centre / UAE Space Agency — first Arab interplanetary mission; one-Mars-day equatorial coverage.",
+    "mission_id": "hope-probe",
+    "links": [
+      { "l": "Emirates Mars Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Emirates_Mars_Mission", "t": "intro" },
+      { "l": "Hope — MBRSC", "u": "https://www.mbrsc.ae/space-program/", "t": "core" }
+    ]
+  }
+]

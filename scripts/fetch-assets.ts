@@ -914,9 +914,9 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
     // entirely from Wikimedia. Filenames verified via Commons API
     // search 2026-05-04.
     wikimediaGallery: [
+      'Gaia spacecraft.jpeg',
       'Maquette de Gaia salon du Bourget 2013 DSC 0191.JPG',
       'Gaia spacecraft 360 Gaia Sky.jpg',
-      'Gaia spacecraft sizes.svg',
     ],
   },
 ];

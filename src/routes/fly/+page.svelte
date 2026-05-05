@@ -184,10 +184,7 @@
     timeline: MissionTimeline,
     isFreeReturn: boolean,
     destinationId: DestinationId = 'mars',
-    // arrivalVInfKms is unused now — transferEllipse pins both
-    // endpoints geometrically. Kept for caller back-compat; remove on
-    // the next /plan + /fly cleanup pass.
-    _arrivalVInfKms?: number,
+    arrivalVInfKms?: number | null,
   ): { out: Vec2[]; ret: Vec2[] } {
     // Outbound: true two-point Keplerian ellipse with Sun at one focus.
     // Both endpoints land EXACTLY on live planet positions — Earth at
@@ -203,7 +200,7 @@
       destinationId === 'mars'
         ? marsPos(timeline.flyby_day)
         : destinationPos(timeline.flyby_day, destinationId);
-    const out = transferEllipse(earthDep, destArr, ARC_STEPS);
+    const out = transferEllipse(earthDep, destArr, ARC_STEPS, arrivalVInfKms);
     if (!isFreeReturn) return { out, ret: [] };
     // Free-return Mars: return arc starts at the outbound terminus
     // (== Mars at flyby_day) and ends at live Earth at arr_day, so

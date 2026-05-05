@@ -8,6 +8,7 @@ import {
   returnArc,
   spacecraftPos,
   spacecraftHeading,
+  transferEllipse,
 } from './mission-arc';
 import { R_EARTH_AU, R_MARS_AU } from './lambert-grid.constants';
 
@@ -133,6 +134,36 @@ describe('outboundArc', () => {
       expect(arcDefault[i].x).toBeCloseTo(arcMars[i].x, 6);
       expect(arcDefault[i].z).toBeCloseTo(arcMars[i].z, 6);
     }
+  });
+});
+
+describe('transferEllipse', () => {
+  const p1 = earthPos(100);
+  const p2 = marsPos(400);
+  const steps = 80;
+
+  it('pins both endpoints when optional V∞ is omitted', () => {
+    const arc = transferEllipse(p1, p2, steps);
+    expect(arc[0].x).toBeCloseTo(p1.x, 9);
+    expect(arc[0].z).toBeCloseTo(p1.z, 9);
+    expect(arc[steps].x).toBeCloseTo(p2.x, 9);
+    expect(arc[steps].z).toBeCloseTo(p2.z, 9);
+  });
+
+  it('pins both endpoints when arrival V∞ is supplied (GitHub #30)', () => {
+    const arc = transferEllipse(p1, p2, steps, 5.5);
+    expect(arc[0].x).toBeCloseTo(p1.x, 9);
+    expect(arc[0].z).toBeCloseTo(p1.z, 9);
+    expect(arc[steps].x).toBeCloseTo(p2.x, 9);
+    expect(arc[steps].z).toBeCloseTo(p2.z, 9);
+  });
+
+  it('high arrival V∞ bends mid-arc away from the baseline ellipse', () => {
+    const base = transferEllipse(p1, p2, steps);
+    const bent = transferEllipse(p1, p2, steps, 8.0);
+    const mid = Math.floor(steps / 2);
+    const d = Math.hypot(bent[mid].x - base[mid].x, bent[mid].z - base[mid].z);
+    expect(d).toBeGreaterThan(1e-4);
   });
 });
 

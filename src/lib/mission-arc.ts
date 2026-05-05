@@ -140,8 +140,19 @@ export function outboundArc(
  * p2's heliocentric angle. For inner planets (Venus, Mercury) where
  * p2's r is smaller than p1's, the arc still works — perihelion
  * shifts toward the inner planet automatically.
+ *
+ * Optional `arrivalVInfKms` (from `mission.flight.arrival.v_infinity_km_s`)
+ * applies the same visual bend model as `outboundArc`: endpoints stay
+ * fixed (sin² envelope along the chord normal); mid-arc shifts so two
+ * missions with the same dates but different V∞ do not draw identical
+ * curves. Not a Lambert re-solve — ADR-027 / GitHub #30.
  */
-export function transferEllipse(p1: Vec2, p2: Vec2, steps: number): Vec2[] {
+export function transferEllipse(
+  p1: Vec2,
+  p2: Vec2,
+  steps: number,
+  arrivalVInfKms?: number | null,
+): Vec2[] {
   const r1 = Math.hypot(p1.x, p1.z);
   const r2 = Math.hypot(p2.x, p2.z);
   const dx = p2.x - p1.x;
@@ -205,6 +216,32 @@ export function transferEllipse(p1: Vec2, p2: Vec2, steps: number): Vec2[] {
     const ang = nu + best.periAngle;
     pts.push({ x: r * Math.cos(ang), z: r * Math.sin(ang) });
   }
+
+  if (
+    arrivalVInfKms != null &&
+    arrivalVInfKms > 0 &&
+    chord > 1e-15 &&
+    Number.isFinite(arrivalVInfKms)
+  ) {
+    const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
+    const AUPYR_TO_KMS = 4.7404;
+    const vTransferArrival =
+      Math.sqrt(MU_SUN_AU3_YR2 * (2 / r2 - 1 / a)) * AUPYR_TO_KMS;
+    const vDestCircular = Math.sqrt(MU_SUN_AU3_YR2 / r2) * AUPYR_TO_KMS;
+    const hohmannVInfKms = Math.abs(vTransferArrival - vDestCircular);
+    if (hohmannVInfKms > 0.1) {
+      const ratio = arrivalVInfKms / hohmannVInfKms;
+      const bend = Math.max(-0.4, Math.min(0.6, ratio - 1));
+      const px = -dz / chord;
+      const pz = dx / chord;
+      const amp = chord * 0.15 * bend;
+      for (let i = 0; i <= steps; i++) {
+        const w = Math.sin((Math.PI * i) / steps) ** 2;
+        pts[i] = { x: pts[i].x + px * amp * w, z: pts[i].z + pz * amp * w };
+      }
+    }
+  }
+
   return pts;
 }
 

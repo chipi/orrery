@@ -132,7 +132,8 @@ function buildMissionArcs(m: MissionFile): {
     heliDestinationId === 'mars'
       ? marsPos(timeline.flyby_day)
       : destinationPos(timeline.flyby_day, heliDestinationId);
-  const out = transferEllipse(earthDep, destEnd, ARC_STEPS);
+  const vInf = json.flight?.arrival?.v_infinity_km_s;
+  const out = transferEllipse(earthDep, destEnd, ARC_STEPS, vInf);
   const ret = isReturnTrip
     ? returnArc(
         out[out.length - 1],

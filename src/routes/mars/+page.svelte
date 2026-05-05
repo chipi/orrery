@@ -269,22 +269,23 @@
           emissiveIntensity: 0.2,
           shininess: 30,
         });
-        // Marker shape varies by mission type. Active rover → squat box;
-        // crashed/lost → flat disc; lander/orbiter → octahedron probe.
-        // Lightweight family of shapes — same vocabulary as /moon but
-        // simplified for V1.
+        // Marker shape varies by hardware type:
+        //   - Rover (active or completed) → squat box on wheels
+        //   - Soviet lander (Mars 2/3/6, ROSCOSMOS) → spherical
+        //     petal-capsule, the iconic Soviet design that descended
+        //     under parachute and opened like a flower on landing
+        //   - Other lander → octahedron probe with antenna
+        // Failure status (CRASHED/LOST) is conveyed via reduced
+        // opacity + the dashed-outline marker in 2D + the panel's
+        // status badge — the 3D model itself shows the actual
+        // hardware so users can see what they were before they failed.
         const isFailed = site.status === 'CRASHED' || site.status === 'LOST';
-        if (isFailed) {
-          // Flat disc (looks like a smudge — visible but de-emphasised).
-          const disc = new THREE.Mesh(new THREE.CircleGeometry(0.6, 16), mat);
-          disc.rotation.x = -Math.PI / 2;
-          disc.position.y = 0.1;
-          group.add(disc);
-        } else if (
+        const isRover =
           site.mission_type?.toLowerCase().includes('rover') ||
           site.mission_id === 'curiosity' ||
-          site.mission_id === 'perseverance'
-        ) {
+          site.mission_id === 'perseverance';
+        const isSovietLander = site.agency === 'ROSCOSMOS';
+        if (isRover) {
           // Rover — squat box on wheels.
           const body = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.35, 0.5), mat);
           body.position.y = 0.3;
@@ -299,8 +300,43 @@
               group.add(wheel);
             }
           }
+        } else if (isSovietLander) {
+          // Soviet petal-capsule — central spherical body with four
+          // open petal panels around the base. This is the silhouette
+          // of the Mars 2/3/6 landers (and the Venera lineage they
+          // descended from). Descended on a parachute, opened like a
+          // flower on touchdown.
+          const capsule = new THREE.Mesh(new THREE.SphereGeometry(0.36, 16, 12), mat);
+          capsule.position.y = 0.42;
+          group.add(capsule);
+          // Four petals — flat triangular panels splayed out at ground
+          // level around the base.
+          for (let i = 0; i < 4; i++) {
+            const ang = (i / 4) * Math.PI * 2;
+            const petal = new THREE.Mesh(
+              new THREE.BoxGeometry(0.42, 0.02, 0.34),
+              new THREE.MeshPhongMaterial({
+                color: '#888888',
+                emissive: color,
+                emissiveIntensity: 0.05,
+                shininess: 5,
+              }),
+            );
+            petal.position.set(Math.cos(ang) * 0.42, 0.05, Math.sin(ang) * 0.42);
+            petal.rotation.y = ang;
+            // Tilt downward so petals flare outward from the capsule.
+            petal.rotation.z = -0.35;
+            group.add(petal);
+          }
+          // Tiny antenna whip on top.
+          const antenna = new THREE.Mesh(
+            new THREE.CylinderGeometry(0.015, 0.015, 0.4, 4),
+            new THREE.MeshPhongMaterial({ color: 0xeeeeee }),
+          );
+          antenna.position.y = 0.95;
+          group.add(antenna);
         } else {
-          // Lander — octahedron probe.
+          // Generic Western lander — octahedron probe.
           const body = new THREE.Mesh(new THREE.OctahedronGeometry(0.5), mat);
           body.position.y = 0.5;
           group.add(body);
@@ -310,6 +346,20 @@
           );
           antenna.position.y = 1.05;
           group.add(antenna);
+        }
+        // Crashed/lost markers get reduced opacity so the wreckage is
+        // visually de-emphasised vs. operational hardware. The 2D
+        // dashed-outline marker carries the same info on the flat map.
+        if (isFailed) {
+          group.traverse((o) => {
+            if (o instanceof THREE.Mesh) {
+              const om = o.material as THREE.Material & { opacity?: number; transparent?: boolean };
+              if (om) {
+                om.transparent = true;
+                om.opacity = 0.55;
+              }
+            }
+          });
         }
         // Anchor on surface; orient so +Y points outward.
         group.position.set(x * r, y * r, z * r);

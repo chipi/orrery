@@ -37,8 +37,9 @@
   // "FULL MISSION CARD" cross-link chip on the panel so we only
   // show it for objects that actually have a corresponding mission
   // card (lro, chandrayaan1, clementine, hubble, jwst, etc.).
+  // Populated inside onMount so the fetch only fires in the browser,
+  // not during SSR prerender (which lacks a base URL).
   let missionIds = $state<Set<string>>(new Set());
-  void getMissionIndex().then((idx) => (missionIds = new Set(idx.map((mi) => mi.id))));
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let objects: EarthObject[] = $state([]);
@@ -169,6 +170,12 @@
         console.error('Failed to load earth objects:', err);
         loadFailed = true;
       });
+
+    // Mission-id catalogue lookup — drives the FULL MISSION CARD
+    // chip's render gate. Browser-only fetch, ignored during SSR.
+    void getMissionIndex().then((idx) => {
+      missionIds = new Set(idx.map((mi) => mi.id));
+    });
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Earth + satellites in scene-space

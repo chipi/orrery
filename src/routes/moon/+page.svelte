@@ -757,11 +757,20 @@
     aria-label={m.moon_canvas_label()}
   ></canvas>
 
-  {#if !panelOpen}
-    <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-      {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-    </button>
-  {/if}
+  <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4). -->
+  <div class="hud-controls" role="group" aria-label="View controls">
+    <div class="ctrl-row">
+      <button
+        type="button"
+        class="toggle"
+        onclick={toggleView}
+        aria-pressed={view === '2d'}
+        data-testid="mode-toggle"
+      >
+        {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+      </button>
+    </div>
+  </div>
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
@@ -1005,11 +1014,23 @@
   :global(.moon canvas) {
     display: block;
   }
-  .toggle {
+  .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    right: 16px;
+    left: 16px;
     z-index: 35;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .ctrl-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    pointer-events: auto;
+  }
+  .toggle {
     min-width: 44px;
     min-height: 44px;
     padding: 0 14px;
@@ -1022,11 +1043,25 @@
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms;
   }
   .toggle:hover,
   .toggle:focus-visible {
     border-color: #4466ff;
+    background: rgba(20, 26, 50, 0.95);
     outline: none;
+  }
+  @media (max-width: 500px) {
+    .hud-controls {
+      left: 8px;
+      gap: 6px;
+    }
+    .toggle {
+      padding: 0 10px;
+      font-size: 12px;
+    }
   }
   .load-banner {
     position: fixed;

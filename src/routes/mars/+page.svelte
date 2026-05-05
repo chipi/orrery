@@ -438,11 +438,24 @@
       }
     }
 
+    // Apply current layer visibility to freshly-rebuilt markers.
+    // Without this, newly-created groups default to .visible=true
+    // even when the user has already toggled a layer off.
+    function applyLayerVisibility() {
+      for (const sm of surfaceMarkers) sm.group.visible = layerSurface;
+      for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
+      for (const tl of traverseLines) {
+        tl.line.visible = layerTraverses;
+        tl.endDot.visible = layerTraverses;
+      }
+    }
+
     // Reactive: rebuild markers whenever the sites array updates.
     $effect(() => {
       if (sites.length === 0) return;
       rebuildSurfaceMarkers();
       rebuildOrbitalMarkers();
+      applyLayerVisibility();
     });
     // Reactive: rebuild traverses when their data lands (independent
     // of sites — they fetch in parallel).
@@ -450,15 +463,24 @@
       void traverses;
       if (sites.length === 0) return;
       rebuildTraverses();
+      applyLayerVisibility();
     });
 
-    // Visibility toggles wired to layer state.
+    // Visibility toggles wired to layer state. Read the layer flags
+    // OUTSIDE the for-loops so Svelte 5 tracks them as deps even when
+    // the marker arrays are empty at the effect's first fire (which
+    // they are — sites haven't loaded yet). Reading inside an
+    // empty-array for-loop short-circuits and the dep never registers,
+    // so subsequent layer-flag changes don't re-trigger the effect.
     $effect(() => {
-      for (const sm of surfaceMarkers) sm.group.visible = layerSurface;
-      for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
+      const surf = layerSurface;
+      const orb = layerOrbiters;
+      const trav = layerTraverses;
+      for (const sm of surfaceMarkers) sm.group.visible = surf;
+      for (const om of orbitalMarkers) om.group.visible = orb;
       for (const tl of traverseLines) {
-        tl.line.visible = layerTraverses;
-        tl.endDot.visible = layerTraverses;
+        tl.line.visible = trav;
+        tl.endDot.visible = trav;
       }
     });
 

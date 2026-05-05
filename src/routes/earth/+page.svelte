@@ -826,10 +826,34 @@
     aria-label={m.earth_canvas_label()}
   ></canvas>
 
-  {#if !panelOpen}
-    <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-      {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
-    </button>
+  <!-- Top-left HUD cluster (matches /explore + /mars + /moon convention from v0.4). -->
+  <div class="hud-controls" role="group" aria-label="View controls">
+    <div class="ctrl-row">
+      <button
+        type="button"
+        class="toggle"
+        onclick={toggleView}
+        aria-pressed={view === '2d'}
+        data-testid="mode-toggle"
+      >
+        {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
+      </button>
+    </div>
+  </div>
+
+  <!-- Orbit-regime legend overlay (3D view; the 2D canvas paints
+       regime ring labels directly). Matches the /moon nation-legend
+       pattern at the bottom of the screen. -->
+  {#if view === '3d'}
+    <div class="legend-3d" aria-label="Orbit regime legend">
+      {#each Object.entries(REGIME_COLORS) as [regime, color] (regime)}
+        <span class="legend-item">
+          <span class="legend-dot" style:background={`#${color.toString(16).padStart(6, '0')}`}
+          ></span>
+          {regime}
+        </span>
+      {/each}
+    </div>
   {/if}
 
   <!-- Year scrubber (Theme A.A4 / v0.1.11). Drives object visibility
@@ -1106,11 +1130,23 @@
     }
   }
 
-  .toggle {
+  .hud-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    right: 16px;
+    left: 16px;
     z-index: 35;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+  }
+  .ctrl-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    pointer-events: auto;
+  }
+  .toggle {
     min-width: 44px;
     min-height: 44px;
     padding: 0 14px;
@@ -1123,11 +1159,65 @@
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms;
   }
   .toggle:hover,
   .toggle:focus-visible {
     border-color: #4466ff;
+    background: rgba(20, 26, 50, 0.95);
     outline: none;
+  }
+  @media (max-width: 500px) {
+    .hud-controls {
+      left: 8px;
+      gap: 6px;
+    }
+    .toggle {
+      padding: 0 10px;
+      font-size: 12px;
+    }
+  }
+  .legend-3d {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    padding: 6px 14px;
+    background: rgba(8, 10, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    z-index: 5;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 4px currentColor;
+  }
+  @media (max-width: 500px) {
+    .legend-3d {
+      bottom: 100px;
+      gap: 8px;
+      padding: 4px 8px;
+      font-size: 8px;
+    }
   }
   .load-banner {
     position: fixed;

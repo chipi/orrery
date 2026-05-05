@@ -47,6 +47,12 @@
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
 
+  // Layer toggles. SURFACE = lander/rover markers; ORBITERS = dots
+  // on inclined rings around the Moon (LRO, Clementine, Chandrayaan-1,
+  // Chang'e 1/2, SMART-1, Lunar Prospector, Luna 10). Both default-on.
+  let layerSurface = $state(true);
+  let layerOrbiters = $state(true);
+
   function colorFor(site: MoonSite): string {
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
   }
@@ -108,14 +114,7 @@
 
     getMoonSites(localeFromPage($page))
       .then((list) => {
-        // V1 of the moon-orbiter backfill (issue #40 Phase 3): the orbiter
-        // entries are catalogued in moon-sites.json but rendering on /moon
-        // is deferred to a follow-up (positions are altitude_km/inclination
-        // rather than lat/lon; the existing marker code path expects
-        // lat/lon). Mars ships orbiter rendering first; once that pattern
-        // is stable, /moon will adopt it. Filter out non-surface entries
-        // here so the existing 16 surface markers continue to render.
-        sites = list.filter((s) => !s.kind || s.kind === 'surface');
+        sites = list;
       })
       .catch((err) => {
         console.error('Failed to load moon sites:', err);
@@ -272,6 +271,90 @@
       return group;
     }
 
+    // Orbital ring + dot rendering (lunar orbiters — LRO, Clementine,
+    // etc.). Mirrors the /mars pattern from PRD-009 / RFC-012 OQ-7.
+    // Parented to scene rather than moonMesh so the dots don't
+    // co-rotate with the Moon's tidally-locked-Earth-facing rotation —
+    // orbiters track an inertial frame.
+    type OrbitalMarker = {
+      group: THREE.Group;
+      ringMesh: THREE.Mesh;
+      dotMesh: THREE.Mesh;
+      siteId: string;
+      ringRadius: number;
+      orbitSpeed: number;
+      orbitPhase: number;
+    };
+    const orbitalMarkers: OrbitalMarker[] = [];
+
+    function rebuildOrbitalMarkers() {
+      for (const om of orbitalMarkers) {
+        om.group.traverse((o) => {
+          if (o instanceof THREE.Mesh) {
+            o.geometry?.dispose();
+            if (Array.isArray(o.material)) o.material.forEach((mat) => mat.dispose());
+            else o.material?.dispose();
+          }
+        });
+        scene.remove(om.group);
+      }
+      orbitalMarkers.length = 0;
+      let phase = 0;
+      for (const site of sites) {
+        if (site.kind !== 'orbiter') continue;
+        if (site.altitude_km == null || site.inclination_deg == null) continue;
+        const color = colorFor(site);
+        // Lunar orbital altitudes range from ~50 km (LRO) to ~470 km
+        // (SMART-1). Compress with log scale so all rings fit cleanly
+        // around the 30u Moon sphere without overlapping.
+        const altScale = moonRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
+        const inc = (site.inclination_deg * Math.PI) / 180;
+        const group = new THREE.Group();
+        const dimmed = site.status !== 'ACTIVE';
+        const ringMat = new THREE.MeshBasicMaterial({
+          color,
+          transparent: true,
+          opacity: dimmed ? 0.2 : 0.4,
+          side: THREE.DoubleSide,
+        });
+        const ringMesh = new THREE.Mesh(
+          new THREE.RingGeometry(altScale - 0.06, altScale + 0.06, 96),
+          ringMat,
+        );
+        ringMesh.rotation.x = inc;
+        group.add(ringMesh);
+
+        const dotMesh = new THREE.Mesh(
+          new THREE.SphereGeometry(0.5, 12, 12),
+          new THREE.MeshBasicMaterial({
+            color,
+            transparent: true,
+            opacity: dimmed ? 0.6 : 1.0,
+          }),
+        );
+        group.add(dotMesh);
+        const hit = new THREE.Mesh(
+          new THREE.SphereGeometry(2.5, 8, 8),
+          new THREE.MeshBasicMaterial({ visible: false }),
+        );
+        hit.userData = { siteId: site.id };
+        dotMesh.add(hit);
+        dotMesh.userData = { siteId: site.id };
+
+        scene.add(group);
+        orbitalMarkers.push({
+          group,
+          ringMesh,
+          dotMesh,
+          siteId: site.id,
+          ringRadius: altScale,
+          orbitSpeed: dimmed ? 0.06 : 0.2,
+          orbitPhase: phase,
+        });
+        phase += Math.PI / 5;
+      }
+    }
+
     function rebuildMarkers() {
       for (const mk of markers) {
         mk.group.traverse((obj) => {
@@ -285,6 +368,8 @@
       }
       markers.length = 0;
       for (const site of sites) {
+        // Skip orbiter entries — they go through rebuildOrbitalMarkers.
+        if (site.kind === 'orbiter') continue;
         // Orbiter entries (kind:'orbiter') are filtered out at fetch
         // time on this route, but TS doesn't know that — guard so
         // surface-only positioning math doesn't deal with undefined.
@@ -361,10 +446,13 @@
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      const hits = ray.intersectObjects(
-        markers.map((mk) => mk.group),
-        true,
-      );
+      // Pick against surface marker groups + orbital dot meshes.
+      // Hidden layers are excluded so users can't accidentally click a
+      // dimmed orbiter.
+      const targets: THREE.Object3D[] = [];
+      if (layerSurface) for (const mk of markers) targets.push(mk.group);
+      if (layerOrbiters) for (const om of orbitalMarkers) targets.push(om.dotMesh);
+      const hits = ray.intersectObjects(targets, true);
       const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
       if (hit) selectSite(hit.object.userData.siteId as string);
     }
@@ -692,8 +780,17 @@
       lastTime = now;
 
       // Rebuild markers if the site list changed (cheap — happens once
-      // when the data loads). Could optimise but 16 markers is trivial.
-      if (sites.length !== markers.length) rebuildMarkers();
+      // when the data loads). Same trigger covers the orbital ring
+      // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
+      const surfaceCount = sites.filter((s) => s.kind !== 'orbiter').length;
+      const orbitalCount = sites.filter((s) => s.kind === 'orbiter').length;
+      if (surfaceCount !== markers.length) rebuildMarkers();
+      if (orbitalCount !== orbitalMarkers.length) rebuildOrbitalMarkers();
+
+      // Apply layer visibility every frame so chip toggles take effect
+      // immediately (cheap — small static arrays).
+      for (const mk of markers) mk.group.visible = layerSurface;
+      for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
 
       // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
       // Drag-to-orbit still works.
@@ -701,6 +798,21 @@
       // to track and click moving labels. ADR-025 reduced-motion gate
       // still applies.
       if (!reducedMotion) moonMesh.rotation.y += dt * 0.015;
+
+      // Orbital dot motion — perception-scaled, ~30 s per ring.
+      for (const om of orbitalMarkers) {
+        if (!om.group.visible) continue;
+        if (!reducedMotion) om.orbitPhase += dt * om.orbitSpeed;
+        const a = om.orbitPhase;
+        const lx = Math.cos(a) * om.ringRadius;
+        const lz = Math.sin(a) * om.ringRadius;
+        const inc = om.ringMesh.rotation.x;
+        const cosI = Math.cos(inc);
+        const sinI = Math.sin(inc);
+        // Apply ringMesh's rotation.x to the dot's local position so
+        // the dot tracks the inclined ring exactly (mirror of /mars).
+        om.dotMesh.position.set(lx, -lz * sinI, lz * cosI);
+      }
 
       if (view === '3d') renderer.render(scene, camera);
       else draw2d();
@@ -768,6 +880,30 @@
         data-testid="mode-toggle"
       >
         {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+      </button>
+    </div>
+    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+      <button
+        type="button"
+        class="chip"
+        class:active={layerSurface}
+        aria-pressed={layerSurface}
+        onclick={() => (layerSurface = !layerSurface)}
+        title="Show or hide landers, rovers, and crashed surface vehicles"
+        data-testid="layer-surface"
+      >
+        SURFACE
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layerOrbiters}
+        aria-pressed={layerOrbiters}
+        onclick={() => (layerOrbiters = !layerOrbiters)}
+        title="Show or hide active and historical lunar orbiters"
+        data-testid="layer-orbiters"
+      >
+        ORBITERS
       </button>
     </div>
   </div>
@@ -849,50 +985,66 @@
             <div class="cell-label">{m.moon_panel_year()}</div>
             <div class="cell-value">{selected.year}</div>
           </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_landing()}</div>
-            <div class="cell-value">{selected.landing_date ?? '—'}</div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_lat()}</div>
-            <div class="cell-value">
-              {selected.lat != null ? m.moon_lat_deg({ value: selected.lat.toFixed(2) }) : '—'}
+          {#if selected.kind === 'orbiter'}
+            <!-- Orbiter cells: altitude + inclination instead of lat/lon. -->
+            <div class="cell">
+              <div class="cell-label">ALTITUDE</div>
+              <div class="cell-value">{selected.altitude_km?.toLocaleString() ?? '—'} km</div>
             </div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_lon()}</div>
-            <div class="cell-value">
-              {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
+            <div class="cell">
+              <div class="cell-label">INCLINATION</div>
+              <div class="cell-value">{selected.inclination_deg?.toFixed(1) ?? '—'}°</div>
             </div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_duration()}</div>
-            <div class="cell-value">
-              {selected.surface_duration_days
-                ? m.moon_days({ value: selected.surface_duration_days.toString() })
-                : '—'}
+            <div class="cell">
+              <div class="cell-label">STATUS</div>
+              <div class="cell-value short">{selected.status}</div>
             </div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_eva()}</div>
-            <div class="cell-value">
-              {selected.eva_duration_hours
-                ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
-                : '—'}
+          {:else}
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_landing()}</div>
+              <div class="cell-value">{selected.landing_date ?? '—'}</div>
             </div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_samples()}</div>
-            <div class="cell-value">
-              {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_lat()}</div>
+              <div class="cell-value">
+                {selected.lat != null ? m.moon_lat_deg({ value: selected.lat.toFixed(2) }) : '—'}
+              </div>
             </div>
-          </div>
-          <div class="cell">
-            <div class="cell-label">{m.moon_panel_crew()}</div>
-            <div class="cell-value short">
-              {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_lon()}</div>
+              <div class="cell-value">
+                {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
+              </div>
             </div>
-          </div>
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_duration()}</div>
+              <div class="cell-value">
+                {selected.surface_duration_days
+                  ? m.moon_days({ value: selected.surface_duration_days.toString() })
+                  : '—'}
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_eva()}</div>
+              <div class="cell-value">
+                {selected.eva_duration_hours
+                  ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
+                  : '—'}
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_samples()}</div>
+              <div class="cell-value">
+                {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-label">{m.moon_panel_crew()}</div>
+              <div class="cell-value short">
+                {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+              </div>
+            </div>
+          {/if}
         </div>
 
         {#if selected.left}
@@ -1029,6 +1181,47 @@
     flex-wrap: wrap;
     gap: 6px;
     pointer-events: auto;
+  }
+  .ctrl-row.chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chip {
+    min-height: 32px;
+    min-width: 110px;
+    padding: 0 10px;
+    background: rgba(8, 10, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border-radius: 999px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
+  }
+  .chip:hover,
+  .chip:focus-visible {
+    color: #fff;
+    border-color: rgba(78, 205, 196, 0.6);
+    outline: none;
+  }
+  .chip.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.7);
+    color: #4ecdc4;
+  }
+  @media (max-width: 500px) {
+    .chip {
+      padding: 0 8px;
+      font-size: 9px;
+      min-width: 92px;
+    }
   }
   .toggle {
     min-width: 44px;

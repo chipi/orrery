@@ -160,9 +160,11 @@ describe('reference data', () => {
     expect(data).toHaveLength(13);
   });
 
-  it('earthObjects() returns 13 objects', async () => {
+  it('earthObjects() returns 20 objects (13 Earth-orbital + 7 lunar orbiters)', async () => {
     const data = await earthObjects();
-    expect(data).toHaveLength(13);
+    expect(data).toHaveLength(20);
+    const lunar = data.filter((o) => o.regime === 'MOON');
+    expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
 
   it('moonSites() returns 24 sites (16 surface + 8 orbiters)', async () => {
@@ -277,9 +279,9 @@ describe('getMissionsForLibrary', () => {
 });
 
 describe('getEarthObjects', () => {
-  it('returns 13 objects merged with their en-US overlay', async () => {
+  it('returns 20 objects merged with their en-US overlay', async () => {
     const list = await getEarthObjects();
-    expect(list).toHaveLength(13);
+    expect(list).toHaveLength(20);
     const iss = list.find((o) => o.id === 'iss');
     expect(iss).toBeDefined();
     expect(iss!.altitude_km).toBe(408);
@@ -292,7 +294,7 @@ describe('getEarthObjects', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getEarthObjects('fr');
-    expect(list).toHaveLength(13);
+    expect(list).toHaveLength(20);
     const iss = list.find((o) => o.id === 'iss');
     expect(iss?.short).toBe('ISS');
   });

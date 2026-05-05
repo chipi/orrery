@@ -8,6 +8,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { categoriseMoonMarker } from '$lib/moon-marker-category';
+  import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -52,6 +53,7 @@
   // Chang'e 1/2, SMART-1, Lunar Prospector, Luna 10). Both default-on.
   let layerSurface = $state(true);
   let layerOrbiters = $state(true);
+  let layerOrbits = $state(true);
 
   function colorFor(site: MoonSite): string {
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
@@ -279,7 +281,7 @@
     type OrbitalMarker = {
       group: THREE.Group;
       ringMesh: THREE.Mesh;
-      dotMesh: THREE.Mesh;
+      dotGroup: THREE.Group;
       siteId: string;
       ringRadius: number;
       orbitSpeed: number;
@@ -324,28 +326,48 @@
         ringMesh.rotation.x = inc;
         group.add(ringMesh);
 
-        const dotMesh = new THREE.Mesh(
-          new THREE.SphereGeometry(0.5, 12, 12),
-          new THREE.MeshBasicMaterial({
-            color,
-            transparent: true,
-            opacity: dimmed ? 0.6 : 1.0,
-          }),
-        );
-        group.add(dotMesh);
+        // 3D model — use the shared earth-satellite-models factory so
+        // each spacecraft gets its real silhouette (LRO's asymmetric
+        // single-wing bus, Clementine's compact tower, generic-orbiter
+        // for the rest). Scale up 2x because the /moon scene is at
+        // a larger world-unit scale than /earth (moonRadius 30 vs
+        // earthRadius 8); without scaling the model reads as a dot.
+        const dotGroup = buildSatelliteModel(site.id, color);
+        dotGroup.scale.setScalar(2.0);
+        if (dimmed) {
+          dotGroup.traverse((o) => {
+            if (o instanceof THREE.Mesh) {
+              const mat = o.material as THREE.Material & {
+                opacity?: number;
+                transparent?: boolean;
+              };
+              if (mat) {
+                mat.transparent = true;
+                mat.opacity = 0.5;
+              }
+            }
+          });
+        }
+        // Tag every child for raycast pick-routing back to the site.
+        dotGroup.traverse((o) => {
+          if (o instanceof THREE.Mesh || o instanceof THREE.Sprite) {
+            o.userData = { siteId: site.id };
+          }
+        });
         const hit = new THREE.Mesh(
-          new THREE.SphereGeometry(2.5, 8, 8),
+          new THREE.SphereGeometry(3, 8, 8),
           new THREE.MeshBasicMaterial({ visible: false }),
         );
         hit.userData = { siteId: site.id };
-        dotMesh.add(hit);
-        dotMesh.userData = { siteId: site.id };
+        dotGroup.add(hit);
+        dotGroup.userData = { siteId: site.id };
+        group.add(dotGroup);
 
         scene.add(group);
         orbitalMarkers.push({
           group,
           ringMesh,
-          dotMesh,
+          dotGroup,
           siteId: site.id,
           ringRadius: altScale,
           orbitSpeed: dimmed ? 0.06 : 0.2,
@@ -451,7 +473,7 @@
       // dimmed orbiter.
       const targets: THREE.Object3D[] = [];
       if (layerSurface) for (const mk of markers) targets.push(mk.group);
-      if (layerOrbiters) for (const om of orbitalMarkers) targets.push(om.dotMesh);
+      if (layerOrbiters) for (const om of orbitalMarkers) targets.push(om.dotGroup);
       const hits = ray.intersectObjects(targets, true);
       const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
       if (hit) selectSite(hit.object.userData.siteId as string);
@@ -790,7 +812,13 @@
       // Apply layer visibility every frame so chip toggles take effect
       // immediately (cheap — small static arrays).
       for (const mk of markers) mk.group.visible = layerSurface;
-      for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
+      for (const om of orbitalMarkers) {
+        // ORBITERS chip controls the spacecraft model. ORBITS chip
+        // independently hides the ring lines (cleaner sky for users
+        // who just want to see where the orbiters are right now).
+        om.dotGroup.visible = layerOrbiters;
+        om.ringMesh.visible = layerOrbiters && layerOrbits;
+      }
 
       // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
       // Drag-to-orbit still works.
@@ -811,7 +839,7 @@
         const sinI = Math.sin(inc);
         // Apply ringMesh's rotation.x to the dot's local position so
         // the dot tracks the inclined ring exactly (mirror of /mars).
-        om.dotMesh.position.set(lx, -lz * sinI, lz * cosI);
+        om.dotGroup.position.set(lx, -lz * sinI, lz * cosI);
       }
 
       if (view === '3d') renderer.render(scene, camera);
@@ -904,6 +932,17 @@
         data-testid="layer-orbiters"
       >
         ORBITERS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layerOrbits}
+        aria-pressed={layerOrbits}
+        onclick={() => (layerOrbits = !layerOrbits)}
+        title="Show or hide the orbital ring lines (the spacecraft remain visible)"
+        data-testid="layer-orbits"
+      >
+        ORBITS
       </button>
     </div>
   </div>
@@ -1063,6 +1102,16 @@
             <h3>{m.moon_panel_capability_title()}</h3>
             <p>{selected.capability}</p>
           </section>
+        {/if}
+
+        {#if selected.mission_id}
+          <a
+            class="mission-link"
+            href="{base}/missions?id={selected.mission_id}"
+            data-testid="mission-card-link"
+          >
+            FULL MISSION CARD →
+          </a>
         {/if}
 
         {#if selected.credit}
@@ -1448,6 +1497,29 @@
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
     line-height: 1.5;
+  }
+
+  .mission-link {
+    align-self: flex-start;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: rgba(68, 102, 255, 0.18);
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .mission-link:hover,
+  .mission-link:focus-visible {
+    background: rgba(68, 102, 255, 0.32);
+    border-color: #4466ff;
+    outline: none;
   }
 
   .credit {

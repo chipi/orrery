@@ -4,7 +4,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getEarthObjects, getEarthObjectGallery } from '$lib/data';
+  import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import { altToOrbitRadius } from '$lib/scale';
@@ -29,6 +29,16 @@
   };
 
   let view: '3d' | '2d' = $state('3d');
+  // Layer toggle: hide/show the orbital ring lines without affecting
+  // the satellites themselves. Default-on so the at-a-glance picture
+  // stays informative.
+  let layerOrbits = $state(true);
+  // Set of mission ids in the catalogue — used to gate the
+  // "FULL MISSION CARD" cross-link chip on the panel so we only
+  // show it for objects that actually have a corresponding mission
+  // card (lro, chandrayaan1, clementine, hubble, jwst, etc.).
+  let missionIds = $state<Set<string>>(new Set());
+  void getMissionIndex().then((idx) => (missionIds = new Set(idx.map((mi) => mi.id))));
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let objects: EarthObject[] = $state([]);
@@ -789,7 +799,9 @@
         if (obj) {
           const launched = obj.launched <= simYear;
           s.group.visible = launched;
-          if (s.ringMesh) s.ringMesh.visible = launched;
+          // Ring visibility additionally gated by the ORBITS chip so
+          // users can declutter the scene without hiding spacecraft.
+          if (s.ringMesh) s.ringMesh.visible = launched && layerOrbits;
         }
       }
 
@@ -876,6 +888,19 @@
         data-testid="mode-toggle"
       >
         {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
+      </button>
+    </div>
+    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+      <button
+        type="button"
+        class="chip"
+        class:active={layerOrbits}
+        aria-pressed={layerOrbits}
+        onclick={() => (layerOrbits = !layerOrbits)}
+        title="Show or hide the orbital ring lines (satellites remain visible)"
+        data-testid="layer-orbits"
+      >
+        ORBITS
       </button>
     </div>
   </div>
@@ -1017,6 +1042,16 @@
 
         {#if selected.description}
           <p class="editorial">{selected.description}</p>
+        {/if}
+
+        {#if missionIds.has(selected.id)}
+          <a
+            class="mission-link"
+            href="{base}/missions?id={selected.id}"
+            data-testid="mission-card-link"
+          >
+            FULL MISSION CARD →
+          </a>
         {/if}
 
         {#if selected.credit}
@@ -1184,6 +1219,47 @@
     flex-wrap: wrap;
     gap: 6px;
     pointer-events: auto;
+  }
+  .ctrl-row.chips {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chip {
+    min-height: 32px;
+    min-width: 110px;
+    padding: 0 10px;
+    background: rgba(8, 10, 22, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    border-radius: 999px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
+  }
+  .chip:hover,
+  .chip:focus-visible {
+    color: #fff;
+    border-color: rgba(78, 205, 196, 0.6);
+    outline: none;
+  }
+  .chip.active {
+    background: rgba(78, 205, 196, 0.18);
+    border-color: rgba(78, 205, 196, 0.7);
+    color: #4ecdc4;
+  }
+  @media (max-width: 500px) {
+    .chip {
+      padding: 0 8px;
+      font-size: 9px;
+      min-width: 92px;
+    }
   }
   .toggle {
     min-width: 44px;
@@ -1368,6 +1444,28 @@
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin: 0 0 14px;
+  }
+  .mission-link {
+    align-self: flex-start;
+    display: inline-block;
+    margin: 4px 0 10px;
+    padding: 8px 12px;
+    background: rgba(68, 102, 255, 0.18);
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .mission-link:hover,
+  .mission-link:focus-visible {
+    background: rgba(68, 102, 255, 0.32);
+    border-color: #4466ff;
+    outline: none;
   }
   .credit {
     font-family: 'Space Mono', monospace;

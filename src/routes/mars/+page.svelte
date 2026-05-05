@@ -8,6 +8,7 @@
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
+  import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
 
@@ -55,6 +56,7 @@
   // override.
   let layerSurface = $state(true);
   let layerOrbiters = $state(true);
+  let layerOrbits = $state(true);
   let layerTraverses = $state(true);
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});
@@ -217,8 +219,7 @@
     type OrbitalMarker = {
       group: THREE.Group;
       ringMesh: THREE.Mesh;
-      dotMesh: THREE.Mesh;
-      hitSphere: THREE.Mesh;
+      dotGroup: THREE.Group;
       siteId: string;
       altitude: number;
       ringRadius: number;
@@ -360,28 +361,45 @@
         ringMesh.rotation.x = inc;
         group.add(ringMesh);
 
-        // Dot moving along the ring (in marsAxis frame so tilt is honoured).
-        const dotMat = new THREE.MeshBasicMaterial({
-          color,
-          transparent: true,
-          opacity: dimmed ? 0.55 : 1.0,
+        // 3D model — shared earth-satellite-models factory. Mars
+        // orbiter ids don't match any dedicated builder, so they fall
+        // through to the generic-orbiter silhouette (hex bus + wings
+        // + dish + accent ring). Scaled 2x for the larger Mars scene.
+        const dotGroup = buildSatelliteModel(site.id, color);
+        dotGroup.scale.setScalar(2.0);
+        if (dimmed) {
+          dotGroup.traverse((o) => {
+            if (o instanceof THREE.Mesh) {
+              const mat = o.material as THREE.Material & {
+                opacity?: number;
+                transparent?: boolean;
+              };
+              if (mat) {
+                mat.transparent = true;
+                mat.opacity = 0.5;
+              }
+            }
+          });
+        }
+        dotGroup.traverse((o) => {
+          if (o instanceof THREE.Mesh || o instanceof THREE.Sprite) {
+            o.userData = { siteId: site.id };
+          }
         });
-        const dotMesh = new THREE.Mesh(new THREE.SphereGeometry(0.35, 12, 12), dotMat);
-        group.add(dotMesh);
-        // Invisible larger hit sphere parented to the dot.
         const hit = new THREE.Mesh(
-          new THREE.SphereGeometry(2.5, 8, 8),
+          new THREE.SphereGeometry(3, 8, 8),
           new THREE.MeshBasicMaterial({ visible: false }),
         );
         hit.userData = { siteId: site.id };
-        dotMesh.add(hit);
+        dotGroup.add(hit);
+        dotGroup.userData = { siteId: site.id };
+        group.add(dotGroup);
 
         marsAxis.add(group);
         orbitalMarkers.push({
           group,
           ringMesh,
-          dotMesh,
-          hitSphere: hit,
+          dotGroup,
           siteId: site.id,
           altitude: altScale,
           ringRadius: altScale,
@@ -450,7 +468,10 @@
     // even when the user has already toggled a layer off.
     function applyLayerVisibility() {
       for (const sm of surfaceMarkers) sm.group.visible = layerSurface;
-      for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
+      for (const om of orbitalMarkers) {
+        om.dotGroup.visible = layerOrbiters;
+        om.ringMesh.visible = layerOrbiters && layerOrbits;
+      }
       for (const tl of traverseLines) {
         tl.line.visible = layerTraverses;
         tl.endDot.visible = layerTraverses;
@@ -482,9 +503,13 @@
     $effect(() => {
       const surf = layerSurface;
       const orb = layerOrbiters;
+      const orbR = layerOrbits;
       const trav = layerTraverses;
       for (const sm of surfaceMarkers) sm.group.visible = surf;
-      for (const om of orbitalMarkers) om.group.visible = orb;
+      for (const om of orbitalMarkers) {
+        om.dotGroup.visible = orb;
+        om.ringMesh.visible = orb && orbR;
+      }
       for (const tl of traverseLines) {
         tl.line.visible = trav;
         tl.endDot.visible = trav;
@@ -595,7 +620,7 @@
       // Pick against surface marker groups + orbital dots.
       const targets: THREE.Object3D[] = [];
       for (const sm of surfaceMarkers) if (sm.group.visible) targets.push(sm.group);
-      for (const om of orbitalMarkers) if (om.group.visible) targets.push(om.dotMesh);
+      for (const om of orbitalMarkers) if (om.group.visible) targets.push(om.dotGroup);
       const hits = ray.intersectObjects(targets, true);
       for (const h of hits) {
         let obj: THREE.Object3D | null = h.object;
@@ -659,7 +684,7 @@
         const inc = om.ringMesh.rotation.x;
         const cosI = Math.cos(inc);
         const sinI = Math.sin(inc);
-        om.dotMesh.position.set(lx, ly * cosI - lz * sinI, ly * sinI + lz * cosI);
+        om.dotGroup.position.set(lx, ly * cosI - lz * sinI, ly * sinI + lz * cosI);
       }
       // 2D draw on each frame so rotation + dots stay live.
       if (view === '2d') draw2d();
@@ -966,6 +991,17 @@
         data-testid="layer-orbiters"
       >
         ORBITERS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layerOrbits}
+        aria-pressed={layerOrbits}
+        onclick={() => (layerOrbits = !layerOrbits)}
+        title="Show or hide the orbital ring lines (the spacecraft remain visible)"
+        data-testid="layer-orbits"
+      >
+        ORBITS
       </button>
       <button
         type="button"

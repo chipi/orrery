@@ -415,14 +415,16 @@ function buildConstellation(color: string): THREE.Group {
   return g;
 }
 
-/** Generic lunar orbiter — small bus body + symmetric solar wings +
- *  high-gain dish. Distinct enough from the LRO silhouette (asymmetric
- *  single-wing design) that you can read it as "different mission" but
- *  recognisably an orbiter. Used as a fallback for the v0.4 lunar-
- *  orbiter backfill (Luna 10, Clementine, Lunar Prospector, SMART-1,
- *  Chang'e 1/2, Chandrayaan-1) — none of which have a dedicated
- *  silhouette yet. Better than the generic-octahedron probe fallback. */
-function buildGenericLunarOrbiter(color: string): THREE.Group {
+/** Generic orbiter silhouette — hex bus body + symmetric solar
+ *  wings + small high-gain dish. Distinct enough from the LRO
+ *  asymmetric single-wing shape that you can read it as a
+ *  different mission but recognisably an orbiter. Used both as
+ *  the fallback for unknown ids in `buildSatelliteModel` and as
+ *  the dedicated shape for the v0.4 lunar-orbiter backfill (Luna
+ *  10, Clementine, Lunar Prospector, SMART-1, Chang'e 1/2,
+ *  Chandrayaan-1). Exported so /moon and /mars can call it
+ *  directly when rendering orbital markers. */
+export function buildGenericOrbiter(color: string): THREE.Group {
   const g = new THREE.Group();
   const mat = bodyMat(color);
   // Hexagonal bus body — typical small-orbiter form.
@@ -470,24 +472,24 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   // colour distinguishes them. A future iteration can give the more
   // distinctive ones (Clementine's quad-bus, Chang'e 1/2's stacked
   // bus, etc.) dedicated silhouettes.
-  luna10: buildGenericLunarOrbiter,
-  clementine: buildGenericLunarOrbiter,
-  'lunar-prospector': buildGenericLunarOrbiter,
-  'smart-1': buildGenericLunarOrbiter,
-  change1: buildGenericLunarOrbiter,
-  change2: buildGenericLunarOrbiter,
-  chandrayaan1: buildGenericLunarOrbiter,
+  luna10: buildGenericOrbiter,
+  clementine: buildGenericOrbiter,
+  'lunar-prospector': buildGenericOrbiter,
+  'smart-1': buildGenericOrbiter,
+  change1: buildGenericOrbiter,
+  change2: buildGenericOrbiter,
+  chandrayaan1: buildGenericOrbiter,
 };
 
 export function buildSatelliteModel(id: string, color: string): THREE.Group {
   const builder = BUILDERS[id];
   if (builder) return builder(color);
-  // Unknown id — fall back to a small generic probe (octahedron + antenna)
-  // so future additions render *something* without throwing.
-  const g = new THREE.Group();
-  const mat = bodyMat(color);
-  g.add(new THREE.Mesh(new THREE.OctahedronGeometry(0.3), mat));
-  return g;
+  // Unknown id → use the generic-orbiter silhouette (hex bus + wings
+  // + dish). Better than the previous octahedron fallback for novel
+  // missions and for /mars orbiters whose ids don't match any
+  // dedicated builder yet (mars-odyssey, mro, maven, mangalyaan,
+  // tgo, hope, mariner9, viking1-orbiter, mars3-orbiter, etc.).
+  return buildGenericOrbiter(color);
 }
 
 /** Exposed for tests: list of ids that have a dedicated builder. */

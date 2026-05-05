@@ -2,13 +2,15 @@
 
 Instructions for agentic AI working on this codebase. Read this before touching any file.
 
+**Cursor:** the same content is loaded as an always-on project rule in [`.cursor/rules/orrery.mdc`](.cursor/rules/orrery.mdc). When you edit engineering constraints here, update that file too (or vice versa).
+
 ---
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer and Mars mission simulator. Six screens, real orbital mechanics, 28 historical missions, and a free-return Mars flyby scenario. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised from the start.
+Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Six primary nav screens, real orbital mechanics, **32** missions in the library (Mars + Moon), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
 
-The six screens:
+The six primary screens:
 
 | Route | Screen | File |
 |---|---|---|
@@ -18,6 +20,8 @@ The six screens:
 | `/missions` | Mission Library | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
 | `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
+
+Additional routes (e.g. `/mars` for the Mars surface map — PRD-009) may exist outside the main nav; check `src/routes/`.
 
 ---
 
@@ -39,11 +43,11 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
-| Mission data | Static JSON files in `data/` | ADR-006 |
+| Mission data | Static JSON under `static/data/` (served as `/data/...`) | ADR-006 |
 | Mission flight params | Optional `flight` sub-object + `flight_data_quality` honesty flag | ADR-027 |
 | Panel tabs + galleries | Tabbed detail panels (OVERVIEW · TECHNICAL · SIZES · GALLERY · LEARN · FLIGHT); galleries conditional on per-category manifest; LEARN links in locale overlays | ADR-017, ADR-016 |
 | Lambert solver | Web Worker | ADR-008 |
-| Mission scenario | Free-return flyby | ADR-009 |
+| Default fly scenario | ORRERY-1 free-return flyby (library missions add landings / cislunar arcs) | ADR-009 |
 | Transfer arc | Keplerian half-ellipses | ADR-010 |
 
 Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-004 (hash routing), ADR-005 (Docker Compose only).
@@ -60,21 +64,6 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── LICENSE                 ← MIT
 ├── .gitignore
 │
-├── data/                   ← static JSON, never transformed by client
-│   ├── missions/
-│   │   ├── index.json      ← lightweight manifest (28 entries)
-│   │   ├── mars/           ← 14 mission base files (language-neutral)
-│   │   └── moon/           ← 14 mission base files
-│   ├── i18n/
-│   │   ├── en-US/          ← English content overlays
-│   │   │   └── missions/mars/curiosity.json  ← editorial strings
-│   │   └── [locale]/       ← other languages same structure
-│   ├── schemas/
-│   │   └── mission.schema.json  ← ajv validation schema
-│   ├── planets.json
-│   ├── rockets.json
-│   └── earth-objects.json
-│
 ├── src/
 │   ├── routes/             ← SvelteKit file-based routing
 │   │   ├── +layout.svelte  ← nav bar, i18n provider
@@ -84,11 +73,11 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── missions/+page.svelte
 │   │   ├── earth/+page.svelte
 │   │   └── moon/+page.svelte
-│   ├── components/
-│   │   ├── Nav.svelte      ← shared 52px nav bar
-│   │   ├── Panel.svelte    ← bottom sheet (mobile) / right drawer (desktop)
-│   │   └── ...
 │   ├── lib/
+│   │   ├── components/
+│   │   │   ├── Nav.svelte  ← shared 52px nav bar
+│   │   │   ├── Panel.svelte ← bottom sheet (mobile) / right drawer (desktop)
+│   │   │   └── ...
 │   │   ├── data.ts         ← fetch + cache + i18n merge
 │   │   ├── orbital.ts      ← keplerPos(), visViva()
 │   │   ├── scale.ts        ← auToPx(), altToOrbitRadius()
@@ -105,13 +94,25 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── logos/              ← agency logos (fetched at build, Wikimedia Commons)
 │   ├── images/missions/    ← NASA Images API + Wikimedia mission cover photos
 │   ├── images/rockets/     ← Wikimedia rocket reference photos
-│   ├── data/porkchop/      ← pre-computed per-destination porkchop grids (ADR-026)
+│   ├── data/               ← all app JSON: missions, i18n overlays, schemas, planets, porkchop, …
+│   │   ├── missions/
+│   │   │   ├── index.json  ← lightweight manifest (32 entries)
+│   │   │   ├── mars/       ← base mission files (language-neutral)
+│   │   │   └── moon/
+│   │   ├── i18n/
+│   │   │   ├── en-US/      ← English overlays (e.g. missions/mars/curiosity.json)
+│   │   │   └── es/         ← other locales, same tree
+│   │   ├── schemas/        ← ajv schemas (mission.schema.json, …)
+│   │   ├── porkchop/       ← pre-computed grids (ADR-026)
+│   │   ├── planets.json
+│   │   ├── rockets.json
+│   │   └── earth-objects.json
 │   └── .nojekyll           ← required for GitHub Pages
 │
 ├── scripts/
 │   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images
 │   ├── precompute-porkchops.ts ← pre-computes 5 per-destination porkchop grids (ADR-026)
-│   └── validate-data.ts    ← ajv validation of all data/ JSON files
+│   └── validate-data.ts    ← ajv validation of all static/data/ JSON + doc gating
 │
 ├── tests/                  ← Playwright e2e tests
 ├── docs/                   ← all documentation
@@ -139,7 +140,7 @@ import { t } from '$lib/i18n'
 <button>FLY</button>
 ```
 
-**Mission content:** base mission files (`data/missions/`) contain only language-neutral data. Editorial strings (name display, description, first-line, type label, CAPCOM event notes) live in locale overlay files (`data/i18n/[locale]/missions/`). The data client merges them at fetch time.
+**Mission content:** base mission files (`static/data/missions/`) contain only language-neutral data. Editorial strings (name display, description, first-line, type label, CAPCOM event notes) live in locale overlay files (`static/data/i18n/[locale]/missions/`). The data client merges them at fetch time.
 
 **Fallback:** always fall back to `en-US` for missing translations. Never show a translation key to the user.
 
@@ -250,7 +251,7 @@ build       → npm run build (SvelteKit)
 typecheck   → tsc --noEmit
 lint        → eslint src/
 test        → vitest run
-validate    → npm run validate-data (ajv schema check across 113 data files)
+validate    → npm run validate-data (ajv + consistency checks on JSON under static/data/)
 precompute  → npm run precompute-porkchops (5 porkchop grids; chained into build)
 doc-check   → grep checks from guide §18
 ```
@@ -288,4 +289,4 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 
 ---
 
-*Orrery · CLAUDE.md · April 2026 · Update when locked decisions change*
+*Orrery · CLAUDE.md · May 2026 · Update when locked decisions change*

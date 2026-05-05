@@ -1,7 +1,7 @@
 # TA — Technical Authority
-*Orrery · Reference document · v1.4 · April 2026*
+*Orrery · Reference document · v1.9 · May 2026*
 
-This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update §stack and §map when decisions are locked.
+This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update §stack and §map when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs).
 
 ---
 
@@ -11,7 +11,7 @@ The subsystems of the production application.
 
 **Router** — SvelteKit's built-in router using the History API. File-based routing in `src/routes/`. Clean URLs: `/explore`, `/fly?mission=curiosity`, `/missions?dest=MARS`. GitHub Pages deploy uses a `404.html` SPA-redirect workaround per ADR-014. See ADR-012, ADR-013.
 
-**Data client** (`src/lib/data.ts`) — fetch and cache layer for all JSON data files. Returns JSON as-is, except for the locale-overlay merge for mission content per ADR-017. Cache is a `Map` keyed by URL, session-only. Exposes: `getMissionIndex()`, `getMission(id, dest)`, `filterMissions({dest, status, agency})`, `planets()`, `rockets()`, `earthObjects()`. See ADR-006, ADR-017.
+**Data client** (`src/lib/data.ts`) — fetch and cache layer for all JSON under `static/data/` (runtime URLs `/data/...` with SvelteKit `base` prefix). Returns parsed JSON with **locale-overlay shallow merge** for missions and other localized records per ADR-017 (not a general-purpose ORM). Cache is a `Map` keyed by URL, session-only. See ADR-006, ADR-017.
 
 **Nav bar component** (`src/lib/components/Nav.svelte`) — shared across all six screens. Renders the 52px bar with wordmark, screen links, and a slot for screen-specific right-region controls. Active screen highlighted in blue. All other screens link to their route via `<a href>`.
 
@@ -19,13 +19,13 @@ The subsystems of the production application.
 
 **Orbital library** (`src/lib/orbital.ts`) — Keplerian mechanics. `keplerPos(a, e, L0, T, t)` returns position at time t (days from J2000). `visViva(a, r)` returns orbital velocity in km/s. All constants from IAU; see §contracts.
 
-**Scale library** (`src/lib/scale.ts`) — rendering scale functions. `auToPx(a_au)` — compressed log-linear scale for solar system 2D. `altToVis(alt_km)` — logarithmic scale for Earth orbit viewer: `38 + 54 * log10(1 + alt_km / 100)`.
+**Scale library** (`src/lib/scale.ts`) — rendering scale helpers. `auToPx(a_au)` — compressed log-linear scale for solar system 2D. `altToOrbitRadius(alt_km)` — maps satellite altitude (km) to radial distance in the `/earth` 3D scene (replaced the legacy 1D `altToVis` stack from early slices).
 
 **Lambert library** (`src/lib/lambert.ts`) — Lagrange-Gauss short-way Lambert solver. Called only from the Lambert worker, never from the main thread. See ADR-008, RFC-003.
 
 **Lambert worker** (`src/workers/lambert.worker.ts`) — runs the Lambert solver off the main thread. Receives a message with departure date range, arrival date range, step counts, and an optional `destinationId` ('mercury' | 'venus' | 'mars' | 'jupiter' | 'saturn'; defaults to 'mars' for back-compat). Posts back the full porkchop grid (delta-v values for each cell). See RFC-003 + ADR-026.
 
-**Six route pages** (`src/routes/[moon|explore|plan|fly|missions|earth]/+page.svelte`) — one SvelteKit page component per screen. Each initialises its canvas/renderer in `onMount()`, loads data via the data client, handles user interaction, and owns its HUD or panel state. Pages do not share mutable state directly — they use the shared data client and URL search params (`$page.url.searchParams`).
+**Primary route pages** (`src/routes/{explore,plan,fly,missions,earth,moon}/+page.svelte`) — one SvelteKit page per main-nav screen. Additional routes (e.g. `mars/+page.svelte`) ship per PRD without changing the six-screen IA. Each page initialises its canvas/renderer in `onMount()` where needed, loads data via the data client, handles user interaction, and owns HUD or panel state. Pages do not share mutable state directly — they use the data client and URL search params (`$page.url.searchParams`).
 
 ---
 
@@ -33,55 +33,53 @@ The subsystems of the production application.
 
 Data shapes between components.
 
-### Mission index entry (from `data/missions/index.json`)
+### Mission index entry (from `static/data/missions/index.json`)
+
+Lightweight manifest for the library grid — **language-neutral fields only** (no `name`, `type`, `first`; those come from locale overlays).
 
 ```json
 {
   "id": "curiosity",
-  "name": "Curiosity",
   "agency": "NASA",
   "dest": "MARS",
   "status": "ACTIVE",
   "year": 2011,
-  "type": "ROVER · ACTIVE",
   "sector": "gov",
-  "color": "#0B3D91",
-  "first": "First nuclear-powered Mars rover"
+  "color": "#0B3D91"
 }
 ```
 
-### Full mission record (from `data/missions/[dest]/[id].json`)
+### Full mission record (base file `static/data/missions/{mars,moon}/[id].json` + overlay merge)
+
+Base file holds mechanics + citations; editorial strings and CAPCOM notes are merged from `static/data/i18n/<locale>/missions/<dest>/[id].json` per ADR-017. Shapes are locked by `static/data/schemas/mission.schema.json` (ADR-020).
 
 ```json
 {
   "id": "curiosity",
-  "name": "Curiosity",
   "agency": "NASA",
-  "agency_full": "NASA / JPL-Caltech",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
   "sector": "gov",
   "dest": "MARS",
   "color": "#0B3D91",
   "year": 2011,
-  "type": "ROVER · ACTIVE",
   "status": "ACTIVE",
-  "dep": "Nov 26, 2011",
-  "arr": "Aug 6, 2012",
-  "tof": 253,
+  "departure_date": "2011-11-26",
+  "arrival_date": "2012-08-06",
+  "transit_days": 254,
   "vehicle": "Atlas V 541",
-  "payload": "899 kg",
-  "dv": "~6.1 km/s",
-  "first": "First nuclear-powered Mars rover",
-  "description": "...",
+  "payload": "3839 kg launch mass (899 kg rover on surface)",
+  "delta_v": "~6.1 km/s",
   "data_quality": "good",
-  "credit": "© NASA/JPL-Caltech",
-  "links": [{ "l": "...", "u": "...", "t": "intro|core|deep" }],
-  "events": [{ "met": 0, "label": "LAUNCH", "note": "...", "type": "nominal|info" }]
+  "credit": "© NASA / JPL-Caltech — …",
+  "links": [{ "l": "…", "u": "https://…", "t": "intro|core|deep" }],
+  "flight_data_quality": "measured",
+  "flight": { "launch": {}, "cruise": {}, "arrival": {}, "totals": {}, "events": [] }
 }
 ```
 
-`events` is an array of mission timeline events for CAPCOM mode. `met` is mission elapsed time in days. See RFC-002 for open questions on schema canonicalisation.
+Overlay adds: `name`, `type`, `first`, `description`, `events[].note` (and any other editorial fields the schema allows). `events` (CAPCOM) uses `met` in days. Structured flight timeline: ADR-027.
 
-### Planet record (from `data/planets.json`)
+### Planet record (from `static/data/planets.json`)
 
 ```json
 {
@@ -168,7 +166,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **No npm dependencies without ADR.** Every npm package added to `package.json` requires an ADR justifying it. The dependency list must remain minimal.
 
-- **JSON data is never transformed by the client.** `data.js` returns data as-is from JSON files. Transformation (filtering, sorting) happens at the call site. The data client is a fetch/cache layer, not a data access object.
+- **No hidden business logic in the data client.** Parsed JSON is returned as fetched, except for **documented** shallow merges (missions and other localized records per ADR-017). Filtering, sorting, and physics live at call sites. The client is not an ORM.
 
 - **No runtime third-party URLs.** All external assets (fonts, textures, logos, mission imagery) are resolved at build time. The production bundle fetches nothing from external URLs at runtime. See ADR-016.
 
@@ -198,13 +196,13 @@ Locked technical choices. Each entry points to its ADR.
 | i18n | Paraglide-js (UI) + locale overlay files (content) | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
-| Mission data format | Static JSON files in `data/` | ADR-006 |
+| Mission data format | Static JSON under `static/data/` (served as `/data/...`) | ADR-006 |
 | Data serving | Same static host as the bundle (GH Pages today); separate nginx volume optional for self-hosted nginx per ADR-007's scope note | ADR-007 |
 | Lambert solver execution | Web Worker | ADR-008 |
 | Lambert worker contract | id-based cancellation, every-10-row progress, single result message; `destinationId` parameter for multi-destination | ADR-022, ADR-026 |
 | Porkchop grids | Pre-computed at build time per ADR-016; 5 destinations × 11,200 cells; ~610 KB total committed at `static/data/porkchop/` | ADR-026 |
-| Mission scenario type | Free-return flyby (no landing) | ADR-009 |
-| Transfer arc computation | Keplerian half-ellipses | ADR-010 |
+| Default `/fly` scenario | ORRERY-1 free-return Mars flyby | ADR-009 |
+| Transfer + mission arcs | Keplerian half-ellipses (heliocentric); lunar segments in `mission-arc` / `fly-physics`; library missions supply distinct geometry (landings, cislunar) | ADR-010 |
 
 ---
 
@@ -223,6 +221,12 @@ State board for all RFCs and ADRs.
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |
 | RFC-006 | Porkchop plot mobile interaction model | Decided · closed by ADR-023 | ADR-023 | Closed at Slice 3 (3a-8) |
 | RFC-007 | Multi-destination porkchop — destination scope, mission-type semantics, transfer-time ranges | Decided · closed by ADR-026 | ADR-026 | Closed at v0.1.6 |
+| RFC-008 | Outer planets + dwarf planets in /plan | Decided · closed by ADR-028 | ADR-028 | Tracked for v0.3.0 in RFC index; implementation status coordinated via project issue tracker |
+| RFC-009 | Mission flight params + timeline navigator | Closed · closed by ADR-027 | ADR-027 | v0.1.9 |
+| RFC-010 | Translation & internationalisation strategy | Closed · closed by ADR-031 / ADR-032 / ADR-033 | ADR-031 / 032 / 033 | v0.3.x |
+| RFC-011 | Science page · render pipeline & content authoring | Open | ADR-034 / 035 / 036 (planned) | v0.4 |
+| RFC-012 | Mars Surface Map · technical strategy | Open | ADR-037 / 038 / 039 (planned) | v0.4 |
+| RFC-013 | ISS Explorer · 3D model pipeline & module pickability | Open | ADR-040 / 041 / 042 (planned) | v0.4 |
 
 ### ADRs
 
@@ -254,6 +258,13 @@ State board for all RFCs and ADRs.
 | ADR-024 | Mission URL sharing | Accepted (closes RFC-004) |
 | ADR-025 | Accessibility tier-1 contract | Accepted (closes RFC-005) |
 | ADR-026 | Multi-destination porkchop — data, semantics, selectors | Accepted (closes RFC-007) |
+| ADR-027 | Mission flight params + timeline navigator | Accepted (closes RFC-009) |
+| ADR-028 | Outer planets + dwarf planets in /plan | Accepted (closes RFC-008) |
+| ADR-029 | Service worker via @vite-pwa/sveltekit | Accepted |
+| ADR-030 | /fly trajectory math: pure-function isolation + per-mission validation | Accepted |
+| ADR-031 | i18n language list and rollout waves | Accepted (closes RFC-010) |
+| ADR-032 | Font and script strategy (Wave 1) | Accepted (closes RFC-010) |
+| ADR-033 | Translation workflow: LLM-only first-pass | Accepted (closes RFC-010) |
 
 ---
 
@@ -270,3 +281,4 @@ State board for all RFCs and ADRs.
 | v1.6 | April 2026 | RFC-004 closed by ADR-024 (mission URL sharing — `/fly?mission=id` and `/missions?dest=...&status=...` URL contract, replaceState for filter toggles, no localStorage). Lands with /missions + /fly in Slice 4. §map updated. |
 | v1.7 | April 2026 | RFC-005 closed by ADR-025 (accessibility tier-1: prefers-reduced-motion stops auto-orbit/auto-rotate/auto-play across canvas screens; nav aria-label; panel focus management + role=tablist/tab/tabpanel; canvas aria-labels direct screen-reader users to detail panels; tier-2 work — canvas-object keyboard nav, full screen-reader description, high-contrast mode — explicitly deferred to v2). Lands with Slice 6. §map updated. |
 | v1.8 | April 2026 | RFC-007 closed by ADR-026 (multi-destination porkchop — Earth → 5 destinations: Mercury, Venus, Mars, Jupiter, Saturn; LANDING + FLYBY for inner planets, FLYBY-only for gas giants with disabled-LANDING tooltip; per-destination transfer-time ranges; Y-axis auto-switches days→years above 730d; URL contract `?dest=...&type=...`; pre-computed grids at build time per ADR-016 (~610 KB total); Lambert worker generalised over destinationId). Uranus, Neptune, Pluto, dwarf planets deferred to v0.3.0 + RFC-008. §components/Lambert-worker contract updated; §constraints stack row reflects multi-destination. Lands with v0.1.6. |
+| v1.9 | May 2026 | §map extended through RFC-013 and ADR-033 (aligned with index files). §contracts: `static/data/` paths, lightweight `missions/index.json`, schema-accurate mission example + ADR-027 flight block. §components: data-client merge clarification; `altToOrbitRadius` for `/earth`; primary vs extra routes. §constraints: overlay merge exception. §stack: `static/data/` serving; split default scenario vs arc math. RFC-008 closing evidence defers implementation tracking to project issues. |

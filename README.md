@@ -119,8 +119,8 @@ The full architecture and concept documentation is published at **<https://chipi
 | [04 Technical Architecture](docs/concept/04_Technical_Architecture.md) | Stack, repo structure, JSON data layer |
 | [05 Design System](docs/concept/05_Design_System.md) | Colour, typography, components, screen patterns |
 | [i18n style guide](docs/i18n-style-guide.md) | Per-language glossary for translators |
-| [`docs/adr/`](docs/adr/) | 33 architecture decisions (Status / Decision / Rationale / Consequences) |
-| [`docs/rfc/`](docs/rfc/) | 10 RFCs — open and closed |
+| [`docs/adr/`](docs/adr/) | 33 ADRs (ADR-001–033) plus TA — locked decisions (Status / Decision / Rationale / Consequences) |
+| [`docs/rfc/`](docs/rfc/) | RFC-001–013 — technical questions; three still open (see [`docs/rfc/index.md`](docs/rfc/index.md)) |
 | [`docs/prd/`](docs/prd/) | Product requirements per screen |
 | [`docs/uxs/`](docs/uxs/) | UX specifications per screen |
 | [`CLAUDE.md`](CLAUDE.md) | Engineering constraints + locked decisions for AI / human contributors |

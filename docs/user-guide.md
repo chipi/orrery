@@ -36,7 +36,7 @@ A real-time 3D / 2D orrery showing 8 planets, 5 dwarf planets, 2 comets, and ʻO
 
 ## Mission Configurator · `/plan`
 
-The Lambert porkchop plot. Pick a destination + mission type (LANDING or FLYBY); the worker computes 11,200 Lambert solutions and renders the ∆v map. Cool teal cells are cheap launch windows; red cells are expensive.
+The Lambert porkchop plot. Pick a destination + mission type (LANDING or FLYBY). Each destination uses a **pre-computed** 112×100 grid (11,200 cells) checked in at `static/data/porkchop/` and loaded by the app at runtime — the Lambert **Web Worker** stays in the bundle for future custom-range work but is **not** what paints the default Mercury–Saturn maps. Cool teal cells are cheap launch windows; red cells are expensive.
 
 [![Porkchop screenshot](screenshots/02-plan.png)](screenshots/02-plan.png)
 

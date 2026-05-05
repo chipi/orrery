@@ -6,11 +6,11 @@
 
 ## Current state
 
-Six standalone prototype HTML files and a complete concept + Phase 2 document package. Everything runs in the browser directly. No bundler, no router, no production build, no data files — all data is embedded in the prototype HTML files.
+**Production app (v0.3.x):** a static SvelteKit SPA — six primary screens (`/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`) plus additional routes such as `/mars` as the surface-map work progresses. All mission, planet, porkchop, and overlay JSON is served from `static/data/` at runtime (`/data/...` URLs). CI runs typecheck, lint, Vitest, ajv validation, porkchop precompute (chained into `npm run build`), and doc-system checks; Playwright e2e runs on push to `main`.
 
-The production build extracts, connects, and deploys what the prototypes demonstrate.
+The HTML prototypes under `docs/prototypes/` remain the historical design ground truth; they are not the shipping runtime.
 
-**Stack:** TypeScript · SvelteKit · Three.js r128 · Vitest · Playwright · GitHub Actions · GitHub Pages (preview) · Paraglide-js i18n · ajv data validation
+**Stack:** TypeScript (strict) · SvelteKit (adapter-static) · Three.js r128 · Vitest · Playwright · GitHub Actions · GitHub Pages · Paraglide-js i18n · ajv data validation · `@vite-pwa/sveltekit` (per ADR-029)
 
 ---
 

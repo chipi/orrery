@@ -1,0 +1,7 @@
+{
+  "name": "Schiaparelli EDM",
+  "mission_type": "Aterrizador de Prueba No Tripulado · Estrellado",
+  "site_name": "Meridiani Planum",
+  "fact": "Demostrador de Entrada, Descenso y Aterrizaje (EDL) de ExoMars 2016. Una falla del software de control hizo que la unidad de medición inercial se saturara durante el despliegue del paracaídas, lo que llevó al módulo a calcular una altitud negativa y soltar su paracaídas prematuramente. Cayó en caída libre ~3,7 km hasta la superficie. Los datos de vuelo informaron el rediseño de la EDL de ExoMars 2028.",
+  "capability": "Datos de diagnóstico de EDL ganados con esfuerzo — una demostración parcial que se incorporó a la siguiente misión ExoMars."
+}

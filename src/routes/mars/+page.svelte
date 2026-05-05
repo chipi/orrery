@@ -3,7 +3,8 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getMarsSites } from '$lib/data';
+  import { getMarsSites, getMarsTraverse } from '$lib/data';
+  import type { Traverse } from '$types/mars-site';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
@@ -46,13 +47,17 @@
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
 
-  // Layer toggles. SURFACE = lander/rover markers; ORBITERS = dots on
-  // inclined rings. Both default-on. Independent of TRAVERSES which
-  // PRD-009 also covers but is not yet rendering in V1 (vendoring story
-  // pending — the SurfaceMap polyline path arrives in a follow-up
-  // session; data is staged but not yet wired).
+  // Layer toggles. SURFACE = lander/rover markers; ORBITERS = dots
+  // on inclined rings; TRAVERSES = rover-track polylines clamped to
+  // the surface (Curiosity, Perseverance, Opportunity, Spirit).
+  // All default-on. Traverses fade in past a zoom threshold so the
+  // global view stays clean — the toggle is a "show even at far zoom"
+  // override.
   let layerSurface = $state(true);
   let layerOrbiters = $state(true);
+  let layerTraverses = $state(true);
+  // Per-rover traverses keyed by rover_id, populated after fetch.
+  let traverses: Record<string, Traverse> = $state({});
 
   // ─── Detail-panel tabs (mirrors /moon pattern v0.1.10) ───────────
   type PanelTab = 'overview' | 'gallery' | 'learn';
@@ -121,6 +126,20 @@
         console.error('Failed to load Mars sites:', err);
         loadFailed = true;
       });
+
+    // Fetch the four rover traverses in parallel. Each lands as a
+    // Traverse object indexed by rover_id and triggers the rebuild
+    // effect downstream. Failures are silent — if a JSON file is
+    // missing the rover simply has no rendered track.
+    Promise.all(
+      ['curiosity', 'perseverance', 'opportunity', 'spirit'].map((id) =>
+        getMarsTraverse(id).then((t) => (t ? [id, t] : null)),
+      ),
+    ).then((entries) => {
+      const next: Record<string, Traverse> = {};
+      for (const e of entries) if (e) next[e[0] as string] = e[1] as Traverse;
+      traverses = next;
+    });
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Mars sphere with surface texture, 25° axial tilt
@@ -201,6 +220,13 @@
     };
     const surfaceMarkers: SurfaceMarker[] = [];
     const orbitalMarkers: OrbitalMarker[] = [];
+    type TraverseLine = {
+      line: THREE.Line;
+      endDot: THREE.Mesh;
+      roverId: string;
+      isActive: boolean;
+    };
+    const traverseLines: TraverseLine[] = [];
 
     function disposeMesh(obj: THREE.Object3D) {
       obj.traverse((o) => {
@@ -362,17 +388,78 @@
       }
     }
 
+    function rebuildTraverses() {
+      for (const tl of traverseLines) {
+        disposeMesh(tl.line);
+        marsMesh.remove(tl.line);
+        disposeMesh(tl.endDot);
+        marsMesh.remove(tl.endDot);
+      }
+      traverseLines.length = 0;
+      for (const tr of Object.values(traverses)) {
+        if (!tr.points || tr.points.length < 2) continue;
+        // Map each [lat, lon] waypoint onto the unit sphere, scale to
+        // marsRadius + 0.05u so the line sits visibly above the
+        // surface without z-fighting.
+        const verts: number[] = [];
+        const r = marsRadius + 0.05;
+        for (const [lat, lon] of tr.points) {
+          const { x, y, z } = latLonToUnitSphere(lat, lon);
+          verts.push(x * r, y * r, z * r);
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+        // Match the rover's surface-marker colour by looking up its
+        // mission_id site (Curiosity, Perseverance, etc. are surface
+        // sites with the same id as their rover_id).
+        const site = sites.find((s) => s.id === tr.rover_id);
+        const color = site ? colorFor(site) : '#ffffff';
+        const isActive = tr.status === 'ACTIVE';
+        const line = new THREE.Line(
+          geo,
+          new THREE.LineBasicMaterial({
+            color,
+            transparent: true,
+            opacity: isActive ? 0.95 : 0.7,
+          }),
+        );
+        line.userData = { roverId: tr.rover_id, kind: 'traverse' };
+        marsMesh.add(line);
+        // End-of-track dot — pulses for active rovers (animation loop).
+        const last = tr.points[tr.points.length - 1];
+        const lastPos = latLonToUnitSphere(last[0], last[1]);
+        const dot = new THREE.Mesh(
+          new THREE.SphereGeometry(0.45, 12, 12),
+          new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 1 }),
+        );
+        dot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        marsMesh.add(dot);
+        traverseLines.push({ line, endDot: dot, roverId: tr.rover_id, isActive });
+      }
+    }
+
     // Reactive: rebuild markers whenever the sites array updates.
     $effect(() => {
       if (sites.length === 0) return;
       rebuildSurfaceMarkers();
       rebuildOrbitalMarkers();
     });
+    // Reactive: rebuild traverses when their data lands (independent
+    // of sites — they fetch in parallel).
+    $effect(() => {
+      void traverses;
+      if (sites.length === 0) return;
+      rebuildTraverses();
+    });
 
     // Visibility toggles wired to layer state.
     $effect(() => {
       for (const sm of surfaceMarkers) sm.group.visible = layerSurface;
       for (const om of orbitalMarkers) om.group.visible = layerOrbiters;
+      for (const tl of traverseLines) {
+        tl.line.visible = layerTraverses;
+        tl.endDot.visible = layerTraverses;
+      }
     });
 
     // ──────────────────────────────────────────────────────────────
@@ -515,6 +602,17 @@
       // accelerated rate for perception). marsAxis carries the tilt;
       // marsMesh rotates within the tilted frame.
       if (!reduced) marsMesh.rotation.y += dt * 0.05;
+      // Traverse end-dot pulse — only for active rovers, only when
+      // visible. Uses sine-wave scale (0.85 → 1.25) at ~1 Hz.
+      const pulse = 1.05 + 0.2 * Math.sin(now * 0.006);
+      for (const tl of traverseLines) {
+        if (!tl.endDot.visible) continue;
+        if (tl.isActive && !reduced) {
+          tl.endDot.scale.setScalar(pulse);
+        } else {
+          tl.endDot.scale.setScalar(1);
+        }
+      }
       // Orbital dot motion — perception-scaled; one ring per ~30s.
       for (const om of orbitalMarkers) {
         if (!om.group.visible) continue;
@@ -616,6 +714,31 @@
         ctx2.moveTo(x, mapY);
         ctx2.lineTo(x, mapY + mapH);
         ctx2.stroke();
+      }
+
+      // Traverse polylines — drawn beneath the markers so site dots
+      // remain on top. Each traverse is a connected polyline tinted
+      // by the rover's agency colour with reduced opacity for ENDED
+      // missions.
+      if (layerTraverses) {
+        for (const tr of Object.values(traverses)) {
+          if (!tr.points || tr.points.length < 2) continue;
+          const site = sites.find((s) => s.id === tr.rover_id);
+          ctx2.strokeStyle = site ? colorFor(site) : '#ffffff';
+          ctx2.globalAlpha = tr.status === 'ACTIVE' ? 0.95 : 0.7;
+          ctx2.lineWidth = 1.6;
+          ctx2.beginPath();
+          for (let i = 0; i < tr.points.length; i++) {
+            let pLon = tr.points[i][1];
+            if (pLon < 0) pLon += 360;
+            const px = mapX + (pLon / 360) * mapW;
+            const py = mapY + ((90 - tr.points[i][0]) / 180) * mapH;
+            if (i === 0) ctx2.moveTo(px, py);
+            else ctx2.lineTo(px, py);
+          }
+          ctx2.stroke();
+          ctx2.globalAlpha = 1;
+        }
       }
 
       // Surface markers
@@ -814,6 +937,17 @@
         data-testid="layer-orbiters"
       >
         ORBITERS
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layerTraverses}
+        aria-pressed={layerTraverses}
+        onclick={() => (layerTraverses = !layerTraverses)}
+        title="Show or hide rover traverse paths (Curiosity, Perseverance, Opportunity, Spirit)"
+        data-testid="layer-traverses"
+      >
+        TRAVERSES
       </button>
     </div>
   </div>

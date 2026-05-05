@@ -42,11 +42,16 @@ test.describe('/mars', () => {
     await page.goto('/mars');
     const surface = page.getByTestId('layer-surface');
     const orbiters = page.getByTestId('layer-orbiters');
+    const traverses = page.getByTestId('layer-traverses');
     await expect(surface).toBeVisible();
     await expect(orbiters).toBeVisible();
+    await expect(traverses).toBeVisible();
     await expect(surface).toHaveAttribute('aria-pressed', 'true');
+    await expect(traverses).toHaveAttribute('aria-pressed', 'true');
     await orbiters.click();
     await expect(orbiters).toHaveAttribute('aria-pressed', 'false');
+    await traverses.click();
+    await expect(traverses).toHaveAttribute('aria-pressed', 'false');
   });
 
   test('?site=curiosity deep-link opens panel pre-selected', async ({ page }) => {
@@ -64,6 +69,16 @@ test.describe('/mars', () => {
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Mars Reconnaissance Orbiter|MRO/i);
     await expect(panel).toContainText(/IN ORBIT/);
+  });
+
+  test('curiosity panel surfaces FULL MISSION CARD cross-link', async ({ page }) => {
+    await page.goto('/mars?site=curiosity');
+    await page.waitForLoadState('networkidle');
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
+    const link = panel.getByRole('link', { name: /FULL MISSION CARD/i });
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', /\/missions\?id=curiosity/);
   });
 
   test('no console errors on load', async ({ page }) => {

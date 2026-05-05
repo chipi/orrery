@@ -166,6 +166,14 @@
       .then((list) => {
         missions = list;
         loading = false;
+        // Apply ?id= deep-link after data lands so the cross-link from
+        // /mars or /moon ("FULL MISSION CARD" chip) opens the right
+        // mission's panel pre-selected.
+        const idParam = $page.url.searchParams.get('id');
+        if (idParam && list.some((mission) => mission.id === idParam)) {
+          selectedId = idParam;
+          panelOpen = true;
+        }
       })
       .catch((err) => {
         console.error('Failed to load mission library:', err);

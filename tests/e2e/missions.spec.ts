@@ -74,6 +74,24 @@ test.describe('/missions — library', () => {
     await expect(page).toHaveURL(/\/fly\?mission=curiosity/);
   });
 
+  test('?id=[id] deep-link opens a mission panel pre-selected', async ({ page }) => {
+    await page.goto('/missions?id=curiosity');
+    await page.waitForLoadState('networkidle');
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
+    await expect(panel).toContainText(/Curiosity/i);
+  });
+
+  test('Curiosity card shows ON THE SURFACE cross-link to /mars', async ({ page }) => {
+    await page.goto('/missions?id=curiosity');
+    await page.waitForLoadState('networkidle');
+    const panel = page.getByRole('complementary');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
+    const link = panel.getByTestId('surface-link');
+    await expect(link).toBeVisible();
+    await expect(link).toHaveAttribute('href', /\/mars\?site=curiosity/);
+  });
+
   test('GALLERY tab renders thumbnails for a NASA mission (v0.1.8)', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(32, {

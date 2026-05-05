@@ -2,7 +2,8 @@
   import Panel from './Panel.svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
-  import { getMissionGallery } from '$lib/data';
+  import { getMissionGallery, getMarsSites, getMoonSites } from '$lib/data';
+  import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import type { Mission } from '$types/mission';
@@ -21,6 +22,11 @@
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
   let lightboxSrc = $state<string | null>(null);
+  // Cross-link chip: when the mission corresponds to a surface or
+  // orbital site on /mars or /moon, surface a chip that deep-links
+  // there. Resolved from the body's surface-site catalogue —
+  // matches by either mission_id field (preferred) or id parity.
+  let crossSite: SurfaceSite | null = $state(null);
 
   // Reset to OVERVIEW each time a different mission is selected; also
   // (re-)load the photo gallery for the new mission.
@@ -31,10 +37,18 @@
       lastId = mission.id;
       lightboxSrc = null;
       gallery = [];
+      crossSite = null;
       void getMissionGallery(mission.id).then((urls) => {
-        // Guard: if the user clicked another mission in the meantime,
-        // discard this load.
         if (mission && mission.id === lastId) gallery = urls;
+      });
+      // Resolve cross-link to /mars or /moon surface-site catalogue.
+      const findSite = (sites: SurfaceSite[]) =>
+        sites.find((s) => s.mission_id === mission!.id) ??
+        sites.find((s) => s.id === mission!.id) ??
+        null;
+      const fetcher = mission.dest === 'MARS' ? getMarsSites : getMoonSites;
+      void fetcher(localeFromPage($page)).then((list) => {
+        if (mission && mission.id === lastId) crossSite = findSite(list);
       });
     }
   });
@@ -475,11 +489,30 @@
       {/if}
     </div>
 
-    {#if mission.status !== 'PLANNED' && onFly}
+    {#if (mission.status !== 'PLANNED' && onFly) || crossSite}
       <div class="cta-bar">
-        <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
-          {m.mp_fly_button()}
-        </button>
+        {#if mission.status !== 'PLANNED' && onFly}
+          <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
+            {m.mp_fly_button()}
+          </button>
+        {/if}
+        {#if crossSite}
+          {@const surfaceLabel =
+            crossSite.kind === 'orbiter'
+              ? mission.dest === 'MARS'
+                ? 'IN MARS ORBIT ↗'
+                : 'IN LUNAR ORBIT ↗'
+              : mission.dest === 'MARS'
+                ? 'ON THE SURFACE ↗'
+                : 'ON THE LUNAR SURFACE ↗'}
+          <a
+            class="surface-link"
+            href={`${base}/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`}
+            data-testid="surface-link"
+          >
+            {surfaceLabel}
+          </a>
+        {/if}
       </div>
     {/if}
   {/if}
@@ -641,6 +674,34 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     flex-shrink: 0;
     margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .surface-link {
+    align-self: stretch;
+    text-align: center;
+    padding: 10px 12px;
+    background: rgba(193, 68, 14, 0.14);
+    border: 1px solid rgba(193, 68, 14, 0.55);
+    border-radius: 4px;
+    color: #ffd2c0;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .surface-link:hover,
+  .surface-link:focus-visible {
+    background: rgba(193, 68, 14, 0.28);
+    border-color: #c1440e;
+    color: #fff;
+    outline: none;
   }
   .cta {
     width: 100%;

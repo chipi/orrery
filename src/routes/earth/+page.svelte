@@ -100,6 +100,10 @@
       panelLightbox = null;
       panelGallery = [];
       lastSelectedId = selected.id;
+      // Earth-object ids often match a mission id (e.g. "lro",
+      // "hubble", "jwst", "chandrayaan1") so getEarthObjectGallery's
+      // built-in mission-gallery fallback is enough — no explicit
+      // mission_id field on this type yet.
       void getEarthObjectGallery(selected.id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
       });
@@ -263,6 +267,7 @@
       phase: number;
       inclRad: number;
       nodeRad: number;
+      ringMesh?: THREE.Mesh;
     };
 
     // Stable hash → [0, 2π) so each orbit's ascending-node longitude
@@ -285,6 +290,11 @@
           }
         });
         scene.remove(s.group);
+        if (s.ringMesh) {
+          s.ringMesh.geometry.dispose();
+          (s.ringMesh.material as THREE.Material).dispose();
+          scene.remove(s.ringMesh);
+        }
       }
       sats.length = 0;
 
@@ -356,7 +366,32 @@
         group.add(label.group);
 
         scene.add(group);
-        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad });
+
+        // Per-spacecraft orbital ring (mirrors the /moon + /mars
+        // pattern from PRD-009 / RFC-012). Skip constellations
+        // (count > 1) since their cluster representation already
+        // implies the orbital surface; rendering 24+ overlapping
+        // rings would clutter the view. Skip moon-orbiters too —
+        // they share the Moon position, not Earth-relative rings.
+        let ringMesh: THREE.Mesh | undefined;
+        if (o.count === 1 && category !== 'moon-orbiter') {
+          const ringGeo = new THREE.RingGeometry(orbitR - 0.03, orbitR + 0.03, 96);
+          const ringMat = new THREE.MeshBasicMaterial({
+            color: o.color,
+            transparent: true,
+            opacity: 0.32,
+            side: THREE.DoubleSide,
+          });
+          ringMesh = new THREE.Mesh(ringGeo, ringMat);
+          // Same plane as the satellite: rotate around X by inclRad,
+          // then around Y by nodeRad so the ring's normal matches
+          // the satellite's orbital plane normal.
+          ringMesh.rotation.order = 'YXZ';
+          ringMesh.rotation.x = inclRad;
+          ringMesh.rotation.y = nodeRad;
+          scene.add(ringMesh);
+        }
+        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad, ringMesh });
       }
     }
 
@@ -751,7 +786,11 @@
       // the geometry on every drag tick.
       for (const s of sats) {
         const obj = objects.find((o) => o.id === s.id);
-        if (obj) s.group.visible = obj.launched <= simYear;
+        if (obj) {
+          const launched = obj.launched <= simYear;
+          s.group.visible = launched;
+          if (s.ringMesh) s.ringMesh.visible = launched;
+        }
       }
 
       if (!reducedMotion) {

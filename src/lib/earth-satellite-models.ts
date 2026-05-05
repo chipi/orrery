@@ -415,6 +415,40 @@ function buildConstellation(color: string): THREE.Group {
   return g;
 }
 
+/** Generic lunar orbiter — small bus body + symmetric solar wings +
+ *  high-gain dish. Distinct enough from the LRO silhouette (asymmetric
+ *  single-wing design) that you can read it as "different mission" but
+ *  recognisably an orbiter. Used as a fallback for the v0.4 lunar-
+ *  orbiter backfill (Luna 10, Clementine, Lunar Prospector, SMART-1,
+ *  Chang'e 1/2, Chandrayaan-1) — none of which have a dedicated
+ *  silhouette yet. Better than the generic-octahedron probe fallback. */
+function buildGenericLunarOrbiter(color: string): THREE.Group {
+  const g = new THREE.Group();
+  const mat = bodyMat(color);
+  // Hexagonal bus body — typical small-orbiter form.
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.3, 6), mat);
+  g.add(body);
+  // Two symmetric solar wings.
+  for (const dx of [-0.5, 0.5]) {
+    const wing = new THREE.Mesh(new THREE.BoxGeometry(0.45, 0.02, 0.32), panelMat());
+    wing.position.set(dx, 0, 0);
+    g.add(wing);
+  }
+  // Small high-gain dish on a short boom (Earth-facing comm).
+  const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.18, 4), mat);
+  boom.position.set(0, 0.22, 0);
+  g.add(boom);
+  const dish = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.03, 14), silverMat());
+  dish.position.set(0, 0.32, 0);
+  dish.rotation.x = Math.PI / 2;
+  g.add(dish);
+  // Accent ring around the body so the agency colour is visible at scale.
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.24, 0.012, 6, 24), accentMat(color));
+  ring.rotation.x = Math.PI / 2;
+  g.add(ring);
+  return g;
+}
+
 // ─── Dispatch ───────────────────────────────────────────────────────
 
 const BUILDERS: Record<string, (color: string) => THREE.Group> = {
@@ -431,6 +465,18 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   galileo: buildConstellation,
   glonass: buildConstellation,
   beidou: buildConstellation,
+  // v0.4 lunar-orbiter backfill — all share the generic-lunar-orbiter
+  // silhouette (hex bus + symmetric wings + accent ring); their agency
+  // colour distinguishes them. A future iteration can give the more
+  // distinctive ones (Clementine's quad-bus, Chang'e 1/2's stacked
+  // bus, etc.) dedicated silhouettes.
+  luna10: buildGenericLunarOrbiter,
+  clementine: buildGenericLunarOrbiter,
+  'lunar-prospector': buildGenericLunarOrbiter,
+  'smart-1': buildGenericLunarOrbiter,
+  change1: buildGenericLunarOrbiter,
+  change2: buildGenericLunarOrbiter,
+  chandrayaan1: buildGenericLunarOrbiter,
 };
 
 export function buildSatelliteModel(id: string, color: string): THREE.Group {

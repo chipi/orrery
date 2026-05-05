@@ -3,7 +3,7 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { getMarsSites, getMarsTraverse } from '$lib/data';
+  import { getMarsSites, getMarsTraverse, getMarsSiteGallery } from '$lib/data';
   import type { Traverse } from '$types/mars-site';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -63,10 +63,17 @@
   type PanelTab = 'overview' | 'gallery' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let lastSelectedId = $state<string | null>(null);
+  let panelGallery: string[] = $state([]);
+  let panelLightbox = $state<string | null>(null);
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
       lastSelectedId = selected.id;
+      panelGallery = [];
+      panelLightbox = null;
+      void getMarsSiteGallery(selected.id, selected.mission_id).then((urls) => {
+        if (selected && selected.id === lastSelectedId) panelGallery = urls;
+      });
     }
   });
   type PanelLinks = NonNullable<MarsSite['links']>;
@@ -1009,6 +1016,18 @@
       >
         OVERVIEW
       </button>
+      {#if panelGallery.length > 0}
+        <button
+          type="button"
+          role="tab"
+          class="tab-btn"
+          class:active={panelTab === 'gallery'}
+          aria-selected={panelTab === 'gallery'}
+          onclick={() => (panelTab = 'gallery')}
+        >
+          GALLERY
+        </button>
+      {/if}
       {#if panelHasLinks}
         <button
           type="button"
@@ -1074,6 +1093,21 @@
         {/if}
         <p class="credit">{selected.credit}</p>
       </div>
+    {:else if panelTab === 'gallery'}
+      <div class="panel-body">
+        <div class="gallery-grid">
+          {#each panelGallery as src (src)}
+            <button
+              type="button"
+              class="gallery-thumb"
+              onclick={() => (panelLightbox = src)}
+              aria-label="Open enlarged view"
+            >
+              <img {src} alt="" loading="lazy" />
+            </button>
+          {/each}
+        </div>
+      </div>
     {:else if panelTab === 'learn'}
       <div class="panel-body">
         {#if panelLinksByTier.intro.length}
@@ -1104,6 +1138,18 @@
     {/if}
   {/if}
 </Panel>
+
+{#if panelLightbox}
+  <button
+    type="button"
+    class="lightbox"
+    aria-label="Close enlarged image"
+    onclick={() => (panelLightbox = null)}
+  >
+    <img src={panelLightbox} alt="" />
+    <span class="lightbox-close" aria-hidden="true">×</span>
+  </button>
+{/if}
 
 <style>
   .mars {
@@ -1411,5 +1457,63 @@
     color: #fff;
     border-bottom-color: #fff;
     outline: none;
+  }
+
+  /* GALLERY tab */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .gallery-thumb {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 200ms;
+  }
+  .gallery-thumb:hover img,
+  .gallery-thumb:focus-visible img {
+    transform: scale(1.04);
+  }
+  .gallery-thumb:focus-visible {
+    outline: 2px solid #c1440e;
+    outline-offset: 2px;
+  }
+
+  /* Lightbox */
+  :global(.lightbox) {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    border: 0;
+    padding: 0;
+    cursor: zoom-out;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  :global(.lightbox img) {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+  }
+  :global(.lightbox-close) {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 32px;
+    line-height: 1;
   }
 </style>

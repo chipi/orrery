@@ -360,12 +360,46 @@ export async function getSunGallery(): Promise<string[]> {
   }
 }
 
-export async function getEarthObjectGallery(objectId: string): Promise<string[]> {
-  return getCategoryGallery('earth-objects', 'earth-object-galleries.json', objectId);
+export async function getEarthObjectGallery(
+  objectId: string,
+  missionIdFallback?: string,
+): Promise<string[]> {
+  const own = await getCategoryGallery('earth-objects', 'earth-object-galleries.json', objectId);
+  if (own.length > 0) return own;
+  // Fallback: many earth-objects (LRO, Hubble, JWST, ISS, etc.) match
+  // a mission id with an existing photo gallery. Use those photos so
+  // every panel gets meaningful imagery without re-vendoring.
+  const fallbackId = missionIdFallback ?? objectId;
+  return getMissionGallery(fallbackId);
 }
 
-export async function getMoonSiteGallery(siteId: string): Promise<string[]> {
-  return getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
+export async function getMoonSiteGallery(
+  siteId: string,
+  missionIdFallback?: string,
+): Promise<string[]> {
+  const own = await getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
+  if (own.length > 0) return own;
+  // Fallback to mission-gallery via mission_id (e.g. lro → /images/
+  // missions/lro). Captures the new v0.4 lunar orbiters (LRO,
+  // Chandrayaan-1, Chang'e 1/2, etc.) that share an id with their
+  // mission card without needing a separate per-site photo set.
+  const fallbackId = missionIdFallback ?? siteId;
+  return getMissionGallery(fallbackId);
+}
+
+/**
+ * Mars site gallery loader. Same fallback ladder as moon-sites: try
+ * a mars-site-specific manifest first, then fall through to the
+ * mission gallery via mission_id (or the site id if it parries).
+ */
+export async function getMarsSiteGallery(
+  siteId: string,
+  missionIdFallback?: string,
+): Promise<string[]> {
+  const own = await getCategoryGallery('mars-sites', 'mars-site-galleries.json', siteId);
+  if (own.length > 0) return own;
+  const fallbackId = missionIdFallback ?? siteId;
+  return getMissionGallery(fallbackId);
 }
 
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */

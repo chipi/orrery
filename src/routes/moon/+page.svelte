@@ -69,7 +69,7 @@
       panelLightbox = null;
       panelGallery = [];
       lastSelectedId = selected.id;
-      void getMoonSiteGallery(selected.id).then((urls) => {
+      void getMoonSiteGallery(selected.id, selected.mission_id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
       });
     }

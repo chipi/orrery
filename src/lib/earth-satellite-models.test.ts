@@ -36,8 +36,8 @@ describe('buildSatelliteModel', () => {
     expect(meshCount).toBeGreaterThan(0);
   });
 
-  it('exposes all 13 known satellite ids', () => {
-    expect(KNOWN_SATELLITE_IDS).toHaveLength(13);
+  it('exposes all 20 known satellite ids (13 base + 7 lunar-orbiter backfill)', () => {
+    expect(KNOWN_SATELLITE_IDS).toHaveLength(20);
     expect(KNOWN_SATELLITE_IDS).toEqual(
       expect.arrayContaining([
         'iss',

@@ -9,15 +9,33 @@
     "inclination": 51.64,
     "count": 1,
     "color": "#4ecdc4",
-    "agencies": ["NASA", "ESA", "JAXA", "ROSCOSMOS", "CSA"],
+    "agencies": [
+      "NASA",
+      "ESA",
+      "JAXA",
+      "ROSCOSMOS",
+      "CSA"
+    ],
     "launched": 1998,
     "status": "ACTIVE",
     "crew": 7,
     "credit": "© NASA — facts and figures (public domain)",
     "links": [
-      { "l": "ISS — Wikipedia", "u": "https://en.wikipedia.org/wiki/International_Space_Station", "t": "intro" },
-      { "l": "NASA ISS live tracker", "u": "https://spotthestation.nasa.gov/", "t": "intro" },
-      { "l": "ISS facts and figures (NASA)", "u": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/", "t": "core" }
+      {
+        "l": "ISS — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/International_Space_Station",
+        "t": "intro"
+      },
+      {
+        "l": "NASA ISS live tracker",
+        "u": "https://spotthestation.nasa.gov/",
+        "t": "intro"
+      },
+      {
+        "l": "ISS facts and figures (NASA)",
+        "u": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/",
+        "t": "core"
+      }
     ]
   },
   {
@@ -30,14 +48,24 @@
     "inclination": 41.5,
     "count": 1,
     "color": "#DE2910",
-    "agencies": ["CNSA"],
+    "agencies": [
+      "CNSA"
+    ],
     "launched": 2021,
     "status": "ACTIVE",
     "crew": 3,
     "credit": "© CMSA — public release materials",
     "links": [
-      { "l": "Tiangong — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tiangong_space_station", "t": "intro" },
-      { "l": "China Manned Space program", "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station", "t": "intro" }
+      {
+        "l": "Tiangong — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+        "t": "intro"
+      },
+      {
+        "l": "China Manned Space program",
+        "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station",
+        "t": "intro"
+      }
     ]
   },
   {
@@ -50,15 +78,30 @@
     "inclination": 28.47,
     "count": 1,
     "color": "#7b9cff",
-    "agencies": ["NASA", "ESA"],
+    "agencies": [
+      "NASA",
+      "ESA"
+    ],
     "launched": 1990,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© NASA / STScI / ESA — public domain (NASA portion). Altitude is mean as of 2024; orbit decays ~2 km/year and will require either reboost or controlled deorbit by ~2034.",
     "links": [
-      { "l": "Hubble Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope", "t": "intro" },
-      { "l": "Hubble image gallery (NASA)", "u": "https://hubblesite.org/images/gallery", "t": "intro" },
-      { "l": "Hubble servicing missions (NASA)", "u": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/", "t": "core" }
+      {
+        "l": "Hubble Space Telescope — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+        "t": "intro"
+      },
+      {
+        "l": "Hubble image gallery (NASA)",
+        "u": "https://hubblesite.org/images/gallery",
+        "t": "intro"
+      },
+      {
+        "l": "Hubble servicing missions (NASA)",
+        "u": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/",
+        "t": "core"
+      }
     ]
   },
   {
@@ -71,15 +114,30 @@
     "inclination": 55,
     "count": 4,
     "color": "#0B3D91",
-    "agencies": ["USAF", "USSF"],
+    "agencies": [
+      "USAF",
+      "USSF"
+    ],
     "launched": 1978,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© U.S. Space Force / GPS.gov (public domain). Period is half a sidereal day (ground-track repeats twice per day).",
     "links": [
-      { "l": "GPS — Wikipedia", "u": "https://en.wikipedia.org/wiki/Global_Positioning_System", "t": "intro" },
-      { "l": "GPS.gov (official)", "u": "https://www.gps.gov/", "t": "intro" },
-      { "l": "GNSS constellations comparison", "u": "https://en.wikipedia.org/wiki/Global_navigation_satellite_system", "t": "core" }
+      {
+        "l": "GPS — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+        "t": "intro"
+      },
+      {
+        "l": "GPS.gov (official)",
+        "u": "https://www.gps.gov/",
+        "t": "intro"
+      },
+      {
+        "l": "GNSS constellations comparison",
+        "u": "https://en.wikipedia.org/wiki/Global_navigation_satellite_system",
+        "t": "core"
+      }
     ]
   },
   {
@@ -92,14 +150,24 @@
     "inclination": 56,
     "count": 4,
     "color": "#1C3C8A",
-    "agencies": ["ESA"],
+    "agencies": [
+      "ESA"
+    ],
     "launched": 2011,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© ESA / European Commission",
     "links": [
-      { "l": "Galileo — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)", "t": "intro" },
-      { "l": "ESA Galileo overview", "u": "https://www.esa.int/Applications/Navigation/Galileo", "t": "intro" }
+      {
+        "l": "Galileo — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)",
+        "t": "intro"
+      },
+      {
+        "l": "ESA Galileo overview",
+        "u": "https://www.esa.int/Applications/Navigation/Galileo",
+        "t": "intro"
+      }
     ]
   },
   {
@@ -112,13 +180,19 @@
     "inclination": 64.8,
     "count": 4,
     "color": "#003087",
-    "agencies": ["ROSCOSMOS"],
+    "agencies": [
+      "ROSCOSMOS"
+    ],
     "launched": 1982,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© Roscosmos / Russian Space Forces",
     "links": [
-      { "l": "GLONASS — Wikipedia", "u": "https://en.wikipedia.org/wiki/GLONASS", "t": "intro" }
+      {
+        "l": "GLONASS — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/GLONASS",
+        "t": "intro"
+      }
     ]
   },
   {
@@ -131,13 +205,19 @@
     "inclination": 55,
     "count": 4,
     "color": "#DE2910",
-    "agencies": ["CNSA"],
+    "agencies": [
+      "CNSA"
+    ],
     "launched": 2000,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© China Satellite Navigation Office. Note: BeiDou-3 spans MEO (shown), GEO, and IGSO orbits; only MEO is plotted here.",
     "links": [
-      { "l": "BeiDou — Wikipedia", "u": "https://en.wikipedia.org/wiki/BeiDou", "t": "intro" }
+      {
+        "l": "BeiDou — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/BeiDou",
+        "t": "intro"
+      }
     ]
   },
   {
@@ -150,15 +230,31 @@
     "inclination": 0,
     "count": 6,
     "color": "#ffc850",
-    "agencies": ["NOAA", "NASA", "ESA"],
+    "agencies": [
+      "NOAA",
+      "NASA",
+      "ESA"
+    ],
     "launched": 1963,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© NOAA / NASA / ESA — collective representation of the geostationary belt. Period is one sidereal day.",
     "links": [
-      { "l": "Geostationary orbit — Wikipedia", "u": "https://en.wikipedia.org/wiki/Geostationary_orbit", "t": "intro" },
-      { "l": "Arthur C. Clarke (proposed GEO 1945)", "u": "https://en.wikipedia.org/wiki/Arthur_C._Clarke", "t": "intro" },
-      { "l": "GOES weather system (NOAA)", "u": "https://www.goes.noaa.gov/", "t": "core" }
+      {
+        "l": "Geostationary orbit — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Geostationary_orbit",
+        "t": "intro"
+      },
+      {
+        "l": "Arthur C. Clarke (proposed GEO 1945)",
+        "u": "https://en.wikipedia.org/wiki/Arthur_C._Clarke",
+        "t": "intro"
+      },
+      {
+        "l": "GOES weather system (NOAA)",
+        "u": "https://www.goes.noaa.gov/",
+        "t": "core"
+      }
     ]
   },
   {
@@ -175,15 +271,29 @@
     "inclination": 76.7,
     "count": 1,
     "color": "#ff8c3c",
-    "agencies": ["NASA"],
+    "agencies": [
+      "NASA"
+    ],
     "launched": 1999,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© NASA / SAO / CXC — public domain (NASA portion). altitude_km here represents apoapsis (the prototype's chosen visual placement for elliptical orbits).",
     "links": [
-      { "l": "Chandra X-ray Observatory — Wikipedia", "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory", "t": "intro" },
-      { "l": "Chandra image gallery (NASA)", "u": "https://chandra.harvard.edu/photo/category.html", "t": "intro" },
-      { "l": "X-ray astronomy — Wikipedia", "u": "https://en.wikipedia.org/wiki/X-ray_astronomy", "t": "core" }
+      {
+        "l": "Chandra X-ray Observatory — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory",
+        "t": "intro"
+      },
+      {
+        "l": "Chandra image gallery (NASA)",
+        "u": "https://chandra.harvard.edu/photo/category.html",
+        "t": "intro"
+      },
+      {
+        "l": "X-ray astronomy — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/X-ray_astronomy",
+        "t": "core"
+      }
     ]
   },
   {
@@ -200,14 +310,24 @@
     "inclination": 40,
     "count": 1,
     "color": "#FFD700",
-    "agencies": ["ESA"],
+    "agencies": [
+      "ESA"
+    ],
     "launched": 1999,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© ESA — XMM-Newton mission. Period is 48 h (originally 47.86 h, drifts slightly).",
     "links": [
-      { "l": "XMM-Newton — Wikipedia", "u": "https://en.wikipedia.org/wiki/XMM-Newton", "t": "intro" },
-      { "l": "ESA XMM-Newton science", "u": "https://www.cosmos.esa.int/web/xmm-newton", "t": "core" }
+      {
+        "l": "XMM-Newton — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/XMM-Newton",
+        "t": "intro"
+      },
+      {
+        "l": "ESA XMM-Newton science",
+        "u": "https://www.cosmos.esa.int/web/xmm-newton",
+        "t": "core"
+      }
     ]
   },
   {
@@ -219,15 +339,197 @@
     "inclination": 90,
     "count": 1,
     "color": "#aaaacc",
-    "agencies": ["NASA"],
+    "agencies": [
+      "NASA"
+    ],
     "launched": 2009,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© NASA / GSFC / ASU — public domain. altitude_km is mean lunar altitude (LRO's actual orbital altitude around the Moon, not Earth-distance). period_min omitted because LRO's Earth-relative apparent motion follows the Moon's 27.32-day sidereal period; LRO's actual ~113 min lunar orbital period would be a misleading number on the /earth log scale.",
     "links": [
-      { "l": "Lunar Reconnaissance Orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter", "t": "intro" },
-      { "l": "LRO camera images (LROC)", "u": "https://www.lroc.asu.edu/", "t": "intro" },
-      { "l": "Water on the Moon — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunar_water", "t": "core" }
+      {
+        "l": "Lunar Reconnaissance Orbiter — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lunar_Reconnaissance_Orbiter",
+        "t": "intro"
+      },
+      {
+        "l": "LRO camera images (LROC)",
+        "u": "https://www.lroc.asu.edu/",
+        "t": "intro"
+      },
+      {
+        "l": "Water on the Moon — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lunar_water",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "luna10",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 350,
+    "inclination": 71.9,
+    "count": 1,
+    "color": "#cc4444",
+    "agencies": [
+      "ROSCOSMOS"
+    ],
+    "launched": 1966,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© Soviet Academy of Sciences (historical) — first artificial satellite of any body other than Earth, in lunar orbit 1966.",
+    "links": [
+      {
+        "l": "Luna 10 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Luna_10",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "clementine",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 425,
+    "inclination": 90,
+    "count": 1,
+    "color": "#0B3D91",
+    "agencies": [
+      "NASA"
+    ],
+    "launched": 1994,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© NASA / DoD Strategic Defense Initiative — joint defence/civilian lunar mission, 1994.",
+    "links": [
+      {
+        "l": "Clementine — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "lunar-prospector",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 100,
+    "inclination": 90,
+    "count": 1,
+    "color": "#0B3D91",
+    "agencies": [
+      "NASA"
+    ],
+    "launched": 1998,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© NASA Ames Research Center — first NASA Discovery-class lunar mission, 1998-1999. Confirmed polar water-ice signatures.",
+    "links": [
+      {
+        "l": "Lunar Prospector — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lunar_Prospector",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "smart-1",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 470,
+    "inclination": 90,
+    "count": 1,
+    "color": "#003299",
+    "agencies": [
+      "ESA"
+    ],
+    "launched": 2003,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© ESA — first European lunar mission; pioneered solar-electric (ion) propulsion for lunar transfer.",
+    "links": [
+      {
+        "l": "SMART-1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/SMART-1",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "change1",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 200,
+    "inclination": 64,
+    "count": 1,
+    "color": "#DE2910",
+    "agencies": [
+      "CNSA"
+    ],
+    "launched": 2007,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© CNSA / China National Space Administration — first Chinese lunar mission, 2007-2009; deliberately impacted at end of life.",
+    "links": [
+      {
+        "l": "Chang'e 1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chang%27e_1",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "chandrayaan1",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 100,
+    "inclination": 90,
+    "count": 1,
+    "color": "#FF9933",
+    "agencies": [
+      "ISRO"
+    ],
+    "launched": 2008,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© ISRO — India's first lunar mission. Carried NASA's Moon Mineralogy Mapper (M³) which directly confirmed lunar surface water in 2009.",
+    "links": [
+      {
+        "l": "Chandrayaan-1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chandrayaan-1",
+        "t": "intro"
+      }
+    ]
+  },
+  {
+    "id": "change2",
+    "body": "MOON",
+    "regime": "MOON",
+    "earth_distance_km": 384400,
+    "altitude_km": 100,
+    "inclination": 90,
+    "count": 1,
+    "color": "#DE2910",
+    "agencies": [
+      "CNSA"
+    ],
+    "launched": 2010,
+    "status": "RETIRED",
+    "crew": 0,
+    "credit": "© CNSA — orbited Moon 2010-2011, then departed for Sun-Earth L2 (2011), then asteroid 4179 Toutatis flyby (2012).",
+    "links": [
+      {
+        "l": "Chang'e 2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chang%27e_2",
+        "t": "intro"
+      }
     ]
   },
   {
@@ -237,16 +539,36 @@
     "earth_distance_km": 1500000,
     "count": 1,
     "color": "#ffd700",
-    "agencies": ["NASA", "ESA", "CSA"],
+    "agencies": [
+      "NASA",
+      "ESA",
+      "CSA"
+    ],
     "launched": 2022,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© NASA / ESA / CSA / STScI — public domain (NASA portion). JWST is in a halo orbit around Sun-Earth L2; the listed distance is the L2 point's mean distance from Earth.",
     "links": [
-      { "l": "James Webb Space Telescope — Wikipedia", "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope", "t": "intro" },
-      { "l": "JWST first images (NASA)", "u": "https://webbtelescope.org/news/first-images", "t": "intro" },
-      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" },
-      { "l": "JWST approved programs", "u": "https://www.stsci.edu/jwst/science-execution/approved-programs", "t": "deep" }
+      {
+        "l": "James Webb Space Telescope — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope",
+        "t": "intro"
+      },
+      {
+        "l": "JWST first images (NASA)",
+        "u": "https://webbtelescope.org/news/first-images",
+        "t": "intro"
+      },
+      {
+        "l": "L2 Lagrange point — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lagrange_point",
+        "t": "core"
+      },
+      {
+        "l": "JWST approved programs",
+        "u": "https://www.stsci.edu/jwst/science-execution/approved-programs",
+        "t": "deep"
+      }
     ]
   },
   {
@@ -256,15 +578,29 @@
     "earth_distance_km": 1500000,
     "count": 1,
     "color": "#FFD700",
-    "agencies": ["ESA"],
+    "agencies": [
+      "ESA"
+    ],
     "launched": 2013,
     "status": "ACTIVE",
     "crew": 0,
     "credit": "© ESA / Gaia / DPAC. Like JWST, in a Lissajous orbit around Sun-Earth L2.",
     "links": [
-      { "l": "Gaia — Wikipedia", "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)", "t": "intro" },
-      { "l": "Gaia data release (ESA)", "u": "https://www.cosmos.esa.int/web/gaia/data-release-3", "t": "core" },
-      { "l": "L2 Lagrange point — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lagrange_point", "t": "core" }
+      {
+        "l": "Gaia — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)",
+        "t": "intro"
+      },
+      {
+        "l": "Gaia data release (ESA)",
+        "u": "https://www.cosmos.esa.int/web/gaia/data-release-3",
+        "t": "core"
+      },
+      {
+        "l": "L2 Lagrange point — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lagrange_point",
+        "t": "core"
+      }
     ]
   }
 ]

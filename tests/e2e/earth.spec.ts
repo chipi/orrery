@@ -145,18 +145,22 @@ test.describe('/earth', () => {
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
 
-  /* ── v0.1.11 — Year scrubber (Theme A.A4) ──────────────────────── */
-  test('year scrubber renders + URL pre-applies on load', async ({ page }) => {
-    await page.goto('/earth?year=2009');
-    const slider = page.getByRole('slider', { name: /Earth-orbit timeline/i });
-    await expect(slider).toBeVisible({ timeout: 5_000 });
-    await expect(slider).toHaveAttribute('aria-valuenow', '2009');
+  /* ── v0.4 — category filter chips (replaced year scrubber) ───────── */
+  test('category filter chips render with correct testids', async ({ page }) => {
+    await page.goto('/earth');
+    await expect(page.getByTestId('layer-stations')).toBeVisible();
+    await expect(page.getByTestId('layer-observatories')).toBeVisible();
+    await expect(page.getByTestId('layer-constellations')).toBeVisible();
+    await expect(page.getByTestId('layer-comsats')).toBeVisible();
+    await expect(page.getByTestId('layer-moon-orbiters')).toBeVisible();
+    await expect(page.getByTestId('layer-orbits')).toBeVisible();
   });
 
-  test('year scrubber clamps out-of-range URL values', async ({ page }) => {
-    await page.goto('/earth?year=1900');
-    const slider = page.getByRole('slider', { name: /Earth-orbit timeline/i });
-    await expect(slider).toBeVisible({ timeout: 5_000 });
-    await expect(slider).toHaveAttribute('aria-valuenow', '1957');
+  test('chip toggle flips aria-pressed', async ({ page }) => {
+    await page.goto('/earth');
+    const stations = page.getByTestId('layer-stations');
+    await expect(stations).toHaveAttribute('aria-pressed', 'true');
+    await stations.click();
+    await expect(stations).toHaveAttribute('aria-pressed', 'false');
   });
 });

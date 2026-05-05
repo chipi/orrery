@@ -40,6 +40,13 @@ export function categoriseEarthSatellite(id: string): EarthSatelliteCategory {
     case 'geo':
       return 'comsat';
     case 'lro':
+    case 'luna10':
+    case 'clementine':
+    case 'lunar-prospector':
+    case 'smart-1':
+    case 'change1':
+    case 'change2':
+    case 'chandrayaan1':
       return 'moon-orbiter';
     default:
       // Unknown id — treat as a generic telescope-style probe. The

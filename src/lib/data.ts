@@ -14,6 +14,7 @@ import type { LocalizedScenario, Scenario, ScenarioOverlay } from '$types/scenar
 import type { Rocket } from '$types/rocket';
 import type { EarthObject } from '$types/earth-object';
 import type { MoonSite } from '$types/moon-site';
+import type { MarsSite, Traverse } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 
@@ -196,6 +197,38 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
     merged.push(fallback ? { ...s, ...fallback } : s);
   }
   return merged;
+}
+
+/** Mars surface + orbital sites — base catalogue (PRD-009 / RFC-012). */
+export async function marsSites(): Promise<MarsSite[]> {
+  return get<MarsSite[]>('mars-sites.json');
+}
+
+/**
+ * Mars sites merged with their per-locale editorial overlay (name,
+ * mission_type, site_name, fact, capability). Used by /mars.
+ * Mirrors getMoonSites — the locale-merge pattern is body-agnostic.
+ */
+export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
+  const baseList = await marsSites();
+  const merged: MarsSite[] = [];
+  for (const s of baseList) {
+    const overlay = await get<Partial<MarsSite>>(`i18n/${locale}/mars-sites/${s.id}.json`).catch(
+      () => null,
+    );
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
+    merged.push(fallback ? { ...s, ...fallback } : s);
+  }
+  return merged;
+}
+
+/** Mars rover traverse polylines (PRD-009 §what-comes-after). */
+export async function getMarsTraverse(roverId: string): Promise<Traverse | null> {
+  return get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
 }
 
 /**

@@ -165,9 +165,13 @@ describe('reference data', () => {
     expect(data).toHaveLength(13);
   });
 
-  it('moonSites() returns 16 sites', async () => {
+  it('moonSites() returns 24 sites (16 surface + 8 orbiters)', async () => {
     const data = await moonSites();
-    expect(data).toHaveLength(16);
+    expect(data).toHaveLength(24);
+    const surface = data.filter((s) => !s.kind || s.kind === 'surface');
+    const orbiters = data.filter((s) => s.kind === 'orbiter');
+    expect(surface).toHaveLength(16);
+    expect(orbiters).toHaveLength(8);
   });
 });
 
@@ -301,9 +305,9 @@ describe('getEarthObjects', () => {
 });
 
 describe('getMoonSites', () => {
-  it('returns 16 sites merged with their en-US overlay', async () => {
+  it('returns 24 sites merged with their en-US overlay', async () => {
     const list = await getMoonSites();
-    expect(list).toHaveLength(16);
+    expect(list).toHaveLength(24);
     const apollo11 = list.find((s) => s.id === 'apollo11');
     expect(apollo11).toBeDefined();
     expect(apollo11!.year).toBe(1969);
@@ -314,9 +318,22 @@ describe('getMoonSites', () => {
     expect(apollo11!.left).toContain('flag');
   });
 
-  it('every nation matches the IA-defined enum', async () => {
+  it('every nation matches the surface-site nation enum', async () => {
     const list = await getMoonSites();
-    const allowed = new Set(['USA', 'USSR', 'Russia', 'China', 'India', 'Japan']);
+    // PRD-009 / RFC-012: backfilled lunar orbiters include SMART-1 (ESA →
+    // nation 'Europe'), so the legend grows beyond the original five
+    // nations. Both the original surface set and the orbiters share the
+    // same nation enum from src/types/surface-site.ts.
+    const allowed = new Set([
+      'USA',
+      'USSR',
+      'Russia',
+      'China',
+      'India',
+      'Japan',
+      'Europe',
+      'UAE',
+    ]);
     for (const s of list) {
       expect(allowed.has(s.nation)).toBe(true);
     }
@@ -324,7 +341,7 @@ describe('getMoonSites', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getMoonSites('fr');
-    expect(list).toHaveLength(16);
+    expect(list).toHaveLength(24);
   });
 });
 

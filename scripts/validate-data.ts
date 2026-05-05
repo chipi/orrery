@@ -11,7 +11,11 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DATA_ROOT = 'static/data';
-const ajv = new Ajv({ allErrors: true, strict: true });
+// strictRequired:false allows the surface-site schema's if/then conditional
+// required (lat/lon for surface; altitude_km/inclination_deg for orbiter)
+// to reference properties declared on the parent rather than re-declaring
+// them inside each branch. Other strict checks remain enabled.
+const ajv = new Ajv({ allErrors: true, strict: true, strictRequired: false });
 addFormats(ajv);
 
 function loadSchema(name: string): AnySchema {
@@ -26,8 +30,11 @@ const rocketSchema = loadSchema('rocket.schema.json');
 const rocketOverlaySchema = loadSchema('rocket-overlay.schema.json');
 const earthObjectSchema = loadSchema('earth-object.schema.json');
 const earthObjectOverlaySchema = loadSchema('earth-object-overlay.schema.json');
-const moonSiteSchema = loadSchema('moon-site.schema.json');
-const moonSiteOverlaySchema = loadSchema('moon-site-overlay.schema.json');
+// Generic surface-site schema (PRD-009 / RFC-012). Replaces the body-specific
+// moon-site / mars-site schemas — both bodies share the same site shape with
+// a `kind: 'surface' | 'orbiter'` discriminator.
+const surfaceSiteSchema = loadSchema('surface-site.schema.json');
+const surfaceSiteOverlaySchema = loadSchema('surface-site-overlay.schema.json');
 const planetOverlaySchema = loadSchema('planet-overlay.schema.json');
 const sunSchema = loadSchema('sun.schema.json');
 const sunOverlaySchema = loadSchema('sun-overlay.schema.json');
@@ -43,8 +50,8 @@ const validateRockets = ajv.compile(rocketSchema);
 const validateRocketOverlay = ajv.compile(rocketOverlaySchema);
 const validateEarthObjects = ajv.compile(earthObjectSchema);
 const validateEarthObjectOverlay = ajv.compile(earthObjectOverlaySchema);
-const validateMoonSites = ajv.compile(moonSiteSchema);
-const validateMoonSiteOverlay = ajv.compile(moonSiteOverlaySchema);
+const validateSurfaceSites = ajv.compile(surfaceSiteSchema);
+const validateSurfaceSiteOverlay = ajv.compile(surfaceSiteOverlaySchema);
 const validatePlanetOverlay = ajv.compile(planetOverlaySchema);
 const validateSun = ajv.compile(sunSchema);
 const validateSunOverlay = ajv.compile(sunOverlaySchema);
@@ -94,7 +101,8 @@ console.log('Validating data...');
 validateFile(join(DATA_ROOT, 'planets.json'), validatePlanets);
 validateFile(join(DATA_ROOT, 'rockets.json'), validateRockets);
 validateFile(join(DATA_ROOT, 'earth-objects.json'), validateEarthObjects);
-validateFile(join(DATA_ROOT, 'moon-sites.json'), validateMoonSites);
+validateFile(join(DATA_ROOT, 'moon-sites.json'), validateSurfaceSites);
+validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 
 // Scenario base records
@@ -136,9 +144,12 @@ if (existsSync(i18nDir)) {
     for (const file of listJson(join(i18nDir, locale, 'earth-objects'))) {
       validateFile(file, validateEarthObjectOverlay);
     }
-    // Moon-site overlays
+    // Moon-site + Mars-site overlays — both bodies share the surface-site overlay schema.
     for (const file of listJson(join(i18nDir, locale, 'moon-sites'))) {
-      validateFile(file, validateMoonSiteOverlay);
+      validateFile(file, validateSurfaceSiteOverlay);
+    }
+    for (const file of listJson(join(i18nDir, locale, 'mars-sites'))) {
+      validateFile(file, validateSurfaceSiteOverlay);
     }
     // Planet overlays
     for (const file of listJson(join(i18nDir, locale, 'planets'))) {

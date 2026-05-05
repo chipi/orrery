@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "surface-site-overlay.schema.json",
+  "title": "SurfaceSiteOverlay",
+  "description": "Editorial overlay per surface site per locale. Used by both /moon and /mars (PRD-009 / RFC-012). For orbiters, `site_name` is the orbital regime (e.g. 'Sun-synchronous polar orbit' or '~265 × 12,000 km elliptical').",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "mission_type", "fact"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "mission_type": {
+      "type": "string",
+      "minLength": 1,
+      "description": "e.g. 'Uncrewed Soft Lander', 'Active Orbiter', 'Crewed Free-Return'"
+    },
+    "site_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Surface: location name (e.g. 'Jezero Crater'). Orbiter: orbit description."
+    },
+    "crew": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "left": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Surface only: hardware that remains. Optional for orbiters."
+    },
+    "fact": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Editorial paragraph — what makes this mission significant"
+    },
+    "capability": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-line statement connecting this mission to broader capabilities (per PRD-006/PRD-009 capability ladder)"
+    }
+  }
+}

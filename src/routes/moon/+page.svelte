@@ -108,7 +108,14 @@
 
     getMoonSites(localeFromPage($page))
       .then((list) => {
-        sites = list;
+        // V1 of the moon-orbiter backfill (issue #40 Phase 3): the orbiter
+        // entries are catalogued in moon-sites.json but rendering on /moon
+        // is deferred to a follow-up (positions are altitude_km/inclination
+        // rather than lat/lon; the existing marker code path expects
+        // lat/lon). Mars ships orbiter rendering first; once that pattern
+        // is stable, /moon will adopt it. Filter out non-surface entries
+        // here so the existing 16 surface markers continue to render.
+        sites = list.filter((s) => !s.kind || s.kind === 'surface');
       })
       .catch((err) => {
         console.error('Failed to load moon sites:', err);
@@ -278,6 +285,10 @@
       }
       markers.length = 0;
       for (const site of sites) {
+        // Orbiter entries (kind:'orbiter') are filtered out at fetch
+        // time on this route, but TS doesn't know that — guard so
+        // surface-only positioning math doesn't deal with undefined.
+        if (site.lat == null || site.lon == null) continue;
         const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
         const r = moonRadius;
         const category = categoriseMoonMarker(site.mission_type);
@@ -568,8 +579,12 @@
         ctx2.textAlign = 'center';
         ctx2.fillText(labelText, cx, cy + discR + 24);
 
-        // Site markers — only the ones on this hemisphere.
+        // Site markers — only the ones on this hemisphere. Skip
+        // orbiter entries (no lat/lon); they're catalogued in
+        // moon-sites.json but not yet rendered on /moon — see filter
+        // in onMount, and the Mars-first orbiter rollout in PRD-009.
         for (const site of sites) {
+          if (site.lat == null || site.lon == null) continue;
           const latRad = (site.lat * Math.PI) / 180;
           const lonRad = (site.lon * Math.PI) / 180;
           const z = Math.cos(latRad) * Math.cos(lonRad);
@@ -831,11 +846,15 @@
           </div>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_lat()}</div>
-            <div class="cell-value">{m.moon_lat_deg({ value: selected.lat.toFixed(2) })}</div>
+            <div class="cell-value">
+              {selected.lat != null ? m.moon_lat_deg({ value: selected.lat.toFixed(2) }) : '—'}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_lon()}</div>
-            <div class="cell-value">{m.moon_lon_deg({ value: selected.lon.toFixed(2) })}</div>
+            <div class="cell-value">
+              {selected.lon != null ? m.moon_lon_deg({ value: selected.lon.toFixed(2) }) : '—'}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_duration()}</div>
@@ -855,7 +874,9 @@
           </div>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_samples()}</div>
-            <div class="cell-value">{m.moon_kg({ value: selected.samples_kg.toString() })}</div>
+            <div class="cell-value">
+              {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+            </div>
           </div>
           <div class="cell">
             <div class="cell-label">{m.moon_panel_crew()}</div>

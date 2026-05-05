@@ -17,6 +17,7 @@
     { href: `${base}/fly`, label: m.nav_fly() },
     { href: `${base}/earth`, label: m.nav_earth() },
     { href: `${base}/moon`, label: m.nav_moon() },
+    { href: `${base}/mars`, label: m.nav_mars() },
   ];
 
   function isActive(href: string, pathname: string): boolean {

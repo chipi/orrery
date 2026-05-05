@@ -11,7 +11,7 @@
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
       "agency": { "type": "string", "minLength": 1 },
-      "dest": { "enum": ["MARS", "MOON"] },
+      "dest": { "enum": ["MARS", "MOON", "JUPITER", "NEPTUNE", "PLUTO", "CERES"] },
       "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },
       "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
       "sector": { "enum": ["gov", "private"] },

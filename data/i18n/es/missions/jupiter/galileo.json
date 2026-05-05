@@ -1,0 +1,20 @@
+{
+  "name": "Galileo",
+  "type": "ORBITADOR · COMPLETADO",
+  "first": "Primera sonda en orbitar Júpiter; sonda atmosférica en las nubes jovianas",
+  "description": "Lanzada desde el Atlantis tras la pausa posterior al Challenger, Galileo atravesó el cinturón de asteroides interno y estudió Júpiter y sus lunas durante años. Descubrió el campo magnético inducido de Europa — evidencia de un océano subsuperficial — y observó el impacto de Shoemaker-Levy 9. La misión terminó con una inmersión controlada en Júpiter en 2003 para no contaminar lunas heladas.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "STS-34 despliega Galileo y una etapa superior inercial desde Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "INSERCIÓN EN ÓRBITA JOVIANA",
+      "note": "Encendido principal captura a Galileo en órbita; comienzan décadas de ciencia.",
+      "type": "nominal"
+    }
+  ]
+}

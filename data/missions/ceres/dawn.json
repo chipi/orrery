@@ -1,0 +1,31 @@
+{
+  "id": "dawn",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "CERES",
+  "color": "#7c8b9a",
+  "year": 2007,
+  "status": "FLOWN",
+  "departure_date": "2007-09-27",
+  "arrival_date": "2015-03-06",
+  "transit_days": 2717,
+  "vehicle": "Delta II 7925H",
+  "payload": "Ion-propelled orbiter; framing camera, VIR, GRaND, etc.",
+  "delta_v": "~11 km/s (approx)",
+  "data_quality": "partial",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. Vesta rendezvous phase precedes Ceres; catalogue shelf is Ceres per ADR-028.",
+  "links": [
+    {
+      "l": "Dawn (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Dawn_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Dawn mission archive (NASA)",
+      "u": "https://science.nasa.gov/mission/dawn/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "sparse"
+}

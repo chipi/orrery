@@ -1,0 +1,20 @@
+{
+  "name": "Voyager 2",
+  "type": "SOBREVUEL · COMPLETADO",
+  "first": "Única sonda en visitar Urano y Neptuno; Gran Tour de cuatro gigantes",
+  "description": "La nave que siguió cuando el presupuesto apretó, Voyager 2 completó el Gran Tour desde Júpiter y Saturno hasta Urano y Neptuno — aún tenemos solo esas imágenes de cerca de los gigantes helados. En Neptuno dejó el Gran Mancha Oscura y los géiseres de Tritón. Hoy ambas Voyager vuelan en el espacio interestelar. Orrery usa Neptuno como destino de catálogo; la trayectoria real usó múltiples asistencias gravitatorias.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Titan IIIE lanza Voyager 2 desde Cabo Cañaveral hacia el Gran Tour.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "MÁXIMO ACERCAMIENTO A NEPTUNO",
+      "note": "Sobrevuelo de Neptuno y la gran luna Tritón; último encuentro planetario del tour.",
+      "type": "nominal"
+    }
+  ]
+}

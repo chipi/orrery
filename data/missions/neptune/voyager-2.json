@@ -1,0 +1,31 @@
+{
+  "id": "voyager-2",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "NEPTUNE",
+  "color": "#6b8cff",
+  "year": 1977,
+  "status": "FLOWN",
+  "departure_date": "1977-08-20",
+  "arrival_date": "1989-08-25",
+  "transit_days": 4388,
+  "vehicle": "Titan IIIE / Centaur",
+  "payload": "Planetary flyby spacecraft; RTG electrical power",
+  "delta_v": "~18 km/s (approx)",
+  "data_quality": "partial",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. Catalogue uses Neptune as primary destination; the mission also flew Jupiter, Saturn, and Uranus (gravity assists — not modelled in Orrery porkchops).",
+  "links": [
+    {
+      "l": "Voyager 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voyager_2",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager mission status (NASA)",
+      "u": "https://science.nasa.gov/mission/voyager/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "sparse"
+}

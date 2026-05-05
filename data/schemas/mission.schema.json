@@ -29,7 +29,7 @@
     "agency": { "type": "string", "minLength": 1 },
     "agency_full": { "type": "string", "minLength": 1 },
     "sector": { "enum": ["gov", "private"] },
-    "dest": { "enum": ["MARS", "MOON"] },
+    "dest": { "enum": ["MARS", "MOON", "JUPITER", "NEPTUNE", "PLUTO", "CERES"] },
     "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
     "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
     "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },

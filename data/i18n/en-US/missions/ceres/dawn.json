@@ -1,0 +1,20 @@
+{
+  "name": "Dawn",
+  "type": "ORBITER · FLOWN",
+  "first": "First mission to orbit two extraterrestrial bodies — Vesta, then Ceres",
+  "description": "Dawn proved ion propulsion at planetary scale: it matched orbits with massive Vesta, left, and spiralled down onto dwarf planet Ceres — the largest object in the asteroid belt. Bright spots in Occator crater became one of the mission's iconic mysteries, later tied to briny eruptions from a deep reservoir. This catalogue entry uses Ceres as the primary destination; Vesta is covered in the narrative above.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Delta II lifts Dawn toward Vesta and Ceres on a low-thrust spiral highway.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CERES CAPTURE",
+      "note": "Ion engines brake Dawn into orbit around Ceres; mapping campaign begins.",
+      "type": "nominal"
+    }
+  ]
+}

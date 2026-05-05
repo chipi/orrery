@@ -30,5 +30,9 @@
   { "id": "change6", "agency": "CNSA", "dest": "MOON", "status": "FLOWN", "year": 2024, "sector": "gov", "color": "#DE2910" },
   { "id": "blue-moon-mk1", "agency": "Blue Origin", "dest": "MOON", "status": "PLANNED", "year": 2025, "sector": "private", "color": "#00264D" },
   { "id": "artemis2", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 2026, "sector": "gov", "color": "#0B3D91" },
-  { "id": "artemis3", "agency": "NASA", "dest": "MOON", "status": "PLANNED", "year": 2027, "sector": "gov", "color": "#0B3D91" }
+  { "id": "artemis3", "agency": "NASA", "dest": "MOON", "status": "PLANNED", "year": 2027, "sector": "gov", "color": "#0B3D91" },
+  { "id": "galileo", "agency": "NASA", "dest": "JUPITER", "status": "FLOWN", "year": 1989, "sector": "gov", "color": "#d4a373" },
+  { "id": "voyager-2", "agency": "NASA", "dest": "NEPTUNE", "status": "FLOWN", "year": 1977, "sector": "gov", "color": "#6b8cff" },
+  { "id": "new-horizons", "agency": "NASA", "dest": "PLUTO", "status": "FLOWN", "year": 2006, "sector": "gov", "color": "#c8a98a" },
+  { "id": "dawn", "agency": "NASA", "dest": "CERES", "status": "FLOWN", "year": 2007, "sector": "gov", "color": "#7c8b9a" }
 ]

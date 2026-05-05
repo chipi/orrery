@@ -80,7 +80,6 @@ export function computePorkchopGrid(
   const [depStart, depEnd] = req.depRange;
   const [tofStart, tofEnd] = req.arrRange;
   const destination = DESTINATIONS[req.destinationId ?? 'mars'];
-  const vDestCirc = Math.sqrt(MU_SUN / destination.a);
 
   const depDays: number[] = new Array(w);
   const arrDays: number[] = new Array(h);
@@ -102,7 +101,7 @@ export function computePorkchopGrid(
     for (let i = 0; i < w; i++) {
       const depDay = depDays[i];
       const arrDay = depDay + tofDay;
-      grid[j][i] = computeDv(depDay, arrDay, tofYr, destination, vDestCirc);
+      grid[j][i] = computeDv(depDay, arrDay, tofYr, destination);
     }
 
     if (j % 10 === 0 || j === h - 1) {
@@ -114,25 +113,39 @@ export function computePorkchopGrid(
   return { grid, depDays, arrDays };
 }
 
-/** Heliocentric ∆v (km/s) for an Earth → destination transfer using
- * the simplified circular-orbit model. Returns DV_FAILED when Lambert
- * can't find a feasible transfer. */
+/** Heliocentric position (AU) in the ecliptic plane. Matches
+ * `mission-arc.destinationPos` (x/z) mapped to Lambert's [x,y]. */
+function destinationHelioXY(day: number, destination: {
+  a: number;
+  a0: number;
+  meanMotionRadPerDay: number;
+  e?: number;
+}): [number, number] {
+  const e = destination.e ?? 0;
+  const nu = destination.a0 + destination.meanMotionRadPerDay * day;
+  const r = (destination.a * (1 - e * e)) / (1 + e * Math.cos(nu));
+  return [r * Math.cos(nu), r * Math.sin(nu)];
+}
+
+/** Heliocentric ∆v (km/s) for an Earth → destination transfer. Uses
+ * the same eccentric orbit model as `destinationHelioXY`. Returns
+ * DV_FAILED when Lambert can't find a feasible transfer. */
 function computeDv(
   depDay: number,
   arrDay: number,
   tofYr: number,
-  destination: { a: number; a0: number; meanMotionRadPerDay: number },
-  vDestCirc: number,
+  destination: { a: number; a0: number; meanMotionRadPerDay: number; e?: number },
 ): number {
   const tE = EARTH_A0 + EARTH_MEAN_MOTION_RAD_PER_DAY * depDay;
-  const tD = destination.a0 + destination.meanMotionRadPerDay * arrDay;
   const r1: [number, number] = [R_EARTH_AU * Math.cos(tE), R_EARTH_AU * Math.sin(tE)];
-  const r2: [number, number] = [destination.a * Math.cos(tD), destination.a * Math.sin(tD)];
+  const r2 = destinationHelioXY(arrDay, destination);
+  const r2mag = Math.hypot(r2[0], r2[1]);
+  const vDest = Math.sqrt(MU_SUN * (2 / r2mag - 1 / destination.a));
 
   const result = solveLambert(r1, r2, tofYr, MU_SUN);
   if (!result) return DV_FAILED;
 
-  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + Math.abs(vDestCirc - result.v2);
+  const dvAuPerYr = Math.abs(result.v1 - V_EARTH_CIRC) + Math.abs(vDest - result.v2);
   const dvKmS = dvAuPerYr * AU_PER_YR_TO_KMS;
   return Math.max(3.2, Math.min(dvKmS, DV_FAILED));
 }

@@ -1,0 +1,20 @@
+{
+  "name": "New Horizons",
+  "type": "SOBREVUEL · COMPLETADO",
+  "first": "Primer sobrevuelo de Plutón y sus lunas; imágenes más nítidas de un mundo del cinturón de Kuiper",
+  "description": "Nueve años tras el lanzamiento más rápido hasta la fecha, New Horizons concentró décadas de expectativa en un día de julio de 2015: un mundo pasó de borrosos píxeles a montañas de hielo de agua y glaciares de nitrógeno en la región Tombaugh. Luego visitó Arrokoth. Los arcos en Orrery son modelos didácticos de transferencia directa, no la asistencia real en Júpiter.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Atlas V 551 sale de la Tierra hacia una trayectoria con asistencia en Júpiter hacia Plutón.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "SOBREVUEL DE PLUTÓN",
+      "note": "Máximo acercamiento a Plutón; imágenes y datos de plasma a alta velocidad.",
+      "type": "nominal"
+    }
+  ]
+}

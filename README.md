@@ -46,7 +46,7 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 ## Try a mission
 
-The 32 missions in the library include flown classics, recent flights, and a handful of concept missions:
+The 36 missions in the library include flown classics, outer-system landmarks, recent flights, and a handful of concept missions:
 
 | Pick | Why |
 |---|---|
@@ -63,7 +63,7 @@ The 32 missions in the library include flown classics, recent flights, and a han
 Orrery makes a few claims a screen reader can verify:
 
 - **Real physics.** Keplerian two-body orbital mechanics. Lagrange-Gauss short-way Lambert solver. Vis-viva for heliocentric velocity. Tsiolkovsky for fuel. All constants from IAU + JPL + agency mission reports — every number cited.
-- **Real missions.** 32 base mission JSON files with 32 en-US editorial overlays + 32 es overlays. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Every entry has a `data_quality` honesty flag.
+- **Real missions.** 36 base mission JSON files with 36 en-US editorial overlays + 36 es overlays. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Every entry has a `data_quality` honesty flag.
 - **Real images.** NASA Images API + curated Wikimedia Commons. Every body has at least 3 photos. Every credit is accurate.
 - **Real translation.** Spanish content uses the convention from each language's space-agency glossaries (ESA Spanish, NASA-JPL Spanish), not literal machine translation. See [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md).
 

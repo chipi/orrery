@@ -59,7 +59,7 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 - **▶ / ⏸ + speed pills** — autoplay at 1× / 7× / 30× / 90× (Mars-class missions) or 0.1× / 0.5× / 1× / 3× (lunar).
 - **`2D` toggle** — switch between the 3D scene and a top-down 2D view.
 - **CAPCOM panel** (right) — live mission events (TLI, TCM, EDL, etc.) tick by as you scrub.
-- **Pre-built missions**: try `/fly?mission=<id>` for any of the 32 missions in the library.
+- **Pre-built missions**: try `/fly?mission=<id>` for any of the 36 missions in the library.
 - **Lunar missions** (Apollo, Artemis II, Blue Moon, Chang'e, Chandrayaan, Luna, SLIM) render heliocentrically with the Earth + Moon system orbiting the Sun, and the Moon orbiting Earth at an exaggerated visual distance so the cislunar trajectory is visible.
 
 [![Apollo 11 fly](screenshots/03-fly-apollo11.png)](screenshots/03-fly-apollo11.png)
@@ -68,7 +68,7 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 
 ## Mission Library · `/missions`
 
-All 32 missions in the dataset. 16 Mars + 16 Moon, spanning Mariner 4 (1964) through Starship Mars Crew (concept).
+All 36 missions in the dataset. 16 Mars + 16 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept).
 
 [![Library](screenshots/04-missions.png)](screenshots/04-missions.png)
 

@@ -10,10 +10,12 @@
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
+import type { Destination } from '../src/types/mission.js';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
 import { earthPos, outboundArc } from '../src/lib/mission-arc.js';
 import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.js';
+import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.js';
 import { dateToSimDay } from '../src/lib/sim-day.js';
 
 // ──────────────────────────────────────────────────────────────────────
@@ -483,6 +485,10 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   { id: 'slim', query: 'slim lunar lander jaxa' },
   { id: 'artemis2', query: 'artemis 2 orion crew' },
   { id: 'blue-moon-mk1', query: 'blue origin blue moon lander' },
+  { id: 'galileo', query: 'galileo spacecraft jupiter' },
+  { id: 'voyager-2', query: 'voyager 2 neptune flyby' },
+  { id: 'new-horizons', query: 'new horizons pluto flyby' },
+  { id: 'dawn', query: 'dawn spacecraft ceres' },
 ];
 
 const MISSIONS_DIR = 'static/images/missions';
@@ -1107,7 +1113,7 @@ const THUMBNAIL_PX_PER_AU = 11; // tuned so Saturn (9.5 AU) just fits in width
 
 interface MissionThumbnailRecord {
   id: string;
-  dest: 'MARS' | 'MOON';
+  dest: Destination;
   color: string;
   departure_date: string;
   transit_days: number;
@@ -1134,17 +1140,18 @@ function paintHeliocentricThumbnail(
   const maxAu = Math.max(R_EARTH_AU, destA);
   const scale = Math.min(THUMBNAIL_PX_PER_AU, (Math.min(cx, cy) - 8) / maxAu);
 
-  const orbits: Array<[number, string]> = [
-    [R_EARTH_AU, 'rgba(75,156,211,0.35)'],
-    [destA, 'rgba(193,68,14,0.35)'],
-  ];
-  for (const [au, stroke] of orbits) {
-    ctx.beginPath();
-    ctx.arc(cx, cy, au * scale, 0, Math.PI * 2);
-    ctx.strokeStyle = stroke;
-    ctx.lineWidth = 0.6;
-    ctx.stroke();
-  }
+  ctx.beginPath();
+  ctx.arc(cx, cy, R_EARTH_AU * scale, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(75,156,211,0.35)';
+  ctx.lineWidth = 0.6;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx, cy, destA * scale, 0, Math.PI * 2);
+  ctx.strokeStyle = missionColor;
+  ctx.globalAlpha = 0.35;
+  ctx.lineWidth = 0.6;
+  ctx.stroke();
+  ctx.globalAlpha = 1;
 
   // Sun
   ctx.fillStyle = '#fff8c0';
@@ -1247,7 +1254,10 @@ async function fetchMissionThumbnails(): Promise<number> {
   await mkdir(THUMBNAILS_DIR, { recursive: true });
   let saved = 0;
 
-  for (const dest of ['mars', 'moon'] as const) {
+  const rootEntries = await readdir('static/data/missions', { withFileTypes: true });
+  const destDirs = rootEntries.filter((e) => e.isDirectory()).map((e) => e.name);
+
+  for (const dest of destDirs) {
     const dir = `static/data/missions/${dest}`;
     const files = (await readdir(dir)).filter((f) => f.endsWith('.json'));
     for (const file of files) {
@@ -1258,13 +1268,15 @@ async function fetchMissionThumbnails(): Promise<number> {
       const depDay = dateToSimDay(m.departure_date) ?? 0;
       const color = m.color || '#4ecdc4';
 
-      if (m.dest === 'MARS') {
-        const vInf = m.flight?.arrival?.v_infinity_km_s;
-        // All current Mars-bound missions target Mars itself; outer-
-        // planet missions are the v0.3.0 follow-up.
-        paintHeliocentricThumbnail(ctx, 'mars', depDay, vInf, color);
-      } else {
+      if (m.dest === 'MOON') {
         paintCislunarThumbnail(ctx, m.transit_days, color);
+      } else {
+        const hid = missionDestToHeliocentricDestinationId(m.dest);
+        if (!hid) {
+          throw new Error(`Thumbnail: mission ${m.id} has dest ${m.dest} without heliocentric mapping`);
+        }
+        const vInf = m.flight?.arrival?.v_infinity_km_s;
+        paintHeliocentricThumbnail(ctx, hid, depDay, vInf, color);
       }
 
       const buffer = canvas.toBuffer('image/png');

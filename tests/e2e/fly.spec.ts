@@ -135,7 +135,7 @@ test.describe('/fly — CAPCOM mode', () => {
 test.describe('/missions → /fly end-to-end (RFC-004)', () => {
   test('library card → FLY → fly screen loads correct mission', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(32, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
@@ -249,6 +249,21 @@ test.describe('/fly — multi-destination (v0.1.6 / ADR-026)', () => {
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/MERCURY/i, { timeout: 10_000 });
     await expect(id).toContainText(/LANDING/i);
+  });
+
+  test('?dest=neptune&type=flyby shows ADR-028 direct-trajectory caveat in identity HUD', async ({
+    page,
+  }) => {
+    await page.goto('/fly?dest=neptune&type=flyby&dep=100&tof=12000');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/NEPTUNE/i, { timeout: 10_000 });
+    await expect(page.locator('.hud-trajectory-caveat')).toContainText(/Direct trajectory shown/i);
+  });
+
+  test('?mission=galileo loads Jupiter mission from index (3.0a-5)', async ({ page }) => {
+    await page.goto('/fly?mission=galileo');
+    const id = page.locator('[data-testid="mission-name"]');
+    await expect(id).toContainText(/Galileo/i, { timeout: 15_000 });
   });
 
   test('default /fly (no params) still loads ORRERY DEMO scenario', async ({ page }) => {

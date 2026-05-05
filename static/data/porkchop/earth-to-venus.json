@@ -11423,5 +11423,5 @@
       28
     ]
   ],
-  "credit": "Computed at build time via Lambert solver (src/lib/lambert.ts). Ephemerides: static/data/planets.json. dv_orbit_insertion approximated from public NASA technical reports."
+  "credit": "Computed at build time via Lambert solver (src/lib/lambert.ts). venus: 11% cells converged (9926 of 11200 marked no-solution). Ephemerides: static/data/planets.json and static/data/small-bodies.json (Ceres, Pluto). dv_orbit_insertion approximated from public agency technical reports."
 }

@@ -1,6 +1,6 @@
 /**
  * Pre-computes the per-destination porkchop grids for /plan
- * (v0.1.6 / ADR-026). Runs at build time; writes JSON files to
+ * (v0.1.6 / ADR-026 + v0.3.x / ADR-028). Runs at build time; writes JSON files to
  * `static/data/porkchop/earth-to-{id}.json`.
  *
  * Invoked via `npm run precompute-porkchops` (and chained into
@@ -17,7 +17,7 @@
 
 import { writeFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { computePorkchopGrid, type LambertRequest } from '../src/lib/lambert-grid';
+import { computePorkchopGrid, DV_FAILED, type LambertRequest } from '../src/lib/lambert-grid';
 import type { DestinationId } from '../src/lib/lambert-grid.constants';
 import type { MissionType } from '../src/types/porkchop-grid';
 
@@ -71,6 +71,36 @@ const DESTINATIONS: DestinationSpec[] = [
     dv_orbit_insertion: { FLYBY: 0 },
     tof_axis_unit: 'years',
   },
+  {
+    id: 'uranus',
+    tof_range_days: [3000, 6500],
+    mission_types: ['FLYBY'],
+    dv_orbit_insertion: { FLYBY: 0 },
+    tof_axis_unit: 'years',
+  },
+  {
+    id: 'neptune',
+    tof_range_days: [10000, 20000],
+    mission_types: ['FLYBY'],
+    dv_orbit_insertion: { FLYBY: 0 },
+    tof_axis_unit: 'years',
+  },
+  {
+    id: 'pluto',
+    tof_range_days: [12000, 22000],
+    mission_types: ['FLYBY'],
+    dv_orbit_insertion: { FLYBY: 0 },
+    tof_axis_unit: 'years',
+  },
+  {
+    id: 'ceres',
+    // Short-way Lambert (ADR-008) only converges for ~100–500 d TOF on this
+    // geometry; [800, 1800] (ADR-028 draft) yields an all-failed grid.
+    tof_range_days: [120, 480],
+    mission_types: ['LANDING', 'FLYBY'],
+    dv_orbit_insertion: { LANDING: 3.9, FLYBY: 0 },
+    tof_axis_unit: 'days',
+  },
 ];
 
 const DEP_RANGE_DAYS: [number, number] = [0, 1460];
@@ -101,6 +131,14 @@ async function precomputeOne(spec: DestinationSpec): Promise<string> {
     throw new Error(`Lambert returned null for ${spec.id} — should be impossible at build time`);
 
   const grid = result.grid.map((row) => row.map(quantise));
+  let failed = 0;
+  for (const row of grid) {
+    for (const cell of row) {
+      if (cell >= DV_FAILED - 1e-6) failed++;
+    }
+  }
+  const cells = grid.length * grid[0].length;
+  const convPct = Math.round((100 * (cells - failed)) / cells);
   const out = {
     destination: spec.id,
     dep_range_days: DEP_RANGE_DAYS,
@@ -110,8 +148,7 @@ async function precomputeOne(spec: DestinationSpec): Promise<string> {
     dv_orbit_insertion: spec.dv_orbit_insertion,
     tof_axis_unit: spec.tof_axis_unit,
     grid,
-    credit:
-      'Computed at build time via Lambert solver (src/lib/lambert.ts). Ephemerides: static/data/planets.json. dv_orbit_insertion approximated from public NASA technical reports.',
+    credit: `Computed at build time via Lambert solver (src/lib/lambert.ts). ${spec.id}: ${convPct}% cells converged (${failed} of ${cells} marked no-solution). Ephemerides: static/data/planets.json and static/data/small-bodies.json (Ceres, Pluto). dv_orbit_insertion approximated from public agency technical reports.`,
   };
   return JSON.stringify(out, null, 2) + '\n';
 }

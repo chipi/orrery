@@ -1,0 +1,20 @@
+{
+  "name": "Dawn",
+  "type": "ORBITADOR · COMPLETADO",
+  "first": "Primera misión en orbitar dos cuerpos distintos: Vesta y luego Ceres",
+  "description": "Dawn demostró la propulsión iónica a escala planetaria: igualó órbitas con el enorme Vesta, partió y descendió en espiral hacia el planeta enano Ceres — el mayor objeto del cinturón de asteroides. Los puntos brillantes de Occator se convirtieron en un icono del programa. Esta ficha usa Ceres como destino principal; Vesta se narra arriba.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Delta II lanza Dawn hacia Vesta y Ceres con baja aceleración continua.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CAPTURA EN CERES",
+      "note": "Los motores iónicos frenan a Dawn en órbita alrededor de Ceres; comienza el mapeo.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "galileo",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory",
+  "sector": "gov",
+  "dest": "JUPITER",
+  "color": "#d4a373",
+  "year": 1989,
+  "status": "FLOWN",
+  "departure_date": "1989-10-18",
+  "arrival_date": "1995-12-08",
+  "transit_days": 2242,
+  "vehicle": "Space Shuttle Atlantis + IUS + Centaur",
+  "payload": "Galileo probe and atmospheric entry probe; ~2.5 t dry mass",
+  "delta_v": "~14 km/s (approx)",
+  "data_quality": "partial",
+  "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. Cruise dates approximate Jupiter orbit insertion.",
+  "links": [
+    {
+      "l": "Galileo (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Galileo mission (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/mission/galileo/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "sparse"
+}

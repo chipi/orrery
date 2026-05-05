@@ -142,7 +142,17 @@ describe('computePorkchopGrid — multi-destination', () => {
     }
   });
 
-  it.each(['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const)(
+  it.each([
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+    'ceres',
+  ] as const)(
     'produces a finite-∆v grid for %s',
     (destinationId) => {
       // Use destination-appropriate TOF range so Lambert can actually
@@ -153,6 +163,10 @@ describe('computePorkchopGrid — multi-destination', () => {
         mars: [80, 520] as [number, number],
         jupiter: [400, 1500] as [number, number],
         saturn: [800, 3000] as [number, number],
+        uranus: [3000, 6500] as [number, number],
+        neptune: [10000, 20000] as [number, number],
+        pluto: [12000, 22000] as [number, number],
+        ceres: [120, 480] as [number, number],
       };
       const result = computePorkchopGrid(
         { ...REQ, destinationId, arrRange: tofRangeFor[destinationId] },

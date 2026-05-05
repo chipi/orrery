@@ -2,10 +2,10 @@
  * Trajectory soundness — Layer 1 of the /fly rendering validation
  * strategy (post-v0.2.0).
  *
- * For every mission in static/data/missions/{mars,moon}/ this test
- * builds the outbound arc the same way `applyMissionAsLoaded` does
- * (mission-arc.outboundArc for Mars-bound; fly-physics.moonOutboundArc
- * for Moon-bound) and asserts the 8 soundness invariants.
+ * For every mission under each `static/data/missions/<dest>/` folder this test builds the
+ * outbound arc the same way `applyMissionAsLoaded` does
+ * (mission-arc.transferEllipse for heliocentric bodies; fly-physics
+ * moonOutboundArc for Moon) and asserts the soundness invariants.
  *
  * Run alone:
  *   npx vitest run src/lib/trajectory-soundness.test.ts --reporter=verbose
@@ -18,9 +18,18 @@
  */
 
 import { describe, it } from 'vitest';
-import { readdirSync, readFileSync } from 'node:fs';
+import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { earthPos, destinationPos, outboundArc, returnArc, spacecraftPos } from './mission-arc';
+import {
+  earthPos,
+  destinationPos,
+  marsPos,
+  returnArc,
+  spacecraftPos,
+  transferEllipse,
+} from './mission-arc';
+import { missionDestToHeliocentricDestinationId } from './mission-dest';
+import type { DestinationId } from './lambert-grid.constants';
 import { moonOutboundArc, moonReturnArc, moonPositionAtMet } from './fly-physics';
 import { dateToSimDay } from './sim-day';
 import { expectCloseTo } from './test-helpers/expect-close';
@@ -31,18 +40,29 @@ import type { Mission } from '$types/mission';
 // to land in AU-space (the rest of the rendering pipeline expects AU).
 const SCALE_3D = 80;
 const ARC_STEPS = 200;
-const FLYBY_OFFSET_FRACTION = 0.95;
 
 interface MissionFile {
-  destDir: 'mars' | 'moon';
+  destDir: string;
   id: string;
   json: Mission;
   overlay: { type?: string };
 }
 
+function listMissionDataDirs(): string[] {
+  const root = 'static/data/missions';
+  return readdirSync(root).filter((name) => {
+    if (name === 'index.json') return false;
+    try {
+      return statSync(join(root, name)).isDirectory();
+    } catch {
+      return false;
+    }
+  });
+}
+
 function loadAllMissions(): MissionFile[] {
   const out: MissionFile[] = [];
-  for (const destDir of ['mars', 'moon'] as const) {
+  for (const destDir of listMissionDataDirs()) {
     const dir = `static/data/missions/${destDir}`;
     for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
       const json = JSON.parse(readFileSync(join(dir, file), 'utf8')) as Mission;
@@ -71,18 +91,20 @@ function buildMissionArcs(m: MissionFile): {
   timeline: { dep_day: number; flyby_day: number; arr_day: number };
   isMoon: boolean;
   isReturnTrip: boolean;
+  heliDestinationId: DestinationId | null;
 } {
   const { json, overlay } = m;
   const totalT = json.transit_days || 250;
-  const flybyOffset = Math.floor(totalT * FLYBY_OFFSET_FRACTION);
   const depDay = dateToSimDay(json.departure_date) ?? 0;
+  const missionType = (overlay.type ?? '').toUpperCase();
+  const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
+  const flybyOffset = totalT;
+  const arrOffset = isReturnTrip ? totalT * 2 : totalT;
   const timeline = {
     dep_day: depDay,
     flyby_day: depDay + flybyOffset,
-    arr_day: depDay + totalT,
+    arr_day: depDay + arrOffset,
   };
-  const missionType = (overlay.type ?? '').toUpperCase();
-  const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
   const isMoon = json.dest === 'MOON';
 
   if (isMoon) {
@@ -98,29 +120,40 @@ function buildMissionArcs(m: MissionFile): {
           z: p.z / SCALE_3D,
         }))
       : [];
-    return { out, ret, timeline, isMoon: true, isReturnTrip };
+    return { out, ret, timeline, isMoon: true, isReturnTrip, heliDestinationId: null };
   }
 
-  // Mars-bound (heliocentric).
+  const heliDestinationId = missionDestToHeliocentricDestinationId(json.dest);
+  if (!heliDestinationId) {
+    throw new Error(`${json.id}: non-Moon mission missing heliocentric dest mapping`);
+  }
   const earthDep = earthPos(timeline.dep_day);
-  const vInf = json.flight?.arrival?.v_infinity_km_s;
-  const out = outboundArc(earthDep, ARC_STEPS, /* destA = Mars */ 1.52366231, vInf);
+  const destEnd =
+    heliDestinationId === 'mars'
+      ? marsPos(timeline.flyby_day)
+      : destinationPos(timeline.flyby_day, heliDestinationId);
+  const out = transferEllipse(earthDep, destEnd, ARC_STEPS);
   const ret = isReturnTrip
     ? returnArc(
-        destinationPos(timeline.flyby_day, 'mars'),
+        out[out.length - 1],
         earthPos(timeline.arr_day + (totalT - flybyOffset)),
         ARC_STEPS,
       )
     : [];
-  return { out, ret, timeline, isMoon: false, isReturnTrip };
+  return { out, ret, timeline, isMoon: false, isReturnTrip, heliDestinationId };
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads 32 missions (16 Mars + 16 Moon)`, () => {
+  it(`fixture loads 36 missions (16 Mars + 16 Moon + 4 outer)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
-    if (mars.length !== 16 || moon.length !== 16) {
-      throw new Error(`Expected 16 Mars + 16 Moon; got ${mars.length} + ${moon.length}`);
+    const outer = MISSIONS.filter((m) =>
+      ['jupiter', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
+    );
+    if (mars.length !== 16 || moon.length !== 16 || outer.length !== 4) {
+      throw new Error(
+        `Expected 16 Mars + 16 Moon + 4 outer; got ${mars.length} + ${moon.length} + ${outer.length}`,
+      );
     }
   });
 
@@ -176,17 +209,16 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
           expectCloseTo(last.x, expected.x / SCALE_3D, 5 / SCALE_3D, `${m.id} Moon-mode last.x`);
           expectCloseTo(last.z, expected.z / SCALE_3D, 5 / SCALE_3D, `${m.id} Moon-mode last.z`);
         } else {
-          // Mars-bound: arc terminates near the destination orbit ring.
-          // V∞ shaping (ADR-030) bends eccentricity without re-deriving
-          // `a`, so high-V∞ missions terminate up to ~0.10 AU beyond
-          // R_MARS (Mariner 4 V∞=5.0 → r≈1.615 vs Mars 1.524). The
-          // tolerance reflects the documented model approximation.
-          const expected = destinationPos(arcs.timeline.arr_day, 'mars');
+          const hid = arcs.heliDestinationId;
+          if (!hid) throw new Error(`${m.id}: missing heliDestinationId`);
+          const expected =
+            hid === 'mars' ? marsPos(arcs.timeline.arr_day) : destinationPos(arcs.timeline.arr_day, hid);
+          const tol = hid === 'mars' ? 0.1 : 0.25;
           expectCloseTo(
             Math.hypot(last.x, last.z),
             Math.hypot(expected.x, expected.z),
-            0.1,
-            `${m.id} Mars last point on destination orbit ring`,
+            tol,
+            `${m.id} heliocentric last point near destination`,
           );
         }
       });
@@ -257,10 +289,8 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
         if (arcs.isMoon) return; // Moon-mode doesn't use V∞ shaping
         const vInf = m.json.flight?.arrival?.v_infinity_km_s;
         if (vInf == null) return; // no flight data — skip
-        // Already covered by (b) on this mission's arc; assert the
-        // arc max-radius stays under 3 AU (sanity bound for the
-        // Mars Hohmann ± clamped V∞ shaping).
-        const maxR = arcs.out.reduce((m, p) => Math.max(m, Math.hypot(p.x, p.z)), 0);
+        if (arcs.heliDestinationId !== 'mars') return; // bound is Mars-Hohmann-specific
+        const maxR = arcs.out.reduce((acc, p) => Math.max(acc, Math.hypot(p.x, p.z)), 0);
         if (maxR > 3.0) {
           throw new Error(
             `${m.id} arc max radius ${maxR.toFixed(3)} AU exceeds Mars-Hohmann sanity bound (3.0)`,

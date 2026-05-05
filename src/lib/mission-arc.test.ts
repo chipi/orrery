@@ -136,23 +136,30 @@ describe('outboundArc', () => {
   });
 });
 
-describe('destinationPos (v0.1.6)', () => {
-  it('returns a position on the destination orbit for each of the 5 destinations', () => {
-    const expectedRadii: Record<string, number> = {
-      mercury: 0.3871,
-      venus: 0.72333,
-      mars: 1.52366,
-      jupiter: 5.20336,
-      saturn: 9.53707,
-    };
-    // Use a dynamic import inside the test so the file loads its
-    // dependency lazily — keeps top-of-file import block tidy.
-    return import('./mission-arc').then(({ destinationPos }) => {
-      for (const id of ['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const) {
-        const p = destinationPos(0, id);
-        expect(Math.hypot(p.x, p.z)).toBeCloseTo(expectedRadii[id], 3);
-      }
-    });
+describe('destinationPos (v0.1.6 + ADR-028)', () => {
+  it('returns heliocentric r matching kepler-style radius at day 0 for all destinations', () => {
+    return import('./mission-arc').then(({ destinationPos }) =>
+      import('./lambert-grid.constants').then(({ DESTINATIONS }) => {
+        for (const id of [
+          'mercury',
+          'venus',
+          'mars',
+          'jupiter',
+          'saturn',
+          'uranus',
+          'neptune',
+          'pluto',
+          'ceres',
+        ] as const) {
+          const d = DESTINATIONS[id];
+          const e = d.e ?? 0;
+          const nu = d.a0;
+          const rExp = (d.a * (1 - e * e)) / (1 + e * Math.cos(nu));
+          const p = destinationPos(0, id);
+          expect(Math.hypot(p.x, p.z)).toBeCloseTo(rExp, 3);
+        }
+      }),
+    );
   });
 
   it('Mars at any day matches marsPos exactly', async () => {

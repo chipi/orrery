@@ -11,8 +11,54 @@
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
 
-  const DESTINATION_IDS: DestinationId[] = ['mercury', 'venus', 'mars', 'jupiter', 'saturn'];
-  const GAS_GIANTS: DestinationId[] = ['jupiter', 'saturn'];
+  const DESTINATION_IDS: DestinationId[] = [
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+    'ceres',
+  ];
+  /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
+  const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
+  const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+  ];
+  let invalidDestWarned = false;
+
+  function destinationLabel(id: DestinationId): string {
+    switch (id) {
+      case 'mercury':
+        return m.plan_destination_mercury();
+      case 'venus':
+        return m.plan_destination_venus();
+      case 'mars':
+        return m.plan_destination_mars();
+      case 'jupiter':
+        return m.plan_destination_jupiter();
+      case 'saturn':
+        return m.plan_destination_saturn();
+      case 'uranus':
+        return m.plan_destination_uranus();
+      case 'neptune':
+        return m.plan_destination_neptune();
+      case 'pluto':
+        return m.plan_destination_pluto();
+      case 'ceres':
+        return m.plan_destination_ceres();
+      default: {
+        const _exhaustive: never = id;
+        return _exhaustive;
+      }
+    }
+  }
 
   // ─── Grid state — driven by loaded JSON (v0.1.6 / ADR-026) ───────
   // The pre-computed grid file declares its own dep_range / tof_range
@@ -129,6 +175,12 @@
   // changes write back via replaceState (no history pollution).
   function applyUrlFilters(url: URL) {
     const dest = (url.searchParams.get('dest') ?? '').toLowerCase();
+    if (dest && !(DESTINATION_IDS as string[]).includes(dest)) {
+      if (!invalidDestWarned) {
+        console.warn(`[plan] Unknown ?dest=${dest} — coerced to mars (ADR-028).`);
+        invalidDestWarned = true;
+      }
+    }
     if ((DESTINATION_IDS as string[]).includes(dest)) {
       destinationId = dest as DestinationId;
     } else {
@@ -138,7 +190,7 @@
     if (type === 'LANDING' || type === 'FLYBY') {
       missionType = type as MissionType;
     } else {
-      missionType = GAS_GIANTS.includes(destinationId) ? 'FLYBY' : 'LANDING';
+      missionType = FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING';
     }
     coerceMissionType();
   }
@@ -155,7 +207,7 @@
   function pushFiltersToUrl() {
     const params = new URLSearchParams();
     if (destinationId !== 'mars') params.set('dest', destinationId);
-    if (missionType !== (GAS_GIANTS.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
+    if (missionType !== (FLYBY_ONLY.includes(destinationId) ? 'FLYBY' : 'LANDING')) {
       params.set('type', missionType.toLowerCase());
     }
     const qs = params.toString();
@@ -168,7 +220,7 @@
   function setDestination(value: DestinationId) {
     destinationId = value;
     // Reset mission type per the destination's defaults.
-    missionType = GAS_GIANTS.includes(value) ? 'FLYBY' : 'LANDING';
+    missionType = FLYBY_ONLY.includes(value) ? 'FLYBY' : 'LANDING';
     // Different destination = different ∆v regime; let the auto-suggester
     // pick a fitting rocket again instead of holding onto the prior pick.
     userPickedRocket = false;
@@ -331,7 +383,7 @@
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
-    ctx.fillText(m.plan_plot_title({ dest: destinationId.toUpperCase() }), ML, 6);
+    ctx.fillText(m.plan_plot_title({ dest: destinationLabel(destinationId).toUpperCase() }), ML, 6);
   }
 
   // ─── Pointer hit-test → grid cell ────────────────────────────────
@@ -577,11 +629,9 @@
           onchange={() => setDestination(destinationId)}
           class="dest-select"
         >
-          <option value="mercury">{m.plan_destination_mercury()}</option>
-          <option value="venus">{m.plan_destination_venus()}</option>
-          <option value="mars">{m.plan_destination_mars()}</option>
-          <option value="jupiter">{m.plan_destination_jupiter()}</option>
-          <option value="saturn">{m.plan_destination_saturn()}</option>
+          {#each DESTINATION_IDS as destOpt (destOpt)}
+            <option value={destOpt}>{destinationLabel(destOpt)}</option>
+          {/each}
         </select>
       </label>
       <div class="mission-type-group" role="radiogroup" aria-label={m.plan_label_mission_type()}>
@@ -593,7 +643,7 @@
           aria-checked={missionType === 'LANDING'}
           aria-disabled={!isLandingAvailable}
           disabled={!isLandingAvailable}
-          title={!isLandingAvailable ? m.plan_mission_type_disabled_gas_giant() : ''}
+          title={!isLandingAvailable ? m.plan_mission_type_disabled_flyby_only() : ''}
           onclick={() => setMissionType('LANDING')}
         >
           {m.plan_mission_type_landing()}
@@ -620,7 +670,7 @@
       ontouchmove={onTouchMove}
       ontouchend={onTouchEnd}
       ontouchcancel={onTouchEnd}
-      aria-label={m.plan_canvas_label()}
+      aria-label={m.plan_canvas_label({ dest: destinationLabel(destinationId) })}
     ></canvas>
 
     {#if mag}
@@ -662,7 +712,9 @@
         <dt>{m.plan_explainer_x_axis()}</dt>
         <dd>{m.plan_explainer_x_desc()}</dd>
         <dt>{m.plan_explainer_y_axis()}</dt>
-        <dd>{m.plan_explainer_y_desc()}</dd>
+        <dd>
+          {TOF_AXIS_UNIT === 'years' ? m.plan_explainer_y_desc_years() : m.plan_explainer_y_desc()}
+        </dd>
         <dt>{m.plan_explainer_color()}</dt>
         <dd>
           {m.plan_explainer_color_desc()}
@@ -791,6 +843,9 @@
         </div>
       {/if}
 
+      {#if GRAVITY_ASSIST_CAVEAT_DESTINATIONS.includes(destinationId)}
+        <p class="gravity-caveat">{m.plan_gravity_assist_caveat()}</p>
+      {/if}
       <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
         {m.plan_fly_button()}
       </button>
@@ -1247,6 +1302,19 @@
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  .gravity-caveat {
+    margin: 10px 0 0;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: rgba(255, 200, 80, 0.12);
+    border: 1px solid rgba(255, 200, 80, 0.35);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.35;
+    color: rgba(255, 235, 200, 0.92);
   }
 
   .fly {

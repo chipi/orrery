@@ -8,6 +8,7 @@
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
   import { earthPos, outboundArc, type Vec2 } from '$lib/mission-arc';
+  import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
   import { dateToSimDay } from '$lib/sim-day';
   import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
   import smallBodiesData from '$data/small-bodies.json';
@@ -336,12 +337,13 @@
       const idx = await getMissionIndex();
       const entry = idx.find((m) => m.id === id);
       if (!entry || cancelled) return;
-      const dest = entry.dest === 'MARS' ? 'mars' : 'mars'; // overlay is Mars-only for now
       const mission = await getMission(id, entry.dest, localeFromPage($page));
       if (!mission || cancelled) return;
       const depDay = dateToSimDay(mission.departure_date) ?? 0;
       const earthDep = earthPos(depDay);
-      const destA = DESTINATIONS[dest as DestinationId].a;
+      const helioId = missionDestToHeliocentricDestinationId(entry.dest);
+      const arcBodyId: DestinationId = helioId ?? 'mars';
+      const destA = DESTINATIONS[arcBodyId].a;
       const vInf = mission.flight?.arrival?.v_infinity_km_s;
       const arc: Vec2[] = outboundArc(earthDep, 120, destA, vInf);
       overlayMission = mission;

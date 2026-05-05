@@ -17,7 +17,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     // us to it — both are valid. Just require it to be hidden eventually.
     await expect(loading).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Earth.Mars porkchop plot/i);
+    const canvas = page.getByLabel(/Porkchop plot/i);
     await expect(canvas).toBeVisible();
     const dim = await canvas.evaluate((el: HTMLCanvasElement) => ({
       w: el.width,
@@ -31,7 +31,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Earth.Mars porkchop plot/i);
+    const canvas = page.getByLabel(/Porkchop plot/i);
     const box = await canvas.boundingBox();
     if (!box) return;
     // Click somewhere in the plot interior — the margins are ML=64,
@@ -54,7 +54,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Earth.Mars porkchop plot/i);
+    const canvas = page.getByLabel(/Porkchop plot/i);
     const box = await canvas.boundingBox();
     if (!box) return;
     await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
@@ -82,7 +82,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Earth.Mars porkchop plot/i);
+    const canvas = page.getByLabel(/Porkchop plot/i);
     const box = await canvas.boundingBox();
     if (!box) return;
     await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
@@ -181,6 +181,22 @@ test.describe('/plan — multi-destination (v0.1.6 / ADR-026)', () => {
     const landingPill = page.getByRole('radio', { name: /LANDING/ });
     await expect(landingPill).toBeDisabled();
   });
+
+  test('Neptune porkchop loads with ?dest=neptune (ADR-028)', async ({ page }) => {
+    await page.goto('/plan?dest=neptune');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    await expect(page.locator('.dest-select')).toHaveValue('neptune');
+    const landingPill = page.getByRole('radio', { name: /LANDING/ });
+    await expect(landingPill).toBeDisabled();
+  });
+
+  test('Ceres allows LANDING + FLYBY (ADR-028)', async ({ page }) => {
+    await page.goto('/plan?dest=ceres');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+    await expect(page.locator('.dest-select')).toHaveValue('ceres');
+    const landingPill = page.getByRole('radio', { name: /LANDING/ });
+    await expect(landingPill).not.toBeDisabled();
+  });
 });
 
 test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {
@@ -191,7 +207,7 @@ test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Earth.Mars porkchop plot/i);
+    const canvas = page.getByLabel(/Porkchop plot/i);
     const box = await canvas.boundingBox();
     if (!box) return;
 

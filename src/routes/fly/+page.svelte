@@ -26,6 +26,10 @@
   import { dateToSimDay } from '$lib/sim-day';
   import { mergeFlightEvents } from '$lib/mission-event-merge';
   import {
+    missionDestToDataFolder,
+    missionDestToHeliocentricDestinationId,
+  } from '$lib/mission-dest';
+  import {
     auToMkm,
     distanceBetween,
     heliocentricSpeed as flyHeliocentricSpeed,
@@ -303,6 +307,15 @@
     | undefined;
   const SCALE_3D = 80;
 
+  /** ADR-028: direct-Hohmann caveat for giants + Pluto on /plan-driven flights. */
+  const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+  ];
+
   // Per-destination accent for the ARRIVAL sprite. Earth blue (#4b9cd3)
   // is reserved for LAUNCH so the two sprites always read as a pair.
   const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = {
@@ -311,8 +324,18 @@
     mars: '#c1440e',
     jupiter: '#d4a373',
     saturn: '#e8c890',
+    uranus: '#7de8e8',
+    neptune: '#6b8cff',
+    pluto: '#c8a98a',
+    ceres: '#7c8b9a',
     moon: '#cfcfcf',
   };
+
+  let showPlanOuterTrajectoryCaveat = $derived(
+    !isMoonMission &&
+      mission.name.startsWith('EARTH →') &&
+      GRAVITY_ASSIST_CAVEAT_DESTINATIONS.includes(activeDestination),
+  );
 
   // Per-destination camera reset distance, scene units. Tuned so the
   // destination's orbit ring fills a comfortable fraction of the view.
@@ -626,8 +649,9 @@
     };
     arcTimeline = newTimeline;
     isFreeReturn = false;
-    activeDestination = 'mars';
     isMoonMission = m.dest === 'MOON';
+    activeDestination =
+      missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
     // isReturnTrip is computed above (it gates flybyOffset). Sample-
     // return missions: Luna 24, Chang'e 5/6. Crewed: Apollo, Artemis 3.
     // Drives the second tube-mesh rendering of the return arc below.
@@ -670,7 +694,7 @@
       // energy (v0.1.10). Falls back to the Hohmann baseline geometry
       // when V∞ is absent.
       const vInfKms = m.flight?.arrival?.v_infinity_km_s;
-      const arcs = buildArcs(newTimeline, false, 'mars', vInfKms);
+      const arcs = buildArcs(newTimeline, false, activeDestination, vInfKms);
       outPts = arcs.out;
       // Return arc for round-trip Mars missions (e.g., MMX which
       // returns from Phobos): mirror the outbound arc back to Earth.
@@ -870,7 +894,7 @@
     if (myLoadId !== currentLoadId) return;
     const entry = idx.find((m) => m.id === id);
     if (entry) {
-      const dest = entry.dest === 'MARS' ? 'mars' : 'moon';
+      const dest = missionDestToDataFolder(entry.dest);
       const m = await getMission(id, dest, locale);
       if (myLoadId !== currentLoadId) return;
       if (m) {
@@ -1297,7 +1321,7 @@
       el3d.style.cursor = 'grab';
     };
     const onWheel = (e: WheelEvent) => {
-      camR = Math.max(80, Math.min(900, camR + e.deltaY * 0.5));
+      camR = Math.max(80, Math.min(4000, camR + e.deltaY * 0.5));
       updateCam();
     };
     // Touch — single-finger orbit + two-finger pinch-zoom per
@@ -1320,7 +1344,7 @@
       if (e.touches.length === 2 && pinchPrev > 0) {
         const dist = touchDist(e.touches[0], e.touches[1]);
         const ratio = pinchPrev / dist;
-        camR = Math.max(80, Math.min(900, camR * ratio));
+        camR = Math.max(80, Math.min(4000, camR * ratio));
         updateCam();
         pinchPrev = dist;
         return;
@@ -1849,6 +1873,9 @@
         <span class="hud-key">{m.fly_hud_met()}</span>
         <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
       </div>
+      {#if showPlanOuterTrajectoryCaveat}
+        <p class="hud-trajectory-caveat" role="note">{m.plan_gravity_assist_caveat()}</p>
+      {/if}
     </aside>
 
     <!-- Navigation HUD (left stack, below identity) -->
@@ -2290,6 +2317,16 @@
     padding: 5px 7px;
     margin-bottom: 7px;
     line-height: 1.4;
+  }
+  .hud-trajectory-caveat {
+    margin: 8px 0 0;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.35;
+    color: rgba(255, 220, 180, 0.95);
+    border-top: 1px solid rgba(255, 200, 80, 0.25);
+    padding-top: 8px;
   }
   .accent-c3 {
     color: #4b9cd3;

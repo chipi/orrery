@@ -7,7 +7,7 @@
  */
 
 import { base } from '$app/paths';
-import type { Mission, MissionIndex } from '$types/mission';
+import type { Destination, Mission, MissionIndex } from '$types/mission';
 import type { LocalizedPlanet, PlanetOverlay, PlanetsData } from '$types/planet';
 import type { LocalizedSun, Sun, SunOverlay } from '$types/sun';
 import type { LocalizedScenario, Scenario, ScenarioOverlay } from '$types/scenario';
@@ -52,7 +52,7 @@ export async function getMission(
 }
 
 export interface MissionFilter {
-  dest?: 'MARS' | 'MOON';
+  dest?: Destination;
   status?: 'ACTIVE' | 'FLOWN' | 'PLANNED';
   agency?: string;
 }
@@ -72,7 +72,7 @@ export async function filterMissions(filters: MissionFilter = {}): Promise<Missi
  * /missions library to render cards with the editorial fields (name,
  * type, first) without having to round-trip per-card.
  *
- * Fetches in parallel — 28 missions × ~2 KB each = ~56 KB total, well
+ * Fetches in parallel — 36 missions × ~2 KB each = ~72 KB total, well
  * within reason for a one-shot library load. The cache then services
  * any subsequent `getMission(id, dest)` call instantly.
  */

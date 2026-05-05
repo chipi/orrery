@@ -6,6 +6,7 @@
   import { getMissionsForLibrary } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
+  import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import * as m from '$lib/paraglide/messages';
@@ -54,7 +55,7 @@
     const dest = url.searchParams.get('dest')?.toUpperCase();
     const status = url.searchParams.get('status')?.toUpperCase();
     const agency = url.searchParams.get('agency');
-    destFilter = dest === 'MARS' || dest === 'MOON' ? dest : 'ALL';
+    destFilter = dest && isMissionDestination(dest) ? dest : 'ALL';
     statusFilter =
       status === 'ACTIVE' || status === 'FLOWN' || status === 'PLANNED' ? status : 'ALL';
     agencyFilter = agency ?? 'ALL';
@@ -238,6 +239,38 @@
         role="radio"
         aria-checked={destFilter === 'MOON'}
         onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
+      >
+      <button
+        type="button"
+        class="pill"
+        class:active={destFilter === 'JUPITER'}
+        role="radio"
+        aria-checked={destFilter === 'JUPITER'}
+        onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
+      >
+      <button
+        type="button"
+        class="pill"
+        class:active={destFilter === 'NEPTUNE'}
+        role="radio"
+        aria-checked={destFilter === 'NEPTUNE'}
+        onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
+      >
+      <button
+        type="button"
+        class="pill"
+        class:active={destFilter === 'PLUTO'}
+        role="radio"
+        aria-checked={destFilter === 'PLUTO'}
+        onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
+      >
+      <button
+        type="button"
+        class="pill"
+        class:active={destFilter === 'CERES'}
+        role="radio"
+        aria-checked={destFilter === 'CERES'}
+        onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
       >
     </div>
 
@@ -453,7 +486,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   .filter-label {
     font-family: 'Space Mono', monospace;
@@ -724,6 +757,12 @@
     font-size: 8px;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.3);
+  }
+  .card-dest {
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .card-first {
     font-family: 'Space Mono', monospace;

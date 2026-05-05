@@ -8,14 +8,14 @@ Instructions for agentic AI working on this codebase. Read this before touching 
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Six primary nav screens, real orbital mechanics, **32** missions in the library (Mars + Moon), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
+Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Six primary nav screens, real orbital mechanics, **36** missions in the library (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
 
 The six primary screens:
 
 | Route | Screen | File |
 |---|---|---|
 | `/explore` | Solar System Explorer | `src/routes/explore/+page.svelte` |
-| `/plan` | Mission Configurator (Earth → 5 destinations, LANDING/FLYBY) | `src/routes/plan/+page.svelte` |
+| `/plan` | Mission Configurator (Earth → 9 destinations, LANDING/FLYBY) | `src/routes/plan/+page.svelte` |
 | `/fly` | Mission Arc | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Library | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
@@ -96,7 +96,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── images/rockets/     ← Wikimedia rocket reference photos
 │   ├── data/               ← all app JSON: missions, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
-│   │   │   ├── index.json  ← lightweight manifest (32 entries)
+│   │   │   ├── index.json  ← lightweight manifest (36 entries)
 │   │   │   ├── mars/       ← base mission files (language-neutral)
 │   │   │   └── moon/
 │   │   ├── i18n/
@@ -111,7 +111,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │
 ├── scripts/
 │   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images
-│   ├── precompute-porkchops.ts ← pre-computes 5 per-destination porkchop grids (ADR-026)
+│   ├── precompute-porkchops.ts ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
 │   └── validate-data.ts    ← ajv validation of all static/data/ JSON + doc gating
 │
 ├── tests/                  ← Playwright e2e tests

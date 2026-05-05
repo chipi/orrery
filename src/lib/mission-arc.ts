@@ -49,8 +49,10 @@ export function marsPos(day: number): Vec2 {
  *  non-Mars destinations. */
 export function destinationPos(day: number, id: DestinationId): Vec2 {
   const d = DESTINATIONS[id];
-  const angle = d.a0 + d.meanMotionRadPerDay * day;
-  return { x: Math.cos(angle) * d.a, z: Math.sin(angle) * d.a };
+  const e = d.e ?? 0;
+  const nu = d.a0 + d.meanMotionRadPerDay * day;
+  const r = (d.a * (1 - e * e)) / (1 + e * Math.cos(nu));
+  return { x: Math.cos(nu) * r, z: Math.sin(nu) * r };
 }
 
 /**

@@ -57,9 +57,9 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 32 missions', async () => {
+  it('returns 36 missions', async () => {
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(32);
+    expect(missions).toHaveLength(36);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -67,7 +67,7 @@ describe('getMissionIndex', () => {
     for (const m of missions) {
       expect(m.id).toBeTruthy();
       expect(m.agency).toBeTruthy();
-      expect(['MARS', 'MOON']).toContain(m.dest);
+      expect(['MARS', 'MOON', 'JUPITER', 'NEPTUNE', 'PLUTO', 'CERES']).toContain(m.dest);
       expect(['ACTIVE', 'FLOWN', 'PLANNED']).toContain(m.status);
       expect(['gov', 'private']).toContain(m.sector);
       expect(m.color).toMatch(/^#[0-9A-Fa-f]{6}$/);
@@ -102,6 +102,14 @@ describe('filterMissions', () => {
     }
   });
 
+  it('outer-system dest filters return one mission each (ADR-028 3.0a-5)', async () => {
+    for (const dest of ['JUPITER', 'NEPTUNE', 'PLUTO', 'CERES'] as const) {
+      const rows = await filterMissions({ dest });
+      expect(rows).toHaveLength(1);
+      expect(rows[0].dest).toBe(dest);
+    }
+  });
+
   it('NASA agency filter returns only NASA missions', async () => {
     const nasa = await filterMissions({ agency: 'NASA' });
     expect(nasa.length).toBeGreaterThan(0);
@@ -125,6 +133,13 @@ describe('getMission', () => {
     const lower = await getMission('curiosity', 'mars');
     const upper = await getMission('curiosity', 'MARS');
     expect(lower?.id).toBe(upper?.id);
+  });
+
+  it('loads Galileo from the jupiter missions folder', async () => {
+    const m = await getMission('galileo', 'jupiter');
+    expect(m).not.toBeNull();
+    expect(m!.dest).toBe('JUPITER');
+    expect(m!.name).toBe('Galileo');
   });
 
   it('falls back gracefully when overlay missing for a different locale', async () => {
@@ -250,13 +265,13 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 32 missions merged with their en-US overlays', async () => {
+  it('returns all 36 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(32);
+    expect(list).toHaveLength(36);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
-      expect(['MARS', 'MOON']).toContain(m.dest);
+      expect(['MARS', 'MOON', 'JUPITER', 'NEPTUNE', 'PLUTO', 'CERES']).toContain(m.dest);
       expect(m.year).toBeGreaterThan(1900);
     }
     // …and a sample has the overlay fields merged in.
@@ -268,7 +283,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('fr');
-    expect(list).toHaveLength(32);
+    expect(list).toHaveLength(36);
   });
 
   it('count matches what filterMissions reports', async () => {
@@ -368,8 +383,18 @@ describe('getScenario', () => {
   });
 });
 
-describe('getPorkchopGrid (v0.1.6 / ADR-026)', () => {
-  it.each(['mercury', 'venus', 'mars', 'jupiter', 'saturn'] as const)(
+describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
+  it.each([
+    'mercury',
+    'venus',
+    'mars',
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+    'ceres',
+  ] as const)(
     'returns a valid grid for %s',
     async (id) => {
       const g = await getPorkchopGrid(id);
@@ -385,30 +410,30 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026)', () => {
     },
   );
 
-  it('inner planets offer LANDING + FLYBY; gas giants only FLYBY', async () => {
-    for (const id of ['mercury', 'venus', 'mars'] as const) {
+  it('inner planets + Ceres offer LANDING + FLYBY; giants + Pluto only FLYBY', async () => {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.mission_types.sort()).toEqual(['FLYBY', 'LANDING']);
     }
-    for (const id of ['jupiter', 'saturn'] as const) {
+    for (const id of ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.mission_types).toEqual(['FLYBY']);
     }
   });
 
-  it('Jupiter and Saturn render in years; inner planets in days', async () => {
-    for (const id of ['mercury', 'venus', 'mars'] as const) {
+  it('TOF axis: Mercury–Mars + Ceres in days; gas giants + Pluto in years', async () => {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.tof_axis_unit).toBe('days');
     }
-    for (const id of ['jupiter', 'saturn'] as const) {
+    for (const id of ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.tof_axis_unit).toBe('years');
     }
   });
 
-  it('LANDING dv_orbit_insertion is positive for inner planets', async () => {
-    for (const id of ['mercury', 'venus', 'mars'] as const) {
+  it('LANDING dv_orbit_insertion is positive where LANDING is offered', async () => {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.dv_orbit_insertion.LANDING).toBeGreaterThan(0);
     }

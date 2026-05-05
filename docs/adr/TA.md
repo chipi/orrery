@@ -49,7 +49,7 @@ Lightweight manifest for the library grid — **language-neutral fields only** (
 }
 ```
 
-### Full mission record (base file `static/data/missions/{mars,moon}/[id].json` + overlay merge)
+### Full mission record (base file `static/data/missions/<dest_lower>/[id].json` + overlay merge)
 
 Base file holds mechanics + citations; editorial strings and CAPCOM notes are merged from `static/data/i18n/<locale>/missions/<dest>/[id].json` per ADR-017. Shapes are locked by `static/data/schemas/mission.schema.json` (ADR-020).
 
@@ -115,7 +115,7 @@ results.
 
 `destinationId` is optional (defaults to `"mars"` for back-compat with
 the pre-v0.1.6 contract); valid values: `"mercury" | "venus" | "mars"
-| "jupiter" | "saturn"`. The worker reads the destination's
+| "jupiter" | "saturn" | "uranus" | "neptune" | "pluto" | "ceres"`. The worker reads the destination's
 heliocentric ephemerides (a, T, L0) from `static/data/planets.json`
 via `lambert-grid.constants.ts`.
 
@@ -200,7 +200,7 @@ Locked technical choices. Each entry points to its ADR.
 | Data serving | Same static host as the bundle (GH Pages today); separate nginx volume optional for self-hosted nginx per ADR-007's scope note | ADR-007 |
 | Lambert solver execution | Web Worker | ADR-008 |
 | Lambert worker contract | id-based cancellation, every-10-row progress, single result message; `destinationId` parameter for multi-destination | ADR-022, ADR-026 |
-| Porkchop grids | Pre-computed at build time per ADR-016; 5 destinations × 11,200 cells; ~610 KB total committed at `static/data/porkchop/` | ADR-026 |
+| Porkchop grids | Pre-computed at build time per ADR-016; 9 destinations × 11,200 cells at `static/data/porkchop/` (ADR-026 inner five + ADR-028 outer four) | ADR-026, ADR-028 |
 | Default `/fly` scenario | ORRERY-1 free-return Mars flyby | ADR-009 |
 | Transfer + mission arcs | Keplerian half-ellipses (heliocentric); lunar segments in `mission-arc` / `fly-physics`; library missions supply distinct geometry (landings, cislunar) | ADR-010 |
 
@@ -215,7 +215,7 @@ State board for all RFCs and ADRs.
 | RFC | Title | Status | Closes into | Closing evidence |
 |---|---|---|---|---|
 | RFC-001 | Router design — hash vs history, param handling | Closed · superseded by ADR-013 | ADR-013 | Pre-empted by ADR-013 (SvelteKit router); see RFC-001 closure note |
-| RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before mission files were written (28 at v0.1, 32 at v0.3) |
+| RFC-002 | Mission JSON schema — events array, field canonicalisation | Closed · superseded by ADR-020 | ADR-020 | Closed early at Slice 2 entry to lock schema before mission files were written (28 at v0.1, 36 at v0.3 after ADR-028 catalogue slice) |
 | RFC-003 | Lambert worker — message protocol, progress, cancellation | Decided · closed by ADR-022 | ADR-022 | Closed at Slice 3 (3a-8) |
 | RFC-004 | Mission URL sharing — serialisation, back-button | Decided · closed by ADR-024 | ADR-024 | Closed at Slice 4 (4a-6) |
 | RFC-005 | Accessibility — ARIA on canvas screens, reduced-motion | Decided · closed by ADR-025 | ADR-025 | Closed at Slice 6 (6a-4) |

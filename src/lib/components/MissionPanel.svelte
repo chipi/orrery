@@ -46,10 +46,16 @@
         sites.find((s) => s.mission_id === mission!.id) ??
         sites.find((s) => s.id === mission!.id) ??
         null;
-      const fetcher = mission.dest === 'MARS' ? getMarsSites : getMoonSites;
-      void fetcher(localeFromPage($page)).then((list) => {
-        if (mission && mission.id === lastId) crossSite = findSite(list);
-      });
+      const loc = localeFromPage($page);
+      if (mission.dest === 'MARS') {
+        void getMarsSites(loc).then((list) => {
+          if (mission && mission.id === lastId) crossSite = findSite(list);
+        });
+      } else if (mission.dest === 'MOON') {
+        void getMoonSites(loc).then((list) => {
+          if (mission && mission.id === lastId) crossSite = findSite(list);
+        });
+      }
     }
   });
 

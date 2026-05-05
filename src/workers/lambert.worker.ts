@@ -1,8 +1,8 @@
 /**
  * Lambert worker — runs the porkchop computation off the main thread (ADR-008).
  *
- * **DORMANT as of v0.1.6 (ADR-026).** The 5 default destinations
- * (Mercury, Venus, Mars, Jupiter, Saturn) ship with pre-computed grids
+ * **DORMANT as of v0.1.6+ (ADR-026, ADR-028).** The 9 default destinations
+ * (Mercury–Saturn + Uranus, Neptune, Pluto, Ceres) ship with pre-computed grids
  * at `static/data/porkchop/`, so /plan loads them directly via
  * `$lib/data#getPorkchopGrid` without spinning up a worker. This file
  * is preserved for future custom-range computation (e.g. user-driven

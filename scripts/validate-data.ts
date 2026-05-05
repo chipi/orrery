@@ -7,7 +7,7 @@
 
 import Ajv, { type AnySchema, type ErrorObject, type ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DATA_ROOT = 'static/data';
@@ -88,6 +88,19 @@ function validateFile(path: string, validator: ValidateFunction): void {
   }
 }
 
+/** Every subdirectory of `missions/` (excludes loose files like index.json). */
+function listMissionDataDirs(): string[] {
+  const root = join(DATA_ROOT, 'missions');
+  return readdirSync(root).filter((name) => {
+    if (name === 'index.json') return false;
+    try {
+      return statSync(join(root, name)).isDirectory();
+    } catch {
+      return false;
+    }
+  });
+}
+
 function listJson(dir: string): string[] {
   if (!existsSync(dir)) return [];
   return readdirSync(dir)
@@ -120,7 +133,8 @@ for (const file of listJson(join(DATA_ROOT, 'porkchop'))) {
 validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
 // 2. Mission base files (per destination)
-for (const dest of ['mars', 'moon']) {
+const missionDataDirs = listMissionDataDirs();
+for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
   }
@@ -131,7 +145,7 @@ const i18nDir = join(DATA_ROOT, 'i18n');
 if (existsSync(i18nDir)) {
   for (const locale of readdirSync(i18nDir)) {
     // Mission overlays
-    for (const dest of ['mars', 'moon']) {
+    for (const dest of missionDataDirs) {
       for (const file of listJson(join(i18nDir, locale, 'missions', dest))) {
         validateFile(file, validateMissionOverlay);
       }
@@ -227,7 +241,7 @@ if (docFailed > 0) {
 // one side is updated without the other.
 let missionDriftFailed = 0;
 console.log('\nValidating mission flight-data consistency (v0.1.10)...');
-for (const dest of ['mars', 'moon']) {
+for (const dest of missionDataDirs) {
   const dir = join(DATA_ROOT, 'missions', dest);
   if (!existsSync(dir)) continue;
   for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {

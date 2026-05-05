@@ -226,6 +226,15 @@ Closes RFC-007 / ADR-026. /plan extends from Earth → Mars only to Earth → 5 
 
 ---
 
+## v0.3.0 — Outer planets + Ceres + Pluto (ADR-028 / issue #27)
+
+Closes RFC-008 / ADR-028. `/plan` and `/fly` extend from five porkchop destinations to **nine** (+ Uranus, Neptune, Pluto, Ceres). Pre-computed grids: `static/data/porkchop/earth-to-{uranus,neptune,pluto,ceres}.json`. Pluto uses eccentric arrival in Lambert + `destinationPos`; Ceres uses a **circular** `a` in those paths (non-zero `e` prevented short-way convergence across the grid). **Ceres TOF window** is `[120, 480]` d with a **days** Y-axis — the ADR-028 draft `[800, 1800]` d band produced zero converged cells with the existing Lagrange–Gauss short-way solver (see ADR-028 table + `scripts/precompute-porkchops.ts`). Direct-Hohmann caveat banner on `/plan` and `/fly` for giants + Pluto.
+
+- **3.0a-1 … 3.0a-6** — Types, porkchop JSON + schema, precompute, `/plan` selector + URL coercion + i18n, `/fly` colours + camera clamp 4000 + caveat, unit tests + e2e + TA/worker docs + IMPLEMENTATION/CLAUDE/rules refresh.
+- **3.0a-5** — Mission catalogue: extended `Mission.dest` / schema with `JUPITER`, `NEPTUNE`, `PLUTO`, `CERES`; new folders `missions/{jupiter,neptune,pluto,ceres}/`; helper [`src/lib/mission-dest.ts`](src/lib/mission-dest.ts); `/fly` index-driven fetch + heliocentric arcs for outer entries; `/missions` destination filters + URL; **36** missions (Galileo, Voyager 2, New Horizons, Dawn). Honest `flight_data_quality: sparse` until full ADR-027 flight blocks are researched. Future optional fields (`itinerary[]`, etc.) documented in ADR-028 for multi-leg missions — not v1.
+
+---
+
 ## v0.1.9 — Mission flight params + timeline navigator (2026-04-30)
 
 Closes RFC-009 / ADR-027. Extends every mission record with a structured `flight` sub-object (launch C3, arrival V∞, orbit-insertion ∆v, MET-stamped events). Surfaces it on `/missions` (new FLIGHT tab + timeline navigator above the card grid) and `/fly` (per-mission flight-params HUD readout). Honesty rule: sparse / unknown data renders as `—` with a per-mission `flight_data_quality` flag and a caveat banner — never as fake numbers.
@@ -370,7 +379,7 @@ Three large work-streams shipped together. Tagged `v0.3.0`.
 
 **Phase B — foundation.** New `src/lib/locale.ts` (`SUPPORTED_LOCALES`, `resolveLocale(url, navigatorLanguage)`, `localeFromPage($page)` — SSR/prerender-safe per ADR-017). New `src/lib/components/LocalePicker.svelte` mounted in Nav (44×44 px, native names, URL `?lang=` only — **no localStorage** per CLAUDE.md / RFC-010 maintainer-decisions). New `src/lib/format.ts` with `Intl.NumberFormat` wrappers (`formatKm`, `formatKmPerSec`, …). Layout-stage `setLanguageTag` in `$effect.pre` so Paraglide picks up the URL locale BEFORE descendant components render their `m.foo()` calls.
 
-**Phase C — Spanish content.** All 277 UI strings translated in `messages/es.json`. 77 editorial overlays under `static/data/i18n/es/` (32 missions + 8 planets + 6 rockets + 1 sun + 1 scenario + 13 earth-objects + 16 moon-sites). Mission and agency proper nouns kept in original (Curiosity, Tianwen-1, Apollo, etc.). New `tests/e2e/i18n-es.spec.ts` smoke per screen.
+**Phase C — Spanish content.** All 277 UI strings translated in `messages/es.json`. 81 editorial overlays under `static/data/i18n/es/` (36 missions + 8 planets + 6 rockets + 1 sun + 1 scenario + 13 earth-objects + 16 moon-sites). Mission and agency proper nouns kept in original (Curiosity, Tianwen-1, Apollo, etc.). New `tests/e2e/i18n-es.spec.ts` smoke per screen.
 
 ### Other polish
 - Small bodies (5 dwarfs · 2 comets · 1 interstellar) in `/explore` are now clickable in 3D — added pickAid invisible spheres for click ergonomics, extended hover raycaster, layer-toggle wired to pickAid visibility.

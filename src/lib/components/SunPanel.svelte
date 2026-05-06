@@ -15,6 +15,7 @@
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
+  let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let galleryLoaded = $state(false);
   let lightboxSrc = $state<string | null>(null);
 
@@ -66,6 +67,19 @@
         </div>
       </div>
     </div>
+
+    {#if gallery.length > 0}
+      <div class="panel-hero">
+        <button
+          type="button"
+          class="panel-hero-btn"
+          onclick={() => (lightboxSrc = gallery[0]!)}
+          aria-label={m.panel_hero_aria({ name: sun.name })}
+        >
+          <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+        </button>
+      </div>
+    {/if}
 
     <div class="tabs" role="tablist">
       <button
@@ -164,7 +178,7 @@
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
         {:else}
           <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: sun.name })}>
-            {#each gallery as src (src)}
+            {#each galleryGrid as src (src)}
               <button
                 type="button"
                 class="gallery-thumb"

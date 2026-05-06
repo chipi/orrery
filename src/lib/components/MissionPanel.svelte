@@ -21,6 +21,8 @@
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
+  /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
+  let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
   // Cross-link chip: when the mission corresponds to a surface or
   // orbital site on /mars or /moon, surface a chip that deep-links
@@ -150,6 +152,19 @@
         <p class="type">{mission.type}</p>
       {/if}
     </div>
+
+    {#if gallery.length > 0}
+      <div class="panel-hero">
+        <button
+          type="button"
+          class="panel-hero-btn"
+          onclick={() => (lightboxSrc = gallery[0]!)}
+          aria-label={m.panel_hero_aria({ name: mission.name ?? mission.id })}
+        >
+          <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+        </button>
+      </div>
+    {/if}
 
     <div class="tabs" role="tablist">
       <button
@@ -438,7 +453,7 @@
           <p class="empty-tab">{m.mp_gallery_empty()}</p>
         {:else}
           <div class="gallery-grid" aria-label={m.mp_gallery_aria()}>
-            {#each gallery as src (src)}
+            {#each galleryGrid as src (src)}
               <button
                 type="button"
                 class="gallery-thumb"

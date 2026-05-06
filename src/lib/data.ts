@@ -377,7 +377,7 @@ export async function getMissionGallery(missionId: string): Promise<string[]> {
  * for planets, the sun, earth-objects, and moon-sites — every panel
  * with a GALLERY tab uses the same manifest pattern.
  *
- * @param category — "planets" | "earth-objects" | "moon-sites" (image folder root)
+ * @param category — "planets" | "earth-objects" | "moon-sites" | "small-bodies" (image folder root)
  * @param manifestFile — name of the per-category manifest JSON (e.g. "planet-galleries.json")
  * @param id — entity id (planet name lowercased, earth-object id, moon-site id)
  *
@@ -446,6 +446,15 @@ export async function getMoonSiteGallery(
   // mission card without needing a separate per-site photo set.
   const fallbackId = missionIdFallback ?? siteId;
   return getMissionGallery(fallbackId);
+}
+
+/**
+ * /explore small-body panel (dwarfs, comets, interstellar). Manifest
+ * `small-body-galleries.json` + `static/images/small-bodies/{id}/`
+ * from `npm run fetch-assets`.
+ */
+export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
+  return getCategoryGallery('small-bodies', 'small-body-galleries.json', bodyId);
 }
 
 /**

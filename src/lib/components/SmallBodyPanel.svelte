@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import Panel from './Panel.svelte';
+  import { getSmallBodyGallery } from '$lib/data';
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -26,7 +27,7 @@
     note?: string;
   };
 
-  type Tab = 'overview' | 'technical' | 'learn';
+  type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
 
   type Props = {
     body: SmallBody | null;
@@ -36,11 +37,20 @@
   let { body, open, onClose }: Props = $props();
 
   let tab: Tab = $state('overview');
+  let gallery: string[] = $state([]);
+  let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
+  let lightboxSrc = $state<string | null>(null);
+
   let lastId = $state<string | null>(null);
   $effect(() => {
     if (body && body.id !== lastId) {
       tab = 'overview';
       lastId = body.id;
+      lightboxSrc = null;
+      gallery = [];
+      void getSmallBodyGallery(body.id).then((urls) => {
+        if (body && body.id === lastId) gallery = urls;
+      });
     }
   });
 
@@ -76,6 +86,19 @@
       </div>
     </div>
 
+    {#if gallery.length > 0}
+      <div class="panel-hero">
+        <button
+          type="button"
+          class="panel-hero-btn"
+          onclick={() => (lightboxSrc = gallery[0]!)}
+          aria-label={m.panel_hero_aria({ name: body.name })}
+        >
+          <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+        </button>
+      </div>
+    {/if}
+
     <div class="tabs" role="tablist">
       <button
         type="button"
@@ -95,6 +118,17 @@
         aria-selected={tab === 'technical'}
         aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
       >
+      {#if gallery.length > 0}
+        <button
+          type="button"
+          id="sbp-tab-gallery"
+          class:active={tab === 'gallery'}
+          onclick={() => (tab = 'gallery')}
+          role="tab"
+          aria-selected={tab === 'gallery'}
+          aria-controls="sbp-tabpanel">{m.panel_tab_gallery()}</button
+        >
+      {/if}
       {#if body.wiki || body.mission_visited}
         <button
           type="button"
@@ -173,6 +207,24 @@
             <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
         {/if}
+      {:else if tab === 'gallery'}
+        {#if gallery.length === 0}
+          <p class="empty-tab">{m.panel_gallery_empty()}</p>
+        {:else}
+          <div class="gallery-grid" aria-label={m.panel_gallery_aria({ name: body.name })}>
+            {#each galleryGrid as src (src)}
+              <button
+                type="button"
+                class="gallery-thumb"
+                onclick={() => (lightboxSrc = src)}
+                aria-label={body.name}
+              >
+                <img {src} alt="" loading="lazy" />
+              </button>
+            {/each}
+          </div>
+          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+        {/if}
       {:else if tab === 'learn'}
         <ul class="learn-list">
           {#if body.mission_visited}
@@ -191,6 +243,18 @@
         </ul>
       {/if}
     </div>
+
+    {#if lightboxSrc}
+      <button
+        type="button"
+        class="lightbox"
+        aria-label={m.panel_lightbox_close()}
+        onclick={() => (lightboxSrc = null)}
+      >
+        <img src={lightboxSrc} alt="" />
+        <span class="lightbox-close" aria-hidden="true">×</span>
+      </button>
+    {/if}
   {/if}
 </Panel>
 
@@ -328,4 +392,6 @@
     font-size: 11px;
     color: rgba(255, 255, 255, 0.9);
   }
+
+  /* .panel-hero, .gallery-grid, .lightbox → src/lib/styles/panel-tabs.css */
 </style>

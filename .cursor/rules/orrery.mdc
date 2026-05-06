@@ -47,6 +47,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | Unit tests | Vitest | ADR-015 |
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
+| Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
@@ -99,7 +100,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── fonts/              ← self-hosted (fetched at build)
 │   ├── textures/           ← planet textures (fetched at build)
 │   ├── logos/              ← agency logos (fetched at build, Wikimedia Commons)
-│   ├── images/missions/    ← NASA Images API + Wikimedia mission cover photos
+│   ├── images/missions/    ← build-time fetch (agency-first per ADR-046; Wikimedia + NASA fallback)
 │   ├── images/rockets/     ← Wikimedia rocket reference photos
 │   ├── data/               ← all app JSON: missions, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/

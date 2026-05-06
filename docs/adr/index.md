@@ -42,3 +42,4 @@
 | ADR-043 | Serbian Cyrillic font gate for `sr-Cyrl` | Accepted | May 2026 |
 | ADR-044 | CJK font strategy for Wave 2 locales | Accepted | May 2026 |
 | ADR-045 | RTL strategy for Arabic locale | Accepted | May 2026 |
+| ADR-046 | Agency-first build-time imagery sourcing | Accepted | May 2026 |

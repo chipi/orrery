@@ -63,6 +63,9 @@
   type PanelTab = 'overview' | 'gallery' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
+  let panelGalleryGrid = $derived(
+    panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1),
+  );
   let panelLightbox = $state<string | null>(null);
   let lastSelectedId = $state<string | null>(null);
   $effect(() => {
@@ -990,6 +993,19 @@
         {/if}
       </div>
 
+      {#if panelGallery.length > 0}
+        <div class="panel-hero">
+          <button
+            type="button"
+            class="panel-hero-btn"
+            onclick={() => (panelLightbox = panelGallery[0]!)}
+            aria-label={m.panel_hero_aria({ name: selected.name ?? selected.id })}
+          >
+            <img src={panelGallery[0]} alt="" fetchpriority="high" decoding="async" />
+          </button>
+        </div>
+      {/if}
+
       <div class="tabs" role="tablist">
         <button
           type="button"
@@ -1125,7 +1141,7 @@
             class="gallery-grid"
             aria-label={m.panel_gallery_aria({ name: selected.name ?? selected.id })}
           >
-            {#each panelGallery as src (src)}
+            {#each panelGalleryGrid as src (src)}
               <button
                 type="button"
                 class="gallery-thumb"

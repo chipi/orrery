@@ -1,0 +1,20 @@
+{
+  "name": "Dämmerung",
+  "type": "ORBITER · GEFLOGEN",
+  "first": "Erste Mission zur Umlaufbahn zweier außerirdischer Körper – Vesta, dann Ceres",
+  "description": "Dawn bewies einen Ionenantrieb im planetarischen Maßstab: Es passte zu den Umlaufbahnen der massiven Vesta (links) und stürzte spiralförmig auf den Zwergplaneten Ceres – das größte Objekt im Asteroidengürtel. Helle Flecken im Occator-Krater wurden zu einem der ikonischen Geheimnisse der Mission und wurden später mit Salzausbrüchen aus einem tiefen Reservoir in Verbindung gebracht. Dieser Katalogeintrag verwendet Ceres als primäres Ziel; Vesta wird in der obigen Erzählung behandelt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Delta II hebt Dawn auf einer spiralförmigen Autobahn mit geringem Schub in Richtung Vesta und Ceres.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CERES-ERFASSUNG",
+      "note": "Ionentriebwerke bremsen Dawn in die Umlaufbahn um Ceres; Die Mapping-Kampagne beginnt.",
+      "type": "nominal"
+    }
+  ]
+}

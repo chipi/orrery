@@ -1,0 +1,15 @@
+{
+  "name": "Artemis III",
+  "type": "CREWED LANDER · PLANNED",
+  "first": "First crewed lunar landing since Apollo 17 (1972)",
+  "description": "The first crewed lunar landing in over half a century. Architecture: NASA's SLS Block 1 launches Orion with 4 crew to a Near-Rectilinear Halo Orbit (NRHO) around the Moon. Pre-positioned at NRHO is a SpaceX Starship Human Landing System (HLS), refilled in low-Earth orbit by tankers before its trans-lunar injection. The Orion crew transfers to HLS; 2 astronauts descend to the lunar south pole region for ~6.5 days of surface ops while 2 remain in NRHO. After surface operations, HLS launches back to NRHO for transfer to Orion and Earth return. Will land the first woman and first person of colour on the Moon.",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion launches from KSC LC-39B with crew of 4.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
+    { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion arrives at Near-Rectilinear Halo Orbit; rendezvous with pre-positioned Starship HLS.", "type": "nominal" },
+    { "met": 5, "label": "DESCENT", "note": "2 crew transfer to HLS; powered descent to lunar south pole.", "type": "info" },
+    { "met": 12, "label": "ASCENT", "note": "HLS ascent to NRHO after ~6.5 days surface operations.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "Trans-Earth injection from NRHO.", "type": "nominal" },
+    { "met": 18, "label": "SPLASHDOWN", "note": "Orion splashes down in Pacific Ocean.", "type": "info" }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Zvezdani brod Mars Crev",
+  "type": "POVRATAK UZORAKA SA POSADOM · KONCEPT",
+  "first": "Prva predložena misija za povratak na Mars (arhitektura__ACR0__)",
+  "description": "Dugoročna arhitektura Marsa sa ljudskom posadom __ACR0__ kao što je opisano u IAC prezentacijama Elona Maska iz 2016, 2017. i 2024. godine. Zvezdani brod poleće sa Zemlje sa punim gorivom u niskoj Zemljinoj orbiti preko flote tankerskih letova za punjenje gorivom, vrši trans-Mars injekciju i spušta posadu od oko 10 sa teretom i ISRU opremom na površinu Marsa. Povratno gorivo (metan + tečni kiseonik) se proizvodi na Marsu iz atmosferskog CO₂ i podzemnog vodenog leda putem Sabatier procesa, omogućavajući istom Zvezdanom brodu da ponovo poleti, izvrši trans-terestričko ubrizgavanje i vrati posadu. Trajanje povratnog putovanja zavisi od prozora za lansiranje i zadržavanja na površini; ilustrativni vremenski okvir prikazan ovde je ~2,5 godine od vrata do vrata (213 dana odlaska, ~500 dana površinskog boravka, povratak u sledećem povoljnom periodu). Arhitektura je konceptualna — datum i parametri su podložni značajnoj reviziji do sazrevanja Starship-a i validacije ISRU-a.",
+  "events": [
+    {
+      "met": 0,
+      "label": "STARSHIP LAUNCH",
+      "note": "Zvezdani brod sa posadom polazi iz Boka Čike ili Kejp Kanaverala.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ORBITALNO REFILLING",
+      "note": "Sastanak flote tankera i transfer pogonskog goriva na LEO na više letova.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injekcija iz potpuno napunjenog LEO stanja.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "MARS LANDING",
+      "note": "Sletanje na površinu Marsa sa pogonom - bez padobrana, bez vazdušnih jastuka, bez dizalice.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "RETURN PROP COMPLET",
+      "note": "Postrojenje ISRU proizvelo je dovoljno metana + LOKS za punjenje gorivom.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "TEI BURN",
+      "note": "Trans-Earth Injection — Zvezdani brod je podignut sa površine Marsa i spaljen za povratnu putanju Zemlje.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "EARTH ARRIVAL",
+      "note": "Atmosferski ulaz. Misija završena.",
+      "type": "info"
+    }
+  ]
+}

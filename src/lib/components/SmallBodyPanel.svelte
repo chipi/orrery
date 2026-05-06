@@ -61,10 +61,10 @@
     !body
       ? ''
       : body.type === 'dwarf'
-        ? 'DWARF PLANET'
+        ? m.sbp_kind_dwarf()
         : body.type === 'comet'
-          ? 'COMET'
-          : 'INTERSTELLAR VISITOR',
+          ? m.sbp_kind_comet()
+          : m.sbp_kind_interstellar(),
   );
 </script>
 
@@ -113,7 +113,7 @@
         {#if body.description}
           <p class="editorial">{body.description}</p>
         {:else}
-          <p class="editorial empty">No description yet.</p>
+          <p class="editorial empty">{m.sbp_empty_description()}</p>
         {/if}
         {#if body.note}
           <p class="note">{body.note}</p>
@@ -121,38 +121,41 @@
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">SEMI-MAJOR AXIS</div>
+            <div class="cell-label">{m.panel_label_semi_major_axis()}</div>
             <div class="cell-value">{body.a.toFixed(3)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">ECCENTRICITY</div>
+            <div class="cell-label">{m.panel_label_eccentricity()}</div>
             <div class="cell-value">e = {body.e.toFixed(4)}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">INCLINATION</div>
+            <div class="cell-label">{m.panel_label_inclination()}</div>
             <div class="cell-value teal">{body.incl.toFixed(2)}°</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
-              <div class="cell-label">ORBITAL PERIOD</div>
+              <div class="cell-label">{m.panel_label_orbital_period()}</div>
               <div class="cell-value">
-                {periodYears < 100 ? periodYears.toFixed(2) : Math.round(periodYears)} yr
+                {m.sbp_years({
+                  value:
+                    periodYears < 100 ? periodYears.toFixed(2) : String(Math.round(periodYears)),
+                })}
               </div>
             </div>
           {/if}
           <div class="cell">
-            <div class="cell-label">PERIHELION</div>
+            <div class="cell-label">{m.panel_label_perihelion()}</div>
             <div class="cell-value">{perihelion.toFixed(3)} AU</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
-              <div class="cell-label">APHELION</div>
+              <div class="cell-label">{m.panel_label_aphelion()}</div>
               <div class="cell-value">{aphelion.toFixed(3)} AU</div>
             </div>
           {/if}
           {#if body.radius_km}
             <div class="cell">
-              <div class="cell-label">RADIUS</div>
+              <div class="cell-label">{m.sbp_label_radius()}</div>
               <div class="cell-value">
                 {formatKm(body.radius_km, localeFromPage($page))}
               </div>
@@ -160,28 +163,28 @@
           {/if}
           {#if body.discovered}
             <div class="cell">
-              <div class="cell-label">DISCOVERED</div>
+              <div class="cell-label">{m.sbp_label_discovered()}</div>
               <div class="cell-value">{body.discovered}</div>
             </div>
           {/if}
         </div>
         {#if body.next_perihelion}
           <div class="dist-row">
-            <span>Next perihelion: <strong>{body.next_perihelion}</strong></span>
+            <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
         {/if}
       {:else if tab === 'learn'}
         <ul class="learn-list">
           {#if body.mission_visited}
             <li class="learn-mission">
-              <div class="learn-key">VISITED BY</div>
+              <div class="learn-key">{m.sbp_visited_by()}</div>
               <div class="learn-val">{body.mission_visited}</div>
             </li>
           {/if}
           {#if body.wiki}
             <li>
               <a href={body.wiki} target="_blank" rel="noopener noreferrer">
-                {body.name} on Wikipedia →
+                {m.sbp_wikipedia_link({ name: body.name })}
               </a>
             </li>
           {/if}

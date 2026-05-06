@@ -1,0 +1,33 @@
+{
+  "name": "Neptun",
+  "type": "Eisriese",
+  "fact": "Voyager 2 flog 1989 nach einer 12-jährigen Reise am Neptun vorbei. Es bleibt das einzige Raumschiff, das jemals einen Besuch abstattete.",
+  "bio": "Windigster Planet – 2.100 km/h Oberflächenwinde. Entdeckt durch mathematische Vorhersagen vor direkter Beobachtung, da die Umlaufbahn des Uranus einen unsichtbaren Gravitationseinfluss aufwies.",
+  "links": [
+    {
+      "l": "Neptun – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "Neptun (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 auf Neptun (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "Entdeckung von Neptun – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "Neptuns Innenmodell (Ikarus 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ]
+}

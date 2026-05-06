@@ -1,0 +1,14 @@
+{
+  "name": "Марс",
+  "type": "Цель миссии",
+  "fact": "Окна запуска Земля–Марс открываются каждые 26 месяцев — из-за орбитального резонанса. Пропустил окно — жди два года.",
+  "bio": "Наибольший эксцентриситет среди внутренних планет (e=0,093). Марс на 25% дальше от Земли в афелии, чем в перигелии — поэтому окна запуска так важны.",
+  "missionable": true,
+  "links": [
+    { "l": "Марс — Википедия", "u": "https://en.wikipedia.org/wiki/Mars", "t": "intro" },
+    { "l": "Mars (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mars/", "t": "intro" },
+    { "l": "Программа исследования Марса (NASA)", "u": "https://mars.nasa.gov/", "t": "core" },
+    { "l": "Окна запуска Земля–Марс — Википедия", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
+    { "l": "Климатическая история Марса (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Voyager 2",
+  "type": "FLYBY · FLOWN",
+  "first": "Only spacecraft to visit Uranus and Neptune; Grand Tour of four giant planets",
+  "description": "The twin that kept going when budgets tightened, Voyager 2 carried the Grand Tour from Jupiter and Saturn out to Uranus and Neptune — still the only close-up images we have of the ice giants. Its Neptune encounter in 1989 revealed the Great Dark Spot and Triton's geysers. Today both Voyagers sail in interstellar space with a golden record as humanity's calling card. Orrery lists Neptune as the catalogue destination; the real path relied on multiple gravity assists.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan IIIE lifts Voyager 2 from Cape Canaveral on a Grand-Tour trajectory.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "NEPTUNE CLOSEST APPROACH",
+      "note": "Flyby of Neptune and large moon Triton; last planetary encounter of the Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Chang'e 6",
+  "type": "PROBENRÜCKFÜHRUNG AUF DER FERNERSEITE · GEFLOGEN",
+  "first": "Erste Probenrückführung von der Mondrückseite",
+  "description": "Kombiniert die Architekturen von Chang'e 4 (Far-Side-Kommunikation) und Chang'e 5 (Probenrückführung). Zur Unterstützung der Mission wurde zunächst der Relaissatellit Queqiao-2 gestartet (März 2024). Chang'e 6 sammelte dann 1,935 kg aus dem Apollo-Krater auf der anderen Seite – Material mit einer ganz anderen Zusammensetzung als alle zuvor zurückgegebenen Mondproben. Die beiden Hemisphären des Mondes sind grundlegend unterschiedlich (die andere Seite hat eine dickere Kruste, weniger Mare); Diese Beispiele könnten endlich erklären, warum.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Langer 5. März aus Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "LANDUNG",
+      "note": "Lander sinkt zum Apollo-Krater (gegenüberliegende Seite) 02.06.2024. Die gesamte Kommunikation erfolgt über das Queqiao-2-Relais.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "PROBENAHME",
+      "note": "1,935 kg aus Regolith auf der anderen Seite gesammelt.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "AUFSTIEG",
+      "note": "Aufstiegsfahrzeug hebt ab; Rendezvous mit dem Orbiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "ERDE RÜCKKEHR",
+      "note": "Kapsel landet in der Inneren Mongolei am 25.06.2024 mit den ersten jemals geborgenen Proben von der Rückseite.",
+      "type": "info"
+    }
+  ]
+}

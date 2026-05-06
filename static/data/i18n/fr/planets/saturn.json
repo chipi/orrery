@@ -1,0 +1,33 @@
+{
+  "name": "Saturne",
+  "type": "Géante gazeuse · Anneaux",
+  "fact": "La densité de Saturne est de 0,687 g/cm³, soit moins que celle de l'eau. Son système d'anneaux s'étend sur 282 000 km mais n'a qu'une épaisseur d'environ 10 mètres.",
+  "bio": "La planète la moins dense : elle flotterait sur l’eau. Le système d’anneaux s’étend sur 282 000 km mais n’a qu’une épaisseur de quelques mètres. L'inclinaison de 26,73° signifie que la Terre voit les anneaux sous différents angles sur l'orbite de 29 ans de Saturne.",
+  "links": [
+    {
+      "l": "Saturne — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Saturn",
+      "t": "intro"
+    },
+    {
+      "l": "Saturne (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "Archives de la mission Cassini (NASA)",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Anneaux de Saturne — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "t": "core"
+    },
+    {
+      "l": "Les anneaux de Saturne sont jeunes (Science 2019)",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ]
+}

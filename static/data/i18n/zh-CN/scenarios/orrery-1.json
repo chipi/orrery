@@ -1,0 +1,19 @@
+{
+  "name": "ORRERY DEMO",
+  "dep_label": "Earth dep",
+  "arr_label": "Earth return",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Falcon Heavy lifts off. Free-return — no landing.", "type": "nominal" },
+    { "met": 0.4, "label": "TMI BURN", "note": "Trans-Mars Injection: 3.61 km/s. Escape velocity achieved.", "type": "nominal" },
+    { "met": 1, "label": "DAY 1 CHECK", "note": "First systems health check complete. All nominal.", "type": "nominal" },
+    { "met": 60, "label": "TCM-1", "note": "Mid-course correction 1: 35 m/s.", "type": "nominal" },
+    { "met": 200, "label": "CRUISE", "note": "Outbound cruise. Earth growing distant.", "type": "info" },
+    { "met": 220, "label": "COMMS GLITCH", "note": "Brief X-band signal dropout (8 s). DSN reacquired. Cause: thruster plume occlusion. No data lost.", "type": "warning" },
+    { "met": 259, "label": "MARS FLYBY", "note": "Closest approach: ~300 km altitude. Gravity assist initiates return.", "type": "nominal" },
+    { "met": 260, "label": "RETURN TRAJECTORY", "note": "Free-return gravity assist complete. Spacecraft on Earth trajectory.", "type": "nominal" },
+    { "met": 310, "label": "MID-COURSE 3", "note": "TCM-3: 22 m/s. Return trajectory corrected.", "type": "nominal" },
+    { "met": 400, "label": "HALFWAY HOME", "note": "Past midpoint of return journey.", "type": "info" },
+    { "met": 480, "label": "RE-ENTRY PREP", "note": "Final approach. Heat shield checks.", "type": "nominal" },
+    { "met": 509, "label": "EARTH ARRIVAL", "note": "Atmospheric entry. Mission complete.", "type": "nominal" }
+  ]
+}

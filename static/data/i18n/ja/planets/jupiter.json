@@ -1,0 +1,13 @@
+{
+  "name": "木星",
+  "type": "木星型惑星",
+  "fact": "木星の重力は小惑星帯を形づくり — 第五の岩石惑星が育たなかった。木星がなければ、火星はずっと大きかっただろう。",
+  "bio": "巨大な質量にもかかわらず自転周期は約 10 時間と速く、強い磁場をつくり出している。他のすべての惑星を合わせたよりも重い。",
+  "links": [
+    { "l": "木星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
+    { "l": "木星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "ジュノー（NASA）", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "ガリレオ衛星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
+    { "l": "木星の深部内部（Nature 2018）", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
+}

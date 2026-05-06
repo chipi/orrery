@@ -1,0 +1,32 @@
+{
+  "name": "Raumschiff-Demo",
+  "type": "UNCREWED MARS DEMO · GEPLANT",
+  "first": "Erstes vollständig wiederverwendbares Startsystem für den Versuch einer Marslandung",
+  "description": "Eine ungeschraubte Demonstration der Starship-Mars-Architektur: Start mit Super Heavy, Nachfüllen von LEO aus einer Tankervariante, dann Trans-Mars-Injektion eines vollgetankten Raumschiffs und angetriebener Abstieg zur Marsoberfläche. Das erklärte Ziel von SpaceX ist ein Startfenster von 2026 bis 2027; Die technische Realität (das Raumschiff arbeitet immer noch mit der Zuverlässigkeit des Orbitalflugs und das Nachfüllen im Orbit wurde nicht nachgewiesen) macht ein Jahr 2028 oder später wahrscheinlicher. Wenn es gelingt, kehrt es die Wirtschaftlichkeit der Mars-Nutzlast um – von Tausenden Kilogramm auf einhundert Tonnen pro Landung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Raumschiff von Boca Chica oder Cape Canaveral – erster superschwerer interplanetarer Start.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ORBITALE NACHFÜLLUNG",
+      "note": "Tanker-Rendezvous und Treibstofftransfer im LEO über mehrere Flüge.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI-VERBRENNUNG",
+      "note": "Trans-Mars-Injektion aus vollgetanktem LEO-Zustand.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "MARS-LANDUNG",
+      "note": "Angetriebener Abstieg zur Marsoberfläche – keine Fallschirme, keine Airbags, kein Himmelskran.",
+      "type": "info"
+    }
+  ]
+}

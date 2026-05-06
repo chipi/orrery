@@ -1,0 +1,38 @@
+{
+  "name": "Blauer Mond MK1",
+  "type": "CARGO LANDER · GEPLANT",
+  "first": "Erster Flug der Blue Moon-Mondlander-Architektur von Blue Origin",
+  "description": "Der erste Fracht-Blue-Moon-Lander von Blue Origin, der im Rahmen des CLPS-Programms (Commercial Lunar Payload Services) von NASA in Auftrag gegeben wurde. Ein einstufiges Abstiegsfahrzeug, das vom kryogenen BE-7-Motor angetrieben wird und bis zu ca. 3 Tonnen Nutzlast auf die Mondoberfläche befördern soll. Startet auf dem New Glenn von Blue Origin von Cape Canaveral aus, führt eine translunare Injektion auf der zweiten Stufe des New Glenn durch, führt dann die Einführung in die Mondumlaufbahn und den angetriebenen Abstieg durch. Der Frachtflug Mark 1 geht dem bemannten Mark 2 voraus, der die bemannte Mondlandung Artemis V von NASA unterstützen soll.",
+  "events": [
+    {
+      "met": 0,
+      "label": "NEUE GLENN-EINFÜHRUNG",
+      "note": "Startet von Cape Canaveral LC-36; Die erste Stufe kehrt zur Erholung im unteren Bereich zurück.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2,
+      "label": "TLI",
+      "note": "Die zweite Stufe des neuen Glenn führt eine translunare Injektionsverbrennung durch.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LOI",
+      "note": "Einsetzen in die Mondumlaufbahn mittels BE-7-Haupttriebwerk.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "ANGETRIEBENER ABSTIEG",
+      "note": "BE-7 drosselte den Abstieg zur Mondoberfläche – erste Mondlandung von Blue Origin.",
+      "type": "info"
+    }
+  ]
+}

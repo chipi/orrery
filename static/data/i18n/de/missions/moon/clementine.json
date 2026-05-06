@@ -1,0 +1,38 @@
+{
+  "name": "Clementine",
+  "type": "ORBITER · GEFLOGEN",
+  "first": "Gemeinsame NASA-DoD-Mondmission; Erste Hinweise auf Wassereis an den Mondpolen",
+  "description": "Clementine wurde in erster Linie als Technologiedemonstrator der Strategic Defense Initiative konzipiert und verbrachte zehn Wochen in der Mondumlaufbahn, um die erste systematische globale topografische und multispektrale Karte des Mondes zurückzugeben. Bistatische Radarmessungen am Südpol des Mondes lieferten die ersten verlockenden Hinweise auf Wassereis – bestätigte Jahre später von Lunar Prospector und Chandrayaan-1. Die Folgemission zum Vorbeiflug am Asteroiden Geographos scheiterte, als eine Fehlfunktion des Triebwerks den Treibstoff des Raumfahrzeugs erschöpfte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan II G von Vandenberg AFB.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn 19.02.1994.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KARTIERUNG BEGINNT",
+      "note": "Die systematische multispektrale und topografische Kartierung beginnt.",
+      "type": "info"
+    },
+    {
+      "met": 95,
+      "label": "ABFAHRT",
+      "note": "Verlässt die Mondumlaufbahn zum Vorbeiflug am Asteroiden Geographos.",
+      "type": "nominal"
+    },
+    {
+      "met": 100,
+      "label": "THRUSTER-FEHLER",
+      "note": "Fehlfunktion des Bordstrahlruders führt zur Erschöpfung des Treibstoffs; Asteroidenbegegnung abgesagt.",
+      "type": "warning"
+    }
+  ]
+}

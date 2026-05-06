@@ -1,0 +1,32 @@
+{
+  "name": "Chandrayaan-1",
+  "type": "ORBITEUR · VOLÉ",
+  "first": "La première mission lunaire de l'Inde ; confirmation d'une présence d'eau répandue sur la Lune",
+  "description": "Le premier vaisseau spatial interplanétaire de ISRO. L'orbiteur a livré la Moon Impact Probe sur la surface lunaire – le premier objet indien sur un autre monde – et transportait 11 instruments provenant de 6 pays. L'instrument Moon Mineralogy Mapper (M3) de NASA, hébergé sur Chandrayaan-1, a fait une découverte qui a réécrit les manuels scolaires : les molécules d'eau sont répandues sur la surface lunaire, et ne sont pas seulement enfermées dans des cratères polaires ombragés. La mission s'est terminée brusquement en août 2009 lorsque ISRO a perdu la communication avec le vaisseau spatial.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "PSLV-XL (C11) de Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire 2008-11-08.",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "IMPACT DU MIP",
+      "note": "Moon Impact Probe a ciblé un atterrissage brutal près du pôle sud.",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "CONTACT PERDU",
+      "note": "Communication perdue le 29/08/2009 ; 312 jours d'opérations.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Intuizione",
+  "type": "LANDER · VOLATO",
+  "first": "Primo sismometro su Marte; primo lancio interplanetario dalla costa occidentale degli Stati Uniti",
+  "description": "InSight ha regalato a Marte il suo primo stetoscopio. Il suo sismometro, schierato da un braccio robotico sulla regolite, ha registrato oltre 1.300 martemoti, incluso uno di magnitudo 5 nel 2022, il più grande mai rilevato su un altro pianeta. I dati hanno rivelato la struttura interna di Marte: un nucleo fuso di 1.800 km di raggio, una crosta spessa e una sorprendente stratificazione del mantello. L'esperimento sul flusso di calore della talpa fallì quando la regolite si dimostrò troppo coesa per il suo design automartellante. La missione si è conclusa quando l'accumulo di polvere sui pannelli solari ha ridotto la potenza al di sotto della soglia operativa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 401 della Vandenberg AFB: la prima missione interplanetaria mai lanciata dalla costa occidentale degli Stati Uniti.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "EDL",
+      "note": "Ingresso atmosferico, paracadute, atterraggio del razzo con discesa terminale all'Elysium Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 205.01,
+      "label": "TOCCO",
+      "note": "Il lander arriva il 26-11-2018 alle 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SISMOMETRO IMPIEGATO",
+      "note": "Il braccio robotico posiziona lo strumento SEIS sulla superficie e lo protegge dal vento.",
+      "type": "info"
+    },
+    {
+      "met": 1683,
+      "label": "FINE DELLA MISSIONE",
+      "note": "Trasmissione finale a bassa potenza 2022-12-15. Pannelli solari troppo coperti di polvere per essere ricaricati.",
+      "type": "warning"
+    }
+  ]
+}

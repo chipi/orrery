@@ -1,0 +1,32 @@
+{
+  "name": "Tianwen-1",
+  "type": "ORBITEUR · LANDER · ROVER · ACTIF",
+  "first": "Première mission visant à livrer un orbiteur, un atterrisseur et un rover sur Mars en un seul lancement",
+  "description": "La première mission chinoise sur Mars a accompli ce qu'aucune agence n'avait jamais tenté en un seul lancement : insertion orbitale, entrée atmosphérique, atterrissage en douceur et déploiement du rover. Le rover Zhurong a opéré 358 sols à Utopia Planitia, parcourant 1,9 km, avant d'entrer en hibernation prévue en mai 2022 ; il ne s'est pas réveillé depuis (probablement à cause de l'accumulation de poussière sur les panneaux solaires). L'orbiteur reste actif, cartographiant la planète à haute résolution et servant de relais aux moyens au sol.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Long 5 mars depuis Wenchang — premier lancement interplanétaire super-lourd de la Chine.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "INSERTION DE L'ORBITE DE MARS",
+      "note": "La brûlure du moteur capture le vaisseau spatial sur l’orbite de Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "ATTERRISSAGE DE ZHURONG",
+      "note": "L'atterrisseur/rover descend vers Utopia Planitia 2021-05-14 ; Zhurong sort de la rampe 2021-05-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 651,
+      "label": "HIBERNATION DE ZHURONG",
+      "note": "Rover entre en dormance prévue 2022-05 ; L'orbiteur poursuit ses opérations.",
+      "type": "info"
+    }
+  ]
+}

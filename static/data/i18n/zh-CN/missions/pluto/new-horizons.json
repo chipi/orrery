@@ -1,0 +1,20 @@
+{
+  "name": "New Horizons",
+  "type": "FLYBY · FLOWN",
+  "first": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
+  "description": "A nine-year sprint after the fastest launch to date, New Horizons compressed decades of anticipation into one July 2015 day — a world turned from a pixelated blur into mountains of water ice and nitrogen glaciers on Pluto's heart-shaped Tombaugh Regio. The spacecraft later flew Arrokoth, linking the mission to the primordial solar system. Flight arcs in Orrery are direct-transfer teaching models, not the actual Jupiter gravity assist.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 551 leaves Earth on a Jupiter-gravity-assist path to Pluto.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "PLUTO FLYBY",
+      "note": "Closest approach to Pluto; high-rate imaging and plasma data flood Earth.",
+      "type": "nominal"
+    }
+  ]
+}

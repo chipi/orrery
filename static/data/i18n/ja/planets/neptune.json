@@ -1,0 +1,13 @@
+{
+  "name": "海王星",
+  "type": "天王星型惑星",
+  "fact": "ボイジャー 2 号は 12 年の旅の末、1989 年に海王星に接近飛行した。いまも唯一、訪れた探査機である。",
+  "bio": "最も風の強い惑星 — 表面付近で時速 2,100 km の風。天王星の軌道が予測とずれることから、数学的予測のあと肉眼で発見された。",
+  "links": [
+    { "l": "海王星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "海王星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "ボイジャー 2 号の海王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "海王星の発見 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "海王星内部モデル（Icarus 2021）", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

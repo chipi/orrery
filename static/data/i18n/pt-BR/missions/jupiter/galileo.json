@@ -1,0 +1,20 @@
+{
+  "name": "Galileu",
+  "type": "ORBITER · VOADO",
+  "first": "Primeira espaçonave a orbitar Júpiter; sonda atmosférica nas nuvens de Júpiter",
+  "description": "Lançado a partir do vaivém espacial Atlantis após a longa pausa pós-Challenger, Galileo enfrentou a cintura interna de asteróides e conduziu o primeiro estudo de longo prazo de Júpiter e das suas luas a partir da órbita. Descobriu o campo magnético induzido de Europa – forte evidência de um oceano subterrâneo – e observou Shoemaker-Levy 9 colidir com Júpiter. A missão terminou com um mergulho controlado em Júpiter em 2003 para evitar a contaminação de luas geladas que poderiam abrigar condições para a vida.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "STS-34 implanta Galileo e um estágio superior inercial do Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "INSERÇÃO DA ÓRBITA DE JÚPITER",
+      "note": "A queima do motor principal coloca Galileu em órbita; décadas de ciência lunar começam.",
+      "type": "nominal"
+    }
+  ]
+}

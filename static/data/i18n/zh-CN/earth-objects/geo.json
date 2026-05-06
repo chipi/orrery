@@ -1,0 +1,6 @@
+{
+  "name": "GEO Belt",
+  "short": "GEO",
+  "description": "The geostationary ring. At exactly 35,786 km, orbital period equals Earth's rotation — satellites appear fixed in the sky. GOES weather satellites, Meteosat, thousands of communications satellites. The specific altitude where physics and utility perfectly align.",
+  "scale_fact": "35,786 km is not a round number by design — it's the exact altitude where gravity and orbital speed balance to give a 24-hour period. Physics chose it."
+}

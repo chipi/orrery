@@ -1,0 +1,20 @@
+{
+  "name": "Galilei",
+  "type": "ORBITER · GEFLOGEN",
+  "first": "Erstes Raumschiff, das Jupiter umkreist; Atmosphärensonde in Jupiterwolken",
+  "description": "Galileo wurde nach der langen Pause nach dem Challenger vom Space Shuttle Atlantis gestartet, trotzte dem inneren Asteroidengürtel und führte die erste Langzeitstudie von Jupiter und seinen Monden aus der Umlaufbahn durch. Es entdeckte Europas induziertes Magnetfeld – ein starker Beweis für einen unterirdischen Ozean – und beobachtete, wie Shoemaker-Levy 9 auf Jupiter prallte. Die Mission endete 2003 mit einem kontrollierten Sturz in den Jupiter, um eine Kontamination eisiger Monde zu vermeiden, die Lebensbedingungen bieten könnten.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "STS-34 setzt Galileo und eine Trägheitsoberstufe von Atlantis aus ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "EINFÜHRUNG IN DIE JUPITER-ORBIT",
+      "note": "Der Haupttriebwerksbrand bringt Galileo in die Umlaufbahn; Jahrzehnte der Mondforschung beginnen.",
+      "type": "nominal"
+    }
+  ]
+}

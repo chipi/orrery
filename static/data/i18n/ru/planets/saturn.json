@@ -1,0 +1,13 @@
+{
+  "name": "Сатурн",
+  "type": "Газовый гигант · кольца",
+  "fact": "Плотность Сатурна 0,687 г/см³ — меньше воды. Кольца простираются на 282 000 км, а толщина — около 10 м.",
+  "bio": "Самая рыхлая планета — плавала бы на воде. Кольца тянутся на 282 000 км при толщине в метры. Наклон 26,73° означает, что с Земли кольца видны под разными углами за 29-летний оборот Сатурна.",
+  "links": [
+    { "l": "Сатурн — Википедия", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
+    { "l": "Saturn (NASA Solar System Exploration)", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "Архив миссии Cassini (NASA)", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "Кольца Сатурна — Википедия", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
+    { "l": "Кольца Сатурна молоды (Science 2019)", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
+}

@@ -1787,7 +1787,7 @@
   });
 </script>
 
-<svelte:head><title>Mission Arc · Orrery</title></svelte:head>
+<svelte:head><title>{m.fly_page_title()}</title></svelte:head>
 
 <div class="fly">
   <div
@@ -1795,13 +1795,13 @@
     bind:this={container}
     class:hidden={view !== '3d'}
     role="region"
-    aria-label="3D mission arc. Drag to orbit, scroll to zoom."
+    aria-label={m.fly_canvas_aria_3d()}
   ></div>
   <canvas
     class="layer"
     bind:this={canvas2d}
     class:hidden={view !== '2d'}
-    aria-label="2D mission arc top-down view."
+    aria-label={m.fly_canvas_aria_2d()}
   ></canvas>
 
   <!-- Hidden render-state hook (Layer 2 of /fly validation strategy,

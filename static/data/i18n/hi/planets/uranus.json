@@ -1,0 +1,13 @@
+{
+  "name": "यूरेनस",
+  "type": "बर्फ़ दानव",
+  "fact": "यूरेनस अपनी ओर से घूमता है — ध्रुवीय झुकाव 98°। उत्तरी ध्रुव अपने 84 वर्षीय कक्षा के आधे समय लगभग सीधे सूर्य की ओर रहता है।",
+  "bio": "लगभग करवट पर (97.77°)। हर ध्रुव को 42 वर्ष निरंतर सूर्यप्रकाश, फिर 42 वर्ष अंधकार। लगभग निश्चित रूप से प्राचीन भारी टकराव के कारण।",
+  "links": [
+    { "l": "यूरेनस — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
+    { "l": "यूरेनस (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
+    { "l": "वॉयेजर 2 यूरेनस पर (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
+    { "l": "यूरेनस ऑर्बिटर और प्रोब — दशकीय सर्वेक्षण", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
+    { "l": "यूरेनस के झुकाव की उत्पत्ति (Astrophysical Journal 2020)", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+  ]
+}

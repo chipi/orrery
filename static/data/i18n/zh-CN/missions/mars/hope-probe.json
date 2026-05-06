@@ -1,0 +1,12 @@
+{
+  "name": "Hope Probe",
+  "type": "ORBITER · ACTIVE",
+  "first": "First Arab interplanetary mission",
+  "description": "The Emirates Mars Mission — Al Amal, 'Hope' — was conceived in 2014 to mark the 50th anniversary of UAE federation in 2021. The MBRSC team partnered with the University of Colorado, Arizona State, and UC Berkeley to design and integrate the spacecraft, but built it themselves. The science orbit (1× day duration, 27,000 km × 43,000 km) covers all longitudes and times of day, capturing weather patterns no other Mars orbiter can resolve. The mission succeeded on the first attempt, making the UAE the fifth agency at Mars.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "H-IIA 202 from Tanegashima — Mitsubishi Heavy Industries provided the launch.", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 205, "label": "MARS ORBIT INSERTION", "note": "27-minute thruster burn captures Hope into Mars orbit 2021-02-09.", "type": "nominal" },
+    { "met": 250, "label": "SCIENCE ORBIT", "note": "Trim manoeuvres place Hope into its 55-hour science orbit.", "type": "info" }
+  ]
+}

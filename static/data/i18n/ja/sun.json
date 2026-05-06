@@ -1,0 +1,13 @@
+{
+  "name": "太陽",
+  "type": "恒星 · G 型主系列星",
+  "fact": "太陽の質量は太陽系全体の 99.86% を占める。その重力が水星からオールトの雲まで、すべてを軌道に留めている。毎秒、約 6 億トンの水素がヘリウムへ核融合し、地球の生命を 45 億年にわたって支えてきたエネルギーを放っている。",
+  "bio": "46 億年の歴史を持つ G 型主系列星で、約 100 億年の寿命の折り返し地点にある。赤道は約 25 日、極付近は約 35 日と较差自転する。およそ 50 億年後には中心部の水素が枯渇し、赤色巨星へ膨張して内側の惑星を飲み込むだろう。重力の届く範囲（ヘリオスフィア）はおよそ 120 AU まで及ぶ。",
+  "links": [
+    { "l": "太陽 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Sun", "t": "intro" },
+    { "l": "太陽（NASA Solar System Exploration）", "u": "https://science.nasa.gov/sun/", "t": "intro" },
+    { "l": "パーカー・ソーラー・プローブ（NASA）", "u": "https://science.nasa.gov/mission/parker-solar-probe/", "t": "core" },
+    { "l": "Solar Dynamics Observatory（NASA）", "u": "https://sdo.gsfc.nasa.gov/", "t": "core" },
+    { "l": "標準太陽モデル（Annual Review of Astronomy 2022）", "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029", "t": "deep" }
+  ]
+}

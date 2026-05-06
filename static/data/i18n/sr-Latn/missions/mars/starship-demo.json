@@ -1,0 +1,32 @@
+{
+  "name": "Starship Demo",
+  "type": "DEMO NA MARSU ZA NEJEDE · PLANIRANO",
+  "first": "Prvi lansirni sistem za višekratnu upotrebu koji je pokušao sletanje na Mars",
+  "description": "Demonstracija arhitekture Marsa bespilotnog zvezdanog broda: lansiranje na Super Heavi-u, punjenje gorivom u LEO iz varijante tankera, zatim trans-Mars injekcija potpuno napunjenog Zvezdanog broda i spuštanje na površinu Marsa. Navedeni cilj __ACR0__ je period lansiranja 2026-2027; inženjerska realnost (Zvezdani brod još uvek radi na pouzdanosti orbitalnog leta i dopuna goriva u orbiti nije demonstrirana) čini 2028. ili kasnije verovatnijim. Ako uspe, to će preokrenuti ekonomiku korisnog opterećenja Marsa - od hiljada kilograma do stotina tona po sletanju.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Zvezdani brod iz Boka Čike ili Kejp Kanaverala — prvo super-teško međuplanetarno lansiranje.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ORBITALNO REFILLING",
+      "note": "Sastanak tankera i transfer goriva do LEO tokom više letova.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injekcija iz potpuno napunjenog LEO stanja.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "MARS LANDING",
+      "note": "Sletanje na površinu Marsa sa pogonom - bez padobrana, bez vazdušnih jastuka, bez dizalice.",
+      "type": "info"
+    }
+  ]
+}

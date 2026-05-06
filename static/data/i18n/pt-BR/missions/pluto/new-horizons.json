@@ -1,0 +1,20 @@
+{
+  "name": "Novos Horizontes",
+  "type": "VOAR · VOAR",
+  "first": "Primeiro sobrevôo de Plutão e suas luas; imagens mais nítidas de um mundo do cinturão de Kuiper",
+  "description": "Uma corrida de nove anos após o lançamento mais rápido até à data, a New Horizons comprimiu décadas de antecipação num dia de julho de 2015 - um mundo que se transformou de um borrão pixelizado em montanhas de água gelada e glaciares de nitrogénio no Tombaugh Regio em forma de coração de Plutão. A espaçonave mais tarde voou em Arrokoth, ligando a missão ao sistema solar primordial. Os arcos de vôo em Orrery são modelos de ensino de transferência direta, não a verdadeira assistência gravitacional de Júpiter.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Atlas V 551 deixa a Terra em um caminho assistido pela gravidade de Júpiter até Plutão.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "VOO DE PLUTÃO",
+      "note": "Aproximação mais próxima de Plutão; imagens de alta taxa e dados de plasma inundam a Terra.",
+      "type": "nominal"
+    }
+  ]
+}

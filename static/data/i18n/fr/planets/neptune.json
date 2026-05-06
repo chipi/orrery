@@ -1,0 +1,33 @@
+{
+  "name": "Neptune",
+  "type": "Géant de glace",
+  "fact": "Voyager 2 a survolé Neptune en 1989 après un voyage de 12 ans. Il reste le seul vaisseau spatial jamais visité.",
+  "bio": "Planète la plus venteuse – vents de surface de 2 100 km/h. Découvert par prédiction mathématique avant l'observation directe, car l'orbite d'Uranus montrait une influence gravitationnelle invisible.",
+  "links": [
+    {
+      "l": "Neptune — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "Neptune (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 à Neptune (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "Découverte de Neptune — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "Modèle intérieur de Neptune (Icare 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ]
+}

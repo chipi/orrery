@@ -1,0 +1,44 @@
+{
+  "name": "Mudança 6",
+  "type": "RETORNO DE AMOSTRA DO LADO DISTANTE · VOADO",
+  "first": "Primeira amostra retornada do outro lado lunar",
+  "description": "Combina as arquiteturas de Chang'e 4 (comunicações distantes) e Chang'e 5 (retorno de amostra). O satélite retransmissor Queqiao-2 foi lançado primeiro (março de 2024) para apoiar a missão. A Chang'e 6 coletou então 1.935 kg da cratera Apollo, no lado oposto - material com composição muito diferente de qualquer amostra lunar retornada anteriormente. Os dois hemisférios da Lua são radicalmente diferentes (o outro lado tem uma crosta mais espessa e menos mares); essas amostras podem finalmente explicar o porquê.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Longo 5 de março de Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserção da órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "ATERRAGEM",
+      "note": "Lander desce na cratera Apollo (lado oposto) 02/06/2024. Todas as comunicações via relé Queqiao-2.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "AMOSTRAGEM",
+      "note": "1.935 kg coletados do regolito do outro lado.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "SUBIDA",
+      "note": "Veículo de subida decola; encontro com o orbitador.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "RETORNO DA TERRA",
+      "note": "A cápsula pousa na Mongólia Interior em 25/06/2024 com as primeiras amostras do outro lado já recuperadas.",
+      "type": "info"
+    }
+  ]
+}

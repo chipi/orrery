@@ -1,0 +1,50 @@
+{
+  "name": "Čang'e 5",
+  "type": "POVRATAK UZORAKA · FLOVN",
+  "first": "Prvi povratak lunarnog obrasca u 44 godine (od 24. meseca 1976.)",
+  "description": "Chang'e 5 je bio prvi uzorak vraćen sa Meseca od sovjetske Lune 24 1976. godine - razmak od 44 godine. Arhitektura: orbiter + lender + vozilo za uspon + kapsula za povratak uzorka, sve u jednom lansiranju. Lender je sleteo na Mons Rumker, izbušio i zahvatio 1.731 kg regolita, poleteo, sastao se i pristao sa orbiterom (prvi robotski lunarni sastanak), a kapsula se vratila na Zemlju. Uzorci su iz regiona starog samo 2 milijarde godina - mnogo mlađi od bilo kog Apolo ili Lunarnog uzorka, koji prepisuje modele lunarnog vulkanizma.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Dugi 5. mart iz Venčanga.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Ubacivanje lunarne orbite.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "TOUCHDOVN",
+      "note": "Lender će sleteti na planinu Rumker (Okean Oluje) 01.12.2020.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "UZORKOVANjE",
+      "note": "1.731 kg prikupljeno lopatom i bušilicom.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENT",
+      "note": "Vozilo za uspon je podignuto sa površine Meseca.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZVOUS",
+      "note": "Prvi robotski lunarni sastanak; kontejner za uzorke prebačen u orbiter.",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "POVRATAK ZEMLjE",
+      "note": "Kapsula uzorka sleće u Unutrašnju Mongoliju 16.12.2020.",
+      "type": "info"
+    }
+  ]
+}

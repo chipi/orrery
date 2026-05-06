@@ -1,0 +1,38 @@
+{
+  "name": "Mangalyaan",
+  "type": "ORBITER · VOLATO",
+  "first": "Prima missione asiatica su Marte; primo successo su Marte al primo tentativo",
+  "description": "La missione Mars Orbiter di ISRO è costata 74 milioni di dollari, meno del budget del film Gravity (100 milioni di dollari) e una frazione di MAVEN di NASA (671 milioni di dollari), arrivato due giorni prima. Costruito in 18 mesi come dimostratore tecnologico, Mangalyaan è riuscito in ogni obiettivo: iniezione trans-marziana, navigazione nello spazio profondo, inserimento nell'orbita di Marte e 8 anni di ritorno scientifico. L'India è diventata la quarta agenzia spaziale su Marte e la prima ad avere successo al primo tentativo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "PSLV-XL (C25) da Sriharikota - un lanciatore relativamente piccolo che richiede un circuito di sollevamento in orbita.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "USTIONI DEL PERIGEO 1",
+      "note": "La prima delle sette ustioni che sollevano l'orbita della Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "INIEZIONE TRANS-MARS",
+      "note": "L'ultima bruciatura del perigeo posiziona la navicella spaziale sulla traiettoria di Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 324,
+      "label": "INSERIMENTO MARTE ORBITA",
+      "note": "Il motore Liquid Apogee si accende dopo 4 anni di inattività: viene attivato per 24 minuti per essere catturato in orbita.",
+      "type": "nominal"
+    },
+    {
+      "met": 3300,
+      "label": "FINE DELLA MISSIONE",
+      "note": "Contatto perso nel 2022-04 dopo l'esaurimento del propellente del veicolo spaziale.",
+      "type": "warning"
+    }
+  ]
+}

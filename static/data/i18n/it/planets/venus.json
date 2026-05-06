@@ -1,0 +1,33 @@
+{
+  "name": "Venere",
+  "type": "Pianeta terrestre",
+  "fact": "Pressione superficiale 90× quella terrestre. Le sonde sovietiche Venera durarono 23-127 minuti prima di essere schiacciate.",
+  "bio": "Ruota in modo retrogrado, cioè all'indietro e così lentamente che un giorno venusiano è più lungo del suo anno. L'inclinazione assiale di 177,4° è il motivo: Venere è essenzialmente capovolta.",
+  "links": [
+    {
+      "l": "Venere –Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "Venere (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Programma Venere - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITÀ (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "La serra incontrollata di Venere (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ]
+}

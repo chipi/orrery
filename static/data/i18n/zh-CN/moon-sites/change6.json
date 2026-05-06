@@ -1,0 +1,9 @@
+{
+  "name": "Chang'e 6",
+  "mission_type": "Uncrewed Sample Return (Far Side)",
+  "site_name": "Apollo Crater (far side)",
+  "crew": [],
+  "left": "Descent stage",
+  "fact": "First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
+  "capability": "Sample return from a relay-only site — combines the architectures of Chang'e 4 (far-side comms) and Chang'e 5 (sample return). The full set of capabilities for Mars Sample Return at any latitude."
+}

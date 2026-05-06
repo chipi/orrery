@@ -1,0 +1,32 @@
+{
+  "name": "Mondaufklärungsorbiter",
+  "type": "ORBITER · AKTIV",
+  "first": "Mondkarten mit der höchsten Auflösung, die jemals erstellt wurden",
+  "description": "LRO umkreist den Mond seit 2009 in einer mittleren Mondhöhe von 50 km. Die Bilder der Schmalwinkelkamera von LRO sind mit 50 cm/Pixel hoch genug, um Apollo-Abstiegsstufen, Rover-Spuren und Fußwege der Astronauten zu sehen, die noch im Regolith erhalten sind. Es fand Lunokhod 1 neununddreißig Jahre nach der Dunkelheit des Rovers. Es wurden mehr als 200 mögliche Landeplätze für Artemis identifiziert. Die Wassereisablagerungen am Südpol des Mondes, die jedes moderne Mondprogramm vorantreiben, wurden mit LRO-Instrumenten quantifiziert. Eine Erkundungsmission, die den Grundstein für das moderne Mondzeitalter legte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 401 von Cape Canaveral SLC-41 (mit LCROSS-Impaktor als Sekundärrakete).",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn 23.06.2009.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "PRIME MISSION",
+      "note": "Die einjährige Explorationsphase (NASA-Programm) beginnt.",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "ERWEITERTE WISSENSCHAFT",
+      "note": "Die Mission wurde unter NASA SMD auf eine mehrjährige Wissenschaftsphase ausgeweitet.",
+      "type": "info"
+    }
+  ]
+}

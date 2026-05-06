@@ -825,7 +825,7 @@
   onDestroy(() => cleanup?.());
 </script>
 
-<svelte:head><title>Earth Orbit · Orrery</title></svelte:head>
+<svelte:head><title>{m.earth_page_title()}</title></svelte:head>
 
 <div class="earth">
   <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
@@ -837,7 +837,7 @@
   ></canvas>
 
   <!-- Top-left HUD cluster (matches /explore + /mars + /moon convention from v0.4). -->
-  <div class="hud-controls" role="group" aria-label="View controls">
+  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
       <button
         type="button"
@@ -849,14 +849,14 @@
         {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
       </button>
     </div>
-    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button
         type="button"
         class="chip"
         class:active={layerStations}
         aria-pressed={layerStations}
         onclick={() => (layerStations = !layerStations)}
-        title="Crewed orbital habitats — ISS, Tiangong"
+        title={m.earth_layer_tip_habitats()}
         data-testid="layer-stations"
       >
         STATIONS
@@ -867,7 +867,7 @@
         class:active={layerObservatories}
         aria-pressed={layerObservatories}
         onclick={() => (layerObservatories = !layerObservatories)}
-        title="Astronomy telescopes — Hubble, JWST, Chandra, XMM, Gaia"
+        title={m.earth_layer_tip_telescopes()}
         data-testid="layer-observatories"
       >
         OBSERVATORIES
@@ -878,7 +878,7 @@
         class:active={layerConstellations}
         aria-pressed={layerConstellations}
         onclick={() => (layerConstellations = !layerConstellations)}
-        title="Navigation constellations — GPS, Galileo, GLONASS, BeiDou"
+        title={m.earth_layer_tip_nav()}
         data-testid="layer-constellations"
       >
         {m.ui_layer_constellations()}
@@ -889,7 +889,7 @@
         class:active={layerComsats}
         aria-pressed={layerComsats}
         onclick={() => (layerComsats = !layerComsats)}
-        title="Geostationary communications — GEO comsat ring"
+        title={m.earth_layer_tip_geo()}
         data-testid="layer-comsats"
       >
         {m.ui_layer_comsats()}
@@ -900,7 +900,7 @@
         class:active={layerMoonOrbiters}
         aria-pressed={layerMoonOrbiters}
         onclick={() => (layerMoonOrbiters = !layerMoonOrbiters)}
-        title="Lunar orbiters — LRO, Clementine, Chandrayaan-1, Chang'e 1/2, etc."
+        title={m.earth_layer_tip_lunar()}
         data-testid="layer-moon-orbiters"
       >
         {m.ui_layer_moon_orbiters()}
@@ -911,7 +911,7 @@
         class:active={layerOrbits}
         aria-pressed={layerOrbits}
         onclick={() => (layerOrbits = !layerOrbits)}
-        title="Show or hide the orbital ring lines (satellites remain visible)"
+        title={m.earth_layer_tip_orbit_rings()}
         data-testid="layer-orbits"
       >
         {m.ui_layer_orbits()}
@@ -923,7 +923,7 @@
        regime ring labels directly). Matches the /moon nation-legend
        pattern at the bottom of the screen. -->
   {#if view === '3d'}
-    <div class="legend-3d" aria-label="Orbit regime legend">
+    <div class="legend-3d" aria-label={m.earth_legend_orbit_aria()}>
       {#each Object.entries(REGIME_COLORS) as [regime, color] (regime)}
         <span class="legend-item">
           <span class="legend-dot" style:background={`#${color.toString(16).padStart(6, '0')}`}

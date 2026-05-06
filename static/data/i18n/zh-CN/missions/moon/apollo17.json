@@ -1,0 +1,15 @@
+{
+  "name": "Apollo 17",
+  "type": "CREWED LANDER · ROVER · FLOWN",
+  "first": "Last crewed mission to the Moon (and the only Apollo with a trained geologist)",
+  "description": "The last time humans visited another world — over half a century ago. Cernan and Schmitt spent 75 hours on the surface, drove the LRV 35.7 km, and brought back 110.5 kg of samples. Schmitt was the only trained scientist (geologist) ever to walk on the Moon, and his findings — particularly the orange volcanic glass at Shorty Crater — reshaped lunar geology. Cernan's last words before climbing the ladder for the final time: 'We leave as we came, and God willing, we shall return.' Artemis III is supposed to make good on that promise.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Saturn V (AS-512) from KSC LC-39A 1972-12-07 — only Apollo night launch.", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
+    { "met": 3, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 4, "label": "TOUCHDOWN", "note": "Lunar Module Challenger lands at Taurus-Littrow Valley 1972-12-11 19:54 UTC.", "type": "nominal" },
+    { "met": 4.3, "label": "FIRST EVA", "note": "Cernan and Schmitt begin first of three lunar EVAs (total 22h 4m).", "type": "info" },
+    { "met": 7, "label": "ASCENT", "note": "Cernan: 'We leave as we came, and God willing, we shall return.'", "type": "nominal" },
+    { "met": 12.6, "label": "SPLASHDOWN", "note": "CM America returns crew to Pacific Ocean 1972-12-19.", "type": "nominal" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Erde",
+  "type": "Startseite · Referenzorbit",
+  "fact": "Jeder Mensch, der jemals gelebt hat, hat dies hier getan. Die Referenzbahn, an der alle anderen gemessen werden.",
+  "bio": "Die axiale Neigung von 23,44° erzeugt die Jahreszeiten – nicht die Entfernung von der Sonne. Tatsächlich ist die Erde im Januar näher an der Sonne als im Juli.",
+  "links": [
+    {
+      "l": "Erde – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "Erde (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Erdbeobachtungssystem (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Warum die Erde Jahreszeiten hat (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "Hellblauer Punkt – Carl Sagan-Reflexion (Planetary Society)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ]
+}

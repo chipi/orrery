@@ -1,0 +1,50 @@
+{
+  "name": "Curiosidade",
+  "type": "ROVER · ATIVO",
+  "first": "Primeiro rover de Marte movido a energia nuclear; primeiro pouso de guindaste no céu",
+  "description": "A missão principal que definiu a exploração moderna de Marte. O Curiosity tem o tamanho de um carro, é movido a plutônio e já percorreu mais de 32 km até o Monte Sharp desde que pousou na cratera Gale em 2012. Seus instrumentos confirmaram que Marte já teve condições habitáveis ​​– água corrente, compostos orgânicos complexos, a química que a vida precisaria. A sequência EDL dos 'sete minutos de terror', terminando com um guindaste abaixando o veículo espacial em cabos, é agora o padrão do NASA para entregar grandes cargas úteis à superfície de Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Atlas V 541 decola do Cabo Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "QUEIMADURA DE TMI",
+      "note": "A injeção Trans-Marte (3,61 km/s ∆v) envia o MSL para uma trajetória heliocêntrica rumo a Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "TCM-3",
+      "note": "Correção final pré-EDL; a trajetória tem como alvo a elipse de pouso da Cratera Gale.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — SETE MINUTOS DE TERROR",
+      "note": "Entrada atmosférica, pára-quedas supersônico, retrofoguetes sky-crane, rover baixado em cabos.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "ATERRAGEM",
+      "note": "A curiosidade chega a Aeolis Palus, Cratera Gale, 06/08/2012 às 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "PRIMEIRAS IMAGENS",
+      "note": "Hazcam retorna a primeira imagem de baixa resolução da superfície.",
+      "type": "info"
+    }
+  ]
+}

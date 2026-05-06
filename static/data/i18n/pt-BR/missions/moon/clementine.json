@@ -1,0 +1,38 @@
+{
+  "name": "Clementina",
+  "type": "ORBITER · VOADO",
+  "first": "Missão lunar conjunta NASA-DoD; primeiros indícios de água gelada nos pólos lunares",
+  "description": "Projetado principalmente como um demonstrador de tecnologia da Iniciativa de Defesa Estratégica, Clementine passou 10 semanas na órbita lunar, retornando o primeiro mapa topográfico e multiespectral global sistemático da Lua. Medições de radar biestático no pólo sul lunar produziram os primeiros indícios tentadores de gelo de água – confirmados anos depois pelo Lunar Prospector e pelo Chandrayaan-1. A missão seguinte de sobrevoar o asteróide Geographos falhou quando um mau funcionamento do propulsor esgotou o propelente da espaçonave.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Titan II G da Base Aérea de Vandenberg.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "MOI",
+      "note": "Inserção na órbita lunar 19/02/1994.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "INÍCIO DO MAPEAMENTO",
+      "note": "O mapeamento multiespectral e topográfico sistemático é iniciado.",
+      "type": "info"
+    },
+    {
+      "met": 95,
+      "label": "PARTIDA",
+      "note": "Sai da órbita lunar para sobrevoar o asteroide Geographos.",
+      "type": "nominal"
+    },
+    {
+      "met": 100,
+      "label": "FALHA NO PROPULSOR",
+      "note": "O mau funcionamento do propulsor a bordo esgota o propelente; encontro com asteróide cancelado.",
+      "type": "warning"
+    }
+  ]
+}

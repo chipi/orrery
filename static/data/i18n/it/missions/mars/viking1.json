@@ -1,0 +1,44 @@
+{
+  "name": "Vichingo 1",
+  "type": "ORBITER · LANDER · VOLATO",
+  "first": "Primo atterraggio su Marte pienamente riuscito; prima scienza delle superfici di lunga durata",
+  "description": "La missione che ci ha dato il nostro primo sguardo approfondito alla superficie marziana. Il lander del Viking 1 ha operato per 6 anni e 4 mesi a Chryse Planitia, eseguendo esperimenti di biologia progettati per rilevare la vita (risultati ambigui; un esperimento ha prodotto un segnale positivo ancora dibattuto decenni dopo), misurando il tempo, restituendo immagini panoramiche e analizzando la composizione del suolo. L'orbiter ha mappato il 97% di Marte con una risoluzione di 100 metri e ha aiutato a esplorare i siti di atterraggio per missioni ancora lontane decenni.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan IIIE-Centauro di Cape Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Prima correzione della traiettoria.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "INSERIMENTO MARTE ORBITA",
+      "note": "L'Orbiter cattura nell'orbita di Marte; il lander rimane collegato per l'ispezione del sito.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "SEPARAZIONE DEL LANDER",
+      "note": "Il lander si stacca per la discesa su Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "TOCCO",
+      "note": "Il lander atterra il 20 luglio 1976, esattamente 7 anni dopo l'Apollo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "PRIMO PANORAMA",
+      "note": "Restituite le prime immagini di superficie ad alta risoluzione.",
+      "type": "info"
+    }
+  ]
+}

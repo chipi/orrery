@@ -5,16 +5,28 @@
  * read from the URL `?lang=` parameter (per ADR-031 + ADR-017),
  * never from `localStorage` (CLAUDE.md ban).
  *
- * Per ADR-031, eleven locales are supported in three waves; only
- * the locales actively shipped in v0.3.x appear in
- * `SUPPORTED_LOCALES`. Future per-language tickets extend this set
- * as their content lands.
+ * Per ADR-031, locales are grouped in waves by script risk.
+ * `SUPPORTED_LOCALES` lists locales currently available in the picker.
  */
 import { browser } from '$app/environment';
 import type { Page } from '@sveltejs/kit';
 
 /** Locale code as used by Paraglide-js + the data-overlay path. */
-export type LocaleCode = 'en-US' | 'es';
+export type LocaleCode =
+  | 'en-US'
+  | 'es'
+  | 'fr'
+  | 'de'
+  | 'pt-BR'
+  | 'it'
+  | 'sr-Latn'
+  | 'sr-Cyrl'
+  | 'zh-CN'
+  | 'ja'
+  | 'ko'
+  | 'hi'
+  | 'ar'
+  | 'ru';
 
 export interface LocaleEntry {
   code: LocaleCode;
@@ -35,11 +47,24 @@ export interface LocaleEntry {
 export const SUPPORTED_LOCALES: readonly LocaleEntry[] = [
   { code: 'en-US', nativeName: 'English', shortTag: 'EN' },
   { code: 'es', nativeName: 'Español', shortTag: 'ES' },
+  { code: 'fr', nativeName: 'Français', shortTag: 'FR' },
+  { code: 'de', nativeName: 'Deutsch', shortTag: 'DE' },
+  { code: 'pt-BR', nativeName: 'Português', shortTag: 'PT' },
+  { code: 'it', nativeName: 'Italiano', shortTag: 'IT' },
+  { code: 'sr-Latn', nativeName: 'Serbian', shortTag: 'SR' },
+  { code: 'sr-Cyrl', nativeName: 'Српски', shortTag: 'СР' },
+  { code: 'zh-CN', nativeName: '简体中文', shortTag: 'ZH' },
+  { code: 'ja', nativeName: '日本語', shortTag: 'JA' },
+  { code: 'ko', nativeName: '한국어', shortTag: 'KO' },
+  { code: 'hi', nativeName: 'हिन्दी', shortTag: 'HI' },
+  { code: 'ar', nativeName: 'العربية', shortTag: 'AR' },
+  { code: 'ru', nativeName: 'Русский', shortTag: 'RU' },
 ] as const;
 
 export const DEFAULT_LOCALE: LocaleCode = 'en-US';
 
 const SUPPORTED_CODES = new Set<string>(SUPPORTED_LOCALES.map((l) => l.code));
+const RTL_LOCALES = new Set<LocaleCode>(['ar']);
 
 /** Type guard: is the string a known locale code? */
 export function isSupportedLocale(code: string | null | undefined): code is LocaleCode {
@@ -98,4 +123,20 @@ export function resolveLocale(
 export function localeFromPage(page: Page): LocaleCode {
   if (!browser) return DEFAULT_LOCALE;
   return resolveLocale(page.url, navigator.language);
+}
+
+/** True when locale should render with right-to-left document flow. */
+export function isRtlLocale(locale: LocaleCode): boolean {
+  return RTL_LOCALES.has(locale);
+}
+
+/**
+ * Mirrors language + direction on <html> for runtime locale changes.
+ * Keeps `?lang=` as source-of-truth while allowing CSS logical mirroring.
+ */
+export function syncDocumentLocaleAttributes(locale: LocaleCode): void {
+  if (!browser) return;
+  const root = document.documentElement;
+  root.setAttribute('lang', locale);
+  root.setAttribute('dir', isRtlLocale(locale) ? 'rtl' : 'ltr');
 }

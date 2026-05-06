@@ -1,0 +1,19 @@
+{
+  "name": "오러리 데모",
+  "dep_label": "지구 출발",
+  "arr_label": "지구 귀환",
+  "events": [
+    { "met": 0, "label": "발사", "note": "팰컨 헤비 발사. 자유 귀환 — 착륙 없음.", "type": "nominal" },
+    { "met": 0.4, "label": "TMI 연소", "note": "화성 이행 주입: 3.61 km/s. 탈출 속도 달성.", "type": "nominal" },
+    { "met": 1, "label": "1일차 점검", "note": "첫 계통 건강 점검 완료. 모두 정상.", "type": "nominal" },
+    { "met": 60, "label": "TCM-1", "note": "경로 중간 수정 1: 35 m/s.", "type": "nominal" },
+    { "met": 200, "label": "크루즈", "note": "외향 크루즈. 지구가 멀어진다.", "type": "info" },
+    { "met": 220, "label": "통신 이상", "note": "X-band 신호 단절 8초. DSN 재수신. 원인: 추진기 플룸이 안테나를 가림. 데이터 손실 없음.", "type": "warning" },
+    { "met": 259, "label": "화성 근접 비행", "note": "최근접: 고도 약 300 km. 중력 보조로 귀환 궤도 진입.", "type": "nominal" },
+    { "met": 260, "label": "귀환 궤도", "note": "자유 귀환 중력 보조 완료. 지구 방향 궤도.", "type": "nominal" },
+    { "met": 310, "label": "경로 중간 3", "note": "TCM-3: 22 m/s. 귀환 궤도 수정.", "type": "nominal" },
+    { "met": 400, "label": "귀환 중간", "note": "귀환 여정의 중간점 통과.", "type": "info" },
+    { "met": 480, "label": "재진입 준비", "note": "최종 접근. 방열판 점검.", "type": "nominal" },
+    { "met": 509, "label": "지구 도착", "note": "대기 재진입. 임무 완료.", "type": "nominal" }
+  ]
+}

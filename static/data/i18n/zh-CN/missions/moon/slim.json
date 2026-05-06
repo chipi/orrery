@@ -1,0 +1,14 @@
+{
+  "name": "SLIM",
+  "type": "PRECISION LANDER · ACTIVE",
+  "first": "First precision landing within 100 m of target on another world",
+  "description": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "H-IIA 202 from Tanegashima 2023-09-06.", "type": "nominal" },
+    { "met": 90, "label": "BALLISTIC TRANSFER", "note": "Low-energy ballistic capture trajectory in progress.", "type": "info" },
+    { "met": 130, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 135, "label": "TOUCHDOWN", "note": "Soft-landing at Shioli Crater 2024-01-19 15:20 UTC. Within target accuracy: ~55 m off centre.", "type": "nominal" },
+    { "met": 135.01, "label": "TILTED LANDING", "note": "Lander resting nose-down due to engine anomaly during final descent. Solar panels initially in shadow.", "type": "warning" },
+    { "met": 144, "label": "POWER RESUMED", "note": "Sun angle changes; solar panels generate power; operations resumed for one lunar day.", "type": "info" }
+  ]
+}

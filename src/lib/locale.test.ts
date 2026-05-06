@@ -3,15 +3,28 @@ import {
   DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
   isSupportedLocale,
+  isRtlLocale,
   normaliseBrowserLocale,
   resolveLocale,
 } from './locale';
 
 describe('SUPPORTED_LOCALES', () => {
-  it('includes en-US and es', () => {
+  it('includes all configured rollout locales', () => {
     const codes = SUPPORTED_LOCALES.map((l) => l.code);
     expect(codes).toContain('en-US');
     expect(codes).toContain('es');
+    expect(codes).toContain('fr');
+    expect(codes).toContain('de');
+    expect(codes).toContain('pt-BR');
+    expect(codes).toContain('it');
+    expect(codes).toContain('sr-Latn');
+    expect(codes).toContain('sr-Cyrl');
+    expect(codes).toContain('zh-CN');
+    expect(codes).toContain('ja');
+    expect(codes).toContain('ko');
+    expect(codes).toContain('hi');
+    expect(codes).toContain('ar');
+    expect(codes).toContain('ru');
   });
 
   it('every entry has a non-empty native name and short tag', () => {
@@ -26,9 +39,21 @@ describe('isSupportedLocale', () => {
   it('accepts known codes', () => {
     expect(isSupportedLocale('en-US')).toBe(true);
     expect(isSupportedLocale('es')).toBe(true);
+    expect(isSupportedLocale('fr')).toBe(true);
+    expect(isSupportedLocale('de')).toBe(true);
+    expect(isSupportedLocale('pt-BR')).toBe(true);
+    expect(isSupportedLocale('it')).toBe(true);
+    expect(isSupportedLocale('sr-Latn')).toBe(true);
+    expect(isSupportedLocale('sr-Cyrl')).toBe(true);
+    expect(isSupportedLocale('zh-CN')).toBe(true);
+    expect(isSupportedLocale('ja')).toBe(true);
+    expect(isSupportedLocale('ko')).toBe(true);
+    expect(isSupportedLocale('hi')).toBe(true);
+    expect(isSupportedLocale('ar')).toBe(true);
+    expect(isSupportedLocale('ru')).toBe(true);
   });
   it('rejects unknown / empty / null', () => {
-    expect(isSupportedLocale('fr')).toBe(false);
+    expect(isSupportedLocale('xx')).toBe(false);
     expect(isSupportedLocale('')).toBe(false);
     expect(isSupportedLocale(null)).toBe(false);
     expect(isSupportedLocale(undefined)).toBe(false);
@@ -39,6 +64,9 @@ describe('normaliseBrowserLocale', () => {
   it('exact match returns the code', () => {
     expect(normaliseBrowserLocale('en-US')).toBe('en-US');
     expect(normaliseBrowserLocale('es')).toBe('es');
+    expect(normaliseBrowserLocale('pt-BR')).toBe('pt-BR');
+    expect(normaliseBrowserLocale('sr-Latn')).toBe('sr-Latn');
+    expect(normaliseBrowserLocale('sr-Cyrl')).toBe('sr-Cyrl');
   });
   it('language-prefix matches Spanish variants', () => {
     expect(normaliseBrowserLocale('es-ES')).toBe('es');
@@ -50,10 +78,17 @@ describe('normaliseBrowserLocale', () => {
     expect(normaliseBrowserLocale('en-GB')).toBe('en-US');
   });
   it('returns null for unsupported language prefixes', () => {
-    expect(normaliseBrowserLocale('fr-FR')).toBe(null);
-    expect(normaliseBrowserLocale('ja')).toBe(null);
+    expect(normaliseBrowserLocale('bn')).toBe(null);
     expect(normaliseBrowserLocale('')).toBe(null);
     expect(normaliseBrowserLocale(undefined)).toBe(null);
+  });
+});
+
+describe('isRtlLocale', () => {
+  it('returns true only for Arabic', () => {
+    expect(isRtlLocale('ar')).toBe(true);
+    expect(isRtlLocale('en-US')).toBe(false);
+    expect(isRtlLocale('ru')).toBe(false);
   });
 });
 
@@ -63,7 +98,7 @@ describe('resolveLocale', () => {
     expect(resolveLocale(url, 'fr-FR')).toBe('es');
   });
   it('URL ?lang= ignored when unsupported; falls back to browser', () => {
-    const url = new URL('https://orrery.local/explore?lang=fr');
+    const url = new URL('https://orrery.local/explore?lang=xx');
     expect(resolveLocale(url, 'es-MX')).toBe('es');
   });
   it('browser language used when no URL ?lang=', () => {
@@ -72,7 +107,7 @@ describe('resolveLocale', () => {
   });
   it('falls back to DEFAULT_LOCALE when neither URL nor browser supplies a supported locale', () => {
     const url = new URL('https://orrery.local/explore');
-    expect(resolveLocale(url, 'ja-JP')).toBe(DEFAULT_LOCALE);
+    expect(resolveLocale(url, 'bn-BD')).toBe(DEFAULT_LOCALE);
     expect(resolveLocale(url, undefined)).toBe(DEFAULT_LOCALE);
   });
 });

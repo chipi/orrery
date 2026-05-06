@@ -1,0 +1,33 @@
+{
+  "name": "Vênus",
+  "type": "Planeta terrestre",
+  "fact": "Pressão superficial 90× a da Terra. As sondas soviéticas Venera duraram de 23 a 127 minutos antes de serem esmagadas.",
+  "bio": "Gira retrógrada – para trás e tão lentamente que um dia venusiano é mais longo que o seu ano. A inclinação axial de 177,4° é a razão: Vênus está essencialmente de cabeça para baixo.",
+  "links": [
+    {
+      "l": "Vênus - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "Vênus (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Programa Vênus - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERDADE (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "Estufa descontrolada de Vênus (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ]
+}

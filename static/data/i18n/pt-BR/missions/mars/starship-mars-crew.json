@@ -1,0 +1,56 @@
+{
+  "name": "Tripulação da nave estelar Marte",
+  "type": "RETORNO DE AMOSTRA TRIPULADA · CONCEITO",
+  "first": "Primeira proposta de missão tripulada de retorno a Marte (arquitetura SpaceX)",
+  "description": "A arquitetura tripulada de Marte de SpaceX conforme descrito nas apresentações IAC de Elon Musk em 2016, 2017 e 2024. Uma nave estelar decola da Terra totalmente abastecida em órbita baixa da Terra por meio de uma frota de voos de reabastecimento, realiza injeção transmarciana e pousa uma tripulação de cerca de 10 pessoas com carga e equipamento ISRU na superfície marciana. O propelente de retorno (metano + oxigênio líquido) é fabricado em Marte a partir de CO₂ atmosférico e gelo de água subterrânea por meio do processo Sabatier, permitindo que a mesma nave decole novamente, execute a injeção trans-Terra e devolva a tripulação. A duração da viagem de ida e volta depende da janela de lançamento e da permanência na superfície; o cronograma ilustrativo mostrado aqui é de aproximadamente 2,5 anos de porta em porta (213 dias de saída, aproximadamente 500 dias de permanência na superfície, retorno na próxima janela favorável). A arquitetura é conceitual - data e parâmetros sujeitos a revisão substancial enquanto se aguarda a maturação da nave estelar e validação ISRU.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO DA NAVE",
+      "note": "Um navio tripulado sai de Boca Chica ou Cabo Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "REABASTECIMENTO ORBITAL",
+      "note": "Encontro da frota de petroleiros e transferência de propelente em LEO em vários voos.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "QUEIMADURA DE TMI",
+      "note": "Injeção Trans-Mars do estado LEO totalmente abastecido.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "ATERRAGEM EM MARTE",
+      "note": "Descida motorizada até a superfície de Marte – sem pára-quedas, sem airbags, sem guindaste celeste.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "PROPÓSITO DE RETORNO COMPLETO",
+      "note": "A planta ISRU produziu metano + LOX suficiente para propulsor de viagem de retorno.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "TEI QUEIMAR",
+      "note": "Injeção Trans-Terra – A nave estelar decola da superfície de Marte e queima para a trajetória de retorno à Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "CHEGADA À TERRA",
+      "note": "Entrada atmosférica. Missão concluída.",
+      "type": "info"
+    }
+  ]
+}

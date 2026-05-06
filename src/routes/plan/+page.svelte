@@ -614,7 +614,7 @@
   });
 </script>
 
-<svelte:head><title>Mission Configurator · Orrery</title></svelte:head>
+<svelte:head><title>{m.plan_page_title()}</title></svelte:head>
 
 <div class="plan">
   <div class="plot-area">
@@ -815,7 +815,7 @@
                 href={link.u}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="{link.l} (opens in new tab)"
+                aria-label={m.plan_link_opens_new_tab({ label: link.l })}
               >
                 {link.l} ↗
               </a>

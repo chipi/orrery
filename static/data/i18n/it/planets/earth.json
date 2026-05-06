@@ -1,0 +1,33 @@
+{
+  "name": "Terra",
+  "type": "Home · Orbita di riferimento",
+  "fact": "Ogni essere umano che abbia mai vissuto lo ha fatto qui. L'orbita di riferimento in base alla quale vengono misurate tutte le altre.",
+  "bio": "L’inclinazione assiale di 23,44° crea le stagioni, non la distanza dal Sole. La Terra è in realtà più vicina al Sole a gennaio che a luglio.",
+  "links": [
+    {
+      "l": "Terra – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "Terra (NASA Esplorazione del sistema solare)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Sistema di osservazione della Terra (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Perché la Terra ha le stagioni (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "Pale Blue Dot – Riflessione di Carl Sagan (Planetary Society)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ]
+}

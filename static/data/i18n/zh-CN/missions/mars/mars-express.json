@@ -1,0 +1,13 @@
+{
+  "name": "Mars Express",
+  "type": "ORBITER · ACTIVE",
+  "first": "Europe's first interplanetary mission; longest-running non-NASA Mars orbiter",
+  "description": "ESA's first mission to a planet other than Earth. The orbiter has produced the longest continuous record of Mars's atmosphere, mapping water ice deposits, methane plumes, and the planet's three-dimensional weather. Beagle 2, the British-built lander it carried, reached the surface but never deployed solar panels fully — declared lost in 2004, found intact by NASA's Mars Reconnaissance Orbiter in 2015. The orbiter is in its third decade of operation.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Soyuz-FG / Fregat from Baikonur.", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 200, "label": "BEAGLE 2 RELEASE", "note": "Lander separates from orbiter for independent descent.", "type": "nominal" },
+    { "met": 206, "label": "MARS ORBIT INSERTION", "note": "37-minute main engine burn captures orbiter into Mars orbit on Christmas Day 2003.", "type": "nominal" },
+    { "met": 212, "label": "BEAGLE 2 SILENT", "note": "Expected first signal not received; lander declared lost.", "type": "warning" }
+  ]
+}

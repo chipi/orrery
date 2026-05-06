@@ -1,0 +1,79 @@
+{
+  "name": "ORRERY-DEMO",
+  "dep_label": "Erdabt",
+  "arr_label": "Rückkehr zur Erde",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Falcon Heavy hebt ab. Freier Rückflug – keine Landung.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.4,
+      "label": "TMI-VERBRENNUNG",
+      "note": "Trans-Mars-Injektion: 3,61 km/s. Fluchtgeschwindigkeit erreicht.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TAG 1 CHECK",
+      "note": "Erster Systemzustandscheck abgeschlossen. Alles nominell.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Mittelkurskorrektur 1: 35 m/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "KREUZFAHRT",
+      "note": "Hinflugkreuzfahrt. Die Erde wird immer weiter entfernt.",
+      "type": "info"
+    },
+    {
+      "met": 220,
+      "label": "Kommunikationsfehler",
+      "note": "Kurzzeitiger X-Band-Signalausfall (8 s). DSN erneut erworben. Ursache: Verstopfung der Triebwerksfahne. Keine Daten verloren.",
+      "type": "warning"
+    },
+    {
+      "met": 259,
+      "label": "Vorbeiflug am Mars",
+      "note": "Nächste Annäherung: ~300 km Höhe. Die Schwerkraftunterstützung leitet die Rückkehr ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 260,
+      "label": "RÜCKKEHRFLUGBAHN",
+      "note": "Freie Rücklauf-Schwerkraftunterstützung komplett. Raumschiff auf der Flugbahn der Erde.",
+      "type": "nominal"
+    },
+    {
+      "met": 310,
+      "label": "MITTELKURS 3",
+      "note": "TCM-3: 22 m/s. Rückkehrflugbahn korrigiert.",
+      "type": "nominal"
+    },
+    {
+      "met": 400,
+      "label": "Auf halbem Weg nach Hause",
+      "note": "Nach der Hälfte der Rückreise.",
+      "type": "info"
+    },
+    {
+      "met": 480,
+      "label": "VORBEREITUNG ZUM WIEDEREINTRITT",
+      "note": "Endgültiger Ansatz. Überprüfung des Hitzeschildes.",
+      "type": "nominal"
+    },
+    {
+      "met": 509,
+      "label": "ANKUNFT AUF DER ERDE",
+      "note": "Stimmungsvoller Auftritt. Mission abgeschlossen.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "MAGRO",
+  "type": "LANDER DE PRECISÃO · ATIVO",
+  "first": "Primeiro pouso de precisão a 100 m do alvo em outro mundo",
+  "description": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua, demorando 135 dias para chegar, mas usando menos propulsor do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "H-IIA 202 de Tanegashima 09/06/2023.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "TRANSFERÊNCIA BALÍSTICA",
+      "note": "Trajetória de captura balística de baixa energia em andamento.",
+      "type": "info"
+    },
+    {
+      "met": 130,
+      "label": "MOI",
+      "note": "Inserção da órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 135,
+      "label": "ATERRAGEM",
+      "note": "Pouso suave na cratera Shioli 19/01/2024 15:20 UTC. Precisão do alvo: ~55 m fora do centro.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.01,
+      "label": "ATERRAGEM INCLINADA",
+      "note": "Lander descansando com o nariz para baixo devido a uma anomalia no motor durante a descida final. Painéis solares inicialmente na sombra.",
+      "type": "warning"
+    },
+    {
+      "met": 144,
+      "label": "ENERGIA RETOMADA",
+      "note": "Mudanças no ângulo do sol; painéis solares geram energia; as operações foram retomadas por um dia lunar.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "DEMO DELL'ORRERY",
+  "dep_label": "Terra dip",
+  "arr_label": "Terra ritorno",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Falcon Heavy decolla. Ritorno gratuito: nessun atterraggio.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.4,
+      "label": "BRUCIATURA TMI",
+      "note": "Iniezione Trans-Mars: 3,61 km/s. Velocità di fuga raggiunta.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "GIORNO 1 CHECK",
+      "note": "Primo controllo dello stato dei sistemi completato. Tutto nominale.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "MTC-1",
+      "note": "Correzione a metà percorso 1: 35 m/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "CROCIERA",
+      "note": "Crociera di andata. La Terra si allontana.",
+      "type": "info"
+    },
+    {
+      "met": 220,
+      "label": "PROBLEMA DELLE COMUNICAZIONI",
+      "note": "Breve interruzione del segnale in banda X (8 s). DSN riacquistato. Causa: occlusione del pennacchio del propulsore. Nessun dato perso.",
+      "type": "warning"
+    },
+    {
+      "met": 259,
+      "label": "MARTE FLYBY",
+      "note": "Avvicinamento più vicino: ~300 km di altitudine. L'assistenza gravitazionale avvia il ritorno.",
+      "type": "nominal"
+    },
+    {
+      "met": 260,
+      "label": "TRAIETTORIA DI RITORNO",
+      "note": "Assistenza gravitazionale con ritorno libero completata. Veicolo spaziale sulla traiettoria della Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 310,
+      "label": "METÀ CORSO 3",
+      "note": "TCM-3: 22 m/s. Traiettoria di Ritorno corretta.",
+      "type": "nominal"
+    },
+    {
+      "met": 400,
+      "label": "A METÀ CASA",
+      "note": "Punto medio passato del viaggio di ritorno.",
+      "type": "info"
+    },
+    {
+      "met": 480,
+      "label": "PREPARAZIONE DEL RIENTRO",
+      "note": "Approccio finale. Controlli dello scudo termico.",
+      "type": "nominal"
+    },
+    {
+      "met": 509,
+      "label": "TERRA ARRIVO",
+      "note": "Ingresso atmosferico. Missione completata.",
+      "type": "nominal"
+    }
+  ]
+}

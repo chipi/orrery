@@ -1,0 +1,34 @@
+{
+  "name": "Mars",
+  "type": "Cilj misije",
+  "fact": "Prozori za lansiranje Zemlje-Marsa otvaraju se svakih 26 meseci — vođeni orbitalnom rezonancom. Propusti prozor i čekaj dve godine.",
+  "bio": "Najveći ekscentricitet unutrašnjih planeta (e=0,093). Mars je 25% udaljeniji od Zemlje u afelu nego u perihelu — zato su prozori za lansiranje toliko važni.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Mars - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Mars (__ACR0__ istraživanje solarnog sistema)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Program istraživanja Marsa (__ACR0__)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Prozori za lansiranje Zemlje-Marsa - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Istorija klime Marsa (Nauka 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

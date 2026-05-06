@@ -1,0 +1,38 @@
+{
+  "name": "Éclaireur de Mars",
+  "type": "LANDER · ROVER · VOLÉ",
+  "first": "Premières roues sur Mars ; démonstration d'atterrissage avec airbag",
+  "description": "La mission qui a prouvé que les missions interplanétaires bon marché pouvaient fonctionner. Pathfinder a utilisé un nouveau système d'atterrissage avec airbag – rebondissant des dizaines de fois sur la surface avant de s'immobiliser – et a livré Sojourner, le premier rover à opérer sur une autre planète. Sojourner a parcouru 100 m, examiné une douzaine de roches et travaillé bien au-delà de sa durée de vie nominale de 7 jours. Pathfinder a fonctionné pendant 2 mois 27 jours ; le succès de la mission a relancé le programme interplanétaire de NASA après les échecs des années 1990.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Delta II 7925 depuis Cap Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "MTC-1",
+      "note": "Première correction de trajectoire.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "JDE",
+      "note": "Entrée atmosphérique directe – pas d’insertion sur orbite. Bouclier thermique, parachute, rétro-fusées, puis gonflement de l'airbag.",
+      "type": "nominal"
+    },
+    {
+      "met": 212.01,
+      "label": "ATTERRISSAGE",
+      "note": "Lander rebondit 15 fois sur Ares Vallis avant de s'immobiliser.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SÉJOURNEUR DÉPLOYÉ",
+      "note": "Premières roues sur une autre planète.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Ausdauer",
+  "type": "ROVER · AKTIV",
+  "first": "Erster Hubschrauber auf einem anderen Planeten (Ingenuity); erste Probenzwischenspeicherung für Mars Sample Return",
+  "description": "Perseverance ist die ehrgeizigste Marsoberflächenmission, die jemals geflogen wurde. Davon hängt die Mars-Probenrückgabe ab – der Rover sammelt und speichert Proben in Röhrchen, die eine zukünftige Mission holen und zur Erde bringen wird. Ingenuity, der erste Hubschrauber auf einem anderen Planeten, flog 72 Missionen, bevor er im Januar 2024 mit beschädigten Rotoren in den Ruhestand ging – ein Beweis dafür, dass kontrollierter Flug in der dünnen Atmosphäre des Mars möglich ist. MOXIE, ein Sauerstoff-aus-CO2-Demonstrator, produzierte den ersten lokal hergestellten Sauerstoff auf einem anderen Planeten, eine Probe für bemannte Marsmissionen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 541 von Cape Canaveral SLC-41 – gleiche Fahrzeugklasse wie Curiosity.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI-VERBRENNUNG",
+      "note": "Trans-Mars-Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Sky-Crane liefert Rover zum Jezero-Krater 18.02.2021 – Standort eines alten Flussdeltas.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "LANDUNG",
+      "note": "Perseverance landet um 20:55 UTC in Jezero.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "Einfallsreichtum erster Flug",
+      "note": "Erster kontrollierter Motorflug auf einem anderen Planeten – 39,1 Sekunden in bis zu 5 m Höhe.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "INGENUITY IM RUHESTAND",
+      "note": "Rotorblatt beim 72. Flug beschädigt 18.01.2024; Der Hubschrauber bleibt als Kommunikationsrelais einsatzbereit.",
+      "type": "info"
+    }
+  ]
+}

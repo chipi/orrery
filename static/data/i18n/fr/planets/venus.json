@@ -1,0 +1,33 @@
+{
+  "name": "Vénus",
+  "type": "Planète terrestre",
+  "fact": "Pression de surface 90 × celle de la Terre. Les sondes soviétiques Venera ont duré 23 à 127 minutes avant d'être écrasées.",
+  "bio": "Rotation rétrograde – vers l’arrière et si lentement qu’un jour vénusien est plus long que son année. L’inclinaison axiale de 177,4° en est la raison : Vénus est essentiellement à l’envers.",
+  "links": [
+    {
+      "l": "Vénus — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "Vénus (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Programme Venera — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITAS (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "La serre incontrôlable de Vénus (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ]
+}

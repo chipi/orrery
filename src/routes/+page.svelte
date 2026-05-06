@@ -1,6 +1,10 @@
-<svelte:head><title>Orrery</title></svelte:head>
+<script lang="ts">
+  import * as m from '$lib/paraglide/messages';
+</script>
 
-<p>Redirecting…</p>
+<svelte:head><title>{m.landing_page_title()}</title></svelte:head>
+
+<p>{m.landing_redirecting()}</p>
 
 <style>
   p {

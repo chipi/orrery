@@ -1,0 +1,38 @@
+{
+  "name": "Mars 3",
+  "type": "ORBITEUR · ATTERRISSEUR · VOLÉ",
+  "first": "Premier vaisseau spatial à atterrir en douceur sur Mars",
+  "description": "L'audacieuse double mission de l'Union soviétique vers Mars en 1971 : Mars 2 et Mars 3 ont été lancées à 9 jours d'intervalle. L'atterrisseur de Mars 2 s'est écrasé ; L'atterrisseur de Mars 3 a réalisé le premier atterrissage en douceur sur Mars, mais n'a transmis son message que pendant environ 110 secondes avant la perte du signal, probablement en raison de la tempête de poussière mondiale qui faisait rage à l'époque. L'orbiteur a fonctionné pendant 8 mois, renvoyant des centaines d'images et de mesures atmosphériques. Malgré la brève mission en surface, Mars 3 a démontré que le problème de la descente et de l'atterrissage sur Mars était résoluble.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Proton-K avec étage supérieur Blok-D de Baïkonour.",
+      "type": "nominal"
+    },
+    {
+      "met": 188,
+      "label": "ORBITEUR MOI",
+      "note": "Orbiter se met en orbite sur Mars pendant une tempête de poussière mondiale.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.05,
+      "label": "SÉPARATION DES TERRES",
+      "note": "Lander se sépare et commence l'entrée atmosphérique.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.1,
+      "label": "CONTACT SURFACES",
+      "note": "Premier atterrissage en douceur sur Mars ; la transmission commence.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.101,
+      "label": "PERTE DE SIGNAL",
+      "note": "Après environ 110 secondes, le signal s'est arrêté définitivement. Cause non confirmée ; La tempête de poussière est le principal suspect.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Clémentine",
+  "type": "ORBITEUR · VOLÉ",
+  "first": "Mission lunaire conjointe NASA-DoD ; premiers indices de glace d'eau aux pôles lunaires",
+  "description": "Conçu principalement comme un démonstrateur technologique de l'Initiative de Défense Stratégique, Clementine a passé 10 semaines en orbite lunaire et a renvoyé la première carte topographique et multispectrale mondiale systématique de la Lune. Les mesures radar bistatiques au pôle sud lunaire ont produit les premiers indices alléchants de glace d'eau – confirmés des années plus tard par Lunar Prospector et Chandrayaan-1. La mission de suivi visant à survoler l'astéroïde Geographos a échoué lorsqu'un dysfonctionnement du propulseur a épuisé le propulseur du vaisseau spatial.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan II G de Vandenberg AFB.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire 1994-02-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "DÉBUT DE LA CARTOGRAPHIE",
+      "note": "La cartographie multispectrale et topographique systématique démarre.",
+      "type": "info"
+    },
+    {
+      "met": 95,
+      "label": "DÉPART",
+      "note": "Départ de l’orbite lunaire pour le survol de l’astéroïde Geographos.",
+      "type": "nominal"
+    },
+    {
+      "met": 100,
+      "label": "PANNE DU PROPULSEUR",
+      "note": "Un dysfonctionnement du propulseur embarqué épuise le propulseur ; rencontre avec un astéroïde annulée.",
+      "type": "warning"
+    }
+  ]
+}

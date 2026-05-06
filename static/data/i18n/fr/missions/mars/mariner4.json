@@ -1,0 +1,32 @@
+{
+  "name": "Marin 4",
+  "type": "SURVOL · VOLÉ",
+  "first": "Premier vaisseau spatial à atteindre Mars et à renvoyer des images rapprochées d'une autre planète",
+  "description": "La mission qui a mis fin aux rêves d'un Mars habitable. Les 22 images granuleuses de Mariner 4, prises lors d'une approche au plus près de 25 minutes à 9 846 km d'altitude, montraient une surface de cratère ressemblant à la Lune – sans canaux, sans végétation, sans vie évidente. L’atmosphère était 100 fois plus fine que prévu. La découverte a transformé Mars dans l’imaginaire public, passant d’une Terre sœur à un monde mort. Le suivi du vaisseau spatial a également produit la première mesure de la structure du vent solaire entre les planètes.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas LV-3 Agena-D décolle de Cap Canaveral LC-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours terminée ; trajectoire verrouillée.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "SURVOL DE MARS",
+      "note": "Approche la plus proche 9 846 km. 22 images renvoyées sur 8 heures lors de la lecture des données.",
+      "type": "nominal"
+    },
+    {
+      "met": 228.5,
+      "label": "PREMIÈRES IMAGES",
+      "note": "Premières images en gros plan d’une autre planète jamais revenues sur Terre.",
+      "type": "info"
+    }
+  ]
+}

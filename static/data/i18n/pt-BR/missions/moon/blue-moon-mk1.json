@@ -1,0 +1,38 @@
+{
+  "name": "Lua Azul MK1",
+  "type": "LANDER DE CARGA · PLANEJADO",
+  "first": "Primeiro vôo da arquitetura do módulo lunar Blue Moon da Blue Origin",
+  "description": "O primeiro módulo de pouso Blue Moon de carga da Blue Origin, contratado sob o programa Commercial Lunar Payload Services (CLPS) de NASA. Um veículo de descida de estágio único movido pelo motor criogênico BE-7, projetado para entregar até aproximadamente 3 toneladas de carga útil à superfície lunar. É lançado no New Glenn da Blue Origin a partir do Cabo Canaveral, realiza injeção translunar no segundo estágio de New Glenn e, em seguida, executa a inserção na órbita lunar e a descida motorizada. O voo de carga Mark 1 precede o Mark 2 com classificação humana, que é contratado para apoiar o pouso lunar tripulado do Artemis V do NASA.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO DO NOVO GLENN",
+      "note": "Decola do Cabo Canaveral LC-36; retornos do primeiro estágio para recuperação downrange.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2,
+      "label": "TLI",
+      "note": "O segundo estágio do novo Glenn realiza queima de injeção translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LOI",
+      "note": "Inserção na órbita lunar via motor principal BE-7.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "DESCIDA ALIMENTADA",
+      "note": "BE-7 acelerou a descida à superfície lunar – primeiro pouso lunar da Blue Origin.",
+      "type": "info"
+    }
+  ]
+}

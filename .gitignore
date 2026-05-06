@@ -22,3 +22,9 @@ playwright/.cache/
 
 # Claude Code local state (per-user; runtime locks etc.)
 .claude/
+
+# Argos Translate (scripts/wave23/argos_translate_wave23.py)
+.venv-argos/
+.xdg-data/
+.xdg-config/
+.xdg-cache/

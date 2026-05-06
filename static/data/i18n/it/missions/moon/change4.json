@@ -1,0 +1,32 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "LANDER LATO LONTANO · ROVER · ATTIVO",
+  "first": "Primo atterraggio morbido sul lato nascosto della Luna",
+  "description": "Il lato nascosto della Luna non ha una linea di vista radio diretta con la Terra. Per far atterrare un veicolo spaziale lì, la Cina ha prima lanciato il satellite relè Queqiao in un’orbita attorno al punto Lagrange Terra-Luna L2, un punto di osservazione che vede contemporaneamente sia il lato lontano che la Terra. Con questa infrastruttura in atto, Chang'e 4 divenne il primo veicolo spaziale ad atterrare dolcemente sul lato opposto. Il rover Yutu-2 è operativo da gennaio 2019 e ha percorso oltre 1,9 km, la traversata più lunga di qualsiasi rover lunare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Lunga Marcia 3B da Xichang.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "TOCCO",
+      "note": "Il lander atterra al cratere Von Kármán 03-01-2019: la prima navicella spaziale sul lato opposto. Tutte le comunicazioni tramite relè Queqiao su Terra-Luna L2.",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "YUTU-2 SCHIERATO",
+      "note": "Il Rover rotola giù dalla rampa.",
+      "type": "info"
+    }
+  ]
+}

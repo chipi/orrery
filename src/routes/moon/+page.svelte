@@ -886,7 +886,7 @@
   onDestroy(() => cleanup?.());
 </script>
 
-<svelte:head><title>Moon Map · Orrery</title></svelte:head>
+<svelte:head><title>{m.moon_page_title()}</title></svelte:head>
 
 <div class="moon">
   <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
@@ -898,7 +898,7 @@
   ></canvas>
 
   <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4). -->
-  <div class="hud-controls" role="group" aria-label="View controls">
+  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
       <button
         type="button"
@@ -910,14 +910,14 @@
         {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
       </button>
     </div>
-    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button
         type="button"
         class="chip"
         class:active={layerSurface}
         aria-pressed={layerSurface}
         onclick={() => (layerSurface = !layerSurface)}
-        title="Show or hide landers, rovers, and crashed surface vehicles"
+        title={m.moon_layer_tip_surface()}
         data-testid="layer-surface"
       >
         {m.ui_layer_surface()}
@@ -928,7 +928,7 @@
         class:active={layerOrbiters}
         aria-pressed={layerOrbiters}
         onclick={() => (layerOrbiters = !layerOrbiters)}
-        title="Show or hide active and historical lunar orbiters"
+        title={m.moon_layer_tip_orbiters()}
         data-testid="layer-orbiters"
       >
         {m.ui_layer_orbiters()}
@@ -939,7 +939,7 @@
         class:active={layerOrbits}
         aria-pressed={layerOrbits}
         onclick={() => (layerOrbits = !layerOrbits)}
-        title="Show or hide the orbital ring lines (the spacecraft remain visible)"
+        title={m.moon_layer_tip_orbit_rings()}
         data-testid="layer-orbits"
       >
         {m.ui_layer_orbits()}
@@ -956,7 +956,7 @@
        scene that can't host text reliably, so we mirror the legend as
        a CSS overlay. Same NATION_COLORS keep the two views in sync. -->
   {#if view === '3d'}
-    <div class="legend-3d" aria-label="Nation legend">
+    <div class="legend-3d" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(NATION_COLORS) as [nation, color] (nation)}
         <span class="legend-item">
           <span class="legend-dot" style:background={color}></span>
@@ -1027,15 +1027,15 @@
           {#if selected.kind === 'orbiter'}
             <!-- Orbiter cells: altitude + inclination instead of lat/lon. -->
             <div class="cell">
-              <div class="cell-label">ALTITUDE</div>
+              <div class="cell-label">{m.earth_panel_alt()}</div>
               <div class="cell-value">{selected.altitude_km?.toLocaleString() ?? '—'} km</div>
             </div>
             <div class="cell">
-              <div class="cell-label">INCLINATION</div>
+              <div class="cell-label">{m.panel_label_inclination()}</div>
               <div class="cell-value">{selected.inclination_deg?.toFixed(1) ?? '—'}°</div>
             </div>
             <div class="cell">
-              <div class="cell-label">STATUS</div>
+              <div class="cell-label">{m.moon_panel_status()}</div>
               <div class="cell-value short">{selected.status}</div>
             </div>
           {:else}

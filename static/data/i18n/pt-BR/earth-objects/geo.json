@@ -1,0 +1,6 @@
+{
+  "name": "GEO Cinto",
+  "short": "GEO",
+  "description": "O anel geoestacionário. Exatamente a 35.786 km, o período orbital é igual à rotação da Terra – os satélites parecem fixos no céu. Satélites meteorológicos GOES, Meteosat, milhares de satélites de comunicações. A altitude específica onde a física e a utilidade se alinham perfeitamente.",
+  "scale_fact": "35.786 km não é um número redondo por design - é a altitude exata onde a gravidade e a velocidade orbital se equilibram para dar um período de 24 horas. A física escolheu isso."
+}

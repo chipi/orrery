@@ -1,0 +1,50 @@
+{
+  "name": "Apolo 17",
+  "type": "LANDER SA POSADOM · ROVER · FLOVN",
+  "first": "Poslednja misija sa ljudskom posadom na Mesec (i jedini Apolo sa obučenim geologom)",
+  "description": "Poslednji put kada su ljudi posetili drugi svet — pre više od pola veka. Cernan i Schmitt su proveli 75 sati na površini, vozili LRV 35,7 km i izvukli 110,5 kg uzoraka. Šmit je bio jedini obučeni naučnik (geolog) koji je ikada hodao po Mesecu, a njegovi nalazi - posebno narandžasto vulkansko staklo u Krateru Šorta - preoblikovali su lunarnu geologiju. Cernanove poslednje reči pre penjanja uz merdevine poslednji put: 'Odlazimo kako smo i došli, i ako Bog da da se vratimo.' Artemida III treba da ispuni to obećanje.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Saturn V (AS-512) sa KSC LC-39A 1972-12-07 — Samo noćno lansiranje Apolo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Trans-lunarna injekcija.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Ubacivanje lunarne orbite.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "TOUCHDOVN",
+      "note": "Lunarni modul Challenger sleće u dolinu Taurus-Littrov 1972-12-11 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PRVO VEČE",
+      "note": "Cernan i Schmitt započinju prvi od tri lunarna EVA (ukupno 22h 4m).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "ASCENT",
+      "note": "Cernan: 'Odlazimo kako smo i došli, i ako Bog da, vratićemo se.'",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "SPLASHDOVN",
+      "note": "CM America vraća posadu u Tihi okean 1972-12-19.",
+      "type": "nominal"
+    }
+  ]
+}

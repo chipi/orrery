@@ -1,0 +1,79 @@
+{
+  "name": "ORRERI DEMO",
+  "dep_label": "Earth dep",
+  "arr_label": "Povratak Zemlje",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavi poleće. Besplatan povratak — nema sletanja.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.4,
+      "label": "TMI BURN",
+      "note": "Trans-Mars ubrizgavanje: 3,61 km/s. Postignuta brzina bekstva.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "1. I PROVERA",
+      "note": "Prva provera zdravlja sistema je završena. Sve nominalno.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Korekcija srednjeg kursa 1: 35 m/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "Krstarenje",
+      "note": "Odlazno krstarenje. Zemlja se udaljava.",
+      "type": "info"
+    },
+    {
+      "met": 220,
+      "label": "COMMS GLITCH",
+      "note": "Kratko ispadanje signala Ks opsega (8 s). DSN ponovo nabavljen. Uzrok: okluzija perjanice potisnika. Nema izgubljenih podataka.",
+      "type": "warning"
+    },
+    {
+      "met": 259,
+      "label": "MARS FLIBI",
+      "note": "Najbliži prilaz: ~300 km nadmorske visine. Pomoć gravitacije pokreće povratak.",
+      "type": "nominal"
+    },
+    {
+      "met": 260,
+      "label": "POVRATNA TRAJEKTORIJA",
+      "note": "Pomoć gravitacije za besplatan povratak je završena. Svemirska letelica u Zemljinoj orbiti.",
+      "type": "nominal"
+    },
+    {
+      "met": 310,
+      "label": "SREDNjI KURS 3",
+      "note": "TCM-3: 22 m/s. Povratna putanja je ispravljena.",
+      "type": "nominal"
+    },
+    {
+      "met": 400,
+      "label": "NA POLA KUĆE",
+      "note": "Posle sredine povratnog puta.",
+      "type": "info"
+    },
+    {
+      "met": 480,
+      "label": "RE-ENTRI PREP",
+      "note": "Završni pristup. Provere toplotnog štita.",
+      "type": "nominal"
+    },
+    {
+      "met": 509,
+      "label": "EARTH ARRIVAL",
+      "note": "Atmosferski ulaz. Misija završena.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Apollon 12",
+  "mission_type": "Atterrisseur avec équipage",
+  "site_name": "Océanus Procellarum",
+  "crew": [
+    "Pete Conrad",
+    "Alan Bean"
+  ],
+  "left": "Étape de descente · ALSEP · drapeau · parties récupérées de Surveyor 3",
+  "fact": "L'atterrissage de précision - Conrad a atterri à moins de 183 m de la sonde non équipée Surveyor 3 (1967). Ils en ont récupéré des morceaux pour les retourner sur Terre, montrant que les engins spatiaux survivent des années sur la Lune sans être endommagés par les radiations ou les micrométéorites. Une preuve de concept pour les futures missions de rendez-vous.",
+  "capability": "Premier atterrissage de précision à un point désigné – condition préalable à toute architecture de rendez-vous avec retour d’échantillons, y compris sur Mars."
+}

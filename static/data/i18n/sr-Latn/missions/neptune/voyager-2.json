@@ -1,0 +1,20 @@
+{
+  "name": "Voiager 2",
+  "type": "FLIBI · FLOVN",
+  "first": "Samo svemirske letelice koje posećuju Uran i Neptun; Veliki obilazak četiri džinovske planete",
+  "description": "Blizanac koji je nastavio da radi kada su budžeti smanjeni, Voiager 2 je preneo Veliku turneju od Jupitera i Saturna do Urana i Neptuna - i dalje jedine slike izbliza koje imamo o ledenim divovima. Njegov susret sa Neptunom 1989. otkrio je Veliku tamnu tačku i Tritonove gejzire. Danas, oba Voiagera plove u međuzvezdanom svemiru sa zlatnim rekordom kao vizit karta čovečanstva. Orreri navodi Neptun kao katalošku destinaciju; pravi put se oslanjao na višestruke asistencije gravitacije.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan IIIE podiže Voiager 2 sa Kejp Kanaverala na putanju Grand-Tour-a.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "NEPTUN NAJBLIŽI PRISTUP",
+      "note": "Prolaz Neptuna i velikog meseca Tritona; poslednji planetarni susret Grand Toura.",
+      "type": "nominal"
+    }
+  ]
+}

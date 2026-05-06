@@ -1,0 +1,33 @@
+{
+  "name": "Saturn",
+  "type": "Gasriese · Ringe",
+  "fact": "Die Dichte des Saturn beträgt 0,687 g/cm³ – weniger als die von Wasser. Sein Ringsystem erstreckt sich über 282.000 km, ist aber nur etwa 10 Meter dick.",
+  "bio": "Der Planet mit der geringsten Dichte – er würde auf dem Wasser schwimmen. Das Ringsystem erstreckt sich über 282.000 km, ist aber nur wenige Meter dick. Die Neigung von 26,73° bedeutet, dass die Erde die Ringe auf der 29-jährigen Umlaufbahn des Saturn in unterschiedlichen Winkeln sieht.",
+  "links": [
+    {
+      "l": "Saturn – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Saturn",
+      "t": "intro"
+    },
+    {
+      "l": "Saturn (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "Archiv der Cassini-Mission (NASA)",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Ringe des Saturn – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "t": "core"
+    },
+    {
+      "l": "Saturnringe sind jung (Science 2019)",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ]
+}

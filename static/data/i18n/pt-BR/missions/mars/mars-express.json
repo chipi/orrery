@@ -1,0 +1,38 @@
+{
+  "name": "Marte Expresso",
+  "type": "ÓRBITA · ATIVO",
+  "first": "A primeira missão interplanetária da Europa; Orbitador de Marte não-NASA de maior duração",
+  "description": "A primeira missão de ESA a um planeta diferente da Terra. A espaçonave produziu o registro contínuo mais longo da atmosfera de Marte, mapeando depósitos de gelo de água, plumas de metano e o clima tridimensional do planeta. O Beagle 2, o módulo de pouso construído na Grã-Bretanha que transportava, chegou à superfície, mas nunca implantou totalmente os painéis solares – declarado perdido em 2004, encontrado intacto pelo Mars Reconnaissance Orbiter do NASA em 2015. O orbitador está em sua terceira década de operação.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Soyuz-FG/Fregat de Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "LANÇAMENTO DO BEAGLE 2",
+      "note": "Lander se separa do orbitador para descida independente.",
+      "type": "nominal"
+    },
+    {
+      "met": 206,
+      "label": "INSERÇÃO DA ÓRBITA DE MARTE",
+      "note": "A queima do motor principal de 37 minutos captura o orbitador na órbita de Marte no dia de Natal de 2003.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "BEAGLE 2 SILENCIOSO",
+      "note": "Primeiro sinal esperado não recebido; lander declarado perdido.",
+      "type": "warning"
+    }
+  ]
+}

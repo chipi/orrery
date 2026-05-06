@@ -1,0 +1,44 @@
+{
+  "name": "Inspiration Mars",
+  "type": "SURVOL EN ÉQUIPAGE · CONCEPT",
+  "first": "Première proposition de mission à retour gratuit avec équipage sur Mars (concept, n'a jamais volé)",
+  "description": "Un concept de mission 2013 de la Fondation Inspiration Mars de Dennis Tito pour un survol de Mars avec retour gratuit de 501 jours en équipage ciblant la fenêtre de lancement de 2018. Un équipage de deux personnes (un couple marié a été envisagé pour la stabilité psychologique) se lance sur un Falcon Heavy ou équivalent dans une trajectoire héliocentrique qui tourne autour de Mars sans insertion d'orbite et utilise la gravité de la planète pour revenir sur Terre. La géométrie à retour libre minimise ∆v – aucune insertion sur l’orbite de Mars ni brûlure trans-Terre requise – au prix d’un transit plus long et d’une fenêtre de lancement unique. Le concept n’a pas progressé jusqu’au développement ; elle reste une architecture de référence publiée pour le vol cismartien en équipage.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Lancement du concept sur Falcon Heavy (ou équivalent) sur une trajectoire trans-Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI",
+      "note": "Brûlure par injection Trans-Mars – orbite héliocentrique liée à Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "SURVOL DE MARS",
+      "note": "Approche la plus proche de Mars (~ 100 km d'altitude dans le concept original). Pas d'insertion sur orbite - l'assistance gravitationnelle établit la trajectoire de retour vers la Terre.",
+      "type": "info"
+    },
+    {
+      "met": 350,
+      "label": "À MI-PARcours",
+      "note": "Correction de la trajectoire retour.",
+      "type": "nominal"
+    },
+    {
+      "met": 501,
+      "label": "RENTREE SUR TERRE",
+      "note": "La capsule de retour rentre dans l'atmosphère terrestre à environ 14,2 km/s – l'une des rentrées en équipage les plus rapides jamais proposées.",
+      "type": "info"
+    }
+  ]
+}

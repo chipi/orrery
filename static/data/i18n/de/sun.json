@@ -1,0 +1,33 @@
+{
+  "name": "Die Sonne",
+  "type": "Stern · Hauptreihe vom Typ G",
+  "fact": "Die Sonne enthält 99,86 % der gesamten Masse im Sonnensystem. Seine Schwerkraft hält alles – vom Merkur bis zur Oortschen Wolke – im Orbit. Jede Sekunde verschmilzt es 600 Millionen Tonnen Wasserstoff zu Helium und setzt so die Energie frei, die das Leben auf der Erde seit 4,5 Milliarden Jahren erhält.",
+  "bio": "Ein 4,6 Milliarden Jahre alter Hauptreihenstern vom G-Typ, der die Hälfte seines 10 Milliarden Jahre langen Lebens hinter sich hat. Die Sonne dreht sich unterschiedlich – ihr Äquator benötigt 25 Tage, ihre Pole 35. In etwa 5 Milliarden Jahren wird sie ihren Kernwasserstoff erschöpfen, sich zu einem Roten Riesen ausdehnen und die inneren Planeten verschlingen. Der Gravitationseinfluss der Sonne definiert die Heliosphäre bis etwa 120 AU.",
+  "links": [
+    {
+      "l": "Sonne – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sun",
+      "t": "intro"
+    },
+    {
+      "l": "Die Sonne (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/sun/",
+      "t": "intro"
+    },
+    {
+      "l": "Parker-Solarsonde (NASA)",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "core"
+    },
+    {
+      "l": "Observatorium für Solardynamik (NASA)",
+      "u": "https://sdo.gsfc.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Standard-Sonnenmodell (Jahresbericht der Astronomie 2022)",
+      "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
+      "t": "deep"
+    }
+  ]
+}

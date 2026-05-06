@@ -1,0 +1,13 @@
+{
+  "name": "金星",
+  "type": "地球型惑星",
+  "fact": "表面気圧は地球の約 90 倍。ソ連のヴェネラ探査機は、耐圧が破られるまで 23〜127 分しか稼働できなかった。",
+  "bio": "逆行自転し — 逆向きで、そのうえ非常に遅いため、金星の「一日」は「一年」より長い。軸傾斜角 177.4° のため、金星は実質ひっくり返った状態にある。",
+  "links": [
+    { "l": "金星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
+    { "l": "金星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "ヴェネラ計画 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
+    { "l": "DAVINCI + VERITAS（NASA）", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "金星の暴走温室効果（Nature Astronomy 2020）", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Inspiration Mars",
+  "type": "CREWED FLYBY · CONCEPT",
+  "first": "First proposed crewed Mars free-return mission (concept, never flew)",
+  "description": "A 2013 mission concept by Dennis Tito's Inspiration Mars Foundation for a 501-day crewed Mars free-return flyby targeting the 2018 launch window. Two-person crew (a married couple was envisioned for psychological stability) launches on a Falcon Heavy or equivalent into a heliocentric trajectory that swings around Mars without orbit insertion and uses the planet's gravity to slingshot back to Earth. The free-return geometry minimises ∆v — no Mars orbit insertion or trans-Earth burn required — at the cost of a longer transit and a one-shot launch window. The concept did not advance to development; it remains a published reference architecture for crewed cismartian flight.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Concept launch on Falcon Heavy (or equivalent) into trans-Mars trajectory.", "type": "nominal" },
+    { "met": 1, "label": "TMI", "note": "Trans-Mars injection burn — heliocentric Mars-bound orbit.", "type": "nominal" },
+    { "met": 30, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
+    { "met": 228, "label": "MARS FLYBY", "note": "Closest approach to Mars (~100 km altitude in original concept). No orbit insertion — gravity assist sets up Earth-return trajectory.", "type": "info" },
+    { "met": 350, "label": "MID-COURSE", "note": "Return-leg trajectory correction.", "type": "nominal" },
+    { "met": 501, "label": "EARTH RE-ENTRY", "note": "Return capsule re-enters Earth's atmosphere at ~14.2 km/s — among the fastest crewed re-entries ever proposed.", "type": "info" }
+  ]
+}

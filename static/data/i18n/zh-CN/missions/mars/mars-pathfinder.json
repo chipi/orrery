@@ -1,0 +1,13 @@
+{
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · FLOWN",
+  "first": "First wheels on Mars; demonstrated airbag landing",
+  "description": "The mission that proved cheap interplanetary missions could work. Pathfinder used a novel airbag landing system — bouncing dozens of times across the surface before coming to rest — and delivered Sojourner, the first rover to operate on another planet. Sojourner traversed 100 m, examined a dozen rocks, and worked far past its 7-day design lifetime. Pathfinder operated for 2 months 27 days; the mission's success revived NASA's interplanetary programme after the failures of the 1990s.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Delta II 7925 from Cape Canaveral.", "type": "nominal" },
+    { "met": 30, "label": "TCM-1", "note": "First trajectory correction.", "type": "nominal" },
+    { "met": 212, "label": "EDL", "note": "Direct atmospheric entry — no orbit insertion. Heat shield, parachute, retro-rockets, then airbag inflation.", "type": "nominal" },
+    { "met": 212.01, "label": "TOUCHDOWN", "note": "Lander bounces 15 times across Ares Vallis before coming to rest.", "type": "nominal" },
+    { "met": 213, "label": "SOJOURNER DEPLOYED", "note": "First wheels on another planet.", "type": "info" }
+  ]
+}

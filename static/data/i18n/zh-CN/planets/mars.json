@@ -1,0 +1,14 @@
+{
+  "name": "火星",
+  "type": "任务目标",
+  "fact": "地火发射窗口约每 26 个月打开一次——由轨道共振决定。错过就要再等约两年。",
+  "bio": "内侧行星中偏心率最高（e=0.093）。远日点与近日点相比，火星与地球的距离可相差约 25%——这就是发射窗口如此重要的原因。",
+  "missionable": true,
+  "links": [
+    { "l": "火星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Mars", "t": "intro" },
+    { "l": "火星（NASA 太阳系探索）", "u": "https://science.nasa.gov/mars/", "t": "intro" },
+    { "l": "火星探索计划（NASA）", "u": "https://mars.nasa.gov/", "t": "core" },
+    { "l": "地火发射窗口 — 维基百科", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
+    { "l": "火星气候历史（Science 2018）", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+  ]
+}

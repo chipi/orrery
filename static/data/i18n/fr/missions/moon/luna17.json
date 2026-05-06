@@ -1,0 +1,38 @@
+{
+  "name": "Lune 17 / Lunokhod 1",
+  "type": "ROVER · VOLÉ",
+  "first": "Premier rover téléopéré à opérer sur un autre monde",
+  "description": "Les premières roues sur la Lune — pilotées depuis une salle de contrôle en Crimée. Lunokhod 1 était une cuve sous pression de 322 kg montée sur huit roues à entraînement indépendant, contrôlée par une équipe de cinq personnes en temps réel pendant un délai de 2,5 secondes à la vitesse de la lumière. Il a parcouru 10,5 km en 11 jours lunaires (322 jours terrestres), photographié plus de 20 000 scènes et a fonctionné bien au-delà de sa durée de vie nominale de 90 jours. Perdu dans l'histoire dans les années 1970, retrouvé en 2010 lorsque le Lunar Reconnaissance Orbiter de NASA l'a repéré là où il s'était arrêté.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Proton-K avec étage supérieur Blok-D de Baïkonour.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire ; Corrections orbitales de l'inclinaison de descente.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "ATTERRISSAGE",
+      "note": "Atterrissage en douceur à Mare Imbrium 1970-11-17.",
+      "type": "nominal"
+    },
+    {
+      "met": 7.005,
+      "label": "ROVER DÉPLOYÉ",
+      "note": "Lunokhod 1 descend des rampes jusqu'à la surface lunaire.",
+      "type": "info"
+    },
+    {
+      "met": 329,
+      "label": "CONTACT FINAL",
+      "note": "Dernière session de commandement le 14/09/1971 ; rover préservé dans la froide nuit lunaire.",
+      "type": "info"
+    }
+  ]
+}

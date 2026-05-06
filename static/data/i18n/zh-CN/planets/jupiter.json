@@ -1,0 +1,13 @@
+{
+  "name": "木星",
+  "type": "气态巨行星",
+  "fact": "木星的引力塑造了小行星带——阻止了第五颗岩质行星形成。没有它，火星会大得多。",
+  "bio": "体积巨大却只需约 10 小时自转一圈，产生强大磁场。质量超过其他所有行星之和。",
+  "links": [
+    { "l": "木星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
+    { "l": "木星（NASA 太阳系探索）", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "朱诺号任务（NASA）", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "伽利略卫星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
+    { "l": "木星内部结构（Nature 2018）", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
+}

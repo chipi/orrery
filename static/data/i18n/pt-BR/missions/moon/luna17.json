@@ -1,0 +1,38 @@
+{
+  "name": "Luna 17 / Lunokhod 1",
+  "type": "ROVER · VOADO",
+  "first": "Primeiro rover teleoperado a operar em outro mundo",
+  "description": "As primeiras rodas na Lua – conduzidas a partir de uma sala de controle na Crimeia. O Lunokhod 1 era uma banheira pressurizada de 322 kg montada em oito rodas acionadas de forma independente, controlada por uma equipe de cinco pessoas em tempo real durante o atraso de 2,5 segundos na velocidade da luz. Ele percorreu 10,5 km ao longo de 11 dias lunares (322 dias terrestres), fotografou mais de 20.000 cenas e operou muito além de sua vida útil projetada de 90 dias. Perdido na história na década de 1970, localizado novamente em 2010, quando o Lunar Reconnaissance Orbiter do NASA o avistou onde parou.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Proton-K com estágio superior Blok-D de Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserção na órbita lunar; correções orbitais para inclinação de descida.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "ATERRAGEM",
+      "note": "Pouso suave em Mare Imbrium 17/11/1970",
+      "type": "nominal"
+    },
+    {
+      "met": 7.005,
+      "label": "ROVER IMPLANTADO",
+      "note": "Lunokhod 1 desce rampas até a superfície lunar.",
+      "type": "info"
+    },
+    {
+      "met": 329,
+      "label": "CONTATO FINAL",
+      "note": "Última sessão de comando 14/09/1971; rover preservado na fria noite lunar.",
+      "type": "info"
+    }
+  ]
+}

@@ -190,7 +190,7 @@
   });
 </script>
 
-<svelte:head><title>Mission Library · Orrery</title></svelte:head>
+<svelte:head><title>{m.missions_page_title()}</title></svelte:head>
 
 <div class="library">
   <header class="library-header">
@@ -213,7 +213,7 @@
     onSelectMission={selectMission}
   />
 
-  <nav class="filters" aria-label="Mission filters">
+  <nav class="filters" aria-label={m.missions_filters_aria()}>
     <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
       <span class="filter-label">{m.lib_filter_dest_label()}</span>
       <button
@@ -342,7 +342,7 @@
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}
-    <ul class="grid" aria-label="Mission cards">
+    <ul class="grid" aria-label={m.missions_grid_aria()}>
       {#each filtered as mission (mission.id)}
         <li class="card-li">
           <button

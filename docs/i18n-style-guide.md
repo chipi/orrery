@@ -17,7 +17,7 @@ You are translating Orrery into a new language. Before you start:
 
 Files you will be touching:
 - `messages/<code>.json` — Paraglide UI strings (~276 keys; informal register where the en-US source uses a friendly tone).
-- `static/data/i18n/<code>/missions/{mars,moon}/*.json` — 32 mission overlay files. Translate `name` (display name), `description`, `first` (claim-to-fame), `type` (e.g. `LANDER · FLOWN`), `events[].label`, `events[].note`. Keep mission `id` and proper nouns intact.
+- `static/data/i18n/<code>/missions/{mars,moon}/*.json` — 36 mission overlay files. Translate `name` (display name), `description`, `first` (claim-to-fame), `type` (e.g. `LANDER · FLOWN`), `events[].label`, `events[].note`. Keep mission `id` and proper nouns intact.
 - `static/data/i18n/<code>/{planets,rockets,sun,scenarios,earth-objects,moon-sites}/*.json` — same overlay pattern, smaller files.
 
 Per ADR-017's fallback chain, any key you omit will fall back to en-US — broken translation is bounded, not user-blocking.
@@ -79,19 +79,19 @@ NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, C
 
 The English column is the source. The accepted-convention column for your target language is the **binding** translation. Cite source where given.
 
-| English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | Source |
-|---------|----------------|------|------|---------|------|--------|
-| aphelion | afelio | — | — | — | — | RAE |
-| perihelion | perihelio | — | — | — | — | RAE |
-| apogee | apogeo | — | — | — | — | RAE |
-| perigee | perigeo | — | — | — | — | RAE |
-| eccentricity | excentricidad | — | — | — | — | RAE |
-| true anomaly | anomalía verdadera | — | — | — | — | ESA Spanish glossary |
-| line of apsides | línea de los ápsides | — | — | — | — | ESA Spanish glossary |
-| free-return (trajectory) | trayectoria de retorno libre | — | — | — | — | NASA-MSFC Spanish |
-| sphere of influence (SOI) | esfera de influencia | — | — | — | — | ESA Spanish glossary |
-| porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | ESA Spanish glossary uses English |
-| Astronomical Unit (AU / UA) | UA (unidad astronómica) | UA | AE (Astronomische Einheit) | UA | UA | IAU |
+| English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | `sr-Latn` | `sr-Cyrl` | Source |
+|---------|----------------|------|------|---------|------|-----------|-----------|--------|
+| aphelion | afelio | — | — | — | — | — | — | RAE |
+| perihelion | perihelio | — | — | — | — | — | — | RAE |
+| apogee | apogeo | — | — | — | — | — | — | RAE |
+| perigee | perigeo | — | — | — | — | — | — | RAE |
+| eccentricity | excentricidad | — | — | — | — | — | — | RAE |
+| true anomaly | anomalía verdadera | — | — | — | — | — | — | ESA Spanish glossary |
+| line of apsides | línea de los ápsides | — | — | — | — | — | — | ESA Spanish glossary |
+| free-return (trajectory) | trayectoria de retorno libre | — | — | — | — | — | — | NASA-MSFC Spanish |
+| sphere of influence (SOI) | esfera de influencia | — | — | — | — | — | — | ESA Spanish glossary |
+| porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | — | — | ESA Spanish glossary uses English |
+| Astronomical Unit (AU / UA) | UA (unidad astronómica) | UA | AE (Astronomische Einheit) | UA | UA | — | — | IAU |
 
 Empty cells are populated by the translator for that language ticket.
 

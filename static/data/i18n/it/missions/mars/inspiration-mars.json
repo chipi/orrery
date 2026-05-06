@@ -1,0 +1,44 @@
+{
+  "name": "Ispirazione Marte",
+  "type": "FLYBY CON EQUIPAGGIO · CONCEPT",
+  "first": "Prima proposta di missione su Marte con equipaggio a ritorno libero (concetto, mai volata)",
+  "description": "Un concetto di missione del 2013 della Inspiration Mars Foundation di Dennis Tito per un flyby con ritorno libero su Marte di 501 giorni con equipaggio mirato alla finestra di lancio del 2018. L'equipaggio di due persone (una coppia sposata era prevista per la stabilità psicologica) si lancia su un Falcon Heavy o equivalente in una traiettoria eliocentrica che oscilla attorno a Marte senza inserimento in orbita e utilizza la gravità del pianeta per tornare sulla Terra. La geometria a ritorno libero riduce al minimo il ∆v – non è richiesto l’inserimento nell’orbita di Marte o l’accensione trans-terrestre – al costo di un transito più lungo e di una finestra di lancio one-shot. Il concetto non è avanzato allo sviluppo; rimane un'architettura di riferimento pubblicata per il volo cismartiano con equipaggio.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Lancio concettuale su Falcon Heavy (o equivalente) in traiettoria transmarziana.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI",
+      "note": "Ustione per iniezione trans-marziana: orbita eliocentrica legata a Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "MARTE FLYBY",
+      "note": "Avvicinamento più vicino a Marte (~100 km di altitudine nel concetto originale). Nessun inserimento in orbita: l'assistenza gravitazionale imposta la traiettoria di ritorno alla Terra.",
+      "type": "info"
+    },
+    {
+      "met": 350,
+      "label": "A METÀ CORSO",
+      "note": "Correzione della traiettoria della gamba di ritorno.",
+      "type": "nominal"
+    },
+    {
+      "met": 501,
+      "label": "RIENTRO NELLA TERRA",
+      "note": "La capsula di ritorno rientra nell'atmosfera terrestre a circa 14,2 km/s: uno dei rientri con equipaggio più veloci mai proposti.",
+      "type": "info"
+    }
+  ]
+}

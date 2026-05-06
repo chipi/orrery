@@ -1,0 +1,32 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "LANDER FAR-SIDE · ROVER · ATIVO",
+  "first": "Primeiro pouso suave no outro lado lunar",
+  "description": "O outro lado lunar não tem linha direta de visão de rádio com a Terra. Para pousar uma espaçonave lá, a China primeiro lançou o satélite retransmissor Queqiao em uma órbita de halo em torno do ponto Lagrange Terra-Lua L2 - um ponto de vista que vê o lado oculto e a Terra simultaneamente. Com essa infraestrutura instalada, a Chang'e 4 se tornou a primeira espaçonave a pousar suavemente no outro lado. O rover Yutu-2 está em operação desde janeiro de 2019 e percorreu mais de 1,9 km, a travessia mais longa de qualquer rover lunar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Longa Marcha 3B de Xichang.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "MOI",
+      "note": "Inserção da órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "ATERRAGEM",
+      "note": "Lander pousa na cratera Von Kármán 03/01/2019 - primeira espaçonave do outro lado. Todas as comunicações via retransmissão Queqiao na Terra-Lua L2.",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "IMPLANTE TERRA-2",
+      "note": "Rover desce a rampa.",
+      "type": "info"
+    }
+  ]
+}

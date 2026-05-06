@@ -1,0 +1,34 @@
+{
+  "name": "Mars",
+  "type": "Missionsziel",
+  "fact": "Die Startfenster Erde-Mars öffnen sich alle 26 Monate – angetrieben durch Orbitalresonanz. Verpasse das Fenster und warte zwei Jahre.",
+  "bio": "Die höchste Exzentrizität der inneren Planeten (e=0,093). Der Mars ist im Aphel 25 % weiter von der Erde entfernt als im Perihel – deshalb sind Startfenster so wichtig.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Mars – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Mars (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Mars-Erkundungsprogramm (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Startfenster Erde-Mars – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Klimageschichte des Mars (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

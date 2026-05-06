@@ -1,0 +1,38 @@
+{
+  "name": "Mars-Express",
+  "type": "ORBITEUR · ACTIF",
+  "first": "La première mission interplanétaire de l'Europe ; L'orbiteur martien non NASA le plus ancien",
+  "description": "Première mission de ESA sur une planète autre que la Terre. L'orbiteur a produit le plus long enregistrement continu de l'atmosphère de Mars, cartographiant les dépôts de glace d'eau, les panaches de méthane et les conditions météorologiques tridimensionnelles de la planète. Beagle 2, l'atterrisseur de construction britannique qu'il transportait, a atteint la surface mais n'a jamais déployé complètement ses panneaux solaires – déclaré perdu en 2004, retrouvé intact par le Mars Reconnaissance Orbiter de NASA en 2015. L'orbiteur en est à sa troisième décennie d'exploitation.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Soyouz-FG / Fregat de Baïkonour.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "SORTIE DE BEAGLE 2",
+      "note": "L'atterrisseur se sépare de l'orbiteur pour une descente indépendante.",
+      "type": "nominal"
+    },
+    {
+      "met": 206,
+      "label": "INSERTION DE L'ORBITE DE MARS",
+      "note": "La combustion du moteur principal de 37 minutes capture l'orbiteur sur l'orbite de Mars le jour de Noël 2003.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "BEAGLE 2 SILENCIEUX",
+      "note": "Premier signal attendu non reçu ; l'atterrisseur déclaré perdu.",
+      "type": "warning"
+    }
+  ]
+}

@@ -88,7 +88,7 @@
   nav {
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 40;
     height: var(--nav-height);
     background: var(--color-nav-bg);
     border-bottom: 1px solid var(--color-border);

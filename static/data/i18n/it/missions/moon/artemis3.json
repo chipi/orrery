@@ -1,0 +1,50 @@
+{
+  "name": "Artemide III",
+  "type": "LANDER CON EQUIPAGGIO · PIANIFICATO",
+  "first": "Primo atterraggio sulla Luna con equipaggio dall'Apollo 17 (1972)",
+  "description": "Il primo atterraggio lunare con equipaggio in oltre mezzo secolo. Architettura: il Blocco 1 SLS di NASA lancia Orion con 4 membri dell'equipaggio verso un'orbita quasi rettilinea di un alone (NRHO) attorno alla Luna. Preposizionato a NRHO c'è un SpaceX Starship Human Landing System (HLS), rifornito in orbita terrestre bassa da petroliere prima della sua iniezione translunare. L'equipaggio dell'Orion si trasferisce su HLS; 2 astronauti scendono nella regione del polo sud lunare per circa 6,5 ​​giorni di operazioni di superficie mentre 2 rimangono a NRHO. Dopo le operazioni di superficie, HLS torna a NRHO per il trasferimento su Orion e il ritorno sulla Terra. Farà atterrare la prima donna e la prima persona di colore sulla Luna.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO SLS",
+      "note": "Orion viene lanciato dal KSC LC-39B con un equipaggio di 4 persone.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Iniezione translunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ARRIVANO TUTTI",
+      "note": "Orione arriva all'orbita quasi rettilinea dell'alone; appuntamento con l'astronave HLS pre-posizionata.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DISCESA",
+      "note": "2 membri dell'equipaggio trasferiscono un HLS; discesa motorizzata al polo sud lunare.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "SALITA",
+      "note": "Salita HLS a NRHO dopo circa 6,5 ​​giorni di operazioni di superficie.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Iniezione transterrestre da parte di NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "SPLASHDOWN",
+      "note": "Orion precipita nell'Oceano Pacifico.",
+      "type": "info"
+    }
+  ]
+}

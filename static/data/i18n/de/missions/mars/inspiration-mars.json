@@ -1,0 +1,44 @@
+{
+  "name": "Inspiration Mars",
+  "type": "Vorbeiflug mit Besatzung · Konzept",
+  "first": "Erste geplante bemannte Mars-Rückkehrmission (Konzept, nie geflogen)",
+  "description": "Ein Missionskonzept von Dennis Titos Inspiration Mars Foundation aus dem Jahr 2013 für einen 501-tägigen bemannten Vorbeiflug am Mars mit freiem Rückflug, der auf das Startfenster 2018 abzielt. Eine zweiköpfige Besatzung (aus Gründen der psychologischen Stabilität war ein Ehepaar vorgesehen) startet mit einer Falcon Heavy oder einem gleichwertigen Gerät in eine heliozentrische Flugbahn, die ohne Einsetzen der Umlaufbahn um den Mars schwingt und die Schwerkraft des Planeten nutzt, um zurück zur Erde zu schleudern. Die Geometrie mit freiem Rücklauf minimiert ∆v – es ist kein Einsetzen in die Marsumlaufbahn oder Trans-Erd-Brennung erforderlich – auf Kosten eines längeren Transits und eines One-Shot-Startfensters. Das Konzept wurde nicht weiterentwickelt; Es bleibt eine veröffentlichte Referenzarchitektur für bemannte Cismartian-Flüge.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Konzeptstart auf Falcon Heavy (oder gleichwertig) in die Trans-Mars-Flugbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI",
+      "note": "Transmars-Injektionsverbrennung – heliozentrische Marsumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "Vorbeiflug am Mars",
+      "note": "Größte Annäherung an den Mars (~100 km Höhe im ursprünglichen Konzept). Kein Einsetzen in die Umlaufbahn – die Schwerkraftunterstützung richtet die Flugbahn zur Erde ein.",
+      "type": "info"
+    },
+    {
+      "met": 350,
+      "label": "MITTLERER KURS",
+      "note": "Korrektur der Flugbahn des Rücklaufs.",
+      "type": "nominal"
+    },
+    {
+      "met": 501,
+      "label": "WIEDEREINTRITT IN DIE ERDE",
+      "note": "Die Rückkehrkapsel tritt mit ca. 14,2 km/s wieder in die Erdatmosphäre ein – einer der schnellsten bemannten Wiedereintritte, die jemals vorgeschlagen wurden.",
+      "type": "info"
+    }
+  ]
+}

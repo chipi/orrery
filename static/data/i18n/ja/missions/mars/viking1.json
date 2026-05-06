@@ -1,0 +1,14 @@
+{
+  "name": "バイキング 1 号",
+  "type": "軌道機 · 着陸機 · 飛行済み",
+  "first": "初の完全成功火星着陸；初の長期表面科学",
+  "description": "火星表面を初めて持続的に見せてくれたミッション。バイキング 1 の着陸機はクリセ平原で六年四か月稼働 — 生命検出のための生物学実験（結果は曖昧；一つの実験は数十年後も議論される陽性信号）、気象測定、パノラマ画像、土壌組成分析を行った。軌道機は火星の九七％を百メートル分解能でマッピングし、何十年先のミッションの着陸候補地偵察にも貢献した。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "ケープカナベラル LC-41 からタイタン IIIE・セントール。", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "第一次軌道修正。", "type": "nominal" },
+    { "met": 304, "label": "MARS ORBIT INSERTION", "note": "軌道機が火星軌道へ捕捉；着陸機はサイト調査のため結合したまま。", "type": "nominal" },
+    { "met": 335, "label": "LANDER SEPARATION", "note": "着陸機がクリセ平原への下降のため分離。", "type": "nominal" },
+    { "met": 335.05, "label": "TOUCHDOWN", "note": "着陸機着陸 1976-07-20 — Apollo 11 のちょうど七年後。", "type": "nominal" },
+    { "met": 335.1, "label": "FIRST PANORAMA", "note": "初の高分解能表面画像が返送された。", "type": "info" }
+  ]
+}

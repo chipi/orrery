@@ -1,0 +1,20 @@
+{
+  "name": "Galilée",
+  "type": "ORBITEUR · VOLÉ",
+  "first": "Premier vaisseau spatial à orbiter autour de Jupiter ; sonde atmosphérique dans les nuages ​​de Jupiter",
+  "description": "Lancé depuis la navette spatiale Atlantis après la longue pause post-Challenger, Galileo a bravé la ceinture intérieure d'astéroïdes et a mené la première étude à long terme de Jupiter et de ses lunes depuis l'orbite. Il a découvert le champ magnétique induit par Europe – une preuve solide de l’existence d’un océan souterrain – et a observé Shoemaker-Levy 9 percuter Jupiter. La mission s'est terminée par une plongée contrôlée dans Jupiter en 2003 pour éviter de contaminer les lunes glacées qui pourraient abriter des conditions propices à la vie.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "STS-34 déploie Galileo et un étage supérieur inertiel depuis Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "INSERTION DE L'ORBITE DE JUPITER",
+      "note": "La combustion du moteur principal capture Galileo en orbite ; des décennies de science lunaire commencent.",
+      "type": "nominal"
+    }
+  ]
+}

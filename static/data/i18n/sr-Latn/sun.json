@@ -1,0 +1,33 @@
+{
+  "name": "Sun",
+  "type": "Zvezda · G-tip glavna sekvenca",
+  "fact": "Sunce sadrži 99,86% ukupne mase Sunčevog sistema. Njegova gravitacija drži sve, od Merkura do Oortovog oblaka u orbiti. Svake sekunde spaja 600 miliona tona vodonika u helijum, oslobađajući energiju koja održava život na Zemlji 4,5 milijardi godina.",
+  "bio": "Zvezda glavne sekvence G-tipa stara 4,6 milijardi godina, na polovini svog života od 10 milijardi godina. Sunce rotira drugačije — njegovom ekvatoru je potrebno 25 dana, njegovim polovima 35. Za oko 5 milijardi godina, iscrpiće vodonik u svom jezgru, proširiće se u crvenog džina i progutaće unutrašnje planete. Gravitacioni uticaj Sunca definiše heliosferu na približno 120 __ACR0__.",
+  "links": [
+    {
+      "l": "Sunce - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Sun",
+      "t": "intro"
+    },
+    {
+      "l": "Sunce (__ACR0__ Istraživanje solarnog sistema)",
+      "u": "https://science.nasa.gov/sun/",
+      "t": "intro"
+    },
+    {
+      "l": "Parker solarna sonda (__ACR0__)",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "core"
+    },
+    {
+      "l": "Opservatorija solarne dinamike (__ACR0__)",
+      "u": "https://sdo.gsfc.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Standardni solarni model (godišnji pregled astronomije 2022)",
+      "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
+      "t": "deep"
+    }
+  ]
+}

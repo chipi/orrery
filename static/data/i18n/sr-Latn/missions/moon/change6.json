@@ -1,0 +1,44 @@
+{
+  "name": "Čang'e 6",
+  "type": "POVRATAK UZORAKA NA DALjU STRANICU · FLOVN",
+  "first": "Povratak prvog uzorka sa druge strane Meseca",
+  "description": "Kombinuje arhitekturu Chang'e 4 (komunikacije na daljinu) i Chang'e 5 (povratak uzorka). Relejni satelit Kuekiao-2 prvi je lansiran (mart 2024.) da bi podržao misiju. Čang'e 6 je zatim sakupio 1.935 kg iz kratera Apolo na suprotnoj strani — materijala sa veoma drugačijim sastavom od bilo kog prethodno vraćenog lunarnog uzorka. Dve hemisfere Meseca su radikalno različite (suprotna strana ima deblju koru, manje kobila); ovi uzorci mogu konačno da objasne zašto.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Dugi 5. mart iz Venčanga.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Ubacivanje lunarne orbite.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TOUCHDOVN",
+      "note": "Lander se spušta u krater Apolo (sa druge strane) 2024-06-02. Sve komunikacije preko Kuekiao-2 releja.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "UZORKOVANjE",
+      "note": "1.935 kg sakupljeno od regolita na drugoj strani.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "ASCENT",
+      "note": "Vozilo za uspon je podignuto; sastanak sa orbiterom.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "POVRATAK ZEMLjE",
+      "note": "Kapsula je sletela u Unutrašnju Mongoliju 25.6.2024. sa prvim uzorcima sa druge strane ikada pronađenim.",
+      "type": "info"
+    }
+  ]
+}

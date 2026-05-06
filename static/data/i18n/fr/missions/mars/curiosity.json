@@ -1,0 +1,50 @@
+{
+  "name": "Curiosité",
+  "type": "ROVER · ACTIF",
+  "first": "Premier rover martien à propulsion nucléaire ; premier atterrissage d'une grue aérienne",
+  "description": "La mission phare qui a défini l’exploration moderne de Mars. Curiosity est de la taille d'une voiture, alimenté au plutonium et a parcouru plus de 32 km jusqu'au mont Sharp depuis son atterrissage dans le cratère Gale en 2012. Ses instruments ont confirmé que Mars avait autrefois des conditions habitables - eau courante, matières organiques complexes, la chimie dont la vie aurait besoin. La séquence EDL des « sept minutes de terreur », se terminant par une grue céleste abaissant le rover sur des câbles, est désormais la norme de NASA pour livrer de grosses charges utiles à la surface de Mars.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "L'Atlas V 541 décolle du SLC-41 de Cap Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "BRÛLURE TMI",
+      "note": "L'injection trans-Mars (3,61 km/s ∆v) envoie MSL sur une trajectoire héliocentrique en direction de Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "MTC-3",
+      "note": "Correction finale pré-EDL ; la trajectoire cible l’ellipse d’atterrissage du cratère Gale.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — SEPT MINUTES DE TERREUR",
+      "note": "Entrée atmosphérique, parachute supersonique, rétro-fusées sky-crane, rover descendu sur câbles.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "ATTERRISSAGE",
+      "note": "La curiosité arrive à Aeolis Palus, Gale Crater, 06/08/2012 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "PREMIÈRES IMAGES",
+      "note": "Hazcam renvoie la première image basse résolution de la surface.",
+      "type": "info"
+    }
+  ]
+}

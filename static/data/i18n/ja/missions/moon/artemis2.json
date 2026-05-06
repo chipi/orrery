@@ -1,0 +1,14 @@
+{
+  "name": "Artemis II",
+  "type": "有人フライバイ · 飛行済み",
+  "first": "Apollo 17（一九七二）以来初の低軌道を超えた有人飛行 — そしてこのプロジェクトの着想源となったミッション",
+  "description": "Artemis 計画の初有人飛行であり、Orrery の着想となったミッション。NASA の SLS Block 1 がオリオンに四人の宇宙飛行士 — Reid Wiseman（指令長）、Victor Glover（操縦士）、Christina Koch（ミッションスペシャリスト）、CSA の Jeremy Hansen（ミッションスペシャリスト） — を載せ、ハイブリッド・フリーリターン軌道で月の裏側をおよそ九千二百キロメートルの高度で周り、月軌道投入燃焼なしに地球へ帰る。十日間のミッションは太平洋に着水で終了。Artemis III の表面着陸に先立ち、オリオンの生命維持・航法・再突入を有人飛行として適合証明した。",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "オリオンが KSC LC-39B から四人搭乗で離昇。", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "ICPS による月移行軌道燃焼 — オリオンが地球‐月軌道へ分離。", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
+    { "met": 4, "label": "LUNAR FLYBY", "note": "裏側上空で最接近、高度約九千二百キロメートル。軌道投入なし — フリーリターン幾何がオリオンを地球へ。", "type": "info" },
+    { "met": 6, "label": "TCM-2", "note": "帰還軌道修正。", "type": "nominal" },
+    { "met": 10, "label": "SPLASHDOWN", "note": "オリオン再突入と太平洋着水。", "type": "info" }
+  ]
+}

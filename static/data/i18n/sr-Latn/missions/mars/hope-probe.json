@@ -1,0 +1,32 @@
+{
+  "name": "Hope Probe",
+  "type": "ORBITER · AKTIVAN",
+  "first": "Prva arapska međuplanetarna misija",
+  "description": "Misija Emiratesa na Mars — Al Amal, „Nada“ — zamišljena je 2014. kako bi se obeležila 50. godišnjica federacije UAE 2021. Tim MBRSC je udružio se sa Univerzitetom Kolorado, država Arizona, i UC Berkli da bi dizajnirali i integrisali svemirsku letelicu, ali su je sami izgradili. Naučna orbita (1×dnevno trajanje, 27.000 km × 43.000 km) pokriva sve geografske dužine i doba dana, hvatajući vremenske obrasce koje nijedan drugi orbiter Marsa ne može da reši. Misija je uspela u prvom pokušaju, čime su UAE postali peta agencija na Marsu.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "H-IIA 202 iz Tanegašime — Mitsubishi Heavi Industries je obezbedio lansiranje.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "UMETANjE MARSOVE ORBITE",
+      "note": "27-minutni pogon potisnika katapultira Hope u orbitu Marsa 2021-02-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 250,
+      "label": "NAUKA O ORBITI",
+      "note": "Trim manevri doveli su Hope u njenu 55-časovnu naučnu orbitu.",
+      "type": "info"
+    }
+  ]
+}

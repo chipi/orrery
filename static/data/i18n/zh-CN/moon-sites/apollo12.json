@@ -1,0 +1,9 @@
+{
+  "name": "Apollo 12",
+  "mission_type": "Crewed Lander",
+  "site_name": "Oceanus Procellarum",
+  "crew": ["Pete Conrad", "Alan Bean"],
+  "left": "Descent stage · ALSEP · flag · retrieved parts of Surveyor 3",
+  "fact": "The precision landing — Conrad touched down within 183 m of the uncrewed Surveyor 3 probe (1967). They retrieved pieces of it for return to Earth, showing spacecraft survive years on the Moon undamaged by radiation or micrometeorites. A proof-of-concept for future rendezvous missions.",
+  "capability": "First precision landing at a designated point — the prerequisite for any sample-return rendezvous architecture, including Mars."
+}

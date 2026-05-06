@@ -1,0 +1,44 @@
+{
+  "name": "Wikinger 1",
+  "type": "ORBITER · LANDER · GEFLOGEN",
+  "first": "Erste völlig erfolgreiche Marslandung; erste Langzeit-Oberflächenwissenschaft",
+  "description": "Die Mission, die uns unseren ersten nachhaltigen Blick auf die Marsoberfläche ermöglichte. Der Lander von Viking 1 war 6 Jahre und 4 Monate lang auf Chryse Planitia im Einsatz – er führte biologische Experimente zur Entdeckung von Leben durch (Ergebnisse waren nicht eindeutig; ein Experiment erzeugte ein positives Signal, über das noch Jahrzehnte später diskutiert wurde), maß das Wetter, lieferte Panoramabilder und analysierte die Bodenzusammensetzung. Der Orbiter kartierte 97 % des Mars mit einer Auflösung von 100 m und half dabei, Landeplätze für Missionen auszukundschaften, die noch Jahrzehnte entfernt sind.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan IIIE-Centaur von Cape Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Erste Flugbahnkorrektur.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "note": "Orbiter gelangt in die Marsumlaufbahn; Der Lander bleibt zur Standortuntersuchung angebracht.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "Lander-Trennung",
+      "note": "Lander löst sich zum Abstieg nach Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "LANDUNG",
+      "note": "Lander landet am 20.07.1976, genau sieben Jahre nach Apollo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "ERSTE PANORAMA",
+      "note": "Erste hochauflösende Oberflächenbilder zurückgekehrt.",
+      "type": "info"
+    }
+  ]
+}

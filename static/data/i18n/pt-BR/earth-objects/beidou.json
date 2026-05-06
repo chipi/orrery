@@ -1,0 +1,6 @@
+{
+  "name": "Constelação BeiDou",
+  "short": "BeiDou",
+  "description": "Sistema global de navegação por satélite da China. Mais de 46 satélites nas órbitas MEO, GEO e IGSO. Oferece cobertura global desde 2020. Também funciona como serviço de mensagens – os satélites retransmitem textos curtos.",
+  "scale_fact": "A arquitetura de três órbitas do BeiDou é única – ela usa satélites em três altitudes diferentes simultaneamente."
+}

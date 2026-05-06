@@ -1,0 +1,33 @@
+{
+  "name": "Terre",
+  "type": "Accueil · Orbite de référence",
+  "fact": "Tous les humains ayant jamais vécu l’ont fait ici. L'orbite de référence par laquelle toutes les autres sont mesurées.",
+  "bio": "L'inclinaison axiale de 23,44° crée les saisons et non la distance du Soleil. La Terre est en réalité plus proche du Soleil en janvier qu’en juillet.",
+  "links": [
+    {
+      "l": "Terre — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "Terre (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Système d'observation de la Terre (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Pourquoi la Terre a des saisons (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "Pale Blue Dot — Réflexion de Carl Sagan (Planetary Society)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ]
+}

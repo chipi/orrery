@@ -1,0 +1,32 @@
+{
+  "name": "Lua 9",
+  "type": "LANDER NÃO TRAVEADO · VOADO",
+  "first": "Primeiro pouso suave na Lua; primeiras fotografias da superfície lunar",
+  "description": "Após 11 fracassos soviéticos e 5 missões de Rangers americanas projetadas apenas para cair, a Luna 9 se tornou a primeira espaçonave a pousar suavemente em outro mundo. Nove imagens panorâmicas recolhidas ao longo de 8 minutos resolveram um longo debate científico: a superfície da Lua era sólida, e não um mar de poeira suficientemente profundo para engolir um módulo de aterragem. A missão durou 3 dias antes do esgotamento da bateria. Em poucos meses, todas as missões com destino à Lua usaram o pouso suave como base.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Molniya-M de Baikonur 31/01/1966.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "ATERRAGEM",
+      "note": "Pouso suave no Oceanus Procellarum 03/02/1966 18:45 UTC. Primeiro pouso suave em outro mundo.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "PRIMEIRAS IMAGENS",
+      "note": "Nove imagens panorâmicas retornaram em três sessões de transmissão.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "PERDA DE SINAL",
+      "note": "Bateria descarregada; transmissão final 06/02/1966.",
+      "type": "warning"
+    }
+  ]
+}

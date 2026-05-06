@@ -1,0 +1,38 @@
+{
+  "name": "Desbravador de Marte",
+  "type": "LANDER · ROVER · VOADO",
+  "first": "Primeiras rodas em Marte; pouso de airbag demonstrado",
+  "description": "A missão que provou que as missões interplanetárias baratas poderiam funcionar. A Pathfinder usou um novo sistema de pouso com airbag – saltando dezenas de vezes pela superfície antes de parar – e entregou o Sojourner, o primeiro rover a operar em outro planeta. Sojourner percorreu 100 m, examinou uma dúzia de rochas e trabalhou muito além da vida útil projetada de 7 dias. O Pathfinder operou por 2 meses e 27 dias; o sucesso da missão reviveu o programa interplanetário do NASA após os fracassos da década de 1990.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Delta II 7925 do Cabo Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Primeira correção de trajetória.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "EDL",
+      "note": "Entrada atmosférica direta – sem inserção em órbita. Escudo térmico, pára-quedas, retrofoguetes e, em seguida, inflação do airbag.",
+      "type": "nominal"
+    },
+    {
+      "met": 212.01,
+      "label": "ATERRAGEM",
+      "note": "Lander salta 15 vezes em Ares Vallis antes de parar.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SOJOURNER IMPLANTADO",
+      "note": "Primeiras rodas em outro planeta.",
+      "type": "info"
+    }
+  ]
+}

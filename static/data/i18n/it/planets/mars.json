@@ -1,0 +1,34 @@
+{
+  "name": "Marte",
+  "type": "Obiettivo della missione",
+  "fact": "Le finestre di lancio Terra-Marte si aprono ogni 26 mesi, guidate dalla risonanza orbitale. Perdere la finestra e aspettare due anni.",
+  "bio": "La più alta eccentricità dei pianeti interni (e=0,093). Marte è il 25% più lontano dalla Terra all'afelio rispetto al perielio: ecco perché le finestre di lancio sono così importanti.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Marte – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Marte (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Programma di esplorazione di Marte (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Finestre di lancio Terra-Marte - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Storia del clima di Marte (Scienza 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

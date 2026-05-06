@@ -1,0 +1,6 @@
+{
+  "name": "GEO Gürtel",
+  "short": "GEO",
+  "description": "Der geostationäre Ring. Bei genau 35.786 km entspricht die Umlaufzeit der Erdrotation – die Satelliten scheinen fest am Himmel zu stehen. GOES-Wettersatelliten, Meteosat, Tausende von Kommunikationssatelliten. Die spezifische Höhe, in der Physik und Nutzen perfekt zusammenpassen.",
+  "scale_fact": "35.786 km sind konstruktionsbedingt keine runde Zahl – es ist die exakte Höhe, bei der Schwerkraft und Umlaufgeschwindigkeit sich ausgleichen, um einen Zeitraum von 24 Stunden zu ergeben. Die Physik hat es gewählt."
+}

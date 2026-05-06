@@ -1,0 +1,20 @@
+{
+  "name": "Alvorecer",
+  "type": "ORBITER · VOADO",
+  "first": "Primeira missão orbitando dois corpos extraterrestres – Vesta, depois Ceres",
+  "description": "Dawn provou a propulsão iônica em escala planetária: combinou as órbitas com a massiva Vesta, à esquerda, e desceu em espiral até o planeta anão Ceres - o maior objeto no cinturão de asteróides. Os pontos brilhantes na cratera Occator tornaram-se um dos mistérios icônicos da missão, mais tarde ligados a erupções salgadas de um reservatório profundo. Esta entrada de catálogo usa Ceres como destino principal; Vesta é abordada na narrativa acima.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Delta II eleva Dawn em direção a Vesta e Ceres em uma rodovia espiral de baixo impulso.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CAPTURA DE CERES",
+      "note": "Motores iônicos colocam Dawn em órbita ao redor de Ceres; começa a campanha de mapeamento.",
+      "type": "nominal"
+    }
+  ]
+}

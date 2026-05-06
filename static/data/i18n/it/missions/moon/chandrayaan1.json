@@ -1,0 +1,32 @@
+{
+  "name": "Chandrayaan-1",
+  "type": "ORBITER · VOLATO",
+  "first": "La prima missione lunare dell'India; ha confermato la diffusione dell’acqua sulla Luna",
+  "description": "Il primo veicolo spaziale interplanetario di ISRO. L’orbiter ha portato la sonda Moon Impact sulla superficie lunare – il primo oggetto indiano su un altro mondo – e ha trasportato 11 strumenti provenienti da 6 paesi. Lo strumento Moon Mineralogy Mapper (M3) di NASA, ospitato su Chandrayaan-1, ha fatto la scoperta che ha riscritto i libri di testo: le molecole d'acqua sono diffuse su tutta la superficie lunare, non solo rinchiuse nei crateri polari in ombra. La missione si è conclusa bruscamente nell'agosto 2009 quando ISRO ha perso la comunicazione con la navicella spaziale.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "PSLV-XL (C11) da Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare 2008-11-08.",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "IMPATTO DEL MIP",
+      "note": "La sonda lunare ha preso di mira un atterraggio duro vicino al polo sud.",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "CONTATTO PERSO",
+      "note": "Comunicazione persa il 29-08-2009; 312 giorni di operazioni.",
+      "type": "warning"
+    }
+  ]
+}

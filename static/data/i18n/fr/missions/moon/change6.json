@@ -1,0 +1,44 @@
+{
+  "name": "Chang'e 6",
+  "type": "RETOUR D'ÉCHANTILLON DU CÔTÉ LOIN · VOLÉ",
+  "first": "Retour du premier échantillon de la face cachée de la Lune",
+  "description": "Combine les architectures de Chang'e 4 (communications côté éloigné) et de Chang'e 5 (retour d'échantillon). Le satellite relais Queqiao-2 a été lancé en premier (mars 2024) pour soutenir la mission. Chang'e 6 a ensuite collecté 1,935 kg du cratère Apollo sur la face cachée – un matériau de composition très différente de tout échantillon lunaire précédemment renvoyé. Les deux hémisphères de la Lune sont radicalement différents (la face cachée a une croûte plus épaisse, moins de mare) ; ces échantillons pourraient enfin expliquer pourquoi.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Long 5 mars depuis Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "ATTERRISSAGE",
+      "note": "Lander descend vers le cratère Apollo (côté éloigné) 02/06/2024. Toutes les communications via le relais Queqiao-2.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "ÉCHANTILLONNAGE",
+      "note": "1,935 kg collectés sur le régolithe de la face cachée.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "ASCENSION",
+      "note": "Le véhicule de montée décolle ; rendez-vous avec l'orbiteur.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "RETOUR DE LA TERRE",
+      "note": "La capsule atterrit en Mongolie intérieure le 25/06/2024 avec les premiers échantillons de la face cachée jamais récupérés.",
+      "type": "info"
+    }
+  ]
+}

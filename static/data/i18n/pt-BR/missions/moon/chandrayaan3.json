@@ -1,0 +1,44 @@
+{
+  "name": "Chandrayaan-3",
+  "type": "LANDER · ROVER · VOADO",
+  "first": "Primeiro pouso suave perto do pólo sul lunar",
+  "description": "Após a perda do módulo de pouso Vikram do Chandrayaan-2 em 2019, a terceira missão lunar do ISRO foi deliberadamente conservadora – focada no módulo de pouso em vez de transportar um orbitador. Vikram pousou na latitude 69,4° S, o mais próximo que qualquer espaçonave chegou de um pólo lunar. O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e fez medições térmicas in-situ. A Índia se tornou a quarta nação a pousar suavemente na Lua e a primeira nas regiões polares onde provavelmente ocorrerá a futura mineração de água e gelo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "LVM3 M4 (anteriormente GSLV Mk III) de Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 22,
+      "label": "MOI",
+      "note": "Inserção na órbita lunar (usadas múltiplas queimaduras de elevação da órbita terrestre e lunar).",
+      "type": "nominal"
+    },
+    {
+      "met": 38,
+      "label": "SEPARAÇÃO DE LANDER",
+      "note": "O módulo de pouso Vikram se separa do módulo de propulsão.",
+      "type": "nominal"
+    },
+    {
+      "met": 40,
+      "label": "ATERRAGEM",
+      "note": "Vikram pousa em Shiv Shakti Point, perto do pólo sul, em 23/08/2023 às 12:33 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 40.5,
+      "label": "PRAGYAN IMPLANTADO",
+      "note": "Rover desce rampa; começa a ciência da superfície.",
+      "type": "info"
+    },
+    {
+      "met": 53,
+      "label": "NOITE LUNAR",
+      "note": "Lander/rover colocado em hibernação quando a noite lunar começa.",
+      "type": "info"
+    }
+  ]
+}

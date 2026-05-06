@@ -1,0 +1,38 @@
+{
+  "name": "Marte 3",
+  "type": "ORBITER · LANDER · VOLATO",
+  "first": "La prima navicella spaziale ad atterrare dolcemente su Marte",
+  "description": "L'audace doppia missione dell'Unione Sovietica su Marte nel 1971: Mars 2 e Mars 3 furono lanciati a 9 giorni di distanza. Il lander di Mars 2 si è schiantato; Il lander di Mars 3 ha effettuato il primo atterraggio morbido su Marte, ma ha trasmesso solo per circa 110 secondi prima della perdita del segnale, probabilmente a causa della tempesta di polvere globale che infuriava in quel momento. L'orbiter ha operato per 8 mesi, restituendo centinaia di immagini e misurazioni atmosferiche. Nonostante la breve missione in superficie, Mars 3 dimostrò che il problema della discesa e dell'atterraggio su Marte era risolvibile.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Proton-K con stadio superiore Blok-D di Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 188,
+      "label": "ORBITATORE MOI",
+      "note": "L'Orbiter cattura l'orbita di Marte durante una tempesta di polvere globale.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.05,
+      "label": "SEPARAZIONE DEL LANDER",
+      "note": "Il lander si separa e inizia l'ingresso nell'atmosfera.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.1,
+      "label": "CONTATTO CON LA SUPERFICIE",
+      "note": "Primo atterraggio morbido su Marte; inizia la trasmissione.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.101,
+      "label": "PERDITA DI SEGNALE",
+      "note": "Dopo circa 110 secondi, il segnale è stato interrotto in modo permanente. Causa non confermata; principale sospettato della tempesta di polvere.",
+      "type": "warning"
+    }
+  ]
+}

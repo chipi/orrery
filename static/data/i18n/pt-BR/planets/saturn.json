@@ -1,0 +1,33 @@
+{
+  "name": "Saturno",
+  "type": "Gigante gasoso · Anéis",
+  "fact": "A densidade de Saturno é 0,687 g/cm³ – menor que a da água. Seu sistema de anéis se estende por 282.000 km, mas tem apenas cerca de 10 metros de espessura.",
+  "bio": "O planeta menos denso — flutuaria na água. O sistema de anéis abrange 282.000 km, mas tem apenas alguns metros de espessura. A inclinação de 26,73° significa que a Terra vê os anéis em diferentes ângulos ao longo da órbita de 29 anos de Saturno.",
+  "links": [
+    {
+      "l": "Saturno - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Saturn",
+      "t": "intro"
+    },
+    {
+      "l": "Saturno (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "Arquivo da missão Cassini (NASA)",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Anéis de Saturno — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "t": "core"
+    },
+    {
+      "l": "Os anéis de Saturno são jovens (Ciência 2019)",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ]
+}

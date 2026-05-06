@@ -1,0 +1,15 @@
+{
+  "name": "Perseverance",
+  "type": "ローバー · 活動中",
+  "first": "別惑星初のヘリコプター（Ingenuity）；火星サンプル返還向け初の試料キャッシュ",
+  "description": "Perseverance はこれまでで最も野心的な火星表面ミッション。火星サンプル返還はこれに依存 — ローバーが試料をチューブに収集・キャッシュし将来ミッションが回収して地球へ。別惑星初のヘリコプター Ingenuity は二〇二四年一月にローター破損で退役するまで七十二回飛行し — 火星の薄い大気でも制御飛行が可能と実証。MOXIE は二酸化炭素から酸素を生成する実証機として、別惑星で初めて現地製酸素をつくり、有人火星へのリハーサルとなった。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "ケープカナベラル SLC-41 からアトラス V 541 — キュリオシティと同級。", "type": "nominal" },
+    { "met": 1, "label": "TMI BURN", "note": "火星注入。", "type": "nominal" },
+    { "met": 9, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
+    { "met": 203, "label": "EDL", "note": "スカイクレーンがローバーをジェゼロ衝突坑へ二〇二一年二月十八日 — 古代の川三角州。", "type": "nominal" },
+    { "met": 203.01, "label": "TOUCHDOWN", "note": "Perseverance がジェゼロに着陸 20:55 UTC。", "type": "nominal" },
+    { "met": 271, "label": "INGENUITY FIRST FLIGHT", "note": "別惑星での初の動力制御飛行 — 三十九・一秒、最高高度約五メートル。", "type": "info" },
+    { "met": 1278, "label": "INGENUITY RETIRED", "note": "七十二回目の飛行でローターブレード損傷二〇二四年一月十八日；ヘリコプターは通信中継として運用可能なまま。", "type": "info" }
+  ]
+}

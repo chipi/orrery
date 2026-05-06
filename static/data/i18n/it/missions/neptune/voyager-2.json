@@ -1,0 +1,20 @@
+{
+  "name": "Viaggiatore 2",
+  "type": "FLYBY · EFFETTUATA",
+  "first": "L'unica navicella spaziale a visitare Urano e Nettuno; Grand Tour di quattro pianeti giganti",
+  "description": "La gemella che continuò ad andare avanti anche quando i budget si ridussero, la Voyager 2 portò il Grand Tour da Giove e Saturno fino a Urano e Nettuno – ancora oggi le uniche immagini ravvicinate che abbiamo dei giganti di ghiaccio. Il suo incontro con Nettuno nel 1989 rivelò la Grande Macchia Oscura e i geyser di Tritone. Oggi entrambe le Voyager navigano nello spazio interstellare con un disco d'oro come biglietto da visita dell'umanità. Orrery elenca Nettuno come destinazione del catalogo; il percorso reale si basava su molteplici aiuti gravitazionali.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan IIIE solleva la Voyager 2 da Cape Canaveral su una traiettoria Grand-Tour.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "NETTUNO AVVICINAMENTO PIÙ VICINO",
+      "note": "Sorvolo di Nettuno e della grande luna Tritone; ultimo incontro planetario del Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

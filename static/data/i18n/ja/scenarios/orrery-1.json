@@ -1,0 +1,19 @@
+{
+  "name": "ORRERY デモ",
+  "dep_label": "地球出発",
+  "arr_label": "地球帰還",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "ファルコン・ヘビーが離昇。フリーリターン — 着陸なし。", "type": "nominal" },
+    { "met": 0.4, "label": "TMI BURN", "note": "火星注入（TMI）：3.61 km/s。脱出速度に到達。", "type": "nominal" },
+    { "met": 1, "label": "DAY 1 CHECK", "note": "初回の機器健全性チェック完了。すべて規定範囲内。", "type": "nominal" },
+    { "met": 60, "label": "TCM-1", "note": "軌道途中修正 1：35 m/s。", "type": "nominal" },
+    { "met": 200, "label": "CRUISE", "note": "外向き巡航。地球は遠ざかる。", "type": "info" },
+    { "met": 220, "label": "COMMS GLITCH", "note": "X バンドの信号が一瞬途切れる（8 秒）。DSN で再捕捉。原因：スラスタ噴流による遮蔽。データ損失なし。", "type": "warning" },
+    { "met": 259, "label": "MARS FLYBY", "note": "最接近：高度約 300 km。重力アシストで帰還軌道へ。", "type": "nominal" },
+    { "met": 260, "label": "RETURN TRAJECTORY", "note": "フリーリターンの重力アシスト完了。宇宙機は地球航路へ。", "type": "nominal" },
+    { "met": 310, "label": "MID-COURSE 3", "note": "TCM-3：22 m/s。帰還軌道を修正。", "type": "nominal" },
+    { "met": 400, "label": "HALFWAY HOME", "note": "帰路の中間点を通過。", "type": "info" },
+    { "met": 480, "label": "RE-ENTRY PREP", "note": "最終接近。耐熱盾の確認。", "type": "nominal" },
+    { "met": 509, "label": "EARTH ARRIVAL", "note": "大気圏再突入。ミッション完了。", "type": "nominal" }
+  ]
+}

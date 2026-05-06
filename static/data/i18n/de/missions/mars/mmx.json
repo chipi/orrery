@@ -1,0 +1,38 @@
+{
+  "name": "MMX",
+  "type": "PHOBOS-PROBENRÜCKGABE · GEPLANT",
+  "first": "Erste Probenrückkehr von einem Marsmond",
+  "description": "Martian Moons eXploration ist der Plan von JAXA, auf Phobos zu landen, etwa 10 g Regolith zu schöpfen und nach Hause zu bringen. Die Proben könnten eine seit langem diskutierte Frage klären: Handelt es sich bei Phobos und Deimos um eingefangene Asteroiden oder um Fragmente eines antiken Einschlags auf dem Mars selbst? Die Mission umfasst auch einen deutsch-französischen Rover für die Oberflächenmobilität von Phobos – ein völlig anderes Operationsmodell als alles, was die Hayabusa-Missionen in Itokawa oder Ryugu taten. Der Start war für 2024 geplant, verschob sich jedoch aufgrund von Verzögerungen bei der H3-Trägerrakete von JAXA auf 2026.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "H3-24L von Tanegashima – JAXAs neuer Schwerlasttransporter.",
+      "type": "nominal"
+    },
+    {
+      "met": 334,
+      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "note": "Einfangen in der Marsumlaufbahn; Transfer in die Quasi-Umlaufbahn von Phobos in den folgenden Monaten.",
+      "type": "nominal"
+    },
+    {
+      "met": 600,
+      "label": "ROVER-EINSATZ",
+      "note": "DLR/CNES-Rover (~25 kg) wurde für In-situ-Studien auf die Phobos-Oberfläche entlassen.",
+      "type": "info"
+    },
+    {
+      "met": 1100,
+      "label": "PHOBOS-PROBE",
+      "note": "MMX landet auf Phobos; ~10 g Regolith gesammelt.",
+      "type": "info"
+    },
+    {
+      "met": 1500,
+      "label": "ERDE RÜCKKEHR",
+      "note": "Proben-Wiedereintrittskapsel erreicht die Erde etwa 2031.",
+      "type": "info"
+    }
+  ]
+}

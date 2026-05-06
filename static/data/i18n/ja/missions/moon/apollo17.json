@@ -1,0 +1,15 @@
+{
+  "name": "Apollo 17",
+  "type": "有人着陸機 · ローバー · 飛行済み",
+  "first": "最後の有人月ミッション（訓練地質学者を乗せた唯一の Apollo）",
+  "description": "人類が別世界を訪れた最後 — すでに半世紀以上前。サーナンとシュミットは表面に七十五時間、LRV で三十五・七キロメートル、試料百十・五キログラム。シュミットは月を歩いた唯一の訓練科学者（地質学者）で、ショーティ坑の橙色火山ガラスなどの発見は月地質を書き換えた。梯子を登る前サーナンの最後の言葉：『私たちは来たときと同じように去る。神の御心ならば、また戻ってくる』。Artemis III がその約束を果たすはず。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "サターン V（AS-512）が KSC LC-39A から 1972-12-07 — Apollo で唯一の夜間打ち上げ。", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
+    { "met": 3, "label": "MOI", "note": "月軌道投入。", "type": "nominal" },
+    { "met": 4, "label": "TOUCHDOWN", "note": "月着陸船チャレンジャーがタウルス・リトロー谷に着陸 1972-12-11 19:54 UTC。", "type": "nominal" },
+    { "met": 4.3, "label": "FIRST EVA", "note": "サーナンとシュミットが最初の月面 EVA 開始（三期で計二十二時間四分）。", "type": "info" },
+    { "met": 7, "label": "ASCENT", "note": "サーナン：『私たちは来たときと同じように去る。神の御心ならば、また戻ってくる』", "type": "nominal" },
+    { "met": 12.6, "label": "SPLASHDOWN", "note": "コマンドモジュール America がクルーを太平洋へ 1972-12-19。", "type": "nominal" }
+  ]
+}

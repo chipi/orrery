@@ -1,0 +1,32 @@
+{
+  "name": "Tianwen-1",
+  "type": "ORBITER · LANDER · ROVER · AKTIV",
+  "first": "Erste Mission, bei der Orbiter, Lander und Rover in einem einzigen Start zum Mars gebracht werden",
+  "description": "Chinas erste Mars-Mission erreichte, was noch nie eine Agentur in einem einzigen Start versucht hatte: Orbitaleinführung, Eintritt in die Atmosphäre, sanfte Landung und Rover-Einsatz. Der Zhurong-Rover absolvierte 358 Sols bei Utopia Planitia und legte dabei 1,9 km zurück, bevor er im Mai 2022 in den geplanten Winterschlaf überging; Seitdem ist es nicht mehr aufgewacht (wahrscheinlich aufgrund der Staubansammlung auf den Solarpaneelen). Der Orbiter bleibt aktiv, kartiert den Planeten mit hoher Auflösung und dient als Relais für Bodenressourcen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Langer 5. Marsch von Wenchang – Chinas erster superschwerer interplanetarer Start.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "note": "Motorverbrennung bringt Raumschiff in die Marsumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "ZHURONG-LANDUNG",
+      "note": "Lander/Rover landet auf Utopia Planitia 14.05.2021; Zhurong rollt von der Rampe 22.05.2021.",
+      "type": "nominal"
+    },
+    {
+      "met": 651,
+      "label": "Zhurong Winterschlaf",
+      "note": "Rover geht in den geplanten Ruhezustand 2022–05; Der Orbiter setzt seinen Betrieb fort.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Chandrayaan-1",
+  "type": "ORBITER · GEFLOGEN",
+  "first": "Indiens erste Mondmission; bestätigte weit verbreitetes Wasser auf dem Mond",
+  "description": "ISROs erstes interplanetares Raumschiff. Der Orbiter brachte die Mondeinschlagsonde zur Mondoberfläche – das erste indische Objekt auf einer anderen Welt – und beförderte 11 Instrumente aus 6 Ländern. Das auf Chandrayaan-1 stationierte Instrument Moon Mineralogy Mapper (M3) von NASA machte die Entdeckung, die Lehrbücher neu schrieb: Wassermoleküle sind auf der Mondoberfläche weit verbreitet und nicht nur in polaren, schattigen Kratern eingeschlossen. Die Mission endete abrupt im August 2009, als ISRO die Kommunikation mit der Raumsonde verlor.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "PSLV-XL (C11) von Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 17,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn 08.11.2008.",
+      "type": "nominal"
+    },
+    {
+      "met": 24,
+      "label": "MIP-WIRKUNG",
+      "note": "Die Mondeinschlagsonde zielte auf eine harte Landung in der Nähe des Südpols.",
+      "type": "info"
+    },
+    {
+      "met": 320,
+      "label": "KONTAKT VERLOREN",
+      "note": "Kommunikation verloren 29.08.2009; 312 Einsatztage.",
+      "type": "warning"
+    }
+  ]
+}

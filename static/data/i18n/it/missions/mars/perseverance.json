@@ -1,0 +1,50 @@
+{
+  "name": "Perseveranza",
+  "type": "ROVER · ATTIVO",
+  "first": "Primo elicottero su un altro pianeta (Ingenuity); primo salvataggio nella cache di campioni per Mars Sample Return",
+  "description": "Perseverance è la missione sulla superficie di Marte più ambiziosa mai effettuata. Il ritorno dei campioni su Marte dipende da questo: il rover sta raccogliendo e memorizzando nella cache campioni in tubi che una futura missione recupererà e porterà sulla Terra. Ingenuity, il primo elicottero su un altro pianeta, ha effettuato 72 missioni prima di ritirarsi con i rotori danneggiati nel gennaio 2024, dimostrando che il volo controllato è possibile nella sottile atmosfera di Marte. MOXIE, un dimostratore di ossigeno dalla CO2, ha prodotto il primo ossigeno prodotto localmente su un altro pianeta, una prova per le missioni su Marte con equipaggio.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 541 di Cape Canaveral SLC-41 - stessa classe di veicoli di Curiosity.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "BRUCIATURA TMI",
+      "note": "Iniezione Trans-Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Una gru aerea consegna il rover al cratere Jezero 18-02-2021 — sito di un antico delta del fiume.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "TOCCO",
+      "note": "Perseverance atterra a Jezero alle 20:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "L'INGEGNO IL PRIMO VOLO",
+      "note": "Primo volo controllato a motore su un altro pianeta: 39,1 secondi fino a 5 m di altitudine.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "INGEGNO IN PENSIONE",
+      "note": "Pala del rotore danneggiata sul 72° volo 18-01-2024; l'elicottero rimane operativo come relè di comunicazione.",
+      "type": "info"
+    }
+  ]
+}

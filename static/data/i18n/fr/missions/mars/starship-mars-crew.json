@@ -1,0 +1,56 @@
+{
+  "name": "Équipage du vaisseau spatial Mars",
+  "type": "RETOUR D'ÉCHANTILLONS EN ÉQUIPAGE · CONCEPT",
+  "first": "Première mission de retour en équipage proposée sur Mars (architecture SpaceX)",
+  "description": "L'architecture martienne à long terme de SpaceX, telle que décrite dans les présentations IAC d'Elon Musk en 2016, 2017 et 2024. Un vaisseau spatial décolle de la Terre entièrement ravitaillé en orbite terrestre basse via une flotte de vols de ravitaillement, effectue une injection trans-Mars et fait atterrir un équipage d'environ 10 personnes avec une cargaison et des équipements ISRU sur la surface martienne. Le propulseur de retour (méthane + oxygène liquide) est fabriqué sur Mars à partir de CO₂ atmosphérique et de glace d'eau souterraine via le procédé Sabatier, permettant au même vaisseau spatial de décoller à nouveau, d'effectuer une injection trans-Terre et de ramener l'équipage. La durée de l'aller-retour dépend de la fenêtre de lancement et du séjour en surface ; le calendrier indicatif présenté ici est d'environ 2,5 ans en porte-à-porte (213 jours à l'aller, ~ 500 jours en surface, retour à la prochaine fenêtre favorable). L'architecture est conceptuelle - la date et les paramètres sont sujets à des révisions substantielles en attendant la maturation du Starship et la validation de l'ISRU.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT DU VAISSEAU",
+      "note": "Un vaisseau spatial avec équipage décolle de Boca Chica ou de Cap Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "REMPLISSAGE ORBITAL",
+      "note": "Rendez-vous de la flotte de pétroliers et transfert de propulseur en LEO sur plusieurs vols.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "BRÛLURE TMI",
+      "note": "Injection Trans-Mars à partir d’un état LEO entièrement alimenté.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "ATTERRISSAGE SUR MARS",
+      "note": "Descente propulsée vers la surface de Mars – pas de parachutes, pas d'airbags, pas de grue céleste.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "ACCESSOIRE DE RETOUR COMPLÈTE",
+      "note": "L'usine ISRU a produit suffisamment de méthane + LOX pour le propulseur aller-retour.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "BRÛLURE DE TEI",
+      "note": "Injection trans-Terre – Le vaisseau spatial décolle de la surface de Mars et brûle pour la trajectoire de retour vers la Terre.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "ARRIVÉE SUR TERRE",
+      "note": "Entrée atmosphérique. Mission terminée.",
+      "type": "info"
+    }
+  ]
+}

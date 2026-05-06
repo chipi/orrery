@@ -1,0 +1,33 @@
+{
+  "name": "Jupiter",
+  "type": "Gasriese",
+  "fact": "Die Schwerkraft des Jupiter formte den Asteroidengürtel und verhinderte so die Entstehung eines fünften Gesteinsplaneten. Ohne sie wäre der Mars viel größer.",
+  "bio": "Rotiert trotz seiner enormen Größe in nur 10 Stunden und erzeugt dabei starke Magnetfelder. Massereicher als alle anderen Planeten zusammen.",
+  "links": [
+    {
+      "l": "Jupiter – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "Jupiter (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Juno-Mission (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Galileische Monde – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "Jupiters tiefes Inneres (Nature 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ]
+}

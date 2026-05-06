@@ -1,0 +1,32 @@
+{
+  "name": "Chang'e 4 / Iutu-2",
+  "type": "FAR-SIDE LANDER · ROVER · AKTIVAN",
+  "first": "Prvo meko sletanje na drugu stranu Meseca",
+  "description": "Daljnja strana Meseca nema direktnu radio liniju vida na Zemlju. Da bi tamo spustila svemirski brod, Kina je prvo lansirala relejni satelit Kuekiao u orbitu oko Zemlje i mesečeve L2 Lagranžove tačke - tačke koja istovremeno vidi i drugu stranu i Zemlju. Sa tom infrastrukturom, Chang'e 4 je postao prva svemirska letelica koja je izvršila meko sletanje na drugu stranu. Rover Jutu-2 je u funkciji od januara 2019. godine i prešao je 1,9+ km, što je najduži prelaz od svih lunarnih rovera.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Dugi mart 3B iz Sičanga.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "MOI",
+      "note": "Ubacivanje lunarne orbite.",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "TOUCHDOVN",
+      "note": "Lender sleće u krater Fon Karman 01.03.2019 — prva letelica na suprotnoj strani. Sve komunikacije preko Kuekiao releja na Zemlji-Mesec L2.",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "JUTU-2 RASPOREĐEN",
+      "note": "Rover se kotrlja niz rampu.",
+      "type": "info"
+    }
+  ]
+}

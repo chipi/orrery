@@ -1,0 +1,38 @@
+{
+  "name": "Lune bleue MK1",
+  "type": "ATTERRISSEUR DE CARGO · PRÉVU",
+  "first": "Premier vol de l'architecture de l'atterrisseur lunaire Blue Moon de Blue Origin",
+  "description": "Le premier atterrisseur cargo Blue Moon de Blue Origin, sous contrat dans le cadre du programme Commercial Lunar Payload Services (CLPS) de NASA. Un véhicule de descente à un étage propulsé par le moteur cryogénique BE-7, conçu pour délivrer jusqu'à environ 3 tonnes de charge utile sur la surface lunaire. Lancement sur le New Glenn de Blue Origin depuis Cap Canaveral, effectue une injection trans-lunaire sur le deuxième étage de New Glenn, puis exécute l'insertion sur l'orbite lunaire et la descente motorisée. Le vol cargo Mark 1 précède le vol Mark 2, évalué par les humains, qui est engagé pour soutenir l'atterrissage lunaire avec équipage Artemis V de NASA.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT DU NOUVEAU GLENN",
+      "note": "Décolle de Cap Canaveral LC-36 ; le premier étage revient pour la récupération en aval.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2,
+      "label": "TLI",
+      "note": "Le deuxième étage de New Glenn effectue une brûlure par injection trans-lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "Lettre d'intention",
+      "note": "Insertion de l'orbite lunaire via le moteur principal BE-7.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "DESCENTE PUISSÉE",
+      "note": "Descente accélérée du BE-7 vers la surface lunaire – premier atterrissage lunaire de Blue Origin.",
+      "type": "info"
+    }
+  ]
+}

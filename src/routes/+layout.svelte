@@ -5,7 +5,8 @@
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import { setLanguageTag } from '$lib/paraglide/runtime';
-  import { localeFromPage, isSupportedLocale } from '$lib/locale';
+  import { localeFromPage, isSupportedLocale, syncDocumentLocaleAttributes } from '$lib/locale';
+  import * as m from '$lib/paraglide/messages';
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
@@ -17,7 +18,10 @@
   // en-US fallback that gets corrected on the second tick.
   $effect.pre(() => {
     const code = localeFromPage($page);
-    if (isSupportedLocale(code)) setLanguageTag(code);
+    if (isSupportedLocale(code)) {
+      setLanguageTag(code);
+      syncDocumentLocaleAttributes(code);
+    }
   });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────
@@ -83,8 +87,8 @@
 
 {#if updateAvailable}
   <div class="pwa-toast" role="status">
-    <span>New version available.</span>
-    <button type="button" onclick={refreshApp}>REFRESH</button>
+    <span>{m.layout_pwa_new_version()}</span>
+    <button type="button" onclick={refreshApp}>{m.layout_pwa_refresh()}</button>
   </div>
 {/if}
 

@@ -1,0 +1,13 @@
+{
+  "name": "Юпитер",
+  "type": "Газовый гигант",
+  "fact": "Гравитация Юпитера сформировала пояс астероидов — помешав появиться пятой каменной планеты. Без него Марс был бы гораздо крупнее.",
+  "bio": "Вращается за 10 часов при огромной массе, создавая мощные магнитные поля. Тяжелее всех остальных планет вместе взятых.",
+  "links": [
+    { "l": "Юпитер — Википедия", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
+    { "l": "Jupiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "Миссия Juno (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "Галилеевы спутники — Википедия", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
+    { "l": "Глубинные слои Юпитера (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
+}

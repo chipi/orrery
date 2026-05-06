@@ -984,11 +984,8 @@
 </script>
 
 <svelte:head>
-  <title>Mars · Orrery</title>
-  <meta
-    name="description"
-    content="Every artefact humanity has placed on Mars — landers, rovers, and active orbiters — on a navigable 3D globe with full mission history."
-  />
+  <title>{m.mars_page_title()}</title>
+  <meta name="description" content={m.mars_meta_description()} />
 </svelte:head>
 
 <div class="mars">
@@ -997,14 +994,14 @@
     bind:this={container}
     class="layer"
     class:hidden={view !== '3d'}
-    aria-label="Mars 3D globe"
+    aria-label={m.mars_globe_aria()}
   ></div>
   <!-- 2D layer -->
   <canvas
     bind:this={canvas2d}
     class="layer"
     class:hidden={view !== '2d'}
-    aria-label="Mars 2D equirectangular map"
+    aria-label={m.mars_map_aria()}
   ></canvas>
 
   <!-- Top-left HUD (matches /explore convention) -->
@@ -1027,7 +1024,7 @@
         class:active={layerSurface}
         aria-pressed={layerSurface}
         onclick={() => (layerSurface = !layerSurface)}
-        title="Show or hide landers, rovers, and crashed surface vehicles"
+        title={m.mars_layer_tip_surface()}
         data-testid="layer-surface"
       >
         {m.ui_layer_surface()}
@@ -1038,7 +1035,7 @@
         class:active={layerOrbiters}
         aria-pressed={layerOrbiters}
         onclick={() => (layerOrbiters = !layerOrbiters)}
-        title="Show or hide active and historical Mars orbiters"
+        title={m.mars_layer_tip_orbiters()}
         data-testid="layer-orbiters"
       >
         {m.ui_layer_orbiters()}
@@ -1049,7 +1046,7 @@
         class:active={layerOrbits}
         aria-pressed={layerOrbits}
         onclick={() => (layerOrbits = !layerOrbits)}
-        title="Show or hide the orbital ring lines (the spacecraft remain visible)"
+        title={m.mars_layer_tip_orbit_rings()}
         data-testid="layer-orbits"
       >
         {m.ui_layer_orbits()}
@@ -1060,7 +1057,7 @@
         class:active={layerTraverses}
         aria-pressed={layerTraverses}
         onclick={() => (layerTraverses = !layerTraverses)}
-        title="Show or hide rover traverse paths (Curiosity, Perseverance, Opportunity, Spirit)"
+        title={m.mars_layer_tip_traverses()}
         data-testid="layer-traverses"
       >
         {m.ui_layer_traverses()}
@@ -1069,12 +1066,12 @@
   </div>
 
   {#if loadFailed}
-    <div class="load-failed" role="alert">Failed to load Mars sites. Please refresh.</div>
+    <div class="load-failed" role="alert">{m.mars_load_failed()}</div>
   {/if}
 
   <!-- Legend overlay (3D view; 2D paints its own legend on the canvas) -->
   {#if view === '3d'}
-    <div class="legend-3d" aria-label="Nation legend">
+    <div class="legend-3d" aria-label={m.mars_legend_nation_aria()}>
       {#each Object.entries(NATION_COLORS) as [nation, color] (nation)}
         <span class="legend-item">
           <span class="legend-dot" style:background={color}></span>
@@ -1188,7 +1185,7 @@
               type="button"
               class="gallery-thumb"
               onclick={() => (panelLightbox = src)}
-              aria-label="Open enlarged view"
+              aria-label={m.mars_lightbox_open_aria()}
             >
               <img {src} alt="" loading="lazy" />
             </button>
@@ -1230,7 +1227,7 @@
   <button
     type="button"
     class="lightbox"
-    aria-label="Close enlarged image"
+    aria-label={m.panel_lightbox_close()}
     onclick={() => (panelLightbox = null)}
   >
     <img src={panelLightbox} alt="" />

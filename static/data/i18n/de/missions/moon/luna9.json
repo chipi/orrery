@@ -1,0 +1,32 @@
+{
+  "name": "Luna 9",
+  "type": "UNBESATZTER LANDER · GEFLOGEN",
+  "first": "Erste sanfte Landung auf dem Mond; Erste Fotos von der Mondoberfläche",
+  "description": "Nach elf Misserfolgen der Sowjetunion und fünf Missionen der amerikanischen Ranger, die nur zum Absturz gedacht waren, war Luna 9 das erste Raumschiff, das sanft auf einer anderen Welt landete. Neun Panoramabilder, die innerhalb von acht Minuten zurückgegeben wurden, beendeten eine langjährige wissenschaftliche Debatte: Die Oberfläche des Mondes war fest und kein Staubmeer, das tief genug war, um einen Lander zu verschlucken. Die Mission dauerte 3 Tage, bevor die Batterie leer war. Innerhalb weniger Monate basierte jede Mondmission auf einer sanften Landung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Molniya-M aus Baikonur 31.01.1966.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "LANDUNG",
+      "note": "Sanfte Landung am Oceanus Procellarum 03.02.1966 18:45 UTC. Erste sanfte Landung auf einer anderen Welt.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "ERSTE BILDER",
+      "note": "In drei Übertragungssitzungen wurden neun Panoramabilder zurückgegeben.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "SIGNALVERLUST",
+      "note": "Batterie leer; Endgültige Übertragung 1966-02-06.",
+      "type": "warning"
+    }
+  ]
+}

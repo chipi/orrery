@@ -145,11 +145,11 @@ describe('getMission', () => {
     expect(m!.name).toBe('Galileo');
   });
 
-  it('falls back gracefully when overlay missing for a different locale', async () => {
-    const m = await getMission('curiosity', 'mars', 'fr');
+  it('falls back gracefully when overlay missing for an unsupported locale', async () => {
+    const m = await getMission('curiosity', 'mars', 'xx-TEST');
     expect(m).not.toBeNull();
     expect(m!.id).toBe('curiosity');
-    // Base fields present even without French overlay
+    // Base fields present even without locale overlay
     expect(m!.transit_days).toBe(254);
     // Overlay-only fields absent
     expect(m!.name).toBeUndefined();
@@ -220,7 +220,7 @@ describe('getPlanets', () => {
   });
 
   it('falls back to en-US when locale overlay missing', async () => {
-    const list = await getPlanets('fr');
+    const list = await getPlanets('xx-TEST');
     expect(list).toHaveLength(8);
     expect(list[2].id).toBe('earth');
     expect(list[2].fact).toContain('Every human');
@@ -242,7 +242,7 @@ describe('getRockets', () => {
   });
 
   it('falls back to en-US when locale overlay missing', async () => {
-    const list = await getRockets('fr');
+    const list = await getRockets('xx-TEST');
     expect(list).toHaveLength(13);
     const starship = list.find((r) => r.id === 'starship');
     expect(starship?.name).toBe('Starship');
@@ -261,7 +261,7 @@ describe('getSun', () => {
   });
 
   it('falls back to en-US for missing locale', async () => {
-    const sun = await getSun('fr');
+    const sun = await getSun('xx-TEST');
     expect(sun.name).toBe('The Sun');
     expect(sun.spectral_class).toBe('G2V');
   });
@@ -285,7 +285,7 @@ describe('getMissionsForLibrary', () => {
   });
 
   it('falls back to en-US for missing locale', async () => {
-    const list = await getMissionsForLibrary('fr');
+    const list = await getMissionsForLibrary('xx-TEST');
     expect(list).toHaveLength(36);
   });
 
@@ -311,7 +311,7 @@ describe('getEarthObjects', () => {
   });
 
   it('falls back to en-US when locale overlay missing', async () => {
-    const list = await getEarthObjects('fr');
+    const list = await getEarthObjects('xx-TEST');
     expect(list).toHaveLength(20);
     const iss = list.find((o) => o.id === 'iss');
     expect(iss?.short).toBe('ISS');
@@ -351,7 +351,7 @@ describe('getMoonSites', () => {
   });
 
   it('falls back to en-US when locale overlay missing', async () => {
-    const list = await getMoonSites('fr');
+    const list = await getMoonSites('xx-TEST');
     expect(list).toHaveLength(24);
   });
 });
@@ -380,7 +380,7 @@ describe('getScenario', () => {
   });
 
   it('falls back to en-US for missing locale', async () => {
-    const s = await getScenario('orrery-1', 'fr');
+    const s = await getScenario('orrery-1', 'xx-TEST');
     expect(s).not.toBeNull();
     expect(s!.name).toBe('ORRERY DEMO');
   });

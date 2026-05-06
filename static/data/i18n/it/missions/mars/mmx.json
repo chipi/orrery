@@ -1,0 +1,38 @@
+{
+  "name": "MMX",
+  "type": "RESTITUZIONE CAMPIONE PHOBOS · PREVISTA",
+  "first": "Primo campione ritornato da una luna marziana",
+  "description": "Martian Moons eXploration è il piano di JAXA per atterrare su Phobos, raccogliere circa 10 g di regolite e portarla a casa. I campioni potrebbero risolvere una questione a lungo dibattuta: Phobos e Deimos sono asteroidi catturati o frammenti di un antico impatto su Marte stesso? La missione include anche un rover franco-tedesco per la mobilità di superficie Phobos, un modello operativo completamente diverso da qualsiasi cosa le missioni Hayabusa abbiano fatto a Itokawa o Ryugu. Il lancio era previsto per il 2024, ma è slittato al 2026 a causa di ritardi nel veicolo di lancio H3 di JAXA.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "H3-24L di Tanegashima: il nuovo sollevatore pesante di JAXA.",
+      "type": "nominal"
+    },
+    {
+      "met": 334,
+      "label": "INSERIMENTO NELL'ORBITA DI MARTE",
+      "note": "Cattura nell'orbita di Marte; trasferimento sulla quasi-orbita di Phobos nei mesi successivi.",
+      "type": "nominal"
+    },
+    {
+      "met": 600,
+      "label": "DISTRIBUZIONE DEL ROVER",
+      "note": "Rover DLR/CNES (~25 kg) rilasciato sulla superficie di Phobos per studi in situ.",
+      "type": "info"
+    },
+    {
+      "met": 1100,
+      "label": "CAMPIONE DI FOBO",
+      "note": "MMX atterra su Phobos; ~10 g di regolite raccolti.",
+      "type": "info"
+    },
+    {
+      "met": 1500,
+      "label": "RITORNO DELLA TERRA",
+      "note": "La capsula di rientro campione arriva sulla Terra nel 2031 circa.",
+      "type": "info"
+    }
+  ]
+}

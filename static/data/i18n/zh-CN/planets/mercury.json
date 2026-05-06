@@ -1,0 +1,13 @@
+{
+  "name": "水星",
+  "type": "类地行星",
+  "fact": "表面温度一昼夜可变化约 610°C。几乎没有大气——直接暴露在太空中。",
+  "bio": "最小的行星。高离心率轨道（e=0.206）使它在近日点附近明显加速。虽离太阳最近，表面温度却低于金星。",
+  "links": [
+    { "l": "水星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "水星（NASA 太阳系探索）", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "信使号任务（NASA）", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "贝比科隆博（欧空局 / 宇宙航空研究开发机构）", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "水星的熔融核（Nature Geoscience 2019）", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
+}

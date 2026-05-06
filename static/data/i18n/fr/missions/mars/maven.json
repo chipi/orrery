@@ -1,0 +1,32 @@
+{
+  "name": "MAVEN",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Première mission dédiée à étudier comment Mars a perdu son atmosphère",
+  "description": "MAVEN – Mars Atmosphere and Volatile Evolution – répond à la question « où est passé l'air de Mars ? Son orbite elliptique plonge dans la haute atmosphère, échantillonnant des ions et des neutres à mesure que le vent solaire les élimine. Résultats : Mars perd environ 100 g d'atmosphère par seconde dans l'espace – sur des milliards d'années, cela suffit à expliquer l'absence de climat. Le vaisseau spatial sert également de relais essentiel pour les actifs de surface, notamment Curiosity et Perseverance.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas V 401 de Cap Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Première correction de trajectoire.",
+      "type": "nominal"
+    },
+    {
+      "met": 308,
+      "label": "INSERTION DE L'ORBITE DE MARS",
+      "note": "La combustion du moteur principal de 33 minutes capture MAVEN sur une orbite scientifique elliptique de 35 heures.",
+      "type": "nominal"
+    },
+    {
+      "met": 350,
+      "label": "PREMIÈRE SCIENCE",
+      "note": "Commence des campagnes d'échantillonnage de l'atmosphère en « immersion profonde » jusqu'à des altitudes du périastre d'environ 125 km.",
+      "type": "info"
+    }
+  ]
+}

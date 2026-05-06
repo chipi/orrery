@@ -1,0 +1,44 @@
+{
+  "name": "Luna 24",
+  "type": "SAMPLE RITORNO · EFFETTUATA",
+  "first": "Ultima missione lunare sovietica; ultimo atterraggio lunare senza equipaggio per 37 anni",
+  "description": "L'ultima missione lunare dell'Unione Sovietica e l'ultimo allunaggio senza equipaggio fino al Chang'e 3 cinese nel 2013: un intervallo di 37 anni. Il nucleo perforato ha estratto la regolite da una profondità di 2 m e ne ha restituito 170 g alla Terra. Tra i campioni: minerali contenenti tracce di acqua, che prefigurano la scoperta di consistenti depositi di ghiaccio d'acqua lunare 30 anni dopo. Luna 24 segnò anche la chiusura del programma lunare sovietico; risorse spostate su Marte e Venere.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Proton-K da Baikonur 08-09-1976.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TOCCO",
+      "note": "Atterraggio morbido a Mare Crisium 1976-08-18.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "FORATURA",
+      "note": "Carotaggio estratto da una profondità di 2 m.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "SALITA",
+      "note": "La fase di salita si solleva; iniezione trans-terrestre.",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "TERRA RITORNO",
+      "note": "La capsula atterra a Surgut, URSS il 22 agosto 1976 con 170 g di regolite.",
+      "type": "info"
+    }
+  ]
+}

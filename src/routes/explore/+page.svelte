@@ -760,9 +760,15 @@
         const v = Math.sqrt((4 * Math.PI ** 2) / planet.a) * 4.7404;
         hoverData = {
           name: planet.name,
-          velocity: `~${v.toFixed(2)} km/s orbital velocity`,
-          distance: `${(planet.a * 149.5978707).toFixed(0)} M km from Sun`,
-          extras: `e=${planet.e.toFixed(3)} · i=${planet.incl.toFixed(1)}° · tilt=${planet.axialTilt.toFixed(1)}°`,
+          velocity: m.explore_tt_velocity_planet({ value: v.toFixed(2) }),
+          distance: m.explore_tt_distance_sun({
+            mkm: (planet.a * 149.5978707).toFixed(0),
+          }),
+          extras: m.explore_tt_extras_planet({
+            e: planet.e.toFixed(3),
+            i: planet.incl.toFixed(1),
+            tilt: planet.axialTilt.toFixed(1),
+          }),
           x: e.clientX,
           y: e.clientY,
         };
@@ -772,15 +778,21 @@
         const v = Math.sqrt((4 * Math.PI ** 2) / body.a) * 4.7404;
         const typeLabel =
           body.type === 'dwarf'
-            ? 'dwarf planet'
+            ? m.explore_tt_kind_dwarf()
             : body.type === 'comet'
-              ? 'comet'
-              : 'interstellar object';
+              ? m.explore_tt_kind_comet()
+              : m.explore_tt_kind_interstellar();
         hoverData = {
           name: body.name,
-          velocity: `~${v.toFixed(2)} km/s mean orbital velocity`,
-          distance: `${(body.a * 149.5978707).toFixed(0)} M km semi-major axis · ${typeLabel}`,
-          extras: `e=${body.e.toFixed(3)} · i=${body.incl.toFixed(1)}°`,
+          velocity: m.explore_tt_velocity_small({ value: v.toFixed(2) }),
+          distance: m.explore_tt_distance_small({
+            mkm: (body.a * 149.5978707).toFixed(0),
+            kind: typeLabel,
+          }),
+          extras: m.explore_tt_extras_small({
+            e: body.e.toFixed(3),
+            i: body.incl.toFixed(1),
+          }),
           x: e.clientX,
           y: e.clientY,
         };
@@ -1652,7 +1664,7 @@
   }
 </script>
 
-<svelte:head><title>Solar System Explorer · Orrery</title></svelte:head>
+<svelte:head><title>{m.explore_page_title()}</title></svelte:head>
 
 <div class="explore">
   <div
@@ -1660,13 +1672,13 @@
     bind:this={container}
     class:hidden={view !== '3d'}
     role="region"
-    aria-label="3D solar system. Drag to orbit, scroll or pinch to zoom, click planets and Sun for details."
+    aria-label={m.explore_canvas_aria_3d()}
   ></div>
   <canvas
     class="layer"
     bind:this={canvas2d}
     class:hidden={view !== '2d'}
-    aria-label="2D top-down solar system. Drag to pan, scroll or pinch to zoom, tap planets and Sun for details."
+    aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
@@ -1695,7 +1707,7 @@
         aria-pressed={layers.planets}
         onclick={() => (layers.planets = !layers.planets)}
         data-testid="layer-planets"
-        title="Toggle visibility of the 8 major planet orbits"
+        title={m.explore_layer_tip_planets()}
       >
         {m.ui_layer_planets()}
       </button>
@@ -1706,7 +1718,7 @@
         aria-pressed={layers.dwarfs}
         onclick={() => (layers.dwarfs = !layers.dwarfs)}
         data-testid="layer-dwarfs"
-        title="Toggle visibility of dwarf planets (Pluto, Eris, Ceres, Haumea, Makemake)"
+        title={m.explore_layer_tip_dwarfs()}
       >
         {m.ui_layer_dwarfs()}
       </button>
@@ -1717,7 +1729,7 @@
         aria-pressed={layers.comets}
         onclick={() => (layers.comets = !layers.comets)}
         data-testid="layer-comets"
-        title="Toggle visibility of comet trajectories (Halley, Hale-Bopp, etc.)"
+        title={m.explore_layer_tip_comets()}
       >
         {m.ui_layer_comets()}
       </button>
@@ -1728,7 +1740,7 @@
         aria-pressed={layers.interstellar}
         onclick={() => (layers.interstellar = !layers.interstellar)}
         data-testid="layer-interstellar"
-        title="Interstellar visitors — toggle visibility of objects passing through the Solar System (e.g. ʻOumuamua)"
+        title={m.explore_layer_tip_interstellar()}
       >
         {m.ui_layer_interstellar_short()}
       </button>

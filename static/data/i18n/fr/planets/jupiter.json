@@ -1,0 +1,33 @@
+{
+  "name": "Jupiter",
+  "type": "Géante gazeuse",
+  "fact": "La gravité de Jupiter a sculpté la ceinture d'astéroïdes, empêchant ainsi l'apparition d'une cinquième planète rocheuse. Sans cela, Mars serait bien plus grande.",
+  "bio": "Tourne en seulement 10 heures malgré sa taille énorme, créant de puissants champs magnétiques. Plus massive que toutes les autres planètes réunies.",
+  "links": [
+    {
+      "l": "Jupiter — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "Jupiter (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Mission Juno (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Lunes galiléennes — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "L'intérieur profond de Jupiter (Nature 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ]
+}

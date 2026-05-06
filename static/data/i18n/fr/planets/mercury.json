@@ -1,0 +1,33 @@
+{
+  "name": "Mercure",
+  "type": "Planète terrestre",
+  "fact": "Les températures de surface oscillent jusqu’à 610°C en une seule journée. Pas d'atmosphère, juste une exposition brute à l'espace.",
+  "bio": "La plus petite planète. Son orbite très elliptique (e=0,206) lui fait accélérer sensiblement près du périhélie. Bien qu’elle soit la plus proche du Soleil, Vénus est plus chaude.",
+  "links": [
+    {
+      "l": "Mercure — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "Mercure (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "Aperçu de la mission MESSENGER (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Le noyau fondu de Mercure (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

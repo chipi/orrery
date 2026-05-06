@@ -1,0 +1,44 @@
+{
+  "name": "Inspiração Marte",
+  "type": "FLYBY TRIPULADO · CONCEITO",
+  "first": "Primeira proposta de missão tripulada de retorno livre a Marte (conceito, nunca voou)",
+  "description": "Um conceito de missão de 2013 da Inspiration Mars Foundation de Dennis Tito para um sobrevoo de retorno livre tripulado de 501 dias em Marte visando a janela de lançamento de 2018. Uma tripulação de duas pessoas (um casal foi concebido para estabilidade psicológica) é lançada em um Falcon Heavy ou equivalente em uma trajetória heliocêntrica que gira em torno de Marte sem inserção em órbita e usa a gravidade do planeta para voltar à Terra. A geometria de retorno livre minimiza ∆v - sem necessidade de inserção na órbita de Marte ou queima trans-Terra - ao custo de um trânsito mais longo e de uma janela de lançamento único. O conceito não avançou para o desenvolvimento; continua sendo uma arquitetura de referência publicada para voos cismartianos tripulados.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Lançamento do conceito no Falcon Heavy (ou equivalente) na trajetória trans-Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI",
+      "note": "Queimadura por injeção Trans-Marte - órbita heliocêntrica ligada a Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "VOO DE MARTE",
+      "note": "Aproximação mais próxima de Marte (~100 km de altitude no conceito original). Sem inserção em órbita – o auxílio da gravidade configura a trajetória de retorno à Terra.",
+      "type": "info"
+    },
+    {
+      "met": 350,
+      "label": "MEIO DO CURSO",
+      "note": "Correção da trajetória da perna de retorno.",
+      "type": "nominal"
+    },
+    {
+      "met": 501,
+      "label": "REENTRADA NA TERRA",
+      "note": "A cápsula de retorno reentra na atmosfera da Terra a aproximadamente 14,2 km/s – uma das reentradas tripuladas mais rápidas já propostas.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Constellation GLONASS",
+  "short": "GLONASS",
+  "description": "Le système de navigation mondial de la Russie. Conçu pendant la guerre froide, lancé en 1982. Utilise une inclinaison plus élevée que GPS — meilleure couverture des régions polaires. La Russie l'a ouvert à un usage civil en 2007.",
+  "scale_fact": "L'inclinaison élevée (64,8°) signifie que GLONASS offre une meilleure couverture de la Russie et de l'Arctique – la géographie a façonné la conception orbitale."
+}

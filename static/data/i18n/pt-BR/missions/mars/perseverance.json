@@ -1,0 +1,50 @@
+{
+  "name": "Perseverança",
+  "type": "ROVER · ATIVO",
+  "first": "Primeiro helicóptero em outro planeta (Ingenuity); primeiro armazenamento em cache de amostra para Mars Sample Return",
+  "description": "Perseverance é a missão à superfície de Marte mais ambiciosa já realizada. O retorno de amostras de Marte depende disso – o rover está coletando e armazenando amostras em tubos que uma missão futura irá recuperar e trazer para a Terra. O Ingenuity, o primeiro helicóptero em outro planeta, realizou 72 missões antes de se aposentar com os rotores danificados em janeiro de 2024 – provando que o voo controlado é possível na fina atmosfera de Marte. MOXIE, um demonstrador de oxigênio a partir de CO2, produziu o primeiro oxigênio produzido localmente em outro planeta, um ensaio para missões tripuladas a Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Atlas V 541 do Cabo Canaveral SLC-41 — mesma classe de veículo do Curiosity.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "QUEIMADURA DE TMI",
+      "note": "Injeção Trans-Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Sky-crane entrega rover à cratera de Jezero 18/02/2021 - local de um antigo delta de rio.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "ATERRAGEM",
+      "note": "Perseverance pousa em Jezero às 20:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "PRIMEIRO VÔO DE INGENUIDADE",
+      "note": "Primeiro voo motorizado controlado em outro planeta – 39,1 segundos a até 5 m de altitude.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "Engenhosidade aposentada",
+      "note": "Lâmina do rotor danificada no 72º vôo 18/01/2024; O helicóptero permanece operacional como retransmissor de comunicações.",
+      "type": "info"
+    }
+  ]
+}

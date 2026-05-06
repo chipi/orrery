@@ -1,0 +1,13 @@
+{
+  "name": "천왕성",
+  "type": "얼음 거성",
+  "fact": "천왕성은 누워서 돈다 — 자전축 경사 98°. 84년 궤도의 절반 동안 북극이 거의 태양을 정면으로 본다.",
+  "bio": "거의 옆으로 누운 상태(97.77°). 각 극은 42년 연속으로 햇빛을 받고, 42년은 어둠에 잠긴다. 고대 거대 충돌이 원인일 가능성이 매우 높다.",
+  "links": [
+    { "l": "Uranus — Wikipedia", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
+    { "l": "Uranus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
+    { "l": "Voyager 2 at Uranus (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
+    { "l": "Uranus Orbiter and Probe — Decadal Survey", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
+    { "l": "Uranus's tilt origin (Astrophysical Journal 2020)", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+  ]
+}

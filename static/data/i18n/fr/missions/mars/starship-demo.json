@@ -1,0 +1,32 @@
+{
+  "name": "Démo du vaisseau spatial",
+  "type": "DÉMO DE MARS NON ÉCRIVÉE · PRÉVUE",
+  "first": "Premier système de lancement entièrement réutilisable pour tenter l'atterrissage sur Mars",
+  "description": "Une démonstration sans équipage de l'architecture du Starship Mars : lancement sur Super Heavy, ravitaillement en LEO à partir d'une variante pétrolier, puis injection trans-Mars d'un Starship entièrement ravitaillé et descente propulsée vers la surface martienne. L'objectif déclaré de SpaceX est une fenêtre de lancement 2026-2027 ; la réalité technique (Starship fonctionne toujours grâce à la fiabilité des vols orbitaux et le remplissage en orbite n'a pas été démontré) rend 2028 ou plus plus probable. S’il réussit, il inversera l’économie de la charge utile sur Mars – de milliers de kg à cent tonnes par atterrissage.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Starship de Boca Chica ou Cap Canaveral – premier lancement interplanétaire super-lourd.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "REMPLISSAGE ORBITAL",
+      "note": "Rendez-vous des ravitailleurs et transfert de propulseur en LEO sur plusieurs vols.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "BRÛLURE TMI",
+      "note": "Injection Trans-Mars à partir d’un état LEO entièrement alimenté.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "ATTERRISSAGE SUR MARS",
+      "note": "Descente propulsée vers la surface de Mars – pas de parachutes, pas d'airbags, pas de grue céleste.",
+      "type": "info"
+    }
+  ]
+}

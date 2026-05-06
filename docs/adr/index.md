@@ -39,3 +39,6 @@
 | ADR-040 | ISS Explorer diagrammatic model + asset pipeline | Accepted (closes RFC-013 OQ-1) | May 2026 |
 | ADR-041 | ISS module pickability contract (`userData.moduleId`) | Accepted | May 2026 |
 | ADR-042 | ISS Explorer low-end fallback (list + perf heuristics) | Accepted | May 2026 |
+| ADR-043 | Serbian Cyrillic font gate for `sr-Cyrl` | Accepted | May 2026 |
+| ADR-044 | CJK font strategy for Wave 2 locales | Accepted | May 2026 |
+| ADR-045 | RTL strategy for Arabic locale | Accepted | May 2026 |

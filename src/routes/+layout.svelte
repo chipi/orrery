@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { base } from '$app/paths';
   import { page } from '$app/stores';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
@@ -66,6 +67,11 @@
     updateAvailable = false;
   }
 </script>
+
+<svelte:head>
+  <link rel="manifest" href="{base}/manifest.webmanifest" />
+  <link rel="icon" href="{base}/logos/nasa.svg" type="image/svg+xml" />
+</svelte:head>
 
 <Nav />
 <main>

@@ -135,11 +135,7 @@ function buildMissionArcs(m: MissionFile): {
   const vInf = json.flight?.arrival?.v_infinity_km_s;
   const out = transferEllipse(earthDep, destEnd, ARC_STEPS, vInf);
   const ret = isReturnTrip
-    ? returnArc(
-        out[out.length - 1],
-        earthPos(timeline.arr_day + (totalT - flybyOffset)),
-        ARC_STEPS,
-      )
+    ? returnArc(out[out.length - 1], earthPos(timeline.arr_day + (totalT - flybyOffset)), ARC_STEPS)
     : [];
   return { out, ret, timeline, isMoon: false, isReturnTrip, heliDestinationId };
 }
@@ -213,7 +209,9 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
           const hid = arcs.heliDestinationId;
           if (!hid) throw new Error(`${m.id}: missing heliDestinationId`);
           const expected =
-            hid === 'mars' ? marsPos(arcs.timeline.arr_day) : destinationPos(arcs.timeline.arr_day, hid);
+            hid === 'mars'
+              ? marsPos(arcs.timeline.arr_day)
+              : destinationPos(arcs.timeline.arr_day, hid);
           const tol = hid === 'mars' ? 0.1 : 0.25;
           expectCloseTo(
             Math.hypot(last.x, last.z),

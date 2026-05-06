@@ -17,6 +17,7 @@ import type { MoonSite } from '$types/moon-site';
 import type { MarsSite, Traverse } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
+import type { IssModule, IssModuleBase, IssModuleOverlay } from '$types/iss-module';
 
 const cache = new Map<string, unknown>();
 
@@ -272,6 +273,66 @@ export async function getScenario(id: string, locale = 'en-US'): Promise<Localiz
   } catch {
     return null;
   }
+}
+
+/**
+ * All ISS pressurised modules + Canadarm2 (PRD-010 / ADR-017). Base rows
+ * from `iss-modules.json` merged with per-locale overlays; falls back to
+ * en-US when a locale overlay is missing.
+ */
+export async function getIssModules(locale = 'en-US'): Promise<IssModule[]> {
+  const list = await get<IssModuleBase[]>('iss-modules.json');
+  const merged = await Promise.all(
+    list.map(async (baseRecord) => {
+      const overlay = await get<IssModuleOverlay>(
+        `i18n/${locale}/iss-modules/${baseRecord.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<IssModuleOverlay>(`i18n/en-US/iss-modules/${baseRecord.id}.json`).catch(
+              () => null,
+            ));
+      if (!fallback) {
+        throw new Error(
+          `Missing ISS overlay for ${baseRecord.id} (locale ${locale}, no en-US fallback)`,
+        );
+      }
+      return { ...baseRecord, ...fallback };
+    }),
+  );
+  return merged;
+}
+
+export async function getIssModule(id: string, locale = 'en-US'): Promise<IssModule | null> {
+  try {
+    const list = await get<IssModuleBase[]>('iss-modules.json');
+    const baseRecord = list.find((m) => m.id === id);
+    if (!baseRecord) return null;
+    const overlay = await get<IssModuleOverlay>(
+      `i18n/${locale}/iss-modules/${baseRecord.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<IssModuleOverlay>(`i18n/en-US/iss-modules/${baseRecord.id}.json`).catch(
+            () => null,
+          ));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * ISS module photo gallery URLs (manifest `iss-galleries.json`). Empty when
+ * count is 0 — UI hides the GALLERY tab.
+ */
+export async function getIssModuleGallery(moduleId: string): Promise<string[]> {
+  return getCategoryGallery('iss-modules', 'iss-galleries.json', moduleId);
 }
 
 /**

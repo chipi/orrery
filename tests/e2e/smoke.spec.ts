@@ -5,7 +5,7 @@ import { test, expect, type Page, type ConsoleMessage } from '@playwright/test';
  * something. These are cheap and catch ~80% of "did the build break?"
  * regressions before the heavier explore/plan tests run.
  *
- * The 6 routes match the table in CLAUDE.md §what-this-project-is.
+ * Primary routes match CLAUDE.md §what-this-project-is (smoke subset).
  */
 
 const ROUTES = [
@@ -15,7 +15,9 @@ const ROUTES = [
   { path: '/fly', titleHint: 'Mission Arc' },
   { path: '/missions', titleHint: 'Mission Library' },
   { path: '/earth', titleHint: 'Earth Orbit' },
+  { path: '/iss', titleHint: 'ISS Explorer' },
   { path: '/moon', titleHint: 'Moon Map' },
+  { path: '/mars', titleHint: 'Mars' },
 ];
 
 function attachConsoleAndError(page: Page) {
@@ -40,12 +42,20 @@ for (const route of ROUTES) {
   });
 }
 
-test('nav bar is visible on every screen and links target the 6 routes', async ({ page }) => {
+test('nav bar is visible on every screen and links target primary routes', async ({ page }) => {
   await page.goto('/explore');
   const nav = page.locator('nav, [role="navigation"], header').first();
   await expect(nav).toBeVisible();
-  // The nav exposes 6 anchors corresponding to the 6 screens.
-  for (const path of ['/moon', '/explore', '/plan', '/fly', '/missions', '/earth']) {
+  for (const path of [
+    '/moon',
+    '/mars',
+    '/iss',
+    '/explore',
+    '/plan',
+    '/fly',
+    '/missions',
+    '/earth',
+  ]) {
     const link = page.locator(`a[href$="${path}"]`).first();
     await expect(link, `nav link to ${path}`).toBeVisible();
   }

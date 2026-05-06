@@ -1,0 +1,432 @@
+[
+  {
+    "id": "zarya",
+    "builder": "Khrunichev State Research and Production Space Center",
+    "builder_country": "Russia",
+    "agency": "Roscosmos / NASA (funded)",
+    "launch_vehicle": "Proton-K",
+    "launch_date": "1998-11-20",
+    "flight_designation": "STS-88 rendezvous target",
+    "mass_kg": 19130,
+    "length_m": 12.6,
+    "year_first_of": "First ISS module in orbit",
+    "status": "ACTIVE",
+    "credit": "NASA — ISS structural references",
+    "links": [
+      {
+        "l": "Wikipedia · Zarya",
+        "u": "https://en.wikipedia.org/wiki/Zarya",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · International Space Station",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "unity",
+    "builder": "Boeing",
+    "builder_country": "United States",
+    "agency": "NASA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "1998-12-06",
+    "flight_designation": "STS-88",
+    "mass_kg": 11612,
+    "length_m": 5.5,
+    "year_first_of": "First US-built ISS element",
+    "status": "ACTIVE",
+    "credit": "NASA — ISS assembly references",
+    "links": [
+      {
+        "l": "Wikipedia · Unity (ISS module)",
+        "u": "https://en.wikipedia.org/wiki/Unity_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Space Station",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "zvezda",
+    "builder": "RKK Energia / Khrunichev",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Proton-K",
+    "launch_date": "2000-07-12",
+    "flight_designation": "Proton flight",
+    "mass_kg": 19105,
+    "length_m": 13.1,
+    "status": "ACTIVE",
+    "credit": "NASA / Roscosmos — public ISS references",
+    "links": [
+      {
+        "l": "Wikipedia · Zvezda",
+        "u": "https://en.wikipedia.org/wiki/Zvezda_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "destiny",
+    "builder": "Boeing",
+    "builder_country": "United States",
+    "agency": "NASA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2001-02-07",
+    "flight_designation": "STS-98",
+    "mass_kg": 14360,
+    "length_m": 8.5,
+    "status": "ACTIVE",
+    "credit": "NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Destiny",
+        "u": "https://en.wikipedia.org/wiki/Destiny_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS Research",
+        "u": "https://www.nasa.gov/humans-in-space/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "quest",
+    "builder": "Boeing",
+    "builder_country": "United States",
+    "agency": "NASA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2001-07-12",
+    "flight_designation": "STS-104",
+    "mass_kg": 9918,
+    "length_m": 5.5,
+    "status": "ACTIVE",
+    "credit": "NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Quest",
+        "u": "https://en.wikipedia.org/wiki/Quest_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "pirs",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Soyuz-U / Progress carrier",
+    "launch_date": "2001-09-17",
+    "flight_designation": "ISS assembly",
+    "mass_kg": 3580,
+    "length_m": 4.9,
+    "status": "RETIRED",
+    "credit": "Roscosmos / NASA archival imagery",
+    "links": [
+      {
+        "l": "Wikipedia · Pirs",
+        "u": "https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "harmony",
+    "builder": "Thales Alenia Space",
+    "builder_country": "Italy",
+    "agency": "NASA / ESA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2007-10-23",
+    "flight_designation": "STS-120",
+    "mass_kg": 14150,
+    "length_m": 7.2,
+    "status": "ACTIVE",
+    "credit": "NASA / ESA",
+    "links": [
+      {
+        "l": "Wikipedia · Harmony",
+        "u": "https://en.wikipedia.org/wiki/Harmony_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "ESA · ISS",
+        "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "columbus",
+    "builder": "Airbus Defence and Space",
+    "builder_country": "Germany",
+    "agency": "ESA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2008-02-07",
+    "flight_designation": "STS-122",
+    "mass_kg": 10277,
+    "length_m": 7,
+    "status": "ACTIVE",
+    "credit": "ESA / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Columbus",
+        "u": "https://en.wikipedia.org/wiki/Columbus_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "ESA · Columbus",
+        "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Columbus",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "kibo",
+    "builder": "Mitsubishi Heavy Industries",
+    "builder_country": "Japan",
+    "agency": "JAXA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2008-03-11",
+    "flight_designation": "STS-123 / STS-124 / STS-127",
+    "mass_kg": 15800,
+    "length_m": 11.2,
+    "status": "ACTIVE",
+    "credit": "JAXA / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Kibo",
+        "u": "https://en.wikipedia.org/wiki/Kib%C5%8D_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "JAXA · Kibo",
+        "u": "https://humans-in-space.jaxa.jp/en/hashiten/kibo/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "tranquility",
+    "builder": "Thales Alenia Space",
+    "builder_country": "Italy",
+    "agency": "NASA / ESA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2010-02-08",
+    "flight_designation": "STS-130",
+    "mass_kg": 7998,
+    "length_m": 7,
+    "status": "ACTIVE",
+    "credit": "NASA / ESA",
+    "links": [
+      {
+        "l": "Wikipedia · Tranquility",
+        "u": "https://en.wikipedia.org/wiki/Tranquility_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "cupola",
+    "builder": "Thales Alenia Space",
+    "builder_country": "Italy",
+    "agency": "NASA / ESA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2010-02-08",
+    "flight_designation": "STS-130",
+    "mass_kg": 1788,
+    "length_m": 3,
+    "year_first_of": "Largest window assembly flown on ISS",
+    "status": "ACTIVE",
+    "credit": "NASA / ESA",
+    "links": [
+      {
+        "l": "Wikipedia · Cupola",
+        "u": "https://en.wikipedia.org/wiki/Cupola_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "ESA · Cupola",
+        "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Cupola",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "rassvet",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2010-05-14",
+    "flight_designation": "STS-132",
+    "mass_kg": 800,
+    "length_m": 4,
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Rassvet",
+        "u": "https://en.wikipedia.org/wiki/Rassvet_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "leonardo",
+    "builder": "Thales Alenia Space",
+    "builder_country": "Italy",
+    "agency": "NASA / ESA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2011-02-24",
+    "flight_designation": "STS-133",
+    "mass_kg": 8200,
+    "length_m": 7,
+    "status": "ACTIVE",
+    "credit": "NASA / ESA",
+    "links": [
+      {
+        "l": "Wikipedia · Leonardo (ISS module)",
+        "u": "https://en.wikipedia.org/wiki/Leonardo_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "beam",
+    "builder": "Bigelow Aerospace",
+    "builder_country": "United States",
+    "agency": "NASA",
+    "launch_vehicle": "Falcon 9",
+    "launch_date": "2016-04-08",
+    "flight_designation": "SpaceX CRS-8",
+    "mass_kg": 1413,
+    "length_m": 4,
+    "year_first_of": "Inflatable habitat technology demonstration",
+    "status": "ACTIVE",
+    "credit": "NASA",
+    "links": [
+      {
+        "l": "Wikipedia · BEAM",
+        "u": "https://en.wikipedia.org/wiki/Bigelow_Expandable_Activity_Module",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Technology demonstrations",
+        "u": "https://www.nasa.gov/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "nauka",
+    "builder": "Khrunichev",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Proton-M",
+    "launch_date": "2021-07-29",
+    "flight_designation": "Proton flight",
+    "mass_kg": 20350,
+    "length_m": 13,
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Nauka",
+        "u": "https://en.wikipedia.org/wiki/Nauka_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "prichal",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Soyuz",
+    "launch_date": "2021-11-26",
+    "flight_designation": "Progress delivery",
+    "mass_kg": 3560,
+    "length_m": 4,
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Prichal",
+        "u": "https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "canadarm2",
+    "builder": "MDA Space (formerly MacDonald, Dettwiler)",
+    "builder_country": "Canada",
+    "agency": "CSA / NASA",
+    "launch_vehicle": "Space Shuttle",
+    "launch_date": "2001-04-22",
+    "flight_designation": "STS-100",
+    "mass_kg": 1807,
+    "length_m": 17,
+    "year_first_of": "Canada’s primary ISS robotics system",
+    "status": "ACTIVE",
+    "credit": "CSA / NASA",
+    "links": [
+      {
+        "l": "Wikipedia · Canadarm2",
+        "u": "https://en.wikipedia.org/wiki/Canadarm2",
+        "t": "intro"
+      },
+      {
+        "l": "CSA · Canadarm2",
+        "u": "https://www.asc-csa.gc.ca/eng/iss/canadarm2/",
+        "t": "core"
+      }
+    ]
+  }
+]

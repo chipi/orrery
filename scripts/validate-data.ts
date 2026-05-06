@@ -41,6 +41,8 @@ const sunOverlaySchema = loadSchema('sun-overlay.schema.json');
 const scenarioSchema = loadSchema('scenario.schema.json');
 const scenarioOverlaySchema = loadSchema('scenario-overlay.schema.json');
 const porkchopSchema = loadSchema('porkchop.schema.json');
+const issModuleSchema = loadSchema('iss-module.schema.json');
+const issModuleOverlaySchema = loadSchema('iss-module-overlay.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -58,6 +60,8 @@ const validateSunOverlay = ajv.compile(sunOverlaySchema);
 const validateScenario = ajv.compile(scenarioSchema);
 const validateScenarioOverlay = ajv.compile(scenarioOverlaySchema);
 const validatePorkchop = ajv.compile(porkchopSchema);
+const validateIssModules = ajv.compile(issModuleSchema);
+const validateIssModuleOverlay = ajv.compile(issModuleOverlaySchema);
 
 let failed = 0;
 let passed = 0;
@@ -117,6 +121,7 @@ validateFile(join(DATA_ROOT, 'earth-objects.json'), validateEarthObjects);
 validateFile(join(DATA_ROOT, 'moon-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
+validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
@@ -174,6 +179,13 @@ if (existsSync(i18nDir)) {
     // Scenario overlays
     for (const file of listJson(join(i18nDir, locale, 'scenarios'))) {
       validateFile(file, validateScenarioOverlay);
+    }
+    // ISS module overlays (PRD-010 / ADR-017)
+    const issOvDir = join(i18nDir, locale, 'iss-modules');
+    if (existsSync(issOvDir)) {
+      for (const file of listJson(issOvDir)) {
+        validateFile(file, validateIssModuleOverlay);
+      }
     }
   }
 }

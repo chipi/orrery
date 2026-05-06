@@ -115,12 +115,15 @@ export function computePorkchopGrid(
 
 /** Heliocentric position (AU) in the ecliptic plane. Matches
  * `mission-arc.destinationPos` (x/z) mapped to Lambert's [x,y]. */
-function destinationHelioXY(day: number, destination: {
-  a: number;
-  a0: number;
-  meanMotionRadPerDay: number;
-  e?: number;
-}): [number, number] {
+function destinationHelioXY(
+  day: number,
+  destination: {
+    a: number;
+    a0: number;
+    meanMotionRadPerDay: number;
+    e?: number;
+  },
+): [number, number] {
   const e = destination.e ?? 0;
   const nu = destination.a0 + destination.meanMotionRadPerDay * day;
   const r = (destination.a * (1 - e * e)) / (1 + e * Math.cos(nu));

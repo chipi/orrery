@@ -647,8 +647,7 @@
     arcTimeline = newTimeline;
     isFreeReturn = false;
     isMoonMission = m.dest === 'MOON';
-    activeDestination =
-      missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
+    activeDestination = missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
     // isReturnTrip is computed above (it gates flybyOffset). Sample-
     // return missions: Luna 24, Chang'e 5/6. Crewed: Apollo, Artemis 3.
     // Drives the second tube-mesh rendering of the return arc below.

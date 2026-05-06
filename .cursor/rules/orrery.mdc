@@ -13,9 +13,9 @@ Instructions for agentic AI working on this codebase. Read this before touching 
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Six primary nav screens, real orbital mechanics, **32** missions in the library (Mars + Moon), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
+Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Eight primary nav destinations, real orbital mechanics, **36** missions in the library (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
 
-The six primary screens:
+The eight primary nav destinations:
 
 | Route | Screen | File |
 |---|---|---|
@@ -24,9 +24,11 @@ The six primary screens:
 | `/fly` | Mission Arc | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Library | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
+| `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
 | `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
+| `/mars` | Mars Map | `src/routes/mars/+page.svelte` |
 
-Additional routes (e.g. `/mars` for the Mars surface map — PRD-009) may exist outside the main nav; check `src/routes/`.
+Other routes under `src/routes/` are landing pages or experiments (see repo layout).
 
 ---
 
@@ -221,7 +223,7 @@ it('Earth at 1 AU ≈ 29.78 km/s', () =>
   expect(visViva(1.0, 1.0)).toBeCloseTo(29.78, 1))
 ```
 
-**E2e tests** (Playwright, in `tests/`): six critical paths — one per screen, verifying load and basic interaction. No console errors on any screen.
+**E2e tests** (Playwright, in `tests/`): smoke covers every primary route load without console errors; dedicated specs exercise deeper flows per screen where needed.
 
 ---
 

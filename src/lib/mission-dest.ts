@@ -29,9 +29,7 @@ export function missionDestToDataFolder(dest: Destination): string {
  * Maps catalogue `dest` to heliocentric arc body for `transferEllipse` /
  * `destinationPos`. Moon missions use cislunar geometry elsewhere — null.
  */
-export function missionDestToHeliocentricDestinationId(
-  dest: Destination,
-): DestinationId | null {
+export function missionDestToHeliocentricDestinationId(dest: Destination): DestinationId | null {
   switch (dest) {
     case 'MARS':
       return 'mars';

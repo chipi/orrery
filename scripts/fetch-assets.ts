@@ -7,6 +7,13 @@
  * Future: NASA Images API for per-mission imagery; rocket reference imagery.
  *
  * Run via: npm run fetch-assets
+ *
+ * Targeted mission imagery only (merges into mission-galleries.json):
+ *   npm run fetch-assets -- --missions-only=galileo,voyager-2
+ *
+ * ISS module galleries only (merges into iss-galleries.json):
+ *   npm run fetch-assets -- --iss-only
+ *   npm run fetch-assets -- --iss-only=cupola,zarya
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
@@ -560,6 +567,11 @@ const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   'inspiration-mars': 'Mars_atmosphere_2.jpg',
   'starship-mars-crew': 'Starship_full_stack.jpg',
   artemis2: 'Artemis_2_crew_portrait.jpg',
+  /** Outer-planet / small-body catalogue — NASA API often lacks usable credits. */
+  galileo: 'Galileo_spacecraft_model.png',
+  'voyager-2': 'Voyager_2_spacecraft.jpg',
+  'new-horizons': 'New_Horizons_spacecraft_(crop).jpg',
+  dawn: 'Dawn_spacecraft_arrival_at_Ceres_(artist_concept).jpg',
 };
 
 // Gallery-mode top-up for missions where NASA's library has zero or
@@ -662,6 +674,26 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Clementine_final_checks.jpg',
     'Appleton_cráter_(Clementine).jpg',
   ],
+  galileo: [
+    'Jupiter_from_Galileo_Prime_Meridian.jpg',
+    'Io_volcanism_from_Galileo.jpg',
+    'Artists_concept_of_Galileo_spacecraft.jpg',
+  ],
+  'voyager-2': [
+    'Neptune_Full_Disk_View_(7564918848).jpg',
+    'Triton_moon_mosaic_Voyager_2_(large).jpg',
+    'Voyager_spacecraft.jpg',
+  ],
+  'new-horizons': [
+    'Pluto-Color-NewHorizons-20150713.jpg',
+    '486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg',
+    'NewHorizons_39_july14_2015.jpg',
+  ],
+  dawn: [
+    'Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg',
+    'Vesta_in_natural_color.jpg',
+    'Dawn-spacecraft.jpg',
+  ],
 };
 
 /** Top up a mission's gallery from WIKIMEDIA_MISSION_GALLERY_FALLBACK
@@ -700,18 +732,38 @@ async function topUpWikimediaGallery(
   return saved;
 }
 
-async function fetchMissionImages(): Promise<number> {
+async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
   await mkdir(MISSIONS_DIR, { recursive: true });
   await mkdir('static/data', { recursive: true });
 
   /** Manifest: { missionId: count } so the UI knows how many photos
    *  it has and renders thumbnails 01..N. Empty entries mean no
    *  gallery (UI degrades to text-only). */
-  const manifest: Record<string, number> = {};
+  let prevManifest: Record<string, number> = {};
+  if (onlyIds?.length) {
+    try {
+      prevManifest = JSON.parse(await readFile(MISSION_GALLERIES_MANIFEST, 'utf8')) as Record<
+        string,
+        number
+      >;
+    } catch {
+      /* no existing manifest */
+    }
+  }
+  const manifest: Record<string, number> = onlyIds?.length ? { ...prevManifest } : {};
   let totalPhotos = 0;
 
-  for (let i = 0; i < MISSION_IMAGE_QUERIES.length; i++) {
-    const m = MISSION_IMAGE_QUERIES[i];
+  const queries = onlyIds?.length
+    ? MISSION_IMAGE_QUERIES.filter((q) => onlyIds.includes(q.id))
+    : MISSION_IMAGE_QUERIES;
+
+  if (onlyIds?.length && queries.length === 0) {
+    console.warn('  ⚠ --missions-only: no ids matched MISSION_IMAGE_QUERIES');
+    return 0;
+  }
+
+  for (let i = 0; i < queries.length; i++) {
+    const m = queries[i];
     const missionDir = join(MISSIONS_DIR, m.id);
     await mkdir(missionDir, { recursive: true });
     process.stdout.write(`  ${m.id}…`);
@@ -761,6 +813,23 @@ async function fetchMissionImages(): Promise<number> {
       }
     }
 
+    // NASA returned hits but every download failed — same net effect as
+    // no imagery; try the single-file Wikimedia cover if configured.
+    if (saved === 0 && WIKIMEDIA_MISSION_FALLBACK[m.id]) {
+      const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
+      try {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
+        await downloadFromWikimedia(url, join(missionDir, '01.jpg'));
+        await downloadFromWikimedia(url, legacyCoverPath);
+        saved = 1;
+        hasLegacyCover = true;
+        process.stdout.write(' wikimedia-cover');
+      } catch (err2) {
+        const msg = err2 instanceof Error ? err2.message : String(err2);
+        process.stdout.write(` ⚠ wikimedia-cover retry skipped (${msg})`);
+      }
+    }
+
     // Top up from the curated Wikimedia gallery list when NASA + cover
     // fallback together fell short of MISSION_GALLERY_MAX. This is the
     // path that lifts non-US missions from 1 → 4–5 images.
@@ -782,7 +851,7 @@ async function fetchMissionImages(): Promise<number> {
     totalPhotos += saved;
     process.stdout.write(` ${saved}\n`);
 
-    if (i < MISSION_IMAGE_QUERIES.length - 1) {
+    if (i < queries.length - 1) {
       await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
     }
   }
@@ -791,8 +860,257 @@ async function fetchMissionImages(): Promise<number> {
   const sortedManifest: Record<string, number> = {};
   for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
   await writeFile(MISSION_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
   console.log(
-    `  → manifest written to ${MISSION_GALLERIES_MANIFEST} (${totalPhotos} photos total)`,
+    `  → manifest written to ${MISSION_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
+  );
+
+  return totalPhotos;
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// ISS MODULE GALLERIES — NASA Images API + Wikimedia (PRD-010 / ADR-016)
+//
+// Writes `static/images/iss-modules/{id}/01.jpg` … and
+// `static/data/iss-galleries.json` (count map). Mirrors the mission
+// gallery flow; Wikimedia fallbacks cover gaps when NASA search fails.
+// ──────────────────────────────────────────────────────────────────────
+
+interface IssImageQuery {
+  id: string;
+  query: string;
+}
+
+const ISS_MODULES_IMG_DIR = 'static/images/iss-modules';
+const ISS_GALLERIES_MANIFEST = 'static/data/iss-galleries.json';
+/** PRD: ~4–8 images per module; 6 balances UX vs bundle size. */
+const ISS_GALLERY_MAX = 6;
+
+const ISS_IMAGE_QUERIES: IssImageQuery[] = [
+  { id: 'beam', query: 'BEAM expandable module international space station' },
+  { id: 'canadarm2', query: 'Canadarm2 space station robotic arm' },
+  { id: 'columbus', query: 'Columbus laboratory ISS ESA' },
+  { id: 'cupola', query: 'ISS cupola Earth observation windows' },
+  { id: 'destiny', query: 'Destiny laboratory ISS module' },
+  { id: 'harmony', query: 'Harmony module ISS Node 2' },
+  { id: 'kibo', query: 'Kibo Japanese Experiment Module ISS' },
+  { id: 'leonardo', query: 'Leonardo PMM permanent multipurpose module ISS' },
+  { id: 'nauka', query: 'Nauka science module ISS' },
+  { id: 'pirs', query: 'Pirs docking compartment ISS' },
+  { id: 'prichal', query: 'Prichal docking module ISS' },
+  { id: 'quest', query: 'Quest joint airlock ISS' },
+  { id: 'rassvet', query: 'Rassvet ISS module MRM-1' },
+  { id: 'tranquility', query: 'Tranquility module ISS Node 3' },
+  { id: 'unity', query: 'Unity module ISS Node 1' },
+  { id: 'zarya', query: 'Zarya FGB ISS first module' },
+  { id: 'zvezda', query: 'Zvezda service module ISS' },
+];
+
+/** Single-image Wikimedia cover when NASA search returns nothing usable. */
+const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
+  beam: 'BEAM_module_on_ISS.jpg',
+  canadarm2: 'Canadarm2.jpg',
+  columbus: 'Columbus_ISS_module.jpg',
+  cupola: 'Cupola_ISS.jpg',
+  destiny: 'Destiny_module_ISS.jpg',
+  harmony: 'Harmony arrives at ISS.jpg',
+  kibo: 'Kibō_Japanese_Experiment_Module.jpg',
+  leonardo: 'Leonardo PMM module.jpg',
+  nauka: 'Anton Shkaplerov works outside Nauka during spacewalk (ISS066-E-119955).jpg',
+  pirs: 'Pirs_Iss.jpg',
+  prichal: 'The Prichal docking module above Africa.jpg',
+  quest: 'Quest_joint_airlock_ISS.jpg',
+  rassvet: 'MRM-1 Rassvet during installation.jpg',
+  tranquility: 'Tranquility from departing STS-130.jpg',
+  unity: 'Unity_(ISS_module)_in_Orbit.jpg',
+  zarya: 'Zarya_ISS_module.jpg',
+  zvezda: 'Zvezda_ISS.jpg',
+};
+
+/** Extra Commons filenames tried first when topping up toward ISS_GALLERY_MAX. */
+const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
+  canadarm2: ['International_Space_Station_after_being_relocated_by_the_Canadarm.jpg'],
+  cupola: [
+    'EarthObservationCupolaISS052011.jpg',
+    'Cupola_at_night.jpg',
+    'STS-130 ISS approach closeup of Tranquility and Cupola.jpg',
+  ],
+  leonardo: [
+    'STS-133 ISS-26 Permanent Multipurpose Module.jpg',
+    'STS-133 ISS-26 newly-attached Permanent Multipurpose Module.jpg',
+    'ISS-43 Permanent Multipurpose Module relocation.jpg',
+    'STS-133 Installation PMM 2.jpg',
+    'Permanent Multipurpose Module (PMM) Relocation.jpg',
+  ],
+  nauka: [
+    '51651128052 06d3077e33 o Progress MS-17.jpg',
+    '1637984492234 Progress MS 17 undocking and Nauka nadir temporary docking adapter Removal 01.jpg',
+    'The Nauka multipurpose laboratory module and the Prichal docking module.jpg',
+    'ISS-66 Prichal and Nauka during an outfitting spacewalk.jpg',
+    'ISS-67 The Nauka and Prichal modules and the Soyuz MS-21 crew ship.jpg',
+  ],
+  prichal: [
+    'Cosmonauts work outside the Prichal module during spacewalk (ISS066-E-121305).jpg',
+    'ISS-66 The Nauka multipurpose laboratory module and the Prichal docking module.jpg',
+    "Russia's Prichal docking module attached to the Progress delivery vehicle.jpg",
+    'Mockup of Prichal Module.jpg',
+    "Prichal docked to Nauka (top-left) from today's EVA helmetcam view.jpg",
+  ],
+  rassvet: [
+    'STS-132 ISS-23 Rassvet Pirs and Progress M-05M.jpg',
+    'ISS-24 Soyuz TMA-19 Rassvet and Progress M-05M.jpg',
+    'ISS-53 Soyuz MS-05 docked to Rassvet above northern central China.jpg',
+  ],
+  tranquility: ['STS-130 EVA1 Tranquility 1.jpg', 'Node 3 - Isolated view.jpg'],
+  harmony: ['ISS Node 2 module.jpg', 'Canadarm2 moving Harmony node into position.jpg'],
+};
+
+const ISS_GENERIC_GALLERY_TOPUP: string[] = [
+  'International_Space_Station_after_being_relocated_by_the_Canadarm.jpg',
+  'International_Space_Station_after_beautiful_day.JPG',
+  'ISS_Expedition_42_crew_members_pose_for_an_official_portrait.jpg',
+  'NASA_astron_Karen_Nyberg_ISS.jpg',
+  'EarthObservationCupolaISS052011.jpg',
+  'ISS_and_Shuttle_Endeavour_seen_from_the_Soyuz_TMA-20.jpg',
+  'ISS_and_Earth_-_February_2025_(NASA,_ISS088-E-40554).jpg',
+];
+
+async function topUpIssWikimediaGallery(
+  moduleId: string,
+  moduleDir: string,
+  nextIndex: number,
+): Promise<number> {
+  const specific = WIKIMEDIA_ISS_MODULE_GALLERY[moduleId] ?? [];
+  const seen = new Set<string>();
+  const list: string[] = [];
+  for (const f of [...specific, ...ISS_GENERIC_GALLERY_TOPUP]) {
+    if (seen.has(f)) continue;
+    seen.add(f);
+    list.push(f);
+  }
+
+  let saved = nextIndex - 1;
+  for (const filename of list) {
+    if (saved >= ISS_GALLERY_MAX) break;
+    const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
+    const dest = join(moduleDir, slot);
+    const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(filename)}?width=800`;
+    try {
+      await downloadFromWikimedia(url, dest);
+      saved++;
+      await new Promise((resolve) => setTimeout(resolve, WIKIMEDIA_DELAY_MS));
+    } catch {
+      // Skip; try next filename.
+    }
+  }
+  return saved;
+}
+
+async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
+  await mkdir(ISS_MODULES_IMG_DIR, { recursive: true });
+  await mkdir('static/data', { recursive: true });
+
+  /** True when `--iss-only=id,id` — merge counts for untouched modules into the manifest. */
+  const subsetMode = Array.isArray(onlyIds) && onlyIds.length > 0;
+
+  let prevManifest: Record<string, number> = {};
+  if (subsetMode) {
+    try {
+      prevManifest = JSON.parse(await readFile(ISS_GALLERIES_MANIFEST, 'utf8')) as Record<
+        string,
+        number
+      >;
+    } catch {
+      /* no existing manifest */
+    }
+  }
+  const manifest: Record<string, number> = subsetMode ? { ...prevManifest } : {};
+  let totalPhotos = 0;
+
+  const queries = subsetMode
+    ? ISS_IMAGE_QUERIES.filter((q) => onlyIds!.includes(q.id))
+    : ISS_IMAGE_QUERIES;
+
+  if (subsetMode && queries.length === 0) {
+    console.warn('  ⚠ --iss-only: no ids matched ISS_IMAGE_QUERIES');
+    return 0;
+  }
+
+  for (let i = 0; i < queries.length; i++) {
+    const row = queries[i];
+    const moduleDir = join(ISS_MODULES_IMG_DIR, row.id);
+    await mkdir(moduleDir, { recursive: true });
+    process.stdout.write(`  ${row.id}…`);
+
+    let urls: string[] = [];
+    let saved = 0;
+
+    try {
+      urls = await fetchNasaGalleryUrls(row.query, ISS_GALLERY_MAX);
+    } catch {
+      const fallback = WIKIMEDIA_ISS_FALLBACK[row.id];
+      if (fallback) {
+        try {
+          const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
+          await downloadFromWikimedia(url, join(moduleDir, '01.jpg'));
+          saved = 1;
+          process.stdout.write(' wikimedia-cover');
+        } catch (err2) {
+          const msg = err2 instanceof Error ? err2.message : String(err2);
+          process.stdout.write(` ⚠ cover skipped (${msg})`);
+        }
+      }
+    }
+
+    for (let n = 0; n < urls.length; n++) {
+      const filename = `${String(n + 1).padStart(2, '0')}.jpg`;
+      try {
+        const imgRes = await fetch(urls[n]);
+        if (!imgRes.ok) continue;
+        const buffer = Buffer.from(await imgRes.arrayBuffer());
+        await writeFile(join(moduleDir, filename), buffer);
+        saved++;
+      } catch {
+        // Single-image fail; continue with the rest.
+      }
+    }
+
+    if (saved === 0 && WIKIMEDIA_ISS_FALLBACK[row.id]) {
+      const fallback = WIKIMEDIA_ISS_FALLBACK[row.id];
+      try {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
+        await downloadFromWikimedia(url, join(moduleDir, '01.jpg'));
+        saved = 1;
+        process.stdout.write(' wikimedia-cover');
+      } catch (err2) {
+        const msg = err2 instanceof Error ? err2.message : String(err2);
+        process.stdout.write(` ⚠ wikimedia-cover retry skipped (${msg})`);
+      }
+    }
+
+    if (saved < ISS_GALLERY_MAX) {
+      const after = await topUpIssWikimediaGallery(row.id, moduleDir, saved + 1);
+      if (after > saved) {
+        process.stdout.write(` +${after - saved} wikimedia-gallery`);
+        saved = after;
+      }
+    }
+
+    manifest[row.id] = saved;
+    totalPhotos += saved;
+    process.stdout.write(` ${saved}\n`);
+
+    if (i < queries.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
+    }
+  }
+
+  const sortedManifest: Record<string, number> = {};
+  for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
+  await writeFile(ISS_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
+  console.log(
+    `  → manifest written to ${ISS_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
   );
 
   return totalPhotos;
@@ -1273,7 +1591,9 @@ async function fetchMissionThumbnails(): Promise<number> {
       } else {
         const hid = missionDestToHeliocentricDestinationId(m.dest);
         if (!hid) {
-          throw new Error(`Thumbnail: mission ${m.id} has dest ${m.dest} without heliocentric mapping`);
+          throw new Error(
+            `Thumbnail: mission ${m.id} has dest ${m.dest} without heliocentric mapping`,
+          );
         }
         const vInf = m.flight?.arrival?.v_infinity_km_s;
         paintHeliocentricThumbnail(ctx, hid, depDay, vInf, color);
@@ -1307,6 +1627,55 @@ async function downloadFile(url: string, dest: string): Promise<void> {
 // ──────────────────────────────────────────────────────────────────────
 
 async function main() {
+  const issOnlyArg = process.argv.find((a) => a === '--iss-only' || a.startsWith('--iss-only='));
+  let issOnlyIds: string[] | undefined;
+  if (issOnlyArg) {
+    if (issOnlyArg === '--iss-only') {
+      issOnlyIds = undefined;
+    } else {
+      const parts = issOnlyArg
+        .slice('--iss-only='.length)
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      issOnlyIds = parts.length > 0 ? parts : undefined;
+    }
+  }
+
+  if (issOnlyArg) {
+    console.log(
+      issOnlyIds?.length
+        ? `ISS module subset (${issOnlyIds.join(', ')}) — skipping fonts/textures/etc.\n`
+        : 'ISS module galleries only — skipping fonts/textures/etc.\n',
+    );
+    const issPhotos = await fetchIssModuleImages(issOnlyIds);
+    console.log(`  → ${issPhotos} ISS gallery files accounted for in manifest\n`);
+    console.log('Done.');
+    return;
+  }
+
+  const missionsOnlyArg = process.argv.find((a) => a.startsWith('--missions-only='));
+  const missionsOnly = missionsOnlyArg
+    ? missionsOnlyArg
+        .slice('--missions-only='.length)
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : undefined;
+
+  if (missionsOnly?.length) {
+    console.log(
+      `Mission subset mode (${missionsOnly.join(', ')}) — skipping fonts/textures/etc.\n`,
+    );
+    const missionCount = await fetchMissionImages(missionsOnly);
+    console.log(`  → ${missionCount} new/changed mission gallery files written\n`);
+    console.log('Rendering mission trajectory thumbnails:');
+    await fetchMissionThumbnails();
+    console.log('');
+    console.log('Done.');
+    return;
+  }
+
   console.log('Fetching fonts:');
   const fontCount = await fetchFonts();
   console.log(`  → ${fontCount} woff2 files; wrote ${FONTS_CSS_OUT}\n`);
@@ -1370,6 +1739,10 @@ async function main() {
     'count-map',
   );
   console.log('');
+
+  console.log('Fetching ISS module galleries:');
+  const issGalleryTotal = await fetchIssModuleImages();
+  console.log(`  → ${issGalleryTotal} ISS module gallery files in ${ISS_MODULES_IMG_DIR}\n`);
 
   console.log('Rendering mission trajectory thumbnails:');
   await fetchMissionThumbnails();

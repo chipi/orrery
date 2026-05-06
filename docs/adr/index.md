@@ -36,3 +36,6 @@
 | ADR-031 | i18n language list and rollout waves | Accepted (closes RFC-010) | May 2026 |
 | ADR-032 | Font and script strategy (Wave 1) | Accepted (closes RFC-010) | May 2026 |
 | ADR-033 | Translation workflow: LLM-only first-pass | Accepted (closes RFC-010) | May 2026 |
+| ADR-040 | ISS Explorer diagrammatic model + asset pipeline | Accepted (closes RFC-013 OQ-1) | May 2026 |
+| ADR-041 | ISS module pickability contract (`userData.moduleId`) | Accepted | May 2026 |
+| ADR-042 | ISS Explorer low-end fallback (list + perf heuristics) | Accepted | May 2026 |

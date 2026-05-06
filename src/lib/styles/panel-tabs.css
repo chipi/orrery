@@ -7,6 +7,7 @@
  *   - SunPanel.svelte     (OVERVIEW · TECHNICAL · GALLERY · LEARN)
  *   - /earth inline panel (OVERVIEW · GALLERY · LEARN)
  *   - /moon inline panel  (OVERVIEW · GALLERY · LEARN)
+ *   - IssModulePanel.svelte (OVERVIEW · GALLERY · LEARN)
  *
  * Loaded once via src/lib/styles/app.css. Class names are unprefixed
  * because they're scoped by usage (only the 5 detail-panel surfaces

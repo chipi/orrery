@@ -152,42 +152,39 @@ describe('computePorkchopGrid — multi-destination', () => {
     'neptune',
     'pluto',
     'ceres',
-  ] as const)(
-    'produces a finite-∆v grid for %s',
-    (destinationId) => {
-      // Use destination-appropriate TOF range so Lambert can actually
-      // converge — a 250-day window won't reach Saturn.
-      const tofRangeFor = {
-        mercury: [80, 250] as [number, number],
-        venus: [80, 320] as [number, number],
-        mars: [80, 520] as [number, number],
-        jupiter: [400, 1500] as [number, number],
-        saturn: [800, 3000] as [number, number],
-        uranus: [3000, 6500] as [number, number],
-        neptune: [10000, 20000] as [number, number],
-        pluto: [12000, 22000] as [number, number],
-        ceres: [120, 480] as [number, number],
-      };
-      const result = computePorkchopGrid(
-        { ...REQ, destinationId, arrRange: tofRangeFor[destinationId] },
-        () => {},
-        () => false,
-      );
-      if (!result) throw new Error(`expected non-null result for ${destinationId}`);
-      let realCells = 0;
-      for (const row of result.grid) {
-        for (const dv of row) {
-          expect(Number.isFinite(dv)).toBe(true);
-          expect(dv).toBeGreaterThanOrEqual(3.2);
-          expect(dv).toBeLessThanOrEqual(DV_FAILED);
-          if (dv < DV_FAILED) realCells++;
-        }
+  ] as const)('produces a finite-∆v grid for %s', (destinationId) => {
+    // Use destination-appropriate TOF range so Lambert can actually
+    // converge — a 250-day window won't reach Saturn.
+    const tofRangeFor = {
+      mercury: [80, 250] as [number, number],
+      venus: [80, 320] as [number, number],
+      mars: [80, 520] as [number, number],
+      jupiter: [400, 1500] as [number, number],
+      saturn: [800, 3000] as [number, number],
+      uranus: [3000, 6500] as [number, number],
+      neptune: [10000, 20000] as [number, number],
+      pluto: [12000, 22000] as [number, number],
+      ceres: [120, 480] as [number, number],
+    };
+    const result = computePorkchopGrid(
+      { ...REQ, destinationId, arrRange: tofRangeFor[destinationId] },
+      () => {},
+      () => false,
+    );
+    if (!result) throw new Error(`expected non-null result for ${destinationId}`);
+    let realCells = 0;
+    for (const row of result.grid) {
+      for (const dv of row) {
+        expect(Number.isFinite(dv)).toBe(true);
+        expect(dv).toBeGreaterThanOrEqual(3.2);
+        expect(dv).toBeLessThanOrEqual(DV_FAILED);
+        if (dv < DV_FAILED) realCells++;
       }
-      // Sanity: at least some cells converged (else the destination
-      // is fully unreachable in the chosen window — wrong calibration).
-      expect(realCells).toBeGreaterThan(0);
-    },
-  );
+    }
+    // Sanity: at least some cells converged (else the destination
+    // is fully unreachable in the chosen window — wrong calibration).
+    expect(realCells).toBeGreaterThan(0);
+  });
 
   it('Earth → Jupiter Hohmann is significantly more expensive than Earth → Mars', () => {
     const mars = computePorkchopGrid(

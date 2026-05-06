@@ -48,7 +48,7 @@ export default defineConfig({
           {
             // Gallery manifests + flight-data manifests.
             urlPattern: ({ url }) =>
-              /\/data\/(mission-galleries|planet-galleries|sun-gallery|earth-object-galleries|moon-site-galleries)\.json$/.test(
+              /\/data\/(mission-galleries|planet-galleries|sun-gallery|earth-object-galleries|moon-site-galleries|iss-galleries)\.json$/.test(
                 url.pathname,
               ),
             handler: 'NetworkFirst',

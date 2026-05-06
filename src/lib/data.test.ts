@@ -18,6 +18,9 @@ import {
   getSunGallery,
   getEarthObjectGallery,
   getMoonSiteGallery,
+  getIssModules,
+  getIssModule,
+  getIssModuleGallery,
   rockets,
   earthObjects,
   moonSites,
@@ -394,21 +397,18 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
     'neptune',
     'pluto',
     'ceres',
-  ] as const)(
-    'returns a valid grid for %s',
-    async (id) => {
-      const g = await getPorkchopGrid(id);
-      expect(g).not.toBeNull();
-      if (!g) return;
-      expect(g.destination).toBe(id);
-      expect(g.steps).toEqual([112, 100]);
-      expect(g.grid).toHaveLength(100); // 100 rows (TOF axis)
-      expect(g.grid[0]).toHaveLength(112); // 112 cols (dep axis)
-      // Ranges declared per ADR-026 §Destination scope
-      expect(g.dep_range_days).toEqual([0, 1460]);
-      expect(g.tof_range_days[1]).toBeGreaterThan(g.tof_range_days[0]);
-    },
-  );
+  ] as const)('returns a valid grid for %s', async (id) => {
+    const g = await getPorkchopGrid(id);
+    expect(g).not.toBeNull();
+    if (!g) return;
+    expect(g.destination).toBe(id);
+    expect(g.steps).toEqual([112, 100]);
+    expect(g.grid).toHaveLength(100); // 100 rows (TOF axis)
+    expect(g.grid[0]).toHaveLength(112); // 112 cols (dep axis)
+    // Ranges declared per ADR-026 §Destination scope
+    expect(g.dep_range_days).toEqual([0, 1460]);
+    expect(g.tof_range_days[1]).toBeGreaterThan(g.tof_range_days[0]);
+  });
 
   it('inner planets + Ceres offer LANDING + FLYBY; giants + Pluto only FLYBY', async () => {
     for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
@@ -437,6 +437,35 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
       const g = await getPorkchopGrid(id);
       expect(g?.dv_orbit_insertion.LANDING).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('ISS modules (PRD-010)', () => {
+  it('getIssModules returns 17 merged rows', async () => {
+    const list = await getIssModules('en-US');
+    expect(list).toHaveLength(17);
+    const zarya = list.find((m) => m.id === 'zarya');
+    expect(zarya?.name).toContain('Zarya');
+    expect(zarya?.description.length).toBeGreaterThan(10);
+  });
+
+  it('getIssModules(es) merges Spanish overlays', async () => {
+    const list = await getIssModules('es');
+    const zarya = list.find((m) => m.id === 'zarya');
+    expect(zarya?.description).toContain('El primer módulo');
+  });
+
+  it('getIssModule returns one merged row', async () => {
+    const m = await getIssModule('harmony', 'en-US');
+    expect(m).not.toBeNull();
+    expect(m!.id).toBe('harmony');
+    expect(m!.name.length).toBeGreaterThan(2);
+  });
+
+  it('getIssModuleGallery returns manifest-backed URLs for ISS modules', async () => {
+    const urls = await getIssModuleGallery('cupola');
+    expect(urls.length).toBeGreaterThan(0);
+    expect(urls[0]).toMatch(/\/images\/iss-modules\/cupola\/01\.jpg$/);
   });
 });
 

@@ -226,7 +226,7 @@ State board for all RFCs and ADRs.
 | RFC-010 | Translation & internationalisation strategy | Closed · closed by ADR-031 / ADR-032 / ADR-033 | ADR-031 / 032 / 033 | v0.3.x |
 | RFC-011 | Science page · render pipeline & content authoring | Open | ADR-034 / 035 / 036 (planned) | v0.4 |
 | RFC-012 | Mars Surface Map · technical strategy | Open | ADR-037 / 038 / 039 (planned) | v0.4 |
-| RFC-013 | ISS Explorer · 3D model pipeline & module pickability | Open | ADR-040 / 041 / 042 (planned) | v0.4 |
+| RFC-013 | ISS Explorer · 3D model pipeline & module pickability | Closed · ADR-040 / 041 / 042 | ADR-040 / 041 / 042 | v0.4 |
 
 ### ADRs
 

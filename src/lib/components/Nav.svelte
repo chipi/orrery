@@ -16,6 +16,7 @@
     { href: `${base}/plan`, label: m.nav_plan() },
     { href: `${base}/fly`, label: m.nav_fly() },
     { href: `${base}/earth`, label: m.nav_earth() },
+    { href: `${base}/iss`, label: m.nav_iss() },
     { href: `${base}/moon`, label: m.nav_moon() },
     { href: `${base}/mars`, label: m.nav_mars() },
   ];

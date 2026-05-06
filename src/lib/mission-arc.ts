@@ -225,8 +225,7 @@ export function transferEllipse(
   ) {
     const MU_SUN_AU3_YR2 = 4 * Math.PI * Math.PI;
     const AUPYR_TO_KMS = 4.7404;
-    const vTransferArrival =
-      Math.sqrt(MU_SUN_AU3_YR2 * (2 / r2 - 1 / a)) * AUPYR_TO_KMS;
+    const vTransferArrival = Math.sqrt(MU_SUN_AU3_YR2 * (2 / r2 - 1 / a)) * AUPYR_TO_KMS;
     const vDestCircular = Math.sqrt(MU_SUN_AU3_YR2 / r2) * AUPYR_TO_KMS;
     const hohmannVInfKms = Math.abs(vTransferArrival - vDestCircular);
     if (hohmannVInfKms > 0.1) {

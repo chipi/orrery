@@ -1,0 +1,13 @@
+{
+  "name": "बुध",
+  "type": "पथरीला ग्रह",
+  "fact": "एक ही दिन में सतह तापमान 610°C तक मंडलाता है। कोई वायुमंडल नहीं — केवल अंतरिक्ष के प्रत्यक्ष संपर्क में।",
+  "bio": "सबसे छोटा ग्रह। इसकी अत्यधिक दीर्घवृत्तीय कक्षा (e=0.206) इसे पेरिहेलियन के पास स्पष्ट रूप से तेज करती है। सूर्य के निकट होने पर भी शुक्र अधिक गर्म है।",
+  "links": [
+    { "l": "बुध — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "बुध (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "MESSENGER मिशन अवलोकन (NASA)", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "बेपीकोलोम्बो (ESA / JAXA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "बुध का पिघला हुआ कोर (Nature Geoscience 2019)", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
+}

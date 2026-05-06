@@ -1,0 +1,33 @@
+{
+  "name": "Merkur",
+  "type": "Zemlja planeta",
+  "fact": "Površinske temperature se kreću za 610°C u jednom danu. Nema atmosfere - samo sirovo izlaganje svemiru.",
+  "bio": "Najmanja planeta. Njegova visoko eliptična orbita (e=0,206) čini ga primetno ubrzanim u blizini perihela. Uprkos tome što je najbliža Suncu, Venera je toplija.",
+  "links": [
+    {
+      "l": "Merkur - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "Merkur (__ACR0__ Istraživanje solarnog sistema)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "Pregled misije MESSENGER (__ACR0__)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (__ACR0__ / __ACR1__)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Merkurovo otopljeno jezgro (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

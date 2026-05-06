@@ -1,0 +1,13 @@
+{
+  "name": "MMX",
+  "type": "フォボス試料帰還 · 計画",
+  "first": "火星の衛星からの試料帰還初",
+  "description": "Martian Moons eXploration は JAXA がフォボスに着陸し約十グラムのレゴリスをすくい取り地球へ持ち帰る計画。試料は長年の論争 — フォボスとデイモスは捕獲小惑星か、古代火星衝突の破片か — を解くかもしれない。ドイツ・フランスのローバーによるフォボス表面移動も含み — はやぶさ系とはまったく異なる運用モデル。打ち上げは二〇二四年予定だったが H3 の遅れで二〇二六年にずれた。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "種子島から H3-24L — JAXA の新型重型機。", "type": "nominal" },
+    { "met": 334, "label": "MARS ORBIT INSERTION", "note": "火星軌道捕捉；数か月かけてフォボス準軌道へ。", "type": "nominal" },
+    { "met": 600, "label": "ROVER DEPLOY", "note": "DLR／CNES ローバー（約二十五 kg）をフォボス表面へ展開し現地観測。", "type": "info" },
+    { "met": 1100, "label": "PHOBOS SAMPLE", "note": "MMX がフォボスに着陸；レゴリス約十グラム採取。", "type": "info" },
+    { "met": 1500, "label": "EARTH RETURN", "note": "試料再突入カプセルが約二〇三一年に地球到着。", "type": "info" }
+  ]
+}

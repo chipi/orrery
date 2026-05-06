@@ -1,0 +1,32 @@
+{
+  "name": "MAVEN",
+  "type": "ORBITORE · ATTIVO",
+  "first": "Prima missione dedicata allo studio di come Marte abbia perso la sua atmosfera",
+  "description": "MAVEN — Mars Atmosphere and Volatile Evolution — risponde alla domanda \"dov'è finita l'aria di Marte?\" La sua orbita ellittica si immerge nell'atmosfera superiore, campionando ioni e neutri mentre il vento solare li porta via. Risultati: Marte perde circa 100 g di atmosfera al secondo nello spazio: nel corso di miliardi di anni questo è sufficiente per spiegare la mancanza di clima. La navicella spaziale funge anche da relè fondamentale per le risorse di superficie, tra cui Curiosity e Perseverance.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 401 da Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Prima correzione della traiettoria.",
+      "type": "nominal"
+    },
+    {
+      "met": 308,
+      "label": "INSERIMENTO MARTE ORBITA",
+      "note": "L'accensione del motore principale di 33 minuti cattura MAVEN in un'orbita scientifica ellittica di 35 ore.",
+      "type": "nominal"
+    },
+    {
+      "met": 350,
+      "label": "PRIMA SCIENZA",
+      "note": "Iniziano le campagne di \"immersione profonda\" per il campionamento dell'atmosfera a un'altitudine del periapsi di circa 125 km.",
+      "type": "info"
+    }
+  ]
+}

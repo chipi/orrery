@@ -1,0 +1,13 @@
+{
+  "name": "マンガリアーン",
+  "type": "軌道機 · 飛行済み",
+  "first": "アジア初の火星ミッション；初試みで火星に成功した初の例",
+  "description": "ISRO の火星軌道ミッションは七千四百万ドル — 映画『グラヴィティ』の一億ドルより安く、二日前に到着した NASA の MAVEN（六億七千一百万ドル）のわずか一部。十八か月で技術実証機として建造され、すべての目標に成功：火星注入、深宇宙航法、火星軌道投入、八年の科学。インドは四番目の火星到達機関となり、初挑戦で成功した初の国となった。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "スリハリコータから PSLV-XL（C25）— 比較的小型のため軌道昇格ループが必要。", "type": "nominal" },
+    { "met": 7, "label": "PERIGEE BURN 1", "note": "地球軌道昇格燃焼七回のうち初回。", "type": "nominal" },
+    { "met": 30, "label": "TRANS-MARS INJECTION", "note": "最終近地点燃焼が宇宙機を火星軌道へ。", "type": "nominal" },
+    { "met": 324, "label": "MARS ORBIT INSERTION", "note": "四年休眠後に液体アポジー機関が二十四分間点火し軌道捕捉。", "type": "nominal" },
+    { "met": 3300, "label": "MISSION END", "note": "二〇二二年四月、推進剤枯渇後に交信途絶。", "type": "warning" }
+  ]
+}

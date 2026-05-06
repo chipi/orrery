@@ -1,0 +1,38 @@
+{
+  "name": "Mangalia",
+  "type": "ORBITER · FLOVN",
+  "first": "Prva azijska misija na Mars; prvi uspeh na Marsu iz prvog pokušaja",
+  "description": "Misija Mars Orbiter __ACR0__ koštala je 74 miliona dolara — manje od budžeta filma Gravitacija (100 miliona dolara) i delić MAVEN __ACR1__ (671 milion dolara) koji je stigao dva dana ranije. Izgrađen za 18 meseci kao demonstrator tehnologije, Mangaliaan je uspeo u svakom cilju: trans-Mars injekcija, navigacija dubokog svemira, ubacivanje u orbitu Marsa i 8 godina povratka nauke. Indija je postala četvrta svemirska agencija koja je sletela na Mars i prva koja je uspela u svom prvom pokušaju.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "PSLV-KSL (C25) iz Sriharikote — relativno mali lanser koji zahteva petlju za podizanje orbite.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "PERIJIA BURN 1",
+      "note": "Prva od sedam Zemljinih orbita koje podižu opekotine.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TRANS-MARS INjECTION",
+      "note": "Konačno sagorevanje perigeja postavlja letelicu na putanju Marsa.",
+      "type": "nominal"
+    },
+    {
+      "met": 324,
+      "label": "UMETANjE MARSOVE ORBITE",
+      "note": "Likuid Apogee Engine se pali nakon 4 godine praznog hoda — pali 24 minuta da bi se zaključao u orbitu.",
+      "type": "nominal"
+    },
+    {
+      "met": 3300,
+      "label": "KRAJ MISIJE",
+      "note": "Kontakt je izgubljen 2022-04 nakon što je pogonsko gorivo svemirske letelice iscrpljeno.",
+      "type": "warning"
+    }
+  ]
+}

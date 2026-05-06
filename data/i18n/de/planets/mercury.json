@@ -1,0 +1,33 @@
+{
+  "name": "Quecksilber",
+  "type": "Terrestrischer Planet",
+  "fact": "Die Oberflächentemperaturen schwanken an einem einzigen Tag um 610 °C. Keine Atmosphäre – nur die pure Einwirkung des Weltraums.",
+  "bio": "Der kleinste Planet. Aufgrund seiner stark elliptischen Umlaufbahn (e=0,206) beschleunigt er in der Nähe des Perihels spürbar. Obwohl die Venus der Sonne am nächsten ist, ist sie heißer.",
+  "links": [
+    {
+      "l": "Merkur – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "Merkur (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "MESSENGER-Missionsübersicht (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Der geschmolzene Kern des Merkur (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

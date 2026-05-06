@@ -1,0 +1,33 @@
+{
+  "name": "Urano",
+  "type": "Gigante del ghiaccio",
+  "fact": "Urano ruota su un fianco — inclinazione assiale 98°. Il suo polo nord punta quasi direttamente verso il Sole per metà della sua orbita di 84 anni.",
+  "bio": "Inclinato quasi su un lato (97,77°). Ogni polo riceve 42 anni di luce solare continua, poi 42 anni di oscurità. Quasi certamente causato da un'antica collisione massiccia.",
+  "links": [
+    {
+      "l": "Urano – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "Urano (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 a Urano (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus Orbiter e sonda – Indagine decennale",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "L'origine dell'inclinazione di Urano (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ]
+}

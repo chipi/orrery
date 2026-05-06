@@ -1,0 +1,13 @@
+{
+  "name": "海王星",
+  "type": "冰巨行星",
+  "fact": "旅行者 2 号在 12 年飞行后于 1989 年飞掠海王星。至今仍是唯一造访过的航天器。",
+  "bio": "风速最强——表面风速可达约 2100 km/h。在直接观测之前仅靠数学预报发现，因为天王星轨道显示出未知天体的引力扰动。",
+  "links": [
+    { "l": "海王星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "海王星（NASA 太阳系探索）", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "旅行者 2 号飞掠海王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "海王星的发现 — 维基百科", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "海王星内部模型（Icarus 2021）", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

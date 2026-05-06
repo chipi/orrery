@@ -1,0 +1,13 @@
+{
+  "name": "목성",
+  "type": "가스 행성",
+  "fact": "목성의 중력이 소행성대를 조각냈다 — 다섯 번째 암석 행성이 생기지 못하게. 없었다면 화성은 훨씬 컸을 것이다.",
+  "bio": "거대한 덩치에도 10시간만에 자전하며 강한 자기장을 만든다. 다른 모든 행성을 합친 것보다 무겁다.",
+  "links": [
+    { "l": "Jupiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Jupiter", "t": "intro" },
+    { "l": "Jupiter (NASA Solar System Exploration)", "u": "https://science.nasa.gov/jupiter/", "t": "intro" },
+    { "l": "Juno mission (NASA)", "u": "https://www.nasa.gov/mission/juno/", "t": "core" },
+    { "l": "Galilean moons — Wikipedia", "u": "https://en.wikipedia.org/wiki/Galilean_moons", "t": "core" },
+    { "l": "Jupiter's deep interior (Nature 2018)", "u": "https://www.nature.com/articles/nature25775", "t": "deep" }
+  ]
+}

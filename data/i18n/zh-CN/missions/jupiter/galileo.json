@@ -1,0 +1,20 @@
+{
+  "name": "Galileo",
+  "type": "ORBITER · FLOWN",
+  "first": "First spacecraft to orbit Jupiter; atmospheric probe into Jupiter clouds",
+  "description": "Launched from Space Shuttle Atlantis after the long post-Challenger pause, Galileo braved the inner asteroid belt and conducted the first long-term study of Jupiter and its moons from orbit. It discovered Europa's induced magnetic field — strong evidence of a subsurface ocean — and watched Shoemaker-Levy 9 slam into Jupiter. The mission ended with a controlled plunge into Jupiter in 2003 to avoid contaminating icy moons that might harbour conditions for life.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "STS-34 deploys Galileo and an inertial upper stage from Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "JUPITER ORBIT INSERTION",
+      "note": "Main engine burn captures Galileo into orbit; decades of moon science begin.",
+      "type": "nominal"
+    }
+  ]
+}

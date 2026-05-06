@@ -1,0 +1,44 @@
+{
+  "name": "Artemis II",
+  "type": "FLIBI S CREVED · FLOVN",
+  "first": "Prvi let sa ljudskom posadom izvan niske Zemljine orbite od Apola 17 (1972) — i misija koja je inspirisala ovaj projekat",
+  "description": "Prvi let sa ljudskom posadom programa Artemis i iskra koja je postala Orreri. __ACR0__ SLS Block 1 je lansirao svemirsku letelicu Orion sa četiri astronauta — Reid Viseman (CDR), Viktor Glover (PLT), Christina Koch (MS) i CSA Jeremi Hansen (MS) — na hibridnoj putanji slobodnog povratka koja ih je prebacila na 2-strane udaljene 2 i 0 km od Meseca. Zemlja gori bez ikakvog umetanja u lunarnu orbitu. Desetodnevna misija koja se završava pacifičkim padom. Kvalifikovani Orion sistemi za održavanje života, navigaciju i ponovni ulazak za let sa posadom pre površinskog sletanja Artemis III.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS LAUNCH",
+      "note": "Orion poleće sa KSC LC-39B sa četvoročlanom posadom.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Trans-lunarno sagorevanje od ICPS-a — Orion se odvaja na cislunarnu orbitu.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "FLIBI MONTHLI",
+      "note": "Najbliži pristup je preko dalje strane, ~9.200 km nadmorske visine. Nema ubacivanja u orbitu — geometrija slobodnog povratka vraća Orion na Zemlju.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "TCM-2",
+      "note": "Korekcija povratne putanje.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "SPLASHDOVN",
+      "note": "Ponovni ulazak Oriona i prskanje Tihog okeana.",
+      "type": "info"
+    }
+  ]
+}

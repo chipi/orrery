@@ -1,0 +1,6 @@
+{
+  "name": "Costellazione di BeiDou",
+  "short": "Beidou",
+  "description": "Il sistema globale di navigazione satellitare cinese. Oltre 46 satelliti nelle orbite MEO, GEO e IGSO. Fornisce una copertura globale dal 2020. Funziona anche come servizio di messaggistica: i satelliti trasmettono brevi testi.",
+  "scale_fact": "L'architettura a tre orbite di BeiDou è unica: utilizza satelliti a tre diverse altitudini contemporaneamente."
+}

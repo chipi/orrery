@@ -1,0 +1,13 @@
+{
+  "name": "نبتون",
+  "type": "عملاق جليدي",
+  "fact": "فوياجر 2 حلّق قرب نبتون عام 1989 بعد رحلة 12 سنة. لا يزال المركبة الوحيدة التي زارت الكوكب.",
+  "bio": "أعنف كوكب رياحًا — رياح سطحية 2100 كم/س. اكتُشف بالتنبؤ الرياضي قبل المشاهدة المباشرة، لأن مدار أورانوس أظهر تأثيرًا ثقاليًا غير مرئي.",
+  "links": [
+    { "l": "نبتون — ويكيبيديا", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "نبتون (استكشاف النظام الشمسي في ناسا)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "فوياجر 2 عند نبتون (ناسا جيه بي إل)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "اكتشاف نبتون — ويكيبيديا", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "نموذج باطن نبتون (إيكاروس 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

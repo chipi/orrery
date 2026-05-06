@@ -1,0 +1,13 @@
+{
+  "name": "عطارد",
+  "type": "كوكب صخري",
+  "fact": "درجات حرارة السطح تتأرجح 610°م في يوم واحد. لا غلافًا جويًا — تعريض مباشر للفضاء.",
+  "bio": "أصغر الكواكب. مداره البيضوي الشديد (مُحدَّ اللامَركزية = 0.206) يجعل تسارعه ملحوظًا قرب الحضيض. رغم قربه من الشمس، الزهرة أحرّ.",
+  "links": [
+    { "l": "عطارد — ويكيبيديا", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "عطارد (استكشاف النظام الشمسي في ناسا)", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "مهمة مسنجر — نظرة عامة (ناسا)", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "بيبيكولومبو (إيسا / جاكسا)", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "لبّ عطارد المنصهر (نيتشر جيوساينس 2019)", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Венера",
+  "type": "Землеподобная планета",
+  "fact": "Давление на поверхности в 90 раз выше земного. Советские станции «Венера» выдерживали 23–127 минут, прежде чем их раздавило.",
+  "bio": "Вращается ретроградно — «задом наперёд» и настолько медленно, что венерианские сутки длиннее года. Наклон оси 177,4° объясняется тем, что Венера по сути перевёрнута.",
+  "links": [
+    { "l": "Венера — Википедия", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
+    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "Программа «Венера» — Википедия", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
+    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "Парниковый эффект на Венере (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Urano",
+  "type": "Gigante de gelo",
+  "fact": "Urano gira de lado – inclinação axial de 98°. Seu pólo norte aponta quase diretamente para o Sol durante metade de sua órbita de 84 anos.",
+  "bio": "Inclinado quase de lado (97,77°). Cada pólo recebe 42 anos de luz solar contínua e depois 42 anos de escuridão. Quase certamente causado por uma antiga colisão massiva.",
+  "links": [
+    {
+      "l": "Urano - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "Urano (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 em Urano (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Orbitador e Sonda de Urano - Pesquisa Decadal",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "Origem da inclinação de Urano (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ]
+}

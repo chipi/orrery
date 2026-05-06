@@ -1,0 +1,44 @@
+{
+  "name": "MINCE",
+  "type": "ATTERRISSEUR DE PRÉCISION · ACTIF",
+  "first": "Premier atterrissage de précision à moins de 100 m de la cible sur un autre monde",
+  "description": "Jusqu'à SLIM, les alunissages avaient une précision de ciblage à l'échelle kilométrique. Le Smart Lander de JAXA a démontré une précision de 100 m - la précision requise pour que les missions avec équipage s'amarrent avec une cargaison prépositionnée, pour que les véhicules de remontée d'échantillons trouvent leurs partenaires orbitaux et pour toute architecture future qui dépend de l'atterrissage sur des sites spécifiques de valeur scientifique. SLIM a également été le pionnier du transfert balistique à faible énergie vers la Lune, prenant 135 jours pour arriver mais utilisant moins de propulseur que les trajectoires directes. Une démonstration de la patience que les missions interplanétaires peuvent permettre lorsque le calendrier n’est pas la contrainte contraignante.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "H-IIA 202 de Tanegashima 06/09/2023.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "TRANSFERT BALISTIQUE",
+      "note": "Trajectoire de capture balistique à basse énergie en cours.",
+      "type": "info"
+    },
+    {
+      "met": 130,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 135,
+      "label": "ATTERRISSAGE",
+      "note": "Atterrissage en douceur au cratère Shioli 2024-01-19 15:20 UTC. Précision de la cible : ~55 m hors centre.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.01,
+      "label": "ATTERRISSAGE INCLINÉ",
+      "note": "L'atterrisseur se repose en piqué en raison d'une anomalie moteur lors de la descente finale. Panneaux solaires initialement dans l'ombre.",
+      "type": "warning"
+    },
+    {
+      "met": 144,
+      "label": "PUISSANCE REPRISE",
+      "note": "Changements d’angle du soleil ; les panneaux solaires produisent de l'électricité ; les opérations ont repris pendant un jour lunaire.",
+      "type": "info"
+    }
+  ]
+}

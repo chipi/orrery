@@ -1,0 +1,33 @@
+{
+  "name": "Le Soleil",
+  "type": "Étoile · Séquence principale de type G",
+  "fact": "Le Soleil contient 99,86 % de toute la masse du système solaire. Sa gravité maintient tout – de Mercure au nuage d’Oort – en orbite. Chaque seconde, il fusionne 600 millions de tonnes d'hydrogène en hélium, libérant ainsi l'énergie qui a permis la vie sur Terre pendant 4,5 milliards d'années.",
+  "bio": "Une étoile de la séquence principale de type G âgée de 4,6 milliards d'années, à mi-chemin de sa vie de 10 milliards d'années. Le Soleil tourne différemment : son équateur prend 25 jours, ses pôles 35. Dans environ 5 milliards d’années, il épuisera son noyau d’hydrogène, se transformera en une géante rouge et engloutira les planètes intérieures. L'influence gravitationnelle du Soleil définit l'héliosphère jusqu'à environ 120 AU.",
+  "links": [
+    {
+      "l": "Soleil — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Sun",
+      "t": "intro"
+    },
+    {
+      "l": "Le Soleil (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/sun/",
+      "t": "intro"
+    },
+    {
+      "l": "Sonde solaire Parker (NASA)",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "core"
+    },
+    {
+      "l": "Observatoire de la dynamique solaire (NASA)",
+      "u": "https://sdo.gsfc.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Modèle solaire standard (Revue annuelle de l'astronomie 2022)",
+      "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
+      "t": "deep"
+    }
+  ]
+}

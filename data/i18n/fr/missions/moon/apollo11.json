@@ -1,0 +1,50 @@
+{
+  "name": "Apollon 11",
+  "type": "ERREUR AVEC ÉQUIPAGE · VOLÉ",
+  "first": "Premiers humains sur un autre corps céleste",
+  "description": "La mission qui répondait à l'engagement pris par Kennedy en 1961 d'envoyer un homme sur la Lune d'ici la fin de la décennie. Armstrong et Aldrin ont passé 21 heures et 36 minutes sur la surface lunaire – 2,5 heures d'EVA, 21,55 kg d'échantillons et une seule plaque commémorative. Le rétroréflecteur laser installé à Mare Tranquillitatis reçoit encore aujourd'hui des impulsions mesurant la distance Terre-Lune avec une précision millimétrique. La mission a été suivie en direct par environ 600 millions de personnes, soit un cinquième de l'humanité à l'époque.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Saturne V (AS-506) depuis le Centre spatial Kennedy LC-39A 16/07/1969 13:32 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Brûlure par injection trans-lunaire – Le stade S-IVB propulse le CSM/LM vers la Lune.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ATTERRISSAGE",
+      "note": "Le module lunaire Eagle atterrit à Mare Tranquillitatis le 20/07/1969 20:17:40 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PREMIER PAS",
+      "note": "Armstrong marche sur la surface lunaire ; « un petit pas pour [un] homme ».",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "ASCENSION",
+      "note": "Eagle décolle après 21h 36m en surface.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "AMERRISSAGE",
+      "note": "CM Columbia ramène l'équipage dans l'océan Pacifique 1969-07-24.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Chang'e 5",
+  "type": "RETOUR D'ÉCHANTILLON · VOLÉ",
+  "first": "Premier retour d'échantillon lunaire en 44 ans (depuis Luna 24, 1976)",
+  "description": "Chang'e 5 a été le premier retour d'échantillon de la Lune depuis Luna 24 de l'Union soviétique en 1976, soit un écart de 44 ans. L'architecture : orbiteur + atterrisseur + véhicule d'ascension + capsule de retour d'échantillons, le tout en un seul lancement. L'atterrisseur a atterri à Mons Rümker, a foré et récupéré 1,731 kg de régolithe, a décollé, s'est rendu et s'est amarré à l'orbiteur (le premier rendez-vous lunaire robotisé), et la capsule est revenue sur Terre. Les échantillons proviennent d’une région vieille de seulement 2 milliards d’années – beaucoup plus jeune que n’importe quel échantillon d’Apollo ou de Luna, réécrivant les modèles du volcanisme lunaire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Long 5 mars depuis Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "ATTERRISSAGE",
+      "note": "Lander descend au Mons Rümker (Oceanus Procellarum) 01/12/2020.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "ÉCHANTILLONNAGE",
+      "note": "1,731 kg collectés via pelle et foreuse.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENSION",
+      "note": "Le véhicule d'ascension décolle de la surface lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZ-VOUS",
+      "note": "Premier rendez-vous lunaire robotisé ; conteneur d'échantillons transféré à l'orbiteur.",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "RETOUR DE LA TERRE",
+      "note": "Un échantillon de capsule atterrit en Mongolie intérieure le 16/12/2020.",
+      "type": "info"
+    }
+  ]
+}

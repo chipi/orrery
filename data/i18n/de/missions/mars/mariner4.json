@@ -1,0 +1,32 @@
+{
+  "name": "Mariner 4",
+  "type": "Vorbeiflug · Geflogen",
+  "first": "Erstes Raumschiff, das den Mars erreicht und Nahaufnahmen eines anderen Planeten zurückgibt",
+  "description": "Die Mission, die endete, träumt von einem bewohnbaren Mars. Die 22 körnigen Bilder von Mariner 4, die während einer 25-minütigen größten Annäherung in 9.846 km Höhe aufgenommen wurden, zeigten eine kraterartige Oberfläche, die dem Mond ähnelte – keine Kanäle, keine Vegetation, kein offensichtliches Leben. Die Atmosphäre war 100-mal dünner als erwartet. Die Entdeckung verwandelte den Mars in der öffentlichen Vorstellung von einer Schwestererde in eine tote Welt. Die Verfolgung der Raumsonde führte auch zur ersten Messung der Struktur des Sonnenwinds zwischen Planeten.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas LV-3 Agena-D hebt von Cape Canaveral LC-12 ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Erste Korrektur während des Kurses abgeschlossen; Flugbahn gesperrt.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "Vorbeiflug am Mars",
+      "note": "Nächste Annäherung 9.846 km. Während der Datenwiedergabe wurden innerhalb von 8 Stunden 22 Bilder zurückgegeben.",
+      "type": "nominal"
+    },
+    {
+      "met": 228.5,
+      "label": "ERSTE BILDER",
+      "note": "Erste Nahaufnahmen eines anderen Planeten, der jemals zur Erde zurückgekehrt ist.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "पृथ्वी",
+  "type": "घर · संदर्भ कक्षा",
+  "fact": "जितने भी मनुष्य कभी रहे, सब यहीं रहे। वह संदर्भ कक्षा जिससे बाकी सब मापे जाते हैं।",
+  "bio": "23.44° ध्रुवीय ऋजुता ऋतुएँ बनाती है — सूर्य से दूरी नहीं। जनवरी में जुलाई की तुलना में पृथ्वी सूर्य के करीब होती है।",
+  "links": [
+    { "l": "पृथ्वी — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
+    { "l": "पृथ्वी (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/earth/", "t": "intro" },
+    { "l": "पृथ्वी अवलोकन प्रणाली (NASA)", "u": "https://eospso.nasa.gov/", "t": "core" },
+    { "l": "पृथ्वी पर ऋतुएँ क्यों (NASA Climate Kids)", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
+    { "l": "पेल ब्लू डॉट — कार्ल सैगन प्रतिबिंब (Planetary Society)", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+  ]
+}

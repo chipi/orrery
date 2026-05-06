@@ -1,0 +1,13 @@
+{
+  "name": "Земля",
+  "type": "Дом · опорная орбита",
+  "fact": "Каждый человек, когда-либо живший, жил здесь. Опорная орбита, относительно которой измеряются все остальные.",
+  "bio": "Наклон оси 23,44° создаёт времена года — не расстояние до Солнца. В январе Земля ближе к Солнцу, чем в июле.",
+  "links": [
+    { "l": "Земля — Википедия", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
+    { "l": "Earth (NASA Solar System Exploration)", "u": "https://science.nasa.gov/earth/", "t": "intro" },
+    { "l": "Earth Observing System (NASA)", "u": "https://eospso.nasa.gov/", "t": "core" },
+    { "l": "Почему на Земле есть времена года (NASA Climate Kids)", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
+    { "l": "«Бледно-голубая точка» — размышление Карла Сагана (Planetary Society)", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+  ]
+}

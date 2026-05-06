@@ -1,0 +1,50 @@
+{
+  "name": "Radoznalost",
+  "type": "ROVER · AKTIVAN",
+  "first": "Prvi Mars rover na nuklearni pogon; prvi spust ski-dizalica",
+  "description": "Vodeća misija koja je definisala savremeno istraživanje Marsa. Curiositi je veličine automobila, pogonjen plutonijumom, i vozio je više od 20 milja uz planinu Šarp od sletanja u krater Gejl 2012. Njegovi instrumenti su potvrdili da je Mars nekada imao uslove za život — tečnu vodu, složenu organsku materiju, hemijski život koji bi bio potreban. EDL sekvenca 'sedam minuta terora', koja se završava tako što kran spušta rover na kablovima, sada je __ACR0__ standard za isporuku velikih tereta na površinu Marsa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 541 će leteti do Kejp Kanaverala SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI BURN",
+      "note": "Trans-Marsova injekcija (3,61 km/s ∆v) šalje MSL u heliocentričnu orbitu vezanu za Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "TCM-3",
+      "note": "Konačna pre-EDL korekcija; putanja elipse sletanja kratera Gale.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — SEDAM MINUTA TERORA",
+      "note": "Atmosferski ulazak, nadzvučni padobran, retro-raketa ski-dizalica, rover spušten na sajlama.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "TOUCHDOVN",
+      "note": "Curiositi stiže u Aeolis Palus, krater Gale, 2012-08-06 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "PRVE SLIKE",
+      "note": "Hazcam vraća prvu sliku površine niske rezolucije.",
+      "type": "info"
+    }
+  ]
+}

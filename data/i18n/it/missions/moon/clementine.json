@@ -1,0 +1,38 @@
+{
+  "name": "Clementina",
+  "type": "ORBITER · VOLATO",
+  "first": "Missione lunare congiunta NASA-DoD; primi accenni di acqua ghiacciata ai poli lunari",
+  "description": "Progettato principalmente come dimostratore tecnologico della Strategic Defense Initiative, Clementine ha trascorso 10 settimane in orbita lunare restituendo la prima mappa topografica e multispettrale globale sistematica della Luna. Le misurazioni radar bistatiche al polo sud lunare hanno prodotto i primi accenni allettanti di ghiaccio d’acqua, confermati anni dopo da Lunar Prospector e Chandrayaan-1. La missione successiva di sorvolare l'asteroide Geographos fallì quando un malfunzionamento del propulsore esaurì il propellente della navicella.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan II G della Vandenberg AFB.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare 19/02/1994.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "INIZIO MAPPATURA",
+      "note": "Inizia la mappatura sistematica multispettrale e topografica.",
+      "type": "info"
+    },
+    {
+      "met": 95,
+      "label": "PARTENZA",
+      "note": "Lascia l'orbita lunare per il sorvolo dell'asteroide Geographos.",
+      "type": "nominal"
+    },
+    {
+      "met": 100,
+      "label": "GUASTO DEL PROPULSORE",
+      "note": "Il malfunzionamento del propulsore di bordo esaurisce il propellente; incontro con l'asteroide annullato.",
+      "type": "warning"
+    }
+  ]
+}

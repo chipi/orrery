@@ -1,0 +1,44 @@
+{
+  "name": "Vikings 1",
+  "type": "ORBITEUR · ATTERRISSEUR · VOLÉ",
+  "first": "Premier atterrissage sur Mars pleinement réussi ; première science des surfaces de longue durée",
+  "description": "La mission qui nous a donné notre premier aperçu approfondi de la surface martienne. L'atterrisseur Viking 1 a fonctionné pendant 6 ans et 4 mois à Chryse Planitia - menant des expériences biologiques conçues pour détecter la vie (résultats ambigus ; une expérience a produit un signal positif encore débattu des décennies plus tard), mesurer la météo, renvoyer des images panoramiques et analyser la composition du sol. L’orbiteur a cartographié 97 % de Mars à une résolution de 100 m et a aidé à repérer les sites d’atterrissage pour des missions encore dans des décennies.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan IIIE-Centaure de Cap Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Première correction de trajectoire.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "INSERTION DE L'ORBITE DE MARS",
+      "note": "Orbiter capture sur l’orbite de Mars ; L'atterrisseur reste attaché pour l'étude du site.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "SÉPARATION DES TERRES",
+      "note": "Lander se détache pour la descente vers Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "ATTERRISSAGE",
+      "note": "Lander atterrit le 20 juillet 1976, exactement 7 ans après Apollo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "PREMIER PANORAMIQUE",
+      "note": "Retour des premières images de surface haute résolution.",
+      "type": "info"
+    }
+  ]
+}

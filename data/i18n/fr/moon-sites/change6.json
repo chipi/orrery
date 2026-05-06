@@ -1,0 +1,9 @@
+{
+  "name": "Chang'e 6",
+  "mission_type": "Retour d'échantillon sans équipage (côté éloigné)",
+  "site_name": "Cratère Apollo (côté éloigné)",
+  "crew": [],
+  "left": "Étape de descente",
+  "fact": "Premier retour d'échantillon de la face cachée de la Lune – probablement la mission lunaire la plus significative sur le plan scientifique depuis Apollo. Le matériau de la face cachée (croûte plus épaisse, surface plus ancienne, composition différente) n’a absolument pas été étudié. Ces échantillons pourraient enfin expliquer pourquoi les deux hémisphères de la Lune sont si fondamentalement différents.",
+  "capability": "Retour d'échantillon à partir d'un site relais uniquement : combine les architectures de Chang'e 4 (communications du côté éloigné) et de Chang'e 5 (retour d'échantillon). L’ensemble complet des capacités pour Mars Sample Return à n’importe quelle latitude."
+}

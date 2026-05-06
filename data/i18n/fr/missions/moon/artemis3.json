@@ -1,0 +1,50 @@
+{
+  "name": "Artémis III",
+  "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
+  "first": "Premier alunissage en équipage depuis Apollo 17 (1972)",
+  "description": "Le premier alunissage en équipage depuis plus d’un demi-siècle. Architecture : Le bloc SLS 1 de NASA lance Orion avec 4 équipages sur une orbite de halo quasi rectiligne (NRHO) autour de la Lune. Un système d'atterrissage humain (HLS) pour vaisseau spatial SpaceX est prépositionné au NRHO, rempli en orbite terrestre basse par des pétroliers avant son injection translunaire. L'équipage d'Orion est transféré à HLS ; 2 astronautes descendent dans la région du pôle sud lunaire pour environ 6,5 jours d'opérations en surface tandis que 2 restent au NRHO. Après les opérations de surface, HLS retourne vers NRHO pour le transfert vers Orion et le retour sur Terre. Fera atterrir la première femme et la première personne de couleur sur la Lune.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT DU SLS",
+      "note": "Orion est lancé depuis le KSC LC-39B avec un équipage de 4 personnes.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Injection translunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ARRIVÉE NRHO",
+      "note": "Orion arrive sur l'orbite quasi rectiligne de Halo ; rendez-vous avec le Starship HLS prépositionné.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCENTE",
+      "note": "Transfert de 2 équipages vers HLS ; descente motorisée vers le pôle sud lunaire.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "ASCENSION",
+      "note": "Ascension du HLS vers NRHO après environ 6,5 jours d'opérations de surface.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Injection trans-terrestre de NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "AMERRISSAGE",
+      "note": "Orion s'écrase dans l'océan Pacifique.",
+      "type": "info"
+    }
+  ]
+}

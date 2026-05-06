@@ -1,0 +1,33 @@
+{
+  "name": "Mercurio",
+  "type": "Pianeta terrestre",
+  "fact": "Le temperature superficiali oscillano fino a 610°C in un solo giorno. Nessuna atmosfera: solo pura esposizione allo spazio.",
+  "bio": "Il pianeta più piccolo. La sua orbita fortemente ellittica (e=0,206) la fa accelerare notevolmente vicino al perielio. Nonostante sia la più vicina al Sole, Venere è più calda.",
+  "links": [
+    {
+      "l": "Mercurio – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "Mercurio (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "Panoramica della missione MESSENGER (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Il nucleo fuso di Mercurio (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

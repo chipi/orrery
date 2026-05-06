@@ -1,0 +1,15 @@
+{
+  "name": "Apollo 11",
+  "type": "有人着陸機 · 飛行済み",
+  "first": "別天体に人類が初めて立ったミッション",
+  "description": "ケネディの一九六一年の約束 — この十年の終わりまでに人を月に送る — を果たしたミッション。アームストロングとオルドリンは月面に二十一時間三十六分滞在 — EVA 二・五時間、試料二十一・五五キログラム、記念銘板一枚。静かの海に設置したレーザー後方反射器はいまもパルスを受け、地月距離をミリ精度で測る。当時人類の五分の一、約六億人が生中継を見た。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "サターン V（AS-506）がケネディ宇宙センター LC-39A から 1969-07-16 13:32 UTC。", "type": "nominal" },
+    { "met": 0.13, "label": "TLI", "note": "月軌道投入前燃焼 — S-IVB が CSM／LM を月へ。", "type": "nominal" },
+    { "met": 3, "label": "MOI", "note": "月軌道投入。", "type": "nominal" },
+    { "met": 4, "label": "TOUCHDOWN", "note": "月着陸船イーグルが静かの海に着陸 1969-07-20 20:17:40 UTC。", "type": "nominal" },
+    { "met": 4.3, "label": "FIRST STEP", "note": "アームストロングが月面へ。「人類にとって小さな一歩」。", "type": "info" },
+    { "met": 5, "label": "ASCENT", "note": "イーグルが表面二十一時間三十六分後に離昇。", "type": "nominal" },
+    { "met": 8, "label": "SPLASHDOWN", "note": "コロンビアがクルーを太平洋へ 1969-07-24。", "type": "nominal" }
+  ]
+}

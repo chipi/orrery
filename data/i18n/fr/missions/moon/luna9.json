@@ -1,0 +1,32 @@
+{
+  "name": "Lune 9",
+  "type": "ERREUR NON ÉQUIPÉ · VOLÉ",
+  "first": "Premier atterrissage en douceur sur la Lune ; premières photographies de la surface lunaire",
+  "description": "Après 11 échecs soviétiques et 5 missions américaines Ranger conçues uniquement pour s'écraser, Luna 9 est devenu le premier vaisseau spatial à atterrir en douceur sur un autre monde. Neuf images panoramiques renvoyées en 8 minutes ont mis fin à un débat scientifique de longue date : la surface de la Lune était solide, pas une mer de poussière assez profonde pour avaler un atterrisseur. La mission a duré 3 jours avant l'épuisement des batteries. En quelques mois, chaque mission à destination de la Lune a ensuite utilisé l'atterrissage en douceur comme référence.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Molniya-M de Baïkonour 1966-01-31.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "ATTERRISSAGE",
+      "note": "Atterrissage en douceur à Oceanus Procellarum 03/02/1966 18:45 UTC. Premier atterrissage en douceur sur un autre monde.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "PREMIÈRES IMAGES",
+      "note": "Neuf images panoramiques renvoyées en trois sessions de transmission.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "PERTE DE SIGNAL",
+      "note": "Batterie épuisée ; transmission finale 1966-02-06.",
+      "type": "warning"
+    }
+  ]
+}

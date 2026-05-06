@@ -1,0 +1,33 @@
+{
+  "name": "Netuno",
+  "type": "Gigante de gelo",
+  "fact": "A Voyager 2 passou por Netuno em 1989, após uma viagem de 12 anos. Continua a ser a única nave espacial a visitar.",
+  "bio": "Planeta mais ventoso – ventos de superfície de 2.100 km/h. Descoberto por previsão matemática antes da observação direta, porque a órbita de Urano mostrava uma influência gravitacional invisível.",
+  "links": [
+    {
+      "l": "Netuno - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "Netuno (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 em Netuno (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "Descoberta de Netuno - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "Modelo interior de Netuno (Ícaro 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ]
+}

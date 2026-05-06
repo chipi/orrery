@@ -1,0 +1,20 @@
+{
+  "name": "Galileo",
+  "type": "ORBITER · VOLATO",
+  "first": "Primo veicolo spaziale in orbita attorno a Giove; sonda atmosferica nelle nubi di Giove",
+  "description": "Lanciato dallo Space Shuttle Atlantis dopo la lunga pausa post-Challenger, Galileo ha sfidato la fascia interna degli asteroidi e ha condotto il primo studio a lungo termine di Giove e delle sue lune dall'orbita. Ha scoperto il campo magnetico indotto di Europa – una forte prova dell’esistenza di un oceano sotterraneo – e ha osservato lo schianto della sonda Shoemaker-Levy 9 contro Giove. La missione si è conclusa con un tuffo controllato su Giove nel 2003 per evitare di contaminare le lune ghiacciate che potrebbero ospitare condizioni per la vita.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "STS-34 schiera Galileo e uno stadio superiore inerziale dell'Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "INSERIMENTO NELL'ORBITA DI GIOVE",
+      "note": "L'accensione del motore principale cattura Galileo in orbita; iniziano decenni di scienza lunare.",
+      "type": "nominal"
+    }
+  ]
+}

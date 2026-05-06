@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 17",
+  "type": "LANDER CON EQUIPAGGIO · ROVER · VOLATO",
+  "first": "Ultima missione con equipaggio sulla Luna (e l'unica Apollo con un geologo addestrato)",
+  "description": "L’ultima volta che gli esseri umani hanno visitato un altro mondo – oltre mezzo secolo fa. Cernan e Schmitt trascorsero 75 ore in superficie, guidarono l'LRV per 35,7 km e riportarono indietro 110,5 kg di campioni. Schmitt è stato l'unico scienziato esperto (geologo) che abbia mai camminato sulla Luna, e le sue scoperte - in particolare il vetro vulcanico arancione nel cratere Shorty - hanno rimodellato la geologia lunare. Le ultime parole di Cernan prima di salire per l'ultima volta sulla scala: \"Partiremo come siamo venuti e, a Dio piacendo, torneremo\". Si suppone che Artemis III mantenga quella promessa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Saturn V (AS-512) da KSC LC-39A 1972-12-07 - solo lancio notturno Apollo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Iniezione translunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "TOCCO",
+      "note": "Il Lunar Module Challenger atterra nella Taurus-Littrow Valley l'11/12/1972 alle 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PRIMA EVA",
+      "note": "Cernan e Schmitt iniziano la prima delle tre EVA lunari (totale 22 ore e 4 minuti).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "SALITA",
+      "note": "Cernan: \"Partiamo come siamo venuti e, a Dio piacendo, torneremo\".",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "SPLASHDOWN",
+      "note": "CM America riporta l'equipaggio nell'Oceano Pacifico 19-12-1972.",
+      "type": "nominal"
+    }
+  ]
+}

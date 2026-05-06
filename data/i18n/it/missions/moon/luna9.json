@@ -1,0 +1,32 @@
+{
+  "name": "Luna 9",
+  "type": "LANDER SENZA EQUIPAGGIO · VOLATO",
+  "first": "Primo atterraggio morbido sulla Luna; prime fotografie dalla superficie lunare",
+  "description": "Dopo 11 fallimenti sovietici e 5 missioni Ranger americane progettate solo per schiantarsi, Luna 9 divenne la prima navicella spaziale ad atterrare dolcemente su un altro mondo. Nove immagini panoramiche restituite in 8 minuti hanno risolto un lungo dibattito scientifico: la superficie della Luna era solida, non un mare di polvere abbastanza profondo da inghiottire un lander. La missione è durata 3 giorni prima dell'esaurimento della batteria. Nel giro di pochi mesi, ogni missione diretta sulla Luna utilizzò l'atterraggio morbido come linea di base.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Molniya-M da Baikonur 31-01-1966.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "TOCCO",
+      "note": "Atterraggio morbido all'Oceanus Procellarum 03/02/1966 18:45 UTC. Primo atterraggio morbido su un altro mondo.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "PRIME IMMAGINI",
+      "note": "Nove immagini panoramiche restituite in tre sessioni di trasmissione.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "PERDITA DI SEGNALE",
+      "note": "Batteria scarica; trasmissione finale 06-02-1966.",
+      "type": "warning"
+    }
+  ]
+}

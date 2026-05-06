@@ -1,0 +1,9 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "mission_type": "Atterrisseur sans équipage · Rover (côté éloigné)",
+  "site_name": "Cratère Von Kármán",
+  "crew": [],
+  "left": "Atterrisseur Chang'e 4 · Rover Yutu-2 (toujours actif)",
+  "fact": "Le premier vaisseau spatial à atterrir sur la face cachée de la Lune – techniquement et opérationnellement l'alunissage le plus difficile jamais tenté. Nécessitait un satellite relais (Queqiao) en L2 car la face cachée n'a pas de contact radio direct avec la Terre. Yutu-2 a parcouru plus de 1,9 km, toujours actif. La face cachée n’avait jamais été visitée.",
+  "capability": "Architecture de communication relais-satellite démontrée pour les opérations au-delà de la ligne de vue directe – le modèle exact dont toute mission polaire ou sur la face cachée de Mars aura besoin."
+}

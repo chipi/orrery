@@ -1,0 +1,44 @@
+{
+  "name": "Artémis II",
+  "type": "SURVOL EN ÉQUIPAGE · VOLÉ",
+  "first": "Premier vol en équipage au-delà de l'orbite terrestre basse depuis Apollo 17 (1972) — et la mission qui a inspiré ce projet",
+  "description": "Le premier vol en équipage du programme Artemis et l'étincelle qui est devenue Orrery. Le bloc 1 SLS de NASA a lancé un vaisseau spatial Orion avec quatre astronautes — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) et Jeremy Hansen (MS) de l'ASC — sur une trajectoire hybride à retour libre qui les a fait pivoter autour de la face cachée de la Lune à environ 9 200 km d'altitude et les a ramenés sur Terre sans aucune brûlure d'insertion sur l'orbite lunaire. Une mission de 10 jours se terminant par l'amerrissage du Pacifique. Systèmes de survie, de navigation et de rentrée d'Orion qualifiés pour le vol en équipage avant l'atterrissage en surface d'Artemis III.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT DU SLS",
+      "note": "Orion décolle du KSC LC-39B avec quatre membres d'équipage à bord.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Brûlure par injection trans-lunaire par ICPS — Orion se sépare sur une trajectoire cislunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "SURVOL LUNAIRE",
+      "note": "Approche la plus proche de l’autre côté, ~9 200 km d’altitude. Pas d'insertion d'orbite - la géométrie à retour libre ramène Orion sur Terre.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "MTC-2",
+      "note": "Correction de trajectoire de retour.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "AMERRISSAGE",
+      "note": "Rentrée d'Orion et amerrissage dans l'océan Pacifique.",
+      "type": "info"
+    }
+  ]
+}

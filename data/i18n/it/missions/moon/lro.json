@@ -1,0 +1,32 @@
+{
+  "name": "Orbiter da ricognizione lunare",
+  "type": "ORBITORE · ATTIVO",
+  "first": "Mappe lunari ad alta risoluzione mai realizzate",
+  "description": "In orbita attorno alla Luna dal 2009 a 50 km significa altitudine lunare, le immagini della telecamera ad angolo stretto di LRO a 50 cm/pixel - abbastanza in alto da vedere le fasi di discesa dell'Apollo, le tracce del rover e i sentieri degli astronauti ancora conservati nella regolite. Ha trovato Lunokhod 1 trentanove anni dopo che il rover si era oscurato. Ha identificato oltre 200 siti di atterraggio candidati per Artemis. I depositi di ghiaccio d'acqua al polo sud lunare che guidano ogni moderno programma lunare sono stati quantificati dagli strumenti LRO. Una missione esplorativa che divenne il fondamento della moderna era lunare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 401 da Cape Canaveral SLC-41 (portava il dispositivo di simulazione LCROSS come secondario).",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare 23-06-2009.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "MISSIONE PRINCIPALE",
+      "note": "Inizia la fase esplorativa di un anno (programma NASA).",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "SCIENZA ESTESA",
+      "note": "Missione estesa alla fase scientifica pluriennale nell'ambito di NASA SMD.",
+      "type": "info"
+    }
+  ]
+}

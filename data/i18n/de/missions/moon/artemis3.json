@@ -1,0 +1,50 @@
+{
+  "name": "Artemis III",
+  "type": "LANDER MIT BESATZUNG · GEPLANT",
+  "first": "Erste bemannte Mondlandung seit Apollo 17 (1972)",
+  "description": "Die erste bemannte Mondlandung seit über einem halben Jahrhundert. Architektur: NASAs SLS Block 1 bringt Orion mit 4 Besatzungsmitgliedern in eine nahezu geradlinige Halo-Umlaufbahn (NRHO) um den Mond. Bei NRHO ist ein SpaceX Starship Human Landing System (HLS) vorpositioniert, das vor seiner translunaren Injektion im erdnahen Orbit von Tankern wieder aufgefüllt wird. Die Orion-Besatzung wechselt zum HLS; Zwei Astronauten steigen für etwa 6,5 ​​Tage an der Oberfläche in die Südpolregion des Mondes ab, während zwei in NRHO bleiben. Nach den Oberflächenoperationen startet HLS zurück zu NRHO, wo es zum Orion transportiert und zur Erde zurückkehrt. Wird die erste Frau und den ersten farbigen Menschen auf dem Mond landen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-EINFÜHRUNG",
+      "note": "Orion startet vom KSC LC-39B mit einer vierköpfigen Besatzung.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Translunare Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "NRHO-ANKUNFT",
+      "note": "Orion erreicht die nahezu geradlinige Halo-Umlaufbahn; Rendezvous mit dem vorpositionierten Raumschiff HLS.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "ABSTIEG",
+      "note": "Transfer von 2 Besatzungsmitgliedern zum HLS; Motorischer Abstieg zum Mondsüdpol.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "AUFSTIEG",
+      "note": "HLS-Aufstieg zum NRHO nach ca. 6,5 Tagen Oberflächenbetrieb.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Trans-Earth-Injektion von NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "WASSERUNG",
+      "note": "Orion platscht im Pazifischen Ozean.",
+      "type": "info"
+    }
+  ]
+}

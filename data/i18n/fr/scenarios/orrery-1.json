@@ -1,0 +1,79 @@
+{
+  "name": "DÉMO D'ORRERY",
+  "dep_label": "Dépôt de terre",
+  "arr_label": "Retour de la Terre",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Falcon Heavy décolle. Retour gratuit – pas d’atterrissage.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.4,
+      "label": "BRÛLURE TMI",
+      "note": "Injection Trans-Mars : 3,61 km/s. Vitesse de fuite atteinte.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "VÉRIFICATION DU JOUR 1",
+      "note": "Premier bilan de santé des systèmes terminé. Tous nominaux.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "MTC-1",
+      "note": "Correction à mi-parcours 1 : 35 m/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "CROISIÈRE",
+      "note": "Croisière aller. La Terre s'éloigne.",
+      "type": "info"
+    },
+    {
+      "met": 220,
+      "label": "PANNE DE COMMUNICATION",
+      "note": "Brève interruption du signal en bande X (8 s). DSN racheté. Cause : occlusion du panache du propulseur. Aucune donnée perdue.",
+      "type": "warning"
+    },
+    {
+      "met": 259,
+      "label": "SURVOL DE MARS",
+      "note": "Approche la plus proche : ~300 km d'altitude. L'assistance gravitationnelle initie le retour.",
+      "type": "nominal"
+    },
+    {
+      "met": 260,
+      "label": "TRAJECTOIRE DE RETOUR",
+      "note": "Assistance par gravité à retour libre complète. Trajectoire du vaisseau spatial sur Terre.",
+      "type": "nominal"
+    },
+    {
+      "met": 310,
+      "label": "MI-PARcours 3",
+      "note": "TCM-3 : 22 m/s. Trajectoire de retour corrigée.",
+      "type": "nominal"
+    },
+    {
+      "met": 400,
+      "label": "À MI-CHEMIN DE LA MAISON",
+      "note": "Passé le milieu du voyage de retour.",
+      "type": "info"
+    },
+    {
+      "met": 480,
+      "label": "PRÉPARATION À LA RÉENTRÉE",
+      "note": "Approche finale. Vérifications du bouclier thermique.",
+      "type": "nominal"
+    },
+    {
+      "met": 509,
+      "label": "ARRIVÉE SUR TERRE",
+      "note": "Entrée atmosphérique. Mission terminée.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Tianven-1",
+  "type": "ORBITER · LANDER · ROVER · AKTIVAN",
+  "first": "Prva misija za isporuku orbitera, lendera i rovera na Mars u jednom lansiranju",
+  "description": "Prva kineska misija na Mars postigla je ono što nijedna agencija nikada nije pokušala u jednom lansiranju: orbita, ulazak u atmosferu, meko sletanje i raspoređivanje rovera. Zhurong rover je izveo 358 solova na Utopia Planitia, pokrivajući 1,9 km, pre nego što je ušao u planiranu hibernaciju u maju 2022; od tada se nije probudio (verovatno zbog prašine koja se nakupila na solarnim panelima). Orbiter ostaje aktivan, mapira planetu u visokoj rezoluciji i služi kao relej za zemaljska sredstva.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Dugi 5. mart iz Venčanga — prvo kinesko super-teško međuplanetarno lansiranje.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "UMETANjE MARSOVE ORBITE",
+      "note": "Pregorevanje motora katapultira svemirsku letelicu u orbitu Marsa.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "ZHURONG LANDING",
+      "note": "Lander/rover se spušta u Utopiju Planitiju 2021-05-14; Žurong silazi sa rampe 22.05.2021.",
+      "type": "nominal"
+    },
+    {
+      "met": 651,
+      "label": "ZHURONG HIBERNATION",
+      "note": "Rover ulazi u planirano stanje mirovanja 2022-05; orbiter nastavlja sa radom.",
+      "type": "info"
+    }
+  ]
+}

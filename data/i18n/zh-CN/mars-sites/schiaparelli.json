@@ -1,0 +1,7 @@
+{
+  "name": "Schiaparelli EDM",
+  "mission_type": "Uncrewed Test Lander · Crashed",
+  "site_name": "Meridiani Planum",
+  "fact": "ExoMars 2016 Entry, Descent, Landing Demonstrator. A control software fault caused the inertial measurement unit to saturate during parachute deployment, which led the lander to compute a negative altitude and release its parachute prematurely. It free-fell ~3.7 km to the surface. The flight data informed the ExoMars 2028 EDL redesign.",
+  "capability": "Hard-won EDL diagnostic data — a partial demonstration that fed forward into the next ExoMars mission."
+}

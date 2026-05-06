@@ -1,0 +1,50 @@
+{
+  "name": "Apolo 17",
+  "type": "LANDER TRIPULADO · ROVER · VOADO",
+  "first": "Última missão tripulada à Lua (e a única Apollo com um geólogo treinado)",
+  "description": "A última vez que os humanos visitaram outro mundo — há mais de meio século. Cernan e Schmitt passaram 75 horas na superfície, dirigiram o LRV 35,7 km e trouxeram 110,5 kg de amostras. Schmitt foi o único cientista (geólogo) treinado a caminhar na Lua, e suas descobertas - particularmente o vidro vulcânico laranja na cratera Shorty - remodelaram a geologia lunar. As últimas palavras de Cernan antes de subir a escada pela última vez: 'Partimos como viemos e, se Deus quiser, retornaremos.' Artemis III deveria cumprir essa promessa.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Saturn V (AS-512) de KSC LC-39A 07/12/1972 - apenas lançamento noturno da Apollo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Injeção translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Inserção da órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ATERRAGEM",
+      "note": "O Módulo Lunar Challenger pousou no Vale Taurus-Littrow em 12/11/1972 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PRIMEIRA EVA",
+      "note": "Cernan e Schmitt iniciam o primeiro de três EVAs lunares (total 22h 4m).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "SUBIDA",
+      "note": "Cernan: 'Partimos como viemos e, se Deus quiser, retornaremos.'",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "SPLASHDOWN",
+      "note": "CM America retorna tripulação para o Oceano Pacífico em 19/12/1972.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Marinheiro 4",
+  "type": "VOAR · VOAR",
+  "first": "Primeira espaçonave a chegar a Marte e retornar imagens em close de outro planeta",
+  "description": "A missão que acabou com os sonhos de um Marte habitável. As 22 imagens granuladas da Mariner 4, tiradas durante uma aproximação máxima de 25 minutos a 9.846 km de altitude, mostraram uma superfície com crateras semelhante à Lua - sem canais, sem vegetação, sem vida óbvia. A atmosfera era 100 vezes mais fina do que o esperado. A descoberta remodelou Marte na imaginação do público, de uma irmã-Terra para um mundo morto. O rastreamento da espaçonave também produziu a primeira medição da estrutura do vento solar entre os planetas.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Atlas LV-3 Agena-D decola do Cabo Canaveral LC-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primeira correção intermediária concluída; trajetória bloqueada.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "VOO DE MARTE",
+      "note": "Abordagem mais próxima 9.846 km. 22 imagens retornadas em 8 horas durante a reprodução de dados.",
+      "type": "nominal"
+    },
+    {
+      "met": 228.5,
+      "label": "PRIMEIRAS IMAGENS",
+      "note": "As primeiras imagens em close de outro planeta retornaram à Terra.",
+      "type": "info"
+    }
+  ]
+}

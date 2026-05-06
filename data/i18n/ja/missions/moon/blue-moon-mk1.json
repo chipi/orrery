@@ -1,0 +1,13 @@
+{
+  "name": "ブルームーン MK1",
+  "type": "貨物着陸機 · 計画",
+  "first": "ブルーオリジンのブルームーン月着陸機アーキテクチャの初飛行",
+  "description": "NASA の商業月ペイロードサービス（CLPS）契約のもとの初の貨物ブルームーン着陸機。BE 極低温エンジンによる単段下降機で、月表面へ最大約三トンのペイロードを届ける設計。ケープカナベラルからブルーオリジンのニューグレンで打ち上げ、ニューグレン第二段で月へ注入、その後月軌道投入と動力下降。有人適合の MK2 に先行する MK1 貨物飛行で、MK2 は NASA の Artemis V 有人月面着陸を支援する契約。",
+  "events": [
+    { "met": 0, "label": "NEW GLENN LAUNCH", "note": "ケープカナベラル LC-36 から離昇；第一段はダウンレンジ回収。", "type": "nominal" },
+    { "met": 0.2, "label": "TLI", "note": "ニューグレン第二段が月移行軌道燃焼。", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
+    { "met": 4, "label": "LOI", "note": "BE-7 主エンジンで月軌道投入。", "type": "nominal" },
+    { "met": 4.1, "label": "POWERED DESCENT", "note": "BE-7 の推力調整下降で月面 — ブルーオリジン初の月着陸。", "type": "info" }
+  ]
+}

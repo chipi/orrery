@@ -1,0 +1,32 @@
+{
+  "name": "Hope Probe",
+  "type": "ORBITER · AKTIV",
+  "first": "Erste arabische interplanetare Mission",
+  "description": "Die Marsmission der Emirate – Al Amal, „Hoffnung“ – wurde 2014 anlässlich des 50. Jahrestages der Föderation der Vereinigten Arabischen Emirate im Jahr 2021 konzipiert. Das MBRSC-Team arbeitete mit der University of Colorado, Arizona State und der UC Berkeley zusammen, um das Raumschiff zu entwerfen und zu integrieren, baute es jedoch selbst. Die wissenschaftliche Umlaufbahn (1× Tagesdauer, 27.000 km × 43.000 km) deckt alle Längengrade und Tageszeiten ab und erfasst Wettermuster, die kein anderer Marsorbiter auflösen kann. Die Mission war beim ersten Versuch erfolgreich und die VAE sind damit die fünfte Agentur auf dem Mars.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "H-IIA 202 aus Tanegashima – Mitsubishi Heavy Industries sorgte für den Start.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "MARS-ORBIT-EINFÜHRUNG",
+      "note": "27-minütiger Triebwerksbrand bringt Hope in die Marsumlaufbahn 09.02.2021.",
+      "type": "nominal"
+    },
+    {
+      "met": 250,
+      "label": "WISSENSCHAFTSORBIT",
+      "note": "Trimmmanöver bringen Hope in ihre 55-stündige wissenschaftliche Umlaufbahn.",
+      "type": "info"
+    }
+  ]
+}

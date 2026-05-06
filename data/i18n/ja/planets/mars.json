@@ -1,0 +1,14 @@
+{
+  "name": "火星",
+  "type": "ミッション対象",
+  "fact": "地球‐火星打ち上げウィンドウは約 26 か月ごとに開く — 軌道共鳴による。ウィンドウを逃すと約 2 年待つことになる。",
+  "bio": "地球型惑星のうち離心率がもっとも高い（e = 0.093）。火星は遠日点と近日点で地球から見た距離が最大約 25% も変わる — だから打ち上げウィンドウがそれほど重要になる。",
+  "missionable": true,
+  "links": [
+    { "l": "火星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars", "t": "intro" },
+    { "l": "火星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/mars/", "t": "intro" },
+    { "l": "火星探査プログラム（NASA）", "u": "https://mars.nasa.gov/", "t": "core" },
+    { "l": "地球‐火星打ち上げウィンドウ — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
+    { "l": "火星の気候史（Science 2018）", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Equipaggio dell'astronave Marte",
+  "type": "RITORNO DEL CAMPIONE CON EQUIPAGGIO · CONCEPT",
+  "first": "Prima proposta di missione di ritorno con equipaggio su Marte (architettura SpaceX)",
+  "description": "L'architettura a lungo termine su Marte con equipaggio di SpaceX come delineata nelle presentazioni IAC di Elon Musk del 2016, 2017 e 2024. Un'astronave decolla dalla Terra completamente rifornita di carburante in orbita terrestre bassa tramite una flotta di voli di cisterne di rifornimento, esegue l'iniezione transmarziana e fa atterrare un equipaggio di circa 10 persone con carico e attrezzatura ISRU sulla superficie marziana. Il propellente per la gamba di ritorno (metano + ossigeno liquido) viene prodotto su Marte dalla CO₂ atmosferica e dal ghiaccio d'acqua sotterraneo tramite il processo Sabatier, consentendo alla stessa astronave di decollare nuovamente, eseguire l'iniezione trans-terrestre e riportare l'equipaggio. La durata del viaggio di andata e ritorno dipende dalla finestra di lancio e dalla permanenza in superficie; la sequenza temporale illustrativa qui mostrata è di ~2,5 anni porta a porta (213 giorni di andata, ~500 giorni di permanenza in superficie, ritorno nella successiva finestra favorevole). L'architettura è concettuale: data e parametri sono soggetti a revisione sostanziale in attesa della maturazione di Starship e della convalida ISRU.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO DELL'ASTRONAVE",
+      "note": "L'astronave con equipaggio decolla da Boca Chica o Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "RICARICA ORBITALE",
+      "note": "Appuntamento con la flotta di navi cisterna e trasferimento di propellente in LEO su più voli.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "BRUCIATURA TMI",
+      "note": "Iniezione Trans-Mars dallo stato LEO a pieno carburante.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "ATTERRAGGIO SU MARTE",
+      "note": "Discesa motorizzata sulla superficie di Marte: senza paracadute, senza airbag, senza gru aerea.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "PUNTELLO DI RITORNO COMPLETO",
+      "note": "L'impianto ISRU ha prodotto metano + LOX sufficienti per il propellente di andata e ritorno.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "TEI BRUCIA",
+      "note": "Iniezione trans-terrestre: l'astronave si solleva dalla superficie di Marte e brucia per la traiettoria di ritorno alla Terra.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "ARRIVO SULLA TERRA",
+      "note": "Ingresso atmosferico. Missione completata.",
+      "type": "info"
+    }
+  ]
+}

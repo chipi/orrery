@@ -1,0 +1,15 @@
+{
+  "name": "아르테미스 III",
+  "type": "유인 착륙선 · 계획",
+  "first": "아폴로 17(1972) 이후 최초 유인 달 착륙",
+  "description": "반세기 넘게 첫 유인 달 착륙이다. 구조: NASA SLS 블록 1이 승무원 4명의 오리온을 달 근처 직사각형 할로(NRHO) 궤도로 보낸다. NRHO에는 미리 배치된 SpaceX 스타십 유인 착륙선(HLS)이 있고, LEO에서 탱커로 급유한 뒤 달 이행 주입을 했다. 오리온 승무원이 HLS로 이동; 두 명은 달 남극 지역에 약 6.5일 표면 작업, 두 명은 NRHO에 잔류. 표면 후 HLS가 NRHO로 상승해 오리온으로 환승 후 지구 귀환. 달에 첫 여성과 유색인 최초 착륙을 목표로 한다.",
+  "events": [
+    { "met": 0, "label": "SLS 발사", "note": "승무원 4명을 태운 오리온이 KSC LC-39B에서 이륙.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "달 이행 주입.", "type": "nominal" },
+    { "met": 4, "label": "NRHO 도착", "note": "오리온이 직사각형 할로 궤도 도착; 미리 배치된 스타십 HLS와 접근.", "type": "nominal" },
+    { "met": 5, "label": "하강", "note": "승무원 2명이 HLS로 이동; 달 남극 동력 하강.", "type": "info" },
+    { "met": 12, "label": "상승", "note": "약 6.5일 표면 작업 후 HLS가 NRHO로 상승.", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "NRHO에서 지구 이행 주입.", "type": "nominal" },
+    { "met": 18, "label": "해상 착수", "note": "오리온이 태평양에 착수.", "type": "info" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "De nouveaux horizons",
+  "type": "SURVOL · VOLÉ",
+  "first": "Premier survol de Pluton et de ses lunes ; les images les plus nettes d'un monde de la ceinture de Kuiper",
+  "description": "Neuf ans après le lancement le plus rapide à ce jour, New Horizons a compressé des décennies d'anticipation en un seul jour de juillet 2015 – un monde transformé d'un flou pixelisé en montagnes de glace d'eau et de glaciers d'azote sur la région de Tombaugh en forme de cœur de Pluton. Le vaisseau spatial a ensuite volé sur Arrokoth, reliant la mission au système solaire primordial. Les arcs de vol dans Orrery sont des modèles d'enseignement à transfert direct, et non l'assistance gravitationnelle réelle de Jupiter.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas V 551 quitte la Terre sur une trajectoire d'assistance gravitationnelle de Jupiter vers Pluton.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "SURVOL DE PLUTON",
+      "note": "Approche la plus proche de Pluton ; L'imagerie à haut débit et les données plasma inondent la Terre.",
+      "type": "nominal"
+    }
+  ]
+}

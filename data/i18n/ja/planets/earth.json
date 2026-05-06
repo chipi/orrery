@@ -1,0 +1,13 @@
+{
+  "name": "地球",
+  "type": "故郷 · 基準軌道",
+  "fact": "これまで生きてきた人類はみな、この惑星の上にいた。他のすべての軌道を量る際の参照となる軌道である。",
+  "bio": "季節をつくるのは太陽との距離ではなく、軸傾斜角 23.44°。地球は、七月より一月のほうが太陽に近い。",
+  "links": [
+    { "l": "地球 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
+    { "l": "地球（NASA Solar System Exploration）", "u": "https://science.nasa.gov/earth/", "t": "intro" },
+    { "l": "Earth Observing System（NASA）", "u": "https://eospso.nasa.gov/", "t": "core" },
+    { "l": "なぜ地球に季節があるか（NASA Climate Kids）", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
+    { "l": "ペイルブルードット — カール・セーガンの語り（Planetary Society）", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+  ]
+}

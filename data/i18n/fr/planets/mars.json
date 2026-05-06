@@ -1,0 +1,34 @@
+{
+  "name": "Mars",
+  "type": "Objectif de la mission",
+  "fact": "Les fenêtres de lancement Terre-Mars s'ouvrent tous les 26 mois, grâce à la résonance orbitale. Manquez la fenêtre et attendez deux ans.",
+  "bio": "L'excentricité la plus élevée des planètes intérieures (e=0,093). Mars est 25 % plus éloignée de la Terre à l’aphélie qu’au périhélie – c’est pourquoi les fenêtres de lancement sont si importantes.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Mars — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Mars (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Programme d'exploration de Mars (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Fenêtres de lancement Terre-Mars — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Histoire du climat de Mars (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

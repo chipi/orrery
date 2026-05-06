@@ -1,0 +1,50 @@
+{
+  "name": "Apolo 11",
+  "type": "LANDER TRIPULADO · VOADO",
+  "first": "Primeiros humanos em outro corpo celeste",
+  "description": "A missão que cumpriu o compromisso de Kennedy em 1961 de colocar um homem na Lua até o final da década. Armstrong e Aldrin passaram 21 horas e 36 minutos na superfície lunar – 2,5 horas de EVA, 21,55 kg de amostras e uma única placa comemorativa. O retrorrefletor laser que instalaram no Mare Tranquillitatis ainda recebe pulsos hoje, medindo a distância Terra-Lua com precisão milimétrica. A missão foi assistida ao vivo por cerca de 600 milhões de pessoas, um quinto da humanidade na época.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Saturno V (AS-506) para Centro Espacial Kennedy LC-39A 16/07/1969 13:32 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Queimadura por injeção translunar – estágio S-IVB impulsiona CSM/LM em direção à Lua.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Inserção da órbita lunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ATERRAGEM",
+      "note": "Módulo Lunar Águia pousa em Mare Tranquillitatis 20/07/1969 20:17:40 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PRIMEIRO PASSO",
+      "note": "Armstrong pisa na superfície lunar; 'um pequeno passo para [um] homem'.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "SUBIDA",
+      "note": "Eagle decola após 21h 36m na superfície.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "SPLASHDOWN",
+      "note": "CM Columbia retorna tripulação para o Oceano Pacífico em 24/07/1969.",
+      "type": "nominal"
+    }
+  ]
+}

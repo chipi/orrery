@@ -1,0 +1,50 @@
+{
+  "name": "Ártemis III",
+  "type": "LANDER TRIPULADO · PLANEJADO",
+  "first": "Primeiro pouso lunar tripulado desde a Apollo 17 (1972)",
+  "description": "O primeiro pouso lunar tripulado em mais de meio século. Arquitetura: O Bloco 1 do SLS de NASA lança Orion com 4 tripulantes para uma Órbita Halo Quase Retilínea (NRHO) ao redor da Lua. Pré-posicionado no NRHO está um Starship Human Landing System (HLS) SpaceX, recarregado em órbita baixa da Terra por navios-tanque antes de sua injeção translunar. A tripulação do Orion é transferida para o HLS; 2 astronautas descem para a região do pólo sul lunar para aproximadamente 6,5 dias de operações de superfície, enquanto 2 permanecem em NRHO. Após as operações de superfície, o HLS é lançado de volta ao NRHO para transferência para Orion e retorno à Terra. Irá pousar a primeira mulher e a primeira pessoa negra na Lua.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO SLS",
+      "note": "Orion é lançado do KSC LC-39B com tripulação de 4 pessoas.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Injeção translunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "CHEGADA DO NRHO",
+      "note": "Orion chega à órbita quase retilínea do Halo; encontro com a Starship HLS pré-posicionada.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "DESCIDA",
+      "note": "Transferência de 2 tripulantes para HLS; descida motorizada ao pólo sul lunar.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "SUBIDA",
+      "note": "Subida HLS para NRHO após aproximadamente 6,5 dias de operações de superfície.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Injeção Trans-Terra de NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "SPLASHDOWN",
+      "note": "Orion cai no Oceano Pacífico.",
+      "type": "info"
+    }
+  ]
+}

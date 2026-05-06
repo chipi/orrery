@@ -1,0 +1,33 @@
+{
+  "name": "Saturn",
+  "type": "Gas Giant · Prstenovi",
+  "fact": "Saturnova gustina je 0,687 g/cm³ — manja od vode. Njegov sistem prstenova se prostire na 282.000 km, ali je debeo samo ~10 metara.",
+  "bio": "Najmanja gusta planeta — plutala bi na vodi. Prstenasti sistem se prostire na 282.000 km, ali je debeo samo metar. Nagib od 26,73° znači da Zemlja vidi prstenove pod različitim uglovima u Saturnovoj 29-godišnjoj orbiti.",
+  "links": [
+    {
+      "l": "Saturn - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Saturn",
+      "t": "intro"
+    },
+    {
+      "l": "Saturn (__ACR0__ Istraživanje solarnog sistema)",
+      "u": "https://science.nasa.gov/saturn/",
+      "t": "intro"
+    },
+    {
+      "l": "Arhiva misije Cassini (__ACR0__)",
+      "u": "https://science.nasa.gov/mission/cassini/",
+      "t": "core"
+    },
+    {
+      "l": "Prstenovi Saturna - Vikipedija",
+      "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn",
+      "t": "core"
+    },
+    {
+      "l": "Saturnovi prstenovi su mladi (Science 2019)",
+      "u": "https://www.science.org/doi/10.1126/science.aat2965",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Sonda della speranza",
+  "type": "ORBITORE · ATTIVO",
+  "first": "Prima missione interplanetaria araba",
+  "description": "La missione Emirates su Marte - Al Amal, \"Hope\" - è stata concepita nel 2014 per celebrare il 50° anniversario della federazione degli Emirati Arabi Uniti nel 2021. Il team MBRSC ha collaborato con l'Università del Colorado, Arizona State e UC Berkeley per progettare e integrare il veicolo spaziale, ma lo ha costruito da solo. L'orbita scientifica (1 × durata del giorno, 27.000 km × 43.000 km) copre tutte le longitudini e gli orari del giorno, catturando modelli meteorologici che nessun altro orbiter su Marte è in grado di risolvere. La missione è riuscita al primo tentativo, rendendo gli Emirati Arabi Uniti la quinta agenzia su Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "L'H-IIA 202 di Tanegashima - Mitsubishi Heavy Industries ha effettuato il lancio.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "INSERIMENTO MARTE ORBITA",
+      "note": "L'accensione di 27 minuti del propulsore cattura Hope nell'orbita di Marte 09-02-2021.",
+      "type": "nominal"
+    },
+    {
+      "met": 250,
+      "label": "ORBITA DELLA SCIENZA",
+      "note": "Le manovre di assetto collocano Hope nella sua orbita scientifica di 55 ore.",
+      "type": "info"
+    }
+  ]
+}

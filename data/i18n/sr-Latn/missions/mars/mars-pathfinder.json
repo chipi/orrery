@@ -1,0 +1,38 @@
+{
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · FLOAT",
+  "first": "Prvi točkovi na Marsu; demonstrirano sletanje vazdušnog jastuka",
+  "description": "Misija koja je pokazala jeftine međuplanetarne misije mogla bi da funkcioniše. Pathfinder je koristio novi sistem za sletanje vazdušnih jastuka — koji je odbio desetine puta preko površine pre nego što se zaustavio — i isporučio Sojourner, prvi rover koji je radio na drugoj planeti. Sojourner je prešao 100 m, pregledao desetak stena i radio je dugo nakon svog 7-dnevnog projektovanog veka. Pathfinder je radio 2 meseca i 27 dana; Uspeh misije oživeo je međuplanetarni program __ACR0__ nakon neuspeha 1990-ih.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Delta II 7925 do rta Kanaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Prva korekcija putanje.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "EDL",
+      "note": "Direktan ulazak u atmosferu — bez ubacivanja u orbitu. Toplotni štit, padobran, retro rakete, pa naduvavanje vazdušnih jastuka.",
+      "type": "nominal"
+    },
+    {
+      "met": 212.01,
+      "label": "TOUCHDOVN",
+      "note": "Lender odskoči 15 puta preko Ares Vallisa pre nego što se zaustavi.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SOJOURNER DAPLOIED",
+      "note": "Prvi točkovi na drugoj planeti.",
+      "type": "info"
+    }
+  ]
+}

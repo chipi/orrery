@@ -1,0 +1,20 @@
+{
+  "name": "Voyageur 2",
+  "type": "SURVOL · VOLÉ",
+  "first": "Seul vaisseau spatial à visiter Uranus et Neptune ; Grand Tour des quatre planètes géantes",
+  "description": "Le jumeau qui a continué lorsque les budgets se sont resserrés, Voyager 2 a effectué le Grand Tour de Jupiter et Saturne jusqu'à Uranus et Neptune – toujours les seules images rapprochées que nous ayons des géantes de glace. Sa rencontre avec Neptune en 1989 a révélé la Grande Tache Noire et les geysers de Triton. Aujourd'hui, les deux Voyagers naviguent dans l'espace interstellaire avec un disque d'or comme carte de visite de l'humanité. Orrery répertorie Neptune comme destination du catalogue ; le véritable chemin reposait sur plusieurs assistances gravitationnelles.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan IIIE soulève Voyager 2 depuis Cap Canaveral sur une trajectoire Grand-Tour.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "APPROCHE LA PLUS PROCHE DE NEPTUNE",
+      "note": "Survol de Neptune et de la grande lune Triton ; dernière rencontre planétaire du Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

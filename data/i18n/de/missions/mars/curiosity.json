@@ -1,0 +1,50 @@
+{
+  "name": "Neugier",
+  "type": "ROVER · AKTIV",
+  "first": "Erster atomgetriebener Marsrover; erste Landung eines Luftkrans",
+  "description": "Die Flaggschiff-Mission, die die moderne Mars-Erkundung definierte. Curiosity hat die Größe eines Autos, wird von Plutonium angetrieben und ist seit seiner Landung im Gale-Krater im Jahr 2012 über 32 km den Mount Sharp hinaufgefahren. Seine Instrumente bestätigten, dass der Mars einst bewohnbare Bedingungen hatte – fließendes Wasser, komplexe organische Stoffe, die Chemie, die das Leben braucht. Die EDL-Sequenz „Sieben Minuten des Terrors“, die damit endet, dass ein Himmelskran den Rover an Kabeln herablässt, ist jetzt der Standard von NASA für die Lieferung großer Nutzlasten zur Marsoberfläche.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 541 hebt vom Cape Canaveral SLC-41 ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI-VERBRENNUNG",
+      "note": "Trans-Mars-Injektion (3,61 km/s ∆v) schickt MSL auf eine heliozentrische Flugbahn zum Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "TCM-3",
+      "note": "Endgültige Pre-EDL-Korrektur; Die Flugbahn zielt auf die Landeellipse des Gale-Kraters.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL – SIEBEN MINUTEN TERROR",
+      "note": "Atmosphärischer Eintritt, Überschallfallschirm, Himmelskran-Retroraketen, an Kabeln herabgelassener Rover.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "LANDUNG",
+      "note": "Curiosity erreicht Aeolis Palus, Gale-Krater, 06.08.2012 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "ERSTE BILDER",
+      "note": "Hazcam liefert erstes Bild der Oberfläche mit niedriger Auflösung.",
+      "type": "info"
+    }
+  ]
+}

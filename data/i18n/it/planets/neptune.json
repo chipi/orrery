@@ -1,0 +1,33 @@
+{
+  "name": "Nettuno",
+  "type": "Gigante del ghiaccio",
+  "fact": "La Voyager 2 sorvolò Nettuno nel 1989 dopo un viaggio durato 12 anni. Rimane l'unico veicolo spaziale mai visitato.",
+  "bio": "Il pianeta più ventoso: venti superficiali a 2.100 km/h. Scoperto tramite previsione matematica prima dell'osservazione diretta, perché l'orbita di Urano mostrava un'influenza gravitazionale invisibile.",
+  "links": [
+    {
+      "l": "Nettuno – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Neptune",
+      "t": "intro"
+    },
+    {
+      "l": "Nettuno (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 a Nettuno (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "Scoperta di Nettuno - Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "Modello interno di Nettuno (Icarus 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ]
+}

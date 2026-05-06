@@ -1,0 +1,38 @@
+{
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · GEFLOGEN",
+  "first": "Erste Räder auf dem Mars; demonstrierte Airbag-Landung",
+  "description": "Die Mission, die bewies, dass kostengünstige interplanetare Missionen funktionieren könnten. Pathfinder nutzte ein neuartiges Airbag-Landesystem, das Dutzende Male über die Oberfläche prallte, bevor es zur Ruhe kam, und lieferte Sojourner, den ersten Rover, der auf einem anderen Planeten operierte. Sojourner legte 100 m zurück, untersuchte ein Dutzend Steine ​​und arbeitete weit über die vorgesehene Lebensdauer von sieben Tagen hinaus. Pathfinder war 2 Monate und 27 Tage in Betrieb; Der Erfolg der Mission belebte das interplanetare Programm von NASA nach den Misserfolgen der 1990er Jahre wieder.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Delta II 7925 von Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Erste Flugbahnkorrektur.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "EDL",
+      "note": "Direkter Eintritt in die Atmosphäre – keine Einfügung in die Umlaufbahn. Hitzeschild, Fallschirm, Retro-Raketen, dann Airbag-Aufblasung.",
+      "type": "nominal"
+    },
+    {
+      "met": 212.01,
+      "label": "LANDUNG",
+      "note": "Lander springt 15 Mal über Ares Vallis, bevor er zur Ruhe kommt.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SOJOURNER IM EINSATZ",
+      "note": "Erste Räder auf einem anderen Planeten.",
+      "type": "info"
+    }
+  ]
+}

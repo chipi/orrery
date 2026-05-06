@@ -1,0 +1,13 @@
+{
+  "name": "天王星",
+  "type": "天王星型惑星",
+  "fact": "天王星は横倒しに自転する — 軸傾斜角 98°。84 年の公転の半分は北極がほぼ真太陽を向く。",
+  "bio": "ほぼ横倒し（97.77°）の自転。各極は 42 年連続で昼、つぎの 42 年は夜。古代の巨大衝突が原因だった可能性が高い。",
+  "links": [
+    { "l": "天王星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
+    { "l": "天王星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
+    { "l": "ボイジャー 2 号の天王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
+    { "l": "Uranus Orbiter and Probe — Decadal Survey", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
+    { "l": "天王星の傾きの起源（Astrophysical Journal 2020）", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+  ]
+}

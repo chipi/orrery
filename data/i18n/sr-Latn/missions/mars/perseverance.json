@@ -1,0 +1,50 @@
+{
+  "name": "Upornost",
+  "type": "ROVER · AKTIVAN",
+  "first": "Prvi helikopter na drugoj planeti (Ingenuit); prvi keš uzorak za Mars Sample Return",
+  "description": "Perseverance je najambicioznija površinska misija na Mars ikada letela. Vraćanje uzorka na Mars zavisi od toga — rover prikuplja i sprema uzorke u cevima koje će buduća misija preuzeti i vratiti na Zemlju. Ingenuiti, prvi helikopter na drugoj planeti, preleteo je 72 misije pre nego što je otišao u penziju sa oštećenim rotorima u januaru 2024. — dokazujući da je kontrolisani let moguć u tankoj atmosferi Marsa. MOKSIE, demonstrator kiseonika iz CO2, proizveo je prvi lokalno proizveden kiseonik na drugoj planeti, probno za misije sa ljudskom posadom na Mars.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 541 sa Cape Canaveral SLC-41 — ista klasa vozila kao Curiosities.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI BURN",
+      "note": "Trans-Mars injekcija.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Nebeski kran isporučuje rover do kratera Jezero 2021-02-18 — na mestu drevne delte reke.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "TOUCHDOVN",
+      "note": "Upornost pada na jezero u 20:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "MAŠTA PRVE GODINE",
+      "note": "Prvi kontrolisani let na drugoj planeti - 39,1 sekundi na visini do 5 m.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "STAV U PENZIJI",
+      "note": "Lopatica rotora oštećena na letu 72 2024-01-18; helikopter ostaje u funkciji kao komunikacioni relej.",
+      "type": "info"
+    }
+  ]
+}

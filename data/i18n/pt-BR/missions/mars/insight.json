@@ -1,0 +1,44 @@
+{
+  "name": "Entendimento",
+  "type": "LANDER · VOADO",
+  "first": "Primeiro sismógrafo em Marte; primeiro lançamento interplanetário da Costa Oeste dos EUA",
+  "description": "A InSight deu a Marte seu primeiro estetoscópio. Seu sismômetro, implantado por um braço robótico no regolito, registrou mais de 1.300 terremotos em Marte – incluindo um terremoto de magnitude 5 em 2022, o maior já detectado em outro planeta. Os dados revelaram a estrutura interior de Marte: um núcleo derretido com um raio de 1.800 km, uma crosta espessa e surpreendentes camadas de manto. O experimento de fluxo de calor da toupeira falhou quando o regolito se mostrou coeso demais para seu projeto auto-martelante. A missão terminou quando o acúmulo de poeira nos painéis solares reduziu a potência abaixo do limite operacional.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Atlas V 401 da Base Aérea de Vandenberg — primeira missão interplanetária lançada da Costa Oeste dos EUA.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "EDL",
+      "note": "Entrada atmosférica, pára-quedas, pouso de foguete de descida terminal em Elysium Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 205.01,
+      "label": "ATERRAGEM",
+      "note": "Lander chega em 26/11/2018 às 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SISSMÔMETRO IMPLANTADO",
+      "note": "O braço robótico coloca o instrumento SEIS na superfície e o protege do vento.",
+      "type": "info"
+    },
+    {
+      "met": 1683,
+      "label": "FIM DA MISSÃO",
+      "note": "Transmissão final de baixa potência 2022-12-15. Painéis solares cobertos de poeira demais para serem recarregados.",
+      "type": "warning"
+    }
+  ]
+}

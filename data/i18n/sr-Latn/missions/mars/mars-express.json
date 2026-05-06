@@ -1,0 +1,38 @@
+{
+  "name": "Mars Ekpress",
+  "type": "ORBITER · AKTIVAN",
+  "first": "prva evropska međuplanetarna misija; najdugotrajniji orbiter koji nije__ACR0__ Mars",
+  "description": "__ACR0__ prva misija na planeti koja nije Zemlja. Orbiter je napravio najduži kontinuirani zapis atmosfere Marsa, mapirajući naslage vodenog leda, metanske perjanice i trodimenzionalno vreme na planeti. Beagle 2, britanski lender koji ga je nosio, stigao je na površinu, ali nikada nije u potpunosti raspoređen solarne panele — proglašen izgubljenim 2004., pronađen netaknutim od strane Mars Reconnaissance Orbiter __ACR1__ 2015. Orbiter je u trećoj deceniji rada.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Sojuz-FG / Fregat sa Bajkonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Prva ispravka na sredini kursa.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "BEAGLE 2 RELEASE",
+      "note": "Lender se odvaja od orbitera za samostalno spuštanje.",
+      "type": "nominal"
+    },
+    {
+      "met": 206,
+      "label": "UMETANjE MARSOVE ORBITE",
+      "note": "37-minutni glavni motor raketira orbiter u orbitu Marsa na Božić 2003.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "BEAGLE 2 SILENT",
+      "note": "Očekivani prvi signal nije primljen; lender proglašen izgubljenim.",
+      "type": "warning"
+    }
+  ]
+}

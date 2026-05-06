@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 11",
+  "type": "LANDER MIT BESATZUNG · GEFLOGEN",
+  "first": "Erste Menschen auf einem anderen Himmelskörper",
+  "description": "Die Mission, die Kennedys Versprechen von 1961 erfüllte, bis zum Ende des Jahrzehnts einen Menschen auf den Mond zu bringen. Armstrong und Aldrin verbrachten 21 Stunden und 36 Minuten auf der Mondoberfläche – 2,5 Stunden EVA, 21,55 kg Proben und eine einzige Gedenktafel. Der von ihnen am Mare Tranquillitatis installierte Laser-Retroreflektor empfängt noch heute Impulse und misst den Abstand zwischen Erde und Mond millimetergenau. Die Mission wurde von rund 600 Millionen Menschen live verfolgt, einem Fünftel der damaligen Menschheit.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Saturn V (AS-506) vom Kennedy Space Center LC-39A 16.07.1969 13:32 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Translunare Injektionsverbrennung – S-IVB-Stufe treibt CSM/LM in Richtung Mond.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LANDUNG",
+      "note": "Mondlandefähre Eagle landet am Mare Tranquillitatis am 20.07.1969 um 20:17:40 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "ERSTER SCHRITT",
+      "note": "Armstrong betritt die Mondoberfläche; „Ein kleiner Schritt für [einen] Mann“.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "AUFSTIEG",
+      "note": "Eagle hebt nach 21 Stunden und 36 Minuten an der Oberfläche ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "WASSERUNG",
+      "note": "CM Columbia bringt Besatzung in den Pazifischen Ozean zurück 24.07.1969.",
+      "type": "nominal"
+    }
+  ]
+}

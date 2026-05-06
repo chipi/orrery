@@ -1,0 +1,50 @@
+{
+  "name": "Apollon 17",
+  "type": "ATTERRISSAGE EN ÉQUIPAGE · ROVER · VOLÉ",
+  "first": "Dernière mission en équipage sur la Lune (et la seule Apollo avec un géologue qualifié)",
+  "description": "La dernière fois que les humains ont visité un autre monde, il y a plus d’un demi-siècle. Cernan et Schmitt ont passé 75 heures en surface, ont parcouru 35,7 km en LRV et ont ramené 110,5 kg d'échantillons. Schmitt était le seul scientifique (géologue) qualifié à avoir jamais marché sur la Lune, et ses découvertes – en particulier le verre volcanique orange du cratère Shorty – ont remodelé la géologie lunaire. Les derniers mots de Cernan avant de gravir l'échelle pour la dernière fois : \"Nous partons comme nous sommes venus, et si Dieu le veut, nous reviendrons.\" Artemis III est censé tenir cette promesse.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Saturn V (AS-512) de KSC LC-39A 1972-12-07 - uniquement lancement nocturne d'Apollo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Injection translunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "ATTERRISSAGE",
+      "note": "Le module lunaire Challenger atterrit à Taurus-Littrow Valley le 11/12/1972 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "PREMIÈRE ÉVA",
+      "note": "Cernan et Schmitt commencent la première des trois EVA lunaires (total 22h 4m).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "ASCENSION",
+      "note": "Cernan : \"Nous partons comme nous sommes venus, et si Dieu le veut, nous reviendrons.\"",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "AMERRISSAGE",
+      "note": "CM America ramène l'équipage dans l'océan Pacifique 1972-12-19.",
+      "type": "nominal"
+    }
+  ]
+}

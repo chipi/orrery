@@ -1,0 +1,20 @@
+{
+  "name": "Alba",
+  "type": "ORBITER · VOLATO",
+  "first": "Prima missione in orbita attorno a due corpi extraterrestri: Vesta, poi Cerere",
+  "description": "Dawn ha dimostrato la propulsione ionica su scala planetaria: ha combaciato le orbite con la massiccia Vesta, a sinistra, ed è sceso a spirale sul pianeta nano Cerere, l’oggetto più grande nella fascia degli asteroidi. I punti luminosi nel cratere Occator divennero uno dei misteri iconici della missione, in seguito legati alle eruzioni salmastre provenienti da un profondo bacino idrico. Questa voce di catalogo utilizza Cerere come destinazione principale; Vesta è trattata nella narrazione sopra.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Delta II solleva l'Alba verso Vesta e Cerere su un'autostrada a spirale a bassa spinta.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CATTURA DI CERERE",
+      "note": "I motori ionici frenano Dawn portandola in orbita attorno a Cerere; inizia la campagna di mappatura.",
+      "type": "nominal"
+    }
+  ]
+}

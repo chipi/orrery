@@ -1,0 +1,13 @@
+{
+  "name": "土星",
+  "type": "木星型惑星 · 環",
+  "fact": "土星の密度は 0.687 g/cm³ — 水より小さい。環系は直径約 28 万 km にわたるが、厚さはおよそ 10 m 程度である。",
+  "bio": "密度がもっとも低く — 水に浮く。環は約 28 万 km に広がるが厚さは数十メートル程度。軸傾斜角 26.73° のため、土星の約 29 年軌道のあいだに地球から見る環の向きが変わる。",
+  "links": [
+    { "l": "土星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
+    { "l": "土星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "カッシーニのアーカイブ（NASA）", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "土星の環 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
+    { "l": "土星の環は若い（Science 2019）", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "天王星",
+  "type": "冰巨行星",
+  "fact": "天王星侧躺着自转——轴倾角约 98°。在 84 年公转的一半时间里，北极几乎一直朝向太阳。",
+  "bio": "几乎侧躺（97.77°）。每个极区各有约 42 年连续日照，再是约 42 年黑夜。很可能源自远古一次巨大撞击。",
+  "links": [
+    { "l": "天王星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Uranus", "t": "intro" },
+    { "l": "天王星（NASA 太阳系探索）", "u": "https://science.nasa.gov/uranus/", "t": "intro" },
+    { "l": "旅行者 2 号飞掠天王星（NASA JPL）", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/", "t": "core" },
+    { "l": "天王星轨道器与探测器 — 十年调查", "u": "https://nap.nationalacademies.org/catalog/26522/", "t": "core" },
+    { "l": "天王星倾角起源（Astrophysical Journal 2020）", "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945", "t": "deep" }
+  ]
+}

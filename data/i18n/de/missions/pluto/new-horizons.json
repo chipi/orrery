@@ -1,0 +1,20 @@
+{
+  "name": "Neue Horizonte",
+  "type": "Vorbeiflug · Geflogen",
+  "first": "Erster Vorbeiflug an Pluto und seinen Monden; schärfste Bilder einer Welt im Kuipergürtel",
+  "description": "Neun Jahre nach dem bisher schnellsten Start komprimierte New Horizons jahrzehntelange Vorfreude auf einen Tag im Juli 2015 – eine Welt, die sich von einer pixeligen Unschärfe in Berge aus Wassereis und Stickstoffgletschern auf Plutos herzförmigem Tombaugh Regio verwandelte. Das Raumschiff flog später über Arrokoth und verband die Mission mit dem ursprünglichen Sonnensystem. Flugbögen in Orrery sind Lehrmodelle mit direkter Übertragung, nicht die eigentliche Jupiter-Schwerkraftunterstützung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 551 verlässt die Erde auf einem von Jupiter unterstützten Weg zu Pluto.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "PLUTO-Vorbeiflug",
+      "note": "Größte Annäherung an Pluto; Hochgeschwindigkeitsbildgebung und Plasmadaten überfluten die Erde.",
+      "type": "nominal"
+    }
+  ]
+}

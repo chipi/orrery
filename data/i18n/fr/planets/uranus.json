@@ -1,0 +1,33 @@
+{
+  "name": "Uranus",
+  "type": "Géant de glace",
+  "fact": "Uranus tourne sur le côté – inclinaison axiale de 98°. Son pôle nord pointe presque directement vers le Soleil sur la moitié de son orbite de 84 ans.",
+  "bio": "Incliné presque sur le côté (97,77°). Chaque pôle bénéficie de 42 ans de lumière solaire continue, puis de 42 ans d'obscurité. Presque certainement causé par une ancienne collision massive.",
+  "links": [
+    {
+      "l": "Uranus — Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "Uranus (NASA Exploration du système solaire)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 à Uranus (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Orbiteur et sonde Uranus — Enquête décennale",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "Origine de l'inclinaison d'Uranus (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Mars 3",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "First spacecraft to soft-land on Mars",
+  "description": "The Soviet Union's audacious double-mission to Mars in 1971 — Mars 2 and Mars 3 launched 9 days apart. Mars 2's lander crashed; Mars 3's lander achieved the first soft-landing on Mars but transmitted for only ~110 seconds before signal loss, possibly due to the global dust storm raging at the time. The orbiter operated for 8 months, returning hundreds of images and atmospheric measurements. Despite the brief surface mission, Mars 3 demonstrated that the descent and landing problem on Mars was solvable.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Proton-K with Blok-D upper stage from Baikonur.", "type": "nominal" },
+    { "met": 188, "label": "ORBITER MOI", "note": "Orbiter captures into Mars orbit during global dust storm.", "type": "nominal" },
+    { "met": 188.05, "label": "LANDER SEPARATION", "note": "Lander separates and begins atmospheric entry.", "type": "nominal" },
+    { "met": 188.1, "label": "SURFACE CONTACT", "note": "First soft-landing on Mars; transmission begins.", "type": "nominal" },
+    { "met": 188.101, "label": "SIGNAL LOSS", "note": "After ~110 seconds, signal terminated permanently. Cause unconfirmed; dust storm leading suspect.", "type": "warning" }
+  ]
+}

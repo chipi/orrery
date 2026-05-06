@@ -1,0 +1,32 @@
+{
+  "name": "Demonstração de nave estelar",
+  "type": "DEMO DE MARTE NÃO CRIADO · PLANEJADO",
+  "first": "Primeiro sistema de lançamento totalmente reutilizável para tentar pousar em Marte",
+  "description": "Uma demonstração não tripulada da arquitetura da Starship Mars: lançamento no Super Heavy, reabastecimento de LEO de uma variante de navio-tanque, depois injeção trans-Marte de uma Starship totalmente abastecida e descida motorizada até a superfície marciana. A meta declarada de SpaceX é uma janela de lançamento 2026-2027; a realidade da engenharia (a nave estelar ainda trabalhando na confiabilidade do voo orbital e o reabastecimento em órbita não foi demonstrado) torna 2028 ou mais tarde mais provável. Se tiver sucesso, inverterá a economia da carga útil de Marte – de milhares de kg para cem toneladas por aterragem.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Nave estelar de Boca Chica ou Cabo Canaveral — primeiro lançamento interplanetário superpesado.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "REABASTECIMENTO ORBITAL",
+      "note": "Encontro de petroleiros e transferência de propelente em LEO em vários voos.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "QUEIMADURA DE TMI",
+      "note": "Injeção Trans-Mars do estado LEO totalmente abastecido.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "ATERRAGEM EM MARTE",
+      "note": "Descida motorizada até a superfície de Marte – sem pára-quedas, sem airbags, sem guindaste celeste.",
+      "type": "info"
+    }
+  ]
+}

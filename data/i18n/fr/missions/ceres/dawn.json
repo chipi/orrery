@@ -1,0 +1,20 @@
+{
+  "name": "Aube",
+  "type": "ORBITEUR · VOLÉ",
+  "first": "Première mission en orbite autour de deux corps extraterrestres – Vesta, puis Cérès",
+  "description": "Dawn a prouvé la propulsion ionique à l’échelle planétaire : elle a fait correspondre les orbites de l’énorme Vesta, à gauche, et s’est dirigée vers la planète naine Cérès – le plus gros objet de la ceinture d’astéroïdes. Les points lumineux dans le cratère Occator sont devenus l'un des mystères emblématiques de la mission, plus tard liés aux éruptions saumâtres d'un réservoir profond. Cette entrée de catalogue utilise Cérès comme destination principale ; Vesta est couverte dans le récit ci-dessus.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Delta II élève Dawn vers Vesta et Cérès sur une autoroute en spirale à faible poussée.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CAPTURE DE CÉRÈS",
+      "note": "Les moteurs ioniques freinent Dawn en orbite autour de Cérès ; la campagne de cartographie commence.",
+      "type": "nominal"
+    }
+  ]
+}

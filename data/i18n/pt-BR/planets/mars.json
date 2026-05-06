@@ -1,0 +1,34 @@
+{
+  "name": "Marte",
+  "type": "Alvo da missão",
+  "fact": "As janelas de lançamento Terra-Marte abrem a cada 26 meses – impulsionadas pela ressonância orbital. Perca a janela e espere dois anos.",
+  "bio": "A maior excentricidade dos planetas internos (e=0,093). Marte está 25% mais distante da Terra no afélio versus periélio – é por isso que as janelas de lançamento são tão importantes.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Marte - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Mars",
+      "t": "intro"
+    },
+    {
+      "l": "Marte (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Programa de Exploração de Marte (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Janelas de lançamento Terra-Marte — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "História climática de Marte (Ciência 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

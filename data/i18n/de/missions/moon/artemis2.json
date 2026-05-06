@@ -1,0 +1,44 @@
+{
+  "name": "Artemis II",
+  "type": "Vorbeiflug mit Besatzung · Geflogen",
+  "first": "Erster bemannter Flug außerhalb der erdnahen Umlaufbahn seit Apollo 17 (1972) – und die Mission, die dieses Projekt inspirierte",
+  "description": "Der erste bemannte Flug des Artemis-Programms und der Funke, der zu Orrery führte. NASAs SLS Block 1 startete ein Orion-Raumschiff mit vier Astronauten – Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) und Jeremy Hansen (MS) von CSA – auf eine hybride Flugbahn mit freier Rückkehr, die sie in etwa 9.200 km Höhe um die andere Seite des Mondes schwenkte und sie ohne Verbrennung in die Mondumlaufbahn zur Erde zurückbrachte. Eine 10-tägige Mission, die mit einer Wasserkatastrophe im Pazifik endet. Qualifizierte die Lebenserhaltungs-, Navigations- und Wiedereintrittssysteme von Orion für den bemannten Flug vor der Landung der Artemis III.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-EINFÜHRUNG",
+      "note": "Orion hebt mit vier Besatzungsmitgliedern an Bord vom KSC LC-39B ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Translunare Injektionsverbrennung durch ICPS – Orion trennt sich auf einer cislunaren Flugbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "Mondvorbeiflug",
+      "note": "Nächste Annäherung über die andere Seite, ca. 9.200 km Höhe. Kein Einsetzen in die Umlaufbahn – die freie Rückkehrgeometrie schleudert Orion zurück zur Erde.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "TCM-2",
+      "note": "Korrektur der Rückflugbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "WASSERUNG",
+      "note": "Orion-Wiedereintritt und Wasserspritzer im Pazifischen Ozean.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Marinaio 4",
+  "type": "FLYBY · EFFETTUATA",
+  "first": "La prima sonda spaziale a raggiungere Marte e a restituire immagini ravvicinate di un altro pianeta",
+  "description": "La missione che ha posto fine al sogno di un Marte abitabile. Le 22 immagini sgranate del Mariner 4, scattate durante un avvicinamento ravvicinato di 25 minuti a 9.846 km di altitudine, hanno mostrato una superficie craterizzata che somigliava alla Luna: senza canali, senza vegetazione, senza vita evidente. L'atmosfera era 100 volte più rarefatta del previsto. La scoperta ha rimodellato Marte nell'immaginario pubblico da sorella Terra a mondo morto. Il monitoraggio della sonda ha prodotto anche la prima misurazione della struttura del vento solare tra i pianeti.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas LV-3 Agena-D decolla da Cape Canaveral LC-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Completata la prima correzione di metà percorso; traiettoria bloccata.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "MARTE FLYBY",
+      "note": "Avvicinamento più vicino 9.846 km. 22 immagini restituite in 8 ore durante la riproduzione dei dati.",
+      "type": "nominal"
+    },
+    {
+      "met": 228.5,
+      "label": "PRIME IMMAGINI",
+      "note": "Le prime immagini ravvicinate di un altro pianeta mai restituite alla Terra.",
+      "type": "info"
+    }
+  ]
+}

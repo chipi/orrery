@@ -1,0 +1,38 @@
+{
+  "name": "__ACR0__",
+  "type": "FOBOS POVRATAK UZORKA · PLANIRAN",
+  "first": "Prvi povratni uzorak sa Marsovog meseca",
+  "description": "Istraživanje Martian Moons eKsploration je plan __ACR0__ da sleti na Fobos, preuzme ~10 g regolita i donese ga kući. Uzorci bi mogli da reše pitanje o kome se dugo raspravljalo: da li su Fobos i Deimos uhvaćeni asteroidi ili fragmenti od drevnog udara na sam Mars? Misija takođe uključuje nemačko-francuski rover za površinsku mobilnost Phobos — potpuno drugačiji operativni model od bilo čega što su misije Haiabusa uradile u Itokava ili Riugu. Lansiranje je planirano za 2024. godinu, ali je pomereno za 2026. zbog kašnjenja rakete-nosača __ACR0__ H3.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "H3-24L iz Tanegašime — novi teški dizač __ACR0__.",
+      "type": "nominal"
+    },
+    {
+      "met": 334,
+      "label": "UMETANjE MARSOVE ORBITE",
+      "note": "Pucanje u orbitu Marsa; prebacivanje u kvazi-orbitu Fobosa tokom narednih meseci.",
+      "type": "nominal"
+    },
+    {
+      "met": 600,
+      "label": "ROVER RAZVOJ",
+      "note": "DLR/CNES rover (~25 kg) lansiran na površinu Fobosa za in situ studije.",
+      "type": "info"
+    },
+    {
+      "met": 1100,
+      "label": "PHOBOS SAMPLE",
+      "note": "__ACR0__ sleće na Fobos; Sakupljeno je ~10 g regolita.",
+      "type": "info"
+    },
+    {
+      "met": 1500,
+      "label": "POVRATAK ZEMLjE",
+      "note": "Kapsula za ponovni ulazak uzorka stiže na Zemlju ~2031.",
+      "type": "info"
+    }
+  ]
+}

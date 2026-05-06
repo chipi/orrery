@@ -1,0 +1,12 @@
+{
+  "name": "月周回探査機（LRO）",
+  "type": "軌道機 · 活動中",
+  "first": "これまでで最高分解能の月面地図",
+  "description": "二〇〇九年から平均月高度五十キロメートルで月を周回。LROC 狭角カメラは五十センチ／ピクセル — Apollo 下降段、ローバー轍、宇宙飛行士の足跡まで見える。ルノホード 1 は暗くなってから三十九年後に発見した。Artemis の二百か所以上の候補着陸地を特定。現代の月計画を動かす南極の水氷堆積を LRO の計器が定量した。斥候が現代月時代の基礎となった。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "ケープカナベラル SLC-41 からアトラス V 401（副搭載で LCROSS 衝突機）。", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "月軌道投入 2009-06-23。", "type": "nominal" },
+    { "met": 90, "label": "PRIME MISSION", "note": "一年間の探索フェーズ（NASA 計画）開始。", "type": "info" },
+    { "met": 455, "label": "EXTENDED SCIENCE", "note": "NASA SMD のもと多年科学フェーズへ延長。", "type": "info" }
+  ]
+}

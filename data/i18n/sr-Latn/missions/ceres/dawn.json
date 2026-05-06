@@ -1,0 +1,20 @@
+{
+  "name": "Zora",
+  "type": "ORBITER · FLOVN",
+  "first": "Prva misija u orbiti dva vanzemaljska tela — Vesta, zatim Ceres",
+  "description": "Davn je dokazao jonski pogon na planetarnoj skali: upario je orbite sa masivnom Vestom, levo, i spiralno se spustio do patuljaste planete Ceres — najvećeg objekta u asteroidnom pojasu. Svetle tačke u krateru Okator postale su jedna od legendarnih misterija misije, kasnije povezana sa erupcijama slane vode iz dubokog rezervoara. Ovaj unos u katalogu koristi Ceres kao primarno odredište; Vest je pokrivena u narativu iznad.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Delta II podiže Zoru ka Vesti i Ceres na spiralnom autoputu sa malim potiskom.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CERES CAPTURE",
+      "note": "Jonski potisnici vuku Davn u orbitu oko Cerere; počinje kampanja mapiranja.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Chandrayaan-1",
+  "type": "ORBITER · FLOWN",
+  "first": "India's first lunar mission; confirmed widespread water on the Moon",
+  "description": "ISRO's first interplanetary spacecraft. The orbiter delivered the Moon Impact Probe to the lunar surface — the first Indian object on another world — and carried 11 instruments from 6 countries. NASA's Moon Mineralogy Mapper (M3) instrument, hosted on Chandrayaan-1, made the discovery that rewrote textbooks: water molecules are widespread across the lunar surface, not just locked in polar shadowed craters. The mission ended abruptly in August 2009 when ISRO lost communication with the spacecraft.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "PSLV-XL (C11) from Sriharikota.", "type": "nominal" },
+    { "met": 17, "label": "MOI", "note": "Lunar orbit insertion 2008-11-08.", "type": "nominal" },
+    { "met": 24, "label": "MIP IMPACT", "note": "Moon Impact Probe targeted hard-landing near south pole.", "type": "info" },
+    { "met": 320, "label": "CONTACT LOST", "note": "Communication lost 2009-08-29; 312 days of operations.", "type": "warning" }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Mars 3",
+  "type": "ORBITER · LANDER · GEFLOGEN",
+  "first": "Erste Raumsonde landet sanft auf dem Mars",
+  "description": "Die kühne Doppelmission der Sowjetunion zum Mars im Jahr 1971 – Mars 2 und Mars 3 starteten im Abstand von 9 Tagen. Der Lander von Mars 2 stürzte ab; Der Lander von Mars 3 schaffte die erste sanfte Landung auf dem Mars, sendete jedoch nur etwa 110 Sekunden lang, bevor das Signal verloren ging, möglicherweise aufgrund des damals tobenden globalen Staubsturms. Der Orbiter war acht Monate lang in Betrieb und lieferte Hunderte von Bildern und atmosphärischen Messungen. Trotz der kurzen Oberflächenmission zeigte Mars 3, dass das Problem des Abstiegs und der Landung auf dem Mars lösbar war.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Proton-K mit Blok-D-Oberstufe aus Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 188,
+      "label": "ORBITER MOI",
+      "note": "Der Orbiter gelangt während eines globalen Staubsturms in die Umlaufbahn des Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.05,
+      "label": "Lander-Trennung",
+      "note": "Lander trennt sich und beginnt mit dem Eintritt in die Atmosphäre.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.1,
+      "label": "OBERFLÄCHENKONTAKT",
+      "note": "Erste sanfte Landung auf dem Mars; Die Übertragung beginnt.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.101,
+      "label": "SIGNALVERLUST",
+      "note": "Nach ca. 110 Sekunden wurde das Signal dauerhaft beendet. Ursache unbestätigt; Hauptverdächtiger des Staubsturms.",
+      "type": "warning"
+    }
+  ]
+}

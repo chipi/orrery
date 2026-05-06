@@ -1,0 +1,13 @@
+{
+  "name": "शुक्र",
+  "type": "पथरीला ग्रह",
+  "fact": "सतह दाब पृथ्वी का 90 गुना। सोवियत वीनेरा यान कुचलने से पहले 23–127 मिनट टिके।",
+  "bio": "विपरीत दिशा में घूर्णन — इतना धीमा कि शुक्रीय दिन उसके वर्ष से लंबा है। 177.4° ध्रुवीय झुकाव कारण है: शुक्र मूलतः उल्टा है।",
+  "links": [
+    { "l": "शुक्र — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
+    { "l": "शुक्र (NASA सौर मंडल अन्वेषण)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "वीनेरा कार्यक्रम — विकिपीडिया", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
+    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "शुक्र का अनियंत्रित ग्रीनहाउस (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
+}

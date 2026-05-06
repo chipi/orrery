@@ -1,0 +1,13 @@
+{
+  "name": "금성",
+  "type": "유형 행성",
+  "fact": "표면 기압은 지구의 90배. 소련 베네라 탐사선은 압사되기 전 23~127분 버텼다.",
+  "bio": "역행한다 — 뒤로 돌며 너무 느려서 금성의 하루가 해(년)보다 길다. 자전축 경사 177.4° 때문인데, 금성은 사실상 거꾸로다.",
+  "links": [
+    { "l": "Venus — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venus", "t": "intro" },
+    { "l": "Venus (NASA Solar System Exploration)", "u": "https://science.nasa.gov/venus/", "t": "intro" },
+    { "l": "Venera program — Wikipedia", "u": "https://en.wikipedia.org/wiki/Venera_program", "t": "core" },
+    { "l": "DAVINCI + VERITAS (NASA)", "u": "https://science.nasa.gov/mission/davinci/", "t": "core" },
+    { "l": "Venus's runaway greenhouse (Nature Astronomy 2020)", "u": "https://www.nature.com/articles/s41550-019-0930-9", "t": "deep" }
+  ]
+}

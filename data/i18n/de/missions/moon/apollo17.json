@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 17",
+  "type": "LANDER MIT BESATZUNG · ROVER · GEFLOGEN",
+  "first": "Letzte bemannte Mission zum Mond (und die einzige Apollo-Mission mit einem ausgebildeten Geologen)",
+  "description": "Das letzte Mal, dass Menschen eine andere Welt besuchten – vor über einem halben Jahrhundert. Cernan und Schmitt verbrachten 75 Stunden an der Oberfläche, fuhren mit dem LRV 35,7 km und brachten 110,5 kg Proben zurück. Schmitt war der einzige ausgebildete Wissenschaftler (Geologe), der jemals den Mond betrat, und seine Erkenntnisse – insbesondere das orangefarbene Vulkanglas im Shorty-Krater – veränderten die Mondgeologie. Cernans letzte Worte, bevor er zum letzten Mal die Leiter hinaufsteigt: „Wir gehen, wie wir gekommen sind, und so Gott will, werden wir zurückkehren.“ Artemis III soll dieses Versprechen einlösen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Saturn V (AS-512) von KSC LC-39A 07.12.1972 – nur Apollo-Nachtstart.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Translunare Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LANDUNG",
+      "note": "Die Mondlandefähre Challenger landet am 11.12.1972 um 19:54 UTC im Taurus-Littrow Valley.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "ERSTE EVA",
+      "note": "Cernan und Schmitt beginnen mit der ersten von drei Mond-EVAs (insgesamt 22 Stunden und 4 Minuten).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "AUFSTIEG",
+      "note": "Cernan: „Wir gehen, wie wir gekommen sind, und so Gott will, werden wir zurückkehren.“",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "WASSERUNG",
+      "note": "CM America bringt seine Besatzung am 19.12.1972 in den Pazifischen Ozean zurück.",
+      "type": "nominal"
+    }
+  ]
+}

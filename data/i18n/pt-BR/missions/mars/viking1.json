@@ -1,0 +1,44 @@
+{
+  "name": "Viking 1",
+  "type": "ORBITER · LANDER · VOADO",
+  "first": "Primeiro pouso totalmente bem-sucedido em Marte; primeira ciência de superfície de longa duração",
+  "description": "A missão que nos deu a primeira visão sustentada da superfície marciana. O módulo de aterragem da Viking 1 operou durante 6 anos e 4 meses em Chryse Planitia - realizando experiências biológicas destinadas a detectar vida (resultados ambíguos; uma experiência produziu um sinal positivo ainda debatido décadas mais tarde), medindo o tempo, retornando imagens panorâmicas e analisando a composição do solo. O orbitador mapeou 97% de Marte com resolução de 100 m e ajudou a explorar locais de pouso para missões que ainda estão a décadas de distância.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Titã IIIE-Centauro do Cabo Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Primeira correção de trajetória.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "INSERÇÃO DA ÓRBITA DE MARTE",
+      "note": "Orbiter captura na órbita de Marte; O módulo de pouso permanece anexado para levantamento do local.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "SEPARAÇÃO DE LANDER",
+      "note": "Lander se destaca para descida até Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "ATERRAGEM",
+      "note": "Lander pousa em 20/07/1976, exatamente 7 anos após a Apollo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "PRIMEIRO PANORAMA",
+      "note": "As primeiras imagens de superfície em alta resolução foram retornadas.",
+      "type": "info"
+    }
+  ]
+}

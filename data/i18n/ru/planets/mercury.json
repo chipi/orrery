@@ -1,0 +1,13 @@
+{
+  "name": "Меркурий",
+  "type": "Землеподобная планета",
+  "fact": "Температура на поверхности меняется на 610 °C за один день. Нет атмосферы — только прямое воздействие космоса.",
+  "bio": "Самая маленькая планета. Сильно вытянутая орбита (e=0,206) заставляет её заметно ускоряться у перигелия. Несмотря на близость к Солнцу, Венера горячее.",
+  "links": [
+    { "l": "Меркурий — Википедия", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "Mercury (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "Обзор миссии MESSENGER (NASA)", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "BepiColombo (ESA / JAXA)", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "Расплавленное ядро Меркурия (Nature Geoscience 2019)", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
+}

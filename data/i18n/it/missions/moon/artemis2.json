@@ -1,0 +1,44 @@
+{
+  "name": "Artemide II",
+  "type": "FLYBY CON EQUIPAGGIO · VOLATO",
+  "first": "Primo volo con equipaggio oltre l'orbita terrestre bassa dall'Apollo 17 (1972) - e la missione che ha ispirato questo progetto",
+  "description": "Il primo volo con equipaggio del programma Artemis e la scintilla che divenne Orrery. L'SLS Block 1 di NASA ha lanciato una navicella spaziale Orion con quattro astronauti - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) di CSA - su una traiettoria ibrida di ritorno libero che li ha fatti oscillare attorno al lato nascosto della Luna a circa 9.200 km di altitudine e li ha riportati sulla Terra senza alcuna bruciatura da inserzione nell'orbita lunare. Una missione di 10 giorni che termina con lo schianto nel Pacifico. Sistemi di supporto vitale, navigazione e rientro qualificati di Orion per il volo con equipaggio prima dell'atterraggio in superficie dell'Artemis III.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO SLS",
+      "note": "Orion decolla dal KSC LC-39B con quattro membri dell'equipaggio a bordo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Ustione per iniezione translunare da parte dell'ICPS: Orion si separa sulla traiettoria cislunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "VIAGGIO LUNARE",
+      "note": "Avvicinamento più vicino dal lato opposto, ~9.200 km di altitudine. Nessun inserimento in orbita: la geometria a ritorno libero riporta Orione sulla Terra.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "MTC-2",
+      "note": "Correzione della traiettoria di ritorno.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "SPLASHDOWN",
+      "note": "Rientro di Orion e ammaraggio nell'Oceano Pacifico.",
+      "type": "info"
+    }
+  ]
+}

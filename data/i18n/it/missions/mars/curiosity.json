@@ -1,0 +1,50 @@
+{
+  "name": "Curiosità",
+  "type": "ROVER · ATTIVO",
+  "first": "Primo rover su Marte a propulsione nucleare; primo atterraggio con la gru aerea",
+  "description": "La missione di punta che ha definito la moderna esplorazione di Marte. Curiosity è grande quanto un'auto, alimentata al plutonio e ha percorso oltre 32 km sul Monte Sharp da quando è atterrato nel cratere Gale nel 2012. I suoi strumenti hanno confermato che Marte una volta aveva condizioni abitabili: acqua corrente, sostanze organiche complesse, la chimica di cui la vita avrebbe avuto bisogno. La sequenza EDL dei \"sette minuti di terrore\", che termina con una gru aerea che abbassa il rover sui cavi, è ora lo standard di NASA per la consegna di grandi carichi utili sulla superficie di Marte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas V 541 decolla da Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "BRUCIATURA TMI",
+      "note": "L'iniezione Trans-Mars (3,61 km/s ∆v) invia MSL su una traiettoria eliocentrica diretta a Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "MTC-1",
+      "note": "Prima correzione di metà percorso.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "MTC-3",
+      "note": "Correzione finale pre-EDL; la traiettoria punta all'ellisse di atterraggio del cratere Gale.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — SETTE MINUTI DI TERRORE",
+      "note": "Ingresso atmosferico, paracadute supersonico, retrorazzi da gru celeste, rover calato su cavi.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "TOCCO",
+      "note": "Curiosity arriva a Aeolis Palus, Gale Crater, 2012-08-06 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "PRIME IMMAGINI",
+      "note": "Hazcam restituisce la prima immagine a bassa risoluzione della superficie.",
+      "type": "info"
+    }
+  ]
+}

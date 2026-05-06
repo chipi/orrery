@@ -1,0 +1,33 @@
+{
+  "name": "Mercúrio",
+  "type": "Planeta terrestre",
+  "fact": "As temperaturas da superfície oscilam 610°C em um único dia. Sem atmosfera – apenas exposição bruta ao espaço.",
+  "bio": "O menor planeta. Sua órbita altamente elíptica (e=0,206) faz com que ele acelere visivelmente próximo ao periélio. Apesar de estar mais próximo do Sol, Vênus é mais quente.",
+  "links": [
+    {
+      "l": "Mercúrio – Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+      "t": "intro"
+    },
+    {
+      "l": "Mercúrio (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "Visão geral da missão MESSENGER (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Núcleo fundido de Mercúrio (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

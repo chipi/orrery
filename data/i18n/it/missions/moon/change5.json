@@ -1,0 +1,50 @@
+{
+  "name": "Chang'e 5",
+  "type": "SAMPLE RITORNO · EFFETTUATA",
+  "first": "Primo ritorno di un campione lunare in 44 anni (da Luna 24, 1976)",
+  "description": "Chang'e 5 è stato il primo campione di ritorno dalla Luna dopo Luna 24 dell'Unione Sovietica nel 1976, un intervallo di 44 anni. L'architettura: orbiter + lander + veicolo di risalita + capsula di ritorno dei campioni, tutto in un unico lancio. Il lander è atterrato a Mons Rümker, ha perforato e raccolto 1.731 kg di regolite, è decollato, si è incontrato e attraccato con l'orbiter (il primo rendezvous lunare robotico) e la capsula è tornata sulla Terra. I campioni provengono da una regione di soli 2 miliardi di anni, molto più giovane di qualsiasi campione Apollo o Luna, e riscrivono i modelli del vulcanismo lunare.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Lungo 5 marzo da Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "TOCCO",
+      "note": "Il lander scende dal Monte Rümker (Oceano delle Tempeste) il 12-01-2020.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "CAMPIONAMENTO",
+      "note": "1.731 kg raccolti tramite paletta e trivella.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "SALITA",
+      "note": "Il veicolo di ascesa si solleva dalla superficie lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "APPUNTAMENTO",
+      "note": "Primo rendez-vous lunare robotico; contenitore del campione trasferito sull'orbiter.",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "TERRA RITORNO",
+      "note": "La capsula campione atterra nella Mongolia Interna 16-12-2020.",
+      "type": "info"
+    }
+  ]
+}

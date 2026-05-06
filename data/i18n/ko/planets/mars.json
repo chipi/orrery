@@ -1,0 +1,14 @@
+{
+  "name": "화성",
+  "type": "임무 목표",
+  "fact": "지구–화성 발사 창은 궤도 공명 때문에 26개월마다 열린다. 창을 놓치면 2년을 기다려야 한다.",
+  "bio": "내행성 중 이심률이 가장 크다(e=0.093). 원일점과 근일점에서 지구와의 거리가 약 25%까지 달라진다 — 그래서 발사 창이 그렇게 중요하다.",
+  "missionable": true,
+  "links": [
+    { "l": "Mars — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars", "t": "intro" },
+    { "l": "Mars (NASA Solar System Exploration)", "u": "https://science.nasa.gov/mars/", "t": "intro" },
+    { "l": "Mars Exploration Program (NASA)", "u": "https://mars.nasa.gov/", "t": "core" },
+    { "l": "Earth-Mars launch windows — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_landing", "t": "core" },
+    { "l": "Mars climate history (Science 2018)", "u": "https://www.science.org/doi/10.1126/science.aar3201", "t": "deep" }
+  ]
+}

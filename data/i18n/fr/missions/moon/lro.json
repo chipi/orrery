@@ -1,0 +1,32 @@
+{
+  "name": "Orbiteur de reconnaissance lunaire",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Cartes lunaires avec la plus haute résolution jamais réalisée",
+  "description": "En orbite autour de la Lune depuis 2009 à 50 km d'altitude lunaire moyenne, la caméra à angle étroit de LRO images à 50 cm/pixel – suffisamment haute pour voir les étages de descente d'Apollo, les traces du rover et les sentiers des astronautes encore préservés dans le régolithe. Il a trouvé Lunokhod 1 trente-neuf ans après que le rover soit devenu sombre. Il a identifié plus de 200 sites d’atterrissage candidats pour Artemis. Les dépôts de glace d'eau au pôle sud lunaire qui pilotent chaque programme lunaire moderne ont été quantifiés par les instruments LRO. Une mission de reconnaissance qui est devenue le fondement de l’ère lunaire moderne.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas V 401 de Cap Canaveral SLC-41 (porté l'impacteur LCROSS comme secondaire).",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire 2009-06-23.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "MISSION PRINCIPALE",
+      "note": "Début de la phase d'exploration d'un an (programme NASA).",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "SCIENCE ÉTENDU",
+      "note": "Mission étendue à une phase scientifique pluriannuelle sous NASA SMD.",
+      "type": "info"
+    }
+  ]
+}

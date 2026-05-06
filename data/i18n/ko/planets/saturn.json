@@ -1,0 +1,13 @@
+{
+  "name": "토성",
+  "type": "가스 행성 · 고리",
+  "fact": "토성의 밀도는 0.687 g/cm³로 물보다 작다. 고리는 28만 2천 km에 걸쳐 있지만 두께는 약 10m에 불과하다.",
+  "bio": "가장 밀도가 낮은 행성 — 물 위에 뜰 수 있다. 고리는 28만 2천 km에 걸쳐 있지만 두께는 몇 미터 수준. 자전축 경사 26.73° 덕분에 토성이 29년 궤도를 도는 동안 지구에서 보는 고리 각도가 달라진다.",
+  "links": [
+    { "l": "Saturn — Wikipedia", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
+    { "l": "Saturn (NASA Solar System Exploration)", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "Cassini mission archive (NASA)", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "Rings of Saturn — Wikipedia", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
+    { "l": "Saturn's rings are young (Science 2019)", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
+}

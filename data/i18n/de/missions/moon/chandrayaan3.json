@@ -1,0 +1,44 @@
+{
+  "name": "Chandrayaan-3",
+  "type": "LANDER · ROVER · GEFLOGEN",
+  "first": "Erste sanfte Landung in der Nähe des Mondsüdpols",
+  "description": "Nach dem Verlust des Vikram-Landers von Chandrayaan-2 im Jahr 2019 war die dritte Mondmission von ISRO bewusst konservativ – sie konzentrierte sich auf den Lander und nicht auf die Mitnahme eines Orbiters. Vikram landete auf 69,4° südlicher Breite, der nächstgelegenen Raumsonde, die jemals einem Mondpol gekommen ist. Der Rover Pragyan entdeckte erstmals Schwefel auf der Mondoberfläche und führte vor Ort thermische Messungen durch. Indien war das vierte Land, das sanft auf dem Mond landete, und das erste Land in den Polarregionen, in denen künftig wahrscheinlich Wassereis abgebaut wird.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "LVM3 M4 (ehemals GSLV Mk III) von Sriharikota.",
+      "type": "nominal"
+    },
+    {
+      "met": 22,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn (mehrere Verbrennungen zur Erhöhung der Erd- und Mondumlaufbahn werden verwendet).",
+      "type": "nominal"
+    },
+    {
+      "met": 38,
+      "label": "Lander-Trennung",
+      "note": "Vikram-Lander trennt sich vom Antriebsmodul.",
+      "type": "nominal"
+    },
+    {
+      "met": 40,
+      "label": "LANDUNG",
+      "note": "Vikram landet am Shiv Shakti Point nahe dem Südpol 23.08.2023 12:33 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 40.5,
+      "label": "PRAGYAN IM EINSATZ",
+      "note": "Rover rollt Rampe hinunter; beginnt mit der Oberflächenwissenschaft.",
+      "type": "info"
+    },
+    {
+      "met": 53,
+      "label": "MONDNACHT",
+      "note": "Lander/Rover wird zu Beginn der Mondnacht in den Winterschlaf versetzt.",
+      "type": "info"
+    }
+  ]
+}

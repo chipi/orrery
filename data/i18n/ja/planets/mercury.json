@@ -1,0 +1,13 @@
+{
+  "name": "水星",
+  "type": "地球型惑星",
+  "fact": "表面温度がひとつの水星日で最大約 610°C も変動する。大気はなく、宇宙にむき出しである。",
+  "bio": "太陽系最小の惑星。離心率が大きい（e = 0.206）楕円軌道のため、近日点付近では加速度がはっきり変わる。太陽にもっとも近いのに、より高温なのは金星である。",
+  "links": [
+    { "l": "水星 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mercury_(planet)", "t": "intro" },
+    { "l": "水星（NASA Solar System Exploration）", "u": "https://science.nasa.gov/mercury/", "t": "intro" },
+    { "l": "MESSENGER ミッション概要（NASA）", "u": "https://science.nasa.gov/mission/messenger/", "t": "core" },
+    { "l": "BepiColombo（ESA／JAXA）", "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo", "t": "core" },
+    { "l": "水星の溶けた核（Nature Geoscience 2019）", "u": "https://www.nature.com/articles/s41561-019-0405-8", "t": "deep" }
+  ]
+}

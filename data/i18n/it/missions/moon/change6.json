@@ -1,0 +1,44 @@
+{
+  "name": "Chang'e 6",
+  "type": "RITORNO DEL CAMPIONE DAL LATO LONTANO · VOLATO",
+  "first": "Primo campione di ritorno dal lato nascosto della Luna",
+  "description": "Combina le architetture di Chang'e 4 (comunicazioni far-side) e Chang'e 5 (ritorno del campione). Il satellite relè Queqiao-2 è stato lanciato per primo (marzo 2024) per supportare la missione. Chang'e 6 ha poi raccolto 1.935 kg dal cratere Apollo sul lato opposto: materiale con una composizione molto diversa da qualsiasi campione lunare precedentemente restituito. I due emisferi della Luna sono radicalmente diversi (il lato nascosto ha una crosta più spessa, meno mare); questi campioni potrebbero finalmente spiegare il perché.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Lungo 5 marzo da Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Inserimento nell'orbita lunare.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TOCCO",
+      "note": "Il lander scende al cratere Apollo (lato opposto) 02-06-2024. Tutte le comunicazioni tramite relè Queqiao-2.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "CAMPIONAMENTO",
+      "note": "1.935 kg raccolti dalla regolite del lato lontano.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "SALITA",
+      "note": "Il veicolo di salita si solleva; appuntamento con l'orbiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "RITORNO DELLA TERRA",
+      "note": "La capsula atterra nella Mongolia Interna il 25-06-2024 con i primi campioni lontani mai recuperati.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "해왕성",
+  "type": "얼음 거성",
+  "fact": "보이저 2호는 12년의 여정 끝에 1989년 해왕성을 스쳐 지나갔다. 방문한 유인·무인 탐사선은 여전히 이것뿐이다.",
+  "bio": "가장 바람이 센 행성 — 표면 풍속 시속 2,100 km. 직접 관측 전에 수학적 예측으로 발견됐는데, 천왕성 궤도에 보이지 않는 중력의 영향이 있었기 때문이다.",
+  "links": [
+    { "l": "Neptune — Wikipedia", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "Neptune (NASA Solar System Exploration)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "Voyager 2 at Neptune (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "Discovery of Neptune — Wikipedia", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "Neptune's interior model (Icarus 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

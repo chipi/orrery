@@ -1,0 +1,6 @@
+{
+  "name": "BeiDou Constellation",
+  "short": "Beidou",
+  "description": "Kineski globalni navigacioni satelitski sistem. 46+ satelita u orbitama MEO, __ACR0__ i IGSO. Pruža globalnu pokrivenost od 2020. Takođe funkcioniše i kao servis za razmenu poruka — sateliti emituju kratke tekstove.",
+  "scale_fact": "BeiDou-ova arhitektura tipa tri orbite je jedinstvena — istovremeno koristi satelite na tri različite visine."
+}

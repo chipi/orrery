@@ -1,0 +1,12 @@
+{
+  "name": "Apollo 12",
+  "mission_type": "Lander con equipaggio",
+  "site_name": "L'oceano delle tempeste",
+  "crew": [
+    "Pietro Corrado",
+    "Alan Fagiolo"
+  ],
+  "left": "Fase di discesa · ALSEP · bandiera · parti recuperate di Surveyor 3",
+  "fact": "L'atterraggio di precisione: Conrad atterrò entro 183 m dalla sonda Surveyor 3 senza equipaggio (1967). Ne hanno recuperato pezzi per il ritorno sulla Terra, dimostrando che i veicoli spaziali sopravvivono per anni sulla Luna senza danni da radiazioni o micrometeoriti. Una prova di concetto per le future missioni rendezvous.",
+  "capability": "Primo atterraggio di precisione in un punto designato: il prerequisito per qualsiasi architettura di rendezvous di ritorno del campione, compreso Marte."
+}

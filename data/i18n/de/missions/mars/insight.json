@@ -1,0 +1,44 @@
+{
+  "name": "Einblick",
+  "type": "LANDER · GEFLOGEN",
+  "first": "Erstes Seismometer auf dem Mars; erster interplanetarer Start von der Westküste der USA",
+  "description": "InSight schenkte Mars sein erstes Stethoskop. Sein Seismometer, das von einem Roboterarm auf dem Regolith eingesetzt wurde, zeichnete über 1.300 Marsbeben auf – darunter ein Erdbeben der Stärke 5 im Jahr 2022, das größte, das jemals auf einem anderen Planeten beobachtet wurde. Die Daten enthüllten die innere Struktur des Mars: einen geschmolzenen Kern mit einem Radius von 1.800 km, eine dicke Kruste und eine überraschende Mantelschichtung. Das Wärmeflussexperiment des Maulwurfs schlug fehl, da sich der Regolith als zu kohäsiv für sein selbsthämmerndes Design erwies. Die Mission endete, als die Staubansammlung auf den Solarpaneelen die Leistung unter die Betriebsschwelle senkte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 401 von Vandenberg AFB – erste interplanetare Mission, die jemals von der Westküste der USA gestartet wurde.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "EDL",
+      "note": "Atmosphärischer Eintritt, Fallschirm, Raketenlandung im Endabstieg bei Elysium Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 205.01,
+      "label": "LANDUNG",
+      "note": "Lander kommt am 26.11.2018 um 19:54 UTC an.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SEISMOMETER IM EINSATZ",
+      "note": "Roboterarm platziert SEIS-Instrument auf der Oberfläche und schützt es vor Wind.",
+      "type": "info"
+    },
+    {
+      "met": 1683,
+      "label": "MISSIONSENDE",
+      "note": "Endgültige Low-Power-Übertragung 2022-12-15. Die Sonnenkollektoren sind zum Aufladen zu staubbedeckt.",
+      "type": "warning"
+    }
+  ]
+}

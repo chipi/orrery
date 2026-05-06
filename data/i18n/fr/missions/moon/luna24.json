@@ -1,0 +1,44 @@
+{
+  "name": "Lune 24",
+  "type": "RETOUR D'ÉCHANTILLON · VOLÉ",
+  "first": "Dernière mission lunaire soviétique ; dernier atterrissage lunaire sans équipage depuis 37 ans",
+  "description": "La dernière mission lunaire de l'Union soviétique et le dernier alunissage sans équipage jusqu'à Chang'e 3 en Chine en 2013, soit un intervalle de 37 ans. La carotte forée a extrait le régolithe à 2 m de profondeur et a renvoyé 170 g sur Terre. Parmi les échantillons : des minéraux contenant des traces d'eau, préfigurant la découverte d'importants dépôts de glace d'eau lunaire 30 ans plus tard. Luna 24 a également marqué la clôture du programme lunaire soviétique ; les ressources se sont déplacées vers Mars et Vénus.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Proton-K de Baïkonour le 09/08/1976.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "ATTERRISSAGE",
+      "note": "Atterrissage en douceur à Mare Crisium 1976-08-18.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "FORAGE",
+      "note": "Carottage extrait à 2 m de profondeur.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENSION",
+      "note": "L'étage de montée décolle ; injection trans-Terre.",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "RETOUR DE LA TERRE",
+      "note": "La capsule atterrit à Surgut, URSS le 22/08/1976 avec 170 g de régolithe.",
+      "type": "info"
+    }
+  ]
+}

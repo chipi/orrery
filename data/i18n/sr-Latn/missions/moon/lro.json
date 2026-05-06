@@ -1,0 +1,32 @@
+{
+  "name": "Lunar Reconnaissance Orbiter",
+  "type": "ORBITER · AKTIVAN",
+  "first": "Lunarne karte najveće rezolucije ikada napravljene",
+  "description": "U orbiti oko Meseca od 2009. na prosečnoj visini od 50 km, kamera __ACR0__ uskougaonih slika na 50 cm/piksel — dovoljno visoko da se vide faze spuštanja Apola, tragovi rovera i tragovi astronauta koji su još uvek sačuvani u regolitu. Pronašao je Lunohod 1 trideset i devet godina nakon što je rover pao u mrak. Identifikovao je 200+ mesta za sletanje kandidata za Artemis. Naslage vodenog leda na južnom polu Meseca koje pokreću svaki savremeni lunarni program su kvantifikovane pomoću __ACR0__ instrumenata. Izviđačka misija koja je postala temelj moderne lunarne ere.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas V 401 iz Cape Canaveral SLC-41 (nošen LCROSS udarni element kao sekundarni).",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Lunar Orbit Insertion 2009-06-23.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "PRIME MISSION",
+      "note": "Počinje jednogodišnja faza istraživanja (__ACR0__ program).",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "PROŠIRENA NAUKA",
+      "note": "Misija je proširena na višegodišnju naučnu fazu pod __ACR0__ SMD.",
+      "type": "info"
+    }
+  ]
+}

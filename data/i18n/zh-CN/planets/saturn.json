@@ -1,0 +1,13 @@
+{
+  "name": "土星",
+  "type": "气态巨行星 · 环系",
+  "fact": "土星密度约 0.687 g/cm³——比水还轻。环系横跨约 28.2 万公里，厚度却只有约 10 米。",
+  "bio": "密度最低的行星——若能找到足够大的海洋它会浮在水面。环系极薄。自转轴倾角 26.73°，在土星约 29 年的公转中，我们从地球会看到环的不同倾角。",
+  "links": [
+    { "l": "土星 — 维基百科", "u": "https://en.wikipedia.org/wiki/Saturn", "t": "intro" },
+    { "l": "土星（NASA 太阳系探索）", "u": "https://science.nasa.gov/saturn/", "t": "intro" },
+    { "l": "卡西尼号任务档案（NASA）", "u": "https://science.nasa.gov/mission/cassini/", "t": "core" },
+    { "l": "土星环 — 维基百科", "u": "https://en.wikipedia.org/wiki/Rings_of_Saturn", "t": "core" },
+    { "l": "土星环较年轻（Science 2019）", "u": "https://www.science.org/doi/10.1126/science.aat2965", "t": "deep" }
+  ]
+}

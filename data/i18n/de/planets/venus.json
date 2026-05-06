@@ -1,0 +1,33 @@
+{
+  "name": "Venus",
+  "type": "Terrestrischer Planet",
+  "fact": "Oberflächendruck 90× Erde. Sowjetische Venera-Sonden dauerten 23–127 Minuten, bevor sie zerschlagen wurden.",
+  "bio": "Rotiert retrograd – rückwärts und so langsam, dass ein Venus-Tag länger als sein Jahr ist. Die axiale Neigung von 177,4° ist der Grund dafür: Venus steht im Wesentlichen auf dem Kopf.",
+  "links": [
+    {
+      "l": "Venus – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venus",
+      "t": "intro"
+    },
+    {
+      "l": "Venus (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Venus-Programm – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Venera_program",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + WAHRHEIT (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "Das außer Kontrolle geratene Gewächshaus der Venus (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ]
+}

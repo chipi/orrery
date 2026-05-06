@@ -1,0 +1,13 @@
+{
+  "name": "태양",
+  "type": "항성 · G형 주계열",
+  "fact": "태양은 태양계 전체 질량의 99.86%를 차지한다. 그 중력이 수성부터 오르트 구름에 이르는 모든 것을 궤도에 묶는다. 매초 6억 톤의 수소를 헬륨으로 융합하며, 지구 생명을 45억 년 동안 유지해 온 에너지를 방출한다.",
+  "bio": "46억 년 된 G형 주계열 항성으로, 100억 년 수명의 한가운데에 있다. 태양은 차등 회전한다 — 적도는 25일, 극은 35일이 걸린다. 약 50억 년 뒤에는 핵의 수소가 바닥나 붉은 거성으로 팽창하며 내행성을 집어삼킬 것이다. 태양의 중력 영향은 약 120 AU까지의 헬리오스피어를 정의한다.",
+  "links": [
+    { "l": "Sun — Wikipedia", "u": "https://en.wikipedia.org/wiki/Sun", "t": "intro" },
+    { "l": "The Sun (NASA Solar System Exploration)", "u": "https://science.nasa.gov/sun/", "t": "intro" },
+    { "l": "Parker Solar Probe (NASA)", "u": "https://science.nasa.gov/mission/parker-solar-probe/", "t": "core" },
+    { "l": "Solar Dynamics Observatory (NASA)", "u": "https://sdo.gsfc.nasa.gov/", "t": "core" },
+    { "l": "Standard Solar Model (Annual Review of Astronomy 2022)", "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029", "t": "deep" }
+  ]
+}

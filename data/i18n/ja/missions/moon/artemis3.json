@@ -1,0 +1,15 @@
+{
+  "name": "Artemis III",
+  "type": "有人着陸機 · 計画",
+  "first": "Apollo 17（一九七二）以来初の有人月面着陸",
+  "description": "半世紀ぶりの有人月面着陸。構成：NASA の SLS Block 1 が四人搭乗のオリオンを月の近直線ハロー軌道（NRHO）へ。NRHO に事前配置された SpaceX のスターシーズ有人着陸システム（HLS）が低軌道でタンカーにより再充填のあと月へ注入。オリオン乗組が HLS に移乗し二人が月の南極域へ約六・五日間表面運用、二人は NRHO に残留。表面終了後 HLS が NRHO に再上昇しオリオンへ交代して地球帰還。初の女性と有色人種が月に立つ。",
+  "events": [
+    { "met": 0, "label": "SLS LAUNCH", "note": "オリオンが KSC LC-39B から四人で離昇。", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
+    { "met": 4, "label": "NRHO ARRIVAL", "note": "オリオンが NRHO に到着；事前配置のスターシーズ HLS とランデブウ。", "type": "nominal" },
+    { "met": 5, "label": "DESCENT", "note": "二人が HLS に移乗；月の南極への動力下降。", "type": "info" },
+    { "met": 12, "label": "ASCENT", "note": "約六・五日の表面運用のあと HLS が NRHO へ再上昇。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "NRHO から地球移行軌道投入。", "type": "nominal" },
+    { "met": 18, "label": "SPLASHDOWN", "note": "オリオンが太平洋に着水。", "type": "info" }
+  ]
+}

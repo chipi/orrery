@@ -1,0 +1,14 @@
+{
+  "name": "チャンドラヤーン 3 号",
+  "type": "着陸機 · ローバー · 飛行済み",
+  "first": "月の南極近傍への初の軟着陸",
+  "description": "二〇一九年にチャンドラヤーン 2 のヴィクラム着陸機を失ったあと、ISRO の三月目は保守的に — 軌道機より着陸機に焦点。ヴィクラムは緯度六十九・四度南に着陸し、いままででいちばん極に近い。プラギャン・ローバーが硫黄を月面で初めて検出し現地の熱測定を行った。インドは四番目の月軟着陸国となり、将来の水氷採掘が起きそうな極域では初めてである。",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "スリハリコータから LVM3 M4（旧称 GSLV Mk III）。", "type": "nominal" },
+    { "met": 22, "label": "MOI", "note": "月軌道投入（地球・月の複数軌道昇格燃焼を使用）。", "type": "nominal" },
+    { "met": 38, "label": "LANDER SEPARATION", "note": "ヴィクラム着陸機が推進モジュールから分離。", "type": "nominal" },
+    { "met": 40, "label": "TOUCHDOWN", "note": "ヴィクラムが南極付近シヴ・シャクティ点に着陸 2023-08-23 12:33 UTC。", "type": "nominal" },
+    { "met": 40.5, "label": "PRAGYAN DEPLOYED", "note": "ローバーがランプを下り表面科学開始。", "type": "info" },
+    { "met": 53, "label": "LUNAR NIGHT", "note": "月夜が始まり着陸機／ローバーを休眠。", "type": "info" }
+  ]
+}

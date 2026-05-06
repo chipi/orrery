@@ -1,0 +1,33 @@
+{
+  "name": "Uranus",
+  "type": "Eisriese",
+  "fact": "Uranus dreht sich auf die Seite – axiale Neigung 98°. Sein Nordpol zeigt für die Hälfte seiner 84-jährigen Umlaufbahn fast direkt auf die Sonne.",
+  "bio": "Fast auf die Seite gekippt (97,77°). Jeder Pol erhält 42 Jahre lang ununterbrochenes Sonnenlicht und anschließend 42 Jahre Dunkelheit. Mit ziemlicher Sicherheit durch eine massive Kollision in der Antike verursacht.",
+  "links": [
+    {
+      "l": "Uranus – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Uranus",
+      "t": "intro"
+    },
+    {
+      "l": "Uranus (NASA Erforschung des Sonnensystems)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 bei Uranus (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus-Orbiter und -Sonde – Dekadische Untersuchung",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus‘ Neigungsursprung (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ]
+}

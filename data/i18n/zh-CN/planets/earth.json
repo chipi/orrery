@@ -1,0 +1,13 @@
+{
+  "name": "地球",
+  "type": "家园 · 参考轨道",
+  "fact": "人类历史上所有人都生活在这里。作为衡量所有其他轨道的参考。",
+  "bio": "23.44° 自转轴倾角形成季节——与距日远近无关。一月份地球其实比七月份更靠近太阳。",
+  "links": [
+    { "l": "地球 — 维基百科", "u": "https://en.wikipedia.org/wiki/Earth", "t": "intro" },
+    { "l": "地球（NASA 太阳系探索）", "u": "https://science.nasa.gov/earth/", "t": "intro" },
+    { "l": "地球观测系统（NASA）", "u": "https://eospso.nasa.gov/", "t": "core" },
+    { "l": "为什么地球有季节（NASA Climate Kids）", "u": "https://climatekids.nasa.gov/seasons/", "t": "core" },
+    { "l": "暗淡蓝点 — 卡尔·萨根（行星学会）", "u": "https://www.planetary.org/worlds/pale-blue-dot", "t": "deep" }
+  ]
+}

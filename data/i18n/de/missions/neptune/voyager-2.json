@@ -1,0 +1,20 @@
+{
+  "name": "Voyager 2",
+  "type": "Vorbeiflug · Geflogen",
+  "first": "Einzige Raumsonde besucht Uranus und Neptun; Große Tour zu vier Riesenplaneten",
+  "description": "Voyager 2, der Zwilling, der weitermachte, als die Budgets knapper wurden, führte die große Reise von Jupiter und Saturn bis hin zu Uranus und Neptun durch – immer noch die einzigen Nahaufnahmen, die wir von den Eisriesen haben. Bei seiner Begegnung mit Neptun im Jahr 1989 wurden der Große Dunkle Fleck und die Geysire von Triton entdeckt. Heute segeln beide Voyager im interstellaren Raum mit einer goldenen Schallplatte als Visitenkarte der Menschheit. Orrery listet Neptun als Katalogziel auf; Der eigentliche Weg beruhte auf mehreren Schwerkraftunterstützungen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Titan IIIE bringt Voyager 2 von Cape Canaveral auf eine Grand-Tour-Flugbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "NEPTUN NÄCHSTE ANFAHRT",
+      "note": "Vorbeiflug von Neptun und dem großen Mond Triton; letzte Planetenbegegnung der Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

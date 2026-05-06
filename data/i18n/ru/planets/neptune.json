@@ -1,0 +1,13 @@
+{
+  "name": "Нептун",
+  "type": "Ледяной гигант",
+  "fact": "Voyager 2 пролетел мимо Нептуна в 1989 году после 12 лет пути. Это единственный космический аппарат, побывавший там.",
+  "bio": "Самая ветреная планета — ветры до 2100 км/ч. Открыт по математическому предсказанию до прямого наблюдения: орбита Урана указывала на невидимое гравитационное возмущение.",
+  "links": [
+    { "l": "Нептун — Википедия", "u": "https://en.wikipedia.org/wiki/Neptune", "t": "intro" },
+    { "l": "Neptune (NASA Solar System Exploration)", "u": "https://science.nasa.gov/neptune/", "t": "intro" },
+    { "l": "Voyager 2 у Нептуна (NASA JPL)", "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/", "t": "core" },
+    { "l": "Открытие Нептуна — Википедия", "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune", "t": "core" },
+    { "l": "Модель внутреннего строения Нептуна (Icarus 2021)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981", "t": "deep" }
+  ]
+}

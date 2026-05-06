@@ -1,0 +1,20 @@
+{
+  "name": "Viajante 2",
+  "type": "VOAR · VOAR",
+  "first": "Única espaçonave para visitar Urano e Netuno; Grand Tour de quatro planetas gigantes",
+  "description": "A gêmea que continuou quando os orçamentos apertaram, a Voyager 2 realizou o Grand Tour de Júpiter e Saturno até Urano e Netuno - ainda as únicas imagens em close que temos dos gigantes gelados. O encontro com Netuno em 1989 revelou a Grande Mancha Escura e os gêiseres de Tritão. Hoje, ambas as Voyagers navegam no espaço interestelar com um disco de ouro como cartão de visita da humanidade. Orrery lista Netuno como destino do catálogo; o caminho real dependia de múltiplos auxílios de gravidade.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAR",
+      "note": "Titan IIIE levanta a Voyager 2 do Cabo Canaveral em uma trajetória Grand-Tour.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "APROXIMAÇÃO MAIS PRÓXIMA DE NETUNO",
+      "note": "Sobrevôo de Netuno e da grande lua Tritão; último encontro planetário do Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

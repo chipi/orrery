@@ -1,0 +1,32 @@
+{
+  "name": "Sonde d'espoir",
+  "type": "ORBITEUR · ACTIF",
+  "first": "Première mission interplanétaire arabe",
+  "description": "La mission des Émirats sur Mars – Al Amal, « Hope » – a été conçue en 2014 pour marquer le 50e anniversaire de la fédération des Émirats arabes unis en 2021. L'équipe du MBRSC s'est associée à l'Université du Colorado, de l'État de l'Arizona et à l'Université de Berkeley pour concevoir et intégrer le vaisseau spatial, mais l'a construit elle-même. L'orbite scientifique (durée 1 × jour, 27 000 km × 43 000 km) couvre toutes les longitudes et heures de la journée, capturant les conditions météorologiques qu'aucun autre orbiteur martien ne peut résoudre. La mission a réussi du premier coup, faisant des Émirats arabes unis la cinquième agence sur Mars.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "H-IIA 202 de Tanegashima — Mitsubishi Heavy Industries a assuré le lancement.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "MTC-1",
+      "note": "Première correction à mi-parcours.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "INSERTION DE L'ORBITE DE MARS",
+      "note": "La combustion du propulseur pendant 27 minutes capture Hope sur l'orbite de Mars le 09/02/2021.",
+      "type": "nominal"
+    },
+    {
+      "met": 250,
+      "label": "ORBITE SCIENTIFIQUE",
+      "note": "Les manœuvres de trim placent Hope sur son orbite scientifique de 55 heures.",
+      "type": "info"
+    }
+  ]
+}

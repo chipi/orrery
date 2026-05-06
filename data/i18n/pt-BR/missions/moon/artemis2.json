@@ -1,0 +1,44 @@
+{
+  "name": "Ártemis II",
+  "type": "CREWED FLYBY · REALIZADA",
+  "first": "Primeiro voo tripulado além da órbita baixa da Terra desde a Apollo 17 (1972) — e a missão que inspirou esse projeto",
+  "description": "O primeiro vôo tripulado do programa Artemis e a faísca que se tornou o Orrery. O SLS Block 1 de NASA lançou uma espaçonave Orion com quatro astronautas - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) da CSA - em uma trajetória híbrida de retorno livre que os girou ao redor do outro lado da Lua a cerca de 9.200 km de altitude e os devolveu à Terra sem qualquer queima de inserção na órbita lunar. Uma missão de 10 dias que termina com a chegada ao Pacífico. Sistemas qualificados de suporte de vida, navegação e reentrada do Orion para voo tripulado antes do pouso na superfície do Artemis III.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO SLS",
+      "note": "Orion decola do KSC LC-39B com quatro tripulantes a bordo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Queimadura por injeção translunar por ICPS – Orion se separa na trajetória cislunar.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Primeira correção no meio do curso.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "VOO LUNAR",
+      "note": "Aproximação mais próxima pelo outro lado, aproximadamente 9.200 km de altitude. Sem inserção de órbita - a geometria de retorno livre lança Orion de volta à Terra.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "TCM-2",
+      "note": "Correção da trajetória de retorno.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "SPLASHDOWN",
+      "note": "A reentrada de Orion permanece no Oceano Pacífico.",
+      "type": "info"
+    }
+  ]
+}

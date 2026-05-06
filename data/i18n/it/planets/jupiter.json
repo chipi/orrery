@@ -1,0 +1,33 @@
+{
+  "name": "Giove",
+  "type": "Gigante gassoso",
+  "fact": "La gravità di Giove ha scolpito la fascia degli asteroidi, impedendo la formazione di un quinto pianeta roccioso. Senza di essa, Marte sarebbe molto più grande.",
+  "bio": "Ruota in sole 10 ore nonostante le sue enormi dimensioni, creando potenti campi magnetici. Più massiccio di tutti gli altri pianeti messi insieme.",
+  "links": [
+    {
+      "l": "Giove – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jupiter",
+      "t": "intro"
+    },
+    {
+      "l": "Giove (NASA Esplorazione del Sistema Solare)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Missione Giunone (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Lune galileiane – Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galilean_moons",
+      "t": "core"
+    },
+    {
+      "l": "L'interno profondo di Giove (Natura 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ]
+}

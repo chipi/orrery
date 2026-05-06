@@ -1,0 +1,6 @@
+{
+  "name": "GEO Cintura",
+  "short": "GEO",
+  "description": "L'anello geostazionario. Esattamente a 35.786 km, il periodo orbitale è uguale alla rotazione terrestre: i satelliti appaiono fissi nel cielo. Satelliti meteorologici GOES, Meteosat, migliaia di satelliti per comunicazioni. L'altitudine specifica in cui fisica e utilità si allineano perfettamente.",
+  "scale_fact": "35.786 km non è un numero tondo in base alla progettazione: è l'altitudine esatta in cui la gravità e la velocità orbitale si bilanciano per fornire un periodo di 24 ore. Lo ha scelto la fisica."
+}

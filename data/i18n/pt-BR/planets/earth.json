@@ -1,0 +1,33 @@
+{
+  "name": "terra",
+  "type": "Início · Órbita de referência",
+  "fact": "Todo ser humano que já viveu fez isso aqui. A órbita de referência pela qual todas as outras são medidas.",
+  "bio": "A inclinação axial de 23,44° cria as estações – e não a distância do Sol. Na verdade, a Terra está mais perto do Sol em janeiro do que em julho.",
+  "links": [
+    {
+      "l": "Terra - Wikipédia",
+      "u": "https://en.wikipedia.org/wiki/Earth",
+      "t": "intro"
+    },
+    {
+      "l": "Terra (NASA Exploração do Sistema Solar)",
+      "u": "https://science.nasa.gov/earth/",
+      "t": "intro"
+    },
+    {
+      "l": "Sistema de Observação da Terra (NASA)",
+      "u": "https://eospso.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Por que a Terra tem estações (NASA Climate Kids)",
+      "u": "https://climatekids.nasa.gov/seasons/",
+      "t": "core"
+    },
+    {
+      "l": "Ponto Azul Pálido - reflexão de Carl Sagan (Sociedade Planetária)",
+      "u": "https://www.planetary.org/worlds/pale-blue-dot",
+      "t": "deep"
+    }
+  ]
+}

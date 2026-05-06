@@ -1,0 +1,44 @@
+{
+  "name": "Luna 24",
+  "type": "PROBENRÜCKGABE · GEFLOGEN",
+  "first": "Letzte sowjetische Mondmission; letzte ungeschraubte Mondlandung seit 37 Jahren",
+  "description": "Die letzte Mondmission der Sowjetunion und die letzte unbemannte Mondlandung bis Chinas Chang'e 3 im Jahr 2013 – eine Lücke von 37 Jahren. Der Bohrkern förderte Regolith aus 2 m Tiefe und brachte 170 g zur Erde zurück. Unter den Proben: Mineralien, die Spuren von Wasser enthalten, was auf die Entdeckung beträchtlicher Wassereisablagerungen auf dem Mond 30 Jahre später schließen lässt. Luna 24 markierte auch den Abschluss des sowjetischen Mondprogramms; Ressourcen wurden auf Mars und Venus verlagert.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Proton-K aus Baikonur 1976-08-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "LANDUNG",
+      "note": "Sanfte Landung im Mare Crisium 18.08.1976.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "BOHREN",
+      "note": "Kernprobe aus 2 m Tiefe entnommen.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "AUFSTIEG",
+      "note": "Aufstiegsstufe hebt ab; Trans-Erd-Injektion.",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "ERDE RÜCKKEHR",
+      "note": "Kapsel landet in Surgut, UdSSR 1976-08-22 mit 170 g Regolith.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Raumschiff-Mars-Crew",
+  "type": "PROBENRÜCKGABE MIT CREW · KONZEPT",
+  "first": "Erste geplante bemannte Rückflugmission zum Mars (SpaceX-Architektur)",
+  "description": "Die langfristige bemannte Marsarchitektur von SpaceX, wie in Elon Musks IAC-Präsentationen 2016, 2017 und 2024 beschrieben. Ein Raumschiff hebt vollgetankt in einer erdnahen Umlaufbahn über eine Flotte von Nachfülltankflugzeugen von der Erde ab, führt eine Transmars-Injektion durch und landet eine etwa zehnköpfige Besatzung mit Fracht und ISRU-Ausrüstung auf der Marsoberfläche. Der Treibstoff für den Rückflug (Methan + flüssiger Sauerstoff) wird auf dem Mars mithilfe des Sabatier-Verfahrens aus atmosphärischem CO₂ und unterirdischem Wassereis hergestellt, wodurch dasselbe Raumschiff erneut abheben, eine Injektion über die Erde durchführen und die Besatzung zurückbringen kann. Die Dauer der Hin- und Rückfahrt hängt vom Startfenster und dem Aufenthalt an der Oberfläche ab; Der hier gezeigte veranschaulichende Zeitrahmen beträgt ca. 2,5 Jahre von Tür zu Tür (213 Tage Hinflug, ca. 500 Tage Aufenthalt an der Oberfläche, Rückkehr im nächsten günstigen Zeitfenster). Die Architektur ist konzeptionell – Datum und Parameter unterliegen bis zur Starship-Reife und ISRU-Validierung einer erheblichen Überarbeitung.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START DES RAUMSCHIFFS",
+      "note": "Das bemannte Raumschiff hebt von Boca Chica oder Cape Canaveral ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "ORBITALE NACHFÜLLUNG",
+      "note": "Rendezvous der Tankerflotte und Treibstofftransfer im LEO über mehrere Flüge hinweg.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI-VERBRENNUNG",
+      "note": "Trans-Mars-Injektion aus vollgetanktem LEO-Zustand.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Erste Korrektur in der Mitte des Kurses.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "MARS-LANDUNG",
+      "note": "Angetriebener Abstieg zur Marsoberfläche – keine Fallschirme, keine Airbags, kein Himmelskran.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "RÜCKKEHRSTÜTZE ABGESCHLOSSEN",
+      "note": "Die ISRU-Anlage hat ausreichend Methan + LOX für den Rückflugtreibstoff produziert.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "TEI BURN",
+      "note": "Trans-Earth-Injektion – Raumschiff hebt von der Marsoberfläche ab und brennt auf die Flugbahn zur Erde zurück.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "ANKUNFT AUF DER ERDE",
+      "note": "Stimmungsvoller Auftritt. Mission abgeschlossen.",
+      "type": "info"
+    }
+  ]
+}

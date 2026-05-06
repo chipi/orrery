@@ -1,0 +1,14 @@
+{
+  "name": "Chang'e 6",
+  "type": "FAR-SIDE SAMPLE RETURN · FLOWN",
+  "first": "First sample return from the lunar far side",
+  "description": "Combines the architectures of Chang'e 4 (far-side communications) and Chang'e 5 (sample return). The Queqiao-2 relay satellite was launched first (March 2024) to support the mission. Chang'e 6 then collected 1.935 kg from Apollo Crater on the far side — material with very different composition from any lunar sample previously returned. The Moon's two hemispheres are radically different (the far side has thicker crust, fewer mare); these samples may finally explain why.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Long March 5 from Wenchang.", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 30, "label": "TOUCHDOWN", "note": "Lander descends to Apollo Crater (far side) 2024-06-02. All comms via Queqiao-2 relay.", "type": "nominal" },
+    { "met": 32, "label": "SAMPLING", "note": "1.935 kg collected from far-side regolith.", "type": "info" },
+    { "met": 34, "label": "ASCENT", "note": "Ascent vehicle lifts off; rendezvous with orbiter.", "type": "nominal" },
+    { "met": 53, "label": "EARTH RETURN", "note": "Capsule lands in Inner Mongolia 2024-06-25 with the first far-side samples ever recovered.", "type": "info" }
+  ]
+}

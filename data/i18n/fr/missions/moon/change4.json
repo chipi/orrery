@@ -1,0 +1,32 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "FAR-SIDE LANDER · ROVER · ACTIF",
+  "first": "Premier atterrissage en douceur sur la face cachée de la Lune",
+  "description": "La face cachée de la Lune n’a pas de ligne de vue radio directe avec la Terre. Pour y faire atterrir un vaisseau spatial, la Chine a d’abord lancé le satellite relais Queqiao sur une orbite en halo autour du point de Lagrange Terre-Lune L2 – un point d’observation qui voit simultanément la face cachée et la Terre. Avec cette infrastructure en place, Chang'e 4 est devenu le premier vaisseau spatial à atterrir en douceur sur la face cachée. Le rover Yutu-2 est en service depuis janvier 2019 et a parcouru plus de 1,9 km, la plus longue traversée jamais réalisée par un rover lunaire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Longue marche 3B depuis Xichang.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "Moi",
+      "note": "Insertion de l'orbite lunaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "ATTERRISSAGE",
+      "note": "Lander atterrit au cratère Von Kármán 03/01/2019 — premier vaisseau spatial de l'autre côté. Toutes les communications via le relais Queqiao à Terre-Lune L2.",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "YUTU-2 DÉPLOYÉ",
+      "note": "Rover descend la rampe.",
+      "type": "info"
+    }
+  ]
+}

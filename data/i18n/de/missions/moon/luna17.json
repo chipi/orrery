@@ -1,0 +1,38 @@
+{
+  "name": "Luna 17 / Lunokhod 1",
+  "type": "ROVER · GEFLOGEN",
+  "first": "Erster teleoperierter Rover, der auf einer anderen Welt operiert",
+  "description": "Die ersten Räder auf dem Mond – gesteuert von einem Kontrollraum auf der Krim. Lunokhod 1 war eine 322 kg schwere Druckwanne, die auf acht unabhängig voneinander angetriebenen Rädern montiert war und von einem fünfköpfigen Team in Echtzeit über eine Lichtgeschwindigkeitsverzögerung von 2,5 Sekunden gesteuert wurde. Es legte an 11 Mondtagen (322 Erdentage) 10,5 km zurück, fotografierte mehr als 20.000 Szenen und funktionierte lange über seine 90-tägige Lebensdauer hinaus. In den 1970er-Jahren in Vergessenheit geraten, wurde es 2010 wieder gefunden, als der Lunar Reconnaissance Orbiter von NASA es dort entdeckte, wo es aufgehört hatte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Proton-K mit Blok-D-Oberstufe aus Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Einfügung in die Mondumlaufbahn; Orbitalkorrekturen der Sinkneigung.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "LANDUNG",
+      "note": "Sanfte Landung bei Mare Imbrium 17.11.1970.",
+      "type": "nominal"
+    },
+    {
+      "met": 7.005,
+      "label": "ROVER IM EINSATZ",
+      "note": "Lunokhod 1 rollt Rampen hinunter auf die Mondoberfläche.",
+      "type": "info"
+    },
+    {
+      "met": 329,
+      "label": "ENDGÜLTIGER KONTAKT",
+      "note": "Letzte Kommandositzung 14.09.1971; Rover in kalter Mondnacht konserviert.",
+      "type": "info"
+    }
+  ]
+}

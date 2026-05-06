@@ -6,29 +6,24 @@
     <meta name="theme-color" content="#04040c" />
     <title>Orrery</title>
 
-    <!-- PWA manifest (v0.1.10 / Theme C.C1 / issue #18). Manifest-only
-         install support; no service worker yet — offline-first
-         behaviour already comes from the static-deploy + browser cache. -->
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="icon" href="logos/nasa.svg" type="image/svg+xml" />
-
     
-		<link rel="modulepreload" href="/orrery/_app/immutable/entry/start.BM2jXBqA.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/entry.B4DUwQK0.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/runtime.DAmP2_i3.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/control.O81xgtYI.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/entry/app.DQDC-Q62.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/entry/start.DZawpvOs.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/entry.wZ-or1JG.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/runtime.YLoFP9f-.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/utils.OvqFA-GB.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/control.jzxb1PcG.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/entry/app.P1hwDBTx.js">
 		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/preload-helper.C1FmrZbK.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/store.jE3za3mb.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/disclose-version.g4IbNeX8.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/index-client.BCb7kZc8.js">
-		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/this.BMfRTwo0.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/store.DsAkv-Cg.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/disclose-version.Bb1Ttgat.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/index-client.BkTOHOW9.js">
+		<link rel="modulepreload" href="/orrery/_app/immutable/chunks/this.DtaYdUCB.js">
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">
 			<script>
 				{
-					__sveltekit_gxhviy = {
+					__sveltekit_159d2ac = {
 						base: "/orrery",
 						assets: "/orrery"
 					};
@@ -36,8 +31,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/orrery/_app/immutable/entry/start.BM2jXBqA.js"),
-						import("/orrery/_app/immutable/entry/app.DQDC-Q62.js")
+						import("/orrery/_app/immutable/entry/start.DZawpvOs.js"),
+						import("/orrery/_app/immutable/entry/app.P1hwDBTx.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});

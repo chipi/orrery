@@ -920,7 +920,7 @@
         title="Show or hide landers, rovers, and crashed surface vehicles"
         data-testid="layer-surface"
       >
-        SURFACE
+        {m.ui_layer_surface()}
       </button>
       <button
         type="button"
@@ -931,7 +931,7 @@
         title="Show or hide active and historical lunar orbiters"
         data-testid="layer-orbiters"
       >
-        ORBITERS
+        {m.ui_layer_orbiters()}
       </button>
       <button
         type="button"
@@ -942,7 +942,7 @@
         title="Show or hide the orbital ring lines (the spacecraft remain visible)"
         data-testid="layer-orbits"
       >
-        ORBITS
+        {m.ui_layer_orbits()}
       </button>
     </div>
   </div>

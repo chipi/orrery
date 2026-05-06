@@ -9,6 +9,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
 
@@ -1007,7 +1008,7 @@
   ></canvas>
 
   <!-- Top-left HUD (matches /explore convention) -->
-  <div class="hud-controls" role="group" aria-label="View controls">
+  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
       <button
         type="button"
@@ -1016,10 +1017,10 @@
         aria-pressed={view === '2d'}
         data-testid="mode-toggle"
       >
-        {view === '3d' ? '2D' : '3D'}
+        {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
     </div>
-    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button
         type="button"
         class="chip"
@@ -1029,7 +1030,7 @@
         title="Show or hide landers, rovers, and crashed surface vehicles"
         data-testid="layer-surface"
       >
-        SURFACE
+        {m.ui_layer_surface()}
       </button>
       <button
         type="button"
@@ -1040,7 +1041,7 @@
         title="Show or hide active and historical Mars orbiters"
         data-testid="layer-orbiters"
       >
-        ORBITERS
+        {m.ui_layer_orbiters()}
       </button>
       <button
         type="button"
@@ -1051,7 +1052,7 @@
         title="Show or hide the orbital ring lines (the spacecraft remain visible)"
         data-testid="layer-orbits"
       >
-        ORBITS
+        {m.ui_layer_orbits()}
       </button>
       <button
         type="button"
@@ -1062,7 +1063,7 @@
         title="Show or hide rover traverse paths (Curiosity, Perseverance, Opportunity, Spirit)"
         data-testid="layer-traverses"
       >
-        TRAVERSES
+        {m.ui_layer_traverses()}
       </button>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { goto, invalidateAll } from '$app/navigation';
   import { setLanguageTag } from '$lib/paraglide/runtime';
   import {
     SUPPORTED_LOCALES,
@@ -31,7 +31,10 @@
     if (code === 'en-US') url.searchParams.delete('lang');
     else url.searchParams.set('lang', code);
     setLanguageTag(code);
+    // Stay SPA (no hard refresh) but force all route data/state that depends
+    // on locale to re-run on the active page.
     await goto(url.pathname + url.search, { replaceState: false, keepFocus: true });
+    await invalidateAll();
   }
 
   // Close dropdown on Escape or outside-click.

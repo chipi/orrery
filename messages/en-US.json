@@ -309,5 +309,20 @@
   "iss_label_mass": "MASS",
   "iss_label_length": "LENGTH",
   "iss_status_active": "ACTIVE",
-  "iss_status_retired": "RETIRED"
+  "iss_status_retired": "RETIRED",
+  "ui_view_controls": "View controls",
+  "ui_visibility_layers": "Visibility layers",
+  "ui_view_2d": "2D",
+  "ui_view_3d": "3D",
+  "ui_layer_planets": "PLANETS",
+  "ui_layer_dwarfs": "DWARFS",
+  "ui_layer_comets": "COMETS",
+  "ui_layer_interstellar_short": "ISM",
+  "ui_layer_surface": "SURFACE",
+  "ui_layer_orbiters": "ORBITERS",
+  "ui_layer_orbits": "ORBITS",
+  "ui_layer_traverses": "TRAVERSES",
+  "ui_layer_constellations": "CONSTELLATIONS",
+  "ui_layer_comsats": "COMSATS",
+  "ui_layer_moon_orbiters": "MOON ORBITERS"
 }

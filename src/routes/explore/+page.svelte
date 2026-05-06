@@ -1671,10 +1671,10 @@
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
        opposite side of the detail panel so they never collide. -->
-  <div class="hud-controls" role="group" aria-label="View controls">
+  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
       <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-        {view === '3d' ? '2D' : '3D'}
+        {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
       <button
         class="toggle sizes-toggle"
@@ -1687,7 +1687,7 @@
         {m.explore_sizes_toggle()}
       </button>
     </div>
-    <div class="ctrl-row chips" role="group" aria-label="Visibility layers">
+    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button
         type="button"
         class="chip"
@@ -1697,7 +1697,7 @@
         data-testid="layer-planets"
         title="Toggle visibility of the 8 major planet orbits"
       >
-        PLANETS
+        {m.ui_layer_planets()}
       </button>
       <button
         type="button"
@@ -1708,7 +1708,7 @@
         data-testid="layer-dwarfs"
         title="Toggle visibility of dwarf planets (Pluto, Eris, Ceres, Haumea, Makemake)"
       >
-        DWARFS
+        {m.ui_layer_dwarfs()}
       </button>
       <button
         type="button"
@@ -1719,7 +1719,7 @@
         data-testid="layer-comets"
         title="Toggle visibility of comet trajectories (Halley, Hale-Bopp, etc.)"
       >
-        COMETS
+        {m.ui_layer_comets()}
       </button>
       <button
         type="button"
@@ -1730,7 +1730,7 @@
         data-testid="layer-interstellar"
         title="Interstellar visitors — toggle visibility of objects passing through the Solar System (e.g. ʻOumuamua)"
       >
-        ISM
+        {m.ui_layer_interstellar_short()}
       </button>
     </div>
   </div>

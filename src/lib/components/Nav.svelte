@@ -4,22 +4,29 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
+  import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
   let { right }: Props = $props();
 
-  const links = [
-    { href: `${base}/explore`, label: m.nav_explore() },
-    { href: `${base}/missions`, label: m.nav_missions() },
-    { href: `${base}/plan`, label: m.nav_plan() },
-    { href: `${base}/fly`, label: m.nav_fly() },
-    { href: `${base}/earth`, label: m.nav_earth() },
-    { href: `${base}/iss`, label: m.nav_iss() },
-    { href: `${base}/moon`, label: m.nav_moon() },
-    { href: `${base}/mars`, label: m.nav_mars() },
-  ];
+  const linkDefs = [
+    { path: '/explore', label: m.nav_explore },
+    { path: '/missions', label: m.nav_missions },
+    { path: '/plan', label: m.nav_plan },
+    { path: '/fly', label: m.nav_fly },
+    { path: '/earth', label: m.nav_earth },
+    { path: '/iss', label: m.nav_iss },
+    { path: '/moon', label: m.nav_moon },
+    { path: '/mars', label: m.nav_mars },
+  ] as const;
+
+  const activeLocale = $derived(localeFromPage($page));
+
+  function withLang(path: string, locale: string): string {
+    return locale === DEFAULT_LOCALE ? path : `${path}?lang=${encodeURIComponent(locale)}`;
+  }
 
   function isActive(href: string, pathname: string): boolean {
     return pathname === href || pathname.startsWith(href + '/');
@@ -51,8 +58,12 @@
   </div>
 
   <div class="center">
-    {#each links as { href, label } (href)}
-      <a {href} class="link" class:active={isActive(href, $page.url.pathname)}>{label}</a>
+    {#each linkDefs as { path, label } (path)}
+      <a
+        href={withLang(`${base}${path}`, activeLocale)}
+        class="link"
+        class:active={isActive(`${base}${path}`, $page.url.pathname)}>{label()}</a
+      >
     {/each}
   </div>
 

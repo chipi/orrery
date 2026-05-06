@@ -881,7 +881,7 @@
         title="Navigation constellations — GPS, Galileo, GLONASS, BeiDou"
         data-testid="layer-constellations"
       >
-        CONSTELLATIONS
+        {m.ui_layer_constellations()}
       </button>
       <button
         type="button"
@@ -892,7 +892,7 @@
         title="Geostationary communications — GEO comsat ring"
         data-testid="layer-comsats"
       >
-        COMSATS
+        {m.ui_layer_comsats()}
       </button>
       <button
         type="button"
@@ -903,7 +903,7 @@
         title="Lunar orbiters — LRO, Clementine, Chandrayaan-1, Chang'e 1/2, etc."
         data-testid="layer-moon-orbiters"
       >
-        MOON ORBITERS
+        {m.ui_layer_moon_orbiters()}
       </button>
       <button
         type="button"
@@ -914,7 +914,7 @@
         title="Show or hide the orbital ring lines (satellites remain visible)"
         data-testid="layer-orbits"
       >
-        ORBITS
+        {m.ui_layer_orbits()}
       </button>
     </div>
   </div>

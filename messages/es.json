@@ -309,5 +309,20 @@
   "iss_label_mass": "MASA",
   "iss_label_length": "LONGITUD",
   "iss_status_active": "ACTIVO",
-  "iss_status_retired": "RETIRADO"
+  "iss_status_retired": "RETIRADO",
+  "ui_view_controls": "Controles de vista",
+  "ui_visibility_layers": "Capas de visibilidad",
+  "ui_view_2d": "2D",
+  "ui_view_3d": "3D",
+  "ui_layer_planets": "PLANETAS",
+  "ui_layer_dwarfs": "ENANOS",
+  "ui_layer_comets": "COMETAS",
+  "ui_layer_interstellar_short": "INT",
+  "ui_layer_surface": "SUPERFICIE",
+  "ui_layer_orbiters": "ORBITADORES",
+  "ui_layer_orbits": "ÓRBITAS",
+  "ui_layer_traverses": "RECORRIDOS",
+  "ui_layer_constellations": "CONSTELACIONES",
+  "ui_layer_comsats": "COMSATS",
+  "ui_layer_moon_orbiters": "ORBITADORES LUNARES"
 }

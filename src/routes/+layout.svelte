@@ -8,6 +8,7 @@
   import { localeFromPage, isSupportedLocale } from '$lib/locale';
 
   let { children } = $props();
+  let activeLocale = $derived(localeFromPage($page));
 
   // Apply the resolved locale to Paraglide BEFORE descendant
   // components render their `m.foo()` calls. $effect.pre runs
@@ -73,10 +74,12 @@
   <link rel="icon" href="{base}/logos/nasa.svg" type="image/svg+xml" />
 </svelte:head>
 
-<Nav />
-<main>
-  {@render children?.()}
-</main>
+{#key activeLocale}
+  <Nav />
+  <main>
+    {@render children?.()}
+  </main>
+{/key}
 
 {#if updateAvailable}
   <div class="pwa-toast" role="status">

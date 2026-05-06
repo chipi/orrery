@@ -50,4 +50,19 @@ test.describe('?lang=es smoke', () => {
       timeout: 10_000,
     });
   });
+
+  test('selected locale persists when navigating via top nav', async ({ page }) => {
+    await page.goto('/explore?lang=es', { waitUntil: 'networkidle' });
+    await expect(page.locator('button.chip').first()).toHaveText('ES', { timeout: 10_000 });
+
+    // Click MISSIONS in the shared top nav.
+    await page.locator('nav a.link[href*="/missions"]').first().click();
+    await page.waitForLoadState('networkidle');
+
+    await expect(page).toHaveURL(/\/missions\?lang=es$/);
+    await expect(page.locator('button.chip').first()).toHaveText('ES');
+    await expect(page.getByText('BIBLIOTECA DE MISIONES', { exact: false }).first()).toBeVisible({
+      timeout: 10_000,
+    });
+  });
 });

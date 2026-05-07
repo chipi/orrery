@@ -291,13 +291,17 @@ export function buildTiangongProxyStation(): THREE.Group {
   // group gets `rotation.x = π/2`. The two pairs are offset slightly
   // along the lab's outboard +Y axis (parallel rows). ─────────────────
   const arrayTex = makeSolarArrayTexture();
-  arrayTex.repeat.set(6, 1);
-  const labArrayDy = 0.45; // separation between the two parallel pairs
+  arrayTex.repeat.set(8, 1);
+  // Each individual array strip is narrower (depth 0.35), and the two
+  // pairs are separated by 0.7 along Y so they read as TWO distinct
+  // strips side-by-side at the lab tip — not one fat blob.
+  const labArrayDepth = 0.35;
+  const labArrayDy = 0.7; // centre-to-centre between the two parallel pairs
   for (const dy of [-labArrayDy / 2, +labArrayDy / 2]) {
     const pair = new THREE.Group();
     pair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04 + dy, 0);
     pair.rotation.x = Math.PI / 2;
-    makeWingPair(pair, 3.6, 0.6, SOLAR_GOLD);
+    makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {
       if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {
@@ -326,7 +330,7 @@ export function buildTiangongProxyStation(): THREE.Group {
     const pair = new THREE.Group();
     pair.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labLen + 0.04 + dy), 0);
     pair.rotation.x = Math.PI / 2;
-    makeWingPair(pair, 3.6, 0.6, SOLAR_GOLD);
+    makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {
       if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {

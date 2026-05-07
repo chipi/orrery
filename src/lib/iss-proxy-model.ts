@@ -486,25 +486,48 @@ export function buildIssProxyStation(): THREE.Group {
     modulePositions.set(id, [x, y, z]);
 
     if (id === 'canadarm2') {
+      // Canadarm2 + Dextre (Phase 2f). Base mounts on the Mobile
+      // Transporter rail at truss level (y = 0.42 + 0.18 = 0.6).
       const armMat = new THREE.MeshStandardMaterial({
         color: ARM_GREY,
         metalness: 0.4,
         roughness: 0.5,
       });
-      const baseP = new THREE.Vector3(x - len / 2, y - 0.04, z);
-      const elbowP = new THREE.Vector3(x, y + 0.4, z);
-      const tipP = new THREE.Vector3(x + len / 2, y - 0.04, z);
+      const baseP = new THREE.Vector3(x - len / 2, 0.6, z);
+      const elbowP = new THREE.Vector3(x, 1.05, z);
+      const tipP = new THREE.Vector3(x + len / 2, 0.6, z);
 
-      const baseMount = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10), armMat);
-      baseMount.position.set(baseP.x, baseP.y - 0.04, baseP.z);
+      const baseMount = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.09, 10), armMat);
+      baseMount.position.set(baseP.x, baseP.y - 0.045, baseP.z);
       const boomA = cylinderBetween(baseP, elbowP, 0.04, armMat);
-      const elbow = new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 8), armMat);
+      const elbow = new THREE.Mesh(new THREE.SphereGeometry(0.055, 10, 8), armMat);
       elbow.position.copy(elbowP);
       const boomB = cylinderBetween(elbowP, tipP, 0.04, armMat);
-      const tipEffector = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10), armMat);
-      tipEffector.position.set(tipP.x, tipP.y - 0.04, tipP.z);
+      const tipJoint = new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 8), armMat);
+      tipJoint.position.copy(tipP);
 
-      for (const part of [baseMount, boomA, elbow, boomB, tipEffector]) {
+      // Dextre (Special Purpose Dexterous Manipulator) — 2-armed
+      // manipulator at the end of Canadarm2. Central body + 2 angled
+      // forearms.
+      const dextreBody = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.06, 0.06), armMat);
+      dextreBody.position.set(tipP.x + 0.08, tipP.y - 0.05, tipP.z);
+      const dextreArmL = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.12, 8), armMat);
+      dextreArmL.rotation.z = Math.PI / 4;
+      dextreArmL.position.set(tipP.x + 0.12, tipP.y - 0.11, tipP.z + 0.04);
+      const dextreArmR = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.12, 8), armMat);
+      dextreArmR.rotation.z = -Math.PI / 4;
+      dextreArmR.position.set(tipP.x + 0.12, tipP.y - 0.11, tipP.z - 0.04);
+
+      for (const part of [
+        baseMount,
+        boomA,
+        elbow,
+        boomB,
+        tipJoint,
+        dextreBody,
+        dextreArmL,
+        dextreArmR,
+      ]) {
         part.userData.moduleId = 'canadarm2';
         part.userData.stationPickable = true;
         setShadowFlags(part);

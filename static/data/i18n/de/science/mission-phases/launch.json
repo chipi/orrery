@@ -1,0 +1,15 @@
+{
+  "title": "Start + Aufstieg",
+  "intro_sentence": "Die gewalttätigsten zehn Minuten jeder Mission — gegen Schwerkraft, Atmosphäre und Raketengleichung gleichzeitig.",
+  "narrative_101": [
+    "Die meiste Gefahr passiert in den ersten acht Minuten. Rakete zündet, kämpft Eigengewicht, klettert durch dichte Luft, beschleunigt von Null auf 7,5 km/s wenn der Motor aus geht. Geht was schief, ist selten Zeit zum Reparieren.",
+    "Brutale Arithmetik: ~9,4 km/s Δv, aber nur ~7,9 davon Bahnenergie. Rest = Schwerkraftverlust + Luftwiderstand. Pitch-Programm optimiert beides.",
+    "Hoch genug, nimmt die Atmosphäre Pause. Stufen trennen, Verkleidungen ab, zweite Stufe übernimmt. SpaceX bricht das und landet erste Stufen."
+  ],
+  "body_paragraphs": [
+    "Aufstieg ~9,4 km/s Δv, aber nur ~7,9 davon Orbitalgeschwindigkeit. Der Rest ist Gravity Loss (Energie hochhalten beim Steigen) und Drag Loss (Atmosphäre bremst). Pitch-Programm optimiert beides.",
+    "Stufen fallen unterwegs. Erste Trennung, zweite zündet, Verkleidung jettison, Nutzlasttrennung. Falcon 9 bringt erste Stufe zurück; Saturn V nicht.",
+    "In `/missions` zeigt launch_vehicle die Rakete: Saturn V für Apollo, Atlas V für Curiosity, Falcon 9 für Crew Dragon, SLS für Artemis I."
+  ],
+  "diagram_caption": "Startprofil: vertikaler Anstieg → Pitch-Programm → Stufung → Bahneinschuss."
+}

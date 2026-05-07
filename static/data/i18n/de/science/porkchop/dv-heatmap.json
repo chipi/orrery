@@ -1,0 +1,14 @@
+{
+  "title": "Δv-Heatmap",
+  "intro_sentence": "Die Farbskala, die Δv-Zahlen in ein Bild verwandelt, das du auf einen Blick liest.",
+  "narrative_101": [
+    "Sinn des Porkchops sind die Farben. Zahlen in einem Riesenraster sagen dasselbe, aber Muster sind unsichtbar. Wir bemalen Zellen — kühles Türkis billig, Gelb borderline, Orange/Rot hoffnungslos teuer. Mustererkennung übernimmt.",
+    "Türkis ~3 km/s — was Hohmann zu Mars kostet. Blau ~5 km/s. Gelb ~7 — wird teuer. Orange/Rot >9 — Reich des aktuell-Unmöglichen verlassen. Mapping konsistent über alle Porkchops in /plan.",
+    "Hover für genaue Δv. Aber der visuelle Trick macht den Porkchop unverzichtbar. Sekundenscan = ist das Ziel erreichbar, wann sind Fenster, was kosten Trade-offs. Keine Formel tut das."
+  ],
+  "body_paragraphs": [
+    "Kühles Türkis bei niedrigem Δv (~3 km/s) — natürliches Hohmann-Minimum. Blau ~5. Gelb ~7 — Schwelle des Teuren. Orange und Rot über 9 — Runaway-Kosten, brauchst SLS-Klasse.",
+    "Orrerys Skala kappt um 11+ km/s. Darüber tiefes Rot, da kein Vehikel das praktisch liefern kann. Voyager 1 startete C₃ ≈ 99 (V∞ ≈ 10 km/s) — schon Limit von 1977.",
+    "In `/plan` Hover für genaues Δv in km/s. Heatmap visualisiert; Zellwert ist die Antwort."
+  ]
+}

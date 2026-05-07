@@ -1,0 +1,14 @@
+{
+  "title": "Heliozentrisch · Geozentrisch · Körperzentriert",
+  "intro_sentence": "Drei Bezugsrahmen für drei verschiedene Fragen: wo ist es relativ zu Sonne, Erde oder Studienkörper?",
+  "narrative_101": [
+    "Wo ist der Mond? Ehrliche Antwort: hängt davon ab, wo DU bist. Von Erde überheadig um 1 Uhr nachts. Von Sonne winziger Punkt 1 AE weg. Von Mars irrelevant. Keine Antwort falsch — nur andere Ursprünge. Diese Wahl ist \"Bezugsrahmen\".",
+    "Raumfahrt jongliert mit drei. Heliozentrisch (Sonne im Ursprung) für Cruise. Geozentrisch (Erde) für Satelliten und Mond. Körperzentriert (Planet) für Insertion und Surface Ops.",
+    "Wechseln meist Arithmetik. Aber konzeptuell wichtig: Transferellipse heliozentrisch. Mars-Vorbeiflug körperzentriert. Übergang ist Patched Conics. Jeder Screen wählt einen Rahmen: /explore heliozentrisch, /earth geozentrisch, /moon und /mars körperzentriert."
+  ],
+  "body_paragraphs": [
+    "Heliozentrisch: Ursprung Sonne, Achsen mit Ekliptik. Natürlicher Rahmen für Sonnensystembewegung. Planetenpositionen, Transferbahnen, Cruises. Orrerys `/explore` ist fundamental heliozentrisch.",
+    "Geozentrisch: Ursprung Erde. Nützlich für Satelliten, Mond und Sonden in Erd-SoI. `/earth` arbeitet hier. Geozentrisch zu heliozentrisch durch Translation (Erdposition) und Rotation (Achsneigung).",
+    "Körperzentriert: Ursprung am umkreisten Körper. Für Bahneinschuss, Surface Ops, Vorbeiflug. Patched-Conics-Design wechselt Rahmen an SoI-Grenzen."
+  ]
+}

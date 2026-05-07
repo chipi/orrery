@@ -1,0 +1,16 @@
+{
+  "title": "Vis-viva-Gleichung",
+  "intro_sentence": "Wie schnell ein Körper an jedem Punkt seiner Bahn ist — nur aus aktuellem Radius und großer Halbachse.",
+  "narrative_101": [
+    "Wenn du nur eine Gleichung der Bahnmechanik lernst, dann diese. Drei Eingaben — was du umkreist, wie weit du jetzt bist, Bahngröße — eine Wurzel, fertig: deine Geschwindigkeit.",
+    "Sie funktioniert wegen Energieerhaltung. Eine Sonde tauscht Höhe gegen Geschwindigkeit auf einer festen Bahn. Wo du bist, sagt dir die Aufteilung zwischen potentieller und kinetischer Energie.",
+    "Die Geschwindigkeitsanzeige in /fly? Vis-viva, jeden Frame neu berechnet. Die Abreise- und Ankunftsgeschwindigkeiten in /plan? Vis-viva."
+  ],
+  "body_paragraphs": [
+    "Vis-viva ist die Arbeitsgleichung der Bahnmechanik. Sie verbindet drei Zahlen — den Gravitationsparameter `μ`, deinen Radius `r`, die Halbachse `a` — und liefert die Geschwindigkeit `v`. Eine Wurzel, das war's.",
+    "Sie packt die Energieerhaltung: die mechanische Gesamtenergie auf einer Keplerschen Bahn ist konstant. Im Perihel klein r, große Klammer, hohe v. Erde im Perihel: 30,3 km/s, im Aphel: 29,3 km/s.",
+    "In Orrery berechnet Vis-viva die Geschwindigkeitsanzeigen in `/fly` und die Δv-Zahlen im `/plan`-Porkchop."
+  ],
+  "formula_caption": "v aus Gravitationsparameter μ, aktuellem Radius r, großer Halbachse a.",
+  "diagram_caption": "Geschwindigkeit variiert: hoch im Perihel, niedrig im Aphel. Vis-viva verknüpft Geschwindigkeit mit Radius."
+}

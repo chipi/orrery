@@ -1,0 +1,14 @@
+{
+  "title": "Oberth-Effekt",
+  "intro_sentence": "Brenne tief im Schwerkrafttopf und dein Treibstoff arbeitet mehr — physikalisch erzeugt der Motor mehr Bahnenergie bei hoher Geschwindigkeit.",
+  "narrative_101": [
+    "Gratis-Magie der Physik: brennst du, wenn du SCHNELL bist, gibt das gleiche Treibstoff dir viel mehr nutzbare Energie als bei langsam. Kinetische Energie geht mit v² — kleines Δv on top bei hoher Geschwindigkeit addiert proportional mehr Energie.",
+    "Hermann Oberth 1929. Apollos TLI im Perigäum, dicht an der Erde, so schnell wie möglich. Parker Solar Probe brennt im Sonnen-nächsten Punkt. Nicht ganz gratis — der Planet zahlt — aber so nah wie es geht im Spaceflight."
+  ],
+  "body_paragraphs": [
+    "Kinetische Energie geht mit ½mv². Kleines Δv bei hoher Geschwindigkeit ändert KE viel mehr als bei niedriger. Auf eine Brennphase angewandt: in Periapsis (schnellster Punkt) erzeugt der gleiche Treibstoff mehr Bahnenergiezuwachs als im Apoapsis.",
+    "Hermann Oberth wies darauf 1929 hin. Schedule deine großen Δv-Brennphasen, wo du schon schnell bist — Cruise-Perihel, Vorbeiflug-Periapsis. Parker Solar Probe brennt jeden Sonnen-Perihel. Juno feuert am Jovian-Periapsis.",
+    "Trade-off: Tieftöpfe-Brennphasen sind kurz und intensiv. Sonde muss Hitze, Staudruck und präzises Timing handhaben."
+  ],
+  "diagram_caption": "Gleiches Δv bei Periapsis (hohes v) liefert mehr Energiezuwachs als bei Apoapsis (niedriges v)."
+}

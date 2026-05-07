@@ -1,0 +1,14 @@
+{
+  "title": "TCM — Trajektorien-Korrekturmanöver",
+  "intro_sentence": "Eine kleine Mid-Cruise-Brennphase, um die Fehler zu korrigieren, die sich immer in die Starttrajektorie schleichen.",
+  "narrative_101": [
+    "Kein Start ist perfekt. Nach Aufstieg und Trans-X grob auf richtigem Pfad — aber \"grob\" zählt bei 250 Mio km Ziel. 5 cm/s Fehler am Anfang = 100 km Miss am Mars.",
+    "TCMs sind winzige Brennphasen — wenige m/s — Wochen/Monate in den Cruise. Treibstoffbillig, operativ teuer. Missionen planen so wenige wie möglich.",
+    "Die meisten interplanetaren Missionen planen vier. TCM-1 paar Tage, TCM-2 Wochen, TCM-3 nahe Ankunft, TCM-4 Final. Apollo 4-5 hin und zurück. Curiosity 4."
+  ],
+  "body_paragraphs": [
+    "Kein Launch ist perfekt. Reale Trajektorie weicht zehntel m/s ab — klein absolut, katastrophal in Zielgenauigkeit. 5 cm/s TLI-Fehler = 100 km Mond-Miss.",
+    "Drei oder vier üblich. TCM-1 Tage nach Launch. TCM-2 Wochen später. TCM-3 nahe Ankunft. TCM-4 Final-Approach-Trim. Pro TCM nur m/s — billig, aber jede Brennphase ist Risiko.",
+    "In `/missions` FLIGHT-Tab: tcm_count. Curiosity: 4. MRO: 4. Apollos: 4-5 hin und zurück."
+  ]
+}

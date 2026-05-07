@@ -1,0 +1,15 @@
+{
+  "title": "Lambert-Problem",
+  "intro_sentence": "Gegeben zwei Positionen und eine Reisezeit, finde die Bahn, die sie verbindet.",
+  "narrative_101": [
+    "Hohmann ist am billigsten, aber Missionen wollen oft an einem bestimmten Datum starten und ankommen. Hohmann lässt dich nicht wählen. Lambert tut das.",
+    "Lamberts Frage: ich bin bei A, ich will zu B, ich habe X Tage. Welche Bahn? 1761 schrieb Lambert die Antwort: genau eine Ellipse (manchmal zwei) verbindet zwei Punkte in einer gegebenen Zeit.",
+    "Das Herz jedes Porkchops. Jedes Pixel auf dem `/plan`-Porkchop ist ein Lambert-Problem. Orrery löst das in einem Web Worker, damit die UI nicht einfriert."
+  ],
+  "body_paragraphs": [
+    "Lamberts Problem: ich bin hier, will dort sein, habe so viel Zeit. Welche Ellipse? Zwei Positionsvektoren und eine Flugzeit, die Gleichung liefert die einzige Transferbahn (oder zwei — kurzer und langer Weg).",
+    "Hohmann ist eine spezifische Lambert-Lösung. Andere Eingaben — andere Ellipse. Engere Zeit, exzentrischere Ellipse, höhere Abreiseenergie.",
+    "Orrery löst Lambert millionenfach für den Porkchop in `/plan`. Die Farbe ist die Antwort."
+  ],
+  "diagram_caption": "Zwei Positionsvektoren r₁ und r₂; der Lambert-Solver findet die einzige verbindende Transferellipse."
+}

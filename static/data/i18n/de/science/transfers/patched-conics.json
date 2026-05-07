@@ -1,0 +1,15 @@
+{
+  "title": "Patched Conics",
+  "intro_sentence": "So tun, als wirke Schwerkraft jeweils nur eines Körpers — die Approximation, die das unlösbare Dreikörperproblem in lösbare Zweikörper-Kepler-Probleme zerlegt.",
+  "narrative_101": [
+    "Schmutziges Geheimnis: die volle echte Physik — jeder Körper im Sonnensystem zieht an jedem anderen — ist mathematisch unlösbar in geschlossener Form. KEINE geschlossene Lösung des Dreikörperproblems, geschweige der echten Dutzende-Körper-Version.",
+    "Wie planen Missionsdesigner trotzdem? Sie schummeln. Sie tun, als zähle in einem Moment nur EIN Körper. Nahe der Erde nur Erde. Im Cruise nur die Sonne. Nahe Mars nur Mars. Diese Regionen heißen Sphären-of-Influence. In jeder eine saubere Keplersche Konik. An den Grenzen Koordinaten wechseln. Patched Conics.",
+    "Die Mathematik ist ein paar Prozent daneben — klein genug für reale Missionen als ersten Wurf, danach numerisch verfeinern. Auch klein genug, um in deinem Browser im Web Worker zu laufen."
+  ],
+  "body_paragraphs": [
+    "Echte Schwerkraft ist unordentlich. Eine Sonde im Cruise zwischen Erde und Mars spürt Erde, Sonne, Mars und alles andere. Die volle Mathematik (n-Körper) hat keine geschlossene Lösung — nur numerische Integration.",
+    "Patched Conics ist der Arbeits-Kompromiss: erkläre eine Sphere of Influence um jeden Körper. Innerhalb der Erd-Sphäre nur Erdgravitation; Keplerbogen um die Erde. Grenze überqueren zur heliozentrischen Region, Wechsel zu Sonnenbogen. Mars-Sphäre, wieder Wechsel.",
+    "Falsch aber nützlich. Fehler an Grenzen klein — paar Prozent Δv für Cislunar. Mathematik handhabbar genug für Web Worker. Echte NASA-Flugplanung nutzt dieselbe Approximation als ersten Wurf."
+  ],
+  "diagram_caption": "Drei Rahmen, drei Koniken: Erd-zentriert → heliozentrisch → Mars-zentriert, an SoI-Grenzen verbunden."
+}

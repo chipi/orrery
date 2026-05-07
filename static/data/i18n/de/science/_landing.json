@@ -1,0 +1,120 @@
+{
+  "intro_heading": "Du willst also eine Rakete zum Mars fliegen.",
+  "intro_paragraphs": [
+    "Willkommen. Hier in Orrery hören die Knöpfe auf, magisch zu sein. Jedes HUD-Label, jede farbige Porkchop-Kontur, jede Brennmarke auf der Trajektorie — dieser Bereich erklärt, woher das alles kommt. Lies es wie einen Comic: die Diagramme machen die meiste Arbeit, jeder kursive Begriff ist ein Link, dem du beliebig tief folgen kannst.",
+    "Wir bauen zusammen eine Rakete. Nicht buchstäblich — Orrery ist ein Simulator — aber dieselbe Entscheidungskette, die ein echtes Flugteam trifft, in derselben Reihenfolge. Am Ende weißt du, warum Marsstartfenster alle 26 Monate kommen und Mondfenster jeden Monat, warum eine Free-Return-Trajektorie existiert, und warum Schub der billige Teil einer Mission ist und Treibstoff der ganze Kampf."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — Schwerkraft ist die einzige Physik, die zählt.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Eine Ellipse mit der Sonne in einem Brennpunkt.",
+      "diagram_caption": "Ein Körper, ein Brennpunkt, eine Ellipse. Das ist das ganze Sonnensystem.",
+      "paragraphs": [
+        "Vergiss Raketen kurz. Steh auf der Erde, wirf einen Baseball so weit du kannst. Er kommt zurück. Wirf ihn stärker, er fliegt weiter. Wirf ihn SO stark, dass sich der Boden schneller wegkrümmt, als der Ball fällt — und der Ball verfehlt den Planeten für immer. Das ist eine [Bahn](orbits/keplerian-orbit). Jede Sonde, jeder Planet, jeder Brocken im Asteroidengürtel macht diesen Trick um etwas Schwereres.",
+        "Eine Bahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund vs. gestreckt), eine [Neigung](orbits/inclination), und eine Phase ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen reichen, um jede Position im Sonnensystem für immer vorherzusagen. Das sind [Keplers drei Gesetze](orbits/keplers-laws), 1609 niedergeschrieben — sie funktionieren immer noch.",
+        "Die nützlichste Gleichung ist [Vis-viva](orbits/vis-viva). Gib Radius und Bahngröße rein, raus kommt die Geschwindigkeit. Erde im Perihel: 30,3 km/s. Erde im Aphel: 29,3 km/s. Gleiche Bahn, gleiche Energie, andere Geschwindigkeit."
+      ]
+    },
+    {
+      "heading": "2 — Die Raketengleichung ist der Endgegner.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Massenverhältniskurve: Δv steigt logarithmisch.",
+      "diagram_caption": "Die grausame Wahrheit: doppeltes Δv kostet weit mehr als doppelten Treibstoff.",
+      "paragraphs": [
+        "Wie ändert man Bahnen? Treibstoff verbrennen. [Δv](propulsion/dv-budget) (\"delta-v\") ist die universelle Währung der Raumfahrt — die gesamte Geschwindigkeitsänderung, die eine Mission braucht.",
+        "Der Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) sagt: Δv skaliert mit dem Logarithmus des Treibstoffanteils. Doppeltes Δv? Nicht doppelter Treibstoff — exponentiell mehr. Deshalb war die Saturn V zu 90% Treibmittel.",
+        "Zwei Zahlen kämpfen gegen diese Schwerkraftsteuer. Der Schub sagt, wie hart der Motor drückt — egal nach dem Start. Der [spezifische Impuls](propulsion/specific-impulse) sagt, wie EFFIZIENT — das zählt. Chemische Triebwerke: ~450 s. Ionenantrieb: 4.000+.",
+        "Bester Trick: der [Oberth-Effekt](propulsion/oberth-effect). Brenne nahe am Planeten bei hoher Geschwindigkeit — und du holst viel mehr aus demselben Treibstoff heraus. Geometrische Gratisenergie."
+      ]
+    },
+    {
+      "heading": "3 — Im Orbit bist du auf halbem Weg überallhin.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Eine Ellipse tangential zur Erd- und Marsbahn.",
+      "diagram_caption": "Zwei Brennphasen, eine Ellipse. Der billigste Bahnwechsel.",
+      "paragraphs": [
+        "Robert Heinlein hat es geschrieben: \"Im Orbit bist du auf halbem Weg überallhin im Sonnensystem.\" Er hatte recht. LEO kostet ~9,4 km/s Δv. Von dort zum Mars nur weitere ~3,6 km/s.",
+        "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die Erdbahn und Zielbahn berührt. Zwei Brennphasen, kein verschwendeter Treibstoff. Zum Mars dauert das ~8,5 Monate. Langsam, aber optimal.",
+        "Schneller? Löse das [Lambert-Problem](transfers/lambert-problem) — wähle Abreisedatum und Flugzeit, Lambert gibt dir die einzige [Transferellipse](transfers/transfer-ellipse). Genau das macht [/plan](app:/plan) zehntausendmal parallel für den Porkchop.",
+        "Noch weiter? Stiehl Geschwindigkeit von einem Planeten. Ein [Swing-by](transfers/gravity-assist) ändert deine Trajektorie zum Nulltarif — Voyager 2 nutzte vier davon bis zu Neptun. Das ganze Sonnensystem wird als [angenähert konische Bahnen](transfers/patched-conics) zusammengeflickt: eine Folge von [Kegelschnitten](transfers/conic-sections), die zwischen Schwerefeldern weitergegeben werden."
+      ]
+    },
+    {
+      "heading": "4 — Wähl ein Startfenster, oder warte zwei Jahre.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "Klassischer Porkchop-Plot — Abreisedatum auf x, Flugzeit auf y.",
+      "diagram_caption": "Ein Porkchop. Jede Kontur ist konstantes Δv; der Lappen ist, wann der Mars billig wird.",
+      "paragraphs": [
+        "Erde und Mars stehen nicht still. Erde alle 365 Tage um die Sonne, Mars alle 687. Ihre Geometrie wiederholt sich nur alle ~26 Monate. Missionsdesign beginnt mit einem Kalender, nicht mit einer Rakete.",
+        "Der [Porkchop-Plot](porkchop/what-is-a-porkchop) zeigt das. Abreisedatum auf [einer Achse](porkchop/departure-axis), [Flugzeit](porkchop/tof-axis) auf der anderen, Δv als [Farbskala](porkchop/dv-heatmap). Billige Zonen sind ovale Lappen — die Startfenster. Außerhalb: rot, teuer, mit aktuellen Raketen unmöglich. [Konturen lesen](porkchop/contour-reading) ist die halbe Miete.",
+        "Zwei technische Begriffe: [C₃](propulsion/c3) ist die Startenergie, die deine Rakete braucht, um die Erdgravitation zu verlassen. [V∞](propulsion/v-infinity) ist deine Restgeschwindigkeit am Ziel."
+      ]
+    },
+    {
+      "heading": "5 — Der Flug sind nur fünf wiederholte Phasen.",
+      "diagram": "edl.svg",
+      "diagram_alt": "Atmosphäreneintritt, Fallschirm, Retropropulsion, Landung.",
+      "diagram_caption": "Eintritt, Abstieg, Landung. Sechs Minuten reiner Terror.",
+      "paragraphs": [
+        "Praktisch jede interplanetare Mission, von Voyager bis Perseverance, folgt demselben Skript:",
+        "[Start](mission-phases/launch) — raus aus der Atmosphäre nach LEO. [Trans-X-Injektion](mission-phases/trans-x-injection) — eine harte Brennphase im Perigäum, die dich auf die Transferellipse zum Mond (TLI), Mars (TMI), Venus (TVI) oder Jupiter (TJI) wirft. [Trajektorienkorrekturen](mission-phases/tcm) — winzige Brennphasen während des Flugs. [Bahneinschuss](mission-phases/orbit-insertion) — Bremsbrand am Ziel. [EDL](mission-phases/edl) — Entry, Descent, Landing — für Lander.",
+        "Mondmissionen umweifen manchmal über eine [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway lebt dort), und bemannte Apollo-Flüge flogen [Free-Return-Trajektorien](transfers/free-return) — Achterbahnen, die dich automatisch zur Erde bringen, falls jeder Motor stirbt. Apollo 13 verdankt diesem Pfad sein Überleben."
+      ]
+    },
+    {
+      "heading": "6 — Entfernungen und Zeit, weil nichts erdgroß ist.",
+      "diagram": "au.svg",
+      "diagram_alt": "Die astronomische Einheit, markiert entlang des Erdbahnradius.",
+      "diagram_caption": "1 AE = ein Erde-Sonne-Abstand. Mars ~1,5 AE. Jupiter ~5,2.",
+      "paragraphs": [
+        "Drei Einheiten überall. Die [astronomische Einheit](scales-time/au) (AE) ist der mittlere Erde-Sonne-Abstand. Die [Lichtminute](scales-time/light-minute) ist die Funksignal-Verzögerung. Mars: 4 bis 24 Minuten. Du kannst keinen Rover von der Erde steuern.",
+        "Die [J2000-Epoche](scales-time/j2000) ist der Kalender-Nullpunkt aller Astrodynamiker. [Sidereal vs. synodisch](scales-time/sidereal-synodic) erklärt, warum Marsfenster alle 26 Monate wiederkehren. Die [Ekliptik](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten (meist) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme — heliozentrisch, geozentrisch, körperzentriert."
+      ]
+    }
+  ],
+  "tools_heading": "Jetzt geh und spiel.",
+  "tools_intro": "Das ist die ganze Schleife. Du weißt jetzt genug, um jedes Label, jede Kontur und jede HUD-Anzeige in der App zu lesen. Hier setzt du es ein:",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Dreh das Sonnensystem. Sieh Keplers Gesetze live. Klick einen Planeten für seine Bahnelemente."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Wähl ein Ziel, ein Startjahr, sieh den Porkchop. Im Lappen verstecken sich die Hohmann-Transfers."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Flieg eine echte Mission. Das HUD zeigt Δv, V∞, MET, Erddistanz. Jede Zahl hast du gerade gelernt."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 echte Sonden, von Luna 9 bis Artemis II. Jeder FLIGHT-Tab zerlegt das Δv-Budget."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Bodenwahrheit. Wo jedes Apollo, jeder Rover, jeder aktive Satellit wirklich ist."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "Die zwei bemannten Außenposten, Modul für Modul."
+    }
+  ],
+  "closing": "Unter dieser Geschichte: die eigentliche Enzyklopädie. Sechs Tabs, vierzig Einträge, jede Formel und jedes Diagramm an einem Ort. Lesezeichen. Wir sind hier, wenn du uns brauchst."
+}

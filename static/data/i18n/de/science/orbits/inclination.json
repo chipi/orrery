@@ -1,0 +1,14 @@
+{
+  "title": "Inklination",
+  "intro_sentence": "Die Neigung der Bahnebene gegenüber einer Referenzebene — meist die Ekliptik oder der Erdäquator.",
+  "narrative_101": [
+    "Halt einen Teller flach vor dich — das ist die Referenzebene. Jetzt neig ihn. Der Winkel ist die Inklination. Jede Bahn lebt auf ihrem eigenen geneigten Teller.",
+    "Wichtig, weil Inklinationswechsel brutal teuer sind. Die ISS bei 51,6° — wegen Baikonur. Bildgebende Satelliten polar. GEO am Äquator. Jede Inklination ist eine Entscheidung mit Treibstoffrechnung."
+  ],
+  "body_paragraphs": [
+    "Die Inklination (`i`) ist der Winkel zwischen Bahnebene und Referenz. Heliozentrisch: die Ekliptik. Erdumlaufbahnen: meist der Äquator. Gemessen am aufsteigenden Knoten.",
+    "Die meisten Planeten nahe der Ekliptik — Erde 0° per Definition. Merkur 7° als Ausreißer. Plutos wilde 17° war ein Grund seiner Degradierung.",
+    "Erdsatelliten: äquatorial (0°) für GEO-Comsats. ~28° für Cape-Canaveral-Starts. ~51,6° für die ISS. Polar (~90°) für Erdbeobachtung. Sonnensynchron (~98°) für gleichmäßige Beleuchtung."
+  ],
+  "diagram_caption": "Bahnebene um Winkel i gegen die Referenz geneigt. Aufsteigender Knoten N markiert den Nordkreuzungspunkt."
+}

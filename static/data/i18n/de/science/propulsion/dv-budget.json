@@ -1,0 +1,15 @@
+{
+  "title": "Δv als Missionsbudget",
+  "intro_sentence": "Die einzige Zahl, die sagt, ob eine Mission möglich ist — gesamte Geschwindigkeitsänderung über alle Brennphasen.",
+  "narrative_101": [
+    "Geld für Raumfahrt ist nicht Dollar. Es ist Δv (\"delta-v\") in km/s. Jede Brennphase kostet was. Das Δv-Budget ist die laufende Summe.",
+    "Killer-Twist: deine Rakete hat kein unbegrenztes Δv. Hartes Limit per Tsiolkovsky. Übersteigt deine Rechnung das Limit, ist die Mission unmöglich — Geld hilft nicht.",
+    "Referenzzahlen: in den Orbit ~9,4 km/s. Hohmann zum Mars +3,6. Marseinschuss +2. Marslandung gesamt ~15 km/s — am Limit chemischer Raketen. Deshalb ist Marslanden viel schwerer als Mondlanden."
+  ],
+  "body_paragraphs": [
+    "Δv ist die Buchhaltungswährung der Raumfahrt. Jede Brennphase — Erdaufstieg, Bahn verlassen, Korrektur, Bremsen am Ziel — kostet Geschwindigkeitsänderung. Summe = Δv-Budget.",
+    "Angebot: Tsiolkovsky setzt die Decke (Isp + Treibstoffanteil). Nachfrage: Trajektoriendesign findet den billigsten Pfad. Mission fliegt, wenn Angebot ≥ Nachfrage. Sonst nicht.",
+    "Referenzen: Erdoberfläche zu LEO ~9,4 km/s. LEO zu Hohmann-Mars +3,6 km/s. MOI +2 km/s. Direkte Marslandung ~15 km/s — am Limit aktueller chemischer Einzelschuss-Raketen."
+  ],
+  "diagram_caption": "Gestapelte Balken: Δv Start + Injektion + Cruise + Ankunft = Gesamtbudget."
+}

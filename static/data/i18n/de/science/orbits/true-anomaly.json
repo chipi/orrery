@@ -1,0 +1,14 @@
+{
+  "title": "Wahre Anomalie",
+  "intro_sentence": "Der Winkel, der dir sagt, wo ein Körper auf der Bahn gerade ist, gemessen vom Perihel.",
+  "narrative_101": [
+    "Stell dir den Planeten auf seiner Ellipse vor. Wir haben Größe, Form, Neigung. Wo steht er gerade? Das ist die wahre Anomalie. Steh in der Sonne, zeig zum Perihel, und miss den Winkel zum Planeten.",
+    "Aber: er sweept den Winkel nicht gleichmäßig. Nahe Perihel rast er, nahe Aphel schleicht er (Keplers zweites Gesetz). Astronomen erfanden zwei weitere Winkel — mittlere und exzentrische Anomalie — die gleichmäßig ticken, und eine Leiter aus Gleichungen verbindet alle drei. Das läuft 60-mal pro Sekunde unter `/explore`."
+  ],
+  "body_paragraphs": [
+    "Die Bahnelemente beschreiben Form und Orientierung; die wahre Anomalie (`ν`) sagt dir, wo der Körper gerade ist. Vom Brennpunkt zum Perihel zeigen, dann zum Körper drehen — der Winkel ist die wahre Anomalie.",
+    "Sie läuft von 0 (Perihel) über 90° (Viertel) bis 180° (Aphel) und zurück. Anders als eine Uhr tickt sie ungleichmäßig.",
+    "Schwesterwinkel: mittlere Anomalie (`M`, gleichmäßig) und exzentrische Anomalie (`E`, Brücke). `M` linear, dann Keplers Gleichung `M = E - e·sin(E)` lösen, dann zu `ν` umrechnen."
+  ],
+  "diagram_caption": "Wahre Anomalie ν gemessen am Brennpunkt, vom Perihel zur aktuellen Position."
+}

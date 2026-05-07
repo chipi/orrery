@@ -1,0 +1,16 @@
+{
+  "title": "Tsiolkovsky-Raketengleichung",
+  "intro_sentence": "Wieviel Geschwindigkeitsänderung du aus einem Motor und einer Treibstoffmenge bekommst — die Gleichung, die Raumfahrt logarithmisch macht.",
+  "narrative_101": [
+    "Konstantin Tsiolkovsky war ein gehörloser russischer Lehrer, der in seiner Freizeit über Raumfahrt nachdachte, Jahrzehnte bevor jemand eine Rakete bauen konnte. 1903 schrieb er eine Gleichung auf, der niemand entkommt.",
+    "Δv hängt von zwei Dingen: Motorqualität und Treibstoffanteil. Die Beziehung ist LOGARITHMISCH. Verdopple Δv: nicht doppelter Treibstoff, exponentiell mehr. Saturn V: 90% Treibmittel.",
+    "Zwei Auswege: bessere Motoren (Isp) und Stufung. Echte Raketen tun beides. Trotzdem Single-Shot bei 10-15 km/s gedeckelt."
+  ],
+  "body_paragraphs": [
+    "Tsiolkovsky 1903, Jahrzehnte vor flugfähigen Raketen. Δv hängt vom Isp und dem Verhältnis Anfangs- zu Endmasse — logarithmisch im Verhältnis.",
+    "Logarithmus ist grausam. Doppelter Treibstoff: konstantes Δv-Plus. Doppelte Reichweite: exponentiell größere Rakete. Chemie (Isp ~300-450s) deckelt bei 10-15 km/s. Mehr braucht höheren Isp (Ionen ~3000s) oder Stufung.",
+    "Saturn V: 7.800 t nass, 600 t trocken. Massenverhältnis 13. Isp ~330s. Δv ≈ 8,3 km/s — knapp für TLI."
+  ],
+  "formula_caption": "Δv aus spezifischem Impuls, g₀ und Massenverhältnis m₀/m_f.",
+  "diagram_caption": "Δv vs Massenverhältnis: logarithmisch. Doppelter Treibstoff addiert nur konstanten Brocken."
+}

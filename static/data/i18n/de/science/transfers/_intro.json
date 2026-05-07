@@ -1,0 +1,8 @@
+{
+  "headline": "Transfers — im Orbit bist du auf halbem Weg überallhin.",
+  "paragraphs": [
+    "Heinlein schrieb das. Er hatte recht. LEO kostet ~9,4 km/s Δv — der schwerste Teil. Von dort zum Mars: nur ~3,6 km/s mehr. Sobald frei vom Planeten und im Orbit, ist der Rest des Sonnensystems hauptsächlich Geometrie.",
+    "Sieben Abschnitte. Hohmann ist die billigste Reise zwischen zwei Bahnen. Lambert verallgemeinert auf beliebige Daten. Swing-bys stehlen Geschwindigkeit von Planeten gratis — wie Voyager 2 Neptun erreichte. Free-Returns sind das Sicherheitsnetz, das Apollo 13 nach Hause brachte. Patched Conics sind die Arbeits-Approximation, die das alles im Browser möglich macht.",
+    "Wenn du nur einen Abschnitt liest: Hohmann-Transfer. Alles andere baut darauf auf."
+  ]
+}

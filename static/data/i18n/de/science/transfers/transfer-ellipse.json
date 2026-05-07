@@ -1,0 +1,14 @@
+{
+  "title": "Transferellipse",
+  "intro_sentence": "Der Keplersche Bogen, der eine Sonde zwischen Bahnen trägt — Sonne im Brennpunkt, wie jede Bahn.",
+  "narrative_101": [
+    "Missionsplanung klingt nach Triebwerken und Raketen. Es geht meistens darum, eine Ellipse zu wählen. Jede interplanetare Reise — Apollo, Voyager, Perseverance — ist eine Sonde, die auf einer elliptischen Bahn zwischen Start und Ziel reitet. Das Fachwort: Transferbahn.",
+    "Sie folgt denselben Regeln wie jede Keplersche Bahn. Nur mit Halbe-Bahn-Anteil: einsteigen, mitfahren, aussteigen."
+  ],
+  "body_paragraphs": [
+    "Nach dem Verlassen der Erdbahn bist du auf einer Sonnenellipse. Die Ellipse ist die Transferbahn — mit allen Eigenschaften: Halbachse, Exzentrizität, Perihel, Aphel.",
+    "Zwei Anker definieren sie: Start (Perihel bei Auswärtsreise) und Ziel (Aphel). Die Halbachse ist der Mittelwert.",
+    "Im `/fly`-HUD siehst du diese Ellipse in Echtzeit — Sonne im Brennpunkt, Perihel hinter dir, Aphel voraus."
+  ],
+  "diagram_caption": "Zwei koplanare Bahnen verbunden durch eine Transferellipse mit der Sonne im Brennpunkt."
+}

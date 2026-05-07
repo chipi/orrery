@@ -1,0 +1,15 @@
+{
+  "title": "Schwerkraftumlenkung (Swing-by)",
+  "intro_sentence": "Stiehl den Bahnimpuls eines Planeten beim Vorbeiflug — das Nächste an einem freien Mittagessen im Raum.",
+  "narrative_101": [
+    "Wirf einen Tennisball auf einen fahrenden Zug. Der Ball prallt von der Front zurück und kommt schneller, als du geworfen hast — die Zuggeschwindigkeit hat sich addiert. Das ist Swing-by. Sonde = Tennisball, Planet = Zug, \"Aufprall\" = \"Vorbeifall auf Hyperbel\".",
+    "Vom Planeten aus: gleiche Geschwindigkeit rein wie raus. Von der Sonne aus: Sonde erbt Bahnimpuls, kommt schneller (oder langsamer) raus. Kein Physikbruch — der Planet zahlt durch winziges Abbremsen.",
+    "Der Trick baute Voyagers Grand Tour. Voyager 2 verkettete vier: Jupiter, Saturn, Uranus, Neptun. Cassini bouncte zweimal Venus, einmal Erde zu Saturn. Das äußere Sonnensystem ist nur durch diesen Trick zugänglich."
+  ],
+  "body_paragraphs": [
+    "Nähere dich einem Planeten von hinten auf hyperbolischer Trajektorie. Die Gravitation biegt deinen Pfad, du schwingst vorbei, raus mit gleicher Relativgeschwindigkeit zum Planeten — aber der Planet bewegte sich, du trägst die Bewegung mit. Netto: mehr Sonnen-Geschwindigkeit raus.",
+    "Geometrie umkehren — von vorn — und du bremst. Pioneer 11 nutzte Jupiter Richtung Saturn. Voyager 2 verkettete vier in einer der schönsten Touren je geflogen. Cassini bouncte Venus zweimal, Erde einmal vor Saturn.",
+    "Ohne Swing-bys hätte halb Orrerys Katalog nicht fliegen können. Die äußeren Planeten sind zu weit für direkte Trajektorien mit Chemierakten."
+  ],
+  "diagram_caption": "Sonde tritt mit gleicher Geschwindigkeit ein und aus dem Planetenrahmen; Planetenbewegung addiert heliozentrisch."
+}

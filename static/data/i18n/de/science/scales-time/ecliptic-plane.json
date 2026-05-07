@@ -1,0 +1,14 @@
+{
+  "title": "Die Ekliptikebene",
+  "intro_sentence": "Die Ebene der Erdbahn — Referenz für fast jede Sonnensystem-Messung.",
+  "narrative_101": [
+    "Halt einen Teller flach, Murmel im Zentrum — Sonne. Kleinere Murmel um den Rand — Erde. Der Teller ist die Ekliptik. Erdbahn definiert sie; alles andere wird dagegen gemessen.",
+    "Seltsam: das meiste Sonnensystem lebt grob auf diesem Teller. Acht Planeten innerhalb weniger Grad. Mond bei 5°. Asteroidengürtel meist drauf. Kein Zufall — Fossil der Sonnensystementstehung. Die Scheibe setzte die Ebene.",
+    "Kometen sind die Joker. Langperiodische Kometen aus jeder Richtung — Reste der Oort-Wolke, die nie in die Scheibe fiel. Pluto bei 17° — ein Grund seiner Degradierung."
+  ],
+  "body_paragraphs": [
+    "Sonne, Erde, Mond zeichnen Pfade. Erdbahn definiert eine Ebene. Von Erde scheint die Sonne entlang dieser Ebene gegen Hintergrundsterne zu wandern — der Pfad ist die Ekliptik. Die meisten Körper liegen nahe ihr.",
+    "Ekliptik = Referenzebene für Inklinationen. Erde 0° per Definition. Merkur 7°, Pluto 17° werden gegen sie gemessen. Frühlingspunkt = Nullreferenz.",
+    "Orrerys `/explore` blickt standardmäßig von oben auf die Ekliptik — natürliche Perspektive für heliozentrische Bewegung."
+  ]
+}

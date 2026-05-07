@@ -1,0 +1,15 @@
+{
+  "title": "Free-Return-Trajektorie",
+  "intro_sentence": "Eine Trajektorie, die am Ziel vorbeischwingt und die Schwerkraft selbst zur Rückfahrkarte biegt — ohne Triebwerksbrand.",
+  "narrative_101": [
+    "Stell dir vor, du fliegst zum Mond. Sorge: was, wenn der Motor unterwegs ausfällt? Genialer Antwort: wähl einen Pfad, bei dem selbst wenn jeder Motor stirbt, die Schwerkraft allein dich um den Mond schwenkt und automatisch nach Hause wirft. Das ist Free-Return.",
+    "Eine echte Acht im Raum. Erde verlassen, zum Mond steigen, Mondgravitation biegt um 180°, zurück zur Erde, Atmosphäre am Rebound. Kein Motor.",
+    "Apollo 8 war die erste bemannte. Apollo 13 verdankt sein Überleben dem Pfad. Orrerys Standard-/fly-Szenario macht das für Mars: Erde → Mars-Vorbeiflug → Erde, ohne Mid-Course-Burns."
+  ],
+  "body_paragraphs": [
+    "Die Headline: Erde verlassen, am Mond (oder Mars) vorbei, dessen Gravitation biegt zurück zur Erde. Bei richtiger Geometrie reentry am Rebound. Kein Motor nötig.",
+    "Apollo 8 erste bemannte. Apollo 13 fiel auf die Technik zurück. Für Mars: 500-Tage-Loop. Vorbeiflug-Geometrie ersetzt die Rückkehrbrennphase.",
+    "Orrerys Standard-`/fly`, ORRERY-1: Erde-Mars-Erde Free-Return ohne TCMs, ohne Marsinjektion. Die Sonde umrundet die Sonne einmal, schwingt am Mars vorbei, kommt zurück. Der billigste je vorgeschlagene bemannte Mars-Vorbeiflug."
+  ],
+  "diagram_caption": "Erde → Mars-Vorbeiflug → Erde. Mondgravitation (oder Mars) macht die U-Kurve gratis."
+}

@@ -854,6 +854,156 @@ export function buildIssProxyStation(): THREE.Group {
     root.add(nesv);
   }
 
+  // ── Destiny handrails + window (Phase 2d) ──────────────────────────
+  const destinyPos = modulePositions.get('destiny');
+  if (destinyPos) {
+    const [dx, dy, dz] = destinyPos;
+    const dR = moduleRadius.get('destiny') ?? 0.168;
+    const handrailMat = new THREE.MeshStandardMaterial({
+      color: 0x9a9da4,
+      metalness: 0.5,
+      roughness: 0.55,
+    });
+    for (let i = 0; i < 4; i++) {
+      const angle = (i * Math.PI) / 2;
+      const handrail = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.005, 0.005, 0.55, 6),
+        handrailMat,
+      );
+      handrail.rotation.z = Math.PI / 2;
+      handrail.position.set(dx, dy + Math.cos(angle) * dR * 1.05, dz + Math.sin(angle) * dR * 1.05);
+      handrail.userData.moduleId = 'destiny';
+      handrail.userData.stationPickable = true;
+      handrail.name = 'destiny_handrail';
+      setShadowFlags(handrail);
+      root.add(handrail);
+    }
+    // Distinctive lab window on nadir side
+    const window = new THREE.Mesh(
+      new THREE.CircleGeometry(0.045, 14),
+      new THREE.MeshStandardMaterial({
+        color: 0x3a5a8a,
+        metalness: 0.6,
+        roughness: 0.3,
+        emissive: 0x152a44,
+        emissiveIntensity: 0.4,
+      }),
+    );
+    window.rotation.x = -Math.PI / 2;
+    window.position.set(dx + 0.12, dy - dR - 0.001, dz);
+    window.userData.moduleId = 'destiny';
+    window.userData.stationPickable = true;
+    window.name = 'destiny_window';
+    setShadowFlags(window);
+    root.add(window);
+  }
+
+  // ── Harmony nadir port stub (Phase 2d) ─────────────────────────────
+  const harmonyPos = modulePositions.get('harmony');
+  if (harmonyPos) {
+    const [hx, hy, hz] = harmonyPos;
+    const hR = moduleRadius.get('harmony') ?? 0.173;
+    const nadirStub = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.06, 0.07, 0.08, 10),
+      accessoryMat,
+    );
+    nadirStub.position.set(hx, hy - hR - 0.04, hz);
+    nadirStub.userData.moduleId = 'harmony';
+    nadirStub.userData.stationPickable = true;
+    nadirStub.name = 'harmony_nadir_port';
+    setShadowFlags(nadirStub);
+    root.add(nadirStub);
+  }
+
+  // ── Kibo ELM-PS + JEM-RMS small arm (Phase 2d) ─────────────────────
+  const kiboPos2 = modulePositions.get('kibo');
+  if (kiboPos2) {
+    const [kx, ky, kz] = kiboPos2;
+    const kR = moduleRadius.get('kibo') ?? 0.173;
+    // ELM-PS: smaller logistics module on Kibo zenith
+    const elmPs = new THREE.Mesh(
+      new THREE.CylinderGeometry(kR * 0.7, kR * 0.7, 0.33, 12, 1),
+      hullMat.clone(),
+    );
+    elmPs.rotation.x = Math.PI / 2;
+    elmPs.position.set(kx, ky + kR + 0.13, kz - 0.18);
+    elmPs.userData.moduleId = 'kibo';
+    elmPs.userData.stationPickable = true;
+    elmPs.name = 'kibo_elm_ps';
+    setShadowFlags(elmPs);
+    root.add(elmPs);
+
+    // JEM-RMS — short articulated arm on EF
+    const armMatJem = new THREE.MeshStandardMaterial({
+      color: ARM_GREY,
+      metalness: 0.4,
+      roughness: 0.5,
+    });
+    const efZ = kz - kR - 0.18;
+    const armBaseP = new THREE.Vector3(kx, ky, efZ - 0.04);
+    const armElbowP = new THREE.Vector3(kx + 0.18, ky + 0.12, efZ - 0.18);
+    const armTipP = new THREE.Vector3(kx + 0.32, ky, efZ - 0.32);
+    const armBoomA = cylinderBetween(armBaseP, armElbowP, 0.018, armMatJem);
+    const armElbowMesh = new THREE.Mesh(new THREE.SphereGeometry(0.022, 8, 6), armMatJem);
+    armElbowMesh.position.copy(armElbowP);
+    const armBoomB = cylinderBetween(armElbowP, armTipP, 0.018, armMatJem);
+    const armBaseMount = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.025, 0.025, 0.05, 8),
+      armMatJem,
+    );
+    armBaseMount.position.set(armBaseP.x, armBaseP.y, armBaseP.z - 0.025);
+    armBaseMount.rotation.x = Math.PI / 2;
+    for (const part of [armBaseMount, armBoomA, armElbowMesh, armBoomB]) {
+      part.userData.moduleId = 'kibo';
+      part.userData.stationPickable = true;
+      part.name = 'kibo_jem_rms';
+      setShadowFlags(part);
+      root.add(part);
+    }
+  }
+
+  // ── Columbus EPF + Bartolomeo (Phase 2d) ───────────────────────────
+  const columbusPos2 = modulePositions.get('columbus');
+  if (columbusPos2) {
+    const [cx2, cy2, cz2] = columbusPos2;
+    const cR2 = moduleRadius.get('columbus') ?? 0.176;
+    // Bartolomeo — distinctive larger forward platform
+    const bartolomeo = new THREE.Mesh(
+      new THREE.BoxGeometry(0.18, 0.06, 0.12),
+      new THREE.MeshStandardMaterial({
+        color: 0xb0b4bc,
+        metalness: 0.4,
+        roughness: 0.6,
+      }),
+    );
+    bartolomeo.position.set(cx2, cy2 + 0.04, cz2 + cR2 + 0.07);
+    bartolomeo.userData.moduleId = 'columbus';
+    bartolomeo.userData.stationPickable = true;
+    bartolomeo.name = 'columbus_bartolomeo';
+    setShadowFlags(bartolomeo);
+    root.add(bartolomeo);
+    // 3 smaller EPF platforms
+    const epfMat = new THREE.MeshStandardMaterial({
+      color: 0xc8ccd4,
+      metalness: 0.3,
+      roughness: 0.65,
+    });
+    const epfPositions: [number, number, number][] = [
+      [cx2 - 0.15, cy2 - 0.05, cz2 + cR2 + 0.04],
+      [cx2 - 0.05, cy2 + 0.06, cz2 + cR2 + 0.04],
+      [cx2 + 0.15, cy2 - 0.06, cz2 + cR2 + 0.04],
+    ];
+    for (const [px, py, pz] of epfPositions) {
+      const epf = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.04, 0.06), epfMat);
+      epf.position.set(px, py, pz);
+      epf.userData.moduleId = 'columbus';
+      epf.userData.stationPickable = true;
+      epf.name = 'columbus_epf';
+      setShadowFlags(epf);
+      root.add(epf);
+    }
+  }
+
   // ── Unity port stubs (Phase 2c) ────────────────────────────────────
   // Unity (Node 1) is a 6-port hub. The fwd/aft/port/starboard/nadir
   // ports are populated by adjacent modules; the zenith port is free

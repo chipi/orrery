@@ -264,6 +264,12 @@ export function buildIssProxyStation(): THREE.Group {
     if (id === 'cupola') {
       geom = new THREE.SphereGeometry(radius * 1.15, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2);
       rotZ = Math.PI;
+    } else if (id === 'beam') {
+      // Inflatable BEAM module — rounded "balloon" silhouette rather than a
+      // straight cylinder. r128 has no CapsuleGeometry per CLAUDE.md, so use
+      // a near-spherical bulge.
+      geom = new THREE.SphereGeometry(radius * 1.4, 14, 10);
+      rotZ = 0;
     } else {
       geom = new THREE.CylinderGeometry(radius, radius, w, 12, 1);
     }
@@ -355,6 +361,55 @@ export function buildIssProxyStation(): THREE.Group {
       setShadowFlags(mount);
       root.add(mount);
     }
+  }
+
+  // Russian docking compartments carry exposed docking probes — small cones
+  // protruding outward toward the visiting Soyuz / Progress berths.
+  const dockProbeMat = new THREE.MeshStandardMaterial({
+    color: 0xa0a4ac,
+    metalness: 0.55,
+    roughness: 0.45,
+  });
+  const PROBES: { host: IssModuleMeshId; outY: 1 | -1 }[] = [
+    { host: 'pirs', outY: 1 },
+    { host: 'rassvet', outY: -1 },
+    { host: 'prichal', outY: 1 },
+  ];
+  for (const { host, outY } of PROBES) {
+    const baseR = moduleRadius.get(host);
+    const hostBox = MODULE_BOXES.find((b) => b[0] === host);
+    if (!baseR || !hostBox) continue;
+    const [, hx, hy, hz] = hostBox;
+    const probe = new THREE.Mesh(
+      new THREE.CylinderGeometry(0, baseR * 0.45, 0.07, 10),
+      dockProbeMat,
+    );
+    probe.position.set(hx, hy + outY * (baseR + 0.04), hz);
+    if (outY < 0) probe.rotation.x = Math.PI;
+    probe.userData.moduleId = host;
+    probe.userData.issPickable = true;
+    probe.name = `probe_${host}`;
+    setShadowFlags(probe);
+    root.add(probe);
+  }
+
+  // Zvezda aft transfer compartment — smaller-diameter section at the -X end
+  // suggesting the SM's distinctive 2-section profile.
+  const zvezdaBox = MODULE_BOXES.find((b) => b[0] === 'zvezda');
+  if (zvezdaBox) {
+    const [, zx, zy, zz, zw] = zvezdaBox;
+    const zR = moduleRadius.get('zvezda') ?? 0.21;
+    const aft = new THREE.Mesh(
+      new THREE.CylinderGeometry(zR * 0.65, zR * 0.65, 0.08, 12, 1),
+      accessoryMat,
+    );
+    aft.rotation.z = Math.PI / 2;
+    aft.position.set(zx - zw / 2 - 0.04, zy, zz);
+    aft.userData.moduleId = 'zvezda';
+    aft.userData.issPickable = true;
+    aft.name = 'zvezda_aft';
+    setShadowFlags(aft);
+    root.add(aft);
   }
 
   buildVisitingFleet(root);

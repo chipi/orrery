@@ -209,24 +209,34 @@ export function buildTiangongProxyStation(): THREE.Group {
   // station axis on Tianhe's aft section).
   //
   // Real Tiangong proportions: Tianhe is 16.6 m long; each Tianhe array
-  // is ~12.6 m × 4.65 m. So per-side wing length ≈ 0.76 × Tianhe length
-  // and the aspect ratio is ~2.7:1 (long-thin, not square). ───────────
-  const tianheArrayTex = makeSolarArrayTexture();
-  tianheArrayTex.repeat.set(4, 1);
-  const tianheWingPair = new THREE.Group();
-  tianheWingPair.position.set(-tianheLen / 2 + 0.4, 0, 0);
-  // Rotate so wings extend along ±Z (perpendicular to Tianhe's X-axis,
-  // and out of plane with the Wentian/Mengtian cross-bar at +X end).
-  tianheWingPair.rotation.y = Math.PI / 2;
-  makeWingPair(tianheWingPair, 2.0, 0.4, SOLAR_GOLD);
-  root.add(tianheWingPair);
-  tianheWingPair.traverse((c) => {
-    if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {
-      c.material = c.material.clone();
-      c.material.map = tianheArrayTex;
-      c.material.needsUpdate = true;
-    }
+  // is ~12.6 m × 4.65 m. Per-side wing length ≈ 0.76 × core length, ~2.7:1
+  // long-thin aspect. Inlined (rather than using makeWingPair) because
+  // Tianhe's wings extend along ±Y (perpendicular to Tianhe's X-axis,
+  // in-plane with the labs' cross-bar) rather than along ±X. Face
+  // normal along ±Z so the broad face faces the sun / camera. ─────────
+  const tianheArrayMat = new THREE.MeshStandardMaterial({
+    color: SOLAR_GOLD,
+    metalness: 0.3,
+    roughness: 0.55,
   });
+  const tianheArrayTex = makeSolarArrayTexture();
+  tianheArrayTex.repeat.set(1, 4);
+  for (const sign of [-1, 1]) {
+    const wing = new THREE.Mesh(
+      // X = depth (0.4), Y = length (2.0), Z = thin (0.01) → face ±Z
+      new THREE.BoxGeometry(0.4, 2.0, 0.01),
+      tianheArrayMat.clone(),
+    );
+    wing.position.set(-tianheLen / 2 + 0.4, sign * (1.0 + 0.04), 0);
+    if (wing.material instanceof THREE.MeshStandardMaterial) {
+      wing.material.map = tianheArrayTex;
+      wing.material.needsUpdate = true;
+    }
+    setShadowFlags(wing);
+    wing.userData.stationPickable = false;
+    wing.name = 'tianhe_solar_array';
+    root.add(wing);
+  }
 
   // ── Wentian lab (along +Y from forward node) ────────────────────────
   const labLen = 2.4;
@@ -248,13 +258,17 @@ export function buildTiangongProxyStation(): THREE.Group {
   //
   // Real Tiangong proportions: each Wentian array is ~27 m × 4.6 m; the
   // lab itself is ~17.9 m. Arrays are 1.51× lab length per side and ~6:1
-  // long-thin (NOT fat squares). They're the dominant visual feature of
-  // the station. They deploy perpendicular to the lab axis — for the
-  // Wentian lab oriented along +Y, that means wings extend along ±X
-  // (parallel to Tianhe's axis). NO rotation on the wing-pair group:
-  // makeWingPair already places wings along ±X. ───────────────────────
+  // long-thin. They're the dominant visual feature of the station.
+  //
+  // Geometry: makeWingPair gives wings along ±X with thin axis Y (face
+  // normal Y). For sun-facing panels we need face normal Z, which means
+  // the panel's flat plane is XY (parallel to the orbital plane). The
+  // group's `rotation.x = π/2` rotates the wings around X-axis, swapping
+  // Y and Z — the thin dimension becomes Z, the depth dimension becomes
+  // Y. Wings still extend along ±X (perpendicular to the lab axis). ──
   const wentianWingPair = new THREE.Group();
   wentianWingPair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04, 0);
+  wentianWingPair.rotation.x = Math.PI / 2;
   makeWingPair(wentianWingPair, 3.6, 0.6, SOLAR_GOLD);
   root.add(wentianWingPair);
   // Apply solar texture to wing meshes for visual richness.
@@ -281,10 +295,10 @@ export function buildTiangongProxyStation(): THREE.Group {
   root.add(mengtian);
 
   // Mengtian outboard wing pair — same proportions as Wentian, mirrored
-  // to -Y. Wings extend along ±X (parallel to Tianhe), perpendicular to
-  // the lab axis.
+  // to -Y. Same `rotation.x = π/2` so the broad face is sun-facing (±Z).
   const mengtianWingPair = new THREE.Group();
   mengtianWingPair.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labLen + 0.04), 0);
+  mengtianWingPair.rotation.x = Math.PI / 2;
   makeWingPair(mengtianWingPair, 3.6, 0.6, SOLAR_GOLD);
   root.add(mengtianWingPair);
   mengtianWingPair.traverse((c) => {

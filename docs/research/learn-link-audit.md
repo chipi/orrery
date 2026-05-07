@@ -205,6 +205,42 @@ operating agency's mission page even when the rover is decades old:
 | `moon-sites/smart-1` | Add ESA SMART-1 page |
 | `mars-sites/*` for non-NASA landers | Apply the same agency-first rule when expanding the catalogue |
 
+## L-C editorial backfill (May 2026)
+
+The L-C milestone closed the gaps tabled above. Forty unique provenance
+entries were added, including:
+
+- **CLEP (Chinese Lunar Exploration Programme)** as the first `intro`
+  link on every Chang'e mission file (`change1`-`change6`) and on the
+  Chang'e moon-sites — the operator portal in zh.
+- **CMSE (China Manned Space Engineering, English)** on `tiangong`;
+  **CNSA english root** on `tianwen1`; **`en.beidou.gov.cn`** on
+  `beidou` — closes the previous CNSA-portal-zero footprint.
+- **ISRO mission pages** on `chandrayaan1`, `chandrayaan3` (mission +
+  earth-objects orbiter view + moon-site).
+- **ISAS/JAXA Japanese page** on `slim` (mission + moon-site);
+  **`humans-in-space.jaxa.jp/htv-x/`** on `htv_x` for the
+  Japanese-language ISS visitor.
+- **Russian Wikipedia (`ru.wikipedia.org`)** on Roscosmos / Soviet
+  historical missions (`luna9`, `luna17`, `luna24`, `luna10`, `mars3`)
+  *and* every Russian-segment ISS module / visitor (`zarya`, `zvezda`,
+  `nauka`, `pirs`, `prichal`, `rassvet`, `soyuz_ms`, `progress_ms`).
+- **`glonass-iac.ru`** as the Roscosmos GLONASS operator portal.
+- **`esahubble.org`** on `hubble`; **`esawebb.org`** + CSA JWST page
+  on `jwst` — fills the ESA / CSA observatory contributor gap.
+- **Hindi Wikipedia (`hi.wikipedia.org`)** on `chandrayaan3` and
+  `mangalyaan`; **Japanese Wikipedia (`ja.wikipedia.org`)** on `slim`;
+  **Chinese Wikipedia (`zh.wikipedia.org`)** on every Chang'e mission
+  / earth-object / moon-site and on `tiangong` / `tianwen1`.
+
+After L-C the manifest contains **342 unique entries** (was 296). The
+non-US agency footprint and the non-English link share both rise
+substantially; full re-baseline is in
+`docs/provenance/last-link-provenance-diff.md`. mars-sites adds
+Russian Wikipedia for `mars2` / `mars3` / `mars3-orbiter` / `mars6`,
+Chinese Wikipedia for `zhurong` / `tianwen1-orbiter`, and Hindi
+Wikipedia for `mangalyaan`.
+
 ## What ADR-051 must lock
 
 The audit motivates the contract:

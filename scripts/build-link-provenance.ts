@@ -153,6 +153,10 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /^esahubble\.org$/i,
     rule: { source_id: 'esa', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
   },
+  {
+    match: /^esawebb\.org$/i,
+    rule: { source_id: 'esa', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
 
   // ESA family ──────────────────────────────────────────────────────────
   {
@@ -181,11 +185,27 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)roscosmos\.ru$/i,
     rule: { source_id: 'roscosmos', defaultKind: 'agency-official', defaultLanguage: 'ru' },
   },
+  {
+    match: /(^|\.)glonass-iac\.ru$/i,
+    rule: { source_id: 'roscosmos', defaultKind: 'mission-microsite', defaultLanguage: 'ru' },
+  },
 
   // CNSA ────────────────────────────────────────────────────────────────
   {
     match: /(^|\.)cnsa\.gov\.cn$/i,
     rule: { source_id: 'cnsa', defaultKind: 'agency-official', defaultLanguage: '*' },
+  },
+  {
+    match: /(^|\.)clep\.org\.cn$/i,
+    rule: { source_id: 'cnsa', defaultKind: 'mission-microsite', defaultLanguage: 'zh' },
+  },
+  {
+    match: /(^|\.)cmse\.gov\.cn$/i,
+    rule: { source_id: 'cnsa', defaultKind: 'agency-official', defaultLanguage: '*' },
+  },
+  {
+    match: /(^|\.)beidou\.gov\.cn$/i,
+    rule: { source_id: 'cnsa', defaultKind: 'mission-microsite', defaultLanguage: '*' },
   },
 
   // MBRSC / UAE ─────────────────────────────────────────────────────────

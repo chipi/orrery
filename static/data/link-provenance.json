@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-07T14:14:56.696Z",
+  "generated_at": "2026-05-07T14:51:07.624Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "bc9111b0160a108c06a52d2b689bc66e2e4d0ff0",
+  "commit_sha": "b7d506f95d88f1eac92d1c23767de03ad9e41305",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -369,6 +369,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "beidou__4176e9ab8fd2",
+      "entity_id": "beidou",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "http://en.beidou.gov.cn/",
+      "label": "中国北斗卫星导航系统 (BeiDou, official)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "*",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "beidou__6ce2275e74bc",
       "entity_id": "beidou",
       "category": "earth-object",
@@ -378,6 +392,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "beidou__99a5823a1e6f",
+      "entity_id": "beidou",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%96%97%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F",
+      "label": "北斗卫星导航系统 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -553,11 +581,11 @@
     {
       "id": "chandrayaan1__a2fbfd753030",
       "entity_id": "chandrayaan1",
-      "category": "moon-site",
-      "route": "/moon",
+      "category": "mission",
+      "route": "/missions",
       "url": "https://www.isro.gov.in/Chandrayaan_1.html",
       "label": "Chandrayaan-1 — ISRO",
-      "tier": "core",
+      "tier": "intro",
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
@@ -593,6 +621,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "chandrayaan3__c8565ae1f409",
+      "entity_id": "chandrayaan3",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://www.isro.gov.in/Chandrayaan3_New.html",
+      "label": "Chandrayaan-3 — ISRO",
+      "tier": "intro",
+      "source_id": "isro",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "chandrayaan3__4b88bf53d4a9",
+      "entity_id": "chandrayaan3",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://hi.wikipedia.org/wiki/%E0%A4%9A%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%A8-3",
+      "label": "चंद्रयान-3 — हिन्दी विकिपीडिया",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "hi",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "chandrayaan3__1c83b028c49f",
       "entity_id": "chandrayaan3",
       "category": "moon-site",
@@ -603,6 +659,20 @@
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change1__38c4cbbd54bc",
+      "entity_id": "change1",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -621,6 +691,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "change2__43561206b191",
+      "entity_id": "change2",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "change2__11207eafc5b2",
       "entity_id": "change2",
       "category": "earth-object",
@@ -635,6 +719,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "change3__c66a8a07afce",
+      "entity_id": "change3",
+      "category": "moon-site",
+      "route": "/moon",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "change3__558e3ab823ad",
       "entity_id": "change3",
       "category": "moon-site",
@@ -645,6 +743,34 @@
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change3__45db3abcd867",
+      "entity_id": "change3",
+      "category": "moon-site",
+      "route": "/moon",
+      "url": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",
+      "label": "嫦娥三号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change4__7761aede4d98",
+      "entity_id": "change4",
+      "category": "mission",
+      "route": "/missions",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -691,6 +817,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "change4__455d3716d515",
+      "entity_id": "change4",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E5%9B%9B%E5%8F%B7",
+      "label": "嫦娥四号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change5__808a79c17e9e",
+      "entity_id": "change5",
+      "category": "mission",
+      "route": "/missions",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "change5__ecb3cddda24c",
       "entity_id": "change5",
       "category": "mission",
@@ -705,6 +859,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "change5__5d0a1919c075",
+      "entity_id": "change5",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%BA%94%E5%8F%B7",
+      "label": "嫦娥五号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change6__c580c6e50dcf",
+      "entity_id": "change6",
+      "category": "mission",
+      "route": "/missions",
+      "url": "http://www.clep.org.cn/",
+      "label": "中国探月与深空探测网 (CLEP)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "zh",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "change6__f17a5c229435",
       "entity_id": "change6",
       "category": "mission",
@@ -714,6 +896,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "change6__c6ba03d3ad27",
+      "entity_id": "change6",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E5%85%AD%E5%8F%B7",
+      "label": "嫦娥六号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -1265,6 +1461,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "glonass__31f8c2265b84",
+      "entity_id": "glonass",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://www.glonass-iac.ru/",
+      "label": "ГЛОНАСС (Информационно-аналитический центр)",
+      "tier": "intro",
+      "source_id": "roscosmos",
+      "language": "ru",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "glonass__d88465bf675b",
+      "entity_id": "glonass",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%9B%D0%9E%D0%9D%D0%90%D0%A1%D0%A1",
+      "label": "ГЛОНАСС — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "gps__6b17378c5c96",
       "entity_id": "gps",
       "category": "earth-object",
@@ -1489,6 +1713,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "htv_x__9701c616a9a1",
+      "entity_id": "htv_x",
+      "category": "iss-visitor",
+      "route": "/iss",
+      "url": "https://humans-in-space.jaxa.jp/htv-x/",
+      "label": "新型宇宙ステーション補給機 HTV-X (JAXA)",
+      "tier": "core",
+      "source_id": "jaxa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "hubble__cb78714bd2a5",
       "entity_id": "hubble",
       "category": "earth-object",
@@ -1499,6 +1737,20 @@
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "hubble__09e080309e2d",
+      "entity_id": "hubble",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://esahubble.org/",
+      "label": "ESA / Hubble (esahubble.org)",
+      "tier": "intro",
+      "source_id": "esa",
+      "language": "en",
+      "kind": "mission-microsite",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -1727,6 +1979,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "jwst__0ef475343194",
+      "entity_id": "jwst",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://esawebb.org/",
+      "label": "ESA / Webb (esawebb.org)",
+      "tier": "intro",
+      "source_id": "esa",
+      "language": "en",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "jwst__daf9a937ea2a",
       "entity_id": "jwst",
       "category": "earth-object",
@@ -1751,6 +2017,20 @@
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "jwst__2cd97eec8ee6",
+      "entity_id": "jwst",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://www.asc-csa.gc.ca/eng/satellites/jwst/Default.asp",
+      "label": "James Webb Space Telescope (CSA)",
+      "tier": "core",
+      "source_id": "csa",
+      "language": "en",
+      "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -1923,6 +2203,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "luna10__ac246bee9e23",
+      "entity_id": "luna10",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-10",
+      "label": "Луна-10 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "luna17__91822b85caef",
       "entity_id": "luna17",
       "category": "mission",
@@ -1947,6 +2241,20 @@
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "luna17__7efac2851a1b",
+      "entity_id": "luna17",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-1",
+      "label": "Луноход-1 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -1993,6 +2301,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "luna24__4e1d2d8bcc5b",
+      "entity_id": "luna24",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-24",
+      "label": "Луна-24 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "luna24__5c99a3d7efcb",
       "entity_id": "luna24",
       "category": "mission",
@@ -2035,6 +2357,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "luna9__94263e996525",
+      "entity_id": "luna9",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-9",
+      "label": "Луна-9 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "luna9__e2708cb88be5",
       "entity_id": "luna9",
       "category": "mission",
@@ -2065,11 +2401,11 @@
     {
       "id": "lunar-prospector__2c0089d77ef0",
       "entity_id": "lunar-prospector",
-      "category": "moon-site",
-      "route": "/moon",
+      "category": "earth-object",
+      "route": "/earth",
       "url": "https://science.nasa.gov/mission/lunar-prospector/",
-      "label": "Lunar Prospector — NASA",
-      "tier": "core",
+      "label": "Lunar Prospector (NASA)",
+      "tier": "intro",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
@@ -2143,6 +2479,20 @@
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "mangalyaan__3f43e2d74dee",
+      "entity_id": "mangalyaan",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A4%82%E0%A4%97%E0%A4%B2%E0%A4%AF%E0%A4%BE%E0%A4%A8",
+      "label": "मंगलयान — हिन्दी विकिपीडिया",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "hi",
+      "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -2413,6 +2763,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "mars2__ae231465c46a",
+      "entity_id": "mars2",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-2",
+      "label": "Марс-2 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "mars3__29a9de83a964",
       "entity_id": "mars3",
       "category": "mission",
@@ -2455,6 +2819,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "mars3__84a38cfec75e",
+      "entity_id": "mars3",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3",
+      "label": "Марс-3 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "mars3__5da72b47302e",
       "entity_id": "mars3",
       "category": "mission",
@@ -2483,6 +2861,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "mars3-orbiter__063ea1158e41",
+      "entity_id": "mars3-orbiter",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3",
+      "label": "Марс-3 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "mars6__0371ee221cc2",
       "entity_id": "mars6",
       "category": "mars-site",
@@ -2492,6 +2884,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "mars6__a4b7ca90c321",
+      "entity_id": "mars6",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-6",
+      "label": "Марс-6 — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -2674,6 +3080,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "nauka__c6150cc9c83b",
+      "entity_id": "nauka",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%83%D0%BA%D0%B0_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Наука (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -2931,6 +3351,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "pirs__ff5d6bc23b2e",
+      "entity_id": "pirs",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D1%80%D1%81_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Пирс (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "pirs__231aa1201141",
       "entity_id": "pirs",
       "category": "iss-module",
@@ -2973,6 +3407,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "prichal__832f95e5e147",
+      "entity_id": "prichal",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D1%87%D0%B0%D0%BB_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Причал (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "prichal__e56f3afc2340",
       "entity_id": "prichal",
       "category": "iss-module",
@@ -2996,6 +3444,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "progress_ms__28999e007a45",
+      "entity_id": "progress_ms",
+      "category": "iss-visitor",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81_%D0%9C%D0%A1",
+      "label": "Прогресс МС — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -3094,6 +3556,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "rassvet__65f1a3ac03d4",
+      "entity_id": "rassvet",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D1%81%D0%B2%D0%B5%D1%82_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Рассвет (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -3239,6 +3715,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "slim__0a3f51eec15c",
+      "entity_id": "slim",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://ja.wikipedia.org/wiki/SLIM_(%E5%AE%87%E5%AE%99%E6%A9%9F)",
+      "label": "SLIM — 日本語版ウィキペディア",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ja",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "slim__fd6c569b19a1",
+      "entity_id": "slim",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://www.isas.jaxa.jp/home/slim/",
+      "label": "小型月着陸実証機 SLIM (ISAS/JAXA)",
+      "tier": "core",
+      "source_id": "jaxa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "sls-block-1__97367022b2b4",
       "entity_id": "sls-block-1",
       "category": "rocket",
@@ -3283,11 +3787,11 @@
     {
       "id": "smart-1__eb103c8509d0",
       "entity_id": "smart-1",
-      "category": "moon-site",
-      "route": "/moon",
+      "category": "earth-object",
+      "route": "/earth",
       "url": "https://www.esa.int/Science_Exploration/Space_Science/SMART-1",
-      "label": "SMART-1 — ESA",
-      "tier": "core",
+      "label": "SMART-1 (ESA Science)",
+      "tier": "intro",
       "source_id": "esa",
       "language": "en",
       "kind": "agency-official",
@@ -3304,6 +3808,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "soyuz_ms__390458a6a793",
+      "entity_id": "soyuz_ms",
+      "category": "iss-visitor",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D0%9C%D0%A1",
+      "label": "Союз МС — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -3631,6 +4149,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "tiangong__aba306d3bc81",
+      "entity_id": "tiangong",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "http://en.cmse.gov.cn/",
+      "label": "China Manned Space (CMSE, English)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "*",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "tiangong__c280a1c2d6a1",
       "entity_id": "tiangong",
       "category": "earth-object",
@@ -3654,6 +4186,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "tiangong__802348b9690a",
+      "entity_id": "tiangong",
+      "category": "earth-object",
+      "route": "/earth",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%AE%AB%E7%A9%BA%E9%97%B4%E7%AB%99",
+      "label": "天宫空间站 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -3687,6 +4233,34 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "tianwen1__b1abbca9baa7",
+      "entity_id": "tianwen1",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://www.cnsa.gov.cn/english/",
+      "label": "国家航天局 (CNSA, English)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "*",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "tianwen1__7bef37d17d8d",
+      "entity_id": "tianwen1",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F",
+      "label": "天问一号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "tianwen1-orbiter__9e36b9c7b2e6",
       "entity_id": "tianwen1-orbiter",
       "category": "mars-site",
@@ -3696,6 +4270,34 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "tianwen1-orbiter__4bb82956b6fc",
+      "entity_id": "tianwen1-orbiter",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://www.cnsa.gov.cn/english/",
+      "label": "国家航天局 (CNSA, English)",
+      "tier": "intro",
+      "source_id": "cnsa",
+      "language": "*",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "tianwen1-orbiter__c87734d81e2e",
+      "entity_id": "tianwen1-orbiter",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F",
+      "label": "天问一号 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
@@ -4079,6 +4681,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "zarya__42e0835c70bf",
+      "entity_id": "zarya",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D1%80%D1%8F_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Заря (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "zarya__265596629fd1",
       "entity_id": "zarya",
       "category": "iss-module",
@@ -4121,6 +4737,20 @@
       "last_verified": "2026-05-07"
     },
     {
+      "id": "zhurong__a4b15f69b36c",
+      "entity_id": "zhurong",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://zh.wikipedia.org/wiki/%E7%A5%9D%E8%9E%8D%E5%8F%B7%E7%81%AB%E6%98%9F%E8%BD%A6",
+      "label": "祝融号火星车 — 中文维基百科",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "zh",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
       "id": "zvezda__e8cd398d3930",
       "entity_id": "zvezda",
       "category": "iss-module",
@@ -4130,6 +4760,20 @@
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-07"
+    },
+    {
+      "id": "zvezda__f2e604a2c5c6",
+      "entity_id": "zvezda",
+      "category": "iss-module",
+      "route": "/iss",
+      "url": "https://ru.wikipedia.org/wiki/%D0%97%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+      "label": "Звезда (модуль МКС) — русская Википедия",
+      "tier": "core",
+      "source_id": "wikipedia",
+      "language": "ru",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"

@@ -51,7 +51,7 @@
   <div class="page" class:has-right-rail={showRightRail}>
     <div class="layout">
       <aside class="rail rail-left" aria-label="Encyclopedia tabs">
-        <h2 class="rail-heading">Reference</h2>
+        <h2 class="rail-heading">Sections</h2>
         <ul class="tab-list">
           {#each SCIENCE_TABS as tab (tab)}
             <li>
@@ -66,7 +66,6 @@
             </li>
           {/each}
         </ul>
-        <a class="rail-home" href="{base}/science">← Space 101</a>
       </aside>
 
       <div class="content">
@@ -184,18 +183,6 @@
     font-size: 14px;
     line-height: 1.3;
   }
-  .rail-home {
-    display: inline-block;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    padding: 4px 0;
-  }
-  .rail-home:hover {
-    color: #4ecdc4;
-  }
   .content {
     min-width: 0;
   }
@@ -225,9 +212,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 10px;
-    }
-    .rail-home {
-      display: none;
     }
   }
 </style>

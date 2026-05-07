@@ -7,6 +7,7 @@
   hint anchors the eye to the rail when there's no further content.
 -->
 <script lang="ts">
+  import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -26,8 +27,13 @@
   <title>{tabLabel(data.tab)} · {m.science_page_title()}</title>
 </svelte:head>
 
+<nav class="crumb">
+  <a href="{base}/science">{m.science_heading()}</a>
+  <span class="sep">›</span>
+  <span>{tabLabel(data.tab)}</span>
+</nav>
+
 <header class="tab-hero">
-  <p class="eyebrow">{m.science_heading()}</p>
   <h1>{tabLabel(data.tab)}</h1>
 </header>
 
@@ -44,16 +50,26 @@
 <p class="hint">→ Pick a section from the right rail to start reading.</p>
 
 <style>
-  .tab-hero {
-    margin-bottom: 24px;
-  }
-  .eyebrow {
+  .crumb {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.45);
-    margin: 0 0 6px;
-    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .crumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+  .crumb a:hover {
+    color: #4ecdc4;
+  }
+  .sep {
+    margin: 0 8px;
+    opacity: 0.6;
+  }
+  .tab-hero {
+    margin-bottom: 24px;
   }
   h1 {
     font-family: var(--font-display);

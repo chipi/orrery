@@ -455,6 +455,58 @@ export function buildTiangongProxyStation(): THREE.Group {
     root.add(part);
   }
 
+  // ── Small experimental manipulator on Wentian's hull ────────────────
+  //
+  // Real Tiangong: a smaller secondary arm (~5 m vs Chinarm's 10 m) is
+  // bolted to Wentian's exterior for fine-grained payload work.
+  // Modelled here as a 5-segment articulated arm at half scale,
+  // mounted on Wentian's outboard +Z (zenith) face. Same `chinarm`
+  // pickable id as the main arm — both are robotic arms and share the
+  // same panel.
+  const wentianArmBase = new THREE.Vector3(
+    tianheLen / 2 + 0.14,
+    wentianBaseY + labInboardLen + 0.2,
+    labOuterRadius + 0.05,
+  );
+  const wentianArmElbow = new THREE.Vector3(
+    tianheLen / 2 + 0.14,
+    wentianBaseY + labInboardLen + 0.4,
+    labOuterRadius + 0.32,
+  );
+  const wentianArmTip = new THREE.Vector3(
+    tianheLen / 2 + 0.14,
+    wentianBaseY + labInboardLen + 0.18,
+    labOuterRadius + 0.6,
+  );
+
+  const wentianArmBaseMount = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.035, 0.035, 0.06, 10),
+    armMat,
+  );
+  wentianArmBaseMount.position.set(wentianArmBase.x, wentianArmBase.y, wentianArmBase.z - 0.03);
+  const wentianArmBoomA = cylinderBetween(wentianArmBase, wentianArmElbow, 0.025, armMat);
+  const wentianArmElbowJoint = new THREE.Mesh(new THREE.SphereGeometry(0.032, 10, 8), armMat);
+  wentianArmElbowJoint.position.copy(wentianArmElbow);
+  const wentianArmBoomB = cylinderBetween(wentianArmElbow, wentianArmTip, 0.025, armMat);
+  const wentianArmTipEffector = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.035, 0.035, 0.06, 10),
+    armMat,
+  );
+  wentianArmTipEffector.position.set(wentianArmTip.x, wentianArmTip.y, wentianArmTip.z + 0.03);
+
+  for (const part of [
+    wentianArmBaseMount,
+    wentianArmBoomA,
+    wentianArmElbowJoint,
+    wentianArmBoomB,
+    wentianArmTipEffector,
+  ]) {
+    part.userData.moduleId = 'chinarm';
+    part.userData.stationPickable = true;
+    setShadowFlags(part);
+    root.add(part);
+  }
+
   // ── Visiting fleet ─────────────────────────────────────────────────
   type Out = 'plusY' | 'minusY' | 'plusZ' | 'minusZ' | 'plusX' | 'minusX';
   const fleet: {

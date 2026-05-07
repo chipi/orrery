@@ -11,6 +11,7 @@
   import { missionGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
+  import ScienceChip from './ScienceChip.svelte';
 
   type Tab = 'overview' | 'gallery' | 'flight' | 'learn';
 
@@ -303,7 +304,13 @@
                   <dt>{m.mp_flight_label_vehicle_stage()}</dt>
                   <dd>{mission.flight.launch.vehicle_stage}</dd>
                 {/if}
-                <dt>{m.mp_flight_label_c3()}</dt>
+                <dt>
+                  {m.mp_flight_label_c3()}<ScienceChip
+                    tab="propulsion"
+                    section="c3"
+                    label="C3 — characteristic launch energy"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.launch.c3_km2_s2 != null
                     ? m.mp_flight_unit_c3({ value: fmtNum(mission.flight.launch.c3_km2_s2, 2) })
@@ -336,7 +343,13 @@
             <section class="flight-section">
               <h3>{m.mp_flight_section_cruise()}</h3>
               <dl class="flight-rows">
-                <dt>{m.mp_flight_label_tcm_count()}</dt>
+                <dt>
+                  {m.mp_flight_label_tcm_count()}<ScienceChip
+                    tab="mission-phases"
+                    section="tcm"
+                    label="TCMs — small mid-cruise corrections"
+                  />
+                </dt>
                 <dd class="numeric">{fmtInt(mission.flight.cruise.tcm_count)}</dd>
                 <dt>{m.mp_flight_label_peak_speed()}</dt>
                 <dd class="numeric">
@@ -359,7 +372,13 @@
             <section class="flight-section">
               <h3>{m.mp_flight_section_arrival()}</h3>
               <dl class="flight-rows">
-                <dt>{m.mp_flight_label_v_infinity()}</dt>
+                <dt>
+                  {m.mp_flight_label_v_infinity()}<ScienceChip
+                    tab="propulsion"
+                    section="v-infinity"
+                    label="V∞ — arrival speed at the destination"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.arrival.v_infinity_km_s != null
                     ? m.mp_flight_unit_kms({
@@ -389,7 +408,13 @@
                       })
                     : '—'}
                 </dd>
-                <dt>{m.mp_flight_label_oi_dv()}</dt>
+                <dt>
+                  {m.mp_flight_label_oi_dv()}<ScienceChip
+                    tab="mission-phases"
+                    section="orbit-insertion"
+                    label="Orbit insertion — the braking burn at the destination"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.arrival.orbit_insertion_dv_km_s != null
                     ? m.mp_flight_unit_kms({
@@ -410,7 +435,13 @@
             <section class="flight-section">
               <h3>{m.mp_flight_section_totals()}</h3>
               <dl class="flight-rows">
-                <dt>{m.mp_flight_label_total_dv()}</dt>
+                <dt>
+                  {m.mp_flight_label_total_dv()}<ScienceChip
+                    tab="propulsion"
+                    section="dv-budget"
+                    label="∆v — the universal currency of spaceflight"
+                  />
+                </dt>
                 <dd class="numeric accent-dv">
                   {mission.flight.totals.total_dv_km_s != null
                     ? m.mp_flight_unit_kms({
@@ -418,7 +449,13 @@
                       })
                     : '—'}
                 </dd>
-                <dt>{m.mp_flight_label_tli_dv()}</dt>
+                <dt>
+                  {m.mp_flight_label_tli_dv()}<ScienceChip
+                    tab="mission-phases"
+                    section="trans-x-injection"
+                    label="TLI/TMI — the big departure burn from Earth orbit"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.totals.tli_or_tmi_dv_km_s != null
                     ? m.mp_flight_unit_kms({

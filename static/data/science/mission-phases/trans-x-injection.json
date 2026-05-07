@@ -2,6 +2,8 @@
   "id": "trans-x-injection",
   "tab": "mission-phases",
   "order": 2,
+  "diagram": "trans-x-injection.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/missions", "context_key": "TLI/TMI ∆v is the first row of every interplanetary FLIGHT tab" }
   ],

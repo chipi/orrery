@@ -2,6 +2,8 @@
   "id": "specific-impulse",
   "tab": "propulsion",
   "order": 3,
+  "diagram": "specific-impulse.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/missions", "context_key": "Rocket detail shows engine Isp" }
   ],

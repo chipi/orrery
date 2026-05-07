@@ -2,6 +2,8 @@
   "id": "viability",
   "tab": "porkchop",
   "order": 6,
+  "diagram": "viability.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/plan", "context_key": "/plan compares mission ∆v against your selected vehicle's capability" }
   ],

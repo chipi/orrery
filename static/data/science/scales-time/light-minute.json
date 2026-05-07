@@ -2,6 +2,8 @@
   "id": "light-minute",
   "tab": "scales-time",
   "order": 2,
+  "diagram": "light-minute.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/fly", "context_key": "/fly's HUD shows Earth-distance in light-minutes during cruise" }
   ],

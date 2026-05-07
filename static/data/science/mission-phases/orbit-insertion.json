@@ -2,6 +2,8 @@
   "id": "orbit-insertion",
   "tab": "mission-phases",
   "order": 4,
+  "diagram": "orbit-insertion.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/missions", "context_key": "FLIGHT tab shows orbit-insertion ∆v for orbit-class missions" }
   ],

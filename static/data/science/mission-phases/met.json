@@ -2,6 +2,8 @@
   "id": "met",
   "tab": "mission-phases",
   "order": 6,
+  "diagram": "met.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/fly", "context_key": "/fly's HUD shows MET in days since launch" }
   ],

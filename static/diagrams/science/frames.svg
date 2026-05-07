@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Three concentric reference frames: heliocentric outermost, geocentric in the middle, body-centric innermost.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .sun { fill: #ffc850; }
+    .earth { fill: rgba(75,156,211,0.85); }
+    .mars { fill: rgba(193,68,14,0.85); }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+  </style>
+  <text class="lbl" x="20" y="22">Reference frames</text>
+  <circle class="dashed" cx="170" cy="130" r="100" />
+  <text class="tick" x="80" y="50" fill="rgba(255,255,255,0.7)">heliocentric</text>
+  <circle class="sun" cx="170" cy="130" r="5" />
+  <text class="tick" x="178" y="133">Sun</text>
+  <circle class="dashed" cx="260" cy="100" r="34" />
+  <text class="tick" x="240" y="68" fill="rgba(255,255,255,0.7)">geocentric</text>
+  <circle class="earth" cx="260" cy="100" r="3.5" />
+  <text class="tick" x="266" y="103">Earth</text>
+  <circle class="accent" cx="270" cy="92" r="3" />
+  <text class="tick" x="276" y="92" fill="#4ecdc4">sat</text>
+  <circle class="dashed" cx="100" cy="180" r="22" />
+  <text class="tick" x="78" y="218" fill="rgba(255,255,255,0.7)">body-centric (Mars)</text>
+  <circle class="mars" cx="100" cy="180" r="3.5" />
+  <text class="lbl" x="20" y="234">switch frames at sphere-of-influence boundaries — patched conics</text>
+</svg>

@@ -2,6 +2,8 @@
   "id": "departure-axis",
   "tab": "porkchop",
   "order": 2,
+  "diagram": "departure-axis.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/plan", "context_key": "X axis on the porkchop is DEPARTURE WINDOW" }
   ],

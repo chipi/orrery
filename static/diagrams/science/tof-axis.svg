@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" role="img" aria-label="A vertical time-of-flight axis showing how cost trades off: fast trips expensive, slow trips also expensive, Hohmann band cheapest in between.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+  </style>
+  <defs>
+    <linearGradient id="tof-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c1440e" />
+      <stop offset="40%" stop-color="#4ecdc4" />
+      <stop offset="60%" stop-color="#4ecdc4" />
+      <stop offset="100%" stop-color="#ffc850" />
+    </linearGradient>
+  </defs>
+  <text class="lbl" x="20" y="22">Time-of-flight axis (Mars)</text>
+  <rect x="120" y="40" width="34" height="160" fill="url(#tof-grad)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+  <line x1="120" y1="40" x2="100" y2="40" class="stroke" />
+  <text class="tick" x="60" y="44">100 d</text>
+  <line x1="120" y1="200" x2="100" y2="200" class="stroke" />
+  <text class="tick" x="60" y="204">500 d</text>
+  <line x1="154" y1="60" x2="180" y2="60" class="stroke" />
+  <text class="tick" x="186" y="64" fill="rgba(193,68,14,0.85)">fast = expensive</text>
+  <line x1="154" y1="115" x2="180" y2="115" class="stroke" />
+  <text class="tick" x="186" y="119" fill="#4ecdc4">~250 d Hohmann band</text>
+  <line x1="154" y1="195" x2="180" y2="195" class="stroke" />
+  <text class="tick" x="186" y="199" fill="#ffc850">slow = wasteful</text>
+  <text class="tick" x="137" y="32" text-anchor="middle">faster</text>
+  <text class="tick" x="137" y="215" text-anchor="middle">slower</text>
+</svg>

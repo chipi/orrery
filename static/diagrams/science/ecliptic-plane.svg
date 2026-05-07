@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="The ecliptic shown as a tilted plane with planets on it and Pluto's orbit tilted 17 degrees off it.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .sun { fill: #ffc850; }
+    .planet { fill: rgba(255,255,255,0.85); }
+    .pluto { fill: rgba(193,68,14,0.85); }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+  </style>
+  <text class="lbl" x="20" y="22">The ecliptic plane</text>
+  <ellipse class="accent" cx="200" cy="120" rx="160" ry="20" />
+  <ellipse class="dashed" cx="200" cy="120" rx="100" ry="12" />
+  <ellipse class="dashed" cx="200" cy="120" rx="50" ry="6" />
+  <circle class="sun" cx="200" cy="120" r="6" />
+  <text class="tick" x="208" y="123">Sun</text>
+  <circle class="planet" cx="150" cy="120" r="3" />
+  <text class="tick" x="138" y="138">Earth</text>
+  <circle class="planet" cx="120" cy="120" r="2.5" />
+  <text class="tick" x="100" y="105">Mars</text>
+  <circle class="planet" cx="320" cy="118" r="3" />
+  <text class="tick" x="305" y="138">Jupiter</text>
+  <ellipse class="dashed" cx="200" cy="115" rx="170" ry="35" transform="rotate(-17 200 115)" />
+  <circle class="pluto" cx="42" cy="80" r="3" />
+  <text class="tick" x="48" y="78" fill="rgba(193,68,14,0.85)">Pluto · 17° off</text>
+  <text class="lbl" x="30" y="200">most of the solar system rides on a flat plate; comets + Pluto don't</text>
+</svg>

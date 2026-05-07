@@ -6,6 +6,7 @@
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
+  import LearnLink from './LearnLink.svelte';
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
   // the data file is the only consumer outside this component.
@@ -236,9 +237,11 @@
           {/if}
           {#if body.wiki}
             <li>
-              <a href={body.wiki} target="_blank" rel="noopener noreferrer">
-                {m.sbp_wikipedia_link({ name: body.name })}
-              </a>
+              <LearnLink
+                entityId={body.id}
+                url={body.wiki}
+                label={m.sbp_wikipedia_link({ name: body.name })}
+              />
             </li>
           {/if}
         </ul>
@@ -361,7 +364,10 @@
     flex-direction: column;
     gap: 10px;
   }
-  .learn-list a {
+  /* `:global(a)` because the anchor is rendered inside the
+     <LearnLink/> component which has its own scoped style; the
+     route-level visual is what the panel wants. */
+  .learn-list :global(a) {
     color: #4ecdc4;
     text-decoration: none;
     font-family: 'Space Mono', monospace;
@@ -373,8 +379,8 @@
     border-radius: 3px;
     display: block;
   }
-  .learn-list a:hover,
-  .learn-list a:focus-visible {
+  .learn-list :global(a:hover),
+  .learn-list :global(a:focus-visible) {
     background: rgba(78, 205, 196, 0.14);
     border-color: rgba(78, 205, 196, 0.5);
     outline: none;

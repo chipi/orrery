@@ -4,6 +4,7 @@
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
+  import LearnLink from './LearnLink.svelte';
 
   type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
 
@@ -202,7 +203,7 @@
               <ul>
                 {#each linksByTier.intro as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId="sun" url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -214,7 +215,7 @@
               <ul>
                 {#each linksByTier.core as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId="sun" url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -226,7 +227,7 @@
               <ul>
                 {#each linksByTier.deep as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId="sun" url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>

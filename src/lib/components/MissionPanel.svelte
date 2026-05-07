@@ -10,6 +10,7 @@
   import * as m from '$lib/paraglide/messages';
   import { missionGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
+  import LearnLink from './LearnLink.svelte';
 
   type Tab = 'overview' | 'gallery' | 'flight' | 'learn';
 
@@ -478,7 +479,7 @@
               <ul>
                 {#each linksByTier.intro as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -490,7 +491,7 @@
               <ul>
                 {#each linksByTier.core as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -502,7 +503,7 @@
               <ul>
                 {#each linksByTier.deep as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>

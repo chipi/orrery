@@ -18,6 +18,7 @@
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
+  import LearnLink from '$lib/components/LearnLink.svelte';
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -1254,7 +1255,7 @@
               <ul>
                 {#each panelLinksByTier.intro as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -1266,7 +1267,7 @@
               <ul>
                 {#each panelLinksByTier.core as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -1278,7 +1279,7 @@
               <ul>
                 {#each panelLinksByTier.deep as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>

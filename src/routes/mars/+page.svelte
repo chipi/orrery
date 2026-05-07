@@ -16,6 +16,7 @@
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
+  import LearnLink from '$lib/components/LearnLink.svelte';
 
   // ─── Nation palette (PRD-009 / RFC-012) ──────────────────────────
   // Mirrors /moon's palette + adds Europe (ESA-led missions like Mars
@@ -1335,7 +1336,7 @@
           <h4 class="learn-tier intro">INTRO</h4>
           <ul class="learn-links">
             {#each panelLinksByTier.intro as link (link.u)}
-              <li><a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a></li>
+              <li><LearnLink entityId={selected.id} url={link.u} label={link.l} /></li>
             {/each}
           </ul>
         {/if}
@@ -1343,7 +1344,7 @@
           <h4 class="learn-tier core">CORE</h4>
           <ul class="learn-links">
             {#each panelLinksByTier.core as link (link.u)}
-              <li><a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a></li>
+              <li><LearnLink entityId={selected.id} url={link.u} label={link.l} /></li>
             {/each}
           </ul>
         {/if}
@@ -1351,7 +1352,7 @@
           <h4 class="learn-tier deep">DEEP</h4>
           <ul class="learn-links">
             {#each panelLinksByTier.deep as link (link.u)}
-              <li><a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a></li>
+              <li><LearnLink entityId={selected.id} url={link.u} label={link.l} /></li>
             {/each}
           </ul>
         {/if}
@@ -1694,15 +1695,17 @@
   .learn-links li {
     padding: 4px 0;
   }
-  .learn-links a {
+  /* `:global(a)` so the route-level styling reaches the anchor inside
+     <LearnLink/> (whose CSS is scoped to that component). */
+  .learn-links :global(a) {
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
   }
-  .learn-links a:hover,
-  .learn-links a:focus-visible {
+  .learn-links :global(a:hover),
+  .learn-links :global(a:focus-visible) {
     color: #fff;
     border-bottom-color: #fff;
     outline: none;

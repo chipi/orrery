@@ -19,6 +19,7 @@
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
+  import LearnLink from '$lib/components/LearnLink.svelte';
 
   // ─── Earth scene constants ────────────────────────────────────────
   const EARTH_RADIUS = 8;
@@ -1187,7 +1188,7 @@
               <ul>
                 {#each panelLinksByTier.intro as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -1199,7 +1200,7 @@
               <ul>
                 {#each panelLinksByTier.core as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -1211,7 +1212,7 @@
               <ul>
                 {#each panelLinksByTier.deep as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={selected.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>

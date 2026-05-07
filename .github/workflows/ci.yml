@@ -26,7 +26,15 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
-      - run: npm run lint
+      # Split prettier + eslint into discrete steps with `if: always()` on
+      # the second so a Prettier failure doesn't short-circuit ESLint —
+      # both diagnostics surface in a single CI run, matching the
+      # preflight rule (CLAUDE.md "Before pushing").
+      - name: Lint — Prettier
+        run: npm run lint:prettier
+      - name: Lint — ESLint
+        if: always()
+        run: npm run lint:eslint
       - run: npm run test
       - run: npm run validate-data
       - run: npm run build

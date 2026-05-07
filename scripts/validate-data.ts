@@ -455,4 +455,61 @@ if (existsSync(SOURCE_LOGOS_PATH)) {
   }
 }
 
-if (failed + docFailed + missionDriftFailed + provenanceFailed + credBomFailed > 0) process.exit(1);
+// ──────────────────────────────────────────────────────────────────────
+// Asset-size guard — fail any image under static/images/ that exceeds
+// the workbox precache cap configured in vite.config.ts. Without this
+// the build silently fails late, after lint + tests + most of vite's
+// own work has already happened. Catching it here gives a clear error
+// at the validate-data step.
+//
+// The cap below MUST stay in sync with `maximumFileSizeToCacheInBytes`
+// in vite.config.ts. Bump both together when adding hi-res hero
+// imagery that exceeds the current ceiling.
+// ──────────────────────────────────────────────────────────────────────
+
+const WORKBOX_CACHE_LIMIT_BYTES = 8 * 1024 * 1024;
+const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg']);
+const IMAGE_ROOT = 'static/images';
+
+function* walkImages(dir: string): Generator<string> {
+  if (!existsSync(dir)) return;
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      yield* walkImages(full);
+    } else if (entry.isFile()) {
+      const lower = entry.name.toLowerCase();
+      const ext = lower.slice(lower.lastIndexOf('.'));
+      if (IMAGE_EXTS.has(ext)) yield full;
+    }
+  }
+}
+
+let assetSizeFailed = 0;
+console.log('\nValidating image asset sizes (workbox precache cap)...');
+const oversized: { path: string; bytes: number }[] = [];
+for (const file of walkImages(IMAGE_ROOT)) {
+  const sz = statSync(file).size;
+  if (sz > WORKBOX_CACHE_LIMIT_BYTES) {
+    oversized.push({ path: file, bytes: sz });
+  }
+}
+if (oversized.length === 0) {
+  console.log(`  ✓ all images under ${WORKBOX_CACHE_LIMIT_BYTES / 1024 / 1024} MiB cap`);
+} else {
+  assetSizeFailed = oversized.length;
+  for (const { path, bytes } of oversized) {
+    console.error(
+      `  ✗ ${path}: ${(bytes / 1024 / 1024).toFixed(2)} MB exceeds ${WORKBOX_CACHE_LIMIT_BYTES / 1024 / 1024} MiB workbox cap`,
+    );
+  }
+  console.error(
+    `  ${assetSizeFailed} oversized image(s) — either resize OR bump maximumFileSizeToCacheInBytes in vite.config.ts (and this script) together`,
+  );
+}
+
+if (
+  failed + docFailed + missionDriftFailed + provenanceFailed + credBomFailed + assetSizeFailed >
+  0
+)
+  process.exit(1);

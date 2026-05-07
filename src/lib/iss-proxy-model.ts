@@ -289,6 +289,22 @@ export function buildIssProxyStation(): THREE.Group {
       ring.userData.moduleId = 'cupola';
       setShadowFlags(ring);
       root.add(ring);
+      // Interior emissive glow — visible through the seven-window dome opening,
+      // suggesting the lit interior + Earth-reflection.
+      const glow = new THREE.Mesh(
+        new THREE.CircleGeometry(radius * 0.85, 14),
+        new THREE.MeshBasicMaterial({
+          color: 0x6ec0ff,
+          transparent: true,
+          opacity: 0.55,
+        }),
+      );
+      glow.position.set(x, y - radius * 0.55, z);
+      glow.rotation.x = Math.PI / 2;
+      glow.userData.issPickable = true;
+      glow.userData.moduleId = 'cupola';
+      glow.name = 'cupola_glow';
+      root.add(glow);
     }
   }
 
@@ -417,6 +433,7 @@ export function buildIssProxyStation(): THREE.Group {
     { host: 'harmony', topY: 0.58, bottomY: 0.17 },
     { host: 'tranquility', topY: 0.58, bottomY: 0.09 },
     { host: 'pirs', topY: 0.59, bottomY: 0.28 },
+    { host: 'destiny', topY: 0.61, bottomY: 0.2 },
   ];
   for (const { host, topY, bottomY } of ZENITH_ADAPTERS) {
     const hostBox = MODULE_BOXES.find((b) => b[0] === host);
@@ -580,6 +597,43 @@ function buildCygnus(): THREE.Group {
   return g;
 }
 
+function buildStarliner(): THREE.Group {
+  const g = new THREE.Group();
+  g.name = 'visiting_starliner';
+  const hull = new THREE.MeshStandardMaterial({
+    color: US_WHITE,
+    metalness: 0.15,
+    roughness: 0.6,
+  });
+  const accent = new THREE.MeshStandardMaterial({
+    color: 0x1c3a72,
+    metalness: 0.3,
+    roughness: 0.5,
+  });
+  // Service module — boxy cylinder
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.12, 14), hull);
+  service.position.y = -0.04;
+  setShadowFlags(service);
+  g.add(service);
+  // Crew capsule — Starliner has a steeper truncated cone than Dragon
+  const capsule = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.075, 0.11, 14), hull);
+  capsule.position.y = 0.08;
+  setShadowFlags(capsule);
+  g.add(capsule);
+  // Boeing blue accent ring at capsule/service junction
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.008, 6, 16), accent);
+  ring.rotation.x = Math.PI / 2;
+  ring.position.y = 0.022;
+  setShadowFlags(ring);
+  g.add(ring);
+  // Top docking adapter
+  const dockTip = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.04, 0.035, 12), hull);
+  dockTip.position.y = 0.155;
+  setShadowFlags(dockTip);
+  g.add(dockTip);
+  return g;
+}
+
 function buildHtvX(): THREE.Group {
   const g = new THREE.Group();
   g.name = 'visiting_htvx';
@@ -625,6 +679,7 @@ export const ISS_VISITOR_IDS = [
   'cargo_dragon',
   'cygnus',
   'htv_x',
+  'starliner',
 ] as const;
 
 export type IssVisitorId = (typeof ISS_VISITOR_IDS)[number];
@@ -656,6 +711,7 @@ function buildVisitingFleet(root: THREE.Group) {
     },
     { id: 'cygnus', build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
     { id: 'htv_x', build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
+    { id: 'starliner', build: buildStarliner, port: [-2.35, 0.65, 0], out: 'plusY' },
   ];
   for (const ship of fleet) {
     const g = ship.build();
@@ -674,5 +730,30 @@ function buildVisitingFleet(root: THREE.Group) {
       }
     });
     root.add(g);
+
+    // Faint dotted approach corridor extending past the vehicle in the same
+    // out-direction — suggests the rendezvous trajectory.
+    const corridorMat = new THREE.LineDashedMaterial({
+      color: 0x4ecdc4,
+      transparent: true,
+      opacity: 0.35,
+      dashSize: 0.08,
+      gapSize: 0.06,
+    });
+    const dir = new THREE.Vector3(0, 0, 0);
+    if (ship.out === 'plusY') dir.set(0, 1, 0);
+    else if (ship.out === 'minusY') dir.set(0, -1, 0);
+    else if (ship.out === 'plusZ') dir.set(0, 0, 1);
+    else if (ship.out === 'minusZ') dir.set(0, 0, -1);
+    else if (ship.out === 'plusX') dir.set(1, 0, 0);
+    else if (ship.out === 'minusX') dir.set(-1, 0, 0);
+    const start = new THREE.Vector3(...ship.port).addScaledVector(dir, 0.4);
+    const end = start.clone().addScaledVector(dir, 1.8);
+    const lineGeom = new THREE.BufferGeometry().setFromPoints([start, end]);
+    const line = new THREE.Line(lineGeom, corridorMat);
+    line.computeLineDistances();
+    line.userData.issPickable = false;
+    line.name = `corridor_${ship.id}`;
+    root.add(line);
   }
 }

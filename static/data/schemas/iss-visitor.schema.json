@@ -4,8 +4,8 @@
   "title": "IssVisitors",
   "description": "Visiting spacecraft currently or commonly docked at the ISS. Same shape as iss-modules so the existing IssModulePanel can render them; separate file because they are visitors, not station structure.",
   "type": "array",
-  "minItems": 6,
-  "maxItems": 6,
+  "minItems": 7,
+  "maxItems": 7,
   "items": {
     "type": "object",
     "additionalProperties": false,
@@ -26,7 +26,15 @@
     "properties": {
       "id": {
         "type": "string",
-        "enum": ["soyuz_ms", "progress_ms", "crew_dragon", "cargo_dragon", "cygnus", "htv_x"]
+        "enum": [
+          "soyuz_ms",
+          "progress_ms",
+          "crew_dragon",
+          "cargo_dragon",
+          "cygnus",
+          "htv_x",
+          "starliner"
+        ]
       },
       "builder": { "type": "string", "minLength": 1 },
       "builder_country": { "type": "string", "minLength": 1 },

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A porkchop chapter cover — concentric ovals stacked into a flame-shaped lobe, suggesting the iconic shape on a cool background.">
+  <style>
+    .stroke-faint { stroke: rgba(255,255,255,0.1); stroke-width: 0.6; fill: none; }
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.55); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.4; fill: none; }
+    .accent-thick { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .red { stroke: rgba(193,68,14,0.55); stroke-width: 1; fill: none; }
+    .gold { stroke: rgba(255,200,80,0.5); stroke-width: 0.9; fill: none; }
+    .star { fill: rgba(255,255,255,0.45); }
+    .dim-star { fill: rgba(255,255,255,0.22); }
+    .label { font-family: 'Crimson Pro', serif; font-style: italic; font-size: 13px; fill: rgba(255,255,255,0.45); }
+  </style>
+  <circle class="dim-star" cx="40" cy="35" r="0.8" />
+  <circle class="star" cx="540" cy="42" r="1" />
+  <circle class="dim-star" cx="60" cy="220" r="0.8" />
+  <circle class="star" cx="540" cy="230" r="1" />
+  <ellipse class="red" cx="270" cy="135" rx="220" ry="95" />
+  <ellipse class="red" cx="270" cy="135" rx="200" ry="83" />
+  <ellipse class="gold" cx="265" cy="135" rx="170" ry="68" />
+  <ellipse class="gold" cx="262" cy="135" rx="142" ry="55" />
+  <ellipse class="stroke-bright" cx="260" cy="135" rx="115" ry="42" />
+  <ellipse class="accent" cx="245" cy="138" rx="68" ry="28" transform="rotate(-12 245 138)" />
+  <ellipse class="accent" cx="290" cy="128" rx="68" ry="28" transform="rotate(12 290 128)" />
+  <ellipse class="accent-thick" cx="250" cy="135" rx="44" ry="20" transform="rotate(-8 250 135)" />
+  <ellipse class="accent-thick" cx="300" cy="130" rx="44" ry="20" transform="rotate(8 300 130)" />
+  <text class="label" x="495" y="60">a map of</text>
+  <text class="label" x="495" y="78">when to leave</text>
+  <text class="label" x="40" y="220">cheap</text>
+  <text class="label" x="40" y="60">expensive</text>
+</svg>

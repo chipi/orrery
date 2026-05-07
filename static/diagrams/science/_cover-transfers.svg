@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A transfers chapter cover — a single elegant arc from a small blue world to a small red world with a tiny spacecraft caught in mid-cruise.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.4); stroke-width: 1.1; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .accent-thick { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .earth { fill: rgba(75,156,211,0.85); }
+    .mars { fill: rgba(193,68,14,0.85); }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+    .craft { fill: rgba(255,255,255,0.95); }
+  </style>
+  <circle class="dim-star" cx="60" cy="35" r="0.8" />
+  <circle class="star" cx="160" cy="55" r="1.1" />
+  <circle class="dim-star" cx="250" cy="28" r="0.7" />
+  <circle class="star" cx="340" cy="42" r="1.2" />
+  <circle class="dim-star" cx="430" cy="60" r="0.8" />
+  <circle class="star" cx="520" cy="32" r="1" />
+  <circle class="dim-star" cx="100" cy="220" r="0.8" />
+  <circle class="star" cx="270" cy="240" r="1" />
+  <circle class="dim-star" cx="380" cy="225" r="0.7" />
+  <circle class="dim-star" cx="500" cy="240" r="0.9" />
+  <ellipse class="stroke-soft" cx="300" cy="135" rx="200" ry="80" />
+  <ellipse class="stroke-mid" cx="300" cy="135" rx="120" ry="48" />
+  <path class="accent-thick" d="M 200 168 Q 280 60 450 88" />
+  <circle class="earth" cx="200" cy="168" r="8" />
+  <circle cx="200" cy="168" r="14" fill="none" stroke="rgba(75,156,211,0.3)" stroke-width="0.8" />
+  <circle class="mars" cx="450" cy="88" r="6" />
+  <circle cx="450" cy="88" r="11" fill="none" stroke="rgba(193,68,14,0.3)" stroke-width="0.8" />
+  <g transform="translate(310 95) rotate(-25)">
+    <polygon class="craft" points="-5,-3 6,0 -5,3 -3,0" />
+    <line x1="-5" y1="-3" x2="-9" y2="-2" stroke="rgba(78,205,196,0.85)" stroke-width="1.5" />
+    <line x1="-5" y1="3" x2="-9" y2="2" stroke="rgba(78,205,196,0.85)" stroke-width="1.5" />
+  </g>
+</svg>

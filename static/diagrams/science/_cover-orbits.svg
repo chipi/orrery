@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="An orbits chapter cover — overlapping elliptical paths around a central body, suggesting the family of all possible orbits.">
+  <style>
+    .body { fill: #ffc850; }
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+  </style>
+  <circle class="dim-star" cx="50" cy="40" r="0.8" />
+  <circle class="star" cx="120" cy="60" r="1.1" />
+  <circle class="dim-star" cx="200" cy="30" r="0.9" />
+  <circle class="dim-star" cx="280" cy="50" r="0.7" />
+  <circle class="star" cx="370" cy="38" r="1.2" />
+  <circle class="dim-star" cx="450" cy="60" r="0.8" />
+  <circle class="star" cx="530" cy="44" r="1.1" />
+  <circle class="dim-star" cx="80" cy="220" r="0.8" />
+  <circle class="star" cx="180" cy="240" r="1" />
+  <circle class="dim-star" cx="320" cy="230" r="0.7" />
+  <circle class="star" cx="430" cy="218" r="1" />
+  <circle class="dim-star" cx="540" cy="234" r="0.9" />
+  <ellipse class="stroke-soft" cx="300" cy="145" rx="240" ry="80" />
+  <ellipse class="stroke-soft" cx="300" cy="145" rx="180" ry="60" transform="rotate(15 300 145)" />
+  <ellipse class="stroke-soft" cx="300" cy="145" rx="200" ry="40" transform="rotate(-25 300 145)" />
+  <ellipse class="stroke-mid" cx="300" cy="145" rx="160" ry="100" transform="rotate(45 300 145)" />
+  <ellipse class="stroke-mid" cx="300" cy="145" rx="220" ry="55" transform="rotate(-8 300 145)" />
+  <ellipse class="stroke-bright" cx="290" cy="145" rx="140" ry="50" transform="rotate(8 290 145)" />
+  <ellipse class="accent" cx="270" cy="145" rx="180" ry="65" transform="rotate(-5 270 145)" />
+  <circle class="body" cx="300" cy="145" r="9" />
+  <circle cx="120" cy="125" r="2.8" fill="rgba(78,205,196,0.85)" />
+</svg>

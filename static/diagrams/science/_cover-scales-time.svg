@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A scales and time chapter cover — a stylized solar system with the planets receding into deep space, their orbital paths fading.">
+  <style>
+    .stroke-faint { stroke: rgba(255,255,255,0.1); stroke-width: 0.6; fill: none; }
+    .stroke-soft { stroke: rgba(255,255,255,0.22); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.4; fill: none; }
+    .sun { fill: #ffc850; }
+    .planet { fill: rgba(255,255,255,0.85); }
+    .earth { fill: rgba(75,156,211,0.85); }
+    .mars { fill: rgba(193,68,14,0.85); }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.22); }
+  </style>
+  <circle class="dim-star" cx="40" cy="35" r="0.8" />
+  <circle class="star" cx="120" cy="55" r="1.1" />
+  <circle class="dim-star" cx="220" cy="30" r="0.7" />
+  <circle class="star" cx="330" cy="42" r="1.2" />
+  <circle class="dim-star" cx="430" cy="60" r="0.8" />
+  <circle class="star" cx="510" cy="35" r="1" />
+  <circle class="dim-star" cx="80" cy="220" r="0.8" />
+  <circle class="star" cx="200" cy="240" r="1" />
+  <circle class="dim-star" cx="320" cy="225" r="0.7" />
+  <circle class="star" cx="450" cy="240" r="1" />
+  <circle class="dim-star" cx="540" cy="210" r="0.9" />
+  <circle class="dim-star" cx="280" cy="195" r="0.6" />
+  <ellipse class="stroke-mid" cx="80" cy="135" rx="34" ry="24" />
+  <ellipse class="stroke-soft" cx="80" cy="135" rx="62" ry="42" />
+  <ellipse class="accent" cx="80" cy="135" rx="92" ry="62" />
+  <ellipse class="stroke-soft" cx="80" cy="135" rx="125" ry="82" />
+  <ellipse class="stroke-faint" cx="80" cy="135" rx="180" ry="118" />
+  <ellipse class="stroke-faint" cx="80" cy="135" rx="240" ry="155" />
+  <ellipse class="stroke-faint" cx="80" cy="135" rx="320" ry="205" />
+  <ellipse class="stroke-faint" cx="80" cy="135" rx="430" ry="260" />
+  <circle class="sun" cx="80" cy="135" r="9" />
+  <circle class="planet" cx="118" cy="118" r="1.5" />
+  <circle class="planet" cx="138" cy="105" r="1.8" />
+  <circle class="earth" cx="170" cy="92" r="2.2" />
+  <circle class="mars" cx="200" cy="80" r="1.8" />
+  <circle class="planet" cx="270" cy="58" r="3.4" />
+  <circle class="planet" cx="345" cy="42" r="3" />
+  <circle class="planet" cx="430" cy="32" r="2.4" opacity="0.85" />
+  <circle class="planet" cx="510" cy="22" r="2.2" opacity="0.7" />
+  <text x="500" y="220" font-family="'Crimson Pro', serif" font-style="italic" font-size="13" fill="rgba(255,255,255,0.45)" text-anchor="end">vast and quiet</text>
+</svg>

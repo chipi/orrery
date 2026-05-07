@@ -37,6 +37,10 @@
   <h1>{tabLabel(data.tab)}</h1>
 </header>
 
+<figure class="tab-cover">
+  <img src="{base}/diagrams/science/_cover-{data.tab}.svg" alt="" />
+</figure>
+
 {#if data.intro}
   <section class="tab-intro" aria-label="A focused 101 for this tab">
     <p class="badge">101 · zoom in</p>
@@ -69,13 +73,24 @@
     opacity: 0.6;
   }
   .tab-hero {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
   h1 {
     font-family: var(--font-display);
     font-size: 28px;
     letter-spacing: 4px;
     margin: 0;
+  }
+  .tab-cover {
+    margin: 0 0 24px;
+    padding: 0;
+    text-align: center;
+  }
+  .tab-cover img {
+    max-width: 100%;
+    height: auto;
+    max-height: 260px;
+    opacity: 0.95;
   }
   .tab-intro {
     margin: 0 0 24px;

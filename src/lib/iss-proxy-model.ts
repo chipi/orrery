@@ -329,38 +329,37 @@ export function buildIssProxyStation(): THREE.Group {
   const irosaDepth = 0.47;
 
   for (const anchor of MAIN_ARRAY_ANCHORS) {
-    // BGA mast stub at the anchor (between truss tip and wings)
+    // BGA mast stub at the anchor (between truss tip and wings).
+    // Cylinder default axis is Y; the mast extends a small bit out along
+    // ±Y from the truss tip — leave as-is (vertical) for a small "stalk"
+    // visual cue.
     const bga = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.14, 10), bgaMat);
-    bga.rotation.x = Math.PI / 2;
     bga.position.set(0, 0, anchor.z);
     bga.userData.stationPickable = false;
     setShadowFlags(bga);
     trussGroup.add(bga);
 
-    // Wing pair group — 2 wings (one along +X, one along -X), broad face Z-normal
-    // Group rotation.x = π/2 swaps face-normal Y→Z so wings face the camera
-    for (const dir of ['fwd', 'aft'] as const) {
-      const wingPair = new THREE.Group();
-      wingPair.position.set(0, 0, anchor.z);
-      wingPair.rotation.x = Math.PI / 2;
-      wingPair.userData.tracksSun = true;
-      wingPair.userData.sadaAxis = 'x';
-      wingPair.userData.baseRotation = Math.PI / 2;
+    // One wing pair per anchor: forward-extending + aft-extending wings,
+    // both sharing the same BGA + SADA axis. Group origin sits at the
+    // truss-tip world position (0, trussY, anchor.z). Wings extend along
+    // ±X (forward/aft of station) — long axis ≡ world X = perpendicular
+    // to truss direction (Z). Group rotation around X is the SADA β-rotation
+    // that swings the broad face from +Y (zenith) to +Z (along-truss).
+    const wingPair = new THREE.Group();
+    // Wing pair sits at truss Y level (truss group is at y=0.42 above modules)
+    wingPair.position.set(0, 0.42, anchor.z);
+    wingPair.userData.tracksSun = true;
+    wingPair.userData.sadaAxis = 'x';
+    wingPair.userData.baseRotation = 0;
 
-      // The single wing for this fwd/aft side
+    for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;
+      // Wing: BoxGeometry(length, thin, depth) — long X, thin Y, depth Z.
+      // Broad face is Y-normal (faces zenith at base rotation).
       const wing = new THREE.Mesh(
         new THREE.BoxGeometry(wingHalfLen * 2, 0.02, wingDepth),
         mainArrayMat.clone(),
       );
-      wing.position.set(0, xSign * (wingHalfLen + 0.04), 0);
-      // Rotate wing so its length lies along ±X (parent frame: along ±Y in this group)
-      // The group's rotation.x = π/2 maps wing's Y → world Z (face-normal → Z)
-      // and wing's X stays along world X (the wing's length direction)
-      // So we just position along Y in group-local coords and box-length along X-local.
-      // Since BoxGeometry width is along X, we need to rotate wing 90° around Y
-      // so its length axis is along Y (vertical in group-local)
-      wing.rotation.z = Math.PI / 2;
       wing.position.set(xSign * (wingHalfLen + 0.04), 0, 0);
       if (wing.material instanceof THREE.MeshStandardMaterial) {
         wing.material.map = arrayTex;
@@ -371,25 +370,28 @@ export function buildIssProxyStation(): THREE.Group {
       wing.name = `array_${anchor.id}_${dir}`;
       wingPair.add(wing);
 
-      // iROSA overlay if installed on this side
+      // iROSA overlay (if installed on this side) — parallel to main wing,
+      // mounted on the INBOARD portion (closer to BGA / truss center),
+      // so the main array visibly extends beyond iROSA on the outboard tip.
+      // Slight +Y offset so it sits "on top" of the main wing.
       const irosaInstalled = dir === 'fwd' ? anchor.iROSA.fwd : anchor.iROSA.aft;
       if (irosaInstalled) {
         const irosa = new THREE.Mesh(
           new THREE.BoxGeometry(irosaHalfLen * 2, 0.025, irosaDepth),
           irosaMat,
         );
-        irosa.rotation.z = Math.PI / 2;
-        // iROSA centered at ~0.5 along the wing's length, slightly offset upward (+Y in group-local
-        // = +Z in world after rotation = lifted off the underlying wing)
+        // iROSA inboard center: closer to BGA than main wing center.
+        // Main wing center is at xSign * (wingHalfLen + 0.04) = ±1.38;
+        // iROSA inboard center at xSign * (irosaHalfLen + 0.04) = ±0.79.
         irosa.position.set(xSign * (irosaHalfLen + 0.04), 0.05, 0);
         setShadowFlags(irosa);
         irosa.userData.stationPickable = false;
         irosa.name = `irosa_${anchor.id}_${dir}`;
         wingPair.add(irosa);
       }
-
-      root.add(wingPair);
     }
+
+    root.add(wingPair);
   }
 
   // ── Pressurised modules ─────────────────────────────────────────────
@@ -544,23 +546,32 @@ export function buildIssProxyStation(): THREE.Group {
     root.add(cone);
   }
 
-  // ── EATCS radiators (3 port + 3 starboard) deployed nadir from truss ─
+  // ── EATCS Heat Rejection Subsystem (HRS) radiators ─────────────────
+  // 6 white radiator panels deployed PERPENDICULAR to truss (long axis
+  // along ±X, perpendicular to the truss Z-axis), clustered INBOARD
+  // along the truss spine (P1/S1 region) on the nadir side. They sit
+  // visibly INSIDE the outboard solar-array tips — i.e., closer to S0.
+  // Each panel is wider (X-axis) than it is long-along-truss (Z-axis),
+  // making them clearly distinct from the parallel-to-X solar arrays.
   const radiatorMat = new THREE.MeshStandardMaterial({
     color: RADIATOR_WHITE,
     metalness: 0.05,
     roughness: 0.9,
   });
   const RADIATORS: { z: number }[] = [
-    { z: -1.07 }, // P1
-    { z: -2.15 }, // P3
-    { z: -3.23 }, // P4
-    { z: 1.07 }, // S1
-    { z: 2.15 }, // S3
-    { z: 3.23 }, // S4
+    // 3 port-side (P1 region)
+    { z: -0.6 },
+    { z: -1.2 },
+    { z: -1.8 },
+    // 3 starboard-side (S1 region)
+    { z: 0.6 },
+    { z: 1.2 },
+    { z: 1.8 },
   ];
   for (const { z } of RADIATORS) {
-    const rad = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.55, 0.95), radiatorMat);
-    rad.position.set(0, -0.32, z);
+    // BoxGeometry(width X, thickness Y, depth Z) — long perpendicular to truss
+    const rad = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.02, 0.18), radiatorMat);
+    rad.position.set(0, -0.18, z); // slight nadir from truss centre
     rad.userData.stationPickable = false;
     rad.name = 'radiator';
     setShadowFlags(rad);

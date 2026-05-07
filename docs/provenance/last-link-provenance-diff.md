@@ -1,0 +1,139 @@
+# Last link-provenance build
+
+> Generated: 2026-05-07T14:14:56.708Z
+
+- Total entries: 296 (was 206)
+- Added: 90
+- Removed: 0
+- Changed: 36
+
+## Added (90)
+- `apollo11` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-11/>
+- `apollo17` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-17/>
+- `artemis2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Artemis_II>
+- `artemis2` · intro · nasa · en · <https://www.nasa.gov/mission/artemis-ii/>
+- `artemis2` · core · nasa · en · <https://www.nasa.gov/orion/>
+- `blue-moon-mk1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)>
+- `blue-moon-mk1` · intro · blue-origin · en · <https://www.blueorigin.com/blue-moon>
+- `blue-moon-mk1` · core · nasa · en · <https://www.nasa.gov/commercial-lunar-payload-services/>
+- `chandrayaan1` · deep · science-aaas · en · <https://www.science.org/doi/10.1126/science.1178658>
+- `change4` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Queqiao_relay_satellite>
+- `curiosity` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_Science_Laboratory>
+- `dawn` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Dawn_(spacecraft)>
+- `dawn` · core · nasa · en · <https://science.nasa.gov/mission/dawn/>
+- `earth` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Earth>
+- `earth` · intro · nasa · en · <https://science.nasa.gov/earth/>
+- `earth` · core · nasa · en · <https://climatekids.nasa.gov/seasons/>
+- `earth` · core · nasa · en · <https://eospso.nasa.gov/>
+- `earth` · deep · planetary-society · en · <https://www.planetary.org/worlds/pale-blue-dot>
+- `galileo` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Galileo_(spacecraft)>
+- `galileo` · core · nasa · en · <https://science.nasa.gov/mission/galileo/>
+- `hope-probe` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Emirates_Mars_Mission>
+- `hope-probe` · intro · uaesa · en · <https://www.mbrsc.ae/our-projects/space-exploration/>
+- `insight` · deep · ipgp · en · <https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service>
+- `inspiration-mars` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Inspiration_Mars_Foundation>
+- `inspiration-mars` · deep · ieee · en · <https://ieeexplore.ieee.org/document/6497418>
+- `jupiter` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Jupiter>
+- `jupiter` · intro · nasa · en · <https://science.nasa.gov/jupiter/>
+- `jupiter` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Galilean_moons>
+- `jupiter` · core · nasa · en · <https://www.nasa.gov/mission/juno/>
+- `jupiter` · deep · nature · en · <https://www.nature.com/articles/nature25775>
+- `luna17` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Lunokhod_programme>
+- `luna24` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1976-081A>
+- `luna24` · deep · nasa · en · <https://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?bibcode=1977Geokh..N1107B>
+- `luna9` · deep · springer · en · <https://link.springer.com/book/10.1007/978-0-387-46343-8>
+- `mangalyaan` · intro · isro · en · <https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html>
+- `mariner4` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mariner_4>
+- `mariner4` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A>
+- `mars` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mars>
+- `mars` · intro · nasa · en · <https://science.nasa.gov/mars/>
+- `mars` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_landing>
+- `mars` · core · nasa · en · <https://mars.nasa.gov/>
+- `mars` · deep · science-aaas · en · <https://www.science.org/doi/10.1126/science.aar3201>
+- `mars-pathfinder` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Sojourner_(rover)>
+- `mars3` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A>
+- `mars3` · deep · nasa · en · <https://www.nasa.gov/wp-content/uploads/2018/12/beyond_earth_tagged.pdf>
+- `mercury` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mercury_(planet)>
+- `mercury` · intro · nasa · en · <https://science.nasa.gov/mercury/>
+- `mercury` · core · nasa · en · <https://science.nasa.gov/mission/messenger/>
+- `mercury` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/BepiColombo>
+- `mercury` · deep · nature · en · <https://www.nature.com/articles/s41561-019-0405-8>
+- `mmx` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Martian_Moons_Exploration>
+- `mmx` · intro · jaxa · en · <https://www.mmx.jaxa.jp/en/>
+- `mmx` · deep · elsevier · en · <https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758>
+- `neptune` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Neptune>
+- `neptune` · intro · nasa · en · <https://science.nasa.gov/neptune/>
+- `neptune` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Discovery_of_Neptune>
+- `neptune` · core · nasa · en · <https://voyager.jpl.nasa.gov/mission/science/planet-neptune/>
+- `neptune` · deep · elsevier · en · <https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981>
+- `new-horizons` · intro · wikipedia · en · <https://en.wikipedia.org/wiki_New_Horizons>
+- `new-horizons` · core · nasa · en · <https://science.nasa.gov/mission/new-horizons/>
+- `perseverance` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Ingenuity_(helicopter)>
+- `perseverance` · deep · nasa · en · <https://mars.nasa.gov/msr/>
+- `saturn` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Saturn>
+- `saturn` · intro · nasa · en · <https://science.nasa.gov/saturn/>
+- `saturn` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Rings_of_Saturn>
+- `saturn` · core · nasa · en · <https://science.nasa.gov/mission/cassini/>
+- `saturn` · deep · science-aaas · en · <https://www.science.org/doi/10.1126/science.aat2965>
+- `slim` · intro · jaxa · en · <https://global.jaxa.jp/projects/sas/slim/>
+- `starship-demo` · intro · spacex · en · <https://www.spacex.com/vehicles/starship/>
+- `starship-demo` · core · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Mars_program>
+- `starship-mars-crew` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Mars_program>
+- `starship-mars-crew` · intro · spacex · en · <https://www.spacex.com/vehicles/starship/>
+- `starship-mars-crew` · core · spacex · en · <https://www.spacex.com/media/making_life_multiplanetary_transcript_2017.pdf>
+- `tianwen1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tianwen-1>
+- `tianwen1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Zhurong_(rover)>
+- `uranus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Uranus>
+- `uranus` · intro · nasa · en · <https://science.nasa.gov/uranus/>
+- `uranus` · core · nap · en · <https://nap.nationalacademies.org/catalog/26522/>
+- `uranus` · core · nasa · en · <https://voyager.jpl.nasa.gov/mission/science/planet-uranus/>
+- `uranus` · deep · iop · en · <https://iopscience.iop.org/article/10.3847/PSJ/abb945>
+- `venus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Venus>
+- `venus` · intro · nasa · en · <https://science.nasa.gov/venus/>
+- `venus` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Venera_program>
+- `venus` · core · nasa · en · <https://science.nasa.gov/mission/davinci/>
+- `venus` · deep · nature · en · <https://www.nature.com/articles/s41550-019-0930-9>
+- `viking1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Viking_1>
+- `viking1` · intro · nasa · en · <https://science.nasa.gov/mission/viking-1/>
+- `viking1` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A>
+- `voyager-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Voyager_2>
+- `voyager-2` · core · nasa · en · <https://science.nasa.gov/mission/voyager/>
+
+## Changed (36)
+- `apollo11` · 
+- `apollo11` · 
+- `apollo17` · 
+- `artemis3` · 
+- `artemis3` · 
+- `artemis3` · 
+- `chandrayaan1` · 
+- `chandrayaan3` · 
+- `change4` · 
+- `change5` · 
+- `change6` · 
+- `clementine` · 
+- `clementine` · label: "Clementine — NASA NSSDCA" → "Clementine (NSSDCA)"
+- `curiosity` · label: "Curiosity rover — Wikipedia" → "Curiosity (rover) — Wikipedia"
+- `curiosity` · label: "MSL — NASA" → "Mars Science Laboratory (NASA)"; tier: "core" → "intro"
+- `insight` · 
+- `insight` · label: "InSight — NASA" → "InSight (NASA)"; tier: "core" → "intro"
+- `lro` · 
+- `lro` · label: "LRO — NASA" → "LRO mission (NASA)"; tier: "core" → "intro"
+- `lro` · label: "LRO camera images (LROC)" → "LROC image archive (Arizona State)"; tier: "intro" → "core"
+- `luna17` · 
+- `luna17` · 
+- `luna24` · 
+- `luna9` · 
+- `luna9` · 
+- `mangalyaan` · 
+- `mars-express` · 
+- `mars-express` · label: "Mars Express — ESA" → "Mars Express (ESA)"; tier: "core" → "intro"
+- `mars-pathfinder` · 
+- `mars-pathfinder` · label: "Mars Pathfinder — NASA" → "Mars Pathfinder (NASA)"; tier: "core" → "intro"
+- `mars3` · 
+- `maven` · 
+- `maven` · label: "MAVEN — NASA" → "MAVEN mission (NASA)"; tier: "core" → "intro"
+- `perseverance` · label: "Perseverance — Wikipedia" → "Perseverance (rover) — Wikipedia"
+- `perseverance` · label: "Mars 2020 — NASA" → "Mars 2020 (NASA)"; tier: "core" → "intro"
+- `slim` · 
+

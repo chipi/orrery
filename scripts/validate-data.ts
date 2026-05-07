@@ -45,12 +45,18 @@ const porkchopSchema = loadSchema('porkchop.schema.json');
 const issModuleSchema = loadSchema('iss-module.schema.json');
 const issModuleOverlaySchema = loadSchema('iss-module-overlay.schema.json');
 const issVisitorSchema = loadSchema('iss-visitor.schema.json');
+// PRD-011 / ADR-049 — Tiangong Explorer.
+const tiangongModuleSchema = loadSchema('tiangong-module.schema.json');
+const tiangongModuleOverlaySchema = loadSchema('tiangong-module-overlay.schema.json');
+const tiangongVisitorSchema = loadSchema('tiangong-visitor.schema.json');
 // ADR-046 Milestone C — image provenance + license stewardship.
 const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
 const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
 // ADR-046 Milestone D — public credits page manifests.
 const sourceLogosSchema = loadSchema('source-logos.schema.json');
 const textSourcesSchema = loadSchema('text-sources.schema.json');
+// ADR-051 Milestone L-B — outbound LEARN-link provenance.
+const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -71,10 +77,14 @@ const validatePorkchop = ajv.compile(porkchopSchema);
 const validateIssModules = ajv.compile(issModuleSchema);
 const validateIssModuleOverlay = ajv.compile(issModuleOverlaySchema);
 const validateIssVisitors = ajv.compile(issVisitorSchema);
+const validateTiangongModules = ajv.compile(tiangongModuleSchema);
+const validateTiangongModuleOverlay = ajv.compile(tiangongModuleOverlaySchema);
+const validateTiangongVisitors = ajv.compile(tiangongVisitorSchema);
 const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
 const validateTextSources = ajv.compile(textSourcesSchema);
+const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 
 let failed = 0;
 let passed = 0;
@@ -136,12 +146,16 @@ validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 validateFile(join(DATA_ROOT, 'iss-visitors.json'), validateIssVisitors);
+validateFile(join(DATA_ROOT, 'tiangong-modules.json'), validateTiangongModules);
+validateFile(join(DATA_ROOT, 'tiangong-visitors.json'), validateTiangongVisitors);
 // ADR-046 Milestone C: image provenance + license waivers.
 validateFile(join(DATA_ROOT, 'image-provenance.json'), validateImageProvenance);
 validateFile(join(DATA_ROOT, 'license-waivers.json'), validateLicenseWaivers);
 // ADR-046 Milestone D: public /credits manifests.
 validateFile(join(DATA_ROOT, 'source-logos.json'), validateSourceLogos);
 validateFile(join(DATA_ROOT, 'text-sources.json'), validateTextSources);
+// ADR-051 Milestone L-B: outbound LEARN-link provenance manifest.
+validateFile(join(DATA_ROOT, 'link-provenance.json'), validateLinkProvenance);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
@@ -212,6 +226,20 @@ if (existsSync(i18nDir)) {
     if (existsSync(issVisitorOvDir)) {
       for (const file of listJson(issVisitorOvDir)) {
         validateFile(file, validateIssModuleOverlay);
+      }
+    }
+    // Tiangong module overlays (PRD-011 / ADR-049)
+    const tiangongOvDir = join(i18nDir, locale, 'tiangong-modules');
+    if (existsSync(tiangongOvDir)) {
+      for (const file of listJson(tiangongOvDir)) {
+        validateFile(file, validateTiangongModuleOverlay);
+      }
+    }
+    // Tiangong visitor overlays (same overlay shape as modules)
+    const tiangongVisitorOvDir = join(i18nDir, locale, 'tiangong-visitors');
+    if (existsSync(tiangongVisitorOvDir)) {
+      for (const file of listJson(tiangongVisitorOvDir)) {
+        validateFile(file, validateTiangongModuleOverlay);
       }
     }
   }
@@ -456,6 +484,87 @@ if (existsSync(SOURCE_LOGOS_PATH)) {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// ADR-051 Milestone L-B — outbound LEARN-link provenance integrity
+//
+// On top of the JSON-schema check, enforce four runtime invariants:
+//   1. Every entry.source_id resolves in source-logos.json.
+//   2. Every entry.url has been canonicalised — no surviving tracker
+//      params (utm_*, fbclid, etc.) and no AMP suffix.
+//   3. No duplicate (entity_id, url) pairs.
+//   4. Every entry.language is BCP-47 (or '*' for multi-lingual).
+// L-E will add: every intro/core entry must have last_verified ≥ N days
+// fresh AND must show 2xx in the most recent link-check report.
+// ──────────────────────────────────────────────────────────────────────
+
+let linkProvenanceFailed = 0;
+const LINK_PROVENANCE_PATH = join(DATA_ROOT, 'link-provenance.json');
+if (existsSync(LINK_PROVENANCE_PATH)) {
+  console.log('\nValidating link-provenance integrity (ADR-051 Milestone L-B)...');
+
+  type LinkRow = {
+    id: string;
+    entity_id: string;
+    url: string;
+    source_id: string;
+    language: string;
+  };
+
+  const SOURCE_LOGOS_PATH_LOCAL = join(DATA_ROOT, 'source-logos.json');
+  const knownSources: Set<string> = (() => {
+    if (!existsSync(SOURCE_LOGOS_PATH_LOCAL)) return new Set();
+    const j = JSON.parse(readFileSync(SOURCE_LOGOS_PATH_LOCAL, 'utf8')) as {
+      sources: { id: string }[];
+    };
+    return new Set(j.sources.map((s) => s.id));
+  })();
+
+  const manifest = JSON.parse(readFileSync(LINK_PROVENANCE_PATH, 'utf8')) as {
+    entries: LinkRow[];
+  };
+
+  const seenKeys = new Set<string>();
+  let unknownSources = 0;
+  let trackerSurvivors = 0;
+  let duplicates = 0;
+  let badLanguages = 0;
+  // BCP-47 tag pattern (loose): primary subtag 2-3 letters, optional region/variant.
+  const bcp47 = /^([a-z]{2,3}(-[A-Z][a-z]{3})?(-[A-Z]{2}|[0-9]{3})?(-[A-Za-z0-9]{5,8})*|\*)$/;
+  const tracker = /[?&](utm_[a-z]+|fbclid|gclid|mc_[ce]id|_ga)=/i;
+
+  for (const e of manifest.entries) {
+    const key = `${e.entity_id}__${e.url}`;
+    if (seenKeys.has(key)) {
+      duplicates++;
+      console.error(`  ✗ duplicate (entity_id, url): ${key}`);
+    } else {
+      seenKeys.add(key);
+    }
+    if (!knownSources.has(e.source_id)) {
+      unknownSources++;
+      console.error(`  ✗ ${e.id}: source_id '${e.source_id}' not in source-logos.json`);
+    }
+    if (tracker.test(e.url) || /\/amp\/?($|\?)/i.test(e.url)) {
+      trackerSurvivors++;
+      console.error(`  ✗ ${e.id}: url '${e.url}' carries tracker params or /amp suffix`);
+    }
+    if (!bcp47.test(e.language)) {
+      badLanguages++;
+      console.error(`  ✗ ${e.id}: language '${e.language}' is not BCP-47 (or '*')`);
+    }
+  }
+  linkProvenanceFailed = unknownSources + trackerSurvivors + duplicates + badLanguages;
+  if (linkProvenanceFailed === 0) {
+    console.log(
+      `  ✓ ${manifest.entries.length} link-provenance entries — sources resolved, URLs canonical, no duplicates, languages BCP-47`,
+    );
+  } else {
+    console.error(
+      `  ${linkProvenanceFailed} link-provenance integrity failure(s) (${duplicates} dupes, ${unknownSources} unknown source, ${trackerSurvivors} tracker survivors, ${badLanguages} bad language)`,
+    );
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // Asset-size guard — fail any image under static/images/ that exceeds
 // the workbox precache cap configured in vite.config.ts. Without this
 // the build silently fails late, after lint + tests + most of vite's
@@ -509,7 +618,13 @@ if (oversized.length === 0) {
 }
 
 if (
-  failed + docFailed + missionDriftFailed + provenanceFailed + credBomFailed + assetSizeFailed >
+  failed +
+    docFailed +
+    missionDriftFailed +
+    provenanceFailed +
+    credBomFailed +
+    linkProvenanceFailed +
+    assetSizeFailed >
   0
 )
   process.exit(1);

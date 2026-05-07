@@ -92,6 +92,118 @@
       "kind": "publisher",
       "url": "https://www.solarsystemscope.com/textures/",
       "license_summary": "Planet and small-body texture maps released under Creative Commons CC BY 4.0."
+    },
+    {
+      "id": "csa",
+      "name": "Canadian Space Agency",
+      "kind": "space-agency",
+      "url": "https://www.asc-csa.gc.ca/",
+      "license_summary": "Government of Canada works (CSA-NCO non-commercial reuse policy); editorial reuse with credit is permitted."
+    },
+    {
+      "id": "noaa",
+      "name": "NOAA",
+      "kind": "space-agency",
+      "url": "https://www.noaa.gov/",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105). NOAA imagery is freely usable with credit."
+    },
+    {
+      "id": "us-space-force",
+      "name": "U.S. Space Force",
+      "kind": "space-agency",
+      "url": "https://www.gps.gov/",
+      "license_summary": "Public domain — works of the United States Government. Outbound reference links to gps.gov for GPS constellation operations."
+    },
+    {
+      "id": "stsci",
+      "name": "Space Telescope Science Institute",
+      "kind": "research-institute",
+      "url": "https://www.stsci.edu/",
+      "license_summary": "Hubble (hubblesite.org) and Webb (webbtelescope.org) outreach material released for editorial reuse with credit; STScI operates under NASA contract."
+    },
+    {
+      "id": "nature",
+      "name": "Nature (Springer Nature)",
+      "kind": "publisher",
+      "url": "https://www.nature.com/",
+      "license_summary": "Outbound reference links only; no Nature copy is redistributed in-app."
+    },
+    {
+      "id": "science-aaas",
+      "name": "Science (AAAS)",
+      "kind": "publisher",
+      "url": "https://www.science.org/",
+      "license_summary": "Outbound reference links only; no AAAS copy is redistributed in-app."
+    },
+    {
+      "id": "elsevier",
+      "name": "Elsevier ScienceDirect",
+      "kind": "publisher",
+      "url": "https://www.sciencedirect.com/",
+      "license_summary": "Outbound reference links only; no Elsevier copy is redistributed in-app."
+    },
+    {
+      "id": "iop",
+      "name": "IOP Publishing",
+      "kind": "publisher",
+      "url": "https://iopscience.iop.org/",
+      "license_summary": "Outbound reference links only; no IOP copy is redistributed in-app."
+    },
+    {
+      "id": "annual-reviews",
+      "name": "Annual Reviews",
+      "kind": "publisher",
+      "url": "https://www.annualreviews.org/",
+      "license_summary": "Outbound reference links only; no Annual Reviews copy is redistributed in-app."
+    },
+    {
+      "id": "springer",
+      "name": "Springer",
+      "kind": "publisher",
+      "url": "https://link.springer.com/",
+      "license_summary": "Outbound reference links only; no Springer copy is redistributed in-app."
+    },
+    {
+      "id": "nap",
+      "name": "National Academies Press",
+      "kind": "publisher",
+      "url": "https://nap.nationalacademies.org/",
+      "license_summary": "Outbound reference links only; National Academies reports are public records of consensus committees."
+    },
+    {
+      "id": "ieee",
+      "name": "IEEE Xplore",
+      "kind": "publisher",
+      "url": "https://ieeexplore.ieee.org/",
+      "license_summary": "Outbound reference links only; no IEEE copy is redistributed in-app."
+    },
+    {
+      "id": "planetary-society",
+      "name": "The Planetary Society",
+      "kind": "publisher",
+      "url": "https://www.planetary.org/",
+      "license_summary": "Outbound reference links only; The Planetary Society is a non-profit science-advocacy publisher."
+    },
+    {
+      "id": "ipgp",
+      "name": "IPGP / SEIS Insight",
+      "kind": "research-institute",
+      "url": "https://www.seis-insight.eu/",
+      "license_summary": "Outbound reference links to the SEIS / Mars InSight science consortium hosted at IPGP."
+    },
+    {
+      "id": "boeing",
+      "name": "Boeing",
+      "kind": "private-operator",
+      "url": "https://www.boeing.com/",
+      "license_summary": "Outbound reference links only; no Boeing copy or imagery is redistributed in-app."
+    },
+    {
+      "id": "ula",
+      "name": "United Launch Alliance",
+      "kind": "private-operator",
+      "url": "https://www.ulalaunch.com/",
+      "license_summary": "Outbound reference links only; no ULA copy or imagery is redistributed in-app."
     }
   ]
 }

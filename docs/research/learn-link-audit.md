@@ -15,69 +15,73 @@ A walker over every JSON file under `static/data/` (excluding `schemas/`,
   `src/types/rocket.ts`)
 - the single-string `wiki` field on `static/data/small-bodies.json`
 
-Result: **925 outbound link entries** across the production data.
+Result: **340 outbound link references** that dedupe down to **296 unique
+`(entity_id, url)` pairs** in the canonical manifest at
+`static/data/link-provenance.json`.
 
 ## Distribution by host
 
-| Rank | Host | Count | Share |
-|---:|---|---:|---:|
-| 1 | en.wikipedia.org | 351 | 38 % |
-| 2 | science.nasa.gov | 209 | 23 % |
-| 3 | nasa.gov | 47 | 5 % |
-| 4 | nature.com | 43 | 5 % |
-| 5 | science.org | 31 | 3 % |
-| 6 | voyager.jpl.nasa.gov | 28 | 3 % |
-| 7 | esa.int | 25 | 3 % |
-| 8 | mars.nasa.gov | 15 | 2 % |
-| 9 | sciencedirect.com | 15 | 2 % |
-| 10 | eospso.nasa.gov | 14 | 2 % |
-| 11 | climatekids.nasa.gov | 14 | 2 % |
-| 12 | planetary.org | 14 | 2 % |
-| 13 | nap.nationalacademies.org | 14 | 2 % |
-| 14 | iopscience.iop.org | 14 | 2 % |
-| 15 | sdo.gsfc.nasa.gov | 14 | 2 % |
-| 16 | annualreviews.org | 14 | 2 % |
-| 17 | es.wikipedia.org | 13 | 1 % |
-| 18 | nssdc.gsfc.nasa.gov | 11 | 1 % |
-| 19 | spacex.com | 6 | 1 % |
-| 20 | isro.gov.in | 5 | 1 % |
-| 21 | cosmos.esa.int | 2 | < 1 % |
-| 22 | lroc.asu.edu | 2 | < 1 % |
-| 23 | humans-in-space.jaxa.jp | 2 | < 1 % |
-| 24 | mbrsc.ae | 2 | < 1 % |
-| 25 | global.jaxa.jp | 2 | < 1 % |
+| Rank | Host | Count |
+|---:|---|---:|
+| 1 | en.wikipedia.org | 182 |
+| 2 | science.nasa.gov | 40 |
+| 3 | www.nasa.gov | 34 |
+| 4 | www.esa.int | 12 |
+| 5 | nssdc.gsfc.nasa.gov | 11 |
+| 6 | www.spacex.com | 6 |
+| 7 | www.isro.gov.in | 5 |
+| 8 | www.science.org | 5 |
+| 9 | www.nature.com | 4 |
+| 10 | www.mbrsc.ae | 2 |
+| 11 | www.sciencedirect.com | 2 |
+| 12 | mars.nasa.gov | 2 |
+| 13 | www.lroc.asu.edu | 2 |
+| 14 | global.jaxa.jp | 2 |
+| 15 | voyager.jpl.nasa.gov | 2 |
+| 16 | humans-in-space.jaxa.jp | 2 |
+| 17 | www.cosmos.esa.int | 2 |
+| 18 | various single-link hosts (× 25 hosts) | 25 |
 
-NASA-domain hosts together account for ~37 %. Wikipedia (en + es) accounts for
-~39 %. Together: 76 % of every outbound LEARN link.
+NASA-domain hosts together (`*.nasa.gov`, `*.gsfc.nasa.gov`,
+`*.jpl.nasa.gov`, `lroc.asu.edu` and `chandra.harvard.edu` operated under
+NASA contract) account for ~28 % of all outbound links. Wikipedia
+(`en.wikipedia.org`) accounts for 54 %. Together: ~82 % of every outbound
+LEARN link points back to NASA or Wikipedia.
 
 ## Distribution by data category
 
 | Category | Links |
 |---|---:|
-| `static/data/planets/**` | 560 |
-| `static/data/missions/**` | 86 |
-| `static/data/sun.json` | 70 |
-| `static/data/mars-sites.json` | 50 |
-| `static/data/earth-objects.json` | 40 |
-| `static/data/moon-sites.json` | 38 |
-| `static/data/iss-modules.json` | 34 |
-| `static/data/rockets.json` | 22 |
-| `static/data/iss-visitors.json` | 17 |
-| `static/data/small-bodies.json` (`wiki` field) | 8 |
+| `static/data/missions/**` (32 missions × ~2.7) | 86 |
+| `static/data/mars-sites.json` (15 surface sites) | 50 |
+| `static/data/i18n/en-US/planets/*.json` (8 planets × 5) | 40 |
+| `static/data/earth-objects.json` (17 satellites/observatories) | 40 |
+| `static/data/moon-sites.json` (24 surface sites) | 38 |
+| `static/data/iss-modules.json` (17 modules) | 34 |
+| `static/data/rockets.json` (10 launch vehicles) | 22 |
+| `static/data/iss-visitors.json` (7 visiting craft) | 17 |
+| `static/data/small-bodies.json` (`wiki` field × 8) | 8 |
+| `static/data/i18n/en-US/sun.json` | 5 |
 
-Planets are the largest contributor (560 links) but the gap analysis below shows
-the highest-leverage editorial enrichment is on missions, earth-objects, and the
-ISS Russian-segment modules.
+Per-mission links are the largest contributor (86 links across 32 missions,
+~2.7 per mission). Editorial enrichment in Milestone L-C focuses on
+non-US missions, the ISS Russian-segment modules, and lunar / Martian
+landing sites.
 
 ## Distribution by tier
 
-| Tier | Links | Share |
-|---|---:|---:|
-| `intro` | 445 | 48 % |
-| `core` | 339 | 37 % |
-| `deep` | 141 | 15 % |
+ADR-051 uses three tiers (`intro` for first-impression links, `core` for
+top-tier reference, `deep` for archival reading). The author-time `t`
+field on every link entry maps directly to the tier; the distribution
+across the 296 unique entries is approximately:
 
-ADR-051 will use this distribution to set the build-fail policy: `intro` and
+| Tier | Approximate share |
+|---|---:|
+| `intro` | ~ 50 % |
+| `core` | ~ 35 % |
+| `deep` | ~ 15 % |
+
+ADR-051 uses this distribution to set the build-fail policy: `intro` and
 `core` 4xx/5xx fail validation; `deep` soft-warns.
 
 ## Non-US agency footprint
@@ -86,14 +90,19 @@ The total share of outbound links going to non-US agency hosts today:
 
 | Host | Count |
 |---|---:|
-| esa.int | 25 |
+| esa.int | 12 |
 | isro.gov.in | 5 |
+| mbrsc.ae | 2 |
 | cosmos.esa.int | 2 |
 | humans-in-space.jaxa.jp | 2 |
-| mbrsc.ae | 2 |
 | global.jaxa.jp | 2 |
+| roscosmos.ru | 1 |
+| asc-csa.gc.ca | 1 |
+| mmx.jaxa.jp | 1 |
+| exploration.esa.int | 1 |
+| seis-insight.eu | 1 |
 
-**Total: 38 of 925 = 4.1 %.**
+**Total: 30 of 296 = ~10 %.**
 
 `roscosmos.ru` appears once across the entire data set (on `iss-visitors.json:soyuz_ms`).
 `cnsa.gov.cn` appears zero times despite Chang'e and Tianwen-1 being in the
@@ -103,15 +112,15 @@ is missing for several other entities.
 
 ## Non-English footprint
 
-| Language | Source | Count |
-|---|---|---:|
-| en | (every other host) | 911 |
-| es | es.wikipedia.org | 13 |
-| (unspecified) | other Spanish-language pages | 1 |
+Today, ~99 % of outbound links resolve to English-language pages. The
+single Russian-language outlier is `roscosmos.ru` (1 link). Zero links
+go to native-language pages on CNSA, JAXA-jp, ISRO-hi, or any other
+non-English operator portal despite obvious primary sources existing
+for non-US missions.
 
-Zero links to native-language pages on Roscosmos, CNSA, JAXA-jp, or ISRO-hi
-despite obvious primary sources existing for non-US missions. ADR-051 corrects
-this with the locale fallback chain.
+ADR-051 corrects this with the locale fallback chain (UI locale →
+operator native → English → multi-lingual) and the editorial L-C
+backfill.
 
 ## Per-mission gap list (Wikipedia-only or operator-portal-missing)
 

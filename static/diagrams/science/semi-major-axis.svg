@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Semi-major axis as half the longest diameter of the orbit ellipse">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Major axis -->
+  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
+  <!-- Ellipse -->
+  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
+  <!-- Right focus = sun (200+98, 150) -->
+  <circle cx="298" cy="150" r="6" class="focus" />
+  <!-- Perihelion (right tip) -->
+  <circle cx="340" cy="150" r="3" class="body" />
+  <text x="306" y="172" class="label-mute">r_p</text>
+  <!-- Aphelion (left tip) -->
+  <circle cx="60" cy="150" r="3" class="body" />
+  <text x="60" y="172" class="label-mute">r_a</text>
+  <!-- Semi-major axis a: from centre to right tip -->
+  <line x1="200" y1="100" x2="340" y2="100" class="accent" />
+  <line x1="200" y1="95" x2="200" y2="105" class="accent" />
+  <line x1="340" y1="95" x2="340" y2="105" class="accent" />
+  <text x="260" y="93" class="label-accent">a</text>
+  <!-- Major axis 2a: full span -->
+  <line x1="60" y1="240" x2="340" y2="240" class="stroke" />
+  <line x1="60" y1="235" x2="60" y2="245" class="stroke" />
+  <line x1="340" y1="235" x2="340" y2="245" class="stroke" />
+  <text x="186" y="232" class="label-mute">major axis = 2a</text>
+  <text x="118" y="270" class="label-mute">a = (r_p + r_a) / 2</text>
+</svg>

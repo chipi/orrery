@@ -1,0 +1,11 @@
+{
+  "title": "Vis-Viva Equation",
+  "intro_sentence": "How fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis.",
+  "body_paragraphs": [
+    "Vis-viva is the workhorse equation of orbital mechanics. It connects three numbers — the gravitational parameter `μ` of whatever you're orbiting, your current distance `r` from the focus, and the orbit's semi-major axis `a` — and spits out the speed `v`. That's it. No time integration, no anomaly chain, just one square root and you know how fast you're going.",
+    "The equation packages conservation of energy: total mechanical energy on a Keplerian orbit is constant, so any time you know `r` you can recover the speed. At perihelion `r` is small, the parenthetical term is large, `v` is high. At aphelion `r` is large, the term shrinks, `v` drops. Earth zips through perihelion at 30.3 km/s and crawls through aphelion at 29.3 km/s — same orbit, different speed, same energy.",
+    "In Orrery, vis-viva is what computes the velocity readouts you see on `/fly`'s HUD as a spacecraft swings past a planet — and the launch-energy and arrival-velocity numbers feeding the porkchop heatmap on `/plan`."
+  ],
+  "formula_caption": "v from gravitational parameter μ, current radius r, semi-major axis a.",
+  "diagram_caption": "Speed varies along the orbit: high at perihelion, low at aphelion. Vis-viva ties speed to radius."
+}

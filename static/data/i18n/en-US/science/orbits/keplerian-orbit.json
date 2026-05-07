@@ -1,0 +1,10 @@
+{
+  "title": "Keplerian Orbit",
+  "intro_sentence": "An ellipse with the Sun at one focus — the simplest orbit a body can have around another.",
+  "body_paragraphs": [
+    "When you fall toward something massive but miss it, you get a Keplerian orbit. The path is an ellipse — a stretched circle — and the body you're falling toward sits at one of the two focal points, never the centre. Earth around the Sun, Moon around Earth, every spacecraft you'll see in Orrery: all Keplerian to a first approximation.",
+    "Six numbers fully describe one of these orbits: the size (semi-major axis), the stretch (eccentricity), three angles that orient the ellipse in space (inclination, longitude of ascending node, argument of periapsis), and where the body is along the path right now (true anomaly). These are the Keplerian elements — the language every other section in this tab translates into something you can picture.",
+    "The model breaks down whenever a third body's gravity matters: spacecraft near the Moon, satellites in low Earth orbit feeling the bulge of the equator, anything passing through Jupiter's shadow. Orrery uses Keplerian orbits for the heliocentric story and patched-conic approximations for the rest."
+  ],
+  "diagram_caption": "Ellipse with focus F₁ at the Sun. Semi-major axis a · perihelion (closest) and aphelion (farthest) on the line of apsides."
+}

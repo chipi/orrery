@@ -1,0 +1,23 @@
+{
+  "id": "semi-major-axis",
+  "tab": "orbits",
+  "order": 2,
+  "formula_latex": "a = \\frac{r_p + r_a}{2}",
+  "diagram": "semi-major-axis.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Each planet panel shows its semi-major axis in AU" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Semi-major and semi-minor axes",
+      "u": "https://en.wikipedia.org/wiki/Semi-major_and_semi-minor_axes",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Orbital Elements",
+      "u": "https://spaceflight.nasa.gov/realdata/elements/",
+      "t": "core"
+    }
+  ]
+}

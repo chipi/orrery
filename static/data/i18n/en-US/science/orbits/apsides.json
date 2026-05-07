@@ -1,0 +1,10 @@
+{
+  "title": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+  "intro_sentence": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+  "body_paragraphs": [
+    "An apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. The line connecting them — passing through both foci — is the line of apsides. Every Keplerian orbit has exactly two: closest, and farthest.",
+    "The names depend on what you're orbiting. Around the Sun: perihelion (closest) and aphelion (farthest), from Greek `peri` (near) and `apo` (far) plus `helios` (Sun). Around Earth: perigee and apogee. Around the Moon: periselene and aposelene, or perilune and apolune. Around any star: periastron and apastron. The ground truth is identical; only the suffix changes.",
+    "Apsides anchor mission timelines. The Voyager flybys were timed at perihelion of each planetary encounter. ISS reboost burns are scheduled at apogee, where they're cheapest. Rendezvous and docking phasing burns happen at perigee, where the orbital geometry concentrates the velocity change. The Sun's perihelion passage by Parker Solar Probe is the closest a human-made object has ever been to a star."
+  ],
+  "diagram_caption": "Line of apsides through both foci, connecting perihelion (closest) and aphelion (farthest)."
+}

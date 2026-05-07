@@ -1,0 +1,10 @@
+{
+  "title": "True Anomaly",
+  "intro_sentence": "The angle that tells you where on the orbit a body is right now, measured from perihelion.",
+  "body_paragraphs": [
+    "The Keplerian elements describe the shape and orientation of an orbit; true anomaly (`ν`) tells you where the body is along that orbit at a given instant. Stand at the focus (the Sun, for a planet), point at perihelion, and rotate your finger to follow the body around. The angle you sweep is the true anomaly.",
+    "It runs from 0 at perihelion (closest approach) through 90° (a quarter of the way) to 180° at aphelion (farthest), and back. Unlike a clock, it doesn't tick uniformly — Kepler's second law tells you the body races near perihelion and crawls near aphelion. So true anomaly per second changes throughout the orbit.",
+    "Sister angles you'll meet: mean anomaly (`M`), which does tick uniformly with time but is geometrically meaningless; and eccentric anomaly (`E`), the bridge between them. `M` advances at constant rate, you solve Kepler's equation `M = E - e·sin(E)` to get `E`, then convert to `ν`. The chain is the heartbeat of every orbital simulator including Orrery's."
+  ],
+  "diagram_caption": "True anomaly ν measured at the focus, from perihelion to the body's current position."
+}

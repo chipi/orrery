@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Kepler's second law: equal areas swept in equal times">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.5; fill: none; }
+    .accent-fill { fill: rgba(78, 205, 196, 0.18); stroke: #4ecdc4; stroke-width: 1.5; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
+  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
+  <!-- Focus = Sun -->
+  <circle cx="298" cy="150" r="6" class="focus" />
+  <!-- Sector 1: near perihelion. Body sweeps a short, fat sector. From perihelion (340,150) to roughly (320, 105). -->
+  <path d="M 298 150 L 340 150 A 140 100 0 0 0 320 105 Z" class="accent-fill" />
+  <text x="324" y="132" class="label-accent">Δt</text>
+  <!-- Sector 2: near aphelion. Body sweeps a long, narrow sector. From aphelion (60,150) to roughly (78,191). -->
+  <path d="M 298 150 L 60 150 A 140 100 0 0 0 78 191 Z" class="accent-fill" />
+  <text x="180" y="180" class="label-accent">Δt</text>
+  <!-- Caption -->
+  <text x="74" y="280" class="label-mute">equal areas in equal time intervals (Kepler II)</text>
+  <text x="124" y="34" class="label-mute">short, fat sweep · fast motion</text>
+  <text x="78" y="218" class="label-mute">long, thin sweep · slow motion</text>
+</svg>

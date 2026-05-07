@@ -1,0 +1,24 @@
+{
+  "id": "vis-viva",
+  "tab": "orbits",
+  "order": 6,
+  "formula_latex": "v = \\sqrt{\\mu \\left(\\frac{2}{r} - \\frac{1}{a}\\right)}",
+  "diagram": "vis-viva.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/fly", "context_key": "The ∆V HELIO HUD row is computed from vis-viva at the spacecraft's current radius" },
+    { "route": "/plan", "context_key": "Departure and arrival velocities on the porkchop come from vis-viva" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Vis-viva equation",
+      "u": "https://en.wikipedia.org/wiki/Vis-viva_equation",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Vis-viva and orbital energy",
+      "u": "https://www.grc.nasa.gov/www/k-12/airplane/orbit.html",
+      "t": "core"
+    }
+  ]
+}

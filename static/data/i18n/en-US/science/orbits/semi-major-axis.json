@@ -1,0 +1,11 @@
+{
+  "title": "Semi-Major Axis",
+  "intro_sentence": "Half the longest diameter of the orbit ellipse — and the single number that sets the orbital period.",
+  "body_paragraphs": [
+    "If you flatten a Keplerian ellipse into its longest dimension, the line you've drawn is the major axis. Cut that in half and you have the semi-major axis — written `a`. It's the average distance from the orbiting body to the focus, kind of: an arithmetic mean of perihelion (closest) and aphelion (farthest).",
+    "Why care? Because of Kepler's third law: `T² ∝ a³`. The orbital period depends only on the semi-major axis. Shape doesn't matter. Inclination doesn't matter. Stretch one orbit so it's a cigar and another so it's a circle — if both have the same `a`, both take exactly the same time to come back round.",
+    "In Orrery's `/explore` panels you'll see this number in astronomical units. Earth: a ≈ 1.0 AU. Mars: 1.52 AU. Jupiter: 5.2 AU. Plug into the period formula and you've reproduced the orrery clock: 1 year, 687 days, 11.86 years."
+  ],
+  "formula_caption": "Semi-major axis as the mean of perihelion and aphelion radii.",
+  "diagram_caption": "The major axis spans from perihelion to aphelion through both foci. Semi-major axis a is half that span."
+}

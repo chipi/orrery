@@ -1,0 +1,11 @@
+{
+  "title": "Kepler's Three Laws",
+  "intro_sentence": "Three observational rules that turned planetary motion into a closed-form science a century before Newton explained why.",
+  "body_paragraphs": [
+    "First law: planets orbit on ellipses with the Sun at one focus. Before Kepler, every model used circles — sometimes nested, sometimes offset, but always circular. Kepler used Tycho Brahe's twenty years of Mars observations and gave up: the data didn't fit circles, and nothing he could do made them. Ellipses fit on the first try.",
+    "Second law: the line from Sun to planet sweeps equal areas in equal times. This is angular-momentum conservation in disguise. Near perihelion the planet is close to the Sun, the line is short — so it has to swing fast to sweep the same area as a long, slow line near aphelion. It's why orbital speed isn't constant.",
+    "Third law: `T² ∝ a³`. The square of the orbital period is proportional to the cube of the semi-major axis. With Earth set to T = 1 year and a = 1 AU, you can read off any planet's period from its distance — or its distance from its period. Newton would later derive this from gravity; Kepler got there through pure pattern-matching on Brahe's data."
+  ],
+  "formula_caption": "Kepler's third law in modern form: T² depends only on a (and the central body's μ).",
+  "diagram_caption": "Equal areas in equal times: shorter arc near perihelion sweeps the same area as the longer arc near aphelion."
+}

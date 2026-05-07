@@ -1,0 +1,11 @@
+{
+  "title": "Eccentricity",
+  "intro_sentence": "How stretched the orbit is — zero is a perfect circle, one is a parabolic escape.",
+  "body_paragraphs": [
+    "Eccentricity (`e`) is the shape number. Set it to 0 and you have a circle — the foci collapse onto a single centre, and the orbiting body stays at the same distance forever. Crank it up toward 1 and the ellipse stretches into a cigar — the body whips past the focus at perihelion, then loiters out at aphelion for most of the orbit.",
+    "Above `e = 1` you're no longer bound. `e = 1` exactly is a parabolic trajectory (escape, just barely). Anything higher is hyperbolic — a flyby that never returns. Most spacecraft trajectories Orrery shows are heliocentric ellipses with `e < 1`. The exception: gravity-assist arms drawn around Jupiter or Saturn dip into hyperbolic territory.",
+    "Real planets cluster at low eccentricity. Earth: 0.0167 — almost circular. Mars: 0.093 — visibly elongated. Mercury: 0.205 — most eccentric of the eight planets. Pluto and the comets sit much higher, which is why their visits to perihelion are the show-stopping events of the outer solar system."
+  ],
+  "formula_caption": "Eccentricity from perihelion and aphelion radii.",
+  "diagram_caption": "Three orbits with the same semi-major axis but eccentricity e = 0, 0.4, 0.8. Shape changes; period does not."
+}

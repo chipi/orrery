@@ -288,6 +288,78 @@ export function buildIssProxyStation(): THREE.Group {
     trussGroup.add(sarj);
   }
 
+  // ── Truss handrails + Mobile Transporter rail (Phase 2e) ──────────
+  // Continuous thin rail along the entire truss top edge — Mobile
+  // Transporter rolls along this for Canadarm2 base translation.
+  const railMat = new THREE.MeshStandardMaterial({
+    color: 0xb0b4bc,
+    metalness: 0.5,
+    roughness: 0.55,
+  });
+  const railLength = 12.2; // P6 outboard to S6 outboard
+  const mtRail = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.012, railLength), railMat);
+  mtRail.position.set(0, 0.18, 0);
+  mtRail.userData.stationPickable = false;
+  mtRail.name = 'mt_rail';
+  setShadowFlags(mtRail);
+  trussGroup.add(mtRail);
+
+  // ── ELC payload platforms (Phase 2e) ──────────────────────────────
+  // Express Logistics Carriers — 4 flat platforms mounted on the truss
+  // for external spare-parts storage. Real ISS has ELC-1/2/3/4 at
+  // various truss locations.
+  const elcMat = new THREE.MeshStandardMaterial({
+    color: 0xc8ccd4,
+    metalness: 0.3,
+    roughness: 0.7,
+  });
+  const ELC_POSITIONS: { z: number; ySign: 1 | -1 }[] = [
+    { z: -1.6, ySign: 1 }, // ELC-1 P3 zenith side
+    { z: -2.5, ySign: -1 }, // ELC-2 P3 nadir side
+    { z: 1.6, ySign: 1 }, // ELC-3 S3 zenith side
+    { z: 2.5, ySign: -1 }, // ELC-4 S3 nadir side
+  ];
+  for (const elc of ELC_POSITIONS) {
+    const platform = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.04, 0.14), elcMat);
+    platform.position.set(0, elc.ySign * 0.22, elc.z);
+    platform.userData.stationPickable = false;
+    platform.name = 'elc_platform';
+    setShadowFlags(platform);
+    trussGroup.add(platform);
+  }
+
+  // ── AMS-02 — Alpha Magnetic Spectrometer (Phase 2e) ───────────────
+  // Distinctive cube + cylindrical magnet on S3 (real position).
+  // Visually iconic — one of the largest external experiments.
+  const amsCube = new THREE.Mesh(
+    new THREE.BoxGeometry(0.18, 0.16, 0.16),
+    new THREE.MeshStandardMaterial({
+      color: 0xd0d4dc,
+      metalness: 0.4,
+      roughness: 0.55,
+    }),
+  );
+  amsCube.position.set(0, 0.32, 1.6); // S3 zenith side
+  amsCube.userData.stationPickable = false;
+  amsCube.name = 'ams_02';
+  setShadowFlags(amsCube);
+  trussGroup.add(amsCube);
+  // AMS magnet ring on top of the cube
+  const amsRing = new THREE.Mesh(
+    new THREE.TorusGeometry(0.07, 0.018, 6, 14),
+    new THREE.MeshStandardMaterial({
+      color: 0x8a8e96,
+      metalness: 0.55,
+      roughness: 0.45,
+    }),
+  );
+  amsRing.rotation.x = Math.PI / 2;
+  amsRing.position.set(0, 0.43, 1.6);
+  amsRing.userData.stationPickable = false;
+  amsRing.name = 'ams_02_ring';
+  setShadowFlags(amsRing);
+  trussGroup.add(amsRing);
+
   // ── Solar arrays — 8 main wings at P4/P6/S4/S6 outboard tips ────────
   const arrayTex = makeMainArrayTexture();
   arrayTex.repeat.set(8, 1);

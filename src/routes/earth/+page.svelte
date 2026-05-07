@@ -14,6 +14,7 @@
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { panelGalleryCredit } from '$lib/image-credits';
 
   // ─── Earth scene constants ────────────────────────────────────────
   const EARTH_RADIUS = 8;
@@ -1083,7 +1084,9 @@
               </button>
             {/each}
           </div>
-          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+          <p class="gallery-credit">
+            {panelGalleryCredit(selected.agencies?.join(' / '))}
+          </p>
         {/if}
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}

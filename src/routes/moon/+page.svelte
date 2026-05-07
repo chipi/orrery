@@ -13,6 +13,7 @@
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { panelGalleryCredit } from '$lib/image-credits';
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -1152,7 +1153,7 @@
               </button>
             {/each}
           </div>
-          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+          <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}

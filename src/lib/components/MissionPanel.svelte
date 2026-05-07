@@ -8,6 +8,7 @@
   import { localeFromPage } from '$lib/locale';
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
+  import { missionGalleryCredit } from '$lib/image-credits';
 
   type Tab = 'overview' | 'flight' | 'learn' | 'gallery';
 
@@ -464,7 +465,7 @@
               </button>
             {/each}
           </div>
-          <p class="gallery-credit">{m.mp_gallery_credit()}</p>
+          <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
         {/if}
       {:else if tab === 'learn'}
         {#if !mission.links || mission.links.length === 0}

@@ -6,6 +6,7 @@
   import { page } from '$app/stores';
   import type { IssModule } from '$types/iss-module';
   import * as m from '$lib/paraglide/messages';
+  import { panelGalleryCredit } from '$lib/image-credits';
 
   type IssLinks = NonNullable<IssModule['links']>;
   type Tab = 'overview' | 'gallery' | 'learn';
@@ -168,7 +169,7 @@
               </button>
             {/each}
           </div>
-          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+          <p class="gallery-credit">{panelGalleryCredit(mod.agency)}</p>
         {/if}
       {:else if tab === 'learn'}
         {#if !hasLinks}

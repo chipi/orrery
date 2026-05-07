@@ -1,0 +1,33 @@
+{
+  "id": "mission-types",
+  "tab": "mission-phases",
+  "order": 8,
+  "diagram": "mission-types.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Each mission card declares its type — orbiter, lander, sample-return, flyby, or rover"
+    },
+    {
+      "route": "/moon",
+      "context_key": "/moon legend tags each Apollo and Luna by mission type"
+    },
+    {
+      "route": "/mars",
+      "context_key": "/mars legend tags each rover, lander, and orbiter by mission type"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Space probe (taxonomy)",
+      "u": "https://en.wikipedia.org/wiki/Space_probe",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Mission Categories",
+      "u": "https://science.nasa.gov/mission/",
+      "t": "core"
+    }
+  ]
+}

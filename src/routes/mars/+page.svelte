@@ -15,6 +15,7 @@
   import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
@@ -1271,7 +1272,13 @@
           <span class="badge kind">{selected.kind === 'orbiter' ? 'IN ORBIT' : 'ON SURFACE'}</span>
         </div>
         {#if selected.mission_type}
-          <p class="mission-type">{selected.mission_type}</p>
+          <p class="mission-type">
+            {selected.mission_type}<ScienceChip
+              tab="mission-phases"
+              section="mission-types"
+              label="Mission types — flyby, orbiter, lander, rover, sample return"
+            />
+          </p>
         {/if}
         <dl class="meta-grid">
           <dt>Year</dt>

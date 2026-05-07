@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Earth at the centre with four concentric orbit-regime bands: LEO close in, MEO in the GPS region, GEO at the geostationary ring, HEO as a lopsided ellipse.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .earth { fill: rgba(75,156,211,0.25); stroke: rgba(75,156,211,0.85); stroke-width: 1.5; }
+    .leo { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
+    .meo { stroke: #7b9cff; stroke-width: 1.6; fill: none; }
+    .geo { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .heo { stroke: #ff8c3c; stroke-width: 1.6; fill: none; stroke-dasharray: 5 3; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 10px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.6); }
+    .leo-l { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 9px; }
+    .meo-l { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 9px; }
+    .geo-l { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9px; }
+    .heo-l { fill: #ff8c3c; font-family: 'Space Mono', monospace; font-size: 9px; }
+  </style>
+  <text class="lbl" x="20" y="22">Earth-orbit regimes</text>
+  <circle class="earth" cx="180" cy="140" r="22" />
+  <text class="tick" x="180" y="143" text-anchor="middle" fill="rgba(255,255,255,0.85)">Earth</text>
+  <circle class="leo" cx="180" cy="140" r="32" />
+  <text class="leo-l" x="180" y="100" text-anchor="middle">LEO · 408 km</text>
+  <circle class="meo" cx="180" cy="140" r="62" />
+  <text class="meo-l" x="180" y="68" text-anchor="middle">MEO · GPS 20,200 km</text>
+  <circle class="geo" cx="180" cy="140" r="92" />
+  <text class="geo-l" x="180" y="36" text-anchor="middle">GEO · 35,786 km (24h period)</text>
+  <ellipse class="heo" cx="240" cy="140" rx="135" ry="50" />
+  <text class="heo-l" x="365" y="170" text-anchor="end">HEO · Molniya</text>
+  <circle cx="180" cy="108" r="2" fill="#4ecdc4" />
+  <circle cx="180" cy="78" r="2" fill="#7b9cff" />
+  <circle cx="180" cy="48" r="2" fill="#ffc850" />
+  <text class="lbl" x="20" y="262">altitude → period → coverage; each regime is a different compromise</text>
+</svg>

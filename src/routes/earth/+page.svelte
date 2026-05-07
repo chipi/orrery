@@ -16,6 +16,7 @@
   import { buildLabel } from '$lib/three-label';
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1025,6 +1026,11 @@
           {regime}
         </span>
       {/each}
+      <ScienceChip
+        tab="orbits"
+        section="orbit-regimes"
+        label="Orbit regimes — LEO / MEO / GEO / HEO altitude bands"
+      />
     </div>
   {/if}
 

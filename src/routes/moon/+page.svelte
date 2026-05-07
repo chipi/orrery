@@ -15,6 +15,7 @@
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1080,6 +1081,13 @@
           <p class="type">
             {selected.mission_type ?? ''}
             {#if selected.site_name}· {selected.site_name}{/if}
+            {#if selected.mission_type}
+              <ScienceChip
+                tab="mission-phases"
+                section="mission-types"
+                label="Mission types — flyby, orbiter, lander, rover, sample return"
+              />
+            {/if}
           </p>
         {/if}
       </div>

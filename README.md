@@ -31,7 +31,7 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 | Screen | What it shows |
 |---|---|
-| **Solar System Explorer** (`/explore`) | Real-time 3D / 2D orrery — 8 planets + 5 dwarf planets + 2 comets + ʻOumuamua, with togglable visibility layers and clickable bodies. Detail panels: OVERVIEW · TECHNICAL · REFERENCES · GALLERY · LEARN |
+| **Solar System Explorer** (`/explore`) | Real-time 3D / 2D orrery — 8 planets + 5 dwarf planets + 2 comets + ʻOumuamua, with togglable visibility layers and clickable bodies. Detail panels: OVERVIEW · GALLERY · TECHNICAL · REFERENCES · LEARN |
 | **Mission Configurator** (`/plan`) | 11,200-cell Lambert porkchop plot per destination — Earth → Mercury / Venus / Mars / Jupiter / Saturn with LANDING / FLYBY toggle. 13 rockets to choose from, real ∆v budget |
 | **Mission Arc** (`/fly`) | Fly a mission — live telemetry, transfer arc as a true Keplerian two-point ellipse with Sun at focus, fuel model, timeline scrubber. CAPCOM panel with mission events |
 | **Mission Library** (`/missions`) | **32** historical and planned missions across Mars + Moon — every agency, every outcome, replayable. Timeline navigator (1957 → 2030) above the card grid scrubs the year window |

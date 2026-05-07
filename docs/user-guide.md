@@ -26,7 +26,7 @@ A real-time 3D / 2D orrery showing 8 planets, 5 dwarf planets, 2 comets, and ʻO
 **What you can do**:
 - **Drag** the 3D scene to orbit around the Sun.
 - **Scroll** / **pinch** to zoom.
-- **Click any body** — Sun, planet, dwarf, comet, ʻOumuamua — to open its detail panel with OVERVIEW · TECHNICAL · REFERENCES · GALLERY · LEARN tabs.
+- **Click any body** — Sun, planet, dwarf, comet, ʻOumuamua — to open its detail panel with OVERVIEW · GALLERY · TECHNICAL · REFERENCES · LEARN tabs.
 - **Hover** in 3D for a velocity tooltip (mean orbital velocity via vis-viva).
 - **`2D` toggle** (top right) — switches to a top-down 2D plot of the ecliptic plane.
 - **`REFERENCES` toggle** — opens a true-relative-size diorama of the planets.

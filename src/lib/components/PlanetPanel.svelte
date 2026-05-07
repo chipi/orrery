@@ -5,7 +5,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
 
-  type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
 
   type Props = {
     planet: LocalizedPlanet | null;
@@ -121,15 +121,6 @@
         aria-selected={tab === 'overview'}
         aria-controls="pp-tabpanel">{m.panel_tab_overview()}</button
       >
-      <button
-        type="button"
-        id="pp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
-      >
       {#if gallery.length > 0}
         <button
           type="button"
@@ -141,6 +132,15 @@
           aria-controls="pp-tabpanel">{m.panel_tab_gallery()}</button
         >
       {/if}
+      <button
+        type="button"
+        id="pp-tab-technical"
+        class:active={tab === 'technical'}
+        onclick={() => (tab = 'technical')}
+        role="tab"
+        aria-selected={tab === 'technical'}
+        aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
+      >
       {#if hasLinks}
         <button
           type="button"

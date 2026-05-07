@@ -11,7 +11,7 @@
   import { missionGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
 
-  type Tab = 'overview' | 'flight' | 'learn' | 'gallery';
+  type Tab = 'overview' | 'gallery' | 'flight' | 'learn';
 
   type Props = {
     mission: Mission | null;
@@ -178,17 +178,6 @@
         aria-selected={tab === 'overview'}
         aria-controls="mp-tabpanel">{m.mp_tab_overview()}</button
       >
-      {#if hasFlightData}
-        <button
-          type="button"
-          id="mp-tab-flight"
-          class:active={tab === 'flight'}
-          onclick={() => (tab = 'flight')}
-          role="tab"
-          aria-selected={tab === 'flight'}
-          aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
-        >
-      {/if}
       {#if gallery.length > 0}
         <button
           type="button"
@@ -198,6 +187,17 @@
           role="tab"
           aria-selected={tab === 'gallery'}
           aria-controls="mp-tabpanel">{m.mp_tab_gallery()}</button
+        >
+      {/if}
+      {#if hasFlightData}
+        <button
+          type="button"
+          id="mp-tab-flight"
+          class:active={tab === 'flight'}
+          onclick={() => (tab = 'flight')}
+          role="tab"
+          aria-selected={tab === 'flight'}
+          aria-controls="mp-tabpanel">{m.mp_tab_flight()}</button
         >
       {/if}
       <button

@@ -1299,6 +1299,18 @@ const ISS_IMAGE_QUERIES: IssImageQuery[] = [
   { id: 'unity', query: 'Unity module ISS Node 1' },
   { id: 'zarya', query: 'Zarya FGB ISS first module' },
   { id: 'zvezda', query: 'Zvezda service module ISS' },
+  // Visiting fleet — share the iss-modules image space because they
+  // re-use IssModulePanel for rendering. Per ADR-046, agency-first
+  // for non-US craft (Soyuz / Progress / HTV-X drop straight to
+  // Wikimedia covers); NASA Images API is fine for US commercial
+  // craft because their on-orbit photography is taken by NASA crew.
+  { id: 'soyuz_ms', query: 'Soyuz MS spacecraft docked ISS Russian' },
+  { id: 'progress_ms', query: 'Progress cargo spacecraft ISS docked Russian' },
+  { id: 'crew_dragon', query: 'Crew Dragon SpaceX docked Harmony ISS' },
+  { id: 'cargo_dragon', query: 'Cargo Dragon SpaceX CRS approaches ISS' },
+  { id: 'cygnus', query: 'Cygnus spacecraft Canadarm2 capture ISS Northrop' },
+  { id: 'starliner', query: 'Boeing Starliner CST-100 docked Harmony ISS' },
+  { id: 'htv_x', query: 'HTV-X JAXA cargo spacecraft Harmony Canadarm2' },
 ];
 
 /** Single-image Wikimedia cover when NASA search returns nothing usable. */
@@ -1320,6 +1332,17 @@ export const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
   unity: 'Unity-Zarya-Zvezda STS-106 (3).jpg',
   zarya: 'Zarya FGB control module .Russian-built.jpg',
   zvezda: 'Zvezda Service Module under construction.jpg',
+  // Visiting fleet covers — picked for dramatic on-orbit framing
+  // (recent Soyuz / Progress / Dragon / Starliner / HTV-X dockings).
+  soyuz_ms:
+    'The Soyuz MS-27 spacecraft docked to the Prichal module above Florida (iss073e0134239).jpg',
+  progress_ms:
+    'The Progress 92 cargo craft docked to the International Space Station (iss073e0424353).jpg',
+  crew_dragon: 'Crew-4 SpaceX Dragon Freedom docked to ISS (ISS067-E-066884).jpg',
+  cargo_dragon: 'ISS-64 The SpaceX CRS-21 Cargo Dragon vehicle approaches the ISS.jpg',
+  cygnus: 'ISS-66 Cygnus moments from being captured with the Canadarm2 robotic arm.jpg',
+  starliner: "Boeing's Starliner crew ship approaches the space station (cropped).jpg",
+  htv_x: 'The new HTV-X1 approaches the International Space Station (iss073e1045697).jpg',
 };
 
 /** Extra Commons filenames tried first when topping up toward ISS_GALLERY_MAX. */
@@ -1357,6 +1380,59 @@ export const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
   ],
   tranquility: ['STS-130 EVA1 Tranquility 1.jpg', 'Node 3 - Isolated view.jpg'],
   harmony: ['ISS Node 2 module.jpg', 'Canadarm2 moving Harmony node into position.jpg'],
+  // Visiting fleet — Commons gallery candidates per craft. Five each
+  // is the practical max (ISS_GALLERY_MAX = 6, slot 01 from the
+  // hero list above). Each list mixes recent expedition imagery
+  // with a launch / approach / capture / docked variety.
+  soyuz_ms: [
+    'ISS-53 Soyuz MS-05 spacecraft docked to Rassvet.jpg',
+    'The Soyuz MS-26 spacecraft docked to the Rassvet module (iss072e838101).jpg',
+    'Soyuz MS-19 and Progress 78 docked to the ISS (iss066e010716).jpg',
+    'The Soyuz MS-28 crew spacecraft docked to the International Space Station (iss073e1231962).jpg',
+    'Soyuz MS-05 spacecraft docked to the ISS.jpg',
+  ],
+  progress_ms: [
+    'ISS-54 Soyuz MS-07 crew ship and Progress MS-07 cargo craft docked to ISS.jpg',
+    'ISS-53 Progress MS-07 cargo craft docked to Pirs.jpg',
+    "ISS-63 Russia's Progress MS-13 cargo craft above Iraq.jpg",
+    "The Progress 94 cargo spacecraft is pictured docked to the International Space Station's Poisk module (iss074e0409125).jpg",
+    'ISS-51 Progress MS-05 cargo spacecraft.jpg',
+  ],
+  crew_dragon: [
+    'Crew Dragon Demo 2 docked with ISS, starboard light lit.png',
+    'ISS-67 The SpaceX Dragon Freedom crew ship docked to the Harmony module.jpg',
+    'SpaceX Crew-3 Launch (NHQ202111100021).jpg',
+    'SpaceX Crew Dragon.jpg',
+    'The SpaceX Dragon Endeavour crew ship is pictured docked to the Harmony module crop and flip.jpg',
+  ],
+  cargo_dragon: [
+    'ISS-65 The SpaceX Cargo Dragon approaches the station (2).jpg',
+    'Cargo Dragon CRS-21 Undocking.png',
+    'ISS-59 SpaceX CRS-17 Dragon docked to the ISS (2).jpg',
+    'SpaceX CRS-15 Dragon approaches the ISS (2).jpg',
+    'ISS-47 SpaceX Dragon CRS-8 departure.jpg',
+  ],
+  cygnus: [
+    'ISS-65 Cygnus NG-16 in the grip of Canadarm2 (2).jpg',
+    'The Cygnus XL cargo spacecraft is pictured in the grips of the Canadarm2 robotic arm (iss074e0458279).jpg',
+    'ISS-57 Cygnus NG-10 approaching the ISS (4).jpg',
+    'Antares liftoff from Pad 0A at the Wallops Flight Facility.jpg',
+    'Antares NG-15 captured by Canadarm2 (ISS064-E-036984).jpg',
+  ],
+  starliner: [
+    "ISS-67 Boeing's Starliner crew ship docked to the Harmony module.jpg",
+    "Boeing's CST-100 Starliner spacecraft docking to the ISS.jpg",
+    "ISS-67 Beoing's Starliner spacecraft departs the vicinity of the space station.jpg",
+    "Boeing's Starliner crew ship approaches the space station (iss067e066717).jpg",
+    'SpaceX Crew Dragon and Boeing CST-100 Starliner.jpg',
+  ],
+  htv_x: [
+    'The HTV-X1 cargo spacecraft from JAXA attached to the Harmony module (iss073e1193852).jpg',
+    'The new HTV-X1 in the grips of the Canadarm2 (iss073e0988452).jpg',
+    'The HTV-X1 cargo craft and the Canadarm2 robotic arm (iss074e0319321).jpg',
+    'HTV-X (square crop).jpg',
+    'The new HTV-X1 in the grips of the Canadarm2 (iss073e1046014).jpg',
+  ],
 };
 
 async function topUpIssWikimediaGallery(

@@ -1,171 +1,57 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-05-07T11:19:57.313Z
+Generated: 2026-05-07T11:43:06.260Z
 Script: build-image-provenance@1.0.0
-Commit: 0ec968e10139307776f8c9afedcafb0da63b7d77
-Total entries: 580
+Commit: 188c127b5474d3023f02dbe9ae549660c1e94dc8
+Total entries: 622
 
-## Added (5)
+## Added (42)
 
-- `/images/missions/chandrayaan1/05.jpg` — PD-Old via wikimedia-commons
-- `/images/missions/change6/05.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/missions/starship-mars-crew/05.jpg` — CC-BY-2.0 via wikimedia-commons
-- `/images/missions/tianwen1/04.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/missions/tianwen1/05.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cargo_dragon/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/crew_dragon/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/cygnus/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/htv_x/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/progress_ms/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/soyuz_ms/06.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/01.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/02.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/03.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/04.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/05.jpg` — PD-Old via wikimedia-commons
+- `/images/iss-modules/starliner/06.jpg` — PD-Old via wikimedia-commons
 
 ## Removed (0)
 
 
-## Changed (317)
+## Changed (0)
 
-- `/images/earth-objects/beidou/01.jpg`
-  - before — author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou-3%20Satellite%20Mockup.jpg"
-  - after — author: "AKAMGO yalms", source_url: "https://commons.wikimedia.org/wiki/File:Beidou-3_Satellite_Mockup.jpg"
-- `/images/earth-objects/beidou/02.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ABeidou%20satellite%20mockup%20at%20FING%20UNLP%2003.jpg"
-  - after — license_short: "CC-BY-4.0", author: "BugWarp", source_url: "https://commons.wikimedia.org/wiki/File:Beidou_satellite_mockup_at_FING_UNLP_03.jpg"
-- `/images/earth-objects/beidou/03.jpg`
-  - before — author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3A%E5%8C%97%E6%96%97%E4%B8%89%E5%8F%B7%E5%8D%AB%E6%98%9F%EF%BC%881%EF%BC%9A3%EF%BC%89.jpg"
-  - after — author: "Sprt98", source_url: "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%96%97%E4%B8%89%E5%8F%B7%E5%8D%AB%E6%98%9F%EF%BC%881%EF%BC%9A3%EF%BC%89.jpg"
-- `/images/earth-objects/chandra/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ANASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
-  - after — license_short: "PD-Old", author: "X-ray: NASA/CXC/Rutgers/J.Hughes; Optical: NASA/STScI", source_url: "https://commons.wikimedia.org/wiki/File:NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg"
-- `/images/earth-objects/gaia/01.jpg`
-  - before — author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft.jpeg"
-  - after — author: "European Space Agency", source_url: "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft.jpeg"
-- `/images/earth-objects/gaia/02.jpg`
-  - before — author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGaia%20spacecraft%20360%20Gaia%20Sky.jpg"
-  - after — author: "Langurmonkey", source_url: "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft_360_Gaia_Sky.jpg"
-- `/images/earth-objects/galileo/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGalileoSatModel.jpg"
-  - after — license_short: "CC-BY-SA-3.0", author: "Pouyana", source_url: "https://commons.wikimedia.org/wiki/File:GalileoSatModel.jpg"
-- `/images/earth-objects/galileo/02.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGalileo%20satellite%20model.jpg"
-  - after — license_short: "CC-BY-4.0", author: "This file comes from Science Museum Collections, a website operated by Science Museum Group, a non-departmental public body in the UK. This tag does not indicate the copyright status of the attached work. A normal copyright tag is still required. See Commons:Licensing.", source_url: "https://commons.wikimedia.org/wiki/File:Galileo_satellite_model.jpg"
-- `/images/earth-objects/geo/01.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20on%20Night%20Sky%20(14398636554).jpg"
-  - after — license_short: "PD-Old", author: "NOAASatellites", source_url: "https://commons.wikimedia.org/wiki/File:GOES-R_Spacecraft_on_Night_Sky_(14398636554).jpg"
-- `/images/earth-objects/geo/02.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AGOES-R%20Spacecraft%20Art%20Front%20Left%20(14213118418).jpg"
-  - after — license_short: "PD-Old", author: "NOAASatellites", source_url: "https://commons.wikimedia.org/wiki/File:GOES-R_Spacecraft_Art_Front_Left_(14213118418).jpg"
-- `/images/earth-objects/geo/03.jpg`
-  - before — license_short: "PD-NASA", author: "NOAA / NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AINTELSAT%20I%20(Early%20Bird).jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:INTELSAT_I_(Early_Bird).jpg"
-- `/images/earth-objects/glonass/01.jpg`
-  - before — license_short: "PD-Russia", author: "ROSCOSMOS", source_url: "https://commons.wikimedia.org/wiki/File%3ARussian%20Navigation%20Spacecraft%20Glonass%20K1%20at%20CeBIT.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "Jürgen Treutler", source_url: "https://commons.wikimedia.org/wiki/File:Russian_Navigation_Spacecraft_Glonass_K1_at_CeBIT.jpg"
-- `/images/earth-objects/glonass/02.jpg`
-  - before — license_short: "PD-Russia", author: "ROSCOSMOS", source_url: "https://commons.wikimedia.org/wiki/File%3AGlonass%20K%20model%20at%20Cebit%202011%20Satellite%2C%20sideview%201.jpg"
-  - after — license_short: "CC-BY-SA-2.0", author: "MKonair", source_url: "https://commons.wikimedia.org/wiki/File:Glonass_K_model_at_Cebit_2011_Satellite,_sideview_1.jpg"
-- `/images/earth-objects/glonass/03.jpg`
-  - before — license_short: "PD-Russia", author: "ROSCOSMOS", source_url: "https://commons.wikimedia.org/wiki/File%3ASoyuz%202.1b%20GLONASS-K2%2013L%20launch%2004.jpg"
-  - after — license_short: "CC-BY-4.0", author: "Ministry of Defence of the Russian Federation", source_url: "https://commons.wikimedia.org/wiki/File:Soyuz_2.1b_GLONASS-K2_13L_launch_04.jpg"
-- `/images/earth-objects/gps/01.jpg`
-  - before — author: "USAF / USSF", source_url: "https://commons.wikimedia.org/wiki/File%3ANavstar-2F.jpg"
-  - after — author: "USAF", source_url: "https://commons.wikimedia.org/wiki/File:Navstar-2F.jpg"
-- `/images/earth-objects/hubble/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AHST-SM4.jpeg"
-  - after — license_short: "PD-Old", author: "Ruffnax (Crew of STS-125)", source_url: "https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg"
-- `/images/earth-objects/iss/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA / JAXA / ROSCOSMOS / CSA", source_url: "https://commons.wikimedia.org/wiki/File%3AInternational%20Space%20Station%20after%20undocking%20of%20STS-132.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Crew of STS-132", source_url: "https://commons.wikimedia.org/wiki/File:International_Space_Station_after_undocking_of_STS-132.jpg"
-- `/images/earth-objects/jwst/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA / CSA", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20James%20Webb%20Space%20Telescope%2C%20Partially%20Stowed.jpg"
-  - after — license_short: "PD-Old", author: "Chris Gunn", source_url: "https://commons.wikimedia.org/wiki/File:The_James_Webb_Space_Telescope,_Partially_Stowed.jpg"
-- `/images/earth-objects/lro/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AEarthrise%20over%20Compton%20crater%20-LRO%20full%20res.jpg"
-  - after — license_short: "PD-Old", author: "NASA / Goddard Space Flight Center / Arizona State University", source_url: "https://commons.wikimedia.org/wiki/File:Earthrise_over_Compton_crater_-LRO_full_res.jpg"
-- `/images/earth-objects/tiangong/01.jpg`
-  - before — author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3AChinese%20Tiangong%20Space%20Station.jpg"
-  - after — author: "Shujianyang", source_url: "https://commons.wikimedia.org/wiki/File:Chinese_Tiangong_Space_Station.jpg"
-- `/images/earth-objects/tiangong/02.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ARear%20view%20of%20Tiangong%20Space%20Station.jpg"
-  - after — license_short: "CC-BY-4.0", author: "China Manned Space Engineering Office", source_url: "https://commons.wikimedia.org/wiki/File:Rear_view_of_Tiangong_Space_Station.jpg"
-- `/images/earth-objects/tiangong/03.jpg`
-  - before — license_short: "CC-BY-SA-4.0", author: "CNSA", source_url: "https://commons.wikimedia.org/wiki/File%3ABasic%20space%20experiment%20cabinet%20of%20Tiangong%20space%20station.jpg"
-  - after — license_short: "CC-BY-4.0", author: "Wang Xiang, Zhang Qiao, Wang Wei", source_url: "https://commons.wikimedia.org/wiki/File:Basic_space_experiment_cabinet_of_Tiangong_space_station.jpg"
-- `/images/earth-objects/xmm/01.jpg`
-  - before — license_short: "CC-BY-SA-3.0-IGO", author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AXMM-Newton.jpg"
-  - after — license_short: "CC-BY-SA-3.0", author: "Poppy", source_url: "https://commons.wikimedia.org/wiki/File:XMM-Newton.jpg"
-- `/images/iss-modules/beam/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AIllustration%20of%20BEAM%20berthed%20to%20the%20International%20Space%20Station.jpg"
-  - after — license_short: "PD-Old", author: "National Aeronautics and Space Administration (NASA)", source_url: "https://commons.wikimedia.org/wiki/File:Illustration_of_BEAM_berthed_to_the_International_Space_Station.jpg"
-- `/images/iss-modules/canadarm2/01.jpg`
-  - before — license_short: "PD-NASA", author: "CSA / NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2%20and%20JEMRMS.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Canadarm2_and_JEMRMS.jpg"
-- `/images/iss-modules/canadarm2/02.jpg`
-  - before — license_short: "PD-NASA", author: "CSA / NASA", source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2-lee.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Canadarm2-lee.jpg"
-- `/images/iss-modules/columbus/01.jpg`
-  - before — author: "ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AShiny%20Columbus%20during%20spacewalk%20ESA21793666.jpeg"
-  - after — author: "European Space Agency", source_url: "https://commons.wikimedia.org/wiki/File:Shiny_Columbus_during_spacewalk_ESA21793666.jpeg"
-- `/images/iss-modules/cupola/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ACupola_ISS.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Cupola_ISS.jpg"
-- `/images/iss-modules/cupola/02.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AInside%20the%20Cupola%20at%20night%202013-03-15.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Kevin Ford", source_url: "https://commons.wikimedia.org/wiki/File:Inside_the_Cupola_at_night_2013-03-15.jpg"
-- `/images/iss-modules/cupola/03.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ATracy%20Caldwell%20Dyson%20in%20Cupola%20ISS.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Tracy Caldwell Dyson", source_url: "https://commons.wikimedia.org/wiki/File:Tracy_Caldwell_Dyson_in_Cupola_ISS.jpg"
-- `/images/iss-modules/cupola/04.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-130%20ISS%20approach%20closeup%20of%20Tranquility%20and%20Cupola.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:STS-130_ISS_approach_closeup_of_Tranquility_and_Cupola.jpg"
-- `/images/iss-modules/destiny/01.jpg`
-  - before — license_short: "PD-NASA", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-65%20NASA%20astronauts%20work%20in%20the%20U.S.%20Destiny%20laboratory%20module.jpg"
-  - after — license_short: "PD-Old", source_url: "https://commons.wikimedia.org/wiki/File:ISS-65_NASA_astronauts_work_in_the_U.S._Destiny_laboratory_module.jpg"
-- `/images/iss-modules/harmony/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AHarmony%20arrives%20at%20ISS.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Harmony_arrives_at_ISS.jpg"
-- `/images/iss-modules/harmony/02.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AISS%20Node%202%20module.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:ISS_Node_2_module.jpg"
-- `/images/iss-modules/harmony/03.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ACanadarm2%20moving%20Harmony%20node%20into%20position.jpg"
-  - after — license_short: "PD-Old", author: "NASA TV", source_url: "https://commons.wikimedia.org/wiki/File:Canadarm2_moving_Harmony_node_into_position.jpg"
-- `/images/iss-modules/kibo/01.jpg`
-  - before — license_short: "CC-BY-4.0", author: "JAXA", source_url: "https://commons.wikimedia.org/wiki/File%3AJapanese%20Experiment%20Module%20exterior%20-%20cropped.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Japanese_Experiment_Module_exterior_-_cropped.jpg"
-- `/images/iss-modules/leonardo/01.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ALeonardo%20PMM%20module.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Leonardo_PMM_module.jpg"
-- `/images/iss-modules/leonardo/02.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-133%20ISS-26%20Permanent%20Multipurpose%20Module.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:STS-133_ISS-26_Permanent_Multipurpose_Module.jpg"
-- `/images/iss-modules/leonardo/03.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-133%20ISS-26%20newly-attached%20Permanent%20Multipurpose%20Module.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:STS-133_ISS-26_newly-attached_Permanent_Multipurpose_Module.jpg"
-- `/images/iss-modules/leonardo/04.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-43%20Permanent%20Multipurpose%20Module%20relocation.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:ISS-43_Permanent_Multipurpose_Module_relocation.jpg"
-- `/images/iss-modules/leonardo/05.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3ASTS-133%20Installation%20PMM%202.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:STS-133_Installation_PMM_2.jpg"
-- `/images/iss-modules/leonardo/06.jpg`
-  - before — license_short: "PD-NASA", author: "NASA / ESA", source_url: "https://commons.wikimedia.org/wiki/File%3APermanent%20Multipurpose%20Module%20(PMM)%20Relocation.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Emily Nelson", source_url: "https://commons.wikimedia.org/wiki/File:Permanent_Multipurpose_Module_(PMM)_Relocation.jpg"
-- `/images/iss-modules/nauka/01.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AAnton%20Shkaplerov%20works%20outside%20Nauka%20during%20spacewalk%20(ISS066-E-119955).jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:Anton_Shkaplerov_works_outside_Nauka_during_spacewalk_(ISS066-E-119955).jpg"
-- `/images/iss-modules/nauka/02.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3A51651128052%2006d3077e33%20o%20Progress%20MS-17.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:51651128052_06d3077e33_o_Progress_MS-17.jpg"
-- `/images/iss-modules/nauka/03.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3A1637984492234%20Progress%20MS%2017%20undocking%20and%20Nauka%20nadir%20temporary%20docking%20adapter%20Removal%2001.jpg"
-  - after — license_short: "PD-Old", author: "Nasa", source_url: "https://commons.wikimedia.org/wiki/File:1637984492234_Progress_MS_17_undocking_and_Nauka_nadir_temporary_docking_adapter_Removal_01.jpg"
-- `/images/iss-modules/nauka/04.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Nauka%20multipurpose%20laboratory%20module%20and%20the%20Prichal%20docking%20module.jpg"
-  - after — license_short: "PD-Old", author: "NASA Johnson", source_url: "https://commons.wikimedia.org/wiki/File:The_Nauka_multipurpose_laboratory_module_and_the_Prichal_docking_module.jpg"
-- `/images/iss-modules/nauka/05.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-66%20Prichal%20and%20Nauka%20during%20an%20outfitting%20spacewalk.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:ISS-66_Prichal_and_Nauka_during_an_outfitting_spacewalk.jpg"
-- `/images/iss-modules/nauka/06.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AISS-67%20The%20Nauka%20and%20Prichal%20modules%20and%20the%20Soyuz%20MS-21%20crew%20ship.jpg"
-  - after — license_short: "PD-Old", author: "NASA/Kjell Lindgren", source_url: "https://commons.wikimedia.org/wiki/File:ISS-67_The_Nauka_and_Prichal_modules_and_the_Soyuz_MS-21_crew_ship.jpg"
-- `/images/iss-modules/pirs/01.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AISS%20S01%20Pirs%20airlock.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:ISS_S01_Pirs_airlock.jpg"
-- `/images/iss-modules/prichal/01.jpg`
-  - before — license_short: "PD-Russia", author: "Roscosmos", source_url: "https://commons.wikimedia.org/wiki/File%3AThe%20Prichal%20docking%20module%20above%20Africa.jpg"
-  - after — license_short: "PD-Old", author: "NASA", source_url: "https://commons.wikimedia.org/wiki/File:The_Prichal_docking_module_above_Africa.jpg"
-- … 267 more

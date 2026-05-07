@@ -99,48 +99,45 @@
   main {
     min-height: calc(100vh - var(--nav-height));
   }
-  /* Persistent /credits link — always visible at the
+  /* Persistent footer link strip — always visible at the
    * bottom-trailing corner so the bill of materials is one click
-   * away from every screen, including the full-bleed 3D routes
-   * (/explore, /fly, /iss, /earth, /moon, /mars). Sits above the
-   * 30-z-index bottom-sheet / drawer panels but below the
-   * lightbox overlay (z-index 100) so a fullscreen gallery still
-   * takes precedence. Logical inset (inset-inline-end) mirrors
-   * for RTL locales (e.g. Arabic). */
+   * away from every screen, including the full-bleed 3D routes.
+   * Designed as a small-footprint text strip (à la most marketing
+   * sites) so additional links (Imprint, Privacy, About, …) can
+   * grow inline without becoming a heavy chrome element.
+   *
+   * Sits above the 30-z-index bottom-sheet / drawer panels but
+   * below the lightbox overlay (z-index 100). Logical inset
+   * (inset-inline-end) mirrors for RTL locales. */
   .site-footer {
     position: fixed;
-    bottom: max(8px, env(safe-area-inset-bottom));
-    inset-inline-end: 8px;
+    bottom: max(6px, env(safe-area-inset-bottom));
+    inset-inline-end: 10px;
     z-index: 35;
     pointer-events: none;
+    display: flex;
+    gap: 12px;
+    align-items: center;
   }
   .credits-link {
     pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    min-height: 28px;
-    padding: 6px 10px;
-    background: rgba(2, 4, 12, 0.78);
-    border: 1px solid rgba(78, 205, 196, 0.55);
-    border-radius: 4px;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
-    backdrop-filter: blur(4px);
-    transition:
-      color 0.15s,
-      border-color 0.15s,
-      background 0.15s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    padding: 2px 0;
+    transition: color 0.15s;
   }
   .credits-link:hover,
   .credits-link:focus-visible {
-    color: #04040c;
-    background: #4ecdc4;
-    border-color: #4ecdc4;
+    color: #4ecdc4;
     outline: none;
+  }
+  .credits-link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   .pwa-toast {
     position: fixed;

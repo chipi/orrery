@@ -28,7 +28,7 @@
     note?: string;
   };
 
-  type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
 
   type Props = {
     body: SmallBody | null;
@@ -110,15 +110,6 @@
         aria-selected={tab === 'overview'}
         aria-controls="sbp-tabpanel">{m.panel_tab_overview()}</button
       >
-      <button
-        type="button"
-        id="sbp-tab-technical"
-        class:active={tab === 'technical'}
-        onclick={() => (tab = 'technical')}
-        role="tab"
-        aria-selected={tab === 'technical'}
-        aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
-      >
       {#if gallery.length > 0}
         <button
           type="button"
@@ -130,6 +121,15 @@
           aria-controls="sbp-tabpanel">{m.panel_tab_gallery()}</button
         >
       {/if}
+      <button
+        type="button"
+        id="sbp-tab-technical"
+        class:active={tab === 'technical'}
+        onclick={() => (tab = 'technical')}
+        role="tab"
+        aria-selected={tab === 'technical'}
+        aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
+      >
       {#if body.wiki || body.mission_visited}
         <button
           type="button"

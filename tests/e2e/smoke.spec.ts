@@ -13,7 +13,7 @@ const ROUTES = [
   { path: '/explore', titleHint: 'Solar System Explorer' },
   { path: '/plan', titleHint: 'Mission Configurator' },
   { path: '/fly', titleHint: 'Mission Arc' },
-  { path: '/missions', titleHint: 'Mission Library' },
+  { path: '/missions', titleHint: 'Mission Catalog' },
   { path: '/earth', titleHint: 'Earth Orbit' },
   { path: '/iss', titleHint: 'ISS Explorer' },
   { path: '/moon', titleHint: 'Moon Map' },

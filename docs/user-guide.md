@@ -66,11 +66,11 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 
 ---
 
-## Mission Library · `/missions`
+## Mission Catalog · `/missions`
 
-All 36 missions in the dataset. 16 Mars + 16 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept).
+All 36 missions in the dataset. 16 Mars + 16 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under ADR-051 to free the word _Library_ for the outbound-link inventory at `/library`.
 
-[![Library](screenshots/04-missions.png)](screenshots/04-missions.png)
+[![Catalog](screenshots/04-missions.png)](screenshots/04-missions.png)
 
 **What you can do**:
 - **Filter** by destination / agency / status.

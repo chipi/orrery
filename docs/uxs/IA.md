@@ -9,7 +9,7 @@ This is the reference document for the UX plane. UXSes anchor to it by section. 
 
 Six screens, one persistent nav bar, SvelteKit's History API router. No login state. No user data. No persistence between sessions.
 
-The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mission Configurator (Act 2) → Mission Arc (Act 3) → Mission Library (archive) → Earth Orbit (context). The nav bar presents all six destinations at all times. There is no enforced sequence.
+The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mission Configurator (Act 2) → Mission Arc (Act 3) → Mission Catalog (archive) → Earth Orbit (context). The nav bar presents all six destinations at all times. There is no enforced sequence. The Mission Catalog page was previously called "Mission Library"; under ADR-051 it was renamed to free the word _Library_ for the outbound-link inventory at `/library`.
 
 ---
 
@@ -21,7 +21,7 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 | Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle |
 | Mission Configurator | `/plan` | `src/routes/plan/+page.svelte` | Canvas 2D porkchop plot |
 | Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
-| Mission Library | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
+| Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
 | Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
 
 ---
@@ -53,7 +53,7 @@ History API routing via SvelteKit's built-in router. Format: `/[screen]` with op
 |---|---|---|
 | `/[screen]` | `/explore` | All screens |
 | `/fly?mission=[id]` | `/fly?mission=curiosity` | Mission Arc (loads specific mission) |
-| `/missions?dest=[MARS\|MOON]` | `/missions?dest=MARS` | Mission Library (pre-filtered) |
+| `/missions?dest=[MARS\|MOON]` | `/missions?dest=MARS` | Mission Catalog (pre-filtered) |
 
 Navigation triggers: nav bar links, "PLAN A MISSION" button in explore screen, "FLY THIS MISSION" button in missions screen.
 
@@ -70,8 +70,8 @@ History API routing is locked in ADR-013 (superseding ADR-004). RFC-001 is close
 /fly                                           Mission Arc (default scenario: ORRERY DEMO free-return)
 /fly?mission=id                                Mission Arc (specific mission from library)
 /fly?dest=jupiter&type=flyby&dep=N&tof=N       Mission Arc (synthesised from /plan selection, ADR-026)
-/missions                                      Mission Library (all missions)
-/missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Library filtered (ADR-024)
+/missions                                      Mission Catalog (all missions)
+/missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Catalog filtered (ADR-024)
 /earth                                         Earth Orbit
 /moon                                          Moon Map
 ```
@@ -187,7 +187,7 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
                           │       │       │
               ┌───────────┘       │       └──────────┐
               ▼                   ▼                  ▼
-         Moon Map          Solar System        Mission Library
+         Moon Map          Solar System        Mission Catalog
          3D sphere         Explorer            card grid
          2D flat map       3D/2D toggle        → fly screen
               │                   │

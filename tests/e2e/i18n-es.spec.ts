@@ -18,7 +18,7 @@ const ROUTES = [
   { path: '/explore', token: 'NUESTRO SISTEMA SOLAR' },
   { path: '/plan', token: 'DESTINO' },
   { path: '/fly', token: 'VEHÍCULO' },
-  { path: '/missions', token: 'BIBLIOTECA DE MISIONES' },
+  { path: '/missions', token: 'CATÁLOGO DE MISIONES' },
   { path: '/earth', token: 'TIERRA' },
   { path: '/moon', token: 'LUNA' },
 ] as const;
@@ -46,7 +46,7 @@ test.describe('?lang=es smoke', () => {
   test('en-US fallback still works when no ?lang=', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('button.chip').first()).toHaveText('EN', { timeout: 10_000 });
-    await expect(page.getByText('MISSION LIBRARY', { exact: false }).first()).toBeVisible({
+    await expect(page.getByText('MISSION CATALOG', { exact: false }).first()).toBeVisible({
       timeout: 10_000,
     });
   });
@@ -61,7 +61,7 @@ test.describe('?lang=es smoke', () => {
 
     await expect(page).toHaveURL(/\/missions\?lang=es$/);
     await expect(page.locator('button.chip').first()).toHaveText('ES');
-    await expect(page.getByText('BIBLIOTECA DE MISIONES', { exact: false }).first()).toBeVisible({
+    await expect(page.getByText('CATÁLOGO DE MISIONES', { exact: false }).first()).toBeVisible({
       timeout: 10_000,
     });
   });

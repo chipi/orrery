@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * /missions — Mission Library.
+ * /missions — Mission Catalog (renamed from "Mission Library" under
+ * ADR-051; the route id stays /missions and the nav still reads
+ * "MISSIONS" — only the page title + heading changed).
  *
  * Covers:
  *   - 36 mission cards render
@@ -12,7 +14,7 @@ import { test, expect } from '@playwright/test';
  *   - FLY button on the panel navigates to /fly?mission=id
  */
 
-test.describe('/missions — library', () => {
+test.describe('/missions — catalog', () => {
   test('36 mission cards render', async ({ page }) => {
     await page.goto('/missions');
     const cards = page.locator('[data-testid^="mission-card-"]');

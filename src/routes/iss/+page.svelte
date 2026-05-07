@@ -719,7 +719,7 @@
     -webkit-overflow-scrolling: touch;
     position: absolute;
     inset: auto;
-    top: 220px;
+    top: 152px;
     left: 12px;
     bottom: 12px;
     width: min(300px, calc(100vw - 24px));
@@ -852,7 +852,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-width: min(420px, calc(100vw - 24px));
+    /* Match drawer width below so HUD + module list align in a single rail. */
+    width: min(300px, calc(100vw - 24px));
     pointer-events: none;
   }
   .hud-controls :global(button),

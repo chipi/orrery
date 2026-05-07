@@ -1,0 +1,9 @@
+{
+  "title": "Time-of-Flight Axis",
+  "intro_sentence": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
+  "body_paragraphs": [
+    "Y-axis is transit duration. For Mars-class targets the natural Hohmann transit is ~250 days, so Orrery's Y range runs roughly 100-500 days. For Jupiter or Saturn the Hohmann transit is years, so the axis is in years.",
+    "Different rows on the porkchop trade transit time against ∆v cost. The cheapest cells (Hohmann band) sit at the natural Hohmann transit time. Pull the transit time down (faster trip) and the ∆v cost climbs steeply. Pull it up (slower trip) and you get cheaper but slower options — sometimes worth it for cargo or non-time-sensitive payloads.",
+    "The shape of the cheap zone tells you about trade-offs. A narrow Hohmann band means the optimum is sharp; a wide cheap zone means you have flexibility. Mars's porkchop has a narrow optimum. Jupiter's wider — the gravity assist landscape spreads launch options across more dates."
+  ]
+}

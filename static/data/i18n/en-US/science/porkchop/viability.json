@@ -1,0 +1,9 @@
+{
+  "title": "Reading Viability",
+  "intro_sentence": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
+  "body_paragraphs": [
+    "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a known maximum ∆v capability with your payload mass. Compare against the porkchop: every cell where ∆v_cost ≤ ∆v_capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle.",
+    "On `/plan` you can pick a launch vehicle and Orrery overlays a margin/deficit indicator. Cool teal cells become 'doable, big margin.' Yellow cells become 'doable but tight.' Red cells become impossible-with-this-vehicle, and switch to a deficit display showing how much more capability you'd need.",
+    "This is mission feasibility analysis in one view. Real planners run it many times — for different vehicles, payload masses, trajectory variants — to find the cheapest combination that meets the science requirements. The porkchop is the visualisation; the underlying choice is always 'how much rocket do I need vs how much trip am I buying.'"
+  ]
+}

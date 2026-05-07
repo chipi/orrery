@@ -1,0 +1,11 @@
+{
+  "id": "dv-heatmap",
+  "tab": "porkchop",
+  "order": 4,
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Cell colour on the porkchop maps to ∆v" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Delta-v", "u": "https://en.wikipedia.org/wiki/Delta-v", "t": "intro" }
+  ]
+}

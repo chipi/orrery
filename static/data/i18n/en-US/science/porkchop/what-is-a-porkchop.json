@@ -1,0 +1,10 @@
+{
+  "title": "What is a Porkchop Plot?",
+  "intro_sentence": "A 2D heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows.",
+  "body_paragraphs": [
+    "Pick a departure date on the X axis. Pick a transit time on the Y axis. The colour of that cell tells you how much ∆v it would cost to fly that mission. Cool teal: cheap. Yellow: moderate. Red: very expensive. Repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe.",
+    "Each cell is the answer to a Lambert problem: 'leave Earth on date X, arrive at the destination on date X + Y, what's the ∆v required?' Solve Lambert millions of times across a date grid and the contours emerge naturally. The natural minima are launch windows — the cheap zones where Hohmann-like transfers exist.",
+    "Orrery's `/plan` route shows you the porkchop for any of nine destinations (Mars, Mercury, Venus, the gas giants, Pluto, Ceres). Hover any cell to see the exact dates and ∆v. Click to load that mission into `/fly`."
+  ],
+  "diagram_caption": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost. Cheap zones cluster around natural Hohmann windows."
+}

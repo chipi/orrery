@@ -1,0 +1,9 @@
+{
+  "title": "Departure-Window Axis",
+  "intro_sentence": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
+  "body_paragraphs": [
+    "The X-axis tells you when you leave Earth. Each pixel column is a different launch date — for Orrery's plots, sampled at one-day resolution across roughly four years. Why a four-year span? Because the Earth-Mars synodic period is 26 months; you need at least two synodic cycles to capture the recurring launch-window pattern.",
+    "Read the X-axis like a calendar. The cheap-cost lobes (the porkchop's 'pork') sit at predictable intervals. For Mars: every ~26 months. For Venus: every ~19 months. For Jupiter: every ~13 months (Jupiter moves slowly enough that the synodic period is close to Earth's year).",
+    "On `/plan` the X-axis label is `DEPARTURE WINDOW · 2026 — 2030`. The literal calendar dates appear in the tooltip when you hover."
+  ]
+}

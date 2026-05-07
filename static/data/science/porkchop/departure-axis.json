@@ -1,0 +1,11 @@
+{
+  "id": "departure-axis",
+  "tab": "porkchop",
+  "order": 2,
+  "see_in_app": [
+    { "route": "/plan", "context_key": "X axis on the porkchop is DEPARTURE WINDOW" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Launch window", "u": "https://en.wikipedia.org/wiki/Launch_window", "t": "intro" }
+  ]
+}

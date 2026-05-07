@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Schematic porkchop plot with cheap-zone lobe and ∆v contour rings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.5; fill: none; }
+    .accent-fill { fill: rgba(78, 205, 196, 0.18); stroke: #4ecdc4; stroke-width: 1.5; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Axes -->
+  <line x1="60" y1="40" x2="60" y2="260" class="stroke" />
+  <line x1="60" y1="260" x2="360" y2="260" class="stroke" />
+  <text x="20" y="44" class="label-mute">TOF</text>
+  <text x="324" y="280" class="label-mute">DEP</text>
+  <!-- Cheap-zone "porkchop" lobe centred at (180, 150) -->
+  <ellipse cx="180" cy="150" rx="70" ry="48" class="accent-fill" />
+  <ellipse cx="180" cy="150" rx="50" ry="32" class="accent" />
+  <ellipse cx="180" cy="150" rx="30" ry="18" class="accent" />
+  <text x="160" y="154" class="label-accent">3 km/s</text>
+  <!-- Contour expansion / outer rings (hotter) -->
+  <ellipse cx="180" cy="150" rx="100" ry="76" class="dashed" />
+  <text x="206" y="80" class="label-mute">5 km/s</text>
+  <ellipse cx="180" cy="150" rx="130" ry="100" class="dashed" />
+  <text x="240" y="48" class="label-mute">7+ km/s</text>
+  <!-- Second window further right (next synodic) -->
+  <ellipse cx="320" cy="150" rx="34" ry="22" class="accent-fill" />
+  <text x="306" y="154" class="label-accent">3</text>
+  <text x="296" y="124" class="label-mute">next syn</text>
+  <text x="84" y="288" class="label-mute">cheap-zone lobes recur every synodic period</text>
+</svg>

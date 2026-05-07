@@ -24,6 +24,7 @@ import type {
   TiangongModuleOverlay,
 } from '$types/tiangong-module';
 import type {
+  ScienceLanding,
   ScienceSection,
   ScienceSectionBase,
   ScienceSectionOverlay,
@@ -846,6 +847,21 @@ export async function getScienceSection(
   } catch {
     return null;
   }
+}
+
+/** Editorial Space-101 narrative shown on the /science landing. Falls back
+ * to en-US per ADR-017; returns null only if both the locale and en-US files
+ * are missing (which would indicate a broken build, not a runtime condition). */
+export async function getScienceLanding(
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<ScienceLanding | null> {
+  const overlay = await get<ScienceLanding>(`i18n/${locale}/science/_landing.json`, fetchFn).catch(
+    () => null,
+  );
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<ScienceLanding>(`i18n/en-US/science/_landing.json`, fetchFn).catch(() => null);
 }
 
 /** Editorial 101 intro shown at the top of /science/[tab]. Falls back to

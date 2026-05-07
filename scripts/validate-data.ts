@@ -53,6 +53,7 @@ const tiangongVisitorSchema = loadSchema('tiangong-visitor.schema.json');
 const scienceSectionSchema = loadSchema('science-section.schema.json');
 const scienceSectionOverlaySchema = loadSchema('science-section-overlay.schema.json');
 const scienceTabIntroSchema = loadSchema('science-tab-intro.schema.json');
+const scienceLandingSchema = loadSchema('science-landing.schema.json');
 // ADR-046 Milestone C — image provenance + license stewardship.
 const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
 const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
@@ -87,6 +88,7 @@ const validateTiangongVisitors = ajv.compile(tiangongVisitorSchema);
 const validateScienceSection = ajv.compile(scienceSectionSchema);
 const validateScienceSectionOverlay = ajv.compile(scienceSectionOverlaySchema);
 const validateScienceTabIntro = ajv.compile(scienceTabIntroSchema);
+const validateScienceLanding = ajv.compile(scienceLandingSchema);
 const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
@@ -267,8 +269,16 @@ if (existsSync(i18nDir)) {
     // /science overlays per locale (PRD-008 / ADR-017): nested by tab.
     // _intro.json holds the tab-level 101 lead-in and validates against a
     // separate schema; everything else in the tab dir is a section overlay.
+    // _landing.json (at the top of /science/) is the editorial Space-101
+    // narrative and validates against its own schema.
     const scienceOvDir = join(i18nDir, locale, 'science');
     if (existsSync(scienceOvDir)) {
+      // Top-level loose files (currently just _landing.json).
+      for (const file of listJson(scienceOvDir)) {
+        if (file.endsWith('/_landing.json')) {
+          validateFile(file, validateScienceLanding);
+        }
+      }
       for (const tab of readdirSync(scienceOvDir)) {
         const tabOvDir = join(scienceOvDir, tab);
         if (!statSync(tabOvDir).isDirectory()) continue;

@@ -836,7 +836,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    max-width: min(420px, calc(100vw - 24px));
+    /* Match drawer width below so HUD + module list align in a single rail. */
+    width: min(300px, calc(100vw - 24px));
     pointer-events: none;
   }
   .hud-controls :global(button),

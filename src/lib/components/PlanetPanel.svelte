@@ -5,6 +5,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
+  import ScienceChip from './ScienceChip.svelte';
 
   type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
 
@@ -162,7 +163,13 @@
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">{m.panel_label_semi_major_axis()}</div>
+            <div class="cell-label">
+              {m.panel_label_semi_major_axis()}<ScienceChip
+                tab="orbits"
+                section="semi-major-axis"
+                label="Semi-major axis — the orbit's size; sets the period"
+              />
+            </div>
             <div class="cell-value">{planet.a.toFixed(4)} AU</div>
           </div>
           <div class="cell">
@@ -170,19 +177,43 @@
             <div class="cell-value">{planet.T.toFixed(1)} days</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_eccentricity()}</div>
+            <div class="cell-label">
+              {m.panel_label_eccentricity()}<ScienceChip
+                tab="orbits"
+                section="eccentricity"
+                label="Eccentricity — circle (0) to escape (1)"
+              />
+            </div>
             <div class="cell-value">e = {planet.e.toFixed(4)}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_inclination()}</div>
+            <div class="cell-label">
+              {m.panel_label_inclination()}<ScienceChip
+                tab="orbits"
+                section="inclination"
+                label="Inclination — tilt of the orbit plane"
+              />
+            </div>
             <div class="cell-value teal">{planet.incl.toFixed(2)}°</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_perihelion()}</div>
+            <div class="cell-label">
+              {m.panel_label_perihelion()}<ScienceChip
+                tab="orbits"
+                section="apsides"
+                label="Perihelion — closest approach to the Sun"
+              />
+            </div>
             <div class="cell-value">{perihelion.toFixed(4)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_aphelion()}</div>
+            <div class="cell-label">
+              {m.panel_label_aphelion()}<ScienceChip
+                tab="orbits"
+                section="apsides"
+                label="Aphelion — farthest point from the Sun"
+              />
+            </div>
             <div class="cell-value">{aphelion.toFixed(4)} AU</div>
           </div>
           <div class="cell">

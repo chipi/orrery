@@ -1,0 +1,15 @@
+{
+  "title": "Transfert de Hohmann",
+  "intro_sentence": "Le voyage à deux combustions le moins cher entre orbites circulaires coplanaires — la base contre laquelle les planificateurs mesurent tout.",
+  "narrative_101": [
+    "Tu es dans l'orbite terrestre, tu veux celle de Mars. Comment avec moins de carburant ?",
+    "Walter Hohmann 1925 : trouve une ellipse qui touche orbite terrestre d'un côté, martienne de l'autre. Combustion pour quitter Terre. Croisière huit mois. Combustion à l'autre bout. Deux combustions, fini.",
+    "Le moins cher — mais le plus lent. Plus rapide ? Possible mais cher."
+  ],
+  "body_paragraphs": [
+    "D'une orbite circulaire à une plus haute : transfert de Hohmann. Périhélie touche orbite départ, aphélie touche destination. Deux combustions de moteur.",
+    "Le moins cher en impulsion fixe, mais aussi le plus lent. Terre-Mars ~259 jours. Plus rapide : V∞ d'arrivée plus haute, combustion d'entrée plus grosse, Δv total monte vite.",
+    "Sur le porkchop `/plan` : bassin de cellules turquoise autour de la fenêtre Hohmann naturelle."
+  ],
+  "diagram_caption": "Orbite Terre (interne) · orbite Mars (externe) · ellipse de transfert Hohmann."
+}

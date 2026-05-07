@@ -1,0 +1,14 @@
+{
+  "title": "Sections coniques",
+  "intro_sentence": "Coupe un cône de quatre façons et tu obtiens chaque trajectoire képlérienne — cercle, ellipse, parabole, hyperbole.",
+  "narrative_101": [
+    "Coup de chance mathématique : les formes des sections coniques sont EXACTEMENT les seules qu'un corps sous gravité peut suivre. Grecs étudièrent par plaisir 200 av. JC. 2000 ans plus tard : l'univers tourne dessus.",
+    "Continuum. Lent : cercle/ellipse — lié, revient. Vitesse d'échappée : parabole. Plus vite : hyperbole — passe et ne revient jamais. Excentricité = bouton."
+  ],
+  "body_paragraphs": [
+    "Coupe un cône avec un plan. Horizontal : cercle (e=0). Incliné : ellipse (0<e<1). Parallèle au bord : parabole (e=1). Au-delà : hyperbole (e>1). Apollonius de Perge 200 av. JC.",
+    "Chaque orbite képlérienne est une des quatre. Liées : cercles/ellipses. Non liées : paraboles/hyperboles.",
+    "Designers utilisent les quatre. Croisière sur ellipse, survol sur hyperbole (relatif au planète), insertion sur ellipse. `/fly` gère naturellement."
+  ],
+  "diagram_caption": "Quatre coniques : cercle, ellipse, parabole, hyperbole."
+}

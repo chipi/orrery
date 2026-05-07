@@ -1,0 +1,14 @@
+{
+  "title": "MET — Temps écoulé de mission",
+  "intro_sentence": "Un chronomètre simple qui démarre au lancement et ne s'arrête jamais — l'étiquette temporelle universelle.",
+  "narrative_101": [
+    "MET = Mission Elapsed Time. Chronomètre. Jour 0, heure 0, seconde 0 = liftoff. Tout après étiquetté MET. Apollo 11 premier pas Lune : MET 109h24min. Voyager 1 quitter héliopause : MET 35 ans.",
+    "Pourquoi pas calendrier ? Calendrier sans rapport avec sonde. Loin = horloges dérivent. MET = ligne temporelle propre sonde.",
+    "Dans `/fly` MET en jours. HUD MET 173d au survol Mars. Date Terre ? Pas d'importance. Mission Control parle MET."
+  ],
+  "body_paragraphs": [
+    "MET = temps depuis lancement. Jour 0 = liftoff. Chaque événement étiquetté. Apollo 11 atterrissage : MET 4j 6h 45min. Voyager 1 héliopause : MET 35 ans.",
+    "Pourquoi MET ? Horloge Terre ne correspond pas horloge sonde rapide ou loin. Délais lumière croissent. Dilatation relativiste pour sondes rapides. MET = temps propre sonde.",
+    "Dans `/fly` HUD MET en jours."
+  ]
+}

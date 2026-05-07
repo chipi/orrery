@@ -1,0 +1,18 @@
+{
+  "title": "Régimes orbitaux — LEO, MEO, GEO, HEO",
+  "intro_sentence": "Les orbites terrestres se groupent en quatre bandes d'altitude ; chacune un compromis différent.",
+  "narrative_101": [
+    "Choisis un satellite. Le plus important n'est pas ce qu'il fait — c'est à quelle altitude il vit. Altitude fixe revisite, latence, durée de vie. Ingénieurs : quatre bandes — LEO, MEO, GEO, HEO.",
+    "LEO jusqu'à ~2000 km. ISS 408 km. Hubble 540 km. Starlink ~550 km. Bon marché, mais 90 minutes par tour, frottement atmosphérique.",
+    "MEO 2000-35786 km — bande de navigation (GPS, Galileo, Beidou). GEO exactement à 35786 km — période 24h — satellite hovere sur même point. Wettsats et comsats.",
+    "HEO = joker. Apogée haut, périgée bas. Molniya russes optimisées hautes latitudes."
+  ],
+  "body_paragraphs": [
+    "LEO (< 2000 km) : moins cher, période ~90 min, latence courte, vie courte (frottement). ISS, Hubble, Starlink, observation, activité humaine.",
+    "MEO (2000-35786 km) : navigation. GPS 20200, GLONASS 19100, Galileo 23222, Beidou 21500. Période ~12h.",
+    "GEO (35786 km, 0° inclinaison) : période = jour sidéral. Satellite stationnaire sur longitude. TV, météo (GOES, Himawari, Meteosat). Délai aller-retour ~240 ms.",
+    "HEO : périgée bas, apogée haut. Molniya : périgée ~600 km, apogée ~40000 km, inclinaison 63,4°. Hautes latitudes.",
+    "Changer régime cher. LEO à GEO ~3,9 km/s. LEO à échappée ~3,2 km/s — moins cher, contre-intuitif."
+  ],
+  "diagram_caption": "Bandes terrestres concentriques : LEO, MEO, GEO, HEO."
+}

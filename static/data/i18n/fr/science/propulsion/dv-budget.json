@@ -1,0 +1,15 @@
+{
+  "title": "Δv comme budget de mission",
+  "intro_sentence": "Le seul nombre qui dit si une mission est possible — changement total de vitesse, sommé sur chaque combustion.",
+  "narrative_101": [
+    "Argent du vol spatial = pas dollars. C'est Δv en km/s. Chaque combustion coûte. Budget Δv = total accumulé.",
+    "Twist mortel : ta fusée n'a pas Δv illimité. Plafond dur, fixé par Tsiolkovsky. Si facture excède plafond, mission impossible.",
+    "Références : sortie vers orbite ~9,4 km/s. Hohmann Mars +3,6. Insertion +2. Atterrissage Mars total ~15 km/s — limite chimique. Pourquoi atterrir Mars beaucoup plus dur que Lune."
+  ],
+  "body_paragraphs": [
+    "Δv = monnaie comptable. Chaque combustion coûte. Total = budget Δv mission.",
+    "Côté offre : Tsiolkovsky fixe le plafond (Isp + fraction propergol). Côté demande : conception trajectoire choisit chemin moins cher. Mission vole si offre ≥ demande.",
+    "Surface Terre vers LEO ~9,4 km/s. LEO vers Hohmann Mars +3,6. Insertion Mars +2. Atterrissage direct Mars ~15 km/s — limite chimique en un coup."
+  ],
+  "diagram_caption": "Barres empilées : lancement + injection + corrections + arrivée = budget total."
+}

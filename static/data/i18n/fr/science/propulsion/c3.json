@@ -1,0 +1,15 @@
+{
+  "title": "C₃ — Énergie caractéristique",
+  "intro_sentence": "Combien d'énergie par masse une fusée doit livrer pour quitter le puits gravitationnel terrestre avec vitesse résiduelle.",
+  "narrative_101": [
+    "C₃ = jargon ingénieur : combien fort la fusée doit lancer ? Énergie résiduelle après sortie puits Terre. C₃=0 = juste s'échappe. C₃>0 = vitesse en réserve.",
+    "Unité km²/s². Mars C₃ = 8-12. Jupiter direct ~80. New Horizons C₃ = 158 — plus haut jamais — Pluton en 9,5 ans.",
+    "Pourquoi important ? Chaque fusée a courbe C₃ vs charge utile. Falcon Heavy 16 t à C₃=10, seulement 5 t à C₃=80."
+  ],
+  "body_paragraphs": [
+    "C₃ = V∞² en km²/s². Énergie au-delà d'évasion. C₃=0 = s'échappe juste. C₃=25 = V∞ = 5 km/s héliocentrique résiduelle.",
+    "Lanceurs caractérisés par courbe C₃ vs charge utile. Falcon Heavy ~16 t à C₃=10, ~5 t à C₃=80. Mars 8-12. Jupiter direct ~80. New Horizons C₃ = 158.",
+    "Dans `/missions` FLIGHT tab : C₃ de chaque mission interplanétaire = premier point canonique."
+  ],
+  "formula_caption": "C₃ = V∞ au carré."
+}

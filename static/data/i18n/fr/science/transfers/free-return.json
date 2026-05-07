@@ -1,0 +1,15 @@
+{
+  "title": "Trajectoire de retour libre",
+  "intro_sentence": "Trajectoire qui passe la cible et plie la gravité elle-même en billet retour — sans combustion moteur.",
+  "narrative_101": [
+    "Imagine voler vers la Lune. Inquiétude : et si moteur tombe en panne ? Réponse : pick un chemin où, même si tous moteurs meurent, gravité seule te ramène automatiquement. Retour libre.",
+    "Vrai 8 dans l'espace. Quitter Terre, monter vers Lune, gravité plie 180°, retomber, atmosphère au rebond. Pas de moteur.",
+    "Apollo 8 premier équipage. Apollo 13 doit sa survie. Default `/fly` Orrery fait ça pour Mars : Terre → survol Mars → Terre."
+  ],
+  "body_paragraphs": [
+    "Tour principal : quitter Terre, voler près Lune (ou Mars), gravité plie ta trajectoire. Géométrie correcte → réentrée au rebond. Aucune équipe n'a jamais besoin de tirer un moteur.",
+    "Apollo 8 premier équipage. Apollo 13 célèbre. Pour Mars géométrie plus difficile — boucle 500 jours.",
+    "Default `/fly` ORRERY-1 : Terre-Mars-Terre retour libre, sans TCM, sans MOI. Le survol Mars équipage le moins cher proposé."
+  ],
+  "diagram_caption": "Terre → survol Mars → Terre. Gravité Lune (ou Mars) fait le demi-tour gratuitement."
+}

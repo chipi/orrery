@@ -1,0 +1,15 @@
+{
+  "title": "Apsides — Périhélie, Aphélie, Périgée, Apogée",
+  "intro_sentence": "Les deux points extrêmes de toute orbite elliptique : approche la plus proche et la plus éloignée.",
+  "narrative_101": [
+    "Toute orbite elliptique a un point haut et bas. C'est tout ce qu'est une apside. Les gens du spatial obsèdent ces points car presque chaque combustion importante y arrive.",
+    "Pourquoi ? Vitesse extrême là — plus rapide au point bas. Effet Oberth. Et changer le côté OPPOSÉ est moins cher en poussant à l'extrême.",
+    "Convention de noms : Soleil = périhélie/aphélie. Terre = périgée/apogée. Lune = périlune/apolune. Même physique."
+  ],
+  "body_paragraphs": [
+    "Une apside est un des deux points où le corps est à distance minimale ou maximale du foyer. Ligne reliant = ligne des apsides.",
+    "Noms dépendent du corps. Soleil : périhélie/aphélie (gr. peri/apo + helios). Terre : périgée/apogée. Lune : périlune/apolune.",
+    "Apsides ancrent les chronologies. Voyager survols au périhélie de chaque rencontre. ISS reboost à l'apogée. Phasing rendez-vous au périgée. Parker Solar Probe périhélie = approche la plus proche d'une étoile."
+  ],
+  "diagram_caption": "Ligne des apsides à travers les deux foyers, reliant périhélie et aphélie."
+}

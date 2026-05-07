@@ -1,0 +1,14 @@
+{
+  "title": "Époque J2000",
+  "intro_sentence": "12h00 UTC le 1er janvier 2000 — l'instant ancre universel pour dater éléments orbitaux.",
+  "narrative_101": [
+    "Orbites dérivent. Lentement — siècles — assez pour dire \"Mars excentricité 0,0934 à partir de quand\". Astronomes : zéro temporel agréé. Choisirent midi UTC 1 janvier 2000. C'est J2000.",
+    "Pourquoi midi ? Décompte jour julien — décompte continu jours astronomes depuis 4713 av. JC — incrémente midi, pas minuit. J2000 = JD 2 451 545,0.",
+    "Chaque orbite ce simulateur ancrée J2000. Longitude moyenne Terre J2000. Argument périapsis Mars J2000. Positions /explore extrapolées de J2000 par maths linéaires simples."
+  ],
+  "body_paragraphs": [
+    "Éléments orbitaux dérivent — perturbations autres planètes, longitudes précèssent. Pour sens : \"à partir de quand\". J2000 = midi UTC 1 janvier 2000.",
+    "Pourquoi midi ? Date julienne (JD) — décompte continu jours depuis 4713 av. JC — incrémente midi, pas minuit. J2000 = JD 2 451 545,0 exactement.",
+    "Données planétaires Orrery utilisent éléments J2000. Champ longitude moyenne `L₀` panneaux `/explore` = position héliocentrique J2000. Mouvement moyen avance linéairement."
+  ]
+}

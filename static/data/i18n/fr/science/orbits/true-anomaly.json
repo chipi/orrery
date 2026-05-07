@@ -1,0 +1,14 @@
+{
+  "title": "Anomalie vraie",
+  "intro_sentence": "L'angle qui dit où un corps est sur l'orbite maintenant, mesuré depuis le périhélie.",
+  "narrative_101": [
+    "Imagine une planète sur son ellipse. On a taille, forme, inclinaison. Où est-elle maintenant ? Anomalie vraie. Tiens-toi au Soleil, pointe vers périhélie, mesure l'angle.",
+    "Mais elle ne balaie pas uniformément (deuxième loi de Kepler). Astronomes inventèrent deux autres angles — moyenne et excentrique — qui tickent uniformément, et une échelle d'équations connecte les trois."
+  ],
+  "body_paragraphs": [
+    "Les éléments décrivent forme et orientation ; l'anomalie vraie (`ν`) dit où le corps est. Du foyer pointer périhélie, suivre le corps — angle balayé.",
+    "De 0 (périhélie) à 180° (aphélie). Tique non uniformément.",
+    "Anomalie moyenne (`M`, uniforme) et excentrique (`E`, pont). Équation de Kepler `M = E - e·sin(E)`."
+  ],
+  "diagram_caption": "Anomalie vraie ν mesurée au foyer, depuis périhélie jusqu'à la position actuelle."
+}

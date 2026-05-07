@@ -1,0 +1,14 @@
+{
+  "title": "TCM — Manœuvre de correction de trajectoire",
+  "intro_sentence": "Petite combustion mi-croisière pour corriger les petites erreurs qui se glissent toujours dans la trajectoire de lancement.",
+  "narrative_101": [
+    "Aucun lancement parfait. 5 cm/s erreur début = 100 km miss à Mars.",
+    "TCM = combustions minuscules — quelques m/s — semaines/mois en croisière. Bon marché en carburant, cher opérationnellement. Missions planifient le moins possible.",
+    "Plupart missions interplanétaires planifient quatre. TCM-1 jours après. TCM-2 semaines. TCM-3 proche arrivée. TCM-4 final. Apollo 4-5 aller et retour. Curiosity 4."
+  ],
+  "body_paragraphs": [
+    "Aucun lancement parfait. Trajectoire réelle dévie de quelques cm/s — petit absolu, catastrophique précision arrivée. 5 cm/s ITL → 100 km miss Lune.",
+    "Trois ou quatre. TCM-1 jours après (erreur lancement caractérisée). TCM-2 semaines (orbite raffinée). TCM-3 près arrivée. TCM-4 trim final. Quelques m/s — bon marché propergol, mais chaque combustion = risque.",
+    "Champ `tcm_count` dans onglet FLIGHT `/missions`. Curiosity 4. MRO 4. Apollo 4-5."
+  ]
+}

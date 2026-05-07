@@ -1,0 +1,16 @@
+{
+  "title": "Équation de Tsiolkovsky",
+  "intro_sentence": "Combien de Δv tu obtiens d'un moteur et d'une charge de propergol — l'équation qui rend le vol spatial logarithmique.",
+  "narrative_101": [
+    "Konstantin Tsiolkovsky était un instituteur russe sourd, en 1903 il écrivit une équation à laquelle personne n'échappe. Δv dépend de qualité moteur et fraction propergol — LOGARITHMIQUEMENT.",
+    "Logarithme = piège. Doubler Δv : pas double propergol, exponentiellement plus. Saturn V : 90% propergol.",
+    "Deux échappées : meilleurs moteurs (Isp) et étagement. Réelles font les deux. Limite single-shot : 10-15 km/s."
+  ],
+  "body_paragraphs": [
+    "Tsiolkovsky 1903. Δv dépend de Isp moteur et rapport masse initiale/finale — logarithmique.",
+    "Logarithme cruel. Double propergol : ajoute morceau constant. Double portée : fusée exponentiellement plus grande. Chimique (300-450s) plafonne à 10-15 km/s. Au-delà : Isp plus haut (ionique 3000s) ou étagement.",
+    "Saturn V : 7800 t humide, 600 t sec. Rapport 13. Isp 330s. Δv ≈ 8,3 km/s — à peine assez pour TLI."
+  ],
+  "formula_caption": "Δv depuis Isp, g₀, et rapport de masses m₀/m_f.",
+  "diagram_caption": "Δv vs rapport de masses : logarithmique."
+}

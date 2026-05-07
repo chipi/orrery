@@ -1,0 +1,14 @@
+{
+  "title": "V∞ — Vitesse d'excès hyperbolique",
+  "intro_sentence": "Vitesse résiduelle après sortie du puits gravitationnel d'une planète — définit l'énergie d'arrivée d'un survol.",
+  "narrative_101": [
+    "C₃ est ce que la fusée livre au LANCEMENT. V∞ (\"v-infini\") est même idée à l'AUTRE bout. À quelle vitesse arrives-tu à Mars relativement à Mars ?",
+    "Important car fixe ta combustion d'arrivée. MRO V∞ ≈ 2,6 km/s, ~1 km/s capture. Voyager 2 Neptune V∞ ≈ 8 km/s — n'a même pas essayé d'insérer."
+  ],
+  "body_paragraphs": [
+    "Imagine asymptote infiniment loin du planète. Vitesse là-bas = V∞. Sur survol hyperbolique, V∞ constant sur les deux bras.",
+    "V∞ contrôle taille combustion d'arrivée. Capture : drainer assez pour tomber sous évasion. MRO V∞ 2,6 km/s, 1 km/s pour capture. Voyager 2 Neptune 8 km/s, pas inséré — survol seulement.",
+    "Sur HUD `/fly` V∞ apparaît à entrée sphère d'influence destination."
+  ],
+  "diagram_caption": "Survol hyperbolique : V∞ constante sur asymptotes, loin du planète."
+}

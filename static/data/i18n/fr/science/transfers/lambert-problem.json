@@ -1,0 +1,15 @@
+{
+  "title": "Problème de Lambert",
+  "intro_sentence": "Données deux positions et un temps de transit, trouve l'orbite qui les connecte.",
+  "narrative_101": [
+    "Hohmann est le moins cher mais ne te laisse pas choisir date d'arrivée. Lambert le fait.",
+    "Question : je suis en A, je veux être en B en X jours. Quelle orbite ? Lambert 1761 : exactement une ellipse (parfois deux) connecte deux points en temps donné.",
+    "Le cœur de chaque porkchop. Chaque pixel = un problème de Lambert. Orrery résout dans Web Worker."
+  ],
+  "body_paragraphs": [
+    "Lambert demande : je suis ici, veux y aller, ai ce temps. Quelle ellipse ? Deux vecteurs position et temps de vol → orbite unique.",
+    "Hohmann = solution Lambert spécifique. Autres positions/temps = autre ellipse. Temps serré = excentricité plus haute.",
+    "Orrery résout Lambert dans Web Worker à chaque hover de cellule porkchop sur `/plan`."
+  ],
+  "diagram_caption": "Deux vecteurs r₁ et r₂ ; le solveur Lambert trouve l'ellipse de transfert unique."
+}

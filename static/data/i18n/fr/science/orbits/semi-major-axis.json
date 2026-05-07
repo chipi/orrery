@@ -1,0 +1,15 @@
+{
+  "title": "Demi-grand axe",
+  "intro_sentence": "Moitié du plus long diamètre de l'ellipse — le seul nombre qui fixe la période orbitale.",
+  "narrative_101": [
+    "Ficelle, deux punaises, crayon. Punaises sur planche, ficelle autour, crayon tendu — tu dessines une ellipse. Le demi-grand axe est la moitié de la plus longue ligne — la taille de l'orbite.",
+    "Magique : ce seul nombre te dit combien de temps la planète prend pour faire le tour du Soleil. Pas la forme, pas l'inclinaison, pas où elle est. Juste la taille."
+  ],
+  "body_paragraphs": [
+    "Aplatis une ellipse képlérienne dans sa plus longue dimension, tu as l'axe majeur. Coupe en deux : demi-grand axe — `a`. Distance moyenne du corps au foyer.",
+    "Pourquoi important ? Troisième loi de Kepler : `T² ∝ a³`. Période ne dépend que du demi-grand axe. Forme et inclinaison sans importance.",
+    "Dans `/explore` : Terre a ≈ 1,0 UA. Mars 1,52 UA. Jupiter 5,2 UA."
+  ],
+  "formula_caption": "Demi-grand axe comme moyenne des rayons périhélie et aphélie.",
+  "diagram_caption": "Axe majeur de périhélie à aphélie. Demi-grand axe a est la moitié."
+}

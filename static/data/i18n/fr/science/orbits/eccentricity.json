@@ -1,0 +1,14 @@
+{
+  "title": "Excentricité",
+  "intro_sentence": "À quel point l'orbite est étirée — zéro est cercle parfait, un est échappée parabolique.",
+  "narrative_101": [
+    "Si la taille est le premier bouton, l'excentricité est le deuxième. Choisis 0 à presque 1. À 0 cercle parfait. Vers 1, ellipse étirée en cigare.",
+    "Vitesse change. Cercle calme. Étirée pas. Halley moins d'un an sur 76 — le reste à l'aphélie au ralenti."
+  ],
+  "body_paragraphs": [
+    "Excentricité (`e`) = nombre de forme. À 0 = cercle. Vers 1 = cigare. Au-delà de 1, hyperbolique — survol sans retour.",
+    "Planètes réelles à basse excentricité. Terre 0,0167. Mars 0,093. Mercure 0,205. Pluton et comètes beaucoup plus haut."
+  ],
+  "formula_caption": "Excentricité à partir des rayons périhélie et aphélie.",
+  "diagram_caption": "Trois orbites avec même demi-grand axe mais e = 0, 0,4, 0,8."
+}

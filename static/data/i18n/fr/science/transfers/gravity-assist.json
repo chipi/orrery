@@ -1,0 +1,15 @@
+{
+  "title": "Assistance gravitationnelle",
+  "intro_sentence": "Vole le moment orbital d'une planète au survol — l'équivalent le plus proche d'un déjeuner gratuit dans l'espace.",
+  "narrative_101": [
+    "Lance une balle de tennis sur un train en mouvement. Rebond plus rapide — vitesse train ajoutée. C'est l'assistance gravitationnelle. Sonde = balle, planète = train.",
+    "Du planète : entre/sort à même vitesse relative. Du Soleil : sonde hérite mouvement orbital, sort plus vite. Pas de violation — planète paie en ralentissant minusculement.",
+    "Construit Voyager Grand Tour. Voyager 2 : Jupiter, Saturne, Uranus, Neptune — quatre. Cassini : Vénus deux fois, Terre une. Système solaire externe seulement accessible par ce tour."
+  ],
+  "body_paragraphs": [
+    "Approche planète mouvante par derrière en hyperbole. Gravité plie ton chemin, sors avec même vitesse relative — mais planète bougeait, tu emportes le mouvement. Plus de vitesse héliocentrique en sortant.",
+    "Géométrie inverse — par devant — ralentit. Pioneer 11 Jupiter→Saturne. Voyager 2 chaîne quatre. Cassini Vénus×2 + Terre vers Saturne. New Horizons Jupiter pour gagner 3 ans Pluton.",
+    "Sans assistance la moitié des missions Orrery n'auraient pu voler. Planètes externes trop loin pour fusées chimiques directes."
+  ],
+  "diagram_caption": "Sonde entre et sort du repère planétaire à même vitesse ; mouvement planétaire ajoute vitesse héliocentrique."
+}

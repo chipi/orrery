@@ -1,0 +1,15 @@
+{
+  "title": "Orbite képlérienne",
+  "intro_sentence": "Une ellipse avec le Soleil à un foyer — l'orbite la plus simple qu'un corps peut avoir autour d'un autre.",
+  "narrative_101": [
+    "Imagine lancer une balle d'une tour. Elle tombe. Plus fort, elle tombe plus loin. Si fort que le sol s'écarte sous elle aussi vite — elle ne tombe jamais. C'est une orbite. Chaque sonde, chaque lune, chaque planète fait ce tour.",
+    "Une orbite képlérienne traite la gravité comme une seule traction vers un corps lourd. Deux corps, une force. Le résultat est toujours une ellipse, le corps lourd à un foyer — jamais au centre.",
+    "La réalité est plus désordonnée — perturbations lunaires, bourrelet équatorial. Mais le désordre est une petite correction sur une orbite képlérienne."
+  ],
+  "body_paragraphs": [
+    "Quand tu tombes vers quelque chose de massif et le rates, tu obtiens une orbite képlérienne. Trajectoire = ellipse, le corps à un foyer, jamais au centre. Terre autour du Soleil, Lune autour de la Terre, chaque sonde — toutes képlériennes en première approximation.",
+    "Six nombres décrivent l'orbite : taille (demi-grand axe), étirement (excentricité), trois angles (inclinaison, longitude du nœud ascendant, argument du périapse), et position (anomalie vraie). Ce sont les éléments orbitaux.",
+    "Le modèle se brise quand un troisième corps compte : sondes près de la Lune, satellites LEO sentant le bourrelet. Orrery utilise képlérien pour l'histoire héliocentrique et coniques raccordées pour le reste."
+  ],
+  "diagram_caption": "Ellipse avec foyer F₁ au Soleil. Demi-grand axe a · périhélie et aphélie sur la ligne des apsides."
+}

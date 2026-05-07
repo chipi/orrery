@@ -1,0 +1,14 @@
+{
+  "title": "Ellipse de transfert",
+  "intro_sentence": "L'arc képlérien qui porte une sonde d'une orbite à une autre — Soleil au foyer.",
+  "narrative_101": [
+    "Planification de mission semble être à propos de moteurs. C'est surtout choisir une ellipse. Apollo, Voyager, Perseverance — tous chevauchent une orbite elliptique entre départ et arrivée.",
+    "Mêmes règles que toute orbite képlérienne. Sonde n'en vole que la MOITIÉ : monte d'un côté, descend de l'autre."
+  ],
+  "body_paragraphs": [
+    "Après avoir quitté l'orbite Terre, tu es sur une ellipse autour du Soleil = orbite de transfert. Mêmes propriétés : demi-grand axe, excentricité, périhélie, aphélie.",
+    "Deux ancrages : départ (périhélie si extérieur) et arrivée (aphélie). Demi-grand axe = moyenne.",
+    "Dans le HUD `/fly` la sonde trace cette ellipse en temps réel."
+  ],
+  "diagram_caption": "Deux orbites coplanaires connectées par ellipse de transfert avec Soleil au foyer."
+}

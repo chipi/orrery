@@ -1,0 +1,14 @@
+{
+  "title": "Insertion orbitale — IOL / IOM",
+  "intro_sentence": "La combustion de freinage qui capture ta sonde en orbite au lieu de la laisser passer pour toujours.",
+  "narrative_101": [
+    "Tu as cruisé 8 mois. Mars grandit. Si tu fais rien, passe et part pour toujours. Pour orbiter : freiner. Combustion = moment décisif.",
+    "Maths impitoyable. Arrive à plusieurs km/s V∞. Tomber sous évasion locale. Combustion longue dure précise au plus proche, où Oberth maximise. MRO 27 min. Cassini Saturne 95 min — plus longue de la vie.",
+    "Si combustion rate ou sous-performe, tu t'échappes, pas de seconde chance. Mars Climate Orbiter 1999 : bug conversion unités, combustion trop faible, atmosphère détruite. Mission perdue en secondes."
+  ],
+  "body_paragraphs": [
+    "Quand ta sonde arrive, va vite — assez pour échapper. Capture : drain assez vitesse pour tomber sous évasion locale. IOL lunaire, IOM Mars.",
+    "Au périapsis hyperbole arrivée, Oberth rend moins cher. Taille dépend de V∞ et altitude désirée. MRO V∞ ≈ 2,6 km/s, ~1 km/s capture. Cassini Saturne 95 min.",
+    "Si combustion rate, sonde s'échappe. Mars Climate Orbiter cautionnaire : bug conversion unités (livres/Newton), MOI trop faible, fragmentée par traînée atmosphérique."
+  ]
+}

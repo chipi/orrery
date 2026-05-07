@@ -412,6 +412,38 @@ export function buildIssProxyStation(): THREE.Group {
     root.add(aft);
   }
 
+  // Docking-adapter "tunnels" between host modules and zenith-docked
+  // visiting vehicles. The truss in our flattened proxy occupies the same
+  // +Y band as zenith ports, so the adapter visibly threads through the
+  // truss segments (accurate for the diagrammatic topology) and closes
+  // the visual gap so the vehicle reads as docked rather than floating.
+  const adapterMat = new THREE.MeshStandardMaterial({
+    color: 0xb8b8c0,
+    metalness: 0.4,
+    roughness: 0.55,
+  });
+  const ZENITH_ADAPTERS: { host: IssModuleMeshId; topY: number; bottomY: number }[] = [
+    { host: 'harmony', topY: 0.58, bottomY: 0.17 },
+    { host: 'tranquility', topY: 0.58, bottomY: 0.09 },
+    { host: 'pirs', topY: 0.59, bottomY: 0.28 },
+  ];
+  for (const { host, topY, bottomY } of ZENITH_ADAPTERS) {
+    const hostBox = MODULE_BOXES.find((b) => b[0] === host);
+    if (!hostBox) continue;
+    const [, hx, , hz] = hostBox;
+    const len = topY - bottomY;
+    const adapter = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.05, 0.05, len, 10, 1),
+      adapterMat,
+    );
+    adapter.position.set(hx, (topY + bottomY) / 2, hz);
+    adapter.userData.moduleId = host;
+    adapter.userData.issPickable = true;
+    adapter.name = `adapter_${host}`;
+    setShadowFlags(adapter);
+    root.add(adapter);
+  }
+
   buildVisitingFleet(root);
 
   return root;
@@ -621,9 +653,9 @@ interface DockedShip {
 function buildVisitingFleet(root: THREE.Group) {
   const fleet: DockedShip[] = [
     { id: 'soyuz_ms', build: buildSoyuz, port: [-3.35, -0.21, -0.12], out: 'minusY' },
-    { id: 'progress_ms', build: buildProgress, port: [-3.45, 0.27, 0.15], out: 'plusY' },
-    { id: 'crew_dragon', build: buildDragon.bind(null, true), port: [-1.45, 0.21, 0], out: 'plusY' },
-    { id: 'cargo_dragon', build: buildDragon.bind(null, false), port: [0.55, 0.21, 0.05], out: 'plusY' },
+    { id: 'progress_ms', build: buildProgress, port: [-3.45, 0.65, 0.15], out: 'plusY' },
+    { id: 'crew_dragon', build: buildDragon.bind(null, true), port: [-1.45, 0.65, 0], out: 'plusY' },
+    { id: 'cargo_dragon', build: buildDragon.bind(null, false), port: [0.55, 0.65, 0.05], out: 'plusY' },
     { id: 'cygnus', build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
     { id: 'htv_x', build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
   ];

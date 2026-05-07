@@ -102,18 +102,60 @@ describe('pathToRouteKey', () => {
 });
 
 describe('provenanceSourceId', () => {
-  it('maps Wikimedia Commons to wikimedia-commons regardless of upstream agency', () => {
+  it('credits the upstream publisher, not the retrieval conduit, for Wikimedia-routed photos', () => {
+    // Editorial rule: a CNSA / Roscosmos photo retrieved via
+    // Wikimedia Commons appears in the CNSA / Roscosmos section.
+    // Commons is just the conduit; the publisher is who flew it.
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'CNSA' })),
+    ).toBe('cnsa');
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'ROSCOSMOS' })),
+    ).toBe('roscosmos');
     expect(
       provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'NASA' })),
+    ).toBe('nasa');
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'ESA' })),
+    ).toBe('esa');
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'JAXA' })),
+    ).toBe('jaxa');
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'Blue Origin' })),
+    ).toBe('blue-origin');
+  });
+  it('falls back to wikimedia-commons when the upstream is a Commons volunteer', () => {
+    expect(
+      provenanceSourceId(
+        makePhoto({
+          source_type: 'wikimedia-commons',
+          agency: 'Wikimedia Commons contributors',
+        }),
+      ),
     ).toBe('wikimedia-commons');
   });
-  it('maps NASA Images API entries to nasa', () => {
-    expect(provenanceSourceId(makePhoto({ source_type: 'nasa-images-api' }))).toBe('nasa');
+  it('takes the first agency token on partner credits (ADR-046 primary)', () => {
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'wikimedia-commons', agency: 'ROSCOSMOS / NASA' }),
+      ),
+    ).toBe('roscosmos');
+    expect(
+      provenanceSourceId(makePhoto({ source_type: 'nasa-images-api', agency: 'NASA / ESA' })),
+    ).toBe('nasa');
+  });
+  it('maps NASA Images API entries to nasa even without an explicit agency hint', () => {
+    expect(provenanceSourceId(makePhoto({ source_type: 'nasa-images-api', agency: '' }))).toBe(
+      'nasa',
+    );
   });
   it('maps direct-other (e.g. Solar System Scope) to solar-system-scope', () => {
-    expect(provenanceSourceId(makePhoto({ source_type: 'direct-other' }))).toBe(
-      'solar-system-scope',
-    );
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-other', agency: 'Solar System Scope' }),
+      ),
+    ).toBe('solar-system-scope');
   });
   it('maps direct-agency by agency name', () => {
     expect(provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'CNSA' }))).toBe(
@@ -140,11 +182,19 @@ describe('textSourceId', () => {
 });
 
 describe('groupBySource', () => {
-  it('places photos into wikimedia-commons / nasa / solar-system-scope', () => {
+  it('places photos into wikimedia-commons / nasa / solar-system-scope by upstream agency', () => {
     const photos = [
-      makePhoto({ path: '/images/a.jpg', source_type: 'wikimedia-commons' }),
-      makePhoto({ path: '/images/b.jpg', source_type: 'nasa-images-api' }),
-      makePhoto({ path: '/images/c.jpg', source_type: 'direct-other' }),
+      makePhoto({
+        path: '/images/a.jpg',
+        source_type: 'wikimedia-commons',
+        agency: 'Wikimedia Commons contributors',
+      }),
+      makePhoto({ path: '/images/b.jpg', source_type: 'nasa-images-api', agency: 'NASA' }),
+      makePhoto({
+        path: '/images/c.jpg',
+        source_type: 'direct-other',
+        agency: 'Solar System Scope',
+      }),
     ];
     const texts: TextSourceEntry[] = [];
     const groups = groupBySource(SOURCES, photos, texts);

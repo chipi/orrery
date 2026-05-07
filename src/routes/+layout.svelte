@@ -99,37 +99,47 @@
   main {
     min-height: calc(100vh - var(--nav-height));
   }
-  /* Quiet, mobile-friendly footer that holds the /credits link
-   * without competing with the bottom-sheet panels. The 52px
-   * top nav is the only chrome with primary nav status — this
-   * footer is intentionally low-contrast and below the fold on
-   * the heavy 3D screens. */
+  /* Persistent /credits link — always visible at the
+   * bottom-trailing corner so the bill of materials is one click
+   * away from every screen, including the full-bleed 3D routes
+   * (/explore, /fly, /iss, /earth, /moon, /mars). Sits above the
+   * 30-z-index bottom-sheet / drawer panels but below the
+   * lightbox overlay (z-index 100) so a fullscreen gallery still
+   * takes precedence. Logical inset (inset-inline-end) mirrors
+   * for RTL locales (e.g. Arabic). */
   .site-footer {
-    display: flex;
-    justify-content: center;
-    padding: 18px 16px max(18px, env(safe-area-inset-bottom)) 16px;
-    background: rgba(2, 4, 12, 0.65);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 1;
-    position: relative;
+    position: fixed;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    inset-inline-end: 8px;
+    z-index: 35;
+    pointer-events: none;
   }
   .credits-link {
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
-    text-decoration: none;
-    padding: 8px 14px;
-    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
-    min-height: 32px;
+    pointer-events: auto;
     display: inline-flex;
     align-items: center;
+    min-height: 28px;
+    padding: 6px 10px;
+    background: rgba(2, 4, 12, 0.78);
+    border: 1px solid rgba(78, 205, 196, 0.55);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition:
+      color 0.15s,
+      border-color 0.15s,
+      background 0.15s;
   }
   .credits-link:hover,
   .credits-link:focus-visible {
-    color: #7ddfd8;
-    border-bottom-color: rgba(78, 205, 196, 0.6);
+    color: #04040c;
+    background: #4ecdc4;
+    border-color: #4ecdc4;
     outline: none;
   }
   .pwa-toast {

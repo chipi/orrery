@@ -21,29 +21,56 @@ const SOURCE_TYPE_TO_ID: Record<string, string> = {
 };
 
 /**
- * Map an image provenance entry to a source-logos id. The ordering
- * here is conservative: an explicit `direct-agency` source_type maps
- * by agency name, otherwise the source_type tells us the publisher.
+ * Map an image provenance entry to a source-logos id.
  *
- * Wikimedia Commons sourced photos can carry an upstream agency in
- * their `agency` field (e.g. NASA, ESA, Roscosmos). For the public
- * credits bucket we keep them under `wikimedia-commons` because
- * Wikimedia is the platform we actually retrieved from — credit to
- * the agency stays in the per-image TASL row.
+ * Editorial rule for the public credits page: the **upstream
+ * publisher** (the agency that flew the hardware / produced the
+ * image) wins over the **retrieval conduit** (Wikimedia Commons,
+ * NASA Images API). A CNSA Chang'e photograph that we retrieved
+ * via Commons appears in the CNSA section — Commons is just where
+ * we downloaded the bytes; CNSA produced the imagery. The Commons
+ * file-page link stays in the per-image TASL row so reuse credit
+ * follows the platform's terms.
+ *
+ * The fallback chain is:
+ *   1. Map `agency` (split on " / " — first token wins per ADR-046
+ *      primary-credit rule) to a known source-logos id.
+ *   2. If the agency is a generic Commons / NASA contributor name,
+ *      bucket under the source_type (Commons / NASA / Solar System
+ *      Scope) so we don't pretend a Wikimedia volunteer photo is
+ *      from CNSA.
+ *   3. Otherwise default to wikimedia-commons.
  */
+function agencyToSourceId(agency: string): string | null {
+  const a = agency.toLowerCase();
+  if (!a) return null;
+  // Generic / non-agency authorship — let source_type drive bucketing.
+  if (a.includes('wikimedia commons contributor')) return null;
+  if (a.includes('solar system scope')) return 'solar-system-scope';
+  if (a.includes('mbrsc') || a.includes('uae space agency')) return 'uaesa';
+  if (a.includes('roscosmos') || a === 'soviet') return 'roscosmos';
+  if (a.includes('cnsa')) return 'cnsa';
+  if (a.includes('isro')) return 'isro';
+  if (a.includes('jaxa')) return 'jaxa';
+  if (a.includes('spacex')) return 'spacex';
+  if (a.includes('blue origin')) return 'blue-origin';
+  // Inspiration Mars doesn't have its own source-logos entry —
+  // fall through to source_type so it buckets under the
+  // retrieval conduit (Wikimedia Commons) instead of being
+  // silently mis-attributed.
+  if (a.includes('inspiration mars')) return null;
+  if (a.includes('esa')) return 'esa';
+  if (a.includes('nasa')) return 'nasa';
+  return null;
+}
+
 export function provenanceSourceId(p: ImageProvenanceEntry): string {
-  if (p.source_type === 'direct-agency') {
-    const a = (p.agency ?? '').toLowerCase();
-    if (a.includes('nasa')) return 'nasa';
-    if (a.includes('esa')) return 'esa';
-    if (a.includes('roscosmos')) return 'roscosmos';
-    if (a.includes('cnsa')) return 'cnsa';
-    if (a.includes('isro')) return 'isro';
-    if (a.includes('jaxa')) return 'jaxa';
-    if (a.includes('spacex')) return 'spacex';
-    if (a.includes('mbrsc') || a.includes('uae')) return 'uaesa';
-    return 'wikimedia-commons';
-  }
+  // Take the first agency token when the field is a partner credit
+  // like "ROSCOSMOS / NASA" or "ESA / NASA" — the first listed is
+  // the primary attribution per ADR-046.
+  const primary = (p.agency ?? '').split(' / ')[0].trim();
+  const byAgency = agencyToSourceId(primary);
+  if (byAgency) return byAgency;
   return SOURCE_TYPE_TO_ID[p.source_type] ?? 'wikimedia-commons';
 }
 

@@ -789,19 +789,32 @@ async function fetchNasaGalleryUrls(
 // Wikimedia fallback for missions not in NASA's library (mostly
 // non-NASA: CNSA, JAXA, ROSCOSMOS, ISRO, MBRSC). Curated filenames
 // verified to exist on Commons; CC-BY/-SA or PD licensed.
+// Cover (single-image) Wikimedia fallback for missions whose NASA
+// Images API search returns nothing usable. Where the operating
+// agency has actually flown the mission, we now prefer real mission
+// photography over models / IAC mockups (ADR-046 agency-first
+// principle). Mockups remain as gallery candidates further down so
+// the GALLERY tab can still show hardware references.
 export const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
-  change5: "Chang'e-5 mockup at ZHAL 01.jpg",
+  // Real lunar regolith returned by the mission, not the IAC mockup.
+  change5: "Chang'e_5_Moon_Sample.png",
   change4: "Chang'e_4_lander.jpg",
-  change6: "Chang'e_6_mockup_at_IAC_2024_02.jpg",
-  slim: 'SLIM half scale model.png',
-  'hope-probe': 'Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg',
+  change6: "Chang'e_6_lunar_samples_at_IAC_2024_01.jpg",
+  // LROC view of the actual SLIM landing site, not the half-scale model.
+  slim: 'M1460739214L JAXA SLIM landing site imaged by Lunar Reconnaissance Orbiter Camera (LROC).png',
+  // Olympus Mons as photographed by Hope on its 12th orbit — real
+  // mission imagery, not the IAC mockup.
+  'hope-probe': 'Mars - Olympus Mons - Orbit 12 - Hope Mission (51575361799).png',
   'mars-express': 'Mars Express illustration highlighting MARSIS antenna.jpg',
   mars2: 'Mars 2.jpg',
   mars6: 'Mars 6.jpg',
   mmx: 'MMX spacecraft 2.jpg',
   'starship-demo': 'Starship SN15 flap and nosecone (51437260707).jpg',
-  mangalyaan: 'Mars_Orbiter_Mission_in_cleanroom_(1).jpg',
-  tianwen1: 'Mars Global Remote Sensing Orbiter and Small Rover at IAC Bremen 2018 02.jpg',
+  // Tharsis + Valles Marineris as photographed by Mangalyaan's MCC.
+  mangalyaan: 'Tharsis and Valles Marineris - Mars Orbiter Mission (30055660701).png',
+  // Zhurong's lander self-portrait on Utopia Planitia (HiRISE view
+  // and rover selfie are the iconic Tianwen-1 frames; selfie wins).
+  tianwen1: 'Tianwen-1 Lander and Zhurong Rover in Southern Utopia Planitia.jpg',
   chandrayaan3: 'Chandrayaan3-landed.jpg',
   chandrayaan1: 'Chandrayaan-1-01.jpg',
   luna9: 'Luna_9_Space_Probe_1.jpg',
@@ -828,85 +841,144 @@ export const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
 // MISSION_GALLERY_MAX or the list is exhausted. Missions that already
 // hit max via NASA results don't trigger this path.
 export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
+  // CNSA — Chang'e and Tianwen series. Real mission imagery first
+  // (rover selfies, LROC views of landing sites, Yutu rovers and
+  // returned samples), mockups and assembly photos as backups so
+  // the gallery never collapses if a Commons file is moved/renamed.
   change4: [
+    'Yutu-2.jpg',
+    'Yutu-2 leaving Chang e-4-iau1901a.jpg',
     "Chang'e_4_lander.jpg",
     "Chang'e_4_Lander-_A_Closer_Look_(01_m1303619844lr_closC5A1C).jpg",
     'The_first_panorama_from_the_far_side_of_the_moon.jpg',
     "Chang'e_4_Rover_Comes_into_View_(LROC1091_-_content_M1303570617_LRmos_warp_1100p_crop).png",
   ],
   change5: [
-    "Chang'e-5 mockup at ZHAL 01.jpg",
     "Chang'e_5_Moon_Sample.png",
+    "Chang'e-5 soil samples.png",
     "Chang'e_5-_After_Blast_Off_(LROC1186_-_content_M1367366229LR_mos_str01_1100x1100).png",
     'Chang-e_5_lander_ascender_assembly_test.png',
     "Returner_and_Main_Parachute_of_Chang'e_5.jpg",
+    "Chang'e-5 mockup at ZHAL 01.jpg",
   ],
   change6: [
     "Chang'e_6_lunar_samples_at_IAC_2024_01.jpg",
     "First_Look-_Chang'e_6_(LROC1374).jpg",
     "Lunar_soil_sample_collected_by_Chang'e_6_display_on_Expo_2025.jpg",
+    "Chang'e_6_mockup_at_IAC_2024_02.jpg",
   ],
+  // CNSA Tianwen-1 — Zhurong rover self-portraits and surface
+  // imagery were extremely under-curated (only 2 entries); now
+  // leading with the iconic rover selfie and HiRISE view of
+  // lander+rover on Utopia Planitia.
+  tianwen1: [
+    'Tianwen-1 Lander and Zhurong Rover in Southern Utopia Planitia.jpg',
+    'Zhurong-with-lander-selfie.png',
+    'Mars surface by Zhurong rover.jpg',
+    'Zhurong payload.jpg',
+    'Tianwen-1 in Mars orbit.jpg',
+    'Tianwen-1 lander on Mars.jpg',
+  ],
+  // ISRO — Chandrayaan and Mangalyaan. MOM imagery of Mars (MCC
+  // photographs of Tharsis / Valles Marineris) leads, hardware
+  // photos and launch shots back it up.
   chandrayaan1: [
+    'Chandrayaan-1-MIP1.jpg',
+    'On the Way Down (3036669129).jpg',
     'PSLV-C11_launch2.jpg',
     'Chandrayaan1_Spacecraft_Discovery_Moon_Water.jpg',
     'Water_Detected_at_High_Latitudes_on_the_Moon.jpg',
   ],
   chandrayaan3: [
+    'Chandrayaan 3 Vikram lander stereo (53167467822).png',
     'Chandrayaan-3,_LVM3_M4_lifting_off_from_SDSC_SHAR.jpg',
     'NASA\u2019s LRO imagery of Chandrayaan-3 Landing Site.png',
     'Chandrayaan-3 \u2013 Image of Vikram lander on lunar surface taken by Pragyan rover navcam at 1104 IST, 30 August 2023 from 15 meters away (3x2 cropped).jpg',
     'View from the Lander Imager Camera-1 (LI-1) on 17 August 2023 just after the separation of the Chandrayaan-3 Lander Module from the Propulsion Module.jpg',
   ],
   mangalyaan: [
+    'Tharsis and Valles Marineris - Mars Orbiter Mission (30055660701).png',
+    'Mars Orbiter Mission Spacecraft.jpg',
     'Mars_Orbiter_Mission.jpg',
     'India_as_seen_by_Mars_Colour_Camera_(MCC)_during_the_Mars_Orbiter_Mission_(MOM)_journey_towards_Mars.png',
     'Mars_Orbiter_Mission_in_cleanroom_(1).jpg',
     'PM_witnesses_the_insertion_of_Mars_Orbiter_Mission_into_Martian_orbit.jpg',
   ],
+  // JAXA — SLIM and MMX. SLIM gets the LROC views of its actual
+  // landing site (the precision-landing demonstrator) plus the
+  // mid-air composite ground-truth comparison.
   slim: [
+    'M1460739214L JAXA SLIM landing site imaged by Lunar Reconnaissance Orbiter Camera (LROC).png',
+    'Composite image of JAXA SLIM landing site showing change in surface reflectivity after landing.png',
     'SLIM_landing_site.jpg',
     'SLIM-LandingShockAbsorber-TestUsed.jpg',
     'SLIM-LEV1-LEV2-JAXA-SagamiharaCampus-AdvancedFacilityForSpaceExploration-SpaceExplorationField.jpg',
     'SLIM_half_scale_model.png',
   ],
+  // UAESA / MBRSC — Hope. Real Mars imagery from the Emirates Mars
+  // Mission's instruments (Olympus Mons orbit photos) leads; IAC
+  // mockup photographs back it up.
   'hope-probe': [
+    'Mars - Olympus Mons - Orbit 12 - Hope Mission (51575361799).png',
     'Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg',
     'Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg',
     'Emirates Mars Mission mockup at IAC 2021 01 (cropped).jpg',
     'Emirates Mars Mission mockup at IAC 2021 02 (cropped).jpg',
   ],
-  'mars-express': ['Olympus Mons - ESA Mars Express.png', 'Mars-express-volcanoes-sm.jpg'],
+  // ESA — Mars Express. Phobos imagery is the mission's most iconic
+  // contribution; lead with the colour Phobos shots.
+  'mars-express': [
+    'Phobos colour 2008.jpg',
+    'Mars Express and Phobos (4400657859).jpg',
+    "Artist's impression of Mars Express and Phobos ESA233015.jpg",
+    'Olympus Mons - ESA Mars Express.png',
+    'Mars-express-volcanoes-sm.jpg',
+  ],
   mmx: [
     'MMX spacecraft front view.png',
     'MMX spacecraft bottom view.png',
     'MMX-CG01.png',
     "ESA's fleet of Solar System explorers ESA19227810.png",
   ],
-  tianwen1: ['Tianwen-1 in Mars orbit.jpg', 'Tianwen-1 lander on Mars.jpg'],
+  // Roscosmos / Soviet lunar — Luna 9 (first soft landing on the
+  // Moon), Lunokhod 1 (first roving exploration of another world).
+  // Soviet stamps and museum models add cultural-historical depth.
   luna9: [
     'First_Photo_from_the_Surface_of_the_Moon.jpg',
+    'The Soviet Union 1966 CPA 3315 - 3317 triptych (Luna 9).jpg',
     'Luna 9 Space Probe.jpg',
     'Luna-9 (Memorial Museum of Astronautics).JPG',
     'Luna, 9 (53769788375).png',
   ],
-  'blue-moon-mk1': ['BE-7_engine_hot_fire.jpg', 'Blue Moon Hypothetical representation.jpg'],
+  'blue-moon-mk1': [
+    'Blue Moon Mark 1 testing.jpg',
+    'Administrator Isaacman Meets with Blue Origin (NHQ20260113 admin 0007).jpg',
+    'BE-7_engine_hot_fire.jpg',
+    'Blue Moon Hypothetical representation.jpg',
+  ],
   'inspiration-mars': [
     'Mars_Hubble.jpg',
     'Crewed_Mars_mission_concept.jpg',
     'Mars design reference mission 3.jpg',
     'Mars orbit rendez vous S95 01407.jpg',
   ],
+  // SpaceX — IFT-5 and earlier integrated flight tests are the
+  // most photographed events; SN16 and Super Heavy BN3 add hardware
+  // shots from the test programme.
   'starship-demo': [
     'SpaceX Starship before IFT-5.jpg',
     'SpaceX Starship ignition during IFT-5.jpg',
     'SpaceX Starship hot staging IFT-5.jpg',
     'SpaceX Starship SN8 launch as viewed from South Padre Island.jpg',
+    'Starship SN16.jpeg',
+    'Super Heavy BN3.jpg',
   ],
   'starship-mars-crew': [
     'Starship_full_stack.jpg',
     'Starship_orbital_refilling.jpg',
     'SpaceX Starship before IFT-5.jpg',
     'SpaceX Starship during IFT-5.jpg',
+    'SuperHeavyLaunchers.png',
   ],
   artemis2: [
     'Orion_spacecraft_after_water_recovery_(NHQ202308300013).jpg',
@@ -914,9 +986,14 @@ export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Artemis_II_mission_patch.png',
     'Earthrise_(Apollo_8).jpg',
   ],
+  // Roscosmos / Soviet — Lunokhod 1 (Luna 17 mission). LROC view of
+  // the rover's tracks is the most authoritative modern record;
+  // museum models and East-German postage stamp add depth.
   luna17: [
-    'Luna_17_lander.png',
     'Lunokhod_1_Revisited_(LROC402_-_M175502049R_L17_thumb).png',
+    'Lunokhod 1 moon rover (MMA 2011) (1).JPG',
+    'East Germany 1970 Postage Stamp - Lunokhod 1 Rover.jpg',
+    'Luna_17_lander.png',
     'Lunokhod-1_model.jpg',
   ],
   luna24: [

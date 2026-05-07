@@ -58,6 +58,13 @@
       "license_summary": "SpaceX official launch and mission photos historically released as public domain (CC0); company logos under PD-trivial."
     },
     {
+      "id": "blue-origin",
+      "name": "Blue Origin",
+      "kind": "private-operator",
+      "url": "https://www.blueorigin.com/",
+      "license_summary": "Mixed: official Blue Origin imagery used under CC BY-SA via Wikimedia Commons; partnership photographs taken by NASA staff are public domain (works of the U.S. Government)."
+    },
+    {
       "id": "uaesa",
       "name": "MBRSC / UAE Space Agency",
       "kind": "space-agency",

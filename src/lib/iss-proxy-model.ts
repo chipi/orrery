@@ -16,7 +16,13 @@
  *     dimensions derive from this single factor.
  */
 import * as THREE from 'three';
-import { setShadowFlags, cylinderBetween, makeWingPair } from './station-geometry';
+import {
+  setShadowFlags,
+  cylinderBetween,
+  makeWingPair,
+  makeTwoSectionModule,
+  makeRadialDockingPort,
+} from './station-geometry';
 
 export const ISS_MODULE_IDS = [
   'beam',
@@ -436,6 +442,61 @@ export function buildIssProxyStation(): THREE.Group {
       continue;
     }
 
+    // Two-section modules — built via shared helper (Phase 2 fidelity).
+    // Forward (larger) section + aft (narrower) section + gold MLI band.
+    const twoSectionSpec: {
+      [key: string]: [{ len: number; r: number }, { len: number; r: number }];
+    } = {
+      zvezda: [
+        { len: len * 0.55, r: radius },
+        { len: len * 0.45, r: radius * 0.78 },
+      ],
+      zarya: [
+        { len: len * 0.6, r: radius },
+        { len: len * 0.4, r: radius * 0.85 },
+      ],
+      nauka: [
+        { len: len * 0.6, r: radius },
+        { len: len * 0.4, r: radius * 0.78 },
+      ],
+      destiny: [
+        { len: len * 0.55, r: radius },
+        { len: len * 0.45, r: radius * 0.92 },
+      ],
+      kibo: [
+        { len: len * 0.7, r: radius },
+        { len: len * 0.3, r: radius * 0.85 },
+      ],
+      harmony: [
+        { len: len * 0.55, r: radius },
+        { len: len * 0.45, r: radius * 0.95 },
+      ],
+    };
+
+    if (twoSectionSpec[id as string]) {
+      const sections = twoSectionSpec[id as string];
+      const group = makeTwoSectionModule({
+        id,
+        position: new THREE.Vector3(x, y, z),
+        axis,
+        sections,
+        hullMat: hullMat.clone(),
+        mliMat: new THREE.MeshStandardMaterial({
+          color: MLI_GOLD,
+          metalness: 0.55,
+          roughness: 0.42,
+        }),
+      });
+      group.name = id;
+      // Tag the group itself so picking can resolve at the group level.
+      group.userData.moduleId = id;
+      group.userData.stationPickable = true;
+      root.add(group);
+      // For accessory anchoring below, the children are pre-tagged with
+      // moduleId by makeTwoSectionModule. Skip the generic-cylinder path.
+      continue;
+    }
+
     let geom: THREE.BufferGeometry;
     if (id === 'cupola') {
       geom = new THREE.SphereGeometry(radius * 1.15, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2);
@@ -659,30 +720,80 @@ export function buildIssProxyStation(): THREE.Group {
     root.add(cone);
   }
 
-  // Zvezda aft transfer compartment — narrower section at Zvezda's -X end
+  // ── Zvezda aft engine bell + propulsion nozzles (Phase 2b) ─────────
   const zvezdaPos = modulePositions.get('zvezda');
   if (zvezdaPos) {
     const [zx, zy, zz] = zvezdaPos;
     const zR = moduleRadius.get('zvezda') ?? 0.171;
-    const aft = new THREE.Mesh(
-      new THREE.CylinderGeometry(zR * 0.65, zR * 0.65, 0.08, 12, 1),
-      accessoryMat,
+    // The two-section Zvezda already provides the aft transfer compartment
+    // via section B. Add the engine bell (propulsion nozzle) beyond it.
+    const nozzleMat = new THREE.MeshStandardMaterial({
+      color: 0x4a4a52,
+      metalness: 0.6,
+      roughness: 0.4,
+    });
+    const bell = new THREE.Mesh(
+      new THREE.CylinderGeometry(zR * 0.45, zR * 0.7, 0.12, 14, 1, true),
+      nozzleMat,
     );
-    aft.rotation.z = Math.PI / 2;
-    aft.position.set(zx - 0.55, zy, zz);
-    aft.userData.moduleId = 'zvezda';
-    aft.userData.stationPickable = true;
-    aft.name = 'zvezda_aft';
-    setShadowFlags(aft);
-    root.add(aft);
+    bell.rotation.z = Math.PI / 2;
+    bell.position.set(zx - 0.6, zy, zz);
+    bell.userData.moduleId = 'zvezda';
+    bell.userData.stationPickable = true;
+    bell.name = 'zvezda_engine_bell';
+    setShadowFlags(bell);
+    root.add(bell);
+    // Two small steerable RCS thruster pods on the side of the aft section
+    for (const dz of [-0.12, 0.12]) {
+      const rcs = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.05, 8), nozzleMat);
+      rcs.position.set(zx - 0.45, zy + zR * 0.6, zz + dz);
+      rcs.userData.moduleId = 'zvezda';
+      rcs.userData.stationPickable = true;
+      rcs.name = 'zvezda_rcs';
+      setShadowFlags(rcs);
+      root.add(rcs);
+    }
   }
 
-  // Prichal radial port stubs — 5 small cones around the spherical hub
+  // ── Nauka ERA mount + radiator (Phase 2b) ──────────────────────────
+  const naukaPos = modulePositions.get('nauka');
+  if (naukaPos) {
+    const [nx, ny, nz] = naukaPos;
+    const nR = moduleRadius.get('nauka') ?? 0.167;
+    // ERA arm base mount — small cylinder stub on Nauka's port side
+    const eraMount = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.06, 10), accessoryMat);
+    eraMount.position.set(nx, ny, nz - nR - 0.04);
+    eraMount.rotation.x = Math.PI / 2;
+    eraMount.userData.moduleId = 'nauka';
+    eraMount.userData.stationPickable = true;
+    eraMount.name = 'nauka_era_mount';
+    setShadowFlags(eraMount);
+    root.add(eraMount);
+    // Small radiator panel on starboard side
+    const naukaRadMat = new THREE.MeshStandardMaterial({
+      color: RADIATOR_WHITE,
+      metalness: 0.05,
+      roughness: 0.9,
+    });
+    const naukaRad = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.5, 0.18), naukaRadMat);
+    naukaRad.position.set(nx, ny, nz + nR + 0.12);
+    naukaRad.userData.moduleId = 'nauka';
+    naukaRad.userData.stationPickable = true;
+    naukaRad.name = 'nauka_radiator';
+    setShadowFlags(naukaRad);
+    root.add(naukaRad);
+  }
+
+  // ── Prichal 5-port hub stubs (Phase 2b) ────────────────────────────
+  // Real Prichal has 6 hatches: 1 zenith (connects to Nauka above),
+  // 4 radial (port/starboard/fwd/aft for visiting craft), 1 nadir.
+  // We render 5 visible stubs (skipping the zenith one which connects
+  // up into Nauka and would be hidden inside the host).
   const prichalPos = modulePositions.get('prichal');
   if (prichalPos) {
     const [px, py, pz] = prichalPos;
     const pR = moduleRadius.get('prichal') ?? 0.13;
-    // 4 ports radially around the equator + 1 nadir
+    // 4 equatorial ports
     for (let i = 0; i < 4; i++) {
       const angle = (i * Math.PI) / 2;
       const stub = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 0.08, 8), accessoryMat);
@@ -692,6 +803,80 @@ export function buildIssProxyStation(): THREE.Group {
       stub.userData.moduleId = 'prichal';
       stub.userData.stationPickable = true;
       stub.name = `prichal_port_${i}`;
+      setShadowFlags(stub);
+      root.add(stub);
+    }
+    // 5th port — nadir (Earth-facing)
+    const nadirStub = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.05, 0.08, 8), accessoryMat);
+    nadirStub.position.set(px, py - pR - 0.04, pz);
+    nadirStub.rotation.x = Math.PI; // point downward
+    nadirStub.userData.moduleId = 'prichal';
+    nadirStub.userData.stationPickable = true;
+    nadirStub.name = 'prichal_port_nadir';
+    setShadowFlags(nadirStub);
+    root.add(nadirStub);
+  }
+
+  // ── Poisk + Pirs twin-port detail (Phase 2b) ───────────────────────
+  // MRM-2 design has port stubs at both ends (zenith for Soyuz/Progress
+  // dock + nadir hatch facing parent). Our existing PROBES block adds
+  // the visible probe; here we add a small structural ring at the
+  // base end so the module reads as a docking compartment, not a plain
+  // cylinder.
+  for (const id of ['poisk', 'pirs'] as const) {
+    const pos = modulePositions.get(id);
+    const r = moduleRadius.get(id);
+    if (!pos || !r) continue;
+    const [mx, my, mz] = pos;
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(r * 1.05, 0.012, 6, 14), accessoryMat);
+    ring.rotation.x = Math.PI / 2;
+    // Place ring at the base (parent-facing) end of the module
+    const baseY = id === 'poisk' ? my - 0.18 : my + 0.18;
+    ring.position.set(mx, baseY, mz);
+    ring.userData.moduleId = id;
+    ring.userData.stationPickable = true;
+    ring.name = `${id}_base_ring`;
+    setShadowFlags(ring);
+    root.add(ring);
+  }
+
+  // ── Rassvet NESV instrumentation mount (Phase 2b) ──────────────────
+  const rassvetPos = modulePositions.get('rassvet');
+  if (rassvetPos) {
+    const [rx, ry, rz] = rassvetPos;
+    const rR = moduleRadius.get('rassvet') ?? 0.093;
+    // NESV (Nadir Earth-Sky View) — small instrumentation box on the
+    // forward (zenith-facing) end
+    const nesv = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.04, 0.06), accessoryMat);
+    nesv.position.set(rx, ry + 0.18, rz + rR + 0.02);
+    nesv.userData.moduleId = 'rassvet';
+    nesv.userData.stationPickable = true;
+    nesv.name = 'rassvet_nesv';
+    setShadowFlags(nesv);
+    root.add(nesv);
+  }
+
+  // ── Zarya folded-array stubs (Phase 2b) ────────────────────────────
+  // The original Zarya solar arrays were folded back against the hull
+  // when the US segment installed its larger arrays. Render them as
+  // small longitudinal stubs along the hull.
+  const zaryaPos = modulePositions.get('zarya');
+  if (zaryaPos) {
+    const [zax, zay, zaz] = zaryaPos;
+    const zaR = moduleRadius.get('zarya') ?? 0.161;
+    for (const dy of [zaR + 0.025, -(zaR + 0.025)]) {
+      const stub = new THREE.Mesh(
+        new THREE.BoxGeometry(0.45, 0.025, 0.08),
+        new THREE.MeshStandardMaterial({
+          color: 0x2a3a5a,
+          metalness: 0.3,
+          roughness: 0.6,
+        }),
+      );
+      stub.position.set(zax + 0.05, zay + dy, zaz);
+      stub.userData.moduleId = 'zarya';
+      stub.userData.stationPickable = true;
+      stub.name = 'zarya_folded_array';
       setShadowFlags(stub);
       root.add(stub);
     }

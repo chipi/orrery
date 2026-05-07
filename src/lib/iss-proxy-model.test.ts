@@ -59,15 +59,14 @@ describe('ISS proxy ratio guardrails (Phase 1 §1.0 spec)', () => {
       if (!expectedLen) continue;
 
       it(`${id} primary mesh longest dim within ±20% of ${expectedLen} units`, () => {
-        const meshes: THREE.Mesh[] = [];
+        // Find by name (mesh OR group — two-section modules are groups)
+        let target: THREE.Object3D | null = null;
         station.traverse((obj) => {
-          if (obj instanceof THREE.Mesh && obj.name === id) {
-            meshes.push(obj);
-          }
+          if (!target && obj.name === id) target = obj;
         });
-        expect(meshes.length).toBeGreaterThan(0);
-        const box = new THREE.Box3();
-        for (const m of meshes) box.expandByObject(m);
+        expect(target).not.toBeNull();
+        if (!target) return;
+        const box = new THREE.Box3().setFromObject(target);
         const size = new THREE.Vector3();
         box.getSize(size);
         const longest = Math.max(size.x, size.y, size.z);
@@ -191,15 +190,15 @@ describe('ISS proxy ratio guardrails (Phase 1 §1.0 spec)', () => {
     it('main pressurised stack runs along X', () => {
       const stackIds = ['zvezda', 'zarya', 'unity', 'destiny', 'harmony'];
       const positions: number[] = [];
-      station.traverse((obj) => {
-        if (
-          obj instanceof THREE.Mesh &&
-          stackIds.includes(obj.userData.moduleId) &&
-          obj.name === obj.userData.moduleId
-        ) {
-          positions.push(obj.position.x);
-        }
-      });
+      for (const id of stackIds) {
+        station.traverse((obj) => {
+          if (obj.name === id) {
+            const wp = new THREE.Vector3();
+            obj.getWorldPosition(wp);
+            positions.push(wp.x);
+          }
+        });
+      }
       expect(positions.length).toBeGreaterThanOrEqual(5);
       const xRange = Math.max(...positions) - Math.min(...positions);
       expect(xRange).toBeGreaterThan(3.0);

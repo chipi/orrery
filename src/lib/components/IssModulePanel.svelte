@@ -7,6 +7,7 @@
   import type { IssModule } from '$types/iss-module';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
+  import ImageCredit from './ImageCredit.svelte';
 
   type IssLinks = NonNullable<IssModule['links']>;
   type Tab = 'overview' | 'gallery' | 'learn';
@@ -227,6 +228,9 @@
     <img src={lightboxSrc} alt="" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
+  <div class="lightbox-meta">
+    <ImageCredit src={lightboxSrc} />
+  </div>
 {/if}
 
 <style>

@@ -3,6 +3,7 @@
   import { getSunGallery } from '$lib/data';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
+  import ImageCredit from './ImageCredit.svelte';
 
   type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
 
@@ -244,6 +245,9 @@
         <img src={lightboxSrc} alt="" />
         <span class="lightbox-close" aria-hidden="true">×</span>
       </button>
+      <div class="lightbox-meta">
+        <ImageCredit src={lightboxSrc} />
+      </div>
     {/if}
   {/if}
 </Panel>

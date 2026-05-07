@@ -68,7 +68,8 @@ const T = {
     explore_layer_tip_planets: 'Afficher ou masquer les orbites des huit planètes principales',
     explore_layer_tip_dwarfs:
       'Afficher ou masquer les planètes naines (Pluton, Éris, Cérès, Haumea, Makemake)',
-    explore_layer_tip_comets: 'Afficher ou masquer les trajectoires des comètes (Halley, Hale-Bopp, etc.)',
+    explore_layer_tip_comets:
+      'Afficher ou masquer les trajectoires des comètes (Halley, Hale-Bopp, etc.)',
     explore_layer_tip_interstellar:
       'Visiteurs interstellaires — afficher ou masquer les objets traversant le système solaire (ex. ʻOumuamua)',
     explore_tt_velocity_planet: '~{value} km/s · vitesse orbitale moyenne',
@@ -85,19 +86,20 @@ const T = {
     earth_layer_tip_nav: 'Constellations de navigation — GPS, Galileo, GLONASS, BeiDou',
     earth_layer_tip_geo: 'Communications géostationnaires — anneau GEO',
     earth_layer_tip_lunar: 'Orbiteurs lunaires — LRO, Clementine, Chandrayaan-1, Chang’e 1/2, etc.',
-    earth_layer_tip_orbit_rings: 'Afficher ou masquer les lignes d’orbite (les satellites restent visibles)',
+    earth_layer_tip_orbit_rings:
+      'Afficher ou masquer les lignes d’orbite (les satellites restent visibles)',
     earth_legend_orbit_aria: 'Légende du régime orbital',
-    moon_layer_tip_surface:
-      'Afficher ou masquer atterrisseurs, rovers et épaves en surface',
+    moon_layer_tip_surface: 'Afficher ou masquer atterrisseurs, rovers et épaves en surface',
     moon_layer_tip_orbiters: 'Afficher ou masquer les orbiteurs lunaires actifs et historiques',
-    moon_layer_tip_orbit_rings: 'Afficher ou masquer les lignes d’orbite (les engins restent visibles)',
+    moon_layer_tip_orbit_rings:
+      'Afficher ou masquer les lignes d’orbite (les engins restent visibles)',
     moon_legend_nation_aria: 'Légende par nation',
     mars_globe_aria: 'Globe martien 3D',
     mars_map_aria: 'Carte martienne 2D équirectangulaire',
-    mars_layer_tip_surface:
-      'Afficher ou masquer atterrisseurs, rovers et épaves en surface',
+    mars_layer_tip_surface: 'Afficher ou masquer atterrisseurs, rovers et épaves en surface',
     mars_layer_tip_orbiters: 'Afficher ou masquer les orbiteurs martiens actifs et historiques',
-    mars_layer_tip_orbit_rings: 'Afficher ou masquer les lignes d’orbite (les engins restent visibles)',
+    mars_layer_tip_orbit_rings:
+      'Afficher ou masquer les lignes d’orbite (les engins restent visibles)',
     mars_layer_tip_traverses:
       'Afficher ou masquer les parcours des rovers (Curiosity, Perseverance, Opportunity, Spirit)',
     mars_legend_nation_aria: 'Légende par nation',
@@ -144,13 +146,15 @@ const T = {
     earth_legend_orbit_aria: 'Legende Orbitalregime',
     moon_layer_tip_surface: 'Lander, Rover und Oberflächenwracks ein-/ausblenden',
     moon_layer_tip_orbiters: 'Aktive und historische Mondorbiters ein-/ausblenden',
-    moon_layer_tip_orbit_rings: 'Orbitalringlinien ein-/ausblenden (Raumfahrzeuge bleiben sichtbar)',
+    moon_layer_tip_orbit_rings:
+      'Orbitalringlinien ein-/ausblenden (Raumfahrzeuge bleiben sichtbar)',
     moon_legend_nation_aria: 'Länderlegende',
     mars_globe_aria: 'Mars-Globus 3D',
     mars_map_aria: 'Mars-Karte 2D (äquirektangular)',
     mars_layer_tip_surface: 'Lander, Rover und Oberflächenwracks ein-/ausblenden',
     mars_layer_tip_orbiters: 'Aktive und historische Marsorbiters ein-/ausblenden',
-    mars_layer_tip_orbit_rings: 'Orbitalringlinien ein-/ausblenden (Raumfahrzeuge bleiben sichtbar)',
+    mars_layer_tip_orbit_rings:
+      'Orbitalringlinien ein-/ausblenden (Raumfahrzeuge bleiben sichtbar)',
     mars_layer_tip_traverses:
       'Rover-Routen ein-/ausblenden (Curiosity, Perseverance, Opportunity, Spirit)',
     mars_legend_nation_aria: 'Länderlegende',

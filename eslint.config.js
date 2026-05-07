@@ -44,6 +44,12 @@ export default [
       'docs/.vitepress/cache/',
       'playwright-report/',
       'test-results/',
+      // Local-only Python virtualenvs (gitignored) — used by Argos
+      // Translate scripts. Ship-time CI checkouts never see these.
+      '.venv-argos/',
+      '.xdg-data/',
+      '.xdg-config/',
+      '.xdg-cache/',
     ],
   },
 ];

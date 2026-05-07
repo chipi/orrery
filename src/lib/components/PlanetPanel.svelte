@@ -3,6 +3,7 @@
   import { getPlanetGallery } from '$lib/data';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
+  import ImageCredit from './ImageCredit.svelte';
 
   type Tab = 'overview' | 'technical' | 'gallery' | 'learn';
 
@@ -290,6 +291,9 @@
         <img src={lightboxSrc} alt="" />
         <span class="lightbox-close" aria-hidden="true">×</span>
       </button>
+      <div class="lightbox-meta">
+        <ImageCredit src={lightboxSrc} />
+      </div>
     {/if}
 
     {#if planet.missionable && onPlanMission}

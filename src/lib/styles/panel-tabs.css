@@ -229,3 +229,18 @@
   border-color: rgba(255, 255, 255, 0.5);
   outline: none;
 }
+/* Per-image attribution overlay (ADR-046 Milestone C). Sits above the
+ * full-screen lightbox button so links remain clickable; the button
+ * itself stays click-to-close everywhere outside this strip. */
+.lightbox-meta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  padding: 10px 16px max(10px, env(safe-area-inset-bottom)) 16px;
+  background: rgba(2, 4, 12, 0.88);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-height: 35vh;
+  overflow-y: auto;
+}

@@ -9,6 +9,7 @@ import Ajv, { type AnySchema, type ErrorObject, type ValidateFunction } from 'aj
 import addFormats from 'ajv-formats';
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { isAllowedLicense } from './license-allowlist.js';
 
 const DATA_ROOT = 'static/data';
 // strictRequired:false allows the surface-site schema's if/then conditional
@@ -43,6 +44,9 @@ const scenarioOverlaySchema = loadSchema('scenario-overlay.schema.json');
 const porkchopSchema = loadSchema('porkchop.schema.json');
 const issModuleSchema = loadSchema('iss-module.schema.json');
 const issModuleOverlaySchema = loadSchema('iss-module-overlay.schema.json');
+// ADR-046 Milestone C — image provenance + license stewardship.
+const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
+const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -62,6 +66,8 @@ const validateScenarioOverlay = ajv.compile(scenarioOverlaySchema);
 const validatePorkchop = ajv.compile(porkchopSchema);
 const validateIssModules = ajv.compile(issModuleSchema);
 const validateIssModuleOverlay = ajv.compile(issModuleOverlaySchema);
+const validateImageProvenance = ajv.compile(imageProvenanceSchema);
+const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 
 let failed = 0;
 let passed = 0;
@@ -122,6 +128,9 @@ validateFile(join(DATA_ROOT, 'moon-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
+// ADR-046 Milestone C: image provenance + license waivers.
+validateFile(join(DATA_ROOT, 'image-provenance.json'), validateImageProvenance);
+validateFile(join(DATA_ROOT, 'license-waivers.json'), validateLicenseWaivers);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
@@ -277,4 +286,85 @@ if (missionDriftFailed === 0) {
   console.log('  ✓ All flight-data tcm-counts consistent');
 }
 
-if (failed + docFailed + missionDriftFailed > 0) process.exit(1);
+// ──────────────────────────────────────────────────────────────────────
+// ADR-046 Milestone C — image provenance integrity
+//
+// On top of the JSON-schema check, enforce three runtime invariants:
+//   1. Every license_short is in scripts/license-allowlist.ts OR
+//      covered by a waiver in static/data/license-waivers.json.
+//   2. Every entry.path resolves to a real file under static/.
+//   3. No duplicate entry.path values.
+// Any failure exits non-zero so CI / pre-build hooks fail closed.
+// ──────────────────────────────────────────────────────────────────────
+
+let provenanceFailed = 0;
+
+const PROVENANCE_PATH = join(DATA_ROOT, 'image-provenance.json');
+if (existsSync(PROVENANCE_PATH)) {
+  console.log('\nValidating image-provenance integrity (ADR-046 Milestone C)...');
+
+  type WaiverRow = {
+    license_short: string;
+    scope: string;
+  };
+  type ProvenanceRow = {
+    path: string;
+    license_short: string;
+  };
+
+  const waiversRaw = existsSync(join(DATA_ROOT, 'license-waivers.json'))
+    ? ((
+        JSON.parse(readFileSync(join(DATA_ROOT, 'license-waivers.json'), 'utf8')) as {
+          waivers?: WaiverRow[];
+        }
+      ).waivers ?? [])
+    : [];
+  const manifest = JSON.parse(readFileSync(PROVENANCE_PATH, 'utf8')) as {
+    entries: ProvenanceRow[];
+  };
+
+  function isWaived(licenseShort: string, path: string): boolean {
+    return waiversRaw.some((w) => {
+      if (w.license_short !== licenseShort) return false;
+      if (w.scope === 'all') return true;
+      if (w.scope === path) return true;
+      if (w.scope.endsWith('/*')) return path.startsWith(w.scope.slice(0, -2));
+      return false;
+    });
+  }
+
+  const seenPaths = new Set<string>();
+  let licenseFails = 0;
+  let missingFiles = 0;
+  let duplicates = 0;
+  for (const e of manifest.entries) {
+    if (seenPaths.has(e.path)) {
+      duplicates++;
+      console.error(`  ✗ duplicate manifest entry: ${e.path}`);
+    } else {
+      seenPaths.add(e.path);
+    }
+    if (!isAllowedLicense(e.license_short) && !isWaived(e.license_short, e.path)) {
+      licenseFails++;
+      console.error(`  ✗ ${e.path}: license '${e.license_short}' not in allowlist and not waived`);
+    }
+    // Manifest paths look like /images/foo.jpg → check static/images/foo.jpg.
+    const onDiskPath = join('static', e.path.replace(/^\//, ''));
+    if (!existsSync(onDiskPath)) {
+      missingFiles++;
+      console.error(`  ✗ ${e.path}: manifest entry references missing file ${onDiskPath}`);
+    }
+  }
+  provenanceFailed = duplicates + licenseFails + missingFiles;
+  if (provenanceFailed === 0) {
+    console.log(
+      `  ✓ ${manifest.entries.length} provenance entries — licenses allowed, files on disk, no duplicates`,
+    );
+  } else {
+    console.error(
+      `  ${provenanceFailed} provenance integrity failure(s) (${duplicates} duplicate, ${licenseFails} license, ${missingFiles} missing-file)`,
+    );
+  }
+}
+
+if (failed + docFailed + missionDriftFailed + provenanceFailed > 0) process.exit(1);

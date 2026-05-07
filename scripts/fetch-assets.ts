@@ -110,7 +110,7 @@ async function fetchFonts(): Promise<number> {
 
 const TEXTURE_BASE_URL = 'https://www.solarsystemscope.com/textures/download';
 
-const TEXTURES = [
+export const TEXTURES = [
   '2k_sun.jpg',
   '2k_mercury.jpg',
   '2k_venus_atmosphere.jpg',
@@ -152,7 +152,7 @@ async function fetchTextures(): Promise<number> {
 // text-only agency badge when an image is missing.
 // ──────────────────────────────────────────────────────────────────────
 
-interface AgencyLogo {
+export interface AgencyLogo {
   id: string;
   /**
    * Wikimedia Commons filename (case-sensitive, must include extension).
@@ -165,7 +165,7 @@ interface AgencyLogo {
   license: string;
 }
 
-const AGENCY_LOGOS: AgencyLogo[] = [
+export const AGENCY_LOGOS: AgencyLogo[] = [
   {
     id: 'nasa',
     filename: 'NASA_logo.svg',
@@ -243,7 +243,7 @@ async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
 // to keep file sizes manageable.
 // ──────────────────────────────────────────────────────────────────────
 
-const LUNAR_DISC_PHOTOS: { id: string; filename: string; license: string }[] = [
+export const LUNAR_DISC_PHOTOS: { id: string; filename: string; license: string }[] = [
   {
     id: 'moon_near',
     filename: 'Full_Moon_Luc_Viatour.jpg',
@@ -327,13 +327,13 @@ async function fetchAgencyLogos(): Promise<number> {
 // degrades to text-only when an image is missing.
 // ──────────────────────────────────────────────────────────────────────
 
-interface RocketImage {
+export interface RocketImage {
   id: string;
   filename: string;
   license: string;
 }
 
-const ROCKET_IMAGES: RocketImage[] = [
+export const ROCKET_IMAGES: RocketImage[] = [
   {
     id: 'falcon-heavy',
     filename: 'SpaceX_Falcon_Heavy_on_the_Launch_Pad.jpg',
@@ -458,7 +458,7 @@ async function fetchRocketImages(): Promise<number> {
 // We throttle to 600ms between requests as a courtesy.
 // ──────────────────────────────────────────────────────────────────────
 
-interface MissionImageQuery {
+export interface MissionImageQuery {
   id: string;
   query: string;
   /** When set, this Commons file is always `01.jpg` (+ legacy cover) before NASA fills later slots. */
@@ -471,7 +471,7 @@ interface MissionIndexEntry {
 }
 
 /** Missions that may use NASA partner imagery when `missionId` matches. */
-const MISSION_NASA_CREDIT_EXTRAS: Readonly<Record<string, readonly string[]>> = {
+export const MISSION_NASA_CREDIT_EXTRAS: Readonly<Record<string, readonly string[]>> = {
   'mars-express': ['esa', 'european space agency', 'estec', 'esoc', 'dlr'],
   mmx: ['jaxa', 'isas', 'isas/jaxa'],
   slim: ['jaxa', 'isas', 'isas/jaxa'],
@@ -510,7 +510,7 @@ async function loadMissionAgencyMap(missionIds: readonly string[]): Promise<Map<
 /** Curated Commons heroes (`commonsCoverFirst`): verify with
  *  `Special:FilePath` + `?width=800` — Commons titles move; broken
  *  heroes fall through to noisier NASA search hits (see ADR-046 research). */
-const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
+export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   // Mars / lunar surface
   {
     id: 'apollo11',
@@ -605,8 +605,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'perseverance',
     query: 'perseverance rover mars',
-    commonsCoverFirst:
-      'PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg',
+    commonsCoverFirst: 'PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg',
   },
   {
     id: 'starship-demo',
@@ -626,7 +625,8 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'tianwen1',
     query: 'tianwen-1 mars china',
-    commonsCoverFirst: 'Mars Global Remote Sensing Orbiter and Small Rover at IAC Bremen 2018 02.jpg',
+    commonsCoverFirst:
+      'Mars Global Remote Sensing Orbiter and Small Rover at IAC Bremen 2018 02.jpg',
   },
   {
     id: 'viking1',
@@ -682,8 +682,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'luna24',
     query: 'luna 24 sample return',
-    commonsCoverFirst:
-      'Soviet Union Lunar Sample Return Missions (LROCM119449091RE L24 ano).png',
+    commonsCoverFirst: 'Soviet Union Lunar Sample Return Missions (LROCM119449091RE L24 ano).png',
   },
   {
     id: 'luna9',
@@ -790,7 +789,7 @@ async function fetchNasaGalleryUrls(
 // Wikimedia fallback for missions not in NASA's library (mostly
 // non-NASA: CNSA, JAXA, ROSCOSMOS, ISRO, MBRSC). Curated filenames
 // verified to exist on Commons; CC-BY/-SA or PD licensed.
-const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
+export const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   change5: "Chang'e-5 mockup at ZHAL 01.jpg",
   change4: "Chang'e_4_lander.jpg",
   change6: "Chang'e_6_mockup_at_IAC_2024_02.jpg",
@@ -828,7 +827,7 @@ const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
 // Files are tried in order; the script stops once the gallery hits
 // MISSION_GALLERY_MAX or the list is exhausted. Missions that already
 // hit max via NASA results don't trigger this path.
-const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
+export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
   change4: [
     "Chang'e_4_lander.jpg",
     "Chang'e_4_Lander-_A_Closer_Look_(01_m1303619844lr_closC5A1C).jpg",
@@ -876,30 +875,21 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Emirates Mars Mission mockup at IAC 2021 01 (cropped).jpg',
     'Emirates Mars Mission mockup at IAC 2021 02 (cropped).jpg',
   ],
-  'mars-express': [
-    'Olympus Mons - ESA Mars Express.png',
-    'Mars-express-volcanoes-sm.jpg',
-  ],
+  'mars-express': ['Olympus Mons - ESA Mars Express.png', 'Mars-express-volcanoes-sm.jpg'],
   mmx: [
     'MMX spacecraft front view.png',
     'MMX spacecraft bottom view.png',
     'MMX-CG01.png',
     "ESA's fleet of Solar System explorers ESA19227810.png",
   ],
-  tianwen1: [
-    'Tianwen-1 in Mars orbit.jpg',
-    'Tianwen-1 lander on Mars.jpg',
-  ],
+  tianwen1: ['Tianwen-1 in Mars orbit.jpg', 'Tianwen-1 lander on Mars.jpg'],
   luna9: [
     'First_Photo_from_the_Surface_of_the_Moon.jpg',
     'Luna 9 Space Probe.jpg',
     'Luna-9 (Memorial Museum of Astronautics).JPG',
     'Luna, 9 (53769788375).png',
   ],
-  'blue-moon-mk1': [
-    'BE-7_engine_hot_fire.jpg',
-    'Blue Moon Hypothetical representation.jpg',
-  ],
+  'blue-moon-mk1': ['BE-7_engine_hot_fire.jpg', 'Blue Moon Hypothetical representation.jpg'],
   'inspiration-mars': [
     'Mars_Hubble.jpg',
     'Crewed_Mars_mission_concept.jpg',
@@ -939,15 +929,8 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg',
     'Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg',
   ],
-  mars2: [
-    'Soviet Union-1972-Stamp-0.06. Mars 2.jpg',
-    'Mars 2.jpg',
-    '1972._Марс-3.jpg',
-  ],
-  mars6: [
-    'Soviet Union-1972-Stamp-0.06. 15 Years of Space Age. Mars.jpg',
-    'Mars 6.jpg',
-  ],
+  mars2: ['Soviet Union-1972-Stamp-0.06. Mars 2.jpg', 'Mars 2.jpg', '1972._Марс-3.jpg'],
+  mars6: ['Soviet Union-1972-Stamp-0.06. 15 Years of Space Age. Mars.jpg', 'Mars 6.jpg'],
   clementine: [
     'Clementine_lunar.jpg',
     'Clementine_final_checks.jpg',
@@ -967,10 +950,7 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     '486958_Arrokoth_(crop_of_binary)_color_(cropped).jpg',
     'NewHorizons_39_july14_2015.jpg',
   ],
-  dawn: [
-    'Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg',
-    'Vesta_in_natural_color.jpg',
-  ],
+  dawn: ['Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg', 'Vesta_in_natural_color.jpg'],
 };
 
 /** Top up a mission's gallery from WIKIMEDIA_MISSION_GALLERY_FALLBACK
@@ -1167,7 +1147,11 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
       }
     }
 
-    if (agencyKey === 'NASA' && saved < MISSION_GALLERY_MAX && WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]) {
+    if (
+      agencyKey === 'NASA' &&
+      saved < MISSION_GALLERY_MAX &&
+      WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]
+    ) {
       const after = await topUpWikimediaGallery(
         m.id,
         missionDir,
@@ -1241,7 +1225,7 @@ const ISS_IMAGE_QUERIES: IssImageQuery[] = [
 ];
 
 /** Single-image Wikimedia cover when NASA search returns nothing usable. */
-const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
+export const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
   beam: 'Illustration of BEAM berthed to the International Space Station.jpg',
   canadarm2: 'Canadarm2 and JEMRMS.jpg',
   columbus: 'Shiny Columbus during spacewalk ESA21793666.jpeg',
@@ -1262,7 +1246,7 @@ const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
 };
 
 /** Extra Commons filenames tried first when topping up toward ISS_GALLERY_MAX. */
-const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
+export const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
   canadarm2: ['Canadarm2-lee.jpg'],
   cupola: [
     'Inside the Cupola at night 2013-03-15.jpg',
@@ -1476,7 +1460,7 @@ async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
 
 const PANEL_GALLERY_MAX = 5;
 
-interface GalleryQuery {
+export interface GalleryQuery {
   id: string;
   query: string;
   /** When true, skip NASA Images API — use Commons hero + `wikimediaGallery` top-up only. */
@@ -1498,7 +1482,7 @@ interface GalleryQuery {
  *  thin galleries from Wikimedia without overshadowing NASA results. */
 const GALLERY_MIN_TARGET = 3;
 
-const PLANET_QUERIES: GalleryQuery[] = [
+export const PLANET_QUERIES: GalleryQuery[] = [
   { id: 'mercury', query: 'mercury planet messenger' },
   { id: 'venus', query: 'venus planet magellan' },
   { id: 'earth', query: 'earth from space apollo' },
@@ -1509,9 +1493,11 @@ const PLANET_QUERIES: GalleryQuery[] = [
   { id: 'neptune', query: 'neptune voyager 2' },
 ];
 
-const SUN_QUERIES: GalleryQuery[] = [{ id: 'sun', query: 'solar dynamics observatory sun corona' }];
+export const SUN_QUERIES: GalleryQuery[] = [
+  { id: 'sun', query: 'solar dynamics observatory sun corona' },
+];
 
-const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
+export const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   {
     id: 'iss',
     // Hardware-first hero: wide flyaround after STS-132 undock — not crew portraits.
@@ -1566,10 +1552,7 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
     skipNasa: true,
     commonsHeroFirst: 'Beidou-3 Satellite Mockup.jpg',
     wikimediaFallback: 'Beidou-3 Satellite Mockup.jpg',
-    wikimediaGallery: [
-      'Beidou satellite mockup at FING UNLP 03.jpg',
-      '北斗三号卫星（1：3）.jpg',
-    ],
+    wikimediaGallery: ['Beidou satellite mockup at FING UNLP 03.jpg', '北斗三号卫星（1：3）.jpg'],
   },
   {
     id: 'geo',
@@ -1612,7 +1595,7 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   },
 ];
 
-const MOON_SITE_QUERIES: GalleryQuery[] = [
+export const MOON_SITE_QUERIES: GalleryQuery[] = [
   {
     id: 'luna9',
     query: 'luna 9',
@@ -1646,7 +1629,7 @@ const MOON_SITE_QUERIES: GalleryQuery[] = [
 ];
 
 /** Explore / small-bodies.json — dwarf planets, comets, interstellar (ʻOumuamua). */
-const SMALL_BODY_QUERIES: GalleryQuery[] = [
+export const SMALL_BODY_QUERIES: GalleryQuery[] = [
   {
     id: 'ceres',
     query: 'dawn spacecraft ceres dwarf planet occator',
@@ -2214,7 +2197,20 @@ async function main() {
   console.log('Done.');
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+// Guard the side-effecting main() so other scripts (build-image-provenance,
+// validate-data) can `import` the curated maps below without triggering a
+// full re-fetch.
+const __thisFile = (() => {
+  try {
+    return new URL(import.meta.url).pathname;
+  } catch {
+    return '';
+  }
+})();
+const __invokedAs = process.argv[1] ?? '';
+if (__thisFile && __invokedAs && __thisFile === __invokedAs) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

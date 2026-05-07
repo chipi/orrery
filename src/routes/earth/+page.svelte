@@ -15,6 +15,7 @@
   import Panel from '$lib/components/Panel.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
+  import ImageCredit from '$lib/components/ImageCredit.svelte';
 
   // ─── Earth scene constants ────────────────────────────────────────
   const EARTH_RADIUS = 8;
@@ -77,9 +78,7 @@
   type PanelTab = 'overview' | 'gallery' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
-  let panelGalleryGrid = $derived(
-    panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1),
-  );
+  let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
   let lastSelectedId = $state<string | null>(null);
   $effect(() => {
@@ -1143,6 +1142,9 @@
       <img src={panelLightbox} alt="" />
       <span class="lightbox-close" aria-hidden="true">×</span>
     </button>
+    <div class="lightbox-meta">
+      <ImageCredit src={panelLightbox} />
+    </div>
   {/if}
 </div>
 

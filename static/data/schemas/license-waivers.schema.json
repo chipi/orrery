@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "license-waivers.schema.json",
+  "title": "License waiver manifest (ADR-046, Milestone C)",
+  "description": "Records justified exceptions to scripts/license-allowlist.ts. Anything outside the allowlist must appear here with a reviewer + justification or fetch-assets / build-image-provenance fails closed.",
+  "type": "object",
+  "required": ["schema_version", "waivers"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "waivers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/waiver" }
+    }
+  },
+  "$defs": {
+    "waiver": {
+      "type": "object",
+      "required": [
+        "license_short",
+        "scope",
+        "justification",
+        "reviewer",
+        "decided_at"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "license_short": {
+          "type": "string",
+          "minLength": 2,
+          "description": "License id appearing in image-provenance.json that is NOT in the allowlist."
+        },
+        "scope": {
+          "type": "string",
+          "description": "What the waiver applies to — single path, glob, or 'all' for blanket waiver."
+        },
+        "justification": {
+          "type": "string",
+          "minLength": 10,
+          "description": "Plain-language reason. Must explain why this license is acceptable for our distribution model."
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1,
+          "description": "GitHub handle of the reviewer who approved this waiver."
+        },
+        "decided_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "expires_at": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Optional expiry — re-review required after this date."
+        }
+      }
+    }
+  }
+}

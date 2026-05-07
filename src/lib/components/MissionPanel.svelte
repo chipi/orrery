@@ -9,6 +9,7 @@
   import type { Mission } from '$types/mission';
   import * as m from '$lib/paraglide/messages';
   import { missionGalleryCredit } from '$lib/image-credits';
+  import ImageCredit from './ImageCredit.svelte';
 
   type Tab = 'overview' | 'flight' | 'learn' | 'gallery';
 
@@ -554,6 +555,9 @@
     <img src={lightboxSrc} alt="" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
+  <div class="lightbox-meta">
+    <ImageCredit src={lightboxSrc} />
+  </div>
 {/if}
 
 <style>

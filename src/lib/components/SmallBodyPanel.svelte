@@ -5,6 +5,7 @@
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import ImageCredit from './ImageCredit.svelte';
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
   // the data file is the only consumer outside this component.
@@ -254,6 +255,9 @@
         <img src={lightboxSrc} alt="" />
         <span class="lightbox-close" aria-hidden="true">×</span>
       </button>
+      <div class="lightbox-meta">
+        <ImageCredit src={lightboxSrc} />
+      </div>
     {/if}
   {/if}
 </Panel>

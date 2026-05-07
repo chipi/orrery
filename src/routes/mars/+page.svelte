@@ -12,6 +12,7 @@
   import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
+  import ImageCredit from '$lib/components/ImageCredit.svelte';
 
   // ─── Nation palette (PRD-009 / RFC-012) ──────────────────────────
   // Mirrors /moon's palette + adds Europe (ESA-led missions like Mars
@@ -67,9 +68,7 @@
   let panelTab: PanelTab = $state('overview');
   let lastSelectedId = $state<string | null>(null);
   let panelGallery: string[] = $state([]);
-  let panelGalleryGrid = $derived(
-    panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1),
-  );
+  let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
@@ -1251,6 +1250,9 @@
     <img src={panelLightbox} alt="" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
+  <div class="lightbox-meta">
+    <ImageCredit src={panelLightbox} />
+  </div>
 {/if}
 
 <style>

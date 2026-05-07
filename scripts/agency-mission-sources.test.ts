@@ -30,7 +30,9 @@ describe('normalizeAgency', () => {
 
 describe('fetchAgencyPrimaryImageUrls', () => {
   it('calls NASA fetcher only for NASA agency key', async () => {
-    const fetchNasaGalleryUrls = vi.fn<FetchNasaGalleryUrlsFn>().mockResolvedValue(['https://img/a.jpg']);
+    const fetchNasaGalleryUrls = vi
+      .fn<FetchNasaGalleryUrlsFn>()
+      .mockResolvedValue(['https://img/a.jpg']);
     const r = await fetchAgencyPrimaryImageUrls({
       agencyKey: 'NASA',
       missionId: 'curiosity',
@@ -70,7 +72,9 @@ describe('fetchAgencyPrimaryImageUrls', () => {
   });
 
   it('maps NASA fetcher rejection to nasa-api-empty', async () => {
-    const fetchNasaGalleryUrls = vi.fn<FetchNasaGalleryUrlsFn>().mockRejectedValue(new Error('network'));
+    const fetchNasaGalleryUrls = vi
+      .fn<FetchNasaGalleryUrlsFn>()
+      .mockRejectedValue(new Error('network'));
     const r = await fetchAgencyPrimaryImageUrls({
       agencyKey: 'NASA',
       missionId: 'voyager-2',

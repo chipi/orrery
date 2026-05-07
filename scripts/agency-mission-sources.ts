@@ -67,11 +67,7 @@ export async function fetchAgencyPrimaryImageUrls(params: {
 }): Promise<{ urls: string[]; sourceTag: AgencyPrimarySourceTag }> {
   if (params.agencyKey === 'NASA') {
     try {
-      const urls = await params.fetchNasaGalleryUrls(
-        params.query,
-        params.max,
-        params.missionId,
-      );
+      const urls = await params.fetchNasaGalleryUrls(params.query, params.max, params.missionId);
       return { urls, sourceTag: urls.length > 0 ? 'nasa-api' : 'nasa-api-empty' };
     } catch {
       return { urls: [], sourceTag: 'nasa-api-empty' };

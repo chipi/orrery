@@ -45,6 +45,7 @@
     "test:e2e:ui": "npm run build && playwright test --ui",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",
+    "build-image-provenance": "tsx scripts/build-image-provenance.ts",
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
     "validate-data": "tsx scripts/validate-data.ts",
     "docs:dev": "vitepress dev docs",

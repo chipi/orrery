@@ -162,6 +162,8 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0x04040c, 1);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.dataset.testid = 'iss-canvas';
     renderer.domElement.setAttribute('role', 'img');
     renderer.domElement.setAttribute('aria-label', m.iss_canvas_aria());
@@ -182,6 +184,15 @@
     scene.add(new THREE.AmbientLight(0x445566, 0.55));
     const key = new THREE.DirectionalLight(0xfff4e8, 1.15);
     key.position.set(40, 24, 18);
+    key.castShadow = true;
+    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.camera.near = 20;
+    key.shadow.camera.far = 80;
+    key.shadow.camera.left = -10;
+    key.shadow.camera.right = 10;
+    key.shadow.camera.top = 10;
+    key.shadow.camera.bottom = -10;
+    key.shadow.bias = -0.0008;
     scene.add(key);
     const fill = new THREE.DirectionalLight(0x6688ff, 0.35);
     fill.position.set(-30, -10, -40);
@@ -229,10 +240,13 @@
     const station = buildIssProxyStation();
     scene.add(station);
 
-    const meshById = new Map<string, THREE.Mesh>();
+    const meshById = new Map<string, THREE.Mesh[]>();
     station.traverse((o) => {
       if (o instanceof THREE.Mesh && o.userData.issPickable && o.userData.moduleId) {
-        meshById.set(o.userData.moduleId as string, o);
+        const mid = o.userData.moduleId as string;
+        const arr = meshById.get(mid) ?? [];
+        arr.push(o);
+        meshById.set(mid, arr);
       }
     });
 
@@ -240,21 +254,28 @@
       const sel = issVisualRef.selectedId;
       const pan = issVisualRef.panelOpen;
       const hov = issVisualRef.hoveredId;
-      meshById.forEach((mesh, id) => {
-        const mat = mesh.material;
-        if (!(mat instanceof THREE.MeshStandardMaterial)) return;
-        if (id === sel && pan) {
-          mat.emissive.setHex(0x4466ff);
-          mat.emissiveIntensity = 0.32 + Math.sin(timeSec * 2.6) * 0.14;
-        } else if (id === sel) {
-          mat.emissive.setHex(0x4466ff);
-          mat.emissiveIntensity = 0.38;
-        } else if (id === hov && id !== sel) {
-          mat.emissive.setHex(0x4ecdc4);
-          mat.emissiveIntensity = 0.24;
-        } else {
-          mat.emissive.setHex(0x000000);
-          mat.emissiveIntensity = 0;
+      const pulseScale = 1 + Math.sin(timeSec * 2.6) * 0.04;
+      meshById.forEach((meshes, id) => {
+        const isSel = id === sel;
+        const isHov = id === hov && !isSel;
+        const targetScale = isSel && pan ? pulseScale : 1;
+        for (const mesh of meshes) {
+          mesh.scale.setScalar(targetScale);
+          const mat = mesh.material;
+          if (!(mat instanceof THREE.MeshStandardMaterial)) continue;
+          if (isSel && pan) {
+            mat.emissive.setHex(0x4466ff);
+            mat.emissiveIntensity = 0.32 + Math.sin(timeSec * 2.6) * 0.14;
+          } else if (isSel) {
+            mat.emissive.setHex(0x4466ff);
+            mat.emissiveIntensity = 0.38;
+          } else if (isHov) {
+            mat.emissive.setHex(0x4ecdc4);
+            mat.emissiveIntensity = 0.24;
+          } else {
+            mat.emissive.setHex(0x000000);
+            mat.emissiveIntensity = 0;
+          }
         }
       });
     }

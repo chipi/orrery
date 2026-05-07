@@ -19,9 +19,9 @@ The eight primary nav destinations:
 | `/fly` | Mission Arc | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Library | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
-| `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
 | `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
 | `/mars` | Mars Map | `src/routes/mars/+page.svelte` |
+| `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
 
 Other routes under `src/routes/` are landing pages or experiments (see repo layout).
 

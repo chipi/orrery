@@ -17,9 +17,9 @@
     { path: '/plan', label: m.nav_plan },
     { path: '/fly', label: m.nav_fly },
     { path: '/earth', label: m.nav_earth },
-    { path: '/iss', label: m.nav_iss },
     { path: '/moon', label: m.nav_moon },
     { path: '/mars', label: m.nav_mars },
+    { path: '/iss', label: m.nav_iss },
   ] as const;
 
   const activeLocale = $derived(localeFromPage($page));

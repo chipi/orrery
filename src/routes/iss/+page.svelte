@@ -10,11 +10,11 @@
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-  import { getIssModules, getIssVisitors } from '$lib/data';
+  import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation } from '$lib/iss-proxy-model';
   import type { IssModule } from '$types/iss-module';
-  import IssModulePanel from '$lib/components/IssModulePanel.svelte';
+  import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import * as m from '$lib/paraglide/messages';
 
   let container: HTMLDivElement | undefined = $state();
@@ -279,7 +279,7 @@
 
     const meshById = new Map<string, THREE.Mesh[]>();
     station.traverse((o) => {
-      if (o instanceof THREE.Mesh && o.userData.issPickable && o.userData.moduleId) {
+      if (o instanceof THREE.Mesh && o.userData.stationPickable && o.userData.moduleId) {
         const mid = o.userData.moduleId as string;
         const arr = meshById.get(mid) ?? [];
         arr.push(o);
@@ -373,7 +373,7 @@
         let o: THREE.Object3D | null = h.object;
         while (o) {
           const mid = o.userData?.moduleId as string | undefined;
-          if (o.userData?.issPickable && mid) {
+          if (o.userData?.stationPickable && mid) {
             const mod = moduleListRef.list.find((x) => x.id === mid);
             if (mod) openModule(mod);
             return;
@@ -394,7 +394,7 @@
         let o: THREE.Object3D | null = h.object;
         while (o) {
           const mid = o.userData?.moduleId as string | undefined;
-          if (o.userData?.issPickable && mid) {
+          if (o.userData?.stationPickable && mid) {
             found = mid;
             break;
           }
@@ -678,7 +678,12 @@
     </div>
   {/if}
 
-  <IssModulePanel module={selected} open={panelOpen} onClose={closePanel} />
+  <StationModulePanel
+    module={selected}
+    open={panelOpen}
+    onClose={closePanel}
+    galleryFetcher={getIssModuleGallery}
+  />
 </div>
 
 <style>

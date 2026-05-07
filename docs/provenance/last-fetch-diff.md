@@ -1,54 +1,35 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-05-07T11:43:06.260Z
+Generated: 2026-05-07T17:58:44.063Z
 Script: build-image-provenance@1.0.0
-Commit: 188c127b5474d3023f02dbe9ae549660c1e94dc8
-Total entries: 622
+Commit: 5a85eb5c6a7af7b6a6dbf2d118906f68e54dffb6
+Total entries: 645
 
-## Added (42)
+## Added (23)
 
-- `/images/iss-modules/cargo_dragon/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cargo_dragon/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cargo_dragon/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cargo_dragon/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cargo_dragon/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cargo_dragon/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/crew_dragon/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/cygnus/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/htv_x/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/progress_ms/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/soyuz_ms/06.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/01.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/02.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/03.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/04.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/05.jpg` — PD-Old via wikimedia-commons
-- `/images/iss-modules/starliner/06.jpg` — PD-Old via wikimedia-commons
+- `/images/missions/apollo14/05.jpg` — PD-NASA via nasa-images-api
+- `/images/missions/apollo15/04.jpg` — PD-NASA via nasa-images-api
+- `/images/moon-sites/change6/05.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/02.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/03.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/02.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/03.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/01.jpg` — CC-BY-3.0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/02.jpg` — CC-BY-3.0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/01.jpg` — CC-BY-3.0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/02.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/03.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/04.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/05.jpg` — CC0 via wikimedia-commons
+- `/images/tiangong-modules/tianhe/06.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/02.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/wentian/01.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/wentian/02.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/wentian/03.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/wentian/04.jpg` — CC-BY-4.0 via wikimedia-commons
 
 ## Removed (0)
 

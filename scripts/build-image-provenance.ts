@@ -36,6 +36,8 @@ import {
   WIKIMEDIA_MISSION_GALLERY_FALLBACK,
   WIKIMEDIA_ISS_FALLBACK,
   WIKIMEDIA_ISS_MODULE_GALLERY,
+  WIKIMEDIA_TIANGONG_FALLBACK,
+  WIKIMEDIA_TIANGONG_MODULE_GALLERY,
   EARTH_OBJECT_QUERIES,
   MOON_SITE_QUERIES,
   SMALL_BODY_QUERIES,
@@ -482,7 +484,7 @@ function defaultLicenseForAgency(agency: string): string {
   if (a.includes('esa')) return 'CC-BY-SA-3.0-IGO';
   if (a.includes('jaxa')) return 'CC-BY-4.0';
   if (a.includes('isro')) return 'PD-self';
-  if (a.includes('cnsa')) return 'CC-BY-SA-4.0';
+  if (a.includes('cnsa') || a.includes('cmsa')) return 'CC-BY-SA-4.0';
   if (a.includes('mbrsc') || a.includes('uae')) return 'CC-BY-4.0';
   if (a.includes('spacex')) return 'CC-BY-2.0';
   return 'PD-Old';
@@ -762,6 +764,49 @@ async function buildIssEntries(): Promise<ProvenanceEntry[]> {
   return out;
 }
 
+async function buildTiangongEntries(): Promise<ProvenanceEntry[]> {
+  const out: ProvenanceEntry[] = [];
+  const moduleIds = await listDirs('static/images/tiangong-modules');
+  for (const id of moduleIds) {
+    const dir = `static/images/tiangong-modules/${id}`;
+    const files = (await listFiles(dir)).filter((f) => /\.(jpe?g|png)$/i.test(f));
+    const titles: string[] = [];
+    if (WIKIMEDIA_TIANGONG_FALLBACK[id]) titles.push(WIKIMEDIA_TIANGONG_FALLBACK[id]);
+    for (const t of WIKIMEDIA_TIANGONG_MODULE_GALLERY[id] ?? []) titles.push(t);
+    const { agency, license, rationale } = await loadTiangongModuleAgency(id);
+    for (let i = 0; i < files.length; i++) {
+      const localPath = join(dir, files[i]);
+      const slot = i + 1;
+      const commonsTitle = titles[slot - 1];
+      if (commonsTitle) {
+        out.push(
+          await buildWikimediaEntry({
+            localPath,
+            filename: commonsTitle,
+            fallbackAuthor: agency,
+            fallbackAgency: agency,
+            fallbackLicense: license,
+            fallbackLicenseUrl: null,
+            fallbackLicenseRationale: rationale,
+            modifications: ['downloaded-via-special-filepath', 'reencoded-jpeg'],
+          }),
+        );
+      } else {
+        out.push(
+          buildNasaEntry({
+            localPath,
+            query: `Tiangong ${id} module`,
+            missionId: id,
+            agency: 'NASA',
+            modifications: ['downloaded-via-nasa-images-api', 'reencoded-jpeg'],
+          }),
+        );
+      }
+    }
+  }
+  return out;
+}
+
 async function loadEarthObjectAgencies(): Promise<Map<string, string>> {
   const map = new Map<string, string>();
   try {
@@ -815,6 +860,31 @@ async function loadIssModuleAgency(id: string): Promise<{
     return { agency, license, rationale: defaultRationaleForAgency(agency) };
   } catch {
     return { agency: 'NASA', license: 'PD-NASA', rationale: defaultRationaleForAgency('NASA') };
+  }
+}
+
+async function loadTiangongModuleAgency(id: string): Promise<{
+  agency: string;
+  license: string;
+  rationale: string;
+}> {
+  try {
+    const moduleAll = JSON.parse(
+      await readFile('static/data/tiangong-modules.json', 'utf8'),
+    ) as Array<{ id: string; agency?: string }>;
+    const visitorAll = JSON.parse(
+      await readFile('static/data/tiangong-visitors.json', 'utf8'),
+    ) as Array<{ id: string; agency?: string }>;
+    const row = moduleAll.find((r) => r.id === id) ?? visitorAll.find((r) => r.id === id);
+    const agency = row?.agency ?? 'CMSA';
+    const license = defaultLicenseForAgency(agency);
+    return { agency, license, rationale: defaultRationaleForAgency(agency) };
+  } catch {
+    return {
+      agency: 'CMSA',
+      license: 'CC-BY-SA-4.0',
+      rationale: defaultRationaleForAgency('CMSA'),
+    };
   }
 }
 
@@ -999,6 +1069,7 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
 
   console.log('ISS module galleries…');
   out.push(...(await buildIssEntries()));
+  out.push(...(await buildTiangongEntries()));
 
   console.log('Earth-object galleries…');
   const earthAgencies = await loadEarthObjectAgencies();

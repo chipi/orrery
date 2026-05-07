@@ -1,9 +1,10 @@
 /**
  * Diagrammatic ISS assembly for /iss (ADR-040 proxy). Code-built geometry
  * avoids Node GLTF export (GLTFExporter requires browser FileReader).
- * Meshes are pick targets per ADR-041 (`userData.moduleId`, `issPickable`).
+ * Meshes are pick targets per ADR-041 (`userData.moduleId`, `stationPickable`).
  */
 import * as THREE from 'three';
+import { setShadowFlags, cylinderBetween, makeWingPair } from './station-geometry';
 
 export const ISS_MODULE_IDS = [
   'beam',
@@ -105,25 +106,6 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
   return tex;
 }
 
-function setShadowFlags(obj: THREE.Object3D) {
-  obj.castShadow = true;
-  obj.receiveShadow = true;
-}
-
-function cylinderBetween(
-  p1: THREE.Vector3,
-  p2: THREE.Vector3,
-  radius: number,
-  mat: THREE.Material,
-): THREE.Mesh {
-  const dir = new THREE.Vector3().subVectors(p2, p1);
-  const len = dir.length();
-  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, len, 8, 1), mat);
-  mesh.position.copy(p1).addScaledVector(dir, 0.5);
-  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
-  return mesh;
-}
-
 export function buildIssProxyStation(): THREE.Group {
   const root = new THREE.Group();
   root.name = 'iss_proxy_root';
@@ -136,7 +118,7 @@ export function buildIssProxyStation(): THREE.Group {
 
   const trussGroup = new THREE.Group();
   trussGroup.name = 'truss_merged';
-  trussGroup.userData.issPickable = false;
+  trussGroup.userData.stationPickable = false;
   trussGroup.position.set(-0.35, 0.32, 0);
   root.add(trussGroup);
 
@@ -148,14 +130,14 @@ export function buildIssProxyStation(): THREE.Group {
   for (let i = 0; i < SEGMENTS; i++) {
     const seg = new THREE.Mesh(new THREE.BoxGeometry(segWidth, 0.12, 2.4), trussMat);
     seg.position.set(startX + i * (segWidth + gap), 0, 0);
-    seg.userData.issPickable = false;
+    seg.userData.stationPickable = false;
     setShadowFlags(seg);
     trussGroup.add(seg);
   }
   for (let i = 1; i < SEGMENTS; i += 3) {
     const brace = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.32, 2.2), trussMat);
     brace.position.set(startX + i * (segWidth + gap) - segWidth / 2 - gap / 2, 0, 0);
-    brace.userData.issPickable = false;
+    brace.userData.stationPickable = false;
     setShadowFlags(brace);
     trussGroup.add(brace);
   }
@@ -168,7 +150,7 @@ export function buildIssProxyStation(): THREE.Group {
   for (const { x, z } of RADIATORS) {
     const rad = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.02, 1.2), radiatorMat);
     rad.position.set(x, 0, z);
-    rad.userData.issPickable = false;
+    rad.userData.stationPickable = false;
     rad.name = 'radiator';
     setShadowFlags(rad);
     trussGroup.add(rad);
@@ -195,7 +177,7 @@ export function buildIssProxyStation(): THREE.Group {
     for (const sign of [-1, 1]) {
       const wing = new THREE.Mesh(new THREE.BoxGeometry(wingHalfLen, 0.04, wingDepth), arrayMat);
       wing.position.set(centerX + sign * (wingHalfLen / 2 + 0.04), wingY, z);
-      wing.userData.issPickable = false;
+      wing.userData.stationPickable = false;
       wing.name = 'solar_array';
       setShadowFlags(wing);
       root.add(wing);
@@ -211,7 +193,7 @@ export function buildIssProxyStation(): THREE.Group {
     const sarj = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.04, 6, 16), sarjMat);
     sarj.rotation.y = Math.PI / 2;
     sarj.position.set(centerX, wingY, z);
-    sarj.userData.issPickable = false;
+    sarj.userData.stationPickable = false;
     sarj.name = 'sarj';
     setShadowFlags(sarj);
     root.add(sarj);
@@ -246,7 +228,7 @@ export function buildIssProxyStation(): THREE.Group {
 
       for (const part of [baseMount, boomA, elbow, boomB, tipEffector]) {
         part.userData.moduleId = 'canadarm2';
-        part.userData.issPickable = true;
+        part.userData.stationPickable = true;
         setShadowFlags(part);
         root.add(part);
       }
@@ -271,7 +253,7 @@ export function buildIssProxyStation(): THREE.Group {
     mesh.rotation.z = rotZ;
     mesh.name = id;
     mesh.userData.moduleId = id;
-    mesh.userData.issPickable = true;
+    mesh.userData.stationPickable = true;
     mesh.position.set(x, y, z);
     setShadowFlags(mesh);
     root.add(mesh);
@@ -285,7 +267,7 @@ export function buildIssProxyStation(): THREE.Group {
       const ring = new THREE.Mesh(new THREE.TorusGeometry(radius * 1.15, 0.012, 6, 14), ringMat);
       ring.rotation.x = Math.PI / 2;
       ring.position.set(x, y, z);
-      ring.userData.issPickable = true;
+      ring.userData.stationPickable = true;
       ring.userData.moduleId = 'cupola';
       setShadowFlags(ring);
       root.add(ring);
@@ -301,7 +283,7 @@ export function buildIssProxyStation(): THREE.Group {
       );
       glow.position.set(x, y - radius * 0.55, z);
       glow.rotation.x = Math.PI / 2;
-      glow.userData.issPickable = true;
+      glow.userData.stationPickable = true;
       glow.userData.moduleId = 'cupola';
       glow.name = 'cupola_glow';
       root.add(glow);
@@ -324,7 +306,7 @@ export function buildIssProxyStation(): THREE.Group {
     );
     wrap.rotation.z = Math.PI / 2;
     wrap.position.set(hx + offsetX, hy, hz);
-    wrap.userData.issPickable = true;
+    wrap.userData.stationPickable = true;
     wrap.userData.moduleId = host;
     wrap.name = `mli_${host}`;
     setShadowFlags(wrap);
@@ -338,7 +320,7 @@ export function buildIssProxyStation(): THREE.Group {
     const hatchCap = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.12, 0.18), accessoryMat);
     hatchCap.position.set(qx, qy + 0.18, qz);
     hatchCap.userData.moduleId = 'quest';
-    hatchCap.userData.issPickable = true;
+    hatchCap.userData.stationPickable = true;
     hatchCap.name = 'quest_hatch';
     setShadowFlags(hatchCap);
     root.add(hatchCap);
@@ -350,7 +332,7 @@ export function buildIssProxyStation(): THREE.Group {
     const expFacility = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.04, 0.42), accessoryMat);
     expFacility.position.set(kx + kw / 2 - 0.05, ky, kz - 0.34);
     expFacility.userData.moduleId = 'kibo';
-    expFacility.userData.issPickable = true;
+    expFacility.userData.stationPickable = true;
     expFacility.name = 'kibo_ef';
     setShadowFlags(expFacility);
     root.add(expFacility);
@@ -363,7 +345,7 @@ export function buildIssProxyStation(): THREE.Group {
       const mount = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.05, 0.06), accessoryMat);
       mount.position.set(cx + dx, cy + 0.18, cz);
       mount.userData.moduleId = 'columbus';
-      mount.userData.issPickable = true;
+      mount.userData.stationPickable = true;
       mount.name = 'columbus_payload';
       setShadowFlags(mount);
       root.add(mount);
@@ -394,7 +376,7 @@ export function buildIssProxyStation(): THREE.Group {
     probe.position.set(hx, hy + outY * (baseR + 0.04), hz);
     if (outY < 0) probe.rotation.x = Math.PI;
     probe.userData.moduleId = host;
-    probe.userData.issPickable = true;
+    probe.userData.stationPickable = true;
     probe.name = `probe_${host}`;
     setShadowFlags(probe);
     root.add(probe);
@@ -413,7 +395,7 @@ export function buildIssProxyStation(): THREE.Group {
     aft.rotation.z = Math.PI / 2;
     aft.position.set(zx - zw / 2 - 0.04, zy, zz);
     aft.userData.moduleId = 'zvezda';
-    aft.userData.issPickable = true;
+    aft.userData.stationPickable = true;
     aft.name = 'zvezda_aft';
     setShadowFlags(aft);
     root.add(aft);
@@ -443,7 +425,7 @@ export function buildIssProxyStation(): THREE.Group {
     const adapter = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, len, 10, 1), adapterMat);
     adapter.position.set(hx, (topY + bottomY) / 2, hz);
     adapter.userData.moduleId = host;
-    adapter.userData.issPickable = true;
+    adapter.userData.stationPickable = true;
     adapter.name = `adapter_${host}`;
     setShadowFlags(adapter);
     root.add(adapter);
@@ -460,20 +442,6 @@ const US_WHITE = 0xefefef;
 const US_DARK = 0x202028;
 const JP_GOLD = 0xc8a04c;
 const SOLAR_BLUE = 0x1a3a66;
-
-function makeWingPair(parent: THREE.Group, span: number, depth: number, color: number) {
-  const mat = new THREE.MeshStandardMaterial({
-    color,
-    metalness: 0.3,
-    roughness: 0.55,
-  });
-  for (const sign of [-1, 1]) {
-    const wing = new THREE.Mesh(new THREE.BoxGeometry(span, 0.01, depth), mat);
-    wing.position.set(sign * (span / 2 + 0.04), 0, 0);
-    setShadowFlags(wing);
-    parent.add(wing);
-  }
-}
 
 function buildSoyuz(): THREE.Group {
   const g = new THREE.Group();
@@ -721,11 +689,11 @@ function buildVisitingFleet(root: THREE.Group) {
     else if (ship.out === 'minusZ') g.rotation.x = Math.PI / 2;
     else if (ship.out === 'plusX') g.rotation.z = -Math.PI / 2;
     else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
-    g.userData.issPickable = true;
+    g.userData.stationPickable = true;
     g.userData.moduleId = ship.id;
     g.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.userData.issPickable = true;
+        child.userData.stationPickable = true;
         child.userData.moduleId = ship.id;
       }
     });
@@ -752,7 +720,7 @@ function buildVisitingFleet(root: THREE.Group) {
     const lineGeom = new THREE.BufferGeometry().setFromPoints([start, end]);
     const line = new THREE.Line(lineGeom, corridorMat);
     line.computeLineDistances();
-    line.userData.issPickable = false;
+    line.userData.stationPickable = false;
     line.name = `corridor_${ship.id}`;
     root.add(line);
   }

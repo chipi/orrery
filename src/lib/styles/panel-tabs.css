@@ -7,7 +7,7 @@
  *   - SunPanel.svelte     (OVERVIEW · GALLERY · TECHNICAL · LEARN)
  *   - /earth inline panel (OVERVIEW · GALLERY · LEARN)
  *   - /moon inline panel  (OVERVIEW · GALLERY · LEARN)
- *   - IssModulePanel.svelte (OVERVIEW · GALLERY · LEARN)
+ *   - StationModulePanel.svelte (OVERVIEW · GALLERY · LEARN — shared between /iss + /tiangong)
  *   - SmallBodyPanel.svelte (OVERVIEW · GALLERY · TECHNICAL · LEARN)
  *
  * `.panel-hero` — first gallery image above the tab row (all surfaces).

@@ -1,17 +1,23 @@
 # Last link-provenance build
 
-> Generated: 2026-05-07T14:51:07.642Z
+> Generated: 2026-05-07T17:58:44.296Z
 
-- Total entries: 342 (was 336)
-- Added: 6
+- Total entries: 354 (was 342)
+- Added: 12
 - Removed: 0
 - Changed: 0
 
-## Added (6)
-- `mars2` · core · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-2>
-- `mars3-orbiter` · core · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3>
-- `mars6` · core · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-6>
-- `tianwen1-orbiter` · intro · cnsa · * · <https://www.cnsa.gov.cn/english/>
-- `tianwen1-orbiter` · core · wikipedia · zh · <https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F>
-- `zhurong` · core · wikipedia · zh · <https://zh.wikipedia.org/wiki/%E7%A5%9D%E8%9E%8D%E5%8F%B7%E7%81%AB%E6%98%9F%E8%BD%A6>
+## Added (12)
+- `chinarm` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_robotic_arm>
+- `chinarm` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
+- `mengtian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mengtian_(module)>
+- `mengtian` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
+- `shenzhou` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)>
+- `shenzhou` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Shenzhou_12>
+- `tianhe` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tianhe_core_module>
+- `tianhe` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
+- `tianzhou` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)>
+- `tianzhou` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tianzhou_2>
+- `wentian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Wentian>
+- `wentian` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
 

@@ -19,6 +19,11 @@ import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 import type { IssModule, IssModuleBase, IssModuleOverlay } from '$types/iss-module';
 import type {
+  TiangongModule,
+  TiangongModuleBase,
+  TiangongModuleOverlay,
+} from '$types/tiangong-module';
+import type {
   ScienceSection,
   ScienceSectionBase,
   ScienceSectionOverlay,
@@ -395,6 +400,115 @@ export async function getIssVisitor(id: string, locale = 'en-US'): Promise<IssMo
 }
 
 /**
+ * Tiangong pressurised modules + Chinarm (PRD-011 / ADR-049). Mirrors
+ * getIssModules: base records from `tiangong-modules.json` merged with
+ * per-locale overlays; falls back to en-US when a locale overlay is missing.
+ */
+export async function getTiangongModules(locale = 'en-US'): Promise<TiangongModule[]> {
+  const list = await get<TiangongModuleBase[]>('tiangong-modules.json');
+  const merged = await Promise.all(
+    list.map(async (baseRecord) => {
+      const overlay = await get<TiangongModuleOverlay>(
+        `i18n/${locale}/tiangong-modules/${baseRecord.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<TiangongModuleOverlay>(
+              `i18n/en-US/tiangong-modules/${baseRecord.id}.json`,
+            ).catch(() => null));
+      if (!fallback) {
+        throw new Error(
+          `Missing Tiangong overlay for ${baseRecord.id} (locale ${locale}, no en-US fallback)`,
+        );
+      }
+      return { ...baseRecord, ...fallback };
+    }),
+  );
+  return merged;
+}
+
+export async function getTiangongModule(
+  id: string,
+  locale = 'en-US',
+): Promise<TiangongModule | null> {
+  try {
+    const list = await get<TiangongModuleBase[]>('tiangong-modules.json');
+    const baseRecord = list.find((m) => m.id === id);
+    if (!baseRecord) return null;
+    const overlay = await get<TiangongModuleOverlay>(
+      `i18n/${locale}/tiangong-modules/${baseRecord.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<TiangongModuleOverlay>(
+            `i18n/en-US/tiangong-modules/${baseRecord.id}.json`,
+          ).catch(() => null));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+export async function getTiangongModuleGallery(moduleId: string): Promise<string[]> {
+  return getCategoryGallery('tiangong-modules', 'tiangong-galleries.json', moduleId);
+}
+
+export async function getTiangongVisitors(locale = 'en-US'): Promise<TiangongModule[]> {
+  const list = await get<TiangongModuleBase[]>('tiangong-visitors.json');
+  const merged = await Promise.all(
+    list.map(async (baseRecord) => {
+      const overlay = await get<TiangongModuleOverlay>(
+        `i18n/${locale}/tiangong-visitors/${baseRecord.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<TiangongModuleOverlay>(
+              `i18n/en-US/tiangong-visitors/${baseRecord.id}.json`,
+            ).catch(() => null));
+      if (!fallback) {
+        throw new Error(
+          `Missing Tiangong visitor overlay for ${baseRecord.id} (locale ${locale}, no en-US fallback)`,
+        );
+      }
+      return { ...baseRecord, ...fallback };
+    }),
+  );
+  return merged;
+}
+
+export async function getTiangongVisitor(
+  id: string,
+  locale = 'en-US',
+): Promise<TiangongModule | null> {
+  try {
+    const list = await get<TiangongModuleBase[]>('tiangong-visitors.json');
+    const baseRecord = list.find((m) => m.id === id);
+    if (!baseRecord) return null;
+    const overlay = await get<TiangongModuleOverlay>(
+      `i18n/${locale}/tiangong-visitors/${baseRecord.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<TiangongModuleOverlay>(
+            `i18n/en-US/tiangong-visitors/${baseRecord.id}.json`,
+          ).catch(() => null));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Pre-computed porkchop grid for a destination (v0.1.6 / ADR-026).
  * Files live in static/data/porkchop/ and are generated at build time
  * by scripts/precompute-porkchops.ts. /plan loads them via this
@@ -736,9 +850,7 @@ export async function getScienceTab(
   const index = await get<{ ids: string[] }>(`science/${tab}/_index.json`).catch(() => ({
     ids: [] as string[],
   }));
-  const sections = await Promise.all(
-    index.ids.map((id) => getScienceSection(tab, id, locale)),
-  );
+  const sections = await Promise.all(index.ids.map((id) => getScienceSection(tab, id, locale)));
   return sections.filter((s): s is ScienceSection => s !== null).sort((a, b) => a.order - b.order);
 }
 

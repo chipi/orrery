@@ -1,23 +1,24 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import { getIssModuleGallery } from '$lib/data';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import { page } from '$app/stores';
-  import type { IssModule } from '$types/iss-module';
+  import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
+  import LearnLink from './LearnLink.svelte';
 
-  type IssLinks = NonNullable<IssModule['links']>;
+  type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'learn';
 
   type Props = {
-    module: IssModule | null;
+    module: StationModule | null;
     open: boolean;
     onClose: () => void;
+    galleryFetcher: (id: string) => Promise<string[]>;
   };
-  let { module: mod, open, onClose }: Props = $props();
+  let { module: mod, open, onClose, galleryFetcher }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -31,21 +32,25 @@
       lastId = mod.id;
       lightboxSrc = null;
       gallery = [];
-      void getIssModuleGallery(mod.id).then((urls) => {
+      void galleryFetcher(mod.id).then((urls) => {
         if (mod && mod.id === lastId) gallery = urls;
       });
     }
   });
 
   let linksByTier = $derived.by(() => {
-    if (!mod?.links) return { intro: [] as IssLinks, core: [] as IssLinks, deep: [] as IssLinks };
-    const out = { intro: [] as IssLinks, core: [] as IssLinks, deep: [] as IssLinks };
+    if (!mod?.links)
+      return { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
+    const out = { intro: [] as StationLinks, core: [] as StationLinks, deep: [] as StationLinks };
     for (const link of mod.links) out[link.t].push(link);
     return out;
   });
   let hasLinks = $derived((mod?.links?.length ?? 0) > 0);
 
   const loc = $derived(localeFromPage($page));
+  // Status + label vocabulary is shared between /iss and /tiangong; the
+  // existing iss_* Paraglide keys are reused as the station vocabulary.
+  // A follow-up rename to station_* is tracked under PRD-011 cleanup.
   let statusLabel = $derived(
     !mod ? '' : mod.status === 'ACTIVE' ? m.iss_status_active() : m.iss_status_retired(),
   );
@@ -81,38 +86,43 @@
     <div class="tabs" role="tablist">
       <button
         type="button"
-        id="iss-tab-overview"
+        id="station-tab-overview"
         class:active={tab === 'overview'}
         onclick={() => (tab = 'overview')}
         role="tab"
         aria-selected={tab === 'overview'}
-        aria-controls="iss-tabpanel">{m.panel_tab_overview()}</button
+        aria-controls="station-tabpanel">{m.panel_tab_overview()}</button
       >
       {#if gallery.length > 0}
         <button
           type="button"
-          id="iss-tab-gallery"
+          id="station-tab-gallery"
           class:active={tab === 'gallery'}
           onclick={() => (tab = 'gallery')}
           role="tab"
           aria-selected={tab === 'gallery'}
-          aria-controls="iss-tabpanel">{m.panel_tab_gallery()}</button
+          aria-controls="station-tabpanel">{m.panel_tab_gallery()}</button
         >
       {/if}
       {#if hasLinks}
         <button
           type="button"
-          id="iss-tab-learn"
+          id="station-tab-learn"
           class:active={tab === 'learn'}
           onclick={() => (tab = 'learn')}
           role="tab"
           aria-selected={tab === 'learn'}
-          aria-controls="iss-tabpanel">{m.panel_tab_learn()}</button
+          aria-controls="station-tabpanel">{m.panel_tab_learn()}</button
         >
       {/if}
     </div>
 
-    <div class="tab-content" role="tabpanel" id="iss-tabpanel" aria-labelledby="iss-tab-{tab}">
+    <div
+      class="tab-content"
+      role="tabpanel"
+      id="station-tabpanel"
+      aria-labelledby="station-tab-{tab}"
+    >
       {#if tab === 'overview'}
         <p class="editorial">{mod.description}</p>
         <p class="function-block">{mod.function_detail}</p>
@@ -182,7 +192,7 @@
               <ul>
                 {#each linksByTier.intro as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -194,7 +204,7 @@
               <ul>
                 {#each linksByTier.core as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>
@@ -206,7 +216,7 @@
               <ul>
                 {#each linksByTier.deep as link (link.u)}
                   <li>
-                    <a href={link.u} target="_blank" rel="noopener noreferrer">{link.l} ↗</a>
+                    <LearnLink entityId={mod.id} url={link.u} label={link.l} />
                   </li>
                 {/each}
               </ul>

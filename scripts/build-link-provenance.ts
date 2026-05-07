@@ -56,6 +56,8 @@ type Category =
   | 'mission'
   | 'iss-module'
   | 'iss-visitor'
+  | 'tiangong-module'
+  | 'tiangong-visitor'
   | 'earth-object'
   | 'moon-site'
   | 'mars-site'
@@ -809,6 +811,29 @@ async function main(): Promise<void> {
     {
       label: 'i18n/en-US/iss-visitors/*.json',
       run: () => collectFromI18nPerIdDir('iss-visitors', 'iss-visitor', '/iss'),
+    },
+    {
+      label: 'tiangong-modules.json',
+      run: () =>
+        collectFromTopLevelArrayFile('tiangong-modules.json', 'tiangong-module', '/tiangong', null),
+    },
+    {
+      label: 'i18n/en-US/tiangong-modules/*.json',
+      run: () => collectFromI18nPerIdDir('tiangong-modules', 'tiangong-module', '/tiangong'),
+    },
+    {
+      label: 'tiangong-visitors.json',
+      run: () =>
+        collectFromTopLevelArrayFile(
+          'tiangong-visitors.json',
+          'tiangong-visitor',
+          '/tiangong',
+          null,
+        ),
+    },
+    {
+      label: 'i18n/en-US/tiangong-visitors/*.json',
+      run: () => collectFromI18nPerIdDir('tiangong-visitors', 'tiangong-visitor', '/tiangong'),
     },
     {
       label: 'earth-objects.json',

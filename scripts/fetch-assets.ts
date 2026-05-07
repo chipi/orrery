@@ -1435,16 +1435,18 @@ export const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
   ],
 };
 
-async function topUpIssWikimediaGallery(
+async function topUpStationWikimediaGallery(
+  galleryMap: Record<string, string[]>,
   moduleId: string,
   moduleDir: string,
   nextIndex: number,
+  galleryMax: number,
 ): Promise<number> {
-  const specific = WIKIMEDIA_ISS_MODULE_GALLERY[moduleId] ?? [];
+  const specific = galleryMap[moduleId] ?? [];
   const seen = new Set<string>();
   const list: string[] = [];
   // Module galleries use only module-specific Commons files — no
-  // generic ISS-wide top-up (avoids unrelated crew / stack photos).
+  // generic station-wide top-up (avoids unrelated crew / stack photos).
   for (const f of specific) {
     if (seen.has(f)) continue;
     seen.add(f);
@@ -1453,7 +1455,7 @@ async function topUpIssWikimediaGallery(
 
   let saved = nextIndex - 1;
   for (const filename of list) {
-    if (saved >= ISS_GALLERY_MAX) break;
+    if (saved >= galleryMax) break;
     const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
     const dest = join(moduleDir, slot);
     const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(filename)}?width=800`;
@@ -1564,7 +1566,13 @@ async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
     }
 
     if (saved < ISS_GALLERY_MAX) {
-      const after = await topUpIssWikimediaGallery(row.id, moduleDir, saved + 1);
+      const after = await topUpStationWikimediaGallery(
+        WIKIMEDIA_ISS_MODULE_GALLERY,
+        row.id,
+        moduleDir,
+        saved + 1,
+        ISS_GALLERY_MAX,
+      );
       if (after > saved) {
         process.stdout.write(` +${after - saved} wikimedia-gallery`);
         saved = after;
@@ -1586,6 +1594,164 @@ async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
   const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
   console.log(
     `  → manifest written to ${ISS_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
+  );
+
+  return totalPhotos;
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// TIANGONG MODULE GALLERIES (PRD-011 / ADR-046 / ADR-047)
+//
+// Mirrors the ISS pipeline. Wolf Amendment rules out NASA-3D Resources
+// for CMSA hardware; agency-first sourcing is Wikimedia Commons mirrors
+// of CMSA / CNSA / Xinhua releases. Default license inferred as
+// CC-BY-SA-4.0 in build-image-provenance.ts.
+// ──────────────────────────────────────────────────────────────────────
+
+const TIANGONG_MODULES_IMG_DIR = 'static/images/tiangong-modules';
+const TIANGONG_GALLERIES_MANIFEST = 'static/data/tiangong-galleries.json';
+const TIANGONG_GALLERY_MAX = 6;
+
+const TIANGONG_IMAGE_QUERIES: IssImageQuery[] = [
+  { id: 'tianhe', query: 'Tianhe core module Tiangong space station' },
+  { id: 'wentian', query: 'Wentian laboratory module Tiangong' },
+  { id: 'mengtian', query: 'Mengtian laboratory module Tiangong' },
+  { id: 'chinarm', query: 'Tiangong robotic arm Chinarm space station' },
+  { id: 'shenzhou', query: 'Shenzhou spacecraft launch crew capsule China' },
+  { id: 'tianzhou', query: 'Tianzhou cargo spacecraft China resupply' },
+];
+
+/** Single-image Wikimedia cover for Tiangong entities (verified Commons titles). */
+export const WIKIMEDIA_TIANGONG_FALLBACK: Record<string, string> = {
+  tianhe: 'Launch of Tianhe Core Module 2 (Cropped).jpg',
+  wentian: 'Interior of Wentian.jpg',
+  mengtian: 'Chinese Tiangong Space Station.jpg',
+  chinarm: 'Chinese Tiangong Space Station.jpg',
+  shenzhou: 'Shenzhou 14 launch.png',
+  tianzhou: 'Chinese Tiangong Space Station.jpg',
+};
+
+/** Extra Commons filenames tried first when topping up toward TIANGONG_GALLERY_MAX. */
+export const WIKIMEDIA_TIANGONG_MODULE_GALLERY: Record<string, string[]> = {
+  tianhe: [
+    'Tianhe Core Module Rendering no background.png',
+    'Tianhe CSS as seen from M.B Gonnet 01.jpg',
+    'Tianhe solar array.jpg',
+    'Tianhe core module interior at NMC 03.jpg',
+    'Tianhe final art 310819.jpg',
+  ],
+  wentian: [
+    'Chinese Tiangong Space Station.jpg',
+    'Rear view of Tiangong Space Station.jpg',
+    'Basic space experiment cabinet of Tiangong space station.jpg',
+  ],
+  mengtian: [
+    'Rear view of Tiangong Space Station.jpg',
+    'Basic space experiment cabinet of Tiangong space station.jpg',
+  ],
+  chinarm: ['Rear view of Tiangong Space Station.jpg', 'Tianhe CSS as seen from M.B Gonnet 01.jpg'],
+  shenzhou: ['Wang Yaping at Shenzhou-13 launch.jpg'],
+  tianzhou: ['Rear view of Tiangong Space Station.jpg'],
+};
+
+async function fetchTiangongModuleImages(onlyIds?: string[]): Promise<number> {
+  await mkdir(TIANGONG_MODULES_IMG_DIR, { recursive: true });
+  await mkdir('static/data', { recursive: true });
+
+  const subsetMode = Array.isArray(onlyIds) && onlyIds.length > 0;
+  let prevManifest: Record<string, number> = {};
+  if (subsetMode) {
+    try {
+      prevManifest = JSON.parse(await readFile(TIANGONG_GALLERIES_MANIFEST, 'utf8')) as Record<
+        string,
+        number
+      >;
+    } catch {
+      /* no existing manifest */
+    }
+  }
+  const manifest: Record<string, number> = subsetMode ? { ...prevManifest } : {};
+  let totalPhotos = 0;
+
+  const queries = subsetMode
+    ? TIANGONG_IMAGE_QUERIES.filter((q) => onlyIds!.includes(q.id))
+    : TIANGONG_IMAGE_QUERIES;
+
+  if (subsetMode && queries.length === 0) {
+    console.warn('  ⚠ --tiangong-only: no ids matched TIANGONG_IMAGE_QUERIES');
+    return 0;
+  }
+
+  for (let i = 0; i < queries.length; i++) {
+    const row = queries[i];
+    const moduleDir = join(TIANGONG_MODULES_IMG_DIR, row.id);
+    await mkdir(moduleDir, { recursive: true });
+    process.stdout.write(`  ${row.id}…`);
+
+    let urls: string[] = [];
+    let saved = 0;
+
+    const heroFallback = WIKIMEDIA_TIANGONG_FALLBACK[row.id];
+    if (heroFallback) {
+      try {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(heroFallback)}?width=800`;
+        await downloadFromWikimedia(url, join(moduleDir, '01.jpg'));
+        saved = 1;
+        process.stdout.write(' wikimedia-hero');
+      } catch (err2) {
+        const msg = err2 instanceof Error ? err2.message : String(err2);
+        process.stdout.write(` ⚠ wikimedia-hero skipped (${msg})`);
+      }
+    }
+
+    try {
+      urls = await fetchNasaGalleryUrls(row.query, TIANGONG_GALLERY_MAX);
+    } catch {
+      // NASA Images API rarely returns CMSA hardware; quietly carry on.
+    }
+
+    for (let n = 0; n < urls.length && saved < TIANGONG_GALLERY_MAX; n++) {
+      const filename = `${String(saved + 1).padStart(2, '0')}.jpg`;
+      try {
+        const imgRes = await fetch(urls[n]);
+        if (!imgRes.ok) continue;
+        const buffer = Buffer.from(await imgRes.arrayBuffer());
+        await writeFile(join(moduleDir, filename), buffer);
+        saved++;
+      } catch {
+        // Single-image fail; continue with the rest.
+      }
+    }
+
+    if (saved < TIANGONG_GALLERY_MAX) {
+      const after = await topUpStationWikimediaGallery(
+        WIKIMEDIA_TIANGONG_MODULE_GALLERY,
+        row.id,
+        moduleDir,
+        saved + 1,
+        TIANGONG_GALLERY_MAX,
+      );
+      if (after > saved) {
+        process.stdout.write(` +${after - saved} wikimedia-gallery`);
+        saved = after;
+      }
+    }
+
+    manifest[row.id] = saved;
+    totalPhotos += saved;
+    process.stdout.write(` ${saved}\n`);
+
+    if (i < queries.length - 1) {
+      await new Promise((resolve) => setTimeout(resolve, NASA_API_DELAY_MS));
+    }
+  }
+
+  const sortedManifest: Record<string, number> = {};
+  for (const k of Object.keys(manifest).sort()) sortedManifest[k] = manifest[k];
+  await writeFile(TIANGONG_GALLERIES_MANIFEST, JSON.stringify(sortedManifest, null, 2) + '\n');
+  const manifestTotal = Object.values(sortedManifest).reduce((a, b) => a + b, 0);
+  console.log(
+    `  → manifest written to ${TIANGONG_GALLERIES_MANIFEST} (${manifestTotal} photos total in manifest)`,
   );
 
   return totalPhotos;
@@ -2342,6 +2508,12 @@ async function main() {
   console.log('Fetching ISS module galleries:');
   const issGalleryTotal = await fetchIssModuleImages();
   console.log(`  → ${issGalleryTotal} ISS module gallery files in ${ISS_MODULES_IMG_DIR}\n`);
+
+  console.log('Fetching Tiangong module galleries:');
+  const tiangongGalleryTotal = await fetchTiangongModuleImages();
+  console.log(
+    `  → ${tiangongGalleryTotal} Tiangong module gallery files in ${TIANGONG_MODULES_IMG_DIR}\n`,
+  );
 
   console.log('Rendering mission trajectory thumbnails:');
   await fetchMissionThumbnails();

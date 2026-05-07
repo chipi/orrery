@@ -17,6 +17,7 @@
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
+import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-sources.js';
 import type { Destination } from '../src/types/mission.js';
 import { join, dirname } from 'node:path';
 import { createCanvas } from 'canvas';
@@ -433,6 +434,11 @@ async function fetchRocketImages(): Promise<number> {
 // ──────────────────────────────────────────────────────────────────────
 // MISSION IMAGERY — NASA Images API + per-mission gallery (v0.1.8)
 //
+// ADR-046: If `static/data/missions/index.json` lists agency ≠ NASA,
+// curated Wikimedia lists run **before** the NASA Images API so the
+// gallery reflects the operating agency first; NASA remains the broad
+// fallback library for remaining slots.
+//
 // Source: NASA Images API (https://images-api.nasa.gov). All NASA-
 // originated content is public domain; third-party material that
 // occasionally appears in their library is identified per-item and
@@ -459,108 +465,153 @@ interface MissionImageQuery {
   commonsCoverFirst?: string;
 }
 
+interface MissionIndexEntry {
+  id: string;
+  agency: string;
+}
+
+/** Missions that may use NASA partner imagery when `missionId` matches. */
+const MISSION_NASA_CREDIT_EXTRAS: Readonly<Record<string, readonly string[]>> = {
+  'mars-express': ['esa', 'european space agency', 'estec', 'esoc', 'dlr'],
+  mmx: ['jaxa', 'isas', 'isas/jaxa'],
+  slim: ['jaxa', 'isas', 'isas/jaxa'],
+  'hope-probe': ['mbrsc', 'uae', 'emirates mars', 'emirates'],
+};
+
+/** Agency for ids in `MISSION_IMAGE_QUERIES` not present in the index (e.g. mars2 / mars6). */
+async function resolveAgencyOutsideIndex(id: string): Promise<string> {
+  const tries = [`static/data/missions/mars/${id}.json`, `static/data/missions/moon/${id}.json`];
+  for (const p of tries) {
+    try {
+      const j = JSON.parse(await readFile(p, 'utf8')) as { agency?: string };
+      if (typeof j.agency === 'string' && j.agency.trim()) return j.agency.trim();
+    } catch {
+      /* missing */
+    }
+  }
+  if (id === 'mars2' || id === 'mars6') return 'ROSCOSMOS';
+  return 'NASA';
+}
+
+/** Agency field from mission index + explicit resolution for extra fetch-only ids. */
+async function loadMissionAgencyMap(missionIds: readonly string[]): Promise<Map<string, string>> {
+  const raw = await readFile('static/data/missions/index.json', 'utf8');
+  const rows = JSON.parse(raw) as MissionIndexEntry[];
+  const map = new Map<string, string>();
+  for (const r of rows) map.set(r.id, r.agency);
+  for (const id of missionIds) {
+    if (!map.has(id)) {
+      map.set(id, await resolveAgencyOutsideIndex(id));
+    }
+  }
+  return map;
+}
+
+/** Curated Commons heroes (`commonsCoverFirst`): verify with
+ *  `Special:FilePath` + `?width=800` — Commons titles move; broken
+ *  heroes fall through to noisier NASA search hits (see ADR-046 research). */
 const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   // Mars / lunar surface
   {
     id: 'apollo11',
     query: 'apollo 11 lunar surface',
-    commonsCoverFirst: 'Buzz Aldrin on the Moon.jpg',
+    commonsCoverFirst: 'Aldrin Apollo 11.jpg',
   },
   {
     id: 'apollo12',
     query: 'apollo 12 lunar surface',
-    commonsCoverFirst: 'Pete Conrad on the lunar surface (AS12-46-6749).jpg',
+    commonsCoverFirst: 'Pete Conrad on LM ladder, Apollo 12.jpg',
   },
   {
     id: 'apollo14',
     query: 'apollo 14 lunar module antares',
-    commonsCoverFirst: 'Apollo 14 Lunar Module Antares on the Moon.jpg',
+    commonsCoverFirst: 'Apollo 14 Lunar Module (LM) on the moon.jpg',
   },
   {
     id: 'apollo15',
     query: 'apollo 15 lunar rover hadley',
-    commonsCoverFirst: 'Apollo 15 Lunar Roving Vehicle at Hadley-Apennine.jpg',
+    commonsCoverFirst: 'Apollo 15 flag, rover, LM, Irwin.jpg',
   },
   {
     id: 'apollo16',
     query: 'apollo 16 lunar module orion moon',
-    commonsCoverFirst: 'Apollo 16 Lunar Module Orion on the Moon.jpg',
+    commonsCoverFirst: 'Lunar Module West during mission Apollo 16.jpg',
   },
   {
     id: 'apollo17',
     query: 'apollo 17 lunar rover',
-    commonsCoverFirst:
-      'Harrison Schmitt standing next to the lunar rover during Apollo 17 EVA 3.jpg',
+    commonsCoverFirst: 'NASA Apollo 17 Lunar Roving Vehicle.jpg',
   },
   {
     id: 'artemis3',
     query: 'artemis iii lunar spacesuit axiom',
-    commonsCoverFirst: 'Axiom Extravehicular Mobility Unit Artemis III.jpg',
+    commonsCoverFirst: 'Artemis III Lunar Spacesuit Testing (jsc2026e002578).jpg',
   },
   {
     id: 'curiosity',
     query: 'curiosity rover mars',
-    commonsCoverFirst: 'Curiosity rover Mars sol 84 self-portrait.jpg',
+    commonsCoverFirst: 'PIA16239 High-Resolution Self-Portrait by Curiosity Rover Arm Camera.jpg',
   },
   {
     id: 'hope-probe',
     query: 'emirates mars mission hope spacecraft',
-    commonsCoverFirst: 'Hope Mars Mission spacecraft.jpg',
+    commonsCoverFirst: 'Emirates Mars Mission mockup at IAC 2021 01.jpg',
   },
   {
     id: 'insight',
     query: 'insight mars lander',
-    commonsCoverFirst: 'InSight lander on Mars (PIA23302).jpg',
+    commonsCoverFirst: 'PIA19664-MarsInSightLander-Assembly-20150430.jpg',
   },
   {
     id: 'mariner4',
     query: 'mariner 4 mars flyby',
-    commonsCoverFirst: 'Mariner 4 spacecraft.jpg',
+    commonsCoverFirst: 'First Photograph of Mars (7544559952).jpg',
   },
   {
     id: 'mars-express',
     query: 'mars express orbiter esa',
-    commonsCoverFirst: 'Mars Express in cleanroom.jpg',
+    commonsCoverFirst: 'Mars Express illustration highlighting MARSIS antenna.jpg',
   },
   {
     id: 'mars-pathfinder',
     query: 'mars pathfinder sojourner rover',
-    commonsCoverFirst: 'Sojourner on Mars PIA01546.jpg',
+    commonsCoverFirst: 'Mars Pathfinder Presidential Panorama.jpg',
   },
   {
     id: 'mars3',
     query: 'mars 3 soviet lander',
-    commonsCoverFirst: 'Mars_3_spacecraft.jpg',
+    commonsCoverFirst: 'Mars 3 surface transmission.jpg',
   },
   {
     id: 'mars2',
     query: 'mars 2 soviet mars probe',
-    commonsCoverFirst: 'Mars 2 spacecraft.jpg',
+    commonsCoverFirst: 'Mars 2.jpg',
   },
   {
     id: 'mars6',
     query: 'mars 6 soviet mars probe',
-    commonsCoverFirst: 'Mars 6 spacecraft.jpg',
+    commonsCoverFirst: 'Mars 6.jpg',
   },
   {
     id: 'maven',
     query: 'maven mars orbiter nasa',
-    commonsCoverFirst: 'MAVEN in clean room.jpg',
+    commonsCoverFirst: 'Preparing MAVEN for Mars.jpg',
   },
   {
     id: 'mmx',
     query: 'martian moons exploration mmx jaxa',
-    commonsCoverFirst: 'MMX spacecraft at JAXA.jpg',
+    commonsCoverFirst: 'MMX spacecraft 2.jpg',
   },
   {
     id: 'perseverance',
     query: 'perseverance rover mars',
-    commonsCoverFirst: 'Perseverance rover Mars Jezero.jpg',
+    commonsCoverFirst:
+      'PIA26530-Mars-PerseveranceRover-JezeroCrater-RimView-20241225.jpg',
   },
   {
     id: 'starship-demo',
     query: 'starship spacex orbital flight test',
-    commonsCoverFirst: 'SpaceX Starship SN15 after landing.jpg',
+    commonsCoverFirst: 'Starship SN15 flap and nosecone (51437260707).jpg',
   },
   {
     id: 'starship-mars-crew',
@@ -570,7 +621,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'inspiration-mars',
     query: 'orion spacecraft deep space',
-    commonsCoverFirst: 'Orion spacecraft EFT-1.jpg',
+    commonsCoverFirst: 'Orion spacecraft after EFT-1 at KSC (KSC-2014-4856).jpg',
   },
   {
     id: 'tianwen1',
@@ -580,7 +631,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'viking1',
     query: 'viking 1 mars lander',
-    commonsCoverFirst: 'Viking 1 lander on Mars.jpg',
+    commonsCoverFirst: 'Viking spacecraft.jpg',
   },
   {
     id: 'mangalyaan',
@@ -591,7 +642,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'chandrayaan1',
     query: 'chandrayaan-1 lunar orbiter',
-    commonsCoverFirst: 'Chandrayaan-1 spacecraft.jpg',
+    commonsCoverFirst: 'Chandrayaan-1-01.jpg',
   },
   {
     id: 'chandrayaan3',
@@ -606,7 +657,7 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'change5',
     query: 'chang-e 5 lunar sample',
-    commonsCoverFirst: "Chang'e-5 spacecraft.jpg",
+    commonsCoverFirst: "Chang'e-5 mockup at ZHAL 01.jpg",
   },
   {
     id: 'change6',
@@ -616,12 +667,12 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'clementine',
     query: 'clementine lunar mission',
-    commonsCoverFirst: 'Clementine spacecraft.jpg',
+    commonsCoverFirst: 'Clementine lunar.jpg',
   },
   {
     id: 'lro',
     query: 'lunar reconnaissance orbiter',
-    commonsCoverFirst: 'Lunar Reconnaissance Orbiter spacecraft.jpg',
+    commonsCoverFirst: 'Earthrise over Compton crater -LRO full res.jpg',
   },
   {
     id: 'luna17',
@@ -631,7 +682,8 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'luna24',
     query: 'luna 24 sample return',
-    commonsCoverFirst: 'Luna 24 spacecraft.jpg',
+    commonsCoverFirst:
+      'Soviet Union Lunar Sample Return Missions (LROCM119449091RE L24 ano).png',
   },
   {
     id: 'luna9',
@@ -641,17 +693,18 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'slim',
     query: 'slim lunar lander jaxa',
-    commonsCoverFirst: 'SLIM spacecraft full-scale model.jpg',
+    commonsCoverFirst: 'SLIM half scale model.png',
   },
   {
     id: 'artemis2',
     query: 'artemis 2 orion spacecraft',
-    commonsCoverFirst: 'Artemis II Orion spacecraft.jpg',
+    commonsCoverFirst:
+      'Artemis II Orion Spacecraft in FAST Cell for Final Checkouts (KSC-20241215-PH-RNS01 0007).jpg',
   },
   {
     id: 'blue-moon-mk1',
     query: 'blue origin blue moon lander',
-    commonsCoverFirst: 'Blue_Moon_Mark_2_Lunar_Lander_(2023).jpg',
+    commonsCoverFirst: 'Blue Moon Mark 1 testing.jpg',
   },
   {
     id: 'galileo',
@@ -661,17 +714,17 @@ const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
   {
     id: 'voyager-2',
     query: 'voyager 2 neptune flyby',
-    commonsCoverFirst: 'Voyager_2_spacecraft.jpg',
+    commonsCoverFirst: 'Voyager spacecraft.jpg',
   },
   {
     id: 'new-horizons',
     query: 'new horizons pluto flyby',
-    commonsCoverFirst: 'New_Horizons_spacecraft_(crop).jpg',
+    commonsCoverFirst: 'New Horizons spacecraft model 1.png',
   },
   {
     id: 'dawn',
     query: 'dawn spacecraft ceres',
-    commonsCoverFirst: 'Dawn-spacecraft.jpg',
+    commonsCoverFirst: 'Dawn Flight Configuration 2.jpg',
   },
 ];
 
@@ -690,8 +743,14 @@ interface NasaApiResponse {
 }
 
 /** Walk NASA Images API results, picking up to `max` distinct
- *  preview links that look NASA-originated. Returns the URL list. */
-async function fetchNasaGalleryUrls(query: string, max: number): Promise<string[]> {
+ *  preview links that look NASA-originated. Returns the URL list.
+ *  When `missionId` is set, ADR-046 may allow additional partner substrings
+ *  in `secondary_creator` (see `MISSION_NASA_CREDIT_EXTRAS`). */
+async function fetchNasaGalleryUrls(
+  query: string,
+  max: number,
+  missionId?: string,
+): Promise<string[]> {
   const searchUrl = `${NASA_API_BASE}/search?q=${encodeURIComponent(query)}&media_type=image`;
   const res = await fetch(searchUrl);
   if (!res.ok) throw new Error(`Search HTTP ${res.status}`);
@@ -700,11 +759,13 @@ async function fetchNasaGalleryUrls(query: string, max: number): Promise<string[
   if (items.length === 0) throw new Error('No results');
   const urls: string[] = [];
   const seen = new Set<string>();
+  const extras = missionId ? MISSION_NASA_CREDIT_EXTRAS[missionId] : undefined;
   // Walk up to 25 items; collect distinct NASA-credited preview links.
   for (const item of items.slice(0, 25)) {
     if (urls.length >= max) break;
     const meta = item.data?.[0];
     const credit = (meta?.secondary_creator ?? '').toLowerCase();
+    const extraOk = extras?.some((sub) => credit.includes(sub)) ?? false;
     const isOk =
       !credit ||
       credit.includes('nasa') ||
@@ -712,7 +773,8 @@ async function fetchNasaGalleryUrls(query: string, max: number): Promise<string[
       credit.includes('gsfc') ||
       credit.includes('apl') ||
       credit.includes('msss') ||
-      credit.includes('asu');
+      credit.includes('asu') ||
+      extraOk;
     if (!isOk) continue;
     const previewLink =
       item.links.find((l) => l.render === 'image' || l.rel === 'preview')?.href ??
@@ -729,26 +791,32 @@ async function fetchNasaGalleryUrls(query: string, max: number): Promise<string[
 // non-NASA: CNSA, JAXA, ROSCOSMOS, ISRO, MBRSC). Curated filenames
 // verified to exist on Commons; CC-BY/-SA or PD licensed.
 const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
-  change5: "Chang'e-5 spacecraft.jpg",
+  change5: "Chang'e-5 mockup at ZHAL 01.jpg",
   change4: "Chang'e_4_lander.jpg",
   change6: "Chang'e_6_mockup_at_IAC_2024_02.jpg",
-  slim: 'SLIM spacecraft full-scale model.jpg',
-  'hope-probe': 'Hope Mars Mission spacecraft.jpg',
+  slim: 'SLIM half scale model.png',
+  'hope-probe': 'Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg',
+  'mars-express': 'Mars Express illustration highlighting MARSIS antenna.jpg',
+  mars2: 'Mars 2.jpg',
+  mars6: 'Mars 6.jpg',
+  mmx: 'MMX spacecraft 2.jpg',
+  'starship-demo': 'Starship SN15 flap and nosecone (51437260707).jpg',
   mangalyaan: 'Mars_Orbiter_Mission_in_cleanroom_(1).jpg',
   tianwen1: 'Mars Global Remote Sensing Orbiter and Small Rover at IAC Bremen 2018 02.jpg',
   chandrayaan3: 'Chandrayaan3-landed.jpg',
-  chandrayaan1: 'Chandrayaan-1 spacecraft.jpg',
+  chandrayaan1: 'Chandrayaan-1-01.jpg',
   luna9: 'Luna_9_Space_Probe_1.jpg',
-  luna24: 'Luna 24 spacecraft.jpg',
-  'blue-moon-mk1': 'Blue_Moon_Mark_2_Lunar_Lander_(2023).jpg',
-  'inspiration-mars': 'Orion spacecraft EFT-1.jpg',
+  luna24: 'Soviet Union Lunar Sample Return Missions (LROCM119449091RE L24 ano).png',
+  'blue-moon-mk1': 'Blue Moon Mark 1 testing.jpg',
+  'inspiration-mars': 'Orion spacecraft after EFT-1 at KSC (KSC-2014-4856).jpg',
   'starship-mars-crew': 'Starship_full_stack.jpg',
-  artemis2: 'Artemis II Orion spacecraft.jpg',
+  artemis2:
+    'Artemis II Orion Spacecraft in FAST Cell for Final Checkouts (KSC-20241215-PH-RNS01 0007).jpg',
   /** Outer-planet / small-body catalogue — NASA API often lacks usable credits. */
   galileo: 'Galileo_spacecraft_model.png',
-  'voyager-2': 'Voyager_2_spacecraft.jpg',
-  'new-horizons': 'New_Horizons_spacecraft_(crop).jpg',
-  dawn: 'Dawn-spacecraft.jpg',
+  'voyager-2': 'Voyager spacecraft.jpg',
+  'new-horizons': 'New Horizons spacecraft model 1.png',
+  dawn: 'Dawn Flight Configuration 2.jpg',
 };
 
 // Gallery-mode top-up for missions where NASA's library has zero or
@@ -768,6 +836,7 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     "Chang'e_4_Rover_Comes_into_View_(LROC1091_-_content_M1303570617_LRmos_warp_1100p_crop).png",
   ],
   change5: [
+    "Chang'e-5 mockup at ZHAL 01.jpg",
     "Chang'e_5_Moon_Sample.png",
     "Chang'e_5-_After_Blast_Off_(LROC1186_-_content_M1367366229LR_mos_str01_1100x1100).png",
     'Chang-e_5_lander_ascender_assembly_test.png',
@@ -783,7 +852,12 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Chandrayaan1_Spacecraft_Discovery_Moon_Water.jpg',
     'Water_Detected_at_High_Latitudes_on_the_Moon.jpg',
   ],
-  chandrayaan3: ['Chandrayaan-3,_LVM3_M4_lifting_off_from_SDSC_SHAR.jpg'],
+  chandrayaan3: [
+    'Chandrayaan-3,_LVM3_M4_lifting_off_from_SDSC_SHAR.jpg',
+    'NASA\u2019s LRO imagery of Chandrayaan-3 Landing Site.png',
+    'Chandrayaan-3 \u2013 Image of Vikram lander on lunar surface taken by Pragyan rover navcam at 1104 IST, 30 August 2023 from 15 meters away (3x2 cropped).jpg',
+    'View from the Lander Imager Camera-1 (LI-1) on 17 August 2023 just after the separation of the Chandrayaan-3 Lander Module from the Propulsion Module.jpg',
+  ],
   mangalyaan: [
     'Mars_Orbiter_Mission.jpg',
     'India_as_seen_by_Mars_Colour_Camera_(MCC)_during_the_Mars_Orbiter_Mission_(MOM)_journey_towards_Mars.png',
@@ -791,27 +865,58 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'PM_witnesses_the_insertion_of_Mars_Orbiter_Mission_into_Martian_orbit.jpg',
   ],
   slim: [
-    'SLIM_half_scale_model.png',
     'SLIM_landing_site.jpg',
     'SLIM-LandingShockAbsorber-TestUsed.jpg',
     'SLIM-LEV1-LEV2-JAXA-SagamiharaCampus-AdvancedFacilityForSpaceExploration-SpaceExplorationField.jpg',
+    'SLIM_half_scale_model.png',
   ],
   'hope-probe': [
     'Emirates_Mars_Mission_mockup_at_IAC_2021_01.jpg',
     'Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg',
+    'Emirates Mars Mission mockup at IAC 2021 01 (cropped).jpg',
+    'Emirates Mars Mission mockup at IAC 2021 02 (cropped).jpg',
   ],
-  luna9: ['First_Photo_from_the_Surface_of_the_Moon.jpg'],
+  'mars-express': [
+    'Olympus Mons - ESA Mars Express.png',
+    'Mars-express-volcanoes-sm.jpg',
+  ],
+  mmx: [
+    'MMX spacecraft front view.png',
+    'MMX spacecraft bottom view.png',
+    'MMX-CG01.png',
+    "ESA's fleet of Solar System explorers ESA19227810.png",
+  ],
+  tianwen1: [
+    'Tianwen-1 in Mars orbit.jpg',
+    'Tianwen-1 lander on Mars.jpg',
+  ],
+  luna9: [
+    'First_Photo_from_the_Surface_of_the_Moon.jpg',
+    'Luna 9 Space Probe.jpg',
+    'Luna-9 (Memorial Museum of Astronautics).JPG',
+    'Luna, 9 (53769788375).png',
+  ],
   'blue-moon-mk1': [
-    'Blue_Moon_Mark_2_Lunar_Lander_(2023).jpg',
     'BE-7_engine_hot_fire.jpg',
+    'Blue Moon Hypothetical representation.jpg',
   ],
   'inspiration-mars': [
     'Mars_Hubble.jpg',
     'Crewed_Mars_mission_concept.jpg',
+    'Mars design reference mission 3.jpg',
+    'Mars orbit rendez vous S95 01407.jpg',
+  ],
+  'starship-demo': [
+    'SpaceX Starship before IFT-5.jpg',
+    'SpaceX Starship ignition during IFT-5.jpg',
+    'SpaceX Starship hot staging IFT-5.jpg',
+    'SpaceX Starship SN8 launch as viewed from South Padre Island.jpg',
   ],
   'starship-mars-crew': [
     'Starship_full_stack.jpg',
     'Starship_orbital_refilling.jpg',
+    'SpaceX Starship before IFT-5.jpg',
+    'SpaceX Starship during IFT-5.jpg',
   ],
   artemis2: [
     'Orion_spacecraft_after_water_recovery_(NHQ202308300013).jpg',
@@ -822,18 +927,26 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
   luna17: [
     'Luna_17_lander.png',
     'Lunokhod_1_Revisited_(LROC402_-_M175502049R_L17_thumb).png',
+    'Lunokhod-1_model.jpg',
   ],
   luna24: [
-    'Luna 24 return capsule.jpg',
     'Mare_Crisium-_Failure_then_Success_(LROC461_-_luna23_24_regional).png',
     'Soviet_Union_Lunar_Sample_Return_Missions_(LROCM119449091RE_L24_ano).png',
     'Luna24_rev_fig.png',
   ],
   mars3: [
     '1972._Марс-3.jpg',
-    'Mars_3_surface_transmission.jpg',
     'PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg',
     'Possible_Mars_3_lander_from_MRO_ESP_031036_1345_MRGB.abrowse.jpg',
+  ],
+  mars2: [
+    'Soviet Union-1972-Stamp-0.06. Mars 2.jpg',
+    'Mars 2.jpg',
+    '1972._Марс-3.jpg',
+  ],
+  mars6: [
+    'Soviet Union-1972-Stamp-0.06. 15 Years of Space Age. Mars.jpg',
+    'Mars 6.jpg',
   ],
   clementine: [
     'Clementine_lunar.jpg',
@@ -848,7 +961,6 @@ const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
   'voyager-2': [
     'Neptune_Full_Disk_View_(7564918848).jpg',
     'Triton_moon_mosaic_Voyager_2_(large).jpg',
-    'Voyager_spacecraft.jpg',
   ],
   'new-horizons': [
     'Pluto-Color-NewHorizons-20150713.jpg',
@@ -927,6 +1039,8 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
     return 0;
   }
 
+  const missionAgencyMap = await loadMissionAgencyMap(MISSION_IMAGE_QUERIES.map((q) => q.id));
+
   for (let i = 0; i < queries.length; i++) {
     const m = queries[i];
     const missionDir = join(MISSIONS_DIR, m.id);
@@ -937,6 +1051,8 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
     let saved = 0;
     let hasLegacyCover = false;
     const legacyCoverPath = join(MISSIONS_DIR, `${m.id}.jpg`);
+    const agencyRaw = missionAgencyMap.get(m.id) ?? 'NASA';
+    const agencyKey = normalizeAgency(agencyRaw);
 
     // Optional: a specific Commons file always wins `01.jpg` + card
     // cover so the hero is the spacecraft / surface scene, not the
@@ -955,31 +1071,16 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
       }
     }
 
-    try {
-      urls = await fetchNasaGalleryUrls(m.query, MISSION_GALLERY_MAX);
-    } catch {
-      // NASA API returned nothing usable. Fall through to Wikimedia
-      // single-image cover fallback when we do not already have 01.
-      const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
-      if (saved === 0 && fallback) {
-        try {
-          const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
-          await downloadFromWikimedia(url, join(missionDir, '01.jpg'));
-          // Mirror as the legacy cover at static/images/missions/{id}.jpg
-          // so existing /missions card paths keep working.
-          await downloadFromWikimedia(url, legacyCoverPath);
-          saved = 1;
-          hasLegacyCover = true;
-          process.stdout.write(' wikimedia-cover');
-        } catch (err2) {
-          const msg = err2 instanceof Error ? err2.message : String(err2);
-          process.stdout.write(` ⚠ cover skipped (${msg})`);
-        }
-      }
-    }
+    const { urls: primaryUrls, sourceTag } = await fetchAgencyPrimaryImageUrls({
+      agencyKey,
+      missionId: m.id,
+      query: m.query,
+      max: MISSION_GALLERY_MAX,
+      fetchNasaGalleryUrls,
+    });
+    if (sourceTag !== 'none') process.stdout.write(` primary:${sourceTag}`);
 
-    // Download NASA URLs into the next free slots (never overwrite 01
-    // when commons-cover already populated it).
+    urls = primaryUrls;
     for (let n = 0; n < urls.length && saved < MISSION_GALLERY_MAX; n++) {
       const filename = `${String(saved + 1).padStart(2, '0')}.jpg`;
       try {
@@ -997,9 +1098,61 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
       }
     }
 
-    // NASA returned hits but every download failed — same net effect as
-    // no imagery; try the single-file Wikimedia cover if configured.
-    if (saved === 0 && WIKIMEDIA_MISSION_FALLBACK[m.id]) {
+    const fb = WIKIMEDIA_MISSION_FALLBACK[m.id];
+    if (saved === 0 && fb) {
+      try {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fb)}?width=800`;
+        await downloadFromWikimedia(url, join(missionDir, '01.jpg'));
+        await downloadFromWikimedia(url, legacyCoverPath);
+        saved = 1;
+        hasLegacyCover = true;
+        process.stdout.write(' wikimedia-cover');
+      } catch (err2) {
+        const msg = err2 instanceof Error ? err2.message : String(err2);
+        process.stdout.write(` ⚠ cover skipped (${msg})`);
+      }
+    }
+    if (saved < MISSION_GALLERY_MAX && WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]) {
+      const after = await topUpWikimediaGallery(
+        m.id,
+        missionDir,
+        saved + 1,
+        legacyCoverPath,
+        hasLegacyCover,
+      );
+      if (after > saved) {
+        process.stdout.write(` +${after - saved} wikimedia-gallery`);
+        saved = after;
+        if (saved >= 1) hasLegacyCover = true;
+      }
+    }
+
+    if (agencyKey !== 'NASA' && saved < MISSION_GALLERY_MAX) {
+      try {
+        urls = await fetchNasaGalleryUrls(m.query, MISSION_GALLERY_MAX, m.id);
+      } catch {
+        urls = [];
+      }
+      if (urls.length > 0) process.stdout.write(' nasa-fallback');
+      for (let n = 0; n < urls.length && saved < MISSION_GALLERY_MAX; n++) {
+        const filename = `${String(saved + 1).padStart(2, '0')}.jpg`;
+        try {
+          const imgRes = await fetch(urls[n]);
+          if (!imgRes.ok) continue;
+          const buffer = Buffer.from(await imgRes.arrayBuffer());
+          await writeFile(join(missionDir, filename), buffer);
+          if (!hasLegacyCover && filename === '01.jpg') {
+            await writeFile(legacyCoverPath, buffer);
+            hasLegacyCover = true;
+          }
+          saved++;
+        } catch {
+          // Single-image fail; continue with the rest.
+        }
+      }
+    }
+
+    if (agencyKey === 'NASA' && saved === 0 && WIKIMEDIA_MISSION_FALLBACK[m.id]) {
       const fallback = WIKIMEDIA_MISSION_FALLBACK[m.id];
       try {
         const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(fallback)}?width=800`;
@@ -1014,10 +1167,7 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
       }
     }
 
-    // Top up from the curated Wikimedia gallery list when NASA + cover
-    // fallback together fell short of MISSION_GALLERY_MAX. This is the
-    // path that lifts non-US missions from 1 → 4–5 images.
-    if (saved < MISSION_GALLERY_MAX && WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]) {
+    if (agencyKey === 'NASA' && saved < MISSION_GALLERY_MAX && WIKIMEDIA_MISSION_GALLERY_FALLBACK[m.id]) {
       const after = await topUpWikimediaGallery(
         m.id,
         missionDir,
@@ -1026,7 +1176,7 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
         hasLegacyCover,
       );
       if (after > saved) {
-        process.stdout.write(` +${after - saved} wikimedia-gallery`);
+        process.stdout.write(` +${after - saved} wikimedia-gallery-nasa`);
         saved = after;
       }
     }
@@ -1092,31 +1242,31 @@ const ISS_IMAGE_QUERIES: IssImageQuery[] = [
 
 /** Single-image Wikimedia cover when NASA search returns nothing usable. */
 const WIKIMEDIA_ISS_FALLBACK: Record<string, string> = {
-  beam: 'BEAM_module_on_ISS.jpg',
-  canadarm2: 'Canadarm2.jpg',
-  columbus: 'Columbus module STS-122.jpg',
+  beam: 'Illustration of BEAM berthed to the International Space Station.jpg',
+  canadarm2: 'Canadarm2 and JEMRMS.jpg',
+  columbus: 'Shiny Columbus during spacewalk ESA21793666.jpeg',
   cupola: 'Cupola_ISS.jpg',
-  destiny: 'Destiny_module_ISS.jpg',
+  destiny: 'ISS-65 NASA astronauts work in the U.S. Destiny laboratory module.jpg',
   harmony: 'Harmony arrives at ISS.jpg',
-  kibo: 'Kibō_Japanese_Experiment_Module.jpg',
+  kibo: 'Japanese Experiment Module exterior - cropped.jpg',
   leonardo: 'Leonardo PMM module.jpg',
   nauka: 'Anton Shkaplerov works outside Nauka during spacewalk (ISS066-E-119955).jpg',
-  pirs: 'Pirs_Iss.jpg',
+  pirs: 'ISS S01 Pirs airlock.jpg',
   prichal: 'The Prichal docking module above Africa.jpg',
-  quest: 'Quest_joint_airlock_ISS.jpg',
+  quest: 'ISS Quest airlock.jpg',
   rassvet: 'MRM-1 Rassvet during installation.jpg',
   tranquility: 'Tranquility from departing STS-130.jpg',
-  unity: 'Unity_(ISS_module)_in_Orbit.jpg',
-  zarya: 'Zarya_ISS_module.jpg',
-  zvezda: 'Zvezda_ISS.jpg',
+  unity: 'Unity-Zarya-Zvezda STS-106 (3).jpg',
+  zarya: 'Zarya FGB control module .Russian-built.jpg',
+  zvezda: 'Zvezda Service Module under construction.jpg',
 };
 
 /** Extra Commons filenames tried first when topping up toward ISS_GALLERY_MAX. */
 const WIKIMEDIA_ISS_MODULE_GALLERY: Record<string, string[]> = {
-  canadarm2: ['International_Space_Station_after_being_relocated_by_the_Canadarm.jpg'],
+  canadarm2: ['Canadarm2-lee.jpg'],
   cupola: [
-    'EarthObservationCupolaISS052011.jpg',
-    'Cupola_at_night.jpg',
+    'Inside the Cupola at night 2013-03-15.jpg',
+    'Tracy Caldwell Dyson in Cupola ISS.jpg',
     'STS-130 ISS approach closeup of Tranquility and Cupola.jpg',
   ],
   leonardo: [
@@ -1383,7 +1533,7 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   {
     id: 'hubble',
     query: 'hubble space telescope servicing',
-    commonsHeroFirst: 'Hubble-Space-Telescope-against-Earth-(28512454911).jpg',
+    commonsHeroFirst: 'HST-SM4.jpeg',
   },
   {
     id: 'gps',
@@ -1395,8 +1545,8 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   {
     id: 'galileo',
     query: 'galileo navigation satellite',
-    wikimediaFallback: 'Galileo-IOV-PFM.jpg',
-    commonsHeroFirst: 'Galileo-IOV-PFM.jpg',
+    wikimediaFallback: 'GalileoSatModel.jpg',
+    commonsHeroFirst: 'GalileoSatModel.jpg',
     wikimediaGallery: ['Galileo satellite model.jpg'],
   },
   {
@@ -1437,19 +1587,19 @@ const EARTH_OBJECT_QUERIES: GalleryQuery[] = [
   {
     id: 'chandra',
     query: 'chandra x-ray observatory',
-    commonsHeroFirst: 'Chandra X-ray Observatory spacecraft.jpg',
+    commonsHeroFirst: 'NASA-SNR0519690-ChandraXRayObservatory-20150122.jpg',
   },
   {
     id: 'xmm',
     query: 'xmm newton x-ray',
-    wikimediaFallback: 'XMM-Newton-spacecraft.jpg',
-    commonsHeroFirst: 'XMM-Newton-spacecraft.jpg',
+    wikimediaFallback: 'XMM-Newton.jpg',
+    commonsHeroFirst: 'XMM-Newton.jpg',
   },
   { id: 'lro', query: 'lunar reconnaissance orbiter', copyFromMission: 'lro' },
   {
     id: 'jwst',
     query: 'james webb space telescope',
-    commonsHeroFirst: 'James Webb Space Telescope after deployment (high resolution).jpg',
+    commonsHeroFirst: 'The James Webb Space Telescope, Partially Stowed.jpg',
   },
   {
     id: 'gaia',
@@ -1483,8 +1633,8 @@ const MOON_SITE_QUERIES: GalleryQuery[] = [
     commonsHeroFirst: 'Yutu_rover.jpg',
     wikimediaFallback: 'Yutu_rover.jpg',
     wikimediaGallery: [
+      "Chang'e 3 - rocks near Ziwei crater.jpg",
       "Chang'e 3 Lander and Rover From Above (LROC637).gif",
-      "Chang'e 3 lander on the Moon.jpg",
     ],
   },
   { id: 'change4', query: 'change 4 farside', copyFromMission: 'change4' },
@@ -1500,14 +1650,17 @@ const SMALL_BODY_QUERIES: GalleryQuery[] = [
   {
     id: 'ceres',
     query: 'dawn spacecraft ceres dwarf planet occator',
-    commonsHeroFirst: 'PIA22624-Ceres-DwarfPlanet-Dawn-LastImage-20181101.jpg',
-    wikimediaGallery: ['Ceres_RC2_HAMO_global_mosaic_(PIA20182).jpg'],
+    commonsHeroFirst: 'PIA19606-Ceres-Dawn-GlobalMap-Annotated-20150728.jpg',
+    wikimediaGallery: ['Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg'],
   },
   {
     id: 'pluto',
     query: 'new horizons pluto flyby charon',
     commonsHeroFirst: 'Pluto-01_Stern_03_Pluto_Color_TXT.jpg',
-    wikimediaGallery: ['Pluto-Charon-Barycenter.jpg', 'Pluto_in_True_Color_-_High-Res.jpg'],
+    wikimediaGallery: [
+      'NH-LORRI-Pluto-Charon-2015-01-25.jpg',
+      'Pluto_in_True_Color_-_High-Res.jpg',
+    ],
   },
   {
     id: 'haumea',
@@ -1533,16 +1686,16 @@ const SMALL_BODY_QUERIES: GalleryQuery[] = [
   {
     id: 'halley',
     query: 'halley comet space telescope',
-    commonsHeroFirst: 'Nucleus_of_Halleys_Comet.jpg',
-    wikimediaFallback: 'Nucleus_of_Halleys_Comet.jpg',
-    wikimediaGallery: ['Halleys_Comet,_1910.jpg', 'Comet_Halley.jpg'],
+    commonsHeroFirst: 'Comet Halley (PIA17485).jpg',
+    wikimediaFallback: 'Comet Halley (PIA17485).jpg',
+    wikimediaGallery: ['Comet_Halley.jpg'],
   },
   {
     id: '67p',
     query: 'rosetta spacecraft comet 67p',
-    commonsHeroFirst: 'Comet_67P_Churyumov-Gerasimenko_-_Rosetta_(31674131631).jpg',
-    wikimediaFallback: 'Comet_67P_Churyumov-Gerasimenko_-_Rosetta_(31674131631).jpg',
-    wikimediaGallery: ['67P-Churyumov-Gerasimenko-in-2016.jpg', 'Philae_touchdown.jpg'],
+    commonsHeroFirst: 'Comet 67P on 19 September 2014 NavCam mosaic.jpg',
+    wikimediaFallback: 'Comet 67P on 19 September 2014 NavCam mosaic.jpg',
+    wikimediaGallery: ['Philae_touchdown.jpg'],
   },
   {
     id: 'oumuamua',

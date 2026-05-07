@@ -66,6 +66,10 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
   return tex;
 }
 
+// Spacecraft are sized to match real Tiangong proportions:
+// Tianhe = 2.6 units = 16.6 m, so 1 unit ≈ 6.4 m.
+//   Shenzhou (9.25 m) → ~1.45 units total length
+//   Tianzhou (10.6 m) → ~1.66 units total length
 function buildShenzhou(): THREE.Group {
   const g = new THREE.Group();
   g.name = 'visiting_shenzhou';
@@ -74,29 +78,28 @@ function buildShenzhou(): THREE.Group {
     metalness: 0.2,
     roughness: 0.7,
   });
-  // Orbital module (forward) — short cylinder
-  const orbital = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.12, 12), hull);
-  orbital.position.y = 0.32;
+  // Orbital module (forward) — small dome-cylinder where the docking
+  // probe sits. Real ~2.5 m × 2.3 m.
+  const orbital = new THREE.Mesh(new THREE.CylinderGeometry(0.21, 0.21, 0.36, 14), hull);
+  orbital.position.y = 1.05;
   setShadowFlags(orbital);
   g.add(orbital);
-  // Descent capsule (mid) — truncated cone
-  const descent = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.085, 0.1, 12), hull);
-  descent.position.y = 0.18;
+  // Descent capsule (mid) — truncated cone (~2 m long).
+  const descent = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.27, 0.32, 14), hull);
+  descent.position.y = 0.7;
   setShadowFlags(descent);
   g.add(descent);
-  // Service module (aft) — long cylinder
-  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.16, 12), hull);
-  service.position.y = 0.04;
+  // Service module (aft) — long cylindrical service section (~2.8 m).
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.235, 0.235, 0.5, 14), hull);
+  service.position.y = 0.28;
   setShadowFlags(service);
   g.add(service);
-  // Two wing pairs flanking the service module (Shenzhou has port +
-  // starboard arrays). Shenzhou uses traditional crystalline-silicon
-  // cells which appear deep blue — distinct from the station's
-  // gallium-arsenide gold.
-  const wingPairUpper = new THREE.Group();
-  wingPairUpper.position.set(0, 0.04, 0);
-  makeWingPair(wingPairUpper, 0.45, 0.18, SOLAR_BLUE);
-  g.add(wingPairUpper);
+  // Solar wings on the service module (Shenzhou has port + starboard
+  // arrays). Crystalline-silicon cells → deep blue.
+  const wingPair = new THREE.Group();
+  wingPair.position.set(0, 0.28, 0);
+  makeWingPair(wingPair, 1.4, 0.5, SOLAR_BLUE);
+  g.add(wingPair);
   return g;
 }
 
@@ -108,22 +111,21 @@ function buildTianzhou(): THREE.Group {
     metalness: 0.2,
     roughness: 0.7,
   });
-  // Pressurised cargo section (forward) — large cylinder
-  const cargo = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.085, 0.2, 14), hull);
-  cargo.position.y = 0.24;
+  // Pressurised cargo section (forward) — large 3.35 m diameter
+  // cylinder, ~6 m long.
+  const cargo = new THREE.Mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.95, 16), hull);
+  cargo.position.y = 1.0;
   setShadowFlags(cargo);
   g.add(cargo);
-  // Service module (aft) — slightly smaller cylinder
-  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.075, 0.16, 12), hull);
-  service.position.y = 0.06;
+  // Service module (aft) — slightly smaller cylinder (~4.6 m long).
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.225, 0.235, 0.7, 14), hull);
+  service.position.y = 0.18;
   setShadowFlags(service);
   g.add(service);
-  // One wing pair on service module — Tianzhou uses crystalline-silicon
-  // cells (deep blue), same as Shenzhou and unlike the station's
-  // gallium-arsenide gold arrays.
+  // Two wings on service module — crystalline-silicon (blue).
   const wingPair = new THREE.Group();
-  wingPair.position.set(0, 0.06, 0);
-  makeWingPair(wingPair, 0.5, 0.2, SOLAR_BLUE);
+  wingPair.position.set(0, 0.2, 0);
+  makeWingPair(wingPair, 1.6, 0.6, SOLAR_BLUE);
   g.add(wingPair);
   return g;
 }
@@ -148,19 +150,57 @@ export function buildTiangongProxyStation(): THREE.Group {
     roughness: 0.5,
   });
 
-  // ── Tianhe core (along X-axis, forward node at +X = +1.0) ────────────
+  // ── Tianhe core (along X-axis, forward node at +X end) ──────────────
+  //
+  // Real Tianhe is a TWO-SECTION module: a larger-diameter forward
+  // "main bay" (4.2 m) where the crew works, and a narrower aft
+  // "resource section" (2.8 m) carrying RCS thrusters and propellant.
+  // Hemispherical end cap on the aft. ─────────────────────────────────
   const tianheLen = 2.6;
-  const tianheRadius = 0.22;
-  const tianhe = new THREE.Mesh(
-    new THREE.CylinderGeometry(tianheRadius, tianheRadius, tianheLen, 16),
+  const tianheRadius = 0.22; // forward main-bay radius
+  const tianheAftRadius = 0.155; // smaller resource-section radius
+  const tianheForwardLen = 1.55; // forward bay (~10 m of 16.6 m)
+  const tianheAftLen = tianheLen - tianheForwardLen; // ~6 m
+
+  // Forward main bay (larger cylinder, occupies +X half plus some).
+  const tianheForward = new THREE.Mesh(
+    new THREE.CylinderGeometry(tianheRadius, tianheRadius, tianheForwardLen, 16),
     hullMat,
   );
-  tianhe.rotation.z = Math.PI / 2; // align long axis to X
-  tianhe.position.set(0, 0, 0);
-  tianhe.userData.stationPickable = true;
-  tianhe.userData.moduleId = 'tianhe';
-  setShadowFlags(tianhe);
-  root.add(tianhe);
+  tianheForward.rotation.z = Math.PI / 2;
+  tianheForward.position.set(tianheLen / 2 - tianheForwardLen / 2, 0, 0);
+  tianheForward.userData.stationPickable = true;
+  tianheForward.userData.moduleId = 'tianhe';
+  setShadowFlags(tianheForward);
+  root.add(tianheForward);
+
+  // Aft resource section (narrower cylinder).
+  const tianheAft = new THREE.Mesh(
+    new THREE.CylinderGeometry(tianheAftRadius, tianheAftRadius, tianheAftLen, 14),
+    hullMat,
+  );
+  tianheAft.rotation.z = Math.PI / 2;
+  tianheAft.position.set(-tianheLen / 2 + tianheAftLen / 2, 0, 0);
+  tianheAft.userData.stationPickable = true;
+  tianheAft.userData.moduleId = 'tianhe';
+  setShadowFlags(tianheAft);
+  root.add(tianheAft);
+
+  // MLI transition band where the two sections join.
+  const tianheTransition = new THREE.Mesh(
+    new THREE.CylinderGeometry(tianheRadius * 1.05, tianheAftRadius * 1.05, 0.06, 14),
+    mliMat,
+  );
+  tianheTransition.rotation.z = Math.PI / 2;
+  tianheTransition.position.set(-tianheLen / 2 + tianheAftLen, 0, 0);
+  tianheTransition.userData.stationPickable = true;
+  tianheTransition.userData.moduleId = 'tianhe';
+  setShadowFlags(tianheTransition);
+  root.add(tianheTransition);
+
+  // (No hemisphere cap on the aft — the existing aftMli band + Shenzhou
+  // docking adapter handle that interface. Real Tianhe's aft end has a
+  // flat docking ring, not a curved cap.)
 
   // Forward node module — the spherical multi-port hub where Tianhe,
   // Wentian, Mengtian, and visiting vehicles all converge. Real
@@ -262,20 +302,52 @@ export function buildTiangongProxyStation(): THREE.Group {
   }
 
   // ── Wentian lab (along +Y from forward node) ────────────────────────
+  //
+  // Real Wentian is a TWO-SECTION module: a larger inboard "work
+  // section" (4.2 m diameter, ~12 m long) where the crew works, and a
+  // narrower outboard "resource/airlock section" (~3 m × 6 m) carrying
+  // the SADA mast assembly + airlock. ─────────────────────────────────
   const labLen = 2.4;
-  const labRadius = 0.24;
+  const labRadius = 0.24; // inboard work-section radius
+  const labOuterRadius = 0.18; // outboard resource-section radius
+  const labInboardLen = 1.5; // ~12 m work section
+  const labOutboardLen = labLen - labInboardLen; // ~6 m outboard
   const wentianBaseY = 0.45;
-  const wentianCenterY = wentianBaseY + labLen / 2;
+  const inboardCenterY = wentianBaseY + labInboardLen / 2;
+  const outboardCenterY = wentianBaseY + labInboardLen + labOutboardLen / 2;
 
-  const wentian = new THREE.Mesh(
-    new THREE.CylinderGeometry(labRadius, labRadius, labLen, 16),
+  // Wentian inboard work section (larger cylinder).
+  const wentianInboard = new THREE.Mesh(
+    new THREE.CylinderGeometry(labRadius, labRadius, labInboardLen, 16),
     hullMat,
   );
-  wentian.position.set(tianheLen / 2 + 0.14, wentianCenterY, 0);
-  wentian.userData.stationPickable = true;
-  wentian.userData.moduleId = 'wentian';
-  setShadowFlags(wentian);
-  root.add(wentian);
+  wentianInboard.position.set(tianheLen / 2 + 0.14, inboardCenterY, 0);
+  wentianInboard.userData.stationPickable = true;
+  wentianInboard.userData.moduleId = 'wentian';
+  setShadowFlags(wentianInboard);
+  root.add(wentianInboard);
+
+  // Wentian outboard resource section (narrower cylinder).
+  const wentianOutboard = new THREE.Mesh(
+    new THREE.CylinderGeometry(labOuterRadius, labOuterRadius, labOutboardLen, 14),
+    hullMat,
+  );
+  wentianOutboard.position.set(tianheLen / 2 + 0.14, outboardCenterY, 0);
+  wentianOutboard.userData.stationPickable = true;
+  wentianOutboard.userData.moduleId = 'wentian';
+  setShadowFlags(wentianOutboard);
+  root.add(wentianOutboard);
+
+  // MLI transition band where the two sections join.
+  const wentianTransition = new THREE.Mesh(
+    new THREE.CylinderGeometry(labRadius * 1.05, labOuterRadius * 1.05, 0.06, 14),
+    mliMat,
+  );
+  wentianTransition.position.set(tianheLen / 2 + 0.14, wentianBaseY + labInboardLen, 0);
+  wentianTransition.userData.stationPickable = true;
+  wentianTransition.userData.moduleId = 'wentian';
+  setShadowFlags(wentianTransition);
+  root.add(wentianTransition);
 
   // Wentian outboard solar mast — TWO parallel pairs (4 wings total) at
   // the +Y far end. Real Tiangong: each lab carries two SADA-mounted
@@ -313,16 +385,36 @@ export function buildTiangongProxyStation(): THREE.Group {
   }
 
   // ── Mengtian lab (along -Y from forward node) ───────────────────────
-  const mengtianCenterY = -(wentianBaseY + labLen / 2);
-  const mengtian = new THREE.Mesh(
-    new THREE.CylinderGeometry(labRadius, labRadius, labLen, 16),
+  // Same two-section structure as Wentian, mirrored to -Y.
+  const mengtianInboard = new THREE.Mesh(
+    new THREE.CylinderGeometry(labRadius, labRadius, labInboardLen, 16),
     hullMat,
   );
-  mengtian.position.set(tianheLen / 2 + 0.14, mengtianCenterY, 0);
-  mengtian.userData.stationPickable = true;
-  mengtian.userData.moduleId = 'mengtian';
-  setShadowFlags(mengtian);
-  root.add(mengtian);
+  mengtianInboard.position.set(tianheLen / 2 + 0.14, -inboardCenterY, 0);
+  mengtianInboard.userData.stationPickable = true;
+  mengtianInboard.userData.moduleId = 'mengtian';
+  setShadowFlags(mengtianInboard);
+  root.add(mengtianInboard);
+
+  const mengtianOutboard = new THREE.Mesh(
+    new THREE.CylinderGeometry(labOuterRadius, labOuterRadius, labOutboardLen, 14),
+    hullMat,
+  );
+  mengtianOutboard.position.set(tianheLen / 2 + 0.14, -outboardCenterY, 0);
+  mengtianOutboard.userData.stationPickable = true;
+  mengtianOutboard.userData.moduleId = 'mengtian';
+  setShadowFlags(mengtianOutboard);
+  root.add(mengtianOutboard);
+
+  const mengtianTransition = new THREE.Mesh(
+    new THREE.CylinderGeometry(labRadius * 1.05, labOuterRadius * 1.05, 0.06, 14),
+    mliMat,
+  );
+  mengtianTransition.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labInboardLen), 0);
+  mengtianTransition.userData.stationPickable = true;
+  mengtianTransition.userData.moduleId = 'mengtian';
+  setShadowFlags(mengtianTransition);
+  root.add(mengtianTransition);
 
   // Mengtian outboard solar mast — TWO parallel pairs (4 wings total),
   // mirrored to -Y. Same dimensions and orientation as Wentian.

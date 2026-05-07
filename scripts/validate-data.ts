@@ -523,8 +523,11 @@ if (existsSync(SOURCE_LOGOS_PATH)) {
 //      params (utm_*, fbclid, etc.) and no AMP suffix.
 //   3. No duplicate (entity_id, url) pairs.
 //   4. Every entry.language is BCP-47 (or '*' for multi-lingual).
-// L-E will add: every intro/core entry must have last_verified ≥ N days
-// fresh AND must show 2xx in the most recent link-check report.
+// L-E adds (below): a soft freshness audit — every intro/core entry
+// should have last_verified within FRESHNESS_DAYS, and the link-check
+// report should exist. Reported as a warning, not a hard fail, so a
+// stale CI doesn't break PR builds; the npm fetch chain re-runs the
+// checker which refreshes the field.
 // ──────────────────────────────────────────────────────────────────────
 
 let linkProvenanceFailed = 0;
@@ -591,6 +594,39 @@ if (existsSync(LINK_PROVENANCE_PATH)) {
   } else {
     console.error(
       `  ${linkProvenanceFailed} link-provenance integrity failure(s) (${duplicates} dupes, ${unknownSources} unknown source, ${trackerSurvivors} tracker survivors, ${badLanguages} bad language)`,
+    );
+  }
+
+  // ────────────────────────────────────────────────────────────────────
+  // L-E freshness audit (soft) — every intro/core entry should have
+  // last_verified within the policy window. Logged as a warning so a
+  // stale `last-link-check.md` doesn't block PR builds; the CI nightly
+  // job (`npm run fetch`) regenerates the field. The hard rule lives
+  // outside ajv because it's a temporal property, not a schema one.
+  // ────────────────────────────────────────────────────────────────────
+  const FRESHNESS_DAYS = 180;
+  const FRESHNESS_REPORT = join('docs/provenance', 'last-link-check.md');
+  type LinkRowFresh = LinkRow & {
+    tier: 'intro' | 'core' | 'deep';
+    last_verified: string;
+  };
+  const fullManifest = manifest as { entries: LinkRowFresh[] };
+  const cutoff = new Date(Date.now() - FRESHNESS_DAYS * 24 * 60 * 60 * 1000);
+  const stale = fullManifest.entries.filter((e) => {
+    if (e.tier === 'deep') return false;
+    const t = new Date(e.last_verified);
+    return Number.isFinite(t.getTime()) && t < cutoff;
+  });
+  if (stale.length > 0) {
+    console.warn(
+      `  ⚠ ${stale.length} intro/core entry/-ies with last_verified older than ${FRESHNESS_DAYS} days — run \`npm run check-learn-links -- --update\` (warning only).`,
+    );
+  } else {
+    console.log(`  ✓ all intro/core entries verified within ${FRESHNESS_DAYS} days`);
+  }
+  if (!existsSync(FRESHNESS_REPORT)) {
+    console.warn(
+      `  ⚠ ${FRESHNESS_REPORT} missing — link checker has never run. Run \`npm run check-learn-links\` (warning only).`,
     );
   }
 }

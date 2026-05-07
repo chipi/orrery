@@ -89,3 +89,33 @@ test.describe('/science', () => {
     await expect(page.locator('.katex-display')).toHaveCount(0);
   });
 });
+
+/**
+ * Phase 2 — cross-screen `?` chips (ADR-036). The chips embed in HUDs and
+ * panels across /missions, /fly, /explore, /plan and link to the matching
+ * /science/[tab]/[section].
+ */
+test.describe('/science Phase 2 chips', () => {
+  test('/plan educational primer surfaces porkchop chips that navigate to /science', async ({
+    page,
+  }) => {
+    await page.goto('/plan');
+    const chips = page.locator('a[data-science-chip]');
+    expect(await chips.count()).toBeGreaterThanOrEqual(4);
+    const departureChip = page
+      .locator('a[data-science-chip][href*="porkchop/departure-axis"]')
+      .first();
+    await expect(departureChip).toBeVisible();
+    await departureChip.click();
+    await expect(page).toHaveURL(/\/science\/porkchop\/departure-axis\/?$/);
+    await expect(page.locator('h1', { hasText: 'Departure-Window Axis' })).toBeVisible();
+  });
+
+  test('ScienceChip exposes a tooltip via title and a clickable href', async ({ page }) => {
+    await page.goto('/plan');
+    const firstChip = page.locator('a[data-science-chip]').first();
+    await expect(firstChip).toHaveAttribute('title', /.+/);
+    await expect(firstChip).toHaveAttribute('href', /\/science\/[^/]+\/[^/]+/);
+    await expect(firstChip).toHaveAttribute('aria-label', /Learn more/);
+  });
+});

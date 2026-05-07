@@ -137,6 +137,37 @@
     ]
   },
   {
+    "id": "starliner",
+    "builder": "Boeing Defense, Space & Security",
+    "builder_country": "United States",
+    "agency": "NASA Commercial Crew Program",
+    "launch_vehicle": "Atlas V N22 (and future Vulcan Centaur)",
+    "launch_date": "2024-06-05",
+    "flight_designation": "CST-100 Starliner (Crew Flight Test onwards)",
+    "mass_kg": 13000,
+    "length_m": 5.03,
+    "year_first_of": "First Boeing crewed spacecraft to dock at ISS (2024)",
+    "status": "ACTIVE",
+    "credit": "Boeing / NASA / ULA — Starliner program references",
+    "links": [
+      {
+        "l": "Wikipedia · Boeing Starliner",
+        "u": "https://en.wikipedia.org/wiki/Boeing_Starliner",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Boeing Starliner",
+        "u": "https://www.nasa.gov/mission/boeing-cft/",
+        "t": "core"
+      },
+      {
+        "l": "Boeing · CST-100 Starliner",
+        "u": "https://www.boeing.com/space/starliner/",
+        "t": "deep"
+      }
+    ]
+  },
+  {
     "id": "htv_x",
     "builder": "Mitsubishi Heavy Industries",
     "builder_country": "Japan",

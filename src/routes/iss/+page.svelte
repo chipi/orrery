@@ -495,7 +495,6 @@
       });
       cloudsTex.dispose();
       outlinePass.dispose();
-      composer.dispose();
       renderer.dispose();
       renderer.domElement.remove();
       issVisualRef.hoveredId = null;

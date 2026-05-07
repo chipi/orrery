@@ -235,19 +235,13 @@ export function buildIssProxyStation(): THREE.Group {
       const elbowP = new THREE.Vector3(x, y + 0.4, z);
       const tipP = new THREE.Vector3(x + w / 2, y, z);
 
-      const baseMount = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10),
-        armMat,
-      );
+      const baseMount = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10), armMat);
       baseMount.position.set(baseP.x, baseP.y - 0.04, baseP.z);
       const boomA = cylinderBetween(baseP, elbowP, 0.04, armMat);
       const elbow = new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 8), armMat);
       elbow.position.copy(elbowP);
       const boomB = cylinderBetween(elbowP, tipP, 0.04, armMat);
-      const tipEffector = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10),
-        armMat,
-      );
+      const tipEffector = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10), armMat);
       tipEffector.position.set(tipP.x, tipP.y - 0.04, tipP.z);
 
       for (const part of [baseMount, boomA, elbow, boomB, tipEffector]) {
@@ -337,10 +331,7 @@ export function buildIssProxyStation(): THREE.Group {
   const kiboBox = MODULE_BOXES.find((b) => b[0] === 'kibo');
   if (kiboBox) {
     const [, kx, ky, kz, kw] = kiboBox;
-    const expFacility = new THREE.Mesh(
-      new THREE.BoxGeometry(0.22, 0.04, 0.42),
-      accessoryMat,
-    );
+    const expFacility = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.04, 0.42), accessoryMat);
     expFacility.position.set(kx + kw / 2 - 0.05, ky, kz - 0.34);
     expFacility.userData.moduleId = 'kibo';
     expFacility.userData.issPickable = true;
@@ -432,10 +423,7 @@ export function buildIssProxyStation(): THREE.Group {
     if (!hostBox) continue;
     const [, hx, , hz] = hostBox;
     const len = topY - bottomY;
-    const adapter = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.05, 0.05, len, 10, 1),
-      adapterMat,
-    );
+    const adapter = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, len, 10, 1), adapterMat);
     adapter.position.set(hx, (topY + bottomY) / 2, hz);
     adapter.userData.moduleId = host;
     adapter.userData.issPickable = true;
@@ -654,8 +642,18 @@ function buildVisitingFleet(root: THREE.Group) {
   const fleet: DockedShip[] = [
     { id: 'soyuz_ms', build: buildSoyuz, port: [-3.35, -0.21, -0.12], out: 'minusY' },
     { id: 'progress_ms', build: buildProgress, port: [-3.45, 0.65, 0.15], out: 'plusY' },
-    { id: 'crew_dragon', build: buildDragon.bind(null, true), port: [-1.45, 0.65, 0], out: 'plusY' },
-    { id: 'cargo_dragon', build: buildDragon.bind(null, false), port: [0.55, 0.65, 0.05], out: 'plusY' },
+    {
+      id: 'crew_dragon',
+      build: buildDragon.bind(null, true),
+      port: [-1.45, 0.65, 0],
+      out: 'plusY',
+    },
+    {
+      id: 'cargo_dragon',
+      build: buildDragon.bind(null, false),
+      port: [0.55, 0.65, 0.05],
+      out: 'plusY',
+    },
     { id: 'cygnus', build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
     { id: 'htv_x', build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
   ];

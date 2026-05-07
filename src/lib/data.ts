@@ -352,9 +352,9 @@ export async function getIssVisitors(locale = 'en-US'): Promise<IssModule[]> {
         overlay ??
         (locale === 'en-US'
           ? null
-          : await get<IssModuleOverlay>(
-              `i18n/en-US/iss-visitors/${baseRecord.id}.json`,
-            ).catch(() => null));
+          : await get<IssModuleOverlay>(`i18n/en-US/iss-visitors/${baseRecord.id}.json`).catch(
+              () => null,
+            ));
       if (!fallback) {
         throw new Error(
           `Missing ISS visitor overlay for ${baseRecord.id} (locale ${locale}, no en-US fallback)`,

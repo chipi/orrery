@@ -1,0 +1,15 @@
+{
+  "title": "Große Halbachse",
+  "intro_sentence": "Die Hälfte des längsten Durchmessers der Bahnellipse — die einzige Zahl, die die Umlaufzeit festlegt.",
+  "narrative_101": [
+    "Schnur, zwei Reißnägel, Bleistift. Reißnägel ins Brett, Schnur drumherum, Bleistift gespannt — du zeichnest eine Ellipse. Die große Halbachse ist die Hälfte der längsten Linie quer durch die Form — die Größe der Bahn.",
+    "Das Magische: diese eine Zahl sagt dir, wie lange der Planet für eine Sonnenrunde braucht. Nicht die Form, nicht die Neigung, nicht wo er gerade ist. Nur die Größe. Eine Zigarrenform und ein Kreis mit derselben Halbachse brauchen gleich lang. Kepler vor 400 Jahren — gilt heute."
+  ],
+  "body_paragraphs": [
+    "Drücke eine Keplersche Ellipse in ihre längste Dimension, hast du die Hauptachse. Halbiere sie und du hast die große Halbachse — `a`. Sie ist der mittlere Abstand vom orbitierenden Körper zum Brennpunkt — arithmetisches Mittel aus Perihel und Aphel.",
+    "Warum wichtig? Wegen Keplers drittem Gesetz: `T² ∝ a³`. Die Umlaufzeit hängt nur von der Halbachse ab. Streckung egal. Inklination egal. Streck eine Bahn und runde eine andere — gleiche `a`, gleiche Periode.",
+    "In `/explore`-Panels siehst du diese Zahl in AE. Erde: a ≈ 1,0 AE. Mars: 1,52 AE. Jupiter: 5,2 AE. Setze in die Periodenformel ein und du hast die Orrery-Uhr reproduziert."
+  ],
+  "formula_caption": "Große Halbachse als Mittel von Perihel- und Aphelradius.",
+  "diagram_caption": "Hauptachse von Perihel zu Aphel durch beide Brennpunkte. Die große Halbachse a ist die halbe Spanne."
+}

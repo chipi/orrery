@@ -1,0 +1,16 @@
+{
+  "title": "Keplers drei Gesetze",
+  "intro_sentence": "Drei Beobachtungsregeln, die Planetenbewegung ein Jahrhundert vor Newton zu einer geschlossenen Wissenschaft machten.",
+  "narrative_101": [
+    "Kepler hatte keinen Calculus, keine Newton-Gravitation, keinen Computer. Er hatte zwanzig Jahre Tycho Brahes mühsamer Marsbeobachtungen — und Geduld. Daraus drei Regeln, die nach 400 Jahren immer noch exakt richtig sind.",
+    "Erstes Gesetz: Bahnen sind Ellipsen, keine Kreise. Zweites: die Linie Sonne-Planet überstreicht gleiche Flächen in gleicher Zeit (= Drehimpulserhaltung). Drittes: T² skaliert mit a³.",
+    "Newton siebzig Jahre später bewies, dass alle drei aus einer Gravitationsgleichung folgen. Kepler kam zuerst, ohne Theorie — pures Pattern-Matching auf Daten."
+  ],
+  "body_paragraphs": [
+    "Erstes Gesetz: Planeten umkreisen Ellipsen mit der Sonne in einem Brennpunkt. Vor Kepler nur Kreise. Brahes 20 Jahre Marsdaten passten nicht. Ellipsen passten beim ersten Versuch.",
+    "Zweites Gesetz: gleiche Flächen in gleicher Zeit. Drehimpulserhaltung in Verkleidung. Nahe Perihel kurze Linie, hohe Geschwindigkeit; nahe Aphel umgekehrt.",
+    "Drittes Gesetz: `T² ∝ a³`. Mit Erde T = 1 Jahr, a = 1 AE liest du jede Periode von der Distanz ab."
+  ],
+  "formula_caption": "Keplers drittes Gesetz modern: T² hängt nur von a (und μ) ab.",
+  "diagram_caption": "Gleiche Flächen in gleicher Zeit: kurzer Bogen am Perihel überstreicht dieselbe Fläche wie der lange am Aphel."
+}

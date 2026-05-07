@@ -1,0 +1,18 @@
+{
+  "title": "Bahnregimes — LEO, MEO, GEO, HEO",
+  "intro_sentence": "Erdumlaufbahnen gruppieren sich in vier Höhenbänder; jedes ein anderer Kompromiss zwischen Latenz, Lebensdauer und Kosten.",
+  "narrative_101": [
+    "Wähl einen Satelliten. Das Wichtigste an ihm ist nicht, was er tut — sondern in welcher Höhe er lebt. Höhe bestimmt, wie oft er denselben Bodenfleck sieht, wie lange ein Funksignal braucht, wie viel Treibstoff für Bahnerhalt nötig ist, und wie lange er nutzbar ist. Ingenieure gruppieren Bahnen in vier Bänder — LEO, MEO, GEO, HEO.",
+    "LEO bis ~2.000 km. ISS bei 408 km. Hubble bei 540 km. Starlink bei ~550 km. Billig zu erreichen, aber 90-Minuten-Periode, Atmosphärenwiderstand, jeder Bodenpunkt nur ~10 Minuten pro Pass sichtbar.",
+    "MEO 2.000-35.786 km — die Navigationsband (GPS, Galileo, Beidou). Perioden 2-12 h. GEO genau bei 35.786 km — 24-Stunden-Periode — daher der Satellit hängt für immer über demselben Punkt. Wetter und Broadcast-Comsats.",
+    "HEO ist der Joker — hohes Apogäum, niedriges Perigäum, lange Verweildauer über einer Breite. Russlands Molniya-Bahnen sind HEO, optimiert für hohe Breiten, die GEO nicht erreicht."
+  ],
+  "body_paragraphs": [
+    "LEO (Niedrige Erdumlaufbahn, < 2.000 km): am billigsten, schnellste Periode (~90 min), kürzeste Bodenverzögerung, kürzeste Lebensdauer wegen Restwiderstand. ISS, Hubble, Starlink, Erdbeobachtung, alle bemannten Aktivitäten jenseits Apollo.",
+    "MEO (Mittlere Erdumlaufbahn, 2.000-35.786 km): das Navigationsband. GPS bei 20.200 km, GLONASS 19.100, Galileo 23.222, Beidou MEO 21.500. Periode ~12 h.",
+    "GEO (Geostationär, 35.786 km, 0° Inklination): Periode = sidereal Tag, Satellit erscheint stationär. Broadcast-TV, Wetter (GOES, Himawari, Meteosat), Comsats. Funk-Roundtrip ~240 ms.",
+    "HEO (Hochelliptisch): niedriges Perigäum + hohes Apogäum. Molniya: Perigäum ~600 km, Apogäum ~40.000 km, Inklination 63,4°. Kritisch für Hochbreiten-Kommunikation.",
+    "Regimes wechseln ist teuer. Δv von LEO nach GEO ~3,9 km/s. LEO zum Escape (TLI/TMI) ~3,2 km/s — kontraintuitiv billiger als GEO erreichen."
+  ],
+  "diagram_caption": "Konzentrische Erdbänder: LEO (cyan, niedrig), MEO (blau, GPS), GEO (gold, geostationär), HEO (orange, schiefe Ellipse)."
+}

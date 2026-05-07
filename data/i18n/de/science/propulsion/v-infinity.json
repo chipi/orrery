@@ -1,0 +1,15 @@
+{
+  "title": "V∞ — Hyperbolische Überschussgeschwindigkeit",
+  "intro_sentence": "Die Geschwindigkeit, die übrig bleibt, nachdem du den Schwerkrafttopf eines Planeten verlassen hast.",
+  "narrative_101": [
+    "C₃ ist, was die Rakete am START liefert. V∞ ist dasselbe Konzept am ZIEL. Mit welcher Geschwindigkeit triffst du Mars relativ zu Mars, bevor seine Schwerkraft greift?",
+    "Setzt deine Ankunftsbrennphase. MRO ankam V∞ ≈ 2,6 km/s, brannte ~1 km/s zur Capture. Voyager 2 erreichte Neptun V∞ ≈ 8 km/s — versuchte gar nicht zu stoppen.",
+    "Symmetrie: V∞ ist die Anflug-Asymptotengeschwindigkeit. Auf `/fly` poppt sie auf, wenn die Sonde die Sphere of Influence betritt — Wahrheitsmoment."
+  ],
+  "body_paragraphs": [
+    "Stell dir eine Asymptote unendlich weit vom Planeten vor. Die Geschwindigkeit dort ist V∞. Auf einer hyperbolischen Begegnung konstant auf beiden Armen.",
+    "V∞ kontrolliert die Ankunftsbrennphase. Capture: bleed Energie unter Escape. Tieferer Topf, mehr Δv kostet. Mars Reconnaissance Orbiter V∞ ≈ 2,6 km/s, ~1 km/s Capture. Voyager 2 Neptun V∞ ≈ 8 km/s, kein Insertion.",
+    "Im `/fly`-HUD erscheint V∞ beim Eintritt in die Ziel-SoI."
+  ],
+  "diagram_caption": "Hyperbolischer Vorbeiflug: V∞ ist die konstante Asymptotengeschwindigkeit weit vom Planeten."
+}

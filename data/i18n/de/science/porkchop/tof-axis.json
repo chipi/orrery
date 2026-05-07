@@ -1,0 +1,14 @@
+{
+  "title": "Flugzeit-Achse",
+  "intro_sentence": "Wie lang die Reise dauert — entlang Y-Achse, in Tagen für innere Planeten und Jahren für äußere.",
+  "narrative_101": [
+    "Sagt X-Achse WANN du gehst, sagt Y-Achse WIE LANG. Boden: schnelle Reisen. Oben: lange Reisen. Mars-Klasse: ~100 bis 500 Tage. Jupiter: Jahre.",
+    "Jetzt liest du den Trade-off auf einen Blick. Geh hoch eine Spalte — gleiches Datum, andere Transitzeiten. Boden (schnell): rote Zellen — schnelle Reisen teuer durch steile Transferellipsen. Höher: kühles Blau — natürliches Hohmann-Band.",
+    "Deshalb Hohmann zu Mars immer ~8,5 Monate. Schneller: zahlst steil für Geschwindigkeit. Viel langsamer: trödelst grundlos. Cracruisers können Langsam, bemannt nicht — jeder Extramonat = mehr Essen, Wasser, O₂, Strahlung."
+  ],
+  "body_paragraphs": [
+    "Y-Achse = Transitdauer. Mars-Klasse Hohmann ~250 Tage, Y-Bereich ~100-500 Tage. Jupiter/Saturn Hohmann = Jahre, Achse in Jahren.",
+    "Reihen tauschen Transit gegen Δv. Billigste Zellen (Hohmann-Band) am natürlichen Hohmann-Transit. Schneller drücken: Δv steigt steil. Langsamer: günstigere aber langsame Optionen.",
+    "Form der billigen Zone zeigt Trade-offs. Schmales Band: scharfes Optimum. Breite billige Zone: Flexibilität. Mars-Porkchop schmales Optimum. Jupiter breiter (Swing-by-Landschaft)."
+  ]
+}

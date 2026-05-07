@@ -1,0 +1,15 @@
+{
+  "title": "AE — Astronomische Einheit",
+  "intro_sentence": "Erdes mittlerer Sonnenabstand, fixiert auf exakt 149.597.870.700 Meter — das natürliche Lineal für Sonnensystementfernungen.",
+  "narrative_101": [
+    "Beginnst du Distanzen im Raum zu messen, werden Kilometer schnell unhandlich. Mars 200 Mio km. Saturn 1,4 Mrd. Pluto 6 Mrd. Hirn parst die nicht mehr. Astronomen: ein menschlicheres Lineal. Eine Erde-Sonne-Distanz = AE.",
+    "Verankert auf einer ganzen Zahl Meter — 149.597.870.700, fixiert 2012 — aber praktisch einfacher. Mars 1,5 AE. Jupiter 5 AE. Pluto 30-50 AE. Voyager 1 ~165 AE und weiter. Zahlen, die du im Kopf behältst.",
+    "AE überall in dieser App. /explore zeichnet Bahnradien in AE. /plan-Porkchopachsen kalibriert in AE. /fly-HUD konvertiert wo nötig — aber das zugrundeliegende Lineal ist immer AE."
+  ],
+  "body_paragraphs": [
+    "Bis 2012 wurde die AE durch die Erdbahn definiert. Da die Bahn unter Planetenstörungen evolviert, änderte sich die AE technisch auch. IAU fixierte sie 2012 auf eine genaue Ganzzahl — 149.597.870.700 — und seither stabil.",
+    "Sonnensystementfernungen in AE: Merkur 0,39, Venus 0,72, Erde 1,0, Mars 1,52, Jupiter 5,20, Saturn 9,58, Uranus 19,22, Neptun 30,05, Pluto 39,5. Voyagers weit über 150 AE. Oort-Wolke zehntausende AE.",
+    "Warum AE statt Meter? Weil Meter-Zahlen unhandlich werden. Saturns 1,4 Mrd km unlesbar. 9,58 AE merkbar. Orrery nutzt AE für Sonnensystempositionen — konvertiert nur wo nötig."
+  ],
+  "diagram_caption": "1 AE ≈ Erde-Sonne-Abstand. Planet-Halbachsen in AE, log-Skala für äußere Planeten."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Keplersche Bahn",
+  "intro_sentence": "Eine Ellipse mit der Sonne in einem Brennpunkt — die einfachste Bahn, die ein Körper um einen anderen haben kann.",
+  "narrative_101": [
+    "Stell dir vor, du wirfst einen Ball von einem hohen Turm. Er fällt zur Erde. Wirfst du stärker, fliegt er weiter. So stark, dass der Boden schneller wegfällt, als der Ball — und der Ball landet nie. Das ist eine Bahn. Jede Sonde, jeder Planet macht diesen Trick.",
+    "Was die Schleife zur Keplerschen Bahn macht: wir behandeln die Schwerkraft als einen sauberen Zug zu einem schweren Körper. Zwei Körper, eine Kraft. Das Resultat ist immer eine Ellipse, mit dem schweren Körper in einem Brennpunkt — nie im Zentrum.",
+    "Realität ist unordentlicher — Monde stören, der Erdwulst zieht an Satelliten — aber die Unordnung ist meist eine kleine Korrektur auf einer Keplerschen Bahn."
+  ],
+  "body_paragraphs": [
+    "Wenn du auf etwas Massereiches zufällst und es verfehlst, bekommst du eine Keplersche Bahn. Der Pfad ist eine Ellipse, der Körper sitzt in einem Brennpunkt, nie im Zentrum. Erde um die Sonne, Mond um die Erde, jede Sonde, die du in Orrery siehst: alle keplersch in erster Näherung.",
+    "Sechs Zahlen beschreiben eine solche Bahn vollständig: Größe (große Halbachse), Streckung (Exzentrizität), drei Winkel (Inklination, Knotenlänge, Argument der Periapsis), und Position (wahre Anomalie). Das sind die Bahnelemente.",
+    "Das Modell bricht, wenn ein dritter Körper zählt: Sonden nahe dem Mond, LEO-Satelliten am Erdäquatorwulst. Orrery nutzt Keplersche Bahnen für die heliozentrische Geschichte und Patched-Conics für den Rest."
+  ],
+  "diagram_caption": "Ellipse mit Brennpunkt F₁ in der Sonne. Große Halbachse a · Perihel und Aphel auf der Apsidenlinie."
+}

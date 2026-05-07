@@ -1,0 +1,15 @@
+{
+  "title": "EDL — Entry, Descent, Landing",
+  "intro_sentence": "Sieben Minuten von Atmosphärenoberkante zu Räder-am-Boden — die automatisierteste, geringste-Marge-Phase jeder Planetenmission.",
+  "narrative_101": [
+    "Mars ist 14 Lichtminuten weg. Bis das Signal des Rovers Mission Control erreicht, ist der Rover seit 14 Minuten am Boden — lebt oder tot. Niemand auf der Erde fliegt eine Marslandung. Die Sonde tut es allein, autonom, in ~7 Minuten, hunderte beweglicher Teile, null zweite Chancen.",
+    "Schritt 1: Atmosphäre treffen mit ~5,8 km/s. Hitzeschild handhabt glühende Temperaturen. Schritt 2: Überschall-Fallschirm bei Mach 2 deployen. Schritt 3: Schild ab, Schirm ab, Retroraketen feuern. Schritt 4: Touchdown.",
+    "Verschiedene Tricks. Apollo: einfach Abstiegsmotor durchgehend. Curiosity/Perseverance: der wahnsinnige Sky Crane — eine raketengetriebene Plattform schwebt 20 m, lässt den Rover an drei Kabeln runter, fliegt sich selbst weg. Zhurong: Hybrid. Sieben Minuten heißen JPL-intern \"die sieben Minuten des Terrors\"."
+  ],
+  "body_paragraphs": [
+    "Entry beginnt bei spürbarer Atmosphäre — ~125 km am Mars, 100 km Erde. Atmosphärenwiderstand bremst; Motoren aus. Hitzeschild ertragen tausend Grad, Aeroshell hält Form, Trajektorie ballistisch.",
+    "Descent: Überschallfallschirme bei Mach 1,5-2. Großer Geschwindigkeitsabbau. Aber Fallschirme allein nicht weich. Mars: supersonisch zu subsonisch per Schirm, dann powered descent: Schild ab, Retros zünden, letzte hundert Meter auf Triebwerksstrahlen.",
+    "Curiosity/Perseverance: Sky Crane bei ~20m, Rover auf Kabeln zu Räder-Boden. Apollo: direkter Brand zur Oberfläche. Zhurong: Hybrid Hover/Lower."
+  ],
+  "diagram_caption": "EDL-Sequenz: Entry (Hitzeschild) → Fallschirm → Powered Descent → Touchdown."
+}

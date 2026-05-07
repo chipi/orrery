@@ -1,0 +1,15 @@
+{
+  "title": "Hohmann-Transfer",
+  "intro_sentence": "Die billigste Zwei-Brennphasen-Reise zwischen koplanaren Kreisbahnen — und die Basis, gegen die Planer alles messen.",
+  "narrative_101": [
+    "Du bist in der Erdbahn. Du willst in die Marsbahn. Beide Kreise um die Sonne. Wie kommst du mit minimalem Treibstoff hin?",
+    "Walter Hohmanns Antwort 1925: finde eine Ellipse, die die Erdbahn auf einer Seite und die Marsbahn auf der anderen berührt. Brennphase, um die Erde zu verlassen. Acht Monate Flug ohne Triebwerk — Schwerkraft macht die Arbeit. Am anderen Ende erneut brennen, um in die Marsbahn einzuschwenken. Zwei Brennphasen. Fertig.",
+    "Die billigste Reise — aber auch die langsamste. Acht Monate Wartezeit nicht verhandelbar. Schneller? Möglich, aber teurer."
+  ],
+  "body_paragraphs": [
+    "Vom Sonnenkreis zum höheren — Erde-zu-Mars: am billigsten ist ein Hohmann-Transfer, eine Ellipse mit Perihel an deiner Startbahn und Aphel am Ziel. Zwei Brennphasen.",
+    "Billigster fester Impuls, aber auch langsamster. Erde-Mars ~259 Tage. Schneller? Höhere Perihelgeschwindigkeit, größere Ankunfts-V∞, viel höhere Δv-Kosten.",
+    "Auf dem `/plan`-Porkchop siehst du die Wanne kühler Türkis um das natürliche Hohmann-Fenster, alle 26 Monate für Mars."
+  ],
+  "diagram_caption": "Erdbahn (innen) · Marsbahn (außen) · Hohmann-Transferellipse mit Perihel an der Erde, Aphel am Mars."
+}

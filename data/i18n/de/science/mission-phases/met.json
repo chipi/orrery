@@ -1,0 +1,14 @@
+{
+  "title": "MET — Mission Elapsed Time",
+  "intro_sentence": "Eine simple Stoppuhr, die beim Start beginnt und nie aufhört — die universelle Zeitmarke für jedes Missionsereignis.",
+  "narrative_101": [
+    "MET = Mission Elapsed Time. Stoppuhr. Tag 0, Stunde 0, Minute 0, Sekunde 0 ist Liftoff. Alles danach mit MET. Apollo 11 erster Mondschritt: MET 109h 24min. Voyager 1 verließ Heliopause: MET 35 Jahre.",
+    "Warum statt Kalender? Erstens: Kalender hat nichts mit Sondenarbeit zu tun. Voyager kümmert sich nicht um Dienstage. Zweitens: weiter draußen driften Uhren auseinander. MET ist die private Zeitlinie der Sonde.",
+    "In `/fly` siehst du MET in Tagen ticken. HUD sagt MET 173d beim Mars-Vorbeiflug. Was Datum auf der Erde ist, irrelevant. Mission Control spricht MET."
+  ],
+  "body_paragraphs": [
+    "MET ist Zeit seit Start. Tag 0 ist Liftoff. Jedes Ereignis — Stufung, Trans-X, TCM, MOI, Surface Ops — MET-Zeitstempel. Apollo 11 Mondlandung: MET 4 Tage 6h 45min. Voyager 1 Heliopause: MET 35 Jahre.",
+    "Warum MET statt UTC? Weil Erden-Uhr nicht zu Sonden-Uhr passt bei Schnellbewegung. Light-time-Verzögerungen wachsen (Mars 4-22 Lichtminuten). Relativistische Dilation für schnelle Sonden. MET ist die Sondeneigene Zeit.",
+    "Im `/fly`-HUD MET in Tagen — Sondenperspektive auf Reisedauer."
+  ]
+}

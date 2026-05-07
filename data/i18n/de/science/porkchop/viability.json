@@ -1,0 +1,14 @@
+{
+  "title": "Machbarkeit lesen",
+  "intro_sentence": "Eine Zelle ist machbar, wenn die Δv-Fähigkeit deiner Rakete ≥ den Δv-Kosten der Zelle — der Porkchop wandelt das in eine Ja/Nein-Karte.",
+  "narrative_101": [
+    "Die Frage, die einen Porkchop von hübscher Heatmap zu echter Missionsentscheidung macht: kann meine Rakete das wirklich fliegen? Jede Rakete hat veröffentlichte Δv-Fähigkeit für gegebene Nutzlast.",
+    "Zellen wo Fähigkeit > Kosten: machbar mit Marge. Wo gleich: machbar aber knapp. Wo Kosten > Fähigkeit: nicht fliegbar mit der Rakete. Physik sagt nein.",
+    "Wähl eine Rakete in /plan, Porkchop überlagert Marge/Defizit-Farbe. Lappen schrumpft für kleine Raketen, dehnt sich für große. So arbeiten echte Planer: Vehikel wählen, sehen was machbar, swap, iterieren bis billige Zone in Fähigkeit passt."
+  ],
+  "body_paragraphs": [
+    "Wähl Vehikel: Falcon Heavy, SLS, Atlas V N22. Bekannte Δv-Fähigkeit für Nutzlastmasse. Vergleich gegen Porkchop: Δv_cost ≤ Δv_capability ist machbar; größer ist unmöglich ohne anderes Vehikel.",
+    "In `/plan` Vehikel wählen, Orrery zeigt Marge/Defizit. Türkis = \"machbar, große Marge\". Gelb = \"machbar aber knapp\". Rot = unmöglich-mit-Vehikel, zeigt Defizit.",
+    "Mission-Feasibility-Analyse in einer Ansicht. Echte Planer iterieren — andere Vehikel, Massen, Varianten — bis billigste Kombination Wissenschaftsanforderungen erfüllt."
+  ]
+}

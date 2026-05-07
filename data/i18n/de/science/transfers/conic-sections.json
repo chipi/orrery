@@ -1,0 +1,14 @@
+{
+  "title": "Kegelschnitte",
+  "intro_sentence": "Schneide einen Kegel auf vier Arten und du bekommst jede Keplersche Trajektorie — Kreis, Ellipse, Parabel, Hyperbel.",
+  "narrative_101": [
+    "Bizarrer mathematischer Glücksfall der Bahnmechanik: Die Formen vom Kegelschnitt — Kreis, Ellipse, Parabel, Hyperbel — sind GENAU die einzigen Formen, auf denen ein Körper unter Schwerkraft reisen kann. Die Griechen studierten die Kurven 200 v. Chr. zum Spaß. 2000 Jahre später: das Universum läuft auf ihnen.",
+    "Die vier bilden ein Kontinuum. Langsam: Kreis oder Ellipse. Genau Fluchtgeschwindigkeit: Parabel. Schneller: Hyperbel. Exzentrizität ist der Regler."
+  ],
+  "body_paragraphs": [
+    "Schneide einen Kegel mit einer Ebene. Horizontal: Kreis (e=0). Geneigt: Ellipse (0<e<1). Parallel zur Kante: Parabel (e=1). Darüber: Hyperbel (e>1). Apollonius von Perge katalogisierte sie 200 v. Chr.",
+    "Jede Keplersche Bahn ist eine der vier. Gebundene — Planeten, Monde — Kreise/Ellipsen. Ungebundene — Vorbeiflüge, Escape — Parabeln/Hyperbeln. Die Grenze bei e=1 ist exakt.",
+    "Missionsdesigner nutzen alle vier. Cruise auf Ellipse, Vorbeiflug auf Hyperbel, Insertion zurück zur Ellipse. `/fly` macht das natürlich — eine Gleichung, Exzentrizität sagt dir, welche Kurve."
+  ],
+  "diagram_caption": "Vier Kegelschnitte: Kreis, Ellipse, Parabel, Hyperbel. Exzentrizität legt fest, welche."
+}

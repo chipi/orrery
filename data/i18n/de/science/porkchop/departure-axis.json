@@ -1,0 +1,14 @@
+{
+  "title": "Abreise-Fenster-Achse",
+  "intro_sentence": "Wann du startest — entlang X-Achse, typisch 4-Jahres-Spanne, täglich gesampelt.",
+  "narrative_101": [
+    "Lies den Porkchop wie einen Kalender. Horizontale Achse — links nach rechts — ist Abreisedatum von Erde. Jede Pixelspalte ein anderer Tag. Orrery sampelt täglich über ~4 Jahre — genug für zwei volle synodische Zyklen, genug zum Sehen, dass das Fenstermuster sich wiederholt.",
+    "Schau über die Reihe billiger Zellen (kühler türkiser Lappen) und liest direkt vom Kalender ab, wann Fenster sind. Mars ~26 Monate. Venus 19. Jupiter 13. Außerhalb: Kalender kämpft gegen dich.",
+    "Wenn du den Startjahr-Slider in /plan bewegst, gleitest du die X-Achse. Anderes Jahr, andere Fenster — aber gleiche Physik."
+  ],
+  "body_paragraphs": [
+    "X-Achse = wann du Erde verlässt. Pro Pixelspalte ein Datum — bei Orrery 1-Tag-Auflösung über ~4 Jahre. Warum 4 Jahre? Erde-Mars-Synodik = 26 Monate, also brauchst zwei Zyklen.",
+    "Lies die X-Achse wie einen Kalender. Billige Lappen (\"Fleisch\") in vorhersagbaren Intervallen. Mars ~26 Monate. Venus ~19. Jupiter ~13.",
+    "In `/plan` Achsen-Label: `ABREISE-FENSTER · 2026-2030`. Genaue Daten im Tooltip beim Hover."
+  ]
+}

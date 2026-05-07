@@ -1,0 +1,8 @@
+{
+  "headline": "Antrieb — die Raketengleichung ist der Endgegner.",
+  "paragraphs": [
+    "Raumfahrt hat eine Währung: Δv, in km/s. Jede Brennphase kostet was. Jeder Zug auf einer Trajektorie hat einen Preis. Das Δv-Budget ist die einzige Zahl, die sagt, ob die Mission fliegen kann.",
+    "Die grausame Schranke ist die Raketengleichung von Tsiolkovsky (1903). Δv skaliert LOGARITHMISCH mit dem Treibstoffanteil. Doppeltes Δv? Exponentiell mehr Treibstoff. Deshalb ist Saturn V zu 90% Treibmittel. Deshalb ist Mars-Landung und -Rückkehr viel schwerer als der Mond.",
+    "Sechs Abschnitte. Beginne mit Δv-Budget — der Rahmen für alles. Dann Tsiolkovsky. Spezifischer Impuls erklärt die Motorseite; C₃ und V∞ sind Energie-Zahlen, die du im FLIGHT-Tab auf /missions siehst. Der Oberth-Effekt am Ende ist seltene Gratis-Magie."
+  ]
+}

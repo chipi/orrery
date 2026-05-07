@@ -1,0 +1,14 @@
+{
+  "title": "Bahneinschuss — LOI / MOI",
+  "intro_sentence": "Die Bremsbrennphase, die deine Sonde in eine Bahn einfängt, statt sie für immer vorbeifliegen zu lassen.",
+  "narrative_101": [
+    "Du bist acht Monate gecruist. Mars wird größer im Fenster. Tust du nichts, fliegst vorbei und für immer raus. Um zu orbitieren — bremsen. Diese Bremsbrennphase ist der Schicksalsmoment jeder Orbital-Mission.",
+    "Mathematik unverzeihlich. Ankunft mit V∞. Unter Escape fallen. Lange harte präzise Brennphase im nächsten Punkt zum Planeten, wo Oberth maximiert. MRO: 27 min. Cassini Saturn: 95 min — die längste Brennphase im Leben der Sonde.",
+    "Fehlt sie oder unterperformt: du entkommst, keine zweite Chance. Mars Climate Orbiter 1999 hatte Einheitenfehler — Pfunde mit Newton verwechselt — Brennphase zu schwach, Sonde verglühte. Mission verloren in Sekunden."
+  ],
+  "body_paragraphs": [
+    "Bei Ankunft fliegt die Sonde schnell — schnell genug zum Entkommen, wenn nichts geschieht. Capture: bleed genug Geschwindigkeit, um unter lokale Escape zu fallen. Diese Bremsbrennphase ist der Bahneinschuss. LOI für Mond (Apollo, LRO), MOI für Mars (MAVEN, MRO, Tianwen-1).",
+    "Im Periapsis der Anflugshyperbel, wo Oberth günstig macht. Größe hängt von V∞ und gewünschter Bahnhöhe ab. MRO ankam V∞ ≈ 2,6 km/s, ~1 km/s Δv für Capture. Cassini Saturn-Insertion: 95-Minuten-Brennphase, längste der Sonde.",
+    "Fehler oder Unterperformance: Sonde entkommt. Keine zweite Chance. Mars Climate Orbiter ist die Lehre."
+  ]
+}

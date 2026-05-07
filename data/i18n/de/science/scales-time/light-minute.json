@@ -1,0 +1,14 @@
+{
+  "title": "Lichtminute und Lichtjahr",
+  "intro_sentence": "Distanz in Zeit gemessen, die Licht braucht — die nützlichste Einheit für Kommunikationsverzögerungen und Sterndistanzen.",
+  "narrative_101": [
+    "Eine Lichtminute ist, wie weit Licht in einer Minute reist. 300.000 km/s. 18 Mio km/min. Distanz, nicht Zeit — verwirrend benannt aber nützlich. Sonne 8,3 Lichtminuten weg. Mars 4-22 Lichtminuten je nach Geometrie.",
+    "Wichtig, weil Funkwellen mit Lichtgeschwindigkeit reisen. Wenn Curiosity Mars befährt: Befehl senden, 8-22 Minuten warten, dass Rover sich bewegt. Weitere 8-22 für Bestätigung. KEIN Joystick-Steuern eines Mars-Rovers von Erde. Alles Wichtige autonom.",
+    "Voyager-1-Distanz (~165 AE): Einweg-Lag ~22,5 h. Lichtjahre: nächste Skala — Sterne. Proxima Centauri 4,2 Lichtjahre. Voyager-Geschwindigkeit: 70.000 Jahre dorthin. Universum groß und langsam."
+  ],
+  "body_paragraphs": [
+    "Licht 300.000 km/s. Lichtsekunde 300.000 km. Lichtminute 18 Mio km. Lichtjahr 9,46 Bil km. Distanzen, nicht Zeiten — nützlich: 1 AE ≈ 8,3 Lichtminuten.",
+    "Wenn Curiosity Mars befährt: Befehl senden, 8-22 Minuten warten auf Bewegung — und 8-22 weiter zum Wissen ob es funktionierte. Echtzeit-Steuerung unmöglich auf Planetendistanz. Voyager 1 (22,5 Lichtstunden): Einweg-Schubse die fast einen Tag später ankommen.",
+    "Lichtjahre für Sterne. Proxima Centauri 4,2 Lichtjahre. Voyager 1 ~17 km/s — schnell für eine Sonde, langsam gegen Licht: bei der Geschwindigkeit ~70.000 Jahre."
+  ]
+}

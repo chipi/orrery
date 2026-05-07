@@ -1,0 +1,15 @@
+{
+  "title": "Exzentrizität",
+  "intro_sentence": "Wie gestreckt die Bahn ist — null ist ein perfekter Kreis, eins ist ein parabolisches Entkommen.",
+  "narrative_101": [
+    "Ist Größe der erste Knopf, ist Exzentrizität der zweite. Wähl 0 bis fast 1. Bei 0 perfekter Kreis — gleichmäßige Geschwindigkeit überall. Drück Richtung 1, und die Ellipse streckt sich zu einem Ei, dann einer Zigarre, fast einer Linie.",
+    "Was ändert sich? Die Geschwindigkeit. Eine Kreisbahn ist ruhig. Eine gestreckte nicht. Halleys Komet ist weniger als ein Jahr von 76 hier — den Rest treibt er um sein Aphel."
+  ],
+  "body_paragraphs": [
+    "Die Exzentrizität (`e`) ist die Formzahl. Bei 0 ein Kreis — die Brennpunkte fallen ins Zentrum, der Körper bleibt für immer gleich weit weg. Richtung 1 streckt sich die Ellipse zur Zigarre.",
+    "Über `e = 1` bist du nicht mehr gebunden. `e = 1` ist parabolisch (Entkommen). Höher hyperbolisch — ein Vorbeiflug ohne Rückkehr.",
+    "Echte Planeten haben niedrige Exzentrizität. Erde: 0,0167. Mars: 0,093. Merkur: 0,205 — der exzentrischste der acht. Pluto und Kometen viel höher."
+  ],
+  "formula_caption": "Exzentrizität aus Perihel- und Aphelradius.",
+  "diagram_caption": "Drei Bahnen mit gleicher großer Halbachse aber e = 0, 0,4, 0,8. Form ändert sich; Periode nicht."
+}

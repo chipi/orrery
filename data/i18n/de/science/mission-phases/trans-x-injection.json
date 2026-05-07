@@ -1,0 +1,14 @@
+{
+  "title": "Trans-X-Injektion — TLI / TMI / TVI / TJI",
+  "intro_sentence": "Die große Abreisebrennphase, die dich auf eine Trajektorie zum Ziel wirft.",
+  "narrative_101": [
+    "Schritt eins jeder interplanetaren Reise: in LEO. Im Raum, aber kreist um die Erde. Um wirklich zum Mond, Mars, Jupiter zu kommen: ZWEITE Brennphase — Trans-X-Injektion. X = Zielinitiale.",
+    "Eine harte, dramatische Brennphase, normalerweise 5-30 Minuten, im Perigäum (Oberth). Wirft dich auf Transferellipse. Danach Triebwerk meist monatelang aus. Inertia.",
+    "Apollo TLI: 3,05 km/s. Curiosity TMI: 3,7 km/s. Voyager 2 trans-Jupiter ~7 km/s — Großteil ihres Budgets."
+  ],
+  "body_paragraphs": [
+    "Nach dem Start in LEO. Zweite Brennphase hebt Apogäum auf Zielniveau — Trans-X-Injektion. X ist Initialensbuchstabe: TLI translunar, TMI Mars, TVI Venus, TJI Jupiter.",
+    "Im Perigäum der Parking-Bahn (Oberth maximiert Energie pro Treibstoff). Hohmann zu Mars: TMI ~3,6 km/s über LEO-Injektion 7,9 km/s. Voyager 2 brauchte ~7 km/s trans-Saturn.",
+    "In `/missions` FLIGHT-Tab: ∆v_TLI oder ∆v_TMI als die Kosten der Erdumgebung verlassen."
+  ]
+}

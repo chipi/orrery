@@ -1,0 +1,14 @@
+{
+  "title": "Spezifischer Impuls (Isp)",
+  "intro_sentence": "Wie effizient ein Motor ist — wie viele Sekunden ein kg Treibstoff ein kg Schub erzeugt.",
+  "narrative_101": [
+    "Wie km/l beim Auto, aber für Raketen. Höher = besser = mehr Δv aus gleichem Treibstoff.",
+    "Einheit ist seltsam: Sekunden. Historisch. Größere Zahl = effizienter, jahrzehnten- und kontinentsübergreifend vergleichbar.",
+    "Bereich: Solid (Shuttle-Booster) ~250s. LH₂/LOX ~450s. Hypergolics ~310s. Ionen 3.000-9.000s. Faustregel: für Aufstieg viel Schub, für Cruise viel Isp. Echte Missionen staffeln."
+  ],
+  "body_paragraphs": [
+    "Isp ist die Verbrauchszahl für Raketen. Definition: Schub durch Treibstoffmassenstrom durch g₀, Sekunden. Ein kg/s Treibstoff erzeugt Isp × g₀ Newton Schub.",
+    "Vier Größenordnungen Bereich. Solid: 250s. LH₂/LOX (SSME): 452s. Hypergolics (Apollo SM): 314s. Ionen (Dawn, BepiColombo): 3.000-9.000s. Nuclear thermal (NERVA, nie geflogen): 800-1.000s theoretisch.",
+    "Trade-offs überall. Hoher Isp meist niedriger Schub. Ionen ~10 N — gut für Jahre-lange Cruises, nutzlos für Erdaufstieg. Echte Missionen stufen: chemisch hoch, Ionen Cruise."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "NRHO — Near-Rectilinear Halo Orbit",
+  "intro_sentence": "Eine 9-Tages-eiförmige Bahn um den Erde-Mond-L2-Punkt — das gewählte Zuhause des NASA Lunar Gateway.",
+  "narrative_101": [
+    "NRHO ist die Bahn, die NASA für Gateway wählte — die kleine Raumstation nahe dem Mond ab Ende 2020er. Akronym = Near-Rectilinear Halo Orbit. Stell dir ein Ei vor, gestreckt, balanciert fast am L2-Lagrange-Punkt jenseits des Mondes. Sonde umrundet alle neun Tage.",
+    "Warum diese Bahn? Perfekter Kompromiss. Quasi gratis zu erhalten — ~5 m/s/Jahr Stationkeeping. Immer freie Sicht zur Erde. Ein Ei-Ende dippt nahe genug am Mond für Lander zum Südpol.",
+    "Artemis II = erster bemannter NRHO-Flug. Artemis III docked dort zum Lander-Transfer. Über Gateway hinaus: NRHO als Stage für bemannte Marsmissionen."
+  ],
+  "body_paragraphs": [
+    "Eine NRHO ist eine Halo-Bahn — periodische Dreikörper-Trajektorie um einen Lagrange-Punkt — gestreckt bis ein Ende fast den Mond-Südpol berührt. Eher polare Bahn als Halo. ~6,5 Tage am Perilun, 9 Tage volle Revolution.",
+    "Warum diese Bahn? Stabilität bei niedrigem Δv-Aufwand — ~5 m/s/Jahr. Kontinuierliche Sichtlinie zur Erde. Niedrigkostiger Δv-Zugang von der Erde (~4 km/s Transfer + Insertion). Mondoberflächen-Zugang via kleine Lander vom Perilun.",
+    "Gateway erste bemannte Deep-Space-Station, NRHO ab Ende 2020er. Artemis II erster bemannter Flug. Über Gateway: NRHO ist Bühne für bemannte Mars-Architekturen."
+  ],
+  "diagram_caption": "Gestreckte Halo-Bahn am Erde-Mond-L2: ~9-Tage-Periode, Perilun nahe Südpol, Sichtlinie zur Erde."
+}

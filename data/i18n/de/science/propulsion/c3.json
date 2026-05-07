@@ -1,0 +1,15 @@
+{
+  "title": "C₃ — Charakteristische Energie",
+  "intro_sentence": "Wieviel Energie pro Masse die Rakete braucht, um die Erdgravitation mit Restgeschwindigkeit zu verlassen — die Standard-Startenergie-Metrik.",
+  "narrative_101": [
+    "C₃ ist Missionsingenieurs-Slang: wie hart muss die Rakete werfen? Energie übrig nach dem Erdgravitations-Ausstieg. C₃=0 = exakt entkommen, V∞=0. C₃>0 = mit Extrageschwindigkeit raus.",
+    "Einheit km²/s². Mars C₃ = 8-12. Direkt-Jupiter ~80. New Horizons C₃ = 158, höchste je — Pluto in 9,5 Jahren statt Jahrzehnten.",
+    "Warum wichtig? Jede Rakete hat eine C₃-vs-Nutzlast-Kurve. Falcon Heavy 16 t bei C₃=10, nur 5 t bei C₃=80. Erste Designentscheidung: C₃ des Ziels einer Rakete zuordnen, die deine Sonde dort hinwirft."
+  ],
+  "body_paragraphs": [
+    "C₃ ist V∞² in km²/s². Wieviel Energie über Escape die Rakete liefert. C₃=0 = entkommt knapp, im Unendlichen 0. C₃=25 = V∞ = 5 km/s heliozentrisch übrig.",
+    "Vehikel charakterisiert durch C₃-vs-Nutzlast. Falcon Heavy ~16 t bei C₃=10, ~5 t bei C₃=80. Mars 8-12. Jupiter direkt ~80. New Horizons C₃ = 158 — höchste je.",
+    "In `/missions` FLIGHT-Tab: C₃ jeder interplanetaren Mission als kanonischer erster Datenpunkt."
+  ],
+  "formula_caption": "C₃ ist V∞-Quadrat. Gleiche Physik, andere Einheit."
+}

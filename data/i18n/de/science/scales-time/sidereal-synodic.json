@@ -1,0 +1,16 @@
+{
+  "title": "Siderische vs synodische Periode",
+  "intro_sentence": "Zwei Arten zu fragen \"wie oft kommt das wieder?\" — gleicher Körper, anderer Bezugsrahmen, andere Antwort.",
+  "narrative_101": [
+    "Zwei verschiedene Antworten auf \"wie lang ist ein Marsjahr?\" — und welche du willst, hängt davon ab, was du tust.",
+    "Wie lange Mars für EINEN Lauf um die Sonne braucht: 687 Erdtage. Das ist die siderische Periode — gegen unbewegliche ferne Sterne. Geometrische Wahrheit der Bahn.",
+    "Wie oft Erde und Mars sich GLEICH AUSRICHTEN (für Missionsstart): 780 Tage — ~26 Monate. Synodische Periode. Warum länger? Weil während Mars einmal um die Sonne, Erde fast zweimal — beide bewegen sich. Die Ausrichtung wiederholt erst, wenn Erde Mars im Tanz überrundet.",
+    "Deshalb erscheinen Mars-Startfenster alle 26 Monate. Verfehlst du, wartest 2 Jahre. Curiosity 2011, Perseverance 2020, nächste 2026."
+  ],
+  "body_paragraphs": [
+    "Siderische Periode: Zeit für eine volle Umdrehung gegen Fixsterne. Mars siderisches Jahr: 687 Erdtage. Synodische Periode: Zeit, bis ein Körper relativ zu einem anderen wieder gleiche Position hat. Mars-Erde-Synodisch: 780 Tage ≈ 26 Monate.",
+    "Synodisch interessiert Missionsplaner. Erde-Mars-Hohmann nur wenn Mars am richtigen Ort. Nächstes Fenster alle 26 Monate. Verfehl eines, warte zwei Jahre.",
+    "Mathematisch: `1/T_syn = 1/T_inner − 1/T_outer`. Erde 1,0 J, Mars 1,88 J: T_syn ≈ 26 Monate."
+  ],
+  "diagram_caption": "Siderisch: gleiche Sternausrichtung. Synodisch: gleiche Erde-Mars-Sonne-Ausrichtung, länger weil beide sich bewegten."
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Missionstypen — Flyby, Orbiter, Lander, Rover, Sample Return",
+  "intro_sentence": "Fünf Archetypen, wie eine Sonde mit ihrem Ziel umgeht — jeder ein anderer Δv-Preis, Risikoprofil, wissenschaftlicher Ertrag.",
+  "narrative_101": [
+    "Jede robotische Mission wählt eine von fünf Strategien. Die Wahl bestimmt fast alles: Raketengröße, Trajektorie, Sondenausrüstung, Wissenschaft, Überlebensfähigkeit. Taxonomie folgt Δv-Leiter: Flyby billigste, Sample Return teuerste.",
+    "FLYBY: zielen, fotografieren, weiter. Keine Bremsbrennphase. Voyager 1/2, New Horizons, Pioneer. Stunden Encounter, dann segelt die Sonde für immer. Billigste Δv, kommst nicht zurück.",
+    "ORBITER: bremsen in Capture-Bahn, jahrelang bleiben. MAVEN, MRO, Cassini, Galileo. Insertion teuer (1-2 km/s), aber kartiert ganzen Körper. LANDER + EDL on top. ROVER + Räder, Antrieb, Autonomie — jedes kg auf dem Rover kostet einen Stack drunter.",
+    "SAMPLE RETURN ist Gipfel: Lander + Aufstiegsstufe + Cruise zurück + EDL auf Erde. Hayabusa-2, OSIRIS-REx, Chang'e 5, Apollo. Mass-zu-Erdabflug-Ratio brutal — Mars Sample Return in Entwicklung, eine der schwersten je versucht."
+  ],
+  "body_paragraphs": [
+    "Flyby-Missionen überspringen Bahneinschuss komplett. Vorbeifliegen mit Ankunfts-V∞ — ~10 km/s Voyager Jupiter, ~14 km/s New Horizons Pluto. Encounter Minuten bis Tage. Tausch schnelle Wissenschaft gegen oberflächliche Abdeckung.",
+    "Orbiter tauschen Δv gegen Zeit-am-Ziel. Insertion typisch 1-2 km/s, dann Jahre Kartierung. Aerobraking (Atmosphärenwiderstand am Periapsis) kann Budget weiter senken — MRO aerobrakte 6 Monate.",
+    "Lander addieren EDL plus Strukturmasse (Hitzeschild, Schirm, Retros, Beine). EDL ist Höchstrisikophase; Mars hat ~50% historische Erfolgsrate.",
+    "Rover addieren Räder, Antrieb, Navigation, Autonomie. Jedes kg kostet ganzen Stack drunter: Descent Stage, Cruise Stage, Rakete. Curiositys 899-kg-Rover brauchte 4-t-Aeroshell auf 4-t-Cruise auf Saturn-V-Klasse-Trajektorie.",
+    "Sample Return ist Höhepunkt. Erdaufbruch-Masse ~10× Probenmasse für Mars-Roundtrip. Hayabusa-2 brachte ~5g Asteroid Ryugu in einer Kapsel handgroß zurück."
+  ],
+  "diagram_caption": "Fünf Missionsarchetypen nach steigender Komplexität: Flyby → Orbiter → Lander → Rover → Sample Return."
+}

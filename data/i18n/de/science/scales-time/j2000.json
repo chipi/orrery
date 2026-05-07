@@ -1,0 +1,14 @@
+{
+  "title": "J2000-Epoche",
+  "intro_sentence": "12:00 Mittag UTC am 1. Januar 2000 — der universelle Ankerpunkt für Bahnelemente.",
+  "narrative_101": [
+    "Bahnen driften. Langsam — Jahrhunderte — aber genug, dass du nicht einfach sagst \"Mars hat Exzentrizität 0,0934\" ohne \"ab wann\". Astronomen brauchten einen vereinbarten Zeitnullpunkt, wie Kartographen Greenwich. Sie wählten Mittag UTC 1. Januar 2000. Das ist J2000.",
+    "Warum Mittag? Weil Julianische Tageszählung — astronomischer Tageszähler seit 4713 v. Chr. — am Mittag tickt, nicht Mitternacht, damit Beobachter keinen Datumswechsel mitten in der Nachtarbeit haben. J2000 = Julianischer Tag 2.451.545,0.",
+    "Jede Bahn in diesem Simulator an J2000 verankert. Erde-Mittellänge bei J2000. Mars-Argument-of-Periapsis bei J2000. Planetenpositionen in /explore werden mit linearer Mathematik aus J2000 extrapoliert: \"starte hier, schreite mit dieser Rate, hier bist du jetzt\"."
+  ],
+  "body_paragraphs": [
+    "Bahnelemente driften — Störungen anderer Planeten schubsen Exzentrizität, Längen presessieren, Inklinationen wackeln. Damit Elemente Sinn machen: \"ab wann\" angeben. Standard: J2000 — Mittag UTC 1. Januar 2000. Bahnen werden zu diesem Moment zitiert; Vorwärts/Rückwärts mit Modellen.",
+    "Warum Mittag? Weil Julianisches Datum (JD) — kontinuierlicher Tageszähler seit 4713 v. Chr. Mittag UTC — am Mittag inkrementiert, nicht Mitternacht. J2000 entspricht exakt JD 2.451.545,0, sauberer Referenzpunkt ohne Bruchtage.",
+    "Orrerys Planetendaten nutzen J2000-Elemente überall. Mittellängen-Feld `L₀` in `/explore`-Panels = heliozentrischer Positionswinkel bei J2000. Mittlere Bewegung `n = 2π / T` rückt `L` linear vor."
+  ]
+}

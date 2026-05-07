@@ -1,0 +1,14 @@
+{
+  "title": "Sezioni coniche",
+  "intro_sentence": "Taglia un cono in quattro modi e ottieni ogni traiettoria kepleriana.",
+  "narrative_101": [
+    "Colpo di fortuna matematico: le forme dei sezioni coniche sono ESATTAMENTE le uniche su cui un corpo gravitazionale può viaggiare.",
+    "Continuum: cerchio/ellisse legato. Parabola = fuga. Iperbola oltre. Eccentricità è il manopola."
+  ],
+  "body_paragraphs": [
+    "Taglia un cono. Orizzontale: cerchio (e=0). Inclinato: ellisse. Parallelo al bordo: parabola (e=1). Oltre: iperbola.",
+    "Ogni orbita kepleriana è una delle quattro.",
+    "Designer usano tutte e quattro. Crociera ellisse, flyby iperbole, inserimento ellisse."
+  ],
+  "diagram_caption": "Quattro coniche."
+}

@@ -1,0 +1,118 @@
+{
+  "intro_heading": "Allora vuoi lanciare un razzo verso Marte.",
+  "intro_paragraphs": [
+    "Benvenuto. Questa è la parte di Orrery dove i pulsanti smettono di essere magia. Ogni etichetta dell'HUD, ogni contorno colorato del porkchop, ogni segno di accensione sulla traiettoria — questa sezione spiega da dove viene. Leggila come un fumetto: i diagrammi fanno il lavoro più grosso, e ogni termine in corsivo è un link che puoi seguire fin dove vuoi.",
+    "Costruiremo un razzo insieme. Non letteralmente — Orrery è un simulatore — ma la stessa catena di decisioni che prende un vero team di volo, nello stesso ordine. Alla fine saprai perché le finestre di lancio per Marte si aprono ogni 26 mesi e ogni mese per la Luna, perché esiste una traiettoria di ritorno libero, e perché la spinta è la parte economica e il combustibile è tutta la lotta."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — La gravità è l'unica fisica che conta.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Un'ellisse con il Sole a un fuoco.",
+      "diagram_caption": "Un corpo, un fuoco, un'ellisse.",
+      "paragraphs": [
+        "Lancia una palla da una torre alta abbastanza forte e il suolo si curva sotto di essa più velocemente di quanto cada — manca il pianeta per sempre. Quella è un'[orbita](orbits/keplerian-orbit). Ogni sonda, ogni pianeta lo fa.",
+        "Un'orbita ha [dimensione](orbits/semi-major-axis), [forma](orbits/eccentricity), [inclinazione](orbits/inclination) e fase ([anomalia vera](orbits/true-anomaly)). Cinque numeri descrivono qualsiasi orbita per sempre. Le [tre leggi di Keplero](orbits/keplers-laws) del 1609 funzionano ancora.",
+        "L'equazione più utile: [vis-viva](orbits/vis-viva). Inserisci raggio e dimensione orbita → velocità."
+      ]
+    },
+    {
+      "heading": "2 — L'equazione del razzo è il boss finale.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Curva del rapporto di massa.",
+      "diagram_caption": "Raddoppiare il Δv brucia molto più del doppio del propellente.",
+      "paragraphs": [
+        "Come cambi orbita? Bruci propellente. [Δv](propulsion/dv-budget) è la valuta universale dei voli spaziali.",
+        "L'[equazione di Tsiolkovsky](propulsion/tsiolkovsky) dice che Δv scala con il logaritmo del propellente. Saturn V era 90% propellente.",
+        "Due numeri lottano: la spinta — non importa dopo il decollo — e l'[impulso specifico](propulsion/specific-impulse) — quello che conta. L'[effetto Oberth](propulsion/oberth-effect) è il miglior trucco: brucia veloce vicino a un pianeta."
+      ]
+    },
+    {
+      "heading": "3 — Una volta in orbita, sei a metà strada da ovunque.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Ellisse tangente a Terra e Marte.",
+      "diagram_caption": "Due accensioni, un'ellisse.",
+      "paragraphs": [
+        "Heinlein lo scrisse: \"Una volta in orbita sei a metà strada.\" LEO costa ~9,4 km/s. Da lì a Marte solo ~3,6 km/s.",
+        "La rotta più economica è una [trasferta di Hohmann](transfers/hohmann-transfer). A Marte ~8,5 mesi.",
+        "Più veloce? Risolvi un [problema di Lambert](transfers/lambert-problem). Ancora oltre? Ruba velocità con un'[assistenza gravitazionale](transfers/gravity-assist). Voyager 2 ne usò quattro per Nettuno. Il sistema solare è cucito come [coniche raccordate](transfers/patched-conics) — archi di [sezioni coniche](transfers/conic-sections)."
+      ]
+    },
+    {
+      "heading": "4 — Scegli una finestra di lancio o aspetta due anni.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "Diagramma porkchop.",
+      "diagram_caption": "Il lobo è quando la natura rende Marte economico.",
+      "paragraphs": [
+        "Terra e Marte non stanno fermi. Geometria si ripete ogni ~26 mesi.",
+        "Il [diagramma porkchop](porkchop/what-is-a-porkchop) mostra questo. [Asse di partenza](porkchop/departure-axis), [tempo di volo](porkchop/tof-axis), Δv come [mappa di colore](porkchop/dv-heatmap). Le zone economiche sono lobi ovali. [Leggere i contorni](porkchop/contour-reading) è metà del mestiere.",
+        "[C₃](propulsion/c3) è l'energia di lancio. [V∞](propulsion/v-infinity) è la velocità a destinazione."
+      ]
+    },
+    {
+      "heading": "5 — Il volo sono solo cinque fasi ripetute.",
+      "diagram": "edl.svg",
+      "diagram_alt": "EDL.",
+      "diagram_caption": "Sei minuti di puro terrore.",
+      "paragraphs": [
+        "Praticamente ogni missione interplanetaria segue lo stesso copione:",
+        "[Lancio](mission-phases/launch), [Iniezione Trans-X](mission-phases/trans-x-injection), [TCM](mission-phases/tcm), [Inserimento orbitale](mission-phases/orbit-insertion), [EDL](mission-phases/edl).",
+        "Le missioni lunari a volte deviano in [NRHO](mission-phases/nrho). Apollo volò [traiettorie di ritorno libero](transfers/free-return). Apollo 13 deve la vita a questa geometria."
+      ]
+    },
+    {
+      "heading": "6 — Distanze e tempo, perché niente è dimensione terrestre.",
+      "diagram": "au.svg",
+      "diagram_alt": "L'unità astronomica.",
+      "diagram_caption": "1 UA = distanza Terra-Sole.",
+      "paragraphs": [
+        "Tre unità ovunque. [UA](scales-time/au), [minuto-luce](scales-time/light-minute) (4-24 min per Marte). Niente joystick — autonomia richiesta.",
+        "[J2000](scales-time/j2000), [siderale vs sinodico](scales-time/sidereal-synodic), [piano eclittico](scales-time/ecliptic-plane), [sistemi di riferimento](scales-time/frames)."
+      ]
+    }
+  ],
+  "tools_heading": "Ora vai a giocare.",
+  "tools_intro": "Questo è il giro completo. Ora sai abbastanza per leggere ogni etichetta del resto dell'app:",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Ruota il sistema solare. Vedi le leggi di Keplero in diretta."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Scegli destinazione e anno, vedi il porkchop."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Vola un arco di missione reale. L'HUD mostra Δv, V∞, MET, distanza Terra."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 sonde reali, da Luna 9 ad Artemis II."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Verità sul terreno. Dove ogni Apollo, ogni rover, ogni satellite attivo è davvero."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "I due avamposti orbitali abitati, modulo per modulo."
+    }
+  ],
+  "closing": "Sotto questa storia, l'enciclopedia: sei schede, quaranta voci, ogni formula in un solo posto."
+}

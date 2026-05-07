@@ -1,0 +1,14 @@
+{
+  "title": "Inserimento orbitale — IOL/IOM",
+  "intro_sentence": "L'accensione di frenaggio che cattura la sonda in orbita invece di lasciarla passare per sempre.",
+  "narrative_101": [
+    "Hai cruisato 8 mesi. Marte ingrandisce. Se non fai niente, passi e parti per sempre. Per orbitare: frena.",
+    "Matematica impietosa. Arrivi a vari km/s di V∞. Cadere sotto fuga locale. Accensione lunga dura precisa al periapsis. MRO 27 min. Cassini Saturno 95 min.",
+    "Se l'accensione fallisce o sotto-performa, scappi. Mars Climate Orbiter 1999 — bug conversione unità — accensione troppo debole, sonda distrutta."
+  ],
+  "body_paragraphs": [
+    "Quando arrivi vai veloce — abbastanza per scappare. Cattura: scarica abbastanza velocità.",
+    "Al periapsis, dove Oberth rende più economico. MRO V∞ ≈ 2,6 km/s, ~1 km/s per cattura. Cassini Saturno: 95-min.",
+    "Se accensione fallisce, sonda scappa. Mars Climate Orbiter è il monito: bug di conversione (libbre/Newton)."
+  ]
+}

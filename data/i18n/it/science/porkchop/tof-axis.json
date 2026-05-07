@@ -1,0 +1,14 @@
+{
+  "title": "Asse del tempo di volo",
+  "intro_sentence": "Quanto dura il viaggio.",
+  "narrative_101": [
+    "X dice QUANDO, Y dice QUANTO. Basso veloci. Alto lenti. Mars-classe 100-500 giorni.",
+    "Leggi trade-off in colpo d'occhio. Sali colonna — stessa data, transiti diversi. Basso rosso (veloce caro). Alto blu fresco (Hohmann).",
+    "Hohmann Marte sempre ~8,5 mesi. Più veloce paghi ripido."
+  ],
+  "body_paragraphs": [
+    "Y = durata transito. Mars Hohmann ~250 giorni, range Y 100-500.",
+    "Righe scambiano transito per Δv. Hohmann banda economica.",
+    "Forma zona economica rivela compromessi."
+  ]
+}

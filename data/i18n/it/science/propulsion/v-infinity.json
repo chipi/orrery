@@ -1,0 +1,14 @@
+{
+  "title": "V∞ — Velocità di eccesso iperbolico",
+  "intro_sentence": "La velocità che ti rimane dopo aver lasciato il pozzo gravitazionale di un pianeta.",
+  "narrative_101": [
+    "C₃ è quello che il razzo deve consegnare al LANCIO. V∞ è la stessa idea all'ALTRO capo.",
+    "Determina la grande accensione di arrivo. MRO V∞ ≈ 2,6 km/s, ~1 km/s per cattura. Voyager 2 Nettuno V∞ ≈ 8 km/s — non ha provato a fermarsi."
+  ],
+  "body_paragraphs": [
+    "Asintoto infinitamente lontano dal pianeta. Velocità lì = V∞. Costante sui due bracci dell'iperbole.",
+    "V∞ controlla l'accensione di arrivo. Cattura: scarica abbastanza per cadere sotto la fuga.",
+    "Sul HUD `/fly` V∞ appare entrando nella sfera di influenza."
+  ],
+  "diagram_caption": "Flyby iperbolico: V∞ è la velocità costante sugli asintoti."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Impulso specifico (Isp)",
+  "intro_sentence": "Quanto efficiente è un motore.",
+  "narrative_101": [
+    "Come km/litro per auto ma per razzi. Più alto = meglio.",
+    "Unità strana: secondi. Storica.",
+    "Solido ~250s. LH₂/LOX ~450s. Ipergolico ~310s. Ionico 3000-9000s. Regola: alta spinta per ascesa, alto Isp per crociera."
+  ],
+  "body_paragraphs": [
+    "Isp è il numero di efficienza. Spinta ÷ flusso massa propellente ÷ g₀ = secondi.",
+    "Quattro ordini di grandezza. Solido 250s. LH₂/LOX 452s. Ipergolico 314s. Ionico 3000-9000s.",
+    "Compromessi: alto Isp = bassa spinta. Ionico ~10 N — ottimo per crociere lunghe, inutile per ascesa."
+  ]
+}

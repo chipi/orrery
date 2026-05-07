@@ -1,0 +1,14 @@
+{
+  "title": "Trasferta di Hohmann",
+  "intro_sentence": "Il viaggio a due accensioni più economico tra orbite circolari coplanari.",
+  "narrative_101": [
+    "Sei in orbita Terra. Vuoi orbita Marte. Walter Hohmann 1925: trova un'ellisse che tocca entrambe.",
+    "Due accensioni, niente carburante sprecato. Il più economico ma anche il più lento."
+  ],
+  "body_paragraphs": [
+    "Da orbita circolare a una più alta: trasferta di Hohmann. Perielio tocca partenza, afelio tocca destinazione.",
+    "Il più economico a impulso fisso ma più lento. Terra-Marte ~259 giorni.",
+    "Sul porkchop `/plan`: bacino di celle turchesi attorno alla finestra Hohmann naturale."
+  ],
+  "diagram_caption": "Orbita Terra · Marte · ellisse di trasferta Hohmann."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Lancio + Ascesa",
+  "intro_sentence": "I dieci minuti più violenti di ogni missione.",
+  "narrative_101": [
+    "La maggior parte del pericolo è nei primi otto minuti. Razzo accende, lotta peso, sale per aria densa, accelera 0 a 7,5 km/s.",
+    "~9,4 km/s Δv ma solo 7,9 contribuiscono a velocità orbitale. Resto = perdita gravità + traino.",
+    "Abbastanza alto, atmosfera cede. Stadi separano, ogive cadono. SpaceX recupera primi stadi."
+  ],
+  "body_paragraphs": [
+    "Ascesa ~9,4 km/s ma appena 7,9 sono velocità orbitale reale. Programma di pitching minimizza perdite.",
+    "Stadi cadono. Prima separazione, secondo accende, ogiva jettison.",
+    "In `/missions` il campo launch_vehicle: Saturn V Apollo, Atlas V Curiosity, Falcon 9 Crew Dragon, SLS Artemis I."
+  ],
+  "diagram_caption": "Profilo lancio: salita verticale → pitching → stadiazione → inserimento."
+}

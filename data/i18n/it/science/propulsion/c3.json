@@ -1,0 +1,15 @@
+{
+  "title": "C₃ — Energia caratteristica",
+  "intro_sentence": "Quanta energia per massa il razzo serve per lasciare il pozzo gravitazionale terrestre con velocità residua.",
+  "narrative_101": [
+    "C₃ è gergo ingegneristico: quanto forte deve lanciare il razzo? C₃=0 = appena scappa. C₃>0 = velocità extra.",
+    "km²/s². Marte 8-12. Giove ~80. New Horizons C₃=158 — più alto mai — Plutone in 9,5 anni.",
+    "Ogni razzo ha curva C₃ vs payload. Falcon Heavy 16 t a C₃=10, solo 5 t a C₃=80."
+  ],
+  "body_paragraphs": [
+    "C₃ = V∞² in km²/s². Energia oltre la fuga.",
+    "Vehicoli caratterizzati da curva C₃ vs payload.",
+    "Nel FLIGHT tab di `/missions`: C₃ è il primo dato canonico."
+  ],
+  "formula_caption": "C₃ = V∞ al quadrato."
+}

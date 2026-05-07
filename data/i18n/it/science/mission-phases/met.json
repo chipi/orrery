@@ -1,0 +1,14 @@
+{
+  "title": "MET — Tempo trascorso missione",
+  "intro_sentence": "Un cronometro semplice che inizia al lancio e non si ferma mai.",
+  "narrative_101": [
+    "MET = Mission Elapsed Time. Cronometro. Day 0 hour 0 = liftoff. Tutto dopo etichettato MET. Apollo 11 primo passo Luna: MET 109h 24min.",
+    "Perché non calendario? Calendario non ha rapporto con il lavoro della sonda.",
+    "In `/fly` MET in giorni. HUD MET 173d al flyby Marte."
+  ],
+  "body_paragraphs": [
+    "MET = tempo dal lancio. Day 0 = liftoff. Ogni evento etichettato MET.",
+    "Perché MET? Orologio Terra non corrisponde a sonda veloce o lontana. Voyager 1 a 22,5 ore-luce.",
+    "Sul HUD `/fly` MET in giorni."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Traiettoria di ritorno libero",
+  "intro_sentence": "Una traiettoria che passa il bersaglio e piega la gravità in un biglietto di ritorno.",
+  "narrative_101": [
+    "Immagina di volare verso la Luna. Se il motore fallisce? Risposta: scegli un percorso dove la gravità ti riporta automaticamente.",
+    "Vera figura-8. Apollo 8 prima missione equipaggiata. Apollo 13 deve la vita a questa tecnica."
+  ],
+  "body_paragraphs": [
+    "Trucco principale: lascia Terra, vola vicino alla Luna (o Marte), gravità piega la tua traiettoria indietro.",
+    "Apollo 8 prima. Apollo 13 famosamente. Per Marte geometria più difficile — loop di 500 giorni.",
+    "Default `/fly` di Orrery, ORRERY-1: Terra-Marte-Terra ritorno libero senza TCM."
+  ],
+  "diagram_caption": "Terra → flyby Marte → Terra. Gravità Luna fa l'inversione gratis."
+}

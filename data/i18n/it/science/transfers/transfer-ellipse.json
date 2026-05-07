@@ -1,0 +1,14 @@
+{
+  "title": "Ellisse di trasferta",
+  "intro_sentence": "L'arco kepleriano che porta una sonda da un'orbita all'altra.",
+  "narrative_101": [
+    "Pianificazione di missione sembra di motori. È per lo più scegliere un'ellisse.",
+    "Stesse regole di qualsiasi orbita kepleriana. Sonda vola solo METÀ — sale, scende, scende."
+  ],
+  "body_paragraphs": [
+    "Dopo aver lasciato l'orbita Terra sei su un'ellisse intorno al Sole = orbita di trasferta.",
+    "Due ancoraggi: partenza (perielio se esterno) e arrivo (afelio). Semiasse = media.",
+    "Nel HUD `/fly` la sonda traccia questa ellisse in tempo reale."
+  ],
+  "diagram_caption": "Due orbite coplanari connesse da ellisse con Sole al fuoco."
+}

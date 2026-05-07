@@ -1,0 +1,14 @@
+{
+  "title": "Leggere la fattibilità",
+  "intro_sentence": "Una cella è fattibile quando la capacità Δv del razzo ≥ costo Δv.",
+  "narrative_101": [
+    "Domanda decisiva: il mio razzo può veramente volare questo? Ogni razzo ha capacità Δv pubblicata.",
+    "Celle dove capacità > costo: fattibili con margine. Costo > capacità: non volabile.",
+    "Scegli razzo in /plan, porkchop sovrappone margine/deficit."
+  ],
+  "body_paragraphs": [
+    "Scegli vehicle: Falcon Heavy, SLS, Atlas V. Capacità Δv massima nota. Δv_costo ≤ Δv_capacità = fattibile.",
+    "In `/plan` scelta vehicle, Orrery sovrappone indicatore. Turchese = fattibile gran margine. Rosso = impossibile.",
+    "Analisi fattibilità in una vista. Veri pianificatori iterano."
+  ]
+}

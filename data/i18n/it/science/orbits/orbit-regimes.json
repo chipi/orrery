@@ -1,0 +1,16 @@
+{
+  "title": "Regimi orbitali — LEO, MEO, GEO, HEO",
+  "intro_sentence": "Le orbite terrestri si raggruppano in quattro bande di altitudine.",
+  "narrative_101": [
+    "Scegli un satellite. Ciò che conta non è cosa fa — è a quale altitudine vive.",
+    "LEO fino a ~2000 km. MEO 2000-35786 km (GPS). GEO esattamente 35786 km. HEO è il jolly."
+  ],
+  "body_paragraphs": [
+    "LEO < 2000 km: economico, periodo ~90 min, vita corta per attrito.",
+    "MEO 2000-35786 km: navigazione. GPS 20200, GLONASS 19100, Galileo 23222.",
+    "GEO 35786 km: periodo = giorno siderale, satellite stazionario. TV broadcast, meteo.",
+    "HEO: perigeo basso + apogeo alto. Molniya per alte latitudini.",
+    "Cambiare regime caro. LEO a GEO ~3,9 km/s. LEO a fuga ~3,2 — più economico, controintuitivo."
+  ],
+  "diagram_caption": "Bande terrestri concentriche."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Iniezione Trans-X — ITL/ITM/ITV/ITJ",
+  "intro_sentence": "La grande accensione di partenza che ti lancia su una traiettoria verso la destinazione.",
+  "narrative_101": [
+    "Step 1: LEO. Step 2: ITL/ITM/ITV/ITJ. X = iniziale destinazione.",
+    "Accensione dura drammatica 5-30 minuti al perigeo (Oberth).",
+    "Apollo TLI: 3,05 km/s. Curiosity TMI: 3,7 km/s. Voyager 2 trans-Giove ~7 km/s."
+  ],
+  "body_paragraphs": [
+    "Dopo lancio in LEO. Seconda accensione alza apogeo a destinazione = iniezione Trans-X.",
+    "Al perigeo orbita parking (Oberth massimizza). Hohmann Marte: TMI ~3,6 km/s sopra LEO 7,9.",
+    "In FLIGHT tab `/missions`: ∆v_TLI o ∆v_TMI."
+  ]
+}

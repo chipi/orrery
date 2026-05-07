@@ -1,0 +1,15 @@
+{
+  "title": "Effetto Oberth",
+  "intro_sentence": "Brucia profondo in un pozzo gravitazionale e il propellente fa più lavoro.",
+  "narrative_101": [
+    "Magia gratuita della fisica. Stesso propellente bruciato a velocità ALTA dà molto più energia utile.",
+    "Energia cinetica va come v² — piccolo Δv su alta v aggiunge proporzionalmente di più.",
+    "Hermann Oberth 1929. TLI Apollo al perigeo, hugging Terra. Parker Solar Probe brucia al perielio del Sole."
+  ],
+  "body_paragraphs": [
+    "Energia cinetica ½mv². Piccolo Δv ad alta v cambia KE molto più che a bassa.",
+    "Hermann Oberth 1929. Schedula grandi accensioni dove vai già veloce.",
+    "Compromesso: accensioni profonde sono brevi e intense. Sonda deve gestire calore, pressione, timing."
+  ],
+  "diagram_caption": "Stesso Δv a periapside (alta v) dà più guadagno energia che apoapside (bassa v)."
+}

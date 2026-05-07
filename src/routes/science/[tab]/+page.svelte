@@ -27,60 +27,43 @@
   <title>{tabLabel(data.tab)} · {m.science_page_title()}</title>
 </svelte:head>
 
-<div class="page">
-  <nav class="crumb">
-    <a href="{base}/science">{m.science_heading()}</a>
-    <span class="sep">›</span>
-    <span>{tabLabel(data.tab)}</span>
-  </nav>
-
+<header class="tab-hero">
+  <p class="eyebrow">{m.science_heading()}</p>
   <h1>{tabLabel(data.tab)}</h1>
+</header>
 
-  {#if data.sections.length === 0}
-    <p class="empty">{m.science_tab_empty()}</p>
-  {:else}
-    <ul class="section-list">
-      {#each data.sections as section (section.id)}
-        <li>
-          <a class="section-row" href="{base}/science/{data.tab}/{section.id}">
-            <span class="section-name">{section.title}</span>
-            <span class="section-intro">{section.intro_sentence}</span>
-          </a>
-        </li>
-      {/each}
-    </ul>
-  {/if}
-</div>
+{#if data.sections.length === 0}
+  <p class="empty">{m.science_tab_empty()}</p>
+{:else}
+  <ul class="section-list">
+    {#each data.sections as section (section.id)}
+      <li>
+        <a class="section-row" href="{base}/science/{data.tab}/{section.id}">
+          <span class="section-name">{section.title}</span>
+          <span class="section-intro">{section.intro_sentence}</span>
+        </a>
+      </li>
+    {/each}
+  </ul>
+{/if}
 
 <style>
-  .page {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 24px 16px 48px;
+  .tab-hero {
+    margin-bottom: 24px;
   }
-  .crumb {
+  .eyebrow {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
-    margin-bottom: 12px;
-  }
-  .crumb a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-  }
-  .crumb a:hover {
-    color: #4ecdc4;
-  }
-  .sep {
-    margin: 0 8px;
-    opacity: 0.6;
+    margin: 0 0 6px;
+    text-transform: uppercase;
   }
   h1 {
     font-family: var(--font-display);
     font-size: 28px;
     letter-spacing: 4px;
-    margin: 0 0 24px;
+    margin: 0;
   }
   .empty {
     font-family: 'Space Mono', monospace;

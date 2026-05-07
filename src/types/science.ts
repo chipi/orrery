@@ -50,6 +50,9 @@ export interface ScienceSectionOverlay {
   title: string;
   intro_sentence: string;
   body_paragraphs: string[];
+  /** Optional 1-4 paragraph conversational lead-in that expands the matching
+   * landing-page chapter. Renders above the formula/body in the section view. */
+  narrative_101?: string[];
   formula_caption?: string;
   diagram_caption?: string;
 }

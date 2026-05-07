@@ -30,7 +30,7 @@
   <meta name="description" content={section.intro_sentence} />
 </svelte:head>
 
-<article class="page">
+<article class="reading">
   <nav class="crumb">
     <a href="{base}/science">{m.science_heading()}</a>
     <span class="sep">›</span>
@@ -43,6 +43,15 @@
     <h1>{section.title}</h1>
     <p class="lede">{section.intro_sentence}</p>
   </header>
+
+  {#if section.narrative_101 && section.narrative_101.length > 0}
+    <section class="narrative-101" aria-label="A focused 101">
+      <p class="badge">101 · zoom in</p>
+      {#each section.narrative_101 as para (para)}
+        <p>{para}</p>
+      {/each}
+    </section>
+  {/if}
 
   {#if data.formulaHtml}
     <figure class="formula">
@@ -99,10 +108,8 @@
 </article>
 
 <style>
-  .page {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 24px 16px 64px;
+  .reading {
+    max-width: 720px;
   }
   .crumb {
     font-family: 'Space Mono', monospace;
@@ -134,6 +141,31 @@
     font-size: 17px;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 24px;
+  }
+  .narrative-101 {
+    margin: 24px 0;
+    padding: 18px 20px;
+    background: rgba(78, 205, 196, 0.05);
+    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    border-radius: 4px;
+  }
+  .narrative-101 .badge {
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin: 0 0 10px;
+  }
+  .narrative-101 p:not(.badge) {
+    font-family: 'Crimson Pro', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 12px;
+  }
+  .narrative-101 p:not(.badge):last-child {
+    margin-bottom: 0;
   }
   .formula {
     margin: 24px 0;

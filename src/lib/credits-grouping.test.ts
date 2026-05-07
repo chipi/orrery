@@ -115,9 +115,9 @@ describe('provenanceSourceId', () => {
     expect(
       provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'NASA' })),
     ).toBe('nasa');
-    expect(
-      provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'ESA' })),
-    ).toBe('esa');
+    expect(provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'ESA' }))).toBe(
+      'esa',
+    );
     expect(
       provenanceSourceId(makePhoto({ source_type: 'wikimedia-commons', agency: 'JAXA' })),
     ).toBe('jaxa');
@@ -152,9 +152,7 @@ describe('provenanceSourceId', () => {
   });
   it('maps direct-other (e.g. Solar System Scope) to solar-system-scope', () => {
     expect(
-      provenanceSourceId(
-        makePhoto({ source_type: 'direct-other', agency: 'Solar System Scope' }),
-      ),
+      provenanceSourceId(makePhoto({ source_type: 'direct-other', agency: 'Solar System Scope' })),
     ).toBe('solar-system-scope');
   });
   it('maps direct-agency by agency name', () => {

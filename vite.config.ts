@@ -35,6 +35,10 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,webp,woff2,ico}', 'manifest.webmanifest'],
         // Don't precache the porkchop grid JSONs — large + per-route.
         globIgnores: ['**/porkchop/*.json'],
+        // Default cap is 2 MiB; some agency mission photos (e.g. Hope Probe
+        // hi-res) sit at 3–4 MB. Bump the precache ceiling to 8 MiB so the
+        // PWA build doesn't reject them.
+        maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
         runtimeCaching: [
           {
             // Mission base files + per-locale overlays.

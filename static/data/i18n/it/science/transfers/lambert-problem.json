@@ -1,0 +1,14 @@
+{
+  "title": "Problema di Lambert",
+  "intro_sentence": "Date due posizioni e un tempo di transito, trova l'orbita che le connette.",
+  "narrative_101": [
+    "Hohmann è il più economico ma non ti lascia scegliere date. Lambert lo fa.",
+    "Lambert 1761: esattamente un'ellisse (a volte due) connette due punti in tempo dato. Cuore di ogni porkchop."
+  ],
+  "body_paragraphs": [
+    "Domanda: sono qui, voglio essere lì in X giorni. Quale orbita? Due vettori e tempo → orbita unica.",
+    "Hohmann = soluzione Lambert specifica. Tempo stretto = ellisse più eccentrica.",
+    "Orrery risolve Lambert in Web Worker per il porkchop di `/plan`."
+  ],
+  "diagram_caption": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica."
+}

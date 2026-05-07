@@ -1,0 +1,15 @@
+{
+  "title": "Le tre leggi di Keplero",
+  "intro_sentence": "Tre regole osservazionali che fecero del moto planetario una scienza chiusa un secolo prima di Newton.",
+  "narrative_101": [
+    "Keplero non aveva calcolo, gravità di Newton, computer. Aveva 20 anni di osservazioni di Marte di Tycho Brahe e pazienza. Ne ricavò tre regole ancora esatte 400 anni dopo.",
+    "Legge 1: ellissi non cerchi. Legge 2: aree uguali in tempi uguali. Legge 3: T² scala come a³."
+  ],
+  "body_paragraphs": [
+    "Prima legge: pianeti su ellissi, Sole a un fuoco. Prima di Keplero solo cerchi. Dati su Marte non si adattavano.",
+    "Seconda legge: aree uguali in tempi uguali. Conservazione del momento angolare.",
+    "Terza legge: `T² ∝ a³`. Con Terra T=1, a=1, leggi qualsiasi periodo dalla distanza."
+  ],
+  "formula_caption": "Terza legge moderna: T² dipende solo da a (e μ).",
+  "diagram_caption": "Aree uguali in tempi uguali."
+}

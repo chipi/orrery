@@ -1,0 +1,15 @@
+{
+  "title": "Semiasse maggiore",
+  "intro_sentence": "Metà del diametro più lungo dell'ellisse — l'unico numero che fissa il periodo orbitale.",
+  "narrative_101": [
+    "Spago, due puntine, matita. Disegnano un'ellisse. Il semiasse maggiore è la metà della linea più lunga — la dimensione dell'orbita.",
+    "Magia: questo solo numero dice quanto Mars impiega a fare il giro del Sole. Non la forma, non l'inclinazione. Solo la dimensione."
+  ],
+  "body_paragraphs": [
+    "Appiattisci un'ellisse kepleriana nella sua dimensione più lunga e hai l'asse maggiore. Tagliatelo a metà: semiasse maggiore — `a`. Distanza media dal corpo al fuoco.",
+    "Importante per la terza legge di Keplero: `T² ∝ a³`. Il periodo dipende solo dal semiasse maggiore.",
+    "In `/explore`: Terra a ≈ 1,0 UA. Marte 1,52 UA. Giove 5,2 UA."
+  ],
+  "formula_caption": "Semiasse maggiore come media dei raggi perielio e afelio.",
+  "diagram_caption": "Asse maggiore da perielio a afelio. Semiasse a è la metà."
+}

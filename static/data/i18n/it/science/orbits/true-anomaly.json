@@ -1,0 +1,14 @@
+{
+  "title": "Anomalia vera",
+  "intro_sentence": "L'angolo che dice dove un corpo è sull'orbita ora, misurato dal perielio.",
+  "narrative_101": [
+    "Pianeta sulla sua ellisse. Abbiamo dimensione, forma, inclinazione. Dove è ora? Anomalia vera. Stai al Sole, punta al perielio, misura l'angolo.",
+    "Ma non sweepa uniformemente (seconda legge di Keplero). Astronomi inventarono altri due angoli — media ed eccentrica — uniformi, e una scala di equazioni li connette."
+  ],
+  "body_paragraphs": [
+    "Gli elementi descrivono forma e orientamento; l'anomalia vera (`ν`) dice dove. Dal fuoco al perielio, ruota il dito al corpo.",
+    "Da 0 (perielio) a 180° (afelio) e ritorno. Non uniforme.",
+    "Anomalia media (uniforme), eccentrica (ponte). Equazione di Keplero `M = E - e·sin(E)`."
+  ],
+  "diagram_caption": "Anomalia vera ν misurata al fuoco, dal perielio alla posizione attuale."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Epoca J2000",
+  "intro_sentence": "Mezzogiorno UTC del 1 gennaio 2000 — l'istante ancorato universale.",
+  "narrative_101": [
+    "Orbite derivano. Lentamente — secoli. Astronomi scelsero un punto zero condiviso. J2000 = mezzogiorno UTC 1 gennaio 2000.",
+    "Perché mezzogiorno? Decompto giorni giuliani — incrementa a mezzogiorno per non avere cambio data nella notte di osservazione. J2000 = JD 2.451.545,0.",
+    "Ogni orbita in questo simulatore ancorata a J2000."
+  ],
+  "body_paragraphs": [
+    "Elementi orbitali derivano. Per significato: \"a partire da quando\". Standard: J2000.",
+    "Perché mezzogiorno? Data giuliana incrementa mezzogiorno. J2000 = JD 2.451.545,0 esatto.",
+    "Dati Orrery usano elementi J2000."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Orbita kepleriana",
+  "intro_sentence": "Un'ellisse con il Sole a un fuoco — l'orbita più semplice possibile.",
+  "narrative_101": [
+    "Immagina di lanciare una palla da una torre. Cade. Più forte, cade più lontano. Così forte che il suolo si curva sotto di essa più veloce — non cade mai. Quella è un'orbita.",
+    "Un'orbita kepleriana tratta la gravità come una sola trazione verso un corpo pesante. Due corpi, una forza. Il risultato è sempre un'ellisse."
+  ],
+  "body_paragraphs": [
+    "Quando cadi verso qualcosa di massiccio e lo manchi, ottieni un'orbita kepleriana. Traiettoria = ellisse, corpo a un fuoco. Terra-Sole, Luna-Terra, ogni sonda — tutte kepleriane in prima approssimazione.",
+    "Sei numeri: dimensione (semiasse maggiore), allungamento (eccentricità), tre angoli (inclinazione, longitudine del nodo ascendente, argomento del periapside), e posizione (anomalia vera). Sono gli elementi orbitali.",
+    "Il modello si rompe quando un terzo corpo conta. Orrery usa kepleriano per la storia eliocentrica e coniche raccordate per il resto."
+  ],
+  "diagram_caption": "Ellisse con fuoco F₁ al Sole. Semiasse maggiore a · perielio e afelio sulla linea degli apsidi."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Periodo siderale vs sinodico",
+  "intro_sentence": "Due modi di chiedere \"quanto spesso?\" — stesso corpo, frame diverso.",
+  "narrative_101": [
+    "Siderale: tempo per un giro completo contro stelle fisse. Marte 687 giorni Terra.",
+    "Sinodico: tempo perché Terra e Marte si ALLINEINO STESSO MODO. 780 giorni = ~26 mesi.",
+    "Perché finestre Marte ogni 26 mesi. Curiosity 2011, Perseverance 2020."
+  ],
+  "body_paragraphs": [
+    "Siderale: orbita completa rispetto a stelle. Marte 687 giorni.",
+    "Sinodico: posizione relativa rispetto a altro corpo. Marte sinodico 780 giorni ≈ 26 mesi.",
+    "Math: 1/T_syn = 1/T_inner − 1/T_outer."
+  ],
+  "diagram_caption": "Siderale vs sinodico."
+}

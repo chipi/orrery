@@ -1,0 +1,18 @@
+{
+  "title": "Tipi di missione — Flyby, Orbiter, Lander, Rover, Sample Return",
+  "intro_sentence": "Cinque archetipi.",
+  "narrative_101": [
+    "Ogni missione robotica sceglie una delle cinque strategie.",
+    "FLYBY: mira, fotografa, parti. Voyager, New Horizons.",
+    "ORBITER: frena, resta anni. LANDER + EDL. ROVER + ruote.",
+    "SAMPLE RETURN apice: lander + ascesa + crociera ritorno + EDL Terra. Hayabusa-2, Apollo."
+  ],
+  "body_paragraphs": [
+    "Flyby skip insertion. Voyager Jupiter ~10 km/s, New Horizons Plutone ~14 km/s.",
+    "Orbiter scambia Δv per tempo. Insertion 1-2 km/s, anni di mappatura.",
+    "Lander aggiungono EDL e massa strutturale. ~50% successo storico Marte.",
+    "Rover aggiungono ruote, autonomia. Curiosity 899 kg → aeroshell 4 t → crociera 4 t → Saturn V class.",
+    "Sample return = apice. Massa che lascia Terra ~10× massa restituita per Marte. Hayabusa-2 ~5g Ryugu."
+  ],
+  "diagram_caption": "Cinque archetipi per complessità crescente."
+}

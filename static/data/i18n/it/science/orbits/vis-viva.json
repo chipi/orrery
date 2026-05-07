@@ -1,0 +1,16 @@
+{
+  "title": "Equazione di vis-viva",
+  "intro_sentence": "Quanto velocemente un corpo si muove — dal raggio attuale e dal semiasse maggiore.",
+  "narrative_101": [
+    "Se impari una sola equazione, sia questa. Tre input → velocità. Una radice quadrata.",
+    "Funziona per conservazione di energia. Sonda scambia altezza per velocità.",
+    "Velocità in /fly? Vis-viva. Δv del porkchop? Vis-viva."
+  ],
+  "body_paragraphs": [
+    "Vis-viva è l'equazione di lavoro. `μ`, `r`, `a` → velocità `v`.",
+    "Energia meccanica costante sull'orbita. Perielio velocità alta. Afelio bassa. Terra: 30,3 vs 29,3 km/s.",
+    "In Orrery: `/fly` HUD velocità in tempo reale. `/plan` energie di partenza/arrivo."
+  ],
+  "formula_caption": "v da μ, r, a.",
+  "diagram_caption": "Velocità varia: alta perielio, bassa afelio."
+}

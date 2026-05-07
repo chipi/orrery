@@ -1,0 +1,14 @@
+{
+  "title": "Sistemi di riferimento eliocentrico/geocentrico/centrato corpo",
+  "intro_sentence": "Tre frame per tre domande.",
+  "narrative_101": [
+    "Dove è la Luna? Dipende da dove SEI tu. Da Terra overhead. Da Sole punto piccolo. Da Marte irrilevante.",
+    "Vol spaziale giocola tre. Eliocentrico per crociera. Geocentrico per satelliti. Centrato corpo per insertion e ops superficie.",
+    "Cambiare = aritmetica. Ma importa concettualmente."
+  ],
+  "body_paragraphs": [
+    "Eliocentrico: origine Sole. Naturale per movimento solare. `/explore` fondamentale eliocentrico.",
+    "Geocentrico: origine Terra. Per satelliti, Luna. `/earth`.",
+    "Centrato corpo: origine corpo orbitato. Per insertion, ops superficie."
+  ]
+}

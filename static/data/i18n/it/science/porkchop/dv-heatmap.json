@@ -1,0 +1,14 @@
+{
+  "title": "Mappa di calore Δv",
+  "intro_sentence": "La scala di colore.",
+  "narrative_101": [
+    "Lo scopo del porkchop sono i colori. Riconoscimento di pattern.",
+    "Turchese ~3 km/s — Hohmann Marte. Blu ~5. Giallo ~7. Rosso >9 — non realizzabile attualmente.",
+    "Hover per Δv esatto. Scan in un secondo = destinazione raggiungibile."
+  ],
+  "body_paragraphs": [
+    "Turchese basso Δv ~3 km/s. Blu ~5. Giallo ~7. Rosso >9 — costi run-away.",
+    "Scala Orrery topa ~11+ km/s. Voyager 1 lanciò C₃ ≈ 99 — limite 1977.",
+    "Hover per Δv esatto. Mappa visualizza risposta."
+  ]
+}

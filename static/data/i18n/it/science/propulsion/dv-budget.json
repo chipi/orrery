@@ -1,0 +1,15 @@
+{
+  "title": "Δv come budget di missione",
+  "intro_sentence": "Il singolo numero che dice se una missione è possibile.",
+  "narrative_101": [
+    "Il denaro per il volo spaziale non sono dollari. È Δv in km/s. Ogni accensione costa.",
+    "Twist mortale: il razzo non ha Δv illimitato. Tetto duro fissato da Tsiolkovsky. Se la fattura supera il tetto, missione impossibile.",
+    "Riferimenti: superficie Terra a LEO ~9,4 km/s. Hohmann a Marte +3,6. Inserimento +2. Atterraggio Marte ~15 km/s totali."
+  ],
+  "body_paragraphs": [
+    "Δv è la valuta contabile. Ogni accensione costa.",
+    "Lato offerta: Tsiolkovsky fissa il tetto. Lato domanda: design traiettoria sceglie cammino più economico.",
+    "Riferimenti: LEO 9,4. Hohmann Marte +3,6. MOI +2. Atterraggio Marte ~15 km/s — al limite chimico."
+  ],
+  "diagram_caption": "Barre impilate: lancio + iniezione + crociera + arrivo = budget totale."
+}

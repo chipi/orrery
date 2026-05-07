@@ -1,0 +1,14 @@
+{
+  "title": "Inclinazione",
+  "intro_sentence": "L'inclinazione del piano orbitale rispetto a un piano di riferimento.",
+  "narrative_101": [
+    "Tieni un piatto piatto — è il piano di riferimento. Inclinalo. Quell'angolo è l'inclinazione.",
+    "Importa perché cambiarla è brutalmente caro. ISS a 51,6° per Bajkonur. Imager polari. GEO equatoriale."
+  ],
+  "body_paragraphs": [
+    "Inclinazione (`i`) = angolo tra piano orbitale e riferimento. Eliocentrico: eclittica. Satelliti: equatore.",
+    "Pianeti vicino all'eclittica. Mercurio 7° outlier. Plutone 17° — motivo del declassamento.",
+    "Satelliti: equatoriale (0°) GEO. ~28° Cape Canaveral. ~51,6° ISS. Polare (~90°) imaging."
+  ],
+  "diagram_caption": "Piano orbitale inclinato di angolo i. Nodo ascendente N."
+}

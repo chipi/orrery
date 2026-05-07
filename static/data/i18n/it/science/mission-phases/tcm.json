@@ -1,0 +1,14 @@
+{
+  "title": "TCM — Manovra di correzione di traiettoria",
+  "intro_sentence": "Piccola accensione di metà crociera per correggere errori di lancio.",
+  "narrative_101": [
+    "Nessun lancio è perfetto. 5 cm/s errore al inizio = 100 km miss a Marte.",
+    "TCM = accensioni minuscole — pochi m/s — settimane/mesi in crociera. Economiche in carburante, costose operativamente.",
+    "La maggior parte delle missioni interplanetarie pianifica quattro. Apollo 4-5. Curiosity 4."
+  ],
+  "body_paragraphs": [
+    "Nessun lancio è perfetto. Traiettoria reale devia di decine di m/s. 5 cm/s errore TLI = 100 km miss Luna.",
+    "Tre o quattro tipiche. TCM-1 giorni dopo. TCM-2 settimane. TCM-3 vicino arrivo. TCM-4 trim finale.",
+    "Campo `tcm_count` in FLIGHT tab. Curiosity 4. MRO 4. Apollos 4-5."
+  ]
+}

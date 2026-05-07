@@ -1,0 +1,15 @@
+{
+  "title": "EDL — Ingresso, Discesa, Atterraggio",
+  "intro_sentence": "Sette minuti dal cima dell'atmosfera a ruote-a-terra — la fase più automatizzata.",
+  "narrative_101": [
+    "Marte è 14 minuti-luce. Quando il segnale del rover raggiunge Mission Control, il rover è a terra da 14 minuti — vivo o morto. Nessuno sulla Terra pilota un atterraggio Marte.",
+    "Step 1: colpisci atmosfera a 5,8 km/s. Scudo termico. Step 2: paracadute supersonico a Mach 2. Step 3: scudo via, paracadute via, retro-razzi. Step 4: touchdown.",
+    "Tricks diversi. Apollo: motore di discesa diretto. Curiosity/Perseverance: il folle Sky Crane. Zhurong ibrido. Sette minuti chiamati \"sette minuti di terrore\" a JPL."
+  ],
+  "body_paragraphs": [
+    "Ingresso a atmosfera sensibile — ~125 km Marte, 100 km Terra. Trascinamento atmosferico frena.",
+    "Discesa: paracadute supersonici a Mach 1,5-2. Scudo via, retro-razzi, ultimi metri su getti motore.",
+    "Curiosity/Perseverance Sky Crane a 20m, rover su cavi."
+  ],
+  "diagram_caption": "EDL: ingresso → paracadute → discesa propulsa → touchdown."
+}

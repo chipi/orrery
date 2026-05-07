@@ -1,0 +1,15 @@
+{
+  "title": "Cos'è un diagramma porkchop?",
+  "intro_sentence": "Una mappa di calore 2D che mostra costo Δv per ogni coppia (data partenza, tempo transito).",
+  "narrative_101": [
+    "Pianificatori non calcolano una traiettoria — MILIONI in una griglia. Dipingono mappa di calore. Economico azzurro freddo, caro rosso. Sembra costoletta.",
+    "Perché tutta la mappa? Vincoli reali — finestra rampa, stagione marziana.",
+    "Apri /plan. Scegli destinazione, anno. Vedi porkchop calcolato live. Hover per dettagli."
+  ],
+  "body_paragraphs": [
+    "Scegli data X, transito Y. Colore = Δv. Turchese economico, rosso caro.",
+    "Ogni cella = problema Lambert. Lambert milioni di volte → contorni emergono. Minimi naturali = finestre.",
+    "`/plan` di Orrery mostra porkchop per nove destinazioni."
+  ],
+  "diagram_caption": "Porkchop: X partenza, Y transito, colore Δv."
+}

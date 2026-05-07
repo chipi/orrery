@@ -1,0 +1,14 @@
+{
+  "title": "Impulsion spécifique (Isp)",
+  "intro_sentence": "Efficacité d'un moteur — combien de secondes un kg de propergol produit un kg de poussée.",
+  "narrative_101": [
+    "Comme l/100km mais pour fusées. Plus haut = mieux = plus de Δv du même propergol.",
+    "Unité étrange : secondes. Historique. Plus grand = plus efficace.",
+    "Solide ~250s. LH₂/LOX ~450s. Hypergol ~310s. Ionique 3000-9000s. Règle : haute poussée pour ascension, haute Isp pour croisière."
+  ],
+  "body_paragraphs": [
+    "Isp = nombre d'efficacité fusée. Définition : poussée ÷ débit massique propergol ÷ g₀ = secondes.",
+    "Quatre ordres de grandeur. Solide 250s. LH₂/LOX (SSME) 452s. Hypergol (Apollo SM) 314s. Ionique 3000-9000s. Nucléaire thermique (NERVA, jamais volé) 800-1000s.",
+    "Compromis. Haute Isp = basse poussée souvent. Ionique ~10 N — utile pour croisières années, inutile pour quitter Terre. Missions étagent : chimique ascension, ionique croisière."
+  ]
+}

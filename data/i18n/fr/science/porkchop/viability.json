@@ -1,0 +1,14 @@
+{
+  "title": "Lire viabilité",
+  "intro_sentence": "Cellule viable quand capacité Δv fusée ≥ coût Δv cellule — porkchop transforme comparaison en carte oui/non.",
+  "narrative_101": [
+    "Question qui transforme porkchop joli en décision réelle : ma fusée peut-elle voler ça ? Chaque fusée a capacité Δv publiée pour masse charge.",
+    "Cellules où capacité > coût : viables avec marge. Égales : viables mais serrées. Coût > capacité : pas volable avec cette fusée. Physique dit non.",
+    "Pick fusée /plan, porkchop superpose marge/déficit. Lobe rétrécit pour petites fusées, étend pour grandes. Vrais planificateurs itèrent."
+  ],
+  "body_paragraphs": [
+    "Choisis vehicle : Falcon Heavy, SLS Block 1, Atlas V N22. Capacité Δv max connue. Compare au porkchop : Δv_coût ≤ Δv_capacité = lancement viable. Plus grand = impossible sans autre vehicle.",
+    "Sur `/plan` choisi vehicle, Orrery superpose indicateur marge/déficit. Cellules turquoise → \"faisable, grande marge\". Jaunes → \"faisable mais serré\". Rouges → impossible-avec-ce-vehicle, affichage déficit.",
+    "Analyse faisabilité mission une vue. Vrais planificateurs run plusieurs fois — vehicles différents, masses, variantes — pour combinaison moins chère qui satisfait exigences scientifiques."
+  ]
+}

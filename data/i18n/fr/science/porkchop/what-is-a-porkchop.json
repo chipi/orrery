@@ -1,0 +1,15 @@
+{
+  "title": "Qu'est-ce qu'un diagramme porkchop ?",
+  "intro_sentence": "Une carte de chaleur 2D montrant coût Δv pour chaque paire (date départ, temps transit) — outil standard fenêtres lancement.",
+  "narrative_101": [
+    "Planificateurs Mars : pas une trajectoire, MILLIONS — chaque date départ, chaque transit, dans grille géante — peignent carte de chaleur. Bon marché bleu froid. Cher rouge. Ressemble côtelette de porc. Zone bon marché = viande ; crête chère = os.",
+    "Pourquoi carte entière ? Missions ont contraintes — fusée prête en 2026, fenêtre site, saison martienne. Porkchop montre TOUS les compromis.",
+    "Ouvre /plan. Choisis destination, année. Ce que tu vois = porkchop calculé en direct. Chaque pixel = problème Lambert. Hover pour détails. Clic pour charger /fly."
+  ],
+  "body_paragraphs": [
+    "Choisis date départ X, temps transit Y. Couleur = coût Δv. Turquoise frais bon marché, jaune modéré, rouge cher. Diagramme porkchop nommé d'après forme côtelette des contours zone bon marché.",
+    "Chaque cellule = problème Lambert : \"quitter Terre date X, arriver date X+Y, quel Δv ?\" Lambert millions fois → contours émergent. Minima naturels = fenêtres lancement.",
+    "Route `/plan` Orrery montre porkchop pour neuf destinations. Hover pour Δv exact. Clic pour charger `/fly`."
+  ],
+  "diagram_caption": "Porkchop : X départ, Y transit, couleur Δv. Zones bon marché autour fenêtres Hohmann."
+}

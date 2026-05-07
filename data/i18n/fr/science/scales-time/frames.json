@@ -1,0 +1,14 @@
+{
+  "title": "Repères héliocentrique · géocentrique · centré-corps",
+  "intro_sentence": "Trois repères pour trois questions : où relativement Soleil, Terre, ou planète ?",
+  "narrative_101": [
+    "Où est la Lune ? Réponse honnête : \"ça dépend où TU es\". Depuis Terre 1h matin overhead. Depuis Soleil point minuscule 1 UA. Depuis Mars insignifiant. Aucune fausse — origines différentes. Choix origine = \"repère\".",
+    "Vol spatial jongle trois. Héliocentrique pour croisière. Géocentrique pour satellites et Lune. Centré-corps pour insertion arrivée et opérations surface.",
+    "Changer = arithmétique. Mais important conceptuellement. Ellipse transfert héliocentrique. Survol Mars centré-corps. Transition = patched conics."
+  ],
+  "body_paragraphs": [
+    "Héliocentrique : origine Soleil, axes alignés écliptique. Naturel pour mouvement système solaire. `/explore` Orrery est fondamentalement héliocentrique.",
+    "Géocentrique : origine Terre. Utile satellites, Lune, sondes dans sphère Terre. `/earth` ici.",
+    "Centré-corps (Mars-, Saturne-, Lune-) : origine corps orbité. Utilisé insertion, surface, géométrie survol."
+  ]
+}

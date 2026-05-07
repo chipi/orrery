@@ -1,0 +1,15 @@
+{
+  "title": "NRHO — Orbite de halo quasi-rectiligne",
+  "intro_sentence": "Une orbite de neuf jours en forme d'œuf autour du point L2 Terre-Lune — le foyer choisi pour le Lunar Gateway de la NASA.",
+  "narrative_101": [
+    "NRHO = orbite NASA pour Gateway, petite station spatiale près Lune fin 2020s. Acronyme : Near-Rectilinear Halo Orbit. Imagine un œuf, étiré, équilibré près du point L2 Lagrange. Sonde tourne tous les 9 jours.",
+    "Pourquoi cette orbite ? Compromis parfait. Quasi gratuit à maintenir — 5 m/s/an. Toujours visibilité Terre. Bout proche assez Lune pour landers vers pôle sud.",
+    "Artemis II premier vol équipage NRHO. Artemis III docke pour transfert lander. Au-delà Gateway : NRHO comme étape pour Mars."
+  ],
+  "body_paragraphs": [
+    "NRHO = orbite halo — trajectoire trois corps périodique autour Lagrange — étirée jusqu'à toucher pôle sud Lune. Plus orbite polaire que halo. ~6,5 jours périlune, 9 jours révolution.",
+    "Pourquoi ? Stabilité bas Δv (~5 m/s/an). Visibilité Terre continue. Bas coût Δv depuis Terre (~4 km/s). Accès surface lunaire petits landers.",
+    "Gateway première station équipage espace profond, NRHO fin 2020s. Artemis II premier équipage. NRHO terrain de mise en scène architectures Mars."
+  ],
+  "diagram_caption": "Orbite halo étirée au L2 Terre-Lune : période ~9j, périlune près pôle sud, visibilité Terre."
+}

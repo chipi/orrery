@@ -1,0 +1,15 @@
+{
+  "title": "UA — Unité astronomique",
+  "intro_sentence": "Distance moyenne Terre-Soleil, fixée à exactement 149 597 870 700 mètres.",
+  "narrative_101": [
+    "Mesurer espace en km devient ingérable. Mars 200M km. Saturne 1,4Md. Pluton 6Md. Cerveau abandonne. Astronomes : règle plus humaine — distance Terre-Soleil = UA.",
+    "Ancrée à entier de mètres — 149 597 870 700, fixé 2012. Mars 1,5 UA. Jupiter 5. Pluton 30-50. Voyager 1 ~165 UA et continue.",
+    "UA partout dans cette app. /explore dessine rayons en UA. /plan porkchop calibrés UA."
+  ],
+  "body_paragraphs": [
+    "Jusqu'en 2012 UA définie par orbite Terre. Évoluant, UA changeait techniquement. IAU fixa 2012 à entier précis — 149 597 870 700 m.",
+    "Distances : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5. Voyagers >150 UA. Nuage Oort dizaines milliers UA.",
+    "Pourquoi UA ? Nombres mètres ingérables échelle système solaire. 1,4 Md km Saturne illisible. 9,58 UA tient en tête."
+  ],
+  "diagram_caption": "1 UA ≈ Terre-Soleil. Demi-grands axes planétaires UA, échelle log pour planètes externes."
+}

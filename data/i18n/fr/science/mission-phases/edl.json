@@ -1,0 +1,15 @@
+{
+  "title": "EDL — Entrée, Descente, Atterrissage",
+  "intro_sentence": "Sept minutes du sommet de l'atmosphère à roues-au-sol — la phase la plus automatisée et à plus faible marge.",
+  "narrative_101": [
+    "Mars est à 14 minutes-lumière. Quand signal du rover atteint Mission Control, rover au sol depuis 14 minutes — vivant ou mort. Personne sur Terre ne pilote atterrissage Mars. Sonde fait seule, autonome, en 7 minutes, centaines de pièces, zéro seconde chance.",
+    "Étape 1 : frapper atmosphère à 5,8 km/s. Bouclier thermique gère températures incandescentes. Étape 2 : parachute supersonique à Mach 2. Étape 3 : larguer bouclier, larguer parachute, allumer rétro-fusées. Étape 4 : touchdown.",
+    "Tricks différents. Apollo : moteur descente direct. Curiosity/Perseverance : Sky Crane fou — plateforme à fusées hovere 20 m, descend rover sur 3 câbles, vole loin. Zhurong hybride. Sept minutes appelées \"sept minutes de terreur\" à JPL."
+  ],
+  "body_paragraphs": [
+    "Entrée commence à atmosphère sensible — ~125 km Mars, 100 km Terre. Traînée freine ; moteurs silencieux. Bouclier thermique gère milliers de degrés.",
+    "Descente : parachutes supersoniques à Mach 1,5-2. Mais parachutes seuls insuffisants pour atterrissage doux atmosphère mince. Mars : supersonique → subsonique parachute, puis descente propulsée.",
+    "Curiosity/Perseverance : Sky Crane à 20m, rover sur câbles. Apollo : combustion directe. Zhurong : hybride."
+  ],
+  "diagram_caption": "Séquence EDL : entrée → parachute → descente propulsée → touchdown."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Coniques raccordées",
+  "intro_sentence": "Prétends que la gravité est un corps à la fois — l'approximation qui transforme le problème à trois corps insoluble en chaîne de problèmes Kepler à deux corps solubles.",
+  "narrative_101": [
+    "Petit secret sale : la physique vraie complète est mathématiquement insoluble en forme close. AUCUNE solution close du problème à trois corps.",
+    "Comment planificateurs font ? Ils trichent. Prétendre qu'à un moment, seule la gravité d'UN corps compte. Près Terre : seule Terre. Croisière : seul Soleil. Près Mars : seul Mars. Régions = sphères d'influence. Coniques képlériennes propres dans chacune. Aux frontières : changer cadre.",
+    "Maths à quelques pour cent près — petit assez pour planifier, assez pour tourner dans Web Worker."
+  ],
+  "body_paragraphs": [
+    "Gravité réelle est désordonnée. Une sonde Terre-Mars sent Terre, Soleil, Mars + tout autre, simultanément. Maths complètes (n-corps) sans solution close — seulement intégration numérique.",
+    "Coniques raccordées = compromis. Sphère d'influence autour de chaque corps. Dans sphère Terre : seule gravité Terre, arc képlérien autour Terre. Frontière → région héliocentrique. Frontière Mars → arc autour Mars.",
+    "Faux mais utile. Erreurs aux frontières petites — quelques % Δv max pour cislunaire. Maths gérables pour Web Worker. Vrai planning NASA utilise même approximation comme premier coup."
+  ],
+  "diagram_caption": "Trois cadres, trois coniques, raccordés aux frontières des sphères d'influence."
+}

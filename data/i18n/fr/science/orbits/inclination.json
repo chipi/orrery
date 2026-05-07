@@ -1,0 +1,14 @@
+{
+  "title": "Inclinaison",
+  "intro_sentence": "L'inclinaison du plan orbital par rapport à un plan de référence — généralement l'écliptique ou l'équateur terrestre.",
+  "narrative_101": [
+    "Tiens une assiette plate — c'est le plan de référence. Incline-la. L'angle est l'inclinaison. Chaque orbite vit sur sa propre assiette inclinée.",
+    "Important car changer l'inclinaison est brutalement cher. ISS à 51,6° — pour Baïkonour. Imageurs polaires. GEO équatorial. Chaque inclinaison = décision avec facture carburant."
+  ],
+  "body_paragraphs": [
+    "Inclinaison (`i`) = angle entre plan orbital et référence. Héliocentrique : écliptique. Satellites : équateur. Mesuré au nœud ascendant.",
+    "Planètes proches de l'écliptique. Mercure 7° outlier. Pluton 17° — raison de sa rétrogradation.",
+    "Satellites Terre : équatorial (0°) GEO. ~28° depuis Cap Canaveral. ~51,6° ISS. Polaire (~90°) imagerie. Héliosynchrone (~98°) éclairement constant."
+  ],
+  "diagram_caption": "Plan orbital incliné de l'angle i. Nœud ascendant N."
+}

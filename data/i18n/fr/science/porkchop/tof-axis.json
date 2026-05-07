@@ -1,0 +1,14 @@
+{
+  "title": "Axe temps de vol",
+  "intro_sentence": "Combien dure le voyage — sur axe Y, en jours pour planètes intérieures et années pour extérieures.",
+  "narrative_101": [
+    "X dit QUAND, Y dit COMBIEN DE TEMPS. Bas : court rapide. Haut : long lent. Cibles classe Mars : 100 à 500 jours. Jupiter : années.",
+    "Lis trade-off un coup d'œil. Monte une colonne — même date, transits différents. Bas (rapide) cellules rouges — rapide cher. Plus haut bleu frais — bande Hohmann naturelle.",
+    "Pourquoi Hohmann Mars toujours ~8,5 mois. Plus rapide : payes raide pour vitesse. Cargo peut lent ; équipage non — chaque mois extra = nourriture, eau, oxygène, radiation."
+  ],
+  "body_paragraphs": [
+    "Y = durée transit. Cibles classe Mars Hohmann ~250 jours, plage Y ~100-500 jours. Jupiter/Saturne en années.",
+    "Rangées différentes échangent transit contre Δv. Cellules moins chères = bande Hohmann. Tirer transit bas (rapide) = Δv monte raide. Haut = options lentes mais bon marché.",
+    "Forme zone bon marché révèle compromis. Bande étroite = optimum aigu. Large = flexibilité. Mars étroit. Jupiter plus large (paysage assistance gravitationnelle)."
+  ]
+}

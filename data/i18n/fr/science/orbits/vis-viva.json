@@ -1,0 +1,16 @@
+{
+  "title": "Équation de vis-viva",
+  "intro_sentence": "À quelle vitesse un corps va à tout point de son orbite — depuis seulement le rayon actuel et le demi-grand axe.",
+  "narrative_101": [
+    "Si tu n'apprends qu'une équation de mécanique orbitale, c'est celle-ci. Trois entrées — ce que tu orbites, distance, taille — une racine carrée, voilà ta vitesse.",
+    "Fonctionne par conservation d'énergie. Sonde échange altitude pour vitesse — énergie totale constante.",
+    "L'affichage vitesse en /fly ? Vis-viva. Vitesses départ/arrivée du porkchop ? Vis-viva."
+  ],
+  "body_paragraphs": [
+    "Vis-viva = équation de travail. Trois nombres : `μ`, `r` actuel, `a` demi-grand axe → vitesse `v`. Une racine carrée.",
+    "Conservation d'énergie : énergie mécanique constante sur l'orbite. Au périhélie petit r, vitesse haute. Aphélie : grand r, vitesse basse. Terre : 30,3 km/s vs 29,3 km/s.",
+    "Dans Orrery : `/fly` HUD vitesse en temps réel. `/plan` porkchop énergies de départ/arrivée."
+  ],
+  "formula_caption": "v depuis paramètre gravitationnel μ, rayon r, demi-grand axe a.",
+  "diagram_caption": "Vitesse varie : haute périhélie, basse aphélie."
+}

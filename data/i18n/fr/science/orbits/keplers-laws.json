@@ -1,0 +1,16 @@
+{
+  "title": "Les trois lois de Kepler",
+  "intro_sentence": "Trois règles d'observation qui ont fait du mouvement planétaire une science fermée un siècle avant Newton.",
+  "narrative_101": [
+    "Kepler n'avait pas le calcul, ni la gravité de Newton, ni d'ordinateur. Il avait vingt ans d'observations martiennes minutieuses de Tycho Brahé. Et de la patience. Il en tira trois règles encore exactes 400 ans plus tard.",
+    "Loi 1 : ellipses, pas cercles. Loi 2 : aires égales en temps égal (= conservation du moment angulaire). Loi 3 : T² scale comme a³.",
+    "Newton 70 ans plus tard prouva que les trois sortent d'une seule équation gravitationnelle. Kepler arriva premier — pure correspondance de motifs sur des données."
+  ],
+  "body_paragraphs": [
+    "Première loi : planètes sur ellipses, Soleil à un foyer. Avant Kepler : cercles. Données martiennes ne collaient pas. Ellipses — premier essai.",
+    "Deuxième loi : aires égales en temps égal. Conservation du moment angulaire. Périhélie : ligne courte, vitesse haute ; aphélie : longue, lente.",
+    "Troisième loi : `T² ∝ a³`. Avec Terre T=1, a=1, lis n'importe quelle période depuis la distance."
+  ],
+  "formula_caption": "Troisième loi de Kepler moderne : T² dépend de a (et μ).",
+  "diagram_caption": "Aires égales en temps égal."
+}

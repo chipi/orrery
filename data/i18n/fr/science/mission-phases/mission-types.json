@@ -1,0 +1,18 @@
+{
+  "title": "Types de mission — Survol, Orbiteur, Atterrisseur, Rover, Retour d'échantillons",
+  "intro_sentence": "Cinq archétypes — chacun coût Δv, profil risque, retour scientifique différent.",
+  "narrative_101": [
+    "Chaque mission robotique choisit une de cinq stratégies. Choix détermine presque tout : taille fusée, trajectoire, sonde, science, survie. Échelle Δv : survol moins cher, retour échantillons plus cher.",
+    "SURVOL : viser, photographier, partir. Pas de freinage. Voyager, New Horizons, Pioneer. Une chance, heures rencontre, sonde continue. Moins cher mais ne reviens pas.",
+    "ORBITEUR : freiner et rester des années. MAVEN, MRO, Cassini, Galileo. Insertion 1-2 km/s. ATTERRISSEUR + EDL. ROVER + roues, autonomie.",
+    "RETOUR D'ÉCHANTILLONS = sommet : atterrisseur + étage ascension + croisière retour + EDL Terre. Hayabusa-2, OSIRIS-REx, Apollo. Mars Sample Return en développement."
+  ],
+  "body_paragraphs": [
+    "Survols sautent insertion. Passent à V∞ — ~10 km/s Voyager Jupiter, ~14 New Horizons Pluton. Encontre minutes à jours. Échange science rapide vs couverture.",
+    "Orbiteurs échangent Δv contre temps. Insertion 1-2 km/s, années cartographie. Aérofreinage peut couper budget — MRO 6 mois.",
+    "Atterrisseurs ajoutent EDL + masse structurelle. EDL phase plus à risque ; Mars ~50% taux réussite historique.",
+    "Rovers ajoutent roues, propulsion, autonomie. Chaque kg coûte stack entier dessous. Curiosity 899 kg → aéroshell 4 t → croisière 4 t → trajectoire classe Saturn V.",
+    "Retour échantillons = apex. Masse quitter Terre ~10× masse retournée. Hayabusa-2 ~5g Ryugu en capsule de la taille de la main."
+  ],
+  "diagram_caption": "Cinq archétypes par complexité croissante : survol → orbiteur → atterrisseur → rover → retour échantillons."
+}

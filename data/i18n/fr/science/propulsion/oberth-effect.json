@@ -1,0 +1,15 @@
+{
+  "title": "Effet Oberth",
+  "intro_sentence": "Brûle profond dans un puits gravitationnel et ton carburant fait plus de travail.",
+  "narrative_101": [
+    "Magie gratuite physique. Imagine quantité fixe de carburant. Quand brûler ? Sens commun : peu importe. Faux.",
+    "Brûle quand tu vas VITE, même carburant donne beaucoup plus d'énergie utile. Énergie cinétique va comme v² — petit Δv au-dessus de haute vitesse ajoute proportionnellement plus.",
+    "Hermann Oberth 1929. TLI Apollo au périgée, hugging Terre, aussi vite que possible. Parker Solar Probe brûle au plus proche Soleil."
+  ],
+  "body_paragraphs": [
+    "Énergie cinétique va comme ½mv². Petit Δv à haute vitesse change KE beaucoup plus qu'à basse. Périapsis = plus rapide → même propergol = plus de gain énergie orbitale qu'apoapsis.",
+    "Hermann Oberth 1929. Schedule grosses combustions Δv où tu vas déjà vite. Parker Solar Probe brûle à chaque périhélie. Juno feu à périapsis jovien.",
+    "Compromis : combustions profondes courtes intenses. Sonde doit gérer chaleur, pression dynamique, timing précis."
+  ],
+  "diagram_caption": "Même Δv au périapsis (haut v) donne plus de gain énergie qu'apoapsis (bas v)."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Le plan écliptique",
+  "intro_sentence": "Le plan de l'orbite terrestre — référence pour presque chaque mesure du système solaire.",
+  "narrative_101": [
+    "Tiens assiette plate, mets bille au centre — Soleil. Bille plus petite autour bord — Terre. Assiette plate = plan écliptique.",
+    "Étrange : la plupart du système solaire vit grossièrement sur cette assiette. Huit planètes à quelques degrés. Lune à 5°. Ceinture astéroïdes principalement dessus. Pas hasard — fossile formation système solaire.",
+    "Comètes = jokers. Comètes longue période depuis n'importe quelle direction — restes Nuage Oort jamais installés disque. Pluton à 17° — raison rétrogradation."
+  ],
+  "body_paragraphs": [
+    "Soleil, Terre, Lune tracent chemins. Orbite Terre définit plan. Depuis Terre, Soleil semble bouger sur ce plan contre fond étoiles — chemin = écliptique. Plupart corps proches.",
+    "Écliptique = plan référence inclinaisons. Terre 0° construction. Mercure 7°, Pluton 17°. Équinoxe vernal = longitude zéro.",
+    "`/explore` regarde par défaut depuis dessus écliptique — perspective naturelle mouvement héliocentrique."
+  ]
+}

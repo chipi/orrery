@@ -1,0 +1,14 @@
+{
+  "title": "Injection trans-X — ITL / ITM / ITV / ITJ",
+  "intro_sentence": "La grande combustion de départ qui te lance sur trajectoire vers ta destination.",
+  "narrative_101": [
+    "Étape 1 : LEO. Étape 2 : ITL/ITM/ITV/ITJ. X = initiale destination.",
+    "Combustion dure dramatique 5-30 minutes au périgée (Oberth). Te lance sur ellipse de transfert. Ensuite moteur off des mois — inertie.",
+    "Apollo ITL : 3,05 km/s. Curiosity ITM : 3,7 km/s. Voyager 2 trans-Jupiter ~7 km/s."
+  ],
+  "body_paragraphs": [
+    "Après lancement en LEO. Deuxième combustion lève apogée vers destination = injection trans-X. ITL translunaire, ITM Mars, ITV Vénus, ITJ Jupiter.",
+    "Au périgée orbite parking (Oberth maximise énergie). Hohmann Mars : ITM ~3,6 km/s sur LEO injection 7,9 km/s.",
+    "Sur onglet FLIGHT chaque carte mission interplanétaire : Δv_ITL ou Δv_ITM."
+  ]
+}

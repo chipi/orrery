@@ -1,0 +1,16 @@
+{
+  "title": "Période sidérale vs synodique",
+  "intro_sentence": "Deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents.",
+  "narrative_101": [
+    "Deux réponses à \"combien dure une année Mars ?\".",
+    "Combien temps Mars pour UN tour Soleil : 687 jours Terre. Sidérale — contre étoiles fixes lointaines. Vérité géométrique.",
+    "À quelle fréquence Terre et Mars S'ALIGNENT PAREIL (pour lancer mission) : 780 jours — ~26 mois. Synodique. Pourquoi plus long ? Pendant que Mars fait un tour, Terre presque deux. Alignement répète quand Terre rattrape Mars.",
+    "Pourquoi fenêtres Mars tous 26 mois. Manques : 2 ans. Curiosity 2011, Perseverance 2020, prochaine 2026."
+  ],
+  "body_paragraphs": [
+    "Sidérale : tour complet contre étoiles fixes. Mars sidérale 687 jours. Synodique : retour position relative à autre corps. Mars synodique 780 jours = ~26 mois.",
+    "Synodique compte pour planificateurs. Hohmann Terre-Mars seulement quand Mars au bon endroit. Prochaine fenêtre tous 26 mois.",
+    "Math : `1/T_syn = 1/T_int − 1/T_ext`. Terre 1,0 an, Mars 1,88 : T_syn ≈ 26 mois."
+  ],
+  "diagram_caption": "Sidéral : même alignement étoiles. Synodique : même alignement Terre-Mars-Soleil."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Lancement + Ascension",
+  "intro_sentence": "Les dix minutes les plus violentes de toute mission — luttant contre gravité, atmosphère et équation de fusée.",
+  "narrative_101": [
+    "Plupart du danger arrive en huit premières minutes. Fusée allume, lutte poids, monte par air dense, accélère 0 à 7,5 km/s. Si quelque chose va mal, rarement temps de réparer.",
+    "Arithmétique brutale : ~9,4 km/s Δv mais seulement 7,9 contribuent à vitesse orbitale. Reste = perte gravité + perte traînée.",
+    "Assez haut, atmosphère abandonne. Étages séparent, coiffes tombent. SpaceX rompt ça et récupère premiers étages."
+  ],
+  "body_paragraphs": [
+    "Ascension ~9,4 km/s Δv mais à peine 7,9 km/s vitesse orbitale réelle. Reste = perte gravité (énergie pour tenir fusée haute) et perte traînée (atmosphère freine). Programme cabrage minimise.",
+    "Étages tombent. Première séparation, deuxième allume, jettison coiffe. Falcon 9 retourne premier étage ; Saturn V non.",
+    "Dans `/missions` champ launch_vehicle : Saturn V Apollo, Atlas V Curiosity, Falcon 9 Crew Dragon, SLS Artemis I."
+  ],
+  "diagram_caption": "Profil lancement : montée verticale → cabrage → étagement → insertion orbitale."
+}

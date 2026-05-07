@@ -1,0 +1,120 @@
+{
+  "intro_heading": "Alors tu veux lancer une fusée vers Mars.",
+  "intro_paragraphs": [
+    "Bienvenue. C'est la partie d'Orrery où les boutons cessent d'être de la magie. Chaque étiquette du HUD, chaque contour coloré du porkchop, chaque marque de combustion sur la trajectoire — cette section explique d'où ça vient. Lis-la comme une bande dessinée : les diagrammes font le plus gros du travail, et chaque terme en italique est un lien que tu peux suivre aussi loin que tu veux.",
+    "On va construire une fusée ensemble. Pas littéralement — Orrery est un simulateur — mais la même chaîne de décisions qu'une vraie équipe de vol prend, dans le même ordre. À la fin tu sauras pourquoi les fenêtres de lancement vers Mars surviennent tous les 26 mois et tous les mois pour la Lune, pourquoi une trajectoire de retour libre existe, et pourquoi la poussée est la partie bon marché et le carburant est tout le combat."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — La gravité est la seule physique qui compte.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Une ellipse avec le Soleil à un foyer.",
+      "diagram_caption": "Un corps, un foyer, une ellipse. C'est tout le système solaire.",
+      "paragraphs": [
+        "Oublie les fusées un instant. Tiens-toi sur la Terre, lance une balle de baseball aussi fort que possible. Elle redescend. Lance-la plus fort, elle va plus loin. Lance-la SI fort que le sol s'écarte plus vite que la balle ne tombe — et la balle rate la planète, pour toujours. C'est une [orbite](orbits/keplerian-orbit). Chaque sonde, chaque planète, chaque rocher de la ceinture d'astéroïdes fait ce tour autour de quelque chose de plus lourd.",
+        "Une orbite est une ellipse. Elle a une [taille](orbits/semi-major-axis), une [forme](orbits/eccentricity), une [inclinaison](orbits/inclination), et une phase ([anomalie vraie](orbits/true-anomaly)). Cinq nombres et tu prédis la position de tout objet du système solaire. Ce sont les [trois lois de Kepler](orbits/keplers-laws), écrites en 1609.",
+        "L'équation la plus utile : [vis-viva](orbits/vis-viva). Donne radius et taille d'orbite, obtiens la vitesse. Terre au périhélie : 30,3 km/s. À l'aphélie : 29,3 km/s."
+      ]
+    },
+    {
+      "heading": "2 — L'équation de la fusée est le boss final.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Courbe de rapport de masses.",
+      "diagram_caption": "Doubler ton Δv signifie brûler bien plus que 2× le carburant.",
+      "paragraphs": [
+        "Comment changer d'orbite ? Brûle du carburant. [Δv](propulsion/dv-budget) est la monnaie universelle des vols spatiaux.",
+        "Le prix est brutal. L'[équation de Tsiolkovsky](propulsion/tsiolkovsky) dit que Δv croît avec le logarithme du carburant. Saturn V : 90% propergol.",
+        "Deux nombres luttent. La poussée — peu importe après le décollage. L'[impulsion spécifique](propulsion/specific-impulse) — celle qui compte. Chimique ~450 s. Ionique 4000+.",
+        "Meilleur tour : l'[effet Oberth](propulsion/oberth-effect). Brûle quand tu vas vite (bas et près d'une planète) — beaucoup plus de bénéfice par carburant. Énergie gratuite par géométrie."
+      ]
+    },
+    {
+      "heading": "3 — Une fois en orbite, tu es à mi-chemin de partout.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Une ellipse tangente aux orbites de la Terre et de Mars.",
+      "diagram_caption": "Deux combustions, une ellipse. La façon la moins chère de changer d'orbite.",
+      "paragraphs": [
+        "Heinlein l'a écrit : \"Une fois en orbite, tu es à mi-chemin de partout dans le système solaire.\" Atteindre LEO coûte ~9,4 km/s. De là à Mars : ~3,6 km/s.",
+        "Route interplanétaire la moins chère : un [transfert de Hohmann](transfers/hohmann-transfer). Deux combustions, pas de carburant gaspillé. Vers Mars ~8,5 mois.",
+        "Plus rapide ? Résous un [problème de Lambert](transfers/lambert-problem) — choisis date et durée, Lambert te donne l'unique [ellipse de transfert](transfers/transfer-ellipse). C'est ce que fait [/plan](app:/plan) dix mille fois en parallèle.",
+        "Encore plus loin ? Vole de la vitesse à une planète. Une [assistance gravitationnelle](transfers/gravity-assist) change ta trajectoire à coût zéro — Voyager 2 en utilisa quatre vers Neptune. Le système solaire entier se coud en [coniques raccordées](transfers/patched-conics) — arcs de [sections coniques](transfers/conic-sections) passés entre voisinages gravitationnels."
+      ]
+    },
+    {
+      "heading": "4 — Choisis une fenêtre de lancement, ou attends deux ans.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "Le diagramme porkchop classique.",
+      "diagram_caption": "Un porkchop. Chaque contour est Δv constant ; le lobe est quand la nature rend Mars bon marché.",
+      "paragraphs": [
+        "Terre et Mars ne s'arrêtent pas. Terre 365 jours, Mars 687. Géométrie relative se répète tous les ~26 mois. Conception de mission commence avec un calendrier, pas une fusée.",
+        "Le [diagramme porkchop](porkchop/what-is-a-porkchop) montre cela. Date de départ sur [un axe](porkchop/departure-axis), [temps de vol](porkchop/tof-axis) sur l'autre, Δv comme [carte de chaleur colorée](porkchop/dv-heatmap). Zones bon marché = lobes ovales = fenêtres. Hors du lobe : rouge. [Lire les contours](porkchop/contour-reading) est la moitié du métier.",
+        "Deux termes : [C₃](propulsion/c3) est l'énergie de lancement. [V∞](propulsion/v-infinity) est la vitesse à destination."
+      ]
+    },
+    {
+      "heading": "5 — Le vol n'est que cinq phases en répétition.",
+      "diagram": "edl.svg",
+      "diagram_alt": "Entrée, descente, atterrissage.",
+      "diagram_caption": "EDL. Six minutes de pure terreur.",
+      "paragraphs": [
+        "Pratiquement chaque mission interplanétaire suit le même script :",
+        "[Lancement](mission-phases/launch) — sortir de l'atmosphère vers LEO. [Injection Trans-X](mission-phases/trans-x-injection) — combustion au périgée vers la Lune (ITL), Mars (ITM), Vénus (ITV), Jupiter (ITJ). [Manœuvres de correction](mission-phases/tcm) — petites combustions en croisière. [Insertion orbitale](mission-phases/orbit-insertion) — combustion de freinage. [EDL](mission-phases/edl) — Entrée, Descente, Atterrissage.",
+        "Missions lunaires détournent parfois par une [orbite de halo quasi-rectiligne](mission-phases/nrho) (Gateway). Apollo a volé [trajectoires de retour libre](transfers/free-return) — figure-8 qui te ramène automatiquement. Apollo 13 doit sa survie à cette géométrie."
+      ]
+    },
+    {
+      "heading": "6 — Distances et temps, car rien n'est de taille terrestre.",
+      "diagram": "au.svg",
+      "diagram_alt": "L'unité astronomique.",
+      "diagram_caption": "1 UA = distance Terre-Soleil. Mars ~1,5 UA. Jupiter ~5,2.",
+      "paragraphs": [
+        "Trois unités partout. L'[unité astronomique](scales-time/au) (UA) est la distance moyenne Terre-Soleil. La [minute-lumière](scales-time/light-minute) — délai radio. Mars : 4 à 24 minutes. Pas de pilotage joystick — tout doit être autonome.",
+        "L'[époque J2000](scales-time/j2000) est le zéro calendaire. [Sidéral vs synodique](scales-time/sidereal-synodic) explique pourquoi les fenêtres Mars reviennent tous les 26 mois. Le [plan écliptique](scales-time/ecliptic-plane) — disque plat. [Repères](scales-time/frames) — héliocentrique, géocentrique, centré-corps."
+      ]
+    }
+  ],
+  "tools_heading": "Maintenant va jouer.",
+  "tools_intro": "C'est la boucle complète. Tu sais maintenant assez pour lire chaque étiquette, contour et lecture HUD du reste de l'app. Voici où l'utiliser :",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Tourne le système solaire. Vois les lois de Kepler en direct."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Choisis destination et année, vois le porkchop. Le lobe cache les transferts de Hohmann."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Vole un arc de mission réel. Le HUD montre Δv, V∞, MET, distance Terre."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 sondes réelles, de Luna 9 à Artemis II. Onglet FLIGHT décompose le budget Δv."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Vérité-terrain. Où chaque Apollo, chaque rover, chaque satellite actif est vraiment."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "Les deux avant-postes orbitaux habités, module par module."
+    }
+  ],
+  "closing": "Sous cette histoire, l'encyclopédie proprement dite : six onglets, quarante entrées, chaque formule et chaque diagramme en un seul endroit. Marque cette page."
+}

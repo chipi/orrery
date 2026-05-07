@@ -1,6 +1,12 @@
 {
   "title": "Sidereal vs Synodic Period",
   "intro_sentence": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
+  "narrative_101": [
+    "There are two different answers to the question \"how long is a year on Mars?\" — and which one you want depends on what you're trying to do.",
+    "If you want to know how long Mars takes to make ONE LOOP around the Sun, the answer is 687 Earth days. That's the sidereal period — measured against the unmoving distant stars. It's the geometric truth of the orbit. Vis-viva and Kepler's third law both work in sidereal time.",
+    "But if you want to know how often Earth and Mars LINE UP THE SAME WAY (so you can launch a mission), the answer is 780 days — about 26 months. That's the synodic period. Why longer? Because while Mars is going around the Sun once, Earth is going around it almost twice — both planets keep moving. The line-up only repeats when Earth has lapped Mars in the dance.",
+    "This is why Mars launch windows appear every 26 months. If you miss one, you wait two years. Every Mars mission you've ever heard of had to time itself to a synodic window — Curiosity in 2011, Perseverance in 2020, the next one in 2026. The synodic period is the heartbeat of interplanetary mission planning."
+  ],
   "body_paragraphs": [
     "Sidereal period: time for one full orbit relative to the fixed stars. This is the geometric, Kepler-third-law period — Mars sidereal year is 687 Earth days. Synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. Mars synodic period — time between Mars-Earth alignments — is 780 days, or about 26 months.",
     "The synodic period is what mission planners care about. Earth-Mars Hohmann transfers only work when Mars is in the right place. The next viable launch window appears every 26 months. Miss one, wait two years for another. That's the cadence of every Mars mission ever flown.",

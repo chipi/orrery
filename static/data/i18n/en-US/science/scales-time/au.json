@@ -1,6 +1,11 @@
 {
   "title": "AU — Astronomical Unit",
   "intro_sentence": "Earth's average distance to the Sun, fixed at exactly 149,597,870,700 metres — the natural ruler for solar-system distances.",
+  "narrative_101": [
+    "Once you start measuring distances in space, kilometres get unmanageable fast. Mars is 200 million km. Saturn is 1.4 billion km. Pluto is 6 billion km. Your brain stops parsing those numbers as anything except \"big.\" So astronomers picked a more human ruler: one Earth-Sun distance. That's an Astronomical Unit, abbreviated AU.",
+    "The unit is anchored to a specific integer number of metres — 149,597,870,700 of them, fixed in 2012 — but the practical idea is simpler. Mars is 1.5 AU from the Sun. Jupiter is 5 AU. Pluto orbits between 30 and 50 AU. Voyager 1, the most distant human-made object, is around 165 AU now and still going. Numbers you can actually hold in your head.",
+    "AU is everywhere in this app. The /explore screen draws orbital radii in AU. The /plan porkchop axes are calibrated in AU. The HUD on /fly converts AU to kilometres and light-minutes when you need those, but the underlying ruler is always AU. Once you internalise it, the solar system stops feeling abstract — you can roughly map distances by counting hops in AU."
+  ],
   "body_paragraphs": [
     "Until 2012 the AU was defined by Earth's orbit. As Earth's orbit slowly evolves under planetary perturbations, the AU was technically changing too. The IAU fixed it in 2012 to a precise integer number of metres — 149,597,870,700 — and the definition has been stable ever since. The AU is no longer 'Earth's orbit'; it's a metric ruler that happens to roughly equal it.",
     "Solar-system distances in AU: Mercury 0.39, Venus 0.72, Earth 1.0, Mars 1.52, Jupiter 5.20, Saturn 9.58, Uranus 19.22, Neptune 30.05, Pluto 39.5 (averages — eccentricity makes them vary). The Voyagers are well past 150 AU and still going. The Oort Cloud reaches out tens of thousands of AU.",

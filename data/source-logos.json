@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "nasa",
+      "name": "NASA",
+      "kind": "space-agency",
+      "url": "https://www.nasa.gov/",
+      "logo_path": "/logos/nasa.svg",
+      "license_summary": "Public domain — works of the United States Government (17 U.S.C. § 105)."
+    },
+    {
+      "id": "esa",
+      "name": "European Space Agency",
+      "kind": "space-agency",
+      "url": "https://www.esa.int/",
+      "logo_path": "/logos/esa.svg",
+      "license_summary": "Creative Commons CC BY-SA 3.0 IGO for most imagery; some material under CC BY 4.0 IGO. Logos under permissive ESA emblem terms."
+    },
+    {
+      "id": "roscosmos",
+      "name": "Roscosmos",
+      "kind": "space-agency",
+      "url": "https://www.roscosmos.ru/",
+      "logo_path": "/logos/roscosmos.svg",
+      "license_summary": "Imagery and Soviet-era space photographs are in the public domain in Russia (Article 1259, Russian Civil Code)."
+    },
+    {
+      "id": "cnsa",
+      "name": "China National Space Administration",
+      "kind": "space-agency",
+      "url": "http://www.cnsa.gov.cn/",
+      "logo_path": "/logos/cnsa.svg",
+      "license_summary": "Imagery commonly redistributed via Creative Commons CC BY-SA 4.0 on Wikimedia Commons; PRC government works on the official site are released for editorial reuse."
+    },
+    {
+      "id": "isro",
+      "name": "Indian Space Research Organisation",
+      "kind": "space-agency",
+      "url": "https://www.isro.gov.in/",
+      "logo_path": "/logos/isro.svg",
+      "license_summary": "Government of India works (GODL-India) commonly redistributed under permissive terms; ISRO mission imagery is freely usable for editorial purposes with credit."
+    },
+    {
+      "id": "jaxa",
+      "name": "Japan Aerospace Exploration Agency",
+      "kind": "space-agency",
+      "url": "https://global.jaxa.jp/",
+      "logo_path": "/logos/jaxa.svg",
+      "license_summary": "Creative Commons CC BY 4.0 for most JAXA digital archive imagery; some assets under JAXA's editorial-reuse policy."
+    },
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "kind": "private-operator",
+      "url": "https://www.spacex.com/",
+      "logo_path": "/logos/spacex.svg",
+      "license_summary": "SpaceX official launch and mission photos historically released as public domain (CC0); company logos under PD-trivial."
+    },
+    {
+      "id": "uaesa",
+      "name": "MBRSC / UAE Space Agency",
+      "kind": "space-agency",
+      "url": "https://space.gov.ae/",
+      "logo_path": "/logos/uaesa.svg",
+      "license_summary": "Creative Commons CC BY 4.0 for Mohammed bin Rashid Space Centre imagery (Hope Mars Mission, Rashid lunar rover)."
+    },
+    {
+      "id": "wikimedia-commons",
+      "name": "Wikimedia Commons contributors",
+      "kind": "media-platform",
+      "url": "https://commons.wikimedia.org/",
+      "license_summary": "Mixed: public domain, CC0, CC BY 2.0/2.5/3.0/4.0, CC BY-SA 2.0/2.5/3.0/4.0, CC BY 3.0/4.0 IGO, CC BY-SA 3.0 IGO. Each image entry below carries its specific license."
+    },
+    {
+      "id": "wikipedia",
+      "name": "Wikipedia contributors",
+      "kind": "encyclopedic",
+      "url": "https://www.wikipedia.org/",
+      "license_summary": "Creative Commons CC BY-SA 4.0. Editorial copy paraphrased from Wikipedia carries attribution and a link to the original article."
+    },
+    {
+      "id": "solar-system-scope",
+      "name": "Solar System Scope",
+      "kind": "publisher",
+      "url": "https://www.solarsystemscope.com/textures/",
+      "license_summary": "Planet and small-body texture maps released under Creative Commons CC BY 4.0."
+    }
+  ]
+}

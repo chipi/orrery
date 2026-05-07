@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://orrery.local/schemas/source-logos.schema.json",
+  "title": "Source logos manifest (ADR-046 + ADR-047 Milestone D)",
+  "description": "Bill-of-materials masthead block for the public /credits page. One entry per organization or content source whose imagery, text, or both we redistribute. Logos themselves are tracked by image-provenance.json; this manifest records the editorial framing — display name, link, and the credit copy that opens each section on /credits.",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Source" }
+    }
+  },
+  "definitions": {
+    "Source": {
+      "type": "object",
+      "required": ["id", "name", "url", "license_summary", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id used to group provenance entries on /credits. Lowercase, hyphenated.",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Public display name (e.g. 'NASA', 'European Space Agency'). Locale overlays may override."
+        },
+        "kind": {
+          "type": "string",
+          "description": "What this source is. Used for grouping the credits page sections.",
+          "enum": [
+            "space-agency",
+            "private-operator",
+            "research-institute",
+            "media-platform",
+            "encyclopedic",
+            "publisher"
+          ]
+        },
+        "url": { "type": "string", "format": "uri" },
+        "logo_path": {
+          "type": "string",
+          "description": "Served path to the masthead logo (e.g. '/logos/nasa.svg')."
+        },
+        "license_summary": {
+          "type": "string",
+          "description": "One-line summary of the dominant license terms (e.g. 'Public domain — U.S. Government work', 'Creative Commons CC BY-SA 4.0'). Per-image entries still carry their own license_short."
+        }
+      }
+    }
+  }
+}

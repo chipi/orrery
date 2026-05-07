@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "missions.descriptions.baseline",
+      "location": { "file": "static/data/i18n/en-US/missions/" },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Editorial mission descriptions across the library are short syntheses paraphrased from each mission's primary source: NASA / ESA / JAXA / ISRO / CNSA / Roscosmos / MBRSC press kits and the corresponding Wikipedia mission articles. Per-mission entries below capture the dominant primary source per mission.",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_Mars-crossing_minor_planets",
+      "source_publisher": "Wikipedia contributors / agency press kits",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Wikipedia text is licensed under Creative Commons CC BY-SA 4.0; agency press-kit text is U.S./IGO public domain or PD-equivalent."
+    },
+    {
+      "id": "missions.apollo11.description",
+      "location": {
+        "file": "static/data/i18n/en-US/missions/moon/apollo11.json",
+        "json_path": "$.description"
+      },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Apollo 11 was the first crewed mission to land on the Moon. Paraphrased from NASA's Apollo 11 mission overview and the Wikipedia article on Apollo 11.",
+      "source_url": "https://www.nasa.gov/mission_pages/apollo/missions/apollo11.html",
+      "source_publisher": "NASA Apollo Program Office",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "license_rationale": "NASA mission narratives are works of the U.S. Government, in the public domain (17 U.S.C. § 105)."
+    },
+    {
+      "id": "missions.curiosity.description",
+      "location": {
+        "file": "static/data/i18n/en-US/missions/mars/curiosity.json",
+        "json_path": "$.description"
+      },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Curiosity (Mars Science Laboratory) is a car-sized rover exploring Gale crater. Paraphrased from JPL's Mars 2020 / MSL mission overview and the corresponding Wikipedia article.",
+      "source_url": "https://mars.nasa.gov/msl/",
+      "source_publisher": "NASA / JPL",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "license_rationale": "NASA / JPL mission descriptions are U.S. Government works in the public domain."
+    },
+    {
+      "id": "missions.mars-express.description",
+      "location": {
+        "file": "static/data/i18n/en-US/missions/mars/mars-express.json",
+        "json_path": "$.description"
+      },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Mars Express is ESA's first planetary mission, in orbit at Mars since December 2003. Paraphrased from ESA's Mars Express mission page and the Wikipedia article.",
+      "source_url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express",
+      "source_publisher": "European Space Agency",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/",
+      "license_rationale": "ESA mission text typically released under Creative Commons CC BY-SA 3.0 IGO."
+    },
+    {
+      "id": "missions.hope.description",
+      "location": {
+        "file": "static/data/i18n/en-US/missions/mars/hope.json",
+        "json_path": "$.description"
+      },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Hope (Al-Amal) is the United Arab Emirates' first interplanetary mission, in orbit at Mars since February 2021. Paraphrased from MBRSC's mission page and the Wikipedia Emirates Mars Mission article.",
+      "source_url": "https://www.mbrsc.ae/our-projects/emirates-mars-mission/",
+      "source_publisher": "Mohammed bin Rashid Space Centre (MBRSC)",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "MBRSC mission narratives are released for editorial reuse with attribution."
+    },
+    {
+      "id": "missions.chandrayaan3.description",
+      "location": {
+        "file": "static/data/i18n/en-US/missions/moon/chandrayaan3.json",
+        "json_path": "$.description"
+      },
+      "category": "mission",
+      "relationship": "paraphrased-from",
+      "snippet": "Chandrayaan-3 is ISRO's third lunar exploration mission, the first to soft-land near the lunar south pole (August 2023). Paraphrased from ISRO's mission page and the Wikipedia article.",
+      "source_url": "https://www.isro.gov.in/Chandrayaan_3.html",
+      "source_publisher": "Indian Space Research Organisation",
+      "license_short": "PD-self",
+      "license_rationale": "Government of India mission text reused under permissive editorial terms (GODL-India)."
+    },
+    {
+      "id": "planets.descriptions.baseline",
+      "location": { "file": "static/data/planets.json" },
+      "category": "planet",
+      "relationship": "paraphrased-from",
+      "snippet": "Planet overview copy paraphrased from NASA solar-system fact sheets and the corresponding Wikipedia articles. Numerical figures (orbital periods, masses, etc.) come from the IAU and NASA's solar-system fact sheets, which are factual and uncopyrightable.",
+      "source_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "source_publisher": "NASA Goddard Space Flight Center / Wikipedia contributors",
+      "license_short": "PD-NASA",
+      "license_url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "license_rationale": "NASA fact sheets are U.S. Government works in the public domain. Wikipedia paraphrase is CC BY-SA 4.0."
+    },
+    {
+      "id": "sun.descriptions.baseline",
+      "location": { "file": "static/data/i18n/en-US/sun.json" },
+      "category": "sun",
+      "relationship": "paraphrased-from",
+      "snippet": "Sun overview copy paraphrased from NASA's Solar Dynamics Observatory and Heliophysics Division materials and the Wikipedia article on the Sun.",
+      "source_url": "https://science.nasa.gov/sun/",
+      "source_publisher": "NASA Heliophysics Division",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA Heliophysics narratives are U.S. Government works in the public domain."
+    },
+    {
+      "id": "small-bodies.descriptions.baseline",
+      "location": { "file": "static/data/small-bodies.json" },
+      "category": "small-body",
+      "relationship": "paraphrased-from",
+      "snippet": "Dwarf-planet, asteroid, and comet overview copy paraphrased from JPL's Small-Body Database, NASA Solar System Exploration entries, and the corresponding Wikipedia articles.",
+      "source_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html",
+      "source_publisher": "NASA / JPL Solar System Dynamics group",
+      "license_short": "PD-NASA",
+      "license_url": "https://ssd.jpl.nasa.gov/",
+      "license_rationale": "JPL small-body entries are U.S. Government works in the public domain."
+    },
+    {
+      "id": "moon-sites.descriptions.baseline",
+      "location": { "file": "static/data/moon-sites.json" },
+      "category": "moon-site",
+      "relationship": "paraphrased-from",
+      "snippet": "Lunar landing-site descriptions paraphrased from NASA Apollo mission press kits, the LROC site inventory, and the Wikipedia entries for each site.",
+      "source_url": "https://www.nasa.gov/specials/apollo50th/missions.html",
+      "source_publisher": "NASA Apollo Program Office",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA Apollo press-kit text and LROC site descriptions are U.S. Government works in the public domain."
+    },
+    {
+      "id": "earth-objects.descriptions.baseline",
+      "location": { "file": "static/data/earth-objects.json" },
+      "category": "earth-object",
+      "relationship": "paraphrased-from",
+      "snippet": "Earth-object overview copy (ISS, Hubble, JWST, GPS, BeiDou, Galileo, GLONASS, Tiangong, Chandra, XMM-Newton, Gaia) paraphrased from each spacecraft's operating-agency mission page and the corresponding Wikipedia article.",
+      "source_url": "https://www.nasa.gov/international-space-station/",
+      "source_publisher": "NASA / ESA / Roscosmos / JAXA / CSA / CNSA / EU GSA",
+      "license_short": "PD-NASA",
+      "license_rationale": "Mixed agency text — NASA portions are U.S. Government public domain; ESA portions are CC BY-SA 3.0 IGO; agency partner copy reused for editorial purposes with credit."
+    },
+    {
+      "id": "iss-modules.descriptions.baseline",
+      "location": { "file": "static/data/iss-modules.json" },
+      "category": "iss-module",
+      "relationship": "paraphrased-from",
+      "snippet": "ISS module descriptions paraphrased from NASA's ISS structural fact sheets, ESA Columbus material, JAXA Kibo material, and the corresponding Wikipedia articles.",
+      "source_url": "https://www.nasa.gov/international-space-station/space-station-elements/",
+      "source_publisher": "NASA / ESA / JAXA / Roscosmos / CSA",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA ISS structural fact sheets are U.S. Government works in the public domain."
+    },
+    {
+      "id": "rockets.descriptions.baseline",
+      "location": { "file": "static/data/rockets.json" },
+      "category": "rocket",
+      "relationship": "paraphrased-from",
+      "snippet": "Launch-vehicle reference copy paraphrased from each manufacturer's published mission planner / data sheet and the corresponding Wikipedia article.",
+      "source_url": "https://en.wikipedia.org/wiki/List_of_orbital_launch_systems",
+      "source_publisher": "Wikipedia contributors / launch-vehicle manufacturers",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Wikipedia text is CC BY-SA 4.0; manufacturer data-sheet figures are factual and uncopyrightable."
+    },
+    {
+      "id": "ui.strings.original",
+      "location": { "file": "messages/" },
+      "category": "ui",
+      "relationship": "original",
+      "snippet": "All chrome / HUD / panel / nav UI strings are original, written for Orrery. Non-English locales are translated from en-US.",
+      "license_short": "Orrery-Original",
+      "license_rationale": "Original prose by the Orrery maintainers, MIT-licensed alongside the source code (see LICENSE)."
+    },
+    {
+      "id": "credits.page.intro",
+      "location": {
+        "file": "messages/en-US.json",
+        "i18n_key": "credits_intro"
+      },
+      "category": "credits",
+      "relationship": "original",
+      "snippet": "Acknowledgement copy on the /credits page is original to Orrery, written by the project maintainers.",
+      "license_short": "Orrery-Original",
+      "license_rationale": "Original prose by the Orrery maintainers, MIT-licensed alongside the source code."
+    }
+  ]
+}

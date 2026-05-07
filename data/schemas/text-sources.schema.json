@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://orrery.local/schemas/text-sources.schema.json",
+  "title": "Text sources manifest (ADR-046 + ADR-047 Milestone D)",
+  "description": "Provenance manifest for editorial text. Each entry classifies a span of text in the app — mission description, planet copy, locale overlay string, etc. — as original, paraphrased, quoted, or translated, and links to its primary source. Lives alongside image-provenance.json so /credits shows a full bill of materials for both photos and text.",
+  "type": "object",
+  "required": ["schema_version", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Entry" }
+    }
+  },
+  "definitions": {
+    "Entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "location",
+        "category",
+        "relationship",
+        "license_short",
+        "license_rationale"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable id (slug). Used for deep-links from /credits.",
+          "pattern": "^[a-z0-9][a-z0-9._-]*$"
+        },
+        "location": {
+          "type": "object",
+          "required": ["file"],
+          "additionalProperties": false,
+          "description": "Where the text lives in the repo. file is a path relative to the repo root; json_path is a dotted/JSONPath expression for structured data; i18n_key is the Paraglide message id for UI strings.",
+          "properties": {
+            "file": { "type": "string" },
+            "json_path": { "type": "string" },
+            "i18n_key": { "type": "string" }
+          }
+        },
+        "category": {
+          "type": "string",
+          "description": "Which app surface the text appears on.",
+          "enum": [
+            "mission",
+            "planet",
+            "sun",
+            "small-body",
+            "moon-site",
+            "earth-object",
+            "iss-module",
+            "rocket",
+            "ui",
+            "credits"
+          ]
+        },
+        "relationship": {
+          "type": "string",
+          "description": "How the text relates to its source.",
+          "enum": [
+            "original",
+            "paraphrased-from",
+            "quoted-from",
+            "translated-from",
+            "adapted-from"
+          ]
+        },
+        "snippet": {
+          "type": "string",
+          "description": "Short, human-readable preview shown on /credits (≤ 240 chars)."
+        },
+        "source_url": { "type": "string", "format": "uri" },
+        "source_publisher": { "type": "string" },
+        "source_author": { "type": "string" },
+        "license_short": {
+          "type": "string",
+          "description": "Short license name. For 'original' entries this is 'Orrery-Original' (project copyright)."
+        },
+        "license_url": { "type": "string", "format": "uri" },
+        "license_rationale": { "type": "string" },
+        "translation_status": {
+          "type": "string",
+          "enum": ["human", "mt-with-review", "mt", "n/a"]
+        },
+        "translation_reviewer": { "type": "string" }
+      }
+    }
+  }
+}

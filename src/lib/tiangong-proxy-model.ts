@@ -184,6 +184,40 @@ export function buildTiangongProxyStation(): THREE.Group {
   setShadowFlags(nadirAdapter);
   root.add(nadirAdapter);
 
+  // Forward-node zenith docking adapter (gold MLI) — where the second
+  // Shenzhou attaches during crew handover periods (the canonical
+  // 3-spacecraft configuration shown in CMSA station diagrams).
+  const zenithAdapter = new THREE.Mesh(
+    new THREE.CylinderGeometry(tianheRadius * 0.85, tianheRadius * 0.85, 0.18, 12),
+    mliMat,
+  );
+  zenithAdapter.position.set(tianheLen / 2 + 0.14, 0, 0.28);
+  zenithAdapter.rotation.x = Math.PI / 2;
+  zenithAdapter.userData.stationPickable = true;
+  zenithAdapter.userData.moduleId = 'tianhe';
+  setShadowFlags(zenithAdapter);
+  root.add(zenithAdapter);
+
+  // ── Tianhe's own solar arrays (pair, deployed perpendicular to the
+  // station axis on Tianhe's aft section). Smaller than the lab arrays
+  // but visually significant. ─────────────────────────────────────────
+  const tianheArrayTex = makeSolarArrayTexture();
+  tianheArrayTex.repeat.set(2, 1);
+  const tianheWingPair = new THREE.Group();
+  tianheWingPair.position.set(-tianheLen / 2 + 0.4, 0, 0);
+  // Rotate so wings extend along ±Z (perpendicular to Tianhe's X-axis,
+  // and out of plane with the Wentian/Mengtian cross-bar at +X end).
+  tianheWingPair.rotation.y = Math.PI / 2;
+  makeWingPair(tianheWingPair, 1.6, 0.7, SOLAR_BLUE);
+  root.add(tianheWingPair);
+  tianheWingPair.traverse((c) => {
+    if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {
+      c.material = c.material.clone();
+      c.material.map = tianheArrayTex;
+      c.material.needsUpdate = true;
+    }
+  });
+
   // ── Wentian lab (along +Y from forward node) ────────────────────────
   const labLen = 2.4;
   const labRadius = 0.24;
@@ -200,11 +234,13 @@ export function buildTiangongProxyStation(): THREE.Group {
   setShadowFlags(wentian);
   root.add(wentian);
 
-  // Wentian outboard solar mast + wing pair (at the +Y far end).
+  // Wentian outboard solar mast + wing pair (at the +Y far end). Real
+  // Tiangong: each lab has 2 huge tracking arrays — the dominant visual
+  // feature of the station. Sized to match.
   const wentianWingPair = new THREE.Group();
   wentianWingPair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04, 0);
   wentianWingPair.rotation.z = Math.PI / 2; // wings perpendicular to lab axis
-  makeWingPair(wentianWingPair, 1.2, 0.95, SOLAR_BLUE);
+  makeWingPair(wentianWingPair, 3.0, 1.4, SOLAR_BLUE);
   root.add(wentianWingPair);
   // Apply solar texture to wing meshes for visual richness.
   const arrayTex = makeSolarArrayTexture();
@@ -232,7 +268,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   const mengtianWingPair = new THREE.Group();
   mengtianWingPair.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labLen + 0.04), 0);
   mengtianWingPair.rotation.z = Math.PI / 2;
-  makeWingPair(mengtianWingPair, 1.2, 0.95, SOLAR_BLUE);
+  makeWingPair(mengtianWingPair, 3.0, 1.4, SOLAR_BLUE);
   root.add(mengtianWingPair);
   mengtianWingPair.traverse((c) => {
     if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {
@@ -276,6 +312,11 @@ export function buildTiangongProxyStation(): THREE.Group {
     { id: 'shenzhou', build: buildShenzhou, port: [-(tianheLen / 2 + 0.2), 0, 0], out: 'minusX' },
     // Tianzhou docks at the forward-node nadir port (-Y from forward node).
     { id: 'tianzhou', build: buildTianzhou, port: [tianheLen / 2 + 0.14, -0.5, 0], out: 'minusY' },
+    // Second Shenzhou at the forward-node zenith port (+Z) — the
+    // canonical 3-spacecraft configuration during crew handover. Same
+    // pickable id as the aft Shenzhou; both meshes belong to the
+    // shenzhou panel (visiting-fleet pattern from /iss).
+    { id: 'shenzhou', build: buildShenzhou, port: [tianheLen / 2 + 0.14, 0, 0.5], out: 'plusZ' },
   ];
 
   for (const ship of fleet) {

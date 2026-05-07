@@ -1,0 +1,10 @@
+{
+  "title": "NRHO — Near-Rectilinear Halo Orbit",
+  "intro_sentence": "A nine-day egg-shaped orbit around the Earth-Moon L2 point — the chosen home of NASA's Lunar Gateway.",
+  "body_paragraphs": [
+    "An NRHO is a halo orbit — a periodic three-body trajectory that loops around a Lagrange point — but stretched until one end nearly touches the Moon's south pole. It looks more like a polar orbit than a halo, hence 'near-rectilinear.' Each loop takes about 6.5 days at perilune (close to the Moon) and 9 days for a full revolution.",
+    "Why this orbit? Stability with low ∆v upkeep — about 5 m/s per year of station-keeping. Continuous line-of-sight to Earth (Gateway never goes behind the Moon for long). Low-cost ∆v access from Earth (around 4 km/s for transfer + insertion, comparable to LLO but with way better thermal stability). Lunar surface access via small landers from perilune.",
+    "Gateway will be the first crewed deep-space station, occupying NRHO from the late 2020s onward. Artemis II will be the first crewed flight to NRHO; Artemis III will dock there to transfer to the lander. Beyond Gateway, NRHO is the staging ground for crewed Mars architectures."
+  ],
+  "diagram_caption": "Stretched halo orbit at the Earth-Moon L2 point: ~9-day period, perilune near the south pole, line-of-sight to Earth."
+}

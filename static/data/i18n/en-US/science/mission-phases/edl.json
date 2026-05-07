@@ -1,0 +1,10 @@
+{
+  "title": "EDL — Entry, Descent, Landing",
+  "intro_sentence": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
+  "body_paragraphs": [
+    "Entry begins when the spacecraft hits sensible atmosphere — about 125 km up at Mars, 100 km at Earth. From that moment, atmospheric drag is doing your braking; engines stay quiet. The heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic.",
+    "Descent picks up when supersonic parachutes deploy, around Mach 1.5-2. They strip another huge chunk of velocity — but parachutes alone can't get you to a soft landing on a thin atmosphere. Mars goes from supersonic to subsonic on parachute, then transitions to powered descent: heat shield drops, retro-rockets fire, the lander falls the last few hundred metres on engine plumes alone.",
+    "Curiosity and Perseverance used the sky-crane: hover at ~20m, lower the rover on cables to wheels-down, fly the descent stage away. Apollo used a direct rocket-burn to surface. China's Zhurong used a hybrid hover/lower scheme. Different planets, different atmospheres, different schemes — same seven minutes."
+  ],
+  "diagram_caption": "EDL sequence: entry (heat shield) → parachute → powered descent → touchdown."
+}

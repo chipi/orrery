@@ -1,0 +1,14 @@
+{
+  "id": "edl",
+  "tab": "mission-phases",
+  "order": 5,
+  "diagram": "edl.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/mars", "context_key": "Curiosity, Perseverance, Tianwen-1 — every Mars lander goes through EDL" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Atmospheric entry", "u": "https://en.wikipedia.org/wiki/Atmospheric_entry", "t": "intro" },
+    { "l": "NASA · Mars EDL Seven Minutes of Terror", "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/", "t": "core" }
+  ]
+}

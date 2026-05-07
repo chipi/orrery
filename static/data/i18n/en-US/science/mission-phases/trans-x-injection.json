@@ -1,0 +1,9 @@
+{
+  "title": "Trans-X Injection — TLI / TMI / TVI / TJI",
+  "intro_sentence": "The big departure burn that throws you onto a trajectory toward your destination.",
+  "body_paragraphs": [
+    "After launch you're typically in low Earth orbit (LEO). To go anywhere else, you need a second burn that raises your apogee out to the destination — that's the trans-X injection. The X is the destination's first letter: TLI for trans-lunar, TMI for trans-Mars, TVI for trans-Venus, TJI for trans-Jupiter. Same physics, different aim point.",
+    "The burn happens at perigee of the parking orbit, where Oberth gives you the most energy per kilogram of propellant. For a Hohmann to Mars, TMI costs about 3.6 km/s on top of the LEO injection's 7.9 km/s — about a third of the total mission ∆v. Voyager 2 needed ~7 km/s for trans-Saturn injection on top of its initial trans-Jupiter departure.",
+    "On the FLIGHT tab of every interplanetary mission card in `/missions`, you'll find this number labelled ∆v_TLI or ∆v_TMI. It's the cost of leaving Earth's neighbourhood, separately from the cost of getting to LEO in the first place."
+  ]
+}

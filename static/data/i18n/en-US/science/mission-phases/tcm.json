@@ -1,0 +1,9 @@
+{
+  "title": "TCM — Trajectory Correction Maneuver",
+  "intro_sentence": "A small mid-cruise burn to fix the small errors that always sneak into the launch trajectory.",
+  "body_paragraphs": [
+    "No launch is perfect. The actual trajectory off the launch vehicle differs from the planned one by tens of metres per second — small in absolute terms, catastrophic in arrival accuracy if left alone. A 5 cm/s error at TLI translates to 100 km of miss-distance at the Moon. TCMs trim those errors before they grow.",
+    "Most missions plan three or four. TCM-1 happens within days of launch, when the launch error is best characterised. TCM-2 a few weeks later, after early tracking refines the orbit. TCM-3 closer to arrival. TCM-4 is usually a final approach trim. Each costs only metres per second — propellant-cheap, but operationally expensive (every burn is a chance for something to go wrong).",
+    "The `tcm_count` field on `/missions` FLIGHT tabs reports how many TCMs each mission used. Curiosity used 4. Mars Reconnaissance Orbiter used 4. Apollo missions used 4-5 mid-course corrections on the way to and from the Moon."
+  ]
+}

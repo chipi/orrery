@@ -1,0 +1,12 @@
+{
+  "id": "orbit-insertion",
+  "tab": "mission-phases",
+  "order": 4,
+  "see_in_app": [
+    { "route": "/missions", "context_key": "FLIGHT tab shows orbit-insertion ∆v for orbit-class missions" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Orbital insertion", "u": "https://en.wikipedia.org/wiki/Orbital_insertion", "t": "intro" },
+    { "l": "NASA · Mars Orbit Insertion", "u": "https://mars.nasa.gov/mro/mission/timeline/mtmoi/", "t": "core" }
+  ]
+}

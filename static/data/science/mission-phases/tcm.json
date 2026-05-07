@@ -1,0 +1,12 @@
+{
+  "id": "tcm",
+  "tab": "mission-phases",
+  "order": 3,
+  "see_in_app": [
+    { "route": "/missions", "context_key": "FLIGHT tab shows TCM count for each mission's cruise" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Trajectory correction maneuver", "u": "https://en.wikipedia.org/wiki/Trajectory_correction_maneuver", "t": "intro" },
+    { "l": "NASA · Mid-Course Corrections", "u": "https://mars.nasa.gov/mars2020/timeline/cruise/", "t": "core" }
+  ]
+}

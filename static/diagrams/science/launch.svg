@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Launch ascent profile: vertical → pitch program → staging → orbital insertion">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Earth surface curve at the bottom -->
+  <path d="M 20 270 Q 200 260 380 270" class="stroke" />
+  <text x="20" y="288" class="label-mute">Earth surface</text>
+  <!-- Pad -->
+  <rect x="44" y="262" width="8" height="8" fill="rgba(255,255,255,0.85)" />
+  <text x="32" y="252" class="label-mute">pad</text>
+  <!-- Trajectory: starts vertical, then pitches over -->
+  <path d="M 48 260 Q 48 200 80 160 Q 140 110 240 80 Q 330 60 380 50" class="accent" />
+  <!-- Stage separation marker -->
+  <circle cx="80" cy="160" r="3" fill="#4ecdc4" />
+  <text x="86" y="156" class="label-accent">stage 1 sep</text>
+  <!-- Pitch program marker -->
+  <circle cx="48" cy="200" r="3" fill="rgba(255,255,255,0.85)" />
+  <text x="56" y="200" class="label-mute">pitch over</text>
+  <!-- Stage 2 sep -->
+  <circle cx="240" cy="80" r="3" fill="#4ecdc4" />
+  <text x="184" y="74" class="label-accent">stage 2 sep / payload release</text>
+  <!-- Orbital path -->
+  <path d="M 380 50 Q 360 30 320 30" class="dashed" />
+  <text x="316" y="22" class="label-mute">LEO</text>
+  <text x="80" y="40" class="label-mute">ascent profile</text>
+</svg>

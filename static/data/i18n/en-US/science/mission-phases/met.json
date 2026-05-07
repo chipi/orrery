@@ -1,0 +1,9 @@
+{
+  "title": "MET — Mission Elapsed Time",
+  "intro_sentence": "A simple stopwatch that starts at launch and never stops — the universal time tag for every event in the mission timeline.",
+  "body_paragraphs": [
+    "MET is the time since launch. Day zero is liftoff. Every event — staging, trans-X injection, mid-course correction, orbit insertion, surface ops — gets a MET timestamp. Apollo 11 lunar landing: MET 4 days, 6 hours, 45 minutes. Voyager 1 leaving the heliopause: MET 35 years.",
+    "Why MET instead of UTC? Because clock-on-Earth doesn't quite match clock-on-spacecraft when the spacecraft is moving fast or far. Light-time delays grow (Mars is 4-22 light-minutes away depending on the orbital geometry). Relativistic dilation creeps in for fast probes. MET is the spacecraft's own elapsed time, the natural anchor for sequencing onboard events.",
+    "On `/fly`'s HUD you'll see MET tick up in days as the simulation progresses. It's the spacecraft's perspective on how long the journey has taken — independent of what date it is back on Earth."
+  ]
+}

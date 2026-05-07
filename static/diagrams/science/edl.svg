@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="EDL sequence: entry, parachute, powered descent, touchdown">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Atmosphere top dashed -->
+  <line x1="20" y1="50" x2="380" y2="50" class="dashed" />
+  <text x="20" y="42" class="label-mute">top of atmosphere · ~125 km</text>
+  <!-- Surface -->
+  <line x1="20" y1="270" x2="380" y2="270" class="stroke" />
+  <text x="20" y="288" class="label-mute">surface · 0 km</text>
+  <!-- Entry ballistic arc -->
+  <path d="M 50 60 Q 130 90 180 130" class="accent" />
+  <text x="50" y="78" class="label-accent">1. entry</text>
+  <text x="50" y="90" class="label-mute">heat shield · ~20 km/s</text>
+  <!-- Parachute (drawn as triangle/canopy) -->
+  <line x1="180" y1="130" x2="220" y2="180" class="accent" />
+  <path d="M 200 175 Q 220 165 240 175" class="stroke" />
+  <line x1="220" y1="178" x2="220" y2="180" class="stroke" />
+  <text x="186" y="142" class="label-accent">2. parachute</text>
+  <text x="180" y="158" class="label-mute">Mach 1.5 → subsonic</text>
+  <!-- Powered descent: vertical arrow with thrust -->
+  <line x1="220" y1="180" x2="240" y2="230" class="accent" />
+  <line x1="240" y1="232" x2="232" y2="248" class="accent" />
+  <line x1="240" y1="232" x2="248" y2="248" class="accent" />
+  <text x="248" y="200" class="label-accent">3. powered descent</text>
+  <text x="248" y="214" class="label-mute">retro-rockets · sky-crane</text>
+  <!-- Lander on surface -->
+  <rect x="234" y="262" width="12" height="8" fill="rgba(255,255,255,0.85)" />
+  <text x="248" y="266" class="label-accent">4. wheels-down</text>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "title": "Orbit Insertion — LOI / MOI",
+  "intro_sentence": "The braking burn that captures your spacecraft into orbit instead of letting it fly past forever.",
+  "body_paragraphs": [
+    "When your spacecraft arrives at the destination, it's moving fast — fast enough to escape if you do nothing. To capture into orbit, you have to bleed off enough velocity to drop below local escape speed. That braking burn is the orbit insertion. LOI for lunar (Apollo, LRO), MOI for Mars (MAVEN, MRO, Tianwen-1), and so on.",
+    "The burn happens at periapsis of the arrival hyperbola, where Oberth makes the burn cheapest. The size depends on V∞ — the leftover speed at infinity — and the desired orbital altitude. Mars MRO arrived with V∞ ≈ 2.6 km/s and spent ~1 km/s of `∆v` for capture. Cassini's Saturn orbit insertion was a 95-minute burn, the longest in the spacecraft's life.",
+    "If the burn fails or under-performs, the spacecraft escapes. There's no second chance. Mars Climate Orbiter is the cautionary tale: a unit-conversion error meant its MOI burn was too low, the spacecraft passed too close, and atmospheric drag tore it apart."
+  ]
+}

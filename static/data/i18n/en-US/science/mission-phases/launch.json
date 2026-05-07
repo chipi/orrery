@@ -1,0 +1,10 @@
+{
+  "title": "Launch + Ascent",
+  "intro_sentence": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
+  "body_paragraphs": [
+    "Launch ascent costs about 9.4 km/s of ∆v, but barely 7.9 km/s of that is actual orbital velocity. The rest is gravity loss (you spend energy holding the rocket up while it climbs) and drag loss (atmosphere fighting back). Pitch-program right and you minimise both — too vertical wastes thrust on altitude that doesn't help orbital insertion; too horizontal and the atmosphere has more time to slow you down.",
+    "Stages drop along the way. First-stage separation, second-stage ignition, fairing jettison, payload-release. Each stage drops dry mass that the next one no longer has to accelerate. Falcon 9 returns its first stage; Saturn V didn't. The trade is whether the recovery hardware costs more than the propellant it would have taken to throw the stage away.",
+    "On `/missions` the launch_vehicle field tells you which rocket flew the mission. Saturn V for Apollo. Atlas V for Curiosity. Falcon 9 for Crew Dragon. SLS for Artemis I. Each rocket has a fixed C3-vs-payload curve — the rocket sets the ceiling on what's possible."
+  ],
+  "diagram_caption": "Launch profile: vertical rise → pitch program → staging → orbital insertion."
+}

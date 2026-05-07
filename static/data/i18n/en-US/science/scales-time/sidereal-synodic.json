@@ -1,0 +1,10 @@
+{
+  "title": "Sidereal vs Synodic Period",
+  "intro_sentence": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
+  "body_paragraphs": [
+    "Sidereal period: time for one full orbit relative to the fixed stars. This is the geometric, Kepler-third-law period — Mars sidereal year is 687 Earth days. Synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. Mars synodic period — time between Mars-Earth alignments — is 780 days, or about 26 months.",
+    "The synodic period is what mission planners care about. Earth-Mars Hohmann transfers only work when Mars is in the right place. The next viable launch window appears every 26 months. Miss one, wait two years for another. That's the cadence of every Mars mission ever flown.",
+    "Mathematically: `1/T_syn = 1/T_inner − 1/T_outer`. If Earth's year is 1.0 yr and Mars's is 1.88 yr: `1/T_syn = 1 − 1/1.88 = 0.468`, so `T_syn = 2.14 yr ≈ 26 months`. The math is simple; the operational consequence — every mission timeline must respect it — is where it lives in mission planning."
+  ],
+  "diagram_caption": "Sidereal: same star alignment. Synodic: same Earth-Mars-Sun alignment, longer because both planets moved."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "au",
+  "tab": "scales-time",
+  "order": 1,
+  "diagram": "au.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Every planet's semi-major axis is given in AU" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Astronomical unit", "u": "https://en.wikipedia.org/wiki/Astronomical_unit", "t": "intro" },
+    { "l": "IAU · Definition of the AU", "u": "https://www.iau.org/static/resolutions/IAU2012_English.pdf", "t": "core" }
+  ]
+}

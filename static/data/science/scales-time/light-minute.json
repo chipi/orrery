@@ -1,0 +1,11 @@
+{
+  "id": "light-minute",
+  "tab": "scales-time",
+  "order": 2,
+  "see_in_app": [
+    { "route": "/fly", "context_key": "/fly's HUD shows Earth-distance in light-minutes during cruise" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Light-second", "u": "https://en.wikipedia.org/wiki/Light-second", "t": "intro" }
+  ]
+}

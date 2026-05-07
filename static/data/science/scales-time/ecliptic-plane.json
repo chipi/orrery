@@ -1,0 +1,11 @@
+{
+  "id": "ecliptic-plane",
+  "tab": "scales-time",
+  "order": 5,
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Orrery's solar system view defaults to the ecliptic plane" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Ecliptic", "u": "https://en.wikipedia.org/wiki/Ecliptic", "t": "intro" }
+  ]
+}

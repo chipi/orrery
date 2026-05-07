@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="AU as Earth-Sun distance, with planet semi-major axes log-spaced">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Sun on the left -->
+  <circle cx="50" cy="150" r="10" class="focus" />
+  <text x="36" y="180" class="label-accent">Sun</text>
+  <!-- Tick marks for log-AU axis: 1, 5, 10, 30 — maps to 100, 200, 250, 320 -->
+  <line x1="50" y1="150" x2="370" y2="150" class="stroke" />
+  <line x1="100" y1="146" x2="100" y2="154" class="stroke" />
+  <text x="92" y="168" class="label-mute">1 AU</text>
+  <text x="84" y="182" class="label-mute">(Earth)</text>
+  <line x1="200" y1="146" x2="200" y2="154" class="stroke" />
+  <text x="186" y="168" class="label-mute">5.2 (Jup)</text>
+  <line x1="250" y1="146" x2="250" y2="154" class="stroke" />
+  <text x="232" y="168" class="label-mute">9.6 (Sat)</text>
+  <line x1="320" y1="146" x2="320" y2="154" class="stroke" />
+  <text x="298" y="168" class="label-mute">30 (Nep)</text>
+  <!-- Planet markers -->
+  <circle cx="100" cy="150" r="4" class="body" />
+  <circle cx="200" cy="150" r="6" class="body" />
+  <circle cx="250" cy="150" r="5" class="body" />
+  <circle cx="320" cy="150" r="4" class="body" />
+  <text x="62" y="46" class="label-mute">1 AU = 149,597,870,700 m exactly</text>
+  <text x="62" y="60" class="label-mute">~8.3 light-minutes</text>
+  <!-- Earth-Sun bracket -->
+  <line x1="50" y1="200" x2="100" y2="200" class="accent" />
+  <line x1="50" y1="195" x2="50" y2="205" class="accent" />
+  <line x1="100" y1="195" x2="100" y2="205" class="accent" />
+  <text x="60" y="222" class="label-accent">1 AU</text>
+</svg>

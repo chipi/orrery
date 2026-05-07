@@ -44,3 +44,4 @@
 | ADR-045 | RTL strategy for Arabic locale | Accepted | May 2026 |
 | ADR-046 | Agency-first build-time imagery sourcing | Accepted | May 2026 |
 | ADR-047 | Provenance manifests + license stewardship | Accepted | May 2026 |
+| ADR-051 | Outbound learn-link stewardship | Accepted (closes RFC-015) | May 2026 |

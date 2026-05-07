@@ -43,6 +43,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
+| Outbound LEARN links | Agency-first per-link provenance; native-language priority; `rel="noopener noreferrer external"` + `hreflang` everywhere; public `/library` bill-of-links; link-checker chained into `npm run fetch` | ADR-051 |
 | Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
@@ -294,6 +295,8 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 - Do not hardcode UI strings — use Paraglide-js
 - Do not put editorial content in base mission JSON files — use locale overlays
 - Do not fetch data directly — use `src/lib/data.ts`
+- Do not add outbound LEARN links without re-running `npm run build-link-provenance` — every link must have a provenance row (ADR-051)
+- Do not link to Wikipedia as the *only* source on a non-US entity — the operator's own page must be the first `intro` link (ADR-051)
 - Do not run Lambert solver on main thread
 - Do not change physics constants without ADR
 - Do not design desktop-first

@@ -15,3 +15,5 @@
 | RFC-011 | Science page · render pipeline & content authoring | Open | ADR-034 / 035 / 036 | v0.4 |
 | RFC-012 | Mars Surface Map · technical strategy | Open | ADR-037 / 038 / 039 | v0.4 |
 | RFC-013 | ISS Explorer · 3D model pipeline & module pickability | Closed · closed by ADR-040 / ADR-041 / ADR-042 | ADR-040 / 041 / 042 | v0.4 |
+| RFC-014 | Tiangong Explorer · 3D model pipeline & module pickability | Open | ADR-048 / 049 / 050 | v0.5 |
+| RFC-015 | LEARN-link rollout | Closed · closed by ADR-051 | ADR-051 | v0.5 |

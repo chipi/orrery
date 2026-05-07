@@ -44,6 +44,15 @@
     <p class="lede">{section.intro_sentence}</p>
   </header>
 
+  {#if section.diagram}
+    <figure class="hero-diagram">
+      <img src="{base}/diagrams/science/{section.diagram}" alt={section.diagram_caption ?? ''} />
+      {#if section.diagram_caption}
+        <figcaption>{section.diagram_caption}</figcaption>
+      {/if}
+    </figure>
+  {/if}
+
   {#if section.narrative_101 && section.narrative_101.length > 0}
     <section class="narrative-101" aria-label="A focused 101">
       <p class="badge">101 · zoom in</p>
@@ -59,15 +68,6 @@
       {@html data.formulaHtml}
       {#if section.formula_caption}
         <figcaption>{section.formula_caption}</figcaption>
-      {/if}
-    </figure>
-  {/if}
-
-  {#if section.diagram}
-    <figure class="diagram">
-      <img src="{base}/diagrams/science/{section.diagram}" alt={section.diagram_caption ?? ''} />
-      {#if section.diagram_caption}
-        <figcaption>{section.diagram_caption}</figcaption>
       {/if}
     </figure>
   {/if}
@@ -142,6 +142,27 @@
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 24px;
   }
+  .hero-diagram {
+    margin: 0 0 24px;
+    padding: 24px 16px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    text-align: center;
+  }
+  .hero-diagram img {
+    max-width: 100%;
+    height: auto;
+    max-height: 320px;
+    opacity: 0.95;
+  }
+  .hero-diagram figcaption {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 12px;
+  }
   .narrative-101 {
     margin: 24px 0;
     padding: 18px 20px;
@@ -176,16 +197,7 @@
     text-align: center;
     overflow-x: auto;
   }
-  .diagram {
-    margin: 24px 0;
-    text-align: center;
-  }
-  .diagram img {
-    max-width: 100%;
-    height: auto;
-  }
-  .formula figcaption,
-  .diagram figcaption {
+  .formula figcaption {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 1px;

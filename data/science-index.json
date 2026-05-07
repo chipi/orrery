@@ -1,0 +1,296 @@
+[
+  {
+    "tab": "mission-phases",
+    "section": "edl",
+    "title": "EDL — Entry, Descent, Landing",
+    "intro": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
+    "haystack": "edl — entry, descent, landing seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission. entry begins when the spacecraft hits sensible atmosphere — about 125 km up at mars, 100 km at earth. from that moment, atmospheric drag is doing your braking; engines stay quiet. the heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "launch",
+    "title": "Launch + Ascent",
+    "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
+    "haystack": "launch + ascent the most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously. launch ascent costs about 9.4 km/s of ∆v, but barely 7.9 km/s of that is actual orbital velocity. the rest is gravity loss (you spend energy holding the rocket up while it climbs) and drag loss (atmosphere fighting back). pitch-program right and you minimise both — too vertical wastes thrust on altitude that doesn't help orbital insertion; too horizontal and the atmosphere has more time to slow you down."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "met",
+    "title": "MET — Mission Elapsed Time",
+    "intro": "A simple stopwatch that starts at launch and never stops — the universal time tag for every event in the mission timeline.",
+    "haystack": "met — mission elapsed time a simple stopwatch that starts at launch and never stops — the universal time tag for every event in the mission timeline. met is the time since launch. day zero is liftoff. every event — staging, trans-x injection, mid-course correction, orbit insertion, surface ops — gets a met timestamp. apollo 11 lunar landing: met 4 days, 6 hours, 45 minutes. voyager 1 leaving the heliopause: met 35 years."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "mission-types",
+    "title": "Mission Types — Flyby, Orbiter, Lander, Rover, Sample Return",
+    "intro": "Five archetypes of how a spacecraft engages with its destination — each one a different ∆v cost, risk profile, and science return.",
+    "haystack": "mission types — flyby, orbiter, lander, rover, sample return five archetypes of how a spacecraft engages with its destination — each one a different ∆v cost, risk profile, and science return. flyby missions skip the orbit-insertion burn entirely. they sweep past at the v∞ they arrive with — ~10 km/s for voyager at jupiter, ~14 km/s for new horizons at pluto. encounter time is minutes to days. trades fast science for shallow coverage and zero followup."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "nrho",
+    "title": "NRHO — Near-Rectilinear Halo Orbit",
+    "intro": "A nine-day egg-shaped orbit around the Earth-Moon L2 point — the chosen home of NASA's Lunar Gateway.",
+    "haystack": "nrho — near-rectilinear halo orbit a nine-day egg-shaped orbit around the earth-moon l2 point — the chosen home of nasa's lunar gateway. an nrho is a halo orbit — a periodic three-body trajectory that loops around a lagrange point — but stretched until one end nearly touches the moon's south pole. it looks more like a polar orbit than a halo, hence 'near-rectilinear.' each loop takes about 6.5 days at perilune (close to the moon) and 9 days for a full revolution."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "orbit-insertion",
+    "title": "Orbit Insertion — LOI / MOI",
+    "intro": "The braking burn that captures your spacecraft into orbit instead of letting it fly past forever.",
+    "haystack": "orbit insertion — loi / moi the braking burn that captures your spacecraft into orbit instead of letting it fly past forever. when your spacecraft arrives at the destination, it's moving fast — fast enough to escape if you do nothing. to capture into orbit, you have to bleed off enough velocity to drop below local escape speed. that braking burn is the orbit insertion. loi for lunar (apollo, lro), moi for mars (maven, mro, tianwen-1), and so on."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "tcm",
+    "title": "TCM — Trajectory Correction Maneuver",
+    "intro": "A small mid-cruise burn to fix the small errors that always sneak into the launch trajectory.",
+    "haystack": "tcm — trajectory correction maneuver a small mid-cruise burn to fix the small errors that always sneak into the launch trajectory. no launch is perfect. the actual trajectory off the launch vehicle differs from the planned one by tens of metres per second — small in absolute terms, catastrophic in arrival accuracy if left alone. a 5 cm/s error at tli translates to 100 km of miss-distance at the moon. tcms trim those errors before they grow."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "trans-x-injection",
+    "title": "Trans-X Injection — TLI / TMI / TVI / TJI",
+    "intro": "The big departure burn that throws you onto a trajectory toward your destination.",
+    "haystack": "trans-x injection — tli / tmi / tvi / tji the big departure burn that throws you onto a trajectory toward your destination. after launch you're typically in low earth orbit (leo). to go anywhere else, you need a second burn that raises your apogee out to the destination — that's the trans-x injection. the x is the destination's first letter: tli for trans-lunar, tmi for trans-mars, tvi for trans-venus, tji for trans-jupiter. same physics, different aim point."
+  },
+  {
+    "tab": "orbits",
+    "section": "apsides",
+    "title": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+    "intro": "The two extreme points on every elliptical orbit: closest approach, and farthest.",
+    "haystack": "apsides — perihelion, aphelion, perigee, apogee the two extreme points on every elliptical orbit: closest approach, and farthest. an apsis is one of the two points on an elliptical orbit where the body is at minimum or maximum distance from its focus. the line connecting them — passing through both foci — is the line of apsides. every keplerian orbit has exactly two: closest, and farthest."
+  },
+  {
+    "tab": "orbits",
+    "section": "eccentricity",
+    "title": "Eccentricity",
+    "intro": "How stretched the orbit is — zero is a perfect circle, one is a parabolic escape.",
+    "haystack": "eccentricity how stretched the orbit is — zero is a perfect circle, one is a parabolic escape. eccentricity (`e`) is the shape number. set it to 0 and you have a circle — the foci collapse onto a single centre, and the orbiting body stays at the same distance forever. crank it up toward 1 and the ellipse stretches into a cigar — the body whips past the focus at perihelion, then loiters out at aphelion for most of the orbit."
+  },
+  {
+    "tab": "orbits",
+    "section": "inclination",
+    "title": "Inclination",
+    "intro": "The tilt of the orbit plane relative to a reference plane — usually the ecliptic or Earth's equator.",
+    "haystack": "inclination the tilt of the orbit plane relative to a reference plane — usually the ecliptic or earth's equator. inclination (`i`) is the angle between the orbit plane and a chosen reference. for a heliocentric orbit, the reference is the ecliptic — the plane earth orbits in. for earth-orbiters, it's usually the equator. the angle is measured at the ascending node, where the orbit climbs through the reference plane heading north."
+  },
+  {
+    "tab": "orbits",
+    "section": "keplerian-orbit",
+    "title": "Keplerian Orbit",
+    "intro": "An ellipse with the Sun at one focus — the simplest orbit a body can have around another.",
+    "haystack": "keplerian orbit an ellipse with the sun at one focus — the simplest orbit a body can have around another. when you fall toward something massive but miss it, you get a keplerian orbit. the path is an ellipse — a stretched circle — and the body you're falling toward sits at one of the two focal points, never the centre. earth around the sun, moon around earth, every spacecraft you'll see in orrery: all keplerian to a first approximation."
+  },
+  {
+    "tab": "orbits",
+    "section": "keplers-laws",
+    "title": "Kepler's Three Laws",
+    "intro": "Three observational rules that turned planetary motion into a closed-form science a century before Newton explained why.",
+    "haystack": "kepler's three laws three observational rules that turned planetary motion into a closed-form science a century before newton explained why. first law: planets orbit on ellipses with the sun at one focus. before kepler, every model used circles — sometimes nested, sometimes offset, but always circular. kepler used tycho brahe's twenty years of mars observations and gave up: the data didn't fit circles, and nothing he could do made them. ellipses fit on the first try."
+  },
+  {
+    "tab": "orbits",
+    "section": "orbit-regimes",
+    "title": "Orbit Regimes — LEO, MEO, GEO, HEO",
+    "intro": "Earth orbits cluster into four altitude bands; each one is a different mission compromise between latency, lifetime, and cost.",
+    "haystack": "orbit regimes — leo, meo, geo, heo earth orbits cluster into four altitude bands; each one is a different mission compromise between latency, lifetime, and cost. leo (low earth orbit, < 2,000 km altitude): cheapest to reach, fastest period (~90 minutes for iss at 408 km), shortest ground-link delay (a few ms), shortest lifetime due to residual atmospheric drag. hosts the iss, hubble, starlink, most earth observation satellites, all crewed activity beyond apollo."
+  },
+  {
+    "tab": "orbits",
+    "section": "semi-major-axis",
+    "title": "Semi-Major Axis",
+    "intro": "Half the longest diameter of the orbit ellipse — and the single number that sets the orbital period.",
+    "haystack": "semi-major axis half the longest diameter of the orbit ellipse — and the single number that sets the orbital period. if you flatten a keplerian ellipse into its longest dimension, the line you've drawn is the major axis. cut that in half and you have the semi-major axis — written `a`. it's the average distance from the orbiting body to the focus, kind of: an arithmetic mean of perihelion (closest) and aphelion (farthest)."
+  },
+  {
+    "tab": "orbits",
+    "section": "true-anomaly",
+    "title": "True Anomaly",
+    "intro": "The angle that tells you where on the orbit a body is right now, measured from perihelion.",
+    "haystack": "true anomaly the angle that tells you where on the orbit a body is right now, measured from perihelion. the keplerian elements describe the shape and orientation of an orbit; true anomaly (`ν`) tells you where the body is along that orbit at a given instant. stand at the focus (the sun, for a planet), point at perihelion, and rotate your finger to follow the body around. the angle you sweep is the true anomaly."
+  },
+  {
+    "tab": "orbits",
+    "section": "vis-viva",
+    "title": "Vis-Viva Equation",
+    "intro": "How fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis.",
+    "haystack": "vis-viva equation how fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis. vis-viva is the workhorse equation of orbital mechanics. it connects three numbers — the gravitational parameter `μ` of whatever you're orbiting, your current distance `r` from the focus, and the orbit's semi-major axis `a` — and spits out the speed `v`. that's it. no time integration, no anomaly chain, just one square root and you know how fast you're going."
+  },
+  {
+    "tab": "porkchop",
+    "section": "contour-reading",
+    "title": "Reading the Contours",
+    "intro": "The shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live.",
+    "haystack": "reading the contours the shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live. look at a mars porkchop. you'll see a roughly oval lobe of teal cells centred near a 250-day tof, recurring every 26 months. that's the hohmann opportunity. inside the lobe, all combinations of (departure, tof) deliver feasible mars missions at acceptable ∆v."
+  },
+  {
+    "tab": "porkchop",
+    "section": "departure-axis",
+    "title": "Departure-Window Axis",
+    "intro": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
+    "haystack": "departure-window axis when you launch — running across the x-axis, typically a four-year span sampled daily. the x-axis tells you when you leave earth. each pixel column is a different launch date — for orrery's plots, sampled at one-day resolution across roughly four years. why a four-year span? because the earth-mars synodic period is 26 months; you need at least two synodic cycles to capture the recurring launch-window pattern."
+  },
+  {
+    "tab": "porkchop",
+    "section": "dv-heatmap",
+    "title": "∆v Heatmap",
+    "intro": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
+    "haystack": "∆v heatmap the colour scale that turns ∆v numbers into a picture you can read at a glance. cool teal sits at low ∆v (~3 km/s) — the natural hohmann minimum. blue at ~5 km/s. yellow around 7 km/s — the threshold of expensive. orange and red above 9 km/s — runaway-cost cells, where you'd need an sls-class launch vehicle just to make the math close."
+  },
+  {
+    "tab": "porkchop",
+    "section": "tof-axis",
+    "title": "Time-of-Flight Axis",
+    "intro": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
+    "haystack": "time-of-flight axis how long the trip takes — running up the y-axis, in days for inner planets and years for the outer ones. y-axis is transit duration. for mars-class targets the natural hohmann transit is ~250 days, so orrery's y range runs roughly 100-500 days. for jupiter or saturn the hohmann transit is years, so the axis is in years."
+  },
+  {
+    "tab": "porkchop",
+    "section": "viability",
+    "title": "Reading Viability",
+    "intro": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
+    "haystack": "reading viability a cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map. pick a vehicle. falcon heavy, sls block 1, atlas v n22, whatever. that vehicle has a known maximum ∆v capability with your payload mass. compare against the porkchop: every cell where ∆v_cost ≤ ∆v_capability is a feasible launch opportunity. every cell where it's greater is impossible without a different vehicle."
+  },
+  {
+    "tab": "porkchop",
+    "section": "what-is-a-porkchop",
+    "title": "What is a Porkchop Plot?",
+    "intro": "A 2D heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows.",
+    "haystack": "what is a porkchop plot? a 2d heatmap showing ∆v cost across every (departure date, transit time) pair — the standard tool for finding launch windows. pick a departure date on the x axis. pick a transit time on the y axis. the colour of that cell tells you how much ∆v it would cost to fly that mission. cool teal: cheap. yellow: moderate. red: very expensive. repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe."
+  },
+  {
+    "tab": "propulsion",
+    "section": "c3",
+    "title": "C3 — Characteristic Energy",
+    "intro": "How much energy per unit mass a rocket needs to leave Earth's gravity well with leftover speed — the standard launch-energy metric.",
+    "haystack": "c3 — characteristic energy how much energy per unit mass a rocket needs to leave earth's gravity well with leftover speed — the standard launch-energy metric. c3 is the square of the hyperbolic excess velocity. units: km²/s². it tells you how much energy beyond escape your launch vehicle has to deliver. c3 = 0 means you barely escape earth's gravity, arriving at infinity with zero speed. c3 = 25 km²/s² means you arrive with v∞ = 5 km/s of leftover heliocentric velocity."
+  },
+  {
+    "tab": "propulsion",
+    "section": "dv-budget",
+    "title": "∆v as Mission Budget",
+    "intro": "The single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn.",
+    "haystack": "∆v as mission budget the single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn. ∆v (delta-v) is the bookkeeping currency of spaceflight. every engine burn — getting off earth, leaving orbit, correcting course, slowing down at the destination — costs you some change in velocity. add them all up and you have the mission's ∆v budget."
+  },
+  {
+    "tab": "propulsion",
+    "section": "oberth-effect",
+    "title": "Oberth Effect",
+    "intro": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
+    "haystack": "oberth effect burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast. the kinetic energy of a moving body goes as `½ m v²`. a small ∆v at high speed produces a much larger change in kinetic energy than the same ∆v at low speed. apply this to a rocket burn: do the burn at periapsis (where you're moving fastest) and the same propellant produces more orbital-energy gain than it would at apoapsis."
+  },
+  {
+    "tab": "propulsion",
+    "section": "specific-impulse",
+    "title": "Specific Impulse (Isp)",
+    "intro": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
+    "haystack": "specific impulse (isp) how efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust. isp is the fuel-economy number for rockets. higher is better. definition: divide thrust by propellant mass-flow rate, divide by `g₀` (standard gravity), get a number in seconds. burn one kilogram of propellant per second, get `isp × g₀` newtons of thrust."
+  },
+  {
+    "tab": "propulsion",
+    "section": "tsiolkovsky",
+    "title": "Tsiolkovsky Rocket Equation",
+    "intro": "How much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem.",
+    "haystack": "tsiolkovsky rocket equation how much velocity change you can buy from a given engine and a given propellant load — the equation that makes spaceflight a logarithmic problem. konstantin tsiolkovsky derived the rocket equation in 1903, decades before anyone built a rocket worth flying. the result has the inevitability of physics: ∆v depends on engine `isp` and the ratio of starting mass to final mass — and it's logarithmic in that ratio."
+  },
+  {
+    "tab": "propulsion",
+    "section": "v-infinity",
+    "title": "V∞ — Hyperbolic Excess Velocity",
+    "intro": "The speed you have left over once you've climbed out of a planet's gravity well — what defines a flyby's arrival energy.",
+    "haystack": "v∞ — hyperbolic excess velocity the speed you have left over once you've climbed out of a planet's gravity well — what defines a flyby's arrival energy. imagine an asymptote, infinitely far from the planet. the speed you'd be moving at on that asymptote is v∞ — pronounced 'v-infinity.' it's the sun-relative speed minus the planet's contribution to your motion. on a hyperbolic flyby, v∞ is constant along both arms of the hyperbola."
+  },
+  {
+    "tab": "scales-time",
+    "section": "au",
+    "title": "AU — Astronomical Unit",
+    "intro": "Earth's average distance to the Sun, fixed at exactly 149,597,870,700 metres — the natural ruler for solar-system distances.",
+    "haystack": "au — astronomical unit earth's average distance to the sun, fixed at exactly 149,597,870,700 metres — the natural ruler for solar-system distances. until 2012 the au was defined by earth's orbit. as earth's orbit slowly evolves under planetary perturbations, the au was technically changing too. the iau fixed it in 2012 to a precise integer number of metres — 149,597,870,700 — and the definition has been stable ever since. the au is no longer 'earth's orbit'; it's a metric ruler that happens to roughly equal it."
+  },
+  {
+    "tab": "scales-time",
+    "section": "ecliptic-plane",
+    "title": "The Ecliptic Plane",
+    "intro": "The plane of Earth's orbit around the Sun — used as the reference for almost every solar-system measurement.",
+    "haystack": "the ecliptic plane the plane of earth's orbit around the sun — used as the reference for almost every solar-system measurement. the sun, earth, and the moon trace out paths in space. the earth's orbit defines a plane. looking out from earth, the sun appears to move along this plane against the background stars — that path on the sky is the ecliptic. most other solar-system bodies lie close to it: the eight planets are all within a few degrees, the asteroid belt clusters near it, comets are scattered."
+  },
+  {
+    "tab": "scales-time",
+    "section": "frames",
+    "title": "Heliocentric · Geocentric · Body-Centric Frames",
+    "intro": "Three reference frames for three different questions: where is it relative to the Sun, the Earth, or the planet you're studying?",
+    "haystack": "heliocentric · geocentric · body-centric frames three reference frames for three different questions: where is it relative to the sun, the earth, or the planet you're studying? heliocentric: origin at the sun, axes aligned with the ecliptic. the natural frame for solar-system motion. planet positions, transfer orbits, mission cruises — all most naturally described here. orrery's `/explore` is fundamentally heliocentric."
+  },
+  {
+    "tab": "scales-time",
+    "section": "j2000",
+    "title": "J2000 Epoch",
+    "intro": "12:00 noon UTC on January 1, 2000 — the universal anchor moment astronomers use to date orbital elements.",
+    "haystack": "j2000 epoch 12:00 noon utc on january 1, 2000 — the universal anchor moment astronomers use to date orbital elements. orbital elements drift over time — perturbations from other planets nudge eccentricity, longitudes precess, inclinations wobble. to make a planet's elements meaningful, you have to say 'as of when.' the standard answer is j2000: noon utc on january 1, 2000. orbits are quoted at that moment; propagation forward or backward uses analytical or numerical models."
+  },
+  {
+    "tab": "scales-time",
+    "section": "light-minute",
+    "title": "Light-Minute and Light-Year",
+    "intro": "Distance measured in how long light takes to cross it — the most useful unit for thinking about communication delays and stellar distances.",
+    "haystack": "light-minute and light-year distance measured in how long light takes to cross it — the most useful unit for thinking about communication delays and stellar distances. light moves at about 300,000 km/s. a light-second is 300,000 km. a light-minute is 18 million km. a light-year is 9.46 trillion km. they're distances, not times — confusingly named, but useful: 1 au ≈ 8.3 light-minutes, so 'mars is 4–22 light-minutes away depending on orbit' tells you the round-trip command latency at any moment."
+  },
+  {
+    "tab": "scales-time",
+    "section": "sidereal-synodic",
+    "title": "Sidereal vs Synodic Period",
+    "intro": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
+    "haystack": "sidereal vs synodic period two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer. sidereal period: time for one full orbit relative to the fixed stars. this is the geometric, kepler-third-law period — mars sidereal year is 687 earth days. synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. mars synodic period — time between mars-earth alignments — is 780 days, or about 26 months."
+  },
+  {
+    "tab": "transfers",
+    "section": "conic-sections",
+    "title": "Conic Sections",
+    "intro": "Slice a cone four ways and you get every possible Keplerian trajectory — circle, ellipse, parabola, hyperbola.",
+    "haystack": "conic sections slice a cone four ways and you get every possible keplerian trajectory — circle, ellipse, parabola, hyperbola. take an infinite cone and cut it with a flat plane. slice horizontally: a circle (`e = 0`). tilt the slice: an ellipse (`0 < e < 1`). tilt parallel to the cone's edge: a parabola (`e = 1`, the exact escape case). tilt past that: a hyperbola (`e > 1`, escape with energy to spare). two thousand years before kepler, apollonius of perga catalogued these curves. two centuries before newton, kepler discovered planets fly along them."
+  },
+  {
+    "tab": "transfers",
+    "section": "free-return",
+    "title": "Free-Return Trajectory",
+    "intro": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
+    "haystack": "free-return trajectory a trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required. the headline trick: leave earth, fly past the moon (or mars), and let the gravity of that body bend your path back toward earth. if you got the geometry right, you re-enter earth's atmosphere on the rebound. the crew never has to fire an engine to come home."
+  },
+  {
+    "tab": "transfers",
+    "section": "gravity-assist",
+    "title": "Gravity Assist",
+    "intro": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
+    "haystack": "gravity assist steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch. approach a moving planet from behind on a hyperbolic trajectory. the planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. net result: you exit with more speed relative to the sun than you arrived with. the planet, in exchange, slows by an immeasurably tiny amount."
+  },
+  {
+    "tab": "transfers",
+    "section": "hohmann-transfer",
+    "title": "Hohmann Transfer",
+    "intro": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+    "haystack": "hohmann transfer the cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against. imagine you're in a circular orbit around the sun and you want to reach a higher one — say earth-to-mars. the cheapest way is a hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. two engine burns get you there. one at perihelion to leave earth's orbit and enter the ellipse. one at aphelion to circularise into the destination orbit."
+  },
+  {
+    "tab": "transfers",
+    "section": "lambert-problem",
+    "title": "Lambert's Problem",
+    "intro": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
+    "haystack": "lambert's problem given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory. lambert's problem asks: i'm here, i want to be there, and i have this much time. what ellipse should i fly? two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body)."
+  },
+  {
+    "tab": "transfers",
+    "section": "patched-conics",
+    "title": "Patched Conics",
+    "intro": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
+    "haystack": "patched conics pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body kepler problems you can actually solve. real gravity is messy. a spacecraft cruising between earth and mars feels earth's gravity, the sun's gravity, mars's gravity, plus everything else, all at once. the full math (the n-body problem) has no closed-form solution — only numerical integration. that's slow, fragile, hard to plan with."
+  },
+  {
+    "tab": "transfers",
+    "section": "transfer-ellipse",
+    "title": "Transfer Ellipse",
+    "intro": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
+    "haystack": "transfer ellipse the keplerian arc that carries a spacecraft from one orbit to another — sun at one focus, just like every other orbit. once you've burned out of earth's orbit, you're on an ellipse around the sun. that ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. the fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination."
+  }
+]

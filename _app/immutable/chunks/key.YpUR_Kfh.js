@@ -1,1 +1,0 @@
-import{i,n as c,b as _,d as h,h as r,e as d,g as k,j as u,k as y,U as b}from"./runtime.BCdOAiHc.js";function v(n,f,t){r&&d();var e=n,s=b,a,o=i()?c:_;h(()=>{o(s,s=f())&&(a&&k(a),a=u(()=>t(e)))}),r&&(e=y)}export{v as k};

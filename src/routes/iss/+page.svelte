@@ -23,6 +23,7 @@
   let ignoreModuleParamUntilClear = $state(false);
   let perfBanner = $state(false);
   let lowMemBanner = $state(false);
+  let autoSpin = $state(true);
 
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
@@ -157,7 +158,7 @@
       0.1,
       500,
     );
-    camera.position.set(5.2, 2.4, 7.5);
+    camera.position.set(1.5, -3.0, 10.5);
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -361,6 +362,8 @@
     const perfStart = performance.now();
     let perfFrames = 0;
     let raf = 0;
+    let spinTimeAccum = 0;
+    let lastFrameT = 0;
 
     function onResize() {
       if (!container) return;
@@ -390,7 +393,11 @@
         }
       }
       const t = performance.now() / 1000;
-      station.rotation.y = t * 0.028;
+      if (lastFrameT === 0) lastFrameT = t;
+      const dt = t - lastFrameT;
+      if (autoSpin) spinTimeAccum += dt;
+      lastFrameT = t;
+      station.rotation.y = spinTimeAccum * 0.028;
       refreshIssMeshMaterials(t);
       controls.update();
       renderer.render(scene, camera);
@@ -519,6 +526,15 @@
             onclick={() => resetIssCamera()}
           >
             {m.iss_reset_camera()}
+          </button>
+          <button
+            type="button"
+            class="toggle"
+            data-testid="iss-spin-toggle"
+            aria-pressed={!autoSpin}
+            onclick={() => (autoSpin = !autoSpin)}
+          >
+            {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
           </button>
         {/if}
         <button

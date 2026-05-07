@@ -110,6 +110,20 @@ function setShadowFlags(obj: THREE.Object3D) {
   obj.receiveShadow = true;
 }
 
+function cylinderBetween(
+  p1: THREE.Vector3,
+  p2: THREE.Vector3,
+  radius: number,
+  mat: THREE.Material,
+): THREE.Mesh {
+  const dir = new THREE.Vector3().subVectors(p2, p1);
+  const len = dir.length();
+  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, len, 8, 1), mat);
+  mesh.position.copy(p1).addScaledVector(dir, 0.5);
+  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+  return mesh;
+}
+
 export function buildIssProxyStation(): THREE.Group {
   const root = new THREE.Group();
   root.name = 'iss_proxy_root';
@@ -188,6 +202,21 @@ export function buildIssProxyStation(): THREE.Group {
     }
   }
 
+  const sarjMat = new THREE.MeshStandardMaterial({
+    color: 0x55585e,
+    metalness: 0.6,
+    roughness: 0.45,
+  });
+  for (const [centerX, z] of wingPairs) {
+    const sarj = new THREE.Mesh(new THREE.TorusGeometry(0.18, 0.04, 6, 16), sarjMat);
+    sarj.rotation.y = Math.PI / 2;
+    sarj.position.set(centerX, wingY, z);
+    sarj.userData.issPickable = false;
+    sarj.name = 'sarj';
+    setShadowFlags(sarj);
+    root.add(sarj);
+  }
+
   const hullMat = new THREE.MeshStandardMaterial({
     color: 0xe8e8ec,
     metalness: 0.15,
@@ -199,6 +228,37 @@ export function buildIssProxyStation(): THREE.Group {
   for (const [id, x, y, z, w, h, d] of MODULE_BOXES) {
     const radius = (h + d) / 4;
     moduleRadius.set(id, radius);
+
+    if (id === 'canadarm2') {
+      const armMat = hullMat.clone();
+      const baseP = new THREE.Vector3(x - w / 2, y, z);
+      const elbowP = new THREE.Vector3(x, y + 0.4, z);
+      const tipP = new THREE.Vector3(x + w / 2, y, z);
+
+      const baseMount = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10),
+        armMat,
+      );
+      baseMount.position.set(baseP.x, baseP.y - 0.04, baseP.z);
+      const boomA = cylinderBetween(baseP, elbowP, 0.04, armMat);
+      const elbow = new THREE.Mesh(new THREE.SphereGeometry(0.05, 10, 8), armMat);
+      elbow.position.copy(elbowP);
+      const boomB = cylinderBetween(elbowP, tipP, 0.04, armMat);
+      const tipEffector = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.06, 0.06, 0.08, 10),
+        armMat,
+      );
+      tipEffector.position.set(tipP.x, tipP.y - 0.04, tipP.z);
+
+      for (const part of [baseMount, boomA, elbow, boomB, tipEffector]) {
+        part.userData.moduleId = 'canadarm2';
+        part.userData.issPickable = true;
+        setShadowFlags(part);
+        root.add(part);
+      }
+      continue;
+    }
+
     let geom: THREE.BufferGeometry;
     let rotZ = Math.PI / 2;
     if (id === 'cupola') {
@@ -253,6 +313,48 @@ export function buildIssProxyStation(): THREE.Group {
     wrap.name = `mli_${host}`;
     setShadowFlags(wrap);
     root.add(wrap);
+  }
+
+  const accessoryMat = hullMat.clone();
+  const questBox = MODULE_BOXES.find((b) => b[0] === 'quest');
+  if (questBox) {
+    const [, qx, qy, qz] = questBox;
+    const hatchCap = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.12, 0.18), accessoryMat);
+    hatchCap.position.set(qx, qy + 0.18, qz);
+    hatchCap.userData.moduleId = 'quest';
+    hatchCap.userData.issPickable = true;
+    hatchCap.name = 'quest_hatch';
+    setShadowFlags(hatchCap);
+    root.add(hatchCap);
+  }
+
+  const kiboBox = MODULE_BOXES.find((b) => b[0] === 'kibo');
+  if (kiboBox) {
+    const [, kx, ky, kz, kw] = kiboBox;
+    const expFacility = new THREE.Mesh(
+      new THREE.BoxGeometry(0.22, 0.04, 0.42),
+      accessoryMat,
+    );
+    expFacility.position.set(kx + kw / 2 - 0.05, ky, kz - 0.34);
+    expFacility.userData.moduleId = 'kibo';
+    expFacility.userData.issPickable = true;
+    expFacility.name = 'kibo_ef';
+    setShadowFlags(expFacility);
+    root.add(expFacility);
+  }
+
+  const columbusBox = MODULE_BOXES.find((b) => b[0] === 'columbus');
+  if (columbusBox) {
+    const [, cx, cy, cz] = columbusBox;
+    for (const dx of [-0.1, 0.1]) {
+      const mount = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.05, 0.06), accessoryMat);
+      mount.position.set(cx + dx, cy + 0.18, cz);
+      mount.userData.moduleId = 'columbus';
+      mount.userData.issPickable = true;
+      mount.name = 'columbus_payload';
+      setShadowFlags(mount);
+      root.add(mount);
+    }
   }
 
   return root;

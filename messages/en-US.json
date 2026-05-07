@@ -343,6 +343,8 @@
   "iss_hud_hint": "Drag to orbit · tap a module",
   "iss_canvas_aria": "Interactive 3D model of the International Space Station. Drag to orbit the view; tap a module to open details.",
   "iss_reset_camera": "RESET VIEW",
+  "iss_pause_spin": "PAUSE SPIN",
+  "iss_resume_spin": "RESUME SPIN",
   "iss_hud_aria": "ISS view controls",
   "iss_list_heading": "MODULES",
   "iss_label_builder": "BUILDER",

@@ -706,14 +706,15 @@
     -webkit-overflow-scrolling: touch;
   }
   /* Drawer mode (3D mode + indexOpen) — overlays the canvas on the left.
-   * Desktop: fixed-width sidebar; mobile: full-width top sheet that
-   * doesn't crowd HUD controls (HUD is on top-left). */
+   * Desktop: fixed-width sidebar starting below the HUD column (HUD is
+   * top-left at top:10px and stacks ~3 rows tall). Mobile: bottom sheet
+   * to avoid both HUD and detail-panel collisions. */
   .list-layer.drawer-mode {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     position: absolute;
     inset: auto;
-    top: 12px;
+    top: 220px;
     left: 12px;
     bottom: 12px;
     width: min(300px, calc(100vw - 24px));

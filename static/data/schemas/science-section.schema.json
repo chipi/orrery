@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "science-section.schema.json",
+  "title": "ScienceSection",
+  "description": "Base record for one /science encyclopedia section. Editorial fields (title, intro_sentence, body_paragraphs) live in locale overlays per ADR-017.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "tab", "order", "links"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "minLength": 1
+    },
+    "tab": {
+      "type": "string",
+      "enum": ["orbits", "transfers", "propulsion", "mission-phases", "scales-time", "porkchop"]
+    },
+    "order": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "formula_latex": { "type": "string", "minLength": 1 },
+    "diagram": {
+      "type": "string",
+      "description": "Filename under static/diagrams/science/ — must exist (validate-diagrams.ts checks)."
+    },
+    "diagram_quality": {
+      "type": "string",
+      "enum": ["schematic", "polished"]
+    },
+    "photo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src", "credit"],
+      "properties": {
+        "src": { "type": "string" },
+        "credit": { "type": "string", "minLength": 1 },
+        "alt_key": { "type": "string", "minLength": 1 }
+      }
+    },
+    "see_in_app": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["route", "context_key"],
+        "properties": {
+          "route": {
+            "type": "string",
+            "enum": [
+              "/explore",
+              "/plan",
+              "/fly",
+              "/missions",
+              "/earth",
+              "/moon",
+              "/mars",
+              "/iss",
+              "/tiangong"
+            ]
+          },
+          "context_key": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["l", "u", "t"],
+        "properties": {
+          "l": { "type": "string", "minLength": 1 },
+          "u": { "type": "string", "format": "uri" },
+          "t": { "type": "string", "enum": ["intro", "core", "deep"] }
+        }
+      }
+    }
+  }
+}

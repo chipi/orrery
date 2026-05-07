@@ -66,6 +66,7 @@
     "@sveltejs/adapter-static": "3.0.6",
     "@sveltejs/kit": "2.10.1",
     "@sveltejs/vite-plugin-svelte": "4.0.4",
+    "@types/katex": "^0.16.8",
     "@types/node": "22.10.2",
     "@types/three": "0.128.0",
     "@vite-pwa/sveltekit": "^1.1.0",
@@ -91,6 +92,7 @@
     "vitest": "2.1.8"
   },
   "dependencies": {
+    "katex": "^0.16.45",
     "three": "0.128.0"
   }
 }

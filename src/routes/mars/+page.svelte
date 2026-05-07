@@ -1206,6 +1206,9 @@
             </button>
           {/each}
         </div>
+        {#if panelGalleryGrid.length > 0}
+          <p class="gallery-credit">{m.panel_gallery_credit()}</p>
+        {/if}
       </div>
     {:else if panelTab === 'learn'}
       <div class="panel-body">

@@ -443,6 +443,9 @@ export function buildIssProxyStation(): THREE.Group {
 
     // Two-section modules — built via shared helper (Phase 2 fidelity).
     // Forward (larger) section + aft (narrower) section + gold MLI band.
+    // Used for LONG pressurised modules. Nodes (Unity, Harmony, Tranquility)
+    // are short stubby modules and stay as plain cylinders; their fidelity
+    // comes from radial port stubs.
     const twoSectionSpec: {
       [key: string]: [{ len: number; r: number }, { len: number; r: number }];
     } = {
@@ -465,10 +468,6 @@ export function buildIssProxyStation(): THREE.Group {
       kibo: [
         { len: len * 0.7, r: radius },
         { len: len * 0.3, r: radius * 0.85 },
-      ],
-      harmony: [
-        { len: len * 0.55, r: radius },
-        { len: len * 0.45, r: radius * 0.95 },
       ],
     };
 
@@ -853,6 +852,171 @@ export function buildIssProxyStation(): THREE.Group {
     nesv.name = 'rassvet_nesv';
     setShadowFlags(nesv);
     root.add(nesv);
+  }
+
+  // ── Unity port stubs (Phase 2c) ────────────────────────────────────
+  // Unity (Node 1) is a 6-port hub. The fwd/aft/port/starboard/nadir
+  // ports are populated by adjacent modules; the zenith port is free
+  // and gets a small visible stub.
+  const unityPos = modulePositions.get('unity');
+  if (unityPos) {
+    const [ux, uy, uz] = unityPos;
+    const uR = moduleRadius.get('unity') ?? 0.18;
+    const stub = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, 0.08, 10), accessoryMat);
+    stub.position.set(ux, uy + uR + 0.04, uz);
+    stub.userData.moduleId = 'unity';
+    stub.userData.stationPickable = true;
+    stub.name = 'unity_zenith_port';
+    setShadowFlags(stub);
+    root.add(stub);
+  }
+
+  // ── Tranquility port stubs (Phase 2c) ──────────────────────────────
+  // Tranquility (Node 3) has 4 visible ports beyond the structural
+  // connections to Unity (forward), BEAM (aft), Cupola (nadir),
+  // Leonardo (port). Add a zenith stub for the empty zenith port.
+  const tranquilityPos = modulePositions.get('tranquility');
+  if (tranquilityPos) {
+    const [tx, ty, tz] = tranquilityPos;
+    const tR = moduleRadius.get('tranquility') ?? 0.176;
+    const stub = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.07, 0.08, 10), accessoryMat);
+    stub.position.set(tx, ty + tR + 0.04, tz);
+    stub.userData.moduleId = 'tranquility';
+    stub.userData.stationPickable = true;
+    stub.name = 'tranquility_zenith_port';
+    setShadowFlags(stub);
+    root.add(stub);
+  }
+
+  // ── Cupola 7-window frames (Phase 2c) ──────────────────────────────
+  // Refine the dome with 7 trapezoidal window frames laid out radially
+  // around the central round window — gives the dome its iconic look.
+  const cupolaPos = modulePositions.get('cupola');
+  if (cupolaPos) {
+    const [cux, cuy, cuz] = cupolaPos;
+    const cuR = moduleRadius.get('cupola') ?? 0.116;
+    const frameMat = new THREE.MeshStandardMaterial({
+      color: 0x60646e,
+      metalness: 0.4,
+      roughness: 0.55,
+    });
+    // 7 windows: 6 trapezoid frames around the equator + 1 round at the bottom.
+    // Cupola dome opens nadir (-Y), so frames are at Y just below the equator.
+    for (let i = 0; i < 6; i++) {
+      const angle = (i * Math.PI) / 3;
+      const frame = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.012, 0.06), frameMat);
+      frame.position.set(
+        cux + Math.cos(angle) * cuR * 1.02,
+        cuy - cuR * 0.4,
+        cuz + Math.sin(angle) * cuR * 1.02,
+      );
+      frame.lookAt(new THREE.Vector3(cux, cuy - cuR * 0.4, cuz));
+      frame.userData.moduleId = 'cupola';
+      frame.userData.stationPickable = true;
+      frame.name = 'cupola_window_frame';
+      setShadowFlags(frame);
+      root.add(frame);
+    }
+    // Central round window frame (at the dome apex which is -Y nadir)
+    const centralFrame = new THREE.Mesh(
+      new THREE.TorusGeometry(cuR * 0.45, 0.008, 6, 14),
+      frameMat,
+    );
+    centralFrame.rotation.x = Math.PI / 2;
+    centralFrame.position.set(cux, cuy - cuR * 0.85, cuz);
+    centralFrame.userData.moduleId = 'cupola';
+    centralFrame.userData.stationPickable = true;
+    centralFrame.name = 'cupola_central_frame';
+    setShadowFlags(centralFrame);
+    root.add(centralFrame);
+  }
+
+  // ── BEAM circumferential band (Phase 2c) ───────────────────────────
+  // BEAM is a sphere; add a thin grey band around the equator at the
+  // Tranquility-facing side to read as a docking interface.
+  const beamPos = modulePositions.get('beam');
+  if (beamPos) {
+    const [bx, by, bz] = beamPos;
+    const bR = moduleRadius.get('beam') ?? 0.126;
+    const band = new THREE.Mesh(
+      new THREE.TorusGeometry(bR * 1.4, 0.012, 6, 16),
+      new THREE.MeshStandardMaterial({
+        color: 0x8a8e96,
+        metalness: 0.5,
+        roughness: 0.5,
+      }),
+    );
+    band.rotation.y = Math.PI / 2; // ring perpendicular to Z
+    band.position.set(bx, by, bz + bR * 1.3); // BEAM's +Z face (toward Tranquility)
+    band.userData.moduleId = 'beam';
+    band.userData.stationPickable = true;
+    band.name = 'beam_dock_band';
+    setShadowFlags(band);
+    root.add(band);
+  }
+
+  // ── Leonardo PMM longitudinal ribs (Phase 2c) ──────────────────────
+  // Italian-built module with distinctive longitudinal ribs along the
+  // hull. Render as 6 thin slats around the circumference.
+  const leonardoPos = modulePositions.get('leonardo');
+  if (leonardoPos) {
+    const [lx, ly, lz] = leonardoPos;
+    const lR = moduleRadius.get('leonardo') ?? 0.18;
+    // Leonardo axis is X; ribs along X
+    for (let i = 0; i < 6; i++) {
+      const angle = (i * Math.PI) / 3;
+      const rib = new THREE.Mesh(
+        new THREE.BoxGeometry(0.45, 0.008, 0.02),
+        new THREE.MeshStandardMaterial({
+          color: 0xcccfd5,
+          metalness: 0.2,
+          roughness: 0.7,
+        }),
+      );
+      rib.position.set(lx, ly + Math.cos(angle) * lR * 1.02, lz + Math.sin(angle) * lR * 1.02);
+      rib.lookAt(new THREE.Vector3(lx, ly, lz));
+      // After lookAt, X-axis still aligned with Leonardo axis. Need to rotate around X to line up rib's
+      // long axis along Leonardo's axis. lookAt aligned the rib's +Z toward axis; we want +X along axis.
+      // Adjust: re-set rotation manually to line up rib X with module X.
+      rib.rotation.set(Math.atan2(Math.sin(angle), Math.cos(angle)), 0, 0);
+      rib.userData.moduleId = 'leonardo';
+      rib.userData.stationPickable = true;
+      rib.name = 'leonardo_rib';
+      setShadowFlags(rib);
+      root.add(rib);
+    }
+  }
+
+  // ── Quest HPGT external tanks (Phase 2c) ───────────────────────────
+  // Quest carries 4 high-pressure gas tanks (2 O2, 2 N2) on the hull.
+  // Render as 4 thin cylinders mounted on Quest's outboard side.
+  const questPos2 = modulePositions.get('quest');
+  if (questPos2) {
+    const [qx, qy, qz] = questPos2;
+    const qR = moduleRadius.get('quest') ?? 0.157;
+    const tankMat = new THREE.MeshStandardMaterial({
+      color: 0xb8bcc2,
+      metalness: 0.5,
+      roughness: 0.5,
+    });
+    // Quest axis is Z (perpendicular to main stack); tanks along ±Y on the +X side
+    const tankPositions: [number, number][] = [
+      [+qR + 0.04, +0.06], // upper-fwd
+      [+qR + 0.04, -0.06], // lower-fwd
+      [-qR - 0.04, +0.06], // upper-aft
+      [-qR - 0.04, -0.06], // lower-aft
+    ];
+    for (const [dx, dy] of tankPositions) {
+      const tank = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.18, 10), tankMat);
+      // Tank's long axis along Z (parallel to Quest's body axis)
+      tank.rotation.x = Math.PI / 2;
+      tank.position.set(qx + dx, qy + dy, qz);
+      tank.userData.moduleId = 'quest';
+      tank.userData.stationPickable = true;
+      tank.name = 'quest_hpgt';
+      setShadowFlags(tank);
+      root.add(tank);
+    }
   }
 
   // ── Zarya folded-array stubs (Phase 2b) ────────────────────────────

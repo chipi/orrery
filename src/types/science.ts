@@ -58,3 +58,10 @@ export interface ScienceSectionOverlay {
 }
 
 export type ScienceSection = ScienceSectionBase & ScienceSectionOverlay;
+
+/** Editorial 101 lead-in shown at the top of /science/[tab]. Loaded from
+ * `i18n/[locale]/science/[tab]/_intro.json` per ADR-017. */
+export interface ScienceTabIntro {
+  headline: string;
+  paragraphs: string[];
+}

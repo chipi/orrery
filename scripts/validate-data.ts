@@ -52,6 +52,7 @@ const tiangongVisitorSchema = loadSchema('tiangong-visitor.schema.json');
 // PRD-008 / ADR-034 — /science encyclopedia.
 const scienceSectionSchema = loadSchema('science-section.schema.json');
 const scienceSectionOverlaySchema = loadSchema('science-section-overlay.schema.json');
+const scienceTabIntroSchema = loadSchema('science-tab-intro.schema.json');
 // ADR-046 Milestone C — image provenance + license stewardship.
 const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
 const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
@@ -85,6 +86,7 @@ const validateTiangongModuleOverlay = ajv.compile(tiangongModuleOverlaySchema);
 const validateTiangongVisitors = ajv.compile(tiangongVisitorSchema);
 const validateScienceSection = ajv.compile(scienceSectionSchema);
 const validateScienceSectionOverlay = ajv.compile(scienceSectionOverlaySchema);
+const validateScienceTabIntro = ajv.compile(scienceTabIntroSchema);
 const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
@@ -263,13 +265,19 @@ if (existsSync(i18nDir)) {
       }
     }
     // /science overlays per locale (PRD-008 / ADR-017): nested by tab.
+    // _intro.json holds the tab-level 101 lead-in and validates against a
+    // separate schema; everything else in the tab dir is a section overlay.
     const scienceOvDir = join(i18nDir, locale, 'science');
     if (existsSync(scienceOvDir)) {
       for (const tab of readdirSync(scienceOvDir)) {
         const tabOvDir = join(scienceOvDir, tab);
         if (!statSync(tabOvDir).isDirectory()) continue;
         for (const file of listJson(tabOvDir)) {
-          validateFile(file, validateScienceSectionOverlay);
+          if (file.endsWith('/_intro.json')) {
+            validateFile(file, validateScienceTabIntro);
+          } else {
+            validateFile(file, validateScienceSectionOverlay);
+          }
         }
       }
     }

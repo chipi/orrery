@@ -1,0 +1,8 @@
+{
+  "headline": "Transfers — once you're in orbit, you're halfway to anywhere.",
+  "paragraphs": [
+    "Robert Heinlein wrote that. He was right. Reaching low Earth orbit costs about 9.4 km/s of ∆v — the hardest part of any trip. Going from there to Mars adds only ~3.6 km/s. Once you're free of the planet's atmosphere and in a proper orbit, the rest of the solar system is mostly geometry.",
+    "The seven sections in this tab cover the geometry. The Hohmann transfer is the cheapest possible trip between two orbits — two burns, eight months of coasting. Lambert's problem generalises Hohmann to arbitrary departure and arrival dates. Gravity assists let you steal speed from a planet (essentially) for free, which is how Voyager 2 reached Neptune. Free-return trajectories are the safety net that brought Apollo 13 home. Patched conics is the working approximation that lets us compute all of this in a browser.",
+    "If you only read one section: Hohmann transfer. Everything else builds on it."
+  ]
+}

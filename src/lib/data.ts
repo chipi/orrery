@@ -28,6 +28,7 @@ import type {
   ScienceSectionBase,
   ScienceSectionOverlay,
   ScienceTabId,
+  ScienceTabIntro,
 } from '$types/science';
 
 const cache = new Map<string, unknown>();
@@ -845,6 +846,22 @@ export async function getScienceSection(
   } catch {
     return null;
   }
+}
+
+/** Editorial 101 intro shown at the top of /science/[tab]. Falls back to
+ * en-US per ADR-017; returns null if no intro file exists. */
+export async function getScienceTabIntro(
+  tab: ScienceTabId,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<ScienceTabIntro | null> {
+  const overlay = await get<ScienceTabIntro>(
+    `i18n/${locale}/science/${tab}/_intro.json`,
+    fetchFn,
+  ).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<ScienceTabIntro>(`i18n/en-US/science/${tab}/_intro.json`, fetchFn).catch(() => null);
 }
 
 export async function getScienceTab(

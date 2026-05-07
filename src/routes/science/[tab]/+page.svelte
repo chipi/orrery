@@ -32,6 +32,17 @@
   <h1>{tabLabel(data.tab)}</h1>
 </header>
 
+{#if data.intro}
+  <section class="tab-intro" aria-label="A focused 101 for this tab">
+    <p class="badge">101 · zoom in</p>
+    <p class="headline">{data.intro.headline}</p>
+    {#each data.intro.paragraphs as para (para)}
+      <p>{para}</p>
+    {/each}
+  </section>
+{/if}
+
+<h2 class="list-heading">Sections</h2>
 {#if data.sections.length === 0}
   <p class="empty">{m.science_tab_empty()}</p>
 {:else}
@@ -64,6 +75,47 @@
     font-size: 28px;
     letter-spacing: 4px;
     margin: 0;
+  }
+  .tab-intro {
+    margin: 0 0 32px;
+    padding: 18px 20px;
+    background: rgba(78, 205, 196, 0.05);
+    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    border-radius: 4px;
+  }
+  .tab-intro .badge {
+    font-family: var(--font-display);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4ecdc4;
+    margin: 0 0 10px;
+  }
+  .tab-intro .headline {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 14px;
+  }
+  .tab-intro p:not(.badge):not(.headline) {
+    font-family: 'Crimson Pro', serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 12px;
+  }
+  .tab-intro p:not(.badge):not(.headline):last-child {
+    margin-bottom: 0;
+  }
+  .list-heading {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
   .empty {
     font-family: 'Space Mono', monospace;

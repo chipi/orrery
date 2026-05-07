@@ -1,0 +1,8 @@
+{
+  "headline": "Propulsion — the rocket equation is the boss fight.",
+  "paragraphs": [
+    "Spaceflight has one universal currency: ∆v, pronounced \"delta-v,\" measured in kilometres per second. Every burn costs you some. Every move on a trajectory has a price tag. The mission's ∆v budget — sum of everything you'll spend, end to end — is the single number that says whether the mission can fly.",
+    "The cruel constraint is the rocket equation, written down by Konstantin Tsiolkovsky in 1903. It says ∆v scales LOGARITHMICALLY with how much of your rocket is fuel. Want twice the ∆v? You need exponentially more fuel. This is why a Saturn V is 90% propellant. It's why landing on Mars and coming back is so much harder than landing on the Moon. Every gram of mass that isn't fuel gets fought over.",
+    "Six sections here. Start with ∆v as mission budget — that's the framing for everything. Then Tsiolkovsky to see why the math is so unforgiving. Specific impulse explains the engine side; C3 and V∞ are the launch-energy and arrival-energy numbers you'll see all over the FLIGHT tab in /missions. The Oberth effect at the end is a rare piece of free magic — burn deep in a gravity well and your fuel does more work."
+  ]
+}

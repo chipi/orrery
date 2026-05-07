@@ -3,6 +3,9 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
   import { getMarsSites, getMarsTraverse, getMarsSiteGallery } from '$lib/data';
   import type { Traverse } from '$types/mars-site';
   import { localeFromPage } from '$lib/locale';
@@ -62,6 +65,11 @@
   let layerTraverses = $state(true);
   let autoSpin = $state(true);
   let resetMarsCamera: () => void = () => {};
+  let hoverLabelText = $state('');
+  let hoverLabelVisible = $state(false);
+  let hoverLabelLeft = $state(0);
+  let hoverLabelTop = $state(0);
+  let hoverLabelEl: HTMLDivElement | undefined = $state();
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});
 
@@ -170,6 +178,23 @@
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0x04040c, 1);
     container.appendChild(renderer.domElement);
+
+    // EffectComposer for hover-outline (matches /iss post-V1 pattern).
+    const composer = new EffectComposer(renderer);
+    composer.setSize(container.clientWidth, container.clientHeight);
+    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    composer.addPass(new RenderPass(scene, camera));
+    const outlinePass = new OutlinePass(
+      new THREE.Vector2(container.clientWidth, container.clientHeight),
+      scene,
+      camera,
+    );
+    outlinePass.edgeStrength = 4;
+    outlinePass.edgeGlow = 0.4;
+    outlinePass.edgeThickness = 1.5;
+    outlinePass.visibleEdgeColor.setHex(0x4ecdc4);
+    outlinePass.hiddenEdgeColor.setHex(0x224a48);
+    composer.addPass(outlinePass);
 
     scene.add(new THREE.AmbientLight(0x886655, 0.8));
     const sun = new THREE.DirectionalLight(0xfff4d0, 1.2);
@@ -674,14 +699,13 @@
       void e;
     }
 
-    function handlePick(clientX: number, clientY: number) {
-      if (!container) return;
+    function pickSiteAt(clientX: number, clientY: number): string | null {
+      if (!container) return null;
       const rect = container.getBoundingClientRect();
       const x = ((clientX - rect.left) / rect.width) * 2 - 1;
       const y = -((clientY - rect.top) / rect.height) * 2 + 1;
       const ray = new THREE.Raycaster();
       ray.setFromCamera(new THREE.Vector2(x, y), camera);
-      // Pick against surface marker groups + orbital dots.
       const targets: THREE.Object3D[] = [];
       for (const sm of surfaceMarkers) if (sm.group.visible) targets.push(sm.group);
       for (const om of orbitalMarkers) if (om.group.visible) targets.push(om.dotGroup);
@@ -689,12 +713,30 @@
       for (const h of hits) {
         let obj: THREE.Object3D | null = h.object;
         while (obj && !obj.userData.siteId) obj = obj.parent;
-        if (obj?.userData.siteId) {
-          selectSite(obj.userData.siteId as string);
-          return;
-        }
+        if (obj?.userData.siteId) return obj.userData.siteId as string;
       }
+      return null;
     }
+
+    function handlePick(clientX: number, clientY: number) {
+      const id = pickSiteAt(clientX, clientY);
+      if (id) selectSite(id);
+    }
+
+    let hoveredSiteId: string | null = null;
+    let hoveredClientX = 0;
+    let hoveredClientY = 0;
+    function handleHover(e: MouseEvent) {
+      if (dragging) return;
+      hoveredClientX = e.clientX;
+      hoveredClientY = e.clientY;
+      const id = pickSiteAt(e.clientX, e.clientY);
+      hoveredSiteId = id;
+    }
+    renderer.domElement.addEventListener('mousemove', handleHover);
+    renderer.domElement.addEventListener('mouseleave', () => {
+      hoveredSiteId = null;
+    });
 
     renderer.domElement.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
@@ -749,9 +791,45 @@
         const sinI = Math.sin(inc);
         om.dotGroup.position.set(lx, ly * cosI - lz * sinI, ly * sinI + lz * cosI);
       }
+
+      // Outline-on-hover: pass the hovered marker group to OutlinePass.
+      const outlineMeshes: THREE.Object3D[] = [];
+      const selectedId = selected?.id;
+      if (hoveredSiteId && hoveredSiteId !== selectedId) {
+        const sm = surfaceMarkers.find((s) => s.siteId === hoveredSiteId);
+        if (sm) outlineMeshes.push(sm.group);
+        const om = orbitalMarkers.find((o) => o.dotGroup.userData.siteId === hoveredSiteId);
+        if (om) outlineMeshes.push(om.dotGroup);
+      }
+      outlinePass.selectedObjects = outlineMeshes;
+
+      // Scale-pulse on selected marker group.
+      const pulseScale = 1 + Math.sin(now * 0.0026) * 0.06;
+      for (const sm of surfaceMarkers) {
+        sm.group.scale.setScalar(sm.siteId === selectedId ? pulseScale : 1);
+      }
+      for (const om of orbitalMarkers) {
+        const id = om.dotGroup.userData.siteId as string | undefined;
+        om.dotGroup.scale.setScalar(id === selectedId ? pulseScale : 1);
+      }
+
+      // Hover label HTML overlay (suppressed under @media (hover:none)).
+      if (hoveredSiteId) {
+        const site = sites.find((s) => s.id === hoveredSiteId);
+        if (site && container) {
+          const rect = container.getBoundingClientRect();
+          hoverLabelText = site.name ?? site.id;
+          hoverLabelLeft = hoveredClientX - rect.left;
+          hoverLabelTop = hoveredClientY - rect.top;
+          hoverLabelVisible = true;
+        }
+      } else if (hoverLabelVisible) {
+        hoverLabelVisible = false;
+      }
+
       // 2D draw on each frame so rotation + dots stay live.
       if (view === '2d') draw2d();
-      renderer.render(scene, camera);
+      composer.render();
     }
     frame();
 
@@ -962,6 +1040,8 @@
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      composer.setSize(container.clientWidth, container.clientHeight);
+      outlinePass.resolution.set(container.clientWidth, container.clientHeight);
       if (view === '2d') draw2d();
     }
     window.addEventListener('resize', onResize);
@@ -987,6 +1067,7 @@
       for (const om of orbitalMarkers) disposeMesh(om.group);
       marsMesh.geometry.dispose();
       (marsMesh.material as THREE.Material).dispose();
+      outlinePass.dispose();
       renderer.dispose();
       renderer.domElement.remove();
     };
@@ -1111,6 +1192,16 @@
       {/each}
     </div>
   {/if}
+
+  <div
+    bind:this={hoverLabelEl}
+    class="hover-label"
+    class:hidden={!hoverLabelVisible || view !== '3d'}
+    style="left: {hoverLabelLeft}px; top: {hoverLabelTop}px"
+    aria-hidden="true"
+  >
+    {hoverLabelText}
+  </div>
 </div>
 
 <Panel
@@ -1390,6 +1481,31 @@
     }
   }
 
+  .hover-label {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+    transform: translate(-50%, calc(-100% - 16px));
+    padding: 4px 8px;
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.5);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #4ecdc4;
+    white-space: nowrap;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+  }
+  .hover-label.hidden {
+    display: none;
+  }
+  @media (hover: none) {
+    .hover-label {
+      display: none;
+    }
+  }
   .legend-3d {
     position: fixed;
     bottom: 14px;

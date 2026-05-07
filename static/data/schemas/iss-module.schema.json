@@ -4,8 +4,8 @@
   "title": "IssModules",
   "description": "ISS pressurised modules + Canadarm2. Base iss-modules.json per ADR-017 / PRD-010.",
   "type": "array",
-  "minItems": 17,
-  "maxItems": 17,
+  "minItems": 18,
+  "maxItems": 18,
   "items": {
     "type": "object",
     "additionalProperties": false,
@@ -37,6 +37,7 @@
           "leonardo",
           "nauka",
           "pirs",
+          "poisk",
           "prichal",
           "quest",
           "rassvet",

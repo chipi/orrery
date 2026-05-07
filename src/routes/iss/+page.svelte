@@ -178,7 +178,7 @@
       0.1,
       500,
     );
-    camera.position.set(1.5, -3.0, 10.5);
+    camera.position.set(2.0, -3.0, 13.0);
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -193,7 +193,7 @@
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
-    controls.target.set(-0.35, 0.1, 0);
+    controls.target.set(0, 0.1, 0);
     controls.update();
 
     const initialCamPos = camera.position.clone();
@@ -461,6 +461,16 @@
       if (autoSpin) spinTimeAccum += dt;
       lastFrameT = t;
       station.rotation.y = spinTimeAccum * 0.028;
+      // Sun-tracking solar arrays — slow continuous rotation around each
+      // array's SADA axis (one full revolution every ~4 minutes).
+      const sunPhase = t * 0.026;
+      station.traverse((obj) => {
+        if (obj.userData.tracksSun) {
+          const axis = obj.userData.sadaAxis as 'x' | 'y' | 'z';
+          const base = (obj.userData.baseRotation as number) ?? 0;
+          obj.rotation[axis] = base + sunPhase;
+        }
+      });
       refreshIssMeshMaterials(t);
       controls.update();
       composer.render();

@@ -434,6 +434,36 @@
     ]
   },
   {
+    "id": "poisk",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Soyuz-U / Progress M-MIM2",
+    "launch_date": "2009-11-10",
+    "flight_designation": "Progress M-MIM2",
+    "mass_kg": 3900,
+    "length_m": 4.04,
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA archival imagery",
+    "links": [
+      {
+        "l": "Wikipedia · Poisk",
+        "u": "https://en.wikipedia.org/wiki/Poisk_%28ISS_module%29",
+        "t": "intro"
+      },
+      {
+        "l": "Поиск (модуль МКС) — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B8%D1%81%D0%BA_(%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8C_%D0%9C%D0%9A%D0%A1)",
+        "t": "core"
+      },
+      {
+        "l": "NASA · ISS",
+        "u": "https://www.nasa.gov/international-space-station/",
+        "t": "core"
+      }
+    ]
+  },
+  {
     "id": "canadarm2",
     "builder": "MDA Space (formerly MacDonald, Dettwiler)",
     "builder_country": "Canada",

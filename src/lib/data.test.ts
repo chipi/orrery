@@ -445,9 +445,9 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
 });
 
 describe('ISS modules (PRD-010)', () => {
-  it('getIssModules returns 17 merged rows', async () => {
+  it('getIssModules returns 18 merged rows', async () => {
     const list = await getIssModules('en-US');
-    expect(list).toHaveLength(17);
+    expect(list).toHaveLength(18);
     const zarya = list.find((m) => m.id === 'zarya');
     expect(zarya?.name).toContain('Zarya');
     expect(zarya?.description.length).toBeGreaterThan(10);
@@ -570,18 +570,18 @@ describe('getScienceSection', () => {
 describe('getScienceTab', () => {
   it('returns orbits sections sorted by order', async () => {
     const sections = await getScienceTab('orbits');
-    expect(sections.length).toBe(8);
+    expect(sections.length).toBe(9);
     for (let i = 1; i < sections.length; i++) {
       expect(sections[i].order).toBeGreaterThanOrEqual(sections[i - 1].order);
     }
   });
 
-  it('returns 40 sections across all six tabs combined', async () => {
+  it('returns 42 sections across all six tabs combined', async () => {
     let total = 0;
     for (const tab of SCIENCE_TABS) {
       total += (await getScienceTab(tab)).length;
     }
-    expect(total).toBe(40);
+    expect(total).toBe(42);
   });
 });
 

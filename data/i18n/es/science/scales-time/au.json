@@ -1,0 +1,15 @@
+{
+  "title": "UA — Unidad Astronómica",
+  "intro_sentence": "Distancia media de la Tierra al Sol, fijada exactamente en 149.597.870.700 metros — la regla natural para distancias del sistema solar.",
+  "narrative_101": [
+    "Una vez empiezas a medir distancias en el espacio, los kilómetros se vuelven inmanejables rápido. Marte está a 200 millones de km. Saturno a 1.400 millones. Plutón a 6.000 millones. Tu cerebro deja de procesar esos números como cualquier cosa salvo \"grande.\" Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol. Eso es una Unidad Astronómica, abreviada UA.",
+    "La unidad está anclada a un número entero específico de metros — 149.597.870.700 de ellos, fijados en 2012 — pero la idea práctica es más simple. Marte está a 1,5 UA del Sol. Júpiter a 5 UA. Plutón orbita entre 30 y 50 UA. Voyager 1, el objeto humano más distante, está a unas 165 UA ahora y sigue. Números que sí puedes mantener en la cabeza.",
+    "UA está en todas partes en esta app. La pantalla /explore dibuja radios orbitales en UA. Los ejes del porkchop de /plan están calibrados en UA. El HUD de /fly convierte UA a kilómetros y minutos-luz cuando los necesitas, pero la regla subyacente es siempre UA. Una vez la internalizas, el sistema solar deja de sentirse abstracto — puedes mapear distancias contando saltos en UA."
+  ],
+  "body_paragraphs": [
+    "Hasta 2012 la UA estaba definida por la órbita de la Tierra. Como la órbita terrestre evoluciona lentamente bajo perturbaciones planetarias, la UA cambiaba técnicamente también. La IAU la fijó en 2012 a un número entero preciso de metros — 149.597.870.700 — y la definición ha sido estable desde entonces. La UA ya no es \"la órbita de la Tierra\"; es una regla métrica que casualmente la iguala.",
+    "Distancias del sistema solar en UA: Mercurio 0,39, Venus 0,72, Tierra 1,0, Marte 1,52, Júpiter 5,20, Saturno 9,58, Urano 19,22, Neptuno 30,05, Plutón 39,5 (medias — la excentricidad las hace variar). Las Voyager están bien pasadas las 150 UA y siguen. La nube de Oort llega a decenas de miles de UA.",
+    "¿Por qué UA en lugar de metros? Porque los números en metros son inmanejables a escala del sistema solar. Los 1.400 millones de km de Saturno son ilegibles. 9,58 UA es un número que puedes tener en la cabeza. Los paneles y HUD de Orrery todos usan UA para posiciones del sistema solar — convertidas a km, minutos-luz y otras unidades solo donde la audiencia necesita la conversión."
+  ],
+  "diagram_caption": "1 UA ≈ distancia Tierra-Sol. Semiejes mayores planetarios en UA, escala logarítmica para manejar los planetas exteriores."
+}

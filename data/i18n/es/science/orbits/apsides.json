@@ -1,0 +1,15 @@
+{
+  "title": "Ápsides — Perihelio, Afelio, Perigeo, Apogeo",
+  "intro_sentence": "Los dos puntos extremos de toda órbita elíptica: paso cercano y paso lejano.",
+  "narrative_101": [
+    "Cada órbita elíptica tiene un punto alto y un punto bajo. Eso es lo que es un ápside — uno de esos dos extremos. El paso más cercano a lo que orbites; o el más lejano. La gente del espacio se obsesiona con estos dos puntos porque casi cada quemada importante ocurre en uno de ellos.",
+    "¿Por qué? Dos razones. Primero, tu velocidad está en sus extremos ahí también — más rápida en el extremo cercano, más lenta en el lejano. El efecto Oberth (que veremos en propulsión) dice que sacas más rendimiento del combustible cuando quemas rápido — así que las quemadas de salida ocurren cerca del extremo cercano. Segundo, subir o bajar el lado OPUESTO de una órbita es más barato cuando empujas en el extremo — así que para subir tu órbita disparas en el punto bajo.",
+    "Aviso de convención de nombres molesta: cada planeta tiene su propio par de palabras. Alrededor del Sol: perihelio / afelio. Alrededor de la Tierra: perigeo / apogeo. Alrededor de la Luna: perilunio / apolunio. Misma física, solo raíces griegas pegadas a cualquier cuerpo que estés rodeando. Que no te intimide — es solo una palabra para \"bajo\" y otra para \"alto\"."
+  ],
+  "body_paragraphs": [
+    "Un ápside es uno de los dos puntos de una órbita elíptica donde el cuerpo está a distancia mínima o máxima del foco. La línea que los conecta — pasando por ambos focos — es la línea de los ápsides. Cada órbita kepleriana tiene exactamente dos: cercano y lejano.",
+    "Los nombres dependen de qué orbites. Alrededor del Sol: perihelio (cercano) y afelio (lejano), del griego `peri` (cerca) y `apo` (lejos) más `helios` (Sol). Alrededor de la Tierra: perigeo y apogeo. Alrededor de la Luna: periselenio y aposelenio, o perilunio y apolunio. Alrededor de cualquier estrella: periastrón y apoastrón. El terreno es idéntico; solo cambia el sufijo.",
+    "Los ápsides anclan los cronogramas de misión. Los sobrevuelos de Voyager se cronometraron en perihelio de cada encuentro planetario. Las quemadas de reimpulso de la EEI se programan en apogeo, donde son más baratas. Las quemadas de fasing para citas y atraques ocurren en perigeo, donde la geometría orbital concentra el cambio de velocidad. El paso por perihelio del Sol por Parker Solar Probe es lo más cerca que un objeto humano ha estado de una estrella."
+  ],
+  "diagram_caption": "Línea de ápsides pasando por ambos focos, conectando perihelio (cercano) y afelio (lejano)."
+}

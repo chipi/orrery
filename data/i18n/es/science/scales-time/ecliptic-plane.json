@@ -1,0 +1,14 @@
+{
+  "title": "El Plano Eclíptico",
+  "intro_sentence": "El plano de la órbita de la Tierra alrededor del Sol — usado como referencia para casi cada medida del sistema solar.",
+  "narrative_101": [
+    "Sostén un plato plano y pon una canica en el centro — ese es el Sol. Ahora gira una canica más pequeña alrededor del borde — esa es la Tierra. El plato plano es el plano eclíptico. La órbita de la Tierra lo define; todo lo demás en el sistema solar se mide contra él.",
+    "Aquí va lo extraño: la mayor parte del sistema solar vive aproximadamente sobre este plato. Los ocho planetas están todos a unos pocos grados de él. La Luna orbita la Tierra en un plano a solo 5 grados de él. El cinturón de asteroides está mayormente sobre él. Esto no es coincidencia — es un fósil de cómo se formó el sistema solar, cuando todo se condensó de un gran disco giratorio de gas y polvo alrededor del joven Sol. El disco fijó el plano y la mayor parte de lo que queda aún lo respeta.",
+    "Los cometas son los comodines. Los cometas de período largo entran desde cualquier dirección a cualquier inclinación — son remanentes de la nube exterior de Oort que nunca se asentó en el disco. Plutón orbita a 17 grados fuera del plano, que es una razón por la que fue degradado a planeta enano — los ocho planetas \"reales\" están todos en línea."
+  ],
+  "body_paragraphs": [
+    "El Sol, la Tierra y la Luna trazan caminos en el espacio. La órbita de la Tierra define un plano. Mirando desde la Tierra, el Sol parece moverse a lo largo de este plano contra el fondo de estrellas — ese camino en el cielo es la eclíptica. La mayoría de los demás cuerpos del sistema solar yacen cerca de él: los ocho planetas están todos a unos pocos grados, el cinturón de asteroides se agrupa cerca, los cometas están dispersos.",
+    "La eclíptica es el plano de referencia para las inclinaciones orbitales de los cuerpos del sistema solar. La inclinación de la Tierra es 0° por construcción. Mercurio a 7°, Plutón a 17°, se miden contra este plano. La dirección del equinoccio vernal — donde la eclíptica cruza el ecuador terrestre yendo al norte — es la referencia de longitud cero, usada para anclar la longitud del nodo ascendente y argumento de periapsis de cada órbita.",
+    "La vista de `/explore` de Orrery mira hacia abajo al plano eclíptico desde arriba por defecto — la perspectiva natural para pensar en movimiento heliocéntrico. Inclinar la vista te muestra por qué las órbitas de Mercurio y Plutón parecen \"raras\" aunque sean perfectamente keplerianas: sus planos orbitales no concuerdan con el resto."
+  ]
+}

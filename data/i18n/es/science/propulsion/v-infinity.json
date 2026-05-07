@@ -1,0 +1,15 @@
+{
+  "title": "V∞ — Velocidad de Exceso Hiperbólico",
+  "intro_sentence": "La velocidad que te queda una vez has salido del pozo gravitatorio de un planeta — lo que define la energía de llegada en un sobrevuelo.",
+  "narrative_101": [
+    "C₃ es lo que tu cohete tiene que entregar en el LANZAMIENTO. V∞ — pronunciado \"v-infinito\" — es la misma idea, pero al OTRO extremo del viaje. Cuando llegas a Marte, ¿cuán rápido te mueves relativo a Marte, antes de que su gravedad te agarre? Eso es V∞.",
+    "Importa porque fija tu quemada de llegada. Cuanto más rápido llegas, más tienes que frenar para parar. Mars Reconnaissance Orbiter llegó con V∞ ≈ 2,6 km/s y quemó ~1 km/s para capturar en órbita. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó parar — solo pasó volando, sacó fotos, y continuó fuera del sistema solar para siempre.",
+    "La matemática tiene una bella simetría: la V∞ de llegada en Marte es el mismo número que verías si miraras a Marte desde lejos y la nave estuviera de camino. El viaje entero, visto desde fuera de las esferas de influencia de ambos planetas, se vuelve un arco kepleriano limpio con dos valores de V∞ bien definidos — uno en cada extremo. Ese es el número del momento de la verdad en el HUD de /fly cuando la nave cruza al pozo gravitatorio del destino."
+  ],
+  "body_paragraphs": [
+    "Imagina una asíntota, infinitamente lejos del planeta. La velocidad a la que te moverías sobre esa asíntota es V∞ — pronunciado \"V-infinito.\" Es la velocidad relativa al Sol menos la contribución del planeta a tu movimiento. En un sobrevuelo hiperbólico, V∞ es constante a lo largo de ambos brazos de la hipérbola.",
+    "V∞ controla cuán grande tiene que ser la quemada de llegada. Para capturar en órbita, necesitas drenar suficiente energía para caer por debajo del escape — cuanto más profundo el pozo, más Δv cuesta frenarte. Mars Reconnaissance Orbiter llegó a Marte con V∞ ≈ 2,6 km/s, luego gastó ~1 km/s de Δv para inserción en órbita. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó insertarse — solo sobrevoló.",
+    "En el HUD de `/fly` verás aparecer V∞ cuando la nave entre en la esfera de influencia del destino. Es el momento de la verdad: ¿cuánta velocidad tienes que matar, y puede tu cohete permitírselo?"
+  ],
+  "diagram_caption": "Sobrevuelo hiperbólico: V∞ es la velocidad constante en las asíntotas, lejos del planeta."
+}

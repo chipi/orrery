@@ -1,0 +1,15 @@
+{
+  "title": "Asistencia Gravitatoria",
+  "intro_sentence": "Roba el momento orbital de un planeta en un sobrevuelo — lo más cerca que hay de un almuerzo gratis en el espacio.",
+  "narrative_101": [
+    "Lanza una pelota de tenis a un tren en movimiento. La pelota rebota en el frente y vuelve hacia ti más rápido de lo que la lanzaste — porque el tren se movía hacia ella, y la velocidad del tren se sumó al rebote. Eso, básicamente, es una asistencia gravitatoria. La nave es la pelota de tenis, el planeta es el tren, y \"rebotar\" se reemplaza por \"caer cerca en una hipérbola.\"",
+    "Desde el punto de vista del planeta, la nave entra y sale exactamente a la misma velocidad — la gravedad es conservativa, no se gana ni pierde energía. Pero desde el punto de vista del Sol, la nave hereda algo del movimiento orbital del planeta a la salida y llega a algún sitio nuevo con velocidad extra (o menos). No es una violación de la física; el planeta lo paga frenándose — en una cantidad demasiado pequeña para detectar.",
+    "Este es el truco que construyó la gran gira de Voyager. Sin asistencias gravitatorias, no puedes alcanzar Saturno con cohetes químicos, mucho menos Urano o Neptuno — el coste de combustible es astronómico. Voyager 2 encadenó cuatro asistencias seguidas: Júpiter, Saturno, Urano, Neptuno, todo en un viaje. Cassini rebotó en Venus dos veces y en la Tierra una vez camino de Saturno. El sistema solar exterior solo es accesible por este truco."
+  ],
+  "body_paragraphs": [
+    "Acércate a un planeta en movimiento por detrás en una trayectoria hiperbólica. La gravedad del planeta dobla tu camino, pasas, y sales con la misma velocidad relativa al planeta — pero el planeta se movía todo el tiempo, y llevas ese movimiento contigo. Resultado neto: sales con más velocidad relativa al Sol de la que llegaste. El planeta, a cambio, frena en una cantidad inmensamente pequeña.",
+    "Invierte la geometría — acércate por delante — y frenas. Pioneer 11 usó Júpiter para empujar hacia Saturno. Voyager 2 encadenó Júpiter, Saturno, Urano, Neptuno en una de las giras de asistencia gravitatoria más exquisitas jamás voladas. Cassini rebotó en Venus dos veces y en la Tierra una antes de llegar a Saturno. New Horizons golpeó Júpiter para recortar tres años del viaje a Plutón.",
+    "Sin asistencias gravitatorias, la mitad de las misiones del catálogo de Orrery no podrían haber volado. Los planetas exteriores están simplemente demasiado lejos para trayectorias directas con cohetes químicos — sus costes en `Δv` excederían lo que cualquier cohete puede entregar. Las asistencias gravitatorias convierten esa aritmética de imposible en difícil pero factible."
+  ],
+  "diagram_caption": "La nave entra y sale del marco del planeta a la misma velocidad; el movimiento del planeta añade velocidad heliocéntrica."
+}

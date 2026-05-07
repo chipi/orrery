@@ -1,0 +1,14 @@
+{
+  "title": "Inserción Orbital — IOL / IOM",
+  "intro_sentence": "La quemada de frenado que captura tu nave en órbita en lugar de dejarla pasar volando para siempre.",
+  "narrative_101": [
+    "Has estado en inercia durante ocho meses. Puedes ver Marte haciéndose más grande por la ventana. Si no haces nada, pasas volando junto a Marte y continúas hacia el sistema solar, para nunca volver. Para orbitar realmente, tienes que frenar. Esa quemada de frenado — Inserción en Órbita Lunar o Inserción en Órbita Marciana o el planeta que sea — es el momento decisivo de cualquier misión orbital.",
+    "La matemática es implacable. Llegas a un planeta a varios kilómetros por segundo de velocidad sobrante (V∞). Para quedarte, tienes que caer por debajo de la velocidad local de escape del planeta. Eso significa una quemada de motor larga, dura y de tiempo preciso en el paso más cercano al planeta, donde Oberth te da el frenado más eficiente. Mars Reconnaissance Orbiter quemó durante 27 minutos. La inserción de Cassini en Saturno tardó 95 minutos — la quemada más larga que la nave hizo nunca.",
+    "Si la quemada falla o tiene bajo rendimiento, escapas, y no hay segunda oportunidad. Mars Climate Orbiter en 1999 tenía un bug de conversión de unidades — libras-fuerza confundidas con newtons — su quemada de inserción fue demasiado débil, pasó demasiado cerca de Marte, y la fricción atmosférica lo destruyó. La misión se perdió en segundos. Por eso el diseño de inserción orbital es una de las actividades de ingeniería más paranoicas que hacen los humanos."
+  ],
+  "body_paragraphs": [
+    "Cuando tu nave llega al destino, se mueve rápido — suficientemente rápido para escapar si no haces nada. Para capturar en órbita, tienes que drenar suficiente velocidad para caer por debajo de la velocidad local de escape. Esa quemada de frenado es la inserción orbital. IOL para lunar (Apolo, LRO), IOM para Marte (MAVEN, MRO, Tianwen-1), y así.",
+    "La quemada ocurre en periapsis de la hipérbola de llegada, donde Oberth hace la quemada más barata. El tamaño depende de V∞ — la velocidad sobrante en infinito — y la altitud orbital deseada. Mars MRO llegó con V∞ ≈ 2,6 km/s y gastó ~1 km/s de Δv para captura. La inserción de Cassini en Saturno fue una quemada de 95 minutos, la más larga en la vida de la nave.",
+    "Si la quemada falla o rinde menos, la nave escapa. No hay segunda oportunidad. Mars Climate Orbiter es el cuento aleccionador: un error de conversión de unidades hizo que su quemada IOM fuera demasiado baja, la nave pasó demasiado cerca, y la fricción atmosférica la destrozó."
+  ]
+}

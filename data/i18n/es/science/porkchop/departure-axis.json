@@ -1,0 +1,14 @@
+{
+  "title": "Eje de Ventana de Salida",
+  "intro_sentence": "Cuándo lanzas — corriendo a través del eje X, típicamente un tramo de cuatro años muestreado diariamente.",
+  "narrative_101": [
+    "Lee el porkchop como un calendario. El eje horizontal — de izquierda a derecha — es la fecha en que sales de la Tierra. Cada columna de píxeles es un día de lanzamiento distinto. Orrery muestrea con resolución de un día a través de unos cuatro años; eso es suficiente para capturar dos ciclos sinódicos completos, lo que es suficiente para ver el patrón de ventanas de lanzamiento repetirse.",
+    "Mira a través de la fila de celdas baratas (el lóbulo turquesa fresco) y puedes leer en el calendario, exactamente cuándo son las ventanas de lanzamiento. Para Marte aproximadamente cada 26 meses. Para Venus cada 19. Para Júpiter cada 13. Cada zona barata es una ventana — fuera de esas zonas, el calendario está luchando contra ti.",
+    "Cuando barres el selector de año de lanzamiento en /plan, estás deslizando el eje X. Distinto año, distinta colocación de ventana, pero la física subyacente es la misma. Por eso la programación de misiones está dirigida por el calendario: las zonas baratas no se mueven solo porque tengamos un plazo."
+  ],
+  "body_paragraphs": [
+    "El eje X te dice cuándo dejas la Tierra. Cada columna de píxeles es una fecha de lanzamiento distinta — para los plots de Orrery, muestreado a resolución de un día a través de aproximadamente cuatro años. ¿Por qué un tramo de cuatro años? Porque el período sinódico Tierra-Marte es de 26 meses; necesitas al menos dos ciclos sinódicos para capturar el patrón recurrente de ventanas de lanzamiento.",
+    "Lee el eje X como un calendario. Los lóbulos de coste barato (la \"carne\" del porkchop) se sientan a intervalos predecibles. Para Marte: cada ~26 meses. Para Venus: cada ~19 meses. Para Júpiter: cada ~13 meses (Júpiter se mueve lo bastante despacio como para que el período sinódico sea cercano al año terrestre).",
+    "En `/plan` la etiqueta del eje X es `VENTANA DE SALIDA · 2026 — 2030`. Las fechas literales del calendario aparecen en el tooltip cuando pasas el ratón."
+  ]
+}

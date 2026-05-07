@@ -1,0 +1,15 @@
+{
+  "title": "Efecto Oberth",
+  "intro_sentence": "Quema profundo en un pozo gravitatorio y tu combustible hace más trabajo — físicamente el mismo motor produce más energía orbital cuando se mueve rápido.",
+  "narrative_101": [
+    "Aquí va un truco de magia gratis de la física. Imagina que tienes una cantidad específica de combustible para quemar. Puedes encenderlo cuando quieras. ¿Dónde deberías hacerlo? El sentido común dice que no debería importar — mismo combustible, mismo motor, mismo empuje. El sentido común se equivoca.",
+    "Quémalo cuando vayas RÁPIDO y el mismo combustible te da mucha más energía útil que la misma quemada cuando vayas lento. La razón se esconde en el hecho de que la energía cinética va como v² — cuando ya te mueves, un pequeño Δv encima añade proporcionalmente más energía que cuando estás parado. Así que una quemada de 1 km/s en perigeo (yendo a 11 km/s) te da más empuje orbital que la misma quemada de 1 km/s en apogeo (yendo a 1 km/s).",
+    "Hermann Oberth señaló esto en 1929 y los diseñadores de misión llevan explotándolo desde entonces. La inyección translunar del Apolo ocurrió en perigeo, abrazando la Tierra, yendo lo más rápido posible. Parker Solar Probe quema en el paso más cercano al Sol en cada bucle para zambullirse más profundo la próxima vez. No es energía gratis — el planeta que estás abrazando hace la donación — pero es lo más cerca que llegarás a un almuerzo gratis en astronáutica."
+  ],
+  "body_paragraphs": [
+    "La energía cinética de un cuerpo en movimiento va como `½ m v²`. Un pequeño Δv a alta velocidad produce un cambio mucho mayor en energía cinética que el mismo Δv a baja velocidad. Aplica esto a una quemada de cohete: haz la quemada en periapsis (donde te mueves más rápido) y el mismo propelente produce más ganancia de energía orbital de la que produciría en apoapsis.",
+    "Hermann Oberth señaló esto en 1929. La implicación para el diseño de misión: programa tus grandes quemadas de Δv donde ya te mueves rápido — en perihelio de la elipse de crucero, en periapsis de un sobrevuelo. Parker Solar Probe quema en perihelio de cada arco solar para caer más profundo hacia el Sol en el siguiente bucle. Juno dispara en periapsis joviano para controlar su órbita científica.",
+    "El compromiso: las quemadas profundas son cortas e intensas; la nave tiene que estar lista para manejar el calor, la presión dinámica y la temporización precisa. No hay almuerzo gratis — pero Oberth te muestra qué almuerzos son más baratos."
+  ],
+  "diagram_caption": "Mismo Δv en periapsis (alto v) produce más ganancia de energía que en apoapsis (bajo v)."
+}

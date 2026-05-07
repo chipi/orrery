@@ -1,0 +1,15 @@
+{
+  "title": "¿Qué es un Diagrama Porkchop?",
+  "intro_sentence": "Un mapa de calor 2D que muestra el coste de Δv para cada par (fecha de salida, tiempo de tránsito) — la herramienta estándar para encontrar ventanas de lanzamiento.",
+  "narrative_101": [
+    "Cuando los planificadores de misión quieren saber si un viaje a Marte es viable, no calculan una sola trayectoria. Calculan MILLONES — cada posible fecha de salida, cada posible tiempo de tránsito, en una rejilla gigante — y pintan un mapa de calor. Las trayectorias baratas aparecen como zonas azul claro frescas, las caras como rojas. El resultado, raramente, parece una chuleta de cerdo. La zona barata es la carne; la cresta cara es el hueso.",
+    "¿Por qué molestarse con todo el mapa de calor en lugar de solo una respuesta óptima? Porque las misiones reales tienen restricciones. Quizás una rampa concreta solo está disponible en 2026. Quizás necesitas aterrizar antes de que termine la temporada de tormentas de polvo. Quizás un cohete particular solo está listo para cierto mes. El porkchop te deja ver TODOS los compromisos a la vez — elegir la trayectoria suficientemente barata que cabe en tu calendario real.",
+    "Abre /plan en este simulador. Elige un destino. Elige un año de lanzamiento. La cosa que estás mirando es un porkchop, calculado en directo. Cada píxel es un problema de Lambert — \"salir de la Tierra el día X, llegar el día Y, ¿cuánto cuesta?\" Pasa el ratón sobre cualquier píxel y el simulador te dice las fechas exactas y el Δv. Haz clic y la trayectoria se carga en /fly. Las siguientes cuatro secciones explican cómo leerlo."
+  ],
+  "body_paragraphs": [
+    "Elige una fecha de salida en el eje X. Elige un tiempo de tránsito en el eje Y. El color de esa celda te dice cuánto Δv costaría volar esa misión. Turquesa fresco: barato. Amarillo: moderado. Rojo: muy caro. Repite para cada píxel y obtienes un diagrama porkchop — nombrado por la forma de chuleta de cerdo que forman los contornos de la zona barata.",
+    "Cada celda es la respuesta a un problema de Lambert: \"salir de la Tierra el día X, llegar al destino el día X + Y, ¿qué Δv se requiere?\" Resuelve Lambert millones de veces a través de una rejilla de fechas y los contornos emergen naturalmente. Los mínimos naturales son ventanas de lanzamiento — las zonas baratas donde existen transferencias tipo Hohmann.",
+    "La ruta `/plan` de Orrery te muestra el porkchop para cualquiera de nueve destinos (Marte, Mercurio, Venus, los gigantes gaseosos, Plutón, Ceres). Pasa el ratón sobre cualquier celda para ver las fechas exactas y el Δv. Haz clic para cargar esa misión en `/fly`."
+  ],
+  "diagram_caption": "Diagrama porkchop: X = fecha de salida, Y = tiempo de tránsito, color = coste de Δv. Las zonas baratas se agrupan alrededor de las ventanas naturales de Hohmann."
+}

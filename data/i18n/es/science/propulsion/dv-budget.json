@@ -1,0 +1,15 @@
+{
+  "title": "Δv como Presupuesto de Misión",
+  "intro_sentence": "El único número que dice si una misión es posible — cambio total de velocidad que necesitas gastar, sumado sobre cada quemada.",
+  "narrative_101": [
+    "El dinero para la astronáutica no son dólares. Es Δv — pronunciado \"delta-v\" — y se mide en kilómetros por segundo. Cada quemada de tu cohete cuesta algo de Δv. Cada movimiento en una trayectoria tiene un precio en km/s. El presupuesto de Δv de la misión es solo el total acumulado: lanzamiento + inyección + correcciones + llegada + aterrizaje. Súmalo, esa es tu factura.",
+    "Aquí está el giro mortal. Tu cohete no tiene Δv ilimitado. Tiene un techo duro, fijado por la ecuación de Tsiolkovsky, dictado completamente por cuánto del cohete es combustible y cuán buenos son tus motores. Si tu factura excede el techo, la misión es imposible. Echar más dinero no lo arregla. Gana la matemática.",
+    "Números rápidos de referencia para internalizar: salir de la Tierra a órbita cuesta ~9,4 km/s. De órbita a una Hohmann a Marte añade ~3,6. La inserción en Marte añade otros ~2. Total para aterrizar en Marte ronda los 15 km/s — justo en el límite de lo que los cohetes químicos pueden entregar de un golpe. Por eso aterrizar en Marte es mucho más difícil que aterrizar en la Luna, y por eso cada gramo de masa en un módulo marciano se pelea."
+  ],
+  "body_paragraphs": [
+    "Δv (delta-v) es la moneda de contabilidad de la astronáutica. Cada quemada de motor — salir de la Tierra, salir de órbita, corregir el rumbo, frenar en el destino — te cuesta algo de cambio de velocidad. Súmalo todo y tienes el presupuesto de Δv de la misión.",
+    "Por el lado de la oferta: la capacidad de Δv de tu cohete viene de la ecuación de Tsiolkovsky — el `Isp` del motor y la fracción de propelente fijan el techo. Por el lado de la demanda: el diseño de trayectoria elige el camino con el coste sumado más barato. Una misión vuela si oferta de presupuesto ≥ demanda. No vuela si no, no importa cuánto dinero le eches.",
+    "Algunos números de referencia: superficie terrestre a LEO cuesta ~9,4 km/s de Δv (la mayor parte luchando contra gravedad y atmósfera). LEO a una transferencia de Hohmann a Marte añade ~3,6 km/s. Inserción en órbita marciana añade otros ~2 km/s. Un aterrizaje directo de un solo viaje en Marte ronda los 15 km/s totales — cerca del límite de lo que los cohetes químicos actuales pueden entregar de un solo tiro."
+  ],
+  "diagram_caption": "Barras apiladas: Δv de lanzamiento + inyección + correcciones de crucero + llegada = presupuesto total de misión."
+}

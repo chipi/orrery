@@ -1,0 +1,18 @@
+{
+  "title": "Regímenes Orbitales — LEO, MEO, GEO, HEO",
+  "intro_sentence": "Las órbitas terrestres se agrupan en cuatro bandas de altitud; cada una es un compromiso distinto entre latencia, vida útil y coste.",
+  "narrative_101": [
+    "Elige un satélite. Lo más importante de él no es lo que hace — es a qué altitud vive. La altitud fija con qué frecuencia puede ver el mismo trozo de suelo, cuánto tarda una señal de radio en llegar a él, cuánto combustible necesita para mantener la órbita, y cuál es su vida útil. Los ingenieros de naves agrupan las órbitas en cuatro bandas — LEO, MEO, GEO, HEO — porque los compromisos cambian de forma discreta a medida que subes.",
+    "LEO va hasta ~2.000 km. La EEI vive a 408 km. Hubble a 540 km. Starlink a ~550 km. Barata de alcanzar (la mayoría de cohetes pueden llevar carga útil ahí), pero das una vuelta al planeta cada 90 minutos, la atmósfera te frena (vida útil: años sin reimpulso), y solo ves cualquier punto del suelo unos 10 minutos por paso.",
+    "MEO está entre 2.000 y 35.786 km — la banda de GPS / Galileo / Beidou, además de algunas comunicaciones. Períodos de 2-12 horas; cubres el globo con menos satélites que LEO, y estás por encima de las peores zonas de los cinturones de radiación. GEO se sienta exactamente a 35.786 km — período exactamente 24 horas — así que un satélite ahí flota sobre el mismo punto de la Tierra para siempre. Por eso cada comsat de meteorología y broadcast está ahí arriba.",
+    "HEO (órbita altamente elíptica) es el comodín — apogeo alto, perigeo bajo, larga permanencia sobre una latitud elegida. Las órbitas Molniya rusas son HEO, optimizadas para cobertura de altas latitudes que GEO no puede alcanzar. Cada régimen es una filosofía de misión distinta, codificada como un número en el eje y."
+  ],
+  "body_paragraphs": [
+    "LEO (Órbita Baja Terrestre, < 2.000 km de altitud): la más barata de alcanzar, período más rápido (~90 minutos para la EEI a 408 km), retardo de enlace más corto (unos pocos ms), vida útil más corta por la fricción atmosférica residual. Aloja la EEI, Hubble, Starlink, la mayoría de satélites de observación terrestre, toda la actividad tripulada más allá de Apolo.",
+    "MEO (Órbita Media Terrestre, 2.000-35.786 km): la banda de navegación. GPS a 20.200 km, GLONASS a 19.100 km, Galileo a 23.222 km, Beidou MEO a 21.500 km. Período ~12 horas; constelaciones de 24-30 satélites dan cobertura global. Por encima del cinturón de Van Allen interior, por debajo de la mayor parte del exterior.",
+    "GEO (Órbita Geoestacionaria, 35.786 km de altitud exactamente, 0° de inclinación): el período iguala el día sidéreo terrestre (23h 56m 4s) así que el satélite parece estacionario sobre una longitud en el ecuador. Aloja la TV broadcast mundial, imágenes meteorológicas (GOES, Himawari, Meteosat), y comsats tradicionales. Tiempo de ida y vuelta de la luz ~240 ms — perceptible en llamadas de voz.",
+    "HEO (Órbita Altamente Elíptica): perigeo bajo + apogeo alto. Las órbitas Molniya (Rusia) tienen perigeo ~600 km, apogeo ~40.000 km, inclinación 63,4° — elegidas para que la permanencia en apogeo ocurra sobre el hemisferio norte, donde los comsats GEO no llegan. Críticas para comunicaciones de altas latitudes y algunas constelaciones de alerta temprana.",
+    "Cruzar regímenes es caro. El Δv de LEO a GEO es de unos 3,9 km/s. De LEO a escape (ITL/ITM) es de unos 3,2 km/s — contraintuitivamente más barato que llegar a GEO desde LEO, porque no tienes que circularizar a la llegada."
+  ],
+  "diagram_caption": "Bandas terrestres concéntricas: LEO (cian, baja altitud), MEO (azul, región GPS), GEO (oro, anillo geoestacionario), HEO (naranja, elipse desigual)."
+}

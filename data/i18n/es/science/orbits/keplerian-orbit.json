@@ -1,0 +1,15 @@
+{
+  "title": "Órbita Kepleriana",
+  "intro_sentence": "Una elipse con el Sol en uno de los focos — la órbita más simple que un cuerpo puede tener alrededor de otro.",
+  "narrative_101": [
+    "Imagina lanzar una pelota desde una torre alta. Se curva hacia el suelo. Lánzala más fuerte y la curva se alarga. Lánzala tan fuerte que el suelo se aleje bajo ella tan rápido como la pelota cae — y la pelota nunca aterriza. Sigue cayendo, para siempre, en un bucle cerrado. Eso es una órbita. Cada nave, cada luna, cada planeta está haciendo ese único truco.",
+    "Lo que hace que el bucle sea una órbita kepleriana específicamente es que tratamos la gravedad como un único tirón limpio hacia un cuerpo pesado — el Sol para los planetas, la Tierra para los satélites, Marte para InSight. Dos cuerpos, una fuerza, sin complicaciones. El resultado es siempre una elipse, y el cuerpo pesado siempre está en uno de los dos focos, nunca en el centro. Esa única imagen está detrás de cada número que verás en toda esta enciclopedia.",
+    "La realidad es más desordenada — las lunas perturban a los planetas, el achatamiento terrestre tira de los satélites, el Sol tira de las trayectorias lunares — pero el desorden es sobre todo una pequeña corrección sobre una órbita kepleriana. Por eso empezamos aquí. Acierta la elipse y todo lo demás es decoración."
+  ],
+  "body_paragraphs": [
+    "Cuando caes hacia algo masivo pero fallas, obtienes una órbita kepleriana. La trayectoria es una elipse — un círculo estirado — y el cuerpo hacia el que caes está en uno de los dos puntos focales, nunca en el centro. La Tierra alrededor del Sol, la Luna alrededor de la Tierra, cada nave que verás en Orrery: todas keplerianas a primera aproximación.",
+    "Seis números describen completamente una de estas órbitas: el tamaño (semieje mayor), el estiramiento (excentricidad), tres ángulos que orientan la elipse en el espacio (inclinación, longitud del nodo ascendente, argumento del periapsis), y dónde está el cuerpo en la trayectoria ahora mismo (anomalía verdadera). Estos son los elementos keplerianos — el lenguaje que cada otra sección de esta pestaña traduce a algo que puedas visualizar.",
+    "El modelo se rompe cada vez que la gravedad de un tercer cuerpo importa: naves cerca de la Luna, satélites en órbita baja sintiendo el bulto del ecuador, cualquier cosa que pase por la sombra de Júpiter. Orrery usa órbitas keplerianas para la historia heliocéntrica y aproximaciones de cónicas parcheadas para el resto."
+  ],
+  "diagram_caption": "Elipse con foco F₁ en el Sol. Semieje mayor a · perihelio (más cercano) y afelio (más lejano) sobre la línea de los ápsides."
+}

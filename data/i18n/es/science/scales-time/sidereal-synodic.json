@@ -1,0 +1,16 @@
+{
+  "title": "Período Sidéreo vs Sinódico",
+  "intro_sentence": "Dos formas de preguntar \"¿con qué frecuencia vuelve esto?\" — mismo cuerpo, distinto sistema de referencia, distinta respuesta.",
+  "narrative_101": [
+    "Hay dos respuestas distintas a la pregunta \"¿cuánto dura un año en Marte?\" — y cuál quieres depende de qué intentes hacer.",
+    "Si quieres saber cuánto tarda Marte en hacer UNA VUELTA al Sol, la respuesta es 687 días terrestres. Ese es el período sidéreo — medido contra las estrellas distantes inmóviles. Es la verdad geométrica de la órbita. Vis-viva y la tercera ley de Kepler ambos funcionan en tiempo sidéreo.",
+    "Pero si quieres saber con qué frecuencia la Tierra y Marte SE ALINEAN DE LA MISMA FORMA (para que puedas lanzar una misión), la respuesta es 780 días — unos 26 meses. Ese es el período sinódico. ¿Por qué más largo? Porque mientras Marte da una vuelta al Sol, la Tierra le da casi dos — ambos planetas siguen moviéndose. La alineación solo se repite cuando la Tierra ha doblado a Marte en la danza.",
+    "Por eso las ventanas de lanzamiento a Marte aparecen cada 26 meses. Si pierdes una, esperas dos años. Cada misión a Marte de la que has oído hablar tuvo que cronometrarse con una ventana sinódica — Curiosity en 2011, Perseverance en 2020, la siguiente en 2026. El período sinódico es el latido de la planificación de misiones interplanetarias."
+  ],
+  "body_paragraphs": [
+    "Período sidéreo: tiempo para una órbita completa relativa a las estrellas fijas. Este es el período geométrico de la tercera ley de Kepler — el año sidéreo de Marte es 687 días terrestres. Período sinódico: tiempo para que un cuerpo vuelva a la misma posición relativa a otro cuerpo, normalmente visto desde un tercero. El período sinódico de Marte — tiempo entre alineaciones Marte-Tierra — es 780 días, o unos 26 meses.",
+    "El período sinódico es lo que importa a los planificadores de misión. Las transferencias de Hohmann Tierra-Marte solo funcionan cuando Marte está en el lugar correcto. La siguiente ventana de lanzamiento viable aparece cada 26 meses. Pierde una, espera dos años para otra. Esa es la cadencia de cada misión a Marte jamás volada.",
+    "Matemáticamente: `1/T_sin = 1/T_int − 1/T_ext`. Si el año de la Tierra es 1,0 año y el de Marte es 1,88 año: `1/T_sin = 1 − 1/1,88 = 0,468`, así que `T_sin = 2,14 años ≈ 26 meses`. La matemática es simple; la consecuencia operativa — cada cronograma de misión debe respetarla — es donde vive en la planificación de misión."
+  ],
+  "diagram_caption": "Sidéreo: misma alineación con estrellas. Sinódico: misma alineación Tierra-Marte-Sol, más largo porque ambos planetas se movieron."
+}

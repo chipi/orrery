@@ -1,0 +1,14 @@
+{
+  "title": "Minuto-Luz y Año-Luz",
+  "intro_sentence": "Distancia medida en cuánto tarda la luz en atravesarla — la unidad más útil para pensar en retrasos de comunicación y distancias estelares.",
+  "narrative_101": [
+    "Un minuto-luz es lo lejos que viaja la luz en un minuto. La luz va a 300.000 km por segundo, que son 18 millones de km en un minuto. Es una distancia, no un tiempo — confuso pero útil. El Sol está a 8,3 minutos-luz. Marte está entre 4 y 22 minutos-luz dependiendo de la geometría orbital.",
+    "¿Por qué importa? Porque las ondas de radio viajan a la velocidad de la luz, y eso es también lo que tardan tus comandos en llegar a una nave. Cuando Curiosity conduce por Marte, el equipo del róver envía un comando y luego espera — 8 a 22 minutos — para que el róver empiece a moverse. Luego otros 8 a 22 para descubrir si funcionó. NO hay forma de pilotar un róver marciano desde la Tierra. Todo lo importante tiene que ser autónomo.",
+    "A distancia de Voyager 1 (alrededor de 165 UA ahora), el retraso de luz de un sentido es unas 22,5 horas. Envía un comando hoy, descubres mañana por la tarde si funcionó. Los años-luz existen para la siguiente escala — distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años-luz. A la velocidad de Voyager tardaría 70.000 años en llegar. El universo es grande y lento."
+  ],
+  "body_paragraphs": [
+    "La luz se mueve a unos 300.000 km/s. Un segundo-luz son 300.000 km. Un minuto-luz son 18 millones de km. Un año-luz son 9,46 billones de km. Son distancias, no tiempos — confusamente nombradas, pero útiles: 1 UA ≈ 8,3 minutos-luz, así que \"Marte está a 4-22 minutos-luz dependiendo de la órbita\" te dice la latencia de comando ida y vuelta en cualquier momento.",
+    "Cuando Curiosity conduce por Marte, el equipo del róver envía un comando, luego espera 8-22 minutos para que el róver empiece la maniobra — y otros 8-22 para descubrir si funcionó. El control en tiempo real es imposible a distancias planetarias. Suficientemente lejos (Voyager 1 a 22,5 horas-luz) estás enviando empujones de un solo sentido que llegan casi un día después.",
+    "Los años-luz son para estrellas. Próxima Centauri está a 4,2 años-luz. Voyager 1 se mueve a ~17 km/s, lo que es rápido para una nave pero lento contra la luz: a esa velocidad Próxima tardaría ~70.000 años."
+  ]
+}

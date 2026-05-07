@@ -1,0 +1,120 @@
+{
+  "intro_heading": "Así que quieres lanzar un cohete a Marte.",
+  "intro_paragraphs": [
+    "Bienvenido. Esta es la parte de Orrery donde los botones dejan de ser magia. Cada etiqueta del HUD, cada contorno coloreado del porkchop, cada marca de quemado en la trayectoria — esta sección explica de dónde viene. Léela como un cómic: los diagramas hacen la mayor parte del trabajo, y cada término en cursiva es un enlace que puedes seguir tan profundo como quieras.",
+    "Vamos a construir un cohete juntos. No literalmente — Orrery es un simulador — sino la misma cadena de decisiones que toma un equipo de vuelo real, en el orden en que las toman. Al final sabrás por qué las ventanas de lanzamiento ocurren cada 26 meses para Marte y cada mes para la Luna, por qué existe una trayectoria de retorno libre, y por qué el empuje es la parte barata y el combustible es toda la pelea."
+  ],
+  "chapters": [
+    {
+      "heading": "1 — La gravedad es la única física que importa.",
+      "diagram": "keplerian-orbit.svg",
+      "diagram_alt": "Una elipse con el Sol en uno de los focos.",
+      "diagram_caption": "Un cuerpo, un foco, una elipse. Eso es todo el sistema solar.",
+      "paragraphs": [
+        "Olvídate de los cohetes por un momento. Párate en la Tierra y lanza una pelota de béisbol con todas tus fuerzas. Cae. Lánzala más fuerte, cae más lejos. Lánzala TAN fuerte que el suelo se aleje más rápido de lo que la pelota cae, y la pelota nunca vuelve a tocar el planeta — para siempre. Eso es una [órbita](orbits/keplerian-orbit). Cada nave, cada planeta, cada roca del cinturón de asteroides está haciendo este truco alrededor de algo más pesado.",
+        "Una órbita es una elipse. Tiene un [tamaño](orbits/semi-major-axis), una [forma](orbits/eccentricity) (redonda vs estirada), una [inclinación](orbits/inclination), y una fase que dice dónde está la nave en la elipse en este instante ([anomalía verdadera](orbits/true-anomaly)). Cinco números y puedes predecir la posición de cualquier objeto del sistema solar para siempre, sin más datos. Esas son las [tres leyes de Kepler](orbits/keplers-laws), escritas en 1609 — siguen funcionando.",
+        "La ecuación más útil que conocerás aquí es [vis-viva](orbits/vis-viva). Le das tu radio y el tamaño de la órbita, te devuelve la velocidad. Eso es todo. Tierra en perihelio: 30,3 km/s. Tierra en afelio: 29,3 km/s. Misma órbita, misma energía, distinta velocidad."
+      ]
+    },
+    {
+      "heading": "2 — La ecuación del cohete es el jefe final.",
+      "diagram": "tsiolkovsky.svg",
+      "diagram_alt": "Curva de razón de masas: Δv crece logarítmicamente con el combustible.",
+      "diagram_caption": "La verdad cruel: doblar tu Δv significa quemar mucho más que el doble de combustible.",
+      "paragraphs": [
+        "Ahora: ¿cómo cambias de órbita? Quemas combustible. [Δv](propulsion/dv-budget) (\"delta-v\") es la moneda universal de la astronáutica — el cambio total de velocidad que necesita una misión. Cada movimiento en una trayectoria tiene precio en km/s.",
+        "Y ese precio es brutal. La [ecuación del cohete de Tsiolkovsky](propulsion/tsiolkovsky) dice que Δv escala con el logaritmo de cuánto de tu cohete es combustible. ¿Quieres el doble de Δv? No cargas el doble de combustible — cargas exponencialmente más. Por eso el Saturno V era 90% propelente. La mayor parte del cohete es el combustible que levanta el combustible que levanta el combustible que levanta la nave.",
+        "Dos números pelean contra este impuesto gravitatorio. El empuje te dice cuán fuerte empuja el motor — ese es el número que a nadie le importa después del lanzamiento. El [impulso específico](propulsion/specific-impulse) te dice cuán EFICIENTEMENTE empuja — y ese sí importa. Un cohete químico saca ~450 segundos. Un propulsor iónico saca 4.000+ — bebe combustible durante meses y supera a cualquier químico para cruceros profundos.",
+        "El mejor truco de magia: el [efecto Oberth](propulsion/oberth-effect). Encender el motor cuando ya vas rápido (bajo y cerca de un planeta) te da MUCHO más rendimiento por el mismo combustible. Por eso cada misión interplanetaria hace su gran quemada de salida en perigeo, abrazando la Tierra, yendo lo más rápido posible. Energía gratis a partir de la geometría."
+      ]
+    },
+    {
+      "heading": "3 — Una vez en órbita, estás a medio camino de cualquier sitio.",
+      "diagram": "hohmann-transfer.svg",
+      "diagram_alt": "Una elipse tangente a la órbita de la Tierra y de Marte.",
+      "diagram_caption": "Dos quemadas, una elipse. La forma más barata de cambiar de órbita.",
+      "paragraphs": [
+        "Robert Heinlein lo escribió: \"Una vez en órbita, estás a medio camino de cualquier sitio del sistema solar.\" No bromeaba. Llegar a órbita baja terrestre cuesta ~9,4 km/s de Δv. De ahí a Marte añade otros ~3,6 km/s. La parte difícil ya está hecha.",
+        "La ruta interplanetaria más barata es una [transferencia de Hohmann](transfers/hohmann-transfer): una elipse que apenas roza la órbita de la Tierra en un extremo y la del destino en el otro. Dos quemadas, sin combustible desperdiciado. A Marte tarda ~8,5 meses. Lenta, pero óptima.",
+        "¿Quieres ir más rápido? Resuelves un [problema de Lambert](transfers/lambert-problem) — eliges tu fecha de salida y tu tiempo de tránsito, y Lambert te da la única [elipse de transferencia](transfers/transfer-ellipse) que las conecta. Eso es exactamente lo que hace la pantalla [/plan](app:/plan) de Orrery, diez mil veces en paralelo, para dibujar el diagrama porkchop.",
+        "¿Necesitas ir aún más lejos? Robas velocidad a un planeta. Una [asistencia gravitatoria](transfers/gravity-assist) usa un sobrevuelo para cambiar tu trayectoria a coste cero — Voyager 2 usó cuatro de ellas para llegar a Neptuno. El sistema solar entero se cose como [cónicas parcheadas](transfers/patched-conics): una serie de arcos de [secciones cónicas](transfers/conic-sections) entregándose entre vecindarios gravitatorios como testigos en una carrera de relevos."
+      ]
+    },
+    {
+      "heading": "4 — Elige una ventana de lanzamiento, o espera dos años.",
+      "diagram": "porkchop.svg",
+      "diagram_alt": "El clásico diagrama porkchop — fecha de partida en x, tiempo de vuelo en y.",
+      "diagram_caption": "Un porkchop. Cada contorno es Δv constante; el lóbulo es cuando la naturaleza hace que Marte sea barato.",
+      "paragraphs": [
+        "La Tierra y Marte no se quedan quietos. La Tierra corre alrededor del Sol cada 365 días, Marte cada 687. Su geometría relativa solo se repite cada ~26 meses — y la mayor parte de esos meses, los planetas están demasiado lejos, en lados equivocados del Sol, como para llegar barato. El diseño de misión empieza con un calendario, no con un cohete.",
+        "El [diagrama porkchop](porkchop/what-is-a-porkchop) es como los ingenieros ven esto. Fecha de salida en [un eje](porkchop/departure-axis), [tiempo de vuelo](porkchop/tof-axis) en el otro, Δv como un [mapa de calor de color](porkchop/dv-heatmap). Las zonas baratas aparecen como lóbulos ovalados — las ventanas de lanzamiento. Fuera del lóbulo: rojo, caro, imposible-con-cohetes-actuales. [Leer los contornos](porkchop/contour-reading) es la mitad del trabajo de un dinamicista de vuelo.",
+        "Dos términos que verás en todas partes: [C₃](propulsion/c3) es la energía de lanzamiento que tu cohete necesita para escapar del pozo gravitatorio terrestre. [V∞](propulsion/v-infinity) (\"v-infinito\") es tu velocidad relativa al destino en el momento de la llegada. Ambos salen directamente de la matemática del porkchop."
+      ]
+    },
+    {
+      "heading": "5 — El vuelo son cinco fases en repetición.",
+      "diagram": "edl.svg",
+      "diagram_alt": "Entrada atmosférica, despliegue de paracaídas, retropropulsión, aterrizaje.",
+      "diagram_caption": "Entrada, descenso, aterrizaje. Seis minutos de puro terror.",
+      "paragraphs": [
+        "Prácticamente cada misión interplanetaria, de Voyager a Perseverance, sigue el mismo guion:",
+        "[Lanzamiento](mission-phases/launch) — sal de la atmósfera y entra en órbita baja terrestre. [Inyección Trans-X](mission-phases/trans-x-injection) — una sola quemada dura en perigeo que te lanza a la elipse de transferencia hacia la Luna (ITL), Marte (ITM), Venus o Júpiter. [Maniobras de corrección de trayectoria](mission-phases/tcm) — pequeñas quemadas durante el crucero para corregir errores de dispersión. Suelen ser 1-3. [Inserción orbital](mission-phases/orbit-insertion) — una quemada de frenado en el destino para curvarte hacia una órbita capturada. [EDA](mission-phases/edl) — Entrada, Descenso, Aterrizaje — para el módulo de aterrizaje. Seis minutos de caos atmosférico supersónico.",
+        "Las misiones lunares a veces hacen un desvío por una [Órbita de Halo Casi-Rectilínea](mission-phases/nrho) (Gateway vivirá en una), y los vuelos tripulados Apolo volaron [trayectorias de retorno libre](transfers/free-return) — caminos en figura-8 que te devuelven a la Tierra automáticamente si todos los motores de la nave fallan. Apolo 13 le debe la vida a esta geometría."
+      ]
+    },
+    {
+      "heading": "6 — Distancias y tiempo, porque nada de esto es del tamaño de la Tierra.",
+      "diagram": "au.svg",
+      "diagram_alt": "La unidad astronómica, marcada a lo largo del radio orbital de la Tierra.",
+      "diagram_caption": "1 UA = una distancia Tierra-Sol. Marte está a ~1,5 UA. Júpiter a ~5,2.",
+      "paragraphs": [
+        "Tres unidades aparecen en todas partes. La [unidad astronómica](scales-time/au) (UA) es la distancia media Tierra-Sol — 150 millones de km. Medimos el sistema solar en UA porque los kilómetros se vuelven inmanejables rápido. El [minuto-luz](scales-time/light-minute) te dice cuánto tarda una señal de radio en llegar a una nave. Marte: 4 a 24 minutos en un sentido. No puedes pilotar un róver desde la Tierra. Todo lo importante es autónomo.",
+        "La [época J2000](scales-time/j2000) es el cero del calendario que usa cada astrodinamicista. [Períodos sidéreo y sinódico](scales-time/sidereal-synodic) explican por qué las ventanas a Marte se repiten cada 26 meses en lugar de cada 23. El [plano eclíptico](scales-time/ecliptic-plane) es el disco plano sobre el que (casi) yacen todos los planetas. Los [sistemas de referencia](scales-time/frames) son los sistemas de coordenadas entre los que el control de misión malabarea — heliocéntrico, geocéntrico y centrado en el cuerpo."
+      ]
+    }
+  ],
+  "tools_heading": "Ahora ve a jugar.",
+  "tools_intro": "Ese es el bucle completo. Ahora sabes lo suficiente para leer cada etiqueta, contorno y lectura del HUD en el resto de la app. Aquí es donde lo pones a trabajar:",
+  "tools": [
+    {
+      "paths": [
+        "/explore"
+      ],
+      "text": "Gira el sistema solar. Mira las leyes de Kepler en directo. Haz clic en cualquier planeta para sus elementos orbitales."
+    },
+    {
+      "paths": [
+        "/plan"
+      ],
+      "text": "Elige un destino, elige un año de lanzamiento, mira el porkchop. El lóbulo es donde se esconden las transferencias de Hohmann."
+    },
+    {
+      "paths": [
+        "/fly"
+      ],
+      "text": "Vuela un arco de misión real. El HUD muestra Δv, V∞, MET, distancia a la Tierra. Cada número es algo que acabas de aprender."
+    },
+    {
+      "paths": [
+        "/missions"
+      ],
+      "text": "36 naves reales, de Luna 9 a Artemis II. La pestaña FLIGHT de cada una descompone su presupuesto real de Δv en las fases anteriores."
+    },
+    {
+      "paths": [
+        "/earth",
+        "/moon",
+        "/mars"
+      ],
+      "text": "Verdad sobre el terreno. Donde cada Apolo, cada róver, cada satélite activo está realmente."
+    },
+    {
+      "paths": [
+        "/iss",
+        "/tiangong"
+      ],
+      "text": "Los dos puestos orbitales habitados, módulo a módulo."
+    }
+  ],
+  "closing": "Bajo esta historia, la enciclopedia propiamente dicha: seis pestañas, cuarenta entradas, cada fórmula y cada diagrama en un solo sitio. Marca esta página. Estaremos aquí cuando lo necesites."
+}

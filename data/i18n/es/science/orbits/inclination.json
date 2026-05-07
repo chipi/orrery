@@ -1,0 +1,15 @@
+{
+  "title": "Inclinación",
+  "intro_sentence": "La inclinación del plano orbital relativo a un plano de referencia — habitualmente la eclíptica o el ecuador terrestre.",
+  "narrative_101": [
+    "Sostén un plato plano frente a ti — ese es el plano de referencia. Ahora inclínalo. El ángulo que has inclinado es la inclinación. Eso es todo el concepto. Cada órbita vive sobre su propio plato inclinado.",
+    "Importa porque cambiar la inclinación es brutalmente caro en combustible. Si lanzas un cohete desde Florida, la Tierra ya está girando hacia el este a 0,4 km/s — eso lo recibes gratis si tu órbita va al este. Intenta lanzar a una órbita polar y no solo pierdes el regalo, tienes que luchar contra él. Elegir tu inclinación en el lanzamiento es una de las decisiones más grandes de una misión; casi nunca quieres cambiarla luego.",
+    "Por eso la EEI está a 51,6° — ese es el ángulo al que tienes que lanzar si quieres alcanzarla desde el sitio de lanzamiento ruso en Baikonur. Por qué los satélites de imagen van polares — necesitan sobrevolar todas las latitudes. Por qué los comsats GEO se sientan en el ecuador — para flotar sobre el mismo trozo de suelo para siempre. Cada inclinación es una elección deliberada con una factura de combustible adjunta."
+  ],
+  "body_paragraphs": [
+    "La inclinación (`i`) es el ángulo entre el plano orbital y una referencia elegida. Para una órbita heliocéntrica, la referencia es la eclíptica — el plano en el que orbita la Tierra. Para satélites terrestres, suele ser el ecuador. El ángulo se mide en el nodo ascendente, donde la órbita atraviesa el plano de referencia hacia el norte.",
+    "La mayoría de los planetas se sientan cerca de la eclíptica — la Tierra la define (`i = 0°` por construcción), y el resto se quedan en unos pocos grados. Mercurio a 7° es la excepción. Los salvajes 17° de Plutón son una de las razones por las que fue degradado: los planetas reales se mantienen casi coplanarios.",
+    "Para satélites terrestres la historia de inclinación es distinta y pragmática. Ecuatorial (0°) para comsats geoestacionarios. ~28° para lanzamientos desde Cabo Cañaveral que necesitan aprovechar el giro terrestre. ~51,6° para la EEI — elegida para que las tripulaciones rusas puedan lanzar desde Baikonur. Polar (~90°) para satélites de imagen terrestre que necesitan todas las latitudes. Heliosíncrona (~98°) para plataformas científicas que quieren iluminación consistente en cada paso."
+  ],
+  "diagram_caption": "Plano orbital inclinado un ángulo i respecto al plano de referencia. El nodo ascendente N marca dónde lo cruza la órbita yendo hacia el norte."
+}

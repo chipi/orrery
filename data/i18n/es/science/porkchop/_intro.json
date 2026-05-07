@@ -1,0 +1,8 @@
+{
+  "headline": "Diagramas Porkchop — cuándo lanzar, y por qué las ventanas son las ventanas.",
+  "paragraphs": [
+    "Los planificadores de misión no calculan una sola trayectoria a Marte — calculan millones, en una rejilla gigante, y pintan un mapa de calor. Las trayectorias baratas aparecen como lóbulos azul claro. Las caras se vuelven rojas. El resultado, raramente, parece una chuleta de cerdo. La zona barata es la carne; la cresta cara es el hueso.",
+    "¿Por qué dibujar el mapa entero en lugar del óptimo solo? Porque las misiones reales tienen restricciones — un cohete que solo está listo cierto año, una rampa de lanzamiento solo disponible ciertas semanas, un sitio de aterrizaje que necesita una temporada específica en Marte. El porkchop te deja ver TODOS los compromisos a la vez y elegir la trayectoria suficientemente barata que cabe en tu calendario real.",
+    "Seis secciones aquí, en orden de lectura. Empieza por \"¿Qué es un diagrama porkchop?\" y camina por los ejes (salida, tiempo de vuelo), la escala de color (mapa de calor de Δv), cómo leer la forma del lóbulo (lectura de contornos), y cómo mapear el porkchop a un cohete específico (viabilidad). Al final podrás mirar el porkchop de /plan para cualquiera de los nueve destinos y leerlo como un dinamicista de vuelo."
+  ]
+}

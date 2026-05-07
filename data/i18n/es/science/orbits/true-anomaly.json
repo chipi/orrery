@@ -1,0 +1,15 @@
+{
+  "title": "Anomalía Verdadera",
+  "intro_sentence": "El ángulo que dice dónde está un cuerpo en la órbita ahora mismo, medido desde el perihelio.",
+  "narrative_101": [
+    "Imagina un planeta corriendo por su elipse. Ya le hemos dado un tamaño, una forma, una inclinación. Lo único que aún necesitamos es: ¿dónde está en el bucle en este instante? Esa es la anomalía verdadera. Párate en el Sol, apunta al punto más cercano del planeta y mide el ángulo hasta donde está realmente. Eso es todo.",
+    "Pero aquí está el truco — y aquí entra la segunda ley de Kepler. El planeta no barre este ángulo a un ritmo constante. Cerca del paso cercano va veloz. En el extremo lejano arrastra. Así que si preguntas \"¿cuántos grados por día?\", la respuesta cambia constantemente a lo largo de la órbita.",
+    "Los astrónomos se cansaron de eso, así que inventaron otros dos ángulos — anomalía media y anomalía excéntrica — que SÍ avanzan a ritmo constante, y construyeron una pequeña escalera de ecuaciones que conecta los tres. Cuando ves a los planetas moverse suavemente en /explore, esa escalera es lo que está corriendo bajo el capó, sesenta veces por segundo."
+  ],
+  "body_paragraphs": [
+    "Los elementos keplerianos describen la forma y orientación de una órbita; la anomalía verdadera (`ν`) te dice dónde está el cuerpo a lo largo de esa órbita en un instante dado. Párate en el foco (el Sol, para un planeta), apunta al perihelio, y rota tu dedo siguiendo al cuerpo. El ángulo que barres es la anomalía verdadera.",
+    "Va de 0 en perihelio (paso cercano) pasando por 90° (un cuarto del camino) hasta 180° en afelio (más lejano), y vuelta. A diferencia de un reloj, no avanza uniformemente — la segunda ley de Kepler dice que el cuerpo va veloz cerca del perihelio y se arrastra cerca del afelio. Así que la anomalía verdadera por segundo cambia a lo largo de la órbita.",
+    "Ángulos hermanos que conocerás: la anomalía media (`M`), que sí avanza uniformemente con el tiempo pero geométricamente no significa nada; y la anomalía excéntrica (`E`), el puente entre ambos. `M` avanza a ritmo constante, resuelves la ecuación de Kepler `M = E - e·sin(E)` para obtener `E`, luego conviertes a `ν`. La cadena es el latido de cada simulador orbital, incluido Orrery."
+  ],
+  "diagram_caption": "Anomalía verdadera ν medida en el foco, desde el perihelio hasta la posición actual del cuerpo."
+}

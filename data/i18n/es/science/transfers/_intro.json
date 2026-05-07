@@ -1,0 +1,8 @@
+{
+  "headline": "Transferencias — una vez en órbita, estás a medio camino de cualquier sitio.",
+  "paragraphs": [
+    "Robert Heinlein lo escribió. Tenía razón. Llegar a órbita baja terrestre cuesta unos 9,4 km/s de Δv — la parte más difícil de cualquier viaje. De ahí a Marte solo añade ~3,6 km/s. Una vez libre de la atmósfera del planeta y en órbita, el resto del sistema solar es sobre todo geometría.",
+    "Las siete secciones de esta pestaña cubren la geometría. La transferencia de Hohmann es el viaje más barato posible entre dos órbitas — dos quemadas, ocho meses de inercia. El problema de Lambert generaliza Hohmann a fechas arbitrarias. Las asistencias gravitatorias te permiten robar velocidad a un planeta (esencialmente) gratis, que es como Voyager 2 llegó a Neptuno. Las trayectorias de retorno libre son la red de seguridad que devolvió a Apolo 13. Las cónicas parcheadas son la aproximación de trabajo que nos permite calcular todo esto en un navegador.",
+    "Si solo lees una sección: transferencia de Hohmann. Todo lo demás se construye sobre ella."
+  ]
+}

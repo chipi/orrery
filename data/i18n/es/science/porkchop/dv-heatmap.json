@@ -1,0 +1,14 @@
+{
+  "title": "Mapa de Calor de Δv",
+  "intro_sentence": "La escala de color que convierte números de Δv en una imagen que puedes leer de un vistazo.",
+  "narrative_101": [
+    "El propósito completo de un diagrama porkchop son los colores. Los números en una rejilla gigante te dirían lo mismo, pero no podrías ver los patrones. Así que pintamos cada celda — turquesa fresco para trayectorias baratas, amarillo para borderline, naranja y rojo para desesperadamente caras. El reconocimiento de patrones toma el control de la aritmética.",
+    "Turquesa fresco se sitúa alrededor de 3 km/s de Δv — lo que cuesta una Hohmann real a Marte. Azul alrededor de 5 km/s — asequible, viajes ligeramente más rápidos. Amarillo alrededor de 7 km/s — poniéndose caro, estás pagando por velocidad. Naranja y rojo más allá de 9 km/s — has dejado el reino de lo que los cohetes actuales pueden entregar prácticamente. El mapeo color-a-coste es consistente a través de todos los porkchops en /plan.",
+    "Pasar el ratón sobre cualquier celda te muestra el Δv exacto en km/s, pero la historia visual es el truco visual que hace el porkchop indispensable. Puedes escanear el gráfico en un segundo y saber si un destino es alcanzable, cuándo son las ventanas, y cuánto cuestan los compromisos. Ninguna fórmula hace eso."
+  ],
+  "body_paragraphs": [
+    "Turquesa fresco se sitúa en Δv bajo (~3 km/s) — el mínimo natural de Hohmann. Azul a ~5 km/s. Amarillo alrededor de 7 km/s — el umbral de caro. Naranja y rojo por encima de 9 km/s — celdas de coste desbocado, donde necesitarías un vehículo de lanzamiento clase SLS solo para que la matemática cuadre.",
+    "La escala de Orrery topa alrededor de 11+ km/s. Cualquier cosa más allá se renderiza como el rojo más profundo porque en la práctica ningún vehículo de lanzamiento actual puede entregar la carga útil a esos costes de Δv. Voyager 1 lanzó a C₃ ≈ 99 km²/s² (V∞ ≈ 10 km/s) — ya cerca del límite de lo volable en 1977.",
+    "En `/plan` puedes pasar el ratón sobre cualquier celda para ver el Δv exacto en km/s. El mapa de calor es una visualización de la respuesta; el valor de la celda es la respuesta misma."
+  ]
+}

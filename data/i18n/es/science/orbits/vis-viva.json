@@ -1,0 +1,16 @@
+{
+  "title": "Ecuación de Vis-Viva",
+  "intro_sentence": "Cuán rápido se mueve un cuerpo en cualquier punto de su órbita — solo a partir del radio actual y el semieje mayor de la órbita.",
+  "narrative_101": [
+    "Si vas a aprender una sola ecuación de mecánica orbital, que sea esta. Dile a vis-viva tres cosas — qué orbitas, a qué distancia estás ahora, y el tamaño de tu órbita — y te dice exactamente cuán rápido te mueves. Sin tiempo, sin integración, sin truco ingenioso. Tres entradas, una raíz cuadrada, hecho.",
+    "La razón por la que funciona es la conservación de la energía. Una nave intercambiando altitud por velocidad (o viceversa) mantiene su energía total constante en una órbita dada. Así que si sabes dónde está en la elipse, sabes cómo está repartida esa energía entre potencial y cinética — y una vez sabes la cinética, tienes la velocidad.",
+    "Abre la pantalla /fly y mira la lectura de velocidad mientras una nave pasa cerca de un planeta. Eso es vis-viva, recalculada cada cuadro. ¿Los números de velocidad de salida y de llegada en cada porkchop de /plan? Vis-viva, muestreada en el radio de lanzamiento y en el radio de llegada. Está en todas partes."
+  ],
+  "body_paragraphs": [
+    "Vis-viva es la ecuación de trabajo de la mecánica orbital. Conecta tres números — el parámetro gravitacional `μ` de lo que orbites, tu distancia actual `r` al foco, y el semieje mayor `a` — y escupe la velocidad `v`. Eso es todo. Sin integración temporal, sin cadena de anomalías, solo una raíz cuadrada y conoces tu velocidad.",
+    "La ecuación empaqueta la conservación de la energía: la energía mecánica total en una órbita kepleriana es constante, así que cuando conoces `r` puedes recuperar la velocidad. En perihelio `r` es pequeño, el término entre paréntesis es grande, `v` es alta. En afelio `r` es grande, el término encoge, `v` baja. La Tierra pasa veloz por el perihelio a 30,3 km/s y se arrastra por el afelio a 29,3 km/s — misma órbita, distinta velocidad, misma energía.",
+    "En Orrery, vis-viva es lo que calcula las lecturas de velocidad que ves en el HUD de `/fly` mientras una nave sobrevuela un planeta — y los números de energía de lanzamiento y velocidad de llegada que alimentan el mapa de calor del porkchop en `/plan`."
+  ],
+  "formula_caption": "v a partir del parámetro gravitacional μ, el radio actual r y el semieje mayor a.",
+  "diagram_caption": "La velocidad varía a lo largo de la órbita: alta en perihelio, baja en afelio. Vis-viva relaciona velocidad con radio."
+}

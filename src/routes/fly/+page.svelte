@@ -40,6 +40,7 @@
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
   // between control points — exactly mirrors lerpPoint(out, t)
@@ -1866,7 +1867,13 @@
         <span class="hud-val">{mission.arr_label}</span>
       </div>
       <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_met()}</span>
+        <span class="hud-key"
+          >{m.fly_hud_met()}<ScienceChip
+            tab="mission-phases"
+            section="met"
+            label="MET — mission elapsed time, the universal stopwatch"
+          /></span
+        >
         <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
       </div>
       {#if showPlanOuterTrajectoryCaveat}
@@ -1877,7 +1884,13 @@
     <!-- Navigation HUD (left stack, below identity) -->
     <aside class="hud hud-navigation" aria-label={m.fly_panel_navigation()}>
       <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_velocity()}</span>
+        <span class="hud-key"
+          >{m.fly_hud_velocity()}<ScienceChip
+            tab="orbits"
+            section="vis-viva"
+            label="Vis-viva — speed from radius and orbit size"
+          /></span
+        >
         <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
       </div>
       <div class="hud-row">
@@ -1889,7 +1902,13 @@
         >
       </div>
       <div class="hud-row">
-        <span class="hud-key">·</span>
+        <span class="hud-key"
+          >·<ScienceChip
+            tab="scales-time"
+            section="light-minute"
+            label="Light-minute — radio-signal lag at this distance"
+          /></span
+        >
         <span class="hud-val dim"
           >{m.fly_hud_lmin({
             value: signalDelayMin < 1 ? signalDelayMin.toFixed(2) : signalDelayMin.toFixed(1),
@@ -1915,7 +1934,13 @@
         {/if}
         <div class="hud-section-title">{m.fly_panel_flight_params()}</div>
         <div class="hud-row">
-          <span class="hud-key">{m.fly_hud_c3()}</span>
+          <span class="hud-key"
+            >{m.fly_hud_c3()}<ScienceChip
+              tab="propulsion"
+              section="c3"
+              label="C3 — the rocket's launch energy"
+            /></span
+          >
           <span class="hud-val accent-c3">
             {mission.flight.launch?.c3_km2_s2 != null
               ? m.fly_hud_unit_c3({ value: fmtNumOrDash(mission.flight.launch.c3_km2_s2, 2) })
@@ -1923,7 +1948,13 @@
           </span>
         </div>
         <div class="hud-row">
-          <span class="hud-key">{m.fly_hud_v_infinity()}</span>
+          <span class="hud-key"
+            >{m.fly_hud_v_infinity()}<ScienceChip
+              tab="propulsion"
+              section="v-infinity"
+              label="V∞ — leftover speed at the destination"
+            /></span
+          >
           <span class="hud-val accent-vinf">
             {mission.flight.arrival?.v_infinity_km_s != null
               ? m.fly_hud_kms({
@@ -1933,7 +1964,13 @@
           </span>
         </div>
         <div class="hud-row">
-          <span class="hud-key">{m.fly_hud_total_dv()}</span>
+          <span class="hud-key"
+            >{m.fly_hud_total_dv()}<ScienceChip
+              tab="propulsion"
+              section="dv-budget"
+              label="∆v — total velocity-change budget for the mission"
+            /></span
+          >
           <span class="hud-val accent-dv">
             {mission.flight.totals?.total_dv_km_s != null
               ? m.fly_hud_kms({ value: fmtNumOrDash(mission.flight.totals.total_dv_km_s, 2) })

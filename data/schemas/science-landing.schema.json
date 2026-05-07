@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "science-landing.schema.json",
+  "title": "ScienceLanding",
+  "description": "Editorial Space-101 narrative shown on the /science landing page (PRD-008 / Phase 1). Inline link syntax inside paragraphs: [text](tab/section) for /science deep-links, [text](app:/route) for app routes — translators preserve the parens content and translate only the bracket content.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intro_heading",
+    "intro_paragraphs",
+    "chapters",
+    "tools_heading",
+    "tools_intro",
+    "tools",
+    "closing"
+  ],
+  "properties": {
+    "intro_heading": { "type": "string", "minLength": 1 },
+    "intro_paragraphs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["heading", "paragraphs"],
+        "properties": {
+          "heading": { "type": "string", "minLength": 1 },
+          "diagram": { "type": "string", "pattern": "\\.svg$" },
+          "diagram_alt": { "type": "string", "minLength": 1 },
+          "diagram_caption": { "type": "string", "minLength": 1 },
+          "paragraphs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 6,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "tools_heading": { "type": "string", "minLength": 1 },
+    "tools_intro": { "type": "string", "minLength": 1 },
+    "tools": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["paths", "text"],
+        "properties": {
+          "paths": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 4,
+            "items": { "type": "string", "pattern": "^/[a-z][a-z-]*$" }
+          },
+          "text": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "closing": { "type": "string", "minLength": 1 }
+  }
+}

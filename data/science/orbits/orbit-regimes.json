@@ -1,0 +1,29 @@
+{
+  "id": "orbit-regimes",
+  "tab": "orbits",
+  "order": 9,
+  "diagram": "orbit-regimes.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/earth",
+      "context_key": "The /earth legend colour-codes satellites by which regime they live in"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Earth-orbiting missions in the catalogue declare their target regime"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Geocentric orbit",
+      "u": "https://en.wikipedia.org/wiki/Geocentric_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Catalog of Earth Satellite Orbits",
+      "u": "https://earthobservatory.nasa.gov/features/OrbitsCatalog",
+      "t": "core"
+    }
+  ]
+}

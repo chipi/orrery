@@ -1,0 +1,22 @@
+{
+  "id": "gravity-assist",
+  "tab": "transfers",
+  "order": 6,
+  "diagram": "gravity-assist.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Voyager 2 and Cassini chained gravity assists across the outer solar system" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Gravity assist",
+      "u": "https://en.wikipedia.org/wiki/Gravity_assist",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Basics of Spaceflight: Gravity Assists",
+      "u": "https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/",
+      "t": "core"
+    }
+  ]
+}

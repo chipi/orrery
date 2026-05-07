@@ -1,0 +1,22 @@
+{
+  "id": "transfer-ellipse",
+  "tab": "transfers",
+  "order": 3,
+  "diagram": "transfer-ellipse.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/fly", "context_key": "The bright arc on /fly is the spacecraft's transfer ellipse" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Orbital mechanics",
+      "u": "https://en.wikipedia.org/wiki/Orbital_mechanics",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Trans-Mars Injection Trajectories",
+      "u": "https://www.nasa.gov/feature/jpl/how-nasa-s-perseverance-mars-team-adjusted-to-work-in-the-time-of-coronavirus",
+      "t": "core"
+    }
+  ]
+}

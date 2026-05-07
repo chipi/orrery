@@ -1,0 +1,10 @@
+{
+  "title": "Free-Return Trajectory",
+  "intro_sentence": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
+  "body_paragraphs": [
+    "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
+    "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled, riding the figure-8 home. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
+    "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed."
+  ],
+  "diagram_caption": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free."
+}

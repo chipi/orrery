@@ -1,0 +1,10 @@
+{
+  "title": "Lambert's Problem",
+  "intro_sentence": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
+  "body_paragraphs": [
+    "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
+    "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
+    "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel."
+  ],
+  "diagram_caption": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight."
+}

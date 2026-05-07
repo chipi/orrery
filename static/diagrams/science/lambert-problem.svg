@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Lambert problem: two position vectors and a transit time define a unique transfer orbit">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Sun at focus -->
+  <circle cx="160" cy="170" r="6" class="focus" />
+  <!-- r1 vector (departure) -->
+  <line x1="160" y1="170" x2="280" y2="80" class="accent" />
+  <circle cx="280" cy="80" r="4" class="body" />
+  <text x="220" y="118" class="label-accent">r₁</text>
+  <text x="284" y="74" class="label-mute">departure</text>
+  <!-- r2 vector (arrival) -->
+  <line x1="160" y1="170" x2="60" y2="80" class="accent" />
+  <circle cx="60" cy="80" r="4" class="body" />
+  <text x="92" y="116" class="label-accent">r₂</text>
+  <text x="20" y="74" class="label-mute">arrival</text>
+  <!-- Transfer ellipse joining r1 to r2 (drawn as a stylized arc — not the actual ellipse) -->
+  <path d="M 280 80 C 240 200, 100 200, 60 80" class="stroke" />
+  <text x="156" y="220" class="label-mute">transfer arc · time of flight T</text>
+  <!-- Connecting chord (dashed) -->
+  <line x1="280" y1="80" x2="60" y2="80" class="dashed" />
+  <text x="148" y="68" class="label-mute">chord</text>
+  <!-- Caption -->
+  <text x="38" y="280" class="label-mute">given r₁, r₂, T → solve for the transfer ellipse</text>
+</svg>

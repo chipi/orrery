@@ -1,0 +1,10 @@
+{
+  "title": "Hohmann Transfer",
+  "intro_sentence": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+  "body_paragraphs": [
+    "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
+    "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
+    "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times."
+  ],
+  "diagram_caption": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars."
+}

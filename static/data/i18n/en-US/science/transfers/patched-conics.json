@@ -1,0 +1,10 @@
+{
+  "title": "Patched Conics",
+  "intro_sentence": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
+  "body_paragraphs": [
+    "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
+    "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
+    "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch."
+  ],
+  "diagram_caption": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries."
+}

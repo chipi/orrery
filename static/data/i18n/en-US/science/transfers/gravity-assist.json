@@ -1,0 +1,10 @@
+{
+  "title": "Gravity Assist",
+  "intro_sentence": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
+  "body_paragraphs": [
+    "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
+    "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
+    "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable."
+  ],
+  "diagram_caption": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity."
+}

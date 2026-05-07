@@ -18,6 +18,12 @@ import type { MarsSite, Traverse } from '$types/mars-site';
 import type { PorkchopGrid } from '$types/porkchop-grid';
 import type { DestinationId } from '$lib/lambert-grid.constants';
 import type { IssModule, IssModuleBase, IssModuleOverlay } from '$types/iss-module';
+import type {
+  ScienceSection,
+  ScienceSectionBase,
+  ScienceSectionOverlay,
+  ScienceTabId,
+} from '$types/science';
 
 const cache = new Map<string, unknown>();
 
@@ -682,6 +688,58 @@ export async function getSourceLogos(): Promise<SourceLogosManifest> {
 
 export async function getTextSources(): Promise<TextSourcesManifest> {
   return get<TextSourcesManifest>('text-sources.json');
+}
+
+/**
+ * /science encyclopedia (PRD-008 / ADR-034 / ADR-017). Each section is
+ * a base JSON record at `science/[tab]/[id].json` merged with a locale
+ * overlay at `i18n/[locale]/science/[tab]/[id].json`. Falls back to
+ * en-US when the requested locale's overlay is missing.
+ */
+export const SCIENCE_TABS: readonly ScienceTabId[] = [
+  'orbits',
+  'transfers',
+  'propulsion',
+  'mission-phases',
+  'scales-time',
+  'porkchop',
+] as const;
+
+export async function getScienceSection(
+  tab: ScienceTabId,
+  id: string,
+  locale = 'en-US',
+): Promise<ScienceSection | null> {
+  try {
+    const baseRecord = await get<ScienceSectionBase>(`science/${tab}/${id}.json`);
+    const overlay = await get<ScienceSectionOverlay>(
+      `i18n/${locale}/science/${tab}/${id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<ScienceSectionOverlay>(`i18n/en-US/science/${tab}/${id}.json`).catch(
+            () => null,
+          ));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+export async function getScienceTab(
+  tab: ScienceTabId,
+  locale = 'en-US',
+): Promise<ScienceSection[]> {
+  const index = await get<{ ids: string[] }>(`science/${tab}/_index.json`).catch(() => ({
+    ids: [] as string[],
+  }));
+  const sections = await Promise.all(
+    index.ids.map((id) => getScienceSection(tab, id, locale)),
+  );
+  return sections.filter((s): s is ScienceSection => s !== null).sort((a, b) => a.order - b.order);
 }
 
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */

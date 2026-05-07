@@ -712,7 +712,7 @@
         {m.plan_explainer_intro()}<ScienceChip
           tab="porkchop"
           section="what-is-a-porkchop"
-          label="What is a porkchop plot?"
+          label={m.chip_label_what_is_a_porkchop()}
         />
       </p>
       <dl class="explainer-list">
@@ -720,7 +720,7 @@
           {m.plan_explainer_x_axis()}<ScienceChip
             tab="porkchop"
             section="departure-axis"
-            label="Departure axis — the calendar of launch windows"
+            label={m.chip_label_departure_axis()}
           />
         </dt>
         <dd>{m.plan_explainer_x_desc()}</dd>
@@ -728,7 +728,7 @@
           {m.plan_explainer_y_axis()}<ScienceChip
             tab="porkchop"
             section="tof-axis"
-            label="Time-of-flight axis — fast vs slow trips"
+            label={m.chip_label_tof_axis()}
           />
         </dt>
         <dd>
@@ -738,7 +738,7 @@
           {m.plan_explainer_color()}<ScienceChip
             tab="porkchop"
             section="dv-heatmap"
-            label="Colour scale — cheap teal to expensive red"
+            label={m.chip_label_dv_heatmap()}
           />
         </dt>
         <dd>

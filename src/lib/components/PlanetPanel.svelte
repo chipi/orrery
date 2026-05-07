@@ -167,7 +167,7 @@
               {m.panel_label_semi_major_axis()}<ScienceChip
                 tab="orbits"
                 section="semi-major-axis"
-                label="Semi-major axis — the orbit's size; sets the period"
+                label={m.chip_label_semi_major_axis()}
               />
             </div>
             <div class="cell-value">{planet.a.toFixed(4)} AU</div>
@@ -181,7 +181,7 @@
               {m.panel_label_eccentricity()}<ScienceChip
                 tab="orbits"
                 section="eccentricity"
-                label="Eccentricity — circle (0) to escape (1)"
+                label={m.chip_label_eccentricity()}
               />
             </div>
             <div class="cell-value">e = {planet.e.toFixed(4)}</div>
@@ -191,7 +191,7 @@
               {m.panel_label_inclination()}<ScienceChip
                 tab="orbits"
                 section="inclination"
-                label="Inclination — tilt of the orbit plane"
+                label={m.chip_label_inclination()}
               />
             </div>
             <div class="cell-value teal">{planet.incl.toFixed(2)}°</div>
@@ -201,7 +201,7 @@
               {m.panel_label_perihelion()}<ScienceChip
                 tab="orbits"
                 section="apsides"
-                label="Perihelion — closest approach to the Sun"
+                label={m.chip_label_apsides_perihelion()}
               />
             </div>
             <div class="cell-value">{perihelion.toFixed(4)} AU</div>
@@ -211,7 +211,7 @@
               {m.panel_label_aphelion()}<ScienceChip
                 tab="orbits"
                 section="apsides"
-                label="Aphelion — farthest point from the Sun"
+                label={m.chip_label_apsides_aphelion()}
               />
             </div>
             <div class="cell-value">{aphelion.toFixed(4)} AU</div>

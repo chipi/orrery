@@ -1871,7 +1871,7 @@
           >{m.fly_hud_met()}<ScienceChip
             tab="mission-phases"
             section="met"
-            label="MET — mission elapsed time, the universal stopwatch"
+            label={m.chip_label_met()}
           /></span
         >
         <span class="hud-val">{m.fly_hud_met_value({ day: Math.round(met).toString() })}</span>
@@ -1888,7 +1888,7 @@
           >{m.fly_hud_velocity()}<ScienceChip
             tab="orbits"
             section="vis-viva"
-            label="Vis-viva — speed from radius and orbit size"
+            label={m.chip_label_vis_viva()}
           /></span
         >
         <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
@@ -1906,7 +1906,7 @@
           >·<ScienceChip
             tab="scales-time"
             section="light-minute"
-            label="Light-minute — radio-signal lag at this distance"
+            label={m.chip_label_light_minute()}
           /></span
         >
         <span class="hud-val dim"
@@ -1938,7 +1938,7 @@
             >{m.fly_hud_c3()}<ScienceChip
               tab="propulsion"
               section="c3"
-              label="C3 — the rocket's launch energy"
+              label={m.chip_label_c3()}
             /></span
           >
           <span class="hud-val accent-c3">
@@ -1952,7 +1952,7 @@
             >{m.fly_hud_v_infinity()}<ScienceChip
               tab="propulsion"
               section="v-infinity"
-              label="V∞ — leftover speed at the destination"
+              label={m.chip_label_v_infinity()}
             /></span
           >
           <span class="hud-val accent-vinf">
@@ -1968,7 +1968,7 @@
             >{m.fly_hud_total_dv()}<ScienceChip
               tab="propulsion"
               section="dv-budget"
-              label="∆v — total velocity-change budget for the mission"
+              label={m.chip_label_dv_budget()}
             /></span
           >
           <span class="hud-val accent-dv">

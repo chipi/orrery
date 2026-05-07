@@ -1026,11 +1026,7 @@
           {regime}
         </span>
       {/each}
-      <ScienceChip
-        tab="orbits"
-        section="orbit-regimes"
-        label="Orbit regimes — LEO / MEO / GEO / HEO altitude bands"
-      />
+      <ScienceChip tab="orbits" section="orbit-regimes" label={m.chip_label_orbit_regimes()} />
     </div>
   {/if}
 

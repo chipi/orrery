@@ -1276,7 +1276,7 @@
             {selected.mission_type}<ScienceChip
               tab="mission-phases"
               section="mission-types"
-              label="Mission types — flyby, orbiter, lander, rover, sample return"
+              label={m.chip_label_mission_types()}
             />
           </p>
         {/if}

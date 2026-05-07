@@ -308,7 +308,7 @@
                   {m.mp_flight_label_c3()}<ScienceChip
                     tab="propulsion"
                     section="c3"
-                    label="C3 — characteristic launch energy"
+                    label={m.chip_label_c3()}
                   />
                 </dt>
                 <dd class="numeric">
@@ -347,7 +347,7 @@
                   {m.mp_flight_label_tcm_count()}<ScienceChip
                     tab="mission-phases"
                     section="tcm"
-                    label="TCMs — small mid-cruise corrections"
+                    label={m.chip_label_tcm()}
                   />
                 </dt>
                 <dd class="numeric">{fmtInt(mission.flight.cruise.tcm_count)}</dd>
@@ -376,7 +376,7 @@
                   {m.mp_flight_label_v_infinity()}<ScienceChip
                     tab="propulsion"
                     section="v-infinity"
-                    label="V∞ — arrival speed at the destination"
+                    label={m.chip_label_v_infinity()}
                   />
                 </dt>
                 <dd class="numeric">
@@ -412,7 +412,7 @@
                   {m.mp_flight_label_oi_dv()}<ScienceChip
                     tab="mission-phases"
                     section="orbit-insertion"
-                    label="Orbit insertion — the braking burn at the destination"
+                    label={m.chip_label_orbit_insertion()}
                   />
                 </dt>
                 <dd class="numeric">
@@ -439,7 +439,7 @@
                   {m.mp_flight_label_total_dv()}<ScienceChip
                     tab="propulsion"
                     section="dv-budget"
-                    label="∆v — the universal currency of spaceflight"
+                    label={m.chip_label_dv_budget()}
                   />
                 </dt>
                 <dd class="numeric accent-dv">
@@ -453,7 +453,7 @@
                   {m.mp_flight_label_tli_dv()}<ScienceChip
                     tab="mission-phases"
                     section="trans-x-injection"
-                    label="TLI/TMI — the big departure burn from Earth orbit"
+                    label={m.chip_label_trans_x_injection()}
                   />
                 </dt>
                 <dd class="numeric">

@@ -336,6 +336,59 @@ export async function getIssModuleGallery(moduleId: string): Promise<string[]> {
 }
 
 /**
+ * Visiting spacecraft currently or commonly docked at the ISS — Soyuz,
+ * Progress, Dragon ×2, Cygnus, HTV-X. Same shape as IssModule so the
+ * existing IssModulePanel renders them; separate file because they are
+ * visitors, not station structure.
+ */
+export async function getIssVisitors(locale = 'en-US'): Promise<IssModule[]> {
+  const list = await get<IssModuleBase[]>('iss-visitors.json');
+  const merged = await Promise.all(
+    list.map(async (baseRecord) => {
+      const overlay = await get<IssModuleOverlay>(
+        `i18n/${locale}/iss-visitors/${baseRecord.id}.json`,
+      ).catch(() => null);
+      const fallback =
+        overlay ??
+        (locale === 'en-US'
+          ? null
+          : await get<IssModuleOverlay>(
+              `i18n/en-US/iss-visitors/${baseRecord.id}.json`,
+            ).catch(() => null));
+      if (!fallback) {
+        throw new Error(
+          `Missing ISS visitor overlay for ${baseRecord.id} (locale ${locale}, no en-US fallback)`,
+        );
+      }
+      return { ...baseRecord, ...fallback };
+    }),
+  );
+  return merged;
+}
+
+export async function getIssVisitor(id: string, locale = 'en-US'): Promise<IssModule | null> {
+  try {
+    const list = await get<IssModuleBase[]>('iss-visitors.json');
+    const baseRecord = list.find((m) => m.id === id);
+    if (!baseRecord) return null;
+    const overlay = await get<IssModuleOverlay>(
+      `i18n/${locale}/iss-visitors/${baseRecord.id}.json`,
+    ).catch(() => null);
+    const fallback =
+      overlay ??
+      (locale === 'en-US'
+        ? null
+        : await get<IssModuleOverlay>(`i18n/en-US/iss-visitors/${baseRecord.id}.json`).catch(
+            () => null,
+          ));
+    if (!fallback) return null;
+    return { ...baseRecord, ...fallback };
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Pre-computed porkchop grid for a destination (v0.1.6 / ADR-026).
  * Files live in static/data/porkchop/ and are generated at build time
  * by scripts/precompute-porkchops.ts. /plan loads them via this

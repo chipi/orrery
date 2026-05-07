@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "iss-visitor.schema.json",
+  "title": "IssVisitors",
+  "description": "Visiting spacecraft currently or commonly docked at the ISS. Same shape as iss-modules so the existing IssModulePanel can render them; separate file because they are visitors, not station structure.",
+  "type": "array",
+  "minItems": 6,
+  "maxItems": 6,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "builder",
+      "builder_country",
+      "agency",
+      "launch_vehicle",
+      "launch_date",
+      "flight_designation",
+      "mass_kg",
+      "length_m",
+      "status",
+      "credit",
+      "links"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "enum": ["soyuz_ms", "progress_ms", "crew_dragon", "cargo_dragon", "cygnus", "htv_x"]
+      },
+      "builder": { "type": "string", "minLength": 1 },
+      "builder_country": { "type": "string", "minLength": 1 },
+      "agency": { "type": "string", "minLength": 1 },
+      "launch_vehicle": { "type": "string", "minLength": 1 },
+      "launch_date": { "type": "string", "format": "date" },
+      "flight_designation": { "type": "string", "minLength": 1 },
+      "mass_kg": { "type": "number", "exclusiveMinimum": 0 },
+      "length_m": { "type": "number", "minimum": 0 },
+      "year_first_of": { "type": "string", "minLength": 1 },
+      "status": { "type": "string", "enum": ["ACTIVE", "RETIRED"] },
+      "credit": { "type": "string", "minLength": 1 },
+      "links": {
+        "type": "array",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["l", "u", "t"],
+          "properties": {
+            "l": { "type": "string", "minLength": 1 },
+            "u": { "type": "string", "format": "uri" },
+            "t": { "type": "string", "enum": ["intro", "core", "deep"] }
+          }
+        }
+      }
+    }
+  }
+}

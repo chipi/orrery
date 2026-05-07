@@ -543,7 +543,19 @@ function buildHtvX(): THREE.Group {
   return g;
 }
 
+export const ISS_VISITOR_IDS = [
+  'soyuz_ms',
+  'progress_ms',
+  'crew_dragon',
+  'cargo_dragon',
+  'cygnus',
+  'htv_x',
+] as const;
+
+export type IssVisitorId = (typeof ISS_VISITOR_IDS)[number];
+
 interface DockedShip {
+  id: IssVisitorId;
   build: () => THREE.Group;
   /** Position of the docking port on the host module. */
   port: [number, number, number];
@@ -553,12 +565,12 @@ interface DockedShip {
 
 function buildVisitingFleet(root: THREE.Group) {
   const fleet: DockedShip[] = [
-    { build: buildSoyuz, port: [-3.35, -0.21, -0.12], out: 'minusY' },
-    { build: buildProgress, port: [-3.45, 0.27, 0.15], out: 'plusY' },
-    { build: buildDragon.bind(null, true), port: [-1.45, 0.21, 0], out: 'plusY' },
-    { build: buildDragon.bind(null, false), port: [0.55, 0.21, 0.05], out: 'plusY' },
-    { build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
-    { build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
+    { id: 'soyuz_ms', build: buildSoyuz, port: [-3.35, -0.21, -0.12], out: 'minusY' },
+    { id: 'progress_ms', build: buildProgress, port: [-3.45, 0.27, 0.15], out: 'plusY' },
+    { id: 'crew_dragon', build: buildDragon.bind(null, true), port: [-1.45, 0.21, 0], out: 'plusY' },
+    { id: 'cargo_dragon', build: buildDragon.bind(null, false), port: [0.55, 0.21, 0.05], out: 'plusY' },
+    { id: 'cygnus', build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
+    { id: 'htv_x', build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
   ];
   for (const ship of fleet) {
     const g = ship.build();
@@ -568,7 +580,14 @@ function buildVisitingFleet(root: THREE.Group) {
     else if (ship.out === 'minusZ') g.rotation.x = Math.PI / 2;
     else if (ship.out === 'plusX') g.rotation.z = -Math.PI / 2;
     else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
-    g.userData.issPickable = false;
+    g.userData.issPickable = true;
+    g.userData.moduleId = ship.id;
+    g.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        child.userData.issPickable = true;
+        child.userData.moduleId = ship.id;
+      }
+    });
     root.add(g);
   }
 }

@@ -44,6 +44,7 @@ const scenarioOverlaySchema = loadSchema('scenario-overlay.schema.json');
 const porkchopSchema = loadSchema('porkchop.schema.json');
 const issModuleSchema = loadSchema('iss-module.schema.json');
 const issModuleOverlaySchema = loadSchema('iss-module-overlay.schema.json');
+const issVisitorSchema = loadSchema('iss-visitor.schema.json');
 // ADR-046 Milestone C — image provenance + license stewardship.
 const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
 const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
@@ -69,6 +70,7 @@ const validateScenarioOverlay = ajv.compile(scenarioOverlaySchema);
 const validatePorkchop = ajv.compile(porkchopSchema);
 const validateIssModules = ajv.compile(issModuleSchema);
 const validateIssModuleOverlay = ajv.compile(issModuleOverlaySchema);
+const validateIssVisitors = ajv.compile(issVisitorSchema);
 const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
@@ -133,6 +135,7 @@ validateFile(join(DATA_ROOT, 'moon-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
+validateFile(join(DATA_ROOT, 'iss-visitors.json'), validateIssVisitors);
 // ADR-046 Milestone C: image provenance + license waivers.
 validateFile(join(DATA_ROOT, 'image-provenance.json'), validateImageProvenance);
 validateFile(join(DATA_ROOT, 'license-waivers.json'), validateLicenseWaivers);
@@ -201,6 +204,13 @@ if (existsSync(i18nDir)) {
     const issOvDir = join(i18nDir, locale, 'iss-modules');
     if (existsSync(issOvDir)) {
       for (const file of listJson(issOvDir)) {
+        validateFile(file, validateIssModuleOverlay);
+      }
+    }
+    // ISS visitor overlays (same overlay shape as modules)
+    const issVisitorOvDir = join(i18nDir, locale, 'iss-visitors');
+    if (existsSync(issVisitorOvDir)) {
+      for (const file of listJson(issVisitorOvDir)) {
         validateFile(file, validateIssModuleOverlay);
       }
     }

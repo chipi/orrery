@@ -7,7 +7,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-  import { getIssModules } from '$lib/data';
+  import { getIssModules, getIssVisitors } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation } from '$lib/iss-proxy-model';
   import type { IssModule } from '$types/iss-module';
@@ -16,6 +16,7 @@
 
   let container: HTMLDivElement | undefined = $state();
   let modules: IssModule[] = $state([]);
+  let visitors: IssModule[] = $state([]);
   let loadFailed = $state(false);
   let viewMode: '3d' | 'list' = $state('3d');
   let selected: IssModule | null = $state(null);
@@ -34,7 +35,7 @@
   /** Pick handler reads latest list (avoids stale closure). */
   const moduleListRef: { list: IssModule[] } = { list: [] };
   $effect(() => {
-    moduleListRef.list = modules;
+    moduleListRef.list = [...modules, ...visitors];
     viewBag.mode = viewMode;
   });
 
@@ -66,6 +67,13 @@
       .catch(() => {
         if (!cancelled) loadFailed = true;
       });
+    void getIssVisitors(L)
+      .then((list) => {
+        if (!cancelled) visitors = list;
+      })
+      .catch(() => {
+        if (!cancelled) loadFailed = true;
+      });
     return () => {
       cancelled = true;
     };
@@ -73,6 +81,9 @@
 
   let sortedModules = $derived(
     [...modules].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
+  );
+  let sortedVisitors = $derived(
+    [...visitors].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
   );
 
   function urlWantsList(url: URL): boolean {
@@ -114,7 +125,7 @@
 
   $effect(() => {
     const id = $page.url.searchParams.get('module');
-    if (modules.length === 0) return;
+    if (modules.length === 0 && visitors.length === 0) return;
     if (!id) {
       ignoreModuleParamUntilClear = false;
       // URL is canonical source: no `module` param means no open panel.
@@ -125,7 +136,7 @@
       return;
     }
     if (ignoreModuleParamUntilClear) return;
-    const mod = modules.find((x) => x.id === id);
+    const mod = modules.find((x) => x.id === id) ?? visitors.find((x) => x.id === id);
     if (mod && selected?.id !== mod.id) {
       selected = mod;
       panelOpen = true;
@@ -505,6 +516,24 @@
           </li>
         {/each}
       </ul>
+      {#if sortedVisitors.length > 0}
+        <h2 class="list-heading list-heading-visitors">{m.iss_visitors_heading()}</h2>
+        <ul class="module-list">
+          {#each sortedVisitors as ship (ship.id)}
+            <li>
+              <button
+                type="button"
+                class="module-row"
+                onclick={() => openModule(ship)}
+                aria-current={selected?.id === ship.id ? 'true' : undefined}
+              >
+                <span class="mod-name">{ship.name}</span>
+                <span class="mod-meta">{ship.agency}</span>
+              </button>
+            </li>
+          {/each}
+        </ul>
+      {/if}
     </div>
 
     <div class="hud-controls" role="group" aria-label={m.iss_hud_aria()}>
@@ -588,6 +617,10 @@
     letter-spacing: 4px;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 16px;
+  }
+  .list-heading-visitors {
+    margin-top: 28px;
+    color: rgba(78, 205, 196, 0.85);
   }
   .module-list {
     list-style: none;

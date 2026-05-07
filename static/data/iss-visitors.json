@@ -1,0 +1,165 @@
+[
+  {
+    "id": "soyuz_ms",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Soyuz-2.1a",
+    "launch_date": "2016-07-07",
+    "flight_designation": "Soyuz MS series (since MS-01)",
+    "mass_kg": 7150,
+    "length_m": 7.5,
+    "year_first_of": "Sole crew lifeboat for the Russian Orbital Segment",
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA — Soyuz MS family references",
+    "links": [
+      {
+        "l": "Wikipedia · Soyuz MS",
+        "u": "https://en.wikipedia.org/wiki/Soyuz_MS",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Soyuz Spacecraft",
+        "u": "https://www.nasa.gov/reference/soyuz-spacecraft/",
+        "t": "core"
+      },
+      {
+        "l": "Roscosmos · Manned spaceflight",
+        "u": "https://www.roscosmos.ru/22364/",
+        "t": "deep"
+      }
+    ]
+  },
+  {
+    "id": "progress_ms",
+    "builder": "RKK Energia",
+    "builder_country": "Russia",
+    "agency": "Roscosmos",
+    "launch_vehicle": "Soyuz-2.1a",
+    "launch_date": "2015-12-21",
+    "flight_designation": "Progress MS series (since MS-01)",
+    "mass_kg": 7290,
+    "length_m": 7.4,
+    "status": "ACTIVE",
+    "credit": "Roscosmos / NASA — Progress MS family references",
+    "links": [
+      {
+        "l": "Wikipedia · Progress MS",
+        "u": "https://en.wikipedia.org/wiki/Progress_MS",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Progress Spacecraft",
+        "u": "https://www.nasa.gov/international-space-station/space-station-research-and-technology/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "crew_dragon",
+    "builder": "SpaceX",
+    "builder_country": "United States",
+    "agency": "NASA Commercial Crew Program",
+    "launch_vehicle": "Falcon 9 Block 5",
+    "launch_date": "2020-05-30",
+    "flight_designation": "Crew Dragon (Demo-2 onwards)",
+    "mass_kg": 12519,
+    "length_m": 8.1,
+    "year_first_of": "First commercial crewed spacecraft to dock at ISS (2020)",
+    "status": "ACTIVE",
+    "credit": "SpaceX / NASA — Crew Dragon program references",
+    "links": [
+      {
+        "l": "Wikipedia · SpaceX Crew Dragon",
+        "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Commercial Crew Program",
+        "u": "https://www.nasa.gov/mission/commercial-crew-program/",
+        "t": "core"
+      },
+      {
+        "l": "SpaceX · Dragon",
+        "u": "https://www.spacex.com/vehicles/dragon/",
+        "t": "deep"
+      }
+    ]
+  },
+  {
+    "id": "cargo_dragon",
+    "builder": "SpaceX",
+    "builder_country": "United States",
+    "agency": "NASA Commercial Resupply Services",
+    "launch_vehicle": "Falcon 9 Block 5",
+    "launch_date": "2020-12-06",
+    "flight_designation": "Cargo Dragon 2 (since CRS-21)",
+    "mass_kg": 12519,
+    "length_m": 8.1,
+    "status": "ACTIVE",
+    "credit": "SpaceX / NASA — Cargo Dragon references",
+    "links": [
+      {
+        "l": "Wikipedia · SpaceX Dragon 2",
+        "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · CRS-2",
+        "u": "https://www.nasa.gov/international-space-station/commercial-resupply/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "cygnus",
+    "builder": "Northrop Grumman Space Systems",
+    "builder_country": "United States",
+    "agency": "NASA Commercial Resupply Services",
+    "launch_vehicle": "Antares 330 (and historically Antares 230+)",
+    "launch_date": "2013-09-18",
+    "flight_designation": "Enhanced Cygnus",
+    "mass_kg": 5500,
+    "length_m": 6.3,
+    "status": "ACTIVE",
+    "credit": "Northrop Grumman / NASA — Cygnus program references",
+    "links": [
+      {
+        "l": "Wikipedia · Cygnus spacecraft",
+        "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)",
+        "t": "intro"
+      },
+      {
+        "l": "NASA · Cygnus Cargo Spacecraft",
+        "u": "https://www.nasa.gov/international-space-station/cargo-spacecraft/",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "htv_x",
+    "builder": "Mitsubishi Heavy Industries",
+    "builder_country": "Japan",
+    "agency": "JAXA",
+    "launch_vehicle": "H3",
+    "launch_date": "2025-10-26",
+    "flight_designation": "HTV-X",
+    "mass_kg": 16000,
+    "length_m": 8.0,
+    "year_first_of": "First H3-launched ISS resupply craft",
+    "status": "ACTIVE",
+    "credit": "JAXA / Mitsubishi Heavy Industries — HTV-X references",
+    "links": [
+      {
+        "l": "Wikipedia · HTV-X",
+        "u": "https://en.wikipedia.org/wiki/HTV-X",
+        "t": "intro"
+      },
+      {
+        "l": "JAXA · HTV-X",
+        "u": "https://humans-in-space.jaxa.jp/en/htv-x/",
+        "t": "core"
+      }
+    ]
+  }
+]

@@ -880,17 +880,18 @@
   .toggle {
     min-width: 44px;
     min-height: 44px;
-    padding: 0 14px;
+    padding: 0 8px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.04em;
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
     pointer-events: auto;
+    white-space: nowrap;
   }
   .toggle:hover,
   .toggle:focus-visible {

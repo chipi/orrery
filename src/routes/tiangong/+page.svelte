@@ -85,20 +85,12 @@
     };
   });
 
-  // Combined list: pressurised modules (incl. Chinarm) sorted alphabetically,
-  // then visiting vehicles (Shenzhou / Tianzhou) sorted alphabetically.
-  // Single list under one "MODULES" heading — visitors used to live in a
-  // separate section below, but Tianzhou was easy to miss when the
-  // drawer's height clipped it. Combining keeps every pickable entity
-  // visible at first glance.
-  let sortedEntries = $derived([
-    ...[...modules].sort((a, b) =>
-      a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
-    ),
-    ...[...visitors].sort((a, b) =>
-      a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
-    ),
-  ]);
+  let sortedModules = $derived(
+    [...modules].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
+  );
+  let sortedVisitors = $derived(
+    [...visitors].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
+  );
 
   function urlWantsList(url: URL): boolean {
     return url.searchParams.get('view') === 'list';
@@ -588,20 +580,38 @@
       {/if}
       <h2 class="list-heading">{m.tiangong_list_heading()}</h2>
       <ul class="module-list">
-        {#each sortedEntries as entry (entry.id)}
+        {#each sortedModules as mod (mod.id)}
           <li>
             <button
               type="button"
               class="module-row"
-              onclick={() => openModule(entry)}
-              aria-current={selected?.id === entry.id ? 'true' : undefined}
+              onclick={() => openModule(mod)}
+              aria-current={selected?.id === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name">{entry.name}</span>
-              <span class="mod-meta">{entry.agency}</span>
+              <span class="mod-name">{mod.name}</span>
+              <span class="mod-meta">{mod.agency}</span>
             </button>
           </li>
         {/each}
       </ul>
+      {#if sortedVisitors.length > 0}
+        <h2 class="list-heading list-heading-visitors">{m.tiangong_visitors_heading()}</h2>
+        <ul class="module-list">
+          {#each sortedVisitors as ship (ship.id)}
+            <li>
+              <button
+                type="button"
+                class="module-row"
+                onclick={() => openModule(ship)}
+                aria-current={selected?.id === ship.id ? 'true' : undefined}
+              >
+                <span class="mod-name">{ship.name}</span>
+                <span class="mod-meta">{ship.agency}</span>
+              </button>
+            </li>
+          {/each}
+        </ul>
+      {/if}
     </aside>
 
     <div
@@ -760,6 +770,10 @@
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 16px;
   }
+  .list-heading-visitors {
+    margin-top: 28px;
+    color: rgba(78, 205, 196, 0.85);
+  }
   .hover-label {
     position: absolute;
     z-index: 5;
@@ -864,17 +878,18 @@
   .toggle {
     min-width: 44px;
     min-height: 44px;
-    padding: 0 14px;
+    padding: 0 8px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.04em;
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
     pointer-events: auto;
+    white-space: nowrap;
   }
   .toggle:hover,
   .toggle:focus-visible {

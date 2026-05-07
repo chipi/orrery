@@ -415,7 +415,9 @@ Ten primary nav destinations now (was nine): `/explore`, `/plan`, `/fly`, `/miss
 
 **Tests:** Vitest unit tests for the data layer (`getScienceSection`, `getScienceTab`, `getScienceTabIntro`) + the KaTeX render helper. Playwright e2e smoke (`tests/e2e/science.spec.ts`) covers tab grid, tab page intro, section reading view, KaTeX visibility, diagram visibility, deep-link navigation.
 
-**Phase 2 (deferred):** ~30 cross-screen `?` chips on `/plan` (departure window, time-of-flight, ∆v color bar), `/fly` (∆v HUD, MET, V∞, distances), `/missions` FLIGHT tab (C3, V∞, TLI/TMI, TCM, OI, total ∆v), `/explore` planet TECHNICAL tab (orbital elements), `/earth` legend (LEO/MEO/GEO/HEO), and `/moon` + `/mars` mission types. Already mapped; new GH issue tracks it separately.
+**Phase 2 (shipped):** 27 cross-screen `?` chips across `/missions` FLIGHT (6), `/fly` HUD (6), `/explore` TECHNICAL (5), `/plan` primer (4), `/earth` regime legend (1), `/moon` mission-type row (1), `/mars` mission-type row (1) plus 2 new sections — `orbits/orbit-regimes` and `mission-phases/mission-types`. Total 42 sections now.
+
+**Phase 3 (partially shipped):** UI message bundles translated for all 13 locales (442 keys total). Full science overlay translations (49 files: _landing + 6 _intro + 42 sections) shipped for **5 locales — en-US, es, de, fr, it** (245 files). The remaining 8 locales (pt-BR, ja, ko, zh-CN, ru, hi, ar, sr-Cyrl, sr-Latn) keep their existing UI translations and gracefully fall back to en-US for science overlay content per ADR-017 — non-blocking, English-fallback bounded. Follow-up batch to author the remaining ~395 overlay files.
 
 ---
 

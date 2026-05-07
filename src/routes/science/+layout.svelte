@@ -23,11 +23,14 @@
   import { base } from '$app/paths';
   import { SCIENCE_TABS } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import ScienceSearch from '$lib/components/ScienceSearch.svelte';
   import type { Snippet } from 'svelte';
   import type { LayoutData } from './$types';
 
   type Props = { children: Snippet; data: LayoutData };
   let { children, data }: Props = $props();
+
+  let searchEl = $state<ScienceSearch | undefined>(undefined);
 
   function tabLabel(tab: string): string {
     const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
@@ -51,6 +54,16 @@
   <div class="page" class:has-right-rail={showRightRail}>
     <div class="layout">
       <aside class="rail rail-left" aria-label="Encyclopedia tabs">
+        <button
+          type="button"
+          class="search-button"
+          aria-label="Search the encyclopedia (⌘K)"
+          onclick={() => searchEl?.open_()}
+        >
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <span class="search-label">Search</span>
+          <kbd class="search-hint">⌘K</kbd>
+        </button>
         <h2 class="rail-heading">Sections</h2>
         <ul class="tab-list">
           {#each SCIENCE_TABS as tab (tab)}
@@ -93,6 +106,7 @@
       {/if}
     </div>
   </div>
+  <ScienceSearch bind:this={searchEl} />
 </div>
 
 <style>
@@ -131,6 +145,48 @@
     margin: 0 0 12px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .search-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 10px;
+    margin: 0 0 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      background 120ms;
+  }
+  .search-button:hover,
+  .search-button:focus-visible {
+    border-color: rgba(78, 205, 196, 0.55);
+    background: rgba(78, 205, 196, 0.08);
+    color: #fff;
+    outline: none;
+  }
+  .search-icon {
+    font-size: 14px;
+  }
+  .search-label {
+    flex: 1;
+    text-align: left;
+  }
+  .search-hint {
+    font-size: 9px;
+    padding: 1px 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Space Mono', monospace;
   }
   .tab-list,
   .section-list {

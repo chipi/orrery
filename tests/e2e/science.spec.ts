@@ -119,3 +119,31 @@ test.describe('/science Phase 2 chips', () => {
     await expect(firstChip).toHaveAttribute('aria-label', /Learn more/);
   });
 });
+
+test.describe('/science Cmd-K search', () => {
+  test('search button opens the overlay and a query navigates to a section', async ({ page }) => {
+    await page.goto('/science');
+    // The rail has a Search button.
+    const searchBtn = page.getByRole('button', { name: /Search the encyclopedia/i });
+    await expect(searchBtn).toBeVisible();
+    await searchBtn.click();
+    // Dialog opens.
+    const dialog = page.getByRole('dialog', { name: /Search \/science/i });
+    await expect(dialog).toBeVisible();
+    // Type a query that hits a unique section.
+    await page.locator('input[type="search"]').fill('vis-viva');
+    // First result should be Vis-Viva Equation.
+    const firstResult = page.locator('a.result').first();
+    await expect(firstResult).toContainText('Vis-Viva Equation');
+    await firstResult.click();
+    await expect(page).toHaveURL(/\/science\/orbits\/vis-viva\/?$/);
+  });
+
+  test('escape closes the overlay', async ({ page }) => {
+    await page.goto('/science');
+    await page.getByRole('button', { name: /Search the encyclopedia/i }).click();
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('dialog')).not.toBeVisible();
+  });
+});

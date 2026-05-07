@@ -33,7 +33,7 @@
   },
   "scripts": {
     "dev": "npm run i18n:compile && vite dev",
-    "build": "npm run i18n:compile && npm run validate-data && npm run precompute-porkchops && vite build",
+    "build": "npm run i18n:compile && npm run validate-data && npm run build-science-index && npm run precompute-porkchops && vite build",
     "preview": "vite preview",
     "check": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -54,6 +54,7 @@
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
     "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
+    "build-science-index": "tsx scripts/build-science-index.ts",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",

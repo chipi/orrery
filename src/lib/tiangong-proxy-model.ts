@@ -70,6 +70,14 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
 // Tianhe = 2.6 units = 16.6 m, so 1 unit ≈ 6.4 m.
 //   Shenzhou (9.25 m) → ~1.45 units total length
 //   Tianzhou (10.6 m) → ~1.66 units total length
+// Build convention: ship's local +Y axis points AWAY from the station
+// (into space). The docking face sits at the LOW-Y end (group origin),
+// and the bulk of the ship — service module, engines, solar arrays —
+// extends in the +Y direction. This way, when the fleet code rotates
+// the group so +Y aligns with the chosen port-out direction, the
+// orbital module / cargo cylinder ends up touching the station and
+// the service module + wings extend into space, matching real Shenzhou
+// and Tianzhou dock geometry.
 function buildShenzhou(): THREE.Group {
   const g = new THREE.Group();
   g.name = 'visiting_shenzhou';
@@ -78,26 +86,31 @@ function buildShenzhou(): THREE.Group {
     metalness: 0.2,
     roughness: 0.7,
   });
-  // Orbital module (forward) — small dome-cylinder where the docking
-  // probe sits. Real ~2.5 m × 2.3 m.
+  // Orbital module (FRONT — docks at station). Closest to port (low Y).
+  // Real ~2.5 m × 2.3 m.
   const orbital = new THREE.Mesh(new THREE.CylinderGeometry(0.21, 0.21, 0.36, 14), hull);
-  orbital.position.y = 1.05;
+  orbital.position.y = 0.18;
   setShadowFlags(orbital);
   g.add(orbital);
   // Descent capsule (mid) — truncated cone (~2 m long).
-  const descent = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.27, 0.32, 14), hull);
-  descent.position.y = 0.7;
+  const descent = new THREE.Mesh(new THREE.CylinderGeometry(0.27, 0.18, 0.32, 14), hull);
+  descent.position.y = 0.52;
   setShadowFlags(descent);
   g.add(descent);
-  // Service module (aft) — long cylindrical service section (~2.8 m).
+  // Service module (AFT — long cylindrical service section, with arrays
+  // and main engine; ~2.8 m). Highest Y → extends into space.
   const service = new THREE.Mesh(new THREE.CylinderGeometry(0.235, 0.235, 0.5, 14), hull);
-  service.position.y = 0.28;
+  service.position.y = 0.93;
   setShadowFlags(service);
   g.add(service);
   // Solar wings on the service module (Shenzhou has port + starboard
-  // arrays). Crystalline-silicon cells → deep blue.
+  // arrays). Crystalline-silicon cells → deep blue. The wing-pair group
+  // gets `rotation.x = π/2` so the broad face is Z-normal in ship-local
+  // coords (matching the lab-array convention) — same trick as the
+  // station's gold arrays.
   const wingPair = new THREE.Group();
-  wingPair.position.set(0, 0.28, 0);
+  wingPair.position.set(0, 0.93, 0);
+  wingPair.rotation.x = Math.PI / 2;
   makeWingPair(wingPair, 1.4, 0.5, SOLAR_BLUE);
   g.add(wingPair);
   return g;
@@ -111,20 +124,23 @@ function buildTianzhou(): THREE.Group {
     metalness: 0.2,
     roughness: 0.7,
   });
-  // Pressurised cargo section (forward) — large 3.35 m diameter
-  // cylinder, ~6 m long.
+  // Pressurised cargo section (FRONT — docks at station). Closest to
+  // port. Large 3.35 m diameter, ~6 m long.
   const cargo = new THREE.Mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.95, 16), hull);
-  cargo.position.y = 1.0;
+  cargo.position.y = 0.475;
   setShadowFlags(cargo);
   g.add(cargo);
-  // Service module (aft) — slightly smaller cylinder (~4.6 m long).
+  // Service module (AFT — engine + arrays). Slightly smaller cylinder
+  // (~4.6 m long). Extends into space.
   const service = new THREE.Mesh(new THREE.CylinderGeometry(0.225, 0.235, 0.7, 14), hull);
-  service.position.y = 0.18;
+  service.position.y = 1.3;
   setShadowFlags(service);
   g.add(service);
-  // Two wings on service module — crystalline-silicon (blue).
+  // Two wings on service module — crystalline-silicon (blue). Same
+  // 90° wing-pair rotation as Shenzhou so the broad face is Z-normal.
   const wingPair = new THREE.Group();
-  wingPair.position.set(0, 0.2, 0);
+  wingPair.position.set(0, 1.3, 0);
+  wingPair.rotation.x = Math.PI / 2;
   makeWingPair(wingPair, 1.6, 0.6, SOLAR_BLUE);
   g.add(wingPair);
   return g;
@@ -542,8 +558,8 @@ export function buildTiangongProxyStation(): THREE.Group {
     const g = ship.build();
     g.position.set(ship.port[0], ship.port[1], ship.port[2]);
     if (ship.out === 'minusY') g.rotation.x = Math.PI;
-    else if (ship.out === 'plusZ') g.rotation.x = -Math.PI / 2;
-    else if (ship.out === 'minusZ') g.rotation.x = Math.PI / 2;
+    else if (ship.out === 'plusZ') g.rotation.x = Math.PI / 2;
+    else if (ship.out === 'minusZ') g.rotation.x = -Math.PI / 2;
     else if (ship.out === 'plusX') g.rotation.z = -Math.PI / 2;
     else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
     g.userData.stationPickable = true;

@@ -1,0 +1,15 @@
+{
+  "title": "Cónicas Parcheadas",
+  "intro_sentence": "Pretende que la gravedad es un cuerpo a la vez — la aproximación que convierte el insoluble problema de tres cuerpos en una cadena de problemas keplerianos de dos cuerpos que sí puedes resolver.",
+  "narrative_101": [
+    "Aquí va un secreto sucio de la mecánica orbital: la física completa real — cada cuerpo del sistema solar tirando de cada otro — es matemáticamente insoluble de cualquier forma limpia. NO tenemos solución cerrada del problema de tres cuerpos, mucho menos de la versión real de docenas-de-cuerpos. ¿Cómo hacen entonces los planificadores de misión?",
+    "Hacen trampa. Pretenden que, en cualquier momento, solo importa la gravedad de UN cuerpo. Cerca de la Tierra, solo tira la Tierra. En el crucero, solo el Sol. Cerca de Marte, solo Marte. Cada una de esas regiones se llama esfera de influencia, y dentro de cada una la nave vuela una cónica kepleriana limpia. Cuando la nave cruza una frontera, cambias el sistema de coordenadas y empiezas una cónica nueva. Parcheadas juntas, forman la trayectoria. Eso son las cónicas parcheadas.",
+    "La matemática sale unos pocos puntos porcentuales lejos de la verdad — lo bastante pequeño como para que las misiones reales planeen con ella como primer corte, luego refinan numéricamente para el lanzamiento. También es lo bastante pequeño como para que Orrery pueda correr todo esto en tu navegador, en un Web Worker, lo bastante rápido para redibujar el porkchop entero cuando barres el año de lanzamiento. El simulador entero está construido sobre este truco."
+  ],
+  "body_paragraphs": [
+    "La gravedad real es desordenada. Una nave en crucero entre la Tierra y Marte siente la gravedad terrestre, la solar, la marciana, además de todo lo demás, todo a la vez. La matemática completa (el problema de n cuerpos) no tiene solución cerrada — solo integración numérica. Eso es lento, frágil, difícil para planificar.",
+    "Cónicas parcheadas es el compromiso de trabajo: declara una esfera de influencia alrededor de cada cuerpo. Dentro de la esfera de la Tierra, solo importa la gravedad terrestre; vuelas un arco kepleriano alrededor de la Tierra. Cruza la frontera a la región heliocéntrica, cambia a un arco kepleriano centrado en el Sol. Cruza a la esfera de Marte, cambia otra vez. Tres problemas keplerianos, parcheados juntos en las fronteras.",
+    "Es incorrecto pero útil. Los errores en las fronteras son pequeños — unos pocos por ciento de Δv como mucho para trabajo cislunar, menos para heliocéntrico — y la matemática se vuelve manejable como para caber en un Web Worker. Los porkchops de `/plan` de Orrery se calculan así; también las trayectorias en `/fly`. La planificación de vuelos real en NASA usa la misma aproximación como primer corte, luego refina numéricamente antes del lanzamiento."
+  ],
+  "diagram_caption": "Tres marcos, tres cónicas: centrado en la Tierra → heliocéntrico → centrado en Marte, parcheadas en las fronteras de la esfera de influencia."
+}

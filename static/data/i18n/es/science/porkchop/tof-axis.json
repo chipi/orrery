@@ -1,0 +1,14 @@
+{
+  "title": "Eje de Tiempo de Vuelo",
+  "intro_sentence": "Cuánto tarda el viaje — corriendo hacia arriba por el eje Y, en días para planetas interiores y años para los exteriores.",
+  "narrative_101": [
+    "Si el eje X te dice CUÁNDO sales, el eje Y te dice CUÁNTO tarda el viaje. Parte inferior del gráfico: viajes rápidos y cortos. Parte superior: viajes lentos y largos. Para destinos clase Marte el eje cubre aproximadamente de 100 a 500 días. Para Júpiter son años.",
+    "Ahora puedes leer todo el compromiso de un vistazo. Camina recto hacia arriba por una columna del porkchop — esa es la MISMA fecha de lanzamiento pero distintos tiempos de tránsito. Cerca del fondo (viaje rápido) las celdas se vuelven rojas — los viajes rápidos son caros porque estás forzando una elipse de transferencia empinada. Más arriba (viaje más lento) las celdas se vuelven azul fresco — esa es la banda natural de Hohmann donde la matemática quiere que el viaje vaya.",
+    "Por eso una transferencia de Hohmann a Marte es siempre alrededor de 8,5 meses. Tira por debajo de eso y pagas mucho por la velocidad. Tira mucho por encima y te demoras sin razón. El porkchop visualiza ese compromiso como un gradiente de color por cada columna. Las misiones de carga pueden permitirse lento; las tripuladas normalmente no, porque cada mes extra es más comida, agua, oxígeno y exposición a radiación."
+  ],
+  "body_paragraphs": [
+    "Eje Y es la duración del tránsito. Para objetivos clase Marte el tránsito natural de Hohmann es ~250 días, así que el rango Y de Orrery va aproximadamente de 100 a 500 días. Para Júpiter o Saturno el tránsito de Hohmann son años, así que el eje está en años.",
+    "Distintas filas en el porkchop intercambian tiempo de tránsito por coste de Δv. Las celdas más baratas (banda de Hohmann) se sientan en el tiempo natural de tránsito de Hohmann. Tira el tiempo de tránsito hacia abajo (viaje más rápido) y el coste de Δv sube empinadamente. Tíralo hacia arriba (viaje más lento) y obtienes opciones más baratas pero más lentas — a veces vale la pena para carga o cargas no sensibles al tiempo.",
+    "La forma de la zona barata te dice sobre los compromisos. Una banda Hohmann estrecha significa que el óptimo es agudo; una zona barata ancha significa que tienes flexibilidad. El porkchop de Marte tiene un óptimo estrecho. El de Júpiter más ancho — el paisaje de asistencia gravitatoria reparte las opciones de lanzamiento a través de más fechas."
+  ]
+}

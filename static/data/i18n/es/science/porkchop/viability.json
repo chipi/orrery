@@ -1,0 +1,14 @@
+{
+  "title": "Leyendo la Viabilidad",
+  "intro_sentence": "Una celda es viable cuando la capacidad de Δv de tu cohete ≥ el coste de Δv de la celda — y el porkchop convierte esa comparación en un mapa sí/no.",
+  "narrative_101": [
+    "Aquí va la pregunta que convierte un porkchop de un mapa de calor bonito en una decisión real de misión: ¿puede mi cohete realmente volar esto? Cada cohete — Falcon Heavy, SLS, Atlas V, lo que sea — tiene una capacidad publicada de Δv para una masa de carga útil dada. Compara ese techo con los costes por celda del porkchop y tienes un mapa sí/no.",
+    "Las celdas donde la capacidad del cohete excede el coste son viables, con margen de sobra. Las celdas donde la capacidad iguala el coste exactamente son viables pero ajustadas — arriesgadas, sin holgura para que las cosas vayan mal. ¿Las celdas donde el coste excede la capacidad? Esa trayectoria simplemente no es volable con ese cohete. Puedes quererla todo lo que quieras; la física dice no.",
+    "Elige un cohete en /plan y el porkchop superpone un color de margen/déficit. El lóbulo se encoge para cohetes más pequeños, se expande para más grandes. Así es como los planificadores de misión realmente trabajan: prueba un vehículo, mira qué es viable, qué no, cambia vehículo, carga útil o cronograma hasta que la zona barata quepa dentro de la capacidad del cohete. La planificación real de vuelos es exactamente esta iteración, solo con más decimales."
+  ],
+  "body_paragraphs": [
+    "Elige un vehículo. Falcon Heavy, SLS Block 1, Atlas V N22, lo que sea. Ese vehículo tiene una capacidad máxima conocida de Δv con tu masa de carga útil. Compara contra el porkchop: cada celda donde Δv_coste ≤ Δv_capacidad es una oportunidad de lanzamiento viable. Cada celda donde es mayor es imposible sin un vehículo distinto.",
+    "En `/plan` puedes elegir un vehículo de lanzamiento y Orrery superpone un indicador de margen/déficit. Las celdas turquesa frescas se vuelven \"factible, gran margen.\" Las amarillas se vuelven \"factible pero ajustado.\" Las rojas se vuelven imposible-con-este-vehículo, y cambian a una visualización de déficit mostrando cuánta más capacidad necesitarías.",
+    "Esto es análisis de viabilidad de misión en una sola vista. Los planificadores reales lo corren muchas veces — para distintos vehículos, masas de carga útil, variantes de trayectoria — para encontrar la combinación más barata que cumpla los requisitos científicos. El porkchop es la visualización; la elección subyacente es siempre \"cuánto cohete necesito vs cuánto viaje estoy comprando.\""
+  ]
+}

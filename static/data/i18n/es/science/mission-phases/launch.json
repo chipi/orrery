@@ -1,0 +1,15 @@
+{
+  "title": "Lanzamiento + Ascenso",
+  "intro_sentence": "Los diez minutos más violentos de cualquier misión — luchando contra gravedad, atmósfera y la ecuación del cohete simultáneamente.",
+  "narrative_101": [
+    "La mayor parte del peligro en astronáutica ocurre en los primeros ocho minutos. El cohete se enciende, lucha contra su propio peso para despegar de la rampa, sube a través de aire suficientemente denso para destrozarlo, y acelera de cero a siete y medio kilómetros por segundo cuando el motor se apaga. Si algo va mal durante el ascenso, raramente hay tiempo para arreglarlo.",
+    "La aritmética es brutal. Llegar a órbita cuesta ~9,4 km/s de Δv, pero solo ~7,9 km/s contribuyen realmente a la velocidad orbital. El resto se desperdicia en \"pérdida por gravedad\" (tienes que seguir disparando para mantener el cohete arriba mientras sube) y \"pérdida por arrastre\" (la atmósfera empujando hacia atrás). Los ingenieros pasan años optimizando el programa de cabeceo — exactamente cuándo y cuánto inclinar — para minimizar estas pérdidas.",
+    "Una vez el cohete está suficientemente alto como para que el aire se rinda, las cosas se vuelven más fáciles. Las etapas se separan, las cofias caen, la segunda etapa toma el relevo para un empuje más largo y suave. El viaje entero es una caída calibrada de masa seca: cada kilogramo de tanque vacío que puedas tirar es un kilogramo que la siguiente etapa no tiene que acelerar. SpaceX rompe esto y recupera sus primeras etapas; los demás las tiran."
+  ],
+  "body_paragraphs": [
+    "El ascenso del lanzamiento cuesta unos 9,4 km/s de Δv, pero apenas 7,9 km/s de eso es velocidad orbital real. El resto es pérdida por gravedad (gastas energía manteniendo el cohete arriba mientras sube) y pérdida por arrastre (la atmósfera empuja hacia atrás). Programa el cabeceo bien y minimizas ambas — demasiado vertical desperdicia empuje en altitud que no ayuda a la inserción orbital; demasiado horizontal y la atmósfera tiene más tiempo para frenarte.",
+    "Las etapas caen por el camino. Separación de la primera etapa, encendido de la segunda, jettison de cofias, separación de carga útil. Cada etapa cae masa seca que la siguiente no tiene que acelerar. Falcon 9 devuelve su primera etapa; el Saturno V no. El compromiso es si el hardware de recuperación cuesta más que el propelente que habría tomado tirar la etapa.",
+    "En `/missions` el campo launch_vehicle te dice qué cohete voló la misión. Saturno V para Apolo. Atlas V para Curiosity. Falcon 9 para Crew Dragon. SLS para Artemis I. Cada cohete tiene una curva fija de C3-vs-carga útil — el cohete fija el techo de lo posible."
+  ],
+  "diagram_caption": "Perfil de lanzamiento: subida vertical → programa de cabeceo → separación → inserción orbital."
+}

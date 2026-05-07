@@ -1,0 +1,15 @@
+{
+  "title": "Transferencia de Hohmann",
+  "intro_sentence": "El viaje de dos quemadas más barato entre dos órbitas circulares coplanares — y la línea base contra la que los planificadores miden todo lo demás.",
+  "narrative_101": [
+    "Estás en la órbita terrestre. Quieres estar en la órbita de Marte. Ambas órbitas son aproximadamente círculos alrededor del Sol. ¿Cómo vas de una a otra con el menor combustible posible?",
+    "La respuesta, calculada por Walter Hohmann en 1925, es asombrosamente elegante. Encuentra una elipse que apenas toque la órbita terrestre por un lado y la órbita de Marte por el otro. Quema brevemente el motor para salir de la Tierra y unirte a esa elipse. Inerte ocho meses sin disparar el motor — la gravedad hace el trabajo. Cuando llegas al otro extremo, quema otra vez para asentarte en la órbita de Marte. Dos quemadas, total. Hecho.",
+    "Es el viaje más barato posible — pero también el más lento. La espera de ocho meses es no negociable; la física fija el reloj. ¿Quieres ir más rápido? Puedes, pero pagas: una elipse más empinada, un cruce más rápido, una quemada de frenado mucho mayor en el otro extremo. Este es el compromiso que verás jugarse a través de cada porkchop en /plan."
+  ],
+  "body_paragraphs": [
+    "Imagina que estás en una órbita circular alrededor del Sol y quieres llegar a una más alta — digamos Tierra-a-Marte. La forma más barata es una transferencia de Hohmann: una elipse cuyo perihelio roza tu órbita inicial y cuyo afelio roza el destino. Dos quemadas de motor te llevan. Una en perihelio para salir de la órbita terrestre y entrar en la elipse. Una en afelio para circularizar en la órbita de destino.",
+    "Es el camino de impulso fijo más barato, pero también el más lento. Tierra-a-Marte tarda unos 259 días en una Hohmann. ¿Quieres ir más rápido? Quema más fuerte, vuela una elipse estirada con mayor velocidad de perihelio. La V∞ de llegada sube, la quemada de entrada en el destino es mayor, tu coste total de Δv sube empinadamente.",
+    "En el porkchop de `/plan` de Orrery verás esto directamente: hay una cuenca tranquila de celdas turquesa frescas alrededor de la ventana natural de Hohmann, cada 26 meses para Marte, y contornos cada vez más caros a medida que empujas hacia tiempos de tránsito más cortos."
+  ],
+  "diagram_caption": "Órbita terrestre (interior) · órbita marciana (exterior) · elipse de transferencia de Hohmann con perihelio en la Tierra, afelio en Marte."
+}

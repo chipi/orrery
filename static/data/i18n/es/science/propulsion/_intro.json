@@ -1,0 +1,8 @@
+{
+  "headline": "Propulsión — la ecuación del cohete es el jefe final.",
+  "paragraphs": [
+    "La astronáutica tiene una moneda universal: Δv, pronunciado \"delta-v,\" medido en kilómetros por segundo. Cada quemada cuesta algo. Cada movimiento en una trayectoria tiene un precio. El presupuesto de Δv de la misión — la suma de todo lo que vas a gastar, de principio a fin — es el único número que dice si la misión puede volar.",
+    "La cruel restricción es la ecuación del cohete, escrita por Konstantin Tsiolkovsky en 1903. Dice que Δv escala LOGARÍTMICAMENTE con cuánto de tu cohete es combustible. ¿Quieres el doble de Δv? Necesitas exponencialmente más combustible. Por eso un Saturno V es 90% propelente. Por eso aterrizar en Marte y volver es mucho más difícil que aterrizar en la Luna. Cada gramo de masa que no es combustible se pelea.",
+    "Seis secciones aquí. Empieza por Δv como presupuesto de misión — ese es el marco para todo. Luego Tsiolkovsky para ver por qué la matemática es tan implacable. El impulso específico explica el lado del motor; C₃ y V∞ son los números de energía de lanzamiento y de llegada que verás por toda la pestaña FLIGHT en /missions. El efecto Oberth al final es un raro pedazo de magia gratis — quema profundo en un pozo gravitatorio y tu combustible hace más trabajo."
+  ]
+}

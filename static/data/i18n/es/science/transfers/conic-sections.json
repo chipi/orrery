@@ -1,0 +1,15 @@
+{
+  "title": "Secciones Cónicas",
+  "intro_sentence": "Corta un cono de cuatro maneras y obtienes cada trayectoria kepleriana posible — círculo, elipse, parábola, hipérbola.",
+  "narrative_101": [
+    "Hay un extraño golpe de suerte matemática en el corazón de la mecánica orbital. Las formas que puedes hacer cortando un cono con un plano — círculo, elipse, parábola, hipérbola — resultan ser EXACTAMENTE las únicas formas a lo largo de las cuales un cuerpo bajo gravedad puede viajar. Los griegos estudiaron estas curvas por diversión en 200 a.C. Dos mil años después descubrimos que el universo funciona sobre ellas.",
+    "Las cuatro formas forman un continuo. ¿Suficientemente lento? Estás en un círculo o elipse — ligado, volverás. ¿Justo en velocidad de escape? Parábola — apenas no volverás. ¿Más rápido que eso? Hipérbola — atraviesas y nunca regresas. La excentricidad es el dial: 0 es un círculo, 1 es el borde de escape, por encima de 1 estás libre.",
+    "Las misiones reales usan las cuatro. El crucero de la Tierra a Marte es una elipse. El sobrevuelo más allá de Júpiter camino de Saturno es una hipérbola — relativa a Júpiter, vas demasiado rápido para ser capturado. Las sondas Voyager están ahora en trayectorias casi-parabólicas que las llevarán fuera del sistema solar para siempre. La misma ecuación describe todas; solo difiere la excentricidad."
+  ],
+  "body_paragraphs": [
+    "Toma un cono infinito y córtalo con un plano. Corta horizontalmente: un círculo (`e = 0`). Inclina el corte: una elipse (`0 < e < 1`). Inclina paralelo al borde del cono: una parábola (`e = 1`, el caso de escape exacto). Inclina más allá de eso: una hipérbola (`e > 1`, escape con energía sobrante). Dos mil años antes de Kepler, Apolonio de Pérgamo catalogó estas curvas. Dos siglos antes de Newton, Kepler descubrió que los planetas vuelan a lo largo de ellas.",
+    "Cada órbita kepleriana es una de estas cuatro. Las órbitas ligadas — planetas, lunas, satélites, cualquier cosa que vuelva — son círculos o elipses. Las trayectorias no ligadas — sobrevuelos, escapes, capturas hiperbólicas — son parábolas o hipérbolas. La frontera es exacta: en `e = 1` te mueves exactamente a la velocidad local de escape.",
+    "Los diseñadores de misión explotan las cuatro. Crucero en una elipse, sobrevuelo a un planeta en una hipérbola (relativa a ese planeta), inserción de nuevo en órbita en una elipse otra vez. La ruta `/fly` del simulador hace esto naturalmente — la misma ecuación de trayectoria maneja cada caso, la excentricidad te dice qué cónica vuelas."
+  ],
+  "diagram_caption": "Cuatro cónicas al cortar un cono: círculo, elipse, parábola, hipérbola. La excentricidad fija cuál."
+}

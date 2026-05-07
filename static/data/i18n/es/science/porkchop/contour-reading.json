@@ -1,0 +1,14 @@
+{
+  "title": "Leyendo los Contornos",
+  "intro_sentence": "La forma de la zona barata te dice la geometría de las trayectorias viables — y dónde viven los compromisos.",
+  "narrative_101": [
+    "Ahora conoces los ejes y la escala de color. La siguiente habilidad es leer la FORMA de la zona barata. El lóbulo turquesa no es solo un blob genérico — es un mapa literal de qué trayectorias funcionan y cuáles no.",
+    "El porkchop clásico de Marte tiene DOS lóbulos baratos por ventana de lanzamiento, lado a lado. Se llaman trayectorias \"Tipo I\" y \"Tipo II\" — misma ventana, dos formas distintas de rodear el Sol. Tipo I va por el camino corto (ángulo de transferencia bajo 180 grados) y es más rápida. Tipo II va por el camino largo (ángulo de transferencia sobre 180 grados) y es más lenta pero a veces más barata. Ambas son reales, ambas se vuelan.",
+    "Fuera de los lóbulos: rojo. La mayor parte del porkchop es rojo, en realidad. Esa es la lección. Hay muy pocos momentos baratos para lanzar una nave a otro planeta, y no son negociables. \"Espera la ventana correcta\" casi siempre vence a \"inventa una trayectoria ingeniosa.\" Leer la forma del lóbulo — dónde se ensancha, dónde se estrecha, dónde se sientan los óptimos — es lo que los dinamicistas de vuelo hacen para vivir."
+  ],
+  "body_paragraphs": [
+    "Mira un porkchop de Marte. Verás un lóbulo aproximadamente oval de celdas turquesa centrado cerca de un TOF de 250 días, recurriendo cada 26 meses. Esa es la oportunidad de Hohmann. Dentro del lóbulo, todas las combinaciones de (salida, TOF) entregan misiones marcianas viables a Δv aceptable.",
+    "Dos soluciones por ventana. El \"camino corto\" (ángulo de transferencia < 180°) y el \"camino largo\" (ángulo de transferencia > 180°) ambos conectan la Tierra con Marte pero vía elipses distintas. Aparecen como dos bandas baratas paralelas en el porkchop — a veces aparecen ambas, a veces solo una, dependiendo de la geometría.",
+    "Fuera de los lóbulos baratos: rojo. Lejos de cualquier ventana natural, necesitarías una trayectoria de alta energía personalizada (asistencia gravitatoria, multi-quemada) para que la matemática funcione. Las misiones reales se agrupan en las zonas baratas; la filosofía de diseño \"espera a la ventana correcta\" a menudo vence a \"inventa una trayectoria ingeniosa.\""
+  ]
+}

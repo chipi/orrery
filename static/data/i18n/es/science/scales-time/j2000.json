@@ -1,0 +1,14 @@
+{
+  "title": "Época J2000",
+  "intro_sentence": "12:00 mediodía UTC del 1 de enero de 2000 — el momento ancla universal que los astrónomos usan para datar elementos orbitales.",
+  "narrative_101": [
+    "Las órbitas se desplazan. Lentamente — durante siglos — pero lo bastante como para que no puedas decir simplemente \"la órbita de Marte tiene excentricidad 0,0934\" sin decir \"a partir de cuándo.\" Los astrónomos necesitaban un punto cero acordado en el tiempo, igual que los cartógrafos necesitaban un meridiano cero acordado (que es por qué Greenwich existe). Eligieron el mediodía UTC del 1 de enero de 2000. Eso es J2000.",
+    "¿Por qué mediodía, no medianoche? Porque la Cuenta de Día Juliano — el conteo continuo de días de los astrónomos desde el 4713 a.C. — siempre ha cambiado al mediodía, no a medianoche, así que los observadores no tienen que manejar un cambio de fecha en mitad del trabajo nocturno. J2000 corresponde exactamente al Día Juliano 2.451.545,0 — una referencia entera limpia.",
+    "Cada órbita que ves en este simulador está anclada a J2000. Longitud media de la Tierra en J2000. Argumento de periapsis de Marte en J2000. Las posiciones planetarias que ves animar en /explore se extrapolan hacia delante (o atrás) desde J2000 usando matemáticas lineales simples: \"empieza aquí, avanza a este ritmo, aquí estás ahora.\" Elige cualquier fecha de la historia y el orrery puede decirte dónde estaban los planetas."
+  ],
+  "body_paragraphs": [
+    "Los elementos orbitales se desplazan en el tiempo — las perturbaciones de otros planetas empujan la excentricidad, las longitudes precesan, las inclinaciones se tambalean. Para que los elementos de un planeta sean significativos, tienes que decir \"a partir de cuándo.\" La respuesta estándar es J2000: mediodía UTC del 1 de enero de 2000. Las órbitas se citan en ese momento; la propagación hacia delante o atrás usa modelos analíticos o numéricos.",
+    "¿Por qué mediodía? Porque la Fecha Juliana (JD) — el conteo continuo de días de los astrónomos empezando al mediodía UTC del 1 de enero de 4713 a.C. — incrementa al mediodía, no a medianoche. J2000 corresponde exactamente a JD 2.451.545,0, un punto de referencia limpio sin días fraccionarios.",
+    "Los datos planetarios de Orrery usan elementos J2000 en todas partes. El campo de longitud media `L₀` en los paneles de `/explore` es el ángulo de posición heliocéntrica del planeta en J2000. Desde ahí, el movimiento medio `n = 2π / T` avanza `L` linealmente a cualquier otra época — módulo pequeñas perturbaciones que el simulador ignora."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "EDA — Entrada, Descenso, Aterrizaje",
+  "intro_sentence": "Siete minutos desde el techo de la atmósfera hasta tocar suelo — la fase más automatizada y de menor margen de cualquier misión planetaria.",
+  "narrative_101": [
+    "Marte está a catorce minutos-luz de distancia. Para cuando una señal del róver llega al Control de Misión, el róver ha estado en el suelo durante catorce minutos — vivo o muerto. Nadie en la Tierra vuela un aterrizaje marciano. La nave lo hace ella sola, autónomamente, en unos siete minutos, con cientos de partes móviles y cero segundas oportunidades.",
+    "Paso uno: chocar con la atmósfera a ~5,8 km/s. El escudo térmico maneja temperaturas suficientemente calientes para brillar. Paso dos: desplegar un paracaídas supersónico a Mach 2 — sí, un paracaídas, mientras todavía vas más rápido que el sonido. Paso tres: tirar el escudo térmico, tirar el paracaídas, disparar retrocohetes para frenar el resto. Paso cuatro: aterrizaje.",
+    "Distintas misiones, distintos trucos. Apolo simplemente disparó su motor de descenso todo el camino abajo. Curiosity y Perseverance usaron la genuinamente loca Sky Crane: una plataforma propulsada por cohetes que flotó 20 metros sobre el suelo y bajó el róver con tres cables, luego se voló sola. Zhurong de China hizo un híbrido. Los siete minutos se llaman \"los siete minutos de terror\" dentro de JPL porque no hay nada que nadie pueda hacer durante ellos. El simulador ha hecho la matemática; confías en el simulador."
+  ],
+  "body_paragraphs": [
+    "La entrada empieza cuando la nave golpea atmósfera sensible — unos 125 km arriba en Marte, 100 km en la Tierra. Desde ese momento, la fricción atmosférica hace tu frenado; los motores se mantienen quietos. El escudo térmico maneja miles de grados, el aerocaparazón mantiene la forma, y la trayectoria es esencialmente balística.",
+    "El descenso comienza cuando despliegan paracaídas supersónicos, alrededor de Mach 1,5-2. Eliminan otro gran trozo de velocidad — pero los paracaídas solos no pueden llevarte a un aterrizaje suave en una atmósfera fina. Marte va de supersónico a subsónico en paracaídas, luego transiciona a descenso propulsado: el escudo térmico cae, los retrocohetes disparan, el módulo cae los últimos cientos de metros solo sobre los chorros del motor.",
+    "Curiosity y Perseverance usaron el sky-crane: flotar a ~20m, bajar el róver con cables a tocar suelo, volar la etapa de descenso lejos. Apolo usó una quemada directa de cohete a la superficie. Zhurong de China usó un esquema híbrido de flotar/bajar. Distintos planetas, distintas atmósferas, distintos esquemas — los mismos siete minutos."
+  ],
+  "diagram_caption": "Secuencia EDA: entrada (escudo térmico) → paracaídas → descenso propulsado → aterrizaje."
+}

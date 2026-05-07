@@ -1,0 +1,15 @@
+{
+  "title": "Trayectoria de Retorno Libre",
+  "intro_sentence": "Una trayectoria que pasa por el destino y dobla la propia gravedad en un billete de vuelta — sin quemadas de motor.",
+  "narrative_101": [
+    "Imagina que vuelas a la Luna. Te preocupa — ¿y si el motor falla en el camino? Te quedarías varado, a la deriva para siempre. Aquí está la respuesta genial: elige un camino donde, incluso si todos los motores de tu nave mueren en cuanto sales de la órbita terrestre, la gravedad por sí sola te haga girar alrededor de la Luna y te lance de vuelta a casa automáticamente. Eso es una trayectoria de retorno libre.",
+    "Es un auténtico ocho en el espacio. Sales de la Tierra, subes hasta la Luna, la gravedad lunar dobla tu camino 180 grados, y caes de vuelta hacia la Tierra, atravesando la atmósfera al rebote. Sin motor requerido. La Luna hace todo el trabajo. La geometría solo tiene que estar bien.",
+    "Apolo 8 fue la primera misión tripulada que voló una. Apolo 13 — la famosa misión \"Houston, tenemos un problema\" — debe su supervivencia a ello. Cuando su motor principal se volvió inutilizable, fueron a la deriva alrededor de la Luna en un retorno libre y volvieron a casa. El escenario predeterminado de /fly de Orrery hace exactamente esto para Marte: Tierra → sobrevuelo de Marte → Tierra, sin quemadas de medio crucero. El viaje a Marte más barato posible que puedes volar con humanos a bordo."
+  ],
+  "body_paragraphs": [
+    "El truco principal: sal de la Tierra, vuela cerca de la Luna (o Marte), y deja que la gravedad de ese cuerpo doble tu trayectoria de vuelta hacia la Tierra. Si has acertado con la geometría, reentras en la atmósfera terrestre al rebote. La tripulación nunca tiene que disparar un motor para volver a casa.",
+    "Apolo 8 fue el primer retorno libre tripulado. Apolo 13 famosamente cayó sobre la técnica cuando su módulo de servicio quedó inutilizado, montando el ocho de vuelta. Para Marte la geometría es más difícil — necesitas un bucle de dos pasadas y 500 días — pero el concepto es el mismo: la geometría del sobrevuelo haciendo el trabajo de la quemada de retorno.",
+    "El escenario predeterminado de `/fly` de Orrery, ORRERY-1, es exactamente esto: Tierra-Marte-Tierra en un arco de retorno libre, sin correcciones de medio curso, sin quemada de inserción orbital en Marte. Ves a la nave dar una vuelta al Sol, sobrevolar Marte y volver. Es el sobrevuelo tripulado a Marte más barato jamás propuesto."
+  ],
+  "diagram_caption": "Tierra → sobrevuelo de Marte → Tierra. La gravedad de la Luna (o Marte) hace el giro en U gratis."
+}

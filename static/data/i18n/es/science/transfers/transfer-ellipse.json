@@ -1,0 +1,15 @@
+{
+  "title": "Elipse de Transferencia",
+  "intro_sentence": "El arco kepleriano que lleva a una nave de una órbita a otra — Sol en uno de los focos, igual que cualquier otra órbita.",
+  "narrative_101": [
+    "La planificación de misión suena como si fuera sobre motores y cohetes. Es sobre todo sobre elegir una elipse. Cada crucero interplanetario — Apolo a la Luna, Voyager a Neptuno, Perseverance a Marte — es solo una nave montando una órbita elíptica entre donde empezó y a dónde va. La palabra elegante para esa elipse es la órbita de transferencia.",
+    "Juega con las mismas reglas que cualquier otra órbita kepleriana. El Sol está en uno de los focos. La nave se mueve lentamente en el extremo lejano y rápidamente en el cercano. Vis-viva sigue funcionando para calcular su velocidad. La tercera ley de Kepler sigue dándote el tiempo de vuelo a partir del tamaño. Nada exótico.",
+    "Lo único que hace que una elipse de transferencia sea distinta de la órbita de un planeta es que la nave solo vuela LA MITAD de ella. Salta dentro en un extremo, monta hasta el otro, y se baja. Por eso el presupuesto de Δv siempre tiene dos quemadas grandes — una para entrar en la elipse, otra para salir. La parte intermedia, los ocho meses de inercia, no cuesta absolutamente nada."
+  ],
+  "body_paragraphs": [
+    "Una vez que has quemado para salir de la órbita terrestre, estás en una elipse alrededor del Sol. Esa elipse es la órbita de transferencia, y tiene todas las mismas propiedades que cualquier otra: semieje mayor, excentricidad, perihelio, afelio. El hecho de que vayas a algún sitio no cambia la geometría — a la gravedad no le importa tu destino.",
+    "Dos anclajes definen una elipse de transferencia: dónde empezaste (perihelio si vas hacia fuera) y dónde acabarás (afelio). El semieje mayor es el promedio de esos dos radios. Toca cualquier anclaje y la elipse entera se reforma — ve más lejos, la elipse se estira, el viaje se alarga.",
+    "En el HUD de `/fly` de Orrery verás a la nave trazar esta elipse en tiempo real. El arco de transferencia en pantalla es una representación visual de la misma cónica que dice la matemática — Sol en uno de los focos, perihelio detrás de ti, afelio delante."
+  ],
+  "diagram_caption": "Dos órbitas coplanares (salida interior, destino exterior) conectadas por una elipse de transferencia con el Sol en uno de los focos."
+}

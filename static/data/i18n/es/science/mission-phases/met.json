@@ -1,0 +1,14 @@
+{
+  "title": "MET — Tiempo Transcurrido de Misión",
+  "intro_sentence": "Un cronómetro simple que empieza al lanzamiento y nunca se detiene — la etiqueta de tiempo universal para cada evento del cronograma de misión.",
+  "narrative_101": [
+    "MET significa Tiempo Transcurrido de Misión. Es un cronómetro. Día cero, hora cero, minuto cero, segundo cero es el momento en que el cohete sale de la rampa. Todo lo que ocurra después se etiqueta con MET. ¿El primer paso del Apolo 11 en la Luna? MET 109 horas 24 minutos. ¿Voyager 1 cruzando al espacio interestelar? MET 35 años.",
+    "¿Por qué un cronómetro en lugar de un calendario normal? Dos razones. Primero, los calendarios en la Tierra no tienen nada que ver con lo que la nave hace — a Voyager no le importan los martes. Segundo, cuanto más lejos vas, más se desfasan los relojes. Marte está a minutos-luz; las señales se retrasan. Las naves que van a velocidades relativistas (algunas) miden el tiempo ligeramente distinto a nosotros. MET evita todo eso — es la línea temporal privada de la nave.",
+    "Abre la pantalla /fly y mira MET avanzar en días a medida que un viaje simulado progresa. El HUD dice MET 173d cuando la nave sobrevuela Marte. Traducción: han pasado 173 días desde el lanzamiento desde la perspectiva de la nave. ¿Qué fecha es en la Tierra? No importa. El control de misión habla MET."
+  ],
+  "body_paragraphs": [
+    "MET es el tiempo desde el lanzamiento. Día cero es el despegue. Cada evento — separación de etapa, inyección trans-X, corrección de medio curso, inserción orbital, operaciones de superficie — recibe una marca temporal MET. Aterrizaje lunar del Apolo 11: MET 4 días, 6 horas, 45 minutos. Voyager 1 saliendo de la heliopausa: MET 35 años.",
+    "¿Por qué MET en lugar de UTC? Porque el reloj-en-Tierra no concuerda exactamente con el reloj-en-nave cuando la nave se mueve rápido o lejos. Los retrasos de luz crecen (Marte está a 4-22 minutos-luz dependiendo de la geometría orbital). La dilación relativista se cuela para sondas rápidas. MET es el tiempo transcurrido propio de la nave, el ancla natural para secuenciar eventos a bordo.",
+    "En el HUD de `/fly` verás MET avanzar en días a medida que progresa la simulación. Es la perspectiva de la nave sobre cuánto ha tardado el viaje — independiente de qué fecha sea en la Tierra."
+  ]
+}

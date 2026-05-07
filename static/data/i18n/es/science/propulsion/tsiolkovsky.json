@@ -1,0 +1,16 @@
+{
+  "title": "Ecuación del Cohete de Tsiolkovsky",
+  "intro_sentence": "Cuánto cambio de velocidad puedes comprar con un motor dado y una carga de propelente dada — la ecuación que hace de la astronáutica un problema logarítmico.",
+  "narrative_101": [
+    "Konstantin Tsiolkovsky era un maestro ruso sordo que pensaba sobre vuelos espaciales en su tiempo libre, décadas antes de que nadie pudiera construir un cohete realmente. En 1903 escribió una ecuación de la que nadie podía escapar, y todavía no hemos podido. Dice: el Δv que puedes sacar de un cohete depende de dos cosas — cuán bueno es tu motor, y cuánto del cohete es combustible. Y la relación es LOGARÍTMICA.",
+    "El logaritmo es la trampa. Si tu cohete es la mitad combustible, sacas un cierto Δv. Para doblar ese Δv, no haces tu cohete dos tercios combustible. Tienes que hacerlo más bien 87% combustible. Para triplicarlo, más bien 95%. Los números se te escapan exponencialmente. Por eso un Saturno V es una torre de 110 metros que es casi todo propelente — la nave es una cápsula diminuta encima.",
+    "Dos salidas. Una: motores mejores (mayor impulso específico) — eso eleva el multiplicador así sacas más Δv de la misma relación de masas. Dos: etapas — tira los tanques vacíos cuando se vacían así no arrastras peso muerto. Los cohetes reales hacen ambas cosas. Aun así, las misiones de un solo tiro topan en torno a 10-15 km/s de Δv. Más allá la ecuación dice que necesitas reabastecerte en órbita, o usar motores exóticos, o pedir ayuda a un planeta."
+  ],
+  "body_paragraphs": [
+    "Konstantin Tsiolkovsky derivó la ecuación del cohete en 1903, décadas antes de que alguien construyera un cohete que valiera la pena volar. El resultado tiene la inevitabilidad de la física: Δv depende del `Isp` del motor y de la relación entre masa inicial y masa final — y es logarítmico en esa relación.",
+    "El logaritmo es la parte cruel. Doblar el propelente no dobla Δv; añade un trozo constante. ¿Quieres volar el doble de lejos? Necesitas un cohete exponencialmente mayor. Esta es la tiranía de la ecuación del cohete: motores químicos (`Isp` ~300-450s) topan en torno a 10-15 km/s de Δv antes de que la relación de masas se vuelva absurda. Para ir más lejos necesitas mayor `Isp` (motores iónicos, ~3000s) o etapas (tirar tanques cuando se vacían), o ambos.",
+    "Saturno V: 7.800 toneladas húmedo, 600 toneladas seco. Relación de masas 13. Isp ~330s. Δv ≈ 8,3 km/s — apenas suficiente para alcanzar la inyección translunar. Falcon 9 reusable topa en otra pared distinta: cada kilogramo de hardware recuperable te cuesta carga útil proporcional."
+  ],
+  "formula_caption": "Δv a partir del impulso específico, la aceleración gravitacional g₀ y la relación de masas m₀/m_f.",
+  "diagram_caption": "Curva de Δv vs relación de masas: logarítmica. Doblar propelente añade solo un trozo constante de Δv."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Sistemas Heliocéntrico · Geocéntrico · Centrado en el Cuerpo",
+  "intro_sentence": "Tres sistemas de referencia para tres preguntas distintas: ¿dónde está relativo al Sol, a la Tierra, o al planeta que estudias?",
+  "narrative_101": [
+    "¿Dónde está la Luna? La respuesta honesta es \"depende de dónde estés TÚ.\" Desde la superficie de la Tierra está sobre tu cabeza a la 1 de la mañana esta noche. Desde el Sol es un punto diminuto a 1 UA cerca de la Tierra. Desde Marte es una mota irrelevante. Ninguna de estas respuestas es errónea — solo se miden desde orígenes distintos. Esa elección de origen es lo que significa \"sistema de referencia.\"",
+    "La astronáutica malabarea constantemente con tres de ellos. Heliocéntrico (origen en el Sol) es el sistema natural para crucero — todo lo Tierra-a-Marte ocurre aquí. Geocéntrico (origen en la Tierra) es el sistema natural para satélites y la Luna. Centrado en el cuerpo (origen en cualquier planeta que sobrevueles u orbites) es el sistema natural para quemadas de llegada y operaciones de superficie.",
+    "Cambiar entre ellos es sobre todo aritmética — traduce el origen, quizás rota los ejes. Pero importa dónde estás conceptualmente: una elipse de transferencia es heliocéntrica. Un sobrevuelo a Marte es centrado en el cuerpo. La transferencia entre ellos es exactamente el truco de las cónicas parcheadas. Cada pantalla de esta app elige un sistema y se queda con él: /explore es heliocéntrica, /earth es geocéntrica, /moon y /mars son centrados en el cuerpo."
+  ],
+  "body_paragraphs": [
+    "Heliocéntrico: origen en el Sol, ejes alineados con la eclíptica. El sistema natural para movimiento del sistema solar. Posiciones planetarias, órbitas de transferencia, cruceros de misión — todo se describe más naturalmente aquí. El `/explore` de Orrery es fundamentalmente heliocéntrico.",
+    "Geocéntrico: origen en la Tierra. Útil para satélites, la Luna y cualquier nave dentro de la esfera de influencia de la Tierra. La ruta `/earth` de la Tierra trabaja en este sistema. Las coordenadas geocéntricas se relacionan con las heliocéntricas por una traslación (la posición heliocéntrica de la Tierra) y posiblemente una rotación (la inclinación axial de la Tierra).",
+    "Centrado en el cuerpo (centrado en Marte, en Saturno, en la Luna, etc.): origen en el cuerpo que orbitas o sobrevuelas. Usado para inserción orbital, operaciones de superficie, geometría de sobrevuelo — cualquier cosa donde domine la gravedad del cuerpo. El diseño de misión por cónicas parcheadas cambia de sistemas en las fronteras de la esfera de influencia: describes un arco en el sistema que mantenga la matemática local."
+  ]
+}

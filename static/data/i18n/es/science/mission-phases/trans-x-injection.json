@@ -1,0 +1,14 @@
+{
+  "title": "Inyección Trans-X — ITL / ITM / ITV / ITJ",
+  "intro_sentence": "La gran quemada de salida que te lanza a una trayectoria hacia tu destino.",
+  "narrative_101": [
+    "Paso uno de cualquier viaje interplanetario: lanzarse a órbita baja terrestre. Ahora estás en el espacio, pero no vas a ningún sitio — solo estás dando vueltas a la Tierra. Para salir realmente hacia la Luna, Marte o Júpiter, necesitas una SEGUNDA quemada. Esa es la inyección Trans-X. \"X\" es el planeta al que apuntes. ITL = translunar (a la Luna). ITM = trans-Marte. ITV = Venus. ITJ = Júpiter. Mismo truco, distinto destino.",
+    "Es una sola quemada dura, dramática — normalmente de 5 a 30 minutos según el motor — hecha en perigeo de tu órbita de aparcamiento, donde ya te mueves lo más rápido posible (efecto Oberth, otra vez). Te lanza a la transferencia elíptica que te lleva al destino. Después de esta quemada, el motor básicamente no dispara durante meses. Estás en inercia.",
+    "En cada tarjeta de misión interplanetaria de /missions, verás este número señalado: Δv_ITL o Δv_ITM. Es LA decisión más grande del diseño de misión — demasiado pequeña y nunca escapas de la Tierra, demasiado grande y desperdicias combustible que podría haber volado carga útil. La ITL del Apolo fue 3,05 km/s. La ITM de Mars Curiosity fue 3,7 km/s. La inyección trans-Júpiter de Voyager 2 rondó los 7 km/s — la mayor parte de su presupuesto."
+  ],
+  "body_paragraphs": [
+    "Tras el lanzamiento estás típicamente en órbita baja terrestre (LEO). Para ir a cualquier otro sitio, necesitas una segunda quemada que eleve tu apogeo hasta el destino — esa es la inyección trans-X. La X es la primera letra del destino: ITL para translunar, ITM para trans-Marte, ITV para trans-Venus, ITJ para trans-Júpiter. Misma física, distinto punto de mira.",
+    "La quemada ocurre en perigeo de la órbita de aparcamiento, donde Oberth te da más energía por kilogramo de propelente. Para una Hohmann a Marte, ITM cuesta unos 3,6 km/s sobre los 7,9 km/s de inyección a LEO — alrededor de un tercio del Δv total de la misión. Voyager 2 necesitó ~7 km/s para la inyección trans-Saturno encima de su salida trans-Júpiter inicial.",
+    "En la pestaña FLIGHT de cada tarjeta de misión interplanetaria en `/missions`, encontrarás este número etiquetado como Δv_ITL o Δv_ITM. Es el coste de salir del vecindario terrestre, separadamente del coste de llegar a LEO en primer lugar."
+  ]
+}

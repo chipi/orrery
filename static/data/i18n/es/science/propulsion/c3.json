@@ -1,0 +1,15 @@
+{
+  "title": "C₃ — Energía Característica",
+  "intro_sentence": "Cuánta energía por unidad de masa necesita un cohete para salir del pozo gravitatorio terrestre con velocidad sobrante — la métrica estándar de energía de lanzamiento.",
+  "narrative_101": [
+    "C₃ es jerga de ingeniero de misión para una pregunta específica: ¿cuán fuerte tiene que lanzar el cohete a la nave? Es la energía que sobra una vez has subido por el pozo gravitatorio terrestre. C₃ = 0 significa que escapas exactamente de la Tierra, llegando al infinito con cero velocidad sobrante. C₃ por encima de cero significa que saliste con velocidad extra que sobró — y esa velocidad extra es la que te lleva hacia Marte o Júpiter o donde sea.",
+    "Se mide en km²/s² (que parece raro pero es solo velocidad al cuadrado) para que los números se mantengan manejables. Marte normalmente quiere C₃ = 8 a 12. Vuelos directos a Júpiter necesitan C₃ alrededor de 80. New Horizons lanzó con C₃ = 158 — el más alto jamás — para alcanzar Plutón en nueve años y medio en lugar de décadas.",
+    "¿Por qué importa tanto este número? Porque cada cohete tiene una curva publicada de C₃-vs-carga útil. A medida que C₃ sube, el cohete puede entregar menos masa. Falcon Heavy puede lanzar 16 toneladas a C₃ = 10, pero solo 5 toneladas a C₃ = 80. La primera decisión en el diseño de misión es emparejar el requisito C₃ del destino con un cohete que pueda llevar tu nave a esa energía. Te equivocas y la misión no puede volar."
+  ],
+  "body_paragraphs": [
+    "C₃ es el cuadrado de la velocidad de exceso hiperbólico. Unidades: km²/s². Te dice cuánta energía más allá del escape tiene que entregar tu vehículo de lanzamiento. C₃ = 0 significa que apenas escapas de la gravedad terrestre, llegando al infinito con cero velocidad. C₃ = 25 km²/s² significa que llegas con V∞ = 5 km/s de velocidad heliocéntrica sobrante.",
+    "Los vehículos de lanzamiento se caracterizan por su curva C₃-vs-carga útil. Falcon Heavy puede tirar ~16 toneladas a C₃=10, pero solo ~5 toneladas a C₃=80. Marte normalmente quiere C₃ alrededor de 8-12. Júpiter directo: C₃ alrededor de 80. New Horizons lanzó con C₃ = 158 km²/s² — el más alto de cualquier misión jamás — para hacer el viaje a Plutón en solo 9,5 años.",
+    "En la pestaña FLIGHT de `/missions` de Orrery el C₃ de cada misión interplanetaria es el primer dato canónico de la fila. Es el único número que captura \"cuán difícil fue lanzar.\""
+  ],
+  "formula_caption": "C₃ es solo V∞ al cuadrado. Misma física, distintas unidades."
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Las Tres Leyes de Kepler",
+  "intro_sentence": "Tres reglas observacionales que convirtieron el movimiento planetario en una ciencia cerrada un siglo antes de que Newton explicara por qué.",
+  "narrative_101": [
+    "Kepler no tenía cálculo. No tenía la gravedad de Newton. No tenía un ordenador. Tenía veinte años de observaciones meticulosas hechas a ojo con un cuadrante por su jefe Tycho Brahe sobre Marte, y tenía paciencia. De eso escribió tres reglas que siguen siendo exactamente correctas hoy, cuatrocientos años después.",
+    "Ley uno: las órbitas son elipses, no círculos. Herético en su momento. Ley dos: la línea de un planeta al Sol barre áreas iguales en tiempos iguales — que es una forma astuta de decir que los planetas aceleran cuando están cerca del Sol y frenan cuando están lejos. Ley tres: cuanto más grande la órbita, más largo el año, de una forma precisa (T² escala como a³).",
+    "Newton llegó setenta años después y demostró que las tres leyes salen de una sola ecuación gravitatoria simple. Pero Kepler llegó primero, sin teoría — solo mirando números hasta que confesaron. Ese es el tipo de jugada que aún puedes hacer en ciencia moderna si tienes paciencia para ello."
+  ],
+  "body_paragraphs": [
+    "Primera ley: los planetas orbitan en elipses con el Sol en uno de los focos. Antes de Kepler, todos los modelos usaban círculos — a veces anidados, a veces desplazados, pero siempre circulares. Kepler usó los veinte años de observaciones de Marte de Tycho Brahe y se rindió: los datos no encajaban en círculos, y nada de lo que hiciera los hacía encajar. Las elipses encajaron al primer intento.",
+    "Segunda ley: la línea del Sol al planeta barre áreas iguales en tiempos iguales. Esto es la conservación del momento angular disfrazada. Cerca del perihelio el planeta está cerca del Sol, la línea es corta — así que tiene que oscilar rápido para barrer la misma área que una línea larga y lenta cerca del afelio. Por eso la velocidad orbital no es constante.",
+    "Tercera ley: `T² ∝ a³`. El cuadrado del período orbital es proporcional al cubo del semieje mayor. Con la Tierra puesta a T = 1 año y a = 1 UA, puedes leer el período de cualquier planeta a partir de su distancia — o su distancia a partir de su período. Newton después derivaría esto de la gravedad; Kepler llegó por puro pattern-matching sobre los datos de Brahe."
+  ],
+  "formula_caption": "La tercera ley de Kepler en forma moderna: T² depende solo de a (y de μ del cuerpo central).",
+  "diagram_caption": "Áreas iguales en tiempos iguales: el arco corto cerca del perihelio barre la misma área que el arco largo cerca del afelio."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "NRHO — Órbita de Halo Casi-Rectilínea",
+  "intro_sentence": "Una órbita en forma de huevo de nueve días alrededor del punto L2 Tierra-Luna — el hogar elegido para el Lunar Gateway de la NASA.",
+  "narrative_101": [
+    "NRHO es la órbita que la NASA eligió para Gateway, la pequeña estación espacial que vivirá cerca de la Luna a partir de finales de los 2020. El acrónimo significa Órbita de Halo Casi-Rectilínea — una frase que casi no significa nada hasta que ves la forma. Imagina un huevo, estirado, balanceado casi-pero-no-del-todo en el punto Lagrange L2 al otro lado de la Luna. La nave da una vuelta cada nueve días.",
+    "¿Por qué esta órbita específica, de todas las posibles? Es un compromiso perfecto. Cuesta casi nada de combustible mantenerla — unos 5 metros por segundo por año de mantenimiento de estación, lo que es esencialmente gratis. Siempre tiene línea de visión clara de vuelta a la Tierra, así que el contacto por radio nunca se bloquea por la Luna. Y un extremo del huevo se sumerge lo bastante cerca de la Luna como para que los módulos de aterrizaje puedan caer al polo sur y volver sin gran coste de Δv.",
+    "Artemis II será el primer vuelo tripulado a NRHO. Artemis III atracará allí para transferir a un módulo de aterrizaje derivado de Starship. Más allá de Gateway, NRHO se está estudiando como el punto de ensamblaje para futuras misiones tripuladas a Marte — un sitio para ensamblar grandes naves lejos del pozo gravitatorio terrestre."
+  ],
+  "body_paragraphs": [
+    "Una NRHO es una órbita de halo — una trayectoria periódica de tres cuerpos que rodea un punto Lagrange — pero estirada hasta que un extremo casi toca el polo sur de la Luna. Parece más una órbita polar que un halo, de ahí \"casi-rectilínea.\" Cada bucle tarda unos 6,5 días en perilunio (cerca de la Luna) y 9 días para una revolución completa.",
+    "¿Por qué esta órbita? Estabilidad con bajo mantenimiento de Δv — unos 5 m/s por año de stationkeeping. Línea de visión continua a la Tierra (Gateway nunca va detrás de la Luna durante mucho). Acceso a Δv de bajo coste desde la Tierra (alrededor de 4 km/s para transferencia + inserción, comparable a LLO pero con mucho mejor estabilidad térmica). Acceso a la superficie lunar vía pequeños módulos de aterrizaje desde perilunio.",
+    "Gateway será la primera estación tripulada en espacio profundo, ocupando NRHO desde finales de los 2020. Artemis II será el primer vuelo tripulado a NRHO; Artemis III atracará allí para transferir al módulo de aterrizaje. Más allá de Gateway, NRHO es el punto de ensamblaje para arquitecturas tripuladas a Marte."
+  ],
+  "diagram_caption": "Órbita de halo estirada en el punto L2 Tierra-Luna: período ~9 días, perilunio cerca del polo sur, línea de visión a la Tierra."
+}

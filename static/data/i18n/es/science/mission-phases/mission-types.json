@@ -1,0 +1,18 @@
+{
+  "title": "Tipos de Misión — Sobrevuelo, Orbitador, Aterrizador, Róver, Retorno de Muestras",
+  "intro_sentence": "Cinco arquetipos de cómo una nave se relaciona con su destino — cada uno un coste distinto de Δv, perfil de riesgo y retorno científico.",
+  "narrative_101": [
+    "Cada misión robótica a otro mundo elige una de cinco estrategias. La elección determina casi todo lo demás: cuán grande tiene que ser el cohete, cómo dobla la trayectoria, qué trae la nave, qué ciencia hace, y si sobrevive. La taxonomía mapea limpiamente sobre una escalera de Δv: sobrevuelo es el más barato, retorno de muestras es el más caro.",
+    "SOBREVUELO: apunta, fotografía, vete. Sin quemada de frenado. Voyager 1/2 más allá de Júpiter, Saturno, Urano, Neptuno; New Horizons más allá de Plutón; Pioneer 10/11. Un solo tiro, horas de ciencia de encuentro cercano, la nave sigue para siempre. El más barato en Δv pero no vuelves.",
+    "ORBITADOR: frena para entrar en una órbita capturada y quédate años. MAVEN, MRO, Cassini, Galileo. La quemada de inserción es cara (1-2 km/s) pero llegas a mapear el cuerpo entero. ATERRIZADOR añade EDA — escudo térmico, paracaídas, retros — encima de un orbitador. RÓVER añade ruedas, tren motriz, autonomía — cada kilogramo en el róver cuesta una pila entera debajo.",
+    "RETORNO DE MUESTRAS es la cima: aterrizador + etapa de ascenso desde la superficie + crucero de vuelta + EDA en la Tierra. Hayabusa-2, OSIRIS-REx, Chang'e 5, los vuelos del Apolo. La relación masa-a-salida-de-Tierra es brutal — Mars Sample Return está en desarrollo ahora y es una de las misiones robóticas más difíciles jamás intentadas."
+  ],
+  "body_paragraphs": [
+    "Las misiones de sobrevuelo se saltan la quemada de inserción orbital por completo. Pasan a la V∞ con la que llegan — ~10 km/s para Voyager en Júpiter, ~14 km/s para New Horizons en Plutón. El tiempo de encuentro es minutos a días. Cambia ciencia rápida por cobertura superficial y cero seguimiento.",
+    "Las misiones orbitadoras intercambian Δv por tiempo en objetivo. La inserción cuesta típicamente 1-2 km/s de frenado, pero la nave luego tiene años para mapear el cuerpo. El aerofrenado (usar fricción atmosférica en periapsis) puede recortar el presupuesto aún más — Mars Reconnaissance Orbiter aerofrenó hacia su órbita científica durante 6 meses para ahorrar combustible.",
+    "Los aterrizadores añaden EDA al presupuesto del orbitador, más la masa estructural del escudo térmico, paracaídas, motores de retro y patas. EDA es la fase de mayor riesgo de cualquier misión; Marte tiene una tasa de éxito histórica de aterrizajes del ~50%.",
+    "Los róveres añaden ruedas, tren motriz, navegación y autonomía. Cada kilogramo en el róver cuesta una pila entera debajo: la etapa de descenso que lo entrega, la etapa de crucero que entrega la etapa de descenso, el cohete que lanza la etapa de crucero. El róver de 899 kg de Curiosity requirió un aerocaparazón de 4 toneladas en una etapa de crucero de 4 toneladas en una trayectoria clase Saturno V.",
+    "El retorno de muestras es la cima. La masa que tiene que dejar la Tierra escala como ~10× la masa de muestra retornada para un viaje de ida y vuelta a Marte — pagas por el cohete que levanta el cohete que levanta el aterrizador que levanta el contenedor de muestras que levanta la etapa de crucero que trae las muestras a casa. Hayabusa-2 retornó ~5g del asteroide Ryugu en una cápsula que cabía en tu mano."
+  ],
+  "diagram_caption": "Cinco arquetipos de misión dispuestos por complejidad creciente: sobrevuelo → orbitador → aterrizador → róver → retorno de muestras."
+}

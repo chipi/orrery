@@ -1,0 +1,14 @@
+{
+  "title": "Impulso Específico (Isp)",
+  "intro_sentence": "Cuán eficiente es un motor — cuántos segundos un kilogramo de propelente produce un kilogramo de empuje.",
+  "narrative_101": [
+    "Si te ha importado alguna vez los litros-por-cien para un coche, el impulso específico es la misma idea para cohetes. Te dice cuán eficientemente el motor convierte combustible en empuje. Mayor Isp = mejor consumo = más Δv del mismo propelente.",
+    "La unidad es rara — se mide en segundos, lo que no tiene sentido intuitivo al principio. La razón es histórica: Isp = empuje ÷ (combustible-quemado-por-segundo × gravedad terrestre). Los segundos cancelan casi todo lo demás. Cuanto mayor el número, más eficiente el motor, y puedes comparar motores a través de décadas y continentes con el mismo número.",
+    "El rango es enorme. Cohetes sólidos (los aceleradores del Transbordador Espacial): ~250 segundos. Hidrógeno-oxígeno líquidos (lo mejor químico que puedes hacer): ~450 segundos. Hipergólicos almacenables (baratos, fiables, lo que la mayoría de naves bebe para correcciones de rumbo): ~310 segundos. Motores iónicos (super eficientes pero muy bajo empuje): 3.000-9.000 segundos. La regla práctica: para salir de planetas necesitas mucho empuje; para crucero en espacio profundo quieres alto Isp. Las misiones reales escalonan sus elecciones — químicos para escapar de la Tierra, iónicos para crucero."
+  ],
+  "body_paragraphs": [
+    "Isp es el número de consumo para cohetes. Mayor es mejor. Definición: divide empuje entre tasa de flujo másico de propelente, divide por `g₀` (gravedad estándar), obtén un número en segundos. Quema un kilogramo de propelente por segundo, obtén `Isp × g₀` newtons de empuje.",
+    "El número va a través de cuatro órdenes de magnitud. Cohetes sólidos: 250s. Líquidos hidrógeno/oxígeno (Motor Principal del Transbordador): 452s. Hipergólicos almacenables (Módulo de Servicio del Apolo): 314s. Motores iónicos (Dawn, BepiColombo): 3.000-9.000s. Termonucleares (NERVA, nunca volado): 800-1.000s en teoría.",
+    "Compromisos por todas partes. Alto Isp suele significar bajo empuje — los motores iónicos empujan unos diez newtons, útiles para cruceros profundos de años pero inútiles para salir de la Tierra. Los motores químicos entregan mega-newtons de empuje pero queman su propelente en minutos. Las misiones reales escalonan la elección: químico para ascenso, iónico para crucero."
+  ]
+}

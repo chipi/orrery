@@ -1,0 +1,14 @@
+{
+  "title": "TCM — Maniobra de Corrección de Trayectoria",
+  "intro_sentence": "Una pequeña quemada de medio crucero para arreglar los pequeños errores que siempre se cuelan en la trayectoria de lanzamiento.",
+  "narrative_101": [
+    "Ningún lanzamiento de cohete es perfecto. Tras el ascenso y la inyección trans-X, tu nave está en una trayectoria aproximadamente correcta — pero \"aproximadamente\" importa mucho cuando tu destino es un planeta pequeño a 250 millones de kilómetros. Un error de 5 cm/s al inicio del viaje se traduce en 100 km de distancia de fallo en Marte. Así que lo arreglas.",
+    "Las TCMs son quemadas diminutas — normalmente solo unos pocos metros por segundo de Δv, a veces menos — hechas semanas o meses dentro del crucero, después de que el seguimiento desde tierra haya tenido tiempo de medir exactamente dónde está realmente la nave. Baratas en combustible, pero operacionalmente caras: cada quemada es una oportunidad para que algo se rompa, así que las misiones planean lo menos posible.",
+    "La mayoría de las misiones interplanetarias planean cuatro. TCM-1 unos pocos días dentro. TCM-2 unas semanas dentro. TCM-3 cerca de la llegada. TCM-4 el ajuste final antes de que la gravedad del planeta te agarre. Apolo usó cuatro o cinco hacia la Luna y las mismas en la vuelta. Curiosity usó cuatro. La pestaña FLIGHT de /missions te dice exactamente cuántas TCMs usó cada misión; el conteo más bajo normalmente significa que el lanzamiento fue increíblemente limpio."
+  ],
+  "body_paragraphs": [
+    "Ningún lanzamiento es perfecto. La trayectoria real fuera del vehículo de lanzamiento difiere de la planeada por decenas de metros por segundo — pequeño en términos absolutos, catastrófico en precisión de llegada si se deja solo. Un error de 5 cm/s en la ITL se traduce en 100 km de distancia de fallo en la Luna. Las TCMs recortan esos errores antes de que crezcan.",
+    "La mayoría de misiones planean tres o cuatro. La TCM-1 ocurre días dentro del lanzamiento, cuando el error de lanzamiento se caracteriza mejor. La TCM-2 unas semanas después, tras el seguimiento temprano refinar la órbita. La TCM-3 más cerca de la llegada. La TCM-4 suele ser un ajuste final de aproximación. Cada una cuesta solo metros por segundo — barata en propelente, pero operacionalmente cara (cada quemada es una oportunidad de que algo vaya mal).",
+    "El campo `tcm_count` en las pestañas FLIGHT de `/missions` reporta cuántas TCMs usó cada misión. Curiosity usó 4. Mars Reconnaissance Orbiter usó 4. Las misiones Apolo usaron 4-5 correcciones de medio curso de ida y vuelta a la Luna."
+  ]
+}

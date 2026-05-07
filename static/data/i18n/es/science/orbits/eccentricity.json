@@ -1,0 +1,16 @@
+{
+  "title": "Excentricidad",
+  "intro_sentence": "Cuán estirada está la órbita — cero es un círculo perfecto, uno es un escape parabólico.",
+  "narrative_101": [
+    "Si el tamaño es la primera palanca de la órbita, la excentricidad es la segunda. Elige un número de 0 a casi 1. En 0 la órbita es un círculo perfecto — aburrido, predecible, misma velocidad en todos lados. Empújalo hacia 1 y la elipse se estira en un huevo largo, luego en un cigarro, luego casi en una línea recta.",
+    "¿Qué cambia físicamente? La velocidad. Una órbita circular es tranquila. Una estirada no. El cuerpo pasa veloz por el extremo cercano de la elipse y luego se queda en el lejano la mayor parte del tiempo. El cometa Halley está aquí menos de un año cada 76 — el resto del tiempo va a la deriva alrededor del afelio a paso de tortuga. Misma órbita, ritmo radicalmente distinto.",
+    "Los planetas reales son mucho más aburridos que los cometas — casi todo lo que verás en /explore tiene excentricidad por debajo de 0,1. Pero en cuanto empiezas a diseñar una trayectoria de misión, eliges elipses de transferencia con excentricidades por todas partes. Las transferencias de Hohmann a Marte rondan 0,21. La quemada TLI del Apolo puso la nave en una elipse con e ≈ 0,97 — casi un escape."
+  ],
+  "body_paragraphs": [
+    "La excentricidad (`e`) es el número de forma. Ponla en 0 y tienes un círculo — los focos colapsan en un único centro, y el cuerpo orbitante se queda a la misma distancia para siempre. Súbela hacia 1 y la elipse se estira en un cigarro — el cuerpo pasa veloz por el foco en perihelio, luego se queda en el afelio la mayor parte de la órbita.",
+    "Por encima de `e = 1` ya no estás ligado. `e = 1` exacto es una trayectoria parabólica (escape, justo justo). Cualquier cosa más alta es hiperbólica — un sobrevuelo que nunca regresa. La mayoría de las trayectorias de naves que muestra Orrery son elipses heliocéntricas con `e < 1`. La excepción: los brazos de asistencia gravitatoria dibujados alrededor de Júpiter o Saturno entran en territorio hiperbólico.",
+    "Los planetas reales se agrupan en excentricidad baja. Tierra: 0,0167 — casi circular. Marte: 0,093 — visiblemente alargada. Mercurio: 0,205 — el más excéntrico de los ocho planetas. Plutón y los cometas están mucho más arriba, por lo que sus visitas al perihelio son los grandes espectáculos del sistema solar exterior."
+  ],
+  "formula_caption": "Excentricidad a partir de los radios de perihelio y afelio.",
+  "diagram_caption": "Tres órbitas con el mismo semieje mayor pero excentricidad e = 0, 0,4, 0,8. La forma cambia; el período no."
+}

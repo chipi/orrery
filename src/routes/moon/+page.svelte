@@ -3,6 +3,9 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
   import { getMoonSites, getMoonSiteGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -146,6 +149,23 @@
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0x04040c, 1);
     container.appendChild(renderer.domElement);
+
+    // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
+    const composer = new EffectComposer(renderer);
+    composer.setSize(container.clientWidth, container.clientHeight);
+    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    composer.addPass(new RenderPass(scene, camera));
+    const outlinePass = new OutlinePass(
+      new THREE.Vector2(container.clientWidth, container.clientHeight),
+      scene,
+      camera,
+    );
+    outlinePass.edgeStrength = 4;
+    outlinePass.edgeGlow = 0.4;
+    outlinePass.edgeThickness = 1.5;
+    outlinePass.visibleEdgeColor.setHex(0x4ecdc4);
+    outlinePass.hiddenEdgeColor.setHex(0x224a48);
+    composer.addPass(outlinePass);
 
     scene.add(new THREE.AmbientLight(0x666688, 0.7));
     const sun = new THREE.DirectionalLight(0xfff4d0, 1.2);
@@ -480,21 +500,32 @@
     let downY = 0;
 
     const ray = new THREE.Raycaster();
-    function tryPick3d(clientX: number, clientY: number) {
+    function pickSiteAt(clientX: number, clientY: number): string | null {
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
-      // Pick against surface marker groups + orbital dot meshes.
-      // Hidden layers are excluded so users can't accidentally click a
-      // dimmed orbiter.
       const targets: THREE.Object3D[] = [];
       if (layerSurface) for (const mk of markers) targets.push(mk.group);
       if (layerOrbiters) for (const om of orbitalMarkers) targets.push(om.dotGroup);
       const hits = ray.intersectObjects(targets, true);
       const hit = hits.find((h) => typeof h.object.userData.siteId === 'string');
-      if (hit) selectSite(hit.object.userData.siteId as string);
+      return hit ? (hit.object.userData.siteId as string) : null;
     }
+
+    function tryPick3d(clientX: number, clientY: number) {
+      const id = pickSiteAt(clientX, clientY);
+      if (id) selectSite(id);
+    }
+
+    let hoveredSiteId: string | null = null;
+    const onHover = (e: MouseEvent) => {
+      if (isDrag) return;
+      hoveredSiteId = pickSiteAt(e.clientX, e.clientY);
+    };
+    const onHoverLeave = () => {
+      hoveredSiteId = null;
+    };
 
     const onMouseDown = (e: MouseEvent) => {
       isDrag = true;
@@ -585,6 +616,8 @@
     el3d.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
+    el3d.addEventListener('mousemove', onHover);
+    el3d.addEventListener('mouseleave', onHoverLeave);
     el3d.addEventListener('wheel', onWheel, { passive: true });
     el3d.addEventListener('touchstart', onTouchStart, { passive: true });
     el3d.addEventListener('touchmove', onTouchMove, { passive: true });
@@ -804,6 +837,8 @@
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+      composer.setSize(container.clientWidth, container.clientHeight);
+      outlinePass.resolution.set(container.clientWidth, container.clientHeight);
     };
     window.addEventListener('resize', onResize);
 
@@ -859,7 +894,28 @@
         om.dotGroup.position.set(lx, -lz * sinI, lz * cosI);
       }
 
-      if (view === '3d') renderer.render(scene, camera);
+      // Outline-on-hover (skipped if hovered === selected).
+      const outlineMeshes: THREE.Object3D[] = [];
+      const selectedId = selected?.id;
+      if (hoveredSiteId && hoveredSiteId !== selectedId) {
+        const mk = markers.find((x) => x.siteId === hoveredSiteId);
+        if (mk) outlineMeshes.push(mk.group);
+        const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
+        if (om) outlineMeshes.push(om.dotGroup);
+      }
+      outlinePass.selectedObjects = outlineMeshes;
+
+      // Scale-pulse on selected marker.
+      const pulseScale = 1 + Math.sin(now * 0.0026) * 0.06;
+      for (const mk of markers) {
+        mk.group.scale.setScalar(mk.siteId === selectedId ? pulseScale : 1);
+      }
+      for (const om of orbitalMarkers) {
+        const id = om.dotGroup.userData.siteId as string | undefined;
+        om.dotGroup.scale.setScalar(id === selectedId ? pulseScale : 1);
+      }
+
+      if (view === '3d') composer.render();
       else draw2d();
     };
     animate(performance.now());
@@ -895,6 +951,7 @@
           }
         }
       });
+      outlinePass.dispose();
       renderer.dispose();
       el3d.remove();
     };

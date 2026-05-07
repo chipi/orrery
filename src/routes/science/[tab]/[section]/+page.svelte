@@ -32,9 +32,9 @@
 
 <article class="page">
   <nav class="crumb">
-    <a href="{base}/science/">{m.science_heading()}</a>
+    <a href="{base}/science">{m.science_heading()}</a>
     <span class="sep">›</span>
-    <a href="{base}/science/{section.tab}/">{tabLabel(section.tab)}</a>
+    <a href="{base}/science/{section.tab}">{tabLabel(section.tab)}</a>
     <span class="sep">›</span>
     <span>{section.title}</span>
   </nav>
@@ -46,6 +46,7 @@
 
   {#if data.formulaHtml}
     <figure class="formula">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- KaTeX server-rendered HTML, ADR-034 -->
       {@html data.formulaHtml}
       {#if section.formula_caption}
         <figcaption>{section.formula_caption}</figcaption>

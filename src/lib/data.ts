@@ -32,10 +32,12 @@ import type {
 
 const cache = new Map<string, unknown>();
 
-async function get<T>(path: string): Promise<T> {
+type FetchLike = typeof fetch;
+
+async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<T> {
   const url = `${base}/data/${path}`;
   if (cache.has(url)) return cache.get(url) as T;
-  const res = await fetch(url);
+  const res = await fetchFn(url);
   if (!res.ok) throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
   const data = (await res.json()) as T;
   cache.set(url, data);
@@ -823,17 +825,19 @@ export async function getScienceSection(
   tab: ScienceTabId,
   id: string,
   locale = 'en-US',
+  fetchFn: FetchLike = fetch,
 ): Promise<ScienceSection | null> {
   try {
-    const baseRecord = await get<ScienceSectionBase>(`science/${tab}/${id}.json`);
+    const baseRecord = await get<ScienceSectionBase>(`science/${tab}/${id}.json`, fetchFn);
     const overlay = await get<ScienceSectionOverlay>(
       `i18n/${locale}/science/${tab}/${id}.json`,
+      fetchFn,
     ).catch(() => null);
     const fallback =
       overlay ??
       (locale === 'en-US'
         ? null
-        : await get<ScienceSectionOverlay>(`i18n/en-US/science/${tab}/${id}.json`).catch(
+        : await get<ScienceSectionOverlay>(`i18n/en-US/science/${tab}/${id}.json`, fetchFn).catch(
             () => null,
           ));
     if (!fallback) return null;
@@ -846,11 +850,14 @@ export async function getScienceSection(
 export async function getScienceTab(
   tab: ScienceTabId,
   locale = 'en-US',
+  fetchFn: FetchLike = fetch,
 ): Promise<ScienceSection[]> {
-  const index = await get<{ ids: string[] }>(`science/${tab}/_index.json`).catch(() => ({
+  const index = await get<{ ids: string[] }>(`science/${tab}/_index.json`, fetchFn).catch(() => ({
     ids: [] as string[],
   }));
-  const sections = await Promise.all(index.ids.map((id) => getScienceSection(tab, id, locale)));
+  const sections = await Promise.all(
+    index.ids.map((id) => getScienceSection(tab, id, locale, fetchFn)),
+  );
   return sections.filter((s): s is ScienceSection => s !== null).sort((a, b) => a.order - b.order);
 }
 

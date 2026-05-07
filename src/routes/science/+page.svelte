@@ -35,7 +35,7 @@
   <ul class="tab-grid">
     {#each SCIENCE_TABS as tab (tab)}
       <li>
-        <a class="tab-card" href="{base}/science/{tab}/">
+        <a class="tab-card" href="{base}/science/{tab}">
           <span class="tab-name">{tabLabel(tab)}</span>
         </a>
       </li>

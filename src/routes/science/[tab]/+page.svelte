@@ -29,7 +29,7 @@
 
 <div class="page">
   <nav class="crumb">
-    <a href="{base}/science/">{m.science_heading()}</a>
+    <a href="{base}/science">{m.science_heading()}</a>
     <span class="sep">›</span>
     <span>{tabLabel(data.tab)}</span>
   </nav>
@@ -42,7 +42,7 @@
     <ul class="section-list">
       {#each data.sections as section (section.id)}
         <li>
-          <a class="section-row" href="{base}/science/{data.tab}/{section.id}/">
+          <a class="section-row" href="{base}/science/{data.tab}/{section.id}">
             <span class="section-name">{section.title}</span>
             <span class="section-intro">{section.intro_sentence}</span>
           </a>

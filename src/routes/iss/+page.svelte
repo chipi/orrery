@@ -28,6 +28,7 @@
   let perfBanner = $state(false);
   let lowMemBanner = $state(false);
   let autoSpin = $state(true);
+  let indexOpen = $state(false);
   let hoverLabelEl: HTMLDivElement | undefined = $state();
   let hoverLabelText = $state('');
   let hoverLabelVisible = $state(false);
@@ -520,6 +521,12 @@
   onMount(() => {
     if (!browser) return;
     const u = get(page).url;
+    // Default the index drawer open on desktop (room for both canvas +
+    // sidebar). Closed on mobile to keep the canvas unobstructed; user
+    // can hit INDEX to peek.
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      indexOpen = true;
+    }
     if (urlWantsList(u)) {
       viewMode = 'list';
     } else if (deviceLowMemory()) {
@@ -548,12 +555,26 @@
       aria-hidden={viewMode !== '3d'}
     ></div>
 
-    <div
+    <aside
       class="layer list-layer"
-      class:hidden={viewMode !== 'list'}
+      class:drawer-mode={viewMode === '3d'}
+      class:fullscreen-mode={viewMode === 'list'}
+      class:hidden={viewMode === '3d' && !indexOpen}
       data-testid="iss-list-view"
-      aria-hidden={viewMode !== 'list'}
+      aria-hidden={viewMode === '3d' && !indexOpen}
+      aria-label={m.iss_list_heading()}
     >
+      {#if viewMode === '3d'}
+        <button
+          type="button"
+          class="index-close"
+          onclick={() => (indexOpen = false)}
+          aria-label={m.iss_index_close()}
+          data-testid="iss-index-close"
+        >
+          ×
+        </button>
+      {/if}
       <h2 class="list-heading">{m.iss_list_heading()}</h2>
       <ul class="module-list">
         {#each sortedModules as mod (mod.id)}
@@ -588,7 +609,7 @@
           {/each}
         </ul>
       {/if}
-    </div>
+    </aside>
 
     <div
       bind:this={hoverLabelEl}
@@ -634,16 +655,25 @@
           >
             {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
           </button>
+          <button
+            type="button"
+            class="toggle"
+            data-testid="iss-view-toggle"
+            aria-pressed={indexOpen}
+            onclick={() => (indexOpen = !indexOpen)}
+          >
+            {indexOpen ? m.iss_index_hide() : m.iss_index_show()}
+          </button>
+        {:else}
+          <button
+            type="button"
+            class="toggle"
+            data-testid="iss-view-toggle"
+            onclick={toggleViewMode}
+          >
+            {m.iss_view_3d()}
+          </button>
         {/if}
-        <button
-          type="button"
-          class="toggle"
-          data-testid="iss-view-toggle"
-          aria-pressed={viewMode === 'list'}
-          onclick={toggleViewMode}
-        >
-          {viewMode === '3d' ? m.iss_view_list() : m.iss_view_3d()}
-        </button>
       </div>
     </div>
   {/if}
@@ -670,10 +700,63 @@
   .layer.hidden {
     display: none;
   }
-  .list-layer {
+  .list-layer.fullscreen-mode {
     overflow: auto;
     padding: 72px 16px 24px;
     -webkit-overflow-scrolling: touch;
+  }
+  /* Drawer mode (3D mode + indexOpen) — overlays the canvas on the left.
+   * Desktop: fixed-width sidebar; mobile: full-width top sheet that
+   * doesn't crowd HUD controls (HUD is on top-left). */
+  .list-layer.drawer-mode {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    inset: auto;
+    top: 12px;
+    left: 12px;
+    bottom: 12px;
+    width: min(300px, calc(100vw - 24px));
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    backdrop-filter: blur(8px);
+    z-index: 5;
+    padding: 16px 16px 16px 16px;
+  }
+  @media (max-width: 767px) {
+    .list-layer.drawer-mode {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-height: 65vh;
+      border-radius: 12px 12px 0 0;
+      border-bottom: 0;
+      padding-top: 24px;
+    }
+  }
+  .index-close {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .index-close:hover,
+  .index-close:focus-visible {
+    border-color: rgba(78, 205, 196, 0.55);
+    color: #4ecdc4;
+    outline: none;
   }
   .list-heading {
     font-family: var(--font-display);

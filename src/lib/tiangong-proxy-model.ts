@@ -20,7 +20,11 @@ export type TiangongVisitorId = (typeof TIANGONG_VISITOR_IDS)[number];
 
 const HULL_WHITE = 0xece6dc;
 const MLI_GOLD = 0xc8a04c;
-const SOLAR_BLUE = 0x1f3e6c;
+// Tiangong's flexible solar arrays use gallium-arsenide cells with an
+// amber-gold backing — visually distinct from the deep blue of the
+// ISS's crystalline-silicon arrays. Wikipedia / CMSA renders show this
+// honey-gold tone consistently.
+const SOLAR_GOLD = 0xb8954a;
 const ARM_GREY = 0x3a3a40;
 const CAPSULE_HULL = 0xd9d2c4;
 
@@ -29,9 +33,11 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
   cvs.width = 64;
   cvs.height = 64;
   const ctx = cvs.getContext('2d')!;
-  ctx.fillStyle = '#1f3e6c';
+  // Honey-gold base — matches the GaAs-cell Tiangong arrays.
+  ctx.fillStyle = '#b8954a';
   ctx.fillRect(0, 0, 64, 64);
-  ctx.strokeStyle = '#0a1c34';
+  // Darker amber grid for the cell separators.
+  ctx.strokeStyle = '#5c4220';
   ctx.lineWidth = 1;
   for (let i = 0; i <= 64; i += 8) {
     ctx.beginPath();
@@ -45,7 +51,8 @@ function makeSolarArrayTexture(): THREE.CanvasTexture {
     ctx.lineTo(i, 64);
     ctx.stroke();
   }
-  ctx.fillStyle = 'rgba(80, 130, 200, 0.18)';
+  // Subtle warm sheen on alternating cells (specular highlight feel).
+  ctx.fillStyle = 'rgba(220, 180, 90, 0.22)';
   for (let y = 0; y < 64; y += 8) {
     for (let x = 0; x < 64; x += 16) {
       if ((x / 16 + y / 8) % 2 === 0) ctx.fillRect(x + 1, y + 1, 14, 6);
@@ -83,7 +90,7 @@ function buildShenzhou(): THREE.Group {
   // Two wing pairs flanking the service module (Shenzhou has port + starboard arrays).
   const wingPairUpper = new THREE.Group();
   wingPairUpper.position.set(0, 0.04, 0);
-  makeWingPair(wingPairUpper, 0.45, 0.18, SOLAR_BLUE);
+  makeWingPair(wingPairUpper, 0.45, 0.18, SOLAR_GOLD);
   g.add(wingPairUpper);
   return g;
 }
@@ -109,7 +116,7 @@ function buildTianzhou(): THREE.Group {
   // One wing pair on service module
   const wingPair = new THREE.Group();
   wingPair.position.set(0, 0.06, 0);
-  makeWingPair(wingPair, 0.5, 0.2, SOLAR_BLUE);
+  makeWingPair(wingPair, 0.5, 0.2, SOLAR_GOLD);
   g.add(wingPair);
   return g;
 }
@@ -208,7 +215,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   // Rotate so wings extend along ±Z (perpendicular to Tianhe's X-axis,
   // and out of plane with the Wentian/Mengtian cross-bar at +X end).
   tianheWingPair.rotation.y = Math.PI / 2;
-  makeWingPair(tianheWingPair, 1.6, 0.7, SOLAR_BLUE);
+  makeWingPair(tianheWingPair, 1.6, 0.7, SOLAR_GOLD);
   root.add(tianheWingPair);
   tianheWingPair.traverse((c) => {
     if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {
@@ -240,7 +247,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   const wentianWingPair = new THREE.Group();
   wentianWingPair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04, 0);
   wentianWingPair.rotation.z = Math.PI / 2; // wings perpendicular to lab axis
-  makeWingPair(wentianWingPair, 3.0, 1.4, SOLAR_BLUE);
+  makeWingPair(wentianWingPair, 3.0, 1.4, SOLAR_GOLD);
   root.add(wentianWingPair);
   // Apply solar texture to wing meshes for visual richness.
   const arrayTex = makeSolarArrayTexture();
@@ -268,7 +275,7 @@ export function buildTiangongProxyStation(): THREE.Group {
   const mengtianWingPair = new THREE.Group();
   mengtianWingPair.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labLen + 0.04), 0);
   mengtianWingPair.rotation.z = Math.PI / 2;
-  makeWingPair(mengtianWingPair, 3.0, 1.4, SOLAR_BLUE);
+  makeWingPair(mengtianWingPair, 3.0, 1.4, SOLAR_GOLD);
   root.add(mengtianWingPair);
   mengtianWingPair.traverse((c) => {
     if (c instanceof THREE.Mesh && c.material instanceof THREE.MeshStandardMaterial) {

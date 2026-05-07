@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Hyperbolic flyby with constant V∞ on the asymptotes far from the planet">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Planet -->
+  <circle cx="200" cy="150" r="14" class="focus" />
+  <text x="218" y="162" class="label-accent">planet</text>
+  <!-- Asymptotes (dashed) -->
+  <line x1="20" y1="40" x2="170" y2="135" class="dashed" />
+  <line x1="380" y1="40" x2="230" y2="135" class="dashed" />
+  <!-- Hyperbolic trajectory (accent curve) -->
+  <path d="M 30 50 Q 200 230 370 50" class="accent" />
+  <!-- Velocity arrows on the asymptotes -->
+  <line x1="60" y1="60" x2="40" y2="46" class="accent" />
+  <polygon points="38,44 46,46 44,52" fill="#4ecdc4" />
+  <text x="50" y="36" class="label-accent">V∞</text>
+  <line x1="340" y1="60" x2="360" y2="46" class="accent" />
+  <polygon points="362,44 354,46 356,52" fill="#4ecdc4" />
+  <text x="318" y="36" class="label-accent">V∞</text>
+  <!-- Caption -->
+  <text x="68" y="288" class="label-mute">|V∞| same on both asymptotes — direction changes by deflection angle</text>
+</svg>

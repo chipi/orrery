@@ -1,0 +1,12 @@
+{
+  "id": "specific-impulse",
+  "tab": "propulsion",
+  "order": 3,
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Rocket detail shows engine Isp" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Specific impulse", "u": "https://en.wikipedia.org/wiki/Specific_impulse", "t": "intro" },
+    { "l": "NASA · Specific Impulse", "u": "https://www.grc.nasa.gov/www/k-12/airplane/specimp.html", "t": "core" }
+  ]
+}

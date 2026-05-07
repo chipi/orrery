@@ -1,0 +1,10 @@
+{
+  "title": "∆v as Mission Budget",
+  "intro_sentence": "The single number that says whether a mission is possible — total velocity change you need to spend, summed over every burn.",
+  "body_paragraphs": [
+    "∆v (delta-v) is the bookkeeping currency of spaceflight. Every engine burn — getting off Earth, leaving orbit, correcting course, slowing down at the destination — costs you some change in velocity. Add them all up and you have the mission's ∆v budget.",
+    "On the supply side: your rocket's ∆v capability comes from the Tsiolkovsky equation — engine `Isp` and propellant fraction set the ceiling. On the demand side: trajectory design picks the path with the cheapest summed cost. A mission flies if budget supply ≥ demand. It doesn't if it doesn't, no matter how much money you throw at the problem.",
+    "Some reference numbers: Earth surface to LEO costs ~9.4 km/s of ∆v (most of it fighting gravity and atmosphere). LEO to a Hohmann transfer to Mars adds ~3.6 km/s. Mars orbit insertion adds another ~2 km/s. A direct one-way Mars landing is around 15 km/s total — close to the limit of what current chemical rockets can deliver in one shot."
+  ],
+  "diagram_caption": "Stacked bars: launch ∆v + injection + cruise corrections + arrival = total mission budget."
+}

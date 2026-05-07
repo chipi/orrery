@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="∆v vs mass-ratio: logarithmic curve, doubling propellant adds a constant chunk">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Axes -->
+  <line x1="60" y1="40" x2="60" y2="240" class="stroke" />
+  <line x1="60" y1="240" x2="360" y2="240" class="stroke" />
+  <text x="20" y="44" class="label-mute">∆v</text>
+  <text x="324" y="258" class="label-mute">m₀/m_f</text>
+  <!-- Logarithmic curve: y = 240 - 32*ln(x), x mapped to 60..360 with x=1 at 60 -->
+  <!-- Approximate path through several points -->
+  <path d="M 60 240 Q 90 215 120 195 T 200 158 T 280 130 T 360 105" class="accent" />
+  <!-- Markers at mass ratio 2, 5, 10, 20 -->
+  <line x1="120" y1="240" x2="120" y2="195" class="dashed" />
+  <line x1="60" y1="195" x2="120" y2="195" class="dashed" />
+  <text x="116" y="256" class="label-mute">2</text>
+  <text x="200" y="256" class="label-mute">5</text>
+  <text x="280" y="256" class="label-mute">10</text>
+  <line x1="200" y1="240" x2="200" y2="158" class="dashed" />
+  <line x1="60" y1="158" x2="200" y2="158" class="dashed" />
+  <line x1="280" y1="240" x2="280" y2="130" class="dashed" />
+  <line x1="60" y1="130" x2="280" y2="130" class="dashed" />
+  <text x="86" y="288" class="label-mute">∆v = Isp·g₀·ln(m₀/m_f) — logarithmic in mass ratio</text>
+</svg>

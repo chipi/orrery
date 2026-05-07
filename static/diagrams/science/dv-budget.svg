@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Stacked ∆v budget bar showing each mission phase">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .accent-fill { fill: rgba(78, 205, 196, 0.18); stroke: #4ecdc4; stroke-width: 1.5; }
+    .body-fill { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Vertical axis -->
+  <line x1="60" y1="40" x2="60" y2="260" class="stroke" />
+  <line x1="60" y1="260" x2="340" y2="260" class="stroke" />
+  <text x="20" y="44" class="label-mute">∆v (km/s)</text>
+  <!-- Stacked bar at x=140, width=80 -->
+  <!-- launch ascent: 9.4 km/s → 9.4×16 = 150 px tall -->
+  <rect x="140" y="110" width="80" height="150" class="body-fill" />
+  <text x="226" y="190" class="label-mute">launch ascent · 9.4</text>
+  <!-- TMI: 3.6 → 58 px -->
+  <rect x="140" y="52" width="80" height="58" class="accent-fill" />
+  <text x="226" y="86" class="label-accent">TMI · 3.6</text>
+  <!-- TCM: 0.1 → 2 px (drawn as thin line) -->
+  <rect x="140" y="50" width="80" height="2" fill="rgba(255,255,255,0.55)" />
+  <text x="226" y="58" class="label-mute">TCM · 0.1</text>
+  <!-- MOI: 2.0 → 32 px (but we'll cap, place above) -->
+  <rect x="140" y="18" width="80" height="32" class="body-fill" />
+  <text x="226" y="38" class="label-mute">MOI · 2.0</text>
+  <!-- Total label -->
+  <line x1="220" y1="18" x2="240" y2="18" class="accent" />
+  <line x1="220" y1="260" x2="240" y2="260" class="accent" />
+  <text x="246" y="142" class="label-accent">Σ ≈ 15 km/s</text>
+  <text x="74" y="288" class="label-mute">stacked-bar mission ∆v · Earth → Mars landing</text>
+</svg>

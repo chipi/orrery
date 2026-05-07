@@ -1,0 +1,10 @@
+{
+  "title": "V∞ — Hyperbolic Excess Velocity",
+  "intro_sentence": "The speed you have left over once you've climbed out of a planet's gravity well — what defines a flyby's arrival energy.",
+  "body_paragraphs": [
+    "Imagine an asymptote, infinitely far from the planet. The speed you'd be moving at on that asymptote is V∞ — pronounced 'V-infinity.' It's the Sun-relative speed minus the planet's contribution to your motion. On a hyperbolic flyby, V∞ is constant along both arms of the hyperbola.",
+    "V∞ controls how big the arrival burn has to be. To capture into orbit, you need to bleed off enough energy to drop below escape — the deeper the well, the more `∆v` it costs to slow you down. Mars Reconnaissance Orbiter arrived at Mars with V∞ ≈ 2.6 km/s, then spent ~1 km/s of `∆v` for orbit insertion. Voyager 2 reached Neptune with V∞ ≈ 8 km/s and didn't even try to insert — it just flew by.",
+    "On `/fly`'s HUD you'll see V∞ pop up when the spacecraft enters the destination's sphere of influence. It's the moment of truth: how much speed do you have to kill, and can your rocket afford to kill it?"
+  ],
+  "diagram_caption": "Hyperbolic flyby: V∞ is the constant speed on the asymptotes, far from the planet."
+}

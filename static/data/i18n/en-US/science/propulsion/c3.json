@@ -1,0 +1,10 @@
+{
+  "title": "C3 — Characteristic Energy",
+  "intro_sentence": "How much energy per unit mass a rocket needs to leave Earth's gravity well with leftover speed — the standard launch-energy metric.",
+  "body_paragraphs": [
+    "C3 is the square of the hyperbolic excess velocity. Units: km²/s². It tells you how much energy beyond escape your launch vehicle has to deliver. C3 = 0 means you barely escape Earth's gravity, arriving at infinity with zero speed. C3 = 25 km²/s² means you arrive with V∞ = 5 km/s of leftover heliocentric velocity.",
+    "Launch vehicles are characterised by their C3-vs-payload curve. Falcon Heavy can throw ~16 tonnes to C3=10, but only ~5 tonnes to C3=80. Mars typically wants C3 around 8-12. Jupiter direct: C3 around 80. New Horizons launched with C3 = 158 km²/s² — the highest of any mission ever — to make the trip to Pluto in just 9.5 years.",
+    "On Orrery's `/missions` FLIGHT tab the C3 of each interplanetary mission is the canonical first-row data point. It's the single number that captures 'how hard was it to launch.'"
+  ],
+  "formula_caption": "C3 is just V∞ squared. Same physics, different units."
+}

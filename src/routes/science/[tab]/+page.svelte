@@ -1,13 +1,12 @@
 <!--
-  /science/[tab] — section list within a tab.
+  /science/[tab] — tab landing page.
 
-  Acts as a navigable menu of sections; the reading experience lives at
-  /science/[tab]/[section]. PRD-008 § design hints: this is the
-  "tab page" referenced by the desktop left-rail mockup. Mobile shows
-  it as the index for a tab.
+  The right rail (in /science/+layout.svelte) lists every section in
+  this tab and persists across the section reading view, so this page
+  can focus on the editorial 101 lead-in. A "pick a section to begin"
+  hint anchors the eye to the rail when there's no further content.
 -->
 <script lang="ts">
-  import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import type { PageData } from './$types';
 
@@ -42,21 +41,7 @@
   </section>
 {/if}
 
-<h2 class="list-heading">Sections</h2>
-{#if data.sections.length === 0}
-  <p class="empty">{m.science_tab_empty()}</p>
-{:else}
-  <ul class="section-list">
-    {#each data.sections as section (section.id)}
-      <li>
-        <a class="section-row" href="{base}/science/{data.tab}/{section.id}">
-          <span class="section-name">{section.title}</span>
-          <span class="section-intro">{section.intro_sentence}</span>
-        </a>
-      </li>
-    {/each}
-  </ul>
-{/if}
+<p class="hint">→ Pick a section from the right rail to start reading.</p>
 
 <style>
   .tab-hero {
@@ -77,7 +62,7 @@
     margin: 0;
   }
   .tab-intro {
-    margin: 0 0 32px;
+    margin: 0 0 24px;
     padding: 18px 20px;
     background: rgba(78, 205, 196, 0.05);
     border-left: 3px solid rgba(78, 205, 196, 0.6);
@@ -108,59 +93,16 @@
   .tab-intro p:not(.badge):not(.headline):last-child {
     margin-bottom: 0;
   }
-  .list-heading {
-    font-family: var(--font-display);
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 0 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .empty {
+  .hint {
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.5);
-    margin-top: 24px;
+    margin: 8px 0 0;
   }
-  .section-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .section-row {
-    display: block;
-    padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-    color: var(--color-text);
-    text-decoration: none;
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .section-row:hover,
-  .section-row:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.06);
-    outline: none;
-  }
-  .section-name {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-  .section-intro {
-    display: block;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.65);
-    margin-top: 4px;
+  @media (max-width: 768px) {
+    .hint {
+      display: none;
+    }
   }
 </style>

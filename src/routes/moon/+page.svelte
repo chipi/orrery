@@ -56,6 +56,8 @@
   let layerSurface = $state(true);
   let layerOrbiters = $state(true);
   let layerOrbits = $state(true);
+  let autoSpin = $state(true);
+  let resetMoonCamera: () => void = () => {};
 
   function colorFor(site: MoonSite): string {
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
@@ -120,6 +122,9 @@
     getMoonSites(localeFromPage($page))
       .then((list) => {
         sites = list;
+        // Deep-link: ?site=<id> opens the panel pre-selected.
+        const siteParam = $page.url.searchParams.get('site');
+        if (siteParam) selectSite(siteParam);
       })
       .catch((err) => {
         console.error('Failed to load moon sites:', err);
@@ -447,6 +452,9 @@
     let camR = 80;
     let camP = Math.PI / 2;
     let camT = 0;
+    const camR0 = camR;
+    const camP0 = camP;
+    const camT0 = camT;
     const updateCam = () => {
       camera.position.set(
         camR * Math.sin(camP) * Math.sin(camT),
@@ -456,6 +464,12 @@
       camera.lookAt(0, 0, 0);
     };
     updateCam();
+    resetMoonCamera = () => {
+      camR = camR0;
+      camP = camP0;
+      camT = camT0;
+      updateCam();
+    };
 
     const el3d = renderer.domElement;
     let isDrag = false;
@@ -828,7 +842,7 @@
       // v0.1.7+: rotation slowed (was 0.05 rad/s) so users have time
       // to track and click moving labels. ADR-025 reduced-motion gate
       // still applies.
-      if (!reducedMotion) moonMesh.rotation.y += dt * 0.015;
+      if (!reducedMotion && autoSpin) moonMesh.rotation.y += dt * 0.015;
 
       // Orbital dot motion — perception-scaled, ~30 s per ring.
       for (const om of orbitalMarkers) {
@@ -912,6 +926,25 @@
       >
         {view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
       </button>
+      {#if view === '3d'}
+        <button
+          type="button"
+          class="toggle"
+          data-testid="reset-camera"
+          onclick={() => resetMoonCamera()}
+        >
+          {m.iss_reset_camera()}
+        </button>
+        <button
+          type="button"
+          class="toggle"
+          data-testid="spin-toggle"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+        >
+          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+        </button>
+      {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button

@@ -60,6 +60,8 @@
   let layerOrbiters = $state(true);
   let layerOrbits = $state(true);
   let layerTraverses = $state(true);
+  let autoSpin = $state(true);
+  let resetMarsCamera: () => void = () => {};
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});
 
@@ -575,6 +577,9 @@
     let camR = 90;
     let camP = (45 * Math.PI) / 180;
     let camT = 0;
+    const camR0 = camR;
+    const camP0 = camP;
+    const camT0 = camT;
     function applyCamera() {
       camera.position.x = camR * Math.sin(camP) * Math.cos(camT);
       camera.position.y = camR * Math.cos(camP);
@@ -582,6 +587,12 @@
       camera.lookAt(0, 0, 0);
     }
     applyCamera();
+    resetMarsCamera = () => {
+      camR = camR0;
+      camP = camP0;
+      camT = camT0;
+      applyCamera();
+    };
 
     let dragging = false;
     let dragStartX = 0;
@@ -705,10 +716,9 @@
       const now = performance.now();
       const dt = (now - lastT) / 1000;
       lastT = now;
-      // Mars rotation (Mars day = 24.62 h Earth time; visualised at
-      // accelerated rate for perception). marsAxis carries the tilt;
-      // marsMesh rotates within the tilted frame.
-      if (!reduced) marsMesh.rotation.y += dt * 0.05;
+      // Mars rotation gated on autoSpin so the user can pause/resume
+      // from the HUD. Reduced-motion users always pause.
+      if (!reduced && autoSpin) marsMesh.rotation.y += dt * 0.05;
       // Traverse end-dot pulse — only for active rovers, only when
       // visible. Uses sine-wave scale (0.85 → 1.25) at ~1 Hz.
       const pulse = 1.05 + 0.2 * Math.sin(now * 0.006);
@@ -1018,6 +1028,25 @@
       >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
+      {#if view === '3d'}
+        <button
+          type="button"
+          class="toggle"
+          data-testid="reset-camera"
+          onclick={() => resetMarsCamera()}
+        >
+          {m.iss_reset_camera()}
+        </button>
+        <button
+          type="button"
+          class="toggle"
+          data-testid="spin-toggle"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+        >
+          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+        </button>
+      {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button

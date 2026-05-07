@@ -58,6 +58,8 @@
   let layerConstellations = $state(true);
   let layerComsats = $state(true);
   let layerMoonOrbiters = $state(true);
+  let autoSpin = $state(true);
+  let resetEarthCamera: () => void = () => {};
 
   function categoryVisible(cat: ReturnType<typeof categoriseEarthSatellite>): boolean {
     switch (cat) {
@@ -141,6 +143,9 @@
     getEarthObjects(localeFromPage($page))
       .then((list) => {
         objects = list;
+        // Deep-link: ?object=<id> opens the panel pre-selected.
+        const objParam = $page.url.searchParams.get('object');
+        if (objParam) selectObject(objParam);
       })
       .catch((err) => {
         console.error('Failed to load earth objects:', err);
@@ -392,6 +397,9 @@
     let camR = 35;
     let camP = Math.PI / 2.2;
     let camT = 0.4;
+    const camR0 = camR;
+    const camP0 = camP;
+    const camT0 = camT;
     const updateCam = () => {
       camera.position.set(
         camR * Math.sin(camP) * Math.sin(camT),
@@ -401,6 +409,12 @@
       camera.lookAt(0, 0, 0);
     };
     updateCam();
+    resetEarthCamera = () => {
+      camR = camR0;
+      camP = camP0;
+      camT = camT0;
+      updateCam();
+    };
 
     const el3d = renderer.domElement;
     let isDrag = false;
@@ -767,7 +781,7 @@
         }
       }
 
-      if (!reducedMotion) {
+      if (!reducedMotion && autoSpin) {
         earthMesh.rotation.y += dt * 0.02;
         for (const s of sats) {
           if (s.id === 'lro') continue;
@@ -851,6 +865,25 @@
       >
         {view === '3d' ? m.earth_label_view_2d() : m.earth_label_view_3d()}
       </button>
+      {#if view === '3d'}
+        <button
+          type="button"
+          class="toggle"
+          data-testid="reset-camera"
+          onclick={() => resetEarthCamera()}
+        >
+          {m.iss_reset_camera()}
+        </button>
+        <button
+          type="button"
+          class="toggle"
+          data-testid="spin-toggle"
+          aria-pressed={!autoSpin}
+          onclick={() => (autoSpin = !autoSpin)}
+        >
+          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
+        </button>
+      {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button

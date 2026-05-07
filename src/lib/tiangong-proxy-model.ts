@@ -155,14 +155,17 @@ export function buildTiangongProxyStation(): THREE.Group {
   setShadowFlags(tianhe);
   root.add(tianhe);
 
-  // Tianhe forward node — slightly larger cylinder at the +X end where the
-  // T-junction radial ports live.
+  // Forward node module — the spherical multi-port hub where Tianhe,
+  // Wentian, Mengtian, and visiting vehicles all converge. Real
+  // Tiangong's node module has 5 docking ports (forward axial + 4
+  // radial) and reads as a rounded spherical hub in CMSA renders, not
+  // a flat cylinder. Sized larger than Tianhe radius so it visibly
+  // dominates the junction.
   const forwardNode = new THREE.Mesh(
-    new THREE.CylinderGeometry(tianheRadius * 1.18, tianheRadius * 1.18, 0.28, 14),
+    new THREE.SphereGeometry(tianheRadius * 1.55, 18, 14),
     hullMat,
   );
-  forwardNode.rotation.z = Math.PI / 2;
-  forwardNode.position.set(tianheLen / 2 + 0.14, 0, 0);
+  forwardNode.position.set(tianheLen / 2 + 0.18, 0, 0);
   forwardNode.userData.stationPickable = true;
   forwardNode.userData.moduleId = 'tianhe';
   setShadowFlags(forwardNode);
@@ -180,16 +183,20 @@ export function buildTiangongProxyStation(): THREE.Group {
   setShadowFlags(aftMli);
   root.add(aftMli);
 
-  // Forward-node nadir docking adapter (gold MLI) — where Tianzhou attaches.
-  const nadirAdapter = new THREE.Mesh(
-    new THREE.CylinderGeometry(tianheRadius * 0.85, tianheRadius * 0.85, 0.18, 12),
+  // Forward-node forward axial docking adapter (gold MLI) — where
+  // Tianzhou cargo docks, on the opposite end of the station from
+  // Shenzhou (which is at Tianhe's aft port). This is the canonical
+  // long-axis configuration: cargo at one end, crew at the other.
+  const forwardAxialAdapter = new THREE.Mesh(
+    new THREE.CylinderGeometry(tianheRadius * 0.9, tianheRadius * 0.9, 0.16, 12),
     mliMat,
   );
-  nadirAdapter.position.set(tianheLen / 2 + 0.14, -0.28, 0);
-  nadirAdapter.userData.stationPickable = true;
-  nadirAdapter.userData.moduleId = 'tianhe';
-  setShadowFlags(nadirAdapter);
-  root.add(nadirAdapter);
+  forwardAxialAdapter.rotation.z = Math.PI / 2;
+  forwardAxialAdapter.position.set(tianheLen / 2 + 0.18 + tianheRadius * 1.55 + 0.05, 0, 0);
+  forwardAxialAdapter.userData.stationPickable = true;
+  forwardAxialAdapter.userData.moduleId = 'tianhe';
+  setShadowFlags(forwardAxialAdapter);
+  root.add(forwardAxialAdapter);
 
   // Forward-node zenith docking adapter (gold MLI) — where the second
   // Shenzhou attaches during crew handover periods (the canonical
@@ -198,7 +205,7 @@ export function buildTiangongProxyStation(): THREE.Group {
     new THREE.CylinderGeometry(tianheRadius * 0.85, tianheRadius * 0.85, 0.18, 12),
     mliMat,
   );
-  zenithAdapter.position.set(tianheLen / 2 + 0.14, 0, 0.28);
+  zenithAdapter.position.set(tianheLen / 2 + 0.18, 0, tianheRadius * 1.55 + 0.05);
   zenithAdapter.rotation.x = Math.PI / 2;
   zenithAdapter.userData.stationPickable = true;
   zenithAdapter.userData.moduleId = 'tianhe';
@@ -341,13 +348,25 @@ export function buildTiangongProxyStation(): THREE.Group {
   }[] = [
     // Shenzhou docks at Tianhe aft port (-X end), nose pointed away (-X).
     { id: 'shenzhou', build: buildShenzhou, port: [-(tianheLen / 2 + 0.2), 0, 0], out: 'minusX' },
-    // Tianzhou docks at the forward-node nadir port (-Y from forward node).
-    { id: 'tianzhou', build: buildTianzhou, port: [tianheLen / 2 + 0.14, -0.5, 0], out: 'minusY' },
-    // Second Shenzhou at the forward-node zenith port (+Z) — the
-    // canonical 3-spacecraft configuration during crew handover. Same
-    // pickable id as the aft Shenzhou; both meshes belong to the
+    // Tianzhou docks at the forward-node forward axial port (+X end),
+    // OPPOSITE Shenzhou — the long-axis cargo/crew configuration shown
+    // in canonical CMSA station diagrams.
+    {
+      id: 'tianzhou',
+      build: buildTianzhou,
+      port: [tianheLen / 2 + 0.18 + tianheRadius * 1.55 + 0.25, 0, 0],
+      out: 'plusX',
+    },
+    // Second Shenzhou at the forward-node zenith port (+Z radial) —
+    // the canonical 3-spacecraft configuration during crew handover.
+    // Same pickable id as the aft Shenzhou; both meshes belong to the
     // shenzhou panel (visiting-fleet pattern from /iss).
-    { id: 'shenzhou', build: buildShenzhou, port: [tianheLen / 2 + 0.14, 0, 0.5], out: 'plusZ' },
+    {
+      id: 'shenzhou',
+      build: buildShenzhou,
+      port: [tianheLen / 2 + 0.18, 0, tianheRadius * 1.55 + 0.4],
+      out: 'plusZ',
+    },
   ];
 
   for (const ship of fleet) {

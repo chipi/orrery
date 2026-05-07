@@ -21,9 +21,13 @@ import {
   getIssModules,
   getIssModule,
   getIssModuleGallery,
+  getScienceSection,
+  getScienceTab,
+  getScienceTabIntro,
   rockets,
   earthObjects,
   moonSites,
+  SCIENCE_TABS,
   __resetCache,
 } from './data';
 
@@ -508,6 +512,93 @@ describe('panel gallery loaders (v0.1.10)', () => {
     const urls = await getMoonSiteGallery('apollo11');
     expect(urls.length).toBeGreaterThan(0);
     expect(urls[0]).toMatch(/\/images\/moon-sites\/apollo11\/01\.jpg$/);
+  });
+});
+
+describe('SCIENCE_TABS', () => {
+  it('exposes the six encyclopedia tab ids', () => {
+    expect(SCIENCE_TABS).toEqual([
+      'orbits',
+      'transfers',
+      'propulsion',
+      'mission-phases',
+      'scales-time',
+      'porkchop',
+    ]);
+  });
+});
+
+describe('getScienceSection', () => {
+  it('merges base + en-US overlay for a known section', async () => {
+    const s = await getScienceSection('orbits', 'vis-viva');
+    expect(s).not.toBeNull();
+    expect(s!.id).toBe('vis-viva');
+    expect(s!.tab).toBe('orbits');
+    expect(s!.title).toBe('Vis-Viva Equation');
+    expect(s!.formula_latex).toBeTruthy();
+    expect(s!.body_paragraphs.length).toBeGreaterThan(0);
+    expect(s!.narrative_101).toBeDefined();
+    expect(s!.narrative_101!.length).toBeGreaterThan(0);
+  });
+
+  it('falls back to en-US when locale overlay is missing', async () => {
+    const s = await getScienceSection('orbits', 'vis-viva', 'xx-TEST');
+    expect(s).not.toBeNull();
+    expect(s!.title).toBe('Vis-Viva Equation');
+  });
+
+  it('returns null for an unknown section id', async () => {
+    const s = await getScienceSection('orbits', 'does-not-exist');
+    expect(s).toBeNull();
+  });
+
+  it('every declared section in every tab resolves to a complete record', async () => {
+    for (const tab of SCIENCE_TABS) {
+      const sections = await getScienceTab(tab);
+      expect(sections.length).toBeGreaterThan(0);
+      for (const s of sections) {
+        expect(s.id).toBeTruthy();
+        expect(s.title).toBeTruthy();
+        expect(s.intro_sentence).toBeTruthy();
+        expect(s.body_paragraphs.length).toBeGreaterThan(0);
+        expect(s.links.length).toBeGreaterThan(0);
+      }
+    }
+  });
+});
+
+describe('getScienceTab', () => {
+  it('returns orbits sections sorted by order', async () => {
+    const sections = await getScienceTab('orbits');
+    expect(sections.length).toBe(8);
+    for (let i = 1; i < sections.length; i++) {
+      expect(sections[i].order).toBeGreaterThanOrEqual(sections[i - 1].order);
+    }
+  });
+
+  it('returns 40 sections across all six tabs combined', async () => {
+    let total = 0;
+    for (const tab of SCIENCE_TABS) {
+      total += (await getScienceTab(tab)).length;
+    }
+    expect(total).toBe(40);
+  });
+});
+
+describe('getScienceTabIntro', () => {
+  it('returns the editorial 101 intro for each of the six tabs', async () => {
+    for (const tab of SCIENCE_TABS) {
+      const intro = await getScienceTabIntro(tab);
+      expect(intro).not.toBeNull();
+      expect(intro!.headline).toBeTruthy();
+      expect(intro!.paragraphs.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('falls back to en-US for an unknown locale', async () => {
+    const intro = await getScienceTabIntro('orbits', 'xx-TEST');
+    expect(intro).not.toBeNull();
+    expect(intro!.headline).toContain('gravity');
   });
 });
 

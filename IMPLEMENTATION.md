@@ -6,7 +6,7 @@
 
 ## Current state
 
-**Production app (v0.3.x):** a static SvelteKit SPA — six primary screens (`/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`) plus additional routes such as `/mars` as the surface-map work progresses. All mission, planet, porkchop, and overlay JSON is served from `static/data/` at runtime (`/data/...` URLs). CI runs typecheck, lint, Vitest, ajv validation, porkchop precompute (chained into `npm run build`), and doc-system checks; Playwright e2e runs on push to `main`.
+**Production app (v0.3.x):** a static SvelteKit SPA — ten primary screens (`/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong`, `/science`). All mission, planet, porkchop, science section, and overlay JSON is served from `static/data/` at runtime (`/data/...` URLs). CI runs typecheck, lint, Vitest, ajv validation, porkchop precompute, and doc-system checks (all chained into `npm run build`); Playwright e2e runs on push to `main`.
 
 The HTML prototypes under `docs/prototypes/` remain the historical design ground truth; they are not the shipping runtime.
 
@@ -397,7 +397,25 @@ Tracked under `v0.4.0` milestone:
 - **#36** Wave 1 continuation languages — French / German / Portuguese-BR / Italian
 - **#37** Wave 2 — CJK locales (Mandarin / Japanese / Korean) — gated on follow-up CJK font ADR
 - **#38** Wave 3 — Hindi / Arabic-RTL / Russian — gated on follow-up RTL CSS ADR
+- **#39** `/science` encyclopedia — Phase 1 shipped (route + 40 sections + diagrams + editorial 101). Phase 2 (cross-screen `?` chips) tracked separately.
 - **#30** v0.1.10 audit cleanup — drift fixes carried over
+
+### `/science` Phase 1 — what landed
+
+Ten primary nav destinations now (was nine): `/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong`, `/science`. The encyclopedia is a fully-prerendered companion to the simulator — every label and contour the simulator shows now has a deep-linkable explainer.
+
+- **Route**: `/science` landing + `/science/[tab]` × 6 + `/science/[tab]/[section]` × 40 = 47 prerendered pages
+- **Layout**: shared three-column chrome — left rail (six tabs, sticky), centre (content), right rail (active tab's sections, sticky); folds to single-column on mobile
+- **Content**: editorial 8-chapter Space-101 narrative on the landing; 6 tab-level 101 intros; 40 per-section narrative_101 lead-ins; 40 technical body sections with KaTeX-rendered formulas where applicable
+- **Diagrams**: 40 hand-coded SVGs (engineering-blueprint style, white-on-black with teal accents) + 6 artistic tab covers (chapter-title plates)
+- **Math**: KaTeX server-rendered at build (ADR-034) — client receives HTML only, no JS math library
+- **Schema + data**: `science-section.schema.json`, `science-section-overlay.schema.json`, `science-tab-intro.schema.json` — all chained into `validate-data` with fail-closed `validate-diagrams.ts` integrity check
+- **i18n**: en-US only at ship, fallback per ADR-017; Phase 3 LLM translation pass for 13 locales deferred per ADR-033
+- **ADRs**: ADR-034 (KaTeX), ADR-035 (diagram authoring), ADR-036 (`?`-chip pattern, used in Phase 2)
+
+**Tests:** Vitest unit tests for the data layer (`getScienceSection`, `getScienceTab`, `getScienceTabIntro`) + the KaTeX render helper. Playwright e2e smoke (`tests/e2e/science.spec.ts`) covers tab grid, tab page intro, section reading view, KaTeX visibility, diagram visibility, deep-link navigation.
+
+**Phase 2 (deferred):** ~30 cross-screen `?` chips on `/plan` (departure window, time-of-flight, ∆v color bar), `/fly` (∆v HUD, MET, V∞, distances), `/missions` FLIGHT tab (C3, V∞, TLI/TMI, TCM, OI, total ∆v), `/explore` planet TECHNICAL tab (orbital elements), `/earth` legend (LEO/MEO/GEO/HEO), and `/moon` + `/mars` mission types. Already mapped; new GH issue tracks it separately.
 
 ---
 

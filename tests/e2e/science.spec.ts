@@ -1,0 +1,91 @@
+import { test, expect } from '@playwright/test';
+
+/**
+ * /science — encyclopedia smoke (PRD-008 / ADR-034).
+ *
+ * Three layers to cover: landing page (editorial Space-101 narrative),
+ * tab listing (101 intro + cover diagram + section list in right rail),
+ * and the section reading view (hero diagram + 101 + KaTeX formula +
+ * body + see-in-app + learn-more). The route is fully prerendered, so
+ * deep links must work on first load.
+ */
+
+test.describe('/science', () => {
+  test('landing renders the eight-chapter editorial narrative + tab grid', async ({ page }) => {
+    await page.goto('/science');
+    await expect(page.locator('h1', { hasText: 'SCIENCE' })).toBeVisible();
+    // Chapter headlines from the landing-page Space-101 story.
+    await expect(page.getByText('So you want to fly a rocket to Mars.')).toBeVisible();
+    await expect(page.getByText('Now go play.')).toBeVisible();
+    // Left rail with all six tabs.
+    const rail = page.locator('aside[aria-label="Encyclopedia tabs"]');
+    await expect(rail.getByRole('link', { name: 'ORBITS' })).toBeVisible();
+    await expect(rail.getByRole('link', { name: 'PORKCHOP' })).toBeVisible();
+  });
+
+  test('tab page shows breadcrumb, cover image, 101 intro, and right-rail sections', async ({
+    page,
+  }) => {
+    await page.goto('/science/orbits');
+    // Breadcrumb back to Space 101.
+    const crumb = page.locator('nav.crumb');
+    await expect(crumb.getByRole('link', { name: 'SCIENCE' })).toBeVisible();
+    await expect(page.locator('h1', { hasText: 'ORBITS' })).toBeVisible();
+    // Tab cover SVG (chapter-title plate).
+    await expect(page.locator('img[src$="_cover-orbits.svg"]')).toBeVisible();
+    // 101 intro block.
+    await expect(page.locator('section[aria-label="A focused 101 for this tab"]')).toBeVisible();
+    // Right rail with all eight orbits sections.
+    const sectionRail = page.locator('aside[aria-label="Sections in this tab"]');
+    await expect(sectionRail.getByRole('link', { name: 'Vis-Viva Equation' })).toBeVisible();
+    await expect(sectionRail.getByRole('link', { name: "Kepler's Three Laws" })).toBeVisible();
+  });
+
+  test('section page renders hero diagram, 101, KaTeX formula, body, and links', async ({
+    page,
+  }) => {
+    await page.goto('/science/orbits/vis-viva');
+    await expect(page.locator('h1', { hasText: 'Vis-Viva Equation' })).toBeVisible();
+    // Hero diagram above the 101.
+    await expect(page.locator('img[src$="vis-viva.svg"]')).toBeVisible();
+    // 101 zoom-in block.
+    await expect(page.locator('section[aria-label="A focused 101"]')).toBeVisible();
+    // KaTeX-rendered formula (server-rendered HTML, no JS math library).
+    await expect(page.locator('.katex-display').first()).toBeVisible();
+    // Learn-more tiered links.
+    const learnMore = page.locator('section.learn-more');
+    await expect(learnMore.getByRole('link', { name: /Wikipedia.*Vis-viva/i })).toBeVisible();
+  });
+
+  test('right rail highlights the active section and lets you jump between them', async ({
+    page,
+  }) => {
+    await page.goto('/science/orbits/vis-viva');
+    const sectionRail = page.locator('aside[aria-label="Sections in this tab"]');
+    const active = sectionRail.locator('a[aria-current="page"]');
+    await expect(active).toHaveCount(1);
+    await expect(active).toContainText('Vis-Viva Equation');
+    // Jump to a sibling section without leaving the article.
+    await sectionRail.getByRole('link', { name: 'Eccentricity' }).click();
+    await expect(page).toHaveURL(/\/science\/orbits\/eccentricity\/?$/);
+    await expect(page.locator('h1', { hasText: 'Eccentricity' })).toBeVisible();
+  });
+
+  test('breadcrumb on a section page links back to /science', async ({ page }) => {
+    await page.goto('/science/transfers/hohmann-transfer');
+    const crumb = page.locator('nav.crumb');
+    await expect(crumb.getByText('Hohmann Transfer')).toBeVisible();
+    await crumb.getByRole('link', { name: 'SCIENCE' }).click();
+    await expect(page).toHaveURL(/\/science\/?$/);
+    await expect(page.getByText('So you want to fly a rocket to Mars.')).toBeVisible();
+  });
+
+  test('deep link to a section without a formula still renders cleanly', async ({ page }) => {
+    // /science/scales-time/au has a diagram but no formula_latex.
+    await page.goto('/science/scales-time/au');
+    await expect(page.locator('h1', { hasText: 'AU' })).toBeVisible();
+    await expect(page.locator('img[src$="au.svg"]')).toBeVisible();
+    // No KaTeX block expected here.
+    await expect(page.locator('.katex-display')).toHaveCount(0);
+  });
+});

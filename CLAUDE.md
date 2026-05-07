@@ -8,9 +8,9 @@ Instructions for agentic AI working on this codebase. Read this before touching 
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Eight primary nav destinations, real orbital mechanics, **36** missions in the library (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
+Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Ten primary nav destinations, real orbital mechanics, **36** missions in the library (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
 
-The eight primary nav destinations:
+The ten primary nav destinations:
 
 | Route | Screen | File |
 |---|---|---|
@@ -22,6 +22,8 @@ The eight primary nav destinations:
 | `/moon` | Moon Map | `src/routes/moon/+page.svelte` |
 | `/mars` | Mars Map | `src/routes/mars/+page.svelte` |
 | `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
+| `/tiangong` | Tiangong Explorer | `src/routes/tiangong/+page.svelte` |
+| `/science` | Encyclopedia (40 sections × 6 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
 
 Other routes under `src/routes/` are landing pages or experiments (see repo layout).
 
@@ -54,6 +56,9 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | Lambert solver | Web Worker | ADR-008 |
 | Default fly scenario | ORRERY-1 free-return flyby (library missions add landings / cislunar arcs) | ADR-009 |
 | Transfer arc | Keplerian half-ellipses | ADR-010 |
+| `/science` math rendering | KaTeX server-rendered at build; client receives plain HTML, no JS math library | ADR-034 |
+| `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
+| `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
 
 Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-004 (hash routing), ADR-005 (Docker Compose only).
 

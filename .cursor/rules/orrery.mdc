@@ -258,16 +258,26 @@ Three.js r128 only. `THREE.CapsuleGeometry` does not exist in r128.
 ## CI — what runs on every PR
 
 ```
-build       → npm run build (SvelteKit)
-typecheck   → tsc --noEmit
-lint        → eslint src/
-test        → vitest run
+typecheck   → npm run typecheck (i18n:compile + svelte-kit sync + svelte-check)
+lint        → npm run lint (prettier --check . && eslint .)
+test        → npm run test (vitest run)
 validate    → npm run validate-data (ajv + consistency checks on JSON under static/data/)
-precompute  → npm run precompute-porkchops (5 porkchop grids; chained into build)
+build       → npm run build (i18n:compile + validate-data + precompute-porkchops + vite build)
+precompute  → npm run precompute-porkchops (9 porkchop grids; chained into build)
 doc-check   → grep checks from guide §18
 ```
 
 E2e (Playwright) runs on push to `main`, not on every PR.
+
+### Before pushing — `npm run preflight`
+
+Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-data → build. **If preflight passes, push is safe; if it fails, do not push.** A `.husky/pre-push` hook auto-runs it on `git push` and blocks the push on failure (use `git push --no-verify` only when explicitly intended).
+
+Hooks self-activate after `npm install` via the `prepare` script (`git config core.hooksPath .husky`). No new dependencies — `.husky/pre-push` is a plain bash script.
+
+> **Caveat — Bash output filtering:** some local environments (including some Claude Code sessions) silently rewrite Prettier's `[warn] path/to/file.ts` lines to a reassuring `Prettier: All files formatted correctly` while still returning exit code 1. **Trust the exit code, not the prose.** When output looks clean but a script exited non-zero, re-run with `/usr/bin/env bash -c '<cmd> 2>&1; echo EXIT=$?'` to bypass the filter. The pre-push hook trusts exit codes, so this never causes a bad push — but it can cause confusion when triaging locally.
+
+> **Caveat — `tsc --noEmit` ≠ svelte-check:** `tsc` only type-checks `.ts` files. CI uses `svelte-check`, which type-checks `.svelte` content too. Use `npm run typecheck` (which calls svelte-check) when validating Svelte component changes. Errors like "Property X does not exist on type Y" inside a `.svelte` file will only surface via svelte-check.
 
 ---
 

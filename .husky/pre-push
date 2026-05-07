@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Pre-push gate — runs the same chain CI runs (typecheck → lint → test →
+# validate-data → build) against the working tree. Blocks `git push` on
+# failure so we don't ship pipeline-breaking commits.
+#
+# Activated automatically by the `prepare` script in package.json
+# (`git config core.hooksPath .husky`). To opt out for a single push,
+# use `git push --no-verify`.
+#
+# IMPORTANT: this runs in the project's local Bash. Some Claude Code
+# sessions wrap Bash output in a way that hides Prettier diagnostics
+# (replaces "[warn] file.ts" with "All files formatted correctly" while
+# still exiting non-zero). Trust the EXIT CODE, not the prose.
+
+set -e
+
+cd "$(git rev-parse --show-toplevel)"
+
+echo "▶ preflight (mirror of CI: typecheck · lint · test · validate-data · build)"
+echo "  to skip: git push --no-verify"
+echo
+
+npm run preflight

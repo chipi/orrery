@@ -10,6 +10,7 @@
   import type { PorkchopGrid, MissionType } from '$types/porkchop-grid';
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
 
   const DESTINATION_IDS: DestinationId[] = [
     'mercury',
@@ -707,15 +708,39 @@
       <summary>
         <span class="explainer-title">{m.plan_explainer_title()}</span>
       </summary>
-      <p class="explainer-intro">{m.plan_explainer_intro()}</p>
+      <p class="explainer-intro">
+        {m.plan_explainer_intro()}<ScienceChip
+          tab="porkchop"
+          section="what-is-a-porkchop"
+          label="What is a porkchop plot?"
+        />
+      </p>
       <dl class="explainer-list">
-        <dt>{m.plan_explainer_x_axis()}</dt>
+        <dt>
+          {m.plan_explainer_x_axis()}<ScienceChip
+            tab="porkchop"
+            section="departure-axis"
+            label="Departure axis — the calendar of launch windows"
+          />
+        </dt>
         <dd>{m.plan_explainer_x_desc()}</dd>
-        <dt>{m.plan_explainer_y_axis()}</dt>
+        <dt>
+          {m.plan_explainer_y_axis()}<ScienceChip
+            tab="porkchop"
+            section="tof-axis"
+            label="Time-of-flight axis — fast vs slow trips"
+          />
+        </dt>
         <dd>
           {TOF_AXIS_UNIT === 'years' ? m.plan_explainer_y_desc_years() : m.plan_explainer_y_desc()}
         </dd>
-        <dt>{m.plan_explainer_color()}</dt>
+        <dt>
+          {m.plan_explainer_color()}<ScienceChip
+            tab="porkchop"
+            section="dv-heatmap"
+            label="Colour scale — cheap teal to expensive red"
+          />
+        </dt>
         <dd>
           {m.plan_explainer_color_desc()}
           <div class="color-bar" aria-hidden="true">

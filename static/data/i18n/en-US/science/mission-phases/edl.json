@@ -1,6 +1,11 @@
 {
   "title": "EDL — Entry, Descent, Landing",
   "intro_sentence": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
+  "narrative_101": [
+    "Mars is fourteen light-minutes away. By the time a signal from the rover reaches Mission Control, the rover has been on the ground for fourteen minutes — alive or dead. Nobody on Earth flies a Mars landing. The spacecraft does it itself, autonomously, in about seven minutes, with hundreds of moving parts and zero second chances.",
+    "Step one: hit the atmosphere at ~5.8 km/s. The heat shield handles temperatures hot enough to glow. Step two: deploy a supersonic parachute at Mach 2 — yes, a parachute, while still going faster than sound. Step three: drop the heat shield, drop the parachute, fire retrorockets to slow the rest of the way. Step four: touchdown.",
+    "Different missions, different tricks. Apollo just fired its descent engine all the way down. Curiosity and Perseverance used the genuinely insane Sky Crane: a rocket-powered platform that hovered 20 metres above the ground and lowered the rover on three cables, then flew itself away. China's Zhurong did a hybrid. The seven minutes are called \"the seven minutes of terror\" inside JPL because there's nothing anyone can do during them. The simulator has done the math; you trust the simulator."
+  ],
   "body_paragraphs": [
     "Entry begins when the spacecraft hits sensible atmosphere — about 125 km up at Mars, 100 km at Earth. From that moment, atmospheric drag is doing your braking; engines stay quiet. The heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic.",
     "Descent picks up when supersonic parachutes deploy, around Mach 1.5-2. They strip another huge chunk of velocity — but parachutes alone can't get you to a soft landing on a thin atmosphere. Mars goes from supersonic to subsonic on parachute, then transitions to powered descent: heat shield drops, retro-rockets fire, the lander falls the last few hundred metres on engine plumes alone.",

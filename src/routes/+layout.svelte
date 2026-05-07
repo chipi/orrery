@@ -85,6 +85,7 @@
   </main>
   <footer class="site-footer" aria-label="Site footer">
     <a class="credits-link" href="{base}/credits">{m.layout_footer_credits()}</a>
+    <a class="credits-link" href="{base}/library">{m.layout_footer_library()}</a>
   </footer>
 {/key}
 

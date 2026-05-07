@@ -21,7 +21,6 @@ import {
   cylinderBetween,
   makeWingPair,
   makeTwoSectionModule,
-  makeRadialDockingPort,
 } from './station-geometry';
 
 export const ISS_MODULE_IDS = [

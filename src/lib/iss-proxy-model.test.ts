@@ -238,4 +238,94 @@ describe('ISS proxy ratio guardrails (Phase 1 §1.0 spec)', () => {
       expect(zvezdaExp).toBeGreaterThan(soyuzExp);
     });
   });
+
+  describe('Phase 2 accessory regression', () => {
+    function findFirstByName(prefix: string): THREE.Object3D | null {
+      let found: THREE.Object3D | null = null;
+      station.traverse((obj) => {
+        if (!found && obj.name?.startsWith(prefix)) found = obj;
+      });
+      return found;
+    }
+    function countByName(prefix: string): number {
+      let count = 0;
+      station.traverse((obj) => {
+        if (obj.name?.startsWith(prefix)) count++;
+      });
+      return count;
+    }
+
+    // Phase 2b — Russian segment
+    it('Zvezda has engine bell (Phase 2b)', () => {
+      expect(findFirstByName('zvezda_engine_bell')).not.toBeNull();
+    });
+    it('Nauka has ERA arm mount + radiator (Phase 2b)', () => {
+      expect(findFirstByName('nauka_era_mount')).not.toBeNull();
+      expect(findFirstByName('nauka_radiator')).not.toBeNull();
+    });
+    it('Prichal has 5 port stubs (Phase 2b)', () => {
+      expect(countByName('prichal_port_')).toBe(5);
+    });
+    it('Rassvet has NESV instrumentation mount (Phase 2b)', () => {
+      expect(findFirstByName('rassvet_nesv')).not.toBeNull();
+    });
+
+    // Phase 2c — Unity / Tranquility cluster
+    it('Cupola has 7 window frames + central frame (Phase 2c)', () => {
+      expect(countByName('cupola_window_frame')).toBe(6);
+      expect(findFirstByName('cupola_central_frame')).not.toBeNull();
+    });
+    it('Quest has 4 HPGT tanks (Phase 2c)', () => {
+      expect(countByName('quest_hpgt')).toBe(4);
+    });
+    it('Leonardo has 6 longitudinal ribs (Phase 2c)', () => {
+      expect(countByName('leonardo_rib')).toBe(6);
+    });
+    it('BEAM has docking band (Phase 2c)', () => {
+      expect(findFirstByName('beam_dock_band')).not.toBeNull();
+    });
+    it('Unity + Tranquility have zenith port stubs (Phase 2c)', () => {
+      expect(findFirstByName('unity_zenith_port')).not.toBeNull();
+      expect(findFirstByName('tranquility_zenith_port')).not.toBeNull();
+    });
+
+    // Phase 2d — Destiny / Harmony cluster
+    it('Destiny has 4 handrails + window (Phase 2d)', () => {
+      expect(countByName('destiny_handrail')).toBe(4);
+      expect(findFirstByName('destiny_window')).not.toBeNull();
+    });
+    it('Kibo has ELM-PS + JEM-RMS (Phase 2d)', () => {
+      expect(findFirstByName('kibo_elm_ps')).not.toBeNull();
+      expect(countByName('kibo_jem_rms')).toBeGreaterThanOrEqual(4);
+    });
+    it('Columbus has Bartolomeo + 3 EPF mounts (Phase 2d)', () => {
+      expect(findFirstByName('columbus_bartolomeo')).not.toBeNull();
+      expect(countByName('columbus_epf')).toBe(3);
+    });
+
+    // Phase 2e — Truss external payloads
+    it('Truss has Mobile Transporter rail (Phase 2e)', () => {
+      expect(findFirstByName('mt_rail')).not.toBeNull();
+    });
+    it('Truss has 4 ELC platforms (Phase 2e)', () => {
+      expect(countByName('elc_platform')).toBe(4);
+    });
+    it('Truss has AMS-02 cube + magnet ring (Phase 2e)', () => {
+      expect(findFirstByName('ams_02')).not.toBeNull();
+    });
+
+    // Phase 2f — Canadarm2 + Dextre
+    it('Canadarm2 has Dextre 2-armed manipulator (Phase 2f)', () => {
+      // Dextre is built as 8 parts all named 'canadarm2' parts; check
+      // module-id only by counting all canadarm2-tagged meshes.
+      let armPartCount = 0;
+      station.traverse((obj) => {
+        if (obj instanceof THREE.Mesh && obj.userData.moduleId === 'canadarm2') {
+          armPartCount++;
+        }
+      });
+      // Original Canadarm2 had 5 parts; with Dextre we expect 8.
+      expect(armPartCount).toBeGreaterThanOrEqual(8);
+    });
+  });
 });

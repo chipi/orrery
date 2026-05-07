@@ -554,6 +554,83 @@ export async function getImageProvenance(imagePath: string): Promise<ImageProven
   return provenanceIndex.get(p) ?? null;
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// Source logos + text sources (ADR-046 Milestone D)
+//
+// Both manifests power /credits. Source logos render the masthead
+// blocks; text sources render the editorial bill of materials.
+// ──────────────────────────────────────────────────────────────────────
+
+export interface SourceLogo {
+  id: string;
+  name: string;
+  kind:
+    | 'space-agency'
+    | 'private-operator'
+    | 'research-institute'
+    | 'media-platform'
+    | 'encyclopedic'
+    | 'publisher';
+  url: string;
+  logo_path?: string;
+  license_summary: string;
+}
+
+export interface SourceLogosManifest {
+  schema_version: number;
+  sources: SourceLogo[];
+}
+
+export interface TextSourceLocation {
+  file: string;
+  json_path?: string;
+  i18n_key?: string;
+}
+
+export interface TextSourceEntry {
+  id: string;
+  location: TextSourceLocation;
+  category:
+    | 'mission'
+    | 'planet'
+    | 'sun'
+    | 'small-body'
+    | 'moon-site'
+    | 'earth-object'
+    | 'iss-module'
+    | 'rocket'
+    | 'ui'
+    | 'credits';
+  relationship:
+    | 'original'
+    | 'paraphrased-from'
+    | 'quoted-from'
+    | 'translated-from'
+    | 'adapted-from';
+  snippet?: string;
+  source_url?: string;
+  source_publisher?: string;
+  source_author?: string;
+  license_short: string;
+  license_url?: string;
+  license_rationale: string;
+  translation_status?: 'human' | 'mt-with-review' | 'mt' | 'n/a';
+  translation_reviewer?: string;
+}
+
+export interface TextSourcesManifest {
+  schema_version: number;
+  entries: TextSourceEntry[];
+}
+
+export async function getSourceLogos(): Promise<SourceLogosManifest> {
+  return get<SourceLogosManifest>('source-logos.json');
+}
+
+export async function getTextSources(): Promise<TextSourcesManifest> {
+  return get<TextSourcesManifest>('text-sources.json');
+}
+
 /** Internal: clear the in-memory fetch cache. Test-only — not for app use. */
 export function __resetCache(): void {
   cache.clear();

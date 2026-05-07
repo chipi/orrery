@@ -47,6 +47,9 @@ const issModuleOverlaySchema = loadSchema('iss-module-overlay.schema.json');
 // ADR-046 Milestone C — image provenance + license stewardship.
 const imageProvenanceSchema = loadSchema('image-provenance.schema.json');
 const licenseWaiversSchema = loadSchema('license-waivers.schema.json');
+// ADR-046 Milestone D — public credits page manifests.
+const sourceLogosSchema = loadSchema('source-logos.schema.json');
+const textSourcesSchema = loadSchema('text-sources.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -68,6 +71,8 @@ const validateIssModules = ajv.compile(issModuleSchema);
 const validateIssModuleOverlay = ajv.compile(issModuleOverlaySchema);
 const validateImageProvenance = ajv.compile(imageProvenanceSchema);
 const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
+const validateSourceLogos = ajv.compile(sourceLogosSchema);
+const validateTextSources = ajv.compile(textSourcesSchema);
 
 let failed = 0;
 let passed = 0;
@@ -131,6 +136,9 @@ validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 // ADR-046 Milestone C: image provenance + license waivers.
 validateFile(join(DATA_ROOT, 'image-provenance.json'), validateImageProvenance);
 validateFile(join(DATA_ROOT, 'license-waivers.json'), validateLicenseWaivers);
+// ADR-046 Milestone D: public /credits manifests.
+validateFile(join(DATA_ROOT, 'source-logos.json'), validateSourceLogos);
+validateFile(join(DATA_ROOT, 'text-sources.json'), validateTextSources);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
@@ -367,4 +375,74 @@ if (existsSync(PROVENANCE_PATH)) {
   }
 }
 
-if (failed + docFailed + missionDriftFailed + provenanceFailed > 0) process.exit(1);
+// ──────────────────────────────────────────────────────────────────────
+// ADR-046 Milestone D — text-sources + source-logos integrity
+//
+// Same fail-closed model as image-provenance:
+//   1. Every text-sources license_short must be in the allowlist or
+//      have a matching license-waivers row (or be Orrery-Original).
+//   2. Every source-logos `id` must be unique.
+//   3. Every source-logos `logo_path` (when set) must exist under static/.
+// ──────────────────────────────────────────────────────────────────────
+
+let credBomFailed = 0;
+const TEXT_SOURCES_PATH = join(DATA_ROOT, 'text-sources.json');
+if (existsSync(TEXT_SOURCES_PATH)) {
+  console.log('\nValidating text-sources integrity (ADR-046 Milestone D)...');
+  type TextRow = { id: string; license_short: string };
+  const textSources = JSON.parse(readFileSync(TEXT_SOURCES_PATH, 'utf8')) as {
+    entries: TextRow[];
+  };
+  const seenIds = new Set<string>();
+  let dupes = 0;
+  let licenseFails = 0;
+  for (const e of textSources.entries) {
+    if (seenIds.has(e.id)) {
+      dupes++;
+      console.error(`  ✗ duplicate text-source id: ${e.id}`);
+    } else {
+      seenIds.add(e.id);
+    }
+    if (!isAllowedLicense(e.license_short)) {
+      licenseFails++;
+      console.error(`  ✗ ${e.id}: license '${e.license_short}' not in allowlist`);
+    }
+  }
+  credBomFailed += dupes + licenseFails;
+  if (dupes + licenseFails === 0) {
+    console.log(
+      `  ✓ ${textSources.entries.length} text-source entries — licenses allowed, no duplicates`,
+    );
+  }
+}
+
+const SOURCE_LOGOS_PATH = join(DATA_ROOT, 'source-logos.json');
+if (existsSync(SOURCE_LOGOS_PATH)) {
+  console.log('\nValidating source-logos integrity (ADR-046 Milestone D)...');
+  type LogoRow = { id: string; logo_path?: string };
+  const data = JSON.parse(readFileSync(SOURCE_LOGOS_PATH, 'utf8')) as { sources: LogoRow[] };
+  const seen = new Set<string>();
+  let dupes = 0;
+  let missing = 0;
+  for (const s of data.sources) {
+    if (seen.has(s.id)) {
+      dupes++;
+      console.error(`  ✗ duplicate source-logo id: ${s.id}`);
+    } else {
+      seen.add(s.id);
+    }
+    if (s.logo_path) {
+      const onDisk = join('static', s.logo_path.replace(/^\//, ''));
+      if (!existsSync(onDisk)) {
+        missing++;
+        console.error(`  ✗ ${s.id}: logo_path '${s.logo_path}' not found at ${onDisk}`);
+      }
+    }
+  }
+  credBomFailed += dupes + missing;
+  if (dupes + missing === 0) {
+    console.log(`  ✓ ${data.sources.length} source-logo entries — ids unique, logo files on disk`);
+  }
+}
+
+if (failed + docFailed + missionDriftFailed + provenanceFailed + credBomFailed > 0) process.exit(1);

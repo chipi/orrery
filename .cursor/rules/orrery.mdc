@@ -48,6 +48,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
+| Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
@@ -119,8 +120,10 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │
 ├── scripts/
 │   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images
-│   ├── precompute-porkchops.ts ← pre-computes 5 per-destination porkchop grids (ADR-026)
-│   └── validate-data.ts    ← ajv validation of all static/data/ JSON + doc gating
+│   ├── build-image-provenance.ts ← writes static/data/image-provenance.json + diff report (ADR-047)
+│   ├── license-allowlist.ts ← canonical license allowlist + normaliser (ADR-047)
+│   ├── precompute-porkchops.ts ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
+│   └── validate-data.ts    ← ajv validation of all static/data/ JSON + doc gating + provenance integrity
 │
 ├── tests/                  ← Playwright e2e tests
 ├── docs/                   ← all documentation
@@ -295,6 +298,7 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 - Do not use `localStorage` or `sessionStorage`
 - Do not use `THREE.CapsuleGeometry` (not in r128)
 - Do not use `console.log` in production code
+- Do not add new images, mission/planet/site descriptions, or external text fragments without updating `static/data/image-provenance.json` (auto-generated), `static/data/text-sources.json`, or `static/data/source-logos.json` in the same PR — see ADR-047. New license short names must land in `scripts/license-allowlist.ts` or be waived in `static/data/license-waivers.json`.
 
 ---
 

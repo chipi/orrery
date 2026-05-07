@@ -198,6 +198,18 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     requires_attribution: true,
     share_alike: true,
   },
+  {
+    // Project-internal label for original Orrery prose (UI strings,
+    // editorial copy authored by maintainers). Not used for redistributed
+    // imagery; only valid in `text-sources.json`.
+    short: 'Orrery-Original',
+    display: 'Original prose by Orrery maintainers (MIT-licensed alongside source)',
+    url: 'https://github.com/chipi/orrery/blob/main/LICENSE',
+    rationale:
+      'Written by the Orrery maintainers and released under the project MIT license. Reuse permitted under MIT terms.',
+    requires_attribution: true,
+    share_alike: false,
+  },
 ];
 
 const ALLOWLIST_INDEX = new Map(LICENSE_ALLOWLIST.map((e) => [e.short, e]));

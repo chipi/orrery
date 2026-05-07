@@ -49,7 +49,12 @@ const MODULE_BOXES: [IssModuleMeshId, number, number, number, number, number, nu
 ];
 
 /** PMA / docking-adapter wraps that historically carry gold MLI thermal blanketing. */
-const MLI_WRAPS: { host: IssModuleMeshId; offsetX: number; radiusFactor: number; length: number }[] = [
+const MLI_WRAPS: {
+  host: IssModuleMeshId;
+  offsetX: number;
+  radiusFactor: number;
+  length: number;
+}[] = [
   { host: 'unity', offsetX: -0.21, radiusFactor: 1.18, length: 0.08 },
   { host: 'harmony', offsetX: 0.23, radiusFactor: 1.18, length: 0.08 },
   { host: 'zarya', offsetX: 0.26, radiusFactor: 1.18, length: 0.08 },
@@ -174,10 +179,7 @@ export function buildIssProxyStation(): THREE.Group {
   ];
   for (const [centerX, z] of wingPairs) {
     for (const sign of [-1, 1]) {
-      const wing = new THREE.Mesh(
-        new THREE.BoxGeometry(wingHalfLen, 0.04, wingDepth),
-        arrayMat,
-      );
+      const wing = new THREE.Mesh(new THREE.BoxGeometry(wingHalfLen, 0.04, wingDepth), arrayMat);
       wing.position.set(centerX + sign * (wingHalfLen / 2 + 0.04), wingY, z);
       wing.userData.issPickable = false;
       wing.name = 'solar_array';

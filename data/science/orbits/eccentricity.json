@@ -1,0 +1,23 @@
+{
+  "id": "eccentricity",
+  "tab": "orbits",
+  "order": 3,
+  "formula_latex": "e = \\frac{r_a - r_p}{r_a + r_p}",
+  "diagram": "eccentricity.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Each planet panel reports its eccentricity, e = 0 to ~0.25" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Orbital eccentricity",
+      "u": "https://en.wikipedia.org/wiki/Orbital_eccentricity",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Eccentricity",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "t": "core"
+    }
+  ]
+}

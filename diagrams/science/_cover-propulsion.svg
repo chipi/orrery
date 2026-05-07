@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A propulsion chapter cover — a stylized rocket lifting off with a long flame trail, viewed in profile.">
+  <style>
+    .stroke-mid { stroke: rgba(255,255,255,0.4); stroke-width: 1.1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .body { fill: rgba(255,255,255,0.92); }
+    .body-soft { fill: rgba(255,255,255,0.55); }
+    .accent { fill: #4ecdc4; }
+    .accent-soft { fill: rgba(78,205,196,0.4); }
+    .accent-stroke { stroke: #4ecdc4; stroke-width: 1.5; fill: none; }
+    .gold { fill: #ffc850; }
+    .gold-soft { fill: rgba(255,200,80,0.4); }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+  </style>
+  <circle class="dim-star" cx="60" cy="40" r="0.8" />
+  <circle class="star" cx="170" cy="60" r="1.1" />
+  <circle class="dim-star" cx="280" cy="30" r="0.7" />
+  <circle class="star" cx="430" cy="42" r="1.2" />
+  <circle class="dim-star" cx="540" cy="55" r="0.8" />
+  <line x1="0" y1="240" x2="600" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="1" />
+  <g transform="translate(300 50)">
+    <path class="body" d="M 0 0 L -10 22 L -10 130 L 10 130 L 10 22 Z" />
+    <line x1="-10" y1="50" x2="10" y2="50" stroke="rgba(0,0,0,0.4)" stroke-width="1" />
+    <line x1="-10" y1="80" x2="10" y2="80" stroke="rgba(0,0,0,0.4)" stroke-width="1" />
+    <polygon class="body-soft" points="-10,130 -22,150 -22,140 -10,120" />
+    <polygon class="body-soft" points="10,130 22,150 22,140 10,120" />
+    <circle cx="0" cy="60" r="3" fill="#4ecdc4" />
+    <circle cx="0" cy="95" r="3" fill="rgba(78,205,196,0.6)" />
+    <ellipse class="accent" cx="0" cy="155" rx="6" ry="14" />
+    <ellipse class="gold-soft" cx="0" cy="170" rx="9" ry="22" />
+    <ellipse fill="rgba(78,205,196,0.18)" cx="0" cy="180" rx="13" ry="36" />
+  </g>
+  <g opacity="0.85">
+    <circle class="gold" cx="298" cy="218" r="2" />
+    <circle class="accent" cx="304" cy="225" r="1.4" />
+    <circle class="gold-soft" cx="295" cy="232" r="1.6" />
+    <circle class="accent-soft" cx="302" cy="240" r="2" />
+    <circle class="gold-soft" cx="296" cy="248" r="1.4" />
+  </g>
+  <circle cx="80" cy="180" r="1.6" fill="rgba(255,200,80,0.4)" />
+  <circle cx="500" cy="180" r="1.6" fill="rgba(78,205,196,0.4)" />
+  <circle cx="120" cy="200" r="1.2" fill="rgba(255,200,80,0.3)" />
+  <circle cx="470" cy="210" r="1.2" fill="rgba(78,205,196,0.3)" />
+</svg>

@@ -1,0 +1,13 @@
+{
+  "id": "tof-axis",
+  "tab": "porkchop",
+  "order": 3,
+  "diagram": "tof-axis.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Y axis on the porkchop is TIME OF FLIGHT" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Time of flight (orbital mechanics)", "u": "https://en.wikipedia.org/wiki/Lambert%27s_problem", "t": "intro" }
+  ]
+}

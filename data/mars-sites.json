@@ -16,6 +16,7 @@
     "credit": "© Soviet Academy of Sciences (historical) — landing site approximate, NSSDCA catalogue.",
     "links": [
       { "l": "Mars 2 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_2", "t": "intro" },
+      { "l": "Марс-2 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-2", "t": "core" },
       { "l": "Mars 2 — NASA NSSDCA", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A", "t": "core" }
     ]
   },
@@ -38,6 +39,7 @@
     "mission_id": "mars3",
     "links": [
       { "l": "Mars 3 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
+      { "l": "Марс-3 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3", "t": "core" },
       { "l": "Mars 3 — NASA NSSDCA", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049C", "t": "core" }
     ]
   },
@@ -57,7 +59,8 @@
     "data_quality": "partial",
     "credit": "© Soviet Academy of Sciences — communications lost during atmospheric descent; first telemetry from a Mars lander. Coordinates: NSSDCA.",
     "links": [
-      { "l": "Mars 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_6", "t": "intro" }
+      { "l": "Mars 6 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_6", "t": "intro" },
+      { "l": "Марс-6 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-6", "t": "core" }
     ]
   },
   {
@@ -311,6 +314,7 @@
     "mission_id": "tianwen1",
     "links": [
       { "l": "Zhurong rover — Wikipedia", "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)", "t": "intro" },
+      { "l": "祝融号火星车 — 中文维基百科", "u": "https://zh.wikipedia.org/wiki/%E7%A5%9D%E8%9E%8D%E5%8F%B7%E7%81%AB%E6%98%9F%E8%BD%A6", "t": "core" },
       { "l": "Tianwen-1 — Nature", "u": "https://www.nature.com/articles/d41586-021-01357-5", "t": "core" }
     ]
   },
@@ -366,7 +370,8 @@
     "credit": "© Soviet Academy of Sciences — orbiter component of Mars 3 mission, returned data through 1972.",
     "mission_id": "mars3",
     "links": [
-      { "l": "Mars 3 orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" }
+      { "l": "Mars 3 orbiter — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_3", "t": "intro" },
+      { "l": "Марс-3 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3", "t": "core" }
     ]
   },
   {
@@ -477,7 +482,8 @@
     "mission_id": "mangalyaan",
     "links": [
       { "l": "Mars Orbiter Mission — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission", "t": "intro" },
-      { "l": "MOM — ISRO", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission.html", "t": "core" }
+      { "l": "MOM — ISRO", "u": "https://www.isro.gov.in/Mars_Orbiter_Mission.html", "t": "core" },
+      { "l": "मंगलयान — हिन्दी विकिपीडिया", "u": "https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A4%82%E0%A4%97%E0%A4%B2%E0%A4%AF%E0%A4%BE%E0%A4%A8", "t": "core" }
     ]
   },
   {
@@ -513,7 +519,9 @@
     "credit": "© CNSA — orbiter component of Tianwen-1; relays Zhurong telemetry, conducts global imaging and radar mapping.",
     "mission_id": "tianwen1",
     "links": [
-      { "l": "Tianwen-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tianwen-1", "t": "intro" }
+      { "l": "Tianwen-1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Tianwen-1", "t": "intro" },
+      { "l": "国家航天局 (CNSA, English)", "u": "https://www.cnsa.gov.cn/english/", "t": "intro" },
+      { "l": "天问一号 — 中文维基百科", "u": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%95%8F%E4%B8%80%E8%99%9F", "t": "core" }
     ]
   },
   {

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Line of apsides connecting perihelion and aphelion through both foci">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Line of apsides — emphasized in teal -->
+  <line x1="46" y1="150" x2="354" y2="150" class="accent" />
+  <text x="148" y="288" class="label-accent">line of apsides</text>
+  <!-- Ellipse: a=140, c=98, b=100 -->
+  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
+  <!-- Right focus (Sun) -->
+  <circle cx="298" cy="150" r="6" class="focus" />
+  <text x="280" y="138" class="label-accent">F₁</text>
+  <!-- Empty focus -->
+  <circle cx="102" cy="150" r="3" class="body" />
+  <text x="98" y="138" class="label-mute">F₂</text>
+  <!-- Perihelion (rightmost on ellipse) -->
+  <circle cx="340" cy="150" r="4" class="body" />
+  <text x="306" y="180" class="label-mute">perihelion</text>
+  <text x="306" y="194" class="label-mute">(perigee)</text>
+  <!-- Aphelion (leftmost) -->
+  <circle cx="60" cy="150" r="4" class="body" />
+  <text x="60" y="180" class="label-mute">aphelion</text>
+  <text x="64" y="194" class="label-mute">(apogee)</text>
+</svg>

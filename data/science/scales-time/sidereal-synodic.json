@@ -1,0 +1,13 @@
+{
+  "id": "sidereal-synodic",
+  "tab": "scales-time",
+  "order": 4,
+  "diagram": "sidereal-synodic.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Mars launch windows recur every synodic period (~26 months)" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Synodic period", "u": "https://en.wikipedia.org/wiki/Synodic_period", "t": "intro" }
+  ]
+}

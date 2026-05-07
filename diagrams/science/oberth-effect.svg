@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Oberth: same ∆v at periapsis vs apoapsis, different orbital-energy gain">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
+  <ellipse cx="200" cy="150" rx="140" ry="92" class="stroke" />
+  <!-- Star at right focus = (200+106, 150) -->
+  <circle cx="306" cy="150" r="6" class="focus" />
+  <!-- Periapsis on right (340,150). Big velocity vector + same ∆v added -->
+  <circle cx="340" cy="150" r="4" class="body" />
+  <line x1="340" y1="150" x2="340" y2="80" class="stroke" />
+  <polygon points="340,76 336,86 344,86" fill="rgba(255,255,255,0.85)" />
+  <text x="346" y="120" class="label-mute">v_p (high)</text>
+  <line x1="340" y1="80" x2="340" y2="46" class="accent" />
+  <polygon points="340,42 336,52 344,52" fill="#4ecdc4" />
+  <text x="346" y="62" class="label-accent">+Δv</text>
+  <text x="306" y="170" class="label-accent">large ΔE</text>
+  <!-- Apoapsis on left (60,150). Small velocity vector + same ∆v added -->
+  <circle cx="60" cy="150" r="4" class="body" />
+  <line x1="60" y1="150" x2="60" y2="120" class="stroke" />
+  <polygon points="60,116 56,126 64,126" fill="rgba(255,255,255,0.85)" />
+  <text x="2" y="140" class="label-mute">v_a (low)</text>
+  <line x1="60" y1="120" x2="60" y2="86" class="accent" />
+  <polygon points="60,82 56,92 64,92" fill="#4ecdc4" />
+  <text x="14" y="100" class="label-accent">+Δv</text>
+  <text x="22" y="170" class="label-accent">small ΔE</text>
+  <text x="48" y="288" class="label-mute">same Δv → more energy gain when v is large (Oberth)</text>
+</svg>

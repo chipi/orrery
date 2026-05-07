@@ -1,0 +1,14 @@
+{
+  "id": "trans-x-injection",
+  "tab": "mission-phases",
+  "order": 2,
+  "diagram": "trans-x-injection.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "TLI/TMI ∆v is the first row of every interplanetary FLIGHT tab" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Trans-lunar injection", "u": "https://en.wikipedia.org/wiki/Trans-lunar_injection", "t": "intro" },
+    { "l": "NASA · Trajectory Insertion", "u": "https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf", "t": "core" }
+  ]
+}

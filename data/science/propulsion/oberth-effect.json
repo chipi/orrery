@@ -1,0 +1,14 @@
+{
+  "id": "oberth-effect",
+  "tab": "propulsion",
+  "order": 6,
+  "diagram": "oberth-effect.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Parker Solar Probe and Juno burn near periapsis to exploit Oberth" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Oberth effect", "u": "https://en.wikipedia.org/wiki/Oberth_effect", "t": "intro" },
+    { "l": "NASA · The Oberth Effect", "u": "https://www.nasa.gov/feature/jpl/parker-solar-probe-completes-its-final-venus-flyby/", "t": "core" }
+  ]
+}

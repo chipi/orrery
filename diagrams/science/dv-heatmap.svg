@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Color scale running from teal (cheap) through yellow to red (expensive) with sample delta-v values.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+  </style>
+  <defs>
+    <linearGradient id="dv-grad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#c1440e" />
+      <stop offset="35%" stop-color="#ffc850" />
+      <stop offset="70%" stop-color="#7b9cff" />
+      <stop offset="100%" stop-color="#4ecdc4" />
+    </linearGradient>
+  </defs>
+  <text class="lbl" x="20" y="22">∆v heatmap colour scale</text>
+  <rect x="80" y="40" width="40" height="160" fill="url(#dv-grad)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+  <line x1="120" y1="40" x2="135" y2="40" class="stroke" />
+  <text class="tick" x="142" y="44">3 km/s · cheap (Hohmann)</text>
+  <line x1="120" y1="92" x2="135" y2="92" class="stroke" />
+  <text class="tick" x="142" y="96">5 km/s · affordable</text>
+  <line x1="120" y1="140" x2="135" y2="140" class="stroke" />
+  <text class="tick" x="142" y="144">7 km/s · borderline</text>
+  <line x1="120" y1="195" x2="135" y2="195" class="stroke" />
+  <text class="tick" x="142" y="199">9+ km/s · impractical</text>
+  <text class="tick" x="100" y="32" text-anchor="middle">cheap</text>
+  <text class="tick" x="100" y="215" text-anchor="middle">expensive</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Orbit plane tilted by inclination angle relative to a reference plane">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Reference plane (ecliptic) — flat ellipse to suggest perspective -->
+  <ellipse cx="200" cy="180" rx="160" ry="22" class="dashed" />
+  <text x="14" y="188" class="label-mute">reference plane</text>
+  <!-- Tilted orbit plane: same rx=160, ry=70 but tilted ~30° -->
+  <ellipse cx="200" cy="160" rx="160" ry="70" class="stroke" transform="rotate(-12 200 160)" />
+  <!-- Focus / central body -->
+  <circle cx="200" cy="180" r="6" class="focus" />
+  <!-- Ascending node — where orbit crosses ref plane going north -->
+  <circle cx="40" cy="167" r="3" fill="rgba(255,255,255,0.85)" />
+  <text x="20" y="158" class="label-mute">N (ascending)</text>
+  <!-- Inclination angle arc: at the ascending node, between ref plane and orbit plane -->
+  <path d="M 80 180 A 40 40 0 0 0 78 167" class="accent" />
+  <text x="80" y="172" class="label-accent">i</text>
+  <!-- Top of tilted orbit -->
+  <text x="304" y="80" class="label-mute">orbit plane</text>
+</svg>

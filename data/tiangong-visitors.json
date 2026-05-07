@@ -1,0 +1,54 @@
+[
+  {
+    "id": "shenzhou",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 2F",
+    "launch_date": "2021-06-17",
+    "flight_designation": "Shenzhou-12 (first Tiangong-bound crew)",
+    "mass_kg": 8000,
+    "length_m": 9.25,
+    "year_first_of": "First crewed Chinese spacecraft to dock with Tiangong",
+    "status": "ACTIVE",
+    "credit": "CMSA — Shenzhou spacecraft references",
+    "links": [
+      {
+        "l": "Wikipedia · Shenzhou (spacecraft)",
+        "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Shenzhou 12",
+        "u": "https://en.wikipedia.org/wiki/Shenzhou_12",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "tianzhou",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 7",
+    "launch_date": "2021-05-29",
+    "flight_designation": "Tianzhou-2 (first Tiangong-bound cargo)",
+    "mass_kg": 13500,
+    "length_m": 10.6,
+    "year_first_of": "First cargo spacecraft to resupply Tiangong",
+    "status": "ACTIVE",
+    "credit": "CMSA — Tianzhou cargo spacecraft references",
+    "links": [
+      {
+        "l": "Wikipedia · Tianzhou (spacecraft)",
+        "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Tianzhou 2",
+        "u": "https://en.wikipedia.org/wiki/Tianzhou_2",
+        "t": "core"
+      }
+    ]
+  }
+]

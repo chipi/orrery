@@ -1,0 +1,23 @@
+{
+  "id": "keplers-laws",
+  "tab": "orbits",
+  "order": 7,
+  "formula_latex": "T^2 = \\frac{4\\pi^2}{\\mu} a^3",
+  "diagram": "keplers-laws.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Period vs semi-major axis follows Kepler's third law for every planet" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Kepler's laws of planetary motion",
+      "u": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Kepler's Three Laws",
+      "u": "https://imagine.gsfc.nasa.gov/observatories/learning/swift/classroom/docs/Kepler.pdf",
+      "t": "core"
+    }
+  ]
+}

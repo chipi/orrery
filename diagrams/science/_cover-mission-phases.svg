@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" role="img" aria-label="A mission phases chapter cover — a horizontal storyboard of five icons: launch, parking orbit, transfer, capture, landing.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.4; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
+    .body { fill: rgba(255,255,255,0.85); }
+    .earth { fill: rgba(75,156,211,0.85); }
+    .mars { fill: rgba(193,68,14,0.85); }
+    .gold { fill: #ffc850; }
+    .accent-fill { fill: #4ecdc4; }
+    .star { fill: rgba(255,255,255,0.45); }
+    .dim-star { fill: rgba(255,255,255,0.22); }
+  </style>
+  <circle class="dim-star" cx="60" cy="35" r="0.8" />
+  <circle class="star" cx="200" cy="50" r="1.1" />
+  <circle class="dim-star" cx="380" cy="30" r="0.7" />
+  <circle class="star" cx="510" cy="48" r="1.1" />
+  <line x1="40" y1="160" x2="560" y2="160" class="stroke-soft" />
+  <g transform="translate(80 130)">
+    <line x1="0" y1="-5" x2="0" y2="20" class="stroke-bright" />
+    <polygon class="body" points="-3,-5 0,-12 3,-5" />
+    <ellipse class="accent-fill" cx="0" cy="24" rx="3" ry="5" opacity="0.7" />
+    <text x="0" y="48" font-family="'Space Mono', monospace" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle">LAUNCH</text>
+  </g>
+  <path class="stroke-soft" d="M 95 130 Q 150 110 195 125" />
+  <g transform="translate(200 130)">
+    <circle class="earth" cx="0" cy="0" r="9" />
+    <ellipse class="accent" cx="0" cy="0" rx="20" ry="20" />
+    <circle class="body" cx="14" cy="-14" r="1.5" />
+    <text x="0" y="48" font-family="'Space Mono', monospace" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle">LEO</text>
+  </g>
+  <path class="accent" d="M 220 122 Q 280 70 360 90" stroke-dasharray="4 3" />
+  <g transform="translate(300 95)">
+    <polygon class="body" points="-5,-3 6,0 -5,3 -3,0" transform="rotate(-15)" />
+    <text x="0" y="38" font-family="'Space Mono', monospace" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle">CRUISE</text>
+  </g>
+  <g transform="translate(395 130)">
+    <circle class="mars" cx="0" cy="0" r="8" />
+    <ellipse class="accent" cx="0" cy="0" rx="18" ry="11" transform="rotate(-15)" />
+    <text x="0" y="48" font-family="'Space Mono', monospace" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle">CAPTURE</text>
+  </g>
+  <path class="stroke-soft" d="M 415 130 Q 470 130 510 150" />
+  <g transform="translate(520 150)">
+    <line x1="0" y1="-25" x2="0" y2="-10" class="stroke-mid" stroke-dasharray="2 2" />
+    <polygon class="body" points="-4,-10 4,-10 3,-2 -3,-2" />
+    <line x1="0" y1="-2" x2="0" y2="6" stroke="rgba(78,205,196,0.7)" stroke-width="1.5" />
+    <ellipse class="accent-fill" cx="0" cy="10" rx="4" ry="3" opacity="0.7" />
+    <line x1="-15" y1="14" x2="15" y2="14" stroke="rgba(193,68,14,0.5)" stroke-width="1" />
+    <text x="0" y="32" font-family="'Space Mono', monospace" font-size="9" fill="rgba(255,255,255,0.55)" text-anchor="middle">EDL</text>
+  </g>
+</svg>

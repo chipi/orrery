@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Bar chart comparing specific impulse across solid, hypergolic, liquid, nuclear thermal and ion engines.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .bar { fill: rgba(78,205,196,0.32); stroke: #4ecdc4; stroke-width: 1.2; }
+    .barbig { fill: rgba(78,205,196,0.55); stroke: #4ecdc4; stroke-width: 1.5; }
+  </style>
+  <text class="lbl" x="20" y="22">Specific impulse (Isp, seconds)</text>
+  <line class="stroke" x1="60" y1="200" x2="380" y2="200" />
+  <line class="stroke" x1="60" y1="200" x2="60" y2="40" />
+  <rect class="bar" x="80" y="190" width="36" height="10" />
+  <text class="tick" x="98" y="215" text-anchor="middle">solid</text>
+  <text class="tick" x="98" y="186" text-anchor="middle">250</text>
+  <rect class="bar" x="135" y="184" width="36" height="16" />
+  <text class="tick" x="153" y="215" text-anchor="middle">hyper.</text>
+  <text class="tick" x="153" y="180" text-anchor="middle">310</text>
+  <rect class="bar" x="190" y="172" width="36" height="28" />
+  <text class="tick" x="208" y="215" text-anchor="middle">LH₂/LOX</text>
+  <text class="tick" x="208" y="168" text-anchor="middle">450</text>
+  <rect class="bar" x="245" y="124" width="36" height="76" />
+  <text class="tick" x="263" y="215" text-anchor="middle">nuclear</text>
+  <text class="tick" x="263" y="120" text-anchor="middle">900</text>
+  <rect class="barbig" x="300" y="55" width="50" height="145" />
+  <text class="tick" x="325" y="215" text-anchor="middle">ion</text>
+  <text class="tick" x="325" y="51" text-anchor="middle">3000+</text>
+  <text class="tick" x="60" y="50">Isp ↑</text>
+</svg>

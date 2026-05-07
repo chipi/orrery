@@ -1,0 +1,23 @@
+{
+  "id": "keplerian-orbit",
+  "tab": "orbits",
+  "order": 1,
+  "diagram": "keplerian-orbit.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Every planet orbits the Sun on a Keplerian ellipse" },
+    { "route": "/missions", "context_key": "Spacecraft trajectories are stitched-together Keplerian arcs" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Kepler orbit",
+      "u": "https://en.wikipedia.org/wiki/Kepler_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Orbits and Kepler's Laws",
+      "u": "https://science.nasa.gov/learn/basics-of-space-flight/chapter3-2/",
+      "t": "core"
+    }
+  ]
+}

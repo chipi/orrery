@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Vis-viva: speed varies along the orbit, fast at perihelion, slow at aphelion">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
+  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
+  <!-- Sun at right focus -->
+  <circle cx="298" cy="150" r="6" class="focus" />
+  <text x="306" y="146" class="label-accent">μ</text>
+  <!-- Perihelion body with long velocity vector (fast) -->
+  <circle cx="340" cy="150" r="4" class="body" />
+  <line x1="340" y1="150" x2="340" y2="92" class="accent" stroke-width="2" />
+  <polygon points="340,88 336,98 344,98" fill="#4ecdc4" />
+  <text x="346" y="120" class="label-accent">v high</text>
+  <text x="296" y="170" class="label-mute">r small</text>
+  <!-- Aphelion body with short velocity vector (slow) -->
+  <circle cx="60" cy="150" r="4" class="body" />
+  <line x1="60" y1="150" x2="60" y2="124" class="accent" stroke-width="2" />
+  <polygon points="60,120 56,130 64,130" fill="#4ecdc4" />
+  <text x="20" y="138" class="label-accent">v low</text>
+  <text x="68" y="170" class="label-mute">r large</text>
+  <!-- Caption -->
+  <text x="84" y="278" class="label-mute">vis-viva: v depends on radius and a only</text>
+</svg>

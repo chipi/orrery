@@ -1,0 +1,15 @@
+{
+  "id": "tsiolkovsky",
+  "tab": "propulsion",
+  "order": 2,
+  "formula_latex": "\\Delta v = I_{sp} \\cdot g_0 \\cdot \\ln\\!\\left(\\frac{m_0}{m_f}\\right)",
+  "diagram": "tsiolkovsky.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Each rocket's ∆v capability is computed from its Isp and propellant fraction" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Tsiolkovsky rocket equation", "u": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation", "t": "intro" },
+    { "l": "NASA · The Rocket Equation", "u": "https://www.nasa.gov/wp-content/uploads/2017/02/rocket-equation-2.pdf", "t": "core" }
+  ]
+}

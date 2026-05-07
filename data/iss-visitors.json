@@ -19,6 +19,11 @@
         "t": "intro"
       },
       {
+        "l": "Союз МС — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D1%8E%D0%B7_%D0%9C%D0%A1",
+        "t": "core"
+      },
+      {
         "l": "NASA · Soyuz Spacecraft",
         "u": "https://www.nasa.gov/reference/soyuz-spacecraft/",
         "t": "core"
@@ -47,6 +52,11 @@
         "l": "Wikipedia · Progress MS",
         "u": "https://en.wikipedia.org/wiki/Progress_MS",
         "t": "intro"
+      },
+      {
+        "l": "Прогресс МС — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B5%D1%81%D1%81_%D0%9C%D0%A1",
+        "t": "core"
       },
       {
         "l": "NASA · Progress Spacecraft",
@@ -189,6 +199,11 @@
       {
         "l": "JAXA · HTV-X",
         "u": "https://humans-in-space.jaxa.jp/en/htv-x/",
+        "t": "core"
+      },
+      {
+        "l": "新型宇宙ステーション補給機 HTV-X (JAXA)",
+        "u": "https://humans-in-space.jaxa.jp/htv-x/",
         "t": "core"
       }
     ]

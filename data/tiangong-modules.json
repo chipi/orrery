@@ -1,0 +1,106 @@
+[
+  {
+    "id": "tianhe",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 5B",
+    "launch_date": "2021-04-29",
+    "flight_designation": "CSS-T1",
+    "mass_kg": 22500,
+    "length_m": 16.6,
+    "year_first_of": "First Tiangong module in orbit",
+    "status": "ACTIVE",
+    "credit": "CMSA — Tianhe core module references",
+    "links": [
+      {
+        "l": "Wikipedia · Tianhe core module",
+        "u": "https://en.wikipedia.org/wiki/Tianhe_core_module",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Tiangong space station",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "wentian",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 5B",
+    "launch_date": "2022-07-24",
+    "flight_designation": "CSS-W1",
+    "mass_kg": 23000,
+    "length_m": 17.9,
+    "year_first_of": "First Tiangong laboratory module",
+    "status": "ACTIVE",
+    "credit": "CMSA — Wentian laboratory module references",
+    "links": [
+      {
+        "l": "Wikipedia · Wentian",
+        "u": "https://en.wikipedia.org/wiki/Wentian",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Tiangong space station",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "mengtian",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 5B",
+    "launch_date": "2022-10-31",
+    "flight_designation": "CSS-M1",
+    "mass_kg": 23200,
+    "length_m": 17.88,
+    "year_first_of": "Completed the Tiangong T-shape configuration",
+    "status": "ACTIVE",
+    "credit": "CMSA — Mengtian laboratory module references",
+    "links": [
+      {
+        "l": "Wikipedia · Mengtian (module)",
+        "u": "https://en.wikipedia.org/wiki/Mengtian_(module)",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Tiangong space station",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+        "t": "core"
+      }
+    ]
+  },
+  {
+    "id": "chinarm",
+    "builder": "China Academy of Space Technology (CAST)",
+    "builder_country": "China",
+    "agency": "CMSA",
+    "launch_vehicle": "Long March 5B (with Tianhe)",
+    "launch_date": "2021-04-29",
+    "flight_designation": "Chinarm 10 m primary",
+    "mass_kg": 738,
+    "length_m": 10.2,
+    "year_first_of": "First Chinese station-mounted robotic manipulator",
+    "status": "ACTIVE",
+    "credit": "CMSA — Tiangong robotic arm references",
+    "links": [
+      {
+        "l": "Wikipedia · Tiangong robotic arm",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_robotic_arm",
+        "t": "intro"
+      },
+      {
+        "l": "Wikipedia · Tiangong space station",
+        "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+        "t": "core"
+      }
+    ]
+  }
+]

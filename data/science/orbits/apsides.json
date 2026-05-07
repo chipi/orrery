@@ -1,0 +1,23 @@
+{
+  "id": "apsides",
+  "tab": "orbits",
+  "order": 8,
+  "diagram": "apsides.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Each planet's perihelion and aphelion are computed from a and e" },
+    { "route": "/missions", "context_key": "Perigee and apogee describe Earth-orbit mission profiles" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Apsis",
+      "u": "https://en.wikipedia.org/wiki/Apsis",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Orbital Terminology",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/glossary.html",
+      "t": "core"
+    }
+  ]
+}

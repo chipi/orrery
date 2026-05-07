@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Keplerian orbit ellipse with Sun at one focus">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .focus { fill: #4ecdc4; }
+    .body { fill: rgba(255,255,255,0.85); }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+  </style>
+  <!-- Major axis (line of apsides) -->
+  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
+  <!-- Ellipse: a=140, b=110, centred at (200,150). Foci at (200±c,150), c=sqrt(a²-b²)=86 -->
+  <ellipse cx="200" cy="150" rx="140" ry="110" class="stroke" />
+  <!-- Sun at right focus (200+86, 150) = (286, 150) -->
+  <circle cx="286" cy="150" r="6" class="focus" />
+  <text x="294" y="146" class="label-accent">F₁ · Sun</text>
+  <!-- Empty focus (200-86, 150) = (114, 150) -->
+  <circle cx="114" cy="150" r="2.5" class="body" />
+  <text x="100" y="142" class="label-mute">F₂</text>
+  <!-- Perihelion: rightmost on ellipse = (340, 150) -->
+  <circle cx="340" cy="150" r="3" class="body" />
+  <text x="338" y="170" class="label-mute">perihelion</text>
+  <!-- Aphelion: leftmost = (60, 150) -->
+  <circle cx="60" cy="150" r="3" class="body" />
+  <text x="50" y="170" class="label-mute">aphelion</text>
+  <!-- Orbiting body marker on the ellipse, at true anomaly ~50° from perihelion -->
+  <circle cx="280" cy="65" r="4" class="body" />
+  <!-- Vector from focus to body -->
+  <line x1="286" y1="150" x2="280" y2="65" class="accent" />
+  <text x="252" y="100" class="label-accent">r</text>
+  <!-- Semi-major axis annotation -->
+  <line x1="200" y1="270" x2="340" y2="270" stroke="rgba(255,255,255,0.55)" stroke-width="1" />
+  <line x1="200" y1="265" x2="200" y2="275" stroke="rgba(255,255,255,0.55)" stroke-width="1" />
+  <line x1="340" y1="265" x2="340" y2="275" stroke="rgba(255,255,255,0.55)" stroke-width="1" />
+  <text x="262" y="287" class="label-mute">a (semi-major axis)</text>
+</svg>

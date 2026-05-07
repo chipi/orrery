@@ -1,0 +1,15 @@
+{
+  "id": "dv-budget",
+  "tab": "propulsion",
+  "order": 1,
+  "diagram": "dv-budget.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Each porkchop cell is a ∆v cost in km/s" },
+    { "route": "/missions", "context_key": "FLIGHT tab shows the per-phase ∆v breakdown" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Delta-v budget", "u": "https://en.wikipedia.org/wiki/Delta-v_budget", "t": "intro" },
+    { "l": "NASA · Mission Design Concepts", "u": "https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf", "t": "core" }
+  ]
+}

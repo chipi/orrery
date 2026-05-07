@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="A horizontal mission timeline with events tagged at increasing MET tick marks.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; stroke-linecap: round; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .dot { fill: #4ecdc4; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+  </style>
+  <text class="lbl" x="20" y="22">MET — mission elapsed time</text>
+  <line class="stroke" x1="30" y1="120" x2="370" y2="120" />
+  <polygon points="370,120 362,116 362,124" fill="rgba(255,255,255,0.85)" />
+  <line class="dashed" x1="30" y1="40" x2="30" y2="180" />
+  <text class="lbl" x="22" y="195">T+0</text>
+  <text class="tick" x="14" y="38">launch</text>
+  <circle class="dot" cx="30" cy="120" r="3.5" />
+  <line class="dashed" x1="100" y1="80" x2="100" y2="120" />
+  <circle class="dot" cx="100" cy="120" r="3" />
+  <text class="tick" x="78" y="76">T+8m · LEO</text>
+  <line class="dashed" x1="160" y1="80" x2="160" y2="120" />
+  <circle class="dot" cx="160" cy="120" r="3" />
+  <text class="tick" x="142" y="76">T+1h · TLI</text>
+  <line class="dashed" x1="230" y1="80" x2="230" y2="120" />
+  <circle class="dot" cx="230" cy="120" r="3" />
+  <text class="tick" x="206" y="76">T+2d · TCM-1</text>
+  <line class="dashed" x1="320" y1="80" x2="320" y2="120" />
+  <circle class="dot" cx="320" cy="120" r="3" />
+  <text class="tick" x="298" y="76">T+8mo · MOI</text>
+  <text class="lbl" x="30" y="160">stopwatch starts at liftoff and never stops</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "id": "nrho",
+  "tab": "mission-phases",
+  "order": 7,
+  "diagram": "nrho.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Artemis II / III rendezvous with Lunar Gateway in NRHO" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Near-rectilinear halo orbit", "u": "https://en.wikipedia.org/wiki/Near-rectilinear_halo_orbit", "t": "intro" },
+    { "l": "NASA · Lunar Gateway Orbit", "u": "https://www.nasa.gov/feature/about-the-gateway/", "t": "core" }
+  ]
+}

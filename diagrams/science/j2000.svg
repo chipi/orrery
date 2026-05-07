@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="A clock showing noon next to the date January 1 2000 with the J2000 epoch label.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .num { font-family: var(--font-display, 'Bebas Neue'), sans-serif; font-size: 12px; fill: rgba(255,255,255,0.65); letter-spacing: 1px; }
+    .epoch { font-family: var(--font-display, 'Bebas Neue'), sans-serif; font-size: 18px; fill: #4ecdc4; letter-spacing: 4px; }
+  </style>
+  <text class="lbl" x="20" y="22">J2000 epoch</text>
+  <circle class="stroke" cx="120" cy="130" r="60" />
+  <line class="stroke" x1="120" y1="130" x2="120" y2="80" stroke-linecap="round" stroke-width="2" />
+  <line class="stroke" x1="120" y1="130" x2="120" y2="92" stroke-linecap="round" stroke-width="2" />
+  <circle cx="120" cy="130" r="2.5" fill="#4ecdc4" />
+  <text class="num" x="120" y="78" text-anchor="middle">12</text>
+  <text class="num" x="180" y="135" text-anchor="middle">3</text>
+  <text class="num" x="120" y="190" text-anchor="middle">6</text>
+  <text class="num" x="62" y="135" text-anchor="middle">9</text>
+  <text class="tick" x="120" y="208" text-anchor="middle">12:00 UTC</text>
+  <line class="dashed" x1="200" y1="130" x2="240" y2="130" />
+  <text class="epoch" x="320" y="125" text-anchor="middle">JAN 1, 2000</text>
+  <text class="tick" x="320" y="142" text-anchor="middle">= JD 2,451,545.0</text>
+  <text class="tick" x="320" y="158" text-anchor="middle">universal time-zero</text>
+  <text class="lbl" x="30" y="230">all orbital elements in this app are anchored here</text>
+</svg>

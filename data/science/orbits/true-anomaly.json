@@ -1,0 +1,22 @@
+{
+  "id": "true-anomaly",
+  "tab": "orbits",
+  "order": 5,
+  "diagram": "true-anomaly.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Each planet's current position around the Sun is its true anomaly" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · True anomaly",
+      "u": "https://en.wikipedia.org/wiki/True_anomaly",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Orbital Mechanics",
+      "u": "https://www.grc.nasa.gov/www/k-12/airplane/kepler.html",
+      "t": "core"
+    }
+  ]
+}

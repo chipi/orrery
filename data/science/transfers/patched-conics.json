@@ -1,0 +1,23 @@
+{
+  "id": "patched-conics",
+  "tab": "transfers",
+  "order": 7,
+  "diagram": "patched-conics.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Porkchop calculations use a patched-conic approximation" },
+    { "route": "/fly", "context_key": "/fly switches frames at sphere-of-influence boundaries" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Patched conic approximation",
+      "u": "https://en.wikipedia.org/wiki/Patched_conic_approximation",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Trajectory Design",
+      "u": "https://www.nasa.gov/centers/johnson/pdf/383322main_018%20-%20Trajectory.pdf",
+      "t": "core"
+    }
+  ]
+}

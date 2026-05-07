@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="A schematic porkchop with two cheap lobes labelled Type I and Type II surrounded by a red expensive zone.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: rgba(78,205,196,0.12); }
+    .accent-line { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .red { stroke: rgba(193,68,14,0.6); stroke-width: 1.4; fill: none; }
+    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
+    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .teal { fill: #4ecdc4; }
+    .red-fill { fill: rgba(193,68,14,0.85); }
+  </style>
+  <text class="lbl" x="20" y="22">Reading the porkchop lobes</text>
+  <line class="stroke" x1="50" y1="220" x2="370" y2="220" />
+  <line class="stroke" x1="50" y1="220" x2="50" y2="50" />
+  <text class="tick" x="370" y="235" text-anchor="end">departure date →</text>
+  <text class="tick" x="50" y="42" transform="rotate(-90 38 130)">↑ time of flight</text>
+  <ellipse class="red" cx="200" cy="135" rx="160" ry="75" />
+  <ellipse class="accent" cx="160" cy="135" rx="42" ry="28" transform="rotate(-12 160 135)" />
+  <ellipse class="accent" cx="240" cy="125" rx="42" ry="28" transform="rotate(12 240 125)" />
+  <text class="tick" x="135" y="138" fill="#4ecdc4">Type I</text>
+  <text class="tick" x="220" y="128" fill="#4ecdc4">Type II</text>
+  <text class="tick" x="65" y="80" fill="rgba(193,68,14,0.85)">expensive · red zone</text>
+  <line class="dashed" x1="60" y1="190" x2="340" y2="190" />
+  <text class="tick" x="60" y="206">launch window</text>
+</svg>

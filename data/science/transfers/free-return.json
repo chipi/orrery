@@ -1,0 +1,23 @@
+{
+  "id": "free-return",
+  "tab": "transfers",
+  "order": 5,
+  "diagram": "free-return.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/fly", "context_key": "Orrery's default ORRERY-1 scenario is a Mars free-return flyby" },
+    { "route": "/missions", "context_key": "Apollo 8/13 used cislunar free-return for safety" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Free-return trajectory",
+      "u": "https://en.wikipedia.org/wiki/Free-return_trajectory",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Apollo 13 Free-Return",
+      "u": "https://www.nasa.gov/specials/apollo50th/back.html",
+      "t": "core"
+    }
+  ]
+}

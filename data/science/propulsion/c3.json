@@ -1,0 +1,16 @@
+{
+  "id": "c3",
+  "tab": "propulsion",
+  "order": 4,
+  "formula_latex": "C_3 = v_\\infty^2",
+  "diagram": "c3.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/missions", "context_key": "FLIGHT tab shows C3 in km²/s² for each interplanetary mission" },
+    { "route": "/plan", "context_key": "Porkchop ∆v translates to C3 via vis-viva" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Characteristic energy", "u": "https://en.wikipedia.org/wiki/Characteristic_energy", "t": "intro" },
+    { "l": "NASA · C3 and Launch Energy", "u": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/", "t": "core" }
+  ]
+}

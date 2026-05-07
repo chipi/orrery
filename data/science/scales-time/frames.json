@@ -1,0 +1,13 @@
+{
+  "id": "frames",
+  "tab": "scales-time",
+  "order": 6,
+  "diagram": "frames.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    { "route": "/fly", "context_key": "Heliocentric vs body-centric frames switch at sphere-of-influence" }
+  ],
+  "links": [
+    { "l": "Wikipedia · Reference frames in astronomy", "u": "https://en.wikipedia.org/wiki/Astronomical_coordinate_systems", "t": "intro" }
+  ]
+}

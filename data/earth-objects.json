@@ -62,6 +62,16 @@
         "t": "intro"
       },
       {
+        "l": "China Manned Space (CMSE, English)",
+        "u": "http://en.cmse.gov.cn/",
+        "t": "intro"
+      },
+      {
+        "l": "天宫空间站 — 中文维基百科",
+        "u": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%AE%AB%E7%A9%BA%E9%97%B4%E7%AB%99",
+        "t": "core"
+      },
+      {
         "l": "China Manned Space program",
         "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station",
         "t": "intro"
@@ -95,6 +105,11 @@
       {
         "l": "Hubble image gallery (NASA)",
         "u": "https://hubblesite.org/images/gallery",
+        "t": "intro"
+      },
+      {
+        "l": "ESA / Hubble (esahubble.org)",
+        "u": "https://esahubble.org/",
         "t": "intro"
       },
       {
@@ -192,6 +207,16 @@
         "l": "GLONASS — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/GLONASS",
         "t": "intro"
+      },
+      {
+        "l": "ГЛОНАСС (Информационно-аналитический центр)",
+        "u": "https://www.glonass-iac.ru/",
+        "t": "intro"
+      },
+      {
+        "l": "ГЛОНАСС — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%93%D0%9B%D0%9E%D0%9D%D0%90%D0%A1%D0%A1",
+        "t": "core"
       }
     ]
   },
@@ -217,6 +242,16 @@
         "l": "BeiDou — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/BeiDou",
         "t": "intro"
+      },
+      {
+        "l": "中国北斗卫星导航系统 (BeiDou, official)",
+        "u": "http://en.beidou.gov.cn/",
+        "t": "intro"
+      },
+      {
+        "l": "北斗卫星导航系统 — 中文维基百科",
+        "u": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%96%97%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F",
+        "t": "core"
       }
     ]
   },
@@ -385,6 +420,11 @@
         "l": "Luna 10 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Luna_10",
         "t": "intro"
+      },
+      {
+        "l": "Луна-10 — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-10",
+        "t": "core"
       }
     ]
   },
@@ -433,6 +473,11 @@
         "l": "Lunar Prospector — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Lunar_Prospector",
         "t": "intro"
+      },
+      {
+        "l": "Lunar Prospector (NASA)",
+        "u": "https://science.nasa.gov/mission/lunar-prospector/",
+        "t": "intro"
       }
     ]
   },
@@ -456,6 +501,11 @@
       {
         "l": "SMART-1 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/SMART-1",
+        "t": "intro"
+      },
+      {
+        "l": "SMART-1 (ESA Science)",
+        "u": "https://www.esa.int/Science_Exploration/Space_Science/SMART-1",
         "t": "intro"
       }
     ]
@@ -481,6 +531,11 @@
         "l": "Chang'e 1 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Chang%27e_1",
         "t": "intro"
+      },
+      {
+        "l": "中国探月与深空探测网 (CLEP)",
+        "u": "http://www.clep.org.cn/",
+        "t": "intro"
       }
     ]
   },
@@ -505,6 +560,11 @@
         "l": "Chandrayaan-1 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Chandrayaan-1",
         "t": "intro"
+      },
+      {
+        "l": "Chandrayaan-1 — ISRO",
+        "u": "https://www.isro.gov.in/Chandrayaan_1.html",
+        "t": "intro"
       }
     ]
   },
@@ -528,6 +588,11 @@
       {
         "l": "Chang'e 2 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Chang%27e_2",
+        "t": "intro"
+      },
+      {
+        "l": "中国探月与深空探测网 (CLEP)",
+        "u": "http://www.clep.org.cn/",
         "t": "intro"
       }
     ]
@@ -558,6 +623,16 @@
         "l": "JWST first images (NASA)",
         "u": "https://webbtelescope.org/news/first-images",
         "t": "intro"
+      },
+      {
+        "l": "ESA / Webb (esawebb.org)",
+        "u": "https://esawebb.org/",
+        "t": "intro"
+      },
+      {
+        "l": "James Webb Space Telescope (CSA)",
+        "u": "https://www.asc-csa.gc.ca/eng/satellites/jwst/Default.asp",
+        "t": "core"
       },
       {
         "l": "L2 Lagrange point — Wikipedia",

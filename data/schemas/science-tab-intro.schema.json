@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "science-tab-intro.schema.json",
+  "title": "ScienceTabIntro",
+  "description": "Editorial 101 lead-in shown at the top of /science/[tab] above the section list (PRD-008).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["headline", "paragraphs"],
+  "properties": {
+    "headline": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "paragraphs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

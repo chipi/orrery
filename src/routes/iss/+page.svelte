@@ -517,6 +517,11 @@
       <div class="ctrl-row">
         <span class="hint">{m.iss_hud_hint()}</span>
       </div>
+      {#if viewMode === '3d'}
+        <div class="ctrl-row">
+          <span class="hint hint-docked">{m.iss_docked_legend()}</span>
+        </div>
+      {/if}
       <div class="ctrl-row">
         {#if viewMode === '3d'}
           <button

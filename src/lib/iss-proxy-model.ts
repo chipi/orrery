@@ -357,5 +357,218 @@ export function buildIssProxyStation(): THREE.Group {
     }
   }
 
+  buildVisitingFleet(root);
+
   return root;
+}
+
+const RUS_HULL = 0x6f7448;
+const RUS_PANEL = 0x202c1a;
+const US_WHITE = 0xefefef;
+const US_DARK = 0x202028;
+const JP_GOLD = 0xc8a04c;
+const SOLAR_BLUE = 0x1a3a66;
+
+function makeWingPair(parent: THREE.Group, span: number, depth: number, color: number) {
+  const mat = new THREE.MeshStandardMaterial({
+    color,
+    metalness: 0.3,
+    roughness: 0.55,
+  });
+  for (const sign of [-1, 1]) {
+    const wing = new THREE.Mesh(new THREE.BoxGeometry(span, 0.01, depth), mat);
+    wing.position.set(sign * (span / 2 + 0.04), 0, 0);
+    setShadowFlags(wing);
+    parent.add(wing);
+  }
+}
+
+function buildSoyuz(): THREE.Group {
+  const g = new THREE.Group();
+  g.name = 'visiting_soyuz';
+  const hull = new THREE.MeshStandardMaterial({
+    color: RUS_HULL,
+    metalness: 0.2,
+    roughness: 0.7,
+  });
+  const orbital = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 8), hull);
+  orbital.position.y = 0.22;
+  setShadowFlags(orbital);
+  g.add(orbital);
+  const descent = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.07, 0.1, 12), hull);
+  descent.position.y = 0.11;
+  setShadowFlags(descent);
+  g.add(descent);
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.18, 12), hull);
+  service.position.y = -0.03;
+  setShadowFlags(service);
+  g.add(service);
+  const wings = new THREE.Group();
+  wings.position.y = -0.03;
+  makeWingPair(wings, 0.36, 0.14, RUS_PANEL);
+  g.add(wings);
+  return g;
+}
+
+function buildProgress(): THREE.Group {
+  const g = new THREE.Group();
+  g.name = 'visiting_progress';
+  const hull = new THREE.MeshStandardMaterial({
+    color: RUS_HULL,
+    metalness: 0.2,
+    roughness: 0.7,
+  });
+  const cargo = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.16, 12), hull);
+  cargo.position.y = 0.16;
+  setShadowFlags(cargo);
+  g.add(cargo);
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.14, 12), hull);
+  service.position.y = 0.01;
+  setShadowFlags(service);
+  g.add(service);
+  const wings = new THREE.Group();
+  wings.position.y = 0.01;
+  makeWingPair(wings, 0.36, 0.14, RUS_PANEL);
+  g.add(wings);
+  return g;
+}
+
+function buildDragon(crew: boolean): THREE.Group {
+  const g = new THREE.Group();
+  g.name = crew ? 'visiting_crew_dragon' : 'visiting_cargo_dragon';
+  const hull = new THREE.MeshStandardMaterial({
+    color: US_WHITE,
+    metalness: 0.1,
+    roughness: 0.7,
+  });
+  const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.14, 14), hull);
+  trunk.position.y = -0.02;
+  setShadowFlags(trunk);
+  g.add(trunk);
+  const capsule = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.07, 0.1, 14), hull);
+  capsule.position.y = 0.1;
+  setShadowFlags(capsule);
+  g.add(capsule);
+  if (crew) {
+    const nose = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.02, 0.04, 0.04, 12),
+      new THREE.MeshStandardMaterial({ color: US_DARK, metalness: 0.3, roughness: 0.6 }),
+    );
+    nose.position.y = 0.17;
+    setShadowFlags(nose);
+    g.add(nose);
+  }
+  const trunkPanel = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.071, 0.071, 0.08, 14, 1, true),
+    new THREE.MeshStandardMaterial({
+      color: SOLAR_BLUE,
+      metalness: 0.3,
+      roughness: 0.55,
+      side: THREE.DoubleSide,
+    }),
+  );
+  trunkPanel.position.y = -0.04;
+  setShadowFlags(trunkPanel);
+  g.add(trunkPanel);
+  return g;
+}
+
+function buildCygnus(): THREE.Group {
+  const g = new THREE.Group();
+  g.name = 'visiting_cygnus';
+  const hull = new THREE.MeshStandardMaterial({
+    color: US_WHITE,
+    metalness: 0.1,
+    roughness: 0.7,
+  });
+  const pcm = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.2, 14), hull);
+  pcm.position.y = 0.1;
+  setShadowFlags(pcm);
+  g.add(pcm);
+  const service = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.06, 12), hull);
+  service.position.y = -0.03;
+  setShadowFlags(service);
+  g.add(service);
+  const ultraflexMat = new THREE.MeshStandardMaterial({
+    color: US_DARK,
+    metalness: 0.3,
+    roughness: 0.55,
+    side: THREE.DoubleSide,
+  });
+  for (const sign of [-1, 1]) {
+    const disc = new THREE.Mesh(new THREE.CircleGeometry(0.14, 18), ultraflexMat);
+    disc.position.set(sign * 0.18, -0.03, 0);
+    disc.rotation.y = Math.PI / 2;
+    setShadowFlags(disc);
+    g.add(disc);
+  }
+  return g;
+}
+
+function buildHtvX(): THREE.Group {
+  const g = new THREE.Group();
+  g.name = 'visiting_htvx';
+  const gold = new THREE.MeshStandardMaterial({
+    color: JP_GOLD,
+    metalness: 0.55,
+    roughness: 0.42,
+  });
+  const white = new THREE.MeshStandardMaterial({
+    color: US_WHITE,
+    metalness: 0.1,
+    roughness: 0.7,
+  });
+  const pressurized = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 0.18, 14), white);
+  pressurized.position.y = 0.13;
+  setShadowFlags(pressurized);
+  g.add(pressurized);
+  const unpressurized = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.1, 14), gold);
+  unpressurized.position.y = 0;
+  setShadowFlags(unpressurized);
+  g.add(unpressurized);
+  const panelMat = new THREE.MeshStandardMaterial({
+    color: SOLAR_BLUE,
+    metalness: 0.3,
+    roughness: 0.55,
+    side: THREE.DoubleSide,
+  });
+  for (let i = 0; i < 4; i++) {
+    const angle = (i * Math.PI) / 2 + Math.PI / 4;
+    const panel = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.005, 0.06), panelMat);
+    panel.position.set(Math.cos(angle) * 0.13, 0, Math.sin(angle) * 0.13);
+    panel.rotation.y = angle;
+    setShadowFlags(panel);
+    g.add(panel);
+  }
+  return g;
+}
+
+interface DockedShip {
+  build: () => THREE.Group;
+  /** Position of the docking port on the host module. */
+  port: [number, number, number];
+  /** Direction the vehicle extends out from the port (+Y is default vehicle orientation). */
+  out: 'plusY' | 'minusY' | 'plusZ' | 'minusZ' | 'plusX' | 'minusX';
+}
+
+function buildVisitingFleet(root: THREE.Group) {
+  const fleet: DockedShip[] = [
+    { build: buildSoyuz, port: [-3.35, -0.21, -0.12], out: 'minusY' },
+    { build: buildProgress, port: [-3.45, 0.27, 0.15], out: 'plusY' },
+    { build: buildDragon.bind(null, true), port: [-1.45, 0.21, 0], out: 'plusY' },
+    { build: buildDragon.bind(null, false), port: [0.55, 0.21, 0.05], out: 'plusY' },
+    { build: buildCygnus, port: [-3.1, -0.21, 0], out: 'minusY' },
+    { build: buildHtvX, port: [-1.45, -0.21, 0.34], out: 'minusY' },
+  ];
+  for (const ship of fleet) {
+    const g = ship.build();
+    g.position.set(ship.port[0], ship.port[1], ship.port[2]);
+    if (ship.out === 'minusY') g.rotation.x = Math.PI;
+    else if (ship.out === 'plusZ') g.rotation.x = -Math.PI / 2;
+    else if (ship.out === 'minusZ') g.rotation.x = Math.PI / 2;
+    else if (ship.out === 'plusX') g.rotation.z = -Math.PI / 2;
+    else if (ship.out === 'minusX') g.rotation.z = Math.PI / 2;
+    g.userData.issPickable = false;
+    root.add(g);
+  }
 }

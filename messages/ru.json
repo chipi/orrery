@@ -477,5 +477,22 @@
   "credits_category_credits": "Страница «Авторы»",
   "credits_license_summary_label": "Условия лицензии",
   "credits_totals": "Всего: {photos} фото · {texts} текстов · {sources} источников",
-  "credits_loading": "Загрузка списка материалов…"
+  "credits_loading": "Загрузка списка материалов…",
+  "nav_tiangong": "ТЯНЬГУН",
+  "tiangong_page_title": "Обозреватель «Тяньгун» · Orrery",
+  "tiangong_index_show": "МОДУЛИ",
+  "tiangong_index_hide": "СКРЫТЬ МОДУЛИ",
+  "tiangong_index_close": "Закрыть указатель",
+  "tiangong_load_failed": "Не удалось загрузить модули «Тяньгун».",
+  "tiangong_fallback_perf": "Режим 3D работал медленно на этом устройстве — показан список. Используйте переключатель, чтобы повторить 3D.",
+  "tiangong_fallback_memory": "Режим малой памяти: сначала список. Переключайтесь, чтобы попробовать 3D.",
+  "tiangong_hud_hint": "Тяните, чтобы повернуть · нажмите модуль",
+  "tiangong_canvas_aria": "Интерактивная 3D-модель космической станции «Тяньгун». Тяните, чтобы повернуть вид; нажмите на модуль для подробностей.",
+  "tiangong_reset_camera": "СБРОСИТЬ ВИД",
+  "tiangong_pause_spin": "ОСТАНОВИТЬ ВРАЩЕНИЕ",
+  "tiangong_resume_spin": "ПРОДОЛЖИТЬ ВРАЩЕНИЕ",
+  "tiangong_docked_legend": "ПРИШВАРТОВАНО · 3 КОРАБЛЯ · 2× «ШЭНЬЧЖОУ» (СМЕНА ЭКИПАЖА) · 1× «ТЯНЬЧЖОУ» (ГРУЗ)",
+  "tiangong_hud_aria": "Управление видом «Тяньгун»",
+  "tiangong_list_heading": "МОДУЛИ",
+  "tiangong_visitors_heading": "ГОСТЕВЫЕ КОРАБЛИ"
 }

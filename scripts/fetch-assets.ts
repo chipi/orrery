@@ -1648,10 +1648,35 @@ export const WIKIMEDIA_TIANGONG_MODULE_GALLERY: Record<string, string[]> = {
   mengtian: [
     'Rear view of Tiangong Space Station.jpg',
     'Basic space experiment cabinet of Tiangong space station.jpg',
+    'Chinese spaceflight payloads at NMC 1.jpg',
+    'Chinese spaceflight payloads at NMC 2.jpg',
+    'Chinese spaceflight payloads at NMC 3.jpg',
+    'Normal flight manuals at NMC.jpg',
   ],
-  chinarm: ['Rear view of Tiangong Space Station.jpg', 'Tianhe CSS as seen from M.B Gonnet 01.jpg'],
-  shenzhou: ['Wang Yaping at Shenzhou-13 launch.jpg'],
-  tianzhou: ['Rear view of Tiangong Space Station.jpg'],
+  chinarm: [
+    'Rear view of Tiangong Space Station.jpg',
+    'Tianhe CSS as seen from M.B Gonnet 01.jpg',
+    'Shenzhou-13 spacewalk.jpg',
+    'Shenzhou-15 spacewalk.jpg',
+    'TSS - diagram.jpg',
+    'TSS - diagram 2.jpg',
+  ],
+  shenzhou: [
+    'Wang Yaping at Shenzhou-13 launch.jpg',
+    'Parachutes Shenzhou.jpg',
+    'China Long March CZ-2F.jpg',
+    'Flag of Hong Kong taken to outer space by the Shenzhou spacecraft.jpg',
+    'Shenzhou-13 spacewalk.jpg',
+    'Shenzhou-15 spacewalk.jpg',
+  ],
+  tianzhou: [
+    'Rear view of Tiangong Space Station.jpg',
+    'Tianzhou Rendering no background.png',
+    'Tianzhou-1 and Tiangong-2 rendering.jpg',
+    'Cargo loading diagram of Tianzhou.jpg',
+    "TG's Manipulator Transfer TZ-2 Test.jpg",
+    'CMS docking device at NMC.jpg',
+  ],
 };
 
 async function fetchTiangongModuleImages(onlyIds?: string[]): Promise<number> {

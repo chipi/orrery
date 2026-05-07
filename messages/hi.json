@@ -477,5 +477,22 @@
   "credits_category_credits": "क्रेडिट पेज",
   "credits_license_summary_label": "लाइसेंस शर्तें",
   "credits_totals": "कुल: {photos} तस्वीरें · {texts} पाठ प्रविष्टियाँ · {sources} स्रोत",
-  "credits_loading": "बिल-ऑफ़-मटेरियल्स लोड हो रहा है…"
+  "credits_loading": "बिल-ऑफ़-मटेरियल्स लोड हो रहा है…",
+  "nav_tiangong": "तियानगोंग",
+  "tiangong_page_title": "तियानगोंग एक्सप्लोरर · Orrery",
+  "tiangong_index_show": "मॉड्यूल",
+  "tiangong_index_hide": "मॉड्यूल छिपाएँ",
+  "tiangong_index_close": "सूची बंद करें",
+  "tiangong_load_failed": "तियानगोंग मॉड्यूल लोड नहीं हो सके।",
+  "tiangong_fallback_perf": "3D मोड इस डिवाइस पर धीमा लगा — सूची पर स्विच किया गया। फिर से 3D आज़माने के लिए टॉगल का उपयोग करें।",
+  "tiangong_fallback_memory": "कम-मेमोरी मोड: पहले सूची दृश्य। 3D आज़माने के लिए टॉगल का उपयोग करें।",
+  "tiangong_hud_hint": "घुमाने के लिए खींचें · मॉड्यूल टैप करें",
+  "tiangong_canvas_aria": "तियानगोंग अंतरिक्ष स्टेशन का इंटरैक्टिव 3D मॉडल। दृश्य घुमाने के लिए खींचें; विवरण देखने के लिए मॉड्यूल टैप करें।",
+  "tiangong_reset_camera": "रीसेट दृश्य",
+  "tiangong_pause_spin": "घूर्णन रोकें",
+  "tiangong_resume_spin": "घूर्णन जारी रखें",
+  "tiangong_docked_legend": "डॉक · 3 यान · 2× शेनझोउ (क्रू बदलाव) · 1× तियानझोउ (कार्गो)",
+  "tiangong_hud_aria": "तियानगोंग दृश्य नियंत्रण",
+  "tiangong_list_heading": "मॉड्यूल",
+  "tiangong_visitors_heading": "आगंतुक यान"
 }

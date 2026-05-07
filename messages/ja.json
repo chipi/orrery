@@ -477,5 +477,22 @@
   "credits_category_credits": "クレジット ページ",
   "credits_license_summary_label": "ライセンス条件",
   "credits_totals": "合計: 写真 {photos} 枚 · テキスト {texts} 件 · {sources} 出典",
-  "credits_loading": "部品表を読み込み中…"
+  "credits_loading": "部品表を読み込み中…",
+  "nav_tiangong": "天宮",
+  "tiangong_page_title": "天宮エクスプローラー · Orrery",
+  "tiangong_index_show": "モジュール",
+  "tiangong_index_hide": "モジュールを隠す",
+  "tiangong_index_close": "索引を閉じる",
+  "tiangong_load_failed": "天宮のモジュールを読み込めませんでした。",
+  "tiangong_fallback_perf": "このデバイスでは3Dが遅く見えたため、リストに切り替えました。トグルで再度3Dをお試しください。",
+  "tiangong_fallback_memory": "低メモリモード：まずリスト表示。トグルで3Dを試してください。",
+  "tiangong_hud_hint": "ドラッグで回転 · モジュールをタップ",
+  "tiangong_canvas_aria": "天宮宇宙ステーションのインタラクティブ3Dモデル。ドラッグでビューを回転、モジュールをタップで詳細表示。",
+  "tiangong_reset_camera": "ビューをリセット",
+  "tiangong_pause_spin": "回転を一時停止",
+  "tiangong_resume_spin": "回転を再開",
+  "tiangong_docked_legend": "ドッキング · 3機 · 神舟×2（クルー交代）· 天舟×1（補給）",
+  "tiangong_hud_aria": "天宮ビュー操作",
+  "tiangong_list_heading": "モジュール",
+  "tiangong_visitors_heading": "訪問機"
 }

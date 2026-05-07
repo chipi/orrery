@@ -477,5 +477,22 @@
   "credits_category_credits": "Stranica „Zasluge“",
   "credits_license_summary_label": "Uslovi licence",
   "credits_totals": "Ukupno: {photos} fotografija · {texts} tekstualnih unosa · {sources} izvora",
-  "credits_loading": "Učitavanje pregleda materijala…"
+  "credits_loading": "Učitavanje pregleda materijala…",
+  "nav_tiangong": "TJANGONG",
+  "tiangong_page_title": "Tjangong istraživač · Orrery",
+  "tiangong_index_show": "MODULI",
+  "tiangong_index_hide": "SAKRIJ MODULE",
+  "tiangong_index_close": "Zatvori indeks",
+  "tiangong_load_failed": "Učitavanje Tjangong modula nije uspelo.",
+  "tiangong_fallback_perf": "3D režim je bio spor na ovom uređaju — prebačeno na listu. Koristite prekidač da ponovo pokušate 3D.",
+  "tiangong_fallback_memory": "Režim malo memorije: prvo lista. Koristite prekidač da probate 3D.",
+  "tiangong_hud_hint": "Prevuci za orbitu · dodirni modul",
+  "tiangong_canvas_aria": "Interaktivni 3D model svemirske stanice Tjangong. Prevucite za orbitiranje, dodirnite modul za detalje.",
+  "tiangong_reset_camera": "RESETUJ PRIKAZ",
+  "tiangong_pause_spin": "PAUZIRAJ ROTACIJU",
+  "tiangong_resume_spin": "NASTAVI ROTACIJU",
+  "tiangong_docked_legend": "UKOTVLJENO · 3 LETELICE · 2× ŠENDŽOU (SMENA POSADE) · 1× TJANDŽOU (TERET)",
+  "tiangong_hud_aria": "Kontrole prikaza Tjangong",
+  "tiangong_list_heading": "MODULI",
+  "tiangong_visitors_heading": "POSETILAČKE LETELICE"
 }

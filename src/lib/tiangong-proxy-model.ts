@@ -111,6 +111,9 @@ function buildShenzhou(): THREE.Group {
   const wingPair = new THREE.Group();
   wingPair.position.set(0, 0.93, 0);
   wingPair.rotation.x = Math.PI / 2;
+  wingPair.userData.tracksSun = true;
+  wingPair.userData.sadaAxis = 'x';
+  wingPair.userData.baseRotation = Math.PI / 2;
   makeWingPair(wingPair, 1.4, 0.5, SOLAR_BLUE);
   g.add(wingPair);
   return g;
@@ -141,6 +144,9 @@ function buildTianzhou(): THREE.Group {
   const wingPair = new THREE.Group();
   wingPair.position.set(0, 1.3, 0);
   wingPair.rotation.x = Math.PI / 2;
+  wingPair.userData.tracksSun = true;
+  wingPair.userData.sadaAxis = 'x';
+  wingPair.userData.baseRotation = Math.PI / 2;
   makeWingPair(wingPair, 1.6, 0.6, SOLAR_BLUE);
   g.add(wingPair);
   return g;
@@ -275,6 +281,83 @@ export function buildTiangongProxyStation(): THREE.Group {
   setShadowFlags(zenithAdapter);
   root.add(zenithAdapter);
 
+  // ── Antennas + small details on Tianhe ─────────────────────────────
+  //
+  // Real Tianhe carries a dorsal high-gain parabolic dish for the TDRSS-
+  // class relay link, plus a handful of VHF/UHF omnidirectional whips
+  // and a forward-facing rendezvous/docking telemetry boom. These are
+  // tiny in absolute scale but they break the cylindrical silhouette
+  // and give the eye something to hold on to.
+  const antennaMat = new THREE.MeshStandardMaterial({
+    color: 0x9aa1a8,
+    metalness: 0.55,
+    roughness: 0.4,
+  });
+  const dishMat = new THREE.MeshStandardMaterial({
+    color: 0xd9d2c4,
+    metalness: 0.25,
+    roughness: 0.35,
+    side: THREE.DoubleSide,
+  });
+
+  // Dorsal high-gain dish — small parabolic reflector mounted on top of
+  // the forward main bay, gimballed roughly toward the relay direction.
+  const dishCenterX = tianheLen / 2 - tianheForwardLen * 0.5;
+  const dishMast = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.16, 8), antennaMat);
+  dishMast.position.set(dishCenterX, 0, tianheRadius + 0.08);
+  dishMast.rotation.x = Math.PI / 2;
+  setShadowFlags(dishMast);
+  dishMast.userData.stationPickable = false;
+  root.add(dishMast);
+
+  const dish = new THREE.Mesh(
+    new THREE.SphereGeometry(0.085, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2.2),
+    dishMat,
+  );
+  // Open face of the half-sphere points along +Y by default; rotate so
+  // it points up-and-slightly-forward (toward +Z, +X) — a relay antenna
+  // pose.
+  dish.position.set(dishCenterX + 0.02, 0, tianheRadius + 0.18);
+  dish.rotation.x = -Math.PI / 2;
+  dish.rotation.z = -0.25;
+  dish.scale.set(1.0, 0.55, 1.0);
+  setShadowFlags(dish);
+  dish.userData.stationPickable = false;
+  root.add(dish);
+
+  // Omnidirectional whip antennas — a pair on the underside (nadir) and
+  // one off the aft section (forward-side flank). Thin tall cylinders.
+  const whipPositions: Array<[number, number, number, number]> = [
+    // [x, y, z, lengthScale]
+    [tianheLen / 2 - tianheForwardLen * 0.3, 0, -tianheRadius - 0.04, 0.22],
+    [tianheLen / 2 - tianheForwardLen * 0.7, 0, -tianheRadius - 0.04, 0.18],
+    [-tianheLen / 2 + tianheAftLen * 0.55, tianheAftRadius + 0.03, 0, 0.16],
+  ];
+  for (const [wx, wy, wz, len] of whipPositions) {
+    const whip = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.005, len, 6), antennaMat);
+    // Default cylinder axis is Y. For nadir whips (z < 0) we want axis
+    // along -Z; for the aft whip we want axis along +Y (already correct).
+    whip.position.set(wx, wy, wz);
+    if (wz < 0) {
+      whip.rotation.x = Math.PI / 2;
+      whip.position.z -= len / 2;
+    } else {
+      whip.position.y += len / 2;
+    }
+    setShadowFlags(whip);
+    whip.userData.stationPickable = false;
+    root.add(whip);
+  }
+
+  // Forward rendezvous-telemetry boom — short stub off the forward node
+  // hub at the +X tip, gives the front of the station a "nose" detail.
+  const rvBoom = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.012, 0.14, 8), antennaMat);
+  rvBoom.position.set(tianheLen / 2 + 0.18 + tianheRadius * 1.55 + 0.16, tianheRadius * 0.6, 0);
+  rvBoom.rotation.z = Math.PI / 2;
+  setShadowFlags(rvBoom);
+  rvBoom.userData.stationPickable = false;
+  root.add(rvBoom);
+
   // ── Tianhe's own solar arrays — TWO pairs (4 wings total) per the
   // real station after the array-relocation campaign. Both pairs deploy
   // perpendicular to Tianhe's X-axis along ±Y, with face normal ±Z so
@@ -312,6 +395,9 @@ export function buildTiangongProxyStation(): THREE.Group {
       }
       setShadowFlags(wing);
       wing.userData.stationPickable = false;
+      wing.userData.tracksSun = true;
+      wing.userData.sadaAxis = 'y';
+      wing.userData.baseRotation = 0;
       wing.name = 'tianhe_solar_array';
       root.add(wing);
     }
@@ -389,6 +475,9 @@ export function buildTiangongProxyStation(): THREE.Group {
     const pair = new THREE.Group();
     pair.position.set(tianheLen / 2 + 0.14, wentianBaseY + labLen + 0.04 + dy, 0);
     pair.rotation.x = Math.PI / 2;
+    pair.userData.tracksSun = true;
+    pair.userData.sadaAxis = 'x';
+    pair.userData.baseRotation = Math.PI / 2;
     makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {
@@ -438,6 +527,9 @@ export function buildTiangongProxyStation(): THREE.Group {
     const pair = new THREE.Group();
     pair.position.set(tianheLen / 2 + 0.14, -(wentianBaseY + labLen + 0.04 + dy), 0);
     pair.rotation.x = Math.PI / 2;
+    pair.userData.tracksSun = true;
+    pair.userData.sadaAxis = 'x';
+    pair.userData.baseRotation = Math.PI / 2;
     makeWingPair(pair, 3.6, labArrayDepth, SOLAR_GOLD);
     root.add(pair);
     pair.traverse((c) => {

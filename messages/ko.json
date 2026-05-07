@@ -477,5 +477,22 @@
   "credits_category_credits": "크레딧 페이지",
   "credits_license_summary_label": "라이선스 조건",
   "credits_totals": "합계: 사진 {photos}장 · 텍스트 {texts}건 · 출처 {sources}",
-  "credits_loading": "부품 목록을 불러오는 중…"
+  "credits_loading": "부품 목록을 불러오는 중…",
+  "nav_tiangong": "톈궁",
+  "tiangong_page_title": "톈궁 탐색기 · Orrery",
+  "tiangong_index_show": "모듈",
+  "tiangong_index_hide": "모듈 숨기기",
+  "tiangong_index_close": "색인 닫기",
+  "tiangong_load_failed": "톈궁 모듈을 불러오지 못했습니다.",
+  "tiangong_fallback_perf": "이 기기에서 3D가 느려 보여 목록으로 전환했습니다. 토글로 다시 3D를 시도하세요.",
+  "tiangong_fallback_memory": "저메모리 모드: 목록 보기 우선. 토글로 3D를 시도하세요.",
+  "tiangong_hud_hint": "드래그로 회전 · 모듈 탭",
+  "tiangong_canvas_aria": "톈궁 우주정거장의 인터랙티브 3D 모델. 드래그로 시점 회전, 모듈 탭으로 상세 보기.",
+  "tiangong_reset_camera": "뷰 초기화",
+  "tiangong_pause_spin": "회전 일시정지",
+  "tiangong_resume_spin": "회전 재개",
+  "tiangong_docked_legend": "도킹 · 3대 · 선저우 2 (승무원 교대) · 톈저우 1 (화물)",
+  "tiangong_hud_aria": "톈궁 보기 컨트롤",
+  "tiangong_list_heading": "모듈",
+  "tiangong_visitors_heading": "방문 비행체"
 }

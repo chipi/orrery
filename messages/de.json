@@ -477,5 +477,22 @@
   "credits_category_credits": "Credits-Seite",
   "credits_license_summary_label": "Lizenzbedingungen",
   "credits_totals": "Gesamt: {photos} Fotos · {texts} Texteinträge · {sources} Quellen",
-  "credits_loading": "Stückliste wird geladen …"
+  "credits_loading": "Stückliste wird geladen …",
+  "nav_tiangong": "TIANGONG",
+  "tiangong_page_title": "Tiangong-Explorer · Orrery",
+  "tiangong_index_show": "MODULE",
+  "tiangong_index_hide": "MODULE AUSBLENDEN",
+  "tiangong_index_close": "Index schließen",
+  "tiangong_load_failed": "Tiangong-Module konnten nicht geladen werden.",
+  "tiangong_fallback_perf": "3D-Modus war auf diesem Gerät langsam — Liste eingeblendet. Schalter erneut nutzen, um 3D zu versuchen.",
+  "tiangong_fallback_memory": "Speicherarmer Modus: zuerst Listenansicht. Schalter nutzen, um 3D zu versuchen.",
+  "tiangong_hud_hint": "Ziehen zum Drehen · Modul antippen",
+  "tiangong_canvas_aria": "Interaktives 3D-Modell der Raumstation Tiangong. Ziehen, um die Ansicht zu drehen; Modul antippen für Details.",
+  "tiangong_reset_camera": "ANSICHT ZURÜCKSETZEN",
+  "tiangong_pause_spin": "DREHUNG ANHALTEN",
+  "tiangong_resume_spin": "DREHUNG FORTSETZEN",
+  "tiangong_docked_legend": "ANGEDOCKT · 3 SCHIFFE · 2× SHENZHOU (CREW-WECHSEL) · 1× TIANZHOU (FRACHT)",
+  "tiangong_hud_aria": "Tiangong-Ansichtssteuerung",
+  "tiangong_list_heading": "MODULE",
+  "tiangong_visitors_heading": "BESUCHENDE FAHRZEUGE"
 }

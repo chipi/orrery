@@ -477,5 +477,22 @@
   "credits_category_credits": "Página de Créditos",
   "credits_license_summary_label": "Termos da licença",
   "credits_totals": "Total: {photos} fotos · {texts} entradas de texto · {sources} fontes",
-  "credits_loading": "Carregando lista de materiais…"
+  "credits_loading": "Carregando lista de materiais…",
+  "nav_tiangong": "TIANGONG",
+  "tiangong_page_title": "Explorador Tiangong · Orrery",
+  "tiangong_index_show": "MÓDULOS",
+  "tiangong_index_hide": "OCULTAR MÓDULOS",
+  "tiangong_index_close": "Fechar índice",
+  "tiangong_load_failed": "Falha ao carregar os módulos do Tiangong.",
+  "tiangong_fallback_perf": "O modo 3D pareceu lento neste dispositivo — exibindo a lista. Use a alternância para tentar o 3D novamente.",
+  "tiangong_fallback_memory": "Modo de memória baixa: lista primeiro. Use a alternância para tentar o 3D.",
+  "tiangong_hud_hint": "Arraste para orbitar · toque em um módulo",
+  "tiangong_canvas_aria": "Modelo 3D interativo da estação espacial Tiangong. Arraste para orbitar; toque em um módulo para ver detalhes.",
+  "tiangong_reset_camera": "REDEFINIR VISTA",
+  "tiangong_pause_spin": "PAUSAR ROTAÇÃO",
+  "tiangong_resume_spin": "RETOMAR ROTAÇÃO",
+  "tiangong_docked_legend": "ACOPLADAS · 3 NAVES · 2× SHENZHOU (RENDIÇÃO DE TRIPULAÇÃO) · 1× TIANZHOU (CARGA)",
+  "tiangong_hud_aria": "Controles de vista Tiangong",
+  "tiangong_list_heading": "MÓDULOS",
+  "tiangong_visitors_heading": "VEÍCULOS VISITANTES"
 }

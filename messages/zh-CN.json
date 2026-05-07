@@ -477,5 +477,22 @@
   "credits_category_credits": "致谢页面",
   "credits_license_summary_label": "许可条款",
   "credits_totals": "合计：图片 {photos} 张 · 文字记录 {texts} 条 · 来源 {sources}",
-  "credits_loading": "正在加载物料清单……"
+  "credits_loading": "正在加载物料清单……",
+  "nav_tiangong": "天宫",
+  "tiangong_page_title": "天宫浏览器 · Orrery",
+  "tiangong_index_show": "舱段",
+  "tiangong_index_hide": "隐藏舱段",
+  "tiangong_index_close": "关闭索引",
+  "tiangong_load_failed": "加载天宫舱段失败。",
+  "tiangong_fallback_perf": "在该设备上 3D 模式运行缓慢 — 已切换到列表视图。使用切换按钮重试 3D。",
+  "tiangong_fallback_memory": "低内存模式：优先列表视图。使用切换按钮尝试 3D。",
+  "tiangong_hud_hint": "拖动以环绕 · 点选舱段",
+  "tiangong_canvas_aria": "天宫空间站交互式 3D 模型。拖动以环绕视角；点选舱段查看详情。",
+  "tiangong_reset_camera": "重置视角",
+  "tiangong_pause_spin": "暂停旋转",
+  "tiangong_resume_spin": "继续旋转",
+  "tiangong_docked_legend": "停靠 · 3 艘飞船 · 2× 神舟（乘员轮换）· 1× 天舟（货运）",
+  "tiangong_hud_aria": "天宫视图控件",
+  "tiangong_list_heading": "舱段",
+  "tiangong_visitors_heading": "到访航天器"
 }

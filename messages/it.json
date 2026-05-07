@@ -477,5 +477,22 @@
   "credits_category_credits": "Pagina Crediti",
   "credits_license_summary_label": "Termini di licenza",
   "credits_totals": "Totale: {photos} foto · {texts} voci di testo · {sources} fonti",
-  "credits_loading": "Caricamento della distinta base…"
+  "credits_loading": "Caricamento della distinta base…",
+  "nav_tiangong": "TIANGONG",
+  "tiangong_page_title": "Esploratore Tiangong · Orrery",
+  "tiangong_index_show": "MODULI",
+  "tiangong_index_hide": "NASCONDI MODULI",
+  "tiangong_index_close": "Chiudi indice",
+  "tiangong_load_failed": "Impossibile caricare i moduli Tiangong.",
+  "tiangong_fallback_perf": "La modalità 3D appariva lenta su questo dispositivo — passato alla lista. Usa l’interruttore per riprovare con il 3D.",
+  "tiangong_fallback_memory": "Modalità a bassa memoria: prima la lista. Usa l’interruttore per provare il 3D.",
+  "tiangong_hud_hint": "Trascina per orbitare · tocca un modulo",
+  "tiangong_canvas_aria": "Modello 3D interattivo della stazione spaziale Tiangong. Trascina per orbitare la vista; tocca un modulo per i dettagli.",
+  "tiangong_reset_camera": "RIPRISTINA VISTA",
+  "tiangong_pause_spin": "METTI IN PAUSA ROTAZIONE",
+  "tiangong_resume_spin": "RIPRENDI ROTAZIONE",
+  "tiangong_docked_legend": "ATTRACCATE · 3 VEICOLI · 2× SHENZHOU (CAMBIO EQUIPAGGIO) · 1× TIANZHOU (CARGO)",
+  "tiangong_hud_aria": "Controlli vista Tiangong",
+  "tiangong_list_heading": "MODULI",
+  "tiangong_visitors_heading": "VEICOLI IN VISITA"
 }

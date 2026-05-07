@@ -477,5 +477,22 @@
   "credits_category_credits": "Страница „Заслуге“",
   "credits_license_summary_label": "Услови лиценце",
   "credits_totals": "Укупно: {photos} фотографија · {texts} текстуалних уноса · {sources} извора",
-  "credits_loading": "Учитавање прегледа материјала…"
+  "credits_loading": "Учитавање прегледа материјала…",
+  "nav_tiangong": "ТЈАНГОНГ",
+  "tiangong_page_title": "Тјангонг истраживач · Orrery",
+  "tiangong_index_show": "МОДУЛИ",
+  "tiangong_index_hide": "САКРИЈ МОДУЛЕ",
+  "tiangong_index_close": "Затвори индекс",
+  "tiangong_load_failed": "Учитавање Тјангонг модула није успело.",
+  "tiangong_fallback_perf": "3D режим је био спор на овом уређају — пребачено на листу. Користите прекидач да поново покушате 3D.",
+  "tiangong_fallback_memory": "Режим мало меморије: прво листа. Користите прекидач да пробате 3D.",
+  "tiangong_hud_hint": "Превуци за орбиту · додирни модул",
+  "tiangong_canvas_aria": "Интерактивни 3D модел свемирске станице Тјангонг. Превуците за орбитирање, додирните модул за детаље.",
+  "tiangong_reset_camera": "РЕСЕТУЈ ПРИКАЗ",
+  "tiangong_pause_spin": "ПАУЗИРАЈ РОТАЦИЈУ",
+  "tiangong_resume_spin": "НАСТАВИ РОТАЦИЈУ",
+  "tiangong_docked_legend": "УКОТВЉЕНО · 3 ЛЕТЕЛИЦЕ · 2× ШЕНЏОУ (СМЕНА ПОСАДЕ) · 1× ТЈАНЏОУ (ТЕРЕТ)",
+  "tiangong_hud_aria": "Контроле приказа Тјангонг",
+  "tiangong_list_heading": "МОДУЛИ",
+  "tiangong_visitors_heading": "ПОСЕТИЛАЧКЕ ЛЕТЕЛИЦЕ"
 }

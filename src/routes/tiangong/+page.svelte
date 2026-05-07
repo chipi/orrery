@@ -85,12 +85,20 @@
     };
   });
 
-  let sortedModules = $derived(
-    [...modules].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
-  );
-  let sortedVisitors = $derived(
-    [...visitors].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
-  );
+  // Combined list: pressurised modules (incl. Chinarm) sorted alphabetically,
+  // then visiting vehicles (Shenzhou / Tianzhou) sorted alphabetically.
+  // Single list under one "MODULES" heading — visitors used to live in a
+  // separate section below, but Tianzhou was easy to miss when the
+  // drawer's height clipped it. Combining keeps every pickable entity
+  // visible at first glance.
+  let sortedEntries = $derived([
+    ...[...modules].sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
+    ),
+    ...[...visitors].sort((a, b) =>
+      a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }),
+    ),
+  ]);
 
   function urlWantsList(url: URL): boolean {
     return url.searchParams.get('view') === 'list';
@@ -457,6 +465,16 @@
       if (autoSpin) spinTimeAccum += dt;
       lastFrameT = t;
       station.rotation.y = spinTimeAccum * 0.028;
+      // Sun-tracking solar arrays — slow continuous rotation around each
+      // array's SADA axis (one full revolution every ~4 minutes).
+      const sunPhase = t * 0.026;
+      station.traverse((obj) => {
+        if (obj.userData.tracksSun) {
+          const axis = obj.userData.sadaAxis as 'x' | 'y' | 'z';
+          const base = (obj.userData.baseRotation as number) ?? 0;
+          obj.rotation[axis] = base + sunPhase;
+        }
+      });
       refreshMeshMaterials(t);
       controls.update();
       composer.render();
@@ -570,38 +588,20 @@
       {/if}
       <h2 class="list-heading">{m.tiangong_list_heading()}</h2>
       <ul class="module-list">
-        {#each sortedModules as mod (mod.id)}
+        {#each sortedEntries as entry (entry.id)}
           <li>
             <button
               type="button"
               class="module-row"
-              onclick={() => openModule(mod)}
-              aria-current={selected?.id === mod.id ? 'true' : undefined}
+              onclick={() => openModule(entry)}
+              aria-current={selected?.id === entry.id ? 'true' : undefined}
             >
-              <span class="mod-name">{mod.name}</span>
-              <span class="mod-meta">{mod.agency}</span>
+              <span class="mod-name">{entry.name}</span>
+              <span class="mod-meta">{entry.agency}</span>
             </button>
           </li>
         {/each}
       </ul>
-      {#if sortedVisitors.length > 0}
-        <h2 class="list-heading list-heading-visitors">{m.tiangong_visitors_heading()}</h2>
-        <ul class="module-list">
-          {#each sortedVisitors as ship (ship.id)}
-            <li>
-              <button
-                type="button"
-                class="module-row"
-                onclick={() => openModule(ship)}
-                aria-current={selected?.id === ship.id ? 'true' : undefined}
-              >
-                <span class="mod-name">{ship.name}</span>
-                <span class="mod-meta">{ship.agency}</span>
-              </button>
-            </li>
-          {/each}
-        </ul>
-      {/if}
     </aside>
 
     <div
@@ -708,7 +708,7 @@
     -webkit-overflow-scrolling: touch;
     position: absolute;
     inset: auto;
-    top: 220px;
+    top: 152px;
     left: 12px;
     bottom: 12px;
     width: min(300px, calc(100vw - 24px));
@@ -759,10 +759,6 @@
     letter-spacing: 4px;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 16px;
-  }
-  .list-heading-visitors {
-    margin-top: 28px;
-    color: rgba(78, 205, 196, 0.85);
   }
   .hover-label {
     position: absolute;

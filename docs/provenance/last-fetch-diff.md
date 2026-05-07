@@ -1,35 +1,26 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-05-07T17:58:44.063Z
+Generated: 2026-05-07T21:37:10.711Z
 Script: build-image-provenance@1.0.0
-Commit: 5a85eb5c6a7af7b6a6dbf2d118906f68e54dffb6
-Total entries: 645
+Commit: 89e1cbc70808adf17794e1aa7d144f695c366f63
+Total entries: 659
 
-## Added (23)
+## Added (14)
 
-- `/images/missions/apollo14/05.jpg` — PD-NASA via nasa-images-api
-- `/images/missions/apollo15/04.jpg` — PD-NASA via nasa-images-api
-- `/images/moon-sites/change6/05.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/chinarm/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/chinarm/02.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/chinarm/03.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/mengtian/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/mengtian/02.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/mengtian/03.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/shenzhou/01.jpg` — CC-BY-3.0 via wikimedia-commons
-- `/images/tiangong-modules/shenzhou/02.jpg` — CC-BY-3.0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/01.jpg` — CC-BY-3.0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/02.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/03.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/04.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/05.jpg` — CC0 via wikimedia-commons
-- `/images/tiangong-modules/tianhe/06.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/tianzhou/01.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/tianzhou/02.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/wentian/01.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/wentian/02.jpg` — CC-BY-SA-4.0 via wikimedia-commons
-- `/images/tiangong-modules/wentian/03.jpg` — CC-BY-4.0 via wikimedia-commons
-- `/images/tiangong-modules/wentian/04.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/04.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/05.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/chinarm/06.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/04.jpg` — CC0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/05.jpg` — CC0 via wikimedia-commons
+- `/images/tiangong-modules/mengtian/06.jpg` — CC0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/03.jpg` — CC-BY-SA-2.0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/04.jpg` — CC0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/05.jpg` — CC-BY-SA-3.0 via wikimedia-commons
+- `/images/tiangong-modules/shenzhou/06.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/03.jpg` — CC-BY-SA-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/04.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/05.jpg` — CC-BY-4.0 via wikimedia-commons
+- `/images/tiangong-modules/tianzhou/06.jpg` — CC-BY-4.0 via wikimedia-commons
 
 ## Removed (0)
 

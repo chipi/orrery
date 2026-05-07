@@ -20,11 +20,51 @@ a {
   color: var(--color-accent);
 }
 
+/* Document & inner-container scrollbars.
+ *
+ * Default to a 12px touch-friendly track so the page-level scrollbar
+ * on long routes (/library, /credits, /missions, /science) is easy
+ * to grab on a trackpad or mouse. Firefox uses `scrollbar-color` /
+ * `scrollbar-width`; Webkit/Blink use the pseudo-elements below.
+ *
+ * Components that genuinely need a slim scrollbar (e.g. very narrow
+ * inline rails) should opt in by adding `.scroll-thin` on the
+ * scrolling container — see `.scroll-thin` below.
+ */
+html {
+  scrollbar-width: auto;
+  scrollbar-color: rgba(255, 255, 255, 0.35) rgba(4, 4, 12, 0.4);
+}
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(4, 4, 12, 0.4);
 }
 ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.28);
+  border: 2px solid rgba(4, 4, 12, 0.9);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(78, 205, 196, 0.55);
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
+  border: none;
   border-radius: 2px;
 }
 

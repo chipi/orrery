@@ -477,5 +477,22 @@
   "credits_category_credits": "صفحة الاعتمادات",
   "credits_license_summary_label": "شروط الترخيص",
   "credits_totals": "الإجمالي: {photos} صورة · {texts} مدخلات نصية · {sources} مصادر",
-  "credits_loading": "جارٍ تحميل قائمة المواد…"
+  "credits_loading": "جارٍ تحميل قائمة المواد…",
+  "nav_tiangong": "تيانغونغ",
+  "tiangong_page_title": "مستكشف تيانغونغ · Orrery",
+  "tiangong_index_show": "الوحدات",
+  "tiangong_index_hide": "إخفاء الوحدات",
+  "tiangong_index_close": "إغلاق الفهرس",
+  "tiangong_load_failed": "تعذّر تحميل وحدات تيانغونغ.",
+  "tiangong_fallback_perf": "وضع 3D بدا بطيئًا على هذا الجهاز — تم التبديل إلى القائمة. استخدم زر التبديل للمحاولة بـ 3D من جديد.",
+  "tiangong_fallback_memory": "وضع الذاكرة المنخفضة: عرض القائمة أولًا. استخدم زر التبديل لتجربة 3D.",
+  "tiangong_hud_hint": "اسحب لتدور · انقر وحدة",
+  "tiangong_canvas_aria": "نموذج 3D تفاعلي لمحطة تيانغونغ الفضائية. اسحب لتدوير العرض؛ انقر على وحدة لفتح التفاصيل.",
+  "tiangong_reset_camera": "إعادة الضبط",
+  "tiangong_pause_spin": "إيقاف الدوران",
+  "tiangong_resume_spin": "استئناف الدوران",
+  "tiangong_docked_legend": "مرسى · 3 مركبات · 2× شينزو (تسليم الطاقم) · 1× تيانتشو (شحن)",
+  "tiangong_hud_aria": "عناصر تحكم عرض تيانغونغ",
+  "tiangong_list_heading": "الوحدات",
+  "tiangong_visitors_heading": "المركبات الزائرة"
 }

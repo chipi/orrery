@@ -715,7 +715,7 @@
       aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.tiangong_list_heading()}
     >
-      {#if viewMode === '3d'}
+      {#if viewMode !== 'list'}
         <button
           type="button"
           class="index-close"
@@ -787,30 +787,29 @@
           <span class="hint hint-docked">{m.tiangong_docked_legend()}</span>
         </div>
       {/if}
-      <div class="ctrl-row">
-        <button
-          type="button"
-          class="toggle"
-          data-testid="tiangong-blueprint-toggle"
-          onclick={cycleBlueprintView}
-          title="Cycle 3D / Top / Side"
-        >
-          {viewMode === '3d'
-            ? '3D'
-            : viewMode === '2d-top'
-              ? 'TOP'
-              : viewMode === '2d-side'
-                ? 'SIDE'
-                : '3D'}
-        </button>
-        {#if viewMode === '3d'}
+      <!-- Always 4 buttons in a single row across all non-list modes;
+           RESET + SPIN are 3D-only and grey out in 2D so the layout
+           doesn't jump between modes. -->
+      {#if viewMode !== 'list'}
+        <div class="ctrl-row">
+          <button
+            type="button"
+            class="toggle"
+            data-testid="tiangong-blueprint-toggle"
+            onclick={cycleBlueprintView}
+            title="Cycle 3D / Top / Side"
+          >
+            {viewMode === '3d' ? '3D' : viewMode === '2d-top' ? 'TOP' : 'SIDE'}
+          </button>
           <button
             type="button"
             class="toggle"
             data-testid="tiangong-reset-camera"
             onclick={() => resetCamera()}
+            disabled={viewMode !== '3d'}
+            title="Reset 3D camera"
           >
-            {m.tiangong_reset_camera()}
+            RESET
           </button>
           <button
             type="button"
@@ -818,8 +817,10 @@
             data-testid="tiangong-spin-toggle"
             aria-pressed={!autoSpin}
             onclick={() => (autoSpin = !autoSpin)}
+            disabled={viewMode !== '3d'}
+            title="Pause / resume station spin"
           >
-            {autoSpin ? m.tiangong_pause_spin() : m.tiangong_resume_spin()}
+            SPIN
           </button>
           <button
             type="button"
@@ -827,10 +828,13 @@
             data-testid="tiangong-view-toggle"
             aria-pressed={indexOpen}
             onclick={() => (indexOpen = !indexOpen)}
+            title="Show / hide module list"
           >
-            {indexOpen ? m.tiangong_index_hide() : m.tiangong_index_show()}
+            MODULES
           </button>
-        {:else}
+        </div>
+      {:else}
+        <div class="ctrl-row">
           <button
             type="button"
             class="toggle"
@@ -839,8 +843,8 @@
           >
             {m.iss_view_3d()}
           </button>
-        {/if}
-      </div>
+        </div>
+      {/if}
     </div>
   {/if}
 
@@ -1077,6 +1081,14 @@
   .toggle:focus-visible {
     border-color: #4466ff;
     outline: none;
+  }
+  .toggle:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    border-color: rgba(68, 102, 255, 0.18);
+  }
+  .toggle:disabled:hover {
+    border-color: rgba(68, 102, 255, 0.18);
   }
   .banner {
     font-family: 'Space Mono', monospace;

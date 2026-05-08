@@ -8,6 +8,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "eva",
+    "title": "EVA — Extravehicular Activity",
+    "intro": "A spacewalk: the highest-risk, highest-reward portion of a crewed mission, capped at about 8 hours by suit consumables.",
+    "haystack": "eva — extravehicular activity a spacewalk: the highest-risk, highest-reward portion of a crewed mission, capped at about 8 hours by suit consumables. suit consumables: iss emu (extravehicular mobility unit) carries about 8 hours of oxygen + battery + cooling-water sublimation. co₂ scrubbing is the typical limiter — when the lioh or amine-swing canister saturates, the eva ends."
+  },
+  {
+    "tab": "mission-phases",
     "section": "launch",
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",
@@ -239,10 +246,24 @@
   },
   {
     "tab": "scales-time",
+    "section": "long-duration",
+    "title": "Long-Duration Spaceflight",
+    "intro": "Beyond about three months, microgravity stops being neutral and starts taking measurable bites out of the human body.",
+    "haystack": "long-duration spaceflight beyond about three months, microgravity stops being neutral and starts taking measurable bites out of the human body. bone + muscle — astronauts lose 1-2% bone mineral density per month in weight-bearing bones without countermeasures (~0.5% with the advanced resistive exercise device + bisphosphonate). type i muscle fibres atrophy fastest; daily 2-hour exercise on treadmill + cycle ergometer + ared preserves about 90% of pre-flight muscle mass."
+  },
+  {
+    "tab": "scales-time",
     "section": "sidereal-synodic",
     "title": "Sidereal vs Synodic Period",
     "intro": "Two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer.",
     "haystack": "sidereal vs synodic period two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer. sidereal period: time for one full orbit relative to the fixed stars. this is the geometric, kepler-third-law period — mars sidereal year is 687 earth days. synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. mars synodic period — time between mars-earth alignments — is 780 days, or about 26 months."
+  },
+  {
+    "tab": "space-stations",
+    "section": "expedition-cadence",
+    "title": "Expedition Cadence",
+    "intro": "Stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology.",
+    "haystack": "expedition cadence stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology. constraints driving the ~6-month cadence: docked-spacecraft certification (soyuz: 210 days; crew dragon: 210 days; shenzhou: 180-210 days), eva suit ground refurbishment cycles, food-pantry capacity per resupply, and the nasa human research program's preference for 6-month bone-loss data brackets."
   },
   {
     "tab": "space-stations",

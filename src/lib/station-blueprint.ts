@@ -167,20 +167,19 @@ export function drawBlueprint(
     ctx.stroke();
   }
 
-  // View label, top-left.
+  // Axis hints, bottom-CENTER. (Top-left view label removed — the HUD
+  // chip already shows the same view info. Bottom-right was overlapping
+  // the credits + library links and the panel; centre keeps it clear of
+  // both edges.)
   ctx.fillStyle = BLUEPRINT_LABEL;
   ctx.font = '11px "Space Mono", monospace';
-  ctx.textBaseline = 'top';
-  ctx.textAlign = 'left';
-  ctx.fillText(view === 'top' ? 'TOP VIEW · XZ' : 'SIDE VIEW · XY', 12, 12);
-  // Axis hints, bottom-right.
-  ctx.textAlign = 'right';
+  ctx.textAlign = 'center';
   ctx.textBaseline = 'bottom';
   ctx.fillText(
     view === 'top'
       ? '← AFT  /  FWD →    ↑ STARBOARD  /  PORT ↓'
       : '← AFT  /  FWD →    ↑ ZENITH  /  NADIR ↓',
-    canvasW - 12,
+    canvasW / 2,
     canvasH - 12,
   );
 

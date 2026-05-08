@@ -245,6 +245,17 @@
         aria-hidden="true"
       ></div>
 
+      <!-- "Now" marker (J.1) — vertical line at the current year so
+           users can see where past vs. upcoming missions sit. -->
+      <div
+        class="now-marker"
+        style:left="{yearToFrac(new Date().getFullYear()) * 100}%"
+        aria-label="Current year"
+        title="Now · {new Date().getFullYear()}"
+      >
+        <span class="now-label">NOW</span>
+      </div>
+
       {#each missions as mission (mission.id)}
         <button
           type="button"
@@ -342,6 +353,31 @@
     border-left: 1px solid rgba(78, 205, 196, 0.3);
     border-right: 1px solid rgba(78, 205, 196, 0.3);
     pointer-events: none;
+  }
+
+  /* "Now" marker (J.1). Vertical line + small label so users can
+     orient past vs. upcoming missions on the strip. */
+  .now-marker {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    width: 1px;
+    background: rgba(255, 200, 80, 0.85);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .now-label {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 200, 80, 0.85);
+    background: rgba(8, 10, 22, 0.85);
+    padding: 1px 4px;
+    border-radius: 2px;
   }
   .dot {
     position: absolute;

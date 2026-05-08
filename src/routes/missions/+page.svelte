@@ -27,6 +27,9 @@
   let destFilter: Destination | 'ALL' = $state('ALL');
   let statusFilter: MissionStatus | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
+  // J.1 — filter strip is collapsed by default; clicking the eyebrow
+  // expands it. Resets on route mount.
+  let filtersExpanded = $state(false);
   // Timeline navigator year window (ADR-027). Default = full range
   // = no year filter applied.
   let fromYear: number = $state(TIMELINE_MIN_YEAR);
@@ -40,14 +43,20 @@
   );
 
   let filtered = $derived(
-    missions.filter(
-      (mission) =>
-        (destFilter === 'ALL' || mission.dest === destFilter) &&
-        (statusFilter === 'ALL' || mission.status === statusFilter) &&
-        (agencyFilter === 'ALL' || mission.agency === agencyFilter) &&
-        mission.year >= fromYear &&
-        mission.year <= toYear,
-    ),
+    missions
+      .filter(
+        (mission) =>
+          (destFilter === 'ALL' || mission.dest === destFilter) &&
+          (statusFilter === 'ALL' || mission.status === statusFilter) &&
+          (agencyFilter === 'ALL' || mission.agency === agencyFilter) &&
+          mission.year >= fromYear &&
+          mission.year <= toYear,
+      )
+      // J.1 — sort descending by year so the latest + upcoming missions
+      // surface at the top of the grid. Tiebreak by mission id for
+      // stable order within a year.
+      .slice()
+      .sort((a, b) => b.year - a.year || a.id.localeCompare(b.id)),
   );
 
   // ─── URL ↔ filter sync ───────────────────────────────────────────
@@ -215,17 +224,15 @@
 <svelte:head><title>{m.missions_page_title()}</title></svelte:head>
 
 <div class="library">
-  <header class="library-header">
-    <h1>{m.lib_title()}</h1>
-    <div class="counts">
-      <span class="count-total">{m.lib_count_total({ count: missions.length.toString() })}</span>
-      {#if filtered.length !== missions.length}
-        <span class="count-filtered">
-          {m.lib_count_filtered({ count: filtered.length.toString() })}
-        </span>
-      {/if}
-    </div>
-  </header>
+  <!-- J.1 — Top-right corner count (no page title; nav already labels
+       the route). Format: "12 / 36" when filtered, "36" otherwise. -->
+  <div class="count-corner">
+    {#if filtered.length !== missions.length}
+      <span class="count-fraction">{filtered.length} / {missions.length}</span>
+    {:else}
+      <span class="count-total-only">{missions.length}</span>
+    {/if}
+  </div>
 
   <TimelineNavigator
     {missions}
@@ -235,151 +242,172 @@
     onSelectMission={selectMission}
   />
 
-  <nav class="filters" aria-label={m.missions_filters_aria()}>
-    <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
-      <span class="filter-label">{m.lib_filter_dest_label()}</span>
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'ALL'}
-        role="radio"
-        aria-checked={destFilter === 'ALL'}
-        onclick={() => setDest('ALL')}>{m.lib_filter_dest_all()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'MARS'}
-        role="radio"
-        aria-checked={destFilter === 'MARS'}
-        onclick={() => setDest('MARS')}>{m.lib_filter_dest_mars()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'MOON'}
-        role="radio"
-        aria-checked={destFilter === 'MOON'}
-        onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'JUPITER'}
-        role="radio"
-        aria-checked={destFilter === 'JUPITER'}
-        onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'NEPTUNE'}
-        role="radio"
-        aria-checked={destFilter === 'NEPTUNE'}
-        onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'PLUTO'}
-        role="radio"
-        aria-checked={destFilter === 'PLUTO'}
-        onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={destFilter === 'CERES'}
-        role="radio"
-        aria-checked={destFilter === 'CERES'}
-        onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
-      >
-    </div>
+  <!-- J.1 — Filters collapsed by default. Click the strip to expand
+       reveal the dest / status / agency / window pickers. State
+       resets per-mount so users are always greeted with the clean
+       grid first. -->
+  <button
+    type="button"
+    class="filters-toggle"
+    aria-expanded={filtersExpanded}
+    aria-controls="missions-filters"
+    onclick={() => (filtersExpanded = !filtersExpanded)}
+  >
+    <span class="filters-eyebrow"
+      >FILTERS{filtered.length !== missions.length
+        ? ` · ${filtered.length}/${missions.length}`
+        : ''}</span
+    >
+    <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+  </button>
 
-    <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_status_label()}>
-      <span class="filter-label">{m.lib_filter_status_label()}</span>
-      <button
-        type="button"
-        class="pill"
-        class:active={statusFilter === 'ALL'}
-        role="radio"
-        aria-checked={statusFilter === 'ALL'}
-        onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={statusFilter === 'ACTIVE'}
-        role="radio"
-        aria-checked={statusFilter === 'ACTIVE'}
-        onclick={() => setStatus('ACTIVE')}>{m.lib_filter_status_active()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={statusFilter === 'FLOWN'}
-        role="radio"
-        aria-checked={statusFilter === 'FLOWN'}
-        onclick={() => setStatus('FLOWN')}>{m.lib_filter_status_flown()}</button
-      >
-      <button
-        type="button"
-        class="pill"
-        class:active={statusFilter === 'PLANNED'}
-        role="radio"
-        aria-checked={statusFilter === 'PLANNED'}
-        onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
-      >
-    </div>
-
-    {#if agencies.length > 0}
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
-        <span class="filter-label">{m.lib_filter_agency_label()}</span>
+  {#if filtersExpanded}
+    <nav id="missions-filters" class="filters" aria-label={m.missions_filters_aria()}>
+      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
+        <span class="filter-label">{m.lib_filter_dest_label()}</span>
         <button
           type="button"
           class="pill"
-          class:active={agencyFilter === 'ALL'}
+          class:active={destFilter === 'ALL'}
           role="radio"
-          aria-checked={agencyFilter === 'ALL'}
-          onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
+          aria-checked={destFilter === 'ALL'}
+          onclick={() => setDest('ALL')}>{m.lib_filter_dest_all()}</button
         >
-        {#each agencies as agency (agency)}
-          {@const logo = logoFor(agency)}
-          {@const fullName = fullNameFor(agency)}
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'MARS'}
+          role="radio"
+          aria-checked={destFilter === 'MARS'}
+          onclick={() => setDest('MARS')}>{m.lib_filter_dest_mars()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'MOON'}
+          role="radio"
+          aria-checked={destFilter === 'MOON'}
+          onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'JUPITER'}
+          role="radio"
+          aria-checked={destFilter === 'JUPITER'}
+          onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'NEPTUNE'}
+          role="radio"
+          aria-checked={destFilter === 'NEPTUNE'}
+          onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'PLUTO'}
+          role="radio"
+          aria-checked={destFilter === 'PLUTO'}
+          onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'CERES'}
+          role="radio"
+          aria-checked={destFilter === 'CERES'}
+          onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
+        >
+      </div>
+
+      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_status_label()}>
+        <span class="filter-label">{m.lib_filter_status_label()}</span>
+        <button
+          type="button"
+          class="pill"
+          class:active={statusFilter === 'ALL'}
+          role="radio"
+          aria-checked={statusFilter === 'ALL'}
+          onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={statusFilter === 'ACTIVE'}
+          role="radio"
+          aria-checked={statusFilter === 'ACTIVE'}
+          onclick={() => setStatus('ACTIVE')}>{m.lib_filter_status_active()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={statusFilter === 'FLOWN'}
+          role="radio"
+          aria-checked={statusFilter === 'FLOWN'}
+          onclick={() => setStatus('FLOWN')}>{m.lib_filter_status_flown()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={statusFilter === 'PLANNED'}
+          role="radio"
+          aria-checked={statusFilter === 'PLANNED'}
+          onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
+        >
+      </div>
+
+      {#if agencies.length > 0}
+        <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
+          <span class="filter-label">{m.lib_filter_agency_label()}</span>
           <button
             type="button"
-            class="pill agency-pill"
-            class:active={agencyFilter === agency}
-            class:logo-pill={logo != null}
+            class="pill"
+            class:active={agencyFilter === 'ALL'}
             role="radio"
-            aria-checked={agencyFilter === agency}
-            aria-label={fullName}
-            title={fullName}
-            onclick={() => setAgency(agency)}
+            aria-checked={agencyFilter === 'ALL'}
+            onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
           >
-            {#if logo}
-              <img
-                src={logo}
-                alt={fullName}
-                class="agency-pill-logo"
-                onerror={(e) => {
-                  // Logo missing → fall back to text label so the pill
-                  // never renders blank.
-                  const img = e.currentTarget as HTMLImageElement;
-                  img.style.display = 'none';
-                  const fb = img.nextElementSibling as HTMLElement | null;
-                  if (fb) fb.style.display = 'inline';
-                }}
-              />
-              <span class="agency-pill-fallback" hidden>{agency}</span>
-            {:else}
-              {agency}
-            {/if}
-          </button>
-        {/each}
-      </div>
-    {/if}
-  </nav>
+          {#each agencies as agency (agency)}
+            {@const logo = logoFor(agency)}
+            {@const fullName = fullNameFor(agency)}
+            <button
+              type="button"
+              class="pill agency-pill"
+              class:active={agencyFilter === agency}
+              class:logo-pill={logo != null}
+              role="radio"
+              aria-checked={agencyFilter === agency}
+              aria-label={fullName}
+              title={fullName}
+              onclick={() => setAgency(agency)}
+            >
+              {#if logo}
+                <img
+                  src={logo}
+                  alt={fullName}
+                  class="agency-pill-logo"
+                  onerror={(e) => {
+                    // Logo missing → fall back to text label so the pill
+                    // never renders blank.
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.style.display = 'none';
+                    const fb = img.nextElementSibling as HTMLElement | null;
+                    if (fb) fb.style.display = 'inline';
+                  }}
+                />
+                <span class="agency-pill-fallback" hidden>{agency}</span>
+              {:else}
+                {agency}
+              {/if}
+            </button>
+          {/each}
+        </div>
+      {/if}
+    </nav>
+  {/if}
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.lib_load_failed()}</div>
@@ -492,31 +520,58 @@
     margin: 0 auto;
   }
 
-  .library-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 14px;
-  }
-  .library-header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0;
-  }
-  .counts {
-    display: flex;
-    gap: 12px;
+  /* Top-right corner pill for the mission count (J.1). Replaces the
+     full library-header. Nav already labels the route, so a separate
+     page title would just be repetition. */
+  .count-corner {
+    position: absolute;
+    top: calc(var(--nav-height) + 12px);
+    right: 16px;
+    z-index: 5;
     font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+    pointer-events: none;
+  }
+  .count-fraction {
+    color: #4ecdc4;
+  }
+  .count-total-only {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Collapsible filters toggle strip. */
+  .filters-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      color 120ms;
+  }
+  .filters-toggle:hover,
+  .filters-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.92);
+    outline: none;
+  }
+  .filters-eyebrow {
     font-size: 8px;
     letter-spacing: 2px;
   }
-  .count-total {
-    color: rgba(255, 255, 255, 0.45);
-  }
-  .count-filtered {
-    color: #4ecdc4;
+  .filters-chevron {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .filters {

@@ -8,6 +8,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "eva",
+    "title": "EVA — Extravehicular Activity",
+    "intro": "A spacewalk: the highest-risk, highest-reward portion of a crewed mission, capped at about 8 hours by suit consumables.",
+    "haystack": "eva — extravehicular activity a spacewalk: the highest-risk, highest-reward portion of a crewed mission, capped at about 8 hours by suit consumables. suit consumables: iss emu (extravehicular mobility unit) carries about 8 hours of oxygen + battery + cooling-water sublimation. co₂ scrubbing is the typical limiter — when the lioh or amine-swing canister saturates, the eva ends."
+  },
+  {
+    "tab": "mission-phases",
     "section": "launch",
     "title": "Launch + Ascent",
     "intro": "The most violent ten minutes of any mission — fighting gravity, atmosphere, and the rocket equation simultaneously.",

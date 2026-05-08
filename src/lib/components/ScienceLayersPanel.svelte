@@ -158,16 +158,15 @@
 {/if}
 
 <style>
-  /* Top-center, stacked directly under the route's lens banner
-     (ScienceLensBanner / FlightDirectorBanner / StationOrbitBanner),
-     all of which sit at top: nav + 12 with max-width 540px. The
-     ~108px offset clears a typical 1-line banner; longer banners
-     overlap visually with the panel by a few pixels which reads as
-     "they're stacked" rather than "they're separate." Avoids the
-     right-side conflict with detail panels. */
+  /* Top-center, stacked directly under the route's lens banner.
+     The banner publishes its measured height to --lens-banner-height
+     on <html> via ResizeObserver, so this panel always sits cleanly
+     below the banner regardless of how tall the banner content is.
+     Falls back to 96px if no banner is present (route without one).
+     Plus 12px nav gap + 12px banner-to-panel gap. */
   .panel {
     position: fixed;
-    top: calc(var(--nav-height) + 110px);
+    top: calc(var(--nav-height) + 12px + var(--lens-banner-height, 96px) + 12px);
     left: 50%;
     transform: translateX(-50%);
     z-index: 32;

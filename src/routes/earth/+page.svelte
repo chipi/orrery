@@ -1391,7 +1391,7 @@
   }
   .legend-3d {
     position: absolute;
-    bottom: 80px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

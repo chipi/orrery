@@ -177,6 +177,67 @@ export function buildCoastLine(color = 0xffc850): THREE.Line {
 }
 
 /**
+ * Classify a Keplerian conic section from heliocentric (r, v) state.
+ *
+ * Inputs in AU + AU/day; output describes the orbit type plus its
+ * canonical shape parameters:
+ *   - shape:   'circle' | 'ellipse' | 'parabola' | 'hyperbola'
+ *   - a:       semi-major axis (AU); negative for hyperbolic
+ *   - e:       eccentricity (dimensionless); 1 for parabolic
+ *   - epsilon: specific orbital energy (AU²/day²)
+ *
+ * Classification rules:
+ *   ε < 0  → bound (ellipse). e ≈ 0 → circle.
+ *   ε ≈ 0  → parabolic (escape velocity exactly).
+ *   ε > 0  → hyperbolic (escape with leftover speed).
+ *
+ * The "ε ≈ 0" parabolic window is narrow in practice; we tag it when
+ * |ε| / (μ/r) < `parabolicTol` to avoid flickering between ellipse
+ * and hyperbola at the boundary.
+ */
+export function classifyConic(
+  r: { x: number; y: number; z: number },
+  v: { x: number; y: number; z: number },
+  parabolicTol = 0.005,
+  circularTol = 0.001,
+): {
+  shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+  a: number;
+  e: number;
+  epsilon: number;
+} {
+  // μ_sun in AU³/day² (matches integrateCoast above).
+  const MU = (4 * Math.PI * Math.PI) / (365.25 * 365.25);
+  const rMag = Math.sqrt(r.x * r.x + r.y * r.y + r.z * r.z);
+  const vMag2 = v.x * v.x + v.y * v.y + v.z * v.z;
+  const epsilon = vMag2 / 2 - MU / rMag;
+
+  // Specific angular momentum vector h = r × v.
+  const hx = r.y * v.z - r.z * v.y;
+  const hy = r.z * v.x - r.x * v.z;
+  const hz = r.x * v.y - r.y * v.x;
+  const h2 = hx * hx + hy * hy + hz * hz;
+
+  // Eccentricity from energy + angular momentum:
+  //   e² = 1 + 2εh²/μ²
+  const eSquared = 1 + (2 * epsilon * h2) / (MU * MU);
+  const e = Math.sqrt(Math.max(0, eSquared));
+
+  // Semi-major axis from energy: a = -μ/(2ε). Diverges at ε = 0.
+  const a = epsilon !== 0 ? -MU / (2 * epsilon) : Infinity;
+
+  // Classification with hysteresis-friendly tolerances.
+  const refScale = MU / rMag; // characteristic energy scale at this r
+  let shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+  if (Math.abs(epsilon) < parabolicTol * refScale) shape = 'parabola';
+  else if (epsilon > 0) shape = 'hyperbola';
+  else if (e < circularTol) shape = 'circle';
+  else shape = 'ellipse';
+
+  return { shape, a, e, epsilon };
+}
+
+/**
  * Numerically integrate a Sun-only Keplerian coast from (r, v) for N
  * days, sampled at `steps` points. r in AU, v in AU/day. Returns
  * positions as a flat Float32Array of (x, y, z) triplets (in AU).

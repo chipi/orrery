@@ -53,7 +53,9 @@
     BODY_MASS_KG,
     buildCoastLine,
     integrateCoast,
+    classifyConic,
   } from '$lib/orbit-overlays';
+  import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import { onLayerChange } from '$lib/science-layers';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
@@ -528,6 +530,21 @@
   let arcProgress = $derived((simDay - arcTimeline.dep_day) / arcTotalDays);
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
   let met = $derived(Math.max(0, arcProgress * totalDays));
+
+  // Phase I — current conic classification from heliocentric (r, v).
+  // Velocity by finite-difference of the planned arc 0.5 days ahead.
+  // Re-derives whenever simDay advances (per frame) or arc swaps.
+  let conicState = $derived.by(() => {
+    const sc0 = spacecraftPos(simDay, arcTimeline, outPts, retPts).pos;
+    const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+    const r = { x: sc0.x, y: 0, z: sc0.z };
+    const v = {
+      x: (sc1.x - sc0.x) / 0.5,
+      y: 0,
+      z: (sc1.z - sc0.z) / 0.5,
+    };
+    return classifyConic(r, v);
+  });
   // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
   // surface the scenario's headline numbers without re-running an
   // optimal-burn schedule. A future slice with per-burn data could
@@ -2326,6 +2343,15 @@
      available; coast + conics are /fly-only. -->
 <ScienceLayersPanel
   available={['soi', 'hover', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+/>
+
+<!-- Conic-section family side panel — Phase I. Lens + 'conics' layer
+     gated. Reads the live conicState derive. -->
+<ConicSectionPanel
+  shape={conicState.shape}
+  a={conicState.a}
+  e={conicState.e}
+  epsilon={conicState.epsilon}
 />
 
 <style>

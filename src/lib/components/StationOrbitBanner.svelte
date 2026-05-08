@@ -35,20 +35,57 @@
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
+  let bannerEl: HTMLElement | null = $state(null);
+  let resizeObs: ResizeObserver | null = null;
+
+  // Publish height to --lens-banner-height so the layers panel sits
+  // cleanly below the banner. Mirrors ScienceLensBanner.
+  function publishHeight(h: number) {
+    if (typeof document === 'undefined') return;
+    document.documentElement.style.setProperty('--lens-banner-height', `${h}px`);
+  }
+  function clearHeight() {
+    if (typeof document === 'undefined') return;
+    document.documentElement.style.removeProperty('--lens-banner-height');
+  }
 
   onMount(() => {
     stop = onScienceLensChange((v) => {
       lensOn = v;
+      if (!v) clearHeight();
     });
   });
-  onDestroy(() => stop?.());
+  onDestroy(() => {
+    stop?.();
+    resizeObs?.disconnect();
+    clearHeight();
+  });
+
+  $effect(() => {
+    resizeObs?.disconnect();
+    resizeObs = null;
+    if (!bannerEl) {
+      clearHeight();
+      return;
+    }
+    publishHeight(bannerEl.offsetHeight);
+    resizeObs = new ResizeObserver(() => {
+      if (bannerEl) publishHeight(bannerEl.offsetHeight);
+    });
+    resizeObs.observe(bannerEl);
+  });
 
   // 24h × 60min ÷ period ≈ orbits per day; round to nearest int.
   const sunrisesPerDay = $derived(Math.round((24 * 60) / periodMin));
 </script>
 
 {#if lensOn}
-  <section class="banner" data-testid="station-orbit-banner" aria-label="Orbital regime">
+  <section
+    bind:this={bannerEl}
+    class="banner"
+    data-testid="station-orbit-banner"
+    aria-label="Orbital regime"
+  >
     <div class="banner-eyebrow">
       {m.station_banner_eyebrow()} · {stationName}
     </div>

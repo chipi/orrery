@@ -35,17 +35,61 @@
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
+  let bannerEl: HTMLAnchorElement | null = $state(null);
+  let resizeObs: ResizeObserver | null = null;
+
+  // Publishes the banner's measured height to a CSS custom property
+  // on <html> so the ScienceLayersPanel can sit cleanly below it via
+  // `top: calc(var(--nav-height) + var(--lens-banner-height) + gap)`.
+  // Cleared on dismount so a route without a top-banner falls back to
+  // the panel's default offset.
+  function publishHeight(h: number) {
+    if (typeof document === 'undefined') return;
+    document.documentElement.style.setProperty('--lens-banner-height', `${h}px`);
+  }
+  function clearHeight() {
+    if (typeof document === 'undefined') return;
+    document.documentElement.style.removeProperty('--lens-banner-height');
+  }
 
   onMount(() => {
     stop = onScienceLensChange((v) => {
       lensOn = v;
+      if (!v) clearHeight();
     });
   });
-  onDestroy(() => stop?.());
+  onDestroy(() => {
+    stop?.();
+    resizeObs?.disconnect();
+    clearHeight();
+  });
+
+  $effect(() => {
+    // Re-attach observer whenever the banner element mounts/unmounts.
+    resizeObs?.disconnect();
+    resizeObs = null;
+    if (!bannerEl || placement !== 'top') {
+      clearHeight();
+      return;
+    }
+    publishHeight(bannerEl.offsetHeight);
+    // Use offsetHeight (full border-box) on every resize so the panel
+    // offset accounts for padding + border too. contentRect.height
+    // would underreport by ~22px and cause overlap.
+    resizeObs = new ResizeObserver(() => {
+      if (bannerEl) publishHeight(bannerEl.offsetHeight);
+    });
+    resizeObs.observe(bannerEl);
+  });
 </script>
 
 {#if lensOn}
-  <a class="banner" class:top={placement === 'top'} href="{base}/science/{tab}/{section}">
+  <a
+    bind:this={bannerEl}
+    class="banner"
+    class:top={placement === 'top'}
+    href="{base}/science/{tab}/{section}"
+  >
     <div class="banner-eyebrow">SCIENCE LENS</div>
     <div class="banner-title">{title}</div>
     <div class="banner-body">{body}</div>

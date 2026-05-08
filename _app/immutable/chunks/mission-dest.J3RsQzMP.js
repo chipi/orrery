@@ -1,1 +1,0 @@
-const n=["MARS","MOON","JUPITER","NEPTUNE","PLUTO","CERES"];function s(e){return n.includes(e)}function t(e){return e.toLowerCase()}function r(e){switch(e){case"MARS":return"mars";case"MOON":return null;case"JUPITER":return"jupiter";case"NEPTUNE":return"neptune";case"PLUTO":return"pluto";case"CERES":return"ceres"}}export{t as a,s as i,r as m};

@@ -10,13 +10,13 @@
 		<link href="../_app/immutable/assets/0.CEHL9xtV.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/2.CSS_HXGX.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/15.D1waaaSN.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.CRKyUAqg.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/entry.DaX60BXh.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DQRIvL7G.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.DnHxjkuF.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/runtime.DTS2qV0X.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/utils.BCLzcPFz.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/paths.Cq0Rzkdo.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/paths.WhNV7qey.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.CjeD0bHR.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.DYFiY2iy.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/disclose-version.Dzi9eklf.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/if.QLhUnq8t.js">
@@ -25,18 +25,18 @@
 		<link rel="modulepreload" href="../_app/immutable/chunks/props.St1ToTGx.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/store.CQa84lmD.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-client.Co14y9Mm.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.SB0zQBeM.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.Dmxkka9d.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/key.DtTpTK77.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/snippet.CHHd8qIN.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/attributes.BN0Me_AL.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.4XsG2P6P.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.Be5nWpQr.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/class.ClXBw-wI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/messages.CAs7ltDJ.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/messages.D9gvuPDF.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/science-lens.B_IPJ5aL.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/locale.C2lKv1g1.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/2.CW0i4tVw.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/data.DV8dhJrn.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/15.BONYUIZB.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.DKvxgJZy.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/data.CRXNBFqW.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/15.CGWC8HBq.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.DYMvb8Iz.js"><!--[--><link rel="manifest" href="../manifest.webmanifest"> <link rel="icon" href="../logos/nasa.svg" type="image/svg+xml"><!--]--><!--[--><!--]--><title>PORKCHOP · Science · Orrery</title>
   </head>
   <body data-sveltekit-preload-data="hover">
@@ -57,7 +57,7 @@
 			<script type="application/json" data-sveltekit-fetched data-url="/orrery/data/i18n/en-US/science/porkchop/viability.json">{"status":200,"statusText":"","headers":{},"body":"{\n  \"title\": \"Reading Viability\",\n  \"intro_sentence\": \"A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.\",\n  \"narrative_101\": [\n    \"Here's the question that turns a porkchop from a pretty heatmap into a real mission decision: can my rocket actually fly this? Each rocket — Falcon Heavy, SLS, Atlas V, you name it — has a published ∆v capability for a given payload mass. Compare that ceiling to the porkchop's per-cell costs and you have a yes/no map.\",\n    \"Cells where the rocket's capability exceeds the cost are doable, with margin to spare. Cells where capability matches cost exactly are doable but tight — risky, no slack for things going wrong. Cells where the cost exceeds the capability? That trajectory is simply not flyable with that rocket. You can want it all you want; physics says no.\",\n    \"Pick a rocket on /plan and the porkchop overlays a margin/deficit colour. The lobe shrinks for smaller rockets, expands for bigger ones. This is how mission planners actually work: try a vehicle, see what's feasible, see what isn't, swap vehicle, payload, or schedule until the cheap zone fits inside the rocket's capability. Real flight planning is exactly this iteration, just with more decimal places.\"\n  ],\n  \"body_paragraphs\": [\n    \"Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a known maximum ∆v capability with your payload mass. Compare against the porkchop: every cell where ∆v_cost ≤ ∆v_capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle.\",\n    \"On `/plan` you can pick a launch vehicle and Orrery overlays a margin/deficit indicator. Cool teal cells become 'doable, big margin.' Yellow cells become 'doable but tight.' Red cells become impossible-with-this-vehicle, and switch to a deficit display showing how much more capability you'd need.\",\n    \"This is mission feasibility analysis in one view. Real planners run it many times — for different vehicles, payload masses, trajectory variants — to find the cheapest combination that meets the science requirements. The porkchop is the visualisation; the underlying choice is always 'how much rocket do I need vs how much trip am I buying.'\"\n  ]\n}\n"}</script>
 			<script>
 				{
-					__sveltekit_e7btq4 = {
+					__sveltekit_ztc8gi = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						assets: "/orrery"
 					};
@@ -67,8 +67,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.CRKyUAqg.js"),
-						import("../_app/immutable/entry/app.CjeD0bHR.js")
+						import("../_app/immutable/entry/start.DQRIvL7G.js"),
+						import("../_app/immutable/entry/app.DYFiY2iy.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 15],

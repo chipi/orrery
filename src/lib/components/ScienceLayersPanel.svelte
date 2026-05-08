@@ -35,6 +35,10 @@
   let { available }: Props = $props();
 
   let lensOn = $state(false);
+  // Collapse state: panel ships expanded by default so first-time
+  // users see the choices, then they can collapse to reduce real
+  // estate. State is local-only — re-expands on next route mount.
+  let expanded = $state(true);
   // Per-layer reactive state mirroring the attribute store. Driven by
   // onLayerChange subscriptions so users see immediate feedback even if
   // another part of the app flipped a layer.
@@ -115,27 +119,41 @@
 </script>
 
 {#if lensOn}
-  <aside class="panel" data-testid="science-layers-panel" aria-label="Science layers">
-    <header class="panel-head">
+  <aside
+    class="panel"
+    class:collapsed={!expanded}
+    data-testid="science-layers-panel"
+    aria-label="Science layers"
+  >
+    <button
+      type="button"
+      class="panel-head"
+      aria-expanded={expanded}
+      aria-controls="science-layers-rows"
+      onclick={() => (expanded = !expanded)}
+    >
       <span class="eyebrow">{m.science_layers_heading()}</span>
-    </header>
-    <ul class="rows">
-      {#each visibleLayers as key (key)}
-        {@const meta = metaFor(key)}
-        <li class="row">
-          <label class="row-label">
-            <input
-              type="checkbox"
-              checked={layerState[key]}
-              onchange={() => toggle(key)}
-              data-testid="science-layer-{key}"
-            />
-            <span class="row-name">{meta.label}</span>
-          </label>
-          <span class="row-desc">{meta.description}</span>
-        </li>
-      {/each}
-    </ul>
+      <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
+    </button>
+    {#if expanded}
+      <ul id="science-layers-rows" class="rows">
+        {#each visibleLayers as key (key)}
+          {@const meta = metaFor(key)}
+          <li class="row">
+            <label class="row-label">
+              <input
+                type="checkbox"
+                checked={layerState[key]}
+                onchange={() => toggle(key)}
+                data-testid="science-layer-{key}"
+              />
+              <span class="row-name">{meta.label}</span>
+            </label>
+            <span class="row-desc">{meta.description}</span>
+          </li>
+        {/each}
+      </ul>
+    {/if}
   </aside>
 {/if}
 
@@ -161,11 +179,41 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     color: var(--color-text);
   }
+  /* Clickable strip header. Acts as the collapse toggle when expanded
+     is true; when collapsed, only this strip is visible so the panel
+     is compact. */
   .panel-head {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px 0;
     margin-bottom: 6px;
+    color: inherit;
+  }
+  .panel.collapsed .panel-head {
+    margin-bottom: 0;
+  }
+  .panel-head:hover .eyebrow,
+  .panel-head:focus-visible .eyebrow {
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .panel-head:focus-visible {
+    outline: 2px solid rgba(255, 200, 80, 0.6);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  .chevron {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 200, 80, 0.85);
+    transition: color 120ms;
+  }
+  .panel-head:hover .chevron {
+    color: #ffc850;
   }
   .eyebrow {
     font-family: 'Space Mono', monospace;

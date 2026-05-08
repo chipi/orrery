@@ -516,7 +516,7 @@ describe('panel gallery loaders (v0.1.10)', () => {
 });
 
 describe('SCIENCE_TABS', () => {
-  it('exposes the six encyclopedia tab ids', () => {
+  it('exposes the seven encyclopedia tab ids', () => {
     expect(SCIENCE_TABS).toEqual([
       'orbits',
       'transfers',
@@ -524,6 +524,7 @@ describe('SCIENCE_TABS', () => {
       'mission-phases',
       'scales-time',
       'porkchop',
+      'space-stations',
     ]);
   });
 });
@@ -581,7 +582,7 @@ describe('getScienceTab', () => {
     for (const tab of SCIENCE_TABS) {
       total += (await getScienceTab(tab)).length;
     }
-    expect(total).toBe(42);
+    expect(total).toBe(45);
   });
 });
 

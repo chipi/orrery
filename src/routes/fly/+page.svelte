@@ -43,6 +43,16 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import {
+    buildSoIRing,
+    buildGravityArrow,
+    soiRadiusInScene,
+    gravityAccel,
+    logScaleLength,
+    BODY_MASS_KG,
+  } from '$lib/orbit-overlays';
+  import { onLayerChange } from '$lib/science-layers';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
   // between control points — exactly mirrors lerpPoint(out, t)

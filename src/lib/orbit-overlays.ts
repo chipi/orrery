@@ -26,26 +26,27 @@ export const SOI_KM: Record<'earth' | 'mars' | 'moon', number> = {
  *  framework-agnostic; tests can stub. */
 const AU_TO_KM = 149_597_870.7;
 
-/** AU → /fly scene units. /fly uses 1 scene-unit = 1 AU heliocentric. */
-function auToScene(au: number): number {
-  return au;
-}
-
-/** km → /fly scene units, via AU. */
-function kmToScene(km: number): number {
-  return auToScene(km / AU_TO_KM);
+/**
+ * Compute the SoI radius in scene units, given a scene-scale factor.
+ * scaleAuToScene defines how many scene units represent 1 AU; on /fly
+ * this is 80 (SCALE_3D), so Earth's SoI of 924 000 km becomes
+ * 924000/149597870 × 80 ≈ 0.49 scene units.
+ */
+export function soiRadiusInScene(body: 'earth' | 'mars' | 'moon', scaleAuToScene: number): number {
+  return (SOI_KM[body] / AU_TO_KM) * scaleAuToScene;
 }
 
 /**
- * Build a translucent SoI ring around a body, sized to its physical
- * sphere-of-influence radius in /fly scene units (1 unit = 1 AU).
+ * Build a translucent SoI ring around a body. Caller supplies the
+ * radius in their scene's units. Returns a THREE.Group containing a
+ * wireframe sphere + a bright equatorial ring.
  *
- * Returned as a THREE.Group containing a wireframe sphere; the page
- * positions the group at the body's heliocentric coordinate each frame
- * and toggles `group.visible` from the layer subscription.
+ * The page positions the group at the body's coordinate each frame and
+ * toggles `group.visible` from the layer subscription.
  */
 export function buildSoIRing(
   body: 'earth' | 'mars' | 'moon',
+  radius: number,
   color = 0xffc850,
   segments = 48,
 ): THREE.Group {
@@ -53,11 +54,8 @@ export function buildSoIRing(
   group.name = `soi_${body}`;
   group.userData.layerKey = 'soi';
 
-  const radius = kmToScene(SOI_KM[body]);
-
   // Wireframe sphere: cheap, distinct from solid bodies, visible from
-  // any camera angle. Two great circles + a sphere outline give the
-  // "soap bubble" look.
+  // any camera angle.
   const sphereGeo = new THREE.SphereGeometry(radius, segments, Math.max(8, segments / 4));
   const sphereMat = new THREE.MeshBasicMaterial({
     color,
@@ -69,17 +67,17 @@ export function buildSoIRing(
   const sphere = new THREE.Mesh(sphereGeo, sphereMat);
   group.add(sphere);
 
-  // Bright equatorial circle for stronger silhouette.
+  // Bright equatorial circle for stronger silhouette in the ecliptic.
   const ringGeo = new THREE.RingGeometry(radius * 0.999, radius * 1.001, segments);
   const ringMat = new THREE.MeshBasicMaterial({
     color,
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.35,
+    opacity: 0.45,
     depthWrite: false,
   });
   const ring = new THREE.Mesh(ringGeo, ringMat);
-  // Lay flat on the ecliptic (XZ plane in /fly's scene).
+  // Lay flat on the ecliptic (XZ plane on /fly).
   ring.rotation.x = Math.PI / 2;
   group.add(ring);
 
@@ -95,10 +93,7 @@ export function buildSoIRing(
  * Returns a THREE.ArrowHelper pre-configured with style; the caller
  * sets direction + length each frame via `setDirection()` + `setLength()`.
  */
-export function buildGravityArrow(
-  label: 'earth' | 'sun',
-  color = 0x6aa9ff,
-): THREE.ArrowHelper {
+export function buildGravityArrow(label: 'earth' | 'sun', color = 0x6aa9ff): THREE.ArrowHelper {
   const dir = new THREE.Vector3(1, 0, 0);
   const origin = new THREE.Vector3(0, 0, 0);
   const arrow = new THREE.ArrowHelper(dir, origin, 1, color, 0.18, 0.1);

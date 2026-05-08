@@ -15,6 +15,7 @@
   import { buildIssProxyStation } from '$lib/iss-proxy-model';
   import type { IssModule } from '$types/iss-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
+  import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
   import * as m from '$lib/paraglide/messages';
 
   let container: HTMLDivElement | undefined = $state();
@@ -694,6 +695,9 @@
     onClose={closePanel}
     galleryFetcher={getIssModuleGallery}
   />
+
+  <!-- Orbital regime banner — Tier-1 lens-gated explainer (F.1+F.2). -->
+  <StationOrbitBanner stationName="ISS" altitudeKm={408} inclinationDeg={51.6} periodMin={92.7} />
 </div>
 
 <style>

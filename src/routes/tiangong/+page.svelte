@@ -15,6 +15,7 @@
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
   import type { TiangongModule } from '$types/tiangong-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
+  import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
   import * as m from '$lib/paraglide/messages';
 
   let container: HTMLDivElement | undefined = $state();
@@ -686,6 +687,14 @@
     open={panelOpen}
     onClose={closePanel}
     galleryFetcher={getTiangongModuleGallery}
+  />
+
+  <!-- Orbital regime banner — Tier-1 lens-gated explainer (F.1+F.2). -->
+  <StationOrbitBanner
+    stationName="Tiangong"
+    altitudeKm={385}
+    inclinationDeg={41.5}
+    periodMin={91.9}
   />
 </div>
 

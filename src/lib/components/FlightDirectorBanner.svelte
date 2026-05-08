@@ -106,13 +106,14 @@
 {/if}
 
 <style>
-  /* Mirrors ScienceLensBanner chrome (same gold accent, same chip-style
-     bottom-fixed box) so the two read as one family. The only difference
-     is the eyebrow ("FLIGHT DIRECTOR" vs "SCIENCE LENS") and the
-     phase-tag suffix. */
+  /* Mirrors ScienceLensBanner chrome (same gold accent + chip box) so
+     the two read as one family. Pinned to the TOP-center band on /fly
+     because the bottom is occupied by the timeline scrubber + the
+     SYSTEMS HUD; the top-center area below the nav is otherwise empty
+     (the .hud-stack runs down the left edge). */
   .banner {
     position: fixed;
-    bottom: 16px;
+    top: calc(var(--nav-height) + 12px);
     left: 50%;
     transform: translateX(-50%);
     display: block;
@@ -165,8 +166,10 @@
   }
 
   @media (max-width: 600px) {
+    /* Mobile: stay top-anchored but stretch edge-to-edge so the body
+       text wraps cleanly on narrow screens. */
     .banner {
-      bottom: 80px;
+      top: calc(var(--nav-height) + 8px);
       left: 8px;
       right: 8px;
       transform: none;

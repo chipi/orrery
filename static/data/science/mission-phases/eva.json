@@ -1,0 +1,29 @@
+{
+  "id": "eva",
+  "tab": "mission-phases",
+  "order": 9,
+  "diagram": "eva.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "Quest airlock is the ISS's primary EVA hub; Pirs/Nauka serves the Russian segment"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Wentian's airlock is Tiangong's primary EVA hub"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Extravehicular activity",
+      "u": "https://en.wikipedia.org/wiki/Extravehicular_activity",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Spacewalks",
+      "u": "https://www.nasa.gov/spacewalks/",
+      "t": "core"
+    }
+  ]
+}

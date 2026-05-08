@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Stylised EVA path from airlock to worksite and back">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .module { fill: rgba(78,205,196,0.18); stroke: #4ecdc4; stroke-width: 1.4; }
+    .airlock { fill: rgba(255,200,80,0.2); stroke: #ffc850; stroke-width: 1.6; }
+    .worksite { fill: rgba(255,107,107,0.2); stroke: #ff6b6b; stroke-width: 1.6; }
+    .truss { stroke: rgba(255,255,255,0.5); stroke-width: 2; fill: none; }
+    .path { stroke: #ffc850; stroke-width: 1.8; fill: none; stroke-dasharray: 4 4; }
+    .anchor { fill: #ffc850; }
+    .label { fill: rgba(255,255,255,0.9); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tag { fill: rgba(255,255,255,0.6); font-family: 'Space Mono', monospace; font-size: 7px; }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <text x="20" y="28" class="label">EVA PATH — AIRLOCK → WORKSITE → AIRLOCK</text>
+
+  <!-- Truss spine (horizontal) -->
+  <line x1="60" y1="120" x2="340" y2="120" class="truss" />
+
+  <!-- Core modules (left cluster) -->
+  <rect x="80" y="105" width="50" height="30" class="module" />
+  <text x="105" y="123" text-anchor="middle" class="label">CORE</text>
+
+  <!-- Airlock (yellow, on right of core) -->
+  <rect x="140" y="100" width="34" height="40" class="airlock" />
+  <text x="157" y="123" text-anchor="middle" class="label">QUEST</text>
+  <text x="157" y="155" text-anchor="middle" class="tag">AIRLOCK</text>
+
+  <!-- More modules along truss -->
+  <rect x="184" y="105" width="40" height="30" class="module" />
+  <rect x="234" y="105" width="40" height="30" class="module" />
+  <rect x="284" y="105" width="40" height="30" class="module" />
+
+  <!-- Worksite at far end (red) -->
+  <rect x="328" y="100" width="22" height="40" class="worksite" />
+  <text x="339" y="155" text-anchor="middle" class="tag">BATTERY ORU</text>
+
+  <!-- EVA path: out of airlock, along truss to worksite, then back -->
+  <path d="M 157,99 Q 157,80 200,80 Q 270,80 339,80 L 339,99" class="path" />
+  <!-- Return arc, slightly lower -->
+  <path d="M 339,141 Q 270,170 200,170 Q 157,170 157,141" class="path" />
+
+  <!-- Tether anchor points along the path -->
+  <circle cx="200" cy="80" r="2.5" class="anchor" />
+  <circle cx="270" cy="80" r="2.5" class="anchor" />
+  <circle cx="200" cy="170" r="2.5" class="anchor" />
+  <circle cx="270" cy="170" r="2.5" class="anchor" />
+
+  <!-- Direction arrows (small chevrons along the path) -->
+  <text x="220" y="76" class="tag">→</text>
+  <text x="290" y="76" class="tag">→</text>
+  <text x="270" y="174" class="tag">←</text>
+  <text x="200" y="174" class="tag">←</text>
+
+  <!-- Path label -->
+  <text x="200" y="50" text-anchor="middle" class="tag">DOTTED PATH = SAFETY-TETHERED HANDRAIL TRANSLATION</text>
+  <text x="200" y="200" text-anchor="middle" class="tag">● ANCHOR POINTS · 8H MAX EVA · CO₂ SCRUBBER LIMITS THE TIME</text>
+</svg>

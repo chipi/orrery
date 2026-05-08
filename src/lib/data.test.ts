@@ -582,7 +582,7 @@ describe('getScienceTab', () => {
     for (const tab of SCIENCE_TABS) {
       total += (await getScienceTab(tab)).length;
     }
-    expect(total).toBe(47);
+    expect(total).toBe(48);
   });
 });
 

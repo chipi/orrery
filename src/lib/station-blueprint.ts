@@ -11,6 +11,8 @@
 
 export type BlueprintView = 'top' | 'side' | 'front';
 
+export type BlueprintKind = 'module' | 'visitor' | 'truss' | 'solar' | 'radiator' | 'pma';
+
 export interface BlueprintModule {
   id: string;
   name: string;
@@ -23,6 +25,9 @@ export interface BlueprintModule {
   radius: number;
   /** Long axis direction in scene frame. */
   axis: 'x' | 'y' | 'z';
+  /** Render kind — defaults to 'module'. Controls colour + clickability + label. */
+  kind?: BlueprintKind;
+  /** @deprecated use kind: 'visitor'. Retained for back-compat. */
   isVisitor?: boolean;
 }
 
@@ -35,7 +40,7 @@ export interface ProjectedModule {
   /** Pixel width / height of the drawn rectangle. */
   pw: number;
   ph: number;
-  isVisitor?: boolean;
+  kind: BlueprintKind;
 }
 
 /**
@@ -111,16 +116,19 @@ export function projectModules(
       py: cy - ph / 2,
       pw,
       ph,
-      isVisitor: m.isVisitor,
+      kind: m.kind ?? (m.isVisitor ? 'visitor' : 'module'),
     };
   });
 }
 
-/** Find which module (if any) sits under a pixel coordinate. */
+/** Find which module (if any) sits under a pixel coordinate. Only clickable
+ * kinds (modules + visitors) participate; structural elements (truss, arrays,
+ * radiators, PMAs) are not selectable. */
 export function hitTest(modules: ProjectedModule[], px: number, py: number): string | null {
   // Last-drawn = topmost; iterate reverse for proper z-order priority.
   for (let i = modules.length - 1; i >= 0; i--) {
     const m = modules[i];
+    if (m.kind !== 'module' && m.kind !== 'visitor') continue;
     if (px >= m.px && px <= m.px + m.pw && py >= m.py && py <= m.py + m.ph) {
       return m.id;
     }
@@ -185,20 +193,33 @@ export function drawBlueprint(
     canvasH - 12,
   );
 
-  // Modules — first pass: rectangles only.
-  for (const m of modules) {
+  // Per-kind palette. Structural elements (truss / solar / radiator / pma)
+  // sit BEHIND modules + visitors so the foreground items read clearly.
+  const STYLE: Record<BlueprintKind, { fill: string; stroke: string }> = {
+    module: { fill: BLUEPRINT_FILL, stroke: BLUEPRINT_OUTLINE },
+    visitor: { fill: BLUEPRINT_VISITOR_FILL, stroke: BLUEPRINT_VISITOR_OUTLINE },
+    truss: { fill: 'rgba(154, 158, 168, 0.18)', stroke: 'rgba(154, 158, 168, 0.6)' },
+    solar: { fill: 'rgba(60, 110, 200, 0.22)', stroke: 'rgba(120, 170, 240, 0.7)' },
+    radiator: { fill: 'rgba(220, 230, 240, 0.18)', stroke: 'rgba(220, 230, 240, 0.55)' },
+    pma: { fill: 'rgba(200, 160, 76, 0.28)', stroke: 'rgba(200, 160, 76, 0.85)' },
+  };
+
+  // Sort: structural first, modules + visitors on top so they draw above.
+  const drawOrder: BlueprintKind[] = ['truss', 'solar', 'radiator', 'pma', 'module', 'visitor'];
+  const sorted = [...modules].sort((a, b) => drawOrder.indexOf(a.kind) - drawOrder.indexOf(b.kind));
+
+  // First pass: rectangles only.
+  for (const m of sorted) {
     const isSel = m.id === selectedId;
     const isHov = m.id === hoveredId;
-    const fill = m.isVisitor ? BLUEPRINT_VISITOR_FILL : BLUEPRINT_FILL;
+    const style = STYLE[m.kind];
     const stroke = isSel
       ? BLUEPRINT_SELECTED
-      : isHov
+      : isHov && (m.kind === 'module' || m.kind === 'visitor')
         ? BLUEPRINT_HOVER
-        : m.isVisitor
-          ? BLUEPRINT_VISITOR_OUTLINE
-          : BLUEPRINT_OUTLINE;
+        : style.stroke;
 
-    ctx.fillStyle = fill;
+    ctx.fillStyle = style.fill;
     ctx.fillRect(m.px, m.py, m.pw, m.ph);
     ctx.strokeStyle = stroke;
     ctx.lineWidth = isSel ? 2 : 1;
@@ -220,6 +241,8 @@ export function drawBlueprint(
   }> = [];
 
   for (const m of modules) {
+    // Labels only on clickable items — structural elements stay clean.
+    if (m.kind !== 'module' && m.kind !== 'visitor') continue;
     const text = m.name.toUpperCase();
     const textW = ctx.measureText(text).width;
     // Desired position: centred on module if there's room; otherwise

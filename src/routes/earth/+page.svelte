@@ -18,6 +18,8 @@
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1262,6 +1264,18 @@
     </div>
   {/if}
 </div>
+
+<!-- J.2 — Science Lens banner + layers on /earth. Top-center, lens-
+     gated, links into the orbit-regimes chapter that pairs with the
+     altitude-band legend at the bottom. -->
+<ScienceLensBanner
+  placement="top"
+  title="Earth orbit · regimes that shape every mission"
+  body="Above 100 km is space; below 2 000 km is LEO. Each band — LEO, MEO, GEO, HEO — trades off latency, coverage, and lifetime. The legend below colour-codes which regime each satellite lives in."
+  tab="orbits"
+  section="orbit-regimes"
+/>
+<ScienceLayersPanel available={['hover']} />
 
 <style>
   .earth {

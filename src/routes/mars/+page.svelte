@@ -17,6 +17,8 @@
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
@@ -1400,6 +1402,18 @@
     <ImageCredit src={panelLightbox} />
   </div>
 {/if}
+
+<!-- J.2 — Science Lens banner on /mars. Top-center, lens-gated;
+     links into the EDL chapter — the seven-minute gauntlet every
+     Mars surface mission has to survive. -->
+<ScienceLensBanner
+  placement="top"
+  title="Mars · cold, thin air, half-Earth gravity"
+  body="Atmosphere is 1% of Earth's — too thin to brake on alone, too thick to ignore. EDL (entry, descent, landing) compresses 6 km/s of arrival speed into 7 minutes of choreographed parachutes, retrorockets, and skycranes."
+  tab="mission-phases"
+  section="edl"
+/>
+<ScienceLayersPanel available={['hover']} />
 
 <style>
   .mars {

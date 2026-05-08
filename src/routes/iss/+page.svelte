@@ -726,14 +726,20 @@
       {#if lowMemBanner}
         <p class="banner mem">{m.iss_fallback_memory()}</p>
       {/if}
-      <div class="ctrl-row">
+      <!-- Single hint row with min-height so the buttons row underneath
+           doesn't jump when content changes between 3D ↔ 2D. The docked
+           chip lives inline next to the drag-to-orbit chip in 3D; in
+           2D modes it's replaced with view-axis info. -->
+      <div class="ctrl-row hint-row">
         <span class="hint">{m.iss_hud_hint()}</span>
-      </div>
-      {#if viewMode === '3d'}
-        <div class="ctrl-row">
+        {#if viewMode === '3d'}
           <span class="hint hint-docked">{m.iss_docked_legend()}</span>
-        </div>
-      {/if}
+        {:else if viewMode === '2d-top'}
+          <span class="hint hint-docked">TOP · XZ PLANE · TAP MODULE</span>
+        {:else if viewMode === '2d-side'}
+          <span class="hint hint-docked">SIDE · XY PLANE · TAP MODULE</span>
+        {/if}
+      </div>
       <!-- Always 4 buttons in a single row across all non-list modes;
            RESET + SPIN are 3D-only and grey out in 2D so the layout
            doesn't jump between modes. -->
@@ -1007,6 +1013,14 @@
     padding: 6px 10px;
     border-radius: 4px;
     pointer-events: none;
+  }
+  /* Reserve enough vertical space for the longest possible 3D content
+     (docked legend can wrap to ~2 lines at 300 px width) so the
+     buttons row below doesn't shift when switching between 3D and 2D
+     modes. */
+  .hint-row {
+    min-height: 56px;
+    align-content: flex-start;
   }
   .toggle {
     min-width: 44px;

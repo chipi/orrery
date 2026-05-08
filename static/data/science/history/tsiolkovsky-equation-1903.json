@@ -1,0 +1,25 @@
+{
+  "id": "tsiolkovsky-equation-1903",
+  "tab": "history",
+  "order": 3,
+  "diagram": "history-tsiolkovsky.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Every ∆v budget on every mission card is a Tsiolkovsky calculation"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Konstantin Tsiolkovsky",
+      "u": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Tsiolkovsky rocket equation",
+      "u": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
+      "t": "core"
+    }
+  ]
+}

@@ -11,11 +11,15 @@ import { base } from '$app/paths';
 export const SPACECRAFT_DIAGRAMS = new Set<string>([
   // ISS visitors
   'crew_dragon',
+  'cargo_dragon',
   'soyuz_ms',
-  // (more added as they're authored: cargo_dragon, progress_ms,
-  //  cygnus, starliner, htv_x)
+  'progress_ms',
+  'cygnus',
+  'starliner',
+  'htv_x',
   // Tiangong visitors
-  // 'shenzhou', 'tianzhou' — TBD
+  'shenzhou',
+  'tianzhou',
 ]);
 
 export function spacecraftDiagramPath(id: string): string | null {

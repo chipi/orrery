@@ -7,7 +7,8 @@ export type ScienceTabId =
   | 'mission-phases'
   | 'scales-time'
   | 'porkchop'
-  | 'space-stations';
+  | 'space-stations'
+  | 'history';
 
 export interface ScienceLink {
   l: string;

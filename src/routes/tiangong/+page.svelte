@@ -1015,8 +1015,13 @@
     -webkit-overflow-scrolling: touch;
   }
   .list-layer.drawer-mode {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    /* Prevent scroll chaining to the 3D canvas behind the drawer — without
+       this, when the user reaches the drawer's scroll boundary, the wheel
+       event propagates to OrbitControls and zooms the camera instead. */
+    overscroll-behavior: contain;
     position: absolute;
     inset: auto;
     top: 152px;

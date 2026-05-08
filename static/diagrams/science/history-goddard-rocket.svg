@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Goddard's first liquid-fuel rocket — March 16, 1926">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .ground { fill: rgba(255,255,255,0.08); }
+    .rocket { fill: rgba(255,200,80,0.9); stroke: rgba(255,200,80,1); stroke-width: 1; }
+    .frame { fill: none; stroke: rgba(255,255,255,0.4); stroke-width: 1; }
+    .flame { fill: #ff6b6b; }
+    .arc { fill: none; stroke: rgba(255,200,80,0.55); stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.2px; }
+    .tag { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <text x="20" y="28" class="label">GODDARD · FIRST LIQUID-FUEL FLIGHT  (Mar 16, 1926)</text>
+  <!-- Ground line -->
+  <rect x="20" y="180" width="360" height="20" class="ground" />
+  <text x="200" y="196" text-anchor="middle" class="tag">AUNT MARION'S CABBAGE FIELD · AUBURN, MASSACHUSETTS</text>
+  <!-- Launch frame at left -->
+  <rect x="60" y="80" width="3" height="100" class="frame" />
+  <rect x="60" y="80" width="40" height="3" class="frame" />
+  <rect x="97" y="80" width="3" height="100" class="frame" />
+  <text x="80" y="75" text-anchor="middle" class="tag">FRAME</text>
+  <!-- Trajectory arc -->
+  <path d="M 80 110 Q 220 30 360 90" class="arc" />
+  <!-- Rocket at apex -->
+  <g transform="translate(220, 50)">
+    <polygon points="0,0 -5,12 -5,28 5,28 5,12" class="rocket" />
+    <polygon points="-5,28 -8,34 8,34 5,28" class="flame" />
+  </g>
+  <!-- Specs -->
+  <text x="200" y="160" text-anchor="middle" class="tag">2.5 SECONDS · 12 m UP · 56 m DOWNRANGE · LOX + GASOLINE · ESTHER GODDARD PHOTOGRAPHED IT</text>
+</svg>

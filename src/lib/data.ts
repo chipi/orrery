@@ -822,6 +822,7 @@ export const SCIENCE_TABS: readonly ScienceTabId[] = [
   'scales-time',
   'porkchop',
   'space-stations',
+  'history',
 ] as const;
 
 export async function getScienceSection(

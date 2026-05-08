@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="Newton's gravity inverse-square law">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .body { fill: #ffc850; }
+    .small { fill: #6aa9ff; }
+    .arrow { stroke: #ff6b6b; stroke-width: 1.4; fill: none; marker-end: url(#arr); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.2px; }
+    .tag { fill: rgba(255,255,255,0.5); font-family: 'Space Mono', monospace; font-size: 7px; }
+    .formula { fill: rgba(255,200,80,0.95); font-family: 'Space Mono', monospace; font-size: 13px; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L7,4 L0,7 z" fill="#ff6b6b" />
+    </marker>
+  </defs>
+  <rect x="10" y="10" width="380" height="180" class="panel" />
+  <text x="20" y="28" class="label">NEWTON · F = G·m₁·m₂ / r²  (1687)</text>
+  <circle cx="100" cy="110" r="22" class="body" />
+  <text x="100" y="148" text-anchor="middle" class="tag">m₁</text>
+  <circle cx="300" cy="110" r="8" class="small" />
+  <text x="300" y="128" text-anchor="middle" class="tag">m₂</text>
+  <line x1="120" y1="110" x2="290" y2="110" class="arrow" />
+  <line x1="290" y1="110" x2="120" y2="110" class="arrow" />
+  <text x="200" y="100" text-anchor="middle" class="tag">↔  r  (separation)</text>
+  <text x="200" y="170" text-anchor="middle" class="formula">F ∝ 1/r²</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="Tycho's Mars positions and Kepler's elliptical fit">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .ellipse { fill: none; stroke: #4ecdc4; stroke-width: 1.6; }
+    .sun { fill: #ffc850; }
+    .dot { fill: rgba(255,255,255,0.55); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.2px; }
+    .tag { fill: rgba(255,255,255,0.5); font-family: 'Space Mono', monospace; font-size: 7px; }
+  </style>
+  <rect x="10" y="10" width="380" height="180" class="panel" />
+  <text x="20" y="28" class="label">KEPLER · MARS ELLIPSE FIT (1609)</text>
+  <ellipse cx="200" cy="110" rx="140" ry="50" class="ellipse" />
+  <circle cx="270" cy="110" r="6" class="sun" />
+  <text x="270" y="128" text-anchor="middle" class="tag">SUN (focus)</text>
+  <!-- Tycho's data points scattered along the ellipse -->
+  <circle cx="60" cy="112" r="1.6" class="dot" />
+  <circle cx="80" cy="100" r="1.6" class="dot" />
+  <circle cx="120" cy="83" r="1.6" class="dot" />
+  <circle cx="170" cy="68" r="1.6" class="dot" />
+  <circle cx="220" cy="65" r="1.6" class="dot" />
+  <circle cx="270" cy="68" r="1.6" class="dot" />
+  <circle cx="320" cy="80" r="1.6" class="dot" />
+  <circle cx="350" cy="105" r="1.6" class="dot" />
+  <circle cx="340" cy="130" r="1.6" class="dot" />
+  <circle cx="280" cy="148" r="1.6" class="dot" />
+  <circle cx="200" cy="158" r="1.6" class="dot" />
+  <circle cx="120" cy="148" r="1.6" class="dot" />
+  <text x="200" y="180" text-anchor="middle" class="tag">DOTS · TYCHO BRAHE NAKED-EYE OBSERVATIONS · CURVE · KEPLER'S ELLIPTICAL FIT</text>
+</svg>

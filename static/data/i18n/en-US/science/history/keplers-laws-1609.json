@@ -1,0 +1,16 @@
+{
+  "title": "Kepler's Laws · 1609–1619",
+  "intro_sentence": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+  "narrative_101": [
+    "Tycho Brahe spent 30 years at the Uraniborg observatory on Hven measuring Mars's position with quadrants made of brass and oak — better-than-arcminute precision, all with naked eyes. He died in 1601 having published almost nothing.",
+    "Kepler inherited the Mars notebooks. He spent another decade trying to fit them to circles and failed. The break came when he tried an ellipse — Mars matched immediately. Out of that came three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal time; period squared equals semi-major axis cubed.",
+    "Without those three laws, no spacecraft trajectory in this app would compute. Every porkchop cell, every transfer arc, every planet on /explore is a Keplerian solution."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) published Laws 1 + 2 — the ellipse + equal-areas rules, derived from the Mars opposition data. Harmonices Mundi (1619) published Law 3 — period² ∝ semi-major axis³.",
+    "Kepler had no theoretical justification — the laws were empirical patterns extracted from data. Newton would supply the why 70 years later (gravity goes as 1/r²; bound orbits are conic sections; Law 3 falls out of energy conservation).",
+    "Brahe's contribution wasn't just data: he was a meticulous instrumentalist who pushed naked-eye measurement to its physical limit. Telescope-grade precision arrived only after Galileo's 1609 telescope — too late to overlap with Brahe's career.",
+    "Modern reanalysis: Kepler's Mars residuals are sub-arcminute. He nailed an ellipse with eccentricity 0.0934 from data that had irreducible measurement uncertainty of ~1 arcminute. The fit was real."
+  ],
+  "diagram_caption": "Tycho's Mars positions (dots) versus Kepler's elliptical fit (curve). Sun at one focus."
+}

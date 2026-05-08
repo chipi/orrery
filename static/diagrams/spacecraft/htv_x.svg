@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="JAXA HTV-X spacecraft anatomy: pressurised cargo module, gold MLI service module, two deployed solar wings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .gold { fill: rgba(200,160,76,0.30); stroke: rgba(220,180,100,0.85); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <text x="200" y="20" text-anchor="middle" class="title">HTV-X</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">8.0 m · 16,000 kg · uncrewed cargo</text>
+
+  <line x1="200" y1="50" x2="200" y2="260" class="dashed" />
+
+  <!-- CBM berthing port at top (grappled by SSRMS) -->
+  <rect x="190" y="55" width="20" height="8" class="stroke-fill" />
+  <line x1="195" y1="59" x2="205" y2="59" class="stroke" />
+
+  <!-- Pressurised cargo module (white, large) -->
+  <rect x="172" y="63" width="56" height="100" class="stroke-fill" />
+  <!-- CBM hatch top -->
+  <rect x="194" y="68" width="12" height="3" class="stroke" />
+
+  <!-- Service module (gold MLI) -->
+  <rect x="174" y="163" width="52" height="68" class="gold" />
+
+  <!-- Engine bell -->
+  <path d="M 188 231 L 184 252 L 216 252 L 212 231 Z" class="nozzle" />
+
+  <!-- Solar wings deployed from service module -->
+  <rect x="100" y="180" width="68" height="40" class="pv" />
+  <line x1="118" y1="180" x2="118" y2="220" class="pv-grid" />
+  <line x1="135" y1="180" x2="135" y2="220" class="pv-grid" />
+  <line x1="152" y1="180" x2="152" y2="220" class="pv-grid" />
+  <rect x="168" y="195" width="6" height="10" class="nozzle" />
+
+  <rect x="232" y="180" width="68" height="40" class="pv" />
+  <line x1="248" y1="180" x2="248" y2="220" class="pv-grid" />
+  <line x1="265" y1="180" x2="265" y2="220" class="pv-grid" />
+  <line x1="282" y1="180" x2="282" y2="220" class="pv-grid" />
+  <rect x="226" y="195" width="6" height="10" class="nozzle" />
+
+  <!-- LEFT CALLOUTS -->
+  <line x1="172" y1="100" x2="80" y2="86" class="accent" />
+  <text x="6" y="82" class="label-accent">PCM</text>
+  <text x="6" y="94" class="label-mute">pressurised cargo</text>
+
+  <line x1="174" y1="180" x2="80" y2="158" class="accent" />
+  <text x="6" y="154" class="label-accent">SERVICE MOD</text>
+  <text x="6" y="166" class="label-mute">gold MLI · ECLSS</text>
+
+  <line x1="100" y1="200" x2="50" y2="246" class="accent" />
+  <text x="6" y="244" class="label-accent">SOLAR WINGS</text>
+  <text x="6" y="256" class="label-mute">2 panels (HTV-X)</text>
+
+  <!-- RIGHT CALLOUTS -->
+  <line x1="200" y1="59" x2="305" y2="55" class="accent" />
+  <text x="305" y="52" class="label-accent">CBM PORT</text>
+  <text x="305" y="64" class="label-mute">grappled by SSRMS</text>
+
+  <line x1="228" y1="120" x2="305" y2="120" class="accent" />
+  <text x="305" y="118" class="label-accent">~6 t CARGO</text>
+  <text x="305" y="130" class="label-mute">dry · pressurised</text>
+
+  <line x1="226" y1="195" x2="305" y2="180" class="accent" />
+  <text x="305" y="178" class="label-accent">HTV-X UPGRADE</text>
+  <text x="305" y="190" class="label-mute">replaces HTV body PV</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">MAIN ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by JAXA / MHI · launches on H3</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">Successor to HTV (Kounotori) · first flight 2025</text>
+</svg>

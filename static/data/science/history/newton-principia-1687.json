@@ -1,0 +1,25 @@
+{
+  "id": "newton-principia-1687",
+  "tab": "history",
+  "order": 2,
+  "diagram": "history-newton-principia.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/fly",
+      "context_key": "Every spacecraft trajectory is a Newtonian solution to a gravity problem"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Isaac Newton",
+      "u": "https://en.wikipedia.org/wiki/Isaac_Newton",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Philosophiæ Naturalis Principia Mathematica",
+      "u": "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica",
+      "t": "core"
+    }
+  ]
+}

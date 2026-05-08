@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Tianzhou spacecraft anatomy: pressurised cargo, propellant transfer section, service module with two deployed solar wings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .fuel { fill: rgba(255,150,100,0.18); stroke: rgba(255,180,120,0.6); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <text x="200" y="20" text-anchor="middle" class="title">TIANZHOU</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">10.6 m · 13,500 kg · uncrewed cargo</text>
+
+  <line x1="200" y1="50" x2="200" y2="260" class="dashed" />
+
+  <!-- Docking probe -->
+  <line x1="200" y1="50" x2="200" y2="62" class="stroke" />
+  <circle cx="200" cy="50" r="2.5" class="stroke-fill" />
+
+  <!-- Pressurised cargo section (large) -->
+  <rect x="170" y="62" width="60" height="100" class="stroke-fill" />
+  <!-- Hatch -->
+  <rect x="194" y="68" width="12" height="3" class="stroke" />
+
+  <!-- Service module (smaller cylinder) -->
+  <rect x="178" y="162" width="44" height="68" class="stroke-fill" />
+
+  <!-- Propellant transfer section overlay -->
+  <rect x="180" y="166" width="40" height="20" class="fuel" />
+  <circle cx="190" cy="176" r="3" class="stroke" />
+  <circle cx="200" cy="176" r="3" class="stroke" />
+  <circle cx="210" cy="176" r="3" class="stroke" />
+
+  <!-- Engine bell -->
+  <path d="M 188 230 L 184 252 L 216 252 L 212 230 Z" class="nozzle" />
+
+  <!-- Solar wings (1 pair, large) -->
+  <rect x="80" y="178" width="90" height="44" class="pv" />
+  <line x1="100" y1="178" x2="100" y2="222" class="pv-grid" />
+  <line x1="120" y1="178" x2="120" y2="222" class="pv-grid" />
+  <line x1="140" y1="178" x2="140" y2="222" class="pv-grid" />
+  <line x1="160" y1="178" x2="160" y2="222" class="pv-grid" />
+  <rect x="170" y="195" width="6" height="10" class="nozzle" />
+
+  <rect x="230" y="178" width="90" height="44" class="pv" />
+  <line x1="250" y1="178" x2="250" y2="222" class="pv-grid" />
+  <line x1="270" y1="178" x2="270" y2="222" class="pv-grid" />
+  <line x1="290" y1="178" x2="290" y2="222" class="pv-grid" />
+  <line x1="310" y1="178" x2="310" y2="222" class="pv-grid" />
+  <rect x="224" y="195" width="6" height="10" class="nozzle" />
+
+  <!-- LEFT CALLOUTS -->
+  <line x1="170" y1="90" x2="50" y2="80" class="accent" />
+  <text x="6" y="76" class="label-accent">CARGO BAY</text>
+  <text x="6" y="88" class="label-mute">~6.5 t supplies</text>
+
+  <line x1="178" y1="176" x2="50" y2="156" class="accent" />
+  <text x="6" y="152" class="label-accent">PROPELLANT</text>
+  <text x="6" y="164" class="label-mute">Tianhe top-up</text>
+
+  <line x1="80" y1="200" x2="20" y2="244" class="accent" />
+  <text x="6" y="258" class="label-accent">SOLAR WINGS</text>
+  <text x="6" y="270" class="label-mute">Si · ~14 m span</text>
+
+  <!-- RIGHT CALLOUTS -->
+  <line x1="200" y1="50" x2="305" y2="50" class="accent" />
+  <text x="305" y="48" class="label-accent">DOCK PROBE</text>
+  <text x="305" y="60" class="label-mute">to Tianhe port</text>
+
+  <line x1="230" y1="120" x2="305" y2="120" class="accent" />
+  <text x="305" y="118" class="label-accent">DRY CARGO</text>
+  <text x="305" y="130" class="label-mute">food · sci · spares</text>
+
+  <line x1="222" y1="200" x2="305" y2="208" class="accent" />
+  <text x="305" y="206" class="label-accent">SERVICE MOD</text>
+  <text x="305" y="218" class="label-mute">attitude · life</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">MAIN ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by CAST · launches on Long March 7</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">Burns up over Pacific · ~6 month resupply cadence</text>
+</svg>

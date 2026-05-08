@@ -1050,8 +1050,13 @@
    * top-left at top:10px and stacks ~3 rows tall). Mobile: bottom sheet
    * to avoid both HUD and detail-panel collisions. */
   .list-layer.drawer-mode {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    /* Prevent scroll chaining to the 3D canvas behind the drawer — without
+       this, when the user reaches the drawer's scroll boundary, the wheel
+       event propagates to OrbitControls and zooms the camera instead. */
+    overscroll-behavior: contain;
     position: absolute;
     inset: auto;
     top: 152px;

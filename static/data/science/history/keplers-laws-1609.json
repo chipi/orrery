@@ -1,0 +1,25 @@
+{
+  "id": "keplers-laws-1609",
+  "tab": "history",
+  "order": 1,
+  "diagram": "history-keplers-laws.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Every elliptical orbit you see is a direct consequence of Kepler's laws"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Johannes Kepler",
+      "u": "https://en.wikipedia.org/wiki/Johannes_Kepler",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Tycho Brahe",
+      "u": "https://en.wikipedia.org/wiki/Tycho_Brahe",
+      "t": "core"
+    }
+  ]
+}

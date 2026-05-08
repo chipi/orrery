@@ -233,6 +233,7 @@
     if (partial.view === 'list') params.set('view', 'list');
     else if (partial.view === '2d-top') params.set('view', '2d-top');
     else if (partial.view === '2d-side') params.set('view', '2d-side');
+    else if (partial.view === '2d-front') params.set('view', '2d-front');
     else if (partial.view === '3d') params.delete('view');
     if (partial.moduleId === null) params.delete('module');
     else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
@@ -674,6 +675,8 @@
       viewMode = '2d-top';
     } else if (urlWants2dSide(u)) {
       viewMode = '2d-side';
+    } else if (urlWants2dFront(u)) {
+      viewMode = '2d-front';
     } else if (deviceLowMemory()) {
       lowMemBanner = true;
       viewMode = 'list';
@@ -700,7 +703,7 @@
       aria-hidden={viewMode !== '3d'}
     ></div>
 
-    {#if viewMode === '2d-top' || viewMode === '2d-side'}
+    {#if viewMode === '2d-top' || viewMode === '2d-side' || viewMode === '2d-front'}
       <div
         class="layer blueprint-layer"
         class:drawer-open={indexOpen}
@@ -708,7 +711,7 @@
       >
         <StationBlueprint
           modules={blueprintModules}
-          view={viewMode === '2d-top' ? 'top' : 'side'}
+          view={viewMode === '2d-top' ? 'top' : viewMode === '2d-side' ? 'side' : 'front'}
           selectedId={selected?.id ?? null}
           onModuleClick={blueprintModuleClick}
           ariaLabel="Tiangong blueprint diagram"
@@ -718,7 +721,7 @@
 
     <aside
       class="layer list-layer"
-      class:drawer-mode={viewMode === '3d' || viewMode === '2d-top' || viewMode === '2d-side'}
+      class:drawer-mode={viewMode !== 'list'}
       class:fullscreen-mode={viewMode === 'list'}
       class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="tiangong-list-view"
@@ -801,6 +804,8 @@
           <span class="hint hint-docked">TOP · XZ PLANE · TAP MODULE</span>
         {:else if viewMode === '2d-side'}
           <span class="hint hint-docked">SIDE · XY PLANE · TAP MODULE</span>
+        {:else if viewMode === '2d-front'}
+          <span class="hint hint-docked">FRONT · YZ PLANE · TAP MODULE</span>
         {/if}
       </div>
       <!-- Always 4 buttons in a single row across all non-list modes;
@@ -813,9 +818,15 @@
             class="toggle"
             data-testid="tiangong-blueprint-toggle"
             onclick={cycleBlueprintView}
-            title="Cycle 3D / Top / Side"
+            title="Cycle 3D / Top / Side / Front"
           >
-            {viewMode === '3d' ? '3D' : viewMode === '2d-top' ? 'TOP' : 'SIDE'}
+            {viewMode === '3d'
+              ? '3D'
+              : viewMode === '2d-top'
+                ? 'TOP'
+                : viewMode === '2d-side'
+                  ? 'SIDE'
+                  : 'FRONT'}
           </button>
           <button
             type="button"

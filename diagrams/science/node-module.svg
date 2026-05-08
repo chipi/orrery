@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Node module with six docking ports">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .node { fill: rgba(78,205,196,0.18); stroke: #4ecdc4; stroke-width: 1.5; }
+    .port { fill: rgba(255,200,80,0.25); stroke: #ffc850; stroke-width: 1; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1.2px; }
+    .arrow { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .axis-label { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1px; }
+  </style>
+  <rect x="10" y="10" width="380" height="220" class="panel" />
+  <text x="20" y="30" class="label">NODE MODULE — SIX-PORT HUB</text>
+
+  <!-- Hexagonal node body (centred, top-down view) -->
+  <g transform="translate(200, 130)">
+    <polygon points="-50,-30 -50,30 0,60 50,30 50,-30 0,-60" class="node" />
+    <text x="0" y="3" text-anchor="middle" class="label">NODE</text>
+
+    <!-- Six ports around the hexagon -->
+    <!-- Forward (+Y) -->
+    <rect x="-12" y="-86" width="24" height="22" class="port" />
+    <text x="0" y="-92" text-anchor="middle" class="axis-label">FORWARD</text>
+    <line x1="0" y1="-60" x2="0" y2="-86" class="arrow" />
+
+    <!-- Aft (-Y) -->
+    <rect x="-12" y="64" width="24" height="22" class="port" />
+    <text x="0" y="100" text-anchor="middle" class="axis-label">AFT</text>
+    <line x1="0" y1="60" x2="0" y2="86" class="arrow" />
+
+    <!-- Port (-X side) -->
+    <rect x="-90" y="-12" width="22" height="24" class="port" />
+    <text x="-79" y="-20" text-anchor="middle" class="axis-label">PORT</text>
+    <line x1="-50" y1="-15" x2="-78" y2="-12" class="arrow" />
+    <line x1="-50" y1="15" x2="-78" y2="12" class="arrow" />
+
+    <!-- Starboard (+X side) -->
+    <rect x="68" y="-12" width="22" height="24" class="port" />
+    <text x="79" y="-20" text-anchor="middle" class="axis-label">STARBOARD</text>
+    <line x1="50" y1="-15" x2="78" y2="-12" class="arrow" />
+    <line x1="50" y1="15" x2="78" y2="12" class="arrow" />
+
+    <!-- Zenith (top-perspective, drawn as small label) -->
+    <text x="0" y="-50" text-anchor="middle" class="axis-label">ZENITH ↑</text>
+    <text x="0" y="55" text-anchor="middle" class="axis-label">NADIR ↓</text>
+  </g>
+</svg>

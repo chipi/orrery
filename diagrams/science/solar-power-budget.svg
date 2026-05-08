@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Solar power flow: arrays to bus to battery and loads">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .box { fill: rgba(78,205,196,0.14); stroke: #4ecdc4; stroke-width: 1.2; }
+    .battery { fill: rgba(108,169,255,0.18); stroke: #6aa9ff; }
+    .load { fill: rgba(255,200,80,0.16); stroke: #ffc850; }
+    .label { fill: rgba(255,255,255,0.92); font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 1.2px; text-anchor: middle; }
+    .sub { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; text-anchor: middle; }
+    .arrow { stroke: rgba(255,255,255,0.5); stroke-width: 1; fill: none; marker-end: url(#arr); }
+    .duty-base { fill: rgba(255,255,255,0.05); }
+    .duty-fill { fill: rgba(255,200,80,0.5); }
+    .duty-label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 7px; }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L7,4 L0,7 z" fill="rgba(255,255,255,0.5)" />
+    </marker>
+  </defs>
+  <rect x="10" y="10" width="380" height="220" class="panel" />
+  <text x="200" y="28" class="label">SOLAR POWER FLOW</text>
+
+  <!-- Sun → Array -->
+  <circle cx="50" cy="80" r="14" fill="#ffc850" opacity="0.75" />
+  <text x="50" y="105" class="sub">SUN</text>
+
+  <line x1="65" y1="80" x2="100" y2="80" class="arrow" />
+
+  <!-- Array -->
+  <rect x="100" y="60" width="76" height="40" class="box" />
+  <text x="138" y="78" class="label">ARRAY</text>
+  <text x="138" y="92" class="sub">~120 kW peak</text>
+
+  <line x1="176" y1="80" x2="206" y2="80" class="arrow" />
+
+  <!-- DC bus -->
+  <rect x="206" y="60" width="60" height="40" class="box" />
+  <text x="236" y="78" class="label">DC BUS</text>
+  <text x="236" y="92" class="sub">~160 V</text>
+
+  <!-- Splits → Battery + Loads -->
+  <line x1="266" y1="80" x2="296" y2="55" class="arrow" />
+  <line x1="266" y1="80" x2="296" y2="105" class="arrow" />
+
+  <rect x="296" y="35" width="80" height="32" class="battery" />
+  <text x="336" y="53" class="label">BATTERY</text>
+  <text x="336" y="63" class="sub">night-side</text>
+
+  <rect x="296" y="93" width="80" height="32" class="load" />
+  <text x="336" y="111" class="label">LOADS</text>
+  <text x="336" y="121" class="sub">life support · payloads</text>
+
+  <!-- Duty cycle bar -->
+  <text x="20" y="160" class="duty-label">ORBIT DUTY CYCLE (92 min)</text>
+  <rect x="20" y="170" width="360" height="16" class="duty-base" />
+  <rect x="20" y="170" width="216" height="16" class="duty-fill" />
+  <text x="128" y="182" class="duty-label" style="fill:rgba(0,0,0,0.7)">SUNLIT · 60%</text>
+  <text x="320" y="182" class="duty-label">ECLIPSE · 40%</text>
+
+  <text x="200" y="216" class="sub">Battery covers eclipse loads; array recharges during sunlit pass.</text>
+</svg>

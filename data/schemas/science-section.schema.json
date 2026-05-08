@@ -14,7 +14,15 @@
     },
     "tab": {
       "type": "string",
-      "enum": ["orbits", "transfers", "propulsion", "mission-phases", "scales-time", "porkchop"]
+      "enum": [
+        "orbits",
+        "transfers",
+        "propulsion",
+        "mission-phases",
+        "scales-time",
+        "porkchop",
+        "space-stations"
+      ]
     },
     "order": {
       "type": "integer",

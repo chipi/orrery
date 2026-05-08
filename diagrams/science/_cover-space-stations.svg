@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A space-stations chapter cover — three stylised station silhouettes in ascending size against a soft starfield, with a half-Earth horizon below.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .gold { stroke: #ffc850; stroke-width: 1.8; fill: none; }
+    .blue { stroke: #6aa9ff; stroke-width: 1.6; fill: none; }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+    .panel-fill { fill: rgba(78,205,196,0.08); }
+    .gold-fill { fill: rgba(255,200,80,0.08); }
+    .blue-fill { fill: rgba(108,169,255,0.08); }
+    .earth-arc { fill: rgba(108,169,255,0.18); stroke: rgba(108,169,255,0.45); stroke-width: 1; }
+  </style>
+
+  <!-- Sparse starfield -->
+  <circle class="dim-star" cx="40" cy="36" r="0.8" />
+  <circle class="dim-star" cx="120" cy="22" r="0.6" />
+  <circle class="dim-star" cx="200" cy="50" r="1" />
+  <circle class="star" cx="280" cy="34" r="0.7" />
+  <circle class="dim-star" cx="360" cy="18" r="0.5" />
+  <circle class="dim-star" cx="430" cy="50" r="1.1" />
+  <circle class="star" cx="510" cy="30" r="0.6" />
+  <circle class="dim-star" cx="560" cy="50" r="0.7" />
+  <circle class="dim-star" cx="80" cy="80" r="0.5" />
+  <circle class="dim-star" cx="220" cy="100" r="0.6" />
+  <circle class="star" cx="320" cy="78" r="0.7" />
+  <circle class="dim-star" cx="450" cy="100" r="0.5" />
+  <circle class="dim-star" cx="540" cy="92" r="0.8" />
+
+  <!-- Earth horizon arc at the bottom -->
+  <path d="M0,260 L0,235 Q300,180 600,235 L600,260 Z" class="earth-arc" />
+
+  <!-- Three stylised stations from small to large, ascending in altitude -->
+
+  <!-- Tiangong (smallest, leftmost, lower) -->
+  <g transform="translate(110, 165)">
+    <!-- core -->
+    <rect x="-26" y="-7" width="52" height="14" class="blue blue-fill" />
+    <!-- two side modules -->
+    <rect x="-50" y="-9" width="20" height="18" class="blue blue-fill" />
+    <rect x="30" y="-9" width="20" height="18" class="blue blue-fill" />
+    <!-- solar panels -->
+    <rect x="-78" y="-3" width="22" height="6" class="stroke-soft" />
+    <rect x="56" y="-3" width="22" height="6" class="stroke-soft" />
+  </g>
+
+  <!-- Mir (middle, middle altitude) -->
+  <g transform="translate(290, 130)">
+    <rect x="-28" y="-9" width="56" height="18" class="accent panel-fill" />
+    <rect x="-46" y="-7" width="14" height="14" class="accent panel-fill" />
+    <rect x="32" y="-7" width="14" height="14" class="accent panel-fill" />
+    <rect x="-7" y="-26" width="14" height="14" class="accent panel-fill" />
+    <rect x="-7" y="14" width="14" height="14" class="accent panel-fill" />
+    <!-- arrays -->
+    <rect x="-86" y="-2" width="36" height="4" class="stroke-mid" />
+    <rect x="50" y="-2" width="36" height="4" class="stroke-mid" />
+  </g>
+
+  <!-- ISS (largest, rightmost, highest) -->
+  <g transform="translate(470, 90)">
+    <!-- truss -->
+    <line x1="-90" y1="0" x2="90" y2="0" class="gold" />
+    <!-- core modules cluster -->
+    <rect x="-30" y="-10" width="60" height="20" class="gold gold-fill" />
+    <rect x="-44" y="-7" width="14" height="14" class="gold gold-fill" />
+    <rect x="30" y="-7" width="14" height="14" class="gold gold-fill" />
+    <!-- solar wings (8) — stylised -->
+    <rect x="-100" y="-14" width="14" height="10" class="stroke-bright" />
+    <rect x="-100" y="4" width="14" height="10" class="stroke-bright" />
+    <rect x="-78" y="-14" width="12" height="10" class="stroke-mid" />
+    <rect x="-78" y="4" width="12" height="10" class="stroke-mid" />
+    <rect x="66" y="-14" width="12" height="10" class="stroke-mid" />
+    <rect x="66" y="4" width="12" height="10" class="stroke-mid" />
+    <rect x="86" y="-14" width="14" height="10" class="stroke-bright" />
+    <rect x="86" y="4" width="14" height="10" class="stroke-bright" />
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Three space stations to scale: Tiangong, Mir, ISS">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .station { fill: rgba(78,205,196,0.18); stroke: #4ecdc4; stroke-width: 1.5; }
+    .station-mir { fill: rgba(108,169,255,0.18); stroke: #6aa9ff; }
+    .station-iss { fill: rgba(255,200,80,0.18); stroke: #ffc850; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; }
+    .vol { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; }
+    .axis { stroke: rgba(255,255,255,0.18); stroke-width: 0.6; }
+    .human { fill: rgba(255,255,255,0.5); }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <line x1="40" y1="180" x2="370" y2="180" class="axis" />
+
+  <!-- Tiangong (~110 m³) — small box -->
+  <rect x="55" y="148" width="40" height="32" class="station" />
+  <text x="75" y="195" text-anchor="middle" class="label">TIANGONG</text>
+  <text x="75" y="206" text-anchor="middle" class="vol">~110 m³</text>
+
+  <!-- Mir (~350 m³) — medium -->
+  <rect x="135" y="118" width="80" height="62" class="station station-mir" />
+  <text x="175" y="195" text-anchor="middle" class="label">MIR</text>
+  <text x="175" y="206" text-anchor="middle" class="vol">~350 m³</text>
+
+  <!-- ISS (~388 m³) — largest -->
+  <rect x="245" y="110" width="105" height="70" class="station station-iss" />
+  <text x="297" y="195" text-anchor="middle" class="label">ISS</text>
+  <text x="297" y="206" text-anchor="middle" class="vol">~388 m³</text>
+
+  <!-- Human silhouette for reference scale, ~1.8m tall.
+       The y-axis runs 70 units = 70 m³ ≈ ~5 m of station depth here, so
+       a ~0.3-pixel-tall human is too small to draw; instead a small icon
+       with a leader line conveys "for scale". -->
+  <g transform="translate(370, 170)">
+    <circle cx="0" cy="-7" r="2" class="human" />
+    <rect x="-1.5" y="-5" width="3" height="6" class="human" />
+    <text x="-25" y="14" class="vol" text-anchor="middle">~1.8 m</text>
+  </g>
+
+  <text x="20" y="30" class="label">PRESSURIZED VOLUME (SCALED)</text>
+</svg>

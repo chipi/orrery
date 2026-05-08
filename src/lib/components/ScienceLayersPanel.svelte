@@ -20,9 +20,7 @@
   import { onScienceLensChange } from '$lib/science-lens';
   import {
     LAYER_ORDER,
-    LAYER_DEFAULTS,
     ensureLayerDefaults,
-    isLayerOn,
     setLayer,
     onLayerChange,
     type LayerKey,

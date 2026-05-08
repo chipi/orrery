@@ -1086,6 +1086,36 @@
     );
     scene.add(marsMesh);
 
+    // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────
+    // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
+    // mapped through SCALE_3D (1 AU = 80 scene units), so the ring
+    // matches the actual transition the spacecraft experiences.
+    const earthSoI = buildSoIRing('earth', soiRadiusInScene('earth', SCALE_3D), 0x6aa9ff);
+    const marsSoI = buildSoIRing('mars', soiRadiusInScene('mars', SCALE_3D), 0xff8866);
+    scene.add(earthSoI);
+    scene.add(marsSoI);
+
+    // ─── Science Layers G.3 — Gravity arrows on the spacecraft ───────
+    // Two ArrowHelpers parented to the scene; positioned + reoriented
+    // each frame to point from sc.pos toward Earth and Sun respectively.
+    // Length is log-scaled by acceleration magnitude so both stay visible
+    // through the entire transit.
+    const gravArrowEarth = buildGravityArrow('earth', 0x6aa9ff);
+    const gravArrowSun = buildGravityArrow('sun', 0xffc850);
+    scene.add(gravArrowEarth);
+    scene.add(gravArrowSun);
+
+    // Layer-state listeners: flip visibility on each layer toggle. The
+    // listeners are returned as unsubs in cleanupThree below.
+    const stopSoiLayer = onLayerChange('soi', (on) => {
+      earthSoI.visible = on;
+      marsSoI.visible = on;
+    });
+    const stopGravityLayer = onLayerChange('gravity', (on) => {
+      gravArrowEarth.visible = on;
+      gravArrowSun.visible = on;
+    });
+
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
     const moonTexLoader = new THREE.TextureLoader();
@@ -1724,6 +1754,50 @@
       // arc regardless of curvature.
       scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
 
+      // ─── Science Layers — per-frame overlay updates ──────────────
+      // Position SoI rings at Earth + Mars heliocentric positions and
+      // refresh gravity arrows on the spacecraft. Hidden layers don't
+      // bypass this work but their geometry is invisible — cheap.
+      const scWorld = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+      const earthWorld = earthMesh.position;
+      const marsWorld = marsMesh.position;
+
+      if (earthSoI.visible) earthSoI.position.copy(earthWorld);
+      if (marsSoI.visible) marsSoI.position.copy(marsWorld);
+
+      if (gravArrowEarth.visible || gravArrowSun.visible) {
+        // Distances in km between spacecraft and source bodies. The
+        // /fly scene unit is SCALE_3D × AU, so convert: scene → AU →
+        // km.
+        const auPerScene = 1 / SCALE_3D;
+        const dEarthScene = scWorld.distanceTo(earthWorld);
+        const dEarthKm = dEarthScene * auPerScene * 149_597_870.7;
+        const dSunKm = scWorld.length() * auPerScene * 149_597_870.7;
+
+        // Gravity acceleration (m/s²) — same units as physics; log
+        // scale collapses the wide dynamic range into visible arrows.
+        const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
+        const aSun = gravityAccel(BODY_MASS_KG.sun, dSunKm);
+
+        // Earth arrow: anchor at spacecraft, point toward Earth.
+        gravArrowEarth.position.copy(scWorld);
+        const dirEarth = new THREE.Vector3().subVectors(earthWorld, scWorld).normalize();
+        gravArrowEarth.setDirection(dirEarth);
+        gravArrowEarth.setLength(
+          logScaleLength(aEarth, 1.5, 18, 1e-6, 10),
+          0.7, // head length
+          0.4, // head width
+        );
+
+        // Sun arrow: anchor at spacecraft, point toward Sun (origin).
+        gravArrowSun.position.copy(scWorld);
+        const dirSun = new THREE.Vector3()
+          .subVectors(new THREE.Vector3(0, 0, 0), scWorld)
+          .normalize();
+        gravArrowSun.setDirection(dirSun);
+        gravArrowSun.setLength(logScaleLength(aSun, 1.5, 18, 1e-6, 10), 0.7, 0.4);
+      }
+
       // v0.1.10: drawRange-driven progress trail on the *past* tube of
       // each arc. The *future* tubes always render full at low
       // opacity so the user sees the full mission path; the past
@@ -1781,6 +1855,8 @@
 
     cleanup = () => {
       cancelAnimationFrame(rafId);
+      stopSoiLayer?.();
+      stopGravityLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -2150,6 +2226,12 @@
      simulation moves through DEPARTURE → INJECTION → CRUISE → APPROACH
      → ARRIVAL. Only renders when the global Science Lens is on. -->
 <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+
+<!-- Science Layers panel — Phase G. /fly has all eight layers
+     available; coast + conics are /fly-only. -->
+<ScienceLayersPanel
+  available={['soi', 'hover', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+/>
 
 <style>
   .fly {

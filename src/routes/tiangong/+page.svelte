@@ -14,8 +14,9 @@
   import { localeFromPage } from '$lib/locale';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
   import { buildMicrogravityAxes } from '$lib/microgravity-axes';
-  import { onScienceLensChange } from '$lib/science-lens';
+  import { onLayerChange } from '$lib/science-layers';
   import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import type { TiangongModule } from '$types/tiangong-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
@@ -473,7 +474,7 @@
     // in scale to the ISS proxy so the same length works.
     const microgravityAxes = buildMicrogravityAxes(4);
     scene.add(microgravityAxes);
-    const stopLensWatch = onScienceLensChange((on) => {
+    const stopLensWatch = onLayerChange('microgravity', (on) => {
       microgravityAxes.visible = on;
     });
 
@@ -955,8 +956,12 @@
   />
 
   <!-- Microgravity axes legend — pairs with the 3D ArrowHelpers added
-       inside startThree() when the Science Lens is on (F.3). -->
+       inside startThree() when the 'microgravity' layer is on. -->
   <MicrogravityAxesLegend />
+
+  <!-- /tiangong Layers panel — only the microgravity layer is
+       meaningful on this route today. Default-on. -->
+  <ScienceLayersPanel available={['microgravity']} />
 </div>
 
 <style>

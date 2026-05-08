@@ -14,21 +14,26 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
   import { base } from '$app/paths';
-  import { onScienceLensChange } from '$lib/science-lens';
+  import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages.js';
 
-  let lensOn = $state(false);
+  // Tracks the 'microgravity' layer (which itself ANDs against the
+  // master lens — see isLayerOn in science-layers.ts). The legend
+  // appears only when both the lens AND the layer are on; toggling
+  // the layer off in the panel hides this legend along with the 3D
+  // arrows it pairs with.
+  let layerOn = $state(false);
   let stop: (() => void) | undefined;
 
   onMount(() => {
-    stop = onScienceLensChange((v) => {
-      lensOn = v;
+    stop = onLayerChange('microgravity', (v) => {
+      layerOn = v;
     });
   });
   onDestroy(() => stop?.());
 </script>
 
-{#if lensOn}
+{#if layerOn}
   <a
     class="legend"
     href="{base}/science/orbits/keplers-laws"

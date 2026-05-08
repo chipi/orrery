@@ -51,6 +51,7 @@
     apsides: false,
     coast: false,
     conics: false,
+    microgravity: false,
   });
 
   let stops: Array<() => void> = [];
@@ -111,6 +112,11 @@
         return {
           label: m.science_layer_conics_label(),
           description: m.science_layer_conics_desc(),
+        };
+      case 'microgravity':
+        return {
+          label: m.science_layer_microgravity_label(),
+          description: m.science_layer_microgravity_desc(),
         };
     }
   }

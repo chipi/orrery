@@ -14,11 +14,12 @@
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
   import { buildMicrogravityAxes } from '$lib/microgravity-axes';
-  import { onScienceLensChange } from '$lib/science-lens';
+  import { onLayerChange } from '$lib/science-layers';
   import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
   import type { IssModule } from '$types/iss-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
@@ -523,7 +524,10 @@
     // bounding box (~4 unit-radius proxy fits comfortably).
     const microgravityAxes = buildMicrogravityAxes(4);
     scene.add(microgravityAxes);
-    const stopLensWatch = onScienceLensChange((on) => {
+    // Now sub-toggleable via the 'microgravity' layer. Default-on under
+    // the lens so existing behaviour is preserved; users who want a
+    // clean station view with the lens still on can toggle it off.
+    const stopLensWatch = onLayerChange('microgravity', (on) => {
       microgravityAxes.visible = on;
     });
 
@@ -1001,8 +1005,12 @@
   <StationOrbitBanner stationName="ISS" altitudeKm={408} inclinationDeg={51.6} periodMin={92.7} />
 
   <!-- Microgravity axes legend — pairs with the 3D ArrowHelpers added
-       inside startThree() when the Science Lens is on (F.3). -->
+       inside startThree() when the 'microgravity' layer is on. -->
   <MicrogravityAxesLegend />
+
+  <!-- /iss Layers panel — only the microgravity layer is meaningful
+       on this route today. Default-on so existing behaviour holds. -->
+  <ScienceLayersPanel available={['microgravity']} />
 </div>
 
 <style>

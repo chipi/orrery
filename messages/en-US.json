@@ -501,6 +501,8 @@
   "science_layer_coast_desc": "Where the spacecraft would drift if the engine cut right now.",
   "science_layer_conics_label": "Conic-section family",
   "science_layer_conics_desc": "Names the current arc shape (ellipse / hyperbola / etc.) live.",
+  "science_layer_microgravity_label": "Microgravity axes",
+  "science_layer_microgravity_desc": "Three colour-keyed body axes — zenith / nadir, prograde / retrograde, port / starboard.",
   "conics_eyebrow": "CONIC SECTION",
   "conics_read_more": "→ Read in /science",
   "conics_shape_circle": "Circle",

@@ -19,7 +19,6 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
-  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1275,7 +1274,10 @@
   tab="orbits"
   section="orbit-regimes"
 />
-<ScienceLayersPanel available={['hover']} />
+
+<!-- Layers panel mounts on this route once J.3 wires terrestrial-body
+     overlays (atmosphere altitude bands, gravity field, etc.). Until
+     then the lens is just a banner — no toggles to mislead users. -->
 
 <style>
   .earth {

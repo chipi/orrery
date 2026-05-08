@@ -22,8 +22,10 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
   import { onLayerChange } from '$lib/science-layers';
+  import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
@@ -316,9 +318,26 @@
     velocity: string;
     distance: string;
     extras: string;
+    /** Live numeric values used by the lens-mode expanded card. */
+    velocityKms: number;
+    distanceAU: number;
+    eccentricity: number;
+    inclinationDeg: number;
     x: number;
     y: number;
   } | null = $state(null);
+  // Hover-card lens state: when both the master lens AND the 'hover'
+  // layer are on, the tooltip expands with click-through chips into
+  // /science. When the lens is off, the tooltip behaves as it always
+  // did (always-on terse text). When the lens is on but the 'hover'
+  // layer is off, the tooltip is hidden — letting users opt for a
+  // fully clean view of the scene.
+  let lensOn = $state(false);
+  let hoverLayerOn = $state(false);
+  let stopLensWatch: (() => void) | undefined;
+  let stopHoverLayerWatch: (() => void) | undefined;
+  let tooltipVisible = $derived(hoverData !== null && (!lensOn || hoverLayerOn));
+  let tooltipExpanded = $derived(lensOn && hoverLayerOn);
   let cleanup: (() => void) | undefined;
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
@@ -400,6 +419,16 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Hover-card lens subscriptions. Both signals start in browser only,
+    // so they're safe inside onMount. When either flips we re-derive
+    // tooltip visibility / expansion via the existing $derived above.
+    stopLensWatch = onScienceLensChange((on) => {
+      lensOn = on;
+    });
+    stopHoverLayerWatch = onLayerChange('hover', (on) => {
+      hoverLayerOn = on;
+    });
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
     const initialLocale = localeFromPage($page);
@@ -835,6 +864,10 @@
             i: planet.incl.toFixed(1),
             tilt: planet.axialTilt.toFixed(1),
           }),
+          velocityKms: v,
+          distanceAU: planet.a,
+          eccentricity: planet.e,
+          inclinationDeg: planet.incl,
           x: e.clientX,
           y: e.clientY,
         };
@@ -859,6 +892,10 @@
             e: body.e.toFixed(3),
             i: body.incl.toFixed(1),
           }),
+          velocityKms: v,
+          distanceAU: body.a,
+          eccentricity: body.e,
+          inclinationDeg: body.incl,
           x: e.clientX,
           y: e.clientY,
         };
@@ -1734,6 +1771,8 @@
     cleanup = () => {
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
+      stopLensWatch?.();
+      stopHoverLayerWatch?.();
       stopExploreGravityLayer?.();
       stopExploreVelocityLayer?.();
       stopExploreCentripetalLayer?.();
@@ -1900,18 +1939,68 @@
     </div>
   {/if}
 
-  {#if hoverData && view === '3d'}
+  {#if hoverData && view === '3d' && tooltipVisible}
     <div
       class="tooltip"
+      class:expanded={tooltipExpanded}
       role="status"
       aria-live="polite"
       aria-label="{hoverData.name} — {hoverData.velocity}, {hoverData.distance}, {hoverData.extras}"
-      style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 200)}px"
+      style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 220)}px"
       style:top="{Math.max(hoverData.y - 60, 60)}px"
     >
-      <div class="tt-line">{hoverData.velocity}</div>
-      <div class="tt-line dim">{hoverData.distance}</div>
-      <div class="tt-line dim">{hoverData.extras}</div>
+      {#if tooltipExpanded}
+        <!-- Lens-on expanded card. Each metric carries an `i` info chip
+             that deep-links into the matching /science section. -->
+        <div class="tt-eyebrow">{hoverData.name.toUpperCase()}</div>
+        <div class="tt-row">
+          <span class="tt-key"
+            >SPEED<ScienceChip
+              tab="orbits"
+              section="vis-viva"
+              label={m.chip_label_vis_viva()}
+            /></span
+          >
+          <span class="tt-val">{hoverData.velocityKms.toFixed(2)} km/s</span>
+        </div>
+        <div class="tt-row">
+          <span class="tt-key"
+            >DIST<ScienceChip
+              tab="orbits"
+              section="semi-major-axis"
+              label={m.chip_label_semi_major_axis()}
+            /></span
+          >
+          <span class="tt-val">
+            {hoverData.distanceAU.toFixed(3)} AU ·
+            {(hoverData.distanceAU * 8.317).toFixed(1)} l-min
+          </span>
+        </div>
+        <div class="tt-row">
+          <span class="tt-key"
+            >ECC<ScienceChip
+              tab="orbits"
+              section="eccentricity"
+              label={m.chip_label_eccentricity()}
+            /></span
+          >
+          <span class="tt-val">{hoverData.eccentricity.toFixed(3)}</span>
+        </div>
+        <div class="tt-row">
+          <span class="tt-key"
+            >INCL<ScienceChip
+              tab="orbits"
+              section="inclination"
+              label={m.chip_label_inclination()}
+            /></span
+          >
+          <span class="tt-val">{hoverData.inclinationDeg.toFixed(1)}°</span>
+        </div>
+      {:else}
+        <div class="tt-line">{hoverData.velocity}</div>
+        <div class="tt-line dim">{hoverData.distance}</div>
+        <div class="tt-line dim">{hoverData.extras}</div>
+      {/if}
     </div>
   {/if}
 </div>
@@ -1944,7 +2033,12 @@
      the list as a placeholder for future expanded hover cards; today
      the existing tooltip behaviour is unchanged whether the layer is
      on or off. -->
-<ScienceLayersPanel available={['soi', 'hover', 'gravity', 'velocity', 'centripetal', 'apsides']} />
+<!-- /explore wires four layers today: hover-cards (lens-on tooltip
+     expansion), gravity (per-planet arrow toward Sun), velocity
+     (tangent), centripetal (paired inward arrow). SoI and apsides are
+     omitted — planets render on circular orbits at this visual scale,
+     so apsides degenerate to single points and SoIs are sub-pixel. -->
+<ScienceLayersPanel available={['hover', 'gravity', 'velocity', 'centripetal']} />
 
 <style>
   .explore {
@@ -2155,6 +2249,15 @@
     font-family: 'Space Mono', monospace;
     backdrop-filter: blur(6px);
   }
+  /* Lens-on expanded card: gold border (matches the lens family) +
+     pointer-events enabled so users can click the science chips
+     into /science. */
+  .tooltip.expanded {
+    pointer-events: auto;
+    min-width: 220px;
+    border-color: rgba(255, 200, 80, 0.6);
+    padding: 10px 12px 8px;
+  }
   .tt-line {
     font-size: 9px;
     line-height: 1.5;
@@ -2163,5 +2266,36 @@
   .tt-line.dim {
     color: rgba(255, 255, 255, 0.5);
     font-size: 8px;
+  }
+  .tt-eyebrow {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: rgba(255, 200, 80, 0.92);
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 200, 80, 0.18);
+    padding-bottom: 4px;
+  }
+  .tt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 9px;
+    line-height: 1.55;
+  }
+  .tt-row + .tt-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 2px;
+  }
+  .tt-key {
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 1px;
+    font-size: 8px;
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .tt-val {
+    color: rgba(255, 255, 255, 0.92);
   }
 </style>

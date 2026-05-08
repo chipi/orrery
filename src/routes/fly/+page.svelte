@@ -1129,6 +1129,33 @@
     scene.add(gravArrowEarth);
     scene.add(gravArrowSun);
 
+    // Velocity tangent + centripetal arrows on the spacecraft — Phase H
+    // gap-fill. Velocity is tangent to motion (teal), centripetal points
+    // inward toward the Sun (red, paired with gravity). Lengths are
+    // updated per frame in the animate() loop.
+    const velocityArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      8,
+      0x4ecdc4,
+      1.4,
+      0.8,
+    );
+    const centripetalArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(-1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      8,
+      0xff6b6b,
+      1.4,
+      0.8,
+    );
+    velocityArrow.userData.layerKey = 'velocity';
+    centripetalArrow.userData.layerKey = 'centripetal';
+    velocityArrow.visible = false;
+    centripetalArrow.visible = false;
+    scene.add(velocityArrow);
+    scene.add(centripetalArrow);
+
     // Layer-state listeners: flip visibility on each layer toggle. The
     // listeners are returned as unsubs in cleanupThree below.
     const stopSoiLayer = onLayerChange('soi', (on) => {
@@ -1138,6 +1165,12 @@
     const stopGravityLayer = onLayerChange('gravity', (on) => {
       gravArrowEarth.visible = on;
       gravArrowSun.visible = on;
+    });
+    const stopFlyVelocityLayer = onLayerChange('velocity', (on) => {
+      velocityArrow.visible = on;
+    });
+    const stopFlyCentripetalLayer = onLayerChange('centripetal', (on) => {
+      centripetalArrow.visible = on;
     });
 
     // ─── Science Layers G.5 — Engine-off coast preview ───────────────
@@ -1908,6 +1941,43 @@
         gravArrowSun.setLength(logScaleLength(aSun, 1.5, 18, 1e-6, 10), 0.7, 0.4);
       }
 
+      // Velocity tangent on spacecraft: finite-difference of next-frame
+      // position from the arc geometry, normalized + scaled by current
+      // heliocentric speed.
+      if (velocityArrow.visible || centripetalArrow.visible) {
+        const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+        const dx = (sc1.x - sc.pos.x) * SCALE_3D;
+        const dz = (sc1.z - sc.pos.z) * SCALE_3D;
+        const dirMag = Math.hypot(dx, dz);
+        if (velocityArrow.visible && dirMag > 0.0001) {
+          velocityArrow.position.copy(scWorld);
+          const tangent = new THREE.Vector3(dx / dirMag, 0, dz / dirMag);
+          velocityArrow.setDirection(tangent);
+          // Scale arrow length by heliocentric speed (km/s) — typical
+          // 25-35 km/s on the cruise. 0.4 unit per km/s gives ~12-14
+          // unit arrows that read clearly.
+          const vLen = Math.min(20, Math.max(4, heliocentricKms * 0.4));
+          velocityArrow.setLength(vLen, 0.7, 0.4);
+        }
+        if (centripetalArrow.visible) {
+          centripetalArrow.position.copy(scWorld);
+          // Centripetal acceleration on a Keplerian arc points toward
+          // the central body — for a heliocentric arc that's the Sun.
+          // Same direction as the gravity-from-Sun arrow.
+          const dirSun = new THREE.Vector3()
+            .subVectors(new THREE.Vector3(0, 0, 0), scWorld)
+            .normalize();
+          centripetalArrow.setDirection(dirSun);
+          // Length proxy via Sun-gravity acceleration so the arrow
+          // size mirrors the curvature of the trajectory at this r.
+          const aSun2 = gravityAccel(
+            BODY_MASS_KG.sun,
+            scWorld.length() * (149_597_870.7 / SCALE_3D),
+          );
+          centripetalArrow.setLength(logScaleLength(aSun2, 1.2, 14, 1e-6, 10), 0.7, 0.4);
+        }
+      }
+
       // v0.1.10: drawRange-driven progress trail on the *past* tube of
       // each arc. The *future* tubes always render full at low
       // opacity so the user sees the full mission path; the past
@@ -1967,6 +2037,8 @@
       cancelAnimationFrame(rafId);
       stopSoiLayer?.();
       stopGravityLayer?.();
+      stopFlyVelocityLayer?.();
+      stopFlyCentripetalLayer?.();
       stopCoastLayer?.();
       stopApsidesLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
@@ -2339,10 +2411,11 @@
      → ARRIVAL. Only renders when the global Science Lens is on. -->
 <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
 
-<!-- Science Layers panel — Phase G. /fly has all eight layers
-     available; coast + conics are /fly-only. -->
+<!-- /fly Layers panel. 'hover' is omitted — there's no per-target
+     hover-pick on the spacecraft yet, so the toggle would be a no-op.
+     Everything else is wired. -->
 <ScienceLayersPanel
-  available={['soi', 'hover', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+  available={['soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
 />
 
 <!-- Conic-section family side panel — Phase I. Lens + 'conics' layer

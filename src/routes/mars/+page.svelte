@@ -18,7 +18,6 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
-  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
@@ -1413,7 +1412,8 @@
   tab="mission-phases"
   section="edl"
 />
-<ScienceLayersPanel available={['hover']} />
+
+<!-- Layers panel mounts here once J.3 wires terrestrial-body overlays. -->
 
 <style>
   .mars {

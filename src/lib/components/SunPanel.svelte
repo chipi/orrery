@@ -6,6 +6,7 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
@@ -150,7 +151,14 @@
             <div class="cell-sub">{m.sun_radius_earth({ value: radiusEarth.toFixed(0) })}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.sun_label_mass()}</div>
+            <div class="cell-label">
+              {m.sun_label_mass()}<WhyPopover
+                title={m.why_solar_mass_title()}
+                body={m.why_solar_mass_body()}
+                tab="orbits"
+                section="keplers-laws"
+              />
+            </div>
             <div class="cell-value">2 × 10³⁰ kg</div>
             <div class="cell-sub">
               {m.sun_mass_earth({ value: solarMassesEarth.toExponential(2) })}
@@ -174,7 +182,14 @@
             <div class="cell-sub">{m.sun_age_remaining({ value: remainingGyr.toFixed(1) })}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_axial_tilt()}</div>
+            <div class="cell-label">
+              {m.panel_label_axial_tilt()}<WhyPopover
+                title={m.why_axial_tilt_title()}
+                body={m.why_axial_tilt_body()}
+                tab="orbits"
+                section="inclination"
+              />
+            </div>
             <div class="cell-value">{sun.axial_tilt.toFixed(2)}°</div>
           </div>
           <div class="cell">

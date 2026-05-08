@@ -7,6 +7,7 @@
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE (Phase 4 cleanup) — one tab destination, less
@@ -232,13 +233,27 @@
             <div class="cell-value">{aphelion.toFixed(4)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_axial_tilt()}</div>
+            <div class="cell-label">
+              {m.panel_label_axial_tilt()}<WhyPopover
+                title={m.why_axial_tilt_title()}
+                body={m.why_axial_tilt_body()}
+                tab="orbits"
+                section="inclination"
+              />
+            </div>
             <div class="cell-value" class:gold={planet.axialTilt > 10}>
               {planet.axialTilt.toFixed(2)}°
             </div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_mean_velocity()}</div>
+            <div class="cell-label">
+              {m.panel_label_mean_velocity()}<WhyPopover
+                title={m.why_mean_velocity_title()}
+                body={m.why_mean_velocity_body()}
+                tab="orbits"
+                section="vis-viva"
+              />
+            </div>
             <div class="cell-value">{meanVelKms.toFixed(2)} km/s</div>
           </div>
         </div>

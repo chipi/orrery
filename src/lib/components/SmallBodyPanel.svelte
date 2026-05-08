@@ -8,6 +8,7 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
   /** /science cross-sections relevant to small bodies — eccentric, often
@@ -168,20 +169,48 @@
       {:else if tab === 'technical'}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">{m.panel_label_semi_major_axis()}</div>
+            <div class="cell-label">
+              {m.panel_label_semi_major_axis()}<WhyPopover
+                title={m.why_semi_major_axis_title()}
+                body={m.why_semi_major_axis_body()}
+                tab="orbits"
+                section="semi-major-axis"
+              />
+            </div>
             <div class="cell-value">{body.a.toFixed(3)} AU</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_eccentricity()}</div>
+            <div class="cell-label">
+              {m.panel_label_eccentricity()}<WhyPopover
+                title={m.why_eccentricity_title()}
+                body={m.why_eccentricity_body()}
+                tab="orbits"
+                section="eccentricity"
+              />
+            </div>
             <div class="cell-value">e = {body.e.toFixed(4)}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.panel_label_inclination()}</div>
+            <div class="cell-label">
+              {m.panel_label_inclination()}<WhyPopover
+                title={m.why_inclination_title()}
+                body={m.why_inclination_body()}
+                tab="orbits"
+                section="inclination"
+              />
+            </div>
             <div class="cell-value teal">{body.incl.toFixed(2)}°</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
-              <div class="cell-label">{m.panel_label_orbital_period()}</div>
+              <div class="cell-label">
+                {m.panel_label_orbital_period()}<WhyPopover
+                  title={m.why_orbital_period_title()}
+                  body={m.why_orbital_period_body()}
+                  tab="orbits"
+                  section="keplers-laws"
+                />
+              </div>
               <div class="cell-value">
                 {m.sbp_years({
                   value:
@@ -191,12 +220,26 @@
             </div>
           {/if}
           <div class="cell">
-            <div class="cell-label">{m.panel_label_perihelion()}</div>
+            <div class="cell-label">
+              {m.panel_label_perihelion()}<WhyPopover
+                title={m.why_perihelion_title()}
+                body={m.why_perihelion_body()}
+                tab="orbits"
+                section="apsides"
+              />
+            </div>
             <div class="cell-value">{perihelion.toFixed(3)} AU</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
-              <div class="cell-label">{m.panel_label_aphelion()}</div>
+              <div class="cell-label">
+                {m.panel_label_aphelion()}<WhyPopover
+                  title={m.why_aphelion_title()}
+                  body={m.why_aphelion_body()}
+                  tab="orbits"
+                  section="apsides"
+                />
+              </div>
               <div class="cell-value">{aphelion.toFixed(3)} AU</div>
             </div>
           {/if}

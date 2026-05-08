@@ -22,6 +22,9 @@ const AGENCY_TO_LOGO: Record<string, string> = {
   cnsa: 'cnsa.svg',
   spacex: 'spacex.svg',
   uaesa: 'uaesa.svg',
+  csa: 'csa.svg',
+  boeing: 'boeing.svg',
+  'northrop grumman': 'northrop-grumman.svg',
 
   // CMSA = China Manned Space Agency, under CNSA umbrella — reuse CNSA mark.
   cmsa: 'cnsa.svg',
@@ -31,6 +34,9 @@ const AGENCY_TO_LOGO: Record<string, string> = {
   'japan aerospace exploration agency': 'jaxa.svg',
   'china national space administration': 'cnsa.svg',
   'china manned space agency': 'cnsa.svg',
+  'canadian space agency': 'csa.svg',
+  'northrop grumman space systems': 'northrop-grumman.svg',
+  'boeing defense, space & security': 'boeing.svg',
 };
 
 /**

@@ -1278,7 +1278,9 @@
   }
   .ctrl-row.chips {
     flex-direction: column;
-    align-items: flex-start;
+    /* Stretch each chip to the column's natural width so all chips on
+       the page render at the same width, regardless of label length. */
+    align-items: stretch;
   }
   .chip {
     min-height: 32px;

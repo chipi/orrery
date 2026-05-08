@@ -1351,7 +1351,8 @@
   }
   .ctrl-row.chips {
     flex-direction: column;
-    align-items: flex-start;
+    /* Stretch chips so all on this page render at the same width. */
+    align-items: stretch;
   }
   .chip {
     min-height: 32px;

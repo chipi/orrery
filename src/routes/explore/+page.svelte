@@ -1851,9 +1851,11 @@
   }
   .ctrl-row.chips {
     /* Layer chips stack vertically so their on/off state reads as a
-       compact left-edge column rather than a wide horizontal strip. */
+       compact left-edge column rather than a wide horizontal strip.
+       align-items: stretch so all chips on the page render at the
+       same width regardless of label length. */
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
   .toggle {
     min-width: 44px;

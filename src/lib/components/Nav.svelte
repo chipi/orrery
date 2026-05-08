@@ -99,7 +99,18 @@
       title="Show the physics layer (orbital mechanics overlays)"
       onclick={onToggleLens}
     >
-      {scienceLens ? '⊕' : '⊙'}
+      <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
+           blank in some font stacks that don't carry them. SVG always
+           draws. Outer ring + crosshair when on, just outer ring off. -->
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+        {#if scienceLens}
+          <line x1="8" y1="3" x2="8" y2="13" stroke="currentColor" stroke-width="1.4" />
+          <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.4" />
+        {:else}
+          <circle cx="8" cy="8" r="1.4" fill="currentColor" />
+        {/if}
+      </svg>
     </button>
     <button
       type="button"
@@ -200,6 +211,7 @@
     height: 32px;
     min-width: 44px;
     min-height: 44px;
+    flex-shrink: 0;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 4px;
@@ -232,18 +244,22 @@
     height: 32px;
     min-width: 44px;
     min-height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.6);
-    font-family: 'Space Mono', monospace;
-    font-size: 16px;
-    line-height: 1;
     cursor: pointer;
     transition:
       background 120ms,
       border-color 120ms,
       color 120ms;
+  }
+  .lens-toggle svg {
+    display: block;
   }
   .lens-toggle:hover,
   .lens-toggle:focus-visible {

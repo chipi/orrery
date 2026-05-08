@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" role="img" aria-label="Physiological-loss curves over a 12-month mission with and without countermeasures">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .axis { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.08); stroke-width: 0.6; fill: none; }
+    .curve-bone { stroke: #ff6b6b; stroke-width: 2; fill: none; }
+    .curve-bone-cm { stroke: #ff6b6b; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; opacity: 0.7; }
+    .curve-muscle { stroke: #6aa9ff; stroke-width: 2; fill: none; }
+    .curve-muscle-cm { stroke: #6aa9ff; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; opacity: 0.7; }
+    .curve-cv { stroke: #ffc850; stroke-width: 2; fill: none; }
+    .curve-cv-cm { stroke: #ffc850; stroke-width: 1.4; fill: none; stroke-dasharray: 4 3; opacity: 0.7; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .axis-label { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1px; }
+    .legend { font-family: 'Space Mono', monospace; font-size: 7.5px; }
+  </style>
+  <rect x="10" y="10" width="380" height="230" class="panel" />
+
+  <!-- Title -->
+  <text x="20" y="28" class="label">PHYSIOLOGICAL LOSS · 12-MONTH MISSION</text>
+
+  <!-- Plot area: x=50..350 (300 px = 12 months), y=190..50 (140 px = 100% to 70% retained) -->
+  <!-- Axes -->
+  <line x1="50" y1="190" x2="350" y2="190" class="axis" />
+  <line x1="50" y1="50" x2="50" y2="190" class="axis" />
+
+  <!-- Grid lines (months 0,3,6,9,12) -->
+  <line x1="125" y1="50" x2="125" y2="190" class="grid" />
+  <line x1="200" y1="50" x2="200" y2="190" class="grid" />
+  <line x1="275" y1="50" x2="275" y2="190" class="grid" />
+  <line x1="350" y1="50" x2="350" y2="190" class="grid" />
+
+  <!-- Y-grid (100%, 90%, 80%, 70%) -->
+  <line x1="50" y1="50" x2="350" y2="50" class="grid" />
+  <line x1="50" y1="97" x2="350" y2="97" class="grid" />
+  <line x1="50" y1="143" x2="350" y2="143" class="grid" />
+
+  <!-- X labels -->
+  <text x="50" y="205" text-anchor="middle" class="axis-label">0</text>
+  <text x="125" y="205" text-anchor="middle" class="axis-label">3 mo</text>
+  <text x="200" y="205" text-anchor="middle" class="axis-label">6 mo</text>
+  <text x="275" y="205" text-anchor="middle" class="axis-label">9 mo</text>
+  <text x="350" y="205" text-anchor="middle" class="axis-label">12 mo</text>
+
+  <!-- Y labels -->
+  <text x="44" y="53" text-anchor="end" class="axis-label">100%</text>
+  <text x="44" y="100" text-anchor="end" class="axis-label">90%</text>
+  <text x="44" y="146" text-anchor="end" class="axis-label">80%</text>
+  <text x="44" y="193" text-anchor="end" class="axis-label">70%</text>
+
+  <!-- Bone (red) — fastest fall: -1.5%/month untreated → 12mo → 82% (y=134) -->
+  <path d="M 50,50 Q 200,90 350,134" class="curve-bone" />
+  <!-- Bone with countermeasures: ~-0.5%/mo → 94% at 12mo (y=78) -->
+  <path d="M 50,50 Q 200,62 350,78" class="curve-bone-cm" />
+
+  <!-- Muscle (blue) — moderate fall: ~-1%/mo untreated → 88% (y=104). With CM: ~95% (y=73). -->
+  <path d="M 50,50 Q 200,76 350,108" class="curve-muscle" />
+  <path d="M 50,50 Q 200,60 350,73" class="curve-muscle-cm" />
+
+  <!-- Cardiovascular (gold) — fast initial drop, then plateau: -8% by mo 6, holds. Untreated. -->
+  <path d="M 50,50 Q 100,82 200,88 T 350,90" class="curve-cv" />
+  <!-- Cardiovascular with CM: stays close to baseline -->
+  <path d="M 50,50 Q 200,58 350,66" class="curve-cv-cm" />
+
+  <!-- Legend -->
+  <g transform="translate(75, 219)">
+    <line x1="0" y1="0" x2="14" y2="0" class="curve-bone" />
+    <text x="18" y="3" class="legend label">BONE</text>
+    <line x1="60" y1="0" x2="74" y2="0" class="curve-muscle" />
+    <text x="78" y="3" class="legend label">MUSCLE</text>
+    <line x1="130" y1="0" x2="144" y2="0" class="curve-cv" />
+    <text x="148" y="3" class="legend label">CARDIO</text>
+    <line x1="200" y1="0" x2="214" y2="0" class="curve-bone-cm" />
+    <text x="218" y="3" class="legend label">···COUNTERMEASURE</text>
+  </g>
+</svg>

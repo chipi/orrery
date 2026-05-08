@@ -19,13 +19,15 @@
   import type { TiangongModule } from '$types/tiangong-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
+  import StationBlueprint from '$lib/components/StationBlueprint.svelte';
+  import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
   let container: HTMLDivElement | undefined = $state();
   let modules: TiangongModule[] = $state([]);
   let visitors: TiangongModule[] = $state([]);
   let loadFailed = $state(false);
-  let viewMode: '3d' | 'list' = $state('3d');
+  let viewMode: '3d' | '2d-top' | '2d-side' | 'list' = $state('3d');
   let selected: TiangongModule | null = $state(null);
   let panelOpen = $state(false);
   let ignoreModuleParamUntilClear = $state(false);
@@ -42,7 +44,7 @@
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
 
-  const viewBag = { mode: '3d' as '3d' | 'list' };
+  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | 'list' };
 
   const moduleListRef: { list: TiangongModule[] } = { list: [] };
   $effect(() => {
@@ -99,6 +101,117 @@
   function urlWantsList(url: URL): boolean {
     return url.searchParams.get('view') === 'list';
   }
+  function urlWants2dTop(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-top';
+  }
+  function urlWants2dSide(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-side';
+  }
+
+  // Tiangong blueprint module list — hardcoded canonical positions
+  // (Tianhe along X, Wentian +Y, Mengtian -Y, branches off forward node).
+  // Names come from the loaded modules + visitors so they're localised.
+  const blueprintModules = $derived.by(() => {
+    if (modules.length === 0) return [] as BlueprintModule[];
+    const all = [...modules, ...visitors];
+    const nameById = new Map(all.map((m) => [m.id, m.name]));
+    const layout: BlueprintModule[] = [
+      {
+        id: 'tianhe',
+        name: nameById.get('tianhe') ?? 'Tianhe',
+        x: 0,
+        y: 0,
+        z: 0,
+        len: 2.6,
+        radius: 0.22,
+        axis: 'x',
+      },
+      // Wentian + Mengtian: long axis along Y, branching from Tianhe forward node
+      {
+        id: 'wentian',
+        name: nameById.get('wentian') ?? 'Wentian',
+        x: 1.44,
+        y: 1.2,
+        z: 0,
+        len: 2.4,
+        radius: 0.24,
+        axis: 'y',
+      },
+      {
+        id: 'mengtian',
+        name: nameById.get('mengtian') ?? 'Mengtian',
+        x: 1.44,
+        y: -1.2,
+        z: 0,
+        len: 2.4,
+        radius: 0.24,
+        axis: 'y',
+      },
+      // Chinarm — small box rendered as a short cylinder
+      {
+        id: 'chinarm',
+        name: nameById.get('chinarm') ?? 'Chinarm',
+        x: 1.44,
+        y: 0.55,
+        z: 0.7,
+        len: 1.1,
+        radius: 0.04,
+        axis: 'z',
+      },
+    ];
+    if (visitors.length > 0) {
+      // Shenzhou docks aft of Tianhe; Tianzhou docks forward of node.
+      layout.push(
+        {
+          id: 'shenzhou',
+          name: nameById.get('shenzhou') ?? 'Shenzhou',
+          x: -1.95,
+          y: 0,
+          z: 0,
+          len: 1.45,
+          radius: 0.21,
+          axis: 'x',
+          isVisitor: true,
+        },
+        {
+          id: 'tianzhou',
+          name: nameById.get('tianzhou') ?? 'Tianzhou',
+          x: 2.55,
+          y: 0,
+          z: 0,
+          len: 1.66,
+          radius: 0.27,
+          axis: 'x',
+          isVisitor: true,
+        },
+      );
+    }
+    return layout;
+  });
+
+  function cycleBlueprintView() {
+    if (viewMode === '3d') {
+      viewMode = '2d-top';
+      stopThree();
+      syncUrl({ view: '2d-top' });
+    } else if (viewMode === '2d-top') {
+      viewMode = '2d-side';
+      syncUrl({ view: '2d-side' });
+    } else if (viewMode === '2d-side') {
+      viewMode = '3d';
+      syncUrl({ view: '3d' });
+      void Promise.resolve().then(() => startThree());
+    } else {
+      viewMode = '2d-top';
+      syncUrl({ view: '2d-top' });
+    }
+  }
+
+  function blueprintModuleClick(id: string) {
+    const all = [...modules, ...visitors];
+    const mod = all.find((m) => m.id === id);
+    if (mod) openModule(mod);
+  }
 
   function deviceLowMemory(): boolean {
     if (!browser) return false;
@@ -106,9 +219,14 @@
     return dm != null && dm <= 2;
   }
 
-  function syncUrl(partial: { view?: '3d' | 'list'; moduleId?: string | null }) {
+  function syncUrl(partial: {
+    view?: '3d' | '2d-top' | '2d-side' | 'list';
+    moduleId?: string | null;
+  }) {
     const params = new URLSearchParams(get(page).url.searchParams);
     if (partial.view === 'list') params.set('view', 'list');
+    else if (partial.view === '2d-top') params.set('view', '2d-top');
+    else if (partial.view === '2d-side') params.set('view', '2d-side');
     else if (partial.view === '3d') params.delete('view');
     if (partial.moduleId === null) params.delete('module');
     else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
@@ -546,6 +664,10 @@
     }
     if (urlWantsList(u)) {
       viewMode = 'list';
+    } else if (urlWants2dTop(u)) {
+      viewMode = '2d-top';
+    } else if (urlWants2dSide(u)) {
+      viewMode = '2d-side';
     } else if (deviceLowMemory()) {
       lowMemBanner = true;
       viewMode = 'list';
@@ -572,13 +694,25 @@
       aria-hidden={viewMode !== '3d'}
     ></div>
 
+    {#if viewMode === '2d-top' || viewMode === '2d-side'}
+      <div class="layer blueprint-layer" data-testid="tiangong-blueprint">
+        <StationBlueprint
+          modules={blueprintModules}
+          view={viewMode === '2d-top' ? 'top' : 'side'}
+          selectedId={selected?.id ?? null}
+          onModuleClick={blueprintModuleClick}
+          ariaLabel="Tiangong blueprint diagram"
+        />
+      </div>
+    {/if}
+
     <aside
       class="layer list-layer"
-      class:drawer-mode={viewMode === '3d'}
+      class:drawer-mode={viewMode === '3d' || viewMode === '2d-top' || viewMode === '2d-side'}
       class:fullscreen-mode={viewMode === 'list'}
-      class:hidden={viewMode === '3d' && !indexOpen}
+      class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="tiangong-list-view"
-      aria-hidden={viewMode === '3d' && !indexOpen}
+      aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.tiangong_list_heading()}
     >
       {#if viewMode === '3d'}
@@ -654,6 +788,21 @@
         </div>
       {/if}
       <div class="ctrl-row">
+        <button
+          type="button"
+          class="toggle"
+          data-testid="tiangong-blueprint-toggle"
+          onclick={cycleBlueprintView}
+          title="Cycle 3D / Top / Side"
+        >
+          {viewMode === '3d'
+            ? '3D'
+            : viewMode === '2d-top'
+              ? 'TOP'
+              : viewMode === '2d-side'
+                ? 'SIDE'
+                : '3D'}
+        </button>
         {#if viewMode === '3d'}
           <button
             type="button"
@@ -730,6 +879,13 @@
   }
   .canvas-layer {
     touch-action: none;
+  }
+  .blueprint-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
   .layer.hidden {
     display: none;

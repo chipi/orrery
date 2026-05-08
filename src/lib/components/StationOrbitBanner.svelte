@@ -100,6 +100,11 @@
         {m.station_banner_read_more()}
       </a>
     </p>
+    <p class="banner-foot banner-foot-secondary">
+      <a class="banner-link" href="{base}/science/scales-time/long-duration">
+        {m.station_banner_long_duration_link()}
+      </a>
+    </p>
   </section>
 {/if}
 
@@ -166,6 +171,11 @@
     font-style: italic;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.78);
+  }
+  .banner-foot.banner-foot-secondary {
+    border-top: none;
+    padding-top: 4px;
+    margin-top: 0;
   }
   .foot-fact {
     display: inline-flex;

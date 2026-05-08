@@ -825,28 +825,34 @@
         <p class="empty-hint">{m.plan_empty_hint_mobile()}</p>
       </div>
     {:else}
-      <div class="row">
-        <span class="label">{m.plan_label_departure()}</span>
-        <span class="value">{readout.dep}</span>
-      </div>
-      <div class="row">
-        <span class="label">{m.plan_label_arrival()}</span>
-        <span class="value">{readout.arr}</span>
-      </div>
-      <div class="row">
-        <span class="label">{m.plan_label_transit()}</span>
-        <span class="value">{m.plan_transit_days({ count: readout.tof.toFixed(0) })}</span>
-      </div>
-      <div class="row strong">
-        <span class="label">{m.plan_label_dv_required()}</span>
-        <span class="value"
-          >{readout.dv.toFixed(2)} km/s<WhyPopover
-            title={m.why_dv_required_title()}
-            body={m.why_dv_required_body()}
-            tab="propulsion"
-            section="dv-budget"
-          /></span
-        >
+      <!-- Readout 4-up grid (J.5): DEP / ARR / TRANSIT / ∆V REQUIRED
+           in a 2×2 layout so the panel doesn't spill below the
+           viewport on small screens — keeps FLY MISSION button in
+           reach without scroll once a vehicle's selected. -->
+      <div class="readout-grid">
+        <div class="cell">
+          <span class="label">{m.plan_label_departure()}</span>
+          <span class="value">{readout.dep}</span>
+        </div>
+        <div class="cell">
+          <span class="label">{m.plan_label_arrival()}</span>
+          <span class="value">{readout.arr}</span>
+        </div>
+        <div class="cell">
+          <span class="label">{m.plan_label_transit()}</span>
+          <span class="value">{m.plan_transit_days({ count: readout.tof.toFixed(0) })}</span>
+        </div>
+        <div class="cell strong">
+          <span class="label">{m.plan_label_dv_required()}</span>
+          <span class="value">
+            {readout.dv.toFixed(2)} km/s<WhyPopover
+              title={m.why_dv_required_title()}
+              body={m.why_dv_required_body()}
+              tab="propulsion"
+              section="dv-budget"
+            />
+          </span>
+        </div>
       </div>
 
       <!-- Mission Sandbox (C.7): pin a cell, then click another to see
@@ -1363,10 +1369,42 @@
     border-bottom-color: #4ecdc4;
     outline: none;
   }
-  .row.strong .value {
+  /* .row.strong .value rule removed — selector flagged as unused after
+     a recent template refactor in parallel work. */
+
+  /* J.5 — 2×2 readout grid. Each cell stacks label-on-top-of-value
+     so a single row holds two metrics. Halves the vertical real
+     estate the readout consumed before. */
+  .readout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
+    margin: 0 0 4px;
+  }
+  .readout-grid .cell {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+  .readout-grid .cell .label {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .readout-grid .cell .value {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.92);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .readout-grid .cell.strong .value {
     color: #4ecdc4;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 12px;
   }
   .label {
     font-family: 'Space Mono', monospace;
@@ -1386,10 +1424,12 @@
     margin: 6px 0;
   }
 
-  /* Mission Sandbox (C.7) — pin a cell and compare. */
+  /* Mission Sandbox (C.7) — pin a cell and compare. Compressed in
+     J.5 so the FLY MISSION button stays in viewport after vehicle
+     selection. */
   .sandbox {
-    margin: 8px 0 4px;
-    padding: 8px 10px;
+    margin: 6px 0 4px;
+    padding: 5px 8px 6px;
     background: rgba(255, 200, 80, 0.04);
     border: 1px solid rgba(255, 200, 80, 0.18);
     border-radius: 4px;
@@ -1397,8 +1437,8 @@
   .sandbox-pin {
     display: block;
     width: 100%;
-    min-height: 36px;
-    padding: 8px 12px;
+    min-height: 26px;
+    padding: 4px 10px;
     background: transparent;
     border: 1px dashed rgba(255, 200, 80, 0.5);
     border-radius: 4px;
@@ -1420,10 +1460,11 @@
     outline: none;
   }
   .sandbox-hint {
-    margin: 6px 0 0;
+    margin: 3px 0 0;
     font-family: 'Crimson Pro', serif;
     font-style: italic;
-    font-size: 11px;
+    font-size: 10px;
+    line-height: 1.3;
     color: rgba(255, 255, 255, 0.55);
   }
   .sandbox-pinned {
@@ -1431,7 +1472,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 6px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .sandbox-eyebrow {
     font-family: 'Space Mono', monospace;
@@ -1462,11 +1503,11 @@
   }
   .sandbox-compare {
     margin: 0;
-    padding: 8px 0 0;
+    padding: 5px 0 0;
     border-top: 1px solid rgba(255, 200, 80, 0.18);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
   }
   .sandbox-row {
     display: flex;

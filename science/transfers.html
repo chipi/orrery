@@ -10,13 +10,13 @@
 		<link href="../_app/immutable/assets/0.CEHL9xtV.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/2.CSS_HXGX.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/15.D1waaaSN.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.BQa8nxq1.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/entry.DFg4F9_x.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DcuLOXzN.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry._iFkEPuq.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/runtime.BA_ZkJqm.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/utils.r4Ceh2ng.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/paths.DY1PinNd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/paths.26HJHzvl.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/control.CYgJF_JY.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.DHyGVmjN.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.BHaS4bpY.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.C1FmrZbK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/disclose-version.DIVBZH92.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/if.BcSZ-N8X.js">
@@ -25,18 +25,18 @@
 		<link rel="modulepreload" href="../_app/immutable/chunks/props.Ynu2ap8g.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/store.dhlgg17h.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index-client.CmQdqP1J.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.Bm1pERe1.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.CWZMdWWK.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/key.WafErn-J.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/snippet.Dx97c3Io.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/attributes.gkaDk4tA.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/stores.Dhtqo2uN.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/stores.BJRqEY0X.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/class.CkyZgJD4.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/messages.DF2u6oai.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/messages.C2ug-98e.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/science-lens.B_IPJ5aL.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/locale.C2lKv1g1.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/2.BPBIfIiI.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/data.D5iw16MY.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/15.CQJs-Dro.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.Dm3AMjLV.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/data.B-Nsj8S6.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/15.Dfz2jVep.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/index.DYMvb8Iz.js"><!--[--><link rel="manifest" href="../manifest.webmanifest"> <link rel="icon" href="../logos/nasa.svg" type="image/svg+xml"><!--]--><!--[--><!--]--><title>TRANSFERS · Science · Orrery</title>
   </head>
   <body data-sveltekit-preload-data="hover">
@@ -59,7 +59,7 @@
 			<script type="application/json" data-sveltekit-fetched data-url="/orrery/data/i18n/en-US/science/transfers/patched-conics.json">{"status":200,"statusText":"","headers":{},"body":"{\n  \"title\": \"Patched Conics\",\n  \"intro_sentence\": \"Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.\",\n  \"narrative_101\": [\n    \"Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?\",\n    \"They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.\",\n    \"The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.\"\n  ],\n  \"body_paragraphs\": [\n    \"Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.\",\n    \"Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.\",\n    \"It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.\"\n  ],\n  \"diagram_caption\": \"Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.\"\n}\n"}</script>
 			<script>
 				{
-					__sveltekit_wspg9r = {
+					__sveltekit_82zxj3 = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						assets: "/orrery"
 					};
@@ -69,8 +69,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.BQa8nxq1.js"),
-						import("../_app/immutable/entry/app.DHyGVmjN.js")
+						import("../_app/immutable/entry/start.DcuLOXzN.js"),
+						import("../_app/immutable/entry/app.BHaS4bpY.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 15],

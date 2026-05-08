@@ -291,6 +291,10 @@
   let outLineFuture: THREE.Mesh | undefined;
   let retLineFuture: THREE.Mesh | undefined;
   let rebuildTubeGeometry: ((pts: Vec2[], radius: number) => THREE.BufferGeometry) | undefined;
+  /** Apsides marker recompute (Phase H.4). Hoisted from startThree
+   * so the outPts $effect can refresh marker positions when the
+   * mission changes. */
+  let apsidesRecompute: (() => void) | undefined;
   // Camera reset callback assigned inside onMount; applyMissionAsLoaded /
   // applyPlanSelection call it so each new mission gets a fresh frame
   // showing the new launch + arrival positions.
@@ -386,6 +390,7 @@
     retLine.geometry = rebuildTubeGeometry(retArc, 0.5);
     retLineFuture.geometry.dispose();
     retLineFuture.geometry = rebuildTubeGeometry(retArc, 0.5);
+    apsidesRecompute?.();
     const hasReturn = retArc.length >= 2;
     retLine.visible = hasReturn;
     retLineFuture.visible = hasReturn;
@@ -1127,6 +1132,57 @@
     scene.add(coastLine);
     const stopCoastLayer = onLayerChange('coast', (on) => {
       coastLine.visible = on;
+    });
+
+    // ─── Science Layers H.4 — Apsides markers on the transfer arc ────
+    // Find the heliocentric ellipse's perihelion (closest to Sun) and
+    // aphelion (farthest) from outPts and place small marker spheres
+    // at each. Geometry recomputed via $effect when outPts changes
+    // (mission swap). Layer-gated.
+    const periMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(1.6, 16, 16),
+      new THREE.MeshBasicMaterial({ color: 0xff6b6b, transparent: true, opacity: 0.85 }),
+    );
+    const apoMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(1.6, 16, 16),
+      new THREE.MeshBasicMaterial({ color: 0x6aa9ff, transparent: true, opacity: 0.85 }),
+    );
+    periMarker.userData.layerKey = 'apsides';
+    apoMarker.userData.layerKey = 'apsides';
+    periMarker.visible = false;
+    apoMarker.visible = false;
+    scene.add(periMarker);
+    scene.add(apoMarker);
+
+    function recomputeApsides() {
+      if (outPts.length < 3) return;
+      let minR2 = Infinity;
+      let maxR2 = -Infinity;
+      let minIdx = 0;
+      let maxIdx = 0;
+      for (let i = 0; i < outPts.length; i++) {
+        const p = outPts[i];
+        const r2 = p.x * p.x + p.z * p.z;
+        if (r2 < minR2) {
+          minR2 = r2;
+          minIdx = i;
+        }
+        if (r2 > maxR2) {
+          maxR2 = r2;
+          maxIdx = i;
+        }
+      }
+      const peri = outPts[minIdx];
+      const apo = outPts[maxIdx];
+      periMarker.position.set(peri.x * SCALE_3D, 0, peri.z * SCALE_3D);
+      apoMarker.position.set(apo.x * SCALE_3D, 0, apo.z * SCALE_3D);
+    }
+    recomputeApsides();
+    apsidesRecompute = recomputeApsides;
+
+    const stopApsidesLayer = onLayerChange('apsides', (on) => {
+      periMarker.visible = on;
+      apoMarker.visible = on;
     });
 
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
@@ -1895,6 +1951,7 @@
       stopSoiLayer?.();
       stopGravityLayer?.();
       stopCoastLayer?.();
+      stopApsidesLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);

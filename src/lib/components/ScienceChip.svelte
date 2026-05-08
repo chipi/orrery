@@ -1,11 +1,16 @@
 <!--
-  ScienceChip — the small `?` chip that links a label to its
+  ScienceChip — the small "info" chip that links a label to its
   `/science/[tab]/[section]` explainer (ADR-036, PRD-008 Phase 2).
 
-  Visual: a 14×14 px outlined teal circle with a `?` inside.
+  Visual: a 14×14 px outlined teal circle with a lowercase `i` glyph
+  inside. The glyph is hand-drawn in SVG (not a text character) so it
+  renders identically across font stacks AND sits exactly in the
+  geometric centre of the circle — text glyphs have baseline + sidebearing
+  offsets that fight visual centring.
+
   Hit target: a 24×24 px transparent outer wrap (mobile-friendly per
-  ADR-018's 44px guideline; we relax for inline label adornments
-  but stay above 24px).
+  ADR-018's 44px guideline; we relax for inline label adornments but
+  stay above 24px).
 
   Behaviour:
     - Click → navigate to /science/[tab]/[section]
@@ -41,7 +46,21 @@
   aria-label={aria}
   data-science-chip
 >
-  <span class="dot" aria-hidden="true">?</span>
+  <!-- Geometric `i` (info) icon: outer ring + tiny round dot above a
+       short stem. Coordinates are tuned to the 14×14 viewBox so the
+       glyph sits in the geometric centre of the circle, regardless of
+       the user's font. -->
+  <svg
+    class="dot"
+    viewBox="0 0 14 14"
+    aria-hidden="true"
+    focusable="false"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1" />
+    <circle cx="7" cy="4.2" r="0.85" fill="currentColor" />
+    <rect x="6.25" y="6" width="1.5" height="4.4" rx="0.4" fill="currentColor" />
+  </svg>
 </a>
 
 <style>
@@ -55,30 +74,24 @@
     text-decoration: none;
     vertical-align: middle;
   }
+  /* SVG-based `i` icon. Width/height match the 14×14 viewBox; the
+     ring's stroke + the glyph's fills both inherit currentColor so the
+     hover state only needs to flip color (no border-color hack). */
   .dot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 14px;
     height: 14px;
-    border-radius: 50%;
-    border: 1px solid rgba(78, 205, 196, 0.5);
     color: rgba(78, 205, 196, 0.85);
     background: transparent;
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    font-weight: 600;
-    line-height: 1;
+    border-radius: 50%;
     transition:
       background 120ms,
-      color 120ms,
-      border-color 120ms;
+      color 120ms;
   }
   .chip:hover .dot,
   .chip:focus-visible .dot {
     background: rgba(78, 205, 196, 0.18);
     color: #4ecdc4;
-    border-color: #4ecdc4;
   }
   .chip:focus-visible {
     outline: 2px solid rgba(78, 205, 196, 0.6);

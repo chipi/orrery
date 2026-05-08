@@ -140,13 +140,21 @@
 {/if}
 
 <style>
+  /* Top-center, stacked directly under the route's lens banner
+     (ScienceLensBanner / FlightDirectorBanner / StationOrbitBanner),
+     all of which sit at top: nav + 12 with max-width 540px. The
+     ~108px offset clears a typical 1-line banner; longer banners
+     overlap visually with the panel by a few pixels which reads as
+     "they're stacked" rather than "they're separate." Avoids the
+     right-side conflict with detail panels. */
   .panel {
     position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    right: 16px;
+    top: calc(var(--nav-height) + 110px);
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 32;
-    width: 232px;
-    padding: 10px 12px 8px;
+    width: min(540px, calc(100vw - 32px));
+    padding: 10px 14px 8px;
     background: rgba(8, 10, 22, 0.92);
     border: 1px solid rgba(255, 200, 80, 0.55);
     border-radius: 6px;
@@ -165,23 +173,21 @@
     letter-spacing: 2px;
     color: #ffc850;
   }
+  /* Two-column layout when the wider top-center panel has room.
+     Single column on narrow viewports. */
   .rows {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 14px;
   }
   .row {
     display: flex;
     flex-direction: column;
     padding: 4px 2px;
     border-radius: 3px;
-  }
-  .row + .row {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding-top: 6px;
   }
   .row-label {
     display: flex;
@@ -234,16 +240,21 @@
     color: rgba(255, 255, 255, 0.55);
   }
 
-  /* Mobile: bottom drawer instead of right-fixed panel. */
+  /* Mobile: bottom drawer (top-center stacked banner already takes
+     the top slot on small screens). Single column for legibility. */
   @media (max-width: 600px) {
     .panel {
       top: auto;
-      bottom: 80px;
-      right: 8px;
+      bottom: 84px;
       left: 8px;
+      right: 8px;
+      transform: none;
       width: auto;
       max-height: 50vh;
       overflow-y: auto;
+    }
+    .rows {
+      grid-template-columns: 1fr;
     }
   }
 </style>

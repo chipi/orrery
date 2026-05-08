@@ -22,6 +22,8 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
+  import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
@@ -569,6 +571,68 @@
       }
       scene.add(group);
       return { group, mesh, planet: p };
+    });
+
+    // ── Phase H — per-planet science overlay arrows ────────────────
+    // Each planet gets three ArrowHelpers parented to its group so they
+    // travel with the planet automatically. Direction + length update
+    // per frame in the planet animation block. Hidden by default; the
+    // layer subscription flips visibility on opt-in.
+    const overlayPerPlanet = planetObjs.map(({ group, planet }) => {
+      // Gravity arrow — blue, points toward Sun (origin in world).
+      const gravity = new THREE.ArrowHelper(
+        new THREE.Vector3(-1, 0, 0),
+        new THREE.Vector3(0, 0, 0),
+        12,
+        0x6aa9ff,
+        2.5,
+        1.4,
+      );
+      gravity.userData.layerKey = 'gravity';
+      gravity.visible = false;
+      group.add(gravity);
+
+      // Velocity arrow — teal, tangent to orbit (perpendicular to
+      // gravity in the planet's orbital plane).
+      const velocity = new THREE.ArrowHelper(
+        new THREE.Vector3(0, 0, 1),
+        new THREE.Vector3(0, 0, 0),
+        12,
+        0x4ecdc4,
+        2.5,
+        1.4,
+      );
+      velocity.userData.layerKey = 'velocity';
+      velocity.visible = false;
+      group.add(velocity);
+
+      // Centripetal arrow — red, also points toward Sun. Offset
+      // slightly above the planet (along Y) so it doesn't visually
+      // collide with the gravity arrow; equal magnitude on a circular
+      // orbit teaches F = ma.
+      const centripetal = new THREE.ArrowHelper(
+        new THREE.Vector3(-1, 0, 0),
+        new THREE.Vector3(0, planet.size3 * 1.6, 0),
+        10,
+        0xff6b6b,
+        2.2,
+        1.2,
+      );
+      centripetal.userData.layerKey = 'centripetal';
+      centripetal.visible = false;
+      group.add(centripetal);
+
+      return { gravity, velocity, centripetal, planet };
+    });
+
+    const stopExploreGravityLayer = onLayerChange('gravity', (on) => {
+      overlayPerPlanet.forEach((o) => (o.gravity.visible = on));
+    });
+    const stopExploreVelocityLayer = onLayerChange('velocity', (on) => {
+      overlayPerPlanet.forEach((o) => (o.velocity.visible = on));
+    });
+    const stopExploreCentripetalLayer = onLayerChange('centripetal', (on) => {
+      overlayPerPlanet.forEach((o) => (o.centripetal.visible = on));
     });
 
     // ── Small bodies (3D) ─────────────────────────────────────────
@@ -1532,7 +1596,7 @@
           if (o.tail) o.tail.visible = on;
         }
 
-        planetObjs.forEach(({ group, mesh, planet }) => {
+        planetObjs.forEach(({ group, mesh, planet }, idx) => {
           const angle = planet.a0 + (2 * Math.PI * simT) / planet.period;
           const inc = (planet.inc * Math.PI) / 180;
           const x = Math.cos(angle) * planet.orbitR;
@@ -1542,6 +1606,68 @@
           // alongside the orbit advance. The audit caught this bypass
           // in v1.0 — planets kept spinning even with simT frozen.
           if (!reducedMotion) mesh.rotation.y += 0.005;
+
+          // Phase H — overlay arrow updates. Group is at planet's world
+          // pos; arrows live in the group's local frame, so directions
+          // need transforming back from world space.
+          const ov = overlayPerPlanet[idx];
+          if (!ov) return;
+          if (ov.gravity.visible || ov.centripetal.visible || ov.velocity.visible) {
+            // World vector pointing planet → Sun (origin), normalised.
+            const worldToSun = new THREE.Vector3(
+              -group.position.x,
+              -group.position.y,
+              -group.position.z,
+            );
+            const dist = worldToSun.length();
+            if (dist > 0.0001) {
+              worldToSun.divideScalar(dist);
+              // Group has only translation (no rotation), so world dir
+              // == local dir — pass directly to setDirection.
+              if (ov.gravity.visible) {
+                // Acceleration in m/s² at this orbit radius (use a as proxy
+                // for r — circular). Length log-scaled to fit the 1/r²
+                // dynamic range across Mercury → Pluto.
+                // Semi-major axis in AU via Kepler's 3rd law (a³ = T²
+                // in heliocentric AU/year units). PlanetVisual stores
+                // period in years but not `a` directly.
+                const aAU = Math.pow(planet.period, 2 / 3);
+                const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
+                const len = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
+                ov.gravity.setDirection(worldToSun);
+                ov.gravity.setLength(len, len * 0.22, len * 0.13);
+              }
+              if (ov.centripetal.visible) {
+                // Same direction (inward) as gravity — for a circular
+                // orbit, gravity provides exactly the centripetal
+                // acceleration (F = ma). Y-offset prevents overlap.
+                // Semi-major axis in AU via Kepler's 3rd law (a³ = T²
+                // in heliocentric AU/year units). PlanetVisual stores
+                // period in years but not `a` directly.
+                const aAU = Math.pow(planet.period, 2 / 3);
+                const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
+                const len = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
+                ov.centripetal.setDirection(worldToSun);
+                ov.centripetal.setLength(len, len * 0.22, len * 0.13);
+              }
+              if (ov.velocity.visible) {
+                // Tangent to orbit, in the planet's orbital plane. Cross
+                // (worldToSun, orbital plane normal) gives the prograde
+                // direction; for the small inclinations used here, we
+                // approximate the plane normal as world-Y.
+                const tangent = new THREE.Vector3()
+                  .crossVectors(new THREE.Vector3(0, 1, 0), worldToSun)
+                  .normalize();
+                // Speed in km/s via vis-viva at r = a (circular).
+                const aAU = Math.pow(planet.period, 2 / 3);
+                const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
+                // Linear scale on velocity, clamped for visibility.
+                const vLen = Math.min(20, Math.max(4, v * 0.3));
+                ov.velocity.setDirection(tangent);
+                ov.velocity.setLength(vLen, vLen * 0.22, vLen * 0.13);
+              }
+            }
+          }
         });
 
         // Small bodies — closed ellipse advance for dwarfs/comets,
@@ -1608,6 +1734,9 @@
     cleanup = () => {
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
+      stopExploreGravityLayer?.();
+      stopExploreVelocityLayer?.();
+      stopExploreCentripetalLayer?.();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);
       window.removeEventListener('mouseup', on3dMouseUp);

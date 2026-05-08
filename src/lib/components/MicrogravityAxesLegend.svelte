@@ -54,12 +54,15 @@
 {/if}
 
 <style>
-  /* Bottom-left lens-gated legend. Doesn't compete with the orbit
-     banner up top or the StationModulePanel that opens on the right. */
+  /* Bottom-left lens-gated legend, anchored just to the right of the
+     /iss + /tiangong modules rail (which sits at left:12px width:300px
+     on desktop). Sitting on the left side keeps the right edge clear
+     for the StationModulePanel + credits / library buttons; sitting
+     past the rail keeps the legend from overlapping the modules list. */
   .legend {
     position: fixed;
     bottom: 16px;
-    left: 16px;
+    left: 324px;
     z-index: 31;
     display: block;
     padding: 10px 12px 8px;
@@ -126,6 +129,9 @@
     color: rgba(255, 200, 80, 0.85);
   }
 
+  /* Mobile: drawer becomes a bottom sheet, so left:324px no longer
+     applies. Anchor to the bottom-left corner, lifted above the
+     bottom sheet's typical pinned-edge height. */
   @media (max-width: 600px) {
     .legend {
       bottom: 84px;

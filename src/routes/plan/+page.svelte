@@ -997,6 +997,7 @@
 </div>
 
 <ScienceLensBanner
+  placement="top"
   title="Porkchop plot · the calendar of cheap launches"
   body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
   tab="porkchop"

@@ -17,7 +17,6 @@ describe('SUPPORTED_LOCALES', () => {
     expect(codes).toContain('de');
     expect(codes).toContain('pt-BR');
     expect(codes).toContain('it');
-    expect(codes).toContain('sr-Latn');
     expect(codes).toContain('sr-Cyrl');
     expect(codes).toContain('zh-CN');
     expect(codes).toContain('ja');
@@ -43,7 +42,8 @@ describe('isSupportedLocale', () => {
     expect(isSupportedLocale('de')).toBe(true);
     expect(isSupportedLocale('pt-BR')).toBe(true);
     expect(isSupportedLocale('it')).toBe(true);
-    expect(isSupportedLocale('sr-Latn')).toBe(true);
+    // sr-Latn dropped in J.5 — sr-Cyrl is the canonical Serbian.
+    expect(isSupportedLocale('sr-Latn')).toBe(false);
     expect(isSupportedLocale('sr-Cyrl')).toBe(true);
     expect(isSupportedLocale('zh-CN')).toBe(true);
     expect(isSupportedLocale('ja')).toBe(true);
@@ -65,7 +65,9 @@ describe('normaliseBrowserLocale', () => {
     expect(normaliseBrowserLocale('en-US')).toBe('en-US');
     expect(normaliseBrowserLocale('es')).toBe('es');
     expect(normaliseBrowserLocale('pt-BR')).toBe('pt-BR');
-    expect(normaliseBrowserLocale('sr-Latn')).toBe('sr-Latn');
+    // sr-Latn was dropped — browser-sent sr-Latn falls back to
+    // sr-Cyrl via the language-prefix branch ('sr' → 'sr-Cyrl').
+    expect(normaliseBrowserLocale('sr-Latn')).toBe('sr-Cyrl');
     expect(normaliseBrowserLocale('sr-Cyrl')).toBe('sr-Cyrl');
   });
   it('language-prefix matches Spanish variants', () => {

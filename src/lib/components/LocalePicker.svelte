@@ -66,6 +66,7 @@
     aria-expanded={open}
     onclick={() => (open = !open)}
   >
+    <span class="flag" aria-hidden="true">{activeEntry.flag}</span>
     {activeEntry.shortTag}
   </button>
   {#if open}
@@ -80,6 +81,7 @@
             aria-selected={entry.code === active}
             onclick={() => pick(entry.code)}
           >
+            <span class="flag" aria-hidden="true">{entry.flag}</span>
             <span class="native">{entry.nativeName}</span>
             <span class="tag">{entry.shortTag}</span>
           </button>
@@ -108,6 +110,17 @@
     letter-spacing: 1.5px;
     cursor: pointer;
     transition: border-color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .flag {
+    font-size: 13px;
+    line-height: 1;
+  }
+  .option .flag {
+    font-size: 16px;
+    margin-right: 4px;
   }
   .chip:hover,
   .chip[aria-expanded='true'] {

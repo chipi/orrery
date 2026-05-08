@@ -19,7 +19,6 @@ export type LocaleCode =
   | 'de'
   | 'pt-BR'
   | 'it'
-  | 'sr-Latn'
   | 'sr-Cyrl'
   | 'zh-CN'
   | 'ja'
@@ -34,6 +33,10 @@ export interface LocaleEntry {
   nativeName: string;
   /** Short tag for the picker chip (`EN`, `ES`). */
   shortTag: string;
+  /** Country flag emoji for the picker. Single canonical country
+   * per language even though some are spoken in many — keeps the
+   * picker readable. */
+  flag: string;
 }
 
 /**
@@ -45,20 +48,19 @@ export interface LocaleEntry {
  * picker label.
  */
 export const SUPPORTED_LOCALES: readonly LocaleEntry[] = [
-  { code: 'en-US', nativeName: 'English', shortTag: 'EN' },
-  { code: 'es', nativeName: 'Español', shortTag: 'ES' },
-  { code: 'fr', nativeName: 'Français', shortTag: 'FR' },
-  { code: 'de', nativeName: 'Deutsch', shortTag: 'DE' },
-  { code: 'pt-BR', nativeName: 'Português', shortTag: 'PT' },
-  { code: 'it', nativeName: 'Italiano', shortTag: 'IT' },
-  { code: 'sr-Latn', nativeName: 'Serbian', shortTag: 'SR' },
-  { code: 'sr-Cyrl', nativeName: 'Српски', shortTag: 'СР' },
-  { code: 'zh-CN', nativeName: '简体中文', shortTag: 'ZH' },
-  { code: 'ja', nativeName: '日本語', shortTag: 'JA' },
-  { code: 'ko', nativeName: '한국어', shortTag: 'KO' },
-  { code: 'hi', nativeName: 'हिन्दी', shortTag: 'HI' },
-  { code: 'ar', nativeName: 'العربية', shortTag: 'AR' },
-  { code: 'ru', nativeName: 'Русский', shortTag: 'RU' },
+  { code: 'en-US', nativeName: 'English', shortTag: 'EN', flag: '🇺🇸' },
+  { code: 'es', nativeName: 'Español', shortTag: 'ES', flag: '🇪🇸' },
+  { code: 'fr', nativeName: 'Français', shortTag: 'FR', flag: '🇫🇷' },
+  { code: 'de', nativeName: 'Deutsch', shortTag: 'DE', flag: '🇩🇪' },
+  { code: 'pt-BR', nativeName: 'Português', shortTag: 'PT', flag: '🇧🇷' },
+  { code: 'it', nativeName: 'Italiano', shortTag: 'IT', flag: '🇮🇹' },
+  { code: 'sr-Cyrl', nativeName: 'Српски', shortTag: 'СР', flag: '🇷🇸' },
+  { code: 'zh-CN', nativeName: '简体中文', shortTag: 'ZH', flag: '🇨🇳' },
+  { code: 'ja', nativeName: '日本語', shortTag: 'JA', flag: '🇯🇵' },
+  { code: 'ko', nativeName: '한국어', shortTag: 'KO', flag: '🇰🇷' },
+  { code: 'hi', nativeName: 'हिन्दी', shortTag: 'HI', flag: '🇮🇳' },
+  { code: 'ar', nativeName: 'العربية', shortTag: 'AR', flag: '🇸🇦' },
+  { code: 'ru', nativeName: 'Русский', shortTag: 'RU', flag: '🇷🇺' },
 ] as const;
 
 export const DEFAULT_LOCALE: LocaleCode = 'en-US';

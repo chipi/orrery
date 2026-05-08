@@ -1115,8 +1115,22 @@
     // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
     // mapped through SCALE_3D (1 AU = 80 scene units), so the ring
     // matches the actual transition the spacecraft experiences.
-    const earthSoI = buildSoIRing('earth', soiRadiusInScene('earth', SCALE_3D), 0x6aa9ff);
-    const marsSoI = buildSoIRing('mars', soiRadiusInScene('mars', SCALE_3D), 0xff8866);
+    // SoI radii are tiny at physical scale (Earth's 924 000 km →
+    // 0.49 scene units at SCALE_3D=80), invisible at the default
+    // camera distance of 360. 8× visual boost keeps the relative
+    // proportions correct (Earth SoI > Mars SoI) while making the
+    // rings actually readable when the lens is on.
+    const SOI_VISUAL_BOOST = 8;
+    const earthSoI = buildSoIRing(
+      'earth',
+      soiRadiusInScene('earth', SCALE_3D) * SOI_VISUAL_BOOST,
+      0x6aa9ff,
+    );
+    const marsSoI = buildSoIRing(
+      'mars',
+      soiRadiusInScene('mars', SCALE_3D) * SOI_VISUAL_BOOST,
+      0xff8866,
+    );
     scene.add(earthSoI);
     scene.add(marsSoI);
 

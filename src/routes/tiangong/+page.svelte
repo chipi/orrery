@@ -13,6 +13,9 @@
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
+  import { buildMicrogravityAxes } from '$lib/microgravity-axes';
+  import { onScienceLensChange } from '$lib/science-lens';
+  import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
   import type { TiangongModule } from '$types/tiangong-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
@@ -276,6 +279,15 @@
     const station = buildTiangongProxyStation();
     scene.add(station);
 
+    // F.3 — microgravity axis overlay. Hidden by default; the lens
+    // listener flips visibility. Tiangong's bounding box is similar
+    // in scale to the ISS proxy so the same length works.
+    const microgravityAxes = buildMicrogravityAxes(4);
+    scene.add(microgravityAxes);
+    const stopLensWatch = onScienceLensChange((on) => {
+      microgravityAxes.visible = on;
+    });
+
     const meshById = new Map<string, THREE.Mesh[]>();
     station.traverse((o) => {
       if (o instanceof THREE.Mesh && o.userData.stationPickable && o.userData.moduleId) {
@@ -477,6 +489,7 @@
 
     cleanupThree = () => {
       cancelAnimationFrame(raf);
+      stopLensWatch?.();
       window.removeEventListener('resize', onResize);
       renderer.domElement.removeEventListener('pointerdown', onPointerDown);
       renderer.domElement.removeEventListener('pointerup', onPointerUp);
@@ -696,6 +709,10 @@
     inclinationDeg={41.5}
     periodMin={91.9}
   />
+
+  <!-- Microgravity axes legend — pairs with the 3D ArrowHelpers added
+       inside startThree() when the Science Lens is on (F.3). -->
+  <MicrogravityAxesLegend />
 </div>
 
 <style>

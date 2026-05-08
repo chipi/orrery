@@ -540,9 +540,9 @@ export function buildIssProxyStation(): THREE.Group {
 
       // iROSA overlay — VERTICAL stem pointing DOWN, forming a "T" with
       // the horizontal blue main wing on top. Long axis along -Y
-      // (nadir-pointing); broad face Z-normal (facing camera). Per
-      // round-4 feedback: blue is the T's top crossbar, yellow is the
-      // vertical stem extending nadir.
+      // (nadir-pointing). Rotated 90° around its long Y axis so the
+      // broad face matches the same orientation plane as the blue
+      // mains' broad face.
       const irosaInstalled = dir === 'fwd' ? anchor.iROSA.fwd : anchor.iROSA.aft;
       if (irosaInstalled) {
         const irosa = new THREE.Mesh(
@@ -550,6 +550,10 @@ export function buildIssProxyStation(): THREE.Group {
           new THREE.BoxGeometry(irosaDepth, irosaHalfLen * 2, 0.025),
           irosaMat,
         );
+        // 90° spin around the long Y axis — broad face goes from Z-normal
+        // to X-normal so it matches the same direction-plane the blue
+        // main wing's broad face lives in.
+        irosa.rotation.y = Math.PI / 2;
         // Centre on wing mid-point in X/Z, drop down so the top edge
         // meets the wing level (Y=0 in wing-pair local).
         irosa.position.set(xSign * (wingHalfLen + 0.04), -irosaHalfLen, 0);

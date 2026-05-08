@@ -7,6 +7,18 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import type { ScienceTabId } from '$types/science';
+
+  /** /science cross-sections relevant to small bodies — eccentric, often
+   * inclined orbits with extreme apsides. */
+  const SMALL_BODY_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+    { tab: 'orbits', section: 'keplerian-orbit' },
+    { tab: 'orbits', section: 'eccentricity' },
+    { tab: 'orbits', section: 'inclination' },
+    { tab: 'orbits', section: 'apsides' },
+    { tab: 'orbits', section: 'semi-major-axis' },
+  ];
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
   // the data file is the only consumer outside this component.
@@ -29,7 +41,7 @@
     note?: string;
   };
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'science' | 'learn';
 
   type Props = {
     body: SmallBody | null;
@@ -131,6 +143,15 @@
         aria-selected={tab === 'technical'}
         aria-controls="sbp-tabpanel">{m.panel_tab_technical()}</button
       >
+      <button
+        type="button"
+        id="sbp-tab-science"
+        class:active={tab === 'science'}
+        onclick={() => (tab = 'science')}
+        role="tab"
+        aria-selected={tab === 'science'}
+        aria-controls="sbp-tabpanel">SCIENCE</button
+      >
       {#if body.wiki || body.mission_visited}
         <button
           type="button"
@@ -209,6 +230,17 @@
             <span>{m.sbp_next_perihelion_prefix()} <strong>{body.next_perihelion}</strong></span>
           </div>
         {/if}
+      {:else if tab === 'science'}
+        <div class="science-tab">
+          <p class="science-blurb">
+            Small bodies — comets, dwarf planets, the trans-Neptunian crowd — break the "almost
+            circular, almost coplanar" rule that the eight planets follow. These are the orbital
+            elements that make their motion visible.
+          </p>
+          {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
+        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
@@ -317,6 +349,17 @@
   }
   .editorial.empty {
     color: rgba(255, 255, 255, 0.4);
+  }
+  .science-tab {
+    padding-top: 4px;
+  }
+  .science-blurb {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 14px;
   }
   .note {
     font-family: 'Space Mono', monospace;

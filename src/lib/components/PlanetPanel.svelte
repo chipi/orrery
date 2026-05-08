@@ -6,8 +6,23 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import type { ScienceTabId } from '$types/science';
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'science' | 'learn';
+
+  // Curated /science cross-section list — the Keplerian-mechanics core.
+  // Same for every planet; the user's planet-specific values live on the
+  // TECHNICAL tab and the cards here unpack what those values mean.
+  const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+    { tab: 'orbits', section: 'keplerian-orbit' },
+    { tab: 'orbits', section: 'semi-major-axis' },
+    { tab: 'orbits', section: 'eccentricity' },
+    { tab: 'orbits', section: 'inclination' },
+    { tab: 'orbits', section: 'apsides' },
+    { tab: 'orbits', section: 'vis-viva' },
+    { tab: 'orbits', section: 'keplers-laws' },
+  ];
 
   type Props = {
     planet: LocalizedPlanet | null;
@@ -143,6 +158,15 @@
         aria-selected={tab === 'technical'}
         aria-controls="pp-tabpanel">{m.panel_tab_technical()}</button
       >
+      <button
+        type="button"
+        id="pp-tab-science"
+        class:active={tab === 'science'}
+        onclick={() => (tab = 'science')}
+        role="tab"
+        aria-selected={tab === 'science'}
+        aria-controls="pp-tabpanel">SCIENCE</button
+      >
       {#if hasLinks}
         <button
           type="button"
@@ -251,6 +275,16 @@
         </div>
 
         <div class="src">{m.panel_source_iau()}</div>
+      {:else if tab === 'science'}
+        <div class="science-tab">
+          <p class="science-blurb">
+            The orbital mechanics that move {planet.name} around the Sun. Every number on the TECHNICAL
+            tab is one of these concepts.
+          </p>
+          {#each PLANET_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
+        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
@@ -401,6 +435,17 @@
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin: 0 0 12px 0;
+  }
+  .science-tab {
+    padding-top: 4px;
+  }
+  .science-blurb {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 14px;
   }
 
   .grid {

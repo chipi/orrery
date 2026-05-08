@@ -5,8 +5,21 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import type { ScienceTabId } from '$types/science';
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'technical' | 'science' | 'learn';
+
+  /** /science cross-sections relevant to the Sun: it's the central focus of
+   * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
+  const SUN_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
+    { tab: 'orbits', section: 'keplerian-orbit' },
+    { tab: 'orbits', section: 'vis-viva' },
+    { tab: 'orbits', section: 'keplers-laws' },
+    { tab: 'scales-time', section: 'au' },
+    { tab: 'scales-time', section: 'ecliptic-plane' },
+    { tab: 'scales-time', section: 'frames' },
+  ];
 
   type Props = {
     sun: LocalizedSun | null;
@@ -113,6 +126,15 @@
         aria-selected={tab === 'technical'}
         aria-controls="sp-tabpanel">{m.panel_tab_technical()}</button
       >
+      <button
+        type="button"
+        id="sp-tab-science"
+        class:active={tab === 'science'}
+        onclick={() => (tab = 'science')}
+        role="tab"
+        aria-selected={tab === 'science'}
+        aria-controls="sp-tabpanel">SCIENCE</button
+      >
       {#if hasLinks}
         <button
           type="button"
@@ -175,6 +197,16 @@
         </div>
 
         <div class="src">{m.sun_source_nasa({ mag: sun.absolute_magnitude.toString() })}</div>
+      {:else if tab === 'science'}
+        <div class="science-tab">
+          <p class="science-blurb">
+            The Sun anchors every heliocentric orbit. These are the rules that move every planet,
+            asteroid, and spacecraft around it.
+          </p>
+          {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
+        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.panel_gallery_empty()}</p>
@@ -323,6 +355,17 @@
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.6;
     margin: 0 0 12px 0;
+  }
+  .science-tab {
+    padding-top: 4px;
+  }
+  .science-blurb {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 14px;
   }
   .grid {
     display: grid;

@@ -174,7 +174,7 @@
           len: 1.45,
           radius: 0.21,
           axis: 'x',
-          isVisitor: true,
+          kind: 'visitor',
         },
         {
           id: 'tianzhou',
@@ -185,10 +185,74 @@
           len: 1.66,
           radius: 0.27,
           axis: 'x',
-          isVisitor: true,
+          kind: 'visitor',
         },
       );
     }
+
+    // Tiangong solar arrays — gold/bronze gallium-arsenide. 4 wings on
+    // Tianhe (2 pairs along ±Z, perpendicular to module long axis X);
+    // 2 wings each at the outboard tips of Wentian (+Y end) and Mengtian
+    // (−Y end). Arrays extend perpendicular to the module's long axis.
+    //
+    // Excluded by design: tiny detail bits (truss not present on
+    // Tiangong — modules connect via the spherical hub, not a truss);
+    // Chinarm-related rails (already shown as the chinarm module);
+    // visiting-craft solar panels (would clutter; the visitor rectangles
+    // already convey their presence).
+
+    // Tianhe arrays: 4 wings deployed along ±Z from 2 mast positions
+    // along Tianhe's X axis (aft half of the core).
+    const tianheMastXs = [-tianheLen() * 0.45, -tianheLen() * 0.1];
+    function tianheLen() {
+      return 2.6;
+    }
+    for (const mastX of tianheMastXs) {
+      for (const zSign of [-1, 1] as const) {
+        layout.push({
+          id: `tianhe_array_${mastX.toFixed(2)}_${zSign}`,
+          name: '',
+          x: mastX,
+          y: 0,
+          z: zSign * 1.2,
+          len: 1.6, // wing length along Z (12.6m / 12.7 ≈ 1)
+          radius: 0.18, // wing depth perpendicular (4.65m / 12.7 ≈ 0.37, half = 0.18)
+          axis: 'z',
+          kind: 'solar-gold',
+        });
+      }
+    }
+
+    // Wentian arrays: 2 wings at outboard tip (top of +Y), extending ±X.
+    for (const xSign of [-1, 1] as const) {
+      layout.push({
+        id: `wentian_array_${xSign}`,
+        name: '',
+        x: xSign * 1.8,
+        y: 2.4, // outboard tip of Wentian (z=0, y=1.2 + len/2 + offset)
+        z: 0,
+        len: 3.6, // 27m / 12.7 ≈ 2.13... using 3.6 to match the 3D model
+        radius: 0.18,
+        axis: 'x',
+        kind: 'solar-gold',
+      });
+    }
+
+    // Mengtian arrays: mirrored to -Y.
+    for (const xSign of [-1, 1] as const) {
+      layout.push({
+        id: `mengtian_array_${xSign}`,
+        name: '',
+        x: xSign * 1.8,
+        y: -2.4,
+        z: 0,
+        len: 3.6,
+        radius: 0.18,
+        axis: 'x',
+        kind: 'solar-gold',
+      });
+    }
+
     return layout;
   });
 

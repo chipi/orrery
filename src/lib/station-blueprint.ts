@@ -11,7 +11,14 @@
 
 export type BlueprintView = 'top' | 'side' | 'front';
 
-export type BlueprintKind = 'module' | 'visitor' | 'truss' | 'solar' | 'radiator' | 'pma';
+export type BlueprintKind =
+  | 'module'
+  | 'visitor'
+  | 'truss'
+  | 'solar' // blue silicon (ISS mains, visitor arrays on Tiangong)
+  | 'solar-gold' // gold/bronze gallium-arsenide (Tiangong station arrays)
+  | 'radiator'
+  | 'pma';
 
 export interface BlueprintModule {
   id: string;
@@ -200,12 +207,21 @@ export function drawBlueprint(
     visitor: { fill: BLUEPRINT_VISITOR_FILL, stroke: BLUEPRINT_VISITOR_OUTLINE },
     truss: { fill: 'rgba(154, 158, 168, 0.18)', stroke: 'rgba(154, 158, 168, 0.6)' },
     solar: { fill: 'rgba(60, 110, 200, 0.22)', stroke: 'rgba(120, 170, 240, 0.7)' },
+    'solar-gold': { fill: 'rgba(184, 149, 74, 0.25)', stroke: 'rgba(220, 180, 100, 0.8)' },
     radiator: { fill: 'rgba(220, 230, 240, 0.18)', stroke: 'rgba(220, 230, 240, 0.55)' },
     pma: { fill: 'rgba(200, 160, 76, 0.28)', stroke: 'rgba(200, 160, 76, 0.85)' },
   };
 
   // Sort: structural first, modules + visitors on top so they draw above.
-  const drawOrder: BlueprintKind[] = ['truss', 'solar', 'radiator', 'pma', 'module', 'visitor'];
+  const drawOrder: BlueprintKind[] = [
+    'truss',
+    'solar',
+    'solar-gold',
+    'radiator',
+    'pma',
+    'module',
+    'visitor',
+  ];
   const sorted = [...modules].sort((a, b) => drawOrder.indexOf(a.kind) - drawOrder.indexOf(b.kind));
 
   // First pass: rectangles only.

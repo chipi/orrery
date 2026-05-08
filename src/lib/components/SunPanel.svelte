@@ -8,7 +8,8 @@
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'science' | 'learn';
+  // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'science';
 
   /** /science cross-sections relevant to the Sun: it's the central focus of
    * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
@@ -135,17 +136,6 @@
         aria-selected={tab === 'science'}
         aria-controls="sp-tabpanel">SCIENCE</button
       >
-      {#if hasLinks}
-        <button
-          type="button"
-          id="sp-tab-learn"
-          class:active={tab === 'learn'}
-          onclick={() => (tab = 'learn')}
-          role="tab"
-          aria-selected={tab === 'learn'}
-          aria-controls="sp-tabpanel">{m.panel_tab_learn()}</button
-        >
-      {/if}
     </div>
 
     <div class="tab-content" role="tabpanel" id="sp-tabpanel" aria-labelledby="sp-tab-{tab}">
@@ -206,6 +196,41 @@
           {#each SUN_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
             <ScienceCard tab={t} {section} />
           {/each}
+          {#if hasLinks}
+            <div class="science-library">
+              <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+              {#if linksByTier.intro.length > 0}
+                <section class="link-tier tier-intro">
+                  <h3>{m.panel_links_intro()}</h3>
+                  <ul>
+                    {#each linksByTier.intro as link (link.u)}
+                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+              {#if linksByTier.core.length > 0}
+                <section class="link-tier tier-core">
+                  <h3>{m.panel_links_core()}</h3>
+                  <ul>
+                    {#each linksByTier.core as link (link.u)}
+                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+              {#if linksByTier.deep.length > 0}
+                <section class="link-tier tier-deep">
+                  <h3>{m.panel_links_deep()}</h3>
+                  <ul>
+                    {#each linksByTier.deep as link (link.u)}
+                      <li><LearnLink entityId="sun" url={link.u} label={link.l} /></li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+            </div>
+          {/if}
         </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
@@ -224,47 +249,6 @@
             {/each}
           </div>
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
-        {/if}
-      {:else if tab === 'learn'}
-        {#if !hasLinks}
-          <p class="empty-tab">{m.panel_no_links()}</p>
-        {:else}
-          {#if linksByTier.intro.length > 0}
-            <section class="link-tier tier-intro">
-              <h3>{m.panel_links_intro()}</h3>
-              <ul>
-                {#each linksByTier.intro as link (link.u)}
-                  <li>
-                    <LearnLink entityId="sun" url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.core.length > 0}
-            <section class="link-tier tier-core">
-              <h3>{m.panel_links_core()}</h3>
-              <ul>
-                {#each linksByTier.core as link (link.u)}
-                  <li>
-                    <LearnLink entityId="sun" url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.deep.length > 0}
-            <section class="link-tier tier-deep">
-              <h3>{m.panel_links_deep()}</h3>
-              <ul>
-                {#each linksByTier.deep as link (link.u)}
-                  <li>
-                    <LearnLink entityId="sun" url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
         {/if}
       {/if}
     </div>

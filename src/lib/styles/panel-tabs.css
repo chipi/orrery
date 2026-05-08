@@ -26,13 +26,22 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   margin-bottom: 14px;
   flex-shrink: 0;
+  /* Safety: if a panel ever grows beyond the design width's tab budget,
+     overflow-x lets the strip scroll instead of wrapping or clipping. */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 .tabs button {
-  padding: 10px 14px;
+  flex: 0 0 auto;
+  padding: 10px 12px;
   min-height: 44px;
   font-family: 'Space Mono', monospace;
   font-size: 8px;
   letter-spacing: 2px;
+  white-space: nowrap;
   font-weight: 700;
   background: transparent;
   border: none;
@@ -135,7 +144,25 @@
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* ─── LEARN tab — tiered link list ──────────────────────────────── */
+/* ─── SCIENCE tab library section (was the old LEARN tab) ─────────
+ * The tiered learn-link list now lives below the ScienceCards inside
+ * the SCIENCE tab. .science-library wraps it; .library-heading is the
+ * sub-header that visually separates the cards from the link tiers. */
+.science-library {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.library-heading {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 12px;
+}
+
+/* ─── LEARN-tier link list (used inside .science-library) ──────── */
 .link-tier {
   margin-bottom: 14px;
 }

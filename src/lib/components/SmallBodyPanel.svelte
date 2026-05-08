@@ -41,7 +41,8 @@
     note?: string;
   };
 
-  type Tab = 'overview' | 'gallery' | 'technical' | 'science' | 'learn';
+  // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
+  type Tab = 'overview' | 'gallery' | 'technical' | 'science';
 
   type Props = {
     body: SmallBody | null;
@@ -152,17 +153,6 @@
         aria-selected={tab === 'science'}
         aria-controls="sbp-tabpanel">SCIENCE</button
       >
-      {#if body.wiki || body.mission_visited}
-        <button
-          type="button"
-          id="sbp-tab-learn"
-          class:active={tab === 'learn'}
-          onclick={() => (tab = 'learn')}
-          role="tab"
-          aria-selected={tab === 'learn'}
-          aria-controls="sbp-tabpanel">{m.panel_tab_learn()}</button
-        >
-      {/if}
     </div>
 
     <div class="tab-content" role="tabpanel" id="sbp-tabpanel" aria-labelledby="sbp-tab-{tab}">
@@ -240,6 +230,28 @@
           {#each SMALL_BODY_SCIENCE_SECTIONS as { tab: t, section } (t + section)}
             <ScienceCard tab={t} {section} />
           {/each}
+          {#if body.wiki || body.mission_visited}
+            <div class="science-library">
+              <h3 class="library-heading">{m.panel_tab_learn()}</h3>
+              <ul class="learn-list">
+                {#if body.mission_visited}
+                  <li class="learn-mission">
+                    <div class="learn-key">{m.sbp_visited_by()}</div>
+                    <div class="learn-val">{body.mission_visited}</div>
+                  </li>
+                {/if}
+                {#if body.wiki}
+                  <li>
+                    <LearnLink
+                      entityId={body.id}
+                      url={body.wiki}
+                      label={m.sbp_wikipedia_link({ name: body.name })}
+                    />
+                  </li>
+                {/if}
+              </ul>
+            </div>
+          {/if}
         </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
@@ -259,24 +271,6 @@
           </div>
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
-      {:else if tab === 'learn'}
-        <ul class="learn-list">
-          {#if body.mission_visited}
-            <li class="learn-mission">
-              <div class="learn-key">{m.sbp_visited_by()}</div>
-              <div class="learn-val">{body.mission_visited}</div>
-            </li>
-          {/if}
-          {#if body.wiki}
-            <li>
-              <LearnLink
-                entityId={body.id}
-                url={body.wiki}
-                label={m.sbp_wikipedia_link({ name: body.name })}
-              />
-            </li>
-          {/if}
-        </ul>
       {/if}
     </div>
 

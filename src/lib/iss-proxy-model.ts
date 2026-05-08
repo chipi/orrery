@@ -503,15 +503,17 @@ export function buildIssProxyStation(): THREE.Group {
     // request — gives a clear depth read from camera angle vs. perfectly
     // parallel-to-modules orientation).
     //
-    // baseRotation = π/2 around X axis means the broad face initially
-    // points along +Z (toward camera at +Z=13) — wings always read as
-    // visible rectangles, not edge-on slivers.
+    // baseRotation = 0 around X axis means the broad face initially
+    // points along +Y (zenith) — wings lay flat against the orbital
+    // plane (truss spine), full surface visible from top-down view.
+    // SADA β-rotation cycles the wings through other angles over ~4
+    // min, matching the real station's sun-tracking behaviour.
     const wingPair = new THREE.Group();
     wingPair.position.set(0, 0.42, anchor.z);
     wingPair.rotation.y = anchor.z < 0 ? -Math.PI / 6 : Math.PI / 6;
     wingPair.userData.tracksSun = true;
     wingPair.userData.sadaAxis = 'x';
-    wingPair.userData.baseRotation = Math.PI / 2;
+    wingPair.userData.baseRotation = 0;
 
     for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;
@@ -819,41 +821,43 @@ export function buildIssProxyStation(): THREE.Group {
     metalness: 0.4,
     roughness: 0.55,
   });
+  // HRS panels deploy on the SAME SIDE as the service module (Zvezda is
+  // at -X). Real ISS HRS extends aft toward the Russian segment side;
+  // both port and starboard radiators face -X (toward Zvezda).
   const RADIATORS: { z: number; xSign: 1 | -1 }[] = [
-    // Port side: 2 radiators (Loop A + Loop B), one fwd, one aft of S0
-    { z: -1.0, xSign: 1 },
-    { z: -1.0, xSign: -1 },
-    // Starboard side: 2 radiators
-    { z: 1.0, xSign: 1 },
-    { z: 1.0, xSign: -1 },
+    { z: -1.0, xSign: -1 }, // Port side, aft toward Zvezda
+    { z: 1.0, xSign: -1 }, // Starboard side, aft toward Zvezda
   ];
   for (const { z, xSign } of RADIATORS) {
-    // Each radiator is a wide panel ~1.8 units long (~23 m) extending
-    // along ±X in module direction. Multi-segment look via spine + 6
-    // panels.
+    // Each radiator is a VERTICAL panel: ~1.8 units long along ±X
+    // (extending into module direction), ~0.85 units tall hanging DOWN
+    // from the truss along -Y, very thin (0.02 along Z, parallel to
+    // truss spine). Broad face is Z-normal — perpendicular to truss.
+    // Real ISS HRS hangs vertically below the truss in this orientation.
     const radWidth = 1.8;
-    const radDepth = 0.85;
-    const rad = new THREE.Mesh(new THREE.BoxGeometry(radWidth, 0.02, radDepth), radiatorMat);
-    rad.position.set(xSign * (radWidth / 2 + 0.18), -0.22, z);
+    const radHeight = 0.85;
+    const topY = -0.18; // attached just below truss (trussGroup-local Y)
+    const centerY = topY - radHeight / 2;
+    const rad = new THREE.Mesh(new THREE.BoxGeometry(radWidth, radHeight, 0.02), radiatorMat);
+    rad.position.set(xSign * (radWidth / 2 + 0.18), centerY, z);
     rad.userData.stationPickable = false;
     rad.name = 'radiator';
     setShadowFlags(rad);
     trussGroup.add(rad);
 
-    // Spine running along the radiator's long axis — visual cue for
-    // the deployment hinge between segments.
+    // Spine running along the radiator's TOP edge (along ±X).
     const spine = new THREE.Mesh(new THREE.BoxGeometry(radWidth, 0.04, 0.04), radiatorAccentMat);
-    spine.position.set(xSign * (radWidth / 2 + 0.18), -0.22, z);
+    spine.position.set(xSign * (radWidth / 2 + 0.18), topY - 0.02, z);
     spine.userData.stationPickable = false;
     spine.name = 'radiator_spine';
     setShadowFlags(spine);
     trussGroup.add(spine);
 
-    // 5 cross-bars suggesting the 6 panel segments
+    // 5 vertical cross-bars dividing the panel into 6 segments along ±X.
     for (let i = 1; i < 6; i++) {
-      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.025, radDepth), radiatorAccentMat);
+      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.012, radHeight, 0.025), radiatorAccentMat);
       const segWidth = radWidth / 6;
-      bar.position.set(xSign * (0.18 + i * segWidth), -0.22, z);
+      bar.position.set(xSign * (0.18 + i * segWidth), centerY, z);
       bar.userData.stationPickable = false;
       bar.name = 'radiator_segment';
       setShadowFlags(bar);

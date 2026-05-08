@@ -15,7 +15,10 @@
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
-  type Tab = 'overview' | 'gallery' | 'flight' | 'science' | 'learn';
+  // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
+  // on top, the tiered learn-link list below — one tab destination, less
+  // crowding in the strip.
+  type Tab = 'overview' | 'gallery' | 'flight' | 'science';
 
   type Props = {
     mission: Mission | null;
@@ -237,15 +240,6 @@
         aria-selected={tab === 'science'}
         aria-controls="mp-tabpanel">SCIENCE</button
       >
-      <button
-        type="button"
-        id="mp-tab-learn"
-        class:active={tab === 'learn'}
-        onclick={() => (tab = 'learn')}
-        role="tab"
-        aria-selected={tab === 'learn'}
-        aria-controls="mp-tabpanel">{m.mp_tab_learn()}</button
-      >
     </div>
 
     <div
@@ -258,9 +252,7 @@
           ? 'mp-tab-flight'
           : tab === 'gallery'
             ? 'mp-tab-gallery'
-            : tab === 'science'
-              ? 'mp-tab-science'
-              : 'mp-tab-learn'}
+            : 'mp-tab-science'}
     >
       {#if tab === 'overview'}
         <div class="grid">
@@ -534,6 +526,47 @@
           {#each missionScienceSections as { tab: t, section } (t + section)}
             <ScienceCard tab={t} {section} />
           {/each}
+          {#if mission.links && mission.links.length > 0}
+            <div class="science-library">
+              <h3 class="library-heading">{m.mp_tab_learn()}</h3>
+              {#if linksByTier.intro.length > 0}
+                <section class="link-tier tier-intro">
+                  <h3>{m.mp_links_intro()}</h3>
+                  <ul>
+                    {#each linksByTier.intro as link (link.u)}
+                      <li>
+                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
+                      </li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+              {#if linksByTier.core.length > 0}
+                <section class="link-tier tier-core">
+                  <h3>{m.mp_links_core()}</h3>
+                  <ul>
+                    {#each linksByTier.core as link (link.u)}
+                      <li>
+                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
+                      </li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+              {#if linksByTier.deep.length > 0}
+                <section class="link-tier tier-deep">
+                  <h3>{m.mp_links_deep()}</h3>
+                  <ul>
+                    {#each linksByTier.deep as link (link.u)}
+                      <li>
+                        <LearnLink entityId={mission.id} url={link.u} label={link.l} />
+                      </li>
+                    {/each}
+                  </ul>
+                </section>
+              {/if}
+            </div>
+          {/if}
         </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
@@ -552,47 +585,6 @@
             {/each}
           </div>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
-        {/if}
-      {:else if tab === 'learn'}
-        {#if !mission.links || mission.links.length === 0}
-          <p class="empty-tab">{m.mp_no_links()}</p>
-        {:else}
-          {#if linksByTier.intro.length > 0}
-            <section class="link-tier tier-intro">
-              <h3>{m.mp_links_intro()}</h3>
-              <ul>
-                {#each linksByTier.intro as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.core.length > 0}
-            <section class="link-tier tier-core">
-              <h3>{m.mp_links_core()}</h3>
-              <ul>
-                {#each linksByTier.core as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
-          {#if linksByTier.deep.length > 0}
-            <section class="link-tier tier-deep">
-              <h3>{m.mp_links_deep()}</h3>
-              <ul>
-                {#each linksByTier.deep as link (link.u)}
-                  <li>
-                    <LearnLink entityId={mission.id} url={link.u} label={link.l} />
-                  </li>
-                {/each}
-              </ul>
-            </section>
-          {/if}
         {/if}
       {/if}
     </div>

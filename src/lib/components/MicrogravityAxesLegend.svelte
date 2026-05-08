@@ -42,16 +42,25 @@
     <div class="eyebrow">{m.microgravity_legend_eyebrow()}</div>
     <ul class="rows">
       <li class="row">
-        <span class="swatch swatch-teal" aria-hidden="true"></span>
-        <span class="label">{m.microgravity_legend_zenith_nadir()}</span>
+        <div class="row-head">
+          <span class="swatch swatch-teal" aria-hidden="true"></span>
+          <span class="label">{m.microgravity_legend_zenith_nadir()}</span>
+        </div>
+        <span class="desc">{m.microgravity_legend_zenith_nadir_desc()}</span>
       </li>
       <li class="row">
-        <span class="swatch swatch-red" aria-hidden="true"></span>
-        <span class="label">{m.microgravity_legend_prograde_retrograde()}</span>
+        <div class="row-head">
+          <span class="swatch swatch-red" aria-hidden="true"></span>
+          <span class="label">{m.microgravity_legend_prograde_retrograde()}</span>
+        </div>
+        <span class="desc">{m.microgravity_legend_prograde_retrograde_desc()}</span>
       </li>
       <li class="row">
-        <span class="swatch swatch-blue" aria-hidden="true"></span>
-        <span class="label">{m.microgravity_legend_port_starboard()}</span>
+        <div class="row-head">
+          <span class="swatch swatch-blue" aria-hidden="true"></span>
+          <span class="label">{m.microgravity_legend_port_starboard()}</span>
+        </div>
+        <span class="desc">{m.microgravity_legend_port_starboard_desc()}</span>
       </li>
     </ul>
     <div class="link">{m.microgravity_legend_read_more()}</div>
@@ -104,11 +113,24 @@
   }
   .row {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 2px;
     font-family: 'Space Mono', monospace;
     font-size: 9px;
     color: rgba(255, 255, 255, 0.85);
+  }
+  .row-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .desc {
+    margin-left: 22px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.55);
   }
   .swatch {
     display: block;

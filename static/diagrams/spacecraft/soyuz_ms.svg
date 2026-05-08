@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Soyuz MS spacecraft anatomy: orbital module sphere, descent module truncated cone, service module cylinder with deployed solar wings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">SOYUZ MS</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">7.48 m · 7,150 kg · 3 crew</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="260" class="dashed" />
+
+  <!-- Docking probe -->
+  <line x1="200" y1="50" x2="200" y2="64" class="stroke" />
+  <circle cx="200" cy="50" r="2.5" class="stroke-fill" />
+
+  <!-- Orbital Module sphere -->
+  <circle cx="200" cy="86" r="22" class="stroke-fill" />
+  <rect x="194" y="78" width="12" height="3" class="stroke" />
+
+  <!-- Connection ring -->
+  <line x1="190" y1="108" x2="210" y2="108" class="stroke" />
+
+  <!-- Descent Module truncated cone -->
+  <path d="M 184 110 L 168 168 L 232 168 L 216 110 Z" class="stroke-fill" />
+  <circle cx="186" cy="138" r="3" class="stroke" />
+  <circle cx="200" cy="135" r="3" class="stroke" />
+  <circle cx="214" cy="138" r="3" class="stroke" />
+
+  <!-- Heat shield -->
+  <path d="M 168 168 Q 200 184 232 168" class="heat" />
+
+  <!-- Service Module cylinder -->
+  <rect x="174" y="170" width="52" height="60" class="stroke-fill" />
+
+  <!-- Engine bell -->
+  <path d="M 188 230 L 184 250 L 216 250 L 212 230 Z" class="nozzle" />
+
+  <!-- Solar wings (compressed for callout space — diagram-truth, not scale) -->
+  <rect x="100" y="180" width="68" height="40" class="pv" />
+  <line x1="118" y1="180" x2="118" y2="220" class="pv-grid" />
+  <line x1="135" y1="180" x2="135" y2="220" class="pv-grid" />
+  <line x1="152" y1="180" x2="152" y2="220" class="pv-grid" />
+  <rect x="168" y="195" width="6" height="10" class="nozzle" />
+
+  <rect x="232" y="180" width="68" height="40" class="pv" />
+  <line x1="248" y1="180" x2="248" y2="220" class="pv-grid" />
+  <line x1="265" y1="180" x2="265" y2="220" class="pv-grid" />
+  <line x1="282" y1="180" x2="282" y2="220" class="pv-grid" />
+  <rect x="226" y="195" width="6" height="10" class="nozzle" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="178" y1="86" x2="80" y2="86" class="accent" />
+  <text x="6" y="82" class="label-accent">ORBITAL</text>
+  <text x="6" y="94" class="label-mute">crew transfer</text>
+
+  <line x1="168" y1="138" x2="80" y2="138" class="accent" />
+  <text x="6" y="134" class="label-accent">DESCENT</text>
+  <text x="6" y="146" class="label-mute">returns to Earth</text>
+
+  <line x1="100" y1="200" x2="50" y2="246" class="accent" />
+  <text x="6" y="244" class="label-accent">SOLAR WINGS</text>
+  <text x="6" y="256" class="label-mute">Si · ~10 m span</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="200" y1="50" x2="300" y2="50" class="accent" />
+  <text x="305" y="48" class="label-accent">DOCK PROBE</text>
+  <text x="305" y="60" class="label-mute">Kurs auto-dock</text>
+
+  <line x1="232" y1="168" x2="305" y2="168" class="accent" />
+  <text x="305" y="166" class="label-accent">HEAT SHIELD</text>
+  <text x="305" y="178" class="label-mute">parachute land</text>
+
+  <line x1="226" y1="200" x2="305" y2="208" class="accent" />
+  <text x="305" y="206" class="label-accent">SERVICE MOD</text>
+  <text x="305" y="218" class="label-mute">propulsion</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">SKD ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by RKK Energia · launches on Soyuz-2.1a</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">MS series since 2016 · 6.5 h fast rendezvous</text>
+</svg>

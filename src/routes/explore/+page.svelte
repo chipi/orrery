@@ -22,7 +22,6 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
-  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
   import { onLayerChange } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
@@ -571,7 +570,12 @@
       scene.add(line);
     });
 
-    type PlanetObj = { group: THREE.Group; mesh: THREE.Mesh; planet: PlanetVisual };
+    type PlanetObj = {
+      group: THREE.Group;
+      mesh: THREE.Mesh;
+      pickAid: THREE.Mesh;
+      planet: PlanetVisual;
+    };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
       const mat = new THREE.MeshPhongMaterial({
@@ -585,6 +589,20 @@
       const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3, 32, 32), mat);
       mesh.userData = { planetId: p.id };
       group.add(mesh);
+      // Pick-aid: invisible larger sphere co-located with the visible
+      // mesh so hover-pick is forgiving on small / fast-moving planets.
+      // Mercury's visible size3 is 2.8 units — without the aid users
+      // have to land the cursor in a sub-degree window; with a 2.5×
+      // pick radius the target is much more reachable. Material is
+      // transparent + opacity 0 so it doesn't render but the raycaster
+      // still hits it (visible:true is the magic — opacity 0 with
+      // visible:true keeps geometry pickable while invisible).
+      const pickAid = new THREE.Mesh(
+        new THREE.SphereGeometry(Math.max(p.size3 * 2.5, 6), 16, 16),
+        new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }),
+      );
+      pickAid.userData = { planetId: p.id };
+      group.add(pickAid);
       if (p.hasRings) {
         const rg = new THREE.RingGeometry(p.size3 * 1.4, p.size3 * 2.6, 64);
         const rm = new THREE.MeshBasicMaterial({
@@ -599,7 +617,7 @@
         group.add(ring);
       }
       scene.add(group);
-      return { group, mesh, planet: p };
+      return { group, mesh, pickAid, planet: p };
     });
 
     // ── Phase H — per-planet science overlay arrows ────────────────
@@ -779,6 +797,7 @@
 
     const ray3d = new THREE.Raycaster();
     const planetMeshes = planetObjs.map((o) => o.mesh);
+    const planetPickAids = planetObjs.map((o) => o.pickAid);
     const smallBodyMeshes = smallBodyObjs.map((o) => o.mesh);
     const smallBodyPickAids = smallBodyObjs.map((o) => o.pickAid);
     // Pickables: Sun (never selected planet), all planets, all small
@@ -790,6 +809,7 @@
     // they can't be selected when filtered out.
     const pickables: THREE.Object3D[] = [
       ...planetMeshes,
+      ...planetPickAids,
       sunMesh,
       ...smallBodyMeshes,
       ...smallBodyPickAids,
@@ -1950,50 +1970,29 @@
       style:top="{Math.max(hoverData.y - 60, 60)}px"
     >
       {#if tooltipExpanded}
-        <!-- Lens-on expanded card. Each metric carries an `i` info chip
-             that deep-links into the matching /science section. -->
+        <!-- Lens-on expanded card. The cursor-tracking tooltip can't be
+             clicked-through (mouse leaves the planet immediately on
+             entry into the card area), so we drop the ScienceChip info
+             icons and surface only the live numbers. Users navigate to
+             /science via the lens banner instead. -->
         <div class="tt-eyebrow">{hoverData.name.toUpperCase()}</div>
         <div class="tt-row">
-          <span class="tt-key"
-            >SPEED<ScienceChip
-              tab="orbits"
-              section="vis-viva"
-              label={m.chip_label_vis_viva()}
-            /></span
-          >
+          <span class="tt-key">SPEED</span>
           <span class="tt-val">{hoverData.velocityKms.toFixed(2)} km/s</span>
         </div>
         <div class="tt-row">
-          <span class="tt-key"
-            >DIST<ScienceChip
-              tab="orbits"
-              section="semi-major-axis"
-              label={m.chip_label_semi_major_axis()}
-            /></span
-          >
+          <span class="tt-key">DIST</span>
           <span class="tt-val">
             {hoverData.distanceAU.toFixed(3)} AU ·
             {(hoverData.distanceAU * 8.317).toFixed(1)} l-min
           </span>
         </div>
         <div class="tt-row">
-          <span class="tt-key"
-            >ECC<ScienceChip
-              tab="orbits"
-              section="eccentricity"
-              label={m.chip_label_eccentricity()}
-            /></span
-          >
+          <span class="tt-key">ECC</span>
           <span class="tt-val">{hoverData.eccentricity.toFixed(3)}</span>
         </div>
         <div class="tt-row">
-          <span class="tt-key"
-            >INCL<ScienceChip
-              tab="orbits"
-              section="inclination"
-              label={m.chip_label_inclination()}
-            /></span
-          >
+          <span class="tt-key">INCL</span>
           <span class="tt-val">{hoverData.inclinationDeg.toFixed(1)}°</span>
         </div>
       {:else}

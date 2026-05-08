@@ -37,6 +37,7 @@
   let stop: (() => void) | undefined;
   let bannerEl: HTMLElement | null = $state(null);
   let resizeObs: ResizeObserver | null = null;
+  let expanded = $state(true);
 
   // Publish height to --lens-banner-height so the layers panel sits
   // cleanly below the banner. Mirrors ScienceLensBanner.
@@ -83,68 +84,82 @@
   <section
     bind:this={bannerEl}
     class="banner"
+    class:collapsed={!expanded}
     data-testid="station-orbit-banner"
     aria-label="Orbital regime"
   >
+    <button
+      type="button"
+      class="collapse-btn"
+      aria-expanded={expanded}
+      aria-label={expanded ? 'Collapse orbital regime' : 'Expand orbital regime'}
+      onclick={() => (expanded = !expanded)}
+    >
+      <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
+    </button>
     <div class="banner-eyebrow">
       {m.station_banner_eyebrow()} · {stationName}
     </div>
-    <dl class="banner-grid">
-      <div class="cell">
-        <dt class="cell-label">
-          {m.station_banner_alt_label()}<WhyPopover
-            title={m.why_station_altitude_title()}
-            body={m.why_station_altitude_body()}
-            tab="orbits"
-            section="orbit-regimes"
-          />
-        </dt>
-        <dd class="cell-value">{m.station_banner_alt_unit({ value: altitudeKm.toFixed(0) })}</dd>
-      </div>
-      <div class="cell">
-        <dt class="cell-label">
-          {m.station_banner_incl_label()}<WhyPopover
-            title={m.why_station_inclination_title()}
-            body={m.why_station_inclination_body()}
-            tab="orbits"
-            section="inclination"
-          />
-        </dt>
-        <dd class="cell-value">
-          {m.station_banner_incl_unit({ value: inclinationDeg.toFixed(1) })}
-        </dd>
-      </div>
-      <div class="cell">
-        <dt class="cell-label">
-          {m.station_banner_period_label()}<WhyPopover
-            title={m.why_station_period_title()}
-            body={m.why_station_period_body()}
-            tab="orbits"
-            section="keplers-laws"
-          />
-        </dt>
-        <dd class="cell-value">{m.station_banner_period_unit({ value: periodMin.toFixed(0) })}</dd>
-      </div>
-    </dl>
-    <p class="banner-foot">
-      <span class="foot-fact"
-        >≈ {sunrisesPerDay} sunrises/day<WhyPopover
-          title={m.why_station_sunrises_title()}
-          body={m.why_station_sunrises_body()}
-        /></span
-      >
-      <a class="banner-link" href="{base}/science/orbits/orbit-regimes">
-        {m.station_banner_read_more()}
-      </a>
-    </p>
-    <p class="banner-foot banner-foot-secondary">
-      <a class="banner-link" href="{base}/science/scales-time/long-duration">
-        {m.station_banner_long_duration_link()}
-      </a>
-      <a class="banner-link" href="{base}/science/mission-phases/eva">
-        {m.station_banner_eva_link()}
-      </a>
-    </p>
+    {#if expanded}
+      <dl class="banner-grid">
+        <div class="cell">
+          <dt class="cell-label">
+            {m.station_banner_alt_label()}<WhyPopover
+              title={m.why_station_altitude_title()}
+              body={m.why_station_altitude_body()}
+              tab="orbits"
+              section="orbit-regimes"
+            />
+          </dt>
+          <dd class="cell-value">{m.station_banner_alt_unit({ value: altitudeKm.toFixed(0) })}</dd>
+        </div>
+        <div class="cell">
+          <dt class="cell-label">
+            {m.station_banner_incl_label()}<WhyPopover
+              title={m.why_station_inclination_title()}
+              body={m.why_station_inclination_body()}
+              tab="orbits"
+              section="inclination"
+            />
+          </dt>
+          <dd class="cell-value">
+            {m.station_banner_incl_unit({ value: inclinationDeg.toFixed(1) })}
+          </dd>
+        </div>
+        <div class="cell">
+          <dt class="cell-label">
+            {m.station_banner_period_label()}<WhyPopover
+              title={m.why_station_period_title()}
+              body={m.why_station_period_body()}
+              tab="orbits"
+              section="keplers-laws"
+            />
+          </dt>
+          <dd class="cell-value">
+            {m.station_banner_period_unit({ value: periodMin.toFixed(0) })}
+          </dd>
+        </div>
+      </dl>
+      <p class="banner-foot">
+        <span class="foot-fact"
+          >≈ {sunrisesPerDay} sunrises/day<WhyPopover
+            title={m.why_station_sunrises_title()}
+            body={m.why_station_sunrises_body()}
+          /></span
+        >
+        <a class="banner-link" href="{base}/science/orbits/orbit-regimes">
+          {m.station_banner_read_more()}
+        </a>
+      </p>
+      <p class="banner-foot banner-foot-secondary">
+        <a class="banner-link" href="{base}/science/scales-time/long-duration">
+          {m.station_banner_long_duration_link()}
+        </a>
+        <a class="banner-link" href="{base}/science/mission-phases/eva">
+          {m.station_banner_eva_link()}
+        </a>
+      </p>
+    {/if}
   </section>
 {/if}
 
@@ -165,6 +180,35 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     color: var(--color-text);
     z-index: 30;
+  }
+  .collapse-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 200, 80, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  .collapse-btn:hover,
+  .collapse-btn:focus-visible {
+    color: #ffc850;
+    background: rgba(255, 200, 80, 0.08);
+    outline: none;
+  }
+  .chevron {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+  }
+  .banner.collapsed {
+    padding: 8px 36px 7px 18px;
   }
   .banner-eyebrow {
     font-family: 'Space Mono', monospace;

@@ -80,8 +80,9 @@
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
-  let bannerEl: HTMLAnchorElement | null = $state(null);
+  let bannerEl: HTMLElement | null = $state(null);
   let resizeObs: ResizeObserver | null = null;
+  let expanded = $state(true);
 
   // Publish height to --lens-banner-height so the layers panel sits
   // cleanly below the banner. Mirrors ScienceLensBanner.
@@ -122,20 +123,33 @@
 </script>
 
 {#if lensOn}
-  <a
+  <section
     bind:this={bannerEl}
     class="banner"
-    href="{base}/science/{phase.tab}/{phase.section}"
+    class:collapsed={!expanded}
     data-testid="flight-director-banner"
     data-phase={phase.id}
   >
+    <button
+      type="button"
+      class="collapse-btn"
+      aria-expanded={expanded}
+      aria-label={expanded ? 'Collapse Flight Director' : 'Expand Flight Director'}
+      onclick={() => (expanded = !expanded)}
+    >
+      <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
+    </button>
     <div class="banner-eyebrow">
       {m.fly_fd_eyebrow()} · {m.fly_fd_phase_label({ phase: phase.id.toUpperCase() })}
     </div>
-    <div class="banner-title">{phase.title}</div>
-    <div class="banner-body">{phase.body}</div>
-    <div class="banner-link">{m.fly_fd_read_more()}</div>
-  </a>
+    {#if expanded}
+      <a class="banner-body-link" href="{base}/science/{phase.tab}/{phase.section}">
+        <div class="banner-title">{phase.title}</div>
+        <div class="banner-body">{phase.body}</div>
+        <div class="banner-link">{m.fly_fd_read_more()}</div>
+      </a>
+    {/if}
+  </section>
 {/if}
 
 <style>
@@ -168,6 +182,40 @@
     border-color: rgba(255, 200, 80, 0.85);
     transform: translateX(-50%) translateY(-2px);
     outline: none;
+  }
+  .banner-body-link {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .collapse-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 200, 80, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  .collapse-btn:hover,
+  .collapse-btn:focus-visible {
+    color: #ffc850;
+    background: rgba(255, 200, 80, 0.08);
+    outline: none;
+  }
+  .chevron {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+  }
+  .banner.collapsed {
+    padding: 8px 36px 7px 18px;
   }
   .banner-eyebrow {
     font-family: 'Space Mono', monospace;

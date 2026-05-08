@@ -35,8 +35,12 @@
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
-  let bannerEl: HTMLAnchorElement | null = $state(null);
+  let bannerEl: HTMLElement | null = $state(null);
   let resizeObs: ResizeObserver | null = null;
+  // Collapse state for the banner content. Default expanded so first-
+  // time users see the framing copy; collapsed state hides body + link
+  // and leaves just the eyebrow strip + chevron, freeing screen space.
+  let expanded = $state(true);
 
   // Publishes the banner's measured height to a CSS custom property
   // on <html> so the ScienceLayersPanel can sit cleanly below it via
@@ -84,17 +88,30 @@
 </script>
 
 {#if lensOn}
-  <a
+  <section
     bind:this={bannerEl}
     class="banner"
     class:top={placement === 'top'}
-    href="{base}/science/{tab}/{section}"
+    class:collapsed={!expanded}
   >
-    <div class="banner-eyebrow">SCIENCE LENS</div>
-    <div class="banner-title">{title}</div>
-    <div class="banner-body">{body}</div>
-    <div class="banner-link">→ Read in /science</div>
-  </a>
+    <button
+      type="button"
+      class="collapse-btn"
+      aria-expanded={expanded}
+      aria-label={expanded ? 'Collapse Science Lens' : 'Expand Science Lens'}
+      onclick={() => (expanded = !expanded)}
+    >
+      <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
+    </button>
+    <div class="banner-eyebrow">SCIENCE LENS{!expanded ? ` · ${title}` : ''}</div>
+    {#if expanded}
+      <a class="banner-body-link" href="{base}/science/{tab}/{section}">
+        <div class="banner-title">{title}</div>
+        <div class="banner-body">{body}</div>
+        <div class="banner-link">→ Read in /science</div>
+      </a>
+    {/if}
+  </section>
 {/if}
 
 <style>
@@ -121,9 +138,46 @@
     top: calc(var(--nav-height) + 12px);
     bottom: auto;
   }
-  .banner:hover {
-    border-color: rgba(255, 200, 80, 0.85);
-    transform: translateX(-50%) translateY(-2px);
+  .banner-body-link {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .banner-body-link:hover {
+    color: var(--color-text);
+  }
+  /* Collapse chevron button — top-right corner of the banner. Tiny so
+     the banner reads cohesively when expanded. */
+  .collapse-btn {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 200, 80, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  .collapse-btn:hover,
+  .collapse-btn:focus-visible {
+    color: #ffc850;
+    background: rgba(255, 200, 80, 0.08);
+    outline: none;
+  }
+  .chevron {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+  }
+  .banner.collapsed {
+    /* When collapsed, the banner is just the eyebrow strip — slim it
+       down so it doesn't claim the same vertical space as expanded. */
+    padding: 8px 36px 7px 18px;
   }
   .banner-eyebrow {
     font-family: 'Space Mono', monospace;

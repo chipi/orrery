@@ -344,4 +344,28 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
     const nextEvent = page.locator('[data-testid="fly-next-event"]');
     await expect(nextEvent).toBeVisible();
   });
+
+  /* ── C.5 — Flight Director narration banner ────────────────────── */
+  test('Flight Director banner is hidden until Science Lens is enabled', async ({ page }) => {
+    await page.goto('/fly');
+    const banner = page.locator('[data-testid="flight-director-banner"]');
+    await expect(banner).toHaveCount(0);
+
+    // Toggle the Science Lens via the nav button.
+    await page.locator('button[aria-label="Toggle science lens"]').click();
+    await expect(banner).toBeVisible();
+
+    // The banner is a link into /science. The phase attribute is one
+    // of the five known phases; departure/injection/cruise/approach/arrival.
+    await expect(banner).toHaveAttribute(
+      'data-phase',
+      /^(departure|injection|cruise|approach|arrival)$/,
+    );
+    const href = await banner.getAttribute('href');
+    expect(href).toMatch(/\/science\/[^/]+\/[^/]+$/);
+
+    // Toggle off — banner should disappear again.
+    await page.locator('button[aria-label="Toggle science lens"]').click();
+    await expect(banner).toHaveCount(0);
+  });
 });

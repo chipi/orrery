@@ -53,6 +53,7 @@
     conics: false,
     microgravity: false,
     atmosphere: false,
+    'tidal-lock': false,
   });
 
   let stops: Array<() => void> = [];
@@ -123,6 +124,11 @@
         return {
           label: m.science_layer_atmosphere_label(),
           description: m.science_layer_atmosphere_desc(),
+        };
+      case 'tidal-lock':
+        return {
+          label: m.science_layer_tidal_lock_label(),
+          description: m.science_layer_tidal_lock_desc(),
         };
     }
   }

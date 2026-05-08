@@ -29,7 +29,8 @@ export type LayerKey =
   | 'coast' // H — engine-off coast preview (/fly only)
   | 'conics' // I — conic-section family side panel (/fly only)
   | 'microgravity' // F — microgravity 3D axes (/iss + /tiangong only)
-  | 'atmosphere'; // J.3 — atmosphere altitude shells (terrestrial bodies)
+  | 'atmosphere' // J.3 — atmosphere altitude shells (terrestrial bodies)
+  | 'tidal-lock'; // J.4 — tidal-locking indicator (/moon only)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -43,6 +44,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'conics',
   'microgravity',
   'atmosphere',
+  'tidal-lock',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -59,6 +61,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   conics: false,
   microgravity: true,
   atmosphere: true,
+  'tidal-lock': true,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

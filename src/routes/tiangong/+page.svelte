@@ -370,7 +370,10 @@
     );
     // T-silhouette: framed slightly off-axis so both Tianhe (along X) and the
     // Wentian/Mengtian cross-bar (along Y) are visible at first paint.
-    camera.position.set(2.4, 2.6, 7.2);
+    // Camera doubled-out from the original (2.4, 2.6, 7.2) so the
+    // station renders at ~50% apparent size by default — gives more
+    // breathing room around the T-silhouette before user zoom.
+    camera.position.set(4.2, 5.2, 14.4);
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);

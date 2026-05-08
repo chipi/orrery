@@ -9,7 +9,7 @@
  * hit-test API for click → module selection.
  */
 
-export type BlueprintView = 'top' | 'side';
+export type BlueprintView = 'top' | 'side' | 'front';
 
 export interface BlueprintModule {
   id: string;
@@ -51,11 +51,11 @@ export function projectModules(
 ): ProjectedModule[] {
   if (modules.length === 0) return [];
 
-  // Pick scene axes per view. Both views show X horizontally
-  // (forward-aft of station). Vertical axis differs: side = Y (zenith-
-  // nadir), top = Z (port-starboard).
-  const horizAxis: 'x' | 'y' | 'z' = 'x';
-  const vertAxis: 'x' | 'y' | 'z' = view === 'side' ? 'y' : 'z';
+  // Pick scene axes per view.
+  //   top/side: X horizontal (forward-aft); vertical = Z (port-stbd) or Y (zenith).
+  //   front: looking along -X (from forward end inward) → Z horizontal, Y vertical.
+  const horizAxis: 'x' | 'y' | 'z' = view === 'front' ? 'z' : 'x';
+  const vertAxis: 'x' | 'y' | 'z' = view === 'top' ? 'z' : 'y';
 
   // Compute scene-frame bounds across all modules.
   let minH = Infinity;
@@ -178,12 +178,14 @@ export function drawBlueprint(
   ctx.fillText(
     view === 'top'
       ? '← AFT  /  FWD →    ↑ STARBOARD  /  PORT ↓'
-      : '← AFT  /  FWD →    ↑ ZENITH  /  NADIR ↓',
+      : view === 'side'
+        ? '← AFT  /  FWD →    ↑ ZENITH  /  NADIR ↓'
+        : '← STARBOARD  /  PORT →    ↑ ZENITH  /  NADIR ↓',
     canvasW / 2,
     canvasH - 12,
   );
 
-  // Modules.
+  // Modules — first pass: rectangles only.
   for (const m of modules) {
     const isSel = m.id === selectedId;
     const isHov = m.id === hoveredId;
@@ -201,19 +203,101 @@ export function drawBlueprint(
     ctx.strokeStyle = stroke;
     ctx.lineWidth = isSel ? 2 : 1;
     ctx.strokeRect(m.px + 0.5, m.py + 0.5, m.pw - 1, m.ph - 1);
+  }
 
-    // Label centred on the module rectangle if there's room; otherwise
-    // anchored just below it.
-    ctx.font = '10px "Space Mono", monospace';
+  // Labels — second pass with collision avoidance. Compute desired
+  // rect for each label, then shift overlapping ones vertically until
+  // they're clear of already-placed labels.
+  ctx.font = '10px "Space Mono", monospace';
+  const labelHeight = 14; // approx for 10px font + padding
+  const labelPad = 3;
+  const placedRects: Array<{ x: number; y: number; w: number; h: number }> = [];
+  const drawCalls: Array<{
+    x: number;
+    y: number;
+    text: string;
+    leader?: { fromX: number; fromY: number; toX: number; toY: number };
+  }> = [];
+
+  for (const m of modules) {
+    const text = m.name.toUpperCase();
+    const textW = ctx.measureText(text).width;
+    // Desired position: centred on module if there's room; otherwise
+    // immediately below.
+    const cx = m.px + m.pw / 2;
+    let cy: number;
+    if (m.pw > 60 && m.ph > 16) {
+      cy = m.py + m.ph / 2;
+    } else {
+      cy = m.py + m.ph + labelHeight / 2 + 2;
+    }
+    let rect = {
+      x: cx - textW / 2 - labelPad,
+      y: cy - labelHeight / 2,
+      w: textW + 2 * labelPad,
+      h: labelHeight,
+    };
+
+    // Collision avoidance — shift down in 16-px steps until clear of
+    // every previously-placed label rect. Cap at ~6 attempts to avoid
+    // runaway shifts in extremely cluttered spots.
+    const moduleAnchorY = cy;
+    let attempts = 0;
+    while (attempts < 6 && placedRects.some((p) => rectsOverlap(rect, p))) {
+      cy += labelHeight + 2;
+      rect = {
+        x: cx - textW / 2 - labelPad,
+        y: cy - labelHeight / 2,
+        w: textW + 2 * labelPad,
+        h: labelHeight,
+      };
+      attempts++;
+    }
+
+    placedRects.push(rect);
+    // Draw a leader line from module centre to label if we had to shift
+    // it more than a couple of pixels (otherwise the label looks
+    // unanchored).
+    const leader =
+      Math.abs(cy - moduleAnchorY) > labelHeight
+        ? {
+            fromX: cx,
+            fromY: m.py + m.ph,
+            toX: cx,
+            toY: cy - labelHeight / 2 - 1,
+          }
+        : undefined;
+    drawCalls.push({ x: cx, y: cy, text, leader });
+  }
+
+  // Draw leader lines first (under labels)
+  ctx.strokeStyle = 'rgba(78, 205, 196, 0.3)';
+  ctx.lineWidth = 1;
+  for (const dc of drawCalls) {
+    if (dc.leader) {
+      ctx.beginPath();
+      ctx.moveTo(dc.leader.fromX, dc.leader.fromY);
+      ctx.lineTo(dc.leader.toX, dc.leader.toY);
+      ctx.stroke();
+    }
+  }
+
+  // Draw labels with a faint background pill so they read on top of
+  // overlapping rectangles.
+  for (const dc of drawCalls) {
+    ctx.fillStyle = 'rgba(4, 8, 15, 0.78)';
+    const w = ctx.measureText(dc.text).width;
+    ctx.fillRect(dc.x - w / 2 - labelPad, dc.y - labelHeight / 2, w + 2 * labelPad, labelHeight);
     ctx.fillStyle = BLUEPRINT_LABEL;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    const label = m.name.toUpperCase();
-    if (m.pw > 60 && m.ph > 16) {
-      ctx.fillText(label, m.px + m.pw / 2, m.py + m.ph / 2);
-    } else {
-      ctx.textBaseline = 'top';
-      ctx.fillText(label, m.px + m.pw / 2, m.py + m.ph + 4);
-    }
+    ctx.fillText(dc.text, dc.x, dc.y);
   }
+}
+
+function rectsOverlap(
+  a: { x: number; y: number; w: number; h: number },
+  b: { x: number; y: number; w: number; h: number },
+): boolean {
+  return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
 }

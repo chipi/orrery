@@ -27,7 +27,7 @@
   let modules: IssModule[] = $state([]);
   let visitors: IssModule[] = $state([]);
   let loadFailed = $state(false);
-  let viewMode: '3d' | '2d-top' | '2d-side' | 'list' = $state('3d');
+  let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
   let selected: IssModule | null = $state(null);
   let panelOpen = $state(false);
   let ignoreModuleParamUntilClear = $state(false);
@@ -45,7 +45,7 @@
   let perfCheckPending = true;
 
   /** Fresh view mode for rAF perf gate (avoids a stale `viewMode` read). */
-  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | 'list' };
+  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' };
 
   /** Pick handler reads latest list (avoids stale closure). */
   const moduleListRef: { list: IssModule[] } = { list: [] };
@@ -130,6 +130,9 @@
   function urlWants2dSide(url: URL): boolean {
     return url.searchParams.get('view') === '2d-side';
   }
+  function urlWants2dFront(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-front';
+  }
 
   function cycleBlueprintView() {
     if (viewMode === '3d') {
@@ -140,6 +143,9 @@
       viewMode = '2d-side';
       syncUrl({ view: '2d-side' });
     } else if (viewMode === '2d-side') {
+      viewMode = '2d-front';
+      syncUrl({ view: '2d-front' });
+    } else if (viewMode === '2d-front') {
       viewMode = '3d';
       syncUrl({ view: '3d' });
       // Restart 3D scene
@@ -163,13 +169,14 @@
   }
 
   function syncUrl(partial: {
-    view?: '3d' | '2d-top' | '2d-side' | 'list';
+    view?: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list';
     moduleId?: string | null;
   }) {
     const params = new URLSearchParams(get(page).url.searchParams);
     if (partial.view === 'list') params.set('view', 'list');
     else if (partial.view === '2d-top') params.set('view', '2d-top');
     else if (partial.view === '2d-side') params.set('view', '2d-side');
+    else if (partial.view === '2d-front') params.set('view', '2d-front');
     else if (partial.view === '3d') params.delete('view');
     if (partial.moduleId === null) params.delete('module');
     else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
@@ -615,6 +622,8 @@
       viewMode = '2d-top';
     } else if (urlWants2dSide(u)) {
       viewMode = '2d-side';
+    } else if (urlWants2dFront(u)) {
+      viewMode = '2d-front';
     } else if (deviceLowMemory()) {
       lowMemBanner = true;
       viewMode = 'list';
@@ -641,11 +650,11 @@
       aria-hidden={viewMode !== '3d'}
     ></div>
 
-    {#if viewMode === '2d-top' || viewMode === '2d-side'}
-      <div class="layer blueprint-layer" data-testid="iss-blueprint">
+    {#if viewMode === '2d-top' || viewMode === '2d-side' || viewMode === '2d-front'}
+      <div class="layer blueprint-layer" class:drawer-open={indexOpen} data-testid="iss-blueprint">
         <StationBlueprint
           modules={blueprintModules}
-          view={viewMode === '2d-top' ? 'top' : 'side'}
+          view={viewMode === '2d-top' ? 'top' : viewMode === '2d-side' ? 'side' : 'front'}
           selectedId={selected?.id ?? null}
           onModuleClick={blueprintModuleClick}
           ariaLabel="ISS blueprint diagram"
@@ -655,7 +664,7 @@
 
     <aside
       class="layer list-layer"
-      class:drawer-mode={viewMode === '3d' || viewMode === '2d-top' || viewMode === '2d-side'}
+      class:drawer-mode={viewMode !== 'list'}
       class:fullscreen-mode={viewMode === 'list'}
       class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="iss-list-view"
@@ -738,6 +747,8 @@
           <span class="hint hint-docked">TOP · XZ PLANE · TAP MODULE</span>
         {:else if viewMode === '2d-side'}
           <span class="hint hint-docked">SIDE · XY PLANE · TAP MODULE</span>
+        {:else if viewMode === '2d-front'}
+          <span class="hint hint-docked">FRONT · YZ PLANE · TAP MODULE</span>
         {/if}
       </div>
       <!-- Always 4 buttons in a single row across all non-list modes;
@@ -750,9 +761,15 @@
             class="toggle"
             data-testid="iss-blueprint-toggle"
             onclick={cycleBlueprintView}
-            title="Cycle 3D / Top / Side"
+            title="Cycle 3D / Top / Side / Front"
           >
-            {viewMode === '3d' ? '3D' : viewMode === '2d-top' ? 'TOP' : 'SIDE'}
+            {viewMode === '3d'
+              ? '3D'
+              : viewMode === '2d-top'
+                ? 'TOP'
+                : viewMode === '2d-side'
+                  ? 'SIDE'
+                  : 'FRONT'}
           </button>
           <button
             type="button"
@@ -838,6 +855,15 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+  }
+  /* When the modules drawer is open in 2D mode, shrink the blueprint
+     so the drawer's not covering the diagram. Drawer is at left:12px
+     width 300px on desktop, so the blueprint starts at left ~324px. */
+  @media (min-width: 768px) {
+    .blueprint-layer.drawer-open {
+      left: 324px;
+      width: calc(100% - 324px);
+    }
   }
   .layer.hidden {
     display: none;

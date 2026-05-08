@@ -27,7 +27,7 @@
   let modules: TiangongModule[] = $state([]);
   let visitors: TiangongModule[] = $state([]);
   let loadFailed = $state(false);
-  let viewMode: '3d' | '2d-top' | '2d-side' | 'list' = $state('3d');
+  let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
   let selected: TiangongModule | null = $state(null);
   let panelOpen = $state(false);
   let ignoreModuleParamUntilClear = $state(false);
@@ -44,7 +44,7 @@
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
 
-  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | 'list' };
+  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' };
 
   const moduleListRef: { list: TiangongModule[] } = { list: [] };
   $effect(() => {
@@ -106,6 +106,9 @@
   }
   function urlWants2dSide(url: URL): boolean {
     return url.searchParams.get('view') === '2d-side';
+  }
+  function urlWants2dFront(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-front';
   }
 
   // Tiangong blueprint module list — hardcoded canonical positions
@@ -198,6 +201,9 @@
       viewMode = '2d-side';
       syncUrl({ view: '2d-side' });
     } else if (viewMode === '2d-side') {
+      viewMode = '2d-front';
+      syncUrl({ view: '2d-front' });
+    } else if (viewMode === '2d-front') {
       viewMode = '3d';
       syncUrl({ view: '3d' });
       void Promise.resolve().then(() => startThree());
@@ -220,7 +226,7 @@
   }
 
   function syncUrl(partial: {
-    view?: '3d' | '2d-top' | '2d-side' | 'list';
+    view?: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list';
     moduleId?: string | null;
   }) {
     const params = new URLSearchParams(get(page).url.searchParams);
@@ -695,7 +701,11 @@
     ></div>
 
     {#if viewMode === '2d-top' || viewMode === '2d-side'}
-      <div class="layer blueprint-layer" data-testid="tiangong-blueprint">
+      <div
+        class="layer blueprint-layer"
+        class:drawer-open={indexOpen}
+        data-testid="tiangong-blueprint"
+      >
         <StationBlueprint
           modules={blueprintModules}
           view={viewMode === '2d-top' ? 'top' : 'side'}
@@ -896,6 +906,15 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+  }
+  /* When the modules drawer is open in 2D mode, shrink the blueprint
+     so the drawer's not covering the diagram. Drawer is at left:12px
+     width 300px on desktop, so the blueprint starts at left ~324px. */
+  @media (min-width: 768px) {
+    .blueprint-layer.drawer-open {
+      left: 324px;
+      width: calc(100% - 324px);
+    }
   }
   .layer.hidden {
     display: none;

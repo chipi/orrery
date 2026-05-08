@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
+  import { onScienceLensChange, toggleScienceLens } from '$lib/science-lens';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import type { Snippet } from 'svelte';
@@ -51,6 +52,24 @@
     toggleHighContrast();
     // hiContrast updates via the MutationObserver in onHighContrastChange.
   }
+
+  // ─── Science Lens toggle ─────────────────────────────────────────
+  // Same attribute-on-<html> pattern as the high-contrast toggle.
+  // When ON, routes opt into a denser physics-overlay rendering via
+  // CSS selectors like [data-science-lens="on"] in tokens.css /
+  // per-route style blocks.
+  let scienceLens = $state(false);
+  let stopLensWatch: (() => void) | undefined;
+  onMount(() => {
+    stopLensWatch = onScienceLensChange((v) => {
+      scienceLens = v;
+    });
+  });
+  onDestroy(() => stopLensWatch?.());
+
+  function onToggleLens() {
+    toggleScienceLens();
+  }
 </script>
 
 <nav aria-label={m.nav_aria_label()}>
@@ -71,6 +90,17 @@
 
   <div class="right">
     <LocalePicker />
+    <button
+      type="button"
+      class="lens-toggle"
+      class:active={scienceLens}
+      aria-label="Toggle science lens"
+      aria-pressed={scienceLens}
+      title="Show the physics layer (orbital mechanics overlays)"
+      onclick={onToggleLens}
+    >
+      {scienceLens ? '⊕' : '⊙'}
+    </button>
     <button
       type="button"
       class="contrast-toggle"
@@ -193,6 +223,38 @@
     background: rgba(78, 205, 196, 0.18);
     border-color: rgba(78, 205, 196, 0.6);
     color: #4ecdc4;
+  }
+
+  /* Science Lens toggle — same shape as the contrast toggle for visual
+     consistency. Symbol is ⊙ off / ⊕ on (closed circle vs marked circle). */
+  .lens-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .lens-toggle:hover,
+  .lens-toggle:focus-visible {
+    border-color: rgba(255, 200, 80, 0.5);
+    color: rgba(255, 200, 80, 0.95);
+    outline: none;
+  }
+  .lens-toggle.active {
+    background: rgba(255, 200, 80, 0.18);
+    border-color: rgba(255, 200, 80, 0.65);
+    color: #ffc850;
   }
 
   /* Mobile: 44px touch targets per ADR-018, hide subtitle on narrow screens */

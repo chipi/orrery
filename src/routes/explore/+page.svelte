@@ -20,6 +20,7 @@
   import SunPanel from '$lib/components/SunPanel.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
+  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
@@ -1798,6 +1799,13 @@
   body={selectedSmallBody}
   open={smallBodyPanelOpen}
   onClose={() => (smallBodyPanelOpen = false)}
+/>
+
+<ScienceLensBanner
+  title="Heliocentric view · ecliptic plane"
+  body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
+  tab="orbits"
+  section="keplerian-orbit"
 />
 
 <style>

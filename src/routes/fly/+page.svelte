@@ -41,6 +41,7 @@
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
   // between control points — exactly mirrors lerpPoint(out, t)
@@ -2119,6 +2120,13 @@
     </aside>
   {/if}
 </div>
+
+<ScienceLensBanner
+  title="Mission arc · transfer ellipse"
+  body="The spacecraft is coasting on a Keplerian transfer ellipse. Vis-viva gives speed at every point. Two big burns — TLI/TMI to leave Earth, OI to arrive — shape the entire trip; coast time is free."
+  tab="transfers"
+  section="transfer-ellipse"
+/>
 
 <style>
   .fly {

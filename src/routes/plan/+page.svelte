@@ -11,6 +11,7 @@
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
 
   const DESTINATION_IDS: DestinationId[] = [
     'mercury',
@@ -877,6 +878,13 @@
     {/if}
   </aside>
 </div>
+
+<ScienceLensBanner
+  title="Porkchop plot · the calendar of cheap launches"
+  body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
+  tab="porkchop"
+  section="what-is-a-porkchop"
+/>
 
 <style>
   .plan {

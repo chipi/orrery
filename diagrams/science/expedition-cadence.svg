@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="ISS expedition timeline 2000 to 2025 showing crew-size bands and notable long-duration outliers">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .axis { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.08); stroke-width: 0.6; fill: none; }
+    .band-3 { fill: rgba(108,169,255,0.6); }
+    .band-6 { fill: rgba(78,205,196,0.65); }
+    .band-7 { fill: rgba(255,200,80,0.55); }
+    .outlier { stroke: #ff6b6b; stroke-width: 1.6; fill: none; }
+    .outlier-fill { fill: rgba(255,107,107,0.35); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .axis-label { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; }
+    .legend { font-family: 'Space Mono', monospace; font-size: 7.5px; fill: rgba(255,255,255,0.85); }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <text x="20" y="28" class="label">ISS EXPEDITION CADENCE — 2000-2025</text>
+
+  <!-- Plot area: x=50..360 (310 px = 25 yr), y=80..150 (70 px tall band area) -->
+  <line x1="50" y1="150" x2="360" y2="150" class="axis" />
+  <line x1="50" y1="80" x2="50" y2="150" class="axis" />
+
+  <!-- Year ticks: 2000, 2005, 2010, 2015, 2020, 2025 -->
+  <line x1="50" y1="150" x2="50" y2="155" class="axis" />
+  <line x1="112" y1="150" x2="112" y2="155" class="axis" />
+  <line x1="174" y1="150" x2="174" y2="155" class="axis" />
+  <line x1="236" y1="150" x2="236" y2="155" class="axis" />
+  <line x1="298" y1="150" x2="298" y2="155" class="axis" />
+  <line x1="360" y1="150" x2="360" y2="155" class="axis" />
+
+  <text x="50" y="166" text-anchor="middle" class="axis-label">2000</text>
+  <text x="112" y="166" text-anchor="middle" class="axis-label">2005</text>
+  <text x="174" y="166" text-anchor="middle" class="axis-label">2010</text>
+  <text x="236" y="166" text-anchor="middle" class="axis-label">2015</text>
+  <text x="298" y="166" text-anchor="middle" class="axis-label">2020</text>
+  <text x="360" y="166" text-anchor="middle" class="axis-label">2025</text>
+
+  <!-- Band: 3-crew (2000-2009, x = 50 to 162) -->
+  <rect x="50" y="120" width="112" height="22" class="band-3" />
+  <text x="106" y="135" text-anchor="middle" class="label" style="fill:rgba(0,0,0,0.65)">3</text>
+
+  <!-- Band: 6-crew (2009-2019, x=162 to 286) -->
+  <rect x="162" y="100" width="124" height="42" class="band-6" />
+  <text x="224" y="125" text-anchor="middle" class="label" style="fill:rgba(0,0,0,0.65)">6</text>
+
+  <!-- Band: 7-9 crew with Crew Dragon overlap (2019-2025, x=286 to 360) -->
+  <rect x="286" y="86" width="74" height="56" class="band-7" />
+  <text x="323" y="118" text-anchor="middle" class="label" style="fill:rgba(0,0,0,0.65)">7-9</text>
+
+  <!-- Outlier markers -->
+  <!-- Kelly + Kornienko 340 d, 2015-16 -->
+  <line x1="245" y1="70" x2="245" y2="102" class="outlier" />
+  <text x="245" y="64" text-anchor="middle" class="axis-label" style="fill:#ff6b6b">KELLY 340d</text>
+
+  <!-- Vande Hei 355 d, 2021-22 -->
+  <line x1="319" y1="50" x2="319" y2="86" class="outlier" />
+  <text x="319" y="44" text-anchor="middle" class="axis-label" style="fill:#ff6b6b">VANDE HEI 355d</text>
+
+  <!-- Rubio 371 d, 2022-23 (overlapping with Vande Hei time-wise; offset right) -->
+  <line x1="335" y1="40" x2="335" y2="86" class="outlier" />
+  <text x="335" y="34" text-anchor="middle" class="axis-label" style="fill:#ff6b6b">RUBIO 371d</text>
+
+  <!-- Legend -->
+  <g transform="translate(20, 195)">
+    <rect width="10" height="8" class="band-3" />
+    <text x="14" y="7" class="legend">3-crew</text>
+    <rect x="60" width="10" height="8" class="band-6" />
+    <text x="74" y="7" class="legend">6-crew</text>
+    <rect x="120" width="10" height="8" class="band-7" />
+    <text x="134" y="7" class="legend">7-9-crew (Crew Dragon era)</text>
+    <line x1="270" y1="4" x2="280" y2="4" class="outlier" />
+    <text x="284" y="7" class="legend">long-duration outlier</text>
+  </g>
+</svg>

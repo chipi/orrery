@@ -260,6 +260,13 @@
   },
   {
     "tab": "space-stations",
+    "section": "expedition-cadence",
+    "title": "Expedition Cadence",
+    "intro": "Stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology.",
+    "haystack": "expedition cadence stations run on rolling 6-month crew rotations — a balance of suit consumables, vehicle shelf-life, training pipelines, and human physiology. constraints driving the ~6-month cadence: docked-spacecraft certification (soyuz: 210 days; crew dragon: 210 days; shenzhou: 180-210 days), eva suit ground refurbishment cycles, food-pantry capacity per resupply, and the nasa human research program's preference for 6-month bone-loss data brackets."
+  },
+  {
+    "tab": "space-stations",
     "section": "node-module",
     "title": "Node Module",
     "intro": "A pressurized hub with multiple docking ports — the structural connector that lets a station branch.",

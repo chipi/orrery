@@ -1,0 +1,29 @@
+{
+  "id": "expedition-cadence",
+  "tab": "space-stations",
+  "order": 4,
+  "diagram": "expedition-cadence.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "Expedition crews on ISS rotate at roughly 6-month intervals"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Tiangong follows the same ~6-month rotation rhythm"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · List of ISS expeditions",
+      "u": "https://en.wikipedia.org/wiki/List_of_International_Space_Station_expeditions",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · ISS Expeditions",
+      "u": "https://www.nasa.gov/mission/expeditions/",
+      "t": "core"
+    }
+  ]
+}

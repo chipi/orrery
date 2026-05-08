@@ -7,14 +7,11 @@
     "Beyond bone and muscle, the harder problems are radiation (Galactic Cosmic Rays accumulate at ~0.5 mSv/day in LEO — about 100× sea level), eyesight (Spaceflight-Associated Neuro-ocular Syndrome remains poorly understood), and behavioural health (small spaces, isolation, no privacy)."
   ],
   "body_paragraphs": [
-    "Physiological changes during long-duration spaceflight, by domain:",
-    "BONE — astronauts lose 1-2% bone mineral density per month in weight-bearing bones (hips, lumbar spine) without countermeasures. Reduced to ~0.5% with the Advanced Resistive Exercise Device (ARED) on ISS plus bisphosphonate medication.",
-    "MUSCLE — Type I (slow-twitch) muscle fibres atrophy fastest; daily 2-hour exercise (treadmill + cycle ergometer + ARED) preserves about 90% of pre-flight mass.",
-    "CARDIOVASCULAR — heart shrinks by ~9.4% in volume during 6-month missions; orthostatic intolerance persists for weeks after return.",
-    "FLUID SHIFT — ~2 L of fluid migrates from legs to head in microgravity. Causes facial puffiness, congestion, raised intracranial pressure, and is implicated in SANS.",
-    "VESTIBULAR / SENSORIMOTOR — re-adaptation to gravity takes hours to days post-landing; fine motor control degraded for ~2 weeks.",
-    "RADIATION — LEO crew receive ~150-180 mSv per 6-month mission. Career limits are set per agency (NASA's effective dose-limit framework caps career risk at 3% increased cancer mortality).",
-    "Records: Polyakov 437.7 d (Mir, 1994-95); Rubio 371 d (ISS, 2022-23); Mark Vande Hei 355 d (ISS, 2021-22); Kononenko cumulative >1000 d across 5 missions."
+    "BONE + MUSCLE — astronauts lose 1-2% bone mineral density per month in weight-bearing bones without countermeasures (~0.5% with the Advanced Resistive Exercise Device + bisphosphonate). Type I muscle fibres atrophy fastest; daily 2-hour exercise on treadmill + cycle ergometer + ARED preserves about 90% of pre-flight muscle mass.",
+    "CARDIOVASCULAR + FLUID SHIFT — heart shrinks by ~9.4% in volume during 6-month missions; orthostatic intolerance persists for weeks after return. About 2 L of fluid migrates from legs to head in microgravity, causing facial puffiness, raised intracranial pressure, and is implicated in Spaceflight-Associated Neuro-ocular Syndrome (SANS).",
+    "VESTIBULAR / SENSORIMOTOR — re-adaptation to gravity takes hours to days post-landing; fine motor control is measurably degraded for ~2 weeks.",
+    "RADIATION — LEO crew receive ~150-180 mSv per 6-month mission. Career limits are set per agency; NASA's effective dose-limit framework caps career risk at 3% increased cancer mortality, which translates to roughly 3-5 ISS-length missions for most astronauts.",
+    "Records: Polyakov 437.7 d (Mir, 1994-95); Rubio 371 d (ISS, 2022-23); Vande Hei 355 d (ISS, 2021-22); Kononenko cumulative >1000 d across 5 missions."
   ],
   "diagram_caption": "Physiological-loss curves over a 12-month mission. Bone (red, sharpest fall), muscle (blue), cardiovascular (gold). Daily exercise countermeasures (dashed) flatten each curve."
 }

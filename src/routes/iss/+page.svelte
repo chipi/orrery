@@ -119,27 +119,12 @@
     const visitorNameById = new Map(visitors.map((v) => [v.id, v.name]));
     const out: BlueprintModule[] = [];
 
-    // Pressurised modules — straight from MODULE_BOXES.
+    // Pressurised modules — straight from MODULE_BOXES. Leonardo's
+    // forward-port position is now baked into MODULE_BOXES so no 2D
+    // override is needed.
     for (const [id, x, y, z, len, radius, axis] of MODULE_BOXES) {
       if (id === 'canadarm2') continue;
       if (id === 'pirs') continue; // retired; same port as Nauka
-      // Leonardo PMM is on Tranquility's FORWARD port (real ISS post-2015
-      // relocation): nudge it to the +X side of Tranquility instead of
-      // the -X side it had before this fix.
-      if (id === 'leonardo') {
-        out.push({
-          id,
-          name: nameById.get(id) ?? id,
-          x: -0.32,
-          y: 0,
-          z: -0.485,
-          len,
-          radius,
-          axis: 'x',
-          kind: 'module',
-        });
-        continue;
-      }
       out.push({
         id,
         name: nameById.get(id) ?? id,

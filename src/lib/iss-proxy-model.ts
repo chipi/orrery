@@ -81,7 +81,11 @@ export const MODULE_BOXES: [IssModuleMeshId, number, number, number, number, num
     // Branches off Tranquility (centred at -0.59, 0, -0.485)
     ['cupola', -0.59, -0.236, -0.485, 0.12, 0.116, 'y'],
     ['beam', -0.59, 0, -0.945, 0.31, 0.126, 'z'],
-    ['leonardo', -0.85, -0.236, -0.485, 0.5, 0.18, 'x'],
+    // Leonardo PMM relocated to Tranquility forward port (May 2015) —
+    // attached to Tranquility's +X-facing radial port, extends out
+    // along +X. Position: Tranquility centre x=-0.59, +tranqR(0.176),
+    // +gap(0.04), +leoHalf(0.25) = -0.124.
+    ['leonardo', -0.124, 0, -0.485, 0.5, 0.18, 'x'],
 
     // Branches off Harmony
     ['columbus', 0.66, 0, 0.435, 0.54, 0.176, 'z'],
@@ -117,7 +121,7 @@ const MLI_WRAPS: {
   { host: 'zarya', offset: [0.55, 0, 0], axis: 'x', radiusFactor: 1.18, length: 0.06 },
   { host: 'unity', offset: [-0.25, 0, 0], axis: 'x', radiusFactor: 1.18, length: 0.06 },
   { host: 'harmony', offset: [0.32, 0, 0], axis: 'x', radiusFactor: 1.18, length: 0.06 },
-  { host: 'pirs', offset: [0, -0.18, 0], axis: 'y', radiusFactor: 1.22, length: 0.05 },
+  // pirs MLI removed — Pirs is no longer rendered (retired/deorbited).
   { host: 'prichal', offset: [0, -0.22, 0], axis: 'y', radiusFactor: 1.2, length: 0.05 },
 ];
 
@@ -579,6 +583,13 @@ export function buildIssProxyStation(): THREE.Group {
   const modulePositions = new Map<IssModuleMeshId, [number, number, number]>();
 
   for (const [id, x, y, z, len, radius, axis] of MODULE_BOXES) {
+    // Skip Pirs in the 3D render — Pirs was deorbited in July 2021 and
+    // Nauka took over the same Zvezda nadir port. Both rendering would
+    // imply a 4-deep nadir stack that never existed. Pirs stays in
+    // iss-modules.json with status: "RETIRED" for historical lookup
+    // (deep-link `?module=pirs` still opens its panel).
+    if (id === 'pirs') continue;
+
     moduleRadius.set(id, radius);
     modulePositions.set(id, [x, y, z]);
 
@@ -912,7 +923,7 @@ export function buildIssProxyStation(): THREE.Group {
     roughness: 0.45,
   });
   const PROBES: { host: IssModuleMeshId; offset: [number, number, number] }[] = [
-    { host: 'pirs', offset: [0, -0.14, 0] },
+    // pirs probe removed — Pirs is no longer rendered (retired/deorbited).
     { host: 'rassvet', offset: [0, -0.16, 0] },
     { host: 'prichal', offset: [0, -0.16, 0] },
     { host: 'poisk', offset: [0, 0.14, 0] },
@@ -1082,7 +1093,8 @@ export function buildIssProxyStation(): THREE.Group {
   // the visible probe; here we add a small structural ring at the
   // base end so the module reads as a docking compartment, not a plain
   // cylinder.
-  for (const id of ['poisk', 'pirs'] as const) {
+  // pirs base ring removed — Pirs is no longer rendered (retired/deorbited).
+  for (const id of ['poisk'] as const) {
     const pos = modulePositions.get(id);
     const r = moduleRadius.get(id);
     if (!pos || !r) continue;

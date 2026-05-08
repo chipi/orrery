@@ -1,1 +1,0 @@
-import{d as o,I as f,j as i,J as p,h as c,k as d,K as h}from"./runtime.DTS2qV0X.js";function l(e,n,...t){var s=e,r=h,a;o(()=>{r!==(r=n())&&(a&&(p(a),a=null),a=i(()=>r(s,...t)))},f),c&&(s=d)}export{l as s};

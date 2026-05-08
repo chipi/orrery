@@ -1,0 +1,33 @@
+{
+  "id": "long-duration",
+  "tab": "scales-time",
+  "order": 7,
+  "diagram": "long-duration.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "Frank Rubio's 371-day stay on the ISS is the current US single-mission record"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Tiangong crews currently rotate at ~6-month intervals"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Crewed mission durations cluster at programme-defined limits"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Spaceflight records",
+      "u": "https://en.wikipedia.org/wiki/List_of_spaceflight_records",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Human Research Program",
+      "u": "https://www.nasa.gov/hrp/",
+      "t": "core"
+    }
+  ]
+}

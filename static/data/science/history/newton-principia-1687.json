@@ -2,6 +2,7 @@
   "id": "newton-principia-1687",
   "tab": "history",
   "order": 2,
+  "formula_latex": "F = G \\frac{m_1 m_2}{r^2}",
   "diagram": "history-newton-principia.svg",
   "diagram_quality": "schematic",
   "see_in_app": [

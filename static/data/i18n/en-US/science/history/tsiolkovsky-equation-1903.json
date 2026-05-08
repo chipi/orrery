@@ -12,6 +12,5 @@
     "Why log scale matters: doubling ∆v needs the mass ratio squared. Tripling needs cubed. To get from 0 to escape velocity (~11.2 km/s) with a typical chemical exhaust velocity of 4.4 km/s, mass ratio = e^(11.2/4.4) ≈ 13. So a 1-tonne payload needs 12 tonnes of propellant, plus the structure to hold it.",
     "Tsiolkovsky never tested anything. He wasn't an engineer — he was a theoretician with chalk. The Soviet space programme posthumously canonised him; his Kaluga house is now a museum and his name is on the far-side crater the lunar Soviets aimed at."
   ],
-  "formula_latex": "\\Delta v = v_e \\ln \\frac{m_0}{m_1}",
   "formula_caption": "The rocket equation. m₀ = wet mass (full); m₁ = dry mass (empty); vₑ = exhaust velocity."
 }

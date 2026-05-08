@@ -12,6 +12,5 @@
     "What Newton DIDN'T explain: WHY gravity follows 1/r². His own famous comment: \"Hypotheses non fingo\" — \"I feign no hypotheses.\" The mechanism would wait for Einstein in 1915.",
     "Modern numerical orbit propagators run essentially Newton's equations with floating-point arithmetic. /fly's heliocentric arc, /plan's porkchop, every Keplerian solution — Newtonian gravity all the way down."
   ],
-  "formula_latex": "F = G \\frac{m_1 m_2}{r^2}",
   "formula_caption": "Newton's law of universal gravitation. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
 }

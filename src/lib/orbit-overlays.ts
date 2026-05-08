@@ -148,3 +148,77 @@ export const BODY_MASS_KG: Record<'sun' | 'earth' | 'mars' | 'moon', number> = {
   mars: 6.39e23,
   moon: 7.342e22,
 };
+
+/**
+ * Build a dashed line for the engine-off coast preview. Caller updates
+ * the geometry's positions per frame via setCoastGeometry().
+ *
+ * Returns a THREE.Line ready to add to a scene; uses LineDashedMaterial
+ * so dashes render after computeLineDistances() is called on the new
+ * geometry. Caller must invoke `coastLine.computeLineDistances()` after
+ * each setCoastGeometry() to refresh the dash pattern.
+ */
+export function buildCoastLine(color = 0xffc850): THREE.Line {
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.BufferAttribute(new Float32Array(0), 3));
+  const mat = new THREE.LineDashedMaterial({
+    color,
+    dashSize: 1.5,
+    gapSize: 1.0,
+    transparent: true,
+    opacity: 0.7,
+    linewidth: 1,
+  });
+  const line = new THREE.Line(geom, mat);
+  line.name = 'engine_off_coast';
+  line.userData.layerKey = 'coast';
+  line.visible = false;
+  return line;
+}
+
+/**
+ * Numerically integrate a Sun-only Keplerian coast from (r, v) for N
+ * days, sampled at `steps` points. r in AU, v in AU/day. Returns
+ * positions as a flat Float32Array of (x, y, z) triplets (in AU).
+ *
+ * Caller multiplies through their scene scale and feeds the result to
+ * the coastLine geometry.
+ *
+ * Symplectic semi-implicit Euler — fine for visualisation accuracy
+ * over a few hundred days; not for production trajectory work.
+ */
+export function integrateCoast(
+  r0: { x: number; y: number; z: number },
+  v0: { x: number; y: number; z: number },
+  days: number,
+  steps: number,
+): Float32Array {
+  // μ_sun in AU³/day²: μ in AU³/yr² is 4π²; per day = 4π²/365.25².
+  const MU_PER_DAY2 = (4 * Math.PI * Math.PI) / (365.25 * 365.25);
+  const dt = days / steps;
+  const out = new Float32Array((steps + 1) * 3);
+  let rx = r0.x;
+  let ry = r0.y;
+  let rz = r0.z;
+  let vx = v0.x;
+  let vy = v0.y;
+  let vz = v0.z;
+  out[0] = rx;
+  out[1] = ry;
+  out[2] = rz;
+  for (let i = 1; i <= steps; i++) {
+    const r2 = rx * rx + ry * ry + rz * rz;
+    const r = Math.sqrt(r2);
+    const aFactor = -MU_PER_DAY2 / (r2 * r);
+    vx += aFactor * rx * dt;
+    vy += aFactor * ry * dt;
+    vz += aFactor * rz * dt;
+    rx += vx * dt;
+    ry += vy * dt;
+    rz += vz * dt;
+    out[i * 3] = rx;
+    out[i * 3 + 1] = ry;
+    out[i * 3 + 2] = rz;
+  }
+  return out;
+}

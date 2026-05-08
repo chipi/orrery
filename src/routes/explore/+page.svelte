@@ -21,6 +21,7 @@
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // ──────────────────────────────────────────────────────────────────
@@ -1808,6 +1809,13 @@
   tab="orbits"
   section="keplerian-orbit"
 />
+
+<!-- Science Layers panel — Phase G. /explore exposes the meaningful
+     subset (no coast / conics — those are /fly-only). 'hover' is in
+     the list as a placeholder for future expanded hover cards; today
+     the existing tooltip behaviour is unchanged whether the layer is
+     on or off. -->
+<ScienceLayersPanel available={['soi', 'hover', 'gravity', 'velocity', 'centripetal', 'apsides']} />
 
 <style>
   .explore {

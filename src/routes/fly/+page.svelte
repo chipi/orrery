@@ -51,6 +51,8 @@
     gravityAccel,
     logScaleLength,
     BODY_MASS_KG,
+    buildCoastLine,
+    integrateCoast,
   } from '$lib/orbit-overlays';
   import { onLayerChange } from '$lib/science-layers';
 
@@ -1116,6 +1118,17 @@
       gravArrowSun.visible = on;
     });
 
+    // ─── Science Layers G.5 — Engine-off coast preview ───────────────
+    // Dashed line projecting the spacecraft's heliocentric coast
+    // forward 200 days from the current sim moment. Recomputed each
+    // frame from finite-difference velocity, integrated under Sun
+    // gravity only.
+    const coastLine = buildCoastLine(0xffc850);
+    scene.add(coastLine);
+    const stopCoastLayer = onLayerChange('coast', (on) => {
+      coastLine.visible = on;
+    });
+
     // Moon mesh for Moon-mission mode (Apollo, Luna, Chang'e, etc.).
     // Hidden by default; shown only when isMoonMission is true.
     const moonTexLoader = new THREE.TextureLoader();
@@ -1765,6 +1778,30 @@
       if (earthSoI.visible) earthSoI.position.copy(earthWorld);
       if (marsSoI.visible) marsSoI.position.copy(marsWorld);
 
+      // Coast preview: integrate forward from current (r, v). Velocity
+      // estimated by finite-difference between two adjacent simDays so
+      // the result reflects the spacecraft's actual current motion on
+      // the planned arc (which is itself a coast outside burn windows).
+      if (coastLine.visible) {
+        const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
+        const r0 = { x: sc.pos.x, y: 0, z: sc.pos.z };
+        const v0 = {
+          x: (sc1.x - sc.pos.x) / 0.5,
+          y: 0,
+          z: (sc1.z - sc.pos.z) / 0.5,
+        };
+        const auPositions = integrateCoast(r0, v0, 200, 80);
+        const scenePositions = new Float32Array(auPositions.length);
+        for (let i = 0; i < auPositions.length; i++) {
+          scenePositions[i] = auPositions[i] * SCALE_3D;
+        }
+        const geom = coastLine.geometry as THREE.BufferGeometry;
+        geom.setAttribute('position', new THREE.BufferAttribute(scenePositions, 3));
+        geom.attributes.position.needsUpdate = true;
+        geom.computeBoundingSphere();
+        coastLine.computeLineDistances();
+      }
+
       if (gravArrowEarth.visible || gravArrowSun.visible) {
         // Distances in km between spacecraft and source bodies. The
         // /fly scene unit is SCALE_3D × AU, so convert: scene → AU →
@@ -1857,6 +1894,7 @@
       cancelAnimationFrame(rafId);
       stopSoiLayer?.();
       stopGravityLayer?.();
+      stopCoastLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);

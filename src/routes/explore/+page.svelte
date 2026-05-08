@@ -22,7 +22,12 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
-  import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
+  import {
+    gravityAccel,
+    logScaleLength,
+    BODY_MASS_KG,
+    buildArrowTipLabel,
+  } from '$lib/orbit-overlays';
   import { onLayerChange } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages';
@@ -626,6 +631,13 @@
     // per frame in the planet animation block. Hidden by default; the
     // layer subscription flips visibility on opt-in.
     const overlayPerPlanet = planetObjs.map(({ group, planet }) => {
+      // Pre-compute the constant per-planet values used by both the
+      // arrow lengths and the new tip labels. Circular orbit means
+      // gravity == centripetal magnitude (F = ma).
+      const aAU = Math.pow(planet.period, 2 / 3);
+      const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
+      const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
+
       // Gravity arrow — blue, points toward Sun (origin in world).
       const gravity = new THREE.ArrowHelper(
         new THREE.Vector3(-1, 0, 0),
@@ -669,17 +681,53 @@
       centripetal.visible = false;
       group.add(centripetal);
 
-      return { gravity, velocity, centripetal, planet };
+      // Arrow-tip value labels. Static text per planet (circular orbit
+      // → constant values) so we build once. Position updates per frame
+      // from the arrow's current length. Format gravity in mm/s² for
+      // outer planets so Neptune doesn't read "0.000 m/s²".
+      const formatG = (g: number) =>
+        g >= 1 ? `${g.toFixed(2)} m/s²` : `${(g * 1000).toFixed(g >= 0.001 ? 1 : 2)} mm/s²`;
+      const gravityLabel = buildArrowTipLabel(formatG(aG), '#aac6ff', 14);
+      const velocityLabel = buildArrowTipLabel(`${v.toFixed(1)} km/s`, '#92e8df', 14);
+      const centripetalLabel = buildArrowTipLabel(formatG(aG), '#ffb1b1', 14);
+      gravityLabel.userData.layerKey = 'gravity';
+      velocityLabel.userData.layerKey = 'velocity';
+      centripetalLabel.userData.layerKey = 'centripetal';
+      gravityLabel.visible = false;
+      velocityLabel.visible = false;
+      centripetalLabel.visible = false;
+      group.add(gravityLabel);
+      group.add(velocityLabel);
+      group.add(centripetalLabel);
+
+      return {
+        gravity,
+        velocity,
+        centripetal,
+        gravityLabel,
+        velocityLabel,
+        centripetalLabel,
+        planet,
+      };
     });
 
     const stopExploreGravityLayer = onLayerChange('gravity', (on) => {
-      overlayPerPlanet.forEach((o) => (o.gravity.visible = on));
+      overlayPerPlanet.forEach((o) => {
+        o.gravity.visible = on;
+        o.gravityLabel.visible = on;
+      });
     });
     const stopExploreVelocityLayer = onLayerChange('velocity', (on) => {
-      overlayPerPlanet.forEach((o) => (o.velocity.visible = on));
+      overlayPerPlanet.forEach((o) => {
+        o.velocity.visible = on;
+        o.velocityLabel.visible = on;
+      });
     });
     const stopExploreCentripetalLayer = onLayerChange('centripetal', (on) => {
-      overlayPerPlanet.forEach((o) => (o.centripetal.visible = on));
+      overlayPerPlanet.forEach((o) => {
+        o.centripetal.visible = on;
+        o.centripetalLabel.visible = on;
+      });
     });
 
     // ── Small bodies (3D) ─────────────────────────────────────────
@@ -1685,27 +1733,29 @@
                 // Acceleration in m/s² at this orbit radius (use a as proxy
                 // for r — circular). Length log-scaled to fit the 1/r²
                 // dynamic range across Mercury → Pluto.
-                // Semi-major axis in AU via Kepler's 3rd law (a³ = T²
-                // in heliocentric AU/year units). PlanetVisual stores
-                // period in years but not `a` directly.
                 const aAU = Math.pow(planet.period, 2 / 3);
                 const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
                 const len = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
                 ov.gravity.setDirection(worldToSun);
                 ov.gravity.setLength(len, len * 0.22, len * 0.13);
+                // Position the value label slightly past the arrow tip
+                // along the same direction. +20% beyond tip avoids the
+                // arrow head occluding the text.
+                ov.gravityLabel.position.copy(worldToSun).multiplyScalar(len * 1.2);
               }
               if (ov.centripetal.visible) {
                 // Same direction (inward) as gravity — for a circular
                 // orbit, gravity provides exactly the centripetal
                 // acceleration (F = ma). Y-offset prevents overlap.
-                // Semi-major axis in AU via Kepler's 3rd law (a³ = T²
-                // in heliocentric AU/year units). PlanetVisual stores
-                // period in years but not `a` directly.
                 const aAU = Math.pow(planet.period, 2 / 3);
                 const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
                 const len = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
                 ov.centripetal.setDirection(worldToSun);
                 ov.centripetal.setLength(len, len * 0.22, len * 0.13);
+                ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(len * 1.2);
+                // Lift label by the same Y offset as the arrow base so
+                // it tracks the arrow's offset position.
+                ov.centripetalLabel.position.y += planet.size3 * 1.6;
               }
               if (ov.velocity.visible) {
                 // Tangent to orbit, in the planet's orbital plane. Cross
@@ -1722,6 +1772,7 @@
                 const vLen = Math.min(20, Math.max(4, v * 0.3));
                 ov.velocity.setDirection(tangent);
                 ov.velocity.setLength(vLen, vLen * 0.22, vLen * 0.13);
+                ov.velocityLabel.position.copy(tangent).multiplyScalar(vLen * 1.2);
               }
             }
           }

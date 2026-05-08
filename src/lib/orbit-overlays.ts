@@ -141,6 +141,46 @@ export function gravityAccel(massKg: number, distanceKm: number): number {
   return (G * massKg) / (distanceM * distanceM);
 }
 
+/**
+ * Build a small canvas-textured sprite for an arrow-tip value label.
+ * Returns a THREE.Sprite ready to add to a scene; caller positions it
+ * at the arrow tip each frame. Text is white with a faint dark outline
+ * so it reads against any backdrop.
+ *
+ * Sprite scale is tuned for /explore's compressed log scene (where
+ * planets render at orbitR 52-448 px). Tweak `worldScale` per route.
+ */
+export function buildArrowTipLabel(text: string, color = '#ffffff', worldScale = 6): THREE.Sprite {
+  const W = 256;
+  const H = 64;
+  const canvas = document.createElement('canvas');
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.font = '700 28px "Space Mono", monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'rgba(8, 10, 22, 0.95)';
+    ctx.strokeText(text, W / 2, H / 2);
+    ctx.fillStyle = color;
+    ctx.fillText(text, W / 2, H / 2);
+  }
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.minFilter = THREE.LinearFilter;
+  tex.magFilter = THREE.LinearFilter;
+  const sprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: true }),
+  );
+  // Scale so the canvas reads at ~14px tall in scene units. The scene
+  // is rendered at distance ~camR; canvas is W:H = 4:1 so we keep
+  // aspect.
+  sprite.scale.set(worldScale, worldScale * (H / W), 1);
+  sprite.userData.tipLabel = true;
+  return sprite;
+}
+
 /** Body masses (kg) — used by gravityAccel for the on-spacecraft layer. */
 export const BODY_MASS_KG: Record<'sun' | 'earth' | 'mars' | 'moon', number> = {
   sun: 1.989e30,

@@ -9,9 +9,10 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import WhyPopover from './WhyPopover.svelte';
+  import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
 
   type StationLinks = NonNullable<StationModule['links']>;
-  type Tab = 'overview' | 'gallery' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'anatomy' | 'learn';
 
   type Props = {
     module: StationModule | null;
@@ -38,6 +39,9 @@
       });
     }
   });
+
+  let diagramPath = $derived(mod ? spacecraftDiagramPath(mod.id) : null);
+  let hasDiagram = $derived(diagramPath !== null);
 
   let linksByTier = $derived.by(() => {
     if (!mod?.links)
@@ -103,6 +107,17 @@
           role="tab"
           aria-selected={tab === 'gallery'}
           aria-controls="station-tabpanel">{m.panel_tab_gallery()}</button
+        >
+      {/if}
+      {#if hasDiagram}
+        <button
+          type="button"
+          id="station-tab-anatomy"
+          class:active={tab === 'anatomy'}
+          onclick={() => (tab = 'anatomy')}
+          role="tab"
+          aria-selected={tab === 'anatomy'}
+          aria-controls="station-tabpanel">ANATOMY</button
         >
       {/if}
       {#if hasLinks}
@@ -194,6 +209,21 @@
             {/each}
           </div>
           <p class="gallery-credit">{panelGalleryCredit(mod.agency)}</p>
+        {/if}
+      {:else if tab === 'anatomy'}
+        {#if diagramPath}
+          <div class="anatomy-frame">
+            <img
+              src={diagramPath}
+              alt="{mod.name} anatomy diagram"
+              class="anatomy-svg"
+              loading="lazy"
+            />
+          </div>
+          <p class="anatomy-caption">
+            Hand-drawn schematic showing the spacecraft's named subsystems. Not to scale —
+            proportions adjusted for label legibility.
+          </p>
         {/if}
       {:else if tab === 'learn'}
         {#if !hasLinks}
@@ -375,5 +405,25 @@
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
     margin: 0;
+  }
+  .anatomy-frame {
+    background: rgba(4, 8, 15, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.18);
+    border-radius: 4px;
+    padding: 8px;
+    margin: 0 0 10px;
+  }
+  .anatomy-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .anatomy-caption {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+    margin: 0 0 12px;
   }
 </style>

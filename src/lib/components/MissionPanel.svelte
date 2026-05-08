@@ -12,8 +12,10 @@
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import type { ScienceTabId } from '$types/science';
 
-  type Tab = 'overview' | 'gallery' | 'flight' | 'learn';
+  type Tab = 'overview' | 'gallery' | 'flight' | 'science' | 'learn';
 
   type Props = {
     mission: Mission | null;
@@ -72,6 +74,30 @@
   let hasFlightData = $derived(
     mission != null && (mission.flight != null || mission.flight_data_quality != null),
   );
+
+  // Curated /science cross-section list for the SCIENCE tab. Driven by what
+  // flight fields the mission actually has — only show sections relevant to
+  // this mission's actual phases. ∆v + Hohmann + mission-types always show
+  // (every mission touches them); the others gate on flight data presence.
+  let missionScienceSections = $derived.by(() => {
+    const list: { tab: ScienceTabId; section: string }[] = [
+      { tab: 'propulsion', section: 'dv-budget' },
+      { tab: 'transfers', section: 'hohmann-transfer' },
+    ];
+    const f = mission?.flight;
+    if (f?.launch?.c3_km2_s2 != null) list.push({ tab: 'propulsion', section: 'c3' });
+    if (f?.launch != null) list.push({ tab: 'mission-phases', section: 'trans-x-injection' });
+    if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
+      list.push({ tab: 'mission-phases', section: 'tcm' });
+    if (f?.arrival?.v_infinity_km_s != null)
+      list.push({ tab: 'propulsion', section: 'v-infinity' });
+    if (f?.arrival?.orbit_insertion_dv_km_s != null)
+      list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
+    if (f?.arrival?.entry_velocity_km_s != null)
+      list.push({ tab: 'mission-phases', section: 'edl' });
+    list.push({ tab: 'mission-phases', section: 'mission-types' });
+    return list;
+  });
 
   // Map of `flight_data_quality !== "measured"` → caveat banner text.
   // null when measured / missing — banner hides entirely.
@@ -204,6 +230,15 @@
       {/if}
       <button
         type="button"
+        id="mp-tab-science"
+        class:active={tab === 'science'}
+        onclick={() => (tab = 'science')}
+        role="tab"
+        aria-selected={tab === 'science'}
+        aria-controls="mp-tabpanel">SCIENCE</button
+      >
+      <button
+        type="button"
         id="mp-tab-learn"
         class:active={tab === 'learn'}
         onclick={() => (tab = 'learn')}
@@ -223,7 +258,9 @@
           ? 'mp-tab-flight'
           : tab === 'gallery'
             ? 'mp-tab-gallery'
-            : 'mp-tab-learn'}
+            : tab === 'science'
+              ? 'mp-tab-science'
+              : 'mp-tab-learn'}
     >
       {#if tab === 'overview'}
         <div class="grid">
@@ -488,6 +525,16 @@
             </section>
           {/if}
         {/if}
+      {:else if tab === 'science'}
+        <div class="science-tab">
+          <p class="science-blurb">
+            The orbital mechanics behind {mission.name ?? mission.id} — every formula and named phase
+            the FLIGHT tab references, with the option to read deeper.
+          </p>
+          {#each missionScienceSections as { tab: t, section } (t + section)}
+            <ScienceCard tab={t} {section} />
+          {/each}
+        </div>
       {:else if tab === 'gallery'}
         {#if gallery.length === 0}
           <p class="empty-tab">{m.mp_gallery_empty()}</p>
@@ -821,6 +868,17 @@
     padding: 8px 10px;
     margin-bottom: 12px;
     line-height: 1.5;
+  }
+  .science-tab {
+    padding-top: 4px;
+  }
+  .science-blurb {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 14px;
   }
   .flight-section {
     margin-bottom: 14px;

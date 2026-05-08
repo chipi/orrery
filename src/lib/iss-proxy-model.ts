@@ -946,30 +946,39 @@ export function buildIssProxyStation(): THREE.Group {
     root.add(cone);
   }
 
-  // ── Zvezda's own solar arrays (round 2 feedback) ───────────────────
-  // Real Zvezda has 2 fold-out solar arrays of its own, deployed at the
-  // aft end perpendicular to the module axis. They've been retracted
-  // since the truss arrays came online but remain visible. Render as
-  // 2 small blue rectangular panels extending laterally from Zvezda's
-  // aft section, partially toward the HRS direction.
+  // ── Zvezda's own solar arrays ──────────────────────────────────────
+  // 2 large fold-out arrays extending laterally (along ±Z) from Zvezda's
+  // aft section. The outboard tips reach the HRS radiator Z (±1.0)
+  // matching real ISS where these arrays are visually as wide as the
+  // HRS panels deployed nadir from the truss.
+  //
+  // Inner end touches Zvezda hull (z = ±zvezdaR + 0.04 = ±0.21);
+  // outer end at z = ±1.0. Total array length = 0.79 along Z.
   const zvezdaArrayPos = modulePositions.get('zvezda');
   if (zvezdaArrayPos) {
-    const [zax, zay, zaz] = zvezdaArrayPos;
+    const [zax, zay] = zvezdaArrayPos;
     const zaArrayMat = new THREE.MeshStandardMaterial({
       color: SOLAR_BLUE,
       metalness: 0.3,
       roughness: 0.55,
     });
     const zaArrayTex = makeMainArrayTexture();
-    zaArrayTex.repeat.set(3, 1);
+    zaArrayTex.repeat.set(3, 2);
+    const arrayLen = 0.79;
+    const arrayWidth = 0.34; // ~4 m, parallel to Zvezda's X axis
+    const zvezdaR = 0.171;
     for (const zSign of [-1, 1] as const) {
-      const arr = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.02, 0.18), zaArrayMat.clone());
+      const arr = new THREE.Mesh(
+        new THREE.BoxGeometry(arrayWidth, 0.02, arrayLen),
+        zaArrayMat.clone(),
+      );
       if (arr.material instanceof THREE.MeshStandardMaterial) {
         arr.material.map = zaArrayTex;
         arr.material.needsUpdate = true;
       }
-      // Mounted at Zvezda's aft section, deployed along ±Z direction
-      arr.position.set(zax - 0.4, zay, zaz + zSign * 0.5);
+      // Mounted on Zvezda's aft section (-X end). Centred laterally
+      // between Zvezda hull and the HRS Z position.
+      arr.position.set(zax - 0.35, zay, zSign * (zvezdaR + 0.04 + arrayLen / 2));
       arr.userData.moduleId = 'zvezda';
       arr.userData.stationPickable = true;
       arr.name = 'zvezda_solar_array';

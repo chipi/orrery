@@ -18,6 +18,8 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -210,6 +212,39 @@
       new THREE.MeshPhongMaterial({ map: moonMap, color: 0xffffff, shininess: 4 }),
     );
     scene.add(moonMesh);
+
+    // J.4 — Tidal-lock indicator. The Moon is in 1:1 synchronous
+    // rotation with Earth, so one hemisphere (the "near side") always
+    // faces Earth. We mark that hemisphere with a faint teal tint that
+    // PARENTS to moonMesh — so when the user rotates the Moon (autoSpin
+    // or drag), the marker rotates with the body, demonstrating that
+    // a fixed lunar hemisphere is what stays Earth-facing in real life
+    // (the Moon ISN'T idle in this view — autoSpin is purely visual).
+    // Convention: lunar longitude 0 is +X in scene; near-side spans
+    // -90° to +90° (i.e. +X half-sphere).
+    const nearSideGeo = new THREE.SphereGeometry(
+      moonRadius * 1.005,
+      48,
+      32,
+      -Math.PI / 2,
+      Math.PI, // half-sphere: π radians of azimuth = +X hemisphere
+    );
+    const nearSideOverlay = new THREE.Mesh(
+      nearSideGeo,
+      new THREE.MeshBasicMaterial({
+        color: 0x4ecdc4,
+        transparent: true,
+        opacity: 0.18,
+        side: THREE.FrontSide,
+        depthWrite: false,
+      }),
+    );
+    nearSideOverlay.userData.layerKey = 'tidal-lock';
+    nearSideOverlay.visible = false;
+    moonMesh.add(nearSideOverlay);
+    const _stopTidalLockLayer = onLayerChange('tidal-lock', (on) => {
+      nearSideOverlay.visible = on;
+    });
 
     // Site markers — per-category geometry, anchored on the surface,
     // parented to moonMesh so they rotate with the sphere (post-v0.1.0
@@ -927,6 +962,7 @@
     cleanup = () => {
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
+      _stopTidalLockLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -1347,7 +1383,9 @@
   section="free-return"
 />
 
-<!-- Layers panel mounts here once J.3 wires terrestrial-body overlays. -->
+<!-- /moon Layers panel — tidal-lock indicator is the first wired
+     terrestrial-body overlay here. -->
+<ScienceLayersPanel available={['tidal-lock']} />
 
 <style>
   .moon {

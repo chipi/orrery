@@ -44,6 +44,7 @@
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import SpacecraftInfoCard from '$lib/components/SpacecraftInfoCard.svelte';
   import {
     buildSoIRing,
     buildGravityArrow,
@@ -2411,11 +2412,20 @@
      → ARRIVAL. Only renders when the global Science Lens is on. -->
 <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
 
-<!-- /fly Layers panel. 'hover' is omitted — there's no per-target
-     hover-pick on the spacecraft yet, so the toggle would be a no-op.
-     Everything else is wired. -->
+<!-- /fly Layers panel — every layer wired. 'hover' toggles the
+     bottom-left SpacecraftInfoCard with live state numbers + chips. -->
 <ScienceLayersPanel
-  available={['soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+  available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+/>
+
+<!-- Live spacecraft state card — Phase J.4 fly-hover. Lens + 'hover'
+     layer gated. Reads existing per-frame derives. -->
+<SpacecraftInfoCard
+  {heliocentricKms}
+  {distFromEarthAu}
+  {distFromMarsAu}
+  metDays={met}
+  phase={phaseLabel}
 />
 
 <!-- Conic-section family side panel — Phase I. Lens + 'conics' layer

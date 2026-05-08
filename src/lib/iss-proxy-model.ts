@@ -328,6 +328,86 @@ export function buildIssProxyStation(): THREE.Group {
     trussGroup.add(platform);
   }
 
+  // ── Parabolic antennas on truss (round 2 feedback) ────────────────
+  // Real ISS truss carries multiple antenna assemblies:
+  //   - SGANT (Space-to-Ground Antenna) Ku-band on Z1 truss top
+  //   - SASA (S-Band Antenna Sub-Assembly) — 2 dishes (one fwd, one aft)
+  //   - additional smaller dishes
+  // Render as 3-4 dish meshes on top of the truss spine.
+  const dishMat = new THREE.MeshStandardMaterial({
+    color: 0xd0d4dc,
+    metalness: 0.3,
+    roughness: 0.4,
+    side: THREE.DoubleSide,
+  });
+  const dishMastMat = new THREE.MeshStandardMaterial({
+    color: 0x8a8e96,
+    metalness: 0.5,
+    roughness: 0.5,
+  });
+  const ANTENNAS: { z: number; size: number; tilt: number; mastH: number }[] = [
+    // SGANT — large Ku-band dish on Z1 (above S0 center)
+    { z: 0, size: 0.18, tilt: 0.3, mastH: 0.18 },
+    // SASA fwd — port S1 region
+    { z: -0.7, size: 0.1, tilt: -0.2, mastH: 0.12 },
+    // SASA aft — starboard S1 region
+    { z: 0.7, size: 0.1, tilt: -0.2, mastH: 0.12 },
+    // Smaller GPS antenna near P3
+    { z: -2.0, size: 0.07, tilt: 0.4, mastH: 0.1 },
+  ];
+  for (const ant of ANTENNAS) {
+    // Mast
+    const mast = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.012, 0.012, ant.mastH, 8),
+      dishMastMat,
+    );
+    mast.position.set(0, 0.16 + ant.mastH / 2, ant.z);
+    mast.userData.stationPickable = false;
+    setShadowFlags(mast);
+    trussGroup.add(mast);
+    // Parabolic dish — open hemisphere with flattened scale on Y
+    const dish = new THREE.Mesh(
+      new THREE.SphereGeometry(ant.size, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2.2),
+      dishMat,
+    );
+    dish.scale.set(1, 0.5, 1);
+    dish.position.set(0, 0.16 + ant.mastH + ant.size * 0.3, ant.z);
+    dish.rotation.x = ant.tilt;
+    dish.userData.stationPickable = false;
+    dish.name = 'truss_antenna_dish';
+    setShadowFlags(dish);
+    trussGroup.add(dish);
+  }
+
+  // ── MSS protrusions — CETA cart + grapple stowage on MT rail ──────
+  // Real MSS hardware visible above the truss includes the Mobile
+  // Transporter base + Canadarm2 PDGF stowage points + CETA carts. Add
+  // a small CETA cart visible mid-truss to suggest the MSS infrastructure
+  // beyond just Canadarm2 itself.
+  const cetaCart = new THREE.Mesh(
+    new THREE.BoxGeometry(0.12, 0.08, 0.2),
+    new THREE.MeshStandardMaterial({
+      color: 0xa8acb4,
+      metalness: 0.45,
+      roughness: 0.55,
+    }),
+  );
+  cetaCart.position.set(0, 0.22, -1.4);
+  cetaCart.userData.stationPickable = false;
+  cetaCart.name = 'ceta_cart';
+  setShadowFlags(cetaCart);
+  trussGroup.add(cetaCart);
+  // Stowed grapple fixture on the MT rail (small upright rectangle)
+  const grappleStow = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.025, 0.025, 0.14, 8),
+    dishMastMat,
+  );
+  grappleStow.position.set(0, 0.25, 1.4);
+  grappleStow.userData.stationPickable = false;
+  grappleStow.name = 'grapple_stow';
+  setShadowFlags(grappleStow);
+  trussGroup.add(grappleStow);
+
   // ── AMS-02 — Alpha Magnetic Spectrometer (Phase 2e) ───────────────
   // Distinctive cube + cylindrical magnet on S3 (real position).
   // Visually iconic — one of the largest external experiments.
@@ -417,54 +497,77 @@ export function buildIssProxyStation(): THREE.Group {
     trussGroup.add(bga);
 
     // One wing pair per anchor: forward-extending + aft-extending wings,
-    // both sharing the same BGA + SADA axis. Group origin sits at the
-    // truss-tip world position (0, trussY, anchor.z). Wings extend along
-    // ±X (forward/aft of station) — long axis ≡ world X = perpendicular
-    // to truss direction (Z). Group rotation around X is the SADA β-rotation
-    // that swings the broad face from +Y (zenith) to +Z (along-truss).
+    // both sharing the same BGA + SADA axis. Wings extend along ±X
+    // (forward/aft of station). The pair group is tilted ~30° around Y
+    // so the wings make ~60° with the module-stack X-axis (visual
+    // request — gives a clear depth read from camera angle vs. perfectly
+    // parallel-to-modules orientation).
+    //
+    // baseRotation = π/2 around X axis means the broad face initially
+    // points along +Z (toward camera at +Z=13) — wings always read as
+    // visible rectangles, not edge-on slivers.
     const wingPair = new THREE.Group();
-    // Wing pair sits at truss Y level (truss group is at y=0.42 above modules)
     wingPair.position.set(0, 0.42, anchor.z);
+    wingPair.rotation.y = anchor.z < 0 ? -Math.PI / 6 : Math.PI / 6;
     wingPair.userData.tracksSun = true;
     wingPair.userData.sadaAxis = 'x';
-    wingPair.userData.baseRotation = 0;
+    wingPair.userData.baseRotation = Math.PI / 2;
 
     for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;
-      // Wing: BoxGeometry(length, thin, depth) — long X, thin Y, depth Z.
-      // Broad face is Y-normal (faces zenith at base rotation).
-      const wing = new THREE.Mesh(
-        new THREE.BoxGeometry(wingHalfLen * 2, 0.02, wingDepth),
-        mainArrayMat.clone(),
-      );
-      wing.position.set(xSign * (wingHalfLen + 0.04), 0, 0);
-      if (wing.material instanceof THREE.MeshStandardMaterial) {
-        wing.material.map = arrayTex;
-        wing.material.needsUpdate = true;
+      // Each wing = 2 blanket boxes deployed on either side of a central
+      // mast (matching real ISS SAW structure). The mast runs along the
+      // wing's long axis (X); blankets sit at +Z and -Z from the mast.
+      // User-counted "pair" = these 2 blankets.
+      const blanketDepth = (wingDepth - 0.06) / 2; // small mast gap in middle
+      const blanketCenterZ = blanketDepth / 2 + 0.03;
+      for (const zSign of [-1, 1] as const) {
+        const blanket = new THREE.Mesh(
+          new THREE.BoxGeometry(wingHalfLen * 2, 0.02, blanketDepth),
+          mainArrayMat.clone(),
+        );
+        blanket.position.set(xSign * (wingHalfLen + 0.04), 0, zSign * blanketCenterZ);
+        if (blanket.material instanceof THREE.MeshStandardMaterial) {
+          blanket.material.map = arrayTex;
+          blanket.material.needsUpdate = true;
+        }
+        setShadowFlags(blanket);
+        blanket.userData.stationPickable = false;
+        blanket.name = `array_${anchor.id}_${dir}_${zSign > 0 ? 'top' : 'bot'}`;
+        wingPair.add(blanket);
       }
-      setShadowFlags(wing);
-      wing.userData.stationPickable = false;
-      wing.name = `array_${anchor.id}_${dir}`;
-      wingPair.add(wing);
+      // Central mast running along the wing's length between the two
+      // blanket boxes — thin grey cylinder.
+      const mast = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.018, 0.018, wingHalfLen * 2, 6),
+        bgaMat,
+      );
+      mast.rotation.z = Math.PI / 2;
+      mast.position.set(xSign * (wingHalfLen + 0.04), 0, 0);
+      mast.userData.stationPickable = false;
+      mast.name = `array_mast_${anchor.id}_${dir}`;
+      setShadowFlags(mast);
+      wingPair.add(mast);
 
-      // iROSA overlay (if installed on this side) — parallel to main wing,
-      // mounted on the INBOARD portion (closer to BGA / truss center),
-      // so the main array visibly extends beyond iROSA on the outboard tip.
-      // Slight +Y offset so it sits "on top" of the main wing.
+      // iROSA overlay — canted ~10° around the long axis (rotation.x)
+      // relative to the main wing, mounted "in front of" the original
+      // (Y-offset toward sun side) on the inboard portion. This matches
+      // the real installation: iROSA partially shades the original but
+      // leaves the outboard tip exposed.
       const irosaInstalled = dir === 'fwd' ? anchor.iROSA.fwd : anchor.iROSA.aft;
       if (irosaInstalled) {
+        const irosaGroup = new THREE.Group();
+        irosaGroup.rotation.x = -Math.PI / 18; // 10° cant relative to main
         const irosa = new THREE.Mesh(
           new THREE.BoxGeometry(irosaHalfLen * 2, 0.025, irosaDepth),
           irosaMat,
         );
-        // iROSA inboard center: closer to BGA than main wing center.
-        // Main wing center is at xSign * (wingHalfLen + 0.04) = ±1.38;
-        // iROSA inboard center at xSign * (irosaHalfLen + 0.04) = ±0.79.
         irosa.position.set(xSign * (irosaHalfLen + 0.04), 0.05, 0);
         setShadowFlags(irosa);
         irosa.userData.stationPickable = false;
         irosa.name = `irosa_${anchor.id}_${dir}`;
-        wingPair.add(irosa);
+        irosaGroup.add(irosa);
+        wingPair.add(irosaGroup);
       }
     }
 
@@ -701,35 +804,61 @@ export function buildIssProxyStation(): THREE.Group {
   }
 
   // ── EATCS Heat Rejection Subsystem (HRS) radiators ─────────────────
-  // 6 white radiator panels deployed PERPENDICULAR to truss (long axis
-  // along ±X, perpendicular to the truss Z-axis), clustered INBOARD
-  // along the truss spine (P1/S1 region) on the nadir side. They sit
-  // visibly INSIDE the outboard solar-array tips — i.e., closer to S0.
-  // Each panel is wider (X-axis) than it is long-along-truss (Z-axis),
-  // making them clearly distinct from the parallel-to-X solar arrays.
+  // Real ISS HRS radiators are MASSIVE — each radiator deploys 6
+  // panels in series, totaling ~23 m × 11 m. Two large radiators per
+  // side (loop A + loop B), deployed perpendicular to truss, extending
+  // INTO module direction (along ±X). Render as wide flat panels with
+  // visible panel-segment lines suggesting the multi-segment deployment.
   const radiatorMat = new THREE.MeshStandardMaterial({
     color: RADIATOR_WHITE,
     metalness: 0.05,
     roughness: 0.9,
   });
-  const RADIATORS: { z: number }[] = [
-    // 3 port-side (P1 region)
-    { z: -0.6 },
-    { z: -1.2 },
-    { z: -1.8 },
-    // 3 starboard-side (S1 region)
-    { z: 0.6 },
-    { z: 1.2 },
-    { z: 1.8 },
+  const radiatorAccentMat = new THREE.MeshStandardMaterial({
+    color: 0x8a8e96,
+    metalness: 0.4,
+    roughness: 0.55,
+  });
+  const RADIATORS: { z: number; xSign: 1 | -1 }[] = [
+    // Port side: 2 radiators (Loop A + Loop B), one fwd, one aft of S0
+    { z: -1.0, xSign: 1 },
+    { z: -1.0, xSign: -1 },
+    // Starboard side: 2 radiators
+    { z: 1.0, xSign: 1 },
+    { z: 1.0, xSign: -1 },
   ];
-  for (const { z } of RADIATORS) {
-    // BoxGeometry(width X, thickness Y, depth Z) — long perpendicular to truss
-    const rad = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.02, 0.18), radiatorMat);
-    rad.position.set(0, -0.18, z); // slight nadir from truss centre
+  for (const { z, xSign } of RADIATORS) {
+    // Each radiator is a wide panel ~1.8 units long (~23 m) extending
+    // along ±X in module direction. Multi-segment look via spine + 6
+    // panels.
+    const radWidth = 1.8;
+    const radDepth = 0.85;
+    const rad = new THREE.Mesh(new THREE.BoxGeometry(radWidth, 0.02, radDepth), radiatorMat);
+    rad.position.set(xSign * (radWidth / 2 + 0.18), -0.22, z);
     rad.userData.stationPickable = false;
     rad.name = 'radiator';
     setShadowFlags(rad);
     trussGroup.add(rad);
+
+    // Spine running along the radiator's long axis — visual cue for
+    // the deployment hinge between segments.
+    const spine = new THREE.Mesh(new THREE.BoxGeometry(radWidth, 0.04, 0.04), radiatorAccentMat);
+    spine.position.set(xSign * (radWidth / 2 + 0.18), -0.22, z);
+    spine.userData.stationPickable = false;
+    spine.name = 'radiator_spine';
+    setShadowFlags(spine);
+    trussGroup.add(spine);
+
+    // 5 cross-bars suggesting the 6 panel segments
+    for (let i = 1; i < 6; i++) {
+      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.012, 0.025, radDepth), radiatorAccentMat);
+      const segWidth = radWidth / 6;
+      bar.position.set(xSign * (0.18 + i * segWidth), -0.22, z);
+      bar.userData.stationPickable = false;
+      bar.name = 'radiator_segment';
+      setShadowFlags(bar);
+      trussGroup.add(bar);
+    }
   }
 
   // ── Module-specific accessories ─────────────────────────────────────
@@ -811,6 +940,38 @@ export function buildIssProxyStation(): THREE.Group {
     cone.name = `probe_${probe.host}`;
     setShadowFlags(cone);
     root.add(cone);
+  }
+
+  // ── Zvezda's own solar arrays (round 2 feedback) ───────────────────
+  // Real Zvezda has 2 fold-out solar arrays of its own, deployed at the
+  // aft end perpendicular to the module axis. They've been retracted
+  // since the truss arrays came online but remain visible. Render as
+  // 2 small blue rectangular panels extending laterally from Zvezda's
+  // aft section, partially toward the HRS direction.
+  const zvezdaArrayPos = modulePositions.get('zvezda');
+  if (zvezdaArrayPos) {
+    const [zax, zay, zaz] = zvezdaArrayPos;
+    const zaArrayMat = new THREE.MeshStandardMaterial({
+      color: SOLAR_BLUE,
+      metalness: 0.3,
+      roughness: 0.55,
+    });
+    const zaArrayTex = makeMainArrayTexture();
+    zaArrayTex.repeat.set(3, 1);
+    for (const zSign of [-1, 1] as const) {
+      const arr = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.02, 0.18), zaArrayMat.clone());
+      if (arr.material instanceof THREE.MeshStandardMaterial) {
+        arr.material.map = zaArrayTex;
+        arr.material.needsUpdate = true;
+      }
+      // Mounted at Zvezda's aft section, deployed along ±Z direction
+      arr.position.set(zax - 0.4, zay, zaz + zSign * 0.5);
+      arr.userData.moduleId = 'zvezda';
+      arr.userData.stationPickable = true;
+      arr.name = 'zvezda_solar_array';
+      setShadowFlags(arr);
+      root.add(arr);
+    }
   }
 
   // ── Zvezda aft engine bell + propulsion nozzles (Phase 2b) ─────────

@@ -1351,7 +1351,9 @@
   }
   .ctrl-row.chips {
     flex-direction: column;
-    /* Stretch chips so all on this page render at the same width. */
+    /* Explicit width keeps chips a consistent size that's NOT inherited
+       from the toggle row above. */
+    width: 140px;
     align-items: stretch;
   }
   .chip {
@@ -1393,14 +1395,18 @@
   }
   .toggle {
     min-width: 44px;
-    min-height: 44px;
-    padding: 0 14px;
+    min-height: 36px;
+    max-width: 70px;
+    padding: 4px 8px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-align: center;
+    white-space: normal;
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
@@ -1420,8 +1426,12 @@
       gap: 6px;
     }
     .toggle {
-      padding: 0 10px;
-      font-size: 12px;
+      padding: 4px 6px;
+      font-size: 10px;
+      max-width: 60px;
+    }
+    .ctrl-row.chips {
+      width: 120px;
     }
   }
   .load-banner {

@@ -1278,8 +1278,12 @@
   }
   .ctrl-row.chips {
     flex-direction: column;
-    /* Stretch each chip to the column's natural width so all chips on
-       the page render at the same width, regardless of label length. */
+    /* Explicit width keeps chips a consistent size that's NOT inherited
+       from the toggle row above. The 3 toggles ("3D" + "RESET VIEW" +
+       "PAUSE SPIN") wrap their labels onto two lines under the smaller
+       font, so they take less horizontal real estate; the chip column
+       picks its own width independently. */
+    width: 140px;
     align-items: stretch;
   }
   .chip {
@@ -1321,14 +1325,21 @@
   }
   .toggle {
     min-width: 44px;
-    min-height: 44px;
-    padding: 0 14px;
+    min-height: 36px;
+    max-width: 70px;
+    padding: 4px 8px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-align: center;
+    /* Smaller font + max-width let two-word labels (RESET VIEW, PAUSE
+       SPIN) wrap onto two lines, so the toggle cluster stays narrow
+       and the chip column below doesn't inherit a wide row width. */
+    white-space: normal;
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
@@ -1348,8 +1359,12 @@
       gap: 6px;
     }
     .toggle {
-      padding: 0 10px;
-      font-size: 12px;
+      padding: 4px 6px;
+      font-size: 10px;
+      max-width: 60px;
+    }
+    .ctrl-row.chips {
+      width: 120px;
     }
   }
   .legend-3d {

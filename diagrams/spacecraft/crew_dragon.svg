@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Crew Dragon spacecraft anatomy: capsule, nose cone, trunk with body-mounted solar cells, Draco thrusters, SuperDraco abort engines">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">CREW DRAGON</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">~10.8 m total · 4–7 crew</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="262" class="dashed" />
+
+  <!-- Nose cone (deployable, hinged) -->
+  <path d="M 192 60 Q 200 48 208 60 L 208 75 L 192 75 Z" class="stroke-fill" />
+  <line x1="195" y1="62" x2="205" y2="62" class="stroke" />
+
+  <!-- Capsule body (truncated cone, narrows toward nose) -->
+  <path d="M 175 75 L 165 175 L 235 175 L 225 75 Z" class="stroke-fill" />
+  <!-- Capsule windows -->
+  <circle cx="186" cy="115" r="3" class="stroke" />
+  <circle cx="200" cy="110" r="3" class="stroke" />
+  <circle cx="214" cy="115" r="3" class="stroke" />
+
+  <!-- SuperDraco abort engine pods (visible pair) -->
+  <rect x="161" y="150" width="6" height="14" class="nozzle" />
+  <rect x="233" y="150" width="6" height="14" class="nozzle" />
+
+  <!-- Heat shield (PICA-X) -->
+  <path d="M 165 175 Q 200 195 235 175" class="heat" />
+
+  <!-- Trunk (cylindrical, lower) -->
+  <rect x="170" y="195" width="60" height="55" class="stroke-fill" />
+  <!-- Body-mounted PV band on the sun-facing half of trunk -->
+  <rect x="170" y="200" width="60" height="40" class="pv" />
+  <line x1="180" y1="200" x2="180" y2="240" class="stroke" />
+  <line x1="190" y1="200" x2="190" y2="240" class="stroke" />
+  <line x1="200" y1="200" x2="200" y2="240" class="stroke" />
+  <line x1="210" y1="200" x2="210" y2="240" class="stroke" />
+  <line x1="220" y1="200" x2="220" y2="240" class="stroke" />
+
+  <!-- Trunk fins -->
+  <path d="M 170 250 L 158 262 L 170 250 Z" class="stroke-fill" />
+  <path d="M 230 250 L 242 262 L 230 250 Z" class="stroke-fill" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="192" y1="60" x2="100" y2="55" class="accent" />
+  <text x="14" y="52" class="label-accent">DOCKING NOSE</text>
+  <text x="14" y="64" class="label-mute">opens to capture</text>
+
+  <line x1="180" y1="115" x2="100" y2="105" class="accent" />
+  <text x="14" y="102" class="label-accent">CAPSULE</text>
+  <text x="14" y="114" class="label-mute">pressurised crew</text>
+
+  <line x1="161" y1="157" x2="100" y2="160" class="accent" />
+  <text x="14" y="148" class="label-accent">SUPERDRACO</text>
+  <text x="14" y="160" class="label-mute">8 abort engines</text>
+
+  <line x1="200" y1="195" x2="100" y2="210" class="accent" />
+  <text x="14" y="208" class="label-accent">TRUNK</text>
+  <text x="14" y="220" class="label-mute">cargo + ECLSS</text>
+
+  <line x1="170" y1="220" x2="100" y2="245" class="accent" />
+  <text x="14" y="243" class="label-accent">SOLAR CELLS</text>
+  <text x="14" y="255" class="label-mute">body-mounted</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="225" y1="100" x2="300" y2="95" class="accent" />
+  <text x="305" y="92" class="label-accent">DRACO RCS</text>
+  <text x="305" y="104" class="label-mute">16 thrusters</text>
+
+  <line x1="220" y1="180" x2="300" y2="175" class="accent" />
+  <text x="305" y="172" class="label-accent">HEAT SHIELD</text>
+  <text x="305" y="184" class="label-mute">PICA-X ablative</text>
+
+  <line x1="225" y1="220" x2="300" y2="225" class="accent" />
+  <text x="305" y="222" class="label-accent">PV BAND</text>
+  <text x="305" y="234" class="label-mute">silicon · ~6 kW</text>
+
+  <line x1="230" y1="250" x2="300" y2="255" class="accent" />
+  <text x="305" y="253" class="label-accent">TRUNK FINS</text>
+  <text x="305" y="265" class="label-mute">aero stabilizer</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by SpaceX · launches on Falcon 9</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">First ISS dock: 2020-05-31 (Demo-2)</text>
+</svg>

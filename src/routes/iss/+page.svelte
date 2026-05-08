@@ -1062,7 +1062,13 @@
     top: 152px;
     left: 12px;
     bottom: 12px;
+    /* The base .layer rule sets width:100%;height:100% — explicitly
+       reset both here so the absolute top/bottom anchors take effect.
+       Without this, drawer height = 100vh (extending past the viewport
+       bottom) and the rest of the modules list ends up clipped instead
+       of triggering the drawer's own scroll. */
     width: min(300px, calc(100vw - 24px));
+    height: auto;
     background: rgba(8, 10, 22, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;

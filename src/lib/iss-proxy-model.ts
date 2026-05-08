@@ -55,40 +55,41 @@ type ModuleAxis = 'x' | 'y' | 'z';
  * Positions (1 unit ≈ 12.7 m) computed from real-world dimensions in the
  * §1.0 ratio table of the rebuild plan; main stack centred on Destiny at X=0.
  */
-const MODULE_BOXES: [IssModuleMeshId, number, number, number, number, number, ModuleAxis][] = [
-  // Russian segment — main stack along X
-  ['zvezda', -2.58, 0, 0, 1.03, 0.171, 'x'],
-  ['zarya', -1.53, 0, 0, 0.99, 0.161, 'x'],
-  // Center stack along X
-  ['unity', -0.59, 0, 0, 0.43, 0.18, 'x'],
-  ['destiny', 0, 0, 0, 0.67, 0.168, 'x'],
-  ['harmony', 0.66, 0, 0, 0.57, 0.173, 'x'],
+export const MODULE_BOXES: [IssModuleMeshId, number, number, number, number, number, ModuleAxis][] =
+  [
+    // Russian segment — main stack along X
+    ['zvezda', -2.58, 0, 0, 1.03, 0.171, 'x'],
+    ['zarya', -1.53, 0, 0, 0.99, 0.161, 'x'],
+    // Center stack along X
+    ['unity', -0.59, 0, 0, 0.43, 0.18, 'x'],
+    ['destiny', 0, 0, 0, 0.67, 0.168, 'x'],
+    ['harmony', 0.66, 0, 0, 0.57, 0.173, 'x'],
 
-  // Branches off Zvezda (zenith / nadir)
-  ['poisk', -2.58, 0.371, 0, 0.32, 0.1, 'y'],
-  ['pirs', -2.58, -0.371, 0, 0.32, 0.1, 'y'],
-  ['nauka', -2.58, -1.081, 0, 1.02, 0.167, 'y'],
-  ['prichal', -2.58, -1.826, 0, 0.39, 0.13, 'y'],
+    // Branches off Zvezda (zenith / nadir)
+    ['poisk', -2.58, 0.371, 0, 0.32, 0.1, 'y'],
+    ['pirs', -2.58, -0.371, 0, 0.32, 0.1, 'y'],
+    ['nauka', -2.58, -1.081, 0, 1.02, 0.167, 'y'],
+    ['prichal', -2.58, -1.826, 0, 0.39, 0.13, 'y'],
 
-  // Branches off Zarya (nadir)
-  ['rassvet', -1.53, -0.436, 0, 0.47, 0.093, 'y'],
+    // Branches off Zarya (nadir)
+    ['rassvet', -1.53, -0.436, 0, 0.47, 0.093, 'y'],
 
-  // Branches off Unity (port = -Z, starboard = +Z)
-  ['tranquility', -0.59, 0, -0.485, 0.53, 0.176, 'z'],
-  ['quest', -0.59, 0, 0.435, 0.43, 0.157, 'z'],
+    // Branches off Unity (port = -Z, starboard = +Z)
+    ['tranquility', -0.59, 0, -0.485, 0.53, 0.176, 'z'],
+    ['quest', -0.59, 0, 0.435, 0.43, 0.157, 'z'],
 
-  // Branches off Tranquility (centred at -0.59, 0, -0.485)
-  ['cupola', -0.59, -0.236, -0.485, 0.12, 0.116, 'y'],
-  ['beam', -0.59, 0, -0.945, 0.31, 0.126, 'z'],
-  ['leonardo', -0.85, -0.236, -0.485, 0.5, 0.18, 'x'],
+    // Branches off Tranquility (centred at -0.59, 0, -0.485)
+    ['cupola', -0.59, -0.236, -0.485, 0.12, 0.116, 'y'],
+    ['beam', -0.59, 0, -0.945, 0.31, 0.126, 'z'],
+    ['leonardo', -0.85, -0.236, -0.485, 0.5, 0.18, 'x'],
 
-  // Branches off Harmony
-  ['columbus', 0.66, 0, 0.435, 0.54, 0.176, 'z'],
-  ['kibo', 0.66, 0, -0.453, 0.88, 0.173, 'z'],
+    // Branches off Harmony
+    ['columbus', 0.66, 0, 0.435, 0.54, 0.176, 'z'],
+    ['kibo', 0.66, 0, -0.453, 0.88, 0.173, 'z'],
 
-  // Canadarm2 — articulated arm anchored on Destiny zenith (special-cased below)
-  ['canadarm2', 0, 0.36, 0, 1.1, 0.04, 'x'],
-];
+    // Canadarm2 — articulated arm anchored on Destiny zenith (special-cased below)
+    ['canadarm2', 0, 0.36, 0, 1.1, 0.04, 'x'],
+  ];
 
 /** Structural PMAs (Pressurised Mating Adapters) — gold MLI cones, not pickable modules. */
 const PMAS: {

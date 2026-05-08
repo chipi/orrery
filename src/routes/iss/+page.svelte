@@ -12,20 +12,22 @@
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
-  import { buildIssProxyStation } from '$lib/iss-proxy-model';
+  import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
   import { buildMicrogravityAxes } from '$lib/microgravity-axes';
   import { onScienceLensChange } from '$lib/science-lens';
   import MicrogravityAxesLegend from '$lib/components/MicrogravityAxesLegend.svelte';
   import type { IssModule } from '$types/iss-module';
   import StationModulePanel from '$lib/components/StationModulePanel.svelte';
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
+  import StationBlueprint from '$lib/components/StationBlueprint.svelte';
+  import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
   let container: HTMLDivElement | undefined = $state();
   let modules: IssModule[] = $state([]);
   let visitors: IssModule[] = $state([]);
   let loadFailed = $state(false);
-  let viewMode: '3d' | 'list' = $state('3d');
+  let viewMode: '3d' | '2d-top' | '2d-side' | 'list' = $state('3d');
   let selected: IssModule | null = $state(null);
   let panelOpen = $state(false);
   let ignoreModuleParamUntilClear = $state(false);
@@ -43,7 +45,7 @@
   let perfCheckPending = true;
 
   /** Fresh view mode for rAF perf gate (avoids a stale `viewMode` read). */
-  const viewBag = { mode: '3d' as '3d' | 'list' };
+  const viewBag = { mode: '3d' as '3d' | '2d-top' | '2d-side' | 'list' };
 
   /** Pick handler reads latest list (avoids stale closure). */
   const moduleListRef: { list: IssModule[] } = { list: [] };
@@ -99,8 +101,59 @@
     [...visitors].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })),
   );
 
+  // Blueprint module list — derives from MODULE_BOXES (canonical 3D
+  // positions) + the loaded module names so the 2D view shows real names
+  // not just IDs. Visitors aren't included; the 2D blueprint is a
+  // station-only diagram.
+  const blueprintModules = $derived.by(() => {
+    if (modules.length === 0) return [] as BlueprintModule[];
+    const nameById = new Map(modules.map((m) => [m.id, m.name]));
+    return MODULE_BOXES.filter(([id]) => id !== 'canadarm2') // arm has special geometry, skip 2D
+      .map(([id, x, y, z, len, radius, axis]) => ({
+        id,
+        name: nameById.get(id) ?? id,
+        x,
+        y,
+        z,
+        len,
+        radius,
+        axis,
+      })) satisfies BlueprintModule[];
+  });
+
   function urlWantsList(url: URL): boolean {
     return url.searchParams.get('view') === 'list';
+  }
+  function urlWants2dTop(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-top';
+  }
+  function urlWants2dSide(url: URL): boolean {
+    return url.searchParams.get('view') === '2d-side';
+  }
+
+  function cycleBlueprintView() {
+    if (viewMode === '3d') {
+      viewMode = '2d-top';
+      stopThree();
+      syncUrl({ view: '2d-top' });
+    } else if (viewMode === '2d-top') {
+      viewMode = '2d-side';
+      syncUrl({ view: '2d-side' });
+    } else if (viewMode === '2d-side') {
+      viewMode = '3d';
+      syncUrl({ view: '3d' });
+      // Restart 3D scene
+      void Promise.resolve().then(() => startThree());
+    } else {
+      // From list, jump to top
+      viewMode = '2d-top';
+      syncUrl({ view: '2d-top' });
+    }
+  }
+
+  function blueprintModuleClick(id: string) {
+    const mod = modules.find((m) => m.id === id);
+    if (mod) openModule(mod);
   }
 
   function deviceLowMemory(): boolean {
@@ -109,9 +162,14 @@
     return dm != null && dm <= 2;
   }
 
-  function syncUrl(partial: { view?: '3d' | 'list'; moduleId?: string | null }) {
+  function syncUrl(partial: {
+    view?: '3d' | '2d-top' | '2d-side' | 'list';
+    moduleId?: string | null;
+  }) {
     const params = new URLSearchParams(get(page).url.searchParams);
     if (partial.view === 'list') params.set('view', 'list');
+    else if (partial.view === '2d-top') params.set('view', '2d-top');
+    else if (partial.view === '2d-side') params.set('view', '2d-side');
     else if (partial.view === '3d') params.delete('view');
     if (partial.moduleId === null) params.delete('module');
     else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
@@ -553,6 +611,10 @@
     }
     if (urlWantsList(u)) {
       viewMode = 'list';
+    } else if (urlWants2dTop(u)) {
+      viewMode = '2d-top';
+    } else if (urlWants2dSide(u)) {
+      viewMode = '2d-side';
     } else if (deviceLowMemory()) {
       lowMemBanner = true;
       viewMode = 'list';
@@ -579,13 +641,25 @@
       aria-hidden={viewMode !== '3d'}
     ></div>
 
+    {#if viewMode === '2d-top' || viewMode === '2d-side'}
+      <div class="layer blueprint-layer" data-testid="iss-blueprint">
+        <StationBlueprint
+          modules={blueprintModules}
+          view={viewMode === '2d-top' ? 'top' : 'side'}
+          selectedId={selected?.id ?? null}
+          onModuleClick={blueprintModuleClick}
+          ariaLabel="ISS blueprint diagram"
+        />
+      </div>
+    {/if}
+
     <aside
       class="layer list-layer"
-      class:drawer-mode={viewMode === '3d'}
+      class:drawer-mode={viewMode === '3d' || viewMode === '2d-top' || viewMode === '2d-side'}
       class:fullscreen-mode={viewMode === 'list'}
-      class:hidden={viewMode === '3d' && !indexOpen}
+      class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="iss-list-view"
-      aria-hidden={viewMode === '3d' && !indexOpen}
+      aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.iss_list_heading()}
     >
       {#if viewMode === '3d'}
@@ -661,6 +735,21 @@
         </div>
       {/if}
       <div class="ctrl-row">
+        <button
+          type="button"
+          class="toggle"
+          data-testid="iss-blueprint-toggle"
+          onclick={cycleBlueprintView}
+          title="Cycle 3D / Top / Side"
+        >
+          {viewMode === '3d'
+            ? '3D'
+            : viewMode === '2d-top'
+              ? 'TOP'
+              : viewMode === '2d-side'
+                ? 'SIDE'
+                : '3D'}
+        </button>
         {#if viewMode === '3d'}
           <button
             type="button"
@@ -732,6 +821,13 @@
   }
   .canvas-layer {
     touch-action: none;
+  }
+  .blueprint-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
   .layer.hidden {
     display: none;

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Shenzhou spacecraft anatomy: orbital module with own solar panels, descent module, service module with deployed wings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <text x="200" y="20" text-anchor="middle" class="title">SHENZHOU</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">9.25 m · 8,000 kg · 3 crew</text>
+
+  <line x1="200" y1="50" x2="200" y2="260" class="dashed" />
+
+  <!-- Docking probe -->
+  <line x1="200" y1="50" x2="200" y2="62" class="stroke" />
+  <circle cx="200" cy="50" r="2.5" class="stroke-fill" />
+
+  <!-- Orbital module (cylindrical with own solar wings — distinct from Soyuz) -->
+  <rect x="180" y="62" width="40" height="44" class="stroke-fill" />
+  <!-- Hatch -->
+  <rect x="194" y="76" width="12" height="3" class="stroke" />
+
+  <!-- Orbital module's own small solar wings (compact pair) -->
+  <rect x="142" y="80" width="38" height="20" class="pv" />
+  <line x1="156" y1="80" x2="156" y2="100" class="pv-grid" />
+  <line x1="170" y1="80" x2="170" y2="100" class="pv-grid" />
+  <rect x="220" y="80" width="38" height="20" class="pv" />
+  <line x1="234" y1="80" x2="234" y2="100" class="pv-grid" />
+  <line x1="248" y1="80" x2="248" y2="100" class="pv-grid" />
+
+  <!-- Descent module (truncated cone) -->
+  <path d="M 184 108 L 168 168 L 232 168 L 216 108 Z" class="stroke-fill" />
+  <circle cx="186" cy="138" r="3" class="stroke" />
+  <circle cx="200" cy="135" r="3" class="stroke" />
+  <circle cx="214" cy="138" r="3" class="stroke" />
+
+  <!-- Heat shield -->
+  <path d="M 168 168 Q 200 184 232 168" class="heat" />
+
+  <!-- Service module -->
+  <rect x="174" y="170" width="52" height="60" class="stroke-fill" />
+
+  <!-- Engine bell -->
+  <path d="M 188 230 L 184 250 L 216 250 L 212 230 Z" class="nozzle" />
+
+  <!-- Service module solar wings (larger, lower) -->
+  <rect x="100" y="178" width="68" height="44" class="pv" />
+  <line x1="118" y1="178" x2="118" y2="222" class="pv-grid" />
+  <line x1="135" y1="178" x2="135" y2="222" class="pv-grid" />
+  <line x1="152" y1="178" x2="152" y2="222" class="pv-grid" />
+  <rect x="168" y="195" width="6" height="10" class="nozzle" />
+
+  <rect x="232" y="178" width="68" height="44" class="pv" />
+  <line x1="248" y1="178" x2="248" y2="222" class="pv-grid" />
+  <line x1="265" y1="178" x2="265" y2="222" class="pv-grid" />
+  <line x1="282" y1="178" x2="282" y2="222" class="pv-grid" />
+  <rect x="226" y="195" width="6" height="10" class="nozzle" />
+
+  <!-- LEFT CALLOUTS -->
+  <line x1="142" y1="90" x2="80" y2="74" class="accent" />
+  <text x="6" y="68" class="label-accent">ORBITAL PV</text>
+  <text x="6" y="80" class="label-mute">extra power</text>
+
+  <line x1="180" y1="90" x2="80" y2="108" class="accent" />
+  <text x="6" y="104" class="label-accent">ORBITAL MOD</text>
+  <text x="6" y="116" class="label-mute">crew transfer</text>
+
+  <line x1="168" y1="138" x2="80" y2="148" class="accent" />
+  <text x="6" y="144" class="label-accent">DESCENT MOD</text>
+  <text x="6" y="156" class="label-mute">3 crew · returns</text>
+
+  <line x1="100" y1="200" x2="50" y2="246" class="accent" />
+  <text x="6" y="244" class="label-accent">SERVICE PV</text>
+  <text x="6" y="256" class="label-mute">main power</text>
+
+  <!-- RIGHT CALLOUTS -->
+  <line x1="200" y1="50" x2="305" y2="50" class="accent" />
+  <text x="305" y="48" class="label-accent">DOCK PROBE</text>
+  <text x="305" y="60" class="label-mute">to Tianhe port</text>
+
+  <line x1="232" y1="168" x2="305" y2="168" class="accent" />
+  <text x="305" y="166" class="label-accent">HEAT SHIELD</text>
+  <text x="305" y="178" class="label-mute">parachute land</text>
+
+  <line x1="226" y1="200" x2="305" y2="208" class="accent" />
+  <text x="305" y="206" class="label-accent">SERVICE MOD</text>
+  <text x="305" y="218" class="label-mute">propulsion</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">MAIN ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by CASC · launches on Long March 2F</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">Lands in Inner Mongolia grassland · 6.5 h fast rendezvous</text>
+</svg>

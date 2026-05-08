@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A history chapter cover — overlapping silhouettes of an ellipse, an apple, a rocket, a satellite, and a lunar lander on a milestone timeline.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .gold { fill: #ffc850; }
+    .gold-line { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .blue-fill { fill: rgba(108,169,255,0.4); }
+    .red-fill { fill: rgba(255,107,107,0.55); }
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+  </style>
+  <!-- Sparse starfield -->
+  <circle class="dim-star" cx="40" cy="30" r="0.8" />
+  <circle class="dim-star" cx="120" cy="22" r="0.6" />
+  <circle class="dim-star" cx="200" cy="40" r="1" />
+  <circle class="star" cx="280" cy="28" r="0.7" />
+  <circle class="dim-star" cx="360" cy="18" r="0.5" />
+  <circle class="dim-star" cx="430" cy="44" r="1.1" />
+  <circle class="star" cx="510" cy="24" r="0.6" />
+  <circle class="dim-star" cx="560" cy="44" r="0.7" />
+
+  <!-- Timeline spine -->
+  <line x1="50" y1="170" x2="550" y2="170" class="gold-line" />
+
+  <!-- Tick marks -->
+  <line x1="80" y1="166" x2="80" y2="174" class="gold-line" />
+  <line x1="180" y1="166" x2="180" y2="174" class="gold-line" />
+  <line x1="280" y1="166" x2="280" y2="174" class="gold-line" />
+  <line x1="380" y1="166" x2="380" y2="174" class="gold-line" />
+  <line x1="480" y1="166" x2="480" y2="174" class="gold-line" />
+
+  <!-- Year labels -->
+  <text x="80" y="190" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="rgba(255,255,255,0.85)" letter-spacing="2">1609</text>
+  <text x="180" y="190" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="rgba(255,255,255,0.85)" letter-spacing="2">1687</text>
+  <text x="280" y="190" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="rgba(255,255,255,0.85)" letter-spacing="2">1903</text>
+  <text x="380" y="190" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="rgba(255,255,255,0.85)" letter-spacing="2">1957</text>
+  <text x="480" y="190" text-anchor="middle" font-family="'Space Mono', monospace" font-size="11" fill="rgba(255,255,255,0.85)" letter-spacing="2">1969</text>
+
+  <!-- Milestone icons above ticks -->
+
+  <!-- Kepler ellipse -->
+  <g transform="translate(80, 110)">
+    <ellipse cx="0" cy="0" rx="32" ry="14" class="accent" />
+    <circle cx="20" cy="0" r="3" class="gold" />
+  </g>
+
+  <!-- Newton apple -->
+  <g transform="translate(180, 110)">
+    <circle cx="0" cy="0" r="14" class="red-fill" />
+    <line x1="0" y1="-14" x2="0" y2="-22" class="stroke-mid" />
+    <ellipse cx="3" cy="-22" rx="3" ry="2" fill="rgba(78,205,196,0.6)" />
+  </g>
+
+  <!-- Tsiolkovsky rocket -->
+  <g transform="translate(280, 110)">
+    <polygon points="0,-26 -7,-12 -7,18 7,18 7,-12" class="gold" />
+    <polygon points="-7,18 -12,28 12,28 7,18" fill="rgba(255,107,107,0.85)" />
+  </g>
+
+  <!-- Sputnik -->
+  <g transform="translate(380, 110)">
+    <circle cx="0" cy="0" r="9" class="gold" />
+    <line x1="0" y1="0" x2="-15" y2="-15" stroke="rgba(255,200,80,0.85)" stroke-width="1.2" />
+    <line x1="0" y1="0" x2="15" y2="-15" stroke="rgba(255,200,80,0.85)" stroke-width="1.2" />
+    <line x1="0" y1="0" x2="-15" y2="15" stroke="rgba(255,200,80,0.85)" stroke-width="1.2" />
+    <line x1="0" y1="0" x2="15" y2="15" stroke="rgba(255,200,80,0.85)" stroke-width="1.2" />
+  </g>
+
+  <!-- Apollo LM -->
+  <g transform="translate(480, 110)">
+    <polygon points="-12,-12 12,-12 8,8 -8,8" class="blue-fill" />
+    <line x1="-12" y1="-12" x2="-18" y2="-22" class="stroke-bright" />
+    <line x1="12" y1="-12" x2="18" y2="-22" class="stroke-bright" />
+    <line x1="-8" y1="8" x2="-14" y2="22" class="stroke-bright" />
+    <line x1="8" y1="8" x2="14" y2="22" class="stroke-bright" />
+  </g>
+</svg>

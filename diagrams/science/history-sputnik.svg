@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Sputnik 1 — first artificial satellite, October 4, 1957">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .earth { fill: rgba(108,169,255,0.18); stroke: #6aa9ff; stroke-width: 1.4; }
+    .orbit { fill: none; stroke: rgba(255,200,80,0.7); stroke-width: 1.4; stroke-dasharray: 4 3; }
+    .satellite { fill: #ffc850; }
+    .antenna { stroke: #ffc850; stroke-width: 1.2; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.2px; }
+    .tag { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; }
+    .beep { fill: rgba(255,200,80,0.5); }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <text x="20" y="28" class="label">SPUTNIK 1 · OCT 4, 1957 · 84 kg · 96-min ORBIT</text>
+  <!-- Earth -->
+  <circle cx="200" cy="115" r="55" class="earth" />
+  <!-- Orbit ellipse -->
+  <ellipse cx="200" cy="115" rx="130" ry="62" class="orbit" />
+  <!-- Sputnik at top of orbit -->
+  <g transform="translate(330, 110)">
+    <circle cx="0" cy="0" r="5" class="satellite" />
+    <line x1="0" y1="0" x2="-7" y2="-7" class="antenna" />
+    <line x1="0" y1="0" x2="7" y2="-7" class="antenna" />
+    <line x1="0" y1="0" x2="-7" y2="7" class="antenna" />
+    <line x1="0" y1="0" x2="7" y2="7" class="antenna" />
+  </g>
+  <!-- Beeps radiating -->
+  <circle cx="330" cy="110" r="14" class="beep" opacity="0.4" />
+  <circle cx="330" cy="110" r="22" class="beep" opacity="0.25" />
+  <text x="335" y="92" class="tag">BEEP · BEEP</text>
+  <text x="200" y="190" text-anchor="middle" class="tag">PERIGEE 215 km · APOGEE 939 km · INCLINATION 65° · KOROLEV'S R-7 LAUNCHED IT</text>
+</svg>

@@ -1,5 +1,47 @@
 [
   {
+    "tab": "history",
+    "section": "apollo-11-1969",
+    "title": "Apollo 11 · July 20, 1969",
+    "intro": "Three astronauts, a Saturn V, and a moonshot deadline JFK set in 1961. Tranquillity Base, eight years later, on schedule.",
+    "haystack": "apollo 11 · july 20, 1969 three astronauts, a saturn v, and a moonshot deadline jfk set in 1961. tranquillity base, eight years later, on schedule. saturn v was a 110-meter, three-stage liquid-fuel monster designed under wernher von braun (the german v-2 designer, brought to the us under operation paperclip in 1945). first stage: 5× f-1 engines, 7.6 million lbf thrust. still the most powerful rocket to fly successfully (until sls block 1 / starship matched or exceeded it 50+ years later)."
+  },
+  {
+    "tab": "history",
+    "section": "goddard-liquid-rocket-1926",
+    "title": "Goddard's First Liquid-Fuel Rocket · 1926",
+    "intro": "March 16, 1926: a 3-meter spindly contraption rises 12 meters into the Massachusetts sky. The first liquid-fuel rocket flight in history.",
+    "haystack": "goddard's first liquid-fuel rocket · 1926 march 16, 1926: a 3-meter spindly contraption rises 12 meters into the massachusetts sky. the first liquid-fuel rocket flight in history. march 16, 1926 launch site: aunt marion goddard's farm, auburn, massachusetts. vehicle: \"nell\" — 10 ft tall, ~3 m long structure, weighing about 6 kg dry. propellants: liquid oxygen + gasoline, regeneratively cooled, gimbaled nozzle."
+  },
+  {
+    "tab": "history",
+    "section": "keplers-laws-1609",
+    "title": "Kepler's Laws · 1609–1619",
+    "intro": "Tycho Brahe's lifetime of naked-eye Mars data, distilled by Kepler into the three rules every orbit obeys.",
+    "haystack": "kepler's laws · 1609–1619 tycho brahe's lifetime of naked-eye mars data, distilled by kepler into the three rules every orbit obeys. astronomia nova (1609) published laws 1 + 2 — the ellipse + equal-areas rules, derived from the mars opposition data. harmonices mundi (1619) published law 3 — period² ∝ semi-major axis³."
+  },
+  {
+    "tab": "history",
+    "section": "newton-principia-1687",
+    "title": "Newton's Principia · 1687",
+    "intro": "One book, three laws of motion, and the inverse-square law of gravity — the foundation everything spaceflight does still rests on.",
+    "haystack": "newton's principia · 1687 one book, three laws of motion, and the inverse-square law of gravity — the foundation everything spaceflight does still rests on. philosophiæ naturalis principia mathematica was published july 1687 in latin. three books: motion in a vacuum, motion through resisting media, the system of the world. the third book applies the laws to the actual cosmos and reproduces all of kepler's data from first principles."
+  },
+  {
+    "tab": "history",
+    "section": "sputnik-1957",
+    "title": "Sputnik 1 · October 4, 1957",
+    "intro": "An 84-kg Soviet aluminium ball goes into a 96-minute orbit. Spaceflight is real now — for everyone, all at once.",
+    "haystack": "sputnik 1 · october 4, 1957 an 84-kg soviet aluminium ball goes into a 96-minute orbit. spaceflight is real now — for everyone, all at once. vehicle: r-7 semyorka, the world's first icbm, repurposed. five strap-on first-stage boosters around a sustainer core. the same family of rockets (heavily evolved) launches soyuz crews to iss today — direct hardware lineage from sputnik."
+  },
+  {
+    "tab": "history",
+    "section": "tsiolkovsky-equation-1903",
+    "title": "Tsiolkovsky Equation · 1903",
+    "intro": "A deaf Russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it.",
+    "haystack": "tsiolkovsky equation · 1903 a deaf russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it. tsiolkovsky published the equation, the multi-stage rocket concept, and the orbital-station concept years before serious rocket engineering existed. goddard would build the first liquid-fuel rocket in 1926 (us); von braun's v-2 in 1942 (germany); korolev's r-7 in 1957 (ussr)."
+  },
+  {
     "tab": "mission-phases",
     "section": "edl",
     "title": "EDL — Entry, Descent, Landing",

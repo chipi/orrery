@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Cygnus spacecraft anatomy: pressurised cargo module, service module, two round UltraFlex solar arrays">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv-base { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-slice { fill: rgba(20,40,80,0.7); stroke: rgba(80,120,170,0.5); stroke-width: 0.4; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <text x="200" y="20" text-anchor="middle" class="title">CYGNUS</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">6.71 m · 8,000 kg · enhanced cargo</text>
+
+  <line x1="200" y1="50" x2="200" y2="262" class="dashed" />
+
+  <!-- Berthing port at top (CBM, captured by Canadarm2) -->
+  <rect x="190" y="55" width="20" height="8" class="stroke-fill" />
+  <line x1="195" y1="59" x2="205" y2="59" class="stroke" />
+
+  <!-- Pressurised Cargo Module (large white cylinder) -->
+  <rect x="170" y="63" width="60" height="120" class="stroke-fill" />
+  <!-- CBM hatch on top -->
+  <rect x="194" y="68" width="12" height="3" class="stroke" />
+
+  <!-- Service Module (smaller cylinder, narrower) -->
+  <rect x="180" y="183" width="40" height="50" class="stroke-fill" />
+
+  <!-- Engine bell at bottom -->
+  <path d="M 188 233 L 184 252 L 216 252 L 212 233 Z" class="nozzle" />
+
+  <!-- ROUND UltraFlex solar arrays (distinctive Cygnus feature) -->
+  <!-- Left disc -->
+  <g>
+    <circle cx="118" cy="208" r="36" class="pv-base" />
+    <!-- 4 fan slices on top of base -->
+    <path d="M 118 208 L 154 208 A 36 36 0 0 1 144 233 Z" class="pv-slice" />
+    <path d="M 118 208 L 92 233 A 36 36 0 0 1 82 208 Z" class="pv-slice" />
+    <path d="M 118 208 L 92 183 A 36 36 0 0 1 118 172 Z" class="pv-slice" />
+    <path d="M 118 208 L 144 183 A 36 36 0 0 1 154 208 Z" class="pv-slice" />
+    <line x1="180" y1="208" x2="154" y2="208" class="stroke" />
+    <rect x="155" y="205" width="6" height="6" class="nozzle" />
+  </g>
+  <!-- Right disc -->
+  <g>
+    <circle cx="282" cy="208" r="36" class="pv-base" />
+    <path d="M 282 208 L 318 208 A 36 36 0 0 1 308 233 Z" class="pv-slice" />
+    <path d="M 282 208 L 256 233 A 36 36 0 0 1 246 208 Z" class="pv-slice" />
+    <path d="M 282 208 L 256 183 A 36 36 0 0 1 282 172 Z" class="pv-slice" />
+    <path d="M 282 208 L 308 183 A 36 36 0 0 1 318 208 Z" class="pv-slice" />
+    <line x1="220" y1="208" x2="246" y2="208" class="stroke" />
+    <rect x="239" y="205" width="6" height="6" class="nozzle" />
+  </g>
+
+  <!-- LEFT CALLOUTS -->
+  <line x1="170" y1="80" x2="50" y2="70" class="accent" />
+  <text x="6" y="64" class="label-accent">PCM</text>
+  <text x="6" y="76" class="label-mute">pressurised cargo</text>
+
+  <line x1="170" y1="135" x2="50" y2="135" class="accent" />
+  <text x="6" y="130" class="label-accent">~3.7 t CARGO</text>
+  <text x="6" y="142" class="label-mute">dry · liquids · sci</text>
+
+  <!-- RIGHT CALLOUTS -->
+  <line x1="200" y1="59" x2="305" y2="55" class="accent" />
+  <text x="305" y="52" class="label-accent">CBM PORT</text>
+  <text x="305" y="64" class="label-mute">grappled by SSRMS</text>
+
+  <line x1="220" y1="200" x2="305" y2="190" class="accent" />
+  <text x="305" y="186" class="label-accent">SERVICE MOD</text>
+  <text x="305" y="198" class="label-mute">propulsion · comm</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">BT-4 ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <!-- Bottom callout (UltraFlex) — point to disc -->
+  <line x1="118" y1="244" x2="118" y2="278" class="accent" />
+  <line x1="282" y1="244" x2="282" y2="278" class="accent" />
+  <text x="118" y="290" text-anchor="middle" class="label-accent">ROUND ULTRAFLEX</text>
+  <text x="282" y="290" text-anchor="middle" class="label-accent">SOLAR ARRAYS</text>
+
+  <text x="200" y="306" text-anchor="middle" class="subtitle">Built by Northrop Grumman · launches on Antares 330 / Falcon 9</text>
+</svg>

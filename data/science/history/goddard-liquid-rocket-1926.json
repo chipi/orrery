@@ -1,0 +1,25 @@
+{
+  "id": "goddard-liquid-rocket-1926",
+  "tab": "history",
+  "order": 4,
+  "diagram": "history-goddard-rocket.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "Every liquid-fuel rocket in the catalogue traces its lineage to Goddard's 1926 flight"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Robert H. Goddard",
+      "u": "https://en.wikipedia.org/wiki/Robert_H._Goddard",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Robert H. Goddard biography",
+      "u": "https://www.nasa.gov/centers-and-facilities/goddard/dr-robert-h-goddard-american-rocketry-pioneer/",
+      "t": "core"
+    }
+  ]
+}

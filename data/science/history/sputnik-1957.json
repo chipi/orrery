@@ -1,0 +1,29 @@
+{
+  "id": "sputnik-1957",
+  "tab": "history",
+  "order": 5,
+  "diagram": "history-sputnik.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/missions",
+      "context_key": "The /missions catalogue starts at 1957 because Sputnik is the moment spaceflight became real"
+    },
+    {
+      "route": "/earth",
+      "context_key": "Every satellite you see on /earth descends from Sputnik's 84 kg, 96-minute orbit"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Sputnik 1",
+      "u": "https://en.wikipedia.org/wiki/Sputnik_1",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Sergei Korolev",
+      "u": "https://en.wikipedia.org/wiki/Sergei_Korolev",
+      "t": "core"
+    }
+  ]
+}

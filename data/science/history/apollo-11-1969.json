@@ -1,0 +1,29 @@
+{
+  "id": "apollo-11-1969",
+  "tab": "history",
+  "order": 6,
+  "diagram": "history-apollo-11.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/moon",
+      "context_key": "Apollo 11's landing site at Mare Tranquillitatis is the first marker on /moon"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Apollo 11 lives in /missions as the first crewed lunar landing"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Apollo 11",
+      "u": "https://en.wikipedia.org/wiki/Apollo_11",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Apollo 11 mission overview",
+      "u": "https://www.nasa.gov/mission/apollo-11/",
+      "t": "core"
+    }
+  ]
+}

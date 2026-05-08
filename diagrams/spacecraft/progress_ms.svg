@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Progress MS spacecraft anatomy: pressurised cargo, refuelling section, service module with deployed solar wings">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    .fuel { fill: rgba(255,150,100,0.18); stroke: rgba(255,180,120,0.6); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <text x="200" y="20" text-anchor="middle" class="title">PROGRESS MS</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">7.23 m · 7,290 kg · uncrewed cargo</text>
+
+  <line x1="200" y1="50" x2="200" y2="260" class="dashed" />
+
+  <!-- Docking probe -->
+  <line x1="200" y1="50" x2="200" y2="64" class="stroke" />
+  <circle cx="200" cy="50" r="2.5" class="stroke-fill" />
+
+  <!-- Pressurised cargo module (cylindrical, replaces Soyuz orbital sphere) -->
+  <rect x="178" y="64" width="44" height="62" class="stroke-fill" />
+  <!-- Hatch -->
+  <rect x="194" y="80" width="12" height="3" class="stroke" />
+
+  <!-- Refuelling section (smaller, with prop tanks marker) -->
+  <rect x="180" y="126" width="40" height="32" class="fuel" />
+  <circle cx="190" cy="142" r="4" class="stroke" />
+  <circle cx="200" cy="142" r="4" class="stroke" />
+  <circle cx="210" cy="142" r="4" class="stroke" />
+
+  <!-- Service module -->
+  <rect x="174" y="158" width="52" height="72" class="stroke-fill" />
+
+  <!-- Engine bell -->
+  <path d="M 188 230 L 184 250 L 216 250 L 212 230 Z" class="nozzle" />
+
+  <!-- Solar wings -->
+  <rect x="100" y="180" width="68" height="40" class="pv" />
+  <line x1="118" y1="180" x2="118" y2="220" class="pv-grid" />
+  <line x1="135" y1="180" x2="135" y2="220" class="pv-grid" />
+  <line x1="152" y1="180" x2="152" y2="220" class="pv-grid" />
+  <rect x="168" y="195" width="6" height="10" class="nozzle" />
+
+  <rect x="232" y="180" width="68" height="40" class="pv" />
+  <line x1="248" y1="180" x2="248" y2="220" class="pv-grid" />
+  <line x1="265" y1="180" x2="265" y2="220" class="pv-grid" />
+  <line x1="282" y1="180" x2="282" y2="220" class="pv-grid" />
+  <rect x="226" y="195" width="6" height="10" class="nozzle" />
+
+  <!-- LEFT CALLOUTS -->
+  <line x1="178" y1="90" x2="80" y2="86" class="accent" />
+  <text x="6" y="82" class="label-accent">CARGO MODULE</text>
+  <text x="6" y="94" class="label-mute">~1.8 t dry cargo</text>
+
+  <line x1="180" y1="142" x2="80" y2="138" class="accent" />
+  <text x="6" y="134" class="label-accent">REFUELING</text>
+  <text x="6" y="146" class="label-mute">propellant tanks</text>
+
+  <line x1="100" y1="200" x2="50" y2="246" class="accent" />
+  <text x="6" y="244" class="label-accent">SOLAR WINGS</text>
+  <text x="6" y="256" class="label-mute">Si · ~10 m span</text>
+
+  <!-- RIGHT CALLOUTS -->
+  <line x1="200" y1="50" x2="305" y2="50" class="accent" />
+  <text x="305" y="48" class="label-accent">DOCK PROBE</text>
+  <text x="305" y="60" class="label-mute">Kurs auto-dock</text>
+
+  <line x1="222" y1="92" x2="305" y2="100" class="accent" />
+  <text x="305" y="98" class="label-accent">DRY CARGO</text>
+  <text x="305" y="110" class="label-mute">food · spares</text>
+
+  <line x1="226" y1="200" x2="305" y2="208" class="accent" />
+  <text x="305" y="206" class="label-accent">SERVICE MOD</text>
+  <text x="305" y="218" class="label-mute">attitude · life</text>
+
+  <line x1="200" y1="252" x2="305" y2="252" class="accent" />
+  <text x="305" y="250" class="label-accent">SKD ENGINE</text>
+  <text x="305" y="262" class="label-mute">deorbit burn</text>
+
+  <text x="200" y="290" text-anchor="middle" class="subtitle">Built by RKK Energia · launches on Soyuz-2.1a</text>
+  <text x="200" y="304" text-anchor="middle" class="subtitle">Resupplies ISS Russian segment · burns up on reentry</text>
+</svg>

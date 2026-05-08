@@ -511,6 +511,8 @@
   "science_layer_atmosphere_desc": "Translucent shell at the body's effective atmospheric edge — Kármán line on Earth, ~120 km on Mars.",
   "science_layer_tidal_lock_label": "Tidal lock indicator",
   "science_layer_tidal_lock_desc": "Marks the Moon's near-side (always-Earth-facing) hemisphere — the result of synchronous rotation.",
+  "science_layer_ozone_label": "Ozone holes",
+  "science_layer_ozone_desc": "Polar ozone-depletion zones — Antarctic + Arctic — that open seasonally as ClO and BrO catalyse O₃ destruction in the stratosphere.",
   "fly_info_card_eyebrow": "SPACECRAFT · LIVE",
   "conics_eyebrow": "CONIC SECTION",
   "conics_read_more": "→ Read in /science",

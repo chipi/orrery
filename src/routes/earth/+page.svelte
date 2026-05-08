@@ -287,6 +287,48 @@
       karmanRing.visible = on;
     });
 
+    // J.5 — Ozone-hole layer. Translucent purple polar caps over the
+    // ozone shell at ~30 km altitude (stratosphere), representing the
+    // recurring Antarctic spring + Arctic winter depletion zones.
+    // Sized as spherical caps (parametric phi range) at each pole.
+    // Layer-gated; default-off so /earth's pole regions stay clear
+    // unless the user opts in. Click → /science/orbits/orbit-regimes
+    // is via the lens banner; the layer itself is a visual overlay.
+    const ozoneRadius = altToOrbitRadius(30); // stratospheric ozone layer
+    // Antarctic ozone hole — spherical cap at south pole (phi 0..0.45π
+    // measured from south pole = phiStart π, phiLength 0.45π).
+    const ozoneSouth = new THREE.Mesh(
+      new THREE.SphereGeometry(ozoneRadius, 48, 24, 0, Math.PI * 2, Math.PI * 0.66, Math.PI * 0.34),
+      new THREE.MeshBasicMaterial({
+        color: 0xb866ff,
+        transparent: true,
+        opacity: 0.32,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      }),
+    );
+    // Arctic depletion zone — smaller cap at north pole, less severe.
+    const ozoneNorth = new THREE.Mesh(
+      new THREE.SphereGeometry(ozoneRadius, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.22),
+      new THREE.MeshBasicMaterial({
+        color: 0x9b5dff,
+        transparent: true,
+        opacity: 0.22,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      }),
+    );
+    ozoneSouth.userData.layerKey = 'ozone';
+    ozoneNorth.userData.layerKey = 'ozone';
+    ozoneSouth.visible = false;
+    ozoneNorth.visible = false;
+    scene.add(ozoneSouth);
+    scene.add(ozoneNorth);
+    const stopOzoneLayer = onLayerChange('ozone', (on) => {
+      ozoneSouth.visible = on;
+      ozoneNorth.visible = on;
+    });
+
     // Moon — small textured sphere at the Moon-orbit radius. Click goes to /moon.
     const moonMap = textureLoader.load(`${base}/textures/2k_moon.jpg`);
     const moonMesh = new THREE.Mesh(
@@ -908,6 +950,7 @@
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
       stopAtmosphereLayer?.();
+      stopOzoneLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -1320,7 +1363,7 @@
 <!-- /earth Layers panel — atmosphere shell at the Kármán line is the
      first wired terrestrial-body overlay. More layers (gravity field,
      radiation belts) follow as J.3.x. -->
-<ScienceLayersPanel available={['atmosphere']} />
+<ScienceLayersPanel available={['atmosphere', 'ozone']} />
 
 <style>
   .earth {

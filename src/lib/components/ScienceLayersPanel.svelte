@@ -54,6 +54,7 @@
     microgravity: false,
     atmosphere: false,
     'tidal-lock': false,
+    ozone: false,
   });
 
   let stops: Array<() => void> = [];
@@ -129,6 +130,11 @@
         return {
           label: m.science_layer_tidal_lock_label(),
           description: m.science_layer_tidal_lock_desc(),
+        };
+      case 'ozone':
+        return {
+          label: m.science_layer_ozone_label(),
+          description: m.science_layer_ozone_desc(),
         };
     }
   }

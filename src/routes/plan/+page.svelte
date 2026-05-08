@@ -12,6 +12,7 @@
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
 
   const DESTINATION_IDS: DestinationId[] = [
     'mercury',
@@ -838,7 +839,14 @@
       </div>
       <div class="row strong">
         <span class="label">{m.plan_label_dv_required()}</span>
-        <span class="value">{readout.dv.toFixed(2)} km/s</span>
+        <span class="value"
+          >{readout.dv.toFixed(2)} km/s<WhyPopover
+            title={m.why_dv_required_title()}
+            body={m.why_dv_required_body()}
+            tab="propulsion"
+            section="dv-budget"
+          /></span
+        >
       </div>
 
       <!-- Mission Sandbox (C.7): pin a cell, then click another to see

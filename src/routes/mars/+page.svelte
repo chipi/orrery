@@ -16,6 +16,7 @@
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
@@ -1288,13 +1289,25 @@
             <dd>{selected.landing_date}</dd>
           {/if}
           {#if selected.kind === 'surface' && selected.lat != null && selected.lon != null}
-            <dt>Coordinates</dt>
+            <dt>
+              Coordinates<WhyPopover
+                title={m.why_landing_site_title()}
+                body={m.why_landing_site_body()}
+              />
+            </dt>
             <dd>{selected.lat.toFixed(2)}°, {selected.lon.toFixed(2)}°</dd>
           {/if}
           {#if selected.kind === 'orbiter'}
             <dt>Altitude</dt>
             <dd>{selected.altitude_km?.toLocaleString()} km</dd>
-            <dt>Inclination</dt>
+            <dt>
+              Inclination<WhyPopover
+                title={m.why_arrival_inclination_title()}
+                body={m.why_arrival_inclination_body()}
+                tab="orbits"
+                section="inclination"
+              />
+            </dt>
             <dd>{selected.inclination_deg?.toFixed(1)}°</dd>
           {/if}
           {#if selected.site_name}
@@ -1302,7 +1315,12 @@
             <dd>{selected.site_name}</dd>
           {/if}
           {#if selected.surface_duration_days}
-            <dt>Duration</dt>
+            <dt>
+              Duration<WhyPopover
+                title={m.why_surface_time_title()}
+                body={m.why_surface_time_body()}
+              />
+            </dt>
             <dd>{selected.surface_duration_days.toLocaleString()} days</dd>
           {/if}
         </dl>

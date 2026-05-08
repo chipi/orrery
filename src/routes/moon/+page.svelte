@@ -16,6 +16,7 @@
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1159,7 +1160,12 @@
               <div class="cell-value">{selected.landing_date ?? '—'}</div>
             </div>
             <div class="cell">
-              <div class="cell-label">{m.moon_panel_lat()}</div>
+              <div class="cell-label">
+                {m.moon_panel_lat()}<WhyPopover
+                  title={m.why_landing_site_title()}
+                  body={m.why_landing_site_body()}
+                />
+              </div>
               <div class="cell-value">
                 {selected.lat != null ? m.moon_lat_deg({ value: selected.lat.toFixed(2) }) : '—'}
               </div>
@@ -1171,7 +1177,12 @@
               </div>
             </div>
             <div class="cell">
-              <div class="cell-label">{m.moon_panel_duration()}</div>
+              <div class="cell-label">
+                {m.moon_panel_duration()}<WhyPopover
+                  title={m.why_surface_time_title()}
+                  body={m.why_surface_time_body()}
+                />
+              </div>
               <div class="cell-value">
                 {selected.surface_duration_days
                   ? m.moon_days({ value: selected.surface_duration_days.toString() })
@@ -1179,7 +1190,12 @@
               </div>
             </div>
             <div class="cell">
-              <div class="cell-label">{m.moon_panel_eva()}</div>
+              <div class="cell-label">
+                {m.moon_panel_eva()}<WhyPopover
+                  title={m.why_eva_time_title()}
+                  body={m.why_eva_time_body()}
+                />
+              </div>
               <div class="cell-value">
                 {selected.eva_duration_hours
                   ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
@@ -1187,7 +1203,12 @@
               </div>
             </div>
             <div class="cell">
-              <div class="cell-label">{m.moon_panel_samples()}</div>
+              <div class="cell-label">
+                {m.moon_panel_samples()}<WhyPopover
+                  title={m.why_samples_title()}
+                  body={m.why_samples_body()}
+                />
+              </div>
               <div class="cell-value">
                 {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
               </div>

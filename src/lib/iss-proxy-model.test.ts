@@ -177,21 +177,21 @@ describe('ISS proxy ratio guardrails (Phase 1 §1.0 spec)', () => {
       }
     });
 
-    it('iROSA overlay length within ±5% of 1.50 units', () => {
-      const expectedLen = 1.5;
+    it('iROSA count = 4 (1 per anchor) and uses 1.5-unit BoxGeometry', () => {
       const irosaMeshes: THREE.Mesh[] = [];
       station.traverse((obj) => {
         if (obj instanceof THREE.Mesh && obj.name?.startsWith('irosa_')) {
           irosaMeshes.push(obj);
         }
       });
-      expect(irosaMeshes.length).toBe(6);
+      // 4 iROSA total — 2 per side (1 per anchor: P4, P6, S4, S6)
+      expect(irosaMeshes.length).toBe(4);
+      // Inspect the geometry directly (rotation-invariant) — longest
+      // BoxGeometry parameter must be ~1.5 units.
       for (const m of irosaMeshes) {
-        const box = new THREE.Box3().setFromObject(m);
-        const size = new THREE.Vector3();
-        box.getSize(size);
-        const longest = Math.max(size.x, size.y, size.z);
-        expect(Math.abs(longest - expectedLen) / expectedLen).toBeLessThanOrEqual(0.05);
+        const params = (m.geometry as THREE.BoxGeometry).parameters;
+        const longest = Math.max(params.width, params.height, params.depth);
+        expect(Math.abs(longest - 1.5) / 1.5).toBeLessThanOrEqual(0.05);
       }
     });
   });

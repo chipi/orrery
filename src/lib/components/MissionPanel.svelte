@@ -410,7 +410,14 @@
                   />
                 </dt>
                 <dd class="numeric">{fmtInt(mission.flight.cruise.tcm_count)}</dd>
-                <dt>{m.mp_flight_label_peak_speed()}</dt>
+                <dt>
+                  {m.mp_flight_label_peak_speed()}<WhyPopover
+                    title={m.why_peak_speed_title()}
+                    body={m.why_peak_speed_body()}
+                    tab="orbits"
+                    section="vis-viva"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.cruise.peak_heliocentric_speed_km_s != null
                     ? m.mp_flight_unit_kms({
@@ -446,20 +453,41 @@
                     : '—'}
                 </dd>
                 {#if mission.flight.arrival.entry_velocity_km_s != null}
-                  <dt>{m.mp_flight_label_entry_velocity()}</dt>
+                  <dt>
+                    {m.mp_flight_label_entry_velocity()}<WhyPopover
+                      title={m.why_entry_velocity_title()}
+                      body={m.why_entry_velocity_body()}
+                      tab="mission-phases"
+                      section="edl"
+                    />
+                  </dt>
                   <dd class="numeric">
                     {m.mp_flight_unit_kms({
                       value: fmtNum(mission.flight.arrival.entry_velocity_km_s, 2),
                     })}
                   </dd>
                 {/if}
-                <dt>{m.mp_flight_label_periapsis()}</dt>
+                <dt>
+                  {m.mp_flight_label_periapsis()}<WhyPopover
+                    title={m.why_periapsis_title()}
+                    body={m.why_periapsis_body()}
+                    tab="orbits"
+                    section="apsides"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.arrival.periapsis_km != null
                     ? m.mp_flight_unit_km({ value: fmtInt(mission.flight.arrival.periapsis_km) })
                     : '—'}
                 </dd>
-                <dt>{m.mp_flight_label_inclination()}</dt>
+                <dt>
+                  {m.mp_flight_label_inclination()}<WhyPopover
+                    title={m.why_arrival_inclination_title()}
+                    body={m.why_arrival_inclination_body()}
+                    tab="orbits"
+                    section="inclination"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.arrival.inclination_deg != null
                     ? m.mp_flight_unit_deg({

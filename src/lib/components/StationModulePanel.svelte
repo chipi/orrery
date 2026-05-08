@@ -8,6 +8,7 @@
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from './ImageCredit.svelte';
   import LearnLink from './LearnLink.svelte';
+  import WhyPopover from './WhyPopover.svelte';
 
   type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'learn';
@@ -152,11 +153,23 @@
             <div class="cell-value short">{mod.flight_designation}</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.iss_label_mass()}</div>
+            <div class="cell-label">
+              {m.iss_label_mass()}<WhyPopover
+                title={m.why_module_mass_title()}
+                body={m.why_module_mass_body()}
+                tab="propulsion"
+                section="dv-budget"
+              />
+            </div>
             <div class="cell-value">{formatNumber(mod.mass_kg, loc)} kg</div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.iss_label_length()}</div>
+            <div class="cell-label">
+              {m.iss_label_length()}<WhyPopover
+                title={m.why_module_length_title()}
+                body={m.why_module_length_body()}
+              />
+            </div>
             <div class="cell-value">{formatNumber(mod.length_m, loc, 1)} m</div>
           </div>
         </div>

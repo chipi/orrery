@@ -17,6 +17,7 @@
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -1094,7 +1095,14 @@
       {#if panelTab === 'overview'}
         <div class="grid">
           <div class="cell">
-            <div class="cell-label">{m.earth_panel_alt()}</div>
+            <div class="cell-label">
+              {m.earth_panel_alt()}<WhyPopover
+                title={m.why_earth_altitude_title()}
+                body={m.why_earth_altitude_body()}
+                tab="orbits"
+                section="orbit-regimes"
+              />
+            </div>
             <div class="cell-value">
               {m.earth_alt_km({
                 value: formatNumber(
@@ -1105,7 +1113,14 @@
             </div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.earth_panel_period()}</div>
+            <div class="cell-label">
+              {m.earth_panel_period()}<WhyPopover
+                title={m.why_earth_period_title()}
+                body={m.why_earth_period_body()}
+                tab="orbits"
+                section="keplers-laws"
+              />
+            </div>
             <div class="cell-value">
               {selected.period_min
                 ? m.earth_period_min({ value: selected.period_min.toFixed(0) })
@@ -1113,7 +1128,14 @@
             </div>
           </div>
           <div class="cell">
-            <div class="cell-label">{m.earth_panel_inclination()}</div>
+            <div class="cell-label">
+              {m.earth_panel_inclination()}<WhyPopover
+                title={m.why_earth_inclination_title()}
+                body={m.why_earth_inclination_body()}
+                tab="orbits"
+                section="inclination"
+              />
+            </div>
             <div class="cell-value">
               {selected.inclination !== undefined
                 ? m.earth_inclination_deg({ value: selected.inclination.toFixed(1) })

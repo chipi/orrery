@@ -465,19 +465,17 @@ export function buildIssProxyStation(): THREE.Group {
   });
 
   // Anchors at outboard ends of P4/P6/S4/S6 — each carries 2 wings (fwd + aft)
+  // 4 anchors total — one iROSA per anchor = 2 per side (port: P4, P6;
+  // starboard: S4, S6). User-locked count per round-3 feedback.
   const MAIN_ARRAY_ANCHORS: {
     id: string;
     z: number;
     iROSA: { fwd: boolean; aft: boolean };
   }[] = [
-    // P6 outboard tip
-    { id: 'p6', z: -5.5, iROSA: { fwd: true, aft: true } }, // 1A on P6, 6 on P6
-    // P4 outboard tip
-    { id: 'p4', z: -3.77, iROSA: { fwd: true, aft: false } }, // 3A on P4
-    // S4 outboard tip
-    { id: 's4', z: 3.77, iROSA: { fwd: true, aft: true } }, // 2B on S4, 5 on S4
-    // S6 outboard tip
-    { id: 's6', z: 5.5, iROSA: { fwd: false, aft: true } }, // 4A on S6
+    { id: 'p6', z: -5.5, iROSA: { fwd: true, aft: false } },
+    { id: 'p4', z: -3.77, iROSA: { fwd: true, aft: false } },
+    { id: 's4', z: 3.77, iROSA: { fwd: true, aft: false } },
+    { id: 's6', z: 5.5, iROSA: { fwd: true, aft: false } },
   ];
 
   const wingHalfLen = 1.34; // 2.68 / 2
@@ -496,24 +494,22 @@ export function buildIssProxyStation(): THREE.Group {
     setShadowFlags(bga);
     trussGroup.add(bga);
 
-    // One wing pair per anchor: forward-extending + aft-extending wings,
-    // both sharing the same BGA + SADA axis. Wings extend along ±X
-    // (forward/aft of station). The pair group is tilted ~30° around Y
-    // so the wings make ~60° with the module-stack X-axis (visual
-    // request — gives a clear depth read from camera angle vs. perfectly
-    // parallel-to-modules orientation).
+    // One wing pair per anchor: fwd + aft wings sharing the BGA + SADA.
+    // Wings extend perpendicular to truss (along ±X = exactly 90° to
+    // the truss spine). No Y-axis tilt — wings stay aligned to the
+    // truss centerline.
     //
-    // baseRotation = 0 around X axis means the broad face initially
-    // points along +Y (zenith) — wings lay flat against the orbital
-    // plane (truss spine), full surface visible from top-down view.
-    // SADA β-rotation cycles the wings through other angles over ~4
-    // min, matching the real station's sun-tracking behaviour.
+    // baseRotation = 2π/3 (120°) around X axis tilts the broad face
+    // 60° below horizontal toward camera — wings angled "60° down"
+    // for clear visualization (instead of edge-on flat or coplanar
+    // with truss). Sun-tracking disabled so wings stay at this angle
+    // for visual stability rather than rotating through all positions.
     const wingPair = new THREE.Group();
     wingPair.position.set(0, 0.42, anchor.z);
-    wingPair.rotation.y = anchor.z < 0 ? -Math.PI / 6 : Math.PI / 6;
-    wingPair.userData.tracksSun = true;
-    wingPair.userData.sadaAxis = 'x';
-    wingPair.userData.baseRotation = 0;
+    wingPair.rotation.x = (Math.PI * 2) / 3;
+    // Sun-tracking disabled at user request — wings stay at the chosen
+    // 60°-down rest orientation. Re-enable by setting tracksSun = true
+    // and removing the rotation.x assignment above.
 
     for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;
@@ -551,25 +547,24 @@ export function buildIssProxyStation(): THREE.Group {
       setShadowFlags(mast);
       wingPair.add(mast);
 
-      // iROSA overlay — canted ~10° around the long axis (rotation.x)
-      // relative to the main wing, mounted "in front of" the original
-      // (Y-offset toward sun side) on the inboard portion. This matches
-      // the real installation: iROSA partially shades the original but
-      // leaves the outboard tip exposed.
+      // iROSA overlay — PERPENDICULAR to the main wing (long axis along
+      // Z within wing-pair local frame, while main wing is along X).
+      // Crosses the wing in a "+" pattern, mounted slightly above the
+      // wing surface. Per round-3 feedback: 2 per side (one per anchor),
+      // 90° to the blue main panels.
       const irosaInstalled = dir === 'fwd' ? anchor.iROSA.fwd : anchor.iROSA.aft;
       if (irosaInstalled) {
-        const irosaGroup = new THREE.Group();
-        irosaGroup.rotation.x = -Math.PI / 18; // 10° cant relative to main
         const irosa = new THREE.Mesh(
-          new THREE.BoxGeometry(irosaHalfLen * 2, 0.025, irosaDepth),
+          // Swap X↔Z extents so long axis is now Z, not X
+          new THREE.BoxGeometry(irosaDepth, 0.025, irosaHalfLen * 2),
           irosaMat,
         );
-        irosa.position.set(xSign * (irosaHalfLen + 0.04), 0.05, 0);
+        // Centre on the wing's mid-point so it crosses the wing.
+        irosa.position.set(xSign * (wingHalfLen + 0.04), 0.05, 0);
         setShadowFlags(irosa);
         irosa.userData.stationPickable = false;
         irosa.name = `irosa_${anchor.id}_${dir}`;
-        irosaGroup.add(irosa);
-        wingPair.add(irosaGroup);
+        wingPair.add(irosa);
       }
     }
 

@@ -419,15 +419,15 @@ Ten primary nav destinations now (was nine): `/explore`, `/plan`, `/fly`, `/miss
 
 **Phase 3 (partially shipped):** UI message bundles translated for all 13 locales (442 keys total). Full science overlay translations (49 files: _landing + 6 _intro + 42 sections) shipped for **5 locales — en-US, es, de, fr, it** (245 files). The remaining 8 locales (pt-BR, ja, ko, zh-CN, ru, hi, ar, sr-Cyrl, sr-Latn) keep their existing UI translations and gracefully fall back to en-US for science overlay content per ADR-017 — non-blocking, English-fallback bounded. Follow-up batch to author the remaining ~395 overlay files.
 
-**Phase 4 — `/science` integration with the rest of the app (in progress, 5 concepts):**
+**Phase 4 — `/science` integration with the rest of the app (5 of 5 shipped):**
 
 | # | Concept | Status |
 |---|---|---|
 | 1 | **`SCIENCE` tab in detail panels** | ✅ shipped on MissionPanel, PlanetPanel, SunPanel, SmallBodyPanel. Reusable `ScienceCard.svelte` renders a curated section list per panel type, lazy-loaded. |
-| 2 | **Science Lens toggle** | ✅ v1 shipped. ⊙/⊕ button in nav, attribute-on-`<html>` state pattern (mirrors ADR-029 high-contrast toggle). `ScienceLensBanner.svelte` shows a bottom-of-screen physics-context card on `/explore`, `/plan`, `/fly`. v2 will add lens-conditional in-scene annotations (focal points, force vectors, SoI rings). |
-| 3 | **Flight Director narration on `/fly`** | Pending. Phase-by-phase commentary banner reading the mission's events list; each phase clickable into the matching `/science` section. |
-| 4 | **"Why?" popovers** | Pending. Hover-to-explain on contextually-confusing UI elements (Pluto's tilted orbit, porkchop tongue shape, etc.). Lighter than the chip pattern; one-shot popover per moment of confusion. |
-| 5 | **Mission Sandbox** | Pending. Layered onto `/plan` (not a new route per user direction). Guided "build a mission" flow — destination → year → transfer → rocket → fly. Each step gets a lens-style science card. |
+| 2 | **Science Lens toggle** | ✅ v1 shipped. SVG icon in nav, attribute-on-`<html>` state pattern (mirrors ADR-029 high-contrast toggle). `ScienceLensBanner.svelte` shows a bottom-of-screen physics-context card on `/explore` and `/plan`; on `/fly` it's the more capable Flight Director banner (#3). v2 will add lens-conditional in-scene annotations (focal points, force vectors, SoI rings). |
+| 3 | **Flight Director narration on `/fly`** | ✅ shipped. `FlightDirectorBanner.svelte` reflows through 5 physics phases (DEPARTURE / INJECTION / CRUISE / APPROACH / ARRIVAL) driven by `arcProgress`, each phase deep-linking to the matching `/science` section. Lens-gated, so /fly stays clean for users who haven't opted in. |
+| 4 | **"Why?" popovers** | ✅ v1 shipped. `WhyPopover.svelte` is a click-only inline popover that explains a *value* in context (distinct from `ScienceChip` which navigates to /science). v1 mount points: MissionPanel FLIGHT-tab caveat banner, DLA label, MASS AT TLI label; /fly FLIGHT PARAMS HUD caveat. Mobile renders as a fixed bottom sheet. |
+| 5 | **Mission Sandbox** | ✅ v1 shipped. Layered onto the existing `/plan` porkchop per user direction ("evolution of porkchop"). Pin one cell, click another → compare panel surfaces ΔDEP / ΔTOF / ΔΔv. ΔΔv flips teal when cheaper, gold when costlier. Pin clears automatically on destination change. |
 
 ---
 

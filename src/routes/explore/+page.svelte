@@ -1802,6 +1802,7 @@
 />
 
 <ScienceLensBanner
+  placement="top"
   title="Heliocentric view · ecliptic plane"
   body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
   tab="orbits"

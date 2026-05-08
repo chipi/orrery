@@ -25,8 +25,13 @@
     body: string;
     tab: ScienceTabId;
     section: string;
+    /** Where the banner pins. Default 'bottom' (the original placement
+     * for /plan). Pass 'top' on routes whose bottom strip is occupied —
+     * e.g. /explore where the bottom-right hosts the small-body chip
+     * row, and the top-center band below the nav is otherwise empty. */
+    placement?: 'top' | 'bottom';
   };
-  let { title, body, tab, section }: Props = $props();
+  let { title, body, tab, section, placement = 'bottom' }: Props = $props();
 
   let lensOn = $state(false);
   let stop: (() => void) | undefined;
@@ -40,7 +45,7 @@
 </script>
 
 {#if lensOn}
-  <a class="banner" href="{base}/science/{tab}/{section}">
+  <a class="banner" class:top={placement === 'top'} href="{base}/science/{tab}/{section}">
     <div class="banner-eyebrow">SCIENCE LENS</div>
     <div class="banner-title">{title}</div>
     <div class="banner-body">{body}</div>
@@ -67,6 +72,10 @@
     transition:
       border-color 120ms,
       transform 200ms;
+  }
+  .banner.top {
+    top: calc(var(--nav-height) + 12px);
+    bottom: auto;
   }
   .banner:hover {
     border-color: rgba(255, 200, 80, 0.85);
@@ -108,6 +117,10 @@
       right: 8px;
       transform: none;
       max-width: none;
+    }
+    .banner.top {
+      top: calc(var(--nav-height) + 8px);
+      bottom: auto;
     }
     .banner:hover {
       transform: translateY(-2px);

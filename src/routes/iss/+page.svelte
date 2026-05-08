@@ -21,6 +21,7 @@
   import StationOrbitBanner from '$lib/components/StationOrbitBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
+  import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import type { BlueprintModule } from '$lib/station-blueprint';
   import * as m from '$lib/paraglide/messages';
 
@@ -853,7 +854,10 @@
               onclick={() => openModule(mod)}
               aria-current={selected?.id === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name">{mod.name}</span>
+              <span class="mod-name-row">
+                <span class="mod-name">{mod.name}</span>
+                <AgencyBadge agency={mod.agency} />
+              </span>
               <span class="mod-meta">{mod.agency}</span>
             </button>
           </li>
@@ -870,7 +874,10 @@
                 onclick={() => openModule(ship)}
                 aria-current={selected?.id === ship.id ? 'true' : undefined}
               >
-                <span class="mod-name">{ship.name}</span>
+                <span class="mod-name-row">
+                  <span class="mod-name">{ship.name}</span>
+                  <AgencyBadge agency={ship.agency} />
+                </span>
                 <span class="mod-meta">{ship.agency}</span>
               </button>
             </li>
@@ -1157,6 +1164,11 @@
     border-color: rgba(68, 102, 255, 0.55);
     background: rgba(68, 102, 255, 0.12);
     outline: none;
+  }
+  .mod-name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .mod-name {
     display: block;

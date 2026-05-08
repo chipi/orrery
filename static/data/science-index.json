@@ -245,6 +245,27 @@
     "haystack": "sidereal vs synodic period two ways of asking 'how often does this come around again?' — same body, different reference frame, different answer. sidereal period: time for one full orbit relative to the fixed stars. this is the geometric, kepler-third-law period — mars sidereal year is 687 earth days. synodic period: time for one body to return to the same position relative to another body, usually as seen from a third. mars synodic period — time between mars-earth alignments — is 780 days, or about 26 months."
   },
   {
+    "tab": "space-stations",
+    "section": "node-module",
+    "title": "Node Module",
+    "intro": "A pressurized hub with multiple docking ports — the structural connector that lets a station branch.",
+    "haystack": "node module a pressurized hub with multiple docking ports — the structural connector that lets a station branch. nodes are connector modules — pressurized hubs with multiple common berthing mechanism (cbm) or docking ports — that allow a station to branch into a tree topology rather than a linear chain."
+  },
+  {
+    "tab": "space-stations",
+    "section": "pressurized-volume",
+    "title": "Pressurized Volume",
+    "intro": "The total habitable interior of a station — how much room the crew actually has to live and work.",
+    "haystack": "pressurized volume the total habitable interior of a station — how much room the crew actually has to live and work. pressurized volume is the air-filled habitable interior of a space station, measured in cubic meters. it excludes structural racks, bulkheads, and equipment volume — the figure usually quoted is gross internal volume, of which 30-50% is occupied by hardware."
+  },
+  {
+    "tab": "space-stations",
+    "section": "solar-power-budget",
+    "title": "Solar Power Budget",
+    "intro": "How much electricity the solar arrays generate — the upstream constraint on every system the crew can run.",
+    "haystack": "solar power budget how much electricity the solar arrays generate — the upstream constraint on every system the crew can run. solar power budget = peak generated power × duty cycle (sunlit fraction of orbit) × downstream efficiency (battery + regulator losses). for leo stations the duty cycle is about 0.6 — roughly 35 minutes sunlit out of every 92-minute orbit."
+  },
+  {
     "tab": "transfers",
     "section": "conic-sections",
     "title": "Conic Sections",

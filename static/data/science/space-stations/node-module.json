@@ -1,0 +1,29 @@
+{
+  "id": "node-module",
+  "tab": "space-stations",
+  "order": 2,
+  "diagram": "node-module.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "Unity, Harmony, and Tranquility are the ISS's three node modules"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Tianhe acts as the central hub plus living quarters in one"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Unity (ISS module)",
+      "u": "https://en.wikipedia.org/wiki/Unity_(ISS_module)",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Harmony module overview",
+      "u": "https://www.nasa.gov/international-space-station/harmony/",
+      "t": "core"
+    }
+  ]
+}

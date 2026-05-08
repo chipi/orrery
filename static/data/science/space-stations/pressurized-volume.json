@@ -1,0 +1,29 @@
+{
+  "id": "pressurized-volume",
+  "tab": "space-stations",
+  "order": 1,
+  "diagram": "pressurized-volume.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "Habitable modules on the ISS sum to roughly 388 m³ of pressurized volume"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Tiangong's three pressurized modules total about 110 m³"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · International Space Station",
+      "u": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · ISS Reference Guide (PDF)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2017/09/np-2015-05-022-jsc-iss-guide-2015-update-111015-508c.pdf",
+      "t": "core"
+    }
+  ]
+}

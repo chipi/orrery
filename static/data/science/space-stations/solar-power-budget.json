@@ -1,0 +1,29 @@
+{
+  "id": "solar-power-budget",
+  "tab": "space-stations",
+  "order": 3,
+  "diagram": "solar-power-budget.svg",
+  "diagram_quality": "schematic",
+  "see_in_app": [
+    {
+      "route": "/iss",
+      "context_key": "ISS solar arrays generate ~120 kW peak — driving every system on board"
+    },
+    {
+      "route": "/tiangong",
+      "context_key": "Tiangong runs at roughly 27 kW peak from its three module arrays"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Photovoltaic system on ISS",
+      "u": "https://en.wikipedia.org/wiki/Electrical_system_of_the_International_Space_Station",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · ISS power system",
+      "u": "https://www.nasa.gov/international-space-station/the-international-space-station-electrical-power-system/",
+      "t": "core"
+    }
+  ]
+}

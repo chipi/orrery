@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Apollo 11 free-return Earth-Moon-Earth trajectory">
+  <style>
+    .panel { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+    .earth { fill: rgba(108,169,255,0.85); stroke: rgba(108,169,255,1); }
+    .moon { fill: rgba(180,180,180,0.85); stroke: rgba(220,220,220,1); }
+    .arc { fill: none; stroke: #ffc850; stroke-width: 1.8; }
+    .arc-return { stroke-dasharray: 5 4; opacity: 0.7; }
+    .lm { fill: #ff6b6b; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.2px; }
+    .tag { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; }
+  </style>
+  <rect x="10" y="10" width="380" height="200" class="panel" />
+  <text x="20" y="28" class="label">APOLLO 11 · JUL 20, 1969 · FREE-RETURN TRAJECTORY</text>
+  <!-- Earth -->
+  <circle cx="80" cy="115" r="20" class="earth" />
+  <text x="80" y="148" text-anchor="middle" class="tag">EARTH · LAUNCH JUL 16</text>
+  <!-- Moon -->
+  <circle cx="320" cy="100" r="10" class="moon" />
+  <text x="320" y="80" text-anchor="middle" class="tag">MOON</text>
+  <!-- Outbound arc -->
+  <path d="M 100 115 Q 200 50 310 95" class="arc" />
+  <!-- Lunar orbit loop -->
+  <ellipse cx="320" cy="100" rx="22" ry="8" class="arc" transform="rotate(-15 320 100)" />
+  <!-- LM landing site marker -->
+  <circle cx="334" cy="95" r="2.5" class="lm" />
+  <text x="345" y="98" class="tag">TRANQUILLITY BASE</text>
+  <!-- Return arc -->
+  <path d="M 310 105 Q 200 175 100 120" class="arc arc-return" />
+  <text x="200" y="195" text-anchor="middle" class="tag">FREE-RETURN: IF LOI FAILS, AUTOMATIC LOOP HOME · 8d 3h 18m TOTAL · SPLASHDOWN JUL 24</text>
+</svg>

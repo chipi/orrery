@@ -1,0 +1,1 @@
+import{y as c,z as i,A as _,C as h,D as r,E as y,F as d,G as k,H as u,U as l}from"./runtime.CPsBPi18.js";function I(f,n,t){r&&y();var e=f,s=l,a,o=c()?i:_;h(()=>{o(s,s=n())&&(a&&d(a),a=k(()=>t(e)))}),r&&(e=u)}export{I as k};

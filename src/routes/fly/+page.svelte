@@ -42,6 +42,7 @@
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import FlightDirectorBanner from '$lib/components/FlightDirectorBanner.svelte';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
   // between control points — exactly mirrors lerpPoint(out, t)
@@ -552,6 +553,14 @@
     if (q === 'reconstructed') return m.fly_flight_caveat_reconstructed();
     if (q === 'sparse') return m.fly_flight_caveat_sparse();
     if (q === 'unknown') return m.fly_flight_caveat_unknown();
+    return null;
+  });
+  // Long-form "Why this caveat?" body — same mapping as the banner text.
+  let flightCaveatWhy = $derived.by<string | null>(() => {
+    const q = mission.flight_data_quality;
+    if (q === 'reconstructed') return m.why_caveat_reconstructed_body();
+    if (q === 'sparse') return m.why_caveat_sparse_body();
+    if (q === 'unknown') return m.why_caveat_unknown_body();
     return null;
   });
   function fmtNumOrDash(value: number | null | undefined, digits = 2): string {
@@ -1931,7 +1940,12 @@
            when flight_data_quality ≠ "measured". -->
       <aside class="hud hud-flight-params" aria-label={m.fly_panel_flight_params()}>
         {#if flightCaveat}
-          <div class="flight-caveat-banner" role="note">{flightCaveat}</div>
+          <div class="flight-caveat-banner" role="note">
+            {flightCaveat}
+            {#if flightCaveatWhy}
+              <WhyPopover title={m.why_caveat_title()} body={flightCaveatWhy} />
+            {/if}
+          </div>
         {/if}
         <div class="hud-section-title">{m.fly_panel_flight_params()}</div>
         <div class="hud-row">

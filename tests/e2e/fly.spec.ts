@@ -345,6 +345,26 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
     await expect(nextEvent).toBeVisible();
   });
 
+  /* ── C.6 — Why popover on flight-caveat banner ─────────────────── */
+  test('flight caveat exposes Why popover on reconstructed missions', async ({ page }) => {
+    // Mars 3 is sparse-quality, so the FLIGHT PARAMS HUD shows the
+    // caveat banner. The WhyPopover trigger renders alongside.
+    await page.goto('/fly?mission=mars3');
+    await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Mars 3/i, {
+      timeout: 10_000,
+    });
+    const caveat = page.locator('.flight-caveat-banner');
+    await expect(caveat).toBeVisible();
+    const trigger = caveat.locator('button.trigger');
+    await expect(trigger).toBeVisible();
+    await trigger.click();
+    const popover = page.locator('[data-testid="why-popover"]');
+    await expect(popover).toBeVisible();
+    // ESC closes.
+    await page.keyboard.press('Escape');
+    await expect(popover).toHaveCount(0);
+  });
+
   /* ── C.5 — Flight Director narration banner ────────────────────── */
   test('Flight Director banner is hidden until Science Lens is enabled', async ({ page }) => {
     await page.goto('/fly');

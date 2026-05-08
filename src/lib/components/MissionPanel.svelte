@@ -13,6 +13,7 @@
   import LearnLink from './LearnLink.svelte';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
@@ -110,6 +111,16 @@
     if (q === 'reconstructed') return m.mp_flight_caveat_reconstructed();
     if (q === 'sparse') return m.mp_flight_caveat_sparse();
     if (q === 'unknown') return m.mp_flight_caveat_unknown();
+    return null;
+  });
+  // Long-form explanation of the caveat for the WhyPopover next to the
+  // banner. Null when no caveat applies.
+  let flightCaveatWhy = $derived.by(() => {
+    if (!mission) return null;
+    const q = mission.flight_data_quality;
+    if (q === 'reconstructed') return m.why_caveat_reconstructed_body();
+    if (q === 'sparse') return m.why_caveat_sparse_body();
+    if (q === 'unknown') return m.why_caveat_unknown_body();
     return null;
   });
 
@@ -322,7 +333,12 @@
           />
         </figure>
         {#if flightCaveat}
-          <div class="flight-caveat" role="note">{flightCaveat}</div>
+          <div class="flight-caveat" role="note">
+            {flightCaveat}
+            {#if flightCaveatWhy}
+              <WhyPopover title={m.why_caveat_title()} body={flightCaveatWhy} />
+            {/if}
+          </div>
         {/if}
         {#if mission.flight}
           {#if mission.flight.launch}
@@ -345,7 +361,14 @@
                     ? m.mp_flight_unit_c3({ value: fmtNum(mission.flight.launch.c3_km2_s2, 2) })
                     : '—'}
                 </dd>
-                <dt>{m.mp_flight_label_dla()}</dt>
+                <dt>
+                  {m.mp_flight_label_dla()}<WhyPopover
+                    title={m.why_dla_title()}
+                    body={m.why_dla_body()}
+                    tab="propulsion"
+                    section="c3"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.launch.declination_deg != null
                     ? m.mp_flight_unit_deg({
@@ -353,7 +376,14 @@
                       })
                     : '—'}
                 </dd>
-                <dt>{m.mp_flight_label_mass_at_tli()}</dt>
+                <dt>
+                  {m.mp_flight_label_mass_at_tli()}<WhyPopover
+                    title={m.why_mass_tli_title()}
+                    body={m.why_mass_tli_body()}
+                    tab="propulsion"
+                    section="tsiolkovsky"
+                  />
+                </dt>
                 <dd class="numeric">
                   {mission.flight.launch.mass_at_tli_kg != null
                     ? m.mp_flight_unit_kg({ value: fmtInt(mission.flight.launch.mass_at_tli_kg) })

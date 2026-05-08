@@ -538,20 +538,21 @@ export function buildIssProxyStation(): THREE.Group {
       setShadowFlags(mast);
       wingPair.add(mast);
 
-      // iROSA overlay — PERPENDICULAR to the main wing (long axis along
-      // Z within wing-pair local frame, while main wing is along X).
-      // Crosses the wing in a "+" pattern, mounted slightly above the
-      // wing surface. Per round-3 feedback: 2 per side (one per anchor),
-      // 90° to the blue main panels.
+      // iROSA overlay — VERTICAL stem pointing DOWN, forming a "T" with
+      // the horizontal blue main wing on top. Long axis along -Y
+      // (nadir-pointing); broad face Z-normal (facing camera). Per
+      // round-4 feedback: blue is the T's top crossbar, yellow is the
+      // vertical stem extending nadir.
       const irosaInstalled = dir === 'fwd' ? anchor.iROSA.fwd : anchor.iROSA.aft;
       if (irosaInstalled) {
         const irosa = new THREE.Mesh(
-          // Swap X↔Z extents so long axis is now Z, not X
-          new THREE.BoxGeometry(irosaDepth, 0.025, irosaHalfLen * 2),
+          // X=width, Y=length (vertical), Z=thin
+          new THREE.BoxGeometry(irosaDepth, irosaHalfLen * 2, 0.025),
           irosaMat,
         );
-        // Centre on the wing's mid-point so it crosses the wing.
-        irosa.position.set(xSign * (wingHalfLen + 0.04), 0.05, 0);
+        // Centre on wing mid-point in X/Z, drop down so the top edge
+        // meets the wing level (Y=0 in wing-pair local).
+        irosa.position.set(xSign * (wingHalfLen + 0.04), -irosaHalfLen, 0);
         setShadowFlags(irosa);
         irosa.userData.stationPickable = false;
         irosa.name = `irosa_${anchor.id}_${dir}`;

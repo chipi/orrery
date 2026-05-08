@@ -496,20 +496,11 @@ export function buildIssProxyStation(): THREE.Group {
 
     // One wing pair per anchor: fwd + aft wings sharing the BGA + SADA.
     // Wings extend perpendicular to truss (along ±X = exactly 90° to
-    // the truss spine). No Y-axis tilt — wings stay aligned to the
-    // truss centerline.
-    //
-    // baseRotation = 2π/3 (120°) around X axis tilts the broad face
-    // 60° below horizontal toward camera — wings angled "60° down"
-    // for clear visualization (instead of edge-on flat or coplanar
-    // with truss). Sun-tracking disabled so wings stay at this angle
-    // for visual stability rather than rotating through all positions.
+    // the truss spine). Broad face faces +Y (zenith), parallel to the
+    // orbital plane — wings lie FLAT, matching canonical ISS reference
+    // photos (NASA archival imagery). No tilt around X or Y.
     const wingPair = new THREE.Group();
     wingPair.position.set(0, 0.42, anchor.z);
-    wingPair.rotation.x = (Math.PI * 2) / 3;
-    // Sun-tracking disabled at user request — wings stay at the chosen
-    // 60°-down rest orientation. Re-enable by setting tracksSun = true
-    // and removing the rotation.x assignment above.
 
     for (const dir of ['fwd', 'aft'] as const) {
       const xSign = dir === 'fwd' ? 1 : -1;

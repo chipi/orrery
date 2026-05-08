@@ -25,7 +25,7 @@ const MODULE_LENGTHS: Record<string, number> = {
   destiny: 0.67,
   harmony: 0.57,
   poisk: 0.32,
-  pirs: 0.32,
+  // pirs intentionally skipped — retired/deorbited 2021, no longer rendered.
   nauka: 1.02,
   prichal: 0.26, // sphere — diameter is 2 * radius (0.13)
   rassvet: 0.47,
@@ -55,6 +55,10 @@ describe('ISS proxy ratio guardrails (Phase 1 §1.0 spec)', () => {
   describe('module dimensions', () => {
     for (const id of ISS_MODULE_IDS) {
       if (id === 'canadarm2') continue;
+      // Pirs was deorbited 2021 and replaced by Nauka at the same nadir
+      // port; the proxy model removed the duplicate render. Skip the
+      // ratio guardrail since the mesh no longer exists.
+      if (id === 'pirs') continue;
       const expectedLen = MODULE_LENGTHS[id];
       if (!expectedLen) continue;
 

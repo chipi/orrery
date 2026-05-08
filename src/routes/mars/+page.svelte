@@ -18,6 +18,8 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import { onLayerChange } from '$lib/science-layers';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
@@ -245,6 +247,43 @@
       new THREE.MeshPhongMaterial({ map: marsMap, color: 0xffffff, shininess: 4 }),
     );
     marsAxis.add(marsMesh);
+
+    // J.3 — Atmosphere shell at ~120 km altitude. Mars's atmosphere is
+    // 1% Earth's pressure but reaches similar altitude before fading.
+    // Scene scale: marsRadius=30 → real 3389 km, so 1 unit ≈ 113 km;
+    // 120 km ≈ 1.06 units → shell radius ≈ 31.1.
+    const marsAtmosphereR = marsRadius + 120 / 113;
+    const marsAtmosphere = new THREE.Mesh(
+      new THREE.SphereGeometry(marsAtmosphereR, 48, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0xffaa66,
+        transparent: true,
+        opacity: 0.08,
+        side: THREE.BackSide,
+        depthWrite: false,
+      }),
+    );
+    const marsAtmoRing = new THREE.Mesh(
+      new THREE.RingGeometry(marsAtmosphereR * 0.999, marsAtmosphereR * 1.002, 64),
+      new THREE.MeshBasicMaterial({
+        color: 0xffaa66,
+        transparent: true,
+        opacity: 0.5,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      }),
+    );
+    marsAtmoRing.rotation.x = Math.PI / 2;
+    marsAtmosphere.userData.layerKey = 'atmosphere';
+    marsAtmoRing.userData.layerKey = 'atmosphere';
+    marsAtmosphere.visible = false;
+    marsAtmoRing.visible = false;
+    scene.add(marsAtmosphere);
+    scene.add(marsAtmoRing);
+    const stopMarsAtmosphereLayer = onLayerChange('atmosphere', (on) => {
+      marsAtmosphere.visible = on;
+      marsAtmoRing.visible = on;
+    });
 
     type SurfaceMarker = {
       group: THREE.Group;
@@ -1058,6 +1097,7 @@
     cleanup = () => {
       cancelAnimationFrame(raf);
       stopRm();
+      stopMarsAtmosphereLayer?.();
       window.removeEventListener('resize', onResize);
       renderer.domElement.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
@@ -1413,7 +1453,9 @@
   section="edl"
 />
 
-<!-- Layers panel mounts here once J.3 wires terrestrial-body overlays. -->
+<!-- /mars Layers panel — atmosphere shell at ~120 km altitude is the
+     first wired layer. -->
+<ScienceLayersPanel available={['atmosphere']} />
 
 <style>
   .mars {

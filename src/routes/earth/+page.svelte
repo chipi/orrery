@@ -19,6 +19,8 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -245,6 +247,45 @@
       new THREE.MeshPhongMaterial({ map: earthMap, color: 0xffffff, shininess: 12 }),
     );
     scene.add(earthMesh);
+
+    // J.3 — Atmosphere shell at the Kármán line (100 km altitude).
+    // Translucent dome that visually sets where "Earth" ends and
+    // "space" begins. Lens-gated via the 'atmosphere' layer.
+    const karmanRadius = altToOrbitRadius(100);
+    const atmosphereShell = new THREE.Mesh(
+      new THREE.SphereGeometry(karmanRadius, 48, 48),
+      new THREE.MeshBasicMaterial({
+        color: 0x4ecdc4,
+        transparent: true,
+        opacity: 0.08,
+        side: THREE.BackSide,
+        depthWrite: false,
+      }),
+    );
+    atmosphereShell.userData.layerKey = 'atmosphere';
+    atmosphereShell.visible = false;
+    scene.add(atmosphereShell);
+    // Karman-line wireframe ring on the equator for legibility — the
+    // dome alone reads as a slight glow, the ring makes the boundary
+    // explicit.
+    const karmanRing = new THREE.Mesh(
+      new THREE.RingGeometry(karmanRadius * 0.999, karmanRadius * 1.002, 64),
+      new THREE.MeshBasicMaterial({
+        color: 0x4ecdc4,
+        transparent: true,
+        opacity: 0.55,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      }),
+    );
+    karmanRing.rotation.x = Math.PI / 2;
+    karmanRing.userData.layerKey = 'atmosphere';
+    karmanRing.visible = false;
+    scene.add(karmanRing);
+    const stopAtmosphereLayer = onLayerChange('atmosphere', (on) => {
+      atmosphereShell.visible = on;
+      karmanRing.visible = on;
+    });
 
     // Moon — small textured sphere at the Moon-orbit radius. Click goes to /moon.
     const moonMap = textureLoader.load(`${base}/textures/2k_moon.jpg`);
@@ -866,6 +907,7 @@
     cleanup = () => {
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
+      stopAtmosphereLayer?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -1275,9 +1317,10 @@
   section="orbit-regimes"
 />
 
-<!-- Layers panel mounts on this route once J.3 wires terrestrial-body
-     overlays (atmosphere altitude bands, gravity field, etc.). Until
-     then the lens is just a banner — no toggles to mislead users. -->
+<!-- /earth Layers panel — atmosphere shell at the Kármán line is the
+     first wired terrestrial-body overlay. More layers (gravity field,
+     radiation belts) follow as J.3.x. -->
+<ScienceLayersPanel available={['atmosphere']} />
 
 <style>
   .earth {

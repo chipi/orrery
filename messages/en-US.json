@@ -503,6 +503,8 @@
   "science_layer_conics_desc": "Names the current arc shape (ellipse / hyperbola / etc.) live.",
   "science_layer_microgravity_label": "Microgravity axes",
   "science_layer_microgravity_desc": "Three colour-keyed body axes — zenith / nadir, prograde / retrograde, port / starboard.",
+  "science_layer_atmosphere_label": "Atmosphere shell",
+  "science_layer_atmosphere_desc": "Translucent shell at the body's effective atmospheric edge — Kármán line on Earth, ~120 km on Mars.",
   "conics_eyebrow": "CONIC SECTION",
   "conics_read_more": "→ Read in /science",
   "conics_shape_circle": "Circle",

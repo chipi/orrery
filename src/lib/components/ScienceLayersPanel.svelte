@@ -52,6 +52,7 @@
     coast: false,
     conics: false,
     microgravity: false,
+    atmosphere: false,
   });
 
   let stops: Array<() => void> = [];
@@ -117,6 +118,11 @@
         return {
           label: m.science_layer_microgravity_label(),
           description: m.science_layer_microgravity_desc(),
+        };
+      case 'atmosphere':
+        return {
+          label: m.science_layer_atmosphere_label(),
+          description: m.science_layer_atmosphere_desc(),
         };
     }
   }

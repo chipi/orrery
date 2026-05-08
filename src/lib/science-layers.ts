@@ -28,7 +28,8 @@ export type LayerKey =
   | 'apsides' // G — perihelion/aphelion + true anomaly callouts
   | 'coast' // H — engine-off coast preview (/fly only)
   | 'conics' // I — conic-section family side panel (/fly only)
-  | 'microgravity'; // F — microgravity 3D axes (/iss + /tiangong only)
+  | 'microgravity' // F — microgravity 3D axes (/iss + /tiangong only)
+  | 'atmosphere'; // J.3 — atmosphere altitude shells (terrestrial bodies)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -41,6 +42,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'coast',
   'conics',
   'microgravity',
+  'atmosphere',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -56,6 +58,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   coast: false,
   conics: false,
   microgravity: true,
+  atmosphere: true,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

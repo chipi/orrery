@@ -245,6 +245,7 @@
     progress = 0;
     computing = true;
     selected = null;
+    pinned = null;
     loadFailed = false;
     const result = await getPorkchopGrid(id);
     if (myId !== loadId) return; // superseded by a newer load
@@ -323,6 +324,11 @@
     };
     if (hoverCell && (!selected || hoverCell.i !== selected.i || hoverCell.j !== selected.j)) {
       drawCellHighlight(hoverCell, 'rgba(255,255,255,0.45)', 1);
+    }
+    // Pin marker — gold ring, drawn under the selection so the white
+    // selection ring wins when the user re-selects the pinned cell.
+    if (pinned && (!selected || pinned.i !== selected.i || pinned.j !== selected.j)) {
+      drawCellHighlight(pinned, '#ffc850', 2);
     }
     if (selected) drawCellHighlight(selected, '#fff', 2);
 
@@ -480,6 +486,56 @@
       dv: cellDv + insertionDv,
     };
   });
+
+  // ─── Mission Sandbox (C.7 / Concept #5) ──────────────────────────
+  // Pin one cell, then click another to see the deltas. Layered onto
+  // the existing porkchop UX: the pin draws as a gold ring on the
+  // canvas and a compare panel surfaces ΔDEP / ΔTOF / ΔΔv vs. the
+  // currently selected cell.
+  let pinned = $state<{ i: number; j: number } | null>(null);
+
+  let pinnedReadout: Readout | null = $derived.by(() => {
+    if (!pinned || !grid) return null;
+    const cellDv = grid[pinned.j][pinned.i];
+    const insertionDv = DV_ORBIT_INSERTION[missionType] ?? 0;
+    return {
+      dep: dayToLongDate(depDays[pinned.i]),
+      tof: arrDays[pinned.j],
+      arr: dayToLongDate(depDays[pinned.i] + arrDays[pinned.j]),
+      dv: cellDv + insertionDv,
+    };
+  });
+
+  let compareDelta: { ddep: number; dtof: number; ddv: number } | null = $derived.by(() => {
+    if (!pinned || !selected || !grid) return null;
+    if (pinned.i === selected.i && pinned.j === selected.j) return null;
+    const insertionDv = DV_ORBIT_INSERTION[missionType] ?? 0;
+    const dvSel = grid[selected.j][selected.i] + insertionDv;
+    const dvPin = grid[pinned.j][pinned.i] + insertionDv;
+    return {
+      ddep: depDays[selected.i] - depDays[pinned.i],
+      dtof: arrDays[selected.j] - arrDays[pinned.j],
+      ddv: dvSel - dvPin,
+    };
+  });
+
+  function pinSelectedCell() {
+    if (selected) {
+      pinned = { i: selected.i, j: selected.j };
+      drawPlot();
+    }
+  }
+  function clearPin() {
+    pinned = null;
+    drawPlot();
+  }
+  /** Format a signed number with explicit + on positives. Used by the
+   * sandbox compare panel so users see direction at a glance. */
+  function signed(n: number, fractionDigits = 0): string {
+    const rounded = Math.abs(n) < Math.pow(10, -fractionDigits) / 2 ? 0 : n;
+    const sign = rounded > 0 ? '+' : rounded < 0 ? '−' : '±';
+    return `${sign}${Math.abs(rounded).toFixed(fractionDigits)}`;
+  }
 
   // ─── Vehicle selection + Δv budget ───────────────────────────────
   let selectedRocket = $derived(rocketList.find((r) => r.id === selectedRocketId) ?? null);
@@ -783,6 +839,59 @@
       <div class="row strong">
         <span class="label">{m.plan_label_dv_required()}</span>
         <span class="value">{readout.dv.toFixed(2)} km/s</span>
+      </div>
+
+      <!-- Mission Sandbox (C.7): pin a cell, then click another to see
+           the deltas. The pin draws as a gold ring on the canvas. -->
+      <div class="sandbox" data-testid="plan-sandbox">
+        {#if pinned && pinnedReadout}
+          <div class="sandbox-pinned">
+            <span class="sandbox-eyebrow">{m.plan_sandbox_pinned()}</span>
+            <span class="sandbox-pin-summary">
+              {pinnedReadout.dep} · {m.plan_transit_days({
+                count: pinnedReadout.tof.toFixed(0),
+              })} · {pinnedReadout.dv.toFixed(2)} km/s
+            </span>
+            <button type="button" class="sandbox-clear" onclick={clearPin}>
+              {m.plan_sandbox_clear()}
+            </button>
+          </div>
+          {#if compareDelta}
+            <dl class="sandbox-compare" data-testid="plan-sandbox-compare">
+              <div class="sandbox-row">
+                <dt>{m.plan_sandbox_d_dep()}</dt>
+                <dd>{m.plan_sandbox_days({ value: signed(compareDelta.ddep) })}</dd>
+              </div>
+              <div class="sandbox-row">
+                <dt>{m.plan_sandbox_d_tof()}</dt>
+                <dd>{m.plan_sandbox_days({ value: signed(compareDelta.dtof) })}</dd>
+              </div>
+              <div class="sandbox-row strong" class:cheaper={compareDelta.ddv < 0}>
+                <dt>{m.plan_sandbox_d_dv()}</dt>
+                <dd>
+                  {m.plan_sandbox_kms({ value: signed(compareDelta.ddv, 2) })}
+                  <span class="sandbox-tag">
+                    {compareDelta.ddv < 0
+                      ? m.plan_sandbox_cheaper()
+                      : compareDelta.ddv > 0
+                        ? m.plan_sandbox_costlier()
+                        : ''}
+                  </span>
+                </dd>
+              </div>
+            </dl>
+          {/if}
+        {:else}
+          <button
+            type="button"
+            class="sandbox-pin"
+            data-testid="plan-sandbox-pin"
+            onclick={pinSelectedCell}
+          >
+            {m.plan_sandbox_pin_button()}
+          </button>
+          <p class="sandbox-hint">{m.plan_sandbox_pin_hint()}</p>
+        {/if}
       </div>
 
       <div class="divider"></div>
@@ -1266,6 +1375,121 @@
     height: 1px;
     background: rgba(255, 255, 255, 0.08);
     margin: 6px 0;
+  }
+
+  /* Mission Sandbox (C.7) — pin a cell and compare. */
+  .sandbox {
+    margin: 8px 0 4px;
+    padding: 8px 10px;
+    background: rgba(255, 200, 80, 0.04);
+    border: 1px solid rgba(255, 200, 80, 0.18);
+    border-radius: 4px;
+  }
+  .sandbox-pin {
+    display: block;
+    width: 100%;
+    min-height: 36px;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px dashed rgba(255, 200, 80, 0.5);
+    border-radius: 4px;
+    color: rgba(255, 200, 80, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      background 120ms,
+      color 120ms;
+  }
+  .sandbox-pin:hover,
+  .sandbox-pin:focus-visible {
+    background: rgba(255, 200, 80, 0.08);
+    border-color: rgba(255, 200, 80, 0.85);
+    color: #ffc850;
+    outline: none;
+  }
+  .sandbox-hint {
+    margin: 6px 0 0;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .sandbox-pinned {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .sandbox-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #ffc850;
+  }
+  .sandbox-pin-summary {
+    flex: 1;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .sandbox-clear {
+    background: transparent;
+    border: none;
+    color: rgba(255, 200, 80, 0.7);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+  .sandbox-clear:hover,
+  .sandbox-clear:focus-visible {
+    color: #ffc850;
+    outline: none;
+  }
+  .sandbox-compare {
+    margin: 0;
+    padding: 8px 0 0;
+    border-top: 1px solid rgba(255, 200, 80, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .sandbox-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .sandbox-row dt {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+  }
+  .sandbox-row dd {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+  }
+  .sandbox-row.strong dd {
+    color: #ffc850;
+    font-weight: 700;
+  }
+  .sandbox-row.strong.cheaper dd {
+    color: #4ecdc4;
+  }
+  .sandbox-tag {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-left: 4px;
   }
 
   .vehicle {

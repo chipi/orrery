@@ -48,6 +48,33 @@ test.describe('/plan — porkchop computes and renders', () => {
     await expect(panel).toContainText(/km\/s/);
   });
 
+  /* ── C.7 — Mission Sandbox: pin + compare ──────────────────────── */
+  test('pin one cell, click another → compare panel surfaces deltas', async ({ page }) => {
+    await page.goto('/plan');
+    await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
+
+    const canvas = page.getByLabel(/Porkchop plot/i);
+    const box = await canvas.boundingBox();
+    if (!box) return;
+    // Click cell A (left side).
+    await canvas.click({ position: { x: box.width / 2 - 60, y: box.height / 2 - 30 } });
+    const panel = page.getByRole('complementary', { name: /Mission summary/i });
+    const sandbox = panel.locator('[data-testid="plan-sandbox"]');
+    await expect(sandbox).toBeVisible();
+
+    // Pin it.
+    await sandbox.locator('[data-testid="plan-sandbox-pin"]').click();
+    await expect(sandbox).toContainText(/PINNED/);
+
+    // Click cell B (different position).
+    await canvas.click({ position: { x: box.width / 2 + 60, y: box.height / 2 + 30 } });
+    const compare = panel.locator('[data-testid="plan-sandbox-compare"]');
+    await expect(compare).toBeVisible();
+    await expect(compare).toContainText(/Δ DEP/);
+    await expect(compare).toContainText(/Δ TOF/);
+    await expect(compare).toContainText(/Δ ∆V/);
+  });
+
   test('vehicle selector toggles the ∆v budget bar between viable and deficit states', async ({
     page,
   }) => {

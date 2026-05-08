@@ -134,6 +134,28 @@
     return KNOWN_AGENCY_LOGOS.has(key) ? `${base}/logos/${key}.svg` : null;
   }
 
+  // Full-name mapping for the agency filter pills' tooltips. Sourced
+  // from static/data/source-logos.json (the same canonical names the
+  // /credits page renders). Inline because the filter row only needs
+  // names for the agency abbreviations that actually appear in mission
+  // data — about a dozen — and an inline map avoids an extra fetch.
+  const AGENCY_FULL_NAMES: Record<string, string> = {
+    nasa: 'NASA',
+    esa: 'European Space Agency',
+    jaxa: 'Japan Aerospace Exploration Agency',
+    isro: 'Indian Space Research Organisation',
+    cnsa: 'China National Space Administration',
+    roscosmos: 'Roscosmos',
+    spacex: 'SpaceX',
+    uaesa: 'MBRSC / UAE Space Agency',
+    'blue-origin': 'Blue Origin',
+    'blue origin': 'Blue Origin',
+    csa: 'Canadian Space Agency',
+  };
+  function fullNameFor(agency: string): string {
+    return AGENCY_FULL_NAMES[agency.toLowerCase()] ?? agency;
+  }
+
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
   let panelOpen = $state(false);
@@ -322,14 +344,38 @@
           onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
         >
         {#each agencies as agency (agency)}
+          {@const logo = logoFor(agency)}
+          {@const fullName = fullNameFor(agency)}
           <button
             type="button"
-            class="pill"
+            class="pill agency-pill"
             class:active={agencyFilter === agency}
+            class:logo-pill={logo != null}
             role="radio"
             aria-checked={agencyFilter === agency}
-            onclick={() => setAgency(agency)}>{agency}</button
+            aria-label={fullName}
+            title={fullName}
+            onclick={() => setAgency(agency)}
           >
+            {#if logo}
+              <img
+                src={logo}
+                alt={fullName}
+                class="agency-pill-logo"
+                onerror={(e) => {
+                  // Logo missing → fall back to text label so the pill
+                  // never renders blank.
+                  const img = e.currentTarget as HTMLImageElement;
+                  img.style.display = 'none';
+                  const fb = img.nextElementSibling as HTMLElement | null;
+                  if (fb) fb.style.display = 'inline';
+                }}
+              />
+              <span class="agency-pill-fallback" hidden>{agency}</span>
+            {:else}
+              {agency}
+            {/if}
+          </button>
         {/each}
       </div>
     {/if}
@@ -522,6 +568,38 @@
   .pill:focus-visible {
     outline: 2px solid #4466ff;
     outline-offset: 2px;
+  }
+
+  /* Logo-mode agency pill: tighter padding (the logo is the label),
+     fixed minimum width so all agency pills line up uniformly, and
+     a subtle white tint that hover/active darkens. The image itself
+     is sized to match the pill's text metrics so the row reads as
+     one consistent strip. */
+  .pill.logo-pill {
+    padding: 4px 10px;
+    min-width: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .agency-pill-logo {
+    height: 22px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+    display: block;
+    /* Most logos are full-color SVGs; lift contrast on the dark UI
+       and de-saturate the inactive state so the active one pops. */
+    opacity: 0.6;
+    transition: opacity 0.15s;
+  }
+  .pill.logo-pill:hover .agency-pill-logo,
+  .pill.logo-pill.active .agency-pill-logo {
+    opacity: 1;
+  }
+  .pill.logo-pill.active {
+    background: rgba(68, 102, 255, 0.18);
+    border-color: rgba(68, 102, 255, 0.55);
   }
 
   .grid {

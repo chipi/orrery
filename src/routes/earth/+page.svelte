@@ -1358,6 +1358,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 14px;
     padding: 6px 14px;
     background: rgba(8, 10, 22, 0.7);
@@ -1370,6 +1371,12 @@
     color: rgba(255, 255, 255, 0.7);
     pointer-events: none;
     z-index: 5;
+  }
+  /* The legend itself is click-through (so the 3D canvas under it
+     receives orbit/zoom drags), but the science chip inside it must
+     reclaim pointer events so it can be clicked. */
+  .legend-3d :global(a[data-science-chip]) {
+    pointer-events: auto;
   }
   .legend-item {
     display: inline-flex;

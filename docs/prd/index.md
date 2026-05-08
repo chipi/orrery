@@ -13,3 +13,5 @@
 | PRD-008 | Science (in-app encyclopedia) | Draft v0.1 | curious learner, STEM student |
 | PRD-009 | Mars Surface Map | Draft v0.1 | curious learner, STEM student, space enthusiast |
 | PRD-010 | ISS Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
+| PRD-011 | Tiangong Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
+| PRD-012 | Spaceflight Fleet | Draft v0.1 | curious learner, STEM student, space enthusiast |

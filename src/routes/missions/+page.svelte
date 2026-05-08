@@ -234,18 +234,10 @@
     {/if}
   </div>
 
-  <TimelineNavigator
-    {missions}
-    {fromYear}
-    {toYear}
-    onChange={setYearWindow}
-    onSelectMission={selectMission}
-  />
-
-  <!-- J.1 — Filters collapsed by default. Click the strip to expand
-       reveal the dest / status / agency / window pickers. State
-       resets per-mount so users are always greeted with the clean
-       grid first. -->
+  <!-- J.1 — Filters + timeline collapsed by default. Click the strip
+       to expand and reveal both the year-window timeline and the
+       dest / status / agency pickers. State resets per-mount so users
+       are always greeted with the clean grid first. -->
   <button
     type="button"
     class="filters-toggle"
@@ -262,6 +254,13 @@
   </button>
 
   {#if filtersExpanded}
+    <TimelineNavigator
+      {missions}
+      {fromYear}
+      {toYear}
+      onChange={setYearWindow}
+      onSelectMission={selectMission}
+    />
     <nav id="missions-filters" class="filters" aria-label={m.missions_filters_aria()}>
       <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
         <span class="filter-label">{m.lib_filter_dest_label()}</span>

@@ -1,0 +1,21 @@
+{
+  "id": "cygnus-standard",
+  "name": "Cygnus Standard",
+  "category": "cargo-spacecraft",
+  "agency": "Northrop Grumman",
+  "country": "USA",
+  "manufacturer": "Orbital ATK",
+  "first_flight": "2013-09-18",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Pressurised-only ISS cargo carrier",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Cygnus Standard — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

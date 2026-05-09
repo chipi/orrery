@@ -1,0 +1,21 @@
+{
+  "id": "htv",
+  "name": "HTV (Kounotori)",
+  "category": "cargo-spacecraft",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries",
+  "first_flight": "2009-09-10",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Japan's H-II Transfer Vehicle to ISS",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "HTV (Kounotori) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle",
+      "t": "intro"
+    }
+  ]
+}

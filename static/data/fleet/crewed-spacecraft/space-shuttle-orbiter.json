@@ -1,0 +1,21 @@
+{
+  "id": "space-shuttle-orbiter",
+  "name": "Space Shuttle Orbiter",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Rockwell International",
+  "first_flight": "1981-04-12",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Reusable winged orbital crew vehicle",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Space Shuttle Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "shenzhou",
+  "name": "Shenzhou",
+  "category": "crewed-spacecraft",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "1999-11-19",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First Chinese crewed spacecraft",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Shenzhou — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

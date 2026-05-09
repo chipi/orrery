@@ -1,0 +1,21 @@
+{
+  "id": "yutu",
+  "name": "Yutu",
+  "category": "rover",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2013-12-14",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First Chinese lunar rover; Chang'e-3",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Yutu — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Yutu_(rover)",
+      "t": "intro"
+    }
+  ]
+}

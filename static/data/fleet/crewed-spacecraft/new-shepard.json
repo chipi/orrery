@@ -1,0 +1,21 @@
+{
+  "id": "new-shepard",
+  "name": "New Shepard",
+  "category": "crewed-spacecraft",
+  "agency": "Blue Origin",
+  "country": "USA",
+  "manufacturer": "Blue Origin",
+  "first_flight": "2021-07-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First commercial suborbital crewed vehicle",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "New Shepard — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/New_Shepard",
+      "t": "intro"
+    }
+  ]
+}

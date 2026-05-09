@@ -1,0 +1,21 @@
+{
+  "id": "sls-block-1",
+  "name": "SLS Block 1",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Boeing / Northrop Grumman / Aerojet Rocketdyne",
+  "first_flight": "2022-11-16",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "Heavy lift for Artemis lunar program",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "SLS Block 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Launch_System",
+      "t": "intro"
+    }
+  ]
+}

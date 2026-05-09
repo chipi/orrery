@@ -1,0 +1,21 @@
+{
+  "id": "soyuz-t",
+  "name": "Soyuz T",
+  "category": "crewed-spacecraft",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Energia",
+  "first_flight": "1979",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Three-cosmonaut Salyut-era variant",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Soyuz T — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz-T",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "proton-m",
+  "name": "Proton-M",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "Khrunichev",
+  "first_flight": "2001",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Successor to Proton-K; modernised heavy lift",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Proton-M — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Proton-M",
+      "t": "intro"
+    }
+  ]
+}

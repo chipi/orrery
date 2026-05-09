@@ -62,6 +62,9 @@ const sourceLogosSchema = loadSchema('source-logos.schema.json');
 const textSourcesSchema = loadSchema('text-sources.schema.json');
 // ADR-051 Milestone L-B — outbound LEARN-link provenance.
 const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
+// PRD-012 v0.2 / RFC-016 v0.2 — Spaceflight Fleet (/fleet).
+const fleetEntrySchema = loadSchema('fleet-entry.schema.json');
+const fleetIndexSchema = loadSchema('fleet-index.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -94,6 +97,8 @@ const validateLicenseWaivers = ajv.compile(licenseWaiversSchema);
 const validateSourceLogos = ajv.compile(sourceLogosSchema);
 const validateTextSources = ajv.compile(textSourcesSchema);
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
+const validateFleetEntry = ajv.compile(fleetEntrySchema);
+const validateFleetIndex = ajv.compile(fleetIndexSchema);
 
 let failed = 0;
 let passed = 0;
@@ -192,14 +197,106 @@ for (const file of listJson(join(DATA_ROOT, 'porkchop'))) {
   validateFile(file, validatePorkchop);
 }
 
+// PRD-012 v0.2 — Spaceflight Fleet index + per-entry detail files.
+// Index lives at static/data/fleet/index.json; per-entry files under
+// static/data/fleet/{category}/{id}.json. Categories follow the
+// fleet-entry schema's enum (launcher / crewed-spacecraft / etc).
+const FLEET_DIR = join(DATA_ROOT, 'fleet');
+const FLEET_INDEX_PATH = join(FLEET_DIR, 'index.json');
+validateFile(FLEET_INDEX_PATH, validateFleetIndex);
+
+const FLEET_CATEGORIES = [
+  'launcher',
+  'crewed-spacecraft',
+  'cargo-spacecraft',
+  'station',
+  'rover',
+  'lander',
+  'orbiter',
+  'observatory',
+];
+
+const fleetEntries: Array<{ id: string; category: string; linked_missions?: string[] }> = [];
+for (const category of FLEET_CATEGORIES) {
+  for (const file of listJson(join(FLEET_DIR, category))) {
+    validateFile(file, validateFleetEntry);
+    try {
+      const entry = readJson(file) as { id: string; category: string; linked_missions?: string[] };
+      fleetEntries.push(entry);
+    } catch {
+      // schema validation already reported the parse error
+    }
+  }
+}
+
+// Fleet integrity: index records and per-entry files must match 1:1 by id.
+if (existsSync(FLEET_INDEX_PATH)) {
+  try {
+    const indexRecords = readJson(FLEET_INDEX_PATH) as Array<{ id: string; category: string }>;
+    const indexIds = new Set(indexRecords.map((r) => r.id));
+    const entryIds = new Set(fleetEntries.map((e) => e.id));
+    const missingDetail = [...indexIds].filter((id) => !entryIds.has(id));
+    const orphanDetail = [...entryIds].filter((id) => !indexIds.has(id));
+    if (missingDetail.length > 0) {
+      console.error(
+        `\n  ✗ fleet/index.json: ${missingDetail.length} index entries lack a detail file`,
+      );
+      console.error(`      missing: ${missingDetail.join(', ')}`);
+      failed += 1;
+    }
+    if (orphanDetail.length > 0) {
+      console.error(`\n  ✗ fleet detail files: ${orphanDetail.length} entries not in index.json`);
+      console.error(`      orphans: ${orphanDetail.join(', ')}`);
+      failed += 1;
+    }
+    // Category mismatch: index says "launcher" but file lives under "rover/".
+    const indexById = new Map(indexRecords.map((r) => [r.id, r.category]));
+    for (const entry of fleetEntries) {
+      const idxCat = indexById.get(entry.id);
+      if (idxCat && idxCat !== entry.category) {
+        console.error(`\n  ✗ fleet/${entry.category}/${entry.id}.json: category mismatch`);
+        console.error(`      index says "${idxCat}", entry says "${entry.category}"`);
+        failed += 1;
+      }
+    }
+  } catch {
+    // index parse error already reported by validateFile above
+  }
+}
+
 // 1. Mission index
 validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
 // 2. Mission base files (per destination)
 const missionDataDirs = listMissionDataDirs();
+const missionIds = new Set<string>();
 for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
+    try {
+      const mission = readJson(file) as { id: string };
+      missionIds.add(mission.id);
+    } catch {
+      // schema validation already reported the parse error
+    }
+  }
+}
+
+// PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet → missions cross-reference
+// integrity. Every fleet entry's linked_missions[*] must resolve to a
+// mission ID. (Phase A skeletons have no linked_missions yet; check is
+// a no-op until Phase E populates them.) Bidirectional check from
+// missions.fleet_refs → fleet IDs lands in Phase E once that schema
+// extension is in place.
+for (const entry of fleetEntries) {
+  if (!entry.linked_missions || entry.linked_missions.length === 0) continue;
+  const dangling = entry.linked_missions.filter((mid) => !missionIds.has(mid));
+  if (dangling.length > 0) {
+    console.error(
+      `\n  ✗ fleet/${entry.category}/${entry.id}.json: linked_missions has ${dangling.length} unresolved IDs`,
+    );
+    console.error(`      dangling: ${dangling.join(', ')}`);
+    failed += 1;
   }
 }
 

@@ -1,0 +1,21 @@
+{
+  "id": "rosetta",
+  "name": "Rosetta",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "EADS Astrium",
+  "first_flight": "2004-03-02",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First spacecraft to orbit a comet (67P)",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Rosetta — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

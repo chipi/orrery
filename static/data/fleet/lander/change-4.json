@@ -1,0 +1,21 @@
+{
+  "id": "change-4",
+  "name": "Chang'e 4",
+  "category": "lander",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2019-01-03",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First soft landing on lunar far side",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Chang'e 4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_4",
+      "t": "intro"
+    }
+  ]
+}

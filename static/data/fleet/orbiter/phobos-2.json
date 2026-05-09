@@ -1,0 +1,21 @@
+{
+  "id": "phobos-2",
+  "name": "Phobos 2",
+  "category": "orbiter",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1988-07-12",
+  "status": "FAILED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Last Soviet planetary mission; lost at Phobos approach",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Phobos 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Phobos_2",
+      "t": "intro"
+    }
+  ]
+}

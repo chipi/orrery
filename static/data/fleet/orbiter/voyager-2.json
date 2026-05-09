@@ -1,0 +1,21 @@
+{
+  "id": "voyager-2",
+  "name": "Voyager 2",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "1977-08-20",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Only spacecraft to visit all four giant planets",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Voyager 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voyager_2",
+      "t": "intro"
+    }
+  ]
+}

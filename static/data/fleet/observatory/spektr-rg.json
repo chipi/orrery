@@ -1,0 +1,21 @@
+{
+  "id": "spektr-rg",
+  "name": "Spektr-RG",
+  "category": "observatory",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "2019-07-13",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Russian-German X-ray sky-mapping observatory",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Spektr-RG — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Spektr-RG",
+      "t": "intro"
+    }
+  ]
+}

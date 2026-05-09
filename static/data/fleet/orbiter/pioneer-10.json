@@ -1,0 +1,21 @@
+{
+  "id": "pioneer-10",
+  "name": "Pioneer 10",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "TRW",
+  "first_flight": "1972-03-03",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "First spacecraft to traverse the asteroid belt",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Pioneer 10 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Pioneer_10",
+      "t": "intro"
+    }
+  ]
+}

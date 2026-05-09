@@ -1,0 +1,21 @@
+{
+  "id": "mariner-4",
+  "name": "Mariner 4",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "1965-07-15",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "First successful Mars flyby",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Mariner 4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_4",
+      "t": "intro"
+    }
+  ]
+}

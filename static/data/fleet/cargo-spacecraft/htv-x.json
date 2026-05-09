@@ -1,0 +1,21 @@
+{
+  "id": "htv-x",
+  "name": "HTV-X",
+  "category": "cargo-spacecraft",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries",
+  "first_flight": "2025",
+  "status": "PLANNED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Successor to HTV; expanded payload",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "HTV-X — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/HTV-X",
+      "t": "intro"
+    }
+  ]
+}

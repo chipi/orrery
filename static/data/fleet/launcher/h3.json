@@ -1,0 +1,21 @@
+{
+  "id": "h3",
+  "name": "H3",
+  "category": "launcher",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries",
+  "first_flight": "2024",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Replaces H-IIA / H-IIB at lower cost",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "H3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/H3_(rocket)",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "apollo-lm",
+  "name": "Apollo Lunar Module",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Grumman",
+  "first_flight": "1968-10-11",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "First crewed lunar lander; Eagle, Antares, Falcon...",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Apollo Lunar Module — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
+      "t": "intro"
+    }
+  ]
+}

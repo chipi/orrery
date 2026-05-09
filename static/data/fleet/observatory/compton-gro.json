@@ -1,0 +1,21 @@
+{
+  "id": "compton-gro",
+  "name": "Compton Gamma Ray Observatory",
+  "category": "observatory",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "TRW",
+  "first_flight": "1991-04-05",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "One of NASA's four Great Observatories",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Compton Gamma Ray Observatory — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory",
+      "t": "intro"
+    }
+  ]
+}

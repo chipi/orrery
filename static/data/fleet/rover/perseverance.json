@@ -1,0 +1,21 @@
+{
+  "id": "perseverance",
+  "name": "Perseverance (Mars 2020)",
+  "category": "rover",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "2021-02-18",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Carried Ingenuity; Mars sample caching",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Perseverance (Mars 2020) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)",
+      "t": "intro"
+    }
+  ]
+}

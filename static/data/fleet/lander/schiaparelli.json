@@ -1,0 +1,21 @@
+{
+  "id": "schiaparelli",
+  "name": "Schiaparelli",
+  "category": "lander",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "Thales Alenia Space",
+  "first_flight": "2016-10-19",
+  "status": "FAILED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "ExoMars precursor; lessons fed Rosalind Franklin",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Schiaparelli — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM",
+      "t": "intro"
+    }
+  ]
+}

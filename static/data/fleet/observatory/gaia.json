@@ -1,0 +1,21 @@
+{
+  "id": "gaia",
+  "name": "Gaia",
+  "category": "observatory",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "Airbus Defence and Space",
+  "first_flight": "2013-12-19",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Mapped 1.8 billion stars in 3D",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Gaia — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

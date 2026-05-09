@@ -1,0 +1,21 @@
+{
+  "id": "lunokhod-2",
+  "name": "Lunokhod 2",
+  "category": "rover",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1973-01-15",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Roamed 39 km on the Moon — record till 2014",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Lunokhod 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunokhod_2",
+      "t": "intro"
+    }
+  ]
+}

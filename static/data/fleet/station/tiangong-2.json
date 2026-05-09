@@ -1,0 +1,21 @@
+{
+  "id": "tiangong-2",
+  "name": "Tiangong-2",
+  "category": "station",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2016-09-15",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Second Chinese station testbed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Tiangong-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tiangong-2",
+      "t": "intro"
+    }
+  ]
+}

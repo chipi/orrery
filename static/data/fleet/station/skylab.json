@@ -1,0 +1,21 @@
+{
+  "id": "skylab",
+  "name": "Skylab",
+  "category": "station",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "McDonnell Douglas",
+  "first_flight": "1973-05-14",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "First U.S. space station",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Skylab — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Skylab",
+      "t": "intro"
+    }
+  ]
+}

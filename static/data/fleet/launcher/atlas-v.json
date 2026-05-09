@@ -1,0 +1,21 @@
+{
+  "id": "atlas-v",
+  "name": "Atlas V",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "United Launch Alliance",
+  "first_flight": "2002",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "United Launch Alliance's evolved Atlas",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Atlas V — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Atlas_V",
+      "t": "intro"
+    }
+  ]
+}

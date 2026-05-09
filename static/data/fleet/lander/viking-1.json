@@ -1,0 +1,21 @@
+{
+  "id": "viking-1",
+  "name": "Viking 1",
+  "category": "lander",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Martin Marietta",
+  "first_flight": "1976-07-20",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "First successful Mars lander; biology experiments",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Viking 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_1",
+      "t": "intro"
+    }
+  ]
+}

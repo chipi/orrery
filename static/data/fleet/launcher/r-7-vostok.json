@@ -1,0 +1,21 @@
+{
+  "id": "r-7-vostok",
+  "name": "R-7 / Vostok rocket",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1",
+  "first_flight": "1957",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "first-steps",
+  "best_known_for": "Carried Sputnik and Gagarin to orbit",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "R-7 / Vostok rocket — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vostok-K",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "beresheet",
+  "name": "Beresheet",
+  "category": "lander",
+  "agency": "SpaceIL",
+  "country": "Israel",
+  "manufacturer": "IAI / SpaceIL",
+  "first_flight": "2019-04-11",
+  "status": "FAILED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First private lunar landing attempt",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Beresheet — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Beresheet",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "mars-express",
+  "name": "Mars Express",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "EADS Astrium",
+  "first_flight": "2003-06-02",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "ESA's longest-running Mars orbiter",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Mars Express — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Express",
+      "t": "intro"
+    }
+  ]
+}

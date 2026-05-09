@@ -27,5 +27,19 @@
       "t": "core"
     }
   ],
-  "flight_data_quality": "sparse"
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "space-shuttle-orbiter",
+      "role": "spacecraft"
+    },
+    {
+      "id": "galileo",
+      "role": "payload"
+    }
+  ]
 }

@@ -28,10 +28,16 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "h-iia",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "H-IIA 2nd stage",
-      "c3_km2_s2": 14.0,
+      "c3_km2_s2": 14,
       "mass_at_tli_kg": 1350,
       "source": "MBRSC Hope Probe Mission Press Kit (2020-07); MHI H-IIA flight data"
     },
@@ -42,13 +48,13 @@
     "arrival": {
       "v_infinity_km_s": 2.8,
       "periapsis_km": 22000,
-      "inclination_deg": 25.0,
+      "inclination_deg": 25,
       "orbit_insertion_dv_km_s": 1.05,
       "source": "MBRSC Hope MOI Report (2021-02); high-altitude science orbit"
     },
     "totals": {
       "total_dv_km_s": 3.5,
-      "tli_or_tmi_dv_km_s": 2.0,
+      "tli_or_tmi_dv_km_s": 2,
       "source": "MBRSC Hope Probe Mission Press Kit (2020-07)"
     },
     "events": [
@@ -65,7 +71,7 @@
         "type": "tcm"
       },
       {
-        "met_days": 41.0,
+        "met_days": 41,
         "type": "tcm"
       },
       {

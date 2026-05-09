@@ -33,6 +33,20 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "lvm3",
+      "role": "launcher"
+    },
+    {
+      "id": "vikram-cy3",
+      "role": "spacecraft"
+    },
+    {
+      "id": "pragyan",
+      "role": "payload"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "LVM3 C25 cryogenic upper stage",
@@ -46,7 +60,7 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 100,
-      "inclination_deg": 90.0,
+      "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.84,
       "source": "ISRO Chandrayaan-3 LOI Report (2023-08)"
     },

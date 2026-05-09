@@ -17,5 +17,9 @@
       "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module",
       "t": "intro"
     }
+  ],
+  "linked_missions": [
+    "apollo11",
+    "apollo17"
   ]
 }

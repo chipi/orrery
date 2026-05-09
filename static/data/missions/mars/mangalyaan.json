@@ -33,6 +33,12 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "mangalyaan",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "PSLV PS4 fourth stage",
@@ -46,7 +52,7 @@
     "arrival": {
       "v_infinity_km_s": 2.65,
       "periapsis_km": 421,
-      "inclination_deg": 150.0,
+      "inclination_deg": 150,
       "orbit_insertion_dv_km_s": 1.1,
       "source": "ISRO MOM MOI Report (2014-09); highly elliptical orbit"
     },

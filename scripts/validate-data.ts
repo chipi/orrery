@@ -268,26 +268,41 @@ if (existsSync(FLEET_INDEX_PATH)) {
 validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
 // 2. Mission base files (per destination)
+type FleetRef = { id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'station' };
 const missionDataDirs = listMissionDataDirs();
 const missionIds = new Set<string>();
+const missionFleetRefs = new Map<string, FleetRef[]>();
 for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
     try {
-      const mission = readJson(file) as { id: string };
+      const mission = readJson(file) as { id: string; fleet_refs?: FleetRef[] };
       missionIds.add(mission.id);
+      if (mission.fleet_refs && mission.fleet_refs.length > 0) {
+        missionFleetRefs.set(mission.id, mission.fleet_refs);
+      }
     } catch {
       // schema validation already reported the parse error
     }
   }
 }
 
-// PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet → missions cross-reference
-// integrity. Every fleet entry's linked_missions[*] must resolve to a
-// mission ID. (Phase A skeletons have no linked_missions yet; check is
-// a no-op until Phase E populates them.) Bidirectional check from
-// missions.fleet_refs → fleet IDs lands in Phase E once that schema
-// extension is in place.
+// PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet ↔ missions BIDIRECTIONAL
+// cross-reference integrity. Three checks:
+//
+//   1. Every fleet_entry.linked_missions[*] resolves to a real mission.
+//   2. Every mission.fleet_refs[*].id resolves to a real fleet entry.
+//   3. SYMMETRY: if mission M references fleet F via fleet_refs, then
+//      F's linked_missions MUST include M (catches drift in either
+//      direction). The migrate-* scripts derive linked_missions from
+//      fleet_refs, so a clean run is symmetric by construction; this
+//      check protects against hand-edits that break either side.
+const fleetIdsSet = new Set(fleetEntries.map((e) => e.id));
+const fleetLinkedMissions = new Map<string, Set<string>>(
+  fleetEntries.map((e) => [e.id, new Set(e.linked_missions ?? [])]),
+);
+
+// Check 1: fleet → missions
 for (const entry of fleetEntries) {
   if (!entry.linked_missions || entry.linked_missions.length === 0) continue;
   const dangling = entry.linked_missions.filter((mid) => !missionIds.has(mid));
@@ -297,6 +312,29 @@ for (const entry of fleetEntries) {
     );
     console.error(`      dangling: ${dangling.join(', ')}`);
     failed += 1;
+  }
+}
+
+// Checks 2 + 3: missions.fleet_refs → fleet, and symmetric inclusion.
+for (const [missionId, refs] of missionFleetRefs.entries()) {
+  for (const ref of refs) {
+    if (!fleetIdsSet.has(ref.id)) {
+      console.error(
+        `\n  ✗ mission ${missionId}: fleet_refs id "${ref.id}" (role ${ref.role}) does not resolve to fleet/index.json`,
+      );
+      failed += 1;
+      continue;
+    }
+    const linked = fleetLinkedMissions.get(ref.id);
+    if (!linked || !linked.has(missionId)) {
+      console.error(
+        `\n  ✗ bidirectional drift: mission ${missionId} references fleet ${ref.id} (${ref.role}), but ${ref.id}.linked_missions does not include ${missionId}`,
+      );
+      console.error(
+        `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-missions.ts\` to derive linked_missions from fleet_refs`,
+      );
+      failed += 1;
+    }
   }
 }
 

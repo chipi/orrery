@@ -38,6 +38,12 @@
     }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "luna-16",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Blok-D upper stage",
@@ -51,7 +57,7 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 115,
-      "inclination_deg": 120.0,
+      "inclination_deg": 120,
       "orbit_insertion_dv_km_s": 0.7,
       "source": "NASA NSSDCA Luna 24 archive; 115 × 120 km parking orbit before descent to Mare Crisium"
     },

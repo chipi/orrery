@@ -16,16 +16,38 @@
   "data_quality": "good",
   "credit": "© NASA / JPL-Caltech — U.S. Government work, public domain. First nuclear-powered (RTG) Mars rover. Sky-crane EDL architecture.",
   "links": [
-    { "l": "Curiosity (rover) — Wikipedia", "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)", "t": "intro" },
-    { "l": "Mars Science Laboratory (NASA)", "u": "https://science.nasa.gov/mission/msl-curiosity/", "t": "intro" },
-    { "l": "Sky crane EDL — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mars_Science_Laboratory#Entry,_descent_and_landing", "t": "core" }
+    {
+      "l": "Curiosity (rover) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)",
+      "t": "intro"
+    },
+    {
+      "l": "Mars Science Laboratory (NASA)",
+      "u": "https://science.nasa.gov/mission/msl-curiosity/",
+      "t": "intro"
+    },
+    {
+      "l": "Sky crane EDL — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Science_Laboratory#Entry,_descent_and_landing",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    },
+    {
+      "id": "curiosity",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur upper stage (Atlas V 541)",
       "c3_km2_s2": 11.4,
-      "declination_deg": 36.0,
+      "declination_deg": 36,
       "mass_at_tli_kg": 3839,
       "source": "NASA MSL Press Kit (2011-11); Lock et al., 'Trajectory Design and Targeting for MSL', AAS 11-205"
     },
@@ -48,14 +70,38 @@
       "source": "computed from MSL ∆v ledger (NASA MSL Press Kit, 2011-11)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 12, "type": "tcm" },
-      { "met_days": 76, "type": "tcm" },
-      { "met_days": 110, "type": "tcm" },
-      { "met_days": 211, "type": "tcm" },
-      { "met_days": 254, "type": "arrival" },
-      { "met_days": 254.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 12,
+        "type": "tcm"
+      },
+      {
+        "met_days": 76,
+        "type": "tcm"
+      },
+      {
+        "met_days": 110,
+        "type": "tcm"
+      },
+      {
+        "met_days": 211,
+        "type": "tcm"
+      },
+      {
+        "met_days": 254,
+        "type": "arrival"
+      },
+      {
+        "met_days": 254.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

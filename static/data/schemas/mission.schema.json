@@ -70,6 +70,19 @@
       "enum": ["measured", "reconstructed", "sparse", "unknown"],
       "description": "Honesty flag (ADR-027). measured = full public records (NASA press kit, JPL TR); reconstructed = post-hoc engineering reconstruction; sparse = fragmentary public records; unknown = data not yet researched or mission not flown."
     },
+    "fleet_refs": {
+      "type": "array",
+      "description": "Structured cross-reference to /fleet entries (PRD-012 v0.2 / RFC-016 v0.2 OQ-2). Each ref names the fleet entry id + the role this hardware played in the mission. Validated bidirectionally at build: every id must exist in fleet/index.json, and the named launcher's linked_missions must include this mission.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "role"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+          "role": { "enum": ["launcher", "spacecraft", "payload", "station"] }
+        }
+      }
+    },
     "flight": {
       "type": "object",
       "additionalProperties": false,

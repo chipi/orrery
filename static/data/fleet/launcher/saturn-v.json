@@ -17,5 +17,9 @@
       "u": "https://en.wikipedia.org/wiki/Saturn_V",
       "t": "intro"
     }
+  ],
+  "linked_missions": [
+    "apollo11",
+    "apollo17"
   ]
 }

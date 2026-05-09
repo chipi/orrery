@@ -27,5 +27,11 @@
       "t": "core"
     }
   ],
-  "flight_data_quality": "sparse"
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    }
+  ]
 }

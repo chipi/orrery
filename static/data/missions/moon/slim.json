@@ -38,6 +38,16 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "h-iia",
+      "role": "launcher"
+    },
+    {
+      "id": "slim",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "H-IIA 2nd stage",
@@ -51,12 +61,12 @@
     "arrival": {
       "v_infinity_km_s": 0.82,
       "periapsis_km": 100,
-      "inclination_deg": 90.0,
+      "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.75,
       "source": "JAXA SLIM LOI Report (2023-12)"
     },
     "totals": {
-      "total_dv_km_s": 3.0,
+      "total_dv_km_s": 3,
       "source": "JAXA SLIM Project Brief (2023)"
     },
     "events": [

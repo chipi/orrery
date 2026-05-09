@@ -17,5 +17,9 @@
       "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
       "t": "intro"
     }
+  ],
+  "linked_missions": [
+    "apollo11",
+    "apollo17"
   ]
 }

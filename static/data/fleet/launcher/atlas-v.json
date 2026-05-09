@@ -17,5 +17,13 @@
       "u": "https://en.wikipedia.org/wiki/Atlas_V",
       "t": "intro"
     }
+  ],
+  "linked_missions": [
+    "new-horizons",
+    "lro",
+    "curiosity",
+    "maven",
+    "insight",
+    "perseverance"
   ]
 }

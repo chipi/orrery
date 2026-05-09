@@ -33,6 +33,12 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "sojourner",
+      "role": "payload"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "PAM-D solid upper stage",
@@ -54,7 +60,7 @@
     },
     "totals": {
       "total_dv_km_s": 5.2,
-      "tli_or_tmi_dv_km_s": 4.0,
+      "tli_or_tmi_dv_km_s": 4,
       "source": "NASA Mars Pathfinder Press Kit (1996-12)"
     },
     "events": [

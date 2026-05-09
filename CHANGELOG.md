@@ -8,6 +8,138 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.5.0] — 2026-05-09
+
+The encyclopedia + explorers release. Three new primary nav routes (`/iss`, `/tiangong`, `/science`), a layered Science Lens of live physics annotations across every 3D scene, and end-to-end outbound-link provenance discipline.
+
+### Added — `/science` encyclopedia (PRD-008 / RFC-011)
+
+- **54 sections across 7 tabs**: Orbits · Mission Phases · Planets & Bodies · Spaceflight · Space Stations · History · Space-101 landing.
+- **48 hand-coded SVG diagrams** (engineering blueprint style — white-on-black with teal accents) per [ADR-035](docs/adr/ADR-035.md). Fail-closed integrity check chained into `validate-data`.
+- **KaTeX server-rendered formulas** per [ADR-034](docs/adr/ADR-034.md) — client receives static HTML, no JS math library.
+- **Right-rail navigation**, **Cmd-K search overlay**, narrative_101 lead-ins on every section.
+- **Cross-screen `?`-chips** deep-link from every other screen straight to the relevant chapter.
+
+### Added — `/science` integration with the rest of the app
+
+- **`SCIENCE` tab** on every detail panel (MissionPanel, PlanetPanel, SunPanel, SmallBodyPanel, EarthObjectPanel, MoonSitePanel, MarsSitePanel, StationModulePanel).
+- **Science Lens toggle** — nav button gates a layer of in-scene physics annotations across every 3D scene. Attribute-on-`<html>` state pattern (mirrors [ADR-029](docs/adr/ADR-029.md) high-contrast toggle).
+- **Flight Director banner** on `/fly` — 5-phase narration (Departure · Trans-X Injection · Cruise · Approach · Arrival), each phase deep-linking to the matching `/science` section.
+- **Why? popovers** explain individual numeric labels in context across every panel — click-only inline popovers that explain a value (distinct from the `?` chips that navigate to `/science`).
+- **Mission Sandbox** layered onto `/plan` porkchop — pin one cell, click another → ΔDEP / ΔTOF / Δ∆v compare panel. Pin clears on destination change.
+- **Conic-section side panel** on `/fly` (lens-gated) — classifies the current arc shape (circle / ellipse / parabola / hyperbola) live from specific orbital energy.
+
+### Added — Science Layers (lens-gated)
+
+Eleven sub-toggleable layers behind the lens. Each can be turned on/off independently from the `Science Layers` panel that appears when the lens is on:
+
+- **Spheres of influence** — translucent rings showing where each body's gravity dominates.
+- **Hover info cards** — live numbers (heliocentric speed, distance, gravity, light-time) on any planet.
+- **Gravity vectors · Velocity vectors · Centripetal arrows** — log-scaled arrows with values printed at the tip so magnitudes can be compared across planets.
+- **Apsides + true anomaly** — perihelion / aphelion markers + a live `ν = 42°` callout that travels with the body.
+- **Engine-off coast preview** — dotted projection of where the spacecraft would drift if the engine cut right now.
+- **Conic-section family panel** — see above.
+- **Microgravity axes** — zenith/nadir, prograde/retrograde, port/starboard on `/iss` + `/tiangong`.
+- **Atmosphere shells** on `/earth` (Kármán line, 100 km) and `/mars` (~120 km).
+- **Tidal-lock indicator** on `/moon` — marks the always-Earth-facing hemisphere.
+- **Ozone holes** on `/earth` — polar ozone-depletion zones (Antarctic + Arctic).
+
+### Added — ISS Explorer (`/iss`) — PRD-010 / RFC-013
+
+- **32 modules** (every USOS + ROS module + visiting craft) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse.
+- Full module panel: **OVERVIEW · GALLERY · TECHNICAL · ANATOMY · SCIENCE · LEARN** tabs.
+- Per-module agency badges in the drawer (NASA · ESA · JAXA · Roscosmos · CSA).
+- Sun-tracking solar-array animation.
+- Microgravity axes lens-gated overlay.
+- Orbit-regime banner with WhyPopovers on altitude / inclination / period.
+- Hand-drawn ANATOMY diagrams for 9 visiting spacecraft (Crew Dragon, Soyuz MS, Cygnus, Dragon, Progress, HTV, Starliner, ATV, Shenzhou).
+
+### Added — Tiangong Explorer (`/tiangong`) — PRD-011 / RFC-014
+
+- Tianhe core + Wentian + Mengtian lab modules with sun-tracking gallium-arsenide arrays.
+- Three docked-vehicle slots (Shenzhou, Tianzhou, plus visiting spot).
+- 2D blueprint views (top + side projections).
+- Same module-pickability + microgravity-frame overlays as `/iss`.
+- ADR-048/049/050 lock the asset pipeline, module pickability rules, and low-end fallback contract.
+
+### Added — LEARN-link stewardship — ADR-051
+
+- **Per-link provenance manifest** (`static/data/link-provenance.json`) — every external LEARN link is sourced + AJV-validated.
+- **`LinkCredit.svelte` + `LearnLink.svelte`** components render attribution under outbound links.
+- **Agency-portal native-language priority** for non-US entities (Roscosmos before NASA mirror, ISRO before press releases).
+- **Public `/library` page** — bill-of-links across the entire app. (Mission Library renamed to Mission Catalog to free the word.)
+- **`scripts/check-learn-links.ts`** chained into `npm run fetch` with freshness gating.
+
+### Added — Test infrastructure (e2e hardening)
+
+- **Replaced 8× `waitForTimeout(<magic>)`** with deterministic readiness signals across earth / mars / moon / fly tests: `data-objects-count` / `data-sites-count` / `data-view` / `data-sim-day` / `data-sc-phase` attributes.
+- **Canvas-click tests** on `/iss` + `/tiangong` use `window.__pickAt()` test hook + `canvas.click({position})` (bypasses overlays). Replaces a flaky spiral-search pattern that raced GH-Actions software-rasterizer WebGL.
+- **`/iss` + `/tiangong` perf-fallback** (FPS<20 → list mode) skipped under `navigator.webdriver` so canvas-click tests don't have the canvas yanked out from under them in CI.
+- **e2e job duration** dropped from 25-min timeout to 16-min clean pass.
+
+### Changed
+
+- **`/missions`** rebrand: "Mission Library" → **Mission Catalog** under [ADR-051](docs/adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
+- **`/missions` filter strip + timeline** collapsed by default; auto-expands when the URL carries any filter param so deep links show their state.
+- **PlanetPanel LEARN tab** folded into SCIENCE — one tab destination, less duplication.
+- **LocalePicker** displays national flag emoji next to native-name + short tag.
+- **Banners** (Science Lens, Flight Director, Station Orbit) now collapsible — eyebrow always visible, body folds away on click.
+- **/iss + /tiangong drawer** scrolls cleanly on tall lists — explicit `height: auto` override.
+
+### Removed
+
+- **sr-Latn locale** — Serbian Latin dropped; sr-Cyrl is the canonical Serbian. `messages/sr-Latn.json` and `tests/e2e/i18n-sr-Latn.spec.ts` removed.
+
+## [0.4.0] — 2026-05-09
+
+The internationalisation + maps + provenance release. 12 supported locales now at 100% UI parity, full Mars Surface Map, and end-to-end image provenance discipline.
+
+### Added — Languages (Waves 1–3)
+
+UI message bundle (684 keys) translated key-for-key across **all 12 non-en-US locales**, bringing every supported locale to 100% UI parity:
+
+- **Wave 1 continuation** (#36): French · German · Portuguese-BR · Italian.
+- **Wave 2 CJK** (#37): Mandarin (zh-CN) · Japanese · Korean.
+- **Wave 3** (#38): Hindi · Arabic (RTL) · Russian.
+
+The `/science` encyclopedia overlay tree (542 strings of editorial body text) is shipped for **en-US, es, fr, de, it**. The remaining 8 locales fall back to en-US for that surface per [ADR-017](docs/adr/ADR-017.md).
+
+LocalePicker shows national flags next to native-name + short tag.
+
+### Added — Mars Surface Map (`/mars`) — PRD-009 / RFC-012
+
+- Equirectangular 2D Mars map + 3D globe.
+- 16 surface sites (rovers, landers, sample-return) + 11 orbital probes.
+- Rover traverse paths overlaid as cross-linked routes (Curiosity, Perseverance, Opportunity, Spirit).
+- Per-site GALLERY · TECHNICAL · LEARN tabs.
+- Layer chips toggle surface vs orbital separately.
+- Atmosphere shell layer (~120 km) lens-gated.
+
+### Added — Image credit rollout — ADR-046 / ADR-047
+
+End-to-end provenance discipline for every pixel in the app:
+
+- **Agency-first build-time imagery sourcing** (NASA = fallback library, not the default).
+- **Per-image provenance manifest** (auto-generated by `scripts/build-image-provenance.ts`).
+- **Public `/credits` page** with all imagery + text + logo attributions.
+- **License allowlist + waivers system**, fail-closed in `validate-data`.
+- **Lightbox attribution** on every gallery thumbnail.
+- **Honest mixed-source footers** per gallery surface.
+- **Non-NASA agency imagery enriched** via partnership-credit queries.
+
+### Added — Other
+
+- **/missions UX cleanup**: filter strip + timeline navigator collapsed by default for a clean grid; auto-expand when filter URL params present.
+- **Per-mission flight params** + caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN).
+- **Outer-system catalogue**: 4 outer missions (Galileo · Voyager 2 · New Horizons · Dawn) bringing the catalog to 36.
+- **v0.1.10 audit drift fixes** carried over (#30).
+- **14 new ADRs** (034–047) covering KaTeX, diagram authoring, agency-first imagery, lens-state attribute pattern, station geometry, image provenance.
+
+### Changed
+
+- **`validate-data`** now fails closed on unknown licenses, missing image provenance, broken science overlay schemas.
+- **`npm run preflight`** mirrors CI step-for-step locally; pre-push hook self-installs.
+
 ## [0.3.0] — 2026-05-04
 
 ### Added

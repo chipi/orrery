@@ -21,18 +21,19 @@ Adding a new locale is content-only — the i18n architecture (Paraglide-js + lo
 
 What you'll add:
 
-- **`messages/<code>.json`** — UI strings (~280 keys). Copy `messages/en-US.json` as a starting point, translate keys preserving `{placeholder}` syntax.
+- **`messages/<code>.json`** — UI strings (684 keys as of v0.5.0). Copy `messages/en-US.json` as a starting point, translate keys preserving `{placeholder}` syntax.
 - **`static/data/i18n/<code>/`** — editorial overlays mirroring `static/data/i18n/en-US/`:
   - `missions/{mars,moon}/<id>.json` — translate `name`, `description`, `first`, `type`, `events[].label`, `events[].note`. **Keep mission ID + agency proper nouns in original.**
-  - `planets/<id>.json`, `rockets/<id>.json`, `sun.json`, `scenarios/<id>.json`, `earth-objects/<id>.json`, `moon-sites/<id>.json` — same overlay pattern.
+  - `planets/<id>.json`, `rockets/<id>.json`, `sun.json`, `scenarios/<id>.json`, `earth-objects/<id>.json`, `moon-sites/<id>.json`, `mars-sites/<id>.json`, `iss-modules/<id>.json`, `tiangong-modules/<id>.json` — same overlay pattern.
+  - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays. The `/science` overlay tree is currently shipped for en-US/es/fr/de/it; the other 8 locales fall back per ADR-017.
 - **`project.inlang/settings.json`** — add your locale code to `languageTags`.
-- **`src/lib/locale.ts`** — add an entry to `SUPPORTED_LOCALES`.
+- **`src/lib/locale.ts`** — add an entry to `SUPPORTED_LOCALES` (with the country flag emoji used by the LocalePicker chip).
 
 **Binding glossary.** [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md) is the authority for physics + space-domain terminology in each language. Use it. If a term you need isn't in the glossary, add it (with a citation if you can) and submit the change as part of your locale PR.
 
-**Workflow.** Per [ADR-033](docs/adr/ADR-033.md), the v0.3.x workflow is LLM-only first-pass with no native-speaker review gate. If you're a native speaker offering review for a specific language, that's high value — open an issue.
+**Workflow.** Per [ADR-033](docs/adr/ADR-033.md), the workflow is LLM-only first-pass with no native-speaker review gate. If you're a native speaker offering review for a specific language, that's high value — open an issue.
 
-Per [ADR-031](docs/adr/ADR-031.md), language priority is: Spanish (shipped) · Mandarin · French · Japanese · German · Hindi · Portuguese-BR · Arabic · Korean · Russian · Italian. Wave 1 (Latin script) needs no font work; Wave 2 (CJK) and Wave 3 (RTL / Devanagari / Cyrillic) are gated on follow-up ADRs.
+**Status (v0.5.0):** all 13 supported locales (en-US + es / fr / de / pt-BR / it / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl) are at 100% UI parity (684 keys each). The remaining work is the `/science` overlay tree for the 8 non-EU locales — see ADR-031 for language priority and ADR-032 for font/script strategy.
 
 ## 3. Code
 
@@ -40,8 +41,9 @@ Read these before opening a PR:
 
 - [`CLAUDE.md`](CLAUDE.md) — engineering constraints + locked decisions (TypeScript strict, no `localStorage`, no `console.log` in prod, mobile-first 375 px design floor, comment policy, etc.).
 - [`docs/concept/04_Technical_Architecture.md`](docs/concept/04_Technical_Architecture.md) — original architectural narrative.
-- [`docs/adr/`](docs/adr/) — the locked decisions. ADR-001 through ADR-033 cover stack choice, routing, data layer, i18n, accessibility, etc.
+- [`docs/adr/`](docs/adr/) — the locked decisions. ADR-001 through ADR-051 cover stack choice, routing, data layer, i18n, accessibility, KaTeX rendering, diagram authoring, station geometry, agency-first imagery sourcing, image + LEARN-link provenance, etc.
 - [`docs/uxs/`](docs/uxs/) — UX specs per screen.
+- [`docs/prd/`](docs/prd/) — product requirements per screen (PRDs 008–011 cover the four routes added in v0.4–v0.5: /science · /mars · /iss · /tiangong).
 
 ### Local setup
 
@@ -56,18 +58,28 @@ npm run dev              # http://localhost:5273
 
 ### Pre-commit checks
 
+The single command that mirrors CI step-for-step is:
+
 ```bash
-npm run lint             # prettier + eslint
-npm run check            # i18n compile + svelte-check
-npm run test -- --run    # vitest unit suite (must be 560/560 green or higher)
-npm run validate-data    # ajv schema + doc-system + flight-data consistency
+npm run preflight        # typecheck + lint + test + validate-data + build
 ```
 
-Run all four before pushing — CI runs the same set on every PR. The README has a `npm run ci` shortcut that chains them.
+A `.husky/pre-push` hook auto-runs `preflight` on `git push` and blocks the push on failure. To install it, `npm install` is enough (the `prepare` script wires it up).
 
-For trajectory or arc-related work, also run:
+If you want to run the steps individually:
+
 ```bash
-npm run test:e2e         # Playwright e2e suite (~8 min — heavier; runs on push to main only)
+npm run lint             # prettier + eslint
+npm run typecheck        # i18n compile + svelte-check
+npm run test             # vitest unit suite
+npm run validate-data    # ajv schema + image provenance + license allowlist + diagram integrity + link provenance
+npm run build            # full production build via adapter-static
+```
+
+For trajectory, station, or canvas-click work, also run the e2e suite locally:
+
+```bash
+npm run test:e2e         # Playwright e2e (~16 min — heavier; runs on push to main only)
 ```
 
 ### Commit style

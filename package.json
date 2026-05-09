@@ -45,6 +45,7 @@
     "test": "npm run i18n:compile && vitest run --passWithNoTests",
     "test:e2e": "npm run build && playwright test",
     "test:e2e:ui": "npm run build && playwright test --ui",
+    "screenshots": "npm run build && tsx scripts/capture-screenshots.ts",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",
     "fetch": "npm run fetch-assets && npm run build-image-provenance && npm run build-link-provenance && npm run check-learn-links -- --update && npm run validate-data",

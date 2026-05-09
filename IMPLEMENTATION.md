@@ -391,44 +391,146 @@ Three large work-streams shipped together. Tagged `v0.3.0`.
 
 ---
 
-## v0.4.0 backlog
+## v0.4.0 — Languages + Mars Surface Map + image credit stewardship (2026-05-09)
 
-Tracked under `v0.4.0` milestone:
-- **#36** Wave 1 continuation languages — French / German / Portuguese-BR / Italian
-- **#37** Wave 2 — CJK locales (Mandarin / Japanese / Korean) — gated on follow-up CJK font ADR
-- **#38** Wave 3 — Hindi / Arabic-RTL / Russian — gated on follow-up RTL CSS ADR
-- **#39** `/science` encyclopedia — Phase 1 shipped (route + 40 sections + diagrams + editorial 101). Phase 2 (cross-screen `?` chips) tracked separately.
-- **#30** v0.1.10 audit cleanup — drift fixes carried over
+The internationalisation + maps + provenance release. Closes the v0.4.0 milestone (#5): #30, #36, #37, #38, #40, #44, #45, #47, #48.
 
-### `/science` Phase 1 — what landed
+### Languages — Waves 1–3 (#36 / #37 / #38)
 
-Ten primary nav destinations now (was nine): `/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong`, `/science`. The encyclopedia is a fully-prerendered companion to the simulator — every label and contour the simulator shows now has a deep-linkable explainer.
+UI message bundle (684 keys) translated key-for-key across **all 12 non-en-US locales**, bringing every supported locale to 100% UI parity:
 
-- **Route**: `/science` landing + `/science/[tab]` × 6 + `/science/[tab]/[section]` × 40 = 47 prerendered pages
-- **Layout**: shared three-column chrome — left rail (six tabs, sticky), centre (content), right rail (active tab's sections, sticky); folds to single-column on mobile
-- **Content**: editorial 8-chapter Space-101 narrative on the landing; 6 tab-level 101 intros; 40 per-section narrative_101 lead-ins; 40 technical body sections with KaTeX-rendered formulas where applicable
-- **Diagrams**: 40 hand-coded SVGs (engineering-blueprint style, white-on-black with teal accents) + 6 artistic tab covers (chapter-title plates)
-- **Math**: KaTeX server-rendered at build (ADR-034) — client receives HTML only, no JS math library
-- **Schema + data**: `science-section.schema.json`, `science-section-overlay.schema.json`, `science-tab-intro.schema.json` — all chained into `validate-data` with fail-closed `validate-diagrams.ts` integrity check
-- **i18n**: en-US only at ship, fallback per ADR-017; Phase 3 LLM translation pass for 13 locales deferred per ADR-033
-- **ADRs**: ADR-034 (KaTeX), ADR-035 (diagram authoring), ADR-036 (`?`-chip pattern, used in Phase 2)
+- **Wave 1 continuation** (#36): French · German · Portuguese-BR · Italian.
+- **Wave 2 CJK** (#37): Mandarin (zh-CN) · Japanese · Korean.
+- **Wave 3** (#38): Hindi · Arabic (RTL) · Russian.
 
-**Tests:** Vitest unit tests for the data layer (`getScienceSection`, `getScienceTab`, `getScienceTabIntro`) + the KaTeX render helper. Playwright e2e smoke (`tests/e2e/science.spec.ts`) covers tab grid, tab page intro, section reading view, KaTeX visibility, diagram visibility, deep-link navigation.
+LocalePicker shows national flags next to native-name + short tag. The `/science` encyclopedia overlay tree (542 strings of editorial body text) is shipped for **en-US, es, fr, de, it**; the remaining 8 locales fall back to en-US for that surface per ADR-017.
 
-**Phase 2 (shipped):** 27 cross-screen `?` chips across `/missions` FLIGHT (6), `/fly` HUD (6), `/explore` TECHNICAL (5), `/plan` primer (4), `/earth` regime legend (1), `/moon` mission-type row (1), `/mars` mission-type row (1) plus 2 new sections — `orbits/orbit-regimes` and `mission-phases/mission-types`. Total 42 sections now.
+### Mars Surface Map · `/mars` — PRD-009 / RFC-012 (#40)
 
-**Phase 3 (partially shipped):** UI message bundles translated for all 13 locales (442 keys total). Full science overlay translations (49 files: _landing + 6 _intro + 42 sections) shipped for **5 locales — en-US, es, de, fr, it** (245 files). The remaining 8 locales (pt-BR, ja, ko, zh-CN, ru, hi, ar, sr-Cyrl, sr-Latn) keep their existing UI translations and gracefully fall back to en-US for science overlay content per ADR-017 — non-blocking, English-fallback bounded. Follow-up batch to author the remaining ~395 overlay files.
+A new primary nav route. Equirectangular 2D Mars map + 3D globe. 16 surface sites (rovers, landers, sample-return) + 11 orbital probes. Rover traverse paths overlaid as cross-linked routes. Atmosphere shell layer (~120 km) lens-gated. Per-site GALLERY · TECHNICAL · LEARN tabs.
 
-**Phase 4 — `/science` integration with the rest of the app (5 of 5 shipped):**
+### Image credit rollout — ADR-046 / ADR-047 (#44 / #45 / #47 / #48)
 
-| # | Concept | Status |
-|---|---|---|
-| 1 | **`SCIENCE` tab in detail panels** | ✅ shipped on MissionPanel, PlanetPanel, SunPanel, SmallBodyPanel. Reusable `ScienceCard.svelte` renders a curated section list per panel type, lazy-loaded. |
-| 2 | **Science Lens toggle** | ✅ v1 shipped. SVG icon in nav, attribute-on-`<html>` state pattern (mirrors ADR-029 high-contrast toggle). `ScienceLensBanner.svelte` shows a bottom-of-screen physics-context card on `/explore` and `/plan`; on `/fly` it's the more capable Flight Director banner (#3). v2 will add lens-conditional in-scene annotations (focal points, force vectors, SoI rings). |
-| 3 | **Flight Director narration on `/fly`** | ✅ shipped. `FlightDirectorBanner.svelte` reflows through 5 physics phases (DEPARTURE / INJECTION / CRUISE / APPROACH / ARRIVAL) driven by `arcProgress`, each phase deep-linking to the matching `/science` section. Lens-gated, so /fly stays clean for users who haven't opted in. |
-| 4 | **"Why?" popovers** | ✅ v1 shipped. `WhyPopover.svelte` is a click-only inline popover that explains a *value* in context (distinct from `ScienceChip` which navigates to /science). v1 mount points: MissionPanel FLIGHT-tab caveat banner, DLA label, MASS AT TLI label; /fly FLIGHT PARAMS HUD caveat. Mobile renders as a fixed bottom sheet. |
-| 5 | **Mission Sandbox** | ✅ v1 shipped. Layered onto the existing `/plan` porkchop per user direction ("evolution of porkchop"). Pin one cell, click another → compare panel surfaces ΔDEP / ΔTOF / ΔΔv. ΔΔv flips teal when cheaper, gold when costlier. Pin clears automatically on destination change. |
+End-to-end provenance discipline for every pixel in the app:
+
+- Agency-first build-time imagery sourcing (NASA = fallback library, not the default).
+- Per-image provenance manifest (auto-generated by `scripts/build-image-provenance.ts`).
+- Public `/credits` page with all imagery + text + logo attributions.
+- License allowlist + waivers system, fail-closed in `validate-data`.
+- Lightbox attribution on every gallery thumbnail.
+- Honest mixed-source footers per gallery surface.
+- Non-NASA agency imagery enriched via partnership-credit queries.
+
+### Other v0.4.0 work
+
+- `/missions` UX cleanup: filter strip + timeline navigator collapsed by default; auto-expand when filter URL params present.
+- Per-mission flight params + caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN).
+- Outer-system catalogue: 4 outer missions (Galileo · Voyager 2 · New Horizons · Dawn) bringing the catalog to 36.
+- v0.1.10 audit drift fixes (#30 carry-over).
+- 14 new ADRs (034–047).
+
+**State at v0.4.0:** 12 locales × 100% UI parity. 36 missions. Public `/credits`. Validate-data fail-closed on missing image provenance.
 
 ---
 
-*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.3.0*
+## v0.5.0 — Encyclopedia + explorers + LEARN-link stewardship (2026-05-09)
+
+The encyclopedia + explorers release. Three new primary nav routes (`/iss`, `/tiangong`, `/science`), a layered Science Lens of live physics annotations across every 3D scene, and end-to-end outbound-link provenance discipline.
+
+Closes the v0.5.0 milestone (#6): #50, #51, #52, #53, #54, #55, #56. Plus the Science encyclopedia (#39) and ISS Explorer (#41) bodies of work that were originally tagged v0.4.0 but read more cleanly here together with Tiangong.
+
+### `/science` — in-app encyclopedia (PRD-008 / RFC-011) — #39
+
+**Ten primary nav destinations now**: `/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong`, `/science`. The encyclopedia is a fully-prerendered companion to the simulator — every label and contour the simulator shows has a deep-linkable explainer.
+
+- **Route**: `/science` landing + `/science/[tab]` × 7 + `/science/[tab]/[section]` × 54 = 62 prerendered pages
+- **Layout**: shared three-column chrome — left rail (seven tabs, sticky), centre (content), right rail (active tab's sections, sticky); folds to single-column on mobile
+- **Content**: editorial 8-chapter Space-101 narrative on the landing; 7 tab-level 101 intros; 54 per-section narrative_101 lead-ins; 54 technical body sections with KaTeX-rendered formulas where applicable
+- **Diagrams**: 48 hand-coded SVGs (engineering-blueprint style) + 7 artistic tab covers
+- **Math**: KaTeX server-rendered at build (ADR-034) — client receives HTML only
+- **Schema + data**: `science-section.schema.json`, `science-section-overlay.schema.json`, `science-tab-intro.schema.json` — all chained into `validate-data` with fail-closed `validate-diagrams.ts` integrity check
+- **Cmd-K search overlay** indexes every section
+- **ADRs**: ADR-034 (KaTeX), ADR-035 (diagram authoring), ADR-036 (`?`-chip pattern)
+
+#### `/science` Phase 4 — integration with the rest of the app (all 5 shipped)
+
+| # | Concept | What it does |
+|---|---|---|
+| 1 | **SCIENCE tab in detail panels** | Shipped on MissionPanel, PlanetPanel, SunPanel, SmallBodyPanel, EarthObjectPanel, MoonSitePanel, MarsSitePanel, StationModulePanel. Reusable `ScienceCard.svelte` renders a curated section list per panel type, lazy-loaded. |
+| 2 | **Science Lens toggle** | Nav button + attribute-on-`<html>` state pattern (mirrors ADR-029). Gates lens-conditional in-scene annotations across every 3D scene. |
+| 3 | **Flight Director narration on `/fly`** | `FlightDirectorBanner.svelte` reflows through 5 physics phases (DEPARTURE / TRANS-X INJECTION / CRUISE / APPROACH / ARRIVAL) driven by `arcProgress`, each phase deep-linking to the matching `/science` section. Lens-gated. |
+| 4 | **Why? popovers** | `WhyPopover.svelte` is a click-only inline popover that explains a value in context (distinct from `ScienceChip` which navigates to `/science`). Mounted across every detail panel and HUD numeric label. Mobile renders as a fixed bottom sheet. |
+| 5 | **Mission Sandbox** | Layered onto the existing `/plan` porkchop. Pin one cell, click another → compare panel surfaces ΔDEP / ΔTOF / Δ∆v. Δ∆v flips teal when cheaper, gold when costlier. Pin clears automatically on destination change. |
+
+#### `/science` Phase 5 — Live physics overlays (Science Layers)
+
+Eleven sub-toggleable layers behind the lens. The `Science Layers` panel appears top-center under the Lens banner when the lens is on:
+
+| Layer | Where | What it shows |
+|---|---|---|
+| Spheres of influence | /explore, /fly | Translucent rings showing where each body's gravity dominates |
+| Hover info cards | /explore, /fly | Live numbers (heliocentric speed, distance, gravity, light-time) on any planet |
+| Gravity vectors | /explore, /fly | Force arrows from each body, log-scaled, with values printed at the tip |
+| Velocity vectors | /explore, /fly | Tangent arrows showing instantaneous heliocentric speed |
+| Centripetal arrows | /explore | Inward acceleration arrows balancing gravity (F = ma) |
+| Apsides + true anomaly | /explore, /fly | Perihelion / aphelion markers + live `ν = 42°` callout that travels with the body |
+| Engine-off coast preview | /fly | Dotted projection of where the spacecraft would drift if the engine cut right now |
+| Conic-section family panel | /fly | Names the current arc shape (circle / ellipse / parabola / hyperbola) live from specific orbital energy |
+| Microgravity axes | /iss, /tiangong | Three colour-keyed body axes — zenith/nadir, prograde/retrograde, port/starboard — with value labels |
+| Atmosphere shell | /earth, /mars | Translucent shell at the body's effective atmospheric edge (Kármán line on Earth, ~120 km on Mars) |
+| Tidal-lock indicator | /moon | Marks the Moon's near-side (always-Earth-facing) hemisphere |
+| Ozone holes | /earth | Polar ozone-depletion zones (Antarctic + Arctic) |
+
+### ISS Explorer · `/iss` — PRD-010 / RFC-013 (#41)
+
+Full station-explorer route built on a shared `station-geometry` library (ADR-049):
+
+- **32 modules** (every USOS + ROS module + visiting craft) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse
+- Full module panel: OVERVIEW · GALLERY · TECHNICAL · ANATOMY · SCIENCE · LEARN tabs
+- Per-module agency badges in the drawer (NASA · ESA · JAXA · Roscosmos · CSA)
+- Sun-tracking solar-array animation
+- Microgravity axes lens-gated overlay (ZENITH/NADIR · PROGRADE/RETROGRADE · PORT/STARBOARD)
+- Orbit-regime banner with WhyPopovers on altitude / inclination / period
+- Hand-drawn ANATOMY diagrams for **9 visiting spacecraft** (Crew Dragon, Soyuz MS, Cygnus, Dragon, Progress, HTV, Starliner, ATV, Shenzhou)
+- Low-end fallback (auto-switch to list view when measured FPS < 20) per ADR-050
+
+### Tiangong Explorer · `/tiangong` — PRD-011 / RFC-014 (#50)
+
+Mirror of `/iss` for China's Tiangong station, built on the same `station-geometry` library:
+
+- Tianhe core + Wentian + Mengtian lab modules with sun-tracking gallium-arsenide arrays
+- Three docked-vehicle slots (Shenzhou, Tianzhou, plus visiting spot)
+- 2D blueprint views (top + side projections)
+- Same module-pickability + microgravity-frame overlays as `/iss`
+- ADR-048 (asset pipeline) / ADR-049 (module pickability rules) / ADR-050 (low-end fallback) lock the station-explorer contracts
+
+### LEARN-link stewardship — ADR-051 (#51 epic + L-A through L-E)
+
+End-to-end discipline for every outbound link in the app:
+
+- **L-A** — ADR-051 + RFC-015 + audit doc (the policy)
+- **L-B** — Per-link provenance manifest at `static/data/link-provenance.json` + `LinkCredit.svelte` + `LearnLink.svelte` + AJV validation
+- **L-C** — Agency-portal LEARN-link enrichment (non-US first; native-language priority — Roscosmos before NASA mirror, ISRO before press releases)
+- **L-D** — Public `/library` page (bill-of-links across the entire app); Mission Library renamed to Mission Catalog to free the word
+- **L-E** — Outbound link-checker chained into `npm run fetch` with freshness gating (`scripts/check-learn-links.ts`)
+
+### Test infrastructure — flake-free e2e under headless WebGL
+
+The first run of the full e2e suite after the v0.5.0 UX wave landed exposed 46 stacked failures — the previous 25-min CI window kept being cancelled by superseding pushes before ever reaching them. Categorised + fixed in 3 commits:
+
+- 12 i18n locale tests broke when LocalePicker added flag emojis (`🇩🇪 DE` instead of `DE`) — swapped to `toContainText`.
+- `/missions` filter pills + timeline collapsed by default; tests now click the strip open and the page auto-expands when filter URL params are present.
+- `/plan` porkchop selector collided with a ScienceChip aria-label; pinned tests to `canvas.porkchop`.
+- `PlanetPanel` LEARN tab folded into SCIENCE — tests follow.
+- `FlightDirectorBanner` inner anchor href; tests follow.
+- `/iss` + `/tiangong` canvas-click tests replaced their flaky spiral-search with a deterministic `window.__pickAt()` test hook + `canvas.click({position})` (bypasses overlays).
+- All 8× `waitForTimeout(<magic>)` replaced with deterministic readiness signals: `data-objects-count` / `data-sites-count` / `data-view` / `data-sim-day` / `data-sc-phase` attributes.
+- `/iss` + `/tiangong` perf-fallback (FPS<20 → list mode) skipped under `navigator.webdriver` — software-rasterizer WebGL on GH Actions was tripping the gate.
+
+Result: e2e job dropped from 25-min timeout to 16-min clean pass.
+
+**State at v0.5.0:** 10 primary nav routes. 12 locales × 100% UI parity. 36 missions. 54 `/science` sections × 7 tabs × 48 SVG diagrams. 32 ISS modules + 5 Tiangong modules with raycast pickability. Public `/credits` + `/library`. Validate-data fail-closed on image provenance, link provenance, license allowlist, science overlay schemas, diagram integrity. E2e green at 16 min.
+
+---
+
+*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.0*

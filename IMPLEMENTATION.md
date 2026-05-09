@@ -443,10 +443,11 @@ Closes the v0.5.0 milestone (#6): #50, #51, #52, #53, #54, #55, #56. Plus the Sc
 
 **Ten primary nav destinations now**: `/explore`, `/plan`, `/fly`, `/missions`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong`, `/science`. The encyclopedia is a fully-prerendered companion to the simulator — every label and contour the simulator shows has a deep-linkable explainer.
 
-- **Route**: `/science` landing + `/science/[tab]` × 7 + `/science/[tab]/[section]` × 54 = 62 prerendered pages
-- **Layout**: shared three-column chrome — left rail (seven tabs, sticky), centre (content), right rail (active tab's sections, sticky); folds to single-column on mobile
-- **Content**: editorial 8-chapter Space-101 narrative on the landing; 7 tab-level 101 intros; 54 per-section narrative_101 lead-ins; 54 technical body sections with KaTeX-rendered formulas where applicable
-- **Diagrams**: 48 hand-coded SVGs (engineering-blueprint style) + 7 artistic tab covers
+- **Tabs (8)**: orbits (9 sections) · transfers (7) · propulsion (6) · mission-phases (9) · scales-time (7) · porkchop (6) · space-stations (4) · history (6). Plus Space-101 editorial landing.
+- **Route**: `/science` landing + `/science/[tab]` × 8 + `/science/[tab]/[section]` × 54 = 63 prerendered pages
+- **Layout**: shared three-column chrome — left rail (eight tabs, sticky), centre (content), right rail (active tab's sections, sticky); folds to single-column on mobile
+- **Content**: editorial 8-chapter Space-101 narrative on the landing; 8 tab-level 101 intros; 54 per-section narrative_101 lead-ins; 54 technical body sections with KaTeX-rendered formulas where applicable
+- **Diagrams**: 62 hand-coded SVGs (54 per-section + 8 tab covers, engineering-blueprint style)
 - **Math**: KaTeX server-rendered at build (ADR-034) — client receives HTML only
 - **Schema + data**: `science-section.schema.json`, `science-section-overlay.schema.json`, `science-tab-intro.schema.json` — all chained into `validate-data` with fail-closed `validate-diagrams.ts` integrity check
 - **Cmd-K search overlay** indexes every section
@@ -464,7 +465,7 @@ Closes the v0.5.0 milestone (#6): #50, #51, #52, #53, #54, #55, #56. Plus the Sc
 
 #### `/science` Phase 5 — Live physics overlays (Science Layers)
 
-Eleven sub-toggleable layers behind the lens. The `Science Layers` panel appears top-center under the Lens banner when the lens is on:
+Twelve sub-toggleable layers behind the lens. The `Science Layers` panel appears top-center under the Lens banner when the lens is on:
 
 | Layer | Where | What it shows |
 |---|---|---|
@@ -485,13 +486,13 @@ Eleven sub-toggleable layers behind the lens. The `Science Layers` panel appears
 
 Full station-explorer route built on a shared `station-geometry` library (ADR-049):
 
-- **32 modules** (every USOS + ROS module + visiting craft) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse
+- **18 modules** (every USOS + ROS module + visitors) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse
 - Full module panel: OVERVIEW · GALLERY · TECHNICAL · ANATOMY · SCIENCE · LEARN tabs
 - Per-module agency badges in the drawer (NASA · ESA · JAXA · Roscosmos · CSA)
 - Sun-tracking solar-array animation
 - Microgravity axes lens-gated overlay (ZENITH/NADIR · PROGRADE/RETROGRADE · PORT/STARBOARD)
 - Orbit-regime banner with WhyPopovers on altitude / inclination / period
-- Hand-drawn ANATOMY diagrams for **9 visiting spacecraft** (Crew Dragon, Soyuz MS, Cygnus, Dragon, Progress, HTV, Starliner, ATV, Shenzhou)
+- Hand-drawn ANATOMY diagrams for **9 visiting spacecraft** (Crew Dragon, Cargo Dragon, Cygnus, Soyuz MS, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou)
 - Low-end fallback (auto-switch to list view when measured FPS < 20) per ADR-050
 
 ### Tiangong Explorer · `/tiangong` — PRD-011 / RFC-014 (#50)
@@ -529,7 +530,7 @@ The first run of the full e2e suite after the v0.5.0 UX wave landed exposed 46 s
 
 Result: e2e job dropped from 25-min timeout to 16-min clean pass.
 
-**State at v0.5.0:** 10 primary nav routes. 12 locales × 100% UI parity. 36 missions. 54 `/science` sections × 7 tabs × 48 SVG diagrams. 32 ISS modules + 5 Tiangong modules with raycast pickability. Public `/credits` + `/library`. Validate-data fail-closed on image provenance, link provenance, license allowlist, science overlay schemas, diagram integrity. E2e green at 16 min.
+**State at v0.5.0:** 10 primary nav routes. 12 locales × 100% UI parity. 36 missions. 54 `/science` sections × 8 tabs × 62 SVG diagrams. 18 ISS modules + 4 Tiangong modules with raycast pickability. Public `/credits` + `/library`. Validate-data fail-closed on image provenance, link provenance, license allowlist, science overlay schemas, diagram integrity. E2e green at 16 min.
 
 ---
 

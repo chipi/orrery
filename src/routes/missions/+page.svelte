@@ -424,7 +424,7 @@
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.lib_load_failed()}</div>
   {:else if loading}
-    <div class="loading" role="status" aria-live="polite">Loading…</div>
+    <div class="loading" role="status" aria-live="polite">{m.missions_loading()}</div>
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}

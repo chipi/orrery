@@ -8,7 +8,7 @@ Instructions for agentic AI working on this codebase. Read this before touching 
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer and Mars / lunar mission simulator. Ten primary nav destinations, real orbital mechanics, **36** missions in the library (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised (en-US + es today).
+Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, and station explorer rolled into one. Ten primary nav destinations, real orbital mechanics, **36** missions in the catalog (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **13 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
 
 The ten primary nav destinations:
 
@@ -23,7 +23,9 @@ The ten primary nav destinations:
 | `/mars` | Mars Map | `src/routes/mars/+page.svelte` |
 | `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer | `src/routes/tiangong/+page.svelte` |
-| `/science` | Encyclopedia (40 sections × 6 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
+| `/science` | Encyclopedia (54 sections × 8 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
+
+Plus two read-only pages: `/credits` (per-image provenance + text-source attributions) and `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance).
 
 Other routes under `src/routes/` are landing pages or experiments (see repo layout).
 
@@ -75,27 +77,45 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── .gitignore
 │
 ├── src/
-│   ├── routes/             ← SvelteKit file-based routing
-│   │   ├── +layout.svelte  ← nav bar, i18n provider
+│   ├── routes/             ← SvelteKit file-based routing (10 primary nav + 2 read-only)
+│   │   ├── +layout.svelte  ← nav bar, i18n provider, locale picker
 │   │   ├── explore/+page.svelte
 │   │   ├── plan/+page.svelte
 │   │   ├── fly/+page.svelte
 │   │   ├── missions/+page.svelte
 │   │   ├── earth/+page.svelte
-│   │   └── moon/+page.svelte
+│   │   ├── moon/+page.svelte
+│   │   ├── mars/+page.svelte           ← v0.4.0 (PRD-009 / RFC-012)
+│   │   ├── iss/+page.svelte            ← v0.5.0 (PRD-010 / RFC-013)
+│   │   ├── tiangong/+page.svelte       ← v0.5.0 (PRD-011 / RFC-014)
+│   │   ├── science/                    ← v0.5.0 (PRD-008 / RFC-011) — encyclopedia
+│   │   ├── credits/+page.svelte        ← v0.4.0 (ADR-047) — image provenance
+│   │   └── library/+page.svelte        ← v0.5.0 (ADR-051) — outbound link inventory
 │   ├── lib/
 │   │   ├── components/
-│   │   │   ├── Nav.svelte  ← shared 52px nav bar
-│   │   │   ├── Panel.svelte ← bottom sheet (mobile) / right drawer (desktop)
+│   │   │   ├── Nav.svelte                     ← shared 52px nav bar + locale picker
+│   │   │   ├── ScienceLensBanner.svelte       ← collapsible banner (ADR-029-style attribute)
+│   │   │   ├── ScienceLayersPanel.svelte      ← per-layer sub-toggles
+│   │   │   ├── FlightDirectorBanner.svelte    ← /fly 5-phase narration
+│   │   │   ├── WhyPopover.svelte              ← inline value-explanations
+│   │   │   ├── StationModulePanel.svelte      ← shared by /iss + /tiangong
 │   │   │   └── ...
-│   │   ├── data.ts         ← fetch + cache + i18n merge
-│   │   ├── orbital.ts      ← keplerPos(), visViva()
-│   │   ├── scale.ts        ← auToPx(), altToOrbitRadius()
-│   │   └── lambert.ts      ← solver (worker only)
+│   │   ├── data.ts                ← fetch + cache + i18n merge
+│   │   ├── orbital.ts             ← keplerPos(), visViva()
+│   │   ├── scale.ts               ← auToPx(), altToOrbitRadius()
+│   │   ├── lambert.ts             ← solver (worker only)
+│   │   ├── science-lens.ts        ← attribute-on-<html> lens state
+│   │   ├── science-layers.ts      ← multi-flag layer state (12 layers)
+│   │   ├── orbit-overlays.ts      ← lens-layer 3D helpers (gravity arrows, conics, …)
+│   │   ├── microgravity-axes.ts   ← /iss + /tiangong axis overlay
+│   │   └── station-geometry.ts    ← shared mesh helpers (ADR-049)
 │   ├── workers/
 │   │   └── lambert.worker.ts
 │   └── types/
 │       ├── mission.ts      ← Mission, MissionIndex interfaces
+│       ├── science.ts
+│       ├── iss-module.ts
+│       ├── tiangong-module.ts
 │       └── planet.ts
 │
 ├── static/                 ← SvelteKit static dir (copied to build/ root)
@@ -104,27 +124,47 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── logos/              ← agency logos (fetched at build, Wikimedia Commons)
 │   ├── images/missions/    ← build-time fetch (agency-first per ADR-046; Wikimedia + NASA fallback)
 │   ├── images/rockets/     ← Wikimedia rocket reference photos
+│   ├── diagrams/
+│   │   ├── science/        ← 62 hand-coded SVGs (54 sections + 8 covers, ADR-035)
+│   │   └── spacecraft/     ← 9 visiting-craft ANATOMY diagrams
 │   ├── data/               ← all app JSON: missions, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
 │   │   │   ├── index.json  ← lightweight manifest (36 entries)
 │   │   │   ├── mars/       ← base mission files (language-neutral)
 │   │   │   └── moon/
+│   │   ├── mars-traverses/ ← rover route polylines (Curiosity, Perseverance, Opportunity, Spirit)
+│   │   ├── scenarios/      ← ORRERY-1 free-return + others
+│   │   ├── science/        ← 8 tab folders × ~7 sections each (ADR-034)
 │   │   ├── i18n/
-│   │   │   ├── en-US/      ← English overlays (e.g. missions/mars/curiosity.json)
-│   │   │   └── es/         ← other locales, same tree
-│   │   ├── schemas/        ← ajv schemas (mission.schema.json, …)
-│   │   ├── porkchop/       ← pre-computed grids (ADR-026)
+│   │   │   ├── en-US/      ← English overlays (source language)
+│   │   │   ├── es/  fr/  de/  pt-BR/  it/    ← Wave 1 locales
+│   │   │   ├── zh-CN/  ja/  ko/                ← Wave 2 (CJK)
+│   │   │   └── hi/  ar/  ru/  sr-Cyrl/         ← Wave 3 (RTL + Devanagari + Cyrillic)
+│   │   ├── schemas/                  ← ajv schemas (mission.schema.json, …)
+│   │   ├── porkchop/                 ← pre-computed grids (ADR-026)
+│   │   ├── image-provenance.json     ← per-image manifest (ADR-047, auto-generated)
+│   │   ├── link-provenance.json      ← per-link manifest (ADR-051, auto-generated)
+│   │   ├── license-waivers.json      ← image-license waivers (ADR-047)
+│   │   ├── text-sources.json         ← per-text editorial provenance (ADR-047)
+│   │   ├── source-logos.json         ← agency logo provenance (ADR-047)
+│   │   ├── iss-modules.json
+│   │   ├── tiangong-modules.json
 │   │   ├── planets.json
 │   │   ├── rockets.json
 │   │   └── earth-objects.json
 │   └── .nojekyll           ← required for GitHub Pages
 │
 ├── scripts/
-│   ├── fetch-assets.ts     ← fetches fonts, textures, logos, images
-│   ├── build-image-provenance.ts ← writes static/data/image-provenance.json + diff report (ADR-047)
-│   ├── license-allowlist.ts ← canonical license allowlist + normaliser (ADR-047)
-│   ├── precompute-porkchops.ts ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
-│   └── validate-data.ts    ← ajv validation of all static/data/ JSON + doc gating + provenance integrity
+│   ├── fetch-assets.ts                  ← fetches fonts, textures, logos, images
+│   ├── build-image-provenance.ts        ← writes static/data/image-provenance.json + diff report (ADR-047)
+│   ├── build-link-provenance.ts         ← writes static/data/link-provenance.json (ADR-051)
+│   ├── check-learn-links.ts             ← outbound-link freshness gate (ADR-051 L-E)
+│   ├── license-allowlist.ts             ← canonical license allowlist + normaliser (ADR-047)
+│   ├── precompute-porkchops.ts          ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
+│   ├── build-science-index.ts           ← Cmd-K search index for /science
+│   ├── validate-data.ts                 ← ajv validation + doc gating + image/link/license provenance + diagram integrity
+│   ├── validate-diagrams.ts             ← SVG integrity gate (ADR-035)
+│   └── capture-screenshots.ts           ← Playwright-driven README + user-guide screenshot regeneration
 │
 ├── tests/                  ← Playwright e2e tests
 ├── docs/                   ← all documentation
@@ -311,7 +351,9 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 - Do not use `THREE.CapsuleGeometry` (not in r128)
 - Do not use `console.log` in production code
 - Do not add new images, mission/planet/site descriptions, or external text fragments without updating `static/data/image-provenance.json` (auto-generated), `static/data/text-sources.json`, or `static/data/source-logos.json` in the same PR — see ADR-047. New license short names must land in `scripts/license-allowlist.ts` or be waived in `static/data/license-waivers.json`.
+- Do not introduce `waitForTimeout(<magic>)` in Playwright tests — use a deterministic readiness signal (data-attribute the page sets, `expect(...).toHave...`, `waitForFunction` polling a real condition). Brittle on slow CI.
+- Do not call `console.error` from production code paths the user sees — pipe through a centralised handler instead, so we don't pollute Sentry-style error feeds when added.
 
 ---
 
-*Orrery · CLAUDE.md · May 2026 · Update when locked decisions change*
+*Orrery · CLAUDE.md · May 2026 · v0.5.0 · Update when locked decisions change*

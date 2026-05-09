@@ -36,6 +36,12 @@
 | ADR-031 | i18n language list and rollout waves | Accepted (closes RFC-010) | May 2026 |
 | ADR-032 | Font and script strategy (Wave 1) | Accepted (closes RFC-010) | May 2026 |
 | ADR-033 | Translation workflow: LLM-only first-pass | Accepted (closes RFC-010) | May 2026 |
+| ADR-034 | Math rendering: KaTeX server-rendered at build | Accepted (closes RFC-011) | May 2026 |
+| ADR-035 | Diagram authoring pipeline: hand-drawn SVG, sources committed | Accepted (closes RFC-011) | May 2026 |
+| ADR-036 | `?`-chip cross-screen pattern: click navigates, hover tooltip on desktop | Accepted (closes RFC-011) | May 2026 |
+| ADR-037 | Shared `surface-site` type, deferred shared `<SurfaceMap>` component | Accepted (closes RFC-012 OQ-1) | May 2026 |
+| ADR-038 | Per-body 2D projection: Mars equirectangular, Moon orthographic dual-disc | Accepted (closes RFC-012 OQ-2) | May 2026 |
+| ADR-039 | Bidirectional cross-link contract: site panels ↔ mission cards | Accepted (closes RFC-012 OQ-4) | May 2026 |
 | ADR-040 | ISS Explorer diagrammatic model + asset pipeline | Accepted (closes RFC-013 OQ-1) | May 2026 |
 | ADR-041 | ISS module pickability contract (`userData.moduleId`) | Accepted | May 2026 |
 | ADR-042 | ISS Explorer low-end fallback (list + perf heuristics) | Accepted | May 2026 |
@@ -44,4 +50,9 @@
 | ADR-045 | RTL strategy for Arabic locale | Accepted | May 2026 |
 | ADR-046 | Agency-first build-time imagery sourcing | Accepted | May 2026 |
 | ADR-047 | Provenance manifests + license stewardship | Accepted | May 2026 |
+| ADR-048 | Tiangong Explorer asset pipeline and nav placement | Accepted (closes RFC-014 OQ-1) | May 2026 |
+| ADR-049 | Tiangong module pickability and scene graph | Accepted | May 2026 |
+| ADR-050 | Tiangong Explorer low-end fallback (`?view=list` + heuristics) | Accepted | May 2026 |
 | ADR-051 | Outbound learn-link stewardship | Accepted (closes RFC-015) | May 2026 |
+| ADR-052 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
+| ADR-053 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |

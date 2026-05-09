@@ -153,9 +153,14 @@ test.describe('/fly — 3D scene actually renders (regression for black-screen b
     await expect(page.locator('[data-testid="mission-name"]')).toContainText(/Curiosity/i, {
       timeout: 10_000,
     });
-    // Wait a beat for the Three.js animate loop to paint a frame with
-    // Earth + Mars + spacecraft + arc Lines visible.
-    await page.waitForTimeout(800);
+    // Wait for the render-state hook to publish data-sim-day — proves
+    // the Three.js animate loop has run at least once and the arc /
+    // spacecraft / planet meshes are in their initial positions.
+    await expect(page.locator('[data-testid="fly-render-state"]')).toHaveAttribute(
+      'data-sim-day',
+      /\d/,
+      { timeout: 10_000 },
+    );
     // The 3D layer is a div with a child WebGL canvas. Sample several
     // pixels from the centre region — at least one should be non-bg.
     const hasContent = await page.evaluate(() => {
@@ -207,8 +212,13 @@ test.describe('/fly — Moon-mission mode (v0.1.8)', () => {
     // HUD identifies Apollo 11.
     const id = page.locator('[data-testid="mission-name"]');
     await expect(id).toContainText(/Apollo 11/i, { timeout: 10_000 });
-    // Wait for the scene to paint.
-    await page.waitForTimeout(800);
+    // Wait for the render-state hook to publish data-sim-day — proves
+    // the Three.js animate loop has painted at least one frame.
+    await expect(page.locator('[data-testid="fly-render-state"]')).toHaveAttribute(
+      'data-sim-day',
+      /\d/,
+      { timeout: 10_000 },
+    );
     // Verify the canvas isn't black — i.e. Moon-mode actually renders
     // something (Moon mesh + arc + markers).
     const hasContent = await page.evaluate(() => {

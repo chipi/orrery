@@ -74,8 +74,15 @@
 
 <nav aria-label={m.nav_aria_label()}>
   <div class="left">
-    <span class="wordmark">ORRERY</span>
-    <span class="subtitle">{m.nav_subtitle()}</span>
+    <a
+      href={withLang(`${base}/`, activeLocale)}
+      class="brand"
+      aria-label={m.nav_brand_home_aria()}
+      class:active={isActive(`${base}/`, $page.url.pathname)}
+    >
+      <span class="wordmark">ORRERY</span>
+      <span class="subtitle">{m.nav_subtitle()}</span>
+    </a>
   </div>
 
   <div class="center">
@@ -148,6 +155,32 @@
     align-items: baseline;
     gap: 12px;
     flex-shrink: 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    /* 44 px touch target per ADR-018 — wordmark + subtitle row plus
+       padding hits ~44 px on mobile + scales naturally on desktop. */
+    min-height: 44px;
+    padding: 0 4px;
+    border-radius: 4px;
+    transition: opacity 0.12s ease;
+  }
+  .brand:hover,
+  .brand:focus-visible {
+    opacity: 0.85;
+  }
+  .brand:focus-visible {
+    outline: 2px solid var(--color-accent, #4466ff);
+    outline-offset: 2px;
+  }
+  .brand.active {
+    /* Reset hover when already on home. */
+    opacity: 1;
   }
 
   .wordmark {

@@ -14,8 +14,8 @@ The encyclopedia + explorers release. Three new primary nav routes (`/iss`, `/ti
 
 ### Added — `/science` encyclopedia (PRD-008 / RFC-011)
 
-- **54 sections across 7 tabs**: Orbits · Mission Phases · Planets & Bodies · Spaceflight · Space Stations · History · Space-101 landing.
-- **48 hand-coded SVG diagrams** (engineering blueprint style — white-on-black with teal accents) per [ADR-035](docs/adr/ADR-035.md). Fail-closed integrity check chained into `validate-data`.
+- **54 sections across 8 tabs**: Orbits · Transfers · Propulsion · Mission Phases · Scales & Time · Porkchop · Space Stations · History (plus a Space-101 editorial landing page).
+- **62 hand-coded SVG diagrams** (54 per-section + 8 tab covers, engineering blueprint style — white-on-black with teal accents) per [ADR-035](docs/adr/ADR-035.md). Fail-closed integrity check chained into `validate-data`.
 - **KaTeX server-rendered formulas** per [ADR-034](docs/adr/ADR-034.md) — client receives static HTML, no JS math library.
 - **Right-rail navigation**, **Cmd-K search overlay**, narrative_101 lead-ins on every section.
 - **Cross-screen `?`-chips** deep-link from every other screen straight to the relevant chapter.
@@ -31,7 +31,7 @@ The encyclopedia + explorers release. Three new primary nav routes (`/iss`, `/ti
 
 ### Added — Science Layers (lens-gated)
 
-Eleven sub-toggleable layers behind the lens. Each can be turned on/off independently from the `Science Layers` panel that appears when the lens is on:
+Twelve sub-toggleable layers behind the lens. Each can be turned on/off independently from the `Science Layers` panel that appears when the lens is on:
 
 - **Spheres of influence** — translucent rings showing where each body's gravity dominates.
 - **Hover info cards** — live numbers (heliocentric speed, distance, gravity, light-time) on any planet.
@@ -46,13 +46,13 @@ Eleven sub-toggleable layers behind the lens. Each can be turned on/off independ
 
 ### Added — ISS Explorer (`/iss`) — PRD-010 / RFC-013
 
-- **32 modules** (every USOS + ROS module + visiting craft) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse.
+- **18 modules** (every USOS + ROS module + visitors) with per-module 3D pickability (raycast-driven panel open) plus hover outlines and emissive selection pulse.
 - Full module panel: **OVERVIEW · GALLERY · TECHNICAL · ANATOMY · SCIENCE · LEARN** tabs.
 - Per-module agency badges in the drawer (NASA · ESA · JAXA · Roscosmos · CSA).
 - Sun-tracking solar-array animation.
 - Microgravity axes lens-gated overlay.
 - Orbit-regime banner with WhyPopovers on altitude / inclination / period.
-- Hand-drawn ANATOMY diagrams for 9 visiting spacecraft (Crew Dragon, Soyuz MS, Cygnus, Dragon, Progress, HTV, Starliner, ATV, Shenzhou).
+- Hand-drawn ANATOMY diagrams for 9 visiting spacecraft (Crew Dragon, Cargo Dragon, Cygnus, Soyuz MS, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou).
 
 ### Added — Tiangong Explorer (`/tiangong`) — PRD-011 / RFC-014
 

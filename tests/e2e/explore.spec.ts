@@ -123,9 +123,13 @@ test.describe('/explore — load and toggle', () => {
     // re-resolve by name.
     const toggle = page.locator('button.toggle:not(.sizes-toggle):not(.layers-toggle)');
     await expect(toggle).toBeVisible();
+    // Wait one rAF between clicks so Svelte commits the reactive
+    // update (3D ⇄ 2D toggle changes the canvas layer's hidden class +
+    // the button label) before the next click. Replaces a fixed 80ms
+    // wait that raced the rAF loop on slow CI.
     for (let i = 0; i < 6; i++) {
       await toggle.click();
-      await page.waitForTimeout(80);
+      await page.evaluate(() => new Promise<void>((r) => requestAnimationFrame(() => r())));
     }
     expect(errors, errors.join('\n')).toEqual([]);
   });

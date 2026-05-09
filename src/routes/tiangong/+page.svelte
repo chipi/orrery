@@ -919,11 +919,11 @@
         {#if viewMode === '3d'}
           <span class="hint hint-docked">{m.tiangong_docked_legend()}</span>
         {:else if viewMode === '2d-top'}
-          <span class="hint hint-docked">TOP · XZ PLANE · TAP MODULE</span>
+          <span class="hint hint-docked">{m.tiangong_blueprint_view_top()}</span>
         {:else if viewMode === '2d-side'}
-          <span class="hint hint-docked">SIDE · XY PLANE · TAP MODULE</span>
+          <span class="hint hint-docked">{m.tiangong_blueprint_view_side()}</span>
         {:else if viewMode === '2d-front'}
-          <span class="hint hint-docked">FRONT · YZ PLANE · TAP MODULE</span>
+          <span class="hint hint-docked">{m.tiangong_blueprint_view_front()}</span>
         {/if}
       </div>
       <!-- Always 4 buttons in a single row across all non-list modes;
@@ -936,15 +936,15 @@
             class="toggle"
             data-testid="tiangong-blueprint-toggle"
             onclick={cycleBlueprintView}
-            title="Cycle 3D / Top / Side / Front"
+            title={m.tiangong_btn_blueprint_title()}
           >
             {viewMode === '3d'
-              ? '3D'
+              ? m.tiangong_blueprint_label_3d()
               : viewMode === '2d-top'
-                ? 'TOP'
+                ? m.tiangong_blueprint_label_top()
                 : viewMode === '2d-side'
-                  ? 'SIDE'
-                  : 'FRONT'}
+                  ? m.tiangong_blueprint_label_side()
+                  : m.tiangong_blueprint_label_front()}
           </button>
           <button
             type="button"
@@ -952,9 +952,9 @@
             data-testid="tiangong-reset-camera"
             onclick={() => resetCamera()}
             disabled={viewMode !== '3d'}
-            title="Reset 3D camera"
+            title={m.tiangong_btn_reset_title()}
           >
-            RESET
+            {m.tiangong_btn_reset()}
           </button>
           <button
             type="button"
@@ -963,9 +963,9 @@
             aria-pressed={!autoSpin}
             onclick={() => (autoSpin = !autoSpin)}
             disabled={viewMode !== '3d'}
-            title="Pause / resume station spin"
+            title={m.tiangong_btn_spin_title()}
           >
-            SPIN
+            {m.tiangong_btn_spin()}
           </button>
           <button
             type="button"
@@ -973,7 +973,7 @@
             data-testid="tiangong-view-toggle"
             aria-pressed={indexOpen}
             onclick={() => (indexOpen = !indexOpen)}
-            title="Show / hide module list"
+            title={m.tiangong_btn_modules_title()}
           >
             MODULES
           </button>

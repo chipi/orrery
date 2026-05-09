@@ -183,7 +183,7 @@ Equirectangular 2D map + 3D globe with surface-feature panels for landing sites,
 
 ## ISS Explorer · `/iss`
 
-A full station-explorer route with raycast-pickable modules. 32 modules from every USOS + ROS module to visiting craft (Crew Dragon, Soyuz, Cygnus, Dragon, Progress, HTV).
+A full station-explorer route with raycast-pickable modules. 18 modules from every USOS + ROS module to visiting craft (Crew Dragon, Cargo Dragon, Soyuz MS, Cygnus, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou).
 
 [![ISS Explorer](screenshots/08-iss.png)](screenshots/08-iss.png)
 
@@ -197,7 +197,7 @@ A full station-explorer route with raycast-pickable modules. 32 modules from eve
 - **Solar arrays auto-track the Sun** with a slow continuous rotation.
 - **Hover any module** to see its name in a label sprite that tracks the module's projected screen position.
 
-**ANATOMY tab**: hand-drawn schematics for 9 visiting spacecraft (Crew Dragon, Soyuz MS, Cygnus, Dragon, Progress, HTV, Starliner, ATV, Shenzhou) — each shows hatch/docking, propulsion, life-support, and trunk layouts with named callouts.
+**ANATOMY tab**: hand-drawn schematics for 9 visiting spacecraft (Crew Dragon, Cargo Dragon, Cygnus, Soyuz MS, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou) — each shows hatch/docking, propulsion, life-support, and trunk layouts with named callouts.
 
 **Orbit-regime banner** at the top reads ALT · INCL · PERIOD with **Why?** popovers on each value (why ~400 km, why 51.6°, why ~92 min, why 16 sunrises a day).
 
@@ -225,7 +225,7 @@ China's space station. Tianhe core + Wentian + Mengtian lab modules with sun-tra
 
 ## Science Encyclopedia · `/science`
 
-The in-app explainer for every concept the simulator visualises. **54 sections across 7 tabs.**
+The in-app explainer for every concept the simulator visualises. **54 sections across 8 tabs**, plus an 8-chapter Space-101 editorial narrative on the landing page.
 
 [![Science encyclopedia landing](screenshots/10-science-landing.png)](screenshots/10-science-landing.png)
 
@@ -233,13 +233,14 @@ The in-app explainer for every concept the simulator visualises. **54 sections a
 
 | Tab | What's in it | Sections |
 |---|---|---|
-| **Orbits** | Kepler's laws, vis-viva, Hohmann, Lambert, perihelion / aphelion, true anomaly, eccentricity, inclination, sphere of influence, ∆v, conic sections | 10 |
-| **Mission Phases** | Launch energy (C3), TLI / TMI, cruise, MCC, MOI / EDL, return + sample-return | 6 |
-| **Planets & Bodies** | Solar gravity well, terrestrial / gas / ice giants, dwarfs, small bodies, comets, ʻOumuamua | 8 |
-| **Spaceflight** | Vehicles, propulsion, payload mass, life support, radiation, signal delay, gravity assists | 8 |
-| **Space Stations** | Microgravity, EVA, long-duration physiology, crew rotation, station structure | 7 |
+| **Orbits** | Kepler's laws, vis-viva, semi-major axis, eccentricity, inclination, true anomaly, apsides, orbit regimes, Keplerian orbit | 9 |
+| **Transfers** | Hohmann, Lambert problem, transfer ellipse, free return, gravity assist, conic sections, patched conics | 7 |
+| **Propulsion** | Tsiolkovsky equation, specific impulse, ∆v budget, C3 launch energy, V∞, Oberth effect | 6 |
+| **Mission Phases** | Launch, trans-X injection, TCM, orbit insertion, EDL, EVA, MET, NRHO, mission types | 9 |
+| **Scales & Time** | AU, light-minute, ecliptic plane, J2000, sidereal vs synodic, reference frames, long-duration | 7 |
+| **Porkchop** | What is a porkchop, departure axis, time-of-flight axis, ∆v heatmap, contour reading, viability | 6 |
+| **Space Stations** | Pressurised volume, node-module structure, solar-power budget, expedition cadence | 4 |
 | **History** | Kepler 1609 · Newton 1687 · Tsiolkovsky 1903 · Goddard 1926 · Sputnik 1957 · Apollo 11 1969 | 6 |
-| **Space-101** | 8-chapter editorial narrative on the landing page — the from-scratch primer | 9 |
 
 [![Science section page](screenshots/10-science-section.png)](screenshots/10-science-section.png)
 
@@ -251,7 +252,7 @@ The in-app explainer for every concept the simulator visualises. **54 sections a
 - **Cross-screen `?` chips** — every numeric label across `/missions`, `/fly`, `/explore`, `/plan`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong` carries a `?` chip that deep-links to the matching encyclopedia section.
 - **Why? popovers** on individual values inline-explain the meaning without a route change.
 
-**Math**: KaTeX server-rendered at build time per [ADR-034](adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 48 hand-coded SVGs (engineering blueprint style — white-on-black with teal accents) per [ADR-035](adr/ADR-035.md).
+**Math**: KaTeX server-rendered at build time per [ADR-034](adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 62 hand-coded SVGs (54 per-section + 8 tab covers; engineering blueprint style — white-on-black with teal accents) per [ADR-035](adr/ADR-035.md).
 
 ---
 

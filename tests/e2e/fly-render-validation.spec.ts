@@ -291,6 +291,24 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
       const scrub = page.locator('input[type="range"][aria-label*="timeline" i]');
       const viewToggle = page.locator('button.toggle');
 
+      // The render-state hook publishes data-sim-day (in days, not 0..1
+      // progress). After scrub.fill() we wait for the attribute to
+      // *change* from its previous value — proves the rAF loop has
+      // committed the new sim time, replacing the older fixed
+      // waitForTimeout(400) that raced slow CI hardware.
+      const waitForScrubCommit = async (prev: string | null) => {
+        await page.waitForFunction(
+          (was) => {
+            const el = document.querySelector('[data-testid="fly-render-state"]');
+            const cur = el?.getAttribute('data-sim-day');
+            return cur != null && cur !== was;
+          },
+          prev,
+          { timeout: 5_000 },
+        );
+      };
+      const readSimDay = () => hook.getAttribute('data-sim-day');
+
       // Capture 2D first (before pausing/scrubbing) so the view-toggle
       // click happens while the page is in its fresh post-hydration
       // state — heavy scrubbing before a toggle click was racing the
@@ -298,8 +316,9 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
       await viewToggle.click();
       await expect(hook).toHaveAttribute('data-view', '2d', { timeout: 5_000 });
       await page.getByRole('button', { name: /pause/i }).click();
+      let prev = await readSimDay();
       await scrub.fill('0.5');
-      await page.waitForTimeout(400);
+      await waitForScrubCommit(prev);
       await page.screenshot({ path: `${SHOTS_DIR}/${c.id}-2d-mid.png`, fullPage: false });
 
       // Toggle back to 3D for the three timestamps.
@@ -307,19 +326,22 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
       await expect(hook).toHaveAttribute('data-view', '3d', { timeout: 5_000 });
 
       // 3D depDay (arcProgress = 0).
+      prev = await readSimDay();
       await scrub.fill('0');
-      await page.waitForTimeout(400);
+      await waitForScrubCommit(prev);
       await page.screenshot({ path: `${SHOTS_DIR}/${c.id}-3d-dep.png`, fullPage: false });
 
       // 3D midTransit.
+      prev = await readSimDay();
       await scrub.fill('0.5');
-      await page.waitForTimeout(400);
+      await waitForScrubCommit(prev);
       await page.screenshot({ path: `${SHOTS_DIR}/${c.id}-3d-mid.png`, fullPage: false });
 
       // 3D late (just before arrival so the trail + spacecraft are
       // both visible).
+      prev = await readSimDay();
       await scrub.fill('0.95');
-      await page.waitForTimeout(400);
+      await waitForScrubCommit(prev);
       await page.screenshot({ path: `${SHOTS_DIR}/${c.id}-3d-late.png`, fullPage: false });
 
       // No console errors during capture (sanity).

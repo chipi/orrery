@@ -997,6 +997,7 @@
     bind:this={canvas2d}
     class:hidden={view !== '2d'}
     aria-label={m.earth_canvas_label()}
+    data-objects-count={objects.length}
   ></canvas>
 
   <!-- Top-left HUD cluster (matches /explore + /mars + /moon convention from v0.4). -->

@@ -1139,6 +1139,7 @@
     class="layer"
     class:hidden={view !== '2d'}
     aria-label={m.mars_map_aria()}
+    data-sites-count={sites.length}
   ></canvas>
 
   <!-- Top-left HUD (matches /explore convention) -->

@@ -58,7 +58,11 @@ test.describe('/earth', () => {
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible();
-    await page.waitForTimeout(800); // let objects populate
+    // Deterministic wait: the canvas exposes data-objects-count once
+    // earth-objects.json has loaded. On slow CI runners this can take
+    // several hundred ms longer than a fixed waitForTimeout would
+    // allow, so poll the attribute instead.
+    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
     // Sweep the canvas in a grid until a click opens the right-panel.
     // Now that satellites occupy inclined orbits (v0.x.x), their 2D
     // projection isn't on a clean ring at phase=i*2.4 anymore —
@@ -89,7 +93,10 @@ test.describe('/earth', () => {
     page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text()));
     page.on('pageerror', (err) => errors.push(err.message));
     await page.goto('/earth');
-    await page.waitForTimeout(800);
+    // Wait for objects to load before sampling errors — earlier we
+    // used waitForTimeout(800) which raced data fetch on slow CI.
+    const flat = page.locator('canvas.layer');
+    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
     expect(errors, errors.join('\n')).toEqual([]);
   });
 
@@ -108,7 +115,10 @@ test.describe('/earth', () => {
     await page.goto('/earth');
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
-    await page.waitForTimeout(800);
+    // Wait until earth-objects.json has loaded (canvas exposes
+    // data-objects-count which flips from 0 → N once satellites are in
+    // state). Replaces a fixed 800ms wait that raced slow CI.
+    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
     const box = await flat.boundingBox();
     if (!box) throw new Error('canvas not found');
     // ISS: id="iss", inclination=51.64°, index 0 → phase=0.

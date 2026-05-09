@@ -78,7 +78,13 @@ test.describe('/iss', () => {
     );
     expect(pos, 'expected at least one pickable ISS module on-screen').not.toBeNull();
     if (!pos) return;
-    await page.mouse.click(pos.x, pos.y);
+    // Use locator.click({position}) — dispatches the click to the
+    // canvas element at canvas-relative coords, bypassing any
+    // fixed-position overlay (e.g. StationOrbitBanner at top, z-index
+    // 30) that would swallow a raw page.mouse.click.
+    const box = await canvas.boundingBox();
+    if (!box) throw new Error('canvas bounding box unavailable');
+    await canvas.click({ position: { x: pos.x - box.x, y: pos.y - box.y } });
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     expect(errors).toEqual([]);

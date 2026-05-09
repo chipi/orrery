@@ -1009,6 +1009,7 @@
     bind:this={canvas2d}
     class:hidden={view !== '2d'}
     aria-label={m.moon_canvas_label()}
+    data-sites-count={sites.length}
   ></canvas>
 
   <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4). -->

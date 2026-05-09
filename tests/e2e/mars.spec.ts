@@ -89,7 +89,10 @@ test.describe('/mars', () => {
     await expect(page.locator('.layer:not(canvas) canvas').first()).toBeVisible({
       timeout: 5_000,
     });
-    await page.waitForTimeout(800);
+    // Wait for sites JSON to load — canvas exposes data-sites-count.
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 10_000,
+    });
     expect(errors, errors.join('\n')).toEqual([]);
   });
 });

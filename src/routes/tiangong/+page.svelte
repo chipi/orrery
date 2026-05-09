@@ -685,7 +685,12 @@
         if (elapsed >= 2000) {
           perfCheckPending = false;
           const fps = (perfFrames / elapsed) * 1000;
-          if (fps < 20 && viewBag.mode === '3d') {
+          // Skip the perf fallback under Playwright (navigator.webdriver)
+          // — software-rasterizer WebGL on CI can't sustain 20 fps and
+          // the auto-switch to list mode breaks canvas-click tests.
+          // Real users on real hardware still get the fallback.
+          const underTest = typeof navigator !== 'undefined' && navigator.webdriver === true;
+          if (fps < 20 && viewBag.mode === '3d' && !underTest) {
             perfBanner = true;
             viewMode = 'list';
             stopThree();

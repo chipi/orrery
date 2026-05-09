@@ -57,7 +57,9 @@ test.describe('/moon', () => {
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible();
-    await page.waitForTimeout(500); // let sites populate
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 10_000,
+    }); // let sites populate
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
@@ -84,7 +86,9 @@ test.describe('/moon', () => {
     page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text()));
     page.on('pageerror', (err) => errors.push(err.message));
     await page.goto('/moon');
-    await page.waitForTimeout(800);
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 10_000,
+    });
     expect(errors, errors.join('\n')).toEqual([]);
   });
 
@@ -93,7 +97,9 @@ test.describe('/moon', () => {
     await page.goto('/moon');
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
-    await page.waitForTimeout(500);
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 10_000,
+    });
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
@@ -118,7 +124,9 @@ test.describe('/moon', () => {
     await page.goto('/moon');
     await page.getByRole('button', { name: /^2d$/i }).click();
     const flat = page.locator('canvas.layer');
-    await page.waitForTimeout(500);
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 10_000,
+    });
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;

@@ -158,11 +158,17 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
+      const hook = page.locator('[data-testid="fly-render-state"]');
+      // Wait for the page's render-state hook to publish the initial
+      // 3D view — guards against reading state before hydration.
+      await expect(hook).toHaveAttribute('data-view', '3d', { timeout: 10_000 });
       const s3d = await readRenderState(page);
       expect(s3d.view).toBe('3d');
-      // Toggle to 2D.
+      // Toggle to 2D and wait for the hook to confirm the flip — the
+      // button label change is purely cosmetic and races the actual
+      // state propagation on slow CI.
       await page.getByRole('button', { name: /^2d$/i }).click();
-      await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+      await expect(hook).toHaveAttribute('data-view', '2d', { timeout: 5_000 });
       const s2d = await readRenderState(page);
       expect(s2d.view).toBe('2d');
       // Same arc geometry across views.
@@ -177,6 +183,11 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
+      const hook = page.locator('[data-testid="fly-render-state"]');
+      // Wait for the render-state hook to publish a sim-day before
+      // capturing the "before" snapshot — slow CI hydration sometimes
+      // leaves the attribute unset for >1 second after page load.
+      await expect(hook).toHaveAttribute('data-sim-day', /\d/, { timeout: 10_000 });
       // Pause first so the play loop isn't fighting the scrubber value.
       await page.getByRole('button', { name: /pause/i }).click();
       const before = await readRenderState(page);
@@ -214,18 +225,17 @@ test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({
         timeout: 10_000,
       });
+      const hook = page.locator('[data-testid="fly-render-state"]');
+      // Wait for hook to publish initial state — guards against
+      // reading attributes before the rAF loop has populated them.
+      await expect(hook).toHaveAttribute('data-sim-day', /\d/, { timeout: 10_000 });
       // Pause + scrub to a known mid-mission point so values are
       // stable when read.
       await page.getByRole('button', { name: /pause/i }).click();
       await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.4');
-      // Wait for state propagation.
-      await page.waitForFunction(
-        () => {
-          const el = document.querySelector('[data-testid="fly-render-state"]');
-          return el?.getAttribute('data-sc-phase') === 'outbound';
-        },
-        { timeout: 5_000 },
-      );
+      // Wait for sc-phase to flip to outbound — proves the scrub took
+      // effect and the rAF loop has propagated the new sim time.
+      await expect(hook).toHaveAttribute('data-sc-phase', 'outbound', { timeout: 5_000 });
       const s = await readRenderState(page);
 
       // Layer 4a: heliocentric speed.

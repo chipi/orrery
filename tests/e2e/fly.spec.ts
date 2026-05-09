@@ -375,14 +375,17 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
     await page.locator('button[aria-label="Toggle science lens"]').click();
     await expect(banner).toBeVisible();
 
-    // The banner is a link into /science. The phase attribute is one
-    // of the five known phases; departure/injection/cruise/approach/arrival.
+    // The banner carries the current phase as a data-attribute. One of
+    // the five known phases; departure/injection/cruise/approach/arrival.
     await expect(banner).toHaveAttribute(
       'data-phase',
       /^(departure|injection|cruise|approach|arrival)$/,
     );
-    const href = await banner.getAttribute('href');
-    expect(href).toMatch(/\/science\/[^/]+\/[^/]+$/);
+    // The /science deep-link lives on the inner anchor — the outer
+    // <section> got a sibling collapse button when the banner became
+    // collapsible, so the href moved one level in.
+    const linkHref = await banner.locator('a.banner-body-link').getAttribute('href');
+    expect(linkHref).toMatch(/\/science\/[^/]+\/[^/]+$/);
 
     // Toggle off — banner should disappear again.
     await page.locator('button[aria-label="Toggle science lens"]').click();

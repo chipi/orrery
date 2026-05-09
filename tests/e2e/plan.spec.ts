@@ -17,7 +17,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     // us to it — both are valid. Just require it to be hidden eventually.
     await expect(loading).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     await expect(canvas).toBeVisible();
     const dim = await canvas.evaluate((el: HTMLCanvasElement) => ({
       w: el.width,
@@ -31,7 +31,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     const box = await canvas.boundingBox();
     if (!box) return;
     // Click somewhere in the plot interior — the margins are ML=64,
@@ -53,7 +53,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     const box = await canvas.boundingBox();
     if (!box) return;
     // Click cell A (left side).
@@ -81,7 +81,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     const box = await canvas.boundingBox();
     if (!box) return;
     await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
@@ -109,7 +109,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     const box = await canvas.boundingBox();
     if (!box) return;
     await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
@@ -234,7 +234,7 @@ test.describe('/plan — mobile magnifier (RFC-006 Option C)', () => {
     await page.goto('/plan');
     await expect(page.getByRole('status')).toBeHidden({ timeout: 10_000 });
 
-    const canvas = page.getByLabel(/Porkchop plot/i);
+    const canvas = page.locator('canvas.porkchop');
     const box = await canvas.boundingBox();
     if (!box) return;
 

@@ -239,7 +239,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
   });
 
-  test('Earth panel LEARN tab shows tiered links', async ({ page }) => {
+  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
@@ -249,13 +249,15 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
     const panel = page.getByRole('complementary');
     await expect(panel).toBeVisible();
-    await page.getByRole('tab', { name: /^LEARN$/ }).click();
+    // LEARN folded into SCIENCE in the Phase-4 panel cleanup — the
+    // tiered links now live inside the SCIENCE tab.
+    await page.getByRole('tab', { name: /^SCIENCE$/ }).click();
     // Earth overlay carries 5 links across intro/core/deep tiers.
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
 
-  test('Sun panel exposes GALLERY + LEARN tabs', async ({ page }) => {
+  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page }) => {
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
@@ -266,6 +268,8 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     const panel = page.getByRole('complementary');
     await expect(panel).toContainText(/The Sun/i);
     await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
-    await expect(page.getByRole('tab', { name: /^LEARN$/ })).toBeVisible();
+    // LEARN tab folded into SCIENCE — assert the SCIENCE tab is
+    // present in its place.
+    await expect(page.getByRole('tab', { name: /^SCIENCE$/ })).toBeVisible();
   });
 });

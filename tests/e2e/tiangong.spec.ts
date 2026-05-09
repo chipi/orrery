@@ -49,40 +49,34 @@ test.describe('/tiangong', () => {
     expect(errors).toEqual([]);
   });
 
-  test('3D canvas grid click opens the module panel', async ({ page }) => {
+  test('3D canvas click opens the module panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/tiangong', { waitUntil: 'networkidle' });
     const canvas = page.getByTestId('tiangong-canvas');
     await expect(canvas).toBeVisible({ timeout: 10_000 });
+    // Wait for the page's test-pick hook (set right after the canvas
+    // pointer handlers attach in /tiangong/+page.svelte).
     await page.waitForFunction(
-      () => {
-        const c = document.querySelector(
-          '[data-testid="tiangong-canvas"]',
-        ) as HTMLCanvasElement | null;
-        return c != null && c.width > 0 && c.height > 0;
-      },
+      () =>
+        typeof (window as unknown as { __tiangongPickAt?: unknown }).__tiangongPickAt ===
+        'function',
       { timeout: 12_000 },
     );
-    const box = await canvas.evaluate((el: HTMLCanvasElement) => {
-      const r = el.getBoundingClientRect();
-      return { x: r.x, y: r.y, width: r.width, height: r.height };
-    });
-    expect(box.width).toBeGreaterThan(0);
-    expect(box.height).toBeGreaterThan(0);
-    const cx = box.x + box.width / 2;
-    const cy = box.y + box.height / 2;
-    const panel = page.locator('aside.panel');
-    let opened = false;
-    outer: for (let r = 40; r < Math.min(box.width, box.height) / 2 - 16; r += 14) {
-      for (let theta = 0; theta < Math.PI * 2; theta += Math.PI / 16) {
-        await page.mouse.click(cx + Math.cos(theta) * r, cy + Math.sin(theta) * r);
-        if (await panel.isVisible().catch(() => false)) {
-          opened = true;
-          break outer;
+    // Project a known pickable module's world position to client-space
+    // pixels and click that exact spot. Replaces the previous spiral-
+    // search approach which raced software-rasterizer WebGL in CI.
+    const pos = await page.evaluate(() =>
+      (
+        window as unknown as {
+          __tiangongPickAt: () => { x: number; y: number; moduleId: string } | null;
         }
-      }
-    }
-    expect(opened).toBe(true);
+      ).__tiangongPickAt(),
+    );
+    expect(pos, 'expected at least one pickable Tiangong module in the scene').not.toBeNull();
+    if (!pos) return;
+    await page.mouse.click(pos.x, pos.y);
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
     expect(errors).toEqual([]);
   });
 });

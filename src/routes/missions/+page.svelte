@@ -80,6 +80,19 @@
     toYear = Number.isFinite(toParsed)
       ? Math.max(fromYear, Math.min(TIMELINE_MAX_YEAR, toParsed))
       : TIMELINE_MAX_YEAR;
+    // Auto-expand the filter strip whenever the URL carries any
+    // filter param — even if the value clamped back to the default,
+    // the user explicitly asked about filters and should see the
+    // strip open. Tests rely on this for `?from=…&to=…` deep links.
+    if (
+      url.searchParams.has('dest') ||
+      url.searchParams.has('status') ||
+      url.searchParams.has('agency') ||
+      url.searchParams.has('from') ||
+      url.searchParams.has('to')
+    ) {
+      filtersExpanded = true;
+    }
   }
 
   function pushFiltersToUrl() {

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 /**
  * /missions — Mission Catalog (renamed from "Mission Library" under
@@ -12,7 +12,20 @@ import { test, expect } from '@playwright/test';
  *   - URL params pre-apply on load
  *   - card click opens MissionPanel
  *   - FLY button on the panel navigates to /fly?mission=id
+ *
+ * J.1 collapsed the FILTERS strip by default — pages with no filter
+ * URL params open with the strip closed. Tests that need to interact
+ * with the filter radios or timeline must call expandFilters() first.
+ * Tests that hit /missions with `?dest=` / `?from=` get the strip
+ * auto-expanded by the page itself.
  */
+
+async function expandFilters(page: Page) {
+  const toggle = page.locator('button.filters-toggle');
+  if ((await toggle.getAttribute('aria-expanded')) !== 'true') {
+    await toggle.click();
+  }
+}
 
 test.describe('/missions — catalog', () => {
   test('36 mission cards render', async ({ page }) => {
@@ -26,6 +39,7 @@ test.describe('/missions — catalog', () => {
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
       timeout: 10_000,
     });
+    await expandFilters(page);
     await page.getByRole('radio', { name: /^MARS$/i }).click();
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(16);
     await expect(page).toHaveURL(/dest=MARS/);
@@ -36,6 +50,7 @@ test.describe('/missions — catalog', () => {
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
       timeout: 10_000,
     });
+    await expandFilters(page);
     await page.getByRole('radio', { name: /^MOON$/i }).click();
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(16);
     await expect(page).toHaveURL(/dest=MOON/);
@@ -58,6 +73,7 @@ test.describe('/missions — catalog', () => {
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
       timeout: 10_000,
     });
+    await expandFilters(page);
     await page.getByRole('radio', { name: /^JUPITER$/i }).click();
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(1);
     await expect(page.locator('[data-testid="mission-card-galileo"]')).toBeVisible();
@@ -192,6 +208,12 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
       timeout: 10_000,
     });
+    // Timeline lives inside the FILTERS strip (collapsed by default
+    // since J.1) — expand it before asserting the slider handles.
+    const toggle = page.locator('button.filters-toggle');
+    if ((await toggle.getAttribute('aria-expanded')) !== 'true') {
+      await toggle.click();
+    }
     // Two range-handles render with role="slider".
     const fromHandle = page.getByRole('slider', { name: /FROM/i });
     const toHandle = page.getByRole('slider', { name: /TO/i });

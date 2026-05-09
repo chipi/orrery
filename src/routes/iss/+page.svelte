@@ -660,6 +660,30 @@
     renderer.domElement.addEventListener('pointermove', onPointerMove);
     renderer.domElement.addEventListener('pointerleave', onPointerLeave);
 
+    // Test hook: project any pickable module to client-space pixels so
+    // playwright can click a deterministic position instead of spiral-
+    // searching the canvas. The spiral approach was racing software-
+    // rasterizer WebGL in CI and producing 25-minute timeouts.
+    interface OrreryTestApi {
+      __issPickAt(moduleId?: string): { x: number; y: number; moduleId: string } | null;
+    }
+    (window as unknown as OrreryTestApi).__issPickAt = (moduleId?: string) => {
+      const ids = [...meshById.keys()];
+      const id = moduleId ?? ids[0];
+      if (!id) return null;
+      const meshes = meshById.get(id);
+      if (!meshes || !meshes.length) return null;
+      const v = new THREE.Vector3();
+      meshes[0].getWorldPosition(v);
+      v.project(camera);
+      const rect = renderer.domElement.getBoundingClientRect();
+      return {
+        x: rect.x + (v.x * 0.5 + 0.5) * rect.width,
+        y: rect.y + (-v.y * 0.5 + 0.5) * rect.height,
+        moduleId: id,
+      };
+    };
+
     const perfStart = performance.now();
     let perfFrames = 0;
     let raf = 0;

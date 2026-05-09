@@ -664,24 +664,39 @@
     // playwright can click a deterministic position instead of spiral-
     // searching the canvas. The spiral approach was racing software-
     // rasterizer WebGL in CI and producing 25-minute timeouts.
+    //
+    // Iterates pickable modules in insertion order, returning the first
+    // one whose centre projects inside the canvas (NDC in (-1,1) on x/y
+    // and z<1). Mobile viewports are narrow, so the first module is not
+    // always on-screen — we pick the first that is. Forces a world-
+    // matrix update so the test can call this before the first render.
     interface OrreryTestApi {
       __issPickAt(moduleId?: string): { x: number; y: number; moduleId: string } | null;
     }
     (window as unknown as OrreryTestApi).__issPickAt = (moduleId?: string) => {
-      const ids = [...meshById.keys()];
-      const id = moduleId ?? ids[0];
-      if (!id) return null;
-      const meshes = meshById.get(id);
-      if (!meshes || !meshes.length) return null;
-      const v = new THREE.Vector3();
-      meshes[0].getWorldPosition(v);
-      v.project(camera);
-      const rect = renderer.domElement.getBoundingClientRect();
-      return {
-        x: rect.x + (v.x * 0.5 + 0.5) * rect.width,
-        y: rect.y + (-v.y * 0.5 + 0.5) * rect.height,
-        moduleId: id,
+      camera.updateMatrixWorld(true);
+      const tryMesh = (id: string) => {
+        const meshes = meshById.get(id);
+        if (!meshes || !meshes.length) return null;
+        const mesh = meshes[0];
+        mesh.updateMatrixWorld(true);
+        const v = new THREE.Vector3();
+        mesh.getWorldPosition(v);
+        v.project(camera);
+        if (v.x <= -1 || v.x >= 1 || v.y <= -1 || v.y >= 1 || v.z >= 1) return null;
+        const rect = renderer.domElement.getBoundingClientRect();
+        return {
+          x: rect.x + (v.x * 0.5 + 0.5) * rect.width,
+          y: rect.y + (-v.y * 0.5 + 0.5) * rect.height,
+          moduleId: id,
+        };
       };
+      if (moduleId) return tryMesh(moduleId);
+      for (const id of meshById.keys()) {
+        const hit = tryMesh(id);
+        if (hit) return hit;
+      }
+      return null;
     };
 
     const perfStart = performance.now();

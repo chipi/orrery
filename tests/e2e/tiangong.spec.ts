@@ -54,13 +54,17 @@ test.describe('/tiangong', () => {
     await page.goto('/tiangong', { waitUntil: 'networkidle' });
     const canvas = page.getByTestId('tiangong-canvas');
     await expect(canvas).toBeVisible({ timeout: 10_000 });
-    // Wait for the page's test-pick hook (set right after the canvas
-    // pointer handlers attach in /tiangong/+page.svelte).
+    // Wait for the test hook AND for at least one rAF so world matrices
+    // are populated and the camera has settled. The hook forces matrix
+    // updates internally, but the camera also needs its first frame.
     await page.waitForFunction(
       () =>
         typeof (window as unknown as { __tiangongPickAt?: unknown }).__tiangongPickAt ===
         'function',
       { timeout: 12_000 },
+    );
+    await page.evaluate(
+      () => new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r()))),
     );
     // Project a known pickable module's world position to client-space
     // pixels and click that exact spot. Replaces the previous spiral-
@@ -72,7 +76,7 @@ test.describe('/tiangong', () => {
         }
       ).__tiangongPickAt(),
     );
-    expect(pos, 'expected at least one pickable Tiangong module in the scene').not.toBeNull();
+    expect(pos, 'expected at least one pickable Tiangong module on-screen').not.toBeNull();
     if (!pos) return;
     await page.mouse.click(pos.x, pos.y);
     const panel = page.locator('aside.panel');

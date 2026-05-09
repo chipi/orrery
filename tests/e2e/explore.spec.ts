@@ -224,6 +224,11 @@ test.describe('/explore — selection and panel', () => {
  */
 test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   test('Earth panel exposes GALLERY tab with thumbnails', async ({ page }) => {
+    // Same simT-rotation hazard as test:156 — without reduced-motion
+    // gating, Earth drifts off the (W/2 + 113, H/2) click target before
+    // the click lands. Particularly painful on mobile-chromium where
+    // setup is slower and simT has advanced further.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
@@ -240,6 +245,9 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   });
 
   test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
+    // Reduced-motion freezes simT so Earth stays at the deterministic
+    // (W/2 + 113, H/2) position throughout the click.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');

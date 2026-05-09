@@ -54,16 +54,21 @@ test.describe('/iss', () => {
     await page.goto('/iss', { waitUntil: 'networkidle' });
     const canvas = page.getByTestId('iss-canvas');
     await expect(canvas).toBeVisible({ timeout: 10_000 });
-    // Wait for the page to register its test hook (set right after the
-    // canvas pointer handlers attach in /iss/+page.svelte).
+    // Wait for the page to register its test hook AND for at least one
+    // requestAnimationFrame so world matrices are populated and the
+    // canvas has rendered once. The hook itself forces a matrixWorld
+    // update, but the camera also needs to have settled into its
+    // initial position before we project anything.
     await page.waitForFunction(
       () => typeof (window as unknown as { __issPickAt?: unknown }).__issPickAt === 'function',
       { timeout: 12_000 },
     );
+    await page.evaluate(
+      () => new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r()))),
+    );
     // Project a known pickable module's world position to client-space
-    // pixels and click that exact spot. The previous "spiral search"
-    // approach was racing software-rasterizer WebGL in CI and timing
-    // out the entire 25-minute job.
+    // pixels and click that exact spot. Replaces the previous spiral-
+    // search pattern that raced software-rasterizer WebGL in CI.
     const pos = await page.evaluate(() =>
       (
         window as unknown as {
@@ -71,7 +76,7 @@ test.describe('/iss', () => {
         }
       ).__issPickAt(),
     );
-    expect(pos, 'expected at least one pickable ISS module in the scene').not.toBeNull();
+    expect(pos, 'expected at least one pickable ISS module on-screen').not.toBeNull();
     if (!pos) return;
     await page.mouse.click(pos.x, pos.y);
     const panel = page.locator('aside.panel');

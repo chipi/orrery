@@ -11,6 +11,14 @@
  *   2. If 01 is bad and a clean slot exists, AUTO-SWAP
  *   3. If all 5 are bad/empty, FLAG as "needs human curation"
  *
+ * Some entries genuinely have no clean orbital photo on Commons (Energia
+ * never flew with photos available; Salyut-7 was uncrewed and tumbled
+ * into Argentina; Soyuz 7K-OK predates Komarov's death; Tiangong-2 only
+ * has Chinese-archive renderings). For those, fix-fleet-heroes.ts uses
+ * an agency-curated drawing or rendering as the canonical hero, and
+ * those overrides are listed in ACCEPTED_OVERRIDES below so the audit
+ * reports them as accepted rather than as a curation backlog.
+ *
  * Outputs: docs/provenance/fleet-hero-audit.md with the curation backlog.
  */
 import { readFile, writeFile, copyFile, access, mkdir } from 'node:fs/promises';
@@ -35,6 +43,17 @@ const PEOPLE =
   /flight_suit|astronaut_at|cosmonaut_at|crew_portrait|press_conference|ceremony|smiling|exhibition|stamp|coin|memorial/i;
 // Wrong subject leakage (Hubble illustration in Gaia entry, etc.) — check explicitly per-entry below.
 const SCREENSHOT = /\.webm\.jpg$|\.ogv\.jpg$|\.tiff\.jpg$|page1-960px|capture[_-]/i;
+
+// Entries whose hero is intentionally a drawing / rendering / model
+// because no clean orbital photo of the hardware exists in Commons.
+// These come from fix-fleet-heroes.ts and are tracked here so the
+// audit report doesn't keep nagging about them.
+const ACCEPTED_OVERRIDES = new Set<string>([
+  'energia', // Energia_Render_3_corrected.png — only ESA-curated render
+  'tiangong-2', // Tianzhou-1_and_Tiangong-2_rendering.jpg — Chinese-archive only
+  'salyut-7', // Salyut_7_drawing.png — uncrewed; tumbled in 1991
+  'soyuz-7k-ok', // Soyuz_7K-OK(A)_drawing.png — predates Komarov's flight
+]);
 
 function badScore(url: string): number {
   let score = 0;
@@ -85,11 +104,16 @@ async function main() {
 
   const swaps: Array<{ id: string; from: string; to: string }> = [];
   const flagged: Array<{ id: string; name: string; agency: string; reason: string }> = [];
+  const accepted: Array<{ id: string; name: string; agency: string }> = [];
 
   for (const idx of indexEntries) {
     const slots = byEntry.get(idx.id) ?? [];
     if (slots.length === 0) {
       flagged.push({ id: idx.id, name: idx.name, agency: idx.agency, reason: 'no images' });
+      continue;
+    }
+    if (ACCEPTED_OVERRIDES.has(idx.id)) {
+      accepted.push({ id: idx.id, name: idx.name, agency: idx.agency });
       continue;
     }
     const scored = slots.map((s) => ({
@@ -157,11 +181,22 @@ async function main() {
     md += `These entries' galleries don't contain a clean device-shot. Either Commons / NASA coverage is genuinely thin, or every available file is a logo, infographic, artist concept, or people-only shot. Action needed: drop a curated direct image URL (agency archive or known-good Commons filename) per entry.\n\n`;
     md += `| Entry | Name | Agency | Reason |\n|---|---|---|---|\n`;
     for (const f of flagged) md += `| ${f.id} | ${f.name} | ${f.agency} | ${f.reason} |\n`;
+    md += `\n`;
   }
+
+  md += `## Accepted overrides (${accepted.length})\n\n`;
+  if (accepted.length === 0) md += `_None._\n\n`;
+  else {
+    md += `These entries genuinely have no clean orbital photo on Commons. The hero is an agency-curated drawing or rendering chosen via Wikipedia's pageimages API and applied through scripts/fix-fleet-heroes.ts. Listed here as a record, not a backlog.\n\n`;
+    md += `| Entry | Name | Agency |\n|---|---|---|\n`;
+    for (const a of accepted) md += `| ${a.id} | ${a.name} | ${a.agency} |\n`;
+  }
+
   await writeFile(REPORT, md);
 
   console.log(`\nAuto-swapped: ${swaps.length}`);
   console.log(`Flagged for human curation: ${flagged.length}`);
+  console.log(`Accepted overrides: ${accepted.length}`);
   console.log(`Report: docs/provenance/fleet-hero-audit.md`);
 }
 

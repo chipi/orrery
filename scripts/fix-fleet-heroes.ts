@@ -88,6 +88,19 @@ const HERO_OVERRIDES: Record<string, HeroOverride> = {
     directUrl: 'https://www.isas.jaxa.jp/en/missions/files/slim_main3.jpg',
     agency: 'JAXA',
   },
+  // Wave 2.5 (2026-05-10) — for these two, no clean orbital photo of the
+  // hardware exists in Commons (Salyut-7 was uncrewed mostly + tumbled into
+  // Argentina; Soyuz 7K-OK ended in Komarov's death). User confirmed
+  // canonical drawings are an acceptable hero. ru.wiki picked these as the
+  // article infobox image — agency-curated even if not photographic.
+  'salyut-7': {
+    filename: 'Salyut_7_drawing.png',
+    agency: 'ROSCOSMOS',
+  },
+  'soyuz-7k-ok': {
+    filename: 'Soyuz_7K-OK(A)_drawing.png',
+    agency: 'ROSCOSMOS',
+  },
   // === Wave 1 retried via Wikipedia pageimages API (2026-05-09) ===
   // The original wave-1 filenames were guesses that 404'd. These come
   // from the same Wikipedia-pageimages-API approach as wave 2.

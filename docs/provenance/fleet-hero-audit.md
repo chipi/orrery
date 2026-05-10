@@ -6,13 +6,17 @@ Auto-audit per the "no text · no people · just the asset" rule.
 
 _None._
 
-## Needs human curation (4)
+## Needs human curation (0)
 
-These entries' galleries don't contain a clean device-shot. Either Commons / NASA coverage is genuinely thin, or every available file is a logo, infographic, artist concept, or people-only shot. Action needed: drop a curated direct image URL (agency archive or known-good Commons filename) per entry.
+_None._
 
-| Entry | Name | Agency | Reason |
-|---|---|---|---|
-| energia | Energia | Roscosmos | artist concept / model / scale-replica only |
-| soyuz-7k-ok | Soyuz 7K-OK | Roscosmos | no images |
-| salyut-7 | Salyut 7 | Roscosmos | text/logo/PDF dominant — all alternates also bad |
-| tiangong-2 | Tiangong-2 | CNSA | artist concept / model / scale-replica only |
+## Accepted overrides (4)
+
+These entries genuinely have no clean orbital photo on Commons. The hero is an agency-curated drawing or rendering chosen via Wikipedia's pageimages API and applied through scripts/fix-fleet-heroes.ts. Listed here as a record, not a backlog.
+
+| Entry | Name | Agency |
+|---|---|---|
+| energia | Energia | Roscosmos |
+| soyuz-7k-ok | Soyuz 7K-OK | Roscosmos |
+| salyut-7 | Salyut 7 | Roscosmos |
+| tiangong-2 | Tiangong-2 | CNSA |

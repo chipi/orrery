@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
@@ -53,6 +53,8 @@
   // Centralising would touch the established /missions code; for V1
   // the duplication is fine — when a per-route filter helper extracts
   // (Issue #57's refactor scope) the constants land in one place.
+  // Logos must exist on disk under static/logos/{key}.svg — the page
+  // surfaces a 404 console error if a key here has no matching SVG.
   const KNOWN_AGENCY_LOGOS = new Set([
     'nasa',
     'esa',
@@ -65,7 +67,6 @@
     'boeing',
     'csa',
     'northrop-grumman',
-    'blue-origin',
   ]);
   function logoFor(agency: string): string | null {
     const key = agency.toLowerCase().replace(/\s+/g, '-');
@@ -297,16 +298,22 @@
   });
 
   $effect(() => {
-    // Re-apply URL when navigating in-app (back/forward buttons)
-    applyUrl($page.url);
-    // Also keep the panel selection in sync with ?id=
-    const id = $page.url.searchParams.get('id');
-    if (id && id !== selectedEntry?.id) {
-      void loadEntry(id);
-    } else if (!id && panelOpen) {
-      panelOpen = false;
-      selectedEntry = null;
-    }
+    // Re-apply URL when navigating in-app (back/forward buttons).
+    // applyUrl writes to filter $state values; if those writes were
+    // tracked here they would feed back through syncUrl → goto → page
+    // store and cause an effect_update_depth_exceeded loop on first
+    // load with `?id=` deep-links. untrack isolates the write batch.
+    const url = $page.url;
+    untrack(() => {
+      applyUrl(url);
+      const id = url.searchParams.get('id');
+      if (id && id !== selectedEntry?.id) {
+        void loadEntry(id);
+      } else if (!id && panelOpen) {
+        panelOpen = false;
+        selectedEntry = null;
+      }
+    });
   });
 </script>
 

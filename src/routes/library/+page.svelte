@@ -107,6 +107,8 @@
         return m.library_category_iss_visitor();
       case 'rocket':
         return m.library_category_rocket();
+      case 'fleet':
+        return m.library_category_fleet();
       default:
         return c;
     }

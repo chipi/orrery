@@ -95,6 +95,8 @@
         return m.credits_category_iss_module();
       case 'rocket':
         return m.credits_category_rocket();
+      case 'fleet':
+        return m.credits_category_fleet();
       case 'ui':
         return m.credits_category_ui();
       case 'credits':

@@ -54,5 +54,8 @@
 | ADR-049 | Tiangong module pickability and scene graph | Accepted | May 2026 |
 | ADR-050 | Tiangong Explorer low-end fallback (`?view=list` + heuristics) | Accepted | May 2026 |
 | ADR-051 | Outbound learn-link stewardship | Accepted (closes RFC-015) | May 2026 |
-| ADR-052 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
-| ADR-053 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
+| _ADR-052_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — fleet schema + cross-reference contract_ | _Pending (v0.6)_ | _—_ |
+| _ADR-053_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — mission badge + crew portrait sourcing_ | _Pending (v0.6)_ | _—_ |
+| _ADR-054_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — fleet i18n strategy_ | _Pending (v0.6)_ | _—_ |
+| ADR-055 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
+| ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |

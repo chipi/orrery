@@ -12,6 +12,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
   import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -75,7 +76,6 @@
   let hoverLabelVisible = $state(false);
   let hoverLabelLeft = $state(0);
   let hoverLabelTop = $state(0);
-  let hoverLabelEl: HTMLDivElement | undefined = $state();
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});
 
@@ -195,11 +195,11 @@
       scene,
       camera,
     );
-    outlinePass.edgeStrength = 4;
-    outlinePass.edgeGlow = 0.4;
-    outlinePass.edgeThickness = 1.5;
-    outlinePass.visibleEdgeColor.setHex(0x4ecdc4);
-    outlinePass.hiddenEdgeColor.setHex(0x224a48);
+    outlinePass.edgeStrength = OUTLINE_PASS.edgeStrength;
+    outlinePass.edgeGlow = OUTLINE_PASS.edgeGlow;
+    outlinePass.edgeThickness = OUTLINE_PASS.edgeThickness;
+    outlinePass.visibleEdgeColor.setHex(OUTLINE_PASS.visibleEdgeColor);
+    outlinePass.hiddenEdgeColor.setHex(OUTLINE_PASS.hiddenEdgeColor);
     composer.addPass(outlinePass);
 
     scene.add(new THREE.AmbientLight(0x886655, 0.8));
@@ -208,7 +208,7 @@
     scene.add(sun);
 
     // Stars
-    const STAR_COUNT = 1500;
+    const STAR_COUNT = STAR_FIELD.planet;
     const sp = new Float32Array(STAR_COUNT * 3);
     for (let i = 0; i < STAR_COUNT; i++) {
       const r = 200 + Math.random() * 80;
@@ -1239,7 +1239,6 @@
   {/if}
 
   <div
-    bind:this={hoverLabelEl}
     class="hover-label"
     class:hidden={!hoverLabelVisible || view !== '3d'}
     style="left: {hoverLabelLeft}px; top: {hoverLabelTop}px"

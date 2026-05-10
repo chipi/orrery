@@ -10,6 +10,7 @@
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+  import { OUTLINE_PASS } from '$lib/three-constants';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
@@ -37,7 +38,6 @@
   let lowMemBanner = $state(false);
   let autoSpin = $state(true);
   let indexOpen = $state(false);
-  let hoverLabelEl: HTMLDivElement | undefined = $state();
   let hoverLabelText = $state('');
   let hoverLabelVisible = $state(false);
   let hoverLabelLeft = $state(0);
@@ -439,11 +439,11 @@
       scene,
       camera,
     );
-    outlinePass.edgeStrength = 4;
-    outlinePass.edgeGlow = 0.4;
-    outlinePass.edgeThickness = 1.5;
-    outlinePass.visibleEdgeColor.setHex(0x4ecdc4);
-    outlinePass.hiddenEdgeColor.setHex(0x224a48);
+    outlinePass.edgeStrength = OUTLINE_PASS.edgeStrength;
+    outlinePass.edgeGlow = OUTLINE_PASS.edgeGlow;
+    outlinePass.edgeThickness = OUTLINE_PASS.edgeThickness;
+    outlinePass.visibleEdgeColor.setHex(OUTLINE_PASS.visibleEdgeColor);
+    outlinePass.hiddenEdgeColor.setHex(OUTLINE_PASS.hiddenEdgeColor);
     composer.addPass(outlinePass);
 
     scene.add(new THREE.AmbientLight(0x445566, 0.55));
@@ -934,7 +934,6 @@
     </aside>
 
     <div
-      bind:this={hoverLabelEl}
       class="hover-label"
       class:hidden={!hoverLabelVisible || viewMode !== '3d'}
       style="left: {hoverLabelLeft}px; top: {hoverLabelTop}px"

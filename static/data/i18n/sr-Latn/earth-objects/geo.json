@@ -1,6 +1,0 @@
-{
-  "name": "__ACR0__ pojas",
-  "short": "__ACR0__",
-  "description": "Geostacionarni prsten. Na tačno 35.786 km, orbitalni period je jednak Zemljinoj rotaciji - sateliti izgledaju fiksirani na nebu. GOES vremenski sateliti, Meteosat, hiljade komunikacionih satelita. Specifična visina na kojoj su fizika i korisnost savršeno usklađeni.",
-  "scale_fact": "35.786 km nije okrugli broj po dizajnu — to je tačna visina na kojoj se gravitacija i orbitalna brzina balansiraju da bi se dao period od 24 sata. Fizika je to izabrala."
-}

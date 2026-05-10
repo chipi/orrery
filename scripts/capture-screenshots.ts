@@ -36,7 +36,6 @@ interface Shot {
   settleMs?: number;
 }
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 const SHOTS: Shot[] = [
   // ── Hero — keep first so it's the README opener ───────────────────
   {
@@ -151,7 +150,6 @@ const SHOTS: Shot[] = [
   { file: 'locale-ar.png', path: '/explore?lang=ar', settleMs: 1500 },
   { file: 'locale-zh-CN.png', path: '/explore?lang=zh-CN', settleMs: 1500 },
 ];
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 async function waitForServer(url: string, attempts = 30): Promise<void> {
   for (let i = 0; i < attempts; i++) {

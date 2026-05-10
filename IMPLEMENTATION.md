@@ -532,6 +532,16 @@ Result: e2e job dropped from 25-min timeout to 16-min clean pass.
 
 **State at v0.5.0:** 10 primary nav routes. 12 locales × 100% UI parity. 36 missions. 54 `/science` sections × 8 tabs × 62 SVG diagrams. 18 ISS modules + 4 Tiangong modules with raycast pickability. Public `/credits` + `/library`. Validate-data fail-closed on image provenance, link provenance, license allowlist, science overlay schemas, diagram integrity. E2e green at 16 min.
 
+### Known translation gaps (en-US fallback per ADR-017)
+
+The 2026-05-10 deep-review audit surfaced two coverage gaps that are **not blocking** (the runtime falls back to en-US per ADR-017) but worth tracking for a future translation batch:
+
+- **`/science` overlays — 14 files missing in es/de/fr/it** (each locale has 49 of 63 expected files). Missing: `history/_intro` + 6 history sections (apollo-11-1969, goddard-liquid-rocket-1926, keplers-laws-1609, newton-principia-1687, sputnik-1957, tsiolkovsky-equation-1903), `space-stations/_intro` + 4 space-stations sections (expedition-cadence, node-module, pressurized-volume, solar-power-budget), `mission-phases/eva`, `scales-time/long-duration`. These are the v0.4–v0.5-added content not yet picked up by the wave23 catalog. Total deferred: 56 file authorings (14 × 4 EU locales).
+- **`iss-visitors/` overlays — 7 files in en-US only**, missing across all 12 non-en-US locales. Visitors: cargo_dragon, crew_dragon, cygnus, htv_x, progress_ms, soyuz_ms, starliner. Total deferred: 84 file authorings (7 × 12 locales).
+- **`tiangong-visitors/` overlays — already complete in en-US** (shenzhou, tianzhou); per-locale coverage matches the Tiangong module pattern.
+
+Pipeline: re-run `node scripts/wave23/extract-science-catalog.mjs` to refresh the catalog, then author the per-locale maps under `scripts/wave23/maps/<locale>.json`, then `node scripts/wave23/apply-translations.mjs <locale>` per locale. Tracked separately from a code release — pure content work.
+
 ---
 
 *Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.0*

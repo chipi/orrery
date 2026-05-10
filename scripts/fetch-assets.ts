@@ -14,6 +14,13 @@
  * ISS module galleries only (merges into iss-galleries.json):
  *   npm run fetch-assets -- --iss-only
  *   npm run fetch-assets -- --iss-only=cupola,zarya
+ *
+ * Fleet entry galleries only (PRD-012 v0.2 / Phase D — merges into
+ * fleet-galleries.json). Marquee tier (~30 entries with curated NASA
+ * search queries + Wikimedia covers); long-tail uses same patterns
+ * once their queries land in FLEET_IMAGE_QUERIES.
+ *   npm run fetch-assets -- --fleet-only
+ *   npm run fetch-assets -- --fleet-only=saturn-v,hubble,curiosity
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
@@ -2379,6 +2386,315 @@ async function fetchMissionThumbnails(): Promise<number> {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// FLEET GALLERIES — agency-first per ADR-046, Wikimedia fallback
+// (PRD-012 v0.2 / RFC-016 v0.2 / Phase D)
+//
+// Writes `static/images/fleet-galleries/{id}/01.jpg` … and
+// `static/data/fleet-galleries.json` (count map; consumed by
+// `getFleetGallery()` in src/lib/data.ts).
+//
+// Per-entry directories use kebab-case fleet IDs (matching
+// fleet/index.json), distinct from /iss visitor IDs which use
+// underscores. Mirrors the ISS module-gallery pipeline structurally.
+// ──────────────────────────────────────────────────────────────────────
+
+interface FleetImageQuery {
+  id: string;
+  query: string;
+}
+
+const FLEET_IMG_DIR = 'static/images/fleet-galleries';
+const FLEET_GALLERIES_MANIFEST = 'static/data/fleet-galleries.json';
+const FLEET_GALLERY_MAX = 5;
+
+/**
+ * Marquee-tier image queries (~35 entries). Each query is tuned to
+ * surface a clean hero photo first when fed to NASA Images API. Query
+ * choice matters: "Saturn V" alone returns lots of model-rocket
+ * shots; "Saturn V launch Apollo" disambiguates.
+ *
+ * Long-tail entries appear when NASA / Wikimedia queries are added
+ * here. Untouched IDs simply don't get fleet imagery (the panel hero
+ * falls back to a placeholder gradient on the card).
+ */
+const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
+  // Launchers
+  { id: 'saturn-v', query: 'Saturn V launch Apollo lunar mission' },
+  { id: 'space-shuttle-stack', query: 'Space Shuttle launch full stack external tank' },
+  { id: 'falcon-9', query: 'Falcon 9 launch SpaceX block 5 booster' },
+  { id: 'falcon-heavy', query: 'Falcon Heavy launch demo SpaceX three core' },
+  { id: 'sls-block-1', query: 'Space Launch System Artemis I launch' },
+  { id: 'atlas-v', query: 'Atlas V launch Curiosity Perseverance ULA' },
+  { id: 'r-7-vostok', query: 'Vostok rocket launch Sputnik Gagarin' },
+
+  // Crewed spacecraft
+  { id: 'apollo-csm-block-ii', query: 'Apollo CSM lunar orbit Earthrise spacecraft' },
+  { id: 'apollo-lm', query: 'Apollo Lunar Module Eagle on lunar surface' },
+  { id: 'space-shuttle-orbiter', query: 'Space Shuttle Orbiter on orbit ISS approach' },
+  { id: 'crew-dragon', query: 'Crew Dragon docked ISS Harmony approach' },
+  { id: 'starliner', query: 'Boeing Starliner CST-100 ISS approach docked' },
+  { id: 'orion', query: 'Orion spacecraft Artemis I splashdown lunar' },
+  { id: 'soyuz-ms', query: 'Soyuz MS spacecraft docked ISS' },
+  { id: 'mercury-capsule', query: 'Project Mercury Atlas launch Glenn' },
+  { id: 'gemini', query: 'Project Gemini spacecraft EVA spacewalk' },
+  { id: 'shenzhou', query: 'Shenzhou spacecraft docking Tiangong China' },
+  { id: 'new-shepard', query: 'New Shepard launch Blue Origin capsule' },
+
+  // Stations
+  { id: 'iss', query: 'International Space Station full view orbit' },
+  { id: 'mir', query: 'Mir space station Earth orbit Russian' },
+  { id: 'salyut-1', query: 'Salyut 1 space station Soyuz docked Soviet' },
+  { id: 'skylab', query: 'Skylab space station orbital workshop NASA' },
+  { id: 'tiangong', query: 'Tiangong space station Tianhe Wentian Mengtian' },
+
+  // Rovers
+  { id: 'curiosity', query: 'Curiosity rover Mars selfie Gale crater' },
+  { id: 'perseverance', query: 'Perseverance rover Mars Jezero crater' },
+  { id: 'lunokhod-1', query: 'Lunokhod 1 lunar rover Soviet Mare Imbrium' },
+  { id: 'lrv-apollo', query: 'Lunar Roving Vehicle Apollo astronaut' },
+  { id: 'sojourner', query: 'Sojourner rover Mars Pathfinder Sagan station' },
+
+  // Landers
+  { id: 'viking-1', query: 'Viking 1 lander Chryse Planitia Mars surface' },
+  { id: 'insight', query: 'InSight Mars lander seismometer dust' },
+  { id: 'vikram-cy3', query: 'Chandrayaan-3 Vikram lander Moon south pole' },
+
+  // Orbiters
+  { id: 'voyager-1', query: 'Voyager 1 spacecraft golden record' },
+  { id: 'voyager-2', query: 'Voyager 2 spacecraft Neptune flyby' },
+  { id: 'cassini', query: 'Cassini spacecraft Saturn rings orbiter' },
+  { id: 'galileo', query: 'Galileo spacecraft Jupiter probe deployment' },
+  { id: 'juno', query: 'Juno spacecraft Jupiter polar orbiter' },
+  { id: 'mariner-9', query: 'Mariner 9 Mars orbiter spacecraft' },
+
+  // Observatories
+  { id: 'hubble', query: 'Hubble Space Telescope on orbit servicing' },
+  { id: 'jwst', query: 'James Webb Space Telescope deployed mirror' },
+  { id: 'chandra', query: 'Chandra X-ray Observatory deployment shuttle' },
+  { id: 'kepler', query: 'Kepler space telescope assembly clean room' },
+  { id: 'spitzer', query: 'Spitzer Space Telescope infrared deployment' },
+];
+
+/**
+ * Curated Wikimedia Commons cover for each entry — used when NASA
+ * Images API returns nothing on-target, or as the primary source for
+ * non-NASA hardware (Russian / Chinese / European / Japanese craft).
+ */
+const WIKIMEDIA_FLEET_FALLBACK: Record<string, string> = {
+  // Launchers
+  'saturn-v': 'Apollo 11 Launch - GPN-2000-000630.jpg',
+  'space-shuttle-stack': 'STS120LaunchHiRes-edit1.jpg',
+  'falcon-9': 'CRS-7 Launch (19132520853).jpg',
+  'falcon-heavy': 'Falcon Heavy Demo Mission (40110297752).jpg',
+  'sls-block-1': 'Artemis I launch (NHQ202211160003).jpg',
+  'atlas-v': 'Atlas V launches Mars 2020 mission to Mars (50203797123).jpg',
+  'r-7-vostok': 'Vostok rocket R7.jpg',
+  n1: 'Soviet moon rocket N1 11A52 (3).jpg',
+  energia: 'Energia Polyus.jpg',
+  'long-march-5': 'Tianhe core module of the Tiangong space station launches on Long March 5B.jpg',
+  'long-march-2f': 'Long March 2F launch with Shenzhou-13 (cropped).jpg',
+  'ariane-5': 'Ariane 5 with JWST during Final Assembly (51721116908).jpg',
+  'soyuz-fg': 'Soyuz TMA-9 launch.jpg',
+  'h-iia': 'H-IIA F11 launching ALOS.jpg',
+  h3: 'H3 F1 launch.jpg',
+  lvm3: 'GSLV Mk III D2 launch with GSAT-29.jpg',
+  'proton-m': 'Proton M launch 2018.jpg',
+  'titan-ii-glv': 'Gemini 11 launch.jpg',
+
+  // Crewed spacecraft
+  vostok: 'Vostok-1 spacecraft replica.jpg',
+  voskhod: 'Voskhod-2 model.jpg',
+  'mercury-capsule': 'Friendship 7 (NASA-S62-2079).jpg',
+  gemini: 'Gemini 4 spacecraft - cropped.jpg',
+  'apollo-csm-block-ii': 'Apollo 15 CSM Endeavour over the Moon.jpg',
+  'apollo-lm': 'Apollo 15 Lunar Module on the Moon.jpg',
+  'space-shuttle-orbiter': 'Atlantis Departing ISS - Crop.jpg',
+  buran: 'Buran-Energia Mriya.jpg',
+  'soyuz-7k-ok': 'Soyuz 7K-OK drawing.png',
+  'soyuz-tm': 'Soyuz TM-32 docked to ISS.jpg',
+  'soyuz-tma': 'Soyuz TMA-7 spacecraft2.jpg',
+  'soyuz-ms':
+    'The Soyuz MS-27 spacecraft docked to the Prichal module above Florida (iss073e0134239).jpg',
+  shenzhou: 'Shenzhou-7 reentry capsule (cropped).jpg',
+  'crew-dragon': 'Crew Dragon Demo-2 approaches the ISS (NHQ202005310028).jpg',
+  starliner: 'Boeing CST-100 Starliner Spacecraft Docked to Harmony Module (52786692672).jpg',
+  'new-shepard': 'New Shepard Booster RSS H.G. Wells (cropped).jpg',
+  orion: 'Artemis I Mission Patch.png',
+  gaganyaan: 'Gaganyaan crew module.jpg',
+
+  // Cargo spacecraft
+  'progress-7k-tg': 'Progress-1 spacecraft (cropped).jpg',
+  'progress-m': 'Progress M-66 docked at Mir.jpg',
+  'progress-ms': 'Progress MS-21 approaches the International Space Station.jpg',
+  'cargo-dragon-v1': 'Dragon C2+ approaches the ISS for grappling.jpg',
+  'cargo-dragon-2': 'SpaceX CRS-21 capture of Dragon (50708879493).jpg',
+  'cygnus-standard': 'Cygnus Orb-D1 captured by Canadarm2.jpg',
+  'cygnus-enhanced': 'Cygnus NG-12 Capture (NHQ201911040003).jpg',
+  htv: 'HTV-7 in Free Flight Above the Earth.jpg',
+  'htv-x': 'HTV-X.png',
+  atv: 'ATV-2 Johannes Kepler approaches the ISS (cropped).jpg',
+  tianzhou: 'Tianzhou-3 cargo spacecraft.jpg',
+
+  // Stations
+  'salyut-1': 'Salyut1 fc.jpg',
+  'salyut-6': 'Salyut 6 with two Soyuz craft and Progress-1.jpg',
+  'salyut-7': 'Salyut 7 from Soyuz T-13.jpg',
+  skylab: 'Skylab (SL-4).jpg',
+  mir: 'Mir on 12 June 1998edit1.jpg',
+  iss: 'STS-134 International Space Station after undocking (cropped).jpg',
+  'tiangong-1': 'Tiangong-1 space station.jpg',
+  'tiangong-2': 'Tiangong-2 illustration.jpg',
+  tiangong: 'CSS rendezvous with Shenzhou-15 spacecraft (cropped).jpg',
+
+  // Rovers
+  'lunokhod-1': 'Lunokhod 1 in Lavotchkin Museum.jpg',
+  'lunokhod-2': 'Lunokhod 2 model.jpg',
+  'lrv-apollo': 'Apollo15LunarRover.jpg',
+  sojourner: 'Sojourner rover - Sol 1.jpg',
+  spirit: 'NASA Mars Rover.jpg',
+  opportunity: 'Opportunity Sol 209.jpg',
+  curiosity: 'PIA19808-MarsCuriosityRover-MAHLISelfPortrait-20151007.jpg',
+  perseverance: 'PIA24264-Mars-Perseverance-Selfie-Ingenuity-20210406.jpg',
+  yutu: "Chang'e 3 - Yutu rover.jpg",
+  'yutu-2': "Yutu-2 rover and Chang'e 4 lander photographed by each other (cropped).jpg",
+  zhurong: 'Tianwen-1 lander selfie (cropped).jpg',
+  pragyan: 'Pragyan rover view in Chandrayaan-3 lander.png',
+
+  // Landers
+  'luna-9': 'Luna 9 model.jpg',
+  'luna-16': 'Luna 16.jpg',
+  'venera-7': 'Venera-7 in NASM.jpg',
+  'mars-2': 'Mars 2 spacecraft.jpg',
+  'mars-3': 'Mars 3 spacecraft.jpg',
+  'viking-1': 'Viking lander on Mars.jpg',
+  'mars-polar-lander': 'Mars Polar Lander - mpl-anim.gif',
+  phoenix: 'Phoenix lander leg on Mars.jpg',
+  'change-3': "Chang'e 3 lander seen by the Yutu rover (cropped).png",
+  'change-4': "Chang'e 4 - First view of Moon's far side.jpg",
+  'change-5': "Chang'e 5 reentry capsule landing.jpg",
+  schiaparelli: 'Schiaparelli EDM (ESA376202).jpg',
+  insight: 'PIA22875-MarsInSightLander-Selfie-20181206.jpg',
+  beresheet: "Beresheet - Israel's First Lunar Mission.png",
+  'vikram-cy2': 'Vikram lander.png',
+  'vikram-cy3': 'Vikram lander on Moon (cropped).jpg',
+  'hakuto-r': 'Hakuto-R Mission 1 lander.jpg',
+  slim: 'JAXA SLIM at the Moon (top down).jpg',
+  'im-1-odysseus': 'Odysseus IM-1 on the moon.jpg',
+  'surveyor-3': 'Apollo 12 visits Surveyor 3.jpg',
+
+  // Orbiters
+  'mariner-4': 'Mariner 4 - GPN-2000-002012.jpg',
+  'mariner-9': 'Mariner 9 - GPN-2000-001993.jpg',
+  'pioneer-10': 'Pioneer 10 - GPN-2000-001623.jpg',
+  'voyager-1': 'Voyager.jpg',
+  'voyager-2': 'Voyager 2 with Earth and Moon (PIA21425) (cropped).jpg',
+  galileo: 'Galileo Preparations - GPN-2000-000672.jpg',
+  cassini: 'Cassini Saturn Orbit Insertion.jpg',
+  juno: 'Juno spacecraft Jupiter (cropped).png',
+  rosetta: "Rosetta and Philae at Comet (artist's impression) ESA363352.jpg",
+  'mars-express': 'Mars Express artwork.jpg',
+  mro: 'Mars Reconnaissance Orbiter.jpg',
+  magellan: 'Magellan probe.jpg',
+  'phobos-2': 'Phobos2.jpg',
+  'change-2': "Chang'e 2 lunar orbiter.jpg",
+  'hayabusa-2': 'Hayabusa 2 explorer.png',
+  mangalyaan: 'MOM with Mars in background (cropped).jpg',
+  'osiris-rex': 'OSIRIS-REx Crystal Vision (cropped).jpg',
+  dart: 'DART spacecraft - Crystal Vision.jpg',
+
+  // Observatories
+  hubble: 'HST-SM4.jpeg',
+  'compton-gro': 'GRO and Endeavour.jpg',
+  chandra: 'Chandra X-ray Observatory inside the payload bay of STS-93.jpg',
+  spitzer: 'Spitzer space telescope prelaunch.jpg',
+  kepler: 'Kepler Space Telescope spacecraft model.png',
+  jwst: 'James Webb Space Telescope 2009 top.jpg',
+  'xmm-newton': 'XMM-Newton spacecraft.jpg',
+  gaia: 'Gaia spacecraft fully deployed (model).jpg',
+  euclid: 'Euclid (spacecraft).jpg',
+  tess: 'TESS mockup (cropped).jpg',
+  'spektr-rg': 'Spektr-RG, Buschwerk Lavochkin.jpg',
+  hitomi: 'Hitomi (ASTRO-H) - illustration.jpg',
+};
+
+/** Phase D fetcher — mirrors fetchIssModuleImages. NASA Images API
+ *  primary, Wikimedia covers as fallback / hero. Provenance entries
+ *  flow through `build-image-provenance.ts` automatically once images
+ *  land under static/images/fleet-galleries/. */
+async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
+  await mkdir(FLEET_IMG_DIR, { recursive: true });
+  await mkdir('static/data', { recursive: true });
+
+  const subsetMode = Array.isArray(onlyIds) && onlyIds.length > 0;
+  let prevManifest: Record<string, number> = {};
+  if (subsetMode) {
+    try {
+      prevManifest = JSON.parse(await readFile(FLEET_GALLERIES_MANIFEST, 'utf8')) as Record<
+        string,
+        number
+      >;
+    } catch {
+      /* no existing manifest */
+    }
+  }
+  const manifest: Record<string, number> = subsetMode ? { ...prevManifest } : {};
+  let totalPhotos = 0;
+
+  const queries = subsetMode
+    ? FLEET_IMAGE_QUERIES.filter((q) => onlyIds!.includes(q.id))
+    : FLEET_IMAGE_QUERIES;
+  if (subsetMode && queries.length === 0) {
+    console.warn('  ⚠ --fleet-only: no ids matched FLEET_IMAGE_QUERIES');
+    return 0;
+  }
+
+  for (const row of queries) {
+    const entryDir = join(FLEET_IMG_DIR, row.id);
+    await mkdir(entryDir, { recursive: true });
+    process.stdout.write(`  ${row.id}…`);
+
+    let saved = 0;
+    const heroFallback = WIKIMEDIA_FLEET_FALLBACK[row.id];
+    if (heroFallback) {
+      try {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(heroFallback)}?width=800`;
+        await downloadFromWikimedia(url, join(entryDir, '01.jpg'));
+        saved = 1;
+        process.stdout.write(' wikimedia-hero');
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        process.stdout.write(` ⚠ wikimedia-hero skipped (${msg})`);
+      }
+    }
+
+    try {
+      const urls = await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX);
+      for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+        try {
+          const dest = join(entryDir, `${String(saved + 1).padStart(2, '0')}.jpg`);
+          await downloadFile(urls[i], dest);
+          saved += 1;
+          await new Promise((resolve) => setTimeout(resolve, 200));
+        } catch {
+          // Continue on individual failures
+        }
+      }
+      process.stdout.write(` nasa(${urls.length})`);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      process.stdout.write(` ⚠ NASA query failed (${msg})`);
+    }
+
+    manifest[row.id] = saved;
+    totalPhotos += saved;
+    process.stdout.write(` → ${saved}\n`);
+  }
+
+  await writeFile(FLEET_GALLERIES_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+  return totalPhotos;
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // SHARED HELPERS
 // ──────────────────────────────────────────────────────────────────────
 
@@ -2417,6 +2733,31 @@ async function main() {
     );
     const issPhotos = await fetchIssModuleImages(issOnlyIds);
     console.log(`  → ${issPhotos} ISS gallery files accounted for in manifest\n`);
+    console.log('Done.');
+    return;
+  }
+
+  // PRD-012 v0.2 Phase D — fleet entry galleries.
+  const fleetOnlyArg = process.argv.find(
+    (a) => a === '--fleet-only' || a.startsWith('--fleet-only='),
+  );
+  if (fleetOnlyArg) {
+    let fleetOnlyIds: string[] | undefined;
+    if (fleetOnlyArg !== '--fleet-only') {
+      const parts = fleetOnlyArg
+        .slice('--fleet-only='.length)
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      fleetOnlyIds = parts.length > 0 ? parts : undefined;
+    }
+    console.log(
+      fleetOnlyIds?.length
+        ? `Fleet entry subset (${fleetOnlyIds.join(', ')}) — skipping fonts/textures/etc.\n`
+        : 'Fleet entry galleries only — skipping fonts/textures/etc.\n',
+    );
+    const fleetPhotos = await fetchFleetImages(fleetOnlyIds);
+    console.log(`  → ${fleetPhotos} fleet gallery files accounted for in manifest\n`);
     console.log('Done.');
     return;
   }

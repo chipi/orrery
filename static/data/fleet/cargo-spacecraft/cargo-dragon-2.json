@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Cargo Dragon 2 — Wikipedia",
+      "l": "SpaceX Dragon 2 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
       "t": "intro"
+    },
+    {
+      "l": "Dragon — SpaceX",
+      "u": "https://www.spacex.com/vehicles/dragon/",
+      "t": "core"
+    },
+    {
+      "l": "Commercial Resupply Services — NASA",
+      "u": "https://www.nasa.gov/international-space-station/commercial-resupply/",
+      "t": "deep"
     }
   ]
 }

@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Venera 7-class — Wikipedia",
+      "l": "Venera 7 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Venera_7",
       "t": "intro"
+    },
+    {
+      "l": "Venera programme — Roscosmos",
+      "u": "https://www.roscosmos.ru/24189/",
+      "t": "core"
+    },
+    {
+      "l": "Venera 7 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-060A",
+      "t": "deep"
     }
   ]
 }

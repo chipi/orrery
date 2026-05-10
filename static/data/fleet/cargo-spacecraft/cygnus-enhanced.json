@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Cygnus Enhanced — Wikipedia",
+      "l": "Cygnus (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Cygnus on the ISS — NASA",
+      "u": "https://www.nasa.gov/international-space-station/commercial-resupply/cygnus-fact-sheet/",
+      "t": "core"
+    },
+    {
+      "l": "Northrop Grumman cargo missions (NASA)",
+      "u": "https://www.nasa.gov/international-space-station/commercial-resupply/",
+      "t": "deep"
     }
   ]
 }

@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Luna 16-class — Wikipedia",
+      "l": "Luna 16 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Luna_16",
       "t": "intro"
+    },
+    {
+      "l": "Лунная программа — Роскосмос",
+      "u": "https://www.roscosmos.ru/24187/",
+      "t": "core"
+    },
+    {
+      "l": "Luna 16 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A",
+      "t": "deep"
     }
   ],
   "linked_missions": [

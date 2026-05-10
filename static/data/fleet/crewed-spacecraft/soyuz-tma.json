@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Soyuz TMA — Wikipedia",
+      "l": "Soyuz-TMA — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Soyuz-TMA",
       "t": "intro"
+    },
+    {
+      "l": "Союз-ТМА — Роскосмос",
+      "u": "https://www.roscosmos.ru/24181/",
+      "t": "core"
+    },
+    {
+      "l": "Soyuz TMA-1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2002-050A",
+      "t": "deep"
     }
   ]
 }

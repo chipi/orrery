@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Cygnus Standard — Wikipedia",
+      "l": "Cygnus (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Cygnus Orb-D1 — NASA",
+      "u": "https://www.nasa.gov/mission/orbital-1-cygnus/",
+      "t": "core"
+    },
+    {
+      "l": "COTS Demo flights — NASA history",
+      "u": "https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/",
+      "t": "deep"
     }
   ]
 }

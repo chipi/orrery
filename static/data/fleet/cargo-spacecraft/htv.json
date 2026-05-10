@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "HTV (Kounotori) — Wikipedia",
+      "l": "H-II Transfer Vehicle — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle",
       "t": "intro"
+    },
+    {
+      "l": "こうのとり — JAXA",
+      "u": "https://www.jaxa.jp/projects/rockets/htv/",
+      "t": "core"
+    },
+    {
+      "l": "HTV programme summary (JAXA)",
+      "u": "https://global.jaxa.jp/projects/rockets/htv/",
+      "t": "deep"
     }
   ]
 }

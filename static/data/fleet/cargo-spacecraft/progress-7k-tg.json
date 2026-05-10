@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Progress 7K-TG — Wikipedia",
+      "l": "Progress (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Progress_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Прогресс — Роскосмос",
+      "u": "https://www.roscosmos.ru/24171/",
+      "t": "core"
+    },
+    {
+      "l": "Progress 1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1978-008A",
+      "t": "deep"
     }
   ]
 }

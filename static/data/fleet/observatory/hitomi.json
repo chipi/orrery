@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Hitomi (ASTRO-H) — Wikipedia",
+      "l": "Hitomi (satellite) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Hitomi_(satellite)",
       "t": "intro"
+    },
+    {
+      "l": "ASTRO-H Hitomi — JAXA",
+      "u": "https://global.jaxa.jp/projects/sas/astro_h/",
+      "t": "core"
+    },
+    {
+      "l": "Hitomi anomaly investigation (JAXA)",
+      "u": "https://www.jaxa.jp/projects/sas/astro_h/",
+      "t": "deep"
     }
   ]
 }

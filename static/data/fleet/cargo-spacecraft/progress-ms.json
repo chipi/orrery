@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Progress MS — Wikipedia",
+      "l": "Progress-MS — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Progress-MS",
       "t": "intro"
+    },
+    {
+      "l": "Прогресс МС — Роскосмос",
+      "u": "https://www.roscosmos.ru/24171/",
+      "t": "core"
+    },
+    {
+      "l": "Progress MS-01 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2015-082A",
+      "t": "deep"
     }
   ]
 }

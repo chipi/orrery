@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Hakuto-R program — Wikipedia",
+      "l": "Hakuto-R — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Hakuto-R",
       "t": "intro"
+    },
+    {
+      "l": "Hakuto-R Mission 1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2022-168A",
+      "t": "core"
+    },
+    {
+      "l": "Hakuto-R Mission 2 (RESILIENCE)",
+      "u": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_2",
+      "t": "deep"
     }
   ]
 }

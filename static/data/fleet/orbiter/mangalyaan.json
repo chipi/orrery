@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Mangalyaan (MOM) — Wikipedia",
+      "l": "Mars Orbiter Mission — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mars_Orbiter_Mission",
       "t": "intro"
+    },
+    {
+      "l": "MOM — ISRO",
+      "u": "https://www.isro.gov.in/MOM_Home.html",
+      "t": "core"
+    },
+    {
+      "l": "Mars Orbiter Mission Profile (ISRO)",
+      "u": "https://www.isro.gov.in/Mars_Orbiter_Mission.html",
+      "t": "deep"
     }
   ],
   "linked_missions": [

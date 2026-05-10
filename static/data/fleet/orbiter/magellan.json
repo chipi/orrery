@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Magellan — Wikipedia",
+      "l": "Magellan (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Magellan — NASA",
+      "u": "https://science.nasa.gov/mission/magellan/",
+      "t": "core"
+    },
+    {
+      "l": "Magellan — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-033B",
+      "t": "deep"
     }
   ]
 }

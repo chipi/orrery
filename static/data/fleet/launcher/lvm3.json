@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "LVM3 (GSLV Mk III) — Wikipedia",
+      "l": "LVM3 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/LVM3",
       "t": "intro"
+    },
+    {
+      "l": "LVM3 — ISRO",
+      "u": "https://www.isro.gov.in/LVM3.html",
+      "t": "core"
+    },
+    {
+      "l": "LVM3 launch history (ISRO)",
+      "u": "https://www.isro.gov.in/LVM3_M2_Mission.html",
+      "t": "deep"
     }
   ],
   "linked_missions": [

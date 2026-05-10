@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Cargo Dragon v1 — Wikipedia",
+      "l": "SpaceX Dragon — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon",
       "t": "intro"
+    },
+    {
+      "l": "COTS programme — NASA",
+      "u": "https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/",
+      "t": "core"
+    },
+    {
+      "l": "Dragon CRS-1 mission summary (NASA)",
+      "u": "https://www.nasa.gov/mission/spacex-crs-1/",
+      "t": "deep"
     }
   ]
 }

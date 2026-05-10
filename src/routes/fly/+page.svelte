@@ -1176,8 +1176,17 @@
       soiRadiusInScene('mars', SCALE_3D) * SOI_VISUAL_BOOST,
       0xff8866,
     );
+    // Moon SoI for cislunar missions. The real Moon SoI is 66 100 km
+    // = 0.035 scene units at heliocentric scale — invisible even with
+    // the standard ×8 boost. Hand-tuned to 3.0u so it sits visibly
+    // around the 2.0u Moon mesh and reads as a clear "you crossed into
+    // the Moon's gravity well" cue when the spacecraft approaches.
+    // Hidden in non-Moon modes (animate loop toggles visibility per
+    // isMoonMission alongside the moonOrbitRing).
+    const moonSoI = buildSoIRing('moon', 3.0, 0xcfcfcf);
     scene.add(earthSoI);
     scene.add(marsSoI);
+    scene.add(moonSoI);
 
     // ─── Science Layers G.3 — Gravity arrows on the spacecraft ───────
     // Two ArrowHelpers parented to the scene; positioned + reoriented
@@ -1218,9 +1227,20 @@
 
     // Layer-state listeners: flip visibility on each layer toggle. The
     // listeners are returned as unsubs in cleanupThree below.
+    // Cached "is the SoI layer currently on?" so the mission-swap
+    // $effect below can re-apply the right visibility split when
+    // isMoonMission flips without needing to consult the DOM each time.
+    let soiLayerOn = false;
     const stopSoiLayer = onLayerChange('soi', (on) => {
+      // Earth's SoI shows for every mission (the spacecraft always
+      // departs from inside it). Mars + Moon rings each show only
+      // when their body is the live destination — Mars in heliocentric
+      // missions, Moon in cislunar — so the ring you see is the one
+      // whose gravity well actually matters for this flight.
+      soiLayerOn = on;
       earthSoI.visible = on;
-      marsSoI.visible = on;
+      marsSoI.visible = on && !isMoonMission;
+      moonSoI.visible = on && isMoonMission;
     });
     const stopGravityLayer = onLayerChange('gravity', (on) => {
       gravArrowEarth.visible = on;
@@ -1266,13 +1286,23 @@
 
     function recomputeApsides() {
       if (outPts.length < 3) return;
+      // Heliocentric trips (Mars / outer planets): min/max distance
+      // measured from the Sun at origin. Cislunar trips: both endpoints
+      // are at ~1 AU from the Sun so Sun-relative apsides collapse to
+      // a single point. Measure Earth-relative instead — perigee =
+      // closest approach to Earth, apogee = farthest from Earth — which
+      // is the cislunar physicist's apsides anyway.
+      const centreX = isMoonMission ? earthPos(simDay).x : 0;
+      const centreZ = isMoonMission ? earthPos(simDay).z : 0;
       let minR2 = Infinity;
       let maxR2 = -Infinity;
       let minIdx = 0;
       let maxIdx = 0;
       for (let i = 0; i < outPts.length; i++) {
         const p = outPts[i];
-        const r2 = p.x * p.x + p.z * p.z;
+        const dx = p.x - centreX;
+        const dz = p.z - centreZ;
+        const r2 = dx * dx + dz * dz;
         if (r2 < minR2) {
           minR2 = r2;
           minIdx = i;
@@ -1989,15 +2019,22 @@
       }
 
       // ─── Science Layers — per-frame overlay updates ──────────────
-      // Position SoI rings at Earth + Mars heliocentric positions and
-      // refresh gravity arrows on the spacecraft. Hidden layers don't
-      // bypass this work but their geometry is invisible — cheap.
+      // Position SoI rings at Earth + Mars (or Earth + Moon in cislunar
+      // mode) and refresh gravity arrows on the spacecraft. Hidden
+      // layers don't bypass this work but their geometry is invisible
+      // — cheap.
       const scWorld = new THREE.Vector3(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
       const earthWorld = earthMesh.position;
       const marsWorld = marsMesh.position;
 
+      // Keep Mars / Moon SoI visibility in sync with isMoonMission on
+      // every mission swap (cheap; just two boolean assignments). The
+      // layer-on flag itself comes from the onLayerChange subscription.
+      marsSoI.visible = soiLayerOn && !isMoonMission;
+      moonSoI.visible = soiLayerOn && isMoonMission;
       if (earthSoI.visible) earthSoI.position.copy(earthWorld);
       if (marsSoI.visible) marsSoI.position.copy(marsWorld);
+      if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);
 
       // Coast preview: integrate forward from current (r, v). Velocity
       // estimated by finite-difference between two adjacent simDays so

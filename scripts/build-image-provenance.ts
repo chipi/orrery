@@ -764,6 +764,94 @@ async function buildIssEntries(): Promise<ProvenanceEntry[]> {
   return out;
 }
 
+/**
+ * Fleet entries (PRD-012 v0.2 / Phase D). Reads the sidecar manifest
+ * at `static/data/fleet-image-sources.json` written by
+ * `scripts/fetch-assets.ts` during `--fleet-only` runs. Each entry
+ * carries the agency tag + actual source URL of every fetched file
+ * so we can route to either buildWikimediaEntry (for Commons files —
+ * the per-file metadata then carries Roscosmos / ESA / JAXA / etc.
+ * uploader attribution from Commons) or buildNasaEntry (for NASA
+ * Images API URLs).
+ */
+async function buildFleetEntries(): Promise<ProvenanceEntry[]> {
+  const out: ProvenanceEntry[] = [];
+  const manifestPath = 'static/data/fleet-image-sources.json';
+  let sources: Record<string, { agency: string; sourceUrl: string }> = {};
+  try {
+    const txt = await readFile(manifestPath, 'utf8');
+    sources = JSON.parse(txt) as typeof sources;
+  } catch {
+    return out;
+  }
+
+  // Map agency tag → fallback license/rationale per allowlist.
+  const agencyToHumanReadable: Record<string, string> = {
+    NASA: 'NASA',
+    ROSCOSMOS: 'Roscosmos',
+    ESA: 'ESA',
+    JAXA: 'JAXA',
+    CNSA: 'CNSA',
+    CMSA: 'CMSA',
+    ISRO: 'ISRO',
+    SPACEX: 'SpaceX',
+    BLUE_ORIGIN: 'Blue Origin',
+    BOEING: 'Boeing',
+    NORTHROP_GRUMMAN: 'Northrop Grumman',
+    ULA: 'United Launch Alliance',
+    ISPACE: 'ispace',
+    INTUITIVE_MACHINES: 'Intuitive Machines',
+    SPACEIL: 'SpaceIL',
+    MULTI: 'Multi-agency',
+  };
+
+  for (const [relPath, src] of Object.entries(sources)) {
+    const localPath = join('static/images/fleet-galleries', relPath);
+    const agencyHuman = agencyToHumanReadable[src.agency] ?? src.agency;
+    const url = src.sourceUrl;
+
+    // Commons-hosted file → use buildWikimediaEntry so per-file
+    // license + uploader metadata gets read from the Commons API.
+    // upload.wikimedia.org thumb URLs encode the source filename in
+    // the path: extract it.
+    let commonsFilename: string | null = null;
+    if (url.includes('upload.wikimedia.org')) {
+      const match = url.match(/\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/]+)/);
+      if (match) commonsFilename = decodeURIComponent(match[1]);
+    } else if (url.includes('commons.wikimedia.org/wiki/Special:FilePath/')) {
+      const match = url.match(/Special:FilePath\/([^?]+)/);
+      if (match) commonsFilename = decodeURIComponent(match[1]);
+    }
+
+    if (commonsFilename) {
+      out.push(
+        await buildWikimediaEntry({
+          localPath,
+          filename: commonsFilename,
+          fallbackAuthor: agencyHuman,
+          fallbackAgency: agencyHuman,
+          fallbackLicense: defaultLicenseForAgency(agencyHuman),
+          fallbackLicenseUrl: null,
+          fallbackLicenseRationale: defaultRationaleForAgency(agencyHuman),
+          modifications: ['downloaded-via-commons-search', 'reencoded-jpeg'],
+        }),
+      );
+    } else {
+      // NASA Images API or other direct download.
+      out.push(
+        buildNasaEntry({
+          localPath,
+          query: `fleet ${relPath.split('/')[0]}`,
+          missionId: relPath.split('/')[0],
+          agency: agencyHuman,
+          modifications: ['downloaded-via-nasa-images-api', 'reencoded-jpeg'],
+        }),
+      );
+    }
+  }
+  return out;
+}
+
 async function buildTiangongEntries(): Promise<ProvenanceEntry[]> {
   const out: ProvenanceEntry[] = [];
   const moduleIds = await listDirs('static/images/tiangong-modules');
@@ -1070,6 +1158,9 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
   console.log('ISS module galleries…');
   out.push(...(await buildIssEntries()));
   out.push(...(await buildTiangongEntries()));
+
+  console.log('Fleet galleries…');
+  out.push(...(await buildFleetEntries()));
 
   console.log('Earth-object galleries…');
   const earthAgencies = await loadEarthObjectAgencies();

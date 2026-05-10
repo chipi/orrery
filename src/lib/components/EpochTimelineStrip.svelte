@@ -33,10 +33,14 @@
     { id: 'iss-assembly', label: 'ISS Assembly', yearStart: 1998, yearEnd: 2011 },
     { id: 'commercial-era', label: 'Commercial Era', yearStart: 2011, yearEnd: 2024 },
     { id: 'lunar-return', label: 'Lunar Return', yearStart: 2024, yearEnd: 2030 },
+    // Mars Era — starts at the first planned crewed-Mars / sample-return
+    // window per missions/index.json (Starship Mars Crew NET 2031, MMX
+    // 2026, etc.). Open-ended; runs through the projected horizon.
+    { id: 'mars-era', label: 'Mars Era', yearStart: 2030, yearEnd: 2040 },
   ];
 
   const AXIS_MIN = 1957;
-  const AXIS_MAX = 2030;
+  const AXIS_MAX = 2040;
   const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
 
   type Props = {

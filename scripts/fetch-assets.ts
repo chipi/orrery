@@ -2401,10 +2401,78 @@ async function fetchMissionThumbnails(): Promise<number> {
 interface FleetImageQuery {
   id: string;
   query: string;
+  /**
+   * Operating agency for source-priority routing per ADR-046.
+   * The fetcher hits this agency's archive FIRST, then falls back
+   * to Wikimedia Commons mirrors only when the agency's own page
+   * isn't accessible.
+   */
+  agency:
+    | 'NASA'
+    | 'ROSCOSMOS'
+    | 'ESA'
+    | 'JAXA'
+    | 'CNSA'
+    | 'CMSA'
+    | 'ISRO'
+    | 'SPACEX'
+    | 'BLUE_ORIGIN'
+    | 'BOEING'
+    | 'NORTHROP_GRUMMAN'
+    | 'ULA'
+    | 'ISPACE'
+    | 'INTUITIVE_MACHINES'
+    | 'SPACEIL'
+    | 'MULTI';
+}
+
+/**
+ * Commons SEARCH for non-NASA agencies per ADR-046. Returns Commons-
+ * hosted file URLs at 800 px width. Commons hosts agency-uploaded
+ * files with documented per-file source/license metadata; the
+ * build-image-provenance pipeline reads that metadata to assign
+ * proper attribution per ADR-047 (Roscosmos / ESA / JAXA / CNSA /
+ * ISRO etc., not "Wikipedia").
+ */
+async function fetchCommonsSearchUrls(query: string, max: number): Promise<string[]> {
+  const url =
+    `https://commons.wikimedia.org/w/api.php?action=query&format=json` +
+    `&generator=search&gsrsearch=${encodeURIComponent(query)}` +
+    `&gsrnamespace=6&gsrlimit=${max}&prop=imageinfo&iiprop=url&iiurlwidth=800`;
+  try {
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'orrery-fetch-assets (https://github.com/chipi/orrery)' },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as {
+      query?: {
+        pages?: Record<string, { imageinfo?: Array<{ thumburl?: string; url?: string }> }>;
+      };
+    };
+    const pages = json.query?.pages ?? {};
+    const out: string[] = [];
+    for (const p of Object.values(pages)) {
+      const info = p.imageinfo?.[0];
+      const u = info?.thumburl ?? info?.url;
+      if (u) out.push(u);
+    }
+    return out;
+  } catch {
+    return [];
+  }
 }
 
 const FLEET_IMG_DIR = 'static/images/fleet-galleries';
 const FLEET_GALLERIES_MANIFEST = 'static/data/fleet-galleries.json';
+/**
+ * Sidecar manifest captured during fetch: maps each saved fleet image's
+ * relative path to its source URL + agency tag. Read by
+ * `build-image-provenance.ts` so each file gets correct attribution
+ * (Roscosmos / ESA / JAXA / CNSA / etc.) per ADR-047 — without this
+ * the provenance pipeline would default everything to NASA and break.
+ */
+const FLEET_IMAGE_SOURCES_MANIFEST = 'static/data/fleet-image-sources.json';
+type FleetImageSourceRecord = { agency: string; sourceUrl: string };
 const FLEET_GALLERY_MAX = 5;
 
 /**
@@ -2419,60 +2487,287 @@ const FLEET_GALLERY_MAX = 5;
  */
 const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   // Launchers
-  { id: 'saturn-v', query: 'Saturn V launch Apollo lunar mission' },
-  { id: 'space-shuttle-stack', query: 'Space Shuttle launch full stack external tank' },
-  { id: 'falcon-9', query: 'Falcon 9 launch SpaceX block 5 booster' },
-  { id: 'falcon-heavy', query: 'Falcon Heavy launch demo SpaceX three core' },
-  { id: 'sls-block-1', query: 'Space Launch System Artemis I launch' },
-  { id: 'atlas-v', query: 'Atlas V launch Curiosity Perseverance ULA' },
-  { id: 'r-7-vostok', query: 'Vostok rocket launch Sputnik Gagarin' },
+  { id: 'saturn-v', query: 'Saturn V launch Apollo lunar', agency: 'NASA' },
+  {
+    id: 'space-shuttle-stack',
+    query: 'Space Shuttle launch full stack external tank',
+    agency: 'NASA',
+  },
+  { id: 'falcon-9', query: 'Falcon 9 SpaceX', agency: 'SPACEX' },
+  {
+    id: 'falcon-heavy',
+    query: 'Falcon Heavy demo SpaceX',
+    agency: 'SPACEX',
+  },
+  {
+    id: 'sls-block-1',
+    query: 'Space Launch System Artemis I',
+    agency: 'NASA',
+  },
+  { id: 'atlas-v', query: 'Atlas V ULA launch', agency: 'ULA' },
+  {
+    id: 'r-7-vostok',
+    query: 'Vostok rocket launch Soviet',
+    agency: 'ROSCOSMOS',
+  },
+  { id: 'soyuz-fg', query: 'Soyuz-FG launch Russian', agency: 'ROSCOSMOS' },
+  { id: 'soyuz-u', query: 'Soyuz-U Russian launch', agency: 'ROSCOSMOS' },
+  { id: 'proton-m', query: 'Proton M launch Russian', agency: 'ROSCOSMOS' },
+  { id: 'ariane-5', query: 'Ariane 5 launch ESA', agency: 'ESA' },
+  { id: 'ariane-6', query: 'Ariane 6 launch ESA maiden', agency: 'ESA' },
+  { id: 'long-march-2f', query: 'Long March 2F Shenzhou', agency: 'CMSA' },
+  {
+    id: 'long-march-5',
+    query: 'Long March 5 Tianhe launch',
+    agency: 'CMSA',
+  },
+  { id: 'long-march-7', query: 'Long March 7 Tianzhou', agency: 'CMSA' },
+  { id: 'h-iia', query: 'H-IIA JAXA launch', agency: 'JAXA' },
+  { id: 'h3', query: 'H3 rocket JAXA launch', agency: 'JAXA' },
+  { id: 'lvm3', query: 'LVM3 GSLV Mk III ISRO launch', agency: 'ISRO' },
+  { id: 'energia', query: 'Energia rocket Buran Soviet', agency: 'ROSCOSMOS' },
+  { id: 'n1', query: 'N1 Soviet moon rocket launch', agency: 'ROSCOSMOS' },
+  {
+    id: 'titan-ii-glv',
+    query: 'Titan II Gemini launch',
+    agency: 'NASA',
+  },
+  { id: 'saturn-ib', query: 'Saturn IB launch Apollo Skylab', agency: 'NASA' },
+  { id: 'atlas-lv-3b', query: 'Atlas LV-3B Mercury launch', agency: 'NASA' },
 
   // Crewed spacecraft
-  { id: 'apollo-csm-block-ii', query: 'Apollo CSM lunar orbit Earthrise spacecraft' },
-  { id: 'apollo-lm', query: 'Apollo Lunar Module Eagle on lunar surface' },
-  { id: 'space-shuttle-orbiter', query: 'Space Shuttle Orbiter on orbit ISS approach' },
-  { id: 'crew-dragon', query: 'Crew Dragon docked ISS Harmony approach' },
-  { id: 'starliner', query: 'Boeing Starliner CST-100 ISS approach docked' },
-  { id: 'orion', query: 'Orion spacecraft Artemis I splashdown lunar' },
-  { id: 'soyuz-ms', query: 'Soyuz MS spacecraft docked ISS' },
-  { id: 'mercury-capsule', query: 'Project Mercury Atlas launch Glenn' },
-  { id: 'gemini', query: 'Project Gemini spacecraft EVA spacewalk' },
-  { id: 'shenzhou', query: 'Shenzhou spacecraft docking Tiangong China' },
-  { id: 'new-shepard', query: 'New Shepard launch Blue Origin capsule' },
+  {
+    id: 'apollo-csm-block-ii',
+    query: 'Apollo CSM lunar orbit Earthrise',
+    agency: 'NASA',
+  },
+  {
+    id: 'apollo-lm',
+    query: 'Apollo Lunar Module Eagle surface',
+    agency: 'NASA',
+  },
+  {
+    id: 'space-shuttle-orbiter',
+    query: 'Space Shuttle Orbiter ISS approach',
+    agency: 'NASA',
+  },
+  {
+    id: 'crew-dragon',
+    query: 'Crew Dragon docked ISS Harmony',
+    agency: 'SPACEX',
+  },
+  {
+    id: 'starliner',
+    query: 'Boeing Starliner CST-100 ISS docked',
+    agency: 'BOEING',
+  },
+  {
+    id: 'orion',
+    query: 'Orion spacecraft Artemis I',
+    agency: 'NASA',
+  },
+  { id: 'soyuz-ms', query: 'Soyuz MS docked ISS', agency: 'ROSCOSMOS' },
+  { id: 'soyuz-tma', query: 'Soyuz TMA docked ISS', agency: 'ROSCOSMOS' },
+  { id: 'soyuz-tm', query: 'Soyuz TM docked Mir', agency: 'ROSCOSMOS' },
+  { id: 'soyuz-t', query: 'Soyuz T Salyut docked', agency: 'ROSCOSMOS' },
+  {
+    id: 'soyuz-7k-ok',
+    query: 'Soyuz 7K-OK Komarov',
+    agency: 'ROSCOSMOS',
+  },
+  {
+    id: 'mercury-capsule',
+    query: 'Project Mercury Atlas Glenn capsule',
+    agency: 'NASA',
+  },
+  { id: 'gemini', query: 'Project Gemini EVA spacewalk', agency: 'NASA' },
+  { id: 'vostok', query: 'Vostok spacecraft Gagarin', agency: 'ROSCOSMOS' },
+  { id: 'voskhod', query: 'Voskhod spacecraft Leonov spacewalk', agency: 'ROSCOSMOS' },
+  {
+    id: 'shenzhou',
+    query: 'Shenzhou docking Tiangong',
+    agency: 'CMSA',
+  },
+  { id: 'buran', query: 'Buran orbiter Soviet shuttle', agency: 'ROSCOSMOS' },
+  {
+    id: 'new-shepard',
+    query: 'New Shepard Blue Origin launch',
+    agency: 'BLUE_ORIGIN',
+  },
+  { id: 'gaganyaan', query: 'Gaganyaan ISRO crewed', agency: 'ISRO' },
+
+  // Cargo
+  { id: 'atv', query: 'ATV Automated Transfer Vehicle ESA', agency: 'ESA' },
+  { id: 'htv', query: 'HTV JAXA Kounotori ISS', agency: 'JAXA' },
+  { id: 'htv-x', query: 'HTV-X JAXA cargo', agency: 'JAXA' },
+  { id: 'progress-ms', query: 'Progress MS Russian cargo ISS', agency: 'ROSCOSMOS' },
+  { id: 'progress-m', query: 'Progress M Mir Russian', agency: 'ROSCOSMOS' },
+  { id: 'cargo-dragon-2', query: 'Cargo Dragon 2 SpaceX ISS', agency: 'SPACEX' },
+  { id: 'cargo-dragon-v1', query: 'Cargo Dragon SpaceX CRS', agency: 'SPACEX' },
+  {
+    id: 'cygnus-enhanced',
+    query: 'Cygnus Northrop Grumman enhanced',
+    agency: 'NORTHROP_GRUMMAN',
+  },
+  {
+    id: 'cygnus-standard',
+    query: 'Cygnus Orbital ATK Canadarm capture',
+    agency: 'NORTHROP_GRUMMAN',
+  },
+  { id: 'tianzhou', query: 'Tianzhou cargo Tiangong', agency: 'CMSA' },
 
   // Stations
-  { id: 'iss', query: 'International Space Station full view orbit' },
-  { id: 'mir', query: 'Mir space station Earth orbit Russian' },
-  { id: 'salyut-1', query: 'Salyut 1 space station Soyuz docked Soviet' },
-  { id: 'skylab', query: 'Skylab space station orbital workshop NASA' },
-  { id: 'tiangong', query: 'Tiangong space station Tianhe Wentian Mengtian' },
+  {
+    id: 'iss',
+    query: 'International Space Station full view orbit',
+    agency: 'MULTI',
+  },
+  { id: 'mir', query: 'Mir space station Earth orbit', agency: 'ROSCOSMOS' },
+  {
+    id: 'salyut-1',
+    query: 'Salyut 1 Soyuz docked Soviet',
+    agency: 'ROSCOSMOS',
+  },
+  { id: 'salyut-6', query: 'Salyut 6 Soviet docked Soyuz', agency: 'ROSCOSMOS' },
+  { id: 'salyut-7', query: 'Salyut 7 Soviet T-13 rescue', agency: 'ROSCOSMOS' },
+  { id: 'skylab', query: 'Skylab orbital workshop NASA', agency: 'NASA' },
+  { id: 'tiangong', query: 'Tiangong space station Tianhe', agency: 'CMSA' },
+  { id: 'tiangong-1', query: 'Tiangong-1 first Chinese station', agency: 'CMSA' },
+  { id: 'tiangong-2', query: 'Tiangong-2 testbed Chinese', agency: 'CMSA' },
 
   // Rovers
-  { id: 'curiosity', query: 'Curiosity rover Mars selfie Gale crater' },
-  { id: 'perseverance', query: 'Perseverance rover Mars Jezero crater' },
-  { id: 'lunokhod-1', query: 'Lunokhod 1 lunar rover Soviet Mare Imbrium' },
-  { id: 'lrv-apollo', query: 'Lunar Roving Vehicle Apollo astronaut' },
-  { id: 'sojourner', query: 'Sojourner rover Mars Pathfinder Sagan station' },
+  {
+    id: 'curiosity',
+    query: 'Curiosity rover Mars selfie',
+    agency: 'NASA',
+  },
+  {
+    id: 'perseverance',
+    query: 'Perseverance rover Mars Ingenuity',
+    agency: 'NASA',
+  },
+  {
+    id: 'lunokhod-1',
+    query: 'Lunokhod 1 Soviet Moon rover',
+    agency: 'ROSCOSMOS',
+  },
+  { id: 'lunokhod-2', query: 'Lunokhod 2 Moon rover', agency: 'ROSCOSMOS' },
+  { id: 'lrv-apollo', query: 'Lunar Roving Vehicle Apollo', agency: 'NASA' },
+  {
+    id: 'sojourner',
+    query: 'Sojourner rover Pathfinder Mars',
+    agency: 'NASA',
+  },
+  { id: 'spirit', query: 'Spirit rover Mars MER', agency: 'NASA' },
+  {
+    id: 'opportunity',
+    query: 'Opportunity rover Mars MER-B',
+    agency: 'NASA',
+  },
+  { id: 'yutu', query: "Yutu rover Chang'e 3 lunar", agency: 'CMSA' },
+  { id: 'yutu-2', query: 'Yutu-2 lunar far side rover', agency: 'CMSA' },
+  { id: 'zhurong', query: 'Zhurong rover Mars Tianwen', agency: 'CMSA' },
+  { id: 'pragyan', query: 'Pragyan rover Chandrayaan-3', agency: 'ISRO' },
 
   // Landers
-  { id: 'viking-1', query: 'Viking 1 lander Chryse Planitia Mars surface' },
-  { id: 'insight', query: 'InSight Mars lander seismometer dust' },
-  { id: 'vikram-cy3', query: 'Chandrayaan-3 Vikram lander Moon south pole' },
+  {
+    id: 'viking-1',
+    query: 'Viking 1 lander Chryse Planitia Mars',
+    agency: 'NASA',
+  },
+  {
+    id: 'insight',
+    query: 'InSight Mars lander seismometer',
+    agency: 'NASA',
+  },
+  {
+    id: 'vikram-cy3',
+    query: 'Chandrayaan-3 Vikram lander Moon south',
+    agency: 'ISRO',
+  },
+  { id: 'vikram-cy2', query: 'Chandrayaan-2 Vikram lander', agency: 'ISRO' },
+  { id: 'phoenix', query: 'Phoenix Mars lander', agency: 'NASA' },
+  { id: 'mars-3', query: 'Mars 3 Soviet lander', agency: 'ROSCOSMOS' },
+  { id: 'mars-2', query: 'Mars 2 Soviet lander', agency: 'ROSCOSMOS' },
+  { id: 'luna-9', query: 'Luna 9 first soft Moon landing', agency: 'ROSCOSMOS' },
+  { id: 'luna-16', query: 'Luna 16 sample return Soviet', agency: 'ROSCOSMOS' },
+  { id: 'venera-7', query: 'Venera 7 Venus lander Soviet', agency: 'ROSCOSMOS' },
+  { id: 'surveyor-3', query: 'Surveyor 3 Apollo 12 visit', agency: 'NASA' },
+  {
+    id: 'mars-polar-lander',
+    query: 'Mars Polar Lander 1999',
+    agency: 'NASA',
+  },
+  { id: 'change-3', query: "Chang'e 3 lunar lander Yutu", agency: 'CMSA' },
+  { id: 'change-4', query: "Chang'e 4 lunar far side lander", agency: 'CMSA' },
+  { id: 'change-5', query: "Chang'e 5 sample return lunar", agency: 'CMSA' },
+  { id: 'schiaparelli', query: 'Schiaparelli ESA Mars lander', agency: 'ESA' },
+  { id: 'beresheet', query: 'Beresheet SpaceIL lunar Israel', agency: 'SPACEIL' },
+  { id: 'hakuto-r', query: 'Hakuto-R ispace lunar Japan', agency: 'ISPACE' },
+  {
+    id: 'slim',
+    query: 'SLIM JAXA pinpoint lunar Moon',
+    agency: 'JAXA',
+  },
+  { id: 'im-1-odysseus', query: 'IM-1 Odysseus Intuitive Machines', agency: 'INTUITIVE_MACHINES' },
 
   // Orbiters
-  { id: 'voyager-1', query: 'Voyager 1 spacecraft golden record' },
-  { id: 'voyager-2', query: 'Voyager 2 spacecraft Neptune flyby' },
-  { id: 'cassini', query: 'Cassini spacecraft Saturn rings orbiter' },
-  { id: 'galileo', query: 'Galileo spacecraft Jupiter probe deployment' },
-  { id: 'juno', query: 'Juno spacecraft Jupiter polar orbiter' },
-  { id: 'mariner-9', query: 'Mariner 9 Mars orbiter spacecraft' },
+  { id: 'voyager-1', query: 'Voyager 1 golden record spacecraft', agency: 'NASA' },
+  { id: 'voyager-2', query: 'Voyager 2 Neptune flyby', agency: 'NASA' },
+  {
+    id: 'cassini',
+    query: 'Cassini Saturn rings Huygens',
+    agency: 'NASA',
+  },
+  {
+    id: 'galileo',
+    query: 'Galileo spacecraft Jupiter probe',
+    agency: 'NASA',
+  },
+  { id: 'juno', query: 'Juno polar Jupiter orbiter', agency: 'NASA' },
+  { id: 'mariner-4', query: 'Mariner 4 first Mars flyby', agency: 'NASA' },
+  { id: 'mariner-9', query: 'Mariner 9 Mars orbiter', agency: 'NASA' },
+  { id: 'pioneer-10', query: 'Pioneer 10 Jupiter spacecraft', agency: 'NASA' },
+  { id: 'magellan', query: 'Magellan Venus radar mapper', agency: 'NASA' },
+  { id: 'phobos-2', query: 'Phobos 2 Soviet Mars probe', agency: 'ROSCOSMOS' },
+  { id: 'mars-express', query: 'Mars Express ESA orbiter', agency: 'ESA' },
+  {
+    id: 'mro',
+    query: 'Mars Reconnaissance Orbiter HiRISE',
+    agency: 'NASA',
+  },
+  { id: 'rosetta', query: 'Rosetta comet 67P Philae', agency: 'ESA' },
+  { id: 'hayabusa-2', query: 'Hayabusa2 asteroid Ryugu', agency: 'JAXA' },
+  { id: 'mangalyaan', query: 'Mangalyaan ISRO Mars Orbiter Mission', agency: 'ISRO' },
+  { id: 'change-2', query: "Chang'e 2 lunar orbiter", agency: 'CMSA' },
+  { id: 'osiris-rex', query: 'OSIRIS-REx asteroid Bennu sample', agency: 'NASA' },
+  { id: 'dart', query: 'DART asteroid Dimorphos impact', agency: 'NASA' },
 
   // Observatories
-  { id: 'hubble', query: 'Hubble Space Telescope on orbit servicing' },
-  { id: 'jwst', query: 'James Webb Space Telescope deployed mirror' },
-  { id: 'chandra', query: 'Chandra X-ray Observatory deployment shuttle' },
-  { id: 'kepler', query: 'Kepler space telescope assembly clean room' },
-  { id: 'spitzer', query: 'Spitzer Space Telescope infrared deployment' },
+  {
+    id: 'hubble',
+    query: 'Hubble Space Telescope orbit servicing',
+    agency: 'NASA',
+  },
+  {
+    id: 'jwst',
+    query: 'James Webb Space Telescope deployed',
+    agency: 'NASA',
+  },
+  {
+    id: 'chandra',
+    query: 'Chandra X-ray Observatory deployment',
+    agency: 'NASA',
+  },
+  { id: 'kepler', query: 'Kepler space telescope exoplanet', agency: 'NASA' },
+  { id: 'spitzer', query: 'Spitzer Space Telescope infrared', agency: 'NASA' },
+  { id: 'compton-gro', query: 'Compton Gamma Ray Observatory', agency: 'NASA' },
+  { id: 'xmm-newton', query: 'XMM-Newton X-ray ESA', agency: 'ESA' },
+  { id: 'gaia', query: 'Gaia ESA star catalog spacecraft', agency: 'ESA' },
+  { id: 'euclid', query: 'Euclid ESA dark energy', agency: 'ESA' },
+  { id: 'tess', query: 'TESS exoplanet survey satellite', agency: 'NASA' },
+  { id: 'spektr-rg', query: 'Spektr-RG X-ray Russian German', agency: 'ROSCOSMOS' },
+  { id: 'hitomi', query: 'Hitomi ASTRO-H X-ray JAXA', agency: 'JAXA' },
 ];
 
 /**
@@ -2638,6 +2933,20 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
     }
   }
   const manifest: Record<string, number> = subsetMode ? { ...prevManifest } : {};
+  // Sidecar source manifest — captures source URL + agency per file
+  // so build-image-provenance.ts can attribute properly per ADR-047.
+  let prevSources: Record<string, FleetImageSourceRecord> = {};
+  if (subsetMode) {
+    try {
+      prevSources = JSON.parse(await readFile(FLEET_IMAGE_SOURCES_MANIFEST, 'utf8')) as Record<
+        string,
+        FleetImageSourceRecord
+      >;
+    } catch {
+      /* no existing manifest */
+    }
+  }
+  const sources: Record<string, FleetImageSourceRecord> = subsetMode ? { ...prevSources } : {};
   let totalPhotos = 0;
 
   const queries = subsetMode
@@ -2648,41 +2957,102 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
     return 0;
   }
 
+  // ADR-046 routing: NASA + commercial-partner hardware → NASA Images API
+  // primary; non-NASA agencies → Commons SEARCH primary (returns
+  // Commons-hosted files whose source metadata is the agency's own
+  // archive, not "Wikipedia"). Curated-filename fallback (legacy
+  // WIKIMEDIA_FLEET_FALLBACK) runs ONLY if both primary paths return
+  // nothing — covers entries where the search-API doesn't surface
+  // a relevant top hit.
+  const NASA_ROUTED = new Set(['NASA', 'ULA', 'SPACEX', 'BOEING', 'NORTHROP_GRUMMAN']);
+
   for (const row of queries) {
     const entryDir = join(FLEET_IMG_DIR, row.id);
     await mkdir(entryDir, { recursive: true });
-    process.stdout.write(`  ${row.id}…`);
+    process.stdout.write(`  ${row.id} [${row.agency}]…`);
+
+    // Strip any prior source records for this entry id so the manifest
+    // reflects only the current run's results.
+    for (const k of Object.keys(sources)) {
+      if (k.startsWith(`${row.id}/`)) delete sources[k];
+    }
 
     let saved = 0;
-    const heroFallback = WIKIMEDIA_FLEET_FALLBACK[row.id];
-    if (heroFallback) {
+    const writeImage = async (url: string): Promise<boolean> => {
       try {
-        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(heroFallback)}?width=800`;
-        await downloadFromWikimedia(url, join(entryDir, '01.jpg'));
-        saved = 1;
-        process.stdout.write(' wikimedia-hero');
+        const slot = `${String(saved + 1).padStart(2, '0')}.jpg`;
+        const dest = join(entryDir, slot);
+        if (url.includes('commons.wikimedia.org') || url.includes('upload.wikimedia.org')) {
+          await downloadFromWikimedia(url, dest);
+        } else {
+          await downloadFile(url, dest);
+        }
+        sources[`${row.id}/${slot}`] = { agency: row.agency, sourceUrl: url };
+        saved += 1;
+        await new Promise((r) => setTimeout(r, 250));
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    if (NASA_ROUTED.has(row.agency)) {
+      // Primary: NASA Images API.
+      try {
+        const urls = await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX);
+        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+          await writeImage(urls[i]);
+        }
+        process.stdout.write(` nasa(${urls.length})`);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
-        process.stdout.write(` ⚠ wikimedia-hero skipped (${msg})`);
+        process.stdout.write(` ⚠ NASA failed (${msg})`);
+      }
+    } else {
+      // Primary: Commons SEARCH (agency-uploaded files).
+      try {
+        const urls = await fetchCommonsSearchUrls(row.query, FLEET_GALLERY_MAX);
+        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+          await writeImage(urls[i]);
+        }
+        process.stdout.write(` commons-search(${urls.length})`);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        process.stdout.write(` ⚠ Commons failed (${msg})`);
       }
     }
 
-    try {
-      const urls = await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX);
-      for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
-        try {
-          const dest = join(entryDir, `${String(saved + 1).padStart(2, '0')}.jpg`);
-          await downloadFile(urls[i], dest);
-          saved += 1;
-          await new Promise((resolve) => setTimeout(resolve, 200));
-        } catch {
-          // Continue on individual failures
+    // Cross-fill: if primary returned < 5, try the OTHER source for
+    // the remaining slots. NASA hardware often has Commons mirrors of
+    // press images; non-NASA entries occasionally appear on NASA's
+    // image library when crew were involved.
+    if (saved < FLEET_GALLERY_MAX) {
+      try {
+        const urls = NASA_ROUTED.has(row.agency)
+          ? await fetchCommonsSearchUrls(row.query, FLEET_GALLERY_MAX - saved)
+          : await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX - saved);
+        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+          await writeImage(urls[i]);
+        }
+        if (urls.length > 0) {
+          process.stdout.write(NASA_ROUTED.has(row.agency) ? ' +commons' : ' +nasa');
+        }
+      } catch {
+        // best-effort cross-fill
+      }
+    }
+
+    // Last-resort: legacy curated Wikimedia hero (only when nothing
+    // else worked — this still happens for entries without strong
+    // search hits, and is the original ADR-046 fallback path).
+    if (saved === 0) {
+      const heroFallback = WIKIMEDIA_FLEET_FALLBACK[row.id];
+      if (heroFallback) {
+        const url = `${WIKIMEDIA_FILEPATH_BASE}/${encodeURIComponent(heroFallback)}?width=800`;
+        if (await writeImage(url)) {
+          process.stdout.write(' fallback-hero');
         }
       }
-      process.stdout.write(` nasa(${urls.length})`);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : String(err);
-      process.stdout.write(` ⚠ NASA query failed (${msg})`);
     }
 
     manifest[row.id] = saved;
@@ -2691,6 +3061,7 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
   }
 
   await writeFile(FLEET_GALLERIES_MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+  await writeFile(FLEET_IMAGE_SOURCES_MANIFEST, JSON.stringify(sources, null, 2) + '\n');
   return totalPhotos;
 }
 

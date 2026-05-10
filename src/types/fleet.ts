@@ -25,7 +25,8 @@ export type FleetEpoch =
   | 'shuttle-and-mir'
   | 'iss-assembly'
   | 'commercial-era'
-  | 'lunar-return';
+  | 'lunar-return'
+  | 'mars-era';
 
 export interface FleetLink {
   l: string;

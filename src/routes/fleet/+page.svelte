@@ -3,14 +3,25 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { getFleetIndex } from '$lib/data';
-  import type { FleetCategory, FleetEpoch, FleetIndexEntry, FleetStatus } from '$types/fleet';
+  import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
+  import type {
+    FleetCategory,
+    FleetEntry,
+    FleetEpoch,
+    FleetIndexEntry,
+    FleetStatus,
+  } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
 
   // ─── State ───────────────────────────────────────────────────────
   let entries: FleetIndexEntry[] = $state([]);
   let loading = $state(true);
   let loadFailed = $state(false);
+
+  let selectedEntry: FleetEntry | null = $state(null);
+  let panelOpen = $state(false);
+  let panelLoadingId = $state<string | null>(null);
 
   let categoryFilter: FleetCategory | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
@@ -18,10 +29,73 @@
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
+  // Filters strip is collapsed by default; clicking the eyebrow expands.
+  // Mirrors the /missions pattern (J.1) so users land on the clean
+  // grid first and only opt into filtering when they need it.
+  let filtersExpanded = $state(false);
 
   // Agencies derived from the loaded data — filter chips reflect what's
-  // actually present rather than a hard-coded enum.
-  let agencies = $derived(Array.from(new Set(entries.map((e) => e.agency).filter(Boolean))).sort());
+  // actually present rather than a hard-coded enum. Multi-agency entries
+  // (e.g., "NASA / ESA" for Hubble, "CNSA / CMSA" for Tiangong) split on
+  // " / " so each component agency shows as its own chip.
+  let agencies = $derived(
+    Array.from(
+      new Set(
+        entries
+          .flatMap((e) => (e.agency ?? '').split(/\s*\/\s*/))
+          .map((a) => a.trim())
+          .filter(Boolean),
+      ),
+    ).sort(),
+  );
+
+  // Same agency-logo whitelist + full-name table that /missions uses.
+  // Centralising would touch the established /missions code; for V1
+  // the duplication is fine — when a per-route filter helper extracts
+  // (Issue #57's refactor scope) the constants land in one place.
+  const KNOWN_AGENCY_LOGOS = new Set([
+    'nasa',
+    'esa',
+    'jaxa',
+    'isro',
+    'cnsa',
+    'roscosmos',
+    'spacex',
+    'uaesa',
+    'boeing',
+    'csa',
+    'northrop-grumman',
+    'blue-origin',
+  ]);
+  function logoFor(agency: string): string | null {
+    const key = agency.toLowerCase().replace(/\s+/g, '-');
+    return KNOWN_AGENCY_LOGOS.has(key) ? `${base}/logos/${key}.svg` : null;
+  }
+  const AGENCY_FULL_NAMES: Record<string, string> = {
+    nasa: 'NASA',
+    esa: 'European Space Agency',
+    jaxa: 'Japan Aerospace Exploration Agency',
+    isro: 'Indian Space Research Organisation',
+    cnsa: 'China National Space Administration',
+    cmsa: 'China Manned Space Agency',
+    roscosmos: 'Roscosmos',
+    spacex: 'SpaceX',
+    uaesa: 'MBRSC / UAE Space Agency',
+    'blue origin': 'Blue Origin',
+    'blue-origin': 'Blue Origin',
+    csa: 'Canadian Space Agency',
+    boeing: 'Boeing',
+    'northrop grumman': 'Northrop Grumman',
+    'northrop-grumman': 'Northrop Grumman',
+    ula: 'United Launch Alliance',
+    ispace: 'ispace',
+    spaceil: 'SpaceIL',
+    'intuitive machines': 'Intuitive Machines',
+  };
+  function fullNameFor(agency: string): string {
+    const key = agency.toLowerCase();
+    return AGENCY_FULL_NAMES[key] ?? AGENCY_FULL_NAMES[key.replace(/\s+/g, '-')] ?? agency;
+  }
 
   // ─── Filtering + sorting ─────────────────────────────────────────
   function firstFlightYear(e: FleetIndexEntry): number {
@@ -79,6 +153,20 @@
     lander: 'Lander',
     orbiter: 'Orbiter',
     observatory: 'Observatory',
+  };
+
+  // Per-category accent color — used as the card's left-edge stripe and
+  // agency-badge background, mirroring the per-mission color used on
+  // /missions cards. Picks pull from the same orrery design tokens.
+  const CATEGORY_COLOR: Record<FleetCategory, string> = {
+    launcher: '#ffc850', // gold — boosters
+    'crewed-spacecraft': '#c1440e', // mars-red — humans
+    'cargo-spacecraft': '#ff8c42', // orange
+    station: '#4b9cd3', // earth-blue — habitats
+    rover: '#a05a2c', // mars surface
+    lander: '#9c8c4e', // dust-tan
+    orbiter: '#7a4ecd', // violet — outer space
+    observatory: '#4ecdc4', // teal — scientific
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];
@@ -156,11 +244,42 @@
     syncUrl();
   }
 
+  async function loadEntry(id: string) {
+    if (panelLoadingId === id) return;
+    panelLoadingId = id;
+    const summary = entries.find((e) => e.id === id);
+    if (!summary) {
+      panelLoadingId = null;
+      return;
+    }
+    const full = await getFleet(id, summary.category);
+    if (panelLoadingId !== id) return; // a newer load superseded us
+    selectedEntry = full;
+    panelOpen = true;
+    panelLoadingId = null;
+  }
+
   function openEntry(entry: FleetIndexEntry) {
-    // Phase C wires this to FleetEntryPanel. For now, deep-link the URL.
     const url = new URL($page.url);
     url.searchParams.set('id', entry.id);
-    goto(url.pathname + `?${url.searchParams}`, { replaceState: false, keepFocus: false });
+    goto(url.pathname + `?${url.searchParams}`, {
+      replaceState: false,
+      keepFocus: false,
+      noScroll: true,
+    });
+    void loadEntry(entry.id);
+  }
+
+  function closePanel() {
+    panelOpen = false;
+    selectedEntry = null;
+    const url = new URL($page.url);
+    url.searchParams.delete('id');
+    goto(url.pathname + (url.searchParams.toString() ? `?${url.searchParams}` : ''), {
+      replaceState: true,
+      keepFocus: true,
+      noScroll: true,
+    });
   }
 
   onMount(async () => {
@@ -171,11 +290,23 @@
       loadFailed = true;
     }
     loading = false;
+
+    // Pre-select an entry if ?id= is in the URL on first visit.
+    const id = $page.url.searchParams.get('id');
+    if (id) void loadEntry(id);
   });
 
   $effect(() => {
     // Re-apply URL when navigating in-app (back/forward buttons)
     applyUrl($page.url);
+    // Also keep the panel selection in sync with ?id=
+    const id = $page.url.searchParams.get('id');
+    if (id && id !== selectedEntry?.id) {
+      void loadEntry(id);
+    } else if (!id && panelOpen) {
+      panelOpen = false;
+      selectedEntry = null;
+    }
   });
 </script>
 
@@ -198,91 +329,130 @@
       <span class="count-label">of {entries.length}</span>
     </div>
 
-    <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+    <button
+      type="button"
+      class="filters-toggle"
+      aria-expanded={filtersExpanded}
+      aria-controls="fleet-filters"
+      onclick={() => (filtersExpanded = !filtersExpanded)}
+    >
+      <span class="filters-eyebrow"
+        >FILTERS{filtered.length !== entries.length
+          ? ` · ${filtered.length}/${entries.length}`
+          : ''}</span
+      >
+      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+    </button>
 
-    <div class="filters" role="region" aria-label="Filters">
-      <div class="filter-group" role="radiogroup" aria-label="Category">
-        <span class="filter-label">Category</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={categoryFilter === 'ALL'}
-          role="radio"
-          aria-checked={categoryFilter === 'ALL'}
-          onclick={() => setCategory('ALL')}>All</button
-        >
-        {#each CATEGORIES as cat (cat)}
+    {#if filtersExpanded}
+      <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+      <nav id="fleet-filters" class="filters" aria-label="Fleet filters">
+        <div class="filter-group" role="radiogroup" aria-label="Category">
+          <span class="filter-label">CATEGORY</span>
           <button
             type="button"
             class="pill"
-            class:active={categoryFilter === cat}
+            class:active={categoryFilter === 'ALL'}
             role="radio"
-            aria-checked={categoryFilter === cat}
-            onclick={() => setCategory(cat)}>{CATEGORY_LABEL[cat]}</button
+            aria-checked={categoryFilter === 'ALL'}
+            onclick={() => setCategory('ALL')}>ALL</button
           >
-        {/each}
-      </div>
-
-      <div class="filter-group" role="radiogroup" aria-label="Status">
-        <span class="filter-label">Status</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={statusFilter === 'ALL'}
-          role="radio"
-          aria-checked={statusFilter === 'ALL'}
-          onclick={() => setStatus('ALL')}>All</button
-        >
-        {#each STATUSES as st (st)}
-          <button
-            type="button"
-            class="pill status-pill status-{st.toLowerCase()}"
-            class:active={statusFilter === st}
-            role="radio"
-            aria-checked={statusFilter === st}
-            onclick={() => setStatus(st)}>{st}</button
-          >
-        {/each}
-      </div>
-
-      {#if agencies.length > 0}
-        <div class="filter-group" role="radiogroup" aria-label="Agency">
-          <span class="filter-label">Agency</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={agencyFilter === 'ALL'}
-            role="radio"
-            aria-checked={agencyFilter === 'ALL'}
-            onclick={() => setAgency('ALL')}>All</button
-          >
-          {#each agencies as agency (agency)}
+          {#each CATEGORIES as cat (cat)}
             <button
               type="button"
               class="pill"
-              class:active={agencyFilter === agency}
+              class:active={categoryFilter === cat}
               role="radio"
-              aria-checked={agencyFilter === agency}
-              onclick={() => setAgency(agency)}>{agency}</button
+              aria-checked={categoryFilter === cat}
+              onclick={() => setCategory(cat)}>{CATEGORY_LABEL[cat]}</button
             >
           {/each}
         </div>
-      {/if}
 
-      <div class="sort-group">
-        <span class="filter-label">Sort</span>
-        <select
-          aria-label="Sort fleet entries"
-          value={sortMode}
-          onchange={(e) => setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
-        >
-          <option value="chrono-desc">Newest first</option>
-          <option value="chrono-asc">Oldest first</option>
-          <option value="alpha">Alphabetical</option>
-          <option value="category">By category</option>
-        </select>
-      </div>
-    </div>
+        <div class="filter-group" role="radiogroup" aria-label="Status">
+          <span class="filter-label">STATUS</span>
+          <button
+            type="button"
+            class="pill"
+            class:active={statusFilter === 'ALL'}
+            role="radio"
+            aria-checked={statusFilter === 'ALL'}
+            onclick={() => setStatus('ALL')}>ALL</button
+          >
+          {#each STATUSES as st (st)}
+            <button
+              type="button"
+              class="pill status-pill status-{st.toLowerCase()}"
+              class:active={statusFilter === st}
+              role="radio"
+              aria-checked={statusFilter === st}
+              onclick={() => setStatus(st)}>{st}</button
+            >
+          {/each}
+        </div>
+
+        {#if agencies.length > 0}
+          <div class="filter-group" role="radiogroup" aria-label="Agency">
+            <span class="filter-label">AGENCY</span>
+            <button
+              type="button"
+              class="pill"
+              class:active={agencyFilter === 'ALL'}
+              role="radio"
+              aria-checked={agencyFilter === 'ALL'}
+              onclick={() => setAgency('ALL')}>ALL</button
+            >
+            {#each agencies as agency (agency)}
+              {@const logo = logoFor(agency)}
+              {@const fullName = fullNameFor(agency)}
+              <button
+                type="button"
+                class="pill agency-pill"
+                class:active={agencyFilter === agency}
+                class:logo-pill={logo != null}
+                role="radio"
+                aria-checked={agencyFilter === agency}
+                aria-label={fullName}
+                title={fullName}
+                onclick={() => setAgency(agency)}
+              >
+                {#if logo}
+                  <img
+                    src={logo}
+                    alt={fullName}
+                    class="agency-pill-logo"
+                    onerror={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      img.style.display = 'none';
+                      const fb = img.nextElementSibling as HTMLElement | null;
+                      if (fb) fb.style.display = 'inline';
+                    }}
+                  />
+                  <span class="agency-pill-fallback" hidden>{agency}</span>
+                {:else}
+                  {agency}
+                {/if}
+              </button>
+            {/each}
+          </div>
+        {/if}
+
+        <div class="filter-group sort-group">
+          <span class="filter-label">SORT</span>
+          <select
+            aria-label="Sort fleet entries"
+            value={sortMode}
+            onchange={(e) =>
+              setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
+          >
+            <option value="chrono-desc">Newest first</option>
+            <option value="chrono-asc">Oldest first</option>
+            <option value="alpha">Alphabetical</option>
+            <option value="category">By category</option>
+          </select>
+        </div>
+      </nav>
+    {/if}
 
     {#if filtered.length === 0}
       <p class="status">No entries match the current filters.</p>
@@ -301,19 +471,26 @@
         {/each}
       </ul>
     {:else}
-      <ul class="fleet-grid">
+      <ul class="fleet-grid" aria-label="Fleet card grid">
         {#each filtered as entry (entry.id)}
-          <li>
+          {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}
+          {@const cardLogo = logoFor(primaryAgency)}
+          {@const cardFullName = fullNameFor(primaryAgency)}
+          {@const accent = CATEGORY_COLOR[entry.category]}
+          <li class="card-li">
             <button
               type="button"
               class="card"
+              style:--accent={accent}
+              data-testid="fleet-card-{entry.id}"
               onclick={() => openEntry(entry)}
               aria-label="{entry.name} ({entry.agency}, {entry.first_flight.slice(0, 4)})"
             >
+              <div class="card-accent" aria-hidden="true"></div>
               <figure class="card-photo">
                 <img
                   class="card-cover"
-                  src="{base}/images/fleet/{entry.id}.jpg"
+                  src="{base}/images/fleet-galleries/{entry.id}/01.jpg"
                   alt=""
                   loading="lazy"
                   onerror={(e) => {
@@ -324,17 +501,30 @@
               </figure>
               <div class="card-body">
                 <header class="card-head">
-                  <span class="card-cat">{CATEGORY_LABEL[entry.category]}</span>
+                  <span class="agency-badge" style:background-color={accent} title={cardFullName}>
+                    {#if cardLogo}
+                      <img
+                        src={cardLogo}
+                        alt=""
+                        class="agency-logo"
+                        aria-hidden="true"
+                        onerror={(e) =>
+                          ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+                      />
+                    {/if}
+                    {primaryAgency}
+                  </span>
                   <span class="card-status status-{entry.status.toLowerCase()}">
                     {entry.status}
                   </span>
                 </header>
                 <h2 class="card-name">{entry.name}</h2>
-                <p class="card-tagline">{entry.tagline}</p>
+                <p class="card-type">{CATEGORY_LABEL[entry.category]}</p>
                 <div class="card-meta">
                   <span class="card-year">{entry.first_flight.slice(0, 4)}</span>
-                  <span class="card-agency">{entry.agency}</span>
+                  <span class="card-country">{entry.country}</span>
                 </div>
+                <p class="card-first">{entry.tagline}</p>
               </div>
             </button>
           </li>
@@ -343,6 +533,13 @@
     {/if}
   {/if}
 </div>
+
+<FleetEntryPanel
+  entry={selectedEntry}
+  open={panelOpen}
+  onClose={closePanel}
+  galleryFetcher={getFleetGallery}
+/>
 
 <style>
   .fleet {
@@ -386,82 +583,133 @@
     opacity: 0.6;
   }
 
-  .filters {
+  /* Filters — visually identical to /missions per route-parity directive. */
+  .filters-toggle {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 16px 0 20px;
-    padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.02);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 6px;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition:
+      border-color 120ms,
+      color 120ms;
+  }
+  .filters-toggle:hover,
+  .filters-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.92);
+    outline: none;
+  }
+  .filters-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .filters-chevron {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
   }
 
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 8px 0 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 14px;
+    overflow-x: auto;
+  }
   .filter-group {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 6px;
+    flex-wrap: wrap;
   }
-
   .filter-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
-    margin-right: 6px;
-    min-width: 70px;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-right: 4px;
   }
-
   .pill {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 6px 14px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.78);
-    padding: 4px 10px;
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.4);
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
     cursor: pointer;
-    transition:
-      background 0.15s,
-      border-color 0.15s;
-    min-height: 28px;
+    transition: all 0.15s;
   }
-  .pill:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.3);
+  .pill:hover:not(.active) {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.75);
   }
   .pill.active {
-    background: rgba(78, 205, 196, 0.15);
-    border-color: #4ecdc4;
-    color: #4ecdc4;
+    background: rgba(68, 102, 255, 0.25);
+    border-color: rgba(68, 102, 255, 0.5);
+    color: #fff;
+  }
+  .pill:focus-visible {
+    outline: 2px solid #4466ff;
+    outline-offset: 2px;
+  }
+  .pill.logo-pill {
+    padding: 4px 10px;
+    min-width: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .agency-pill-logo {
+    height: 22px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+  }
+  .pill.logo-pill:hover .agency-pill-logo,
+  .pill.logo-pill.active .agency-pill-logo {
+    opacity: 1;
+  }
+  .pill.logo-pill.active {
+    background: rgba(68, 102, 255, 0.18);
+    border-color: rgba(68, 102, 255, 0.55);
   }
 
   .status-pill.status-active.active {
-    background: rgba(78, 205, 196, 0.15);
-    border-color: #4ecdc4;
-    color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.25);
+    border-color: rgba(78, 205, 196, 0.55);
   }
   .status-pill.status-flown.active {
-    background: rgba(75, 156, 211, 0.15);
-    border-color: #4b9cd3;
-    color: #4b9cd3;
+    background: rgba(75, 156, 211, 0.25);
+    border-color: rgba(75, 156, 211, 0.55);
   }
   .status-pill.status-retired.active {
-    background: rgba(255, 200, 80, 0.15);
-    border-color: #ffc850;
-    color: #ffc850;
+    background: rgba(255, 200, 80, 0.22);
+    border-color: rgba(255, 200, 80, 0.55);
   }
   .status-pill.status-failed.active {
-    background: rgba(193, 68, 14, 0.18);
-    border-color: #c1440e;
-    color: #c1440e;
+    background: rgba(193, 68, 14, 0.28);
+    border-color: rgba(193, 68, 14, 0.7);
   }
   .status-pill.status-planned.active {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
     border-color: rgba(255, 255, 255, 0.5);
-    color: rgba(255, 255, 255, 0.85);
   }
 
   .sort-group {
@@ -489,116 +737,167 @@
     gap: 14px;
   }
 
+  /* Card grid — visually identical to /missions per route-parity directive. */
+  .card-li {
+    position: relative;
+  }
   .card {
     width: 100%;
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 6px;
-    color: inherit;
-    cursor: pointer;
     text-align: left;
-    padding: 0;
+    background: rgba(10, 10, 22, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    grid-template-rows: auto 1fr;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
     transition:
-      border-color 0.15s,
-      transform 0.15s;
+      border-color 0.2s,
+      transform 0.15s,
+      box-shadow 0.2s;
+    min-height: 44px;
+    padding: 0;
   }
   .card:hover {
     border-color: rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
   }
-
+  .card-accent {
+    background: var(--accent);
+    grid-row: 1 / span 2;
+  }
   .card-photo {
+    grid-column: 2;
     margin: 0;
+    padding: 0;
     aspect-ratio: 16 / 9;
-    background: rgba(255, 255, 255, 0.03);
     overflow: hidden;
     position: relative;
+    background: rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   }
   .card-photo.cover-missing {
     background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 255, 255, 0.02));
   }
-  .card-cover {
+  .card-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.4s ease;
   }
   :global(.card-photo.cover-missing .card-cover) {
     display: none;
   }
 
   .card-body {
-    padding: 10px 12px 12px;
+    grid-column: 2;
+    padding: 12px 14px 14px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    flex: 1;
+    gap: 6px;
   }
-
   .card-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    gap: 8px;
+    margin-bottom: 4px;
   }
-  .card-cat {
-    color: rgba(255, 255, 255, 0.65);
+  .agency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .agency-logo {
+    height: 14px;
+    width: auto;
+    max-width: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
   }
   .card-status {
-    padding: 1px 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 3px 8px;
     border-radius: 3px;
-    font-size: 9.5px;
+    border: 1px solid;
   }
   .card-status.status-active {
-    background: rgba(78, 205, 196, 0.18);
     color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.55);
+    background: rgba(78, 205, 196, 0.12);
   }
   .card-status.status-flown {
-    background: rgba(75, 156, 211, 0.18);
     color: #4b9cd3;
+    border-color: rgba(75, 156, 211, 0.55);
+    background: rgba(75, 156, 211, 0.12);
   }
   .card-status.status-retired {
-    background: rgba(255, 200, 80, 0.18);
     color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.55);
+    background: rgba(255, 200, 80, 0.12);
   }
   .card-status.status-failed {
-    background: rgba(193, 68, 14, 0.22);
     color: #ff6b3a;
+    border-color: rgba(193, 68, 14, 0.7);
+    background: rgba(193, 68, 14, 0.18);
   }
   .card-status.status-planned {
-    background: rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.78);
+    border-color: rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.06);
   }
 
   .card-name {
-    margin: 2px 0 0;
-    font-family: 'Bebas Neue', system-ui, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 22px;
-    letter-spacing: 0.02em;
+    letter-spacing: 2px;
     color: #fff;
-  }
-  .card-tagline {
+    line-height: 1;
     margin: 0;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.35;
+  }
+  .card-type {
+    font-family: 'Space Mono', monospace;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
   }
   .card-meta {
     display: flex;
-    justify-content: space-between;
-    margin-top: 6px;
+    gap: 10px;
     font-family: 'Space Mono', monospace;
-    font-size: 10.5px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .card-country {
+    max-width: 14ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .card-first {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin: 0;
   }
 
   .fleet-list {

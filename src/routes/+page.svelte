@@ -55,124 +55,313 @@
 
 <article class="landing" data-testid="landing">
   <header class="hero">
-    <!-- Hero illustration: an inner-solar-system orrery with the
-         classic Earth-Mars Hohmann transfer highlighted in teal.
-         Style mirrors /science chapter covers — multiple stroke
-         weights, scattered stars, planet markers, tiny annotations
-         in Space Mono. Decorative; aria-hidden for screen readers. -->
+    <!-- Hero illustration: poster-art orrery, inspired by JPL
+         "Visions of the Future" + Eames "Powers of Ten" + the
+         vintage planetarium-print tradition. Subject stays
+         orbital — Sun-centred system, Hohmann + outer-system
+         slingshot — but execution is art-print: gradient sun
+         + corona, planets with proper colours and terminator
+         shading + halos, multi-hue accent trajectories,
+         depth-fading orbital paths, comet streak. Engineering
+         labels in Space Mono survive as the "still scientific"
+         anchor. Decorative; aria-hidden via role="img" + label. -->
     <svg
       class="hero-illustration"
-      viewBox="0 0 600 260"
+      viewBox="0 0 600 320"
       role="img"
-      aria-label="Orrery — inner solar system with an Earth-to-Mars transfer arc"
+      aria-label="Orrery — a stylised solar system with two highlighted mission trajectories"
     >
+      <defs>
+        <!-- Sun: hot core → orange → yellow → fading corona -->
+        <radialGradient id="h-sun-grad" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#fff7e0" />
+          <stop offset="35%" stop-color="#ffc850" />
+          <stop offset="75%" stop-color="#f08a3c" />
+          <stop offset="100%" stop-color="#c14a1e" />
+        </radialGradient>
+        <radialGradient id="h-sun-corona" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#ffc850" stop-opacity="0.55" />
+          <stop offset="60%" stop-color="#ffc850" stop-opacity="0.12" />
+          <stop offset="100%" stop-color="#ffc850" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Planet gradients: each has a lit side + a darker terminator
+             (offset so the lit side faces the Sun at centre). -->
+        <radialGradient id="h-mercury-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#d4cabe" />
+          <stop offset="55%" stop-color="#9a8a7a" />
+          <stop offset="100%" stop-color="#3e3530" />
+        </radialGradient>
+        <radialGradient id="h-venus-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#fce6b6" />
+          <stop offset="55%" stop-color="#d4a868" />
+          <stop offset="100%" stop-color="#5a3d20" />
+        </radialGradient>
+        <radialGradient id="h-earth-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#a8e0ff" />
+          <stop offset="40%" stop-color="#4b9cd3" />
+          <stop offset="80%" stop-color="#1f4870" />
+          <stop offset="100%" stop-color="#0a1b30" />
+        </radialGradient>
+        <radialGradient id="h-mars-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f4b298" />
+          <stop offset="50%" stop-color="#c1440e" />
+          <stop offset="100%" stop-color="#3a1408" />
+        </radialGradient>
+        <radialGradient id="h-jupiter-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f4d8a4" />
+          <stop offset="50%" stop-color="#c89968" />
+          <stop offset="100%" stop-color="#4a3520" />
+        </radialGradient>
+        <radialGradient id="h-saturn-grad" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f8e8b8" />
+          <stop offset="50%" stop-color="#d8b878" />
+          <stop offset="100%" stop-color="#544030" />
+        </radialGradient>
+
+        <!-- Halos for each planet (subtle glow rings) -->
+        <radialGradient id="h-halo-blue" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="55%" stop-color="#4b9cd3" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#4b9cd3" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="h-halo-red" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="55%" stop-color="#c1440e" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#c1440e" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Two trajectory accent gradients (multicolour) -->
+        <linearGradient id="h-traj-teal" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0.35" />
+          <stop offset="50%" stop-color="#4ecdc4" stop-opacity="1" />
+          <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0.35" />
+        </linearGradient>
+        <linearGradient id="h-traj-magenta" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ff6b9d" stop-opacity="0.25" />
+          <stop offset="60%" stop-color="#c14ad8" stop-opacity="1" />
+          <stop offset="100%" stop-color="#7a4ad8" stop-opacity="0.4" />
+        </linearGradient>
+
+        <!-- Star halo: tiny radial glow applied to a few "feature" stars -->
+        <radialGradient id="h-star-glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+          <stop offset="40%" stop-color="#ffffff" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+        </radialGradient>
+
+        <!-- Comet trail -->
+        <linearGradient id="h-comet" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+          <stop offset="80%" stop-color="#a8e0ff" stop-opacity="0.6" />
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95" />
+        </linearGradient>
+      </defs>
+
       <style>
         .h-soft {
-          stroke: rgba(255, 255, 255, 0.18);
+          stroke: rgba(255, 255, 255, 0.14);
           stroke-width: 0.8;
           fill: none;
         }
         .h-mid {
-          stroke: rgba(255, 255, 255, 0.32);
+          stroke: rgba(255, 255, 255, 0.28);
           stroke-width: 1;
           fill: none;
         }
         .h-bright {
-          stroke: rgba(255, 255, 255, 0.62);
+          stroke: rgba(255, 255, 255, 0.55);
           stroke-width: 1.2;
           fill: none;
         }
-        .h-accent {
-          stroke: #4ecdc4;
-          stroke-width: 1.6;
+        .h-back {
+          stroke: rgba(255, 255, 255, 0.06);
+          stroke-width: 0.8;
           fill: none;
-        }
-        .h-sun {
-          fill: #ffc850;
-        }
-        .h-mercury {
-          fill: rgba(170, 170, 170, 0.9);
-        }
-        .h-venus {
-          fill: rgba(212, 180, 128, 0.9);
-        }
-        .h-earth {
-          fill: rgba(75, 156, 211, 0.95);
-        }
-        .h-mars {
-          fill: rgba(193, 68, 14, 0.95);
-        }
-        .h-craft {
-          fill: #4ecdc4;
-        }
-        .h-star {
-          fill: rgba(255, 255, 255, 0.5);
-        }
-        .h-dim {
-          fill: rgba(255, 255, 255, 0.22);
         }
         .h-label {
           font-family: 'Space Mono', monospace;
           font-size: 8px;
           letter-spacing: 1px;
-          fill: rgba(255, 255, 255, 0.5);
+          fill: rgba(255, 255, 255, 0.55);
         }
-        .h-label-accent {
+        .h-label-teal {
           font-family: 'Space Mono', monospace;
           font-size: 8px;
           letter-spacing: 1px;
           fill: #4ecdc4;
         }
+        .h-label-magenta {
+          font-family: 'Space Mono', monospace;
+          font-size: 8px;
+          letter-spacing: 1px;
+          fill: #c14ad8;
+        }
       </style>
 
-      <!-- Scattered starfield -->
-      <circle class="h-dim" cx="40" cy="32" r="0.8" />
-      <circle class="h-star" cx="115" cy="48" r="1.1" />
-      <circle class="h-dim" cx="200" cy="28" r="0.9" />
-      <circle class="h-star" cx="290" cy="40" r="1.2" />
-      <circle class="h-dim" cx="380" cy="32" r="0.7" />
-      <circle class="h-star" cx="465" cy="50" r="1.1" />
-      <circle class="h-dim" cx="540" cy="34" r="0.8" />
-      <circle class="h-dim" cx="65" cy="225" r="0.8" />
-      <circle class="h-star" cx="170" cy="240" r="1.1" />
-      <circle class="h-dim" cx="270" cy="232" r="0.7" />
-      <circle class="h-star" cx="365" cy="225" r="1" />
-      <circle class="h-dim" cx="460" cy="240" r="0.8" />
-      <circle class="h-star" cx="540" cy="228" r="1.1" />
+      <!-- ─── Deep starfield ─────────────────────────────────── -->
+      <circle cx="40" cy="35" r="0.8" fill="rgba(255,255,255,0.22)" />
+      <circle cx="115" cy="55" r="1.1" fill="rgba(255,255,255,0.5)" />
+      <circle cx="155" cy="22" r="0.6" fill="rgba(255,255,255,0.3)" />
+      <circle cx="220" cy="40" r="0.9" fill="rgba(255,255,255,0.4)" />
+      <circle cx="290" cy="20" r="1.3" fill="rgba(255,255,255,0.62)" />
+      <circle cx="340" cy="42" r="0.7" fill="rgba(255,255,255,0.32)" />
+      <circle cx="395" cy="20" r="0.8" fill="rgba(255,255,255,0.45)" />
+      <circle cx="450" cy="38" r="1.4" fill="rgba(255,255,255,0.65)" />
+      <circle cx="510" cy="22" r="0.7" fill="rgba(255,255,255,0.28)" />
+      <circle cx="555" cy="44" r="1" fill="rgba(255,255,255,0.45)" />
+      <circle cx="60" cy="290" r="0.9" fill="rgba(255,255,255,0.35)" />
+      <circle cx="135" cy="280" r="0.7" fill="rgba(255,255,255,0.28)" />
+      <circle cx="200" cy="295" r="1.2" fill="rgba(255,255,255,0.55)" />
+      <circle cx="290" cy="288" r="0.7" fill="rgba(255,255,255,0.32)" />
+      <circle cx="370" cy="295" r="1.1" fill="rgba(255,255,255,0.5)" />
+      <circle cx="435" cy="282" r="0.8" fill="rgba(255,255,255,0.38)" />
+      <circle cx="510" cy="290" r="1" fill="rgba(255,255,255,0.45)" />
+      <circle cx="555" cy="278" r="0.8" fill="rgba(255,255,255,0.4)" />
 
-      <!-- Inner-solar-system orrery, centred at (300, 130) -->
-      <!-- Mercury, Venus orbits — soft -->
-      <ellipse class="h-soft" cx="300" cy="130" rx="40" ry="18" />
-      <ellipse class="h-soft" cx="300" cy="130" rx="75" ry="32" />
-      <!-- Earth orbit — bright (the source orbit of our highlighted transfer) -->
-      <ellipse class="h-bright" cx="300" cy="130" rx="115" ry="50" />
-      <!-- Mars orbit — bright (target) -->
-      <ellipse class="h-bright" cx="300" cy="130" rx="170" ry="74" />
-      <!-- Jupiter, Saturn orbits — soft, hinted off the edges -->
-      <ellipse class="h-soft" cx="300" cy="130" rx="235" ry="103" />
-      <ellipse class="h-soft" cx="300" cy="130" rx="285" ry="125" />
+      <!-- A few "feature" stars with halo glow for variety -->
+      <circle cx="290" cy="20" r="6" fill="url(#h-star-glow)" />
+      <circle cx="450" cy="38" r="7" fill="url(#h-star-glow)" />
+      <circle cx="200" cy="295" r="6" fill="url(#h-star-glow)" />
 
-      <!-- Transfer ellipse (Earth perihelion → Mars aphelion), highlighted in teal -->
-      <ellipse class="h-accent" cx="300" cy="130" rx="142" ry="62" stroke-dasharray="5 3" />
+      <!-- ─── Sun corona (drawn before orbits so it doesn't cover them) ── -->
+      <circle cx="300" cy="160" r="55" fill="url(#h-sun-corona)" />
 
-      <!-- Sun at the centre -->
-      <circle class="h-sun" cx="300" cy="130" r="7" />
+      <!-- ─── Orbits ─────────────────────────────────────────────
+           Drawn as ellipses to suggest a gentle camera tilt from
+           above. Stroke opacity fades on the back half via two
+           overlapping arcs so the orbit "wraps" the Sun visually. -->
+      <!-- Mercury (front + back) -->
+      <ellipse class="h-back" cx="300" cy="160" rx="38" ry="14" />
+      <path class="h-mid" d="M 262 160 A 38 14 0 0 0 338 160" />
+      <!-- Venus -->
+      <ellipse class="h-back" cx="300" cy="160" rx="62" ry="22" />
+      <path class="h-mid" d="M 238 160 A 62 22 0 0 0 362 160" />
+      <!-- Earth (highlighted) -->
+      <ellipse class="h-back" cx="300" cy="160" rx="100" ry="36" />
+      <path class="h-bright" d="M 200 160 A 100 36 0 0 0 400 160" />
+      <!-- Mars (highlighted) -->
+      <ellipse class="h-back" cx="300" cy="160" rx="142" ry="52" />
+      <path class="h-bright" d="M 158 160 A 142 52 0 0 0 442 160" />
+      <!-- Jupiter -->
+      <ellipse class="h-back" cx="300" cy="160" rx="195" ry="72" />
+      <path class="h-soft" d="M 105 160 A 195 72 0 0 0 495 160" />
+      <!-- Saturn -->
+      <ellipse class="h-back" cx="300" cy="160" rx="245" ry="92" />
+      <path class="h-soft" d="M 55 160 A 245 92 0 0 0 545 160" />
 
-      <!-- Planets at chosen orbital positions -->
-      <circle class="h-mercury" cx="340" cy="130" r="1.6" />
-      <circle class="h-venus" cx="225" cy="148" r="2.2" />
-      <circle class="h-earth" cx="415" cy="130" r="2.8" />
-      <circle class="h-mars" cx="155" cy="125" r="2.5" />
+      <!-- ─── Highlighted trajectories ─────────────────────────── -->
+      <!-- 1. Earth → Mars Hohmann ellipse (teal). Drawn as a true
+           ellipse with semi-major a=121 and semi-minor selected so
+           the perihelion sits on Earth's orbit, aphelion on Mars's. -->
+      <ellipse
+        cx="300"
+        cy="160"
+        rx="121"
+        ry="44"
+        fill="none"
+        stroke="url(#h-traj-teal)"
+        stroke-width="2"
+        stroke-dasharray="5 3"
+      />
+      <!-- 2. Outer-system slingshot (magenta) — a sweeping arc that
+           leaves Earth's orbit, swings near Jupiter, and exits the
+           frame. Quadratic Bezier for an organic curve. -->
+      <path
+        d="M 395 152 Q 360 80 450 60 Q 530 50 580 90"
+        fill="none"
+        stroke="url(#h-traj-magenta)"
+        stroke-width="2.2"
+        stroke-linecap="round"
+      />
 
-      <!-- Spacecraft marker mid-transfer (top of teal ellipse) -->
-      <circle class="h-craft" cx="300" cy="68" r="2.2" />
-      <line x1="300" y1="64" x2="300" y2="60" stroke="#4ecdc4" stroke-width="1" />
+      <!-- ─── Comet (top-left → diagonal sweep) ────────────────── -->
+      <path
+        d="M 30 80 L 95 65"
+        stroke="url(#h-comet)"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        fill="none"
+      />
+      <circle cx="95" cy="65" r="2.2" fill="#ffffff" />
+      <circle cx="95" cy="65" r="5" fill="url(#h-star-glow)" />
 
-      <!-- Subtle annotations to reinforce the engineering tone -->
-      <text x="425" y="146" class="h-label">EARTH</text>
-      <text x="125" y="142" class="h-label">MARS</text>
-      <text x="305" y="58" class="h-label-accent">∆v</text>
-      <text x="305" y="195" class="h-label">SUN</text>
+      <!-- ─── Sun (after orbits so it's the focal point) ───────── -->
+      <circle cx="300" cy="160" r="14" fill="url(#h-sun-grad)" />
+      <!-- Sun's outer rim highlight -->
+      <circle cx="296" cy="156" r="4" fill="rgba(255,255,255,0.5)" opacity="0.5" />
+
+      <!-- ─── Planets ────────────────────────────────────────────
+           Halo first (radial glow), then planet disc, then a tiny
+           crescent of darkness on the side away from the Sun for
+           a hint of terminator shading. Rendering order matters
+           for depth — planets in front of the Sun appear "in
+           front" because they're drawn last. -->
+
+      <!-- Mercury -->
+      <circle cx="338" cy="160" r="6" fill="rgba(255,255,255,0.06)" />
+      <circle cx="338" cy="160" r="3.4" fill="url(#h-mercury-grad)" />
+
+      <!-- Venus -->
+      <circle cx="240" cy="172" r="9" fill="rgba(255,200,120,0.08)" />
+      <circle cx="240" cy="172" r="4.4" fill="url(#h-venus-grad)" />
+
+      <!-- Earth (with halo + a tiny moon) -->
+      <circle cx="396" cy="160" r="14" fill="url(#h-halo-blue)" />
+      <circle cx="396" cy="160" r="5.5" fill="url(#h-earth-grad)" />
+      <circle cx="408" cy="156" r="1.4" fill="rgba(220,220,220,0.85)" />
+
+      <!-- Mars -->
+      <circle cx="162" cy="156" r="14" fill="url(#h-halo-red)" />
+      <circle cx="162" cy="156" r="5" fill="url(#h-mars-grad)" />
+
+      <!-- Jupiter (off to the right; also serves as the slingshot pivot) -->
+      <circle cx="468" cy="118" r="11" fill="rgba(212,168,104,0.1)" />
+      <circle cx="468" cy="118" r="7" fill="url(#h-jupiter-grad)" />
+      <!-- Faint band hint -->
+      <ellipse cx="468" cy="118" rx="7" ry="1.4" fill="rgba(120,80,40,0.35)" />
+
+      <!-- Saturn (far left, with rings) -->
+      <circle cx="80" cy="118" r="10" fill="rgba(232,208,152,0.08)" />
+      <ellipse
+        cx="80"
+        cy="118"
+        rx="14"
+        ry="3"
+        fill="none"
+        stroke="rgba(232,208,152,0.7)"
+        stroke-width="1.2"
+      />
+      <ellipse
+        cx="80"
+        cy="118"
+        rx="14"
+        ry="3"
+        fill="none"
+        stroke="rgba(180,140,80,0.5)"
+        stroke-width="0.6"
+        transform="rotate(-8 80 118)"
+      />
+      <circle cx="80" cy="118" r="6" fill="url(#h-saturn-grad)" />
+
+      <!-- ─── Spacecraft markers on the highlighted arcs ───────── -->
+      <!-- Hohmann craft (teal arrow) -->
+      <g transform="translate(300 116)">
+        <polygon points="-3,-2 4,0 -3,2 -1,0" fill="#4ecdc4" />
+        <circle r="3.5" fill="rgba(78,205,196,0.18)" />
+      </g>
+      <!-- Outer-system probe (magenta arrow) on the slingshot path -->
+      <g transform="translate(490 60)">
+        <polygon points="-3,-2 4,0 -3,2 -1,0" fill="#c14ad8" />
+        <circle r="3.5" fill="rgba(193,74,216,0.18)" />
+      </g>
+
+      <!-- ─── Engineering annotations ─────────────────────────── -->
+      <text x="402" y="184" class="h-label">EARTH</text>
+      <text x="142" y="184" class="h-label">MARS</text>
+      <text x="476" y="142" class="h-label">JUPITER</text>
+      <text x="62" y="142" class="h-label">SATURN</text>
+      <text x="305" y="148" class="h-label">SUN</text>
+      <text x="270" y="106" class="h-label-teal">∆v · HOHMANN</text>
+      <text x="498" y="50" class="h-label-magenta">SLINGSHOT</text>
     </svg>
 
     <h1 class="wordmark">ORRERY</h1>
@@ -224,6 +413,78 @@
 
   <section aria-labelledby="cards-heading">
     <h2 id="cards-heading">{m.landing_section_cards_heading()}</h2>
+
+    <!-- Shared gradient + filter defs for the per-card icons.
+         An invisible 0x0 SVG keeps the layout untouched while making
+         these `id` references reachable from all later <svg> blocks. -->
+    <svg class="card-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="ic-sun" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#fff7e0" />
+          <stop offset="55%" stop-color="#ffc850" />
+          <stop offset="100%" stop-color="#c14a1e" />
+        </radialGradient>
+        <radialGradient id="ic-sun-corona" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#ffc850" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="#ffc850" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="ic-earth" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#a8e0ff" />
+          <stop offset="50%" stop-color="#4b9cd3" />
+          <stop offset="100%" stop-color="#0a1b30" />
+        </radialGradient>
+        <radialGradient id="ic-mars" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f4b298" />
+          <stop offset="50%" stop-color="#c1440e" />
+          <stop offset="100%" stop-color="#3a1408" />
+        </radialGradient>
+        <radialGradient id="ic-moon" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f0ece4" />
+          <stop offset="55%" stop-color="#a8a09c" />
+          <stop offset="100%" stop-color="#1c1a18" />
+        </radialGradient>
+        <radialGradient id="ic-jupiter" cx="0.35" cy="0.35" r="0.7">
+          <stop offset="0%" stop-color="#f4d8a4" />
+          <stop offset="50%" stop-color="#c89968" />
+          <stop offset="100%" stop-color="#4a3520" />
+        </radialGradient>
+        <radialGradient id="ic-craft" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#a0fff0" />
+          <stop offset="60%" stop-color="#4ecdc4" />
+          <stop offset="100%" stop-color="#1c5a55" />
+        </radialGradient>
+        <radialGradient id="ic-glow-blue" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="40%" stop-color="#4b9cd3" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#4b9cd3" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="ic-glow-red" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="40%" stop-color="#c1440e" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#c1440e" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="ic-glow-teal" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="40%" stop-color="#4ecdc4" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="#4ecdc4" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="ic-glow-magenta" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="40%" stop-color="#c14ad8" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="#c14ad8" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="ic-traj" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0.2" />
+          <stop offset="60%" stop-color="#4ecdc4" stop-opacity="1" />
+          <stop offset="100%" stop-color="#c14ad8" stop-opacity="0.7" />
+        </linearGradient>
+        <linearGradient id="ic-panel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7defe5" />
+          <stop offset="100%" stop-color="#1f7872" />
+        </linearGradient>
+        <linearGradient id="ic-panel-gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffd87a" />
+          <stop offset="100%" stop-color="#9a6818" />
+        </linearGradient>
+      </defs>
+    </svg>
+
     <ul class="card-grid" data-testid="landing-cards">
       {#each cards as card (card.route)}
         <li>
@@ -235,281 +496,463 @@
             <span class="card-head">
               <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
                 {#if card.route === '/explore'}
-                  <!-- Solar system: Sun + 2 concentric orbits + a small planet -->
-                  <circle cx="24" cy="24" r="2.5" fill="#ffc850" />
-                  <circle
+                  <!-- Mini solar system: gradient Sun + corona, three orbital ellipses
+                       (slight perspective tilt), Earth + Mars with halos. -->
+                  <circle cx="24" cy="26" r="14" fill="url(#ic-sun-corona)" />
+                  <ellipse
                     cx="24"
-                    cy="24"
-                    r="9"
+                    cy="26"
+                    rx="9"
+                    ry="3.5"
                     fill="none"
-                    stroke="rgba(255,255,255,0.4)"
-                    stroke-width="1"
-                  />
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="16"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.55)"
-                    stroke-width="1.2"
-                  />
-                  <circle
-                    cx="24"
-                    cy="24"
-                    r="22"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.25)"
-                    stroke-width="0.8"
-                    stroke-dasharray="2 2"
-                  />
-                  <circle cx="33" cy="24" r="1.6" fill="rgba(75,156,211,0.95)" />
-                  <circle cx="14" cy="20" r="1.3" fill="rgba(193,68,14,0.95)" />
-                {:else if card.route === '/missions'}
-                  <!-- Capsule + trajectory dot grid -->
-                  <line
-                    x1="6"
-                    y1="40"
-                    x2="42"
-                    y2="40"
-                    stroke="rgba(255,255,255,0.5)"
-                    stroke-width="1"
-                  />
-                  <path
-                    d="M 8 38 Q 24 10 40 38"
-                    fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1.4"
-                    stroke-dasharray="3 2"
-                  />
-                  <circle cx="24" cy="14" r="2.4" fill="#4ecdc4" />
-                  <circle cx="8" cy="38" r="1.6" fill="rgba(255,255,255,0.7)" />
-                  <circle cx="40" cy="38" r="1.6" fill="rgba(193,68,14,0.9)" />
-                  <text
-                    x="24"
-                    y="34"
-                    font-family="'Space Mono', monospace"
-                    font-size="5"
-                    fill="rgba(255,255,255,0.4)"
-                    text-anchor="middle">MET</text
-                  >
-                {:else if card.route === '/fleet'}
-                  <!-- Three stacked spacecraft silhouettes -->
-                  <rect
-                    x="14"
-                    y="6"
-                    width="20"
-                    height="6"
-                    rx="1"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.65)"
-                    stroke-width="1"
-                  />
-                  <rect x="11" y="7" width="3" height="4" fill="rgba(255,255,255,0.4)" />
-                  <rect x="34" y="7" width="3" height="4" fill="rgba(255,255,255,0.4)" />
-                  <rect
-                    x="14"
-                    y="20"
-                    width="20"
-                    height="6"
-                    rx="1"
-                    fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1.2"
-                  />
-                  <rect x="11" y="21" width="3" height="4" fill="#4ecdc4" opacity="0.7" />
-                  <rect x="34" y="21" width="3" height="4" fill="#4ecdc4" opacity="0.7" />
-                  <rect
-                    x="14"
-                    y="34"
-                    width="20"
-                    height="6"
-                    rx="1"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.5)"
-                    stroke-width="1"
-                  />
-                  <rect x="11" y="35" width="3" height="4" fill="rgba(255,255,255,0.3)" />
-                  <rect x="34" y="35" width="3" height="4" fill="rgba(255,255,255,0.3)" />
-                {:else if card.route === '/plan'}
-                  <!-- Mini porkchop heatmap (5x4 grid with one teal cell) -->
-                  <g stroke="rgba(255,255,255,0.15)" stroke-width="0.5" fill="none">
-                    <line x1="8" y1="10" x2="40" y2="10" />
-                    <line x1="8" y1="18" x2="40" y2="18" />
-                    <line x1="8" y1="26" x2="40" y2="26" />
-                    <line x1="8" y1="34" x2="40" y2="34" />
-                    <line x1="8" y1="42" x2="40" y2="42" />
-                  </g>
-                  <rect x="9" y="11" width="6" height="6" fill="rgba(193,68,14,0.55)" />
-                  <rect x="15" y="19" width="6" height="6" fill="rgba(255,200,80,0.45)" />
-                  <rect x="21" y="27" width="6" height="6" fill="#4ecdc4" />
-                  <rect x="27" y="19" width="6" height="6" fill="rgba(255,200,80,0.35)" />
-                  <rect x="33" y="11" width="6" height="6" fill="rgba(193,68,14,0.4)" />
-                {:else if card.route === '/fly'}
-                  <!-- Trajectory arc from Earth to Mars with spacecraft marker -->
-                  <circle cx="8" cy="38" r="2.6" fill="rgba(75,156,211,0.95)" />
-                  <circle cx="40" cy="14" r="2.2" fill="rgba(193,68,14,0.95)" />
-                  <path
-                    d="M 10 36 Q 24 4 38 14"
-                    fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1.4"
-                    stroke-dasharray="3 2"
-                  />
-                  <polygon points="22,16 28,20 22,24 24,20" fill="#4ecdc4" />
-                  <line
-                    x1="8"
-                    y1="42"
-                    x2="40"
-                    y2="42"
-                    stroke="rgba(255,255,255,0.2)"
-                    stroke-width="0.6"
-                  />
-                {:else if card.route === '/earth'}
-                  <!-- Earth + ISS orbit ring -->
-                  <circle cx="24" cy="24" r="9" fill="rgba(75,156,211,0.85)" />
-                  <path
-                    d="M 16 22 Q 21 21 24 23 Q 28 25 32 23"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.4)"
+                    stroke="rgba(255,255,255,0.35)"
                     stroke-width="0.8"
                   />
                   <ellipse
                     cx="24"
-                    cy="24"
-                    rx="16"
-                    ry="5"
+                    cy="26"
+                    rx="15"
+                    ry="6"
                     fill="none"
-                    stroke="#4ecdc4"
-                    stroke-width="1.2"
-                  />
-                  <circle cx="40" cy="24" r="1.5" fill="#4ecdc4" />
-                {:else if card.route === '/moon'}
-                  <!-- Moon disc with craters -->
-                  <circle cx="24" cy="24" r="14" fill="rgba(220,220,220,0.78)" />
-                  <circle cx="20" cy="20" r="2" fill="rgba(120,120,120,0.6)" />
-                  <circle cx="29" cy="26" r="2.8" fill="rgba(120,120,120,0.55)" />
-                  <circle cx="22" cy="30" r="1.5" fill="rgba(120,120,120,0.6)" />
-                  <circle cx="14" cy="22" r="1.2" fill="rgba(120,120,120,0.5)" />
-                {:else if card.route === '/mars'}
-                  <!-- Mars with polar caps -->
-                  <circle cx="24" cy="24" r="14" fill="rgba(193,68,14,0.92)" />
-                  <ellipse cx="24" cy="11" rx="5" ry="2" fill="rgba(255,255,255,0.85)" />
-                  <ellipse cx="24" cy="37" rx="4" ry="1.6" fill="rgba(255,255,255,0.75)" />
-                  <ellipse cx="20" cy="22" rx="2.5" ry="1.5" fill="rgba(120,40,8,0.5)" />
-                  <ellipse cx="30" cy="28" rx="2" ry="1.2" fill="rgba(120,40,8,0.5)" />
-                {:else if card.route === '/iss'}
-                  <!-- ISS truss + solar panels (simplified T-shape) -->
-                  <line
-                    x1="6"
-                    y1="24"
-                    x2="42"
-                    y2="24"
-                    stroke="rgba(255,255,255,0.7)"
-                    stroke-width="1.2"
-                  />
-                  <rect x="3" y="20" width="6" height="8" fill="rgba(78,205,196,0.7)" />
-                  <rect x="39" y="20" width="6" height="8" fill="rgba(78,205,196,0.7)" />
-                  <rect
-                    x="13"
-                    y="22"
-                    width="22"
-                    height="4"
-                    fill="rgba(255,255,255,0.3)"
-                    stroke="rgba(255,255,255,0.6)"
-                    stroke-width="0.8"
-                  />
-                  <rect
-                    x="22"
-                    y="14"
-                    width="4"
-                    height="8"
-                    fill="rgba(255,255,255,0.3)"
-                    stroke="rgba(255,255,255,0.6)"
-                    stroke-width="0.8"
-                  />
-                  <rect
-                    x="22"
-                    y="26"
-                    width="4"
-                    height="8"
-                    fill="rgba(255,255,255,0.3)"
-                    stroke="rgba(255,255,255,0.6)"
-                    stroke-width="0.8"
-                  />
-                {:else if card.route === '/tiangong'}
-                  <!-- Tiangong T-shape (Tianhe core + Wentian/Mengtian labs) -->
-                  <rect
-                    x="18"
-                    y="6"
-                    width="12"
-                    height="36"
-                    fill="rgba(255,255,255,0.3)"
-                    stroke="rgba(255,255,255,0.7)"
+                    stroke="rgba(255,255,255,0.55)"
                     stroke-width="1"
                   />
+                  <ellipse
+                    cx="24"
+                    cy="26"
+                    rx="21"
+                    ry="8"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.25)"
+                    stroke-width="0.7"
+                    stroke-dasharray="2 2"
+                  />
+                  <circle cx="24" cy="26" r="3.2" fill="url(#ic-sun)" />
+                  <circle cx="33" cy="26" r="3" fill="url(#ic-glow-blue)" />
+                  <circle cx="33" cy="26" r="1.8" fill="url(#ic-earth)" />
+                  <circle cx="9" cy="26" r="3" fill="url(#ic-glow-red)" />
+                  <circle cx="9" cy="26" r="1.6" fill="url(#ic-mars)" />
+                {:else if card.route === '/missions'}
+                  <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
+                  <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="rgba(75,156,211,0.4)" />
+                  <path
+                    d="M 0 44 Q 24 36 48 44"
+                    fill="none"
+                    stroke="rgba(168,224,255,0.7)"
+                    stroke-width="0.8"
+                  />
+                  <path
+                    d="M 6 38 Q 24 6 42 18"
+                    fill="none"
+                    stroke="url(#ic-traj)"
+                    stroke-width="1.6"
+                    stroke-dasharray="3 2"
+                  />
+                  <circle cx="24" cy="16" r="5" fill="url(#ic-glow-teal)" />
+                  <ellipse cx="24" cy="16" rx="2" ry="3" fill="url(#ic-craft)" />
+                  <ellipse cx="24" cy="22" rx="1.6" ry="1.6" fill="#ffc850" opacity="0.85" />
+                  <text
+                    x="24"
+                    y="33"
+                    font-family="'Space Mono', monospace"
+                    font-size="4.5"
+                    fill="rgba(255,255,255,0.45)"
+                    text-anchor="middle">T+254 d</text
+                  >
+                {:else if card.route === '/fleet'}
+                  <!-- Three spacecraft silhouettes, layered with depth (back row dim, front bright teal) -->
+                  <g opacity="0.55">
+                    <rect
+                      x="6"
+                      y="9"
+                      width="12"
+                      height="6"
+                      rx="1"
+                      fill="rgba(255,255,255,0.18)"
+                      stroke="rgba(255,255,255,0.55)"
+                      stroke-width="0.7"
+                    />
+                    <rect x="3" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
+                    <rect x="18" y="10" width="3" height="4" fill="rgba(120,180,220,0.6)" />
+                  </g>
+                  <g>
+                    <rect
+                      x="20"
+                      y="20"
+                      width="20"
+                      height="9"
+                      rx="1.2"
+                      fill="rgba(78,205,196,0.18)"
+                      stroke="#4ecdc4"
+                      stroke-width="1.2"
+                    />
+                    <rect x="15" y="22" width="5" height="5" fill="url(#ic-panel)" />
+                    <rect x="40" y="22" width="5" height="5" fill="url(#ic-panel)" />
+                    <circle cx="30" cy="24.5" r="1.2" fill="#a0fff0" />
+                  </g>
+                  <g opacity="0.7">
+                    <rect
+                      x="10"
+                      y="36"
+                      width="14"
+                      height="6"
+                      rx="1"
+                      fill="rgba(193,74,216,0.12)"
+                      stroke="rgba(193,74,216,0.7)"
+                      stroke-width="0.9"
+                    />
+                    <rect x="6" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
+                    <rect x="24" y="37" width="4" height="4" fill="url(#ic-panel-gold)" />
+                  </g>
+                {:else if card.route === '/plan'}
+                  <!-- Vivid porkchop heatmap (5×5 grid, gradient of cool→hot cells like a real plot) -->
+                  <rect
+                    x="6"
+                    y="6"
+                    width="36"
+                    height="36"
+                    fill="rgba(10,12,28,0.5)"
+                    stroke="rgba(255,255,255,0.18)"
+                    stroke-width="0.6"
+                  />
+                  <!-- Row 1 (bottom = cheapest, brightest teal lobe in middle) -->
+                  <rect x="7" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
+                  <rect x="14" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="21" y="7" width="6.8" height="6.8" fill="rgba(240,160,60,0.8)" />
+                  <rect x="28" y="7" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="35" y="7" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
+                  <rect x="7" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="14" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                  <rect x="21" y="14" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                  <rect x="28" y="14" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                  <rect x="35" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
+                  <rect x="7" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
+                  <rect x="14" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                  <rect x="21" y="21" width="6.8" height="6.8" fill="#4ecdc4" />
+                  <rect x="28" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                  <rect x="35" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
+                  <rect x="7" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="14" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                  <rect x="21" y="28" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
+                  <rect x="28" y="28" width="6.8" height="6.8" fill="rgba(240,200,80,0.85)" />
+                  <rect x="35" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
+                  <rect x="7" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.6)" />
+                  <rect x="14" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="21" y="35" width="6.8" height="6.8" fill="rgba(240,160,60,0.7)" />
+                  <rect x="28" y="35" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
+                  <rect x="35" y="35" width="6.8" height="6.8" fill="rgba(193,68,14,0.5)" />
+                  <!-- Pin marker on the cheap centre cell -->
+                  <circle cx="24.4" cy="24.4" r="2" fill="none" stroke="#fff" stroke-width="1" />
+                  <circle cx="24.4" cy="24.4" r="0.8" fill="#fff" />
+                {:else if card.route === '/fly'}
+                  <!-- Earth → Mars trajectory: gradient transfer arc + glowing spacecraft -->
+                  <circle cx="6" cy="38" r="6" fill="url(#ic-glow-blue)" />
+                  <circle cx="6" cy="38" r="3.5" fill="url(#ic-earth)" />
+                  <circle cx="42" cy="12" r="6" fill="url(#ic-glow-red)" />
+                  <circle cx="42" cy="12" r="3" fill="url(#ic-mars)" />
+                  <path
+                    d="M 9 36 Q 24 0 40 14"
+                    fill="none"
+                    stroke="url(#ic-traj)"
+                    stroke-width="1.8"
+                    stroke-dasharray="3 2"
+                  />
+                  <circle cx="24" cy="14" r="4" fill="url(#ic-glow-teal)" />
+                  <polygon points="20,14 28,18 20,22 22,18" fill="url(#ic-craft)" />
+                {:else if card.route === '/earth'}
+                  <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
+                  <circle cx="24" cy="24" r="16" fill="url(#ic-glow-blue)" />
+                  <circle cx="24" cy="24" r="11" fill="url(#ic-earth)" />
+                  <!-- Continent hint -->
+                  <path
+                    d="M 18 22 Q 22 18 26 22 Q 28 26 24 28 Q 20 26 18 22 Z"
+                    fill="rgba(140,180,120,0.55)"
+                  />
+                  <path
+                    d="M 28 26 Q 31 24 32 27"
+                    fill="none"
+                    stroke="rgba(140,180,120,0.45)"
+                    stroke-width="1"
+                  />
+                  <!-- Atmosphere ring -->
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="11.5"
+                    fill="none"
+                    stroke="rgba(168,224,255,0.45)"
+                    stroke-width="0.6"
+                  />
+                  <!-- ISS orbit -->
+                  <ellipse
+                    cx="24"
+                    cy="24"
+                    rx="18"
+                    ry="6"
+                    fill="none"
+                    stroke="#4ecdc4"
+                    stroke-width="1"
+                    stroke-dasharray="2 2"
+                  />
+                  <circle cx="42" cy="24" r="2" fill="url(#ic-glow-teal)" />
+                  <circle cx="42" cy="24" r="1.2" fill="#4ecdc4" />
+                {:else if card.route === '/moon'}
+                  <!-- Moon: gradient grey disc + craters with shading + Earth-glow on horizon -->
+                  <circle cx="22" cy="24" r="16" fill="rgba(75,156,211,0.18)" />
+                  <circle cx="22" cy="24" r="13" fill="url(#ic-moon)" />
+                  <!-- Craters with shadow -->
+                  <ellipse cx="18" cy="20" rx="2.4" ry="2.2" fill="rgba(60,55,50,0.7)" />
+                  <ellipse cx="18.5" cy="19.5" rx="1.8" ry="1.6" fill="rgba(168,160,156,0.7)" />
+                  <ellipse cx="27" cy="26" rx="3" ry="2.6" fill="rgba(60,55,50,0.65)" />
+                  <ellipse cx="27.5" cy="25.5" rx="2.4" ry="2" fill="rgba(168,160,156,0.7)" />
+                  <ellipse cx="20" cy="30" rx="1.6" ry="1.4" fill="rgba(60,55,50,0.6)" />
+                  <!-- Apollo flag marker -->
+                  <line
+                    x1="25"
+                    y1="22"
+                    x2="25"
+                    y2="17"
+                    stroke="rgba(255,255,255,0.7)"
+                    stroke-width="0.6"
+                  />
+                  <polygon points="25,17 28,18 25,19" fill="#c1440e" />
+                {:else if card.route === '/mars'}
+                  <!-- Mars: rich red gradient + polar caps + Olympus Mons hint + atmosphere -->
+                  <circle cx="24" cy="24" r="16" fill="url(#ic-glow-red)" />
+                  <circle cx="24" cy="24" r="13" fill="url(#ic-mars)" />
+                  <!-- Polar caps -->
+                  <ellipse cx="24" cy="12.5" rx="5" ry="2" fill="rgba(255,255,255,0.85)" />
+                  <ellipse cx="24" cy="35.5" rx="4" ry="1.6" fill="rgba(245,235,225,0.78)" />
+                  <!-- Surface features -->
+                  <ellipse cx="19" cy="22" rx="2.6" ry="1.5" fill="rgba(80,28,8,0.55)" />
+                  <ellipse cx="29" cy="27" rx="2" ry="1.2" fill="rgba(80,28,8,0.55)" />
+                  <!-- Olympus Mons -->
+                  <circle cx="20" cy="26" r="1.4" fill="rgba(255,200,140,0.55)" />
+                  <circle cx="20" cy="26" r="0.6" fill="rgba(120,40,8,0.7)" />
+                  <!-- Thin atmosphere -->
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="13.5"
+                    fill="none"
+                    stroke="rgba(244,178,152,0.5)"
+                    stroke-width="0.5"
+                  />
+                {:else if card.route === '/iss'}
+                  <!-- ISS: glowing solar panels (gradient teal) + truss with depth + Earth glow at bottom -->
+                  <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(75,156,211,0.18)" />
+                  <line
+                    x1="6"
+                    y1="22"
+                    x2="42"
+                    y2="22"
+                    stroke="rgba(255,255,255,0.65)"
+                    stroke-width="1"
+                  />
+                  <line
+                    x1="6"
+                    y1="26"
+                    x2="42"
+                    y2="26"
+                    stroke="rgba(255,255,255,0.45)"
+                    stroke-width="0.7"
+                  />
+                  <!-- Solar panels (glowing) -->
+                  <rect
+                    x="2"
+                    y="18"
+                    width="6"
+                    height="12"
+                    fill="url(#ic-panel)"
+                    stroke="rgba(160,255,240,0.6)"
+                    stroke-width="0.5"
+                  />
+                  <rect
+                    x="40"
+                    y="18"
+                    width="6"
+                    height="12"
+                    fill="url(#ic-panel)"
+                    stroke="rgba(160,255,240,0.6)"
+                    stroke-width="0.5"
+                  />
+                  <line
+                    x1="2"
+                    y1="22"
+                    x2="8"
+                    y2="22"
+                    stroke="rgba(15,40,38,0.6)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="40"
+                    y1="22"
+                    x2="46"
+                    y2="22"
+                    stroke="rgba(15,40,38,0.6)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="2"
+                    y1="26"
+                    x2="8"
+                    y2="26"
+                    stroke="rgba(15,40,38,0.6)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="40"
+                    y1="26"
+                    x2="46"
+                    y2="26"
+                    stroke="rgba(15,40,38,0.6)"
+                    stroke-width="0.4"
+                  />
+                  <!-- Pressurised modules -->
+                  <rect
+                    x="13"
+                    y="20"
+                    width="22"
+                    height="8"
+                    fill="rgba(255,255,255,0.18)"
+                    stroke="rgba(255,255,255,0.7)"
+                    stroke-width="0.8"
+                  />
+                  <rect
+                    x="22"
+                    y="12"
+                    width="4"
+                    height="8"
+                    fill="rgba(255,255,255,0.22)"
+                    stroke="rgba(255,255,255,0.7)"
+                    stroke-width="0.8"
+                  />
+                  <rect
+                    x="22"
+                    y="28"
+                    width="4"
+                    height="8"
+                    fill="rgba(255,255,255,0.22)"
+                    stroke="rgba(255,255,255,0.7)"
+                    stroke-width="0.8"
+                  />
+                  <!-- Cupola dot -->
+                  <circle cx="24" cy="36" r="1.4" fill="#4ecdc4" />
+                {:else if card.route === '/tiangong'}
+                  <!-- Tiangong: T-shape with multi-color modules + glowing solar panels -->
+                  <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(193,68,14,0.18)" />
+                  <!-- Tianhe core (vertical) -->
+                  <rect
+                    x="20"
+                    y="6"
+                    width="8"
+                    height="36"
+                    fill="rgba(255,200,120,0.18)"
+                    stroke="rgba(255,216,160,0.85)"
+                    stroke-width="0.9"
+                  />
+                  <line
+                    x1="20"
+                    y1="14"
+                    x2="28"
+                    y2="14"
+                    stroke="rgba(255,216,160,0.5)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="20"
+                    y1="22"
+                    x2="28"
+                    y2="22"
+                    stroke="rgba(255,216,160,0.5)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="20"
+                    y1="30"
+                    x2="28"
+                    y2="30"
+                    stroke="rgba(255,216,160,0.5)"
+                    stroke-width="0.4"
+                  />
+                  <line
+                    x1="20"
+                    y1="38"
+                    x2="28"
+                    y2="38"
+                    stroke="rgba(255,216,160,0.5)"
+                    stroke-width="0.4"
+                  />
+                  <!-- Wentian + Mengtian (horizontal labs in teal) -->
                   <rect
                     x="6"
                     y="20"
                     width="36"
                     height="8"
-                    fill="rgba(255,200,80,0.25)"
-                    stroke="rgba(255,200,80,0.65)"
-                    stroke-width="1"
+                    fill="rgba(78,205,196,0.18)"
+                    stroke="#4ecdc4"
+                    stroke-width="0.9"
                   />
                   <line
-                    x1="3"
-                    y1="24"
-                    x2="6"
-                    y2="24"
-                    stroke="rgba(255,255,255,0.5)"
-                    stroke-width="0.8"
+                    x1="14"
+                    y1="20"
+                    x2="14"
+                    y2="28"
+                    stroke="rgba(78,205,196,0.4)"
+                    stroke-width="0.4"
                   />
                   <line
-                    x1="42"
-                    y1="24"
-                    x2="45"
-                    y2="24"
-                    stroke="rgba(255,255,255,0.5)"
-                    stroke-width="0.8"
+                    x1="34"
+                    y1="20"
+                    x2="34"
+                    y2="28"
+                    stroke="rgba(78,205,196,0.4)"
+                    stroke-width="0.4"
                   />
-                  <circle cx="24" cy="24" r="2" fill="#4ecdc4" />
+                  <!-- Solar panel wings (gold) -->
+                  <rect x="0" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
+                  <rect x="42" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
+                  <!-- Center docking port glow -->
+                  <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-teal)" />
+                  <circle cx="24" cy="24" r="1.2" fill="#4ecdc4" />
                 {:else if card.route === '/science'}
-                  <!-- Formula/encyclopedia glyph -->
-                  <rect
-                    x="6"
-                    y="8"
-                    width="36"
-                    height="32"
+                  <!-- Atomic / orbital science glyph: nucleus + 3 multi-colored electron orbits + ∆v formula -->
+                  <ellipse
+                    cx="24"
+                    cy="24"
+                    rx="20"
+                    ry="7"
                     fill="none"
-                    stroke="rgba(255,255,255,0.5)"
-                    stroke-width="1"
-                    rx="1"
+                    stroke="#4ecdc4"
+                    stroke-width="1.2"
                   />
-                  <line
-                    x1="6"
-                    y1="14"
-                    x2="42"
-                    y2="14"
-                    stroke="rgba(255,255,255,0.4)"
-                    stroke-width="0.8"
+                  <ellipse
+                    cx="24"
+                    cy="24"
+                    rx="20"
+                    ry="7"
+                    fill="none"
+                    stroke="#c14ad8"
+                    stroke-width="1.2"
+                    transform="rotate(60 24 24)"
                   />
-                  <text
-                    x="24"
-                    y="30"
-                    font-family="'Space Mono', monospace"
-                    font-size="14"
-                    font-weight="bold"
-                    fill="#4ecdc4"
-                    text-anchor="middle">∆v</text
-                  >
-                  <text
-                    x="24"
-                    y="38"
-                    font-family="'Space Mono', monospace"
-                    font-size="6"
-                    fill="rgba(255,255,255,0.5)"
-                    text-anchor="middle">= vₑ ln R</text
-                  >
+                  <ellipse
+                    cx="24"
+                    cy="24"
+                    rx="20"
+                    ry="7"
+                    fill="none"
+                    stroke="#ffc850"
+                    stroke-width="1.2"
+                    transform="rotate(-60 24 24)"
+                  />
+                  <!-- Electron / planet markers on each orbit -->
+                  <circle cx="44" cy="24" r="1.6" fill="#4ecdc4" />
+                  <circle cx="14" cy="14" r="1.6" fill="#c14ad8" />
+                  <circle cx="34" cy="36" r="1.6" fill="#ffc850" />
+                  <!-- Nucleus glow -->
+                  <circle cx="24" cy="24" r="6" fill="url(#ic-sun-corona)" />
+                  <circle cx="24" cy="24" r="3.2" fill="url(#ic-sun)" />
                 {/if}
               </svg>
               <span class="card-route">{card.route}</span>

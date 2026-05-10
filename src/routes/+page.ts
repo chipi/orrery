@@ -1,8 +1,3 @@
-import { redirect } from '@sveltejs/kit';
-import { base } from '$app/paths';
-
+// Root route is the landing page (PRD-013 / Issue #74).
+// Previously redirected to /explore; that redirect is now removed.
 export const prerender = true;
-
-export const load = () => {
-  redirect(307, `${base}/explore`);
-};

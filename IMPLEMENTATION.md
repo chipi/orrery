@@ -546,6 +546,21 @@ The 2026-05-10 deep-review surfaced two gaps that were originally documented as 
 - ✅ **`iss-visitors/` overlays — 7 files × 13 non-en-US locales = 91 files** — translated.
 - ✅ Plus full Dutch (nl) entity overlay tree (161 files) as the 14th locale.
 
+### v0.6.x · Locale autodetect + landing page (Issues #73, #74)
+
+**Issue #73 — Locale URL canonicalisation + cookie persistence** (ADR-057 Accepted):
+- **Gap 1**: layout effect canonicalises the URL on first visit so an auto-detected locale lands at `?lang=<code>` for bookmark/share. Strictly inside the existing no-storage rule. 10 unit + 5 e2e tests.
+- **Gap 2**: single `orrery_locale` cookie (SameSite=Lax, 1-year, no PII) written only on explicit picker click. ADR-057 narrows the absolute "no client storage" prohibition to this single use; CLAUDE.md + TA.md updated. 6 more unit + 5 more e2e tests.
+
+**Issue #74 — Landing page at root `/`** (PRD-013, UXS-013):
+- Replaces the previous `/ → /explore` 307 redirect with a real landing.
+- Hero + 3-section narrative (what / why / how) + 11-card grid + footer block.
+- 49 new `landing_*` keys × 14 locales = 686 strings translated.
+- Long-form layout, mobile-first, Lighthouse a11y target ≥ 95.
+- 10 e2e tests on desktop + mobile chromium.
+
+**State at v0.6.x:** 11 routes (10 nav + landing). 14 locales × 100% UI parity. Locale chain: URL → cookie → navigator.language → en-US.
+
 ---
 
 *Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.x*

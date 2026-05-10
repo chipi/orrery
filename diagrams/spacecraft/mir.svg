@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Mir space station anatomy: core module Bazovy Blok with 6-port docking node, four science modules Kvant Kvant-2 Kristall Spektr, Priroda module, Soyuz / Progress / Shuttle docking ports">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">MIR · МИР</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">19 m × 31 m · 129,700 kg · 1986–2001 · first modular space station</text>
+
+  <!-- Core Module Bazovy Blok (horizontal cylinder, center) -->
+  <rect x="140" y="150" width="120" height="30" class="stroke-fill" />
+  <line x1="160" y1="150" x2="160" y2="180" class="dashed" />
+  <line x1="180" y1="150" x2="180" y2="180" class="dashed" />
+  <line x1="220" y1="150" x2="220" y2="180" class="dashed" />
+  <line x1="240" y1="150" x2="240" y2="180" class="dashed" />
+
+  <!-- Multi-port docking node (forward, left) -->
+  <circle cx="140" cy="165" r="12" class="stroke-fill" />
+  <line x1="128" y1="165" x2="128" y2="165" class="stroke" />
+  <line x1="140" y1="153" x2="140" y2="135" class="stroke" />
+  <line x1="140" y1="177" x2="140" y2="195" class="stroke" />
+
+  <!-- Aft port (right side of core) -->
+  <line x1="260" y1="165" x2="280" y2="165" class="stroke" />
+  <rect x="280" y="160" width="14" height="10" class="stroke-fill" />
+
+  <!-- Kvant module (aft of core, -X) -->
+  <rect x="294" y="158" width="32" height="14" class="stroke-fill" />
+
+  <!-- Kvant-2 module (zenith of node, +Y) -->
+  <rect x="124" y="80" width="32" height="55" class="stroke-fill" />
+
+  <!-- Kristall module (nadir-port, -Y) -->
+  <rect x="124" y="195" width="32" height="55" class="stroke-fill" />
+
+  <!-- Spektr module (port +Z, drawn left) -->
+  <rect x="60" y="160" width="60" height="14" class="stroke-fill" />
+
+  <!-- Priroda module (starboard -Z, drawn below-port) -->
+  <rect x="60" y="180" width="60" height="14" class="stroke-fill" />
+
+  <!-- Docking Module (added 1995, on Kristall) -->
+  <rect x="124" y="252" width="32" height="14" class="stroke-fill" />
+
+  <!-- Solar arrays (5 main wings) -->
+  <!-- Core module pair -->
+  <rect x="160" y="118" width="60" height="20" class="pv" />
+  <line x1="180" y1="118" x2="180" y2="138" class="pv-grid" />
+  <line x1="200" y1="118" x2="200" y2="138" class="pv-grid" />
+  <rect x="160" y="194" width="60" height="20" class="pv" />
+  <line x1="180" y1="194" x2="180" y2="214" class="pv-grid" />
+  <line x1="200" y1="194" x2="200" y2="214" class="pv-grid" />
+
+  <!-- Kvant-2 array -->
+  <rect x="156" y="80" width="50" height="18" class="pv" />
+  <line x1="176" y1="80" x2="176" y2="98" class="pv-grid" />
+  <line x1="190" y1="80" x2="190" y2="98" class="pv-grid" />
+
+  <!-- Spektr array -->
+  <rect x="20" y="148" width="40" height="14" class="pv" />
+  <line x1="35" y1="148" x2="35" y2="162" class="pv-grid" />
+  <line x1="48" y1="148" x2="48" y2="162" class="pv-grid" />
+
+  <!-- Soyuz docked at aft -->
+  <rect x="326" y="160" width="20" height="10" class="dashed" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="60" y1="167" x2="40" y2="120" class="accent" />
+  <text x="6" y="118" class="label-accent">SPEKTR</text>
+  <text x="6" y="129" class="label-mute">remote sensing</text>
+
+  <line x1="60" y1="187" x2="40" y2="220" class="accent" />
+  <text x="6" y="218" class="label-accent">PRIRODA</text>
+  <text x="6" y="229" class="label-mute">Earth observation</text>
+
+  <line x1="124" y1="225" x2="40" y2="260" class="accent" />
+  <text x="6" y="258" class="label-accent">KRISTALL</text>
+  <text x="6" y="269" class="label-mute">materials proc</text>
+
+  <!-- TOP/BOTTOM CALLOUTS -->
+  <line x1="140" y1="135" x2="40" y2="60" class="accent" />
+  <text x="6" y="58" class="label-accent">CORE NODE</text>
+  <text x="6" y="69" class="label-mute">6-port hub</text>
+
+  <line x1="140" y1="80" x2="80" y2="48" class="accent" />
+  <text x="6" y="46" class="label-accent">KVANT-2</text>
+  <text x="60" y="57" class="label-mute">EVA airlock</text>
+
+  <line x1="124" y1="266" x2="40" y2="298" class="accent" />
+  <text x="6" y="298" class="label-accent">DOCK MOD</text>
+  <text x="6" y="309" class="label-mute">Shuttle berth</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="260" y1="156" x2="335" y2="100" class="accent" />
+  <text x="335" y="98" text-anchor="end" class="label-accent">CORE · BAZOVY</text>
+  <text x="335" y="109" text-anchor="end" class="label-mute">crew quarters</text>
+
+  <line x1="294" y1="165" x2="335" y2="140" class="accent" />
+  <text x="335" y="138" text-anchor="end" class="label-accent">KVANT</text>
+  <text x="335" y="149" text-anchor="end" class="label-mute">astrophysics</text>
+
+  <line x1="346" y1="165" x2="335" y2="200" class="accent" />
+  <text x="335" y="208" text-anchor="end" class="label-accent">SOYUZ</text>
+  <text x="335" y="219" text-anchor="end" class="label-mute">crew lifeboat</text>
+
+  <line x1="180" y1="118" x2="335" y2="248" class="accent" />
+  <text x="335" y="256" text-anchor="end" class="label-accent">SOLAR ARRAYS</text>
+  <text x="335" y="267" text-anchor="end" class="label-mute">5 wings · 76 kW</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="298" text-anchor="middle" class="subtitle">NPO Energia · Mir-1 launched 1986-02-19 · 15 years · 23,000 experiments · deorbited 2001</text>
+  <text x="200" y="312" text-anchor="middle" class="subtitle">Replaced by ISS · Shuttle-Mir program 1995–1998 (US-Russia partnership)</text>
+</svg>

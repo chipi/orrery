@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Cassini-Huygens spacecraft anatomy: 4 m high-gain antenna, propulsion module, 3 RTGs, instrument booms, magnetometer boom, Huygens probe attached">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .heat { fill: rgba(193,68,14,0.15); stroke: rgba(193,68,14,0.7); stroke-width: 0.6; }
+    .gold { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">CASSINI-HUYGENS</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">6.7 m · 5,712 kg · Saturn orbiter (NASA) + Titan lander (ESA)</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="280" class="dashed" />
+
+  <!-- High-Gain Antenna (4 m parabolic, top) -->
+  <ellipse cx="200" cy="86" rx="80" ry="20" class="stroke-fill" />
+  <ellipse cx="200" cy="86" rx="80" ry="6" class="dashed" />
+
+  <!-- Antenna mast / feed -->
+  <rect x="194" y="68" width="12" height="16" class="stroke-fill" />
+
+  <!-- Low-gain antenna (small dish on right) -->
+  <ellipse cx="276" cy="92" rx="10" ry="3" class="stroke-fill" />
+
+  <!-- Upper Equipment Module (cylinder below dish) -->
+  <rect x="172" y="106" width="56" height="40" class="stroke-fill" />
+
+  <!-- Propulsion Module (lower cylinder) -->
+  <rect x="172" y="146" width="56" height="60" class="stroke-fill" />
+
+  <!-- Main engine (bottom) -->
+  <path d="M 192 206 L 188 226 L 212 226 L 208 206 Z" class="nozzle" />
+
+  <!-- Three RTGs (lower right side) -->
+  <rect x="230" y="170" width="12" height="22" class="heat" />
+  <rect x="244" y="180" width="12" height="22" class="heat" />
+  <rect x="158" y="170" width="12" height="22" class="heat" />
+
+  <!-- Magnetometer boom (very long, extends right) -->
+  <line x1="228" y1="126" x2="370" y2="100" class="stroke" />
+  <rect x="368" y="96" width="6" height="6" class="stroke-fill" />
+
+  <!-- Remote Sensing Pallet (on Cassini's body, drawn as cluster) -->
+  <rect x="160" y="124" width="12" height="14" class="stroke-fill" />
+  <rect x="148" y="128" width="10" height="10" class="stroke-fill" />
+
+  <!-- Fields & Particles Pallet (other side) -->
+  <rect x="228" y="124" width="12" height="14" class="stroke-fill" />
+
+  <!-- Huygens probe (saucer-shaped, attached on side) -->
+  <ellipse cx="120" cy="180" rx="22" ry="12" class="gold" />
+  <ellipse cx="120" cy="180" rx="22" ry="6" class="dashed" />
+  <line x1="142" y1="180" x2="172" y2="180" class="stroke" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="120" y1="86" x2="40" y2="60" class="accent" />
+  <text x="6" y="58" class="label-accent">4 m HGA</text>
+  <text x="6" y="69" class="label-mute">DSN comm + radar</text>
+
+  <line x1="158" y1="180" x2="40" y2="160" class="accent" />
+  <text x="6" y="158" class="label-accent">RTG (×3)</text>
+  <text x="6" y="169" class="label-mute">880 W BOL</text>
+
+  <line x1="98" y1="180" x2="40" y2="220" class="accent" />
+  <text x="6" y="220" class="label-accent">HUYGENS</text>
+  <text x="6" y="231" class="label-mute">ESA Titan lander</text>
+
+  <line x1="148" y1="132" x2="40" y2="250" class="accent" />
+  <text x="6" y="250" class="label-accent">REMOTE SENSING</text>
+  <text x="6" y="261" class="label-mute">ISS · CIRS · UVIS · VIMS</text>
+
+  <line x1="172" y1="170" x2="40" y2="290" class="accent" />
+  <text x="6" y="290" class="label-accent">UPPER MODULE</text>
+  <text x="6" y="301" class="label-mute">CDS · attitude</text>
+
+  <!-- TOP/RIGHT CALLOUTS -->
+  <line x1="276" y1="92" x2="335" y2="80" class="accent" />
+  <text x="335" y="78" text-anchor="end" class="label-accent">LOW GAIN</text>
+  <text x="335" y="89" text-anchor="end" class="label-mute">backup comm</text>
+
+  <line x1="370" y1="100" x2="335" y2="120" class="accent" />
+  <text x="335" y="118" text-anchor="end" class="label-accent">MAG BOOM</text>
+  <text x="335" y="129" text-anchor="end" class="label-mute">11 m · MAG sci</text>
+
+  <line x1="240" y1="138" x2="335" y2="160" class="accent" />
+  <text x="335" y="158" text-anchor="end" class="label-accent">FIELDS PARTICLES</text>
+  <text x="335" y="169" text-anchor="end" class="label-mute">CAPS · MIMI · RPWS</text>
+
+  <line x1="256" y1="190" x2="335" y2="210" class="accent" />
+  <text x="335" y="208" text-anchor="end" class="label-accent">RTG · ²³⁸Pu</text>
+
+  <line x1="212" y1="210" x2="335" y2="270" class="accent" />
+  <text x="335" y="278" text-anchor="end" class="label-accent">MAIN ENG</text>
+  <text x="335" y="289" text-anchor="end" class="label-mute">N₂O₄ · 445 N · MMH</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="307" text-anchor="middle" class="subtitle">NASA JPL + ESA + ASI · launched 1997-10-15 · Saturn orbit 2004 · Huygens lands Titan 2005-01-14</text>
+  <text x="200" y="317" text-anchor="middle" class="subtitle">Grand Finale 2017-09-15 — plunged into Saturn after 13 years in orbit</text>
+</svg>

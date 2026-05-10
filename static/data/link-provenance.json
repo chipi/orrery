@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-10T14:20:07.453Z",
+  "generated_at": "2026-05-10T20:43:09.478Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "c20606c439d1a95ec15d762b2602de5d9bbca4bd",
+  "commit_sha": "73cf715ce306c6120cc981a84e449608a8cb5a71",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -1587,18 +1587,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "chinarm__15b36e374bf9",
+      "id": "chinarm__e0b548640215",
       "entity_id": "chinarm",
       "category": "tiangong-module",
       "route": "/tiangong",
-      "url": "https://en.wikipedia.org/wiki/Tiangong_robotic_arm",
-      "label": "Wikipedia · Tiangong robotic arm",
+      "url": "https://en.wikipedia.org/wiki/Chinarm",
+      "label": "Wikipedia · Chinarm",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "chinarm__ae05d7917491",
@@ -5241,18 +5241,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mengtian__e8f75f885aab",
+      "id": "mengtian__6c4ed2fa1fbf",
       "entity_id": "mengtian",
       "category": "tiangong-module",
       "route": "/tiangong",
-      "url": "https://en.wikipedia.org/wiki/Mengtian_(module)",
-      "label": "Wikipedia · Mengtian (module)",
+      "url": "https://en.wikipedia.org/wiki/Mengtian",
+      "label": "Wikipedia · Mengtian",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "mengtian__f68b6e57acdc",
@@ -5675,18 +5675,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "new-horizons__f9a66f20ac2e",
+      "id": "new-horizons__e7675d97797c",
       "entity_id": "new-horizons",
       "category": "mission",
       "route": "/missions",
-      "url": "https://en.wikipedia.org/wiki_New_Horizons",
+      "url": "https://en.wikipedia.org/wiki/New_Horizons",
       "label": "New Horizons — Wikipedia",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "new-horizons__4ab788c7f6d5",
@@ -6123,18 +6123,18 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "pirs__2ceba2e32487",
+      "id": "pirs__5ccafae1396d",
       "entity_id": "pirs",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Pirs_(ISS_module)",
       "label": "Wikipedia · Pirs",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "pirs__ff5d6bc23b2e",
@@ -6263,18 +6263,18 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "prichal__510dfc0c97f7",
+      "id": "prichal__f00d8f816114",
       "entity_id": "prichal",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Prichal_(ISS_module)",
       "label": "Wikipedia · Prichal",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "prichal__832f95e5e147",
@@ -6557,18 +6557,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "quest__2584e63b2e2a",
+      "id": "quest__7305fe7c2f42",
       "entity_id": "quest",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Quest_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Quest_Joint_Airlock",
       "label": "Wikipedia · Quest",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "quest__4d69408a2d29",

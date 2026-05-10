@@ -1,150 +1,25 @@
 # Last link-provenance build
 
-> Generated: 2026-05-10T14:20:07.476Z
+> Generated: 2026-05-10T20:43:09.498Z
 
-- Total entries: 689 (was 541)
-- Added: 148
-- Removed: 0
-- Changed: 36
+- Total entries: 689 (was 689)
+- Added: 6
+- Removed: 6
+- Changed: 0
 
-## Added (148)
-- `ariane-6` · core · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_6>
-- `ariane-6` · deep · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6_inaugural_flight>
-- `atlas-lv-3b` · core · nasa · en · <https://www.nasa.gov/mission/mercury/>
-- `atlas-lv-3b` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A>
-- `atv` · core · esa · en · <https://www.esa.int/Enabling_Support/Operations/ATV>
-- `atv` · deep · esa · en · <https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV>
-- `beresheet` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2019-009B>
-- `cargo-dragon-2` · core · spacex · en · <https://www.spacex.com/vehicles/dragon/>
-- `cargo-dragon-2` · deep · nasa · en · <https://www.nasa.gov/international-space-station/commercial-resupply/>
-- `cargo-dragon-v1` · core · nasa · en · <https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/>
-- `cargo-dragon-v1` · deep · nasa · en · <https://www.nasa.gov/mission/spacex-crs-1/>
-- `change-2` · core · cnsa · * · <https://www.cnsa.gov.cn/>
-- `change-2` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2010-050A>
-- `change-3` · core · cnsa · * · <https://www.cnsa.gov.cn/>
-- `change-3` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A>
-- `change-4` · core · cnsa · * · <https://www.cnsa.gov.cn/>
-- `change-4` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A>
-- `change-5` · core · cnsa · * · <https://www.cnsa.gov.cn/>
-- `change-5` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-087A>
-- `compton-gro` · core · nasa · en · <https://heasarc.gsfc.nasa.gov/docs/cgro/>
-- `compton-gro` · deep · nasa · en · <https://heasarc.gsfc.nasa.gov/docs/cgro/cgro/cgro_about.html>
-- `cygnus-enhanced` · core · nasa · en · <https://www.nasa.gov/international-space-station/commercial-resupply/cygnus-fact-sheet/>
-- `cygnus-enhanced` · deep · nasa · en · <https://www.nasa.gov/international-space-station/commercial-resupply/>
-- `cygnus-standard` · core · nasa · en · <https://www.nasa.gov/mission/orbital-1-cygnus/>
-- `cygnus-standard` · deep · nasa · en · <https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/>
-- `dart` · core · nasa · en · <https://science.nasa.gov/mission/dart/>
-- `dart` · deep · nasa · en · <https://www.nasa.gov/feature/dart/dart-mission-summary>
-- `energia` · core · roscosmos · ru · <https://www.roscosmos.ru/30025/>
-- `energia` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1987-044A>
-- `euclid` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Euclid>
-- `euclid` · deep · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Euclid_overview>
-- `gaganyaan` · core · isro · en · <https://www.isro.gov.in/HumanSpaceflight.html>
-- `gaganyaan` · deep · isro · en · <https://www.isro.gov.in/Gaganyaan_overview.html>
-- `h-iia` · core · jaxa · en · <https://global.jaxa.jp/projects/rockets/h2a/>
-- `h-iia` · deep · jaxa · en · <https://www.jaxa.jp/projects/rockets/h2a/>
-- `h3` · deep · jaxa · en · <https://www.jaxa.jp/projects/rockets/h3/>
-- `hakuto-r` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2022-168A>
-- `hakuto-r` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Hakuto-R_Mission_2>
-- `hayabusa-2` · core · jaxa · en · <https://global.jaxa.jp/projects/sas/hayabusa2/>
-- `hayabusa-2` · deep · jaxa · en · <https://www.hayabusa2.jaxa.jp/en/>
-- `hitomi` · core · jaxa · en · <https://global.jaxa.jp/projects/sas/astro_h/>
-- `hitomi` · deep · jaxa · en · <https://www.jaxa.jp/projects/sas/astro_h/>
-- `htv` · core · jaxa · en · <https://www.jaxa.jp/projects/rockets/htv/>
-- `htv` · deep · jaxa · en · <https://global.jaxa.jp/projects/rockets/htv/>
-- `htv-x` · core · jaxa · en · <https://global.jaxa.jp/projects/rockets/htvx/>
-- `htv-x` · deep · jaxa · en · <https://www.jaxa.jp/projects/rockets/htvx/>
-- `im-1-odysseus` · core · nasa · en · <https://www.nasa.gov/commercial-lunar-payload-services/>
-- `im-1-odysseus` · deep · nasa · en · <https://www.nasa.gov/mission/clps-im-1/>
-- `insight` · core · nasa · en · <https://mars.nasa.gov/insight/>
-- `insight` · deep · nasa · en · <https://mars.nasa.gov/insight/mission/overview/>
-- `long-march-2f` · core · cnsa · * · <http://en.cmse.gov.cn/>
-- `long-march-2f` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/List_of_Long_March_launches>
-- `long-march-7` · core · cnsa · * · <http://en.cmse.gov.cn/>
-- `long-march-7` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/List_of_Long_March_launches>
-- `luna-16` · core · roscosmos · ru · <https://www.roscosmos.ru/24187/>
-- `luna-16` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A>
-- `lunokhod-2` · core · roscosmos · ru · <https://www.roscosmos.ru/24187/>
-- `lunokhod-2` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A>
-- `lvm3` · deep · isro · en · <https://www.isro.gov.in/LVM3_M2_Mission.html>
-- `magellan` · core · nasa · en · <https://science.nasa.gov/mission/magellan/>
-- `magellan` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1989-033B>
-- `mangalyaan` · core · isro · en · <https://www.isro.gov.in/MOM_Home.html>
-- `mariner-4` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A>
-- `mariner-4` · deep · nasa · en · <https://history.nasa.gov/SP-4212/toc.html>
-- `mars-2` · core · roscosmos · ru · <https://www.roscosmos.ru/24186/>
-- `mars-2` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A>
-- `mars-3` · core · roscosmos · ru · <https://www.roscosmos.ru/24186/>
-- `mars-3` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049A>
-- `mars-express` · deep · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Mars_Express_in-depth>
-- `mars-polar-lander` · core · nasa · en · <https://mars.nasa.gov/mars-exploration/missions/mars-polar-lander/>
-- `mro` · core · nasa · en · <https://mars.nasa.gov/mro/>
-- `mro` · deep · nasa · en · <https://www.nasa.gov/mission/mars-reconnaissance-orbiter/>
-- `new-shepard` · core · blue-origin · en · <https://www.blueorigin.com/new-shepard/>
-- `new-shepard` · deep · blue-origin · en · <https://www.blueorigin.com/news/first-human-flight-updates>
-- `opportunity` · core · nasa · en · <https://mars.nasa.gov/mer/>
-- `opportunity` · deep · nasa · en · <https://mars.nasa.gov/mer/mission/overview/>
-- `osiris-rex` · core · nasa · en · <https://science.nasa.gov/mission/osiris-rex/>
-- `osiris-rex` · deep · nasa · en · <https://www.nasa.gov/mission/osiris-apex/>
-- `phobos-2` · core · roscosmos · ru · <https://www.roscosmos.ru/24190/>
-- `phobos-2` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1988-059A>
-- `phoenix` · core · nasa · en · <https://mars.nasa.gov/mars-exploration/missions/phoenix/>
-- `phoenix` · deep · nasa · en · <https://www.nasa.gov/mission/phoenix-mars-lander/>
-- `pioneer-10` · core · nasa · en · <https://science.nasa.gov/mission/pioneer/>
-- `pioneer-10` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A>
-- `pragyan` · core · isro · en · <https://www.isro.gov.in/Chandrayaan_3.html>
-- `pragyan` · deep · isro · en · <https://www.isro.gov.in/Chandrayaan3_New.html>
-- `progress-7k-tg` · core · roscosmos · ru · <https://www.roscosmos.ru/24171/>
-- `progress-7k-tg` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1978-008A>
-- `progress-m` · core · roscosmos · ru · <https://www.roscosmos.ru/24171/>
-- `progress-m` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2008-060A>
-- `progress-ms` · core · roscosmos · ru · <https://www.roscosmos.ru/24171/>
-- `progress-ms` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2015-082A>
-- `proton-m` · core · roscosmos · ru · <https://www.roscosmos.ru/24171/>
-- `proton-m` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/List_of_Proton_launches>
-- `rosetta` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Rosetta>
-- `rosetta` · deep · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Rosetta_overview>
-- `salyut-6` · core · roscosmos · ru · <https://www.roscosmos.ru/24178/>
-- `salyut-6` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1977-097A>
-- `salyut-7` · core · roscosmos · ru · <https://www.roscosmos.ru/24178/>
-- `salyut-7` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1982-033A>
-- … 48 more
+## Added (6)
+- `chinarm` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chinarm>
+- `mengtian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mengtian>
+- `new-horizons` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/New_Horizons>
+- `pirs` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Pirs_(ISS_module)>
+- `prichal` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Prichal_(ISS_module)>
+- `quest` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Quest_Joint_Airlock>
 
-## Changed (36)
-- `atv` · label: "ATV (Automated Transfer Vehicle) — Wikipedia" → "Automated Transfer Vehicle — Wikipedia"
-- `cargo-dragon-2` · label: "Cargo Dragon 2 — Wikipedia" → "SpaceX Dragon 2 — Wikipedia"
-- `cargo-dragon-v1` · label: "Cargo Dragon v1 — Wikipedia" → "SpaceX Dragon — Wikipedia"
-- `cygnus-enhanced` · label: "Cygnus Enhanced — Wikipedia" → "Cygnus (spacecraft) — Wikipedia"
-- `cygnus-standard` · label: "Cygnus Standard — Wikipedia" → "Cygnus (spacecraft) — Wikipedia"
-- `energia` · label: "Energia — Wikipedia" → "Energia (rocket) — Wikipedia"
-- `euclid` · label: "Euclid — Wikipedia" → "Euclid (spacecraft) — Wikipedia"
-- `h3` · label: "H3 — Wikipedia" → "H3 (rocket) — Wikipedia"
-- `h3` · tier: "intro" → "core"
-- `hakuto-r` · label: "Hakuto-R program — Wikipedia" → "Hakuto-R — Wikipedia"
-- `hitomi` · label: "Hitomi (ASTRO-H) — Wikipedia" → "Hitomi (satellite) — Wikipedia"
-- `htv` · label: "HTV (Kounotori) — Wikipedia" → "H-II Transfer Vehicle — Wikipedia"
-- `im-1-odysseus` · label: "IM-1 Odysseus — Wikipedia" → "IM-1 — Wikipedia"
-- `luna-16` · label: "Luna 16-class — Wikipedia" → "Luna 16 — Wikipedia"
-- `lvm3` · label: "LVM3 (GSLV Mk III) — Wikipedia" → "LVM3 — Wikipedia"
-- `lvm3` · tier: "intro" → "core"
-- `magellan` · label: "Magellan — Wikipedia" → "Magellan (spacecraft) — Wikipedia"
-- `mangalyaan` · label: "MOM — ISRO" → "Mars Orbiter Mission Profile (ISRO)"; tier: "core" → "deep"
-- `opportunity` · label: "Opportunity (MER-B) — Wikipedia" → "Opportunity (rover) — Wikipedia"
-- `pragyan` · label: "Pragyan — Wikipedia" → "Pragyan (rover) — Wikipedia"
-- `progress-7k-tg` · label: "Progress 7K-TG — Wikipedia" → "Progress (spacecraft) — Wikipedia"
-- `progress-m` · label: "Progress M — Wikipedia" → "Progress-M — Wikipedia"
-- `progress-ms` · label: "Progress MS — Wikipedia" → "Progress-MS — Wikipedia"
-- `rosetta` · label: "Rosetta — Wikipedia" → "Rosetta (spacecraft) — Wikipedia"
-- `schiaparelli` · label: "Schiaparelli — Wikipedia" → "Schiaparelli EDM — Wikipedia"
-- `soyuz-t` · label: "Soyuz T — Wikipedia" → "Soyuz-T — Wikipedia"
-- `soyuz-tm` · label: "Soyuz TM — Wikipedia" → "Soyuz-TM — Wikipedia"
-- `soyuz-tma` · label: "Soyuz TMA — Wikipedia" → "Soyuz-TMA — Wikipedia"
-- `spirit` · label: "Spirit (MER-A) — Wikipedia" → "Spirit (rover) — Wikipedia"
-- `tianzhou` · label: "Tianzhou — Wikipedia" → "Tianzhou (spacecraft) — Wikipedia"
-- `venera-7` · label: "Venera 7-class — Wikipedia" → "Venera 7 — Wikipedia"
-- `vikram-cy2` · label: "Vikram (Chandrayaan-2) — Wikipedia" → "Chandrayaan-2 — Wikipedia"
-- `vikram-cy3` · label: "Vikram (Chandrayaan-3) — Wikipedia" → "Chandrayaan-3 — Wikipedia"
-- `voskhod` · label: "Voskhod — Wikipedia" → "Voskhod (spacecraft) — Wikipedia"
-- `yutu` · label: "Yutu — Wikipedia" → "Yutu (rover) — Wikipedia"
-- `zhurong` · label: "Zhurong — Wikipedia" → "Zhurong (rover) — Wikipedia"
+## Removed (6)
+- `chinarm` · intro · wikipedia · <https://en.wikipedia.org/wiki/Tiangong_robotic_arm>
+- `mengtian` · intro · wikipedia · <https://en.wikipedia.org/wiki/Mengtian_(module)>
+- `new-horizons` · intro · wikipedia · <https://en.wikipedia.org/wiki_New_Horizons>
+- `pirs` · intro · wikipedia · <https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29>
+- `prichal` · intro · wikipedia · <https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29>
+- `quest` · intro · wikipedia · <https://en.wikipedia.org/wiki/Quest_%28ISS_module%29>
 

@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "jwst"
+    }
   ]
 }

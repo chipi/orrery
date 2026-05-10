@@ -20,5 +20,11 @@
   ],
   "linked_missions": [
     "mars-pathfinder"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mars-pathfinder"
+    }
   ]
 }

@@ -21,5 +21,31 @@
   "linked_missions": [
     "apollo11",
     "apollo17"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "apollo11"
+    },
+    {
+      "type": "moon",
+      "site_id": "apollo12"
+    },
+    {
+      "type": "moon",
+      "site_id": "apollo14"
+    },
+    {
+      "type": "moon",
+      "site_id": "apollo15"
+    },
+    {
+      "type": "moon",
+      "site_id": "apollo16"
+    },
+    {
+      "type": "moon",
+      "site_id": "apollo17"
+    }
   ]
 }

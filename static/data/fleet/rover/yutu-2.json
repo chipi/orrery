@@ -20,5 +20,11 @@
   ],
   "linked_missions": [
     "change4"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "change4"
+    }
   ]
 }

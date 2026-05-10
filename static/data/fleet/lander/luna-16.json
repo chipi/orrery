@@ -20,5 +20,11 @@
   ],
   "linked_missions": [
     "luna24"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "luna24"
+    }
   ]
 }

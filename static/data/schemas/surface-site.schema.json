@@ -50,6 +50,19 @@
         "pattern": "^[a-z0-9-]+$",
         "description": "Cross-link to data/missions/{moon,mars}/[mission_id].json. When set, the panel surfaces a 'FULL MISSION CARD' chip linking to /missions?id=[mission_id]."
       },
+      "fleet_refs": {
+        "type": "array",
+        "description": "Cross-reference to /fleet entries (PRD-012 v0.2 / RFC-016 v0.2 OQ-16). Each ref names the fleet entry id + the role this hardware played at this site. Validated bidirectionally at build: every id must exist in fleet/index.json, and the named fleet entry's linked_sites must include this site.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "role"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+            "role": { "enum": ["launcher", "spacecraft", "payload", "station"] }
+          }
+        }
+      },
       "links": {
         "type": "array",
         "items": {

@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Mars_Reconnaissance_Orbiter",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mro"
+    }
   ]
 }

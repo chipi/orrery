@@ -18,5 +18,11 @@
       "t": "intro"
     }
   ],
-  "explorer_route": "/iss"
+  "explorer_route": "/iss",
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "iss"
+    }
+  ]
 }

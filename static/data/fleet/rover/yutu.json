@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Yutu_(rover)",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "change3"
+    }
   ]
 }

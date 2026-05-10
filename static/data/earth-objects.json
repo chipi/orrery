@@ -36,6 +36,12 @@
         "u": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "iss",
+        "role": "station"
+      }
     ]
   },
   {
@@ -75,6 +81,12 @@
         "l": "China Manned Space program",
         "u": "https://en.wikipedia.org/wiki/Chinese_large_modular_space_station",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "tiangong",
+        "role": "station"
       }
     ]
   },
@@ -116,6 +128,12 @@
         "l": "Hubble servicing missions (NASA)",
         "u": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "hubble",
+        "role": "spacecraft"
       }
     ]
   },
@@ -329,6 +347,12 @@
         "u": "https://en.wikipedia.org/wiki/X-ray_astronomy",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "chandra",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -362,6 +386,12 @@
         "l": "ESA XMM-Newton science",
         "u": "https://www.cosmos.esa.int/web/xmm-newton",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "xmm-newton",
+        "role": "spacecraft"
       }
     ]
   },
@@ -595,6 +625,12 @@
         "u": "http://www.clep.org.cn/",
         "t": "intro"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-2",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -644,6 +680,12 @@
         "u": "https://www.stsci.edu/jwst/science-execution/approved-programs",
         "t": "deep"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "jwst",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -675,6 +717,12 @@
         "l": "L2 Lagrange point — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Lagrange_point",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "gaia",
+        "role": "spacecraft"
       }
     ]
   }

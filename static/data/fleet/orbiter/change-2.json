@@ -17,5 +17,15 @@
       "u": "https://en.wikipedia.org/wiki/Chang%27e_2",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "change2"
+    },
+    {
+      "type": "earth-object",
+      "site_id": "change2"
+    }
   ]
 }

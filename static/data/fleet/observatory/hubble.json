@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "hubble"
+    }
   ]
 }

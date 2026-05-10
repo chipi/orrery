@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "gaia"
+    }
   ]
 }

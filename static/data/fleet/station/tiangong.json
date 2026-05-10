@@ -18,5 +18,11 @@
       "t": "intro"
     }
   ],
-  "explorer_route": "/tiangong"
+  "explorer_route": "/tiangong",
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tiangong"
+    }
+  ]
 }

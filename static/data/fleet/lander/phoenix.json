@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "phoenix"
+    }
   ]
 }

@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "schiaparelli"
+    }
   ]
 }

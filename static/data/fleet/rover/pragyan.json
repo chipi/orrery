@@ -20,5 +20,11 @@
   ],
   "linked_missions": [
     "chandrayaan3"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "chandrayaan3"
+    }
   ]
 }

@@ -20,5 +20,11 @@
   ],
   "linked_missions": [
     "mars3"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mars3"
+    }
   ]
 }

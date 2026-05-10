@@ -21,5 +21,11 @@
   "linked_missions": [
     "artemis2",
     "artemis3"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "artemis3"
+    }
   ]
 }

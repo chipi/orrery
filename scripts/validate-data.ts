@@ -216,12 +216,23 @@ const FLEET_CATEGORIES = [
   'observatory',
 ];
 
-const fleetEntries: Array<{ id: string; category: string; linked_missions?: string[] }> = [];
+type FleetLinkedSite = { type: 'moon' | 'mars' | 'earth-object'; site_id: string };
+const fleetEntries: Array<{
+  id: string;
+  category: string;
+  linked_missions?: string[];
+  linked_sites?: FleetLinkedSite[];
+}> = [];
 for (const category of FLEET_CATEGORIES) {
   for (const file of listJson(join(FLEET_DIR, category))) {
     validateFile(file, validateFleetEntry);
     try {
-      const entry = readJson(file) as { id: string; category: string; linked_missions?: string[] };
+      const entry = readJson(file) as {
+        id: string;
+        category: string;
+        linked_missions?: string[];
+        linked_sites?: FleetLinkedSite[];
+      };
       fleetEntries.push(entry);
     } catch {
       // schema validation already reported the parse error
@@ -334,6 +345,83 @@ for (const [missionId, refs] of missionFleetRefs.entries()) {
         `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-missions.ts\` to derive linked_missions from fleet_refs`,
       );
       failed += 1;
+    }
+  }
+}
+
+// PRD-012 v0.2 / RFC-016 v0.2 OQ-16 — fleet ↔ surface markers / orbital
+// objects BIDIRECTIONAL cross-reference integrity (Phase K). Same shape
+// as the missions check above, applied to moon-sites + mars-sites +
+// earth-objects.
+type SiteSource = { type: 'moon' | 'mars' | 'earth-object'; path: string };
+const SITE_SOURCES: SiteSource[] = [
+  { type: 'moon', path: join(DATA_ROOT, 'moon-sites.json') },
+  { type: 'mars', path: join(DATA_ROOT, 'mars-sites.json') },
+  { type: 'earth-object', path: join(DATA_ROOT, 'earth-objects.json') },
+];
+
+const siteFleetRefs = new Map<string, Array<{ type: SiteSource['type']; refs: FleetRef[] }>>();
+const siteIdsByType = new Map<SiteSource['type'], Set<string>>();
+for (const src of SITE_SOURCES) {
+  if (!existsSync(src.path)) continue;
+  const records = readJson(src.path) as Array<{ id: string; fleet_refs?: FleetRef[] }>;
+  const ids = new Set<string>();
+  for (const rec of records) {
+    ids.add(rec.id);
+    if (!rec.fleet_refs || rec.fleet_refs.length === 0) continue;
+    const existing = siteFleetRefs.get(rec.id) ?? [];
+    existing.push({ type: src.type, refs: rec.fleet_refs });
+    siteFleetRefs.set(rec.id, existing);
+  }
+  siteIdsByType.set(src.type, ids);
+}
+
+// Build fleet → linked_sites lookup keyed as "type::site_id" for fast set membership.
+const fleetLinkedSitesKey = new Map<string, Set<string>>();
+for (const entry of fleetEntries) {
+  const set = new Set<string>();
+  for (const ls of entry.linked_sites ?? []) {
+    set.add(`${ls.type}::${ls.site_id}`);
+  }
+  fleetLinkedSitesKey.set(entry.id, set);
+}
+
+// Check 1: fleet.linked_sites[*] resolves to a real site/object.
+for (const entry of fleetEntries) {
+  if (!entry.linked_sites || entry.linked_sites.length === 0) continue;
+  for (const ls of entry.linked_sites) {
+    const ids = siteIdsByType.get(ls.type);
+    if (!ids || !ids.has(ls.site_id)) {
+      console.error(
+        `\n  ✗ fleet/${entry.category}/${entry.id}.json: linked_sites entry ${ls.type}::${ls.site_id} does not resolve`,
+      );
+      failed += 1;
+    }
+  }
+}
+
+// Check 2 + 3: site/object.fleet_refs → fleet, and symmetric inclusion.
+for (const [siteId, sources] of siteFleetRefs.entries()) {
+  for (const { type, refs } of sources) {
+    for (const ref of refs) {
+      if (!fleetIdsSet.has(ref.id)) {
+        console.error(
+          `\n  ✗ ${type} site ${siteId}: fleet_refs id "${ref.id}" (role ${ref.role}) does not resolve to fleet/index.json`,
+        );
+        failed += 1;
+        continue;
+      }
+      const linkedKeys = fleetLinkedSitesKey.get(ref.id);
+      const expectedKey = `${type}::${siteId}`;
+      if (!linkedKeys || !linkedKeys.has(expectedKey)) {
+        console.error(
+          `\n  ✗ bidirectional drift: ${type} site ${siteId} references fleet ${ref.id} (${ref.role}), but ${ref.id}.linked_sites does not include {type:"${type}", site_id:"${siteId}"}`,
+        );
+        console.error(
+          `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-sites.ts\` to derive linked_sites from fleet_refs`,
+        );
+        failed += 1;
+      }
     }
   }
 }

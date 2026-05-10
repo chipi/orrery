@@ -17,5 +17,11 @@
       "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory",
       "t": "intro"
     }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "chandra"
+    }
   ]
 }

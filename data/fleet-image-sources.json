@@ -889,7 +889,7 @@
   },
   "salyut-7/01.jpg": {
     "agency": "ROSCOSMOS",
-    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf/page1-960px-Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Salyut_7_drawing.png"
   },
   "salyut-7/02.jpg": {
     "agency": "ROSCOSMOS",
@@ -2414,5 +2414,37 @@
   "gaia/05.jpg": {
     "agency": "ESA",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Hubble_Brown_Dwarf_Survey_Illustration_%282024-005%29.tiff/lossy-page1-960px-Hubble_Brown_Dwarf_Survey_Illustration_%282024-005%29.tiff.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  },
+  "cygnus-standard/03.jpg": {
+    "agency": "NORTHROP_GRUMMAN",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Cygnus_Enhanced_spacecraft.jpg"
+  },
+  "tiangong-2/03.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianzhou-1_and_Tiangong-2_rendering.jpg"
+  },
+  "long-march-5/05.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Launching_Tianhe_Core_Module.jpg"
+  },
+  "progress-7k-tg/03.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/ISS_Progress_cargo_spacecraft.jpg"
+  },
+  "slim/03.jpg": {
+    "agency": "JAXA",
+    "sourceUrl": "https://www.isas.jaxa.jp/en/missions/files/slim_main3.jpg"
+  },
+  "salyut-7/06.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf/page1-960px-Walking_to_Olympus%2C_An_EVA_Chronology_-_NASA_Monographs_in_Aerospace_History%2C_No._7_%281997%29.pdf.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  },
+  "soyuz-7k-ok/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Soyuz_7K-OK(A)_drawing.png"
+  },
+  "gaia/06.jpg": {
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaia_observes_the_Milky_Way_ESA24305955.jpeg"
   }
 }

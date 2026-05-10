@@ -116,6 +116,8 @@
   </main>
   <footer class="site-footer" aria-label="Site footer">
     <nav class="footer-menu" aria-label="Footer links">
+      <a class="footer-link" href="{base}/posters">{m.layout_footer_gallery()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>

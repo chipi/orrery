@@ -8,6 +8,7 @@ import {
   resolveLocale,
   canonicaliseLocaleInUrl,
   isLocaleUrlCanonical,
+  LOCALE_COOKIE_NAME,
 } from './locale';
 
 describe('SUPPORTED_LOCALES', () => {
@@ -113,6 +114,38 @@ describe('resolveLocale', () => {
     const url = new URL('https://orrery.local/explore');
     expect(resolveLocale(url, 'bn-BD')).toBe(DEFAULT_LOCALE);
     expect(resolveLocale(url, undefined)).toBe(DEFAULT_LOCALE);
+  });
+
+  // ─── ADR-057: cookie precedence ────────────────────────────────
+  it('cookie sits between URL and navigator.language (URL still wins)', () => {
+    const url = new URL('https://orrery.local/explore?lang=fr');
+    expect(resolveLocale(url, 'de-DE', 'it')).toBe('fr');
+  });
+  it('cookie used when no URL ?lang= (overrides navigator.language)', () => {
+    const url = new URL('https://orrery.local/explore');
+    expect(resolveLocale(url, 'de-DE', 'it')).toBe('it');
+  });
+  it('cookie ignored when not a supported locale', () => {
+    const url = new URL('https://orrery.local/explore');
+    // @ts-expect-error testing runtime guard against malformed cookie
+    expect(resolveLocale(url, 'de-DE', 'xx')).toBe('de');
+  });
+  it('null cookie behaves identically to omitted cookie', () => {
+    const url = new URL('https://orrery.local/explore');
+    expect(resolveLocale(url, 'de-DE', null)).toBe('de');
+    expect(resolveLocale(url, 'de-DE')).toBe('de');
+  });
+  it('cookie holds en-US explicitly → resolves to en-US even when browser is German', () => {
+    // Sharing semantics: a user who explicitly picked English should
+    // stay English on fresh URLs regardless of their browser locale.
+    const url = new URL('https://orrery.local/explore');
+    expect(resolveLocale(url, 'de-DE', 'en-US')).toBe('en-US');
+  });
+});
+
+describe('LOCALE_COOKIE_NAME', () => {
+  it('is the canonical cookie name per ADR-057', () => {
+    expect(LOCALE_COOKIE_NAME).toBe('orrery_locale');
   });
 });
 

@@ -347,7 +347,7 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 - Do not design desktop-first
 - Do not use `any` in TypeScript without justification
 - Do not add npm dependencies without ADR
-- Do not use `localStorage` or `sessionStorage`
+- Do not use `localStorage` or `sessionStorage`. Cookies are also forbidden for user preferences EXCEPT the single narrowly-scoped `orrery_locale` cookie permitted by ADR-057 (explicit user-set locale override only — auto-detect, Science Lens, mission filters, and any other state stay runtime-only). Any new cookie requires its own ADR.
 - Do not use `THREE.CapsuleGeometry` (not in r128)
 - Do not use `console.log` in production code
 - Do not add new images, mission/planet/site descriptions, or external text fragments without updating `static/data/image-provenance.json` (auto-generated), `static/data/text-sources.json`, or `static/data/source-logos.json` in the same PR — see ADR-047. New license short names must land in `scripts/license-allowlist.ts` or be waived in `static/data/license-waivers.json`.

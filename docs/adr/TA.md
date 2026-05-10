@@ -156,7 +156,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **Browser-only.** No server-side logic. No backend. No API server. The host (GitHub Pages today; nginx, Cloudflare Pages, or any static host in future per ADR-014) serves static files only. The application must work as `http://localhost` and from any static host.
 
-- **No user data.** No accounts. No login. No `localStorage`. No `sessionStorage`. No cookies for user preferences. State is session-only and resets on reload.
+- **No user data.** No accounts. No login. No `localStorage`. No `sessionStorage`. No cookies for user preferences **except the single `orrery_locale` cookie narrowly permitted by ADR-057** (explicit user-set locale override only; auto-detect, Science Lens, mission filters, install counter, and every other piece of state stay runtime-only). State is session-only and resets on reload, except for the single locale-preference cookie above.
 
 - **Three.js r128.** Not r129, not r130. r128 is the pinned version. `THREE.CapsuleGeometry` does not exist in r128 — use `CylinderGeometry` or `SphereGeometry` instead. CDN URL: `https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js` (CDN only in prototypes; production bundles locally).
 

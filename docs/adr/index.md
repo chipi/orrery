@@ -59,4 +59,4 @@
 | _ADR-054_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — fleet i18n strategy_ | _Pending (v0.6)_ | _—_ |
 | ADR-055 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
 | ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
-| ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Proposed (closes #73 Gap 2) | May 2026 |
+| ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Accepted (closes #73 Gap 2) | May 2026 |

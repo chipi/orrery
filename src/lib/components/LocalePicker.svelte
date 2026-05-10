@@ -6,6 +6,7 @@
     SUPPORTED_LOCALES,
     isSupportedLocale,
     localeFromPage,
+    writeLocaleCookie,
     type LocaleCode,
   } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -19,18 +20,23 @@
   );
 
   /**
-   * Switch locale: rewrite the URL `?lang=` parameter and tell
-   * Paraglide to use the new tag for compile-time string lookups
-   * inside `$derived` blocks. Storage-free per CLAUDE.md (URL is
-   * the only source of truth — see ADR-031 + RFC-010 §Maintainer-decisions).
+   * Switch locale: rewrite the URL `?lang=` parameter, persist the
+   * choice via the `orrery_locale` cookie (per ADR-057 — explicit
+   * user-action path only; auto-detect never writes), and tell
+   * Paraglide to use the new tag for compile-time string lookups.
+   *
+   * The cookie write is the single sanctioned exception to the
+   * "no client storage" rule (TA.md). It exists so that a user who
+   * picks a non-browser-default locale doesn't lose that pick on
+   * fresh-URL revisits. URL still wins on the next read.
    */
   async function pick(code: LocaleCode) {
     open = false;
     if (code === active) return;
     const url = new URL($page.url);
-    if (code === 'en-US') url.searchParams.delete('lang');
-    else url.searchParams.set('lang', code);
+    url.searchParams.set('lang', code);
     setLanguageTag(code);
+    writeLocaleCookie(code);
     // Stay SPA (no hard refresh) but force all route data/state that depends
     // on locale to re-run on the active page.
     await goto(url.pathname + url.search, { replaceState: false, keepFocus: true });

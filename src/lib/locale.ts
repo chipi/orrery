@@ -1,9 +1,16 @@
 /**
  * Locale resolution for Orrery's i18n layer.
  *
- * Single source of truth for "which locale is active right now" —
- * read from the URL `?lang=` parameter (per ADR-031 + ADR-017),
- * never from `localStorage` (CLAUDE.md ban).
+ * Source-of-truth precedence (per ADR-057):
+ *   1. URL `?lang=` parameter — wins always (preserves share-link semantics).
+ *   2. `orrery_locale` cookie — explicit user override only, written
+ *      from LocalePicker.pick() and never from auto-detect.
+ *   3. `navigator.language` — browser-default fallback.
+ *   4. `DEFAULT_LOCALE` — final fallback.
+ *
+ * `localStorage` / `sessionStorage` are never used (CLAUDE.md ban).
+ * The single cookie exception is narrowly scoped per ADR-057 and
+ * forbids creep to other state.
  *
  * Per ADR-031, locales are grouped in waves by script risk.
  * `SUPPORTED_LOCALES` lists locales currently available in the picker.
@@ -94,20 +101,24 @@ export function normaliseBrowserLocale(raw: string | undefined): LocaleCode | nu
 }
 
 /**
- * Resolve the active locale for a request. URL `?lang=` wins; if
- * absent, fall back to `navigatorLanguage` (the caller passes
- * `navigator.language` from the browser); final fallback is
- * `DEFAULT_LOCALE` per ADR-017.
+ * Resolve the active locale for a request. Precedence:
+ *   1. URL `?lang=` (when supported)
+ *   2. `cookieLocale` (when supported) — per ADR-057
+ *   3. `navigatorLanguage` (normalised)
+ *   4. `DEFAULT_LOCALE`
  *
- * Pure: no side effects, no URL mutation. The first-visit URL
- * rewrite happens in the caller (LocalePicker / +layout).
+ * Pure: no side effects, no URL mutation, no cookie reads. The
+ * caller (LocalePicker / +layout) supplies all inputs. Tests inject
+ * specific values directly without mocking `document` or `navigator`.
  */
 export function resolveLocale(
   url: URL | { searchParams: URLSearchParams },
   navigatorLanguage?: string,
+  cookieLocale?: LocaleCode | null,
 ): LocaleCode {
   const fromUrl = url.searchParams.get('lang');
   if (isSupportedLocale(fromUrl)) return fromUrl;
+  if (cookieLocale && isSupportedLocale(cookieLocale)) return cookieLocale;
   const fromBrowser = normaliseBrowserLocale(navigatorLanguage);
   if (fromBrowser) return fromBrowser;
   return DEFAULT_LOCALE;
@@ -123,10 +134,71 @@ export function resolveLocale(
  * `$derived` / `$effect` blocks re-evaluate and pick up the real URL
  * locale. This means the first paint for a `?lang=es` URL is briefly
  * en-US — a known + accepted trade-off for static prerendering.
+ *
+ * Reads the `orrery_locale` cookie (per ADR-057) so a user who
+ * previously chose a non-browser-default locale via LocalePicker
+ * gets that pick honoured even on a fresh URL with no `?lang=`.
  */
 export function localeFromPage(page: Page): LocaleCode {
   if (!browser) return DEFAULT_LOCALE;
-  return resolveLocale(page.url, navigator.language);
+  return resolveLocale(page.url, navigator.language, readLocaleCookie());
+}
+
+/**
+ * Cookie name for the explicit-user-set locale override (ADR-057).
+ * The ONLY cookie this app sets. See `writeLocaleCookie` for write
+ * semantics; never written from auto-detection paths.
+ */
+export const LOCALE_COOKIE_NAME = 'orrery_locale';
+
+/**
+ * Read the `orrery_locale` cookie (per ADR-057).
+ * Returns null if absent, malformed, or holding a non-supported code.
+ *
+ * SSR-safe: returns null when `document` is unavailable.
+ */
+export function readLocaleCookie(): LocaleCode | null {
+  if (!browser) return null;
+  for (const raw of document.cookie.split(';')) {
+    const [name, value] = raw.trim().split('=');
+    if (name !== LOCALE_COOKIE_NAME) continue;
+    const decoded = decodeURIComponent(value ?? '');
+    return isSupportedLocale(decoded) ? decoded : null;
+  }
+  return null;
+}
+
+/**
+ * Write the `orrery_locale` cookie (per ADR-057). MUST be called
+ * only from explicit user-action paths — currently just
+ * `LocalePicker.pick()`. Auto-detection / canonicalisation paths
+ * never write this cookie.
+ *
+ * Cookie attributes: `SameSite=Lax`, `Path=/`, `Max-Age=31536000`
+ * (1 year), `Secure` only on HTTPS. No HttpOnly because there is
+ * no server — the value must be readable from `document.cookie`.
+ *
+ * Stores every supported locale including DEFAULT_LOCALE: an
+ * explicit "use English" pick should persist even on a German
+ * browser, otherwise next-visit re-detects German.
+ */
+export function writeLocaleCookie(locale: LocaleCode): void {
+  if (!browser) return;
+  const isHttps = location.protocol === 'https:';
+  const secure = isHttps ? '; Secure' : '';
+  document.cookie = `${LOCALE_COOKIE_NAME}=${encodeURIComponent(locale)}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+}
+
+/**
+ * Delete the `orrery_locale` cookie. Provided for completeness +
+ * tests; no production caller as of v0.5.x. A future "reset
+ * preferences" UI would use this.
+ */
+export function clearLocaleCookie(): void {
+  if (!browser) return;
+  const isHttps = location.protocol === 'https:';
+  const secure = isHttps ? '; Secure' : '';
+  document.cookie = `${LOCALE_COOKIE_NAME}=; Max-Age=0; Path=/; SameSite=Lax${secure}`;
 }
 
 /**

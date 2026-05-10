@@ -151,9 +151,13 @@
   // Moon's heliocentric visual orbit radius around Earth, in AU. Real
   // is 0.0026 AU (~0.21 scene units) — too small to see at the same
   // SCALE_3D where Mars sits 80 units from the Sun. Exaggerated to
-  // 0.15 AU (~12 scene units) so cislunar missions read clearly while
-  // staying inside the Earth-orbit ring's visual footprint.
-  const MOON_FLY_RADIUS_AU = 0.15;
+  // 0.4 AU (~32 scene units) so the cislunar trip occupies roughly the
+  // same visual span as Earth→Mars (≈40 units) and the trajectory has
+  // room to read as a real journey rather than a compressed arc next
+  // to a fat Earth mesh. Earth's heliocentric orbit ring (radius 80u)
+  // still encloses the Moon, just with more visible breathing room
+  // around it.
+  const MOON_FLY_RADIUS_AU = 0.4;
   // Sidereal lunar month — Moon's heliocentric visual orbit period.
   const MOON_PERIOD_DAYS = 27.32;
 
@@ -310,6 +314,10 @@
   let arrMarker: THREE.Mesh | undefined;
   let depLabelSprite: THREE.Sprite | undefined;
   let arrLabelSprite: THREE.Sprite | undefined;
+  // Moon's orbit-ring around Earth — visible only during cislunar
+  // missions. Hoisted so the marker $effect can re-position it onto
+  // Earth and toggle visibility per-mode.
+  let moonOrbitRing: THREE.Mesh | undefined;
   // Refresh-callback for the LAUNCH / ARRIVAL sprite textures. Assigned
   // in onMount; called from a $effect whenever the mission or its
   // dates change so each mission shows its actual launch/arrival
@@ -361,10 +369,11 @@
   // Scene scale: 1 AU = SCALE_3D = 80 units. Moon-mode is a separate
   // Earth-Moon scale where the Moon sits at MOON_VISUAL_DISTANCE = 100.
   function cameraDistanceFor(destinationId: DestinationId, moonMode: boolean): number {
-    // Moon-mode: tight zoom on the Earth+Moon system (Apollo arc spans
-    // ~12 scene units). Sun stays in the heliocentric model but is
-    // intentionally off-camera unless the user pans out.
-    if (moonMode) return 50;
+    // Moon-mode: framed for the Earth+Moon pair (Apollo arc now spans
+    // ~32 scene units after the MOON_FLY_RADIUS_AU bump from 0.15 →
+    // 0.4 AU). Camera at ~100u gives both planets + the full arc room
+    // to breathe — Sun stays off-camera unless the user pans out.
+    if (moonMode) return 100;
     const orbitUnits = DESTINATIONS[destinationId].a * SCALE_3D;
     return Math.max(180, orbitUnits * 2.0);
   }
@@ -385,14 +394,23 @@
     const outArc = outPts;
     const retArc = retPts;
     if (!outLine || !retLine || !outLineFuture || !retLineFuture || !rebuildTubeGeometry) return;
+    // Moon-mode tubes get a thinner radius — the cislunar arc spans
+    // ~32 scene units (Earth-Moon at exaggerated 0.4 AU, vs ~40 for an
+    // Earth→Mars Hohmann), and the camera sits closer (≈100u vs
+    // ≈200u). 0.25u keeps the arc legible while restoring the
+    // proportional sense of distance between Earth and the Moon —
+    // the 0.6u heliocentric radius read as a fat sausage. Same scale
+    // factor re-applies to dep / arr markers + label sprites below.
+    const outRadius = isMoonMission ? 0.25 : 0.6;
+    const retRadius = isMoonMission ? 0.2 : 0.5;
     outLine.geometry.dispose();
-    outLine.geometry = rebuildTubeGeometry(outArc, 0.6);
+    outLine.geometry = rebuildTubeGeometry(outArc, outRadius);
     outLineFuture.geometry.dispose();
-    outLineFuture.geometry = rebuildTubeGeometry(outArc, 0.6);
+    outLineFuture.geometry = rebuildTubeGeometry(outArc, outRadius);
     retLine.geometry.dispose();
-    retLine.geometry = rebuildTubeGeometry(retArc, 0.5);
+    retLine.geometry = rebuildTubeGeometry(retArc, retRadius);
     retLineFuture.geometry.dispose();
-    retLineFuture.geometry = rebuildTubeGeometry(retArc, 0.5);
+    retLineFuture.geometry = rebuildTubeGeometry(retArc, retRadius);
     apsidesRecompute?.();
     const hasReturn = retArc.length >= 2;
     retLine.visible = hasReturn;
@@ -411,11 +429,31 @@
     // early-returns before reading either, so subsequent mission
     // loads never re-run this effect and the markers stay invisible.
     const arc = outPts;
-    // Touch isMoonMission so it stays a tracked dep — Moon-mode swaps
-    // change marker placement via the new heliocentric arc geometry.
-    void isMoonMission;
+    const moonMode = isMoonMission;
     if (!depMarker || !arrMarker || !depLabelSprite || !arrLabelSprite) return;
     if (arc.length === 0) return;
+    // Moon mode uses much smaller marker rings that hug the Earth and
+    // Moon meshes (Earth = 2.6u, Moon = 2.0u): a 3u-radius torus sits
+    // visibly around each planet without dwarfing the arc between
+    // them. The label sprites + Y-offset shrink in parallel so the
+    // text doesn't tower over a planet that's barely 3u wide.
+    const markerRadius = moonMode ? 3 : 12;
+    const markerTube = moonMode ? 0.08 : 0.25;
+    const labelW = moonMode ? 14 : 34;
+    const labelH = moonMode ? 4 : 10;
+    const labelY = moonMode ? 3.5 : 6;
+    // Swap geometry on mode change. Cheap: only fires when isMoonMission
+    // flips because the new radius differs from the existing one.
+    const depGeom = depMarker.geometry as THREE.TorusGeometry;
+    const currentRadius = depGeom?.parameters?.radius;
+    if (currentRadius !== markerRadius) {
+      depMarker.geometry.dispose();
+      arrMarker.geometry.dispose();
+      depMarker.geometry = new THREE.TorusGeometry(markerRadius, markerTube, 12, 64);
+      arrMarker.geometry = new THREE.TorusGeometry(markerRadius, markerTube, 12, 64);
+      depLabelSprite.scale.set(labelW, labelH, 1);
+      arrLabelSprite.scale.set(labelW, labelH, 1);
+    }
     // Anchor markers to outPts itself — the arc IS the geometry, so
     // dep/arr markers must sit at outPts[0] and outPts[N-1] which now
     // coincide with the live planet positions at dep_day / arr_day
@@ -428,15 +466,22 @@
     const arrZ = last.z * SCALE_3D;
     depMarker.position.set(depX, 0, depZ);
     arrMarker.position.set(arrX, 0, arrZ);
-    depLabelSprite.position.set(depX, 6, depZ);
-    arrLabelSprite.position.set(arrX, 6, arrZ);
+    depLabelSprite.position.set(depX, labelY, depZ);
+    arrLabelSprite.position.set(arrX, labelY, arrZ);
     depMarker.visible = true;
     arrMarker.visible = true;
     depLabelSprite.visible = true;
     arrLabelSprite.visible = true;
-    // Markers stay at full scale in both modes now — Moon-mode is
-    // also heliocentric (Earth+Moon both ~1 AU from Sun), so the
-    // 12-unit torus reads identically against Earth-orbit framing.
+    // Moon's orbit ring: visible in moon mode, anchored to Earth's
+    // live heliocentric position so it tracks correctly through the
+    // ~year-long Earth orbit even on long cislunar mission loads.
+    if (moonOrbitRing) {
+      moonOrbitRing.visible = moonMode;
+      if (moonMode) {
+        const ePos = earthPos(simDay);
+        moonOrbitRing.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+      }
+    }
   });
 
   // Refresh the LAUNCH / ARRIVAL sprite textures whenever the loaded
@@ -1376,6 +1421,23 @@
     arrMarker.rotation.x = Math.PI / 2;
     scene.add(arrMarker);
 
+    // Moon's orbit ring around Earth — only visible during cislunar
+    // missions. Radius = MOON_FLY_RADIUS_AU × SCALE_3D so it lines up
+    // exactly with where the Moon mesh travels each frame, and gives
+    // the cislunar arc a visible reference circle to read against.
+    moonOrbitRing = new THREE.Mesh(
+      new THREE.TorusGeometry(MOON_FLY_RADIUS_AU * SCALE_3D, 0.05, 8, 96),
+      new THREE.MeshBasicMaterial({
+        color: 0xcfcfcf,
+        transparent: true,
+        opacity: 0.25,
+        depthWrite: false,
+      }),
+    );
+    moonOrbitRing.rotation.x = Math.PI / 2;
+    moonOrbitRing.visible = false;
+    scene.add(moonOrbitRing);
+
     // Sprite labels — billboard text floating above each marker so
     // the user always sees "LAUNCH · <date>" / "<DEST> · <date>"
     // regardless of view angle. Two-line texture: top = identity
@@ -1451,8 +1513,14 @@
     const camTarget = new THREE.Vector3(0, 0, 0);
     const updateCam = () => {
       if (isMoonMission) {
+        // Track the Earth+Moon midpoint so both planets always sit
+        // inside the frame — Earth stays toward one side, Moon toward
+        // the other, the arc draws between them. Earth-only targeting
+        // (the previous behaviour) clipped Moon out of view as it
+        // orbited around behind the camera.
         const ePos = earthPos(simDay);
-        camTarget.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        const mPos = moonHelioPos(simDay);
+        camTarget.set(((ePos.x + mPos.x) / 2) * SCALE_3D, 0, ((ePos.z + mPos.z) / 2) * SCALE_3D);
       } else {
         camTarget.set(0, 0, 0);
       }
@@ -1861,6 +1929,11 @@
         const mPos = moonHelioPos(simDay);
         earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
         moonMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
+        // Track Moon's orbit ring to Earth's heliocentric position so
+        // it stays centred on Earth as both drift around the Sun.
+        if (moonOrbitRing && moonOrbitRing.visible) {
+          moonOrbitRing.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        }
       } else {
         marsMesh.visible = true;
         sunCore.visible = true;
@@ -1868,6 +1941,7 @@
         earthOrbitLine.visible = true;
         marsOrbitLine.visible = true;
         moonMesh.visible = false;
+        if (moonOrbitRing) moonOrbitRing.visible = false;
         // Earth + Mars orbit the Sun in real time as the spacecraft
         // flies. The fixed convergence points (where Earth was at
         // launch and where Mars will be at arrival) are marked by
@@ -1887,6 +1961,24 @@
       // camera by construction so the glyph is always centred on the
       // arc regardless of curvature.
       scSprite.position.set(sc.pos.x * SCALE_3D, 0, sc.pos.z * SCALE_3D);
+
+      // Phase-based visibility: once the spacecraft has launched, the
+      // LAUNCH marker becomes redundant clutter; once it has arrived,
+      // the ARRIVAL marker and the entire arc are mission-history —
+      // the scene "freezes" to just the planets continuing their orbits.
+      // Spacecraft sprite also hides on arrival.
+      const phaseNow = sc.phase;
+      const beforeLaunch = phaseNow === 'pre-launch';
+      const afterArrival = phaseNow === 'arrived';
+      if (depMarker) depMarker.visible = beforeLaunch;
+      if (depLabelSprite) depLabelSprite.visible = beforeLaunch;
+      if (arrMarker) arrMarker.visible = !afterArrival;
+      if (arrLabelSprite) arrLabelSprite.visible = !afterArrival;
+      if (outLine) outLine.visible = !afterArrival;
+      if (outLineFuture) outLineFuture.visible = !afterArrival;
+      if (retLine) retLine.visible = !afterArrival && retPts.length >= 2;
+      if (retLineFuture) retLineFuture.visible = !afterArrival && retPts.length >= 2;
+      scSprite.visible = !afterArrival;
 
       // ─── Science Layers — per-frame overlay updates ──────────────
       // Position SoI rings at Earth + Mars heliocentric positions and

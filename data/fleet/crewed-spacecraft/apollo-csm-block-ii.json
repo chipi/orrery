@@ -57,5 +57,127 @@
       "type": "moon",
       "site_id": "apollo17"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "apollo7",
+      "flight_designation": "Apollo 7 (1968-10-11) · first Block II crewed flight",
+      "crew": [
+        {
+          "name": "Wally Schirra",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Donn Eisele",
+          "role": "CMP",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Walter Cunningham",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo8",
+      "flight_designation": "Apollo 8 (1968-12-21) · first humans to leave Earth",
+      "crew": [
+        {
+          "name": "Frank Borman",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "James Lovell",
+          "role": "CMP",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "William Anders",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo11",
+      "flight_designation": "Apollo 11 (1969-07-16) · first lunar landing",
+      "crew": [
+        {
+          "name": "Neil Armstrong",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Michael Collins",
+          "role": "CMP",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Buzz Aldrin",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo13",
+      "flight_designation": "Apollo 13 (1970-04-11) · survival",
+      "crew": [
+        {
+          "name": "James Lovell",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Jack Swigert",
+          "role": "CMP",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Fred Haise",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo17",
+      "flight_designation": "Apollo 17 (1972-12-07) · last lunar mission",
+      "crew": [
+        {
+          "name": "Eugene Cernan",
+          "role": "Commander · last man on the Moon",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Ronald Evans",
+          "role": "CMP",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Harrison Schmitt",
+          "role": "LMP · only scientist-astronaut on the Moon",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

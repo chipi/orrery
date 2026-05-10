@@ -27,5 +27,73 @@
       "u": "https://www.roscosmos.ru/24181/",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "soyuz-ms-01",
+      "flight_designation": "Soyuz MS-01 (2016-07-07) · first MS-class crew",
+      "crew": [
+        {
+          "name": "Anatoli Ivanishin",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Takuya Onishi",
+          "role": "Flight engineer",
+          "agency": "JAXA",
+          "country": "Japan"
+        },
+        {
+          "name": "Kate Rubins",
+          "role": "Flight engineer",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-ms-10",
+      "flight_designation": "Soyuz MS-10 (2018-10-11) · launch abort, crew survived",
+      "crew": [
+        {
+          "name": "Aleksey Ovchinin",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Nick Hague",
+          "role": "Flight engineer",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-ms-22",
+      "flight_designation": "Soyuz MS-22 (2022-09-21) · coolant leak, MS-23 rescue",
+      "crew": [
+        {
+          "name": "Sergey Prokopyev",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Dmitri Petelin",
+          "role": "Flight engineer",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Frank Rubio",
+          "role": "Flight engineer · longest-ever single US spaceflight",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

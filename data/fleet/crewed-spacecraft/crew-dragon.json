@@ -27,5 +27,99 @@
       "u": "https://www.nasa.gov/wp-content/uploads/2020/11/crew-1-press-kit.pdf",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "demo-2",
+      "flight_designation": "Demo-2 (2020-05-30) · first commercial human spaceflight",
+      "crew": [
+        {
+          "name": "Doug Hurley",
+          "role": "Spacecraft commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Bob Behnken",
+          "role": "Joint operations commander",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "crew-1",
+      "flight_designation": "Crew-1 (2020-11-15) · first operational mission",
+      "crew": [
+        {
+          "name": "Michael Hopkins",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Victor Glover",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Shannon Walker",
+          "role": "Mission specialist",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Soichi Noguchi",
+          "role": "Mission specialist",
+          "agency": "JAXA",
+          "country": "Japan"
+        }
+      ]
+    },
+    {
+      "mission_id": "inspiration4",
+      "flight_designation": "Inspiration4 (2021-09-15) · first all-civilian orbital",
+      "crew": [
+        {
+          "name": "Jared Isaacman",
+          "role": "Commander",
+          "country": "USA"
+        },
+        {
+          "name": "Hayley Arceneaux",
+          "role": "Medical officer",
+          "country": "USA"
+        },
+        {
+          "name": "Sian Proctor",
+          "role": "Pilot",
+          "country": "USA"
+        },
+        {
+          "name": "Christopher Sembroski",
+          "role": "Mission specialist",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "crew-9",
+      "flight_designation": "Crew-9 (2024-09-28) · returned Starliner crew",
+      "crew": [
+        {
+          "name": "Nick Hague",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Aleksandr Gorbunov",
+          "role": "Mission specialist",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        }
+      ]
+    }
   ]
 }

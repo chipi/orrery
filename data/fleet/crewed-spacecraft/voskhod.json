@@ -27,5 +27,49 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-022A",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "voskhod1",
+      "flight_designation": "Voskhod 1 (1964-10-12) · first multi-crew",
+      "crew": [
+        {
+          "name": "Vladimir Komarov",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Konstantin Feoktistov",
+          "role": "Engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Boris Yegorov",
+          "role": "Physician",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "voskhod2",
+      "flight_designation": "Voskhod 2 (1965-03-18) · first spacewalk",
+      "crew": [
+        {
+          "name": "Pavel Belyayev",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Alexei Leonov",
+          "role": "EVA pilot",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    }
   ]
 }

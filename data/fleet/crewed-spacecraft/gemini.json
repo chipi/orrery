@@ -27,5 +27,79 @@
       "u": "https://history.nasa.gov/SP-4203/toc.htm",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "gemini4",
+      "flight_designation": "Gemini 4 (1965-06-03) · first US EVA",
+      "crew": [
+        {
+          "name": "James McDivitt",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Edward White",
+          "role": "EVA pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "gemini7",
+      "flight_designation": "Gemini 7 (1965-12-04) · first rendezvous",
+      "crew": [
+        {
+          "name": "Frank Borman",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "James Lovell",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "gemini8",
+      "flight_designation": "Gemini 8 (1966-03-16) · first docking",
+      "crew": [
+        {
+          "name": "Neil Armstrong",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "David Scott",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "gemini12",
+      "flight_designation": "Gemini 12 (1966-11-11) · last Gemini",
+      "crew": [
+        {
+          "name": "James Lovell",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Buzz Aldrin",
+          "role": "EVA pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

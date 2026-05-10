@@ -30,5 +30,139 @@
   ],
   "linked_missions": [
     "galileo"
+  ],
+  "flights": [
+    {
+      "mission_id": "sts-1",
+      "flight_designation": "STS-1 Columbia (1981-04-12) · first Shuttle flight",
+      "crew": [
+        {
+          "name": "John Young",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Robert Crippen",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "sts-7",
+      "flight_designation": "STS-7 Challenger (1983-06-18)",
+      "crew": [
+        {
+          "name": "Robert Crippen",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Sally Ride",
+          "role": "Mission specialist · first US woman in space",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Frederick Hauck",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "sts-31",
+      "flight_designation": "STS-31 Discovery (1990-04-24) · Hubble deployment",
+      "crew": [
+        {
+          "name": "Loren Shriver",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Charles Bolden",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Steven Hawley",
+          "role": "Mission specialist · deployed Hubble",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "sts-51-l",
+      "flight_designation": "STS-51-L Challenger (1986-01-28) · disaster",
+      "crew": [
+        {
+          "name": "Francis \"Dick\" Scobee",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Christa McAuliffe",
+          "role": "Teacher in Space",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Ronald McNair",
+          "role": "Mission specialist",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "sts-107",
+      "flight_designation": "STS-107 Columbia (2003-01-16) · disaster on reentry",
+      "crew": [
+        {
+          "name": "Rick Husband",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Ilan Ramon",
+          "role": "Payload specialist · first Israeli astronaut",
+          "agency": "NASA",
+          "country": "Israel"
+        },
+        {
+          "name": "Kalpana Chawla",
+          "role": "Mission specialist",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "sts-135",
+      "flight_designation": "STS-135 Atlantis (2011-07-08) · last Shuttle flight",
+      "crew": [
+        {
+          "name": "Christopher Ferguson",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Doug Hurley",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

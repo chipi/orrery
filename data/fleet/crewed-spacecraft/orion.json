@@ -37,5 +37,42 @@
       "type": "moon",
       "site_id": "artemis3"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "artemis1",
+      "flight_designation": "Artemis I (2022-11-16) · uncrewed lunar test",
+      "crew": []
+    },
+    {
+      "mission_id": "artemis2",
+      "flight_designation": "Artemis II (planned) · first crewed lunar flyby since 1972",
+      "crew": [
+        {
+          "name": "Reid Wiseman",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Victor Glover",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Christina Koch",
+          "role": "Mission specialist",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Jeremy Hansen",
+          "role": "Mission specialist",
+          "agency": "CSA",
+          "country": "Canada"
+        }
+      ]
+    }
   ]
 }

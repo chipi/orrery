@@ -27,5 +27,79 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2002-050A",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "soyuz-tma-1",
+      "flight_designation": "Soyuz TMA-1 (2002-10-30) · first ISS lifeboat",
+      "crew": [
+        {
+          "name": "Sergei Zalyotin",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Frank De Winne",
+          "role": "Flight engineer",
+          "agency": "ESA",
+          "country": "Belgium"
+        },
+        {
+          "name": "Yuri Lonchakov",
+          "role": "Flight engineer",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-tma-21",
+      "flight_designation": "Soyuz TMA-21 \"Gagarin\" (2011-04-04) · 50th anniversary",
+      "crew": [
+        {
+          "name": "Aleksandr Samokutyaev",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Andrey Borisenko",
+          "role": "Flight engineer",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Ron Garan",
+          "role": "Flight engineer",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-tma-22",
+      "flight_designation": "Soyuz TMA-22 (2011-11-13) · last analog Soyuz TMA",
+      "crew": [
+        {
+          "name": "Anton Shkaplerov",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Anatoly Ivanishin",
+          "role": "Flight engineer",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Daniel Burbank",
+          "role": "Flight engineer",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

@@ -27,5 +27,49 @@
       "u": "https://www.blueorigin.com/news/first-human-flight-updates",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "ns-16",
+      "flight_designation": "NS-16 (2021-07-20) · first crewed flight",
+      "crew": [
+        {
+          "name": "Jeff Bezos",
+          "role": "Crew",
+          "country": "USA"
+        },
+        {
+          "name": "Mark Bezos",
+          "role": "Crew",
+          "country": "USA"
+        },
+        {
+          "name": "Wally Funk",
+          "role": "Crew · oldest person in space (then)",
+          "country": "USA"
+        },
+        {
+          "name": "Oliver Daemen",
+          "role": "Crew · youngest person in space (then)",
+          "country": "Netherlands"
+        }
+      ]
+    },
+    {
+      "mission_id": "ns-18",
+      "flight_designation": "NS-18 (2021-10-13) · William Shatner",
+      "crew": [
+        {
+          "name": "William Shatner",
+          "role": "Crew · oldest person in space (90)",
+          "country": "USA"
+        },
+        {
+          "name": "Audrey Powers",
+          "role": "Vice President · Blue Origin",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

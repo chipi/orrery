@@ -27,5 +27,25 @@
       "u": "https://www.nasa.gov/commercial-crew/",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "cft",
+      "flight_designation": "CFT — Crew Flight Test (2024-06-05)",
+      "crew": [
+        {
+          "name": "Butch Wilmore",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Suni Williams",
+          "role": "Pilot",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

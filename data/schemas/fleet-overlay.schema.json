@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "fleet-overlay.schema.json",
+  "title": "FleetEntryOverlay",
+  "description": "Editorial overlay per fleet entry per locale (ADR-017 / PRD-012 v0.2 Phase G). Optional override for name + tagline + best_known_for, plus a translatable description paragraph that augments the base specs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["description"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Localised display name. Falls back to base entry's name when absent."
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 140,
+      "description": "Short headline shown on the card. Falls back to base entry's tagline when absent."
+    },
+    "best_known_for": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Single-line highlight rendered atop the OVERVIEW tab. Falls back to base entry's value when absent."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Editorial paragraph (2-4 sentences) rendered in the OVERVIEW tab below the spec grid. Required."
+    }
+  }
+}

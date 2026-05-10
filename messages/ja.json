@@ -721,7 +721,7 @@
   "landing_section_what_heading": "これは何？",
   "landing_section_what_p1": "Orreryはブラウザベースの太陽系エクスプローラー、ミッションシミュレーター、百科事典です。実際の軌道力学を内部で使用しています — ケプラーの二体伝播、転送軌道のためのランベルトソルバー、本物の飛行チームが使用するのと同じ方程式。バックエンドなし。アカウントなし。一度読み込むとオフラインで動作します。",
   "landing_section_what_p2": "飛行プランナーではありません。NORADへのAPIなし、リアルタイムTLE更新なし、ライブ打ち上げウィンドウ予測なし。数値は物理的に正しいですが様式化されています；カタログのミッションは本物ですが、その飛行アークは教育用モデルであり、伝播された状態ベクトルではありません。",
-  "landing_section_what_p3": "すべての人のために設計されています — 好奇心旺盛な素人、学生、宇宙愛好家、サンドボックスを求めるミッションプランナー。画面のあるあらゆるデバイスで動作するようにブラウザ向けに構築されています。MITライセンスのオープンソース。カタログには内側の太陽系の36の実際のミッションと月、4つの外側の惑星目的地が含まれています。",
+  "landing_section_what_p3": "すべての人のために設計されています — 好奇心旺盛な素人、学生、宇宙愛好家、サンドボックスを求めるミッションプランナー。画面のあるあらゆるデバイスで動作するようにブラウザ向けに構築されています。MITライセンスのオープンソース。カタログには内側の太陽系の36の実際のミッションと月、4つの外側の惑星目的地、そしてそれらを飛行した宇宙船の艦隊在庫が含まれています。",
   "landing_section_why_heading": "なぜ存在するのか",
   "landing_section_why_p1": "プロジェクトはアルテミスIIへの準備中に始まりました。NASAは1972年以来初めて4人の人間を月の周りに送ろうとしていました、そしてそれについての公の議論はほとんど完全に情報不足でした。人々は「自由帰還軌道」が何を意味するか知りませんでした。彼らは火星打ち上げウィンドウが26ヶ月ごとに発生する理由を知りませんでした。ロケット方程式を知りませんでした。",
   "landing_section_why_p2": "Orreryはそれへの答えです。宇宙飛行はニュートン以来理解されている物理学に基づいています。魔法のように見えるもののほとんどは、実際には見ることができます — 軌道を見ることができ、転送アークを計算でき、すべての公式を読むことができます。シミュレーターは正面玄関です；百科事典は教科書です；一緒になって彼らがプロジェクトです。",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "軌道を飛ぶ",
   "landing_card_fly_desc": "ミッションのアークをフェーズごとに歩く、∆vとタイミングがHUDでライブ。",
   "landing_card_missions_title": "36ミッションカタログ",
-  "landing_card_missions_desc": "スプートニクからアルテミスIIまでの本物の宇宙船 — それぞれの飛行データ。",
+  "landing_card_missions_desc": "他の世界への本物の旅 — スプートニクからアルテミスIIまで、それぞれの飛行データ付き。",
   "landing_card_earth_title": "地球軌道エクスプローラー",
   "landing_card_earth_desc": "アクティブ衛星、GPS、ISS、JWST — 私たちの裏庭にあるすべて。",
   "landing_card_moon_title": "月面マップ",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "内蔵百科事典",
   "landing_card_science_desc": "8タブにわたる54のセクション。すべての公式、名付けられた法則、手書きの図表。",
   "landing_card_fleet_title": "宇宙飛行艦隊",
-  "landing_card_fleet_desc": "乗組員、ペイロード、結果を含む歴史的および現在の宇宙船。",
+  "landing_card_fleet_desc": "宇宙船自体 — ほとんどの歴史的および現在の艦隊、乗組員、ペイロード、結果を含む。",
   "landing_footer_heading": "このプロジェクトについて",
   "landing_footer_about": "OrreryはMITライセンスの下でオープンソースです。アカウントなし。トラッキングなし。1つの機能的Cookieが明示的なロケール選択を保存します（ADR-057による）。",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "ライセンス",
   "landing_footer_link_credits": "クレジット",
   "landing_footer_link_library": "ライブラリ",
-  "landing_footer_link_ta": "技術的権威"
+  "landing_footer_link_ta": "技術的権威",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "ライセンス",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "技術的権威 — エンジニアリング決定"
 }

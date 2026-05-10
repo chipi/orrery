@@ -23,27 +23,33 @@ test.describe('landing page (/)', () => {
     const cards = page.locator('[data-testid="landing-cards"] > li');
     await expect(cards).toHaveCount(11);
 
-    // Card slugs in canonical order
+    // Card slugs in canonical Nav order (explore · missions · fleet · plan · fly ...)
     const expectedSlugs = [
       '/explore',
+      '/missions',
+      '/fleet',
       '/plan',
       '/fly',
-      '/missions',
       '/earth',
       '/moon',
       '/mars',
       '/iss',
       '/tiangong',
       '/science',
-      '/fleet',
     ];
     for (let i = 0; i < expectedSlugs.length; i++) {
       await expect(cards.nth(i).locator('.card-route')).toHaveText(expectedSlugs[i]);
     }
 
-    // Footer block has the 6 link labels
-    const footerLinks = page.locator('.about-links a');
-    await expect(footerLinks).toHaveCount(6);
+    // About-this-project section has prose only (link list moved to
+    // persistent site-footer in +layout.svelte).
+    await expect(page.locator('.about-body')).toBeVisible();
+    await expect(page.locator('.about-links')).toHaveCount(0);
+
+    // Persistent site-footer has the 6 project links + version on desktop.
+    // (Mobile drops the 'extra' set; this assertion runs at desktop viewport.)
+    const persistentLinks = page.locator('.site-footer .footer-link');
+    await expect(persistentLinks).toHaveCount(6);
 
     expect(errors).toEqual([]);
   });
@@ -57,7 +63,8 @@ test.describe('landing page (/)', () => {
 
   test('cards navigate to their canonical routes', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    await page.locator('[data-testid="landing-cards"] > li:nth-child(10) a').click(); // /science
+    // /science is now the 11th (last) card after the reorder.
+    await page.locator('[data-testid="landing-cards"] > li:nth-child(11) a').click();
     await page.waitForLoadState('networkidle');
     await expect(page).toHaveURL(/\/science(\?|$)/);
   });

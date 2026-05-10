@@ -15,19 +15,22 @@
   // Card definitions in the canonical order from PRD-013 §scope.
   // Title + description come from message catalogue; route is the
   // canonical app path.
+  // Card order matches the Nav (Nav.svelte): explore · missions · fleet ·
+  // plan · fly · earth · moon · mars · iss · tiangong · science.
   const cards = $derived([
     {
       route: '/explore',
       title: m.landing_card_explore_title(),
       desc: m.landing_card_explore_desc(),
     },
-    { route: '/plan', title: m.landing_card_plan_title(), desc: m.landing_card_plan_desc() },
-    { route: '/fly', title: m.landing_card_fly_title(), desc: m.landing_card_fly_desc() },
     {
       route: '/missions',
       title: m.landing_card_missions_title(),
       desc: m.landing_card_missions_desc(),
     },
+    { route: '/fleet', title: m.landing_card_fleet_title(), desc: m.landing_card_fleet_desc() },
+    { route: '/plan', title: m.landing_card_plan_title(), desc: m.landing_card_plan_desc() },
+    { route: '/fly', title: m.landing_card_fly_title(), desc: m.landing_card_fly_desc() },
     { route: '/earth', title: m.landing_card_earth_title(), desc: m.landing_card_earth_desc() },
     { route: '/moon', title: m.landing_card_moon_title(), desc: m.landing_card_moon_desc() },
     { route: '/mars', title: m.landing_card_mars_title(), desc: m.landing_card_mars_desc() },
@@ -42,7 +45,6 @@
       title: m.landing_card_science_title(),
       desc: m.landing_card_science_desc(),
     },
-    { route: '/fleet', title: m.landing_card_fleet_title(), desc: m.landing_card_fleet_desc() },
   ]);
 </script>
 
@@ -53,7 +55,88 @@
 
 <article class="landing" data-testid="landing">
   <header class="hero">
-    <h1 class="wordmark">ORRERY</h1>
+    <div class="hero-row">
+      <!-- Left flourish: a tiny orrery — Sun + three concentric orbits + a planet on each.
+           Engineering-blueprint style matching /science diagrams (white stroke, teal accents). -->
+      <svg
+        class="hero-art hero-art-left"
+        viewBox="0 0 160 160"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="80" cy="80" r="4" fill="#ffc850" />
+        <circle
+          cx="80"
+          cy="80"
+          r="22"
+          fill="none"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="1"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="44"
+          fill="none"
+          stroke="rgba(255,255,255,0.3)"
+          stroke-width="1"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="68"
+          fill="none"
+          stroke="rgba(255,255,255,0.22)"
+          stroke-width="1"
+          stroke-dasharray="3 3"
+        />
+        <circle cx="102" cy="80" r="2.5" fill="rgba(255,255,255,0.85)" />
+        <circle cx="55" cy="58" r="3" fill="rgba(193,68,14,0.85)" />
+        <circle cx="80" cy="148" r="3.5" fill="rgba(78,205,196,0.85)" />
+      </svg>
+
+      <h1 class="wordmark">ORRERY</h1>
+
+      <!-- Right flourish: a Hohmann-style transfer arc — inner orbit + outer orbit
+           + the elliptical transfer that connects them at perihelion and aphelion. -->
+      <svg
+        class="hero-art hero-art-right"
+        viewBox="0 0 160 160"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="80" cy="80" r="4" fill="#ffc850" />
+        <circle
+          cx="80"
+          cy="80"
+          r="28"
+          fill="none"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="1"
+        />
+        <circle
+          cx="80"
+          cy="80"
+          r="62"
+          fill="none"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="1"
+        />
+        <ellipse
+          cx="80"
+          cy="80"
+          rx="45"
+          ry="44"
+          fill="none"
+          stroke="#4ecdc4"
+          stroke-width="1.5"
+          stroke-dasharray="4 3"
+        />
+        <circle cx="108" cy="80" r="2.5" fill="rgba(255,255,255,0.85)" />
+        <circle cx="18" cy="80" r="3" fill="#4ecdc4" />
+      </svg>
+    </div>
+
     <p class="tagline">{m.landing_hero_tagline()}</p>
     <p class="subhead">{m.landing_hero_subhead()}</p>
     <div class="cta-row">
@@ -123,40 +206,10 @@
   <section class="footer-block" aria-labelledby="about-heading">
     <h2 id="about-heading" class="about-heading">{m.landing_footer_heading()}</h2>
     <p class="about-body">{m.landing_footer_about()}</p>
-    <ul class="about-links">
-      <li>
-        <a href="https://github.com/chipi/orrery" rel="noopener noreferrer external" hreflang="en"
-          >{m.landing_footer_link_github()}</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/chipi/orrery#readme"
-          rel="noopener noreferrer external"
-          hreflang="en">{m.landing_footer_link_readme()}</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/chipi/orrery/blob/main/LICENSE"
-          rel="noopener noreferrer external"
-          hreflang="en">{m.landing_footer_link_license()}</a
-        >
-      </li>
-      <li>
-        <a href={withLang(`${base}/credits`)}>{m.landing_footer_link_credits()}</a>
-      </li>
-      <li>
-        <a href={withLang(`${base}/library`)}>{m.landing_footer_link_library()}</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/chipi/orrery/blob/main/docs/adr/TA.md"
-          rel="noopener noreferrer external"
-          hreflang="en">{m.landing_footer_link_ta()}</a
-        >
-      </li>
-    </ul>
+    <!-- Project links live in the persistent site-footer (rendered by
+         src/routes/+layout.svelte) so they're available on every route,
+         not just here. The About prose stays — the landing is the right
+         place for narrative context, the footer strip handles navigation. -->
   </section>
 </article>
 
@@ -172,12 +225,24 @@
     text-align: center;
     padding-bottom: 24px;
   }
+  .hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin: 0 0 16px;
+  }
+  .hero-art {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+  }
   .wordmark {
     font-family: var(--font-display);
     font-size: 96px;
     letter-spacing: 8px;
     line-height: 1;
-    margin: 0 0 16px;
+    margin: 0;
     color: var(--color-text);
   }
   .tagline {
@@ -336,32 +401,7 @@
     font-size: 12px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 16px;
-  }
-  .about-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    list-style: none;
     margin: 0;
-    padding: 0;
-  }
-  .about-links a {
-    font-family: var(--font-mono), 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 120ms;
-  }
-  .about-links a:hover,
-  .about-links a:focus-visible {
-    color: #4ecdc4;
-    outline: none;
-  }
-  .about-links a:focus-visible {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 
   /* ─── Tablet ───────────────────────────────────────────────── */
@@ -371,6 +411,13 @@
     }
     .wordmark {
       font-size: 80px;
+    }
+    .hero-art {
+      width: 110px;
+      height: 110px;
+    }
+    .hero-row {
+      gap: 24px;
     }
     .tagline {
       font-size: 20px;
@@ -388,6 +435,13 @@
     .wordmark {
       font-size: 48px;
       letter-spacing: 6px;
+    }
+    /* Drop the flourishes on mobile — wordmark stands alone for clarity. */
+    .hero-art {
+      display: none;
+    }
+    .hero-row {
+      gap: 0;
     }
     .tagline {
       font-size: 18px;

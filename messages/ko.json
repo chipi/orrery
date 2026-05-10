@@ -721,7 +721,7 @@
   "landing_section_what_heading": "이것은 무엇인가요?",
   "landing_section_what_p1": "Orrery는 브라우저 기반의 태양계 탐색기, 미션 시뮬레이터 및 백과사전입니다. 실제 궤도역학을 내부적으로 사용합니다 — 케플러 2체 전파, 전이 궤도를 위한 램버트 해법기, 실제 비행팀이 사용하는 것과 동일한 방정식. 백엔드 없음. 계정 없음. 한 번 로드되면 오프라인에서 작동합니다.",
   "landing_section_what_p2": "비행 계획기가 아닙니다. NORAD에 대한 API가 없으며, 실시간 TLE 업데이트도, 라이브 발사 윈도우 예측도 없습니다. 숫자는 물리적으로 정확하지만 양식화되어 있습니다; 카탈로그의 미션은 실제이지만 비행 아크는 교육 모델이며 전파된 상태 벡터가 아닙니다.",
-  "landing_section_what_p3": "모두를 위해 설계되었습니다 — 호기심 많은 일반인, 학생, 우주 애호가, 샌드박스를 원하는 미션 계획자. 화면이 있는 모든 장치에서 작동하도록 브라우저용으로 구축되었습니다. MIT 라이선스 오픈 소스. 카탈로그는 내부 태양계의 36개 실제 미션과 달, 4개의 외부 행성 목적지를 다룹니다.",
+  "landing_section_what_p3": "모두를 위해 설계되었습니다 — 호기심 많은 일반인, 학생, 우주 애호가, 샌드박스를 원하는 미션 계획자. 화면이 있는 모든 장치에서 작동하도록 브라우저용으로 구축되었습니다. MIT 라이선스 오픈 소스. 카탈로그는 내부 태양계의 36개 실제 미션과 달, 4개의 외부 행성 목적지, 그리고 이들을 비행한 우주선의 함대 인벤토리를 다룹니다.",
   "landing_section_why_heading": "왜 존재하나요",
   "landing_section_why_p1": "프로젝트는 아르테미스 II 준비 기간에 시작되었습니다. NASA는 1972년 이래 처음으로 네 명의 인간을 달 주위로 보내려고 했고, 그것에 대한 공개 대화는 거의 완전히 정보가 부족했습니다. 사람들은 \"자유 귀환 궤도\"가 무엇을 의미하는지 몰랐습니다. 화성 발사 윈도우가 26개월마다 발생하는 이유를 몰랐습니다. 로켓 방정식을 몰랐습니다.",
   "landing_section_why_p2": "Orrery가 그에 대한 답입니다. 우주 비행은 뉴턴 이래로 이해되어온 물리학을 기반으로 합니다. 마법처럼 보이는 대부분의 것은 실제로 볼 수 있습니다 — 궤도를 볼 수 있고, 전이 아크를 계산할 수 있으며, 모든 공식을 읽을 수 있습니다. 시뮬레이터는 정문이고; 백과사전은 교과서입니다; 함께 그들이 프로젝트입니다.",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "궤도 비행",
   "landing_card_fly_desc": "미션의 아크를 단계별로 걷고, ∆v와 타이밍이 HUD에 라이브로 표시됩니다.",
   "landing_card_missions_title": "36-미션 카탈로그",
-  "landing_card_missions_desc": "스푸트니크부터 아르테미스 II까지의 실제 우주선 — 각각에 대한 비행 데이터.",
+  "landing_card_missions_desc": "다른 세계로의 진짜 여정 — 스푸트니크부터 아르테미스 II까지, 각각의 비행 데이터.",
   "landing_card_earth_title": "지구 궤도 탐색기",
   "landing_card_earth_desc": "활성 위성, GPS, ISS, JWST — 우리 뒷마당의 모든 것.",
   "landing_card_moon_title": "달 표면 지도",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "내장 백과사전",
   "landing_card_science_desc": "8개 탭의 54개 섹션. 모든 공식, 모든 명명된 법칙, 손으로 그린 다이어그램.",
   "landing_card_fleet_title": "우주 비행 함대",
-  "landing_card_fleet_desc": "승무원, 탑재량, 결과를 포함한 역사적 및 현재 우주선.",
+  "landing_card_fleet_desc": "우주선 자체 — 대부분의 역사적 및 현재 함대, 승무원, 페이로드, 결과 포함.",
   "landing_footer_heading": "이 프로젝트에 대하여",
   "landing_footer_about": "Orrery는 MIT 라이선스에 따른 오픈 소스입니다. 계정 없음. 추적 없음. 하나의 기능적 쿠키가 명시적인 로케일 선택을 저장합니다 (ADR-057에 따라).",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "라이선스",
   "landing_footer_link_credits": "크레딧",
   "landing_footer_link_library": "라이브러리",
-  "landing_footer_link_ta": "기술 권한"
+  "landing_footer_link_ta": "기술 권한",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "라이선스",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "기술 권한 — 엔지니어링 결정"
 }

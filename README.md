@@ -27,7 +27,11 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 **<https://chipi.github.io/orrery/>** — every screen, fully offline-capable after first load.
 
-Available in **14 languages, all at 100% UI parity**: English · Español · Français · Deutsch · Português (BR) · Italiano · Nederlands · 中文 · 日本語 · 한국어 · हिन्दी · العربية (RTL) · Русский · Српски (Cyrillic).
+First-time visitors land on a 30-second orientation page (`/`) — what Orrery is, how to use it, and a 11-card grid linking to every primary route. Returning users skip past in one click via the nav.
+
+![](docs/screenshots/00-landing.png)
+
+Available in **14 languages, all at 100% UI parity**: English · Español · Français · Deutsch · Português (BR) · Italiano · Nederlands · 中文 · 日本語 · 한국어 · हिन्दी · العربية (RTL) · Русский · Српски (Cyrillic). Browser locale is auto-detected on first visit (per ADR-057, locale picks persist via a single functional cookie — no other storage, no tracking).
 
 ## Ten screens
 

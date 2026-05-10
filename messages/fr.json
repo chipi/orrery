@@ -721,7 +721,7 @@
   "landing_section_what_heading": "Qu'est-ce que c'est ?",
   "landing_section_what_p1": "Orrery est un explorateur du système solaire, un simulateur de mission et une encyclopédie, le tout dans le navigateur. Mécanique orbitale réelle sous le capot — propagation képlérienne à deux corps, solveurs de Lambert pour les trajectoires de transfert, les mêmes équations que les vraies équipes de vol. Pas de backend. Pas de comptes. Fonctionne hors ligne une fois chargé.",
   "landing_section_what_p2": "Ce n'est pas un planificateur de vol. Pas d'API vers le NORAD, pas de mises à jour TLE en temps réel, pas de prédictions de fenêtres de lancement en direct. Les nombres sont physiquement corrects mais stylisés ; les missions du catalogue sont réelles mais leurs arcs de vol sont des modèles pédagogiques, pas des vecteurs d'état propagés.",
-  "landing_section_what_p3": "Conçu pour tous — curieux, étudiants, passionnés de l'espace, planificateurs de missions qui veulent un bac à sable. Construit pour le navigateur pour fonctionner sur n'importe quel appareil avec un écran. Open-source sous MIT. Le catalogue couvre 36 missions réelles dans le système solaire interne plus la Lune et quatre destinations des planètes externes.",
+  "landing_section_what_p3": "Conçu pour tous — curieux, étudiants, passionnés de l'espace, planificateurs de missions qui veulent un bac à sable. Construit pour le navigateur pour fonctionner sur n'importe quel appareil avec un écran. Open-source sous MIT. Le catalogue couvre 36 missions réelles dans le système solaire interne plus la Lune et quatre destinations des planètes externes, et un inventaire de la flotte des vaisseaux qui les ont effectuées.",
   "landing_section_why_heading": "Pourquoi cela existe",
   "landing_section_why_p1": "Le projet a commencé pendant la préparation d'Artemis II. La NASA s'apprêtait à envoyer quatre humains autour de la Lune pour la première fois depuis 1972, et la conversation publique à ce sujet était presque entièrement désinformée. Les gens ne savaient pas ce que signifiait « trajectoire à retour libre ». Ils ne savaient pas pourquoi les fenêtres de lancement vers Mars se produisent tous les 26 mois. Ils ne connaissaient pas l'équation de la fusée.",
   "landing_section_why_p2": "Orrery est la réponse à cela. Le vol spatial repose sur une physique comprise depuis Newton. La majeure partie de ce qui semble magique est en fait visible — vous pouvez voir les orbites, calculer les arcs de transfert, lire chaque formule. Le simulateur est la porte d'entrée ; l'encyclopédie est le manuel ; ensemble, ils sont le projet.",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "Volez la trajectoire",
   "landing_card_fly_desc": "Parcourez l'arc d'une mission phase par phase, avec ∆v et timing en direct dans le HUD.",
   "landing_card_missions_title": "Catalogue de 36 missions",
-  "landing_card_missions_desc": "Vrais vaisseaux de Spoutnik à Artemis II — données de vol pour chacun.",
+  "landing_card_missions_desc": "Vrais voyages vers d'autres mondes — de Spoutnik à Artemis II, avec données de vol pour chacun.",
   "landing_card_earth_title": "Explorateur de l'orbite terrestre",
   "landing_card_earth_desc": "Satellites actifs, GPS, ISS, JWST — tout dans notre arrière-cour.",
   "landing_card_moon_title": "Carte de la surface lunaire",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "Encyclopédie intégrée",
   "landing_card_science_desc": "54 sections sur 8 onglets. Chaque formule, chaque loi nommée, diagrammes faits main.",
   "landing_card_fleet_title": "Flotte spatiale",
-  "landing_card_fleet_desc": "Vaisseaux historiques et actuels avec équipages, charges utiles et résultats.",
+  "landing_card_fleet_desc": "Les vaisseaux eux-mêmes — la plupart de la flotte historique et actuelle, avec équipages, charges et résultats.",
   "landing_footer_heading": "À propos de ce projet",
   "landing_footer_about": "Orrery est open-source sous licence MIT. Pas de comptes. Pas de pistage. Un cookie fonctionnel stocke votre choix explicite de langue (selon ADR-057).",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "Licence",
   "landing_footer_link_credits": "Crédits",
   "landing_footer_link_library": "Bibliothèque",
-  "landing_footer_link_ta": "Autorité technique"
+  "landing_footer_link_ta": "Autorité technique",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "Licence",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "Autorité technique — décisions d'ingénierie"
 }

@@ -44,6 +44,10 @@ const SHOTS: Shot[] = [
     settleMs: 1500,
   },
 
+  // ── 0 — landing page (PRD-013, /). Numbered 00 so it sorts first
+  //         in docs/screenshots/ without renumbering 01-15.
+  { file: '00-landing.png', path: '/', settleMs: 600 },
+
   // ── 1-6 — original primary nav routes (refresh) ───────────────────
   { file: '01-explore.png', path: '/explore', settleMs: 1500 },
   { file: '02-plan.png', path: '/plan', settleMs: 2500 },

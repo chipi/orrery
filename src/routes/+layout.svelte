@@ -119,6 +119,35 @@
       <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
       <span class="footer-sep" aria-hidden="true">|</span>
       <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>
+      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
+      <a
+        class="footer-link footer-link-extra"
+        href="https://github.com/chipi/orrery"
+        rel="noopener noreferrer external"
+        hreflang="en">{m.layout_footer_github()}</a
+      >
+      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
+      <a
+        class="footer-link footer-link-extra"
+        href="https://github.com/chipi/orrery#readme"
+        rel="noopener noreferrer external"
+        hreflang="en">{m.layout_footer_readme()}</a
+      >
+      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
+      <a
+        class="footer-link footer-link-extra"
+        href="https://github.com/chipi/orrery/blob/main/LICENSE"
+        rel="noopener noreferrer external"
+        hreflang="en">{m.layout_footer_license()}</a
+      >
+      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
+      <a
+        class="footer-link footer-link-extra"
+        href="https://github.com/chipi/orrery/blob/main/docs/adr/TA.md"
+        rel="noopener noreferrer external"
+        hreflang="en"
+        title={m.layout_footer_ta_title()}>{m.layout_footer_ta()}</a
+      >
       <span class="footer-sep" aria-hidden="true">|</span>
       <span class="footer-version" title="Build version">v{__APP_VERSION__}</span>
     </nav>
@@ -199,6 +228,17 @@
   .footer-link:focus-visible {
     text-decoration: underline;
     text-underline-offset: 3px;
+  }
+
+  /* On narrow viewports the footer pill keeps the essentials only —
+     Credits, Library, version. The "extra" links (GitHub, README,
+     License, TA) hide. They remain reachable via the landing page's
+     About-this-project section, the nav, and the GitHub repo. */
+  @media (max-width: 767px) {
+    .footer-link-extra,
+    .footer-sep-extra {
+      display: none;
+    }
   }
   .pwa-toast {
     position: fixed;

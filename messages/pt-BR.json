@@ -721,7 +721,7 @@
   "landing_section_what_heading": "O que é isso?",
   "landing_section_what_p1": "Orrery é um explorador do sistema solar, simulador de missão e enciclopédia, tudo no navegador. Mecânica orbital real sob o capô — propagação Kepleriana de dois corpos, solucionadores de Lambert para trajetórias de transferência, as mesmas equações que equipes de voo reais usam. Sem backend. Sem contas. Funciona offline assim que carregado.",
   "landing_section_what_p2": "Não é um planejador de voo. Não há API para o NORAD, não há atualizações TLE em tempo real, não há previsões ao vivo de janelas de lançamento. Os números são fisicamente corretos mas estilizados; as missões no catálogo são reais mas seus arcos de voo são modelos didáticos, não vetores de estado propagados.",
-  "landing_section_what_p3": "Projetado para todos — leigos curiosos, estudantes, entusiastas do espaço, planejadores de missão que querem um sandbox. Construído para o navegador para funcionar em qualquer dispositivo com tela. Código aberto sob MIT. O catálogo cobre 36 missões reais no sistema solar interno mais a Lua e quatro destinos do sistema externo.",
+  "landing_section_what_p3": "Projetado para todos — leigos curiosos, estudantes, entusiastas do espaço, planejadores de missão que querem um sandbox. Construído para o navegador para funcionar em qualquer dispositivo com tela. Código aberto sob MIT. O catálogo cobre 36 missões reais no sistema solar interno mais a Lua e quatro destinos do sistema externo, e um inventário da frota das naves que as voaram.",
   "landing_section_why_heading": "Por que isso existe",
   "landing_section_why_p1": "O projeto começou durante a preparação para a Artemis II. A NASA estava prestes a enviar quatro humanos ao redor da Lua pela primeira vez desde 1972, e a conversa pública sobre isso era quase totalmente desinformada. As pessoas não sabiam o que significava \"trajetória de retorno livre\". Não sabiam por que as janelas de lançamento para Marte ocorrem a cada 26 meses. Não conheciam a equação do foguete.",
   "landing_section_why_p2": "Orrery é a resposta para isso. A astronáutica é construída sobre física entendida desde Newton. A maior parte do que parece mágico é, na verdade, visível — você pode ver as órbitas, calcular os arcos de transferência, ler cada fórmula. O simulador é a porta da frente; a enciclopédia é o livro didático; juntos, eles são o projeto.",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "Voe a trajetória",
   "landing_card_fly_desc": "Percorra o arco de uma missão fase por fase, com ∆v e tempo ao vivo no HUD.",
   "landing_card_missions_title": "Catálogo de 36 missões",
-  "landing_card_missions_desc": "Naves reais do Sputnik à Artemis II — dados de voo para cada uma.",
+  "landing_card_missions_desc": "Viagens reais a outros mundos — do Sputnik à Artemis II, com dados de voo para cada uma.",
   "landing_card_earth_title": "Explorador da órbita terrestre",
   "landing_card_earth_desc": "Satélites ativos, GPS, EEI, JWST — tudo em nosso quintal.",
   "landing_card_moon_title": "Mapa da superfície lunar",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "Enciclopédia integrada",
   "landing_card_science_desc": "54 seções em 8 abas. Cada fórmula, cada lei nomeada, diagramas feitos à mão.",
   "landing_card_fleet_title": "Frota espacial",
-  "landing_card_fleet_desc": "Naves espaciais históricas e atuais com tripulações, cargas e resultados.",
+  "landing_card_fleet_desc": "As naves em si — a maior parte da frota histórica e atual, com tripulações, cargas e resultados.",
   "landing_footer_heading": "Sobre este projeto",
   "landing_footer_about": "Orrery é código aberto sob a licença MIT. Sem contas. Sem rastreamento. Um cookie funcional armazena sua escolha explícita de idioma (conforme ADR-057).",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "Licença",
   "landing_footer_link_credits": "Créditos",
   "landing_footer_link_library": "Biblioteca",
-  "landing_footer_link_ta": "Autoridade técnica"
+  "landing_footer_link_ta": "Autoridade técnica",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "Licença",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "Autoridade técnica — decisões de engenharia"
 }

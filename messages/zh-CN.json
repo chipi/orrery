@@ -721,7 +721,7 @@
   "landing_section_what_heading": "这是什么？",
   "landing_section_what_p1": "Orrery 是一个基于浏览器的太阳系探索器、任务模拟器和百科全书。真实的轨道力学在引擎盖下 — 开普勒二体传播、转移轨迹的兰伯特求解器，与真实飞行团队使用的相同方程。无后端。无账户。加载后离线运行。",
   "landing_section_what_p2": "它不是飞行规划器。没有 NORAD 的 API，没有实时 TLE 更新，没有实时发射窗口预测。数字在物理上正确但风格化；目录中的任务是真实的，但它们的飞行弧是教学模型，而不是传播的状态向量。",
-  "landing_section_what_p3": "为所有人设计 — 好奇的外行、学生、太空爱好者、想要沙盒的任务规划者。为浏览器构建，可在任何具有屏幕的设备上工作。MIT 许可下的开源。目录涵盖内太阳系中的 36 个真实任务以及月球和四个外行星目的地。",
+  "landing_section_what_p3": "为所有人设计 — 好奇的外行、学生、太空爱好者、想要沙盒的任务规划者。为浏览器构建，可在任何具有屏幕的设备上工作。MIT 许可下的开源。目录涵盖内太阳系中的 36 个真实任务以及月球和四个外行星目的地，以及执行它们的航天器舰队清单。",
   "landing_section_why_heading": "为什么存在",
   "landing_section_why_p1": "该项目始于阿耳忒弥斯 II 准备期间。NASA 即将自 1972 年以来首次将四名人类送上月球周围，关于此事的公开讨论几乎完全缺乏信息。人们不知道\"自由返回轨迹\"是什么意思。他们不知道为什么火星发射窗口每 26 个月发生一次。他们不知道火箭方程。",
   "landing_section_why_p2": "Orrery 是这个问题的答案。太空飞行建立在牛顿以来一直被理解的物理学之上。大多数看起来神奇的东西实际上是可见的 — 你可以看到轨道，可以计算转移弧，可以阅读每个公式。模拟器是前门；百科全书是教科书；它们一起就是项目。",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "飞行轨迹",
   "landing_card_fly_desc": "逐阶段走过任务的弧线，HUD 中实时显示 ∆v 和时间。",
   "landing_card_missions_title": "36 个任务的目录",
-  "landing_card_missions_desc": "从人造卫星到阿耳忒弥斯 II 的真实航天器 — 每个的飞行数据。",
+  "landing_card_missions_desc": "真正的星际之旅 — 从人造卫星到阿耳忒弥斯 II，每个都有飞行数据。",
   "landing_card_earth_title": "地球轨道探索器",
   "landing_card_earth_desc": "活跃卫星、GPS、ISS、JWST — 我们后院的一切。",
   "landing_card_moon_title": "月球表面地图",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "内置百科全书",
   "landing_card_science_desc": "8 个标签的 54 个部分。每个公式、每个命名定律、手绘图表。",
   "landing_card_fleet_title": "太空飞行舰队",
-  "landing_card_fleet_desc": "历史和当前的航天器，包括机组人员、有效载荷和结果。",
+  "landing_card_fleet_desc": "航天器本身 — 大部分历史和当前舰队，包括机组人员、有效载荷和结果。",
   "landing_footer_heading": "关于此项目",
   "landing_footer_about": "Orrery 是 MIT 许可下的开源软件。无账户。无跟踪。一个功能性 cookie 存储你明确的语言环境选择（根据 ADR-057）。",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "许可",
   "landing_footer_link_credits": "致谢",
   "landing_footer_link_library": "库",
-  "landing_footer_link_ta": "技术权威"
+  "landing_footer_link_ta": "技术权威",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "许可",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "技术权威 — 工程决策"
 }

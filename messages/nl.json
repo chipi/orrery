@@ -721,7 +721,7 @@
   "landing_section_what_heading": "Wat is dit?",
   "landing_section_what_p1": "Orrery is een zonnestelselverkenner, missiesimulator en encyclopedie, allemaal in de browser. Echte baanmechanica onder de motorkap — Kepleriaanse tweelichamenpropagatie, Lambert-oplossers voor transferbanen, dezelfde vergelijkingen die echte vluchtteams gebruiken. Geen backend. Geen accounts. Werkt offline zodra geladen.",
   "landing_section_what_p2": "Het is geen vluchtplanner. Geen API naar NORAD, geen TLE-updates in real-time, geen live voorspellingen van lanceervensters. De getallen zijn fysisch correct maar gestileerd; de missies in de catalogus zijn echt, maar hun vluchtbogen zijn lesmodellen, geen gepropageerde toestandsvectoren.",
-  "landing_section_what_p3": "Ontworpen voor iedereen — nieuwsgierige leken, studenten, ruimteliefhebbers, missieplanners die een sandbox willen. Gebouwd voor de browser om op elk apparaat met een scherm te werken. Open source onder MIT. De catalogus omvat 36 echte missies in het binnenste zonnestelsel plus de Maan en vier buitenplaneetbestemmingen.",
+  "landing_section_what_p3": "Ontworpen voor iedereen — nieuwsgierige leken, studenten, ruimteliefhebbers, missieplanners die een sandbox willen. Gebouwd voor de browser om op elk apparaat met een scherm te werken. Open source onder MIT. De catalogus omvat 36 echte missies in het binnenste zonnestelsel plus de Maan en vier buitenplaneetbestemmingen, en een vlootinventaris van de ruimtevaartuigen die ze hebben gevlogen.",
   "landing_section_why_heading": "Waarom dit bestaat",
   "landing_section_why_p1": "Het project begon in de aanloop naar Artemis II. NASA stond op het punt vier mensen voor het eerst sinds 1972 rond de Maan te sturen, en het publieke debat erover was bijna volledig oningelicht. Mensen wisten niet wat 'free-return-baan' betekende. Ze wisten niet waarom Mars-lanceervensters elke 26 maanden voorkomen. Ze kenden de raketvergelijking niet.",
   "landing_section_why_p2": "Orrery is het antwoord daarop. Ruimtevaart is gebouwd op fysica die sinds Newton bekend is. Het meeste dat magisch lijkt, is eigenlijk zichtbaar — je kunt de banen zien, de transferbogen berekenen, elke formule lezen. De simulator is de voordeur; de encyclopedie is het tekstboek; samen zijn ze het project.",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "Vlieg de baan",
   "landing_card_fly_desc": "Loop een missieboog fase voor fase, met ∆v en timing live in de HUD.",
   "landing_card_missions_title": "36-missiescatalogus",
-  "landing_card_missions_desc": "Echte ruimtevaartuigen van Spoetnik tot Artemis II — vluchtgegevens voor elk.",
+  "landing_card_missions_desc": "Echte reizen naar andere werelden — van Spoetnik tot Artemis II, met vluchtgegevens voor elk.",
   "landing_card_earth_title": "Aardbaanverkenner",
   "landing_card_earth_desc": "Actieve satellieten, GPS, ISS, JWST — alles in onze achtertuin.",
   "landing_card_moon_title": "Maanoppervlakte-kaart",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "Ingebouwde encyclopedie",
   "landing_card_science_desc": "54 secties op 8 tabbladen. Elke formule, elke benoemde wet, handgemaakte diagrammen.",
   "landing_card_fleet_title": "Ruimtevaartvloot",
-  "landing_card_fleet_desc": "Historische en huidige ruimtevaartuigen met bemanningen, ladingen en resultaten.",
+  "landing_card_fleet_desc": "De ruimtevaartuigen zelf — het grootste deel van de historische en huidige vloot, met bemanningen, ladingen en resultaten.",
   "landing_footer_heading": "Over dit project",
   "landing_footer_about": "Orrery is open source onder de MIT-licentie. Geen accounts. Geen tracking. Eén functionele cookie slaat je expliciete taalkeuze op (volgens ADR-057).",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "Licentie",
   "landing_footer_link_credits": "Credits",
   "landing_footer_link_library": "Bibliotheek",
-  "landing_footer_link_ta": "Technische autoriteit"
+  "landing_footer_link_ta": "Technische autoriteit",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "Licentie",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "Technische autoriteit — engineering-beslissingen"
 }

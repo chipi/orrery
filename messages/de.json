@@ -721,7 +721,7 @@
   "landing_section_what_heading": "Was ist das?",
   "landing_section_what_p1": "Orrery ist ein Browser-basierter Sonnensystem-Explorer, Missionssimulator und Enzyklopädie. Echte Orbitalmechanik unter der Haube — Keplersche Zwei-Körper-Propagation, Lambert-Löser für Transfertrajektorien, dieselben Gleichungen, die echte Flugteams verwenden. Kein Backend. Keine Konten. Läuft offline, sobald geladen.",
   "landing_section_what_p2": "Es ist kein Flugplaner. Keine API zu NORAD, keine Echtzeit-TLE-Aktualisierungen, keine Live-Vorhersagen von Startfenstern. Die Zahlen sind physikalisch korrekt, aber stilisiert; die Missionen im Katalog sind real, aber ihre Flugbögen sind Lehrmodelle, keine propagierten Zustandsvektoren.",
-  "landing_section_what_p3": "Entworfen für alle — neugierige Laien, Studenten, Weltraumbegeisterte, Missionsplaner, die einen Sandkasten wollen. Für den Browser gebaut, um auf jedem Gerät mit Bildschirm zu funktionieren. Open Source unter MIT. Der Katalog umfasst 36 reale Missionen im inneren Sonnensystem plus den Mond und vier äußere Planetenziele.",
+  "landing_section_what_p3": "Entworfen für alle — neugierige Laien, Studenten, Weltraumbegeisterte, Missionsplaner, die einen Sandkasten wollen. Für den Browser gebaut, um auf jedem Gerät mit Bildschirm zu funktionieren. Open Source unter MIT. Der Katalog umfasst 36 reale Missionen im inneren Sonnensystem plus den Mond und vier äußere Planetenziele, sowie ein Flotteninventar der Raumfahrzeuge, die sie geflogen haben.",
   "landing_section_why_heading": "Warum es existiert",
   "landing_section_why_p1": "Das Projekt begann im Vorlauf zu Artemis II. Die NASA wollte vier Menschen erstmals seit 1972 um den Mond schicken, und die öffentliche Konversation darüber war fast völlig uninformiert. Die Leute wussten nicht, was „Free-Return-Trajektorie\" bedeutet. Sie wussten nicht, warum Mars-Startfenster alle 26 Monate auftreten. Sie kannten die Raketengleichung nicht.",
   "landing_section_why_p2": "Orrery ist die Antwort darauf. Raumfahrt baut auf Physik auf, die seit Newton verstanden wird. Das meiste, was magisch aussieht, ist tatsächlich sichtbar — man kann die Umlaufbahnen sehen, die Transferbögen berechnen, jede Formel lesen. Der Simulator ist die Vordertür; die Enzyklopädie ist das Lehrbuch; zusammen sind sie das Projekt.",
@@ -738,7 +738,7 @@
   "landing_card_fly_title": "Trajektorie fliegen",
   "landing_card_fly_desc": "Den Bogen einer Mission Phase für Phase abgehen, mit ∆v und Timing live im HUD.",
   "landing_card_missions_title": "36-Missionen-Katalog",
-  "landing_card_missions_desc": "Echte Raumfahrzeuge von Sputnik bis Artemis II — Flugdaten für jedes.",
+  "landing_card_missions_desc": "Echte Reisen zu anderen Welten — von Sputnik bis Artemis II, mit Flugdaten für jede.",
   "landing_card_earth_title": "Erdorbit-Explorer",
   "landing_card_earth_desc": "Aktive Satelliten, GPS, ISS, JWST — alles in unserem Hinterhof.",
   "landing_card_moon_title": "Mondoberflächen-Karte",
@@ -752,7 +752,7 @@
   "landing_card_science_title": "Eingebaute Enzyklopädie",
   "landing_card_science_desc": "54 Abschnitte in 8 Tabs. Jede Formel, jedes benannte Gesetz, handgezeichnete Diagramme.",
   "landing_card_fleet_title": "Raumfahrt-Flotte",
-  "landing_card_fleet_desc": "Historische und aktuelle Raumfahrzeuge mit Besatzungen, Nutzlasten und Ergebnissen.",
+  "landing_card_fleet_desc": "Die Raumfahrzeuge selbst — der größte Teil der historischen und aktuellen Flotte, mit Besatzungen, Nutzlasten und Ergebnissen.",
   "landing_footer_heading": "Über dieses Projekt",
   "landing_footer_about": "Orrery ist Open Source unter der MIT-Lizenz. Keine Konten. Kein Tracking. Ein funktionales Cookie speichert deine explizite Sprachwahl (gemäß ADR-057).",
   "landing_footer_link_github": "GitHub",
@@ -760,5 +760,10 @@
   "landing_footer_link_license": "Lizenz",
   "landing_footer_link_credits": "Credits",
   "landing_footer_link_library": "Bibliothek",
-  "landing_footer_link_ta": "Technische Autorität"
+  "landing_footer_link_ta": "Technische Autorität",
+  "layout_footer_github": "GitHub",
+  "layout_footer_readme": "README",
+  "layout_footer_license": "Lizenz",
+  "layout_footer_ta": "TA",
+  "layout_footer_ta_title": "Technische Autorität — Engineering-Entscheidungen"
 }

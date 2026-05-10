@@ -15,3 +15,4 @@
 | PRD-010 | ISS Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
 | PRD-011 | Tiangong Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
 | PRD-012 | Spaceflight Fleet | Draft v0.1 | curious learner, STEM student, space enthusiast |
+| PRD-013 | Landing page (root `/`) | Draft v0.1 | first-time visitor, returning user, educator/journalist |

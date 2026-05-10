@@ -122,14 +122,8 @@
       <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
       <a
         class="footer-link footer-link-extra"
-        href="https://github.com/chipi/orrery"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_github()}</a
-      >
-      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-link-extra"
         href="https://github.com/chipi/orrery#readme"
+        target="_blank"
         rel="noopener noreferrer external"
         hreflang="en">{m.layout_footer_readme()}</a
       >
@@ -137,16 +131,9 @@
       <a
         class="footer-link footer-link-extra"
         href="https://github.com/chipi/orrery/blob/main/LICENSE"
+        target="_blank"
         rel="noopener noreferrer external"
         hreflang="en">{m.layout_footer_license()}</a
-      >
-      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-link-extra"
-        href="https://github.com/chipi/orrery/blob/main/docs/adr/TA.md"
-        rel="noopener noreferrer external"
-        hreflang="en"
-        title={m.layout_footer_ta_title()}>{m.layout_footer_ta()}</a
       >
       <span class="footer-sep" aria-hidden="true">|</span>
       <span class="footer-version" title="Build version">v{__APP_VERSION__}</span>

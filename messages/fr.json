@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Flotte spatiale",
   "landing_card_fleet_desc": "Les vaisseaux eux-mêmes — la plupart de la flotte historique et actuelle, avec équipages, charges et résultats.",
   "landing_footer_heading": "À propos de ce projet",
-  "landing_footer_about": "Orrery est open-source sous licence MIT. Pas de comptes. Pas de pistage. Un cookie fonctionnel stocke votre choix explicite de langue (selon ADR-057).",
+  "landing_footer_about": "Orrery est open-source sous licence MIT. Pas de comptes. Pas de pistage. Un cookie fonctionnel stocke votre choix explicite de langue.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licence",
   "landing_footer_link_credits": "Crédits",
   "landing_footer_link_library": "Bibliothèque",
   "landing_footer_link_ta": "Autorité technique",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Licence",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Autorité technique — décisions d'ingénierie"
+  "layout_footer_license": "Licence"
 }

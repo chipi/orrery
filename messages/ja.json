@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "宇宙飛行艦隊",
   "landing_card_fleet_desc": "宇宙船自体 — ほとんどの歴史的および現在の艦隊、乗組員、ペイロード、結果を含む。",
   "landing_footer_heading": "このプロジェクトについて",
-  "landing_footer_about": "OrreryはMITライセンスの下でオープンソースです。アカウントなし。トラッキングなし。1つの機能的Cookieが明示的なロケール選択を保存します（ADR-057による）。",
+  "landing_footer_about": "OrreryはMITライセンスの下でオープンソースです。アカウントなし。トラッキングなし。1つの機能的Cookieが明示的なロケール選択を保存します。",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "ライセンス",
   "landing_footer_link_credits": "クレジット",
   "landing_footer_link_library": "ライブラリ",
   "landing_footer_link_ta": "技術的権威",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "ライセンス",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "技術的権威 — エンジニアリング決定"
+  "layout_footer_license": "ライセンス"
 }

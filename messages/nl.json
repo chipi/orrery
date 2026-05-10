@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Ruimtevaartvloot",
   "landing_card_fleet_desc": "De ruimtevaartuigen zelf — het grootste deel van de historische en huidige vloot, met bemanningen, ladingen en resultaten.",
   "landing_footer_heading": "Over dit project",
-  "landing_footer_about": "Orrery is open source onder de MIT-licentie. Geen accounts. Geen tracking. Eén functionele cookie slaat je expliciete taalkeuze op (volgens ADR-057).",
+  "landing_footer_about": "Orrery is open source onder de MIT-licentie. Geen accounts. Geen tracking. Eén functionele cookie slaat je expliciete taalkeuze op.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licentie",
   "landing_footer_link_credits": "Credits",
   "landing_footer_link_library": "Bibliotheek",
   "landing_footer_link_ta": "Technische autoriteit",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Licentie",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Technische autoriteit — engineering-beslissingen"
+  "layout_footer_license": "Licentie"
 }

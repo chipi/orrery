@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Frota espacial",
   "landing_card_fleet_desc": "As naves em si — a maior parte da frota histórica e atual, com tripulações, cargas e resultados.",
   "landing_footer_heading": "Sobre este projeto",
-  "landing_footer_about": "Orrery é código aberto sob a licença MIT. Sem contas. Sem rastreamento. Um cookie funcional armazena sua escolha explícita de idioma (conforme ADR-057).",
+  "landing_footer_about": "Orrery é código aberto sob a licença MIT. Sem contas. Sem rastreamento. Um cookie funcional armazena sua escolha explícita de idioma.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licença",
   "landing_footer_link_credits": "Créditos",
   "landing_footer_link_library": "Biblioteca",
   "landing_footer_link_ta": "Autoridade técnica",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Licença",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Autoridade técnica — decisões de engenharia"
+  "layout_footer_license": "Licença"
 }

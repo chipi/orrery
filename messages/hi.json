@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "अंतरिक्ष उड़ान बेड़ा",
   "landing_card_fleet_desc": "अंतरिक्ष यान स्वयं — अधिकांश ऐतिहासिक और वर्तमान बेड़ा, चालक दल, पेलोड और परिणामों के साथ।",
   "landing_footer_heading": "इस परियोजना के बारे में",
-  "landing_footer_about": "Orrery MIT लाइसेंस के तहत ओपन-सोर्स है। कोई खाता नहीं। कोई ट्रैकिंग नहीं। एक कार्यात्मक कुकी आपके स्पष्ट लोकेल चयन को संग्रहीत करती है (ADR-057 के अनुसार)।",
+  "landing_footer_about": "Orrery MIT लाइसेंस के तहत ओपन-सोर्स है। कोई खाता नहीं। कोई ट्रैकिंग नहीं। एक कार्यात्मक कुकी आपके स्पष्ट लोकेल चयन को संग्रहीत करती है।",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "लाइसेंस",
   "landing_footer_link_credits": "क्रेडिट",
   "landing_footer_link_library": "लाइब्रेरी",
   "landing_footer_link_ta": "तकनीकी प्राधिकरण",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "लाइसेंस",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "तकनीकी प्राधिकरण — इंजीनियरिंग निर्णय"
+  "layout_footer_license": "लाइसेंस"
 }

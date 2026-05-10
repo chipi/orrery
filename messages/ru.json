@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Космический флот",
   "landing_card_fleet_desc": "Сами космические аппараты — большая часть исторического и современного флота, с экипажами, полезными нагрузками и результатами.",
   "landing_footer_heading": "Об этом проекте",
-  "landing_footer_about": "Orrery — это открытый исходный код под лицензией MIT. Без аккаунтов. Без отслеживания. Один функциональный cookie хранит ваш явный выбор языка (согласно ADR-057).",
+  "landing_footer_about": "Orrery — это открытый исходный код под лицензией MIT. Без аккаунтов. Без отслеживания. Один функциональный cookie хранит ваш явный выбор языка.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Лицензия",
   "landing_footer_link_credits": "Кредиты",
   "landing_footer_link_library": "Библиотека",
   "landing_footer_link_ta": "Технический орган",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Лицензия",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Технический орган — инженерные решения"
+  "layout_footer_license": "Лицензия"
 }

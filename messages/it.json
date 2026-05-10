@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Flotta dei voli spaziali",
   "landing_card_fleet_desc": "I veicoli stessi — la maggior parte della flotta storica e attuale, con equipaggi, carichi utili e risultati.",
   "landing_footer_heading": "Su questo progetto",
-  "landing_footer_about": "Orrery è open source sotto licenza MIT. Nessun account. Nessun tracciamento. Un cookie funzionale memorizza la tua scelta esplicita della lingua (per ADR-057).",
+  "landing_footer_about": "Orrery è open source sotto licenza MIT. Nessun account. Nessun tracciamento. Un cookie funzionale memorizza la tua scelta esplicita della lingua.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licenza",
   "landing_footer_link_credits": "Crediti",
   "landing_footer_link_library": "Biblioteca",
   "landing_footer_link_ta": "Autorità tecnica",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Licenza",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Autorità tecnica — decisioni ingegneristiche"
+  "layout_footer_license": "Licenza"
 }

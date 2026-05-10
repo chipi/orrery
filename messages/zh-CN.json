@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "太空飞行舰队",
   "landing_card_fleet_desc": "航天器本身 — 大部分历史和当前舰队，包括机组人员、有效载荷和结果。",
   "landing_footer_heading": "关于此项目",
-  "landing_footer_about": "Orrery 是 MIT 许可下的开源软件。无账户。无跟踪。一个功能性 cookie 存储你明确的语言环境选择（根据 ADR-057）。",
+  "landing_footer_about": "Orrery 是 MIT 许可下的开源软件。无账户。无跟踪。一个功能性 cookie 存储你明确的语言环境选择。",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "许可",
   "landing_footer_link_credits": "致谢",
   "landing_footer_link_library": "库",
   "landing_footer_link_ta": "技术权威",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "许可",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "技术权威 — 工程决策"
+  "layout_footer_license": "许可"
 }

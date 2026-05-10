@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Свемирска флота",
   "landing_card_fleet_desc": "Сама свемирска возила — већина историјске и тренутне флоте, са посадама, теретом и резултатима.",
   "landing_footer_heading": "О овом пројекту",
-  "landing_footer_about": "Orrery је отворени код под MIT лиценцом. Без налога. Без праћења. Један функционални колачић чува ваш експлицитни избор језика (према ADR-057).",
+  "landing_footer_about": "Orrery је отворени код под MIT лиценцом. Без налога. Без праћења. Један функционални колачић чува ваш експлицитни избор језика.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Лиценца",
   "landing_footer_link_credits": "Кредити",
   "landing_footer_link_library": "Библиотека",
   "landing_footer_link_ta": "Технички ауторитет",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Лиценца",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Технички ауторитет — инжењерске одлуке"
+  "layout_footer_license": "Лиценца"
 }

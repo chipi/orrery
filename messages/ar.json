@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "أسطول الرحلات الفضائية",
   "landing_card_fleet_desc": "المركبات الفضائية نفسها — معظم الأسطول التاريخي والحالي، مع الطاقم والحمولة والنتائج.",
   "landing_footer_heading": "حول هذا المشروع",
-  "landing_footer_about": "Orrery مفتوح المصدر بموجب رخصة MIT. لا حسابات. لا تتبع. ملف تعريف ارتباط وظيفي واحد يخزن اختيارك الصريح للغة (وفقاً لـ ADR-057).",
+  "landing_footer_about": "Orrery مفتوح المصدر بموجب رخصة MIT. لا حسابات. لا تتبع. ملف تعريف ارتباط وظيفي واحد يخزن اختيارك الصريح للغة.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "الترخيص",
   "landing_footer_link_credits": "الاعتمادات",
   "landing_footer_link_library": "المكتبة",
   "landing_footer_link_ta": "السلطة التقنية",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "الترخيص",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "السلطة التقنية — قرارات الهندسة"
+  "layout_footer_license": "الترخيص"
 }

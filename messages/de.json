@@ -754,16 +754,13 @@
   "landing_card_fleet_title": "Raumfahrt-Flotte",
   "landing_card_fleet_desc": "Die Raumfahrzeuge selbst — der größte Teil der historischen und aktuellen Flotte, mit Besatzungen, Nutzlasten und Ergebnissen.",
   "landing_footer_heading": "Über dieses Projekt",
-  "landing_footer_about": "Orrery ist Open Source unter der MIT-Lizenz. Keine Konten. Kein Tracking. Ein funktionales Cookie speichert deine explizite Sprachwahl (gemäß ADR-057).",
+  "landing_footer_about": "Orrery ist Open Source unter der MIT-Lizenz. Keine Konten. Kein Tracking. Ein funktionales Cookie speichert deine explizite Sprachwahl.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Lizenz",
   "landing_footer_link_credits": "Credits",
   "landing_footer_link_library": "Bibliothek",
   "landing_footer_link_ta": "Technische Autorität",
-  "layout_footer_github": "GitHub",
   "layout_footer_readme": "README",
-  "layout_footer_license": "Lizenz",
-  "layout_footer_ta": "TA",
-  "layout_footer_ta_title": "Technische Autorität — Engineering-Entscheidungen"
+  "layout_footer_license": "Lizenz"
 }

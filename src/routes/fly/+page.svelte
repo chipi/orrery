@@ -1980,6 +1980,14 @@
       if (retLineFuture) retLineFuture.visible = !afterArrival && retPts.length >= 2;
       scSprite.visible = !afterArrival;
 
+      // Freeze playback on arrival — the planets should stop where they
+      // are when the mission completes, not keep orbiting indefinitely.
+      // Manually pressing play again or scrubbing the timeline still
+      // works; this just stops the auto-advance loop.
+      if (afterArrival && isPlaying) {
+        isPlaying = false;
+      }
+
       // ─── Science Layers — per-frame overlay updates ──────────────
       // Position SoI rings at Earth + Mars heliocentric positions and
       // refresh gravity arrows on the spacecraft. Hidden layers don't

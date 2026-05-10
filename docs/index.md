@@ -21,7 +21,7 @@ Four folders, three planes:
 
 **UX plane** (`uxs/`) — what does it look like. Start with `IA.md` (surfaces, navigation, shared tokens). Each UXS-NNN is the static visual contract for one screen, verified against the prototype.
 
-**Tech plane — open questions** (`rfc/`) — technical questions with alternatives. RFCs close into ADRs when implementation evidence arrives at each release gate. See [`IMPLEMENTATION.md`](https://github.com/chipi/orrery/blob/main/IMPLEMENTATION.md) for release definitions (lives at the repo root, outside the VitePress build).
+**Tech plane — open questions** (`rfc/`) — technical questions with alternatives. RFCs close into ADRs when implementation evidence arrives at each release gate. See [`../IMPLEMENTATION.md`](../IMPLEMENTATION.md) for release definitions.
 
 **Tech plane — locked decisions** (`adr/`) — committed decisions, append-only. Start with `TA.md` (components, contracts, constraints, stack, §map). Each ADR-NNN is a single locked decision. ADRs 001–051 cover stack choice, routing, data layer, i18n, accessibility, KaTeX rendering, diagram authoring, station geometry, agency-first imagery sourcing, and per-image / per-link provenance discipline.
 

@@ -65,6 +65,7 @@ const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
 // PRD-012 v0.2 / RFC-016 v0.2 — Spaceflight Fleet (/fleet).
 const fleetEntrySchema = loadSchema('fleet-entry.schema.json');
 const fleetIndexSchema = loadSchema('fleet-index.schema.json');
+const fleetOverlaySchema = loadSchema('fleet-overlay.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -99,6 +100,7 @@ const validateTextSources = ajv.compile(textSourcesSchema);
 const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
+const validateFleetOverlay = ajv.compile(fleetOverlaySchema);
 
 let failed = 0;
 let passed = 0;
@@ -487,6 +489,18 @@ if (existsSync(i18nDir)) {
     if (existsSync(tiangongVisitorOvDir)) {
       for (const file of listJson(tiangongVisitorOvDir)) {
         validateFile(file, validateTiangongModuleOverlay);
+      }
+    }
+    // Fleet overlays per locale (PRD-012 v0.2 Phase G). Nested by
+    // category subdirectory matching static/data/fleet/{category}/{id}.json.
+    const fleetOvDir = join(i18nDir, locale, 'fleet');
+    if (existsSync(fleetOvDir)) {
+      for (const cat of readdirSync(fleetOvDir)) {
+        const catDir = join(fleetOvDir, cat);
+        if (!statSync(catDir).isDirectory()) continue;
+        for (const file of listJson(catDir)) {
+          validateFile(file, validateFleetOverlay);
+        }
       }
     }
     // /science overlays per locale (PRD-008 / ADR-017): nested by tab.

@@ -57,5 +57,79 @@
       "type": "moon",
       "site_id": "apollo17"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "apollo11",
+      "flight_designation": "Eagle · Apollo 11 (1969-07-20)",
+      "crew": [
+        {
+          "name": "Neil Armstrong",
+          "role": "Commander · first to step on the Moon",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Buzz Aldrin",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo13",
+      "flight_designation": "Aquarius · Apollo 13 (1970) · improvised lifeboat",
+      "crew": [
+        {
+          "name": "James Lovell",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Fred Haise",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo15",
+      "flight_designation": "Falcon · Apollo 15 (1971-07-30)",
+      "crew": [
+        {
+          "name": "David Scott",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "James Irwin",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "apollo17",
+      "flight_designation": "Challenger · Apollo 17 (1972-12-11) · last lunar landing",
+      "crew": [
+        {
+          "name": "Eugene Cernan",
+          "role": "Commander",
+          "agency": "NASA",
+          "country": "USA"
+        },
+        {
+          "name": "Harrison Schmitt",
+          "role": "LMP",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

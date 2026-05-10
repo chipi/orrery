@@ -27,5 +27,91 @@
       "u": "http://en.cmse.gov.cn/",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "shenzhou-5",
+      "flight_designation": "Shenzhou 5 (2003-10-15) · first Chinese in space",
+      "crew": [
+        {
+          "name": "Yang Liwei",
+          "role": "Taikonaut",
+          "agency": "CMSA",
+          "country": "China"
+        }
+      ]
+    },
+    {
+      "mission_id": "shenzhou-7",
+      "flight_designation": "Shenzhou 7 (2008-09-25) · first Chinese EVA",
+      "crew": [
+        {
+          "name": "Zhai Zhigang",
+          "role": "Commander · first Chinese EVA",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Liu Boming",
+          "role": "Pilot",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Jing Haipeng",
+          "role": "Pilot",
+          "agency": "CMSA",
+          "country": "China"
+        }
+      ]
+    },
+    {
+      "mission_id": "shenzhou-9",
+      "flight_designation": "Shenzhou 9 (2012-06-16) · first Chinese woman",
+      "crew": [
+        {
+          "name": "Jing Haipeng",
+          "role": "Commander",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Liu Wang",
+          "role": "Pilot",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Liu Yang",
+          "role": "Taikonaut · first Chinese woman in space",
+          "agency": "CMSA",
+          "country": "China"
+        }
+      ]
+    },
+    {
+      "mission_id": "shenzhou-13",
+      "flight_designation": "Shenzhou 13 (2021-10-15) · first Tiangong long-duration",
+      "crew": [
+        {
+          "name": "Zhai Zhigang",
+          "role": "Commander",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Wang Yaping",
+          "role": "Operator · first Chinese woman EVA",
+          "agency": "CMSA",
+          "country": "China"
+        },
+        {
+          "name": "Ye Guangfu",
+          "role": "Operator",
+          "agency": "CMSA",
+          "country": "China"
+        }
+      ]
+    }
   ]
 }

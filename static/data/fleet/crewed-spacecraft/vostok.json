@@ -27,5 +27,43 @@
       "u": "https://www.nasa.gov/history/60-years-ago-vostok-1-takes-yuri-gagarin-to-orbit/",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "vostok1",
+      "flight_designation": "Vostok 1 (1961-04-12)",
+      "crew": [
+        {
+          "name": "Yuri Gagarin",
+          "role": "Cosmonaut",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "vostok2",
+      "flight_designation": "Vostok 2 (1961-08-06)",
+      "crew": [
+        {
+          "name": "Gherman Titov",
+          "role": "Cosmonaut",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "vostok6",
+      "flight_designation": "Vostok 6 (1963-06-16)",
+      "crew": [
+        {
+          "name": "Valentina Tereshkova",
+          "role": "Cosmonaut · first woman in space",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    }
   ]
 }

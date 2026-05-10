@@ -27,5 +27,49 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1986-035A",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "soyuz-tm-2",
+      "flight_designation": "Soyuz TM-2 (1987-02-05) · first Mir long-duration crew",
+      "crew": [
+        {
+          "name": "Yuri Romanenko",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Aleksandr Laveikin",
+          "role": "Engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-tm-31",
+      "flight_designation": "Soyuz TM-31 (2000-10-31) · first ISS Expedition crew",
+      "crew": [
+        {
+          "name": "Yuri Gidzenko",
+          "role": "Soyuz commander",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "Sergei Krikalev",
+          "role": "ISS flight engineer",
+          "agency": "Roscosmos",
+          "country": "Russia"
+        },
+        {
+          "name": "William Shepherd",
+          "role": "ISS commander",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

@@ -27,5 +27,43 @@
       "u": "https://history.nasa.gov/SP-4201/toc.htm",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "freedom7",
+      "flight_designation": "MR-3 Freedom 7 (1961-05-05)",
+      "crew": [
+        {
+          "name": "Alan Shepard",
+          "role": "Astronaut · first American in space",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "friendship7",
+      "flight_designation": "MA-6 Friendship 7 (1962-02-20)",
+      "crew": [
+        {
+          "name": "John Glenn",
+          "role": "Astronaut · first American to orbit",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    },
+    {
+      "mission_id": "faith7",
+      "flight_designation": "MA-9 Faith 7 (1963-05-15)",
+      "crew": [
+        {
+          "name": "Gordon Cooper",
+          "role": "Astronaut · last Mercury flight",
+          "agency": "NASA",
+          "country": "USA"
+        }
+      ]
+    }
   ]
 }

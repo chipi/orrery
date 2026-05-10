@@ -27,5 +27,61 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-037A",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "soyuz1",
+      "flight_designation": "Soyuz 1 (1967-04-23) · fatal",
+      "crew": [
+        {
+          "name": "Vladimir Komarov",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz4",
+      "flight_designation": "Soyuz 4/5 (1969) · first crew transfer",
+      "crew": [
+        {
+          "name": "Vladimir Shatalov",
+          "role": "Soyuz 4 commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Boris Volynov",
+          "role": "Soyuz 5 commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz11",
+      "flight_designation": "Soyuz 11 (1971) · fatal · first long-duration",
+      "crew": [
+        {
+          "name": "Georgy Dobrovolsky",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Vladislav Volkov",
+          "role": "Engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Viktor Patsayev",
+          "role": "Engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    }
   ]
 }

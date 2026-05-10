@@ -27,5 +27,49 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1979-103A",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "soyuz-t-3",
+      "flight_designation": "Soyuz T-3 (1980-11-27) · first crewed Soyuz T",
+      "crew": [
+        {
+          "name": "Leonid Kizim",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Oleg Makarov",
+          "role": "Flight engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Gennady Strekalov",
+          "role": "Researcher",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    },
+    {
+      "mission_id": "soyuz-t-13",
+      "flight_designation": "Soyuz T-13 (1985-06-06) · Salyut 7 rescue",
+      "crew": [
+        {
+          "name": "Vladimir Dzhanibekov",
+          "role": "Commander",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        },
+        {
+          "name": "Viktor Savinykh",
+          "role": "Engineer",
+          "agency": "Roscosmos",
+          "country": "USSR"
+        }
+      ]
+    }
   ]
 }

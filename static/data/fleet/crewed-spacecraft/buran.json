@@ -27,5 +27,12 @@
       "u": "https://www.roscosmos.ru/30025/",
       "t": "deep"
     }
+  ],
+  "flights": [
+    {
+      "mission_id": "buran-1k1",
+      "flight_designation": "1K1 OK-1K1 (1988-11-15) · first and only flight",
+      "crew": []
+    }
   ]
 }

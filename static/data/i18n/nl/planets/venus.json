@@ -1,0 +1,33 @@
+{
+  "name": "Venus",
+  "type": "Aardse planeet",
+  "fact": "Oppervlaktedruk 90× die van de Aarde. Sovjet-Venera-sondes hielden het 23–127 minuten vol voordat ze werden verpletterd.",
+  "bio": "Roteert retrograad — achterwaarts en zo langzaam dat een Venus-dag langer is dan zijn jaar. De ashelling van 177,4° is de oorzaak: Venus staat in wezen ondersteboven.",
+  "links": [
+    {
+      "l": "Venus — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Venus_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Venus (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/venus/",
+      "t": "intro"
+    },
+    {
+      "l": "Veneraprogramma — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Veneraprogramma",
+      "t": "core"
+    },
+    {
+      "l": "DAVINCI + VERITAS (NASA)",
+      "u": "https://science.nasa.gov/mission/davinci/",
+      "t": "core"
+    },
+    {
+      "l": "Venus's runaway greenhouse (Nature Astronomy 2020)",
+      "u": "https://www.nature.com/articles/s41550-019-0930-9",
+      "t": "deep"
+    }
+  ]
+}

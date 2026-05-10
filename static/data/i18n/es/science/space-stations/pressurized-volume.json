@@ -1,0 +1,17 @@
+{
+  "title": "Volumen presurizado",
+  "intro_sentence": "El interior habitable total de una estación — cuánto espacio tiene realmente la tripulación para vivir y trabajar.",
+  "narrative_101": [
+    "Toda hoja de especificaciones de una estación lidera con un número: volumen presurizado en metros cúbicos. Es el interior de los módulos donde la tripulación puede respirar, sumado a través de toda la estación. La EEI alcanza aproximadamente 388 m³ (aproximadamente el volumen de la cabina de pasajeros de un Boeing 747). Tiangong llega a unos 110 m³ — cómodo para tres tripulantes, ajustado para seis.",
+    "El volumen presurizado está acotado por dos techos: el diámetro del cubierta del vehículo de lanzamiento (solo se puede enviar un módulo tan ancho como pueda levantar el cohete) y la masa de la coraza de presión (cuanto más gruesa la pared, más pesado el lanzamiento). Las cubiertas modernas de aluminio compuesto encuentran un punto óptimo en 2-4 mm de grosor. Más allá pagas masa por margen de seguridad que no usas; más fino y un micrometeoroide podría perforarte.",
+    "La tripulación necesita unos 14 m³ por persona de «volumen habitable neto» (volumen después de racks y mamparos) para misiones de más de un mes. EEI y Tiangong ambos lo superan en 3-4× — lo que suena excesivo hasta que recuerdas que la tripulación está despierta 16 horas al día, todos los días, durante meses."
+  ],
+  "body_paragraphs": [
+    "El volumen presurizado es el interior habitable lleno de aire de una estación espacial, medido en metros cúbicos. Excluye racks estructurales, mamparos y volumen de equipos — la cifra que normalmente se cita es el volumen interno bruto, del cual el 30-50% está ocupado por hardware.",
+    "EEI: ~388 m³ a través de 16 módulos presurizados (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, más los rusos Rassvet y Poisk).",
+    "Tiangong: ~110 m³ a través de tres módulos (núcleo Tianhe, laboratorios Wentian y Mengtian).",
+    "Mir: ~350 m³ en su pico (1986–2001) — comparable a la EEI en volumen habitable pero construida con módulos de paredes más pesadas y una generación más antigua de sistemas de soporte vital.",
+    "La directriz de 14 m³/persona (NASA-STD-3001 Volumen 2) se deriva empíricamente de estudios de psicología en entornos confinados que se remontan a Skylab y al programa soviético Salyut. Por debajo de ella, el bienestar de la tripulación y el rendimiento de la misión disminuyen mensurablemente."
+  ],
+  "diagram_caption": "Tres huellas de estación a escala: Tiangong (~110 m³), Mir (~350 m³), EEI (~388 m³). Una silueta humana como referencia de escala."
+}

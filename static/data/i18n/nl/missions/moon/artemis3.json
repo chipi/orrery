@@ -1,0 +1,50 @@
+{
+  "name": "Artemis III",
+  "type": "BEMANDE LANDER · GEPLAND",
+  "first": "Eerste bemande maanlanding sinds Apollo 17 (1972)",
+  "description": "De eerste bemande maanlanding in meer dan een halve eeuw. Architectuur: NASA's SLS Block 1 lanceert Orion met 4 bemanningsleden naar een Near-Rectilinear Halo Orbit (NRHO) rond de Maan. Voorgepositioneerd bij NRHO is een SpaceX Starship Human Landing System (HLS), hervuld in lage Aardbaan door tankers vóór zijn trans-lunaire injectie. De Orion-bemanning verschuift naar HLS; 2 astronauten dalen af naar de zuidpool-regio van de Maan voor ~6,5 dagen oppervlakteoperaties terwijl 2 in NRHO blijven. Na oppervlakteoperaties lanceert HLS terug naar NRHO voor overdracht aan Orion en Aarde-terugkeer. Zal de eerste vrouw en eerste persoon van kleur op de Maan landen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-LANCERING",
+      "note": "Orion lanceert vanuit KSC LC-39B met bemanning van 4.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "NRHO-AANKOMST",
+      "note": "Orion arriveert bij Near-Rectilinear Halo Orbit; rendezvous met voorgepositioneerde Starship HLS.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "AFDALING",
+      "note": "2 bemanningsleden verschuiven naar HLS; aangedreven afdaling naar maanzuidpool.",
+      "type": "info"
+    },
+    {
+      "met": 12,
+      "label": "ASCENSIE",
+      "note": "HLS-ascensie naar NRHO na ~6,5 dagen oppervlakteoperaties.",
+      "type": "nominal"
+    },
+    {
+      "met": 14,
+      "label": "TEI",
+      "note": "Trans-Aarde-injectie vanuit NRHO.",
+      "type": "nominal"
+    },
+    {
+      "met": 18,
+      "label": "SPLASHDOWN",
+      "note": "Orion landt in de Stille Oceaan.",
+      "type": "info"
+    }
+  ]
+}

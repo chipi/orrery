@@ -8,7 +8,7 @@ Instructions for agentic AI working on this codebase. Read this before touching 
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, and station explorer rolled into one. Ten primary nav destinations, real orbital mechanics, **36** missions in the catalog (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **13 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
+Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, and station explorer rolled into one. Ten primary nav destinations, real orbital mechanics, **36** missions in the catalog (Mars + Moon + four outer-system catalogue entries), and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
 
 The ten primary nav destinations:
 

@@ -1,0 +1,16 @@
+{
+  "title": "Los Principia de Newton · 1687",
+  "intro_sentence": "Un libro, tres leyes del movimiento y la ley del cuadrado inverso de la gravedad — la base sobre la que sigue descansando todo lo que hace el vuelo espacial.",
+  "narrative_101": [
+    "En 1684, Halley preguntaba a las personas adecuadas qué forma tendría una órbita si la atracción del Sol fuera como 1/r². Christopher Wren apostó un libro de cuarenta chelines a que nadie podría demostrarlo; Hooke afirmó tener una demostración que no tenía. Halley le preguntó a Newton — Newton dijo «una elipse» sin dudar, desenterró la demostración de notas de hace años, y tres años después publicó los Principia.",
+    "Tres leyes del movimiento (inercia, F = ma, acción-reacción) más la ley de gravitación del cuadrado inverso (F = Gm₁m₂/r²) más el cálculo para hacerlo todo — un libro, tres años, sin revisión por pares. Halley pagó él mismo los costos de impresión cuando la Royal Society se quedó sin dinero por un libro sobre anatomía de peces.",
+    "De esas ecuaciones: las tres leyes de Kepler se derivan limpiamente. Las mareas, el movimiento de proyectiles, la precesión de los equinoccios, la forma de la Tierra — todas consecuencias. El vuelo espacial 280 años después es mecánica newtoniana directa con motores añadidos."
+  ],
+  "body_paragraphs": [
+    "Philosophiæ Naturalis Principia Mathematica se publicó en julio de 1687 en latín. Tres libros: el movimiento en el vacío, el movimiento a través de medios resistentes, el sistema del mundo. El tercer libro aplica las leyes al cosmos real y reproduce todos los datos de Kepler a partir de primeros principios.",
+    "El cálculo fue invención de Newton específicamente para hacer esto. Lo llamó «fluxiones» — Leibniz inventó independientemente esencialmente la misma maquinaria en Alemania por la misma época, y la rivalidad sobre la prioridad duró décadas.",
+    "Lo que Newton NO explicó: POR QUÉ la gravedad sigue 1/r². Su famoso comentario propio: «Hypotheses non fingo» — «No invento hipótesis». El mecanismo esperaría a Einstein en 1915.",
+    "Los propagadores numéricos de órbitas modernos ejecutan esencialmente las ecuaciones de Newton con aritmética de coma flotante. El arco heliocéntrico de /fly, el porkchop de /plan, cada solución kepleriana — gravedad newtoniana hasta el fondo."
+  ],
+  "formula_caption": "Ley de gravitación universal de Newton. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
+}

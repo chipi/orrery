@@ -1,0 +1,17 @@
+{
+  "title": "Budget di energia solare",
+  "intro_sentence": "Quanta elettricità i pannelli solari generano — il vincolo a monte di ogni sistema che l'equipaggio può far funzionare.",
+  "narrative_101": [
+    "Una stazione spaziale funziona con elettricità solare. I pannelli sono la più grande caratteristica esterna (i pannelli ISS si estendono per 109 m da estremità a estremità — più grande di un campo da football americano) perché tutto il resto dipende dai watt che estraggono dalla luce solare: supporto vitale, comunicazioni, strumenti scientifici, la macchina dell'esercizio dell'equipaggio, la ventola del flusso d'aria del bagno.",
+    "La ISS raggiunge un picco di circa 120 kW da otto pannelli di 35 m × 12 m (recentemente potenziati con sei pannelli iROSA arrotolabili più piccoli). Di questi, circa 75-90 kW raggiungono i carichi reali dopo le perdite — stoccaggio in batteria durante i passaggi notturni, controllori di carica, regolazione di tensione. Tiangong funziona più leggera a circa 27 kW di picco — meno equipaggio, meno esperimenti, carico termico più semplice.",
+    "L'energia detta l'ambizione. Vuoi eseguire un esperimento di biologia in centrifuga? Collegalo — costerà 1,5 kW. Vuoi aggiungere altri dieci rack di carichi? Hai bisogno di un budget energetico, e o cresci il pannello (costoso — nuova missione) o scarichi qualcos'altro."
+  ],
+  "body_paragraphs": [
+    "Budget di energia solare = potenza generata di picco × ciclo utile (frazione soleggiata dell'orbita) × efficienza a valle (perdite di batteria + regolatore). Per le stazioni LEO il ciclo utile è di circa 0,6 — circa 35 minuti soleggiati su ogni orbita di 92 minuti.",
+    "Pannelli solari ISS: 8 ali IEA principali (4× P3/P4, P6 + 4× S3/S4, S6) a ~120 kW di picco BOL, derateati a ~84 kW EOL a 15 anni. iROSA aumenta ogni ala principale con un pannello iROSA arrotolabile all'estremità interna, aggiungendo ~20 kW di picco ciascuno. Al 2025: ~215 kW di picco lordo, ~120 kW dopo le perdite di ciclo utile e di stoccaggio.",
+    "Pannelli solari Tiangong: 4 ali su Tianhe (2 retrattili per lato) più 4 grandi ali su Wentian e Mengtian. Totale ~30 kW BOL × ciclo utile = ~18 kW continui, con 27 kW di picco durante il passaggio soleggiato.",
+    "Stoccaggio in batteria: la ISS usa ORU (orbital replacement units) di batterie agli ioni di litio a ~50 kWh di capacità per coppia. Ogni batteria copre il carico lato notte di un pannello principale. Tiangong usa banchi Li-ion simili, dimensionati per il carico più piccolo.",
+    "Mir, in confronto, raggiunse un picco di ~30 kW da 1500 m² di pannelli — comparabile per unità di volume con Tiangong ma con stoccaggio a batterie nichel-cadmio più vecchie che necessitavano di ricostruzioni più profonde nel corso della sua vita di 15 anni."
+  ],
+  "diagram_caption": "Ingresso solare → pannello → bus DC → batteria + carichi. La barra del ciclo utile mostra la frazione soleggiata del 60% per orbita di 92 minuti."
+}

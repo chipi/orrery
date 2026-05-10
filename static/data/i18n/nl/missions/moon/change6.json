@@ -1,0 +1,44 @@
+{
+  "name": "Chang'e 6",
+  "type": "ACHTERZIJDE-MONSTERTERUGKEER · GEVLOGEN",
+  "first": "Eerste monsterterugkeer van de maanachterzijde",
+  "description": "Combineert de architecturen van Chang'e 4 (achterzijde-communicatie) en Chang'e 5 (monsterterugkeer). De Queqiao-2-relais-satelliet werd eerst gelanceerd (maart 2024) om de missie te ondersteunen. Chang'e 6 verzamelde vervolgens 1,935 kg uit Apollo-krater op de achterzijde — materiaal met een zeer andere samenstelling dan enig eerder teruggebracht maanmonster. De twee halfronden van de Maan zijn radicaal verschillend (de achterzijde heeft dikkere korst, minder mare); deze monsters kunnen eindelijk verklaren waarom.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Lange Mars 5 vanuit Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TOUCHDOWN",
+      "note": "Lander daalt af naar Apollo-krater (achterzijde) 2024-06-02. Alle comms via Queqiao-2-relais.",
+      "type": "nominal"
+    },
+    {
+      "met": 32,
+      "label": "BEMONSTERING",
+      "note": "1,935 kg verzameld uit achterzijde-regoliet.",
+      "type": "info"
+    },
+    {
+      "met": 34,
+      "label": "ASCENSIE",
+      "note": "Opstijgvoertuig heft af; rendezvous met orbiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 53,
+      "label": "AARDE-TERUGKEER",
+      "note": "Capsule landt in Binnen-Mongolië 2024-06-25 met de eerste achterzijde-monsters die ooit zijn opgehaald.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Voyager 2",
+  "type": "FLYBY · GEVLOGEN",
+  "first": "Enige ruimtevaartuig dat Uranus en Neptunus bezocht; Grand Tour van vier reuzenplaneten",
+  "description": "De tweeling die bleef doorgaan toen de budgetten krapper werden, Voyager 2 droeg de Grand Tour van Jupiter en Saturnus uit naar Uranus en Neptunus — nog steeds de enige close-up beelden die we hebben van de ijsreuzen. Zijn Neptunus-ontmoeting in 1989 onthulde de Grote Donkere Vlek en Tritons geisers. Vandaag de dag zeilen beide Voyagers in de interstellaire ruimte met een gouden plaat als visitekaartje van de mensheid. Orrery vermeldt Neptunus als de catalogus-bestemming; het echte pad steunde op meerdere zwaartekrachtassists.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan IIIE tilt Voyager 2 op vanaf Cape Canaveral op een Grand-Tour-traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 4388,
+      "label": "NEPTUNUS DICHTSTE BENADERING",
+      "note": "Flyby van Neptunus en grote maan Triton; laatste planetaire ontmoeting van de Grand Tour.",
+      "type": "nominal"
+    }
+  ]
+}

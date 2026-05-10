@@ -1,0 +1,17 @@
+{
+  "title": "Expeditionskadenz",
+  "intro_sentence": "Stationen laufen mit rollenden 6-Monats-Crew-Rotationen — ein Gleichgewicht aus Anzug-Verbrauchsmaterialien, Lebensdauer der Fahrzeuge, Trainingspipelines und menschlicher Physiologie.",
+  "narrative_101": [
+    "Warum sechs Monate? Es ist die Antwort auf mehrere Beschränkungen, die an einem Punkt zusammentreffen. Sojus- und Crew-Dragon-Raumschiffe sind zertifiziert, ~210 Tage angedockt zu bleiben, bevor ihre Triebwerke und Dichtungen aufgefrischt werden müssen. Russische Orlan-EVA-Anzüge werden alle sechs Monate am Boden aufgeladen. NASAs Knochenverlust-Gegenmaßnahmen-Daten sind in 6-Monats-Schritten am verlässlichsten. Ein Drittel der Crew alle 4-6 Monate zu rotieren hält frische Hände an Bord ohne Heißbett-Wechsel.",
+    "Die ISS begann mit 3-Personen-Expeditionen (Expedition 1 im Jahr 2000) und stieg 2009 auf 6-Personen-Crews, sobald die Rettungsbootkapazität vorhanden war. Jede Expedition dauert in der Regel ~6 Monate. Einige laufen länger — Frank Rubios versehentlicher 371-Tage-Aufenthalt (Expedition 67/68/69) geschah, als seine Sojus durch Trümmer beschädigt wurde und ein Ersatz hinaufgebracht werden musste.",
+    "Tiangong begann mit kürzeren Rotationen (Shenzhou 12: 92 Tage; Shenzhou 13: 183 Tage) und stabilisierte sich ab Shenzhou 14 bei ~6 Monaten. Crews von drei rotieren; die abgehende und ankommende Crew teilen sich etwa eine Woche an Bord, um den operativen Stand zu übergeben."
+  ],
+  "body_paragraphs": [
+    "Beschränkungen, die die ~6-Monats-Kadenz treiben: Zertifizierung der angedockten Raumschiffe (Sojus: 210 Tage; Crew Dragon: 210 Tage; Shenzhou: 180-210 Tage), Boden-Wartungszyklen für EVA-Anzüge, Vorratskammer-Kapazität pro Versorgung und die Präferenz des NASA Human Research Program für 6-Monats-Knochenverlust-Datenklammern.",
+    "ISS-Expeditionen: fortlaufend nummeriert seit Expedition 1 (Nov 2000). Crew-Größen — 3 (Exp 1-19), 6 (Exp 20-63), variabel 7-9 mit Crew-Dragon-Überlappung (Exp 64-).",
+    "Übergabe: ankommende Sojus/Crew Dragon dockt 5-10 Tage vor der Abreise der abgehenden an. Beide Crews teilen sich die Station, führen Briefings durch, übertragen Fracht, dann dockt die abgehende Crew ab. Die kombinierte Crew-Periode ist die ressourcenintensivste: mehr Körper, mehr CO₂, mehr Lebensmittelverbrauch.",
+    "Langzeitausreißer: Poljakow 437,7 d (Mir, 1994-95, bewusster Mars-Klasse-Belastungstest); Rubio 371 d (ISS, 2022-23, Notfall); Vande Hei 355 d (ISS, 2021-22, Sojus-Sitzplatz-Tausch); Kelly + Kornijenko 340 d (ISS, 2015-16, Zwillingsstudienprogramm).",
+    "Tiangong-Kadenz: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Stabiler Rhythmus, der der ISS-Praxis entspricht."
+  ],
+  "diagram_caption": "ISS-Expeditionszeitleiste 2000-2025: gestapelte Farbbänder (3-, 6-, 7-Personen-Crews) mit annotierten Ausreißern (Poljakow, Vande Hei, Rubio)."
+}

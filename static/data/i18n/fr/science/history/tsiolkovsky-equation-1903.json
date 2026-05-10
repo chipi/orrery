@@ -1,0 +1,16 @@
+{
+  "title": "Équation de Tsiolkovski · 1903",
+  "intro_sentence": "Un instituteur russe sourd élabore l'équation de la fusée 50 ans avant que quiconque puisse construire une fusée pour l'utiliser.",
+  "narrative_101": [
+    "Konstantin Tsiolkovski était un instituteur provincial autodidacte à Kalouga, sourd depuis l'enfance suite à la scarlatine, qui passait ses soirées à esquisser des fusées multi-étages tout en enseignant l'arithmétique le jour. En 1903, il a publié « L'investigation de l'espace cosmique au moyen d'engins à réaction » dans une obscure revue russe — et a élaboré l'équation qui régirait toute fusée jamais construite.",
+    "L'équation de Tsiolkovski : ∆v = vₑ × ln(m₀/m₁). Le changement de vitesse qu'une fusée peut produire est égal à sa vitesse d'éjection multipliée par le logarithme naturel de son rapport de masses. Ce terme logarithme naturel est brutal — obtenir plus de ∆v nécessite exponentiellement plus de carburant. La majeure partie de chaque fusée est du carburant. La Saturn V était à 85 % de propergol par masse.",
+    "Tsiolkovski a également compris : les carburants liquides battraient les solides ; le multi-étage était nécessaire pour s'échapper de la Terre ; les stations orbitales pourraient héberger des humains en permanence. Il est mort en 1935, deux ans avant que le premier essai de carburant liquide de Goddard n'atteigne une vraie altitude."
+  ],
+  "body_paragraphs": [
+    "Tsiolkovski a publié l'équation, le concept de fusée multi-étages et le concept de station orbitale des années avant que l'ingénierie sérieuse des fusées n'existe. Goddard construirait la première fusée à carburant liquide en 1926 (États-Unis) ; le V-2 de von Braun en 1942 (Allemagne) ; le R-7 de Korolev en 1957 (URSS).",
+    "L'équation est l'inverse de la troisième loi de Newton : chaque kilogramme de propergol éjecté à la vitesse vₑ pousse le véhicule de 1 kg × vₑ. Intégrez cela sur une masse décroissante et vous obtenez la dépendance en logarithme naturel.",
+    "Pourquoi l'échelle log compte : doubler ∆v nécessite le rapport de masses au carré. Tripler nécessite au cube. Pour passer de 0 à la vitesse d'évasion (~11,2 km/s) avec une vitesse d'éjection chimique typique de 4,4 km/s, rapport de masses = e^(11,2/4,4) ≈ 13. Donc une charge utile de 1 tonne nécessite 12 tonnes de propergol, plus la structure pour la contenir.",
+    "Tsiolkovski n'a jamais rien testé. Il n'était pas ingénieur — c'était un théoricien avec une craie. Le programme spatial soviétique l'a canonisé à titre posthume ; sa maison de Kalouga est désormais un musée et son nom figure sur le cratère de la face cachée que les soviétiques lunaires ont visé."
+  ],
+  "formula_caption": "L'équation de la fusée. m₀ = masse mouillée (plein) ; m₁ = masse sèche (vide) ; vₑ = vitesse d'éjection."
+}

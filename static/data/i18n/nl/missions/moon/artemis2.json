@@ -1,0 +1,44 @@
+{
+  "name": "Artemis II",
+  "type": "BEMAND FLYBY · GEVLOGEN",
+  "first": "Eerste bemande vlucht voorbij de lage Aardbaan sinds Apollo 17 (1972) — en de missie die dit project inspireerde",
+  "description": "De eerste bemande vlucht van het Artemis-programma, en de vonk die Orrery werd. NASA's SLS Block 1 lanceerde een Orion-ruimtevaartuig met vier astronauten — Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) en CSA's Jeremy Hansen (MS) — op een hybride vrije-terugkeer-traject dat hen rond de achterzijde van de Maan zwaaide op ongeveer 9.200 km hoogte en hen terugbracht naar de Aarde zonder enige maanbaan-insertie-verbranding. Een 10-daagse missie die eindigt met een Stille Oceaan-splashdown. Kwalificeerde Orion's levensondersteunings-, navigatie- en herbetredingssystemen voor bemande vlucht voor de Artemis III-oppervlaktelanding.",
+  "events": [
+    {
+      "met": 0,
+      "label": "SLS-LANCERING",
+      "note": "Orion heft af van KSC LC-39B met vier bemanningsleden aan boord.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie verbranding door ICPS — Orion scheidt op cislunair traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "MAAN-FLYBY",
+      "note": "Dichtste benadering boven de achterzijde, ~9.200 km hoogte. Geen baan-insertie — vrije-terugkeer-geometrie slingert Orion terug naar de Aarde.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "TCM-2",
+      "note": "Terugkeertrajectcorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 10,
+      "label": "SPLASHDOWN",
+      "note": "Orion-herbetreding en Stille Oceaan-splashdown.",
+      "type": "info"
+    }
+  ]
+}

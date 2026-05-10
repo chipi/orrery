@@ -1,0 +1,17 @@
+{
+  "title": "Presupuesto de energía solar",
+  "intro_sentence": "Cuánta electricidad generan los paneles solares — la restricción aguas arriba de cada sistema que la tripulación pueda hacer funcionar.",
+  "narrative_101": [
+    "Una estación espacial funciona con electricidad solar. Los paneles son la característica externa más grande (los paneles de la EEI abarcan 109 m de punta a punta — más grandes que un campo de fútbol americano) porque todo lo demás depende de los vatios que extraen de la luz solar: soporte vital, comunicaciones, instrumentos científicos, la máquina de ejercicio de la tripulación, el ventilador de flujo de aire del baño.",
+    "La EEI alcanza un máximo de aproximadamente 120 kW de ocho paneles de 35 m × 12 m (recientemente aumentados con seis paneles enrollables iROSA más pequeños). De eso, unos 75-90 kW llegan a las cargas reales después de las pérdidas — almacenamiento en baterías durante los pases nocturnos, controladores de carga, regulación de voltaje. Tiangong funciona más ligero a unos 27 kW de pico — menos tripulación, menos experimentos, carga térmica más simple.",
+    "La energía dicta la ambición. ¿Quieres ejecutar un experimento de biología en centrífuga? Enchúfalo — costará 1,5 kW. ¿Quieres añadir diez racks más de cargas? Necesitas un presupuesto de energía, y o bien creces el panel (caro — nueva misión) o aligeras la carga de algo más."
+  ],
+  "body_paragraphs": [
+    "Presupuesto de energía solar = potencia generada pico × ciclo de trabajo (fracción soleada de la órbita) × eficiencia descendente (pérdidas de batería + regulador). Para estaciones LEO el ciclo de trabajo es de aproximadamente 0,6 — aproximadamente 35 minutos soleados de cada órbita de 92 minutos.",
+    "Paneles solares de la EEI: 8 alas IEA principales (4× P3/P4, P6 + 4× S3/S4, S6) a ~120 kW pico BOL, derateados a ~84 kW EOL a los 15 años. iROSA aumenta cada ala principal con un panel enrollable iROSA en el extremo interior, añadiendo ~20 kW pico cada uno. A partir de 2025: ~215 kW pico bruto, ~120 kW después de pérdidas de ciclo de trabajo y almacenamiento.",
+    "Paneles solares de Tiangong: 4 alas en Tianhe (2 retráctiles a cada lado) más 4 alas grandes en Wentian y Mengtian. Total ~30 kW BOL × ciclo de trabajo = ~18 kW continuos, con 27 kW pico durante el pase soleado.",
+    "Almacenamiento en baterías: la EEI usa ORUs (orbital replacement units) de baterías de iones de litio a ~50 kWh de capacidad por par. Cada batería cubre la carga del lado nocturno de un panel principal. Tiangong usa bancos similares de Li-ion, dimensionados para la carga más pequeña.",
+    "Mir, en contraste, alcanzaba un pico de ~30 kW a partir de 1500 m² de panel — comparable por unidad de volumen a Tiangong pero con almacenamiento de baterías de níquel-cadmio más antiguas que necesitaban reconstrucciones más profundas a lo largo de su vida útil de 15 años."
+  ],
+  "diagram_caption": "Entrada solar → panel → bus DC → batería + cargas. La barra de ciclo de trabajo muestra la fracción soleada del 60% por órbita de 92 minutos."
+}

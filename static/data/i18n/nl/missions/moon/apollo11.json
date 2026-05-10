@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 11",
+  "type": "BEMANDE LANDER · GEVLOGEN",
+  "first": "Eerste mensen op een ander hemellichaam",
+  "description": "De missie die Kennedy's verbintenis uit 1961 vervulde om voor het einde van het decennium een man op de Maan te zetten. Armstrong en Aldrin brachten 21 uur 36 minuten op het maanoppervlak door — 2,5 uur EVA, 21,55 kg monsters en een enkele herdenkingsplaat. De laserretroreflector die zij installeerden bij Mare Tranquillitatis ontvangt vandaag nog steeds pulsen, en meet de Aarde-Maan-afstand met millimeterprecisie. De missie werd live bekeken door ~600 miljoen mensen, een vijfde van de mensheid van toen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Saturn V (AS-506) vanuit Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie verbranding — S-IVB-trap stuwt CSM/LM naar de Maan.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "TOUCHDOWN",
+      "note": "Lunar Module Eagle landt bij Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "EERSTE STAP",
+      "note": "Armstrong stapt op het maanoppervlak; 'one small step for [a] man'.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "ASCENSIE",
+      "note": "Eagle heft af na 21u 36m op het oppervlak.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "SPLASHDOWN",
+      "note": "CM Columbia brengt bemanning terug naar de Stille Oceaan 1969-07-24.",
+      "type": "nominal"
+    }
+  ]
+}

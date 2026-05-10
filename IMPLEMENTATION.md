@@ -532,16 +532,20 @@ Result: e2e job dropped from 25-min timeout to 16-min clean pass.
 
 **State at v0.5.0:** 10 primary nav routes. 12 locales × 100% UI parity. 36 missions. 54 `/science` sections × 8 tabs × 62 SVG diagrams. 18 ISS modules + 4 Tiangong modules with raycast pickability. Public `/credits` + `/library`. Validate-data fail-closed on image provenance, link provenance, license allowlist, science overlay schemas, diagram integrity. E2e green at 16 min.
 
-### Known translation gaps (en-US fallback per ADR-017)
+### v0.5.x · Dutch (nl) added — issue #72
 
-The 2026-05-10 deep-review audit surfaced two coverage gaps that are **not blocking** (the runtime falls back to en-US per ADR-017) but worth tracking for a future translation batch:
+Fourteenth supported locale: **Nederlands** (NL, 🇳🇱) added between Italiano and Српски in the picker. Full UI bundle (711 keys) translated to 100% parity. Full editorial overlay coverage across every entity type — 161 files matching the other 8 fall-back-tier locales (ja, ko, hi, ar, ru, zh-CN, pt-BR, sr-Cyrl). Per ADR-017, Dutch joins those locales in falling back to en-US for the `/science` encyclopedia tree (full coverage stays at en-US/es/de/fr/it). The 14 `/science` overlay gap previously documented for es/de/fr/it is also closed in the same wave (each locale now at 63 `/science` files matching en-US). 91 `iss-visitors/` overlays added across all 13 non-en-US locales, closing that gap too.
 
-- **`/science` overlays — 14 files missing in es/de/fr/it** (each locale has 49 of 63 expected files). Missing: `history/_intro` + 6 history sections (apollo-11-1969, goddard-liquid-rocket-1926, keplers-laws-1609, newton-principia-1687, sputnik-1957, tsiolkovsky-equation-1903), `space-stations/_intro` + 4 space-stations sections (expedition-cadence, node-module, pressurized-volume, solar-power-budget), `mission-phases/eva`, `scales-time/long-duration`. These are the v0.4–v0.5-added content not yet picked up by the wave23 catalog. Total deferred: 56 file authorings (14 × 4 EU locales).
-- **`iss-visitors/` overlays — 7 files in en-US only**, missing across all 12 non-en-US locales. Visitors: cargo_dragon, crew_dragon, cygnus, htv_x, progress_ms, soyuz_ms, starliner. Total deferred: 84 file authorings (7 × 12 locales).
-- **`tiangong-visitors/` overlays — already complete in en-US** (shenzhou, tianzhou); per-locale coverage matches the Tiangong module pattern.
+**State at v0.5.x:** 10 primary nav routes. **14 locales × 100% UI parity**. Editorial overlay coverage: en-US/es/de/fr/it at 224 files (full /science); the other 9 locales at 161 files (entity overlays full, /science fall-back per ADR-017).
 
-Pipeline: re-run `node scripts/wave23/extract-science-catalog.mjs` to refresh the catalog, then author the per-locale maps under `scripts/wave23/maps/<locale>.json`, then `node scripts/wave23/apply-translations.mjs <locale>` per locale. Tracked separately from a code release — pure content work.
+### Translation gaps from v0.5.0 audit — CLOSED in v0.5.x
+
+The 2026-05-10 deep-review surfaced two gaps that were originally documented as deferred. Both **closed** in the v0.5.x Dutch wave (issue #72):
+
+- ✅ **`/science` overlays — 14 files in es/de/fr/it** (history/_intro + 6 history sections + space-stations/_intro + 4 space-stations sections + mission-phases/eva + scales-time/long-duration) — translated.
+- ✅ **`iss-visitors/` overlays — 7 files × 13 non-en-US locales = 91 files** — translated.
+- ✅ Plus full Dutch (nl) entity overlay tree (161 files) as the 14th locale.
 
 ---
 
-*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.0*
+*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.x*

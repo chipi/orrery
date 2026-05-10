@@ -1,0 +1,20 @@
+{
+  "name": "Dawn",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Eerste missie die rond twee buitenaardse lichamen draaide — Vesta, dan Ceres",
+  "description": "Dawn bewees ionvoortstuwing op planetaire schaal: het matchte banen met de massieve Vesta, vertrok en spiraalde naar de dwergplaneet Ceres — het grootste object in de planetoïdengordel. Heldere vlekken in de Occator-krater werden een van de iconische mysteries van de missie, later gekoppeld aan zoute uitbarstingen vanuit een diep reservoir. Deze cataloguspost gebruikt Ceres als de primaire bestemming; Vesta wordt behandeld in het verhaal hierboven.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Delta II tilt Dawn op naar Vesta en Ceres op een laagstuwingsspiraal-snelweg.",
+      "type": "nominal"
+    },
+    {
+      "met": 2717,
+      "label": "CERES-VANGST",
+      "note": "Ionmotoren remmen Dawn af in een baan rond Ceres; karteringscampagne begint.",
+      "type": "nominal"
+    }
+  ]
+}

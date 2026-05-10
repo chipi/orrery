@@ -1,0 +1,38 @@
+{
+  "name": "Mars Express",
+  "type": "ORBITER · ACTIEF",
+  "first": "Europa's eerste interplanetaire missie; langst lopende niet-NASA Mars-orbiter",
+  "description": "ESA's eerste missie naar een andere planeet dan de Aarde. De orbiter heeft het langste continue record van Mars' atmosfeer geproduceerd, met kartering van waterijsdepots, methaanpluimen en het driedimensionale weer van de planeet. Beagle 2, de Britse lander die het droeg, bereikte het oppervlak maar ontvouwde nooit volledig zijn zonnepanelen — verklaard verloren in 2004, intact gevonden door NASA's Mars Reconnaissance Orbiter in 2015. De orbiter is in zijn derde decennium van werking.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Sojoez-FG / Fregat vanuit Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "BEAGLE 2 VRIJGAVE",
+      "note": "Lander scheidt van orbiter voor onafhankelijke afdaling.",
+      "type": "nominal"
+    },
+    {
+      "met": 206,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "Hoofdmotorverbranding van 37 minuten vangt orbiter in Mars-baan op kerstdag 2003.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "BEAGLE 2 STIL",
+      "note": "Verwacht eerste signaal niet ontvangen; lander verklaard verloren.",
+      "type": "warning"
+    }
+  ]
+}

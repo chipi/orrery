@@ -1,0 +1,16 @@
+{
+  "title": "Principia di Newton · 1687",
+  "intro_sentence": "Un libro, tre leggi del moto e la legge gravitazionale del quadrato inverso — la base su cui si appoggia ancora tutto ciò che fa il volo spaziale.",
+  "narrative_101": [
+    "Nel 1684 Halley chiedeva alle persone giuste che forma avrebbe avuto un'orbita se l'attrazione del Sole fosse andata come 1/r². Christopher Wren scommise un libro di quaranta scellini che nessuno potesse dimostrarlo; Hooke affermò di avere una dimostrazione che non aveva. Halley chiese a Newton — Newton rispose «un'ellisse» senza esitazione, dissotterrò la dimostrazione da appunti vecchi di anni e tre anni dopo pubblicò i Principia.",
+    "Tre leggi del moto (inerzia, F = ma, azione-reazione) più la legge di gravitazione del quadrato inverso (F = Gm₁m₂/r²) più il calcolo per fare tutto questo — un libro, tre anni, nessuna revisione paritaria. Halley pagò di tasca propria i costi di stampa quando la Royal Society finì i soldi su un libro sull'anatomia dei pesci.",
+    "Da queste equazioni: le tre leggi di Keplero si deducono pulitamente. Maree, moto dei proiettili, precessione degli equinozi, forma della Terra — tutte conseguenze. Il volo spaziale 280 anni dopo è meccanica newtoniana diretta con motori aggiunti."
+  ],
+  "body_paragraphs": [
+    "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Keplero da primi principi.",
+    "Il calcolo era l'invenzione di Newton specificamente per fare questo. Lo chiamò «flussioni» — Leibniz inventò indipendentemente essenzialmente lo stesso macchinario in Germania più o meno nello stesso periodo, e la rivalità sulla priorità durò decenni.",
+    "Cosa Newton NON ha spiegato: PERCHÉ la gravità segue 1/r². Il suo famoso commento: «Hypotheses non fingo» — «Non invento ipotesi». Il meccanismo avrebbe atteso Einstein nel 1915.",
+    "I propagatori orbitali numerici moderni eseguono essenzialmente le equazioni di Newton con aritmetica in virgola mobile. L'arco eliocentrico di /fly, il porkchop di /plan, ogni soluzione kepleriana — gravità newtoniana fino in fondo."
+  ],
+  "formula_caption": "Legge di gravitazione universale di Newton. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
+}

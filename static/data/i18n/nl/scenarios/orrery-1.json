@@ -1,0 +1,79 @@
+{
+  "name": "ORRERY DEMO",
+  "dep_label": "Aarde-vertrek",
+  "arr_label": "Aarde-terugkeer",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon Heavy heft af. Vrije terugkeer — geen landing.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.4,
+      "label": "TMI-VERBRANDING",
+      "note": "Trans-Mars-injectie: 3,61 km/s. Ontsnappingssnelheid bereikt.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "DAG 1 CHECK",
+      "note": "Eerste systeemcontrole voltooid. Alles nominaal.",
+      "type": "nominal"
+    },
+    {
+      "met": 60,
+      "label": "TCM-1",
+      "note": "Tussenkoerscorrectie 1: 35 m/s.",
+      "type": "nominal"
+    },
+    {
+      "met": 200,
+      "label": "KRUISVAART",
+      "note": "Heenkruisvaart. Aarde wordt verre.",
+      "type": "info"
+    },
+    {
+      "met": 220,
+      "label": "COMMUNICATIESTORING",
+      "note": "Korte X-band signaalonderbreking (8 s). DSN heroverde. Oorzaak: stuwgasplume-occlusie. Geen gegevens verloren.",
+      "type": "warning"
+    },
+    {
+      "met": 259,
+      "label": "MARS FLYBY",
+      "note": "Dichtste benadering: ~300 km hoogte. Zwaartekrachtassist start terugkeer.",
+      "type": "nominal"
+    },
+    {
+      "met": 260,
+      "label": "TERUGKEERTRAJECT",
+      "note": "Vrije-terugkeer-zwaartekrachtassist voltooid. Ruimtevaartuig op Aarde-traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 310,
+      "label": "TUSSENKOERS 3",
+      "note": "TCM-3: 22 m/s. Terugkeertraject gecorrigeerd.",
+      "type": "nominal"
+    },
+    {
+      "met": 400,
+      "label": "HALFWEG NAAR HUIS",
+      "note": "Voorbij het middelpunt van de terugreis.",
+      "type": "info"
+    },
+    {
+      "met": 480,
+      "label": "INTREDEVOORBEREIDING",
+      "note": "Eindbenadering. Hitteschildcontroles.",
+      "type": "nominal"
+    },
+    {
+      "met": 509,
+      "label": "AANKOMST AARDE",
+      "note": "Atmosferische intrede. Missie voltooid.",
+      "type": "nominal"
+    }
+  ]
+}

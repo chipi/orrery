@@ -1,0 +1,16 @@
+{
+  "title": "Apollo 11 · 20 luglio 1969",
+  "intro_sentence": "Tre astronauti, un Saturn V e una scadenza lunare fissata da JFK nel 1961. Tranquillity Base, otto anni dopo, in tempo.",
+  "narrative_101": [
+    "Il 25 maggio 1961, John F. Kennedy disse al Congresso «questa nazione dovrebbe impegnarsi a raggiungere l'obiettivo, prima che questo decennio finisca, di far atterrare un uomo sulla Luna e riportarlo sano e salvo sulla Terra». Otto anni dopo, quasi al mese, Neil Armstrong mise piede sul Mare Tranquillitatis. 400.000 persone hanno lavorato all'Apollo al picco; il programma è costato ~25 miliardi di dollari (1969), circa il 4 % del bilancio federale al picco.",
+    "Apollo 11: comandante Neil Armstrong, CMP Michael Collins, LMP Edwin «Buzz» Aldrin. Lancio del Saturn V il 16 luglio; orbita lunare il 19 luglio; allunaggio il 20 luglio alle 20:17 UTC; primo passo alle 02:56 UTC del 21 luglio (UTC; 22:56 EDT del 20 luglio negli USA). Ammaraggio il 24 luglio. 8 giorni, 3 ore, 18 minuti totali.",
+    "L'allunaggio è stato visto in diretta da circa 600 milioni di persone — circa un quinto dell'umanità di allora. La frase «un piccolo passo» era di Armstrong; non era nello script (in seguito disse di voler dire «un piccolo passo per un uomo», ma l'articolo indeterminativo si perse nella trasmissione)."
+  ],
+  "body_paragraphs": [
+    "Il Saturn V era un mostro di 110 metri, a tre stadi e a propellente liquido, progettato sotto Wernher von Braun (il progettista tedesco del V-2, portato negli USA con l'Operazione Paperclip nel 1945). Primo stadio: 5× motori F-1, 7,6 milioni di lbf di spinta. Ancora il razzo più potente a volare con successo (fino a quando SLS Block 1 / Starship lo hanno eguagliato o superato 50+ anni dopo).",
+    "Traiettoria: anello a ritorno libero, la «figura-8» Terra-Luna-Terra. Se la combustione di inserimento in orbita lunare fosse fallita, Apollo 11 avrebbe girato attorno alla Luna e sarebbe tornata sulla Terra sullo stesso arco — abort integrato. Apollo 13 ha usato esattamente questa proprietà quando il suo modulo di servizio è guasto, girando dietro la Luna e tornando a casa.",
+    "Personale chiave oltre l'equipaggio: George Mueller (direttore del programma Apollo della NASA), Christopher Kraft (fondatore del Mission Control), Margaret Hamilton (responsabile del software dell'Apollo Guidance Computer — guidava il team che scrisse il codice AGC che girava sull'LM durante la discesa), Glynn Lunney + Gene Kranz + Cliff Charlesworth (direttori di volo).",
+    "Cose che avrebbero potuto ucciderli: gli allarmi AGC 1201 e 1202 durante la discesa (overflow dell'esecutivo — il design robusto del software di Hamilton si è ripreso automaticamente); allunaggio manuale perché il bersaglio automatico era un campo di massi (Armstrong è atterrato con ~25 secondi di carburante restanti); il motore di ascesa dell'LM aveva UNA possibilità di accendersi e non era stato testato a piena durata in volo.",
+    "L'Apollo ha effettuato sei allunaggi riusciti: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 ha mancato la Luna (LOI annullato), l'ha aggirata, è tornata sana e salva. 12 esseri umani hanno camminato sulla Luna; l'ultimo (Gene Cernan, Apollo 17) è partito il 14 dicembre 1972."
+  ]
+}

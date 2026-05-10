@@ -1,0 +1,17 @@
+{
+  "title": "Volo spaziale di lunga durata",
+  "intro_sentence": "Oltre i tre mesi circa, la microgravità smette di essere neutrale e inizia a prendere bocconi misurabili dal corpo umano.",
+  "narrative_101": [
+    "Sulla Terra, la gravità svolge un lavoro di fondo tutto il giorno: tirando i fluidi verso i piedi, caricando le tue ossa ad ogni passo, esercitando il tuo cuore contro il peso del tuo sangue. Toglila e il corpo si decostruisce — le ossa perdono ~1-2 % di densità al mese se non lotti contro, i muscoli si atrofizzano, il sistema cardiovascolare si decondiziona, gli spostamenti di fluido accumulano pressione nel cranio e schiacciano leggermente i bulbi oculari. Due ore al giorno su un'imbragatura per tapis roulant e un dispositivo di esercizio resistivo recuperano la maggior parte, ma non tutto.",
+    "Il record attuale per missione singola sulla ISS è Frank Rubio a 371 giorni (set 2022 – set 2023). Il record di tutti i tempi è stato Valeri Polyakov su Mir a 437,7 giorni nel 1994-95 — un test deliberato per una possibile missione su Marte. Gli equipaggi di Tiangong ruotano attualmente a intervalli di circa 6 mesi, corrispondendo allo standard ISS.",
+    "Oltre l'osso e il muscolo, i problemi più difficili sono la radiazione (i raggi cosmici galattici si accumulano a ~0,5 mSv/giorno in LEO — circa 100× il livello del mare), la vista (la sindrome neuro-oculare associata al volo spaziale rimane poco compresa) e la salute comportamentale (spazi piccoli, isolamento, nessuna privacy)."
+  ],
+  "body_paragraphs": [
+    "OSSO + MUSCOLO — gli astronauti perdono 1-2 % di densità minerale ossea al mese nelle ossa portanti senza contromisure (~0,5 % con l'Advanced Resistive Exercise Device + bisfosfonato). Le fibre muscolari di tipo I si atrofizzano più velocemente; l'esercizio quotidiano di 2 ore su tapis roulant + cicloergometro + ARED preserva circa il 90 % della massa muscolare pre-volo.",
+    "CARDIOVASCOLARE + SPOSTAMENTO DI FLUIDI — il cuore si restringe del ~9,4 % in volume durante missioni di 6 mesi; l'intolleranza ortostatica persiste per settimane dopo il ritorno. Circa 2 L di fluido migrano dalle gambe alla testa in microgravità, causando gonfiore facciale, pressione intracranica elevata, ed è implicato nella sindrome neuro-oculare associata al volo spaziale (SANS).",
+    "VESTIBOLARE / SENSORIMOTORIO — il riadattamento alla gravità richiede da ore a giorni dopo l'atterraggio; il controllo motorio fine è misurabilmente degradato per ~2 settimane.",
+    "RADIAZIONE — gli equipaggi LEO ricevono ~150-180 mSv per missione di 6 mesi. I limiti di carriera sono fissati per agenzia; il quadro di limite di dose efficace della NASA limita il rischio di carriera al 3 % di mortalità da cancro aumentata, che si traduce in circa 3-5 missioni di lunghezza ISS per la maggior parte degli astronauti.",
+    "Record: Polyakov 437,7 g (Mir, 1994-95); Rubio 371 g (ISS, 2022-23); Vande Hei 355 g (ISS, 2021-22); Kononenko cumulativo >1000 g attraverso 5 missioni."
+  ],
+  "diagram_caption": "Curve di perdita fisiologica nel corso di una missione di 12 mesi. Osso (rosso, caduta più ripida), muscolo (blu), cardiovascolare (oro). Le contromisure quotidiane di esercizio (tratteggiate) appiattiscono ogni curva."
+}

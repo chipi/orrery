@@ -1,0 +1,16 @@
+{
+  "title": "Principia de Newton · 1687",
+  "intro_sentence": "Un livre, trois lois du mouvement et la loi de gravitation en carré inverse — la fondation sur laquelle repose toujours tout ce que fait le vol spatial.",
+  "narrative_101": [
+    "En 1684, Halley demandait aux bonnes personnes quelle forme prendrait une orbite si la traction du Soleil allait comme 1/r². Christopher Wren a parié un livre de quarante shillings que personne ne pourrait le prouver ; Hooke prétendait avoir une preuve qu'il n'avait pas. Halley a demandé à Newton — Newton a répondu « une ellipse » sans hésitation, a déterré la preuve de notes vieilles de plusieurs années, et trois ans plus tard a publié les Principia.",
+    "Trois lois du mouvement (inertie, F = ma, action-réaction) plus la loi de gravitation en carré inverse (F = Gm₁m₂/r²) plus le calcul pour tout faire — un livre, trois ans, pas de relecture par les pairs. Halley a payé lui-même les coûts d'impression lorsque la Royal Society s'est trouvée à court d'argent à cause d'un livre sur l'anatomie des poissons.",
+    "De ces équations : les trois lois de Kepler se déduisent proprement. Les marées, le mouvement des projectiles, la précession des équinoxes, la forme de la Terre — autant de conséquences. Le vol spatial 280 ans plus tard est de la mécanique newtonienne directe avec moteurs ajoutés."
+  ],
+  "body_paragraphs": [
+    "Philosophiæ Naturalis Principia Mathematica a été publié en juillet 1687 en latin. Trois livres : le mouvement dans le vide, le mouvement à travers les milieux résistants, le système du monde. Le troisième livre applique les lois au cosmos réel et reproduit toutes les données de Kepler à partir des premiers principes.",
+    "Le calcul était l'invention de Newton spécifiquement pour faire cela. Il l'appela « fluxions » — Leibniz a inventé indépendamment essentiellement la même machinerie en Allemagne à peu près à la même époque, et la rivalité sur la priorité a duré des décennies.",
+    "Ce que Newton N'a PAS expliqué : POURQUOI la gravité suit 1/r². Son célèbre commentaire : « Hypotheses non fingo » — « Je ne forge pas d'hypothèses ». Le mécanisme attendrait Einstein en 1915.",
+    "Les propagateurs d'orbites numériques modernes exécutent essentiellement les équations de Newton avec arithmétique en virgule flottante. L'arc héliocentrique de /fly, le porkchop de /plan, chaque solution képlérienne — gravité newtonienne jusqu'au fond."
+  ],
+  "formula_caption": "Loi de gravitation universelle de Newton. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
+}

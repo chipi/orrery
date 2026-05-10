@@ -1,0 +1,16 @@
+{
+  "title": "Apollo 11 · 20. Juli 1969",
+  "intro_sentence": "Drei Astronauten, eine Saturn V und eine Mond-Deadline, die JFK 1961 setzte. Tranquillity Base, acht Jahre später, im Plan.",
+  "narrative_101": [
+    "Am 25. Mai 1961 sagte John F. Kennedy dem Kongress: „Diese Nation sollte sich verpflichten, das Ziel zu erreichen, vor Ablauf dieses Jahrzehnts einen Mann auf dem Mond zu landen und ihn sicher zur Erde zurückzubringen.\" Acht Jahre später, fast auf den Monat genau, betrat Neil Armstrong das Mare Tranquillitatis. 400.000 Menschen arbeiteten auf dem Höhepunkt an Apollo; das Programm kostete ~25 Milliarden Dollar (1969er Dollar), etwa 4 % des Bundeshaushalts auf dem Höhepunkt.",
+    "Apollo 11: Kommandant Neil Armstrong, CMP Michael Collins, LMP Edwin „Buzz\" Aldrin. Saturn-V-Start am 16. Juli; Mondumlaufbahn am 19. Juli; Landung am 20. Juli um 20:17 UTC; erster Schritt um 02:56 UTC am 21. Juli (UTC; 22:56 EDT am 20. Juli in den USA). Wasserung am 24. Juli. 8 Tage, 3 Stunden, 18 Minuten insgesamt.",
+    "Die Mondlandung wurde live von schätzungsweise 600 Millionen Menschen verfolgt — etwa einem Fünftel der damaligen Menschheit. Der Satz „one small step\" stammte von Armstrong; er war ungeskriptet (er sagte später, er habe „one small step for a man\" sagen wollen, aber der unbestimmte Artikel ging in der Übertragung verloren)."
+  ],
+  "body_paragraphs": [
+    "Saturn V war ein 110 Meter langes, dreistufiges Flüssigtreibstoff-Monster, entworfen unter Wernher von Braun (dem deutschen V-2-Designer, 1945 unter Operation Paperclip in die USA gebracht). Erste Stufe: 5× F-1-Triebwerke, 7,6 Millionen lbf Schub. Bis heute die stärkste erfolgreich geflogene Rakete (bis SLS Block 1 / Starship sie 50+ Jahre später erreichten oder übertrafen).",
+    "Trajektorie: Free-Return-Schleife, die „Acht\" Erde-Mond-Erde. Wäre die Mondumlauf-Einschuss-Brennphase fehlgeschlagen, hätte Apollo 11 den Mond umrundet und wäre auf demselben Bogen zur Erde zurückgekehrt — eingebauter Abbruch. Apollo 13 nutzte genau diese Eigenschaft, als sein Service-Modul versagte, umrundete den Mond und kam nach Hause.",
+    "Schlüsselpersonal über die Crew hinaus: George Mueller (NASA-Apollo-Programmdirektor), Christopher Kraft (Mission-Control-Gründer), Margaret Hamilton (Apollo-Guidance-Computer-Software-Leiterin — sie leitete das Team, das den AGC-Code schrieb, der während des Abstiegs auf dem LM lief), Glynn Lunney + Gene Kranz + Cliff Charlesworth (Flight Directors).",
+    "Was sie hätte töten können: AGC-Alarme 1201 und 1202 während des Abstiegs (Executive-Overflow — Hamiltons robustes Software-Design erholte sich automatisch); manuelle Landung, weil das Auto-Ziel ein Felsfeld war (Armstrong landete mit ~25 Sekunden Treibstoff übrig); das LM-Aufstiegstriebwerk hatte EINE Chance zu zünden und war im Flug nicht in voller Dauer getestet.",
+    "Apollo flog sechs erfolgreiche Landungen: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 verfehlte den Mond (LOI abgesagt), umrundete ihn, kehrte sicher zurück. 12 Menschen liefen auf dem Mond; der letzte (Gene Cernan, Apollo 17) verließ ihn am 14. Dezember 1972."
+  ]
+}

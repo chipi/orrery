@@ -1,0 +1,33 @@
+{
+  "name": "De Zon",
+  "type": "Ster · G-type hoofdreeks",
+  "fact": "De Zon bevat 99,86% van alle massa in het zonnestelsel. Haar zwaartekracht houdt alles — van Mercurius tot de Oortwolk — in baan. Elke seconde fuseert ze 600 miljoen ton waterstof tot helium, en geeft daarbij de energie vrij die het leven op Aarde 4,5 miljard jaar lang in stand heeft gehouden.",
+  "bio": "Een 4,6 miljard jaar oude G-type hoofdreeksster, halverwege haar 10-miljard-jarige leven. De Zon roteert differentieel — haar evenaar doet er 25 dagen over, haar polen 35. Over ongeveer 5 miljard jaar zal ze haar kernwaterstof uitputten, uitzetten tot een rode reus en de binnenste planeten verzwelgen. De gravitationele invloed van de Zon bepaalt de heliosfeer tot ongeveer 120 AE.",
+  "links": [
+    {
+      "l": "Zon — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Zon",
+      "t": "intro"
+    },
+    {
+      "l": "The Sun (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/sun/",
+      "t": "intro"
+    },
+    {
+      "l": "Parker Solar Probe (NASA)",
+      "u": "https://science.nasa.gov/mission/parker-solar-probe/",
+      "t": "core"
+    },
+    {
+      "l": "Solar Dynamics Observatory (NASA)",
+      "u": "https://sdo.gsfc.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Standard Solar Model (Annual Review of Astronomy 2022)",
+      "u": "https://www.annualreviews.org/doi/10.1146/annurev-astro-052920-094029",
+      "t": "deep"
+    }
+  ]
+}

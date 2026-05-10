@@ -14,7 +14,7 @@ There is no `localStorage` and no cookie — the URL is the only place your loca
 
 [![Japanese locale](screenshots/locale-ja.png)](screenshots/locale-ja.png)
 
-**Currently shipped — 13 languages, all at 100% UI parity:**
+**Currently shipped — 14 languages, all at 100% UI parity:**
 
 | Locale | Native name | Notes |
 |---|---|---|
@@ -24,6 +24,7 @@ There is no `localStorage` and no cookie — the URL is the only place your loca
 | `de` | Deutsch | |
 | `pt-BR` | Português (BR) | |
 | `it` | Italiano | |
+| `nl` | Nederlands | Added v0.5.x (issue #72) |
 | `zh-CN` | 中文 (简体) | |
 | `ja` | 日本語 | |
 | `ko` | 한국어 | |
@@ -32,7 +33,7 @@ There is no `localStorage` and no cookie — the URL is the only place your loca
 | `ru` | Русский | Cyrillic |
 | `sr-Cyrl` | Српски | Serbian Cyrillic |
 
-The `/science` overlay tree (542 strings of editorial body text) is currently translated for **en-US, es, fr, de, it**. The remaining 8 locales fall back to en-US for the encyclopedia content while keeping their UI translations — non-blocking per [ADR-017](adr/ADR-017.md).
+The `/science` encyclopedia overlay tree is translated end-to-end across **all 14 locales**. Editorial entity overlays (missions, planets, sites, modules) are translated across all 14 locales for the v0.5.x rollout.
 
 ---
 
@@ -304,7 +305,7 @@ The only state that persists across sessions is what's in the URL (`?lang=`, `?m
 
 **Images don't load.** Either you're offline before the service worker has cached them, or the agency image API is rate-limiting. Reload after a minute; cached images persist.
 
-**A translation looks weird.** All 13 locales now ship at 100% UI parity, but the `/science` encyclopedia body text is currently translated for en-US/es/fr/de/it; the other 8 locales fall back to English for that surface. File an issue if a UI string looks wrong; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](adr/ADR-033.md).
+**A translation looks weird.** All 14 locales now ship at 100% UI parity AND full editorial overlay coverage as of v0.5.x. If a string reads off, file an issue; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](adr/ADR-033.md).
 
 **Missions render outside the camera.** For lunar missions the camera is tight on Earth + Moon (Sun off-camera by design — see [ADR-031](adr/ADR-031.md) Wave 1 scope). Drag to pan; scroll to zoom.
 

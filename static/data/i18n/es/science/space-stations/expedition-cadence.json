@@ -1,0 +1,17 @@
+{
+  "title": "Cadencia de expediciones",
+  "intro_sentence": "Las estaciones funcionan con rotaciones rotativas de tripulación de 6 meses — un equilibrio entre consumibles del traje, vida útil del vehículo, planes de entrenamiento y fisiología humana.",
+  "narrative_101": [
+    "¿Por qué seis meses? Es la respuesta a varias restricciones que se cruzan en un mismo punto. Las naves Soyuz y Crew Dragon están certificadas para permanecer acopladas durante ~210 días antes de que sus propulsores y juntas necesiten renovarse. Los trajes EVA Orlan rusos se recargan en tierra cada seis meses. Los datos de NASA sobre contramedidas a la pérdida ósea son más fiables en intervalos de 6 meses. Rotar un tercio de la tripulación cada 4-6 meses mantiene manos frescas a bordo sin tener que compartir camas.",
+    "La EEI comenzó con expediciones de 3 personas (Expedición 1 en 2000) y subió a tripulaciones de 6 personas en 2009 una vez que estuvo la capacidad de bote salvavidas. Cada expedición suele durar ~6 meses. Algunas duran más — la estancia accidental de 371 días de Frank Rubio (Expediciones 67/68/69) ocurrió cuando su Soyuz fue dañada por escombros y un reemplazo tuvo que ser enviado.",
+    "Tiangong comenzó con rotaciones más cortas (Shenzhou 12: 92 días; Shenzhou 13: 183 días) y se estabilizó en ~6 meses desde Shenzhou 14 en adelante. Tripulaciones de tres rotan; las salientes y entrantes comparten aproximadamente una semana a bordo para entregar el estado operativo."
+  ],
+  "body_paragraphs": [
+    "Restricciones que impulsan la cadencia de ~6 meses: certificación de naves acopladas (Soyuz: 210 días; Crew Dragon: 210 días; Shenzhou: 180-210 días), ciclos de reacondicionamiento en tierra de los trajes EVA, capacidad de despensa de comida por reabastecimiento y la preferencia del Programa de Investigación Humana de la NASA por intervalos de 6 meses para datos de pérdida ósea.",
+    "Expediciones de la EEI: numeradas secuencialmente desde la Expedición 1 (nov 2000). Tamaños de tripulación — 3 (Exp 1-19), 6 (Exp 20-63), variable 7-9 con solapamiento de Crew Dragon (Exp 64-).",
+    "Entrega: la nave Soyuz/Crew Dragon entrante se acopla 5-10 días antes de la salida de la saliente. Ambas tripulaciones comparten la estación, realizan briefings, transfieren carga, y luego la tripulación saliente se desacopla. El período de tripulación combinada es el más estresante para los recursos: más cuerpos, más CO₂, más consumo de comida.",
+    "Excepciones de larga duración: Polyakov 437,7 días (Mir, 1994-95, prueba de resistencia clase Marte deliberada); Rubio 371 días (EEI, 2022-23, contingencia); Vande Hei 355 días (EEI, 2021-22, reorganización de asientos Soyuz); Kelly + Kornienko 340 días (EEI, 2015-16, programa de estudio de gemelos).",
+    "Cadencia Tiangong: Shenzhou 12 (92 días), 13 (183), 14 (186), 15 (186), 16 (155), 17 (187), 18 (192). Ritmo estable que coincide con la práctica de la EEI."
+  ],
+  "diagram_caption": "Línea temporal de expediciones EEI 2000-2025: bandas de color apiladas (tripulaciones de 3, 6, 7 personas) con valores atípicos anotados (Polyakov, Vande Hei, Rubio)."
+}

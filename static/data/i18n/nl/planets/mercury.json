@@ -1,0 +1,33 @@
+{
+  "name": "Mercurius",
+  "type": "Aardse planeet",
+  "fact": "Oppervlaktetemperaturen schommelen 610 °C op één dag. Geen atmosfeer — alleen rauwe blootstelling aan de ruimte.",
+  "bio": "De kleinste planeet. Zijn sterk elliptische baan (e=0,206) doet hem merkbaar versnellen nabij perihelium. Ondanks dat hij het dichtst bij de Zon staat, is Venus warmer.",
+  "links": [
+    {
+      "l": "Mercurius — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Mercurius_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Mercury (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/mercury/",
+      "t": "intro"
+    },
+    {
+      "l": "MESSENGER mission overview (NASA)",
+      "u": "https://science.nasa.gov/mission/messenger/",
+      "t": "core"
+    },
+    {
+      "l": "BepiColombo (ESA / JAXA)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/BepiColombo",
+      "t": "core"
+    },
+    {
+      "l": "Mercury's molten core (Nature Geoscience 2019)",
+      "u": "https://www.nature.com/articles/s41561-019-0405-8",
+      "t": "deep"
+    }
+  ]
+}

@@ -19,6 +19,7 @@ export type LocaleCode =
   | 'de'
   | 'pt-BR'
   | 'it'
+  | 'nl'
   | 'sr-Cyrl'
   | 'zh-CN'
   | 'ja'
@@ -54,6 +55,7 @@ export const SUPPORTED_LOCALES: readonly LocaleEntry[] = [
   { code: 'de', nativeName: 'Deutsch', shortTag: 'DE', flag: '🇩🇪' },
   { code: 'pt-BR', nativeName: 'Português', shortTag: 'PT', flag: '🇧🇷' },
   { code: 'it', nativeName: 'Italiano', shortTag: 'IT', flag: '🇮🇹' },
+  { code: 'nl', nativeName: 'Nederlands', shortTag: 'NL', flag: '🇳🇱' },
   { code: 'sr-Cyrl', nativeName: 'Српски', shortTag: 'СР', flag: '🇷🇸' },
   { code: 'zh-CN', nativeName: '简体中文', shortTag: 'ZH', flag: '🇨🇳' },
   { code: 'ja', nativeName: '日本語', shortTag: 'JA', flag: '🇯🇵' },

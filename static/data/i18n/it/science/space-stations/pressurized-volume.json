@@ -1,0 +1,17 @@
+{
+  "title": "Volume pressurizzato",
+  "intro_sentence": "L'interno abitabile totale di una stazione — quanto spazio l'equipaggio ha realmente per vivere e lavorare.",
+  "narrative_101": [
+    "Ogni scheda tecnica di una stazione apre con un numero: volume pressurizzato in metri cubi. È l'interno dei moduli in cui l'equipaggio può respirare, sommato attraverso l'intera stazione. La ISS arriva a circa 388 m³ (circa il volume della cabina passeggeri di un Boeing 747). Tiangong arriva a circa 110 m³ — comodo per tre membri dell'equipaggio, stretto per sei.",
+    "Il volume pressurizzato è limitato da due tetti: diametro della carenatura del lanciatore (puoi spedire solo un modulo grasso quanto il razzo può sollevare) e massa del guscio a pressione (più spessa è la parete, più pesante è il lancio). I gusci moderni in alluminio composito raggiungono un punto ottimale a 2-4 mm di spessore. Oltre stai pagando massa per un margine di sicurezza che non usi; più sottile e un micrometeoroide potrebbe perforarti.",
+    "Gli equipaggi necessitano di circa 14 m³ a persona di «volume abitabile netto» (volume dopo rack e paratie) per missioni di oltre un mese. ISS e Tiangong superano entrambi questo di 3-4× — il che sembra eccessivo finché non ti ricordi che l'equipaggio è sveglio 16 ore al giorno, ogni giorno, per mesi."
+  ],
+  "body_paragraphs": [
+    "Il volume pressurizzato è l'interno abitabile pieno d'aria di una stazione spaziale, misurato in metri cubi. Esclude rack strutturali, paratie e volume delle apparecchiature — la cifra solitamente citata è il volume interno lordo, di cui il 30-50 % è occupato da hardware.",
+    "ISS: ~388 m³ attraverso 16 moduli pressurizzati (Zarya, Zvezda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, più i russi Rassvet e Poisk).",
+    "Tiangong: ~110 m³ attraverso tre moduli (nucleo Tianhe, laboratori Wentian e Mengtian).",
+    "Mir: ~350 m³ al picco (1986–2001) — comparabile con la ISS in volume abitabile ma costruito con moduli a parete più spessa e una generazione più vecchia di sistemi di supporto vitale.",
+    "La direttiva 14 m³/persona (NASA-STD-3001 Volume 2) è derivata empiricamente da studi di psicologia in ambienti confinati che risalgono a Skylab e al programma sovietico Saljut. Al di sotto, il benessere dell'equipaggio e le prestazioni della missione diminuiscono in modo misurabile."
+  ],
+  "diagram_caption": "Tre impronte di stazione in scala: Tiangong (~110 m³), Mir (~350 m³), ISS (~388 m³). Una silhouette umana per riferimento di scala."
+}

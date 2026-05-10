@@ -1,0 +1,16 @@
+{
+  "title": "Tsiolkowski-Gleichung · 1903",
+  "intro_sentence": "Ein gehörloser russischer Schullehrer arbeitet die Raketengleichung 50 Jahre, bevor irgendjemand eine Rakete bauen konnte, um sie zu nutzen.",
+  "narrative_101": [
+    "Konstantin Tsiolkowski war ein autodidaktischer Provinzschullehrer in Kaluga, seit der Kindheit von Scharlach taub, der seine Abende mit dem Skizzieren mehrstufiger Raketen verbrachte, während er tagsüber Arithmetik unterrichtete. 1903 veröffentlichte er „Die Erforschung des Weltraums mit Reaktionsgeräten\" in einer obskuren russischen Zeitschrift — und arbeitete die Gleichung aus, die jede jemals gebaute Rakete beherrschen würde.",
+    "Die Tsiolkowski-Gleichung: ∆v = vₑ × ln(m₀/m₁). Die Geschwindigkeitsänderung, die eine Rakete erzeugen kann, ist gleich ihrer Ausströmgeschwindigkeit mal dem natürlichen Logarithmus ihres Massenverhältnisses. Dieser Term mit natürlichem Logarithmus ist brutal — mehr ∆v zu erhalten erfordert exponentiell mehr Treibstoff. Der größte Teil jeder Rakete ist Treibstoff. Die Saturn V bestand zu 85 % aus Treibstoff nach Masse.",
+    "Tsiolkowski erkannte auch: Flüssigtreibstoffe würden Festtreibstoffe schlagen; Mehrstufung war notwendig, um der Erde zu entkommen; orbitale Stationen könnten Menschen permanent beherbergen. Er starb 1935, zwei Jahre bevor Goddards erster Flüssigtreibstoff-Test echte Höhe erreichte."
+  ],
+  "body_paragraphs": [
+    "Tsiolkowski veröffentlichte die Gleichung, das Mehrstufenraketenkonzept und das Orbitalstationskonzept Jahre, bevor ernsthafte Raketentechnik existierte. Goddard würde 1926 (USA) die erste Flüssigtreibstoff-Rakete bauen; von Brauns V-2 1942 (Deutschland); Koroljows R-7 1957 (UdSSR).",
+    "Die Gleichung ist das Inverse von Newtons drittem Gesetz: jedes mit Geschwindigkeit vₑ ausgestoßene Kilogramm Treibstoff schiebt das Fahrzeug um 1 kg × vₑ. Integriere das über abnehmende Masse und du erhältst die Abhängigkeit vom natürlichen Logarithmus.",
+    "Warum log-Skalierung wichtig ist: ∆v zu verdoppeln benötigt das Massenverhältnis im Quadrat. Verdreifachen benötigt die dritte Potenz. Um von 0 auf Fluchtgeschwindigkeit (~11,2 km/s) mit einer typischen chemischen Ausströmgeschwindigkeit von 4,4 km/s zu gelangen, Massenverhältnis = e^(11,2/4,4) ≈ 13. Eine 1-Tonnen-Nutzlast braucht also 12 Tonnen Treibstoff plus die Struktur, um sie zu halten.",
+    "Tsiolkowski hat nichts getestet. Er war kein Ingenieur — er war ein Theoretiker mit Kreide. Das sowjetische Raumfahrtprogramm kanonisierte ihn posthum; sein Haus in Kaluga ist jetzt ein Museum und sein Name steht auf dem Mondrückseiten-Krater, auf den die sowjetischen Mondsonden zielten."
+  ],
+  "formula_caption": "Die Raketengleichung. m₀ = nasse Masse (voll); m₁ = trockene Masse (leer); vₑ = Ausströmgeschwindigkeit."
+}

@@ -1,0 +1,38 @@
+{
+  "name": "MMX",
+  "type": "PHOBOS-MONSTERTERUGKEER · GEPLAND",
+  "first": "Eerste monsterterugkeer van een Mars-maan",
+  "description": "Martian Moons eXploration is JAXA's plan om op Phobos te landen, ~10 g regoliet te scheppen en mee terug te brengen. De monsters kunnen een lang besproken vraag beantwoorden: zijn Phobos en Deimos gevangen planetoïden of fragmenten van een oude inslag op Mars zelf? De missie omvat ook een Duits-Franse rover voor Phobos-oppervlaktemobiliteit — een geheel ander operationeel model dan wat de Hayabusa-missies bij Itokawa of Ryugu deden. Lancering was gepland voor 2024 maar verschoof naar 2026 vanwege vertragingen in JAXA's H3-draagraket.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "H3-24L vanuit Tanegashima — JAXA's nieuwe zware draagraket.",
+      "type": "nominal"
+    },
+    {
+      "met": 334,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "Vangst in Mars-baan; transfer naar Phobos quasi-baan over volgende maanden.",
+      "type": "nominal"
+    },
+    {
+      "met": 600,
+      "label": "ROVER INZET",
+      "note": "DLR/CNES rover (~25 kg) vrijgegeven op Phobos-oppervlak voor in-situ studies.",
+      "type": "info"
+    },
+    {
+      "met": 1100,
+      "label": "PHOBOS-MONSTER",
+      "note": "MMX zet neer op Phobos; ~10 g regoliet verzameld.",
+      "type": "info"
+    },
+    {
+      "met": 1500,
+      "label": "AARDE-TERUGKEER",
+      "note": "Monster-herbetredingscapsule arriveert bij de Aarde ~2031.",
+      "type": "info"
+    }
+  ]
+}

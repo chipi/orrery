@@ -1,0 +1,50 @@
+{
+  "name": "Curiosity",
+  "type": "ROVER · ACTIEF",
+  "first": "Eerste nucleair aangedreven Mars-rover; eerste sky-crane-landing",
+  "description": "De vlaggenschipmissie die de moderne Mars-verkenning definieerde. Curiosity is autoformaat, plutoniumaangedreven en heeft sinds de landing in de Gale-krater in 2012 32+ km Mount Sharp opgereden. Zijn instrumenten bevestigden dat Mars ooit leefbare omstandigheden had — stromend water, complexe organische stoffen, de chemie die het leven nodig zou hebben. De 'zeven minuten van schrik' EDL-sequentie, eindigend met een sky-crane die de rover aan kabels neerlaat, is nu NASA's standaard voor het leveren van grote ladingen aan het Marsoppervlak.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 541 heft af van Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI-VERBRANDING",
+      "note": "Trans-Mars-injectie (3,61 km/s ∆v) stuurt MSL op een heliocentrische Mars-bestemde traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 16,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 119,
+      "label": "TCM-3",
+      "note": "Laatste pre-EDL-correctie; traject richt zich op de landingsellips van de Gale-krater.",
+      "type": "nominal"
+    },
+    {
+      "met": 254,
+      "label": "EDL — ZEVEN MINUTEN VAN SCHRIK",
+      "note": "Atmosferische intrede, supersonische parachute, sky-crane retro-raketten, rover aan kabels neergelaten.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.005,
+      "label": "TOUCHDOWN",
+      "note": "Curiosity arriveert bij Aeolis Palus, Gale-krater, 2012-08-06 05:17:57 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 254.01,
+      "label": "EERSTE BEELDEN",
+      "note": "Hazcam stuurt eerste lage-resolutie beeld van het oppervlak terug.",
+      "type": "info"
+    }
+  ]
+}

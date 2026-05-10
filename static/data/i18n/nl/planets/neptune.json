@@ -1,0 +1,33 @@
+{
+  "name": "Neptunus",
+  "type": "IJsreus",
+  "fact": "Voyager 2 vloog Neptunus voorbij in 1989 na een reis van 12 jaar. Het blijft de enige ruimtesonde die hem ooit bezocht.",
+  "bio": "De winderigste planeet — oppervlaktewinden van 2.100 km/u. Ontdekt door wiskundige voorspelling vóór directe waarneming, omdat de baan van Uranus een onzichtbare gravitationele invloed vertoonde.",
+  "links": [
+    {
+      "l": "Neptunus — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Neptunus_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Neptune (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/neptune/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 at Neptune (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-neptune/",
+      "t": "core"
+    },
+    {
+      "l": "Discovery of Neptune — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Discovery_of_Neptune",
+      "t": "core"
+    },
+    {
+      "l": "Neptune's interior model (Icarus 2021)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0019103521000981",
+      "t": "deep"
+    }
+  ]
+}

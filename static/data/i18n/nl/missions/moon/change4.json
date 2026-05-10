@@ -1,0 +1,32 @@
+{
+  "name": "Chang'e 4 / Yutu-2",
+  "type": "ACHTERZIJDE-LANDER · ROVER · ACTIEF",
+  "first": "Eerste zachte landing op de maanachterzijde",
+  "description": "De maanachterzijde heeft geen directe radio-zichtlijn naar de Aarde. Om er een ruimtevaartuig te laten landen, lanceerde China eerst de Queqiao-relais-satelliet naar een halo-baan rond Aarde-Maan Lagrange-punt L2 — een uitkijkpunt dat zowel de achterzijde als de Aarde tegelijkertijd ziet. Met die infrastructuur op zijn plaats, werd Chang'e 4 het eerste ruimtevaartuig dat zacht op de achterzijde landde. De Yutu-2-rover werkt sinds januari 2019 en heeft 1,9+ km gereden, de langste doorvaart van enige maan-rover.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Lange Mars 3B vanuit Xichang.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 27,
+      "label": "TOUCHDOWN",
+      "note": "Lander zet neer bij Von Kármán-krater 2019-01-03 — eerste ruimtevaartuig op de achterzijde. Alle comms via Queqiao-relais bij Aarde-Maan L2.",
+      "type": "nominal"
+    },
+    {
+      "met": 27.01,
+      "label": "YUTU-2 INGEZET",
+      "note": "Rover rolt van helling.",
+      "type": "info"
+    }
+  ]
+}

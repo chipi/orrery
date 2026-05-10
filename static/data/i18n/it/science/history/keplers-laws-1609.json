@@ -1,0 +1,16 @@
+{
+  "title": "Leggi di Keplero · 1609–1619",
+  "intro_sentence": "Una vita intera di dati di Marte ad occhio nudo di Tycho Brahe, distillati da Keplero nelle tre regole che ogni orbita obbedisce.",
+  "narrative_101": [
+    "Tycho Brahe trascorse 30 anni all'osservatorio di Uraniborg sull'isola di Hven misurando la posizione di Marte con quadranti di ottone e quercia — precisione migliore del minuto d'arco, tutto ad occhio nudo. Morì nel 1601 senza aver pubblicato quasi nulla.",
+    "Keplero ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta venne quando provò un'ellisse — Marte combaciò immediatamente. Da lì uscirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali spazzate in tempi uguali; il periodo al quadrato è uguale al semiasse maggiore al cubo.",
+    "Senza queste tre leggi, nessuna traiettoria di sonda spaziale in questa app verrebbe calcolata. Ogni cella di porkchop, ogni arco di trasferimento, ogni pianeta su /explore è una soluzione kepleriana."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) pubblicò le leggi 1 + 2 — le regole dell'ellisse + delle aree uguali, derivate dai dati di opposizione di Marte. Harmonices Mundi (1619) pubblicò la legge 3 — periodo² ∝ semiasse maggiore³.",
+    "Keplero non aveva giustificazione teorica — le leggi erano modelli empirici estratti dai dati. Newton avrebbe fornito il perché 70 anni dopo (la gravità va come 1/r²; le orbite legate sono sezioni coniche; la legge 3 deriva dalla conservazione dell'energia).",
+    "Il contributo di Brahe non furono solo i dati: era un meticoloso strumentista che spinse la misurazione ad occhio nudo al suo limite fisico. La precisione di livello telescopico arrivò solo dopo il telescopio di Galileo del 1609 — troppo tardi per sovrapporsi alla carriera di Brahe.",
+    "Rianalisi moderna: i residui di Marte di Keplero sono inferiori al minuto d'arco. Centro un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misura irriducibile di ~1 minuto d'arco. L'adattamento era reale."
+  ],
+  "diagram_caption": "Posizioni di Marte di Tycho (punti) versus l'adattamento ellittico di Keplero (curva). Sole in uno dei fuochi."
+}

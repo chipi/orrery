@@ -25,7 +25,7 @@ What you'll add:
 - **`static/data/i18n/<code>/`** — editorial overlays mirroring `static/data/i18n/en-US/`:
   - `missions/{mars,moon}/<id>.json` — translate `name`, `description`, `first`, `type`, `events[].label`, `events[].note`. **Keep mission ID + agency proper nouns in original.**
   - `planets/<id>.json`, `rockets/<id>.json`, `sun.json`, `scenarios/<id>.json`, `earth-objects/<id>.json`, `moon-sites/<id>.json`, `mars-sites/<id>.json`, `iss-modules/<id>.json`, `tiangong-modules/<id>.json` — same overlay pattern.
-  - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays. The `/science` overlay tree is currently shipped for en-US/es/fr/de/it; the other 8 locales fall back per ADR-017.
+  - `science/<tab>/_intro.json` and `science/<tab>/<section>.json` — encyclopedia overlays. The `/science` overlay tree is currently shipped for en-US/es/fr/de/it; the other 9 locales (pt-BR/zh-CN/ja/ko/hi/ar/ru/sr-Cyrl/nl) fall back per ADR-017.
 - **`project.inlang/settings.json`** — add your locale code to `languageTags`.
 - **`src/lib/locale.ts`** — add an entry to `SUPPORTED_LOCALES` (with the country flag emoji used by the LocalePicker chip).
 
@@ -33,7 +33,7 @@ What you'll add:
 
 **Workflow.** Per [ADR-033](docs/adr/ADR-033.md), the workflow is LLM-only first-pass with no native-speaker review gate. If you're a native speaker offering review for a specific language, that's high value — open an issue.
 
-**Status (v0.5.0):** all 13 supported locales (en-US + es / fr / de / pt-BR / it / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl) are at 100% UI parity (684 keys each). The remaining work is the `/science` overlay tree for the 8 non-EU locales — see ADR-031 for language priority and ADR-032 for font/script strategy.
+**Status (v0.5.x):** all 14 supported locales (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl) are at 100% UI parity (~711 keys each). Editorial entity-overlay coverage (missions, planets, sun, rockets, sites, station modules, scenarios) is 100% for all 14 locales. `/science` encyclopedia overlay coverage is en-US + es / fr / de / it; the other 9 locales fall back per ADR-017. Dutch (nl) was added under issue #72.
 
 ## 3. Code
 

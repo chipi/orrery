@@ -1,6 +1,6 @@
 # Orrery
 
-The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's curious. Real physics, real missions from Sputnik to Artemis II, in **13 languages**. Beautiful, educational, self-hostable.
+The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's curious. Real physics, real missions from Sputnik to Artemis II, in **14 languages**. Beautiful, educational, self-hostable.
 
 [![CI](https://github.com/chipi/orrery/actions/workflows/ci.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/ci.yml)
 [![E2E](https://github.com/chipi/orrery/actions/workflows/e2e.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/e2e.yml)
@@ -11,7 +11,7 @@ The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's cu
 [![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](tsconfig.json)
 [![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8)](docs/adr/ADR-029.md)
 [![No tracking](https://img.shields.io/badge/tracking-none-success)](#privacy)
-[![i18n](https://img.shields.io/badge/i18n-13%20locales-blue)](docs/i18n-style-guide.md)
+[![i18n](https://img.shields.io/badge/i18n-14%20locales-blue)](docs/i18n-style-guide.md)
 
 ![Orrery — solar system explorer](docs/screenshots/hero-explore-3d.png)
 
@@ -27,7 +27,7 @@ The name comes from a mechanical model of the solar system. That is exactly what
 
 **<https://chipi.github.io/orrery/>** — every screen, fully offline-capable after first load.
 
-Available in **13 languages, all at 100% UI parity**: English · Español · Français · Deutsch · Português (BR) · Italiano · 中文 · 日本語 · 한국어 · हिन्दी · العربية (RTL) · Русский · Српски (Cyrillic).
+Available in **14 languages, all at 100% UI parity**: English · Español · Français · Deutsch · Português (BR) · Italiano · Nederlands · 中文 · 日本語 · 한국어 · हिन्दी · العربية (RTL) · Русский · Српски (Cyrillic).
 
 ## Ten screens
 
@@ -91,7 +91,7 @@ The 36 missions in the catalog include flown classics, outer-system landmarks, r
 Orrery makes a few claims a screen reader can verify:
 
 - **Real physics.** Keplerian two-body orbital mechanics. Lagrange-Gauss short-way Lambert solver. Vis-viva for heliocentric velocity. Tsiolkovsky for fuel. KaTeX-rendered formulas in the encyclopedia. All constants from IAU + JPL + agency mission reports — every number cited.
-- **Real missions.** 36 base mission JSON files with editorial overlays in 13 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
+- **Real missions.** 36 base mission JSON files with editorial overlays in 14 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
 - **Real images.** Agency-first build-time imagery sourcing per [ADR-046](docs/adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia fallback. Per-image provenance manifest. Public [`/credits`](https://chipi.github.io/orrery/credits) page. Lightbox attribution on every gallery thumbnail.
 - **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://chipi.github.io/orrery/library) bill-of-links.
 - **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md).

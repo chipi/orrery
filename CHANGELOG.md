@@ -8,6 +8,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [Unreleased]
+
+### Added
+- **Dutch (`nl`) locale** — 14th supported language (issue #72). Full UI bundle (711 keys) at 100% parity with the other 13 locales. Native name **Nederlands**, short tag **NL**, flag 🇳🇱. LocalePicker entry added between Italiano and Српски. Translations follow the ESA-NL physics/astronomy glossary; mission and agency proper nouns kept in original (Curiosity, Apollo, NASA, ESA, JAXA, ISRO, CNSA).
+- **`/science` overlay gap closed for es/de/fr/it** — 14 files (history/_intro + 6 history sections + space-stations/_intro + 4 space-stations sections + mission-phases/eva + scales-time/long-duration) translated for the four EU locales that already had partial coverage. Brings es/de/fr/it from 49 → 63 `/science` files each, matching en-US.
+- **`iss-visitors/` overlays for all 13 non-en-US locales** — closes the en-US-only gap for cargo_dragon, crew_dragon, cygnus, htv_x, progress_ms, soyuz_ms, starliner. 7 files × 13 locales = 91 new files.
+- **Dutch entity overlay tree** — full coverage across missions (mars + moon + outer-system catalogue), planets, sun, rockets, earth-objects, moon-sites, mars-sites, iss-modules, iss-visitors, tiangong-modules, tiangong-visitors, scenarios. Total 161 files — parity with the other 8 fall-back-tier locales (ja, ko, hi, ar, ru, zh-CN, pt-BR, sr-Cyrl). Per ADR-017, Dutch joins those locales in falling back to en-US for the `/science` encyclopedia tree (full coverage stays at en-US/es/de/fr/it).
+- **`tests/e2e/i18n-nl.spec.ts`** — locale chip + nav-persistence smoke test mirroring the other per-locale specs.
+
 ## [0.5.0] — 2026-05-09
 
 The encyclopedia + explorers release. Three new primary nav routes (`/iss`, `/tiangong`, `/science`), a layered Science Lens of live physics annotations across every 3D scene, and end-to-end outbound-link provenance discipline.

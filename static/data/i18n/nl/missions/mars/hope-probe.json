@@ -1,0 +1,32 @@
+{
+  "name": "Hope Probe",
+  "type": "ORBITER · ACTIEF",
+  "first": "Eerste Arabische interplanetaire missie",
+  "description": "De Emirates Mars Mission — Al Amal, 'Hoop' — werd in 2014 bedacht om de 50e verjaardag van de federatie van de VAE in 2021 te markeren. Het MBRSC-team werkte samen met de University of Colorado, Arizona State en UC Berkeley om het ruimtevaartuig te ontwerpen en te integreren, maar bouwden het zelf. De wetenschapsbaan (1× dagduur, 27.000 km × 43.000 km) bestrijkt alle lengtegraden en tijdstippen van de dag, en legt weerpatronen vast die geen andere Mars-orbiter kan oplossen. De missie slaagde bij de eerste poging, waardoor de VAE het vijfde agentschap bij Mars werd.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "H-IIA 202 vanuit Tanegashima — Mitsubishi Heavy Industries leverde de lancering.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "27-minuten stuwraketverbranding vangt Hope in Mars-baan 2021-02-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 250,
+      "label": "WETENSCHAPSBAAN",
+      "note": "Trim-manoeuvres plaatsen Hope in zijn 55-uurs wetenschapsbaan.",
+      "type": "info"
+    }
+  ]
+}

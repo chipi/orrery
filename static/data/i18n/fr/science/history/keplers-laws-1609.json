@@ -1,0 +1,16 @@
+{
+  "title": "Lois de Kepler · 1609–1619",
+  "intro_sentence": "Une vie entière de données martiennes à l'œil nu de Tycho Brahe, distillée par Kepler en trois règles auxquelles toute orbite obéit.",
+  "narrative_101": [
+    "Tycho Brahe a passé 30 ans à l'observatoire d'Uraniborg sur Hven à mesurer la position de Mars avec des quadrants en laiton et chêne — précision meilleure que la minute d'arc, le tout à l'œil nu. Il est mort en 1601 sans avoir presque rien publié.",
+    "Kepler a hérité des cahiers de Mars. Il a passé une autre décennie à essayer de les ajuster à des cercles et a échoué. La rupture est venue lorsqu'il a essayé une ellipse — Mars a correspondu immédiatement. Il en est sorti trois lois : les orbites sont des ellipses avec le Soleil à l'un des foyers ; des aires égales balayées en des temps égaux ; la période au carré est égale au demi-grand axe au cube.",
+    "Sans ces trois lois, aucune trajectoire de vaisseau spatial dans cette application ne se calculerait. Chaque cellule de porkchop, chaque arc de transfert, chaque planète sur /explore est une solution képlérienne."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) a publié les lois 1 + 2 — les règles d'ellipse + d'aires égales, dérivées des données d'opposition de Mars. Harmonices Mundi (1619) a publié la loi 3 — période² ∝ demi-grand axe³.",
+    "Kepler n'avait aucune justification théorique — les lois étaient des modèles empiriques extraits des données. Newton fournirait le pourquoi 70 ans plus tard (la gravité va comme 1/r² ; les orbites liées sont des sections coniques ; la loi 3 découle de la conservation de l'énergie).",
+    "La contribution de Brahe n'était pas seulement les données : c'était un instrumentaliste méticuleux qui a poussé la mesure à l'œil nu à sa limite physique. La précision de qualité télescopique n'est arrivée qu'après le télescope de Galilée de 1609 — trop tard pour chevaucher la carrière de Brahe.",
+    "Réanalyse moderne : les résidus de Mars de Kepler sont sous l'arc-minute. Il a touché une ellipse avec excentricité 0,0934 à partir de données ayant une incertitude de mesure irréductible de ~1 minute d'arc. L'ajustement était réel."
+  ],
+  "diagram_caption": "Positions de Mars de Tycho (points) versus l'ajustement elliptique de Kepler (courbe). Soleil à l'un des foyers."
+}

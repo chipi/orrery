@@ -1,0 +1,17 @@
+{
+  "title": "Módulo nodo",
+  "intro_sentence": "Un concentrador presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique.",
+  "narrative_101": [
+    "Un nodo es un tipo especial de módulo presurizado: no aloja experimentos ni alojamiento de tripulación, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal donde cada cara tiene un puerto de acoplamiento. Atornilla un nodo a un cohete que se lanza, envíalo, luego acopla cinco módulos más a los cinco puertos restantes y has hecho crecer tu estación de un módulo a seis.",
+    "La EEI tiene tres: Unity (Nodo 1), Harmony (Nodo 2) y Tranquility (Nodo 3). Cada uno es la unión central de un segmento de la estación — Unity une los lados ruso y estadounidense; Harmony conecta el clúster de laboratorios estadounidenses con los módulos japoneses y europeos; Tranquility lleva la cúpula de observación Cupola.",
+    "Tiangong adoptó un enfoque diferente: en lugar de nodos dedicados, el módulo central Tianhe actúa como vivienda y como concentrador, con múltiples puertos de acoplamiento integrados directamente en sus extremos delantero y trasero. Es un diseño más compacto que cuesta menos masa de lanzamiento pero limita cuántos módulos pueden ramificarse."
+  ],
+  "body_paragraphs": [
+    "Los nodos son módulos conectores — concentradores presurizados con múltiples puertos Common Berthing Mechanism (CBM) o de acoplamiento — que permiten que una estación se ramifique en una topología de árbol en lugar de una cadena lineal.",
+    "EEI Unity (Nodo 1) lanzado en 1998 en STS-88. Seis puertos CBM: delantero a Destiny, trasero a Zarya, babor a BEAM (era Tranquility), estribor a Quest, cenit al truss Z1, nadir al Leonardo PMM. El primer módulo de la EEI construido en EE. UU.",
+    "EEI Harmony (Nodo 2) lanzado en 2007. Seis puertos: conecta Destiny a Columbus (babor), Kibo (estribor) y el adaptador de acoplamiento para vehículos visitantes (delantero).",
+    "EEI Tranquility (Nodo 3) lanzado en 2010. Aloja la cúpula de observación Cupola (puerto nadir), el Permanent Multipurpose Module Leonardo (delantero) y BEAM (trasero).",
+    "Núcleo Tianhe de Tiangong: combina nodo + alojamiento de tripulación + propulsión + control. El concentrador delantero tiene 4 puertos equivalentes a CBM más un puerto trasero para naves de carga (Tianzhou) y tripuladas (Shenzhou). Wentian y Mengtian se acoplan lateralmente a través del concentrador delantero."
+  ],
+  "diagram_caption": "Módulo nodo hexagonal con seis puertos de acoplamiento etiquetados delantero / trasero / babor / estribor / cenit / nadir."
+}

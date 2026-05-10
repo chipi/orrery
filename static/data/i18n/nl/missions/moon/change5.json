@@ -1,0 +1,50 @@
+{
+  "name": "Chang'e 5",
+  "type": "MONSTERTERUGKEER · GEVLOGEN",
+  "first": "Eerste maanmonster-terugkeer in 44 jaar (sinds Luna 24, 1976)",
+  "description": "Chang'e 5 was de eerste monsterterugkeer van de Maan sinds de Sovjet-Unie's Luna 24 in 1976 — een gat van 44 jaar. De architectuur: orbiter + lander + opstijgvoertuig + monster-terugkeer-capsule, allemaal in één lancering. De lander zette neer bij Mons Rümker, boorde en schepte 1,731 kg regoliet, hief af, ontmoette en dockte met de orbiter (de eerste robotische maan-rendezvous), en de capsule keerde terug naar de Aarde. De monsters komen uit een regio van slechts 2 miljard jaar oud — veel jonger dan enig Apollo- of Luna-monster, en herschrijven modellen van het maanvulkanisme.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Lange Mars 5 vanuit Wenchang.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "TOUCHDOWN",
+      "note": "Lander daalt af naar Mons Rümker (Oceanus Procellarum) 2020-12-01.",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "BEMONSTERING",
+      "note": "1,731 kg verzameld via schepje en boor.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENSIE",
+      "note": "Opstijgvoertuig heft af van het maanoppervlak.",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "RENDEZVOUS",
+      "note": "Eerste robotische maan-rendezvous; monstercontainer overgedragen aan orbiter.",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "AARDE-TERUGKEER",
+      "note": "Monstercapsule landt in Binnen-Mongolië 2020-12-16.",
+      "type": "info"
+    }
+  ]
+}

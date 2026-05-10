@@ -1,0 +1,16 @@
+{
+  "title": "Apollo 11 · 20 juillet 1969",
+  "intro_sentence": "Trois astronautes, une Saturn V et une échéance lunaire fixée par JFK en 1961. La Base de la Tranquillité, huit ans plus tard, dans les délais.",
+  "narrative_101": [
+    "Le 25 mai 1961, John F. Kennedy déclara au Congrès « cette nation devrait s'engager à atteindre le but, avant la fin de cette décennie, de poser un homme sur la Lune et de le ramener sain et sauf sur la Terre ». Huit ans plus tard, presque au mois près, Neil Armstrong posa le pied sur la Mare Tranquillitatis. 400 000 personnes ont travaillé sur Apollo à son apogée ; le programme a coûté ~25 milliards de dollars (de 1969), environ 4 % du budget fédéral à son apogée.",
+    "Apollo 11 : commandant Neil Armstrong, CMP Michael Collins, LMP Edwin « Buzz » Aldrin. Lancement de la Saturn V le 16 juillet ; orbite lunaire le 19 juillet ; alunissage le 20 juillet à 20h17 UTC ; premier pas à 02h56 UTC le 21 juillet (UTC ; 22h56 EDT le 20 juillet aux États-Unis). Amerrissage le 24 juillet. 8 jours, 3 heures, 18 minutes au total.",
+    "L'alunissage a été regardé en direct par environ 600 millions de personnes — environ un cinquième de l'humanité de l'époque. La phrase « un petit pas » était d'Armstrong ; elle n'était pas écrite (il a dit plus tard qu'il voulait dire « un petit pas pour un homme », mais l'article indéfini s'est perdu dans la transmission)."
+  ],
+  "body_paragraphs": [
+    "Saturn V était un monstre de 110 mètres, à trois étages et carburant liquide, conçu sous Wernher von Braun (le concepteur allemand du V-2, ramené aux États-Unis lors de l'opération Paperclip en 1945). Premier étage : 5× moteurs F-1, 7,6 millions de lbf de poussée. Toujours la fusée la plus puissante à voler avec succès (jusqu'à ce que SLS Block 1 / Starship l'égale ou la dépasse plus de 50 ans plus tard).",
+    "Trajectoire : boucle de retour libre, le « huit » Terre-Lune-Terre. Si la combustion d'insertion en orbite lunaire avait échoué, Apollo 11 aurait fait le tour de la Lune et serait revenue sur Terre par le même arc — abandon intégré. Apollo 13 a utilisé exactement cette propriété lorsque son module de service a échoué, faisant le tour de la Lune et revenant à la maison.",
+    "Personnel clé au-delà de l'équipage : George Mueller (directeur du programme Apollo de la NASA), Christopher Kraft (fondateur du Mission Control), Margaret Hamilton (responsable du logiciel Apollo Guidance Computer — elle a dirigé l'équipe qui a écrit le code AGC qui tournait sur le LM lors de la descente), Glynn Lunney + Gene Kranz + Cliff Charlesworth (directeurs de vol).",
+    "Choses qui auraient pu les tuer : alarmes AGC 1201 et 1202 lors de la descente (débordement de l'exécutif — le design logiciel robuste de Hamilton a récupéré automatiquement) ; atterrissage manuel parce que la cible automatique était un champ de rochers (Armstrong a atterri avec ~25 secondes de carburant restant) ; le moteur d'ascension du LM avait UNE chance de s'allumer et n'avait pas été testé en pleine durée en vol.",
+    "Apollo a réalisé six alunissages réussis : 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 a manqué la Lune (LOI annulée), l'a contournée, est revenue saine et sauve. 12 humains ont marché sur la Lune ; le dernier (Gene Cernan, Apollo 17) est parti le 14 décembre 1972."
+  ]
+}

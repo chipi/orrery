@@ -15,6 +15,7 @@
   const linkDefs = [
     { path: '/explore', label: m.nav_explore },
     { path: '/missions', label: m.nav_missions },
+    { path: '/fleet', label: m.nav_fleet },
     { path: '/plan', label: m.nav_plan },
     { path: '/fly', label: m.nav_fly },
     { path: '/earth', label: m.nav_earth },
@@ -22,7 +23,6 @@
     { path: '/mars', label: m.nav_mars },
     { path: '/iss', label: m.nav_iss },
     { path: '/tiangong', label: m.nav_tiangong },
-    { path: '/fleet', label: m.nav_fleet },
     { path: '/science', label: m.nav_science },
   ] as const;
 
@@ -82,7 +82,6 @@
       class:active={isActive(`${base}/`, $page.url.pathname)}
     >
       <span class="wordmark">ORRERY</span>
-      <span class="subtitle">{m.nav_subtitle()}</span>
     </a>
   </div>
 
@@ -153,23 +152,28 @@
 
   .left {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 12px;
     flex-shrink: 0;
+    height: 100%;
   }
 
   .brand {
-    display: flex;
-    align-items: baseline;
+    display: inline-flex;
+    align-items: center;
     gap: 12px;
     text-decoration: none;
     color: inherit;
-    /* 44 px touch target per ADR-018 — wordmark + subtitle row plus
-       padding hits ~44 px on mobile + scales naturally on desktop. */
+    /* 44 px touch target per ADR-018 — wordmark sits vertically
+       centred within the nav bar height. */
     min-height: 44px;
     padding: 0 4px;
     border-radius: 4px;
     transition: opacity 0.12s ease;
+    /* Match the optical baseline of the link row to the right —
+       Bebas Neue runs slightly tall, so a tiny negative offset
+       lines its cap-height up with the link text x-height. */
+    line-height: 1;
   }
   .brand:hover,
   .brand:focus-visible {
@@ -186,15 +190,14 @@
 
   .wordmark {
     font-family: var(--font-display);
-    font-size: var(--size-nav-title);
+    /* Slightly larger than the token default to give the wordmark
+       a bit more presence in the nav. Token stays at 30 px so other
+       call-sites are unaffected. */
+    font-size: 36px;
     letter-spacing: 4px;
     color: var(--color-text);
-  }
-
-  .subtitle {
-    font-size: var(--size-label);
-    color: rgba(255, 255, 255, 0.22);
-    letter-spacing: 2px;
+    line-height: 1;
+    display: inline-block;
   }
 
   .center {
@@ -319,9 +322,6 @@
   @media (max-width: 500px) {
     nav {
       padding: 0 12px;
-    }
-    .subtitle {
-      display: none;
     }
   }
 </style>

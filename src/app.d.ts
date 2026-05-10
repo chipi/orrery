@@ -5,7 +5,11 @@
 // module (virtual:pwa-register/svelte) is declared via the
 // triple-slash references above.
 declare global {
-  // Empty — kept for future App namespace declarations.
+  /**
+   * App version injected at build time by Vite's `define` from
+   * package.json#version. Rendered in the site footer.
+   */
+  const __APP_VERSION__: string;
 }
 
 export {};

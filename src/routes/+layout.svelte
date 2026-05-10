@@ -115,8 +115,13 @@
     {@render children?.()}
   </main>
   <footer class="site-footer" aria-label="Site footer">
-    <a class="credits-link" href="{base}/credits">{m.layout_footer_credits()}</a>
-    <a class="credits-link" href="{base}/library">{m.layout_footer_library()}</a>
+    <nav class="footer-menu" aria-label="Footer links">
+      <a class="footer-link" href="{base}/credits">{m.layout_footer_credits()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a class="footer-link" href="{base}/library">{m.layout_footer_library()}</a>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <span class="footer-version" title="Build version">v{__APP_VERSION__}</span>
+    </nav>
   </footer>
 {/key}
 
@@ -147,27 +152,51 @@
     inset-inline-end: 10px;
     z-index: 35;
     pointer-events: none;
-    display: flex;
-    gap: 12px;
-    align-items: center;
   }
-  .credits-link {
+  .footer-menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    background: rgba(4, 4, 12, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .footer-link {
     pointer-events: auto;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     padding: 2px 0;
     transition: color 0.15s;
   }
-  .credits-link:hover,
-  .credits-link:focus-visible {
+  .footer-link:hover,
+  .footer-link:focus-visible {
     color: #4ecdc4;
     outline: none;
   }
-  .credits-link:focus-visible {
+  .footer-sep {
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.22);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    user-select: none;
+  }
+  .footer-version {
+    pointer-events: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    cursor: help;
+  }
+  .footer-link:focus-visible {
     text-decoration: underline;
     text-underline-offset: 3px;
   }

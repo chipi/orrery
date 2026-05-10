@@ -1,6 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { defineConfig } from 'vitest/config';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const pkg = JSON.parse(
+  readFileSync(fileURLToPath(new URL('./package.json', import.meta.url)), 'utf8'),
+) as { version: string };
 
 /**
  * v0.1.12 / ADR-029 — service worker via @vite-pwa/sveltekit. Cache
@@ -13,6 +19,12 @@ import { defineConfig } from 'vitest/config';
  * by adapter-static; we tell the plugin not to generate one.
  */
 export default defineConfig({
+  // Expose package.json version as a global at build time so the
+  // footer can render `v0.3.0` without runtime fetches or extra JSON.
+  // Replaced literally in the bundle by Vite's `define`.
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+  },
   server: {
     port: 5273,
     strictPort: true,

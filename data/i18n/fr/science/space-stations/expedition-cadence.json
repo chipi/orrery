@@ -1,0 +1,17 @@
+{
+  "title": "Cadence des expéditions",
+  "intro_sentence": "Les stations fonctionnent sur des rotations d'équipage glissantes de 6 mois — un équilibre entre les consommables des combinaisons, la durée de vie des véhicules, les pipelines de formation et la physiologie humaine.",
+  "narrative_101": [
+    "Pourquoi six mois ? C'est la réponse à plusieurs contraintes qui se rencontrent en un seul point. Les vaisseaux Soyouz et Crew Dragon sont certifiés pour rester amarrés ~210 jours avant que leurs propulseurs et joints n'aient besoin d'être rafraîchis. Les combinaisons EVA Orlan russes sont rechargées au sol tous les six mois. Les données de la NASA sur les contre-mesures à la perte osseuse sont les plus fiables par tranches de 6 mois. La rotation d'un tiers de l'équipage tous les 4-6 mois maintient des mains fraîches à bord sans hot-bunking.",
+    "L'ISS a commencé avec des expéditions de 3 personnes (Expédition 1 en 2000) et est passée à des équipages de 6 personnes en 2009 une fois que la capacité de canot de sauvetage était là. Chaque expédition dure typiquement ~6 mois. Certaines durent plus longtemps — le séjour accidentel de 371 jours de Frank Rubio (Expéditions 67/68/69) s'est produit lorsque son Soyouz a été endommagé par des débris et qu'un remplacement a dû être acheminé.",
+    "Tiangong a commencé avec des rotations plus courtes (Shenzhou 12 : 92 jours ; Shenzhou 13 : 183 jours) et s'est stabilisée à ~6 mois à partir de Shenzhou 14. Des équipages de trois alternent ; les équipages sortants et entrants partagent environ une semaine à bord pour transmettre l'état opérationnel."
+  ],
+  "body_paragraphs": [
+    "Contraintes pilotant la cadence ~6 mois : certification des vaisseaux amarrés (Soyouz : 210 jours ; Crew Dragon : 210 jours ; Shenzhou : 180-210 jours), cycles de remise à neuf au sol des combinaisons EVA, capacité du garde-manger par ravitaillement, et la préférence du Human Research Program de la NASA pour des tranches de données sur la perte osseuse de 6 mois.",
+    "Expéditions ISS : numérotées séquentiellement depuis l'Expédition 1 (nov 2000). Tailles d'équipage — 3 (Exp 1-19), 6 (Exp 20-63), variable 7-9 avec chevauchement Crew Dragon (Exp 64-).",
+    "Passation : le Soyouz/Crew Dragon entrant s'amarre 5-10 jours avant le départ du sortant. Les deux équipages partagent la station, font des briefings, transfèrent la cargaison, puis l'équipage sortant se désamarre. La période d'équipage combiné est la plus stressée en ressources : plus de corps, plus de CO₂, plus de consommation alimentaire.",
+    "Aberrations longue durée : Poliakov 437,7 j (Mir, 1994-95, test d'endurance classe Mars délibéré) ; Rubio 371 j (ISS, 2022-23, contingence) ; Vande Hei 355 j (ISS, 2021-22, réorganisation des sièges Soyouz) ; Kelly + Korniyenko 340 j (ISS, 2015-16, programme d'étude de jumeaux).",
+    "Cadence Tiangong : Shenzhou 12 (92 j), 13 (183 j), 14 (186 j), 15 (186 j), 16 (155 j), 17 (187 j), 18 (192 j). Rythme stable correspondant à la pratique ISS."
+  ],
+  "diagram_caption": "Chronologie des expéditions ISS 2000-2025 : bandes colorées empilées (équipages de 3, 6, 7 personnes) avec aberrations annotées (Poliakov, Vande Hei, Rubio)."
+}

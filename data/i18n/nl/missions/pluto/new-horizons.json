@@ -1,0 +1,20 @@
+{
+  "name": "New Horizons",
+  "type": "FLYBY · GEVLOGEN",
+  "first": "Eerste flyby van Pluto en zijn manen; scherpste beelden van een Kuipergordelwereld",
+  "description": "Een negen-jarige sprint na de snelste lancering tot dan toe, New Horizons comprimeerde decennia van verwachting tot één julidag in 2015 — een wereld die van een gepixelde vlek veranderde in bergen van waterijs en stikstofgletsjers op Pluto's hartvormige Tombaugh Regio. Het ruimtevaartuig vloog later Arrokoth, en koppelde de missie aan het oer-zonnestelsel. Vluchtbogen in Orrery zijn directe-transfer-onderwijsmodellen, niet de daadwerkelijke Jupiter-zwaartekrachtassist.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 551 verlaat de Aarde op een Jupiter-zwaartekrachtassist-pad naar Pluto.",
+      "type": "nominal"
+    },
+    {
+      "met": 3463,
+      "label": "PLUTO-FLYBY",
+      "note": "Dichtste benadering van Pluto; hoge-snelheid beeldvorming en plasma-gegevens overspoelen de Aarde.",
+      "type": "nominal"
+    }
+  ]
+}

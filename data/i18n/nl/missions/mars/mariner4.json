@@ -1,0 +1,32 @@
+{
+  "name": "Mariner 4",
+  "type": "FLYBY · GEVLOGEN",
+  "first": "Eerste ruimtevaartuig dat Mars bereikte en close-up beelden van een andere planeet teruggaf",
+  "description": "De missie die de dromen van een leefbare Mars beëindigde. Mariner 4's 22 korrelige beelden, genomen tijdens een 25-minuten dichtste benadering op 9.846 km hoogte, toonden een gekraterde oppervlakte die op de Maan leek — geen kanalen, geen vegetatie, geen duidelijk leven. De atmosfeer was 100× dunner dan verwacht. De ontdekking hervormde Mars in de publieke verbeelding van zuster-Aarde tot dode wereld. Het volgen van het ruimtevaartuig produceerde ook de eerste meting van de structuur van de zonnewind tussen planeten.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas LV-3 Agena-D heft af van Cape Canaveral LC-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie voltooid; traject vergrendeld.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "MARS FLYBY",
+      "note": "Dichtste benadering 9.846 km. 22 beelden teruggegeven over 8 uur tijdens gegevensafspeling.",
+      "type": "nominal"
+    },
+    {
+      "met": 228.5,
+      "label": "EERSTE BEELDEN",
+      "note": "Eerste close-up beelden van een andere planeet ooit teruggekeerd naar de Aarde.",
+      "type": "info"
+    }
+  ]
+}

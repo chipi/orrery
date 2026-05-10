@@ -1,0 +1,32 @@
+{
+  "name": "Lunar Reconnaissance Orbiter",
+  "type": "ORBITER · ACTIEF",
+  "first": "Hoogste-resolutie maan-kaarten ooit gemaakt",
+  "description": "Sinds 2009 in een baan rond de Maan op 50 km gemiddelde maanhoogte, brengt LRO's narrow-angle camera beelden op 50 cm/pixel — hoog genoeg om Apollo-afdaaltrappen, roverbanen en astronauten-voetpaden nog steeds bewaard in het regoliet te zien. Het vond Lunokhod 1 negenendertig jaar nadat de rover stilviel. Het identificeerde 200+ kandidaat-landingsplaatsen voor Artemis. De waterijsdepots aan de maanzuidpool die elk modern maanprogramma aandrijven, werden gekwantificeerd door LRO-instrumenten. Een verkenningsmissie die de basis werd van het moderne maantijdperk.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 401 vanuit Cape Canaveral SLC-41 (vervoerde LCROSS-impactor als secundair).",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Maanbaan-insertie 2009-06-23.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "PRIMAIRE MISSIE",
+      "note": "1-jarige verkenningsfase (NASA-programma) begint.",
+      "type": "info"
+    },
+    {
+      "met": 455,
+      "label": "UITGEBREIDE WETENSCHAP",
+      "note": "Missie verlengd naar meerjarige wetenschapsfase onder NASA SMD.",
+      "type": "info"
+    }
+  ]
+}

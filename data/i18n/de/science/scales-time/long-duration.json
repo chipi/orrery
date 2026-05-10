@@ -1,0 +1,17 @@
+{
+  "title": "Langzeit-Raumflug",
+  "intro_sentence": "Jenseits von etwa drei Monaten hört Mikrogravitation auf, neutral zu sein, und beginnt, messbare Bisse aus dem menschlichen Körper zu nehmen.",
+  "narrative_101": [
+    "Auf der Erde verrichtet die Schwerkraft den ganzen Tag Hintergrundarbeit: zieht Flüssigkeiten zu den Füßen, belastet die Knochen bei jedem Schritt, trainiert das Herz gegen das Gewicht des Blutes. Nimmt man sie weg, baut der Körper sich ab — die Knochen verlieren ~1-2 % Dichte pro Monat, wenn man nicht dagegen ankämpft, Muskeln atrophieren, das Herz-Kreislauf-System dekonditioniert, Flüssigkeitsverschiebungen häufen Druck im Schädel an und drücken die Augäpfel leicht zusammen. Zwei Stunden täglich auf einem Laufbandgeschirr und einem Widerstandsübungsgerät holen das meiste zurück, aber nicht alles.",
+    "Der aktuelle Einzelmissionsrekord auf der ISS ist Frank Rubio mit 371 Tagen (Sep 2022 – Sep 2023). Der Allzeitrekord war Waleri Poljakow auf Mir bei 437,7 Tagen 1994-95 — ein bewusster Test für eine mögliche Marsmission. Tiangong-Crews rotieren derzeit in Intervallen von etwa 6 Monaten und entsprechen damit dem ISS-Standard.",
+    "Über Knochen und Muskeln hinaus sind die schwierigeren Probleme Strahlung (galaktische kosmische Strahlung sammelt sich bei ~0,5 mSv/Tag im LEO an — etwa 100× Meereshöhe), Sehkraft (Spaceflight-Associated Neuro-ocular Syndrome bleibt schlecht verstanden) und Verhaltensgesundheit (kleine Räume, Isolation, keine Privatsphäre)."
+  ],
+  "body_paragraphs": [
+    "KNOCHEN + MUSKEL — Astronauten verlieren 1-2 % Knochenmineraldichte pro Monat in tragenden Knochen ohne Gegenmaßnahmen (~0,5 % mit dem Advanced Resistive Exercise Device + Bisphosphonat). Typ-I-Muskelfasern atrophieren am schnellsten; tägliches 2-stündiges Training auf Laufband + Fahrradergometer + ARED erhält etwa 90 % der Vorflug-Muskelmasse.",
+    "HERZ-KREISLAUF + FLÜSSIGKEITSVERSCHIEBUNG — das Herz schrumpft während 6-Monats-Missionen um ~9,4 % im Volumen; orthostatische Intoleranz hält wochenlang nach der Rückkehr an. Etwa 2 L Flüssigkeit wandern in Mikrogravitation von den Beinen zum Kopf und verursachen Gesichtsschwellung, erhöhten intrakraniellen Druck, und sind in das Spaceflight-Associated Neuro-ocular Syndrome (SANS) verwickelt.",
+    "VESTIBULÄR / SENSORIMOTORISCH — Wiederanpassung an die Schwerkraft dauert Stunden bis Tage nach der Landung; feinmotorische Kontrolle ist für ~2 Wochen messbar verschlechtert.",
+    "STRAHLUNG — LEO-Crews erhalten ~150-180 mSv pro 6-Monats-Mission. Karrieregrenzen werden pro Agentur festgelegt; NASAs effektive Dosisgrenzen-Rahmenwerk begrenzt das Karriererisiko auf 3 % erhöhte Krebssterblichkeit, was sich für die meisten Astronauten in etwa 3-5 ISS-Mission-Längen übersetzt.",
+    "Rekorde: Poljakow 437,7 d (Mir, 1994-95); Rubio 371 d (ISS, 2022-23); Vande Hei 355 d (ISS, 2021-22); Kononenko kumulativ >1000 d über 5 Missionen."
+  ],
+  "diagram_caption": "Physiologische Verlustkurven über eine 12-monatige Mission. Knochen (rot, schärfster Abfall), Muskel (blau), Herz-Kreislauf (gold). Tägliche Trainings-Gegenmaßnahmen (gestrichelt) flachen jede Kurve ab."
+}

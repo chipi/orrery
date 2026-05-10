@@ -1,0 +1,16 @@
+{
+  "title": "Keplers Gesetze · 1609–1619",
+  "intro_sentence": "Tycho Brahes lebenslange Marsdaten mit bloßem Auge, von Kepler in die drei Regeln destilliert, die jede Umlaufbahn befolgt.",
+  "narrative_101": [
+    "Tycho Brahe verbrachte 30 Jahre an der Sternwarte Uraniborg auf Hven mit der Vermessung der Marsposition mit Quadranten aus Messing und Eiche — mit besser als bogensekundengenauer Präzision, alles mit bloßem Auge. Er starb 1601, ohne fast etwas veröffentlicht zu haben.",
+    "Kepler erbte die Marsnotizbücher. Er verbrachte ein weiteres Jahrzehnt damit, sie an Kreise anzupassen, und scheiterte. Der Durchbruch kam, als er eine Ellipse versuchte — Mars passte sofort. Daraus entstanden drei Gesetze: Umlaufbahnen sind Ellipsen mit der Sonne in einem Brennpunkt; gleiche Flächen werden in gleichen Zeiten überstrichen; Umlaufzeit zum Quadrat ist gleich große Halbachse zur dritten Potenz.",
+    "Ohne diese drei Gesetze würde keine Raumsonden-Trajektorie in dieser App berechnet werden. Jede Porkchop-Zelle, jeder Transferbogen, jeder Planet auf /explore ist eine Kepler-Lösung."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) veröffentlichte die Gesetze 1 + 2 — die Ellipsen- + Flächengleichheitsregeln, abgeleitet aus den Marsoppositionsdaten. Harmonices Mundi (1619) veröffentlichte das 3. Gesetz — Periode² ∝ große Halbachse³.",
+    "Kepler hatte keine theoretische Begründung — die Gesetze waren empirische Muster, aus Daten extrahiert. Newton lieferte 70 Jahre später das Warum (Schwerkraft geht wie 1/r²; gebundene Umlaufbahnen sind Kegelschnitte; Gesetz 3 folgt aus der Energieerhaltung).",
+    "Brahes Beitrag waren nicht nur Daten: Er war ein akribischer Instrumentalist, der die Augenmessung an ihre physische Grenze brachte. Teleskopgenaue Präzision kam erst nach Galileis 1609er Teleskop — zu spät, um sich mit Brahes Karriere zu überlappen.",
+    "Moderne Reanalyse: Keplers Marsresiduen sind unter einer Bogenminute. Er traf eine Ellipse mit Exzentrizität 0,0934 aus Daten mit irreduzibler Messunsicherheit von ~1 Bogenminute. Die Anpassung war real."
+  ],
+  "diagram_caption": "Tychos Marspositionen (Punkte) gegenüber Keplers elliptischer Anpassung (Kurve). Sonne in einem Brennpunkt."
+}

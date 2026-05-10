@@ -1,0 +1,16 @@
+{
+  "title": "Las leyes de Kepler · 1609–1619",
+  "intro_sentence": "Toda una vida de datos de Marte a simple vista de Tycho Brahe, destilada por Kepler en las tres reglas que obedece toda órbita.",
+  "narrative_101": [
+    "Tycho Brahe pasó 30 años en el observatorio de Uraniborg en Hven midiendo la posición de Marte con cuadrantes de bronce y roble — precisión mejor que el minuto de arco, todo a simple vista. Murió en 1601 sin haber publicado casi nada.",
+    "Kepler heredó los cuadernos de Marte. Pasó otra década intentando ajustarlos a círculos y fracasó. La ruptura llegó cuando probó una elipse — Marte coincidió de inmediato. De ahí surgieron tres leyes: las órbitas son elipses con el Sol en uno de los focos; áreas iguales barridas en tiempos iguales; el período al cuadrado es igual al semieje mayor al cubo.",
+    "Sin esas tres leyes, ninguna trayectoria de nave en esta aplicación se calcularía. Cada celda de porkchop, cada arco de transferencia, cada planeta en /explore es una solución kepleriana."
+  ],
+  "body_paragraphs": [
+    "Astronomia Nova (1609) publicó las leyes 1 + 2 — las reglas de la elipse + áreas iguales, derivadas de los datos de oposición de Marte. Harmonices Mundi (1619) publicó la ley 3 — período² ∝ semieje mayor³.",
+    "Kepler no tenía justificación teórica — las leyes eran patrones empíricos extraídos de datos. Newton suministraría el porqué 70 años después (la gravedad va como 1/r²; las órbitas ligadas son secciones cónicas; la ley 3 se desprende de la conservación de la energía).",
+    "La contribución de Brahe no fue solo de datos: fue un instrumentalista meticuloso que llevó la medición a simple vista hasta su límite físico. La precisión de calidad telescópica llegó solo después del telescopio de Galileo de 1609 — demasiado tarde para coincidir con la carrera de Brahe.",
+    "Reanálisis moderno: los residuos de Marte de Kepler son sub-arco-minuto. Acertó una elipse con excentricidad 0,0934 a partir de datos que tenían una incertidumbre de medición irreducible de ~1 minuto de arco. El ajuste fue real."
+  ],
+  "diagram_caption": "Posiciones de Marte de Tycho (puntos) frente al ajuste elíptico de Kepler (curva). Sol en uno de los focos."
+}

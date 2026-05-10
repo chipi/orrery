@@ -1,0 +1,44 @@
+{
+  "name": "SLIM",
+  "type": "PRECISIELANDER · ACTIEF",
+  "first": "Eerste precisielanding binnen 100 m van het doel op een andere wereld",
+  "description": "Tot SLIM hadden maanlandingen een kilometer-schaal targeting-nauwkeurigheid. JAXA's Smart Lander demonstreerde 100 m nauwkeurigheid — de precisie die nodig is voor bemande missies om met voorgepositioneerde vracht te dockken, voor monster-terugkeer-opstijgvoertuigen om hun orbitale partners te vinden en voor elke toekomstige architectuur die afhankelijk is van landing op specifieke wetenschappelijk waardevolle locaties. SLIM pioneerde ook lage-energie ballistische transfer naar de Maan, en arriveerde in 135 dagen, maar gebruikte minder drijfgas dan directe trajecten. Een demonstratie van het geduld dat interplanetaire missies zich kunnen veroorloven wanneer tijdlijn niet de bindende beperking is.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "H-IIA 202 vanuit Tanegashima 2023-09-06.",
+      "type": "nominal"
+    },
+    {
+      "met": 90,
+      "label": "BALLISTISCHE TRANSFER",
+      "note": "Lage-energie ballistische vangsttraject in uitvoering.",
+      "type": "info"
+    },
+    {
+      "met": 130,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 135,
+      "label": "TOUCHDOWN",
+      "note": "Zachte landing bij Shioli-krater 2024-01-19 15:20 UTC. Binnen target-nauwkeurigheid: ~55 m van het centrum af.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.01,
+      "label": "GEKANTELDE LANDING",
+      "note": "Lander rust met neus naar beneden vanwege motor-anomalie tijdens eindafdaling. Zonnepanelen aanvankelijk in schaduw.",
+      "type": "warning"
+    },
+    {
+      "met": 144,
+      "label": "STROOM HERVAT",
+      "note": "Zonnehoek verandert; zonnepanelen genereren stroom; operaties hervat voor één maandag.",
+      "type": "info"
+    }
+  ]
+}

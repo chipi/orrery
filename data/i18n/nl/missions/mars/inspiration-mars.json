@@ -1,0 +1,44 @@
+{
+  "name": "Inspiration Mars",
+  "type": "BEMAND FLYBY · CONCEPT",
+  "first": "Eerste voorgestelde bemande Mars vrije-terugkeer-missie (concept, nooit gevlogen)",
+  "description": "Een missie-concept uit 2013 van Dennis Tito's Inspiration Mars Foundation voor een 501-daagse bemande Mars-vrije-terugkeer-flyby gericht op het lanceervenster van 2018. Een tweepersoons-bemanning (een getrouwd echtpaar werd voorgesteld voor psychologische stabiliteit) lanceert op een Falcon Heavy of equivalent op een heliocentrische baan die rond Mars zwaait zonder baaninvoeging en gebruikt de zwaartekracht van de planeet om terug te slingeren naar de Aarde. De vrije-terugkeer-geometrie minimaliseert ∆v — geen Mars-baan-insertie of trans-Aarde-verbranding nodig — ten koste van een langere doorvoer en een eenmalig lanceervenster. Het concept ging niet naar ontwikkeling; het blijft een gepubliceerde referentiearchitectuur voor bemande cismartiaanse vlucht.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Conceptlancering op Falcon Heavy (of equivalent) op trans-Mars-traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI",
+      "note": "Trans-Mars-injectie-verbranding — heliocentrische Mars-bestemde baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 228,
+      "label": "MARS FLYBY",
+      "note": "Dichtste benadering van Mars (~100 km hoogte in oorspronkelijk concept). Geen baan-insertie — zwaartekrachtassist zet Aarde-terugkeertraject op.",
+      "type": "info"
+    },
+    {
+      "met": 350,
+      "label": "TUSSENKOERS",
+      "note": "Terugkeertraject-correctie.",
+      "type": "nominal"
+    },
+    {
+      "met": 501,
+      "label": "AARDE-WEDERINGAVE",
+      "note": "Terugkeercapsule herbetreedt de atmosfeer van de Aarde met ~14,2 km/s — een van de snelste bemande herbetredingen ooit voorgesteld.",
+      "type": "info"
+    }
+  ]
+}

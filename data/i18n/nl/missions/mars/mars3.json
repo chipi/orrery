@@ -1,0 +1,38 @@
+{
+  "name": "Mars 3",
+  "type": "ORBITER · LANDER · GEVLOGEN",
+  "first": "Eerste ruimtevaartuig dat zacht op Mars landde",
+  "description": "De gewaagde dubbele missie van de Sovjet-Unie naar Mars in 1971 — Mars 2 en Mars 3 lanceerden 9 dagen uit elkaar. De lander van Mars 2 crashte; de lander van Mars 3 bereikte de eerste zachte landing op Mars maar zond slechts ~110 seconden uit voordat het signaal verloren ging, mogelijk vanwege de wereldwijde stofstorm die op dat moment woedde. De orbiter werkte 8 maanden en gaf honderden beelden en atmosferische metingen terug. Ondanks de korte oppervlaktemissie demonstreerde Mars 3 dat het afdaal- en landingsprobleem op Mars oplosbaar was.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Proton-K met Blok-D bovenste-trap vanuit Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 188,
+      "label": "ORBITER MOI",
+      "note": "Orbiter vangt in Mars-baan tijdens wereldwijde stofstorm.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.05,
+      "label": "LANDER-SCHEIDING",
+      "note": "Lander scheidt en begint atmosferische intrede.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.1,
+      "label": "OPPERVLAKTECONTACT",
+      "note": "Eerste zachte landing op Mars; transmissie begint.",
+      "type": "nominal"
+    },
+    {
+      "met": 188.101,
+      "label": "SIGNAALVERLIES",
+      "note": "Na ~110 seconden, signaal permanent beëindigd. Oorzaak onbevestigd; stofstorm leidende verdachte.",
+      "type": "warning"
+    }
+  ]
+}

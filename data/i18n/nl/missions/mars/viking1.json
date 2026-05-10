@@ -1,0 +1,44 @@
+{
+  "name": "Viking 1",
+  "type": "ORBITER · LANDER · GEVLOGEN",
+  "first": "Eerste volledig succesvolle Mars-landing; eerste langeduuroppervlakwetenschap",
+  "description": "De missie die ons onze eerste duurzame blik op het Marsoppervlak gaf. Viking 1's lander werkte 6 jaar 4 maanden bij Chryse Planitia — voerde biologie-experimenten uit ontworpen om leven te detecteren (resultaten dubbelzinnig; één experiment produceerde een positief signaal dat decennia later nog steeds wordt besproken), mat het weer, gaf panoramische beelden terug en analyseerde de bodemsamenstelling. De orbiter karteerde 97% van Mars op 100 m resolutie en hielp landingsplaatsen voor missies decennia later in de toekomst te verkennen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan IIIE-Centaur vanuit Cape Canaveral LC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste trajectcorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 304,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "Orbiter vangt in Mars-baan; lander blijft bevestigd voor locatieonderzoek.",
+      "type": "nominal"
+    },
+    {
+      "met": 335,
+      "label": "LANDER-SCHEIDING",
+      "note": "Lander koppelt los voor afdaling naar Chryse Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.05,
+      "label": "TOUCHDOWN",
+      "note": "Lander zet neer 1976-07-20, precies 7 jaar na Apollo 11.",
+      "type": "nominal"
+    },
+    {
+      "met": 335.1,
+      "label": "EERSTE PANORAMA",
+      "note": "Eerste hoge-resolutie oppervlaktebeelden teruggekeerd.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Mangalyaan",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Eerste Aziatische Mars-missie; eerste Mars-succes bij eerste poging",
+  "description": "ISRO's Mars Orbiter Mission kostte $74 miljoen — minder dan het budget van de film Gravity ($100M), en een fractie van NASA's MAVEN ($671M) die twee dagen eerder arriveerde. Gebouwd in 18 maanden als technologie-demonstrator, slaagde Mangalyaan in elke doelstelling: trans-Mars-injectie, navigatie in de diepe ruimte, Mars-baan-insertie en 8 jaar wetenschappelijke retour. India werd het vierde ruimteagentschap bij Mars en de eerste die slaagde bij zijn eerste poging.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "PSLV-XL (C25) vanuit Sriharikota — een relatief kleine draagraket die orbit-raising-loop vereist.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "PERIGEUM-VERBRANDING 1",
+      "note": "Eerste van zeven Aarde-baan-verhogende verbrandingen.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TRANS-MARS-INJECTIE",
+      "note": "Laatste perigeum-verbranding plaatst ruimtevaartuig op Mars-traject.",
+      "type": "nominal"
+    },
+    {
+      "met": 324,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "Liquid Apogee Motor vuurt na 4 jaar slapend — 24 minuten gevuurd om in baan te vangen.",
+      "type": "nominal"
+    },
+    {
+      "met": 3300,
+      "label": "MISSIE-EINDE",
+      "note": "Verloor contact 2022-04 nadat de drijfgasvoorraad van het ruimtevaartuig was uitgeput.",
+      "type": "warning"
+    }
+  ]
+}

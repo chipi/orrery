@@ -1,0 +1,38 @@
+{
+  "name": "Mars Pathfinder",
+  "type": "LANDER · ROVER · GEVLOGEN",
+  "first": "Eerste wielen op Mars; demonstreerde airbag-landing",
+  "description": "De missie die bewees dat goedkope interplanetaire missies konden werken. Pathfinder gebruikte een nieuw airbag-landingsysteem — tientallen keren over het oppervlak stuiterend voordat het tot stilstand kwam — en leverde Sojourner, de eerste rover die op een andere planeet werkte. Sojourner doorkruiste 100 m, onderzocht een dozijn rotsen en werkte ver voorbij zijn 7-daagse ontwerplevensduur. Pathfinder werkte 2 maanden 27 dagen; het succes van de missie heroplevde NASA's interplanetaire programma na de mislukkingen van de jaren 1990.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Delta II 7925 vanuit Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Eerste trajectcorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 212,
+      "label": "EDL",
+      "note": "Directe atmosferische intrede — geen baan-insertie. Hitteschild, parachute, retro-raketten, dan airbag-inflatie.",
+      "type": "nominal"
+    },
+    {
+      "met": 212.01,
+      "label": "TOUCHDOWN",
+      "note": "Lander stuitert 15 keer over Ares Vallis voordat hij tot stilstand komt.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SOJOURNER INGEZET",
+      "note": "Eerste wielen op een andere planeet.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Jupiter",
+  "type": "Gasreus",
+  "fact": "Jupiters zwaartekracht heeft de planetoïdengordel gevormd — en daarmee een vijfde rotsachtige planeet voorkomen. Zonder hem zou Mars veel groter zijn.",
+  "bio": "Roteert in slechts 10 uur ondanks zijn enorme omvang, wat krachtige magnetische velden creëert. Massiever dan alle andere planeten samen.",
+  "links": [
+    {
+      "l": "Jupiter — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Jupiter_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Jupiter (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/jupiter/",
+      "t": "intro"
+    },
+    {
+      "l": "Juno mission (NASA)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Galileïsche manen — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Galile%C3%AFsche_manen",
+      "t": "core"
+    },
+    {
+      "l": "Jupiter's deep interior (Nature 2018)",
+      "u": "https://www.nature.com/articles/nature25775",
+      "t": "deep"
+    }
+  ]
+}

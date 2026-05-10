@@ -1,0 +1,44 @@
+{
+  "name": "InSight",
+  "type": "LANDER · GEVLOGEN",
+  "first": "Eerste seismometer op Mars; eerste interplanetaire lancering vanaf de westkust van de VS",
+  "description": "InSight gaf Mars zijn eerste stethoscoop. Zijn seismometer, ingezet door een robotarm op het regoliet, registreerde meer dan 1.300 marsbevingen — waaronder een magnitude 5 in 2022, de grootste ooit gedetecteerd op een andere planeet. De gegevens onthulden de inwendige structuur van Mars: een gesmolten kern met een straal van 1.800 km, een dikke korst en verrassende mantellagen. Het 'mol'-warmtestroomexperiment faalde toen het regoliet te samenhangend bleek voor zijn zelf-hamerend ontwerp. De missie eindigde toen stofophoping op zonnepanelen het vermogen onder de operationele drempel reduceerde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 401 vanuit Vandenberg AFB — eerste interplanetaire missie ooit gelanceerd vanaf de westkust van de VS.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 205,
+      "label": "EDL",
+      "note": "Atmosferische intrede, parachute, eindafdaling-raketlanding bij Elysium Planitia.",
+      "type": "nominal"
+    },
+    {
+      "met": 205.01,
+      "label": "TOUCHDOWN",
+      "note": "Lander arriveert 2018-11-26 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "SEISMOMETER INGEZET",
+      "note": "Robotarm plaatst SEIS-instrument op het oppervlak en beschermt het tegen de wind.",
+      "type": "info"
+    },
+    {
+      "met": 1683,
+      "label": "MISSIE-EINDE",
+      "note": "Laatste lage-vermogen transmissie 2022-12-15. Zonnepanelen te bedekt met stof om op te laden.",
+      "type": "warning"
+    }
+  ]
+}

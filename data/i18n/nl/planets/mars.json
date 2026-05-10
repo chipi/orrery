@@ -1,0 +1,34 @@
+{
+  "name": "Mars",
+  "type": "Missiedoel",
+  "fact": "Aarde-Mars-lanceervensters openen elke 26 maanden — gedreven door baanresonantie. Mis het venster en wacht twee jaar.",
+  "bio": "De hoogste excentriciteit van de binnenplaneten (e=0,093). Mars staat 25% verder van de Aarde af in afhelium dan in perihelium — daarom zijn lanceervensters zo belangrijk.",
+  "missionable": true,
+  "links": [
+    {
+      "l": "Mars — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Mars_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Mars (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/mars/",
+      "t": "intro"
+    },
+    {
+      "l": "Mars Exploration Program (NASA)",
+      "u": "https://mars.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Earth-Mars launch windows — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_landing",
+      "t": "core"
+    },
+    {
+      "l": "Mars climate history (Science 2018)",
+      "u": "https://www.science.org/doi/10.1126/science.aar3201",
+      "t": "deep"
+    }
+  ]
+}

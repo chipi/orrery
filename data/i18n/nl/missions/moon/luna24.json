@@ -1,0 +1,44 @@
+{
+  "name": "Luna 24",
+  "type": "MONSTERTERUGKEER · GEVLOGEN",
+  "first": "Laatste Sovjet-maanmissie; laatste onbemande maanlanding gedurende 37 jaar",
+  "description": "De laatste maanmissie van de Sovjet-Unie en de laatste onbemande maanlanding tot China's Chang'e 3 in 2013 — een gat van 37 jaar. De geboorde kern haalde regoliet uit 2 m diepte en bracht 170 g terug naar de Aarde. Onder de monsters: mineralen die spoor-water bevatten, voorbode van de ontdekking van substantiële maanwaterijs-depots 30 jaar later. Luna 24 markeerde ook de afsluiting van het Sovjet-maanprogramma; middelen verschoven naar Mars en Venus.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Proton-K vanuit Baikonur 1976-08-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TOUCHDOWN",
+      "note": "Zachte landing bij Mare Crisium 1976-08-18.",
+      "type": "nominal"
+    },
+    {
+      "met": 9.5,
+      "label": "BORING",
+      "note": "Kernmonster onttrokken uit 2 m diepte.",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "ASCENSIE",
+      "note": "Opstijgtrap heft af; trans-Aarde-injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 13,
+      "label": "AARDE-TERUGKEER",
+      "note": "Capsule landt in Surgut, USSR 1976-08-22 met 170 g regoliet.",
+      "type": "info"
+    }
+  ]
+}

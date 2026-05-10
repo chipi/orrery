@@ -1,0 +1,32 @@
+{
+  "name": "MAVEN",
+  "type": "ORBITER · ACTIEF",
+  "first": "Eerste missie gewijd aan het bestuderen van hoe Mars zijn atmosfeer verloor",
+  "description": "MAVEN — Mars Atmosphere and Volatile Evolution — beantwoordt de vraag 'waar is de lucht van Mars heen gegaan?' Zijn elliptische baan duikt in de bovenste atmosfeer en bemonstert ionen en neutralen terwijl de zonnewind ze wegstrip. Bevindingen: Mars verliest ongeveer 100 g atmosfeer per seconde aan de ruimte — over miljarden jaren is dat genoeg om het ontbrekende klimaat te verklaren. Het ruimtevaartuig dient ook als kritieke relais voor oppervlakte-actieven, waaronder Curiosity en Perseverance.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 401 vanuit Cape Canaveral SLC-41.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "TCM-1",
+      "note": "Eerste trajectcorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 308,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "33-minuten hoofdmotorverbranding vangt MAVEN in een 35-uurs elliptische wetenschapsbaan.",
+      "type": "nominal"
+    },
+    {
+      "met": 350,
+      "label": "EERSTE WETENSCHAP",
+      "note": "Begint atmosfeer-bemonsterende 'deep dip'-campagnes naar periapsis-hoogten ~125 km.",
+      "type": "info"
+    }
+  ]
+}

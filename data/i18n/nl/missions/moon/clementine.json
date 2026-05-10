@@ -1,0 +1,38 @@
+{
+  "name": "Clementine",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Gezamenlijke NASA-DoD maanmissie; eerste hints van waterijs aan de maanpolen",
+  "description": "Hoofdzakelijk ontworpen als een Strategic Defense Initiative-technologie-demonstrator, bracht Clementine 10 weken in maanbaan door en gaf de eerste systematische wereldwijde topografische en multispectrale kaart van de Maan terug. Bistatische radarmetingen aan de maanzuidpool produceerden de eerste verleidelijke hints van waterijs — jaren later bevestigd door Lunar Prospector en Chandrayaan-1. De vervolgmissie naar planetoïde Geographos te flyby faalde toen een stuwraketstoring het drijfgas van het ruimtevaartuig uitputte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan II G vanuit Vandenberg AFB.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "MOI",
+      "note": "Maanbaan-insertie 1994-02-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "KARTERING BEGINT",
+      "note": "Systematische multispectrale en topografische kartering begint.",
+      "type": "info"
+    },
+    {
+      "met": 95,
+      "label": "VERTREK",
+      "note": "Vertrekt uit maanbaan voor Geographos planetoïde-flyby.",
+      "type": "nominal"
+    },
+    {
+      "met": 100,
+      "label": "STUWRAKETSTORING",
+      "note": "Aan boord stuwraketstoring put drijfgas uit; planetoïde-ontmoeting geannuleerd.",
+      "type": "warning"
+    }
+  ]
+}

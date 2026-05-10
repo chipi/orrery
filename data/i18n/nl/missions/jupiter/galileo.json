@@ -1,0 +1,20 @@
+{
+  "name": "Galileo",
+  "type": "ORBITER · GEVLOGEN",
+  "first": "Eerste ruimtevaartuig dat rond Jupiter draaide; atmosferische probe in Jupiter-wolken",
+  "description": "Gelanceerd vanuit Spaceshuttle Atlantis na de lange post-Challenger-pauze, trotseerde Galileo de binnenste planetoïdengordel en voerde de eerste langetermijnstudie uit van Jupiter en zijn manen vanuit een baan. Het ontdekte het geïnduceerde magnetische veld van Europa — sterk bewijs van een ondergrondse oceaan — en zag Shoemaker-Levy 9 op Jupiter inslaan. De missie eindigde met een gecontroleerde duik in Jupiter in 2003 om besmetting te voorkomen van ijzige manen die omstandigheden voor leven kunnen herbergen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "STS-34 zet Galileo en een traagheidsbovenste-trap uit vanaf Atlantis.",
+      "type": "nominal"
+    },
+    {
+      "met": 2242,
+      "label": "JUPITER-BAAN INSERTIE",
+      "note": "Hoofdmotorverbranding vangt Galileo in een baan; decennia maanwetenschap beginnen.",
+      "type": "nominal"
+    }
+  ]
+}

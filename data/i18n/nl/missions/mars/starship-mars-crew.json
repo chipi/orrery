@@ -1,0 +1,56 @@
+{
+  "name": "Starship Mars Crew",
+  "type": "BEMANDE MONSTERTERUGKEER · CONCEPT",
+  "first": "Eerste voorgestelde bemande terugkeermissie naar Mars (SpaceX-architectuur)",
+  "description": "SpaceX's langetermijn bemande Mars-architectuur zoals geschetst in de IAC-presentaties van Elon Musk in 2016, 2017 en 2024. Een Starship heft af van de Aarde volledig getankt in lage Aardbaan via een vloot van hervul-tankervluchten, voert trans-Mars-injectie uit, en land een bemanning van ongeveer 10 met vracht en ISRU-uitrusting op het Marsoppervlak. Terugkeer-drijfgas (methaan + vloeibare zuurstof) wordt op Mars gemaakt uit atmosferische CO₂ en ondergronds waterijs via het Sabatier-proces, waardoor dezelfde Starship weer kan opheffen, trans-Aarde-injectie kan uitvoeren en de bemanning kan terugbrengen. Round-trip-duur hangt af van het lanceervenster en oppervlakteverblijf; de geïllustreerde tijdlijn hier is ~2,5 jaar van deur tot deur (213 dagen heen, ~500-daags oppervlakteverblijf, terugkeer in het volgende gunstige venster). De architectuur is conceptueel — datum en parameters onderhevig aan substantiële herziening in afwachting van Starship-rijping en ISRU-validatie.",
+  "events": [
+    {
+      "met": 0,
+      "label": "STARSHIP-LANCERING",
+      "note": "Bemande Starship heft af van Boca Chica of Cape Canaveral.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "BAAN-HERVULLEN",
+      "note": "Tankvloot rendezvous en drijfgasoverdracht in LEO over meerdere vluchten.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI-VERBRANDING",
+      "note": "Trans-Mars-injectie vanuit volledig getankte LEO-toestand.",
+      "type": "nominal"
+    },
+    {
+      "met": 30,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 213,
+      "label": "MARS-LANDING",
+      "note": "Aangedreven afdaling naar Mars-oppervlak — geen parachutes, geen airbags, geen sky-crane.",
+      "type": "info"
+    },
+    {
+      "met": 700,
+      "label": "TERUGKEER-PROP COMPLEET",
+      "note": "ISRU-installatie heeft voldoende methaan + LOX geproduceerd voor terugreis-drijfgas.",
+      "type": "info"
+    },
+    {
+      "met": 750,
+      "label": "TEI-VERBRANDING",
+      "note": "Trans-Aarde-injectie — Starship heft af van Mars-oppervlak en brandt voor Aarde-terugkeertraject.",
+      "type": "nominal"
+    },
+    {
+      "met": 950,
+      "label": "AARDE-AANKOMST",
+      "note": "Atmosferische intrede. Missie voltooid.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Ecuación de Tsiolkovski · 1903",
+  "intro_sentence": "Un maestro de escuela ruso sordo deduce la ecuación del cohete 50 años antes de que nadie pudiera construir un cohete para usarla.",
+  "narrative_101": [
+    "Konstantín Tsiolkovski era un maestro de escuela provincial autodidacta en Kaluga, sordo desde la infancia por escarlatina, que pasaba sus tardes esbozando cohetes multietapa mientras enseñaba aritmética de día. En 1903 publicó «La investigación del espacio mediante dispositivos reactivos» en una oscura revista rusa — y dedujo la ecuación que regiría todo cohete jamás construido.",
+    "La ecuación de Tsiolkovski: ∆v = vₑ × ln(m₀/m₁). El cambio de velocidad que un cohete puede producir es igual a su velocidad de escape multiplicada por el logaritmo natural de su relación de masas. Ese término logaritmo natural es brutal — obtener más ∆v requiere exponencialmente más combustible. La mayor parte de cada cohete es combustible. El Saturno V era 85% propelente en masa.",
+    "Tsiolkovski también dedujo: los combustibles líquidos superarían a los sólidos; la multietapa era necesaria para escapar de la Tierra; las estaciones orbitales podrían albergar humanos permanentemente. Murió en 1935, dos años antes de que la primera prueba de combustible líquido de Goddard alcanzara altitud real."
+  ],
+  "body_paragraphs": [
+    "Tsiolkovski publicó la ecuación, el concepto de cohete multietapa y el concepto de estación orbital años antes de que existiera la ingeniería seria de cohetes. Goddard construiría el primer cohete de combustible líquido en 1926 (EE. UU.); el V-2 de von Braun en 1942 (Alemania); el R-7 de Korolev en 1957 (URSS).",
+    "La ecuación es la inversa de la tercera ley de Newton: cada kilogramo de propelente expulsado a velocidad vₑ empuja al vehículo en 1 kg × vₑ. Integra eso sobre una masa decreciente y obtienes la dependencia logaritmo natural.",
+    "Por qué importa la escala logarítmica: duplicar ∆v necesita la relación de masas al cuadrado. Triplicarla, al cubo. Para ir de 0 a velocidad de escape (~11,2 km/s) con una velocidad de escape química típica de 4,4 km/s, relación de masas = e^(11,2/4,4) ≈ 13. Por tanto, una carga útil de 1 tonelada necesita 12 toneladas de propelente, más la estructura para contenerlo.",
+    "Tsiolkovski nunca probó nada. No era ingeniero — era un teórico con tiza. El programa espacial soviético lo canonizó póstumamente; su casa en Kaluga es ahora un museo y su nombre está en el cráter de la cara oculta al que apuntaron los soviéticos lunares."
+  ],
+  "formula_caption": "La ecuación del cohete. m₀ = masa húmeda (lleno); m₁ = masa seca (vacío); vₑ = velocidad de escape."
+}

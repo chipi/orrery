@@ -1,0 +1,50 @@
+{
+  "name": "Apollo 17",
+  "type": "BEMANDE LANDER · ROVER · GEVLOGEN",
+  "first": "Laatste bemande missie naar de Maan (en de enige Apollo met een getrainde geoloog)",
+  "description": "De laatste keer dat mensen een andere wereld bezochten — meer dan een halve eeuw geleden. Cernan en Schmitt brachten 75 uur op het oppervlak door, reden de LRV 35,7 km en brachten 110,5 kg monsters terug. Schmitt was de enige getrainde wetenschapper (geoloog) die ooit op de Maan liep, en zijn bevindingen — met name het oranje vulkanisch glas bij Shorty-krater — hervormden de maangeologie. Cernan's laatste woorden voordat hij voor de laatste keer de ladder beklom: 'We vertrekken zoals we kwamen, en zo God het wil, zullen we terugkeren.' Artemis III zou die belofte moeten waarmaken.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Saturn V (AS-512) vanuit KSC LC-39A 1972-12-07 — enige Apollo nachtlancering.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.13,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "MOI",
+      "note": "Maanbaan-insertie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "TOUCHDOWN",
+      "note": "Lunar Module Challenger landt bij Taurus-Littrow-vallei 1972-12-11 19:54 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.3,
+      "label": "EERSTE EVA",
+      "note": "Cernan en Schmitt beginnen eerste van drie maan-EVA's (totaal 22u 4m).",
+      "type": "info"
+    },
+    {
+      "met": 7,
+      "label": "ASCENSIE",
+      "note": "Cernan: 'We vertrekken zoals we kwamen, en zo God het wil, zullen we terugkeren.'",
+      "type": "nominal"
+    },
+    {
+      "met": 12.6,
+      "label": "SPLASHDOWN",
+      "note": "CM America brengt bemanning terug naar de Stille Oceaan 1972-12-19.",
+      "type": "nominal"
+    }
+  ]
+}

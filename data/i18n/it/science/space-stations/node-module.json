@@ -1,0 +1,17 @@
+{
+  "title": "Modulo nodo",
+  "intro_sentence": "Un hub pressurizzato con più porte di attracco — il connettore strutturale che permette a una stazione di ramificarsi.",
+  "narrative_101": [
+    "Un nodo è un tipo speciale di modulo pressurizzato: non ospita esperimenti né alloggi per l'equipaggio, semplicemente collega altri moduli insieme. Immagina una scatola esagonale dove ogni faccia ha una porta di attracco. Imbulloni un nodo a un razzo che si lancia, lo mandi su, poi agganci cinque moduli in più alle cinque porte rimanenti e hai fatto crescere la tua stazione da un modulo a sei.",
+    "La ISS ne ha tre: Unity (Nodo 1), Harmony (Nodo 2) e Tranquility (Nodo 3). Ognuno è la giunzione centrale per un segmento della stazione — Unity unisce i lati russo e americano; Harmony collega il cluster del laboratorio statunitense ai moduli giapponese ed europeo; Tranquility porta la cupola di osservazione Cupola.",
+    "Tiangong ha adottato un approccio diverso: invece di nodi dedicati, il modulo centrale Tianhe funge sia da alloggio sia da hub, con più porte di attracco integrate direttamente nelle sue estremità anteriore e posteriore. È un design più stretto che costa meno massa al lancio ma limita quanti moduli possono ramificarsi."
+  ],
+  "body_paragraphs": [
+    "I nodi sono moduli connettori — hub pressurizzati con più porte Common Berthing Mechanism (CBM) o di attracco — che permettono a una stazione di ramificarsi in una topologia ad albero anziché una catena lineare.",
+    "ISS Unity (Nodo 1) lanciato nel 1998 su STS-88. Sei porte CBM: avanti verso Destiny, dietro verso Zarya, sinistra verso BEAM (era Tranquility), destra verso Quest, zenit verso il truss Z1, nadir verso Leonardo PMM. Il primo modulo ISS costruito negli USA.",
+    "ISS Harmony (Nodo 2) lanciato nel 2007. Sei porte: collega Destiny a Columbus (sinistra), Kibo (destra) e l'adattatore di attracco per veicoli visitatori (avanti).",
+    "ISS Tranquility (Nodo 3) lanciato nel 2010. Ospita la cupola di osservazione Cupola (porta nadir), il Permanent Multipurpose Module Leonardo (avanti) e BEAM (dietro).",
+    "Nucleo Tianhe di Tiangong: combina nodo + alloggi dell'equipaggio + propulsione + controllo. L'hub di attracco anteriore ha 4 porte equivalenti CBM più una porta di attracco posteriore per navette cargo (Tianzhou) e con equipaggio (Shenzhou). Wentian e Mengtian si agganciano lateralmente tramite l'hub del nodo anteriore."
+  ],
+  "diagram_caption": "Modulo nodo esagonale con sei porte di attracco etichettate avanti / dietro / sinistra / destra / zenit / nadir."
+}

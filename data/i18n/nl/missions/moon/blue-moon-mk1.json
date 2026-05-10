@@ -1,0 +1,38 @@
+{
+  "name": "Blue Moon MK1",
+  "type": "VRACHTLANDER · GEPLAND",
+  "first": "Eerste vlucht van Blue Origin's Blue Moon maanlander-architectuur",
+  "description": "Blue Origin's eerste vrachtsysteem Blue Moon-lander, gecontracteerd onder NASA's Commercial Lunar Payload Services (CLPS) programma. Een eentraps afdaalvoertuig aangedreven door de BE-7 cryogene motor, ontworpen om tot ~3 ton lading aan het maanoppervlak te leveren. Lanceert op Blue Origin's New Glenn vanuit Cape Canaveral, voert trans-lunaire injectie uit op de New Glenn tweede trap, en voert vervolgens maanbaan-insertie en aangedreven afdaling uit. De Mark 1 vrachtvlucht gaat vooraf aan de mensgewaardeerde Mark 2, die is gecontracteerd om NASA's Artemis V bemande maanlanding te ondersteunen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "NEW GLENN-LANCERING",
+      "note": "Heft af van Cape Canaveral LC-36; eerste trap keert terug voor downrange-recovery.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2,
+      "label": "TLI",
+      "note": "New Glenn tweede trap voert trans-lunaire injectie verbranding uit.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.5,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 4,
+      "label": "LOI",
+      "note": "Maanbaan-insertie via BE-7-hoofdmotor.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.1,
+      "label": "AANGEDREVEN AFDALING",
+      "note": "BE-7 throttled afdaling naar maanoppervlak — eerste Blue Origin maanlanding.",
+      "type": "info"
+    }
+  ]
+}

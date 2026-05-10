@@ -1,0 +1,17 @@
+{
+  "title": "Module nœud",
+  "intro_sentence": "Un hub pressurisé avec plusieurs ports d'amarrage — le connecteur structurel qui permet à une station de se ramifier.",
+  "narrative_101": [
+    "Un nœud est un type spécial de module pressurisé : il n'héberge ni expériences ni quartiers d'équipage, il connecte simplement d'autres modules ensemble. Imaginez une boîte hexagonale où chaque face a un port d'amarrage. Boulonnez un nœud à une fusée en lancement, envoyez-le, puis amarrez cinq modules supplémentaires aux cinq ports restants et vous avez fait passer votre station d'un module à six.",
+    "L'ISS en a trois : Unity (Nœud 1), Harmony (Nœud 2) et Tranquility (Nœud 3). Chacun est la jonction centrale d'un segment de la station — Unity colle ensemble les côtés russe et américain ; Harmony connecte le cluster de laboratoires américains aux modules japonais et européens ; Tranquility porte le dôme d'observation Cupola.",
+    "Tiangong a adopté une approche différente : au lieu de nœuds dédiés, le module central Tianhe sert à la fois de quartiers de vie et de hub, avec plusieurs ports d'amarrage intégrés directement dans ses extrémités avant et arrière. C'est une conception plus serrée qui coûte moins de masse à lancer mais limite combien de modules peuvent se ramifier."
+  ],
+  "body_paragraphs": [
+    "Les nœuds sont des modules connecteurs — hubs pressurisés avec plusieurs ports Common Berthing Mechanism (CBM) ou d'amarrage — qui permettent à une station de se ramifier en topologie d'arbre plutôt qu'en chaîne linéaire.",
+    "ISS Unity (Nœud 1) lancé en 1998 sur STS-88. Six ports CBM : avant vers Destiny, arrière vers Zarya, bâbord vers BEAM (était Tranquility), tribord vers Quest, zénith vers la treille Z1, nadir vers Leonardo PMM. Le premier module ISS construit aux États-Unis.",
+    "ISS Harmony (Nœud 2) lancé en 2007. Six ports : connecte Destiny à Columbus (bâbord), Kibo (tribord) et l'adaptateur d'amarrage pour véhicules visiteurs (avant).",
+    "ISS Tranquility (Nœud 3) lancé en 2010. Héberge le dôme d'observation Cupola (port nadir), le Permanent Multipurpose Module Leonardo (avant) et BEAM (arrière).",
+    "Noyau Tianhe de Tiangong : combine nœud + quartiers d'équipage + propulsion + contrôle. Le hub d'amarrage avant possède 4 ports équivalents CBM plus un port d'amarrage arrière pour vaisseaux cargo (Tianzhou) et habités (Shenzhou). Wentian et Mengtian s'amarrent latéralement via le hub de nœud avant."
+  ],
+  "diagram_caption": "Module nœud hexagonal avec six ports d'amarrage étiquetés avant / arrière / bâbord / tribord / zénith / nadir."
+}

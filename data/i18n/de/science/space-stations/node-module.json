@@ -1,0 +1,17 @@
+{
+  "title": "Knotenmodul",
+  "intro_sentence": "Ein Druckhub mit mehreren Kopplungsports — der strukturelle Konnektor, der einer Station das Verzweigen ermöglicht.",
+  "narrative_101": [
+    "Ein Knoten ist eine besondere Art von Druckmodul: er beherbergt keine Experimente oder Crew-Quartiere, er verbindet einfach andere Module miteinander. Stell dir einen sechseckigen Kasten vor, bei dem jede Fläche einen Kopplungsport hat. Schraube einen Knoten an eine startende Rakete, schick ihn hoch, dann dock fünf weitere Module an die fünf verbleibenden Ports an, und du hast deine Station von einem Modul auf sechs vergrößert.",
+    "Die ISS hat drei: Unity (Knoten 1), Harmony (Knoten 2) und Tranquility (Knoten 3). Jeder ist die zentrale Kreuzung für ein Segment der Station — Unity verbindet die russischen und US-Seiten; Harmony verbindet das US-Labor-Cluster mit den japanischen und europäischen Modulen; Tranquility trägt die Cupola-Beobachtungskuppel.",
+    "Tiangong wählte einen anderen Ansatz: anstelle dedizierter Knoten fungiert das zentrale Tianhe-Modul sowohl als Wohnquartier als auch als Hub mit mehreren Kopplungsports, die direkt in seinen vorderen und hinteren Enden eingebaut sind. Es ist ein engeres Design, das weniger Startmasse kostet, aber begrenzt, wie viele Module abzweigen können."
+  ],
+  "body_paragraphs": [
+    "Knoten sind Konnektor-Module — Druckhubs mit mehreren Common Berthing Mechanism (CBM)- oder Kopplungsports — die es einer Station ermöglichen, sich in eine Baumtopologie zu verzweigen statt in eine lineare Kette.",
+    "ISS Unity (Knoten 1) gestartet 1998 mit STS-88. Sechs CBM-Ports: vorne zu Destiny, hinten zu Sarja, backbord zu BEAM (war Tranquility), steuerbord zu Quest, Zenit zum Z1-Truss, Nadir zum Leonardo PMM. Das erste in den USA gebaute ISS-Modul.",
+    "ISS Harmony (Knoten 2) gestartet 2007. Sechs Ports: verbindet Destiny mit Columbus (backbord), Kibo (steuerbord) und dem Kopplungsadapter für Besucherfahrzeuge (vorne).",
+    "ISS Tranquility (Knoten 3) gestartet 2010. Beherbergt die Cupola-Beobachtungskuppel (Nadir-Port), das Permanent Multipurpose Module Leonardo (vorne) und BEAM (hinten).",
+    "Tiangongs Tianhe-Kern: kombiniert Knoten + Crew-Quartiere + Antrieb + Steuerung. Vorderer Kopplungshub hat 4 CBM-äquivalente Ports plus einen hinteren Kopplungsport für Fracht- (Tianzhou) und bemannte (Shenzhou) Raumschiffe. Wentian und Mengtian docken seitlich über den vorderen Knotenhub an."
+  ],
+  "diagram_caption": "Sechseckiges Knotenmodul mit sechs Kopplungsports beschriftet vorne / hinten / backbord / steuerbord / Zenit / Nadir."
+}

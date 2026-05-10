@@ -1,0 +1,50 @@
+{
+  "name": "Perseverance",
+  "type": "ROVER · ACTIEF",
+  "first": "Eerste helikopter op een andere planeet (Ingenuity); eerste monster-cachering voor Mars Sample Return",
+  "description": "Perseverance is de meest ambitieuze Mars-oppervlaktemissie ooit gevlogen. Mars Sample Return is ervan afhankelijk — de rover verzamelt en cachet monsters in buisjes die een toekomstige missie zal ophalen en naar de Aarde brengen. Ingenuity, de eerste helikopter op een andere planeet, vloog 72 missies voordat hij in januari 2024 met beschadigde rotors met pensioen ging — wat bewijst dat gecontroleerde vlucht mogelijk is in de dunne atmosfeer van Mars. MOXIE, een zuurstof-uit-CO2-demonstrator, produceerde de eerste lokaal gemaakte zuurstof op een andere planeet, een repetitie voor bemande Mars-missies.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 541 vanuit Cape Canaveral SLC-41 — dezelfde voertuigklasse als Curiosity.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "TMI-VERBRANDING",
+      "note": "Trans-Mars-injectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 9,
+      "label": "TCM-1",
+      "note": "Eerste tussenkoerscorrectie.",
+      "type": "nominal"
+    },
+    {
+      "met": 203,
+      "label": "EDL",
+      "note": "Sky-crane levert rover aan Jezero-krater 2021-02-18 — locatie van een oude rivierdelta.",
+      "type": "nominal"
+    },
+    {
+      "met": 203.01,
+      "label": "TOUCHDOWN",
+      "note": "Perseverance zet neer bij Jezero 20:55 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 271,
+      "label": "INGENUITY EERSTE VLUCHT",
+      "note": "Eerste aangedreven gecontroleerde vlucht op een andere planeet — 39,1 seconden tot 5 m hoogte.",
+      "type": "info"
+    },
+    {
+      "met": 1278,
+      "label": "INGENUITY GEPENSIONEERD",
+      "note": "Rotorblad beschadigd op 72e vlucht 2024-01-18; helikopter blijft operationeel als comms-relais.",
+      "type": "info"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Vuelo espacial de larga duración",
+  "intro_sentence": "Más allá de unos tres meses, la microgravedad deja de ser neutral y empieza a tomar mordiscos medibles del cuerpo humano.",
+  "narrative_101": [
+    "En la Tierra, la gravedad realiza un trabajo de fondo todo el día: tira de los fluidos hacia los pies, carga los huesos a cada paso, ejercita el corazón contra el peso de la sangre. Quítala y el cuerpo se desconstruye — los huesos pierden ~1-2% de densidad al mes si no luchas contra ello, los músculos se atrofian, el sistema cardiovascular se desacondiciona, los desplazamientos de fluidos acumulan presión en el cráneo y aplastan ligeramente los globos oculares. Dos horas al día en un arnés de cinta y un dispositivo de ejercicio resistivo recuperan la mayor parte, pero no todo.",
+    "El récord actual de misión única en la EEI es Frank Rubio con 371 días (sep 2022 – sep 2023). El récord histórico fue Valeri Polyakov en Mir con 437,7 días en 1994-95 — una prueba deliberada para una posible misión a Marte. Las tripulaciones de Tiangong rotan actualmente a intervalos de aproximadamente 6 meses, igualando el estándar de la EEI.",
+    "Más allá de hueso y músculo, los problemas más difíciles son la radiación (los rayos cósmicos galácticos se acumulan a ~0,5 mSv/día en LEO — unas 100× el nivel del mar), la vista (el síndrome neuroocular asociado al vuelo espacial sigue siendo poco comprendido) y la salud conductual (espacios pequeños, aislamiento, falta de privacidad)."
+  ],
+  "body_paragraphs": [
+    "HUESO + MÚSCULO — los astronautas pierden 1-2% de densidad mineral ósea al mes en huesos de carga sin contramedidas (~0,5% con el Advanced Resistive Exercise Device + bisfosfonato). Las fibras musculares de tipo I se atrofian más rápido; el ejercicio diario de 2 horas en cinta + cicloergómetro + ARED preserva aproximadamente el 90% de la masa muscular previa al vuelo.",
+    "CARDIOVASCULAR + DESPLAZAMIENTO DE FLUIDOS — el corazón se encoge ~9,4% en volumen durante misiones de 6 meses; la intolerancia ortostática persiste durante semanas tras el regreso. Unos 2 L de fluido migran de las piernas a la cabeza en microgravedad, causando hinchazón facial, presión intracraneal elevada y está implicado en el síndrome neuroocular asociado al vuelo espacial (SANS).",
+    "VESTIBULAR / SENSORIOMOTOR — la readaptación a la gravedad lleva de horas a días tras el aterrizaje; el control motor fino está medidamente degradado durante ~2 semanas.",
+    "RADIACIÓN — las tripulaciones LEO reciben ~150-180 mSv por misión de 6 meses. Los límites de carrera se establecen por agencia; el marco de límite efectivo de dosis de NASA limita el riesgo de carrera al 3% de aumento en mortalidad por cáncer, lo que se traduce en aproximadamente 3-5 misiones de duración EEI para la mayoría de los astronautas.",
+    "Récords: Polyakov 437,7 d (Mir, 1994-95); Rubio 371 d (EEI, 2022-23); Vande Hei 355 d (EEI, 2021-22); Kononenko acumulado >1000 d a través de 5 misiones."
+  ],
+  "diagram_caption": "Curvas de pérdida fisiológica a lo largo de una misión de 12 meses. Hueso (rojo, caída más pronunciada), músculo (azul), cardiovascular (oro). Las contramedidas diarias de ejercicio (discontinuas) aplanan cada curva."
+}

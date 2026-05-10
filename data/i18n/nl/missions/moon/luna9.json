@@ -1,0 +1,32 @@
+{
+  "name": "Luna 9",
+  "type": "ONBEMANDE LANDER · GEVLOGEN",
+  "first": "Eerste zachte landing op de Maan; eerste foto's vanaf het maanoppervlak",
+  "description": "Na 11 Sovjet-mislukkingen en 5 Amerikaanse Ranger-missies die alleen waren ontworpen om te crashen, werd Luna 9 het eerste ruimtevaartuig dat zacht op een andere wereld landde. Negen panoramische beelden teruggegeven over 8 minuten beslechtten een lang lopend wetenschappelijk debat: het oppervlak van de Maan was vast, geen zee van stof diep genoeg om een lander te verzwelgen. De missie duurde 3 dagen voor batterij-uitputting. Binnen enkele maanden gebruikte elke daaropvolgende Maan-missie zachte landing als basislijn.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Molniya-M vanuit Baikonur 1966-01-31.",
+      "type": "nominal"
+    },
+    {
+      "met": 3,
+      "label": "TOUCHDOWN",
+      "note": "Zachte landing bij Oceanus Procellarum 1966-02-03 18:45 UTC. Eerste zachte landing op een andere wereld.",
+      "type": "nominal"
+    },
+    {
+      "met": 3.01,
+      "label": "EERSTE BEELDEN",
+      "note": "Negen panoramische beelden teruggegeven in drie transmissiesessies.",
+      "type": "info"
+    },
+    {
+      "met": 6,
+      "label": "SIGNAALVERLIES",
+      "note": "Batterij uitgeput; laatste transmissie 1966-02-06.",
+      "type": "warning"
+    }
+  ]
+}

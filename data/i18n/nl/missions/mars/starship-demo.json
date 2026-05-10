@@ -1,0 +1,32 @@
+{
+  "name": "Starship Demo",
+  "type": "ONBEMANDE MARS-DEMO · GEPLAND",
+  "first": "Eerste volledig herbruikbare lanceersysteem dat een Mars-landing probeert",
+  "description": "Een onbemande demonstratie van de Starship Mars-architectuur: lancering op Super Heavy, hervullen in LEO vanuit een tankvariant, dan trans-Mars-injectie van een volledig getankte Starship en aangedreven afdaling naar het Marsoppervlak. SpaceX's vermelde doel is een lanceervenster van 2026-2027; engineering-realiteit (Starship werkt nog aan orbitale vluchtbetrouwbaarheid en hervullen in baan is nog niet gedemonstreerd) maakt 2028 of later waarschijnlijker. Als het slaagt, keert het de Mars-laadeconomie om — van duizenden kg naar honderd ton per landing.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Starship vanuit Boca Chica of Cape Canaveral — eerste superzware interplanetaire lancering.",
+      "type": "nominal"
+    },
+    {
+      "met": 1,
+      "label": "BAAN-HERVULLEN",
+      "note": "Tanker-rendezvous en drijfgasoverdracht in LEO over meerdere vluchten.",
+      "type": "nominal"
+    },
+    {
+      "met": 2,
+      "label": "TMI-VERBRANDING",
+      "note": "Trans-Mars-injectie vanuit volledig getankte LEO-toestand.",
+      "type": "nominal"
+    },
+    {
+      "met": 274,
+      "label": "MARS-LANDING",
+      "note": "Aangedreven afdaling naar Mars-oppervlak — geen parachutes, geen airbags, geen sky-crane.",
+      "type": "info"
+    }
+  ]
+}

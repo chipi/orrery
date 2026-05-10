@@ -1,0 +1,17 @@
+{
+  "title": "Solarstrom-Budget",
+  "intro_sentence": "Wie viel Elektrizität die Solarpaneele erzeugen — die vorgelagerte Beschränkung für jedes System, das die Crew betreiben kann.",
+  "narrative_101": [
+    "Eine Raumstation läuft mit Solarstrom. Die Paneele sind das größte einzelne Merkmal an der Außenseite (die ISS-Paneele spannen 109 m von Flügelspitze zu Flügelspitze — größer als ein Football-Feld), weil alles andere von den Watts abhängt, die sie aus dem Sonnenlicht ziehen: Lebenserhaltung, Kommunikation, wissenschaftliche Instrumente, das Trainingsgerät der Crew, der Lüfter im Toilettenluftstrom.",
+    "Die ISS erreicht etwa 120 kW Spitze von acht 35 m × 12 m großen Paneelen (kürzlich erweitert um sechs kleinere iROSA-Aufrolltafeln). Davon erreichen etwa 75-90 kW die tatsächlichen Lasten nach Verlusten — Batteriespeicherung während Nachtdurchgängen, Ladesteuerung, Spannungsregelung. Tiangong läuft leichter mit etwa 27 kW Spitze — weniger Crew, weniger Experimente, einfachere thermische Last.",
+    "Strom diktiert Ehrgeiz. Möchten Sie ein Zentrifugen-Biologieexperiment durchführen? Stecken Sie es ein — es wird 1,5 kW kosten. Möchten Sie zehn weitere Racks an Nutzlasten hinzufügen? Sie brauchen ein Strombudget, und entweder vergrößern Sie das Paneel (teuer — neue Mission) oder Sie reduzieren etwas anderes."
+  ],
+  "body_paragraphs": [
+    "Solarstrom-Budget = erzeugte Spitzenleistung × Tastverhältnis (sonnenbeschienener Anteil der Umlaufbahn) × nachgelagerte Effizienz (Batterie- + Reglerverluste). Für LEO-Stationen liegt das Tastverhältnis bei etwa 0,6 — etwa 35 Minuten sonnenbeschienen pro 92-Minuten-Umlaufbahn.",
+    "ISS-Solarpaneele: 8 IEA-Hauptflügel (4× P3/P4, P6 + 4× S3/S4, S6) bei ~120 kW Spitze BOL, derated auf ~84 kW EOL nach 15 Jahren. iROSA erweitert jeden Hauptflügel um eine iROSA-Aufrolltafel am inneren Ende und fügt jeweils ~20 kW Spitze hinzu. Stand 2025: ~215 kW Spitze brutto, ~120 kW nach Tastverhältnis und Speicherverlusten.",
+    "Tiangong-Solarpaneele: 4 Flügel an Tianhe (2 einziehbar pro Seite) plus 4 große Flügel an Wentian und Mengtian. Insgesamt ~30 kW BOL × Tastverhältnis = ~18 kW kontinuierlich, mit 27 kW Spitze während sonnenbeschienenem Durchgang.",
+    "Batteriespeicher: ISS verwendet Lithium-Ionen-Batterie-ORUs (orbital replacement units) mit ~50 kWh Kapazität pro Paar. Jede Batterie deckt die Nachtseiten-Last eines Hauptpaneels ab. Tiangong verwendet ähnliche Li-Ion-Bänke, dimensioniert für die kleinere Last.",
+    "Mir hingegen erreichte einen Spitzenwert von ~30 kW aus 1500 m² Paneelen — vergleichbar pro Volumeneinheit mit Tiangong, aber mit älteren Nickel-Cadmium-Batteriespeichern, die im Laufe ihrer 15-jährigen Lebensdauer tiefere Wiederaufbauten benötigten."
+  ],
+  "diagram_caption": "Sonneneingang → Paneel → DC-Bus → Batterie + Lasten. Tastverhältnis-Balken zeigt den 60 % sonnenbeschienenen Anteil pro 92-Minuten-Umlaufbahn."
+}

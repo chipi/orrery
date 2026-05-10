@@ -1,0 +1,32 @@
+{
+  "name": "Tianwen-1",
+  "type": "ORBITER · LANDER · ROVER · ACTIEF",
+  "first": "Eerste missie die orbiter, lander en rover in één lancering naar Mars levert",
+  "description": "China's eerste Mars-missie volbracht wat geen agentschap ooit in één lancering had geprobeerd: orbitale insertie, atmosferische intrede, zachte landing en rover-inzet. De Zhurong-rover werkte 358 sols bij Utopia Planitia, doorkruiste 1,9 km, voordat hij in mei 2022 in geplande hibernatie ging; hij is sindsdien niet wakker geworden (waarschijnlijk vanwege stofophoping op zonnepanelen). De orbiter blijft actief, brengt de planeet in hoge resolutie in kaart en dient als relais voor grondactieven.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Lange Mars 5 vanuit Wenchang — China's eerste superzware interplanetaire lancering.",
+      "type": "nominal"
+    },
+    {
+      "met": 202,
+      "label": "MARS-BAAN INSERTIE",
+      "note": "Motorverbranding vangt ruimtevaartuig in Mars-baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 295,
+      "label": "ZHURONG-LANDING",
+      "note": "Lander/rover daalt af naar Utopia Planitia 2021-05-14; Zhurong rolt van helling 2021-05-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 651,
+      "label": "ZHURONG HIBERNATIE",
+      "note": "Rover gaat in geplande slaap 2022-05; orbiter zet operaties voort.",
+      "type": "info"
+    }
+  ]
+}

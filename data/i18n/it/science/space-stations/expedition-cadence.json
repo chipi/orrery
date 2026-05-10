@@ -1,0 +1,17 @@
+{
+  "title": "Cadenza delle spedizioni",
+  "intro_sentence": "Le stazioni funzionano su rotazioni di equipaggio mobili di 6 mesi — un equilibrio tra consumabili delle tute, vita utile dei veicoli, pipeline di addestramento e fisiologia umana.",
+  "narrative_101": [
+    "Perché sei mesi? È la risposta a diversi vincoli che si incontrano in un punto. Le navette Sojuz e Crew Dragon sono certificate per restare agganciate ~210 giorni prima che i loro propulsori e guarnizioni necessitino di rinnovo. Le tute EVA Orlan russe sono ricaricate a terra ogni sei mesi. I dati della NASA sulle contromisure alla perdita ossea sono più affidabili in finestre di 6 mesi. Ruotare un terzo dell'equipaggio ogni 4-6 mesi mantiene mani fresche a bordo senza hot-bunking.",
+    "La ISS è iniziata con spedizioni di 3 persone (Spedizione 1 nel 2000) e è salita a equipaggi di 6 persone nel 2009 una volta che la capacità di scialuppa di salvataggio era presente. Ogni spedizione dura tipicamente ~6 mesi. Alcune durano di più — la permanenza accidentale di 371 giorni di Frank Rubio (Spedizioni 67/68/69) è avvenuta quando il suo Sojuz fu danneggiato da detriti e dovette essere portato un sostituto.",
+    "Tiangong è iniziata con rotazioni più brevi (Shenzhou 12: 92 giorni; Shenzhou 13: 183 giorni) e si è stabilizzata a ~6 mesi a partire da Shenzhou 14. Equipaggi di tre ruotano; gli equipaggi uscenti e entranti condividono circa una settimana a bordo per il passaggio di consegne dello stato operativo."
+  ],
+  "body_paragraphs": [
+    "Vincoli che guidano la cadenza ~6 mesi: certificazione delle navicelle agganciate (Sojuz: 210 giorni; Crew Dragon: 210 giorni; Shenzhou: 180-210 giorni), cicli di rigenerazione a terra delle tute EVA, capacità della dispensa per rifornimento, e la preferenza del NASA Human Research Program per finestre di dati sulla perdita ossea di 6 mesi.",
+    "Spedizioni ISS: numerate sequenzialmente dalla Spedizione 1 (nov 2000). Dimensioni dell'equipaggio — 3 (Spe 1-19), 6 (Spe 20-63), variabile 7-9 con sovrapposizione Crew Dragon (Spe 64-).",
+    "Passaggio di consegne: il Sojuz/Crew Dragon entrante si aggancia 5-10 giorni prima della partenza dell'uscente. Entrambi gli equipaggi condividono la stazione, conducono briefing, trasferiscono carico, poi l'equipaggio uscente si sgancia. Il periodo di equipaggio combinato è il più stressante per le risorse: più corpi, più CO₂, più consumo di cibo.",
+    "Anomalie di lunga durata: Polyakov 437,7 g (Mir, 1994-95, deliberato test di resistenza classe Marte); Rubio 371 g (ISS, 2022-23, contingenza); Vande Hei 355 g (ISS, 2021-22, riassetto seggiolini Sojuz); Kelly + Kornienko 340 g (ISS, 2015-16, programma di studio sui gemelli).",
+    "Cadenza Tiangong: Shenzhou 12 (92 g), 13 (183 g), 14 (186 g), 15 (186 g), 16 (155 g), 17 (187 g), 18 (192 g). Ritmo stabile che corrisponde alla pratica ISS."
+  ],
+  "diagram_caption": "Cronologia delle spedizioni ISS 2000-2025: bande di colore impilate (equipaggi di 3, 6, 7 persone) con anomalie annotate (Polyakov, Vande Hei, Rubio)."
+}

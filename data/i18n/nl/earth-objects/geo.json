@@ -1,0 +1,6 @@
+{
+  "name": "GEO-gordel",
+  "short": "GEO",
+  "description": "De geostationaire ring. Op precies 35.786 km is de baanperiode gelijk aan de rotatie van de Aarde — satellieten lijken vast aan de hemel. GOES-weersatellieten, Meteosat, duizenden communicatiesatellieten. De specifieke hoogte waar fysica en nut perfect uitlijnen.",
+  "scale_fact": "35.786 km is geen rond getal door ontwerp — het is de exacte hoogte waar zwaartekracht en baansnelheid in evenwicht zijn om een 24-uurs periode te geven. De fysica koos het."
+}

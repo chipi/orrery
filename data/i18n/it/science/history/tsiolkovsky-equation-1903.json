@@ -1,0 +1,16 @@
+{
+  "title": "Equazione di Tsiolkovskij · 1903",
+  "intro_sentence": "Un maestro di scuola russo sordo elabora l'equazione del razzo 50 anni prima che chiunque potesse costruire un razzo per usarla.",
+  "narrative_101": [
+    "Konstantin Tsiolkovskij era un maestro di scuola provinciale autodidatta a Kaluga, sordo dall'infanzia per scarlattina, che passava le serate a disegnare razzi multistadio mentre insegnava aritmetica di giorno. Nel 1903 pubblicò «L'esplorazione dello spazio cosmico per mezzo di apparecchi a reazione» in un'oscura rivista russa — ed elaborò l'equazione che avrebbe governato ogni razzo mai costruito.",
+    "L'equazione di Tsiolkovskij: ∆v = vₑ × ln(m₀/m₁). Il cambiamento di velocità che un razzo può produrre è uguale alla sua velocità di scarico moltiplicata per il logaritmo naturale del suo rapporto di massa. Quel termine logaritmo naturale è brutale — ottenere più ∆v richiede esponenzialmente più carburante. La maggior parte di ogni razzo è carburante. Il Saturn V era propellente all'85 % per massa.",
+    "Tsiolkovskij capì anche: i propellenti liquidi avrebbero battuto i solidi; il multistadio era necessario per fuggire dalla Terra; le stazioni orbitali avrebbero potuto ospitare umani permanentemente. Morì nel 1935, due anni prima che il primo test a propellente liquido di Goddard raggiungesse vera altitudine."
+  ],
+  "body_paragraphs": [
+    "Tsiolkovskij pubblicò l'equazione, il concetto di razzo multistadio e il concetto di stazione orbitale anni prima che esistesse seria ingegneria missilistica. Goddard avrebbe costruito il primo razzo a propellente liquido nel 1926 (USA); il V-2 di von Braun nel 1942 (Germania); l'R-7 di Korolev nel 1957 (URSS).",
+    "L'equazione è l'inverso della terza legge di Newton: ogni chilogrammo di propellente espulso a velocità vₑ spinge il veicolo di 1 kg × vₑ. Integralo su una massa decrescente e ottieni la dipendenza dal logaritmo naturale.",
+    "Perché conta la scala log: raddoppiare ∆v richiede il rapporto di massa al quadrato. Triplicarlo richiede al cubo. Per andare da 0 a velocità di fuga (~11,2 km/s) con una velocità di scarico chimica tipica di 4,4 km/s, rapporto di massa = e^(11,2/4,4) ≈ 13. Quindi un carico utile di 1 tonnellata necessita di 12 tonnellate di propellente, più la struttura per contenerlo.",
+    "Tsiolkovskij non testò mai nulla. Non era un ingegnere — era un teorico con il gesso. Il programma spaziale sovietico lo canonizzò postumo; la sua casa a Kaluga è ora un museo e il suo nome è sul cratere della faccia nascosta che le sonde lunari sovietiche puntarono."
+  ],
+  "formula_caption": "L'equazione del razzo. m₀ = massa umida (pieno); m₁ = massa secca (vuoto); vₑ = velocità di scarico."
+}

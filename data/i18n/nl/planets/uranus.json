@@ -1,0 +1,33 @@
+{
+  "name": "Uranus",
+  "type": "IJsreus",
+  "fact": "Uranus roteert op zijn zij — ashelling 98°. Zijn noordpool wijst gedurende de helft van zijn baan van 84 jaar bijna recht naar de Zon.",
+  "bio": "Bijna op zijn zij gekanteld (97,77°). Elke pool krijgt 42 jaar continu zonlicht, dan 42 jaar duisternis. Vrijwel zeker veroorzaakt door een oude massieve botsing.",
+  "links": [
+    {
+      "l": "Uranus — Wikipedia",
+      "u": "https://nl.wikipedia.org/wiki/Uranus_(planeet)",
+      "t": "intro"
+    },
+    {
+      "l": "Uranus (NASA Solar System Exploration)",
+      "u": "https://science.nasa.gov/uranus/",
+      "t": "intro"
+    },
+    {
+      "l": "Voyager 2 at Uranus (NASA JPL)",
+      "u": "https://voyager.jpl.nasa.gov/mission/science/planet-uranus/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus Orbiter and Probe — Decadal Survey",
+      "u": "https://nap.nationalacademies.org/catalog/26522/",
+      "t": "core"
+    },
+    {
+      "l": "Uranus's tilt origin (Astrophysical Journal 2020)",
+      "u": "https://iopscience.iop.org/article/10.3847/PSJ/abb945",
+      "t": "deep"
+    }
+  ]
+}

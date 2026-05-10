@@ -1,0 +1,17 @@
+{
+  "title": "EVA — Attività extraveicolare",
+  "intro_sentence": "Una passeggiata spaziale: la parte più rischiosa e gratificante di una missione con equipaggio, limitata a circa 8 ore dai consumabili della tuta.",
+  "narrative_101": [
+    "Un'EVA — extravehicular activity — è quando un membro dell'equipaggio lascia l'interno pressurizzato della stazione per lavorare fuori nel vuoto. Ogni compito esterno che non può essere svolto da un braccio robotico — installare un modulo, sostituire una batteria, riparare una perdita di liquido di raffreddamento — avviene in un'EVA. Sono coreografate al minuto, provate sott'acqua per centinaia di ore, e limitate a circa 8 ore ciascuna dalla capacità di ossigeno e dello scrubber di CO₂ della tuta.",
+    "Le EVA iniziano nella camera di equilibrio — un piccolo compartimento a due porte in cui l'equipaggio pre-respira ossigeno al 100 % per 60-90 minuti (lavando l'azoto dal flusso sanguigno per non avere il colpo di pressione), poi depressurizza la camera ed esce fluttuando. La ISS usa Quest come hub EVA statunitense; il segmento russo usa Pirs (ora Poisk dopo che Pirs fu deorbitato nel 2021). La camera di equilibrio principale di Tiangong è sul modulo Wentian.",
+    "L'equipaggio si lega ai corrimano sull'esterno della stazione — perdere la presa significa che il moschettone di sicurezza ti cattura, ma il jetpack SAFER sulla schiena della tuta fornisce un recupero propulsivo come ultima risorsa se per qualche motivo ti stacchi da entrambi. Gli strumenti sono legati ad anelli a D, i guanti sono pressurizzati e rigidi (ecco perché la fatica delle mani è il problema n. 1 della giornata EVA), e l'heads-up display della tuta mostra lo stato di ossigeno, CO₂, batteria e moschettone."
+  ],
+  "body_paragraphs": [
+    "Consumabili della tuta: l'EMU (Extravehicular Mobility Unit) della ISS porta circa 8 ore di ossigeno + batteria + sublimazione dell'acqua di raffreddamento. Lo scrubbing di CO₂ è tipicamente il fattore limitante — quando la cartuccia di LiOH o di amine-swing è satura, l'EVA termina.",
+    "Protocollo di pre-respirazione: 60-90 minuti di O₂ al 100 % a pressione ridotta per lavare l'azoto dal sangue (prevenzione della malattia da decompressione). Le tute Orlan russe operano a pressione più alta dell'EMU statunitense e necessitano di pre-respirazione più breve.",
+    "Translazione: le EVA usano corrimano (gialli) che coprono tutto l'esterno della stazione; strumenti ed equipaggio sono legati. SAFER (Simplified Aid For EVA Rescue): 24 piccoli propulsori sullo zaino PLSS della tuta, 1,4 m/s di ∆v totale — solo recupero di emergenza.",
+    "Record: Anatoly Solovyev detiene il record cumulativo a 78h 28m attraverso 16 EVA. La singola EVA più lunga è di 8h 56m (STS-102, 2001). La maggior parte di EVA mai eseguite in un solo luogo: ISS, con oltre 270 entro il 2025.",
+    "Profilo di rischio: gli eventi di perdita di veicolo in EVA sono rari ma documentati — l'incidente dell'acqua nel casco di Parmitano del 2013 in EVA-23 quasi affogò un astronauta e forzò la riprogettazione del separatore d'acqua dell'EMU. Perforazione della tuta, perdita del moschettone e accumulo di CO₂ sono le minacce reali."
+  ],
+  "diagram_caption": "Percorso EVA stilizzato: uscita dalla camera di equilibrio → translazione lungo i corrimani sul truss → sito di lavoro (batteria/carico utile) → translazione di ritorno lungo i corrimani → ingresso nella camera di equilibrio. La linea tratteggiata mostra il percorso, i cerchi inanellati segnano i punti di ancoraggio del moschettone di sicurezza."
+}

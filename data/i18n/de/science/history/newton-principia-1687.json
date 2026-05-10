@@ -1,0 +1,16 @@
+{
+  "title": "Newtons Principia · 1687",
+  "intro_sentence": "Ein Buch, drei Bewegungsgesetze und das umgekehrt-quadratische Gravitationsgesetz — die Grundlage, auf der alles, was die Raumfahrt tut, immer noch beruht.",
+  "narrative_101": [
+    "1684 fragte Halley die richtigen Leute, welche Form eine Umlaufbahn hätte, wenn der Sog der Sonne wie 1/r² ginge. Christopher Wren wettete ein Buch von vierzig Schillingen, dass es niemand beweisen könne; Hooke behauptete einen Beweis, den er nicht hatte. Halley fragte Newton — Newton sagte ohne Zögern „eine Ellipse\", grub den Beweis aus jahrealten Notizen aus, und drei Jahre später erschienen die Principia.",
+    "Drei Bewegungsgesetze (Trägheit, F = ma, Aktion-Reaktion) plus das umgekehrt-quadratische Gravitationsgesetz (F = Gm₁m₂/r²) plus die Infinitesimalrechnung, um es alles zu tun — ein Buch, drei Jahre, kein Peer-Review. Halley bezahlte die Druckkosten selbst, als der Royal Society das Geld an einem Buch über Fischanatomie ausging.",
+    "Aus diesen Gleichungen folgen Keplers drei Gesetze sauber. Gezeiten, Wurfbahnbewegung, die Präzession der Tagundnachtgleichen, die Form der Erde — alles Konsequenzen. Raumfahrt 280 Jahre später ist einfache Newtonsche Mechanik mit hinzugefügten Triebwerken."
+  ],
+  "body_paragraphs": [
+    "Philosophiæ Naturalis Principia Mathematica wurde im Juli 1687 auf Latein veröffentlicht. Drei Bücher: Bewegung im Vakuum, Bewegung durch widerstandsbietende Medien, das System der Welt. Das dritte Buch wendet die Gesetze auf den tatsächlichen Kosmos an und reproduziert alle Daten Keplers aus ersten Prinzipien.",
+    "Die Infinitesimalrechnung war Newtons Erfindung speziell hierfür. Er nannte sie „Fluxionen\" — Leibniz erfand unabhängig im Wesentlichen dieselbe Maschinerie in Deutschland zur gleichen Zeit, und die Rivalität um die Priorität dauerte Jahrzehnte.",
+    "Was Newton NICHT erklärte: WARUM Schwerkraft 1/r² folgt. Sein eigener berühmter Kommentar: „Hypotheses non fingo\" — „Ich erfinde keine Hypothesen\". Der Mechanismus würde auf Einstein 1915 warten.",
+    "Moderne numerische Bahnpropagatoren führen im Wesentlichen Newtons Gleichungen mit Gleitkomma-Arithmetik aus. Der heliozentrische Bogen von /fly, das Porkchop von /plan, jede Kepler-Lösung — Newtonsche Schwerkraft bis nach unten."
+  ],
+  "formula_caption": "Newtons Gesetz der universellen Gravitation. G ≈ 6,674 × 10⁻¹¹ N·m²/kg²."
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Druckvolumen",
+  "intro_sentence": "Das gesamte bewohnbare Innere einer Station — wie viel Platz die Crew tatsächlich zum Leben und Arbeiten hat.",
+  "narrative_101": [
+    "Jedes Stationsdatenblatt führt mit einer Zahl: Druckvolumen in Kubikmetern. Es ist das Innere der Module, in denen die Crew atmen kann, summiert über die ganze Station. Die ISS kommt auf etwa 388 m³ (ungefähr das Volumen einer Boeing-747-Passagierkabine). Tiangong kommt auf etwa 110 m³ — komfortabel für drei Crew, eng für sechs.",
+    "Druckvolumen ist von zwei Decken begrenzt: Durchmesser der Trägerraketen-Verkleidung (man kann ein Modul nur so dick versenden, wie die Rakete heben kann) und Druckhüllen-Masse (je dicker die Wand, desto schwerer der Start). Moderne Verbund-Aluminium-Hüllen treffen einen Sweet Spot bei 2-4 mm Dicke. Darüber hinaus zahlt man Masse für Sicherheitsmarge, die man nicht nutzt; dünner und ein Mikrometeoroid könnte einen durchschlagen.",
+    "Crews benötigen etwa 14 m³ pro Person an „Netto-Wohnvolumen\" (Volumen nach Racks und Schotten) für Missionen über einem Monat. ISS und Tiangong übertreffen dies beide um das 3-4-fache — was übertrieben klingt, bis man bedenkt, dass die Crew jeden Tag 16 Stunden wach ist, monatelang."
+  ],
+  "body_paragraphs": [
+    "Druckvolumen ist das luftgefüllte bewohnbare Innere einer Raumstation, gemessen in Kubikmetern. Es schließt strukturelle Racks, Schotte und Ausrüstungsvolumen aus — die normalerweise zitierte Zahl ist das Brutto-Innenvolumen, von dem 30-50 % von Hardware besetzt sind.",
+    "ISS: ~388 m³ über 16 Druckmodule (Sarja, Swesda, Unity, Destiny, Quest, Pirs/Nauka, Harmony, Columbus, Kibo + ELM, Tranquility, Cupola, Leonardo PMM, Bigelow BEAM, plus die russischen Rasswet und Poisk).",
+    "Tiangong: ~110 m³ über drei Module (Tianhe-Kern, Wentian- und Mengtian-Labore).",
+    "Mir: ~350 m³ auf dem Höhepunkt (1986–2001) — vergleichbar mit der ISS im bewohnbaren Volumen, aber aus dickerwandigen Modulen und einer älteren Generation von Lebenserhaltungssystemen gebaut.",
+    "Die Richtlinie 14 m³/Person (NASA-STD-3001 Volume 2) ist empirisch abgeleitet aus Studien zur Psychologie in eingegrenzten Umgebungen, die auf Skylab und das sowjetische Saljut-Programm zurückgehen. Darunter sinken Crew-Wohlbefinden und Missionsleistung messbar."
+  ],
+  "diagram_caption": "Drei Stationsfußabdrücke maßstabsgetreu: Tiangong (~110 m³), Mir (~350 m³), ISS (~388 m³). Eine menschliche Silhouette als Größenreferenz."
+}

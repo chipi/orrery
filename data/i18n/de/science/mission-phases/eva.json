@@ -1,0 +1,17 @@
+{
+  "title": "EVA — Außenbordeinsatz",
+  "intro_sentence": "Ein Weltraumspaziergang: der risikoreichste, lohnendste Teil einer bemannten Mission, durch Anzug-Verbrauchsmaterialien auf etwa 8 Stunden begrenzt.",
+  "narrative_101": [
+    "Eine EVA — extravehicular activity — ist, wenn ein Crewmitglied das druckbeaufschlagte Innere der Station verlässt, um draußen im Vakuum zu arbeiten. Jede externe Aufgabe, die nicht von einem Roboterarm erledigt werden kann — ein Modul installieren, eine Batterie ersetzen, ein Kühlmittelleck reparieren — geschieht auf einer EVA. Sie sind minutengenau choreografiert, hunderte Stunden unter Wasser geprobt und auf etwa 8 Stunden pro Stück begrenzt durch die Sauerstoff- und CO₂-Scrubber-Kapazität des Anzugs.",
+    "EVAs beginnen in der Luftschleuse — einem kleinen Zwei-Tür-Abteil, in dem die Crew 60-90 Minuten lang 100 % Sauerstoff vor-atmet (Stickstoff aus dem Blutkreislauf wäscht, damit sie keine Taucherkrankheit bekommen), dann die Schleuse drucklos macht und hinausfliegt. Die ISS verwendet Quest als US-EVA-Hub; das russische Segment verwendet Pirs (jetzt Poisk, nachdem Pirs 2021 deorbitiert wurde). Tiangongs primäre Luftschleuse befindet sich im Wentian-Modul.",
+    "Die Crew sichert sich an Handläufen an der Außenseite der Station — den Halt zu verlieren bedeutet, dass die Sicherheitsleine dich auffängt, aber das SAFER-Düsenpack auf dem Rücken des Anzugs bietet eine Triebwerks-Notrückgewinnung als letzten Ausweg, falls du dich von beiden lösen solltest. Werkzeuge sind an D-Ringen befestigt, Handschuhe sind druckbeaufschlagt und steif (weshalb Handermüdung das EVA-Tagesproblem Nr. 1 ist), und das Heads-up-Display des Anzugs zeigt Sauerstoff-, CO₂-, Batterie- und Leinen-Status an."
+  ],
+  "body_paragraphs": [
+    "Anzug-Verbrauchsmaterialien: ISS EMU (Extravehicular Mobility Unit) trägt etwa 8 Stunden Sauerstoff + Batterie + Kühlwasser-Sublimation. CO₂-Scrubbing ist der typische Limiter — wenn der LiOH- oder Amin-Swing-Behälter gesättigt ist, endet die EVA.",
+    "Vor-Atemprotokoll: 60-90 Minuten 100 % O₂ bei reduziertem Druck zum Auswaschen von Stickstoff aus dem Blut (Verhinderung von Dekompressionskrankheit). Russische Orlan-Anzüge arbeiten bei höherem Druck als US-EMU und benötigen kürzere Vor-Atemzeit.",
+    "Translation: EVAs verwenden Handläufe (gelb), die das gesamte Äußere der Station bedecken; Werkzeuge und Crew sind angeleint. SAFER (Simplified Aid For EVA Rescue): 24 kleine Triebwerke am PLSS-Rucksack des Anzugs, 1,4 m/s ∆v insgesamt — nur Notrückgewinnung.",
+    "Rekorde: Anatoli Solowjow hält den kumulativen Rekord bei 78h 28m über 16 EVAs. Die längste einzelne EVA beträgt 8h 56m (STS-102, 2001). Die meisten EVAs, die jemals an einem Ort durchgeführt wurden: ISS, mit über 270 bis 2025.",
+    "Risikoprofil: Fahrzeugverluste auf EVA sind selten, aber dokumentiert — der Wasservorfall im Helm von Parmitano 2013 auf EVA-23 brachte einen Astronauten fast zum Ertrinken und zwang zu Neukonstruktionen des Wasserabscheiders des EMU. Anzugdurchschlag, Leinenverlust und CO₂-Aufbau sind die echten Bedrohungen."
+  ],
+  "diagram_caption": "Stilisierter EVA-Pfad: Luftschleusen-Ausstieg → Handlauf-Translation entlang Truss → Arbeitsstelle (Batterie/Nutzlast) → Handlauf-Translation zurück → Luftschleusen-Eintritt. Die gepunktete Linie zeigt die Route, geringelte Kreise markieren die Verankerungspunkte der Sicherheitsleine."
+}

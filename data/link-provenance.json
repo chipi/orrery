@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-10T14:20:07.453Z",
+  "generated_at": "2026-05-10T20:53:21.968Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "c20606c439d1a95ec15d762b2602de5d9bbca4bd",
+  "commit_sha": "c6ac8e2aabb409ded044f85276eb24b743d08fc8",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -47,11 +47,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "apollo-csm-block-ii__6500df1c5fd5",
+      "id": "apollo-csm-block-ii__2e5ddc4ecd14",
       "entity_id": "apollo-csm-block-ii",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4205/toc.html",
+      "url": "https://history.nasa.gov/SP-4205/cover.html",
       "label": "Chariots for Apollo (NASA SP-4205)",
       "tier": "deep",
       "source_id": "nasa",
@@ -89,11 +89,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "apollo-lm__a38abe09bf89",
+      "id": "apollo-lm__90504a6fce3d",
       "entity_id": "apollo-lm",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4205/ch13-1.html",
+      "url": "https://history.nasa.gov/SP-4205/cover.html",
       "label": "Chariots for Apollo (NASA SP-4205, ch. 13–14)",
       "tier": "deep",
       "source_id": "nasa",
@@ -131,18 +131,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "apollo11__2d7df3314e5b",
+      "id": "apollo11__b08ad2df7bfc",
       "entity_id": "apollo11",
       "category": "mission",
       "route": "/missions",
-      "url": "https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/",
+      "url": "https://www.jpl.nasa.gov/news/the-apollo-experiment-that-keeps-on-giving/",
       "label": "Lunar laser ranging (NASA)",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "apollo12__b85159bc156e",
@@ -243,18 +243,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "apollo17__7fa93909da8e",
+      "id": "apollo17__bb623fd1945c",
       "entity_id": "apollo17",
       "category": "moon-site",
       "route": "/moon",
-      "url": "https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/",
+      "url": "https://www.nasa.gov/missions/apollo/apollo-17/remembering-gene-cernan/",
       "label": "Cernan, last man on the Moon (NASA)",
       "tier": "intro",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "ariane-5__8a740bada854",
@@ -278,20 +278,6 @@
       "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5",
       "label": "Ariane 5 — ESA",
       "tier": "core",
-      "source_id": "esa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "ariane-5__a2d0bfbeee4c",
-      "entity_id": "ariane-5",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5_-_an_extraordinary_legacy",
-      "label": "Ariane 5 mission archive (ESA)",
-      "tier": "deep",
       "source_id": "esa",
       "language": "en",
       "kind": "agency-official",
@@ -327,11 +313,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "ariane-6__99370d84ff3b",
+      "id": "ariane-6__5af380fd39fd",
       "entity_id": "ariane-6",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_6",
+      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_6_overview",
       "label": "Ariane 6 — ESA",
       "tier": "core",
       "source_id": "esa",
@@ -341,11 +327,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "ariane-6__1dc8fa463ed5",
+      "id": "ariane-6__7838757c4dbd",
       "entity_id": "ariane-6",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6_inaugural_flight",
+      "url": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Europe_s_new_Ariane_6_rocket_powers_into_space",
       "label": "Ariane 6 maiden flight VA262 (ESA)",
       "tier": "deep",
       "source_id": "esa",
@@ -453,11 +439,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "atlas-lv-3b__3783b85278ba",
+      "id": "atlas-lv-3b__1919d7ad1e1b",
       "entity_id": "atlas-lv-3b",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/mercury/",
+      "url": "https://www.nasa.gov/project-mercury/",
       "label": "Project Mercury launches — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -565,11 +551,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "atv__24559d61c0f4",
+      "id": "atv__39e03af4754a",
       "entity_id": "atv",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.esa.int/Enabling_Support/Operations/ATV",
+      "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV/ATV_history",
       "label": "ATV — ESA",
       "tier": "core",
       "source_id": "esa",
@@ -915,11 +901,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "cargo-dragon-v1__53dfaba03810",
+      "id": "cargo-dragon-v1__09e8a652b535",
       "entity_id": "cargo-dragon-v1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/",
+      "url": "https://www.nasa.gov/commercial-resupply-services-overview/",
       "label": "COTS programme — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -929,11 +915,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "cargo-dragon-v1__de032f1763b1",
+      "id": "cargo-dragon-v1__b0e71e8729de",
       "entity_id": "cargo-dragon-v1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/spacex-crs-1/",
+      "url": "https://www.nasa.gov/news-release/first-contracted-spacex-resupply-mission-launches-with-nasa-cargo-to-space-station/",
       "label": "Dragon CRS-1 mission summary (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -1153,18 +1139,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "chandrayaan3__1c83b028c49f",
+      "id": "chandrayaan3__0b3b58ba5d72",
       "entity_id": "chandrayaan3",
       "category": "moon-site",
       "route": "/moon",
-      "url": "https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon",
+      "url": "https://www.nasa.gov/general/what-is-lcross-the-lunar-crater-observation-and-sensing-satellite/",
       "label": "Lunar water ice (NASA)",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "change-2__4ba78e344a36",
@@ -1587,18 +1573,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "chinarm__15b36e374bf9",
+      "id": "chinarm__e0b548640215",
       "entity_id": "chinarm",
       "category": "tiangong-module",
       "route": "/tiangong",
-      "url": "https://en.wikipedia.org/wiki/Tiangong_robotic_arm",
-      "label": "Wikipedia · Tiangong robotic arm",
+      "url": "https://en.wikipedia.org/wiki/Chinarm",
+      "label": "Wikipedia · Chinarm",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "chinarm__ae05d7917491",
@@ -1699,11 +1685,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "compton-gro__1da8f7bf1eaf",
+      "id": "compton-gro__cff3b78452fa",
       "entity_id": "compton-gro",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://heasarc.gsfc.nasa.gov/docs/cgro/cgro/cgro_about.html",
+      "url": "https://science.nasa.gov/mission/cgro/",
       "label": "Compton Observatory archive (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -1727,18 +1713,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "crew_dragon__94be2954a2a9",
+      "id": "crew_dragon__9e09af7cc829",
       "entity_id": "crew_dragon",
       "category": "iss-visitor",
       "route": "/iss",
-      "url": "https://www.nasa.gov/mission/commercial-crew-program/",
+      "url": "https://www.nasa.gov/humans-in-space/commercial-space/commercial-crew-program/commercial-crew-program-overview/",
       "label": "NASA · Commercial Crew Program",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "crew_dragon__5c0a37abbbad",
@@ -1783,11 +1769,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "crew-dragon__f1cb5f5cf847",
+      "id": "crew-dragon__417da83306ed",
       "entity_id": "crew-dragon",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/wp-content/uploads/2020/11/crew-1-press-kit.pdf",
+      "url": "https://www.nasa.gov/commercial-crew-program-press-kit/",
       "label": "Crew-1 Press Kit (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -1909,18 +1895,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "cygnus__70ab010a35c4",
+      "id": "cygnus__48c7c40151fa",
       "entity_id": "cygnus",
       "category": "iss-visitor",
       "route": "/iss",
-      "url": "https://www.nasa.gov/international-space-station/cargo-spacecraft/",
+      "url": "https://www.nasa.gov/humans-in-space/spaceships-and-rockets/commercial-cargo-spacecraft/",
       "label": "NASA · Cygnus Cargo Spacecraft",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "cygnus-enhanced__4240fdf9f85d",
@@ -1937,11 +1923,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "cygnus-enhanced__e531b988de73",
+      "id": "cygnus-enhanced__724da0500e98",
       "entity_id": "cygnus-enhanced",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/international-space-station/commercial-resupply/cygnus-fact-sheet/",
+      "url": "https://www.nasa.gov/humans-in-space/spaceships-and-rockets/commercial-cargo-spacecraft/",
       "label": "Cygnus on the ISS — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -1979,11 +1965,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "cygnus-standard__e701cd696d09",
+      "id": "cygnus-standard__bad41faf8b71",
       "entity_id": "cygnus-standard",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/orbital-1-cygnus/",
+      "url": "https://www.nasa.gov/history/10-years-ago-the-first-operational-cygnus-cargo-mission-to-the-space-station/",
       "label": "Cygnus Orb-D1 — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -1993,11 +1979,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "cygnus-standard__de7ee2db709c",
+      "id": "cygnus-standard__73b5a436f1b1",
       "entity_id": "cygnus-standard",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/",
+      "url": "https://www.nasa.gov/commercial-resupply-services-overview/",
       "label": "COTS Demo flights — NASA history",
       "tier": "deep",
       "source_id": "nasa",
@@ -2028,20 +2014,6 @@
       "url": "https://science.nasa.gov/mission/dart/",
       "label": "DART — NASA",
       "tier": "core",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "dart__779592617a3d",
-      "entity_id": "dart",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.nasa.gov/feature/dart/dart-mission-summary",
-      "label": "DART final report (NASA NTRS)",
-      "tier": "deep",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
@@ -2329,11 +2301,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "falcon-9__d80798ac67b0",
+      "id": "falcon-9__d1a16559c302",
       "entity_id": "falcon-9",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.spacex.com/media/falcon-users-guide-2021-09.pdf",
+      "url": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf",
       "label": "Falcon User's Guide (SpaceX)",
       "tier": "deep",
       "source_id": "spacex",
@@ -2371,11 +2343,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "falcon-heavy__61ee40f216eb",
+      "id": "falcon-heavy__934b68fdf3de",
       "entity_id": "falcon-heavy",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.spacex.com/media/falcon-users-guide-2021-09.pdf",
+      "url": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf",
       "label": "Falcon User's Guide (SpaceX)",
       "tier": "deep",
       "source_id": "spacex",
@@ -2399,27 +2371,13 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "gaganyaan__cff23f8bdf82",
+      "id": "gaganyaan__97edfdecd5a5",
       "entity_id": "gaganyaan",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/HumanSpaceflight.html",
+      "url": "https://www.isro.gov.in/Gaganyaan.html",
       "label": "Human Space Flight — ISRO",
       "tier": "core",
-      "source_id": "isro",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "gaganyaan__534ce97b7374",
-      "entity_id": "gaganyaan",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.isro.gov.in/Gaganyaan_overview.html",
-      "label": "Gaganyaan programme overview (ISRO)",
-      "tier": "deep",
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
@@ -2595,11 +2553,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "gemini__aa68d4d2c761",
+      "id": "gemini__9acedfbfe7b8",
       "entity_id": "gemini",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "Project Gemini — NASA History",
       "tier": "core",
       "source_id": "nasa",
@@ -3029,18 +2987,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "hope__04687bd48302",
+      "id": "hope__ee31d976fdae",
       "entity_id": "hope",
       "category": "mars-site",
       "route": "/mars",
-      "url": "https://www.mbrsc.ae/space-program/",
+      "url": "https://www.mbrsc.ae/",
       "label": "Hope — MBRSC",
       "tier": "core",
       "source_id": "uaesa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "hope-probe__cb616c914bb5",
@@ -3057,18 +3015,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "hope-probe__93cf7d9ed1f2",
+      "id": "hope-probe__41739e98d72f",
       "entity_id": "hope-probe",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.mbrsc.ae/our-projects/space-exploration/",
+      "url": "https://www.mbrsc.ae/missions-and-projects/",
       "label": "Hope Probe (MBRSC)",
       "tier": "intro",
       "source_id": "uaesa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "htv__579f3a3162f8",
@@ -3169,11 +3127,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "htv-x__7a0d6213d1dd",
+      "id": "htv-x__7626777d7acd",
       "entity_id": "htv-x",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://global.jaxa.jp/projects/rockets/htvx/",
+      "url": "https://global.jaxa.jp/projects/iss_human/htv-x/index.html",
       "label": "HTV-X — JAXA",
       "tier": "core",
       "source_id": "jaxa",
@@ -3183,11 +3141,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "htv-x__d5d5eaff340f",
+      "id": "htv-x__4c39e3b25098",
       "entity_id": "htv-x",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.jaxa.jp/projects/rockets/htvx/",
+      "url": "https://humans-in-space.jaxa.jp/en/htv-x/",
       "label": "HTV-X technical overview (JAXA)",
       "tier": "deep",
       "source_id": "jaxa",
@@ -3225,53 +3183,53 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "hubble__404a7595a3fd",
+      "id": "hubble__3da5523962f0",
       "entity_id": "hubble",
       "category": "earth-object",
       "route": "/earth",
-      "url": "https://hubblesite.org/images/gallery",
+      "url": "https://science.nasa.gov/mission/hubble/multimedia/hubble-images/",
       "label": "Hubble image gallery (NASA)",
       "tier": "intro",
-      "source_id": "stsci",
+      "source_id": "nasa",
       "language": "en",
-      "kind": "mission-microsite",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
-      "id": "hubble__10e265a113f0",
-      "entity_id": "hubble",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://hubblesite.org/",
-      "label": "Hubble — NASA",
-      "tier": "core",
-      "source_id": "stsci",
-      "language": "en",
-      "kind": "mission-microsite",
+      "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-10"
     },
     {
-      "id": "hubble__de7f193a2051",
+      "id": "hubble__3683a63aef02",
+      "entity_id": "hubble",
+      "category": "fleet",
+      "route": "/fleet",
+      "url": "https://science.nasa.gov/mission/hubble/",
+      "label": "Hubble — NASA",
+      "tier": "core",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-10"
+    },
+    {
+      "id": "hubble__e1c5269c28f5",
       "entity_id": "hubble",
       "category": "earth-object",
       "route": "/earth",
-      "url": "https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/",
+      "url": "https://science.nasa.gov/mission/hubble/observatory/missions-to-hubble/",
       "label": "Hubble servicing missions (NASA)",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
-      "id": "hubble__e006865034f9",
+      "id": "hubble__f5bdece57ac7",
       "entity_id": "hubble",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/hubblescience.pdf",
+      "url": "https://www.nasa.gov/wp-content/uploads/2017/01/highlights_of_hubbles_exploration_of_the_universe_0.pdf",
       "label": "The Space Telescope: A Study of NASA, Science, Technology, and Politics (Smith)",
       "tier": "deep",
       "source_id": "nasa",
@@ -3309,11 +3267,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "im-1-odysseus__9562b3cbe000",
+      "id": "im-1-odysseus__e3a81d6e7161",
       "entity_id": "im-1-odysseus",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/clps-im-1/",
+      "url": "https://www.nasa.gov/missions/artemis/clps/intuitive-machines/",
       "label": "Intuitive Machines IM-1 mission summary (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -3463,18 +3421,18 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "iss__a9429a1edabb",
+      "id": "iss__3570b06ccc24",
       "entity_id": "iss",
       "category": "earth-object",
       "route": "/earth",
-      "url": "https://www.nasa.gov/reference/international-space-station-facts-and-figures/",
+      "url": "https://www.nasa.gov/international-space-station/space-station-facts-and-figures/",
       "label": "ISS facts and figures (NASA)",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "iss__3b7406164600",
@@ -3729,27 +3687,13 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "kepler__8b33bf1ccca1",
+      "id": "kepler__c62ad051fb23",
       "entity_id": "kepler",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/kepler-space-telescope/",
+      "url": "https://science.nasa.gov/mission/kepler/",
       "label": "Kepler — NASA",
       "tier": "core",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "kepler__32ab3465aadc",
-      "entity_id": "kepler",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.nasa.gov/feature/ames/kepler/keplers-final-look-at-its-original-field-of-view",
-      "label": "Kepler Mission Final Report (NASA)",
-      "tier": "deep",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
@@ -3771,18 +3715,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "kibo__ba2e4d31112c",
+      "id": "kibo__431c969b730c",
       "entity_id": "kibo",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://humans-in-space.jaxa.jp/en/hashiten/kibo/",
+      "url": "https://humans-in-space.jaxa.jp/en/kibo/",
       "label": "JAXA · Kibo",
       "tier": "core",
       "source_id": "jaxa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "leonardo__f37440fd8a04",
@@ -4023,11 +3967,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "lrv-apollo__a94a508d3d93",
+      "id": "lrv-apollo__16e44d3322f5",
       "entity_id": "lrv-apollo",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/history/the-lunar-roving-vehicle/",
+      "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html",
       "label": "Lunar Roving Vehicle — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -4177,18 +4121,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "luna17__63a07149abcf",
+      "id": "luna17__e959edb44825",
       "entity_id": "luna17",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html",
+      "url": "https://www.nasa.gov/missions/lunar-reconnaissance-orbiter-looks-at-apollo-12-surveyor-3-landing-sites/",
       "label": "LRO finds Lunokhod (NASA)",
       "tier": "intro",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "luna17__7efac2851a1b",
@@ -4317,18 +4261,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "luna9__e2708cb88be5",
+      "id": "luna9__c18195ae5734",
       "entity_id": "luna9",
       "category": "mission",
       "route": "/missions",
-      "url": "https://link.springer.com/book/10.1007/978-0-387-46343-8",
+      "url": "https://link.springer.com/book/10.1007/978-3-662-65093-6",
       "label": "Harvey — Russian Planetary Exploration (Springer 2007, ch. 2)",
       "tier": "deep",
       "source_id": "springer",
       "language": "en",
       "kind": "science-publisher",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "lunar-prospector__c6dea509fe22",
@@ -4457,27 +4401,13 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "lvm3__4e918e3d8981",
+      "id": "lvm3__82ca852e5b17",
       "entity_id": "lvm3",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/LVM3.html",
+      "url": "https://www.isro.gov.in/GSLVmk3_CON.html",
       "label": "LVM3 — ISRO",
       "tier": "core",
-      "source_id": "isro",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
-      "id": "lvm3__8fcf2a868c49",
-      "entity_id": "lvm3",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.isro.gov.in/LVM3_M2_Mission.html",
-      "label": "LVM3 launch history (ISRO)",
-      "tier": "deep",
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
@@ -4555,18 +4485,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mangalyaan__1fcad10984fd",
+      "id": "mangalyaan__4429000ff826",
       "entity_id": "mangalyaan",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html",
+      "url": "https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html",
       "label": "MOM (ISRO)",
       "tier": "intro",
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "mangalyaan__3f43e2d74dee",
@@ -4579,34 +4509,6 @@
       "source_id": "wikipedia",
       "language": "hi",
       "kind": "encyclopedic",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
-      "id": "mangalyaan__0fecbbc94567",
-      "entity_id": "mangalyaan",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.isro.gov.in/MOM_Home.html",
-      "label": "MOM — ISRO",
-      "tier": "core",
-      "source_id": "isro",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "mangalyaan__981516a26054",
-      "entity_id": "mangalyaan",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.isro.gov.in/Mars_Orbiter_Mission.html",
-      "label": "Mars Orbiter Mission Profile (ISRO)",
-      "tier": "deep",
-      "source_id": "isro",
-      "language": "en",
-      "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
     },
@@ -4639,11 +4541,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "mariner-4__f4ab2d2db7d3",
+      "id": "mariner-4__4ebeb0150538",
       "entity_id": "mariner-4",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4212/toc.html",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4212.pdf",
       "label": "On Mars: Exploration of the Red Planet 1958-1978 (NASA SP-4212)",
       "tier": "deep",
       "source_id": "nasa",
@@ -4681,11 +4583,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "mariner-9__6bc897f5e541",
+      "id": "mariner-9__04135a60d02c",
       "entity_id": "mariner-9",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4212/toc.html",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4212.pdf",
       "label": "On Mars: Exploration of the Red Planet 1958-1978 (NASA SP-4212)",
       "tier": "deep",
       "source_id": "nasa",
@@ -4933,11 +4835,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mars-express__c6f7429a85c4",
+      "id": "mars-express__9403fa0ef297",
       "entity_id": "mars-express",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Mars_Express_in-depth",
+      "url": "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express_overview",
       "label": "Mars Express science highlights (ESA)",
       "tier": "deep",
       "source_id": "esa",
@@ -4961,18 +4863,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mars-odyssey__ee7021a33b84",
+      "id": "mars-odyssey__6a3485343c2d",
       "entity_id": "mars-odyssey",
       "category": "mars-site",
       "route": "/mars",
-      "url": "https://science.nasa.gov/mission/mars-odyssey/",
+      "url": "https://mars.nasa.gov/odyssey/",
       "label": "Mars Odyssey — NASA",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "mars-pathfinder__c00fc06f3e39",
@@ -5143,18 +5045,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mars3__5da72b47302e",
+      "id": "mars3__9700dd8053d1",
       "entity_id": "mars3",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.nasa.gov/wp-content/uploads/2018/12/beyond_earth_tagged.pdf",
+      "url": "https://www.nasa.gov/history/history-publications-and-resources/nasa-history-series/beyond-earth/",
       "label": "Siddiqi — Beyond Earth (NASA SP-2018-4041, ch. on Soviet Mars program)",
       "tier": "deep",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "mars3-orbiter__215660dfacb0",
@@ -5241,18 +5143,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "mengtian__e8f75f885aab",
+      "id": "mengtian__6c4ed2fa1fbf",
       "entity_id": "mengtian",
       "category": "tiangong-module",
       "route": "/tiangong",
-      "url": "https://en.wikipedia.org/wiki/Mengtian_(module)",
-      "label": "Wikipedia · Mengtian (module)",
+      "url": "https://en.wikipedia.org/wiki/Mengtian",
+      "label": "Wikipedia · Mengtian",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "mengtian__f68b6e57acdc",
@@ -5353,11 +5255,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "mercury-capsule__11712dd3bcc6",
+      "id": "mercury-capsule__9ca66e83071d",
       "entity_id": "mercury-capsule",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/mercury/",
+      "url": "https://www.nasa.gov/project-mercury/",
       "label": "Project Mercury — NASA History",
       "tier": "core",
       "source_id": "nasa",
@@ -5675,18 +5577,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "new-horizons__f9a66f20ac2e",
+      "id": "new-horizons__e7675d97797c",
       "entity_id": "new-horizons",
       "category": "mission",
       "route": "/missions",
-      "url": "https://en.wikipedia.org/wiki_New_Horizons",
+      "url": "https://en.wikipedia.org/wiki/New_Horizons",
       "label": "New Horizons — Wikipedia",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "new-horizons__4ab788c7f6d5",
@@ -5815,27 +5717,13 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "orion__97b178f6e50a",
+      "id": "orion__8a0ecd16473f",
       "entity_id": "orion",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/exploration-systems/orion/",
+      "url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/",
       "label": "Orion Spacecraft — NASA",
       "tier": "core",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "orion__43dd8ffe4006",
-      "entity_id": "orion",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.nasa.gov/wp-content/uploads/2022/12/orion-reference-guide.pdf",
-      "label": "Orion Reference Guide (NASA)",
-      "tier": "deep",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
@@ -5871,11 +5759,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "osiris-rex__bdf8e01bff04",
+      "id": "osiris-rex__ebb44d2b2619",
       "entity_id": "osiris-rex",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/osiris-apex/",
+      "url": "https://science.nasa.gov/mission/osiris-apex/",
       "label": "OSIRIS-APEx (extended mission)",
       "tier": "deep",
       "source_id": "nasa",
@@ -6067,11 +5955,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "phoenix__261325051003",
+      "id": "phoenix__ba470905deb6",
       "entity_id": "phoenix",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/phoenix-mars-lander/",
+      "url": "https://science.nasa.gov/mission/mars-phoenix/",
       "label": "Phoenix Mission Profile (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -6095,11 +5983,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "pioneer-10__5c8dd4b1d7dd",
+      "id": "pioneer-10__71f61a7f816d",
       "entity_id": "pioneer-10",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://science.nasa.gov/mission/pioneer/",
+      "url": "https://www.nasa.gov/missions/pioneer/",
       "label": "Pioneer — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -6123,18 +6011,18 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "pirs__2ceba2e32487",
+      "id": "pirs__5ccafae1396d",
       "entity_id": "pirs",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Pirs_(ISS_module)",
       "label": "Wikipedia · Pirs",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "pirs__ff5d6bc23b2e",
@@ -6235,11 +6123,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "pragyan__d50aaa687708",
+      "id": "pragyan__67b36e72f8d3",
       "entity_id": "pragyan",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/Chandrayaan_3.html",
+      "url": "https://www.isro.gov.in/Chandrayaan3.html",
       "label": "Chandrayaan-3 — ISRO",
       "tier": "core",
       "source_id": "isro",
@@ -6263,18 +6151,18 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "prichal__510dfc0c97f7",
+      "id": "prichal__f00d8f816114",
       "entity_id": "prichal",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Prichal_(ISS_module)",
       "label": "Wikipedia · Prichal",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "prichal__832f95e5e147",
@@ -6543,32 +6431,32 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "pslv-xl__78cba93951fc",
+      "id": "pslv-xl__8c5686dc7c91",
       "entity_id": "pslv-xl",
       "category": "rocket",
       "route": "/missions",
-      "url": "https://www.isro.gov.in/PSLV.html",
+      "url": "https://www.isro.gov.in/PSLV_CON.html",
       "label": "PSLV — ISRO",
       "tier": "intro",
       "source_id": "isro",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
-      "id": "quest__2584e63b2e2a",
+      "id": "quest__7305fe7c2f42",
       "entity_id": "quest",
       "category": "iss-module",
       "route": "/iss",
-      "url": "https://en.wikipedia.org/wiki/Quest_%28ISS_module%29",
+      "url": "https://en.wikipedia.org/wiki/Quest_Joint_Airlock",
       "label": "Wikipedia · Quest",
       "tier": "intro",
       "source_id": "wikipedia",
       "language": "en",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "quest__4d69408a2d29",
@@ -6921,20 +6809,6 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "saturn-ib__0bce9e50ff67",
-      "entity_id": "saturn-ib",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.nasa.gov/history/saturn-ib/",
-      "label": "Saturn IB — NASA Apollo",
-      "tier": "core",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
       "id": "saturn-ib__dd04851ea3b8",
       "entity_id": "saturn-ib",
       "category": "fleet",
@@ -6963,11 +6837,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "saturn-v__c291ac28d97e",
+      "id": "saturn-v__1b010938f3ef",
       "entity_id": "saturn-v",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/centers-and-facilities/marshall/saturn-v/",
+      "url": "https://science.nasa.gov/3d-resources/saturn-v-rocket/",
       "label": "Saturn V Reference (NASA Marshall)",
       "tier": "core",
       "source_id": "nasa",
@@ -7005,12 +6879,12 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "schiaparelli__00794ec4f241",
+      "id": "schiaparelli__d9f36dd682d1",
       "entity_id": "schiaparelli",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/Schiaparelli_to_test_key_technologies",
-      "label": "ExoMars Schiaparelli — ESA",
+      "category": "mars-site",
+      "route": "/mars",
+      "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/ExoMars_Factsheet",
+      "label": "Schiaparelli — ESA",
       "tier": "core",
       "source_id": "esa",
       "language": "en",
@@ -7019,27 +6893,13 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "schiaparelli__c2ed47c0a66e",
-      "entity_id": "schiaparelli",
-      "category": "mars-site",
-      "route": "/mars",
-      "url": "https://www.esa.int/Science_Exploration/Space_Science/ExoMars/ExoMars_in_brief",
-      "label": "Schiaparelli — ESA",
-      "tier": "core",
-      "source_id": "esa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
       "id": "schiaparelli__ef11862b7381",
       "entity_id": "schiaparelli",
       "category": "fleet",
       "route": "/fleet",
       "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/Schiaparelli_landing_investigation_completed",
-      "label": "Schiaparelli landing investigation (ESA)",
-      "tier": "deep",
+      "label": "ExoMars Schiaparelli — ESA",
+      "tier": "core",
       "source_id": "esa",
       "language": "en",
       "kind": "agency-official",
@@ -7131,20 +6991,6 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "skylab__930c2dd91f83",
-      "entity_id": "skylab",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4208/toc.htm",
-      "label": "Living and Working in Space: A History of Skylab (NASA SP-4208)",
-      "tier": "deep",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
       "id": "slim__66dd3f6b3f27",
       "entity_id": "slim",
       "category": "mission",
@@ -7173,32 +7019,32 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "slim__0a3f51eec15c",
+      "id": "slim__0ea553a096ff",
       "entity_id": "slim",
       "category": "mission",
       "route": "/missions",
-      "url": "https://ja.wikipedia.org/wiki/SLIM_(%E5%AE%87%E5%AE%99%E6%A9%9F)",
+      "url": "https://ja.wikipedia.org/wiki/SLIM",
       "label": "SLIM — 日本語版ウィキペディア",
       "tier": "core",
       "source_id": "wikipedia",
       "language": "ja",
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
-      "id": "slim__fd6c569b19a1",
+      "id": "slim__eebb1b314196",
       "entity_id": "slim",
       "category": "mission",
       "route": "/missions",
-      "url": "https://www.isas.jaxa.jp/home/slim/",
+      "url": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/slim.html",
       "label": "小型月着陸実証機 SLIM (ISAS/JAXA)",
       "tier": "core",
       "source_id": "jaxa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "slim__61b3c0575c6b",
@@ -7229,25 +7075,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "sls-block-1__376dff125375",
-      "entity_id": "sls-block-1",
-      "category": "rocket",
-      "route": "/missions",
-      "url": "https://www.nasa.gov/reference/sls/",
-      "label": "SLS — NASA",
-      "tier": "intro",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
-      "id": "sls-block-1__9840bc47d905",
+      "id": "sls-block-1__58824ab649d8",
       "entity_id": "sls-block-1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/exploration-systems/space-launch-system/",
+      "url": "https://www.nasa.gov/humans-in-space/space-launch-system/",
       "label": "SLS — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -7257,11 +7089,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "sls-block-1__8cb8d355d776",
+      "id": "sls-block-1__63eb7abb7b1a",
       "entity_id": "sls-block-1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/wp-content/uploads/2022/06/sls_reference_guide_2022_v3.pdf",
+      "url": "https://www.nasa.gov/wp-content/uploads/2022/03/sls-reference-guide-2022-v2-508-0.pdf",
       "label": "SLS Reference Guide (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -7327,11 +7159,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "sojourner__a4da4dc7d8fa",
+      "id": "sojourner__22fca1e4f152",
       "entity_id": "sojourner",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.jpl.nasa.gov/missions/mars-pathfinder",
+      "url": "https://www.jpl.nasa.gov/missions/mars-pathfinder-sojourner-rover/",
       "label": "Mars Pathfinder Project (NASA NTRS)",
       "tier": "deep",
       "source_id": "nasa",
@@ -7369,18 +7201,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "soyuz_ms__c16dc5f2c8b9",
+      "id": "soyuz_ms__ab43940f1520",
       "entity_id": "soyuz_ms",
       "category": "iss-visitor",
       "route": "/iss",
-      "url": "https://www.nasa.gov/reference/soyuz-spacecraft/",
+      "url": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-the-soyuz-spacecraft-grade-5-8/",
       "label": "NASA · Soyuz Spacecraft",
       "tier": "core",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "soyuz_ms__21679cf5eec3",
@@ -7691,11 +7523,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "soyuz-u__9549d28eac18",
+      "id": "soyuz-u__05054a6dcb07",
       "entity_id": "soyuz-u",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://en.wikipedia.org/wiki/List_of_Soyuz_launches",
+      "url": "https://en.wikipedia.org/wiki/List_of_Soyuz_missions",
       "label": "Soyuz-U launch history (Wikipedia)",
       "tier": "deep",
       "source_id": "wikipedia",
@@ -7733,11 +7565,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "space-shuttle-orbiter__32695923f729",
+      "id": "space-shuttle-orbiter__75c944f8c719",
       "entity_id": "space-shuttle-orbiter",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/wp-content/uploads/static/history/SP-2010-3409.pdf",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/06/stages-to-saturn-sp-4206.pdf",
       "label": "Wings in Orbit: Scientific and Engineering Legacies of the Space Shuttle (NASA SP-2010-3409)",
       "tier": "deep",
       "source_id": "nasa",
@@ -7768,20 +7600,6 @@
       "url": "https://www.nasa.gov/space-shuttle/",
       "label": "Space Shuttle Era (NASA)",
       "tier": "core",
-      "source_id": "nasa",
-      "language": "en",
-      "kind": "agency-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-10"
-    },
-    {
-      "id": "space-shuttle-stack__c605eb811f45",
-      "entity_id": "space-shuttle-stack",
-      "category": "fleet",
-      "route": "/fleet",
-      "url": "https://www.nasa.gov/reference/space-shuttle-mission-reports/",
-      "label": "Space Shuttle Mission Reports (NASA NTRS)",
-      "tier": "deep",
       "source_id": "nasa",
       "language": "en",
       "kind": "agency-official",
@@ -7915,11 +7733,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "spitzer__543205570c5c",
+      "id": "spitzer__9c627d85d27f",
       "entity_id": "spitzer",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.jpl.nasa.gov/news/jpl-and-the-final-frontier-spitzer-marks-end-of-an-era",
+      "url": "https://www.jpl.nasa.gov/news/nasas-spitzer-space-telescope-ends-mission-of-astronomical-discovery/",
       "label": "Spitzer Final Mission Report (NASA NTRS)",
       "tier": "deep",
       "source_id": "nasa",
@@ -8083,20 +7901,6 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "starship-mars-crew__fb2c0043228c",
-      "entity_id": "starship-mars-crew",
-      "category": "mission",
-      "route": "/missions",
-      "url": "https://www.spacex.com/media/making_life_multiplanetary_transcript_2017.pdf",
-      "label": "Making Life Multi-Planetary (Musk, IAC 2017)",
-      "tier": "core",
-      "source_id": "spacex",
-      "language": "en",
-      "kind": "vendor-official",
-      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
-    },
-    {
       "id": "sun__fe8af27d7ade",
       "entity_id": "sun",
       "category": "sun",
@@ -8195,11 +7999,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "surveyor-3__2bd75f769b93",
+      "id": "surveyor-3__eb8d074f04b3",
       "entity_id": "surveyor-3",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/centers-and-facilities/johnson/apollo-12-and-surveyor-3/",
+      "url": "https://www.nasa.gov/missions/lunar-reconnaissance-orbiter-looks-at-apollo-12-surveyor-3-landing-sites/",
       "label": "Apollo 12 visited Surveyor 3 (NASA)",
       "tier": "deep",
       "source_id": "nasa",
@@ -8265,18 +8069,18 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "tgo__f2a9c448ec91",
+      "id": "tgo__496e9a9f0d3e",
       "entity_id": "tgo",
       "category": "mars-site",
       "route": "/mars",
-      "url": "https://www.esa.int/Science_Exploration/Space_Science/ExoMars/Trace_Gas_Orbiter_factsheet",
+      "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/Trace_Gas_Orbiter_instruments",
       "label": "TGO — ESA",
       "tier": "core",
       "source_id": "esa",
       "language": "en",
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
-      "last_verified": "2026-05-07"
+      "last_verified": "2026-05-10"
     },
     {
       "id": "tiangong__aba306d3bc81",
@@ -8335,11 +8139,11 @@
       "last_verified": "2026-05-07"
     },
     {
-      "id": "tiangong__95ab9b611f5b",
+      "id": "tiangong__817209cd9ca7",
       "entity_id": "tiangong",
       "category": "fleet",
       "route": "/fleet",
-      "url": "http://en.cmse.gov.cn/cms/",
+      "url": "https://en.cmse.gov.cn/",
       "label": "CMSA — China Manned Space Agency (Tiangong)",
       "tier": "deep",
       "source_id": "cnsa",
@@ -8629,11 +8433,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "titan-ii-glv__8b416cd3618f",
+      "id": "titan-ii-glv__1fcc378e0a30",
       "entity_id": "titan-ii-glv",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/mission/gemini/",
+      "url": "https://www.nasa.gov/gemini/",
       "label": "Project Gemini launches — NASA",
       "tier": "core",
       "source_id": "nasa",
@@ -8923,11 +8727,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "viking-1__24277d2a9550",
+      "id": "viking-1__651ea2bceadb",
       "entity_id": "viking-1",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://history.nasa.gov/SP-4212/toc.html",
+      "url": "https://www.nasa.gov/wp-content/uploads/2023/03/sp-4212.pdf",
       "label": "On Mars: Exploration of the Red Planet 1958-1978 (NASA SP-4212)",
       "tier": "deep",
       "source_id": "nasa",
@@ -9077,11 +8881,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "vikram-cy2__b616f9013c66",
+      "id": "vikram-cy2__a96ae9d16d8f",
       "entity_id": "vikram-cy2",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/Chandrayaan2_announcement.html",
+      "url": "https://www.isro.gov.in/Press%20Release5.html",
       "label": "Chandrayaan-2 lander failure analysis (ISRO)",
       "tier": "deep",
       "source_id": "isro",
@@ -9105,11 +8909,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "vikram-cy3__cace32716d81",
+      "id": "vikram-cy3__fbd01d59ce5b",
       "entity_id": "vikram-cy3",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.isro.gov.in/Chandrayaan_3.html",
+      "url": "https://www.isro.gov.in/Chandrayaan3.html",
       "label": "Chandrayaan-3 — ISRO",
       "tier": "core",
       "source_id": "isro",
@@ -9203,11 +9007,11 @@
       "last_verified": "2026-05-10"
     },
     {
-      "id": "vostok__d4afcd8ef12e",
+      "id": "vostok__3a2174118962",
       "entity_id": "vostok",
       "category": "fleet",
       "route": "/fleet",
-      "url": "https://www.nasa.gov/history/60-years-ago-vostok-1-takes-yuri-gagarin-to-orbit/",
+      "url": "https://www.nasa.gov/image-article/april-1961-first-human-entered-space/",
       "label": "Vostok 1 mission overview (NASA)",
       "tier": "deep",
       "source_id": "nasa",

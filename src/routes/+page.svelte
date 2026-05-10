@@ -538,7 +538,10 @@
   .landing {
     max-width: 880px;
     margin: 0 auto;
-    padding: 96px 24px 48px;
+    /* Reduced top padding so the hero illustration sits close to the
+       nav bar; breathing room added below the illustration via the
+       svg's bottom margin so the wordmark doesn't crowd it. */
+    padding: 24px 24px 48px;
     color: var(--color-text);
   }
 
@@ -551,7 +554,7 @@
     width: 100%;
     max-width: 600px;
     height: auto;
-    margin: 0 auto -8px;
+    margin: 0 auto 32px;
   }
   .wordmark {
     font-family: var(--font-display);
@@ -753,7 +756,7 @@
   /* ─── Mobile ───────────────────────────────────────────────── */
   @media (max-width: 767px) {
     .landing {
-      padding: 48px 16px 32px;
+      padding: 16px 16px 32px;
     }
     .wordmark {
       font-size: 48px;
@@ -761,7 +764,7 @@
     }
     .hero-illustration {
       max-width: 100%;
-      margin-bottom: 4px;
+      margin-bottom: 20px;
     }
     .tagline {
       font-size: 18px;

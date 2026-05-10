@@ -13,6 +13,7 @@
   let { right }: Props = $props();
 
   const linkDefs = [
+    { path: '/', label: m.nav_home },
     { path: '/explore', label: m.nav_explore },
     { path: '/missions', label: m.nav_missions },
     { path: '/fleet', label: m.nav_fleet },
@@ -202,7 +203,7 @@
 
   .center {
     display: flex;
-    gap: 3px;
+    gap: 1px;
     align-items: center;
     overflow-x: auto;
     scrollbar-width: none;
@@ -213,9 +214,9 @@
   }
 
   .link {
-    padding: 5px 12px;
+    padding: 5px 10px;
     font-size: var(--size-link);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.28);
     text-decoration: none;

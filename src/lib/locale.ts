@@ -129,6 +129,53 @@ export function localeFromPage(page: Page): LocaleCode {
   return resolveLocale(page.url, navigator.language);
 }
 
+/**
+ * Build a relative URL string with `?lang=<locale>` set (or removed
+ * if the locale is `DEFAULT_LOCALE`). Preserves existing query params,
+ * pathname, and hash.
+ *
+ * Used by the layout effect for first-visit URL canonicalisation
+ * (Issue #73 Gap 1) so a German visitor landing on `/explore` with
+ * no `?lang=` ends up at `/explore?lang=de` after the first frame.
+ * The URL is then bookmarkable and shareable with correct semantics.
+ */
+export function canonicaliseLocaleInUrl(url: URL, locale: LocaleCode): string {
+  const next = new URL(url.toString());
+  if (locale === DEFAULT_LOCALE) {
+    next.searchParams.delete('lang');
+  } else {
+    next.searchParams.set('lang', locale);
+  }
+  return `${next.pathname}${next.search}${next.hash}`;
+}
+
+/**
+ * True iff the URL is in canonical form for the resolved locale.
+ * Used by the layout effect to decide whether canonicalisation would
+ * change anything — short-circuits a no-op `goto` and prevents loops.
+ *
+ * Canonical means EITHER:
+ *  - `?lang=` is absent and resolved === DEFAULT_LOCALE (bare URL, default locale), OR
+ *  - `?lang=` is present and exactly equals the resolved locale
+ *    (explicit user choice; preserved even when the choice is en-US,
+ *     so that `?lang=en-US` shared by a non-English-browser sender
+ *     still pins English for the recipient).
+ *
+ * Non-canonical (rewrite-needed) cases:
+ *  - `?lang=` absent, resolved !== DEFAULT_LOCALE  (auto-detected non-default
+ *    needs to be promoted into the URL).
+ *  - `?lang=xx` (invalid) — `resolveLocale` ignored it, so the param
+ *    differs from the resolved locale → strip + replace with the
+ *    resolved value (or just strip if resolved is default and
+ *    we want to keep the URL minimal — `canonicaliseLocaleInUrl`
+ *    handles the strip).
+ */
+export function isLocaleUrlCanonical(url: URL, locale: LocaleCode): boolean {
+  const langParam = url.searchParams.get('lang');
+  if (langParam === locale) return true;
+  return langParam === null && locale === DEFAULT_LOCALE;
+}
+
 /** True when locale should render with right-to-left document flow. */
 export function isRtlLocale(locale: LocaleCode): boolean {
   return RTL_LOCALES.has(locale);

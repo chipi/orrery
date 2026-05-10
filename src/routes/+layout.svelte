@@ -2,10 +2,18 @@
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+  import { browser } from '$app/environment';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import { setLanguageTag } from '$lib/paraglide/runtime';
-  import { localeFromPage, isSupportedLocale, syncDocumentLocaleAttributes } from '$lib/locale';
+  import {
+    localeFromPage,
+    isSupportedLocale,
+    syncDocumentLocaleAttributes,
+    canonicaliseLocaleInUrl,
+    isLocaleUrlCanonical,
+  } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
 
   let { children } = $props();
@@ -22,6 +30,29 @@
       setLanguageTag(code);
       syncDocumentLocaleAttributes(code);
     }
+  });
+
+  // Issue #73 Gap 1: canonicalise the URL after first paint so a
+  // visitor whose locale was resolved from `navigator.language`
+  // (no ?lang= in URL) ends up with the canonical `?lang=<resolved>`
+  // form. Bookmarks + share-links then carry the locale explicitly,
+  // so the recipient sees the same content regardless of their own
+  // browser language. Inversely, an explicit `?lang=en-US` is
+  // stripped to bare URL since en-US is the default.
+  //
+  // replaceState (not push) keeps the back button clean. The
+  // hasLangParam-after-redirect short-circuit prevents loops.
+  $effect(() => {
+    if (!browser) return;
+    const url = $page.url;
+    const resolved = localeFromPage($page);
+    if (isLocaleUrlCanonical(url, resolved)) return;
+    const canonical = canonicaliseLocaleInUrl(url, resolved);
+    void goto(canonical, {
+      replaceState: true,
+      noScroll: true,
+      keepFocus: true,
+    });
   });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────

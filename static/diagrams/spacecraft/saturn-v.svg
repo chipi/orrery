@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Saturn V three-stage launch vehicle anatomy: S-IC first stage, S-II second stage, S-IVB third stage, instrument unit, Apollo spacecraft stack">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    .stage-fill { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">SATURN V</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">110.6 m · 2,970,000 kg · 140 t to LEO</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="270" class="dashed" />
+
+  <!-- Apollo stack: LES escape tower -->
+  <line x1="200" y1="50" x2="200" y2="62" class="stroke" />
+  <path d="M 196 62 L 196 70 L 204 70 L 204 62 Z" class="stroke-fill" />
+
+  <!-- CSM (Command + Service Module) -->
+  <path d="M 192 70 L 192 76 L 208 76 L 208 70 Z" class="stroke-fill" />
+  <path d="M 192 76 L 195 92 L 205 92 L 208 76 Z" class="stroke-fill" />
+  <rect x="190" y="92" width="20" height="14" class="stroke-fill" />
+
+  <!-- LM in adapter -->
+  <path d="M 187 106 L 213 106 L 211 122 L 189 122 Z" class="stroke-fill" />
+
+  <!-- Instrument Unit -->
+  <rect x="180" y="122" width="40" height="6" class="stroke-fill" />
+
+  <!-- S-IVB Third stage -->
+  <rect x="175" y="128" width="50" height="38" class="stage-fill" />
+  <path d="M 196 166 L 192 178 L 208 178 L 204 166 Z" class="nozzle" />
+
+  <!-- Interstage taper -->
+  <path d="M 175 166 L 168 178 L 232 178 L 225 166 Z" class="dashed" />
+
+  <!-- S-II Second stage -->
+  <rect x="168" y="178" width="64" height="50" class="stage-fill" />
+
+  <!-- 5 J-2 engines (S-II) -->
+  <path d="M 175 228 L 173 240 L 181 240 L 179 228 Z" class="nozzle" />
+  <path d="M 188 228 L 186 242 L 194 242 L 192 228 Z" class="nozzle" />
+  <path d="M 198 228 L 196 244 L 204 244 L 202 228 Z" class="nozzle" />
+  <path d="M 208 228 L 206 242 L 214 242 L 212 228 Z" class="nozzle" />
+  <path d="M 221 228 L 219 240 L 227 240 L 225 228 Z" class="nozzle" />
+
+  <!-- Interstage taper between S-II and S-IC -->
+  <path d="M 168 228 L 156 244 L 244 244 L 232 228 Z" class="dashed" />
+
+  <!-- S-IC First stage -->
+  <rect x="156" y="244" width="88" height="20" class="stage-fill" />
+
+  <!-- 5 F-1 engines (S-IC) -->
+  <path d="M 162 264 L 158 274 L 168 274 L 166 264 Z" class="nozzle" />
+  <path d="M 178 264 L 174 276 L 184 276 L 182 264 Z" class="nozzle" />
+  <path d="M 196 264 L 192 278 L 208 278 L 204 264 Z" class="nozzle" />
+  <path d="M 216 264 L 214 276 L 226 276 L 222 264 Z" class="nozzle" />
+  <path d="M 232 264 L 230 274 L 240 274 L 238 264 Z" class="nozzle" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="190" y1="76" x2="80" y2="76" class="accent" />
+  <text x="6" y="73" class="label-accent">APOLLO CSM</text>
+  <text x="6" y="84" class="label-mute">3-crew Moon vehicle</text>
+
+  <line x1="175" y1="148" x2="80" y2="148" class="accent" />
+  <text x="6" y="145" class="label-accent">S-IVB · 3RD</text>
+  <text x="6" y="156" class="label-mute">1× J-2 · trans-lunar inj</text>
+
+  <line x1="168" y1="200" x2="80" y2="200" class="accent" />
+  <text x="6" y="197" class="label-accent">S-II · 2ND</text>
+  <text x="6" y="208" class="label-mute">5× J-2 · LH₂/LOX</text>
+
+  <line x1="156" y1="254" x2="80" y2="254" class="accent" />
+  <text x="6" y="251" class="label-accent">S-IC · 1ST</text>
+  <text x="6" y="262" class="label-mute">5× F-1 · RP-1/LOX</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="204" y1="60" x2="305" y2="60" class="accent" />
+  <text x="305" y="57" class="label-accent">LES TOWER</text>
+  <text x="305" y="68" class="label-mute">abort rocket</text>
+
+  <line x1="213" y1="116" x2="305" y2="116" class="accent" />
+  <text x="305" y="113" class="label-accent">LM ADAPTER</text>
+  <text x="305" y="124" class="label-mute">Lunar Module fairing</text>
+
+  <line x1="220" y1="125" x2="305" y2="135" class="accent" />
+  <text x="305" y="138" class="label-accent">INSTR UNIT</text>
+  <text x="305" y="149" class="label-mute">guidance computer</text>
+
+  <line x1="220" y1="234" x2="305" y2="234" class="accent" />
+  <text x="305" y="231" class="label-accent">7,650 kN</text>
+  <text x="305" y="243" class="label-mute">F-1 thrust each</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="298" text-anchor="middle" class="subtitle">Boeing · North American · Douglas · 13 launches 1967–1973</text>
+  <text x="200" y="312" text-anchor="middle" class="subtitle">Carried 12 humans to the lunar surface · zero losses on ascent</text>
+</svg>

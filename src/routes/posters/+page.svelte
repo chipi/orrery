@@ -46,7 +46,7 @@
       </header>
       <figure class="poster">
         <svg
-          viewBox="0 0 600 900"
+          viewBox="0 0 600 940"
           role="img"
           aria-label="Mars travel-poster (JPL Visions of the Future style)"
         >
@@ -146,7 +146,7 @@
           <!-- ORRERY signature watermark -->
           <text
             x="40"
-            y="880"
+            y="910"
             font-family="var(--font-display), 'Bebas Neue', sans-serif"
             font-size="14"
             letter-spacing="4"
@@ -154,7 +154,7 @@
           >
           <text
             x="560"
-            y="880"
+            y="910"
             font-family="var(--font-mono), monospace"
             font-size="9"
             letter-spacing="3"
@@ -178,135 +178,149 @@
       </header>
       <figure class="poster">
         <svg
-          viewBox="0 0 600 900"
+          viewBox="0 0 600 940"
           role="img"
-          aria-label="Apollo 11 commemorative mission-patch poster"
+          aria-label="Apollo 11 bootprint poster — single iconic boot impression in lunar regolith"
         >
           <defs>
-            <radialGradient id="ab-bg" cx="0.5" cy="0.4" r="0.6">
-              <stop offset="0%" stop-color="#0a1430" />
-              <stop offset="100%" stop-color="#000208" />
+            <!-- Lunar regolith background: subtle vertical gradient + radial spotlight on the print -->
+            <linearGradient id="apb-regolith" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0e0d0c" />
+              <stop offset="40%" stop-color="#1c1a18" />
+              <stop offset="100%" stop-color="#0a0908" />
+            </linearGradient>
+            <radialGradient id="apb-spot" cx="0.5" cy="0.42" r="0.55">
+              <stop offset="0%" stop-color="#3a3530" stop-opacity="0.55" />
+              <stop offset="60%" stop-color="#2a2624" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#0a0908" stop-opacity="0" />
             </radialGradient>
-            <radialGradient id="ab-earth" cx="0.4" cy="0.4" r="0.6">
-              <stop offset="0%" stop-color="#a8e0ff" />
-              <stop offset="50%" stop-color="#4b9cd3" />
-              <stop offset="100%" stop-color="#0a1b30" />
-            </radialGradient>
-            <radialGradient id="ab-moon" cx="0.4" cy="0.4" r="0.6">
-              <stop offset="0%" stop-color="#e8e0d8" />
-              <stop offset="100%" stop-color="#3a3530" />
+            <!-- The print itself: depression depth via dark interior + faint rim highlight -->
+            <linearGradient id="apb-print" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#020202" />
+              <stop offset="100%" stop-color="#000000" />
+            </linearGradient>
+            <radialGradient id="apb-print-rim" cx="0.5" cy="0.5" r="0.6">
+              <stop offset="80%" stop-color="rgba(120,115,108,0)" />
+              <stop offset="100%" stop-color="rgba(120,115,108,0.45)" />
             </radialGradient>
           </defs>
-          <rect width="600" height="900" fill="url(#ab-bg)" />
-          <!-- Patch outer rope rings -->
-          <circle cx="300" cy="380" r="245" fill="none" stroke="#ffc850" stroke-width="3" />
-          <circle cx="300" cy="380" r="252" fill="none" stroke="#8a6818" stroke-width="0.8" />
-          <circle cx="300" cy="380" r="238" fill="none" stroke="#8a6818" stroke-width="0.8" />
-          <!-- Tick marks (embroidery hint) -->
-          <g stroke="#8a6818" stroke-width="1.2">
-            <line x1="300" y1="135" x2="300" y2="145" />
-            <line x1="300" y1="615" x2="300" y2="625" />
-            <line x1="55" y1="380" x2="65" y2="380" />
-            <line x1="535" y1="380" x2="545" y2="380" />
+
+          <!-- Regolith floor -->
+          <rect width="600" height="940" fill="url(#apb-regolith)" />
+          <!-- Soft spotlight focused on the print -->
+          <circle cx="300" cy="395" r="320" fill="url(#apb-spot)" />
+
+          <!-- Scattered dust grains (regolith texture) -->
+          <g fill="rgba(140,130,118,0.18)">
+            <circle cx="80" cy="180" r="1.1" />
+            <circle cx="140" cy="240" r="0.7" />
+            <circle cx="220" cy="160" r="0.9" />
+            <circle cx="320" cy="200" r="0.6" />
+            <circle cx="420" cy="170" r="1.2" />
+            <circle cx="500" cy="240" r="0.8" />
+            <circle cx="60" cy="320" r="1" />
+            <circle cx="180" cy="350" r="0.5" />
+            <circle cx="540" cy="340" r="0.9" />
+            <circle cx="100" cy="440" r="1.1" />
+            <circle cx="500" cy="450" r="0.7" />
+            <circle cx="80" cy="540" r="0.9" />
+            <circle cx="540" cy="550" r="1.2" />
+            <circle cx="160" cy="600" r="0.6" />
+            <circle cx="440" cy="610" r="0.7" />
           </g>
-          <!-- Curved title around the top -->
-          <defs>
-            <path id="ab-arc-top" d="M 90 380 A 210 210 0 0 1 510 380" fill="none" />
-            <path id="ab-arc-bot" d="M 510 380 A 210 210 0 0 1 90 380" fill="none" />
-          </defs>
-          <text
-            font-family="var(--font-display), 'Bebas Neue', sans-serif"
-            font-size="36"
-            letter-spacing="14"
-            fill="#ffc850"
-          >
-            <textPath href="#ab-arc-top" startOffset="50%" text-anchor="middle"
-              >APOLLO ELEVEN</textPath
-            >
-          </text>
-          <text
-            font-family="var(--font-display), 'Bebas Neue', sans-serif"
-            font-size="22"
-            letter-spacing="8"
-            fill="#ffc850"
-          >
-            <textPath href="#ab-arc-bot" startOffset="50%" text-anchor="middle"
-              >ARMSTRONG · COLLINS · ALDRIN</textPath
-            >
-          </text>
-          <!-- Moon (focal point) -->
-          <circle cx="300" cy="380" r="160" fill="url(#ab-moon)" />
-          <ellipse cx="270" cy="340" rx="20" ry="18" fill="rgba(60,55,50,0.5)" />
-          <ellipse cx="340" cy="380" rx="28" ry="24" fill="rgba(60,55,50,0.5)" />
-          <ellipse cx="290" cy="430" rx="14" ry="12" fill="rgba(60,55,50,0.5)" />
-          <ellipse cx="240" cy="400" rx="10" ry="8" fill="rgba(60,55,50,0.5)" />
-          <ellipse cx="350" cy="320" rx="8" ry="6" fill="rgba(60,55,50,0.4)" />
-          <!-- Eagle silhouette descending -->
-          <g transform="translate(300 380)" fill="#fff" opacity="0.95">
-            <path d="M 0 -10 Q 8 -5 5 0 Q 2 8 -2 8 Q -8 5 -5 0 Q -8 -5 0 -10 Z" />
-            <path d="M -5 -2 Q -45 -25 -65 -10 Q -50 -5 -10 5 Z" />
-            <path d="M 5 -2 Q 45 -25 65 -10 Q 50 -5 10 5 Z" />
-            <line x1="-3" y1="8" x2="-15" y2="22" stroke="#7da870" stroke-width="2" />
-            <circle cx="-15" cy="22" r="3" fill="#7da870" />
-            <circle cx="-12" cy="18" r="2.5" fill="#7da870" />
-            <circle cx="-18" cy="20" r="2" fill="#7da870" />
+          <g fill="rgba(120,110,100,0.1)">
+            <circle cx="160" cy="200" r="2" />
+            <circle cx="400" cy="240" r="1.6" />
+            <circle cx="120" cy="380" r="1.8" />
+            <circle cx="480" cy="380" r="2" />
+            <circle cx="240" cy="500" r="1.4" />
+            <circle cx="380" cy="520" r="1.6" />
           </g>
-          <!-- Earth in upper-right of patch -->
-          <circle cx="430" cy="280" r="40" fill="url(#ab-earth)" />
-          <circle
-            cx="430"
-            cy="280"
-            r="40"
-            fill="none"
-            stroke="rgba(168,224,255,0.5)"
-            stroke-width="1"
-          />
-          <!-- Patch stars -->
-          <circle cx="160" cy="240" r="1.5" fill="#fff" />
-          <circle cx="450" cy="450" r="1.5" fill="#fff" />
-          <circle cx="180" cy="490" r="1.2" fill="#fff" />
-          <circle cx="380" cy="200" r="1.2" fill="#fff" />
-          <!-- Title block bottom -->
+
+          <!-- Tiny pebbles (slightly brighter for contrast) -->
+          <g fill="rgba(180,170,158,0.35)">
+            <circle cx="200" cy="260" r="0.8" />
+            <circle cx="430" cy="290" r="0.6" />
+            <circle cx="120" cy="500" r="0.9" />
+            <circle cx="510" cy="490" r="0.7" />
+            <circle cx="350" cy="610" r="0.8" />
+          </g>
+
+          <!-- THE BOOTPRINT — slightly tilted (Aldrin photo is ~12° off-axis).
+               Depression rendered as a dark filled shape with a subtle rim
+               glow on the trailing/down-light side, plus horizontal tread
+               grooves cut across as faint lighter lines. -->
+          <g transform="translate(300 380) rotate(14)">
+            <!-- Outer rim glow (suggests dust pushed up at the edge) -->
+            <path
+              d="M -68 -150 Q -78 -130 -76 -110 L -76 110 Q -80 135 -64 145 L 64 145 Q 80 135 76 110 L 76 -110 Q 78 -130 68 -150 Z"
+              fill="url(#apb-print-rim)"
+            />
+            <!-- The depression itself (slightly smaller than the rim) -->
+            <path
+              d="M -64 -146 Q -73 -128 -71 -108 L -71 105 Q -74 130 -60 140 L 60 140 Q 74 130 71 105 L 71 -108 Q 73 -128 64 -146 Z"
+              fill="url(#apb-print)"
+            />
+            <!-- Horizontal tread grooves cut across the print
+                 (faint lighter strokes — the ridges between treads
+                  catch a touch of light) -->
+            <g stroke="rgba(110,100,90,0.55)" stroke-width="2.2" stroke-linecap="round">
+              <line x1="-58" y1="-110" x2="58" y2="-110" />
+              <line x1="-60" y1="-85" x2="60" y2="-85" />
+              <line x1="-62" y1="-60" x2="62" y2="-60" />
+              <line x1="-64" y1="-35" x2="64" y2="-35" />
+              <line x1="-65" y1="-10" x2="65" y2="-10" />
+              <line x1="-65" y1="15" x2="65" y2="15" />
+              <line x1="-64" y1="40" x2="64" y2="40" />
+              <line x1="-62" y1="65" x2="62" y2="65" />
+              <line x1="-58" y1="90" x2="58" y2="90" />
+              <line x1="-52" y1="115" x2="52" y2="115" />
+            </g>
+            <!-- Heel notch (slight indentation at the bottom rear of the boot) -->
+            <ellipse cx="0" cy="135" rx="32" ry="6" fill="rgba(0,0,0,0.85)" />
+          </g>
+
+          <!-- Title block — single bold key sentence -->
           <text
             x="300"
-            y="720"
+            y="730"
             font-family="var(--font-display), 'Bebas Neue', sans-serif"
-            font-size="56"
-            letter-spacing="6"
+            font-size="120"
+            letter-spacing="14"
             fill="#ffffff"
             text-anchor="middle">FOOTPRINTS</text
           >
           <text
             x="300"
-            y="755"
+            y="780"
             font-family="var(--font-display), 'Bebas Neue', sans-serif"
-            font-size="34"
-            letter-spacing="4"
-            fill="#ffc850"
+            font-size="40"
+            letter-spacing="6"
+            fill="#a8a09c"
             text-anchor="middle">FOR A MILLION YEARS</text
           >
           <text
             x="300"
-            y="800"
+            y="828"
             font-family="var(--font-mono), monospace"
-            font-size="11"
-            letter-spacing="4"
+            font-size="12"
+            letter-spacing="6"
             fill="rgba(255,255,255,0.55)"
-            text-anchor="middle">JULY 20 · 1969 · MARE TRANQUILLITATIS</text
+            text-anchor="middle">APOLLO 11 · JULY 20 · 1969</text
           >
           <text
             x="300"
-            y="820"
+            y="850"
             font-family="var(--font-mono), monospace"
             font-size="10"
-            letter-spacing="3"
-            fill="rgba(255,255,255,0.45)"
-            text-anchor="middle">SATURN V · LM EAGLE · CSM COLUMBIA</text
+            letter-spacing="4"
+            fill="rgba(255,255,255,0.4)"
+            text-anchor="middle">MARE TRANQUILLITATIS · NO ATMOSPHERE · NO WIND · NO ERASURE</text
           >
           <!-- ORRERY watermark -->
           <text
             x="40"
-            y="880"
+            y="910"
             font-family="var(--font-display), 'Bebas Neue', sans-serif"
             font-size="14"
             letter-spacing="4"
@@ -314,7 +328,7 @@
           >
           <text
             x="560"
-            y="880"
+            y="910"
             font-family="var(--font-mono), monospace"
             font-size="9"
             letter-spacing="3"
@@ -336,7 +350,7 @@
         </p>
       </header>
       <figure class="poster">
-        <svg viewBox="0 0 600 900" role="img" aria-label="Voyager engineering-blueprint poster">
+        <svg viewBox="0 0 600 940" role="img" aria-label="Voyager engineering-blueprint poster">
           <rect width="600" height="900" fill="#04040c" />
           <!-- Grid background -->
           <g stroke="rgba(78,205,196,0.05)" stroke-width="0.5">
@@ -743,7 +757,7 @@
           <!-- ORRERY watermark -->
           <text
             x="40"
-            y="880"
+            y="910"
             font-family="var(--font-display), 'Bebas Neue', sans-serif"
             font-size="14"
             letter-spacing="4"
@@ -751,7 +765,7 @@
           >
           <text
             x="560"
-            y="880"
+            y="910"
             font-family="var(--font-mono), monospace"
             font-size="9"
             letter-spacing="3"

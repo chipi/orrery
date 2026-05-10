@@ -3,14 +3,25 @@
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import { getFleetIndex } from '$lib/data';
-  import type { FleetCategory, FleetEpoch, FleetIndexEntry, FleetStatus } from '$types/fleet';
+  import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
+  import type {
+    FleetCategory,
+    FleetEntry,
+    FleetEpoch,
+    FleetIndexEntry,
+    FleetStatus,
+  } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
 
   // ─── State ───────────────────────────────────────────────────────
   let entries: FleetIndexEntry[] = $state([]);
   let loading = $state(true);
   let loadFailed = $state(false);
+
+  let selectedEntry: FleetEntry | null = $state(null);
+  let panelOpen = $state(false);
+  let panelLoadingId = $state<string | null>(null);
 
   let categoryFilter: FleetCategory | 'ALL' = $state('ALL');
   let agencyFilter: string = $state('ALL');
@@ -156,11 +167,42 @@
     syncUrl();
   }
 
+  async function loadEntry(id: string) {
+    if (panelLoadingId === id) return;
+    panelLoadingId = id;
+    const summary = entries.find((e) => e.id === id);
+    if (!summary) {
+      panelLoadingId = null;
+      return;
+    }
+    const full = await getFleet(id, summary.category);
+    if (panelLoadingId !== id) return; // a newer load superseded us
+    selectedEntry = full;
+    panelOpen = true;
+    panelLoadingId = null;
+  }
+
   function openEntry(entry: FleetIndexEntry) {
-    // Phase C wires this to FleetEntryPanel. For now, deep-link the URL.
     const url = new URL($page.url);
     url.searchParams.set('id', entry.id);
-    goto(url.pathname + `?${url.searchParams}`, { replaceState: false, keepFocus: false });
+    goto(url.pathname + `?${url.searchParams}`, {
+      replaceState: false,
+      keepFocus: false,
+      noScroll: true,
+    });
+    void loadEntry(entry.id);
+  }
+
+  function closePanel() {
+    panelOpen = false;
+    selectedEntry = null;
+    const url = new URL($page.url);
+    url.searchParams.delete('id');
+    goto(url.pathname + (url.searchParams.toString() ? `?${url.searchParams}` : ''), {
+      replaceState: true,
+      keepFocus: true,
+      noScroll: true,
+    });
   }
 
   onMount(async () => {
@@ -171,11 +213,23 @@
       loadFailed = true;
     }
     loading = false;
+
+    // Pre-select an entry if ?id= is in the URL on first visit.
+    const id = $page.url.searchParams.get('id');
+    if (id) void loadEntry(id);
   });
 
   $effect(() => {
     // Re-apply URL when navigating in-app (back/forward buttons)
     applyUrl($page.url);
+    // Also keep the panel selection in sync with ?id=
+    const id = $page.url.searchParams.get('id');
+    if (id && id !== selectedEntry?.id) {
+      void loadEntry(id);
+    } else if (!id && panelOpen) {
+      panelOpen = false;
+      selectedEntry = null;
+    }
   });
 </script>
 
@@ -343,6 +397,13 @@
     {/if}
   {/if}
 </div>
+
+<FleetEntryPanel
+  entry={selectedEntry}
+  open={panelOpen}
+  onClose={closePanel}
+  galleryFetcher={getFleetGallery}
+/>
 
 <style>
   .fleet {

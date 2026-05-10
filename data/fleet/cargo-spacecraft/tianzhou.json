@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Tianzhou — Wikipedia",
+      "l": "Tianzhou (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "天舟货运飞船 — CMSA",
+      "u": "http://en.cmse.gov.cn/",
+      "t": "core"
+    },
+    {
+      "l": "Tianzhou-1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2017-021A",
+      "t": "deep"
     }
   ]
 }

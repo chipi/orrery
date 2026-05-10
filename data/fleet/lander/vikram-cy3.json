@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Vikram (Chandrayaan-3) — Wikipedia",
+      "l": "Chandrayaan-3 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Chandrayaan-3",
       "t": "intro"
+    },
+    {
+      "l": "Chandrayaan-3 — ISRO",
+      "u": "https://www.isro.gov.in/Chandrayaan_3.html",
+      "t": "core"
+    },
+    {
+      "l": "Chandrayaan-3 mission summary (ISRO)",
+      "u": "https://www.isro.gov.in/Chandrayaan3_New.html",
+      "t": "deep"
     }
   ],
   "linked_missions": [

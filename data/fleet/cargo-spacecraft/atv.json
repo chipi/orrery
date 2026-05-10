@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "ATV (Automated Transfer Vehicle) — Wikipedia",
+      "l": "Automated Transfer Vehicle — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle",
       "t": "intro"
+    },
+    {
+      "l": "ATV — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Operations/ATV",
+      "t": "core"
+    },
+    {
+      "l": "ATV programme retrospective (ESA)",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/ATV",
+      "t": "deep"
     }
   ]
 }

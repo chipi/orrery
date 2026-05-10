@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Zhurong — Wikipedia",
+      "l": "Zhurong (rover) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)",
       "t": "intro"
+    },
+    {
+      "l": "祝融号火星车 — CNSA",
+      "u": "https://www.cnsa.gov.cn/",
+      "t": "core"
+    },
+    {
+      "l": "Tianwen-1 — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-049A",
+      "t": "deep"
     }
   ],
   "linked_missions": [

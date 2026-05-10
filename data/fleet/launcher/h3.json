@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "H3 — Wikipedia",
+      "l": "H3 (rocket) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/H3_(rocket)",
       "t": "intro"
+    },
+    {
+      "l": "H3 — JAXA",
+      "u": "https://global.jaxa.jp/projects/rockets/h3/",
+      "t": "core"
+    },
+    {
+      "l": "H3 development history (JAXA)",
+      "u": "https://www.jaxa.jp/projects/rockets/h3/",
+      "t": "deep"
     }
   ],
   "linked_missions": [

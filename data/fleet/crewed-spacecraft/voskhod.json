@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Voskhod — Wikipedia",
+      "l": "Voskhod (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Voskhod_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Восход — Роскосмос",
+      "u": "https://www.roscosmos.ru/24178/",
+      "t": "core"
+    },
+    {
+      "l": "Voskhod 2 (first spacewalk) — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-022A",
+      "t": "deep"
     }
   ]
 }

@@ -4,13 +4,13 @@
 
 ## Summary
 
-- Total: **689**
-- ✅ OK: **532** (77.2%)
+- Total: **675**
+- ✅ OK: **606** (89.8%)
 - ↪️ Redirect: **0** (0.0%)
 - 🔒 Forbidden / login wall: **37**
-- ⌛ Timeout: **3**
-- ⚠️ Error: **28**
-- ❌ Dead: **89**
+- ⌛ Timeout: **2**
+- ⚠️ Error: **26**
+- ❌ Dead: **4**
 
 ## Methodology
 
@@ -24,123 +24,36 @@
 
 | Status | Source | Entity | URL | HTTP |
 |---|---|---|---|---|
-| ❌ `dead` | `nasa` | `apollo-csm-block-ii` | <https://history.nasa.gov/SP-4205/toc.html> | 404 |
-| ❌ `dead` | `nasa` | `apollo-lm` | <https://history.nasa.gov/SP-4205/ch13-1.html> | 404 |
-| ❌ `dead` | `nasa` | `apollo11` | <https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/> | 404 |
-| ❌ `dead` | `nasa` | `apollo17` | <https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/> | 404 |
-| ❌ `dead` | `esa` | `ariane-5` | <https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5_-_an_extraordinary_legacy> | 404 |
-| ❌ `dead` | `esa` | `ariane-6` | <https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_6> | 404 |
-| ❌ `dead` | `esa` | `ariane-6` | <https://www.esa.int/Enabling_Support/Space_Transportation/Ariane/Ariane_6_inaugural_flight> | 404 |
-| ❌ `dead` | `nasa` | `atlas-lv-3b` | <https://www.nasa.gov/mission/mercury/> | 404 |
-| ❌ `dead` | `esa` | `atv` | <https://www.esa.int/Enabling_Support/Operations/ATV> | 404 |
 | ❌ `dead` | `blue-origin` | `blue-moon-mk1` | <https://www.blueorigin.com/blue-moon> | 429 |
-| ❌ `dead` | `nasa` | `cargo-dragon-v1` | <https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/> | 404 |
-| ❌ `dead` | `nasa` | `cargo-dragon-v1` | <https://www.nasa.gov/mission/spacex-crs-1/> | 404 |
-| ❌ `dead` | `wikipedia` | `chandrayaan3` | <https://hi.wikipedia.org/wiki/%E0%A4%9A%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%A8-3> | 404 |
-| ❌ `dead` | `nasa` | `chandrayaan3` | <https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon> | 404 |
-| ❌ `dead` | `wikipedia` | `chinarm` | <https://en.wikipedia.org/wiki/Tiangong_robotic_arm> | 404 |
-| ❌ `dead` | `nasa` | `compton-gro` | <https://heasarc.gsfc.nasa.gov/docs/cgro/cgro/cgro_about.html> | 404 |
-| ❌ `dead` | `nasa` | `crew_dragon` | <https://www.nasa.gov/mission/commercial-crew-program/> | 404 |
-| ❌ `dead` | `nasa` | `crew-dragon` | <https://www.nasa.gov/wp-content/uploads/2020/11/crew-1-press-kit.pdf> | 404 |
-| ❌ `dead` | `nasa` | `cygnus` | <https://www.nasa.gov/international-space-station/cargo-spacecraft/> | 404 |
-| ❌ `dead` | `nasa` | `cygnus-enhanced` | <https://www.nasa.gov/international-space-station/commercial-resupply/cygnus-fact-sheet/> | 404 |
-| ❌ `dead` | `nasa` | `cygnus-standard` | <https://www.nasa.gov/mission/orbital-1-cygnus/> | 404 |
-| ❌ `dead` | `nasa` | `dart` | <https://www.nasa.gov/feature/dart/dart-mission-summary> | 404 |
-| ❌ `dead` | `spacex` | `falcon-9` | <https://www.spacex.com/media/falcon-users-guide-2021-09.pdf> | 404 |
-| ❌ `dead` | `spacex` | `falcon-heavy` | <https://www.spacex.com/media/falcon-users-guide-2021-09.pdf> | 404 |
-| ❌ `dead` | `isro` | `gaganyaan` | <https://www.isro.gov.in/HumanSpaceflight.html> | 404 |
-| ❌ `dead` | `isro` | `gaganyaan` | <https://www.isro.gov.in/Gaganyaan_overview.html> | 404 |
-| ❌ `dead` | `nasa` | `gemini` | <https://www.nasa.gov/mission/gemini/> | 404 |
-| ❌ `dead` | `uaesa` | `hope` | <https://www.mbrsc.ae/space-program/> | 404 |
-| ❌ `dead` | `uaesa` | `hope-probe` | <https://www.mbrsc.ae/our-projects/space-exploration/> | 404 |
-| ❌ `dead` | `jaxa` | `htv-x` | <https://global.jaxa.jp/projects/rockets/htvx/> | 404 |
-| ❌ `dead` | `jaxa` | `htv-x` | <https://www.jaxa.jp/projects/rockets/htvx/> | 404 |
-| ❌ `dead` | `stsci` | `hubble` | <https://hubblesite.org/images/gallery> | 404 |
-| ❌ `dead` | `stsci` | `hubble` | <https://hubblesite.org/> | 404 |
-| ❌ `dead` | `nasa` | `hubble` | <https://www.nasa.gov/mission/hubble-space-telescope/servicing-missions/> | 404 |
-| ❌ `dead` | `nasa` | `hubble` | <https://www.nasa.gov/wp-content/uploads/2023/03/hubblescience.pdf> | 404 |
-| ❌ `dead` | `nasa` | `im-1-odysseus` | <https://www.nasa.gov/mission/clps-im-1/> | 404 |
 | ❌ `dead` | `ieee` | `inspiration-mars` | <https://ieeexplore.ieee.org/document/6497418> | 418 |
-| ❌ `dead` | `nasa` | `iss` | <https://www.nasa.gov/reference/international-space-station-facts-and-figures/> | 404 |
-| ❌ `dead` | `nasa` | `kepler` | <https://www.nasa.gov/mission/kepler-space-telescope/> | 404 |
-| ❌ `dead` | `nasa` | `kepler` | <https://www.nasa.gov/feature/ames/kepler/keplers-final-look-at-its-original-field-of-view> | 404 |
-| ❌ `dead` | `jaxa` | `kibo` | <https://humans-in-space.jaxa.jp/en/hashiten/kibo/> | 404 |
-| ❌ `dead` | `nasa` | `lrv-apollo` | <https://www.nasa.gov/history/the-lunar-roving-vehicle/> | 404 |
-| ❌ `dead` | `nasa` | `luna17` | <https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html> | 404 |
-| ❌ `dead` | `springer` | `luna9` | <https://link.springer.com/book/10.1007/978-0-387-46343-8> | 404 |
-| ❌ `dead` | `isro` | `lvm3` | <https://www.isro.gov.in/LVM3.html> | 404 |
-| ❌ `dead` | `isro` | `lvm3` | <https://www.isro.gov.in/LVM3_M2_Mission.html> | 404 |
-| ❌ `dead` | `isro` | `mangalyaan` | <https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html> | 404 |
-| ❌ `dead` | `isro` | `mangalyaan` | <https://www.isro.gov.in/MOM_Home.html> | 404 |
-| ❌ `dead` | `isro` | `mangalyaan` | <https://www.isro.gov.in/Mars_Orbiter_Mission.html> | 404 |
-| ❌ `dead` | `nasa` | `mariner-4` | <https://history.nasa.gov/SP-4212/toc.html> | 404 |
-| ❌ `dead` | `nasa` | `mariner-9` | <https://history.nasa.gov/SP-4212/toc.html> | 404 |
-| ❌ `dead` | `esa` | `mars-express` | <https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Mars_Express_in-depth> | 404 |
-| ❌ `dead` | `nasa` | `mars-odyssey` | <https://science.nasa.gov/mission/mars-odyssey/> | 404 |
-| ❌ `dead` | `nasa` | `mars3` | <https://www.nasa.gov/wp-content/uploads/2018/12/beyond_earth_tagged.pdf> | 404 |
-| ❌ `dead` | `wikipedia` | `mengtian` | <https://en.wikipedia.org/wiki/Mengtian_(module)> | 404 |
-| ❌ `dead` | `nasa` | `mercury-capsule` | <https://www.nasa.gov/mission/mercury/> | 404 |
-| ❌ `dead` | `wikipedia` | `new-horizons` | <https://en.wikipedia.org/wiki_New_Horizons> | 404 |
 | ❌ `dead` | `blue-origin` | `new-shepard` | <https://www.blueorigin.com/new-shepard/> | 429 |
 | ❌ `dead` | `blue-origin` | `new-shepard` | <https://www.blueorigin.com/news/first-human-flight-updates> | 429 |
-| ❌ `dead` | `nasa` | `orion` | <https://www.nasa.gov/exploration-systems/orion/> | 404 |
-| ❌ `dead` | `nasa` | `osiris-rex` | <https://www.nasa.gov/mission/osiris-apex/> | 404 |
-| ❌ `dead` | `nasa` | `phoenix` | <https://www.nasa.gov/mission/phoenix-mars-lander/> | 404 |
-| ❌ `dead` | `nasa` | `pioneer-10` | <https://science.nasa.gov/mission/pioneer/> | 404 |
-| ❌ `dead` | `isro` | `pragyan` | <https://www.isro.gov.in/Chandrayaan_3.html> | 404 |
-| ❌ `dead` | `isro` | `pslv-xl` | <https://www.isro.gov.in/PSLV.html> | 404 |
-| ❌ `dead` | `nasa` | `saturn-ib` | <https://www.nasa.gov/history/saturn-ib/> | 404 |
-| ❌ `dead` | `nasa` | `saturn-v` | <https://www.nasa.gov/centers-and-facilities/marshall/saturn-v/> | 404 |
-| ❌ `dead` | `esa` | `schiaparelli` | <https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/Schiaparelli_to_test_key_technologies> | 404 |
-| ❌ `dead` | `esa` | `schiaparelli` | <https://www.esa.int/Science_Exploration/Space_Science/ExoMars/ExoMars_in_brief> | 404 |
-| ❌ `dead` | `nasa` | `skylab` | <https://history.nasa.gov/SP-4208/toc.htm> | 404 |
-| ❌ `dead` | `wikipedia` | `slim` | <https://ja.wikipedia.org/wiki/SLIM_(%E5%AE%87%E5%AE%99%E6%A9%9F)> | 404 |
-| ❌ `dead` | `jaxa` | `slim` | <https://www.isas.jaxa.jp/home/slim/> | 404 |
-| ❌ `dead` | `nasa` | `sls-block-1` | <https://www.nasa.gov/reference/sls/> | 404 |
-| ❌ `dead` | `nasa` | `sls-block-1` | <https://www.nasa.gov/exploration-systems/space-launch-system/> | 404 |
-| ❌ `dead` | `nasa` | `sls-block-1` | <https://www.nasa.gov/wp-content/uploads/2022/06/sls_reference_guide_2022_v3.pdf> | 404 |
-| ❌ `dead` | `nasa` | `sojourner` | <https://www.jpl.nasa.gov/missions/mars-pathfinder> | 404 |
-| ❌ `dead` | `nasa` | `soyuz_ms` | <https://www.nasa.gov/reference/soyuz-spacecraft/> | 404 |
-| ❌ `dead` | `wikipedia` | `soyuz-u` | <https://en.wikipedia.org/wiki/List_of_Soyuz_launches> | 404 |
-| ❌ `dead` | `nasa` | `space-shuttle-orbiter` | <https://www.nasa.gov/wp-content/uploads/static/history/SP-2010-3409.pdf> | 404 |
-| ❌ `dead` | `nasa` | `spitzer` | <https://www.jpl.nasa.gov/news/jpl-and-the-final-frontier-spitzer-marks-end-of-an-era> | 404 |
-| ❌ `dead` | `spacex` | `starship-mars-crew` | <https://www.spacex.com/media/making_life_multiplanetary_transcript_2017.pdf> | 404 |
-| ❌ `dead` | `nasa` | `surveyor-3` | <https://www.nasa.gov/centers-and-facilities/johnson/apollo-12-and-surveyor-3/> | 404 |
-| ❌ `dead` | `esa` | `tgo` | <https://www.esa.int/Science_Exploration/Space_Science/ExoMars/Trace_Gas_Orbiter_factsheet> | 404 |
-| ❌ `dead` | `cnsa` | `tiangong` | <http://en.cmse.gov.cn/cms/> | 404 |
-| ❌ `dead` | `nasa` | `titan-ii-glv` | <https://www.nasa.gov/mission/gemini/> | 404 |
-| ❌ `dead` | `nasa` | `viking-1` | <https://history.nasa.gov/SP-4212/toc.html> | 404 |
-| ❌ `dead` | `isro` | `vikram-cy2` | <https://www.isro.gov.in/Chandrayaan2_announcement.html> | 404 |
-| ❌ `dead` | `isro` | `vikram-cy3` | <https://www.isro.gov.in/Chandrayaan_3.html> | 404 |
-| ❌ `dead` | `nasa` | `vostok` | <https://www.nasa.gov/history/60-years-ago-vostok-1-takes-yuri-gagarin-to-orbit/> | 404 |
-| ⚠️ `error` | `nasa` | `apollo11` | <https://www.nasa.gov/mission/apollo-11/> | — |
+| ⚠️ `error` | `nasa` | `apollo-lm` | <https://www.hq.nasa.gov/alsj/LM_News_Reference.pdf> | — |
 | ⚠️ `error` | `wikipedia` | `atlas-v` | <https://en.wikipedia.org/wiki/Atlas_V> | — |
-| ⚠️ `error` | `nasa` | `cargo_dragon` | <https://www.nasa.gov/international-space-station/commercial-resupply/> | — |
-| ⚠️ `error` | `wikipedia` | `cargo-dragon-2` | <https://en.wikipedia.org/wiki/SpaceX_Dragon_2> | — |
+| ⚠️ `error` | `wikipedia` | `buran` | <https://en.wikipedia.org/wiki/Buran-class_orbiter> | — |
 | ⚠️ `error` | `wikipedia` | `cassini` | <https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens> | — |
-| ⚠️ `error` | `nasa` | `change-2` | <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2010-050A> | — |
-| ⚠️ `error` | `wikipedia` | `change5` | <https://en.wikipedia.org/wiki/Chang%27e_5> | — |
-| ⚠️ `error` | `wikipedia` | `clementine` | <https://en.wikipedia.org/wiki/Clementine_(spacecraft)> | — |
-| ⚠️ `error` | `nasa` | `cygnus-standard` | <https://www.nasa.gov/centers-and-facilities/johnson/commercial-orbital-transportation-services/> | — |
+| ⚠️ `error` | `wikipedia` | `chandrayaan3` | <https://hi.wikipedia.org/wiki/%E0%A4%9A%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%A8-3> | — |
+| ⚠️ `error` | `wikipedia` | `change-2` | <https://en.wikipedia.org/wiki/Chang%27e_2> | — |
+| ⚠️ `error` | `wikipedia` | `change-5` | <https://en.wikipedia.org/wiki/Chang%27e_5> | — |
+| ⚠️ `error` | `wikipedia` | `falcon-heavy` | <https://en.wikipedia.org/wiki/Falcon_Heavy> | — |
 | ⚠️ `error` | `roscosmos` | `glonass` | <https://www.glonass-iac.ru/> | — |
-| ⚠️ `error` | `wikipedia` | `hakuto-r` | <https://en.wikipedia.org/wiki/Hakuto-R_Mission_2> | — |
+| ⚠️ `error` | `wikipedia` | `hitomi` | <https://en.wikipedia.org/wiki/Hitomi_(satellite)> | — |
 | ⚠️ `error` | `ipgp` | `insight` | <https://www.seis-insight.eu/en/public-2/martian-science/marsquake-service> | — |
-| ⚠️ `error` | `nasa` | `juno` | <https://www.nasa.gov/mission/juno/> | — |
-| ⚠️ `error` | `wikipedia` | `long-march-5` | <https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD> | — |
-| ⚠️ `error` | `wikipedia` | `luna17` | <https://en.wikipedia.org/wiki/Lunokhod_programme> | — |
-| ⚠️ `error` | `wikipedia` | `mars3-orbiter` | <https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D1%80%D1%81-3> | — |
-| ⚠️ `error` | `nasa` | `orion` | <https://www.nasa.gov/wp-content/uploads/2022/12/orion-reference-guide.pdf> | — |
-| ⚠️ `error` | `wikipedia` | `pirs` | <https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29> | — |
-| ⚠️ `error` | `wikipedia` | `prichal` | <https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29> | — |
-| ⚠️ `error` | `wikipedia` | `quest` | <https://en.wikipedia.org/wiki/Quest_%28ISS_module%29> | — |
-| ⚠️ `error` | `nasa` | `space-shuttle-stack` | <https://www.nasa.gov/reference/space-shuttle-mission-reports/> | — |
-| ⚠️ `error` | `wikipedia` | `starship` | <https://en.wikipedia.org/wiki/SpaceX_Mars_program> | — |
-| ⚠️ `error` | `nasa` | `surveyor-3` | <https://nssdc.gsfc.nasa.gov/planetary/lunar/surveyor.html> | — |
-| ⚠️ `error` | `wikipedia` | `tianzhou` | <https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)> | — |
-| ⚠️ `error` | `nasa` | `unity` | <https://www.nasa.gov/international-space-station/> | — |
-| ⚠️ `error` | `nasa` | `viking-1` | <https://nssdc.gsfc.nasa.gov/planetary/viking.html> | — |
-| ⚠️ `error` | `wikipedia` | `vostok` | <https://ru.wikipedia.org/wiki/%D0%92%D0%BE%D1%81%D1%82%D0%BE%D0%BA_(%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D1%8C)> | — |
+| ⚠️ `error` | `nasa` | `luna-9` | <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A> | — |
+| ⚠️ `error` | `wikipedia` | `luna10` | <https://en.wikipedia.org/wiki/Luna_10> | — |
+| ⚠️ `error` | `wikipedia` | `makemake` | <https://en.wikipedia.org/wiki/Makemake> | — |
+| ⚠️ `error` | `nasa` | `mariner-4` | <https://www.nasa.gov/wp-content/uploads/2023/03/sp-4212.pdf> | — |
+| ⚠️ `error` | `wikipedia` | `mars2` | <https://en.wikipedia.org/wiki/Mars_2> | — |
+| ⚠️ `error` | `wikipedia` | `opportunity` | <https://en.wikipedia.org/wiki/Opportunity_(rover)> | — |
+| ⚠️ `error` | `nasa` | `phobos-2` | <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1988-059A> | — |
+| ⚠️ `error` | `wikipedia` | `pslv-xl` | <https://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle> | — |
+| ⚠️ `error` | `nasa` | `saturn-v` | <https://history.nasa.gov/SP-4029/SP-4029.htm> | — |
+| ⚠️ `error` | `nasa` | `space-shuttle-orbiter` | <https://www.nasa.gov/space-shuttle/> | — |
+| ⚠️ `error` | `wikipedia` | `tess` | <https://en.wikipedia.org/wiki/Transiting_Exoplanet_Survey_Satellite> | — |
+| ⚠️ `error` | `wikipedia` | `tianwen1` | <https://en.wikipedia.org/wiki/Tianwen-1> | — |
+| ⚠️ `error` | `wikipedia` | `tianwen1-orbiter` | <https://en.wikipedia.org/wiki/Tianwen-1> | — |
 | ⚠️ `error` | `nature` | `zhurong` | <https://www.nature.com/articles/d41586-021-01357-5> | — |
+| ⚠️ `error` | `nasa` | `zvezda` | <https://www.nasa.gov/international-space-station/> | — |
 | 🔒 `forbidden` | `science-aaas` | `artemis3` | <https://www.science.org/doi/10.1126/science.aap8637> | 403 |
 | 🔒 `forbidden` | `roscosmos` | `buran` | <https://www.roscosmos.ru/30025/> | 403 |
 | 🔒 `forbidden` | `science-aaas` | `chandrayaan1` | <https://www.science.org/doi/10.1126/science.1178658> | 403 |
@@ -178,6 +91,5 @@
 | 🔒 `forbidden` | `roscosmos` | `voskhod` | <https://www.roscosmos.ru/24178/> | 403 |
 | 🔒 `forbidden` | `nasa` | `voyager-1` | <https://voyager.jpl.nasa.gov/mission/status/> | 403 |
 | 🔒 `forbidden` | `nasa` | `voyager-2` | <https://voyager.jpl.nasa.gov/mission/status/> | 403 |
-| ⌛ `timeout` | `cnsa` | `long-march-7` | <http://en.cmse.gov.cn/> | — |
 | ⌛ `timeout` | `cnsa` | `shenzhou` | <http://en.cmse.gov.cn/> | — |
 | ⌛ `timeout` | `cnsa` | `tianzhou` | <http://en.cmse.gov.cn/> | — |

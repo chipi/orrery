@@ -25,7 +25,7 @@
       },
       {
         "l": "NASA · Soyuz Spacecraft",
-        "u": "https://www.nasa.gov/reference/soyuz-spacecraft/",
+        "u": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-the-soyuz-spacecraft-grade-5-8/",
         "t": "core"
       },
       {
@@ -86,7 +86,7 @@
       },
       {
         "l": "NASA · Commercial Crew Program",
-        "u": "https://www.nasa.gov/mission/commercial-crew-program/",
+        "u": "https://www.nasa.gov/humans-in-space/commercial-space/commercial-crew-program/commercial-crew-program-overview/",
         "t": "core"
       },
       {
@@ -141,7 +141,7 @@
       },
       {
         "l": "NASA · Cygnus Cargo Spacecraft",
-        "u": "https://www.nasa.gov/international-space-station/cargo-spacecraft/",
+        "u": "https://www.nasa.gov/humans-in-space/spaceships-and-rockets/commercial-cargo-spacecraft/",
         "t": "core"
       }
     ]
@@ -186,7 +186,7 @@
     "launch_date": "2025-10-26",
     "flight_designation": "HTV-X",
     "mass_kg": 16000,
-    "length_m": 8.0,
+    "length_m": 8,
     "year_first_of": "First H3-launched ISS resupply craft",
     "status": "ACTIVE",
     "credit": "JAXA / Mitsubishi Heavy Industries — HTV-X references",

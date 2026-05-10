@@ -1,25 +1,21 @@
 # Last link-provenance build
 
-> Generated: 2026-05-10T20:43:09.498Z
+> Generated: 2026-05-10T20:53:21.988Z
 
-- Total entries: 689 (was 689)
-- Added: 6
-- Removed: 6
+- Total entries: 675 (was 677)
+- Added: 3
+- Removed: 5
 - Changed: 0
 
-## Added (6)
-- `chinarm` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chinarm>
-- `mengtian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mengtian>
-- `new-horizons` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/New_Horizons>
-- `pirs` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Pirs_(ISS_module)>
-- `prichal` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Prichal_(ISS_module)>
-- `quest` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Quest_Joint_Airlock>
+## Added (3)
+- `apollo-csm-block-ii` · deep · nasa · en · <https://history.nasa.gov/SP-4205/cover.html>
+- `apollo-lm` · deep · nasa · en · <https://history.nasa.gov/SP-4205/cover.html>
+- `mars-odyssey` · core · nasa · en · <https://mars.nasa.gov/odyssey/>
 
-## Removed (6)
-- `chinarm` · intro · wikipedia · <https://en.wikipedia.org/wiki/Tiangong_robotic_arm>
-- `mengtian` · intro · wikipedia · <https://en.wikipedia.org/wiki/Mengtian_(module)>
-- `new-horizons` · intro · wikipedia · <https://en.wikipedia.org/wiki_New_Horizons>
-- `pirs` · intro · wikipedia · <https://en.wikipedia.org/wiki/Pirs_%28ISS_module%29>
-- `prichal` · intro · wikipedia · <https://en.wikipedia.org/wiki/Prichal_%28ISS_module%29>
-- `quest` · intro · wikipedia · <https://en.wikipedia.org/wiki/Quest_%28ISS_module%29>
+## Removed (5)
+- `apollo-csm-block-ii` · deep · nasa · <https://www.nasa.gov/history/SP-4205/cover.html>
+- `apollo-lm` · deep · nasa · <https://www.nasa.gov/history/SP-4205/cover.html>
+- `mars-odyssey` · core · nasa · <https://science.nasa.gov/mission/2001-mars-odyssey/>
+- `orion` · deep · nasa · <https://www.nasa.gov/wp-content/uploads/2022/12/orion-reference-guide.pdf>
+- `space-shuttle-stack` · deep · nasa · <https://www.nasa.gov/reference/space-shuttle-mission-reports/>
 

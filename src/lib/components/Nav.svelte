@@ -22,6 +22,7 @@
     { path: '/mars', label: m.nav_mars },
     { path: '/iss', label: m.nav_iss },
     { path: '/tiangong', label: m.nav_tiangong },
+    { path: '/fleet', label: m.nav_fleet },
     { path: '/science', label: m.nav_science },
   ] as const;
 

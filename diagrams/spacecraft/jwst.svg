@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="James Webb Space Telescope anatomy: 18-segment hexagonal primary mirror, secondary mirror tripod, multi-layer sunshield, instrument module, spacecraft bus">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .gold { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.85); stroke-width: 0.8; }
+    .silver { fill: rgba(200,200,210,0.18); stroke: rgba(220,220,230,0.85); stroke-width: 0.8; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">JAMES WEBB · JWST</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">21.2 m × 14.6 m sunshield · 6,500 kg · L2 halo orbit</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="270" class="dashed" />
+
+  <!-- 18-segment hexagonal primary mirror (top of telescope) -->
+  <!-- Centered around (200, 100), each hex ~14 wide -->
+  <polygon points="200,72 214,80 214,96 200,104 186,96 186,80" class="gold" />
+  <polygon points="172,80 186,88 186,104 172,112 158,104 158,88" class="gold" />
+  <polygon points="228,80 242,88 242,104 228,112 214,104 214,88" class="gold" />
+  <polygon points="172,112 186,120 186,136 172,144 158,136 158,120" class="gold" />
+  <polygon points="200,104 214,112 214,128 200,136 186,128 186,112" class="gold" />
+  <polygon points="228,112 242,120 242,136 228,144 214,136 214,120" class="gold" />
+  <polygon points="144,96 158,104 158,120 144,128 130,120 130,104" class="gold" />
+  <polygon points="256,96 270,104 270,120 256,128 242,120 242,104" class="gold" />
+  <polygon points="144,128 158,136 158,152 144,160 130,152 130,136" class="gold" />
+  <polygon points="256,128 270,136 270,152 256,160 242,152 242,136" class="gold" />
+  <polygon points="172,144 186,152 186,168 172,176 158,168 158,152" class="gold" />
+  <polygon points="228,144 242,152 242,168 228,176 214,168 214,152" class="gold" />
+  <polygon points="200,136 214,144 214,160 200,168 186,160 186,144" class="gold" />
+  <polygon points="116,128 130,136 130,152 116,160 102,152 102,136" class="gold" />
+  <polygon points="270,128 284,136 284,152 270,160 256,152 256,136" class="gold" />
+  <polygon points="116,160 130,168 130,184 116,192 102,184 102,168" class="gold" />
+  <polygon points="270,160 284,168 284,184 270,176 256,184 256,168" class="gold" />
+  <polygon points="200,168 214,176 214,192 200,200 186,192 186,176" class="gold" />
+
+  <!-- Secondary mirror tripod boom + mirror -->
+  <line x1="186" y1="80" x2="200" y2="58" class="stroke" />
+  <line x1="214" y1="80" x2="200" y2="58" class="stroke" />
+  <line x1="200" y1="104" x2="200" y2="58" class="dashed" />
+  <ellipse cx="200" cy="55" rx="6" ry="3" class="stroke-fill" />
+
+  <!-- Sunshield (5 layers, kite-diamond shape, below mirrors) -->
+  <path d="M 80 220 L 320 220 L 280 250 L 120 250 Z" class="silver" />
+  <line x1="86" y1="225" x2="314" y2="225" class="dashed" />
+  <line x1="92" y1="231" x2="308" y2="231" class="dashed" />
+  <line x1="98" y1="237" x2="302" y2="237" class="dashed" />
+  <line x1="104" y1="243" x2="296" y2="243" class="dashed" />
+
+  <!-- Instrument module (between mirror and sunshield) -->
+  <rect x="184" y="200" width="32" height="20" class="stroke-fill" />
+
+  <!-- Spacecraft bus (below sunshield) -->
+  <rect x="180" y="250" width="40" height="30" class="stroke-fill" />
+
+  <!-- Solar array (single, deployed below bus) -->
+  <rect x="160" y="280" width="80" height="14" class="pv" />
+
+  <!-- Antenna -->
+  <line x1="220" y1="265" x2="240" y2="270" class="stroke" />
+  <circle cx="244" cy="271" r="4" class="stroke-fill" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="200" y1="55" x2="80" y2="55" class="accent" />
+  <text x="6" y="52" class="label-accent">SECONDARY</text>
+  <text x="6" y="63" class="label-mute">0.74 m mirror</text>
+
+  <line x1="102" y1="120" x2="80" y2="100" class="accent" />
+  <text x="6" y="98" class="label-accent">PRIMARY</text>
+  <text x="6" y="109" class="label-mute">18 hex segments</text>
+
+  <line x1="100" y1="180" x2="80" y2="180" class="accent" />
+  <text x="6" y="177" class="label-accent">6.5 m</text>
+  <text x="6" y="188" class="label-mute">Be / Au coating</text>
+
+  <line x1="80" y1="220" x2="80" y2="240" class="accent" />
+  <text x="6" y="240" class="label-accent">SUNSHIELD</text>
+  <text x="6" y="251" class="label-mute">5 Kapton layers</text>
+
+  <line x1="160" y1="287" x2="80" y2="287" class="accent" />
+  <text x="6" y="285" class="label-accent">SOLAR</text>
+  <text x="6" y="296" class="label-mute">always sun-facing</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="216" y1="210" x2="305" y2="200" class="accent" />
+  <text x="305" y="198" class="label-accent">ISIM</text>
+  <text x="305" y="209" class="label-mute">NIRCam · NIRSpec · MIRI · FGS</text>
+
+  <line x1="320" y1="232" x2="335" y2="232" class="accent" />
+  <text x="335" y="230" text-anchor="end" class="label-accent">−233 °C</text>
+  <text x="335" y="241" text-anchor="end" class="label-mute">cold side</text>
+
+  <line x1="220" y1="265" x2="305" y2="260" class="accent" />
+  <text x="305" y="258" class="label-accent">SPACECRAFT</text>
+  <text x="305" y="269" class="label-mute">attitude · comms</text>
+
+  <line x1="248" y1="271" x2="335" y2="280" class="accent" />
+  <text x="335" y="287" text-anchor="end" class="label-accent">HGA</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="307" text-anchor="middle" class="subtitle">NASA · ESA · CSA · launched 2021-12-25 on Ariane 5 · L2 station 1.5M km from Earth</text>
+  <text x="200" y="318" text-anchor="middle" class="subtitle">Largest infrared space telescope · sees back to first galaxies after Big Bang</text>
+</svg>

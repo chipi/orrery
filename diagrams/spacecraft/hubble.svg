@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Hubble Space Telescope anatomy: optical telescope assembly cylinder with aperture door, instrument bay aft, twin solar arrays, high-gain antennas">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .pv { fill: rgba(60,110,200,0.45); stroke: rgba(120,170,240,0.7); stroke-width: 0.8; }
+    .pv-grid { stroke: rgba(120,170,240,0.55); stroke-width: 0.5; }
+    .silver { fill: rgba(200,200,210,0.18); stroke: rgba(220,220,230,0.85); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">HUBBLE SPACE TELESCOPE</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">13.2 m · 11,110 kg · 540 km LEO orbit</text>
+
+  <!-- Centerline (horizontal — Hubble drawn side-on) -->
+  <line x1="60" y1="160" x2="340" y2="160" class="dashed" />
+
+  <!-- OTA tube (Optical Telescope Assembly) — main cylindrical body -->
+  <rect x="80" y="140" width="180" height="40" class="silver" />
+
+  <!-- Aperture door (left, open) -->
+  <line x1="80" y1="140" x2="60" y2="125" class="stroke" />
+  <line x1="80" y1="180" x2="60" y2="195" class="stroke" />
+  <line x1="60" y1="125" x2="60" y2="195" class="stroke" />
+
+  <!-- Primary mirror inside (dashed showing position) -->
+  <ellipse cx="240" cy="160" rx="3" ry="14" class="dashed" />
+  <text x="244" y="163" class="label-mute" style="font-size:8px;">2.4 m PRI</text>
+
+  <!-- Secondary mirror -->
+  <ellipse cx="100" cy="160" rx="2" ry="6" class="stroke-fill" />
+
+  <!-- Light path arrows -->
+  <line x1="65" y1="160" x2="95" y2="160" class="accent" />
+  <line x1="105" y1="160" x2="235" y2="160" class="accent" />
+
+  <!-- Instrument section (aft, right) -->
+  <rect x="260" y="140" width="40" height="40" class="stroke-fill" />
+  <line x1="260" y1="150" x2="300" y2="150" class="dashed" />
+  <line x1="260" y1="160" x2="300" y2="160" class="dashed" />
+  <line x1="260" y1="170" x2="300" y2="170" class="dashed" />
+
+  <!-- Aft skirt -->
+  <rect x="300" y="150" width="6" height="20" class="stroke-fill" />
+
+  <!-- Solar arrays (twin) -->
+  <rect x="100" y="80" width="120" height="40" class="pv" />
+  <rect x="100" y="200" width="120" height="40" class="pv" />
+  <line x1="120" y1="80" x2="120" y2="120" class="pv-grid" />
+  <line x1="140" y1="80" x2="140" y2="120" class="pv-grid" />
+  <line x1="160" y1="80" x2="160" y2="120" class="pv-grid" />
+  <line x1="180" y1="80" x2="180" y2="120" class="pv-grid" />
+  <line x1="200" y1="80" x2="200" y2="120" class="pv-grid" />
+  <line x1="120" y1="200" x2="120" y2="240" class="pv-grid" />
+  <line x1="140" y1="200" x2="140" y2="240" class="pv-grid" />
+  <line x1="160" y1="200" x2="160" y2="240" class="pv-grid" />
+  <line x1="180" y1="200" x2="180" y2="240" class="pv-grid" />
+  <line x1="200" y1="200" x2="200" y2="240" class="pv-grid" />
+
+  <!-- Array masts -->
+  <line x1="160" y1="120" x2="160" y2="140" class="stroke" />
+  <line x1="160" y1="180" x2="160" y2="200" class="stroke" />
+
+  <!-- High-gain antennas (twin, deployed) -->
+  <line x1="180" y1="140" x2="180" y2="120" class="stroke" />
+  <circle cx="180" cy="115" r="6" class="stroke-fill" />
+  <line x1="180" y1="180" x2="180" y2="200" class="stroke" />
+  <circle cx="180" cy="205" r="6" class="stroke-fill" />
+
+  <!-- TOP CALLOUTS -->
+  <line x1="60" y1="160" x2="40" y2="80" class="accent" />
+  <text x="6" y="78" class="label-accent">APERTURE</text>
+  <text x="6" y="89" class="label-mute">door open</text>
+
+  <line x1="100" y1="160" x2="80" y2="40" class="accent" />
+  <text x="6" y="38" class="label-accent">SECONDARY</text>
+  <text x="6" y="49" class="label-mute">0.3 m mirror</text>
+
+  <line x1="160" y1="80" x2="160" y2="50" class="accent" />
+  <text x="160" y="44" text-anchor="middle" class="label-accent">SOLAR ARRAY</text>
+  <text x="160" y="55" text-anchor="middle" class="label-mute">2.45 kW · GaAs SR-1</text>
+
+  <line x1="180" y1="115" x2="220" y2="60" class="accent" />
+  <text x="225" y="57" class="label-accent">HIGH GAIN</text>
+  <text x="225" y="68" class="label-mute">TDRSS comm</text>
+
+  <line x1="240" y1="160" x2="280" y2="80" class="accent" />
+  <text x="285" y="78" class="label-accent">PRIMARY</text>
+  <text x="285" y="89" class="label-mute">2.4 m glass</text>
+
+  <line x1="280" y1="160" x2="320" y2="100" class="accent" />
+  <text x="325" y="98" class="label-accent">INSTRUMENTS</text>
+  <text x="325" y="109" class="label-mute">WFC3 · COS · STIS · ACS</text>
+
+  <line x1="306" y1="160" x2="335" y2="200" class="accent" />
+  <text x="335" y="208" text-anchor="end" class="label-accent">FGS</text>
+  <text x="335" y="219" text-anchor="end" class="label-mute">fine guidance</text>
+
+  <line x1="160" y1="240" x2="160" y2="270" class="accent" />
+  <text x="160" y="278" text-anchor="middle" class="label-accent">5 SERVICING MISSIONS</text>
+  <text x="160" y="289" text-anchor="middle" class="label-mute">SM-1 (1993) → SM-4 (2009)</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="306" text-anchor="middle" class="subtitle">NASA / ESA · launched STS-31 · 1990 · joint Lockheed + Perkin-Elmer build</text>
+  <text x="200" y="316" text-anchor="middle" class="subtitle">First space telescope serviced by humans · in operation 35+ years</text>
+</svg>

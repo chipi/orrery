@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Apollo Lunar Module anatomy: ascent stage octagonal cabin, descent stage octagonal platform with four landing legs, RCS quads, ascent + descent engines">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    .gold { fill: rgba(255,200,80,0.18); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">APOLLO LUNAR MODULE</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">7.04 m · 16,400 kg · 2 crew · only crewed lunar lander</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="270" class="dashed" />
+
+  <!-- Ascent stage: top cylinder + cabin -->
+  <!-- Forward dock target -->
+  <circle cx="200" cy="60" r="3" class="stroke-fill" />
+  <line x1="200" y1="63" x2="200" y2="70" class="stroke" />
+
+  <!-- Cabin (irregular octagon) -->
+  <path d="M 174 70 L 226 70 L 232 80 L 232 110 L 226 120 L 220 124 L 180 124 L 174 120 L 168 110 L 168 80 Z" class="stroke-fill" />
+
+  <!-- Triangular front windows -->
+  <path d="M 184 86 L 184 102 L 196 102 Z" class="stroke" />
+  <path d="M 216 86 L 216 102 L 204 102 Z" class="stroke" />
+
+  <!-- Forward hatch -->
+  <rect x="194" y="115" width="12" height="9" class="stroke" />
+
+  <!-- RCS quads (4 quads, top corners) -->
+  <rect x="170" y="74" width="6" height="3" class="nozzle" />
+  <rect x="224" y="74" width="6" height="3" class="nozzle" />
+  <rect x="170" y="118" width="6" height="3" class="nozzle" />
+  <rect x="224" y="118" width="6" height="3" class="nozzle" />
+
+  <!-- Ascent engine (bottom of ascent stage) -->
+  <path d="M 195 124 L 195 138 L 205 138 L 205 124 Z" class="nozzle" />
+
+  <!-- Connection / interstage -->
+  <line x1="172" y1="138" x2="228" y2="138" class="stroke" />
+
+  <!-- Descent stage (octagonal, gold MLI wrapped) -->
+  <path d="M 154 138 L 246 138 L 252 148 L 252 188 L 246 198 L 154 198 L 148 188 L 148 148 Z" class="gold" />
+
+  <!-- Descent engine bell -->
+  <path d="M 188 198 L 184 222 L 216 222 L 212 198 Z" class="nozzle" />
+
+  <!-- Landing legs (4 visible: 2 front, 2 side) -->
+  <line x1="148" y1="170" x2="100" y2="240" class="stroke" />
+  <line x1="252" y1="170" x2="300" y2="240" class="stroke" />
+  <line x1="180" y1="190" x2="160" y2="260" class="stroke" />
+  <line x1="220" y1="190" x2="240" y2="260" class="stroke" />
+
+  <!-- Footpads -->
+  <ellipse cx="100" cy="244" rx="9" ry="3" class="stroke-fill" />
+  <ellipse cx="300" cy="244" rx="9" ry="3" class="stroke-fill" />
+  <ellipse cx="160" cy="262" rx="7" ry="2.5" class="stroke-fill" />
+  <ellipse cx="240" cy="262" rx="7" ry="2.5" class="stroke-fill" />
+
+  <!-- Ladder on front leg -->
+  <line x1="180" y1="190" x2="158" y2="262" class="dashed" />
+  <line x1="173" y1="220" x2="166" y2="220" class="stroke" />
+  <line x1="170" y1="232" x2="163" y2="232" class="stroke" />
+  <line x1="167" y1="244" x2="160" y2="244" class="stroke" />
+
+  <!-- Surface line -->
+  <line x1="60" y1="252" x2="340" y2="252" class="dashed" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="174" y1="80" x2="80" y2="80" class="accent" />
+  <text x="6" y="77" class="label-accent">ASCENT</text>
+  <text x="6" y="88" class="label-mute">crew + ascent eng</text>
+
+  <line x1="184" y1="94" x2="80" y2="120" class="accent" />
+  <text x="6" y="118" class="label-accent">FORWARD</text>
+  <text x="6" y="129" class="label-mute">2 triangle windows</text>
+
+  <line x1="148" y1="168" x2="80" y2="168" class="accent" />
+  <text x="6" y="165" class="label-accent">DESCENT</text>
+  <text x="6" y="176" class="label-mute">gold MLI · 4 legs</text>
+
+  <line x1="100" y1="244" x2="80" y2="220" class="accent" />
+  <text x="6" y="218" class="label-accent">FOOTPAD</text>
+  <text x="6" y="229" class="label-mute">contact probes</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="226" y1="80" x2="305" y2="80" class="accent" />
+  <text x="305" y="77" class="label-accent">RCS QUADS</text>
+  <text x="305" y="88" class="label-mute">attitude control</text>
+
+  <line x1="206" y1="118" x2="305" y2="118" class="accent" />
+  <text x="305" y="115" class="label-accent">CREW HATCH</text>
+  <text x="305" y="126" class="label-mute">forward EVA exit</text>
+
+  <line x1="205" y1="138" x2="305" y2="148" class="accent" />
+  <text x="305" y="148" class="label-accent">ASCENT ENG</text>
+  <text x="305" y="159" class="label-mute">15.6 kN · hypergolic</text>
+
+  <line x1="216" y1="220" x2="305" y2="220" class="accent" />
+  <text x="305" y="217" class="label-accent">DESCENT ENG</text>
+  <text x="305" y="228" class="label-mute">throttleable 4.5 t</text>
+
+  <line x1="166" y1="232" x2="80" y2="280" class="accent" />
+  <text x="80" y="288" class="label-accent">LADDER</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="304" text-anchor="middle" class="subtitle">Grumman · 1968–1972 · 9 flights · Eagle (11) · Antares (14) · Falcon (15) · Orion (16) · Challenger (17)</text>
+  <text x="200" y="316" text-anchor="middle" class="subtitle">Descent stage stays on the Moon · ascent stage rejoined CSM in lunar orbit</text>
+</svg>

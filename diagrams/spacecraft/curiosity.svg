@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Curiosity Mars rover anatomy: rocker-bogie chassis with six wheels, MMRTG power, robotic arm with drill, ChemCam mast head, RAD weather mast">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .silver { fill: rgba(200,200,210,0.18); stroke: rgba(220,220,230,0.85); stroke-width: 0.8; }
+    .rust { fill: rgba(193,68,14,0.10); stroke: rgba(193,68,14,0.6); stroke-width: 0.6; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">CURIOSITY · MSL</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">3.0 m × 2.7 m × 2.2 m · 899 kg · Mars Gale Crater since 2012</text>
+
+  <!-- Mars surface -->
+  <line x1="50" y1="240" x2="350" y2="240" class="dashed" />
+  <path d="M 60 240 Q 80 234 100 240 T 140 240 T 200 240 T 260 240 T 340 240" class="rust" />
+
+  <!-- Chassis (warm electronics box) -->
+  <rect x="120" y="170" width="160" height="50" class="silver" />
+
+  <!-- Top deck instruments (DAN, REMS booms) -->
+  <line x1="135" y1="170" x2="135" y2="160" class="stroke" />
+  <line x1="265" y1="170" x2="265" y2="160" class="stroke" />
+
+  <!-- Mast (vertical, ChemCam + Mastcam at top) -->
+  <line x1="155" y1="170" x2="155" y2="100" class="stroke" />
+  <rect x="148" y="86" width="14" height="14" class="stroke-fill" />
+  <circle cx="152" cy="93" r="2" class="stroke" />
+  <circle cx="158" cy="93" r="2" class="stroke" />
+
+  <!-- ChemCam (on top of mast head) -->
+  <line x1="155" y1="86" x2="155" y2="78" class="accent" />
+  <circle cx="155" cy="76" r="3" class="stroke-fill" />
+
+  <!-- High-gain antenna (square dish, top deck right) -->
+  <rect x="240" y="146" width="20" height="20" class="stroke-fill" />
+  <line x1="250" y1="146" x2="250" y2="170" class="stroke" />
+
+  <!-- MMRTG (radioisotope thermoelectric generator, aft) -->
+  <rect x="284" y="180" width="22" height="30" class="heat" />
+  <line x1="285" y1="186" x2="305" y2="186" class="stroke" />
+  <line x1="285" y1="194" x2="305" y2="194" class="stroke" />
+  <line x1="285" y1="202" x2="305" y2="202" class="stroke" />
+
+  <!-- Robotic arm (front, articulated) -->
+  <line x1="120" y1="190" x2="100" y2="210" class="stroke" />
+  <line x1="100" y1="210" x2="80" y2="220" class="stroke" />
+  <circle cx="100" cy="210" r="3" class="stroke-fill" />
+  <circle cx="80" cy="220" r="3" class="stroke-fill" />
+  <!-- Turret end (drill + APXS + MAHLI + DRT) -->
+  <rect x="68" y="216" width="14" height="14" class="stroke-fill" />
+
+  <!-- Wheels (6, rocker-bogie suspension) -->
+  <!-- Left side (3 visible) -->
+  <circle cx="135" cy="240" r="14" class="stroke-fill" />
+  <circle cx="135" cy="240" r="8" class="dashed" />
+  <circle cx="200" cy="244" r="14" class="stroke-fill" />
+  <circle cx="200" cy="244" r="8" class="dashed" />
+  <circle cx="265" cy="240" r="14" class="stroke-fill" />
+  <circle cx="265" cy="240" r="8" class="dashed" />
+
+  <!-- Suspension links (rocker-bogie) -->
+  <line x1="135" y1="226" x2="200" y2="220" class="stroke" />
+  <line x1="200" y1="220" x2="265" y2="226" class="stroke" />
+  <line x1="200" y1="220" x2="200" y2="220" class="stroke" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="155" y1="76" x2="80" y2="60" class="accent" />
+  <text x="6" y="58" class="label-accent">CHEMCAM</text>
+  <text x="6" y="69" class="label-mute">laser spectroscopy</text>
+
+  <line x1="148" y1="92" x2="80" y2="100" class="accent" />
+  <text x="6" y="98" class="label-accent">MASTCAM</text>
+  <text x="6" y="109" class="label-mute">stereo color</text>
+
+  <line x1="120" y1="195" x2="50" y2="195" class="accent" />
+  <text x="6" y="192" class="label-accent">ROBOT ARM</text>
+  <text x="6" y="203" class="label-mute">2.1 m · 5 DOF</text>
+
+  <line x1="68" y1="223" x2="50" y2="240" class="accent" />
+  <text x="6" y="240" class="label-accent">TURRET</text>
+  <text x="6" y="251" class="label-mute">drill · APXS · MAHLI</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="260" y1="156" x2="305" y2="156" class="accent" />
+  <text x="305" y="153" class="label-accent">HGA</text>
+  <text x="305" y="164" class="label-mute">direct-Earth comm</text>
+
+  <line x1="280" y1="170" x2="305" y2="120" class="accent" />
+  <text x="305" y="117" class="label-accent">CHASSIS</text>
+  <text x="305" y="128" class="label-mute">warm electronics box</text>
+
+  <line x1="306" y1="195" x2="335" y2="195" class="accent" />
+  <text x="335" y="193" text-anchor="end" class="label-accent">MMRTG</text>
+  <text x="335" y="204" text-anchor="end" class="label-mute">110 W · ²³⁸Pu</text>
+
+  <line x1="265" y1="254" x2="335" y2="270" class="accent" />
+  <text x="335" y="278" text-anchor="end" class="label-accent">6 WHEELS</text>
+  <text x="335" y="289" text-anchor="end" class="label-mute">rocker-bogie</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="304" text-anchor="middle" class="subtitle">NASA JPL · launched 2011-11-26 on Atlas V · landed via sky-crane 2012-08-06</text>
+  <text x="200" y="316" text-anchor="middle" class="subtitle">Discovered organic molecules + ancient stream-bed environments</text>
+</svg>

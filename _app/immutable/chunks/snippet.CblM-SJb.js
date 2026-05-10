@@ -1,1 +1,0 @@
-import{d as o,E as f,j as i,m as p,h as c,k as d,o as h}from"./runtime.TkLF3BdC.js";function _(e,n,...t){var s=e,r=h,a;o(()=>{r!==(r=n())&&(a&&(p(a),a=null),a=i(()=>r(s,...t)))},f),c&&(s=d)}export{_ as s};

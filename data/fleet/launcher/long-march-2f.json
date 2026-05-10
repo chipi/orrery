@@ -1,0 +1,21 @@
+{
+  "id": "long-march-2f",
+  "name": "Long March 2F",
+  "category": "launcher",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CALT",
+  "first_flight": "1999",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Crew-rated for all Shenzhou flights",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Long March 2F — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_2F",
+      "t": "intro"
+    }
+  ]
+}

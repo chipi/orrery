@@ -1,0 +1,21 @@
+{
+  "id": "n1",
+  "name": "N1",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1",
+  "first_flight": "1969",
+  "status": "FAILED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Soviet Moon rocket; four launches all failed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "N1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/N1_(rocket)",
+      "t": "intro"
+    }
+  ]
+}

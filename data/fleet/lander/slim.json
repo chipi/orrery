@@ -1,0 +1,30 @@
+{
+  "id": "slim",
+  "name": "SLIM",
+  "category": "lander",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Electric",
+  "first_flight": "2024-01-19",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "Pinpoint lunar landing; toppled but operational",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "SLIM — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "slim"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "slim"
+    }
+  ]
+}

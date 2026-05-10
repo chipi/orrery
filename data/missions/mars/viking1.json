@@ -33,6 +33,12 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "viking-1",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur D-1T upper stage",
@@ -47,7 +53,7 @@
     "arrival": {
       "v_infinity_km_s": 2.7,
       "periapsis_km": 1500,
-      "inclination_deg": 38.0,
+      "inclination_deg": 38,
       "orbit_insertion_dv_km_s": 1.62,
       "source": "Viking 1 Mission Operations Report; orbiter MOI on 1976-06-19"
     },

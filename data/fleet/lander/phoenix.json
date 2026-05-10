@@ -1,0 +1,27 @@
+{
+  "id": "phoenix",
+  "name": "Phoenix",
+  "category": "lander",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2008-05-25",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Confirmed water ice in Martian soil",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Phoenix — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "phoenix"
+    }
+  ]
+}

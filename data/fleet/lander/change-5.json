@@ -1,0 +1,34 @@
+{
+  "id": "change-5",
+  "name": "Chang'e 5",
+  "category": "lander",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2020-12-01",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First lunar sample return since 1976",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Chang'e 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_5",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "change5"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "change5"
+    },
+    {
+      "type": "moon",
+      "site_id": "change6"
+    }
+  ]
+}

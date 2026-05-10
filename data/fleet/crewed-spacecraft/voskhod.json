@@ -1,0 +1,21 @@
+{
+  "id": "voskhod",
+  "name": "Voskhod",
+  "category": "crewed-spacecraft",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1",
+  "first_flight": "1964",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "First multi-crew flight; first spacewalk",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Voskhod — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Voskhod_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

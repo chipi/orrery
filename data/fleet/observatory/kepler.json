@@ -1,0 +1,21 @@
+{
+  "id": "kepler",
+  "name": "Kepler",
+  "category": "observatory",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Ball Aerospace",
+  "first_flight": "2009-03-07",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Discovered 2,600+ exoplanets",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Kepler — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Kepler_space_telescope",
+      "t": "intro"
+    }
+  ]
+}

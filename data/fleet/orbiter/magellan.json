@@ -1,0 +1,21 @@
+{
+  "id": "magellan",
+  "name": "Magellan",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Martin Marietta",
+  "first_flight": "1989-05-04",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Radar-mapped 98% of Venus's surface",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Magellan — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

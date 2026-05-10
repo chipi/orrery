@@ -1,0 +1,21 @@
+{
+  "id": "tess",
+  "name": "TESS",
+  "category": "observatory",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Orbital ATK",
+  "first_flight": "2018-04-18",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "All-sky exoplanet transit survey",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "TESS — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Transiting_Exoplanet_Survey_Satellite",
+      "t": "intro"
+    }
+  ]
+}

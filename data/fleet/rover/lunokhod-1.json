@@ -1,0 +1,30 @@
+{
+  "id": "lunokhod-1",
+  "name": "Lunokhod 1",
+  "category": "rover",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1970-11-17",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "First wheeled vehicle to roam another world",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Lunokhod 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunokhod_1",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "luna17"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "luna17"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cargo-dragon-v1",
+  "name": "Cargo Dragon v1",
+  "category": "cargo-spacecraft",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2010-12-08",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First commercial spacecraft to ISS",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Cargo Dragon v1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon",
+      "t": "intro"
+    }
+  ]
+}

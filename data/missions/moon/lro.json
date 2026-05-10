@@ -33,6 +33,12 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur upper stage (Atlas V 401)",
@@ -46,12 +52,12 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 30,
-      "inclination_deg": 90.0,
+      "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.84,
       "source": "NASA LRO LOI Report (2009-06); low-altitude polar mapping orbit"
     },
     "totals": {
-      "total_dv_km_s": 4.0,
+      "total_dv_km_s": 4,
       "tli_or_tmi_dv_km_s": 3.05,
       "source": "NASA LRO Press Kit (2009-06)"
     },

@@ -16,15 +16,33 @@
   "data_quality": "partial",
   "credit": "© JAXA. Launch NET 2026-09 (delayed from 2024 due to H3 rocket development). Will sample Phobos surface (~10 g) and return to Earth ~2031. First non-Earth-orbit sample return for Japan after Hayabusa series.",
   "links": [
-    { "l": "Martian Moons eXploration — Wikipedia", "u": "https://en.wikipedia.org/wiki/Martian_Moons_Exploration", "t": "intro" },
-    { "l": "MMX (JAXA)", "u": "https://www.mmx.jaxa.jp/en/", "t": "intro" },
-    { "l": "Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)", "u": "https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758", "t": "deep" }
+    {
+      "l": "Martian Moons eXploration — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Martian_Moons_Exploration",
+      "t": "intro"
+    },
+    {
+      "l": "MMX (JAXA)",
+      "u": "https://www.mmx.jaxa.jp/en/",
+      "t": "intro"
+    },
+    {
+      "l": "Kawakatsu et al. — MMX trajectory design (Acta Astronautica 2019)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0094576518316758",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "h3",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "H3-24L second stage",
-      "c3_km2_s2": 12.0,
+      "c3_km2_s2": 12,
       "mass_at_tli_kg": 4000,
       "source": "JAXA MMX project documentation (target values; subject to launch-window refinement)"
     },
@@ -35,24 +53,48 @@
     "arrival": {
       "v_infinity_km_s": 2.6,
       "periapsis_km": 6000,
-      "inclination_deg": 1.0,
+      "inclination_deg": 1,
       "orbit_insertion_dv_km_s": 0.95,
       "source": "Kawakatsu et al. (2019); MMX targets Phobos quasi-satellite orbit before descent"
     },
     "totals": {
-      "total_dv_km_s": 5.0,
+      "total_dv_km_s": 5,
       "tli_or_tmi_dv_km_s": 3.7,
       "source": "JAXA MMX project (planned, includes Phobos sample-grab + Earth return)"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 30, "type": "tcm" },
-      { "met_days": 150, "type": "tcm" },
-      { "met_days": 250, "type": "tcm" },
-      { "met_days": 320, "type": "tcm" },
-      { "met_days": 334, "type": "arrival" },
-      { "met_days": 334.01, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 150,
+        "type": "tcm"
+      },
+      {
+        "met_days": 250,
+        "type": "tcm"
+      },
+      {
+        "met_days": 320,
+        "type": "tcm"
+      },
+      {
+        "met_days": 334,
+        "type": "arrival"
+      },
+      {
+        "met_days": 334.01,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

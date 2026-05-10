@@ -1,0 +1,27 @@
+{
+  "id": "chandra",
+  "name": "Chandra X-ray Observatory",
+  "category": "observatory",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "TRW / Northrop Grumman",
+  "first_flight": "1999-07-23",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Sharpest X-ray imagery in space",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Chandra X-ray Observatory — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "chandra"
+    }
+  ]
+}

@@ -33,6 +33,16 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "long-march-5",
+      "role": "launcher"
+    },
+    {
+      "id": "change-5",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Long March 5 YZ-1 upper stage",
@@ -46,12 +56,12 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 200,
-      "inclination_deg": 88.0,
+      "inclination_deg": 88,
       "orbit_insertion_dv_km_s": 0.8,
       "source": "CNSA Chang'e 5 LOI Report (2020-11)"
     },
     "totals": {
-      "total_dv_km_s": 5.0,
+      "total_dv_km_s": 5,
       "tli_or_tmi_dv_km_s": 3.15,
       "source": "CNSA Chang'e 5 Mission Report (2021); sample-return round trip"
     },

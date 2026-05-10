@@ -28,6 +28,24 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lrv-apollo",
+      "role": "payload"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Saturn V S-IVB (third stage)",

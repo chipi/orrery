@@ -1,0 +1,31 @@
+{
+  "id": "change-2",
+  "name": "Chang'e 2",
+  "category": "orbiter",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2010-10-01",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Second Chinese lunar orbiter; later asteroid flyby",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Chang'e 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_2",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "change2"
+    },
+    {
+      "type": "earth-object",
+      "site_id": "change2"
+    }
+  ]
+}

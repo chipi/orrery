@@ -33,6 +33,16 @@
     }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "sls-block-1",
+      "role": "launcher"
+    },
+    {
+      "id": "orion",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "SLS ICPS (Interim Cryogenic Propulsion Stage)",
@@ -46,7 +56,7 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 3000,
-      "inclination_deg": 90.0,
+      "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.45,
       "source": "NASA Artemis 3 mission plan; NRHO entry burn ~0.45 km/s vs Apollo's 0.89 km/s direct LLO insertion (NRHO is energetically favourable)"
     },

@@ -1,0 +1,24 @@
+{
+  "id": "lvm3",
+  "name": "LVM3 (GSLV Mk III)",
+  "category": "launcher",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "ISRO",
+  "first_flight": "2014",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Crew-rated launcher for Gaganyaan",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "LVM3 (GSLV Mk III) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/LVM3",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "chandrayaan3"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "energia",
+  "name": "Energia",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Energia",
+  "first_flight": "1987",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Soviet super-heavy; flew Buran once",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Energia — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Energia_(rocket)",
+      "t": "intro"
+    }
+  ]
+}

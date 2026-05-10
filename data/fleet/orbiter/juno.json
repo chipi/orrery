@@ -1,0 +1,21 @@
+{
+  "id": "juno",
+  "name": "Juno",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2011-08-05",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Polar Jupiter orbiter; magnetosphere studies",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Juno — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Juno_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

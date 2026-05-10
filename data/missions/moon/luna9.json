@@ -16,12 +16,34 @@
   "data_quality": "good",
   "credit": "© Soviet Academy of Sciences (historical). First soft-landing on the Moon and first photographs from the lunar surface.",
   "links": [
-    { "l": "Luna 9 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Luna_9", "t": "intro" },
-    { "l": "Луна-9 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-9", "t": "core" },
-    { "l": "Luna 9 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A", "t": "core" },
-    { "l": "Harvey — Russian Planetary Exploration (Springer 2007, ch. 2)", "u": "https://link.springer.com/book/10.1007/978-0-387-46343-8", "t": "deep" }
+    {
+      "l": "Luna 9 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Luna_9",
+      "t": "intro"
+    },
+    {
+      "l": "Луна-9 — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-9",
+      "t": "core"
+    },
+    {
+      "l": "Luna 9 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A",
+      "t": "core"
+    },
+    {
+      "l": "Harvey — Russian Planetary Exploration (Springer 2007, ch. 2)",
+      "u": "https://link.springer.com/book/10.1007/978-0-387-46343-8",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "luna-9",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Molniya-M Block-L upper stage",
@@ -37,16 +59,31 @@
       "source": "NASA NSSDCA Luna 9 archive; direct-descent trajectory (no lunar orbit); retrorocket fired ~75 km altitude"
     },
     "totals": {
-      "total_dv_km_s": 3.0,
+      "total_dv_km_s": 3,
       "tli_or_tmi_dv_km_s": 3.05,
       "source": "Harvey 2007; reconstructed Molniya-M lunar capability + descent retro burn"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.01, "type": "tli_or_tmi" },
-      { "met_days": 1.5, "type": "tcm" },
-      { "met_days": 3, "type": "arrival" },
-      { "met_days": 3.005, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.01,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3,
+        "type": "arrival"
+      },
+      {
+        "met_days": 3.005,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

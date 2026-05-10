@@ -1,0 +1,21 @@
+{
+  "id": "dart",
+  "name": "DART",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Johns Hopkins APL",
+  "first_flight": "2021-11-24",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First planetary defense impactor (Dimorphos)",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "DART — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test",
+      "t": "intro"
+    }
+  ]
+}

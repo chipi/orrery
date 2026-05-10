@@ -1,0 +1,21 @@
+{
+  "id": "gemini",
+  "name": "Gemini",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "McDonnell Aircraft",
+  "first_flight": "1965",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Two-person crew; rendezvous and EVA practice",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Gemini — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Project_Gemini",
+      "t": "intro"
+    }
+  ]
+}

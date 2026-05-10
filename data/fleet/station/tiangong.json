@@ -1,0 +1,28 @@
+{
+  "id": "tiangong",
+  "name": "Tiangong",
+  "category": "station",
+  "agency": "CNSA / CMSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2021-04-29",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "China's modular space station",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Tiangong — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+      "t": "intro"
+    }
+  ],
+  "explorer_route": "/tiangong",
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tiangong"
+    }
+  ]
+}

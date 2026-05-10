@@ -1,0 +1,21 @@
+{
+  "id": "gaganyaan",
+  "name": "Gaganyaan",
+  "category": "crewed-spacecraft",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "HAL / ISRO",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "First crewed Indian spacecraft",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Gaganyaan — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gaganyaan",
+      "t": "intro"
+    }
+  ]
+}

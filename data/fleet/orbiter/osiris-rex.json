@@ -1,0 +1,21 @@
+{
+  "id": "osiris-rex",
+  "name": "OSIRIS-REx",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2016-09-08",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Sample-returned Bennu (2023); now en route to Apophis",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "OSIRIS-REx — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/OSIRIS-REx",
+      "t": "intro"
+    }
+  ]
+}

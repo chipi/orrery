@@ -16,14 +16,28 @@
   "data_quality": "good",
   "credit": "© NASA / JPL — public domain. Mission timeline from NSSDCA archive.",
   "links": [
-    { "l": "Mariner 4 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Mariner_4", "t": "intro" },
-    { "l": "Mariner 4 (NASA NSSDCA)", "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A", "t": "core" }
+    {
+      "l": "Mariner 4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_4",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 4 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1964-077A",
+      "t": "core"
+    }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "mariner-4",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Agena D upper stage",
-      "c3_km2_s2": 13.0,
+      "c3_km2_s2": 13,
       "mass_at_tli_kg": 261,
       "source": "JPL Technical Report 32-740 'Mariner Mars 1964 Project Final Report'"
     },
@@ -32,7 +46,7 @@
       "source": "JPL TR 32-740; only one mid-course correction performed"
     },
     "arrival": {
-      "v_infinity_km_s": 5.0,
+      "v_infinity_km_s": 5,
       "periapsis_km": null,
       "inclination_deg": null,
       "orbit_insertion_dv_km_s": null,
@@ -44,10 +58,22 @@
       "source": "JPL Technical Report 32-740"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.005, "type": "tli_or_tmi" },
-      { "met_days": 8, "type": "tcm" },
-      { "met_days": 228, "type": "flyby" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 8,
+        "type": "tcm"
+      },
+      {
+        "met_days": 228,
+        "type": "flyby"
+      }
     ]
   }
 }

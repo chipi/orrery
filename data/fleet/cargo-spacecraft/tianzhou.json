@@ -1,0 +1,21 @@
+{
+  "id": "tianzhou",
+  "name": "Tianzhou",
+  "category": "cargo-spacecraft",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2017-04-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Chinese cargo spacecraft for Tiangong",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Tianzhou — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)",
+      "t": "intro"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "salyut-6",
+  "name": "Salyut 6",
+  "category": "station",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Energia",
+  "first_flight": "1977-09-29",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "First long-duration multi-port Soviet station",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Salyut 6 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Salyut_6",
+      "t": "intro"
+    }
+  ]
+}

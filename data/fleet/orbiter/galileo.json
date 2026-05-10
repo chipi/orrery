@@ -1,0 +1,24 @@
+{
+  "id": "galileo",
+  "name": "Galileo",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "1989-10-18",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "First Jupiter orbiter; 8 years of measurements",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Galileo — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "galileo"
+  ]
+}

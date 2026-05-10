@@ -1,0 +1,27 @@
+{
+  "id": "opportunity",
+  "name": "Opportunity (MER-B)",
+  "category": "rover",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "2004-01-25",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Twin to Spirit; 14-year Mars operation",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Opportunity (MER-B) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Opportunity_(rover)",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "opportunity"
+    }
+  ]
+}

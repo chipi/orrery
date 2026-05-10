@@ -1,0 +1,21 @@
+{
+  "id": "im-1-odysseus",
+  "name": "IM-1 Odysseus",
+  "category": "lander",
+  "agency": "Intuitive Machines",
+  "country": "USA",
+  "manufacturer": "Intuitive Machines",
+  "first_flight": "2024-02-22",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "First U.S. lunar landing since Apollo; sideways",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "IM-1 Odysseus — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/IM-1",
+      "t": "intro"
+    }
+  ]
+}

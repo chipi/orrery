@@ -1,0 +1,21 @@
+{
+  "id": "soyuz-u",
+  "name": "Soyuz-U",
+  "category": "launcher",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "Progress Rocket Space Centre",
+  "first_flight": "1973",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Most-launched orbital rocket in history",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Soyuz-U — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz-U",
+      "t": "intro"
+    }
+  ]
+}

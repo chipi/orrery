@@ -72,6 +72,19 @@
       "status": { "enum": ["ACTIVE", "RETIRED", "PLANNED"] },
       "crew": { "type": "integer", "minimum": 0 },
       "credit": { "type": "string", "minLength": 1 },
+      "fleet_refs": {
+        "type": "array",
+        "description": "Cross-reference to /fleet entries (PRD-012 v0.2 / RFC-016 v0.2 OQ-16). Used when the orbital object is iconic enough to have its own fleet entry (Hubble, JWST, Chandra, etc.). Validated bidirectionally at build.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "role"],
+          "properties": {
+            "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
+            "role": { "enum": ["launcher", "spacecraft", "payload", "station"] }
+          }
+        }
+      },
       "links": {
         "type": "array",
         "items": {

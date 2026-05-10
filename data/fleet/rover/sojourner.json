@@ -1,0 +1,30 @@
+{
+  "id": "sojourner",
+  "name": "Sojourner",
+  "category": "rover",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "1997-07-04",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "First Mars rover; Pathfinder mission",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Sojourner — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sojourner_(rover)",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "mars-pathfinder"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mars-pathfinder"
+    }
+  ]
+}

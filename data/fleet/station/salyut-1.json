@@ -1,0 +1,21 @@
+{
+  "id": "salyut-1",
+  "name": "Salyut 1",
+  "category": "station",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-1",
+  "first_flight": "1971-04-19",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "World's first space station",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Salyut 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Salyut_1",
+      "t": "intro"
+    }
+  ]
+}

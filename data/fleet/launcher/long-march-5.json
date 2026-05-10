@@ -1,0 +1,26 @@
+{
+  "id": "long-march-5",
+  "name": "Long March 5 / 5B",
+  "category": "launcher",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CALT",
+  "first_flight": "2016",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Heavy-lift backbone of the Chinese space program",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Long March 5 / 5B — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_5",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "tianwen1",
+    "change5",
+    "change6"
+  ]
+}

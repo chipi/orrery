@@ -1,0 +1,21 @@
+{
+  "id": "buran",
+  "name": "Buran",
+  "category": "crewed-spacecraft",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "Molniya NPO",
+  "first_flight": "1988-11-15",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Soviet shuttle; one unmanned flight, never crewed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Buran — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Buran-class_orbiter",
+      "t": "intro"
+    }
+  ]
+}

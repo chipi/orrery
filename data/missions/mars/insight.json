@@ -33,6 +33,16 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    },
+    {
+      "id": "insight",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur upper stage (Atlas V 401)",

@@ -31,6 +31,12 @@
         "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "luna-9",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -41,7 +47,7 @@
     "year": 1970,
     "landing_date": "1970-11-17",
     "lat": 38.28,
-    "lon": -35.0,
+    "lon": -35,
     "crewed": false,
     "status": "FLOWN",
     "surface_status": "completed",
@@ -64,6 +70,12 @@
         "l": "LRO finds Lunokhod (NASA)",
         "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "lunokhod-1",
+        "role": "spacecraft"
       }
     ]
   },
@@ -93,6 +105,12 @@
         "l": "Луна-24 — русская Википедия",
         "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-24",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "luna-16",
+        "role": "spacecraft"
       }
     ]
   },
@@ -124,6 +142,16 @@
         "u": "https://science.nasa.gov/solar-system/moon/lunar-laser-ranging-the-continuing-legacy-of-apollo/",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -149,6 +177,16 @@
         "u": "https://en.wikipedia.org/wiki/Apollo_12",
         "t": "intro"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -173,6 +211,16 @@
         "l": "Apollo 14 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Apollo_14",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
       }
     ]
   },
@@ -204,6 +252,20 @@
         "u": "https://en.wikipedia.org/wiki/Fallen_Astronaut",
         "t": "intro"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
+      },
+      {
+        "id": "lrv-apollo",
+        "role": "payload"
+      }
     ]
   },
   {
@@ -228,6 +290,20 @@
         "l": "Apollo 16 — Wikipedia",
         "u": "https://en.wikipedia.org/wiki/Apollo_16",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
+      },
+      {
+        "id": "lrv-apollo",
+        "role": "payload"
       }
     ]
   },
@@ -258,6 +334,20 @@
         "l": "Cernan, last man on the Moon (NASA)",
         "u": "https://www.nasa.gov/missions/apollo/the-last-man-on-the-moon/",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "apollo-csm-block-ii",
+        "role": "spacecraft"
+      },
+      {
+        "id": "apollo-lm",
+        "role": "spacecraft"
+      },
+      {
+        "id": "lrv-apollo",
+        "role": "payload"
       }
     ]
   },
@@ -291,6 +381,16 @@
         "l": "嫦娥三号 — 中文维基百科",
         "u": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-3",
+        "role": "spacecraft"
+      },
+      {
+        "id": "yutu",
+        "role": "payload"
       }
     ]
   },
@@ -330,6 +430,16 @@
         "u": "https://en.wikipedia.org/wiki/Far_side_of_the_Moon",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-4",
+        "role": "spacecraft"
+      },
+      {
+        "id": "yutu-2",
+        "role": "payload"
+      }
     ]
   },
   {
@@ -364,6 +474,12 @@
         "u": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%BA%94%E5%8F%B7",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-5",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -397,6 +513,12 @@
         "l": "嫦娥六号 — 中文维基百科",
         "u": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E5%85%AD%E5%8F%B7",
         "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-5",
+        "role": "spacecraft"
       }
     ]
   },
@@ -437,6 +559,16 @@
         "u": "https://www.nasa.gov/feature/ames/new-evidence-for-water-ice-on-the-moon",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "vikram-cy3",
+        "role": "spacecraft"
+      },
+      {
+        "id": "pragyan",
+        "role": "payload"
+      }
     ]
   },
   {
@@ -470,6 +602,12 @@
         "u": "https://www.isas.jaxa.jp/home/slim/",
         "t": "core"
       }
+    ],
+    "fleet_refs": [
+      {
+        "id": "slim",
+        "role": "spacecraft"
+      }
     ]
   },
   {
@@ -501,6 +639,12 @@
         "l": "Lunar south pole water ice (Science 2018)",
         "u": "https://www.science.org/doi/10.1126/science.aap8637",
         "t": "deep"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "orion",
+        "role": "spacecraft"
       }
     ]
   },
@@ -566,7 +710,7 @@
     "year": 1998,
     "altitude_km": 100,
     "inclination_deg": 90,
-    "eccentricity": 0.0,
+    "eccentricity": 0,
     "status": "ENDED",
     "surface_status": "completed",
     "samples_kg": 0,
@@ -620,7 +764,7 @@
     "year": 2007,
     "altitude_km": 200,
     "inclination_deg": 64,
-    "eccentricity": 0.0,
+    "eccentricity": 0,
     "status": "ENDED",
     "surface_status": "completed",
     "samples_kg": 0,
@@ -647,7 +791,7 @@
     "year": 2008,
     "altitude_km": 100,
     "inclination_deg": 90,
-    "eccentricity": 0.0,
+    "eccentricity": 0,
     "status": "ENDED",
     "surface_status": "completed",
     "samples_kg": 0,
@@ -675,7 +819,7 @@
     "year": 2009,
     "altitude_km": 50,
     "inclination_deg": 90,
-    "eccentricity": 0.0,
+    "eccentricity": 0,
     "status": "ACTIVE",
     "surface_status": "ongoing",
     "samples_kg": 0,
@@ -703,7 +847,7 @@
     "year": 2010,
     "altitude_km": 100,
     "inclination_deg": 90,
-    "eccentricity": 0.0,
+    "eccentricity": 0,
     "status": "ENDED",
     "surface_status": "completed",
     "samples_kg": 0,
@@ -719,6 +863,12 @@
         "l": "中国探月与深空探测网 (CLEP)",
         "u": "http://www.clep.org.cn/",
         "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "change-2",
+        "role": "spacecraft"
       }
     ]
   }

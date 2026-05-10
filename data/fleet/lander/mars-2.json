@@ -1,0 +1,27 @@
+{
+  "id": "mars-2",
+  "name": "Mars 2",
+  "category": "lander",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPO Lavochkin",
+  "first_flight": "1971-11-27",
+  "status": "FAILED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "First spacecraft to reach Mars; lander crashed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Mars 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_2",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mars2"
+    }
+  ]
+}

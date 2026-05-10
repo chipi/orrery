@@ -1,0 +1,30 @@
+{
+  "id": "luna-9",
+  "name": "Luna 9",
+  "category": "lander",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "OKB-301 / NPO Lavochkin",
+  "first_flight": "1966-02-03",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "First soft landing on another world",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Luna 9 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Luna_9",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "luna9"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "luna9"
+    }
+  ]
+}

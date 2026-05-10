@@ -1,0 +1,21 @@
+{
+  "id": "hakuto-r",
+  "name": "Hakuto-R program",
+  "category": "lander",
+  "agency": "ispace",
+  "country": "Japan",
+  "manufacturer": "ispace",
+  "first_flight": "2023-04-25",
+  "status": "FAILED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Hakuto-R program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hakuto-R",
+      "t": "intro"
+    }
+  ]
+}

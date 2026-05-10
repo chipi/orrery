@@ -1,0 +1,31 @@
+{
+  "id": "orion",
+  "name": "Orion",
+  "category": "crewed-spacecraft",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin / Airbus Defence and Space",
+  "first_flight": "2014-12-05",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "Crew vehicle for the Artemis lunar program",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Orion — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "artemis2",
+    "artemis3"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "artemis3"
+    }
+  ]
+}

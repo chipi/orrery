@@ -1,0 +1,21 @@
+{
+  "id": "long-march-7",
+  "name": "Long March 7",
+  "category": "launcher",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CALT",
+  "first_flight": "2016",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Tianzhou cargo launcher to Tiangong",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Long March 7 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_7",
+      "t": "intro"
+    }
+  ]
+}

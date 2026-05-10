@@ -1,0 +1,21 @@
+{
+  "id": "titan-ii-glv",
+  "name": "Titan II GLV",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Martin Marietta",
+  "first_flight": "1964",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Workhorse for Project Gemini",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Titan II GLV — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Titan_II_GLV",
+      "t": "intro"
+    }
+  ]
+}

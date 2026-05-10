@@ -1,0 +1,21 @@
+{
+  "id": "cassini",
+  "name": "Cassini-Huygens",
+  "category": "orbiter",
+  "agency": "Multi (NASA / ESA / Italy)",
+  "country": "Multi",
+  "manufacturer": "NASA JPL / Alenia Spazio",
+  "first_flight": "1997-10-15",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "Saturn orbiter; Huygens landed on Titan",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Cassini-Huygens — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens",
+      "t": "intro"
+    }
+  ]
+}

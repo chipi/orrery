@@ -1,0 +1,21 @@
+{
+  "id": "tiangong-1",
+  "name": "Tiangong-1",
+  "category": "station",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CAST",
+  "first_flight": "2011-09-29",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First Chinese space station; single-module testbed",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Tiangong-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tiangong-1",
+      "t": "intro"
+    }
+  ]
+}

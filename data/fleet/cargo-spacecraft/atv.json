@@ -1,0 +1,21 @@
+{
+  "id": "atv",
+  "name": "ATV (Automated Transfer Vehicle)",
+  "category": "cargo-spacecraft",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "Astrium / Airbus",
+  "first_flight": "2008-03-09",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "ESA's flagship ISS cargo carrier; 5 flights",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "ATV (Automated Transfer Vehicle) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle",
+      "t": "intro"
+    }
+  ]
+}

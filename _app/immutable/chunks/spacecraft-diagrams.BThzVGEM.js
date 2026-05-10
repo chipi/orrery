@@ -1,0 +1,1 @@
+import{b as a}from"./paths.BP1f540m.js";const s=new Set(["crew_dragon","cargo_dragon","soyuz_ms","progress_ms","cygnus","starliner","htv_x","shenzhou","tianzhou"]);function t(r){return s.has(r)?`${a}/diagrams/spacecraft/${r}.svg`:null}export{t as s};

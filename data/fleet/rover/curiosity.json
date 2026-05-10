@@ -1,0 +1,30 @@
+{
+  "id": "curiosity",
+  "name": "Curiosity (MSL)",
+  "category": "rover",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "2012-08-06",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Nuclear-powered Mars Science Laboratory rover",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Curiosity (MSL) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "curiosity"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "curiosity"
+    }
+  ]
+}

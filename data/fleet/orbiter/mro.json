@@ -1,0 +1,27 @@
+{
+  "id": "mro",
+  "name": "Mars Reconnaissance Orbiter",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2005-08-12",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Highest-resolution Mars imaging from orbit",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Mars Reconnaissance Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mars_Reconnaissance_Orbiter",
+      "t": "intro"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "mro"
+    }
+  ]
+}

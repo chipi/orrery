@@ -28,6 +28,12 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "atlas-v",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur upper stage (Atlas V 401)",
@@ -42,13 +48,13 @@
     "arrival": {
       "v_infinity_km_s": 2.59,
       "periapsis_km": 150,
-      "inclination_deg": 75.0,
+      "inclination_deg": 75,
       "orbit_insertion_dv_km_s": 1.22,
       "source": "NASA MAVEN MOI Report (2014-09)"
     },
     "totals": {
       "total_dv_km_s": 3.5,
-      "tli_or_tmi_dv_km_s": 2.0,
+      "tli_or_tmi_dv_km_s": 2,
       "source": "NASA MAVEN Press Kit (2013-11)"
     },
     "events": [
@@ -65,7 +71,7 @@
         "type": "tcm"
       },
       {
-        "met_days": 55.0,
+        "met_days": 55,
         "type": "tcm"
       },
       {

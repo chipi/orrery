@@ -1,0 +1,21 @@
+{
+  "id": "hayabusa-2",
+  "name": "Hayabusa2",
+  "category": "orbiter",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "NEC",
+  "first_flight": "2014-12-03",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Asteroid sample return from Ryugu",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Hayabusa2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hayabusa2",
+      "t": "intro"
+    }
+  ]
+}

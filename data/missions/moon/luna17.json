@@ -16,12 +16,34 @@
   "data_quality": "good",
   "credit": "© Soviet Academy of Sciences (historical). Delivered Lunokhod 1, the first remote-controlled rover to operate on another world.",
   "links": [
-    { "l": "Lunokhod 1 — Wikipedia", "u": "https://en.wikipedia.org/wiki/Lunokhod_1", "t": "intro" },
-    { "l": "Луноход-1 — русская Википедия", "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-1", "t": "core" },
-    { "l": "LRO finds Lunokhod (NASA)", "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html", "t": "intro" },
-    { "l": "Mishin et al. — Lunokhod operational summary (IKI archive)", "u": "https://en.wikipedia.org/wiki/Lunokhod_programme", "t": "deep" }
+    {
+      "l": "Lunokhod 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunokhod_1",
+      "t": "intro"
+    },
+    {
+      "l": "Луноход-1 — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-1",
+      "t": "core"
+    },
+    {
+      "l": "LRO finds Lunokhod (NASA)",
+      "u": "https://www.nasa.gov/mission_pages/LRO/news/lro-lunokhod.html",
+      "t": "intro"
+    },
+    {
+      "l": "Mishin et al. — Lunokhod operational summary (IKI archive)",
+      "u": "https://en.wikipedia.org/wiki/Lunokhod_programme",
+      "t": "deep"
+    }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "lunokhod-1",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Blok-D upper stage",
@@ -35,22 +57,40 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 85,
-      "inclination_deg": 141.0,
+      "inclination_deg": 141,
       "orbit_insertion_dv_km_s": 0.75,
       "source": "NASA NSSDCA Luna 17 archive; LOI placed Luna 17 in 85 × 141 km parking orbit before descent"
     },
     "totals": {
-      "total_dv_km_s": 3.0,
+      "total_dv_km_s": 3,
       "tli_or_tmi_dv_km_s": 3.1,
       "source": "Harvey 2007; reconstructed Proton-K/D capability + LOI + descent"
     },
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 0.1, "type": "tli_or_tmi" },
-      { "met_days": 1.5, "type": "tcm" },
-      { "met_days": 4, "type": "tcm" },
-      { "met_days": 5, "type": "arrival" },
-      { "met_days": 7, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.1,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 1.5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 4,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5,
+        "type": "arrival"
+      },
+      {
+        "met_days": 7,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

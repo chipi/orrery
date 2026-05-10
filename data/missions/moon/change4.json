@@ -38,6 +38,16 @@
     }
   ],
   "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "change-4",
+      "role": "spacecraft"
+    },
+    {
+      "id": "yutu-2",
+      "role": "payload"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "Long March 3B third stage",
@@ -51,12 +61,12 @@
     "arrival": {
       "v_infinity_km_s": 0.85,
       "periapsis_km": 100,
-      "inclination_deg": 90.0,
+      "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.78,
       "source": "CNSA Chang'e 4 LOI Report (2018-12)"
     },
     "totals": {
-      "total_dv_km_s": 3.0,
+      "total_dv_km_s": 3,
       "source": "CNSA Chang'e 4 Mission Report (2019)"
     },
     "events": [

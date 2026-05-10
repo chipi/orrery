@@ -1,0 +1,21 @@
+{
+  "id": "falcon-9",
+  "name": "Falcon 9 Block 5",
+  "category": "launcher",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2010-06-04",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Reusable booster reshaped commercial launch",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Falcon 9 Block 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Falcon_9",
+      "t": "intro"
+    }
+  ]
+}

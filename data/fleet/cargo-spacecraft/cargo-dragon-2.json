@@ -1,0 +1,21 @@
+{
+  "id": "cargo-dragon-2",
+  "name": "Cargo Dragon 2",
+  "category": "cargo-spacecraft",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2020-12-06",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Successor to Cargo Dragon v1; trunk-mounted PV",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Cargo Dragon 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
+      "t": "intro"
+    }
+  ]
+}

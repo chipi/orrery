@@ -1,0 +1,28 @@
+{
+  "id": "iss",
+  "name": "International Space Station",
+  "category": "station",
+  "agency": "Multi (NASA / Roscosmos / ESA / JAXA / CSA)",
+  "country": "International",
+  "manufacturer": "Boeing / RKK Energia / Airbus / Mitsubishi Electric",
+  "first_flight": "1998-11-20",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Continuously crewed since November 2000",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "International Space Station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/International_Space_Station",
+      "t": "intro"
+    }
+  ],
+  "explorer_route": "/iss",
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "iss"
+    }
+  ]
+}

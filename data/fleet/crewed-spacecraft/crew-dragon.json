@@ -1,0 +1,21 @@
+{
+  "id": "crew-dragon",
+  "name": "Crew Dragon",
+  "category": "crewed-spacecraft",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2020-05-30",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First commercial human-rated orbital spacecraft",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "Crew Dragon — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2",
+      "t": "intro"
+    }
+  ]
+}

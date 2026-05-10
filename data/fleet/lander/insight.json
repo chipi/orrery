@@ -1,0 +1,30 @@
+{
+  "id": "insight",
+  "name": "InSight",
+  "category": "lander",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2018-11-26",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Mars seismometer; 1300+ marsquakes detected",
+  "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
+  "links": [
+    {
+      "l": "InSight — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/InSight",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "insight"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "insight"
+    }
+  ]
+}

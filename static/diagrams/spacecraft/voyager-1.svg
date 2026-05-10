@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Voyager 1 spacecraft anatomy: 3.7 m high-gain antenna, RTG boom, magnetometer boom, science instruments, golden record, hydrazine thrusters">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .gold { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.8); stroke-width: 0.8; }
+    .heat { fill: rgba(193,68,14,0.15); stroke: rgba(193,68,14,0.7); stroke-width: 0.6; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">VOYAGER 1</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">3.7 m HGA · 825 kg · most distant human-made object</text>
+
+  <!-- High-Gain Antenna (3.7 m parabolic dish) — drawn as a horizontal ellipse / circle -->
+  <ellipse cx="200" cy="100" rx="80" ry="20" class="stroke-fill" />
+  <ellipse cx="200" cy="100" rx="80" ry="6" class="dashed" />
+  <line x1="120" y1="100" x2="280" y2="100" class="dashed" />
+
+  <!-- Antenna feed (small box at center, slightly above) -->
+  <rect x="194" y="80" width="12" height="16" class="stroke-fill" />
+
+  <!-- Spacecraft bus (10-sided, drawn as an octagon centered below dish) -->
+  <polygon points="180,140 220,140 230,150 230,168 220,178 180,178 170,168 170,150" class="stroke-fill" />
+
+  <!-- Connection from dish to bus -->
+  <line x1="200" y1="120" x2="200" y2="140" class="stroke" />
+
+  <!-- Golden record (mounted on bus side) -->
+  <circle cx="170" cy="160" r="6" class="gold" />
+  <circle cx="170" cy="160" r="3" class="dashed" />
+
+  <!-- RTG boom (left side, with 3 RTGs) -->
+  <line x1="170" y1="158" x2="80" y2="200" class="stroke" />
+  <rect x="74" y="195" width="14" height="10" class="heat" />
+  <rect x="62" y="200" width="14" height="10" class="heat" />
+  <rect x="50" y="205" width="14" height="10" class="heat" />
+
+  <!-- Magnetometer boom (extends right, very long) -->
+  <line x1="230" y1="160" x2="370" y2="80" class="stroke" />
+  <rect x="368" y="76" width="6" height="6" class="stroke-fill" />
+
+  <!-- Science boom (lower right) -->
+  <line x1="220" y1="172" x2="320" y2="220" class="stroke" />
+  <rect x="316" y="216" width="14" height="14" class="stroke-fill" />
+  <line x1="320" y1="216" x2="320" y2="206" class="stroke" />
+  <rect x="314" y="200" width="12" height="6" class="stroke-fill" />
+  <line x1="324" y1="216" x2="334" y2="226" class="stroke" />
+  <rect x="332" y="222" width="10" height="10" class="stroke-fill" />
+
+  <!-- Plasma instrument boom (lower left) -->
+  <line x1="180" y1="172" x2="100" y2="240" class="stroke" />
+  <rect x="92" y="232" width="12" height="14" class="stroke-fill" />
+
+  <!-- Hydrazine thrusters (small clusters on bus corners) -->
+  <rect x="166" y="146" width="3" height="4" class="stroke" />
+  <rect x="231" y="146" width="3" height="4" class="stroke" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="50" y1="210" x2="20" y2="240" class="accent" />
+  <text x="6" y="244" class="label-accent">RTG (×3)</text>
+  <text x="6" y="255" class="label-mute">²³⁸Pu · 470 W now</text>
+
+  <line x1="120" y1="100" x2="40" y2="80" class="accent" />
+  <text x="6" y="78" class="label-accent">3.7 m DISH</text>
+  <text x="6" y="89" class="label-mute">Earth-pointed always</text>
+
+  <line x1="92" y1="240" x2="40" y2="290" class="accent" />
+  <text x="6" y="290" class="label-accent">PLASMA</text>
+  <text x="6" y="301" class="label-mute">solar wind sci</text>
+
+  <line x1="170" y1="160" x2="40" y2="160" class="accent" />
+  <text x="6" y="158" class="label-accent">GOLDEN RECORD</text>
+  <text x="6" y="169" class="label-mute">12-inch · LP · etched</text>
+
+  <!-- TOP/RIGHT CALLOUTS -->
+  <line x1="194" y1="84" x2="200" y2="44" class="accent" />
+  <text x="200" y="42" text-anchor="middle" class="label-accent">FEED HORN</text>
+
+  <line x1="370" y1="80" x2="335" y2="100" class="accent" />
+  <text x="335" y="98" text-anchor="end" class="label-accent">MAG BOOM</text>
+  <text x="335" y="109" text-anchor="end" class="label-mute">13 m · field probe</text>
+
+  <line x1="320" y1="220" x2="335" y2="180" class="accent" />
+  <text x="335" y="178" text-anchor="end" class="label-accent">SCIENCE BOOM</text>
+  <text x="335" y="189" text-anchor="end" class="label-mute">ISS · UVS · IRIS</text>
+
+  <line x1="332" y1="225" x2="335" y2="240" class="accent" />
+  <text x="335" y="248" text-anchor="end" class="label-accent">CRS · CRT</text>
+  <text x="335" y="259" text-anchor="end" class="label-mute">cosmic-ray sub</text>
+
+  <line x1="220" y1="160" x2="335" y2="270" class="accent" />
+  <text x="335" y="278" text-anchor="end" class="label-accent">BUS · 10 SIDES</text>
+  <text x="335" y="289" text-anchor="end" class="label-mute">CDS · attitude · power</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="306" text-anchor="middle" class="subtitle">NASA JPL · launched 1977-09-05 on Titan IIIE-Centaur · interstellar space since 2012-08-25</text>
+  <text x="200" y="316" text-anchor="middle" class="subtitle">Voyager 2 (twin) launched 1977-08-20 · only spacecraft to visit all four giant planets</text>
+</svg>

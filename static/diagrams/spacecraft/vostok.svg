@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-label="Vostok spacecraft anatomy: spherical descent module, conical instrument module, antennas, attitude thrusters, ejection seat for cosmonaut">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .stroke-fill { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: rgba(255,255,255,0.04); }
+    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1; fill: none; }
+    .nozzle { fill: rgba(180,180,190,0.6); stroke: rgba(220,220,230,0.85); stroke-width: 0.6; }
+    .heat { fill: rgba(255,200,80,0.20); stroke: rgba(255,200,80,0.7); stroke-width: 0.8; }
+    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .label-accent { fill: #4ecdc4; font-size: 10px; }
+    .label-mute { fill: rgba(255,255,255,0.55); font-size: 9px; }
+    .title { fill: rgba(255,255,255,0.85); font-size: 13px; letter-spacing: 2px; }
+    .subtitle { fill: rgba(255,255,255,0.55); font-size: 9px; letter-spacing: 1px; }
+  </style>
+
+  <!-- Title -->
+  <text x="200" y="20" text-anchor="middle" class="title">VOSTOK · ВОСТОК</text>
+  <text x="200" y="34" text-anchor="middle" class="subtitle">4.4 m · 4,725 kg · 1 cosmonaut · first crewed spaceflight 1961-04-12</text>
+
+  <!-- Centerline -->
+  <line x1="200" y1="50" x2="200" y2="270" class="dashed" />
+
+  <!-- Antennas (whip, top of descent module) -->
+  <line x1="180" y1="60" x2="180" y2="78" class="stroke" />
+  <line x1="220" y1="60" x2="220" y2="78" class="stroke" />
+  <circle cx="180" cy="60" r="1.5" class="stroke-fill" />
+  <circle cx="220" cy="60" r="1.5" class="stroke-fill" />
+
+  <!-- Spherical descent module -->
+  <circle cx="200" cy="120" r="44" class="stroke-fill" />
+
+  <!-- Hatch (top of sphere) -->
+  <ellipse cx="200" cy="84" rx="14" ry="4" class="stroke" />
+
+  <!-- Window (porthole, side of sphere, drawn as ellipse) -->
+  <ellipse cx="166" cy="120" rx="3" ry="6" class="stroke" />
+
+  <!-- Heat shield (bottom of sphere — note Vostok had ablative coating
+       all over the sphere, not just one side, since reentry attitude
+       wasn't fully controlled) -->
+  <path d="M 156 120 A 44 44 0 0 0 244 120" class="heat" />
+  <text x="200" y="156" text-anchor="middle" class="label-mute" style="font-size:8px;">ASBESTOS · TFE</text>
+
+  <!-- Ejection seat inside (dashed, showing position) -->
+  <rect x="194" y="106" width="12" height="22" class="dashed" />
+
+  <!-- Connection straps (4 visible bands tying descent + service modules together until reentry) -->
+  <line x1="178" y1="160" x2="172" y2="178" class="stroke" />
+  <line x1="200" y1="164" x2="200" y2="180" class="stroke" />
+  <line x1="222" y1="160" x2="228" y2="178" class="stroke" />
+
+  <!-- Service / instrument module (truncated cone below sphere) -->
+  <path d="M 168 178 L 152 246 L 248 246 L 232 178 Z" class="stroke-fill" />
+
+  <!-- Equipment compartments inside (dashed) -->
+  <line x1="160" y1="200" x2="240" y2="200" class="dashed" />
+  <line x1="158" y1="220" x2="242" y2="220" class="dashed" />
+
+  <!-- Retrorocket (bottom of service module) -->
+  <path d="M 188 246 L 184 264 L 216 264 L 212 246 Z" class="nozzle" />
+
+  <!-- Attitude thrusters (small clusters on cone) -->
+  <rect x="158" y="200" width="3" height="3" class="stroke" />
+  <rect x="239" y="200" width="3" height="3" class="stroke" />
+
+  <!-- Compressed-gas spheres (visible on outside of service module) -->
+  <circle cx="160" cy="232" r="5" class="stroke-fill" />
+  <circle cx="240" cy="232" r="5" class="stroke-fill" />
+
+  <!-- LEFT-SIDE CALLOUTS -->
+  <line x1="180" y1="65" x2="80" y2="65" class="accent" />
+  <text x="6" y="63" class="label-accent">VHF ANTENNA</text>
+  <text x="6" y="74" class="label-mute">voice + telemetry</text>
+
+  <line x1="200" y1="84" x2="80" y2="100" class="accent" />
+  <text x="6" y="98" class="label-accent">CREW HATCH</text>
+  <text x="6" y="109" class="label-mute">explosive bolts</text>
+
+  <line x1="166" y1="120" x2="80" y2="140" class="accent" />
+  <text x="6" y="138" class="label-accent">PORTHOLE</text>
+  <text x="6" y="149" class="label-mute">Earth view + sextant</text>
+
+  <line x1="194" y1="116" x2="80" y2="186" class="accent" />
+  <text x="6" y="184" class="label-accent">EJECTION SEAT</text>
+  <text x="6" y="195" class="label-mute">cosmonaut bailed at 7 km</text>
+
+  <line x1="156" y1="120" x2="80" y2="246" class="accent" />
+  <text x="6" y="246" class="label-accent">SPHERICAL CM</text>
+  <text x="6" y="257" class="label-mute">ablative all-around</text>
+
+  <!-- RIGHT-SIDE CALLOUTS -->
+  <line x1="220" y1="65" x2="305" y2="65" class="accent" />
+  <text x="305" y="63" class="label-accent">SHORT-WAVE</text>
+  <text x="305" y="74" class="label-mute">global comm</text>
+
+  <line x1="244" y1="120" x2="305" y2="120" class="accent" />
+  <text x="305" y="118" class="label-accent">DESCENT MOD</text>
+  <text x="305" y="129" class="label-mute">2.3 m sphere · sole reenter</text>
+
+  <line x1="232" y1="200" x2="305" y2="200" class="accent" />
+  <text x="305" y="198" class="label-accent">INSTRUMENT</text>
+  <text x="305" y="209" class="label-mute">life support · power</text>
+
+  <line x1="240" y1="232" x2="305" y2="240" class="accent" />
+  <text x="305" y="248" class="label-accent">N₂ SPHERE</text>
+  <text x="305" y="259" class="label-mute">attitude gas</text>
+
+  <line x1="216" y1="252" x2="305" y2="280" class="accent" />
+  <text x="305" y="288" class="label-accent">RETROROCKET</text>
+  <text x="305" y="299" class="label-mute">solid · 9.7 kN · TDU-1</text>
+
+  <!-- Footer caption -->
+  <text x="200" y="312" text-anchor="middle" class="subtitle">OKB-1 · launched on R-7 / Vostok rocket · 6 crewed flights 1961–1963 · Gagarin · Tereshkova</text>
+</svg>

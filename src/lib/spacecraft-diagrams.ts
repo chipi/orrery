@@ -38,6 +38,10 @@ export const SPACECRAFT_DIAGRAMS = new Set<string>([
   'jwst',
   'curiosity',
   'perseverance',
+  'mir',
+  'voyager-1',
+  'vostok',
+  'cassini',
 ]);
 
 /**

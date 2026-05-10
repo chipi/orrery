@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Falcon 9 Block 5 — Wikipedia",
+      "l": "Falcon 9 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Falcon_9",
       "t": "intro"
+    },
+    {
+      "l": "Falcon 9 — SpaceX",
+      "u": "https://www.spacex.com/vehicles/falcon-9/",
+      "t": "core"
+    },
+    {
+      "l": "Falcon User's Guide (SpaceX)",
+      "u": "https://www.spacex.com/media/falcon-users-guide-2021-09.pdf",
+      "t": "deep"
     }
   ]
 }

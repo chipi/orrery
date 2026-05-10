@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Space Shuttle stack — Wikipedia",
+      "l": "Space Shuttle — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Space_Shuttle",
       "t": "intro"
+    },
+    {
+      "l": "Space Shuttle Era (NASA)",
+      "u": "https://www.nasa.gov/space-shuttle/",
+      "t": "core"
+    },
+    {
+      "l": "Space Shuttle Mission Reports (NASA NTRS)",
+      "u": "https://www.nasa.gov/reference/space-shuttle-mission-reports/",
+      "t": "deep"
     }
   ],
   "linked_missions": [

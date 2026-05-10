@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Perseverance (Mars 2020) — Wikipedia",
+      "l": "Perseverance (rover) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)",
       "t": "intro"
+    },
+    {
+      "l": "Mars 2020 — NASA JPL",
+      "u": "https://mars.nasa.gov/mars2020/",
+      "t": "core"
+    },
+    {
+      "l": "Mars 2020 Press Kit (NASA)",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/",
+      "t": "deep"
     }
   ],
   "linked_missions": [

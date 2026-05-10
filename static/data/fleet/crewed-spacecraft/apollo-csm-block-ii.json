@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Apollo CSM Block II — Wikipedia",
+      "l": "Apollo command and service module — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module",
       "t": "intro"
+    },
+    {
+      "l": "CSM News Reference (NASA Apollo Program)",
+      "u": "https://www.hq.nasa.gov/alsj/CSM06_Command_Module_Overview_pp7-19.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Chariots for Apollo (NASA SP-4205)",
+      "u": "https://history.nasa.gov/SP-4205/toc.html",
+      "t": "deep"
     }
   ],
   "linked_missions": [

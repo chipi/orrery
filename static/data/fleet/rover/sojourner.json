@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Sojourner — Wikipedia",
+      "l": "Sojourner (rover) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Sojourner_(rover)",
       "t": "intro"
+    },
+    {
+      "l": "Mars Pathfinder — NASA JPL",
+      "u": "https://mars.nasa.gov/MPF/",
+      "t": "core"
+    },
+    {
+      "l": "Mars Pathfinder Project (NASA NTRS)",
+      "u": "https://www.jpl.nasa.gov/missions/mars-pathfinder",
+      "t": "deep"
     }
   ],
   "linked_missions": [

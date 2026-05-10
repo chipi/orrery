@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "SLS Block 1 — Wikipedia",
+      "l": "Space Launch System — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Space_Launch_System",
       "t": "intro"
+    },
+    {
+      "l": "SLS — NASA",
+      "u": "https://www.nasa.gov/exploration-systems/space-launch-system/",
+      "t": "core"
+    },
+    {
+      "l": "SLS Reference Guide (NASA)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2022/06/sls_reference_guide_2022_v3.pdf",
+      "t": "deep"
     }
   ],
   "linked_missions": [

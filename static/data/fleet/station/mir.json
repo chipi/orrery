@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
+      "l": "Мир (космическая станция) — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80_(%D0%BE%D1%80%D0%B1%D0%B8%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F)",
+      "t": "intro"
+    },
+    {
       "l": "Mir — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Mir",
-      "t": "intro"
+      "t": "core"
+    },
+    {
+      "l": "Mir Hardware Heritage (NASA RP-1357)",
+      "u": "https://history.nasa.gov/SP-4225/documentation/mir-hardware-heritage/mir-hardware-heritage.htm",
+      "t": "deep"
     }
   ]
 }

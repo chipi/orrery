@@ -16,6 +16,16 @@
       "l": "International Space Station — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/International_Space_Station",
       "t": "intro"
+    },
+    {
+      "l": "ISS — NASA",
+      "u": "https://www.nasa.gov/international-space-station/",
+      "t": "core"
+    },
+    {
+      "l": "ISS Reference Guide (NASA)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2017/09/np-2015-05-022-jsc-iss-guide-2015-update-111015-508c.pdf",
+      "t": "deep"
     }
   ],
   "explorer_route": "/iss",

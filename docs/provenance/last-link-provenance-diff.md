@@ -1,23 +1,138 @@
 # Last link-provenance build
 
-> Generated: 2026-05-07T17:58:44.296Z
+> Generated: 2026-05-10T13:14:01.151Z
 
-- Total entries: 354 (was 342)
-- Added: 12
+- Total entries: 541 (was 357)
+- Added: 184
 - Removed: 0
-- Changed: 0
+- Changed: 24
 
-## Added (12)
-- `chinarm` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_robotic_arm>
-- `chinarm` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
-- `mengtian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mengtian_(module)>
-- `mengtian` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
-- `shenzhou` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)>
-- `shenzhou` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Shenzhou_12>
-- `tianhe` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tianhe_core_module>
-- `tianhe` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
-- `tianzhou` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)>
-- `tianzhou` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tianzhou_2>
-- `wentian` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Wentian>
-- `wentian` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tiangong_space_station>
+## Added (184)
+- `apollo-csm-block-ii` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_command_and_service_module>
+- `apollo-csm-block-ii` · core · nasa · en · <https://www.hq.nasa.gov/alsj/CSM06_Command_Module_Overview_pp7-19.pdf>
+- `apollo-csm-block-ii` · deep · nasa · en · <https://history.nasa.gov/SP-4205/toc.html>
+- `apollo-lm` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_Lunar_Module>
+- `apollo-lm` · core · nasa · en · <https://www.hq.nasa.gov/alsj/LM_News_Reference.pdf>
+- `apollo-lm` · deep · nasa · en · <https://history.nasa.gov/SP-4205/ch13-1.html>
+- `ariane-5` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Ariane_5>
+- `ariane-5` · core · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5>
+- `ariane-5` · deep · esa · en · <https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5_-_an_extraordinary_legacy>
+- `atlas-lv-3b` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Atlas_LV-3B>
+- `atlas-v` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Atlas_V>
+- `atlas-v` · core · ula · en · <https://www.ulalaunch.com/rockets/atlas-v>
+- `atlas-v` · deep · ula · en · <https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010.pdf>
+- `atv` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle>
+- `beresheet` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Beresheet>
+- `buran` · intro · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%80%D0%B0%D0%BD_(%D0%BA%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D1%8C)>
+- `buran` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Buran-class_orbiter>
+- `buran` · deep · roscosmos · ru · <https://www.roscosmos.ru/30025/>
+- `cargo-dragon-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Dragon_2>
+- `cargo-dragon-v1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Dragon>
+- `cassini` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens>
+- `cassini` · core · nasa · en · <https://science.nasa.gov/mission/cassini/>
+- `cassini` · deep · nasa · en · <https://solarsystem.nasa.gov/resources/17769/cassini-end-of-mission/>
+- `chandra` · core · nasa · en · <https://chandra.harvard.edu/>
+- `chandra` · deep · nasa · en · <https://chandra.harvard.edu/about/>
+- `change-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chang%27e_2>
+- `change-3` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chang%27e_3>
+- `change-4` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chang%27e_4>
+- `change-5` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Chang%27e_5>
+- `compton-gro` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory>
+- `crew-dragon` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Dragon_2>
+- `crew-dragon` · core · spacex · en · <https://www.spacex.com/vehicles/dragon/>
+- `crew-dragon` · deep · nasa · en · <https://www.nasa.gov/wp-content/uploads/2020/11/crew-1-press-kit.pdf>
+- `curiosity` · core · nasa · en · <https://mars.nasa.gov/msl/>
+- `curiosity` · deep · nasa · en · <https://mars.nasa.gov/internal_resources/788/>
+- `cygnus-enhanced` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cygnus_(spacecraft)>
+- `cygnus-standard` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cygnus_(spacecraft)>
+- `dart` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test>
+- `energia` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Energia_(rocket)>
+- `euclid` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Euclid_(spacecraft)>
+- `falcon-9` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Falcon_9>
+- `falcon-9` · core · spacex · en · <https://www.spacex.com/vehicles/falcon-9/>
+- `falcon-9` · deep · spacex · en · <https://www.spacex.com/media/falcon-users-guide-2021-09.pdf>
+- `falcon-heavy` · deep · spacex · en · <https://www.spacex.com/media/falcon-users-guide-2021-09.pdf>
+- `gaganyaan` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Gaganyaan>
+- `gaia` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Gaia>
+- `gaia` · deep · esa · en · <https://gea.esac.esa.int/archive/documentation/>
+- `galileo` · core · nasa · en · <https://solarsystem.nasa.gov/missions/galileo/in-depth/>
+- `galileo` · deep · nasa · en · <https://history.nasa.gov/sp4231.pdf>
+- `gemini` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Project_Gemini>
+- `gemini` · core · nasa · en · <https://www.nasa.gov/mission/gemini/>
+- `gemini` · deep · nasa · en · <https://history.nasa.gov/SP-4203/toc.htm>
+- `hakuto-r` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hakuto-R>
+- `hayabusa-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hayabusa2>
+- `hitomi` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hitomi_(satellite)>
+- `htv` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle>
+- `htv-x` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/HTV-X>
+- `hubble` · core · stsci · en · <https://hubblesite.org/>
+- `hubble` · deep · nasa · en · <https://www.nasa.gov/wp-content/uploads/2023/03/hubblescience.pdf>
+- `im-1-odysseus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/IM-1>
+- `iss` · core · nasa · en · <https://www.nasa.gov/international-space-station/>
+- `iss` · deep · nasa · en · <https://www.nasa.gov/wp-content/uploads/2017/09/np-2015-05-022-jsc-iss-guide-2015-update-111015-508c.pdf>
+- `juno` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Juno_(spacecraft)>
+- `juno` · core · nasa · en · <https://science.nasa.gov/mission/juno/>
+- `juno` · deep · nasa · en · <https://www.nasa.gov/mission/juno/>
+- `jwst` · core · nasa · en · <https://webb.nasa.gov/>
+- `jwst` · deep · stsci · en · <https://www.stsci.edu/jwst/about-jwst>
+- `kepler` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Kepler_space_telescope>
+- `kepler` · core · nasa · en · <https://www.nasa.gov/mission/kepler-space-telescope/>
+- `kepler` · deep · nasa · en · <https://www.nasa.gov/feature/ames/kepler/keplers-final-look-at-its-original-field-of-view>
+- `long-march-2f` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Long_March_2F>
+- `long-march-5` · intro · wikipedia · zh · <https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD>
+- `long-march-5` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/displayDispatch.action?searchTerm=long+march+5>
+- `long-march-7` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Long_March_7>
+- `lrv-apollo` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle>
+- `lrv-apollo` · core · nasa · en · <https://www.nasa.gov/history/the-lunar-roving-vehicle/>
+- `lrv-apollo` · deep · nasa · en · <https://www.hq.nasa.gov/alsj/lrvhand.html>
+- `luna-16` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Luna_16>
+- `luna-9` · intro · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-9>
+- `luna-9` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Luna_9>
+- `luna-9` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A>
+- `lunokhod-1` · intro · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-1>
+- `lunokhod-1` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Lunokhod_1>
+- `lunokhod-1` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095A>
+- `lunokhod-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Lunokhod_2>
+- `magellan` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Magellan_(spacecraft)>
+- `mariner-4` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mariner_4>
+- `mariner-9` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mariner_9>
+- `mariner-9` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-051A>
+- `mariner-9` · deep · nasa · en · <https://history.nasa.gov/SP-4212/toc.html>
+- `mars-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_2>
+- `mars-3` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_3>
+- `mars-polar-lander` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_Polar_Lander>
+- `mercury-capsule` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Project_Mercury>
+- `mercury-capsule` · core · nasa · en · <https://www.nasa.gov/mission/mercury/>
+- `mercury-capsule` · deep · nasa · en · <https://history.nasa.gov/SP-4201/toc.htm>
+- `mir` · intro · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D1%80_(%D0%BE%D1%80%D0%B1%D0%B8%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F)>
+- `mir` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Mir>
+- `mir` · deep · nasa · en · <https://history.nasa.gov/SP-4225/documentation/mir-hardware-heritage/mir-hardware-heritage.htm>
+- `n1` · intro · wikipedia · ru · <https://ru.wikipedia.org/wiki/%D0%9D-1_(%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D0%BD%D0%BE%D1%81%D0%B8%D1%82%D0%B5%D0%BB%D1%8C)>
+- … 84 more
+
+## Changed (24)
+- `ariane-6` · 
+- `chandra` · 
+- `falcon-heavy` · 
+- `falcon-heavy` · tier: "intro" → "core"
+- `gaia` · label: "Gaia — Wikipedia" → "Gaia (spacecraft) — Wikipedia"
+- `h-iia` · 
+- `h3` · 
+- `hubble` · 
+- `iss` · label: "ISS — Wikipedia" → "International Space Station — Wikipedia"
+- `jwst` · 
+- `long-march-5` · tier: "intro" → "core"
+- `lvm3` · label: "LVM3 — Wikipedia" → "LVM3 (GSLV Mk III) — Wikipedia"
+- `mro` · label: "MRO — Wikipedia" → "Mars Reconnaissance Orbiter — Wikipedia"
+- `opportunity` · label: "Opportunity — Wikipedia" → "Opportunity (MER-B) — Wikipedia"
+- `phoenix` · label: "Phoenix lander — Wikipedia" → "Phoenix — Wikipedia"
+- `schiaparelli` · label: "Schiaparelli EDM — Wikipedia" → "Schiaparelli — Wikipedia"
+- `shenzhou` · label: "Wikipedia · Shenzhou (spacecraft)" → "Shenzhou — Wikipedia"; tier: "intro" → "core"
+- `sls-block-1` · label: "SLS — Wikipedia" → "Space Launch System — Wikipedia"
+- `spirit` · label: "Spirit — Wikipedia" → "Spirit (MER-A) — Wikipedia"
+- `starliner` · label: "Wikipedia · Boeing Starliner" → "Boeing Starliner — Wikipedia"
+- `tiangong` · tier: "core" → "intro"
+- `tiangong` · label: "Tiangong — Wikipedia" → "Tiangong space station — Wikipedia"; tier: "intro" → "core"
+- `tianzhou` · label: "Wikipedia · Tianzhou (spacecraft)" → "Tianzhou — Wikipedia"
+- `zhurong` · label: "Zhurong rover — Wikipedia" → "Zhurong — Wikipedia"
 

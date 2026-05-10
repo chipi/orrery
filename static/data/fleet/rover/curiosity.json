@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Curiosity (MSL) — Wikipedia",
+      "l": "Curiosity (rover) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)",
       "t": "intro"
+    },
+    {
+      "l": "Mars Science Laboratory — NASA JPL",
+      "u": "https://mars.nasa.gov/msl/",
+      "t": "core"
+    },
+    {
+      "l": "MSL Mission Profile (NASA NTRS)",
+      "u": "https://mars.nasa.gov/internal_resources/788/",
+      "t": "deep"
     }
   ],
   "linked_missions": [

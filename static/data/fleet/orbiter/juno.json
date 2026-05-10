@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Juno — Wikipedia",
+      "l": "Juno (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Juno_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Juno mission — NASA",
+      "u": "https://science.nasa.gov/mission/juno/",
+      "t": "core"
+    },
+    {
+      "l": "Juno Mission Profile (NASA NTRS)",
+      "u": "https://www.nasa.gov/mission/juno/",
+      "t": "deep"
     }
   ]
 }

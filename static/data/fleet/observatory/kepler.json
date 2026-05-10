@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Kepler — Wikipedia",
+      "l": "Kepler space telescope — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Kepler_space_telescope",
       "t": "intro"
+    },
+    {
+      "l": "Kepler — NASA",
+      "u": "https://www.nasa.gov/mission/kepler-space-telescope/",
+      "t": "core"
+    },
+    {
+      "l": "Kepler Mission Final Report (NASA)",
+      "u": "https://www.nasa.gov/feature/ames/kepler/keplers-final-look-at-its-original-field-of-view",
+      "t": "deep"
     }
   ]
 }

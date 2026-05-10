@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
+      "l": "神舟飞船 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E7%A5%9E%E8%88%9F%E9%A3%9E%E8%88%B9",
+      "t": "intro"
+    },
+    {
       "l": "Shenzhou — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)",
-      "t": "intro"
+      "t": "core"
+    },
+    {
+      "l": "CMSA — China Manned Space Agency",
+      "u": "http://en.cmse.gov.cn/",
+      "t": "deep"
     }
   ]
 }

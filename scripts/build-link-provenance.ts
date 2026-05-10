@@ -65,7 +65,8 @@ type Category =
   | 'sun'
   | 'rocket'
   | 'small-body'
-  | 'scenario';
+  | 'scenario'
+  | 'fleet';
 
 interface LinkEntry {
   id: string;
@@ -466,6 +467,38 @@ function collectFromMissionDir(): RawLink[] {
   return out;
 }
 
+function collectFromFleetDir(): RawLink[] {
+  // Fleet entries live as per-category subdirectories under
+  // static/data/fleet/{category}/{id}.json (PRD-012 v0.2 / Issue #60).
+  const out: RawLink[] = [];
+  const root = join(DATA_ROOT, 'fleet');
+  if (!existsSync(root)) return out;
+  const cats = listDir(root).filter((d) => isDir(join(root, d)));
+  for (const cat of cats) {
+    const dir = join(root, cat);
+    for (const f of listDir(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const file = join(dir, f);
+      const j = JSON.parse(readFileSync(file, 'utf8')) as Record<string, unknown>;
+      const id = String(j.id ?? f.replace(/\.json$/, ''));
+      const links = asArray(j.links);
+      for (const ln of links) {
+        if (!isObj(ln) || typeof ln.u !== 'string') continue;
+        out.push({
+          url: ln.u,
+          label: String(ln.l ?? ln.u),
+          rawT: ln.t,
+          entity_id: id,
+          category: 'fleet',
+          route: '/fleet',
+          source_file: file,
+        });
+      }
+    }
+  }
+  return out;
+}
+
 function collectFromI18nMissions(): RawLink[] {
   const out: RawLink[] = [];
   const root = join(DATA_ROOT, 'i18n', 'en-US', 'missions');
@@ -796,6 +829,7 @@ async function main(): Promise<void> {
   const collectors: Array<{ label: string; run: () => RawLink[] }> = [
     { label: 'missions/<dest>/*.json', run: () => collectFromMissionDir() },
     { label: 'i18n/en-US/missions/<dest>/*.json', run: () => collectFromI18nMissions() },
+    { label: 'fleet/<category>/*.json', run: () => collectFromFleetDir() },
     {
       label: 'iss-modules.json',
       run: () => collectFromTopLevelArrayFile('iss-modules.json', 'iss-module', '/iss', null),

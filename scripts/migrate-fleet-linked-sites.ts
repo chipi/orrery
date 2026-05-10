@@ -113,9 +113,7 @@ async function main() {
     }
   }
 
-  console.log(
-    `populated linked_sites on ${written} fleet entries, cleared ${cleared} stale lists`,
-  );
+  console.log(`populated linked_sites on ${written} fleet entries, cleared ${cleared} stale lists`);
 }
 
 main().catch((err) => {

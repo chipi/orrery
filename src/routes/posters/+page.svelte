@@ -317,13 +317,7 @@
           />
           <!-- Soft terminator: radial darkening that wraps the right limb,
                replacing the harsh triangular path. Light source = upper-left. -->
-          <rect
-            x="-220"
-            y="-220"
-            width="440"
-            height="440"
-            fill="url(#er-terminator)"
-          />
+          <rect x="-220" y="-220" width="440" height="440" fill="url(#er-terminator)" />
         </g>
         <!-- Atmospheric rim highlight (drawn on top, outside the clip) -->
         <circle

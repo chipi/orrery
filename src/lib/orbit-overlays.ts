@@ -55,25 +55,28 @@ export function buildSoIRing(
   group.userData.layerKey = 'soi';
 
   // Wireframe sphere: cheap, distinct from solid bodies, visible from
-  // any camera angle.
+  // any camera angle. Opacities tuned in May 2026 to be unambiguously
+  // visible on /fly at cislunar zoom levels — the prior 0.18 sphere +
+  // 0.45 ring read as faint enough to be missed against the planet
+  // glow.
   const sphereGeo = new THREE.SphereGeometry(radius, segments, Math.max(8, segments / 4));
   const sphereMat = new THREE.MeshBasicMaterial({
     color,
     wireframe: true,
     transparent: true,
-    opacity: 0.18,
+    opacity: 0.35,
     depthWrite: false,
   });
   const sphere = new THREE.Mesh(sphereGeo, sphereMat);
   group.add(sphere);
 
   // Bright equatorial circle for stronger silhouette in the ecliptic.
-  const ringGeo = new THREE.RingGeometry(radius * 0.999, radius * 1.001, segments);
+  const ringGeo = new THREE.RingGeometry(radius * 0.992, radius * 1.008, segments);
   const ringMat = new THREE.MeshBasicMaterial({
     color,
     side: THREE.DoubleSide,
     transparent: true,
-    opacity: 0.45,
+    opacity: 0.75,
     depthWrite: false,
   });
   const ring = new THREE.Mesh(ringGeo, ringMat);

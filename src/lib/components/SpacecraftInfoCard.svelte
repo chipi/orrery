@@ -86,7 +86,9 @@
      center strip. */
   .card {
     position: fixed;
-    bottom: 16px;
+    /* Sit above the scrubber (bottom: 14px + ~50px tall) so the play
+       button + timeline stay clickable when the card is open. */
+    bottom: 80px;
     left: 16px;
     z-index: 31;
     width: 240px;

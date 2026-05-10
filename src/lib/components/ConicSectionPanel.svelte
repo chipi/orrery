@@ -139,7 +139,9 @@
 <style>
   .panel {
     position: fixed;
-    bottom: 16px;
+    /* Sit above the scrubber so the play button + timeline stay
+       clickable when the conics panel is open. */
+    bottom: 80px;
     right: 16px;
     z-index: 31;
     display: block;

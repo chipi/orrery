@@ -237,20 +237,10 @@
 <svelte:head><title>{m.missions_page_title()}</title></svelte:head>
 
 <div class="library">
-  <!-- J.1 — Top-right corner count (no page title; nav already labels
-       the route). Format: "12 / 36" when filtered, "36" otherwise. -->
-  <div class="count-corner">
-    {#if filtered.length !== missions.length}
-      <span class="count-fraction">{filtered.length} / {missions.length}</span>
-    {:else}
-      <span class="count-total-only">{missions.length}</span>
-    {/if}
-  </div>
-
-  <!-- J.1 — Filters + timeline collapsed by default. Click the strip
-       to expand and reveal both the year-window timeline and the
-       dest / status / agency pickers. State resets per-mount so users
-       are always greeted with the clean grid first. -->
+  <!-- Filters + timeline collapsed by default. The count lives at the
+       right end of the toggle bar so the screen stays clean above the
+       grid — fraction (filtered / total) when active, total-only when
+       not, identical to /fleet for visual consistency. -->
   <button
     type="button"
     class="filters-toggle"
@@ -258,12 +248,15 @@
     aria-controls="missions-filters"
     onclick={() => (filtersExpanded = !filtersExpanded)}
   >
-    <span class="filters-eyebrow"
-      >FILTERS{filtered.length !== missions.length
-        ? ` · ${filtered.length}/${missions.length}`
-        : ''}</span
-    >
-    <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+    <span class="filters-eyebrow">FILTERS</span>
+    <span class="filters-right">
+      {#if filtered.length !== missions.length}
+        <span class="filters-count count-fraction">{filtered.length} / {missions.length}</span>
+      {:else}
+        <span class="filters-count count-total-only">{missions.length}</span>
+      {/if}
+      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+    </span>
   </button>
 
   {#if filtersExpanded}
@@ -532,19 +525,18 @@
     margin: 0 auto;
   }
 
-  /* Top-right corner pill for the mission count (J.1). Replaces the
-     full library-header. Nav already labels the route, so a separate
-     page title would just be repetition. */
-  .count-corner {
-    position: absolute;
-    top: calc(var(--nav-height) + 12px);
-    right: 16px;
-    z-index: 5;
+  /* Inline count chip on the right end of the filters toggle bar.
+     Fraction (filtered / total) is teal when active; total-only is
+     muted. Mirrors the same chip on /fleet. */
+  .filters-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .filters-count {
     font-family: 'Space Mono', monospace;
     font-size: 9px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
-    pointer-events: none;
   }
   .count-fraction {
     color: #4ecdc4;

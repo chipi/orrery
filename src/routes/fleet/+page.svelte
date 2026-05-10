@@ -331,11 +331,9 @@
   {:else if loadFailed}
     <p class="status error">Failed to load fleet data.</p>
   {:else}
-    <div class="count-corner">
-      <span class="count">{filtered.length}</span>
-      <span class="count-label">of {entries.length}</span>
-    </div>
-
+    <!-- Filters collapsed by default. Count lives on the right end of
+         the toggle bar (fraction when active, total-only otherwise) —
+         matches /missions for visual consistency. -->
     <button
       type="button"
       class="filters-toggle"
@@ -343,12 +341,17 @@
       aria-controls="fleet-filters"
       onclick={() => (filtersExpanded = !filtersExpanded)}
     >
-      <span class="filters-eyebrow"
-        >FILTERS{filtered.length !== entries.length
-          ? ` · ${filtered.length}/${entries.length}`
-          : ''}</span
-      >
-      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+      <span class="filters-eyebrow">FILTERS</span>
+      <span class="filters-right">
+        {#if filtered.length !== entries.length}
+          <span class="filters-count count-fraction count"
+            >{filtered.length} / {entries.length}</span
+          >
+        {:else}
+          <span class="filters-count count-total-only count">{entries.length}</span>
+        {/if}
+        <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+      </span>
     </button>
 
     {#if filtersExpanded}
@@ -568,26 +571,23 @@
     color: #c1440e;
   }
 
-  .count-corner {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
+  /* Inline count chip on the right end of the filters toggle bar.
+     Mirrors /missions for visual parity. */
+  .filters-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .filters-count {
     font-family: 'Space Mono', monospace;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 12px;
-    pointer-events: none;
+    font-size: 9px;
+    letter-spacing: 2px;
   }
-  .count {
-    font-size: 18px;
+  .count-fraction {
     color: #4ecdc4;
-    font-weight: 600;
   }
-  .count-label {
-    font-size: 11px;
-    opacity: 0.6;
+  .count-total-only {
+    color: rgba(255, 255, 255, 0.5);
   }
 
   /* Filters — visually identical to /missions per route-parity directive. */
@@ -974,10 +974,6 @@
   @media (max-width: 600px) {
     .fleet {
       padding: 14px 12px 30px;
-    }
-    .count-corner {
-      top: 14px;
-      right: 12px;
     }
     .filter-label {
       min-width: 100%;

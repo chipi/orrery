@@ -25,12 +25,15 @@ async function expandFilters(page: Page) {
 }
 
 /**
- * Wait for the data fetch to finish — when entries load, .count-corner
- * appears in the DOM. networkidle alone is not reliable because onMount's
- * async getFleetIndex() can fire after the initial idle window.
+ * Wait for the data fetch to finish — when entries load, the count chip
+ * inside the filters toggle bar appears. networkidle alone is not reliable
+ * because onMount's async getFleetIndex() can fire after the initial idle
+ * window.
  */
 async function waitForFleetReady(page: Page) {
-  await expect(page.locator('.count-corner .count')).toBeVisible({ timeout: 10_000 });
+  await expect(page.locator('.filters-toggle .filters-count').first()).toBeVisible({
+    timeout: 10_000,
+  });
 }
 
 test.describe('/fleet', () => {
@@ -51,20 +54,21 @@ test.describe('/fleet', () => {
     expect(errors).toEqual([]);
   });
 
-  test('count corner reflects filter state', async ({ page }) => {
+  test('filter-bar count reflects filter state', async ({ page }) => {
     await page.goto('/fleet');
     await waitForFleetReady(page);
-    const count = page.locator('.count-corner .count');
-    const totalText = await count.textContent();
-    const total = parseInt((totalText ?? '0').trim(), 10);
+    const count = page.locator('.filters-toggle .filters-count').first();
+    const totalText = (await count.textContent())?.trim() ?? '';
+    // Unfiltered total — total-only chip shows just the number.
+    const total = parseInt(totalText, 10);
     expect(total).toBeGreaterThanOrEqual(100);
 
-    // Apply STATUS=FAILED filter — should narrow the grid significantly
-    // (failure entries are a curated subset; expect roughly 7–15).
+    // Apply STATUS=FAILED filter — chip flips to "{filtered} / {total}".
     await expandFilters(page);
     await page.getByRole('radio', { name: /^FAILED$/ }).click();
-    await expect(count).not.toHaveText(totalText ?? '');
-    const failedTotal = parseInt(((await count.textContent()) ?? '0').trim(), 10);
+    await expect(count).not.toHaveText(totalText);
+    const newText = (await count.textContent())?.trim() ?? '';
+    const failedTotal = parseInt(newText.split('/')[0]?.trim() ?? '0', 10);
     expect(failedTotal).toBeLessThan(total);
     expect(failedTotal).toBeGreaterThan(0);
   });

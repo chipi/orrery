@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Orion — Wikipedia",
+      "l": "Orion (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Orion Spacecraft — NASA",
+      "u": "https://www.nasa.gov/exploration-systems/orion/",
+      "t": "core"
+    },
+    {
+      "l": "Orion Reference Guide (NASA)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2022/12/orion-reference-guide.pdf",
+      "t": "deep"
     }
   ],
   "linked_missions": [

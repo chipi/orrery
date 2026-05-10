@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Long March 5 / 5B — Wikipedia",
-      "u": "https://en.wikipedia.org/wiki/Long_March_5",
+      "l": "长征五号 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E9%95%BF%E5%BE%81%E4%BA%94%E5%8F%B7%E7%B3%BB%E5%88%97%E8%BF%90%E8%BD%BD%E7%81%AB%E7%AE%AD",
       "t": "intro"
+    },
+    {
+      "l": "Long March 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Long_March_5",
+      "t": "core"
+    },
+    {
+      "l": "Long March 5 launch history (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/displayDispatch.action?searchTerm=long+march+5",
+      "t": "deep"
     }
   ],
   "linked_missions": [

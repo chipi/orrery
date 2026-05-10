@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Space Shuttle Orbiter — Wikipedia",
+      "l": "Space Shuttle orbiter — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter",
       "t": "intro"
+    },
+    {
+      "l": "Space Shuttle Era — NASA",
+      "u": "https://www.nasa.gov/space-shuttle/",
+      "t": "core"
+    },
+    {
+      "l": "Wings in Orbit: Scientific and Engineering Legacies of the Space Shuttle (NASA SP-2010-3409)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-2010-3409.pdf",
+      "t": "deep"
     }
   ],
   "linked_missions": [

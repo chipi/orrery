@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
+      "l": "Луноход-1 — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-1",
+      "t": "intro"
+    },
+    {
       "l": "Lunokhod 1 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Lunokhod_1",
-      "t": "intro"
+      "t": "core"
+    },
+    {
+      "l": "Lunokhod 1 mission (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095A",
+      "t": "deep"
     }
   ],
   "linked_missions": [

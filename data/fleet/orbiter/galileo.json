@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Galileo — Wikipedia",
+      "l": "Galileo (spacecraft) — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)",
       "t": "intro"
+    },
+    {
+      "l": "Galileo Mission — NASA",
+      "u": "https://solarsystem.nasa.gov/missions/galileo/in-depth/",
+      "t": "core"
+    },
+    {
+      "l": "Mission to Jupiter: Galileo (NASA SP-4231)",
+      "u": "https://history.nasa.gov/sp4231.pdf",
+      "t": "deep"
     }
   ],
   "linked_missions": [

@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Tiangong — Wikipedia",
-      "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+      "l": "天宫空间站 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%AE%AB%E7%A9%BA%E9%97%B4%E7%AB%99",
       "t": "intro"
+    },
+    {
+      "l": "Tiangong space station — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tiangong_space_station",
+      "t": "core"
+    },
+    {
+      "l": "CMSA — China Manned Space Agency (Tiangong)",
+      "u": "http://en.cmse.gov.cn/cms/",
+      "t": "deep"
     }
   ],
   "explorer_route": "/tiangong",

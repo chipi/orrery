@@ -13,9 +13,19 @@
   "credit": "Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold). Builder + agency + first-flight per public sources. Specs and gallery TBD in later phases.",
   "links": [
     {
-      "l": "Starliner (CST-100) — Wikipedia",
+      "l": "Boeing Starliner — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Boeing_Starliner",
       "t": "intro"
+    },
+    {
+      "l": "Starliner — Boeing",
+      "u": "https://www.boeing.com/space/starliner",
+      "t": "core"
+    },
+    {
+      "l": "Boeing Crew Flight Test Press Kit (NASA)",
+      "u": "https://www.nasa.gov/commercial-crew/",
+      "t": "deep"
     }
   ]
 }

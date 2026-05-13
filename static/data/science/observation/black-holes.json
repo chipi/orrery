@@ -3,6 +3,8 @@
   "tab": "observation",
   "order": 6,
   "formula_latex": "r_s = \\dfrac{2GM}{c^2}",
+  "diagram": "black-holes.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }
   ],

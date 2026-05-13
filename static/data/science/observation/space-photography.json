@@ -2,6 +2,8 @@
   "id": "space-photography",
   "tab": "observation",
   "order": 1,
+  "diagram": "space-photography.svg",
+  "diagram_quality": "schematic",
   "see_in_app": [
     { "route": "/explore", "context_key": "Planet hero images on /explore are stacked + colour-mapped composites, not raw shutter clicks" },
     { "route": "/missions", "context_key": "Mars + outer-system mission galleries on /missions — each image is a calibrated composite" }

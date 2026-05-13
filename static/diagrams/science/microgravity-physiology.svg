@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="Microgravity physiology — astronaut silhouette with arrows showing headward fluid shift, bone and muscle indicator bars below; ARED countermeasure schematic on the right.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.75); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
+    .gold { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .red { stroke: #ff6b6b; stroke-width: 1.6; fill: none; }
+    .blue { stroke: #6aa9ff; stroke-width: 1.4; fill: none; }
+    .suit-fill { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.6); stroke-width: 1; }
+    .visor { fill: rgba(108,169,255,0.18); stroke: rgba(108,169,255,0.6); stroke-width: 1; }
+    .fluid-arrow { fill: none; stroke: #6aa9ff; stroke-width: 1.6; marker-end: url(#bluearrow); }
+    .bar-bg { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.3); stroke-width: 0.8; }
+    .bar-red { fill: rgba(255,107,107,0.5); }
+    .bar-teal { fill: rgba(78,205,196,0.5); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.5px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1px; }
+    .ared-frame { fill: rgba(78,205,196,0.05); stroke: #4ecdc4; stroke-width: 1.2; }
+  </style>
+
+  <defs>
+    <marker id="bluearrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6aa9ff" />
+    </marker>
+  </defs>
+
+  <!-- Astronaut silhouette (center-left) -->
+  <g transform="translate(160,130)">
+    <!-- Head/helmet -->
+    <circle class="suit-fill" cx="0" cy="-72" r="20" />
+    <ellipse class="visor" cx="0" cy="-72" rx="13" ry="9" />
+    <!-- Torso -->
+    <path class="suit-fill" d="M -22 -50 Q -28 -10 -16 30 L 16 30 Q 28 -10 22 -50 Q 14 -60 0 -60 Q -14 -60 -22 -50 Z" />
+    <!-- Chest module -->
+    <rect class="stroke-mid" x="-9" y="-38" width="18" height="14" rx="2" />
+    <!-- Arms -->
+    <path class="suit-fill" d="M -22 -42 Q -42 -34 -44 -10 L -36 -8 Q -28 -28 -22 -32 Z" />
+    <path class="suit-fill" d="M 22 -42 Q 42 -34 44 -10 L 36 -8 Q 28 -28 22 -32 Z" />
+    <!-- Legs -->
+    <path class="suit-fill" d="M -14 30 Q -20 60 -16 80 L -2 80 L -2 30 Z" />
+    <path class="suit-fill" d="M 14 30 Q 20 60 16 80 L 2 80 L 2 30 Z" />
+
+    <!-- Fluid shift arrows — upward from legs through torso to head -->
+    <line class="fluid-arrow" x1="-6" y1="74" x2="-6" y2="32" />
+    <line class="fluid-arrow" x1="6" y1="74" x2="6" y2="32" />
+    <line class="fluid-arrow" x1="-12" y1="0" x2="-12" y2="-52" />
+    <line class="fluid-arrow" x1="12" y1="0" x2="12" y2="-52" />
+  </g>
+
+  <!-- Fluid shift label -->
+  <text class="label" x="80" y="40">FLUID SHIFT</text>
+  <text class="sublabel" x="80" y="52">~1 L blood/lymph</text>
+  <text class="sublabel" x="80" y="62">redistributes headward</text>
+  <line class="stroke-mid" x1="142" y1="56" x2="154" y2="74" />
+
+  <!-- Bone + muscle indicator bars (middle-right) -->
+  <g transform="translate(260,80)">
+    <text class="label" x="0" y="-8">BONE</text>
+    <rect class="bar-bg" x="0" y="0" width="28" height="100" />
+    <rect class="bar-red" x="0" y="38" width="28" height="62" />
+    <text class="sublabel" x="0" y="116">−1–2%/mo</text>
+    <text class="sublabel" x="0" y="128">no countermeasure</text>
+  </g>
+
+  <g transform="translate(310,80)">
+    <text class="label" x="0" y="-8">MUSCLE</text>
+    <rect class="bar-bg" x="0" y="0" width="28" height="100" />
+    <rect class="bar-red" x="0" y="28" width="28" height="72" />
+    <text class="sublabel" x="0" y="116">postural</text>
+    <text class="sublabel" x="0" y="128">groups first</text>
+  </g>
+
+  <g transform="translate(360,80)">
+    <text class="label" x="0" y="-8">VESTIBULAR</text>
+    <rect class="bar-bg" x="0" y="0" width="28" height="100" />
+    <rect class="bar-red" x="0" y="22" width="28" height="78" />
+    <text class="sublabel" x="0" y="116">otolith</text>
+    <text class="sublabel" x="0" y="128">confusion 2–4 d</text>
+  </g>
+
+  <!-- ARED countermeasure schematic (right) -->
+  <g transform="translate(450,80)">
+    <rect class="ared-frame" x="0" y="0" width="110" height="120" rx="4" />
+    <!-- Vacuum piston + bar -->
+    <rect class="stroke-bright" x="40" y="10" width="20" height="40" />
+    <line class="accent" x1="50" y1="50" x2="50" y2="80" />
+    <rect class="stroke-bright" x="20" y="78" width="60" height="6" />
+    <!-- Hand grip arrows -->
+    <line class="accent" x1="20" y1="84" x2="10" y2="100" />
+    <line class="accent" x1="80" y1="84" x2="100" y2="100" />
+    <text class="label" x="55" y="138" text-anchor="middle">ARED</text>
+    <text class="sublabel" x="55" y="150" text-anchor="middle">1100 N · 2 h/day</text>
+    <text class="sublabel" x="55" y="162" text-anchor="middle">+ T2 treadmill + bike</text>
+  </g>
+</svg>

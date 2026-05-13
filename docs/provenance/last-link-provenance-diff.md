@@ -1,21 +1,14 @@
 # Last link-provenance build
 
-> Generated: 2026-05-10T20:53:21.988Z
+> Generated: 2026-05-13T22:18:31.401Z
 
-- Total entries: 675 (was 677)
+- Total entries: 678 (was 675)
 - Added: 3
-- Removed: 5
+- Removed: 0
 - Changed: 0
 
 ## Added (3)
-- `apollo-csm-block-ii` · deep · nasa · en · <https://history.nasa.gov/SP-4205/cover.html>
-- `apollo-lm` · deep · nasa · en · <https://history.nasa.gov/SP-4205/cover.html>
-- `mars-odyssey` · core · nasa · en · <https://mars.nasa.gov/odyssey/>
-
-## Removed (5)
-- `apollo-csm-block-ii` · deep · nasa · <https://www.nasa.gov/history/SP-4205/cover.html>
-- `apollo-lm` · deep · nasa · <https://www.nasa.gov/history/SP-4205/cover.html>
-- `mars-odyssey` · core · nasa · <https://science.nasa.gov/mission/2001-mars-odyssey/>
-- `orion` · deep · nasa · <https://www.nasa.gov/wp-content/uploads/2022/12/orion-reference-guide.pdf>
-- `space-shuttle-stack` · deep · nasa · <https://www.nasa.gov/reference/space-shuttle-mission-reports/>
+- `apollo13` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_13>
+- `apollo13` · intro · nasa · en · <https://www.nasa.gov/mission/apollo-13/>
+- `apollo13` · deep · nasa · en · <https://history.nasa.gov/SP-350/ch-13-1.html>
 

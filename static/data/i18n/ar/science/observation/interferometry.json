@@ -1,0 +1,11 @@
+{
+  "title": "التداخل",
+  "intro_sentence": "وتركيب تلسكوبات منفصلة إلى فتحة افتراضية واحدة أكبر من أي منها - إن جهاز تلسكوب هوريزون هو جهاز لاسلكي ذو حجم الأرض يُبنى من هوائيات في أربع قارات.",
+  "body_paragraphs": [
+    "إن حل المقراب الوحيد يتوقف على انجازه A radio antenna 30 m across imaging at 1 mm wavelength has angular resolution of about 7 arcseconds — too coarse to see most things. ولكن الهوائيين على بعد ٠٠٠ ١ كيلومتر، ملاحظين نفس المصدر في وقت واحد ومجمعين إشاراتهم، يتصرفون مثل تلسكوب واحد ** ٠٠٠ ١ كيلومتر عبر** في ذلك القرار - ثواني.",
+    "والخدعة مترابطة: فالموجات الإذاعية التي تصل إلى الهوائي ألف وهوائي باء تختلف بتأخر طفيف في المرحلة يعتمد على توجيه المصدر وخط الأساس الهوائي. قم بتجميع الإشارة على مر الزمن و قم بقياس التأخير في المرحلة Do it with N antennas in different positions and the combined signal samples NX(N-1)/2 baselines parallel, filling in the Fourier components of the source brightness distribution. فك الارتباط المتكرر يستعيد الصورة",
+    "** يعمل هذا على الموجات الإذاعية. ** AALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. ** Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm - Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+    "وتوجد تداخلات بين الأجهزة الضوئية/غير المباشرة ولكنها أصعب بكثير لأن الموجات الضوئية أقصر بحجم 6+ أوامر من الراديو، مما يتطلب مساراً مثبتاً بالليزر مطابقاً للدقة النانوية. (شيرا) و(نوبي) و(فليتي) هم الناجون أما المتداخلات الفضائية مثل ليسا )الكشف عن الموجات التجميلية عن طريق الأسلحة الليزرية بين ثلاث مركبات فضائية ذات طفرة حرة( فهي الهيكل المستقبلي - سواء بالنسبة لعلم الفلك الموجات الجاذبية أو بالنسبة للهدف الطويل الأجل المتمثل في تصوير بلوحات أرضية - توين على نقيض كبير."
+  ],
+  "diagram_caption": "2 antennas + cross-correlation . effective aperture = خط الأساس بينهما. ثقب أسود بحجم الأرض موجات جاذبية بحجم فضائي"
+}

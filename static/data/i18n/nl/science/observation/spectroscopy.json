@@ -1,0 +1,11 @@
+{
+  "title": "Spectroscopie",
+  "intro_sentence": "Geef sterrenlicht door een prisma of diffractie raster en het spectrum vertelt je wat de ster is gemaakt van ",
+  "body_paragraphs": [
+    "Elk chemisch element absorbeert licht bij een unieke set golflengten die overeenkomen met zijn elektronische overgangen. Passeer sterrenlicht door een prisma en je ziet een regenboog met dunne donkere lijnen op precies die golflengten.Joseph Fraunhofer heeft in 1814 574 van hen in kaart gebracht over het zonnespectrum. Elke lijn is een element in de atmosfeer van de ster die fotonen steelt.",
+    "Astronomie keert het proces van Fraunhofer om: catalogiseer de lijnen, match ze met elementen, en je weet waar de ster van gemaakt is. De zon is 73% waterstof, 25% helium, 2% zwaardere elementen die afkomstig waren van spectroscopie, geen monster nodig. Dezelfde techniek toegepast op sterrenstelsels gaf ons de relatie tussen roodverschuiving en afstand en uiteindelijk het zich uitbreidende universum; toegepast op moleculaire wolken gaf het ons interstellaire organische chemie; toegepast op exoplaneetatmosferen (via transit transmissie spectroscopie) het geeft ons nu zuurstof / methaan / water handtekeningen van werelden die we nooit zullen bezoeken.",
+    "Moderne spectrografen splitsen licht met een diffractierooster (een fijngeregeld reflecterend oppervlak, vaak met duizenden lijnen per millimeter) en voeden het verspreide spectrum op een CCD. De resolutie wordt gemeten door R = λ/Δλ; consumentenkit raakt R~1000, JWST NIRSpec raakt R~2700, de ESPRESSO spectrograaf op de VLT raakt R~140.000 ",
+    "Spectroscopie is de **meest informatieve** astronomische observatie. Een enkel beeld vertelt je wat er is; een enkel spectrum vertelt je waar het van gemaakt is, hoe snel het naar of van je toe beweegt (Doppler shift), hoe heet het is (continuum vorm), hoe sterk het magnetische veld (Zeeman splitsen), en hoe dicht het brongebied is (lijn profiel vorm). De meeste belangrijke faciliteiten "
+  ],
+  "diagram_caption": "Starlight → raster → spectrum → donkere lijnen bij elementspecifieke golflengten → samenstelling + snelheid + temperatuur + magnetisch veld. De meest informatieve observatie in de astronomie."
+}

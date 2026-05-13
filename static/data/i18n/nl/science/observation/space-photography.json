@@ -1,0 +1,15 @@
+{
+  "title": "Ruimtefotografie",
+  "intro_sentence": "Elke beroemde \"telescoopfoto\" is een stapel van lange blootstellingen door smalbandfilters, gekalibreerd, geregistreerd, valse-kleur in kaart gebracht .Het beeld is wat mensen maken van de telling.",
+  "narrative_101": [
+    "Hubble nam geen foto van de Pilaren of Creation. Hubble nam een paar dozijn foto's, elk door een ander filter, elke minuten lang en een team van beeldwetenschappers gestapeld, uitgelijnd ze sub-pixel, gekalibreerd uit de slechte pixels en kosmische-stralen hits, vervolgens toegewezen kleuren door welke natuurkunde het filter gevangen. Wat je op de poster ziet zijn echte gegevens en echte interpretatie, in gelijke delen. Telescoop imagery is niet oneerlijk ... het is gewoon niet wat uw telefoon camera doet.",
+    "Onder deze sectie trekt de Observatory Showcase strip één handtekening uit elk van de twaalf waarnemingsposten in Orrery's vloot aan.Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO en Hitomi. Klik op een van hen om te vallen in de volledige galerij van dat observatorium + technisch panel."
+  ],
+  "body_paragraphs": [
+    "De beeldsensor van een ruimtetelescoop is een CCD- of CMOS-chip. Elke pixel bevindt zich op het brandpuntsvlak voor een blootstelling (overal van milliseconden tot meerdere uren), het verzamelen van elektronentellingen. De uitgang is een getal per pixel: hoeveel fotonen van welke smalbandfilter er raakt. Meerdere blootstellingen zijn gestapeld om leesruis neer te slaan, geregistreerd als sub-pixel uitlijning, en mediaan-gecombineerd om kosmische-stralen hits te weigeren.",
+    "Kleur is het meest onbegrepen deel. Telescoopfilters zijn smalbandfilters die een specifiek spectrum van 10 Het Hubble Palette kent deze filters toe aan RGB-kanalen op niet-fysieke manieren (S-II rood, H-α groen, O-III blauw) om het contrast tussen fysische processen te maximaliseren. JWST's midden-infrarood afbeeldingen kaart 21 μm, 11 μm, en 7 μm naar RGB ",
+    "De verwerkingspijpleiding is open-source voor de meeste NASA / ESA-observatoria. Raw exposure land in MAST (Mikulski Archive for Space Telescopes) of ESA Datalabs op het moment dat ze de grond raken; image-pipeline tutorials laten precies zien hoe een uiteindelijke composiet wordt samengesteld. De foto's zijn niet gemaakt. Ze zijn gedocumenteerd aan de byte.",
+    "Voor grondbeeldvorming is de extra uitdaging de atmosfeer. [Adaptive optics](observation/adaptive-optics) corrigeert het in real time door de turbulentie te detecteren met een lasergeleide ster en een vervormbare spiegel tegen te buigen. JWST en Hubble zijn deels in de ruimte om dit probleem helemaal over te slaan; de atmosfeer is ook op zijn hoogst infrarood en UV banden, wat de andere reden is."
+  ],
+  "diagram_caption": "Filter → CCD → stack → register → kalibreren → composiet → kleurenkaart. Zes stappen, uren rekenen, echte data de hele weg door."
+}

@@ -46,6 +46,7 @@
   "chip_label_tof_axis": "Time-of-flight axis — fast vs slow trips",
   "chip_label_dv_heatmap": "Colour scale — cheap teal to expensive red",
   "chip_label_orbit_regimes": "Orbit regimes — LEO / MEO / GEO / HEO altitude bands",
+  "chip_label_lagrange_points": "Lagrange points — five gravity-balanced spots in any two-body system",
   "chip_label_mission_types": "Mission types — flyby, orbiter, lander, rover, sample return",
   "chip_label_microgravity_physiology": "Microgravity physiology — fluid shift, bone loss, vestibular silence",
   "chip_label_bone_density_loss": "Bone density loss — 1–2 % per month without countermeasures",

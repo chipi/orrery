@@ -1,0 +1,11 @@
+{
+  "title": "Adaptieve optica",
+  "intro_sentence": "Op de grond gebaseerde telescopen meten de vervorming van de atmosfeer in real time met een lasergeleide ster, en buigen dan een vervormbare spiegel om het uit te wissen en scherpen beelden met een factor 10 of meer.",
+  "body_paragraphs": [
+    "De atmosfeer van de aarde is een puinhoop van bewegende cellen van warme en koude lucht, elke cel met een iets andere brekingsindex. Sterrenlicht dat doorloopt wordt door elkaar geschud.Daarom twinkelen sterren en waarom een 10-meter aardtelescoop zonder correctie niet beter ziet dan een achtertuin 20 cm scope op een vaste nacht. De atmosferische \"zien\" limiet is ongeveer 1 boogseconde. Hubble's diffractielimiet is 0,05.",
+    "Adaptieve optiek sluit dat gat door het meten van de vervorming op honderden punten over de opening en het tegenbogen van een vervormbare spiegel, vaak een dun glas met honderden niet-elektrische actuators erachter met 1000 Hz. De referentie voor \"hoe perfect er uit moet zien\" is ofwel een heldere natuurlijke ster in de buurt van het wetenschappelijke doel (zeldzaam om er één dicht genoeg te hebben) ofwel een **lasergeleide ster**: een natriumresonantielaser die in de bovenste atmosfeer wordt afgevuurd om een kunstmatige gloed op de juiste hoogte te maken.",
+    "Keck, VLT, Gemini, Subaru en de komende ELT's vertrouwen allemaal op AO. De techniek is wat exoplaneet beeldvorming op de grond mogelijk maakte. Zonder deze techniek zou de PSF van de gastheerster het signaal van de planeet verdrinken. JWST en Hubble zijn deels in de ruimte om AO volledig over te slaan; grond-gebaseerde AO is het alternatief wanneer de atmosfeer is het enige obstakel en het budget kan geen financiering van een lancering.",
+    "AO werkt niet bij elke golflengte: zichtbaar licht AO is moeilijker dan infrarood omdat de coherentietijd van de atmosfeer korter is bij korte golflengten. De langste golflengte banden (mid-IR, sub-mm) kunnen vanaf de grond worden gedaan met AO en rivaliserende ruimtetelescopen. Optisch/UV blijft een sterke zaak voor de ruimte."
+  ],
+  "diagram_caption": "Lasergeleiding ster → wavefront sensor → vervormbare spiegel bij 1000 Hz → 10× scherpere beelden. Versla de atmosfeer zonder een telescoop te lanceren."
+}

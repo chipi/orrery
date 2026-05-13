@@ -1,0 +1,10 @@
+{
+  "title": "Sterrenzoekers",
+  "intro_sentence": "Een kleine camera gericht op de hemel, het identificeren van sterren door patroon-matching met een aan boord catalogus ... de meest accurate manier voor een ruimteschip om te weten welke kant het wijst.",
+  "body_paragraphs": [
+    "Een ruimtevaartuig kan GPS niet vragen welke kant \"boven\" op is. Er is geen omhoog in de ruimte, en GPS bereikt toch niet langs LEO. Om een brandwond uit te voeren, een zonnepaneel in te zetten, of een hoge gain antenne op de Aarde te richten, moet het ruimtevaartuig zijn oriëntatie in de traagheidsruimte kennen. Het instrument dat dit levert is de ster tracker: een kleine CCD camera gericht op een stuk hemel, het nemen van een korte belichting, het identificeren van de sterren in de afbeelding door patroon-matching met een onboard catalogus (meestal de Hipparcos of Tycho-2 catalogus, ~104",
+    "Zodra het drie of meer sterren heeft geïdentificeerd, bepaalt de geometrie op unieke wijze de oriëntatie van de camera. In combinatie met de kennis van hoe de camera op het ruimteschiplichaam wordt gemonteerd, is het resultaat een kwartion dat de ruimtevaartuighouding beschrijft tot 1 Moderne interplanetaire missies dragen twee of drie trackers in onafhankelijke oriëntaties, zodat ten minste één altijd een schoon zicht heeft (geen zonsverblinding, geen planeet in het gezichtsveld).",
+    "Startrackers werken continu tussen brandwonden en bieden de absolute referentie dat het integreren van IMU metingen (zie [dode berekening](mission-phases/dead-reckoning)) moet blijven gekalibreerd. Zonder sterrenvolgers drijft de IMU en verliest het ruimteschip binnen enkele uren zijn attitudekennis. Met hen, houding is goed om boogseconden voor jaren op het einde "
+  ],
+  "diagram_caption": "Camera neemt blootstelling → te identificeren sterren door driehoek-matching met catalogus → quaternion attitude oplossing → boogsecond-accurate \"welke kant wijs ik op?\" "
+}

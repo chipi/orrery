@@ -1,0 +1,11 @@
+{
+  "title": "EVA-fysiologie",
+  "intro_sentence": "Een ruimtewandeling is een uithoudingsevenement van 6 uur in een 1/3-atmosfeer zuurstof-p... pak, voorafgegaan door uren voorademen om de bochten op afstand te houden.",
+  "body_paragraphs": [
+    "Het fundamentele EVA probleem is dat het menselijk lichaam wil Aarde-zeeniveau atmosfeer  Dus het pak loopt ongeveer 4,3 psi (0,29 atm) zuivere zuurstof. Dat is genoeg gedeeltelijke druk van O2 om comfortabel te ademen, maar de abrupte daling van de druk van het station (14,7 psi, ~80% N2) naar de druk (4.3 psi, 100% O2) zou leiden tot decompressie ziekte.De bochten precies de manier waarop duikduikers krijgen ze op een snelle klim.",
+    "De tegenmaatregel is voorademen: uren van het ademen van zuivere zuurstof bij geleidelijk lagere druk voor het uitstappen, het wassen van stikstof uit lichaamsweefsels. Het huidige US-side ISS protocol maakt gebruik van een in-suit pre-breathe + het Campout protocol (overnachting op 10.2 psi) tot ongeveer 4 uur voordat de luchtsluis drukt. Russische Orlan pakken lopen op 5.7 psi, die verkort pre-ademthee aanzienlijk verschillende trade-off.",
+    "Eenmaal buiten is het werk fysiek moeilijker dan het lijkt. Zelfs kleine bewegingen vereisen constante arm en grip kracht tegen stijfheid van het pak; ervaren ruimtewandelaars beschrijven de EMU handschoenen als de meest vettige stuk apparatuur ooit gevlogen. Vingernagelschade komt vaak voor. Handkrampen en schouderstam beperken EVA duur voor metabole budget doet. Moderne EVA's maximaal ongeveer 7 uur nominaal, 8,5 uur met verlenging; langer dan dat en de bemanning foutpercentages sterk stijgen.",
+    "Suit risico's omvatten ook thermische beheer (het pak dumpt ongeveer 250 W metabole warmte in een sublimator die waterdamp naar de ruimte ventileert), CO2 schrobben (lithium-hydroxide canister of amine schommelbed), en het constante risico van een handschoen of visor punctie. Astronauten trainen dezelfde EVA in het Neutral Buoyancy Laboratory zwembad ongeveer 10 uur training per 1 uur vlucht EVA De kosten-per-uur van ruimtewandelen is de hoogste van elke astronaut activiteit."
+  ],
+  "diagram_caption": "Voorademen O2 om stikstof uit te wassen → stap in 4.3 psi pure-O2 pak → 6 Russische Orlan om 5.7 psi verkort voor ademhalen."
+}

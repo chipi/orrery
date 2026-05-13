@@ -1,0 +1,15 @@
+{
+  "title": "공간 사진",
+  "intro_sentence": "모든 유명한 \"telescope pictures\"는 좁은 밴드 필터를 통해 긴 노출의 스택, 캘리브레이션, 등록, false-colour mapped - 이미지는 인간이 계산을 만드는 것입니다.",
+  "narrative_101": [
+    "Hubble은 창조의 기둥의 사진을 찍지 않았습니다. Hubble은 다른 필터를 통해 각각 몇 가지 수십 개의 사진을 찍었습니다. 각 분은 긴 - 그리고 이미징 과학자의 팀은 하위 픽셀을 정렬하여 나쁜 픽셀과 cosmic-ray를 캘리브레이션 한 다음 필터 캡처를 물리 칩니다. 포스터에서 볼 수있는 것은 실제 데이터와 실제 해석입니다. Telescope Imagery는 요리가 아닙니다. - 휴대 전화 카메라가 어떤 것이 아닙니다.",
+    "이 섹션 아래 전망대 쇼케이스 스트립은 Orrery의 함대에 12 개의 관측소 각각에서 하나의 서명 이미지를 끌어 - Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO 및 Hitomi. 그 관측소의 전체 갤러리 + 기술 패널에 떨어뜨리려면 그들 중 하나를 클릭하십시오."
+  ],
+  "body_paragraphs": [
+    "공간 망원경의 이미지 센서는 CCD 또는 CMOS 칩입니다 - photon-counters의 그리드. 각 화소는 노출을 위한 초점 비행기에 앉습니다 (밀리초에서 다수 시간에 어디에나), 전기 조사 축적. 산출은 화소 당 수입니다: 얼마나 많은 광경은 어느 좁은 밴드 여과기가 거기 명중합니다. 여러 노출은 하위 픽셀 정렬에 등록 된 읽힌 잡음을 이길 수 있으며, cosmic-ray를 거부 할 수 있습니다.",
+    "색상은 가장 미묘한 부분입니다. 망원경 필터는 좁은 밴드입니다 - 그들은 스펙트럼의 특정 10-100 nm 슬라이스를 전달합니다 : 656.3 nm에서 수소 알파, 500.7 nm에서 투수 이온 산소, 2 μm 또는 12 μm의 적외선 밴드. Hubble Palette은 물리적 프로세스의 대비를 극대화하기 위해 S-II red, H-α green, O-III blue)의 RGB 채널에 필터를 할당합니다. JWST의 중간 적외선 이미지지도 21 μm, 11 μm, 그리고 7 μm에서 RGB — 당신의 눈이 거기 있는 경우에 볼 수 없었습니다.",
+    "처리 파이프라인은 대부분의 NASA / ESA 관측소에 대한 오픈 소스입니다. MAST (Mikulski Archive for Space Telescopes) 또는 ESA Datalabs에서 토지 노출; 이미지 파이프 자습서는 최종 복합체가 조립되는 방법을 정확히 보여줍니다. 그림은 제조되지 않습니다 - 그들은 바이트에 문서화됩니다.",
+    "지상 기반 영상을 위해 추가 도전은 분위기입니다. [Adaptive Optics](observation/adaptive-optics)는 레이저 가이드 스타와 함께 turbulence를 감지하고 변형 가능한 거울을 위조하여 실시간으로 수정합니다. JWST 및 Hubble은 전적으로이 문제를 건너 뛰는 공간에 있습니다; 대기는 또한 다른 이유인 적외선과 UV 밴드에 불투명합니다."
+  ],
+  "diagram_caption": "필터 → CCD → 스택 → 등록 → 교정 → 복합 → 색상 맵. 6개의 단계, compute의 시간, 진짜 자료 전체적인 방법을 통해."
+}

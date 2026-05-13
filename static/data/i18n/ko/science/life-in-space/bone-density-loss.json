@@ -1,0 +1,11 @@
+{
+  "title": "Bone 조밀도 손실",
+  "intro_sentence": "Astronauts는 microgravity에서 달 당 뼈 질량의 대략 1-2%를 잃습니다 — elderly osteoporosis로 동일한 비율, 그러나 압축되고 뒤집을 수 있는 ish.",
+  "body_paragraphs": [
+    "Bone은 지속적으로 자체를 재개하는 살아있는 조직입니다: osteoblasts는 새로운 뼈를 아래로 놓고, osteoclasts는 오래된 뼈를 멀리 녹고, 지구는 걷는, 드는에서 적재하고, 다만 서 있는 2 대략 균형을 잡습니다. 궤도와 균형 팁에서 멀리로드. 흡수는 그것의 정상적인 비율에 갈 것을 유지합니다; 새로운 뼈 증착은 느립니다. 결과는 달 당 대략 1-2%의 순수한 손실, 무게 방위 구조에서 집중된: lumbar 회전, pelvis, femoral 목, calcaneus.",
+    "비교를 위해, 지구에 포스트 폐경 osteoporosis는 ** 년 당 대략 1-2%에 달합니다 **. 6 개월 ISS 임무는 1 년 반에 수십 년의 나이 관련 손실을 압축합니다. 그 중 일부는 비행 후 돌아 왔습니다. 일부는 그렇지 않습니다. 긴 담원 승무원의 연구는 헌신적인 재활 후도 몇 년 동안 measurable bone-mineral-density deficits persist를 제안합니다.",
+    "ISS에 대한 대책 스택은 ARED (Advanced Resistive Exercise Device - 진공 피스톤로드 가짜 스쿼트 랙), T2 러닝 밀 (배우는 동안 실행) 및 사이클 ergometer입니다. 현대 의정서는 ARED에 ~1100 N 축 선적을 명중합니다 — 골극성에 충분히 높은. ARED + bisphosphonate 약 식으로, 6 개월 승무원은 이제 사전 ARED 1.5% / 월보다 0.5% / 월 주위에 뼈 손실로 돌아갑니다. 더 나은, 해결하지.",
+    "Mars-class 3 년 왕복 여행의 경우, 심지어 최고의 전류 대책은 골절-리스크 착륙 astronaut. 활성 연구 라인은 진동 플랫폼, 기계 로딩 한 벌을 포함하고 인공 중력 ( 천천히 회전 서식지)가 유일한 튼튼한 대답인지 탐구합니다."
+  ],
+  "diagram_caption": "ARED + treadmill + 사이클은 무게 베어링 스켈레톤에 적재를 유지; 카운터 측정, 현대 승무원은 ~ 0.5 % / 월 대 사전 ARED 1.5% / 월을 잃습니다."
+}

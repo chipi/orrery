@@ -1,0 +1,15 @@
+{
+  "title": "Fotografia espacial",
+  "intro_sentence": "Cada famosa \"imagem telescópica\" é uma pilha de exposições longas através de filtros de banda estreita, calibrados, registrados, mapeados de cor falsa — a imagem é o que os humanos fazem da contagem.",
+  "narrative_101": [
+    "Hubble não tirou uma foto dos Pilares da Criação. Hubble tirou algumas dezenas de fotos — cada uma através de um filtro diferente, cada minuto de duração — e uma equipe de cientistas de imagem empilhou-as, alinhá-las sub-pixel, calibrando os pixels ruins e raios cósmicos, em seguida, atribuiu cores por que física o filtro capturado. O que você vê no cartaz são dados reais e interpretação real, em partes iguais. As imagens do telescópio não são desonestas — simplesmente não é o que a sua câmara telefónica faz.",
+    "Abaixo desta seção, o Observatório Showcase tira uma imagem de assinatura de cada um dos doze observatórios da frota de Orrery — Hubble, JWST, Chandra, Spitzer, Kepler, TESS, Gaia, Euclid, XMM-Newton, Spektr-RG, Compton GRO e Hitomi. Clique em qualquer um deles para cair na galeria completa do observatório + painel técnico."
+  ],
+  "body_paragraphs": [
+    "O sensor de imagem de um telescópio espacial é um chip CCD ou CMOS — uma grade de fotões. Cada pixel fica no plano focal para uma exposição (de milissegundos a várias horas), acumulando contagens de elétrons. A saída é um número por pixel: quantos fótons dos quais filtro de banda estreita atingiu lá. Múltiplas exposições são empilhadas para bater o ruído de leitura, registrado para alinhamento sub-pixel, e mediana-combinado para rejeitar hits de raios cósmicos.",
+    "A cor é a parte mais mal compreendida. Os filtros de telescópio são de banda estreita – passam por uma fatia específica de 10–100 nm do espectro: hidrogénio-alfa a 656,3 nm, oxigénio duplamente ionizado a 500,7 nm, bandas de infravermelho a 2 μm ou 12 μm. A Paleta Hubble atribui esses filtros a canais RGB de formas não físicas (vermelho S-II, verde H-α, azul O-III) para maximizar o contraste entre processos físicos. As imagens de infravermelho médio da JWST mapeiam 21 μm, 11 μm e 7 μm para RGB — cores que seu olho não podia ver se você estava lá.",
+    "O gasoduto de processamento é de código aberto para a maioria dos observatórios da NASA / ESA. Exposições brutas de terra em MAST (Mikulski Archive for Space Telescopes) ou ESA Datalabs no momento em que eles atingem o solo; tutoriais imagem-pipeline mostram exatamente como um compósito final é montado. As imagens não são fabricadas — estão documentadas até ao byte.",
+    "Para imagens terrestres, o desafio adicional é a atmosfera. [Optica adaptativa] (observação/adaptativa-óptica) corrige-a em tempo real, detectando a turbulência com uma estrela guia laser e contra-dobrando um espelho deformável. JWST e Hubble estão no espaço parcialmente para pular este problema completamente; a atmosfera também é opaca na maioria das bandas de infravermelho e UV, que é a outra razão."
+  ],
+  "diagram_caption": "Filtro → CCD → pilha → registo → calibrar → compósito → mapa de cores. Seis passos, horas de computação, dados reais o tempo todo."
+}

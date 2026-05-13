@@ -1,0 +1,11 @@
+{
+  "title": "Perte de densité osseuse",
+  "intro_sentence": "Les astronautes perdent environ 1 à 2 % de la masse osseuse par mois en microgravité — le même taux que l'ostéoporose âgée, mais comprimée et réversible.",
+  "body_paragraphs": [
+    "L'os est un tissu vivant qui se remodele constamment : les ostéoblastes déposent de nouveaux os, les ostéoclastes dissolvent les vieux os, et sur Terre la charge de marcher, de soulever et de rester debout maintient les deux à peu près équilibrés. Emportez ce chargement en orbite et les extrémités de balance. La résorption continue à son rythme normal; les dépôts de nouveaux os ralentissent. Il en résulte une perte nette d'environ 1 à 2 % par mois, concentrée dans les structures portantes : colonne vertébrale lombaire, bassin, col fémoral, calcaneus.",
+    "À titre de comparaison, l'ostéoporose post-ménopausique sur Terre se situe entre 1 et 2 % par année**. Une mission de six mois de l'ISS compresse environ une décennie de pertes liées à l'âge en une demi-année. Certains reviennent après le vol, d'autres non. Les études de l'équipage de longue durée suggèrent que des déficits mesurables de densité osseuse-minérale persistent pendant des années après le vol, même après une réadaptation spécialisée.",
+    "La pile de contre-mesure sur l'ISS est ARED (Advanced Resistive Exercise Device — un faux rack de squat chargé de piston sous vide), le tapis de course T2 (course alors qu'il est en panne) et l'ergomètre de cycle. Les protocoles modernes frappent ~1100 N charge axiale sur ARED — assez élevée pour être ostéogène. Avec les traitements anti-ARED + bisphosphonate, l'équipage de six mois revient maintenant avec des pertes osseuses d'environ 0,5 % par mois plutôt que le pré-ARED 1,5 % par mois. Mieux, pas résolu.",
+    "Pour un voyage de trois ans de classe Mars, même les meilleures contre-mesures actuelles impliquent un astronaute à risque de fracture. Les lignes de recherche actives comprennent les plates-formes de vibration, les combinaisons de chargement mécanique et l'exploration de la gravité artificielle (un habitat qui tourne lentement) est la seule réponse durable."
+  ],
+  "diagram_caption": "ARED + tapis roulant + cycle maintiennent la charge sur le squelette portant; avec des contre-mesures, l'équipage moderne perd ~0,5%/mois par rapport au pré-ARED 1,5%/mois."
+}

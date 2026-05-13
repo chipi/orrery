@@ -1,0 +1,11 @@
+{
+  "title": "Optique adaptative",
+  "intro_sentence": "Les télescopes au sol mesurent la distorsion de l'atmosphère en temps réel avec une étoile guide laser, puis plient un miroir déformable pour l'annuler, affûtant les images par un facteur de 10 ou plus.",
+  "body_paragraphs": [
+    "L'atmosphère terrestre est un gâchis de cellules mobiles d'air chaud et froid, chaque cellule ayant un indice de réfraction légèrement différent. C'est pourquoi les étoiles scintillent et un télescope terrestre de 10 mètres sans correction ne voit pas mieux qu'un champ de 20 cm dans le jardin par une nuit régulière. La limite atmosphérique de « voir » est d'environ 1 arcseconde. La limite de diffraction de Hubble est de 0,05.",
+    "L'optique adaptative comble cet écart en mesurant la distorsion à des centaines de points à travers l'ouverture et en contre-tendant un miroir déformable — souvent un verre mince avec des centaines d'actionneurs piézoélectriques derrière lui — à 1000 Hz. La référence pour « à quoi devrait ressembler le parfait » est soit une étoile naturelle brillante près de la cible scientifique (rare d'en avoir une assez proche) ou une étoile guide **laser** : un laser à résonance sodique tiré dans la haute atmosphère pour faire une lueur artificielle à la bonne altitude.",
+    "Keck, VLT, Gemini, Subaru, et les ELT à venir comptent tous sur AO. La technique est ce qui a rendu possible l'imagerie par exoplanète au sol — sans elle, la FSP de l'étoile hôte nuirait au signal de la planète. JWST et Hubble sont dans l'espace en partie pour sauter entièrement AO; AO au sol est l'alternative lorsque l'atmosphère est le seul obstacle et le budget ne peut pas financer un lancement.",
+    "AO ne fonctionne pas à toutes les longueurs d'onde : la lumière visible AO est plus dure que l'infrarouge car le temps de cohérence de l'atmosphère est plus court à de courtes longueurs d'onde. Les bandes de longueur d'onde les plus longues (mi-IR, sous-mm) peuvent être faites à partir du sol avec AO et télescopes spatiaux concurrents. L'optique/UV reste un cas fort pour l'espace."
+  ],
+  "diagram_caption": "Laser guide star → capteur de front d'onde → miroir déformable à 1000 Hz → 10× images plus nettes. Défaut l'atmosphère sans lancer de télescope."
+}

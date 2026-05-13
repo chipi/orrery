@@ -1,0 +1,11 @@
+{
+  "title": "Coronagraphen",
+  "intro_sentence": "Eine okkulierende Scheibe innerhalb des Teleskops blockiert den Wirtsstern, so dass der Planet neben ihm – eine Milliarde mal Fainter – sichtbar wird.",
+  "body_paragraphs": [
+    "Ein sonnenähnlicher Stern überstrahlt seine Planeten um einen Faktor von etwa 109 bei sichtbaren Wellenlängen und 106 im Infraroten. Die Photonen des Planeten fehlen nicht – sie ertrinken in den Beugungsflügeln der Point-Spread-Funktion des Sterns. Eine direkte Abbildung einer Exoplanet ist nur möglich, wenn Sie diese PSF durch viele Größenordnungen unterdrücken können. Ein Koronagraph tut genau das.",
+    "Der klassische Lyot-Koronagraph (1930, erfunden von Bernard Lyot für Solarfotografie) legt eine opake Scheibe an der Teleskop-Fokusebene, um den Stern zu blockieren, dann eine zweite Maske weiter unten, um das zerbrochene Licht vom Rand der ersten Maske zu blockieren. Moderne apodisierte Pupillenkoronagraphen und Wirbelkoronagraphen verwenden komplizierte Phasenmuster, um die Unterdrückung in engen Bereichen des Bildes auf 10 - 9 oder besser zu verschieben.",
+    "JWST trägt Koronagraphen sowohl auf NIRCam als auch auf MIRI; sie haben direkt mehrere Gasriesen-Exoplanets um nahe gelegene Sterne abgebildet. Das römische Teleskop Nancy Grace (launende Mitte 2020) trägt ein Koronagraph-Instrument, um Gasriesen um helle Sterne auf beispiellosem Kontrast zu bilden – und die Technologie für das größere Observatorium der Habitable Worlds zu demonstrieren, das auf Erde-Masse-Planeten zielen wird.",
+    "Eine alternative Architektur ist die **starshade**: eine 30+ Meter große opake Form geflogen Tausende von km vor dem Teleskop und blockiert den Stern ohne Optik im Inneren des Instruments. Starshades sind mechanisch härter (die bildgebende Ausrichtung ist brutal) aber erreichen einen höheren Kontrast. Nichts ist noch geflogen; Konzeptstudien für direkte Erd-Zwin-Bildgebung beinhalten immer einen Sternenhade im Mix."
+  ],
+  "diagram_caption": "Blockieren Sie den Stern in der Brennebene → Beugungsflügel schleichen um → zweite Maske tötet diese → 10-9 Unterdrückung, Planet entsteht. Vortex coronagraphs ersetzen die Scheibe durch ein Phasenmuster."
+}

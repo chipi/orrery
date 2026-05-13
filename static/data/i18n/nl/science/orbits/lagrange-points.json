@@ -1,0 +1,15 @@
+{
+  "title": "Lagrange-punten",
+  "intro_sentence": "Vijf gravitatie-gebalanceerde plekken in elk twee-lichaamssysteem waar een klein ruimtevaartuig kan zweven met bijna geen brandstof en waar de meeste moderne ruimte-observatoria eigenlijk leven.",
+  "narrative_101": [
+    "Neem twee lichamen die om elkaar draaien. Zon en Aarde, Aarde en Maan, Zon en Jupiter en er zijn precies vijf plekken in het baanvlak waar een derde, veel kleiner lichaam kan blijven ten opzichte van de twee grote. Joseph-Louis Lagrange werkte ze uit in 1772. Tweeënhalf eeuwen later zijn ze het meest waardevolle vastgoed in de cislunar ruimte.",
+    "JWST zit bij Sun-Earth L2. SOHO zit bij Sun-Earth L1. De poort zal vlakbij Aarde-Maan L2 leven. Queqiao relais Chang'e signalen van voorbij de Maan op Aarde-Maan L2 ook. De naam-spacecraft lijst is kort en bijna volledig Lagrange-station."
+  ],
+  "body_paragraphs": [
+    "De vijf punten zitten in specifieke geometrieën. **L1** ligt tussen de twee lichamen op de lijn die hen verbinden  **L2** bevindt zich op dezelfde lijn maar aan de FAR kant van het kleinere lichaam voor Sun-Earth, ~1,5 miljoen km tegen zonsondergang van de Aarde. **L3** bevindt zich aan de andere kant van het grotere lichaam, verborgen achter de Zon vanuit het perspectief van de Aarde. **L4** en **L5** bevinden zich op de hoekpunten van gelijkzijdige driehoeken gevormd met de twee lichamen voor en 60° achter de baan van het kleinere lichaam.",
+    "De stabiliteit verschilt sterk. L1, L2 en L3 zijn **zadelpunten**  Een ruimteschip dat daar geparkeerd staat zal binnen maanden wegdrijven tenzij het kleine brandwonden doet. L4 en L5 zijn **stabiel** Het zijn potentiaal-energiebronnen. Stof verzamelt zich op de Aarde-Zon L4/L5 (de Kordylewski wolken, zwak maar echt); Trojaanse asteroïden trillen rond de Zon-Jupiter L4 en L5 in hun miljoenen.",
+    "**Sun-Earth Lagrange points** zijn waar grote waarnemingsposten wonen: SEL1 hosts SOHO (Sun-watching sinds 1996) en DSCOVR (Earth-watching); SEL2 hosts JWST, Spektr-RG, Euclid, Gaia, en eerder Herschel + Planck  SEL2 is ~6 maanden vrij van de aarde, met een ~5 m/s halo-baan-invoegen brandwond bij aankomst; geen brandstof voor het station-behoud meer dan ~2 m/s/jr.",
+    "**Earth-Moon Lagrange points** zijn het strategische vastgoed voor Artemis. EML2 (~60.000 km voorbij de maan) is het haltepunt voor Gateway in NRHO (een bijna-rectilineaire halo eromheen). Het geeft lijn-of-sight aan zowel de maan ver (waar Chang'e-4 landde; Queqiao relais van EML2) en de Aarde. EML1, tussen Aarde en de Maan, is een natuurlijk waypoint voor elke cislunar architectuur die wil afdalen en herhaaldelijk wil ascenderen zonder te bloeden op transfers. Het volgende decennium van de bemanning Moon operaties is grotendeels een Lagrange-punt verhaal."
+  ],
+  "diagram_caption": "Vijf zwaartekracht-gebalanceerde vlekken per twee-lichaam systeem. L1/L2/L3 zadelpunten (station-onderhoud vereist); L4/L5 stabiele putten. Sun-Earth L2 hosts JWST + Euclid + Spektr-RG; Earth-Moon L2 hosts Gateway + Queqiao."
+}

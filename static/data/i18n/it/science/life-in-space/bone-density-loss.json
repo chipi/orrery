@@ -1,0 +1,11 @@
+{
+  "title": "Perdita di densità",
+  "intro_sentence": "Gli astronomi perdono approssimativamente 1–2% della massa ossea al mese in microgravità — lo stesso tasso di osteoporosi anziani, ma compressa e reversibile-ish.",
+  "body_paragraphs": [
+    "Bone è un tessuto vivente che si rimodella costantemente: gli osteoblasti posano l'osso nuovo giù, gli osteoclasti dissolvono l'osso vecchio lontano, e sulla Terra il carico da camminare, sollevamento, e solo in piedi mantiene i due approssimativamente equilibrati. Portate via quel carico in orbita e i consigli di equilibrio. Il riassorbimento continua ad andare al suo tasso normale; la deposizione di nuovo osso rallenta. Il risultato è una perdita netta di circa 1–2% al mese, concentrata nelle strutture portanti: colonna vertebrale lombare, pelvi, collo femorale, calcaneus.",
+    "Per il confronto, l'osteoporosi post-menopausa sulla Terra corre a circa 1–2% per **anno**. Una missione ISS di sei mesi comprime circa un decennio di perdita legata all'età in mezzo anno. Alcuni tornano dopo il volo; altri no. Gli studi dell'equipaggio di lunga durata suggeriscono che i deficit misurabili di densità ossea-minerale persistono per anni dopo il volo anche dopo la riabilitazione dedicata.",
+    "Lo stack di contromisure sull'ISS è ARED (Advanced Resistive Exercise Device - un rack falso a vuoto-piston-caricato), il tapis roulant T2 (corsa mentre si è abbassato), e l'ergometro del ciclo. I protocolli moderni hanno colpito ~1100 N carico assiale su ARED — abbastanza alto da essere osteogenico. Con i regimi di droga ARED + bisfosfonate, l'equipaggio di sei mesi ritorna con perdite ossee intorno allo 0,5%/mese piuttosto che l'1,5% pre-ARED/mese. Meglio, non risolto.",
+    "Per un viaggio di tre anni di classe Marte, anche le migliori contromisure attuali implicano un astronauta di atterraggio a rischio frattura. Le linee di ricerca attive includono piattaforme di vibrazione, tute di carico meccanico, e l'esplorazione se la gravità artificiale (un habitat lentamente rotante) è l'unica risposta durevole."
+  ],
+  "diagram_caption": "ARED + tapis roulant + ciclo continua a caricare sullo scheletro porta pesi; con contromisure, l'equipaggio moderno perde ~0,5%/mese rispetto al pre-ARED 1,5%/mese."
+}

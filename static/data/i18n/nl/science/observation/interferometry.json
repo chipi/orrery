@@ -1,0 +1,11 @@
+{
+  "title": "Inferometrie",
+  "intro_sentence": "Steek afzonderlijke telescopen in een virtueel diafragma groter dan eender welke van hen.De Event Horizon Telescope is een radio-interferometer van aardse grootte, gebouwd uit antennes op vier continenten.",
+  "body_paragraphs": [
+    "Het oplossend vermogen van een telescoop hangt af van het diafragma (diameter / golflengte). Een radioantenne 30 m over beeldvorming bij 1 mm golflengte heeft een hoekresolutie van ongeveer 7 boogseconden te grof om de meeste dingen te zien. Maar twee antennes 1000 km uit elkaar, waarbij dezelfde bron tegelijkertijd wordt geobserveerd en hun signalen worden gecombineerd, gedragen zich als een enkele telescoop **1000 km doorsnee** bij die resolutie ",
+    "De truc is correlatie: de radiogolven bij antenne A en antenne B verschillen door een kleine fasevertraging die afhangt van de bronrichting en de antenne baseline. Cross-correlatie van de twee signalen in de tijd, en je meet die fase vertraging. Doe het gelijktijdig met N-antennes in verschillende posities en de gecombineerde signaalmonsters N×(N-1)/2 basislijnen, waarbij de Fourier componenten van de bronlichtverdeling worden ingevuld. Een iteratieve deconvolutie herstelt dan het beeld.",
+    "**VLA** (27 antennes in New Mexico) doet dit bij golflengten. **ALMA** (66 antennes in Chili) doet het bij sub-mm golflengten, waar atmosferische waterabsorptie bruut is maar het stof-thermisch-continuüm licht op. **Event Horizon Telescope** linked 8 sub-mm observatories over 4 continenten to image M87's black hole at 1,3 mm ",
+    "Optische/IR-interferometrie bestaat, maar is veel moeilijker omdat optische golflengten 6+ orden van grootte korter zijn dan radio, waarvoor een lasergestabiliseerd pad nodig is dat overeenkomt met nanometernauwkeurigheid. CHARA, NPOI en de VLTI zijn de overlevenden. Ruimte-interferometers zoals LISA (gravitatieve-golfdetectie via laserarmen tussen drie vrije-vliegende ruimteschepen) zijn de toekomstige architectuur, zowel voor zwaartekracht-golfastronomie als voor het langetermijndoel om aard-twin exoplaneten in hoog contrast te beeldvormen."
+  ],
+  "diagram_caption": "Twee antennes + cross-correlation → effectieve diafragma = de basislijn tussen hen. Aardse grootte → EHT M87 zwart gat. Ruimte-grootte → LISA zwaartekrachtgolven."
+}

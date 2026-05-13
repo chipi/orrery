@@ -1,0 +1,11 @@
+{
+  "title": "Ottica adattiva",
+  "intro_sentence": "I telescopi a terra misurano la distorsione dell'atmosfera in tempo reale con una stella di guida laser, quindi piegano uno specchio deformabile per cancellarlo — affilare le immagini di un fattore di 10 o più.",
+  "body_paragraphs": [
+    "L'atmosfera terrestre è un pasticcio di cellule in movimento di aria calda e fredda, ogni cellula con un indice di rifrazione leggermente diverso. La luce stellare che passa attraverso viene imbavagliata — ecco perché le stelle brillano e perché un telescopio terra di 10 metri senza correzione non vede meglio di un cortile di 20 cm di portata su una notte costante. Il limite di \"vedere\" atmosferico è di circa 1 arcosecondo. Il limite di diffrazione di Hubble è 0,05.",
+    "L'ottica adattiva chiude quel divario misurando la distorsione a centinaia di punti attraverso l'apertura e contrastando uno specchio deformabile — spesso un vetro sottile con centinaia di attuatori piezoelettrici dietro di esso — a 1000 Hz. Il riferimento per \"cosa di perfetto dovrebbe sembrare\" è o una stella naturale luminosa vicino al bersaglio della scienza (rarara di avere abbastanza vicino) o una stella guida **laser**: un laser a risonanza di sodio sparato nell'atmosfera superiore per fare un bagliore artificiale alla giusta altitudine.",
+    "Keck, VLT, Gemini, Subaru e i prossimi ELT si affidano a AO. La tecnica è ciò che ha reso possibile l'imaging a base di terra — senza di essa, il PSF della stella ospitante annegherebbe il segnale del pianeta. JWST e Hubble sono nello spazio in parte per saltare completamente AO; AO a terra è l'alternativa quando l'atmosfera è l'unico ostacolo e il budget non può finanziare un lancio.",
+    "AO non funziona ad ogni lunghezza d'onda: AO visibile-luce è più difficile dell'infrarosso perché il tempo di coerenza dell'atmosfera è più breve a brevi lunghezze d'onda. Le bande di lunghezza d'onda più lunghe (tra-IR, sub-mm) possono essere fatte da terra con AO e telescopi spaziali rivali. Optical/UV rimane un caso forte per lo spazio."
+  ],
+  "diagram_caption": "Stella guida laser → sensore ondulato → specchio deformabile a 1000 Hz → immagini più nitide. Sconfigge l'atmosfera senza lanciare un telescopio."
+}

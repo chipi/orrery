@@ -2424,6 +2424,22 @@ interface FleetImageQuery {
     | 'INTUITIVE_MACHINES'
     | 'SPACEIL'
     | 'MULTI';
+  /**
+   * Optional per-entry override for gallery size. Defaults to
+   * FLEET_GALLERY_MAX (5). Used for observatory entries that hold up
+   * to ~12 hero shots so the ObservatoryShowcase + per-entry galleries
+   * read as a real "best of" collection (S7 of the science expansion).
+   */
+  maxImages?: number;
+  /**
+   * Optional supplementary queries that run when the primary `query`
+   * returns less than `maxImages`. Each is tried in order; results
+   * de-duplicated against already-saved URLs. Useful for observatory
+   * entries where one query ("Hubble Space Telescope") finds the
+   * device shots and a second ("Hubble Deep Field") finds the famous
+   * imagery the telescope made.
+   */
+  extraQueries?: string[];
 }
 
 /**
@@ -2743,31 +2759,106 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   { id: 'osiris-rex', query: 'OSIRIS-REx asteroid Bennu sample', agency: 'NASA' },
   { id: 'dart', query: 'DART asteroid Dimorphos impact', agency: 'NASA' },
 
-  // Observatories
+  // Observatories — maxImages 12 + extraQueries for famous deep-field
+  // / signature science imagery (S7 of the /science observation
+  // expansion). The first query returns device shots; extras pull in
+  // the imagery the telescope is actually famous for.
   {
     id: 'hubble',
     query: 'Hubble Space Telescope orbit servicing',
     agency: 'NASA',
+    maxImages: 12,
+    extraQueries: [
+      'Hubble Deep Field',
+      'Hubble Ultra Deep Field',
+      'Pillars of Creation Hubble',
+      'Hubble galaxy NGC',
+    ],
   },
   {
     id: 'jwst',
     query: 'James Webb Space Telescope deployed',
     agency: 'NASA',
+    maxImages: 12,
+    extraQueries: [
+      'JWST first deep field',
+      'JWST Carina Nebula',
+      'JWST exoplanet WASP',
+      'James Webb mid-infrared galaxy',
+    ],
   },
   {
     id: 'chandra',
     query: 'Chandra X-ray Observatory deployment',
     agency: 'NASA',
+    maxImages: 12,
+    extraQueries: [
+      'Chandra X-ray Cassiopeia A',
+      'Chandra X-ray galaxy cluster',
+      'Chandra supernova remnant',
+    ],
   },
-  { id: 'kepler', query: 'Kepler space telescope exoplanet', agency: 'NASA' },
-  { id: 'spitzer', query: 'Spitzer Space Telescope infrared', agency: 'NASA' },
-  { id: 'compton-gro', query: 'Compton Gamma Ray Observatory', agency: 'NASA' },
-  { id: 'xmm-newton', query: 'XMM-Newton X-ray ESA', agency: 'ESA' },
-  { id: 'gaia', query: 'Gaia ESA star catalog spacecraft', agency: 'ESA' },
-  { id: 'euclid', query: 'Euclid ESA dark energy', agency: 'ESA' },
-  { id: 'tess', query: 'TESS exoplanet survey satellite', agency: 'NASA' },
-  { id: 'spektr-rg', query: 'Spektr-RG X-ray Russian German', agency: 'ROSCOSMOS' },
-  { id: 'hitomi', query: 'Hitomi ASTRO-H X-ray JAXA', agency: 'JAXA' },
+  {
+    id: 'kepler',
+    query: 'Kepler space telescope exoplanet',
+    agency: 'NASA',
+    maxImages: 10,
+    extraQueries: ['Kepler-186f exoplanet', 'Kepler field of view'],
+  },
+  {
+    id: 'spitzer',
+    query: 'Spitzer Space Telescope infrared',
+    agency: 'NASA',
+    maxImages: 10,
+    extraQueries: ['Spitzer Milky Way infrared mosaic', 'Spitzer Eta Carinae'],
+  },
+  {
+    id: 'compton-gro',
+    query: 'Compton Gamma Ray Observatory',
+    agency: 'NASA',
+    maxImages: 8,
+  },
+  {
+    id: 'xmm-newton',
+    query: 'XMM-Newton X-ray ESA',
+    agency: 'ESA',
+    maxImages: 10,
+    extraQueries: ['XMM-Newton galaxy cluster', 'XMM-Newton supernova remnant'],
+  },
+  {
+    id: 'gaia',
+    query: 'Gaia ESA star catalog spacecraft',
+    agency: 'ESA',
+    maxImages: 10,
+    extraQueries: ['Gaia DR3 Milky Way map', 'Gaia stellar parallax'],
+  },
+  {
+    id: 'euclid',
+    query: 'Euclid ESA dark energy',
+    agency: 'ESA',
+    maxImages: 10,
+    extraQueries: ['Euclid first images Perseus', 'Euclid Hidden Galaxy'],
+  },
+  {
+    id: 'tess',
+    query: 'TESS exoplanet survey satellite',
+    agency: 'NASA',
+    maxImages: 10,
+    extraQueries: ['TESS light curve transit', 'TESS sector mosaic'],
+  },
+  {
+    id: 'spektr-rg',
+    query: 'Spektr-RG X-ray Russian German',
+    agency: 'ROSCOSMOS',
+    maxImages: 8,
+    extraQueries: ['eROSITA all-sky survey'],
+  },
+  {
+    id: 'hitomi',
+    query: 'Hitomi ASTRO-H X-ray JAXA',
+    agency: 'JAXA',
+    maxImages: 8,
+  },
 ];
 
 /**
@@ -2996,11 +3087,13 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
       }
     };
 
+    const targetMax = row.maxImages ?? FLEET_GALLERY_MAX;
+
     if (NASA_ROUTED.has(row.agency)) {
       // Primary: NASA Images API.
       try {
-        const urls = await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX);
-        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+        const urls = await fetchNasaGalleryUrls(row.query, targetMax);
+        for (let i = 0; i < urls.length && saved < targetMax; i++) {
           await writeImage(urls[i]);
         }
         process.stdout.write(` nasa(${urls.length})`);
@@ -3011,8 +3104,8 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
     } else {
       // Primary: Commons SEARCH (agency-uploaded files).
       try {
-        const urls = await fetchCommonsSearchUrls(row.query, FLEET_GALLERY_MAX);
-        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+        const urls = await fetchCommonsSearchUrls(row.query, targetMax);
+        for (let i = 0; i < urls.length && saved < targetMax; i++) {
           await writeImage(urls[i]);
         }
         process.stdout.write(` commons-search(${urls.length})`);
@@ -3022,16 +3115,16 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
       }
     }
 
-    // Cross-fill: if primary returned < 5, try the OTHER source for
-    // the remaining slots. NASA hardware often has Commons mirrors of
-    // press images; non-NASA entries occasionally appear on NASA's
+    // Cross-fill: if primary returned < targetMax, try the OTHER source
+    // for the remaining slots. NASA hardware often has Commons mirrors
+    // of press images; non-NASA entries occasionally appear on NASA's
     // image library when crew were involved.
-    if (saved < FLEET_GALLERY_MAX) {
+    if (saved < targetMax) {
       try {
         const urls = NASA_ROUTED.has(row.agency)
-          ? await fetchCommonsSearchUrls(row.query, FLEET_GALLERY_MAX - saved)
-          : await fetchNasaGalleryUrls(row.query, FLEET_GALLERY_MAX - saved);
-        for (let i = 0; i < urls.length && saved < FLEET_GALLERY_MAX; i++) {
+          ? await fetchCommonsSearchUrls(row.query, targetMax - saved)
+          : await fetchNasaGalleryUrls(row.query, targetMax - saved);
+        for (let i = 0; i < urls.length && saved < targetMax; i++) {
           await writeImage(urls[i]);
         }
         if (urls.length > 0) {
@@ -3039,6 +3132,27 @@ async function fetchFleetImages(onlyIds?: string[]): Promise<number> {
         }
       } catch {
         // best-effort cross-fill
+      }
+    }
+
+    // Extra queries: pull supplementary imagery using extra query
+    // strings, useful for observatory entries where one query finds
+    // the device shots and others find the famous deep-field /
+    // science-image set the telescope is known for.
+    if (saved < targetMax && row.extraQueries && row.extraQueries.length > 0) {
+      for (const extra of row.extraQueries) {
+        if (saved >= targetMax) break;
+        try {
+          const urls = NASA_ROUTED.has(row.agency)
+            ? await fetchNasaGalleryUrls(extra, targetMax - saved)
+            : await fetchCommonsSearchUrls(extra, targetMax - saved);
+          for (let i = 0; i < urls.length && saved < targetMax; i++) {
+            await writeImage(urls[i]);
+          }
+          if (urls.length > 0) process.stdout.write(` +"${extra.slice(0, 12)}"(${urls.length})`);
+        } catch {
+          // best-effort extras
+        }
       }
     }
 

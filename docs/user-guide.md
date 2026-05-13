@@ -318,5 +318,5 @@ The only state that persists across sessions is what's in the URL (`?lang=`, `?m
 - **[02 Project Concept](concept/02_Project_Concept.md)** — the complete synthesis of what Orrery is.
 - **[03 Data Catalog](concept/03_Data_Catalog.md)** — every constant, every source, mission schema, credit format.
 - **[i18n style guide](i18n-style-guide.md)** — the binding glossary for translators.
-- **`CLAUDE.md`** in the repo root — engineering constraints if you're contributing code (visible on GitHub: <https://github.com/chipi/orrery/blob/main/CLAUDE.md>).
+- **`AGENTS.md`** in the repo root — engineering constraints if you're contributing code (visible on GitHub: <https://github.com/chipi/orrery/blob/main/AGENTS.md>). Tool-specific overlays for Claude Code and Cursor live in `CLAUDE.md` and `.cursor/rules/orrery.mdc` respectively, both of which point back at this file.
 - **In-app**: open the `/science` encyclopedia and read the **Space-101** narrative on the landing page — an 8-chapter primer that takes you from "what is an orbit" to "how a Hohmann transfer works" with no jargon.

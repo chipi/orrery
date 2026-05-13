@@ -4,6 +4,10 @@
   "order": 6,
   "diagram": "history-apollo-11.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/missions/apollo11/01.jpg",
+    "credit": "Apollo 11 surface · NASA · Buzz Aldrin photographed on Mare Tranquillitatis, July 20 1969."
+  },
   "see_in_app": [
     {
       "route": "/moon",

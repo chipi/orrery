@@ -5,6 +5,10 @@
   "formula_latex": "r_s = \\dfrac{2GM}{c^2}",
   "diagram": "black-holes.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/fleet-galleries/chandra/05.jpg",
+    "credit": "Chandra X-ray Observatory · galaxy cluster with X-ray emission from gas heated by black-hole accretion."
+  },
   "see_in_app": [
     { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }
   ],

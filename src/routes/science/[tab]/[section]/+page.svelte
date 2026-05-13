@@ -85,6 +85,13 @@
     {/each}
   </div>
 
+  {#if section.photo}
+    <figure class="section-photo">
+      <img src="{base}{section.photo.src}" alt={section.photo.alt_key ?? ''} loading="lazy" />
+      <figcaption>{section.photo.credit}</figcaption>
+    </figure>
+  {/if}
+
   {#if showObservatoryShowcase}
     <ObservatoryShowcase />
   {/if}
@@ -166,6 +173,29 @@
     height: auto;
     max-height: 320px;
     opacity: 0.95;
+  }
+  .section-photo {
+    margin: 24px 0 32px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .section-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: cover;
+  }
+  .section-photo figcaption {
+    padding: 8px 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
   .hero-diagram figcaption {
     font-family: 'Space Mono', monospace;

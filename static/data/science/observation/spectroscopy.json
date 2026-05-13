@@ -2,6 +2,10 @@
   "id": "spectroscopy",
   "tab": "observation",
   "order": 4,
+  "photo": {
+    "src": "/images/fleet-galleries/jwst/03.jpg",
+    "credit": "JWST · transmission spectroscopy of an exoplanet atmosphere — the absorption pattern reveals composition."
+  },
   "see_in_app": [
     { "route": "/explore", "context_key": "Planet TECHNICAL tab: atmospheric composition lines — every entry comes from a spectrum" }
   ],

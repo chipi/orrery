@@ -4,6 +4,10 @@
   "order": 5,
   "diagram": "edl.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/fleet-galleries/curiosity/01.jpg",
+    "credit": "Curiosity (MSL) · NASA/JPL-Caltech · car-sized nuclear-powered rover delivered to Gale Crater by the sky-crane EDL sequence in 2012."
+  },
   "see_in_app": [
     { "route": "/mars", "context_key": "Curiosity, Perseverance, Tianwen-1 — every Mars lander goes through EDL" }
   ],

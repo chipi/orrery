@@ -87,16 +87,51 @@
       },
       {
         "met_days": 3.4,
-        "type": "arrival"
+        "type": "loi",
+        "dv_km_s": 0.91
       },
       {
         "met_days": 4.6,
-        "type": "edl_or_oi"
+        "type": "descent_start"
+      },
+      {
+        "met_days": 7.8,
+        "type": "ascent"
+      },
+      {
+        "met_days": 10.9,
+        "type": "tei",
+        "dv_km_s": 1.05
       },
       {
         "met_days": 12.6,
         "type": "earth_return"
       }
-    ]
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 170,
+        "inclination_deg": 28.5,
+        "revs": 2
+      },
+      "tli": {
+        "dv_kms": 3.18,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "free_return"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 110,
+        "inclination_deg": 28.5,
+        "periselene_km": 110
+      },
+      "return": {
+        "type": "tei_direct",
+        "dv_kms": 1.05
+      }
+    }
   }
 }

@@ -32,6 +32,12 @@ import { earthPos, outboundArc } from '../src/lib/mission-arc.js';
 import { DESTINATIONS, R_EARTH_AU, type DestinationId } from '../src/lib/lambert-grid.constants.js';
 import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.js';
 import { dateToSimDay } from '../src/lib/sim-day.js';
+import {
+  A_MOON_KM,
+  R_EARTH_KM,
+  buildCislunarTrajectory,
+  type CislunarProfile,
+} from '../src/lib/cislunar-geometry.js';
 
 // ──────────────────────────────────────────────────────────────────────
 // FONTS — Slice 1
@@ -2209,8 +2215,28 @@ interface MissionThumbnailRecord {
   color: string;
   departure_date: string;
   transit_days: number;
-  flight?: { arrival?: { v_infinity_km_s?: number } };
+  type?: string;
+  flight?: {
+    arrival?: { v_infinity_km_s?: number };
+    cislunar_profile?: CislunarProfile;
+  };
 }
+
+// Per-phase colour for cislunar thumbnails (ADR-058). Phase-typed
+// strokes let users distinguish profile families at a glance: parking
+// + tli_coast vs spiral_earth vs descent.
+const CISLUNAR_PHASE_COLORS: Record<string, string> = {
+  parking: '#4b9cd3',
+  tli_coast: '#ffd166',
+  lunar_orbit: '#c77dff',
+  lunar_flyby: '#ff9933',
+  descent: '#ef476f',
+  ascent: '#ef476f',
+  tei_coast: '#06d6a0',
+  reentry: '#ef476f',
+  spiral_earth: '#4b9cd3',
+  spiral_lunar: '#c77dff',
+};
 
 function paintHeliocentricThumbnail(
   ctx: import('canvas').CanvasRenderingContext2D,
@@ -2284,62 +2310,94 @@ function paintHeliocentricThumbnail(
 
 function paintCislunarThumbnail(
   ctx: import('canvas').CanvasRenderingContext2D,
-  transitDays: number,
-  missionColor: string,
+  mission: MissionThumbnailRecord,
 ): void {
-  const cx = THUMBNAIL_W * 0.32;
+  const cx = THUMBNAIL_W / 2;
   const cy = THUMBNAIL_H / 2;
-  const moonRadiusPx = 70; // visual
-
   // Background
   ctx.fillStyle = '#04040c';
   ctx.fillRect(0, 0, THUMBNAIL_W, THUMBNAIL_H);
 
-  // Moon orbit ring (centred on Earth)
+  // Build the cislunar trajectory in ECI km. Round-trip detection
+  // mirrors applyMissionAsLoaded() in /fly/+page.svelte.
+  const missionType = (mission.type ?? '').toUpperCase();
+  const isReturnTrip =
+    missionType.includes('SAMPLE RETURN') ||
+    missionType.includes('CREWED') ||
+    missionType.includes('FLYBY');
+  const traj = buildCislunarTrajectory(mission.flight?.cislunar_profile, {
+    dep_day_sim: 0,
+    transit_days: mission.transit_days ?? 4,
+    is_return_trip: isReturnTrip,
+  });
+
+  // Project x/z (top-down ecliptic plane) onto the 240×120 canvas.
+  // Scale so A_MOON_KM (~384,400 km) is ~45 px from Earth — leaves
+  // room for the full trajectory plus a margin.
+  const scale = 45 / A_MOON_KM;
+  const project = (p: { x: number; z: number }): [number, number] => [
+    cx + p.x * scale,
+    cy + p.z * scale,
+  ];
+
+  // Moon orbit ring (Tier 1 truth — circle around Earth at A_MOON_KM)
   ctx.beginPath();
-  ctx.arc(cx, cy, moonRadiusPx, 0, Math.PI * 2);
-  ctx.strokeStyle = 'rgba(170,170,204,0.3)';
+  ctx.arc(cx, cy, A_MOON_KM * scale, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(170,170,204,0.25)';
   ctx.lineWidth = 0.6;
   ctx.stroke();
 
-  // Earth
+  // Earth at origin.
   ctx.fillStyle = '#3a8fcc';
   ctx.beginPath();
-  ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+  ctx.arc(cx, cy, Math.max(3, R_EARTH_KM * scale * 4), 0, Math.PI * 2);
   ctx.fill();
 
-  // Moon — position derived from transit_days (so Apollo 11's 4-day
-  // transit and SLIM's 135-day transit render at distinct angles).
-  const moonAngle = ((transitDays % 27.32) / 27.32) * Math.PI * 2;
-  const moonX = cx + Math.cos(moonAngle) * moonRadiusPx;
-  const moonY = cy + Math.sin(moonAngle) * moonRadiusPx;
-  ctx.fillStyle = '#cfcfcf';
-  ctx.beginPath();
-  ctx.arc(moonX, moonY, 3, 0, Math.PI * 2);
-  ctx.fill();
+  // Moon at flyby_day position.
+  if (traj.moon_track.length > 0) {
+    const flybyIdx = Math.floor(traj.moon_track.length * (isReturnTrip ? 0.5 : 1));
+    const moonAtFlyby = traj.moon_track[Math.min(flybyIdx, traj.moon_track.length - 1)];
+    const [mx, my] = project(moonAtFlyby);
+    ctx.fillStyle = '#cfcfcf';
+    ctx.beginPath();
+    ctx.arc(mx, my, 3.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
 
-  // Quadratic-Bezier arc Earth → Moon (same shape as /fly Moon-mode)
-  const ctrlX = (cx + moonX) / 2 + (cy - moonY) * 0.18;
-  const ctrlY = (cy + moonY) / 2 + (moonX - cx) * 0.18;
-  ctx.beginPath();
-  ctx.moveTo(cx, cy);
-  ctx.quadraticCurveTo(ctrlX, ctrlY, moonX, moonY);
-  ctx.strokeStyle = missionColor;
-  ctx.lineWidth = 1.4;
-  ctx.shadowColor = missionColor;
-  ctx.shadowBlur = 4;
-  ctx.stroke();
-  ctx.shadowBlur = 0;
+  // Trajectory phases — each rendered in its phase-typed colour.
+  for (const phase of traj.phases) {
+    if (phase.points.length < 2) continue;
+    ctx.beginPath();
+    phase.points.forEach((p, i) => {
+      const [x, y] = project(p);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = CISLUNAR_PHASE_COLORS[phase.type] ?? mission.color;
+    ctx.lineWidth = 1.4;
+    ctx.shadowColor = ctx.strokeStyle;
+    ctx.shadowBlur = 3;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
 
-  // Departure node + arrival node
-  ctx.fillStyle = '#4ecdc4';
-  ctx.beginPath();
-  ctx.arc(cx, cy, 2.5, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = '#ffc850';
-  ctx.beginPath();
-  ctx.arc(moonX, moonY, 2.5, 0, Math.PI * 2);
-  ctx.fill();
+  // Departure node (teal) on the parking orbit / first phase start.
+  if (traj.phases.length > 0 && traj.phases[0].points.length > 0) {
+    const [dx, dy] = project(traj.phases[0].points[0]);
+    ctx.fillStyle = '#4ecdc4';
+    ctx.beginPath();
+    ctx.arc(dx, dy, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Arrival node (gold) on the last phase end.
+  const lastPhase = traj.phases[traj.phases.length - 1];
+  if (lastPhase && lastPhase.points.length > 0) {
+    const [ax, ay] = project(lastPhase.points[lastPhase.points.length - 1]);
+    ctx.fillStyle = '#ffc850';
+    ctx.beginPath();
+    ctx.arc(ax, ay, 2.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
 
 async function fetchMissionThumbnails(): Promise<number> {
@@ -2361,7 +2419,7 @@ async function fetchMissionThumbnails(): Promise<number> {
       const color = m.color || '#4ecdc4';
 
       if (m.dest === 'MOON') {
-        paintCislunarThumbnail(ctx, m.transit_days, color);
+        paintCislunarThumbnail(ctx, m);
       } else {
         const hid = missionDestToHeliocentricDestinationId(m.dest);
         if (!hid) {
@@ -3256,6 +3314,13 @@ async function main() {
       'static/data/small-body-galleries.json',
       'count-map',
     );
+    console.log('\nDone.');
+    return;
+  }
+
+  if (process.argv.includes('--thumbnails-only')) {
+    console.log('Mission trajectory thumbnails only — skipping fonts/textures/etc.\n');
+    await fetchMissionThumbnails();
     console.log('\nDone.');
     return;
   }

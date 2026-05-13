@@ -1,0 +1,130 @@
+{
+  "id": "apollo13",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration / Manned Spacecraft Center",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 1970,
+  "status": "FLOWN",
+  "departure_date": "1970-04-11",
+  "arrival_date": "1970-04-17",
+  "transit_days": 3,
+  "vehicle": "Saturn V (AS-508)",
+  "payload": "44069 kg launched (CSM Odyssey + LM Aquarius)",
+  "delta_v": "~6 km/s (round trip, aborted landing)",
+  "data_quality": "good",
+  "credit": "© NASA — Apollo 13 mission report. Public domain. SM oxygen tank #2 ruptured at 55:54:53 MET, forcing landing abort. Crew used the LM Aquarius as a lifeboat and rounded the Moon on a free-return trajectory before safe Pacific splashdown 1970-04-17.",
+  "links": [
+    {
+      "l": "Apollo 13 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Apollo_13",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 13 mission overview (NASA)",
+      "u": "https://www.nasa.gov/mission/apollo-13/",
+      "t": "intro"
+    },
+    {
+      "l": "Apollo 13 Review Board Report (NASA SP-2007-4548)",
+      "u": "https://history.nasa.gov/SP-350/ch-13-1.html",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "measured",
+  "fleet_refs": [
+    {
+      "id": "saturn-v",
+      "role": "launcher"
+    },
+    {
+      "id": "apollo-csm-block-ii",
+      "role": "spacecraft"
+    },
+    {
+      "id": "apollo-lm",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Saturn V S-IVB (third stage)",
+      "mass_at_tli_kg": 44069,
+      "source": "Apollo 13 Mission Report (NASA MSC-02680, 1970); 'Saturn V Launch Vehicle Flight Evaluation Report — AS-508' (NASA TM-X-65010)"
+    },
+    "cruise": {
+      "tcm_count": 3,
+      "source": "Apollo 13 Mission Report (NASA MSC-02680, 1970); MCC-2 outbound + post-rupture PC+2 and EI corrections logged"
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.86,
+      "periapsis_km": 254,
+      "inclination_deg": 5.36,
+      "orbit_insertion_dv_km_s": 0,
+      "source": "Apollo 13 Mission Report (NASA MSC-02680, 1970); LOI cancelled — free-return flyby at 254 km altitude over Mare Cognitum"
+    },
+    "totals": {
+      "total_dv_km_s": 4.3,
+      "tli_or_tmi_dv_km_s": 3.05,
+      "source": "Apollo 13 Mission Report ∆v ledger — TLI + PC+2 + PC+22 + EI corrections; no LOI / TEI burns"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.117,
+        "type": "tli_or_tmi",
+        "dv_km_s": 3.05
+      },
+      {
+        "met_days": 1.2,
+        "type": "tcm"
+      },
+      {
+        "met_days": 2.33,
+        "type": "anomaly"
+      },
+      {
+        "met_days": 2.92,
+        "type": "tcm"
+      },
+      {
+        "met_days": 3.13,
+        "type": "flyby"
+      },
+      {
+        "met_days": 3.96,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5.95,
+        "type": "earth_return"
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 185,
+        "inclination_deg": 32.5,
+        "revs": 1.5
+      },
+      "tli": {
+        "dv_kms": 3.05,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "free_return"
+      },
+      "lunar_arrival": {
+        "type": "flyby",
+        "periselene_km": 254
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
+}

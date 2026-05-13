@@ -51,8 +51,8 @@
       "source": "NASA NSSDCA Luna 24 archive; Soviet records fragmentary"
     },
     "cruise": {
-      "tcm_count": 3,
-      "source": "Harvey 2007; two outbound mid-course corrections + one return TEI correction"
+      "tcm_count": 2,
+      "source": "Harvey 2007; two outbound mid-course corrections (the third historical entry was reclassified as the TEI burn per ADR-058 event-type extensions)"
     },
     "arrival": {
       "v_infinity_km_s": 0.85,
@@ -85,20 +85,50 @@
       },
       {
         "met_days": 5,
-        "type": "arrival"
+        "type": "loi",
+        "dv_km_s": 0.7
       },
       {
         "met_days": 6,
-        "type": "edl_or_oi"
+        "type": "descent_start"
+      },
+      {
+        "met_days": 6.5,
+        "type": "ascent"
       },
       {
         "met_days": 7,
-        "type": "tcm"
+        "type": "tei",
+        "dv_km_s": 2.7
       },
       {
         "met_days": 9,
         "type": "earth_return"
       }
-    ]
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 167,
+        "inclination_deg": 51.6,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.1
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 115,
+        "inclination_deg": 120,
+        "periselene_km": 115
+      },
+      "return": {
+        "type": "tei_direct",
+        "dv_kms": 2.7
+      }
+    }
   }
 }

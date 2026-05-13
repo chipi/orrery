@@ -17,6 +17,7 @@
   { "id": "starship-mars-crew", "agency": "SpaceX", "dest": "MARS", "status": "PLANNED", "year": 2031, "sector": "private", "color": "#005288" },
   { "id": "luna9", "agency": "ROSCOSMOS", "dest": "MOON", "status": "FLOWN", "year": 1966, "sector": "gov", "color": "#cc4444" },
   { "id": "apollo11", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 1969, "sector": "gov", "color": "#0B3D91" },
+  { "id": "apollo13", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 1970, "sector": "gov", "color": "#0B3D91" },
   { "id": "luna17", "agency": "ROSCOSMOS", "dest": "MOON", "status": "FLOWN", "year": 1970, "sector": "gov", "color": "#cc4444" },
   { "id": "apollo17", "agency": "NASA", "dest": "MOON", "status": "FLOWN", "year": 1972, "sector": "gov", "color": "#0B3D91" },
   { "id": "luna24", "agency": "ROSCOSMOS", "dest": "MOON", "status": "FLOWN", "year": 1976, "sector": "gov", "color": "#cc4444" },

@@ -64,9 +64,9 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 36 missions', async () => {
+  it('returns 37 missions', async () => {
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(36);
+    expect(missions).toHaveLength(37);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -89,9 +89,9 @@ describe('filterMissions', () => {
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 16', async () => {
+  it('MOON filter returns 17', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(16);
+    expect(moon).toHaveLength(17);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -272,9 +272,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 36 missions merged with their en-US overlays', async () => {
+  it('returns all 37 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(36);
+    expect(list).toHaveLength(37);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -290,7 +290,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(36);
+    expect(list).toHaveLength(37);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -41,6 +41,11 @@ const DEFAULT_FLIGHT_LABELS: Record<FlightEventType, FlightEventLabels> = {
   flyby: { label: 'FLYBY', note: '', type: 'nominal' },
   earth_return: { label: 'EARTH RETURN', note: '', type: 'nominal' },
   anomaly: { label: 'ANOMALY', note: '', type: 'warning' },
+  parking_orbit_exit: { label: 'PARKING ORBIT EXIT', note: '', type: 'nominal' },
+  loi: { label: 'LUNAR ORBIT INSERTION', note: '', type: 'nominal' },
+  tei: { label: 'TRANS-EARTH INJECTION', note: '', type: 'nominal' },
+  descent_start: { label: 'POWERED DESCENT', note: '', type: 'nominal' },
+  ascent: { label: 'LUNAR ASCENT', note: '', type: 'nominal' },
 };
 
 /** MET collision tolerance in days. Editorial and structural events

@@ -135,7 +135,7 @@ test.describe('/fly — CAPCOM mode', () => {
 test.describe('/missions → /fly end-to-end (RFC-004)', () => {
   test('library card → FLY → fly screen loads correct mission', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(36, {
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(37, {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();

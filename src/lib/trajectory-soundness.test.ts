@@ -141,15 +141,15 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads 36 missions (16 Mars + 16 Moon + 4 outer)`, () => {
+  it(`fixture loads 37 missions (16 Mars + 17 Moon + 4 outer)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const outer = MISSIONS.filter((m) =>
       ['jupiter', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
     );
-    if (mars.length !== 16 || moon.length !== 16 || outer.length !== 4) {
+    if (mars.length !== 16 || moon.length !== 17 || outer.length !== 4) {
       throw new Error(
-        `Expected 16 Mars + 16 Moon + 4 outer; got ${mars.length} + ${moon.length} + ${outer.length}`,
+        `Expected 16 Mars + 17 Moon + 4 outer; got ${mars.length} + ${moon.length} + ${outer.length}`,
       );
     }
   });

@@ -21,7 +21,12 @@ export type FlightEventType =
   | 'edl_or_oi'
   | 'flyby'
   | 'earth_return'
-  | 'anomaly';
+  | 'anomaly'
+  | 'parking_orbit_exit'
+  | 'loi'
+  | 'tei'
+  | 'descent_start'
+  | 'ascent';
 
 export interface FlightLaunch {
   vehicle_stage?: string;
@@ -57,6 +62,27 @@ export interface FlightTotals {
 export interface FlightTimelineEvent {
   met_days: number;
   type: FlightEventType;
+  dv_km_s?: number;
+}
+
+export type CislunarSourceTier = 'tier_1_analytic' | 'tier_2_published';
+export type TranslunarType = 'direct' | 'free_return' | 'hybrid_free_return' | 'spiral';
+export type LunarArrivalType = 'impact' | 'orbit' | 'flyby' | 'lor_orbit';
+export type CislunarReturnType = 'none' | 'tei_direct' | 'tei_lor';
+
+export interface CislunarProfile {
+  source_tier?: CislunarSourceTier;
+  parking_orbit?: { altitude_km?: number; inclination_deg?: number; revs?: number };
+  tli?: { dv_kms?: number; c3_km2_s2?: number };
+  translunar?: { type?: TranslunarType };
+  lunar_arrival?: {
+    type?: LunarArrivalType;
+    altitude_km?: number;
+    inclination_deg?: number;
+    periselene_km?: number;
+  };
+  return?: { type?: CislunarReturnType; dv_kms?: number };
+  waypoints_km?: Array<[number, number, number, number]>;
 }
 
 export interface FlightParams {
@@ -65,6 +91,10 @@ export interface FlightParams {
   arrival?: FlightArrival;
   totals?: FlightTotals;
   events?: FlightTimelineEvent[];
+  /** Cislunar trajectory profile (ADR-058). Drives the Earth-centred
+   *  cislunar view for Moon missions. Optional; if absent, defaults
+   *  are inferred from flight.arrival + flight.totals. */
+  cislunar_profile?: CislunarProfile;
 }
 
 export interface MissionIndex {

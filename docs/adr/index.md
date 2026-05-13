@@ -60,3 +60,4 @@
 | ADR-055 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
 | ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
 | ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Accepted (closes #73 Gap 2) | May 2026 |
+| ADR-058 | Cislunar view: Earth-centered second camera + per-mission Moon trajectory profiles | Accepted | May 2026 |

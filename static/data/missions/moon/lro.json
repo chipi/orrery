@@ -98,6 +98,30 @@
         "met_days": 5.01,
         "type": "edl_or_oi"
       }
-    ]
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 185,
+        "inclination_deg": 28.5,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.05,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 30,
+        "inclination_deg": 90,
+        "periselene_km": 30
+      },
+      "return": {
+        "type": "none"
+      }
+    }
   }
 }

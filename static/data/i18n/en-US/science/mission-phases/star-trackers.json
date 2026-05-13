@@ -1,0 +1,10 @@
+{
+  "title": "Star trackers",
+  "intro_sentence": "A small camera pointed at the sky, identifying stars by pattern-matching against an onboard catalogue — the most accurate way for a spacecraft to know which way it's pointing.",
+  "body_paragraphs": [
+    "A spacecraft can't ask GPS which way is \"up\" — there is no up in deep space, and GPS doesn't reach past LEO anyway. To execute a burn, deploy a solar panel, or aim a high-gain antenna at Earth, the spacecraft needs to know its orientation in inertial space. The instrument that delivers this is the star tracker: a small CCD camera pointed at a patch of sky, taking a short exposure, identifying the stars in the image by pattern-matching against an onboard catalogue (usually the Hipparcos or Tycho-2 catalogue, ~10⁴–10⁵ stars).",
+    "Once it has identified three or more stars, the geometry uniquely determines the camera's orientation. Combined with knowledge of how the camera is mounted on the spacecraft body, the result is a quaternion describing the spacecraft attitude to 1–10 arcseconds of accuracy — better than any other onboard sensor. Modern interplanetary missions carry two or three trackers in independent orientations so at least one always has a clean view (no Sun glare, no planet in the field of view).",
+    "Star trackers work continuously between burns and provide the absolute reference that integrating IMU measurements (see [dead reckoning](mission-phases/dead-reckoning)) need to stay calibrated. Without star trackers the IMU drifts and the spacecraft loses attitude knowledge within hours. With them, attitude is good to arcseconds for years on end — long enough to point JWST at a galaxy 13 billion light-years away and hold position to within milliarcseconds for a 100,000-second integration."
+  ],
+  "diagram_caption": "Camera takes exposure → identify stars by triangle-matching to catalogue → quaternion attitude solution → arcsecond-accurate \"which way am I pointing?\" — every few seconds, forever."
+}

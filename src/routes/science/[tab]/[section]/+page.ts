@@ -71,6 +71,9 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'observation', section: 'interferometry' },
   { tab: 'observation', section: 'black-holes' },
   { tab: 'observation', section: 'wormholes' },
+  { tab: 'mission-phases', section: 'star-trackers' },
+  { tab: 'mission-phases', section: 'dead-reckoning' },
+  { tab: 'mission-phases', section: 'dsn' },
 ];
 
 export const entries: EntryGenerator = () => SECTION_ENTRIES;

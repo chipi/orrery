@@ -1,0 +1,26 @@
+{
+  "id": "dsn",
+  "tab": "mission-phases",
+  "order": 12,
+  "see_in_app": [
+    { "route": "/missions", "context_key": "TLI / TCM / orbit-insertion event timestamps — every one of these is verified against DSN ranging" },
+    { "route": "/fly", "context_key": "Light-minute display on the live HUD — DSN round-trip light time gives navigation its meter-class fix" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Deep Space Network",
+      "u": "https://www.nasa.gov/communicating-with-missions/dsn/",
+      "t": "intro"
+    },
+    {
+      "l": "JPL · DSN Now (live status)",
+      "u": "https://eyes.nasa.gov/apps/dsn-now/dsn.html",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · NASA Deep Space Network",
+      "u": "https://en.wikipedia.org/wiki/NASA_Deep_Space_Network",
+      "t": "deep"
+    }
+  ]
+}

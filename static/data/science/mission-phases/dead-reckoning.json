@@ -1,0 +1,26 @@
+{
+  "id": "dead-reckoning",
+  "tab": "mission-phases",
+  "order": 11,
+  "see_in_app": [
+    { "route": "/plan", "context_key": "Why TCMs are required: integrated IMU drift accumulates over a multi-month cruise" },
+    { "route": "/fly", "context_key": "Pre-TCM phase: the spacecraft is dead-reckoning between ground-based fixes" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Navigation and Tracking",
+      "u": "https://www.nasa.gov/learn/space-tech/spacecraft-navigation/",
+      "t": "intro"
+    },
+    {
+      "l": "JPL · Deep Space Navigation",
+      "u": "https://descanso.jpl.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Inertial measurement unit",
+      "u": "https://en.wikipedia.org/wiki/Inertial_measurement_unit",
+      "t": "deep"
+    }
+  ]
+}

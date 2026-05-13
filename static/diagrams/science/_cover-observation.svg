@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="An observation chapter cover — a stylised space telescope on the left aimed at a distant galaxy on the right, with a starfield and a faint spectrum strip below.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
+    .gold { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .blue { stroke: #6aa9ff; stroke-width: 1.6; fill: none; }
+    .star { fill: rgba(255,255,255,0.6); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+    .accent-fill { fill: rgba(78,205,196,0.1); }
+    .gold-fill { fill: rgba(255,200,80,0.1); }
+    .galaxy { fill: rgba(108,169,255,0.18); stroke: rgba(108,169,255,0.55); stroke-width: 0.8; }
+    .label { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1.5px; }
+  </style>
+
+  <!-- Starfield -->
+  <circle class="dim-star" cx="60" cy="30" r="0.8" />
+  <circle class="star" cx="140" cy="22" r="0.7" />
+  <circle class="dim-star" cx="220" cy="48" r="0.6" />
+  <circle class="dim-star" cx="280" cy="20" r="0.5" />
+  <circle class="star" cx="360" cy="40" r="0.9" />
+  <circle class="dim-star" cx="440" cy="28" r="0.7" />
+  <circle class="dim-star" cx="510" cy="56" r="0.5" />
+  <circle class="star" cx="560" cy="36" r="0.8" />
+  <circle class="dim-star" cx="100" cy="70" r="0.6" />
+  <circle class="dim-star" cx="200" cy="88" r="0.5" />
+  <circle class="star" cx="320" cy="76" r="0.7" />
+  <circle class="dim-star" cx="400" cy="92" r="0.6" />
+  <circle class="dim-star" cx="490" cy="78" r="0.5" />
+  <circle class="star" cx="540" cy="104" r="0.8" />
+
+  <!-- Telescope on the left: cylindrical tube + sunshield -->
+  <g transform="translate(80,140)">
+    <!-- sunshield trapezoid -->
+    <path class="stroke-bright accent-fill" d="M -36 22 L 56 14 L 64 -2 L 56 -18 L -40 -10 Z" />
+    <!-- primary mirror cylinder -->
+    <rect class="stroke-bright" x="60" y="-16" width="40" height="32" rx="2" />
+    <line class="accent" x1="100" y1="-12" x2="100" y2="12" />
+    <!-- secondary mirror tripod -->
+    <line class="stroke-mid" x1="100" y1="-12" x2="125" y2="0" />
+    <line class="stroke-mid" x1="100" y1="12" x2="125" y2="0" />
+    <circle class="accent" cx="125" cy="0" r="2.5" />
+    <!-- aim line toward distant galaxy -->
+    <line class="accent" x1="128" y1="0" x2="380" y2="-32" stroke-dasharray="3 3" />
+  </g>
+
+  <!-- Distant galaxy on the right -->
+  <g transform="translate(485,108) rotate(-18)">
+    <ellipse class="galaxy" cx="0" cy="0" rx="34" ry="11" />
+    <ellipse class="galaxy" cx="0" cy="0" rx="22" ry="7" />
+    <ellipse class="galaxy" cx="0" cy="0" rx="10" ry="4" />
+    <circle cx="0" cy="0" r="2.5" fill="#ffd47a" />
+    <circle class="dim-star" cx="-25" cy="-2" r="0.6" />
+    <circle class="dim-star" cx="18" cy="3" r="0.5" />
+    <circle class="dim-star" cx="-12" cy="4" r="0.5" />
+  </g>
+
+  <!-- Spectrum strip along the bottom: bright bands at unequal spacing -->
+  <g transform="translate(0,210)">
+    <rect class="stroke-soft" x="60" y="-12" width="480" height="20" />
+    <!-- bright lines (representative emission spectrum) -->
+    <line class="accent" x1="92" y1="-12" x2="92" y2="8" />
+    <line class="accent" x1="138" y1="-12" x2="138" y2="8" />
+    <line class="gold" x1="186" y1="-12" x2="186" y2="8" stroke-width="1.4" />
+    <line class="gold" x1="224" y1="-12" x2="224" y2="8" stroke-width="1.4" />
+    <line class="blue" x1="282" y1="-12" x2="282" y2="8" />
+    <line class="accent" x1="328" y1="-12" x2="328" y2="8" />
+    <line class="blue" x1="380" y1="-12" x2="380" y2="8" />
+    <line class="gold" x1="420" y1="-12" x2="420" y2="8" stroke-width="1.4" />
+    <line class="accent" x1="470" y1="-12" x2="470" y2="8" />
+    <line class="blue" x1="510" y1="-12" x2="510" y2="8" />
+    <text class="label" x="60" y="22">SPECTRUM · light → information</text>
+  </g>
+</svg>

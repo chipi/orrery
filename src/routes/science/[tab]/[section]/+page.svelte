@@ -9,12 +9,19 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
+  import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
   let section = $derived(data.section);
+  // The space-photography section embeds the ObservatoryShowcase strip
+  // (one hero image per observatory in /fleet, deep-link into each
+  // fleet panel). Other sections render the standard body only.
+  let showObservatoryShowcase = $derived(
+    section.tab === 'observation' && section.id === 'space-photography',
+  );
 
   function tabLabel(tab: string): string {
     const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;
@@ -77,6 +84,10 @@
       <p>{para}</p>
     {/each}
   </div>
+
+  {#if showObservatoryShowcase}
+    <ObservatoryShowcase />
+  {/if}
 
   {#if section.see_in_app && section.see_in_app.length > 0}
     <section class="see-in-app">

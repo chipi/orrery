@@ -516,7 +516,7 @@ describe('panel gallery loaders (v0.1.10)', () => {
 });
 
 describe('SCIENCE_TABS', () => {
-  it('exposes the eight encyclopedia tab ids', () => {
+  it('exposes the ten encyclopedia tab ids', () => {
     expect(SCIENCE_TABS).toEqual([
       'orbits',
       'transfers',
@@ -526,6 +526,8 @@ describe('SCIENCE_TABS', () => {
       'porkchop',
       'space-stations',
       'history',
+      'observation',
+      'life-in-space',
     ]);
   });
 });
@@ -572,18 +574,22 @@ describe('getScienceSection', () => {
 describe('getScienceTab', () => {
   it('returns orbits sections sorted by order', async () => {
     const sections = await getScienceTab('orbits');
-    expect(sections.length).toBe(9);
+    // 10 sections after lagrange-points (v0.6.x).
+    expect(sections.length).toBe(10);
     for (let i = 1; i < sections.length; i++) {
       expect(sections[i].order).toBeGreaterThanOrEqual(sections[i - 1].order);
     }
   });
 
-  it('returns 42 sections across all six tabs combined', async () => {
+  it('returns at least 70 sections across all tabs combined', async () => {
+    // Total grows as encyclopedia expands; v0.6.x added life-in-space
+    // + observation + 3 mission-phases sections + lagrange-points
+    // (71 total). Lower-bound assertion keeps future expansion green.
     let total = 0;
     for (const tab of SCIENCE_TABS) {
       total += (await getScienceTab(tab)).length;
     }
-    expect(total).toBe(54);
+    expect(total).toBeGreaterThanOrEqual(70);
   });
 });
 

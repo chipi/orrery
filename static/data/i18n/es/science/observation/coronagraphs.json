@@ -1,0 +1,11 @@
+{
+  "title": "Coronagraphs",
+  "intro_sentence": "Un disco ocultor dentro del telescopio bloquea la estrella anfitriona para que el planeta junto a ella —un billón de veces más débil— sea visible.",
+  "body_paragraphs": [
+    "Una estrella similar al Sol supera sus planetas por un factor de alrededor de 109 en longitudes de onda visibles y 106 en el infrarrojo. Los fotones del planeta no se pierden, se ahogan en las alas de difusión de la función de punta de la estrella. La imagen directa de un exoplanet sólo es posible si usted puede suprimir ese PSF por muchas órdenes de magnitud. Un coronaógrafo hace exactamente eso.",
+    "El cronógrafo clásico de Lyot (1930, inventado por Bernard Lyot para la fotografía solar) coloca un disco opaco en el plano focal del telescopio para bloquear la estrella, luego una segunda máscara más abajo para bloquear la luz difusa desde el borde de la primera máscara. Los coronagrafos de pupilo apodidos modernos y los coronagrafos de vórtice utilizan patrones de fase intrincados para empujar la supresión a 10−9 o mejor en regiones estrechas de la imagen.",
+    "JWST lleva coronagrafías tanto en NIRCam como en MIRI; han imaginado directamente varios exoplanetas gigantes de gas alrededor de estrellas cercanas. El telescopio romano Nancy Grace (a mediados de 2020) lleva un instrumento coronagráfico diseñado para capturar gigantes de gas alrededor de estrellas brillantes en contraste sin precedentes, y para demostrar la tecnología para el Observatorio de Mundos Habitables más grande, que apuntará a planetas de masa terrestre.",
+    "Una arquitectura alternativa es el **starshade**: una forma opaca de 30+ metros fluyó miles de km delante del telescopio, bloqueando la estrella sin ninguna óptica dentro del instrumento. Las estrellashades son mecánicamente más difíciles (la alineación de la formación es brutal) pero alcanzan mayor contraste. Ninguno ha volado todavía; los estudios de concepto para la imagen directa de la Tierra-twin siempre incluyen un Starhade en la mezcla."
+  ],
+  "diagram_caption": "Bloquear la estrella en el plano focal → las alas de difracción se deslizan alrededor → segunda máscara mata a los → 10−9 supresión, el planeta emerge. Las coronagrafías Vortex reemplazan el disco con un patrón de fase."
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Pérdida de densidad ósea",
+  "intro_sentence": "Los astronautas pierden aproximadamente 1–2% de la masa ósea por mes en microgravedad, la misma tasa que la osteoporosis de ancianos, pero comprimida y reversible.",
+  "body_paragraphs": [
+    "El hueso es un tejido vivo que se remodela constantemente: los osteoblastos colocan el hueso nuevo, los osteoclastos disuelven el hueso viejo, y en la Tierra la carga de caminar, levantar y simplemente permanecer de pie mantiene los dos aproximadamente equilibrados. Toma esa carga en órbita y los consejos de balance. La reorción sigue a su ritmo normal; la deposición del nuevo hueso disminuye. El resultado es una pérdida neta de aproximadamente 1–2% al mes, concentrada en las estructuras de peso: columna lumbar, pelvis, cuello femoral, calcaneus.",
+    "Para la comparación, la osteoporosis postmenopáusica en la Tierra corre alrededor del 1–2% por **año**. Una misión del ISS de seis meses comprime aproximadamente una década de pérdida relacionada con la edad en medio año. Algunos de ellos regresan después del vuelo; otros no. Los estudios de la tripulación de larga duración sugieren que persisten déficits mensurables de densidad ósea durante años después del vuelo incluso después de una rehabilitación dedicada.",
+    "La pila de contramedida en el ISS es ARED (Advanced Resistive Exercise Device — un bastidor de escuadras cargado por vacío), la cinta de correr T2 (correda mientras se mueve), y el ergometro del ciclo. Los protocolos modernos golpearon ~1100 N carga axial en ARED — lo suficientemente alto para ser ostegénico. Con los regímenes de drogas ARED + bisfosfonato, la tripulación de seis meses regresa ahora con pérdidas óseas alrededor del 0,5%/mes en lugar de los pre-ARED 1,5%/mes. Mejor, no resuelto.",
+    "Para un viaje de tres años de clase Marte, incluso las mejores contramedidas actuales implican un astronauta de aterrizaje en riesgo de fractura. Las líneas de investigación activas incluyen plataformas de vibración, trajes de carga mecánica, y explorar si la gravedad artificial (un hábitat que gira lentamente) es la única respuesta duradera."
+  ],
+  "diagram_caption": "ARED + cinta de correr + ciclo siguen cargando el esqueleto de carga; con contramedidas, la tripulación moderna pierde ~0,5%/mes frente al pre-ARED 1,5%/mes."
+}

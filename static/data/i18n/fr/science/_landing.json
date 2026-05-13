@@ -71,6 +71,28 @@
         "Trois unités partout. L'[unité astronomique](scales-time/au) (UA) est la distance moyenne Terre-Soleil. La [minute-lumière](scales-time/light-minute) — délai radio. Mars : 4 à 24 minutes. Pas de pilotage joystick — tout doit être autonome.",
         "L'[époque J2000](scales-time/j2000) est le zéro calendaire. [Sidéral vs synodique](scales-time/sidereal-synodic) explique pourquoi les fenêtres Mars reviennent tous les 26 mois. Le [plan écliptique](scales-time/ecliptic-plane) — disque plat. [Repères](scales-time/frames) — héliocentrique, géocentrique, centré-corps."
       ]
+    },
+    {
+      "heading": "7 — Les humains ne sont pas construits pour cela.",
+      "diagram": "couvrir-vie-dans-espace.svg",
+      "diagram_alt": "Un astronaute stylisé flottant en microgravité avec des barres d'indicateur os/muscle/contre-mesure.",
+      "diagram_caption": "Les os, les muscles, la vision, le vestibulaire, l'immunité — tout se reconnecte en microgravité, et non vers la Terre.",
+      "paragraphs": [
+        "Passez six mois en orbite et vous revenez plus petit, plus léger et plus court que vous ne partiez. [Microgravity](vie dans l'espace/microgravity-physiology) est la cause profonde : les fluides redistribuent la tête vers l'extérieur, les muscles posturaux se déchargent, les [os](vie dans l'espace/démangeaison-démangeaison-os) déversent 1 à 2 % de leur minéral par mois, le [système vésibulaire] (vie dans l'espace/adaptation-vestibulaire) renonce à essayer de trouver \"down\". La [contre-mesure] (vie dans l'espace/muscle-atrophie) — deux heures d'exercice résistif et aérobie par jour sur ARED + le tapis roulant — ralentit sans le résoudre.",
+        "[Radiation] (vie dans l'espace/exposition au rayonnement) est le problème le plus difficile. L'ISS obtient ~200 mSv/an (vers 3 mSv fond sur Terre); l'espace profond en dehors de la magnétosphère est de 600 mSv/an, sans bonne stratégie de blindage pour l'instant. Un voyage en classe Mars mettrait un membre d'équipage près du risque de cancer limite sa carrière en un seul aller-retour.",
+        "Ensuite, il y a [life-in-space/eva-physiology] (un événement d'endurance de 6 heures dans une combinaison d'oxygène pur de 4,3 psi) et [effets de longue durée] (effets de longue durée dans l'espace/effets de longue durée) comme le syndrome neurooculaire associé à l'espace (SANS), où 60 % des membres d'équipage de long vol développent des changements oculaires mesurables qui ne s'inversent pas complètement. Ce sont les problèmes non résolus entre l'humanité et Mars."
+      ]
+    },
+    {
+      "heading": "8 — Tout ce que nous savons de l'univers est arrivé comme photon.",
+      "diagram": "couverture-observation.svg",
+      "diagram_alt": "Un télescope spatial destiné à une galaxie lointaine dont le spectre d'émission est représentatif ci-dessous.",
+      "diagram_caption": "Téléscope + filtre + spectrographe + maths. Presque tous les faits concernant le cosmos ont été reconstruits à partir de la lumière.",
+      "paragraphs": [
+        "[Photographie spatiale] (observation/photographie spatiale) n'est pas ce que les gens pensent que c'est. Il n'y a pas de clic d'obturateur ; chaque image d'observatoire que vous avez vue est une pile de longues expositions à travers des filtres à bande étroite, étalonnés, enregistrés, faux-couleur assigné. Le matériel est un capteur CCD ou CMOS — une grille de compteurs de photons — et les données sont le compte, pas l'image. L'image est ce que les humains font du compte.",
+        "[Optique adaptive] (observation/optique adaptive) défait l'atmosphère en mesurant sa distorsion en temps réel et en pliant le miroir pour l'annuler. [Coronagraphes] (observation/coronagraphes) bloquent l'étoile centrale pour voir les planètes qui l'orbitent. [Spectroscopie] (observation/spectroscopie) lit la composition chimique d'une étoile à partir des lignes d'absorption dans sa lumière. [Interférométrie] (observation/interférométrie) les points séparent les télescopes en une ouverture virtuelle plus grande que n'importe lequel d'entre eux.",
+        "Et les objets les plus étranges que ces méthodes ont trouvé: [trous noirs](observation/trous noirs) (réel, cartographié, image d'ombre au centre de deux galaxies) et [trous de vers](observation/trous de vers) (mathématiques pures, inclus pour que vous sachiez quoi faire avec eux quand vous en voyez un dans un film). La catégorie Observatoire /fleet a les machines réelles — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — chacune avec sa propre galerie de ce qu'elle a vu."
+      ]
     }
   ],
   "tools_heading": "Maintenant va jouer.",

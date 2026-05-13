@@ -71,6 +71,28 @@
         "Drei Einheiten überall. Die [astronomische Einheit](scales-time/au) (AE) ist der mittlere Erde-Sonne-Abstand. Die [Lichtminute](scales-time/light-minute) ist die Funksignal-Verzögerung. Mars: 4 bis 24 Minuten. Du kannst keinen Rover von der Erde steuern.",
         "Die [J2000-Epoche](scales-time/j2000) ist der Kalender-Nullpunkt aller Astrodynamiker. [Sidereal vs. synodisch](scales-time/sidereal-synodic) erklärt, warum Marsfenster alle 26 Monate wiederkehren. Die [Ekliptik](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten (meist) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme — heliozentrisch, geozentrisch, körperzentriert."
       ]
+    },
+    {
+      "heading": "7 — Menschen sind dafür nicht gebaut.",
+      "diagram": "cover-life-in-space.svg",
+      "diagram_alt": "Ein stilisierter Astronaut, der in der Schwere schwebt, mit Knochen/Muskel/Gegenmessanzeigen.",
+      "diagram_caption": "Knochen, Muskeln, Sehvermögen, vestibular, immun — alles dreht sich in der Schwerkraft und nicht in Richtung Erde.",
+      "paragraphs": [
+        "Verbringen Sie sechs Monate im Orbit und Sie kommen zurück kleinere, leichter, und kürzer als Sie übrig. [Microgravity](life-in-space/microgravity-physiology) ist die Hauptursache: Flüssigkeiten umverteilen Kopf, die posturalen Muskeln entladen, die [Knochen](life-in-space/bone-density-loss) Schuppen 1–2% ihres Minerals pro Monat, das [vestibular system](life-in-space/vestibular-adaptation) Die [Gegenmaße](Lebens-in-Raum/Muskel-Atrophie) — zwei Stunden resistive und aerobe Übung am Tag auf ARED + dem Laufband — langsam, ohne es zu lösen.",
+        "[Radiation](life-in-space/radiation-exposure) ist das schwierigere Problem. Die ISS bekommt ~200 mSv/Jahr (vs 3 mSv Hintergrund auf der Erde); Tiefraum außerhalb der Magnetosphäre ist 600+ mSv/Jahr, ohne gute Abschirmstrategie noch. Eine Mars-Klasse-Reise würde ein Crew-Mitglied in der Nähe von Karriere-Limit Krebsrisiko in einer einzigen Rundreise setzen.",
+        "Dann gibt es [EVA] (Lebens-in-Raum/eva-physiologie) (eine 6-stündige Ausdauerveranstaltung in einem 4.3 psi pure-oxygen Anzug) und [Längswirkungen](Lebens-in-Raum/Längsdauer-Effekte) wie SANS — Space-Associated Neuro-ocular Syndrome — wo 60% der Langflugmannschaft messbare Augenveränderungen entwickelt. Das sind die ungelösten Probleme, die zwischen Mensch und Mars stehen."
+      ]
+    },
+    {
+      "heading": "8 — Alles, was wir über das Universum wissen, kam als Photon.",
+      "diagram": "cover-observation.svg",
+      "diagram_alt": "Ein Raumteleskop, das auf eine ferne Galaxie mit einem repräsentativen Emissionsspektrum abzielt.",
+      "diagram_caption": "Teleskop + Filter + Spektrograph + Mathematik. Fast jede Tatsache über den Kosmos wurde aus Licht rekonstruiert.",
+      "paragraphs": [
+        "[Space-Fotografie](Beobachtung/Raum-Fotografie) ist nicht das, was die Menschen denken. Es gibt keinen Shutter-Klick; jedes Sternbild, das Sie gesehen haben, ist ein Stapel von langen Belichtungen durch schmalbandige Filter, kalibriert, registriert, falsch-Farbe zugeordnet. Die Hardware ist ein CCD- oder CMOS-Sensor – ein Raster von Photonenzählern – und die Daten sind die Zählung, nicht das Bild. Das Bild ist, was Menschen aus der Zählung machen.",
+        "[Adaptive Optik](Beobachtung/Adaptive Optik) besiegt die Atmosphäre durch Messung ihrer Verzerrung in Echtzeit und Biegen des Spiegels, um es abzubrechen. [Coronagraphs](Beobachtung/Koronagraphen) blockieren den zentralen Stern, um die Planeten zu sehen, die ihn umkreisen. [Spektroskopie](Beobachtung/Spektroskopie) liest die chemische Zusammensetzung eines Sterns aus den Absorptionslinien in seinem Licht. [Interferometrie] (Beobachtung/Interferometrie) Maschen trennen Teleskope in eine virtuelle Öffnung größer als jede von ihnen.",
+        "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [schwarze Löcher](Beobachtung/schwarze Löcher) (wirklich, kartiert, schattiert im Zentrum von zwei Galaxien) und [Wurmlöcher](Beobachtung/Wurmlöcher) (reine Mathematik, enthalten, so dass Sie wissen, was mit ihnen zu tun, wenn Sie eines in einem Film sehen). Die /fleet ↦ Observatory Kategorie hat die eigentlichen Maschinen — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — jede mit ihrer eigenen Galerie von dem, was sie sah."
+      ]
     }
   ],
   "tools_heading": "Jetzt geh und spiel.",

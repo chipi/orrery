@@ -1,0 +1,26 @@
+{
+  "id": "radiation-exposure",
+  "tab": "life-in-space",
+  "order": 4,
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Mars-bound mission FLIGHT-tab radiation budget on crewed missions" },
+    { "route": "/earth", "context_key": "Van Allen radiation belt visualisation around Earth" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Space Radiation",
+      "u": "https://www.nasa.gov/missions/station/iss-research/space-radiation/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA HRP · Space Radiation Evidence Report",
+      "u": "https://humanresearchroadmap.nasa.gov/Evidence/reports/CR.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Health threat from cosmic rays",
+      "u": "https://en.wikipedia.org/wiki/Health_threat_from_cosmic_rays",
+      "t": "deep"
+    }
+  ]
+}

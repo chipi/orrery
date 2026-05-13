@@ -57,6 +57,13 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'porkchop', section: 'dv-heatmap' },
   { tab: 'porkchop', section: 'contour-reading' },
   { tab: 'porkchop', section: 'viability' },
+  { tab: 'life-in-space', section: 'microgravity-physiology' },
+  { tab: 'life-in-space', section: 'bone-density-loss' },
+  { tab: 'life-in-space', section: 'muscle-atrophy' },
+  { tab: 'life-in-space', section: 'radiation-exposure' },
+  { tab: 'life-in-space', section: 'vestibular-adaptation' },
+  { tab: 'life-in-space', section: 'eva-physiology' },
+  { tab: 'life-in-space', section: 'long-duration-effects' },
 ];
 
 export const entries: EntryGenerator = () => SECTION_ENTRIES;

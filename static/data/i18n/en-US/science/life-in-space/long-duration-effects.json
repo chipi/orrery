@@ -1,0 +1,11 @@
+{
+  "title": "Long-duration effects",
+  "intro_sentence": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
+  "body_paragraphs": [
+    "Roughly 60% of long-duration crew develop **SANS** — Space-Associated Neuro-ocular Syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. The leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. SANS is the single most concerning physiologic finding from long-duration spaceflight.",
+    "**Cognition + sleep** drift in measurable but subtle ways. The Twins Study (Scott Kelly's 340-day mission vs his ground-based twin Mark) found slower reaction time and reduced cognitive accuracy that persisted six months post-flight. Sleep on the ISS averages 6 hours per night (vs ~7.5 on the ground) because there's no real day/night, 16 sunrises happen per 24 h orbit, and noise + caffeine + workload all conspire. ISS crew use sleep-aids more than the general population.",
+    "**Immune dysregulation** shows up as latent-virus reactivation — Epstein-Barr, varicella-zoster (shingles), cytomegalovirus — in a substantial fraction of crew during flight. Most are asymptomatic but it's a window onto stress + microgravity + radiation combining on the immune system in ways we don't fully understand.",
+    "**Cardiovascular deconditioning** stacks: the heart shrinks slightly (less afterload to pump against), arterial stiffness increases (radiation + inflammation), and orthostatic intolerance post-flight extends from days to weeks for longer crew. The longer the mission, the more these effects compound — and Mars-class missions stretch them into ranges we've never measured on humans. The Inspiration4 and Polaris private flights are very short by comparison; the actuarial long-duration crew is still small (about a hundred people across the entire history of spaceflight)."
+  ],
+  "diagram_caption": "SANS (vision) + cognition + sleep + immune + cardiovascular: every effect from the rest of this tab grows worse with mission duration — and a Mars trip is the next frontier with no prior data."
+}

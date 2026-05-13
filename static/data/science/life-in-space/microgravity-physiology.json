@@ -1,0 +1,26 @@
+{
+  "id": "microgravity-physiology",
+  "tab": "life-in-space",
+  "order": 1,
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Microgravity-environment notes on the ISS Explorer station panel" },
+    { "route": "/tiangong", "context_key": "Microgravity-environment notes on the Tiangong Explorer station panel" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Human Research Program",
+      "u": "https://www.nasa.gov/hrp/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Effects of Microgravity on the Human Body",
+      "u": "https://www.nasa.gov/humans-in-space/why-go-to-space/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Effect of spaceflight on the human body",
+      "u": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body",
+      "t": "deep"
+    }
+  ]
+}

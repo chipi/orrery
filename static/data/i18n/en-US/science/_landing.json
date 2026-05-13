@@ -71,6 +71,28 @@
         "Three units pop up everywhere. The [astronomical unit](scales-time/au) (AU) is the average Earth-Sun distance — 150 million km. We measure the solar system in AU because kilometres get unwieldy fast. The [light-minute](scales-time/light-minute) tells you how long it takes a radio signal to reach a spacecraft. Mars: 4 to 24 minutes one-way. You can't joystick a rover from Earth. Everything important is autonomous.",
         "The [J2000 epoch](scales-time/j2000) is the calendar zero every astrodynamicist uses. [Sidereal vs. synodic periods](scales-time/sidereal-synodic) explain why Mars windows recur every 26 months instead of every 23. The [ecliptic plane](scales-time/ecliptic-plane) is the flat disc the planets all (mostly) lie on. [Reference frames](scales-time/frames) are the coordinate systems mission control juggles between Earth-centred, Sun-centred, and body-centred views."
       ]
+    },
+    {
+      "heading": "7 — Humans aren't built for this.",
+      "diagram": "_cover-life-in-space.svg",
+      "diagram_alt": "A stylised astronaut floating in microgravity with bone/muscle/countermeasure indicator bars.",
+      "diagram_caption": "Bone, muscle, vision, vestibular, immune — everything re-wires in microgravity, and not toward Earth.",
+      "paragraphs": [
+        "Spend six months in orbit and you come back smaller, lighter, and shorter than you left. [Microgravity](life-in-space/microgravity-physiology) is the root cause: fluids redistribute headward, the postural muscles unload, the [bones](life-in-space/bone-density-loss) shed 1–2% of their mineral per month, the [vestibular system](life-in-space/vestibular-adaptation) gives up trying to find \"down\". The [counter-measures](life-in-space/muscle-atrophy) — two hours of resistive and aerobic exercise a day on ARED + the treadmill — slow it without solving it.",
+        "[Radiation](life-in-space/radiation-exposure) is the harder problem. The ISS gets ~200 mSv/year (vs 3 mSv background on Earth); deep space outside the magnetosphere is 600+ mSv/year, with no good shielding strategy yet. A Mars-class trip would put a crew member near career-limit cancer risk in a single round trip.",
+        "Then there's [EVA](life-in-space/eva-physiology) (a 6-hour endurance event in a 4.3 psi pure-oxygen suit) and [long-duration effects](life-in-space/long-duration-effects) like SANS — Space-Associated Neuro-ocular Syndrome — where 60% of long-flight crew develop measurable eye changes that don't fully reverse. These are the unsolved problems standing between humanity and Mars."
+      ]
+    },
+    {
+      "heading": "8 — Everything we know about the universe arrived as a photon.",
+      "diagram": "_cover-observation.svg",
+      "diagram_alt": "A space telescope aimed at a distant galaxy with a representative emission spectrum below.",
+      "diagram_caption": "Telescope + filter + spectrograph + maths. Almost every fact about the cosmos was reconstructed from light.",
+      "paragraphs": [
+        "[Space photography](observation/space-photography) is not what people think it is. There's no shutter clicking; every observatory image you've seen is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour assigned. The hardware is a CCD or CMOS sensor — a grid of photon-counters — and the data is the count, not the picture. The picture is what humans make of the count.",
+        "[Adaptive optics](observation/adaptive-optics) defeats the atmosphere by measuring its distortion in real time and bending the mirror to cancel it. [Coronagraphs](observation/coronagraphs) block the central star to see the planets orbiting it. [Spectroscopy](observation/spectroscopy) reads a star's chemical composition from the absorption lines in its light. [Interferometry](observation/interferometry) stitches separate telescopes into one virtual aperture larger than any of them.",
+        "And the strangest objects those methods have found: [black holes](observation/black-holes) (real, mapped, shadow-imaged at the centre of two galaxies) and [wormholes](observation/wormholes) (pure mathematics, included so you know what to do with them when you see one in a film). The /fleet ↦ Observatory category has the actual machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — each with its own gallery of what it saw."
+      ]
     }
   ],
   "tools_heading": "Now go play.",

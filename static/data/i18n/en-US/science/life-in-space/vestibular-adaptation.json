@@ -1,0 +1,11 @@
+{
+  "title": "Vestibular adaptation",
+  "intro_sentence": "The inner ear's gravity sensor goes silent in orbit — half of all astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
+  "body_paragraphs": [
+    "The vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). On Earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. The brain reads that bend as \"down\". In microgravity the otoconia float free. The signal goes ambiguous.",
+    "About half of all astronauts develop Space Adaptation Syndrome in the first 24–72 hours: nausea, vomiting, sweating, headaches. It's not the body's only sensory conflict (eyes still report up/down via the visual horizon of the cabin, proprioception still reports limb position) but it's the most striking, and it usually resolves within 2–4 days as the brain learns to down-weight the now-unreliable vestibular channel.",
+    "The down-weighting doesn't reverse instantly on return. Post-flight, astronauts walk into a 1-g world with a brain that's spent months ignoring vestibular input — and the results are gait disturbances, balance deficits, and head-movement-triggered nausea that take days to weeks to clear. Long-duration crew show measurable changes in eye-tracking and posture testing for months after landing.",
+    "For a Mars mission, the open question is whether the surface vestibular environment (0.38 g) is enough to re-anchor the system on arrival, or whether crew step out of the lander into a hybrid balance state — partially adapted to space, partially relearning gravity. Centrifuge research on the ISS and human-rotation studies on Earth suggest the answer is somewhere in between; planning assumes a few days of reduced surface mobility immediately post-landing."
+  ],
+  "diagram_caption": "Otolith crystals float in microgravity → ambiguous \"down\" signal → brain down-weights vestibular cues → re-entry into 1 g requires days-to-weeks of re-weighting."
+}

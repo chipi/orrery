@@ -64,6 +64,13 @@ const SECTION_ENTRIES: { tab: ScienceTabId; section: string }[] = [
   { tab: 'life-in-space', section: 'vestibular-adaptation' },
   { tab: 'life-in-space', section: 'eva-physiology' },
   { tab: 'life-in-space', section: 'long-duration-effects' },
+  { tab: 'observation', section: 'space-photography' },
+  { tab: 'observation', section: 'adaptive-optics' },
+  { tab: 'observation', section: 'coronagraphs' },
+  { tab: 'observation', section: 'spectroscopy' },
+  { tab: 'observation', section: 'interferometry' },
+  { tab: 'observation', section: 'black-holes' },
+  { tab: 'observation', section: 'wormholes' },
 ];
 
 export const entries: EntryGenerator = () => SECTION_ENTRIES;

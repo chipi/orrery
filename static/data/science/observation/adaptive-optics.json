@@ -1,0 +1,22 @@
+{
+  "id": "adaptive-optics",
+  "tab": "observation",
+  "order": 2,
+  "links": [
+    {
+      "l": "ESO · Adaptive Optics Explained",
+      "u": "https://www.eso.org/public/teles-instr/technology/adaptive_optics/",
+      "t": "intro"
+    },
+    {
+      "l": "Keck Observatory · Laser Guide Star AO",
+      "u": "https://www.keckobservatory.org/about/the-observatory/laser-guide-star/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Adaptive optics",
+      "u": "https://en.wikipedia.org/wiki/Adaptive_optics",
+      "t": "deep"
+    }
+  ]
+}

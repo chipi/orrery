@@ -1,0 +1,11 @@
+{
+  "title": "Adaptive optics",
+  "intro_sentence": "Ground-based telescopes measure the atmosphere's distortion in real time with a laser guide star, then bend a deformable mirror to cancel it out — sharpening images by a factor of 10 or more.",
+  "body_paragraphs": [
+    "Earth's atmosphere is a mess of moving cells of warm and cold air, each cell with a slightly different refractive index. Starlight passing through gets jumbled — that's why stars twinkle and why a 10-metre ground telescope without correction sees no better than a backyard 20 cm scope on a steady night. The atmospheric \"seeing\" limit is around 1 arcsecond. Hubble's diffraction limit is 0.05.",
+    "Adaptive optics closes that gap by measuring the distortion at hundreds of points across the aperture and counter-bending a deformable mirror — often a thin glass with hundreds of piezoelectric actuators behind it — at 1000 Hz. The reference for \"what perfect should look like\" is either a bright natural star near the science target (rare to have one close enough) or a **laser guide star**: a sodium-resonance laser fired into the upper atmosphere to make an artificial glow at the right altitude.",
+    "Keck, VLT, Gemini, Subaru, and the upcoming ELTs all rely on AO. The technique is what made ground-based exoplanet imaging possible — without it, the host star's PSF would drown the planet's signal. JWST and Hubble are in space partly to skip AO entirely; ground-based AO is the alternative when the atmosphere is the only obstacle and the budget can't fund a launch.",
+    "AO doesn't work at every wavelength: visible-light AO is harder than infrared because the atmosphere's coherence time is shorter at short wavelengths. The longest-wavelength bands (mid-IR, sub-mm) can be done from the ground with AO and rival space telescopes. Optical/UV remains a strong case for space."
+  ],
+  "diagram_caption": "Laser guide star → wavefront sensor → deformable mirror at 1000 Hz → 10× sharper images. Defeats the atmosphere without launching a telescope."
+}

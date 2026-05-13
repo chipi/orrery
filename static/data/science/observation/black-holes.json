@@ -1,0 +1,26 @@
+{
+  "id": "black-holes",
+  "tab": "observation",
+  "order": 6,
+  "formula_latex": "r_s = \\dfrac{2GM}{c^2}",
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Black Holes Explained",
+      "u": "https://science.nasa.gov/universe/black-holes/",
+      "t": "intro"
+    },
+    {
+      "l": "ESO · Event Horizon Telescope M87 / Sgr A* Releases",
+      "u": "https://eventhorizontelescope.org/blog",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Black hole",
+      "u": "https://en.wikipedia.org/wiki/Black_hole",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "spectroscopy",
+  "tab": "observation",
+  "order": 4,
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Planet TECHNICAL tab: atmospheric composition lines — every entry comes from a spectrum" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Tour the Electromagnetic Spectrum",
+      "u": "https://science.nasa.gov/ems/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · Spectroscopy in Astronomy",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Exoplanet_Mission_Letter_of_Intent_Programme",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Astronomical spectroscopy",
+      "u": "https://en.wikipedia.org/wiki/Astronomical_spectroscopy",
+      "t": "deep"
+    }
+  ]
+}

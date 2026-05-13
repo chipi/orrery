@@ -1,0 +1,22 @@
+{
+  "id": "wormholes",
+  "tab": "observation",
+  "order": 7,
+  "links": [
+    {
+      "l": "NASA · The Reality of Wormholes",
+      "u": "https://science.nasa.gov/universe/wormholes-explained/",
+      "t": "intro"
+    },
+    {
+      "l": "Caltech · Kip Thorne on Traversable Wormholes",
+      "u": "https://thorne.caltech.edu/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Wormhole",
+      "u": "https://en.wikipedia.org/wiki/Wormhole",
+      "t": "deep"
+    }
+  ]
+}

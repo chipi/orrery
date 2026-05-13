@@ -1,0 +1,22 @@
+{
+  "id": "interferometry",
+  "tab": "observation",
+  "order": 5,
+  "links": [
+    {
+      "l": "ALMA · How Interferometry Works",
+      "u": "https://www.almaobservatory.org/en/about-alma/how-alma-works/",
+      "t": "intro"
+    },
+    {
+      "l": "ESO · The Event Horizon Telescope",
+      "u": "https://eventhorizontelescope.org/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Astronomical interferometry",
+      "u": "https://en.wikipedia.org/wiki/Astronomical_interferometer",
+      "t": "deep"
+    }
+  ]
+}

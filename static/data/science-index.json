@@ -42,6 +42,69 @@
     "haystack": "tsiolkovsky equation · 1903 a deaf russian schoolteacher works out the rocket equation 50 years before anyone could build a rocket to use it. tsiolkovsky published the equation, the multi-stage rocket concept, and the orbital-station concept years before serious rocket engineering existed. goddard would build the first liquid-fuel rocket in 1926 (us); von braun's v-2 in 1942 (germany); korolev's r-7 in 1957 (ussr)."
   },
   {
+    "tab": "life-in-space",
+    "section": "bone-density-loss",
+    "title": "Bone density loss",
+    "intro": "Astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish.",
+    "haystack": "bone density loss astronauts lose roughly 1–2% of bone mass per month in microgravity — the same rate as elderly osteoporosis, but compressed and reversible-ish. bone is a living tissue that constantly remodels itself: osteoblasts lay new bone down, osteoclasts dissolve old bone away, and on earth the loading from walking, lifting, and just standing keeps the two roughly balanced. take that loading away in orbit and the balance tips. resorption keeps going at its normal rate; new-bone deposition slows. the result is a net loss of about 1–2% per month, concentrated in the weight-bearing structures: lumbar spine, pelvis, femoral neck, calcaneus."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eva-physiology",
+    "title": "EVA physiology",
+    "intro": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",
+    "haystack": "eva physiology a spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay. the fundamental eva problem is that the human body wants earth-sealevel atmosphere — 1 atm of mixed n₂/o₂ — and the spacesuit can't deliver it without becoming so rigid the astronaut can't move. so the suit runs at about 4.3 psi (0.29 atm) of pure oxygen. that's enough partial pressure of o₂ to breathe comfortably, but the abrupt drop from station pressure (14.7 psi, ~80% n₂) to suit pressure (4.3 psi, 100% o₂) would cause decompression sickness — the bends — exactly the way scuba divers get them on a fast ascent."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "long-duration-effects",
+    "title": "Long-duration effects",
+    "intro": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
+    "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 60% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "microgravity-physiology",
+    "title": "Microgravity physiology",
+    "intro": "What happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass.",
+    "haystack": "microgravity physiology what happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass. the first thing that happens in orbit is fluid shift. on earth, gravity pulls about a litre of blood and lymph downward into your legs; in microgravity, that fluid redistributes upward toward the chest and head. astronauts get the puffy \"moon face\" within hours. the body responds by shedding the now-excess plasma volume — over the first few days, total body water drops by ~2 litres. returning to earth, that fluid hasn't been remade yet, so post-flight orthostatic intolerance (light-headedness on standing) is the norm for a week or more."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "muscle-atrophy",
+    "title": "Muscle atrophy",
+    "intro": "Postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again.",
+    "haystack": "muscle atrophy postural muscles fade first — the calf and back muscles you didn't realise you were using until they stop working in 1 g again. skeletal muscle is a use-it-or-lose-it tissue. the body is constantly weighing the metabolic cost of maintaining a muscle against the demand on it. in microgravity, the demand on the postural muscle groups — calf (soleus, gastrocnemius), back (paraspinals, erector spinae), and quadriceps — collapses overnight. the body stops maintaining them. within two weeks, type-i (slow-twitch, postural) fibres are visibly smaller; within three months, cross-sectional area in the calves drops 15–20% without countermeasures."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "radiation-exposure",
+    "title": "Radiation exposure",
+    "intro": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
+    "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **200 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "vestibular-adaptation",
+    "title": "Vestibular adaptation",
+    "intro": "The inner ear's gravity sensor goes silent in orbit — half of all astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
+    "haystack": "vestibular adaptation the inner ear's gravity sensor goes silent in orbit — half of all astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues. the vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). on earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. the brain reads that bend as \"down\". in microgravity the otoconia float free. the signal goes ambiguous."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "dead-reckoning",
+    "title": "Dead reckoning",
+    "intro": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
+    "haystack": "dead reckoning integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes. between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (imu): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. integrate acceleration once → velocity. integrate again → position. combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help."
+  },
+  {
+    "tab": "mission-phases",
+    "section": "dsn",
+    "title": "DSN — Deep Space Network",
+    "intro": "Three giant antenna complexes spaced 120° around Earth — Goldstone, Madrid, Canberra — providing continuous coverage of any spacecraft beyond low Earth orbit.",
+    "haystack": "dsn — deep space network three giant antenna complexes spaced 120° around earth — goldstone, madrid, canberra — providing continuous coverage of any spacecraft beyond low earth orbit. the deep space network is what makes interplanetary spaceflight legible. without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on earth would know where it was, what it was doing, or what it was learning. the dsn is the umbilical for every nasa mission past the moon and a contracted partner for esa, jaxa, and isro deep-space missions."
+  },
+  {
     "tab": "mission-phases",
     "section": "edl",
     "title": "EDL — Entry, Descent, Landing",
@@ -92,6 +155,13 @@
   },
   {
     "tab": "mission-phases",
+    "section": "star-trackers",
+    "title": "Star trackers",
+    "intro": "A small camera pointed at the sky, identifying stars by pattern-matching against an onboard catalogue — the most accurate way for a spacecraft to know which way it's pointing.",
+    "haystack": "star trackers a small camera pointed at the sky, identifying stars by pattern-matching against an onboard catalogue — the most accurate way for a spacecraft to know which way it's pointing. a spacecraft can't ask gps which way is \"up\" — there is no up in deep space, and gps doesn't reach past leo anyway. to execute a burn, deploy a solar panel, or aim a high-gain antenna at earth, the spacecraft needs to know its orientation in inertial space. the instrument that delivers this is the star tracker: a small ccd camera pointed at a patch of sky, taking a short exposure, identifying the stars in the image by pattern-matching against an onboard catalogue (usually the hipparcos or tycho-2 catalogue, ~10⁴–10⁵ stars)."
+  },
+  {
+    "tab": "mission-phases",
     "section": "tcm",
     "title": "TCM — Trajectory Correction Maneuver",
     "intro": "A small mid-cruise burn to fix the small errors that always sneak into the launch trajectory.",
@@ -103,6 +173,55 @@
     "title": "Trans-X Injection — TLI / TMI / TVI / TJI",
     "intro": "The big departure burn that throws you onto a trajectory toward your destination.",
     "haystack": "trans-x injection — tli / tmi / tvi / tji the big departure burn that throws you onto a trajectory toward your destination. after launch you're typically in low earth orbit (leo). to go anywhere else, you need a second burn that raises your apogee out to the destination — that's the trans-x injection. the x is the destination's first letter: tli for trans-lunar, tmi for trans-mars, tvi for trans-venus, tji for trans-jupiter. same physics, different aim point."
+  },
+  {
+    "tab": "observation",
+    "section": "adaptive-optics",
+    "title": "Adaptive optics",
+    "intro": "Ground-based telescopes measure the atmosphere's distortion in real time with a laser guide star, then bend a deformable mirror to cancel it out — sharpening images by a factor of 10 or more.",
+    "haystack": "adaptive optics ground-based telescopes measure the atmosphere's distortion in real time with a laser guide star, then bend a deformable mirror to cancel it out — sharpening images by a factor of 10 or more. earth's atmosphere is a mess of moving cells of warm and cold air, each cell with a slightly different refractive index. starlight passing through gets jumbled — that's why stars twinkle and why a 10-metre ground telescope without correction sees no better than a backyard 20 cm scope on a steady night. the atmospheric \"seeing\" limit is around 1 arcsecond. hubble's diffraction limit is 0.05."
+  },
+  {
+    "tab": "observation",
+    "section": "black-holes",
+    "title": "Black holes",
+    "intro": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
+    "haystack": "black holes a region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them. a black hole forms when a sufficient mass collapses to inside its schwarzschild radius — the size at which the escape velocity equals the speed of light. the formula on the right says it directly: for any mass m, there's a radius r_s = 2gm/c² inside which nothing escapes. the sun's schwarzschild radius is 3 km. the earth's is 9 mm. compress either to that size and you've made one."
+  },
+  {
+    "tab": "observation",
+    "section": "coronagraphs",
+    "title": "Coronagraphs",
+    "intro": "An occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible.",
+    "haystack": "coronagraphs an occulting disc inside the telescope blocks the host star so the planet next to it — a billion times fainter — becomes visible. a sun-like star outshines its planets by a factor of about 10⁹ at visible wavelengths and 10⁶ in the infrared. the planet's photons aren't missing — they're drowning in the diffraction wings of the star's point-spread function. direct imaging of an exoplanet is only possible if you can suppress that psf by many orders of magnitude. a coronagraph does exactly that."
+  },
+  {
+    "tab": "observation",
+    "section": "interferometry",
+    "title": "Interferometry",
+    "intro": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+    "haystack": "interferometry stitch separate telescopes into one virtual aperture larger than any of them — the event horizon telescope is an earth-sized radio interferometer built from antennas on four continents. a single telescope's resolving power depends on its aperture (diameter / wavelength). a radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. but two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds."
+  },
+  {
+    "tab": "observation",
+    "section": "space-photography",
+    "title": "Space photography",
+    "intro": "Every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count.",
+    "haystack": "space photography every famous \"telescope picture\" is a stack of long exposures through narrow-band filters, calibrated, registered, false-colour mapped — the image is what humans make of the count. a space telescope's image sensor is a ccd or cmos chip — a grid of photon-counters. each pixel sits on the focal plane for an exposure (anywhere from milliseconds to multiple hours), accumulating electron counts. the output is a number per pixel: how many photons of which narrow-band filter hit there. multiple exposures are stacked to beat down read noise, registered to sub-pixel alignment, and median-combined to reject cosmic-ray hits."
+  },
+  {
+    "tab": "observation",
+    "section": "spectroscopy",
+    "title": "Spectroscopy",
+    "intro": "Pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines.",
+    "haystack": "spectroscopy pass starlight through a prism or diffraction grating and the spectrum tells you what the star is made of — every element prints a unique fingerprint of absorption lines. each chemical element absorbs light at a unique set of wavelengths corresponding to its electronic transitions. pass starlight through a prism and you see a rainbow with thin dark lines at exactly those wavelengths — joseph fraunhofer mapped 574 of them across the solar spectrum in 1814. each line is an element in the star's atmosphere stealing photons."
+  },
+  {
+    "tab": "observation",
+    "section": "wormholes",
+    "title": "Wormholes",
+    "intro": "Mathematical solutions to general relativity that connect distant regions of spacetime. None has ever been observed. Included for completeness — they are NOT used for spaceflight.",
+    "haystack": "wormholes mathematical solutions to general relativity that connect distant regions of spacetime. none has ever been observed. included for completeness — they are not used for spaceflight. a wormhole — formally an einstein-rosen bridge — is a topological feature of spacetime that the equations of general relativity permit but the universe has never been observed to actually instantiate. the mathematics is real (einstein and rosen worked it out in 1935); the physics is uncertain (no candidate has been seen); the engineering does not exist (and may be physically impossible). treat them the way you'd treat tachyons or time-travel paradoxes: interesting puzzles in the equations, not flight hardware."
   },
   {
     "tab": "orbits",
@@ -138,6 +257,13 @@
     "title": "Kepler's Three Laws",
     "intro": "Three observational rules that turned planetary motion into a closed-form science a century before Newton explained why.",
     "haystack": "kepler's three laws three observational rules that turned planetary motion into a closed-form science a century before newton explained why. first law: planets orbit on ellipses with the sun at one focus. before kepler, every model used circles — sometimes nested, sometimes offset, but always circular. kepler used tycho brahe's twenty years of mars observations and gave up: the data didn't fit circles, and nothing he could do made them. ellipses fit on the first try."
+  },
+  {
+    "tab": "orbits",
+    "section": "lagrange-points",
+    "title": "Lagrange points",
+    "intro": "Five gravitationally-balanced spots in every two-body system where a small spacecraft can hover with almost no fuel — and where most modern deep-space observatories actually live.",
+    "haystack": "lagrange points five gravitationally-balanced spots in every two-body system where a small spacecraft can hover with almost no fuel — and where most modern deep-space observatories actually live. the five points sit in specific geometries. **l1** lies between the two bodies on the line connecting them — for sun-earth, that's ~1.5 million km sunward of earth, where the sun's pull and earth's pull balance the centripetal requirement. **l2** is on the same line but on the far side of the smaller body — for sun-earth, ~1.5 million km anti-sunward of earth. **l3** is on the opposite side of the larger body, hidden behind the sun from earth's perspective. **l4** and **l5** are at the vertices of equilateral triangles formed with the two bodies — 60° ahead and 60° behind the smaller body's orbit."
   },
   {
     "tab": "orbits",

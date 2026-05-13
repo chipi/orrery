@@ -181,11 +181,7 @@ export function lunarOrbit(
  *  Tier 1 we approximate the hyperbolic asymptotes with a planar arc
  *  whose apex is at periselene altitude on the anti-Earth side of the
  *  Moon. */
-export function lunarFlyby(
-  moonPos: Vec3Km,
-  periselene_km: number,
-  steps: number,
-): Vec3Km[] {
+export function lunarFlyby(moonPos: Vec3Km, periselene_km: number, steps: number): Vec3Km[] {
   const moonMag = Math.hypot(moonPos.x, moonPos.y, moonPos.z);
   if (moonMag < 1e-6) return [moonPos];
   // Anti-Earth unit vector at the Moon — periselene is on the far side.
@@ -215,11 +211,7 @@ export function lunarFlyby(
  *  down to the surface. For Tier 1 visual purposes this is a
  *  half-ellipse from orbit altitude to landing altitude (taken as
  *  R_MOON surface). */
-export function descent(
-  orbitPoint: Vec3Km,
-  moonPos: Vec3Km,
-  steps: number,
-): Vec3Km[] {
+export function descent(orbitPoint: Vec3Km, moonPos: Vec3Km, steps: number): Vec3Km[] {
   // Surface point directly below orbitPoint on the Moon.
   const dx = orbitPoint.x - moonPos.x;
   const dy = orbitPoint.y - moonPos.y;
@@ -372,7 +364,8 @@ function keplerianArcEarthFocus(p1: Vec3Km, p2: Vec3Km, steps: number): Vec3Km[]
     { x: mx - h * perpX, y: my - h * perpY },
   ];
 
-  let best: { sweep: number; nu1: number; periAngle: number; F2: { x: number; y: number } } | null = null;
+  let best: { sweep: number; nu1: number; periAngle: number; F2: { x: number; y: number } } | null =
+    null;
   for (const F2 of F2candidates) {
     const periAngle = Math.atan2(-F2.y, -F2.x);
     const nu1 = ang1 - periAngle;
@@ -555,13 +548,14 @@ export function buildCislunarTrajectory(
     // Re-entry interface ~120 km altitude on the night side.
     const lastMag = Math.hypot(lastPoint.x, lastPoint.y, lastPoint.z);
     const reentryR = R_EARTH_KM + 120;
-    const reentry: Vec3Km = lastMag < 1e-6
-      ? { x: -reentryR, y: 0, z: 0 }
-      : {
-          x: (-lastPoint.x / lastMag) * reentryR,
-          y: (-lastPoint.y / lastMag) * reentryR,
-          z: (-lastPoint.z / lastMag) * reentryR,
-        };
+    const reentry: Vec3Km =
+      lastMag < 1e-6
+        ? { x: -reentryR, y: 0, z: 0 }
+        : {
+            x: (-lastPoint.x / lastMag) * reentryR,
+            y: (-lastPoint.y / lastMag) * reentryR,
+            z: (-lastPoint.z / lastMag) * reentryR,
+          };
     const teiPts = transEarthCoast(lastPoint, reentry, 192);
     const teiEndMET = transit_days * 2;
     phases.push({
@@ -579,13 +573,14 @@ export function buildCislunarTrajectory(
     // TEI burn; the trajectory naturally returns.
     const lastMag = Math.hypot(lastPoint.x, lastPoint.y, lastPoint.z);
     const reentryR = R_EARTH_KM + 120;
-    const reentry: Vec3Km = lastMag < 1e-6
-      ? { x: -reentryR, y: 0, z: 0 }
-      : {
-          x: (-lastPoint.x / lastMag) * reentryR,
-          y: (-lastPoint.y / lastMag) * reentryR,
-          z: (-lastPoint.z / lastMag) * reentryR,
-        };
+    const reentry: Vec3Km =
+      lastMag < 1e-6
+        ? { x: -reentryR, y: 0, z: 0 }
+        : {
+            x: (-lastPoint.x / lastMag) * reentryR,
+            y: (-lastPoint.y / lastMag) * reentryR,
+            z: (-lastPoint.z / lastMag) * reentryR,
+          };
     const teiPts = transEarthCoast(lastPoint, reentry, 192);
     phases.push({
       type: 'tei_coast',

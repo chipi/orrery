@@ -159,7 +159,12 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
       const profile: CislunarProfile = {
         source_tier: 'tier_1_analytic',
         translunar: { type: 'free_return' },
-        lunar_arrival: { type: 'orbit', altitude_km: 110, inclination_deg: 1.25, periselene_km: 110 },
+        lunar_arrival: {
+          type: 'orbit',
+          altitude_km: 110,
+          inclination_deg: 1.25,
+          periselene_km: 110,
+        },
         return: { type: 'tei_direct' },
       };
       const traj = buildCislunarTrajectory(profile, { ...baseOpts, is_return_trip: true });

@@ -24,6 +24,7 @@ export interface SeeInApp {
     | '/plan'
     | '/fly'
     | '/missions'
+    | '/fleet'
     | '/earth'
     | '/moon'
     | '/mars'

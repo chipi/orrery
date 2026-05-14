@@ -2,6 +2,10 @@
   "id": "muscle-atrophy",
   "tab": "life-in-space",
   "order": 3,
+  "photo": {
+    "src": "/images/science/muscle-atrophy-ared.jpg",
+    "credit": "NASA · ISS Expedition 72 (2024) — astronaut Nick Hague on the Advanced Resistive Exercise Device (ARED) in the Tranquility module."
+  },
   "see_in_app": [
     { "route": "/iss", "context_key": "ARED + treadmill modules on the ISS Explorer station panel" }
   ],

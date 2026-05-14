@@ -1230,6 +1230,45 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'PD-NASA',
     fallbackAuthor: 'NASA',
   },
+  'microgravity-pettit.jpg': {
+    commons:
+      'Astronaut Don Pettit stares at a ball of water shaped by microgravity (iss072e742508).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Don Pettit (ISS Expedition 72, 2024)',
+  },
+  'eva-mccandless.jpg': {
+    commons:
+      '41B-43-2646 - STS-41B - Bruce McCandless during extravehicular activity (EVA) STS-41B mission - DPLA - 633d793267cf42aa8edbeead5d48c180.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (STS-41B, Feb 1984)',
+  },
+  'muscle-atrophy-ared.jpg': {
+    commons:
+      "Iss072e126509 (Oct 29, 2024) --- NASA astronaut and Expedition 72 Flight Engineer Nick Hague exercises on the advanced resistive exercise device (ARED) aboard the International Space Station's Tranquility module.jpg",
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (ISS Expedition 72, 2024)',
+  },
+  'gravity-assist-voyager-jupiter.png': {
+    commons: "Jupiter - Nasa's Voyager 2 - 1979 (52467971246).png",
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / JPL-Caltech (Voyager 2, 1979)',
+  },
+  'free-return-apollo13.jpg': {
+    commons: 'Apollo 13 LM with Mailbox-p.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Apollo 13, Apr 1970)',
+  },
+  'patched-conics-cassini.jpg': {
+    commons: 'PIA17218 – A Farewell to Saturn, Brightened Version.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / JPL-Caltech / Space Science Institute (Cassini, Sep 2017)',
+  },
 };
 
 async function buildScienceEntries(): Promise<ProvenanceEntry[]> {

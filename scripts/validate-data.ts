@@ -216,6 +216,7 @@ const FLEET_CATEGORIES = [
   'lander',
   'orbiter',
   'observatory',
+  'space-suit',
 ];
 
 type FleetLinkedSite = { type: 'moon' | 'mars' | 'earth-object'; site_id: string };

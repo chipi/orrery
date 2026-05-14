@@ -2,6 +2,10 @@
   "id": "coronagraphs",
   "tab": "observation",
   "order": 3,
+  "photo": {
+    "src": "/images/science/coronagraphs-hr8799.jpg",
+    "credit": "NASA / JPL-Caltech · the HR 8799 system — four gas-giant exoplanets directly imaged after coronagraphic suppression of the host star."
+  },
   "links": [
     {
       "l": "NASA · Coronagraphs and Starshades",

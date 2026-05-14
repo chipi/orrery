@@ -2,6 +2,10 @@
   "id": "interferometry",
   "tab": "observation",
   "order": 5,
+  "photo": {
+    "src": "/images/science/interferometry-alma.jpg",
+    "credit": "ESO / ALMA · 66 sub-millimetre antennas on the Chajnantor plateau — stitched into one virtual aperture up to 16 km across."
+  },
   "links": [
     {
       "l": "ALMA · How Interferometry Works",

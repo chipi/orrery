@@ -5,6 +5,10 @@
   "formula_latex": "F = G \\frac{m_1 m_2}{r^2}",
   "diagram": "history-newton-principia.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/science/history-newton.jpg",
+    "credit": "Sir Isaac Newton · portrait by Godfrey Kneller, 1689 · public domain."
+  },
   "see_in_app": [
     {
       "route": "/fly",

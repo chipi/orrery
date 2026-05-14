@@ -1149,6 +1149,119 @@ async function writeDiffReport(
 // Main
 // ──────────────────────────────────────────────────────────────────────
 
+/**
+ * /science section photos — captioned figures rendered inside section
+ * pages from the optional `photo` field on the section schema. Each
+ * entry resolves through `buildWikimediaEntry` (same as fleet) so the
+ * Credits page lists the original Commons file + author + license.
+ *
+ * Map filename → Commons title + fallback attribution. With `--offline`
+ * the fallback values are used verbatim; online runs enrich via the
+ * Commons imageinfo API.
+ */
+const SCIENCE_PHOTO_SOURCES: Record<
+  string,
+  { commons: string; agency: string; fallbackLicense: string; fallbackAuthor: string }
+> = {
+  'black-holes-m87.jpg': {
+    commons: 'Black hole - Messier 87 crop max res.jpg',
+    agency: 'EHT',
+    fallbackLicense: 'CC-BY-4.0',
+    fallbackAuthor: 'Event Horizon Telescope Collaboration',
+  },
+  'spectroscopy-wasp39b.jpg': {
+    commons: 'WASP-39 b Atmospheric Composition (NIRSpec PRISM) (weic2221f).jpeg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA, ESA, CSA, and STScI',
+  },
+  'coronagraphs-hr8799.jpg': {
+    commons: 'Hr8799 orbit hd.gif',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Jason Wang (Northwestern) / Christian Marois (NRC Herzberg)',
+  },
+  'interferometry-alma.jpg': {
+    commons: 'ALMA antennas on Chajnantor.jpg',
+    agency: 'ESA',
+    fallbackLicense: 'CC-BY-4.0',
+    fallbackAuthor: 'ESO/B. Tafreshi (twanight.org)',
+  },
+  'space-photography-deepfield.jpg': {
+    commons: "Webb's First Deep Field.jpg",
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA, ESA, CSA, and STScI',
+  },
+  'adaptive-optics-laser.jpg': {
+    commons: 'Laser Towards Milky Ways Centre.jpg',
+    agency: 'ESA',
+    fallbackLicense: 'CC-BY-4.0',
+    fallbackAuthor: 'ESO/Y. Beletsky',
+  },
+  'dsn-goldstone.jpg': {
+    commons: 'Goldstone DSN antenna.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA/JPL-Caltech',
+  },
+  'history-kepler.jpg': {
+    commons: 'Johannes Kepler, portrait by Hans von Aachen.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-Old',
+    fallbackAuthor: 'Hans von Aachen (1612)',
+  },
+  'history-newton.jpg': {
+    commons: 'Portrait of Sir Isaac Newton, 1689.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-Old',
+    fallbackAuthor: 'Godfrey Kneller (1689)',
+  },
+  'history-tsiolkovsky.jpg': {
+    commons: 'Tsiolkovsky 1913.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-Old',
+    fallbackAuthor: 'Unknown photographer (1913, Russian Empire)',
+  },
+  'history-goddard.jpg': {
+    commons:
+      'Dr Robert H Goddard and a liquid oxygen-gasoline rocket in the frame from which it was fired on March 16, 1926.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA',
+  },
+};
+
+async function buildScienceEntries(): Promise<ProvenanceEntry[]> {
+  const dir = 'static/images/science';
+  if (!(await pathExists(dir))) return [];
+  const files = (await readdir(dir)).sort();
+  const out: ProvenanceEntry[] = [];
+  for (const f of files) {
+    if (!/\.(jpe?g|png|gif)$/i.test(f)) continue;
+    const meta = SCIENCE_PHOTO_SOURCES[f];
+    if (!meta) {
+      console.warn(`    ⚠ science image without metadata mapping: ${f}`);
+      continue;
+    }
+    out.push(
+      await buildWikimediaEntry({
+        localPath: join(dir, f),
+        filename: meta.commons,
+        fallbackAuthor: meta.fallbackAuthor,
+        fallbackAgency: meta.agency,
+        fallbackLicense: meta.fallbackLicense,
+        fallbackLicenseUrl: getAllowlistEntry(meta.fallbackLicense)?.url ?? null,
+        fallbackLicenseRationale:
+          getAllowlistEntry(meta.fallbackLicense)?.rationale ??
+          'Public-domain / CC-licensed Commons file used for /science section figure.',
+        modifications: ['downloaded-via-commons-filepath', 'reencoded-jpeg'],
+      }),
+    );
+  }
+  return out;
+}
+
 async function buildAllEntries(): Promise<ProvenanceEntry[]> {
   const out: ProvenanceEntry[] = [];
 
@@ -1161,6 +1274,9 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
 
   console.log('Fleet galleries…');
   out.push(...(await buildFleetEntries()));
+
+  console.log('/science section photos…');
+  out.push(...(await buildScienceEntries()));
 
   console.log('Earth-object galleries…');
   const earthAgencies = await loadEarthObjectAgencies();

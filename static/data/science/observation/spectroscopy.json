@@ -3,8 +3,8 @@
   "tab": "observation",
   "order": 4,
   "photo": {
-    "src": "/images/fleet-galleries/jwst/03.jpg",
-    "credit": "JWST · transmission spectroscopy of an exoplanet atmosphere — the absorption pattern reveals composition."
+    "src": "/images/science/spectroscopy-wasp39b.jpg",
+    "credit": "NASA / ESA / CSA / STScI · JWST NIRSpec transmission spectrum of exoplanet WASP-39 b — the first detection of CO₂ in an exoplanet atmosphere (2022)."
   },
   "see_in_app": [
     { "route": "/explore", "context_key": "Planet TECHNICAL tab: atmospheric composition lines — every entry comes from a spectrum" }

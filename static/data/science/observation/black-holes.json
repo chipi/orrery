@@ -6,8 +6,8 @@
   "diagram": "black-holes.svg",
   "diagram_quality": "schematic",
   "photo": {
-    "src": "/images/fleet-galleries/chandra/05.jpg",
-    "credit": "Chandra X-ray Observatory · galaxy cluster with X-ray emission from gas heated by black-hole accretion."
+    "src": "/images/science/black-holes-m87.jpg",
+    "credit": "Event Horizon Telescope · 2019 · the shadow of M87's supermassive black hole — the first direct image of an event horizon."
   },
   "see_in_app": [
     { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }

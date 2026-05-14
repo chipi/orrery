@@ -4,6 +4,10 @@
   "order": 4,
   "diagram": "history-goddard-rocket.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/science/history-goddard.jpg",
+    "credit": "Robert H. Goddard with his first liquid-fuelled rocket, frame from which it was fired, March 16 1926 · public domain."
+  },
   "see_in_app": [
     {
       "route": "/missions",

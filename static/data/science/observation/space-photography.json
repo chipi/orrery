@@ -4,6 +4,10 @@
   "order": 1,
   "diagram": "space-photography.svg",
   "diagram_quality": "schematic",
+  "photo": {
+    "src": "/images/science/space-photography-deepfield.jpg",
+    "credit": "NASA / ESA / CSA / STScI · JWST first deep field, SMACS 0723 — the deepest infrared image of the universe to date (2022)."
+  },
   "see_in_app": [
     { "route": "/explore", "context_key": "Planet hero images on /explore are stacked + colour-mapped composites, not raw shutter clicks" },
     { "route": "/missions", "context_key": "Mars + outer-system mission galleries on /missions — each image is a calibrated composite" }

@@ -2,6 +2,10 @@
   "id": "dsn",
   "tab": "mission-phases",
   "order": 12,
+  "photo": {
+    "src": "/images/science/dsn-goldstone.jpg",
+    "credit": "NASA / JPL · DSS-14, the 70 m antenna at Goldstone Deep Space Communications Complex in the Mojave Desert."
+  },
   "see_in_app": [
     { "route": "/missions", "context_key": "TLI / TCM / orbit-insertion event timestamps — every one of these is verified against DSN ranging" },
     { "route": "/fly", "context_key": "Light-minute display on the live HUD — DSN round-trip light time gives navigation its meter-class fix" }

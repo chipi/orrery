@@ -180,13 +180,15 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.25);
   }
   .section-photo img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
-    max-height: 460px;
-    object-fit: cover;
+    max-height: 540px;
+    margin: 0 auto;
   }
   .section-photo figcaption {
     padding: 8px 12px;

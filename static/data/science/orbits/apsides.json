@@ -3,7 +3,7 @@
   "tab": "orbits",
   "order": 8,
   "diagram": "apsides.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Each planet's perihelion and aphelion are computed from a and e" },
     { "route": "/missions", "context_key": "Perigee and apogee describe Earth-orbit mission profiles" }

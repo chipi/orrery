@@ -3,7 +3,7 @@
   "tab": "orbits",
   "order": 10,
   "diagram": "lagrange-points.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "JWST + Spektr-RG live at Sun-Earth L2; SOHO at Sun-Earth L1" },
     { "route": "/fleet", "context_key": "Observatory category: JWST, Euclid, and Spektr-RG are all SEL2-stationed" },

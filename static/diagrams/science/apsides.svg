@@ -1,30 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Line of apsides connecting perihelion and aphelion through both foci">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The line of apsides — the line through both foci connecting periapsis to apoapsis. Periapsis is closest approach; apoapsis is farthest distance.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.9); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Line of apsides — emphasized in teal -->
-  <line x1="46" y1="150" x2="354" y2="150" class="accent" />
-  <text x="148" y="288" class="label-accent">line of apsides</text>
-  <!-- Ellipse: a=140, c=98, b=100 -->
-  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.6" />
+  <circle class="dim-star" cx="80" cy="280" r="0.5" />
+  <circle class="dim-star" cx="560" cy="280" r="0.5" />
+
+  <text class="label" x="40" y="28">LINE OF APSIDES — THROUGH BOTH FOCI, FROM PERIAPSIS TO APOAPSIS</text>
+
+  <!-- Ellipse: a=200, b=130, centred (300,170), c=152 -->
+  <ellipse class="ellipse" cx="300" cy="170" rx="200" ry="130" />
+
+  <!-- Line of apsides — emphasised in teal, extended slightly beyond the ellipse -->
+  <line class="accent" x1="80" y1="170" x2="520" y2="170" />
+
   <!-- Right focus (Sun) -->
-  <circle cx="298" cy="150" r="6" class="focus" />
-  <text x="280" y="138" class="label-accent">F₁</text>
+  <circle class="focus" cx="452" cy="170" r="8" />
+  <text class="label-gold" x="452" y="148" text-anchor="middle">F₁ · CENTRAL BODY</text>
+
   <!-- Empty focus -->
-  <circle cx="102" cy="150" r="3" class="body" />
-  <text x="98" y="138" class="label-mute">F₂</text>
-  <!-- Perihelion (rightmost on ellipse) -->
-  <circle cx="340" cy="150" r="4" class="body" />
-  <text x="306" y="180" class="label-mute">perihelion</text>
-  <text x="306" y="194" class="label-mute">(perigee)</text>
-  <!-- Aphelion (leftmost) -->
-  <circle cx="60" cy="150" r="4" class="body" />
-  <text x="60" y="180" class="label-mute">aphelion</text>
-  <text x="64" y="194" class="label-mute">(apogee)</text>
+  <circle fill="rgba(255,255,255,0.55)" cx="148" cy="170" r="3" />
+  <text class="label" x="148" y="148" text-anchor="middle">F₂</text>
+
+  <!-- Periapsis (right tip) -->
+  <circle class="body" cx="500" cy="170" r="5" />
+  <line class="lead" x1="500" y1="170" x2="540" y2="220" />
+  <text class="label" x="544" y="224">PERIAPSIS</text>
+  <text class="sublabel" x="544" y="236">closest approach</text>
+  <text class="sublabel" x="544" y="248">r_p = a(1 − e)</text>
+
+  <!-- Aphelion (left tip) -->
+  <circle class="body" cx="100" cy="170" r="5" />
+  <line class="lead" x1="100" y1="170" x2="60" y2="220" />
+  <text class="label" x="56" y="224" text-anchor="end">APOAPSIS</text>
+  <text class="sublabel" x="56" y="236" text-anchor="end">farthest distance</text>
+  <text class="sublabel" x="56" y="248" text-anchor="end">r_a = a(1 + e)</text>
+
+  <!-- Naming table for different central bodies -->
+  <g transform="translate(180,42)">
+    <text class="label-gold" x="0" y="0">CENTRAL BODY — NAMING</text>
+    <text class="sublabel" x="0" y="14">SUN     ·  perihelion / aphelion</text>
+    <text class="sublabel" x="0" y="26">EARTH ·  perigee     / apogee</text>
+    <text class="sublabel" x="0" y="38">MOON   ·  perilune    / apolune</text>
+    <text class="sublabel" x="0" y="50">MARS   ·  periareion / apoareion</text>
+  </g>
+
+  <!-- Major-axis distance bracket -->
+  <line stroke="rgba(255,255,255,0.55)" stroke-width="1" x1="100" y1="290" x2="500" y2="290" />
+  <line stroke="rgba(255,255,255,0.55)" stroke-width="1" x1="100" y1="285" x2="100" y2="295" />
+  <line stroke="rgba(255,255,255,0.55)" stroke-width="1" x1="500" y1="285" x2="500" y2="295" />
+  <text class="label" x="300" y="308" text-anchor="middle">r_p + r_a = 2a · major axis</text>
 </svg>

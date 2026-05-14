@@ -1,35 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Semi-major axis as half the longest diameter of the orbit ellipse">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The semi-major axis a is half the longest diameter of the orbit ellipse, and equals the mean of perihelion and aphelion distances.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.2; fill: none; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.9); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Major axis -->
-  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
-  <!-- Ellipse -->
-  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
-  <!-- Right focus = sun (200+98, 150) -->
-  <circle cx="298" cy="150" r="6" class="focus" />
-  <!-- Perihelion (right tip) -->
-  <circle cx="340" cy="150" r="3" class="body" />
-  <text x="306" y="172" class="label-mute">r_p</text>
-  <!-- Aphelion (left tip) -->
-  <circle cx="60" cy="150" r="3" class="body" />
-  <text x="60" y="172" class="label-mute">r_a</text>
-  <!-- Semi-major axis a: from centre to right tip -->
-  <line x1="200" y1="100" x2="340" y2="100" class="accent" />
-  <line x1="200" y1="95" x2="200" y2="105" class="accent" />
-  <line x1="340" y1="95" x2="340" y2="105" class="accent" />
-  <text x="260" y="93" class="label-accent">a</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+  <circle class="dim-star" cx="560" cy="290" r="0.6" />
+
+  <text class="label" x="40" y="28">a · THE SEMI-MAJOR AXIS — HALF THE LONG DIAMETER OF THE ELLIPSE</text>
+
+  <!-- Major axis line -->
+  <line class="dashed" x1="80" y1="170" x2="520" y2="170" />
+
+  <!-- Ellipse: a=200, b=140, centre (300,170), c=143 -->
+  <ellipse class="ellipse" cx="300" cy="170" rx="200" ry="140" />
+
+  <!-- Sun at right focus (443,170) -->
+  <circle class="focus" cx="443" cy="170" r="8" />
+  <text class="label-gold" x="443" y="148" text-anchor="middle">SUN</text>
+
+  <!-- Perihelion right tip -->
+  <circle class="body" cx="500" cy="170" r="4" />
+  <text class="label" x="514" y="174">r_p</text>
+  <text class="sublabel" x="514" y="186">perihelion</text>
+
+  <!-- Aphelion left tip -->
+  <circle class="body" cx="100" cy="170" r="4" />
+  <text class="label" x="86" y="174" text-anchor="end">r_a</text>
+  <text class="sublabel" x="86" y="186" text-anchor="end">aphelion</text>
+
+  <!-- Centre marker -->
+  <circle fill="rgba(255,255,255,0.55)" cx="300" cy="170" r="2.5" />
+  <text class="sublabel" x="300" y="156" text-anchor="middle">centre</text>
+
+  <!-- Semi-major axis a: from centre (300) to right tip (500) -->
+  <line class="accent" x1="300" y1="100" x2="500" y2="100" />
+  <line class="accent" x1="300" y1="94" x2="300" y2="106" />
+  <line class="accent" x1="500" y1="94" x2="500" y2="106" />
+  <text class="label-accent" x="400" y="92" text-anchor="middle">a</text>
+
   <!-- Major axis 2a: full span -->
-  <line x1="60" y1="240" x2="340" y2="240" class="stroke" />
-  <line x1="60" y1="235" x2="60" y2="245" class="stroke" />
-  <line x1="340" y1="235" x2="340" y2="245" class="stroke" />
-  <text x="186" y="232" class="label-mute">major axis = 2a</text>
-  <text x="118" y="270" class="label-mute">a = (r_p + r_a) / 2</text>
+  <line stroke="rgba(255,255,255,0.85)" stroke-width="1.5" x1="100" y1="260" x2="500" y2="260" />
+  <line stroke="rgba(255,255,255,0.85)" stroke-width="1.5" x1="100" y1="254" x2="100" y2="266" />
+  <line stroke="rgba(255,255,255,0.85)" stroke-width="1.5" x1="500" y1="254" x2="500" y2="266" />
+  <text class="label" x="300" y="278" text-anchor="middle">MAJOR AXIS · 2a · = r_p + r_a</text>
+
+  <!-- Reference panel — real-planet a values -->
+  <g transform="translate(30,210)">
+    <text class="label-gold" x="0" y="0">a (AU)</text>
+    <text class="sublabel" x="0" y="14">Mercury  ·  0.387</text>
+    <text class="sublabel" x="0" y="26">Earth    ·  1.000</text>
+    <text class="sublabel" x="0" y="38">Mars     ·  1.524</text>
+    <text class="sublabel" x="0" y="50">Jupiter  ·  5.203</text>
+    <text class="sublabel" x="0" y="62">Pluto    ·  39.48</text>
+  </g>
+
+  <text class="sublabel" x="200" y="298" text-anchor="end">a = (r_p + r_a) / 2  ·  encodes the orbit's total energy: E = −μ / 2a</text>
 </svg>

@@ -1,29 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Three orbits with the same semi-major axis but different eccentricity">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Three orbits with the same semi-major axis but progressively higher eccentricity, from a circle through a typical ellipse to a comet-like orbit.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .e0 { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .e2 { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
+    .e4 { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .e8 { stroke: #ff6b6b; stroke-width: 1.6; fill: none; }
+    .focus { fill: rgba(255,255,255,0.95); }
+    .focus-accent { fill: #4ecdc4; }
+    .focus-gold { fill: #ffc850; }
+    .focus-red { fill: #ff6b6b; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- All three share the same major axis: 2a = 280, so a = 140; centred at (200,150) -->
-  <!-- e=0 circle: rx=ry=140 -->
-  <circle cx="200" cy="150" r="140" class="stroke" />
-  <text x="190" y="20" class="label-mute">e = 0</text>
-  <!-- e=0.4: rx=140, ry=140·sqrt(1-0.16)=128 -->
-  <ellipse cx="200" cy="150" rx="140" ry="128" class="stroke" />
-  <!-- e=0.8: rx=140, ry=140·sqrt(1-0.64)=84 -->
-  <ellipse cx="200" cy="150" rx="140" ry="84" class="stroke" />
-  <!-- Common focus on the right for the e=0.4 ellipse: c = a·e = 56 -->
-  <circle cx="256" cy="150" r="3" class="focus" />
-  <!-- Common focus on the right for the e=0.8 ellipse: c = a·e = 112 -->
-  <circle cx="312" cy="150" r="3" class="focus" />
-  <!-- Centre marker -->
-  <circle cx="200" cy="150" r="2" fill="rgba(255,255,255,0.55)" />
-  <text x="160" y="280" class="label-mute">same a, different e</text>
-  <text x="328" y="148" class="label-mute">e=0.8</text>
-  <text x="262" y="148" class="label-mute">e=0.4</text>
-  <text x="44" y="172" class="label-accent">e = 0.8</text>
-  <text x="44" y="220" class="label-accent">e = 0.4</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="560" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">e · ECCENTRICITY — HOW MUCH AN ELLIPSE DEVIATES FROM A CIRCLE</text>
+
+  <!-- All four orbits share the same a=180, centred at (300,170) -->
+  <line class="dashed" x1="100" y1="170" x2="500" y2="170" />
+
+  <!-- e=0 circle: a=b=180 -->
+  <circle class="e0" cx="300" cy="170" r="180" />
+
+  <!-- e=0.2: b = a*sqrt(1-0.04) = 176; c = 36; focus right at 336 -->
+  <ellipse class="e2" cx="300" cy="170" rx="180" ry="176" />
+  <circle class="focus-accent" cx="336" cy="170" r="3" />
+
+  <!-- e=0.4: b = a*sqrt(1-0.16) = 165; c = 72 -->
+  <ellipse class="e4" cx="300" cy="170" rx="180" ry="165" />
+  <circle class="focus-gold" cx="372" cy="170" r="3" />
+
+  <!-- e=0.8: b = a*sqrt(1-0.64) = 108; c = 144 -->
+  <ellipse class="e8" cx="300" cy="170" rx="180" ry="108" />
+  <circle class="focus-red" cx="444" cy="170" r="3" />
+
+  <!-- Centre + labels -->
+  <circle fill="rgba(255,255,255,0.55)" cx="300" cy="170" r="2.5" />
+
+  <!-- Legend at left -->
+  <g transform="translate(30,80)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="rgba(255,255,255,0.85)" stroke-width="2" />
+    <text class="label" x="28" y="3">e = 0</text>
+    <text class="sublabel" x="28" y="14">circle · Earth</text>
+
+    <line x1="0" y1="30" x2="22" y2="30" stroke="#4ecdc4" stroke-width="2" />
+    <text class="label-accent" x="28" y="33">e = 0.2</text>
+    <text class="sublabel" x="28" y="44">mild ellipse · Mars 0.09</text>
+
+    <line x1="0" y1="60" x2="22" y2="60" stroke="#ffc850" stroke-width="2" />
+    <text class="label-gold" x="28" y="63">e = 0.4</text>
+    <text class="sublabel" x="28" y="74">strong · Pluto 0.25</text>
+
+    <line x1="0" y1="90" x2="22" y2="90" stroke="#ff6b6b" stroke-width="2" />
+    <text class="label-red" x="28" y="93">e = 0.8</text>
+    <text class="sublabel" x="28" y="104">comet-like · Halley 0.97</text>
+  </g>
+
+  <!-- Formula right -->
+  <g transform="translate(520,80)">
+    <text class="label-gold" x="0" y="0" text-anchor="end">e = c / a</text>
+    <text class="sublabel" x="0" y="14" text-anchor="end">c = focal distance</text>
+    <text class="sublabel" x="0" y="26" text-anchor="end">a = semi-major axis</text>
+    <text class="sublabel" x="0" y="46" text-anchor="end">r_p = a(1 − e)</text>
+    <text class="sublabel" x="0" y="58" text-anchor="end">r_a = a(1 + e)</text>
+  </g>
+
+  <text class="sublabel" x="300" y="296" text-anchor="middle">SAME a, DIFFERENT e · the foci spread along the major axis, ellipse flattens</text>
+  <text class="sublabel" x="540" y="316" text-anchor="end">eccentricity = the conic-section "shape parameter"</text>
 </svg>

@@ -1,27 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Kepler's second law: equal areas swept in equal times">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Kepler's three laws: orbits are ellipses with the Sun at one focus; equal areas swept in equal times; the square of the orbital period equals the cube of the semi-major axis.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
     .accent { stroke: #4ecdc4; stroke-width: 1.5; fill: none; }
-    .accent-fill { fill: rgba(78, 205, 196, 0.18); stroke: #4ecdc4; stroke-width: 1.5; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .accent-fill { fill: rgba(78,205,196,0.25); stroke: #4ecdc4; stroke-width: 1.5; }
+    .gold-fill { fill: rgba(255,200,80,0.25); stroke: #ffc850; stroke-width: 1.5; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.95); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
+    .law-title { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 1.5px; font-weight: bold; }
   </style>
-  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
-  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
-  <!-- Focus = Sun -->
-  <circle cx="298" cy="150" r="6" class="focus" />
-  <!-- Sector 1: near perihelion. Body sweeps a short, fat sector. From perihelion (340,150) to roughly (320, 105). -->
-  <path d="M 298 150 L 340 150 A 140 100 0 0 0 320 105 Z" class="accent-fill" />
-  <text x="324" y="132" class="label-accent">Δt</text>
-  <!-- Sector 2: near aphelion. Body sweeps a long, narrow sector. From aphelion (60,150) to roughly (78,191). -->
-  <path d="M 298 150 L 60 150 A 140 100 0 0 0 78 191 Z" class="accent-fill" />
-  <text x="180" y="180" class="label-accent">Δt</text>
-  <!-- Caption -->
-  <text x="74" y="280" class="label-mute">equal areas in equal time intervals (Kepler II)</text>
-  <text x="124" y="34" class="label-mute">short, fat sweep · fast motion</text>
-  <text x="78" y="218" class="label-mute">long, thin sweep · slow motion</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+  <circle class="dim-star" cx="560" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">KEPLER'S THREE LAWS (1609 / 1619) — DERIVED FROM TYCHO BRAHE'S MARS DATA</text>
+
+  <!-- Three side-by-side panels -->
+
+  <!-- LAW I: ellipse with Sun at one focus -->
+  <g transform="translate(30,55)">
+    <text class="law-title" x="0" y="0">I · ELLIPSE</text>
+    <text class="sublabel" x="0" y="14">orbit = ellipse, Sun at one focus</text>
+    <line class="dashed" x1="0" y1="120" x2="170" y2="120" />
+    <ellipse class="ellipse" cx="85" cy="120" rx="80" ry="56" />
+    <circle class="focus" cx="142" cy="120" r="5" />
+    <circle fill="rgba(255,255,255,0.4)" cx="28" cy="120" r="2" />
+    <text class="label-gold" x="148" y="116">F₁</text>
+    <text class="sublabel" x="28" y="135" text-anchor="middle">F₂</text>
+  </g>
+
+  <!-- LAW II: equal areas -->
+  <g transform="translate(220,55)">
+    <text class="law-title" x="0" y="0">II · EQUAL AREAS</text>
+    <text class="sublabel" x="0" y="14">in equal time intervals · Δt</text>
+    <line class="dashed" x1="0" y1="120" x2="170" y2="120" />
+    <ellipse class="ellipse" cx="85" cy="120" rx="80" ry="56" />
+    <circle class="focus" cx="142" cy="120" r="5" />
+    <!-- Sector near perihelion: short fat -->
+    <!-- From focus (142,120) sweep to perihelion (165,120) and back via (158,98) -->
+    <path class="accent-fill" d="M 142 120 L 165 120 A 80 56 0 0 0 158 98 Z" />
+    <!-- Sector near aphelion: long thin -->
+    <!-- From focus (142,120) to aphelion (5,120) and back to (16,138) -->
+    <path class="accent-fill" d="M 142 120 L 5 120 A 80 56 0 0 0 16 138 Z" />
+    <text class="label-accent" x="155" y="115">Δt</text>
+    <text class="label-accent" x="64" y="142">Δt</text>
+    <text class="sublabel" x="155" y="100">short, fat</text>
+    <text class="sublabel" x="0" y="155">long, thin</text>
+  </g>
+
+  <!-- LAW III: T² ∝ a³ -->
+  <g transform="translate(410,55)">
+    <text class="law-title" x="0" y="0">III · T² ∝ a³</text>
+    <text class="sublabel" x="0" y="14">period vs distance — harmonic law</text>
+    <!-- Axes -->
+    <line stroke="rgba(255,255,255,0.85)" stroke-width="1.2" x1="20" y1="180" x2="160" y2="180" />
+    <line stroke="rgba(255,255,255,0.85)" stroke-width="1.2" x1="20" y1="180" x2="20" y2="60" />
+    <text class="sublabel" x="0" y="62">T</text>
+    <text class="sublabel" x="165" y="195" text-anchor="end">a (AU)</text>
+    <!-- Power curve through key points -->
+    <path stroke="#ffc850" stroke-width="2.4" fill="none" d="M 22 178 Q 50 170 80 154 T 140 95" />
+    <!-- Reference dots -->
+    <circle fill="#ffc850" cx="35" cy="172" r="3" />
+    <text class="sublabel" x="35" y="166" text-anchor="middle">Mer</text>
+    <circle fill="#ffc850" cx="50" cy="166" r="3" />
+    <text class="sublabel" x="50" y="160" text-anchor="middle">Ven</text>
+    <circle fill="#ffc850" cx="62" cy="160" r="3" />
+    <text class="sublabel" x="62" y="154" text-anchor="middle">Earth</text>
+    <circle fill="#ffc850" cx="80" cy="148" r="3" />
+    <text class="sublabel" x="80" y="142" text-anchor="middle">Mars</text>
+    <circle fill="#ffc850" cx="120" cy="100" r="3" />
+    <text class="sublabel" x="120" y="94" text-anchor="middle">Jup</text>
+  </g>
+
+  <!-- Bottom note: tying to Newton -->
+  <text class="sublabel" x="40" y="305">Tycho Brahe's naked-eye observations of Mars — accurate to ~1 arcmin — were the data that broke the circle assumption.</text>
+  <text class="sublabel" x="540" y="320" text-anchor="end">Newton (1687) later derived all three from his inverse-square law.</text>
 </svg>

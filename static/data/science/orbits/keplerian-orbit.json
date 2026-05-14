@@ -3,7 +3,7 @@
   "tab": "orbits",
   "order": 1,
   "diagram": "keplerian-orbit.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Every planet orbits the Sun on a Keplerian ellipse" },
     { "route": "/missions", "context_key": "Spacecraft trajectories are stitched-together Keplerian arcs" }

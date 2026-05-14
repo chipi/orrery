@@ -1,32 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="True anomaly measured at the focus from perihelion to the body's current position">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="True anomaly ν — the angle measured at the focus from the periapsis direction to the spacecraft's current position vector. The where-am-I-on-the-orbit number.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.2; fill: none; }
+    .arc { stroke: #ffc850; stroke-width: 1.8; fill: none; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.95); stroke: rgba(255,255,255,0.5); stroke-width: 1; }
+    .ghost { fill: rgba(255,255,255,0.4); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="280" r="0.5" />
+
+  <text class="label" x="40" y="28">ν · TRUE ANOMALY — WHERE THE SPACECRAFT IS, MEASURED AT THE FOCUS</text>
+
   <!-- Major axis -->
-  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
-  <!-- Ellipse -->
-  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
-  <!-- Right focus -->
-  <circle cx="298" cy="150" r="6" class="focus" />
-  <!-- Perihelion (rightmost) -->
-  <circle cx="340" cy="150" r="3" class="body" />
-  <text x="318" y="170" class="label-mute">perihelion</text>
-  <!-- Reference line from focus to perihelion -->
-  <line x1="298" y1="150" x2="340" y2="150" class="dashed" />
-  <!-- Body at ν ≈ 110° from perihelion. Compute: r at nu=110° on this ellipse, place visually -->
-  <circle cx="190" cy="65" r="4" class="body" />
-  <!-- Radius vector from focus to body -->
-  <line x1="298" y1="150" x2="190" y2="65" class="accent" />
-  <!-- Angle arc at focus between perihelion direction and radius -->
-  <path d="M 328 150 A 30 30 0 0 0 280 124" class="accent" />
-  <text x="282" y="138" class="label-accent">ν</text>
-  <text x="240" y="100" class="label-accent">r</text>
-  <text x="76" y="50" class="label-mute">true anomaly ν measured at the focus</text>
+  <line class="dashed" x1="80" y1="170" x2="520" y2="170" />
+
+  <!-- Ellipse: a=200, b=140, centred (300,170), c=143 -->
+  <ellipse class="ellipse" cx="300" cy="170" rx="200" ry="140" />
+
+  <!-- Right focus (Sun) at (443,170) -->
+  <circle class="focus" cx="443" cy="170" r="8" />
+  <text class="label-gold" x="443" y="148" text-anchor="middle">SUN</text>
+
+  <!-- Periapsis at right tip -->
+  <circle class="body" cx="500" cy="170" r="4" />
+  <text class="label" x="510" y="190">ν = 0°</text>
+  <text class="sublabel" x="510" y="202">periapsis</text>
+
+  <!-- Reference direction from focus to periapsis -->
+  <line stroke="rgba(255,200,80,0.5)" stroke-width="1.5" stroke-dasharray="3 2" x1="443" y1="170" x2="500" y2="170" />
+
+  <!-- Body at ν=110°: r = a(1-e²)/(1+e cos ν). e ≈ 0.715. r ≈ 79. Position: F + (r cos ν, -r sin ν). r cos 110° ≈ -27, r sin 110° ≈ 74. So at (443-27, 170-74) = (416, 96) -->
+  <circle class="body" cx="416" cy="96" r="5" />
+  <!-- Radius vector -->
+  <line class="accent" x1="443" y1="170" x2="416" y2="96" />
+  <text class="label-accent" x="438" y="135">r</text>
+  <text class="sublabel" x="425" y="80">spacecraft</text>
+
+  <!-- True-anomaly arc at the focus -->
+  <path class="arc" d="M 475 170 A 32 32 0 0 0 432 144" />
+  <text class="label-gold" x="478" y="155">ν</text>
+  <text class="sublabel" x="478" y="167">≈ 110°</text>
+
+  <!-- Ghost spacecraft positions at ν = 30°, 180°, 270° -->
+  <!-- ν=30°: r=200·0.49/(1+0.62)=60. pos = (443+52, 170-30) = (495, 140). Close to perihelion. -->
+  <circle class="ghost" cx="486" cy="142" r="2.5" />
+  <text class="sublabel" x="498" y="138">ν=30°</text>
+  <!-- ν=180°: aphelion at left tip -->
+  <circle class="ghost" cx="100" cy="170" r="3" />
+  <text class="sublabel" x="86" y="190">ν=180°</text>
+  <!-- ν=270°: r=98, pos=(443+0, 170+98)=(443,268). Below. -->
+  <circle class="ghost" cx="443" cy="260" r="2.5" />
+  <text class="sublabel" x="450" y="265">ν=270°</text>
+
+  <!-- Formula panel -->
+  <g transform="translate(30,90)">
+    <rect x="0" y="0" width="170" height="110" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">r(ν) — ORBIT EQUATION</text>
+    <text class="sublabel" x="8" y="32">r = a(1 − e²) / (1 + e cos ν)</text>
+    <text class="sublabel" x="8" y="50">ν = 0°    →   r = r_p</text>
+    <text class="sublabel" x="8" y="62">ν = 180° →  r = r_a</text>
+    <text class="sublabel" x="8" y="78">ν advances faster near</text>
+    <text class="sublabel" x="8" y="90">perihelion (Kepler II)</text>
+    <text class="sublabel" x="8" y="102">→ relate ν ↔ time via M</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">also called "ν" (nu) or θ; pairs with eccentric anomaly E and mean anomaly M</text>
 </svg>

@@ -4,7 +4,7 @@
   "order": 2,
   "formula_latex": "a = \\frac{r_p + r_a}{2}",
   "diagram": "semi-major-axis.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Each planet panel shows its semi-major axis in AU" }
   ],

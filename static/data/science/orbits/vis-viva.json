@@ -4,7 +4,7 @@
   "order": 6,
   "formula_latex": "v = \\sqrt{\\mu \\left(\\frac{2}{r} - \\frac{1}{a}\\right)}",
   "diagram": "vis-viva.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/fly", "context_key": "The ∆V HELIO HUD row is computed from vis-viva at the spacecraft's current radius" },
     { "route": "/plan", "context_key": "Departure and arrival velocities on the porkchop come from vis-viva" }

@@ -2129,11 +2129,7 @@
     // parking-orbit revs / spiral_earth burns / re-entry approach are
     // visible. Same auto-zoom pattern as the Moon close-up, just
     // pointed at the other end of the system.
-    const EARTH_PHASE_TYPES = new Set<string>([
-      'parking',
-      'spiral_earth',
-      'reentry',
-    ]);
+    const EARTH_PHASE_TYPES = new Set<string>(['parking', 'spiral_earth', 'reentry']);
     let autoZoomTargetR = WIDE_DISTANCE;
     const autoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
     let lastAutoZoomPhase: string | null = null;
@@ -2199,11 +2195,7 @@
         // toward Earth side (end).
         const t = 1 - phaseProgress;
         autoZoomTargetR = WIDE_DISTANCE;
-        autoZoomTargetCenter.set(
-          moonInScene.x * t * 0.7,
-          0,
-          moonInScene.z * t * 0.7,
-        );
+        autoZoomTargetCenter.set(moonInScene.x * t * 0.7, 0, moonInScene.z * t * 0.7);
       }
     }
 

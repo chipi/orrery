@@ -11,10 +11,21 @@
   "epoch": "first-stations",
   "best_known_for": "The only suit worn on Soyuz — created after the Soyuz 11 decompression deaths in 1971",
   "credit": "Soft pressure suit worn inside the Soyuz descent module on every launch and re-entry since 1973. Back-entry seam, fixed helmet, umbilical-fed life support.",
-  "linked_missions": ["soyuz-11", "soyuz-19-apollo", "soyuz-tma-22", "soyuz-ms-25"],
   "links": [
-    { "l": "Wikipedia · Sokol space suit", "u": "https://en.wikipedia.org/wiki/Sokol_space_suit", "t": "intro" },
-    { "l": "NPP Zvezda · Sokol KV-2 datasheet", "u": "https://zvezda-npp.ru/en/products/space-suits-and-systems/sokol-kv-2-rescue-spacesuit/", "t": "core" },
-    { "l": "RussianSpaceWeb · Sokol", "u": "https://www.russianspaceweb.com/sokol.html", "t": "deep" }
+    {
+      "l": "Wikipedia · Sokol space suit",
+      "u": "https://en.wikipedia.org/wiki/Sokol_space_suit",
+      "t": "intro"
+    },
+    {
+      "l": "NPP Zvezda · Sokol KV-2 datasheet",
+      "u": "https://zvezda-npp.ru/en/products/space-suits-and-systems/sokol-kv-2-rescue-spacesuit/",
+      "t": "core"
+    },
+    {
+      "l": "RussianSpaceWeb · Sokol",
+      "u": "https://www.russianspaceweb.com/sokol.html",
+      "t": "deep"
+    }
   ]
 }

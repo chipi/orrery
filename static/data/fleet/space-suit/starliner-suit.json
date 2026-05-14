@@ -11,9 +11,16 @@
   "epoch": "commercial-era",
   "best_known_for": "Boeing's blue IVA suit for the CST-100 Starliner, debuted on the Crew Flight Test 2024",
   "credit": "Lightweight launch-entry pressure suit built by David Clark for Boeing's commercial-crew vehicle. Touch-screen-compatible gloves, integrated communications cap, vented helmet. Worn on the Starliner Crew Flight Test (Wilmore and Williams, June–September 2024).",
-  "linked_missions": ["boe-cft"],
   "links": [
-    { "l": "Wikipedia · Boeing Starliner spacesuit", "u": "https://en.wikipedia.org/wiki/Boeing_Starliner", "t": "intro" },
-    { "l": "Boeing · Starliner spacesuit press kit", "u": "https://www.boeing.com/space/starliner", "t": "core" }
+    {
+      "l": "Wikipedia · Boeing Starliner spacesuit",
+      "u": "https://en.wikipedia.org/wiki/Boeing_Starliner",
+      "t": "intro"
+    },
+    {
+      "l": "Boeing · Starliner spacesuit press kit",
+      "u": "https://www.boeing.com/space/starliner",
+      "t": "core"
+    }
   ]
 }

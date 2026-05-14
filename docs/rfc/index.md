@@ -18,3 +18,4 @@
 | RFC-014 | Tiangong Explorer · 3D model pipeline & module pickability | Open | ADR-048 / 049 / 050 | v0.5 |
 | RFC-015 | LEARN-link rollout | Closed · closed by ADR-051 | ADR-051 | v0.5 |
 | RFC-016 | Spaceflight Fleet · architecture, schema, and dataset boundaries | Open | ADR-052 / 053 / 054 | v0.6 |
+| RFC-017 | Surface Hotspots · LOD architecture, texture pipeline, ground-view skybox, hardware models | Open | ADR-059 / 060 / 061 / 062 | v0.7 |

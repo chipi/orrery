@@ -23,7 +23,7 @@ The ten primary nav destinations:
 | `/mars` | Mars Map | `src/routes/mars/+page.svelte` |
 | `/iss` | ISS Explorer | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer | `src/routes/tiangong/+page.svelte` |
-| `/science` | Encyclopedia (54 sections × 8 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
+| `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
 
 Plus two read-only pages: `/credits` (per-image provenance + text-source attributions) and `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance).
 
@@ -127,7 +127,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── images/missions/    ← build-time fetch (agency-first per ADR-046; Wikimedia + NASA fallback)
 │   ├── images/rockets/     ← Wikimedia rocket reference photos
 │   ├── diagrams/
-│   │   ├── science/        ← 62 hand-coded SVGs (54 sections + 8 covers, ADR-035)
+│   │   ├── science/        ← 71 hand-coded SVGs (61 sections + 10 covers, ADR-035)
 │   │   └── spacecraft/     ← 9 visiting-craft ANATOMY diagrams
 │   ├── data/               ← all app JSON: missions, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
@@ -356,4 +356,4 @@ When code and docs disagree, one is wrong. Fix the wrong one. Do not tolerate di
 
 ---
 
-*Orrery · AGENTS.md · May 2026 · v0.5.0 · Update when locked decisions change*
+*Orrery · AGENTS.md · May 2026 · v0.6.0 · Update when locked decisions change*

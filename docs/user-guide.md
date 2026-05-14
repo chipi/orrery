@@ -1,6 +1,6 @@
 # User Guide
 
-_Orrery — read-this-first guide for the live app · v0.5.x · May 2026_
+_Orrery — read-this-first guide for the live app · v0.6.x · May 2026_
 
 > Every screenshot in this guide comes from the production app at 1280×800. Click any image to open it full-size in a new tab.
 
@@ -92,8 +92,8 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 - **▶ / ⏸ + speed pills** — autoplay at 1× / 7× / 30× / 90× (Mars-class missions) or 0.1× / 0.5× / 1× / 3× (lunar).
 - **`2D` toggle** — switch between the 3D scene and a top-down 2D view.
 - **CAPCOM panel** (right) — live mission events (TLI, TCM, EDL, etc.) tick by as you scrub.
-- **Pre-built missions**: try `/fly?mission=<id>` for any of the 36 missions in the catalog.
-- **Lunar missions** (Apollo, Artemis II, Blue Moon, Chang'e, Chandrayaan, Luna, SLIM) render heliocentrically with the Earth + Moon system orbiting the Sun, and the Moon orbiting Earth at an exaggerated visual distance so the cislunar trajectory is visible.
+- **Pre-built missions**: try `/fly?mission=<id>` for any of the 37 missions in the catalog.
+- **Lunar missions** (Apollo, Artemis II, Blue Moon, Chang'e, Chandrayaan, Luna, SLIM) auto-open in a dedicated **cislunar view** (ADR-058) anchored at Earth, rendering each mission's actual flight architecture — Apollo free-return figure-8 with parking orbit + lunar orbit + descent, Artemis II hybrid free-return at 9 200 km periselene, Chandrayaan-3 multi-burn Earth spiral + lunar spiral + descent, Chang'e 5 lunar-orbit-rendezvous sample-return, etc. The camera zooms in as the spacecraft approaches the Moon and pulls back as it leaves.
 
 [![Apollo 11 fly](screenshots/03-fly-apollo11.png)](screenshots/03-fly-apollo11.png)
 
@@ -115,7 +115,7 @@ Each phase title is a deep link into the matching `/science` chapter. The lens a
 
 ## Mission Catalog · `/missions`
 
-All 36 missions in the dataset. 16 Mars + 16 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
+All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
 
 [![Catalog](screenshots/04-missions.png)](screenshots/04-missions.png)
 
@@ -226,7 +226,7 @@ China's space station. Tianhe core + Wentian + Mengtian lab modules with sun-tra
 
 ## Science Encyclopedia · `/science`
 
-The in-app explainer for every concept the simulator visualises. **54 sections across 8 tabs**, plus an 8-chapter Space-101 editorial narrative on the landing page.
+The in-app explainer for every concept the simulator visualises. **85 sections across 10 tabs**, plus an 8-chapter Space-101 editorial narrative on the landing page.
 
 [![Science encyclopedia landing](screenshots/10-science-landing.png)](screenshots/10-science-landing.png)
 
@@ -234,14 +234,16 @@ The in-app explainer for every concept the simulator visualises. **54 sections a
 
 | Tab | What's in it | Sections |
 |---|---|---|
-| **Orbits** | Kepler's laws, vis-viva, semi-major axis, eccentricity, inclination, true anomaly, apsides, orbit regimes, Keplerian orbit | 9 |
+| **Orbits** | Kepler's laws, vis-viva, semi-major axis, eccentricity, inclination, true anomaly, apsides, orbit regimes, Keplerian orbit, Lagrange points | 10 |
 | **Transfers** | Hohmann, Lambert problem, transfer ellipse, free return, gravity assist, conic sections, patched conics | 7 |
 | **Propulsion** | Tsiolkovsky equation, specific impulse, ∆v budget, C3 launch energy, V∞, Oberth effect | 6 |
-| **Mission Phases** | Launch, trans-X injection, TCM, orbit insertion, EDL, EVA, MET, NRHO, mission types | 9 |
+| **Mission Phases** | Launch, trans-X injection, TCM, orbit insertion, EDL, EVA, MET, NRHO, mission types | 12 |
 | **Scales & Time** | AU, light-minute, ecliptic plane, J2000, sidereal vs synodic, reference frames, long-duration | 7 |
 | **Porkchop** | What is a porkchop, departure axis, time-of-flight axis, ∆v heatmap, contour reading, viability | 6 |
 | **Space Stations** | Pressurised volume, node-module structure, solar-power budget, expedition cadence | 4 |
 | **History** | Kepler 1609 · Newton 1687 · Tsiolkovsky 1903 · Goddard 1926 · Sputnik 1957 · Apollo 11 1969 | 6 |
+| **Observation** | Adaptive optics, black holes, coronagraphs, interferometry, space photography, spectroscopy, wormholes | 7 |
+| **Life in Space** | Microgravity, radiation, IVA / EVA / lunar suits, long-duration life support, crew-health topics | 10 |
 
 [![Science section page](screenshots/10-science-section.png)](screenshots/10-science-section.png)
 
@@ -253,7 +255,7 @@ The in-app explainer for every concept the simulator visualises. **54 sections a
 - **Cross-screen `?` chips** — every numeric label across `/missions`, `/fly`, `/explore`, `/plan`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong` carries a `?` chip that deep-links to the matching encyclopedia section.
 - **Why? popovers** on individual values inline-explain the meaning without a route change.
 
-**Math**: KaTeX server-rendered at build time per [ADR-034](adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 62 hand-coded SVGs (54 per-section + 8 tab covers; engineering blueprint style — white-on-black with teal accents) per [ADR-035](adr/ADR-035.md).
+**Math**: KaTeX server-rendered at build time per [ADR-034](adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 71 hand-coded SVGs (one per section + 10 tab covers; engineering blueprint style — white-on-black with teal accents) per [ADR-035](adr/ADR-035.md).
 
 ---
 
@@ -305,9 +307,9 @@ The only state that persists across sessions is what's in the URL (`?lang=`, `?m
 
 **Images don't load.** Either you're offline before the service worker has cached them, or the agency image API is rate-limiting. Reload after a minute; cached images persist.
 
-**A translation looks weird.** All 14 locales now ship at 100% UI parity AND full editorial overlay coverage as of v0.5.x. If a string reads off, file an issue; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](adr/ADR-033.md).
+**A translation looks weird.** All 14 locales now ship at 100% UI parity AND full editorial overlay coverage as of v0.6.x. If a string reads off, file an issue; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](adr/ADR-033.md).
 
-**Missions render outside the camera.** For lunar missions the camera is tight on Earth + Moon (Sun off-camera by design — see [ADR-031](adr/ADR-031.md) Wave 1 scope). Drag to pan; scroll to zoom.
+**Missions render outside the camera.** Moon missions render in a dedicated cislunar view at true Earth-Moon scale (ADR-058); interplanetary missions render heliocentrically with an auto-zoom that pulls in at departure and arrival. Drag to pan; scroll to zoom — manual zoom wins over auto-zoom until the next phase transition.
 
 **A linked external page is dead.** File an issue or PR — the provenance manifest at `static/data/link-provenance.json` is the source of truth and welcomes corrections. Run `npm run check-learn-links -- --update` to regenerate the freshness gates.
 

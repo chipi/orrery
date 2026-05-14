@@ -72,6 +72,18 @@ const SHOTS: Shot[] = [
     },
     settleMs: 1000,
   },
+  {
+    // ADR-058 cislunar view — Artemis II at periselene so the camera
+    // zooms in on the Moon and the hybrid free-return geometry is
+    // clearly visible past the far side.
+    file: '03-fly-artemis2-cislunar.png',
+    path: '/fly?mission=artemis2',
+    setup: async (page) => {
+      const scrub = page.locator('input[type="range"][aria-label*="timeline" i]');
+      await scrub.fill('0.5');
+    },
+    settleMs: 1500,
+  },
   { file: '04-missions.png', path: '/missions', settleMs: 800 },
   {
     file: '05-earth.png',

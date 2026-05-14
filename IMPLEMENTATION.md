@@ -563,4 +563,4 @@ The 2026-05-10 deep-review surfaced two gaps that were originally documented as 
 
 ---
 
-*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.5.x*
+*Orrery · IMPLEMENTATION.md · last updated May 2026 · v0.6.0*

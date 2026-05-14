@@ -10,17 +10,77 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
-### Added
-- **Dutch (`nl`) locale** — 14th supported language (issue #72). Full UI bundle (711 keys) at 100% parity with the other 13 locales. Native name **Nederlands**, short tag **NL**, flag 🇳🇱. LocalePicker entry added between Italiano and Српски. Translations follow the ESA-NL physics/astronomy glossary; mission and agency proper nouns kept in original (Curiosity, Apollo, NASA, ESA, JAXA, ISRO, CNSA).
-- **`/science` overlay gap closed for es/de/fr/it** — 14 files (history/_intro + 6 history sections + space-stations/_intro + 4 space-stations sections + mission-phases/eva + scales-time/long-duration) translated for the four EU locales that already had partial coverage. Brings es/de/fr/it from 49 → 63 `/science` files each, matching en-US.
+## [0.6.0] — 2026-05-15
+
+The cislunar release. `/fly` learns Moon-mission geometry — every Apollo-class free-return, Artemis hybrid free-return, Chandrayaan-3 spiral, and Chang'e LOR rendered as its own per-profile trajectory in an Earth-centred view. The `/science` encyclopedia grows two new tabs (Observation + Life in Space). A new top-level `/fleet` explorer ships. And the visit starts on a real landing page at `/` instead of an explore-redirect.
+
+### Added — cislunar `/fly` view (ADR-058)
+
+- **Per-mission cislunar trajectory machinery** — `buildCislunarTrajectory()` parses each Moon mission's new `flight.cislunar_profile` (parking orbit, TLI ∆v + C3, translunar type, lunar arrival altitude / periselene, return ∆v) and produces a typed phase sequence (parking → tli_coast → lunar_arrival → tei_coast → reentry). 17 Moon missions populated (Apollo 11/13/17 + Artemis 2/3 + Luna 9/17/24 + LRO + Clementine + Chandrayaan 1/3 + Chang'e 4/5/6 + SLIM + Blue Moon Mk1).
+- **Earth-Centred Inertial scene** at true Earth-Moon scale (`SCALE_CISLUNAR = 1/10 000`) — auto-engages for any mission whose `dest === 'MOON'`. Phase-coloured trajectory lines, ∆v annotation sprites, real Earth + Moon textures, moon-frame group that tracks lunar drift so lunar-orbit / descent / ascent phases anchor to the Moon as it moves.
+- **Auto-zoom across phases** — camera close to Earth during parking / spiral_earth / reentry, pulled back across translunar coast, lerped in toward the Moon during lunar_orbit / lunar_flyby / descent / ascent. Mouse-wheel during a phase wins; next phase transition re-arms the lerp.
+- **Moon-proximity override** — flyby-only profiles (Artemis II, Apollo 13) have no explicit `lunar_flyby` phase, so the camera now zooms whenever the spacecraft computes to within 80 000 km of the Moon centre, regardless of phase type.
+- **8 science layers wired into the cislunar scene** at parity with heliocentric — hover, soi, gravity, velocity, centripetal, apsides, coast, conics. SoI rings sized to Earth (924 000 km) + Moon (66 100 km). Coast preview integrates a two-body Earth-gravity prediction forward 33 h.
+- **Heliocentric auto-zoom** (interplanetary missions) — DEPARTURE close-up on Earth → wide cruise framing on the Earth↔destination midpoint → APPROACH close-up on the live destination. Mirror sub-phases for round-trips. Tube `drawRange` round-snaps to whole segments so the sprite stays aligned with the trajectory tip under close-up zoom.
+- **2D cislunar fallback** for the `/fly` 2D toggle — same per-mission geometry rendered to canvas with Earth at centre and an auto-zoom on lunar phases.
+- **Apollo 13** added as the 37th mission — free-return flyby with aborted LOI.
+
+### Added — `/science` Observation + Life in Space tabs
+
+- **Observation tab** (S1–S3 / issues #80 #81) — 7 sections covering Adaptive Optics · Black Holes · Coronagraphs · Interferometry · Space Photography · Spectroscopy · Wormholes. New ObservatoryShowcase strip on the space-photography section gallery imagery expanded to 96 observatory images across the fleet gallery pipeline.
+- **Life in Space tab** (S2 / issue #80) — sections covering microgravity, radiation, IVA, EVA, lunar suits, long-duration life support, and crew-health topics. Three new suit-family sections (IVA / EVA / lunar suits) cross-link to `/fleet`.
+- **`/science` now spans 85 sections across 10 tabs** (was 54 / 8). **71 hand-coded SVG diagrams** (was 62) — one per section + 10 tab covers, with the fail-closed integrity gate enforcing the count on every build.
+- **Diagram polish pass** — S6 wave repaints 50+ existing diagrams across orbits / transfers / propulsion / mission-phases / porkchop / scales-time to match the latest design-system tokens (flag flips, blueprint accents).
+- **`photo` field wired into section pages** — high-value imagery embedded on 18 sections (NASA / ESA observatory + agency photography), all with full image-provenance coverage.
+
+### Added — `/fleet` explorer + space-suit category
+
+- **New top-level `/fleet` route** — bill-of-materials view across the fleet (rockets, capsules, landers, rovers, orbiters, observatories) and now space-suits. Selection halos, per-planet pill colors on filters, Mars labels.
+- **Space-suit category** — 13 suit-family entries (en-US) with full provenance + i18n wave 2/3 across 12 locales + sr-Cyrl manual overlays for the 3 new suit sections. Wired into `validate-data` + schemas. Krechet placeholder + sokol-m fallbacks. `linked_missions` use real mission IDs.
+
+### Added — root `/` landing page (PRD-013 / UXS-013 / Issue #74)
+
+- **Real landing replacing the `/ → /explore` 307 redirect** — hero (`ORRERY` 96 px wordmark + tagline + two CTAs), what-is-this section, why-this-exists section, multi-paragraph guided tour, 11-card grid covering every primary nav destination + `/fleet`, footer block linking to GitHub / README / License / Credits / Library / Technical Authority. Long-form scrollable single column, mobile-first (375 px → 1-col cards). 49 new `landing_*` keys translated to all 14 supported locales. Browser-locale auto-detection on first paint. 10 e2e tests on desktop + mobile.
+
+### Added — Dutch locale + i18n coverage
+
+- **Dutch (`nl`) locale** — 14th supported language (issue #72). Full UI bundle (711 keys) at 100% parity with the other 13 locales. Native name **Nederlands**, short tag **NL**, flag 🇳🇱. LocalePicker entry added between Italiano and Српски. Translations follow the ESA-NL physics/astronomy glossary; mission and agency proper nouns kept in original.
+- **Dutch entity overlay tree** — full coverage across missions / planets / sun / rockets / earth-objects / moon-sites / mars-sites / iss-modules / iss-visitors / tiangong-modules / tiangong-visitors / scenarios (161 files).
+- **`/science` overlay gap closed for es/de/fr/it** — 14 files (history/_intro + 6 history sections + space-stations/_intro + 4 space-stations sections + mission-phases/eva + scales-time/long-duration) translated for the four EU locales that already had partial coverage. Brings es/de/fr/it from 49 → 63 `/science` files each.
 - **`iss-visitors/` overlays for all 13 non-en-US locales** — closes the en-US-only gap for cargo_dragon, crew_dragon, cygnus, htv_x, progress_ms, soyuz_ms, starliner. 7 files × 13 locales = 91 new files.
-- **Dutch entity overlay tree** — full coverage across missions (mars + moon + outer-system catalogue), planets, sun, rockets, earth-objects, moon-sites, mars-sites, iss-modules, iss-visitors, tiangong-modules, tiangong-visitors, scenarios. Total 161 files — parity with the other 8 fall-back-tier locales (ja, ko, hi, ar, ru, zh-CN, pt-BR, sr-Cyrl). Per ADR-017, Dutch joins those locales in falling back to en-US for the `/science` encyclopedia tree (full coverage stays at en-US/es/de/fr/it).
-- **`tests/e2e/i18n-nl.spec.ts`** — locale chip + nav-persistence smoke test mirroring the other per-locale specs.
-- **Browser-locale URL canonicalisation** (Issue #73 Gap 1) — auto-detected locales (e.g. German visitor with no `?lang=`) now rewrite the URL to the canonical `?lang=de` form via `replaceState`, so bookmarks and share-links carry the locale. Explicit `?lang=` choices preserved (including `?lang=en-US` for sharing semantics). Invalid params corrected to the resolved locale. 10 unit + 5 e2e tests.
-- **`orrery_locale` cookie for explicit locale overrides** (Issue #73 Gap 2 / ADR-057 Accepted) — single functional cookie (`SameSite=Lax`, 1-year, no PII), written only on explicit LocalePicker click. Sits between URL and `navigator.language` in the resolution chain. Auto-detect paths never write the cookie. CLAUDE.md and TA.md updated with the narrow-scope parenthetical to forbid creep to other state.
-- **Build version in footer** — `Credits | Library | v0.3.0` strip; version injected via Vite `define` from `package.json`. Updates automatically per release.
+- **i18n wave 2/3 for 28 new sections + 13 suit entries** across the 12 non-en-US locales.
+
+### Added — Mobile + Browser-locale ergonomics (ADR-057)
+
+- **Browser-locale URL canonicalisation** (Issue #73 Gap 1) — auto-detected locales rewrite the URL to the canonical `?lang=de` form via `replaceState`, so bookmarks and share-links carry the locale. 10 unit + 5 e2e tests.
+- **`orrery_locale` cookie for explicit locale overrides** (Issue #73 Gap 2 / ADR-057 Accepted) — single functional cookie (`SameSite=Lax`, 1-year, no PII), written only on explicit LocalePicker click. Sits between URL and `navigator.language` in the resolution chain. Auto-detect paths never write the cookie.
+- **Mobile UX overhaul** — hamburger nav, collapsible `/fly` HUD on narrow viewports, compact `/science` section rail, footer-overlay improvements, per-planet pill colors.
+- **Build version in footer** — `Credits | Library | v0.6.0` strip; version injected via Vite `define` from `package.json`.
 - **Nav wordmark polish** — bumped to 36 px, vertically centred within the 52 px nav bar.
-- **Landing page at root `/`** (PRD-013 / UXS-013 / Issue #74) — replaces the previous `/ → /explore` 307 redirect with a real landing. Hero (`ORRERY` 96 px wordmark + tagline + two CTAs), what-is-this section, why-this-exists section, multi-paragraph guided tour, 11-card grid covering every primary nav destination + `/fleet`, plus a footer block linking to GitHub / README / License / Credits / Library / Technical Authority. Long-form scrollable single column, mobile-first (375 px → 1-col cards). 49 new `landing_*` keys translated to all 14 supported locales. URL canonicalisation (Gap 1) auto-detects the visitor's browser locale on first paint. 10 e2e tests on desktop + mobile.
+
+### Added — Documentation + tooling
+
+- **Tech BOM generator** (closes #92) — `scripts/build-tech-bom.ts` writes [`docs/TECH-BOM.md`](docs/TECH-BOM.md) listing every npm package shipped or used at build time, with version + license. License-audited fail-closed in CI.
+- **PRD-014 + RFC-017 — Surface Hotspots** (progressive landing-site exploration).
+- **ADR-055, ADR-056, ADR-057, ADR-058** — `i18n` cookie scope, surface-map design, locale persistence cookie scope, cislunar `/fly` architecture.
+
+### Changed
+
+- **`/fly` left rail consolidated** — identity / navigation / flight-params / systems / spacecraft-state stack flush in one column. Top-controls bar puts FlightDirectorBanner + ScienceLayersPanel side-by-side instead of stacked vertically.
+- **Solar / Cislunar `/fly` toggle de-scoped** (ADR-058 amendment) — Moon missions render exclusively in cislunar view; heliocentric Moon-mode no longer toggleable. The PiP context inset was also dropped during smoke-testing.
+- **Mars + maps polish** — selection halos on `/mars` / `/moon`, label rendering for Mars sites, drop redundant README footer link.
+
+### Fixed
+
+- **CI e2e timeout** bumped 25 → 40 min for the v0.6 suite size.
+- **`apollo13.jpg`** sourced + suit-diagram spec-panel fixes; `sokol-m` placeholder.
+- **Tech BOM** GitHub-shorthand + LICENSE URL — unblocks the deploy.
+- **Heliocentric tube/sprite alignment** under close-up auto-zoom — round-snap fixes the visible offset.
+- **Artemis II cislunar zoom** — Moon-proximity check now fires for hybrid-free-return profiles that skip the explicit `lunar_flyby` phase.
+
+### Dependencies
+
+- **Bulk Dependabot bump** — vitest 2 → 4 · svelte 5.16 → 5.55 + 4 minor.
 
 ## [0.5.0] — 2026-05-09
 

@@ -41,22 +41,24 @@ The full nav (left to right): `/explore` · `/plan` · `/fly` · `/missions` · 
 |---|---|
 | **Solar System Explorer** (`/explore`) | Real-time 3D / 2D orrery — 8 planets + 5 dwarf planets + 2 comets + ʻOumuamua, with togglable visibility layers and clickable bodies. Detail panels: OVERVIEW · GALLERY · TECHNICAL · SCIENCE. Live physics overlays behind the Science Lens (gravity, velocity, centripetal, apsides + true anomaly, sphere-of-influence rings, hover info cards). |
 | **Mission Configurator** (`/plan`) | 11,200-cell Lambert porkchop plot per destination — Earth → 9 destinations (Mercury · Venus · Mars · Jupiter · Saturn · Uranus · Neptune · Pluto · Ceres) with LANDING / FLYBY toggle. **Mission Sandbox**: pin one cell, click another → ΔDEP / ΔTOF / Δ∆v compare. 13 rockets to choose from, real ∆v budget. |
-| **Mission Arc** (`/fly`) | Fly a mission — live telemetry, transfer arc as a true Keplerian two-point ellipse with Sun at focus, fuel model, timeline scrubber. **Flight Director banner** narrates 5 physics phases (Departure · Trans-X Injection · Cruise · Approach · Arrival), each phase deep-linking to the matching `/science` chapter. CAPCOM panel with mission events. **Conic-section side panel** detects ellipse / parabola / hyperbola live. |
-| **Mission Catalog** (`/missions`) | **36** historical, planned, and concept missions across Mars + Moon + outer-system probes — every agency, every outcome, replayable. Timeline navigator (1957 → 2035) above the card grid. Per-mission flight params with caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN). |
+| **Mission Arc** (`/fly`) | Fly a mission — live telemetry, transfer arc as a true Keplerian two-point ellipse with Sun at focus, fuel model, timeline scrubber. Heliocentric missions auto-zoom across DEPARTURE → CRUISE → APPROACH, with the camera close to Earth at launch, pulled back across cruise, then pulled in toward the destination as it arrives. Moon missions auto-switch into a dedicated **cislunar view** (ADR-058) anchored at Earth — every mission's per-profile trajectory geometry (Apollo free-return figure-8, Artemis II hybrid free-return at 9,200 km periselene, Chandrayaan-3 multi-burn spiral, Chang'e 5 LOR, etc.), with the camera zooming in as Orion / the lander / the orbiter reaches the Moon. **Flight Director banner** narrates 5 physics phases (Departure · Trans-X Injection · Cruise · Approach · Arrival), each phase deep-linking to the matching `/science` chapter. CAPCOM panel with mission events. **Conic-section side panel** detects ellipse / parabola / hyperbola live. |
+| **Mission Catalog** (`/missions`) | **37** historical, planned, and concept missions across Mars + Moon + outer-system probes — every agency, every outcome, replayable. Timeline navigator (1957 → 2035) above the card grid. Per-mission flight params with caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN). |
 | **Earth Orbit** (`/earth`) | ISS, Tiangong, Hubble, JWST, Gaia, Chandra, XMM, LRO + the four GNSS constellations on a logarithmic scale. Real inclinations, real altitudes. Atmosphere shell layer (Kármán line, 100 km) and **ozone-hole layer** (polar depletion zones) lens-gated. |
 | **Moon Map** (`/moon`) | 16 landing sites across 5 nations — Apollo through Chandrayaan-3, the capability ladder that made Mars possible. Tidal-lock indicator marks the Earth-facing hemisphere lens-gated. |
 | **Mars Surface Map** (`/mars`) | Equirectangular 2D map + 3D globe — 16 surface sites (rovers, landers, sample-return) + 11 orbital probes. Rover traverse paths overlaid as cross-linked routes. Atmosphere shell layer (~120 km) lens-gated. |
 | **ISS Explorer** (`/iss`) | The full station — **18 modules** (every USOS + ROS module + visitors) with raycast pickability, hover outlines, sun-tracking solar arrays, microgravity-axes overlay (zenith/nadir, prograde/retrograde, port/starboard). Per-module ANATOMY tabs with hand-drawn schematics. **9 visiting-spacecraft diagrams** (Crew Dragon, Cargo Dragon, Cygnus, Soyuz MS, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou). |
 | **Tiangong Explorer** (`/tiangong`) | China's space station — Tianhe core + Wentian + Mengtian labs (4 module overlays) with sun-tracking gallium-arsenide arrays. 2D blueprint views (top + side). Same module-pickability + microgravity-frame overlays as `/iss`. |
-| **Science Encyclopedia** (`/science`) | **54 sections across 8 tabs** — Orbits · Transfers · Propulsion · Mission Phases · Scales & Time · Porkchop · Space Stations · History (plus a Space-101 editorial landing page). KaTeX-rendered formulas. **62 hand-coded SVG diagrams** (54 sections + 8 tab covers). Cmd-K search. Cross-screen `?`-chips deep-link from any other screen straight to the relevant chapter. |
+| **Science Encyclopedia** (`/science`) | **85 sections across 10 tabs** — Orbits · Transfers · Propulsion · Mission Phases · Scales & Time · Porkchop · Space Stations · History · **Observation** · **Life in Space** (plus a Space-101 editorial landing page). KaTeX-rendered formulas. **71 hand-coded SVG diagrams** (one per section + 10 tab covers, fail-closed integrity gate on every build). Cmd-K search. Cross-screen `?`-chips deep-link from any other screen straight to the relevant chapter. |
 
 Plus two read-only pages: **`/credits`** (per-image provenance manifest + text-source attributions) and **`/library`** (bill-of-links across the entire app — every outbound LEARN link with native-language priority and freshness gating).
 
-| Explorer | Configurator | Mission Arc |
+| Explorer | Configurator | Mission Arc (heliocentric) |
 |---|---|---|
 | ![](docs/screenshots/01-explore.png) | ![](docs/screenshots/02-plan.png) | ![](docs/screenshots/03-fly-curiosity.png) |
-| **Catalog** | **Earth Orbit** | **Moon Map** |
-| ![](docs/screenshots/04-missions.png) | ![](docs/screenshots/05-earth.png) | ![](docs/screenshots/06-moon.png) |
+| **Mission Arc (cislunar)** | **Catalog** | **Earth Orbit** |
+| ![](docs/screenshots/03-fly-artemis2-cislunar.png) | ![](docs/screenshots/04-missions.png) | ![](docs/screenshots/05-earth.png) |
+| **Moon Map** | **Mars Surface** | **ISS Explorer** |
+| ![](docs/screenshots/06-moon.png) | ![](docs/screenshots/07-mars.png) | ![](docs/screenshots/08-iss.png) |
 
 ## The Science Lens — turning the simulator into a textbook
 
@@ -73,16 +75,21 @@ Toggle the lens (top-nav icon) and every 3D scene gets a layer of live physics a
 
 The **Flight Director banner** on `/fly` adds 5-phase narration (Departure · Trans-X Injection · Cruise · Approach · Arrival), each phase deep-linking to the corresponding `/science` section. **Why? popovers** explain individual numeric labels in context across every panel, and the **Mission Sandbox** layered onto the porkchop lets you pin one cell and click another to compare ΔDEP / ΔTOF / Δ∆v side-by-side.
 
+Eight of these layers are wired into both `/fly` scenes — heliocentric for interplanetary, cislunar for Moon missions — so the same physics overlay reads correctly whether you're watching Curiosity coast to Mars or Apollo 17 swing around the far side of the Moon.
+
 Casual users see clean scenes. Curious users opt-in to the entire physics layer.
 
 ## Try a mission
 
-The 36 missions in the catalog include flown classics, outer-system landmarks, recent flights, and a handful of concept missions:
+The 37 missions in the catalog include flown classics, outer-system landmarks, recent flights, and a handful of concept missions. Moon missions open in the cislunar view (Earth at origin, real Earth-Moon scale); everything else stays heliocentric:
 
 | Pick | Why |
 |---|---|
-| `?mission=apollo11` | First crewed lunar landing — see the free-return trajectory in heliocentric frame |
-| `?mission=artemis2` | The 2026 lunar flyby that inspired this project |
+| `?mission=apollo11` | First crewed lunar landing — cislunar view shows the free-return figure-8, parking orbit, lunar orbit, descent + ascent |
+| `?mission=apollo13` | Aborted lunar landing — free-return flyby + no LOI; closest-approach altitude visible past the Moon's far side |
+| `?mission=artemis2` | The 2026 lunar flyby that inspired this project — hybrid free-return at 9,200 km periselene |
+| `?mission=chandrayaan3` | Multi-burn Earth-bound spiral up to TLI, then a lunar spiral down to soft landing |
+| `?mission=change5` | Lunar-orbit-rendezvous sample-return — orbiter stays in orbit while lander descends, ascends, docks |
 | `?mission=curiosity` | One-way Mars landing — watch the live Mars dot meet the spacecraft at arrival |
 | `?mission=mariner4` | First Mars flyby (1964) — short transit, real launch window |
 | `?mission=galileo` | Outer-system gravity assist via Venus + Earth + Earth en route to Jupiter |
@@ -95,7 +102,7 @@ The 36 missions in the catalog include flown classics, outer-system landmarks, r
 Orrery makes a few claims a screen reader can verify:
 
 - **Real physics.** Keplerian two-body orbital mechanics. Lagrange-Gauss short-way Lambert solver. Vis-viva for heliocentric velocity. Tsiolkovsky for fuel. KaTeX-rendered formulas in the encyclopedia. All constants from IAU + JPL + agency mission reports — every number cited.
-- **Real missions.** 36 base mission JSON files with editorial overlays in 14 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
+- **Real missions.** 37 base mission JSON files with editorial overlays in 14 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Moon missions carry a `flight.cislunar_profile` block (parking orbit, TLI ∆v + C3, translunar geometry type, lunar arrival altitude / periselene, return ∆v) parsed by `buildCislunarTrajectory()` to render each mission's actual flight architecture (ADR-058). Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
 - **Real images.** Agency-first build-time imagery sourcing per [ADR-046](docs/adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia fallback. Per-image provenance manifest. Public [`/credits`](https://chipi.github.io/orrery/credits) page. Lightbox attribution on every gallery thumbnail.
 - **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://chipi.github.io/orrery/library) bill-of-links.
 - **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md).
@@ -151,7 +158,7 @@ The full architecture and concept documentation is published at **<https://chipi
 | [03 Data Catalog](docs/concept/03_Data_Catalog.md) | Every source, constant, mission schema, credit format |
 | [05 Design System](docs/concept/05_Design_System.md) | Colour, typography, components, screen patterns |
 | [i18n style guide](docs/i18n-style-guide.md) | Per-language glossary for translators |
-| [`docs/adr/`](docs/adr/) | 50+ ADRs (ADR-001 through ADR-051) — locked decisions (Status / Decision / Rationale / Consequences) |
+| [`docs/adr/`](docs/adr/) | 50+ ADRs (ADR-001 through ADR-058) — locked decisions (Status / Decision / Rationale / Consequences). ADR-058 covers the cislunar `/fly` view for Moon missions. |
 | [`docs/rfc/`](docs/rfc/) | RFCs for technical questions; closed RFCs become ADRs |
 | [`docs/prd/`](docs/prd/) | Product requirements per screen (PRDs 008–011 cover the four routes added in v0.4–v0.5: /science · /mars · /iss · /tiangong) |
 | [`docs/uxs/`](docs/uxs/) | UX specifications per screen |
@@ -168,6 +175,7 @@ The full architecture and concept documentation is published at **<https://chipi
 - Keplerian orbital mechanics, J2000 epoch (correct enough to teach, fast enough for a browser)
 - Lambert solver: Lagrange-Gauss short-way formulation, 52 iterations, 11,200 cells
 - Two-point Keplerian transfer ellipse with Sun at focus (`transferEllipse`) — both endpoints pin to live planet positions
+- Earth-Centred-Inertial cislunar trajectory builder (`buildCislunarTrajectory`, ADR-058) — parking orbit → TLI coast → lunar-arrival phase (orbit / spiral / flyby / impact / orbit-and-land) → optional TEI coast → re-entry, with the lunar phase rendered in a moon-frame group that tracks the Moon's heliocentric drift each frame
 - Vis-viva for heliocentric velocity telemetry
 - Tsiolkovsky rocket equation for payload / fuel calculations
 - Logarithmic radial scale for Earth orbit: `EARTH_VIS_R + LOG_K × log₁₀(1 + alt_km / 100)`

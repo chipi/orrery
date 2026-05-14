@@ -4,7 +4,7 @@
   "order": 3,
   "formula_latex": "e = \\frac{r_a - r_p}{r_a + r_p}",
   "diagram": "eccentricity.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Each planet panel reports its eccentricity, e = 0 to ~0.25" }
   ],

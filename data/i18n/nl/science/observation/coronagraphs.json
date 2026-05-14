@@ -1,0 +1,11 @@
+{
+  "title": "Coronagraphs",
+  "intro_sentence": "Een occulte schijf in de telescoop blokkeert de gastheerster zodat de planeet ernaast zichtbaar wordt.",
+  "body_paragraphs": [
+    "Een zonachtige ster overtreft zijn planeten met een factor 109 bij zichtbare golflengten en 106 in het infrarood. De fotonen van de planeet missen niet... ze verdrinken in de diffractievleugels van de point-spread functie van de ster. Directe beeldvorming van een exoplaneet is alleen mogelijk als je die PSF met vele orden van grootte kunt onderdrukken. Een coronagraaf doet precies dat.",
+    "De klassieke Lyot-coronagraaf (1930, uitgevonden door Bernard Lyot voor zonnefotografie) plaatst een ondoorzichtige schijf op het focale vlak van de telescoop om de ster te blokkeren, vervolgens een tweede masker verder naar beneden om het diftracte licht vanaf de rand van het eerste masker te blokkeren. Moderne geapodiseerde leerling coronagraphs en vortex coronagraphs gebruiken ingewikkelde fase patronen om de onderdrukking te duwen naar 10 - 9 of beter in smalle gebieden van het beeld.",
+    "JWST draagt coronagraphs op zowel NIRCam als MIRI; ze hebben direct verschillende gasgigantische exoplaneten rond nabijgelegen sterren afgebeeld. De Nancy Grace Roman telescoop (lanceren midden-2020s) draagt een coronagraaf instrument ontworpen om gasreuzen rond heldere sterren met een ongekend contrast te beelden en om de technologie te demonstreren voor de grotere Habitable Worlds Observatory, die gericht zal zijn op Aarde-massaplaneten.",
+    "Een alternatieve architectuur is de **starshade**: een 30+ meter ondoorzichtige vorm die duizenden kilometers voor de telescoop vloog en de ster blokkeert zonder enige optiek in het instrument. Starshaden zijn mechanisch harder (de formatie-vlieging uitlijning is bruut) maar bereiken een hoger contrast. Geen enkele is nog gevlogen; concept studies voor directe aard-tweeling beeldvorming omvatten altijd een sterrenkap in de mix."
+  ],
+  "diagram_caption": "Blokkeer de ster op het brandpuntsvlak → diffractievleugels sluipen rond → tweede masker doodt die → 10 - 9 onderdrukking, planeet verschijnt. Vortex coronagraphs vervangen de schijf door een fasepatroon."
+}

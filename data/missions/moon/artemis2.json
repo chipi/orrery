@@ -71,8 +71,13 @@
         "type": "launch"
       },
       {
+        "met_days": 0.05,
+        "type": "parking_orbit_exit"
+      },
+      {
         "met_days": 0.13,
-        "type": "tli_or_tmi"
+        "type": "tli_or_tmi",
+        "dv_km_s": 3.05
       },
       {
         "met_days": 1.5,
@@ -90,6 +95,28 @@
         "met_days": 10,
         "type": "earth_return"
       }
-    ]
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 350,
+        "inclination_deg": 32.5,
+        "revs": 1.5
+      },
+      "tli": {
+        "dv_kms": 3.05,
+        "c3_km2_s2": -1.7
+      },
+      "translunar": {
+        "type": "hybrid_free_return"
+      },
+      "lunar_arrival": {
+        "type": "flyby",
+        "periselene_km": 9200
+      },
+      "return": {
+        "type": "none"
+      }
+    }
   }
 }

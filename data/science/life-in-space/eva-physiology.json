@@ -1,0 +1,30 @@
+{
+  "id": "eva-physiology",
+  "tab": "life-in-space",
+  "order": 6,
+  "photo": {
+    "src": "/images/science/eva-mccandless.jpg",
+    "credit": "NASA · STS-41B (Feb 1984) — Bruce McCandless making the first untethered spacewalk in history, flying the MMU backpack."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "EVA airlock + Quest module — where every US-side spacewalk begins" },
+    { "route": "/missions", "context_key": "Apollo + Shuttle + ISS missions with EVAs in their event timelines" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Extravehicular Activity",
+      "u": "https://www.nasa.gov/reference/extravehicular-activity-eva/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · EMU Suit Reference",
+      "u": "https://www.nasa.gov/wp-content/uploads/2015/09/106766main_emu.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Extravehicular activity",
+      "u": "https://en.wikipedia.org/wiki/Extravehicular_activity",
+      "t": "deep"
+    }
+  ]
+}

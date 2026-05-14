@@ -1,22 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Earth at the focus of a hyperbolic escape trajectory with V-infinity along the asymptote and C3 = V-infinity squared.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" role="img" aria-label="Characteristic energy C3 — the kinetic energy left over after escaping a planet's gravity well, equal to V-infinity squared.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
-    .earth { fill: rgba(75,156,211,0.25); stroke: rgba(75,156,211,0.85); stroke-width: 1.5; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
-    .arrow { fill: rgba(255,255,255,0.85); }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .well { fill: rgba(75,156,211,0.15); stroke: rgba(75,156,211,0.6); stroke-width: 1.2; }
+    .earth { fill: rgba(75,156,211,0.35); stroke: rgba(75,156,211,0.85); stroke-width: 1.5; }
+    .traj { stroke: #4ecdc4; stroke-width: 2.2; fill: none; }
+    .traj-fill { fill: rgba(78,205,196,0.06); stroke: none; }
+    .asymptote { stroke: rgba(78,205,196,0.5); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .arrow-fill { fill: #4ecdc4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">C3 — characteristic energy at launch</text>
-  <circle class="earth" cx="100" cy="150" r="14" />
-  <text class="tick" x="93" y="153" text-anchor="middle" fill="rgba(255,255,255,0.85)">E</text>
-  <path class="accent" d="M 100 150 Q 180 100 380 50" />
-  <path class="dashed" d="M 100 150 L 380 50" />
-  <line class="stroke" x1="320" y1="68" x2="345" y2="56" />
-  <polygon class="arrow" points="345,56 339,57 343,63" />
-  <text class="tick" x="320" y="50" fill="#4ecdc4">V∞ along asymptote</text>
-  <text class="tick" x="180" y="88" fill="#4ecdc4">hyperbolic escape</text>
-  <text class="lbl" x="40" y="210">C3 = V∞²  (km²/s²)</text>
-  <text class="tick" x="40" y="226">Mars: ~10  ·  Jupiter: ~80  ·  Pluto (New Horizons): 158</text>
+
+  <!-- Faint starfield -->
+  <circle class="dim-star" cx="60" cy="50" r="0.6" />
+  <circle class="dim-star" cx="180" cy="42" r="0.5" />
+  <circle class="dim-star" cx="430" cy="55" r="0.6" />
+  <circle class="dim-star" cx="540" cy="48" r="0.5" />
+  <circle class="dim-star" cx="510" cy="265" r="0.6" />
+
+  <text class="label" x="40" y="28">C3 = V∞² — KINETIC ENERGY LEFT OVER AFTER ESCAPING EARTH</text>
+
+  <!-- Earth at left -->
+  <circle class="well" cx="120" cy="180" r="48" />
+  <circle class="earth" cx="120" cy="180" r="18" />
+  <text class="label" x="120" y="184" text-anchor="middle" fill="rgba(255,255,255,0.85)">E</text>
+  <text class="sublabel" x="120" y="244" text-anchor="middle">SPHERE OF INFLUENCE</text>
+  <text class="sublabel" x="120" y="256" text-anchor="middle">~924,000 km</text>
+
+  <!-- Hyperbolic escape trajectory -->
+  <path class="traj-fill" d="M 120 180 Q 240 110 540 65 L 540 90 Q 240 135 120 195 Z" />
+  <path class="traj" d="M 120 180 Q 240 110 540 65" />
+
+  <!-- Asymptote -->
+  <line class="asymptote" x1="120" y1="180" x2="540" y2="85" />
+
+  <!-- V∞ vector along asymptote -->
+  <line class="stroke" x1="460" y1="84" x2="510" y2="72" stroke="#4ecdc4" stroke-width="1.8" />
+  <polygon class="arrow-fill" points="514,71 504,75 506,80" />
+  <text class="label-accent" x="468" y="60">V∞</text>
+  <text class="sublabel" x="468" y="72">residual speed</text>
+
+  <!-- Annotations along trajectory -->
+  <line class="dashed" x1="200" y1="148" x2="200" y2="280" />
+  <text class="sublabel" x="200" y="294" text-anchor="middle">v_launch ≈ 11.4 km/s</text>
+  <line class="dashed" x1="320" y1="105" x2="320" y2="280" />
+  <text class="sublabel" x="320" y="294" text-anchor="middle">v slows · gravity climbing</text>
+  <line class="dashed" x1="500" y1="70" x2="500" y2="280" />
+  <text class="sublabel" x="500" y="294" text-anchor="middle">v → V∞ at infinity</text>
+
+  <!-- C3 reference values panel -->
+  <g transform="translate(40,90)">
+    <rect x="0" y="0" width="160" height="100" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">C3 REFERENCE</text>
+    <text class="sublabel" x="8" y="32">Moon TLI     ·  −2 km²/s²</text>
+    <text class="sublabel" x="8" y="46">Mars TMI    ·  8–18</text>
+    <text class="sublabel" x="8" y="60">Jupiter        ·  80</text>
+    <text class="sublabel" x="8" y="74">Saturn         ·  120</text>
+    <text class="sublabel" x="8" y="88">New Horizons ·  158</text>
+  </g>
+
+  <!-- Formula at bottom right -->
+  <text class="label-accent" x="540" y="232" text-anchor="end">C3 = V∞²  (km²/s²)</text>
+  <text class="sublabel" x="540" y="246" text-anchor="end">larger C3 → bigger launch vehicle for same payload</text>
 </svg>

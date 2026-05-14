@@ -1,0 +1,29 @@
+{
+  "id": "muscle-atrophy",
+  "tab": "life-in-space",
+  "order": 3,
+  "photo": {
+    "src": "/images/science/muscle-atrophy-ared.jpg",
+    "credit": "NASA · ISS Expedition 72 (2024) — astronaut Nick Hague on the Advanced Resistive Exercise Device (ARED) in the Tranquility module."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "ARED + treadmill modules on the ISS Explorer station panel" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Muscle Atrophy",
+      "u": "https://www.nasa.gov/wp-content/uploads/2008/10/64249main_ffs_factsheets_hbp_atrophy.pdf",
+      "t": "intro"
+    },
+    {
+      "l": "NASA HRP · Sarcopenia and Muscle Health Evidence",
+      "u": "https://humanresearchroadmap.nasa.gov/Evidence/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Muscle atrophy in spaceflight",
+      "u": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body#Musculoskeletal_changes",
+      "t": "deep"
+    }
+  ]
+}

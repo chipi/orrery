@@ -3,7 +3,7 @@
   "tab": "orbits",
   "order": 5,
   "diagram": "true-anomaly.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Each planet's current position around the Sun is its true anomaly" }
   ],

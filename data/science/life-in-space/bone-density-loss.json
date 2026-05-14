@@ -1,0 +1,25 @@
+{
+  "id": "bone-density-loss",
+  "tab": "life-in-space",
+  "order": 2,
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Exercise modules (ARED + treadmill) on the ISS hardware tour" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Bone Loss in Space",
+      "u": "https://www.nasa.gov/humans-in-space/why-go-to-space/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA HRP · Bone Mineral Loss Evidence Report",
+      "u": "https://humanresearchroadmap.nasa.gov/Evidence/reports/Bone.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Spaceflight osteopenia",
+      "u": "https://en.wikipedia.org/wiki/Spaceflight_osteopenia",
+      "t": "deep"
+    }
+  ]
+}

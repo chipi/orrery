@@ -4,7 +4,11 @@
   "order": 3,
   "formula_latex": "\\Delta v = v_e \\ln \\frac{m_0}{m_1}",
   "diagram": "history-tsiolkovsky.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/history-tsiolkovsky.jpg",
+    "credit": "Konstantin Tsiolkovsky (1913) · public domain · published the rocket equation in 1903, decades before any rocket actually flew it."
+  },
   "see_in_app": [
     {
       "route": "/missions",

@@ -3,7 +3,11 @@
   "tab": "history",
   "order": 1,
   "diagram": "history-keplers-laws.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/history-kepler.jpg",
+    "credit": "Johannes Kepler · portrait by Hans von Aachen, c. 1612 · public domain."
+  },
   "see_in_app": [
     {
       "route": "/explore",

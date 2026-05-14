@@ -1,0 +1,32 @@
+{
+  "id": "black-holes",
+  "tab": "observation",
+  "order": 6,
+  "formula_latex": "r_s = \\dfrac{2GM}{c^2}",
+  "diagram": "black-holes.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/black-holes-m87.jpg",
+    "credit": "Event Horizon Telescope · 2019 · the shadow of M87's supermassive black hole — the first direct image of an event horizon."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Sun panel: stellar physics chip — pivot into compact objects" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Black Holes Explained",
+      "u": "https://science.nasa.gov/universe/black-holes/",
+      "t": "intro"
+    },
+    {
+      "l": "ESO · Event Horizon Telescope M87 / Sgr A* Releases",
+      "u": "https://eventhorizontelescope.org/blog",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Black hole",
+      "u": "https://en.wikipedia.org/wiki/Black_hole",
+      "t": "deep"
+    }
+  ]
+}

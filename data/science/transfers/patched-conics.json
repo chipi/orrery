@@ -3,7 +3,11 @@
   "tab": "transfers",
   "order": 7,
   "diagram": "patched-conics.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/patched-conics-cassini.jpg",
+    "credit": "NASA / JPL-Caltech / Space Science Institute · Cassini's \"Farewell to Saturn\" mosaic (Sep 2017) — 13 years and dozens of moon flybys threaded together by patched-conic targeting."
+  },
   "see_in_app": [
     { "route": "/plan", "context_key": "Porkchop calculations use a patched-conic approximation" },
     { "route": "/fly", "context_key": "/fly switches frames at sphere-of-influence boundaries" }

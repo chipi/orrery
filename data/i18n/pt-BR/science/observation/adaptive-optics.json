@@ -1,0 +1,11 @@
+{
+  "title": "Óptica adaptativa",
+  "intro_sentence": "Os telescópios terrestres medem a distorção da atmosfera em tempo real com uma estrela guia laser, depois dobram um espelho deformável para cancelá-lo — afiando imagens por um fator de 10 ou mais.",
+  "body_paragraphs": [
+    "A atmosfera da Terra é uma confusão de células móveis de ar quente e frio, cada célula com um índice de refração ligeiramente diferente. A luz das estrelas que passa por ela fica confusa — é por isso que as estrelas brilham e por isso um telescópio terrestre de 10 metros sem correção não vê nada melhor do que um quintal de 20 cm numa noite estável. O limite atmosférico de \"ver\" é de cerca de 1 segundo de arco. O limite de difração de Hubble é 0,05.",
+    "A óptica adaptativa fecha essa lacuna medindo a distorção em centenas de pontos através da abertura e contra-dobrando um espelho deformável — muitas vezes um vidro fino com centenas de atuadores piezoelétricos atrás dele — a 1000 Hz. A referência para \"o que deve parecer perfeito\" é uma estrela natural brilhante perto do alvo da ciência (raro de ter uma próxima o suficiente) ou uma ** estrela guia laser**: um laser de ressonância de sódio disparado na atmosfera superior para fazer um brilho artificial na altitude certa.",
+    "Keck, VLT, Gemini, Subaru e os próximos ELTs dependem de AO. A técnica foi o que tornou possível a imagem do exoplaneta em terra — sem ela, o PSF da estrela hospedeira afogaria o sinal do planeta. A JWST e a Hubble estão no espaço em parte para pular totalmente o AO; o AO baseado no solo é a alternativa quando a atmosfera é o único obstáculo e o orçamento não pode financiar um lançamento.",
+    "O AO não funciona em cada comprimento de onda: O AO de luz visível é mais difícil do que o infravermelho porque o tempo de coerência da atmosfera é mais curto em comprimentos de onda curtos. As bandas de comprimento de onda mais longo (meio-IR, sub-mm) pode ser feito a partir do solo com AO e telescópios espaciais rivais. Optical/UV continua a ser um caso forte para o espaço."
+  ],
+  "diagram_caption": "Estrela guia laser → sensor de frente de onda → espelho deformável em 1000 Hz → 10× imagens mais nítidas. Derrota a atmosfera sem lançar um telescópio."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "space-photography",
+  "tab": "observation",
+  "order": 1,
+  "diagram": "space-photography.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/space-photography-deepfield.jpg",
+    "credit": "NASA / ESA / CSA / STScI · JWST first deep field, SMACS 0723 — the deepest infrared image of the universe to date (2022)."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Planet hero images on /explore are stacked + colour-mapped composites, not raw shutter clicks" },
+    { "route": "/missions", "context_key": "Mars + outer-system mission galleries on /missions — each image is a calibrated composite" }
+  ],
+  "links": [
+    {
+      "l": "NASA · How Hubble Takes a Picture",
+      "u": "https://hubblesite.org/contents/articles/how-hubble-takes-a-photo",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · JWST Image Processing",
+      "u": "https://esawebb.org/about/general/image-processing/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Astrophotography",
+      "u": "https://en.wikipedia.org/wiki/Astrophotography",
+      "t": "deep"
+    }
+  ]
+}

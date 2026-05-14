@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 4,
   "diagram": "conic-sections.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/missions", "context_key": "Voyager's flyby of Jupiter was a hyperbolic conic; the cruise to Jupiter was an ellipse" }
   ],

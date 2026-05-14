@@ -1,0 +1,11 @@
+{
+  "title": "Perda de densidade óssea",
+  "intro_sentence": "Os astronautas perdem cerca de 1–2% da massa óssea por mês em microgravidade — a mesma taxa que a osteoporose idosa, mas comprimida e reversível.",
+  "body_paragraphs": [
+    "O osso é um tecido vivo que constantemente se remodela: osteoblastos colocam novo osso para baixo, osteoclastos dissolvem osso velho longe, e na Terra o carregamento de andar, levantar, e apenas de pé mantém os dois aproximadamente equilibrados. Leve esse carregamento para fora em órbita e as pontas de equilíbrio. A reabsorção continua à sua taxa normal; a deposição de novos ossos diminui. O resultado é uma perda líquida de cerca de 1–2% por mês, concentrada nas estruturas de suporte de peso: coluna lombar, pelve, colo femoral, calcâneo.",
+    "Para comparação, a osteoporose pós-menopausa na Terra é de cerca de 1–2% por ** ano**. Uma missão ISS de seis meses comprime cerca de uma década de perda relacionada à idade em meio ano. Algumas voltam depois do voo, outras não. Estudos de tripulação de longa duração sugerem déficits de densidade osso-mineral mensuráveis persistem durante anos após o voo, mesmo após a reabilitação dedicada.",
+    "A pilha de contramedidas no ISS é o ARED (Advanced Resistive Exercise Device — um rack falso de agachamento carregado a vácuo com píston), a esteira T2 (corrida enquanto fazia bungeed para baixo) e o cicloergômetro. Protocolos modernos atingiram ~1100 N carga axial em ARED — alta o suficiente para ser osteogênica. Com os esquemas de medicamentos ARED + bifosfonatos, a tripulação de seis meses agora retorna com perdas ósseas em torno de 0,5%/mês em vez do pré-ARED 1,5%/mês. Melhor, não resolvido.",
+    "Para uma viagem de três anos, até as melhores contramedidas atuais implicam um astronauta de pouso com risco de fratura. As linhas de pesquisa ativas incluem plataformas de vibração, trajes de carga mecânica e explorar se a gravidade artificial (um habitat de rotação lenta) é a única resposta durável."
+  ],
+  "diagram_caption": "ARED + esteira + ciclo manter o carregamento sobre o esqueleto de suporte de peso; com contramedidas, a tripulação moderna perder ~0,5%/mês vs o pré-ARED 1,5%/mês."
+}

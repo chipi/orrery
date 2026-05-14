@@ -1,0 +1,11 @@
+{
+  "title": "DSN — Deep Space Network",
+  "intro_sentence": "Three giant antenna complexes spaced 120° around Earth — Goldstone, Madrid, Canberra — providing continuous coverage of any spacecraft beyond low Earth orbit.",
+  "body_paragraphs": [
+    "The Deep Space Network is what makes interplanetary spaceflight legible. Without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on Earth would know where it was, what it was doing, or what it was learning. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
+    "Three antenna complexes spaced 120° around the globe — Goldstone (California), Madrid (Spain), Canberra (Australia) — ensure that any spacecraft beyond GEO is in line-of-sight of at least one complex at all times as Earth rotates. Each complex has multiple antennas, the marquee being the 70 m \"big dishes\" (DSS-14, DSS-43, DSS-63). Smaller 34 m antennas handle most modern traffic.",
+    "Three operations matter. **Telemetry**: receive science + housekeeping data from the spacecraft (the slow link, megabits to a few hundred Mbits from Mars; tens of bits/s from Voyager at 24 billion km). **Commands**: uplink instructions to the spacecraft (encoded for radiation hardness; signed for security). **Tracking**: measure the round-trip light time and the Doppler shift on the carrier signal — these together reveal the spacecraft's range and range-rate to a precision of ~1 m and ~0.1 mm/s. That's where the spacecraft is, with kilometres-class accuracy across hundreds of millions of km of empty space.",
+    "Advanced techniques layer on top. **Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar simultaneously; the differential timing gives angular position to nanoradians. Mars EDL navigation now routinely hits ~100 m landing-ellipse accuracy on what is essentially a multi-month coast at 30,000 km/h. The DSN is the reason."
+  ],
+  "diagram_caption": "Goldstone + Madrid + Canberra at 120° intervals → continuous coverage as Earth rotates → ranging + Doppler + delta-DOR → kilometre-class spacecraft position across the solar system."
+}

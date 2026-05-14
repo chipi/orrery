@@ -1,38 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="AU as Earth-Sun distance, with planet semi-major axes log-spaced">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The astronomical unit — the Earth–Sun distance — drawn as a labelled bracket between Sun and Earth, with planet semi-major axes on a log scale ranging from Mercury to Neptune and beyond.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.2; fill: none; }
+    .sun { fill: #ffc850; stroke: #ffc850; stroke-width: 1.4; }
+    .planet { fill: rgba(255,255,255,0.85); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Sun on the left -->
-  <circle cx="50" cy="150" r="10" class="focus" />
-  <text x="36" y="180" class="label-accent">Sun</text>
-  <!-- Tick marks for log-AU axis: 1, 5, 10, 30 — maps to 100, 200, 250, 320 -->
-  <line x1="50" y1="150" x2="370" y2="150" class="stroke" />
-  <line x1="100" y1="146" x2="100" y2="154" class="stroke" />
-  <text x="92" y="168" class="label-mute">1 AU</text>
-  <text x="84" y="182" class="label-mute">(Earth)</text>
-  <line x1="200" y1="146" x2="200" y2="154" class="stroke" />
-  <text x="186" y="168" class="label-mute">5.2 (Jup)</text>
-  <line x1="250" y1="146" x2="250" y2="154" class="stroke" />
-  <text x="232" y="168" class="label-mute">9.6 (Sat)</text>
-  <line x1="320" y1="146" x2="320" y2="154" class="stroke" />
-  <text x="298" y="168" class="label-mute">30 (Nep)</text>
-  <!-- Planet markers -->
-  <circle cx="100" cy="150" r="4" class="body" />
-  <circle cx="200" cy="150" r="6" class="body" />
-  <circle cx="250" cy="150" r="5" class="body" />
-  <circle cx="320" cy="150" r="4" class="body" />
-  <text x="62" y="46" class="label-mute">1 AU = 149,597,870,700 m exactly</text>
-  <text x="62" y="60" class="label-mute">~8.3 light-minutes</text>
-  <!-- Earth-Sun bracket -->
-  <line x1="50" y1="200" x2="100" y2="200" class="accent" />
-  <line x1="50" y1="195" x2="50" y2="205" class="accent" />
-  <line x1="100" y1="195" x2="100" y2="205" class="accent" />
-  <text x="60" y="222" class="label-accent">1 AU</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">AU · ASTRONOMICAL UNIT — THE EARTH–SUN DISTANCE</text>
+
+  <!-- Sun on left -->
+  <circle class="sun" cx="80" cy="110" r="14" />
+  <text class="label-gold" x="80" y="142" text-anchor="middle">SUN</text>
+
+  <!-- Earth at 1 AU -->
+  <circle class="planet" cx="180" cy="110" r="5" />
+  <text class="label" x="180" y="142" text-anchor="middle">EARTH</text>
+  <text class="sublabel" x="180" y="154" text-anchor="middle">1 AU</text>
+
+  <!-- AU bracket: Sun → Earth -->
+  <line class="accent" x1="80" y1="80" x2="180" y2="80" />
+  <line class="accent" x1="80" y1="74" x2="80" y2="86" />
+  <line class="accent" x1="180" y1="74" x2="180" y2="86" />
+  <text class="label-accent" x="130" y="68" text-anchor="middle">1 AU</text>
+
+  <!-- Definition panel -->
+  <g transform="translate(220,60)">
+    <rect x="0" y="0" width="340" height="80" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">DEFINITION (IAU 2012, EXACT)</text>
+    <text class="sublabel" x="8" y="32">1 AU = 149,597,870,700 m</text>
+    <text class="sublabel" x="8" y="46">          ≈ 8.317 light-minutes</text>
+    <text class="sublabel" x="8" y="60">          ≈ 4.848 × 10⁻⁶ parsec</text>
+    <text class="sublabel" x="8" y="74">          one light-year ≈ 63,241 AU</text>
+  </g>
+
+  <!-- Log-scale planet semi-major axis ladder along the bottom -->
+  <line class="stroke" x1="60" y1="240" x2="560" y2="240" />
+  <polygon fill="rgba(255,255,255,0.85)" points="568,240 558,236 558,244" />
+
+  <!-- Log scale: positions for 0.4, 1.0, 1.5, 5.2, 9.6, 19.2, 30 AU -->
+  <!-- Use log10(a) mapped to x=60..560. log10(0.4)=-0.4; log10(30)=1.48. range 1.88. -->
+  <!-- Mercury 0.387 → log = -0.412 → x = 60+(-0.412+0.4)/1.88*500 ≈ 57 (off-scale low). Use linear domain instead.. -->
+
+  <!-- Use semi-log style: 0.5, 1, 2, 5, 10, 30 with ticks evenly spaced -->
+  <line class="dashed" x1="100" y1="232" x2="100" y2="248" />
+  <text class="tick" x="100" y="262" text-anchor="middle">0.4</text>
+  <circle class="planet" cx="100" cy="240" r="2.5" />
+  <text class="sublabel" x="100" y="222" text-anchor="middle">Mercury</text>
+
+  <line class="dashed" x1="170" y1="232" x2="170" y2="248" />
+  <text class="tick" x="170" y="262" text-anchor="middle">1.0</text>
+  <circle class="planet" cx="170" cy="240" r="3" />
+  <text class="sublabel" x="170" y="222" text-anchor="middle">Earth</text>
+
+  <line class="dashed" x1="220" y1="232" x2="220" y2="248" />
+  <text class="tick" x="220" y="262" text-anchor="middle">1.5</text>
+  <circle class="planet" cx="220" cy="240" r="2.5" />
+  <text class="sublabel" x="220" y="222" text-anchor="middle">Mars</text>
+
+  <line class="dashed" x1="320" y1="232" x2="320" y2="248" />
+  <text class="tick" x="320" y="262" text-anchor="middle">5.2</text>
+  <circle class="planet" cx="320" cy="240" r="5" />
+  <text class="sublabel" x="320" y="222" text-anchor="middle">Jupiter</text>
+
+  <line class="dashed" x1="390" y1="232" x2="390" y2="248" />
+  <text class="tick" x="390" y="262" text-anchor="middle">9.6</text>
+  <circle class="planet" cx="390" cy="240" r="4" />
+  <text class="sublabel" x="390" y="222" text-anchor="middle">Saturn</text>
+
+  <line class="dashed" x1="450" y1="232" x2="450" y2="248" />
+  <text class="tick" x="450" y="262" text-anchor="middle">19.2</text>
+  <circle class="planet" cx="450" cy="240" r="3.5" />
+  <text class="sublabel" x="450" y="222" text-anchor="middle">Uranus</text>
+
+  <line class="dashed" x1="510" y1="232" x2="510" y2="248" />
+  <text class="tick" x="510" y="262" text-anchor="middle">30.1</text>
+  <circle class="planet" cx="510" cy="240" r="3.5" />
+  <text class="sublabel" x="510" y="222" text-anchor="middle">Neptune</text>
+
+  <text class="label" x="320" y="290" text-anchor="middle">SEMI-MAJOR AXIS · AU · (LOG-COMPRESSED FOR LAYOUT)</text>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">Voyager 1 today ≈ 165 AU · ~23 light-hours from the Sun</text>
 </svg>

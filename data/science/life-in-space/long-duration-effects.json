@@ -1,0 +1,26 @@
+{
+  "id": "long-duration-effects",
+  "tab": "life-in-space",
+  "order": 10,
+  "see_in_app": [
+    { "route": "/fly", "context_key": "MET counter — multi-month cruise phases on outer-planet missions" },
+    { "route": "/missions", "context_key": "Mars-class mission risk badges where total duration exceeds 6 months" }
+  ],
+  "links": [
+    {
+      "l": "NASA · One-Year Mission",
+      "u": "https://www.nasa.gov/humans-in-space/nasas-twins-study/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA HRP · Space Associated Neuro-ocular Syndrome (SANS)",
+      "u": "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Space-Associated Neuro-Ocular Syndrome",
+      "u": "https://en.wikipedia.org/wiki/Space-associated_neuro-ocular_syndrome",
+      "t": "deep"
+    }
+  ]
+}

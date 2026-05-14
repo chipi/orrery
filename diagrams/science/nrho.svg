@@ -1,30 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Near-rectilinear halo orbit at Earth-Moon L2: stretched egg shape with perilune at the south pole">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="A near-rectilinear halo orbit at the Earth-Moon L2 point — a stretched egg-shaped orbit that swings within 1500 km of the Moon's south pole and 70,000 km out past L2.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .moon-orbit { stroke: rgba(255,255,255,0.25); stroke-width: 1; fill: none; stroke-dasharray: 5 3; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.4; fill: rgba(78,205,196,0.05); }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .earth { fill: rgba(75,156,211,0.4); stroke: rgba(75,156,211,0.95); stroke-width: 1.4; }
+    .moon { fill: rgba(255,255,255,0.25); stroke: rgba(255,255,255,0.85); stroke-width: 1.4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Earth on far left (dashed sketch) -->
-  <circle cx="40" cy="150" r="14" class="dashed" />
-  <text x="32" y="178" class="label-mute">Earth</text>
-  <!-- Moon at centre -->
-  <circle cx="220" cy="150" r="20" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" />
-  <text x="208" y="186" class="label-mute">Moon</text>
-  <!-- L2 dashed marker, beyond the Moon -->
-  <circle cx="290" cy="150" r="3" class="focus" />
-  <text x="284" y="174" class="label-accent">L2</text>
-  <!-- NRHO: stretched egg-shaped path that swings close to Moon's south pole and far past L2 -->
-  <path d="M 232 158 Q 130 140 130 80 Q 200 30 320 60 Q 380 110 320 200 Q 280 230 232 158 Z" class="accent" />
-  <!-- Perilune marker (close to Moon) -->
-  <circle cx="232" cy="160" r="3" class="focus" />
-  <text x="240" y="172" class="label-accent">perilune (~1500 km)</text>
-  <!-- Apolune marker (far) -->
-  <circle cx="320" cy="60" r="3" class="focus" />
-  <text x="328" y="50" class="label-accent">apolune (~70,000 km)</text>
-  <text x="86" y="288" class="label-mute">~6.5-day period · stable · line-of-sight to Earth</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">NRHO · NEAR-RECTILINEAR HALO ORBIT — GATEWAY'S HOME AT EARTH-MOON L2</text>
+
+  <!-- Earth on far left -->
+  <circle class="earth" cx="60" cy="180" r="14" />
+  <text class="label" x="60" y="208" text-anchor="middle">EARTH</text>
+
+  <!-- Moon centred -->
+  <circle class="moon" cx="320" cy="180" r="22" />
+  <text class="label" x="320" y="184" text-anchor="middle" fill="rgba(255,255,255,0.95)">MOON</text>
+
+  <!-- Earth-Moon line dashed -->
+  <line class="dashed" x1="74" y1="180" x2="500" y2="180" />
+
+  <!-- L2 marker beyond the Moon -->
+  <circle class="focus" cx="425" cy="180" r="4" />
+  <text class="label-gold" x="425" y="208" text-anchor="middle">L2</text>
+  <text class="sublabel" x="425" y="220" text-anchor="middle">~65,000 km past Moon</text>
+
+  <!-- NRHO: highly eccentric halo orbit looping around L2, very close to Moon at perilune (south pole side) -->
+  <path class="accent" d="M 335 195 Q 340 250 380 280 Q 480 290 520 220 Q 540 140 480 80 Q 400 60 340 110 Q 320 150 335 195 Z" />
+
+  <!-- Perilune marker — near Moon at south pole side -->
+  <circle class="focus" cx="335" cy="195" r="3.5" />
+  <line class="lead" x1="335" y1="195" x2="270" y2="250" />
+  <text class="label-accent" x="266" y="254" text-anchor="end">PERILUNE · ~1,500 km</text>
+  <text class="sublabel" x="266" y="266" text-anchor="end">Moon's south pole · low fuel altitude</text>
+
+  <!-- Apolune marker — far -->
+  <circle class="focus" cx="535" cy="155" r="3.5" />
+  <line class="lead" x1="535" y1="155" x2="555" y2="110" />
+  <text class="label-accent" x="555" y="108" text-anchor="end">APOLUNE · ~70,000 km</text>
+  <text class="sublabel" x="555" y="120" text-anchor="end">far from Moon · stable</text>
+
+  <!-- Properties panel -->
+  <g transform="translate(40,90)">
+    <rect x="0" y="0" width="170" height="100" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">NRHO PROPERTIES</text>
+    <text class="sublabel" x="8" y="32">period      ·  6.5 days</text>
+    <text class="sublabel" x="8" y="44">e             ·  ~0.97</text>
+    <text class="sublabel" x="8" y="56">station-keep  ·  &lt;5 m/s / yr</text>
+    <text class="sublabel" x="8" y="68">no LOS to far side at LL</text>
+    <text class="sublabel" x="8" y="80">always LOS to Earth</text>
+    <text class="sublabel" x="8" y="92">always LOS to south pole</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">Artemis Gateway sits here · supports south-pole landings · NRHO is dynamically stable</text>
 </svg>

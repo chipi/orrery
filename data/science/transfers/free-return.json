@@ -3,7 +3,11 @@
   "tab": "transfers",
   "order": 5,
   "diagram": "free-return.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/free-return-apollo13.jpg",
+    "credit": "NASA · Apollo 13 (Apr 1970) — the lunar module Aquarius after splashdown, showing the makeshift \"mailbox\" CO₂ scrubber adapter. Apollo 13's hybrid trajectory was reverted to a free-return after the O₂ tank failure."
+  },
   "see_in_app": [
     { "route": "/fly", "context_key": "Orrery's default ORRERY-1 scenario is a Mars free-return flyby" },
     { "route": "/missions", "context_key": "Apollo 8/13 used cislunar free-return for safety" }

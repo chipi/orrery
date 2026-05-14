@@ -3,7 +3,7 @@
   "tab": "propulsion",
   "order": 6,
   "diagram": "oberth-effect.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/missions", "context_key": "Parker Solar Probe and Juno burn near periapsis to exploit Oberth" }
   ],

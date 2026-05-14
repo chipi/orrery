@@ -1,0 +1,26 @@
+{
+  "id": "feitian",
+  "name": "Feitian",
+  "category": "space-suit",
+  "agency": "CMSA",
+  "country": "China",
+  "manufacturer": "China Astronaut Research and Training Centre",
+  "first_flight": "2008-09-27",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "iss-assembly",
+  "best_known_for": "China's EVA suit — used by Zhai Zhigang on the country's first spacewalk during Shenzhou 7",
+  "credit": "Chinese rear-entry EVA suit derived from the Soviet Orlan design. First flown on Shenzhou 7 in 2008 when Zhai Zhigang became the first Chinese taikonaut to spacewalk. Operates on the Tiangong space station's Wentian airlock. Name means \"flying in heaven\" — also the name of the Apsara dancers in Chinese mythology.",
+  "links": [
+    {
+      "l": "Wikipedia · Feitian space suit",
+      "u": "https://en.wikipedia.org/wiki/Feitian_space_suit",
+      "t": "intro"
+    },
+    {
+      "l": "Xinhua · Shenzhou 7 EVA coverage",
+      "u": "https://english.news.cn/",
+      "t": "core"
+    }
+  ]
+}

@@ -1,33 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Stacked ∆v budget bar showing each mission phase">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Stacked delta-v budget for an Earth-to-Mars-landing mission, with each phase sized to its real km/s cost.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .accent-fill { fill: rgba(78, 205, 196, 0.18); stroke: #4ecdc4; stroke-width: 1.5; }
-    .body-fill { fill: rgba(255,255,255,0.10); stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .axis { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.08); stroke-width: 0.8; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
+    .seg-launch { fill: rgba(255,107,107,0.4); stroke: #ff6b6b; stroke-width: 1.2; }
+    .seg-tmi { fill: rgba(78,205,196,0.45); stroke: #4ecdc4; stroke-width: 1.2; }
+    .seg-tcm { fill: rgba(255,200,80,0.5); stroke: #ffc850; stroke-width: 1.2; }
+    .seg-moi { fill: rgba(78,205,196,0.3); stroke: #4ecdc4; stroke-width: 1.2; }
+    .seg-edl { fill: rgba(255,107,107,0.3); stroke: #ff6b6b; stroke-width: 1.2; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .tick { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.8px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
   </style>
-  <!-- Vertical axis -->
-  <line x1="60" y1="40" x2="60" y2="260" class="stroke" />
-  <line x1="60" y1="260" x2="340" y2="260" class="stroke" />
-  <text x="20" y="44" class="label-mute">∆v (km/s)</text>
-  <!-- Stacked bar at x=140, width=80 -->
-  <!-- launch ascent: 9.4 km/s → 9.4×16 = 150 px tall -->
-  <rect x="140" y="110" width="80" height="150" class="body-fill" />
-  <text x="226" y="190" class="label-mute">launch ascent · 9.4</text>
-  <!-- TMI: 3.6 → 58 px -->
-  <rect x="140" y="52" width="80" height="58" class="accent-fill" />
-  <text x="226" y="86" class="label-accent">TMI · 3.6</text>
-  <!-- TCM: 0.1 → 2 px (drawn as thin line) -->
-  <rect x="140" y="50" width="80" height="2" fill="rgba(255,255,255,0.55)" />
-  <text x="226" y="58" class="label-mute">TCM · 0.1</text>
-  <!-- MOI: 2.0 → 32 px (but we'll cap, place above) -->
-  <rect x="140" y="18" width="80" height="32" class="body-fill" />
-  <text x="226" y="38" class="label-mute">MOI · 2.0</text>
-  <!-- Total label -->
-  <line x1="220" y1="18" x2="240" y2="18" class="accent" />
-  <line x1="220" y1="260" x2="240" y2="260" class="accent" />
-  <text x="246" y="142" class="label-accent">Σ ≈ 15 km/s</text>
-  <text x="74" y="288" class="label-mute">stacked-bar mission ∆v · Earth → Mars landing</text>
+
+  <text class="label" x="40" y="28">STACKED Δv BUDGET — EARTH → MARS LANDING — Σ ≈ 19 km/s</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="80" y1="50" x2="80" y2="280" />
+  <line class="axis" x1="80" y1="280" x2="290" y2="280" />
+
+  <!-- Grid horizontal at every km/s -->
+  <!-- Total = 19; 1 km/s = 12 px; bar from y=280 up to y=280-19*12 = 52 -->
+  <line class="grid" x1="80" y1="232" x2="290" y2="232" />
+  <line class="grid" x1="80" y1="184" x2="290" y2="184" />
+  <line class="grid" x1="80" y1="136" x2="290" y2="136" />
+  <line class="grid" x1="80" y1="88" x2="290" y2="88" />
+
+  <text class="tick" x="74" y="283" text-anchor="end">0</text>
+  <text class="tick" x="74" y="235" text-anchor="end">5</text>
+  <text class="tick" x="74" y="187" text-anchor="end">10</text>
+  <text class="tick" x="74" y="139" text-anchor="end">15</text>
+  <text class="tick" x="74" y="91" text-anchor="end">19</text>
+  <text class="label" x="40" y="44">Δv (km/s)</text>
+
+  <!-- Stacked bar at x=130..230 -->
+  <!-- launch ascent 9.4 → 113 px → y=280-113=167 -->
+  <rect class="seg-launch" x="130" y="167" width="100" height="113" />
+  <!-- TMI 3.6 → 43 px → y=167-43=124 -->
+  <rect class="seg-tmi" x="130" y="124" width="100" height="43" />
+  <!-- TCM 0.1 → 1.2 px → thin band y=122..124 -->
+  <rect class="seg-tcm" x="130" y="120" width="100" height="4" />
+  <!-- MOI 2.4 → 29 px → y=120-29=91 -->
+  <rect class="seg-moi" x="130" y="91" width="100" height="29" />
+  <!-- EDL 3.5 → 42 px → y=91-42=49 -->
+  <rect class="seg-edl" x="130" y="49" width="100" height="42" />
+
+  <!-- Leader lines + labels for each segment, on the right -->
+  <line class="lead" x1="230" y1="223" x2="320" y2="223" />
+  <text class="label" x="328" y="226">LAUNCH ASCENT</text>
+  <text class="sublabel" x="328" y="238">9.4 km/s · LEO insertion · 50% of total</text>
+
+  <line class="lead" x1="230" y1="145" x2="320" y2="145" />
+  <text class="label-accent" x="328" y="148">TMI · TRANS-MARS INJ.</text>
+  <text class="sublabel" x="328" y="160">3.6 km/s · escape Earth's gravity well</text>
+
+  <line class="lead" x1="230" y1="122" x2="320" y2="100" />
+  <text class="label" x="328" y="100">TCMs · TRAJECTORY CORRECTION</text>
+  <text class="sublabel" x="328" y="112">0.1 km/s · 3–6 manoeuvres en route</text>
+
+  <line class="lead" x1="230" y1="105" x2="320" y2="74" />
+  <text class="label-accent" x="328" y="74">MOI · MARS ORBIT INSERTION</text>
+  <text class="sublabel" x="328" y="86">2.4 km/s · capture into elliptical orbit</text>
+
+  <line class="lead" x1="230" y1="70" x2="320" y2="48" />
+  <text class="label" x="328" y="48">EDL · ENTRY, DESCENT, LANDING</text>
+  <text class="sublabel" x="328" y="60">3.5 km/s · mostly aerobraking, not propulsive</text>
+
+  <!-- Total bracket -->
+  <line class="dashed" x1="100" y1="49" x2="110" y2="49" />
+  <line class="dashed" x1="100" y1="280" x2="110" y2="280" />
+  <line class="dashed" x1="105" y1="49" x2="105" y2="280" />
+  <text class="label-accent" x="98" y="165" text-anchor="end">Σ</text>
+
+  <!-- Bottom note -->
+  <text class="sublabel" x="540" y="312" text-anchor="end">EDL converts 3.5 km/s of orbital energy to heat — not into propellant</text>
 </svg>

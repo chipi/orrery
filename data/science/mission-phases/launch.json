@@ -3,7 +3,11 @@
   "tab": "mission-phases",
   "order": 1,
   "diagram": "launch.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/fleet-galleries/saturn-v/01.jpg",
+    "credit": "Saturn V Apollo 11 ascent · NASA · the heaviest crewed rocket ever to fly successfully."
+  },
   "see_in_app": [
     { "route": "/missions", "context_key": "Each mission's launch_vehicle and pad are in the FLIGHT tab" }
   ],

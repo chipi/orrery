@@ -1,35 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Oberth: same ∆v at periapsis vs apoapsis, different orbital-energy gain">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The Oberth effect: a fixed delta-v burn at periapsis adds far more orbital energy than the same delta-v at apoapsis, because energy gain scales with v not with delta-v.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.5); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.2; fill: none; }
+    .accent-fill { fill: #4ecdc4; }
+    .red { stroke: #ff6b6b; stroke-width: 2.2; fill: none; }
+    .red-fill { fill: #ff6b6b; }
     .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .star { fill: rgba(255,200,80,0.9); stroke: #ffc850; stroke-width: 1.2; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.18); }
   </style>
-  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
-  <ellipse cx="200" cy="150" rx="140" ry="92" class="stroke" />
-  <!-- Star at right focus = (200+106, 150) -->
-  <circle cx="306" cy="150" r="6" class="focus" />
-  <!-- Periapsis on right (340,150). Big velocity vector + same ∆v added -->
-  <circle cx="340" cy="150" r="4" class="body" />
-  <line x1="340" y1="150" x2="340" y2="80" class="stroke" />
-  <polygon points="340,76 336,86 344,86" fill="rgba(255,255,255,0.85)" />
-  <text x="346" y="120" class="label-mute">v_p (high)</text>
-  <line x1="340" y1="80" x2="340" y2="46" class="accent" />
-  <polygon points="340,42 336,52 344,52" fill="#4ecdc4" />
-  <text x="346" y="62" class="label-accent">+Δv</text>
-  <text x="306" y="170" class="label-accent">large ΔE</text>
-  <!-- Apoapsis on left (60,150). Small velocity vector + same ∆v added -->
-  <circle cx="60" cy="150" r="4" class="body" />
-  <line x1="60" y1="150" x2="60" y2="120" class="stroke" />
-  <polygon points="60,116 56,126 64,126" fill="rgba(255,255,255,0.85)" />
-  <text x="2" y="140" class="label-mute">v_a (low)</text>
-  <line x1="60" y1="120" x2="60" y2="86" class="accent" />
-  <polygon points="60,82 56,92 64,92" fill="#4ecdc4" />
-  <text x="14" y="100" class="label-accent">+Δv</text>
-  <text x="22" y="170" class="label-accent">small ΔE</text>
-  <text x="48" y="288" class="label-mute">same Δv → more energy gain when v is large (Oberth)</text>
+
+  <!-- Faint starfield -->
+  <circle class="dim-star" cx="50" cy="45" r="0.6" />
+  <circle class="dim-star" cx="120" cy="32" r="0.5" />
+  <circle class="dim-star" cx="540" cy="50" r="0.7" />
+  <circle class="dim-star" cx="480" cy="38" r="0.5" />
+  <circle class="dim-star" cx="80" cy="280" r="0.6" />
+  <circle class="dim-star" cx="560" cy="285" r="0.5" />
+
+  <text class="label" x="40" y="28">SAME Δv → MORE ENERGY GAIN WHEN v IS LARGE (THE OBERTH EFFECT)</text>
+
+  <!-- Central body -->
+  <line class="dashed" x1="60" y1="170" x2="540" y2="170" />
+  <ellipse class="ellipse" cx="300" cy="170" rx="220" ry="80" />
+  <!-- Star at right focus -->
+  <circle class="star" cx="430" cy="170" r="9" />
+  <text class="label-gold" x="430" y="195" text-anchor="middle">μ</text>
+
+  <!-- Periapsis on the right (520, 170) - close to star -->
+  <circle class="body" cx="520" cy="170" r="5" />
+  <!-- v_p arrow up (large, since v fast at periapsis) -->
+  <line class="stroke" x1="520" y1="170" x2="520" y2="85" />
+  <polygon points="520,80 515,93 525,93" fill="rgba(255,255,255,0.85)" />
+  <text class="label" x="528" y="130">v_p (FAST)</text>
+  <!-- Δv added on top of v_p (small) -->
+  <line class="accent" x1="520" y1="85" x2="520" y2="55" />
+  <polygon class="accent-fill" points="520,50 515,63 525,63" />
+  <text class="label-accent" x="528" y="68">+Δv</text>
+  <text class="label-accent" x="495" y="230" text-anchor="middle">LARGE ΔE</text>
+  <text class="sublabel" x="495" y="244" text-anchor="middle">ΔE ≈ v_p · Δv</text>
+  <text class="sublabel" x="495" y="256" text-anchor="middle">≈ 10 × Δv</text>
+
+  <!-- Periapsis label callout -->
+  <line class="dashed" x1="520" y1="170" x2="560" y2="170" />
+  <text class="label" x="566" y="174">PERIAPSIS</text>
+
+  <!-- Apoapsis on the left (80, 170) - far from star -->
+  <circle class="body" cx="80" cy="170" r="5" />
+  <!-- v_a arrow up (small, since v slow at apoapsis) -->
+  <line class="stroke" x1="80" y1="170" x2="80" y2="138" />
+  <polygon points="80,133 75,146 85,146" fill="rgba(255,255,255,0.85)" />
+  <text class="label" x="40" y="160">v_a (SLOW)</text>
+  <!-- Δv added on top of v_a (same magnitude as on the right) -->
+  <line class="red" x1="80" y1="138" x2="80" y2="108" />
+  <polygon class="red-fill" points="80,103 75,116 85,116" />
+  <text class="label-red" x="50" y="125">+Δv</text>
+  <text class="label-red" x="100" y="230" text-anchor="middle">SMALL ΔE</text>
+  <text class="sublabel" x="100" y="244" text-anchor="middle">ΔE ≈ v_a · Δv</text>
+  <text class="sublabel" x="100" y="256" text-anchor="middle">≈ 1 × Δv</text>
+
+  <!-- Apoapsis label callout -->
+  <line class="dashed" x1="80" y1="170" x2="50" y2="170" />
+  <text class="label" x="44" y="174" text-anchor="end">APOAPSIS</text>
+
+  <!-- Annotation block at top right -->
+  <text class="label-gold" x="300" y="55" text-anchor="middle">ΔE = m · v · Δv + ½ m · Δv²</text>
+  <text class="sublabel" x="300" y="69" text-anchor="middle">when Δv ≪ v, the linear term dominates → burn where v is highest</text>
+
+  <!-- Bottom note: mission examples -->
+  <text class="sublabel" x="40" y="305">Apollo TLI burned over the Pacific where v ≈ 7.8 km/s · Voyager Jupiter assist · Parker Solar Probe</text>
+  <text class="sublabel" x="540" y="320" text-anchor="end">Hermann Oberth · 1929</text>
 </svg>

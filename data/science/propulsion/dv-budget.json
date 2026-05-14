@@ -3,7 +3,7 @@
   "tab": "propulsion",
   "order": 1,
   "diagram": "dv-budget.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Each porkchop cell is a ∆v cost in km/s" },
     { "route": "/missions", "context_key": "FLIGHT tab shows the per-phase ∆v breakdown" }

@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 3,
   "diagram": "transfer-ellipse.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/fly", "context_key": "The bright arc on /fly is the spacecraft's transfer ellipse" }
   ],

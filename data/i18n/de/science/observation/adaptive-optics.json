@@ -1,0 +1,11 @@
+{
+  "title": "Adaptive Optik",
+  "intro_sentence": "Bodenbasierende Teleskope messen die Verzerrung der Atmosphäre in Echtzeit mit einem Laserleitstern, biegen dann einen verformbaren Spiegel ab, um sie auszulöschen — schärfen Bilder um einen Faktor von 10 oder mehr.",
+  "body_paragraphs": [
+    "Die Atmosphäre der Erde ist ein Chaos der bewegten Zellen der warmen und kalten Luft, jede Zelle mit einem etwas anderen Brechungsindex. Starlight, das durchgeht, wird gefesselt – deshalb knallen Sterne und warum ein 10-Meter-Boden-Teleskop ohne Korrektur sieht nicht besser als ein Hinterhof 20 cm Umfang in einer stetigen Nacht. Die atmosphärische \"Seeing\"-Grenze beträgt etwa 1 Bogensekunde. Hubbles Beugungsgrenze beträgt 0,05.",
+    "Die adaptive Optik schließt diesen Spalt durch Messung der Verzerrung an Hunderten von Punkten über die Blende und Gegenbiegen eines verformbaren Spiegels - oft ein dünnes Glas mit Hunderten von Piezoaktoren dahinter - bei 1000 Hz. Die Referenz für \"was perfekt aussehen sollte\" ist entweder ein heller natürlicher Stern in der Nähe des Wissenschaftsziels (wird eine nahe genug haben) oder ein **laser-Führungsstern*: ein Natrium-Resonanz-Laser in die obere Atmosphäre gefeuert, um einen künstlichen Glanz in der rechten Höhe zu machen.",
+    "Keck, VLT, Gemini, Subaru und die kommenden ELTs verlassen sich auf AO. Die Technik ist, was die bodenbasierte Exoplanet-Bildgebung ermöglichte – ohne sie würde das PSF des Wirtsstars das Signal des Planeten ertränken. JWST und Hubble sind zum Teil im Raum, um AO vollständig zu überspringen; bodenbasiertes AO ist die Alternative, wenn die Atmosphäre das einzige Hindernis ist und das Budget keinen Start finanzieren kann.",
+    "AO funktioniert nicht bei jeder Wellenlänge: sichtbares Licht AO ist härter als Infrarot, weil die Kohärenzzeit der Atmosphäre bei kurzen Wellenlängen kürzer ist. Die längsten Wellenlängenbänder (mid-IR, Sub-mm) können mit AO- und Rivalenraumteleskopen aus dem Boden durchgeführt werden. Optisch/UV bleibt ein starker Fall für den Raum."
+  ],
+  "diagram_caption": "Laserleitstern → Wellenfrontsensor → verformbarer Spiegel bei 1000 Hz → 10× schärfere Bilder. Besiegt die Atmosphäre, ohne ein Teleskop zu starten."
+}

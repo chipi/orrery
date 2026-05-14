@@ -1,29 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" role="img" aria-label="A four-year departure-date axis with recurring 26-month launch windows highlighted in teal.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" role="img" aria-label="A four-year departure-date axis with two 26-month-apart Mars launch windows highlighted in teal, illustrating the synodic period that drives launch cadence.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
-    .teal-bar { fill: rgba(78,205,196,0.32); stroke: #4ecdc4; stroke-width: 1.2; }
-    .arrow { fill: rgba(255,255,255,0.85); }
+    .axis { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .window-bar { fill: rgba(78,205,196,0.4); stroke: #4ecdc4; stroke-width: 1.4; }
+    .arrow-white { fill: rgba(255,255,255,0.85); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">Departure-window axis (4 years)</text>
-  <line class="stroke" x1="30" y1="120" x2="370" y2="120" />
-  <polygon points="370,120 362,116 362,124" class="arrow" />
-  <line class="dashed" x1="30" y1="80" x2="30" y2="120" />
-  <line class="dashed" x1="115" y1="80" x2="115" y2="120" />
-  <line class="dashed" x1="200" y1="80" x2="200" y2="120" />
-  <line class="dashed" x1="285" y1="80" x2="285" y2="120" />
-  <line class="dashed" x1="370" y1="80" x2="370" y2="120" />
-  <text class="tick" x="22" y="138">2026</text>
-  <text class="tick" x="107" y="138">2027</text>
-  <text class="tick" x="192" y="138">2028</text>
-  <text class="tick" x="277" y="138">2029</text>
-  <text class="tick" x="358" y="138">2030</text>
-  <rect class="teal-bar" x="60" y="90" width="22" height="20" />
-  <rect class="teal-bar" x="220" y="90" width="22" height="20" />
-  <text class="tick" x="55" y="80" fill="#4ecdc4">window</text>
-  <text class="tick" x="215" y="80" fill="#4ecdc4">window</text>
-  <text class="tick" x="135" y="105">26-month gap</text>
-  <text class="lbl" x="30" y="170">launch windows recur every 26 months for Mars; outside them: red</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">DEPARTURE-DATE AXIS — MARS WINDOWS RECUR EVERY 26 MONTHS</text>
+
+  <!-- Long horizontal axis -->
+  <line class="axis" x1="40" y1="150" x2="560" y2="150" />
+  <polygon class="arrow-white" points="568,150 558,146 558,154" />
+
+  <!-- Year tick marks -->
+  <line class="dashed" x1="40" y1="120" x2="40" y2="150" />
+  <line class="dashed" x1="160" y1="120" x2="160" y2="150" />
+  <line class="dashed" x1="280" y1="120" x2="280" y2="150" />
+  <line class="dashed" x1="400" y1="120" x2="400" y2="150" />
+  <line class="dashed" x1="520" y1="120" x2="520" y2="150" />
+
+  <text class="tick" x="40" y="168">2026</text>
+  <text class="tick" x="160" y="168">2027</text>
+  <text class="tick" x="280" y="168">2028</text>
+  <text class="tick" x="400" y="168">2029</text>
+  <text class="tick" x="520" y="168">2030</text>
+
+  <!-- Window 1: November 2026 → 2027 -->
+  <rect class="window-bar" x="84" y="120" width="40" height="30" />
+  <text class="label-accent" x="104" y="110" text-anchor="middle">WINDOW · Nov '26</text>
+  <text class="sublabel" x="104" y="184" text-anchor="middle">~3-month band</text>
+
+  <!-- Window 2: 26 months later → late 2028 -->
+  <rect class="window-bar" x="344" y="120" width="40" height="30" />
+  <text class="label-accent" x="364" y="110" text-anchor="middle">WINDOW · Dec '28</text>
+  <text class="sublabel" x="364" y="184" text-anchor="middle">~3-month band</text>
+
+  <!-- 26-month gap bracket -->
+  <line class="dashed" x1="124" y1="220" x2="344" y2="220" />
+  <line class="dashed" x1="124" y1="214" x2="124" y2="226" />
+  <line class="dashed" x1="344" y1="214" x2="344" y2="226" />
+  <text class="label-gold" x="234" y="214" text-anchor="middle">26 MONTHS · SYNODIC PERIOD</text>
+  <text class="sublabel" x="234" y="240" text-anchor="middle">red zone: Earth and Mars on wrong sides of the Sun</text>
+
+  <!-- Reference panel -->
+  <g transform="translate(40,200)">
+    <text class="label-gold" x="0" y="0">SYNODIC TARGETS</text>
+    <text class="sublabel" x="0" y="14">Mars     ·  780 d (26 mo)</text>
+    <text class="sublabel" x="0" y="26">Venus   ·  584 d (19 mo)</text>
+    <text class="sublabel" x="0" y="38">Jupiter ·  399 d (13 mo)</text>
+  </g>
+
+  <text class="sublabel" x="540" y="266" text-anchor="end">miss the window → wait one full synodic for the next geometry</text>
 </svg>

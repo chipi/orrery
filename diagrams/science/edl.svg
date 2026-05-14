@@ -1,36 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="EDL sequence: entry, parachute, powered descent, touchdown">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="EDL sequence at Mars — entry on heat shield, parachute deploy at supersonic Mach, powered descent on retro-rockets, sky-crane touchdown.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .heat { stroke: #ff6b6b; stroke-width: 2.4; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Atmosphere top dashed -->
-  <line x1="20" y1="50" x2="380" y2="50" class="dashed" />
-  <text x="20" y="42" class="label-mute">top of atmosphere · ~125 km</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">EDL · ENTRY, DESCENT, LANDING — 7 MINUTES OF TERROR</text>
+
+  <!-- Top of atmosphere -->
+  <line class="dashed" x1="40" y1="60" x2="560" y2="60" />
+  <text class="sublabel" x="44" y="55">TOP OF ATMOSPHERE · ~125 km</text>
+
   <!-- Surface -->
-  <line x1="20" y1="270" x2="380" y2="270" class="stroke" />
-  <text x="20" y="288" class="label-mute">surface · 0 km</text>
-  <!-- Entry ballistic arc -->
-  <path d="M 50 60 Q 130 90 180 130" class="accent" />
-  <text x="50" y="78" class="label-accent">1. entry</text>
-  <text x="50" y="90" class="label-mute">heat shield · ~20 km/s</text>
-  <!-- Parachute (drawn as triangle/canopy) -->
-  <line x1="180" y1="130" x2="220" y2="180" class="accent" />
-  <path d="M 200 175 Q 220 165 240 175" class="stroke" />
-  <line x1="220" y1="178" x2="220" y2="180" class="stroke" />
-  <text x="186" y="142" class="label-accent">2. parachute</text>
-  <text x="180" y="158" class="label-mute">Mach 1.5 → subsonic</text>
-  <!-- Powered descent: vertical arrow with thrust -->
-  <line x1="220" y1="180" x2="240" y2="230" class="accent" />
-  <line x1="240" y1="232" x2="232" y2="248" class="accent" />
-  <line x1="240" y1="232" x2="248" y2="248" class="accent" />
-  <text x="248" y="200" class="label-accent">3. powered descent</text>
-  <text x="248" y="214" class="label-mute">retro-rockets · sky-crane</text>
-  <!-- Lander on surface -->
-  <rect x="234" y="262" width="12" height="8" fill="rgba(255,255,255,0.85)" />
-  <text x="248" y="266" class="label-accent">4. wheels-down</text>
+  <line class="stroke" x1="40" y1="280" x2="560" y2="280" />
+  <text class="sublabel" x="44" y="298">SURFACE · 0 km · Mars 1 bar = none</text>
+
+  <!-- Altitude scale -->
+  <text class="tick" x="34" y="64" text-anchor="end">125</text>
+  <text class="tick" x="34" y="125" text-anchor="end">80</text>
+  <text class="tick" x="34" y="180" text-anchor="end">40</text>
+  <text class="tick" x="34" y="240" text-anchor="end">10</text>
+  <text class="tick" x="34" y="284" text-anchor="end">0 km</text>
+
+  <!-- Phase 1: Entry (red — heat) -->
+  <path class="heat" d="M 80 70 Q 130 95 180 140" />
+  <circle fill="#ff6b6b" cx="80" cy="70" r="4" />
+  <text class="label-red" x="86" y="80">1 · ENTRY</text>
+  <text class="sublabel" x="86" y="92">~5.5 km/s · 1500 °C heat shield</text>
+  <text class="sublabel" x="86" y="104">decelerate to Mach 2 (~70 km)</text>
+
+  <!-- Phase 2: Parachute (teal) -->
+  <path class="accent" d="M 180 140 Q 220 170 240 200" />
+  <!-- Parachute canopy -->
+  <path stroke="rgba(255,255,255,0.85)" stroke-width="1.4" fill="rgba(255,255,255,0.06)" d="M 222 178 Q 240 168 258 178" />
+  <line stroke="rgba(255,255,255,0.55)" stroke-width="1" x1="226" y1="180" x2="234" y2="196" />
+  <line stroke="rgba(255,255,255,0.55)" stroke-width="1" x1="254" y1="180" x2="246" y2="196" />
+  <text class="label-accent" x="262" y="170">2 · PARACHUTE</text>
+  <text class="sublabel" x="262" y="182">Mach 1.5 → subsonic at ~10 km</text>
+  <text class="sublabel" x="262" y="194">supersonic chute · 21 m diameter</text>
+
+  <!-- Phase 3: Powered descent (teal arrows) -->
+  <path class="accent" d="M 240 200 Q 270 230 290 250" />
+  <line stroke="#4ecdc4" stroke-width="2" x1="282" y1="252" x2="282" y2="270" />
+  <line stroke="#4ecdc4" stroke-width="2" x1="290" y1="254" x2="294" y2="272" />
+  <line stroke="#4ecdc4" stroke-width="2" x1="298" y1="252" x2="302" y2="270" />
+  <text class="label-accent" x="320" y="234">3 · POWERED DESCENT</text>
+  <text class="sublabel" x="320" y="246">8 MR-80B retro-rockets · 1.6 km altitude</text>
+  <text class="sublabel" x="320" y="258">slow to 0.75 m/s for touchdown</text>
+
+  <!-- Phase 4: Sky-crane touchdown -->
+  <rect fill="rgba(255,255,255,0.85)" x="436" y="270" width="14" height="10" />
+  <line stroke="rgba(255,255,255,0.5)" stroke-width="1" x1="443" y1="260" x2="443" y2="270" />
+  <circle fill="rgba(78,205,196,0.55)" cx="443" cy="256" r="6" />
+  <text class="label-accent" x="465" y="262">4 · SKY-CRANE / TOUCHDOWN</text>
+  <text class="sublabel" x="465" y="274">winches rover down · cut cables</text>
+  <text class="sublabel" x="465" y="286">descent stage flies off · wheels-down</text>
+
+  <!-- Timeline -->
+  <line class="dashed" x1="80" y1="60" x2="80" y2="305" />
+  <line class="dashed" x1="240" y1="200" x2="240" y2="305" />
+  <line class="dashed" x1="443" y1="280" x2="443" y2="305" />
+  <text class="tick" x="80" y="316" text-anchor="middle">T+0</text>
+  <text class="tick" x="240" y="316" text-anchor="middle">T+5 min</text>
+  <text class="tick" x="443" y="316" text-anchor="middle">T+7 min</text>
 </svg>

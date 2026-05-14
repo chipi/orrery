@@ -1,0 +1,11 @@
+{
+  "title": "Coronagrafi",
+  "intro_sentence": "Un disco occultante all'interno del telescopio blocca la stella dell'ospite in modo che il pianeta accanto ad esso — un miliardo di volte fainter — diventi visibile.",
+  "body_paragraphs": [
+    "Una stella simile al Sole esce dai suoi pianeti da un fattore di circa 109 a lunghezze d'onda visibili e 106 nell'infrarosso. I fotoni del pianeta non sono mancanti - stanno annegando nelle ali di diffrazione della funzione di punta della stella. L'imaging diretto di un exoplanet è possibile solo se si può sopprimere che PSF da molti ordini di grandezza. Un coronagrafo lo fa esattamente.",
+    "Il classico coronagrafo Lyot (1930, inventato da Bernard Lyot per la fotografia solare) mette un disco opaco al piano focale del telescopio per bloccare la stella, poi una seconda maschera più in basso per bloccare la luce diffrata dal bordo della prima maschera. I coronagrafi moderni dell'alunno apodised e i coronagrafi del vortice usano modelli di fase intricati per spingere la soppressione a 10−9 o meglio nelle regioni strette dell'immagine.",
+    "JWST porta coronagrafi sia su NIRCam che su MIRI; hanno direttamente immaginato diversi esopiani giganti del gas intorno alle stelle vicine. Il telescopio romano Nancy Grace (che si apre verso la metà degli anni 20) porta uno strumento coronagrafico progettato per l'immagine di giganti del gas intorno a stelle luminose a contrasto senza precedenti — e per dimostrare la tecnologia per il più grande Osservatorio Habitable Worlds, che punterà ai pianeti della Terra-massa.",
+    "Un'architettura alternativa è la **starshade**: una forma opaca di 30+ metri scorreva migliaia di km davanti al telescopio, bloccando la stella senza alcuna ottica all'interno dello strumento. Le stelle sono meccanicamente più difficili (l'allineamento formativo-flying è brutale) ma raggiungono un contrasto più alto. Nessuno è ancora volato; gli studi di concetto per l'imaging diretto Terra-Twin includono sempre una stella nel mix."
+  ],
+  "diagram_caption": "Bloccare la stella al piano focale → ali diffrazione in giro → seconda maschera uccide quelle → 10−9 soppressione, il pianeta emerge. I coronagrafi Vortex sostituiscono il disco con uno schema di fase."
+}

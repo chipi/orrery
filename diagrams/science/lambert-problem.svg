@@ -1,32 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Lambert problem: two position vectors and a transit time define a unique transfer orbit">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The Lambert problem — given two position vectors r₁ and r₂ around a central body and a time of flight, find the unique transfer ellipse that connects them. The backbone of every porkchop plot.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .alt { stroke: rgba(255,200,80,0.6); stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.95); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Sun at focus -->
-  <circle cx="160" cy="170" r="6" class="focus" />
-  <!-- r1 vector (departure) -->
-  <line x1="160" y1="170" x2="280" y2="80" class="accent" />
-  <circle cx="280" cy="80" r="4" class="body" />
-  <text x="220" y="118" class="label-accent">r₁</text>
-  <text x="284" y="74" class="label-mute">departure</text>
-  <!-- r2 vector (arrival) -->
-  <line x1="160" y1="170" x2="60" y2="80" class="accent" />
-  <circle cx="60" cy="80" r="4" class="body" />
-  <text x="92" y="116" class="label-accent">r₂</text>
-  <text x="20" y="74" class="label-mute">arrival</text>
-  <!-- Transfer ellipse joining r1 to r2 (drawn as a stylized arc — not the actual ellipse) -->
-  <path d="M 280 80 C 240 200, 100 200, 60 80" class="stroke" />
-  <text x="156" y="220" class="label-mute">transfer arc · time of flight T</text>
-  <!-- Connecting chord (dashed) -->
-  <line x1="280" y1="80" x2="60" y2="80" class="dashed" />
-  <text x="148" y="68" class="label-mute">chord</text>
-  <!-- Caption -->
-  <text x="38" y="280" class="label-mute">given r₁, r₂, T → solve for the transfer ellipse</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="100" cy="280" r="0.5" />
+  <circle class="dim-star" cx="560" cy="280" r="0.6" />
+
+  <text class="label" x="40" y="28">LAMBERT'S PROBLEM — r₁, r₂, T → THE UNIQUE TRANSFER ORBIT</text>
+
+  <!-- Central body (Sun) -->
+  <circle class="focus" cx="300" cy="200" r="8" />
+  <text class="label-gold" x="300" y="220" text-anchor="middle">μ</text>
+
+  <!-- r1 (departure body location at t0) — right side, upper -->
+  <circle class="body" cx="490" cy="100" r="5" />
+  <line class="accent" x1="300" y1="200" x2="490" y2="100" />
+  <text class="label-accent" x="380" y="142">r₁</text>
+  <text class="label" x="498" y="98">DEPART · t₀</text>
+  <text class="sublabel" x="498" y="110">Earth's heliocentric pos</text>
+
+  <!-- r2 (arrival body location at t0+T) — left side, upper -->
+  <circle class="body" cx="110" cy="100" r="5" />
+  <line class="accent" x1="300" y1="200" x2="110" y2="100" />
+  <text class="label-accent" x="220" y="142">r₂</text>
+  <text class="label" x="102" y="98" text-anchor="end">ARRIVE · t₀+T</text>
+  <text class="sublabel" x="102" y="110" text-anchor="end">Mars at arrival time</text>
+
+  <!-- Transfer arc (chosen branch — prograde, type I) — curves above through the apex -->
+  <path class="accent" d="M 490 100 Q 300 -40 110 100" />
+
+  <!-- Alternative arc (longer way / retrograde, type II) — dashed gold -->
+  <path class="alt" d="M 490 100 Q 300 360 110 100" />
+
+  <!-- Chord (dashed connecting r1 and r2) -->
+  <line class="dashed" x1="490" y1="100" x2="110" y2="100" />
+  <text class="sublabel" x="300" y="92" text-anchor="middle">chord c</text>
+
+  <!-- Annotation labels for arcs -->
+  <text class="label-accent" x="300" y="50" text-anchor="middle">TYPE I · short way (T short)</text>
+  <text class="label-gold" x="300" y="295" text-anchor="middle">TYPE II · long way (T long)</text>
+
+  <!-- Inputs/outputs callout panel -->
+  <g transform="translate(30,150)">
+    <rect x="0" y="0" width="166" height="120" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">INPUTS</text>
+    <text class="sublabel" x="8" y="32">r₁, r₂  · position vectors</text>
+    <text class="sublabel" x="8" y="44">T       · time of flight</text>
+    <text class="sublabel" x="8" y="56">μ       · gravity parameter</text>
+    <text class="label-accent" x="8" y="78">OUTPUTS</text>
+    <text class="sublabel" x="8" y="94">v₁, v₂  · velocity vectors</text>
+    <text class="sublabel" x="8" y="106">a, e, ω, ν → full orbit</text>
+  </g>
+
+  <!-- Right callout: it's the kernel of porkchop plots -->
+  <g transform="translate(564,150)">
+    <text class="label-gold" x="0" y="0" text-anchor="end">USED BY</text>
+    <text class="sublabel" x="0" y="14" text-anchor="end">/plan porkchop solver</text>
+    <text class="sublabel" x="0" y="26" text-anchor="end">every (depart, arrive) → 1 Δv</text>
+    <text class="sublabel" x="0" y="44" text-anchor="end">Lambert (1761) · Gauss (1809)</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">no closed-form solution — Newton-iterate on universal variable until ToF matches</text>
 </svg>

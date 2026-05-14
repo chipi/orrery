@@ -1,0 +1,25 @@
+{
+  "id": "star-trackers",
+  "tab": "mission-phases",
+  "order": 10,
+  "see_in_app": [
+    { "route": "/fly", "context_key": "Attitude alignment phase between burns: where the spacecraft \"knows which way is up\"" }
+  ],
+  "links": [
+    {
+      "l": "NASA · How Spacecraft Find Their Way",
+      "u": "https://science.nasa.gov/learn/basics-of-space-flight/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Star Tracker Reference",
+      "u": "https://www.nasa.gov/smallsat-institute/sst-soa/star-trackers/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Star tracker",
+      "u": "https://en.wikipedia.org/wiki/Star_tracker",
+      "t": "deep"
+    }
+  ]
+}

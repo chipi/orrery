@@ -69,6 +69,28 @@
         "Tre unità ovunque. [UA](scales-time/au), [minuto-luce](scales-time/light-minute) (4-24 min per Marte). Niente joystick — autonomia richiesta.",
         "[J2000](scales-time/j2000), [siderale vs sinodico](scales-time/sidereal-synodic), [piano eclittico](scales-time/ecliptic-plane), [sistemi di riferimento](scales-time/frames)."
       ]
+    },
+    {
+      "heading": "7 — Gli esseri umani non sono costruiti per questo.",
+      "diagram": "cover-life-in-space.svg",
+      "diagram_alt": "Un astronauta stilizzato che galleggia in microgravità con barre di indicatore osseo/muscolo/contromeasure.",
+      "diagram_caption": "Bone, muscolo, visione, vestibolare, immune — tutto ri-fili in microgravità, e non verso la Terra.",
+      "paragraphs": [
+        "Trascorrere sei mesi in orbita e tornare più piccolo, più leggero e più breve di quanto te ne sia andato. [Microgravity] (life-in-space/microgravity-physiology) è la causa principale: i fluidi ridistribuiscono verso l'alto, i muscoli posturali scaricano, gli ossidi (life-in-space/bone-density-loss) capannone 1–2% del loro minerale al mese, il [sistema grafico] (life-in-space/vestibular-adaptation) dà up. Il [contro-misures](vita-in-spazio/muscolo-atrofia) — due ore di esercizio resistivo e aerobico al giorno su ARED + il tapis roulant — rallentare senza risolverlo.",
+        "[Radiazione](life-in-space/radiation-exposure) è il problema più difficile. L'ISS ottiene ~200 mSv/anno (vs 3 mSv sfondo sulla Terra); lo spazio profondo fuori della magnetosfera è 600+ mSv/anno, senza una buona strategia di schermatura ancora. Un viaggio di classe Marte metterebbe un membro dell'equipaggio vicino al rischio di cancro del limite di carriera in un singolo giro.",
+        "Poi c'è [EVA] (life-in-space/eva-physiology) (un evento di resistenza di 6 ore in una tuta di pura ossigena di 4,3 psi) e [effetti di lunga durata] (effetti di vita-in-spazio/lungo-durata-durante-durante-durante-durante-durata-effetto) come SANS — Sindrome neuro-associated — dove il 60% del lungo-flight sviluppa cambiamenti invertiti sviluppano occhi misurabili che non cambiano completamente. Questi sono i problemi irrisolti tra l'umanità e Marte."
+      ]
+    },
+    {
+      "heading": "8 — Tutto quello che sappiamo dell'universo è arrivato come un fotone.",
+      "diagram": "cover-observation.svg",
+      "diagram_alt": "Un telescopio spaziale rivolto a una galassia lontana con uno spettro rappresentativo di emissione qui sotto.",
+      "diagram_caption": "Telescopio + filtro + spettrografo + matematica. Quasi ogni fatto sul cosmo è stato ricostruito dalla luce.",
+      "paragraphs": [
+        "[Space photography](observation/space-photography) non è ciò che la gente pensa che sia. Non c'è alcun clic sull'otturatore; ogni immagine osservativa che hai visto è una pila di esposizioni lunghe attraverso filtri a banda stretta, calibrato, registrato, falso colore assegnato. L'hardware è un sensore CCD o CMOS — una griglia di fotoni-contro — e i dati sono il conteggio, non l'immagine. L'immagine è ciò che gli umani fanno del conte.",
+        "[Ottica adattiva](osservazione/adaptive-ottica) sconfigge l'atmosfera misurando la sua distorsione in tempo reale e piegando lo specchio per cancellarlo. [Coronagraphs](osservazioni/coronagrafi) bloccano la stella centrale per vedere i pianeti orbitanti. [Spectroscopia](osservazione/sproscopia) legge la composizione chimica di una stella dalle linee di assorbimento nella sua luce. [Interferometria](osservazione/interferometria) punti telescopi separati in un'apertura virtuale più grande di qualsiasi di loro.",
+        "E gli oggetti più strani che quei metodi hanno trovato: [buchi neri] (observazione / buche nere) (reali, mappati, ombre-immaginati al centro di due galassie) e [wormholes] (observation/wormholes) (matematica pura, incluso in modo da sapere cosa fare con loro quando si vede uno in un film). La categoria /fleet ↦ Observatory ha le macchine reali — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — ciascuno con la sua galleria di ciò che ha visto."
+      ]
     }
   ],
   "tools_heading": "Ora vai a giocare.",

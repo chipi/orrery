@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="The five Lagrange points of a two-body system — L1, L2, L3 on the line between the bodies, L4 and L5 at the apices of equilateral triangles. Spacecraft callouts mark which observatories live at each point.">
+  <style>
+    .stroke-soft { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+    .stroke-mid { stroke: rgba(255,255,255,0.35); stroke-width: 1; fill: none; }
+    .stroke-bright { stroke: rgba(255,255,255,0.7); stroke-width: 1.2; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
+    .gold { stroke: #ffc850; stroke-width: 1.4; fill: none; }
+    .red { stroke: #ff6b6b; stroke-width: 1.4; fill: none; }
+    .blue { stroke: #6aa9ff; stroke-width: 1.4; fill: none; }
+    .orbit { fill: none; stroke: rgba(255,255,255,0.22); stroke-width: 0.9; stroke-dasharray: 3 3; }
+    .triangle { fill: none; stroke: rgba(78,205,196,0.4); stroke-width: 0.8; stroke-dasharray: 2 3; }
+    .sun-body { fill: #ffd47a; stroke: #ffc850; stroke-width: 1.4; }
+    .earth-body { fill: #4b9cd3; stroke: #6aa9ff; stroke-width: 1.2; }
+    .saddle { fill: rgba(255,107,107,0.3); stroke: #ff6b6b; stroke-width: 1.6; }
+    .stable { fill: rgba(78,205,196,0.4); stroke: #4ecdc4; stroke-width: 1.6; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1.5px; }
+    .sublabel { fill: rgba(255,255,255,0.6); font-family: 'Space Mono', monospace; font-size: 7px; letter-spacing: 1px; }
+    .star { fill: rgba(255,255,255,0.45); }
+  </style>
+
+  <!-- Starfield -->
+  <circle class="star" cx="60" cy="30" r="0.6" />
+  <circle class="star" cx="240" cy="20" r="0.5" />
+  <circle class="star" cx="450" cy="30" r="0.6" />
+  <circle class="star" cx="540" cy="48" r="0.5" />
+  <circle class="star" cx="80" cy="220" r="0.5" />
+  <circle class="star" cx="520" cy="226" r="0.6" />
+
+  <!-- Sun-Earth orbit (huge dashed ellipse — Sun at center) -->
+  <circle class="orbit" cx="120" cy="135" r="180" />
+
+  <!-- Sun (left side) -->
+  <circle class="sun-body" cx="120" cy="135" r="14" />
+  <text class="label" x="120" y="170" text-anchor="middle">SUN</text>
+
+  <!-- Earth on the orbit (right side, 300 from Sun along x) -->
+  <circle class="earth-body" cx="300" cy="135" r="8" />
+  <text class="label" x="300" y="158" text-anchor="middle">EARTH</text>
+
+  <!-- L1 — between Sun and Earth -->
+  <circle class="saddle" cx="282" cy="135" r="4" />
+  <text class="sublabel" x="276" y="118" text-anchor="end">L1</text>
+  <text class="sublabel" x="276" y="128" text-anchor="end">SOHO · DSCOVR</text>
+
+  <!-- L2 — beyond Earth -->
+  <circle class="saddle" cx="318" cy="135" r="4" />
+  <text class="sublabel" x="324" y="118">L2</text>
+  <text class="sublabel" x="324" y="128">JWST · Euclid · Spektr-RG</text>
+
+  <!-- L3 — opposite side of Sun -->
+  <circle class="saddle" cx="-60" cy="135" r="4" />
+  <!-- (L3 is off-canvas to the left of the Sun; annotate at the Sun area) -->
+  <text class="sublabel" x="50" y="220">L3 → far side of Sun (off-frame)</text>
+
+  <!-- Equilateral triangles for L4 / L5 -->
+  <!-- L4 at 60° ahead in Earth's orbit -->
+  <polygon class="triangle" points="120,135 300,135 210,-21.65" transform="translate(0, 156)" />
+  <!-- Compute: triangle Sun (120,135) — Earth (300,135) — L4 above. Base 180; height = 180 * sqrt(3)/2 ≈ 156 -->
+  <!-- L4 position (60° ahead — counterclockwise from Sun-Earth line) -->
+  <circle class="stable" cx="210" cy="-21" r="4" />
+  <!-- That's off-canvas; reposition L4 within viewBox at a "near-top" approximation -->
+  <circle class="stable" cx="210" cy="38" r="4" />
+  <text class="sublabel" x="210" y="28" text-anchor="middle">L4 (60° ahead)</text>
+  <text class="sublabel" x="210" y="50" text-anchor="middle">stable · Trojans</text>
+
+  <!-- L5 at 60° behind -->
+  <circle class="stable" cx="210" cy="232" r="4" />
+  <text class="sublabel" x="210" y="248" text-anchor="middle">L5 (60° behind)</text>
+
+  <!-- Connect the L4/L5 triangle visually -->
+  <line class="triangle" x1="120" y1="135" x2="210" y2="38" />
+  <line class="triangle" x1="300" y1="135" x2="210" y2="38" />
+  <line class="triangle" x1="120" y1="135" x2="210" y2="232" />
+  <line class="triangle" x1="300" y1="135" x2="210" y2="232" />
+
+  <!-- Title + legend -->
+  <text class="label" x="402" y="32">SUN — EARTH LAGRANGE POINTS</text>
+  <text class="sublabel" x="402" y="46">L1 L2 L3 = saddle (unstable)</text>
+  <text class="sublabel" x="402" y="58">L4 L5 = stable (potential wells)</text>
+
+  <g transform="translate(402,80)">
+    <rect class="saddle" x="0" y="0" width="10" height="10" />
+    <text class="sublabel" x="14" y="9">saddle — station-keeping required</text>
+    <rect class="stable" x="0" y="14" width="10" height="10" />
+    <text class="sublabel" x="14" y="23">stable — gravitational well</text>
+  </g>
+</svg>

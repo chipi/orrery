@@ -3,7 +3,7 @@
   "tab": "scales-time",
   "order": 3,
   "diagram": "j2000.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Every planet's L₀ is the mean longitude at J2000 epoch" }
   ],

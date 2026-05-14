@@ -1,0 +1,32 @@
+{
+  "id": "lunar-suits",
+  "tab": "life-in-space",
+  "order": 9,
+  "diagram": "lunar-suits.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/lunar-suits-aldrin.jpg",
+    "credit": "NASA · Apollo 11 (Jul 1969) — Buzz Aldrin on the lunar surface in the A7L suit. Armstrong + the LM are reflected in the gold visor."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Apollo 11–17 (A7L / A7LB suits) and the upcoming Artemis III (AxEMU) — the only lunar EVAs in history" },
+    { "route": "/fleet", "context_key": "Apollo LM + future Starship HLS + Blue Moon entries — the vehicles that carry the suits" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Apollo/Skylab A7L",
+      "u": "https://en.wikipedia.org/wiki/Apollo/Skylab_A7L",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Axiom EVA Suit (AxEMU) for Artemis III",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/spacesuit/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Krechet-94 (Soviet lunar suit)",
+      "u": "https://en.wikipedia.org/wiki/Krechet-94",
+      "t": "deep"
+    }
+  ]
+}

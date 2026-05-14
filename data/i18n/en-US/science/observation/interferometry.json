@@ -1,0 +1,11 @@
+{
+  "title": "Interferometry",
+  "intro_sentence": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
+  "body_paragraphs": [
+    "A single telescope's resolving power depends on its aperture (diameter / wavelength). A radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. But two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds.",
+    "The trick is correlation: the radio waves arriving at antenna A and antenna B differ by a tiny phase delay that depends on the source direction and the antenna baseline. Cross-correlate the two signals over time, and you measure that phase delay. Do it with N antennas in different positions and the combined signal samples N×(N-1)/2 baselines simultaneously, filling in the Fourier components of the source brightness distribution. An iterative deconvolution then recovers the image.",
+    "**VLA** (27 antennas in New Mexico) does this at radio wavelengths. **ALMA** (66 antennas in Chile) does it at sub-mm wavelengths, where atmospheric water absorption is brutal but the dust-thermal-continuum lights up. **Event Horizon Telescope** linked 8 sub-mm observatories across 4 continents to image M87's black hole at 1.3 mm — Earth-diameter aperture, 20 microarcsecond resolution, the shadow of an event horizon.",
+    "Optical/IR interferometry exists but is much harder because optical wavelengths are 6+ orders of magnitude shorter than radio, requiring laser-stabilised path matching to nanometre accuracy. CHARA, NPOI, and the VLTI are the survivors. Space interferometers like LISA (gravitational-wave detection via laser arms between three free-flying spacecraft) are the future architecture — both for gravity-wave astronomy and for the long-term goal of imaging Earth-twin exoplanets at high contrast."
+  ],
+  "diagram_caption": "Two antennas + cross-correlation → effective aperture = the baseline between them. Earth-sized → EHT M87 black hole. Space-sized → LISA gravitational waves."
+}

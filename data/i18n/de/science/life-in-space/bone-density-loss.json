@@ -1,0 +1,11 @@
+{
+  "title": "Knochendichteverlust",
+  "intro_sentence": "Astronauten verlieren etwa 1–2% der Knochenmasse pro Monat in der Schwere — die gleiche Rate wie ältere Osteoporose, aber komprimiert und reversibel-ish.",
+  "body_paragraphs": [
+    "Knochen ist ein lebendes Gewebe, das sich ständig umgestaltet: Osteoblasten legen neuen Knochen nach unten, Osteoklasten lösen alten Knochen weg, und auf der Erde die Belastung vom Gehen, Heben und einfach Stehen hält die beiden grob ausgeglichen. Nehmen Sie diese Belastung in Orbit und die Balance Tipps. Die Resorption läuft immer wieder normal; die Neu-Knochen-Deposition verlangsamt sich. Das Ergebnis ist ein Nettoverlust von etwa 1–2% pro Monat, konzentriert in den gewichtstragenden Strukturen: Lendenwirbelsäule, Becken, Femurhals, Calcaneus.",
+    "Zum Vergleich verläuft die post-menopausale Osteoporose auf der Erde bei etwa 1–2% pro **Jahr**. Eine sechsmonatige ISS-Mission verdichtet etwa ein Jahrzehnt altersbedingten Verlust in ein halbes Jahr. Einige davon kommen nach dem Flug zurück; einige nicht. Studien der langjährigen Crew legen nahe, dass messbare Knochen-Mineral-Densitätsdefizite auch nach dedizierter Rehabilitierung Jahre nach dem Flug bestehen bleiben.",
+    "Der Gegenmassivstapel auf der ISS ist ARED (Advanced Resistive Exercise Device — ein vakuum-piston-geladenes gefälschtes Squat-Rack), das T2 Laufband (unten beim Herunterfahren) und das Zyklus-Ergometer. Moderne Protokolle treffen auf ~1100 N axiale Belastung auf ARED — hoch genug, um osteogen zu sein. Mit ARED + Bisphosphonat-Medikamenten kehrt die sechsmonatige Crew jetzt mit Knochenverlusten um 0,5%/Monat zurück, anstatt die vor-ARED 1,5 %/Monat. Besser, nicht gelöst.",
+    "Für eine Dreijahresreise der Marsklasse bedeuten selbst die besten Gegenmaßnahmen einen Bruch-Risiko-Landeastronaut. Aktive Forschungslinien umfassen Vibrationsplattformen, mechanische Belastungsanzüge und die Erkundung, ob künstliche Schwerkraft (ein langsam rotierender Lebensraum) die einzige dauerhafte Antwort ist."
+  ],
+  "diagram_caption": "ARED + Laufband + Zyklus halten Belastung auf dem gewichtstragenden Skelett; mit Gegenmaßnahmen, moderne Crew verlieren ~0.5%/Monat vs die vor-ARED 1,5%/Monat."
+}

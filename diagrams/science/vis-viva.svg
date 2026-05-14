@@ -1,31 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Vis-viva: speed varies along the orbit, fast at perihelion, slow at aphelion">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Vis-viva: orbital speed varies along the ellipse — fastest at periapsis where r is small, slowest at apoapsis where r is large. v depends only on r and a.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ellipse { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .accent-fill { fill: #4ecdc4; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.95); }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <line x1="60" y1="150" x2="340" y2="150" class="dashed" />
-  <ellipse cx="200" cy="150" rx="140" ry="100" class="stroke" />
-  <!-- Sun at right focus -->
-  <circle cx="298" cy="150" r="6" class="focus" />
-  <text x="306" y="146" class="label-accent">μ</text>
-  <!-- Perihelion body with long velocity vector (fast) -->
-  <circle cx="340" cy="150" r="4" class="body" />
-  <line x1="340" y1="150" x2="340" y2="92" class="accent" stroke-width="2" />
-  <polygon points="340,88 336,98 344,98" fill="#4ecdc4" />
-  <text x="346" y="120" class="label-accent">v high</text>
-  <text x="296" y="170" class="label-mute">r small</text>
-  <!-- Aphelion body with short velocity vector (slow) -->
-  <circle cx="60" cy="150" r="4" class="body" />
-  <line x1="60" y1="150" x2="60" y2="124" class="accent" stroke-width="2" />
-  <polygon points="60,120 56,130 64,130" fill="#4ecdc4" />
-  <text x="20" y="138" class="label-accent">v low</text>
-  <text x="68" y="170" class="label-mute">r large</text>
-  <!-- Caption -->
-  <text x="84" y="278" class="label-mute">vis-viva: v depends on radius and a only</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">VIS-VIVA — SPEED DEPENDS ONLY ON r AND a</text>
+
+  <line class="dashed" x1="100" y1="170" x2="500" y2="170" />
+
+  <!-- Ellipse a=180, b=120 -->
+  <ellipse class="ellipse" cx="300" cy="170" rx="180" ry="120" />
+
+  <!-- Sun at right focus c=134 → 434 -->
+  <circle class="focus" cx="434" cy="170" r="8" />
+  <text class="label-gold" x="434" y="148" text-anchor="middle">μ</text>
+
+  <!-- Perihelion (right tip) — body with long velocity vector -->
+  <circle class="body" cx="480" cy="170" r="4" />
+  <line class="accent" x1="480" y1="170" x2="480" y2="78" />
+  <polygon class="accent-fill" points="480,72 475,85 485,85" />
+  <text class="label-accent" x="490" y="120">v_p · MAX</text>
+  <text class="sublabel" x="490" y="132">small r → fast</text>
+  <text class="sublabel" x="490" y="144">Earth: 30.3 km/s</text>
+
+  <!-- Aphelion (left tip) — body with short velocity vector -->
+  <circle class="body" cx="120" cy="170" r="4" />
+  <line class="accent" x1="120" y1="170" x2="120" y2="138" />
+  <polygon class="accent-fill" points="120,132 115,145 125,145" />
+  <text class="label-accent" x="68" y="140" text-anchor="end">v_a · MIN</text>
+  <text class="sublabel" x="68" y="152" text-anchor="end">large r → slow</text>
+  <text class="sublabel" x="68" y="164" text-anchor="end">Earth: 29.3 km/s</text>
+
+  <!-- Side body at top showing intermediate speed -->
+  <!-- ν=90°: r=a(1-e²)/(1) ≈ 180·0.45 = 81, pos = (434, 170-81) = (434, 89) -->
+  <circle class="body" cx="434" cy="89" r="4" />
+  <line class="accent" x1="434" y1="89" x2="494" y2="69" />
+  <polygon class="accent-fill" points="498,68 488,66 489,72" />
+  <text class="label-accent" x="500" y="74">v(r) · MID</text>
+
+  <!-- Formula panel -->
+  <g transform="translate(30,90)">
+    <rect x="0" y="0" width="180" height="120" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">VIS-VIVA EQUATION</text>
+    <text class="sublabel" x="8" y="32">v² = μ · (2/r − 1/a)</text>
+    <text class="sublabel" x="8" y="52">CIRCLE  ·  r = a</text>
+    <text class="sublabel" x="8" y="64">→ v = √(μ/a)</text>
+    <text class="sublabel" x="8" y="82">ESCAPE  ·  a → ∞</text>
+    <text class="sublabel" x="8" y="94">→ v_esc = √(2μ/r)</text>
+    <text class="sublabel" x="8" y="112">"vis viva" = "living force" (Leibniz)</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">total mechanical energy ∝ 1/a — the orbit's energy is fully encoded in a alone</text>
 </svg>

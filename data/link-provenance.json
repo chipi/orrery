@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-10T20:53:21.968Z",
+  "generated_at": "2026-05-13T22:18:31.388Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "c6ac8e2aabb409ded044f85276eb24b743d08fc8",
+  "commit_sha": "1653cb914546e2ad0da3b7ee54095d6e99b9612a",
   "entries": [
     {
       "id": "67p__9db103aaeff4",
@@ -157,6 +157,48 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
+    },
+    {
+      "id": "apollo13__aff02cbf9159",
+      "entity_id": "apollo13",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://en.wikipedia.org/wiki/Apollo_13",
+      "label": "Apollo 13 — Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-13"
+    },
+    {
+      "id": "apollo13__697f4dafa4bd",
+      "entity_id": "apollo13",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://www.nasa.gov/mission/apollo-13/",
+      "label": "Apollo 13 mission overview (NASA)",
+      "tier": "intro",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-13"
+    },
+    {
+      "id": "apollo13__4a1eb2eab6aa",
+      "entity_id": "apollo13",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://history.nasa.gov/SP-350/ch-13-1.html",
+      "label": "Apollo 13 Review Board Report (NASA SP-2007-4548)",
+      "tier": "deep",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-05-13"
     },
     {
       "id": "apollo14__74688ba72af4",

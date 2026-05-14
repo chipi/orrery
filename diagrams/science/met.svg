@@ -1,30 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="A horizontal mission timeline with events tagged at increasing MET tick marks.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" role="img" aria-label="A mission elapsed time timeline starting at T+0 (liftoff), with major events tagged at increasing MET tick marks across the first 8 months of an Earth-to-Mars mission.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; stroke-linecap: round; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
     .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .dot { fill: #4ecdc4; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .accent-fill { fill: #4ecdc4; }
+    .gold-fill { fill: #ffc850; }
+    .red-fill { fill: #ff6b6b; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">MET — mission elapsed time</text>
-  <line class="stroke" x1="30" y1="120" x2="370" y2="120" />
-  <polygon points="370,120 362,116 362,124" fill="rgba(255,255,255,0.85)" />
-  <line class="dashed" x1="30" y1="40" x2="30" y2="180" />
-  <text class="lbl" x="22" y="195">T+0</text>
-  <text class="tick" x="14" y="38">launch</text>
-  <circle class="dot" cx="30" cy="120" r="3.5" />
-  <line class="dashed" x1="100" y1="80" x2="100" y2="120" />
-  <circle class="dot" cx="100" cy="120" r="3" />
-  <text class="tick" x="78" y="76">T+8m · LEO</text>
-  <line class="dashed" x1="160" y1="80" x2="160" y2="120" />
-  <circle class="dot" cx="160" cy="120" r="3" />
-  <text class="tick" x="142" y="76">T+1h · TLI</text>
-  <line class="dashed" x1="230" y1="80" x2="230" y2="120" />
-  <circle class="dot" cx="230" cy="120" r="3" />
-  <text class="tick" x="206" y="76">T+2d · TCM-1</text>
-  <line class="dashed" x1="320" y1="80" x2="320" y2="120" />
-  <circle class="dot" cx="320" cy="120" r="3" />
-  <text class="tick" x="298" y="76">T+8mo · MOI</text>
-  <text class="lbl" x="30" y="160">stopwatch starts at liftoff and never stops</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">MET · MISSION ELAPSED TIME — STOPWATCH STARTS AT LIFTOFF</text>
+
+  <!-- Main timeline -->
+  <line class="stroke" x1="60" y1="170" x2="560" y2="170" />
+  <polygon fill="rgba(255,255,255,0.85)" points="568,170 558,166 558,174" />
+
+  <!-- Major event ticks -->
+  <!-- T+0: Launch -->
+  <line class="dashed" x1="60" y1="60" x2="60" y2="170" />
+  <circle class="red-fill" cx="60" cy="170" r="5" />
+  <text class="label-red" x="60" y="200" text-anchor="middle">T+0</text>
+  <text class="label" x="60" y="214" text-anchor="middle">LAUNCH</text>
+  <text class="sublabel" x="60" y="46" text-anchor="middle">stopwatch start</text>
+
+  <!-- T+8 min: LEO -->
+  <line class="dashed" x1="160" y1="60" x2="160" y2="170" />
+  <circle class="accent-fill" cx="160" cy="170" r="4" />
+  <text class="label-accent" x="160" y="200" text-anchor="middle">T+8 min</text>
+  <text class="label" x="160" y="214" text-anchor="middle">LEO INSERTION</text>
+  <text class="sublabel" x="160" y="46" text-anchor="middle">SECO · 200 km parking</text>
+
+  <!-- T+1 h: TMI -->
+  <line class="dashed" x1="260" y1="60" x2="260" y2="170" />
+  <circle class="accent-fill" cx="260" cy="170" r="4" />
+  <text class="label-accent" x="260" y="200" text-anchor="middle">T+1 h</text>
+  <text class="label" x="260" y="214" text-anchor="middle">TMI · trans-Mars inj.</text>
+  <text class="sublabel" x="260" y="46" text-anchor="middle">3.6 km/s Oberth burn</text>
+
+  <!-- T+10 d: TCM-1 -->
+  <line class="dashed" x1="350" y1="60" x2="350" y2="170" />
+  <circle class="gold-fill" cx="350" cy="170" r="4" />
+  <text class="label-gold" x="350" y="200" text-anchor="middle">T+10 d</text>
+  <text class="label" x="350" y="214" text-anchor="middle">TCM-1</text>
+  <text class="sublabel" x="350" y="46" text-anchor="middle">post-TMI cleanup</text>
+
+  <!-- T+90 d: TCM-2 / cruise checkpoint -->
+  <line class="dashed" x1="430" y1="60" x2="430" y2="170" />
+  <circle class="gold-fill" cx="430" cy="170" r="4" />
+  <text class="label-gold" x="430" y="200" text-anchor="middle">T+90 d</text>
+  <text class="label" x="430" y="214" text-anchor="middle">TCM-2 · cruise</text>
+  <text class="sublabel" x="430" y="46" text-anchor="middle">solar-power verify</text>
+
+  <!-- T+8 mo: MOI -->
+  <line class="dashed" x1="540" y1="60" x2="540" y2="170" />
+  <circle class="red-fill" cx="540" cy="170" r="5" />
+  <text class="label-red" x="540" y="200" text-anchor="middle">T+8 mo</text>
+  <text class="label" x="540" y="214" text-anchor="middle">MOI · Mars orbit ins.</text>
+  <text class="sublabel" x="540" y="46" text-anchor="middle">"gates of hell" · 1.0 km/s</text>
+
+  <!-- Note panel -->
+  <g transform="translate(40,236)">
+    <rect x="0" y="0" width="520" height="34" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label" x="8" y="14">MET counts continuously · doesn't reset on burns or pauses · unambiguous reference for all flight events</text>
+    <text class="sublabel" x="8" y="26">Apollo MET tagged everything in Houston Mission Control · still used today for Artemis, JWST, Mars rovers</text>
+  </g>
 </svg>

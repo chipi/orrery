@@ -3,7 +3,11 @@
   "tab": "transfers",
   "order": 6,
   "diagram": "gravity-assist.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/gravity-assist-voyager-jupiter.png",
+    "credit": "NASA · Voyager 2 (1979) — Jupiter as Voyager 2 used the planet's gravity well to slingshot toward Saturn. The first major operational gravity assist."
+  },
   "see_in_app": [
     { "route": "/missions", "context_key": "Voyager 2 and Cassini chained gravity assists across the outer solar system" }
   ],

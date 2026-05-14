@@ -1,29 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Transfer ellipse with Sun at one focus, perihelion at departure, aphelion at arrival">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="A transfer ellipse — half a Keplerian orbit that takes a spacecraft from departure (perihelion on the inner orbit) to arrival (aphelion on the outer orbit). The Hohmann case shown.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .orbit { stroke: rgba(255,255,255,0.4); stroke-width: 1; fill: none; stroke-dasharray: 4 3; }
+    .transfer { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .transfer-half { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .focus { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .body { fill: rgba(255,255,255,0.95); }
+    .accent-fill { fill: #4ecdc4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <line x1="50" y1="150" x2="350" y2="150" class="dashed" />
-  <ellipse cx="200" cy="150" rx="150" ry="92" class="accent" />
-  <!-- Sun at right focus = (200 + sqrt(150² - 92²), 150) ≈ (200+118, 150) = (318, 150) -->
-  <circle cx="318" cy="150" r="6" class="focus" />
-  <text x="304" y="138" class="label-accent">Sun</text>
-  <!-- Departure (perihelion) at right tip -->
-  <circle cx="350" cy="150" r="4" class="body" />
-  <text x="316" y="172" class="label-mute">depart</text>
-  <text x="316" y="186" class="label-mute">(perihelion)</text>
-  <!-- Arrival (aphelion) at left tip -->
-  <circle cx="50" cy="150" r="4" class="body" />
-  <text x="44" y="172" class="label-mute">arrive</text>
-  <text x="40" y="186" class="label-mute">(aphelion)</text>
-  <!-- Mid-flight body up top -->
-  <circle cx="170" cy="60" r="3" class="body" />
-  <text x="138" y="50" class="label-mute">in cruise</text>
-  <text x="148" y="278" class="label-mute">half a Keplerian orbit</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">TRANSFER ELLIPSE — HALF A KEPLERIAN ORBIT BETWEEN TWO ALTITUDES</text>
+
+  <line class="dashed" x1="80" y1="170" x2="520" y2="170" />
+
+  <!-- Inner orbit r1=70 -->
+  <circle class="orbit" cx="300" cy="170" r="70" />
+  <text class="sublabel" x="380" y="172">DEPART ORBIT · r₁</text>
+
+  <!-- Outer orbit r2=160 -->
+  <circle class="orbit" cx="300" cy="170" r="160" />
+  <text class="sublabel" x="470" y="172">ARRIVE ORBIT · r₂</text>
+
+  <!-- Transfer ellipse: a=(70+160)/2=115, c=(160-70)/2=45 → centre at (300-45,170)=(255,170); rx=115, ry=√(115²-45²)=106 -->
+  <ellipse class="transfer" cx="255" cy="170" rx="115" ry="106" />
+
+  <!-- Sun at right focus (transfer's right focus = at 255 + c = 255 + 45 = 300, which is the centre of both circular orbits) -->
+  <circle class="focus" cx="300" cy="170" r="7" />
+  <text class="label-gold" x="300" y="148" text-anchor="middle">SUN · μ</text>
+
+  <!-- Departure body at perihelion (right tip of transfer = 255+115 = 370) -->
+  <circle class="body" cx="370" cy="170" r="5" />
+  <line stroke="rgba(255,255,255,0.4)" stroke-width="0.8" x1="370" y1="170" x2="430" y2="240" />
+  <text class="label" x="434" y="244">DEPART</text>
+  <text class="sublabel" x="434" y="256">PERIHELION</text>
+  <text class="sublabel" x="434" y="268">v_p = max</text>
+
+  <!-- Arrival body at aphelion (left tip = 255-115 = 140) -->
+  <circle class="body" cx="140" cy="170" r="5" />
+  <line stroke="rgba(255,255,255,0.4)" stroke-width="0.8" x1="140" y1="170" x2="80" y2="240" />
+  <text class="label" x="76" y="244" text-anchor="end">ARRIVE</text>
+  <text class="sublabel" x="76" y="256" text-anchor="end">APHELION</text>
+  <text class="sublabel" x="76" y="268" text-anchor="end">v_a = min</text>
+
+  <!-- Mid-flight body at the top of the transfer ellipse (255, 170-106) = (255, 64) -->
+  <circle class="body" cx="255" cy="64" r="4" />
+  <text class="label" x="265" y="64">CRUISE · t = T/2</text>
+  <text class="sublabel" x="265" y="76">midpoint of the half-orbit</text>
+
+  <!-- Direction arrow along arc -->
+  <path stroke="#4ecdc4" stroke-width="2.4" fill="none" d="M 340 100 Q 350 80 364 70" />
+  <polygon class="accent-fill" points="368,68 358,68 361,77" />
+
+  <!-- Parameters panel -->
+  <g transform="translate(30,90)">
+    <rect x="0" y="0" width="160" height="120" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">TRANSFER PARAMETERS</text>
+    <text class="sublabel" x="8" y="32">a_t = (r₁ + r₂) / 2</text>
+    <text class="sublabel" x="8" y="46">e_t = (r₂ − r₁) / (r₂ + r₁)</text>
+    <text class="sublabel" x="8" y="60">T = π √(a_t³ / μ)</text>
+    <text class="sublabel" x="8" y="78">Earth → Mars:</text>
+    <text class="sublabel" x="8" y="90">  a_t ≈ 1.26 AU</text>
+    <text class="sublabel" x="8" y="102">  e_t ≈ 0.21</text>
+    <text class="sublabel" x="8" y="114">  T ≈ 8.5 months</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">also called a "transfer arc" — the half-orbit from departure to arrival</text>
 </svg>

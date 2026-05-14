@@ -1,0 +1,15 @@
+{
+  "title": "Microgravity physiology",
+  "intro_sentence": "What happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass.",
+  "narrative_101": [
+    "Spend a day in orbit and your face puffs up. Spend a week and your spine stretches by a few centimetres. Spend six months and 1–2% of your bone calcium is gone. Microgravity isn't \"weightlessness\" in any cellular sense — the cells are still there, in a fluid, evolved for one gravity. Take gravity away and that fluid pools differently, the bones stop being loaded, the muscles stop fighting anything, and the body starts dismantling what it no longer needs.",
+    "Every other section in this tab traces back to microgravity. Bone loss, muscle atrophy, vestibular confusion, SANS vision changes — all of it. The good news: the body adapts. The bad news: the adaptations are not toward Earth. Coming home is its own physiological event."
+  ],
+  "body_paragraphs": [
+    "The first thing that happens in orbit is fluid shift. On Earth, gravity pulls about a litre of blood and lymph downward into your legs; in microgravity, that fluid redistributes upward toward the chest and head. Astronauts get the puffy \"moon face\" within hours. The body responds by shedding the now-excess plasma volume — over the first few days, total body water drops by ~2 litres. Returning to Earth, that fluid hasn't been remade yet, so post-flight orthostatic intolerance (light-headedness on standing) is the norm for a week or more.",
+    "Bones and muscles lose mass because they're unused. Weight-bearing bones — femur, vertebrae, pelvis — lose 1–2% of their calcium **per month** without countermeasures. Postural muscles (calf, back, paraspinal) atrophy because nothing is asking them to fight gravity. Resistance and aerobic exercise on the ISS (ARED, treadmill T2, cycle ergometer) is the only proven counter; astronauts spend 2+ hours a day on it, and even then come back smaller and lighter than they left.",
+    "The vestibular system — the inner ear's gravity sensor — gets profoundly confused. Astronauts report \"space adaptation syndrome\" (motion sickness) for 2–4 days as the brain re-weights vestibular vs visual cues. Long-duration spaceflight produces measurable changes in eye-tracking, posture, and gait that take weeks to months to fully reverse on return.",
+    "And then there's everything we still don't fully understand: the immune system shifts toward latent-virus reactivation (shingles, EBV), the gut microbiome changes composition, sleep architecture flattens (no day/night, 16 sunrises per 24 h aboard ISS), and a portion of long-duration crew develop SANS — Space-Associated Neuro-ocular Syndrome — with flattened eyeballs and optic-nerve sheath changes that don't fully reverse. A Mars-class mission is the next big experiment."
+  ],
+  "diagram_caption": "Fluid shifts headward, bones and muscles unload, the inner ear gets confused — and ARED + treadmill + cycle workouts are the closest thing we have to a fix."
+}

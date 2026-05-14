@@ -1,0 +1,11 @@
+{
+  "title": "Óptica adaptativa",
+  "intro_sentence": "Los telescopios terrestres miden la distorsión de la atmósfera en tiempo real con una estrella guía láser, luego doblan un espejo deformable para cancelarlo, afilando imágenes por un factor de 10 o más.",
+  "body_paragraphs": [
+    "La atmósfera de la Tierra es un desastre de células móviles de aire caliente y frío, cada célula con un índice refractivo ligeramente diferente. La luz estelar que pasa se pone en juego — es por eso que las estrellas brillan y por qué un telescopio terrestre de 10 metros sin corrección no ve mejor que un patio trasero de 20 cm de alcance en una noche estable. El límite \"ver\" atmosférico es alrededor de 1 segundo. El límite de difracción del Hubble es 0.05.",
+    "La óptica adaptativa cierra esa brecha midiendo la distorsión en cientos de puntos a través de la abertura y contra-doblando un espejo deformable, a menudo un vidrio delgado con cientos de actuadores piezoeléctricos detrás de ella, a 1000 Hz. La referencia para \"lo perfecto debe parecer\" es una estrella natural brillante cerca del objetivo de la ciencia (debido a tener uno lo suficientemente cerca) o una estrella guía **última**: un láser de resonancia sodio disparado en la atmósfera superior para hacer un resplandor artificial a la altura correcta.",
+    "Keck, VLT, Gemini, Subaru, y los próximos ELT dependen de AO. La técnica es lo que hizo posible la imagen exoplanet basada en tierra, sin ella, el PSF de la estrella anfitriona ahogaría la señal del planeta. JWST y Hubble están en el espacio en parte para saltar AO por completo; AO terrestre es la alternativa cuando la atmósfera es el único obstáculo y el presupuesto no puede financiar un lanzamiento.",
+    "AO no funciona en cada longitud de onda: AO de luz visible es más difícil que infrarrojos porque el tiempo de coherencia de la atmósfera es más corto en longitudes de onda cortas. Las bandas más largas de longitud de onda (mid-IR, sub-mm) se pueden hacer desde el suelo con AO y telescopios espaciales rivales. Optical/UV sigue siendo un caso fuerte para el espacio."
+  ],
+  "diagram_caption": "Estrella guía láser → sensor frente a las olas → espejo deformable a 1000 Hz → 10× imágenes más nítidas. Derrota la atmósfera sin lanzar un telescopio."
+}

@@ -3,7 +3,7 @@
   "tab": "scales-time",
   "order": 4,
   "diagram": "sidereal-synodic.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Mars launch windows recur every synodic period (~26 months)" }
   ],

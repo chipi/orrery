@@ -71,6 +71,28 @@
         "Tres unidades aparecen en todas partes. La [unidad astronómica](scales-time/au) (UA) es la distancia media Tierra-Sol — 150 millones de km. Medimos el sistema solar en UA porque los kilómetros se vuelven inmanejables rápido. El [minuto-luz](scales-time/light-minute) te dice cuánto tarda una señal de radio en llegar a una nave. Marte: 4 a 24 minutos en un sentido. No puedes pilotar un róver desde la Tierra. Todo lo importante es autónomo.",
         "La [época J2000](scales-time/j2000) es el cero del calendario que usa cada astrodinamicista. [Períodos sidéreo y sinódico](scales-time/sidereal-synodic) explican por qué las ventanas a Marte se repiten cada 26 meses en lugar de cada 23. El [plano eclíptico](scales-time/ecliptic-plane) es el disco plano sobre el que (casi) yacen todos los planetas. Los [sistemas de referencia](scales-time/frames) son los sistemas de coordenadas entre los que el control de misión malabarea — heliocéntrico, geocéntrico y centrado en el cuerpo."
       ]
+    },
+    {
+      "heading": "7 - Los humanos no se construyen para esto.",
+      "diagram": "cover-life-in-space.svg",
+      "diagram_alt": "Un astronauta estilizado flotando en microgravedad con barras indicadoras de hueso/musculo/contraermeasure.",
+      "diagram_caption": "Hueso, músculo, visión, vestibular, inmune — todo re-wires en la microgravedad, y no hacia la Tierra.",
+      "paragraphs": [
+        "Pasa seis meses en órbita y vuelves más pequeño, más ligero y más corto de lo que dejaste. [Microgravidad] (vida en el espacio/microgravidad-fisiología) es la causa raíz: los fluidos redistribuir la cabeza, los músculos posturales se descargan, los [bones] (vida en el espacio/pérdida ósea) cobertizo 1–2% de su mineral por mes, el [sistemavestibular] (vida en el espacio/divulgación). Las [contramedidas] (vida en el espacio/atrofia muscular) —dos horas de ejercicio resistivo y aeróbico al día en ARED + la cinta de correr— la ralentizan sin resolverlo.",
+        "[Radiación] (vida en el espacio/radiación-exposición) es el problema más difícil. El ISS obtiene ~200 mSv/year (vs 3 mSv background on Earth); espacio profundo fuera de la magnetosfera es de 600 mSv/year, sin buena estrategia de blindaje todavía. Un viaje de clase Marte pondría a un miembro de la tripulación cerca del riesgo de cáncer de carrera en un solo viaje de ida y vuelta.",
+        "Luego está [EVA] (vida en el espacio/eva-physiology) (un evento de resistencia de 6 horas en un traje de 4,3 psi puro-oxigeno) y [efectos de larga duración] (efectos de vida en el espacio/duración prolongada-efectos) como SANS — Síndrome neuro-ocular asociado al espacio— donde el 60% de la tripulación de larga duración desarrolla completamente cambios de ojos que invierten. Estos son los problemas sin resolver entre la humanidad y Marte."
+      ]
+    },
+    {
+      "heading": "8 — Todo lo que sabemos sobre el universo llegó como fotones.",
+      "diagram": "cover-observation.svg",
+      "diagram_alt": "Un telescopio espacial apuntaba a una galaxia distante con un espectro de emisiones representativo debajo.",
+      "diagram_caption": "Telescopio + filtro + espectrografía + matemáticas. Casi todos los hechos sobre el cosmos fueron reconstruidos de la luz.",
+      "paragraphs": [
+        "[Fotografía espacial] (observación/fotografía espacial) no es lo que la gente piensa que es. No hay ningún obturador haciendo clic; cada imagen observatoria que has visto es una pila de exposiciones largas a través de filtros de banda angosta, calibrados, registrados, falsos colores asignados. El hardware es un sensor CCD o CMOS, una cuadrícula de contadores de fotones, y los datos son el conteo, no la imagen. La imagen es lo que los humanos hacen de la cuenta.",
+        "[Opticos adaptivos](observación/adaptive-optics) derrota la atmósfera midiendo su distorsión en tiempo real y doblando el espejo para cancelarla. [Coronagraphs] (observación/coronagraphs) bloquean la estrella central para ver los planetas orbitándolo. [Spectroscopy](observación/spectroscopia) lee la composición química de una estrella de las líneas de absorción en su luz. [Interferometría](observación/interferometría) puntos telescopios separados en una abertura virtual más grande que cualquiera de ellos.",
+        "Y los objetos más extraños que estos métodos han encontrado: [agujeros negros] (observación/agujeros negros) (real, mapeados, imaginados en la sombra en el centro de dos galaxias) y [agujeros de gusano] (observación/agujeros) (púrpuras matemáticas, incluidas para saber qué hacer con ellos cuando se ve uno en una película). La categoría /fleet ↦ Observatorio tiene las máquinas reales — Hubble, JWST, Chandra, Spitzer, Kepler, TESS— cada una con su propia galería de lo que vio."
+      ]
     }
   ],
   "tools_heading": "Ahora ve a jugar.",

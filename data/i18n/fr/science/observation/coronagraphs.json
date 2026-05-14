@@ -1,0 +1,11 @@
+{
+  "title": "Coronagraphes",
+  "intro_sentence": "Un disque occultant à l'intérieur du télescope bloque l'étoile hôte de sorte que la planète à côté — un milliard de fois plus faible — devient visible.",
+  "body_paragraphs": [
+    "Une étoile semblable au Soleil surpasse ses planètes par un facteur d'environ 109 à des longueurs d'onde visibles et 106 dans l'infrarouge. Les photons de la planète ne manquent pas, ils se noient dans les ailes de diffraction de la fonction ponctuelle de l'étoile. L'imagerie directe d'une exoplanète n'est possible que si vous pouvez supprimer ce PSF de plusieurs ordres de grandeur. Un coronagraphe fait exactement ça.",
+    "Le coronagraphe classique Lyot (1930, inventé par Bernard Lyot pour la photographie solaire) place un disque opaque au plan focal du télescope pour bloquer l'étoile, puis un deuxième masque plus bas pour bloquer la lumière diffractée du bord du premier masque. Les coronagraphes apodisés modernes de pupille et les coronagraphes vortex utilisent des modèles de phase complexes pour pousser la suppression à 10 à 9 ou mieux dans des régions étroites de l'image.",
+    "JWST transporte des coronagraphes sur NIRCam et MIRI ; ils ont directement photographié plusieurs exoplanètes géantes de gaz autour des étoiles voisines. Le télescope romain Nancy Grace (lancé au milieu des années 2020) est doté d'un instrument coronagraphique conçu pour représenter des géants gaz autour d'étoiles brillantes à un contraste sans précédent, et pour démontrer la technologie de l'Observatoire Habitable Worlds, qui visera les planètes de masse terrestre.",
+    "Une architecture alternative est la **starshade**: une forme opaque de 30+ mètres a volé des milliers de kilomètres devant le télescope, bloquant l'étoile sans aucune optique à l'intérieur de l'instrument. Les étoiles sont mécaniquement plus difficiles (l'alignement de vol de formation est brutal) mais atteignent un contraste plus élevé. Aucun n'a encore volé; les études conceptuelles pour l'imagerie directe de la Terre-twin incluent toujours un astérisque dans le mélange."
+  ],
+  "diagram_caption": "Bloquer l'étoile sur le plan focal → ailes de diffraction se faufiler autour → deuxième masque tue ces → 10−9 suppression, la planète émerge. Les coronagraphes Vortex remplacent le disque par un motif de phase."
+}

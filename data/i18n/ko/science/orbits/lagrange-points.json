@@ -1,0 +1,15 @@
+{
+  "title": "Lagrange 포인트",
+  "intro_sentence": "작은 우주선이 거의 아무 연료도 없이 놀 수 있는 각 2 몸 체계에 있는 5개의 gravitationally 균형 잡힌 반점 — 그리고 실제로 살아있는 대부분의 현대 깊은 공간 관찰자.",
+  "narrative_101": [
+    "다른 두 가지 신체 궤도를 가져다 - 태양과 지구, 지구와 달, 태양과 목성 - 그리고 세 번째, 훨씬 작은 몸이 두 개의 큰 것들에 상대를 수용 할 수있는 궤도 비행기에서 정확히 다섯 개의 반점이 있습니다. Joseph-Louis Lagrange는 1772에서 근무했습니다. 두 반 세기 후 그들은 가장 가치있는 부동산입니다.",
+    "JWST는 Sun-Earth L2에 앉아 있습니다. SOHO는 Sun-Earth L1에 앉아 있습니다. 게이트웨이는 Earth-Moon L2 근처에 살고 있습니다. Queqiao 릴레이는 Earth-Moon L2의 달을 넘어서서 Chang'e 신호를 기록합니다. name-spacecraft 목록은 거의 완전히 Lagrange-stationed입니다."
+  ],
+  "body_paragraphs": [
+    "특정 지오메트리에 앉아 5 점. **L1**는 Sun-Earth를 연결하는 선에 2개의 몸 사이에서 있습니다, 지구의 ~1.5백만 킬로미터 태양, 태양의 잡아당기기 및 지구의 잡아당기기 균형은 원심적인 필요조건입니다. **L2**는 동일한 선에 있지만, 더 작은 몸의 FAR 측에 - Sun-Earth, ~1.5 백만 km 지구의 항선. **L3**는 지구의 관점에서 태양 뒤에 숨은 더 큰 몸의 반대면에 있습니다. ** L4** 및 ** L5**는 2개의 몸으로 형성된 평지 삼각형의 vertices에 있습니다 — 60°는 더 작은 몸 궤도의 뒤에 60°.",
+    "안정성은 날카롭게 다릅니다. L1, L2 및 L3는 ** 안장 점 ** — in-out 축선에 기름을 바르는 그러나 수직 축에 불안정합니다. 우주선은 작은 역 유지 화상을하지 않는 한 달 안에 떨어질 것입니다. L4 및 L5는 ** 안정 ** - 그들은 잠재적 에너지 웰빙. 먼지는 지구 태양 L4/L5 (Kordylewski 구름, 연인 그러나 진짜); 트로이 사람의 수백만에 있는 Sun-Jupiter L4와 L5의 주위에 해방합니다.",
+    "** Sun-Earth Lagrange 포인트 ** 큰 관찰자가 살고있는 곳 : SEL1 호스트 SOHO (1996 년 이후 일요일 시계) 및 DSCOVR (Earth-watching); SEL2 호스트 JWST, Spektr-RG, Euclid, Gaia, 이전에 Herschel + Planck - 안티 - Sun + Earth + Moon은 한쪽에 모두 그림자 방패로 쉽습니다. SEL2는 지구에서 떨어져 자유 낙하의 6 달, 도착에 1개의 ~5 m/s halo-orbit-insertion 화상과 더불어 입니다; ~2 m/s/yr 보다는 역 기류를 위한 연료 없음.",
+    "**Earth-Moon Lagrange 포인트 **는 Artemis 프로그램에 대한 전략적 부동산입니다. EML2 (~60,000 km 지난 달)는 NRHO의 게이트웨이에 대한 노후화 포인트입니다 (그것은 주변의 rectilinear halo). 그것은 멀리 양쪽에 선의 통찰력을 제공합니다 (창의 4 착륙; Queqiao는 EML2 및 지구에 릴레이. 지구와 달 사이 EML1는, 이동에 출혈 Δv 없이 반복적으로 하 고 싶은 어떤 cislunar 건축든지를 위한 자연적인 waypoint입니다. 승무원 달의 향후 10 년은 크게 Lagrange-point 이야기입니다."
+  ],
+  "diagram_caption": "두 몸 체계 당 5개의 중력 균형 잡힌 반점. L1/L2/L3 안장 점 (전송 요구); L4/L5 안정되어 있는 우물. Sun-Earth L2는 JWST + Euclid + Spektr-RG를 호스팅합니다. Earth-Moon L2는 Gateway + Queqiao를 호스팅합니다."
+}

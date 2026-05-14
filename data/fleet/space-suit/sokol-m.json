@@ -1,0 +1,26 @@
+{
+  "id": "sokol-m",
+  "name": "Sokol-M",
+  "category": "space-suit",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "NPP Zvezda",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "Russia's next-generation Soyuz/PTK launch-entry suit",
+  "credit": "Replacement for Sokol KV-2 — incorporates lessons learned over 50 years of Soyuz launch-entry operations. Slated for Russia's PTK / Orel crewed spacecraft.",
+  "links": [
+    {
+      "l": "RussianSpaceWeb · Sokol-M",
+      "u": "https://www.russianspaceweb.com/sokol_m.html",
+      "t": "intro"
+    },
+    {
+      "l": "NPP Zvezda · Future space suit programs",
+      "u": "https://zvezda-npp.ru/en/news/",
+      "t": "core"
+    }
+  ]
+}

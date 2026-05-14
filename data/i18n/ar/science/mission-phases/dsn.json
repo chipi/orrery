@@ -1,0 +1,11 @@
+{
+  "title": "شبكة الفضاء العميق",
+  "intro_sentence": "٣ مجمعات هوائيات عملاقة مساحتها ١٢٠ درجة حول الأرض - غولدستون، مدريد، كانبيرا - توفر تغطية مستمرة لأي مركبة فضائية تتجاوز المدار الأرضي المنخفض.",
+  "body_paragraphs": [
+    "شبكة الفضاء العميقة هي ما يجعل الضوء الفضائي بين الكواكب متقناً فبدونها، لا تزال المركبة الفضائية تطير (بإمكانها أن تقوم بعملية تزلج على ظهر السفينة + بحرية مستقلة مع بعضها البعض لأسابيع) ولكن لا أحد على الأرض سيعرف مكانها أو ما تفعله أو ما تعلمه. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
+    "وهناك ثلاث مجمعات هوائيات مساحتها ١٢٠ درجة حول العالم - غولدستون )كاليفورنيا( ومدريد )اسبانيا( وكانبيرا )استراليا( - تضمن أن تكون أي مركبة فضائية خارج المدار الثابت بالنسبة للأرض في خط البصر لمجمع واحد على الأقل في جميع الأوقات مع دوارة الأرض. كل مجمع له هوائيات متعددة الماركيز هو 70 متراً من الأطباق الكبيرة أقل 34 متراً من الهوائيات تتعامل مع أحدث حركة المرور",
+    "ثلاث عمليات ** Telemetry**: receive science + housekeeping data from the spacecraft (the slow link, megabits to a few hundred Mbits from Mars; tens of bits/s from Voyager at 24 billion km). ** أعضاء اللجنة**: تعليمات اتصال بالمركبة الفضائية (مشفوعة بشدّة الإشعاع؛ موقعة لأغراض الأمن). ** التعقب**: قياس الوقت الضئيل ذهاباً وإياباً ونوبة دوبلر على إشارة الناقلة - هذه معاً تكشف عن مدى المركبة الفضائية ونطاقها إلى دقة 1 متراً و0.1 ملم/س. هذا هو المكان حيث المركبة الفضائية، مع دقة كيلومترات عبر مئات الملايين من الكيلومترات من الفضاء الفارغ.",
+    "طبقة التقنيات المتقدمة على القمة ** Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar concur; the differential timing gives angular position to nanoradians. فالملاحة التي يقوم بها المريخ EDL تصيب الآن بشكل روتيني حوالي 100 متر من دقة الهبوط على ما هو أساسا ساحل متعدد الأشهر عند 000 30 كيلومتر/ساعة. دي إس إن هو السبب"
+  ],
+  "diagram_caption": "Goldstone + Madrid + Canberra at 120° intervals . continuous coverage as Earth rotates . ranging + Doppler + delta-DOR . kilometre-class spacecraft position across the solar system."
+}

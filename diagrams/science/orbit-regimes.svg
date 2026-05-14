@@ -1,32 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Earth at the centre with four concentric orbit-regime bands: LEO close in, MEO in the GPS region, GEO at the geostationary ring, HEO as a lopsided ellipse.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Earth-orbit regimes — LEO, MEO at GPS altitude, GEO at the geostationary ring, and HEO as a Molniya-style ellipse — drawn at their relative altitudes.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .earth { fill: rgba(75,156,211,0.25); stroke: rgba(75,156,211,0.85); stroke-width: 1.5; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .earth { fill: rgba(75,156,211,0.35); stroke: rgba(75,156,211,0.95); stroke-width: 1.5; }
     .leo { stroke: #4ecdc4; stroke-width: 1.6; fill: none; }
     .meo { stroke: #7b9cff; stroke-width: 1.6; fill: none; }
     .geo { stroke: #ffc850; stroke-width: 1.6; fill: none; }
     .heo { stroke: #ff8c3c; stroke-width: 1.6; fill: none; stroke-dasharray: 5 3; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 10px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.6); }
-    .leo-l { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 9px; }
-    .meo-l { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 9px; }
-    .geo-l { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9px; }
-    .heo-l { fill: #ff8c3c; font-family: 'Space Mono', monospace; font-size: 9px; }
+    .leo-l { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+    .meo-l { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+    .geo-l { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+    .heo-l { fill: #ff8c3c; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">Earth-orbit regimes</text>
-  <circle class="earth" cx="180" cy="140" r="22" />
-  <text class="tick" x="180" y="143" text-anchor="middle" fill="rgba(255,255,255,0.85)">Earth</text>
-  <circle class="leo" cx="180" cy="140" r="32" />
-  <text class="leo-l" x="180" y="100" text-anchor="middle">LEO · 408 km</text>
-  <circle class="meo" cx="180" cy="140" r="62" />
-  <text class="meo-l" x="180" y="68" text-anchor="middle">MEO · GPS 20,200 km</text>
-  <circle class="geo" cx="180" cy="140" r="92" />
-  <text class="geo-l" x="180" y="36" text-anchor="middle">GEO · 35,786 km (24h period)</text>
-  <ellipse class="heo" cx="240" cy="140" rx="135" ry="50" />
-  <text class="heo-l" x="365" y="170" text-anchor="end">HEO · Molniya</text>
-  <circle cx="180" cy="108" r="2" fill="#4ecdc4" />
-  <circle cx="180" cy="78" r="2" fill="#7b9cff" />
-  <circle cx="180" cy="48" r="2" fill="#ffc850" />
-  <text class="lbl" x="20" y="262">altitude → period → coverage; each regime is a different compromise</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+  <circle class="dim-star" cx="560" cy="290" r="0.6" />
+
+  <text class="label" x="40" y="28">EARTH-ORBIT REGIMES — ALTITUDE → PERIOD → COVERAGE</text>
+
+  <!-- Earth at left-centre to leave room for HEO right -->
+  <circle class="earth" cx="220" cy="180" r="26" />
+  <text class="label" x="220" y="184" text-anchor="middle" fill="rgba(255,255,255,0.9)">EARTH</text>
+
+  <!-- LEO band: just outside Earth -->
+  <circle class="leo" cx="220" cy="180" r="38" />
+  <circle fill="#4ecdc4" cx="220" cy="142" r="2.5" />
+  <text class="leo-l" x="220" y="130" text-anchor="middle">LEO · 408 km · 92 min</text>
+  <text class="sublabel" x="220" y="240" text-anchor="middle">ISS · Starlink · Hubble</text>
+
+  <!-- MEO ring: ~62 px from Earth -->
+  <circle class="meo" cx="220" cy="180" r="72" />
+  <circle fill="#7b9cff" cx="220" cy="108" r="2.5" />
+  <text class="meo-l" x="220" y="96" text-anchor="middle">MEO · 20,200 km · 12 h</text>
+  <text class="sublabel" x="220" y="84" text-anchor="middle">GPS · Galileo · GLONASS</text>
+
+  <!-- GEO ring: ~108 px -->
+  <circle class="geo" cx="220" cy="180" r="108" />
+  <circle fill="#ffc850" cx="220" cy="72" r="2.5" />
+  <text class="geo-l" x="220" y="60" text-anchor="middle">GEO · 35,786 km · 24 h</text>
+  <text class="sublabel" x="220" y="48" text-anchor="middle">geostationary · weather · comms</text>
+
+  <!-- HEO Molniya: long ellipse extending to the right -->
+  <ellipse class="heo" cx="360" cy="180" rx="200" ry="60" />
+  <text class="heo-l" x="565" y="184" text-anchor="end">HEO · MOLNIYA</text>
+  <text class="sublabel" x="565" y="196" text-anchor="end">e ≈ 0.7 · 12 h, hangs over the pole</text>
+  <text class="sublabel" x="565" y="208" text-anchor="end">apogee ≈ 39,800 km</text>
+
+  <!-- Altitude scale callout on the bottom -->
+  <text class="sublabel" x="40" y="280">ALT  ·    400 km    ·    20,200    ·    35,786    ·    39,800</text>
+  <text class="sublabel" x="40" y="292">PER  ·    92 min   ·    12 h         ·    24 h (sync)·   12 h (e=0.7)</text>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">each regime is a different compromise of period, coverage, and Δv-to-reach</text>
 </svg>

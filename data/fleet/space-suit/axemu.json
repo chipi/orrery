@@ -1,0 +1,34 @@
+{
+  "id": "axemu",
+  "name": "AxEMU (Axiom EVA Mobility Unit)",
+  "category": "space-suit",
+  "agency": "NASA / Axiom Space",
+  "country": "USA",
+  "manufacturer": "Axiom Space (suit) / Prada (outer-layer)",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "lunar-return",
+  "best_known_for": "Next-generation US EVA suit being qualified for the Artemis III lunar landing",
+  "credit": "Axiom Space's contracted EVA suit for NASA's Artemis lunar return. Heritage from the EMU but with mobility joints comparable to Apollo's A7LB, a regenerable amine CO₂ scrubber, HD video in the helmet, and dust-resistant joints for lunar surface use. Outer-layer styling by Prada.",
+  "linked_missions": [
+    "artemis3"
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · AxEMU",
+      "u": "https://en.wikipedia.org/wiki/AxEMU",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Artemis EVA suits",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/spacesuit/",
+      "t": "core"
+    },
+    {
+      "l": "Axiom Space · AxEMU",
+      "u": "https://www.axiomspace.com/news/axemu",
+      "t": "deep"
+    }
+  ]
+}

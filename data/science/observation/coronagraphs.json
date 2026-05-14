@@ -1,0 +1,26 @@
+{
+  "id": "coronagraphs",
+  "tab": "observation",
+  "order": 3,
+  "photo": {
+    "src": "/images/science/coronagraphs-hr8799.jpg",
+    "credit": "NASA / JPL-Caltech · the HR 8799 system — four gas-giant exoplanets directly imaged after coronagraphic suppression of the host star."
+  },
+  "links": [
+    {
+      "l": "NASA · Coronagraphs and Starshades",
+      "u": "https://exoplanets.nasa.gov/alien-worlds/ways-to-find-a-planet/#/4",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · The Coronagraph on Roman Space Telescope",
+      "u": "https://roman.gsfc.nasa.gov/coronagraph.html",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Coronagraph",
+      "u": "https://en.wikipedia.org/wiki/Coronagraph",
+      "t": "deep"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 2,
   "diagram": "lambert-problem.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Every cell on a porkchop solves Lambert for that (departure, arrival) pair" },
     { "route": "/fly", "context_key": "/fly's transfer arc is a Lambert solution rendered in real time" }

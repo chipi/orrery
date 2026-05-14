@@ -1,30 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" role="img" aria-label="A vertical time-of-flight axis showing how cost trades off: fast trips expensive, slow trips also expensive, Hohmann band cheapest in between.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Time of flight as a porkchop axis — fast trips need high delta-v, slow trips are wasteful, the cheap Hohmann band lives in between. Mars values 100–500 days.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
+
   <defs>
-    <linearGradient id="tof-grad" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="tof-grad-v" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#c1440e" />
-      <stop offset="40%" stop-color="#4ecdc4" />
-      <stop offset="60%" stop-color="#4ecdc4" />
-      <stop offset="100%" stop-color="#ffc850" />
+      <stop offset="30%" stop-color="#ffc850" />
+      <stop offset="50%" stop-color="#4ecdc4" />
+      <stop offset="80%" stop-color="#ffc850" />
+      <stop offset="100%" stop-color="#c1440e" />
     </linearGradient>
   </defs>
-  <text class="lbl" x="20" y="22">Time-of-flight axis (Mars)</text>
-  <rect x="120" y="40" width="34" height="160" fill="url(#tof-grad)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
-  <line x1="120" y1="40" x2="100" y2="40" class="stroke" />
-  <text class="tick" x="60" y="44">100 d</text>
-  <line x1="120" y1="200" x2="100" y2="200" class="stroke" />
-  <text class="tick" x="60" y="204">500 d</text>
-  <line x1="154" y1="60" x2="180" y2="60" class="stroke" />
-  <text class="tick" x="186" y="64" fill="rgba(193,68,14,0.85)">fast = expensive</text>
-  <line x1="154" y1="115" x2="180" y2="115" class="stroke" />
-  <text class="tick" x="186" y="119" fill="#4ecdc4">~250 d Hohmann band</text>
-  <line x1="154" y1="195" x2="180" y2="195" class="stroke" />
-  <text class="tick" x="186" y="199" fill="#ffc850">slow = wasteful</text>
-  <text class="tick" x="137" y="32" text-anchor="middle">faster</text>
-  <text class="tick" x="137" y="215" text-anchor="middle">slower</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">TIME-OF-FLIGHT AXIS — FAST AND SLOW BOTH COST EXTRA Δv</text>
+
+  <!-- Vertical bar at left -->
+  <rect x="180" y="60" width="50" height="220" fill="url(#tof-grad-v)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+
+  <!-- Tick lines + labels -->
+  <line class="stroke" x1="180" y1="80" x2="160" y2="80" />
+  <text class="tick" x="155" y="84" text-anchor="end">100 d</text>
+  <text class="label-red" x="240" y="84">FAST · EXPENSIVE</text>
+  <text class="sublabel" x="240" y="96">high C3, big rocket required</text>
+
+  <line class="stroke" x1="180" y1="140" x2="160" y2="140" />
+  <text class="tick" x="155" y="144" text-anchor="end">200</text>
+  <text class="label-gold" x="240" y="144">200–250 d · CHEAPER</text>
+  <text class="sublabel" x="240" y="156">Type II opportunistic window</text>
+
+  <line class="stroke" x1="180" y1="180" x2="160" y2="180" />
+  <text class="tick" x="155" y="184" text-anchor="end">260</text>
+  <text class="label-accent" x="240" y="184">~260 d HOHMANN · CHEAPEST</text>
+  <text class="sublabel" x="240" y="196">8.5-month transit · Δv ≈ 3.6 km/s</text>
+
+  <line class="stroke" x1="180" y1="220" x2="160" y2="220" />
+  <text class="tick" x="155" y="224" text-anchor="end">350</text>
+  <text class="label-gold" x="240" y="224">slow Type II · OK</text>
+  <text class="sublabel" x="240" y="236">extra TOF buys lower Δv but eats food/water</text>
+
+  <line class="stroke" x1="180" y1="260" x2="160" y2="260" />
+  <text class="tick" x="155" y="264" text-anchor="end">500 d</text>
+  <text class="label-red" x="240" y="264">SLOW · WASTEFUL</text>
+  <text class="sublabel" x="240" y="276">curves back up — radiation + life-support cost</text>
+
+  <!-- Arrows: faster / slower -->
+  <line class="stroke" x1="205" y1="50" x2="205" y2="46" />
+  <polygon fill="rgba(255,255,255,0.85)" points="205,40 200,52 210,52" />
+  <text class="sublabel" x="205" y="38" text-anchor="middle">FASTER</text>
+
+  <line class="stroke" x1="205" y1="290" x2="205" y2="294" />
+  <polygon fill="rgba(255,255,255,0.85)" points="205,300 200,288 210,288" />
+  <text class="sublabel" x="205" y="312" text-anchor="middle">SLOWER</text>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">Mars windows · 100–500 d typical · Hohmann is the U-curve minimum</text>
 </svg>

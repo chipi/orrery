@@ -1,29 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Hyperbolic flyby with constant V∞ on the asymptotes far from the planet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="A hyperbolic flyby past a planet: V-infinity is the same magnitude on the incoming and outgoing asymptotes, but the direction rotates by the deflection angle, giving the spacecraft a heliocentric velocity boost.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .asymptote { stroke: rgba(255,255,255,0.5); stroke-width: 1.2; stroke-dasharray: 5 3; fill: none; }
+    .traj { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .traj-fill { fill: rgba(78,205,196,0.06); stroke: none; }
+    .planet { fill: rgba(75,156,211,0.4); stroke: rgba(75,156,211,0.9); stroke-width: 1.5; }
+    .deflection { stroke: #ffc850; stroke-width: 1.6; fill: none; stroke-dasharray: 3 2; }
+    .arrow-accent { fill: #4ecdc4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Planet -->
-  <circle cx="200" cy="150" r="14" class="focus" />
-  <text x="218" y="162" class="label-accent">planet</text>
-  <!-- Asymptotes (dashed) -->
-  <line x1="20" y1="40" x2="170" y2="135" class="dashed" />
-  <line x1="380" y1="40" x2="230" y2="135" class="dashed" />
-  <!-- Hyperbolic trajectory (accent curve) -->
-  <path d="M 30 50 Q 200 230 370 50" class="accent" />
-  <!-- Velocity arrows on the asymptotes -->
-  <line x1="60" y1="60" x2="40" y2="46" class="accent" />
-  <polygon points="38,44 46,46 44,52" fill="#4ecdc4" />
-  <text x="50" y="36" class="label-accent">V∞</text>
-  <line x1="340" y1="60" x2="360" y2="46" class="accent" />
-  <polygon points="362,44 354,46 356,52" fill="#4ecdc4" />
-  <text x="318" y="36" class="label-accent">V∞</text>
-  <!-- Caption -->
-  <text x="68" y="288" class="label-mute">|V∞| same on both asymptotes — direction changes by deflection angle</text>
+
+  <!-- Stars -->
+  <circle class="dim-star" cx="50" cy="50" r="0.6" />
+  <circle class="dim-star" cx="540" cy="40" r="0.7" />
+  <circle class="dim-star" cx="120" cy="35" r="0.5" />
+  <circle class="dim-star" cx="500" cy="60" r="0.5" />
+  <circle class="dim-star" cx="60" cy="290" r="0.6" />
+
+  <text class="label" x="40" y="28">HYPERBOLIC FLYBY · |V∞| CONSTANT, DIRECTION ROTATED BY δ</text>
+
+  <!-- Planet at centre -->
+  <circle class="planet" cx="300" cy="200" r="22" />
+  <text class="label" x="300" y="204" text-anchor="middle" fill="rgba(255,255,255,0.9)">P</text>
+  <text class="sublabel" x="300" y="237" text-anchor="middle">JUPITER</text>
+
+  <!-- Incoming asymptote: from upper-left -->
+  <line class="asymptote" x1="40" y1="60" x2="270" y2="180" />
+  <!-- Outgoing asymptote: to upper-right -->
+  <line class="asymptote" x1="330" y1="180" x2="560" y2="60" />
+
+  <!-- Hyperbolic trajectory: curves below the planet -->
+  <path class="traj-fill" d="M 50 70 Q 300 360 550 70 L 545 75 Q 300 350 55 75 Z" />
+  <path class="traj" d="M 50 70 Q 300 360 550 70" />
+
+  <!-- Incoming V∞ vector -->
+  <line stroke="#4ecdc4" stroke-width="2" x1="100" y1="80" x2="60" y2="64" />
+  <polygon class="arrow-accent" points="55,62 65,62 64,68" />
+  <text class="label-accent" x="74" y="58">V∞ (in)</text>
+
+  <!-- Outgoing V∞ vector -->
+  <line stroke="#4ecdc4" stroke-width="2" x1="500" y1="80" x2="540" y2="64" />
+  <polygon class="arrow-accent" points="545,62 535,62 536,68" />
+  <text class="label-accent" x="490" y="58">V∞ (out)</text>
+
+  <!-- Deflection angle δ at planet -->
+  <path class="deflection" d="M 240 200 A 60 60 0 0 1 360 200" />
+  <text class="label-gold" x="300" y="170" text-anchor="middle">δ</text>
+  <text class="sublabel" x="300" y="183" text-anchor="middle">deflection</text>
+
+  <!-- Periapsis -->
+  <circle fill="rgba(78,205,196,0.85)" cx="300" cy="280" r="3.5" />
+  <line class="dashed" x1="300" y1="222" x2="300" y2="280" />
+  <text class="label" x="368" y="276">PERIAPSIS</text>
+  <text class="sublabel" x="368" y="288">closest approach · r_p</text>
+
+  <!-- Velocity at periapsis (high) -->
+  <line stroke="#4ecdc4" stroke-width="2" x1="300" y1="280" x2="350" y2="280" />
+  <polygon class="arrow-accent" points="355,280 345,275 345,285" />
+  <text class="label-accent" x="316" y="304">v_p (max)</text>
+
+  <!-- Reference panel: heliocentric Δv from flyby -->
+  <g transform="translate(40,90)">
+    <rect x="0" y="0" width="170" height="100" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">GRAVITY-ASSIST GAIN</text>
+    <text class="sublabel" x="8" y="32">heliocentric Δv =</text>
+    <text class="sublabel" x="8" y="44">2 · V∞ · sin(δ/2)</text>
+    <text class="sublabel" x="8" y="62">Voyager 2 · Jupiter:</text>
+    <text class="sublabel" x="8" y="74">+10 km/s sun-frame</text>
+    <text class="sublabel" x="8" y="90">Δv "free" — no fuel burned</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">in the planet's frame, energy is conserved; in the sun's frame, the spacecraft gains kinetic energy</text>
 </svg>

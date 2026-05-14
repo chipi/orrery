@@ -36,7 +36,8 @@
         "rover",
         "lander",
         "orbiter",
-        "observatory"
+        "observatory",
+        "space-suit"
       ]
     },
     "agency": { "type": "string", "minLength": 1 },

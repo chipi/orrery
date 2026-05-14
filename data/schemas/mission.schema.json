@@ -146,8 +146,96 @@
                   "edl_or_oi",
                   "flyby",
                   "earth_return",
-                  "anomaly"
+                  "anomaly",
+                  "parking_orbit_exit",
+                  "loi",
+                  "tei",
+                  "descent_start",
+                  "ascent"
                 ]
+              },
+              "dv_km_s": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 20,
+                "description": "Optional ∆v for this event in km/s. Used by HUD to annotate burns (e.g., 'TLI — 3.07 km/s'). Per ADR-058."
+              }
+            }
+          }
+        },
+        "cislunar_profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Cislunar trajectory profile per ADR-058. Drives the Earth-centered cislunar view for Moon missions. All sub-objects optional; missing = parametric defaults inferred from flight.arrival + flight.totals. Tier 1 (analytic) uses the parametric fields; Tier 2 (published) populates waypoints_km from reconstructed state vectors.",
+          "properties": {
+            "source_tier": {
+              "enum": ["tier_1_analytic", "tier_2_published"],
+              "description": "tier_1_analytic = trajectory shape generated procedurally from parametric fields (looks correct, not literally accurate). tier_2_published = waypoints_km populated from public trajectory reconstruction (NASA TND, post-flight report, etc.)."
+            },
+            "parking_orbit": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Earth parking orbit before TLI. Omit for missions that did direct ascent without parking (e.g., Luna 9 hard landers).",
+              "properties": {
+                "altitude_km": { "type": "number", "minimum": 100, "maximum": 5000 },
+                "inclination_deg": { "type": "number", "minimum": 0, "maximum": 180 },
+                "revs": { "type": "number", "minimum": 0, "maximum": 20, "description": "Number of parking-orbit revolutions before TLI. Apollo did ~1.5; Chandrayaan-3 did multi-burn perigee raises (encode via translunar.type = 'spiral' instead)." }
+              }
+            },
+            "tli": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Trans-Lunar Injection burn parameters.",
+              "properties": {
+                "dv_kms": { "type": "number", "minimum": 0, "maximum": 10 },
+                "c3_km2_s2": { "type": "number", "minimum": -5, "maximum": 50, "description": "Characteristic energy at Earth departure. Negative for sub-escape lunar transfers; near zero for free-return; positive for fast lunar transfers." }
+              }
+            },
+            "translunar": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Translunar coast architecture.",
+              "properties": {
+                "type": {
+                  "enum": ["direct", "free_return", "hybrid_free_return", "spiral"],
+                  "description": "direct = single Hohmann-style ellipse; free_return = Earth-Moon-Earth figure-8 (Apollo classic); hybrid_free_return = free-return with mid-course bias (Artemis II 9,200 km periselene); spiral = multi-burn perigee raise (Chandrayaan-3)."
+                }
+              }
+            },
+            "lunar_arrival": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Lunar arrival profile.",
+              "properties": {
+                "type": {
+                  "enum": ["impact", "orbit", "orbit_and_land", "flyby", "lor_orbit"],
+                  "description": "impact = direct hard landing (Luna 9); orbit = LOI into lunar orbit, NO landing (LRO, Clementine, Chandrayaan-1, Apollo CSM); orbit_and_land = LOI then descent to surface (Chandrayaan-3, Chang'e 4, Luna 17, SLIM, Blue Moon Mk1); flyby = no LOI (Artemis II, Apollo 13 abort); lor_orbit = Lunar Orbit Rendezvous staging (Chang'e 5)."
+                },
+                "altitude_km": { "type": "number", "minimum": 0, "maximum": 50000, "description": "Lunar orbit altitude (for orbit / lor_orbit types). Omit for impact / flyby." },
+                "inclination_deg": { "type": "number", "minimum": 0, "maximum": 180 },
+                "periselene_km": { "type": "number", "minimum": 0, "maximum": 100000, "description": "Closest approach altitude above Moon surface. Mirrors flight.arrival.periapsis_km for Moon missions; restated here for cislunar geometry sizing." }
+              }
+            },
+            "return": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Return-to-Earth profile.",
+              "properties": {
+                "type": {
+                  "enum": ["none", "tei_direct", "tei_lor"],
+                  "description": "none = one-way (orbiters, landers without ascent stage); tei_direct = TEI from lunar orbit straight to Earth (Apollo); tei_lor = TEI after LOR rendezvous (Chang'e 5)."
+                },
+                "dv_kms": { "type": "number", "minimum": 0, "maximum": 5 }
+              }
+            },
+            "waypoints_km": {
+              "type": "array",
+              "description": "Tier 2 only: spacecraft state-vector samples in Earth-Centered Inertial (ECI, J2000) coordinates, km. Each tuple = [met_days, x_km, y_km, z_km]. Sorted by met_days. waypoints_km[0].met_days MUST equal 0 (launch); waypoints_km[last].met_days MUST be ≤ transit_days × 2 for round-trips or ≤ transit_days for one-way. Renderer prefers waypoints when present, falls back to parametric otherwise.",
+              "items": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": { "type": "number" }
               }
             }
           }

@@ -1,0 +1,36 @@
+{
+  "id": "a7l",
+  "name": "Apollo A7L",
+  "category": "space-suit",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "ILC Industries (later ILC Dover)",
+  "first_flight": "1968-10-11",
+  "last_flight": "1971-02-09",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "The suit worn on Apollo 11–14 — the first to support EVA on another world",
+  "credit": "First operational lunar surface suit. Hard upper torso, soft-fabric arms and legs, integrated lunar overboots, PLSS backpack with sublimator cooling and LiOH CO₂ scrubber, OPS emergency O₂ cylinder above the PLSS. Operating pressure 3.7 psi pure O₂ — lowest of any flown suit, to maximise mobility for walking in 1/6 g.",
+  "linked_missions": [
+    "apollo11",
+    "apollo13"
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Apollo/Skylab A7L",
+      "u": "https://en.wikipedia.org/wiki/Apollo/Skylab_A7L",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Apollo space suit history",
+      "u": "https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Smithsonian · A7L Aldrin suit",
+      "u": "https://airandspace.si.edu/collection-objects/pressure-suit-a-7l-aldrin-apollo-11-flown/nasm_A19730040000",
+      "t": "deep"
+    }
+  ]
+}

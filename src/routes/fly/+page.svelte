@@ -1296,10 +1296,11 @@
 
       // LOI — start of lunar_orbit, with the orbit insertion ∆v.
       const lunarPhase = traj.phases.find((p) => p.type === 'lunar_orbit');
-      const loiDv = profile?.lunar_arrival?.type === 'orbit' || profile?.lunar_arrival?.type === 'lor_orbit'
-        ? // No dedicated field; pull from flight.arrival.orbit_insertion_dv_km_s via mission state.
-          mission.flight?.arrival?.orbit_insertion_dv_km_s
-        : undefined;
+      const loiDv =
+        profile?.lunar_arrival?.type === 'orbit' || profile?.lunar_arrival?.type === 'lor_orbit'
+          ? // No dedicated field; pull from flight.arrival.orbit_insertion_dv_km_s via mission state.
+            mission.flight?.arrival?.orbit_insertion_dv_km_s
+          : undefined;
       if (lunarPhase && lunarPhase.points.length > 0 && loiDv != null) {
         annotations.push({
           position: lunarPhase.points[0],
@@ -1949,11 +1950,7 @@
       // Target the Earth-Moon midpoint (Earth at origin, Moon at
       // moonEciPos(simDay) × SCALE_CISLUNAR).
       const moonPos = moonEciPos(simDay);
-      cislunarCamTarget.set(
-        (moonPos.x * SCALE_CISLUNAR) * 0.4,
-        0,
-        (moonPos.z * SCALE_CISLUNAR) * 0.4,
-      );
+      cislunarCamTarget.set(moonPos.x * SCALE_CISLUNAR * 0.4, 0, moonPos.z * SCALE_CISLUNAR * 0.4);
       cislunarCamera.position.set(
         cislunarCamTarget.x + cislunarCamR * Math.sin(cislunarCamP) * Math.sin(cislunarCamT),
         cislunarCamTarget.y + cislunarCamR * Math.cos(cislunarCamP),
@@ -3493,7 +3490,7 @@
     min-width: 120px;
     min-height: 120px;
     background: transparent;
-    border: 1px solid rgba(68, 102, 255, 0.0);
+    border: 1px solid rgba(68, 102, 255, 0);
     border-radius: 4px;
     cursor: pointer;
     z-index: 25;

@@ -4134,7 +4134,10 @@
   /* Top-control row — flex parent puts the Flight Director banner and
      the Layers panel side-by-side at the top instead of stacked. Each
      child still controls its own visibility (lens-gated banner, layer-
-     gated panel) but loses its fixed position so the flex layout wins. */
+     gated panel) but loses its fixed position so the flex layout wins.
+     Both children are flex:1 0 0 with the same width + padding + min-
+     height baseline, so collapsing one panel doesn't change its width
+     and collapsed heights match across both panels. */
   .top-controls {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
@@ -4145,7 +4148,7 @@
     gap: 12px;
     align-items: flex-start;
     pointer-events: none;
-    max-width: calc(100vw - 32px);
+    width: min(880px, calc(100vw - 32px));
   }
   .top-controls :global(.banner),
   .top-controls :global(.panel) {
@@ -4154,6 +4157,15 @@
     left: auto;
     transform: none;
     pointer-events: auto;
+    flex: 1 0 0;
+    width: auto;
+    max-width: none;
+    min-height: 40px;
+    padding: 10px 36px 8px 16px;
+    box-sizing: border-box;
+  }
+  .top-controls :global(.banner.collapsed) {
+    padding: 10px 36px 8px 16px;
   }
   .top-controls :global(.banner:hover),
   .top-controls :global(.banner:focus-visible) {

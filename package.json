@@ -95,7 +95,7 @@
     "vite": "5.4.11",
     "vitepress": "1.5.0",
     "vitepress-sidebar": "1.25.2",
-    "vitest": "2.1.8"
+    "vitest": "4.1.6"
   },
   "dependencies": {
     "katex": "^0.16.45",

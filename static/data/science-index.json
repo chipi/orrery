@@ -57,10 +57,31 @@
   },
   {
     "tab": "life-in-space",
+    "section": "eva-suits",
+    "title": "EVA spacewalk suits",
+    "intro": "An EVA suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum.",
+    "haystack": "eva spacewalk suits an eva suit is a one-person spacecraft — pressure shell, closed-loop life support, thermal control, sun visor, and a thruster pack — built so a human can spend 6–8 hours outside in vacuum. the eva suit's central problem is **closed-loop rebreathing**. outside the airlock there is no atmosphere to vent co₂ into, so the suit must scrub it from the astronaut's exhalation and recycle the remaining oxygen. the current us emu runs a **lithium hydroxide (lioh) canister** in the backpack that absorbs co₂ irreversibly — replaced ground-side after every eva. the russian orlan and the latest us metox canister use a **regenerable amine swing-bed**: it adsorbs co₂ during the eva, then is baked out in the airlock between walks and reused. the station-side equivalent inside the iss (the cdra, carbon dioxide removal assembly) does the same thing on a regenerative cycle, while the ogs (oxygen generation system) electrolyses water to replenish o₂. the suit is a miniature, hand-portable version of station eclss, running for 8 hours on its own power and supplies."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "iva-suits",
+    "title": "IVA pressure suits",
+    "intro": "The flight suit — Sokol, ACES, Shenzhou IVA, SpaceX, Starliner — is the one you wear inside the spacecraft during the high-risk minutes of launch, ascent abort, re-entry, and landing.",
+    "haystack": "iva pressure suits the flight suit — sokol, aces, shenzhou iva, spacex, starliner — is the one you wear inside the spacecraft during the high-risk minutes of launch, ascent abort, re-entry, and landing. iva (intra-vehicular activity) suits exist because of one accident. on 30 june 1971, soyuz 11 returned from the world's first space-station mission with its three cosmonauts dead in their seats — a depressurisation valve had opened at 168 km altitude during separation, and the crew were in shirtsleeves with no suits to save them. the soviet response was the sokol kv-2: a soft pressure suit donned inside the descent module and worn for every soyuz launch and return since 1973. the us followed a similar path after the challenger and columbia losses: shirtsleeve ascents on the shuttle became unacceptable, and the advanced crew escape suit (aces) was made mandatory. every crewed spacecraft flying today — soyuz, crew dragon, starliner, shenzhou — has its own iva suit."
+  },
+  {
+    "tab": "life-in-space",
     "section": "long-duration-effects",
     "title": "Long-duration effects",
     "intro": "Six months is the standard ISS rotation; one year has been done twice; Mars is three years. Each step extends the dose of every other effect — and adds new ones we can't yet fully reverse.",
     "haystack": "long-duration effects six months is the standard iss rotation; one year has been done twice; mars is three years. each step extends the dose of every other effect — and adds new ones we can't yet fully reverse. roughly 60% of long-duration crew develop **sans** — space-associated neuro-ocular syndrome — a constellation of optic-disc swelling, posterior eyeball flattening, choroidal folds, and increased optic-nerve-sheath diameter. the leading hypothesis is fluid shift to the head increasing intracranial pressure; the changes don't fully reverse within a year of return for some crew. sans is the single most concerning physiologic finding from long-duration spaceflight."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "lunar-suits",
+    "title": "Lunar surface suits",
+    "intro": "A lunar suit has to do everything an orbital EVA suit does, plus walk for 7 hours on a dusty regolith floor at temperatures that swing from −170 °C in shadow to +120 °C in sunlight — and survive the dust.",
+    "haystack": "lunar surface suits a lunar suit has to do everything an orbital eva suit does, plus walk for 7 hours on a dusty regolith floor at temperatures that swing from −170 °c in shadow to +120 °c in sunlight — and survive the dust. twelve people have walked on the moon, and they did it in eight suits of the same family: the **apollo a7l** (apollo 11, 12, 14) and its successor the **a7lb** (apollo 15, 16, 17). a7l was a one-piece pressure garment with a hard upper torso, soft fabric arms and legs, integrated lunar-overboots, an over-the-shoulder plss backpack, and an oxygen purge system (ops) as emergency reserve mounted above the plss. operating pressure was 3.7 psi (0.26 atm) of pure oxygen — the lowest of any flown spacesuit, traded against maximum mobility for walking. the a7lb added a waist-joint convolution that let astronauts sit in the lunar roving vehicle without fighting the suit; without that joint the j-mission evas would not have been possible."
   },
   {
     "tab": "life-in-space",

@@ -138,7 +138,14 @@
         hreflang="en">{m.layout_footer_license()}</a
       >
       <span class="footer-sep" aria-hidden="true">|</span>
-      <span class="footer-version" title="Build version">v{__APP_VERSION__}</span>
+      <a
+        class="footer-link footer-version"
+        href="https://github.com/chipi/orrery#readme"
+        target="_blank"
+        rel="noopener noreferrer external"
+        title="Build version (opens project README on GitHub)"
+        hreflang="en">v{__APP_VERSION__}</a
+      >
     </nav>
   </footer>
 {/key}

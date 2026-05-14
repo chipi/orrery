@@ -1554,23 +1554,33 @@
     border-color: rgba(193, 68, 14, 0.7);
     color: #ffb799;
   }
+  /* Drop hud-controls below the detail panel on mobile so the panel
+     can fully cover its background; on desktop hud-controls stay above. */
+  @media (max-width: 768px) {
+    .hud-controls {
+      z-index: 25;
+    }
+  }
+
   @media (max-width: 500px) {
     .hud-controls {
       left: 8px;
       gap: 6px;
     }
     .toggle {
-      padding: 4px 6px;
-      font-size: 10px;
-      max-width: 60px;
+      padding: 3px 5px;
+      font-size: 9px;
+      max-width: 54px;
+      min-height: 32px;
     }
     .chip {
-      padding: 0 8px;
-      font-size: 9px;
-      min-width: 92px;
+      padding: 0 6px;
+      font-size: 8.5px;
+      min-width: 78px;
+      min-height: 28px;
     }
     .ctrl-row.chips {
-      width: 120px;
+      width: 96px;
     }
   }
 

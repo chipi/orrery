@@ -1190,7 +1190,10 @@
   .right-panel {
     background: rgba(8, 10, 22, 0.95);
     border-left: 1px solid var(--color-border);
-    padding: 18px 18px 22px;
+    /* Bottom padding clears the fixed footer pill so the last button
+       in the right-panel scroll area isn't visually overlapped by the
+       version link / Credits / Library footer chips. */
+    padding: 18px 18px calc(44px + env(safe-area-inset-bottom, 0px));
     display: flex;
     flex-direction: column;
     gap: 10px;

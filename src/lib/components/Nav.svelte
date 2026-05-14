@@ -72,6 +72,18 @@
   function onToggleLens() {
     toggleScienceLens();
   }
+
+  // ─── Mobile nav drawer ─────────────────────────────────────────
+  // On viewports ≤640px the horizontal .center scroller can't fit
+  // all 12 nav links and the locale-picker + 2 toggles next to it,
+  // so a hamburger toggle exposes the full list as a vertical drawer.
+  let mobileMenuOpen = $state(false);
+  function toggleMobileMenu() {
+    mobileMenuOpen = !mobileMenuOpen;
+  }
+  function closeMobileMenu() {
+    mobileMenuOpen = false;
+  }
 </script>
 
 <nav aria-label={m.nav_aria_label()}>
@@ -97,6 +109,25 @@
   </div>
 
   <div class="right">
+    <button
+      type="button"
+      class="menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded={mobileMenuOpen}
+      aria-controls="mobile-nav-drawer"
+      onclick={toggleMobileMenu}
+    >
+      <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+        {#if mobileMenuOpen}
+          <line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
+          <line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.6" />
+        {:else}
+          <line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6" />
+          <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6" />
+          <line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6" />
+        {/if}
+      </svg>
+    </button>
     <LocalePicker />
     <button
       type="button"
@@ -134,6 +165,31 @@
     {@render right?.()}
   </div>
 </nav>
+
+{#if mobileMenuOpen}
+  <div
+    id="mobile-nav-drawer"
+    class="mobile-drawer"
+    role="dialog"
+    aria-modal="false"
+    aria-label="Site navigation"
+  >
+    {#each linkDefs as { path, label } (path)}
+      <a
+        href={withLang(`${base}${path}`, activeLocale)}
+        class="drawer-link"
+        class:active={isActive(`${base}${path}`, $page.url.pathname)}
+        onclick={closeMobileMenu}>{label()}</a
+      >
+    {/each}
+  </div>
+  <button
+    type="button"
+    class="drawer-backdrop"
+    aria-label="Close navigation menu"
+    onclick={closeMobileMenu}
+  ></button>
+{/if}
 
 <style>
   nav {
@@ -311,12 +367,103 @@
     color: #ffc850;
   }
 
+  /* Hamburger menu toggle — hidden on desktop, shown on mobile. */
+  .menu-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .menu-toggle:hover,
+  .menu-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    outline: none;
+  }
+
+  /* Mobile drawer — slides down under the nav with all link items
+     stacked vertically. Closed by clicking a link, the backdrop, or
+     the toggle (which becomes an × when open). */
+  .mobile-drawer {
+    position: fixed;
+    top: var(--nav-height);
+    right: 0;
+    width: min(280px, 80vw);
+    max-height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    z-index: 45;
+    background: var(--color-nav-bg);
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 8px 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: -4px 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  .drawer-link {
+    display: block;
+    padding: 12px 18px;
+    font-size: var(--size-link);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: all 0.12s;
+  }
+  .drawer-link:hover,
+  .drawer-link:focus-visible {
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.95);
+    outline: none;
+  }
+  .drawer-link.active {
+    color: var(--color-text);
+    background: rgba(68, 102, 255, 0.18);
+    border-left-color: rgba(68, 102, 255, 0.85);
+  }
+  .drawer-backdrop {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 44;
+    background: rgba(0, 0, 0, 0.35);
+    border: none;
+    cursor: pointer;
+  }
+
   /* Mobile: 44px touch targets per ADR-018, hide subtitle on narrow screens */
   @media (max-width: 768px) {
     .link {
       min-height: 44px;
       display: inline-flex;
       align-items: center;
+    }
+  }
+
+  /* On narrow viewports the inline link strip can't fit 12 items.
+     Hide it and surface the full menu via the hamburger drawer. */
+  @media (max-width: 640px) {
+    .center {
+      display: none;
+    }
+    .menu-toggle {
+      display: inline-flex;
     }
   }
 

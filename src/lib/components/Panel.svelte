@@ -157,6 +157,10 @@
   .content {
     overflow-y: auto;
     padding: 14px 18px;
+    /* Bottom safe-area inset + room for the fixed footer pill so the
+       last CTA inside the panel (Plan / Fly mission) doesn't slip
+       under the version chip in the bottom-right corner. */
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
     flex: 1;
   }
 </style>

@@ -1452,13 +1452,13 @@
   .chip:hover,
   .chip:focus-visible {
     color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: rgba(190, 195, 210, 0.55);
     outline: none;
   }
   .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
+    background: rgba(190, 195, 210, 0.16);
+    border-color: rgba(190, 195, 210, 0.7);
+    color: #c8cdda;
   }
   @media (max-width: 500px) {
     .chip {
@@ -1473,8 +1473,8 @@
     max-width: 70px;
     padding: 4px 8px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    color: #dde4ff;
+    border: 1px solid rgba(190, 195, 210, 0.4);
+    color: #d6d9e2;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     line-height: 1.15;
@@ -1490,22 +1490,35 @@
   }
   .toggle:hover,
   .toggle:focus-visible {
-    border-color: #4466ff;
-    background: rgba(20, 26, 50, 0.95);
+    border-color: rgba(220, 225, 240, 0.7);
+    background: rgba(34, 38, 56, 0.95);
     outline: none;
   }
+  @media (max-width: 768px) {
+    .hud-controls {
+      z-index: 25;
+    }
+  }
+
   @media (max-width: 500px) {
     .hud-controls {
       left: 8px;
       gap: 6px;
     }
     .toggle {
-      padding: 4px 6px;
-      font-size: 10px;
-      max-width: 60px;
+      padding: 3px 5px;
+      font-size: 9px;
+      max-width: 54px;
+      min-height: 32px;
+    }
+    .chip {
+      padding: 0 6px;
+      font-size: 8.5px;
+      min-width: 78px;
+      min-height: 28px;
     }
     .ctrl-row.chips {
-      width: 120px;
+      width: 96px;
     }
   }
   .load-banner {

@@ -1433,19 +1433,31 @@
   .chip:hover,
   .chip:focus-visible {
     color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: rgba(75, 156, 211, 0.6);
     outline: none;
   }
   .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
+    background: rgba(75, 156, 211, 0.18);
+    border-color: rgba(75, 156, 211, 0.7);
+    color: #7eb6e0;
   }
+  /* Drop hud-controls below the detail panel on mobile so the panel
+     fully covers its background; desktop hud-controls keep priority. */
+  @media (max-width: 768px) {
+    .hud-controls {
+      z-index: 25;
+    }
+  }
+
   @media (max-width: 500px) {
     .chip {
-      padding: 0 8px;
-      font-size: 9px;
-      min-width: 92px;
+      padding: 0 6px;
+      font-size: 8.5px;
+      min-width: 78px;
+      min-height: 28px;
+    }
+    .ctrl-row.chips {
+      width: 96px;
     }
   }
   .toggle {

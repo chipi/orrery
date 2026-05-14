@@ -1,26 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 260" role="img" aria-label="A schematic porkchop with two cheap lobes labelled Type I and Type II surrounded by a red expensive zone.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Reading porkchop lobes — Type I (short-way) and Type II (long-way) cheap lobes inside the expensive red zone, separated by an excluded conjunction band.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: rgba(78,205,196,0.12); }
-    .accent-line { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
-    .red { stroke: rgba(193,68,14,0.6); stroke-width: 1.4; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
-    .teal { fill: #4ecdc4; }
-    .red-fill { fill: rgba(193,68,14,0.85); }
+    .axis { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.08); stroke-width: 0.8; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .red-zone { fill: rgba(193,68,14,0.06); stroke: rgba(193,68,14,0.6); stroke-width: 1.3; stroke-dasharray: 4 3; }
+    .accent-fill { fill: rgba(78,205,196,0.22); stroke: #4ecdc4; stroke-width: 1.8; }
+    .accent-fill-inner { fill: rgba(78,205,196,0.4); stroke: #4ecdc4; stroke-width: 1.5; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.8px; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">Reading the porkchop lobes</text>
-  <line class="stroke" x1="50" y1="220" x2="370" y2="220" />
-  <line class="stroke" x1="50" y1="220" x2="50" y2="50" />
-  <text class="tick" x="370" y="235" text-anchor="end">departure date →</text>
-  <text class="tick" x="50" y="42" transform="rotate(-90 38 130)">↑ time of flight</text>
-  <ellipse class="red" cx="200" cy="135" rx="160" ry="75" />
-  <ellipse class="accent" cx="160" cy="135" rx="42" ry="28" transform="rotate(-12 160 135)" />
-  <ellipse class="accent" cx="240" cy="125" rx="42" ry="28" transform="rotate(12 240 125)" />
-  <text class="tick" x="135" y="138" fill="#4ecdc4">Type I</text>
-  <text class="tick" x="220" y="128" fill="#4ecdc4">Type II</text>
-  <text class="tick" x="65" y="80" fill="rgba(193,68,14,0.85)">expensive · red zone</text>
-  <line class="dashed" x1="60" y1="190" x2="340" y2="190" />
-  <text class="tick" x="60" y="206">launch window</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">READING THE LOBES — TYPE I (SHORT) vs TYPE II (LONG)</text>
+
+  <!-- Axes -->
+  <line class="axis" x1="80" y1="270" x2="560" y2="270" />
+  <line class="axis" x1="80" y1="60" x2="80" y2="270" />
+
+  <text class="tick" x="80" y="286" text-anchor="middle">Apr</text>
+  <text class="tick" x="200" y="286" text-anchor="middle">Jun</text>
+  <text class="tick" x="320" y="286" text-anchor="middle">Aug</text>
+  <text class="tick" x="440" y="286" text-anchor="middle">Oct</text>
+  <text class="tick" x="560" y="286" text-anchor="middle">Dec</text>
+  <text class="label" x="320" y="304" text-anchor="middle">DEPARTURE DATE →</text>
+
+  <text class="tick" x="74" y="273" text-anchor="end">120</text>
+  <text class="tick" x="74" y="213" text-anchor="end">200</text>
+  <text class="tick" x="74" y="153" text-anchor="end">300</text>
+  <text class="tick" x="74" y="93" text-anchor="end">400</text>
+  <text class="label" x="40" y="44">TOF (d)</text>
+
+  <!-- Red expensive zone (outer) -->
+  <ellipse class="red-zone" cx="320" cy="170" rx="230" ry="100" />
+
+  <!-- Type I lobe (short-way, lower TOF) -->
+  <ellipse class="accent-fill" cx="250" cy="190" rx="56" ry="34" transform="rotate(-12 250 190)" />
+  <ellipse class="accent-fill-inner" cx="250" cy="190" rx="32" ry="18" transform="rotate(-12 250 190)" />
+  <text class="label-accent" x="250" y="194" text-anchor="middle">TYPE I</text>
+  <line class="lead" x1="250" y1="158" x2="260" y2="100" />
+  <text class="sublabel" x="265" y="98">SHORT-WAY · ν &lt; 180°</text>
+  <text class="sublabel" x="265" y="110">cheaper Δv, faster transit</text>
+
+  <!-- Type II lobe (long-way, higher TOF) -->
+  <ellipse class="accent-fill" cx="390" cy="160" rx="56" ry="34" transform="rotate(12 390 160)" />
+  <ellipse class="accent-fill-inner" cx="390" cy="160" rx="32" ry="18" transform="rotate(12 390 160)" />
+  <text class="label-accent" x="390" y="164" text-anchor="middle">TYPE II</text>
+  <line class="lead" x1="390" y1="130" x2="420" y2="80" />
+  <text class="sublabel" x="424" y="78">LONG-WAY · ν &gt; 180°</text>
+  <text class="sublabel" x="424" y="90">longer transit, sometimes cheaper</text>
+
+  <!-- Excluded conjunction band -->
+  <line class="dashed" x1="320" y1="60" x2="320" y2="270" />
+  <text class="tick" x="320" y="74" text-anchor="middle">CONJUNCTION</text>
+  <text class="sublabel" x="320" y="86" text-anchor="middle">~ν = 180° excluded</text>
+
+  <!-- Red-zone annotation -->
+  <text class="label-red" x="100" y="120">EXPENSIVE (RED ZONE)</text>
+  <text class="sublabel" x="100" y="132">Δv &gt; rocket capability</text>
+
+  <!-- Launch-window dashed line -->
+  <line class="dashed" x1="80" y1="230" x2="560" y2="230" />
+  <text class="sublabel" x="86" y="244">launch-window TOF band</text>
+
+  <!-- Mission examples panel -->
+  <g transform="translate(40,260)">
+    <text class="label-gold" x="0" y="0"></text>
+  </g>
+  <text class="sublabel" x="540" y="316" text-anchor="end">Type I: Curiosity, Perseverance · Type II: when Type I is blocked by ν = 180° geometry</text>
 </svg>

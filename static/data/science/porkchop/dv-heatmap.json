@@ -3,7 +3,7 @@
   "tab": "porkchop",
   "order": 4,
   "diagram": "dv-heatmap.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Cell colour on the porkchop maps to ∆v" }
   ],

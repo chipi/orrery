@@ -1,27 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="Color scale running from teal (cheap) through yellow to red (expensive) with sample delta-v values.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The colour scale used on porkchop plots — teal cheap, blue affordable, gold borderline, red infeasible — keyed to delta-v values in km/s.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-blue { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.7); font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.8px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
+
   <defs>
-    <linearGradient id="dv-grad" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#c1440e" />
-      <stop offset="35%" stop-color="#ffc850" />
-      <stop offset="70%" stop-color="#7b9cff" />
-      <stop offset="100%" stop-color="#4ecdc4" />
+    <linearGradient id="dv-grad-h" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4ecdc4" />
+      <stop offset="35%" stop-color="#7b9cff" />
+      <stop offset="70%" stop-color="#ffc850" />
+      <stop offset="100%" stop-color="#c1440e" />
     </linearGradient>
   </defs>
-  <text class="lbl" x="20" y="22">∆v heatmap colour scale</text>
-  <rect x="80" y="40" width="40" height="160" fill="url(#dv-grad)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
-  <line x1="120" y1="40" x2="135" y2="40" class="stroke" />
-  <text class="tick" x="142" y="44">3 km/s · cheap (Hohmann)</text>
-  <line x1="120" y1="92" x2="135" y2="92" class="stroke" />
-  <text class="tick" x="142" y="96">5 km/s · affordable</text>
-  <line x1="120" y1="140" x2="135" y2="140" class="stroke" />
-  <text class="tick" x="142" y="144">7 km/s · borderline</text>
-  <line x1="120" y1="195" x2="135" y2="195" class="stroke" />
-  <text class="tick" x="142" y="199">9+ km/s · impractical</text>
-  <text class="tick" x="100" y="32" text-anchor="middle">cheap</text>
-  <text class="tick" x="100" y="215" text-anchor="middle">expensive</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">Δv HEATMAP — COLOUR SCALE USED ON PORKCHOP PLOTS</text>
+
+  <!-- Wide horizontal bar -->
+  <rect x="80" y="120" width="440" height="40" fill="url(#dv-grad-h)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+
+  <!-- Tick lines + numerical Δv values -->
+  <line class="stroke" x1="80" y1="160" x2="80" y2="172" />
+  <text class="tick" x="80" y="186" text-anchor="middle">3 km/s</text>
+  <text class="sublabel" x="80" y="200" text-anchor="middle">cheap</text>
+
+  <line class="stroke" x1="190" y1="160" x2="190" y2="172" />
+  <text class="tick" x="190" y="186" text-anchor="middle">5</text>
+  <text class="sublabel" x="190" y="200" text-anchor="middle">affordable</text>
+
+  <line class="stroke" x1="300" y1="160" x2="300" y2="172" />
+  <text class="tick" x="300" y="186" text-anchor="middle">7</text>
+  <text class="sublabel" x="300" y="200" text-anchor="middle">borderline</text>
+
+  <line class="stroke" x1="410" y1="160" x2="410" y2="172" />
+  <text class="tick" x="410" y="186" text-anchor="middle">9</text>
+  <text class="sublabel" x="410" y="200" text-anchor="middle">expensive</text>
+
+  <line class="stroke" x1="520" y1="160" x2="520" y2="172" />
+  <text class="tick" x="520" y="186" text-anchor="middle">12+</text>
+  <text class="sublabel" x="520" y="200" text-anchor="middle">infeasible</text>
+
+  <!-- "cheap" "expensive" tags -->
+  <text class="label-accent" x="80" y="108" text-anchor="middle">CHEAPER</text>
+  <text class="label-red" x="520" y="108" text-anchor="middle">EXPENSIVE</text>
+
+  <!-- Reference mission Δv numbers panel -->
+  <g transform="translate(40,230)">
+    <rect x="0" y="0" width="520" height="60" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">REAL MISSION REFERENCE (Earth-departure C3-equivalent Δv)</text>
+    <text class="label-accent" x="8" y="32">Hohmann Mars · 3.6</text>
+    <text class="label-blue" x="155" y="32">Type II Mars · 5</text>
+    <text class="label-gold" x="290" y="32">fast transit · 7–8</text>
+    <text class="label-red" x="430" y="32">crash Mars · 12+</text>
+    <text class="sublabel" x="8" y="48">Falcon Heavy expendable C3 ≈ 14 km²/s² (Δv ≈ 4 km/s)  ·  Starship 9–10 km/s with refuel</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">Δv = √C3 in the heliocentric frame, plus capture burn at arrival</text>
 </svg>

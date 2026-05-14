@@ -3,7 +3,7 @@
   "tab": "porkchop",
   "order": 5,
   "diagram": "contour-reading.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Contour lobes on the porkchop reveal the optimum-launch geometry" }
   ],

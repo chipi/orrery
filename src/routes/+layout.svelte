@@ -124,14 +124,6 @@
       <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
       <a
         class="footer-link footer-link-extra"
-        href="https://github.com/chipi/orrery#readme"
-        target="_blank"
-        rel="noopener noreferrer external"
-        hreflang="en">{m.layout_footer_readme()}</a
-      >
-      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
-      <a
-        class="footer-link footer-link-extra"
         href="https://github.com/chipi/orrery/blob/main/LICENSE"
         target="_blank"
         rel="noopener noreferrer external"

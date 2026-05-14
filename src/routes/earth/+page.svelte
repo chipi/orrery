@@ -373,7 +373,25 @@
       inclRad: number;
       nodeRad: number;
       ringMesh?: THREE.Mesh;
+      halo?: THREE.Mesh;
     };
+
+    // Selection-halo helper — small ring rendered around a marker so
+    // users can tell at a glance which one they picked. Visibility
+    // flips via $effect tied to `selected`.
+    function makeHalo(color: string, radius: number): THREE.Mesh {
+      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
+      const haloMat = new THREE.MeshBasicMaterial({
+        color,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.9,
+        depthWrite: false,
+      });
+      const halo = new THREE.Mesh(haloGeo, haloMat);
+      halo.visible = false;
+      return halo;
+    }
 
     // Stable hash → [0, 2π) so each orbit's ascending-node longitude
     // is deterministic but visually spread out (otherwise every
@@ -496,7 +514,13 @@
           ringMesh.rotation.y = nodeRad;
           scene.add(ringMesh);
         }
-        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad, ringMesh });
+        // Selection halo — small flat ring around the satellite,
+        // visible only while this object === selected. Toggled by
+        // $effect below.
+        const halo = makeHalo(o.color, 1.6);
+        group.add(halo);
+
+        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad, ringMesh, halo });
       }
     }
 
@@ -898,6 +922,7 @@
       // hit-targeting frustrating per user feedback.
       // Category-chip filter (v0.4 — replaces the year scrubber).
       // Hides satellites whose category chip is currently off.
+      const selId = selected?.id ?? null;
       for (const s of sats) {
         const obj = objects.find((o) => o.id === s.id);
         if (obj) {
@@ -906,6 +931,8 @@
           s.group.visible = visible;
           // Ring visibility gated by the ORBITS chip + category state.
           if (s.ringMesh) s.ringMesh.visible = visible && layerOrbits;
+          // Selection halo — show only on the selected marker.
+          if (s.halo) s.halo.visible = visible && s.id === selId;
         }
       }
 

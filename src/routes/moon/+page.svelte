@@ -252,8 +252,25 @@
     // spun underneath, breaking spatial reference). Markers are
     // tangent-aligned via lookAt(origin) so they "stand up" from the
     // surface instead of pointing along world axes.
-    type MarkerObj = { group: THREE.Group; siteId: string };
+    type MarkerObj = { group: THREE.Group; siteId: string; halo?: THREE.Mesh };
     const markers: MarkerObj[] = [];
+
+    // Selection-halo helper — small flat ring around a marker so the
+    // user can tell which one they picked. Visibility toggled by the
+    // $effect tied to `selected`.
+    function makeHalo(color: string, radius: number): THREE.Mesh {
+      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
+      const haloMat = new THREE.MeshBasicMaterial({
+        color,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.9,
+        depthWrite: false,
+      });
+      const halo = new THREE.Mesh(haloGeo, haloMat);
+      halo.visible = false;
+      return halo;
+    }
 
     function buildMarkerForCategory(
       category: ReturnType<typeof categoriseMoonMarker>,
@@ -353,6 +370,7 @@
       ringRadius: number;
       orbitSpeed: number;
       orbitPhase: number;
+      halo?: THREE.Mesh;
     };
     const orbitalMarkers: OrbitalMarker[] = [];
 
@@ -430,6 +448,11 @@
         dotGroup.userData = { siteId: site.id };
         group.add(dotGroup);
 
+        // Selection halo attached to dotGroup so it travels with the
+        // orbiter around its ring.
+        const halo = makeHalo(color, 1.8);
+        dotGroup.add(halo);
+
         scene.add(group);
         orbitalMarkers.push({
           group,
@@ -439,6 +462,7 @@
           ringRadius: altScale,
           orbitSpeed: dimmed ? 0.06 : 0.2,
           orbitPhase: phase,
+          halo,
         });
         phase += Math.PI / 5;
       }
@@ -502,8 +526,15 @@
           size: 1.6,
         });
         group.add(label.group);
+
+        // Selection halo (visible only while site === selected).
+        const halo = makeHalo(colorFor(site), 1.8);
+        halo.position.y = 0.02;
+        halo.rotation.x = -Math.PI / 2;
+        group.add(halo);
+
         moonMesh.add(group);
-        markers.push({ group, siteId: site.id });
+        markers.push({ group, siteId: site.id, halo });
       }
     }
 
@@ -902,13 +933,18 @@
 
       // Apply layer visibility every frame so chip toggles take effect
       // immediately (cheap — small static arrays).
-      for (const mk of markers) mk.group.visible = layerSurface;
+      const selId = selected?.id ?? null;
+      for (const mk of markers) {
+        mk.group.visible = layerSurface;
+        if (mk.halo) mk.halo.visible = layerSurface && mk.siteId === selId;
+      }
       for (const om of orbitalMarkers) {
         // ORBITERS chip controls the spacecraft model. ORBITS chip
         // independently hides the ring lines (cleaner sky for users
         // who just want to see where the orbiters are right now).
         om.dotGroup.visible = layerOrbiters;
         om.ringMesh.visible = layerOrbiters && layerOrbits;
+        if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
       }
 
       // ADR-025: auto-rotate stops when prefers-reduced-motion is set.

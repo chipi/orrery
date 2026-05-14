@@ -12,6 +12,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import { buildLabel } from '$lib/three-label';
   import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
   import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
@@ -288,6 +289,7 @@
     type SurfaceMarker = {
       group: THREE.Group;
       siteId: string;
+      halo?: THREE.Mesh;
     };
     type OrbitalMarker = {
       group: THREE.Group;
@@ -298,7 +300,26 @@
       ringRadius: number;
       orbitSpeed: number;
       orbitPhase: number;
+      halo?: THREE.Mesh;
     };
+
+    // Selection-halo helper — small camera-facing ring rendered around
+    // a marker so users can tell at a glance which one they picked.
+    // Returns an invisible mesh; visibility flips via $effect tied to
+    // the `selected` state below.
+    function makeHalo(color: string, radius: number): THREE.Mesh {
+      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
+      const haloMat = new THREE.MeshBasicMaterial({
+        color,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.9,
+        depthWrite: false,
+      });
+      const halo = new THREE.Mesh(haloGeo, haloMat);
+      halo.visible = false;
+      return halo;
+    }
     const surfaceMarkers: SurfaceMarker[] = [];
     const orbitalMarkers: OrbitalMarker[] = [];
     type TraverseLine = {
@@ -447,8 +468,27 @@
         );
         hit.userData = { siteId: site.id };
         group.add(hit);
+
+        // Label with leader-line (same component as /earth + /moon) —
+        // floats above the lander pointing back at it. site.name is
+        // short enough to fit beside the marker without crowding.
+        const label = buildLabel({
+          text: site.name ?? site.id,
+          color: color,
+          offset: new THREE.Vector3(0, 2.2, 0),
+          size: 1.4,
+        });
+        group.add(label.group);
+
+        // Selection halo — flat ring around the marker base. Visible
+        // only while this site === selected (toggled by $effect).
+        const halo = makeHalo(color, 1.4);
+        halo.position.y = 0.02;
+        halo.rotation.x = -Math.PI / 2;
+        group.add(halo);
+
         marsMesh.add(group);
-        surfaceMarkers.push({ group, siteId: site.id });
+        surfaceMarkers.push({ group, siteId: site.id, halo });
       }
     }
 
@@ -518,6 +558,20 @@
         dotGroup.userData = { siteId: site.id };
         group.add(dotGroup);
 
+        // Label + halo (same treatment as surface markers and /earth).
+        // Label is attached to the dotGroup so it travels with the
+        // orbiting spacecraft, not to the static parent.
+        const label = buildLabel({
+          text: site.name ?? site.id,
+          color: color,
+          offset: new THREE.Vector3(0, 2.4, 0),
+          size: 1.4,
+        });
+        dotGroup.add(label.group);
+
+        const halo = makeHalo(color, 1.8);
+        dotGroup.add(halo);
+
         marsAxis.add(group);
         orbitalMarkers.push({
           group,
@@ -531,6 +585,7 @@
           // ~30s real time; offset so rings don't all line up.
           orbitSpeed: dimmed ? 0.06 : 0.2,
           orbitPhase: phase,
+          halo,
         });
         phase += Math.PI / 5;
       }
@@ -607,6 +662,15 @@
       rebuildSurfaceMarkers();
       rebuildOrbitalMarkers();
       applyLayerVisibility();
+    });
+
+    // Selection halo — flip visibility on every marker so only the
+    // selected one shows. Cheap enough to walk both arrays on every
+    // selection change.
+    $effect(() => {
+      const sel = selected?.id ?? null;
+      for (const sm of surfaceMarkers) if (sm.halo) sm.halo.visible = sm.siteId === sel;
+      for (const om of orbitalMarkers) if (om.halo) om.halo.visible = om.siteId === sel;
     });
     // Reactive: rebuild traverses when their data lands (independent
     // of sites — they fetch in parallel).

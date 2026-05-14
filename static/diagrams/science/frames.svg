@@ -1,27 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Three concentric reference frames: heliocentric outermost, geocentric in the middle, body-centric innermost.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Three nested reference frames — heliocentric (sun-centred), geocentric (Earth-centred), and body-centric (Mars-centred). Patched-conic trajectories switch between them at sphere-of-influence boundaries.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .helio-ring { stroke: rgba(255,200,80,0.55); stroke-width: 1.4; fill: rgba(255,200,80,0.025); stroke-dasharray: 4 3; }
+    .geo-ring { stroke: rgba(75,156,211,0.7); stroke-width: 1.4; fill: rgba(75,156,211,0.04); stroke-dasharray: 4 3; }
+    .body-ring { stroke: rgba(193,68,14,0.7); stroke-width: 1.4; fill: rgba(193,68,14,0.04); stroke-dasharray: 4 3; }
     .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
-    .sun { fill: #ffc850; }
-    .earth { fill: rgba(75,156,211,0.85); }
-    .mars { fill: rgba(193,68,14,0.85); }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .sun { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .earth { fill: rgba(75,156,211,0.95); stroke: rgba(75,156,211,1); stroke-width: 1.2; }
+    .mars { fill: rgba(193,68,14,0.95); stroke: rgba(193,68,14,1); stroke-width: 1.2; }
+    .sat { fill: #4ecdc4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-blue { fill: rgba(75,156,211,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">Reference frames</text>
-  <circle class="dashed" cx="170" cy="130" r="100" />
-  <text class="tick" x="80" y="50" fill="rgba(255,255,255,0.7)">heliocentric</text>
-  <circle class="sun" cx="170" cy="130" r="5" />
-  <text class="tick" x="178" y="133">Sun</text>
-  <circle class="dashed" cx="260" cy="100" r="34" />
-  <text class="tick" x="240" y="68" fill="rgba(255,255,255,0.7)">geocentric</text>
-  <circle class="earth" cx="260" cy="100" r="3.5" />
-  <text class="tick" x="266" y="103">Earth</text>
-  <circle class="accent" cx="270" cy="92" r="3" />
-  <text class="tick" x="276" y="92" fill="#4ecdc4">sat</text>
-  <circle class="dashed" cx="100" cy="180" r="22" />
-  <text class="tick" x="78" y="218" fill="rgba(255,255,255,0.7)">body-centric (Mars)</text>
-  <circle class="mars" cx="100" cy="180" r="3.5" />
-  <text class="lbl" x="20" y="234">switch frames at sphere-of-influence boundaries — patched conics</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">REFERENCE FRAMES — HELIOCENTRIC ⊃ GEOCENTRIC ⊃ BODY-CENTRIC</text>
+
+  <!-- Heliocentric (large ring) -->
+  <circle class="helio-ring" cx="280" cy="180" r="120" />
+  <text class="label-gold" x="160" y="78">HELIOCENTRIC</text>
+  <text class="sublabel" x="160" y="90">Sun-centred · interplanetary cruise</text>
+
+  <!-- Sun -->
+  <circle class="sun" cx="280" cy="180" r="7" />
+  <text class="sublabel" x="280" y="200" text-anchor="middle">Sun</text>
+
+  <!-- Geocentric (medium ring, positioned on the heliocentric ring) -->
+  <circle class="geo-ring" cx="380" cy="120" r="46" />
+  <text class="label-blue" x="430" y="60">GEOCENTRIC</text>
+  <text class="sublabel" x="430" y="72">Earth-centred · LEO + GEO + Moon</text>
+
+  <!-- Earth -->
+  <circle class="earth" cx="380" cy="120" r="5" />
+  <text class="sublabel" x="380" y="138" text-anchor="middle">Earth</text>
+
+  <!-- Satellite in geo frame -->
+  <circle class="sat" cx="404" cy="106" r="3" />
+  <line stroke="rgba(78,205,196,0.5)" stroke-width="0.8" x1="380" y1="120" x2="404" y2="106" />
+  <text class="label-accent" x="412" y="100">sat orbit</text>
+
+  <!-- Body-centric (small ring, Mars) -->
+  <circle class="body-ring" cx="180" cy="240" r="30" />
+  <text class="label-red" x="80" y="296" text-anchor="middle">BODY-CENTRIC (MARS)</text>
+  <text class="sublabel" x="80" y="308" text-anchor="middle">capture orbit · landing</text>
+
+  <!-- Mars -->
+  <circle class="mars" cx="180" cy="240" r="4" />
+  <text class="sublabel" x="180" y="256" text-anchor="middle">Mars</text>
+
+  <!-- Hand-off arrows: how patched conics moves between frames -->
+  <line class="dashed" x1="346" y1="155" x2="332" y2="170" stroke="rgba(78,205,196,0.55)" />
+  <text class="sublabel" x="340" y="180" text-anchor="middle">→ hand-off at SOI</text>
+
+  <line class="dashed" x1="216" y1="225" x2="232" y2="210" stroke="rgba(78,205,196,0.55)" />
+
+  <!-- SOI radii reference panel -->
+  <g transform="translate(440,160)">
+    <rect x="0" y="0" width="140" height="100" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="14">SOI RADII</text>
+    <text class="sublabel" x="8" y="28">Earth · 924,000 km</text>
+    <text class="sublabel" x="8" y="40">Moon  ·  66,100 km</text>
+    <text class="sublabel" x="8" y="52">Mars  · 577,000 km</text>
+    <text class="sublabel" x="8" y="64">Jupiter · 48,000,000 km</text>
+    <text class="sublabel" x="8" y="84">"hand off" = switch</text>
+    <text class="sublabel" x="8" y="96">the 2-body problem</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">Every frame is a 2-body problem with one dominant gravity source · patched conics is the algorithm</text>
 </svg>

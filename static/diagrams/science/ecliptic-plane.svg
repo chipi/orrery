@@ -1,28 +1,75 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" role="img" aria-label="The ecliptic shown as a tilted plane with planets on it and Pluto's orbit tilted 17 degrees off it.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The ecliptic plane — the plane of Earth's orbit, drawn as a perspective flat disc. Most planets ride on it; Pluto's orbit is tilted 17° off, and long-period comets come from all angles.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
-    .sun { fill: #ffc850; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .ecliptic { stroke: #4ecdc4; stroke-width: 1.8; fill: rgba(78,205,196,0.04); }
+    .pluto-orbit { stroke: #ff6b6b; stroke-width: 1.6; fill: none; stroke-dasharray: 5 3; }
+    .comet-orbit { stroke: rgba(255,255,255,0.5); stroke-width: 1.2; fill: none; stroke-dasharray: 4 3; }
+    .sun { fill: #ffc850; stroke: #ffc850; stroke-width: 1.4; }
     .planet { fill: rgba(255,255,255,0.85); }
-    .pluto { fill: rgba(193,68,14,0.85); }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .pluto { fill: rgba(193,68,14,0.95); }
+    .comet { fill: rgba(255,255,255,0.7); }
+    .arc { stroke: #ffc850; stroke-width: 1.6; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">The ecliptic plane</text>
-  <ellipse class="accent" cx="200" cy="120" rx="160" ry="20" />
-  <ellipse class="dashed" cx="200" cy="120" rx="100" ry="12" />
-  <ellipse class="dashed" cx="200" cy="120" rx="50" ry="6" />
-  <circle class="sun" cx="200" cy="120" r="6" />
-  <text class="tick" x="208" y="123">Sun</text>
-  <circle class="planet" cx="150" cy="120" r="3" />
-  <text class="tick" x="138" y="138">Earth</text>
-  <circle class="planet" cx="120" cy="120" r="2.5" />
-  <text class="tick" x="100" y="105">Mars</text>
-  <circle class="planet" cx="320" cy="118" r="3" />
-  <text class="tick" x="305" y="138">Jupiter</text>
-  <ellipse class="dashed" cx="200" cy="115" rx="170" ry="35" transform="rotate(-17 200 115)" />
-  <circle class="pluto" cx="42" cy="80" r="3" />
-  <text class="tick" x="48" y="78" fill="rgba(193,68,14,0.85)">Pluto · 17° off</text>
-  <text class="lbl" x="30" y="200">most of the solar system rides on a flat plate; comets + Pluto don't</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+
+  <text class="label" x="40" y="28">THE ECLIPTIC — EARTH'S ORBITAL PLANE — DEFINES "FLAT" FOR THE SOLAR SYSTEM</text>
+
+  <!-- Ecliptic disc (large flat ellipse) -->
+  <ellipse class="ecliptic" cx="300" cy="180" rx="240" ry="32" />
+
+  <!-- Inner planet orbits as flatter ellipses on the disc -->
+  <ellipse class="dashed" cx="300" cy="180" rx="60" ry="8" />
+  <ellipse class="dashed" cx="300" cy="180" rx="100" ry="13" />
+  <ellipse class="dashed" cx="300" cy="180" rx="160" ry="22" />
+
+  <!-- Sun at centre -->
+  <circle class="sun" cx="300" cy="180" r="8" />
+  <text class="label-gold" x="300" y="200" text-anchor="middle">SUN</text>
+
+  <!-- Earth (inner ring) -->
+  <circle class="planet" cx="240" cy="180" r="3.5" />
+  <text class="sublabel" x="240" y="200" text-anchor="middle">EARTH</text>
+
+  <!-- Mars -->
+  <circle class="planet" cx="200" cy="180" r="3" />
+  <text class="sublabel" x="200" y="170" text-anchor="middle">Mars</text>
+
+  <!-- Jupiter (outer ring) -->
+  <circle class="planet" cx="460" cy="180" r="5" />
+  <text class="sublabel" x="460" y="200" text-anchor="middle">Jupiter</text>
+
+  <!-- Pluto's tilted orbit (17° off) -->
+  <ellipse class="pluto-orbit" cx="300" cy="170" rx="270" ry="50" transform="rotate(-17 300 170)" />
+  <circle class="pluto" cx="80" cy="105" r="4" />
+  <text class="label-red" x="80" y="93" text-anchor="middle">PLUTO</text>
+  <text class="sublabel" x="80" y="80" text-anchor="middle">17° off ecliptic</text>
+
+  <!-- Comet orbit (high inclination) -->
+  <ellipse class="comet-orbit" cx="300" cy="155" rx="200" ry="45" transform="rotate(70 300 155)" />
+  <circle class="comet" cx="408" cy="76" r="3" />
+  <text class="sublabel" x="416" y="78">long-period comet</text>
+  <text class="sublabel" x="416" y="90">any inclination</text>
+
+  <!-- Plane label -->
+  <text class="label-accent" x="490" y="230">ECLIPTIC · 0° BY DEFINITION</text>
+  <text class="sublabel" x="490" y="242">Earth's orbit defines the plane</text>
+
+  <!-- Origin / explanation panel -->
+  <g transform="translate(40,250)">
+    <rect x="0" y="0" width="520" height="50" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="14">WHY THINGS LIE ON IT</text>
+    <text class="sublabel" x="8" y="28">solar system formed from a flattened proto-planetary disc → angular momentum forced co-planarity</text>
+    <text class="sublabel" x="8" y="40">exceptions: Pluto + KBOs (icy outliers), Halley (retrograde), 'Oumuamua (extrasolar) — all sit at non-zero inclinations</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">"ecliptic" because lunar/solar eclipses happen when the Moon crosses this plane</text>
 </svg>

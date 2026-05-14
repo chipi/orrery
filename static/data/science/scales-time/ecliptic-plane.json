@@ -3,7 +3,7 @@
   "tab": "scales-time",
   "order": 5,
   "diagram": "ecliptic-plane.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Orrery's solar system view defaults to the ecliptic plane" }
   ],

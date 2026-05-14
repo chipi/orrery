@@ -3,7 +3,7 @@
   "tab": "scales-time",
   "order": 1,
   "diagram": "au.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/explore", "context_key": "Every planet's semi-major axis is given in AU" }
   ],

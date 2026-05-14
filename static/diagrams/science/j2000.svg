@@ -1,26 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="A clock showing noon next to the date January 1 2000 with the J2000 epoch label.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="The J2000 epoch — January 1, 2000, 12:00 UTC = Julian Date 2,451,545.0 — the universal time-zero anchor for all modern orbital elements.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
     .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
-    .num { font-family: var(--font-display, 'Bebas Neue'), sans-serif; font-size: 12px; fill: rgba(255,255,255,0.65); letter-spacing: 1px; }
-    .epoch { font-family: var(--font-display, 'Bebas Neue'), sans-serif; font-size: 18px; fill: #4ecdc4; letter-spacing: 4px; }
+    .clock-rim { stroke: rgba(255,255,255,0.85); stroke-width: 1.6; fill: rgba(0,0,0,0.25); }
+    .clock-hand { stroke: rgba(255,255,255,0.95); stroke-width: 2.2; stroke-linecap: round; }
+    .clock-tick { stroke: rgba(255,255,255,0.55); stroke-width: 1.4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .num { font-family: var(--font-display, 'Bebas Neue'), 'Space Mono', monospace; font-size: 13px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
+    .epoch { font-family: var(--font-display, 'Bebas Neue'), 'Space Mono', monospace; font-size: 26px; fill: #4ecdc4; letter-spacing: 4px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">J2000 epoch</text>
-  <circle class="stroke" cx="120" cy="130" r="60" />
-  <line class="stroke" x1="120" y1="130" x2="120" y2="80" stroke-linecap="round" stroke-width="2" />
-  <line class="stroke" x1="120" y1="130" x2="120" y2="92" stroke-linecap="round" stroke-width="2" />
-  <circle cx="120" cy="130" r="2.5" fill="#4ecdc4" />
-  <text class="num" x="120" y="78" text-anchor="middle">12</text>
-  <text class="num" x="180" y="135" text-anchor="middle">3</text>
-  <text class="num" x="120" y="190" text-anchor="middle">6</text>
-  <text class="num" x="62" y="135" text-anchor="middle">9</text>
-  <text class="tick" x="120" y="208" text-anchor="middle">12:00 UTC</text>
-  <line class="dashed" x1="200" y1="130" x2="240" y2="130" />
-  <text class="epoch" x="320" y="125" text-anchor="middle">JAN 1, 2000</text>
-  <text class="tick" x="320" y="142" text-anchor="middle">= JD 2,451,545.0</text>
-  <text class="tick" x="320" y="158" text-anchor="middle">universal time-zero</text>
-  <text class="lbl" x="30" y="230">all orbital elements in this app are anchored here</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="500" cy="80" r="0.5" />
+
+  <text class="label" x="40" y="28">J2000 · UNIVERSAL TIME-ZERO FOR ORBITAL ELEMENTS</text>
+
+  <!-- Clock face on the left -->
+  <circle class="clock-rim" cx="160" cy="170" r="78" />
+
+  <!-- Hour ticks -->
+  <line class="clock-tick" x1="160" y1="100" x2="160" y2="108" />
+  <line class="clock-tick" x1="222" y1="170" x2="214" y2="170" />
+  <line class="clock-tick" x1="160" y1="240" x2="160" y2="232" />
+  <line class="clock-tick" x1="98" y1="170" x2="106" y2="170" />
+
+  <!-- Numbers -->
+  <text class="num" x="160" y="118" text-anchor="middle">12</text>
+  <text class="num" x="218" y="174" text-anchor="middle">3</text>
+  <text class="num" x="160" y="227" text-anchor="middle">6</text>
+  <text class="num" x="100" y="174" text-anchor="middle">9</text>
+
+  <!-- Hands at noon: both pointing straight up -->
+  <line class="clock-hand" x1="160" y1="170" x2="160" y2="120" />
+  <line class="clock-hand" x1="160" y1="170" x2="160" y2="135" />
+  <circle fill="#4ecdc4" cx="160" cy="170" r="4" />
+
+  <text class="sublabel" x="160" y="258" text-anchor="middle">12:00 UTC</text>
+
+  <!-- Connector to date block -->
+  <line class="dashed" x1="240" y1="170" x2="290" y2="170" />
+
+  <!-- Date / epoch block on the right -->
+  <text class="epoch" x="320" y="148">JAN 1, 2000</text>
+  <text class="label-accent" x="320" y="174">= JD 2,451,545.0</text>
+  <text class="sublabel" x="320" y="190">= MJD 51,544.5</text>
+  <text class="sublabel" x="320" y="206">= 64,184,400 GPS seconds</text>
+
+  <!-- Why panel below -->
+  <g transform="translate(40,260)">
+    <rect x="0" y="0" width="520" height="50" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="14">WHY J2000?</text>
+    <text class="sublabel" x="8" y="28">precession means star coordinates drift; "J2000.0" freezes the celestial sphere at that instant</text>
+    <text class="sublabel" x="8" y="40">every TLE, every Mars approach, every JPL Horizons query is published in the J2000 frame · superseded B1950</text>
+  </g>
+
+  <!-- Note about apps -->
+  <text class="sublabel" x="540" y="252" text-anchor="end">all orbital elements in Orrery anchor here</text>
 </svg>

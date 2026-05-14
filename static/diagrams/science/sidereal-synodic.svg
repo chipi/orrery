@@ -1,32 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Sidereal vs synodic period: same star alignment versus same Earth-Mars-Sun alignment">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Sidereal versus synodic period — the difference between Earth and Mars returning to the same direction in the star background versus returning to the same Earth-Mars-Sun geometry.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .earth-orbit { stroke: rgba(75,156,211,0.55); stroke-width: 1.3; fill: none; stroke-dasharray: 4 3; }
+    .mars-orbit { stroke: rgba(193,68,14,0.55); stroke-width: 1.3; fill: none; stroke-dasharray: 4 3; }
     .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .sun { fill: #ffc850; stroke: #ffc850; stroke-width: 1.2; }
+    .earth-t0 { fill: rgba(75,156,211,0.95); }
+    .earth-syn { fill: rgba(75,156,211,0.55); stroke: rgba(75,156,211,0.9); stroke-width: 1; }
+    .mars-t0 { fill: rgba(193,68,14,0.95); }
+    .mars-sid { fill: rgba(193,68,14,0.45); stroke: rgba(193,68,14,0.85); stroke-width: 1; }
+    .mars-syn { fill: rgba(193,68,14,0.7); }
+    .arrow-fill { fill: #4ecdc4; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-blue { fill: rgba(75,156,211,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">SIDEREAL vs SYNODIC — SAME STAR DIRECTION vs SAME EARTH-MARS GEOMETRY</text>
+
   <!-- Sun -->
-  <circle cx="200" cy="150" r="6" class="focus" />
+  <circle class="sun" cx="300" cy="170" r="7" />
+  <text class="label-gold" x="300" y="148" text-anchor="middle">SUN</text>
+
   <!-- Earth orbit -->
-  <circle cx="200" cy="150" r="60" class="dashed" />
-  <!-- Mars orbit -->
-  <circle cx="200" cy="150" r="100" class="dashed" />
-  <!-- Mars at start (right) -->
-  <circle cx="300" cy="150" r="4" class="body" />
-  <text x="306" y="148" class="label-mute">Mars t=0</text>
-  <!-- Earth at start (right, on inner orbit, aligned) -->
-  <circle cx="260" cy="150" r="4" class="body" />
-  <text x="244" y="142" class="label-mute">Earth t=0</text>
-  <!-- After sidereal year (Earth back to same star direction at Mars t=∼1y, Mars hasn't yet returned) -->
-  <!-- Mars at sidereal: hasn't completed orbit; ~190° round (orange dashed) -->
-  <circle cx="100" cy="150" r="3" fill="rgba(255,255,255,0.55)" />
-  <text x="62" y="168" class="label-mute">Mars 1 sid yr</text>
-  <!-- Synodic alignment: needs more time → Mars passed Earth at later position -->
-  <circle cx="148" cy="92" r="4" class="body" />
-  <text x="120" y="86" class="label-accent">syn align</text>
-  <text x="62" y="278" class="label-mute">sidereal: same star direction · synodic: same Earth-Mars geometry</text>
+  <circle class="earth-orbit" cx="300" cy="170" r="80" />
+
+  <!-- Mars orbit (1.52 AU) -->
+  <circle class="mars-orbit" cx="300" cy="170" r="125" />
+
+  <!-- t=0 alignment: Earth and Mars both on the right of Sun, both in opposition -->
+  <circle class="earth-t0" cx="380" cy="170" r="5" />
+  <text class="label-blue" x="394" y="174">EARTH t=0</text>
+  <circle class="mars-t0" cx="425" cy="170" r="5" />
+  <text class="label-red" x="438" y="174">MARS t=0</text>
+
+  <!-- Mars after 1 Mars-sidereal year (687 d) — orbits 360°. -->
+  <!-- After 687 d Earth has done 687/365.25 = 1.88 orbits → 0.88 of a year = 317° past start. -->
+  <!-- Mars sidereal: returns to same heliocentric position (and same star direction) -->
+  <!-- For sidereal demonstration, use Earth orbit: Earth back to same star direction after 365 d while Mars not yet -->
+
+  <!-- Show Earth after 1 sidereal year (back at start position) -->
+  <text class="label-blue" x="394" y="186">also 1 sidereal year later</text>
+
+  <!-- Show Mars after 1 Earth-sidereal year — Mars only ~52% around -->
+  <!-- Mars at 360 × (365.25 / 687) = 191° past start = on the left of Sun -->
+  <circle class="mars-sid" cx="175" cy="170" r="5" />
+  <text class="label-red" x="170" y="200" text-anchor="end">MARS after 1 Earth-yr</text>
+  <text class="sublabel" x="170" y="212" text-anchor="end">≈ 191° round its orbit</text>
+
+  <!-- Synodic alignment: Earth + Mars back to same geometry, takes 780 d -->
+  <!-- After 780 d Mars at 360 × (780/687) = 408.7° = 48.7° past start position -->
+  <!-- Earth at 360 × (780/365.25) = 768.5° = 48.5° past start, so same angular separation -->
+  <!-- Place both around 48° up from t=0 -->
+  <circle class="earth-syn" cx="354" cy="111" r="5" />
+  <text class="label-blue" x="358" y="106">EARTH t=780d</text>
+  <circle class="mars-syn" cx="384" cy="86" r="5" />
+  <text class="label-red" x="394" y="84">MARS t=780d</text>
+
+  <!-- Synodic alignment line -->
+  <line class="accent" x1="300" y1="170" x2="384" y2="86" />
+  <text class="label-accent" x="335" y="125">SAME GEOMETRY</text>
+  <text class="sublabel" x="335" y="137">opposition again</text>
+
+  <!-- Periods reference panel -->
+  <g transform="translate(40,90)">
+    <rect x="0" y="0" width="170" height="140" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">PERIODS</text>
+    <text class="sublabel" x="8" y="32">Mars sidereal year:</text>
+    <text class="sublabel" x="8" y="44">  687 days</text>
+    <text class="sublabel" x="8" y="62">Mars-Earth synodic:</text>
+    <text class="sublabel" x="8" y="74">  780 days  (26 mo)</text>
+    <text class="sublabel" x="8" y="92">SYNODIC drives:</text>
+    <text class="sublabel" x="8" y="104">  · Mars launch windows</text>
+    <text class="sublabel" x="8" y="116">  · opposition viewing</text>
+    <text class="sublabel" x="8" y="128">  · porkchop recurrence</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">1/T_syn = |1/T_planet₁ − 1/T_planet₂|</text>
 </svg>

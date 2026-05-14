@@ -22,15 +22,16 @@ concurrency:
 jobs:
   e2e:
     runs-on: ubuntu-latest
-    # 25 min — the suite ran in ~6.7min through May 3 (28 missions,
-    # single-worker Chromium per playwright.config.ts) and grew to
-    # ~13-15min after v0.3's 32-mission expansion + i18n-es smoke +
-    # heliocentric arc validation. CI is forced to 1 worker for
-    # canvas-rAF determinism, so we can't trade workers for speed.
-    # 25min gives margin against ubuntu-latest variance without
-    # masking real regressions: a slow run still surfaces in the run
-    # summary, but a 1-2min spike doesn't kill the build.
-    timeout-minutes: 25
+    # 40 min — the suite ran in ~6.7min through May 3 (28 missions,
+    # single-worker Chromium per playwright.config.ts), ~13-15min
+    # after v0.3's 32-mission expansion + i18n-es smoke, and now
+    # ~23min after v0.6 added 3 new science suit sections + 13 new
+    # /fleet space-suit entries (+ their per-locale smoke). Local
+    # full-suite still runs in ~6.5min — CI is 3-4× slower under
+    # ubuntu-latest 1-worker constraint. 40min keeps margin against
+    # variance; a runaway hang still surfaces, but cold-cache + asset
+    # load spikes don't kill the build.
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6

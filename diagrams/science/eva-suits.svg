@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Exploded wireframe of an EVA spacewalk suit (EMU / Orlan / Feitian style) — PLSS backpack, gold sun visor, hard upper torso, sublimator, CO2 scrubber, SAFER thruster pack.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-label="Exploded wireframe of an EVA spacewalk suit (EMU / Orlan / Feitian style) — PLSS backpack, gold sun visor, hard upper torso, sublimator, CO2 scrubber, SAFER thruster pack.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
     .fill-shell { fill: rgba(78,205,196,0.08); stroke: #4ecdc4; stroke-width: 1.5; }
@@ -119,23 +119,27 @@
   <text class="label" x="180" y="342" text-anchor="end">LOWER TORSO ASSEMBLY</text>
   <text class="sublabel" x="180" y="354" text-anchor="end">soft fabric joints · feet not for walking</text>
 
-  <!-- ============== Specs panel ============== -->
-  <g transform="translate(456,100)">
-    <rect x="0" y="0" width="124" height="180" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
-    <text class="label-gold" x="8" y="14">EVA SUIT SPECS</text>
-    <text class="sublabel" x="8" y="30">pressure ·</text>
-    <text class="sublabel" x="8" y="42">  EMU 4.3 psi pure O₂</text>
-    <text class="sublabel" x="8" y="54">  Orlan 5.7 psi pure O₂</text>
-    <text class="sublabel" x="8" y="74">duration ·</text>
-    <text class="sublabel" x="8" y="86">  ~7 h nominal</text>
-    <text class="sublabel" x="8" y="98">  8.5 h max</text>
-    <text class="sublabel" x="8" y="118">mass ·</text>
-    <text class="sublabel" x="8" y="130">  EMU ~145 kg</text>
-    <text class="sublabel" x="8" y="142">  Orlan ~110 kg</text>
-    <text class="sublabel" x="8" y="162">heat dump · ~250 W</text>
-    <text class="sublabel" x="8" y="174">CO₂ · LiOH or amine</text>
+  <!-- ============== Specs panel — horizontal strip at the bottom ============== -->
+  <g transform="translate(20,375)">
+    <rect x="0" y="0" width="560" height="56" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="10" y="14">EVA SUIT SPECS</text>
+    <!-- Column 1: pressure -->
+    <text class="sublabel" x="10" y="30">pressure ·</text>
+    <text class="sublabel" x="10" y="42">  EMU 4.3 psi pure O₂</text>
+    <text class="sublabel" x="10" y="52">  Orlan 5.7 psi pure O₂</text>
+    <!-- Column 2: duration -->
+    <text class="sublabel" x="160" y="30">duration ·</text>
+    <text class="sublabel" x="160" y="42">  ~7 h nominal</text>
+    <text class="sublabel" x="160" y="52">  8.5 h max</text>
+    <!-- Column 3: mass -->
+    <text class="sublabel" x="290" y="30">mass ·</text>
+    <text class="sublabel" x="290" y="42">  EMU ~145 kg</text>
+    <text class="sublabel" x="290" y="52">  Orlan ~110 kg</text>
+    <!-- Column 4: thermal + CO2 -->
+    <text class="sublabel" x="420" y="30">thermal · ~250 W</text>
+    <text class="sublabel" x="420" y="42">CO₂ · LiOH or amine</text>
   </g>
 
   <!-- Bottom note -->
-  <text class="sublabel" x="40" y="395">Pre-breathe O₂ for 4 h before egress to flush N₂ from blood (US 14.7 psi → suit 4.3 psi). Orlan crew skip pre-breathe with the 5.7 psi suit.</text>
+  <text class="sublabel" x="20" y="450">Pre-breathe O₂ for 4 h before egress to flush N₂ from blood (US 14.7 psi → suit 4.3 psi). Orlan crew skip pre-breathe with the 5.7 psi suit.</text>
 </svg>

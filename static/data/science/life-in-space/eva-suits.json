@@ -1,0 +1,38 @@
+{
+  "id": "eva-suits",
+  "tab": "life-in-space",
+  "order": 8,
+  "diagram": "eva-suits.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/eva-suits-orlan.jpg",
+    "credit": "NASA / Roscosmos · ISS Expedition 54 EVA-2 (Feb 2018) — Russian Orlan-MK suits worked outside the Russian segment. Rear-entry HUT-and-PLSS hatch visible."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Quest + Pirs/Poisk airlocks where EMU and Orlan suits live and are donned" },
+    { "route": "/tiangong", "context_key": "Wentian airlock where Feitian suits stage for Chinese spacewalks" },
+    { "route": "/missions", "context_key": "STS-41B (Bruce McCandless MMU flight) · ISS construction EVAs · Shenzhou 7 first Chinese EVA" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Extravehicular Mobility Unit (EMU)",
+      "u": "https://www.nasa.gov/reference/extravehicular-activity-eva/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Orlan space suit",
+      "u": "https://en.wikipedia.org/wiki/Orlan_space_suit",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Simplified Aid For EVA Rescue (SAFER)",
+      "u": "https://en.wikipedia.org/wiki/Simplified_Aid_For_EVA_Rescue",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · Feitian space suit",
+      "u": "https://en.wikipedia.org/wiki/Feitian_space_suit",
+      "t": "deep"
+    }
+  ]
+}

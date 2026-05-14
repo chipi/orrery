@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Exploded wireframe of an Apollo A7L lunar suit — hard upper torso, over-the-shoulder PLSS backpack, Oxygen Purge System (OPS) emergency cylinder on top, gold sun visor, dust-sealed lunar overboots.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .fill-shell { fill: rgba(255,255,255,0.05); stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+    .fill-helmet { fill: rgba(255,255,255,0.08); stroke: rgba(255,255,255,0.85); stroke-width: 1.4; }
+    .fill-visor { fill: rgba(255,200,80,0.45); stroke: #ffc850; stroke-width: 1.6; }
+    .fill-glove { fill: rgba(255,107,107,0.15); stroke: #ff6b6b; stroke-width: 1.3; }
+    .fill-plss { fill: rgba(123,156,255,0.18); stroke: #7b9cff; stroke-width: 1.5; }
+    .fill-ops { fill: rgba(255,107,107,0.2); stroke: #ff6b6b; stroke-width: 1.4; }
+    .fill-boot { fill: rgba(180,140,80,0.18); stroke: rgba(180,140,80,0.85); stroke-width: 1.3; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .regolith { stroke: rgba(180,140,80,0.5); stroke-width: 0.8; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-blue { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-tan { fill: rgba(220,180,120,0.95); font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
+  </style>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="380" r="0.5" />
+
+  <text class="label" x="40" y="28">LUNAR SUIT — APOLLO A7L / A7LB — DESIGNED FOR WALKING IN 1/6 g</text>
+
+  <!-- Lunar regolith surface line at bottom -->
+  <line stroke="rgba(180,140,80,0.6)" stroke-width="1.4" stroke-dasharray="3 2" x1="40" y1="360" x2="560" y2="360" />
+  <text class="sublabel" x="44" y="376">REGOLITH SURFACE · electrostatic, abrasive, 1/6 g</text>
+
+  <!-- ====== Suit figure: front view, standing, slight lean ====== -->
+  <!-- centre x=300, head y=98, feet y=355 -->
+
+  <!-- OPS emergency O2 cylinder on top of PLSS -->
+  <rect class="fill-ops" x="232" y="86" width="60" height="20" rx="3" />
+
+  <!-- PLSS over-the-shoulder backpack (behind shoulders) -->
+  <rect class="fill-plss" x="222" y="108" width="80" height="120" rx="6" />
+  <rect fill="rgba(123,156,255,0.32)" stroke="rgba(123,156,255,0.6)" stroke-width="0.7" x="228" y="114" width="68" height="20" />
+  <rect fill="rgba(123,156,255,0.32)" stroke="rgba(123,156,255,0.6)" stroke-width="0.7" x="228" y="140" width="68" height="20" />
+  <rect fill="rgba(123,156,255,0.32)" stroke="rgba(123,156,255,0.6)" stroke-width="0.7" x="228" y="166" width="68" height="20" />
+  <rect fill="rgba(123,156,255,0.32)" stroke="rgba(123,156,255,0.6)" stroke-width="0.7" x="228" y="192" width="68" height="30" />
+
+  <!-- Helmet (sphere) -->
+  <ellipse class="fill-helmet" cx="340" cy="110" rx="34" ry="36" />
+  <!-- Gold sun visor (covering front) -->
+  <path class="fill-visor" d="M 318 88 Q 342 76 364 92 Q 368 132 338 142 Q 320 134 314 116 Z" />
+  <!-- Pressure helmet (clear bubble visible behind visor) -->
+  <ellipse class="fill-helmet" cx="340" cy="116" rx="22" ry="24" />
+
+  <!-- Neck ring -->
+  <ellipse class="fill-shell" cx="340" cy="146" rx="16" ry="4" />
+
+  <!-- HUT — soft-suit hard chest plate, slight forward lean against PLSS mass -->
+  <path class="fill-shell" d="M 298 152 Q 304 148 320 146 Q 348 146 366 150 Q 382 154 386 230 Q 380 245 364 246 L 320 246 Q 302 244 296 230 Z" />
+
+  <!-- Arms (front view, slight bend; show soft fabric joints) -->
+  <path class="fill-shell" d="M 300 176 Q 280 188 270 220 Q 264 250 274 280 Q 280 290 290 292" />
+  <path class="fill-shell" d="M 386 176 Q 406 188 416 220 Q 422 250 412 280 Q 406 290 396 292" />
+
+  <!-- Wrist rings + gloves -->
+  <ellipse class="fill-shell" cx="288" cy="292" rx="7" ry="3" />
+  <ellipse class="fill-glove" cx="285" cy="304" rx="11" ry="11" />
+  <ellipse class="fill-shell" cx="398" cy="292" rx="7" ry="3" />
+  <ellipse class="fill-glove" cx="401" cy="304" rx="11" ry="11" />
+
+  <!-- A7LB waist joint convolution (highlighted by tighter horizontal lines) -->
+  <line stroke="#4ecdc4" stroke-width="1.4" x1="298" y1="232" x2="384" y2="232" />
+  <line stroke="#4ecdc4" stroke-width="1" stroke-dasharray="2 2" x1="298" y1="238" x2="384" y2="238" />
+  <line stroke="#4ecdc4" stroke-width="1" stroke-dasharray="2 2" x1="298" y1="226" x2="384" y2="226" />
+
+  <!-- LTA + legs (drawn straight, ready to walk) -->
+  <path class="fill-shell" d="M 308 246 L 296 320 L 322 340 L 338 340 L 338 246 Z" />
+  <path class="fill-shell" d="M 374 246 L 386 320 L 360 340 L 344 340 L 344 246 Z" />
+
+  <!-- Knee mobility convolution (suggested by short cross-hatches) -->
+  <line stroke="rgba(78,205,196,0.55)" stroke-width="0.8" x1="304" y1="288" x2="324" y2="288" />
+  <line stroke="rgba(78,205,196,0.55)" stroke-width="0.8" x1="304" y1="294" x2="324" y2="294" />
+  <line stroke="rgba(78,205,196,0.55)" stroke-width="0.8" x1="356" y1="288" x2="380" y2="288" />
+  <line stroke="rgba(78,205,196,0.55)" stroke-width="0.8" x1="356" y1="294" x2="380" y2="294" />
+
+  <!-- Lunar overboots (dust-sealed, distinct color) -->
+  <path class="fill-boot" d="M 318 340 L 314 360 L 348 360 L 344 340 Z" />
+  <path class="fill-boot" d="M 354 340 L 358 360 L 392 360 L 386 340 Z" />
+
+  <!-- Lunar dust kicked up around boots -->
+  <circle class="dim-star" cx="310" cy="355" r="0.7" fill="rgba(180,140,80,0.7)" />
+  <circle class="dim-star" cx="316" cy="358" r="0.5" fill="rgba(180,140,80,0.7)" />
+  <circle class="dim-star" cx="350" cy="355" r="0.6" fill="rgba(180,140,80,0.7)" />
+  <circle class="dim-star" cx="396" cy="358" r="0.5" fill="rgba(180,140,80,0.7)" />
+
+  <!-- ============== Labels with leader lines ============== -->
+
+  <!-- OPS (top emergency cylinder) -->
+  <line class="lead" x1="232" y1="92" x2="160" y2="74" />
+  <text class="label-red" x="156" y="74" text-anchor="end">OPS · OXYGEN PURGE</text>
+  <text class="sublabel" x="156" y="86" text-anchor="end">30 min emergency O₂</text>
+
+  <!-- Helmet -->
+  <line class="lead" x1="372" y1="118" x2="446" y2="92" />
+  <text class="label" x="450" y="92">PRESSURE HELMET</text>
+  <text class="sublabel" x="450" y="104">polycarbonate bubble</text>
+
+  <!-- Gold sun visor -->
+  <line class="lead" x1="362" y1="106" x2="500" y2="60" />
+  <text class="label-gold" x="504" y="60">GOLD SUN VISOR</text>
+  <text class="sublabel" x="504" y="72">solar flux 1370 W/m² unfiltered</text>
+
+  <!-- HUT -->
+  <line class="lead" x1="296" y1="200" x2="220" y2="166" />
+  <text class="label" x="216" y="168" text-anchor="end">HARD UPPER TORSO</text>
+  <text class="sublabel" x="216" y="180" text-anchor="end">3.7 psi pure O₂ · max mobility</text>
+
+  <!-- PLSS -->
+  <line class="lead" x1="262" y1="170" x2="170" y2="180" />
+  <text class="label-blue" x="166" y="182" text-anchor="end">PLSS BACKPACK</text>
+  <text class="sublabel" x="166" y="194" text-anchor="end">O₂ · LiOH · battery · sublimator</text>
+  <text class="sublabel" x="166" y="206" text-anchor="end">7 h walking duration</text>
+
+  <!-- A7LB waist joint -->
+  <line class="lead" x1="386" y1="232" x2="476" y2="232" />
+  <text class="label-accent" x="480" y="234">A7LB WAIST JOINT</text>
+  <text class="sublabel" x="480" y="246">sit in LRV · lean against PLSS</text>
+
+  <!-- Gloves -->
+  <line class="lead" x1="412" y1="304" x2="500" y2="290" />
+  <text class="label-red" x="504" y="290">PRESSURE GLOVES</text>
+  <text class="sublabel" x="504" y="302">fingertip heaters on Apollo 15+</text>
+
+  <!-- Lunar overboots -->
+  <line class="lead" x1="338" y1="354" x2="220" y2="354" />
+  <text class="label-tan" x="216" y="356" text-anchor="end">DUST-SEALED OVERBOOTS</text>
+  <text class="sublabel" x="216" y="368" text-anchor="end">blue ribbed silicone · regolith resistance</text>
+
+  <!-- ============== Specs panel ============== -->
+  <g transform="translate(450,140)">
+    <rect x="0" y="0" width="130" height="160" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="14">A7L LUNAR SUIT</text>
+    <text class="sublabel" x="8" y="30">pressure ·</text>
+    <text class="sublabel" x="8" y="42">  3.7 psi pure O₂</text>
+    <text class="sublabel" x="8" y="58">EVA duration ·</text>
+    <text class="sublabel" x="8" y="70">  ~7 h walking</text>
+    <text class="sublabel" x="8" y="86">mass (Apollo) ·</text>
+    <text class="sublabel" x="8" y="98">  ~81 kg · 13 kg on Moon</text>
+    <text class="sublabel" x="8" y="116">thermal ·</text>
+    <text class="sublabel" x="8" y="128">  +120 °C sun / −170 shade</text>
+    <text class="sublabel" x="8" y="144">dust seals · everywhere</text>
+    <text class="sublabel" x="8" y="156">OPS · 30 min emergency O₂</text>
+  </g>
+
+  <text class="sublabel" x="40" y="395">Krechet-94 (USSR, never flew) · A7L (flew 1969–72) · AxEMU (Artemis III, ~2027) · Chinese lunar suit (planned 2030s)</text>
+</svg>

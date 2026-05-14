@@ -1269,6 +1269,24 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'PD-NASA',
     fallbackAuthor: 'NASA / JPL-Caltech / Space Science Institute (Cassini, Sep 2017)',
   },
+  'iva-suits-crew10.jpg': {
+    commons: 'SpaceX Crew-10 Astronaut Suit Up (KSC-20250314-PH-KLS01 0146).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Kennedy Space Center, SpaceX Crew-10, Mar 2025)',
+  },
+  'eva-suits-orlan.jpg': {
+    commons: 'ISS-54 EVA-2 Orlan space suit No. 4.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Roscosmos (ISS Expedition 54, Feb 2018)',
+  },
+  'lunar-suits-aldrin.jpg': {
+    commons: 'Aldrin Apollo 11.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Neil Armstrong (Apollo 11, Jul 1969)',
+  },
 };
 
 async function buildScienceEntries(): Promise<ProvenanceEntry[]> {

@@ -1,0 +1,32 @@
+{
+  "id": "iva-suits",
+  "tab": "life-in-space",
+  "order": 7,
+  "diagram": "iva-suits.svg",
+  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/iva-suits-crew10.jpg",
+    "credit": "NASA · SpaceX Crew-10 (Mar 2025) — astronauts in the SpaceX IVA pressure suit. Touch-screen gloves, single-piece front-entry, slim profile for the Crew Dragon cabin."
+  },
+  "see_in_app": [
+    { "route": "/fleet", "context_key": "Crew-rated spacecraft entries — Soyuz, Starliner, Crew Dragon, Shenzhou — all carry an IVA pressure suit" },
+    { "route": "/missions", "context_key": "Soyuz 11 (1971) — the only fatal in-flight decompression; the IVA suit was added afterward" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Sokol space suit",
+      "u": "https://en.wikipedia.org/wiki/Sokol_space_suit",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Space Suit Evolution (IVA history)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Advanced Crew Escape Suit (ACES)",
+      "u": "https://en.wikipedia.org/wiki/Advanced_Crew_Escape_Suit",
+      "t": "deep"
+    }
+  ]
+}

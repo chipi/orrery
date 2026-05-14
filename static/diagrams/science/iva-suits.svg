@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-label="Exploded wireframe of an IVA pressure suit (Sokol KV-2 / ACES / Crew Dragon style) — back-entry seam, fixed helmet with flip-up visor, umbilical for oxygen / comms / cooling, no PLSS backpack.">
+  <style>
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .fill-shell { fill: rgba(78,205,196,0.08); stroke: #4ecdc4; stroke-width: 1.5; }
+    .fill-helmet { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.85); stroke-width: 1.4; }
+    .fill-visor { fill: rgba(255,200,80,0.18); stroke: #ffc850; stroke-width: 1.4; }
+    .fill-glove { fill: rgba(255,107,107,0.15); stroke: #ff6b6b; stroke-width: 1.3; }
+    .fill-umbil { fill: rgba(123,156,255,0.18); stroke: #7b9cff; stroke-width: 1.3; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-red { fill: #ff6b6b; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .label-blue { fill: #7b9cff; font-family: 'Space Mono', monospace; font-size: 9.5px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
+  </style>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="80" cy="330" r="0.5" />
+  <circle class="dim-star" cx="560" cy="330" r="0.6" />
+
+  <text class="label" x="40" y="28">IVA SUIT — INTRA-VEHICULAR PRESSURE GARMENT (SOKOL / ACES / CREW DRAGON)</text>
+
+  <!-- Suit figure centred at x≈300, head at y≈80, feet at y≈320 -->
+  <!-- Helmet -->
+  <ellipse class="fill-helmet" cx="300" cy="90" rx="32" ry="34" />
+  <!-- Visor (flip-up, drawn open at top) -->
+  <path class="fill-visor" d="M 274 80 Q 300 60 326 80 Q 326 96 300 96 Q 274 96 274 80 Z" />
+  <!-- Neck ring -->
+  <ellipse class="fill-shell" cx="300" cy="120" rx="20" ry="6" />
+  <!-- Torso (rectangle with rounded shoulders) -->
+  <path class="fill-shell" d="M 256 128 Q 252 130 256 154 L 256 230 Q 256 240 268 244 L 332 244 Q 344 240 344 230 L 344 154 Q 348 130 344 128 Q 322 124 300 124 Q 278 124 256 128 Z" />
+  <!-- Back-entry zipper seam (dashed vertical down the back, shown faintly) -->
+  <line class="dashed" x1="300" y1="128" x2="300" y2="244" />
+  <!-- Arms (extending down past torso) -->
+  <path class="fill-shell" d="M 254 154 Q 232 168 222 200 Q 218 234 232 260" />
+  <path class="fill-shell" d="M 346 154 Q 368 168 378 200 Q 382 234 368 260" />
+  <!-- Wrist rings -->
+  <ellipse class="fill-shell" cx="232" cy="262" rx="8" ry="3" />
+  <ellipse class="fill-shell" cx="368" cy="262" rx="8" ry="3" />
+  <!-- Gloves -->
+  <ellipse class="fill-glove" cx="232" cy="274" rx="10" ry="10" />
+  <ellipse class="fill-glove" cx="368" cy="274" rx="10" ry="10" />
+  <!-- Pelvis + legs (suggested only — integrated boots are part of the same garment) -->
+  <path class="fill-shell" d="M 268 244 L 276 320 L 296 320 L 296 244 Z" />
+  <path class="fill-shell" d="M 332 244 L 324 320 L 304 320 L 304 244 Z" />
+
+  <!-- Umbilical (one combined hose snaking off the chest to the right) -->
+  <path class="fill-umbil" d="M 300 180 Q 360 184 410 200 Q 460 220 480 210" />
+
+  <!-- ===== Labels with leader lines ===== -->
+
+  <!-- Helmet -->
+  <line class="lead" x1="270" y1="90" x2="200" y2="60" />
+  <text class="label" x="196" y="60" text-anchor="end">FIXED HELMET</text>
+  <text class="sublabel" x="196" y="72" text-anchor="end">no neck ring rotation</text>
+
+  <!-- Visor -->
+  <line class="lead" x1="295" y1="68" x2="370" y2="50" />
+  <text class="label-gold" x="374" y="50">FLIP-UP VISOR</text>
+  <text class="sublabel" x="374" y="62">locks down on depress</text>
+
+  <!-- Neck ring / seal -->
+  <line class="lead" x1="320" y1="120" x2="410" y2="115" />
+  <text class="label-accent" x="414" y="118">NECK SEAL</text>
+  <text class="sublabel" x="414" y="130">rubber appliqué</text>
+
+  <!-- Torso pressure shell -->
+  <line class="lead" x1="256" y1="200" x2="180" y2="200" />
+  <text class="label-accent" x="176" y="200" text-anchor="end">PRESSURE SHELL</text>
+  <text class="sublabel" x="176" y="212" text-anchor="end">0.4 atm pure O₂ in depress</text>
+
+  <!-- Back-entry zipper -->
+  <line class="lead" x1="300" y1="240" x2="380" y2="266" />
+  <text class="label" x="386" y="268">BACK-ENTRY SEAM</text>
+  <text class="sublabel" x="386" y="280">Sokol · laced + sealed shut</text>
+
+  <!-- Umbilical -->
+  <line class="lead" x1="448" y1="216" x2="478" y2="244" />
+  <text class="label-blue" x="482" y="248">UMBILICAL</text>
+  <text class="sublabel" x="482" y="260">O₂ + comms + cooling water</text>
+  <text class="sublabel" x="482" y="272">tied to seat — not portable</text>
+
+  <!-- Gloves -->
+  <line class="lead" x1="222" y1="274" x2="160" y2="290" />
+  <text class="label-red" x="156" y="290" text-anchor="end">GLOVES</text>
+  <text class="sublabel" x="156" y="302" text-anchor="end">touchscreen-capable (Crew Dragon)</text>
+
+  <!-- Integrated boots -->
+  <line class="lead" x1="286" y1="320" x2="220" y2="335" />
+  <text class="label" x="216" y="338" text-anchor="end">INTEGRATED BOOTS</text>
+  <text class="sublabel" x="216" y="350" text-anchor="end">no separate joint · no walking</text>
+
+  <!-- ===== Specs panel ===== -->
+  <g transform="translate(440,90)">
+    <rect x="0" y="0" width="130" height="160" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="14">IVA SUIT SPECS</text>
+    <text class="sublabel" x="8" y="30">pressure (depress) ·</text>
+    <text class="sublabel" x="8" y="42">  ~0.4 atm pure O₂</text>
+    <text class="sublabel" x="8" y="58">reserve air ·</text>
+    <text class="sublabel" x="8" y="70">  ~30 min chest tank</text>
+    <text class="sublabel" x="8" y="86">PLSS ·</text>
+    <text class="sublabel" x="8" y="98">  NONE</text>
+    <text class="sublabel" x="8" y="114">thermal control ·</text>
+    <text class="sublabel" x="8" y="126">  cabin air + umbilical</text>
+    <text class="sublabel" x="8" y="142">mass · ~10 kg</text>
+    <text class="sublabel" x="8" y="154">EVA-capable · NO</text>
+  </g>
+</svg>

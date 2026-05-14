@@ -1,18 +1,15 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-05-14T07:39:51.287Z
+Generated: 2026-05-14T11:47:55.910Z
 Script: build-image-provenance@1.0.0
-Commit: a0cdf59adcd82807cf3adecde6748a59a119f3bf
-Total entries: 1328
+Commit: b9141a8eb80fc274b0a2bdeb7784b8e054bb3715
+Total entries: 1331
 
-## Added (6)
+## Added (3)
 
-- `/images/science/eva-mccandless.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/free-return-apollo13.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/gravity-assist-voyager-jupiter.png` — PD-NASA via wikimedia-commons
-- `/images/science/microgravity-pettit.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/muscle-atrophy-ared.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/patched-conics-cassini.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/eva-suits-orlan.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/iva-suits-crew10.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/lunar-suits-aldrin.jpg` — PD-NASA via wikimedia-commons
 
 ## Removed (0)
 

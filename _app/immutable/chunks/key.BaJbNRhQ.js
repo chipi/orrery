@@ -1,1 +1,0 @@
-import{i as c,n as i,s as _,b as h,h as r,a as d,p as k,c as u,d as y,U as b}from"./runtime.CHCBv8ke.js";function p(n,f,t){r&&d();var e=n,s=b,a,o=c()?i:_;h(()=>{o(s,s=f())&&(a&&k(a),a=u(()=>t(e)))}),r&&(e=y)}export{p as k};

@@ -536,6 +536,11 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     commonsCoverFirst: 'Pete Conrad on LM ladder, Apollo 12.jpg',
   },
   {
+    id: 'apollo13',
+    query: 'apollo 13 lunar module aquarius',
+    commonsCoverFirst: 'Apollo 13 LM with Mailbox-p.jpg',
+  },
+  {
     id: 'apollo14',
     query: 'apollo 14 lunar module antares',
     commonsCoverFirst: 'Apollo 14 Lunar Module (LM) on the moon.jpg',

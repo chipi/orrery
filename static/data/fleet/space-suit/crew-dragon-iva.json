@@ -1,0 +1,19 @@
+{
+  "id": "crew-dragon-iva",
+  "name": "SpaceX IVA Suit",
+  "category": "space-suit",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2020-05-30",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "The white slim-fit IVA suit worn on every Crew Dragon flight since Demo-2",
+  "credit": "SpaceX-designed launch-entry pressure suit. Single-piece front-entry, touchscreen-capable gloves to operate Crew Dragon's tablet console, custom-3D-printed helmets per crew member. Worn for all Crew Dragon ascent and re-entry phases.",
+  "linked_missions": ["demo-2", "crew-1", "polaris-dawn", "axiom-1"],
+  "links": [
+    { "l": "Wikipedia · SpaceX spacesuit", "u": "https://en.wikipedia.org/wiki/SpaceX_spacesuit", "t": "intro" },
+    { "l": "SpaceX · Spacesuit", "u": "https://www.spacex.com/", "t": "core" }
+  ]
+}

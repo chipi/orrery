@@ -1,0 +1,20 @@
+{
+  "id": "orlan-mks",
+  "name": "Orlan-MKS",
+  "category": "space-suit",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "NPP Zvezda",
+  "first_flight": "2017-08-17",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "iss-assembly",
+  "best_known_for": "The latest variant of the Orlan family — Russian rear-entry EVA suit, in service since the 1977 Salyut program",
+  "credit": "Latest generation of the Orlan rear-entry EVA suit family that began with Salyut 6 in 1977. The cosmonaut steps in through a backpack-mounted hatch that locks shut in one motion — no airlock pre-breathe gymnastics. Runs at 5.7 psi pure O₂, higher than the US EMU. Used on the ISS Russian segment.",
+  "linked_missions": ["soyuz-29", "mir-eva-program", "iss-russian-segment-evas"],
+  "links": [
+    { "l": "Wikipedia · Orlan space suit", "u": "https://en.wikipedia.org/wiki/Orlan_space_suit", "t": "intro" },
+    { "l": "NPP Zvezda · Orlan-MKS datasheet", "u": "https://zvezda-npp.ru/en/products/space-suits-and-systems/orlan-mks-spacesuit/", "t": "core" },
+    { "l": "RussianSpaceWeb · Orlan", "u": "https://www.russianspaceweb.com/orlan.html", "t": "deep" }
+  ]
+}

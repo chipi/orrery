@@ -1,0 +1,19 @@
+{
+  "id": "krechet-94",
+  "name": "Krechet-94 (\"Gyrfalcon\")",
+  "category": "space-suit",
+  "agency": "Roscosmos",
+  "country": "USSR",
+  "manufacturer": "NPP Zvezda",
+  "first_flight": "never flown",
+  "status": "FAILED",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "The Soviet lunar suit that never reached the Moon — its rear-entry architecture became the DNA of every Russian and Chinese EVA suit since",
+  "credit": "Soviet lunar surface suit developed for the cancelled N1/L3 crewed lunar program. Single-piece rear-entry design with the PLSS built into the back hatch — the architectural pattern that later became Orlan and Feitian. Krechet hardware survived the program's cancellation and lives in museum collections; the design lineage lives on.",
+  "linked_missions": [],
+  "links": [
+    { "l": "Wikipedia · Krechet-94", "u": "https://en.wikipedia.org/wiki/Krechet-94", "t": "intro" },
+    { "l": "RussianSpaceWeb · N1-L3 lunar program", "u": "https://www.russianspaceweb.com/n1.html", "t": "core" }
+  ]
+}

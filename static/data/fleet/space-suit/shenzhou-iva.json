@@ -1,0 +1,19 @@
+{
+  "id": "shenzhou-iva",
+  "name": "Shenzhou IVA Suit",
+  "category": "space-suit",
+  "agency": "CMSA",
+  "country": "China",
+  "manufacturer": "China Astronaut Research and Training Centre",
+  "first_flight": "2003-10-15",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "iss-assembly",
+  "best_known_for": "Worn by every Chinese taikonaut on every Shenzhou flight since 2003",
+  "credit": "Chinese launch-entry pressure suit derived from the Soviet Sokol family. Used on Shenzhou 5 (Yang Liwei, China's first crewed spaceflight, 2003) and every subsequent Shenzhou mission to date.",
+  "linked_missions": ["shenzhou-5", "shenzhou-9", "shenzhou-12", "shenzhou-19"],
+  "links": [
+    { "l": "Wikipedia · Shenzhou spacecraft", "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)", "t": "intro" },
+    { "l": "Xinhua · Tiangong crewed operations", "u": "https://english.news.cn/", "t": "deep" }
+  ]
+}

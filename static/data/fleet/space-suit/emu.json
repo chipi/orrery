@@ -1,0 +1,20 @@
+{
+  "id": "emu",
+  "name": "EMU (Extravehicular Mobility Unit)",
+  "category": "space-suit",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "ILC Dover / Collins Aerospace",
+  "first_flight": "1981-04-12",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
+  "credit": "Modular EVA suit with a hard upper torso, soft fabric arms and legs, and a backpack-mounted Primary Life Support System. Operates at 4.3 psi pure O₂. Originally fielded for Shuttle EVAs (1981), still in service on the ISS. SAFER mini-thruster pack added for tether-loss rescue.",
+  "linked_missions": ["sts-6", "sts-41-b", "iss-construction-evas"],
+  "links": [
+    { "l": "Wikipedia · Extravehicular Mobility Unit", "u": "https://en.wikipedia.org/wiki/Extravehicular_Mobility_Unit", "t": "intro" },
+    { "l": "NASA · EMU reference", "u": "https://www.nasa.gov/wp-content/uploads/2015/09/106766main_emu.pdf", "t": "core" },
+    { "l": "Collins Aerospace · EMU heritage", "u": "https://www.collinsaerospace.com/", "t": "deep" }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "aces",
+  "name": "ACES (Advanced Crew Escape Suit)",
+  "category": "space-suit",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "David Clark Company",
+  "first_flight": "1994-02-03",
+  "last_flight": "2011-07-21",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "best_known_for": "The orange \"pumpkin\" suit worn for every Space Shuttle launch and re-entry after Challenger",
+  "credit": "Full-pressure launch-entry suit developed by David Clark after the Challenger loss made shirtsleeve ascent unacceptable. Replaced the earlier Launch Entry Suit (LES). Detachable gloves, parachute harness integrated, distinctive international-orange colour for water-recovery visibility.",
+  "linked_missions": ["sts-60", "sts-95", "sts-114", "sts-135"],
+  "links": [
+    { "l": "Wikipedia · Advanced Crew Escape Suit", "u": "https://en.wikipedia.org/wiki/Advanced_Crew_Escape_Suit", "t": "intro" },
+    { "l": "NASA · Suit Evolution (Shuttle era)", "u": "https://www.nasa.gov/wp-content/uploads/2015/03/295511main_space_suit_evolution.pdf", "t": "core" },
+    { "l": "David Clark Co · ACES product page", "u": "https://www.davidclark.com/aerospace-products/launch-entry-pressure-suits/", "t": "deep" }
+  ]
+}

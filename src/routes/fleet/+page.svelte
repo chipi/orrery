@@ -143,6 +143,7 @@
     'lander',
     'orbiter',
     'observatory',
+    'space-suit',
   ];
 
   const CATEGORY_LABEL: Record<FleetCategory, string> = {
@@ -154,11 +155,9 @@
     lander: 'Lander',
     orbiter: 'Orbiter',
     observatory: 'Observatory',
+    'space-suit': 'Suit',
   };
 
-  // Per-category accent color — used as the card's left-edge stripe and
-  // agency-badge background, mirroring the per-mission color used on
-  // /missions cards. Picks pull from the same orrery design tokens.
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
     launcher: '#ffc850', // gold — boosters
     'crewed-spacecraft': '#c1440e', // mars-red — humans
@@ -168,6 +167,7 @@
     lander: '#9c8c4e', // dust-tan
     orbiter: '#7a4ecd', // violet — outer space
     observatory: '#4ecdc4', // teal — scientific
+    'space-suit': '#cbd5e1', // ice-white — pressure shell
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];

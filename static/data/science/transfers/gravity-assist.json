@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 6,
   "diagram": "gravity-assist.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/missions", "context_key": "Voyager 2 and Cassini chained gravity assists across the outer solar system" }
   ],

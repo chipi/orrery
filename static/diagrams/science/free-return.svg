@@ -1,31 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Free-return trajectory: Earth out, planet flyby, Earth back">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="A free-return trajectory: a figure-8 around the Moon that, if no further burn is done, brings the spacecraft back to Earth automatically. The Apollo abort safety net.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .out { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .back { stroke: #ffc850; stroke-width: 2.4; fill: none; stroke-dasharray: 5 3; }
+    .moon-orbit { stroke: rgba(255,255,255,0.3); stroke-width: 1; fill: none; stroke-dasharray: 4 3; }
+    .earth { fill: rgba(75,156,211,0.4); stroke: rgba(75,156,211,0.95); stroke-width: 1.5; }
+    .moon { fill: rgba(255,255,255,0.3); stroke: rgba(255,255,255,0.85); stroke-width: 1.2; }
+    .accent-fill { fill: #4ecdc4; }
+    .gold-fill { fill: #ffc850; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Sun at centre -->
-  <circle cx="200" cy="150" r="6" class="focus" />
-  <!-- Earth at start position (left) -->
-  <circle cx="80" cy="150" r="5" class="body" />
-  <text x="42" y="148" class="label-mute">Earth</text>
-  <!-- Mars at flyby (right) -->
-  <circle cx="320" cy="150" r="5" class="body" />
-  <text x="332" y="148" class="label-mute">Mars</text>
-  <!-- Outbound arc: from Earth swing wide, past Mars -->
-  <path d="M 80 150 Q 180 50 320 150" class="accent" />
-  <!-- Inbound arc: bouncing back from Mars side, returning to Earth at a different position -->
-  <path d="M 320 150 Q 220 250 80 150" class="accent" />
-  <!-- Direction arrows -->
-  <polygon points="240,76 234,80 240,84" fill="#4ecdc4" transform="rotate(-32 237 80)" />
-  <polygon points="160,224 160,232 168,228" fill="#4ecdc4" />
-  <text x="146" y="46" class="label-accent">outbound</text>
-  <text x="158" y="280" class="label-accent">return</text>
-  <text x="92" y="170" class="label-mute">depart</text>
-  <text x="296" y="170" class="label-mute">flyby</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.6" />
+  <circle class="dim-star" cx="540" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">FREE-RETURN TRAJECTORY — THE FIGURE-8 THAT GETS YOU HOME AUTOMATICALLY</text>
+
+  <!-- Earth -->
+  <circle class="earth" cx="120" cy="180" r="22" />
+  <text class="label" x="120" y="184" text-anchor="middle" fill="rgba(255,255,255,0.9)">EARTH</text>
+
+  <!-- Moon at its orbit position -->
+  <circle class="moon" cx="460" cy="180" r="11" />
+  <text class="label" x="460" y="184" text-anchor="middle" fill="rgba(255,255,255,0.9)">MOON</text>
+  <!-- Moon orbit ring -->
+  <circle class="moon-orbit" cx="120" cy="180" r="340" />
+
+  <!-- Outbound trajectory: from Earth out, swing past Moon's far side -->
+  <path class="out" d="M 142 180 Q 280 70 470 168 Q 480 178 472 190" />
+  <polygon class="accent-fill" points="262,77 252,76 256,83" />
+  <text class="label-accent" x="280" y="60" text-anchor="middle">OUTBOUND</text>
+  <text class="sublabel" x="280" y="72" text-anchor="middle">TLI burn from LEO</text>
+
+  <!-- Return trajectory: from Moon swing down and back -->
+  <path class="back" d="M 472 190 Q 480 200 470 210 Q 300 320 142 200" />
+  <polygon class="gold-fill" points="252,290 262,285 258,278" />
+  <text class="label-gold" x="280" y="310" text-anchor="middle">FREE RETURN</text>
+  <text class="sublabel" x="280" y="296" text-anchor="middle">no burn needed</text>
+
+  <!-- Moon flyby callout -->
+  <line stroke="rgba(255,255,255,0.4)" stroke-width="0.8" x1="475" y1="180" x2="540" y2="120" />
+  <text class="label" x="540" y="116" text-anchor="end">SWING BEHIND</text>
+  <text class="sublabel" x="540" y="128" text-anchor="end">Moon's gravity bends path</text>
+  <text class="sublabel" x="540" y="140" text-anchor="end">back toward Earth</text>
+
+  <!-- Earth re-entry callout -->
+  <line stroke="rgba(255,255,255,0.4)" stroke-width="0.8" x1="142" y1="200" x2="62" y2="246" />
+  <text class="label" x="58" y="250" text-anchor="end">RE-ENTRY</text>
+  <text class="sublabel" x="58" y="262" text-anchor="end">atmospheric drag, no burn</text>
+
+  <!-- Side panel -->
+  <g transform="translate(40,90)">
+    <rect x="0" y="0" width="160" height="120" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">APOLLO ABORT MODE</text>
+    <text class="sublabel" x="8" y="32">if MSC LOI fails →</text>
+    <text class="sublabel" x="8" y="44">no burn = automatic return</text>
+    <text class="sublabel" x="8" y="62">Apollo 8, 10, 11: nominal</text>
+    <text class="sublabel" x="8" y="74">free-return after TLI</text>
+    <text class="sublabel" x="8" y="92">APOLLO 13:</text>
+    <text class="sublabel" x="8" y="104">  hybrid → reverted to FR</text>
+    <text class="sublabel" x="8" y="114">  after O₂ tank failure</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">6-day total trip · period ≈ 12 days · Earth's rotation timed to align splashdown</text>
 </svg>

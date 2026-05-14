@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 7,
   "diagram": "patched-conics.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "Porkchop calculations use a patched-conic approximation" },
     { "route": "/fly", "context_key": "/fly switches frames at sphere-of-influence boundaries" }

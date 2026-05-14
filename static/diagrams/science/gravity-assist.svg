@@ -1,30 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Gravity assist flyby: hyperbolic path bent by planet gravity, exit speed boosted by planet's heliocentric motion">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="A gravity assist: in the planet's frame the spacecraft enters and exits at the same speed but along a different direction; in the heliocentric frame it gains kinetic energy from the planet's orbital motion.">
   <style>
     .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
-    .focus { fill: #4ecdc4; }
-    .body { fill: rgba(255,255,255,0.85); }
-    text { font-family: 'Space Mono', monospace; font-size: 11px; fill: rgba(255,255,255,0.85); letter-spacing: 1px; }
-    .label-accent { fill: #4ecdc4; }
-    .label-mute { fill: rgba(255,255,255,0.55); font-size: 10px; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .asymptote { stroke: rgba(255,255,255,0.4); stroke-width: 1.2; stroke-dasharray: 4 3; fill: none; }
+    .hyperbola { stroke: #4ecdc4; stroke-width: 2.4; fill: none; }
+    .vplanet { stroke: #ffc850; stroke-width: 2; fill: none; }
+    .vplanet-fill { fill: #ffc850; }
+    .accent-fill { fill: #4ecdc4; }
+    .planet { fill: rgba(255,107,107,0.4); stroke: rgba(255,107,107,0.95); stroke-width: 1.5; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <!-- Planet as central body -->
-  <circle cx="200" cy="160" r="14" class="focus" />
-  <text x="174" y="200" class="label-accent">planet</text>
-  <!-- Planet's orbital velocity (heliocentric) -->
-  <line x1="200" y1="160" x2="290" y2="160" class="dashed" />
-  <polygon points="294,160 286,156 286,164" fill="rgba(255,255,255,0.55)" />
-  <text x="232" y="152" class="label-mute">V_planet</text>
-  <!-- Hyperbolic incoming path: from upper-left, bent by planet -->
-  <path d="M 30 30 Q 160 90 195 146" class="accent" />
-  <polygon points="190,140 196,146 198,140" fill="#4ecdc4" />
-  <text x="40" y="22" class="label-accent">V_in (relative)</text>
-  <!-- Hyperbolic outgoing path: bent away, exiting upper-right -->
-  <path d="M 215 174 Q 290 230 380 280" class="accent" />
-  <polygon points="378,278 372,272 374,266" fill="#4ecdc4" />
-  <text x="298" y="288" class="label-accent">V_out (relative)</text>
-  <!-- Asymptotic angle indication -->
-  <text x="60" y="262" class="label-mute">|V_in| = |V_out| in planet's frame</text>
-  <text x="60" y="278" class="label-mute">but planet's motion adds heliocentric Δv</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="60" r="0.5" />
+  <circle class="dim-star" cx="80" cy="290" r="0.5" />
+
+  <text class="label" x="40" y="28">GRAVITY ASSIST — STEAL KINETIC ENERGY FROM A PLANET'S ORBITAL MOTION</text>
+
+  <!-- Planet -->
+  <circle class="planet" cx="300" cy="180" r="20" />
+  <text class="label" x="300" y="184" text-anchor="middle" fill="rgba(255,255,255,0.95)">JUPITER</text>
+
+  <!-- Planet's heliocentric velocity (orbiting the sun, moving rightward) -->
+  <line class="vplanet" x1="300" y1="180" x2="370" y2="180" />
+  <polygon class="vplanet-fill" points="375,180 365,175 365,185" />
+  <text class="label-gold" x="316" y="172">V_planet · 13 km/s</text>
+
+  <!-- Incoming hyperbolic trajectory: from lower-left -->
+  <path class="hyperbola" d="M 60 280 Q 200 250 280 198" />
+
+  <!-- Outgoing hyperbolic trajectory: to upper-right (bent forward by ~70°) -->
+  <path class="hyperbola" d="M 320 162 Q 420 100 560 80" />
+
+  <!-- Asymptote dashes for clarity -->
+  <line class="asymptote" x1="60" y1="280" x2="280" y2="198" />
+  <line class="asymptote" x1="320" y1="162" x2="560" y2="80" />
+
+  <!-- Velocity arrows on each leg (in planet frame) -->
+  <line stroke="#4ecdc4" stroke-width="2" x1="120" y1="270" x2="92" y2="278" />
+  <polygon class="accent-fill" points="88,279 98,275 98,283" />
+  <text class="label-accent" x="100" y="262">V∞ (in)</text>
+  <text class="sublabel" x="100" y="274">planet frame</text>
+
+  <line stroke="#4ecdc4" stroke-width="2" x1="500" y1="85" x2="528" y2="79" />
+  <polygon class="accent-fill" points="532,78 522,82 522,74" />
+  <text class="label-accent" x="430" y="80">V∞ (out)</text>
+  <text class="sublabel" x="430" y="92">same magnitude · rotated</text>
+
+  <!-- Heliocentric Δv panel: left -->
+  <g transform="translate(30,100)">
+    <rect x="0" y="0" width="170" height="140" fill="rgba(0,0,0,0.35)" stroke="rgba(255,255,255,0.15)" stroke-width="1" rx="4" />
+    <text class="label-gold" x="8" y="16">IN PLANET FRAME</text>
+    <text class="sublabel" x="8" y="32">|V∞,in| = |V∞,out|</text>
+    <text class="sublabel" x="8" y="44">energy conserved · only</text>
+    <text class="sublabel" x="8" y="56">direction changed by δ</text>
+    <text class="label-accent" x="8" y="80">IN SUN FRAME</text>
+    <text class="sublabel" x="8" y="96">V_helio = V_planet + V∞</text>
+    <text class="sublabel" x="8" y="108">→ gains ΔV up to 2 V_planet</text>
+    <text class="sublabel" x="8" y="120">(against retrograde flyby)</text>
+    <text class="sublabel" x="8" y="132">Voyager 2 Jup: +10 km/s</text>
+  </g>
+
+  <!-- Missions list right -->
+  <g transform="translate(560,100)">
+    <text class="label-gold" x="0" y="0" text-anchor="end">MISSIONS</text>
+    <text class="sublabel" x="0" y="14" text-anchor="end">Mariner 10 (Venus → Mercury)</text>
+    <text class="sublabel" x="0" y="26" text-anchor="end">Voyager 1, 2 (Jup, Sat, ...)</text>
+    <text class="sublabel" x="0" y="38" text-anchor="end">Galileo (V-E-E-A)</text>
+    <text class="sublabel" x="0" y="50" text-anchor="end">Cassini (V-V-E-J)</text>
+    <text class="sublabel" x="0" y="62" text-anchor="end">Parker Solar Probe</text>
+    <text class="sublabel" x="0" y="74" text-anchor="end">  (7× Venus, retrograde)</text>
+  </g>
+
+  <text class="sublabel" x="540" y="316" text-anchor="end">no fuel burned — the planet loses an infinitesimal fraction of its orbital energy</text>
 </svg>

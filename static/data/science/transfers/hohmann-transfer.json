@@ -3,7 +3,7 @@
   "tab": "transfers",
   "order": 1,
   "diagram": "hohmann-transfer.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/plan", "context_key": "The natural-minimum band on a Mars porkchop is the Hohmann window" },
     { "route": "/missions", "context_key": "Most Mars missions follow a Hohmann-class trajectory" }

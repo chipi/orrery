@@ -26,7 +26,7 @@
   };
   let { entityId, url, label, provenance: provenanceProp }: Props = $props();
 
-  let resolved = $state<LinkProvenanceEntry | null>(provenanceProp ?? null);
+  let resolved = $state<LinkProvenanceEntry | null>(null);
 
   $effect(() => {
     if (provenanceProp) {

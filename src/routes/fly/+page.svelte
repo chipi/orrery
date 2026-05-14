@@ -273,10 +273,15 @@
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
-  // Cislunar view mode (ADR-058). Auto-switches to 'cislunar' when a
-  // Moon mission loads, 'heliocentric' otherwise. Toggle button is
-  // shown only when isMoonMission is true. Session-only state.
-  let viewMode: 'heliocentric' | 'cislunar' = $state('heliocentric');
+  // Cislunar view mode (ADR-058). Derived from mission destination —
+  // Moon missions render in the Earth-centred cislunar scene, all
+  // others render heliocentrically. The user-facing Cislunar/Solar
+  // toggle was dropped during smoke testing: at solar zoom the
+  // cislunar trip is sub-pixel, so a "Solar" view of a Moon mission
+  // was either misleading or a fuzzy duplicate of the cislunar view.
+  const viewMode = $derived<'heliocentric' | 'cislunar'>(
+    isMoonMission ? 'cislunar' : 'heliocentric',
+  );
   let cislunarTrajectory: CislunarTrajectory | null = $state(null);
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
@@ -339,6 +344,7 @@
   // frame. cislunarSceneRef / cislunarCameraRef will be used by the
   // Stage 1 picture-in-picture inset; kept un-exported for now.
   let cislunarMoonMeshRef: THREE.Mesh | undefined;
+  let cislunarMoonFrameGroupRef: THREE.Group | undefined;
   let rebuildCislunarLinesRef: ((traj: CislunarTrajectory | null) => void) | undefined;
   let rebuildCislunarAnnotationsRef:
     | ((
@@ -691,25 +697,18 @@
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
   }
-  // Cross-fade state for the view-mode toggle. animate() drives this
-  // each frame: 0 → 1 over ~800 ms, with the actual viewMode swap
-  // happening at midpoint (t === 0.5). The bound .toggle-fade div
-  // overlays the canvas with opacity = sin(πt), peaking at 0.5.
-  let toggleFadeProgress: number | null = $state(null);
-  let toggleFadeFrom: 'heliocentric' | 'cislunar' | null = null;
-  function toggleViewMode() {
-    if (prefersReducedMotion()) {
-      viewMode = viewMode === 'heliocentric' ? 'cislunar' : 'heliocentric';
-      return;
-    }
-    if (toggleFadeProgress !== null) return; // mid-fade — ignore re-clicks
-    toggleFadeFrom = viewMode;
-    toggleFadeProgress = 0;
-  }
   function togglePlay() {
+    // If user presses Play after the flight has completed, rewind to
+    // launch and replay the mission.
+    if (!isPlaying && simDay >= arcTimeline.arr_day) {
+      simDay = arcTimeline.dep_day;
+    }
     isPlaying = !isPlaying;
   }
   function setSpeed(v: number) {
+    if (simDay >= arcTimeline.arr_day) {
+      simDay = arcTimeline.dep_day;
+    }
     simSpeed = v;
     isPlaying = true;
   }
@@ -801,7 +800,6 @@
       });
       rebuildCislunarLinesRef?.(cislunarTrajectory);
       rebuildCislunarAnnotationsRef?.(cislunarTrajectory, m.flight?.cislunar_profile);
-      viewMode = 'cislunar';
 
       // Apollo / cislunar: heliocentric arc from live Earth at dep_day
       // to live Moon at flyby_day (Moon arrival). The trajectory
@@ -841,7 +839,6 @@
       cislunarTrajectory = null;
       rebuildCislunarLinesRef?.(null);
       rebuildCislunarAnnotationsRef?.(null, undefined);
-      viewMode = 'heliocentric';
 
       // Pass real arrival V∞ when the mission has flight data so the
       // outbound arc shape reflects the mission's actual transfer
@@ -882,11 +879,15 @@
       flight_data_quality: m.flight_data_quality,
     };
     simDay = mission.timeline.dep_day;
-    // Moon missions are 4-12 days vs Mars's 200+ — drop the default
-    // sim speed from 7×→1× so a 4-day Apollo plays in 4 sec instead
-    // of half a second. The Moon-mode speed pills use a slower [0.1,
-    // 0.5, 1, 3] preset (vs Mars [1, 7, 30, 90]); 1× is in both sets.
-    simSpeed = isMoonMission ? 1 : 7;
+    // Moon missions are 4-12 days vs Mars's 200+. Default speed at 0.4×
+    // (was 1×) so the auto-zoom on lunar phases has time to read — at
+    // 1× Apollo 11's 0.6-day lunar-orbit window only got 0.6 s of
+    // playback, shorter than the ~1 s zoom transition itself, so the
+    // camera move looked glitchy. 0.4× stretches a typical lunar phase
+    // to ~1.5–2 s of playback — enough to see the zoom complete, the
+    // orbit detail, and the zoom back out. Users can still pick faster
+    // pills (1×, 3×) if they want.
+    simSpeed = isMoonMission ? 0.4 : 7;
     // v0.1.13 — fuse editorial overlay events with structural flight
     // events from mission.flight.events[]. Missions with measured /
     // sparse flight data (issue #31) now contribute TCMs, EDL, etc.
@@ -1118,8 +1119,11 @@
     cislunarScene.add(cislunarEarth);
 
     // Moon — position updated each frame from moonEciPos(simDay).
+    // Moon mesh: 3× visual exaggeration (was 5× — dialed back so the
+    // 0.19u-radius Apollo-class lunar orbit reads as a distinct ring
+    // around the mesh instead of being swallowed by it).
     const cislunarMoon = new THREE.Mesh(
-      new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR * 5, 24, 24),
+      new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR * 3, 24, 24),
       new THREE.MeshStandardMaterial({ color: 0xcfcfcf, roughness: 0.95 }),
     );
     cislunarScene.add(cislunarMoon);
@@ -1190,6 +1194,22 @@
       spiral_lunar: 0xc77dff,
     };
     const cislunarPhaseLines: Map<string, THREE.Line> = new Map();
+    // Lunar-phase lines live inside a Group that rides with the Moon.
+    // The orbit / spiral_lunar / descent / ascent points are stored in
+    // Moon-relative coords (= absolute_pt - moonAtFlyby × SCALE_CISLUNAR),
+    // and the group's position is updated each frame to
+    // (currentMoon - moonAtFlyby) × SCALE_CISLUNAR. End result: the
+    // orbit ring tracks the Moon as it drifts forward through ECI,
+    // instead of staying anchored where the Moon was at flyby_day.
+    const cislunarMoonFrameGroup = new THREE.Group();
+    cislunarScene.add(cislunarMoonFrameGroup);
+    const LUNAR_LOCAL_PHASE_TYPES = new Set<string>([
+      'lunar_orbit',
+      'spiral_lunar',
+      'lunar_flyby',
+      'descent',
+      'ascent',
+    ]);
     function ensureCislunarPhaseLine(type: string): THREE.Line {
       const existing = cislunarPhaseLines.get(type);
       if (existing) return existing;
@@ -1202,16 +1222,78 @@
           opacity: 0.95,
         }),
       );
-      cislunarScene.add(line);
+      if (LUNAR_LOCAL_PHASE_TYPES.has(type)) {
+        cislunarMoonFrameGroup.add(line);
+      } else {
+        cislunarScene.add(line);
+      }
       cislunarPhaseLines.set(type, line);
       return line;
     }
 
-    // Spacecraft marker for the cislunar scene.
-    const cislunarSpacecraft = new THREE.Mesh(
-      new THREE.SphereGeometry(800 * SCALE_CISLUNAR, 12, 12),
-      new THREE.MeshBasicMaterial({ color: 0xffffff }),
+    // Spacecraft marker for the cislunar scene. Sprite-based so it
+    // stays constant size on-screen regardless of cislunar camera zoom
+    // (the prior sphere was 0.08 scene units = ~4% of Earth's visual
+    // size, invisible). Red filled circle + soft halo, matching the
+    // heliocentric scSprite glyph for visual consistency. Red is
+    // distinct from every phase colour so the spacecraft never blends
+    // into its own trail.
+    const CIS_GLYPH_PX = 64;
+    const cisScCanvas = document.createElement('canvas');
+    cisScCanvas.width = CIS_GLYPH_PX;
+    cisScCanvas.height = CIS_GLYPH_PX;
+    {
+      const tctx = cisScCanvas.getContext('2d')!;
+      tctx.clearRect(0, 0, CIS_GLYPH_PX, CIS_GLYPH_PX);
+      const cx = CIS_GLYPH_PX / 2;
+      const cy = CIS_GLYPH_PX / 2;
+      const glow = tctx.createRadialGradient(cx, cy, 4, cx, cy, CIS_GLYPH_PX / 2);
+      glow.addColorStop(0, 'rgba(255,58,76,0.4)');
+      glow.addColorStop(1, 'rgba(255,58,76,0)');
+      tctx.fillStyle = glow;
+      tctx.fillRect(0, 0, CIS_GLYPH_PX, CIS_GLYPH_PX);
+      tctx.beginPath();
+      tctx.arc(cx, cy, CIS_GLYPH_PX * 0.22, 0, Math.PI * 2);
+      tctx.fillStyle = 'rgba(20,8,12,0.9)';
+      tctx.fill();
+      tctx.beginPath();
+      tctx.arc(cx, cy, CIS_GLYPH_PX * 0.18, 0, Math.PI * 2);
+      tctx.fillStyle = '#ff3a4c';
+      tctx.shadowColor = 'rgba(255,58,76,0.8)';
+      tctx.shadowBlur = 4;
+      tctx.fill();
+      const innerGlow = tctx.createRadialGradient(
+        cx - CIS_GLYPH_PX * 0.05,
+        cy - CIS_GLYPH_PX * 0.05,
+        0,
+        cx,
+        cy,
+        CIS_GLYPH_PX * 0.18,
+      );
+      innerGlow.addColorStop(0, 'rgba(255,200,200,0.7)');
+      innerGlow.addColorStop(1, 'rgba(255,200,200,0)');
+      tctx.shadowBlur = 0;
+      tctx.fillStyle = innerGlow;
+      tctx.beginPath();
+      tctx.arc(cx, cy, CIS_GLYPH_PX * 0.18, 0, Math.PI * 2);
+      tctx.fill();
+    }
+    const cisScTex = new THREE.CanvasTexture(cisScCanvas);
+    cisScTex.minFilter = THREE.LinearFilter;
+    cisScTex.magFilter = THREE.LinearFilter;
+    const cislunarSpacecraft = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: cisScTex,
+        transparent: true,
+        depthWrite: false,
+        depthTest: false,
+      }),
     );
+    // ~4× smaller than the prior 4u sprite per smoke-test feedback —
+    // the marker was overwhelming the lunar orbit (Apollo 11's 110 km
+    // orbit altitude maps to ~0.19 scene units, dwarfed by a 4u sprite).
+    cislunarSpacecraft.scale.set(1, 1, 1);
+    cislunarSpacecraft.renderOrder = 999;
     cislunarScene.add(cislunarSpacecraft);
 
     // Phase-boundary ∆v annotation sprites (ADR-058 Stage 3). Rendered
@@ -1341,9 +1423,6 @@
     });
 
     function rebuildCislunarLines(traj: CislunarTrajectory | null): void {
-      // Hide every existing phase line first; only re-show the ones
-      // present in the new trajectory. Prevents stale phases from a
-      // prior mission leaking into the next render.
       for (const line of cislunarPhaseLines.values()) line.visible = false;
       if (!traj) {
         cislunarSpacecraft.visible = false;
@@ -1352,14 +1431,24 @@
       }
       cislunarSpacecraft.visible = true;
       cislunarMoon.visible = true;
+      // Reference Moon position used when this mission's trajectory
+      // was built — lunar phase points are absolute in ECI but anchored
+      // to where the Moon was at flyby_day. We subtract this reference
+      // to get Moon-relative points and put them in the moon-frame
+      // group so the orbit + descent track the moving Moon mesh.
+      const moonAtFlybyRef = moonEciPos(arcTimeline.flyby_day);
       for (const phase of traj.phases) {
         const line = ensureCislunarPhaseLine(phase.type);
+        const lunarLocal = LUNAR_LOCAL_PHASE_TYPES.has(phase.type);
         const verts = new Float32Array(phase.points.length * 3);
         for (let i = 0; i < phase.points.length; i++) {
           const p = phase.points[i];
-          verts[i * 3] = p.x * SCALE_CISLUNAR;
-          verts[i * 3 + 1] = p.y * SCALE_CISLUNAR;
-          verts[i * 3 + 2] = p.z * SCALE_CISLUNAR;
+          const x = lunarLocal ? p.x - moonAtFlybyRef.x : p.x;
+          const y = lunarLocal ? p.y - moonAtFlybyRef.y : p.y;
+          const z = lunarLocal ? p.z - moonAtFlybyRef.z : p.z;
+          verts[i * 3] = x * SCALE_CISLUNAR;
+          verts[i * 3 + 1] = y * SCALE_CISLUNAR;
+          verts[i * 3 + 2] = z * SCALE_CISLUNAR;
         }
         line.geometry.dispose();
         line.geometry = new THREE.BufferGeometry();
@@ -1385,10 +1474,23 @@
       const frac = f - i;
       const a = phase.points[i];
       const b = phase.points[i + 1] ?? a;
+      // For lunar-local phases, the sprite rides with the Moon. Add
+      // (currentMoon - moonAtFlyby) so its position tracks the moving
+      // Moon mesh — same offset the moonFrameGroup applies to lines.
+      let offsetX = 0;
+      let offsetY = 0;
+      let offsetZ = 0;
+      if (LUNAR_LOCAL_PHASE_TYPES.has(phase.type)) {
+        const moonNow = moonEciPos(arcTimeline.dep_day + met_days);
+        const moonRef = moonEciPos(arcTimeline.flyby_day);
+        offsetX = moonNow.x - moonRef.x;
+        offsetY = moonNow.y - moonRef.y;
+        offsetZ = moonNow.z - moonRef.z;
+      }
       cislunarSpacecraft.position.set(
-        (a.x + (b.x - a.x) * frac) * SCALE_CISLUNAR,
-        (a.y + (b.y - a.y) * frac) * SCALE_CISLUNAR,
-        (a.z + (b.z - a.z) * frac) * SCALE_CISLUNAR,
+        (a.x + (b.x - a.x) * frac + offsetX) * SCALE_CISLUNAR,
+        (a.y + (b.y - a.y) * frac + offsetY) * SCALE_CISLUNAR,
+        (a.z + (b.z - a.z) * frac + offsetZ) * SCALE_CISLUNAR,
       );
     }
 
@@ -1398,6 +1500,7 @@
     rebuildCislunarAnnotationsRef = rebuildCislunarAnnotations;
     updateCislunarSpacecraftRef = updateCislunarSpacecraft;
     cislunarMoonMeshRef = cislunarMoon;
+    cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
 
     // Sun (named so Moon-mode can hide it — the cislunar scene is
     // Earth-centred with the Moon at scaled distance, no Sun reference).
@@ -1713,45 +1816,58 @@
     moonMesh.visible = false;
     scene.add(moonMesh);
 
-    // Spacecraft — small camera-facing sprite glyph (yellow chevron ▶)
-    // sitting at sc.pos. Replaces the v0.x.x 3D rocket mesh which had
-    // a 4.5u local-frame extent and read as "flying parallel to the
-    // arc" because its nose tip was 2.8u ahead of sc.pos along the
-    // heading vector — the tube's 0.6u radius couldn't hide the cut
-    // chord. A sprite has no extent along the camera axis and no
-    // lookAt rotation: sc.pos is the dead-centre of the rendered glyph.
+    // Spacecraft — small camera-facing sprite glyph at sc.pos. Solid
+    // red filled circle with a thin dark outline + soft glow halo:
+    // - The chevron previous design was rotation-dependent and read
+    //   "wrong direction" against curved arcs. A circle has no
+    //   orientation, so it always reads cleanly.
+    // - Red (#ff3a4c) is distinct from every phase colour (yellow
+    //   tli_coast, blue parking/spiral_earth, purple lunar_orbit/
+    //   spiral_lunar, green tei_coast, pink-red descent/ascent) so
+    //   the spacecraft never blends into its trail.
     const SC_GLYPH_PX = 64;
+    const SC_COLOR = '#ff3a4c';
     const scTexCanvas = document.createElement('canvas');
     scTexCanvas.width = SC_GLYPH_PX;
     scTexCanvas.height = SC_GLYPH_PX;
     {
       const tctx = scTexCanvas.getContext('2d')!;
       tctx.clearRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
-      // Glow halo so the glyph reads against the dark background even
-      // when the bright tube passes behind it.
-      const glow = tctx.createRadialGradient(
-        SC_GLYPH_PX / 2,
-        SC_GLYPH_PX / 2,
-        4,
-        SC_GLYPH_PX / 2,
-        SC_GLYPH_PX / 2,
-        SC_GLYPH_PX / 2,
-      );
-      glow.addColorStop(0, 'rgba(255,200,80,0.45)');
-      glow.addColorStop(1, 'rgba(255,200,80,0)');
+      const cx = SC_GLYPH_PX / 2;
+      const cy = SC_GLYPH_PX / 2;
+      // Soft glow halo for visibility against bright trajectory tubes.
+      const glow = tctx.createRadialGradient(cx, cy, 4, cx, cy, SC_GLYPH_PX / 2);
+      glow.addColorStop(0, 'rgba(255,58,76,0.4)');
+      glow.addColorStop(1, 'rgba(255,58,76,0)');
       tctx.fillStyle = glow;
       tctx.fillRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
-      // Stylized chevron — bold V shape pointing right. Filled solid
-      // gold (#ffc850) on top of the halo.
+      // Outline (dark) — gives definition against bright phases too.
       tctx.beginPath();
-      tctx.moveTo(SC_GLYPH_PX * 0.78, SC_GLYPH_PX * 0.5);
-      tctx.lineTo(SC_GLYPH_PX * 0.3, SC_GLYPH_PX * 0.22);
-      tctx.lineTo(SC_GLYPH_PX * 0.42, SC_GLYPH_PX * 0.5);
-      tctx.lineTo(SC_GLYPH_PX * 0.3, SC_GLYPH_PX * 0.78);
-      tctx.closePath();
-      tctx.fillStyle = '#ffc850';
-      tctx.shadowColor = 'rgba(255,200,80,0.8)';
-      tctx.shadowBlur = 6;
+      tctx.arc(cx, cy, SC_GLYPH_PX * 0.22, 0, Math.PI * 2);
+      tctx.fillStyle = 'rgba(20,8,12,0.9)';
+      tctx.fill();
+      // Core disc — solid red.
+      tctx.beginPath();
+      tctx.arc(cx, cy, SC_GLYPH_PX * 0.18, 0, Math.PI * 2);
+      tctx.fillStyle = SC_COLOR;
+      tctx.shadowColor = 'rgba(255,58,76,0.8)';
+      tctx.shadowBlur = 4;
+      tctx.fill();
+      // Inner highlight — slight gradient for depth.
+      const innerGlow = tctx.createRadialGradient(
+        cx - SC_GLYPH_PX * 0.05,
+        cy - SC_GLYPH_PX * 0.05,
+        0,
+        cx,
+        cy,
+        SC_GLYPH_PX * 0.18,
+      );
+      innerGlow.addColorStop(0, 'rgba(255,200,200,0.7)');
+      innerGlow.addColorStop(1, 'rgba(255,200,200,0)');
+      tctx.shadowBlur = 0;
+      tctx.fillStyle = innerGlow;
+      tctx.beginPath();
+      tctx.arc(cx, cy, SC_GLYPH_PX * 0.18, 0, Math.PI * 2);
       tctx.fill();
     }
     const scTex = new THREE.CanvasTexture(scTexCanvas);
@@ -1946,11 +2062,94 @@
       );
       camera.lookAt(camTarget);
     };
-    const updateCislunarCam = () => {
-      // Target the Earth-Moon midpoint (Earth at origin, Moon at
-      // moonEciPos(simDay) × SCALE_CISLUNAR).
+    // Auto-zoom state for cislunar phases (ADR-058 polish). When the
+    // spacecraft is in a lunar-localised phase (orbit, spiral_lunar,
+    // descent, ascent), the camera lerps to a close-up of the Moon so
+    // the orbit detail is visible. Otherwise it returns to the wide
+    // Earth-Moon framing. Same pattern can extend to any orbital phase
+    // around any body in future passes (Mars orbit for Curiosity, etc.).
+    const WIDE_DISTANCE = A_MOON_KM * SCALE_CISLUNAR * 1.8; // ~69u
+    const LUNAR_CLOSEUP_DISTANCE = R_MOON_KM * SCALE_CISLUNAR * 20; // ~3.5u
+    const LUNAR_PHASE_TYPES = new Set<string>([
+      'lunar_orbit',
+      'spiral_lunar',
+      'descent',
+      'ascent',
+      'lunar_flyby',
+    ]);
+    let autoZoomTargetR = WIDE_DISTANCE;
+    const autoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
+    let lastAutoZoomPhase: string | null = null;
+    let autoZoomActive = false;
+
+    function updateAutoZoomTargets(): void {
+      if (!cislunarTrajectory || cislunarTrajectory.phases.length === 0) {
+        if (lastAutoZoomPhase !== null) {
+          autoZoomTargetR = WIDE_DISTANCE;
+          autoZoomTargetCenter.set(0, 0, 0);
+          autoZoomActive = true;
+          lastAutoZoomPhase = null;
+        }
+        return;
+      }
+      const metDays = simDay - arcTimeline.dep_day;
+      let activePhase = cislunarTrajectory.phases[0];
+      for (const p of cislunarTrajectory.phases) {
+        if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
+          activePhase = p;
+          break;
+        }
+      }
+      // Only re-arm the auto-zoom on phase transitions — leaves the
+      // user's manual mouse-wheel zoom intact for the duration of a
+      // phase. Each transition retargets the camera; in between, the
+      // user is in control.
+      const phaseChanged = activePhase.type !== lastAutoZoomPhase;
+      if (phaseChanged) {
+        lastAutoZoomPhase = activePhase.type;
+        autoZoomActive = true;
+      }
+      // Always update the target POSITION because the Moon drifts each
+      // frame; that keeps the close-up tracking the Moon during the
+      // lunar phase. Only the lerp toward this target is gated by
+      // autoZoomActive.
       const moonPos = moonEciPos(simDay);
-      cislunarCamTarget.set(moonPos.x * SCALE_CISLUNAR * 0.4, 0, moonPos.z * SCALE_CISLUNAR * 0.4);
+      if (LUNAR_PHASE_TYPES.has(activePhase.type)) {
+        autoZoomTargetR = LUNAR_CLOSEUP_DISTANCE;
+        autoZoomTargetCenter.set(moonPos.x * SCALE_CISLUNAR, 0, moonPos.z * SCALE_CISLUNAR);
+      } else {
+        autoZoomTargetR = WIDE_DISTANCE;
+        autoZoomTargetCenter.set(
+          moonPos.x * SCALE_CISLUNAR * 0.4,
+          0,
+          moonPos.z * SCALE_CISLUNAR * 0.4,
+        );
+      }
+    }
+
+    const updateCislunarCam = () => {
+      updateAutoZoomTargets();
+      // Lerp toward target distance + target centre only while
+      // autoZoomActive (set on phase transitions, cleared by mouse-wheel
+      // interaction). Lerp factor 0.04 → ~95% complete in ~75 frames
+      // @60 fps (~1.25 s). Slower than the prior 600 ms so the camera
+      // move reads as deliberate instead of a glitch when phases turn
+      // over quickly during playback.
+      if (autoZoomActive) {
+        const LERP = 0.04;
+        cislunarCamR += (autoZoomTargetR - cislunarCamR) * LERP;
+        cislunarCamTarget.x += (autoZoomTargetCenter.x - cislunarCamTarget.x) * LERP;
+        cislunarCamTarget.z += (autoZoomTargetCenter.z - cislunarCamTarget.z) * LERP;
+        // Stop lerping once close enough — frees the user to wheel.
+        if (Math.abs(cislunarCamR - autoZoomTargetR) < 0.05) autoZoomActive = false;
+      } else {
+        // Even when auto-zoom is idle, track the Moon's drift so the
+        // close-up stays centred during long lunar-orbit phases. Apply
+        // the centre lerp only; R is the user's call.
+        const TRACK = 0.025;
+        cislunarCamTarget.x += (autoZoomTargetCenter.x - cislunarCamTarget.x) * TRACK;
+        cislunarCamTarget.z += (autoZoomTargetCenter.z - cislunarCamTarget.z) * TRACK;
+      }
       cislunarCamera.position.set(
         cislunarCamTarget.x + cislunarCamR * Math.sin(cislunarCamP) * Math.sin(cislunarCamT),
         cislunarCamTarget.y + cislunarCamR * Math.cos(cislunarCamP),
@@ -1975,6 +2174,9 @@
       cislunarCamR = A_MOON_KM * SCALE_CISLUNAR * 1.8;
       cislunarCamP = 1.05;
       cislunarCamT = 0.6;
+      // Fresh mission → re-arm auto-zoom from the first phase.
+      lastAutoZoomPhase = null;
+      autoZoomActive = true;
       updateCam();
       updateCislunarCam();
     };
@@ -1984,28 +2186,6 @@
     let lmx = 0;
     let lmy = 0;
     const onMouseDown = (e: MouseEvent) => {
-      // Inset-swap click (ADR-058 Stage 1): bottom-right corner box.
-      // When a Moon mission is loaded and the user clicks inside the
-      // inset region, swap viewMode rather than starting a drag.
-      if (isMoonMission && view === '3d' && container) {
-        const rect = el3d.getBoundingClientRect();
-        const localX = e.clientX - rect.left;
-        const localY = e.clientY - rect.top;
-        const insetW = Math.min(220, Math.max(120, container.clientWidth * 0.18));
-        const insetH = insetW;
-        const insetLeft = container.clientWidth - insetW - 16;
-        const insetTop = container.clientHeight - insetH - 16;
-        if (
-          localX >= insetLeft &&
-          localX <= insetLeft + insetW &&
-          localY >= insetTop &&
-          localY <= insetTop + insetH
-        ) {
-          viewMode = viewMode === 'cislunar' ? 'heliocentric' : 'cislunar';
-          e.preventDefault();
-          return;
-        }
-      }
       isDrag = true;
       lmx = e.clientX;
       lmy = e.clientY;
@@ -2036,9 +2216,12 @@
     };
     const onWheel = (e: WheelEvent) => {
       if (viewMode === 'cislunar') {
-        const minR = A_MOON_KM * SCALE_CISLUNAR * 0.25;
+        const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
         const maxR = A_MOON_KM * SCALE_CISLUNAR * 6;
         cislunarCamR = Math.max(minR, Math.min(maxR, cislunarCamR + e.deltaY * 0.05));
+        // User-initiated zoom wins over auto-zoom for the rest of this
+        // phase. Next phase transition re-arms autoZoomActive.
+        autoZoomActive = false;
         updateCislunarCam();
       } else {
         camR = Math.max(80, Math.min(4000, camR + e.deltaY * 0.5));
@@ -2098,6 +2281,20 @@
     const _maybeCtx = c2.getContext('2d');
     if (!_maybeCtx) throw new Error('2D context unavailable');
     const ctx2: CanvasRenderingContext2D = _maybeCtx;
+
+    // 2D cislunar auto-zoom state — mirrors the 3D autoZoom* logic.
+    // When the active phase is lunar (orbit, spiral_lunar, descent, …),
+    // the canvas zooms in on the Moon's current position. On Earth-side
+    // phases it zooms back to the wide Earth-Moon view. Lerp each
+    // frame toward the target so the transition reads as a camera move.
+    let cis2dScale = 1;
+    let cis2dTargetScale = 1;
+    let cis2dCenterX = 0;
+    let cis2dCenterZ = 0;
+    let cis2dTargetCenterX = 0;
+    let cis2dTargetCenterZ = 0;
+    const CIS2D_WIDE_SCALE = 1;
+    const CIS2D_CLOSEUP_SCALE = 8;
 
     function draw2d() {
       if (c2.width !== c2.clientWidth || c2.height !== c2.clientHeight) {
@@ -2189,6 +2386,173 @@
       }
 
       const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
+      const useCislunar2D =
+        isMoonMission && cislunarTrajectory != null && cislunarTrajectory.phases.length > 0;
+
+      if (useCislunar2D && cislunarTrajectory) {
+        // ADR-058: 2D Moon-mission view rendered from the cislunar
+        // trajectory (ECI km), mirroring the 3D cislunar scene. Earth
+        // at canvas centre, Moon orbit ring at scale, phase-coloured
+        // trajectory lines with the lunar-phase moon-frame offset
+        // applied so orbit + descent track the moving Moon.
+        const BASE_CIS_SCALE = (Math.min(W, H) * 0.4) / A_MOON_KM;
+        const moonRef = moonEciPos(arcTimeline.flyby_day);
+        const moonNow = moonEciPos(simDay);
+        const moonDeltaX = moonNow.x - moonRef.x;
+        const moonDeltaZ = moonNow.z - moonRef.z;
+
+        // Auto-zoom: lerp scale + centre toward target based on whether
+        // the active phase is lunar-local. Closeup scale × CIS2D_CLOSEUP_SCALE,
+        // centre tracks Moon. Wide stays at base scale + Earth centre.
+        const LUNAR_LOCAL_2D = new Set([
+          'lunar_orbit',
+          'spiral_lunar',
+          'lunar_flyby',
+          'descent',
+          'ascent',
+        ]);
+        const metDaysForZoom = simDay - arcTimeline.dep_day;
+        let activePhaseForZoom = cislunarTrajectory.phases[0];
+        for (const p of cislunarTrajectory.phases) {
+          if (metDaysForZoom >= p.start_met_days && metDaysForZoom <= p.end_met_days) {
+            activePhaseForZoom = p;
+            break;
+          }
+        }
+        if (LUNAR_LOCAL_2D.has(activePhaseForZoom.type)) {
+          cis2dTargetScale = CIS2D_CLOSEUP_SCALE;
+          cis2dTargetCenterX = moonNow.x;
+          cis2dTargetCenterZ = moonNow.z;
+        } else {
+          cis2dTargetScale = CIS2D_WIDE_SCALE;
+          cis2dTargetCenterX = 0;
+          cis2dTargetCenterZ = 0;
+        }
+        // 0.04 ≈ 1.25 s transition at 60 fps (matches 3D zoom feel).
+        const LERP = 0.04;
+        cis2dScale += (cis2dTargetScale - cis2dScale) * LERP;
+        cis2dCenterX += (cis2dTargetCenterX - cis2dCenterX) * LERP;
+        cis2dCenterZ += (cis2dTargetCenterZ - cis2dCenterZ) * LERP;
+
+        const SCALE_CIS_2D = BASE_CIS_SCALE * cis2dScale;
+        const cisX = (km: number) => cx + (km - cis2dCenterX) * SCALE_CIS_2D;
+        const cisZ = (km: number) => cy + (km - cis2dCenterZ) * SCALE_CIS_2D;
+
+        // Moon orbit ring (centred on Earth).
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, A_MOON_KM * SCALE_CIS_2D, 0, Math.PI * 2);
+        ctx2.strokeStyle = 'rgba(170,170,204,0.25)';
+        ctx2.lineWidth = 0.6;
+        ctx2.stroke();
+
+        const PHASE_COLORS_2D: Record<string, string> = {
+          parking: '#4b9cd3',
+          tli_coast: '#ffd166',
+          lunar_orbit: '#c77dff',
+          lunar_flyby: '#ff9933',
+          descent: '#ef476f',
+          ascent: '#ef476f',
+          tei_coast: '#06d6a0',
+          reentry: '#ef476f',
+          spiral_earth: '#4b9cd3',
+          spiral_lunar: '#c77dff',
+        };
+
+        // Render each phase. Lunar-frame phases (orbit, descent, etc.)
+        // get the (currentMoon - moonAtFlyby) offset so they track Moon.
+        for (const phase of cislunarTrajectory.phases) {
+          if (phase.points.length < 2) continue;
+          const lunarLocal = LUNAR_LOCAL_2D.has(phase.type);
+          const ox = lunarLocal ? moonDeltaX : 0;
+          const oz = lunarLocal ? moonDeltaZ : 0;
+          ctx2.beginPath();
+          ctx2.moveTo(cisX(phase.points[0].x + ox), cisZ(phase.points[0].z + oz));
+          for (let i = 1; i < phase.points.length; i++) {
+            ctx2.lineTo(cisX(phase.points[i].x + ox), cisZ(phase.points[i].z + oz));
+          }
+          ctx2.strokeStyle = PHASE_COLORS_2D[phase.type] ?? '#ffffff';
+          ctx2.lineWidth = 1.6;
+          ctx2.stroke();
+        }
+
+        // Earth at origin.
+        const eg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 12);
+        eg.addColorStop(0, 'rgba(75,156,211,0.55)');
+        eg.addColorStop(1, 'rgba(75,156,211,0)');
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 12, 0, Math.PI * 2);
+        ctx2.fillStyle = eg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(cx, cy, 5, 0, Math.PI * 2);
+        ctx2.fillStyle = '#4b9cd3';
+        ctx2.fill();
+        ctx2.font = "bold 9px 'Space Mono', monospace";
+        ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+        ctx2.textAlign = 'left';
+        ctx2.fillText('EARTH', cx + 9, cy + 3);
+
+        // Moon at current position.
+        const mx = cisX(moonNow.x);
+        const my = cisZ(moonNow.z);
+        const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 8);
+        mg.addColorStop(0, 'rgba(220,220,220,0.5)');
+        mg.addColorStop(1, 'rgba(220,220,220,0)');
+        ctx2.beginPath();
+        ctx2.arc(mx, my, 8, 0, Math.PI * 2);
+        ctx2.fillStyle = mg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(mx, my, 3.5, 0, Math.PI * 2);
+        ctx2.fillStyle = '#dddddd';
+        ctx2.fill();
+        ctx2.fillText('MOON', mx + 7, my + 3);
+
+        // Spacecraft sprite at its cislunar-trajectory position. Walk
+        // the phase list using MET to find current absolute position,
+        // applying the same lunar-frame offset for lunar phases.
+        const metDays = simDay - arcTimeline.dep_day;
+        let active = cislunarTrajectory.phases[0];
+        for (const p of cislunarTrajectory.phases) {
+          if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
+            active = p;
+            break;
+          }
+        }
+        const span = active.end_met_days - active.start_met_days;
+        const tt =
+          span > 0 ? Math.max(0, Math.min(1, (metDays - active.start_met_days) / span)) : 0;
+        const last = active.points.length - 1;
+        const f = tt * last;
+        const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+        const frac = f - i;
+        const a = active.points[i];
+        const b = active.points[i + 1] ?? a;
+        const lunarLocal = LUNAR_LOCAL_2D.has(active.type);
+        const ox = lunarLocal ? moonDeltaX : 0;
+        const oz = lunarLocal ? moonDeltaZ : 0;
+        const sx = cisX(a.x + (b.x - a.x) * frac + ox);
+        const sy = cisZ(a.z + (b.z - a.z) * frac + oz);
+        // Red filled circle matching the 3D sprite glyph.
+        const scGlow = ctx2.createRadialGradient(sx, sy, 0, sx, sy, 10);
+        scGlow.addColorStop(0, 'rgba(255,58,76,0.45)');
+        scGlow.addColorStop(1, 'rgba(255,58,76,0)');
+        ctx2.beginPath();
+        ctx2.arc(sx, sy, 10, 0, Math.PI * 2);
+        ctx2.fillStyle = scGlow;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(sx, sy, 5, 0, Math.PI * 2);
+        ctx2.fillStyle = 'rgba(20,8,12,0.9)';
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(sx, sy, 4, 0, Math.PI * 2);
+        ctx2.fillStyle = '#ff3a4c';
+        ctx2.fill();
+
+        return;
+      }
+
       drawSplit(outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
       drawSplit(retPts, Math.max(0, (sc.progress - 0.5) / 0.5), '#9966ff', 'rgba(153,102,255,0.2)');
 
@@ -2372,7 +2736,6 @@
 
     let lastTime = performance.now();
     let rafId = 0;
-    const TOGGLE_FADE_MS = 800;
     const animate = (now: number) => {
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
@@ -2380,17 +2743,6 @@
       if (isPlaying) {
         simDay += dt * simSpeed;
         if (simDay > arcTimeline.arr_day + 30) simDay = arcTimeline.dep_day;
-      }
-      // View-mode cross-fade — peaks black/dim at t=0.5, swaps then.
-      if (toggleFadeProgress !== null && toggleFadeFrom !== null) {
-        toggleFadeProgress += (dt * 1000) / TOGGLE_FADE_MS;
-        if (toggleFadeProgress >= 0.5 && viewMode === toggleFadeFrom) {
-          viewMode = toggleFadeFrom === 'heliocentric' ? 'cislunar' : 'heliocentric';
-        }
-        if (toggleFadeProgress >= 1) {
-          toggleFadeProgress = null;
-          toggleFadeFrom = null;
-        }
       }
       // Moon-mode: re-aim the camera at the live Earth heliocentric
       // position each frame so the Earth+Moon system stays centred as
@@ -2638,14 +2990,26 @@
         !isMoonMission && isFreeReturn && sc.progress >= 0.5 && sc.progress <= 0.95;
 
       if (view === '3d' && container) {
-        // Per-frame cislunar updates regardless of which view is main —
-        // the inset may need them too.
+        // Per-frame cislunar updates.
         const moonPos = moonEciPos(simDay);
         if (cislunarMoonMeshRef) {
           cislunarMoonMeshRef.position.set(
             moonPos.x * SCALE_CISLUNAR,
             moonPos.y * SCALE_CISLUNAR,
             moonPos.z * SCALE_CISLUNAR,
+          );
+        }
+        // Drive the moon-frame group offset = (currentMoon - moonAtFlyby)
+        // so lunar-phase lines (orbit, descent, etc.) ride with the Moon
+        // mesh instead of staying anchored where the Moon was at
+        // flyby_day. Same delta used for the spacecraft sprite in
+        // updateCislunarSpacecraft.
+        if (cislunarMoonFrameGroupRef) {
+          const moonRefPos = moonEciPos(arcTimeline.flyby_day);
+          cislunarMoonFrameGroupRef.position.set(
+            (moonPos.x - moonRefPos.x) * SCALE_CISLUNAR,
+            (moonPos.y - moonRefPos.y) * SCALE_CISLUNAR,
+            (moonPos.z - moonRefPos.z) * SCALE_CISLUNAR,
           );
         }
         const metDays = simDay - arcTimeline.dep_day;
@@ -2656,45 +3020,10 @@
         // input modifies cislunarCamR/P/T independently.
         updateCislunarCam();
 
-        // Main render. Disable scissor for the full-frame pass.
-        renderer.setScissorTest(false);
-        renderer.setViewport(0, 0, container.clientWidth, container.clientHeight);
         if (viewMode === 'cislunar') {
           renderer.render(cislunarScene, cislunarCamera);
         } else {
           renderer.render(scene, camera);
-        }
-
-        // Picture-in-picture inset (ADR-058 Stage 1). Shows the OTHER
-        // scene at a fixed framing in the bottom-right corner. Only
-        // rendered for Moon missions (cislunar context exists). Pixel
-        // coordinates use bottom-left origin per WebGL convention.
-        if (isMoonMission) {
-          const insetW = Math.min(220, Math.max(120, container.clientWidth * 0.18));
-          const insetH = insetW;
-          const insetX = container.clientWidth - insetW - 16;
-          const insetY = 16;
-          renderer.setScissorTest(true);
-          renderer.setScissor(insetX, insetY, insetW, insetH);
-          renderer.setViewport(insetX, insetY, insetW, insetH);
-          renderer.clearDepth();
-          if (viewMode === 'cislunar') {
-            // Inset shows the heliocentric Sun view at a wide framing.
-            const tmpAspect = camera.aspect;
-            camera.aspect = insetW / insetH;
-            camera.updateProjectionMatrix();
-            renderer.render(scene, camera);
-            camera.aspect = tmpAspect;
-            camera.updateProjectionMatrix();
-          } else {
-            const tmpAspect = cislunarCamera.aspect;
-            cislunarCamera.aspect = insetW / insetH;
-            cislunarCamera.updateProjectionMatrix();
-            renderer.render(cislunarScene, cislunarCamera);
-            cislunarCamera.aspect = tmpAspect;
-            cislunarCamera.updateProjectionMatrix();
-          }
-          renderer.setScissorTest(false);
         }
       } else draw2d();
     };
@@ -3020,39 +3349,6 @@
   <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
     {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
   </button>
-
-  {#if isMoonMission && view === '3d'}
-    <button
-      class="toggle toggle-viewmode"
-      type="button"
-      onclick={toggleViewMode}
-      aria-pressed={viewMode === 'cislunar'}
-      aria-label={viewMode === 'cislunar'
-        ? m.fly_label_view_solar_aria()
-        : m.fly_label_view_cislunar_aria()}
-    >
-      {viewMode === 'cislunar' ? m.fly_label_view_solar() : m.fly_label_view_cislunar()}
-    </button>
-  {/if}
-
-  {#if isMoonMission && view === '3d'}
-    <button
-      class="inset-hitbox"
-      type="button"
-      onclick={toggleViewMode}
-      aria-label={viewMode === 'cislunar'
-        ? m.fly_label_view_solar_aria()
-        : m.fly_label_view_cislunar_aria()}
-    ></button>
-  {/if}
-
-  {#if toggleFadeProgress !== null}
-    <div
-      class="viewmode-fade"
-      style:opacity={Math.sin(Math.PI * toggleFadeProgress)}
-      aria-hidden="true"
-    ></div>
-  {/if}
 
   <!-- CAPCOM panel is always present when a mission is loaded
        (v0.1.7 — toggle removed; the panel sits permanently to the
@@ -3464,42 +3760,6 @@
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
-  }
-  .toggle-viewmode {
-    right: calc(16px + 96px);
-  }
-  .viewmode-fade {
-    position: fixed;
-    inset: var(--nav-height) 0 0 0;
-    background: #04040c;
-    pointer-events: none;
-    z-index: 30;
-    transition: none;
-  }
-  /* Invisible focusable button over the WebGL inset region. Keyboard
-     users can Tab to it and Enter to swap views. Mouse users still
-     get the same action via the el3d mousedown handler. */
-  .inset-hitbox {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    width: 220px;
-    height: 220px;
-    max-width: 18vw;
-    max-height: 18vw;
-    min-width: 120px;
-    min-height: 120px;
-    background: transparent;
-    border: 1px solid rgba(68, 102, 255, 0);
-    border-radius: 4px;
-    cursor: pointer;
-    z-index: 25;
-    padding: 0;
-  }
-  .inset-hitbox:hover,
-  .inset-hitbox:focus-visible {
-    border-color: rgba(68, 102, 255, 0.55);
-    outline: none;
   }
   .toggle:hover,
   .toggle:focus-visible {

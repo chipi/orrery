@@ -208,8 +208,8 @@
               "description": "Lunar arrival profile.",
               "properties": {
                 "type": {
-                  "enum": ["impact", "orbit", "flyby", "lor_orbit"],
-                  "description": "impact = direct hard landing (Luna 9); orbit = LOI into lunar orbit + descent (Apollo, Chandrayaan-3); flyby = no LOI (Artemis II, Apollo 13 abort); lor_orbit = Lunar Orbit Rendezvous staging (Chang'e 5)."
+                  "enum": ["impact", "orbit", "orbit_and_land", "flyby", "lor_orbit"],
+                  "description": "impact = direct hard landing (Luna 9); orbit = LOI into lunar orbit, NO landing (LRO, Clementine, Chandrayaan-1, Apollo CSM); orbit_and_land = LOI then descent to surface (Chandrayaan-3, Chang'e 4, Luna 17, SLIM, Blue Moon Mk1); flyby = no LOI (Artemis II, Apollo 13 abort); lor_orbit = Lunar Orbit Rendezvous staging (Chang'e 5)."
                 },
                 "altitude_km": { "type": "number", "minimum": 0, "maximum": 50000, "description": "Lunar orbit altitude (for orbit / lor_orbit types). Omit for impact / flyby." },
                 "inclination_deg": { "type": "number", "minimum": 0, "maximum": 180 },

@@ -52,7 +52,7 @@ export interface CislunarProfile {
   tli?: { dv_kms?: number; c3_km2_s2?: number };
   translunar?: { type?: 'direct' | 'free_return' | 'hybrid_free_return' | 'spiral' };
   lunar_arrival?: {
-    type?: 'impact' | 'orbit' | 'flyby' | 'lor_orbit';
+    type?: 'impact' | 'orbit' | 'orbit_and_land' | 'flyby' | 'lor_orbit';
     altitude_km?: number;
     inclination_deg?: number;
     periselene_km?: number;
@@ -147,21 +147,59 @@ export function transEarthCoast(
   return keplerianArcEarthFocus(moonDeparture, earthAtReturn, steps);
 }
 
-/** Circular orbit around the Moon at the given altitude, inclination,
- *  sweeping `revs` revolutions. Reference plane is the Moon's local
- *  equator (matching the inclination_deg semantics from the schema).
- *  Returns points in ECI km (offset by moonPos). */
+/** Circular orbit around the Moon. When `startPoint` is provided, the
+ *  orbit plane is rotated so it contains both moonPos and startPoint,
+ *  guaranteeing the first orbit point equals startPoint exactly — this
+ *  eliminates the visible gap between an incoming tli_coast arc and the
+ *  lunar orbit it should attach to. inclination_deg is then ignored for
+ *  Tier 1 simplicity (the plane is chosen by startPoint + a near-polar
+ *  bias via projecting y-up). Without startPoint, the legacy behaviour
+ *  (orbit in moon-local x/z plane, tilted by inclination_deg around the
+ *  x-axis) is preserved. */
 export function lunarOrbit(
   moonPos: Vec3Km,
   altitude_km: number,
   inclination_deg: number,
   revs: number,
   steps: number,
+  startPoint?: Vec3Km,
 ): Vec3Km[] {
   const r = R_MOON_KM + altitude_km;
-  const inc = (inclination_deg * Math.PI) / 180;
   const total_sweep = revs * 2 * Math.PI;
   const pts: Vec3Km[] = [];
+
+  if (startPoint) {
+    const dx = startPoint.x - moonPos.x;
+    const dy = startPoint.y - moonPos.y;
+    const dz = startPoint.z - moonPos.z;
+    const startR = Math.hypot(dx, dy, dz);
+    if (startR < 1e-9) return [{ x: moonPos.x, y: moonPos.y, z: moonPos.z }];
+    // Radial unit at start.
+    const e1 = { x: dx / startR, y: dy / startR, z: dz / startR };
+    // Tangent in-plane: project y-up onto the plane perpendicular to e1.
+    const dotE1Up = e1.y;
+    let e2 = { x: -dotE1Up * e1.x, y: 1 - dotE1Up * e1.y, z: -dotE1Up * e1.z };
+    const e2Mag = Math.hypot(e2.x, e2.y, e2.z);
+    if (e2Mag < 1e-9) {
+      // e1 is parallel to y-axis (rare); fall back to x-axis.
+      e2 = { x: 1, y: 0, z: 0 };
+    } else {
+      e2 = { x: e2.x / e2Mag, y: e2.y / e2Mag, z: e2.z / e2Mag };
+    }
+    for (let i = 0; i <= steps; i++) {
+      const nu = (total_sweep * i) / steps;
+      const c = r * Math.cos(nu);
+      const s = r * Math.sin(nu);
+      pts.push({
+        x: moonPos.x + e1.x * c + e2.x * s,
+        y: moonPos.y + e1.y * c + e2.y * s,
+        z: moonPos.z + e1.z * c + e2.z * s,
+      });
+    }
+    return pts;
+  }
+
+  const inc = (inclination_deg * Math.PI) / 180;
   for (let i = 0; i <= steps; i++) {
     const nu = (total_sweep * i) / steps;
     const xl = r * Math.cos(nu);
@@ -264,15 +302,20 @@ export function spiralEarth(
   endApogee_km: number,
   burnCount: number,
   steps: number,
+  endAzimuth = 0,
 ): Vec3Km[] {
+  // endAzimuth rotates the spiral so its final point lands at a
+  // specified azimuth (e.g. toward the Moon's position at flyby).
+  // Default 0 = +x axis. Without this, the spiral always terminates
+  // at azimuth 0 regardless of where the Moon is, forcing tli_coast
+  // to arc halfway around Earth to reach it.
   const rStart = R_EARTH_KM + startAltitude_km;
   const rEnd = R_EARTH_KM + endApogee_km;
   const pts: Vec3Km[] = [];
-  const totalSweep = burnCount * 2 * Math.PI;
+  const totalSweep = burnCount * 2 * Math.PI + endAzimuth;
   for (let i = 0; i <= steps; i++) {
     const t = i / steps;
     const nu = t * totalSweep;
-    // Logarithmic radius growth so each rev is larger than the last.
     const r = rStart * Math.pow(rEnd / rStart, t);
     pts.push({
       x: Math.cos(nu) * r,
@@ -288,18 +331,25 @@ export function spiralEarth(
  *  a low circular orbit. Endpoint is the start of descent. */
 export function spiralLunar(
   moonPos: Vec3Km,
-  startAltitude_km: number,
+  startPoint: Vec3Km,
   endAltitude_km: number,
   burnCount: number,
   steps: number,
 ): Vec3Km[] {
-  const rStart = R_MOON_KM + startAltitude_km;
+  // Start the spiral exactly at startPoint (where tli_coast deposited
+  // the spacecraft), spiraling inward to endAltitude over burnCount
+  // revolutions. Eliminates the visible gap between tli_coast endpoint
+  // and the lunar approach phase.
+  const dx = startPoint.x - moonPos.x;
+  const dz = startPoint.z - moonPos.z;
+  const rStart = Math.max(R_MOON_KM, Math.hypot(dx, dz));
+  const startAngle = Math.atan2(dz, dx);
   const rEnd = R_MOON_KM + endAltitude_km;
   const pts: Vec3Km[] = [];
   const totalSweep = burnCount * 2 * Math.PI;
   for (let i = 0; i <= steps; i++) {
     const t = i / steps;
-    const nu = t * totalSweep;
+    const nu = startAngle + t * totalSweep;
     const r = rStart * Math.pow(rEnd / rStart, t);
     pts.push({
       x: moonPos.x + Math.cos(nu) * r,
@@ -457,8 +507,11 @@ export function buildCislunarTrajectory(
   // ── 1. Earth-side outbound: parking + spiral OR straight tli_coast ──
   if (translunarType === 'spiral') {
     // Chandrayaan-class multi-burn perigee raise. Compresses to ~50% of
-    // outbound MET to leave room for lunar approach phases.
-    const spiralPts = spiralEarth(parkingAlt, A_MOON_KM - R_EARTH_KM - 50000, 5, 192);
+    // outbound MET to leave room for lunar approach phases. Rotate the
+    // spiral so it terminates at the Moon's azimuth (otherwise tli_coast
+    // has to arc halfway around Earth to bridge the gap).
+    const moonAzimuth = Math.atan2(moonAtFlyby.z, moonAtFlyby.x);
+    const spiralPts = spiralEarth(parkingAlt, A_MOON_KM - R_EARTH_KM - 10000, 5, 192, moonAzimuth);
     const spiralEndMET = transit_days * 0.5;
     phases.push({
       type: 'spiral_earth',
@@ -516,12 +569,21 @@ export function buildCislunarTrajectory(
     });
     metCursor += transit_days * 0.01;
     lastPoint = surfacePoint;
-  } else if (arrivalType === 'orbit' || arrivalType === 'lor_orbit') {
-    // Lunar orbit insertion. For 'spiral' translunar, follow with a
-    // lunar-side spiral down to operational altitude.
-    const lunarPhaseMET = is_return_trip ? transit_days * 0.2 : transit_days * 0.1;
+  } else if (
+    arrivalType === 'orbit' ||
+    arrivalType === 'orbit_and_land' ||
+    arrivalType === 'lor_orbit'
+  ) {
+    // Lunar orbit insertion. Pass lastPoint so the orbit / spiral
+    // starts at the tli_coast endpoint exactly (no gap). MET budget
+    // for the lunar phase bumped from 0.15/0.08 to 0.4/0.15 — Apollo
+    // missions actually spent ~30 % of total flight in lunar
+    // operations (orbit, surface stay, etc.), so this is closer to
+    // physical truth, and it gives the auto-zoom enough on-screen time
+    // to read.
+    const lunarPhaseMET = is_return_trip ? transit_days * 0.4 : transit_days * 0.15;
     if (translunarType === 'spiral') {
-      const spiralLunarPts = spiralLunar(moonAtFlyby, lunarAlt * 3, lunarAlt, 3, 96);
+      const spiralLunarPts = spiralLunar(moonAtFlyby, lastPoint, lunarAlt, 3, 96);
       phases.push({
         type: 'spiral_lunar',
         start_met_days: metCursor,
@@ -530,7 +592,7 @@ export function buildCislunarTrajectory(
       });
       lastPoint = spiralLunarPts[spiralLunarPts.length - 1];
     } else {
-      const orbitPts = lunarOrbit(moonAtFlyby, lunarAlt, lunarInc, 1.5, 96);
+      const orbitPts = lunarOrbit(moonAtFlyby, lunarAlt, lunarInc, 1.5, 96, lastPoint);
       phases.push({
         type: 'lunar_orbit',
         start_met_days: metCursor,
@@ -540,22 +602,66 @@ export function buildCislunarTrajectory(
       lastPoint = orbitPts[orbitPts.length - 1];
     }
     metCursor += lunarPhaseMET;
+
+    // Add descent only for arrivalType === 'orbit_and_land' (the
+    // explicit lander signal). Plain 'orbit' is an orbiter-only mission
+    // (LRO, Clementine, Chandrayaan-1) — its trajectory ends in orbit,
+    // not on the surface.
+    let lunarPhaseExitDay = flyby_day + lunarPhaseMET;
+    if (arrivalType === 'orbit_and_land') {
+      const descentMET = transit_days * 0.02;
+      const descentPts = descent(lastPoint, moonAtFlyby, 48);
+      phases.push({
+        type: 'descent',
+        start_met_days: metCursor,
+        end_met_days: metCursor + descentMET,
+        points: descentPts,
+      });
+      metCursor += descentMET;
+      lunarPhaseExitDay += descentMET;
+      lastPoint = descentPts[descentPts.length - 1];
+    }
+
+    // Time-consistency: the spacecraft has been co-moving with the Moon
+    // throughout the lunar phase. By the time the next (Earth-frame)
+    // phase begins, its absolute ECI position has shifted by however
+    // far the Moon has drifted in its orbit. Apply that delta to
+    // lastPoint here so tei_coast departs from the spacecraft's true
+    // current location rather than teleporting back to the flyby point.
+    // (Moon-relative phase points themselves stay anchored to
+    // moonAtFlyby — the renderer applies the delta via the moonFrameGroup.)
+    if (is_return_trip) {
+      const moonAtExit = moonEciPos(lunarPhaseExitDay);
+      lastPoint = {
+        x: lastPoint.x + (moonAtExit.x - moonAtFlyby.x),
+        y: lastPoint.y + (moonAtExit.y - moonAtFlyby.y),
+        z: lastPoint.z + (moonAtExit.z - moonAtFlyby.z),
+      };
+    }
   }
 
   // ── 4. Return: tei_coast (Apollo / Luna sample-return) or LOR + tei_coast ──
-  if (is_return_trip && returnType !== 'none') {
-    const earthReturnDay = dep_day_sim + (is_return_trip ? transit_days * 2 : transit_days);
-    // Re-entry interface ~120 km altitude on the night side.
-    const lastMag = Math.hypot(lastPoint.x, lastPoint.y, lastPoint.z);
+  //
+  // Re-entry interface point matters: picking it directly anti-parallel
+  // to the apogee makes the chord pass through Earth's centre and the
+  // Keplerian arc degenerates to a straight line. Real free-return
+  // geometry brings the spacecraft back from ~150° prograde of where it
+  // left (Earth-Moon system rotates during the coast). Offsetting the
+  // azimuth here breaks the collinearity and produces a visibly curved
+  // return leg.
+  const buildReentryPoint = (apogee: Vec3Km): Vec3Km => {
+    const apogeeAzimuth = Math.atan2(apogee.z, apogee.x);
+    const returnAzimuth = apogeeAzimuth + (150 * Math.PI) / 180;
     const reentryR = R_EARTH_KM + 120;
-    const reentry: Vec3Km =
-      lastMag < 1e-6
-        ? { x: -reentryR, y: 0, z: 0 }
-        : {
-            x: (-lastPoint.x / lastMag) * reentryR,
-            y: (-lastPoint.y / lastMag) * reentryR,
-            z: (-lastPoint.z / lastMag) * reentryR,
-          };
+    return {
+      x: Math.cos(returnAzimuth) * reentryR,
+      y: 0,
+      z: Math.sin(returnAzimuth) * reentryR,
+    };
+  };
+
+  if (is_return_trip && returnType !== 'none') {
+    const reentry = buildReentryPoint(lastPoint);
     const teiPts = transEarthCoast(lastPoint, reentry, 192);
     const teiEndMET = transit_days * 2;
     phases.push({
@@ -565,22 +671,10 @@ export function buildCislunarTrajectory(
       points: teiPts,
     });
     metCursor = teiEndMET;
-    // earthReturnDay is implicit in teiEndMET; reference suppressed
-    // to keep the linter happy.
-    void earthReturnDay;
   } else if (is_return_trip && arrivalType === 'flyby') {
     // Free-return: tli_coast terminus → back to Earth. No explicit
-    // TEI burn; the trajectory naturally returns.
-    const lastMag = Math.hypot(lastPoint.x, lastPoint.y, lastPoint.z);
-    const reentryR = R_EARTH_KM + 120;
-    const reentry: Vec3Km =
-      lastMag < 1e-6
-        ? { x: -reentryR, y: 0, z: 0 }
-        : {
-            x: (-lastPoint.x / lastMag) * reentryR,
-            y: (-lastPoint.y / lastMag) * reentryR,
-            z: (-lastPoint.z / lastMag) * reentryR,
-          };
+    // TEI burn; lunar gravity bends the trajectory back.
+    const reentry = buildReentryPoint(lastPoint);
     const teiPts = transEarthCoast(lastPoint, reentry, 192);
     phases.push({
       type: 'tei_coast',

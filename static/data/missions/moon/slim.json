@@ -117,7 +117,7 @@
         "type": "spiral"
       },
       "lunar_arrival": {
-        "type": "orbit",
+        "type": "orbit_and_land",
         "altitude_km": 600,
         "inclination_deg": 90,
         "periselene_km": 600

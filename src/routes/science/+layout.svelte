@@ -270,4 +270,28 @@
       gap: 10px;
     }
   }
+
+  /* Narrow viewports: the right-rail section list (e.g. 10 orbits
+     sections × 40 px each = ~70% of the screen height) compresses
+     to a 2-column compact grid so the actual content gets the
+     viewport, not the navigation. */
+  @media (max-width: 640px) {
+    .has-right-rail .section-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+    .section-row {
+      min-height: 32px;
+      padding: 6px 8px;
+    }
+    .section-name {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    .rail-heading {
+      font-size: 11px;
+      margin: 0 0 8px;
+      padding-bottom: 6px;
+    }
+  }
 </style>

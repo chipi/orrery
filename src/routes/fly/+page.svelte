@@ -147,6 +147,16 @@
   );
   let missionEvents: MissionEvent[] = $state(defaultScenarioOverlay.events as MissionEvent[]);
 
+  // ─── HUD-collapse toggle (mobile) ────────────────────────────────
+  // On narrow viewports the hud-stack (top-left mission info) and
+  // capcom-panel (right/bottom Houston event log) cover most of the
+  // scene. A single toggle hides both so the user can see the actual
+  // 3D trajectory; tap again to bring them back.
+  let hudHidden = $state(false);
+  function toggleHud() {
+    hudHidden = !hudHidden;
+  }
+
   // ─── Arc geometries — recomputed per loaded mission ──────────────
   // Each mission gets its own outbound arc anchored to *its* actual
   // launch window (Earth/Mars phases at the mission's departure date).
@@ -1112,42 +1122,77 @@
     // Earth at origin — visually exaggerated 3× so the planet reads at
     // the same on-screen size as the Moon while the Earth-Moon distance
     // stays geometrically true.
+    // Earth + Moon are dual-layered:
+    //   - Inner core: SOLID at TRUE physical radius (R_BODY × SCALE),
+    //     full opacity, strong colour. This is "the planet" — clearly
+    //     readable, not fuzzy. Earth's true radius is 0.638u at this
+    //     scale, Moon's is 0.174u.
+    //   - Outer hint: FAINT translucent shell at 3× radius, low alpha,
+    //     no strong colour. Suggests body presence at wide zoom
+    //     without overwhelming the rest of the scene.
+    // The orbit ring + spacecraft sprite read clearly between the two
+    // layers when zoomed in on the Moon.
+    const cislunarTexLoader = new THREE.TextureLoader();
+    const cislunarEarthTex = cislunarTexLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
     const cislunarEarth = new THREE.Mesh(
-      new THREE.SphereGeometry(R_EARTH_KM * SCALE_CISLUNAR * 3, 32, 32),
-      new THREE.MeshStandardMaterial({ color: 0x4b9cd3, roughness: 0.7 }),
+      new THREE.SphereGeometry(R_EARTH_KM * SCALE_CISLUNAR, 32, 32),
+      new THREE.MeshStandardMaterial({
+        map: cislunarEarthTex,
+        color: 0xffffff,
+        roughness: 0.6,
+      }),
     );
     cislunarScene.add(cislunarEarth);
 
     // Moon — position updated each frame from moonEciPos(simDay).
-    // Moon mesh: 3× visual exaggeration (was 5× — dialed back so the
-    // 0.19u-radius Apollo-class lunar orbit reads as a distinct ring
-    // around the mesh instead of being swallowed by it).
+    const cislunarMoonTex = cislunarTexLoader.load(`${base}/textures/2k_moon.jpg`);
     const cislunarMoon = new THREE.Mesh(
-      new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR * 3, 24, 24),
-      new THREE.MeshStandardMaterial({ color: 0xcfcfcf, roughness: 0.95 }),
+      new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR, 24, 24),
+      new THREE.MeshStandardMaterial({
+        map: cislunarMoonTex,
+        color: 0xffffff,
+        roughness: 0.95,
+      }),
     );
     cislunarScene.add(cislunarMoon);
 
-    // Moon orbit ring at A_MOON_KM — gives the eye a reference circle.
-    {
-      const ringPts: THREE.Vector3[] = [];
-      for (let i = 0; i <= 128; i++) {
-        const a = (i / 128) * Math.PI * 2;
-        ringPts.push(
-          new THREE.Vector3(
-            Math.cos(a) * A_MOON_KM * SCALE_CISLUNAR,
-            0,
-            Math.sin(a) * A_MOON_KM * SCALE_CISLUNAR,
-          ),
-        );
-      }
-      cislunarScene.add(
-        new THREE.LineLoop(
-          new THREE.BufferGeometry().setFromPoints(ringPts),
-          new THREE.LineBasicMaterial({ color: 0x7a8aaa, transparent: true, opacity: 0.3 }),
-        ),
-      );
-    }
+    // SoI (Sphere-of-Influence) rings — wired to the Science Lens
+    // 'soi' layer toggle. Earth SoI = 924,000 km radius, Moon SoI =
+    // 66,100 km. In cislunar scale these come out to ~92u and ~6.6u
+    // respectively — both visible in the wide view. The Moon ring is
+    // child of cislunarMoon so it tracks the Moon's motion.
+    const cislunarEarthSoI = new THREE.Mesh(
+      new THREE.TorusGeometry(924_000 * SCALE_CISLUNAR, 0.08, 8, 96),
+      new THREE.MeshBasicMaterial({
+        color: 0x6aa9ff,
+        transparent: true,
+        opacity: 0.35,
+        depthWrite: false,
+      }),
+    );
+    cislunarEarthSoI.rotation.x = Math.PI / 2;
+    cislunarEarthSoI.visible = false;
+    cislunarScene.add(cislunarEarthSoI);
+
+    const cislunarMoonSoI = new THREE.Mesh(
+      new THREE.TorusGeometry(66_100 * SCALE_CISLUNAR, 0.04, 8, 64),
+      new THREE.MeshBasicMaterial({
+        color: 0xff9b6a,
+        transparent: true,
+        opacity: 0.45,
+        depthWrite: false,
+      }),
+    );
+    cislunarMoonSoI.rotation.x = Math.PI / 2;
+    cislunarMoonSoI.visible = false;
+    cislunarMoon.add(cislunarMoonSoI);
+
+    // Subscribe to the 'soi' layer toggle so checking/unchecking in
+    // the Science Layers panel actually flips visibility.
+    const stopSoiLayerCislunar = onLayerChange('soi', (on) => {
+      cislunarEarthSoI.visible = on;
+      cislunarMoonSoI.visible = on;
+    });
 
     // Stars for the cislunar scene — sparser, pushed further out.
     {
@@ -1289,9 +1334,11 @@
         depthTest: false,
       }),
     );
-    // ~4× smaller than the prior 4u sprite per smoke-test feedback —
-    // the marker was overwhelming the lunar orbit (Apollo 11's 110 km
-    // orbit altitude maps to ~0.19 scene units, dwarfed by a 4u sprite).
+    // Sprite scale is dynamic — adjusted each frame in updateCislunarCam
+    // to be proportional to cislunarCamR so the sprite's on-screen size
+    // stays roughly constant whether the camera is at wide or close-up
+    // zoom. At wide (camR ≈ 69) the sprite is ~1u; at close-up (camR
+    // ≈ 3.5) it shrinks to ~0.05u, keeping the same angular size.
     cislunarSpacecraft.scale.set(1, 1, 1);
     cislunarSpacecraft.renderOrder = 999;
     cislunarScene.add(cislunarSpacecraft);
@@ -2070,12 +2117,22 @@
     // around any body in future passes (Mars orbit for Curiosity, etc.).
     const WIDE_DISTANCE = A_MOON_KM * SCALE_CISLUNAR * 1.8; // ~69u
     const LUNAR_CLOSEUP_DISTANCE = R_MOON_KM * SCALE_CISLUNAR * 20; // ~3.5u
+    const EARTH_CLOSEUP_DISTANCE = R_EARTH_KM * SCALE_CISLUNAR * 25; // ~16u
     const LUNAR_PHASE_TYPES = new Set<string>([
       'lunar_orbit',
       'spiral_lunar',
       'descent',
       'ascent',
       'lunar_flyby',
+    ]);
+    // Earth-localised phases — camera zooms close to Earth so the
+    // parking-orbit revs / spiral_earth burns / re-entry approach are
+    // visible. Same auto-zoom pattern as the Moon close-up, just
+    // pointed at the other end of the system.
+    const EARTH_PHASE_TYPES = new Set<string>([
+      'parking',
+      'spiral_earth',
+      'reentry',
     ]);
     let autoZoomTargetR = WIDE_DISTANCE;
     const autoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
@@ -2094,9 +2151,12 @@
       }
       const metDays = simDay - arcTimeline.dep_day;
       let activePhase = cislunarTrajectory.phases[0];
+      let phaseProgress = 0;
       for (const p of cislunarTrajectory.phases) {
         if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
           activePhase = p;
+          const span = p.end_met_days - p.start_met_days;
+          phaseProgress = span > 0 ? (metDays - p.start_met_days) / span : 0;
           break;
         }
       }
@@ -2114,39 +2174,56 @@
       // lunar phase. Only the lerp toward this target is gated by
       // autoZoomActive.
       const moonPos = moonEciPos(simDay);
+      const moonInScene = {
+        x: moonPos.x * SCALE_CISLUNAR,
+        z: moonPos.z * SCALE_CISLUNAR,
+      };
       if (LUNAR_PHASE_TYPES.has(activePhase.type)) {
         autoZoomTargetR = LUNAR_CLOSEUP_DISTANCE;
-        autoZoomTargetCenter.set(moonPos.x * SCALE_CISLUNAR, 0, moonPos.z * SCALE_CISLUNAR);
-      } else {
+        autoZoomTargetCenter.set(moonInScene.x, 0, moonInScene.z);
+      } else if (EARTH_PHASE_TYPES.has(activePhase.type)) {
+        autoZoomTargetR = EARTH_CLOSEUP_DISTANCE;
+        autoZoomTargetCenter.set(0, 0, 0);
+      } else if (activePhase.type === 'tli_coast') {
+        // Translunar coast — pan the wide-view target from Earth side
+        // (start) toward Moon side (end) over phaseProgress 0→1. Gives
+        // a sense of the spacecraft actually crossing the system.
         autoZoomTargetR = WIDE_DISTANCE;
         autoZoomTargetCenter.set(
-          moonPos.x * SCALE_CISLUNAR * 0.4,
+          moonInScene.x * phaseProgress * 0.7,
           0,
-          moonPos.z * SCALE_CISLUNAR * 0.4,
+          moonInScene.z * phaseProgress * 0.7,
+        );
+      } else if (activePhase.type === 'tei_coast') {
+        // Return coast — pan target from Moon side (start) back
+        // toward Earth side (end).
+        const t = 1 - phaseProgress;
+        autoZoomTargetR = WIDE_DISTANCE;
+        autoZoomTargetCenter.set(
+          moonInScene.x * t * 0.7,
+          0,
+          moonInScene.z * t * 0.7,
         );
       }
     }
 
     const updateCislunarCam = () => {
       updateAutoZoomTargets();
-      // Lerp toward target distance + target centre only while
-      // autoZoomActive (set on phase transitions, cleared by mouse-wheel
-      // interaction). Lerp factor 0.04 → ~95% complete in ~75 frames
-      // @60 fps (~1.25 s). Slower than the prior 600 ms so the camera
-      // move reads as deliberate instead of a glitch when phases turn
-      // over quickly during playback.
+      // Lerp toward target distance + centre only while autoZoomActive
+      // (set on phase transitions, cleared by mouse-wheel). Slowed to
+      // 0.022 ≈ 2.3 s @60 fps for a steady-cam feel — the previous
+      // 0.04/1.25 s read as a jerk during quick phase transitions.
       if (autoZoomActive) {
-        const LERP = 0.04;
+        const LERP = 0.022;
         cislunarCamR += (autoZoomTargetR - cislunarCamR) * LERP;
         cislunarCamTarget.x += (autoZoomTargetCenter.x - cislunarCamTarget.x) * LERP;
         cislunarCamTarget.z += (autoZoomTargetCenter.z - cislunarCamTarget.z) * LERP;
-        // Stop lerping once close enough — frees the user to wheel.
         if (Math.abs(cislunarCamR - autoZoomTargetR) < 0.05) autoZoomActive = false;
       } else {
-        // Even when auto-zoom is idle, track the Moon's drift so the
-        // close-up stays centred during long lunar-orbit phases. Apply
-        // the centre lerp only; R is the user's call.
-        const TRACK = 0.025;
+        // Centre tracking when zoom is idle — slower than transition
+        // so the camera drifts gently with the Moon during long lunar
+        // phases or with the spacecraft during coasts.
+        const TRACK = 0.015;
         cislunarCamTarget.x += (autoZoomTargetCenter.x - cislunarCamTarget.x) * TRACK;
         cislunarCamTarget.z += (autoZoomTargetCenter.z - cislunarCamTarget.z) * TRACK;
       }
@@ -2156,6 +2233,11 @@
         cislunarCamTarget.z + cislunarCamR * Math.sin(cislunarCamP) * Math.cos(cislunarCamT),
       );
       cislunarCamera.lookAt(cislunarCamTarget);
+      // Spacecraft sprite stays a constant on-screen angular size by
+      // scaling inversely with camera distance. At wide (camR=WIDE)
+      // scale=1; closer→smaller world-units sprite → same screen size.
+      const spriteScale = Math.max(0.08, cislunarCamR / WIDE_DISTANCE);
+      cislunarSpacecraft.scale.set(spriteScale, spriteScale, 1);
     };
     updateCam();
     updateCislunarCam();
@@ -2171,9 +2253,15 @@
       camR = cameraDistanceFor(activeDestination, isMoonMission);
       camP = 1.05;
       camT = 0.6;
-      cislunarCamR = A_MOON_KM * SCALE_CISLUNAR * 1.8;
+      // Start Moon missions framed on Earth so the first phase (parking
+      // or spiral_earth) is visible immediately. Otherwise the auto-zoom
+      // has to traverse from wide to Earth close-up in the ~1 s parking
+      // window — too short to feel deliberate. Now the camera starts
+      // already at Earth, then zooms OUT as tli_coast begins.
+      cislunarCamR = EARTH_CLOSEUP_DISTANCE;
       cislunarCamP = 1.05;
       cislunarCamT = 0.6;
+      cislunarCamTarget.set(0, 0, 0);
       // Fresh mission → re-arm auto-zoom from the first phase.
       lastAutoZoomPhase = null;
       autoZoomActive = true;
@@ -3033,6 +3121,7 @@
       cancelAnimationFrame(rafId);
       stopLensWatch?.();
       stopSoiLayer?.();
+      stopSoiLayerCislunar?.();
       stopGravityLayer?.();
       stopFlyVelocityLayer?.();
       stopFlyCentripetalLayer?.();
@@ -3075,7 +3164,20 @@
 
 <svelte:head><title>{m.fly_page_title()}</title></svelte:head>
 
-<div class="fly">
+<div class="fly" class:hud-hidden={hudHidden}>
+  <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop
+       via CSS @media. Tapping it hides hud-stack + capcom-panel so the
+       canvas is visible; tap again to restore. -->
+  <button
+    type="button"
+    class="hud-collapse"
+    onclick={toggleHud}
+    aria-label={hudHidden ? 'Show HUD panels' : 'Hide HUD panels'}
+    aria-pressed={hudHidden}
+    title={hudHidden ? 'Show HUD' : 'Hide HUD'}
+  >
+    {hudHidden ? '◐' : '◑'}
+  </button>
   <div
     class="layer"
     bind:this={container}
@@ -3416,10 +3518,17 @@
      → ARRIVAL. Only renders when the global Science Lens is on. -->
 <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
 
-<!-- /fly Layers panel — every layer wired. 'hover' toggles the
-     bottom-left SpacecraftInfoCard with live state numbers + chips. -->
+<!-- /fly Layers panel. On Moon missions only 'hover' + 'soi' are
+     currently wired into the cislunar scene; the other 6 layers
+     (gravity / velocity / centripetal / apsides / coast / conics)
+     live in the heliocentric scene only. Hiding them from the
+     panel on Moon missions avoids the "checked but nothing happened"
+     confusion. They'll come back when each layer gets its cislunar
+     equivalent. -->
 <ScienceLayersPanel
-  available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+  available={isMoonMission
+    ? ['hover', 'soi']
+    : ['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
 />
 
 <!-- Live spacecraft state card — Phase J.4 fly-hover. Lens + 'hover'
@@ -3647,6 +3756,46 @@
     .scrubber {
       right: 16px;
     }
+    /* On mobile, the hud-collapse toggle is visible; when active, hide
+       hud-stack + capcom-panel so the actual 3D / 2D scene is unobstructed. */
+    .hud-collapse {
+      display: inline-flex;
+    }
+    .fly.hud-hidden .hud-stack,
+    .fly.hud-hidden .capcom-panel {
+      display: none;
+    }
+  }
+
+  /* The HUD-collapse toggle itself — mobile-only floating button at
+     top-left, just above the HUD area. Sits at z-index 36 so it's
+     above the panels (35) but below modal overlays (100). */
+  .hud-collapse {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 16px;
+    z-index: 36;
+    width: 36px;
+    height: 36px;
+    min-width: 44px;
+    min-height: 44px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: rgba(220, 230, 245, 0.95);
+    font-family: 'Space Mono', monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+  }
+  .hud-collapse:hover,
+  .hud-collapse:focus-visible {
+    border-color: #4ecdc4;
+    background: rgba(20, 26, 50, 0.95);
+    outline: none;
   }
 
   /* FLIGHT PARAMS HUD (v0.1.7 / ADR-027 / UXS-003 §Extension) */

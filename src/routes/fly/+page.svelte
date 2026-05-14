@@ -66,7 +66,7 @@
     classifyConic,
   } from '$lib/orbit-overlays';
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
-  import { onLayerChange } from '$lib/science-layers';
+  import { isLayerOn, onLayerChange } from '$lib/science-layers';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
@@ -625,9 +625,24 @@
   let met = $derived(Math.max(0, arcProgress * totalDays));
 
   // Phase I — current conic classification from heliocentric (r, v).
+  // Cislunar conic state — Earth-centric classifier in km/s units,
+  // updated from the animate() rAF callback when a Moon mission is
+  // active. Module-scope $state so the conicState $derived below can
+  // switch into it when isMoonMission is true.
+  let conicStateCislunar = $state<{
+    shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+    a: number;
+    e: number;
+    epsilon: number;
+  } | null>(null);
+
   // Velocity by finite-difference of the planned arc 0.5 days ahead.
   // Re-derives whenever simDay advances (per frame) or arc swaps.
+  // On Moon missions, returns the Earth-centric cislunar conic state
+  // computed each frame; heliocentric missions use the Sun-centric
+  // classifier on the planned arc.
   let conicState = $derived.by(() => {
+    if (isMoonMission && conicStateCislunar) return conicStateCislunar;
     const sc0 = spacecraftPos(simDay, arcTimeline, outPts, retPts).pos;
     const sc1 = spacecraftPos(simDay + 0.5, arcTimeline, outPts, retPts).pos;
     const r = { x: sc0.x, y: 0, z: sc0.z };
@@ -638,6 +653,38 @@
     };
     return classifyConic(r, v);
   });
+
+  /** Earth-centric conic classifier — same energy/angular-momentum
+   *  math as classifyConic() but with μ_earth in km³/s². Used for the
+   *  cislunar Conics overlay when a Moon mission is active. */
+  function classifyConicEarth(
+    r: { x: number; y: number; z: number },
+    v: { x: number; y: number; z: number },
+  ): {
+    shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+    a: number;
+    e: number;
+    epsilon: number;
+  } {
+    const MU = 398600.4418; // km³/s²
+    const rMag = Math.hypot(r.x, r.y, r.z);
+    const vMag2 = v.x * v.x + v.y * v.y + v.z * v.z;
+    const epsilon = vMag2 / 2 - MU / rMag;
+    const hx = r.y * v.z - r.z * v.y;
+    const hy = r.z * v.x - r.x * v.z;
+    const hz = r.x * v.y - r.y * v.x;
+    const h2 = hx * hx + hy * hy + hz * hz;
+    const eSquared = 1 + (2 * epsilon * h2) / (MU * MU);
+    const e = Math.sqrt(Math.max(0, eSquared));
+    const a = epsilon !== 0 ? -MU / (2 * epsilon) : Infinity;
+    const refScale = MU / rMag;
+    let shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+    if (Math.abs(epsilon) < 0.005 * refScale) shape = 'parabola';
+    else if (epsilon > 0) shape = 'hyperbola';
+    else if (e < 0.001) shape = 'circle';
+    else shape = 'ellipse';
+    return { shape, a, e, epsilon };
+  }
   // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
   // surface the scenario's headline numbers without re-running an
   // optimal-burn schedule. A future slice with per-burn data could
@@ -1192,6 +1239,110 @@
     const stopSoiLayerCislunar = onLayerChange('soi', (on) => {
       cislunarEarthSoI.visible = on;
       cislunarMoonSoI.visible = on;
+    });
+
+    // ─── Cislunar Science Layers (ADR-058 follow-up) ─────────────────
+    // Gravity / velocity / centripetal arrows + apsides markers + coast
+    // preview rendered in the cislunar scene, mirroring the heliocentric
+    // overlays but anchored to ECI km coords and using Earth/Moon as
+    // central bodies. Conics state is derived separately (Earth-frame
+    // classifyConic) and fed into the existing ConicSectionPanel.
+
+    // Gravity arrows: Earth (blue) + Moon (gray). Anchored at the
+    // spacecraft, point at the body, length log-scaled.
+    const cisGravEarthArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(-1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      4,
+      0x6aa9ff,
+      0.7,
+      0.4,
+    );
+    cisGravEarthArrow.visible = false;
+    cislunarScene.add(cisGravEarthArrow);
+
+    const cisGravMoonArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      4,
+      0xcfcfcf,
+      0.7,
+      0.4,
+    );
+    cisGravMoonArrow.visible = false;
+    cislunarScene.add(cisGravMoonArrow);
+
+    // Velocity tangent arrow (teal).
+    const cisVelocityArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      4,
+      0x4ecdc4,
+      0.7,
+      0.4,
+    );
+    cisVelocityArrow.visible = false;
+    cislunarScene.add(cisVelocityArrow);
+
+    // Centripetal arrow (red), points toward the dominant body.
+    const cisCentripetalArrow = new THREE.ArrowHelper(
+      new THREE.Vector3(-1, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      4,
+      0xff6b6b,
+      0.7,
+      0.4,
+    );
+    cisCentripetalArrow.visible = false;
+    cislunarScene.add(cisCentripetalArrow);
+
+    // Apsides markers — pink perigee + blue apogee. Placed each frame
+    // at min/max distance from the current phase's central body.
+    const cisPeriMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.3, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0xff6b6b, transparent: true, opacity: 0.85 }),
+    );
+    cisPeriMarker.visible = false;
+    cislunarScene.add(cisPeriMarker);
+    const cisApoMarker = new THREE.Mesh(
+      new THREE.SphereGeometry(0.3, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0x6aa9ff, transparent: true, opacity: 0.85 }),
+    );
+    cisApoMarker.visible = false;
+    cislunarScene.add(cisApoMarker);
+
+    // Coast preview — dashed yellow line projecting the spacecraft's
+    // future trajectory under Earth gravity (Tier 1: simple two-body
+    // integrator, ignores Moon gravity outside Moon SoI).
+    const cisCoastLine = new THREE.Line(
+      new THREE.BufferGeometry(),
+      new THREE.LineDashedMaterial({
+        color: 0xffd166,
+        transparent: true,
+        opacity: 0.75,
+        dashSize: 0.5,
+        gapSize: 0.3,
+      }),
+    );
+    cisCoastLine.visible = false;
+    cislunarScene.add(cisCoastLine);
+
+    const stopGravityLayerCislunar = onLayerChange('gravity', (on) => {
+      cisGravEarthArrow.visible = on;
+      cisGravMoonArrow.visible = on;
+    });
+    const stopVelocityLayerCislunar = onLayerChange('velocity', (on) => {
+      cisVelocityArrow.visible = on;
+    });
+    const stopCentripetalLayerCislunar = onLayerChange('centripetal', (on) => {
+      cisCentripetalArrow.visible = on;
+    });
+    const stopApsidesLayerCislunar = onLayerChange('apsides', (on) => {
+      cisPeriMarker.visible = on;
+      cisApoMarker.visible = on;
+    });
+    const stopCoastLayerCislunar = onLayerChange('coast', (on) => {
+      cisCoastLine.visible = on;
     });
 
     // Stars for the cislunar scene — sparser, pushed further out.
@@ -2089,6 +2240,87 @@
     // system stays centered as Earth orbits the Sun.
     const camTarget = new THREE.Vector3(0, 0, 0);
     const cislunarCamTarget = new THREE.Vector3(0, 0, 0);
+    // Heliocentric auto-zoom state — mirror of the cislunar pattern.
+    // Drives camR + camTarget through DEPART → CRUISE → APPROACH so the
+    // viewer gets a sense of leaving Earth, transiting, and arriving.
+    // Re-armed on sub-phase transitions; mouse-wheel during a sub-phase
+    // disables the lerp until the next transition.
+    let helioAutoZoomActive = false;
+    let helioAutoZoomTargetR = 360;
+    const helioAutoZoomTargetCenter = new THREE.Vector3(0, 0, 0);
+    let lastHelioSubPhase: string | null = null;
+    const HELIO_CLOSEUP_R = 40;
+    function updateHelioAutoZoomTargets(): void {
+      if (isMoonMission) return; // cislunar handles its own auto-zoom
+      const sc = spacecraftPos(simDay, arcTimeline, outPts, retPts);
+      const wide = cameraDistanceFor(activeDestination, false);
+      const ePos = earthPos(simDay);
+      const earthScene = new THREE.Vector3(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+      const dPosLive = destinationPos(simDay, activeDestination);
+      const destScene = new THREE.Vector3(dPosLive.x * SCALE_3D, 0, dPosLive.z * SCALE_3D);
+
+      let sub: string;
+      let centerX: number;
+      let centerZ: number;
+      let targetR: number;
+      if (sc.phase === 'pre-launch') {
+        sub = 'prelaunch';
+        centerX = earthScene.x;
+        centerZ = earthScene.z;
+        targetR = HELIO_CLOSEUP_R;
+      } else if (sc.phase === 'arrived') {
+        sub = 'arrived';
+        // Round-trip missions end at Earth; one-way ends at destination.
+        const endAtEarth = retPts.length > 0;
+        centerX = endAtEarth ? earthScene.x : destScene.x;
+        centerZ = endAtEarth ? earthScene.z : destScene.z;
+        targetR = HELIO_CLOSEUP_R;
+      } else if (sc.phase === 'outbound') {
+        const t = sc.progress * 2; // 0→1 across outbound
+        if (t < 0.15) {
+          sub = 'depart';
+          centerX = earthScene.x;
+          centerZ = earthScene.z;
+          targetR = HELIO_CLOSEUP_R;
+        } else if (t > 0.85) {
+          sub = 'approach';
+          centerX = destScene.x;
+          centerZ = destScene.z;
+          targetR = HELIO_CLOSEUP_R;
+        } else {
+          sub = 'cruise-out';
+          centerX = (earthScene.x + destScene.x) / 2;
+          centerZ = (earthScene.z + destScene.z) / 2;
+          targetR = wide;
+        }
+      } else {
+        // return
+        const t = (sc.progress - 0.5) * 2; // 0→1 across return
+        if (t < 0.15) {
+          sub = 'depart-return';
+          centerX = destScene.x;
+          centerZ = destScene.z;
+          targetR = HELIO_CLOSEUP_R;
+        } else if (t > 0.85) {
+          sub = 'approach-earth';
+          centerX = earthScene.x;
+          centerZ = earthScene.z;
+          targetR = HELIO_CLOSEUP_R;
+        } else {
+          sub = 'cruise-back';
+          centerX = (earthScene.x + destScene.x) / 2;
+          centerZ = (earthScene.z + destScene.z) / 2;
+          targetR = wide;
+        }
+      }
+      if (sub !== lastHelioSubPhase) {
+        lastHelioSubPhase = sub;
+        helioAutoZoomActive = true;
+      }
+      helioAutoZoomTargetR = targetR;
+      helioAutoZoomTargetCenter.set(centerX, 0, centerZ);
+    }
+
     const updateCam = () => {
       if (isMoonMission) {
         // Track the Earth+Moon midpoint so both planets always sit
@@ -2100,7 +2332,21 @@
         const mPos = moonHelioPos(simDay);
         camTarget.set(((ePos.x + mPos.x) / 2) * SCALE_3D, 0, ((ePos.z + mPos.z) / 2) * SCALE_3D);
       } else {
-        camTarget.set(0, 0, 0);
+        updateHelioAutoZoomTargets();
+        // Same dual-rate pattern as cislunar: stronger lerp during
+        // sub-phase transitions, gentle drift otherwise so the camera
+        // keeps tracking Earth/destination as they orbit.
+        if (helioAutoZoomActive) {
+          const LERP = 0.022;
+          camR += (helioAutoZoomTargetR - camR) * LERP;
+          camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * LERP;
+          camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
+          if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
+        } else {
+          const TRACK = 0.015;
+          camTarget.x += (helioAutoZoomTargetCenter.x - camTarget.x) * TRACK;
+          camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * TRACK;
+        }
       }
       camera.position.set(
         camTarget.x + camR * Math.sin(camP) * Math.sin(camT),
@@ -2257,6 +2503,16 @@
       // Fresh mission → re-arm auto-zoom from the first phase.
       lastAutoZoomPhase = null;
       autoZoomActive = true;
+      // Heliocentric: re-arm sub-phase tracking. Start framed on Earth
+      // so the departure close-up reads immediately instead of lerping
+      // from wide.
+      lastHelioSubPhase = null;
+      if (!isMoonMission) {
+        const ePos = earthPos(simDay);
+        camTarget.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
+        camR = HELIO_CLOSEUP_R;
+        helioAutoZoomActive = true;
+      }
       updateCam();
       updateCislunarCam();
     };
@@ -2305,6 +2561,9 @@
         updateCislunarCam();
       } else {
         camR = Math.max(80, Math.min(4000, camR + e.deltaY * 0.5));
+        // User-initiated zoom wins over auto-zoom for the rest of this
+        // sub-phase. Next sub-phase transition re-arms helioAutoZoomActive.
+        helioAutoZoomActive = false;
         updateCam();
       }
     };
@@ -3034,13 +3293,24 @@
       // doubled formula uniformly covers both cases.
       const outFraction = Math.min(1, sc.progress * 2);
       const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
-      if (outLine && outLine.geometry.index) {
+      // Ceil-snap to whole-segment boundaries so the tube tip always
+      // sits at or past the spacecraft sprite. Round-to-nearest used to
+      // truncate at a fractional-segment index that didn't map to a
+      // complete tube ring, leaving the sprite a few pixels beyond the
+      // visible tube tip (visible on Viking 1 etc.).
+      if (outLine && outLine.geometry.index && outPts.length > 1) {
         const total = outLine.geometry.index.count;
-        outLine.geometry.setDrawRange(0, Math.max(0, Math.round(total * outFraction)));
+        const segs = outPts.length - 1;
+        const segIndices = total / segs;
+        const targetSeg = Math.min(segs, Math.ceil(outFraction * segs));
+        outLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
       }
-      if (retLine && retLine.geometry.index) {
+      if (retLine && retLine.geometry.index && retPts.length > 1) {
         const total = retLine.geometry.index.count;
-        retLine.geometry.setDrawRange(0, Math.max(0, Math.round(total * retFraction)));
+        const segs = retPts.length - 1;
+        const segIndices = total / segs;
+        const targetSeg = Math.min(segs, Math.ceil(retFraction * segs));
+        retLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
       }
 
       // marsArr / earthRet are recomputed per-frame from the live
@@ -3095,6 +3365,272 @@
         const metDays = simDay - arcTimeline.dep_day;
         updateCislunarSpacecraftRef?.(cislunarTrajectory, metDays);
 
+        // ─── Cislunar science-layer per-frame updates ─────────────────
+        // Drive only the visible overlays so the math is skipped when
+        // the user has the layer off. All arrows / markers / coast
+        // need the spacecraft's current absolute ECI position + a
+        // finite-difference velocity, so the head of this block does
+        // both regardless of which layer is on.
+        const conicsLayerOn = isLayerOn('conics');
+        const anyCislunarLayerOn =
+          cisGravEarthArrow.visible ||
+          cisGravMoonArrow.visible ||
+          cisVelocityArrow.visible ||
+          cisCentripetalArrow.visible ||
+          cisPeriMarker.visible ||
+          cisCoastLine.visible ||
+          conicsLayerOn;
+        if (anyCislunarLayerOn && cislunarTrajectory && cislunarTrajectory.phases.length > 0) {
+          // Walk phases to find current absolute position + velocity
+          // (finite-diff at +0.05 days). For lunar-frame phases the
+          // points are stored Moon-relative, so add (currentMoon -
+          // moonAtFlyby) to bring them into absolute ECI.
+          const LUNAR_LOCAL_LAYERS = new Set([
+            'lunar_orbit',
+            'spiral_lunar',
+            'lunar_flyby',
+            'descent',
+            'ascent',
+          ]);
+          const moonRefForLayers = moonEciPos(arcTimeline.flyby_day);
+          const cisPosAt = (
+            metT: number,
+          ): { x: number; y: number; z: number; phaseType: string } => {
+            const traj = cislunarTrajectory!;
+            let active = traj.phases[0];
+            for (const p of traj.phases) {
+              if (metT >= p.start_met_days && metT <= p.end_met_days) {
+                active = p;
+                break;
+              }
+            }
+            const span = active.end_met_days - active.start_met_days;
+            const t =
+              span > 0 ? Math.max(0, Math.min(1, (metT - active.start_met_days) / span)) : 0;
+            const last = active.points.length - 1;
+            const f = t * last;
+            const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
+            const frac = f - i;
+            const a = active.points[i];
+            const b = active.points[i + 1] ?? a;
+            let x = a.x + (b.x - a.x) * frac;
+            let y = a.y + (b.y - a.y) * frac;
+            let z = a.z + (b.z - a.z) * frac;
+            if (LUNAR_LOCAL_LAYERS.has(active.type)) {
+              const moonAtT = moonEciPos(arcTimeline.dep_day + metT);
+              x += moonAtT.x - moonRefForLayers.x;
+              y += moonAtT.y - moonRefForLayers.y;
+              z += moonAtT.z - moonRefForLayers.z;
+            }
+            return { x, y, z, phaseType: active.type };
+          };
+
+          const p0 = cisPosAt(metDays);
+          const p1 = cisPosAt(metDays + 0.05);
+          const dt_sec = 0.05 * 86400; // days → seconds
+          const vx = (p1.x - p0.x) / dt_sec; // km/s
+          const vz = (p1.z - p0.z) / dt_sec;
+          const vy = (p1.y - p0.y) / dt_sec;
+          const speedKms = Math.hypot(vx, vy, vz);
+          const isLunarPhase = LUNAR_LOCAL_LAYERS.has(p0.phaseType);
+
+          // Spacecraft scene position (for anchoring arrows).
+          const scScene = new THREE.Vector3(
+            p0.x * SCALE_CISLUNAR,
+            p0.y * SCALE_CISLUNAR,
+            p0.z * SCALE_CISLUNAR,
+          );
+
+          // Earth / Moon positions in scene units.
+          const earthScene = new THREE.Vector3(0, 0, 0);
+          const moonAtNowAbs = moonEciPos(simDay);
+          const moonScene = new THREE.Vector3(
+            moonAtNowAbs.x * SCALE_CISLUNAR,
+            moonAtNowAbs.y * SCALE_CISLUNAR,
+            moonAtNowAbs.z * SCALE_CISLUNAR,
+          );
+
+          // Gravity arrows — Earth + Moon.
+          if (cisGravEarthArrow.visible) {
+            const dEarthKm = Math.hypot(p0.x, p0.y, p0.z);
+            const aEarth = gravityAccel(BODY_MASS_KG.earth, dEarthKm);
+            cisGravEarthArrow.position.copy(scScene);
+            cisGravEarthArrow.setDirection(
+              new THREE.Vector3().subVectors(earthScene, scScene).normalize(),
+            );
+            cisGravEarthArrow.setLength(
+              Math.max(0.5, Math.min(5, logScaleLength(aEarth, 0.5, 5, 1e-6, 10))),
+              0.18,
+              0.1,
+            );
+          }
+          if (cisGravMoonArrow.visible) {
+            const dMoonKm = Math.hypot(
+              p0.x - moonAtNowAbs.x,
+              p0.y - moonAtNowAbs.y,
+              p0.z - moonAtNowAbs.z,
+            );
+            const aMoon = gravityAccel(BODY_MASS_KG.moon, dMoonKm);
+            cisGravMoonArrow.position.copy(scScene);
+            cisGravMoonArrow.setDirection(
+              new THREE.Vector3().subVectors(moonScene, scScene).normalize(),
+            );
+            cisGravMoonArrow.setLength(
+              Math.max(0.5, Math.min(5, logScaleLength(aMoon, 0.5, 5, 1e-6, 10))),
+              0.18,
+              0.1,
+            );
+          }
+
+          // Velocity tangent — proportional to speed.
+          if (cisVelocityArrow.visible && speedKms > 1e-6) {
+            const dirMag = Math.hypot(p1.x - p0.x, p1.y - p0.y, p1.z - p0.z);
+            cisVelocityArrow.position.copy(scScene);
+            cisVelocityArrow.setDirection(
+              new THREE.Vector3(
+                (p1.x - p0.x) / dirMag,
+                (p1.y - p0.y) / dirMag,
+                (p1.z - p0.z) / dirMag,
+              ),
+            );
+            // 1 km/s → ~0.4u in cislunar scale (matches heliocentric ratio).
+            const vLen = Math.max(0.4, Math.min(5, speedKms * 0.4));
+            cisVelocityArrow.setLength(vLen, 0.18, 0.1);
+          }
+
+          // Centripetal — toward dominant body (Moon if in lunar phase,
+          // else Earth).
+          if (cisCentripetalArrow.visible) {
+            const target = isLunarPhase ? moonScene : earthScene;
+            const dir = new THREE.Vector3().subVectors(target, scScene).normalize();
+            cisCentripetalArrow.position.copy(scScene);
+            cisCentripetalArrow.setDirection(dir);
+            const dKm = isLunarPhase
+              ? Math.hypot(p0.x - moonAtNowAbs.x, p0.y - moonAtNowAbs.y, p0.z - moonAtNowAbs.z)
+              : Math.hypot(p0.x, p0.y, p0.z);
+            const accel = gravityAccel(isLunarPhase ? BODY_MASS_KG.moon : BODY_MASS_KG.earth, dKm);
+            cisCentripetalArrow.setLength(
+              Math.max(0.4, Math.min(5, logScaleLength(accel, 0.4, 5, 1e-6, 10))),
+              0.18,
+              0.1,
+            );
+          }
+
+          // Apsides — scan current phase's points for min/max distance
+          // from the dominant body. Earth-frame phases use Earth as
+          // centre, lunar-frame use Moon.
+          if (cisPeriMarker.visible || cisApoMarker.visible) {
+            let activePhase = cislunarTrajectory.phases[0];
+            for (const p of cislunarTrajectory.phases) {
+              if (metDays >= p.start_met_days && metDays <= p.end_met_days) {
+                activePhase = p;
+                break;
+              }
+            }
+            const lunarFrame = LUNAR_LOCAL_LAYERS.has(activePhase.type);
+            const cx = lunarFrame ? moonRefForLayers.x : 0;
+            const cy = lunarFrame ? moonRefForLayers.y : 0;
+            const cz = lunarFrame ? moonRefForLayers.z : 0;
+            let minR2 = Infinity;
+            let maxR2 = -Infinity;
+            let minI = 0;
+            let maxI = 0;
+            for (let i = 0; i < activePhase.points.length; i++) {
+              const p = activePhase.points[i];
+              const dx = p.x - cx;
+              const dy = p.y - cy;
+              const dz = p.z - cz;
+              const r2 = dx * dx + dy * dy + dz * dz;
+              if (r2 < minR2) {
+                minR2 = r2;
+                minI = i;
+              }
+              if (r2 > maxR2) {
+                maxR2 = r2;
+                maxI = i;
+              }
+            }
+            const peri = activePhase.points[minI];
+            const apo = activePhase.points[maxI];
+            // Lunar-frame points need the moonFrameGroup offset to land
+            // in absolute scene coords.
+            let dx0 = 0;
+            let dy0 = 0;
+            let dz0 = 0;
+            if (lunarFrame) {
+              dx0 = moonAtNowAbs.x - moonRefForLayers.x;
+              dy0 = moonAtNowAbs.y - moonRefForLayers.y;
+              dz0 = moonAtNowAbs.z - moonRefForLayers.z;
+            }
+            cisPeriMarker.position.set(
+              (peri.x + dx0) * SCALE_CISLUNAR,
+              (peri.y + dy0) * SCALE_CISLUNAR,
+              (peri.z + dz0) * SCALE_CISLUNAR,
+            );
+            cisApoMarker.position.set(
+              (apo.x + dx0) * SCALE_CISLUNAR,
+              (apo.y + dy0) * SCALE_CISLUNAR,
+              (apo.z + dz0) * SCALE_CISLUNAR,
+            );
+          }
+
+          // Coast preview — integrate forward from (p0, v) under Earth
+          // gravity for N seconds, dropping points each step. Tier 1
+          // simplification: ignores Moon gravity (acceptable outside
+          // lunar SoI).
+          if (cisCoastLine.visible) {
+            const MU_EARTH = 398600.4418; // km³/s²
+            const STEPS = 200;
+            const DT = 600; // 600 s per step → 200×600 = 33 h preview
+            let rx = p0.x;
+            let ry = p0.y;
+            let rz = p0.z;
+            let rvx = vx;
+            let rvy = vy;
+            let rvz = vz;
+            const verts = new Float32Array((STEPS + 1) * 3);
+            verts[0] = rx * SCALE_CISLUNAR;
+            verts[1] = ry * SCALE_CISLUNAR;
+            verts[2] = rz * SCALE_CISLUNAR;
+            for (let i = 1; i <= STEPS; i++) {
+              const rMag = Math.hypot(rx, ry, rz);
+              if (rMag < R_EARTH_KM) break; // collided
+              const a = -MU_EARTH / (rMag * rMag * rMag);
+              rvx += a * rx * DT;
+              rvy += a * ry * DT;
+              rvz += a * rz * DT;
+              rx += rvx * DT;
+              ry += rvy * DT;
+              rz += rvz * DT;
+              verts[i * 3] = rx * SCALE_CISLUNAR;
+              verts[i * 3 + 1] = ry * SCALE_CISLUNAR;
+              verts[i * 3 + 2] = rz * SCALE_CISLUNAR;
+            }
+            cisCoastLine.geometry.dispose();
+            cisCoastLine.geometry = new THREE.BufferGeometry();
+            cisCoastLine.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));
+            cisCoastLine.computeLineDistances();
+          }
+
+          // Conics — classify the spacecraft's Earth-centric (r, v).
+          // Cislunar trajectories are Earth-bound ellipses for the
+          // outbound/return coasts and Moon-bound for lunar phases;
+          // here we always classify with Earth as the central body
+          // since that's what the conic panel labels.
+          if (conicsLayerOn) {
+            conicStateCislunar = classifyConicEarth(
+              { x: p0.x, y: p0.y, z: p0.z },
+              { x: vx, y: vy, z: vz },
+            );
+          } else {
+            conicStateCislunar = null;
+          }
+        } else if (isMoonMission) {
+          // Clear cached cislunar conic when all layers off so the
+          // panel doesn't keep showing a stale Earth-centric state.
+          conicStateCislunar = null;
+        }
+
         // Cislunar camera tracks the moving Moon target each frame so
         // the Earth-Moon system stays framed as it drifts. User mouse
         // input modifies cislunarCamR/P/T independently.
@@ -3115,10 +3651,15 @@
       stopSoiLayer?.();
       stopSoiLayerCislunar?.();
       stopGravityLayer?.();
+      stopGravityLayerCislunar?.();
       stopFlyVelocityLayer?.();
+      stopVelocityLayerCislunar?.();
       stopFlyCentripetalLayer?.();
+      stopCentripetalLayerCislunar?.();
       stopCoastLayer?.();
+      stopCoastLayerCislunar?.();
       stopApsidesLayer?.();
+      stopApsidesLayerCislunar?.();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -3401,6 +3942,12 @@
         >
       </div>
     </aside>
+
+    <!-- Live spacecraft state card — Phase J.4 fly-hover. Lens +
+         'hover' layer gated. Sits as the bottom-most left-rail panel
+         under hud-systems so it shares the column with identity /
+         navigation / flight-params / systems. -->
+    <SpacecraftInfoCard {heliocentricKms} {distFromEarthAu} {distFromMarsAu} metDays={met} />
   </div>
 
   <!-- Timeline scrubber (bottom-left) -->
@@ -3510,27 +4057,10 @@
      → ARRIVAL. Only renders when the global Science Lens is on. -->
 <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
 
-<!-- /fly Layers panel. On Moon missions only 'hover' + 'soi' are
-     currently wired into the cislunar scene; the other 6 layers
-     (gravity / velocity / centripetal / apsides / coast / conics)
-     live in the heliocentric scene only. Hiding them from the
-     panel on Moon missions avoids the "checked but nothing happened"
-     confusion. They'll come back when each layer gets its cislunar
-     equivalent. -->
+<!-- /fly Layers panel — every layer wired into both scenes (cislunar
+     for Moon missions, heliocentric otherwise). -->
 <ScienceLayersPanel
-  available={isMoonMission
-    ? ['hover', 'soi']
-    : ['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
-/>
-
-<!-- Live spacecraft state card — Phase J.4 fly-hover. Lens + 'hover'
-     layer gated. Reads existing per-frame derives. -->
-<SpacecraftInfoCard
-  {heliocentricKms}
-  {distFromEarthAu}
-  {distFromMarsAu}
-  metDays={met}
-  phase={phaseLabel}
+  available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
 />
 
 <!-- Conic-section family side panel — Phase I. Lens + 'conics' layer
@@ -3608,10 +4138,11 @@
     flex-direction: column;
     gap: 4px;
   }
-  /* Systems HUD pinned to the bottom of the stack so it sits just
-     above the scrubber instead of crowding identity/navigation. */
+  /* Systems HUD now stacks flush right after flight-params instead of
+     being pushed to the bottom — the previous `margin-top: auto` left
+     a tall empty gap in the middle of the left rail. */
   .hud-systems {
-    margin-top: auto;
+    margin-top: 0;
   }
   .hud-demo-hint {
     margin: 4px 0 6px;

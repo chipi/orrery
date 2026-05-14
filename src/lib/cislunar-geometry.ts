@@ -523,7 +523,10 @@ export function buildCislunarTrajectory(
     lastPoint = spiralPts[spiralPts.length - 1];
   } else {
     const parkingPts = parkingOrbit(parkingAlt, parkingInc, parkingRevs, 96);
-    const parkingEndMET = transit_days * 0.04;
+    // Bumped 0.04 → 0.10 of transit_days so the parking phase plays for
+    // enough real-time at default simSpeed for the Earth close-up zoom
+    // transition to read. Still a small fraction of total mission time.
+    const parkingEndMET = transit_days * 0.1;
     phases.push({
       type: 'parking',
       start_met_days: 0,

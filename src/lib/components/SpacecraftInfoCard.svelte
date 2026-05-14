@@ -26,10 +26,8 @@
     distFromMarsAu: number;
     /** Mission elapsed time in days. */
     metDays: number;
-    /** Localised phase label ("CRUISE", "ARRIVAL", etc.). */
-    phase: string;
   };
-  let { heliocentricKms, distFromEarthAu, distFromMarsAu, metDays, phase }: Props = $props();
+  let { heliocentricKms, distFromEarthAu, distFromMarsAu, metDays }: Props = $props();
 
   let layerOn = $state(false);
   let stop: (() => void) | undefined;
@@ -47,8 +45,6 @@
 
 {#if layerOn}
   <aside class="card" data-testid="spacecraft-info-card" aria-label="Live spacecraft state">
-    <div class="eyebrow">{m.fly_info_card_eyebrow()}</div>
-    <div class="phase">{phase}</div>
     <dl class="rows">
       <div class="row">
         <dt>
@@ -81,44 +77,33 @@
 {/if}
 
 <style>
-  /* Bottom-left fixed card. Doesn't compete with the conic-section
-     panel at bottom-right or the timeline scrubber along the bottom-
-     center strip. */
+  /* Inline card — sits inside the .fly hud-stack as the bottom-most
+     left-rail panel. No position:fixed: it inherits flex layout from
+     the parent column so it stacks flush right under hud-systems. The
+     gold accent border keeps it visually tagged as the Phase J.4
+     "live spacecraft state" panel without breaking column rhythm.
+     Eyebrow + phase header were dropped — they duplicated the
+     identity HUD's mission-name + phase indicator at the top of the
+     stack. */
   .card {
-    position: fixed;
-    /* Sit above the scrubber (bottom: 14px + ~50px tall) so the play
-       button + timeline stay clickable when the card is open. */
-    bottom: 80px;
-    left: 16px;
-    z-index: 31;
-    width: 240px;
-    padding: 10px 12px 8px;
-    background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(255, 200, 80, 0.55);
-    border-radius: 6px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-    color: var(--color-text);
-  }
-  .eyebrow {
+    pointer-events: auto;
+    padding: 8px 14px;
+    background: rgba(8, 10, 22, 0.88);
+    border: 1px solid rgba(255, 200, 80, 0.4);
+    border-radius: 4px;
+    backdrop-filter: blur(6px);
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 2px;
-    color: #ffc850;
-    margin-bottom: 4px;
-  }
-  .phase {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 6px;
-    border-bottom: 1px solid rgba(255, 200, 80, 0.18);
-    padding-bottom: 4px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    min-width: 180px;
+    width: 220px;
+    box-sizing: border-box;
   }
   .rows {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
     margin: 0;
   }
   .row {
@@ -142,15 +127,5 @@
     font-size: 11px;
     color: rgba(255, 255, 255, 0.92);
     margin: 0;
-  }
-
-  /* Mobile: keep at bottom-left but lifted above the timeline scrubber. */
-  @media (max-width: 600px) {
-    .card {
-      bottom: 84px;
-      left: 8px;
-      right: 8px;
-      width: auto;
-    }
   }
 </style>

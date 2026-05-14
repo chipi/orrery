@@ -125,11 +125,33 @@ function repoUrl(repo: unknown): string | undefined {
 
 function cleanUrl(u: string): string | undefined {
   if (!u) return undefined;
-  return u
+  const cleaned = u
     .replace(/^git\+/, '')
     .replace(/\.git$/, '')
     .replace(/^git:\/\//, 'https://')
-    .replace(/^ssh:\/\/git@/, 'https://');
+    .replace(/^ssh:\/\/git@/, 'https://')
+    .replace(/^git@github\.com:/, 'https://github.com/');
+  // npm package.json `repository` accepts shorthand forms that aren't URLs:
+  //   "user/repo"            → https://github.com/user/repo
+  //   "github:user/repo"     → https://github.com/user/repo
+  //   "gitlab:user/repo"     → https://gitlab.com/user/repo
+  //   "bitbucket:user/repo"  → https://bitbucket.org/user/repo
+  // Without this, tech-bom.md emits markdown like `[name](user/repo)` which
+  // breaks VitePress's dead-link check.
+  if (/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(cleaned)) {
+    return `https://github.com/${cleaned}`;
+  }
+  const shorthand = cleaned.match(/^(github|gitlab|bitbucket):(.+)$/);
+  if (shorthand) {
+    const host =
+      shorthand[1] === 'gitlab'
+        ? 'gitlab.com'
+        : shorthand[1] === 'bitbucket'
+          ? 'bitbucket.org'
+          : 'github.com';
+    return `https://${host}/${shorthand[2]}`;
+  }
+  return cleaned;
 }
 
 function authorString(a: unknown): string | undefined {
@@ -369,7 +391,7 @@ function writeMarkdown(pkgs: Pkg[], ourPkg: Record<string, unknown>): string {
     '- **No new dependencies were added to make this work.** Generator is pure Node + npm CLI; output formats are markdown + a CycloneDX-shaped JSON subset.',
   );
   lines.push(
-    '- **Project license**: `MIT` (see [LICENSE](../LICENSE)). All bundled deps are compatible.',
+    '- **Project license**: `MIT` (see [LICENSE](https://github.com/chipi/orrery/blob/main/LICENSE)). All bundled deps are compatible.',
   );
   lines.push('');
 

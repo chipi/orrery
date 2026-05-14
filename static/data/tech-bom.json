@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-05-13T21:06:32.035Z",
+    "timestamp": "2026-05-14T18:26:55.344Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -14,7 +14,7 @@
     "component": {
       "type": "application",
       "name": "orrery",
-      "version": "0.3.0",
+      "version": "0.6.0",
       "licenses": [
         {
           "license": {
@@ -463,7 +463,7 @@
         },
         {
           "type": "vcs",
-          "url": "ajv-validator/ajv"
+          "url": "https://github.com/ajv-validator/ajv"
         }
       ],
       "properties": [
@@ -562,7 +562,7 @@
         },
         {
           "type": "vcs",
-          "url": "eslint/eslint"
+          "url": "https://github.com/eslint/eslint"
         }
       ],
       "properties": [
@@ -591,7 +591,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "prettier/eslint-config-prettier"
+          "url": "https://github.com/prettier/eslint-config-prettier"
         }
       ],
       "properties": [
@@ -653,7 +653,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/globals"
+          "url": "https://github.com/sindresorhus/globals"
         }
       ],
       "properties": [
@@ -715,7 +715,7 @@
         },
         {
           "type": "vcs",
-          "url": "prettier/prettier"
+          "url": "https://github.com/prettier/prettier"
         }
       ],
       "properties": [
@@ -880,7 +880,7 @@
         },
         {
           "type": "vcs",
-          "url": "privatenumber/tsx"
+          "url": "https://github.com/privatenumber/tsx"
         }
       ],
       "properties": [
@@ -1012,7 +1012,7 @@
         },
         {
           "type": "vcs",
-          "url": "github:vuejs/vitepress"
+          "url": "https://github.com/vuejs/vitepress"
         }
       ],
       "properties": [
@@ -1111,7 +1111,7 @@
         },
         {
           "type": "vcs",
-          "url": "algolia/autocomplete"
+          "url": "https://github.com/algolia/autocomplete"
         }
       ],
       "properties": [
@@ -1144,7 +1144,7 @@
         },
         {
           "type": "vcs",
-          "url": "algolia/autocomplete"
+          "url": "https://github.com/algolia/autocomplete"
         }
       ],
       "properties": [
@@ -1177,7 +1177,7 @@
         },
         {
           "type": "vcs",
-          "url": "algolia/autocomplete"
+          "url": "https://github.com/algolia/autocomplete"
         }
       ],
       "properties": [
@@ -1210,7 +1210,7 @@
         },
         {
           "type": "vcs",
-          "url": "algolia/autocomplete"
+          "url": "https://github.com/algolia/autocomplete"
         }
       ],
       "properties": [
@@ -4993,7 +4993,7 @@
         },
         {
           "type": "vcs",
-          "url": "rollup/plugins"
+          "url": "https://github.com/rollup/plugins"
         }
       ],
       "properties": [
@@ -5026,7 +5026,7 @@
         },
         {
           "type": "vcs",
-          "url": "rollup/plugins"
+          "url": "https://github.com/rollup/plugins"
         }
       ],
       "properties": [
@@ -5059,7 +5059,7 @@
         },
         {
           "type": "vcs",
-          "url": "rollup/plugins"
+          "url": "https://github.com/rollup/plugins"
         }
       ],
       "properties": [
@@ -6642,7 +6642,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "nodeca/argparse"
+          "url": "https://github.com/nodeca/argparse"
         }
       ],
       "properties": [
@@ -7183,7 +7183,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "browserslist/browserslist"
+          "url": "https://github.com/browserslist/browserslist"
         }
       ],
       "properties": [
@@ -7245,7 +7245,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "egoist/cac"
+          "url": "https://github.com/egoist/cac"
         }
       ],
       "properties": [
@@ -7373,7 +7373,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "browserslist/caniuse-lite"
+          "url": "https://github.com/browserslist/caniuse-lite"
         }
       ],
       "properties": [
@@ -7402,7 +7402,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/ccount"
+          "url": "https://github.com/wooorm/ccount"
         }
       ],
       "properties": [
@@ -7464,7 +7464,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/character-entities-html4"
+          "url": "https://github.com/wooorm/character-entities-html4"
         }
       ],
       "properties": [
@@ -7493,7 +7493,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/character-entities-legacy"
+          "url": "https://github.com/wooorm/character-entities-legacy"
         }
       ],
       "properties": [
@@ -7584,7 +7584,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/comma-separated-tokens"
+          "url": "https://github.com/wooorm/comma-separated-tokens"
         }
       ],
       "properties": [
@@ -7646,7 +7646,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "unjs/consola"
+          "url": "https://github.com/unjs/consola"
         }
       ],
       "properties": [
@@ -7778,7 +7778,7 @@
         },
         {
           "type": "vcs",
-          "url": "git@github.com:moxystudio/node-cross-spawn"
+          "url": "https://github.com/moxystudio/node-cross-spawn"
         }
       ],
       "properties": [
@@ -7807,7 +7807,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/crypto-random-string"
+          "url": "https://github.com/sindresorhus/crypto-random-string"
         }
       ],
       "properties": [
@@ -7873,7 +7873,7 @@
         },
         {
           "type": "vcs",
-          "url": "jsdom/cssstyle"
+          "url": "https://github.com/jsdom/cssstyle"
         }
       ],
       "properties": [
@@ -7902,7 +7902,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/data-urls"
+          "url": "https://github.com/jsdom/data-urls"
         }
       ],
       "properties": [
@@ -8088,7 +8088,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/decompress-response"
+          "url": "https://github.com/sindresorhus/decompress-response"
         }
       ],
       "properties": [
@@ -8278,7 +8278,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "lukeed/dequal"
+          "url": "https://github.com/lukeed/dequal"
         }
       ],
       "properties": [
@@ -8336,7 +8336,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/devlop"
+          "url": "https://github.com/wooorm/devlop"
         }
       ],
       "properties": [
@@ -8803,7 +8803,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "lukeed/escalade"
+          "url": "https://github.com/lukeed/escalade"
         }
       ],
       "properties": [
@@ -9194,7 +9194,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/extend-shallow"
+          "url": "https://github.com/jonschlinkert/extend-shallow"
         }
       ],
       "properties": [
@@ -9871,7 +9871,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "privatenumber/get-tsconfig"
+          "url": "https://github.com/privatenumber/get-tsconfig"
         }
       ],
       "properties": [
@@ -9933,7 +9933,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "git@github.com:isaacs/node-glob"
+          "url": "https://github.com/isaacs/node-glob"
         }
       ],
       "properties": [
@@ -10090,7 +10090,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/gray-matter"
+          "url": "https://github.com/jonschlinkert/gray-matter"
         }
       ],
       "properties": [
@@ -10123,7 +10123,7 @@
         },
         {
           "type": "vcs",
-          "url": "ehmicky/guess-json-indent"
+          "url": "https://github.com/ehmicky/guess-json-indent"
         }
       ],
       "properties": [
@@ -10350,7 +10350,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/hast-util-to-html"
+          "url": "https://github.com/syntax-tree/hast-util-to-html"
         }
       ],
       "properties": [
@@ -10379,7 +10379,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/hast-util-whitespace"
+          "url": "https://github.com/syntax-tree/hast-util-whitespace"
         }
       ],
       "properties": [
@@ -10408,7 +10408,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "unjs/hookable"
+          "url": "https://github.com/unjs/hookable"
         }
       ],
       "properties": [
@@ -10437,7 +10437,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/html-encoding-sniffer"
+          "url": "https://github.com/jsdom/html-encoding-sniffer"
         }
       ],
       "properties": [
@@ -10466,7 +10466,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/html-void-elements"
+          "url": "https://github.com/wooorm/html-void-elements"
         }
       ],
       "properties": [
@@ -10611,7 +10611,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "git@github.com:kaelzhang/node-ignore"
+          "url": "https://github.com/kaelzhang/node-ignore"
         }
       ],
       "properties": [
@@ -10888,7 +10888,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/is-extendable"
+          "url": "https://github.com/jonschlinkert/is-extendable"
         }
       ],
       "properties": [
@@ -11012,7 +11012,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "component/is-module"
+          "url": "https://github.com/component/is-module"
         }
       ],
       "properties": [
@@ -11074,7 +11074,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/is-obj"
+          "url": "https://github.com/sindresorhus/is-obj"
         }
       ],
       "properties": [
@@ -11169,7 +11169,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/is-regexp"
+          "url": "https://github.com/sindresorhus/is-regexp"
         }
       ],
       "properties": [
@@ -11264,7 +11264,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/is-stream"
+          "url": "https://github.com/sindresorhus/is-stream"
         }
       ],
       "properties": [
@@ -11603,7 +11603,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "lydell/js-tokens"
+          "url": "https://github.com/lydell/js-tokens"
         }
       ],
       "properties": [
@@ -11632,7 +11632,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "nodeca/js-yaml"
+          "url": "https://github.com/nodeca/js-yaml"
         }
       ],
       "properties": [
@@ -11727,7 +11727,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "git@github.com:jprichardson/node-jsonfile"
+          "url": "https://github.com/jprichardson/node-jsonfile"
         }
       ],
       "properties": [
@@ -11789,7 +11789,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/kind-of"
+          "url": "https://github.com/jonschlinkert/kind-of"
         }
       ],
       "properties": [
@@ -11818,7 +11818,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "lukeed/kleur"
+          "url": "https://github.com/lukeed/kleur"
         }
       ],
       "properties": [
@@ -11851,7 +11851,7 @@
         },
         {
           "type": "vcs",
-          "url": "known-css/known-css-properties"
+          "url": "https://github.com/known-css/known-css-properties"
         }
       ],
       "properties": [
@@ -11909,7 +11909,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/leven"
+          "url": "https://github.com/sindresorhus/leven"
         }
       ],
       "properties": [
@@ -11971,7 +11971,7 @@
         },
         {
           "type": "vcs",
-          "url": "lodash/lodash"
+          "url": "https://github.com/lodash/lodash"
         }
       ],
       "properties": [
@@ -12004,7 +12004,7 @@
         },
         {
           "type": "vcs",
-          "url": "lodash/lodash"
+          "url": "https://github.com/lodash/lodash"
         }
       ],
       "properties": [
@@ -12037,7 +12037,7 @@
         },
         {
           "type": "vcs",
-          "url": "lodash/lodash"
+          "url": "https://github.com/lodash/lodash"
         }
       ],
       "properties": [
@@ -12128,7 +12128,7 @@
         },
         {
           "type": "vcs",
-          "url": "julmot/mark.js"
+          "url": "https://github.com/julmot/mark.js"
         }
       ],
       "properties": [
@@ -12190,7 +12190,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/mdast-util-to-hast"
+          "url": "https://github.com/syntax-tree/mdast-util-to-hast"
         }
       ],
       "properties": [
@@ -12364,7 +12364,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/mimic-response"
+          "url": "https://github.com/sindresorhus/mimic-response"
         }
       ],
       "properties": [
@@ -12521,7 +12521,7 @@
         },
         {
           "type": "vcs",
-          "url": "developit/mitt"
+          "url": "https://github.com/developit/mitt"
         }
       ],
       "properties": [
@@ -13046,7 +13046,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "unjs/pathe"
+          "url": "https://github.com/unjs/pathe"
         }
       ],
       "properties": [
@@ -13075,7 +13075,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "unjs/perfect-debounce"
+          "url": "https://github.com/unjs/perfect-debounce"
         }
       ],
       "properties": [
@@ -13104,7 +13104,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "alexeyraspopov/picocolors"
+          "url": "https://github.com/alexeyraspopov/picocolors"
         }
       ],
       "properties": [
@@ -13137,7 +13137,7 @@
         },
         {
           "type": "vcs",
-          "url": "micromatch/picomatch"
+          "url": "https://github.com/micromatch/picomatch"
         }
       ],
       "properties": [
@@ -13269,7 +13269,7 @@
         },
         {
           "type": "vcs",
-          "url": "postcss/postcss"
+          "url": "https://github.com/postcss/postcss"
         }
       ],
       "properties": [
@@ -13298,7 +13298,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "postcss/postcss-load-config"
+          "url": "https://github.com/postcss/postcss-load-config"
         }
       ],
       "properties": [
@@ -13327,7 +13327,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "postcss/postcss-safe-parser"
+          "url": "https://github.com/postcss/postcss-safe-parser"
         }
       ],
       "properties": [
@@ -13356,7 +13356,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "postcss/postcss-scss"
+          "url": "https://github.com/postcss/postcss-scss"
         }
       ],
       "properties": [
@@ -13388,7 +13388,7 @@
         },
         {
           "type": "vcs",
-          "url": "postcss/postcss-selector-parser"
+          "url": "https://github.com/postcss/postcss-selector-parser"
         }
       ],
       "properties": [
@@ -13417,7 +13417,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "PostHog/posthog-node"
+          "url": "https://github.com/PostHog/posthog-node"
         }
       ],
       "properties": [
@@ -13450,7 +13450,7 @@
         },
         {
           "type": "vcs",
-          "url": "preactjs/preact"
+          "url": "https://github.com/preactjs/preact"
         }
       ],
       "properties": [
@@ -13512,7 +13512,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/pretty-bytes"
+          "url": "https://github.com/sindresorhus/pretty-bytes"
         }
       ],
       "properties": [
@@ -13541,7 +13541,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/property-information"
+          "url": "https://github.com/wooorm/property-information"
         }
       ],
       "properties": [
@@ -13669,7 +13669,7 @@
         },
         {
           "type": "vcs",
-          "url": "git@github.com:crypto-browserify/randombytes"
+          "url": "https://github.com/crypto-browserify/randombytes"
         }
       ],
       "properties": [
@@ -14131,7 +14131,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "privatenumber/resolve-pkg-maps"
+          "url": "https://github.com/privatenumber/resolve-pkg-maps"
         }
       ],
       "properties": [
@@ -14226,7 +14226,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "rrweb-io/CSSOM"
+          "url": "https://github.com/rrweb-io/CSSOM"
         }
       ],
       "properties": [
@@ -14284,7 +14284,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "lukeed/sade"
+          "url": "https://github.com/lukeed/sade"
         }
       ],
       "properties": [
@@ -14507,7 +14507,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/section-matter"
+          "url": "https://github.com/jonschlinkert/section-matter"
         }
       ],
       "properties": [
@@ -15089,7 +15089,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/space-separated-tokens"
+          "url": "https://github.com/wooorm/space-separated-tokens"
         }
       ],
       "properties": [
@@ -15209,7 +15209,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "unjs/std-env"
+          "url": "https://github.com/unjs/std-env"
         }
       ],
       "properties": [
@@ -15391,7 +15391,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/stringify-entities"
+          "url": "https://github.com/wooorm/stringify-entities"
         }
       ],
       "properties": [
@@ -15420,7 +15420,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "yeoman/stringify-object"
+          "url": "https://github.com/yeoman/stringify-object"
         }
       ],
       "properties": [
@@ -15453,7 +15453,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/strip-bom-string"
+          "url": "https://github.com/jonschlinkert/strip-bom-string"
         }
       ],
       "properties": [
@@ -15486,7 +15486,7 @@
         },
         {
           "type": "vcs",
-          "url": "jonschlinkert/strip-comments"
+          "url": "https://github.com/jonschlinkert/strip-comments"
         }
       ],
       "properties": [
@@ -15515,7 +15515,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/strip-json-comments"
+          "url": "https://github.com/sindresorhus/strip-json-comments"
         }
       ],
       "properties": [
@@ -15704,7 +15704,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/temp-dir"
+          "url": "https://github.com/sindresorhus/temp-dir"
         }
       ],
       "properties": [
@@ -15733,7 +15733,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/tempy"
+          "url": "https://github.com/sindresorhus/tempy"
         }
       ],
       "properties": [
@@ -15794,7 +15794,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "tinylibs/tinybench"
+          "url": "https://github.com/tinylibs/tinybench"
         }
       ],
       "properties": [
@@ -16083,7 +16083,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/trim-lines"
+          "url": "https://github.com/wooorm/trim-lines"
         }
       ],
       "properties": [
@@ -16170,7 +16170,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/type-fest"
+          "url": "https://github.com/sindresorhus/type-fest"
         }
       ],
       "properties": [
@@ -16529,7 +16529,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "sindresorhus/unique-string"
+          "url": "https://github.com/sindresorhus/unique-string"
         }
       ],
       "properties": [
@@ -16558,7 +16558,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/unist-util-is"
+          "url": "https://github.com/syntax-tree/unist-util-is"
         }
       ],
       "properties": [
@@ -16587,7 +16587,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/unist-util-position"
+          "url": "https://github.com/syntax-tree/unist-util-position"
         }
       ],
       "properties": [
@@ -16616,7 +16616,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/unist-util-stringify-position"
+          "url": "https://github.com/syntax-tree/unist-util-stringify-position"
         }
       ],
       "properties": [
@@ -16645,7 +16645,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/unist-util-visit"
+          "url": "https://github.com/syntax-tree/unist-util-visit"
         }
       ],
       "properties": [
@@ -16674,7 +16674,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "syntax-tree/unist-util-visit-parents"
+          "url": "https://github.com/syntax-tree/unist-util-visit-parents"
         }
       ],
       "properties": [
@@ -16769,7 +16769,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "browserslist/update-db"
+          "url": "https://github.com/browserslist/update-db"
         }
       ],
       "properties": [
@@ -16831,7 +16831,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "vfile/vfile"
+          "url": "https://github.com/vfile/vfile"
         }
       ],
       "properties": [
@@ -16860,7 +16860,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "vfile/vfile-message"
+          "url": "https://github.com/vfile/vfile-message"
         }
       ],
       "properties": [
@@ -17017,7 +17017,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/w3c-xmlserializer"
+          "url": "https://github.com/jsdom/w3c-xmlserializer"
         }
       ],
       "properties": [
@@ -17046,7 +17046,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/webidl-conversions"
+          "url": "https://github.com/jsdom/webidl-conversions"
         }
       ],
       "properties": [
@@ -17075,7 +17075,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/whatwg-encoding"
+          "url": "https://github.com/jsdom/whatwg-encoding"
         }
       ],
       "properties": [
@@ -17104,7 +17104,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/whatwg-mimetype"
+          "url": "https://github.com/jsdom/whatwg-mimetype"
         }
       ],
       "properties": [
@@ -17133,7 +17133,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/whatwg-url"
+          "url": "https://github.com/jsdom/whatwg-url"
         }
       ],
       "properties": [
@@ -17884,7 +17884,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "jsdom/xml-name-validator"
+          "url": "https://github.com/jsdom/xml-name-validator"
         }
       ],
       "properties": [
@@ -17975,7 +17975,7 @@
         },
         {
           "type": "vcs",
-          "url": "github:eemeli/yaml"
+          "url": "https://github.com/eemeli/yaml"
         }
       ],
       "properties": [
@@ -18004,7 +18004,7 @@
       "externalReferences": [
         {
           "type": "vcs",
-          "url": "wooorm/zwitch"
+          "url": "https://github.com/wooorm/zwitch"
         }
       ],
       "properties": [

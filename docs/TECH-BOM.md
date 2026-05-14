@@ -8,8 +8,8 @@ Companion to the [image bill of materials](../static/data/image-provenance.json)
 
 | | |
 |---|---|
-| **Project** | `orrery@0.3.0` |
-| **Generated** | 2026-05-13 |
+| **Project** | `orrery@0.6.0` |
+| **Generated** | 2026-05-14 |
 | **Total packages** | 568 (3 runtime · 565 development) |
 | **Top-level runtime deps** | 2 |
 | **Top-level dev deps** | 30 |
@@ -61,9 +61,9 @@ _Build-time tools — not shipped to browsers._
 | [`ajv-formats`](https://github.com/ajv-validator/ajv-formats#readme) | 3.0.1 | `MIT` | Format validation for Ajv v7+ |
 | [`canvas`](https://github.com/Automattic/node-canvas) | 3.2.3 | `MIT` | Canvas graphics API backed by Cairo |
 | [`eslint`](https://eslint.org) | 9.17.0 | `MIT` | An AST-based pattern checker for JavaScript. |
-| [`eslint-config-prettier`](prettier/eslint-config-prettier) | 9.1.0 | `MIT` | Turns off all rules that are unnecessary or might conflict with Prettier. |
+| [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) | 9.1.0 | `MIT` | Turns off all rules that are unnecessary or might conflict with Prettier. |
 | [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte) | 2.46.1 | `MIT` | ESLint plugin for Svelte using AST |
-| [`globals`](sindresorhus/globals) | 15.14.0 | `MIT` | Global identifiers from different JavaScript environments |
+| [`globals`](https://github.com/sindresorhus/globals) | 15.14.0 | `MIT` | Global identifiers from different JavaScript environments |
 | [`jsdom`](https://github.com/jsdom/jsdom) | 26.0.0 | `MIT` | A JavaScript implementation of many web standards |
 | [`prettier`](https://prettier.io) | 3.4.2 | `MIT` | Prettier is an opinionated code formatter |
 | [`prettier-plugin-svelte`](https://github.com/sveltejs/prettier-plugin-svelte#readme) | 3.5.1 | `MIT` | Svelte plugin for prettier |
@@ -256,7 +256,7 @@ _Build-time tools — not shipped to browsers._
 | [`acorn-jsx`](https://github.com/acornjs/acorn-jsx) | 5.3.2 | `MIT` | development |
 | [`agent-base`](https://github.com/TooTallNate/proxy-agents) | 7.1.4 | `MIT` | development |
 | [`algoliasearch`](https://github.com/algolia/algoliasearch-client-javascript/tree/main/packages/algoliasearch#readme) | 5.51.0 | `MIT` | development |
-| [`argparse`](nodeca/argparse) | 2.0.1 | `Python-2.0` | development |
+| [`argparse`](https://github.com/nodeca/argparse) | 2.0.1 | `Python-2.0` | development |
 | [`array-buffer-byte-length`](https://github.com/inspect-js/array-buffer-byte-length#readme) | 1.0.2 | `MIT` | development |
 | [`arraybuffer.prototype.slice`](https://github.com/es-shims/ArrayBuffer.prototype.slice#readme) | 1.0.4 | `MIT` | development |
 | [`async`](https://caolan.github.io/async/) | 3.2.6 | `MIT` | development |
@@ -273,44 +273,44 @@ _Build-time tools — not shipped to browsers._
 | [`birpc`](https://github.com/antfu-collective/birpc#readme) | 2.9.0 | `MIT` | development |
 | [`bl`](https://github.com/rvagg/bl) | 4.1.0 | `MIT` | development |
 | [`brace-expansion`](https://github.com/juliangruber/brace-expansion) | 1.1.14 | `MIT` | development |
-| [`browserslist`](browserslist/browserslist) | 4.28.2 | `MIT` | development |
+| [`browserslist`](https://github.com/browserslist/browserslist) | 4.28.2 | `MIT` | development |
 | [`buffer`](https://github.com/feross/buffer) | 5.7.1 | `MIT` | development |
-| [`cac`](egoist/cac) | 6.7.14 | `MIT` | development |
+| [`cac`](https://github.com/egoist/cac) | 6.7.14 | `MIT` | development |
 | [`call-bind`](https://github.com/ljharb/call-bind#readme) | 1.0.9 | `MIT` | development |
 | [`call-bind-apply-helpers`](https://github.com/ljharb/call-bind-apply-helpers#readme) | 1.0.2 | `MIT` | development |
 | [`call-bound`](https://github.com/ljharb/call-bound#readme) | 1.0.4 | `MIT` | development |
-| [`caniuse-lite`](browserslist/caniuse-lite) | 1.0.30001791 | `CC-BY-4.0` | development |
-| [`ccount`](wooorm/ccount) | 2.0.1 | `MIT` | development |
+| [`caniuse-lite`](https://github.com/browserslist/caniuse-lite) | 1.0.30001791 | `CC-BY-4.0` | development |
+| [`ccount`](https://github.com/wooorm/ccount) | 2.0.1 | `MIT` | development |
 | [`chai`](http://chaijs.com) | 5.3.3 | `MIT` | development |
-| [`character-entities-html4`](wooorm/character-entities-html4) | 2.1.0 | `MIT` | development |
-| [`character-entities-legacy`](wooorm/character-entities-legacy) | 3.0.0 | `MIT` | development |
+| [`character-entities-html4`](https://github.com/wooorm/character-entities-html4) | 2.1.0 | `MIT` | development |
+| [`character-entities-legacy`](https://github.com/wooorm/character-entities-legacy) | 3.0.0 | `MIT` | development |
 | [`chokidar`](https://github.com/paulmillr/chokidar) | 4.0.3 | `MIT` | development |
 | [`chownr`](https://github.com/isaacs/chownr) | 1.1.4 | `ISC` | development |
-| [`comma-separated-tokens`](wooorm/comma-separated-tokens) | 2.0.3 | `MIT` | development |
+| [`comma-separated-tokens`](https://github.com/wooorm/comma-separated-tokens) | 2.0.3 | `MIT` | development |
 | [`common-tags`](https://github.com/zspecza/common-tags) | 1.8.2 | `MIT` | development |
-| [`consola`](unjs/consola) | 3.2.3 | `MIT` | development |
+| [`consola`](https://github.com/unjs/consola) | 3.2.3 | `MIT` | development |
 | [`convert-source-map`](https://github.com/thlorenz/convert-source-map) | 2.0.0 | `MIT` | development |
 | [`copy-anything`](https://github.com/mesqueeb/copy-anything#readme) | 4.0.5 | `MIT` | development |
 | [`core-js-compat`](https://core-js.io) | 3.49.0 | `MIT` | development |
 | [`cross-spawn`](https://github.com/moxystudio/node-cross-spawn) | 7.0.6 | `MIT` | development |
-| [`crypto-random-string`](sindresorhus/crypto-random-string) | 2.0.0 | `MIT` | development |
+| [`crypto-random-string`](https://github.com/sindresorhus/crypto-random-string) | 2.0.0 | `MIT` | development |
 | [`cssesc`](https://mths.be/cssesc) | 3.0.0 | `MIT` | development |
 | [`cssstyle`](https://github.com/jsdom/cssstyle) | 4.6.0 | `MIT` | development |
-| [`data-urls`](jsdom/data-urls) | 5.0.0 | `MIT` | development |
+| [`data-urls`](https://github.com/jsdom/data-urls) | 5.0.0 | `MIT` | development |
 | [`data-view-buffer`](https://github.com/inspect-js/data-view-buffer#readme) | 1.0.2 | `MIT` | development |
 | [`data-view-byte-length`](https://github.com/inspect-js/data-view-byte-length#readme) | 1.0.2 | `MIT` | development |
 | [`data-view-byte-offset`](https://github.com/inspect-js/data-view-byte-offset#readme) | 1.0.1 | `MIT` | development |
 | [`debug`](https://github.com/debug-js/debug) | 4.4.3 | `MIT` | development |
 | [`decimal.js`](https://github.com/MikeMcl/decimal.js) | 10.6.0 | `MIT` | development |
-| [`decompress-response`](sindresorhus/decompress-response) | 6.0.0 | `MIT` | development |
+| [`decompress-response`](https://github.com/sindresorhus/decompress-response) | 6.0.0 | `MIT` | development |
 | [`dedent`](https://github.com/dmnd/dedent) | 1.5.1 | `MIT` | development |
 | [`deep-extend`](https://github.com/unclechu/node-deep-extend) | 0.6.0 | `MIT` | development |
 | [`deepmerge`](https://github.com/TehShrike/deepmerge) | 4.3.1 | `MIT` | development |
 | [`define-data-property`](https://github.com/ljharb/define-data-property#readme) | 1.1.4 | `MIT` | development |
 | [`define-properties`](https://github.com/ljharb/define-properties) | 1.2.1 | `MIT` | development |
-| [`dequal`](lukeed/dequal) | 2.0.3 | `MIT` | development |
+| [`dequal`](https://github.com/lukeed/dequal) | 2.0.3 | `MIT` | development |
 | [`detect-libc`](https://github.com/lovell/detect-libc) | 2.1.2 | `Apache-2.0` | development |
-| [`devlop`](wooorm/devlop) | 1.1.0 | `MIT` | development |
+| [`devlop`](https://github.com/wooorm/devlop) | 1.1.0 | `MIT` | development |
 | [`dunder-proto`](https://github.com/es-shims/dunder-proto#readme) | 1.0.1 | `MIT` | development |
 | [`ejs`](https://github.com/mde/ejs) | 3.1.10 | `Apache-2.0` | development |
 | [`electron-to-chromium`](https://github.com/Kilian/electron-to-chromium) | 1.5.349 | `ISC` | development |
@@ -325,7 +325,7 @@ _Build-time tools — not shipped to browsers._
 | [`es-set-tostringtag`](https://github.com/es-shims/es-set-tostringtag#readme) | 2.1.0 | `MIT` | development |
 | [`es-to-primitive`](https://github.com/ljharb/es-to-primitive) | 1.3.0 | `MIT` | development |
 | [`esbuild`](https://github.com/evanw/esbuild) | 0.21.5 | `MIT` | development |
-| [`escalade`](lukeed/escalade) | 3.2.0 | `MIT` | development |
+| [`escalade`](https://github.com/lukeed/escalade) | 3.2.0 | `MIT` | development |
 | [`eslint-compat-utils`](https://github.com/ota-meshi/eslint-compat-utils#readme) | 0.5.1 | `MIT` | development |
 | [`eslint-scope`](https://github.com/eslint/js/blob/main/packages/eslint-scope/README.md) | 8.4.0 | `BSD-2-Clause` | development |
 | [`eslint-visitor-keys`](https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md) | 4.2.1 | `Apache-2.0` | development |
@@ -358,9 +358,9 @@ _Build-time tools — not shipped to browsers._
 | [`get-own-enumerable-property-symbols`](https://github.com/mightyiam/get-own-enumerable-property-symbols#readme) | 3.0.2 | `ISC` | development |
 | [`get-proto`](https://github.com/ljharb/get-proto#readme) | 1.0.1 | `MIT` | development |
 | [`get-symbol-description`](https://github.com/inspect-js/get-symbol-description#readme) | 1.1.0 | `MIT` | development |
-| [`get-tsconfig`](privatenumber/get-tsconfig) | 4.14.0 | `MIT` | development |
+| [`get-tsconfig`](https://github.com/privatenumber/get-tsconfig) | 4.14.0 | `MIT` | development |
 | [`github-from-package`](https://github.com/substack/github-from-package) | 0.0.0 | `MIT` | development |
-| [`glob`](git@github.com:isaacs/node-glob) | 11.1.0 | `BlueOak-1.0.0` | development |
+| [`glob`](https://github.com/isaacs/node-glob) | 11.1.0 | `BlueOak-1.0.0` | development |
 | [`globalthis`](https://github.com/ljharb/System.global) | 1.0.4 | `MIT` | development |
 | [`gopd`](https://github.com/ljharb/gopd#readme) | 1.2.0 | `MIT` | development |
 | [`graceful-fs`](https://github.com/isaacs/node-graceful-fs) | 4.2.11 | `ISC` | development |
@@ -373,16 +373,16 @@ _Build-time tools — not shipped to browsers._
 | [`has-symbols`](https://github.com/ljharb/has-symbols#readme) | 1.1.0 | `MIT` | development |
 | [`has-tostringtag`](https://github.com/inspect-js/has-tostringtag#readme) | 1.0.2 | `MIT` | development |
 | [`hasown`](https://github.com/inspect-js/hasOwn#readme) | 2.0.3 | `MIT` | development |
-| [`hast-util-to-html`](syntax-tree/hast-util-to-html) | 9.0.5 | `MIT` | development |
-| [`hast-util-whitespace`](syntax-tree/hast-util-whitespace) | 3.0.0 | `MIT` | development |
-| [`hookable`](unjs/hookable) | 5.5.3 | `MIT` | development |
-| [`html-encoding-sniffer`](jsdom/html-encoding-sniffer) | 4.0.0 | `MIT` | development |
-| [`html-void-elements`](wooorm/html-void-elements) | 3.0.0 | `MIT` | development |
+| [`hast-util-to-html`](https://github.com/syntax-tree/hast-util-to-html) | 9.0.5 | `MIT` | development |
+| [`hast-util-whitespace`](https://github.com/syntax-tree/hast-util-whitespace) | 3.0.0 | `MIT` | development |
+| [`hookable`](https://github.com/unjs/hookable) | 5.5.3 | `MIT` | development |
+| [`html-encoding-sniffer`](https://github.com/jsdom/html-encoding-sniffer) | 4.0.0 | `MIT` | development |
+| [`html-void-elements`](https://github.com/wooorm/html-void-elements) | 3.0.0 | `MIT` | development |
 | [`http-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | 7.0.2 | `MIT` | development |
 | [`https-proxy-agent`](https://github.com/TooTallNate/proxy-agents) | 7.0.6 | `MIT` | development |
 | [`idb`](https://github.com/jakearchibald/idb) | 7.1.1 | `ISC` | development |
 | [`ieee754`](https://github.com/feross/ieee754) | 1.2.1 | `BSD-3-Clause` | development |
-| [`ignore`](git@github.com:kaelzhang/node-ignore) | 5.3.2 | `MIT` | development |
+| [`ignore`](https://github.com/kaelzhang/node-ignore) | 5.3.2 | `MIT` | development |
 | [`inherits`](https://github.com/isaacs/inherits) | 2.0.4 | `ISC` | development |
 | [`ini`](https://github.com/isaacs/ini) | 1.3.8 | `ISC` | development |
 | [`internal-slot`](https://github.com/ljharb/internal-slot#readme) | 1.1.0 | `MIT` | development |
@@ -395,15 +395,15 @@ _Build-time tools — not shipped to browsers._
 | [`is-finalizationregistry`](https://github.com/inspect-js/is-finalizationregistry#readme) | 1.1.1 | `MIT` | development |
 | [`is-generator-function`](https://github.com/inspect-js/is-generator-function) | 1.1.2 | `MIT` | development |
 | [`is-map`](https://github.com/inspect-js/is-map#readme) | 2.0.3 | `MIT` | development |
-| [`is-module`](component/is-module) | 1.0.0 | `MIT` | development |
+| [`is-module`](https://github.com/component/is-module) | 1.0.0 | `MIT` | development |
 | [`is-negative-zero`](https://github.com/inspect-js/is-negative-zero) | 2.0.3 | `MIT` | development |
-| [`is-obj`](sindresorhus/is-obj) | 1.0.1 | `MIT` | development |
+| [`is-obj`](https://github.com/sindresorhus/is-obj) | 1.0.1 | `MIT` | development |
 | [`is-potential-custom-element-name`](https://github.com/mathiasbynens/is-potential-custom-element-name) | 1.0.1 | `MIT` | development |
 | [`is-regex`](https://github.com/inspect-js/is-regex) | 1.2.1 | `MIT` | development |
-| [`is-regexp`](sindresorhus/is-regexp) | 1.0.0 | `MIT` | development |
+| [`is-regexp`](https://github.com/sindresorhus/is-regexp) | 1.0.0 | `MIT` | development |
 | [`is-set`](https://github.com/inspect-js/is-set#readme) | 2.0.3 | `MIT` | development |
 | [`is-shared-array-buffer`](https://github.com/inspect-js/is-shared-array-buffer#readme) | 1.0.4 | `MIT` | development |
-| [`is-stream`](sindresorhus/is-stream) | 2.0.1 | `MIT` | development |
+| [`is-stream`](https://github.com/sindresorhus/is-stream) | 2.0.1 | `MIT` | development |
 | [`is-string`](https://github.com/inspect-js/is-string) | 1.1.1 | `MIT` | development |
 | [`is-symbol`](https://github.com/inspect-js/is-symbol) | 1.1.1 | `MIT` | development |
 | [`is-typed-array`](https://github.com/inspect-js/is-typed-array) | 1.1.15 | `MIT` | development |
@@ -414,17 +414,17 @@ _Build-time tools — not shipped to browsers._
 | [`isarray`](https://github.com/juliangruber/isarray) | 2.0.5 | `MIT` | development |
 | [`jackspeak`](https://github.com/isaacs/jackspeak) | 4.2.3 | `BlueOak-1.0.0` | development |
 | [`jake`](https://github.com/jakejs/jake) | 10.9.4 | `Apache-2.0` | development |
-| [`js-tokens`](lydell/js-tokens) | 4.0.0 | `MIT` | development |
-| [`js-yaml`](nodeca/js-yaml) | 4.1.1 | `MIT` | development |
+| [`js-tokens`](https://github.com/lydell/js-tokens) | 4.0.0 | `MIT` | development |
+| [`js-yaml`](https://github.com/nodeca/js-yaml) | 4.1.1 | `MIT` | development |
 | [`jsesc`](https://mths.be/jsesc) | 3.1.0 | `MIT` | development |
 | [`json5`](http://json5.org/) | 2.2.3 | `MIT` | development |
-| [`jsonfile`](git@github.com:jprichardson/node-jsonfile) | 6.2.1 | `MIT` | development |
+| [`jsonfile`](https://github.com/jprichardson/node-jsonfile) | 6.2.1 | `MIT` | development |
 | [`jsonpointer`](https://github.com/janl/node-jsonpointer) | 5.0.1 | `MIT` | development |
 | [`kind-of`](https://github.com/jonschlinkert/kind-of) | 6.0.3 | `MIT` | development |
-| [`kleur`](lukeed/kleur) | 4.1.5 | `MIT` | development |
+| [`kleur`](https://github.com/lukeed/kleur) | 4.1.5 | `MIT` | development |
 | [`known-css-properties`](https://github.com/known-css/known-css-properties#readme) | 0.35.0 | `MIT` | development |
 | [`kolorist`](https://github.com/marvinhagemeister/kolorist) | 1.8.0 | `MIT` | development |
-| [`leven`](sindresorhus/leven) | 3.1.0 | `MIT` | development |
+| [`leven`](https://github.com/sindresorhus/leven) | 3.1.0 | `MIT` | development |
 | [`lilconfig`](https://github.com/antonk52/lilconfig) | 2.1.0 | `MIT` | development |
 | [`lodash`](https://lodash.com/) | 4.18.1 | `MIT` | development |
 | [`lodash.debounce`](https://lodash.com/) | 4.0.8 | `MIT` | development |
@@ -433,13 +433,13 @@ _Build-time tools — not shipped to browsers._
 | [`magic-string`](https://github.com/Rich-Harris/magic-string) | 0.30.21 | `MIT` | development |
 | [`mark.js`](https://markjs.io/) | 8.11.1 | `MIT` | development |
 | [`math-intrinsics`](https://github.com/es-shims/math-intrinsics#readme) | 1.1.0 | `MIT` | development |
-| [`mdast-util-to-hast`](syntax-tree/mdast-util-to-hast) | 13.2.1 | `MIT` | development |
+| [`mdast-util-to-hast`](https://github.com/syntax-tree/mdast-util-to-hast) | 13.2.1 | `MIT` | development |
 | [`micromark-util-character`](https://github.com/micromark/micromark/tree/main/packages/micromark-util-character) | 2.1.1 | `MIT` | development |
 | [`micromark-util-encode`](https://github.com/micromark/micromark/tree/main/packages/micromark-util-encode) | 2.0.1 | `MIT` | development |
 | [`micromark-util-sanitize-uri`](https://github.com/micromark/micromark/tree/main/packages/micromark-util-sanitize-uri) | 2.0.1 | `MIT` | development |
 | [`micromark-util-symbol`](https://github.com/micromark/micromark/tree/main/packages/micromark-util-symbol) | 2.0.1 | `MIT` | development |
 | [`micromark-util-types`](https://github.com/micromark/micromark/tree/main/packages/micromark-util-types) | 2.0.2 | `MIT` | development |
-| [`mimic-response`](sindresorhus/mimic-response) | 3.1.0 | `MIT` | development |
+| [`mimic-response`](https://github.com/sindresorhus/mimic-response) | 3.1.0 | `MIT` | development |
 | [`minimatch`](https://github.com/isaacs/minimatch) | 3.1.5 | `ISC` | development |
 | [`minimist`](https://github.com/minimistjs/minimist) | 1.2.8 | `MIT` | development |
 | [`minipass`](https://github.com/isaacs/minipass) | 7.1.3 | `BlueOak-1.0.0` | development |
@@ -461,23 +461,23 @@ _Build-time tools — not shipped to browsers._
 | [`package-json-from-dist`](https://github.com/isaacs/package-json-from-dist) | 1.0.1 | `BlueOak-1.0.0` | development |
 | [`parse5`](https://parse5.js.org) | 7.3.0 | `MIT` | development |
 | [`path-scurry`](https://github.com/isaacs/path-scurry) | 2.0.2 | `BlueOak-1.0.0` | development |
-| [`pathe`](unjs/pathe) | 1.1.2 | `MIT` | development |
-| [`perfect-debounce`](unjs/perfect-debounce) | 1.0.0 | `MIT` | development |
-| [`picocolors`](alexeyraspopov/picocolors) | 1.1.1 | `ISC` | development |
+| [`pathe`](https://github.com/unjs/pathe) | 1.1.2 | `MIT` | development |
+| [`perfect-debounce`](https://github.com/unjs/perfect-debounce) | 1.0.0 | `MIT` | development |
+| [`picocolors`](https://github.com/alexeyraspopov/picocolors) | 1.1.1 | `ISC` | development |
 | [`picomatch`](https://github.com/micromatch/picomatch) | 4.0.4 | `MIT` | development |
 | [`playwright`](https://playwright.dev) | 1.59.1 | `Apache-2.0` | development |
 | [`playwright-core`](https://playwright.dev) | 1.59.1 | `Apache-2.0` | development |
 | [`possible-typed-array-names`](https://github.com/ljharb/possible-typed-array-names#readme) | 1.1.0 | `MIT` | development |
 | [`postcss`](https://postcss.org/) | 8.5.12 | `MIT` | development |
-| [`postcss-load-config`](postcss/postcss-load-config) | 3.1.4 | `MIT` | development |
-| [`postcss-safe-parser`](postcss/postcss-safe-parser) | 6.0.0 | `MIT` | development |
-| [`postcss-scss`](postcss/postcss-scss) | 4.0.9 | `MIT` | development |
+| [`postcss-load-config`](https://github.com/postcss/postcss-load-config) | 3.1.4 | `MIT` | development |
+| [`postcss-safe-parser`](https://github.com/postcss/postcss-safe-parser) | 6.0.0 | `MIT` | development |
+| [`postcss-scss`](https://github.com/postcss/postcss-scss) | 4.0.9 | `MIT` | development |
 | [`postcss-selector-parser`](https://github.com/postcss/postcss-selector-parser) | 6.1.2 | `MIT` | development |
-| [`posthog-node`](PostHog/posthog-node) | 3.1.3 | `MIT` | development |
+| [`posthog-node`](https://github.com/PostHog/posthog-node) | 3.1.3 | `MIT` | development |
 | [`preact`](https://preactjs.com) | 10.29.1 | `MIT` | development |
 | [`prebuild-install`](https://github.com/prebuild/prebuild-install) | 7.1.3 | `MIT` | development |
-| [`pretty-bytes`](sindresorhus/pretty-bytes) | 6.1.1 | `MIT` | development |
-| [`property-information`](wooorm/property-information) | 7.1.0 | `MIT` | development |
+| [`pretty-bytes`](https://github.com/sindresorhus/pretty-bytes) | 6.1.1 | `MIT` | development |
+| [`property-information`](https://github.com/wooorm/property-information) | 7.1.0 | `MIT` | development |
 | [`proxy-from-env`](https://github.com/Rob--W/proxy-from-env#readme) | 2.1.0 | `MIT` | development |
 | [`pump`](https://github.com/mafintosh/pump) | 3.0.4 | `MIT` | development |
 | [`punycode`](https://mths.be/punycode) | 2.3.1 | `MIT` | development |
@@ -496,12 +496,12 @@ _Build-time tools — not shipped to browsers._
 | [`regjsgen`](https://github.com/bnjmnt4n/regjsgen) | 0.8.0 | `MIT` | development |
 | [`regjsparser`](https://github.com/jviereck/regjsparser) | 0.13.1 | `BSD-2-Clause` | development |
 | [`resolve`](ssh://github.com/browserify/resolve) | 1.22.12 | `MIT` | development |
-| [`resolve-pkg-maps`](privatenumber/resolve-pkg-maps) | 1.0.0 | `MIT` | development |
+| [`resolve-pkg-maps`](https://github.com/privatenumber/resolve-pkg-maps) | 1.0.0 | `MIT` | development |
 | [`rfdc`](https://github.com/davidmarkclements/rfdc#readme) | 1.4.1 | `MIT` | development |
 | [`rollup`](https://rollupjs.org/) | 4.60.2 | `MIT` | development |
-| [`rrweb-cssom`](rrweb-io/CSSOM) | 0.8.0 | `MIT` | development |
+| [`rrweb-cssom`](https://github.com/rrweb-io/CSSOM) | 0.8.0 | `MIT` | development |
 | [`rusha`](https://github.com/srijs/rusha) | 0.8.14 | `MIT` | development |
-| [`sade`](lukeed/sade) | 1.8.1 | `MIT` | development |
+| [`sade`](https://github.com/lukeed/sade) | 1.8.1 | `MIT` | development |
 | [`safe-array-concat`](https://github.com/ljharb/safe-array-concat#readme) | 1.1.4 | `MIT` | development |
 | [`safe-buffer`](https://github.com/feross/safe-buffer) | 5.2.1 | `MIT` | development |
 | [`safe-push-apply`](https://github.com/ljharb/safe-push-apply#readme) | 1.0.0 | `MIT` | development |
@@ -526,30 +526,30 @@ _Build-time tools — not shipped to browsers._
 | [`smob`](https://github.com/Tada5hi/smob#readme) | 1.6.1 | `MIT` | development |
 | [`source-map`](https://github.com/mozilla/source-map) | 0.8.0-beta.0 | `BSD-3-Clause` | development |
 | [`sourcemap-codec`](https://github.com/Rich-Harris/sourcemap-codec) | 1.4.8 | `MIT` | development |
-| [`space-separated-tokens`](wooorm/space-separated-tokens) | 2.0.2 | `MIT` | development |
+| [`space-separated-tokens`](https://github.com/wooorm/space-separated-tokens) | 2.0.2 | `MIT` | development |
 | [`speakingurl`](http://pid.github.io/speakingurl/) | 14.0.1 | `BSD-3-Clause` | development |
 | [`sprintf-js`](https://github.com/alexei/sprintf.js) | 1.0.3 | `BSD-3-Clause` | development |
 | [`stackback`](https://github.com/shtylman/node-stackback) | 0.0.2 | `MIT` | development |
-| [`std-env`](unjs/std-env) | 3.10.0 | `MIT` | development |
+| [`std-env`](https://github.com/unjs/std-env) | 3.10.0 | `MIT` | development |
 | [`stop-iteration-iterator`](https://github.com/ljharb/stop-iteration-iterator#readme) | 1.1.0 | `MIT` | development |
 | [`string.prototype.matchall`](https://github.com/es-shims/String.prototype.matchAll#readme) | 4.0.12 | `MIT` | development |
 | [`string.prototype.trim`](https://github.com/es-shims/String.prototype.trim) | 1.2.10 | `MIT` | development |
 | [`string.prototype.trimend`](https://github.com/es-shims/String.prototype.trimEnd) | 1.0.9 | `MIT` | development |
 | [`string.prototype.trimstart`](https://github.com/es-shims/String.prototype.trimStart) | 1.0.8 | `MIT` | development |
-| [`stringify-entities`](wooorm/stringify-entities) | 4.0.4 | `MIT` | development |
-| [`stringify-object`](yeoman/stringify-object) | 3.3.0 | `BSD-2-Clause` | development |
+| [`stringify-entities`](https://github.com/wooorm/stringify-entities) | 4.0.4 | `MIT` | development |
+| [`stringify-object`](https://github.com/yeoman/stringify-object) | 3.3.0 | `BSD-2-Clause` | development |
 | [`strip-bom-string`](https://github.com/jonschlinkert/strip-bom-string) | 1.0.0 | `MIT` | development |
 | [`strip-comments`](https://github.com/jonschlinkert/strip-comments) | 2.0.1 | `MIT` | development |
-| [`strip-json-comments`](sindresorhus/strip-json-comments) | 3.1.1 | `MIT` | development |
+| [`strip-json-comments`](https://github.com/sindresorhus/strip-json-comments) | 3.1.1 | `MIT` | development |
 | [`superjson`](https://github.com/blitz-js/superjson) | 2.2.6 | `MIT` | development |
 | [`svelte-eslint-parser`](https://github.com/sveltejs/svelte-eslint-parser#readme) | 0.43.0 | `MIT` | development |
 | [`symbol-tree`](https://github.com/jsdom/js-symbol-tree#symbol-tree) | 3.2.4 | `MIT` | development |
 | [`tar-fs`](https://github.com/mafintosh/tar-fs) | 2.1.4 | `MIT` | development |
 | [`tar-stream`](https://github.com/mafintosh/tar-stream) | 2.2.0 | `MIT` | development |
-| [`temp-dir`](sindresorhus/temp-dir) | 2.0.0 | `MIT` | development |
-| [`tempy`](sindresorhus/tempy) | 0.6.0 | `MIT` | development |
+| [`temp-dir`](https://github.com/sindresorhus/temp-dir) | 2.0.0 | `MIT` | development |
+| [`tempy`](https://github.com/sindresorhus/tempy) | 0.6.0 | `MIT` | development |
 | [`terser`](https://terser.org) | 5.46.2 | `BSD-2-Clause` | development |
-| [`tinybench`](tinylibs/tinybench) | 2.9.0 | `MIT` | development |
+| [`tinybench`](https://github.com/tinylibs/tinybench) | 2.9.0 | `MIT` | development |
 | [`tinyexec`](https://github.com/tinylibs/tinyexec#readme) | 0.3.2 | `MIT` | development |
 | [`tinyglobby`](https://superchupu.dev/tinyglobby) | 0.2.16 | `MIT` | development |
 | [`tinypool`](https://github.com/tinylibs/tinypool#readme) | 1.1.1 | `MIT` | development |
@@ -558,10 +558,10 @@ _Build-time tools — not shipped to browsers._
 | [`tldts-core`](https://github.com/remusao/tldts#readme) | 6.1.86 | `MIT` | development |
 | [`tough-cookie`](https://github.com/salesforce/tough-cookie) | 5.1.2 | `BSD-3-Clause` | development |
 | [`tr46`](https://github.com/jsdom/tr46) | 5.1.1 | `MIT` | development |
-| [`trim-lines`](wooorm/trim-lines) | 3.0.1 | `MIT` | development |
+| [`trim-lines`](https://github.com/wooorm/trim-lines) | 3.0.1 | `MIT` | development |
 | [`ts-api-utils`](https://github.com/JoshuaKGoldberg/ts-api-utils) | 1.4.3 | `MIT` | development |
 | [`tunnel-agent`](https://github.com/mikeal/tunnel-agent) | 0.6.0 | `Apache-2.0` | development |
-| [`type-fest`](sindresorhus/type-fest) | 0.16.0 | `MIT` | development |
+| [`type-fest`](https://github.com/sindresorhus/type-fest) | 0.16.0 | `MIT` | development |
 | [`typed-array-buffer`](https://github.com/inspect-js/typed-array-buffer#readme) | 1.0.3 | `MIT` | development |
 | [`typed-array-byte-length`](https://github.com/inspect-js/typed-array-byte-length#readme) | 1.0.3 | `MIT` | development |
 | [`typed-array-byte-offset`](https://github.com/inspect-js/typed-array-byte-offset#readme) | 1.0.4 | `MIT` | development |
@@ -572,27 +572,27 @@ _Build-time tools — not shipped to browsers._
 | [`unicode-match-property-ecmascript`](https://github.com/mathiasbynens/unicode-match-property-ecmascript) | 2.0.0 | `MIT` | development |
 | [`unicode-match-property-value-ecmascript`](https://github.com/mathiasbynens/unicode-match-property-value-ecmascript) | 2.2.1 | `MIT` | development |
 | [`unicode-property-aliases-ecmascript`](https://github.com/mathiasbynens/unicode-property-aliases-ecmascript) | 2.2.0 | `MIT` | development |
-| [`unique-string`](sindresorhus/unique-string) | 2.0.0 | `MIT` | development |
-| [`unist-util-is`](syntax-tree/unist-util-is) | 6.0.1 | `MIT` | development |
-| [`unist-util-position`](syntax-tree/unist-util-position) | 5.0.0 | `MIT` | development |
-| [`unist-util-stringify-position`](syntax-tree/unist-util-stringify-position) | 4.0.0 | `MIT` | development |
-| [`unist-util-visit`](syntax-tree/unist-util-visit) | 5.1.0 | `MIT` | development |
-| [`unist-util-visit-parents`](syntax-tree/unist-util-visit-parents) | 6.0.2 | `MIT` | development |
+| [`unique-string`](https://github.com/sindresorhus/unique-string) | 2.0.0 | `MIT` | development |
+| [`unist-util-is`](https://github.com/syntax-tree/unist-util-is) | 6.0.1 | `MIT` | development |
+| [`unist-util-position`](https://github.com/syntax-tree/unist-util-position) | 5.0.0 | `MIT` | development |
+| [`unist-util-stringify-position`](https://github.com/syntax-tree/unist-util-stringify-position) | 4.0.0 | `MIT` | development |
+| [`unist-util-visit`](https://github.com/syntax-tree/unist-util-visit) | 5.1.0 | `MIT` | development |
+| [`unist-util-visit-parents`](https://github.com/syntax-tree/unist-util-visit-parents) | 6.0.2 | `MIT` | development |
 | [`universalify`](https://github.com/RyanZim/universalify#readme) | 2.0.1 | `MIT` | development |
 | [`upath`](http://github.com/anodynos/upath/) | 1.2.0 | `MIT` | development |
-| [`update-browserslist-db`](browserslist/update-db) | 1.2.3 | `MIT` | development |
+| [`update-browserslist-db`](https://github.com/browserslist/update-db) | 1.2.3 | `MIT` | development |
 | [`util-deprecate`](https://github.com/TooTallNate/util-deprecate) | 1.0.2 | `MIT` | development |
-| [`vfile`](vfile/vfile) | 6.0.3 | `MIT` | development |
-| [`vfile-message`](vfile/vfile-message) | 4.0.3 | `MIT` | development |
+| [`vfile`](https://github.com/vfile/vfile) | 6.0.3 | `MIT` | development |
+| [`vfile-message`](https://github.com/vfile/vfile-message) | 4.0.3 | `MIT` | development |
 | [`vite-node`](https://github.com/vitest-dev/vitest/blob/main/packages/vite-node#readme) | 2.1.8 | `MIT` | development |
 | [`vite-plugin-pwa`](https://github.com/vite-pwa/vite-plugin-pwa#readme) | 1.2.0 | `MIT` | development |
 | [`vitefu`](https://github.com/svitejs/vitefu) | 1.1.3 | `MIT` | development |
 | [`vue`](https://vuejs.org/) | 3.5.33 | `MIT` | development |
-| [`w3c-xmlserializer`](jsdom/w3c-xmlserializer) | 5.0.0 | `MIT` | development |
-| [`webidl-conversions`](jsdom/webidl-conversions) | 7.0.0 | `BSD-2-Clause` | development |
-| [`whatwg-encoding`](jsdom/whatwg-encoding) | 3.1.1 | `MIT` | development |
-| [`whatwg-mimetype`](jsdom/whatwg-mimetype) | 4.0.0 | `MIT` | development |
-| [`whatwg-url`](jsdom/whatwg-url) | 14.2.0 | `MIT` | development |
+| [`w3c-xmlserializer`](https://github.com/jsdom/w3c-xmlserializer) | 5.0.0 | `MIT` | development |
+| [`webidl-conversions`](https://github.com/jsdom/webidl-conversions) | 7.0.0 | `BSD-2-Clause` | development |
+| [`whatwg-encoding`](https://github.com/jsdom/whatwg-encoding) | 3.1.1 | `MIT` | development |
+| [`whatwg-mimetype`](https://github.com/jsdom/whatwg-mimetype) | 4.0.0 | `MIT` | development |
+| [`whatwg-url`](https://github.com/jsdom/whatwg-url) | 14.2.0 | `MIT` | development |
 | [`which-boxed-primitive`](https://github.com/inspect-js/which-boxed-primitive#readme) | 1.1.1 | `MIT` | development |
 | [`which-builtin-type`](https://github.com/inspect-js/which-builtin-type#readme) | 1.2.1 | `MIT` | development |
 | [`which-collection`](https://github.com/inspect-js/which-collection#readme) | 1.0.2 | `MIT` | development |
@@ -615,11 +615,11 @@ _Build-time tools — not shipped to browsers._
 | [`workbox-sw`](https://github.com/GoogleChrome/workbox) | 7.4.0 | `MIT` | development |
 | [`workbox-window`](https://github.com/GoogleChrome/workbox) | 7.4.0 | `MIT` | development |
 | [`ws`](https://github.com/websockets/ws) | 8.20.0 | `MIT` | development |
-| [`xml-name-validator`](jsdom/xml-name-validator) | 5.0.0 | `Apache-2.0` | development |
+| [`xml-name-validator`](https://github.com/jsdom/xml-name-validator) | 5.0.0 | `Apache-2.0` | development |
 | [`xmlchars`](https://github.com/lddubeau/xmlchars) | 2.2.0 | `MIT` | development |
 | [`yallist`](https://github.com/isaacs/yallist) | 3.1.1 | `ISC` | development |
 | [`yaml`](https://eemeli.org/yaml/v1/) | 1.10.3 | `ISC` | development |
-| [`zwitch`](wooorm/zwitch) | 2.0.4 | `MIT` | development |
+| [`zwitch`](https://github.com/wooorm/zwitch) | 2.0.4 | `MIT` | development |
 
 </details>
 
@@ -628,5 +628,5 @@ _Build-time tools — not shipped to browsers._
 - **Re-generation**: `npm run build-tech-bom` reads `node_modules/`, walks the npm dep tree, and rewrites this file + `static/data/tech-bom.json`. Run after every `npm install` / dep bump.
 - **CI check**: chained into `validate-data` so a license that is not on the allowlist breaks the build. To add a new license, edit `LICENSE_ALLOWLIST` in `scripts/build-tech-bom.ts`.
 - **No new dependencies were added to make this work.** Generator is pure Node + npm CLI; output formats are markdown + a CycloneDX-shaped JSON subset.
-- **Project license**: `MIT` (see [LICENSE](../LICENSE)). All bundled deps are compatible.
+- **Project license**: `MIT` (see [LICENSE](https://github.com/chipi/orrery/blob/main/LICENSE)). All bundled deps are compatible.
 

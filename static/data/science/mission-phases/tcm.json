@@ -3,7 +3,7 @@
   "tab": "mission-phases",
   "order": 3,
   "diagram": "tcm.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/missions", "context_key": "FLIGHT tab shows TCM count for each mission's cruise" }
   ],

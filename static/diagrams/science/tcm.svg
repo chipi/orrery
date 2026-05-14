@@ -1,29 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 230" role="img" aria-label="A cruise trajectory between Earth and Mars with three small TCM tick marks along the way.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" role="img" aria-label="A cruise trajectory between Earth and Mars with three TCM trajectory-correction burns trimming the path before navigation errors grow into miss distance.">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .dashed { stroke: rgba(255,255,255,0.35); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
-    .accent { stroke: #4ecdc4; stroke-width: 1.8; fill: none; }
-    .body { fill: rgba(255,255,255,0.7); }
-    .mars { fill: rgba(193,68,14,0.5); stroke: rgba(193,68,14,0.85); stroke-width: 1; }
-    .tcm { fill: #4ecdc4; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+    .accent { stroke: #4ecdc4; stroke-width: 2; fill: none; }
+    .miss { stroke: rgba(193,68,14,0.6); stroke-width: 1.4; stroke-dasharray: 4 3; fill: none; }
+    .earth { fill: rgba(75,156,211,0.5); stroke: rgba(75,156,211,0.95); stroke-width: 1.4; }
+    .mars { fill: rgba(193,68,14,0.5); stroke: rgba(193,68,14,0.95); stroke-width: 1.4; }
+    .tcm-dot { fill: #4ecdc4; stroke: #4ecdc4; stroke-width: 1.2; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-red { fill: rgba(193,68,14,0.95); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
+    .lead { stroke: rgba(255,255,255,0.4); stroke-width: 0.8; fill: none; }
+    .dim-star { fill: rgba(255,255,255,0.2); }
   </style>
-  <text class="lbl" x="20" y="22">Trajectory Correction Maneuvers</text>
-  <circle class="body" cx="40" cy="160" r="6" />
-  <text class="tick" x="32" y="180">Earth</text>
-  <circle class="mars" cx="360" cy="80" r="5" />
-  <text class="tick" x="346" y="100">Mars</text>
-  <path class="accent" d="M 46 158 Q 200 60 357 82" />
-  <text class="tick" x="100" y="135" fill="#4ecdc4">8-month cruise</text>
-  <circle class="tcm" cx="100" cy="120" r="2.5" />
-  <line class="dashed" x1="100" y1="120" x2="100" y2="100" />
-  <text class="tick" x="92" y="96">TCM-1</text>
-  <circle class="tcm" cx="180" cy="92" r="2.5" />
-  <line class="dashed" x1="180" y1="92" x2="180" y2="72" />
-  <text class="tick" x="172" y="68">TCM-2</text>
-  <circle class="tcm" cx="280" cy="78" r="2.5" />
-  <line class="dashed" x1="280" y1="78" x2="280" y2="58" />
-  <text class="tick" x="272" y="54">TCM-3</text>
-  <text class="lbl" x="30" y="210">tiny burns trim the trajectory before errors grow into miss-distance</text>
+
+  <circle class="dim-star" cx="50" cy="40" r="0.6" />
+  <circle class="dim-star" cx="540" cy="50" r="0.5" />
+  <circle class="dim-star" cx="200" cy="230" r="0.5" />
+
+  <text class="label" x="40" y="28">TCMs — TRAJECTORY CORRECTION MANEUVERS · TINY BURNS, BIG SAVINGS</text>
+
+  <!-- Earth -->
+  <circle class="earth" cx="60" cy="200" r="10" />
+  <text class="label" x="60" y="222" text-anchor="middle">EARTH</text>
+
+  <!-- Mars -->
+  <circle class="mars" cx="540" cy="80" r="9" />
+  <text class="label" x="540" y="62" text-anchor="middle">MARS</text>
+
+  <!-- Cruise trajectory (teal) -->
+  <path class="accent" d="M 70 198 Q 200 80 538 82" />
+
+  <!-- Diverged trajectory if no TCMs (red dashed) -->
+  <path class="miss" d="M 70 198 Q 220 90 540 130" />
+  <text class="label-red" x="540" y="135" text-anchor="end">MISS · w/o TCMs</text>
+  <text class="sublabel" x="540" y="147" text-anchor="end">errors grow ~ √t · ends up 1000s of km off</text>
+
+  <!-- TCM-1 -->
+  <circle class="tcm-dot" cx="150" cy="142" r="4" />
+  <line class="lead" x1="150" y1="142" x2="160" y2="100" />
+  <text class="label-accent" x="164" y="100">TCM-1 · L+10 d</text>
+  <text class="sublabel" x="164" y="112">~0.5 m/s · clean up TMI errors</text>
+
+  <!-- TCM-2 -->
+  <circle class="tcm-dot" cx="280" cy="98" r="4" />
+  <line class="lead" x1="280" y1="98" x2="295" y2="58" />
+  <text class="label-accent" x="299" y="58">TCM-2 · L+60 d</text>
+  <text class="sublabel" x="299" y="70">~0.1 m/s · post-Sun calibration</text>
+
+  <!-- TCM-3 -->
+  <circle class="tcm-dot" cx="420" cy="84" r="4" />
+  <line class="lead" x1="420" y1="84" x2="420" y2="200" />
+  <text class="label-accent" x="420" y="214" text-anchor="middle">TCM-3 · L−30 d</text>
+  <text class="sublabel" x="420" y="226" text-anchor="middle">final aim · approach geometry</text>
+
+  <!-- Reference panel -->
+  <g transform="translate(40,90)">
+    <text class="label-gold" x="0" y="0">WHY MULTIPLE BURNS?</text>
+    <text class="sublabel" x="0" y="14">errors grow with time;</text>
+    <text class="sublabel" x="0" y="26">DSN ranging measures</text>
+    <text class="sublabel" x="0" y="38">them; small corrections</text>
+    <text class="sublabel" x="0" y="50">are cheap, lateness</text>
+    <text class="sublabel" x="0" y="62">means a bigger TCM</text>
+    <text class="sublabel" x="0" y="74">(scales with t²)</text>
+  </g>
+
+  <text class="sublabel" x="540" y="270" text-anchor="end">total TCM budget ≈ 100 m/s for an Earth-Mars cruise · tracks via DSN range + Doppler + Δ-DOR</text>
 </svg>

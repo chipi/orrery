@@ -2402,25 +2402,57 @@
           break;
         }
       }
-      // Only re-arm the auto-zoom on phase transitions — leaves the
-      // user's manual mouse-wheel zoom intact for the duration of a
-      // phase. Each transition retargets the camera; in between, the
-      // user is in control.
-      const phaseChanged = activePhase.type !== lastAutoZoomPhase;
-      if (phaseChanged) {
-        lastAutoZoomPhase = activePhase.type;
-        autoZoomActive = true;
-      }
-      // Always update the target POSITION because the Moon drifts each
-      // frame; that keeps the close-up tracking the Moon during the
-      // lunar phase. Only the lerp toward this target is gated by
-      // autoZoomActive.
+      // Compute spacecraft position in ECI km along the active phase
+      // so a flyby coast (tli/tei) that swings past the Moon can still
+      // trigger the lunar closeup — Artemis II is the canonical case:
+      // its hybrid free-return has NO lunar_orbit / lunar_flyby phase
+      // (the apogee of tli_coast IS periselene), so phase-type matching
+      // alone never zoomed. Distance-to-Moon is the universal signal.
       const moonPos = moonEciPos(simDay);
       const moonInScene = {
         x: moonPos.x * SCALE_CISLUNAR,
         z: moonPos.z * SCALE_CISLUNAR,
       };
-      if (LUNAR_PHASE_TYPES.has(activePhase.type)) {
+      const LUNAR_LOCAL_AZ = new Set([
+        'lunar_orbit',
+        'spiral_lunar',
+        'lunar_flyby',
+        'descent',
+        'ascent',
+      ]);
+      const pts = activePhase.points;
+      const lastIdx = pts.length - 1;
+      const f = Math.max(0, Math.min(lastIdx, phaseProgress * lastIdx));
+      const i = Math.min(lastIdx - 1, Math.max(0, Math.floor(f)));
+      const frac = f - i;
+      const pa = pts[i];
+      const pb = pts[i + 1] ?? pa;
+      let scX = pa.x + (pb.x - pa.x) * frac;
+      let scY = pa.y + (pb.y - pa.y) * frac;
+      let scZ = pa.z + (pb.z - pa.z) * frac;
+      if (LUNAR_LOCAL_AZ.has(activePhase.type)) {
+        const moonRef = moonEciPos(arcTimeline.flyby_day);
+        scX += moonPos.x - moonRef.x;
+        scY += moonPos.y - moonRef.y;
+        scZ += moonPos.z - moonRef.z;
+      }
+      const distToMoonKm = Math.hypot(scX - moonPos.x, scY - moonPos.y, scZ - moonPos.z);
+      // Earth SoI is ~924 000 km; Moon SoI ~66 100 km. Trigger lunar
+      // closeup well outside Moon SoI so the zoom is underway by the
+      // time the spacecraft actually crosses into Moon-dominated space.
+      const MOON_PROXIMITY_KM = 80_000;
+      const isNearMoon = distToMoonKm < MOON_PROXIMITY_KM;
+
+      // Re-arm the auto-zoom on phase transitions OR on crossing the
+      // Moon-proximity boundary — both deserve a fresh zoom. Mouse-wheel
+      // during a sub-phase still wins (clears autoZoomActive).
+      const subPhase = isNearMoon ? activePhase.type + '_near_moon' : activePhase.type;
+      const phaseChanged = subPhase !== lastAutoZoomPhase;
+      if (phaseChanged) {
+        lastAutoZoomPhase = subPhase;
+        autoZoomActive = true;
+      }
+      if (isNearMoon || LUNAR_PHASE_TYPES.has(activePhase.type)) {
         autoZoomTargetR = LUNAR_CLOSEUP_DISTANCE;
         autoZoomTargetCenter.set(moonInScene.x, 0, moonInScene.z);
       } else if (EARTH_PHASE_TYPES.has(activePhase.type)) {
@@ -3302,14 +3334,14 @@
         const total = outLine.geometry.index.count;
         const segs = outPts.length - 1;
         const segIndices = total / segs;
-        const targetSeg = Math.min(segs, Math.ceil(outFraction * segs));
+        const targetSeg = Math.min(segs, Math.round(outFraction * segs));
         outLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
       }
       if (retLine && retLine.geometry.index && retPts.length > 1) {
         const total = retLine.geometry.index.count;
         const segs = retPts.length - 1;
         const segIndices = total / segs;
-        const targetSeg = Math.min(segs, Math.ceil(retFraction * segs));
+        const targetSeg = Math.min(segs, Math.round(retFraction * segs));
         retLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
       }
 
@@ -4051,17 +4083,24 @@
   {/if}
 </div>
 
-<!-- Flight Director narration replaces the static Science Lens banner
-     on /fly. Tied to arcProgress, so the title/body/link rotate as the
-     simulation moves through DEPARTURE → INJECTION → CRUISE → APPROACH
-     → ARRIVAL. Only renders when the global Science Lens is on. -->
-<FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+<!-- Top control bar — Flight Director narration + Layers panel sit
+     side-by-side in a flex row instead of stacked. Each component's
+     own position:fixed is overridden by the wrapper. Both pointer-
+     event regions still toggle independently. -->
+<div class="top-controls">
+  <!-- Flight Director narration replaces the static Science Lens
+       banner on /fly. Tied to arcProgress, so the title/body/link
+       rotate as the simulation moves through DEPARTURE → INJECTION
+       → CRUISE → APPROACH → ARRIVAL. Only renders when the global
+       Science Lens is on. -->
+  <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
 
-<!-- /fly Layers panel — every layer wired into both scenes (cislunar
-     for Moon missions, heliocentric otherwise). -->
-<ScienceLayersPanel
-  available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
-/>
+  <!-- /fly Layers panel — every layer wired into both scenes (cislunar
+       for Moon missions, heliocentric otherwise). -->
+  <ScienceLayersPanel
+    available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+  />
+</div>
 
 <!-- Conic-section family side panel — Phase I. Lens + 'conics' layer
      gated. Reads the live conicState derive. -->
@@ -4090,6 +4129,35 @@
   }
   :global(.fly canvas) {
     display: block;
+  }
+
+  /* Top-control row — flex parent puts the Flight Director banner and
+     the Layers panel side-by-side at the top instead of stacked. Each
+     child still controls its own visibility (lens-gated banner, layer-
+     gated panel) but loses its fixed position so the flex layout wins. */
+  .top-controls {
+    position: fixed;
+    top: calc(var(--nav-height) + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 32;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    pointer-events: none;
+    max-width: calc(100vw - 32px);
+  }
+  .top-controls :global(.banner),
+  .top-controls :global(.panel) {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    pointer-events: auto;
+  }
+  .top-controls :global(.banner:hover),
+  .top-controls :global(.banner:focus-visible) {
+    transform: translateY(-2px);
   }
 
   .load-banner {

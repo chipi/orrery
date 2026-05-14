@@ -3,7 +3,7 @@
   "tab": "propulsion",
   "order": 5,
   "diagram": "v-infinity.svg",
-  "diagram_quality": "schematic",
+  "diagram_quality": "polished",
   "see_in_app": [
     { "route": "/fly", "context_key": "/fly's HUD shows V∞ on arrival at the destination" },
     { "route": "/missions", "context_key": "Arrival V∞ governs the size of the orbit-insertion burn" }

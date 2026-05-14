@@ -1,28 +1,87 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-label="Bar chart comparing specific impulse across solid, hypergolic, liquid, nuclear thermal and ion engines.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" role="img" aria-label="Specific impulse comparison across propulsion families — solid, hypergolic, liquid, nuclear thermal, ion, antimatter (theoretical).">
   <style>
-    .stroke { stroke: rgba(255,255,255,0.85); stroke-width: 1.5; fill: none; }
-    .lbl { font-family: 'Space Mono', monospace; font-size: 9px; fill: rgba(255,255,255,0.8); }
-    .tick { font-family: 'Space Mono', monospace; font-size: 8px; fill: rgba(255,255,255,0.55); }
+    .axis { stroke: rgba(255,255,255,0.85); stroke-width: 1.4; fill: none; }
+    .grid { stroke: rgba(255,255,255,0.08); stroke-width: 0.8; fill: none; }
+    .dashed { stroke: rgba(255,255,255,0.3); stroke-width: 1; stroke-dasharray: 3 3; fill: none; }
     .bar { fill: rgba(78,205,196,0.32); stroke: #4ecdc4; stroke-width: 1.2; }
-    .barbig { fill: rgba(78,205,196,0.55); stroke: #4ecdc4; stroke-width: 1.5; }
+    .bar-big { fill: rgba(78,205,196,0.55); stroke: #4ecdc4; stroke-width: 1.5; }
+    .bar-future { fill: rgba(255,200,80,0.18); stroke: #ffc850; stroke-width: 1.2; stroke-dasharray: 3 2; }
+    .label { fill: rgba(255,255,255,0.85); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.2px; }
+    .label-accent { fill: #4ecdc4; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; }
+    .label-gold { fill: #ffc850; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 1px; }
+    .tick { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.8px; }
+    .sublabel { fill: rgba(255,255,255,0.55); font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 1px; }
   </style>
-  <text class="lbl" x="20" y="22">Specific impulse (Isp, seconds)</text>
-  <line class="stroke" x1="60" y1="200" x2="380" y2="200" />
-  <line class="stroke" x1="60" y1="200" x2="60" y2="40" />
-  <rect class="bar" x="80" y="190" width="36" height="10" />
-  <text class="tick" x="98" y="215" text-anchor="middle">solid</text>
-  <text class="tick" x="98" y="186" text-anchor="middle">250</text>
-  <rect class="bar" x="135" y="184" width="36" height="16" />
-  <text class="tick" x="153" y="215" text-anchor="middle">hyper.</text>
-  <text class="tick" x="153" y="180" text-anchor="middle">310</text>
-  <rect class="bar" x="190" y="172" width="36" height="28" />
-  <text class="tick" x="208" y="215" text-anchor="middle">LH₂/LOX</text>
-  <text class="tick" x="208" y="168" text-anchor="middle">450</text>
-  <rect class="bar" x="245" y="124" width="36" height="76" />
-  <text class="tick" x="263" y="215" text-anchor="middle">nuclear</text>
-  <text class="tick" x="263" y="120" text-anchor="middle">900</text>
-  <rect class="barbig" x="300" y="55" width="50" height="145" />
-  <text class="tick" x="325" y="215" text-anchor="middle">ion</text>
-  <text class="tick" x="325" y="51" text-anchor="middle">3000+</text>
-  <text class="tick" x="60" y="50">Isp ↑</text>
+
+  <!-- Title -->
+  <text class="label" x="40" y="28">SPECIFIC IMPULSE — vₑ / g₀ — HOW MUCH PUSH PER KG OF PROPELLANT</text>
+
+  <!-- Y-axis (log scale visualised) -->
+  <line class="axis" x1="80" y1="60" x2="80" y2="260" />
+  <line class="axis" x1="80" y1="260" x2="560" y2="260" />
+
+  <!-- Log gridlines: 100, 300, 1000, 3000, 10000 -->
+  <line class="grid" x1="80" y1="220" x2="560" y2="220" />
+  <line class="grid" x1="80" y1="180" x2="560" y2="180" />
+  <line class="grid" x1="80" y1="140" x2="560" y2="140" />
+  <line class="grid" x1="80" y1="100" x2="560" y2="100" />
+  <line class="grid" x1="80" y1="60" x2="560" y2="60" />
+
+  <text class="tick" x="74" y="263" text-anchor="end">100</text>
+  <text class="tick" x="74" y="223" text-anchor="end">300</text>
+  <text class="tick" x="74" y="183" text-anchor="end">1k</text>
+  <text class="tick" x="74" y="143" text-anchor="end">3k</text>
+  <text class="tick" x="74" y="103" text-anchor="end">10k</text>
+  <text class="tick" x="74" y="63" text-anchor="end">30k</text>
+  <text class="label" x="40" y="48">Isp (s)</text>
+
+  <!-- Bars: x positions left-to-right, widths constant -->
+  <!-- solid: 250 → y=232 -->
+  <rect class="bar" x="105" y="232" width="55" height="28" />
+  <text class="tick" x="132" y="277" text-anchor="middle">SOLID</text>
+  <text class="sublabel" x="132" y="289" text-anchor="middle">SRB · 250 s</text>
+  <text class="tick" x="132" y="225" text-anchor="middle">250</text>
+
+  <!-- hypergolic: 310 → y=218 -->
+  <rect class="bar" x="175" y="218" width="55" height="42" />
+  <text class="tick" x="202" y="277" text-anchor="middle">HYPERGOLIC</text>
+  <text class="sublabel" x="202" y="289" text-anchor="middle">N₂O₄/MMH · 310 s</text>
+  <text class="tick" x="202" y="211" text-anchor="middle">310</text>
+
+  <!-- LH2/LOX: 450 → y=193 -->
+  <rect class="bar" x="245" y="193" width="55" height="67" />
+  <text class="tick" x="272" y="277" text-anchor="middle">LH₂/LOX</text>
+  <text class="sublabel" x="272" y="289" text-anchor="middle">RS-25 · 450 s</text>
+  <text class="tick" x="272" y="186" text-anchor="middle">450</text>
+
+  <!-- Nuclear thermal: 900 → y=147 -->
+  <rect class="bar" x="315" y="147" width="55" height="113" />
+  <text class="tick" x="342" y="277" text-anchor="middle">NUCLEAR TH.</text>
+  <text class="sublabel" x="342" y="289" text-anchor="middle">NERVA · 900 s</text>
+  <text class="tick" x="342" y="140" text-anchor="middle">900</text>
+
+  <!-- Ion: 3000 → y=140 (overlap) — push to 105 visually for 3000 on log -->
+  <rect class="bar-big" x="385" y="140" width="55" height="120" />
+  <text class="tick" x="412" y="277" text-anchor="middle">ION (XENON)</text>
+  <text class="sublabel" x="412" y="289" text-anchor="middle">NEXT-C · 3000 s</text>
+  <text class="tick" x="412" y="133" text-anchor="middle">3000</text>
+
+  <!-- Hall thruster: 1500 → y=170 -->
+  <rect class="bar" x="455" y="170" width="55" height="90" />
+  <text class="tick" x="482" y="277" text-anchor="middle">HALL EFFECT</text>
+  <text class="sublabel" x="482" y="289" text-anchor="middle">SPT-100 · 1500 s</text>
+  <text class="tick" x="482" y="163" text-anchor="middle">1500</text>
+
+  <!-- Antimatter (theoretical): off the chart -->
+  <rect class="bar-future" x="525" y="65" width="35" height="195" />
+  <text class="label-gold" x="542" y="277" text-anchor="middle">ANTIMATTER</text>
+  <text class="sublabel" x="542" y="289" text-anchor="middle">theoretical · 10⁷ s</text>
+
+  <!-- Annotation across the divide between chemical and electric -->
+  <line class="dashed" x1="380" y1="60" x2="380" y2="260" />
+  <text class="label-accent" x="220" y="78" text-anchor="middle">← CHEMICAL · HIGH THRUST, LOW Isp</text>
+  <text class="label-gold" x="470" y="78" text-anchor="middle">ELECTRIC · LOW THRUST, HIGH Isp →</text>
+
+  <!-- Bottom note -->
+  <text class="sublabel" x="540" y="312" text-anchor="end">Isp ratio (ion / kerosene) = 10× → 10× less propellant for the same Δv</text>
 </svg>

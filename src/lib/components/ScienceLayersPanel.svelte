@@ -1,22 +1,27 @@
 <!--
-  ScienceLayersPanel — floating sub-toggle panel that lets users opt
-  into individual physics overlays when the master Science Lens is on.
-  Phase G of the /science integration roadmap.
+  ScienceLayersPanel — the unified Science Lens panel.
 
-  Lens-gated visibility: the panel only renders when the master lens
-  is enabled. Each layer is an independent attribute on <html> so CSS
-  rules can target it directly.
+  When the master Science Lens toggle is on, this panel renders BOTH:
+    1. The per-route lens story (optional — pass `title`, `body`, `tab`,
+       `section`). Same gold-bordered narrative the old ScienceLensBanner
+       used to render in its own panel.
+    2. The per-route layer sub-toggles (any layer keys passed in
+       `available` that match the global LAYER_ORDER).
 
-  Per-route filter:
-    - On /explore + /iss + /tiangong + /earth: hide /fly-only layers
-      (coast + conics).
-    - On /fly: show all eight layers.
+  One panel, one collapse control. Replaces the previous two-panel
+  arrangement (ScienceLensBanner + ScienceLayersPanel) per the v0.6
+  Science-Lens UX pass.
 
-  Mirrors the gold-accented chrome of MicrogravityAxesLegend so the
-  family stays cohesive.
+  Per-route conventions today:
+    - /explore + /earth + /moon + /mars + /plan: pass lens-story props
+      AND `available`.
+    - /iss + /tiangong: layers only.
+    - /fly: layers only (FlightDirectorBanner still owns the multi-phase
+      narration on /fly — it's a different chrome family).
 -->
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
+  import { base } from '$app/paths';
   import { onScienceLensChange } from '$lib/science-lens';
   import {
     LAYER_ORDER,
@@ -26,13 +31,23 @@
     type LayerKey,
   } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages.js';
+  import type { ScienceTabId } from '$types/science';
 
   type Props = {
-    /** Layers that are meaningful on this route. Layers not in this list
-     * are hidden from the panel (e.g. /explore hides 'coast' + 'conics'). */
-    available: LayerKey[];
+    /** Layers meaningful on this route. Empty array = layers section
+     *  hidden entirely (panel shows just the lens story). */
+    available?: LayerKey[];
+    /** Lens-story title — when provided, renders the gold-accent
+     *  narrative block at the top of the panel. */
+    title?: string;
+    /** Lens-story body paragraph — required when `title` is set. */
+    body?: string;
+    /** Target tab in `/science` for the "→ Read in /science" link. */
+    tab?: ScienceTabId;
+    /** Target section id in `/science` for the link. */
+    section?: string;
   };
-  let { available }: Props = $props();
+  let { available = [], title, body, tab, section }: Props = $props();
 
   let lensOn = $state(false);
   // Collapse state: panel ships expanded by default so first-time
@@ -140,62 +155,75 @@
   }
 
   let visibleLayers = $derived(available.filter((k) => LAYER_ORDER.includes(k)));
+  let hasLensStory = $derived(Boolean(title && body && tab && section));
+  let hasLayers = $derived(visibleLayers.length > 0);
 </script>
 
-{#if lensOn}
+{#if lensOn && (hasLensStory || hasLayers)}
   <aside
     class="panel"
     class:collapsed={!expanded}
-    data-testid="science-layers-panel"
-    aria-label="Science layers"
+    data-testid="science-lens-panel"
+    aria-label="Science Lens"
   >
     <button
       type="button"
       class="panel-head"
       aria-expanded={expanded}
-      aria-controls="science-layers-rows"
+      aria-controls="science-lens-body"
       onclick={() => (expanded = !expanded)}
     >
-      <span class="eyebrow">{m.science_layers_heading()}</span>
+      <span class="eyebrow">SCIENCE LENS{!expanded && hasLensStory ? ` · ${title}` : ''}</span>
       <span class="chevron" aria-hidden="true">{expanded ? '▾' : '▸'}</span>
     </button>
     {#if expanded}
-      <ul id="science-layers-rows" class="rows">
-        {#each visibleLayers as key (key)}
-          {@const meta = metaFor(key)}
-          <li class="row">
-            <label class="row-label">
-              <input
-                type="checkbox"
-                checked={layerState[key]}
-                onchange={() => toggle(key)}
-                data-testid="science-layer-{key}"
-              />
-              <span class="row-name">{meta.label}</span>
-            </label>
-            <span class="row-desc">{meta.description}</span>
-          </li>
-        {/each}
-      </ul>
+      <div id="science-lens-body">
+        {#if hasLensStory && tab && section}
+          <a class="lens-story" href="{base}/science/{tab}/{section}">
+            <div class="lens-title">{title}</div>
+            <div class="lens-body">{body}</div>
+            <div class="lens-link">→ Read in /science</div>
+          </a>
+        {/if}
+        {#if hasLayers}
+          {#if hasLensStory}
+            <div class="lens-divider" aria-hidden="true"></div>
+          {/if}
+          <ul class="rows" aria-label="Science layers">
+            {#each visibleLayers as key (key)}
+              {@const meta = metaFor(key)}
+              <li class="row">
+                <label class="row-label">
+                  <input
+                    type="checkbox"
+                    checked={layerState[key]}
+                    onchange={() => toggle(key)}
+                    data-testid="science-layer-{key}"
+                  />
+                  <span class="row-name">{meta.label}</span>
+                </label>
+                <span class="row-desc">{meta.description}</span>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </div>
     {/if}
   </aside>
 {/if}
 
 <style>
-  /* Top-center, stacked directly under the route's lens banner.
-     The banner publishes its measured height to --lens-banner-height
-     on <html> via ResizeObserver, so this panel always sits cleanly
-     below the banner regardless of how tall the banner content is.
-     Falls back to 96px if no banner is present (route without one).
-     Plus 12px nav gap + 12px banner-to-panel gap. */
+  /* Top-center floating panel. Was two stacked panels (lens banner +
+     layers); collapsed into one per the v0.6 Science-Lens UX pass.
+     Sits directly under the nav with a small gap. */
   .panel {
     position: fixed;
-    top: calc(var(--nav-height) + 12px + var(--lens-banner-height, 96px) + 12px);
+    top: calc(var(--nav-height) + 12px);
     left: 50%;
     transform: translateX(-50%);
     z-index: 32;
     width: min(540px, calc(100vw - 32px));
-    padding: 10px 14px 8px;
+    padding: 10px 14px 12px;
     background: rgba(8, 10, 22, 0.92);
     border: 1px solid rgba(255, 200, 80, 0.55);
     border-radius: 6px;
@@ -214,7 +242,7 @@
     border: none;
     cursor: pointer;
     padding: 2px 0;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: inherit;
   }
   .panel.collapsed .panel-head {
@@ -243,8 +271,56 @@
     font-size: 8px;
     letter-spacing: 2px;
     color: #ffc850;
+    text-align: left;
   }
-  /* Two-column layout when the wider top-center panel has room.
+
+  /* Lens-story block — the gold-accent narrative carried over from the
+     old ScienceLensBanner. Reads as a single editorial unit; the whole
+     block is an anchor to the matching /science section. */
+  .lens-story {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-bottom: 4px;
+  }
+  .lens-story:hover .lens-title,
+  .lens-story:focus-visible .lens-title {
+    color: #fff;
+  }
+  .lens-story:focus-visible {
+    outline: 2px solid rgba(255, 200, 80, 0.6);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+  .lens-title {
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 6px;
+    transition: color 120ms;
+  }
+  .lens-body {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 6px;
+  }
+  .lens-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255, 200, 80, 0.85);
+  }
+  .lens-divider {
+    height: 1px;
+    background: rgba(255, 200, 80, 0.18);
+    margin: 10px 0 8px;
+  }
+
+  /* Two-column layer grid when the wider top-center panel has room.
      Single column on narrow viewports. */
   .rows {
     list-style: none;
@@ -311,8 +387,9 @@
     color: rgba(255, 255, 255, 0.55);
   }
 
-  /* Mobile: bottom drawer (top-center stacked banner already takes
-     the top slot on small screens). Single column for legibility. */
+  /* Mobile: bottom-anchored drawer. Single column for legibility.
+     Caps height so it doesn't blanket the page; scrolls if both story
+     + many layers are present. */
   @media (max-width: 600px) {
     .panel {
       top: auto;
@@ -326,6 +403,13 @@
     }
     .rows {
       grid-template-columns: 1fr;
+    }
+    .lens-title {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+    }
+    .lens-body {
+      font-size: 12px;
     }
   }
 </style>

@@ -17,7 +17,6 @@
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
-  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
@@ -1333,17 +1332,15 @@
 <!-- J.2 — Science Lens banner on /moon. Top-center, lens-gated;
      links into the free-return chapter that's central to lunar
      mission architecture. -->
-<ScienceLensBanner
-  placement="top"
+<!-- Unified Science Lens panel — lens story + tidal-lock indicator in
+     one collapse. -->
+<ScienceLayersPanel
   title="The Moon · 384 000 km out, three days each way"
   body="Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path."
   tab="transfers"
   section="free-return"
+  available={['tidal-lock']}
 />
-
-<!-- /moon Layers panel — tidal-lock indicator is the first wired
-     terrestrial-body overlay here. -->
-<ScienceLayersPanel available={['tidal-lock']} />
 
 <style>
   .moon {

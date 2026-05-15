@@ -18,7 +18,6 @@
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
-  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
@@ -1380,18 +1379,15 @@
 <!-- J.2 — Science Lens banner + layers on /earth. Top-center, lens-
      gated, links into the orbit-regimes chapter that pairs with the
      altitude-band legend at the bottom. -->
-<ScienceLensBanner
-  placement="top"
+<!-- Unified Science Lens panel — atmosphere shell at the Kármán line +
+     ozone-hole overlay live alongside the lens story in one collapse. -->
+<ScienceLayersPanel
   title="Earth orbit · regimes that shape every mission"
   body="Above 100 km is space; below 2 000 km is LEO. Each band — LEO, MEO, GEO, HEO — trades off latency, coverage, and lifetime. The legend below colour-codes which regime each satellite lives in."
   tab="orbits"
   section="orbit-regimes"
+  available={['atmosphere', 'ozone']}
 />
-
-<!-- /earth Layers panel — atmosphere shell at the Kármán line is the
-     first wired terrestrial-body overlay. More layers (gravity field,
-     radiation belts) follow as J.3.x. -->
-<ScienceLayersPanel available={['atmosphere', 'ozone']} />
 
 <style>
   .earth {

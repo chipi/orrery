@@ -20,7 +20,6 @@
   import SunPanel from '$lib/components/SunPanel.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
-  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import {
     gravityAccel,
@@ -2070,25 +2069,21 @@
   onClose={() => (smallBodyPanelOpen = false)}
 />
 
-<ScienceLensBanner
-  placement="top"
+<!-- Unified Science Lens panel — lens story + layer toggles in one
+     collapse. Replaces the previous two-panel arrangement (banner +
+     layers) per the v0.6 Science-Lens UX pass. /explore wires four
+     layers: hover-cards (lens-on tooltip expansion), gravity (per-
+     planet arrow toward Sun), velocity (tangent), centripetal (paired
+     inward arrow). SoI and apsides are omitted — planets render on
+     circular orbits at this visual scale, so apsides degenerate to
+     single points and SoIs are sub-pixel. -->
+<ScienceLayersPanel
   title="Heliocentric view · ecliptic plane"
   body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
   tab="orbits"
   section="keplerian-orbit"
+  available={['hover', 'gravity', 'velocity', 'centripetal']}
 />
-
-<!-- Science Layers panel — Phase G. /explore exposes the meaningful
-     subset (no coast / conics — those are /fly-only). 'hover' is in
-     the list as a placeholder for future expanded hover cards; today
-     the existing tooltip behaviour is unchanged whether the layer is
-     on or off. -->
-<!-- /explore wires four layers today: hover-cards (lens-on tooltip
-     expansion), gravity (per-planet arrow toward Sun), velocity
-     (tangent), centripetal (paired inward arrow). SoI and apsides are
-     omitted — planets render on circular orbits at this visual scale,
-     so apsides degenerate to single points and SoIs are sub-pixel. -->
-<ScienceLayersPanel available={['hover', 'gravity', 'velocity', 'centripetal']} />
 
 <style>
   .explore {

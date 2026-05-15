@@ -11,7 +11,7 @@
   import type { DestinationId } from '$lib/lambert-grid.constants';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
-  import ScienceLensBanner from '$lib/components/ScienceLensBanner.svelte';
+  import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
 
   const DESTINATION_IDS: DestinationId[] = [
@@ -1002,8 +1002,9 @@
   </aside>
 </div>
 
-<ScienceLensBanner
-  placement="top"
+<!-- Unified Science Lens panel — lens story only on /plan (no layer
+     toggles meaningful for the porkchop view). -->
+<ScienceLayersPanel
   title="Porkchop plot · the calendar of cheap launches"
   body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
   tab="porkchop"

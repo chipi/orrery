@@ -1,0 +1,16 @@
+{
+  "name": "Apollo 13",
+  "type": "BEMANDE FLYBY · GEVLOGEN (LANDING AFGEBROKEN)",
+  "first": "De missie die een bijna-ramp veranderde in NASA's meest gevierde redding",
+  "description": "Apollo 13 zou de derde bemande maanlanding worden, gericht op de Fra Mauro-hooglanden. Na 55 uur en 54 minuten vlucht brak een zuurstoftank in de Service Module, wat de elektrische en levensondersteunende systemen van het CSM uitschakelde. Met de landing geschrapt, schakelden James Lovell, Jack Swigert en Fred Haise het CSM uit, verhuisden naar de Lunar Module Aquarius als reddingsboot, en gebruikten het LM-afdaalmotor voor een Pericynthion+2-uur burn die hen op een snelle free-return-baan zette. Ze passeerden de Maan op 254 km hoogte op 1970-04-15 en landden veilig in de Stille Zuidzee op 1970-04-17. De missie wordt vandaag bestudeerd als model van gedisciplineerde real-time ingenieursimprovisatie.",
+  "events": [
+    { "met": 0, "label": "SATURN V LANCERING", "note": "Lancering vanuit KSC LC-39A. De centrale motor van de tweede S-II-trap stopte twee minuten te vroeg — de buitenmotoren compenseerden.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Trans-lunaire injectie burn door de S-IVB; CSM + LM zetten zich vast op cislunaire baan.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "De koerscorrectie verschuift het ruimtevaartuig van de free-return-baan naar een Fra Mauro-aanvliegroute.", "type": "nominal" },
+    { "met": 2.33, "label": "ZUURSTOFTANK #2 BREEKT", "note": "Een cryo-roercommando in de SM veroorzaakt kortsluiting en het breken van de tank. 'Houston, we've had a problem.' Stroom en water nemen af; de LM Aquarius wordt de reddingsboot.", "type": "warning" },
+    { "met": 2.92, "label": "FREE-RETURN BURN", "note": "31-seconden burn van de LM-afdaalmotor brengt het ruimtevaartuig terug op een free-return-baan.", "type": "info" },
+    { "met": 3.13, "label": "MAAN-FLYBY", "note": "Dichtste nadering 254 km hoogte over Mare Cognitum — de grootste afstand die ooit door een bemand ruimtevaartuig is afgelegd vanaf de Aarde.", "type": "info" },
+    { "met": 3.96, "label": "PC+2 BURN", "note": "Pericynthion-plus-2-uur burn verkort de terugreistijd naar de Aarde met tien uur.", "type": "nominal" },
+    { "met": 5.95, "label": "SPLASHDOWN", "note": "CSM-terugkeer en splashdown in de Stille Zuidzee, opgepikt door de USS Iwo Jima.", "type": "info" }
+  ]
+}

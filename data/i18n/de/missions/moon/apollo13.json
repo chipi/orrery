@@ -1,0 +1,16 @@
+{
+  "name": "Apollo 13",
+  "type": "VORBEIFLUG MIT BESATZUNG · GEFLOGEN (LANDUNG ABGEBROCHEN)",
+  "first": "Die Mission, die einen Beinahe-Disaster zu NASAs gefeiertster Rettung machte",
+  "description": "Apollo 13 sollte die dritte bemannte Mondlandung sein, Ziel war das Fra-Mauro-Hochland. 55 Stunden und 54 Minuten nach dem Flug brach ein Sauerstofftank im Servicemodul, was die elektrischen und Lebenserhaltungssysteme des CSM lähmte. Mit abgesagter Landung schalteten die Besatzung — James Lovell, Jack Swigert und Fred Haise — das CSM ab, zog in die Mondlandefähre Aquarius als Rettungsboot um und nutzte das Abstiegstriebwerk des LM für eine Perizenter+2-Stunden-Brennung, die sie auf eine schnelle freie-Rückkehr-Bahn brachte. Sie flogen am 15.04.1970 in 254 km Höhe an der Mare Cognitum vorbei und wasserten am 17.04.1970 sicher im Südpazifik. Die Mission gilt heute als Modell disziplinierter Echtzeit-Ingenieursimprovisation.",
+  "events": [
+    { "met": 0, "label": "SATURN V START", "note": "Start vom KSC LC-39A. Das zentrale Triebwerk der zweiten S-II-Stufe schaltete zwei Minuten zu früh ab — die äußeren Triebwerke kompensierten.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Translunare Injektionsbrennung der S-IVB; CSM + LM begeben sich auf cislunare Bahn.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "Die Mittelkurskorrektur lenkt die Raumsonde von der freien-Rückkehr-Bahn auf einen Fra-Mauro-Anflug.", "type": "nominal" },
+    { "met": 2.33, "label": "BRUCH DES O2-TANKS #2", "note": "Ein Kryo-Rührbefehl im SM löst einen Kurzschluss und den Tankbruch aus. „Houston, wir hatten ein Problem.“ Strom und Wasser schwinden; das LM Aquarius wird zum Rettungsboot.", "type": "warning" },
+    { "met": 2.92, "label": "FREIE-RÜCKKEHR-BRENNUNG", "note": "31-Sekunden-Brennung des LM-Abstiegstriebwerks bringt die Raumsonde auf eine freie-Rückkehr-Bahn zurück.", "type": "info" },
+    { "met": 3.13, "label": "MONDVORBEIFLUG", "note": "Größte Annäherung 254 km Höhe über Mare Cognitum — die weiteste je von einer bemannten Raumsonde zurückgelegte Entfernung von der Erde.", "type": "info" },
+    { "met": 3.96, "label": "PC+2-BRENNUNG", "note": "Perizenter-plus-2-Stunden-Brennung verkürzt die Rückkehrzeit zur Erde um zehn Stunden.", "type": "nominal" },
+    { "met": 5.95, "label": "WASSERUNG", "note": "CSM-Wiedereintritt und Wasserung im Südpazifik, geborgen von der USS Iwo Jima.", "type": "info" }
+  ]
+}

@@ -28,17 +28,30 @@
 const UMAMI_SCRIPT_URL = 'https://cloud.umami.is/script.js';
 const UMAMI_WEBSITE_ID = 'fb07dfd6-1186-4a09-8e3b-524e6b5ac145';
 
-/** Hostnames where Umami should actually load. Add staging hosts here
- *  if/when we have any; explicitly do NOT include localhost. */
-const PRODUCTION_HOSTNAMES = new Set<string>(['chipi.github.io']);
+/** Production URLs where Umami should actually load. Each entry is a
+ *  (hostname, pathPrefix) pair. Both must match. Hosts where Orrery is
+ *  *not* the only thing served — chipi.github.io hosts the user's
+ *  other repos too — are scoped down to the `/orrery` sub-path so we
+ *  don't count traffic that doesn't belong to this app. Localhost,
+ *  `vite preview`, screenshot pipeline, e2e runs are all silent. */
+const PRODUCTION_URLS: ReadonlyArray<{ hostname: string; pathPrefix: string }> = [
+  { hostname: 'chipi.github.io', pathPrefix: '/orrery' },
+];
 
-/** Inject the Umami `<script>` exactly once, only on production hosts.
+function isProductionUrl(): boolean {
+  if (typeof window === 'undefined') return false;
+  const { hostname, pathname } = window.location;
+  return PRODUCTION_URLS.some(
+    (entry) => entry.hostname === hostname && pathname.startsWith(entry.pathPrefix),
+  );
+}
+
+/** Inject the Umami `<script>` exactly once, only on production URLs.
  *  Safe to call multiple times (idempotent). Call from the root
  *  +layout's onMount so it lands AFTER the route mounts but before
  *  most user interactions. */
 export function initAnalytics(): void {
-  if (typeof window === 'undefined') return;
-  if (!PRODUCTION_HOSTNAMES.has(window.location.hostname)) return;
+  if (!isProductionUrl()) return;
   if (document.querySelector('script[data-umami-installed]')) return;
   const s = document.createElement('script');
   s.defer = true;
@@ -53,9 +66,11 @@ type UmamiGlobal = {
 };
 
 /** Track a custom event. Safe to call before the Umami script loads
- *  (it queues internally), and a no-op on non-production hosts. */
+ *  (it queues internally), and a no-op on non-production URLs. The
+ *  second-line production-URL guard means in-app events never fire if
+ *  the user somehow navigates outside /orrery on the same domain. */
 export function track(name: string, props?: Record<string, unknown>): void {
-  if (typeof window === 'undefined') return;
+  if (!isProductionUrl()) return;
   const u = (window as unknown as { umami?: UmamiGlobal }).umami;
   if (u?.track) {
     u.track(name, props);

@@ -1,13 +1,25 @@
 name: e2e
 
-# E2e (Playwright) tests run on push to main only — not on every PR —
-# per ADR-015 (testing strategy). Heavier than unit tests; gates the
-# Pages deploy implicitly because the deploy workflow chains off main.
+# E2e (Playwright) tests run on three triggers:
+#
+#   1. Push to main — gates the Pages deploy implicitly because the
+#      deploy workflow chains off main (per ADR-015).
+#   2. Manual workflow_dispatch — for ad-hoc reruns from the Actions tab.
+#   3. Nightly cron — catches regressions introduced by EXTERNAL state
+#      drift, not code changes: a CDN going offline, an upstream asset
+#      source moving a URL, a Wikimedia rate-limit kicking in. Without
+#      this, a quiet weekend on the repo could ship a broken Pages site
+#      without anyone noticing. Time chosen to land before EU devs
+#      start the day (05:07 UTC = 06:07 CET = 22:07 PST), with the
+#      off-minute (:07) to dodge GitHub Actions' top-of-hour scheduler
+#      contention.
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '7 5 * * *'
 
 # When a newer push to main lands while an earlier e2e is still running,
 # cancel the older run rather than letting it complete after the new

@@ -283,6 +283,15 @@
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
+  // Per-panel visibility toggles — let the user dismiss any of the
+  // surrounding HUD elements to see more of the scene. All default ON;
+  // each maps to a small square button in the top-right toggle row
+  // next to the 2D button. Aria-pressed on each button.
+  let showHud = $state(true);
+  let showCapcom = $state(true);
+  let showFlightDirector = $state(true);
+  let showLayersPanel = $state(true);
+  let showConicPanel = $state(true);
   // Cislunar view mode (ADR-058). Derived from mission destination —
   // Moon missions render in the Earth-centred cislunar scene, all
   // others render heliocentrically. The user-facing Cislunar/Solar
@@ -3788,8 +3797,9 @@
 
   <!-- Left-side HUD stack: identity → navigation → systems. Replaces
        the previous scattered top-left/top-right/bottom-right layout
-       that conflicted with the CAPCOM toggle. -->
-  <div class="hud-stack">
+       that conflicted with the CAPCOM toggle. User-dismissible via the
+       HUD toggle in the top-right row. -->
+  <div class="hud-stack" class:hidden={!showHud}>
     <aside
       class="hud hud-identity"
       role="status"
@@ -4019,14 +4029,71 @@
     </div>
   </div>
 
-  <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
-    {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-  </button>
+  <!-- View-management toggle row — sits top-right under the nav. The
+       2D / 3D switch + 5 panel visibility toggles (HUD stack, CAPCOM,
+       Flight Director, Science Layers, Conic). All panels default ON;
+       click a button to hide its panel and reclaim screen real-estate
+       for the scene. Same square-button style as /iss. -->
+  <div class="fly-toggle-row" role="group" aria-label="View and panel toggles">
+    <button
+      class="toggle"
+      type="button"
+      data-testid="fly-view-toggle"
+      onclick={toggleView}
+      aria-pressed={view === '2d'}
+    >
+      {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
+    </button>
+    <button
+      type="button"
+      class="toggle"
+      aria-pressed={showHud}
+      title="Toggle HUD column (mission identity, navigation, flight params, systems, live state)"
+      onclick={() => (showHud = !showHud)}
+    >
+      HUD
+    </button>
+    <button
+      type="button"
+      class="toggle"
+      aria-pressed={showCapcom}
+      title="Toggle CAPCOM events panel"
+      onclick={() => (showCapcom = !showCapcom)}
+    >
+      CAP
+    </button>
+    <button
+      type="button"
+      class="toggle"
+      aria-pressed={showFlightDirector}
+      title="Toggle Flight Director narration banner (lens-gated)"
+      onclick={() => (showFlightDirector = !showFlightDirector)}
+    >
+      FD
+    </button>
+    <button
+      type="button"
+      class="toggle"
+      aria-pressed={showLayersPanel}
+      title="Toggle Science Layers panel (lens-gated)"
+      onclick={() => (showLayersPanel = !showLayersPanel)}
+    >
+      LYR
+    </button>
+    <button
+      type="button"
+      class="toggle"
+      aria-pressed={showConicPanel}
+      title="Toggle Conic Section side panel (lens + conics layer)"
+      onclick={() => (showConicPanel = !showConicPanel)}
+    >
+      CON
+    </button>
+  </div>
 
-  <!-- CAPCOM panel is always present when a mission is loaded
-       (v0.1.7 — toggle removed; the panel sits permanently to the
-       right under the 2D/3D button so it can never overlap it). -->
-  {#if mission}
+  <!-- CAPCOM panel: shown when a mission is loaded AND the user hasn't
+       dismissed it via the CAP toggle in the top-right row. -->
+  {#if mission && showCapcom}
     <aside class="capcom-panel" aria-label={m.fly_capcom_panel_label()}>
       <!-- Static header: anomaly + comms always visible. The events
            section below scrolls independently so the most-recent
@@ -4087,29 +4154,44 @@
      side-by-side in a flex row instead of stacked. Each component's
      own position:fixed is overridden by the wrapper. Both pointer-
      event regions still toggle independently. -->
-<div class="top-controls">
-  <!-- Flight Director narration replaces the static Science Lens
-       banner on /fly. Tied to arcProgress, so the title/body/link
-       rotate as the simulation moves through DEPARTURE → INJECTION
-       → CRUISE → APPROACH → ARRIVAL. Only renders when the global
-       Science Lens is on. -->
-  <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+{#if showFlightDirector || showLayersPanel}
+  <div class="top-controls">
+    {#if showFlightDirector}
+      <!-- Flight Director narration. Tied to arcProgress; only renders
+           when the global Science Lens is on AND the user hasn't
+           dismissed it via the FD toggle. -->
+      <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+    {/if}
+    {#if showLayersPanel}
+      <!-- /fly Layers panel — every layer wired into both scenes
+           (cislunar for Moon missions, heliocentric otherwise). LYR
+           toggle in the top-right row hides it. -->
+      <ScienceLayersPanel
+        available={[
+          'hover',
+          'soi',
+          'gravity',
+          'velocity',
+          'centripetal',
+          'apsides',
+          'coast',
+          'conics',
+        ]}
+      />
+    {/if}
+  </div>
+{/if}
 
-  <!-- /fly Layers panel — every layer wired into both scenes (cislunar
-       for Moon missions, heliocentric otherwise). -->
-  <ScienceLayersPanel
-    available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+{#if showConicPanel}
+  <!-- Conic-section family side panel — lens + 'conics' layer gated.
+       CON toggle in the top-right row hides it. -->
+  <ConicSectionPanel
+    shape={conicState.shape}
+    a={conicState.a}
+    e={conicState.e}
+    epsilon={conicState.epsilon}
   />
-</div>
-
-<!-- Conic-section family side panel — Phase I. Lens + 'conics' layer
-     gated. Reads the live conicState derive. -->
-<ConicSectionPanel
-  shape={conicState.shape}
-  a={conicState.a}
-  e={conicState.e}
-  epsilon={conicState.epsilon}
-/>
+{/if}
 
 <style>
   .fly {
@@ -4495,23 +4577,52 @@
     color: #fff;
   }
 
-  .toggle {
+  /* Top-right view-management row — the 2D/3D button plus 5 panel
+     visibility toggles. Wraps onto a second row on narrow viewports.
+     The 2D button used to be position:fixed standalone; now it's a
+     normal flex child inside the row container. */
+  .fly-toggle-row {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
     right: 16px;
     z-index: 35;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+    max-width: calc(100vw - 32px);
+  }
+  .toggle {
     min-width: 44px;
     min-height: 44px;
-    padding: 0 14px;
+    padding: 0 10px;
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     color: #dde4ff;
     font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.04em;
     border-radius: 4px;
     cursor: pointer;
     backdrop-filter: blur(6px);
+    white-space: nowrap;
+  }
+  .toggle:hover,
+  .toggle:focus-visible {
+    border-color: #4466ff;
+    background: rgba(20, 26, 50, 0.95);
+    outline: none;
+  }
+  /* Dimmed appearance when a panel toggle is OFF — the button still
+     reads as clickable, but its panel is hidden. */
+  .toggle[aria-pressed='false'] {
+    color: rgba(221, 228, 255, 0.5);
+    border-color: rgba(68, 102, 255, 0.2);
+  }
+  /* User-dismissed panels use display:none so they release their
+     bottom/edge real-estate to the canvas. */
+  .hud-stack.hidden {
+    display: none;
   }
   .toggle:hover,
   .toggle:focus-visible {

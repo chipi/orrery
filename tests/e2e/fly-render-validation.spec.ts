@@ -289,7 +289,7 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
       });
       const hook = page.locator('[data-testid="fly-render-state"]');
       const scrub = page.locator('input[type="range"][aria-label*="timeline" i]');
-      const viewToggle = page.locator('button.toggle');
+      const viewToggle = page.locator('[data-testid="fly-view-toggle"]');
 
       // The render-state hook publishes data-sim-day (in days, not 0..1
       // progress). After scrub.fill() we wait for the attribute to

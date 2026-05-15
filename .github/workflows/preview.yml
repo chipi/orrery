@@ -1,7 +1,18 @@
 name: Deploy preview
 
+# Pipeline position: deploy runs ONLY after e2e succeeds on main.
+# Chain: ci.yml ──► e2e.yml ──► preview.yml. Replaces the prior
+# `push: main` trigger so a CI or e2e failure short-circuits the
+# pipeline instead of deploying broken code to GitHub Pages.
+#
+# Manual + weekly cron triggers stay independent of the chain so a
+# Monday rebuild for fresh imagery (ADR-016) still fires even if the
+# repo hasn't been touched in a week.
+
 on:
-  push:
+  workflow_run:
+    workflows: ['e2e']
+    types: [completed]
     branches: [main]
   workflow_dispatch:
   # Weekly rebuild keeps NASA mission imagery + any external assets
@@ -16,8 +27,16 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # workflow_run fires on every completion; only deploy on success.
+    # Manual + cron triggers always proceed.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          # Deploy the exact SHA that passed e2e (not the latest of main,
+          # which may have moved on). For manual + cron triggers, falls
+          # through to the default (latest of main).
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
       - uses: actions/setup-node@v6
         with:
           node-version: 20

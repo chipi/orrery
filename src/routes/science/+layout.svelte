@@ -282,18 +282,18 @@
       order: 3;
       min-width: 0;
     }
-    /* Tab rail → horizontal-scroll chip strip. Each tab is a single
-       row, swipe / drag to access tabs that overflow. */
+    /* Tab rail → wrapped chip strip. All 10 tabs visible at once
+       across 2-3 rows; no horizontal scroll (the previous overflow-x
+       pattern induced an unwanted horizontal scrollbar on the whole
+       page). Chips shrink to fit content so the layout adapts to
+       locale-specific label lengths (DE "Mission Phases" → "Missions-
+       phasen" etc.). */
     .tab-list {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      flex-wrap: wrap;
       gap: 6px;
-      padding-bottom: 4px;
       margin-bottom: 0;
-      scrollbar-width: thin;
-      -webkit-overflow-scrolling: touch;
     }
     .tab-card {
       flex: 0 0 auto;

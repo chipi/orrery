@@ -2,7 +2,7 @@
 
 | Doc | Title | Status | Date |
 |---|---|---|---|
-| TA | Technical Authority | v1.7 | Apr 2026 |
+| TA | Technical Authority | v2.0 | May 2026 |
 | ADR-001 | Three.js r128 as 3D renderer | Accepted | Apr 2026 |
 | ADR-002 | Vanilla JS, no framework | Superseded by ADR-011, ADR-012 | Apr 2026 |
 | ADR-003 | Vite as bundler | Superseded by ADR-012 | Apr 2026 |
@@ -54,9 +54,9 @@
 | ADR-049 | Tiangong module pickability and scene graph | Accepted | May 2026 |
 | ADR-050 | Tiangong Explorer low-end fallback (`?view=list` + heuristics) | Accepted | May 2026 |
 | ADR-051 | Outbound learn-link stewardship | Accepted (closes RFC-015) | May 2026 |
-| _ADR-052_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — fleet schema + cross-reference contract_ | _Pending (v0.6)_ | _—_ |
-| _ADR-053_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — mission badge + crew portrait sourcing_ | _Pending (v0.6)_ | _—_ |
-| _ADR-054_ | _Reserved for RFC-016 / PRD-012 (Spaceflight Fleet) — fleet i18n strategy_ | _Pending (v0.6)_ | _—_ |
+| ADR-052 | Spaceflight Fleet schema + bidirectional cross-reference contract | Accepted (closes RFC-016) | May 2026 |
+| ADR-053 | Fleet imagery: hero, anatomy SVG, mission patch, crew portrait sourcing | Accepted (closes RFC-016) | May 2026 |
+| ADR-054 | Fleet i18n strategy: locale overlay parity at 137 × 14 | Accepted (closes RFC-016) | May 2026 |
 | ADR-055 | Science Lens + multi-layer attribute-on-`<html>` state | Accepted | May 2026 |
 | ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
 | ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Accepted (closes #73 Gap 2) | May 2026 |

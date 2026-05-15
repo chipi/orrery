@@ -15,7 +15,7 @@
     isLocaleUrlCanonical,
   } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import { initAnalytics } from '$lib/analytics';
+  import { initAnalytics, track } from '$lib/analytics';
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
@@ -100,7 +100,54 @@
     // prompt. preventDefault stops the browser from auto-showing.
     const onPromptable = (e: Event) => e.preventDefault();
     window.addEventListener('beforeinstallprompt', onPromptable);
-    return () => window.removeEventListener('beforeinstallprompt', onPromptable);
+
+    // Global click delegation — two events from one listener:
+    //  - `external-link-click` on any anchor whose href points off-host
+    //  - `panel-tab-open` on any [role="tab"][id] button whose id
+    //    follows the `{panelPrefix}-tab-{name}` convention
+    //    (mp-tab-overview, pp-tab-gallery, sp-tab-technical, etc.).
+    // Wired here rather than per-component so adding a new panel type
+    // doesn't require touching this file.
+    const onAnyClick = (e: MouseEvent) => {
+      const el = e.target as HTMLElement | null;
+      if (!el) return;
+
+      // panel-tab-open
+      const tabBtn = el.closest('[role="tab"][id]') as HTMLElement | null;
+      if (tabBtn) {
+        const tabMatch = tabBtn.id.match(/^([a-z0-9]+)-tab-([a-z0-9-]+)$/i);
+        if (tabMatch) {
+          track('panel-tab-open', {
+            panel: tabMatch[1],
+            tab: tabMatch[2],
+            route: window.location.pathname,
+          });
+        }
+      }
+
+      // external-link-click
+      const link = el.closest('a[href]') as HTMLAnchorElement | null;
+      if (!link) return;
+      const href = link.href;
+      if (!href || !/^https?:/i.test(href)) return;
+      try {
+        const u = new URL(href);
+        if (u.hostname === window.location.hostname) return; // same-origin
+        track('external-link-click', {
+          host: u.hostname,
+          href,
+          from: window.location.pathname,
+        });
+      } catch {
+        // Malformed href — ignore.
+      }
+    };
+    document.addEventListener('click', onAnyClick, true);
+
+    return () => {
+      window.removeEventListener('beforeinstallprompt', onPromptable);
+      document.removeEventListener('click', onAnyClick, true);
+    };
   });
 
   async function refreshApp() {

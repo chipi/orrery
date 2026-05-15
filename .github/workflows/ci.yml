@@ -35,6 +35,17 @@ jobs:
       - name: Lint — ESLint
         if: always()
         run: npm run lint:eslint
-      - run: npm run test
+      # `test:coverage` runs the same vitest invocation as `test` with
+      # `--coverage` added, which enforces the thresholds locked in
+      # vite.config.ts (statements ≥ 92, branches ≥ 76, functions ≥ 86,
+      # lines ≥ 94). One step covers both correctness AND coverage
+      # gating; coverage instrumentation adds ~10 % to test wall time
+      # which is negligible at our scale (~1 000 tests in ~1 s).
+      #
+      # Pre-push (`npm run preflight`) intentionally stays on `npm run
+      # test` so local feedback stays fast. Locally, run
+      # `npm run test:coverage` explicitly when you want to verify the
+      # gate before pushing.
+      - run: npm run test:coverage
       - run: npm run validate-data
       - run: npm run build

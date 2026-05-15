@@ -10,7 +10,7 @@
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
-  import { categoriseMoonMarker } from '$lib/moon-marker-category';
+  import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
@@ -272,90 +272,12 @@
       return halo;
     }
 
-    function buildMarkerForCategory(
-      category: ReturnType<typeof categoriseMoonMarker>,
-      color: string,
-    ): THREE.Group {
-      const group = new THREE.Group();
-      const mat = new THREE.MeshPhongMaterial({
-        color,
-        shininess: 30,
-        emissive: color,
-        emissiveIntensity: 0.15,
-      });
-      const baseMat = new THREE.MeshPhongMaterial({ color: 0xeeeeee, shininess: 20 });
-      switch (category) {
-        case 'crewed': {
-          // Tall lunar-module-style cone + small flag pole. Largest of all.
-          const body = new THREE.Mesh(new THREE.ConeGeometry(0.5, 1.4, 6), mat);
-          body.position.y = 0.7;
-          group.add(body);
-          const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 1.0, 4), baseMat);
-          pole.position.set(0.55, 0.5, 0);
-          group.add(pole);
-          const flag = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.25, 0.02), mat);
-          flag.position.set(0.78, 0.9, 0);
-          group.add(flag);
-          break;
-        }
-        case 'rover': {
-          // Squat box-on-wheels — low profile.
-          const body = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.35, 0.5), mat);
-          body.position.y = 0.3;
-          group.add(body);
-          for (const dx of [-0.3, 0.3]) {
-            for (const dz of [-0.2, 0.2]) {
-              const wheel = new THREE.Mesh(
-                new THREE.SphereGeometry(0.12, 6, 6),
-                new THREE.MeshPhongMaterial({ color: 0x222222 }),
-              );
-              wheel.position.set(dx, 0.12, dz);
-              group.add(wheel);
-            }
-          }
-          break;
-        }
-        case 'sample-return': {
-          // Lander base + vertical return-trail spike rising above.
-          const base = new THREE.Mesh(new THREE.OctahedronGeometry(0.45), mat);
-          base.position.y = 0.45;
-          group.add(base);
-          const spike = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.02, 0.08, 1.4, 6),
-            new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.65 }),
-          );
-          spike.position.y = 1.5;
-          group.add(spike);
-          break;
-        }
-        case 'orbiter': {
-          // Hovering torus above the surface — never touched down.
-          const ring = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.1, 6, 16), mat);
-          ring.position.y = 1.5;
-          ring.rotation.x = Math.PI / 2;
-          group.add(ring);
-          // A faint dashed line down to the surface to anchor it visually.
-          const tether = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.02, 0.02, 1.5, 4),
-            new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.25 }),
-          );
-          tether.position.y = 0.75;
-          group.add(tether);
-          break;
-        }
-        default: {
-          // 'lander' — octahedron probe.
-          const body = new THREE.Mesh(new THREE.OctahedronGeometry(0.55), mat);
-          body.position.y = 0.55;
-          group.add(body);
-          const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.6, 4), baseMat);
-          antenna.position.y = 1.2;
-          group.add(antenna);
-          break;
-        }
-      }
-      return group;
-    }
+    // Per-mission surface markers come from `moon-lander-models.ts`,
+    // mirroring the `earth-satellite-models.ts` pattern: each known
+    // mission id gets a recognisable silhouette built from primitives
+    // (Apollo LM descent stage, Lunokhod bathtub-on-wheels, Chang'e
+    // hex bus, SLIM nose-down, Vikram + Pragyan pair, etc.), with
+    // category-based fallbacks for ids without a dedicated builder.
 
     // Orbital ring + dot rendering (lunar orbiters — LRO, Clementine,
     // etc.). Mirrors the /mars pattern from PRD-009 / RFC-012 OQ-7.
@@ -489,8 +411,7 @@
         if (site.lat == null || site.lon == null) continue;
         const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
         const r = moonRadius;
-        const category = categoriseMoonMarker(site.mission_type);
-        const group = buildMarkerForCategory(category, colorFor(site));
+        const group = buildMoonLanderModel(site.id, site.mission_type, colorFor(site));
         // Anchor on the surface; orient the group so +Y points away from
         // Moon centre (radially outward), so cone-style markers stand up.
         group.position.set(x * r, y * r, z * r);

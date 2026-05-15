@@ -3527,8 +3527,13 @@
           | { csIdx: number; dx: number; dz: number }
           | undefined;
         if (prev) {
-          const base = prev.csIdx * 8 * 3;
-          for (let r = 0; r < 8; r++) {
+          // TubeGeometry creates radialSegments+1 vertices per cross-
+          // section (the +1 is the duplicate at theta=0/2π for the UV
+          // seam). With radialSegments=8 that's 9 per ring; mutating
+          // only 8 leaves the seam vertex behind and produces a
+          // visible stretched triangle at the tip.
+          const base = prev.csIdx * 9 * 3;
+          for (let r = 0; r < 9; r++) {
             arr[base + r * 3 + 0] -= prev.dx;
             arr[base + r * 3 + 2] -= prev.dz;
           }
@@ -3561,8 +3566,10 @@
         const dx = spriteX - curveX;
         const dz = spriteZ - curveZ;
 
-        const base = csIdx * 8 * 3;
-        for (let r = 0; r < 8; r++) {
+        // 9 verts per cross-section (radialSegments + 1; see undo loop
+        // above for why).
+        const base = csIdx * 9 * 3;
+        for (let r = 0; r < 9; r++) {
           arr[base + r * 3 + 0] += dx;
           arr[base + r * 3 + 2] += dz;
         }

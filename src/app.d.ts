@@ -10,6 +10,12 @@ declare global {
    * package.json#version. Rendered in the site footer.
    */
   const __APP_VERSION__: string;
+  /**
+   * Build date (ISO 8601, YYYY-MM-DD, UTC) injected at build time by
+   * Vite's `define`. Rendered in the site footer next to the version
+   * so visitors can see when the live deploy was last refreshed.
+   */
+  const __BUILD_DATE__: string;
 }
 
 export {};

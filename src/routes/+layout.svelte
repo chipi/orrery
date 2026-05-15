@@ -187,8 +187,8 @@
         href="https://github.com/chipi/orrery#readme"
         target="_blank"
         rel="noopener noreferrer external"
-        title="Build version (opens project README on GitHub)"
-        hreflang="en">v{__APP_VERSION__}</a
+        title="Build version + deploy date (opens project README on GitHub)"
+        hreflang="en">v{__APP_VERSION__} · {__BUILD_DATE__}</a
       >
     </nav>
   </footer>

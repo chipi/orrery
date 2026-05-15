@@ -19,11 +19,15 @@ const pkg = JSON.parse(
  * by adapter-static; we tell the plugin not to generate one.
  */
 export default defineConfig({
-  // Expose package.json version as a global at build time so the
-  // footer can render `v0.3.0` without runtime fetches or extra JSON.
-  // Replaced literally in the bundle by Vite's `define`.
+  // Expose package.json version + build timestamp as globals at build
+  // time so the footer can render `v0.3.0 · 2026-05-15` without runtime
+  // fetches or extra JSON. Replaced literally in the bundle by Vite's
+  // `define`. `__BUILD_DATE__` uses ISO 8601 date (UTC, YYYY-MM-DD) —
+  // stable across timezones; rebuilt only when the bundle is rebuilt
+  // so it doubles as a "this is the deploy on GH Pages today" signal.
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
+    __BUILD_DATE__: JSON.stringify(new Date().toISOString().slice(0, 10)),
   },
   server: {
     port: 5273,

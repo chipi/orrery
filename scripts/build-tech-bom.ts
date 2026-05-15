@@ -65,6 +65,11 @@ const LICENSE_ALLOWLIST = new Set([
   'CC-BY-4.0',
   // Public domain
   'CC-PDDC',
+  // Weak copyleft — only applies to MPL'd files themselves; safe for
+  // dev-only dependencies (never bundled into the production build).
+  // axe-core / @axe-core/playwright (S7 a11y pilot) ship as MPL-2.0;
+  // they're the industry standard a11y rules engine and used dev-only.
+  'MPL-2.0',
 ]);
 
 // Some legacy npm packages declare licenses as compound expressions or

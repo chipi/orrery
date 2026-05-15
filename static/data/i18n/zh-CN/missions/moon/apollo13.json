@@ -1,0 +1,16 @@
+{
+  "name": "Apollo 13",
+  "type": "CREWED FLYBY · FLOWN (LANDING ABORTED)",
+  "first": "The mission that turned a near-disaster into NASA's most celebrated rescue",
+  "description": "Apollo 13 was meant to be the third crewed lunar landing, targeted at the Fra Mauro highlands. At 55 hours 54 minutes into the flight an oxygen tank in the Service Module ruptured, crippling the Command-Service Module's electrical and life-support systems. With landing scrubbed, the crew — James Lovell, Jack Swigert, and Fred Haise — powered down the CSM, moved into the Lunar Module Aquarius as a lifeboat, and used the LM's descent engine for a Pericynthion+2-hour burn that placed them on a fast free-return trajectory. They swung past the Moon at 254 km altitude on 1970-04-15 and splashed down safely in the South Pacific on 1970-04-17. The mission is studied today as a model of disciplined real-time engineering improvisation.",
+  "events": [
+    { "met": 0, "label": "SATURN V LAUNCH", "note": "Liftoff from KSC LC-39A. Center engine of S-II second stage shut down two minutes early — outer engines compensated.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Trans-lunar injection burn by S-IVB; CSM + LM commit to cislunar trajectory.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "Mid-course correction shifts the spacecraft off the free-return trajectory onto a Fra Mauro approach.", "type": "nominal" },
+    { "met": 2.33, "label": "OXYGEN TANK #2 RUPTURE", "note": "SM cryo-stir command initiates a short-circuit fire and tank rupture. \"Houston, we've had a problem.\" Power and water dwindle; LM Aquarius becomes the lifeboat.", "type": "warning" },
+    { "met": 2.92, "label": "FREE-RETURN BURN", "note": "31-second LM descent-engine burn returns the spacecraft to a free-return trajectory.", "type": "info" },
+    { "met": 3.13, "label": "LUNAR FLYBY", "note": "Closest approach 254 km altitude over Mare Cognitum — the farthest a crewed spacecraft has ever travelled from Earth.", "type": "info" },
+    { "met": 3.96, "label": "PC+2 BURN", "note": "Pericynthion-plus-2-hour burn shortens the return-to-Earth time by ten hours.", "type": "nominal" },
+    { "met": 5.95, "label": "SPLASHDOWN", "note": "CSM re-entry and South Pacific splashdown, recovered by USS Iwo Jima.", "type": "info" }
+  ]
+}

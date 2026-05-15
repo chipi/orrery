@@ -1,0 +1,16 @@
+{
+  "name": "Apollon 13",
+  "type": "SURVOL AVEC ÉQUIPAGE · VOLÉ (ATTERRISSAGE INTERROMPU)",
+  "first": "La mission qui a transformé un quasi-désastre en sauvetage emblématique de la NASA",
+  "description": "Apollo 13 devait être le troisième atterrissage lunaire habité, ciblant les hauts plateaux de Fra Mauro. À 55 heures et 54 minutes de vol, un réservoir d'oxygène du Module de Service a explosé, paralysant les systèmes électriques et de support-vie du CSM. L'atterrissage annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a éteint le CSM, s'est replié dans le Module Lunaire Aquarius en canot de sauvetage, et a utilisé le moteur de descente du LM pour une mise à feu Péricinthion+2 heures, plaçant la nef sur une trajectoire de retour libre rapide. Ils ont survolé la Lune à 254 km d'altitude le 15/04/1970 et amerri sans dommage dans le Pacifique Sud le 17/04/1970. La mission est étudiée aujourd'hui comme modèle d'improvisation d'ingénierie disciplinée en temps réel.",
+  "events": [
+    { "met": 0, "label": "LANCEMENT SATURNE V", "note": "Décollage depuis KSC LC-39A. Le moteur central du deuxième étage S-II s'est arrêté deux minutes plus tôt — les moteurs extérieurs ont compensé.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Mise à feu d'injection trans-lunaire par la S-IVB ; CSM + LM s'engagent sur la trajectoire cislunaire.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "La correction à mi-course écarte la nef de la trajectoire de retour libre vers une approche de Fra Mauro.", "type": "nominal" },
+    { "met": 2.33, "label": "RUPTURE DU RÉSERVOIR D'OXYGÈNE #2", "note": "Une commande d'agitation cryogénique sur le SM provoque un court-circuit et la rupture du réservoir. « Houston, nous avons eu un problème. » L'énergie et l'eau s'amenuisent ; le LM Aquarius devient le canot de sauvetage.", "type": "warning" },
+    { "met": 2.92, "label": "MISE À FEU DE RETOUR LIBRE", "note": "Combustion de 31 secondes du moteur de descente du LM qui remet la nef sur une trajectoire de retour libre.", "type": "info" },
+    { "met": 3.13, "label": "SURVOL LUNAIRE", "note": "Plus grande proximité à 254 km d'altitude au-dessus de Mare Cognitum — la plus grande distance à laquelle une nef habitée ait jamais voyagé depuis la Terre.", "type": "info" },
+    { "met": 3.96, "label": "MISE À FEU PC+2", "note": "Combustion Péricinthion-plus-2-heures qui raccourcit le temps de retour à la Terre de dix heures.", "type": "nominal" },
+    { "met": 5.95, "label": "AMERRISSAGE", "note": "Rentrée du CSM et amerrissage dans le Pacifique Sud, récupération par l'USS Iwo Jima.", "type": "info" }
+  ]
+}

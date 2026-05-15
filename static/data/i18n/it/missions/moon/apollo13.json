@@ -1,0 +1,16 @@
+{
+  "name": "Apollo 13",
+  "type": "SORVOLO CON EQUIPAGGIO · VOLATO (ATTERRAGGIO ABORTITO)",
+  "first": "La missione che trasformò un quasi-disastro nel più celebre salvataggio della NASA",
+  "description": "Apollo 13 doveva essere il terzo allunaggio con equipaggio, diretto agli altopiani di Fra Mauro. A 55 ore e 54 minuti dal volo un serbatoio di ossigeno del Modulo di Servizio si ruppe, paralizzando i sistemi elettrici e di supporto vitale del CSM. Cancellato l'allunaggio, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius come scialuppa di salvataggio, e usò il motore di discesa del LM per un'accensione Pericinzio+2-ore che li mise su una traiettoria di ritorno libero veloce. Passarono accanto alla Luna a 254 km di quota il 15/04/1970 e ammararono in sicurezza nel Pacifico meridionale il 17/04/1970. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
+  "events": [
+    { "met": 0, "label": "LANCIO SATURN V", "note": "Decollo dal KSC LC-39A. Il motore centrale del secondo stadio S-II si spense due minuti in anticipo — i motori esterni compensarono.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Accensione di iniezione translunare dello S-IVB; CSM + LM si impegnano sulla traiettoria cislunare.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "La correzione di metà rotta sposta la sonda dalla traiettoria di ritorno libero verso un avvicinamento a Fra Mauro.", "type": "nominal" },
+    { "met": 2.33, "label": "ROTTURA SERBATOIO OSSIGENO #2", "note": "Un comando di agitazione criogenica nel SM provoca un cortocircuito e la rottura del serbatoio. «Houston, abbiamo avuto un problema.» Energia e acqua diminuiscono; il LM Aquarius diventa la scialuppa di salvataggio.", "type": "warning" },
+    { "met": 2.92, "label": "ACCENSIONE DI RITORNO LIBERO", "note": "Accensione di 31 secondi del motore di discesa del LM che riporta la sonda su una traiettoria di ritorno libero.", "type": "info" },
+    { "met": 3.13, "label": "SORVOLO LUNARE", "note": "Massimo avvicinamento a 254 km di quota sul Mare Cognitum — la maggiore distanza dalla Terra mai raggiunta da una sonda con equipaggio.", "type": "info" },
+    { "met": 3.96, "label": "ACCENSIONE PC+2", "note": "Accensione Pericinzio-più-2-ore che accorcia di dieci ore il tempo di ritorno sulla Terra.", "type": "nominal" },
+    { "met": 5.95, "label": "AMMARAGGIO", "note": "Rientro del CSM e ammaraggio nel Pacifico meridionale, recuperati dalla USS Iwo Jima.", "type": "info" }
+  ]
+}

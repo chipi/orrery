@@ -1,0 +1,16 @@
+{
+  "name": "Apollo 13",
+  "type": "SOBREVUELO TRIPULADO · VOLADA (ATERRIZAJE ABORTADO)",
+  "first": "La misión que convirtió un casi-desastre en el rescate más célebre de la NASA",
+  "description": "Apollo 13 debía ser el tercer alunizaje tripulado, con objetivo en las tierras altas de Fra Mauro. A las 55 horas y 54 minutos de vuelo, un tanque de oxígeno del Módulo de Servicio se rompió, dañando los sistemas eléctricos y de soporte vital del CSM. Cancelado el alunizaje, la tripulación — James Lovell, Jack Swigert y Fred Haise — apagó el CSM, se trasladó al Módulo Lunar Aquarius como bote salvavidas, y empleó el motor de descenso del LM en una combustión Pericintio+2 horas que los situó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amerizaron sin novedad en el Pacífico Sur el 1970-04-17. Hoy se estudia como modelo de improvisación de ingeniería disciplinada en tiempo real.",
+  "events": [
+    { "met": 0, "label": "LANZAMIENTO SATURN V", "note": "Despegue desde KSC LC-39A. El motor central de la segunda etapa S-II se apagó dos minutos antes — los motores externos compensaron.", "type": "nominal" },
+    { "met": 0.117, "label": "ITL", "note": "Encendido de inyección translunar por la S-IVB; CSM + LM se comprometen con la trayectoria cislunar.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "La corrección de mitad de curso desplaza la nave de la trayectoria de retorno libre hacia una aproximación a Fra Mauro.", "type": "nominal" },
+    { "met": 2.33, "label": "RUPTURA DEL TANQUE DE OXÍGENO #2", "note": "Una orden de agitación criogénica en el SM inicia un cortocircuito y la rotura del tanque. «Houston, hemos tenido un problema.» La energía y el agua menguan; el LM Aquarius pasa a ser el bote salvavidas.", "type": "warning" },
+    { "met": 2.92, "label": "ENCENDIDO DE RETORNO LIBRE", "note": "Combustión de 31 segundos del motor de descenso del LM que devuelve a la nave a una trayectoria de retorno libre.", "type": "info" },
+    { "met": 3.13, "label": "SOBREVUELO LUNAR", "note": "Aproximación máxima a 254 km de altitud sobre Mare Cognitum — la mayor distancia a la que una nave tripulada ha viajado desde la Tierra.", "type": "info" },
+    { "met": 3.96, "label": "ENCENDIDO PC+2", "note": "Combustión Pericintio-más-2-horas que reduce el tiempo de retorno a la Tierra en diez horas.", "type": "nominal" },
+    { "met": 5.95, "label": "AMERIZAJE", "note": "Reentrada del CSM y amerizaje en el Pacífico Sur, recogidos por el USS Iwo Jima.", "type": "info" }
+  ]
+}

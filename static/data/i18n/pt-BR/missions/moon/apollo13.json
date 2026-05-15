@@ -1,0 +1,16 @@
+{
+  "name": "Apolo 13",
+  "type": "SOBREVOO TRIPULADO · VOADO (POUSO ABORTADO)",
+  "first": "A missão que transformou um quase-desastre no resgate mais célebre da NASA",
+  "description": "Apolo 13 deveria ser o terceiro pouso lunar tripulado, com alvo nas terras altas de Fra Mauro. A 55 horas e 54 minutos de voo, um tanque de oxigênio do Módulo de Serviço rompeu, paralisando os sistemas elétricos e de suporte à vida do CSM. Cancelado o pouso, a tripulação — James Lovell, Jack Swigert e Fred Haise — desligou o CSM, mudou-se para o Módulo Lunar Aquarius como bote salva-vidas, e usou o motor de descida do LM para uma queima Pericíntio+2-horas que os colocou em uma trajetória de retorno livre rápida. Passaram pela Lua a 254 km de altitude em 15/04/1970 e amerissaram com segurança no Pacífico Sul em 17/04/1970. A missão é estudada hoje como modelo de improvisação de engenharia disciplinada em tempo real.",
+  "events": [
+    { "met": 0, "label": "LANÇAMENTO SATURNO V", "note": "Decolagem do KSC LC-39A. O motor central do segundo estágio S-II desligou dois minutos mais cedo — os motores externos compensaram.", "type": "nominal" },
+    { "met": 0.117, "label": "TLI", "note": "Queima de injeção translunar pelo S-IVB; CSM + LM se comprometem com a trajetória cislunar.", "type": "nominal" },
+    { "met": 1.2, "label": "MCC-2", "note": "A correção de meio de curso desloca a espaçonave da trajetória de retorno livre para uma aproximação a Fra Mauro.", "type": "nominal" },
+    { "met": 2.33, "label": "RUPTURA DO TANQUE DE OXIGÊNIO #2", "note": "Um comando de agitação criogênica no SM provoca curto-circuito e ruptura do tanque. \"Houston, tivemos um problema.\" Energia e água diminuem; o LM Aquarius torna-se o bote salva-vidas.", "type": "warning" },
+    { "met": 2.92, "label": "QUEIMA DE RETORNO LIVRE", "note": "Queima de 31 segundos do motor de descida do LM devolve a espaçonave a uma trajetória de retorno livre.", "type": "info" },
+    { "met": 3.13, "label": "SOBREVOO LUNAR", "note": "Aproximação máxima a 254 km de altitude sobre Mare Cognitum — a maior distância da Terra já percorrida por uma espaçonave tripulada.", "type": "info" },
+    { "met": 3.96, "label": "QUEIMA PC+2", "note": "Queima Pericíntio-mais-2-horas encurta o tempo de retorno à Terra em dez horas.", "type": "nominal" },
+    { "met": 5.95, "label": "AMERISSAGEM", "note": "Reentrada do CSM e amerrissagem no Pacífico Sul, recolhidos pelo USS Iwo Jima.", "type": "info" }
+  ]
+}

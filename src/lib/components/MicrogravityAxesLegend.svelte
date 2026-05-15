@@ -156,12 +156,17 @@
     color: rgba(255, 200, 80, 0.85);
   }
 
-  /* Mobile: drawer becomes a bottom sheet, so left:324px no longer
-     applies. Anchor to the bottom-left corner, lifted above the
-     bottom sheet's typical pinned-edge height. */
+  /* Mobile: the unified Science Lens panel anchors at bottom:84 px with
+     max-height: 50 vh, and the StationOrbitBanner sits top-center. The
+     legend's old bottom:84 px position collided with the lens panel.
+     Move the legend to just below the StationOrbitBanner instead —
+     `--lens-banner-height` (published by the banner via ResizeObserver)
+     gives us the exact offset so this stays correct as the banner
+     expands or collapses. */
   @media (max-width: 600px) {
     .legend {
-      bottom: 84px;
+      bottom: auto;
+      top: calc(var(--nav-height) + 12px + var(--lens-banner-height, 0px) + 8px);
       left: 8px;
     }
   }

@@ -2651,30 +2651,60 @@
 
     const el3d = renderer.domElement;
     let isDrag = false;
+    let dragMode: 'orbit' | 'pan' = 'orbit';
     let lmx = 0;
     let lmy = 0;
+    // Pan the active camera's target by the screen-space delta. Uses
+    // the camera's basis so the pan direction stays correct under any
+    // orbit angle. Scale = world-units-per-screen-pixel at the current
+    // distance + FOV so 1 px of drag moves ~1 px of world.
+    const panActiveCamera = (dx: number, dy: number): void => {
+      const cam = viewMode === 'cislunar' ? cislunarCamera : camera;
+      const tgt = viewMode === 'cislunar' ? cislunarCamTarget : camTarget;
+      const r = viewMode === 'cislunar' ? cislunarCamR : camR;
+      const right = new THREE.Vector3();
+      const upVec = new THREE.Vector3();
+      const fwd = new THREE.Vector3();
+      cam.matrixWorld.extractBasis(right, upVec, fwd);
+      const fovRad = (cam.fov * Math.PI) / 180;
+      const viewHeight = 2 * r * Math.tan(fovRad / 2);
+      const scale = viewHeight / Math.max(1, window.innerHeight);
+      tgt.addScaledVector(right, -dx * scale);
+      tgt.addScaledVector(upVec, dy * scale);
+      if (viewMode === 'cislunar') {
+        autoZoomActive = false;
+        updateCislunarCam();
+      } else {
+        helioAutoZoomActive = false;
+        updateCam();
+      }
+    };
     const onMouseDown = (e: MouseEvent) => {
       isDrag = true;
+      // Right-button (2), middle-button (1), or Shift+left-button → pan.
+      // Plain left-button → orbit (existing behaviour).
+      dragMode = e.button === 2 || e.button === 1 || e.shiftKey ? 'pan' : 'orbit';
       lmx = e.clientX;
       lmy = e.clientY;
-      el3d.style.cursor = 'grabbing';
+      el3d.style.cursor = dragMode === 'pan' ? 'move' : 'grabbing';
     };
     const onMouseMove = (e: MouseEvent) => {
       if (!isDrag) return;
+      const dx = e.clientX - lmx;
+      const dy = e.clientY - lmy;
+      lmx = e.clientX;
+      lmy = e.clientY;
+      if (dragMode === 'pan') {
+        panActiveCamera(dx, dy);
+        return;
+      }
       if (viewMode === 'cislunar') {
-        cislunarCamT -= (e.clientX - lmx) * 0.005;
-        cislunarCamP = Math.max(
-          0.08,
-          Math.min(Math.PI * 0.48, cislunarCamP + (e.clientY - lmy) * 0.005),
-        );
-        lmx = e.clientX;
-        lmy = e.clientY;
+        cislunarCamT -= dx * 0.005;
+        cislunarCamP = Math.max(0.08, Math.min(Math.PI * 0.48, cislunarCamP + dy * 0.005));
         updateCislunarCam();
       } else {
-        camT -= (e.clientX - lmx) * 0.005;
-        camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + (e.clientY - lmy) * 0.005));
-        lmx = e.clientX;
-        lmy = e.clientY;
+        camT -= dx * 0.005;
+        camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
         updateCam();
       }
     };
@@ -2682,6 +2712,9 @@
       isDrag = false;
       el3d.style.cursor = 'grab';
     };
+    // Suppress browser right-click context menu so right-drag pan
+    // doesn't pop a menu after each pan stroke.
+    const onContextMenu = (e: MouseEvent) => e.preventDefault();
     const onWheel = (e: WheelEvent) => {
       if (viewMode === 'cislunar') {
         const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
@@ -2699,10 +2732,14 @@
         updateCam();
       }
     };
-    // Touch — single-finger orbit + two-finger pinch-zoom per
-    // CLAUDE.md mobile rules. Same pattern as /explore.
+    // Touch — single-finger orbit + two-finger pinch-zoom AND
+    // two-finger drag pan per CLAUDE.md mobile rules. The pinch and
+    // pan happen simultaneously: pinch ratio drives zoom, midpoint
+    // drift drives pan.
     let touchActive = false;
     let pinchPrev = 0;
+    let pinchMidX = 0;
+    let pinchMidZ = 0;
     const touchDist = (a: Touch, b: Touch) =>
       Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
     const onTouchStart = (e: TouchEvent) => {
@@ -2713,15 +2750,39 @@
       } else if (e.touches.length === 2) {
         touchActive = false;
         pinchPrev = touchDist(e.touches[0], e.touches[1]);
+        pinchMidX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        pinchMidZ = (e.touches[0].clientY + e.touches[1].clientY) / 2;
       }
     };
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchPrev > 0) {
         const dist = touchDist(e.touches[0], e.touches[1]);
+        const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+        const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+        // Pinch → zoom (active camera).
         const ratio = pinchPrev / dist;
-        camR = Math.max(80, Math.min(4000, camR * ratio));
-        updateCam();
+        if (viewMode === 'cislunar') {
+          const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
+          const maxR = A_MOON_KM * SCALE_CISLUNAR * 6;
+          cislunarCamR = Math.max(minR, Math.min(maxR, cislunarCamR * ratio));
+          autoZoomActive = false;
+        } else {
+          camR = Math.max(80, Math.min(4000, camR * ratio));
+          helioAutoZoomActive = false;
+        }
+        // Midpoint drift → pan.
+        const dx = midX - pinchMidX;
+        const dy = midY - pinchMidZ;
+        if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
+          panActiveCamera(dx, dy);
+        } else if (viewMode === 'cislunar') {
+          updateCislunarCam();
+        } else {
+          updateCam();
+        }
         pinchPrev = dist;
+        pinchMidX = midX;
+        pinchMidZ = midY;
         return;
       }
       if (!touchActive || e.touches.length !== 1) return;
@@ -2738,6 +2799,7 @@
 
     el3d.style.cursor = 'grab';
     el3d.addEventListener('mousedown', onMouseDown);
+    el3d.addEventListener('contextmenu', onContextMenu);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
     el3d.addEventListener('wheel', onWheel, { passive: true });
@@ -3859,6 +3921,7 @@
       stopApsidesLayer?.();
       stopApsidesLayerCislunar?.();
       el3d.removeEventListener('mousedown', onMouseDown);
+      el3d.removeEventListener('contextmenu', onContextMenu);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
       el3d.removeEventListener('wheel', onWheel);

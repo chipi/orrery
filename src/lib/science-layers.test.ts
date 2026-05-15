@@ -9,7 +9,7 @@
  *   - ensureLayerDefaults is idempotent + only fills missing keys
  *   - onLayerChange fires on initial subscribe and on layer / lens flips
  */
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
   type LayerKey,
   LAYER_ORDER,
@@ -109,5 +109,35 @@ describe('science-layers — onLayerChange subscription', () => {
     setLayer('soi', true);
     await Promise.resolve();
     expect(calls.length).toBe(afterStop); // no callbacks after unsubscribe
+  });
+});
+
+describe('science-layers — SSR guards (no document)', () => {
+  let savedDoc: Document | undefined;
+
+  beforeEach(() => {
+    savedDoc = globalThis.document;
+    // @ts-expect-error — deliberate hole for the SSR-path test
+    delete globalThis.document;
+  });
+
+  afterEach(() => {
+    globalThis.document = savedDoc as Document;
+  });
+
+  it('isLayerOn returns false when document is unavailable', () => {
+    expect(isLayerOn('gravity')).toBe(false);
+  });
+
+  it('setLayer is a no-op when document is unavailable (does not throw)', () => {
+    expect(() => setLayer('soi', true)).not.toThrow();
+  });
+
+  it('ensureLayerDefaults is a no-op when document is unavailable', () => {
+    expect(() => ensureLayerDefaults()).not.toThrow();
+  });
+
+  it('onLayerChange returns undefined when document is unavailable', () => {
+    expect(onLayerChange('gravity', () => {})).toBeUndefined();
   });
 });

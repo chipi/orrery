@@ -20,7 +20,14 @@ import {
   writeLocaleCookie,
   clearLocaleCookie,
   syncDocumentLocaleAttributes,
+  localeFromPage,
 } from './locale';
+import type { Page } from '@sveltejs/kit';
+
+// Minimal Page stub for localeFromPage tests — only `url` is read.
+function makePage(href: string): Page {
+  return { url: new URL(href) } as unknown as Page;
+}
 
 describe('SUPPORTED_LOCALES', () => {
   it('includes all configured rollout locales', () => {
@@ -282,6 +289,32 @@ describe('syncDocumentLocaleAttributes', () => {
     expect(document.documentElement.getAttribute('dir')).toBe('ltr');
     syncDocumentLocaleAttributes('en-US');
     expect(document.documentElement.getAttribute('dir')).toBe('ltr');
+  });
+});
+
+describe('localeFromPage (G6)', () => {
+  beforeEach(() => {
+    document.cookie = `${LOCALE_COOKIE_NAME}=; Max-Age=0; Path=/`;
+  });
+
+  it('uses ?lang= param when present + supported', () => {
+    expect(localeFromPage(makePage('https://orrery.local/explore?lang=fr'))).toBe('fr');
+  });
+
+  it('falls back to navigator.language when ?lang= is absent', () => {
+    Object.defineProperty(navigator, 'language', { value: 'de-DE', configurable: true });
+    expect(localeFromPage(makePage('https://orrery.local/explore'))).toBe('de');
+  });
+
+  it('prefers the orrery_locale cookie over navigator.language when ?lang= is absent', () => {
+    Object.defineProperty(navigator, 'language', { value: 'de-DE', configurable: true });
+    writeLocaleCookie('ja');
+    expect(localeFromPage(makePage('https://orrery.local/explore'))).toBe('ja');
+  });
+
+  it('falls back to DEFAULT_LOCALE when nothing is set', () => {
+    Object.defineProperty(navigator, 'language', { value: 'xx-NONE', configurable: true });
+    expect(localeFromPage(makePage('https://orrery.local/explore'))).toBe(DEFAULT_LOCALE);
   });
 });
 

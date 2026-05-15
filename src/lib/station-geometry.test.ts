@@ -212,6 +212,29 @@ describe('makeTwoSectionModule', () => {
     expect(yModule.rotation.z).toBe(0);
   });
 
+  it('accepts a non-MeshStandardMaterial hull mat (no clone path)', () => {
+    // G8: covers the `instanceof THREE.MeshStandardMaterial` else-branch
+    // where the hull material is reused as-is rather than cloned.
+    const phongMat = new THREE.MeshPhongMaterial({ color: 0xffffff });
+    const g = makeTwoSectionModule({
+      id: 'phong-hull',
+      position: new THREE.Vector3(0, 0, 0),
+      axis: 'y',
+      sections: [
+        { len: 1, r: 0.1 },
+        { len: 1, r: 0.1 },
+      ],
+      hullMat: phongMat,
+      mliMat,
+    });
+    expect(g).toBeInstanceOf(THREE.Group);
+    // The hull meshes reuse `phongMat` directly (no clone branch).
+    const hullMeshes = g.children
+      .filter((c): c is THREE.Mesh => c instanceof THREE.Mesh)
+      .map((m) => m.material);
+    expect(hullMeshes).toContain(phongMat);
+  });
+
   it('clones the hull material per section (so per-section tinting is non-destructive)', () => {
     const sharedMat = new THREE.MeshStandardMaterial({ color: 0xff0000 });
     const g = makeTwoSectionModule({
@@ -342,6 +365,30 @@ describe('makeRadialDockingPort', () => {
     const params = (port.geometry as THREE.CylinderGeometry).parameters;
     expect(params.radiusTop).toBeCloseTo(0.15);
     expect(params.height).toBeCloseTo(0.2);
+  });
+
+  // G8 gap-closure: exercise the remaining direction branches (port + starboard)
+  // and verify the axis-alignment quaternion for both.
+  it('offsets toward -Z for direction=port', () => {
+    const p = makeRadialDockingPort({
+      hostPosition: new THREE.Vector3(0, 0, 0),
+      hostId: 'h',
+      direction: 'port',
+      hostRadius: 0.5,
+      mat,
+    });
+    expect(p.position.z).toBeLessThan(0);
+  });
+
+  it('offsets toward +Z for direction=starboard', () => {
+    const p = makeRadialDockingPort({
+      hostPosition: new THREE.Vector3(0, 0, 0),
+      hostId: 'h',
+      direction: 'starboard',
+      hostRadius: 0.5,
+      mat,
+    });
+    expect(p.position.z).toBeGreaterThan(0);
   });
 });
 

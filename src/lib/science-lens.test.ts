@@ -5,7 +5,7 @@
  * Verifies the SSR-safe getters/setters and MutationObserver-driven
  * subscription pattern. ADR pending — see task #94.
  */
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { isScienceLensOn, toggleScienceLens, onScienceLensChange } from './science-lens';
 
 beforeEach(() => {
@@ -49,5 +49,34 @@ describe('science-lens', () => {
     toggleScienceLens();
     await Promise.resolve();
     expect(calls).toEqual([false, true, false]);
+  });
+});
+
+describe('science-lens — SSR guards (no document)', () => {
+  // Each test temporarily deletes globalThis.document so the helpers
+  // hit the `typeof document === 'undefined'` short-circuit, mirroring
+  // SvelteKit's static-prerender environment.
+  let savedDoc: Document | undefined;
+
+  beforeEach(() => {
+    savedDoc = globalThis.document;
+    // @ts-expect-error — deliberate hole for the SSR-path test
+    delete globalThis.document;
+  });
+
+  afterEach(() => {
+    globalThis.document = savedDoc as Document;
+  });
+
+  it('isScienceLensOn returns false when document is unavailable', () => {
+    expect(isScienceLensOn()).toBe(false);
+  });
+
+  it('toggleScienceLens returns false when document is unavailable', () => {
+    expect(toggleScienceLens()).toBe(false);
+  });
+
+  it('onScienceLensChange returns undefined when document is unavailable', () => {
+    expect(onScienceLensChange(() => {})).toBeUndefined();
   });
 });

@@ -68,6 +68,7 @@
   import ConicSectionPanel from '$lib/components/ConicSectionPanel.svelte';
   import { isLayerOn, onLayerChange } from '$lib/science-layers';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
+  import { track } from '$lib/analytics';
 
   // Polyline curve: getPoint(t) returns piecewise-linear interp
   // between control points — exactly mirrors lerpPoint(out, t)
@@ -841,6 +842,15 @@
   let currentLoadId = 0;
 
   function applyMissionAsLoaded(m: Mission) {
+    // Umami custom event: which missions actually get flown. Fires
+    // once per load (mission swap or initial load). Anonymous,
+    // production-host only (see src/lib/analytics.ts).
+    track('mission-load', {
+      id: m.id,
+      dest: m.dest,
+      status: m.status ?? 'unknown',
+      view: m.dest === 'MOON' ? 'cislunar' : 'heliocentric',
+    });
     // Per-mission arc geometry: parse the mission's actual departure
     // date into a sim-day count so Earth's heliocentric phase at
     // launch matches reality. transit_days drives arr_day. For

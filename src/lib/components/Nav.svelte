@@ -5,6 +5,7 @@
   import * as m from '$lib/paraglide/messages';
   import { onHighContrastChange, toggleHighContrast } from '$lib/high-contrast';
   import { onScienceLensChange, toggleScienceLens } from '$lib/science-lens';
+  import { track } from '$lib/analytics';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
   import type { Snippet } from 'svelte';
@@ -71,6 +72,10 @@
 
   function onToggleLens() {
     toggleScienceLens();
+    // Umami custom event: did the user discover the Science Lens?
+    // `scienceLens` here is the BEFORE state (the subscription
+    // hasn't fired yet), so we invert to report the new state.
+    track('lens-toggle', { on: !scienceLens, route: $page.url.pathname });
   }
 
   // ─── Mobile nav drawer ─────────────────────────────────────────

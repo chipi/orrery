@@ -38,6 +38,10 @@ import {
   getFleetByCategory,
   getFleetGallery,
   getImageProvenanceManifest,
+  getImageProvenance,
+  getSourceLogos,
+  getTextSources,
+  getScienceLanding,
   getScienceSection,
   getScienceTab,
   getScienceTabIntro,
@@ -788,6 +792,69 @@ describe('Image provenance manifest (ADR-047)', () => {
       expect(e).toHaveProperty('agency');
       expect(e).toHaveProperty('author');
     }
+  });
+});
+
+describe('getImageProvenance (per-image lookup)', () => {
+  it('returns a provenance entry for a path that exists in the manifest', async () => {
+    const m = await getImageProvenanceManifest();
+    if (!m || m.entries.length === 0) throw new Error('manifest empty');
+    const knownPath = m.entries[0].path;
+    const entry = await getImageProvenance(knownPath);
+    expect(entry).not.toBeNull();
+    expect(entry!.path).toBe(knownPath);
+  });
+
+  it('returns null for a path not in the manifest', async () => {
+    const entry = await getImageProvenance('/images/missions/ghost-mission/01.jpg');
+    expect(entry).toBeNull();
+  });
+
+  it('handles paths with query strings + hash fragments (strips them)', async () => {
+    const m = await getImageProvenanceManifest();
+    if (!m || m.entries.length === 0) throw new Error('manifest empty');
+    const knownPath = m.entries[0].path;
+    const entry = await getImageProvenance(`${knownPath}?v=2#foo`);
+    expect(entry).not.toBeNull();
+    expect(entry!.path).toBe(knownPath);
+  });
+});
+
+describe('Source-logos + text-sources manifests (ADR-046 Milestone D)', () => {
+  it('getSourceLogos returns >=20 entries', async () => {
+    const m = await getSourceLogos();
+    expect(m).not.toBeNull();
+    expect(m.sources.length).toBeGreaterThanOrEqual(20);
+  });
+
+  it('every source has id + name + license_summary', async () => {
+    const m = await getSourceLogos();
+    for (const s of m.sources) {
+      expect(s.id).toBeTruthy();
+      expect(s.name).toBeTruthy();
+      expect(s.license_summary).toBeTruthy();
+    }
+  });
+
+  it('getTextSources returns the editorial bill of materials', async () => {
+    const m = await getTextSources();
+    expect(m).not.toBeNull();
+    expect(Array.isArray(m.entries)).toBe(true);
+  });
+});
+
+describe('getScienceLanding (editorial Space-101 landing)', () => {
+  it('returns the en-US landing record', async () => {
+    const landing = await getScienceLanding();
+    expect(landing).not.toBeNull();
+    expect(landing!.intro_heading).toBeTruthy();
+  });
+
+  it('falls back to en-US when a non-existent locale is requested', async () => {
+    const landing = await getScienceLanding('xx-TEST');
+    // en-US fallback path keeps the route renderable in an unknown locale.
+    expect(landing).not.toBeNull();
+    expect(landing!.intro_heading).toBeTruthy();
   });
 });
 

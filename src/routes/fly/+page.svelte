@@ -297,14 +297,23 @@
   let showLayersPanel = $state(true);
   let showConicPanel = $state(true);
   let lensOnState = $state(isScienceLensOn());
+  let conicsLayerOnState = $state(isLayerOn('conics'));
   $effect(() => {
-    // svelte-check flow-analysis misses the template read at the
-    // `{#if lensOnState}` site below; nudge it with an explicit read.
+    // svelte-check flow-analysis misses the template reads at the
+    // `{#if lensOnState}` / CON-button gate sites; nudge it with
+    // explicit reads.
     void lensOnState;
-    const stop = onScienceLensChange((on) => {
+    void conicsLayerOnState;
+    const stopLens = onScienceLensChange((on) => {
       lensOnState = on;
     });
-    return () => stop?.();
+    const stopConics = onLayerChange('conics', (on) => {
+      conicsLayerOnState = on;
+    });
+    return () => {
+      stopLens?.();
+      stopConics?.();
+    };
   });
   // Cislunar view mode (ADR-058). Derived from mission destination —
   // Moon missions render in the Earth-centred cislunar scene, all
@@ -4072,15 +4081,17 @@
       >
         LYR
       </button>
-      <button
-        type="button"
-        class="toggle toggle-lens"
-        aria-pressed={showConicPanel}
-        title="Toggle Conic Section side panel (requires the conics layer to be on)"
-        onclick={() => (showConicPanel = !showConicPanel)}
-      >
-        CON
-      </button>
+      {#if conicsLayerOnState}
+        <button
+          type="button"
+          class="toggle toggle-lens"
+          aria-pressed={showConicPanel}
+          title="Toggle Conic Section side panel"
+          onclick={() => (showConicPanel = !showConicPanel)}
+        >
+          CON
+        </button>
+      {/if}
     </div>
   {/if}
 

@@ -7,8 +7,10 @@ alwaysApply: true
 
 The canonical agent-instruction file for this repo is **[AGENTS.md](../../AGENTS.md)** at the repo root. It's tool-agnostic and applies to Cursor, Claude Code, and any other coding agent equally — read it before touching any file.
 
+For any task that crosses one file, also read **[`docs/adr/TA.md`](../../docs/adr/TA.md)** — the single-page architecture map (v2.0, current as of v0.6.0). It documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it.
+
 This rule exists so Cursor surfaces the universal contract automatically. There are no Cursor-specific deviations from AGENTS.md; if you need to add one in the future, put it below this line so the single source of truth in AGENTS.md stays clean.
 
 ---
 
-*Cursor rule · Orrery · May 2026 — thin pointer to AGENTS.md*
+*Cursor rule · Orrery · May 2026 — thin pointer to AGENTS.md + TA.md*

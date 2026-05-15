@@ -1063,6 +1063,7 @@
     arcTimeline = newTimeline;
     isFreeReturn = isFlyby;
     activeDestination = dest;
+    applyDestinationVisualsRef?.(activeDestination);
     isMoonMission = false;
     const arcs = buildArcs(newTimeline, isFlyby, dest);
     outPts = arcs.out;
@@ -2008,7 +2009,10 @@
       // whose gravity well actually matters for this flight.
       soiLayerOn = on;
       earthSoI.visible = on;
-      marsSoI.visible = on && !isMoonMission;
+      // marsSoI ring is sized for Mars's SoI radius — gate on the
+      // active destination so it doesn't visually pretend to surround
+      // Jupiter / Neptune / Pluto / Ceres at the wrong scale.
+      marsSoI.visible = on && !isMoonMission && activeDestination === 'mars';
       moonSoI.visible = on && isMoonMission;
     });
     const stopGravityLayer = onLayerChange('gravity', (on) => {
@@ -3305,7 +3309,9 @@
       // Keep Mars / Moon SoI visibility in sync with isMoonMission on
       // every mission swap (cheap; just two boolean assignments). The
       // layer-on flag itself comes from the onLayerChange subscription.
-      marsSoI.visible = soiLayerOn && !isMoonMission;
+      // marsSoI is also gated on activeDestination === 'mars' so it
+      // doesn't render at the wrong scale for outer-planet missions.
+      marsSoI.visible = soiLayerOn && !isMoonMission && activeDestination === 'mars';
       moonSoI.visible = soiLayerOn && isMoonMission;
       if (earthSoI.visible) earthSoI.position.copy(earthWorld);
       if (marsSoI.visible) marsSoI.position.copy(marsWorld);
@@ -4677,10 +4683,11 @@
     color: #fff;
   }
 
-  /* Top-side toggle clusters. Two rows: lens-gated panel toggles
-     (FD/LYR/CON) on the LEFT in gold, always-visible toggles
-     (HUD/CAP/2D) on the RIGHT in blue. Each wraps onto a second line
-     on narrow viewports rather than overflowing. */
+  /* Top-right toggle clusters. Both rows live in the top-right corner
+     so every toggle reads as one group; the gold lens-gated cluster
+     (FD/LYR/CON) sits to the LEFT of the blue always-visible cluster
+     (HUD/CAP/2D), separated by a small gap. On narrow viewports they
+     wrap onto a second line rather than overflowing. */
   .fly-toggle-row {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
@@ -4688,15 +4695,27 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    max-width: calc(50vw - 12px);
+    justify-content: flex-end;
   }
+  /* Gold cluster anchored just left of the blue cluster. The blue
+     cluster is right:16; this cluster ends with a small gap before
+     it. width of blue cluster ≈ 3×44 + 2×6 = 144 px, plus 16 px right
+     gutter and 10 px gap = 170 px → cluster sits at right:170. */
   .fly-toggle-row-left {
-    left: 16px;
-    justify-content: flex-start;
+    right: 170px;
+    max-width: calc(50vw - 12px);
   }
   .fly-toggle-row-right {
     right: 16px;
-    justify-content: flex-end;
+    max-width: calc(50vw - 12px);
+  }
+  @media (max-width: 600px) {
+    /* On narrow viewports both clusters share the same edge and stack
+       vertically rather than horizontally. */
+    .fly-toggle-row-left {
+      right: 16px;
+      top: calc(var(--nav-height) + 12px + 50px);
+    }
   }
   .toggle {
     min-width: 44px;

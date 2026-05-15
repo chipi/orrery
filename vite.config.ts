@@ -88,5 +88,30 @@ export default defineConfig({
   ],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts'],
+    // S1 (Test-coverage gap-closure plan) — print-only baseline via
+    // `npm run test:coverage`. Not gated in CI; threshold revisited
+    // after 2 weeks of baseline data. Excludes auto-generated paraglide
+    // bundle, one-shot migration scripts, the screenshot harness, and
+    // Svelte SFCs (route pages exercise their lib code; tracking SFCs
+    // separately adds noise without signal).
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html', 'lcov'],
+      exclude: [
+        'node_modules/',
+        'src/lib/paraglide/',
+        '**/*.test.ts',
+        '**/*.spec.ts',
+        'src/routes/**/+page.svelte',
+        'src/routes/**/+layout.svelte',
+        'src/routes/**/+page.ts',
+        'src/routes/**/+layout.ts',
+        'scripts/migrate-*.ts',
+        'scripts/capture-screenshots.ts',
+        'scripts/wave23/',
+        '*.config.{js,ts}',
+        '.svelte-kit/',
+      ],
+    },
   },
 });

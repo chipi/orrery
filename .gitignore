@@ -20,6 +20,9 @@ playwright-report/
 test-results/
 playwright/.cache/
 
+# Vitest coverage (@vitest/coverage-v8, S1)
+coverage/
+
 # Claude Code local state (per-user; runtime locks etc.)
 .claude/
 

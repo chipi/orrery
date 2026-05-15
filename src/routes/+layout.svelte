@@ -15,6 +15,7 @@
     isLocaleUrlCanonical,
   } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { initAnalytics } from '$lib/analytics';
 
   let { children } = $props();
   let activeLocale = $derived(localeFromPage($page));
@@ -91,6 +92,10 @@
 
   onMount(() => {
     if (typeof window === 'undefined') return;
+    // Privacy-respecting analytics. Loads only on the production host
+    // (chipi.github.io); localhost / vite preview / CI runs are
+    // silent. See src/lib/analytics.ts for the host gate + event API.
+    initAnalytics();
     // Suppress both Chrome's native install banner and any in-app
     // prompt. preventDefault stops the browser from auto-showing.
     const onPromptable = (e: Event) => e.preventDefault();

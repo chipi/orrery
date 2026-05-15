@@ -45,16 +45,16 @@ jobs:
     # so a typecheck/lint/unit-test failure doesn't waste 23 min of
     # Playwright runtime. Manual + cron triggers always proceed.
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
-    # 40 min — the suite ran in ~6.7min through May 3 (28 missions,
-    # single-worker Chromium per playwright.config.ts), ~13-15min
-    # after v0.3's 32-mission expansion + i18n-es smoke, and now
-    # ~23min after v0.6 added 3 new science suit sections + 13 new
-    # /fleet space-suit entries (+ their per-locale smoke). Local
-    # full-suite still runs in ~6.5min — CI is 3-4× slower under
-    # ubuntu-latest 1-worker constraint. 40min keeps margin against
-    # variance; a runaway hang still surfaces, but cold-cache + asset
-    # load spikes don't kill the build.
-    timeout-minutes: 40
+    # 60 min — the suite ran in ~6.7min through May 3, ~13-15min after
+    # v0.3's 32-mission expansion + i18n-es smoke, ~23min after v0.6
+    # added 3 new science suit sections + 13 new /fleet space-suit
+    # entries, and ~25-30min after v0.6's a11y pilot + visual baselines
+    # under the new `workflow_run` chain. 40min was already cutting it
+    # close: flaky retries (Mariner 4 / Apollo 11 3D↔2D hash) plus the
+    # /library axe scan (35-43s alone) tipped the suite past it. 60min
+    # gives 2× margin; if we ever blow through that, it's time to
+    # shard the suite across a 4-way matrix.
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6
         with:

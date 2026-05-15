@@ -32,6 +32,15 @@ const PILOT_ROUTES = [
 test.describe('a11y pilot (ADR-025 tier-1; pilot mode, no CI gate)', () => {
   for (const { path, label } of PILOT_ROUTES) {
     test(`${label} (${path}) — axe scan runs and logs violations`, async ({ page }) => {
+      // /library carries 678 outbound-link rows; axe scans every rule
+      // against every node, so the per-test 30 s playwright budget
+      // isn't enough on cold CI Ubuntu runners (35–43 s on the last
+      // failing runs). Other routes finish in <5 s and stay on the
+      // default. Pilot mode = no CI gate; this is just to keep the
+      // scan from being the suite's long pole.
+      if (path === '/library') {
+        test.setTimeout(90_000);
+      }
       await page.goto(path, { waitUntil: 'networkidle' });
 
       // Skip rules that don't apply to a single-page-app shell scanned in

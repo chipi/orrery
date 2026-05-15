@@ -10,6 +10,26 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.6.1] — 2026-05-15
+
+A small patch landing the day after v0.6.0 to stabilise CI / e2e and add a build-date stamp in the footer so visitors can see when the live deploy was last refreshed.
+
+### Added
+
+- **Footer build date** — alongside the existing version (`v0.6.0`), the footer now shows the deploy date (`v0.6.1 · 2026-05-15`, ISO 8601 UTC). Injected at build time via Vite `define` (same pattern as `__APP_VERSION__`); rebuilt only when the bundle is rebuilt, so it doubles as a quick-scan "this is the build live on GH Pages today" signal.
+
+### Fixed
+
+- **`/library` axe scan timeout in CI** — 678 outbound-link rows × every axe rule exceeded the per-test 30 s playwright budget on cold Ubuntu runners (35–43 s in failing runs). Bumped to 90 s for `/library` specifically; other a11y-pilot routes stay on the default.
+- **`missions.spec` count drift** — Apollo 13 shipped as the 37th mission (17th Moon entry) in v0.6.0, but the spec was still asserting 36 / 16. Bumped to 37 / 17 to match.
+- **`fly-render-validation` 3D ↔ 2D hash-invariant flake** — Mariner 4, Apollo 11, and Apollo 17 occasionally failed on the first run and passed on retry. Bumped the `data-view='2d'` wait from 5 s to 10 s; swapped the locator to `[data-testid="fly-view-toggle"]` (more stable than a label regex now that the toggle row has five sibling panel-visibility buttons).
+- **e2e workflow timeout 40 → 60 min** — the suite is 23–30 min steady-state, but flaky retries plus the `/library` axe scan push the worst case past 40. 60 min gives 2× margin without masking a runaway hang.
+
+### Internal
+
+- **`@playwright/test` 1.59.1 → 1.60.0** — dedup `playwright-core` to a single version so svelte-check no longer sees two distinct `Page` types (was blocking CI typecheck after `@axe-core/playwright` landed and pulled `playwright-core@1.60.0`).
+- **`package-lock.json` regenerated with `--cpu=x64 --os=linux --include=optional`** — keeps the Linux-only native deps (`@emnapi/core`, `@emnapi/runtime`, `esbuild@0.28.0`, `yaml@2.9.0`) in the lockfile so GH Actions runners' `npm ci` doesn't reject the sync.
+
 ## [0.6.0] — 2026-05-15
 
 The cislunar release. `/fly` learns Moon-mission geometry — every Apollo-class free-return, Artemis hybrid free-return, Chandrayaan-3 spiral, and Chang'e LOR rendered as its own per-profile trajectory in an Earth-centred view. The `/science` encyclopedia grows two new tabs (Observation + Life in Space). A new top-level `/fleet` explorer ships. And the visit starts on a real landing page at `/` instead of an explore-redirect.

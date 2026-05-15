@@ -225,9 +225,10 @@ test.describe('/missions — timeline navigator (v0.1.7 / ADR-027)', () => {
 
   test('?from=1969&to=1976 pre-applies window on load', async ({ page }) => {
     await page.goto('/missions?from=1969&to=1976');
-    // 1969 → 1976 includes Apollo 11 (1969), Apollo 17 (1972), Mars 3
-    // (1971), Viking 1 (1975), Luna 17 (1970), Luna 24 (1976) = 6 cards.
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(6, {
+    // 1969 → 1976 includes Apollo 11 (1969), Apollo 13 (1970),
+    // Apollo 17 (1972), Mars 3 (1971), Viking 1 (1975), Luna 17 (1970),
+    // Luna 24 (1976) = 7 cards. (Apollo 13 added in v0.6.0.)
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(7, {
       timeout: 10_000,
     });
     const fromHandle = page.getByRole('slider', { name: /FROM/i });

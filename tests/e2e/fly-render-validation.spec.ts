@@ -159,16 +159,35 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
         timeout: 10_000,
       });
       const hook = page.locator('[data-testid="fly-render-state"]');
-      // Wait for the page's render-state hook to publish the initial
-      // 3D view — guards against reading state before hydration.
+      // Wait for hydration — initial 3D view attribute set.
       await expect(hook).toHaveAttribute('data-view', '3d', { timeout: 10_000 });
+      // Wait for outPts to settle on THIS mission. Without this, the
+      // previous test's hash can leak into the 3D read (the page-level
+      // applyMissionAsLoaded fires async after mount, so the
+      // data-out-vertex-hash attribute briefly carries the previous
+      // mission's geometry before the new mission's arc replaces it).
+      // Poll until the attribute stabilises across two consecutive
+      // reads ~100 ms apart, with reasonable upper bound.
+      await page.waitForFunction(
+        () => {
+          const el = document.querySelector('[data-testid="fly-render-state"]');
+          if (!el) return false;
+          const h = el.getAttribute('data-out-vertex-hash');
+          if (!h) return false;
+          const last = (window as unknown as { __lastHash?: string }).__lastHash;
+          (window as unknown as { __lastHash?: string }).__lastHash = h;
+          return last !== undefined && last === h;
+        },
+        undefined,
+        { timeout: 10_000, polling: 100 },
+      );
       const s3d = await readRenderState(page);
       expect(s3d.view).toBe('3d');
-      // Toggle to 2D and wait for the hook to confirm the flip — the
-      // button label change is purely cosmetic and races the actual
-      // state propagation on slow CI.
-      await page.getByRole('button', { name: /^2d$/i }).click();
-      await expect(hook).toHaveAttribute('data-view', '2d', { timeout: 5_000 });
+      // Toggle to 2D via the stable test id (the 2D button shares its
+      // row with five panel toggles since v0.6.1; label regex would be
+      // ambiguous on locales where 2D is translated).
+      await page.locator('[data-testid="fly-view-toggle"]').click();
+      await expect(hook).toHaveAttribute('data-view', '2d', { timeout: 10_000 });
       const s2d = await readRenderState(page);
       expect(s2d.view).toBe('2d');
       // Same arc geometry across views.

@@ -129,7 +129,7 @@
   <title>{m.library_page_title()}</title>
 </svelte:head>
 
-<section class="library" aria-labelledby="library-title">
+<section class="library" aria-labelledby="library-title" data-route-ready="true">
   <header class="head">
     <h1 id="library-title">{m.library_title()}</h1>
     <h2>{m.library_intro_heading()}</h2>
@@ -344,7 +344,8 @@
     outline: none;
   }
   .counts {
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.65 (F3) so the ToC count chips clear AA. */
+    color: rgba(255, 255, 255, 0.65);
   }
 
   .source-block {
@@ -386,11 +387,14 @@
     max-width: 720px;
   }
   .src-counts {
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.65 (F3) for AA at 10 px. */
+    color: rgba(255, 255, 255, 0.65);
     font-size: 10px;
   }
   .src-license .lbl {
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.6 (F3); still clearly secondary vs the
+       0.85+ license-summary body. */
+    color: rgba(255, 255, 255, 0.6);
     margin-right: 6px;
   }
 
@@ -454,7 +458,9 @@
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    /* WCAG AA pass on 11 px text against the .link wash background
+       (#04040c + 2 % white). Was 0.55 — bumped to 0.65 (F3). */
+    color: rgba(255, 255, 255, 0.65);
     margin: 0 0 4px;
     display: flex;
     flex-wrap: wrap;
@@ -466,15 +472,19 @@
   }
   .ln-row.meta {
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    /* Was 0.45 — bumped to 0.65 (F3) to clear AA at 10 px non-bold. */
+    color: rgba(255, 255, 255, 0.65);
   }
   .ln-row.rationale {
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    /* Was 0.45 — bumped to 0.65 (F3). Italic + dim hierarchy preserved. */
+    color: rgba(255, 255, 255, 0.65);
     font-style: italic;
   }
   .ln-row .lbl {
-    color: rgba(255, 255, 255, 0.35);
+    /* Was 0.35 — bumped to 0.55 (F3). Still clearly secondary against
+       the 0.65 body text. */
+    color: rgba(255, 255, 255, 0.55);
     margin-right: 4px;
   }
   .ln-target {

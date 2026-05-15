@@ -20,6 +20,7 @@ test.describe('/credits — image provenance disclosure', () => {
     page.on('pageerror', (err) => errors.push(err.message));
 
     await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.credits[data-route-ready="true"]')).toBeVisible();
 
     // Section landmark + ARIA contract
     const section = page.locator('section.credits');
@@ -43,6 +44,7 @@ test.describe('/credits — image provenance disclosure', () => {
     page,
   }) => {
     await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.credits[data-route-ready="true"]')).toBeVisible();
     const sourceBlocks = page.locator('article.source-block');
     await expect(sourceBlocks.first()).toBeVisible({ timeout: 10_000 });
     const count = await sourceBlocks.count();

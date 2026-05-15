@@ -19,6 +19,7 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     page.on('pageerror', (err) => errors.push(err.message));
 
     await page.goto('/library', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.library[data-route-ready="true"]')).toBeVisible();
 
     const section = page.locator('section.library');
     await expect(section).toBeVisible();
@@ -39,6 +40,7 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     page,
   }) => {
     await page.goto('/library', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.library[data-route-ready="true"]')).toBeVisible();
     await expect(page.locator('article.source-block').first()).toBeVisible({ timeout: 10_000 });
 
     // Sample the first N outbound links and confirm the ADR-051 rendering

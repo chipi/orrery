@@ -128,7 +128,7 @@
   <title>{m.credits_title()} — Orrery</title>
 </svelte:head>
 
-<section class="credits" aria-labelledby="credits-title">
+<section class="credits" aria-labelledby="credits-title" data-route-ready="true">
   <header class="head">
     <h1 id="credits-title">{m.credits_title()}</h1>
     <h2>{m.credits_intro_heading()}</h2>
@@ -397,7 +397,8 @@
     outline: none;
   }
   .counts {
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.65 (F3) for AA on the ToC count chips. */
+    color: rgba(255, 255, 255, 0.65);
   }
 
   .source-block {
@@ -438,7 +439,8 @@
     max-width: 720px;
   }
   .src-license .lbl {
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.6 (F3) for AA on 11 px caption. */
+    color: rgba(255, 255, 255, 0.6);
     margin-right: 6px;
   }
 

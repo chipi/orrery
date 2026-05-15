@@ -17,6 +17,7 @@ test.describe('/posters — Orrery gallery', () => {
     page.on('pageerror', (err) => errors.push(err.message));
 
     await page.goto('/posters', { waitUntil: 'networkidle' });
+    await expect(page.locator('article.gallery[data-route-ready="true"]')).toBeVisible();
 
     await expect(page.locator('article.gallery h1')).toContainText('ORRERY GALLERY');
 

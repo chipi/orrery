@@ -274,7 +274,11 @@
     font-size: var(--size-link);
     letter-spacing: 1.5px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.28);
+    /* Inactive nav-link tone. Was 0.28 — bumped to 0.55 (F3) so the
+       text meets WCAG AA contrast against the #04040c page background
+       while still reading as visibly de-emphasised vs the active link
+       at full opacity. */
+    color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
     border-radius: 3px;
     border: 1px solid transparent;

@@ -47,7 +47,7 @@ The eleven primary nav destinations:
 | `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
 | `/fleet` | Spaceflight Fleet (137 entries × 9 categories with cross-links) | `src/routes/fleet/+page.svelte` |
 
-Plus two read-only pages: `/credits` (per-image provenance + text-source attributions) and `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance).
+Plus three read-only pages: `/credits` (per-image provenance + text-source attributions), `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance), and `/posters` (Orrery art-print gallery — 11 hand-authored SVG posters across three style families: JPL travel-poster, era-matched, indie-pop).
 
 Other routes under `src/routes/` are landing pages or experiments (see repo layout).
 

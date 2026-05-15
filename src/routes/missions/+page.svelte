@@ -830,14 +830,19 @@
     background: rgba(78, 205, 196, 0.08);
   }
   .status-flown {
-    color: rgba(255, 255, 255, 0.5);
-    border-color: rgba(255, 255, 255, 0.15);
+    /* Was 0.5 — bumped to 0.7 (F3) so the 7 px FLOWN badge clears
+       WCAG AA against the card background. */
+    color: rgba(255, 255, 255, 0.7);
+    border-color: rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.03);
   }
   .status-planned {
-    color: #4466ff;
-    border-color: rgba(68, 102, 255, 0.4);
-    background: rgba(68, 102, 255, 0.08);
+    /* Was #4466ff — bumped to #7b96ff (F3) so the 7 px PLANNED badge
+       clears WCAG AA on the dark card background. Same blue family,
+       lighter step. */
+    color: #7b96ff;
+    border-color: rgba(123, 150, 255, 0.45);
+    background: rgba(68, 102, 255, 0.1);
   }
 
   /* Flight-data quality badge (v0.1.13). Sits next to .card-status
@@ -884,7 +889,8 @@
     font-family: 'Space Mono', monospace;
     font-size: 7px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.7 (F3) to clear AA on 7 px caption text. */
+    color: rgba(255, 255, 255, 0.7);
     margin: 0;
   }
   .card-meta {
@@ -893,7 +899,8 @@
     font-family: 'Space Mono', monospace;
     font-size: 8px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.3);
+    /* Was 0.3 — bumped to 0.65 (F3) for the 8 px year/dest meta-row. */
+    color: rgba(255, 255, 255, 0.65);
   }
   .card-dest {
     max-width: 12ch;

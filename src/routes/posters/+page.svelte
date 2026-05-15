@@ -18,7 +18,7 @@
   <title>Gallery · Orrery</title>
 </svelte:head>
 
-<article class="gallery">
+<article class="gallery" data-route-ready="true">
   <header>
     <h1>ORRERY GALLERY</h1>
     <p class="lede">

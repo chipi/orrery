@@ -209,7 +209,9 @@
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.4);
+    /* Was 0.4 — bumped to 0.6 (F3) to clear AA at 10 px against the
+       page background. */
+    color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     cursor: help;
   }

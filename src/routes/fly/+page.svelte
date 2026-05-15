@@ -4260,31 +4260,27 @@
      side-by-side in a flex row instead of stacked. Each component's
      own position:fixed is overridden by the wrapper. Both pointer-
      event regions still toggle independently. -->
-{#if showFlightDirector || showLayersPanel}
-  <div class="top-controls">
-    {#if showFlightDirector}
-      <!-- Flight Director narration. Tied to arcProgress; only renders
-           when the global Science Lens is on AND the user hasn't
-           dismissed it via the FD toggle. -->
-      <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
-    {/if}
-    {#if showLayersPanel}
-      <!-- /fly Layers panel — every layer wired into both scenes
-           (cislunar for Moon missions, heliocentric otherwise). LYR
-           toggle in the top-right row hides it. -->
-      <ScienceLayersPanel
-        available={[
-          'hover',
-          'soi',
-          'gravity',
-          'velocity',
-          'centripetal',
-          'apsides',
-          'coast',
-          'conics',
-        ]}
-      />
-    {/if}
+{#if showLayersPanel}
+  <!-- Unified Science Lens panel — top-center, carrying the per-route
+       lens story (Keplerian transfer ellipse) plus the layer toggles
+       so /fly aligns with /explore / /earth / /moon / /mars / /plan,
+       which all pass title + body + tab + section. LYR toggle hides it. -->
+  <ScienceLayersPanel
+    title="Mission arc · Keplerian transfer ellipse"
+    body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
+    tab="transfers"
+    section="transfer-ellipse"
+    available={['hover', 'soi', 'gravity', 'velocity', 'centripetal', 'apsides', 'coast', 'conics']}
+  />
+{/if}
+
+{#if showFlightDirector}
+  <!-- Flight Director narration. Anchored bottom-left, just to the
+       right of the hud-stack column (which terminates with
+       SpacecraftInfoCard at its bottom). Lens-gated inside the
+       component; dismissible via the FD toggle in the top-right row. -->
+  <div class="fly-fd-anchor">
+    <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
   </div>
 {/if}
 

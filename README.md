@@ -10,7 +10,7 @@ The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's cu
 [![SvelteKit](https://img.shields.io/badge/SvelteKit-FF3E00?logo=svelte&logoColor=white)](https://kit.svelte.dev/)
 [![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](tsconfig.json)
 [![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8)](docs/adr/ADR-029.md)
-[![No tracking](https://img.shields.io/badge/tracking-none-success)](#privacy)
+[![Privacy: aggregate only](https://img.shields.io/badge/privacy-aggregate%20only-success)](#privacy)
 [![i18n](https://img.shields.io/badge/i18n-14%20locales-blue)](docs/i18n-style-guide.md)
 
 ![Orrery — solar system explorer](docs/screenshots/hero-explore-3d.png)
@@ -21,7 +21,7 @@ A browser-based **solar system explorer**, **mission simulator**, **encyclopedia
 
 The name comes from a mechanical model of the solar system. That is exactly what Orrery does, at the scale of a screen.
 
-**No backend. No database. No tracking.** A static SPA you can self-host, install as a PWA, and use offline after first load.
+**No backend. No database. No personal data.** A static SPA you can self-host, install as a PWA, and use offline after first load. The only analytics on the hosted site (chipi.github.io) are anonymous, EU-hosted page-view counts via [Umami](#privacy) — no cookies, no fingerprinting, no PII, no cross-site tracking.
 
 ## Live
 
@@ -109,7 +109,11 @@ Orrery makes a few claims a screen reader can verify:
 
 ## Privacy
 
-No analytics. No tracking. No third-party fonts at runtime (every asset resolved at build time per [ADR-016](docs/adr/ADR-016.md)). No cookies. No `localStorage`. Locale preference lives in the URL — bookmark `?lang=ja` and you have your locale; share it and they have theirs.
+**Analytics — [Umami](https://umami.is/), EU-hosted, aggregate-only.** The live site at `chipi.github.io` loads a single Umami `script.js` from the hosted Umami Cloud (Frankfurt, Germany — EU data residency). It records anonymous **page-view counts per route** and a handful of structured custom events (`mission-load`, `lens-toggle`, `science-section-view`, `locale-switch` — see [`src/lib/analytics.ts`](src/lib/analytics.ts) for the full list). That is the entire collected dataset.
+
+Umami is **cookieless**, does **no fingerprinting**, captures **no PII**, has **no cross-site tracking**, and is GDPR / CCPA-compliant out of the box. The script is loaded only on `chipi.github.io` — local dev, `vite preview`, screenshot pipeline, e2e runs are all silent so the dataset reflects real visitors, not engineer reloads. Self-hosters who clone Orrery to their own domain get **zero analytics by default** — the host gate in `analytics.ts` lists exactly one production hostname, so a fork on `your.example.com` is silent until you intentionally add it (or strip the Umami integration entirely; it's two lines).
+
+**No `localStorage`**, no IndexedDB, no third-party fonts at runtime (every asset resolved at build time per [ADR-016](docs/adr/ADR-016.md)). **One functional cookie** (`orrery_locale`, 1-year, `SameSite=Lax`, no PII) is written *only* when you explicitly click a locale chip from the LocalePicker — auto-detected locales never write the cookie ([ADR-057](docs/adr/ADR-057.md)). Locale preference also lives in the URL — bookmark `?lang=ja` and you have your locale; share it and they have theirs.
 
 ## Getting started
 

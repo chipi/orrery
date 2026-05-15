@@ -7,15 +7,24 @@
   plain HTML, no client-side math library.
 -->
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
+  import { track } from '$lib/analytics';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
   let { data }: Props = $props();
 
   let section = $derived(data.section);
+
+  // Umami custom event: which sections out of 85 earn the read.
+  // Standard pageview already fires per URL; this carries structured
+  // tab + section props that are easier to aggregate in the dashboard.
+  onMount(() => {
+    track('science-section-view', { tab: section.tab, section: section.id });
+  });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each
   // fleet panel). Other sections render the standard body only.

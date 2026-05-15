@@ -10,6 +10,7 @@
     type LocaleCode,
   } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { track } from '$lib/analytics';
 
   let open = $state(false);
   // Currently-resolved locale, derived from the URL each render so the
@@ -33,6 +34,9 @@
   async function pick(code: LocaleCode) {
     open = false;
     if (code === active) return;
+    // Umami custom event: which locales actually get used. Quantifies
+    // the i18n investment. Anonymous, structured props from + to.
+    track('locale-switch', { from: active, to: code });
     const url = new URL($page.url);
     url.searchParams.set('lang', code);
     setLanguageTag(code);

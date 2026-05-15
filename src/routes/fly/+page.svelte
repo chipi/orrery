@@ -804,6 +804,9 @@
       simDay = arcTimeline.dep_day;
     }
     isPlaying = !isPlaying;
+    // Umami custom event: did people actually press play, and on
+    // which mission? Engagement-depth signal beyond just `mission-load`.
+    track('mission-play-toggle', { id: mission?.name ?? 'unknown', playing: isPlaying });
   }
   function setSpeed(v: number) {
     if (simDay >= arcTimeline.arr_day) {

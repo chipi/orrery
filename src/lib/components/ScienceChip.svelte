@@ -21,6 +21,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { track } from '$lib/analytics';
   import type { ScienceTabId } from '$types/science';
 
   type Props = {
@@ -37,6 +38,16 @@
 
   const tooltip = $derived(label ?? 'Open in /science');
   const aria = $derived(ariaLabel ?? `Learn more about ${label ?? `${tab}/${section}`}`);
+
+  function onClick() {
+    // Umami custom event: cross-screen chip → /science. Captures the
+    // SOURCE route too so we can tell which screens drive curiosity.
+    track('science-chip-click', {
+      tab,
+      section,
+      from: typeof window !== 'undefined' ? window.location.pathname : '',
+    });
+  }
 </script>
 
 <a
@@ -45,6 +56,7 @@
   title={tooltip}
   aria-label={aria}
   data-science-chip
+  onclick={onClick}
 >
   <!-- Geometric `i` (info) icon: outer ring + tiny round dot above a
        short stem. Coordinates are tuned to the 14×14 viewBox so the

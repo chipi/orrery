@@ -2,6 +2,7 @@
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
+  import { track } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
 
   /**
@@ -37,6 +38,10 @@
       lastId = entry.id;
       lightboxSrc = null;
       gallery = [];
+      // Umami custom event: which fleet entries earn the click. /fleet
+      // is a v0.6 launch route; this tells us which of the ~137 entries
+      // pull engagement.
+      track('fleet-entry-view', { id: entry.id, category: entry.category });
       void galleryFetcher(entry.id).then((urls) => {
         if (entry && entry.id === lastId) gallery = urls;
       });

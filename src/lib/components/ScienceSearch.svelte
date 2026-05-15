@@ -18,6 +18,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
+  import { track } from '$lib/analytics';
 
   type IndexEntry = {
     tab: string;
@@ -103,6 +104,14 @@
       ev.preventDefault();
       const pick = results[highlighted];
       if (pick) {
+        // Umami custom event: what people type when looking for
+        // content. Captures the query AND the picked hit so we can
+        // tell when search lands a useful answer vs when users bail.
+        track('cmdk-search-hit', {
+          query: query.toLowerCase().trim(),
+          tab: pick.tab,
+          section: pick.section,
+        });
         close();
         void goto(`${base}/science/${pick.tab}/${pick.section}`);
       }

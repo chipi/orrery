@@ -4315,45 +4315,42 @@
     display: block;
   }
 
-  /* Top-control row — flex parent puts the Flight Director banner and
-     the Layers panel side-by-side at the top instead of stacked. Each
-     child still controls its own visibility (lens-gated banner, layer-
-     gated panel) but loses its fixed position so the flex layout wins.
-     Both children are flex:1 0 0 with the same width + padding + min-
-     height baseline, so collapsing one panel doesn't change its width
-     and collapsed heights match across both panels. */
-  .top-controls {
+  /* Flight Director banner anchor — bottom-left, just to the right of
+     the hud-stack column (left:16 + width:220 + 16 gap = 252). Sits
+     above the timeline scrubber (bottom:14 + ~50 px) at bottom:80.
+     Inner :global() overrides neutralise FlightDirectorBanner's own
+     position:fixed so it flows from this wrapper instead. */
+  .fly-fd-anchor {
     position: fixed;
-    top: calc(var(--nav-height) + 12px);
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 80px;
+    left: 252px;
     z-index: 32;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
+    max-width: 540px;
     pointer-events: none;
-    width: min(880px, calc(100vw - 32px));
   }
-  .top-controls :global(.banner),
-  .top-controls :global(.panel) {
+  .fly-fd-anchor :global(.banner) {
     position: static;
     top: auto;
     left: auto;
     transform: none;
     pointer-events: auto;
-    flex: 1 0 0;
-    width: auto;
-    max-width: none;
-    min-height: 40px;
-    padding: 10px 36px 8px 16px;
-    box-sizing: border-box;
+    max-width: 540px;
   }
-  .top-controls :global(.banner.collapsed) {
-    padding: 10px 36px 8px 16px;
-  }
-  .top-controls :global(.banner:hover),
-  .top-controls :global(.banner:focus-visible) {
+  .fly-fd-anchor :global(.banner:hover),
+  .fly-fd-anchor :global(.banner:focus-visible) {
     transform: translateY(-2px);
+  }
+  @media (max-width: 900px) {
+    /* Squeezed viewport: drop FD edge-to-edge above the scrubber so
+       it doesn't clip into the CAPCOM panel on the right rail. */
+    .fly-fd-anchor {
+      left: 16px;
+      right: 16px;
+      max-width: calc(100vw - 32px);
+    }
+    .fly-fd-anchor :global(.banner) {
+      max-width: 100%;
+    }
   }
 
   .load-banner {

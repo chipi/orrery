@@ -11,7 +11,7 @@ The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's cu
 [![TypeScript strict](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)](tsconfig.json)
 [![PWA](https://img.shields.io/badge/PWA-installable-5A0FC8)](docs/adr/ADR-029.md)
 [![Privacy: aggregate only](https://img.shields.io/badge/privacy-aggregate%20only-success)](#privacy)
-[![i18n](https://img.shields.io/badge/i18n-14%20locales-blue)](docs/i18n-style-guide.md)
+[![i18n](https://img.shields.io/badge/i18n-14%20locales-blue)](docs/guides/i18n-style-guide.md)
 
 ![Orrery — solar system explorer](docs/screenshots/hero-explore-3d.png)
 
@@ -105,7 +105,7 @@ Orrery makes a few claims a screen reader can verify:
 - **Real missions.** 37 base mission JSON files with editorial overlays in 14 locales. ∆v ledgers from NASA mission reports, JPL trajectory reconstructions, agency press kits. Moon missions carry a `flight.cislunar_profile` block (parking orbit, TLI ∆v + C3, translunar geometry type, lunar arrival altitude / periselene, return ∆v) parsed by `buildCislunarTrajectory()` to render each mission's actual flight architecture (ADR-058). Every entry has a `data_quality` honesty flag (MEASURED / RECONSTRUCTED / SPARSE / UNKNOWN).
 - **Real images.** Agency-first build-time imagery sourcing per [ADR-046](docs/adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia fallback. Per-image provenance manifest. Public [`/credits`](https://chipi.github.io/orrery/credits) page. Lightbox attribution on every gallery thumbnail.
 - **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://chipi.github.io/orrery/library) bill-of-links.
-- **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md).
+- **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/guides/i18n-style-guide.md`](docs/guides/i18n-style-guide.md).
 
 ## Privacy
 
@@ -155,13 +155,13 @@ The full architecture and concept documentation is published at **<https://chipi
 
 | Document | Read it for |
 |---|---|
-| [User guide](docs/user-guide.md) | How each of the ten screens works — the read-this-first guide for the live app |
+| [User guide](docs/guides/user-guide.md) | How each of the ten screens works — the read-this-first guide for the live app |
 | [00 Introduction](docs/concept/00_Introduction.md) | What this package is and how to read it |
 | [01 Vision](docs/concept/01_Orrery_Vision.md) | Why Orrery exists — the Moon-to-Mars narrative |
 | [02 Project Concept](docs/concept/02_Project_Concept.md) | Full synthesis — what Orrery is, does, and means |
 | [03 Data Catalog](docs/concept/03_Data_Catalog.md) | Every source, constant, mission schema, credit format |
 | [05 Design System](docs/concept/05_Design_System.md) | Colour, typography, components, screen patterns |
-| [i18n style guide](docs/i18n-style-guide.md) | Per-language glossary for translators |
+| [i18n style guide](docs/guides/i18n-style-guide.md) | Per-language glossary for translators |
 | [`docs/adr/`](docs/adr/) | 50+ ADRs (ADR-001 through ADR-058) — locked decisions (Status / Decision / Rationale / Consequences). ADR-058 covers the cislunar `/fly` view for Moon missions. |
 | [`docs/rfc/`](docs/rfc/) | RFCs for technical questions; closed RFCs become ADRs |
 | [`docs/prd/`](docs/prd/) | Product requirements per screen (PRDs 008–011 cover the four routes added in v0.4–v0.5: /science · /mars · /iss · /tiangong) |
@@ -172,7 +172,7 @@ The full architecture and concept documentation is published at **<https://chipi
 
 **If you want to add a mission:** read [03 Data Catalog](docs/concept/03_Data_Catalog.md). Mission data is plain JSON.
 
-**If you want to translate Orrery:** read [the i18n style guide](docs/i18n-style-guide.md) and follow any locale's overlay tree under `static/data/i18n/<code>/` as a template.
+**If you want to translate Orrery:** read [the i18n style guide](docs/guides/i18n-style-guide.md) and follow any locale's overlay tree under `static/data/i18n/<code>/` as a template.
 
 ## Physics
 
@@ -223,7 +223,7 @@ Orrery is open source. Contributions welcome in three areas:
 
 **Data** — add a mission, correct a date, update a status. Edit the JSON; no JavaScript required. See [03 Data Catalog](docs/concept/03_Data_Catalog.md).
 
-**Translation** — add a locale by adding `messages/<code>.json` plus `static/data/i18n/<code>/`. The [i18n style guide](docs/i18n-style-guide.md) is the binding glossary.
+**Translation** — add a locale by adding `messages/<code>.json` plus `static/data/i18n/<code>/`. The [i18n style guide](docs/guides/i18n-style-guide.md) is the binding glossary.
 
 **Physics + code** — file a correction if a number is wrong (every constant has a source in 03). New screens, performance improvements, accessibility, mobile layout. Read [04 Technical Architecture](docs/concept/04_Technical_Architecture.md) and [`CLAUDE.md`](CLAUDE.md) before opening a PR.
 

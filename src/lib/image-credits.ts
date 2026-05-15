@@ -42,7 +42,7 @@ export type GalleryAgencyKey =
 type SingleAgencyKey = Exclude<GalleryAgencyKey, 'MIXED' | 'UNKNOWN'>;
 
 // User-facing agency labels. Same in every locale (proper nouns per
-// docs/i18n-style-guide.md §1/§2). The only exception is ROSCOSMOS,
+// docs/guides/i18n-style-guide.md §1/§2). The only exception is ROSCOSMOS,
 // which we expand for Soviet-era missions to make the credit line
 // accurate without falsely re-crediting the modern agency.
 const AGENCY_LABELS: Record<SingleAgencyKey, string> = {

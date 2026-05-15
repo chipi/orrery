@@ -18,7 +18,7 @@ Then drill into the matching doc by question type:
 | What is the user value? What's the v1 scope? | `docs/prd/` — product requirements (PRD-001 through PRD-014) |
 | What is the open architecture question being deliberated? | `docs/rfc/` — RFCs in flight (RFC-001 through RFC-017) |
 | What does the UI look like? | `docs/uxs/` — UX specifications |
-| Per-language translation rules? | `docs/i18n-style-guide.md` (binding per ADR-033) |
+| Per-language translation rules? | `docs/guides/i18n-style-guide.md` (binding per ADR-033) |
 | Image / link / text provenance? | `static/data/{image,link}-provenance.json` + ADR-046 / ADR-047 / ADR-051 |
 | How is a specific 3D scene built? | TA.md §rendering + `src/routes/<route>/+page.svelte` |
 | How does the build pipeline work? | TA.md §pipelines (10 pipelines documented) |
@@ -404,7 +404,7 @@ Reading order for any non-trivial task:
 3. `docs/rfc/` — RFCs in flight (open architectural questions).
 4. `docs/prd/` — product specs (the user-value argument + V1 scope).
 5. `docs/uxs/` — UX specifications.
-6. `docs/i18n-style-guide.md` — per-language translation conventions (binding per ADR-033).
+6. `docs/guides/i18n-style-guide.md` — per-language translation conventions (binding per ADR-033).
 
 When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
 

@@ -1,14 +1,501 @@
-/* Orrery brand accent — matches src/lib/styles/tokens.css --color-accent. */
+/* ─── Orrery docs theme — space-themed override of VitePress defaults ─── */
+/* Palette mirrors src/lib/styles/tokens.css so the docs feel like the same */
+/* product as the app. Dark mode is forced (no light variant); fonts pull   */
+/* from Google Fonts because the docs site is separate from the production  */
+/* app bundle (which self-hosts via static/fonts/ per ADR-016).              */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
 :root {
-  --vp-c-brand-1: #4466ff;
-  --vp-c-brand-2: #5577ff;
-  --vp-c-brand-3: #6688ff;
-  --vp-c-brand-soft: rgba(68, 102, 255, 0.16);
+  /* Orrery palette — keep these in sync with src/lib/styles/tokens.css */
+  --orrery-bg: #04040c;
+  --orrery-bg-soft: #08081a;
+  --orrery-bg-panel: rgba(8, 10, 22, 0.92);
+  --orrery-bg-elv: #0a0a1a;
+  --orrery-gold: #ffc850;
+  --orrery-gold-soft: rgba(255, 200, 80, 0.16);
+  --orrery-teal: #4ecdc4;
+  --orrery-teal-soft: rgba(78, 205, 196, 0.16);
+  --orrery-mars: #c1440e;
+  --orrery-earth: #4b9cd3;
+  --orrery-accent: #4466ff;
+  --orrery-border-faint: rgba(255, 255, 255, 0.08);
+  --orrery-border: rgba(255, 200, 80, 0.18);
+
+  /* Fonts */
+  --orrery-font-display: 'Bebas Neue', 'Space Mono', system-ui, sans-serif;
+  --orrery-font-mono: 'Space Mono', 'Menlo', monospace;
+  --orrery-font-editorial: 'Crimson Pro', Georgia, 'Times New Roman', serif;
 }
 
-.dark {
-  --vp-c-brand-1: #5e7fff;
-  --vp-c-brand-2: #6688ff;
-  --vp-c-brand-3: #7799ff;
-  --vp-c-brand-soft: rgba(94, 127, 255, 0.2);
+/* ─── Override VitePress CSS variables (dark mode mapped to Orrery) ───── */
+:root,
+html.dark {
+  --vp-c-bg: var(--orrery-bg);
+  --vp-c-bg-alt: var(--orrery-bg-soft);
+  --vp-c-bg-elv: var(--orrery-bg-elv);
+  --vp-c-bg-soft: var(--orrery-bg-soft);
+
+  --vp-c-text-1: rgba(255, 255, 255, 0.94);
+  --vp-c-text-2: rgba(255, 255, 255, 0.72);
+  --vp-c-text-3: rgba(255, 255, 255, 0.5);
+
+  --vp-c-divider: var(--orrery-border-faint);
+  --vp-c-border: var(--orrery-border-faint);
+  --vp-c-gutter: var(--orrery-border-faint);
+
+  /* Brand = gold. Accents = teal, used elsewhere for hover. */
+  --vp-c-brand-1: var(--orrery-gold);
+  --vp-c-brand-2: #ffd87a;
+  --vp-c-brand-3: #ffe19a;
+  --vp-c-brand-soft: var(--orrery-gold-soft);
+
+  /* Code block tint */
+  --vp-code-color: var(--orrery-teal);
+  --vp-code-bg: rgba(78, 205, 196, 0.08);
+  --vp-code-block-bg: var(--orrery-bg-soft);
+
+  /* Custom blocks */
+  --vp-custom-block-tip-bg: rgba(78, 205, 196, 0.08);
+  --vp-custom-block-tip-border: var(--orrery-teal);
+  --vp-custom-block-tip-text: rgba(255, 255, 255, 0.9);
+  --vp-custom-block-info-bg: rgba(74, 119, 211, 0.08);
+  --vp-custom-block-info-border: var(--orrery-earth);
+  --vp-custom-block-warning-bg: rgba(255, 200, 80, 0.08);
+  --vp-custom-block-warning-border: var(--orrery-gold);
+  --vp-custom-block-danger-bg: rgba(193, 68, 14, 0.08);
+  --vp-custom-block-danger-border: var(--orrery-mars);
+}
+
+/* ─── Body + typography ────────────────────────────────────────────── */
+
+html,
+body {
+  background: var(--orrery-bg);
+  font-family: var(--orrery-font-editorial);
+}
+
+.VPDoc h1,
+.VPDoc h2,
+.VPDoc h3,
+.VPDoc h4,
+.VPDoc h5,
+.VPDoc h6 {
+  font-family: var(--orrery-font-display);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.VPDoc h1 {
+  color: var(--orrery-gold);
+  font-size: 2.6rem !important;
+  letter-spacing: 4px;
+}
+
+.VPDoc h2 {
+  color: var(--orrery-teal);
+  border-top: 1px solid var(--orrery-border-faint);
+  padding-top: 24px;
+  margin-top: 48px !important;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+}
+
+.VPDoc h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  letter-spacing: 2.5px;
+}
+
+.VPDoc p,
+.VPDoc li {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.VPDoc a {
+  color: var(--orrery-teal);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+.VPDoc a:hover {
+  color: var(--orrery-gold);
+  border-bottom-color: var(--orrery-gold);
+}
+
+/* Inline code */
+:not(pre) > code {
+  font-family: var(--orrery-font-mono);
+  font-size: 0.92em;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(78, 205, 196, 0.18);
+}
+
+/* Tables — match the app's clean dark grid */
+.VPDoc table {
+  border-collapse: collapse;
+  margin: 24px 0;
+  border: 1px solid var(--orrery-border-faint);
+  background: rgba(8, 10, 22, 0.6);
+}
+.VPDoc table th {
+  background: rgba(255, 200, 80, 0.08);
+  color: var(--orrery-gold);
+  font-family: var(--orrery-font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--orrery-border);
+}
+.VPDoc table td {
+  border-top: 1px solid var(--orrery-border-faint);
+  font-size: 15px;
+}
+
+/* Blockquotes */
+.VPDoc blockquote {
+  border-left: 3px solid var(--orrery-gold);
+  background: rgba(255, 200, 80, 0.04);
+  padding: 12px 16px;
+  font-family: var(--orrery-font-editorial);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ─── Top nav ──────────────────────────────────────────────────────── */
+.VPNavBar {
+  background: rgba(4, 4, 12, 0.88) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--orrery-border-faint) !important;
+}
+.VPNavBar .title,
+.VPNavBarTitle .title,
+.VPNavBarTitle .clip {
+  font-family: var(--orrery-font-display) !important;
+  letter-spacing: 3px;
+  color: var(--orrery-gold) !important;
+  font-size: 1.2rem !important;
+  text-shadow: 0 0 16px rgba(255, 200, 80, 0.3);
+}
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup {
+  font-family: var(--orrery-font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ─── Sidebar ──────────────────────────────────────────────────────── */
+.VPSidebar {
+  background: rgba(4, 4, 12, 0.94) !important;
+  border-right: 1px solid var(--orrery-border-faint);
+}
+.VPSidebarItem .text {
+  font-family: var(--orrery-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.VPSidebarItem.level-0 > .item > .text {
+  color: var(--orrery-gold);
+  font-family: var(--orrery-font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.VPSidebarItem.is-active > .item > .text,
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--orrery-teal) !important;
+  font-weight: 700;
+}
+
+/* ─── HOME page — hero + features ──────────────────────────────────── */
+
+/* Starfield + radial glow under the hero */
+.VPHome {
+  background: var(--orrery-bg) !important;
+  position: relative;
+  overflow: hidden;
+}
+.VPHome::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 200, 80, 0.08), transparent 65%),
+    radial-gradient(circle at 20% 35%, rgba(78, 205, 196, 0.06), transparent 50%),
+    radial-gradient(circle at 85% 25%, rgba(74, 119, 211, 0.05), transparent 60%);
+  z-index: 0;
+}
+/* Static starfield via repeating tiny radial-gradients. Sized so the      */
+/* density looks natural at 1440 px wide and still readable at mobile.    */
+.VPHome::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(255, 255, 255, 0.9), transparent 50%),
+    radial-gradient(1.5px 1.5px at 30% 70%, rgba(255, 255, 255, 0.7), transparent 50%),
+    radial-gradient(1px 1px at 47% 12%, rgba(255, 255, 255, 0.55), transparent 50%),
+    radial-gradient(1.2px 1.2px at 63% 88%, rgba(255, 255, 255, 0.6), transparent 50%),
+    radial-gradient(1px 1px at 75% 40%, rgba(255, 255, 255, 0.8), transparent 50%),
+    radial-gradient(1.5px 1.5px at 88% 22%, rgba(255, 255, 255, 0.65), transparent 50%),
+    radial-gradient(1px 1px at 8% 55%, rgba(255, 255, 255, 0.5), transparent 50%),
+    radial-gradient(1.3px 1.3px at 55% 50%, rgba(255, 255, 255, 0.45), transparent 50%);
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.VPHero {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 64px !important;
+}
+
+/* Hero title — wordmark treatment */
+.VPHero .name,
+.VPHero .name .clip {
+  font-family: var(--orrery-font-display) !important;
+  font-size: clamp(3rem, 9vw, 6rem) !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1 !important;
+  color: var(--orrery-gold) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--orrery-gold) !important;
+  text-shadow: 0 0 28px rgba(255, 200, 80, 0.35);
+  margin-bottom: 8px;
+}
+
+.VPHero .text,
+.VPHero .text .clip {
+  font-family: var(--orrery-font-editorial) !important;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem) !important;
+  color: var(--orrery-teal) !important;
+  margin-top: 12px !important;
+  line-height: 1.3 !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--orrery-teal) !important;
+}
+
+.VPHero .tagline {
+  font-family: var(--orrery-font-editorial) !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.55 !important;
+  max-width: 540px;
+  margin-top: 18px !important;
+}
+
+/* Hero CTA buttons */
+.VPHero .actions {
+  margin-top: 28px !important;
+  gap: 12px !important;
+}
+.VPButton.brand {
+  background: var(--orrery-gold) !important;
+  color: var(--orrery-bg) !important;
+  border-color: var(--orrery-gold) !important;
+  font-family: var(--orrery-font-mono) !important;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 24px rgba(255, 200, 80, 0.3);
+}
+.VPButton.brand:hover {
+  background: #ffd87a !important;
+  border-color: #ffd87a !important;
+  box-shadow: 0 0 32px rgba(255, 200, 80, 0.45);
+}
+.VPButton.alt {
+  background: rgba(78, 205, 196, 0.06) !important;
+  color: var(--orrery-teal) !important;
+  border-color: rgba(78, 205, 196, 0.45) !important;
+  font-family: var(--orrery-font-mono) !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.VPButton.alt:hover {
+  background: rgba(78, 205, 196, 0.14) !important;
+  border-color: var(--orrery-teal) !important;
+}
+
+/* Hero image — drop the boring rectangle, add a teal halo */
+.VPHero .image-container {
+  filter: drop-shadow(0 0 60px rgba(78, 205, 196, 0.18))
+    drop-shadow(0 0 120px rgba(74, 119, 211, 0.12));
+}
+.VPHero .image-bg {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(78, 205, 196, 0.18),
+    transparent 60%
+  ) !important;
+}
+.VPHome .VPImage {
+  border-radius: 6px;
+  border: 1px solid var(--orrery-border-faint);
+}
+
+/* ─── Feature grid ──────────────────────────────────────────────────── */
+.VPFeatures {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 64px !important;
+}
+.VPFeature {
+  background: rgba(8, 10, 22, 0.78) !important;
+  border: 1px solid var(--orrery-border) !important;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.VPFeature:hover {
+  border-color: var(--orrery-gold) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 200, 80, 0.12);
+}
+.VPFeature .icon {
+  background: rgba(255, 200, 80, 0.12) !important;
+  border: 1px solid var(--orrery-border);
+}
+.VPFeature .title {
+  font-family: var(--orrery-font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orrery-gold);
+  font-size: 1.05rem;
+}
+.VPFeature .details {
+  font-family: var(--orrery-font-editorial);
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ─── Custom landing body (below the features grid) ───────────────── */
+.orrery-landing-body {
+  max-width: 1152px;
+  margin: 24px auto 64px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+.orrery-landing-body h2 {
+  font-family: var(--orrery-font-display);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orrery-teal);
+  font-size: 1.4rem;
+  border-top: 1px solid var(--orrery-border-faint);
+  padding-top: 24px;
+  margin-top: 48px;
+}
+.orrery-landing-body h3 {
+  font-family: var(--orrery-font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orrery-gold);
+  font-size: 1.05rem;
+  margin-top: 32px;
+}
+.orrery-landing-body p,
+.orrery-landing-body li {
+  font-family: var(--orrery-font-editorial);
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+.orrery-landing-body a {
+  color: var(--orrery-teal);
+  border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+  text-decoration: none;
+}
+.orrery-landing-body a:hover {
+  color: var(--orrery-gold);
+  border-bottom-color: var(--orrery-gold);
+}
+.orrery-landing-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  border: 1px solid var(--orrery-border-faint);
+  background: rgba(8, 10, 22, 0.6);
+}
+.orrery-landing-body th {
+  background: rgba(78, 205, 196, 0.08);
+  color: var(--orrery-teal);
+  font-family: var(--orrery-font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--orrery-border);
+}
+.orrery-landing-body td {
+  padding: 10px 14px;
+  border-top: 1px solid var(--orrery-border-faint);
+  font-size: 15px;
+}
+
+/* ─── Footer ──────────────────────────────────────────────────────── */
+.VPFooter {
+  border-top: 1px solid var(--orrery-border-faint);
+  background: rgba(4, 4, 12, 0.94);
+  font-family: var(--orrery-font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.VPFooter .message,
+.VPFooter .copyright {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ─── Local search ────────────────────────────────────────────────── */
+.VPLocalSearchBox .title {
+  color: var(--orrery-gold);
+  font-family: var(--orrery-font-mono);
+}
+.VPLocalSearchBox .input {
+  background: var(--orrery-bg-soft) !important;
+  border: 1px solid var(--orrery-border) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* ─── Mobile tightening ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .VPHero .name,
+  .VPHero .name .clip {
+    font-size: 3rem !important;
+    letter-spacing: 0.12em !important;
+  }
+  .VPHero .text {
+    font-size: 1.1rem !important;
+  }
+  .VPFeature .title {
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+  }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .VPFeature {
+    transition: none;
+  }
 }

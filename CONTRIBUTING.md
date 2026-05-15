@@ -29,7 +29,7 @@ What you'll add:
 - **`project.inlang/settings.json`** — add your locale code to `languageTags`.
 - **`src/lib/locale.ts`** — add an entry to `SUPPORTED_LOCALES` (with the country flag emoji used by the LocalePicker chip).
 
-**Binding glossary.** [`docs/i18n-style-guide.md`](docs/i18n-style-guide.md) is the authority for physics + space-domain terminology in each language. Use it. If a term you need isn't in the glossary, add it (with a citation if you can) and submit the change as part of your locale PR.
+**Binding glossary.** [`docs/guides/i18n-style-guide.md`](docs/guides/i18n-style-guide.md) is the authority for physics + space-domain terminology in each language. Use it. If a term you need isn't in the glossary, add it (with a citation if you can) and submit the change as part of your locale PR.
 
 **Workflow.** Per [ADR-033](docs/adr/ADR-033.md), the workflow is LLM-only first-pass with no native-speaker review gate. If you're a native speaker offering review for a specific language, that's high value — open an issue.
 

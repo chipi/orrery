@@ -253,8 +253,8 @@ End-to-end provenance discipline for every pixel in the app:
 - **`ADR-031`** — i18n language list and rollout waves.
 - **`ADR-032`** — Font and script strategy (Wave 1; CJK + RTL deferred).
 - **`ADR-033`** — Translation workflow: LLM-only first-pass.
-- **`docs/i18n-style-guide.md`** — translator brief with per-language glossary tables.
-- **`docs/user-guide.md`** — read-this-first walk-through of the live app, screen by screen, with screenshots.
+- **`docs/guides/i18n-style-guide.md`** — translator brief with per-language glossary tables.
+- **`docs/guides/user-guide.md`** — read-this-first walk-through of the live app, screen by screen, with screenshots.
 - **README badges + hero screenshot + 6-screen image grid.**
 
 ### Changed

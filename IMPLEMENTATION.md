@@ -375,7 +375,7 @@ Three large work-streams shipped together. Tagged `v0.3.0`.
 - All four wired into `fetch-assets` queries + Wikimedia fallbacks; cover, gallery, and trajectory thumbnails downloaded.
 
 ### i18n closure (Phases A · B · C)
-**Phase A — docs.** ADR-031 (language list + Wave structure), ADR-032 (font / script — Wave 1; CJK + RTL deferred), ADR-033 (LLM-only translation workflow). RFC-010 → Closed. New `docs/i18n-style-guide.md` with per-language glossary tables (universal symbols, proper nouns, astronomy + orbital-mechanics terms, mission-domain terms).
+**Phase A — docs.** ADR-031 (language list + Wave structure), ADR-032 (font / script — Wave 1; CJK + RTL deferred), ADR-033 (LLM-only translation workflow). RFC-010 → Closed. New `docs/guides/i18n-style-guide.md` with per-language glossary tables (universal symbols, proper nouns, astronomy + orbital-mechanics terms, mission-domain terms).
 
 **Phase B — foundation.** New `src/lib/locale.ts` (`SUPPORTED_LOCALES`, `resolveLocale(url, navigatorLanguage)`, `localeFromPage($page)` — SSR/prerender-safe per ADR-017). New `src/lib/components/LocalePicker.svelte` mounted in Nav (44×44 px, native names, URL `?lang=` only — **no localStorage** per CLAUDE.md / RFC-010 maintainer-decisions). New `src/lib/format.ts` with `Intl.NumberFormat` wrappers (`formatKm`, `formatKmPerSec`, …). Layout-stage `setLanguageTag` in `$effect.pre` so Paraglide picks up the URL locale BEFORE descendant components render their `m.foo()` calls.
 

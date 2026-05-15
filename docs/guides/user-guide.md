@@ -12,7 +12,7 @@ A locale picker sits in the top-right of the navigation bar. The chip shows your
 
 There is no `localStorage` and no cookie — the URL is the only place your locale lives. On a fresh visit the browser language is sniffed (`navigator.language`) and applied automatically; if it doesn't match a supported locale, English is the default.
 
-[![Japanese locale](screenshots/locale-ja.png)](screenshots/locale-ja.png)
+[![Japanese locale](../screenshots/locale-ja.png)](screenshots/locale-ja.png)
 
 **Currently shipped — 14 languages, all at 100% UI parity:**
 
@@ -41,7 +41,7 @@ The `/science` encyclopedia overlay tree is translated end-to-end across **all 1
 
 A real-time 3D / 2D orrery showing 8 planets, 5 dwarf planets, 2 comets, and ʻOumuamua (the only confirmed interstellar object).
 
-[![Explorer screenshot](screenshots/01-explore.png)](screenshots/01-explore.png)
+[![Explorer screenshot](../screenshots/01-explore.png)](screenshots/01-explore.png)
 
 **What you can do**:
 
@@ -55,7 +55,7 @@ A real-time 3D / 2D orrery showing 8 planets, 5 dwarf planets, 2 comets, and ʻO
 
 **Turn on the Science Lens** (the lens icon in the nav) and the scene becomes a textbook layer:
 
-[![Science Lens on /explore](screenshots/11-science-lens-explore.png)](screenshots/11-science-lens-explore.png)
+[![Science Lens on /explore](../screenshots/11-science-lens-explore.png)](screenshots/11-science-lens-explore.png)
 
 A **Science Lens banner** above the canvas explains the current view in plain language; a **Science Layers panel** lets you toggle individual physics layers (gravity vectors, velocity vectors, centripetal arrows, apsides + true anomaly, sphere-of-influence rings, hover info cards). Layer values print at arrow tips so you can compare magnitudes across planets.
 
@@ -65,7 +65,7 @@ A **Science Lens banner** above the canvas explains the current view in plain la
 
 The Lambert porkchop plot. Pick a destination + mission type (LANDING or FLYBY). Each destination uses a **pre-computed** 112×100 grid (11,200 cells) checked in at `static/data/porkchop/` and loaded by the app at runtime — the Lambert **Web Worker** stays in the bundle for future custom-range work but is **not** what paints the default Mercury–Pluto maps. Cool teal cells are cheap launch windows; red cells are expensive.
 
-[![Porkchop screenshot](screenshots/02-plan.png)](screenshots/02-plan.png)
+[![Porkchop screenshot](../screenshots/02-plan.png)](screenshots/02-plan.png)
 
 **What you can do**:
 
@@ -76,7 +76,7 @@ The Lambert porkchop plot. Pick a destination + mission type (LANDING or FLYBY).
 
 **Mission Sandbox** (lens on or off — always available): pin one cell with `📌 PIN THIS CELL`, then click another cell. The compare panel shows ΔDEP, ΔTOF, and Δ∆v (green chip when the new cell is cheaper, gold when more expensive). Pin clears automatically when you change destination.
 
-[![Mission Sandbox compare panel](screenshots/13-mission-sandbox.png)](screenshots/13-mission-sandbox.png)
+[![Mission Sandbox compare panel](../screenshots/13-mission-sandbox.png)](screenshots/13-mission-sandbox.png)
 
 ---
 
@@ -84,7 +84,7 @@ The Lambert porkchop plot. Pick a destination + mission type (LANDING or FLYBY).
 
 The mission visualisation. Earth, the destination, and the spacecraft animate live; the trajectory tube uses a true two-point Keplerian ellipse with Sun at focus, so both endpoints lock to live planet positions.
 
-[![Curiosity flight](screenshots/03-fly-curiosity.png)](screenshots/03-fly-curiosity.png)
+[![Curiosity flight](../screenshots/03-fly-curiosity.png)](screenshots/03-fly-curiosity.png)
 
 **What you can do**:
 
@@ -95,11 +95,11 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 - **Pre-built missions**: try `/fly?mission=<id>` for any of the 37 missions in the catalog.
 - **Lunar missions** (Apollo, Artemis II, Blue Moon, Chang'e, Chandrayaan, Luna, SLIM) auto-open in a dedicated **cislunar view** (ADR-058) anchored at Earth, rendering each mission's actual flight architecture — Apollo free-return figure-8 with parking orbit + lunar orbit + descent, Artemis II hybrid free-return at 9 200 km periselene, Chandrayaan-3 multi-burn Earth spiral + lunar spiral + descent, Chang'e 5 lunar-orbit-rendezvous sample-return, etc. The camera zooms in as the spacecraft approaches the Moon and pulls back as it leaves.
 
-[![Apollo 11 fly](screenshots/03-fly-apollo11.png)](screenshots/03-fly-apollo11.png)
+[![Apollo 11 fly](../screenshots/03-fly-apollo11.png)](screenshots/03-fly-apollo11.png)
 
 **Turn on the Science Lens** for the **Flight Director banner** — a 5-phase narration that flips through the mission as you scrub:
 
-[![Flight Director on /fly](screenshots/12-flight-director.png)](screenshots/12-flight-director.png)
+[![Flight Director on /fly](../screenshots/12-flight-director.png)](screenshots/12-flight-director.png)
 
 | Phase | What it explains |
 |---|---|
@@ -115,9 +115,9 @@ Each phase title is a deep link into the matching `/science` chapter. The lens a
 
 ## Mission Catalog · `/missions`
 
-All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
+All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](../adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
 
-[![Catalog](screenshots/04-missions.png)](screenshots/04-missions.png)
+[![Catalog](../screenshots/04-missions.png)](screenshots/04-missions.png)
 
 **What you can do**:
 
@@ -128,7 +128,7 @@ All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Gali
 - **▶ FLY** from any panel — jumps to `/fly?mission=<id>`.
 - **FLIGHT tab** carries per-mission ∆v ledgers, with caveat banners (RECONSTRUCTED / SPARSE / UNKNOWN) when the public data is incomplete.
 
-[![Mission detail](screenshots/mission-panel.png)](screenshots/mission-panel.png)
+[![Mission detail](../screenshots/mission-panel.png)](screenshots/mission-panel.png)
 
 ---
 
@@ -136,7 +136,7 @@ All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Gali
 
 Logarithmic radial scale showing the infrastructure that surrounds Earth: ISS, Tiangong, Hubble, JWST, Gaia, Chandra, XMM-Newton, LRO + the four GNSS constellations (GPS, Galileo, GLONASS, BeiDou) + GEO ring.
 
-[![Earth orbit](screenshots/05-earth.png)](screenshots/05-earth.png)
+[![Earth orbit](../screenshots/05-earth.png)](screenshots/05-earth.png)
 
 **What you can do**:
 
@@ -153,7 +153,7 @@ Logarithmic radial scale showing the infrastructure that surrounds Earth: ISS, T
 
 16 lunar landing sites across 5 nations, plotted by latitude / longitude on a 3D Moon globe and a 2D equirectangular projection.
 
-[![Moon map](screenshots/06-moon.png)](screenshots/06-moon.png)
+[![Moon map](../screenshots/06-moon.png)](screenshots/06-moon.png)
 
 **What you can do**:
 
@@ -169,7 +169,7 @@ Logarithmic radial scale showing the infrastructure that surrounds Earth: ISS, T
 
 Equirectangular 2D map + 3D globe with surface-feature panels for landing sites, orbital probes, and major regions.
 
-[![Mars map](screenshots/07-mars.png)](screenshots/07-mars.png)
+[![Mars map](../screenshots/07-mars.png)](screenshots/07-mars.png)
 
 **What you can do**:
 
@@ -186,7 +186,7 @@ Equirectangular 2D map + 3D globe with surface-feature panels for landing sites,
 
 A full station-explorer route with raycast-pickable modules. 18 modules from every USOS + ROS module to visiting craft (Crew Dragon, Cargo Dragon, Soyuz MS, Cygnus, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou).
 
-[![ISS Explorer](screenshots/08-iss.png)](screenshots/08-iss.png)
+[![ISS Explorer](../screenshots/08-iss.png)](screenshots/08-iss.png)
 
 **What you can do**:
 
@@ -210,7 +210,7 @@ A full station-explorer route with raycast-pickable modules. 18 modules from eve
 
 China's space station. Tianhe core + Wentian + Mengtian lab modules with sun-tracking gallium-arsenide arrays. Mirrors the `/iss` UX on the same shared `station-geometry` library.
 
-[![Tiangong Explorer](screenshots/09-tiangong.png)](screenshots/09-tiangong.png)
+[![Tiangong Explorer](../screenshots/09-tiangong.png)](screenshots/09-tiangong.png)
 
 **What you can do** (matches `/iss` interactions):
 
@@ -228,7 +228,7 @@ China's space station. Tianhe core + Wentian + Mengtian lab modules with sun-tra
 
 The in-app explainer for every concept the simulator visualises. **85 sections across 10 tabs**, plus an 8-chapter Space-101 editorial narrative on the landing page.
 
-[![Science encyclopedia landing](screenshots/10-science-landing.png)](screenshots/10-science-landing.png)
+[![Science encyclopedia landing](../screenshots/10-science-landing.png)](screenshots/10-science-landing.png)
 
 **Tabs**:
 
@@ -245,7 +245,7 @@ The in-app explainer for every concept the simulator visualises. **85 sections a
 | **Observation** | Adaptive optics, black holes, coronagraphs, interferometry, space photography, spectroscopy, wormholes | 7 |
 | **Life in Space** | Microgravity, radiation, IVA / EVA / lunar suits, long-duration life support, crew-health topics | 10 |
 
-[![Science section page](screenshots/10-science-section.png)](screenshots/10-science-section.png)
+[![Science section page](../screenshots/10-science-section.png)](screenshots/10-science-section.png)
 
 **What you can do**:
 
@@ -255,7 +255,7 @@ The in-app explainer for every concept the simulator visualises. **85 sections a
 - **Cross-screen `?` chips** — every numeric label across `/missions`, `/fly`, `/explore`, `/plan`, `/earth`, `/moon`, `/mars`, `/iss`, `/tiangong` carries a `?` chip that deep-links to the matching encyclopedia section.
 - **Why? popovers** on individual values inline-explain the meaning without a route change.
 
-**Math**: KaTeX server-rendered at build time per [ADR-034](adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 71 hand-coded SVGs (one per section + 10 tab covers; engineering blueprint style — white-on-black with teal accents) per [ADR-035](adr/ADR-035.md).
+**Math**: KaTeX server-rendered at build time per [ADR-034](../adr/ADR-034.md) — the client receives static HTML, no JavaScript math library is shipped. **Diagrams**: 71 hand-coded SVGs (one per section + 10 tab covers; engineering blueprint style — white-on-black with teal accents) per [ADR-035](../adr/ADR-035.md).
 
 ---
 
@@ -265,17 +265,17 @@ The in-app explainer for every concept the simulator visualises. **85 sections a
 
 Public attribution page generated from `static/data/image-provenance.json` (auto-built by `scripts/build-image-provenance.ts`), `static/data/text-sources.json`, and `static/data/source-logos.json`. Every image in the app appears here with its license, source, and the original URL.
 
-[![Credits page](screenshots/14-credits.png)](screenshots/14-credits.png)
+[![Credits page](../screenshots/14-credits.png)](screenshots/14-credits.png)
 
-Image sourcing is **agency-first** per [ADR-046](adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia Commons fallback. Per-image provenance is AJV-validated and **fail-closed** in `validate-data` (per [ADR-047](adr/ADR-047.md)) — adding an image without a provenance row breaks CI.
+Image sourcing is **agency-first** per [ADR-046](../adr/ADR-046.md): NASA / ESA / ISRO / CNSA / JAXA / KARI / Roscosmos before Wikimedia Commons fallback. Per-image provenance is AJV-validated and **fail-closed** in `validate-data` (per [ADR-047](../adr/ADR-047.md)) — adding an image without a provenance row breaks CI.
 
 ### `/library` — every outbound LEARN link
 
 Bill-of-links across the entire app. Each external link the app exposes (in panel LEARN tabs, `/science` references, `/credits` source URLs) appears here with its provenance row: source agency, language, freshness check date, status.
 
-[![Library page](screenshots/15-library.png)](screenshots/15-library.png)
+[![Library page](../screenshots/15-library.png)](screenshots/15-library.png)
 
-Link policy is **agency-first, native-language priority** per [ADR-051](adr/ADR-051.md): for non-US entities, the operator's own page (in their own language) wins over the NASA mirror. Roscosmos before Wikipedia. ISRO before press releases. The link-checker (`scripts/check-learn-links.ts`) is chained into `npm run fetch` so dead links are flagged before they ship.
+Link policy is **agency-first, native-language priority** per [ADR-051](../adr/ADR-051.md): for non-US entities, the operator's own page (in their own language) wins over the NASA mirror. Roscosmos before Wikipedia. ISRO before press releases. The link-checker (`scripts/check-learn-links.ts`) is chained into `npm run fetch` so dead links are flagged before they ship.
 
 ---
 
@@ -283,7 +283,7 @@ Link policy is **agency-first, native-language priority** per [ADR-051](adr/ADR-
 
 Every screen works at 375 px width. Touch targets are 44×44 px minimum. Bottom-sheet panels swipe down to dismiss. The porkchop magnifier loupe is mobile-only (long-press on the plot).
 
-The PWA manifest is shipped — install Orrery as a standalone app via the browser menu (Chrome / Safari / Firefox all support this; the in-app install nag is intentionally suppressed per [ADR-029](adr/ADR-029.md)).
+The PWA manifest is shipped — install Orrery as a standalone app via the browser menu (Chrome / Safari / Firefox all support this; the in-app install nag is intentionally suppressed per [ADR-029](../adr/ADR-029.md)).
 
 ---
 
@@ -293,7 +293,7 @@ The PWA manifest is shipped — install Orrery as a standalone app via the brows
 - No tracking.
 - No cookies.
 - No `localStorage`.
-- No third-party fonts, images, or scripts loaded at runtime — every asset is bundled at build time per [ADR-016](adr/ADR-016.md).
+- No third-party fonts, images, or scripts loaded at runtime — every asset is bundled at build time per [ADR-016](../adr/ADR-016.md).
 
 The only state that persists across sessions is what's in the URL (`?lang=`, `?mission=`, `?dest=`, etc.) and the service-worker cache (so the app works offline after the first load).
 
@@ -307,7 +307,7 @@ The only state that persists across sessions is what's in the URL (`?lang=`, `?m
 
 **Images don't load.** Either you're offline before the service worker has cached them, or the agency image API is rate-limiting. Reload after a minute; cached images persist.
 
-**A translation looks weird.** All 14 locales now ship at 100% UI parity AND full editorial overlay coverage as of v0.6.x. If a string reads off, file an issue; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](adr/ADR-033.md).
+**A translation looks weird.** All 14 locales now ship at 100% UI parity AND full editorial overlay coverage as of v0.6.x. If a string reads off, file an issue; the [i18n style guide](i18n-style-guide.md) is the binding source of truth per [ADR-033](../adr/ADR-033.md).
 
 **Missions render outside the camera.** Moon missions render in a dedicated cislunar view at true Earth-Moon scale (ADR-058); interplanetary missions render heliocentrically with an auto-zoom that pulls in at departure and arrival. Drag to pan; scroll to zoom — manual zoom wins over auto-zoom until the next phase transition.
 
@@ -317,8 +317,8 @@ The only state that persists across sessions is what's in the URL (`?lang=`, `?m
 
 ## Where to next
 
-- **[02 Project Concept](concept/02_Project_Concept.md)** — the complete synthesis of what Orrery is.
-- **[03 Data Catalog](concept/03_Data_Catalog.md)** — every constant, every source, mission schema, credit format.
+- **[02 Project Concept](../concept/02_Project_Concept.md)** — the complete synthesis of what Orrery is.
+- **[03 Data Catalog](../concept/03_Data_Catalog.md)** — every constant, every source, mission schema, credit format.
 - **[i18n style guide](i18n-style-guide.md)** — the binding glossary for translators.
 - **`AGENTS.md`** in the repo root — engineering constraints if you're contributing code (visible on GitHub: <https://github.com/chipi/orrery/blob/main/AGENTS.md>). Tool-specific overlays for Claude Code and Cursor live in `CLAUDE.md` and `.cursor/rules/orrery.mdc` respectively, both of which point back at this file.
 - **In-app**: open the `/science` encyclopedia and read the **Space-101** narrative on the landing page — an 8-chapter primer that takes you from "what is an orbit" to "how a Hohmann transfer works" with no jargon.

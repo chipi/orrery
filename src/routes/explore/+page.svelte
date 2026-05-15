@@ -2225,6 +2225,12 @@
       letter-spacing: 1.2px;
       min-height: 30px;
     }
+    .ctrl-row.chips {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: calc(100vw - 24px);
+    }
   }
 
   .sizes-backdrop {

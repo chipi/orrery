@@ -1475,7 +1475,11 @@
       min-height: 28px;
     }
     .ctrl-row.chips {
-      width: 96px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      max-width: calc(100vw - 24px);
+      align-items: center;
     }
   }
   .load-banner {

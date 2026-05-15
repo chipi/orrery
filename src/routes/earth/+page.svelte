@@ -1484,7 +1484,11 @@
       min-height: 28px;
     }
     .ctrl-row.chips {
-      width: 96px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      max-width: calc(100vw - 24px);
+      align-items: center;
     }
   }
   .toggle {
@@ -1528,7 +1532,11 @@
       max-width: 60px;
     }
     .ctrl-row.chips {
-      width: 120px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      max-width: calc(100vw - 24px);
+      align-items: center;
     }
   }
   .legend-3d {

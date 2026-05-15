@@ -2202,6 +2202,18 @@
     border-color: #4ecdc4;
   }
 
+  /* Chip rail wraps as soon as we leave desktop. Was gated on 500 px
+     which only kicked in for phone-narrow widths — anyone resizing a
+     desktop browser between 501–768 still saw the vertical column. */
+  @media (max-width: 768px) {
+    .ctrl-row.chips {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: calc(100vw - 24px);
+    }
+  }
+
   /* Mobile: shrink the chip row so 4 chips fit comfortably at 375 px,
      and tighten the cluster's left gutter. */
   @media (max-width: 500px) {
@@ -2219,12 +2231,6 @@
       font-size: 9px;
       letter-spacing: 1.2px;
       min-height: 30px;
-    }
-    .ctrl-row.chips {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      max-width: calc(100vw - 24px);
     }
   }
 

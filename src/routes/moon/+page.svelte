@@ -1452,6 +1452,16 @@
     .hud-controls {
       z-index: 25;
     }
+    /* Chip rail wraps as soon as we leave desktop. Was gated on 500 px
+       which only kicked in for phone-narrow widths — anyone resizing a
+       desktop browser between 501–768 still saw the vertical column. */
+    .ctrl-row.chips {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      max-width: calc(100vw - 24px);
+      align-items: center;
+    }
   }
 
   @media (max-width: 500px) {
@@ -1470,13 +1480,6 @@
       font-size: 8.5px;
       min-width: 78px;
       min-height: 28px;
-    }
-    .ctrl-row.chips {
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: auto;
-      max-width: calc(100vw - 24px);
-      align-items: center;
     }
   }
   .load-banner {

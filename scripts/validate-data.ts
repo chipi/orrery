@@ -10,6 +10,15 @@ import addFormats from 'ajv-formats';
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
+import {
+  findBidirectionalFleetMissionDrift,
+  findBidirectionalFleetSiteDrift,
+  findProvenanceFailures,
+  type FleetRef,
+  type LicenseWaiver,
+  type SiteType,
+  type ProvenanceRow,
+} from './validate-data-helpers.js';
 
 const DATA_ROOT = 'static/data';
 // strictRequired:false allows the surface-site schema's if/then conditional
@@ -282,7 +291,6 @@ if (existsSync(FLEET_INDEX_PATH)) {
 validateFile(join(DATA_ROOT, 'missions/index.json'), validateMissionIndex);
 
 // 2. Mission base files (per destination)
-type FleetRef = { id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'station' };
 const missionDataDirs = listMissionDataDirs();
 const missionIds = new Set<string>();
 const missionFleetRefs = new Map<string, FleetRef[]>();
@@ -302,69 +310,71 @@ for (const dest of missionDataDirs) {
 }
 
 // PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet ↔ missions BIDIRECTIONAL
-// cross-reference integrity. Three checks:
+// cross-reference integrity (pure detector in `validate-data-helpers.ts`,
+// console templating below). Three checks:
 //
 //   1. Every fleet_entry.linked_missions[*] resolves to a real mission.
 //   2. Every mission.fleet_refs[*].id resolves to a real fleet entry.
 //   3. SYMMETRY: if mission M references fleet F via fleet_refs, then
-//      F's linked_missions MUST include M (catches drift in either
-//      direction). The migrate-* scripts derive linked_missions from
-//      fleet_refs, so a clean run is symmetric by construction; this
-//      check protects against hand-edits that break either side.
-const fleetIdsSet = new Set(fleetEntries.map((e) => e.id));
-const fleetLinkedMissions = new Map<string, Set<string>>(
-  fleetEntries.map((e) => [e.id, new Set(e.linked_missions ?? [])]),
-);
-
-// Check 1: fleet → missions
-for (const entry of fleetEntries) {
-  if (!entry.linked_missions || entry.linked_missions.length === 0) continue;
-  const dangling = entry.linked_missions.filter((mid) => !missionIds.has(mid));
-  if (dangling.length > 0) {
+//      F's linked_missions MUST include M.
+const missionDrift = findBidirectionalFleetMissionDrift({
+  missionIds,
+  missionFleetRefs,
+  fleetEntries,
+});
+// Aggregate Check-1 errors per fleet entry so the existing
+// "X unresolved IDs · dangling: a, b, c" message shape is preserved.
+const linkedMissionFailsByFleetId = new Map<string, { category: string; missing: string[] }>();
+for (const err of missionDrift) {
+  if (err.kind === 'fleet-linked-mission-unresolved') {
+    const existing = linkedMissionFailsByFleetId.get(err.fleet_id);
+    if (existing) {
+      existing.missing.push(err.missing_mission_id);
+    } else {
+      linkedMissionFailsByFleetId.set(err.fleet_id, {
+        category: err.fleet_category,
+        missing: [err.missing_mission_id],
+      });
+    }
+  }
+}
+for (const [fleetId, { category, missing }] of linkedMissionFailsByFleetId) {
+  console.error(
+    `\n  ✗ fleet/${category}/${fleetId}.json: linked_missions has ${missing.length} unresolved IDs`,
+  );
+  console.error(`      dangling: ${missing.join(', ')}`);
+  failed += 1;
+}
+for (const err of missionDrift) {
+  if (err.kind === 'mission-fleet-ref-unresolved') {
     console.error(
-      `\n  ✗ fleet/${entry.category}/${entry.id}.json: linked_missions has ${dangling.length} unresolved IDs`,
+      `\n  ✗ mission ${err.mission_id}: fleet_refs id "${err.fleet_id}" (role ${err.role}) does not resolve to fleet/index.json`,
     );
-    console.error(`      dangling: ${dangling.join(', ')}`);
+    failed += 1;
+  } else if (err.kind === 'bidirectional-drift-mission') {
+    console.error(
+      `\n  ✗ bidirectional drift: mission ${err.mission_id} references fleet ${err.fleet_id} (${err.role}), but ${err.fleet_id}.linked_missions does not include ${err.mission_id}`,
+    );
+    console.error(
+      `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-missions.ts\` to derive linked_missions from fleet_refs`,
+    );
     failed += 1;
   }
 }
 
-// Checks 2 + 3: missions.fleet_refs → fleet, and symmetric inclusion.
-for (const [missionId, refs] of missionFleetRefs.entries()) {
-  for (const ref of refs) {
-    if (!fleetIdsSet.has(ref.id)) {
-      console.error(
-        `\n  ✗ mission ${missionId}: fleet_refs id "${ref.id}" (role ${ref.role}) does not resolve to fleet/index.json`,
-      );
-      failed += 1;
-      continue;
-    }
-    const linked = fleetLinkedMissions.get(ref.id);
-    if (!linked || !linked.has(missionId)) {
-      console.error(
-        `\n  ✗ bidirectional drift: mission ${missionId} references fleet ${ref.id} (${ref.role}), but ${ref.id}.linked_missions does not include ${missionId}`,
-      );
-      console.error(
-        `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-missions.ts\` to derive linked_missions from fleet_refs`,
-      );
-      failed += 1;
-    }
-  }
-}
-
 // PRD-012 v0.2 / RFC-016 v0.2 OQ-16 — fleet ↔ surface markers / orbital
-// objects BIDIRECTIONAL cross-reference integrity (Phase K). Same shape
-// as the missions check above, applied to moon-sites + mars-sites +
-// earth-objects.
-type SiteSource = { type: 'moon' | 'mars' | 'earth-object'; path: string };
+// objects BIDIRECTIONAL cross-reference integrity (Phase K). Pure detector
+// in `validate-data-helpers.ts`; this block loads the data + formats the
+// console output.
+type SiteSource = { type: SiteType; path: string };
 const SITE_SOURCES: SiteSource[] = [
   { type: 'moon', path: join(DATA_ROOT, 'moon-sites.json') },
   { type: 'mars', path: join(DATA_ROOT, 'mars-sites.json') },
   { type: 'earth-object', path: join(DATA_ROOT, 'earth-objects.json') },
 ];
 
-const siteFleetRefs = new Map<string, Array<{ type: SiteSource['type']; refs: FleetRef[] }>>();
-const siteIdsByType = new Map<SiteSource['type'], Set<string>>();
+const siteFleetRefs = new Map<string, Array<{ type: SiteType; refs: FleetRef[] }>>();
+const siteIdsByType = new Map<SiteType, Set<string>>();
 for (const src of SITE_SOURCES) {
   if (!existsSync(src.path)) continue;
   const records = readJson(src.path) as Array<{ id: string; fleet_refs?: FleetRef[] }>;
@@ -379,53 +389,30 @@ for (const src of SITE_SOURCES) {
   siteIdsByType.set(src.type, ids);
 }
 
-// Build fleet → linked_sites lookup keyed as "type::site_id" for fast set membership.
-const fleetLinkedSitesKey = new Map<string, Set<string>>();
-for (const entry of fleetEntries) {
-  const set = new Set<string>();
-  for (const ls of entry.linked_sites ?? []) {
-    set.add(`${ls.type}::${ls.site_id}`);
-  }
-  fleetLinkedSitesKey.set(entry.id, set);
-}
-
-// Check 1: fleet.linked_sites[*] resolves to a real site/object.
-for (const entry of fleetEntries) {
-  if (!entry.linked_sites || entry.linked_sites.length === 0) continue;
-  for (const ls of entry.linked_sites) {
-    const ids = siteIdsByType.get(ls.type);
-    if (!ids || !ids.has(ls.site_id)) {
-      console.error(
-        `\n  ✗ fleet/${entry.category}/${entry.id}.json: linked_sites entry ${ls.type}::${ls.site_id} does not resolve`,
-      );
-      failed += 1;
-    }
-  }
-}
-
-// Check 2 + 3: site/object.fleet_refs → fleet, and symmetric inclusion.
-for (const [siteId, sources] of siteFleetRefs.entries()) {
-  for (const { type, refs } of sources) {
-    for (const ref of refs) {
-      if (!fleetIdsSet.has(ref.id)) {
-        console.error(
-          `\n  ✗ ${type} site ${siteId}: fleet_refs id "${ref.id}" (role ${ref.role}) does not resolve to fleet/index.json`,
-        );
-        failed += 1;
-        continue;
-      }
-      const linkedKeys = fleetLinkedSitesKey.get(ref.id);
-      const expectedKey = `${type}::${siteId}`;
-      if (!linkedKeys || !linkedKeys.has(expectedKey)) {
-        console.error(
-          `\n  ✗ bidirectional drift: ${type} site ${siteId} references fleet ${ref.id} (${ref.role}), but ${ref.id}.linked_sites does not include {type:"${type}", site_id:"${siteId}"}`,
-        );
-        console.error(
-          `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-sites.ts\` to derive linked_sites from fleet_refs`,
-        );
-        failed += 1;
-      }
-    }
+const siteDrift = findBidirectionalFleetSiteDrift({
+  siteIdsByType,
+  siteFleetRefs,
+  fleetEntries,
+});
+for (const err of siteDrift) {
+  if (err.kind === 'fleet-linked-site-unresolved') {
+    console.error(
+      `\n  ✗ fleet/${err.fleet_category}/${err.fleet_id}.json: linked_sites entry ${err.site_type}::${err.site_id} does not resolve`,
+    );
+    failed += 1;
+  } else if (err.kind === 'site-fleet-ref-unresolved') {
+    console.error(
+      `\n  ✗ ${err.site_type} site ${err.site_id}: fleet_refs id "${err.fleet_id}" (role ${err.role}) does not resolve to fleet/index.json`,
+    );
+    failed += 1;
+  } else if (err.kind === 'bidirectional-drift-site') {
+    console.error(
+      `\n  ✗ bidirectional drift: ${err.site_type} site ${err.site_id} references fleet ${err.fleet_id} (${err.role}), but ${err.fleet_id}.linked_sites does not include {type:"${err.site_type}", site_id:"${err.site_id}"}`,
+    );
+    console.error(
+      `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-sites.ts\` to derive linked_sites from fleet_refs`,
+    );
+    failed += 1;
   }
 }
 
@@ -636,19 +623,10 @@ const PROVENANCE_PATH = join(DATA_ROOT, 'image-provenance.json');
 if (existsSync(PROVENANCE_PATH)) {
   console.log('\nValidating image-provenance integrity (ADR-046 Milestone C)...');
 
-  type WaiverRow = {
-    license_short: string;
-    scope: string;
-  };
-  type ProvenanceRow = {
-    path: string;
-    license_short: string;
-  };
-
-  const waiversRaw = existsSync(join(DATA_ROOT, 'license-waivers.json'))
+  const waiversRaw: LicenseWaiver[] = existsSync(join(DATA_ROOT, 'license-waivers.json'))
     ? ((
         JSON.parse(readFileSync(join(DATA_ROOT, 'license-waivers.json'), 'utf8')) as {
-          waivers?: WaiverRow[];
+          waivers?: LicenseWaiver[];
         }
       ).waivers ?? [])
     : [];
@@ -656,36 +634,25 @@ if (existsSync(PROVENANCE_PATH)) {
     entries: ProvenanceRow[];
   };
 
-  function isWaived(licenseShort: string, path: string): boolean {
-    return waiversRaw.some((w) => {
-      if (w.license_short !== licenseShort) return false;
-      if (w.scope === 'all') return true;
-      if (w.scope === path) return true;
-      if (w.scope.endsWith('/*')) return path.startsWith(w.scope.slice(0, -2));
-      return false;
-    });
-  }
-
-  const seenPaths = new Set<string>();
+  const provenanceFailures = findProvenanceFailures({
+    entries: manifest.entries,
+    waivers: waiversRaw,
+    isAllowed: isAllowedLicense,
+    existsOnDisk: existsSync,
+  });
+  let duplicates = 0;
   let licenseFails = 0;
   let missingFiles = 0;
-  let duplicates = 0;
-  for (const e of manifest.entries) {
-    if (seenPaths.has(e.path)) {
+  for (const f of provenanceFailures) {
+    if (f.kind === 'duplicate-path') {
       duplicates++;
-      console.error(`  ✗ duplicate manifest entry: ${e.path}`);
-    } else {
-      seenPaths.add(e.path);
-    }
-    if (!isAllowedLicense(e.license_short) && !isWaived(e.license_short, e.path)) {
+      console.error(`  ✗ duplicate manifest entry: ${f.path}`);
+    } else if (f.kind === 'license-not-allowed') {
       licenseFails++;
-      console.error(`  ✗ ${e.path}: license '${e.license_short}' not in allowlist and not waived`);
-    }
-    // Manifest paths look like /images/foo.jpg → check static/images/foo.jpg.
-    const onDiskPath = join('static', e.path.replace(/^\//, ''));
-    if (!existsSync(onDiskPath)) {
+      console.error(`  ✗ ${f.path}: license '${f.license_short}' not in allowlist and not waived`);
+    } else if (f.kind === 'missing-file') {
       missingFiles++;
-      console.error(`  ✗ ${e.path}: manifest entry references missing file ${onDiskPath}`);
+      console.error(`  ✗ ${f.path}: manifest entry references missing file ${f.on_disk_path}`);
     }
   }
   provenanceFailed = duplicates + licenseFails + missingFiles;

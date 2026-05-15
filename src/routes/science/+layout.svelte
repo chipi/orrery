@@ -257,17 +257,62 @@
     }
   }
   @media (max-width: 768px) {
+    /* Switch to flex-column so we can re-order children: tabs first
+       (compact horizontal scroll chip strip), then the section rail
+       (still the primary in-tab navigator), then the article content.
+       Previously the tab rail rendered as a 2-col auto-fit grid that
+       ate ~250 px of vertical space before the content even started —
+       on a 390 px phone that's a third of the viewport. Compacting to
+       a single scrollable row reclaims that space for the article. */
     .layout {
-      grid-template-columns: 1fr;
-      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
     .rail {
       position: static;
     }
+    .rail-left {
+      order: 1;
+    }
+    .has-right-rail .rail-right {
+      order: 2;
+    }
+    .content {
+      order: 3;
+      min-width: 0;
+    }
+    /* Tab rail → horizontal-scroll chip strip. Each tab is a single
+       row, swipe / drag to access tabs that overflow. */
     .tab-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 6px;
+      padding-bottom: 4px;
+      margin-bottom: 0;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab-card {
+      flex: 0 0 auto;
+      min-height: 32px;
+      padding: 6px 12px;
+    }
+    .tab-name {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
+    /* Hide the rail header + search button on mobile — they're
+       desktop affordances that just add vertical noise here. Cmd-K
+       still works from a keyboard if attached. */
+    .rail-heading {
+      display: none;
+    }
+    .search-button {
+      display: none;
     }
   }
 
@@ -287,11 +332,6 @@
     .section-name {
       font-size: 12px;
       line-height: 1.2;
-    }
-    .rail-heading {
-      font-size: 11px;
-      margin: 0 0 8px;
-      padding-bottom: 6px;
     }
   }
 </style>

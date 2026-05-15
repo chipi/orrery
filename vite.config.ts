@@ -88,15 +88,28 @@ export default defineConfig({
   ],
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts'],
-    // S1 (Test-coverage gap-closure plan) — print-only baseline via
-    // `npm run test:coverage`. Not gated in CI; threshold revisited
-    // after 2 weeks of baseline data. Excludes auto-generated paraglide
-    // bundle, one-shot migration scripts, the screenshot harness, and
-    // Svelte SFCs (route pages exercise their lib code; tracking SFCs
-    // separately adds noise without signal).
+    // S1 (Test-coverage gap-closure plan) wired the v8 coverage reporter;
+    // S5/G1-G9 raised the per-file numbers to 94.54 % / 79.71 % / 89.24 %
+    // / 96.34 % (stmt / branch / fn / line). Gate locked at observed
+    // minus ~2 pp on each axis — catches meaningful regressions without
+    // becoming a flake filter on incidental edge-branch drift.
+    //
+    // Excludes auto-generated paraglide bundle, one-shot migration
+    // scripts, the screenshot harness, and Svelte SFCs (route pages
+    // exercise their lib code; tracking SFCs separately adds noise
+    // without signal).
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],
+      // Fail-closed thresholds — `npm run test:coverage` exits non-zero
+      // when any axis drops below the floor. Tune these together with
+      // a baseline refresh after a deliberate test-removal landed.
+      thresholds: {
+        statements: 92,
+        branches: 76,
+        functions: 86,
+        lines: 94,
+      },
       exclude: [
         'node_modules/',
         'src/lib/paraglide/',

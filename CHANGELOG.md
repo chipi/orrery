@@ -12,14 +12,16 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [0.6.1] — 2026-05-15
 
-A small patch landing the day after v0.6.0 to stabilise CI / e2e and add a build-date stamp in the footer so visitors can see when the live deploy was last refreshed.
+A small patch landing the day after v0.6.0 to stabilise CI / e2e, add a build-date stamp in the footer, fix a long-standing `/fly` 3D sprite-tube alignment bug, and ship a space-themed VitePress docs site.
 
 ### Added
 
 - **Footer build date** — alongside the existing version (`v0.6.0`), the footer now shows the deploy date (`v0.6.1 · 2026-05-15`, ISO 8601 UTC). Injected at build time via Vite `define` (same pattern as `__APP_VERSION__`); rebuilt only when the bundle is rebuilt, so it doubles as a quick-scan "this is the build live on GH Pages today" signal.
+- **VitePress docs site — space theme + guides folder** — full `docs/` rewrite with a custom theme (`docs/.vitepress/theme/custom.css`) matching the production app palette (`--orrery-bg #04040c`, gold `#ffc850`, teal `#4ecdc4`, mars `#c1440e`); Bebas Neue + Space Mono + Crimson Pro from Google Fonts; static starfield + radial-gradient glow on the home hero (pure CSS, no images). Navigation revised: Home / Guides (user + translator) / Decisions (TA / ADR / RFC / PRD indices) / ↗ Live App. Footer + sidebar + tables + code blocks + custom blocks re-tinted; local-search input + outline-on-right + 640 px mobile breakpoint tuned. `npm run docs:build` green after fixing 15 dead links surfaced by the guide move.
 
 ### Fixed
 
+- **`/fly` 3D sprite-tube tip alignment** — the red dot lagged on outbound and led on return because `spacecraftPos()` and the in-frame `snapTubeTip()` lerp re-derived the spacecraft's position from the same waypoints through two independent code paths; algebraically identical, visually drifty under sustained playback. Refactored `snapTubeTip` to translate the tip cross-section directly to `sc.pos × SCALE_3D` (single source of truth), so the tube cone tip and the sprite are guaranteed to coincide every frame, on both arcs.
 - **`/library` axe scan timeout in CI** — 678 outbound-link rows × every axe rule exceeded the per-test 30 s playwright budget on cold Ubuntu runners (35–43 s in failing runs). Bumped to 90 s for `/library` specifically; other a11y-pilot routes stay on the default.
 - **`missions.spec` count drift** — Apollo 13 shipped as the 37th mission (17th Moon entry) in v0.6.0, but the spec was still asserting 36 / 16. Bumped to 37 / 17 to match.
 - **`fly-render-validation` 3D ↔ 2D hash-invariant flake** — Mariner 4, Apollo 11, and Apollo 17 occasionally failed on the first run and passed on retry. Bumped the `data-view='2d'` wait from 5 s to 10 s; swapped the locator to `[data-testid="fly-view-toggle"]` (more stable than a label regex now that the toggle row has five sibling panel-visibility buttons).

@@ -12,6 +12,7 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import { buildMarsLanderModel } from '$lib/mars-lander-models';
   import { buildLabel } from '$lib/three-label';
   import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
   import * as m from '$lib/paraglide/messages';
@@ -355,91 +356,14 @@
         const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
         const r = marsRadius;
         const color = colorFor(site);
-        const group = new THREE.Group();
-        const mat = new THREE.MeshPhongMaterial({
-          color,
-          emissive: color,
-          emissiveIntensity: 0.2,
-          shininess: 30,
-        });
-        // Marker shape varies by hardware type:
-        //   - Rover (active or completed) → squat box on wheels
-        //   - Soviet lander (Mars 2/3/6, ROSCOSMOS) → spherical
-        //     petal-capsule, the iconic Soviet design that descended
-        //     under parachute and opened like a flower on landing
-        //   - Other lander → octahedron probe with antenna
-        // Failure status (CRASHED/LOST) is conveyed via reduced
-        // opacity + the dashed-outline marker in 2D + the panel's
-        // status badge — the 3D model itself shows the actual
-        // hardware so users can see what they were before they failed.
+        // Per-mission hand-coded silhouette (Vikings, Pathfinder + Sojourner,
+        // MER twins, MSL-class with Ingenuity for Perseverance, Phoenix-class,
+        // Soviet petals, Beagle 2 partial-deploy, Schiaparelli crash bus).
+        // Unknown ids fall back to a category silhouette (rover / lander /
+        // Soviet petal) via the agency + mission-type strings. Same pattern
+        // /moon uses with moon-lander-models.ts.
         const isFailed = site.status === 'CRASHED' || site.status === 'LOST';
-        const isRover =
-          site.mission_type?.toLowerCase().includes('rover') ||
-          site.mission_id === 'curiosity' ||
-          site.mission_id === 'perseverance';
-        const isSovietLander = site.agency === 'ROSCOSMOS';
-        if (isRover) {
-          // Rover — squat box on wheels.
-          const body = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.35, 0.5), mat);
-          body.position.y = 0.3;
-          group.add(body);
-          for (const dx of [-0.3, 0.3]) {
-            for (const dz of [-0.2, 0.2]) {
-              const wheel = new THREE.Mesh(
-                new THREE.SphereGeometry(0.1, 6, 6),
-                new THREE.MeshPhongMaterial({ color: 0x222222 }),
-              );
-              wheel.position.set(dx, 0.12, dz);
-              group.add(wheel);
-            }
-          }
-        } else if (isSovietLander) {
-          // Soviet petal-capsule — central spherical body with four
-          // open petal panels around the base. This is the silhouette
-          // of the Mars 2/3/6 landers (and the Venera lineage they
-          // descended from). Descended on a parachute, opened like a
-          // flower on touchdown.
-          const capsule = new THREE.Mesh(new THREE.SphereGeometry(0.36, 16, 12), mat);
-          capsule.position.y = 0.42;
-          group.add(capsule);
-          // Four petals — flat triangular panels splayed out at ground
-          // level around the base.
-          for (let i = 0; i < 4; i++) {
-            const ang = (i / 4) * Math.PI * 2;
-            const petal = new THREE.Mesh(
-              new THREE.BoxGeometry(0.42, 0.02, 0.34),
-              new THREE.MeshPhongMaterial({
-                color: '#888888',
-                emissive: color,
-                emissiveIntensity: 0.05,
-                shininess: 5,
-              }),
-            );
-            petal.position.set(Math.cos(ang) * 0.42, 0.05, Math.sin(ang) * 0.42);
-            petal.rotation.y = ang;
-            // Tilt downward so petals flare outward from the capsule.
-            petal.rotation.z = -0.35;
-            group.add(petal);
-          }
-          // Tiny antenna whip on top.
-          const antenna = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.015, 0.015, 0.4, 4),
-            new THREE.MeshPhongMaterial({ color: 0xeeeeee }),
-          );
-          antenna.position.y = 0.95;
-          group.add(antenna);
-        } else {
-          // Generic Western lander — octahedron probe.
-          const body = new THREE.Mesh(new THREE.OctahedronGeometry(0.5), mat);
-          body.position.y = 0.5;
-          group.add(body);
-          const antenna = new THREE.Mesh(
-            new THREE.CylinderGeometry(0.02, 0.02, 0.5, 4),
-            new THREE.MeshPhongMaterial({ color: 0xeeeeee }),
-          );
-          antenna.position.y = 1.05;
-          group.add(antenna);
-        }
+        const group = buildMarsLanderModel(site.id, site.mission_type, site.agency, color);
         // Crashed/lost markers get reduced opacity so the wreckage is
         // visually de-emphasised vs. operational hardware. The 2D
         // dashed-outline marker carries the same info on the flat map.

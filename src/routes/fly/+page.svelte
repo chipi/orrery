@@ -284,14 +284,28 @@
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
   // Per-panel visibility toggles — let the user dismiss any of the
-  // surrounding HUD elements to see more of the scene. All default ON;
-  // each maps to a small square button in the top-right toggle row
-  // next to the 2D button. Aria-pressed on each button.
+  // surrounding HUD elements to see more of the scene. All default ON.
+  // Split into two clusters in the markup:
+  //  - Right cluster (always visible, blue theme): HUD, CAP, 2D.
+  //  - Left cluster (lens-gated, gold theme): FD, LYR, CON. These
+  //    three only have an effect when the Science Lens is on, so the
+  //    cluster also only appears when the lens is on — keeps the chrome
+  //    minimal for casual users.
   let showHud = $state(true);
   let showCapcom = $state(true);
   let showFlightDirector = $state(true);
   let showLayersPanel = $state(true);
   let showConicPanel = $state(true);
+  let lensOnState = $state(isScienceLensOn());
+  $effect(() => {
+    // svelte-check flow-analysis misses the template read at the
+    // `{#if lensOnState}` site below; nudge it with an explicit read.
+    void lensOnState;
+    const stop = onScienceLensChange((on) => {
+      lensOnState = on;
+    });
+    return () => stop?.();
+  });
   // Cislunar view mode (ADR-058). Derived from mission destination —
   // Moon missions render in the Earth-centred cislunar scene, all
   // others render heliocentrically. The user-facing Cislunar/Solar
@@ -4029,21 +4043,51 @@
     </div>
   </div>
 
-  <!-- View-management toggle row — sits top-right under the nav. The
-       2D / 3D switch + 5 panel visibility toggles (HUD stack, CAPCOM,
-       Flight Director, Science Layers, Conic). All panels default ON;
-       click a button to hide its panel and reclaim screen real-estate
-       for the scene. Same square-button style as /iss. -->
-  <div class="fly-toggle-row" role="group" aria-label="View and panel toggles">
-    <button
-      class="toggle"
-      type="button"
-      data-testid="fly-view-toggle"
-      onclick={toggleView}
-      aria-pressed={view === '2d'}
+  <!-- Left cluster — lens-gated, gold theme. Only appears when the
+       Science Lens is on; the three toggles control panels that
+       themselves only render under the lens, so the cluster's
+       visibility tracks the lens state. Keeps casual-mode chrome
+       minimal. -->
+  {#if lensOnState}
+    <div
+      class="fly-toggle-row fly-toggle-row-left lens"
+      role="group"
+      aria-label="Science Lens panel toggles"
     >
-      {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-    </button>
+      <button
+        type="button"
+        class="toggle toggle-lens"
+        aria-pressed={showFlightDirector}
+        title="Toggle Flight Director narration banner"
+        onclick={() => (showFlightDirector = !showFlightDirector)}
+      >
+        FD
+      </button>
+      <button
+        type="button"
+        class="toggle toggle-lens"
+        aria-pressed={showLayersPanel}
+        title="Toggle Science Layers panel"
+        onclick={() => (showLayersPanel = !showLayersPanel)}
+      >
+        LYR
+      </button>
+      <button
+        type="button"
+        class="toggle toggle-lens"
+        aria-pressed={showConicPanel}
+        title="Toggle Conic Section side panel (requires the conics layer to be on)"
+        onclick={() => (showConicPanel = !showConicPanel)}
+      >
+        CON
+      </button>
+    </div>
+  {/if}
+
+  <!-- Right cluster — always visible, blue theme. HUD, CAPCOM, 2D/3D.
+       2D sits furthest right so the canonical view switch stays at the
+       conventional top-right corner. -->
+  <div class="fly-toggle-row fly-toggle-row-right" role="group" aria-label="View and panel toggles">
     <button
       type="button"
       class="toggle"
@@ -4063,31 +4107,13 @@
       CAP
     </button>
     <button
-      type="button"
       class="toggle"
-      aria-pressed={showFlightDirector}
-      title="Toggle Flight Director narration banner (lens-gated)"
-      onclick={() => (showFlightDirector = !showFlightDirector)}
-    >
-      FD
-    </button>
-    <button
       type="button"
-      class="toggle"
-      aria-pressed={showLayersPanel}
-      title="Toggle Science Layers panel (lens-gated)"
-      onclick={() => (showLayersPanel = !showLayersPanel)}
+      data-testid="fly-view-toggle"
+      onclick={toggleView}
+      aria-pressed={view === '2d'}
     >
-      LYR
-    </button>
-    <button
-      type="button"
-      class="toggle"
-      aria-pressed={showConicPanel}
-      title="Toggle Conic Section side panel (lens + conics layer)"
-      onclick={() => (showConicPanel = !showConicPanel)}
-    >
-      CON
+      {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
     </button>
   </div>
 
@@ -4577,20 +4603,26 @@
     color: #fff;
   }
 
-  /* Top-right view-management row — the 2D/3D button plus 5 panel
-     visibility toggles. Wraps onto a second row on narrow viewports.
-     The 2D button used to be position:fixed standalone; now it's a
-     normal flex child inside the row container. */
+  /* Top-side toggle clusters. Two rows: lens-gated panel toggles
+     (FD/LYR/CON) on the LEFT in gold, always-visible toggles
+     (HUD/CAP/2D) on the RIGHT in blue. Each wraps onto a second line
+     on narrow viewports rather than overflowing. */
   .fly-toggle-row {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
-    right: 16px;
     z-index: 35;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
     gap: 6px;
-    max-width: calc(100vw - 32px);
+    max-width: calc(50vw - 12px);
+  }
+  .fly-toggle-row-left {
+    left: 16px;
+    justify-content: flex-start;
+  }
+  .fly-toggle-row-right {
+    right: 16px;
+    justify-content: flex-end;
   }
   .toggle {
     min-width: 44px;
@@ -4618,6 +4650,22 @@
   .toggle[aria-pressed='false'] {
     color: rgba(221, 228, 255, 0.5);
     border-color: rgba(68, 102, 255, 0.2);
+  }
+  /* Gold-themed variant for the lens-gated cluster on the left. Reuses
+     the same gold accent as ScienceLayersPanel + FlightDirectorBanner
+     so the user reads the cluster as part of the lens chrome. */
+  .toggle.toggle-lens {
+    color: #ffc850;
+    border-color: rgba(255, 200, 80, 0.55);
+  }
+  .toggle.toggle-lens:hover,
+  .toggle.toggle-lens:focus-visible {
+    border-color: #ffc850;
+    background: rgba(48, 38, 16, 0.95);
+  }
+  .toggle.toggle-lens[aria-pressed='false'] {
+    color: rgba(255, 200, 80, 0.5);
+    border-color: rgba(255, 200, 80, 0.22);
   }
   /* User-dismissed panels use display:none so they release their
      bottom/edge real-estate to the canvas. */

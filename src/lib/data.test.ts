@@ -13,14 +13,31 @@ import {
   getScenario,
   getEarthObjects,
   getMoonSites,
+  getMarsSites,
+  getMarsTraverse,
   getPorkchopGrid,
   getPlanetGallery,
   getSunGallery,
   getEarthObjectGallery,
   getMoonSiteGallery,
+  getMarsSiteGallery,
+  getSmallBodyGallery,
+  getMissionGallery,
   getIssModules,
   getIssModule,
   getIssModuleGallery,
+  getIssVisitors,
+  getIssVisitor,
+  getTiangongModules,
+  getTiangongModule,
+  getTiangongModuleGallery,
+  getTiangongVisitors,
+  getTiangongVisitor,
+  getFleetIndex,
+  getFleet,
+  getFleetByCategory,
+  getFleetGallery,
+  getImageProvenanceManifest,
   getScienceSection,
   getScienceTab,
   getScienceTabIntro,
@@ -607,6 +624,192 @@ describe('getScienceTabIntro', () => {
     const intro = await getScienceTabIntro('orbits', 'xx-TEST');
     expect(intro).not.toBeNull();
     expect(intro!.headline).toContain('gravity');
+  });
+});
+
+// ─── G1 gap-closure: surfaces that were untested at the S1 baseline ──
+
+describe('getMarsSites (PRD-009)', () => {
+  it('returns >= 16 Mars surface + orbital sites', async () => {
+    const sites = await getMarsSites();
+    expect(sites.length).toBeGreaterThanOrEqual(16);
+  });
+
+  it('every site carries id + nation + status fields', async () => {
+    const sites = await getMarsSites();
+    for (const s of sites) {
+      expect(s.id).toBeTruthy();
+      expect(s.nation).toBeTruthy();
+      expect(s.status).toBeTruthy();
+    }
+  });
+
+  it('merges en-US overlay strings (name / mission_type / fact / capability)', async () => {
+    const sites = await getMarsSites();
+    const curiosity = sites.find((s) => s.id === 'curiosity');
+    expect(curiosity).toBeTruthy();
+    expect(curiosity!.name).toBeTruthy();
+    expect(curiosity!.mission_type).toBeTruthy();
+  });
+});
+
+describe('getMarsTraverse', () => {
+  it('returns the Curiosity traverse polyline', async () => {
+    const t = await getMarsTraverse('curiosity');
+    expect(t).not.toBeNull();
+    expect(t!.rover_id).toBe('curiosity');
+    expect(Array.isArray(t!.points)).toBe(true);
+    expect(t!.points.length).toBeGreaterThan(0);
+  });
+
+  it('returns null for an unknown rover id', async () => {
+    const t = await getMarsTraverse('ghost-rover');
+    expect(t).toBeNull();
+  });
+});
+
+describe('Tiangong modules + visitors (PRD-011)', () => {
+  it('getTiangongModules returns the 3 station modules (tianhe + wentian + mengtian)', async () => {
+    const mods = await getTiangongModules();
+    expect(mods.length).toBeGreaterThanOrEqual(3);
+    const ids = mods.map((m) => m.id);
+    expect(ids).toContain('tianhe');
+    expect(ids).toContain('wentian');
+    expect(ids).toContain('mengtian');
+  });
+
+  it('getTiangongModule returns a known module merged with en-US overlay', async () => {
+    const tianhe = await getTiangongModule('tianhe');
+    expect(tianhe).not.toBeNull();
+    expect(tianhe!.id).toBe('tianhe');
+    expect(tianhe!.name).toBeTruthy();
+  });
+
+  it('getTiangongModule returns null for an unknown id', async () => {
+    const ghost = await getTiangongModule('not-a-module');
+    expect(ghost).toBeNull();
+  });
+
+  it('getTiangongVisitors returns Shenzhou + Tianzhou', async () => {
+    const visitors = await getTiangongVisitors();
+    expect(visitors.length).toBeGreaterThanOrEqual(2);
+    const ids = visitors.map((v) => v.id);
+    expect(ids).toContain('shenzhou');
+    expect(ids).toContain('tianzhou');
+  });
+
+  it('getTiangongVisitor returns null for an unknown id', async () => {
+    const ghost = await getTiangongVisitor('not-a-ship');
+    expect(ghost).toBeNull();
+  });
+
+  it('getTiangongModuleGallery returns an array (possibly empty)', async () => {
+    const urls = await getTiangongModuleGallery('tianhe');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+});
+
+describe('ISS visitors', () => {
+  it('getIssVisitors returns the visiting spacecraft catalogue', async () => {
+    const visitors = await getIssVisitors();
+    expect(visitors.length).toBeGreaterThanOrEqual(1);
+    for (const v of visitors) {
+      expect(v.id).toBeTruthy();
+      expect(v.name).toBeTruthy();
+    }
+  });
+
+  it('getIssVisitor returns null for an unknown id', async () => {
+    const ghost = await getIssVisitor('not-a-visitor');
+    expect(ghost).toBeNull();
+  });
+});
+
+describe('Fleet (PRD-012 / RFC-016 / ADR-052)', () => {
+  it('getFleetIndex returns >=130 entries', async () => {
+    const entries = await getFleetIndex();
+    expect(entries.length).toBeGreaterThanOrEqual(130);
+  });
+
+  it('every fleet-index entry has id + category + agency', async () => {
+    const entries = await getFleetIndex();
+    for (const e of entries) {
+      expect(e.id).toBeTruthy();
+      expect(e.category).toBeTruthy();
+      expect(e.agency).toBeTruthy();
+    }
+  });
+
+  it('getFleet returns a full entry merged with en-US overlay', async () => {
+    // Signature is getFleet(id, category, locale=en-US).
+    const saturn = await getFleet('saturn-v', 'launcher');
+    expect(saturn).not.toBeNull();
+    expect(saturn!.id).toBe('saturn-v');
+    expect(saturn!.name).toBeTruthy();
+    expect(Array.isArray(saturn!.links)).toBe(true);
+  });
+
+  it('getFleet returns null for an unknown id', async () => {
+    const ghost = await getFleet('not-a-rocket', 'launcher');
+    expect(ghost).toBeNull();
+  });
+
+  it('getFleetByCategory returns only entries of the requested category', async () => {
+    const launchers = await getFleetByCategory('launcher');
+    expect(launchers.length).toBeGreaterThan(0);
+    for (const l of launchers) {
+      expect(l.category).toBe('launcher');
+    }
+  });
+
+  it('getFleetGallery returns an array (possibly empty) for an unknown id', async () => {
+    const urls = await getFleetGallery('ghost-vehicle');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+});
+
+describe('Image provenance manifest (ADR-047)', () => {
+  it('loads the manifest with the documented top-level shape', async () => {
+    const m = await getImageProvenanceManifest();
+    expect(m).not.toBeNull();
+    expect(typeof m!.schema_version).toBe('number');
+    expect(Array.isArray(m!.entries)).toBe(true);
+    expect(m!.entries.length).toBeGreaterThan(0);
+  });
+
+  it('every entry carries path + license_short + agency + author', async () => {
+    const m = await getImageProvenanceManifest();
+    if (!m) throw new Error('manifest missing');
+    for (const e of m.entries.slice(0, 50)) {
+      expect(e.path).toBeTruthy();
+      expect(e.license_short).toBeTruthy();
+      // ADR-047 Milestone C: every row credits agency + author so the
+      // /credits page renders source-of-truth attribution.
+      expect(e).toHaveProperty('agency');
+      expect(e).toHaveProperty('author');
+    }
+  });
+});
+
+describe('Mars + Small-body + Mission galleries', () => {
+  it('getMarsSiteGallery returns an array for a known site id', async () => {
+    const urls = await getMarsSiteGallery('curiosity');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+
+  it('getMarsSiteGallery returns [] for an unknown site id', async () => {
+    const urls = await getMarsSiteGallery('ghost-rover-99');
+    expect(urls).toEqual([]);
+  });
+
+  it('getSmallBodyGallery returns an array for a known body id', async () => {
+    const urls = await getSmallBodyGallery('pluto');
+    expect(Array.isArray(urls)).toBe(true);
+  });
+
+  it('getMissionGallery returns an array for a known mission id', async () => {
+    const urls = await getMissionGallery('apollo11');
+    expect(Array.isArray(urls)).toBe(true);
   });
 });
 

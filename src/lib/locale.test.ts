@@ -1,4 +1,11 @@
-import { describe, it, expect } from 'vitest';
+// @vitest-environment jsdom
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+
+// Mock $app/environment so the `browser` flag is true in tests — the
+// cookie + document-attribute helpers short-circuit on `!browser`
+// otherwise, even when jsdom provides `document`.
+vi.mock('$app/environment', () => ({ browser: true }));
+
 import {
   DEFAULT_LOCALE,
   SUPPORTED_LOCALES,
@@ -9,6 +16,10 @@ import {
   canonicaliseLocaleInUrl,
   isLocaleUrlCanonical,
   LOCALE_COOKIE_NAME,
+  readLocaleCookie,
+  writeLocaleCookie,
+  clearLocaleCookie,
+  syncDocumentLocaleAttributes,
 } from './locale';
 
 describe('SUPPORTED_LOCALES', () => {
@@ -201,3 +212,80 @@ describe('isLocaleUrlCanonical', () => {
     expect(isLocaleUrlCanonical(url, 'de')).toBe(false);
   });
 });
+
+// ─── G2 gap-closure: cookie + document-attribute helpers (ADR-057) ───
+// These touch `document` + `location` — the file-level @vitest-environment
+// jsdom directive at the top of the file activates the DOM environment so
+// the `browser` short-circuit in locale.ts admits these calls.
+
+describe('locale cookie helpers (ADR-057)', () => {
+  beforeEach(() => {
+    // Clear any cookies between tests.
+    document.cookie = `${LOCALE_COOKIE_NAME}=; Max-Age=0; Path=/`;
+  });
+
+  it('readLocaleCookie returns null when no cookie is set', () => {
+    expect(readLocaleCookie()).toBeNull();
+  });
+
+  it('writeLocaleCookie stores the locale and readLocaleCookie reads it back', () => {
+    writeLocaleCookie('fr');
+    expect(readLocaleCookie()).toBe('fr');
+  });
+
+  it('writeLocaleCookie persists DEFAULT_LOCALE (explicit English pick)', () => {
+    writeLocaleCookie('en-US');
+    expect(readLocaleCookie()).toBe('en-US');
+  });
+
+  it('readLocaleCookie returns null when cookie holds an unsupported code', () => {
+    document.cookie = `${LOCALE_COOKIE_NAME}=xx-INVALID; Path=/`;
+    expect(readLocaleCookie()).toBeNull();
+  });
+
+  it('readLocaleCookie ignores unrelated cookies with similar names', () => {
+    document.cookie = `not_orrery_locale=fr; Path=/`;
+    document.cookie = `orrery_locale_other=de; Path=/`;
+    expect(readLocaleCookie()).toBeNull();
+  });
+
+  it('clearLocaleCookie removes a previously written cookie', () => {
+    writeLocaleCookie('ja');
+    expect(readLocaleCookie()).toBe('ja');
+    clearLocaleCookie();
+    expect(readLocaleCookie()).toBeNull();
+  });
+
+  it('writeLocaleCookie persists sr-Cyrl (locale code with hyphen + script tag)', () => {
+    writeLocaleCookie('sr-Cyrl');
+    expect(readLocaleCookie()).toBe('sr-Cyrl');
+    // Raw document.cookie carries the value (URL-encoded if needed).
+    expect(document.cookie).toContain('sr-Cyrl');
+  });
+});
+
+describe('syncDocumentLocaleAttributes', () => {
+  it('sets <html lang=...> for the requested locale', () => {
+    syncDocumentLocaleAttributes('fr');
+    expect(document.documentElement.getAttribute('lang')).toBe('fr');
+  });
+
+  it('sets dir="rtl" for the Arabic locale', () => {
+    syncDocumentLocaleAttributes('ar');
+    expect(document.documentElement.getAttribute('dir')).toBe('rtl');
+  });
+
+  it('sets dir="ltr" for every non-RTL locale', () => {
+    syncDocumentLocaleAttributes('fr');
+    expect(document.documentElement.getAttribute('dir')).toBe('ltr');
+    syncDocumentLocaleAttributes('ja');
+    expect(document.documentElement.getAttribute('dir')).toBe('ltr');
+    syncDocumentLocaleAttributes('en-US');
+    expect(document.documentElement.getAttribute('dir')).toBe('ltr');
+  });
+});
+
+// Reference DEFAULT_LOCALE + SUPPORTED_LOCALES from imports to keep
+// tsc happy if the lints prune unused names.
+void DEFAULT_LOCALE;
+void SUPPORTED_LOCALES;

@@ -495,6 +495,11 @@
     retLine.geometry = rebuildTubeGeometry(retArc, retRadius);
     retLineFuture.geometry.dispose();
     retLineFuture.geometry = rebuildTubeGeometry(retArc, retRadius);
+    // Reset the tip-snap mutation cache when the underlying geometry
+    // changes — the previous frame's cross-section index would point
+    // into the OLD array's length.
+    outLine.userData.tipMutation = null;
+    retLine.userData.tipMutation = null;
     apsidesRecompute?.();
     const hasReturn = retArc.length >= 2;
     retLine.visible = hasReturn;
@@ -3426,25 +3431,85 @@
       // doubled formula uniformly covers both cases.
       const outFraction = Math.min(1, sc.progress * 2);
       const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
-      // Ceil-snap to whole-segment boundaries so the tube tip always
-      // sits at or past the spacecraft sprite. Round-to-nearest used to
-      // truncate at a fractional-segment index that didn't map to a
-      // complete tube ring, leaving the sprite a few pixels beyond the
-      // visible tube tip (visible on Viking 1 etc.).
-      if (outLine && outLine.geometry.index && outPts.length > 1) {
-        const total = outLine.geometry.index.count;
-        const segs = outPts.length - 1;
+
+      // Sub-segment tip snap. The sprite sits at a fractional position
+      // between vertices floorSeg and floorSeg+1; the tube can only end
+      // at a whole vertex. Round-snap (previous fix) still left a ±½
+      // segment visible gap under close-up auto-zoom — enough to read
+      // as "sprite isn't at the line tip" on Viking 1 etc.
+      //
+      // Real fix: each frame, translate the tip cross-section (vertex
+      // floorSeg+1's 8 radial vertices) IN PLACE so its centre lands
+      // exactly at the sprite. The previous frame's translation is
+      // undone first. Result: tube tip = sprite, sub-pixel, every
+      // frame. Cost is ~16 ops per tube (8 vertices × 2 axes); cheap.
+      const snapTubeTip = (
+        line: THREE.Mesh,
+        pts: { x: number; z: number }[],
+        fraction: number,
+      ): void => {
+        if (!line.geometry.index || pts.length < 2) return;
+        const segs = pts.length - 1;
+        const total = line.geometry.index.count;
         const segIndices = total / segs;
-        const targetSeg = Math.min(segs, Math.round(outFraction * segs));
-        outLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
-      }
-      if (retLine && retLine.geometry.index && retPts.length > 1) {
-        const total = retLine.geometry.index.count;
-        const segs = retPts.length - 1;
-        const segIndices = total / segs;
-        const targetSeg = Math.min(segs, Math.round(retFraction * segs));
-        retLine.geometry.setDrawRange(0, Math.max(0, targetSeg * segIndices));
-      }
+        const f = Math.max(0, Math.min(segs, fraction * segs));
+        const floorSeg = Math.min(segs - 1, Math.max(0, Math.floor(f)));
+        const frac = f - floorSeg;
+
+        const posAttr = line.geometry.attributes.position as THREE.BufferAttribute;
+        const arr = posAttr.array as Float32Array;
+
+        // Undo previous frame's translation on whichever cross-section
+        // we last touched.
+        const prev = line.userData.tipMutation as
+          | { csIdx: number; dx: number; dz: number }
+          | undefined;
+        if (prev) {
+          const base = prev.csIdx * 8 * 3;
+          for (let r = 0; r < 8; r++) {
+            arr[base + r * 3 + 0] -= prev.dx;
+            arr[base + r * 3 + 2] -= prev.dz;
+          }
+        }
+
+        if (fraction <= 0) {
+          // No tube to draw.
+          line.userData.tipMutation = null;
+          posAttr.needsUpdate = true;
+          line.geometry.setDrawRange(0, 0);
+          return;
+        }
+        if (fraction >= 1) {
+          // Full tube; no tip snap needed.
+          line.userData.tipMutation = null;
+          posAttr.needsUpdate = true;
+          line.geometry.setDrawRange(0, total);
+          return;
+        }
+
+        // Sprite position in scene coords, and the curve vertex at the
+        // tip cross-section (the one we're about to translate).
+        const a = pts[floorSeg];
+        const b = pts[floorSeg + 1];
+        const spriteX = (a.x + (b.x - a.x) * frac) * SCALE_3D;
+        const spriteZ = (a.z + (b.z - a.z) * frac) * SCALE_3D;
+        const csIdx = floorSeg + 1;
+        const curveX = b.x * SCALE_3D;
+        const curveZ = b.z * SCALE_3D;
+        const dx = spriteX - curveX;
+        const dz = spriteZ - curveZ;
+
+        const base = csIdx * 8 * 3;
+        for (let r = 0; r < 8; r++) {
+          arr[base + r * 3 + 0] += dx;
+          arr[base + r * 3 + 2] += dz;
+        }
+        line.userData.tipMutation = { csIdx, dx, dz };
+        posAttr.needsUpdate = true;
+        line.geometry.setDrawRange(0, csIdx * segIndices);
+      };
+      if (outLine && outPts.length > 1) snapTubeTip(outLine, outPts, outFraction);
+      if (retLine && retPts.length > 1) snapTubeTip(retLine, retPts, retFraction);
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.

@@ -1221,7 +1221,7 @@
     }
     .cta-row {
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
     }
     .divider {
       margin: 40px 0;

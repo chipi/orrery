@@ -46,6 +46,8 @@ export default [
       'docs/.vitepress/cache/',
       'playwright-report/',
       'test-results/',
+      // Generated coverage report (@vitest/coverage-v8 HTML/lcov, S1).
+      'coverage/',
       // Local-only Python virtualenvs (gitignored) — used by Argos
       // Translate scripts. Ship-time CI checkouts never see these.
       '.venv-argos/',

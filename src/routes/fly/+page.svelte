@@ -387,6 +387,11 @@
   // Stage 1 picture-in-picture inset; kept un-exported for now.
   let cislunarMoonMeshRef: THREE.Mesh | undefined;
   let cislunarMoonFrameGroupRef: THREE.Group | undefined;
+  // Exposed from the onMount scene builder so the mission-load
+  // callbacks (applyMissionAsLoaded / applyScenarioAsLoaded /
+  // applyPlanSelection) can swap the destination mesh + orbit ring to
+  // match the active mission's target body.
+  let applyDestinationVisualsRef: ((id: DestinationId) => void) | undefined;
   let rebuildCislunarLinesRef: ((traj: CislunarTrajectory | null) => void) | undefined;
   let rebuildCislunarAnnotationsRef:
     | ((
@@ -873,6 +878,7 @@
     isFreeReturn = false;
     isMoonMission = m.dest === 'MOON';
     activeDestination = missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
+    applyDestinationVisualsRef?.(activeDestination);
     // isReturnTrip is computed above (it gates flybyOffset). Sample-
     // return missions: Luna 24, Chang'e 5/6. Crewed: Apollo, Artemis 3.
     // Drives the second tube-mesh rendering of the return arc below.
@@ -993,6 +999,7 @@
     arcTimeline = newTimeline;
     isFreeReturn = true; // ORRERY DEMO + future free-return scenarios
     activeDestination = 'mars';
+    applyDestinationVisualsRef?.(activeDestination);
     isMoonMission = false;
     const arcs = buildArcs(newTimeline, true);
     outPts = arcs.out;
@@ -1795,7 +1802,13 @@
       );
     };
     const earthOrbitLine = orbit(R_EARTH_AU, 0x4b9cd3);
-    const marsOrbitLine = orbit(R_MARS_AU, 0xc1440e);
+    // Mars-by-default destination orbit ring. Replaced in place by
+    // applyDestinationVisuals() when the active mission targets a
+    // different body (Jupiter for Galileo, Neptune for Voyager 2,
+    // Pluto for New Horizons, Ceres for Dawn, etc.). Variable name
+    // stays `marsOrbitLine` for historic reasons; the comment is the
+    // source of truth.
+    let marsOrbitLine = orbit(R_MARS_AU, 0xc1440e);
     scene.add(earthOrbitLine);
     scene.add(marsOrbitLine);
 
@@ -1854,7 +1867,11 @@
     // Hoist the builder so the $effect can re-use it on mission swap.
     rebuildTubeGeometry = buildTubeGeometry;
 
-    // Earth + Mars meshes
+    // Earth + destination meshes. `marsMesh` is the destination body
+    // mesh — Mars by default; mutated in place by
+    // applyDestinationVisuals() when a mission targets Jupiter,
+    // Saturn, Neptune, Pluto, Ceres, etc. Variable name kept as
+    // `marsMesh` for historic reasons.
     const earthMesh = new THREE.Mesh(
       new THREE.SphereGeometry(2.6, 24, 24),
       new THREE.MeshPhongMaterial({ color: 0x3a8fcc, emissive: 0x3a8fcc, emissiveIntensity: 0.2 }),
@@ -1865,6 +1882,48 @@
       new THREE.MeshPhongMaterial({ color: 0xc1440e, emissive: 0xc1440e, emissiveIntensity: 0.2 }),
     );
     scene.add(marsMesh);
+
+    // Per-destination visual styling (sphere radius + colour). Sizes
+    // are tuned for /fly's heliocentric scale — smaller than /explore
+    // because the camera there sits much closer to the body. Outer-
+    // planet diameters compressed so even Jupiter doesn't dominate
+    // the scene at default zoom.
+    const DEST_STYLE: Record<string, { size: number; color: number }> = {
+      mercury: { size: 1.0, color: 0x9b9b9b },
+      venus: { size: 2.5, color: 0xc9b870 },
+      mars: { size: 1.9, color: 0xc1440e },
+      jupiter: { size: 5.5, color: 0xc88b3a },
+      saturn: { size: 4.8, color: 0xe4d191 },
+      uranus: { size: 3.4, color: 0x7de8e8 },
+      neptune: { size: 3.4, color: 0x3f54ba },
+      pluto: { size: 0.9, color: 0xb9a895 },
+      ceres: { size: 0.6, color: 0xa8a499 },
+    };
+
+    /** Mutate the (historically Mars) destination mesh + orbit line in
+     *  place so they match the active mission's destination body.
+     *  Called from applyMissionAsLoaded / applyScenarioAsLoaded /
+     *  applyPlanSelection right after `activeDestination` is updated.
+     *  Earth + Sun stay constant; only the destination body swaps. */
+    function applyDestinationVisuals(id: DestinationId): void {
+      const style = DEST_STYLE[id] ?? DEST_STYLE.mars;
+      // Geometry — dispose old, build new at the right radius.
+      marsMesh.geometry.dispose();
+      marsMesh.geometry = new THREE.SphereGeometry(style.size, 24, 24);
+      // Material — recolour in place.
+      const mat = marsMesh.material as THREE.MeshPhongMaterial;
+      mat.color.setHex(style.color);
+      mat.emissive.setHex(style.color);
+      // Orbit ring — replace with one at the destination's semi-major
+      // axis. Reuse `orbit()` helper closed over above.
+      const orbitRadius = DESTINATIONS[id].a;
+      scene.remove(marsOrbitLine);
+      marsOrbitLine.geometry.dispose();
+      (marsOrbitLine.material as THREE.Material).dispose();
+      marsOrbitLine = orbit(orbitRadius, style.color);
+      scene.add(marsOrbitLine);
+    }
+    applyDestinationVisualsRef = applyDestinationVisuals;
 
     // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────
     // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
@@ -3193,7 +3252,11 @@
         // the user watch Mars travel along its orbit toward the
         // arrival ring as the spacecraft transits.
         const ePos = earthPos(simDay);
-        const mPos = marsPos(simDay);
+        // Destination position uses the active mission's target body,
+        // not always Mars. Jupiter / Saturn / Neptune / Pluto / Ceres
+        // missions now render their actual target instead of a
+        // confusing Mars stand-in.
+        const mPos = destinationPos(simDay, activeDestination);
         earthMesh.position.set(ePos.x * SCALE_3D, 0, ePos.z * SCALE_3D);
         marsMesh.position.set(mPos.x * SCALE_3D, 0, mPos.z * SCALE_3D);
       }

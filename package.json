@@ -46,6 +46,7 @@
     "test:coverage": "npm run i18n:compile && vitest run --coverage --passWithNoTests",
     "test:e2e": "npm run build && playwright test",
     "test:e2e:ui": "npm run build && playwright test --ui",
+    "regen-visual-baselines-linux": "bash scripts/regenerate-visual-baselines-linux.sh",
     "screenshots": "npm run build && tsx scripts/capture-screenshots.ts",
     "i18n:compile": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
     "fetch-assets": "tsx scripts/fetch-assets.ts",

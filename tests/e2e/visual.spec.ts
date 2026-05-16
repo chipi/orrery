@@ -50,15 +50,18 @@ const STABLE_ELEMENTS = [
 ];
 
 test.describe('visual regression baselines (S8 — element-scoped, stable surfaces only)', () => {
-  // Baselines committed to the repo are *-darwin.png (the maintainer's
-  // local machine). CI runs Ubuntu Linux, so Playwright looks for
-  // *-linux.png and reports them as "missing baseline" on every
-  // single run. Until we either (a) commit linux baselines too, or
-  // (b) move snapshot generation to a CI-stable container, the pilot
-  // suite must be skipped on non-darwin platforms. Local darwin runs
-  // still execute the assertions; CI just doesn't gate on a
-  // half-finished baseline set.
-  test.skip(process.platform !== 'darwin', 'baselines are darwin-only — see comment above');
+  // Baselines committed for both darwin (maintainer's machine) and
+  // linux (CI runners). The linux PNGs are generated via the official
+  // Playwright Docker image (`mcr.microsoft.com/playwright:v1.60.0-noble`)
+  // so they match the GH Actions ubuntu-latest runner pixel-for-pixel.
+  //
+  // Full regeneration workflow + failure-mode reference:
+  //   docs/guides/visual-regression-baselines.md
+  //
+  // TL;DR — regenerate BOTH sets in lockstep on layout changes:
+  //   • darwin: `npx playwright test tests/e2e/visual.spec.ts --update-snapshots`
+  //   • linux:  `npm run regen-visual-baselines-linux`
+  // Commit both *-darwin.png and *-linux.png in the same change.
 
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {

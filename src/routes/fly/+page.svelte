@@ -3589,10 +3589,16 @@
       // is undone first. ~18 ops per tube (9 verts × 2 axes); cheap.
       const spriteSceneX = sc.pos.x * SCALE_3D;
       const spriteSceneZ = sc.pos.z * SCALE_3D;
+      // `role` distinguishes the bright "past" tube (ends at the
+      // sprite, drawRange trimmed to csIdx) from the dim "future"
+      // tube (covers the FULL arc, but its matching cross-section
+      // is ALSO translated to the sprite so the bright-to-dim
+      // transition is seamless — no visible split, fix for #228).
       const snapTubeTip = (
         line: THREE.Mesh,
         pts: { x: number; z: number }[],
         fraction: number,
+        role: 'past' | 'future',
       ): void => {
         if (!line.geometry.index || pts.length < 2) return;
         const segs = pts.length - 1;
@@ -3622,7 +3628,9 @@
         if (fraction <= 0) {
           line.userData.tipMutation = null;
           posAttr.needsUpdate = true;
-          line.geometry.setDrawRange(0, 0);
+          // Past tube hidden (no progress yet); future tube still
+          // shows the full arc preview.
+          line.geometry.setDrawRange(0, role === 'past' ? 0 : total);
           return;
         }
         if (fraction >= 1) {
@@ -3649,10 +3657,28 @@
         }
         line.userData.tipMutation = { csIdx, dx, dz };
         posAttr.needsUpdate = true;
-        line.geometry.setDrawRange(0, csIdx * segIndices);
+        // Past tube draws to csIdx (ends at sprite). Future tube
+        // draws the full arc so the user sees where the spacecraft
+        // is going. Critically, the future tube's csIdx vertex is
+        // ALSO at the sprite (after the translation above), so the
+        // bright/dim boundary doesn't split visually.
+        if (role === 'past') {
+          line.geometry.setDrawRange(0, csIdx * segIndices);
+        } else {
+          line.geometry.setDrawRange(0, total);
+        }
       };
-      if (outLine && outPts.length > 1) snapTubeTip(outLine, outPts, outFraction);
-      if (retLine && retPts.length > 1) snapTubeTip(retLine, retPts, retFraction);
+      // Snap the past tube AND the future tube to the sprite's world
+      // position. v0.6.1 only handled the past tube; the future tube's
+      // csIdx vertex stayed at `pts[csIdx]`, up to one segment AHEAD
+      // of the sprite, producing a visible bright-to-dim split for any
+      // fraction not on a vertex boundary. Issue #228.
+      if (outLine && outPts.length > 1) snapTubeTip(outLine, outPts, outFraction, 'past');
+      if (outLineFuture && outPts.length > 1)
+        snapTubeTip(outLineFuture, outPts, outFraction, 'future');
+      if (retLine && retPts.length > 1) snapTubeTip(retLine, retPts, retFraction, 'past');
+      if (retLineFuture && retPts.length > 1)
+        snapTubeTip(retLineFuture, retPts, retFraction, 'future');
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.

@@ -349,6 +349,31 @@
     container?.replaceChildren();
   }
 
+  // Defer `startThree()` until the container has actually been laid
+  // out by the browser. queueMicrotask() / requestAnimationFrame() can
+  // both run BEFORE the first layout pass on a cold mount, especially
+  // on mobile where font-loading + nav animations delay first paint.
+  // The renderer then reads container.clientWidth = 0, sets the canvas
+  // to 0×0, and we get a black screen until something else triggers a
+  // resize (e.g. navigating away and back). Issue #127.
+  function startThreeWhenSized() {
+    if (!container) return;
+    if (container.clientWidth > 0 && container.clientHeight > 0) {
+      startThree();
+      return;
+    }
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+          ro.disconnect();
+          startThree();
+          return;
+        }
+      }
+    });
+    ro.observe(container);
+  }
+
   function startThree() {
     if (!browser || !container) return;
 
@@ -771,7 +796,7 @@
       viewMode = '3d';
       perfCheckPending = true;
       syncUrl({ view: '3d' });
-      queueMicrotask(() => startThree());
+      queueMicrotask(() => startThreeWhenSized());
     }
   }
 
@@ -795,7 +820,7 @@
       if (!urlWantsList(u)) syncUrl({ view: 'list' });
     } else {
       viewMode = '3d';
-      queueMicrotask(() => startThree());
+      queueMicrotask(() => startThreeWhenSized());
     }
   });
 

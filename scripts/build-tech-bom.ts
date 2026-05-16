@@ -70,6 +70,13 @@ const LICENSE_ALLOWLIST = new Set([
   // axe-core / @axe-core/playwright (S7 a11y pilot) ship as MPL-2.0;
   // they're the industry standard a11y rules engine and used dev-only.
   'MPL-2.0',
+  // Strong copyleft — explicitly only permitted for [development] tier
+  // deps that never reach the production bundle. sharp (PRD-018 / RFC-022
+  // v2 image variant generation) pulls in @img/sharp-libvips-* native
+  // bindings under LGPL-3.0-or-later. We use sharp at build-time only;
+  // its output (JPEG variants) is data, not a derivative of libvips.
+  // LGPL applies to libvips itself — we don't modify or redistribute it.
+  'LGPL-3.0-or-later',
 ]);
 
 // Some legacy npm packages declare licenses as compound expressions or

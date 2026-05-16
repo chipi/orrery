@@ -58,6 +58,7 @@
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
     "build-tech-bom": "tsx scripts/build-tech-bom.ts",
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
+    "images:score": "tsx scripts/score-images.ts",
     "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && npm run check-tech-bom",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
@@ -69,6 +70,7 @@
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.96.0",
     "@axe-core/playwright": "^4.11.3",
     "@eslint/js": "9.17.0",
     "@inlang/paraglide-js": "1.11.2",
@@ -91,6 +93,7 @@
     "jsdom": "26.0.0",
     "prettier": "3.4.2",
     "prettier-plugin-svelte": "^3.5.2",
+    "sharp": "^0.34.5",
     "svelte": "^5.55.6",
     "svelte-check": "^4.4.8",
     "tslib": "2.8.1",

@@ -46,6 +46,72 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []
+    },
+    "viking1-lander": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "viking-tripod",
+      "hotspot_tier2_source": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "showcase": true,
+      "hotspot_annotations": []
+    },
+    "viking2-lander": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "viking-tripod",
+      "hotspot_tier2_source": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "mars-pathfinder": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "pathfinder-sojourner",
+      "hotspot_tier2_source": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "spirit": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "mer-rover",
+      "hotspot_tier2_source": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "opportunity": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "mer-rover",
+      "hotspot_tier2_source": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "curiosity": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "curiosity-class",
+      "hotspot_tier2_source": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "showcase": true,
+      "hotspot_annotations": []
+    },
+    "perseverance": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "curiosity-class-with-ingenuity",
+      "hotspot_tier2_source": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "showcase": true,
+      "hotspot_annotations": []
+    },
+    "phoenix": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "phoenix-class",
+      "hotspot_tier2_source": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "insight": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "phoenix-class",
+      "hotspot_tier2_source": "/images/hotspots/mars/insight/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
     }
   }
 }

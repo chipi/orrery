@@ -13,6 +13,20 @@
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import { buildMarsLanderModel } from '$lib/mars-lander-models';
+  import {
+    createHotspotEntry,
+    getHotspotModelBuilder,
+    registerHotspotModelBuilder,
+    updateHotspotLOD,
+    type HotspotEntry,
+  } from '$lib/hotspot-lod-dispatcher';
+  import { buildVikingTripodHotspot } from '$lib/hotspot-models/viking-tripod';
+  import { buildPathfinderSojournerHotspot } from '$lib/hotspot-models/pathfinder-sojourner';
+  import { buildMERRoverHotspot } from '$lib/hotspot-models/mer-rover';
+  import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
+  import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
+  import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
+  import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
   import * as m from '$lib/paraglide/messages';
@@ -312,6 +326,22 @@
       siteId: string;
       halo?: THREE.Mesh;
     };
+
+    // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S4).
+    // One entry per /mars surface site whose surface-hotspots.json
+    // sidecar gives hotspot_tier_max >= 1. Per-frame update happens
+    // in the animate loop; data-hotspot-tier attribute is published
+    // on the canvas for e2e assertions.
+    const hotspots: HotspotEntry[] = [];
+    registerHotspotModelBuilder('viking-tripod', buildVikingTripodHotspot);
+    registerHotspotModelBuilder('pathfinder-sojourner', buildPathfinderSojournerHotspot);
+    registerHotspotModelBuilder('mer-rover', buildMERRoverHotspot);
+    registerHotspotModelBuilder('curiosity-class', buildCuriosityClassHotspot);
+    registerHotspotModelBuilder('curiosity-class-with-ingenuity', (accent) =>
+      buildCuriosityClassHotspot(accent, { withIngenuity: true }),
+    );
+    registerHotspotModelBuilder('phoenix-class', buildPhoenixClassHotspot);
+    void loadImageVisionManifest();
     type OrbitalMarker = {
       group: THREE.Group;
       ringMesh: THREE.Mesh;
@@ -371,6 +401,7 @@
         marsMesh.remove(mk.group);
       }
       surfaceMarkers.length = 0;
+      hotspots.length = 0;
       for (const site of sites) {
         if (site.kind !== 'surface') continue;
         if (site.lat == null || site.lon == null) continue;
@@ -384,12 +415,18 @@
         // Soviet petal) via the agency + mission-type strings. Same pattern
         // /moon uses with moon-lander-models.ts.
         const isFailed = site.status === 'CRASHED' || site.status === 'LOST';
-        const group = buildMarsLanderModel(site.id, site.mission_type, site.agency, color);
+        // Wrapper group — positions + orients on the planet surface.
+        // Contains the Tier 0 silhouette sub-group (always present),
+        // any lazy-built Tier 1+ sub-groups added by the hotspot LOD
+        // dispatcher, plus hit-sphere + label + halo as siblings.
+        const group = new THREE.Group();
+        const tier0Group = buildMarsLanderModel(site.id, site.mission_type, site.agency, color);
+        group.add(tier0Group);
         // Crashed/lost markers get reduced opacity so the wreckage is
         // visually de-emphasised vs. operational hardware. The 2D
         // dashed-outline marker carries the same info on the flat map.
         if (isFailed) {
-          group.traverse((o) => {
+          tier0Group.traverse((o) => {
             if (o instanceof THREE.Mesh) {
               const om = o.material as THREE.Material & { opacity?: number; transparent?: boolean };
               if (om) {
@@ -430,6 +467,43 @@
         halo.position.y = 0.02;
         halo.rotation.x = -Math.PI / 2;
         group.add(halo);
+
+        // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S4).
+        // Sites whose surface-hotspots.json sidecar gives
+        // hotspot_tier_max >= 1 + a known hotspot_model id get a
+        // dispatcher entry. Tier 1 + Tier 2 meshes are built lazily
+        // on first promotion as the user zooms in.
+        const maxTier = (site.hotspot_tier_max ?? 0) as 0 | 1 | 2 | 3;
+        const builderId = site.hotspot_model;
+        if (maxTier >= 1 && builderId) {
+          const builder = getHotspotModelBuilder(builderId);
+          if (builder) {
+            const accent = color;
+            const tier2Source = site.hotspot_tier2_source;
+            const tier2Builder =
+              maxTier >= 2 && tier2Source
+                ? () => {
+                    const entry = getImageEntry(tier2Source);
+                    const textureUrl = entry ? pickVariant(entry, 'thumbnail', false) : undefined;
+                    return buildHotspotSurfacePatch({
+                      textureUrl,
+                      accentColor: accent,
+                      siteId: site.id,
+                    });
+                  }
+                : undefined;
+            hotspots.push(
+              createHotspotEntry({
+                siteId: site.id,
+                maxTier,
+                group,
+                tier0Group,
+                tier1Builder: () => builder(accent),
+                tier2Builder,
+              }),
+            );
+          }
+        }
 
         marsMesh.add(group);
         surfaceMarkers.push({ group, siteId: site.id, halo });
@@ -876,6 +950,18 @@
         }
       } else if (hoverLabelVisible) {
         hoverLabelVisible = false;
+      }
+
+      // Surface Hotspots LOD (PRD-014 / RFC-017 S4).
+      if (hotspots.length) {
+        const canvasH = renderer.domElement.clientHeight || 1;
+        updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
+        let topTier = 0;
+        for (const h of hotspots) if (h.currentTier > topTier) topTier = h.currentTier;
+        const target = renderer.domElement;
+        const attr = target.getAttribute('data-hotspot-tier');
+        const next = String(topTier);
+        if (attr !== next) target.setAttribute('data-hotspot-tier', next);
       }
 
       // 2D draw on each frame so rotation + dots stay live.

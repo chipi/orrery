@@ -232,10 +232,35 @@ async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['entries
 }
 
 /**
+ * Per-site, per-locale hotspot-metadata overlay (PRD-014 / RFC-017
+ * §S6). Currently only carries `hotspot_annotations` translations
+ * (annotation labels are user-visible; lat/lon offsets are technical
+ * and don't translate). Sites without an overlay file fall back to
+ * the default labels from surface-hotspots.json (typically English).
+ */
+async function hotspotMetadataOverlay(
+  locale: string,
+  siteId: string,
+): Promise<Partial<{
+  hotspot_annotations: import('$types/surface-site').HotspotAnnotation[];
+}> | null> {
+  return get<Partial<{ hotspot_annotations: import('$types/surface-site').HotspotAnnotation[] }>>(
+    `i18n/${locale}/hotspot-metadata/${siteId}.json`,
+  ).catch(() => null);
+}
+
+/**
  * Moon landing sites merged with their per-locale editorial overlay
- * (name, mission_type, site_name, crew, left, fact, capability) and
- * with the surface-hotspots sidecar (tier metadata for the v0.7
- * Surface Hotspots feature). Used by /moon.
+ * (name, mission_type, site_name, crew, left, fact, capability), with
+ * the surface-hotspots sidecar (tier metadata for the v0.7 Surface
+ * Hotspots feature), AND with the per-locale hotspot-metadata overlay
+ * (annotation labels per locale). Used by /moon.
+ *
+ * Merge order: base → editorial overlay → hotspot sidecar → hotspot
+ * locale overlay. Later wins. The hotspot locale overlay only
+ * carries translated annotation labels; if a site has no overlay
+ * file for the current locale, falls back to en-US, then to the
+ * sidecar default (which is English).
  */
 export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
   const baseList = await moonSites();
@@ -252,9 +277,43 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
         : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
     const localised = fallback ? { ...s, ...fallback } : s;
     const hotspot = hotspots[s.id];
-    merged.push(hotspot ? { ...localised, ...hotspot } : localised);
+    let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
+    if (withHotspot.hotspot_annotations) {
+      const hsOverlay =
+        (await hotspotMetadataOverlay(locale, s.id)) ??
+        (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
+      if (hsOverlay?.hotspot_annotations) {
+        withHotspot = {
+          ...withHotspot,
+          hotspot_annotations: mergeAnnotations(
+            withHotspot.hotspot_annotations,
+            hsOverlay.hotspot_annotations,
+          ),
+        };
+      }
+    }
+    merged.push(withHotspot);
   }
   return merged;
+}
+
+/**
+ * Merge translated annotation labels into the default annotations by
+ * id. Annotations not present in the overlay keep their default
+ * label. Annotations in the overlay but not in the default are
+ * ignored (overlay can't introduce new annotations — they live in
+ * the sidecar as the source of truth for ids + positions).
+ */
+function mergeAnnotations(
+  defaults: import('$types/surface-site').HotspotAnnotation[],
+  overlay: import('$types/surface-site').HotspotAnnotation[],
+): import('$types/surface-site').HotspotAnnotation[] {
+  const overlayById = new Map(overlay.map((o) => [o.id, o]));
+  return defaults.map((d) => {
+    const o = overlayById.get(d.id);
+    if (!o) return d;
+    return { ...d, ...o, lat_offset_m: d.lat_offset_m, lon_offset_m: d.lon_offset_m };
+  });
 }
 
 /** Mars surface + orbital sites — base catalogue (PRD-009 / RFC-012). */
@@ -282,7 +341,22 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
         : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
     const localised = fallback ? { ...s, ...fallback } : s;
     const hotspot = hotspots[s.id];
-    merged.push(hotspot ? { ...localised, ...hotspot } : localised);
+    let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
+    if (withHotspot.hotspot_annotations) {
+      const hsOverlay =
+        (await hotspotMetadataOverlay(locale, s.id)) ??
+        (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
+      if (hsOverlay?.hotspot_annotations) {
+        withHotspot = {
+          ...withHotspot,
+          hotspot_annotations: mergeAnnotations(
+            withHotspot.hotspot_annotations,
+            hsOverlay.hotspot_annotations,
+          ),
+        };
+      }
+    }
+    merged.push(withHotspot);
   }
   return merged;
 }

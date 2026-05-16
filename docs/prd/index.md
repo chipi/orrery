@@ -18,4 +18,4 @@
 | PRD-013 | Landing page (root `/`) | Draft v0.1 | first-time visitor, returning user, educator/journalist |
 | PRD-014 | Surface Hotspots · progressive-quality landing-site exploration | Draft v0.1 | curious lay person, space enthusiast, astrodynamicist |
 | PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.3 | curious learner, space enthusiast (mobile-first audience) |
-| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.3 | all audiences (editorial layer) |
+| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.4 | all audiences (editorial layer) |

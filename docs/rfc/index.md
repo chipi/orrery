@@ -20,4 +20,4 @@
 | RFC-016 | Spaceflight Fleet · architecture, schema, and dataset boundaries | Open | ADR-052 / 053 / 054 | v0.6 |
 | RFC-017 | Surface Hotspots · LOD architecture, texture pipeline, ground-view skybox, hardware models | Open | ADR-059 / 060 / 061 / 062 | v0.7 |
 | RFC-018 | Capacitor mobile wrapper — Android + iOS, bundle-slimming, PWA × Capacitor interaction | Draft v0.3 | PRD-015 | v0.8 |
-| RFC-019 | Science Overlay & Episode System — TtsProvider abstraction, cost analysis, async pipeline, host-agnostic asset layout | Draft v0.3 | PRD-016 | v0.9 |
+| RFC-019 | Science Overlay & Episode System — TtsProvider abstraction, cost analysis, async pipeline, host-agnostic asset layout | Draft v0.4 | PRD-016 | v0.9 |

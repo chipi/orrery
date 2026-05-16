@@ -578,8 +578,7 @@ function checkDocsHaveText(
   // files) and (files on disk under globDir). When it failed (no git
   // metadata), fall back to the filesystem-only walk.
   const onDisk = readdirSync(globDir).filter((f) => f.endsWith('.md') && !exclude.has(f));
-  const files =
-    tracked.size > 0 ? onDisk.filter((f) => tracked.has(`${globDir}/${f}`)) : onDisk;
+  const files = tracked.size > 0 ? onDisk.filter((f) => tracked.has(`${globDir}/${f}`)) : onDisk;
   for (const f of files) {
     const path = join(globDir, f);
     const content = readFileSync(path, 'utf8');

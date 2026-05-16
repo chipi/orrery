@@ -73,21 +73,32 @@ test.describe('/mars', () => {
 
   test('curiosity panel surfaces FULL MISSION CARD cross-link', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
-    // Drop `waitForLoadState('networkidle')` — /mars keeps streaming
-    // canvas textures + traverse polylines well past the 500 ms
-    // network-quiet window networkidle needs, so on mobile-chromium
-    // under CI load the wait ate the entire 30 s test budget before
-    // the panel even got asserted. The panel.toBeVisible() below is
-    // the actual readiness signal we need (issue #222).
+    // Deterministic readiness: wait for the sites JSON to land before
+    // asserting on the panel. `canvas.layer` exposes `data-sites-count`
+    // which flips from '0' to the resolved site count once
+    // `getMarsSites()` (a chain of N+2 sequential fetches: list + hotspots
+    // + one i18n overlay per site) resolves and `selectSite` runs from
+    // the URL-param path. Without this wait, `panel.toBeVisible` raced
+    // the fetch chain on mobile-chromium under GH Actions load and
+    // exceeded 10 s consistently. The previous comment claimed
+    // `waitForLoadState('networkidle')` ate the 30 s budget — that's
+    // still true, but this signal is more specific (the actual thing
+    // gating panel visibility) and bounded. Two other tests in this
+    // file (?site=curiosity at L57 and ?site=mro at L65) still use
+    // networkidle and pass; this test had additional cross-link
+    // hydration that pushed it past the network-quiet window.
+    // Issue #228-followup (CI regression on top of #222 retry-pass fix).
+    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
+      timeout: 15_000,
+    });
     const panel = page.getByRole('complementary');
-    await expect(panel).toBeVisible({ timeout: 10_000 });
+    // Panel opens synchronously inside the sites-loaded .then() block,
+    // so once the sites attribute flips, the panel is already mounted.
+    // 5 s is plenty for the in-fly transition.
+    await expect(panel).toBeVisible({ timeout: 5_000 });
     const link = panel.getByRole('link', { name: /FULL MISSION CARD/i });
-    // The cross-link list hydrates after the panel mounts (it depends
-    // on the site→mission resolver fetching the mission JSON). On
-    // mobile-chromium under CI load this exceeded the default 5 s
-    // toBeVisible timeout (test was timing out before the locator
-    // even resolved). 10 s gives 2× margin without masking a real
-    // regression. Issue #222 (flaky retry-pass in v0.6.2).
+    // Cross-link still hydrates after the panel mounts (mission JSON
+    // fetch). 10 s margin retained.
     await expect(link).toBeVisible({ timeout: 10_000 });
     await expect(link).toHaveAttribute('href', /\/missions\?id=curiosity/);
   });

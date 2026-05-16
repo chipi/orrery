@@ -666,7 +666,12 @@
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr;
+    /* Mobile (≤600 px): 2 columns at typical phone widths via auto-fill +
+     * minmax(150 px) — same density as /fleet, which is what the
+     * user is comparing against. 1-column was wasted vertical space on
+     * a 9-cards-tall viewport. (Issue #125.) The min(150 px) floor still
+     * gracefully falls back to 1 column on very narrow viewports (<340 px). */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 12px;
   }
   @media (min-width: 600px) {

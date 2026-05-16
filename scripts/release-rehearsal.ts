@@ -84,7 +84,9 @@ async function confirm(question: string, defaultYes = true): Promise<boolean> {
   const rl = createInterface({ input: process.stdin, output: process.stdout });
   try {
     const suffix = defaultYes ? '[Y/n]' : '[y/N]';
-    const answer = (await rl.question(`\x1b[33m? ${question} ${suffix} \x1b[0m`)).trim().toLowerCase();
+    const answer = (await rl.question(`\x1b[33m? ${question} ${suffix} \x1b[0m`))
+      .trim()
+      .toLowerCase();
     if (answer === '') return defaultYes;
     return answer === 'y' || answer === 'yes';
   } finally {

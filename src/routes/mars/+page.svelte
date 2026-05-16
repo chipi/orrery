@@ -115,11 +115,18 @@
     return sel != null && sel.links.length > 0;
   });
 
-  function selectSite(id: string) {
+  // `face: true` is set by the URL-deep-link path so Mars rotates
+  // to bring the selected site to camera-facing. Click handlers
+  // don't pass `face` so picking a marker on screen doesn't lurch
+  // the camera off whatever the user was looking at. (Issue #227,
+  // mirrors the same fix in /moon.)
+  let faceMarsAtSite: ((site: MarsSite) => void) | undefined;
+  function selectSite(id: string, options: { face?: boolean } = {}) {
     const s = sites.find((x) => x.id === id);
     if (s) {
       selected = s;
       panelOpen = true;
+      if (options.face) faceMarsAtSite?.(s);
     }
   }
   function toggleView() {
@@ -147,9 +154,10 @@
         sites = list;
         // Apply ?site= deep-link directly after data lands (deterministic
         // timing, no $effect ordering surprises). selectSite is a no-op
-        // when the id is unknown.
+        // when the id is unknown. `face: true` rotates Mars to bring
+        // the site to camera-facing (issue #227).
         const siteParam = $page.url.searchParams.get('site');
-        if (siteParam) selectSite(siteParam);
+        if (siteParam) selectSite(siteParam, { face: true });
       })
       .catch((err) => {
         console.error('Failed to load Mars sites:', err);
@@ -248,6 +256,19 @@
       new THREE.MeshPhongMaterial({ map: marsMap, color: 0xffffff, shininess: 4 }),
     );
     marsAxis.add(marsMesh);
+
+    // Issue #227 — face-the-site deep-link rotation. Rotates marsMesh
+    // (NOT marsAxis — keeping the 25.19° obliquity intact) so the
+    // selected site's longitude lands on the camera-facing +Z
+    // hemisphere. Latitude isn't adjusted; the obliquity already
+    // gives most non-polar sites adequate visibility once the
+    // longitude is right.
+    faceMarsAtSite = (site: MarsSite) => {
+      if (site.lat == null || site.lon == null) return;
+      const { x, z } = latLonToUnitSphere(site.lat, site.lon);
+      marsMesh.rotation.y = -Math.atan2(x, z);
+      autoSpin = false;
+    };
 
     // J.3 — Atmosphere shell at ~120 km altitude. Mars's atmosphere is
     // 1% Earth's pressure but reaches similar altitude before fading.

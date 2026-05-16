@@ -110,11 +110,19 @@
     return sel != null && sel.links.length > 0;
   });
 
-  function selectSite(id: string) {
+  // `face: true` is set by the URL-deep-link path so the moon rotates
+  // to bring the selected site to camera-facing (otherwise the
+  // halo + panel open but the site itself can be on the far side,
+  // hidden until the user manually drags the moon — issue #227).
+  // Click handlers don't pass `face` so picking a marker on screen
+  // doesn't lurch the camera off whatever the user was looking at.
+  let faceMoonAtSite: ((site: MoonSite) => void) | undefined;
+  function selectSite(id: string, options: { face?: boolean } = {}) {
     const s = sites.find((x) => x.id === id);
     if (s) {
       selected = s;
       panelOpen = true;
+      if (options.face) faceMoonAtSite?.(s);
     }
   }
   function toggleView() {
@@ -130,9 +138,13 @@
     getMoonSites(localeFromPage($page))
       .then((list) => {
         sites = list;
-        // Deep-link: ?site=<id> opens the panel pre-selected.
+        // Deep-link: ?site=<id> opens the panel pre-selected. The
+        // `face: true` flag also rotates the moon so the site faces
+        // the camera (issue #227) — otherwise the halo opens but the
+        // site itself can be on the far side, invisible until the
+        // user manually drags.
         const siteParam = $page.url.searchParams.get('site');
-        if (siteParam) selectSite(siteParam);
+        if (siteParam) selectSite(siteParam, { face: true });
       })
       .catch((err) => {
         console.error('Failed to load moon sites:', err);
@@ -211,6 +223,26 @@
       new THREE.MeshPhongMaterial({ map: moonMap, color: 0xffffff, shininess: 4 }),
     );
     scene.add(moonMesh);
+
+    // Issue #227 — `faceMoonAtSite(site)` rotates the moon mesh so
+    // the site sits on the +Z hemisphere (camera-facing), and stops
+    // autoSpin so the site stays put while the user reads the
+    // panel. Only invoked from the URL deep-link path; ordinary
+    // click selection doesn't trigger it (would feel jarring to
+    // have the moon lurch under the user's cursor). Latitude isn't
+    // adjusted — handling that would require moving the camera or
+    // tilting the moon, both heavier changes; the longitude flip
+    // alone covers the "site is on the far side" cases that
+    // motivated the issue.
+    faceMoonAtSite = (site: MoonSite) => {
+      if (site.lat == null || site.lon == null) return;
+      const { x, z } = latLonToUnitSphere(site.lat, site.lon);
+      // Atan2(x, z) returns the longitude angle of the marker in
+      // local frame; negate to rotate that angle TO +Z (the
+      // default camera-facing axis).
+      moonMesh.rotation.y = -Math.atan2(x, z);
+      autoSpin = false;
+    };
 
     // J.4 — Tidal-lock indicator. The Moon is in 1:1 synchronous
     // rotation with Earth, so one hemisphere (the "near side") always

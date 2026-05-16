@@ -321,8 +321,8 @@ git add static/{images,data}
 
 - **[PRD-018](../prd/PRD-018.md)** — product requirements (what ships in v2.0, v2.1, v2.2)
 - **[RFC-022](../rfc/RFC-022.md)** — architecture (manifest layout, cache strategy, scoring prompt, provider abstraction)
-- **[ADR-046](../adr/046-asset-pipeline.md)** — existing asset-fetch pipeline (unchanged by v2)
-- **[ADR-047](../adr/047-image-provenance-manifest.md)** — image-provenance.json schema + fail-closed gate (unchanged by v2)
-- **[ADR-016](../adr/016-build-time-asset-resolution.md)** — build-time-only constraint (v2 strictly respects)
+- **[ADR-046](../adr/ADR-046.md)** — existing asset-fetch pipeline (unchanged by v2)
+- **[ADR-047](../adr/ADR-047.md)** — image-provenance.json schema + fail-closed gate (unchanged by v2)
+- **[ADR-016](../adr/ADR-016.md)** — build-time-only constraint (v2 strictly respects)
 - **[user-guide.md](./user-guide.md)** — end-user-facing product guide (v2 is invisible to end users; this guide is for maintainers)
 - **[visual-regression-baselines.md](./visual-regression-baselines.md)** — sister guide for the other build-time visual-quality gate

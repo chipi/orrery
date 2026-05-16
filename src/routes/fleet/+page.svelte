@@ -747,9 +747,17 @@
   /* Card grid — visually identical to /missions per route-parity directive. */
   .card-li {
     position: relative;
+    /* `height: 100%` makes the wrapper fill its grid cell (which is
+     * row-height = tallest item per row, by CSS Grid default). Without
+     * it, cards in the same row appear at different heights when one
+     * has more text than another. Issue #225. */
+    height: 100%;
   }
   .card {
     width: 100%;
+    /* Fill the .card-li wrapper, which itself fills the grid cell.
+     * Equal-height cards across the row regardless of text length. */
+    height: 100%;
     text-align: left;
     background: rgba(10, 10, 22, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.07);

@@ -692,9 +692,14 @@
 
   /* Card list-item wrapper — needed so the absolutely-positioned
    * thumbnail can be a sibling of the card button without breaking
-   * the grid-cell layout. */
+   * the grid-cell layout. `height: 100%` makes the wrapper fill its
+   * grid cell (which is row-height = tallest item per row, by CSS
+   * Grid default). Without it the wrapper sizes to its content, and
+   * adjacent cards in the same row appear at different heights when
+   * one has more text than another. Issue #225. */
   .card-li {
     position: relative;
+    height: 100%;
   }
   /* Trajectory image stacks on top of the cover photo and fades in
      on hover (desktop). Mobile devices without :hover get the FLY
@@ -729,6 +734,9 @@
 
   .card {
     width: 100%;
+    /* Fill the .card-li wrapper, which itself fills the grid cell.
+     * Equal-height cards across the row regardless of text length. */
+    height: 100%;
     text-align: left;
     background: rgba(10, 10, 22, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.07);

@@ -27,8 +27,9 @@
  */
 
 import { execSync, spawnSync } from 'node:child_process';
-import { existsSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createInterface } from 'node:readline/promises';
 
 const VERSION_PATTERN = /^v\d+\.\d+\.\d+(?:-[\w.]+)?$/;
 
@@ -69,6 +70,86 @@ function run(cmd: string, args: string[], stepLabel: string): void {
     fail(stepLabel, result.status ?? 1);
   }
   ok(`${stepLabel} green`);
+}
+
+// ─── Interactive helpers ──────────────────────────────────────────
+//
+// When the script detects a missing pre-condition (version mismatch,
+// missing CHANGELOG section), it offers to fix it via a Y/n prompt.
+// Skipping the prompts in non-TTY contexts (CI, scripted pipelines)
+// is intentional — issue #134's fail-closed contract still holds; we
+// just defer the auto-fix offer to interactive use.
+async function confirm(question: string, defaultYes = true): Promise<boolean> {
+  if (!process.stdin.isTTY) return false;
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  try {
+    const suffix = defaultYes ? '[Y/n]' : '[y/N]';
+    const answer = (await rl.question(`\x1b[33m? ${question} ${suffix} \x1b[0m`)).trim().toLowerCase();
+    if (answer === '') return defaultYes;
+    return answer === 'y' || answer === 'yes';
+  } finally {
+    rl.close();
+  }
+}
+
+// ─── Step 0: detect + offer to fix missing pre-conditions ─────────
+//
+// Pre-conditions (issue #223):
+//   • package.json version matches argVersion
+//   • CHANGELOG.md has a `## [versionBare]` section with non-stub content
+//
+// If either is missing, the script offers to write a fix. The
+// pre-flight + e2e steps then run against the corrected state, not
+// the pre-bump state.
+const pkgJsonPath = resolve(repoRoot, 'package.json');
+const pkgJson = JSON.parse(readFileSync(pkgJsonPath, 'utf-8')) as { version: string };
+if (pkgJson.version !== versionBare) {
+  log(`package.json version mismatch: ${pkgJson.version} → ${versionBare}`);
+  const proceed = await confirm(`Bump package.json version to ${versionBare}?`);
+  if (proceed) {
+    const updated = readFileSync(pkgJsonPath, 'utf-8').replace(
+      /"version":\s*"[^"]+"/,
+      `"version": "${versionBare}"`,
+    );
+    writeFileSync(pkgJsonPath, updated);
+    ok(`package.json version → ${versionBare}`);
+  } else {
+    fail(`package.json version is ${pkgJson.version}, expected ${versionBare}`, 1);
+  }
+}
+
+const changelogPath = resolve(repoRoot, 'CHANGELOG.md');
+if (existsSync(changelogPath)) {
+  const sectionCheck = execSync(
+    `/usr/bin/awk -v ver="${versionBare}" '$0 ~ "^## \\\\[" ver "\\\\]" { print "yes"; exit }' ${JSON.stringify(changelogPath)}`,
+    { encoding: 'utf-8' },
+  ).trim();
+  if (!sectionCheck) {
+    log(`CHANGELOG.md has no \`## [${versionBare}]\` section`);
+    const proceed = await confirm(`Scaffold a stub section at the top of CHANGELOG.md?`);
+    if (proceed) {
+      const today = new Date().toISOString().slice(0, 10);
+      const stub = `## [${versionBare}] — ${today}
+
+<one-line summary — what this release does, why it exists>
+
+### Added
+
+### Fixed
+
+### Changed
+
+`;
+      const content = readFileSync(changelogPath, 'utf-8');
+      // Insert immediately after the `## [Unreleased]` line.
+      const updated = content.replace(/(## \[Unreleased\][^\n]*\n)/, `$1\n${stub}`);
+      writeFileSync(changelogPath, updated);
+      ok(`stub written. Open CHANGELOG.md, fill in the section, then re-run the rehearsal.`);
+      process.exit(0);
+    } else {
+      fail(`CHANGELOG.md missing the \`## [${versionBare}]\` section`, 1);
+    }
+  }
 }
 
 // ─── Step 1: preflight ─────────────────────────────────────────────

@@ -4,8 +4,9 @@
   "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher.",
   "entries": {
     "apollo11": {
-      "hotspot_tier_max": 1,
+      "hotspot_tier_max": 2,
       "hotspot_model": "apollo-lm",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []

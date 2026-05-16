@@ -59,6 +59,7 @@
     "build-tech-bom": "tsx scripts/build-tech-bom.ts",
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
     "images:score": "tsx scripts/score-images.ts",
+    "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
     "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && npm run check-tech-bom",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",

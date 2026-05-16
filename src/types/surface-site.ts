@@ -68,6 +68,17 @@ export interface SurfaceSite {
   hotspot_model?: string;
   hotspot_annotations?: HotspotAnnotation[];
   location_uncertainty_m?: number;
+  /**
+   * Path (provenance-style, e.g. /images/hotspots/moon/apollo11/tier2-lroc.jpg)
+   * to the source LROC NAC / HiRISE patch for this site. Frontend
+   * joins this to image-vision.json (#148 manifest) to find the
+   * 1:1 pre-cropped variant URL.
+   */
+  hotspot_tier2_source?: string;
+  /** Showcase tier flag — 4-6 annotations, polished treatment. */
+  showcase?: boolean;
+  /** Marker rendering hint for failed-landing sites (V3c). */
+  crashed?: boolean;
 }
 
 /**

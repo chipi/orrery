@@ -20,6 +20,8 @@
     type HotspotEntry,
   } from '$lib/hotspot-lod-dispatcher';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
+  import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
+  import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -305,6 +307,11 @@
     // to lazy-instantiate. Per-route registration keeps the import
     // graph small for routes that don't use hotspots.
     registerHotspotModelBuilder('apollo-lm', buildApolloLMHotspot);
+    // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
+    // ready by the time the user zooms in. Soft-fails to an empty
+    // manifest if the file isn't deployed yet — patches fall back to
+    // the placeholder material.
+    void loadImageVisionManifest();
 
     // Selection-halo helper — small flat ring around a marker so the
     // user can tell which one they picked. Visibility toggled by the
@@ -526,6 +533,24 @@
           const builder = getHotspotModelBuilder(builderId);
           if (builder) {
             const accent = colorFor(site);
+            const tier2Source = site.hotspot_tier2_source;
+            // Tier 2 builder is wired only when the site declares a
+            // tier2 source path. Texture URL is resolved against the
+            // image-vision.json manifest (lazy 1:1 variant lookup);
+            // if the manifest doesn't have an entry yet, the patch
+            // renders with a neutral placeholder.
+            const tier2Builder =
+              maxTier >= 2 && tier2Source
+                ? () => {
+                    const entry = getImageEntry(tier2Source);
+                    const textureUrl = entry ? pickVariant(entry, 'thumbnail', false) : undefined;
+                    return buildHotspotSurfacePatch({
+                      textureUrl,
+                      accentColor: accent,
+                      siteId: site.id,
+                    });
+                  }
+                : undefined;
             hotspots.push(
               createHotspotEntry({
                 siteId: site.id,
@@ -533,6 +558,7 @@
                 group,
                 tier0Group,
                 tier1Builder: () => builder(accent),
+                tier2Builder,
               }),
             );
           }

@@ -20,3 +20,4 @@
 | PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.3 | curious learner, space enthusiast (mobile-first audience) |
 | PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.4 | all audiences (editorial layer) |
 | PRD-017 | Sensory Layer — gyroscope, sonification, haptics | Draft v0.4 | mobile + accessibility audience |
+| PRD-018 | Image Pipeline v2 — vision scoring + smart cropping + curation loop | Draft v0.4 | curators, editors, mobile audience |

@@ -17,4 +17,4 @@
 | PRD-012 | Spaceflight Fleet | Draft v0.1 | curious learner, STEM student, space enthusiast |
 | PRD-013 | Landing page (root `/`) | Draft v0.1 | first-time visitor, returning user, educator/journalist |
 | PRD-014 | Surface Hotspots · progressive-quality landing-site exploration | Draft v0.1 | curious lay person, space enthusiast, astrodynamicist |
-| PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.2 | curious learner, space enthusiast (mobile-first audience) |
+| PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.3 | curious learner, space enthusiast (mobile-first audience) |

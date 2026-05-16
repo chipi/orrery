@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import type { HotspotAnnotation } from '$types/surface-site';
 
 /**
  * Surface-patch quad component (PRD-014 / RFC-017 §ADR-060).
@@ -62,6 +63,14 @@ export interface HotspotPatchBuilderInput {
    * cleanly when the user taps the patch.
    */
   siteId: string;
+  /**
+   * Annotation array for this site (S5 #113). Each annotation is
+   * rendered as a small dot sprite at its lat_offset_m / lon_offset_m
+   * relative to the site's published centre. Empty / undefined =
+   * patch renders without annotation dots (the v0.7 ship default
+   * for sites whose annotation arrays haven't been authored yet).
+   */
+  annotations?: HotspotAnnotation[];
 }
 
 /**
@@ -103,7 +112,69 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   ring.position.y = Z_FIGHT_OFFSET_Y + 0.001;
   g.add(ring);
 
+  // Annotation dot sprites (S5 #113). Rendered at each annotation's
+  // lat_offset_m / lon_offset_m in metres from the site centre,
+  // converted to local patch coordinates. lat_offset_m maps to +Z
+  // (north), lon_offset_m maps to +X (east).
+  if (input.annotations && input.annotations.length > 0) {
+    addAnnotationDots(g, input.annotations, input.siteId, input.accentColor);
+  }
+
   return g;
+}
+
+/**
+ * Render small dot sprites at each annotation's local offset. The
+ * dot has a halo (semi-transparent rim) + a solid core. Click hits
+ * propagate via userData.annotationId; the route's existing pick
+ * handler reads this to surface the annotation in the detail panel.
+ *
+ * Metre-to-world-unit conversion: the patch represents a 1 km × 1 km
+ * area mapped to the PATCH_DIAMETER_WORLD_UNITS disc. So
+ * 1 metre = PATCH_DIAMETER_WORLD_UNITS / 1000 world units.
+ */
+function addAnnotationDots(
+  g: THREE.Group,
+  annotations: HotspotAnnotation[],
+  siteId: string,
+  accentColor: string,
+): void {
+  const PATCH_M = 1000;
+  const M_TO_U = PATCH_DIAMETER_WORLD_UNITS / PATCH_M;
+  const radius = PATCH_DIAMETER_WORLD_UNITS / 2;
+  for (const a of annotations) {
+    const x = a.lon_offset_m * M_TO_U;
+    const z = -a.lat_offset_m * M_TO_U; // +lat = -Z (north up on the patch)
+    // Skip annotations outside the patch boundary.
+    if (Math.sqrt(x * x + z * z) > radius * 1.05) continue;
+    const dot = new THREE.Mesh(
+      new THREE.CircleGeometry(0.012, 16),
+      new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.95,
+        depthWrite: false,
+      }),
+    );
+    dot.rotation.x = -Math.PI / 2;
+    dot.position.set(x, Z_FIGHT_OFFSET_Y + 0.003, z);
+    dot.userData = { siteId, annotationId: a.id };
+    g.add(dot);
+    // Halo ring around the dot in the accent colour.
+    const halo = new THREE.Mesh(
+      new THREE.RingGeometry(0.013, 0.018, 16),
+      new THREE.MeshBasicMaterial({
+        color: accentColor,
+        transparent: true,
+        opacity: 0.7,
+        depthWrite: false,
+      }),
+    );
+    halo.rotation.x = -Math.PI / 2;
+    halo.position.set(x, Z_FIGHT_OFFSET_Y + 0.0025, z);
+    halo.userData = { siteId, annotationId: a.id };
+    g.add(halo);
+  }
 }
 
 function createPatchMaterial(textureUrl: string | undefined): THREE.MeshStandardMaterial {

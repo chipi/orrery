@@ -520,6 +520,7 @@
           if (builder) {
             const accent = color;
             const tier2Source = site.hotspot_tier2_source;
+            const annotations = site.hotspot_annotations;
             const tier2Builder =
               maxTier >= 2 && tier2Source
                 ? () => {
@@ -529,6 +530,7 @@
                       textureUrl,
                       accentColor: accent,
                       siteId: site.id,
+                      annotations,
                     });
                   }
                 : undefined;

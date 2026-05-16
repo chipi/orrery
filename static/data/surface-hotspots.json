@@ -9,7 +9,38 @@
       "hotspot_tier2_source": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [
+        {
+          "id": "lm-descent-stage",
+          "label": "LM Descent Stage (Eagle)",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0
+        },
+        {
+          "id": "us-flag",
+          "label": "U.S. flag (planted ~8 m west of LM)",
+          "lat_offset_m": 2,
+          "lon_offset_m": -8
+        },
+        {
+          "id": "lrrr",
+          "label": "Laser Ranging Retroreflector (LRRR)",
+          "lat_offset_m": -10,
+          "lon_offset_m": 14
+        },
+        {
+          "id": "easep",
+          "label": "EASEP (simplified ALSEP package)",
+          "lat_offset_m": -15,
+          "lon_offset_m": 18
+        },
+        {
+          "id": "plaque",
+          "label": "\"We came in peace for all mankind\" plaque",
+          "lat_offset_m": 0,
+          "lon_offset_m": 0
+        }
+      ]
     },
     "apollo12": {
       "hotspot_tier_max": 2,

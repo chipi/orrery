@@ -600,6 +600,7 @@
             // image-vision.json manifest (lazy 1:1 variant lookup);
             // if the manifest doesn't have an entry yet, the patch
             // renders with a neutral placeholder.
+            const annotations = site.hotspot_annotations;
             const tier2Builder =
               maxTier >= 2 && tier2Source
                 ? () => {
@@ -609,6 +610,7 @@
                       textureUrl,
                       accentColor: accent,
                       siteId: site.id,
+                      annotations,
                     });
                   }
                 : undefined;

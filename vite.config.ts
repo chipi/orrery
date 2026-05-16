@@ -43,7 +43,14 @@ export default defineConfig({
     sveltekit(),
     SvelteKitPWA({
       strategies: 'generateSW',
-      registerType: 'prompt',
+      // `autoUpdate` (vs the prior `prompt`) installs new service-worker
+      // bundles silently on next navigation. The previous prompt-mode UI
+      // surfaced a "new version · refresh" toast which asked users a
+      // question they didn't have context to answer; modern PWA default
+      // (Twitter, Slack, Discord) is silent rollover. The trade-off — a
+      // user with the app open for hours stays on the old version until
+      // they navigate — is fine for a docs/explorer app.
+      registerType: 'autoUpdate',
       // Existing static manifest is the source of truth.
       manifest: false,
       injectRegister: false,

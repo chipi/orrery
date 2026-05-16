@@ -120,7 +120,16 @@ test.describe('/science Phase 2 chips', () => {
   });
 });
 
+// The /science Cmd-K search trigger is a desktop affordance — the
+// mobile rail collapses to a wrapped tab strip and the Search button
+// is `display:none` on ≤640 px viewports (see
+// `src/routes/science/+layout.svelte` lines ~308–316). Keyboard
+// Cmd-K still works if a keyboard is attached, but Playwright's
+// mobile project has no on-screen affordance to click. Gate these
+// two specs to desktop only.
 test.describe('/science Cmd-K search', () => {
+  test.skip(({ viewport }) => (viewport?.width ?? 1280) < 700, 'desktop-only affordance');
+
   test('search button opens the overlay and a query navigates to a section', async ({ page }) => {
     await page.goto('/science');
     // The rail has a Search button.

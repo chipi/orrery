@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { clickNavLink, localeChip } from './_helpers/nav';
 
 /**
  * Spanish locale smoke (#17 acceptance gate).
@@ -34,7 +35,7 @@ test.describe('?lang=es smoke', () => {
 
       await page.goto(`${path}?lang=es`);
       // Picker chip displays ES (the active locale's short tag).
-      await expect(page.locator('button.chip').first()).toContainText('ES', { timeout: 10_000 });
+      await expect(localeChip(page).first()).toContainText('ES', { timeout: 10_000 });
       // A Spanish-only token is visible somewhere on the page —
       // confirms Paraglide loaded the es bundle and the route picked
       // up the URL locale. Some routes (notably /missions after J.1
@@ -53,7 +54,7 @@ test.describe('?lang=es smoke', () => {
 
   test('en-US fallback still works when no ?lang=', async ({ page }) => {
     await page.goto('/missions');
-    await expect(page.locator('button.chip').first()).toContainText('EN', { timeout: 10_000 });
+    await expect(localeChip(page).first()).toContainText('EN', { timeout: 10_000 });
     // J.1 removed the body heading — assert via the document title
     // (set by m.missions_page_title()).
     await expect(page).toHaveTitle(/Mission Catalog/i, { timeout: 10_000 });
@@ -61,14 +62,14 @@ test.describe('?lang=es smoke', () => {
 
   test('selected locale persists when navigating via top nav', async ({ page }) => {
     await page.goto('/explore?lang=es', { waitUntil: 'networkidle' });
-    await expect(page.locator('button.chip').first()).toContainText('ES', { timeout: 10_000 });
+    await expect(localeChip(page).first()).toContainText('ES', { timeout: 10_000 });
 
     // Click MISSIONS in the shared top nav.
-    await page.locator('nav a.link[href*="/missions"]').first().click();
+    await clickNavLink(page, '/missions');
     await page.waitForLoadState('networkidle');
 
     await expect(page).toHaveURL(/\/missions\?lang=es$/);
-    await expect(page.locator('button.chip').first()).toContainText('ES');
+    await expect(localeChip(page).first()).toContainText('ES');
     // J.1 removed the body heading — assert via the document title.
     await expect(page).toHaveTitle(/Catálogo de misiones/i, { timeout: 10_000 });
   });

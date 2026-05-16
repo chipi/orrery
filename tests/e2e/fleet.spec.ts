@@ -169,10 +169,16 @@ test.describe('/fleet', () => {
 
   test('nav exposes the FLEET link', async ({ page }) => {
     await page.goto('/explore', { waitUntil: 'networkidle' });
-    const fleetLink = page
-      .locator('nav a[href*="/fleet"], nav a[href$="/fleet"]')
-      .or(page.getByRole('link', { name: /^FLEET$/i }))
-      .first();
-    await expect(fleetLink).toBeVisible({ timeout: 5_000 });
+    // Desktop nav surfaces the link inline; mobile hides it behind the
+    // hamburger drawer (per v0.6.0 nav overhaul, ≤640 px viewport).
+    const desktopFleet = page.locator('nav .center a.link[href*="/fleet"]').first();
+    if (await desktopFleet.isVisible().catch(() => false)) {
+      await expect(desktopFleet).toBeVisible({ timeout: 5_000 });
+      return;
+    }
+    await page.locator('button.menu-toggle').click();
+    await expect(page.locator('a.drawer-link[href*="/fleet"]').first()).toBeVisible({
+      timeout: 5_000,
+    });
   });
 });

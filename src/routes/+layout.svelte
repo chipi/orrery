@@ -57,32 +57,28 @@
   });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────
-  // Register on mount; show an update toast when a new SW is waiting.
-  // Runtime-only state per CLAUDE.md (no localStorage). The browser's
-  // beforeinstallprompt event is preventDefault'd so neither Chrome's
-  // native install banner nor an in-app prompt fires. Users who want
-  // to install can still do so via the browser menu (⋮ → "Install
-  // Orrery") — the manifest + service worker still qualify the site
-  // as installable; we just don't nag.
-
-  let updateAvailable = $state(false);
-  let updateSWFn: (() => Promise<void>) | null = $state(null);
+  // Register on mount in autoUpdate mode — the SW activates new bundles
+  // silently on next navigation, no toast / no user-facing prompt
+  // (vite.config.ts → SvelteKitPWA `registerType: 'autoUpdate'`). Runtime-
+  // only state per CLAUDE.md (no localStorage). The browser's
+  // beforeinstallprompt event is preventDefault'd elsewhere so neither
+  // Chrome's native install banner nor an in-app prompt fires. Users
+  // who want to install can still do so via the browser menu (⋮ →
+  // "Install Orrery") — the manifest + SW still qualify the site as
+  // installable; we just don't nag.
 
   onMount(async () => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
     try {
       const { useRegisterSW } = await import('virtual:pwa-register/svelte');
-      const { needRefresh, updateServiceWorker } = useRegisterSW({
+      useRegisterSW({
         onRegisteredSW(_url: string, registration: ServiceWorkerRegistration | undefined) {
-          // Hourly check for new builds.
+          // Hourly check for new builds. The registration auto-installs
+          // any new bundle the check finds, no user prompt required.
           if (registration) {
             setInterval(() => void registration.update(), 60 * 60 * 1000);
           }
         },
-      });
-      updateSWFn = () => updateServiceWorker(true);
-      needRefresh.subscribe((v: boolean) => {
-        updateAvailable = v;
       });
     } catch {
       // SW registration failed; carry on. Manifest-only install still
@@ -149,11 +145,6 @@
       document.removeEventListener('click', onAnyClick, true);
     };
   });
-
-  async function refreshApp() {
-    if (updateSWFn) await updateSWFn();
-    updateAvailable = false;
-  }
 </script>
 
 <svelte:head>
@@ -181,25 +172,26 @@
         rel="noopener noreferrer external"
         hreflang="en">{m.layout_footer_license()}</a
       >
-      <span class="footer-sep" aria-hidden="true">|</span>
+      <span class="footer-sep footer-sep-extra" aria-hidden="true">|</span>
       <a
-        class="footer-link footer-version"
+        class="footer-link footer-link-extra"
         href="https://github.com/chipi/orrery#readme"
         target="_blank"
         rel="noopener noreferrer external"
-        title="Build version + deploy date (opens project README on GitHub)"
+        hreflang="en">{m.layout_footer_readme()}</a
+      >
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <a
+        class="footer-link footer-version"
+        href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md"
+        target="_blank"
+        rel="noopener noreferrer external"
+        title="Build version + deploy date (opens CHANGELOG on GitHub)"
         hreflang="en">v{__APP_VERSION__} · {__BUILD_DATE__}</a
       >
     </nav>
   </footer>
 {/key}
-
-{#if updateAvailable}
-  <div class="pwa-toast" role="status">
-    <span>{m.layout_pwa_new_version()}</span>
-    <button type="button" onclick={refreshApp}>{m.layout_pwa_refresh()}</button>
-  </div>
-{/if}
 
 <style>
   main {
@@ -281,36 +273,5 @@
     .footer-sep-extra {
       display: none;
     }
-  }
-  .pwa-toast {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    padding: 10px 16px;
-    background: rgba(15, 18, 35, 0.95);
-    border: 1px solid rgba(78, 205, 196, 0.5);
-    border-radius: 4px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: #dde4ff;
-    backdrop-filter: blur(6px);
-  }
-  .pwa-toast button {
-    min-height: 32px;
-    padding: 4px 12px;
-    background: #4ecdc4;
-    border: none;
-    border-radius: 3px;
-    color: #04040c;
-    font-family: inherit;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    cursor: pointer;
   }
 </style>

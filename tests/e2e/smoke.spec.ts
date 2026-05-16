@@ -46,6 +46,14 @@ test('nav bar is visible on every screen and links target primary routes', async
   await page.goto('/explore');
   const nav = page.locator('nav, [role="navigation"], header').first();
   await expect(nav).toBeVisible();
+  // On ≤640 px viewports the link strip collapses into the hamburger
+  // drawer (v0.6.0 nav overhaul); open it before asserting link
+  // visibility. On desktop the strip is inline, the drawer button is
+  // display:none, so we skip the click.
+  const menuToggle = page.locator('button.menu-toggle');
+  if (await menuToggle.isVisible().catch(() => false)) {
+    await menuToggle.click();
+  }
   for (const path of [
     '/moon',
     '/mars',

@@ -50,6 +50,16 @@ const STABLE_ELEMENTS = [
 ];
 
 test.describe('visual regression baselines (S8 — element-scoped, stable surfaces only)', () => {
+  // Baselines committed to the repo are *-darwin.png (the maintainer's
+  // local machine). CI runs Ubuntu Linux, so Playwright looks for
+  // *-linux.png and reports them as "missing baseline" on every
+  // single run. Until we either (a) commit linux baselines too, or
+  // (b) move snapshot generation to a CI-stable container, the pilot
+  // suite must be skipped on non-darwin platforms. Local darwin runs
+  // still execute the assertions; CI just doesn't gate on a
+  // half-finished baseline set.
+  test.skip(process.platform !== 'darwin', 'baselines are darwin-only — see comment above');
+
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {
       await page.goto(path, { waitUntil: 'networkidle' });

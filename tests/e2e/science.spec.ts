@@ -120,22 +120,30 @@ test.describe('/science Phase 2 chips', () => {
   });
 });
 
-// The /science Cmd-K search trigger is a desktop affordance — the
-// mobile rail collapses to a wrapped tab strip and the Search button
-// is `display:none` on ≤640 px viewports (see
-// `src/routes/science/+layout.svelte` lines ~308–316). Keyboard
-// Cmd-K still works if a keyboard is attached, but Playwright's
-// mobile project has no on-screen affordance to click. Gate these
-// two specs to desktop only.
+// /science Cmd-K is reachable on both viewports as of v0.6.2:
+//   • desktop — left rail's Search button (display:flex on ≥641 px)
+//   • mobile  — hamburger drawer's Search row (issue #137)
+// Both surfaces carry the same `aria-label="Search the encyclopedia (⌘K)"`,
+// so `getByRole('button', {name: /Search the encyclopedia/i})` matches in
+// both viewports — but on mobile the rail button is `display:none` and
+// the drawer button isn't rendered until the hamburger is open. The
+// helper below opens the drawer first when the menu toggle is visible.
 test.describe('/science Cmd-K search', () => {
-  test.skip(({ viewport }) => (viewport?.width ?? 1280) < 700, 'desktop-only affordance');
+  async function openSearchButton(page: import('@playwright/test').Page): Promise<void> {
+    // If the hamburger toggle is visible we're on mobile-chromium —
+    // open the drawer so the drawer Search row paints. Desktop has the
+    // toggle hidden, so we skip the click and click the rail button
+    // directly.
+    const menuToggle = page.locator('button.menu-toggle');
+    if (await menuToggle.isVisible().catch(() => false)) {
+      await menuToggle.click();
+    }
+    await page.getByRole('button', { name: /Search the encyclopedia/i }).click();
+  }
 
   test('search button opens the overlay and a query navigates to a section', async ({ page }) => {
     await page.goto('/science');
-    // The rail has a Search button.
-    const searchBtn = page.getByRole('button', { name: /Search the encyclopedia/i });
-    await expect(searchBtn).toBeVisible();
-    await searchBtn.click();
+    await openSearchButton(page);
     // Dialog opens.
     const dialog = page.getByRole('dialog', { name: /Search \/science/i });
     await expect(dialog).toBeVisible();
@@ -150,7 +158,7 @@ test.describe('/science Cmd-K search', () => {
 
   test('escape closes the overlay', async ({ page }) => {
     await page.goto('/science');
-    await page.getByRole('button', { name: /Search the encyclopedia/i }).click();
+    await openSearchButton(page);
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.getByRole('dialog')).not.toBeVisible();

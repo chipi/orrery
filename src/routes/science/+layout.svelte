@@ -20,6 +20,7 @@
 -->
 <script lang="ts">
   import 'katex/dist/katex.min.css';
+  import { onDestroy, onMount } from 'svelte';
   import { base } from '$app/paths';
   import { SCIENCE_TABS } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
@@ -31,6 +32,24 @@
   let { children, data }: Props = $props();
 
   let searchEl = $state<ScienceSearch | undefined>(undefined);
+
+  // ─── Mobile Cmd-K bridge (issue #137) ───────────────────────────
+  // Nav.svelte's hamburger drawer dispatches `orrery-cmd-k-open` when
+  // the mobile user taps its Search row. We listen here because this
+  // layout owns the dialog mount (`searchEl`). On desktop the Search
+  // button in the left rail still calls `searchEl?.open_()` directly;
+  // both paths converge on the same dialog instance.
+  function onCmdKOpen(): void {
+    searchEl?.open_();
+  }
+  onMount(() => {
+    document.addEventListener('orrery-cmd-k-open', onCmdKOpen);
+  });
+  onDestroy(() => {
+    if (typeof document !== 'undefined') {
+      document.removeEventListener('orrery-cmd-k-open', onCmdKOpen);
+    }
+  });
 
   function tabLabel(tab: string): string {
     const key = `science_tab_${tab.replace(/-/g, '_')}` as keyof typeof m;

@@ -89,6 +89,22 @@
   function closeMobileMenu() {
     mobileMenuOpen = false;
   }
+
+  // ─── Mobile Cmd-K affordance (issue #137) ──────────────────────────
+  // On /science routes only — the rail's Search button is `display:none`
+  // below 640 px (the rail collapses to a wrapped chip strip there), so
+  // mobile users had no on-screen way to reach the encyclopedia search.
+  // We surface it as a Drawer row instead: closes the drawer, dispatches
+  // a custom event the /science/+layout.svelte listens for and uses to
+  // call `searchEl?.open_()`. Outside /science routes the row is hidden
+  // (there's no Cmd-K dialog mounted; the rail isn't on those pages).
+  const onScience = $derived($page.url.pathname.includes('/science'));
+  function openCmdKFromDrawer() {
+    closeMobileMenu();
+    if (typeof document !== 'undefined') {
+      document.dispatchEvent(new CustomEvent('orrery-cmd-k-open'));
+    }
+  }
 </script>
 
 <nav aria-label={m.nav_aria_label()}>
@@ -187,6 +203,19 @@
         onclick={closeMobileMenu}>{label()}</a
       >
     {/each}
+    {#if onScience}
+      <!-- Mobile-only Cmd-K affordance (issue #137). Mirrors the
+           desktop rail's Search button. Same aria-label so the e2e
+           getByRole locator matches in both viewports. -->
+      <button
+        type="button"
+        class="drawer-link drawer-search"
+        aria-label="Search the encyclopedia (⌘K)"
+        onclick={openCmdKFromDrawer}
+      >
+        ⌕ {m.nav_search()}
+      </button>
+    {/if}
   </div>
   <button
     type="button"

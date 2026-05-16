@@ -55,6 +55,11 @@ export default [
       '.xdg-data/',
       '.xdg-config/',
       '.xdg-cache/',
+      // Linux node_modules cache (gitignored) — populated by
+      // scripts/regenerate-visual-baselines-linux.sh inside the
+      // Playwright Docker image. Contains arch-specific binaries +
+      // bundled/minified vendor JS that ESLint shouldn't lint.
+      '.linux-node-modules/',
     ],
   },
 ];

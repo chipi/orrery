@@ -1,0 +1,107 @@
+name: Auto-publish GH Release on tag push
+
+# Fires on push of a `v*` tag. Extracts the matching `## [X.Y.Z]`
+# section from CHANGELOG.md and creates a GitHub Release with that
+# body. Idempotent — re-runs on a re-tagged commit update the Release
+# instead of failing.
+#
+# This is the third leg of the release flow:
+#   1. `git tag vX.Y.Z` + `git push --tags`   → this workflow fires
+#   2. `gh release create …`                  → no longer manual
+#   3. `Deploy preview` workflow              → chained from CI + e2e
+#
+# Before v0.6.2 the maintainer had to manually run `gh release create`
+# after every tag push. That step was skipped for v0.6.0 + v0.6.1
+# (tags existed; Releases didn't) until the v0.6.1 retrospective.
+# Closes GH issue #135.
+#
+# **Does NOT** trigger the Pages deploy. That still chains through
+# ci.yml → e2e.yml → preview.yml. Use `gh workflow run "Deploy preview"`
+# if the e2e gate blocks auto-deploy and you want to force a publish.
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # The tagged commit, not main HEAD — if main has moved on
+          # after the tag was pushed we still publish the right SHA.
+          ref: ${{ github.ref }}
+          fetch-depth: 1
+
+      - name: Extract version + CHANGELOG section
+        id: extract
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF#refs/tags/}"           # e.g. v0.6.2
+          VERSION="${TAG#v}"                       # e.g. 0.6.2
+          echo "tag=$TAG"        >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+          # Pre-release tag detection: anything past the third dot-
+          # separated segment counts as pre-release. v0.6.2 → stable,
+          # v0.6.2-rc1 → pre-release. Affects --latest below.
+          if [[ "$VERSION" == *-* ]]; then
+            echo "prerelease=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "prerelease=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # Pull the `## [X.Y.Z]` block from CHANGELOG.md. Header line
+          # itself is dropped; body starts with the prose paragraph.
+          # Matches awk used in scripts/release-rehearsal.ts.
+          BODY_FILE="/tmp/release-body-$TAG.md"
+          awk -v ver="$VERSION" '
+            $0 ~ "^## \\[" ver "\\]" { flag=1; next }
+            $0 ~ "^## \\["            { flag=0 }
+            flag
+          ' CHANGELOG.md > "$BODY_FILE"
+
+          if [[ ! -s "$BODY_FILE" ]]; then
+            echo "::error::CHANGELOG.md has no '## [$VERSION]' section. Add the section, retag, push again."
+            exit 1
+          fi
+          echo "body_file=$BODY_FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update GH Release (idempotent)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.extract.outputs.tag }}"
+          BODY_FILE="${{ steps.extract.outputs.body_file }}"
+          PRERELEASE="${{ steps.extract.outputs.prerelease }}"
+
+          # Already-exists path: gh release view exits 0 if found.
+          # Update the body in place rather than fail.
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "▶ Release $TAG already exists — updating body."
+            gh release edit "$TAG" --notes-file "$BODY_FILE"
+            exit 0
+          fi
+
+          # Stable releases land as Latest; pre-releases (v…-rc1, etc.)
+          # don't bump the homepage marker.
+          LATEST_FLAG="--latest"
+          PRERELEASE_FLAG=""
+          if [[ "$PRERELEASE" == "true" ]]; then
+            LATEST_FLAG=""
+            PRERELEASE_FLAG="--prerelease"
+          fi
+
+          echo "▶ Creating Release $TAG (prerelease=$PRERELEASE)."
+          gh release create "$TAG" \
+            --title "$TAG" \
+            --notes-file "$BODY_FILE" \
+            $LATEST_FLAG \
+            $PRERELEASE_FLAG

@@ -138,7 +138,15 @@
     -webkit-overflow-scrolling: touch;
   }
   .page {
-    max-width: 1200px;
+    /* Was 1200 px — capped /science at a relatively narrow desktop
+     * width; on viewports >1200 px the layout sat centered with
+     * empty margin and the right rail couldn't grow to use that
+     * space. 1440 px gives wider screens more breathing room without
+     * stretching prose past the ~80 ch readability bound (the
+     * article column is still constrained by its grid track + the
+     * inline content's natural max-width). Issue #226.
+     */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 32px 16px 48px;
   }
@@ -149,7 +157,12 @@
     align-items: start;
   }
   .has-right-rail .layout {
-    grid-template-columns: 200px 1fr 220px;
+    /* `minmax(220px, 320px)` on the right rail (was a fixed 220 px)
+     * lets the section-list claim some of the extra space we
+     * freed up by raising .page max-width. Without it the section
+     * list stays 1-col at any viewport width. Capped at 320 px so
+     * the prose column stays the dominant one. Issue #226. */
+    grid-template-columns: 200px 1fr minmax(220px, 320px);
   }
   .rail {
     position: sticky;

@@ -161,25 +161,27 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       const hook = page.locator('[data-testid="fly-render-state"]');
       // Wait for hydration — initial 3D view attribute set.
       await expect(hook).toHaveAttribute('data-view', '3d', { timeout: 10_000 });
-      // Wait for outPts to settle on THIS mission. Without this, the
-      // previous test's hash can leak into the 3D read (the page-level
-      // applyMissionAsLoaded fires async after mount, so the
-      // data-out-vertex-hash attribute briefly carries the previous
-      // mission's geometry before the new mission's arc replaces it).
-      // Poll until the attribute stabilises across two consecutive
-      // reads ~100 ms apart, with reasonable upper bound.
+      // Wait for the URL-requested mission to be APPLIED to page
+      // state — not just for the static default scenario to finish
+      // hydrating. ADR-056 readiness hooks (issue #133):
+      //   • `__flyMissionId()` returns the id last committed to page
+      //     $state by an apply* function.
+      //   • `__flyArcHash()` returns the stable 11-vertex hash, or
+      //     null if no mission has been applied yet.
+      // Gating on `__flyMissionId() === c.id` distinguishes "page
+      // hydrated with default scenario" from "URL mission load
+      // resolved", the race that bit the v0.6.1 outVertexHash
+      // stability poll.
       await page.waitForFunction(
-        () => {
-          const el = document.querySelector('[data-testid="fly-render-state"]');
-          if (!el) return false;
-          const h = el.getAttribute('data-out-vertex-hash');
-          if (!h) return false;
-          const last = (window as unknown as { __lastHash?: string }).__lastHash;
-          (window as unknown as { __lastHash?: string }).__lastHash = h;
-          return last !== undefined && last === h;
+        (expectedId) => {
+          const w = window as unknown as {
+            __flyArcHash?: () => string | null;
+            __flyMissionId?: () => string | null;
+          };
+          return w.__flyMissionId?.() === expectedId && w.__flyArcHash?.() != null;
         },
-        undefined,
-        { timeout: 10_000, polling: 100 },
+        c.id,
+        { timeout: 10_000, polling: 50 },
       );
       const s3d = await readRenderState(page);
       expect(s3d.view).toBe('3d');
@@ -188,6 +190,15 @@ test.describe('/fly render validation — Layer 3 (arc geometry)', () => {
       // ambiguous on locales where 2D is translated).
       await page.locator('[data-testid="fly-view-toggle"]').click();
       await expect(hook).toHaveAttribute('data-view', '2d', { timeout: 10_000 });
+      // The 2D-side hook reflects the same `outPts` reactive source,
+      // so once the view attribute flips we can immediately read.
+      await page.waitForFunction(
+        () =>
+          (window as unknown as { __fly2DArcHash?: () => string | null }).__fly2DArcHash?.() !=
+          null,
+        undefined,
+        { timeout: 5_000, polling: 50 },
+      );
       const s2d = await readRenderState(page);
       expect(s2d.view).toBe('2d');
       // Same arc geometry across views.

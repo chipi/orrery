@@ -658,6 +658,52 @@
     })(),
   );
 
+  // ─── Test-only readiness hooks (ADR-056) — issue #133 ────────────
+  // `window.__flyArcHash` + `window.__fly2DArcHash` are introspection
+  // functions for the fly-render-validation e2e suite. Both return
+  // `null` while hydrating (outPts not yet populated) and the stable
+  // outVertexHash string once the current mission's geometry has
+  // settled. Reading from reactive `$state` at CALL TIME (not at
+  // closure-capture time) means there's no microtask gap between
+  // Svelte's reactive flush and what the test sees — fixes the
+  // pre-v0.6.2 flake where the e2e poll read the DOM attribute
+  // mid-flush and got the previous mission's hash.
+  //
+  // The 3D and 2D views share `outPts` / `retPts` as their geometry
+  // source; only the projection differs. So both hashes reflect the
+  // same math invariant — assertions like `s2d.hash === s3d.hash`
+  // collapse to "the 2D toggle didn't accidentally re-derive the
+  // arc from a different source".
+  $effect(() => {
+    if (typeof window === 'undefined') return;
+    const w = window as unknown as {
+      __flyArcHash?: () => string | null;
+      __fly2DArcHash?: () => string | null;
+      __flyMissionId?: () => string | null;
+    };
+    // Hash returns null until BOTH conditions hold:
+    //   (a) an apply* function has committed a mission/scenario to
+    //       page state (lastAppliedMissionId !== null) — distinguishes
+    //       "page rendered with default state" from "URL load
+    //       resolved", which is the race that bit v0.6.1.
+    //   (b) outPts has been built (length ≥ 11 — the hash samples 11
+    //       vertices).
+    const hashOrNull = (): string | null =>
+      lastAppliedMissionId === null || outPts.length < 11 ? null : outVertexHash;
+    w.__flyArcHash = hashOrNull;
+    w.__fly2DArcHash = hashOrNull;
+    // Mission ID lets the test verify the URL-requested mission is the
+    // one currently rendered (not the static default). Tests that load
+    // `/fly?mission=X` should await `__flyMissionId() === 'X'` before
+    // reading the hash.
+    w.__flyMissionId = () => lastAppliedMissionId;
+    return () => {
+      delete w.__flyArcHash;
+      delete w.__fly2DArcHash;
+      delete w.__flyMissionId;
+    };
+  });
+
   // Mission elapsed time = days since the simulation departed the arc's
   // start, mapped to the loaded mission's apparent transit time so the
   // user-visible "DAY 138" feels right whether they loaded Curiosity
@@ -844,6 +890,13 @@
   let loadFailed = $state(false);
   let currentLoadId = 0;
 
+  // ID of the mission/scenario most recently applied to the page state.
+  // Used by the `window.__flyArcHash` test hook to distinguish "first
+  // paint shows the default scenario" from "the URL-requested mission
+  // has actually been applied" — fixes the v0.6.1 fly-render-validation
+  // flake (issue #133). Null until the first apply* function runs.
+  let lastAppliedMissionId = $state<string | null>(null);
+
   function applyMissionAsLoaded(m: Mission) {
     // Umami custom event: which missions actually get flown. Fires
     // once per load (mission swap or initial load). Anonymous,
@@ -1006,6 +1059,11 @@
     // sparse flight data (issue #31) now contribute TCMs, EDL, etc.
     // to the CAPCOM ticker even if their editorial overlay is sparse.
     missionEvents = mergeFlightEvents(m.events, m.flight?.events);
+    // After all derived state has updated. The hook reads this LAST so
+    // a test that gates on `__flyArcHash() != null` sees an outPts /
+    // hash that already reflects the new mission, never an in-between
+    // state.
+    lastAppliedMissionId = m.id;
   }
 
   function applyScenarioAsLoaded(s: LocalizedScenario) {
@@ -1036,6 +1094,12 @@
     };
     simDay = mission.timeline.dep_day;
     missionEvents = s.events;
+    // The page-default state initialises with this same scenario at
+    // module load, so the test hook can't distinguish "first paint"
+    // from "applyScenarioAsLoaded ran" by mission name alone. Setting
+    // this $state explicitly here is the test's only signal that the
+    // URL load committed.
+    lastAppliedMissionId = DEFAULT_SCENARIO_ID;
   }
 
   /**
@@ -1101,6 +1165,10 @@
     };
     simDay = newTimeline.dep_day;
     missionEvents = [];
+    // Test-hook signal: a /plan-driven entry counts as a committed URL
+    // load. ID is synthesised since this code path doesn't have a
+    // mission JSON; tests don't gate on this specific value.
+    lastAppliedMissionId = `plan-${dest}-${type}`;
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {

@@ -562,9 +562,7 @@ describe('SCIENCE_TABS', () => {
 // don't satisfy the section-completeness or intro-presence assertions
 // below. Filter them out at the test layer rather than weakening the
 // invariants for tabs that DO have sections.
-const TEACHING_TABS = SCIENCE_TABS.filter(
-  (t) => t !== 'reading-list' && t !== 'watch-list',
-);
+const TEACHING_TABS = SCIENCE_TABS.filter((t) => t !== 'reading-list' && t !== 'watch-list');
 
 describe('getScienceSection', () => {
   it('merges base + en-US overlay for a known section', async () => {

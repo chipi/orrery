@@ -10,6 +10,29 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.6.3] — 2026-05-16
+
+Mobile UX + reliability pass. Five user-filed mobile polish issues (#125-#129) plus three v0.6.2 follow-ups land together: missions density matches fleet, science-lens overlap on /fly cleared, space-stations black-canvas race fixed, deterministic e2e replacing retry-passes, release tooling made truly one-command, bundle warning silenced, and the encyclopedia gains two curated companion lists.
+
+### Added
+
+- **Reading list** at `/science/reading-list` (issue #128) — 8 curated beginner-to-intermediate space books (Cosmos, Pale Blue Dot, A Brief History of Time, The Right Stuff, Packing for Mars, Rocket Propulsion Elements, Fundamentals of Astrodynamics, How to Read the Solar System) + 5 long-form blog/journalism recommendations (Planetary Society, Casey Handmer, Eric Berger / Ars Technica, NASA Spaceflight Forum, Damn Interesting). Audience badges (beginner/intermediate/advanced), explanatory blurbs.
+- **Watch list** at `/science/watch-list` (issue #129) — 7 sci-fi films (Contact, Interstellar, 2001, The Martian, Apollo 13, Moon, For All Mankind), 4 documentaries (For All Mankind '89, In the Shadow of the Moon, Cosmos: A Personal Voyage, When We Left Earth), 3 podcasts (Off-Nominal, MECO, Are We There Yet?), 4 YouTube channels (Scott Manley, Everyday Astronaut, Veritasium, PBS Space Time).
+- Both new pages are anchored as tab cards at the bottom of the `/science` rail nav. New paraglide keys `science_tab_reading_list` + `science_tab_watch_list` in en-US; other 13 locales fall back to JS title-casing via the existing `tabLabel` helper (full localisation deferred to the next wave23 batch).
+- **`scripts/release-rehearsal.ts` — interactive version bump + CHANGELOG scaffold** (issue #223). When the script detects `package.json.version` doesn't match the argument version, it offers to bump it via a `[Y/n]` prompt. When the CHANGELOG section is missing, it offers to scaffold a stub with today's date + empty Added/Fixed/Changed shells. Non-TTY contexts (CI, scripted) take the "no" default — the fail-closed contract from v0.6.2 #134 holds.
+- **`.github/workflows/release.yml`** auto-publishing GH Release on tag push (was v0.6.2 work but properly exercised for the first time on v0.6.3 — confirmed idempotent on the v0.6.2 retag, marked Latest only for stable semver).
+
+### Changed
+
+- **Mobile mission tiles → 2-per-row** (issue #125) — `/missions` card grid uses `repeat(auto-fill, minmax(150px, 1fr))` on ≤600 px so the layout matches `/fleet` density (which the user prefers). Both surfaces carry agency logos so the same minimum-width floor works; very narrow viewports (<340 px) degrade gracefully to 1 column.
+- **Science layers panel — collapsed-by-default on mobile, raised z-index** (issue #126) — the expanded panel was overlapping `/fly`'s CAPCOM ticker. Now ships as a strip on ≤600 px (tap to expand), max-height 50vh → 40vh, z-index 32 → 37 so the active interaction renders above the CAPCOM panel rather than under it.
+- **`vite.config.ts` chunk-size warning ceiling 500 → 700 kB** (issue #224). Identified the two offenders: `three.module.js` ~513 kB (already auto-chunked by Vite, can't tree-shake further at the SvelteKit layer) and Paraglide's `messages.js` ~665 kB (per-locale split needs an `outputStructure: 'locale-modules'` change in inlang/project — deferred follow-up). Both intentional; raising the ceiling stops the build log from carrying a known-known every release. >700 kB is now the real regression flag.
+
+### Fixed
+
+- **Space stations 3D black-canvas on cold mount** (issue #127). `/iss` + `/tiangong` kicked off `startThree()` via `queueMicrotask` after `onMount` set `viewMode='3d'`, but queueMicrotask fires BEFORE the browser's first layout pass on a cold load — so `container.clientWidth` read `0` and the renderer was sized 0×0, giving a permanent black screen until something else triggered a resize (the workaround the user reported: navigating away and back). Fix: new `startThreeWhenSized()` wrapper subscribes a ResizeObserver to the container and starts THREE on the first non-zero size emit. Synchronous when container is already sized (no regression in the happy path).
+- **5 flaky mobile e2e tests — deterministic waits replacing retry-passes** (issue #222). v0.6.2's release rehearsal had 5 mobile-chromium tests passing on retry: `earth.spec` (satellite click) added a 150 ms `panel.waitFor({state:'visible'})` per click instead of bare `isVisible()`; `earth.spec` (ISS GALLERY thumbnails) bumped timeout 5 s → 10 s for image-load on slow CI; `fly.spec` (3D/2D toggle) swapped fragile role+name regex for `[data-testid="fly-view-toggle"]` + `not.toHaveText(initialLabel)`; `_helpers/nav.ts.clickNavLink` waits for the drawer link to be visible before clicking (covers `i18n-pt-BR.spec`); `mars.spec` (FULL MISSION CARD cross-link) dropped `waitForLoadState('networkidle')` (mars streams canvas textures continuously, never hits the 500 ms quiet window) + bumped cross-link timeout to 10 s.
+
 ## [0.6.2] — 2026-05-16
 
 Reliability + release-tooling pass on top of v0.6.1. Tightens the e2e suite (deterministic readiness signals, body-text translation coverage, Linux visual baselines), removes a parallel-agent footgun in `validate-data`, and codifies the AGENTS.md release-readiness checklist as actual tooling — a one-command pre-tag dry run and an auto-publish GH Release workflow on tag push.

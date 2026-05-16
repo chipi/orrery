@@ -10,6 +10,28 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.6.2] — 2026-05-16
+
+Reliability + release-tooling pass on top of v0.6.1. Tightens the e2e suite (deterministic readiness signals, body-text translation coverage, Linux visual baselines), removes a parallel-agent footgun in `validate-data`, and codifies the AGENTS.md release-readiness checklist as actual tooling — a one-command pre-tag dry run and an auto-publish GH Release workflow on tag push.
+
+### Added
+
+- **`npm run release:rehearsal vX.Y.Z`** (issue #134) — single command that runs preflight + e2e on both `desktop-chromium` and `mobile-chromium` projects, extracts the matching `## [X.Y.Z]` block from `CHANGELOG.md`, and creates a DRAFT GH Release. Fail-closed on any step. Codifies the AGENTS.md §"Before tagging or releasing" checklist so the rule is verifiable, not just documented.
+- **`.github/workflows/release.yml` — auto-publish GH Release on tag push** (issue #135). Fires on any `v*` tag push. Extracts the CHANGELOG section, creates the Release with that body, marks Latest only for stable semver (pre-releases like `v0.6.2-rc1` don't bump the homepage marker). Idempotent — re-runs on a re-tagged commit update the existing Release. Eliminates the "tagged but no Release" failure mode that hit v0.6.0 + v0.6.1.
+- **Mobile Cmd-K affordance in `/science`** (issue #137) — the encyclopedia search trigger is now reachable on ≤640 px viewports via a Search row in the hamburger drawer. Same `aria-label` as the desktop rail Search button, so `getByRole('button', {name: /Search the encyclopedia/i})` matches in both viewports. New `nav_search` paraglide key in all 14 locales.
+- **`scripts/regenerate-visual-baselines-linux.sh` + `npm run regen-visual-baselines-linux`** (issue #132). Runs the pinned Playwright Docker image with a host-side `.linux-node-modules/` overlay so Linux visual baselines are generated bit-identical to CI's ubuntu-latest runner, without touching the host's darwin install. Six new `*-linux.png` baselines committed; the `test.skip(process.platform !== 'darwin')` guard from v0.6.1 is dropped.
+- **`docs/guides/visual-regression-baselines.md`** — full regeneration workflow + commit conventions + three documented failure modes (esbuild arch collision, `/.npm` EACCES, non-deterministic renders). Cross-linked from `visual.spec.ts`.
+- **`tests/e2e/i18n-body-text-desktop.spec.ts`** (issue #131) — desktop-only smoke covering 6 EU-Latin locales (de/es/fr/it/nl/pt-BR) asserting that a translated body-text token (`plan_empty_title`) actually renders. Closes the coverage gap the v0.6.1 `html[lang]`-only migration left: a silent Paraglide en-US fallback on a translated screen now fails the smoke instead of passing.
+
+### Fixed
+
+- **`/fly` 3D ↔ 2D hash-invariant flake — deterministic readiness signal** (issue #133). Replaces the v0.6.1 `data-out-vertex-hash` stability poll with ADR-056 hooks: `window.__flyArcHash()` + `window.__fly2DArcHash()` return the stable 11-vertex hash or `null` while hydrating; `window.__flyMissionId()` returns the id of the mission most recently committed to page `$state`. Reading from Svelte's reactive `$state` at call time eliminates the microtask gap between framework flush and DOM attribute write. Targeted run (12 cases): 5 consecutive runs, zero flake. Full suite: 62/62 in 1.3 min.
+- **`validate-data` no longer scans untracked PRD/RFC drafts** (issue #136). Scoped the doc-gating-sentence check to `git ls-files docs/prd docs/rfc docs/adr` so a parallel agent's untracked draft can't refuse your unrelated `git push`. Staged-but-uncommitted files still get gated. Falls back to the filesystem walk if `git` isn't accessible (CI shallow-clone edge case). The stash-and-restore workaround from AGENTS.md §"Pre-push hook quirks" + CLAUDE.md §"Untracked PRD/RFC drafts" is dropped.
+
+### Changed
+
+- **AGENTS.md + CLAUDE.md** updated with v0.6.2 references: the new pre-push behaviour (#136), the release rehearsal script (#134), the auto-publish workflow (#135), and the linux visual baseline workflow (#132).
+
 ## [0.6.1] — 2026-05-16
 
 A patch landing the day after v0.6.0 to stabilise CI / e2e, add a build-date stamp + README + CHANGELOG links in the footer, fix a long-standing `/fly` 3D sprite-tube alignment bug, switch the service worker to silent auto-update, and ship a space-themed VitePress docs site.

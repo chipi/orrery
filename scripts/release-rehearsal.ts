@@ -26,8 +26,8 @@
  * and shipping turns into a CI ping-pong. Closes GH issue #134.
  */
 
-import { spawnSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { execSync, spawnSync } from 'node:child_process';
+import { existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const VERSION_PATTERN = /^v\d+\.\d+\.\d+(?:-[\w.]+)?$/;
@@ -98,24 +98,26 @@ const changelogPath = resolve(repoRoot, 'CHANGELOG.md');
 if (!existsSync(changelogPath)) {
   fail('CHANGELOG.md missing', 1);
 }
-const changelog = readFileSync(changelogPath, 'utf-8');
-
-// Regex matches `## [X.Y.Z]` … up to (but not including) the next
-// `## [` heading or EOF. Section header line itself is dropped so the
-// body starts with the prose paragraph.
-const sectionRe = new RegExp(
-  `^## \\[${versionBare.replace(/\./g, '\\.')}\\][^\\n]*\\n([\\s\\S]*?)(?=\\n## \\[|$)`,
-  'm',
-);
-const match = changelog.match(sectionRe);
-if (!match || !match[1].trim()) {
+// Use awk for the section extract — the JS regex approach
+// (`new RegExp` with `[\s\S]*?` + lookahead) had subtle interactions
+// with the 'm' flag that occasionally returned no match even when the
+// section was clearly present. Same awk recipe lives in release.yml.
+let releaseBody = '';
+try {
+  releaseBody = execSync(
+    `/usr/bin/awk -v ver="${versionBare}" '$0 ~ "^## \\\\[" ver "\\\\]" { flag=1; next } $0 ~ "^## \\\\[" { flag=0 } flag' ${JSON.stringify(changelogPath)}`,
+    { encoding: 'utf-8' },
+  ).trim();
+} catch {
+  releaseBody = '';
+}
+if (!releaseBody) {
   console.error(
     `\x1b[31m✗\x1b[0m CHANGELOG.md has no \`## [${versionBare}]\` section yet.\n` +
       `   Add the section first (and remember to drop a release date), then re-run.`,
   );
   process.exit(1);
 }
-const releaseBody = match[1].trim();
 const bodyPath = `/tmp/release-body-${version}.md`;
 writeFileSync(bodyPath, releaseBody);
 ok(`CHANGELOG body written to ${bodyPath} (${releaseBody.length} chars)`);

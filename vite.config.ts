@@ -97,6 +97,28 @@ export default defineConfig({
       },
     }),
   ],
+  // ─── Bundle chunking (issue #224) ───────────────────────────────
+  // Two chunks exceed Vite's default 500 kB chunk-size warning:
+  //   • `three.module.js` — ~513 kB; single-import shared library,
+  //     Vite already auto-chunks it. Can't meaningfully tree-shake
+  //     further at the SvelteKit layer.
+  //   • `messages.js` — ~665 kB; Paraglide's compiled translation
+  //     bundle for all 14 locales. Per-locale code-splitting needs a
+  //     paraglide config change (`outputStructure: 'locale-modules'`)
+  //     + lazy loading at hydration — separate follow-up effort. For
+  //     now, the full bundle ships once and the SW caches it.
+  //
+  // Both are intentional, not regressions. Raise the warning
+  // ceiling to 700 kB so the build log doesn't carry a known-known
+  // every release; anything above that IS worth investigating.
+  //
+  // Note: a previous attempt at `rollupOptions.output.manualChunks =
+  // { three: ['three'] }` failed because Three.js is resolved as an
+  // external by the sveltekit plugin's auto-bundler. Vite already
+  // splits it into its own chunk without help.
+  build: {
+    chunkSizeWarningLimit: 700,
+  },
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts'],
     // S1 (Test-coverage gap-closure plan) wired the v8 coverage reporter;

@@ -77,9 +77,20 @@ test.describe('/earth', () => {
     outer: for (let r = 60; r < Math.min(box.width, box.height) / 2 - 20; r += 12) {
       for (let theta = 0; theta < Math.PI * 2; theta += Math.PI / 12) {
         await page.mouse.click(cx + Math.cos(theta) * r, cy + Math.sin(theta) * r);
-        if (await panel.isVisible().catch(() => false)) {
+        // Give the click 150 ms to register before declaring miss.
+        // The 2D canvas's pickAt fires on mousedown synchronously, but
+        // Svelte's reactive panel-mount needs a microtask + paint frame
+        // to flush. The bare `isVisible()` returned `false` immediately
+        // on mobile-chromium even when a satellite was hit, marching
+        // past the right click. Issue #222 (was flaky retry-pass in
+        // v0.6.2 rehearsal). waitFor short-circuits as soon as the
+        // panel actually appears, so the happy path stays fast.
+        try {
+          await panel.waitFor({ state: 'visible', timeout: 150 });
           opened = true;
           break outer;
+        } catch {
+          // sweep continues
         }
       }
     }
@@ -145,7 +156,10 @@ test.describe('/earth', () => {
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
-    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
+    // Thumbnail manifest fetch + image load can exceed 5 s on
+    // mobile-chromium under CI load (was flaky retry-pass in v0.6.2;
+    // issue #222). 10 s gives 2× margin without masking a regression.
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 10_000 });
   });
 
   test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {

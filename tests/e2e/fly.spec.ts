@@ -24,10 +24,19 @@ test.describe('/fly — default mission', () => {
 
   test('3D/2D toggle switches the active layer', async ({ page }) => {
     await page.goto('/fly');
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    await expect(toggle).toBeVisible();
+    // Use the stable test-id over the role+name regex — the latter
+    // races on mobile-chromium because the button label reactively
+    // flips between '2D' and '3D' on Svelte's microtask flush, but
+    // Playwright's locator-resolution can land mid-flush and miss the
+    // new name. Was flaky retry-pass in v0.6.2 rehearsal (issue #222).
+    const toggle = page.locator('[data-testid="fly-view-toggle"]');
+    await expect(toggle).toBeVisible({ timeout: 10_000 });
+    // Capture initial label, click, assert it flipped.
+    const initialLabel = (await toggle.textContent())?.trim() ?? '';
     await toggle.click();
-    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+    // The button text flips between '2D' and '3D' on toggle. Wait for
+    // the new label rather than `getByRole(...)` racing the flush.
+    await expect(toggle).not.toHaveText(initialLabel, { timeout: 5_000 });
   });
 
   test('2D mode renders non-blank pixels (regression test)', async ({ page }) => {

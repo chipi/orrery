@@ -73,11 +73,22 @@ test.describe('/mars', () => {
 
   test('curiosity panel surfaces FULL MISSION CARD cross-link', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
-    await page.waitForLoadState('networkidle');
+    // Drop `waitForLoadState('networkidle')` — /mars keeps streaming
+    // canvas textures + traverse polylines well past the 500 ms
+    // network-quiet window networkidle needs, so on mobile-chromium
+    // under CI load the wait ate the entire 30 s test budget before
+    // the panel even got asserted. The panel.toBeVisible() below is
+    // the actual readiness signal we need (issue #222).
     const panel = page.getByRole('complementary');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     const link = panel.getByRole('link', { name: /FULL MISSION CARD/i });
-    await expect(link).toBeVisible();
+    // The cross-link list hydrates after the panel mounts (it depends
+    // on the site→mission resolver fetching the mission JSON). On
+    // mobile-chromium under CI load this exceeded the default 5 s
+    // toBeVisible timeout (test was timing out before the locator
+    // even resolved). 10 s gives 2× margin without masking a real
+    // regression. Issue #222 (flaky retry-pass in v0.6.2).
+    await expect(link).toBeVisible({ timeout: 10_000 });
     await expect(link).toHaveAttribute('href', /\/missions\?id=curiosity/);
   });
 

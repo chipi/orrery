@@ -18,7 +18,14 @@ export async function clickNavLink(page: Page, hrefSubstring: string): Promise<v
     return;
   }
   await page.locator('button.menu-toggle').click();
-  await page.locator(`a.drawer-link[href*="${hrefSubstring}"]`).first().click();
+  // Wait for the drawer link to be visible before clicking — on slow
+  // mobile-chromium under CI load, the drawer's CSS transition can
+  // race the click, so the click lands on an element that's still
+  // mid-animation and gets dropped. Was a v0.6.2 retry-pass on
+  // i18n-pt-BR (issue #222). 3 s is generous; happy path is <100 ms.
+  const drawerLink = page.locator(`a.drawer-link[href*="${hrefSubstring}"]`).first();
+  await drawerLink.waitFor({ state: 'visible', timeout: 3_000 });
+  await drawerLink.click();
 }
 
 /**

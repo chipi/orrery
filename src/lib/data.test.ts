@@ -537,7 +537,9 @@ describe('panel gallery loaders (v0.1.10)', () => {
 });
 
 describe('SCIENCE_TABS', () => {
-  it('exposes the ten encyclopedia tab ids', () => {
+  it('exposes the encyclopedia tab ids in canonical order', () => {
+    // 10 teaching tabs + 2 curated companion lists (reading + watch)
+    // added at the bottom in v0.6.3 (issue #128 + #129).
     expect(SCIENCE_TABS).toEqual([
       'orbits',
       'transfers',
@@ -549,9 +551,20 @@ describe('SCIENCE_TABS', () => {
       'history',
       'observation',
       'life-in-space',
+      'reading-list',
+      'watch-list',
     ]);
   });
 });
+
+// Teaching tabs only — the curated companion lists (reading-list,
+// watch-list) are standalone pages without sections / intros, so they
+// don't satisfy the section-completeness or intro-presence assertions
+// below. Filter them out at the test layer rather than weakening the
+// invariants for tabs that DO have sections.
+const TEACHING_TABS = SCIENCE_TABS.filter(
+  (t) => t !== 'reading-list' && t !== 'watch-list',
+);
 
 describe('getScienceSection', () => {
   it('merges base + en-US overlay for a known section', async () => {
@@ -578,7 +591,7 @@ describe('getScienceSection', () => {
   });
 
   it('every declared section in every tab resolves to a complete record', async () => {
-    for (const tab of SCIENCE_TABS) {
+    for (const tab of TEACHING_TABS) {
       const sections = await getScienceTab(tab);
       expect(sections.length).toBeGreaterThan(0);
       for (const s of sections) {
@@ -607,7 +620,7 @@ describe('getScienceTab', () => {
     // + observation + 3 mission-phases sections + lagrange-points
     // (71 total). Lower-bound assertion keeps future expansion green.
     let total = 0;
-    for (const tab of SCIENCE_TABS) {
+    for (const tab of TEACHING_TABS) {
       total += (await getScienceTab(tab)).length;
     }
     expect(total).toBeGreaterThanOrEqual(70);
@@ -615,8 +628,8 @@ describe('getScienceTab', () => {
 });
 
 describe('getScienceTabIntro', () => {
-  it('returns the editorial 101 intro for each of the six tabs', async () => {
-    for (const tab of SCIENCE_TABS) {
+  it('returns the editorial 101 intro for each teaching tab', async () => {
+    for (const tab of TEACHING_TABS) {
       const intro = await getScienceTabIntro(tab);
       expect(intro).not.toBeNull();
       expect(intro!.headline).toBeTruthy();

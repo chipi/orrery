@@ -32,7 +32,7 @@
       author: 'Carl Sagan',
       year: 1980,
       blurb:
-        "The book of the TV series. Sagan walks you from the Library of Alexandria to the edge of the observable universe and back, and explains why each detour matters. The introduction every space reader should start with.",
+        'The book of the TV series. Sagan walks you from the Library of Alexandria to the edge of the observable universe and back, and explains why each detour matters. The introduction every space reader should start with.',
       audience: 'beginner',
       link: 'https://www.google.com/books/edition/Cosmos/_19E9HlMTUgC',
     },
@@ -77,7 +77,7 @@
       author: 'George P. Sutton & Oscar Biblarz',
       year: 2016,
       blurb:
-        "The propulsion textbook. Goes from Tsiolkovsky to specific impulse to actual nozzle design without skipping steps. Heavy math but the prose is approachable; the figures alone are worth the cover price.",
+        'The propulsion textbook. Goes from Tsiolkovsky to specific impulse to actual nozzle design without skipping steps. Heavy math but the prose is approachable; the figures alone are worth the cover price.',
       audience: 'intermediate',
       link: 'https://www.google.com/books/edition/Rocket_Propulsion_Elements/wMBjAwAAQBAJ',
     },
@@ -86,7 +86,7 @@
       author: 'Bate, Mueller & White',
       year: 1971,
       blurb:
-        'The orbital-mechanics primer used at the US Air Force Academy. Cheap paperback, no nonsense, derives Kepler\'s equation and Hohmann transfers from scratch. The book that\'ll make /science/transfers click.',
+        "The orbital-mechanics primer used at the US Air Force Academy. Cheap paperback, no nonsense, derives Kepler's equation and Hohmann transfers from scratch. The book that'll make /science/transfers click.",
       audience: 'intermediate',
       link: 'https://www.google.com/books/edition/Fundamentals_of_Astrodynamics/UtJK8cetqGkC',
     },
@@ -152,14 +152,14 @@
   <header class="head">
     <h1>Reading list</h1>
     <p class="lede">
-      Books, articles, and blogs to read alongside the encyclopedia. Curated for clarity and
-      respect for the reader's time — the entries here are short, focused, and from authors who
-      explain rather than perform.
+      Books, articles, and blogs to read alongside the encyclopedia. Curated for clarity and respect
+      for the reader's time — the entries here are short, focused, and from authors who explain
+      rather than perform.
     </p>
     <p class="caveat">
       <strong>Draft seed (v0.6.3).</strong> If you have a recommendation that fits this list, open an
-      issue or PR. The curation bar: accessible to a curious non-specialist, written by someone who
-      worked on the subject, and worth a re-read.
+      issue or PR. The curation bar: accessible to a curious non-specialist, written by someone who worked
+      on the subject, and worth a re-read.
     </p>
   </header>
 
@@ -192,8 +192,7 @@
         <li class="entry">
           <div class="entry-head">
             <h3>
-              <a href={blog.href} target="_blank" rel="noopener noreferrer external"
-                >{blog.title}</a
+              <a href={blog.href} target="_blank" rel="noopener noreferrer external">{blog.title}</a
               >
             </h3>
             <span class="meta">{blog.publisher}</span>

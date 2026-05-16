@@ -43,7 +43,7 @@
       creator: 'Ridley Scott · novel by Andy Weir',
       year: 2015,
       blurb:
-        "An astronaut survives by running the numbers. Hab fabric, RTG, perchlorates, water synthesis — every problem in the film is a real problem and every solution is the one a real engineer would try. Pair with /mars site=curiosity.",
+        'An astronaut survives by running the numbers. Hab fabric, RTG, perchlorates, water synthesis — every problem in the film is a real problem and every solution is the one a real engineer would try. Pair with /mars site=curiosity.',
     },
     {
       title: 'Apollo 13',
@@ -64,7 +64,7 @@
       creator: 'Ronald D. Moore · Apple TV+',
       year: 2019,
       blurb:
-        "Alt-history series: what if the Soviets landed on the Moon first? Becomes a multi-decade serious treatment of a near-future space industry. The hardware details are unusually accurate for prestige TV.",
+        'Alt-history series: what if the Soviets landed on the Moon first? Becomes a multi-decade serious treatment of a near-future space industry. The hardware details are unusually accurate for prestige TV.',
     },
   ];
 
@@ -98,7 +98,7 @@
       creator: 'Discovery Channel',
       year: 2008,
       blurb:
-        "Six episodes covering Mercury, Gemini, Apollo, Shuttle, ISS, and Hubble. NASA opened the archives for it; the unscored mission footage is the highlight.",
+        'Six episodes covering Mercury, Gemini, Apollo, Shuttle, ISS, and Hubble. NASA opened the archives for it; the unscored mission footage is the highlight.',
       href: 'https://en.wikipedia.org/wiki/When_We_Left_Earth',
     },
   ];
@@ -108,7 +108,7 @@
       title: 'Off-Nominal',
       creator: 'Jake Robins & Anthony Colangelo',
       blurb:
-        'Two space podcasters who actually know what they\'re talking about, riffing on the week\'s industry news. Best place to get caught up on commercial spaceflight policy + launch operations.',
+        "Two space podcasters who actually know what they're talking about, riffing on the week's industry news. Best place to get caught up on commercial spaceflight policy + launch operations.",
       href: 'https://offnominal.space/',
     },
     {
@@ -153,7 +153,7 @@
       title: 'PBS Space Time',
       creator: 'youtube.com/@pbsspacetime',
       blurb:
-        'For when you want the math. Matt O\'Dowd walks through relativity, cosmology, quantum gravity at a level where you\'ll still need to pause and think. The graduate-level companion to the rest of this list.',
+        "For when you want the math. Matt O'Dowd walks through relativity, cosmology, quantum gravity at a level where you'll still need to pause and think. The graduate-level companion to the rest of this list.",
       href: 'https://www.youtube.com/@pbsspacetime',
     },
   ];

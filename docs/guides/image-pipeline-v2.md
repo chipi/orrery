@@ -73,36 +73,69 @@ You **should not** run `--all` casually — it costs ~$67 cold and is rarely nee
 
 ---
 
-## Picking the right scope flag
+## Default behaviour: incremental (`--new-only` implicit)
 
-The CLI is **opinion-less** — there is no implicit default. You must pick a scope:
+Running with NO flags is the routine workflow. It processes only:
+- New entries in `image-provenance.json` (added since the last run).
+- Entries whose source images changed (file bytes differ).
+- Entries whose cache was invalidated by a prompt-version bump, model swap, or `image-curation.json` deny-list update.
 
-| Scope | Cost (cold) | When to use |
+If nothing changed, the run completes in ~30 seconds and costs $0.
+
+```bash
+npm run images:score                    # incremental, default. $0–$5 typical.
+npm run images:score -- --new-only      # explicit form, same behaviour.
+```
+
+This is the command you'll run 95 % of the time after `fetch-assets.ts` lands new images. Don't reach for `--all` unless you've explicitly bumped the scoring prompt or the vision model — that's the only time the whole corpus needs reprocessing.
+
+## Architectural guarantee — never reprocess unchanged entries
+
+Cache invalidation triggers are explicit and finite. A run will re-score / re-crop an entry ONLY when:
+
+1. The source image bytes changed.
+2. `scripts/vision/prompt.ts` `SCORING_PROMPT_VERSION` constant bumped.
+3. The vision model config string changed.
+4. The entry was added to `image-curation.json` (or one of its ~5 nearest neighbours in the prompt context window changed).
+5. (Variants only) `sharp` major version upgraded.
+
+Time-based triggers (e.g. "re-score everything monthly") do NOT exist. If you ran the pipeline yesterday and nothing in the above list changed, today's run is free. Only `--all --force-score` bypasses the cache; that's an explicit operator gesture, not an accident.
+
+## Picking a narrower scope (when default isn't enough)
+
+For the rare cases where you want to constrain MORE than incremental default does:
+
+| Scope | Cost (cold; cached = $0) | When to use |
 |---|---|---|
-| `--mission <id>` | ~$0.75 | Iterating on one mission's imagery. Almost always your first reach. |
-| `--agency <name>` | ~$3–$30 | After fetching new imagery from one agency's portal in bulk. |
+| Default (no flags) | $0–$5 typical | **Routine** — covers 95 % of runs. |
+| `--changed-since <git-ref>` | $0.25–$1 typical | CI on a PR — process only what the PR diff touched. |
+| `--mission <id>` | ~$0.75 | Iterating on one mission's imagery, want to force a re-look even when nothing changed. |
+| `--agency <name>` | ~$3–$30 | After fetching new imagery from one agency's portal in bulk and want to re-score them all (not just the new ones). |
 | `--source <name>` | ~$5–$40 | When a source's API output structure changes and you need to re-score everything that came from it. |
 | `--fleet-asset <type>` | ~$3–$22 | When you've added a batch of patches / portraits / heroes / galleries. |
 | `--segment <name>` | ~$5–$22 | When you've reorganised an entire segment of the corpus. |
-| `--all` | ~$67 | First build only, or after a prompt-rubric change. |
+| `--all` | ~$67 | First build, or after a prompt-rubric / model change. Explicit opt-in. |
 
 Examples:
 
 ```bash
-# Just changed the gallery_query on Curiosity — re-score that one mission
+# Routine — just added some new images via fetch-assets
+npm run images:score                                # incremental, default
+
+# CI workflow — process only what this PR changed
+npm run images:score -- --changed-since main
+
+# Just changed the gallery_query on Curiosity — force re-look even though source bytes are same
 npm run images:score -- --mission curiosity --force-score
 
-# Fetched 80 new ESA mission images this morning
-npm run images:score -- --agency ESA
-
-# Pulled a fresh batch of mission patches
-npm run images:score -- --fleet-asset patches
+# Fetched 80 new ESA mission images this morning (the new ones already auto-detected; only run this if you ALSO want to re-score the existing ESA images)
+npm run images:score -- --agency ESA --force-score
 
 # Bumped the prompt rubric (changed scoring criteria)
-npm run images:score -- --all --force-score    # ~$67, ~25 min
+npm run images:score -- --all --force-score        # ~$67, ~25 min
 ```
 
-Combinations are AND-joined: `--agency NASA --fleet-asset patches` scores NASA mission patches only.
+Combinations are AND-joined: `--agency NASA --fleet-asset patches` scores NASA mission patches only. `--agency NASA --new-only` processes new NASA images only (skip any NASA images already in the manifest).
 
 ---
 

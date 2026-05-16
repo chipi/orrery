@@ -7,6 +7,7 @@
 
 import Ajv, { type AnySchema, type ErrorObject, type ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
+import { execSync } from 'node:child_process';
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
@@ -532,6 +533,38 @@ console.log(`\n${passed} files passed, ${failed} failed.`);
 
 let docFailed = 0;
 
+// Files git is actually tracking under each docs subdir. Built once
+// and cached so repeated calls don't fork `git ls-files` per check.
+// Scoping to tracked files (issue #136) means untracked drafts a
+// parallel agent left in your worktree don't block your push — the
+// pre-push hook only refuses checked-in files that miss the gating
+// sentence. Staged-but-uncommitted files are still tracked (they
+// appear in `git ls-files`), so a contributor staging a non-conformant
+// PRD still gets blocked.
+let trackedDocFilesCache: Set<string> | null = null;
+function trackedDocFiles(): Set<string> {
+  if (trackedDocFilesCache) return trackedDocFilesCache;
+  try {
+    const out = execSync('git ls-files docs/prd docs/rfc docs/adr', {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+    });
+    trackedDocFilesCache = new Set(
+      out
+        .split('\n')
+        .map((l) => l.trim())
+        .filter(Boolean),
+    );
+  } catch {
+    // Not in a git checkout (e.g. CI shallow clone failure) — fall
+    // back to the filesystem walk so the check still catches gating-
+    // sentence regressions. The untracked-drafts escape hatch is a
+    // nice-to-have, gating-sentence enforcement is mandatory.
+    trackedDocFilesCache = null;
+  }
+  return trackedDocFilesCache ?? new Set();
+}
+
 function checkDocsHaveText(
   globDir: string,
   mustInclude: string,
@@ -540,7 +573,13 @@ function checkDocsHaveText(
 ) {
   if (!existsSync(globDir)) return;
   const exclude = new Set(['index.md', ...(options.excludeFiles ?? [])]);
-  const files = readdirSync(globDir).filter((f) => f.endsWith('.md') && !exclude.has(f));
+  const tracked = trackedDocFiles();
+  // When git ls-files succeeded, scope to the intersection of (tracked
+  // files) and (files on disk under globDir). When it failed (no git
+  // metadata), fall back to the filesystem-only walk.
+  const onDisk = readdirSync(globDir).filter((f) => f.endsWith('.md') && !exclude.has(f));
+  const files =
+    tracked.size > 0 ? onDisk.filter((f) => tracked.has(`${globDir}/${f}`)) : onDisk;
   for (const f of files) {
     const path = join(globDir, f);
     const content = readFileSync(path, 'utf8');

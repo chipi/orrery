@@ -507,7 +507,7 @@ All three steps are needed for a complete release: tag + GH Release + deploy. Th
 
 ### Pre-push hook quirks
 
-- **The pre-push hook walks the filesystem.** Untracked PRD/RFC files in `docs/prd/` or `docs/rfc/` are validated by `validate-data` and can block the push with "missing required PRD/RFC gating sentence" even though you haven't staged them. If a parallel agent (or another tool) has left untracked drafts in those folders, the safest move is `git stash -u` (push, then unstash) — don't `--no-verify` past the failure.
+- **`validate-data` scopes its PRD/RFC/ADR gating-sentence check to `git ls-files`** (issue #136). Untracked drafts in `docs/prd/` or `docs/rfc/` no longer block `git push`; staged-but-uncommitted files still get gated. If you want a draft to be checked, stage it. If `git` isn't available (CI shallow-clone edge case), the check falls back to the filesystem walk so the gate still enforces on tracked files.
 - **`prettier --check` exit code is honoured, but its prose can be filtered.** Some terminal contexts (specifically Claude Code) rewrite Prettier's `[warn] path/to/file.ts` to a reassuring `Prettier: All files formatted correctly` while still returning exit code 1. Trust the exit code, not the prose. When output looks clean but a script exited non-zero, re-run with `/usr/bin/env bash -c '<cmd> 2>&1; echo EXIT=$?'`.
 
 ---

@@ -64,9 +64,11 @@ When the e2e log shows a failure, the actual assertion details are in `test-resu
 cat test-results/i18n-de--lang-de-smoke-loc-b05de-persistence-work-for-German-mobile-chromium/error-context.md
 ```
 
-### Untracked PRD/RFC drafts can block `git push`
+### Untracked PRD/RFC drafts no longer block `git push` (v0.6.2 onwards)
 
-If a parallel agent leaves files in `docs/prd/` or `docs/rfc/` that lack the required gating sentences ("Why this is a PRD" / "Why this is an RFC"), the `validate-data` step in the pre-push hook will refuse the push — even though those files aren't staged. The safe escape is `mv` them to `/tmp`, push, then `mv` back. Don't `--no-verify` past it; the gating sentences exist for a reason and you may know what they should say better than the file's original author does (in which case, add them, commit, push).
+As of v0.6.2, `validate-data` scopes its PRD/RFC/ADR gating-sentence check to `git ls-files` (issue #136). Untracked drafts a parallel agent leaves in `docs/prd/` or `docs/rfc/` are no longer scanned. If you have a draft you DO want gated, `git add` it — staged-but-uncommitted files appear in `ls-files` and stay covered.
+
+If `git` isn't accessible (e.g. CI shallow-clone edge case) the check falls back to the filesystem walk so the gate still catches gating-sentence regressions on tracked files. Don't `--no-verify` past a failure.
 
 ### Tag + GitHub Release + Deploy are three separate actions
 

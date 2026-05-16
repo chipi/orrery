@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
@@ -16,8 +17,10 @@
     createHotspotEntry,
     getHotspotModelBuilder,
     registerHotspotModelBuilder,
+    setHotspotMode,
     updateHotspotLOD,
     type HotspotEntry,
+    type HotspotMode,
   } from '$lib/hotspot-lod-dispatcher';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
@@ -77,6 +80,62 @@
   let layerOrbits = $state(true);
   let autoSpin = $state(true);
   let resetMoonCamera: () => void = () => {};
+
+  // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
+  // dispatcher picks tier from screen-projected size; 'low' = all
+  // sites pinned to Tier 0 silhouette; 'high' = all sites pinned
+  // to their hotspot_tier_max. Initial value resolves from the
+  // ?hotspots= URL param if present, else falls back to LOW under
+  // reduced-motion or saveData, else AUTO.
+  let hotspotsMode: HotspotMode = $state('auto');
+
+  /** Resolve the initial HOTSPOTS mode from URL + accessibility hints. */
+  function resolveInitialHotspotsMode(url: URL): HotspotMode {
+    const param = url.searchParams.get('hotspots');
+    if (param === 'low' || param === 'high' || param === 'auto') return param;
+    // Reduced-motion users default to LOW (less GPU work + lower
+    // visual motion as zoom triggers tier swaps). Save-Data
+    // (Chromium) users also default to LOW (skips texture fetches).
+    if (typeof window !== 'undefined') {
+      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+      const saveData = conn?.saveData === true;
+      if (reduced || saveData) return 'low';
+    }
+    return 'auto';
+  }
+
+  function cycleHotspotsMode(): void {
+    const next: HotspotMode =
+      hotspotsMode === 'auto' ? 'low' : hotspotsMode === 'low' ? 'high' : 'auto';
+    hotspotsMode = next;
+  }
+
+  // Resolve initial mode once on mount (needs window for
+  // matchMedia + navigator.connection). Subsequent changes go
+  // through cycleHotspotsMode + the $effect below.
+  onMount(() => {
+    hotspotsMode = resolveInitialHotspotsMode($page.url);
+  });
+
+  // Reactive: sync mode → dispatcher + URL.
+  $effect(() => {
+    setHotspotMode(hotspotsMode);
+    if (typeof window === 'undefined') return;
+    const url = new URL($page.url);
+    const current = url.searchParams.get('hotspots');
+    // Strip the param when mode is the default ('auto'), otherwise
+    // write it explicitly. replaceState to keep back-button clean.
+    if (hotspotsMode === 'auto') {
+      if (current !== null) {
+        url.searchParams.delete('hotspots');
+        void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+      }
+    } else if (current !== hotspotsMode) {
+      url.searchParams.set('hotspots', hotspotsMode);
+      void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  });
 
   function colorFor(site: MoonSite): string {
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
@@ -1163,6 +1222,18 @@
         data-testid="layer-orbits"
       >
         {m.ui_layer_orbits()}
+      </button>
+      <button
+        type="button"
+        class="chip chip-hotspots"
+        class:active={hotspotsMode !== 'low'}
+        onclick={cycleHotspotsMode}
+        title="Surface Hotspots LOD · click to cycle AUTO ↔ LOW ↔ HIGH"
+        aria-label="Hotspots tier: {hotspotsMode}"
+        data-testid="layer-hotspots"
+        data-hotspots-mode={hotspotsMode}
+      >
+        HOTSPOTS · {hotspotsMode.toUpperCase()}
       </button>
     </div>
   </div>

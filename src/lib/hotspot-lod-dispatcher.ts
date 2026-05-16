@@ -66,6 +66,28 @@ export const HOTSPOT_TIER_THRESHOLDS_PX = {
 export const HOTSPOT_LRU_CEILING = 6;
 
 /**
+ * HOTSPOTS chip state (PRD-014 / RFC-017 §S7, sub-issue #115).
+ *
+ *   'auto' — screen-projected pixel size picks the tier (default).
+ *   'low'  — every hotspot pinned to Tier 0 silhouette regardless
+ *            of zoom. saves GPU memory, mobile data, and matches
+ *            the visual restraint preferred by `prefers-reduced-
+ *            motion` users.
+ *   'high' — every hotspot pinned to its maxTier from sidecar
+ *            (typically Tier 2). Triggers eager loading of all
+ *            patch textures up to the LRU ceiling. Power-user mode.
+ */
+export type HotspotMode = 'auto' | 'low' | 'high';
+
+let currentMode: HotspotMode = 'auto';
+export function setHotspotMode(mode: HotspotMode): void {
+  currentMode = mode;
+}
+export function getHotspotMode(): HotspotMode {
+  return currentMode;
+}
+
+/**
  * Project a world-space point's apparent radius (in pixels) on the
  * canvas. Uses the camera's vertical FOV + canvas height to convert
  * a 1-world-unit reference radius to pixel size at the point's
@@ -252,8 +274,15 @@ export function updateHotspotLOD(
   for (const h of hotspots) {
     const worldPos = new THREE.Vector3();
     h.group.getWorldPosition(worldPos);
-    const projected = projectedPixelRadius(worldPos, camera, canvasHeight);
-    const desired = pickTargetTier(projected, h.maxTier);
+    let desired: 0 | 1 | 2 | 3;
+    if (currentMode === 'low') {
+      desired = 0;
+    } else if (currentMode === 'high') {
+      desired = h.maxTier;
+    } else {
+      const projected = projectedPixelRadius(worldPos, camera, canvasHeight);
+      desired = pickTargetTier(projected, h.maxTier);
+    }
     if (desired !== h.targetTier) {
       // Start a new transition.
       h.targetTier = desired;

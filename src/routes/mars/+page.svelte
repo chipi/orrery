@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
@@ -17,8 +18,10 @@
     createHotspotEntry,
     getHotspotModelBuilder,
     registerHotspotModelBuilder,
+    setHotspotMode,
     updateHotspotLOD,
     type HotspotEntry,
+    type HotspotMode,
   } from '$lib/hotspot-lod-dispatcher';
   import { buildVikingTripodHotspot } from '$lib/hotspot-models/viking-tripod';
   import { buildPathfinderSojournerHotspot } from '$lib/hotspot-models/pathfinder-sojourner';
@@ -87,6 +90,43 @@
   let layerTraverses = $state(true);
   let autoSpin = $state(true);
   let resetMarsCamera: () => void = () => {};
+
+  // Surface Hotspots mode — see /moon for the full pattern.
+  let hotspotsMode: HotspotMode = $state('auto');
+  function resolveInitialHotspotsMode(url: URL): HotspotMode {
+    const param = url.searchParams.get('hotspots');
+    if (param === 'low' || param === 'high' || param === 'auto') return param;
+    if (typeof window !== 'undefined') {
+      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+      const saveData = conn?.saveData === true;
+      if (reduced || saveData) return 'low';
+    }
+    return 'auto';
+  }
+  function cycleHotspotsMode(): void {
+    const next: HotspotMode =
+      hotspotsMode === 'auto' ? 'low' : hotspotsMode === 'low' ? 'high' : 'auto';
+    hotspotsMode = next;
+  }
+  onMount(() => {
+    hotspotsMode = resolveInitialHotspotsMode($page.url);
+  });
+  $effect(() => {
+    setHotspotMode(hotspotsMode);
+    if (typeof window === 'undefined') return;
+    const url = new URL($page.url);
+    const current = url.searchParams.get('hotspots');
+    if (hotspotsMode === 'auto') {
+      if (current !== null) {
+        url.searchParams.delete('hotspots');
+        void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+      }
+    } else if (current !== hotspotsMode) {
+      url.searchParams.set('hotspots', hotspotsMode);
+      void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  });
   let hoverLabelText = $state('');
   let hoverLabelVisible = $state(false);
   let hoverLabelLeft = $state(0);
@@ -1312,6 +1352,18 @@
         data-testid="layer-traverses"
       >
         {m.ui_layer_traverses()}
+      </button>
+      <button
+        type="button"
+        class="chip chip-hotspots"
+        class:active={hotspotsMode !== 'low'}
+        onclick={cycleHotspotsMode}
+        title="Surface Hotspots LOD · click to cycle AUTO ↔ LOW ↔ HIGH"
+        aria-label="Hotspots tier: {hotspotsMode}"
+        data-testid="layer-hotspots"
+        data-hotspots-mode={hotspotsMode}
+      >
+        HOTSPOTS · {hotspotsMode.toUpperCase()}
       </button>
     </div>
   </div>

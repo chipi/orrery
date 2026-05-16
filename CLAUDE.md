@@ -32,6 +32,46 @@ This caveat lives here (not in AGENTS.md) because it's a Claude Code environment
 
 `npm run preflight` mirrors CI exactly (typecheck → lint → test → validate-data → build). The husky pre-push hook auto-runs it. If preflight passes, push is safe. If preflight fails, do not push — diagnose the failure rather than reaching for `--no-verify`.
 
+> **Preflight ≠ release readiness.** Preflight does NOT run e2e. Routine pushes can pass preflight and still break e2e on CI. **Before tagging or cutting a GitHub Release, you MUST run the full Playwright suite locally on BOTH `desktop-chromium` AND `mobile-chromium` projects** — see AGENTS.md §"Before tagging or releasing — full local e2e on BOTH projects". The v0.6.0 → v0.6.1 release cycle ended up in a four-round CI ping-pong because mobile e2e wasn't validated locally first.
+
+### Run e2e locally with `Bash run_in_background` + `Monitor`
+
+The Playwright suite takes 3–16 minutes depending on subset. Don't block a Bash tool call on it.
+
+```ts
+// 1. Kick off the run, redirect to a log file, signal completion at end.
+Bash({
+  command: "(npx playwright test --workers=1 --project=mobile-chromium tests/e2e/i18n-*.spec.ts > /tmp/pw-mobile.log 2>&1; echo \"EXIT=$?\" >> /tmp/pw-mobile.log)",
+  run_in_background: true,
+})
+
+// 2. Watch for the EXIT= sentinel via Monitor. One notification, ends in seconds after the run finishes.
+Monitor({
+  command: "until grep -q 'EXIT=' /tmp/pw-mobile.log; do sleep 5; done; echo '===DONE==='; tail -30 /tmp/pw-mobile.log",
+  description: "playwright mobile run completion",
+  timeout_ms: 900000,
+  persistent: false,
+})
+```
+
+Always pass `--workers=1` — the vite preview server is shared across workers, and the default 2-worker setup can crash mid-run with `net::ERR_CONNECTION_REFUSED`. Match CI's worker count locally.
+
+### Iterating on broken specs
+
+When the e2e log shows a failure, the actual assertion details are in `test-results/<spec-name>/error-context.md`. Read that file directly — it has the locator, the expected/received values, and a code snippet. Don't try to derive the root cause from the high-level `✘` line alone.
+
+```bash
+cat test-results/i18n-de--lang-de-smoke-loc-b05de-persistence-work-for-German-mobile-chromium/error-context.md
+```
+
+### Untracked PRD/RFC drafts can block `git push`
+
+If a parallel agent leaves files in `docs/prd/` or `docs/rfc/` that lack the required gating sentences ("Why this is a PRD" / "Why this is an RFC"), the `validate-data` step in the pre-push hook will refuse the push — even though those files aren't staged. The safe escape is `mv` them to `/tmp`, push, then `mv` back. Don't `--no-verify` past it; the gating sentences exist for a reason and you may know what they should say better than the file's original author does (in which case, add them, commit, push).
+
+### Tag + GitHub Release + Deploy are three separate actions
+
+After `git push --tags`, the tag exists but there's no GitHub Release entry and no auto-deploy. Run `gh release create vX.Y.Z --notes-file ...` to cut the Release. If the e2e gate blocked the auto-deploy, run `gh workflow run "Deploy preview" --ref main` to force the publish. AGENTS.md has the full table of what each action does and doesn't do.
+
 ---
 
 *Orrery · CLAUDE.md · May 2026 — thin pointer to AGENTS.md + TA.md*

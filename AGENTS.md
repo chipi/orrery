@@ -393,6 +393,123 @@ Hooks self-activate after `npm install` via the `prepare` script (`git config co
 
 > **Caveat — `tsc --noEmit` ≠ svelte-check:** `tsc` only type-checks `.ts` files. CI uses `svelte-check`, which type-checks `.svelte` content too. Use `npm run typecheck` (which calls svelte-check) when validating Svelte component changes. Errors like "Property X does not exist on type Y" inside a `.svelte` file will only surface via svelte-check.
 
+> **Caveat — preflight does NOT run e2e.** Preflight covers typecheck / lint / unit / validate / build, but the Playwright e2e suite only runs on push-to-main in CI. Routine PR pushes may pass preflight and still break e2e. For tag / release readiness, see the next section.
+
+---
+
+### Before tagging or releasing — full local e2e on BOTH projects
+
+**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate is what holds the auto-deploy chain (`ci.yml` → `e2e.yml` → `preview.yml`) together; if e2e is red on the tagged commit, the GH Pages deploy never fires and shipping turns into a CI ping-pong.
+
+**Rule: before moving a tag or cutting a GitHub Release, run the full e2e suite locally against both viewports until both are clean.**
+
+```bash
+# Two viewports (desktop-chromium + mobile-chromium) — both must be green.
+npm run test:e2e -- --workers=1                  # all specs, both projects
+# Or while iterating on a subset:
+npx playwright test --workers=1 --project=mobile-chromium tests/e2e/i18n-de.spec.ts ...
+```
+
+**Why `--workers=1`:** the vite preview server is shared across workers. With the default 2 local workers, concurrent rAF + canvas tests destabilise the preview server enough that it sometimes crashes mid-run (`net::ERR_CONNECTION_REFUSED` on subsequent tests). Single worker is slower (~3 min for the full suite) but deterministic. CI already uses one worker; matching it locally also matches CI failure modes.
+
+**Why BOTH projects:** desktop-chromium and mobile-chromium hit different viewport breakpoints (≤640 px collapses the nav into the hamburger drawer, the science rail loses its Search button, /fly HUD collapses, etc.). The mobile project catches the layout regressions desktop can't see. Skipping mobile is how the v0.6.0 → v0.6.1 release cycle ended up with 60+ mobile failures discovered post-tag.
+
+**Visual regression baselines (`tests/e2e/visual.spec.ts`):** baselines are committed as `*-darwin.png` (maintainer's local machine). The suite `test.skip()`s on non-darwin until linux baselines exist too. Local darwin runs DO execute the assertions — if you change a header layout, regenerate baselines with `npx playwright test tests/e2e/visual.spec.ts --update-snapshots` and commit them.
+
+**Pre-tag dry run checklist:**
+
+1. `npm run preflight` — green
+2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
+3. `git push` — pre-push hook runs preflight again, must pass
+4. Push completes — wait for CI + e2e workflows on main, confirm both green
+5. Only then move the tag / cut the GitHub Release
+
+**Order of operations when something is broken on CI but green locally:** trust CI. The CI environment is Ubuntu, runs in Docker, uses 1 worker, and the install / build / preview path can drift from the local setup. Reproduce locally with `--workers=1` and the latest `npm ci` before debugging.
+
+---
+
+### Spec-writing patterns — viewport-aware, locale-resilient
+
+E2e tests must run identically on desktop-chromium and mobile-chromium. Most regressions in this codebase land because a spec was written for the desktop layout and silently failed on mobile-chromium for months until a release exposed it. Follow these patterns:
+
+**1. Use viewport-aware navigation helpers, not raw `nav a.link` selectors.**
+
+The desktop nav strip (`<nav .center a.link>`) is `display: none` on ≤640 px viewports; the hamburger drawer (`button.menu-toggle` → `<a.drawer-link>`) takes over. Helpers in `tests/e2e/_helpers/nav.ts`:
+
+```ts
+import { clickNavLink, localeChip } from './_helpers/nav';
+await clickNavLink(page, '/missions');   // opens drawer first on mobile
+await expect(localeChip(page).first()).toContainText('DE');
+```
+
+Never write `await page.locator('nav a.link[href*="/missions"]').first().click()` — it works on desktop and silently fails on mobile.
+
+**2. Prefer `html[lang]` over body-text translation tokens for locale assertions.**
+
+```ts
+// ✓ Authoritative, viewport-agnostic, set by src/lib/locale.ts on hydration.
+await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+
+// ✗ Fragile — body text often only exists as a nav link (display:none on mobile).
+await expect(page.getByText('NUESTRO SISTEMA SOLAR').first()).toBeVisible();
+```
+
+Combine `html[lang]` + chip + URL preservation as the three locale assertions. They cover Paraglide load, locale-picker state, and URL canonicalisation respectively, and all three survive viewport breakpoints.
+
+**3. Scope chip locators to the locale picker.**
+
+`button.chip` collides with filter chips on `/fly`, `/missions`, `/fleet`. Use `[data-locale-picker] button.chip` (already wrapped in the `localeChip(page)` helper) — never bare `button.chip.first()`.
+
+**4. Use the readiness signals from ADR-056, not magic sleeps.**
+
+`window.__pickAt(x, y)` / `data-route-ready` / `data-loading` are the deterministic signals. `waitForTimeout(N)` will eventually flake on CI under load.
+
+**5. Mobile-only `test.skip()` blocks need a comment explaining why.**
+
+```ts
+test.describe('/science Cmd-K search', () => {
+  test.skip(({ viewport }) => (viewport?.width ?? 1280) < 700, 'desktop-only affordance');
+  // ...
+});
+```
+
+The Search button is `display:none` on mobile (rail collapses). Skipping is correct; not skipping flakes both attempts. Always include the *why* in the skip reason so a future reader doesn't restore the test.
+
+**6. Hydration timing differs by viewport.**
+
+Pixel-5 mobile takes 2–4× longer than desktop for canvas / WebGL routes to populate live data (sites, missions, satellites). Either bump the timeout to 30 s (`{ timeout: 30_000 }`) or assert on a static-render attribute that doesn't require live data. Don't assume desktop-style 5-second timeouts work on mobile.
+
+---
+
+### GitHub Release ≠ git tag
+
+`git tag vX.Y.Z` + `git push --tags` creates a tag. It does NOT create a GitHub Release. The releases page (`gh release list`) is a separate API entity that surfaces the version on the project's GitHub homepage and feeds release-notes RSS / GitHub notification fan-out.
+
+After tagging, also run:
+
+```bash
+gh release create vX.Y.Z --title "vX.Y.Z — short headline" --notes-file /tmp/release-body.md
+```
+
+Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (extracted with `awk '/^## \[X\.Y\.Z\]/{flag=1;next} /^## \[/{flag=0} flag' CHANGELOG.md > /tmp/release-body.md`).
+
+**Three ways to publish v0.6.1, only one is the full release:**
+
+| Action | What it does | What it doesn't do |
+|---|---|---|
+| `git tag v0.6.1` + `git push --tags` | Tag exists; gh sees it; CI deploy chain MAY fire | No GH Release entry; no release notes; no notification |
+| `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't trigger Pages deploy; doesn't move the tag |
+| `gh workflow run "Deploy preview" --ref main` | Manually publishes the live site from current main | Doesn't tag; doesn't create a Release |
+
+All three steps are needed for a complete release: tag + GH Release + deploy. The deploy chain auto-fires from a push-to-main IF the CI + e2e workflows pass; if either is red, use `workflow_dispatch` to force the deploy.
+
+---
+
+### Pre-push hook quirks
+
+- **The pre-push hook walks the filesystem.** Untracked PRD/RFC files in `docs/prd/` or `docs/rfc/` are validated by `validate-data` and can block the push with "missing required PRD/RFC gating sentence" even though you haven't staged them. If a parallel agent (or another tool) has left untracked drafts in those folders, the safest move is `git stash -u` (push, then unstash) — don't `--no-verify` past the failure.
+- **`prettier --check` exit code is honoured, but its prose can be filtered.** Some terminal contexts (specifically Claude Code) rewrite Prettier's `[warn] path/to/file.ts` to a reassuring `Prettier: All files formatted correctly` while still returning exit code 1. Trust the exit code, not the prose. When output looks clean but a script exited non-zero, re-run with `/usr/bin/env bash -c '<cmd> 2>&1; echo EXIT=$?'`.
+
 ---
 
 ## Documentation system

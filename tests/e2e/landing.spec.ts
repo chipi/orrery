@@ -46,11 +46,12 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('.about-body')).toBeVisible();
     await expect(page.locator('.about-links')).toHaveCount(0);
 
-    // Persistent site-footer has 5 project links + version on desktop:
-    // Gallery, Credits, Library, README (external, target=_blank), License (external).
-    // (Mobile drops the 2 'extra' external links; assertion runs on desktop too.)
+    // Persistent site-footer has 6 entries on desktop:
+    // Gallery, Credits, Library, License (external), README (external),
+    // and the v{version} · {date} pill (which links to CHANGELOG).
+    // (Mobile drops the 3 'extra' external links: License, README, version.)
     const persistentLinks = page.locator('.site-footer .footer-link');
-    await expect(persistentLinks).toHaveCount(5);
+    await expect(persistentLinks).toHaveCount(6);
 
     // External README link opens in new tab.
     await expect(

@@ -5,9 +5,7 @@ test.describe('?lang=it smoke', () => {
   test('locale chip and nav persistence work for Italian', async ({ page }) => {
     await page.goto('/explore?lang=it', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('IT');
-    await expect(
-      page.getByText('IL NOSTRO SISTEMA SOLARE', { exact: false }).first(),
-    ).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'it');
 
     await clickNavLink(page, '/missions');
     await page.waitForLoadState('networkidle');

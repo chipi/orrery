@@ -86,8 +86,12 @@ test.describe('/moon', () => {
     page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text()));
     page.on('pageerror', (err) => errors.push(err.message));
     await page.goto('/moon');
+    // Mobile takes meaningfully longer to hydrate the sites array — on
+    // a Pixel-5 viewport the canvas layer settled in 11-15 s in local
+    // benchmarks (vs ~3 s on desktop). 30 s gives a 2× margin without
+    // masking a real hang.
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 10_000,
+      timeout: 30_000,
     });
     expect(errors, errors.join('\n')).toEqual([]);
   });

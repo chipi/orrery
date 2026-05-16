@@ -5,7 +5,7 @@ test.describe('?lang=pt-BR smoke', () => {
   test('locale chip and nav persistence work for Brazilian Portuguese', async ({ page }) => {
     await page.goto('/explore?lang=pt-BR', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('PT');
-    await expect(page.getByText('NOSSO SISTEMA SOLAR', { exact: false }).first()).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
 
     await clickNavLink(page, '/missions');
     await page.waitForLoadState('networkidle');

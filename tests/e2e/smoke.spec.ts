@@ -48,12 +48,18 @@ test('nav bar is visible on every screen and links target primary routes', async
   await expect(nav).toBeVisible();
   // On ≤640 px viewports the link strip collapses into the hamburger
   // drawer (v0.6.0 nav overhaul); open it before asserting link
-  // visibility. On desktop the strip is inline, the drawer button is
-  // display:none, so we skip the click.
+  // visibility. The drawer link is `a.drawer-link`; the inline desktop
+  // link is `nav .center a.link`. We can't just use `a[href$=...]`
+  // because that catches the (display:none) desktop link FIRST on
+  // mobile, which fails the visibility check.
   const menuToggle = page.locator('button.menu-toggle');
-  if (await menuToggle.isVisible().catch(() => false)) {
+  const isMobile = await menuToggle.isVisible().catch(() => false);
+  if (isMobile) {
     await menuToggle.click();
   }
+  const linkSelector = isMobile
+    ? (path: string) => `a.drawer-link[href$="${path}"]`
+    : (path: string) => `nav .center a.link[href$="${path}"]`;
   for (const path of [
     '/moon',
     '/mars',
@@ -64,7 +70,7 @@ test('nav bar is visible on every screen and links target primary routes', async
     '/missions',
     '/earth',
   ]) {
-    const link = page.locator(`a[href$="${path}"]`).first();
+    const link = page.locator(linkSelector(path)).first();
     await expect(link, `nav link to ${path}`).toBeVisible();
   }
 });

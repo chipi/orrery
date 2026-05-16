@@ -5,7 +5,7 @@ test.describe('?lang=nl smoke', () => {
   test('locale chip and nav persistence work for Dutch', async ({ page }) => {
     await page.goto('/explore?lang=nl', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('NL');
-    await expect(page.getByText('ONS ZONNESTELSEL', { exact: false }).first()).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'nl');
 
     await clickNavLink(page, '/missions');
     await page.waitForLoadState('networkidle');

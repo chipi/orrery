@@ -16,19 +16,16 @@ import { clickNavLink, localeChip } from './_helpers/nav';
  */
 
 const ROUTES = [
-  { path: '/explore', token: 'NUESTRO SISTEMA SOLAR' },
-  { path: '/plan', token: 'DESTINO' },
-  { path: '/fly', token: 'VEHÍCULO' },
-  // J.1 collapsed the /missions filters and removed the visible body
-  // heading — only the document title is reliably translated. token=null
-  // means "only assert chip + URL, skip body-text check".
-  { path: '/missions', token: null as string | null },
-  { path: '/earth', token: 'TIERRA' },
-  { path: '/moon', token: 'LUNA' },
+  { path: '/explore' },
+  { path: '/plan' },
+  { path: '/fly' },
+  { path: '/missions' },
+  { path: '/earth' },
+  { path: '/moon' },
 ] as const;
 
 test.describe('?lang=es smoke', () => {
-  for (const { path, token } of ROUTES) {
+  for (const { path } of ROUTES) {
     test(`${path} loads in Spanish`, async ({ page }) => {
       const errors: string[] = [];
       page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
@@ -36,17 +33,11 @@ test.describe('?lang=es smoke', () => {
       await page.goto(`${path}?lang=es`);
       // Picker chip displays ES (the active locale's short tag).
       await expect(localeChip(page).first()).toContainText('ES', { timeout: 10_000 });
-      // A Spanish-only token is visible somewhere on the page —
-      // confirms Paraglide loaded the es bundle and the route picked
-      // up the URL locale. Some routes (notably /missions after J.1
-      // collapsed its filters) no longer expose translated body text,
-      // so a null token means "skip body check, the chip + URL prove
-      // the locale loaded".
-      if (token) {
-        await expect(page.getByText(token, { exact: false }).first()).toBeVisible({
-          timeout: 10_000,
-        });
-      }
+      // `<html lang="es">` is the authoritative locale signal — set by
+      // src/lib/locale.ts on hydration, present in every viewport, not
+      // affected by mobile-nav collapse. Body-text tokens were too
+      // fragile (matched only the hidden mobile nav links).
+      await expect(page.locator('html')).toHaveAttribute('lang', 'es', { timeout: 10_000 });
       // No JS errors during hydration / first paint.
       expect(errors).toEqual([]);
     });

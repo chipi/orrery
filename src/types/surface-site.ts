@@ -59,6 +59,27 @@ export interface SurfaceSite {
   left?: string;
   fact?: string;
   capability?: string;
+  /** ── Surface Hotspots v0.7 (PRD-014 / RFC-017) ──
+   * Optional progressive-disclosure metadata. Sites without these
+   * fields render as Tier 0 silhouettes only (backward compatible).
+   * Set hotspot_tier_max to enable Tier 1+ rendering for this site.
+   */
+  hotspot_tier_max?: 0 | 1 | 2 | 3;
+  hotspot_model?: string;
+  hotspot_annotations?: HotspotAnnotation[];
+  location_uncertainty_m?: number;
+}
+
+/**
+ * Annotation marker inside a Tier 2 surface patch. lat_offset_m /
+ * lon_offset_m are metres from the site's published lat/lon.
+ */
+export interface HotspotAnnotation {
+  id: string;
+  label: string;
+  lat_offset_m: number;
+  lon_offset_m: number;
+  gallery_image?: string;
 }
 
 /**

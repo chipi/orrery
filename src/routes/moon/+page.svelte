@@ -12,6 +12,14 @@
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
+  import {
+    createHotspotEntry,
+    getHotspotModelBuilder,
+    registerHotspotModelBuilder,
+    updateHotspotLOD,
+    type HotspotEntry,
+  } from '$lib/hotspot-lod-dispatcher';
+  import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -286,6 +294,18 @@
     type MarkerObj = { group: THREE.Group; siteId: string; halo?: THREE.Mesh };
     const markers: MarkerObj[] = [];
 
+    // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S1
+    // — Apollo 11 Tier 0+1 swap demo). One entry per site whose
+    // surface-hotspots.json sidecar gives hotspot_tier_max >= 1.
+    // updateHotspotLOD() in the RAF loop swaps Tier 0 silhouette for
+    // a hand-authored engineering model when the marker's screen-
+    // projected radius exceeds 20 px.
+    const hotspots: HotspotEntry[] = [];
+    // Register the Tier 1 builders for ids the dispatcher might need
+    // to lazy-instantiate. Per-route registration keeps the import
+    // graph small for routes that don't use hotspots.
+    registerHotspotModelBuilder('apollo-lm', buildApolloLMHotspot);
+
     // Selection-halo helper — small flat ring around a marker so the
     // user can tell which one they picked. Visibility toggled by the
     // $effect tied to `selected`.
@@ -433,6 +453,7 @@
         moonMesh.remove(mk.group);
       }
       markers.length = 0;
+      hotspots.length = 0;
       for (const site of sites) {
         // Skip orbiter entries — they go through rebuildOrbitalMarkers.
         if (site.kind === 'orbiter') continue;
@@ -442,7 +463,14 @@
         if (site.lat == null || site.lon == null) continue;
         const { x, y, z } = latLonToUnitSphere(site.lat, site.lon);
         const r = moonRadius;
-        const group = buildMoonLanderModel(site.id, site.mission_type, colorFor(site));
+        // Wrapper group — positions + orients the entire marker on
+        // the planet surface. Contains the Tier 0 silhouette sub-group
+        // (always present), plus any lazy-built Tier 1+ sub-groups
+        // added by the hotspot LOD dispatcher, plus hit sphere + label
+        // + halo as siblings.
+        const group = new THREE.Group();
+        const tier0Group = buildMoonLanderModel(site.id, site.mission_type, colorFor(site));
+        group.add(tier0Group);
         // Anchor on the surface; orient the group so +Y points away from
         // Moon centre (radially outward), so cone-style markers stand up.
         group.position.set(x * r, y * r, z * r);
@@ -484,6 +512,31 @@
         halo.position.y = 0.02;
         halo.rotation.x = -Math.PI / 2;
         group.add(halo);
+
+        // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).
+        // Sites whose surface-hotspots.json sidecar gives
+        // hotspot_tier_max >= 1 + a known hotspot_model id get a
+        // dispatcher entry. The Tier 1 mesh is built lazily on first
+        // promotion (when the user zooms in past the 20-px screen-
+        // radius threshold) and added as a sibling of tier0Group
+        // inside the wrapper.
+        const maxTier = (site.hotspot_tier_max ?? 0) as 0 | 1 | 2 | 3;
+        const builderId = site.hotspot_model;
+        if (maxTier >= 1 && builderId) {
+          const builder = getHotspotModelBuilder(builderId);
+          if (builder) {
+            const accent = colorFor(site);
+            hotspots.push(
+              createHotspotEntry({
+                siteId: site.id,
+                maxTier,
+                group,
+                tier0Group,
+                tier1Builder: () => builder(accent),
+              }),
+            );
+          }
+        }
 
         moonMesh.add(group);
         markers.push({ group, siteId: site.id, halo });
@@ -940,6 +993,23 @@
       for (const om of orbitalMarkers) {
         const id = om.dotGroup.userData.siteId as string | undefined;
         om.dotGroup.scale.setScalar(id === selectedId ? pulseScale : 1);
+      }
+
+      // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
+      // Per-frame tier selection based on screen-projected marker size.
+      // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
+      // join the dispatcher as their sub-issues land.
+      if (hotspots.length) {
+        const canvasH = renderer.domElement.clientHeight || 1;
+        updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
+        // Publish the highest currently-displayed tier on the canvas
+        // for e2e assertions (#116 S8).
+        let topTier = 0;
+        for (const h of hotspots) if (h.currentTier > topTier) topTier = h.currentTier;
+        const target = renderer.domElement;
+        const attr = target.getAttribute('data-hotspot-tier');
+        const next = String(topTier);
+        if (attr !== next) target.setAttribute('data-hotspot-tier', next);
       }
 
       if (view === '3d') composer.render();

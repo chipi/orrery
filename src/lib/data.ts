@@ -201,12 +201,44 @@ export async function moonSites(): Promise<MoonSite[]> {
 }
 
 /**
+ * Surface-hotspot tier metadata sidecar (PRD-014 / RFC-017).
+ * Lives at static/data/surface-hotspots.json; joins to moon-sites
+ * + mars-sites by site id. Sites absent from the sidecar render
+ * Tier 0 only (existing silhouette dispatcher) — backward compatible.
+ * Returns an empty object on fetch failure so absent sidecar = all
+ * sites at Tier 0, not a hard error.
+ */
+interface SurfaceHotspotsSidecar {
+  version: number;
+  generated_at: string;
+  schema_doc?: string;
+  entries: Record<
+    string,
+    {
+      hotspot_tier_max?: 0 | 1 | 2 | 3;
+      hotspot_model?: string;
+      hotspot_annotations?: import('$types/surface-site').HotspotAnnotation[];
+      location_uncertainty_m?: number;
+      showcase?: boolean;
+      crashed?: boolean;
+    }
+  >;
+}
+
+async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['entries']> {
+  const sidecar = await get<SurfaceHotspotsSidecar>('surface-hotspots.json').catch(() => null);
+  return sidecar?.entries ?? {};
+}
+
+/**
  * Moon landing sites merged with their per-locale editorial overlay
- * (name, mission_type, site_name, crew, left, fact, capability).
- * Used by /moon.
+ * (name, mission_type, site_name, crew, left, fact, capability) and
+ * with the surface-hotspots sidecar (tier metadata for the v0.7
+ * Surface Hotspots feature). Used by /moon.
  */
 export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
   const baseList = await moonSites();
+  const hotspots = await surfaceHotspotsSidecar();
   const merged: MoonSite[] = [];
   for (const s of baseList) {
     const overlay = await get<Partial<MoonSite>>(`i18n/${locale}/moon-sites/${s.id}.json`).catch(
@@ -217,7 +249,9 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
       (locale === 'en-US'
         ? null
         : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
-    merged.push(fallback ? { ...s, ...fallback } : s);
+    const localised = fallback ? { ...s, ...fallback } : s;
+    const hotspot = hotspots[s.id];
+    merged.push(hotspot ? { ...localised, ...hotspot } : localised);
   }
   return merged;
 }
@@ -234,6 +268,7 @@ export async function marsSites(): Promise<MarsSite[]> {
  */
 export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
   const baseList = await marsSites();
+  const hotspots = await surfaceHotspotsSidecar();
   const merged: MarsSite[] = [];
   for (const s of baseList) {
     const overlay = await get<Partial<MarsSite>>(`i18n/${locale}/mars-sites/${s.id}.json`).catch(
@@ -244,7 +279,9 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
       (locale === 'en-US'
         ? null
         : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
-    merged.push(fallback ? { ...s, ...fallback } : s);
+    const localised = fallback ? { ...s, ...fallback } : s;
+    const hotspot = hotspots[s.id];
+    merged.push(hotspot ? { ...localised, ...hotspot } : localised);
   }
   return merged;
 }

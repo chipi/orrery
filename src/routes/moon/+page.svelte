@@ -20,6 +20,7 @@
     type HotspotEntry,
   } from '$lib/hotspot-lod-dispatcher';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
+  import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
@@ -307,6 +308,7 @@
     // to lazy-instantiate. Per-route registration keeps the import
     // graph small for routes that don't use hotspots.
     registerHotspotModelBuilder('apollo-lm', buildApolloLMHotspot);
+    registerHotspotModelBuilder('apollo-lm-extended', buildApolloLMExtendedHotspot);
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to

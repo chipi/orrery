@@ -1,12 +1,48 @@
 {
   "version": 1,
   "generated_at": "2026-05-17T00:00:00Z",
-  "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher.",
+  "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
   "entries": {
     "apollo11": {
       "hotspot_tier_max": 2,
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "showcase": true,
+      "hotspot_annotations": []
+    },
+    "apollo12": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "apollo-lm",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "apollo14": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "apollo-lm",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "apollo15": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "apollo-lm-extended",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo15/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "apollo16": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "apollo-lm-extended",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo16/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "apollo17": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "apollo-lm-extended",
+      "hotspot_tier2_source": "/images/hotspots/moon/apollo17/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []

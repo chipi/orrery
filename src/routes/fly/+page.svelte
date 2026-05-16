@@ -70,27 +70,6 @@
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
   import { track } from '$lib/analytics';
 
-  // Polyline curve: getPoint(t) returns piecewise-linear interp
-  // between control points — exactly mirrors lerpPoint(out, t)
-  // used to position the spacecraft. Replaces CatmullRomCurve3
-  // (centripetal parameterisation: getPoint(t) drifts off the
-  // control-point lerp because adjacent-chord lengths vary on a
-  // ν-uniformly-sampled ellipse). The mismatch made the 3D past-
-  // tube drawRange run ahead of the spacecraft sprite.
-  class PolylineCurve3 extends THREE.Curve<THREE.Vector3> {
-    points: THREE.Vector3[];
-    constructor(points: THREE.Vector3[]) {
-      super();
-      this.points = points;
-    }
-    getPoint(t: number, target = new THREE.Vector3()): THREE.Vector3 {
-      const last = this.points.length - 1;
-      const f = Math.max(0, Math.min(1, t)) * last;
-      const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
-      return target.lerpVectors(this.points[i], this.points[i + 1], f - i);
-    }
-  }
-
   // ─── Default scenario (ORRERY-1 free-return per ADR-009) ─────────
   // Static-imported so the Three.js scene can initialise synchronously
   // at onMount. The runtime fetch via `getScenario()` happens too,
@@ -353,13 +332,11 @@
   // visible so users can see start + end + curve at all times.
   let outLine: THREE.Mesh | undefined;
   let retLine: THREE.Mesh | undefined;
-  // v0.1.10: each arc is rendered as a pair of tubes — "future" is the
-  // full dim path, "past" is the bright path whose drawRange grows
-  // each frame from 0 → end as the spacecraft progresses. The
-  // resulting visual is a glowing trail behind the spacecraft over a
-  // muted preview of the path ahead.
-  let outLineFuture: THREE.Mesh | undefined;
-  let retLineFuture: THREE.Mesh | undefined;
+  // v0.6.3 #228 rewrite: each arc is ONE tube with a custom shader
+  // that paints bright/dim per fragment based on uProgress. See the
+  // long comment block in onMount where the tube is built — the
+  // previous four-tube + drawRange + vertex-mutation approach had a
+  // root-cause arc-length-vs-uniform-t mismatch with TubeGeometry.
   let rebuildTubeGeometry: ((pts: Vec2[], radius: number) => THREE.BufferGeometry) | undefined;
   /** Apsides marker recompute (Phase H.4). Hoisted from startThree
    * so the outPts $effect can refresh marker positions when the
@@ -401,6 +378,12 @@
       ) => void)
     | undefined;
   let updateCislunarSpacecraftRef:
+    | ((traj: CislunarTrajectory | null, met_days: number) => void)
+    | undefined;
+  // v0.6.3 #228b: drives per-phase uProgress uniforms each frame so
+  // cislunar phase lines render bright (visited) / dim (preview)
+  // around the spacecraft sprite, mirroring the heliocentric tubes.
+  let updateCislunarLineProgressRef:
     | ((traj: CislunarTrajectory | null, met_days: number) => void)
     | undefined;
   // Refresh-callback for the LAUNCH / ARRIVAL sprite textures. Assigned
@@ -478,7 +461,7 @@
     // (e.g. ORRERY DEMO's purple loop persisting after Curiosity loads).
     const outArc = outPts;
     const retArc = retPts;
-    if (!outLine || !retLine || !outLineFuture || !retLineFuture || !rebuildTubeGeometry) return;
+    if (!outLine || !retLine || !rebuildTubeGeometry) return;
     // Moon-mode tubes get a thinner radius — the cislunar arc spans
     // ~32 scene units (Earth-Moon at exaggerated 0.4 AU, vs ~40 for an
     // Earth→Mars Hohmann), and the camera sits closer (≈100u vs
@@ -490,21 +473,10 @@
     const retRadius = isMoonMission ? 0.2 : 0.5;
     outLine.geometry.dispose();
     outLine.geometry = rebuildTubeGeometry(outArc, outRadius);
-    outLineFuture.geometry.dispose();
-    outLineFuture.geometry = rebuildTubeGeometry(outArc, outRadius);
     retLine.geometry.dispose();
     retLine.geometry = rebuildTubeGeometry(retArc, retRadius);
-    retLineFuture.geometry.dispose();
-    retLineFuture.geometry = rebuildTubeGeometry(retArc, retRadius);
-    // Reset the tip-snap mutation cache when the underlying geometry
-    // changes — the previous frame's cross-section index would point
-    // into the OLD array's length.
-    outLine.userData.tipMutation = null;
-    retLine.userData.tipMutation = null;
     apsidesRecompute?.();
-    const hasReturn = retArc.length >= 2;
-    retLine.visible = hasReturn;
-    retLineFuture.visible = hasReturn;
+    retLine.visible = retArc.length >= 2;
   });
 
   // Position the per-mission DEPARTURE + ARRIVAL anchor rings + their
@@ -1532,17 +1504,48 @@
       'descent',
       'ascent',
     ]);
+    /** v0.6.3 #228b: cislunar lines get the same shader-gradient
+     *  treatment as the heliocentric tubes (#228). Per-vertex `aT`
+     *  attribute, uProgress uniform driven per-frame from met_days;
+     *  fragment paints bright (visited) ahead of uProgress, dim
+     *  (preview) behind. Boundary lands at spacecraft sprite by
+     *  construction (same lerp parameterization on both sides). */
+    const buildCislunarLineMaterial = (colorHex: number): THREE.ShaderMaterial =>
+      new THREE.ShaderMaterial({
+        uniforms: {
+          uProgress: { value: 0 },
+          uColor: { value: new THREE.Color(colorHex) },
+          uBrightOpacity: { value: 0.95 },
+          uDimOpacity: { value: 0.22 },
+        },
+        vertexShader: `
+          attribute float aT;
+          varying float vT;
+          void main() {
+            vT = aT;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform float uProgress;
+          uniform vec3 uColor;
+          uniform float uBrightOpacity;
+          uniform float uDimOpacity;
+          varying float vT;
+          void main() {
+            float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
+            gl_FragColor = vec4(uColor, a);
+          }
+        `,
+        transparent: true,
+        depthWrite: false,
+      });
     function ensureCislunarPhaseLine(type: string): THREE.Line {
       const existing = cislunarPhaseLines.get(type);
       if (existing) return existing;
       const line = new THREE.Line(
         new THREE.BufferGeometry(),
-        new THREE.LineBasicMaterial({
-          color: CISLUNAR_PHASE_COLORS[type] ?? 0xffffff,
-          linewidth: 2,
-          transparent: true,
-          opacity: 0.95,
-        }),
+        buildCislunarLineMaterial(CISLUNAR_PHASE_COLORS[type] ?? 0xffffff),
       );
       if (LUNAR_LOCAL_PHASE_TYPES.has(type)) {
         cislunarMoonFrameGroup.add(line);
@@ -1764,8 +1767,10 @@
       for (const phase of traj.phases) {
         const line = ensureCislunarPhaseLine(phase.type);
         const lunarLocal = LUNAR_LOCAL_PHASE_TYPES.has(phase.type);
-        const verts = new Float32Array(phase.points.length * 3);
-        for (let i = 0; i < phase.points.length; i++) {
+        const n = phase.points.length;
+        const verts = new Float32Array(n * 3);
+        const aTArr = new Float32Array(n);
+        for (let i = 0; i < n; i++) {
           const p = phase.points[i];
           const x = lunarLocal ? p.x - moonAtFlybyRef.x : p.x;
           const y = lunarLocal ? p.y - moonAtFlybyRef.y : p.y;
@@ -1773,11 +1778,38 @@
           verts[i * 3] = x * SCALE_CISLUNAR;
           verts[i * 3 + 1] = y * SCALE_CISLUNAR;
           verts[i * 3 + 2] = z * SCALE_CISLUNAR;
+          aTArr[i] = n > 1 ? i / (n - 1) : 0;
         }
         line.geometry.dispose();
         line.geometry = new THREE.BufferGeometry();
         line.geometry.setAttribute('position', new THREE.BufferAttribute(verts, 3));
+        line.geometry.setAttribute('aT', new THREE.BufferAttribute(aTArr, 1));
+        // Reset uProgress on rebuild; the per-frame updater will set
+        // it correctly next tick based on current met_days.
+        const mat = line.material as THREE.ShaderMaterial;
+        mat.uniforms.uProgress.value = 0;
         line.visible = true;
+      }
+    }
+
+    /** Per-frame: drive each phase line's uProgress uniform from the
+     *  spacecraft's met_days. Phases fully behind the spacecraft are
+     *  bright (uProgress=1); ahead are dim (uProgress=0); the active
+     *  phase is mid-gradient. Mirrors the heliocentric outLine/retLine
+     *  treatment from #228. */
+    function updateCislunarLineProgress(traj: CislunarTrajectory | null, met_days: number): void {
+      if (!traj) return;
+      for (const phase of traj.phases) {
+        const line = cislunarPhaseLines.get(phase.type);
+        if (!line) continue;
+        const mat = line.material as THREE.ShaderMaterial;
+        const span = phase.end_met_days - phase.start_met_days;
+        let progress: number;
+        if (span <= 0) progress = met_days >= phase.end_met_days ? 1 : 0;
+        else if (met_days <= phase.start_met_days) progress = 0;
+        else if (met_days >= phase.end_met_days) progress = 1;
+        else progress = (met_days - phase.start_met_days) / span;
+        mat.uniforms.uProgress.value = progress;
       }
     }
 
@@ -1823,6 +1855,7 @@
     rebuildCislunarLinesRef = rebuildCislunarLines;
     rebuildCislunarAnnotationsRef = rebuildCislunarAnnotations;
     updateCislunarSpacecraftRef = updateCislunarSpacecraft;
+    updateCislunarLineProgressRef = updateCislunarLineProgress;
     cislunarMoonMeshRef = cislunarMoon;
     cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
 
@@ -1899,57 +1932,118 @@
     scene.add(earthOrbitLine);
     scene.add(marsOrbitLine);
 
-    // Outbound + return arcs as Lines whose drawRange we trim each
-    // frame to fade the future part. Past = solid full-opacity, future
-    // = nothing in 3D (the 2D mode has the dashed-future treatment;
-    // 3D keeps it cleaner without dashed segments since LineDashedMaterial
-    // requires geometry.computeLineDistances which is awkward to update).
-    /** Build a TubeGeometry from arc points (in AU). Returns null
-     *  when the arc has too few points — caller falls back to an
-     *  empty placeholder geometry so the Mesh refs stay non-null. */
+    // v0.6.3 #228 rewrite: ONE tube per leg. The fragment shader paints
+    // each fragment bright (visited) if vT < uProgress, dim (preview)
+    // otherwise. uProgress is set each frame from outFraction /
+    // retFraction. Why this works where the v0.1.10 four-tube +
+    // drawRange + vertex-mutation approach didn't:
+    //
+    //   1. Cross-sections sit at EXACTLY pts[i] (manual builder below,
+    //      NOT THREE.TubeGeometry — TubeGeometry sampled the curve via
+    //      getPointAt(arc-length) which disagreed with lerpPoint at
+    //      uniform-t for Kepler ellipses sampled at uniform true
+    //      anomaly; that's what caused the 0.5 → 20.3 scene-unit
+    //      sprite-vs-tube-tip gap visible in the v0.6.2 debug log).
+    //   2. Each vertex carries `aT = i / (pts.length - 1)`, the same
+    //      parameter the sprite uses (sc.pos = lerpPoint(pts, t)).
+    //   3. Fragment interpolation of vT crosses uProgress at exactly
+    //      the same world position as lerpPoint(pts, uProgress) —
+    //      i.e. where the sprite sits. No drift possible by construction.
+    /** Manual tube builder. Cross-section i sits at pts[i]; vertex
+     *  carries aT = i/(N-1). Returns empty geometry for <2 pts. */
     const buildTubeGeometry = (pts: Vec2[], radius: number): THREE.BufferGeometry => {
-      if (pts.length < 2) return new THREE.BufferGeometry();
-      const vecs = pts.map((p) => new THREE.Vector3(p.x * SCALE_3D, 0, p.z * SCALE_3D));
-      const curve = new PolylineCurve3(vecs);
-      // tubularSegments == waypoint count - 1 so each segment of the
-      // tube spans exactly one input chord — drawRange now maps 1:1
-      // to the lerpPoint index space the spacecraft uses.
-      return new THREE.TubeGeometry(curve, pts.length - 1, radius, 8, false);
+      const geom = new THREE.BufferGeometry();
+      if (pts.length < 2) return geom;
+      const radialSegs = 8;
+      const ringCount = pts.length;
+      const vertsPerRing = radialSegs + 1; // duplicate at theta=0/2π for UV seam
+      const totalVerts = ringCount * vertsPerRing;
+      const positions = new Float32Array(totalVerts * 3);
+      const aTArr = new Float32Array(totalVerts);
+      for (let i = 0; i < ringCount; i++) {
+        const p = pts[i];
+        // Tangent in XZ plane (the arc is planar in XZ). Central
+        // difference; endpoints fall back to forward/backward.
+        const prev = pts[Math.max(0, i - 1)];
+        const next = pts[Math.min(ringCount - 1, i + 1)];
+        const tx = next.x - prev.x;
+        const tz = next.z - prev.z;
+        const tLen = Math.hypot(tx, tz) || 1;
+        // Side vector = tangent rotated 90° in XZ.
+        const sNx = -tz / tLen;
+        const sNz = tx / tLen;
+        const t = i / (ringCount - 1);
+        for (let r = 0; r <= radialSegs; r++) {
+          const theta = (r / radialSegs) * Math.PI * 2;
+          const cosT = Math.cos(theta);
+          const sinT = Math.sin(theta);
+          const idx = i * vertsPerRing + r;
+          positions[idx * 3 + 0] = p.x * SCALE_3D + radius * sinT * sNx;
+          positions[idx * 3 + 1] = radius * cosT;
+          positions[idx * 3 + 2] = p.z * SCALE_3D + radius * sinT * sNz;
+          aTArr[idx] = t;
+        }
+      }
+      const indices: number[] = [];
+      for (let i = 0; i < ringCount - 1; i++) {
+        for (let r = 0; r < radialSegs; r++) {
+          const a = i * vertsPerRing + r;
+          const b = (i + 1) * vertsPerRing + r;
+          const c = (i + 1) * vertsPerRing + r + 1;
+          const d = i * vertsPerRing + r + 1;
+          indices.push(a, b, d);
+          indices.push(b, c, d);
+        }
+      }
+      geom.setIndex(indices);
+      geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geom.setAttribute('aT', new THREE.BufferAttribute(aTArr, 1));
+      geom.computeVertexNormals();
+      return geom;
     };
-    // v0.1.10: each arc is a pair of tube meshes. The *future* mesh is
-    // a dim full-length preview; the *past* mesh is bright and its
-    // drawRange grows each frame from 0 → full so the spacecraft
-    // leaves a glowing wake behind it. Both pairs share the same
-    // CatmullRom curve so they stay perfectly co-linear.
-    const outMat = new THREE.MeshBasicMaterial({
-      color: 0x4488ff,
-      transparent: true,
-      opacity: 0.95,
-    });
-    const outFutureMat = new THREE.MeshBasicMaterial({
-      color: 0x4488ff,
-      transparent: true,
-      opacity: 0.22,
-      depthWrite: false,
-    });
-    const retMat = new THREE.MeshBasicMaterial({
-      color: 0x9966ff,
-      transparent: true,
-      opacity: 0.9,
-    });
-    const retFutureMat = new THREE.MeshBasicMaterial({
-      color: 0x9966ff,
-      transparent: true,
-      opacity: 0.2,
-      depthWrite: false,
-    });
-    outLineFuture = new THREE.Mesh(buildTubeGeometry(outPts, 0.6), outFutureMat);
-    outLine = new THREE.Mesh(buildTubeGeometry(outPts, 0.6), outMat);
-    retLineFuture = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), retFutureMat);
-    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), retMat);
-    scene.add(outLineFuture);
+    /** Gradient ShaderMaterial. `vT < uProgress` → bright, else dim.
+     *  Fragment interpolation of vT puts the bright/dim boundary at
+     *  exactly the same world position as the sprite. */
+    const buildTubeMaterial = (
+      colorHex: number,
+      brightOpacity: number,
+      dimOpacity: number,
+    ): THREE.ShaderMaterial =>
+      new THREE.ShaderMaterial({
+        uniforms: {
+          uProgress: { value: 0 },
+          uColor: { value: new THREE.Color(colorHex) },
+          uBrightOpacity: { value: brightOpacity },
+          uDimOpacity: { value: dimOpacity },
+        },
+        vertexShader: `
+          attribute float aT;
+          varying float vT;
+          void main() {
+            vT = aT;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform float uProgress;
+          uniform vec3 uColor;
+          uniform float uBrightOpacity;
+          uniform float uDimOpacity;
+          varying float vT;
+          void main() {
+            float a = (vT < uProgress) ? uBrightOpacity : uDimOpacity;
+            gl_FragColor = vec4(uColor, a);
+          }
+        `,
+        transparent: true,
+        depthWrite: false,
+      });
+    outLine = new THREE.Mesh(
+      buildTubeGeometry(outPts, 0.6),
+      buildTubeMaterial(0x4488ff, 0.95, 0.22),
+    );
+    retLine = new THREE.Mesh(buildTubeGeometry(retPts, 0.5), buildTubeMaterial(0x9966ff, 0.9, 0.2));
     scene.add(outLine);
-    scene.add(retLineFuture);
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
     rebuildTubeGeometry = buildTubeGeometry;
@@ -3432,9 +3526,7 @@
       if (arrMarker) arrMarker.visible = !afterArrival;
       if (arrLabelSprite) arrLabelSprite.visible = !afterArrival;
       if (outLine) outLine.visible = !afterArrival;
-      if (outLineFuture) outLineFuture.visible = !afterArrival;
       if (retLine) retLine.visible = !afterArrival && retPts.length >= 2;
-      if (retLineFuture) retLineFuture.visible = !afterArrival && retPts.length >= 2;
       scSprite.visible = !afterArrival;
 
       // Freeze playback on arrival — the planets should stop where they
@@ -3559,126 +3651,28 @@
         }
       }
 
-      // v0.1.10: drawRange-driven progress trail on the *past* tube of
-      // each arc. The *future* tubes always render full at low
-      // opacity so the user sees the full mission path; the past
-      // tubes overlay them at high opacity, growing from 0 → end as
-      // the spacecraft progresses. For free-return scenarios the
-      // overall progress 0→0.5 spans outbound, 0.5→1 spans return.
-      // For one-way missions outPts is the only arc; retPts is empty.
+      // v0.6.3 #228: single source of truth for bright/dim split. The
+      // sprite sits at sc.pos = lerpPoint(pts, fraction). Each tube
+      // vertex carries aT = i/(N-1) (same parameterization). The
+      // fragment shader paints vT < uProgress bright, else dim — and
+      // since per-vertex interpolation of vT crosses uProgress at
+      // exactly the same world position that lerpPoint(pts, uProgress)
+      // returns, the boundary lands on the sprite by construction.
+      // No vertex mutation, no drawRange, no two-tube alignment dance.
+      //
       // sc.progress goes 0 → 0.5 across outbound and 0.5 → 1 across
-      // return, so the bright/dim split for the outbound tube must
-      // map [0, 0.5] → [0, 1] (i.e. sc.progress * 2). The previous
-      // formula used a hasReturn ternary that left one-way missions
-      // showing only half the tube as "visited" at arrival. Using the
-      // doubled formula uniformly covers both cases.
+      // return, so outFraction maps [0, 0.5] → [0, 1] for outbound
+      // and retFraction maps [0.5, 1] → [0, 1] for return.
       const outFraction = Math.min(1, sc.progress * 2);
       const retFraction = Math.max(0, (sc.progress - 0.5) * 2);
-
-      // Single source of truth: the spacecraft sprite's world position
-      // (sc.pos × SCALE_3D) drives BOTH the red-dot sprite AND the
-      // tube tip. Previously, snapTubeTip re-derived its own lerp from
-      // outFraction/retFraction and pts; even though the math was
-      // algebraically identical to spacecraftPos's lerpPoint, the two
-      // formulas drifted visibly under sustained playback — sprite
-      // lagged outbound, led on return. One formula = zero drift.
-      //
-      // Algorithm: each frame, translate cross-section csIdx (the
-      // ring just past the spacecraft along the arc) so its centre
-      // lands exactly at the sprite. The previous frame's translation
-      // is undone first. ~18 ops per tube (9 verts × 2 axes); cheap.
-      const spriteSceneX = sc.pos.x * SCALE_3D;
-      const spriteSceneZ = sc.pos.z * SCALE_3D;
-      // `role` distinguishes the bright "past" tube (ends at the
-      // sprite, drawRange trimmed to csIdx) from the dim "future"
-      // tube (covers the FULL arc, but its matching cross-section
-      // is ALSO translated to the sprite so the bright-to-dim
-      // transition is seamless — no visible split, fix for #228).
-      const snapTubeTip = (
-        line: THREE.Mesh,
-        pts: { x: number; z: number }[],
-        fraction: number,
-        role: 'past' | 'future',
-      ): void => {
-        if (!line.geometry.index || pts.length < 2) return;
-        const segs = pts.length - 1;
-        const total = line.geometry.index.count;
-        const segIndices = total / segs;
-
-        const posAttr = line.geometry.attributes.position as THREE.BufferAttribute;
-        const arr = posAttr.array as Float32Array;
-
-        // Undo previous frame's translation on whichever cross-section
-        // we last touched. TubeGeometry creates radialSegments+1
-        // vertices per cross-section (the +1 is the duplicate at
-        // theta=0/2π for the UV seam). With radialSegments=8 that's 9
-        // per ring; mutating only 8 leaves the seam vertex behind and
-        // produces a visible stretched triangle at the tip.
-        const prev = line.userData.tipMutation as
-          | { csIdx: number; dx: number; dz: number }
-          | undefined;
-        if (prev) {
-          const base = prev.csIdx * 9 * 3;
-          for (let r = 0; r < 9; r++) {
-            arr[base + r * 3 + 0] -= prev.dx;
-            arr[base + r * 3 + 2] -= prev.dz;
-          }
-        }
-
-        if (fraction <= 0) {
-          line.userData.tipMutation = null;
-          posAttr.needsUpdate = true;
-          // Past tube hidden (no progress yet); future tube still
-          // shows the full arc preview.
-          line.geometry.setDrawRange(0, role === 'past' ? 0 : total);
-          return;
-        }
-        if (fraction >= 1) {
-          line.userData.tipMutation = null;
-          posAttr.needsUpdate = true;
-          line.geometry.setDrawRange(0, total);
-          return;
-        }
-
-        // csIdx = cross-section ring just past the spacecraft. The
-        // visible tube includes this ring; translating it to sc.pos
-        // makes the tube's last segment terminate exactly at the
-        // sprite, regardless of how `fraction` was computed.
-        const f = Math.max(0, Math.min(segs, fraction * segs));
-        const floorSeg = Math.min(segs - 1, Math.max(0, Math.floor(f)));
-        const csIdx = floorSeg + 1;
-        const dx = spriteSceneX - pts[csIdx].x * SCALE_3D;
-        const dz = spriteSceneZ - pts[csIdx].z * SCALE_3D;
-
-        const base = csIdx * 9 * 3;
-        for (let r = 0; r < 9; r++) {
-          arr[base + r * 3 + 0] += dx;
-          arr[base + r * 3 + 2] += dz;
-        }
-        line.userData.tipMutation = { csIdx, dx, dz };
-        posAttr.needsUpdate = true;
-        // Past tube draws to csIdx (ends at sprite). Future tube
-        // draws the full arc so the user sees where the spacecraft
-        // is going. Critically, the future tube's csIdx vertex is
-        // ALSO at the sprite (after the translation above), so the
-        // bright/dim boundary doesn't split visually.
-        if (role === 'past') {
-          line.geometry.setDrawRange(0, csIdx * segIndices);
-        } else {
-          line.geometry.setDrawRange(0, total);
-        }
-      };
-      // Snap the past tube AND the future tube to the sprite's world
-      // position. v0.6.1 only handled the past tube; the future tube's
-      // csIdx vertex stayed at `pts[csIdx]`, up to one segment AHEAD
-      // of the sprite, producing a visible bright-to-dim split for any
-      // fraction not on a vertex boundary. Issue #228.
-      if (outLine && outPts.length > 1) snapTubeTip(outLine, outPts, outFraction, 'past');
-      if (outLineFuture && outPts.length > 1)
-        snapTubeTip(outLineFuture, outPts, outFraction, 'future');
-      if (retLine && retPts.length > 1) snapTubeTip(retLine, retPts, retFraction, 'past');
-      if (retLineFuture && retPts.length > 1)
-        snapTubeTip(retLineFuture, retPts, retFraction, 'future');
+      if (outLine) {
+        const mat = outLine.material as THREE.ShaderMaterial;
+        mat.uniforms.uProgress.value = outFraction;
+      }
+      if (retLine) {
+        const mat = retLine.material as THREE.ShaderMaterial;
+        mat.uniforms.uProgress.value = retFraction;
+      }
 
       // marsArr / earthRet are recomputed per-frame from the live
       // arcTimeline so these markers track per-mission launch windows.
@@ -3731,6 +3725,7 @@
         }
         const metDays = simDay - arcTimeline.dep_day;
         updateCislunarSpacecraftRef?.(cislunarTrajectory, metDays);
+        updateCislunarLineProgressRef?.(cislunarTrajectory, metDays);
 
         // ─── Cislunar science-layer per-frame updates ─────────────────
         // Drive only the visible overlays so the math is skipped when

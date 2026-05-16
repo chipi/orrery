@@ -13,3 +13,5 @@ project.inlang/
 static/fonts/
 playwright-report/
 test-results/
+.lean-ctx/
+.claude/

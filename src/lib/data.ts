@@ -902,6 +902,11 @@ export const SCIENCE_TABS: readonly ScienceTabId[] = [
   'history',
   'observation',
   'life-in-space',
+  // v0.6.3 — curated companion lists, anchored at the bottom of the
+  // rail so the encyclopedia tabs read as a coherent block above them
+  // and these read as "see also" affordances. (Issues #128 + #129.)
+  'reading-list',
+  'watch-list',
 ] as const;
 
 export async function getScienceSection(

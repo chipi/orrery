@@ -10,7 +10,13 @@ export type ScienceTabId =
   | 'space-stations'
   | 'history'
   | 'observation'
-  | 'life-in-space';
+  | 'life-in-space'
+  // v0.6.3 — curated companion lists (issue #128 + #129). Standalone
+  // pages (no sections); the rail's tab card links straight to
+  // /science/reading-list and /science/watch-list. Layout's
+  // right-rail gracefully hides when tabSections is empty.
+  | 'reading-list'
+  | 'watch-list';
 
 export interface ScienceLink {
   l: string;

@@ -50,10 +50,16 @@
   let { available = [], title, body, tab, section }: Props = $props();
 
   let lensOn = $state(false);
-  // Collapse state: panel ships expanded by default so first-time
-  // users see the choices, then they can collapse to reduce real
-  // estate. State is local-only — re-expands on next route mount.
-  let expanded = $state(true);
+  // Collapse state: panel ships expanded by default on desktop (room
+  // for the body + 12-layer toggle grid), collapsed by default on
+  // mobile (≤600 px) — the expanded panel was overlapping bottom-
+  // anchored content like /fly's CAPCOM ticker (issue #126), and the
+  // collapsed strip is enough on first paint to advertise that the
+  // lens is available. State is local-only — re-defaults on next
+  // route mount.
+  let expanded = $state(
+    typeof window === 'undefined' ? true : !window.matchMedia('(max-width: 600px)').matches,
+  );
   // Per-layer reactive state mirroring the attribute store. Driven by
   // onLayerChange subscriptions so users see immediate feedback even if
   // another part of the app flipped a layer.
@@ -398,8 +404,17 @@
       right: 8px;
       transform: none;
       width: auto;
-      max-height: 50vh;
+      /* Was 50vh — overlapped /fly's CAPCOM ticker (bottom 70 px, max
+       * 50vh) when expanded. 40vh leaves the upper third of the
+       * viewport clear so the user can still see arc + scene context
+       * while picking layers (issue #126). */
+      max-height: 40vh;
       overflow-y: auto;
+      /* Z-index 37 (was 32) sits above the /fly CAPCOM panel (35) +
+       * the hud-collapse button (36), so when both lens + CAPCOM are
+       * open the lens — the user's active interaction — is on top.
+       * Still below load-banner (40). */
+      z-index: 37;
     }
     .rows {
       grid-template-columns: 1fr;

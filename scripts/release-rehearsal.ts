@@ -26,7 +26,7 @@
  * and shipping turns into a CI ping-pong. Closes GH issue #134.
  */
 
-import { execSync, spawnSync } from 'node:child_process';
+import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 

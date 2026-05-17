@@ -29,6 +29,7 @@
   import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
   import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
+  import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
@@ -93,6 +94,10 @@
 
   // Surface Hotspots mode — see /moon for the full pattern.
   let hotspotsMode: HotspotMode = $state('auto');
+  let panoramaActive = $state(false);
+  let panoramaSkybox: SkyboxHandle | null = null;
+  let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
+  let exitPanorama: () => void = $state(() => {});
   function resolveInitialHotspotsMode(url: URL): HotspotMode {
     const param = url.searchParams.get('hotspots');
     if (param === 'low' || param === 'high' || param === 'auto') return param;
@@ -786,6 +791,36 @@
       applyCamera();
     };
 
+    // Phase 6 (#118) — panorama enter/exit hooks. Same pattern as
+    // /moon: skybox at scene origin + camera pulled in close.
+    let savedCamR = camR;
+    enterPanorama = (textureUrl: string, siteId: string) => {
+      if (panoramaActive) return;
+      panoramaSkybox = createSkybox({ textureUrl, siteId });
+      scene.add(panoramaSkybox.group);
+      panoramaSkybox.activate();
+      marsMesh.visible = false;
+      savedCamR = camR;
+      camR = 0.5;
+      applyCamera();
+      panoramaActive = true;
+    };
+    exitPanorama = () => {
+      if (!panoramaActive) return;
+      panoramaActive = false;
+      panoramaSkybox?.deactivate();
+      const handle = panoramaSkybox;
+      panoramaSkybox = null;
+      setTimeout(() => handle?.dispose(), 1300);
+      marsMesh.visible = true;
+      camR = savedCamR;
+      applyCamera();
+    };
+    const onPanoramaKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && panoramaActive) exitPanorama();
+    };
+    window.addEventListener('keydown', onPanoramaKey);
+
     let dragging = false;
     let dragStartX = 0;
     let dragStartY = 0;
@@ -1232,6 +1267,8 @@
 
     cleanup = () => {
       cancelAnimationFrame(raf);
+      window.removeEventListener('keydown', onPanoramaKey);
+      panoramaSkybox?.dispose();
       stopRm();
       stopMarsAtmosphereLayer?.();
       window.removeEventListener('resize', onResize);
@@ -1374,6 +1411,23 @@
     <div class="load-failed" role="alert">{m.mars_load_failed()}</div>
   {/if}
 
+  {#if panoramaActive}
+    <div
+      class="panorama-overlay"
+      role="region"
+      aria-label="Ground-view panorama mode — press ESC to return to orbit"
+      data-testid="panorama-overlay"
+    >
+      <span class="sr-only">
+        You are standing at the landing site on Mars. The lander is in front of you. Drag to look
+        around.
+      </span>
+      <button type="button" class="panorama-exit" onclick={exitPanorama}>
+        ↑ Return to orbit
+      </button>
+    </div>
+  {/if}
+
   <!-- Legend overlay (3D view; 2D paints its own legend on the canvas) -->
   {#if view === '3d'}
     <div class="legend-3d" aria-label={m.mars_legend_nation_aria()}>
@@ -1461,6 +1515,20 @@
           </span>
           <span class="badge kind">{selected.kind === 'orbiter' ? 'IN ORBIT' : 'ON SURFACE'}</span>
         </div>
+        {#if selected.hotspot_tier3_panorama && !panoramaActive}
+          <button
+            type="button"
+            class="stand-at-site"
+            data-testid="stand-at-site"
+            onclick={() =>
+              enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
+            title={isSaveDataActive()
+              ? 'Tap to load panorama (~8 MB) — saveData is on'
+              : 'Stand at this landing site — wrap-around ground view'}
+          >
+            🌐 Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
+          </button>
+        {/if}
         {#if selected.mission_type}
           <p class="mission-type">
             {selected.mission_type}<ScienceChip
@@ -1635,6 +1703,60 @@
     flex-wrap: wrap;
     gap: 6px;
     pointer-events: auto;
+  }
+  .stand-at-site {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    background: var(--accent, #cc7a55);
+    color: #04040c;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+  }
+  .stand-at-site:hover,
+  .stand-at-site:focus-visible {
+    filter: brightness(1.1);
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  .panorama-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .panorama-exit {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+    padding: 8px 16px;
+    background: rgba(4, 4, 12, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .ctrl-row.chips {
     flex-direction: column;

@@ -4,9 +4,10 @@
   "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
   "entries": {
     "apollo11": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [
@@ -71,17 +72,19 @@
       "hotspot_annotations": []
     },
     "apollo17": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "apollo-lm-extended",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo17/tier2-lroc.jpg",
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []
     },
     "viking1-lander": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "viking-tripod",
       "hotspot_tier2_source": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+      "hotspot_tier3_panorama": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []
@@ -115,17 +118,19 @@
       "hotspot_annotations": []
     },
     "curiosity": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "curiosity-class",
       "hotspot_tier2_source": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+      "hotspot_tier3_panorama": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []
     },
     "perseverance": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "curiosity-class-with-ingenuity",
       "hotspot_tier2_source": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+      "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": []

@@ -25,6 +25,7 @@
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
+  import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
@@ -88,6 +89,20 @@
   // ?hotspots= URL param if present, else falls back to LOW under
   // reduced-motion or saveData, else AUTO.
   let hotspotsMode: HotspotMode = $state('auto');
+
+  /**
+   * Tier 3 panorama state (Phase 6 / #118). Only the currently
+   * "stood at" site has an active skybox; only one panorama is
+   * active at a time. Per RFC-017 §ADR-061, the skybox is created
+   * lazily on first activation and disposed when the user exits.
+   */
+  let panoramaActive = $state(false);
+  let panoramaSkybox: SkyboxHandle | null = null;
+  // Reactive function pointers — assigned inside onMount once the
+  // scene + camera closures exist. $state ensures Svelte re-renders
+  // the template handlers when the pointers are updated.
+  let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
+  let exitPanorama: () => void = $state(() => {});
 
   /** Resolve the initial HOTSPOTS mode from URL + accessibility hints. */
   function resolveInitialHotspotsMode(url: URL): HotspotMode {
@@ -655,6 +670,43 @@
       updateCam();
     };
 
+    // Phase 6 (#118) — panorama enter/exit hooks. Closure over
+    // moonMesh + camR + scene; exposed to the route's outer state
+    // via the enterPanorama / exitPanorama function pointers.
+    let savedCamR = camR;
+    enterPanorama = (textureUrl: string, siteId: string) => {
+      if (panoramaActive) return;
+      // saveData users get a heads-up affordance handled outside; if
+      // we reach here, the user explicitly opted in.
+      panoramaSkybox = createSkybox({ textureUrl, siteId });
+      scene.add(panoramaSkybox.group);
+      panoramaSkybox.activate();
+      moonMesh.visible = false;
+      savedCamR = camR;
+      // Move camera close to origin so the user's drag-to-rotate
+      // feels like spinning their head inside the skybox.
+      camR = 0.5;
+      updateCam();
+      panoramaActive = true;
+    };
+    exitPanorama = () => {
+      if (!panoramaActive) return;
+      panoramaActive = false;
+      panoramaSkybox?.deactivate();
+      // Defer dispose so the fade-out completes.
+      const handle = panoramaSkybox;
+      panoramaSkybox = null;
+      setTimeout(() => handle?.dispose(), 1300);
+      moonMesh.visible = true;
+      camR = savedCamR;
+      updateCam();
+    };
+    // ESC exits panorama mode.
+    const onPanoramaKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && panoramaActive) exitPanorama();
+    };
+    window.addEventListener('keydown', onPanoramaKey);
+
     const el3d = renderer.domElement;
     let isDrag = false;
     let lmx = 0;
@@ -1110,6 +1162,8 @@
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
       _stopTidalLockLayer?.();
+      window.removeEventListener('keydown', onPanoramaKey);
+      panoramaSkybox?.dispose();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -1244,6 +1298,25 @@
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
   {/if}
 
+  <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"
+       button is the visible exit; ESC also exits. Hidden-text desc
+       is read by screen readers for vision-impaired users. -->
+  {#if panoramaActive}
+    <div
+      class="panorama-overlay"
+      role="region"
+      aria-label="Ground-view panorama mode — press ESC to return to orbit"
+      data-testid="panorama-overlay"
+    >
+      <span class="sr-only">
+        You are standing at the landing site. The lander is in front of you. Drag to look around.
+      </span>
+      <button type="button" class="panorama-exit" onclick={exitPanorama}>
+        ↑ Return to orbit
+      </button>
+    </div>
+  {/if}
+
   <!-- Nation legend overlay. The 2D view paints this directly into
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js
        scene that can't host text reliably, so we mirror the legend as
@@ -1287,6 +1360,20 @@
               />
             {/if}
           </p>
+        {/if}
+        {#if selected.hotspot_tier3_panorama && !panoramaActive}
+          <button
+            type="button"
+            class="stand-at-site"
+            data-testid="stand-at-site"
+            onclick={() =>
+              enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
+            title={isSaveDataActive()
+              ? 'Tap to load panorama (~8 MB) — saveData is on'
+              : 'Stand at this landing site — wrap-around ground view'}
+          >
+            🌐 Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
+          </button>
         {/if}
       </div>
 
@@ -1579,6 +1666,60 @@
     flex-wrap: wrap;
     gap: 6px;
     pointer-events: auto;
+  }
+  .stand-at-site {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    margin-top: 8px;
+    background: var(--accent, #4ecdc4);
+    color: #04040c;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+  }
+  .stand-at-site:hover,
+  .stand-at-site:focus-visible {
+    filter: brightness(1.1);
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  .panorama-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .panorama-exit {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto;
+    padding: 8px 16px;
+    background: rgba(4, 4, 12, 0.8);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .ctrl-row.chips {
     flex-direction: column;

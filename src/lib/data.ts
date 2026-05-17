@@ -218,6 +218,7 @@ interface SurfaceHotspotsSidecar {
       hotspot_tier_max?: 0 | 1 | 2 | 3;
       hotspot_model?: string;
       hotspot_tier2_source?: string;
+      hotspot_tier3_panorama?: string;
       hotspot_annotations?: import('$types/surface-site').HotspotAnnotation[];
       location_uncertainty_m?: number;
       showcase?: boolean;

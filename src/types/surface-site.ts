@@ -75,6 +75,13 @@ export interface SurfaceSite {
    * 1:1 pre-cropped variant URL.
    */
   hotspot_tier2_source?: string;
+  /**
+   * Path to the equirectangular Tier 3 ground-view panorama for
+   * this site (V2 / #118, ADR-061). PD-NASA: Apollo Lunar Surface
+   * Journal panoramas for Moon, NASA/JPL-Caltech/MSSS Mastcam-Z
+   * for Mars. Only Showcase sites carry this in v0.7.
+   */
+  hotspot_tier3_panorama?: string;
   /** Showcase tier flag — 4-6 annotations, polished treatment. */
   showcase?: boolean;
   /** Marker rendering hint for failed-landing sites (V3c). */

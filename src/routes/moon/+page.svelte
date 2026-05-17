@@ -27,6 +27,7 @@
   import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
   import { buildLunaSampleReturnHotspot } from '$lib/hotspot-models/luna-sample-return';
   import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
+  import { buildChangeLanderHotspot } from '$lib/hotspot-models/chang-e-lander';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
@@ -389,6 +390,10 @@
     registerHotspotModelBuilder('luna-9-spherical', buildLuna9Hotspot);
     registerHotspotModelBuilder('luna-sample-return', buildLunaSampleReturnHotspot);
     registerHotspotModelBuilder('lunokhod-rover', buildLunokhodHotspot);
+    registerHotspotModelBuilder('chang-e-lander', buildChangeLanderHotspot);
+    registerHotspotModelBuilder('chang-e-lander-sample-return', (accent) =>
+      buildChangeLanderHotspot(accent, { withAscentStage: true }),
+    );
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to

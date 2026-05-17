@@ -29,6 +29,7 @@
   import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
   import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
   import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
+  import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
@@ -388,6 +389,7 @@
     );
     registerHotspotModelBuilder('phoenix-class', buildPhoenixClassHotspot);
     registerHotspotModelBuilder('mars-3-petal', buildMars3PetalHotspot);
+    registerHotspotModelBuilder('tianwen-zhurong', buildTianwenZhurongHotspot);
     void loadImageVisionManifest();
     type OrbitalMarker = {
       group: THREE.Group;

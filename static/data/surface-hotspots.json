@@ -190,6 +190,41 @@
       "hotspot_tier2_source": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
       "location_uncertainty_m": 10000,
       "hotspot_annotations": []
+    },
+    "change3": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "chang-e-lander",
+      "hotspot_tier2_source": "/images/hotspots/moon/change3/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "change4": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "chang-e-lander",
+      "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "change5": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "chang-e-lander-sample-return",
+      "hotspot_tier2_source": "/images/hotspots/moon/change5/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "change6": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "chang-e-lander-sample-return",
+      "hotspot_tier2_source": "/images/hotspots/moon/change6/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "zhurong": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "tianwen-zhurong",
+      "hotspot_tier2_source": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
     }
   }
 }

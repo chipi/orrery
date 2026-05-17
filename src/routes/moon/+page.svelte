@@ -28,6 +28,9 @@
   import { buildLunaSampleReturnHotspot } from '$lib/hotspot-models/luna-sample-return';
   import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
   import { buildChangeLanderHotspot } from '$lib/hotspot-models/chang-e-lander';
+  import { buildChandrayaan3VikramHotspot } from '$lib/hotspot-models/chandrayaan-3-vikram';
+  import { buildSLIMPrecisionLanderHotspot } from '$lib/hotspot-models/slim-precision-lander';
+  import { buildBeresheetHotspot } from '$lib/hotspot-models/beresheet';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
@@ -394,6 +397,9 @@
     registerHotspotModelBuilder('chang-e-lander-sample-return', (accent) =>
       buildChangeLanderHotspot(accent, { withAscentStage: true }),
     );
+    registerHotspotModelBuilder('chandrayaan-3-vikram', buildChandrayaan3VikramHotspot);
+    registerHotspotModelBuilder('slim-precision-lander', buildSLIMPrecisionLanderHotspot);
+    registerHotspotModelBuilder('beresheet', buildBeresheetHotspot);
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to

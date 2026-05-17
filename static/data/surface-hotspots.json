@@ -225,6 +225,43 @@
       "hotspot_tier2_source": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": []
+    },
+    "chandrayaan3": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "chandrayaan-3-vikram",
+      "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "slim": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "slim-precision-lander",
+      "hotspot_tier2_source": "/images/hotspots/moon/slim/tier2-lroc.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "beresheet": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "beresheet",
+      "hotspot_tier2_source": "/images/hotspots/moon/beresheet/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "crashed": true,
+      "hotspot_annotations": []
+    },
+    "schiaparelli": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "schiaparelli",
+      "hotspot_tier2_source": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "crashed": true,
+      "hotspot_annotations": []
+    },
+    "beagle2": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "beagle-2",
+      "hotspot_tier2_source": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
     }
   }
 }

@@ -24,6 +24,9 @@
   } from '$lib/hotspot-lod-dispatcher';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
+  import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
+  import { buildLunaSampleReturnHotspot } from '$lib/hotspot-models/luna-sample-return';
+  import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
@@ -383,6 +386,9 @@
     // graph small for routes that don't use hotspots.
     registerHotspotModelBuilder('apollo-lm', buildApolloLMHotspot);
     registerHotspotModelBuilder('apollo-lm-extended', buildApolloLMExtendedHotspot);
+    registerHotspotModelBuilder('luna-9-spherical', buildLuna9Hotspot);
+    registerHotspotModelBuilder('luna-sample-return', buildLunaSampleReturnHotspot);
+    registerHotspotModelBuilder('lunokhod-rover', buildLunokhodHotspot);
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to

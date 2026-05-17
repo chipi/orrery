@@ -148,6 +148,48 @@
       "hotspot_tier2_source": "/images/hotspots/mars/insight/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": []
+    },
+    "luna9": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "luna-9-spherical",
+      "hotspot_tier2_source": "/images/hotspots/moon/luna9/tier2-lroc.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "luna16": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "luna-sample-return",
+      "hotspot_tier2_source": "/images/hotspots/moon/luna16/tier2-lroc.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "luna17": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "lunokhod-rover",
+      "hotspot_tier2_source": "/images/hotspots/moon/luna17/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "luna21": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "lunokhod-rover",
+      "hotspot_tier2_source": "/images/hotspots/moon/luna21/tier2-lroc.jpg",
+      "location_uncertainty_m": 50,
+      "hotspot_annotations": []
+    },
+    "luna24": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "luna-sample-return",
+      "hotspot_tier2_source": "/images/hotspots/moon/luna24/tier2-lroc.jpg",
+      "location_uncertainty_m": 100,
+      "hotspot_annotations": []
+    },
+    "mars3": {
+      "hotspot_tier_max": 2,
+      "hotspot_model": "mars-3-petal",
+      "hotspot_tier2_source": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+      "location_uncertainty_m": 10000,
+      "hotspot_annotations": []
     }
   }
 }

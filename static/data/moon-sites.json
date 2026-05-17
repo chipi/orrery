@@ -40,6 +40,34 @@
     ]
   },
   {
+    "id": "luna16",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1970,
+    "landing_date": "1970-09-20",
+    "lat": -0.5,
+    "lon": 56.3,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "samples_kg": 0.101,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical). Landing site in Mare Fecunditatis. First robotic sample return (101 g lunar soil).",
+    "links": [
+      {
+        "l": "Luna 16 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Luna_16",
+        "t": "intro"
+      },
+      {
+        "l": "Луна-16 — русская Википедия",
+        "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-16",
+        "t": "core"
+      }
+    ]
+  },
+  {
     "id": "luna17",
     "kind": "surface",
     "agency": "ROSCOSMOS",
@@ -76,6 +104,34 @@
       {
         "id": "lunokhod-1",
         "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "luna21",
+    "kind": "surface",
+    "agency": "ROSCOSMOS",
+    "nation": "USSR",
+    "year": 1973,
+    "landing_date": "1973-01-15",
+    "lat": 25.85,
+    "lon": 30.45,
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "surface_duration_days": 125,
+    "data_quality": "good",
+    "credit": "© Soviet Academy of Sciences (historical). Lander deployed Lunokhod 2 in Le Monnier crater. Lunokhod 2 traversed ~39 km — record until Opportunity (2014).",
+    "links": [
+      {
+        "l": "Luna 21 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Luna_21",
+        "t": "intro"
+      },
+      {
+        "l": "Lunokhod 2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Lunokhod_2",
+        "t": "core"
       }
     ]
   },
@@ -869,6 +925,33 @@
       {
         "id": "change-2",
         "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "beresheet",
+    "kind": "surface",
+    "agency": "UAESA",
+    "nation": "USA",
+    "year": 2019,
+    "landing_date": "2019-04-11",
+    "lat": 32.594,
+    "lon": 19.348,
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "data_quality": "fair",
+    "credit": "Beresheet was an Israeli SpaceIL lunar lander; crashed during descent into Mare Serenitatis. Impact site confirmed by NASA Lunar Reconnaissance Orbiter NAC imagery (Apr 2019).",
+    "links": [
+      {
+        "l": "Beresheet — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Beresheet",
+        "t": "intro"
+      },
+      {
+        "l": "LROC — Beresheet impact site",
+        "u": "https://www.lroc.asu.edu/posts/1119",
+        "t": "core"
       }
     ]
   }

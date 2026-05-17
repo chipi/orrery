@@ -210,12 +210,14 @@ describe('reference data', () => {
     expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
 
-  it('moonSites() returns 24 sites (16 surface + 8 orbiters)', async () => {
+  it('moonSites() returns 27 sites (19 surface + 8 orbiters)', async () => {
+    // v0.7 added luna16, luna21, beresheet (V3a + V3c hotspot coverage
+    // per PRD-014 / RFC-017 §S7). Bumps surface count 16 → 19.
     const data = await moonSites();
-    expect(data).toHaveLength(24);
+    expect(data).toHaveLength(27);
     const surface = data.filter((s) => !s.kind || s.kind === 'surface');
     const orbiters = data.filter((s) => s.kind === 'orbiter');
-    expect(surface).toHaveLength(16);
+    expect(surface).toHaveLength(19);
     expect(orbiters).toHaveLength(8);
   });
 });
@@ -350,9 +352,11 @@ describe('getEarthObjects', () => {
 });
 
 describe('getMoonSites', () => {
-  it('returns 24 sites merged with their en-US overlay', async () => {
+  it('returns 27 sites merged with their en-US overlay', async () => {
+    // v0.7 adds luna16 / luna21 / beresheet base entries for hotspot
+    // coverage; bumps count 24 → 27.
     const list = await getMoonSites();
-    expect(list).toHaveLength(24);
+    expect(list).toHaveLength(27);
     const apollo11 = list.find((s) => s.id === 'apollo11');
     expect(apollo11).toBeDefined();
     expect(apollo11!.year).toBe(1969);
@@ -377,7 +381,7 @@ describe('getMoonSites', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getMoonSites('xx-TEST');
-    expect(list).toHaveLength(24);
+    expect(list).toHaveLength(27);
   });
 });
 

@@ -1,0 +1,108 @@
+{
+  "id": "schiaparelli",
+  "agency": "ESA",
+  "agency_full": "European Space Agency + Roscosmos (ExoMars partnership)",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#003299",
+  "year": 2016,
+  "status": "FLOWN",
+  "departure_date": "2016-03-14",
+  "arrival_date": "2016-10-19",
+  "transit_days": 219,
+  "vehicle": "Proton-M / Briz-M",
+  "payload": "577 kg (EDM lander part of ExoMars 2016 mission with Trace Gas Orbiter)",
+  "delta_v": "~5.5 km/s",
+  "data_quality": "good",
+  "credit": "© European Space Agency. Demonstration EDL lander; impacted at ~540 km/h after parachute jettisoned 3.7 km too early due to IMU saturation. Crash forensics via HiRISE imagery confirmed impact site within hours of signal loss.",
+  "links": [
+    {
+      "l": "Schiaparelli EDM — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM",
+      "t": "intro"
+    },
+    {
+      "l": "ExoMars 2016 — ESA mission archive",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/ExoMars",
+      "t": "core"
+    },
+    {
+      "l": "Schiaparelli (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-017A",
+      "t": "core"
+    },
+    {
+      "l": "ESA Schiaparelli landing investigation report (2017)",
+      "u": "https://exploration.esa.int/web/mars/-/59176-exomars-2016-schiaparelli-anomaly-inquiry",
+      "t": "deep"
+    },
+    {
+      "l": "HiRISE imaging of Schiaparelli crash site (UAhirise)",
+      "u": "https://www.uahirise.org/ESP_048120_1780",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "schiaparelli",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Proton-M with Briz-M upper stage; ExoMars 2016 launched as TGO+Schiaparelli together",
+      "mass_at_tli_kg": 577,
+      "source": "ESA ExoMars 2016 mission archive"
+    },
+    "cruise": {
+      "tcm_count": 3,
+      "source": "ESA mission archive; Schiaparelli separated from TGO 2016-10-16, 3 days before atmospheric entry"
+    },
+    "arrival": {
+      "v_infinity_km_s": 5.5,
+      "periapsis_km": 0,
+      "inclination_deg": 7,
+      "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s, 12.4 km/s relative to surface"
+    },
+    "totals": {
+      "total_dv_km_s": 5.5,
+      "tli_or_tmi_dv_km_s": 3.6,
+      "source": "Proton-M/Briz-M Mars transfer capability + ExoMars TCMs + Schiaparelli separation maneuver"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.01,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 30,
+        "type": "tcm"
+      },
+      {
+        "met_days": 120,
+        "type": "tcm"
+      },
+      {
+        "met_days": 216,
+        "type": "tcm"
+      },
+      {
+        "met_days": 216.5,
+        "type": "separation"
+      },
+      {
+        "met_days": 219,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 219.01,
+        "type": "anomaly"
+      }
+    ]
+  }
+}

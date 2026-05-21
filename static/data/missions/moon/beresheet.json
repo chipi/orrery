@@ -1,0 +1,104 @@
+{
+  "id": "beresheet",
+  "agency": "SpaceIL",
+  "agency_full": "SpaceIL (Israeli non-profit) + Israel Aerospace Industries",
+  "sector": "private",
+  "dest": "MOON",
+  "color": "#0038b8",
+  "year": 2019,
+  "status": "FLOWN",
+  "departure_date": "2019-02-22",
+  "arrival_date": "2019-04-11",
+  "transit_days": 48,
+  "vehicle": "Falcon 9 Block 5 (rideshare with Nusantara Satu)",
+  "payload": "585 kg launch mass; first private spacecraft to reach lunar orbit; lost during powered descent ~150 m above the surface",
+  "delta_v": "~6 km/s (highly elliptical phasing orbits, not direct TLI)",
+  "data_quality": "good",
+  "credit": "© SpaceIL / Israel Aerospace Industries. First private mission to reach lunar orbit; crashed on landing approach due to inertial measurement unit reset chain. \"Crashing on the Moon\" still counted as historic.",
+  "links": [
+    {
+      "l": "Beresheet — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Beresheet",
+      "t": "intro"
+    },
+    {
+      "l": "SpaceIL (mission archive)",
+      "u": "https://www.spaceil.com/mission/",
+      "t": "core"
+    },
+    {
+      "l": "Beresheet (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=BRSHEET",
+      "t": "core"
+    },
+    {
+      "l": "Beresheet crash analysis (IAI report 2019)",
+      "u": "https://www.iai.co.il/p/beresheet-crash-analysis",
+      "t": "deep"
+    },
+    {
+      "l": "LRO imaging of Beresheet impact site",
+      "u": "https://www.nasa.gov/missions/lunar-reconnaissance-orbiter-lro-sees-beresheet-impact-site-on-moon/",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "beresheet",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 second stage to GTO (rideshare)",
+      "mass_at_tli_kg": 585,
+      "source": "SpaceIL mission archive; SpaceX manifest 2019-02-22"
+    },
+    "cruise": {
+      "tcm_count": 2,
+      "source": "SpaceIL flight ops; six progressive perigee-raise maneuvers from GTO to translunar injection over 6 weeks"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.5,
+      "periapsis_km": 200,
+      "inclination_deg": 20,
+      "source": "SpaceIL flight ops; lunar-orbit capture 2019-04-04"
+    },
+    "totals": {
+      "total_dv_km_s": 6.0,
+      "tli_or_tmi_dv_km_s": 2.0,
+      "source": "Cumulative ∆v including 6 progressive Earth phasing burns + LOI + descent (failed)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.01,
+        "type": "phasing"
+      },
+      {
+        "met_days": 10,
+        "type": "tcm"
+      },
+      {
+        "met_days": 20,
+        "type": "tcm"
+      },
+      {
+        "met_days": 41,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 48,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 48.01,
+        "type": "anomaly"
+      }
+    ]
+  }
+}

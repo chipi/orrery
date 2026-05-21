@@ -177,12 +177,22 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // Read the window for each band. LROC NAC + HiRISE single-band
     // greyscale → 1 band. HiRISE RGB → 3 bands. Future colour
     // products → variable. Iterate band count.
+    //
+    // CRITICAL: HiRISE bands are UInt16 at the source — naively
+    // wrapping the buffer in a Uint8Array would interleave low + high
+    // bytes of each 16-bit pixel and produce a noisy mottled output
+    // (audit 2026-05-21 found this had silently shipped broken
+    // Curiosity / Pathfinder / Viking crops). Convert via a P2/P98
+    // linear stretch which both flattens UInt16 → UInt8 correctly
+    // and lifts the typical HiRISE 10-12 bit dynamic range into the
+    // 8-bit JPEG output. UInt8 inputs (e.g. some LROC products) pass
+    // through unchanged.
     const bands = ds.bands.count();
-    const bandData: Buffer[] = [];
+    const bandData: Uint8Array[] = [];
     for (let i = 1; i <= bands; i++) {
       const band = ds.bands.get(i);
       const data = await band.pixels.readAsync(left, top, actualW, actualH);
-      bandData.push(Buffer.from(data.buffer, data.byteOffset, data.byteLength));
+      bandData.push(stretchToUint8(data));
     }
 
     // Create the output JPEG in memory via GDAL's MEM driver, then
@@ -193,7 +203,7 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     const memDs = memDriver.create('', actualW, actualH, bands, gdal.GDT_Byte);
     for (let i = 1; i <= bands; i++) {
       const band = memDs.bands.get(i);
-      band.pixels.write(0, 0, actualW, actualH, new Uint8Array(bandData[i - 1]));
+      band.pixels.write(0, 0, actualW, actualH, bandData[i - 1]);
     }
 
     // Post-crop sanity: the pre-crop sample is small and can miss a
@@ -260,7 +270,10 @@ async function assertTargetHasData(
   }
   const band = ds.bands.get(1);
   const data = await band.pixels.readAsync(left, top, w, h);
-  const buf = Buffer.from(data.buffer, data.byteOffset, data.byteLength);
+  // Convert UInt16/etc → UInt8 first (same reason as the main crop:
+  // raw bytes from a UInt16 band interleave high + low bytes and
+  // produce a meaningless "50 % no-data" reading).
+  const buf = stretchToUint8(data);
   const frac = blackRatio(buf);
   if (frac > PRE_CROP_NO_DATA_FRAC) {
     throw new CropError(
@@ -276,13 +289,84 @@ async function assertTargetHasData(
  * JPEG-decode rounding artifacts on later checks). Caller decides
  * the reject threshold.
  */
-function blackRatio(buf: Buffer): number {
+function blackRatio(buf: Uint8Array | Buffer): number {
   if (buf.length === 0) return 1;
   let zeroes = 0;
   for (let i = 0; i < buf.length; i++) {
     if (buf[i] <= 2) zeroes++;
   }
   return zeroes / buf.length;
+}
+
+/**
+ * Convert a typed-array read from a GDAL band into a Uint8Array
+ * suitable for handing to the MEM driver / JPEG writer / black-ratio
+ * sampler. Critical for HiRISE which is UInt16 at the source:
+ * naïvely wrapping the underlying ArrayBuffer in a Uint8Array
+ * interleaves the low + high bytes of each 16-bit pixel and yields a
+ * noisy mottled output (every other byte ends up being the
+ * meaningless low byte of a large value).
+ *
+ * Strategy: P2/P98 linear stretch. Compute percentiles from non-zero
+ * pixels (treat zeros as no-data so they don't compress the stretch
+ * range), map the [p2, p98] range linearly into [0, 255], clamp
+ * elsewhere. This gives 16-bit→8-bit conversion that's robust to a
+ * few hot pixels and lifts the typical HiRISE 10-12-bit dynamic
+ * range cleanly into the JPEG output's 8-bit space. Uint8 inputs
+ * (LROC byte products) bypass the stretch — they're already in the
+ * target space.
+ */
+function stretchToUint8(data: ArrayLike<number> & { BYTES_PER_ELEMENT?: number }): Uint8Array {
+  if (data instanceof Uint8Array) return data;
+  const n = data.length;
+  // Sample non-zero values to find percentile bounds. For a 2048×2048
+  // crop that's ~4 M samples — sort would be slow, so use a
+  // histogram. 16-bit values fit a 65536-bucket histogram.
+  const hist = new Uint32Array(65536);
+  let nonZeroCount = 0;
+  for (let i = 0; i < n; i++) {
+    const v = data[i] | 0;
+    if (v <= 0 || v >= 65536) continue;
+    hist[v]++;
+    nonZeroCount++;
+  }
+  if (nonZeroCount === 0) {
+    // All zeros — return all zeros.
+    return new Uint8Array(n);
+  }
+  const lowCount = Math.floor(nonZeroCount * 0.02);
+  const highCount = Math.floor(nonZeroCount * 0.98);
+  let lo = 1;
+  let hi = 65535;
+  let acc = 0;
+  for (let v = 1; v < 65536; v++) {
+    acc += hist[v];
+    if (acc >= lowCount) {
+      lo = v;
+      break;
+    }
+  }
+  acc = 0;
+  for (let v = 1; v < 65536; v++) {
+    acc += hist[v];
+    if (acc >= highCount) {
+      hi = v;
+      break;
+    }
+  }
+  if (hi <= lo) hi = lo + 1;
+  const out = new Uint8Array(n);
+  const range = hi - lo;
+  for (let i = 0; i < n; i++) {
+    const v = data[i];
+    if (v <= 0) {
+      out[i] = 0;
+      continue;
+    }
+    const stretched = ((v - lo) / range) * 255;
+    out[i] = stretched < 0 ? 0 : stretched > 255 ? 255 : stretched | 0;
+  }
+  return out;
 }
 
 /**

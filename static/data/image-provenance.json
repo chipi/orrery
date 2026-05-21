@@ -28638,6 +28638,90 @@
       "pageid": null,
       "nasa_id": "E088_N08",
       "fetched_at": "2026-05-21T13:31:42.238Z"
+    },
+    {
+      "id": "4a9e6dbaaa20680b",
+      "path": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_018887_2025 — patch centred at 22.486°N 312.023°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_018800_018899/ESP_018887_2025/ESP_018887_2025_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_018800_018899/ESP_018887_2025/ESP_018887_2025_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_018887_2025",
+      "fetched_at": "2026-05-21T14:30:29.459Z"
+    },
+    {
+      "id": "cd266382ba3bcdf6",
+      "path": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE PSP_001501_2280 — patch centred at 47.673°N 134.300°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001500_001599/PSP_001501_2280/PSP_001501_2280_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001500_001599/PSP_001501_2280/PSP_001501_2280_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PSP_001501_2280",
+      "fetched_at": "2026-05-21T14:30:29.460Z"
+    },
+    {
+      "id": "c95808610c1899f7",
+      "path": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE PSP_001890_1995 — patch centred at 19.095°N 326.777°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001800_001899/PSP_001890_1995/PSP_001890_1995_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001800_001899/PSP_001890_1995/PSP_001890_1995_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PSP_001890_1995",
+      "fetched_at": "2026-05-21T14:30:29.460Z"
+    },
+    {
+      "id": "ae4883bdbc1a0d52",
+      "path": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_078499_1755 — patch centred at -4.590°N 137.440°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_078400_078499/ESP_078499_1755/ESP_078499_1755_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_078400_078499/ESP_078499_1755/ESP_078499_1755_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_078499_1755",
+      "fetched_at": "2026-05-21T14:30:29.460Z"
     }
   ]
 }

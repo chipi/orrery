@@ -22,6 +22,7 @@ import { NasaSource } from '../src/lib/launches/sources/nasa.js';
 import { SpaceXSource } from '../src/lib/launches/sources/spacex.js';
 import { EsaSource } from '../src/lib/launches/sources/esa.js';
 import { mergeAllContributions, type SourceContribution } from '../src/lib/launches/merge.js';
+import { buildFirstFlightMap, computeTier, type CurationFile as TierCurationFile } from '../src/lib/launches/tier.js';
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
 
@@ -87,25 +88,7 @@ function resolveLauncherRef(
   );
 }
 
-function applyCurationTier(
-  entryId: string,
-  curation: CurationFile,
-): { tier: ManifestEntry['tier']; tier_reason: string; editorial_note: string | null } {
-  const featured = curation.featured.find((f) => f.launch_id === entryId);
-  if (featured) {
-    return {
-      tier: 'T1',
-      tier_reason: 'featured-override',
-      editorial_note: featured.editorial_note ?? null,
-    };
-  }
-  const demoted = curation.demoted.find((d) => d.launch_id === entryId);
-  if (demoted) {
-    return { tier: 'T4', tier_reason: 'demoted-override', editorial_note: null };
-  }
-  // v0.1 default — full heuristic lands in S7.
-  return { tier: 'T3', tier_reason: 'standard', editorial_note: null };
-}
+
 
 async function pullSource(
   source: LaunchSource,
@@ -185,13 +168,23 @@ async function main(): Promise<void> {
   const { merged: mergedUpcoming } = mergeAllContributions(upcomingContribs);
   const { merged: mergedHistoric } = mergeAllContributions(historicContribs);
 
+  // First-flight detection runs across both upcoming + historic so an
+  // upcoming first-flight of a brand-new vehicle is tagged even when its
+  // historic neighbours come from GCAT.
+  const allEntries = [
+    ...Object.values(mergedUpcoming).map((m) => m.entry),
+    ...Object.values(mergedHistoric).map((m) => m.entry),
+  ];
+  const firstFlightByConfig = buildFirstFlightMap(allEntries);
+  const tierContext = { firstFlightByConfig };
+
   // ── Phase 4+5: tier + curation + provenance_chain ───────────────
   function enrich(
     mergedMap: Record<string, ReturnType<typeof mergeAllContributions>['merged'][string]>,
   ): Record<string, ManifestEntry> {
     const out: Record<string, ManifestEntry> = {};
     for (const [id, m] of Object.entries(mergedMap)) {
-      const tierBits = applyCurationTier(id, curation);
+      const tierBits = computeTier(m.entry, curation as TierCurationFile, tierContext);
       const launcherRef = resolveLauncherRef(
         m.entry.rocket_config_name,
         m.entry.rocket_family,

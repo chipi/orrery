@@ -59,17 +59,21 @@
 {/if}
 
 <style>
+  /* Match the .library container on /missions:
+       max-width 1400px, auto margins, 22px horizontal padding. */
   .banner {
-    margin: 12px 0 16px;
-    padding: 14px 12px;
+    max-width: 1400px;
+    margin: 12px auto 16px;
+    padding: 14px 22px;
     background: linear-gradient(180deg, rgba(68, 102, 255, 0.08), rgba(68, 102, 255, 0.02));
-    border-top: 1px solid rgba(68, 102, 255, 0.2);
-    border-bottom: 1px solid rgba(68, 102, 255, 0.2);
+    border: 1px solid rgba(68, 102, 255, 0.2);
+    border-radius: 4px;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 480px) {
     .banner {
-      padding: 16px 24px;
+      margin: 8px 12px 14px;
+      padding: 12px 14px;
     }
   }
 

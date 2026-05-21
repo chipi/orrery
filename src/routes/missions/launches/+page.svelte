@@ -205,34 +205,32 @@
   data-mode={mode}
 >
   <header class="page-header">
-    <div class="header-main">
+    <div class="title-row">
       <h1 class="page-title">Launches Calendar</h1>
-      <p class="page-subtitle">
-        Upcoming and historic global spaceflight launches. Agency-first sourcing with
-        provenance per row.
-      </p>
-      <nav class="mode-tabs" aria-label="Launches view mode">
-        <button
-          type="button"
-          class="tab"
-          class:active={mode === 'upcoming'}
-          onclick={() => setMode('upcoming')}
-        >
-          Upcoming
-        </button>
-        <button
-          type="button"
-          class="tab"
-          class:active={mode === 'historic'}
-          onclick={() => setMode('historic')}
-        >
-          Historic
-        </button>
-      </nav>
-    </div>
-    <div class="header-side">
       <AboutStrip {gcatRelease} />
     </div>
+    <p class="page-subtitle">
+      Upcoming and historic global spaceflight launches. Agency-first sourcing with
+      provenance per row.
+    </p>
+    <nav class="mode-tabs" aria-label="Launches view mode">
+      <button
+        type="button"
+        class="tab"
+        class:active={mode === 'upcoming'}
+        onclick={() => setMode('upcoming')}
+      >
+        Upcoming
+      </button>
+      <button
+        type="button"
+        class="tab"
+        class:active={mode === 'historic'}
+        onclick={() => setMode('historic')}
+      >
+        Historic
+      </button>
+    </nav>
   </header>
 
   <FilterStrip
@@ -286,28 +284,23 @@
 
   .page-header {
     padding: 18px 12px 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-    align-items: start;
   }
 
   @media (min-width: 768px) {
     .page-header {
       padding: 24px 24px 0;
-      /* Two-column layout: title block on the left, about panel on the
-         right occupying the previously-empty header gutter. */
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
-      gap: 24px;
     }
   }
 
-  .header-main {
-    min-width: 0; /* allow truncation if the title gets long */
-  }
-
-  .header-side {
-    /* On mobile (single column), the about panel sits below the tabs. */
+  /* Title + About inline. On wide screens they sit on the same line
+     (h1 takes its natural width, About panel takes the rest). On
+     narrow screens they wrap — About slides directly beneath the
+     title, no fixed gutter, no empty whitespace. */
+  .title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
   }
 
   .page-title {

@@ -39,14 +39,16 @@
 
 <style>
   .about-panel {
+    flex: 1 1 280px; /* inline-grow next to the title; wraps when too narrow */
+    min-width: 0;
     border: 1px solid rgba(78, 205, 196, 0.22);
     border-radius: 4px;
     background: linear-gradient(180deg, rgba(78, 205, 196, 0.05), rgba(78, 205, 196, 0.015));
-    padding: 12px 14px;
+    padding: 10px 12px;
     color: rgba(230, 232, 238, 0.85);
     font-family: 'Crimson Pro', serif;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .eyebrow {

@@ -457,6 +457,17 @@ function correctHiriseProjection(
   projX: number,
   projY: number,
 ): { xCorr: number; yCorr: number } {
+  // GUARD: this correction is specific to the Equirectangular
+  // projection where GDAL's WKT-to-PROJ translation skips the X cos-
+  // scaling. Other projections (Polar_Stereographic on Phoenix,
+  // future Stereographic_South for Artemis south-pole sites) do NOT
+  // need it and applying it puts pixel coords wildly out of bounds
+  // (audit 2026-05-21: caused Phoenix to silently fail with 100 %
+  // "no-data" on every candidate). Match the projection name
+  // explicitly so we only apply the correction where it belongs.
+  const projMatch = wkt.match(/PROJECTION\["([^"]+)"\]/);
+  const projName = projMatch ? projMatch[1] : '';
+  if (projName !== 'Equirectangular') return { xCorr: projX, yCorr: projY };
   const lat0Match = wkt.match(/PARAMETER\["latitude_of_origin",([-0-9.]+)\]/);
   const lat0Deg = lat0Match ? parseFloat(lat0Match[1]) : 0;
   if (lat0Deg === 0) return { xCorr: projX, yCorr: projY };

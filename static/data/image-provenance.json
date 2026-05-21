@@ -28722,6 +28722,195 @@
       "pageid": null,
       "nasa_id": "ESP_078499_1755",
       "fetched_at": "2026-05-21T14:30:29.460Z"
+    },
+    {
+      "id": "3940ff807f67285a",
+      "path": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE PSP_001513_1655 — patch centred at -14.570°N 175.470°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001500_001599/PSP_001513_1655/PSP_001513_1655_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_001500_001599/PSP_001513_1655/PSP_001513_1655_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PSP_001513_1655",
+      "fetched_at": "2026-05-21T14:47:13.047Z"
+    },
+    {
+      "id": "2aebd81104df9645",
+      "path": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_050177_1780 — patch centred at -1.950°N -5.530°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_050100_050199/ESP_050177_1780/ESP_050177_1780_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_050100_050199/ESP_050177_1780/ESP_050177_1780_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_050177_1780",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "a1ea750fb43b8da4",
+      "path": "/images/hotspots/mars/perseverance/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_046060_1985 — patch centred at 18.440°N 77.450°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_046000_046099/ESP_046060_1985/ESP_046060_1985_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_046000_046099/ESP_046060_1985/ESP_046060_1985_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_046060_1985",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "147cf89a57019cc3",
+      "path": "/images/hotspots/mars/insight/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_087360_1845 — patch centred at 4.500°N 135.620°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_087300_087399/ESP_087360_1845/ESP_087360_1845_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_087300_087399/ESP_087360_1845/ESP_087360_1845_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_087360_1845",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "c05948f46b2082ab",
+      "path": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_031036_1345 — patch centred at -45.050°N 202.000°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_031000_031099/ESP_031036_1345/ESP_031036_1345_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_031000_031099/ESP_031036_1345/ESP_031036_1345_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_031036_1345",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "4095f35385692b02",
+      "path": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_069731_2055 — patch centred at 25.100°N 109.930°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_069700_069799/ESP_069731_2055/ESP_069731_2055_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_069700_069799/ESP_069731_2055/ESP_069731_2055_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_069731_2055",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "4aa93e2078060e49",
+      "path": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_048120_1780 — patch centred at -2.070°N -6.210°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_048100_048199/ESP_048120_1780/ESP_048120_1780_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_048100_048199/ESP_048120_1780/ESP_048120_1780_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_048120_1780",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "2b1f64000634f54b",
+      "path": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_040363_1915 — patch centred at 11.530°N 90.430°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_040300_040399/ESP_040363_1915/ESP_040363_1915_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_040300_040399/ESP_040363_1915/ESP_040363_1915_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_040363_1915",
+      "fetched_at": "2026-05-21T14:47:13.048Z"
+    },
+    {
+      "id": "fca9a869d1569d33",
+      "path": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+      "source_type": "direct-agency",
+      "title": "HiRISE ESP_026643_2485 — patch centred at 68.220°N -125.700°E",
+      "author": "NASA / JPL-Caltech / University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_026600_026699/ESP_026643_2485/ESP_026643_2485_RED.JP2",
+      "image_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/ESP/ORB_026600_026699/ESP_026643_2485/ESP_026643_2485_RED.JP2",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ESP_026643_2485",
+      "fetched_at": "2026-05-21T15:03:42.587Z"
     }
   ]
 }

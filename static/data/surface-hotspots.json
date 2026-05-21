@@ -148,7 +148,6 @@
       "hotspot_tier_max": 2,
       "hotspot_model": "phoenix-class",
       "hotspot_tier2_source": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
-      "hotspot_tier2_force_product_id": "ESP_017716_2485",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg"

@@ -324,6 +324,14 @@ fetch their HiRISE Tier 2 patches automatically via
 `scripts/fetch-hotspot-imagery.ts`. The pipeline is serial,
 fail-fast, and polite to the UAHiRISE PDS server.
 
+> **Mars-specific deep-dive:** the operator playbook (when to pin vs
+> auto-pick, HiRISE product-ID naming convention, UInt16→UInt8
+> stretch, Polar_Stereographic guard, validation runbook, failure-
+> mode matrix) lives in [mars-hotspot-imagery.md](./mars-hotspot-imagery.md).
+> Read that one when you're debugging a specific Mars site or
+> changing `gdal-crop.ts`. **This section stays the cross-platform
+> overview** (also relevant to Moon Tier B once that lands).
+
 ```bash
 # Fetch all configured Mars hotspots + variant generation.
 npm run images:hotspots
@@ -506,6 +514,76 @@ NO_DATA_AT_TARGET error, same 100% no-data sample, indistinguishable
 from a frame whose data genuinely doesn't reach the lander. Mars
 Pathfinder ate 2-3 days of failed runs before this was caught with a
 direct GDAL → pixel diagnostic on a cached JP2.
+
+### Hard-won lesson #3 — the correction is Equirectangular-ONLY (2026-05-21)
+
+`correctHiriseProjection()` is specific to the Equirectangular GDAL-
+vs-HiRISE convention mismatch above. Other projections — notably
+**Polar_Stereographic**, used by HiRISE products at sites poleward of
+±60° (Phoenix at 68°N, future Chandrayaan-3 at 69°S, future south-
+pole Artemis sites) — do NOT need the correction. GDAL's
+`transformPoint` already handles them correctly.
+
+Pre-2026-05-21 the function applied unconditionally. For a Polar
+Stereographic raster with `latitude_of_origin = 90°`:
+
+```
+x_corrected = x_gdal × cos(90°)            = 0           # 💥
+y_corrected = y_gdal + R × π/2             = +5.3M m off # 💥
+```
+
+→ pixel coordinates wildly out of bounds → `assertTargetHasData`
+silently clamps to row 0 → reads the pole nodata cap → 100% rejection
+on every candidate → site permanently broken.
+
+**The fix** is a projection-name guard at the head of the function:
+
+```ts
+const projMatch = wkt.match(/PROJECTION\["([^"]+)"\]/);
+if (projMatch?.[1] !== 'Equirectangular') return { xCorr: projX, yCorr: projY };
+```
+
+Polar_Stereographic, Stereographic, sinusoidal, etc. — all pass
+through unmodified.
+
+### Hard-won lesson #4 — HiRISE bands are UInt16; UInt8 reinterpretation = mottled noise (2026-05-21)
+
+HiRISE RED.JP2 source files are **UInt16** (10-12 effective bits of
+dynamic range packed into 16-bit storage). The crop output is
+**UInt8** JPEG. The naïve
+
+```ts
+const data = await band.pixels.readAsync(...);          // returns Uint16Array
+new Uint8Array(data.buffer);                            // reinterprets — does NOT scale
+```
+
+reinterprets each 16-bit pixel's TWO BYTES as TWO 8-bit pixels —
+alternating each pixel's low byte (small, often < 5) with its high
+byte (the real signal). For bright Mars surface (16-bit values
+~60000), this rendered as a mottled mid-gray noise pattern that
+**fooled the eye + the variance-only fail-fast for months**. For
+dim polar terrain (Phoenix), the low byte accidentally contained the
+meaningful signal, so it looked vaguely-OK by accident.
+
+**Symptom check**: any output that looks like uniform mottled gray
+with no recognisable craters / dunes / fractures is this bug. Trust
+the EYE, not stddev — pixel statistics pass while the image is
+visually broken.
+
+**The fix** is `stretchToUint8()` — P2/P98 percentile linear stretch
+(robust to hot pixels), applied to BOTH the pre-crop sampler AND the
+main crop loop. UInt8 inputs (LROC byte products) bypass the stretch.
+
+Audited 2026-05-21: 4/13 Mars sites had been shipping noise for
+months (Curiosity, Pathfinder, Viking 1, Viking 2 — all sites where
+the terrain happens to be bright). The 9 "valid" sites looked OK by
+the same low-byte coincidence and got dramatically sharper after the
+stretch fix.
+
+See [mars-hotspot-imagery.md → Audit story](./mars-hotspot-imagery.md#audit-story)
+for the diagnostic walk-through and
+[GitHub issue #248](https://github.com/chipi/orrery/issues/248) for
+the full retrospective.
 
 ### Cost + bandwidth (realistic — auto-pick can iterate)
 

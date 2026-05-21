@@ -204,49 +204,51 @@
   data-mode={mode}
 >
   <header class="page-header">
-    <h1 class="page-title">Launches Calendar</h1>
-    <p class="page-subtitle">
-      Upcoming and historic global spaceflight launches. Agency-first sourcing with
-      provenance per row.
-    </p>
-    <AboutStrip gcatRelease={manifest.gcat_release} />
-    <nav class="mode-tabs" aria-label="Launches view mode">
-      <button
-        type="button"
-        class="tab"
-        class:active={mode === 'upcoming'}
-        onclick={() => setMode('upcoming')}
-      >
-        Upcoming
-      </button>
-      <button
-        type="button"
-        class="tab"
-        class:active={mode === 'historic'}
-        onclick={() => setMode('historic')}
-      >
-        Historic
-      </button>
-    </nav>
+    <div class="col-meta">
+      <h1 class="page-title">Launches Calendar</h1>
+      <p class="page-subtitle">
+        Upcoming and historic global spaceflight launches. Agency-first sourcing with
+        provenance per row.
+      </p>
+      <AboutStrip gcatRelease={manifest.gcat_release} />
+    </div>
+    <div class="col-controls">
+      <nav class="mode-tabs" aria-label="Launches view mode">
+        <button
+          type="button"
+          class="tab"
+          class:active={mode === 'upcoming'}
+          onclick={() => setMode('upcoming')}
+        >
+          Upcoming
+        </button>
+        <button
+          type="button"
+          class="tab"
+          class:active={mode === 'historic'}
+          onclick={() => setMode('historic')}
+        >
+          Historic
+        </button>
+      </nav>
+      <FilterStrip
+        {mode}
+        tier={tierFilter}
+        agency={agencyFilter}
+        outcome={outcomeFilter}
+        {agencies}
+        onTierChange={setTier}
+        onAgencyChange={setAgency}
+        onOutcomeChange={setOutcome}
+        onClear={clearFilters}
+        matchCount={filtered.length}
+        totalCount={allEntries.length}
+      />
+      {#if mode === 'historic'}
+        <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
+      {/if}
+    </div>
   </header>
-
-  <FilterStrip
-    {mode}
-    tier={tierFilter}
-    agency={agencyFilter}
-    outcome={outcomeFilter}
-    {agencies}
-    onTierChange={setTier}
-    onAgencyChange={setAgency}
-    onOutcomeChange={setOutcome}
-    onClear={clearFilters}
-    matchCount={filtered.length}
-    totalCount={allEntries.length}
-  />
-
-  {#if mode === 'historic'}
-    <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
-  {/if}
 
   {#if loading}
     <p class="loading">Loading launches…</p>
@@ -279,14 +281,35 @@
     color: #e6e8ee;
   }
 
+  /* Two-column header: meta on the left (title + subtitle + AboutStrip),
+     controls on the right (tabs + filters + decade picker). Each column
+     takes equal space when both fit on one row; the controls column
+     wraps under the meta column on narrower viewports. */
   .page-header {
     padding: 18px 12px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    align-items: flex-start;
   }
 
   @media (min-width: 768px) {
     .page-header {
       padding: 24px 24px 0;
     }
+  }
+
+  .col-meta {
+    flex: 1 1 380px;
+    min-width: 0;
+  }
+
+  .col-controls {
+    flex: 1 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .page-title {

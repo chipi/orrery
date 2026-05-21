@@ -24,7 +24,7 @@
       entries = Object.values(m.entries)
         .filter((e) => e.tier === 'T1')
         .sort((a, b) => a.net.localeCompare(b.net))
-        .slice(0, 3);
+        .slice(0, 4);
       loaded = true;
     })();
     const t = setInterval(() => (now = new Date()), 60_000);
@@ -113,9 +113,17 @@
     gap: 10px;
   }
 
-  @media (min-width: 768px) {
+  /* Two-up on tablet, four-up on desktop (matches the .library
+     column width and lets us surface 4 featured launches). */
+  @media (min-width: 600px) {
     .cards {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .cards {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 

@@ -290,8 +290,6 @@
     }
   }
 
-
-
   .page-title {
     margin: 0;
     font-family: 'Bebas Neue', sans-serif;

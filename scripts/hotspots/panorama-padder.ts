@@ -114,6 +114,30 @@ function buildFlatFill(width: number, height: number, rgb: [number, number, numb
 }
 
 /**
+ * Per-row palette lookup. Above horizon (outRow < halfH): interpolate
+ * sky zenith → sky horizon over the topRow rows. Below horizon
+ * (outRow >= halfH): regolith. Used by both the azimuth-gap fill and
+ * the recolour-black pass so every "synthetic" pixel in the output
+ * follows the same colour ramp — no visible seams between sources
+ * of fill.
+ */
+function paletteAtRow(
+  outRow: number,
+  halfH: number,
+  topRow: number,
+  palette: MarsColourPalette,
+): [number, number, number] {
+  if (outRow < halfH) {
+    const t = topRow > 0 ? Math.min(1, outRow / topRow) : 1;
+    const r = Math.round(palette.skyZenith[0] + (palette.skyHorizon[0] - palette.skyZenith[0]) * t);
+    const g = Math.round(palette.skyZenith[1] + (palette.skyHorizon[1] - palette.skyZenith[1]) * t);
+    const b = Math.round(palette.skyZenith[2] + (palette.skyHorizon[2] - palette.skyZenith[2]) * t);
+    return [r, g, b];
+  }
+  return palette.regolith;
+}
+
+/**
  * Pad a cylindrical / partial-360 input into 4096×2048
  * equirectangular. The source is placed at the correct row range
  * based on its elevation coverage; sky / ground / azimuth-gap fills
@@ -172,46 +196,38 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     ground.copy(canvas, bottomRow * outWidth * 3, 0, ground.length);
   }
 
-  // 3. Fill azimuth gap on partial-360 sources.
+  // 3. Fill azimuth gap on partial-360 sources. Use the SAME per-row
+  //    sky-gradient-above-horizon / regolith-below-horizon palette as
+  //    the recolour-black pass below. Earlier behaviour used a flat
+  //    `azimuthGap` colour that left a conspicuous rectangle straddling
+  //    the horizon row on InSight (290°), Viking 1 (342.5°), Zhurong
+  //    (120°). Now the gap fades into the surrounding sky + regolith
+  //    pads with no visible seam at the source/gap boundary.
   if (srcOutWidth < outWidth) {
-    const gap = buildFlatFill(outWidth - srcOutWidth, srcOutHeight, palette.azimuthGap);
+    const gapWidth = outWidth - srcOutWidth;
     for (let row = 0; row < srcOutHeight; row++) {
       const outRow = topRow + row;
-      const gapSrcStart = row * (outWidth - srcOutWidth) * 3;
+      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, palette);
       const gapOutStart = outRow * outWidth * 3 + srcOutWidth * 3;
-      gap.copy(canvas, gapOutStart, gapSrcStart, gapSrcStart + (outWidth - srcOutWidth) * 3);
+      for (let col = 0; col < gapWidth; col++) {
+        const oIdx = gapOutStart + col * 3;
+        canvas[oIdx] = fillR;
+        canvas[oIdx + 1] = fillG;
+        canvas[oIdx + 2] = fillB;
+      }
     }
   }
 
   // 4. Copy the source image into its row band, optionally recolouring
   //    near-black pixels to blend rover-deck cutouts / edge-bars into
-  //    the surrounding sky / regolith.
+  //    the surrounding sky / regolith using the same paletteAtRow()
+  //    that fills the azimuth-gap.
   const srcBuf = resizedSource.data;
   const recolourThreshold = input.recolourBlackThreshold ?? 0;
   for (let row = 0; row < srcOutHeight; row++) {
     const outRow = topRow + row;
     if (recolourThreshold > 0) {
-      // Per-row palette: above horizon → sky gradient at that row's
-      // position (interpolated zenith→horizon); below horizon → flat
-      // regolith. halfH separates the two regimes.
-      const isAboveHorizon = outRow < halfH;
-      let fillR: number;
-      let fillG: number;
-      let fillB: number;
-      if (isAboveHorizon) {
-        const t = topRow > 0 ? outRow / topRow : 1;
-        fillR = Math.round(
-          palette.skyZenith[0] + (palette.skyHorizon[0] - palette.skyZenith[0]) * t,
-        );
-        fillG = Math.round(
-          palette.skyZenith[1] + (palette.skyHorizon[1] - palette.skyZenith[1]) * t,
-        );
-        fillB = Math.round(
-          palette.skyZenith[2] + (palette.skyHorizon[2] - palette.skyZenith[2]) * t,
-        );
-      } else {
-        [fillR, fillG, fillB] = palette.regolith;
-      }
+      const [fillR, fillG, fillB] = paletteAtRow(outRow, halfH, topRow, palette);
       const srcRowStart = row * srcOutWidth * 3;
       const outRowStart = outRow * outWidth * 3;
       for (let col = 0; col < srcOutWidth; col++) {

@@ -80,6 +80,13 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   // (#249 issue body). Their hotspot_tier3_panorama field stays
   // unset so the "Stand at site" button simply doesn't render —
   // same graceful-omission UX as mars3/beagle2/schiaparelli.
+  // 2026-05-22 per-site elevation tuning. Earlier defaults (25-30° up,
+  // 25° down) under-represented how far below horizon the source
+  // panoramas actually sweep — for rover deck-mounted cameras the
+  // ground is reached at -35° to -55° below horizon depending on
+  // tripod height. Pulling srcElevationBottomDeg up extends the real
+  // imagery further into the lower hemisphere of the output, shrinking
+  // the flat regolith pad band the user found objectionable.
   {
     siteId: 'curiosity',
     sourceUrl:
@@ -89,7 +96,7 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
     srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 25,
+    srcElevationBottomDeg: 45,
     caption: 'Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama',
   },
   {
@@ -101,7 +108,7 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
     srcElevationTopDeg: 35,
-    srcElevationBottomDeg: 25,
+    srcElevationBottomDeg: 45,
     caption: 'Perseverance Mastcam-Z first 360° panorama, Jezero Crater, sol 3 (Feb 21, 2021)',
   },
   {
@@ -113,7 +120,7 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
     srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 25,
+    srcElevationBottomDeg: 45,
     caption: 'Spirit at Winter Haven, sols 814-980 — McMurdo Pancam panorama',
   },
   {
@@ -125,7 +132,7 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
     srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 25,
+    srcElevationBottomDeg: 45,
     caption: 'Opportunity Legacy Pan, sols 5084-5111 — final mission panorama (May-Jun 2018)',
   },
   {
@@ -136,8 +143,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     attribution: 'NASA / JPL-Caltech / U Arizona / Texas A&M',
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 25,
+    srcElevationTopDeg: 25,
+    srcElevationBottomDeg: 50,
     caption: 'Phoenix lander deck + landing site, full-circle panorama (May 2008)',
   },
   {
@@ -148,8 +155,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     attribution: 'NASA / JPL-Caltech',
     license: 'PD-NASA',
     srcAzimuthDeg: 290,
-    srcElevationTopDeg: 25,
-    srcElevationBottomDeg: 25,
+    srcElevationTopDeg: 20,
+    srcElevationBottomDeg: 40,
     caption: 'InSight Homestead Hollow, sol 14 — IDC arm-camera 290° panorama',
   },
   {
@@ -160,8 +167,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     attribution: 'NASA / JPL',
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 25,
+    srcElevationTopDeg: 25,
+    srcElevationBottomDeg: 45,
     caption: 'Mars Pathfinder IMP 360° colour panorama, Twin Peaks visible on horizon (sols 8-10)',
   },
   {
@@ -172,8 +179,8 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     attribution: 'NASA / JPL',
     license: 'PD-NASA',
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 25,
-    srcElevationBottomDeg: 30,
+    srcElevationTopDeg: 15,
+    srcElevationBottomDeg: 55,
     caption: 'Viking 2 lander, Utopia Planitia — first colour image of the site (Sept 1976)',
   },
   {

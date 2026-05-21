@@ -600,38 +600,6 @@
     outline-offset: 2px;
   }
 
-  /* Logo-mode agency pill: tighter padding (the logo is the label),
-     fixed minimum width so all agency pills line up uniformly, and
-     a subtle white tint that hover/active darkens. The image itself
-     is sized to match the pill's text metrics so the row reads as
-     one consistent strip. */
-  .pill.logo-pill {
-    padding: 4px 10px;
-    min-width: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .agency-pill-logo {
-    height: 22px;
-    width: auto;
-    max-width: 60px;
-    object-fit: contain;
-    display: block;
-    /* Most logos are full-color SVGs; lift contrast on the dark UI
-       and de-saturate the inactive state so the active one pops. */
-    opacity: 0.6;
-    transition: opacity 0.15s;
-  }
-  .pill.logo-pill:hover .agency-pill-logo,
-  .pill.logo-pill.active .agency-pill-logo {
-    opacity: 1;
-  }
-  .pill.logo-pill.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.55);
-  }
-
   .grid {
     list-style: none;
     padding: 0;

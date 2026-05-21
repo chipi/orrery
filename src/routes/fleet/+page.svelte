@@ -643,31 +643,6 @@
     outline: 2px solid #4466ff;
     outline-offset: 2px;
   }
-  .pill.logo-pill {
-    padding: 4px 10px;
-    min-width: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .agency-pill-logo {
-    height: 22px;
-    width: auto;
-    max-width: 60px;
-    object-fit: contain;
-    display: block;
-    opacity: 0.6;
-    transition: opacity 0.15s;
-  }
-  .pill.logo-pill:hover .agency-pill-logo,
-  .pill.logo-pill.active .agency-pill-logo {
-    opacity: 1;
-  }
-  .pill.logo-pill.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.55);
-  }
-
   .status-pill.status-active.active {
     background: rgba(78, 205, 196, 0.25);
     border-color: rgba(78, 205, 196, 0.55);

@@ -30,6 +30,44 @@
     const t = setInterval(() => (now = new Date()), 60_000);
     return () => clearInterval(t);
   });
+
+  // Logo lookup mirrors /missions catalog cards. LL2 returns full
+  // agency names (e.g. "National Aeronautics and Space Administration"),
+  // so we alias those to the short logo-file keys shipped in
+  // static/logos/.
+  const AGENCY_TO_LOGO: Record<string, string> = {
+    nasa: 'nasa',
+    spacex: 'spacex',
+    esa: 'esa',
+    jaxa: 'jaxa',
+    isro: 'isro',
+    cnsa: 'cnsa',
+    roscosmos: 'roscosmos',
+    uaesa: 'uaesa',
+    boeing: 'boeing',
+    csa: 'csa',
+    'northrop grumman': 'northrop-grumman',
+    // LL2 full-name aliases
+    'national aeronautics and space administration': 'nasa',
+    'european space agency': 'esa',
+    'japan aerospace exploration agency': 'jaxa',
+    'indian space research organization': 'isro',
+    'indian space research organisation': 'isro',
+    'china national space administration': 'cnsa',
+    'china aerospace science and technology corporation': 'cnsa',
+    'russian federal space agency (roscosmos)': 'roscosmos',
+    'russian federal space agency': 'roscosmos',
+    'russian space agency': 'roscosmos',
+    'canadian space agency': 'csa',
+    mbrsc: 'uaesa',
+    'mohammed bin rashid space centre': 'uaesa',
+    'uae space agency': 'uaesa',
+  };
+
+  function logoFor(agency: string): string | null {
+    const key = AGENCY_TO_LOGO[agency.toLowerCase()];
+    return key ? `${base}/logos/${key}.svg` : null;
+  }
 </script>
 
 {#if loaded && entries.length > 0}
@@ -45,7 +83,17 @@
           href="{base}/missions/launches?id={e.id}"
           data-launch-id={e.id}
         >
-          <div class="countdown">{formatCountdown(e.net, now)}</div>
+          <div class="card-head">
+            <div class="countdown">{formatCountdown(e.net, now)}</div>
+            {#if logoFor(e.agency_name)}
+              <img
+                class="agency-logo"
+                src={logoFor(e.agency_name)}
+                alt="{e.agency_name} logo"
+                loading="lazy"
+              />
+            {/if}
+          </div>
           <h3 class="card-title">{e.rocket_config_name}</h3>
           <p class="mission">{e.mission_name ?? e.name}</p>
           {#if e.editorial_note}
@@ -59,21 +107,18 @@
 {/if}
 
 <style>
-  /* Match the .library container on /missions:
-       max-width 1400px, auto margins, 22px horizontal padding. */
+  /* No outer frame — content flows transparently within the page,
+     only per-card borders remain. */
   .banner {
     max-width: 1400px;
-    margin: 12px auto 16px;
-    padding: 14px 22px;
-    background: linear-gradient(180deg, rgba(68, 102, 255, 0.08), rgba(68, 102, 255, 0.02));
-    border: 1px solid rgba(68, 102, 255, 0.2);
-    border-radius: 4px;
+    margin: 4px auto 12px;
+    padding: 0 22px;
   }
 
   @media (max-width: 480px) {
     .banner {
-      margin: 8px 12px 14px;
-      padding: 12px 14px;
+      margin: 4px 0 10px;
+      padding: 0 12px;
     }
   }
 
@@ -144,13 +189,29 @@
     border-color: rgba(68, 102, 255, 0.4);
   }
 
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
   .countdown {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     color: #ffc850;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 6px;
+  }
+
+  .agency-logo {
+    height: 18px;
+    width: auto;
+    max-width: 56px;
+    opacity: 0.85;
+    object-fit: contain;
+    filter: brightness(1.05);
   }
 
   .card-title {

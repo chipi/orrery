@@ -40,6 +40,8 @@ test.describe('Launches banner on /missions', () => {
     await expect(allLink).toBeVisible({ timeout: 30_000 });
     await allLink.click();
     await page.waitForURL(/\/missions\/launches/);
-    await expect(page.locator('main[data-route-ready="true"]')).toBeVisible({ timeout: 30_000 });
+    await expect(page.locator('div.launches[data-route-ready="true"]')).toBeVisible({
+      timeout: 30_000,
+    });
   });
 });

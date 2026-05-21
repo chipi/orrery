@@ -15,8 +15,8 @@ test.describe('Launches calendar citation visibility (CC-BY ship-gate)', () => {
     page,
   }) => {
     await page.goto('/missions/launches');
-    await page.waitForSelector('main[data-route-ready="true"]', { timeout: 30_000 });
-    const citations = page.locator('footer.citations, .citations');
+    await page.waitForSelector('div.launches[data-route-ready="true"]', { timeout: 30_000 });
+    const citations = page.locator('footer.footer-note');
     await expect(citations).toBeVisible();
     await expect(citations).toContainText(/Jonathan McDowell|GCAT|General Catalog/i);
     // Link to GCAT homepage exists with required rel + hreflang attrs.

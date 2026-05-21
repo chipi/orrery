@@ -11,7 +11,7 @@ import { test, expect } from '@playwright/test';
 test.describe('/missions/launches — de locale', () => {
   test('route renders cleanly under ?lang=de', async ({ page }) => {
     await page.goto('/missions/launches?lang=de');
-    await page.waitForSelector('main[data-route-ready="true"]', { timeout: 30_000 });
+    await page.waitForSelector('div.launches[data-route-ready="true"]', { timeout: 30_000 });
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
     // Filters toggle still mounts + has a visible label.
     const toggle = page.locator('.filters-toggle');
@@ -23,7 +23,7 @@ test.describe('/missions/launches — de locale', () => {
 
   test('citation footer + McDowell link still present in de', async ({ page }) => {
     await page.goto('/missions/launches?lang=de');
-    await page.waitForSelector('main[data-route-ready="true"]', { timeout: 30_000 });
+    await page.waitForSelector('div.launches[data-route-ready="true"]', { timeout: 30_000 });
     const gcatLink = page.locator('footer.footer-note a[href*="planet4589.org/space/gcat"]');
     await expect(gcatLink).toBeVisible();
     // The citation surface is the CC-BY ship-gate — must work in

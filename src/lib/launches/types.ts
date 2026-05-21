@@ -7,7 +7,14 @@
  * the per-decade historic files.
  */
 
-export type LaunchStatusCode = 'GO' | 'TBD' | 'SUCCESS' | 'FAILURE' | 'PARTIAL' | 'HOLD' | 'IN_FLIGHT';
+export type LaunchStatusCode =
+  | 'GO'
+  | 'TBD'
+  | 'SUCCESS'
+  | 'FAILURE'
+  | 'PARTIAL'
+  | 'HOLD'
+  | 'IN_FLIGHT';
 
 export type LaunchStatus = {
   code: LaunchStatusCode;

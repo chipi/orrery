@@ -105,10 +105,7 @@ describe('findLaunchesOrphanLauncherRefs', () => {
   it('returns empty when every non-null ref resolves', () => {
     const exists = (id: string) => id === 'falcon-9';
     expect(
-      findLaunchesOrphanLauncherRefs(
-        [entry({ orrery_launcher_ref: 'falcon-9' })],
-        exists,
-      ),
+      findLaunchesOrphanLauncherRefs([entry({ orrery_launcher_ref: 'falcon-9' })], exists),
     ).toEqual([]);
   });
 

@@ -33,5 +33,8 @@
       "type": "moon",
       "site_id": "change3"
     }
+  ],
+  "linked_missions": [
+    "change3"
   ]
 }

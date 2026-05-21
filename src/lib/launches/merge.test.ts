@@ -56,10 +56,7 @@ describe('mergeContributions', () => {
       { source_name: 'spacex-direct', default_role: 'primary', entry: fromSpx },
       { source_name: 'll2', default_role: 'fallback-primary', entry: fromLl2 },
     ]);
-    expect(m.provenance_chain.map((p) => p.role)).toEqual([
-      'primary',
-      'augmented-with',
-    ]);
+    expect(m.provenance_chain.map((p) => p.role)).toEqual(['primary', 'augmented-with']);
   });
 
   it('records confirmed-via role for contributions that add nothing new', () => {
@@ -75,10 +72,7 @@ describe('mergeContributions', () => {
       { source_name: 'spacex-direct', default_role: 'primary', entry: fromSpx },
       { source_name: 'll2', default_role: 'fallback-primary', entry: fromLl2 },
     ]);
-    expect(m.provenance_chain.map((p) => p.role)).toEqual([
-      'primary',
-      'confirmed-via',
-    ]);
+    expect(m.provenance_chain.map((p) => p.role)).toEqual(['primary', 'confirmed-via']);
   });
 
   it('captures disagreements when two providers differ on a primary field', () => {

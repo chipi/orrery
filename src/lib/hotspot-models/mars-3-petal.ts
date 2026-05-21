@@ -30,7 +30,7 @@ function petalMat(): THREE.MeshStandardMaterial {
   });
 }
 
-export function buildMars3PetalHotspot(accentColor: string): THREE.Group {
+export function buildMars3PetalHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
   // Central capsule sphere.
   const body = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16), bodyMat());
@@ -53,19 +53,5 @@ export function buildMars3PetalHotspot(accentColor: string): THREE.Group {
   mast.position.y = 0.7;
   g.add(mast);
 
-  // Agency accent ring around the base capsule.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.34, 0.012, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = 0.08;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

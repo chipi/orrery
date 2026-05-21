@@ -179,7 +179,15 @@ async function readExistingManifest(): Promise<ImageVisionManifest | null> {
  */
 function relPath(p: string): string {
   const rel = path.relative(process.cwd(), p);
-  return rel.split(path.sep).join('/');
+  const posix = rel.split(path.sep).join('/');
+  // Variant outputs live under static/; SvelteKit serves that
+  // directory at the URL root, so strip the leading `static/`
+  // and prepend `/` to match the URL convention used by the
+  // manifest's entry keys (and the runtime fetches that consume
+  // them). Without this the runtime requests
+  // `/<route>/static/images/...` and 404s.
+  if (posix.startsWith('static/')) return '/' + posix.slice('static/'.length);
+  return posix;
 }
 
 export { SCORE_CACHE_DIR };

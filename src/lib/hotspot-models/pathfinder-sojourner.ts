@@ -72,7 +72,7 @@ function buildSojourner(): THREE.Group {
   return g;
 }
 
-export function buildPathfinderSojournerHotspot(accentColor: string): THREE.Group {
+export function buildPathfinderSojournerHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
 
   // Base body (the lower tetrahedron section sitting on the regolith).
@@ -112,19 +112,5 @@ export function buildPathfinderSojournerHotspot(accentColor: string): THREE.Grou
   sojourner.position.set(0.5, 0.0, 0.15);
   g.add(sojourner);
 
-  // Agency accent ring around the base.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.42, 0.012, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = 0.08;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

@@ -87,35 +87,42 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/viking1-lander/tier2-ctx.jpg"
     },
     "viking2-lander": {
       "hotspot_tier_max": 2,
       "hotspot_model": "viking-tripod",
       "hotspot_tier2_source": "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg"
     },
     "mars-pathfinder": {
       "hotspot_tier_max": 2,
       "hotspot_model": "pathfinder-sojourner",
       "hotspot_tier2_source": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.jpg"
     },
     "spirit": {
       "hotspot_tier_max": 2,
       "hotspot_model": "mer-rover",
       "hotspot_tier2_source": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "PSP_001513_1655",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg"
     },
     "opportunity": {
       "hotspot_tier_max": 2,
       "hotspot_model": "mer-rover",
       "hotspot_tier2_source": "/images/hotspots/mars/opportunity/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_050177_1780",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg"
     },
     "curiosity": {
       "hotspot_tier_max": 3,
@@ -124,7 +131,8 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg"
     },
     "perseverance": {
       "hotspot_tier_max": 3,
@@ -133,21 +141,25 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg"
     },
     "phoenix": {
       "hotspot_tier_max": 2,
       "hotspot_model": "phoenix-class",
       "hotspot_tier2_source": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_017716_2485",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/phoenix/tier2-ctx.jpg"
     },
     "insight": {
       "hotspot_tier_max": 2,
       "hotspot_model": "phoenix-class",
       "hotspot_tier2_source": "/images/hotspots/mars/insight/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/insight/tier2-ctx.jpg"
     },
     "luna9": {
       "hotspot_tier_max": 2,
@@ -188,8 +200,10 @@
       "hotspot_tier_max": 2,
       "hotspot_model": "mars-3-petal",
       "hotspot_tier2_source": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_031036_1345",
       "location_uncertainty_m": 10000,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg"
     },
     "change3": {
       "hotspot_tier_max": 2,
@@ -224,7 +238,8 @@
       "hotspot_model": "tianwen-zhurong",
       "hotspot_tier2_source": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/zhurong/tier2-ctx.jpg"
     },
     "chandrayaan3": {
       "hotspot_tier_max": 2,
@@ -252,16 +267,19 @@
       "hotspot_tier_max": 2,
       "hotspot_model": "schiaparelli",
       "hotspot_tier2_source": "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg",
+      "hotspot_tier2_force_product_id": "ESP_048120_1780",
       "location_uncertainty_m": 50,
       "crashed": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg"
     },
     "beagle2": {
       "hotspot_tier_max": 2,
       "hotspot_model": "beagle-2",
       "hotspot_tier2_source": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg"
     }
   }
 }

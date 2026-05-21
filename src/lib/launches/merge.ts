@@ -124,16 +124,18 @@ export function mergeContributions(
  *
  * `contributions` MUST be ordered by provider priority (ascending).
  */
-export function mergeAllContributions(
-  contributions: SourceContribution[],
-): {
+export function mergeAllContributions(contributions: SourceContribution[]): {
   merged: Record<string, MergedEntry>;
   collisionCounter: Record<string, number>;
 } {
   // Phase 1: bucket every (source, entry) by entry.id.
   const buckets = new Map<
     string,
-    Array<{ source_name: string; default_role: 'primary' | 'fallback-primary'; entry: RawLaunchEntry }>
+    Array<{
+      source_name: string;
+      default_role: 'primary' | 'fallback-primary';
+      entry: RawLaunchEntry;
+    }>
   >();
   for (const c of contributions) {
     for (const e of c.entries) {

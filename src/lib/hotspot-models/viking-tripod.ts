@@ -48,7 +48,7 @@ function silverMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: SILVER, metalness: 0.85, roughness: 0.3 });
 }
 
-export function buildVikingTripodHotspot(accentColor: string): THREE.Group {
+export function buildVikingTripodHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
   // Hex body — CylinderGeometry with 6 segments.
   const body = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.32, 0.18, 6), bodyMat());
@@ -100,19 +100,5 @@ export function buildVikingTripodHotspot(accentColor: string): THREE.Group {
   metHead.position.set(-0.22, 0.5, 0);
   g.add(metHead);
 
-  // Agency accent ring around the hex body.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.36, 0.012, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = 0.22;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

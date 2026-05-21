@@ -50,9 +50,7 @@
   let agencies = $derived(
     Array.from(new Set(allEntries.map((e) => e.agency_name).filter(Boolean))).sort(),
   );
-  let years = $derived(
-    Array.from(new Set(allEntries.map((e) => e.net.slice(0, 4)))).sort(),
-  );
+  let years = $derived(Array.from(new Set(allEntries.map((e) => e.net.slice(0, 4)))).sort());
 
   let filtered = $derived(
     allEntries.filter((e) => {
@@ -272,7 +270,8 @@
               class:active={d === activeDecade}
               role="radio"
               aria-checked={d === activeDecade}
-              onclick={() => setDecade(d)}>{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</button
+              onclick={() => setDecade(d)}
+              >{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</button
             >
           {/each}
         </div>
@@ -395,7 +394,9 @@
     color: rgba(255, 255, 255, 0.65);
     font-family: 'Space Mono', monospace;
     cursor: pointer;
-    transition: border-color 120ms, color 120ms;
+    transition:
+      border-color 120ms,
+      color 120ms;
   }
   .filters-toggle:hover,
   .filters-toggle:focus-visible {

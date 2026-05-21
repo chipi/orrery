@@ -9,11 +9,7 @@
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
-  import {
-    loadUpcoming,
-    formatCountdown,
-    type LaunchEntry,
-  } from '$lib/launches/manifest.js';
+  import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
 
   let entries: LaunchEntry[] = $state([]);
   let now = $state(new Date());
@@ -79,11 +75,7 @@
     </header>
     <div class="cards">
       {#each entries as e (e.id)}
-        <a
-          class="card"
-          href="{base}/missions/launches?id={e.id}"
-          data-launch-id={e.id}
-        >
+        <a class="card" href="{base}/missions/launches?id={e.id}" data-launch-id={e.id}>
           <div class="card-head">
             <div class="countdown">{formatCountdown(e.net, now)}</div>
             {#if logoFor(e.agency_name)}
@@ -181,7 +173,9 @@
     border-radius: 4px;
     color: #e6e8ee;
     text-decoration: none;
-    transition: background-color 120ms, border-color 120ms;
+    transition:
+      background-color 120ms,
+      border-color 120ms;
     min-height: 44px;
   }
 

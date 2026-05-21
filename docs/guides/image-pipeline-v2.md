@@ -317,10 +317,409 @@ git add static/{images,data}
 
 ---
 
+## Surface Hotspots Tier 2 patches — auto-fetch (v0.7.x)
+
+For the v0.7 Surface Hotspots epic (#108 / PRD-014), Mars hotspots
+fetch their HiRISE Tier 2 patches automatically via
+`scripts/fetch-hotspot-imagery.ts`. The pipeline is serial,
+fail-fast, and polite to the UAHiRISE PDS server.
+
+```bash
+# Fetch all configured Mars hotspots + variant generation.
+npm run images:hotspots
+
+# Same, but skip sites whose patch is already on disk
+# (incremental retry against only the unresolved subset).
+npm run images:hotspots -- --missing-only
+
+# Single site — bypasses --missing-only, force-rebuilds the patch.
+npm run images:hotspots -- --site curiosity
+
+# Inventory without fetching.
+npm run images:hotspots -- --list
+npm run images:hotspots -- --dry-run
+
+# Skip the post-fetch Image Pipeline v2 scoring step.
+npm run images:hotspots -- --skip-score
+```
+
+### How it works (pipeline per site)
+
+```
+[1] Catalog (one-time, cached 164 MB)
+    Download UAHiRISE's RDRCUMINDEX.TAB — every HiRISE image ever
+    taken (~120k rows). Cached at .image-cache/hirise/.
+    Schema lives in RDRCUMINDEX.LBL — we parse fixed-width offsets
+    for: PRODUCT_ID, IMAGE_LINES, LINE_SAMPLES, INCIDENCE_ANGLE,
+    SUB_SPACECRAFT_LAT/LON, MAP_SCALE, START_TIME, plus
+    CORNER1-4_LATITUDE/LONGITUDE (the projected image bbox).
+
+[2] Find candidates that *might* contain the site
+    Coarse pre-filter: SUB_SPACECRAFT track within 100 km of site
+    (cheap distance check on ~120k rows). Then exact:
+    point-in-polygon (PIP) against the 4 corner coords. Typically
+    10-50 candidates per site survive.
+
+[3] Rank candidates (lower compositeScore = better)
+    - MAP_SCALE (m/px, primary)        — smaller = sharper.
+    - |INCIDENCE_ANGLE - 50°|          — ~50° gives the best shadows.
+    - distance from polygon centroid   — target closer to image
+      centre is more likely to actually have data (catalog corners
+      describe the projected raster bbox, not the actual image
+      footprint; frames whose target lands near the polygon edge
+      often have huge no-data padding there).
+
+[4] Try candidates top-down (up to MAX_CANDIDATES_PER_SITE = 15)
+    a. Build deterministic PDS URL from product ID.
+    b. Download JP2 (~500 MB-1.5 GB) to .image-cache/hotspots/raw/
+       (sha256-of-URL keyed; cache-hit on re-runs).
+       Download has 3 retries with exponential backoff (1s/2s/4s)
+       — HiRISE PDS streams terminate mid-flight ~30-50% of the
+       time on large transfers. Partial .tmp files are cleaned
+       between attempts.
+    c. Open with gdal-async. Project (target lat,lon) → projected
+       coords → pixel coords via CoordinateTransformation (handles
+       equirectangular + polar stereographic SRS), then apply the
+       Mars-Equirectangular projection correction (see lesson #2
+       below). Without the correction, sites in rasters with
+       `latitude_of_origin ≠ 0` sample 300+ km away from the actual
+       target — and look identical to a real "no-data at target"
+       failure.
+    d. FAIL-FAST: read a 32×32 pixel sample at the target. If
+       ≥95% of pixels are no-data (encoded as zero), throw
+       CropError('NO_DATA_AT_TARGET'). Catches the case where the
+       corner polygon contains the target but the actual image data
+       doesn't reach it — cheaper than committing to the full crop.
+    e. Extract 2048×2048 window centred on target. Post-crop
+       sanity: if ≥80% black, throw CropError('CROP_MOSTLY_BLACK')
+       (sliver-edge case the 32×32 sample missed).
+    f. JPEG q=88 to static/images/hotspots/mars/<site>/tier2-hirise.jpg.
+    On CropError (any code), fall through to next candidate. If all
+    candidates exhaust, the site is reported as failed.
+
+[5] Append provenance
+    image-provenance.json gets an entry per successful patch:
+    PD-NASA license, NASA/JPL-Caltech/UAHiRISE attribution,
+    source_url = the exact JP2 the patch was cropped from. The
+    fail-closed gate accepts the new files cleanly.
+
+[6] Polite pause (90 s) before the next site
+    UAHiRISE doesn't publish rate limits but a hammering script is
+    exactly what an ops team will throttle preemptively. The pause
+    only fires after sites that actually touched the network
+    (purely-cached resolves don't pause) and not after the last site.
+
+[7] (Optional, --skip-score off) Image Pipeline v2 variant pass
+    Re-runs images:score --segment hotspots over the new patches
+    to generate 1:1 / 4:3 / 16:9 variants + image-vision.json scores.
+```
+
+### Operator override (the editorial knob)
+
+Auto-pick is best-effort. For sites where the algorithm picks the
+wrong frame (poor lighting, dust storm, sliver-edge that the 80%
+post-crop check let through, or just an editorially worse image than
+a known better one), pin a specific HiRISE product ID:
+
+```json
+"curiosity": {
+  ...
+  "hotspot_tier2_force_product_id": "ESP_030313_1755"
+}
+```
+
+The orchestrator builds the URL deterministically and skips the
+catalog query entirely. Override frames also benefit from the
+fail-fast + retry + provenance machinery — they're just freed from
+ranking. Use this when you know the right product ID from external
+sources (UAHiRISE "Image of the Week", landing-site press releases,
+direct researcher recommendation).
+
+### Hard-won lesson #1 — PIP corners describe the bbox, not the data footprint
+
+The first cut filtered by SUB_SPACECRAFT distance only and produced
+8 of 9 patches as 16 KB all-black no-data crops. The second cut
+added corner-polygon PIP and properly skipped frames whose bbox
+didn't contain the target — but still produced 3 of 6 broken patches
+because **the corner coords in `RDRCUMINDEX.TAB` describe the
+projected raster bounding box, NOT the actual image footprint**. A
+6 km × 15 km HiRISE swath rotated ~10° spacecraft-skew sits inside
+a wider rectangular bbox with no-data padding everywhere else. PIP
+says "target inside bbox"; the actual data may be nowhere near it.
+
+The fail-fast 32×32 pixel sample (step 4d) is the only honest test.
+It costs the full JP2 download per candidate but rejects in
+milliseconds once data is local. Combined with the centroid-distance
+penalty in ranking (step 3) the algorithm finds a usable frame in
+1-2 candidates per site for sites that have one — and correctly
+gives up on sites where no candidate's image data reaches the target.
+
+### Hard-won lesson #2 — GDAL inverts the HiRISE Equirectangular convention
+
+Most HiRISE RDRs project lat/lon to projected metres with this
+convention:
+
+```
+x_hirise = R × cos(lat_origin_rad) × (lon - central_meridian)_rad
+y_hirise = R × lat_rad                                  (NO lat_origin shift)
+```
+
+GDAL's `CoordinateTransformation` does the opposite:
+
+```
+x_gdal   = R × (lon - central_meridian)_rad             (NO cos scaling)
+y_gdal   = R × (lat - lat_origin)_rad                   (WITH shift)
+```
+
+The raster's `geo_transform` was authored in the HiRISE convention.
+GDAL transforms (lat,lon) → (x_gdal, y_gdal) in its own convention.
+The two disagree by:
+
+- X: factor of `cos(lat_origin)` — wrong by 0% at lat_origin=0,
+  ~3% at lat_origin=15° (~300 km horizontal at the Mars equator),
+  more at higher latitudes
+- Y: offset of `R × lat_origin_rad` — 0 m at lat_origin=0,
+  ~2660 km at lat_origin=45°
+
+For rasters with `latitude_of_origin = 0` (Plate Carrée) both
+corrections are no-ops and GDAL produces correct pixel coords. For
+rasters with `lat_origin ≠ 0` (most HiRISE products outside
+~±5° of the equator), GDAL's pixel coord is silently wrong — often
+hundreds of km from the target — and the 32×32 sample reads
+no-data padding even though the lander is well inside the image.
+
+The fix lives in `scripts/hotspots/gdal-crop.ts:correctHiriseProjection()`.
+It parses `latitude_of_origin` and the SPHEROID radius from the WKT
+and applies:
+
+```
+x_corrected = x_gdal × cos(lat_origin_rad)
+y_corrected = y_gdal + R × lat_origin_rad
+```
+
+For lat_origin=0 the correction is a no-op (passes through). For
+non-zero values it recovers the correct projection that matches the
+raster's geo_transform.
+
+The bug masquerades perfectly as "no-data at target" — same
+NO_DATA_AT_TARGET error, same 100% no-data sample, indistinguishable
+from a frame whose data genuinely doesn't reach the lander. Mars
+Pathfinder ate 2-3 days of failed runs before this was caught with a
+direct GDAL → pixel diagnostic on a cached JP2.
+
+### Cost + bandwidth (realistic — auto-pick can iterate)
+
+- First-run download: **15-40 GB transient** (13 Mars sites × up
+  to 15 candidate JP2s × ~500 MB-1.5 GB each, depending on which
+  rank position has actual data). Cached on disk afterwards. The
+  full Mars set converged at 14 GB of cached JP2s after ~6 hours
+  of cumulative server time over multiple runs.
+- Wall-clock: highly variable on UAHiRISE PDS health. Healthy
+  server: 1-2 hours for all 13 sites. Flaky server (observed
+  16-32 min hangs before terminating): 4-8 hours. Use
+  `--missing-only` to make subsequent runs target only the unresolved
+  subset — purely-cached resolves run in seconds with no network
+  hit, so re-running over a partial state is cheap.
+- Disk: `.image-cache/hotspots/raw/` settles at 8-15 GB. Cache is
+  gitignored. Delete after success with `rm -rf .image-cache/hotspots/raw/`
+  if disk pressure matters (re-running rebuilds it).
+- API cost: $0. UAHiRISE PDS is free, no API key.
+- Image Pipeline v2 scoring (downstream, --skip-score to suppress):
+  ~$0.05/image × 13 = ~$0.65 (Sonnet 4.6).
+
+### Operator playbook for sites auto-pick can't resolve
+
+The v0.7 Mars run hit each of these failure modes and the playbook
+below is what worked. Apply in order of escalating effort:
+
+1. **Wait for server health + retry with `--missing-only`** — UAHiRISE
+   PDS has bad days. On one run a single PSP-era JP2 burned 60+ min
+   over 3 retries; the next morning the same product downloaded in
+   3 min. The first thing to try is usually just a fresh run a few
+   hours later.
+
+2. **Verify the published lander coords vs. modern HiRISE-localized
+   values** — `mars-sites.json` historically used NSSDCA's Viking-era
+   measurements, which can be 13-33 km off the actual HiRISE-localized
+   lander position. Examples encountered in v0.7:
+   - Viking 1: NSSDCA 22.27°N, HiRISE 22.4856°N — 13 km offset
+   - Viking 2: NSSDCA 47.97°N, HiRISE 47.673°N — 33 km offset
+     (and even more in older publications)
+   - Mars Pathfinder: NSSDCA 19.13°N, HiRISE 19.0949°N — 2.4 km offset
+   - Schiaparelli: had a longitude *sign* error (+6.21° instead of
+     -6.21°) — put the target on the opposite side of Mars
+
+   Update `mars-sites.json` with the modern HiRISE coords. The
+   frontend shifts by km on a globe-scale view, well below visual
+   tolerance.
+
+3. **Pin a known-good product ID via operator override** — for sites
+   where the auto-pick can't find a frame in the top 15 (sparse
+   coverage, or every PIP-passing frame really does have no data at
+   target). Research at `https://www.uahirise.org/<PRODUCT_ID>` for
+   the lander's published image page. Each Mars lander has at least
+   one canonical UAHiRISE-published "image of the lander" page, e.g.
+   - Viking 1: `PSP_001521_2025` (Thomas Mutch Memorial Station)
+   - Viking 2: `PSP_001501_2280` (Gerald Soffen Memorial Station)
+   - Spirit: `PSP_001513_1655` (Spirit at Gusev Crater)
+   - Mars Pathfinder: `PSP_001890_1995` (HiRISE Images Pathfinder Site)
+   - Schiaparelli: `ESP_048120_1780` (Second Image of Schiaparelli)
+   - Mars 3: `ESP_031036_1345` (Could This Be the Soviet Mars 3 Lander?)
+
+   Pin via `hotspot_tier2_force_product_id` in
+   `static/data/surface-hotspots.json`. The orchestrator skips the
+   catalog query and goes straight to that single product (still
+   subject to the fail-fast sample, so a wrong pin is caught).
+
+4. **Editorial coord nudge for high-uncertainty sites** — Mars 3 has
+   documented ±10 km coordinate uncertainty. The candidate Mars 3
+   hardware was found in HiRISE imagery (ESP_031036_1345) centred at
+   lat -45.05°, but `mars-sites.json` stored lat -45.00° — the
+   raster's top edge was at lat -45.001°, so the target landed 53 m
+   north of the image data. Nudging the stored lat to -45.05° (well
+   within the ±10 km uncertainty band) puts the sample inside the
+   image. Always add a `_lat_note` or `_lon_note` field documenting
+   editorial coord nudges so future operators understand why the
+   stored value differs from NSSDCA's headline number.
+
+5. **Accept partial coverage as a last resort** — frontend renders
+   missing-patch sites with the placeholder material (geometry + LOD
+   swap still verifiable). Surface this in release notes if any site
+   ships without a Tier 2 patch.
+
+### What v0.7 final Mars state looks like
+
+13 of 13 Mars sites resolved end-to-end. Mix of paths:
+
+| Path | Sites |
+|---|---|
+| Auto-pick clean (all default thresholds) | curiosity, opportunity, phoenix |
+| Auto-pick after projection-fix + wider candidate pool | perseverance, insight, zhurong, beagle2 |
+| Operator override + projection fix | viking1-lander, viking2-lander, mars-pathfinder, spirit |
+| Operator override + longitude sign fix | schiaparelli |
+| Operator override + editorial lat nudge within uncertainty band | mars3 |
+
+### Mars Tier 2a regional layer — Murray Lab Global CTX Mosaic V01 (v0.7.x)
+
+v0.7.x extends the single-layer HiRISE patch into a two-layer Tier 2
+composition: a wider **regional context** disc from the Murray Lab
+Global CTX Mosaic V01 (Dickson et al. 2024, doi:10.1029/2024EA003555)
++ the existing HiRISE detail patch on top.
+
+```bash
+# Same orchestrator, new layer flag:
+npm run images:hotspots -- --layer ctx              # fetch regional only
+npm run images:hotspots -- --layer hirise           # fetch detail only
+npm run images:hotspots -- --layer all              # both (default)
+npm run images:hotspots -- --layer ctx --missing-only --site curiosity
+```
+
+#### Pipeline (parallel to HiRISE)
+
+```
+[1] Compute Murray Lab tile name from (lat, lon).
+    Format: E{lon}_N{lat} where lon is 4°-step, 3-digit-padded
+    (E000-E176 for positives, E-004 to E-180 for negatives),
+    and lat is 4°-step, 2-digit-padded (N00-N84 for positives,
+    N-04 to N-88 for negatives). Computed by
+    scripts/hotspots/ctx-mosaic.ts:tileNameForLatLon().
+[2] Build deterministic ZIP URL:
+    https://murray-lab.caltech.edu/CTX/V01/tiles/
+      MurrayLab_GlobalCTXMosaic_V01_{tileName}.zip
+    No catalog query needed — the Murray Lab mosaic IS a single
+    blended source; each lat/lon maps to exactly one tile.
+[3] Download (~1.7 GB ZIP) via curl. Caltech's TLS cert chain
+    fails Node fetch's strict validation (InCommon → USERTrust);
+    curl uses system trust and works. 3 retries with backoff.
+[4] Unzip to .image-cache/ctx-mosaic/{tileName}/. Drop everything
+    except the .tif. The extracted GeoTIFF is ~2 GB (compressed
+    LZW) and represents ~190k × 190k pixels = 948 km × 948 km of
+    Mars surface at 5 m/px.
+    Murray Lab's inside-the-zip filename has varied across
+    releases (MurrayLab_GlobalCTXMosaic vs MurrayLab_CTX_..._Mosaic);
+    the fetcher discovers the GeoTIFF by extension, not by
+    expected name.
+[5] Crop 2048×2048 centred on the lander's (lat, lon) via the
+    existing cropRemoteRasterToLatLon() pipeline (same gdal-async
+    open + project + read + JPEG q=88 encode used by HiRISE).
+    Equirectangular Mars projection correction (the hard-won fix
+    from #PA) applies here too — same SRS family.
+[6] Write to static/images/hotspots/mars/<site>/tier2-ctx.jpg
+    (~600-900 KB per patch; ~10.2 km × 10.2 km of ground surface).
+[7] Append provenance entry with CC-BY-Murray-Lab license +
+    Caltech + JPL/MSSS attribution chain.
+[8] Polite 60 s pause before the next site (Murray Lab politeness).
+```
+
+#### Cost + bandwidth
+
+- Per-site download: 1.7 GB (one tile ZIP). 13 Mars sites span
+  ~10-12 unique tiles (some sites share — Opportunity and
+  Schiaparelli are both in `E-008_N-04`).
+- First-run total: ~20-25 GB transient, of which 8-15 GB lands
+  on disk as cached `.image-cache/ctx-mosaic/*/*.tif` GeoTIFFs.
+- Wall-clock: ~12-20 minutes per unique tile (download bandwidth
+  ~1.5-2 MB/s + 60 s polite pause). All 13 sites: ~3-5 hours.
+- API cost: $0. Cite Dickson et al. 2024 per Murray Lab terms.
+- Cache cleanup: same `rm -rf .image-cache/ctx-mosaic/` once
+  patches are on disk.
+
+#### Two-layer rendering composition
+
+The frontend treats both layers as ONE Tier-2 dispatcher unit
+(`src/lib/hotspot-surface-patch.ts:buildHotspotSurfacePatch()`
+extended to accept `regionalTextureUrl`). Composition:
+
+- **Regional disc**: 1.5 u world units in diameter (~170 km
+  displayed; 14× editorial scale-up). PolygonOffsetFactor = -1.
+- **Detail disc**: 0.6 u world units (~67 km displayed; 136×
+  scale-up). PolygonOffsetFactor = -2 — wins depth-test against
+  regional, sits visually on top.
+- **Rim ring + centre pin**: shared, marks the exact lander spot.
+
+No cross-fade between layers — they render simultaneously when
+Tier 2 is active. Visual hierarchy comes from size + depth offset.
+The user perceives a smooth zoom-in: at moderate zoom they see the
+wider CTX regional context with the small HiRISE detail patch
+overlaid, and as they zoom in further the HiRISE patch fills the
+view naturally.
+
+Sites without a regional source render only the detail patch
+(backward-compatible).
+
+#### Source-attribution info card (v0.7.x)
+
+When Tier 2 is active, a small floating card (bottom-left) shows
+site name + agency chip + current layer attribution (which source,
+which product, what resolution, what license). Card content swaps
+between "Regional view · CTX Murray Lab · 5 m/px" (at moderate
+zoom) and "Detail view · HiRISE <product_id> · 25 cm/px" (at
+close zoom). Click "source ↗" opens the canonical agency page.
+
+Implementation: per-frame derivation in `mars/+page.svelte` against
+the dominant Tier 2 hotspot. Hidden in panorama mode and 2D view.
+
+### Moon (v0.7.x #PC, planned)
+
+Moon two-layer hotspots use the same architecture: **LROC NAC**
+(50 cm/px, NASA PD via PDS) for detail + **CNSA Chang'e 2 lunar
+mosaic** (7 m/px, CC-BY-CNSA) for regional. Chang'e 2 was chosen
+over LROC WAC (100 m/px) — Chinese imagery is sharper for the
+regional layer, and it's an explicit multi-agency representation
+choice (per PRD-014 §v0.7.x global-space-program direction).
+
+Until #PC ships: the 18 Moon hotspots render Tier 0 + Tier 1
+models; Tier 2 patches show the neutral placeholder material
+(geometry + LOD swap still verifiable; just no real imagery yet).
+
+---
+
 ## See also
 
 - **[PRD-018](../prd/PRD-018.md)** — product requirements (what ships in v2.0, v2.1, v2.2)
 - **[RFC-022](../rfc/RFC-022.md)** — architecture (manifest layout, cache strategy, scoring prompt, provider abstraction)
+- **[PRD-014](../prd/PRD-014.md)** — Surface Hotspots product requirements
+- **[RFC-017](../rfc/RFC-017.md)** — Surface Hotspots architecture (LOD dispatcher, surface patch quad, hardware authoring)
 - **[ADR-046](../adr/ADR-046.md)** — existing asset-fetch pipeline (unchanged by v2)
 - **[ADR-047](../adr/ADR-047.md)** — image-provenance.json schema + fail-closed gate (unchanged by v2)
 - **[ADR-016](../adr/ADR-016.md)** — build-time-only constraint (v2 strictly respects)

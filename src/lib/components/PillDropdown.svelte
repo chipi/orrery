@@ -307,7 +307,9 @@
     letter-spacing: 1px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 100ms, color 100ms;
+    transition:
+      background-color 100ms,
+      color 100ms;
   }
   .opt:hover,
   .opt:focus-visible {

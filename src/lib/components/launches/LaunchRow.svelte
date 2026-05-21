@@ -24,7 +24,9 @@
   });
 
   let timeLabel = $derived(
-    mode === 'upcoming' ? formatCountdown(entry.net, now) : formatNet(entry.net, entry.net_precision),
+    mode === 'upcoming'
+      ? formatCountdown(entry.net, now)
+      : formatNet(entry.net, entry.net_precision),
   );
 
   function tierChipClass(t: string): string {
@@ -39,7 +41,9 @@
   <div class="time-col">
     <time datetime={entry.net} class="net">{timeLabel}</time>
     {#if entry.webcast_live}
-      <span class="live-chip" title="Webcast live"><span class="dot"></span>{m.launches_live_badge()}</span>
+      <span class="live-chip" title="Webcast live"
+        ><span class="dot"></span>{m.launches_live_badge()}</span
+      >
     {/if}
   </div>
   <div class="main-col">
@@ -136,8 +140,13 @@
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 
   .title {
@@ -228,7 +237,13 @@
     color: rgba(230, 232, 238, 0.7);
   }
 
-  .status-success { color: #4ecdc4; }
-  .status-failure { color: #ff5252; }
-  .status-go { color: #4b9cd3; }
+  .status-success {
+    color: #4ecdc4;
+  }
+  .status-failure {
+    color: #ff5252;
+  }
+  .status-go {
+    color: #4b9cd3;
+  }
 </style>

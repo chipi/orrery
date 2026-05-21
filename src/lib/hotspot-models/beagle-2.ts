@@ -29,7 +29,7 @@ function solarMat(): THREE.MeshStandardMaterial {
   });
 }
 
-export function buildBeagle2Hotspot(accentColor: string): THREE.Group {
+export function buildBeagle2Hotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
   // Central body — small clamshell base.
   const body = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.18, 0.05, 16), bodyMat());
@@ -58,23 +58,5 @@ export function buildBeagle2Hotspot(accentColor: string): THREE.Group {
     g.add(petal);
   }
 
-  // Accent ring around the body — reduced opacity for the partial-
-  // success status (less subdued than Beresheet/Schiaparelli but
-  // not full operational).
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.2, 0.008, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.25,
-      transparent: true,
-      opacity: 0.8,
-    }),
-  );
-  ring.position.y = 0.04;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

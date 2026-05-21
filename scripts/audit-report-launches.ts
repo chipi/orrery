@@ -134,9 +134,7 @@ function main(): void {
     <thead><tr><th>Tier reason</th><th>Count</th></tr></thead>
     <tbody>
       ${reasonRows
-        .map(
-          ([r, n]) => `<tr><td><code>${escapeHtml(r)}</code></td><td>${n}</td></tr>`,
-        )
+        .map(([r, n]) => `<tr><td><code>${escapeHtml(r)}</code></td><td>${n}</td></tr>`)
         .join('\n')}
     </tbody>
   </table>

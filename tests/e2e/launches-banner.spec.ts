@@ -24,9 +24,7 @@ test.describe('Launches banner on /missions', () => {
 
   test('each card shows a T-0 countdown + links to the calendar deep-link', async ({ page }) => {
     await page.goto('/missions');
-    const firstCard = page
-      .locator('aside.banner a.card')
-      .first();
+    const firstCard = page.locator('aside.banner a.card').first();
     await expect(firstCard).toBeVisible({ timeout: 30_000 });
     // Countdown text starts with "T-0" (or "in flight" if the launch
     // just happened — accept both).

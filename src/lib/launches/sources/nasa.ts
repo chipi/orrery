@@ -39,8 +39,7 @@ export function parseNasaRssXml(xml: string): ParsedItem[] {
     const block = m[1];
     const title = block.match(/<title>([\s\S]*?)<\/title>/)?.[1]?.trim() ?? '';
     const pubDate = block.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]?.trim() ?? '';
-    const description =
-      block.match(/<description>([\s\S]*?)<\/description>/)?.[1]?.trim() ?? '';
+    const description = block.match(/<description>([\s\S]*?)<\/description>/)?.[1]?.trim() ?? '';
     if (title && pubDate) items.push({ title, pubDate, description });
   }
   return items;
@@ -63,7 +62,9 @@ export function rssItemToRawEntry(
   const missionName = m[2].trim();
   const iso = new Date(item.pubDate).toISOString();
   // Try to extract a vehicle from the description; fallback to "Unknown".
-  const descMatch = decode(item.description).match(/\b(Falcon\s?[A-Z0-9]+|Atlas\s?V|Delta\s?IV|Saturn\s?V|SLS|Ariane\s?\d+|Vega-?C|Antares|Electron|Soyuz\b)/i);
+  const descMatch = decode(item.description).match(
+    /\b(Falcon\s?[A-Z0-9]+|Atlas\s?V|Delta\s?IV|Saturn\s?V|SLS|Ariane\s?\d+|Vega-?C|Antares|Electron|Soyuz\b)/i,
+  );
   const rocketFamily = descMatch?.[1]?.trim() ?? 'Unknown';
   return {
     id: buildStableId({ iso, rocketFamily, missionName }),

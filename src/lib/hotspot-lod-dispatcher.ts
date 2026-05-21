@@ -63,7 +63,18 @@ export const HOTSPOT_TIER_THRESHOLDS_PX = {
   tier1Min: 20,
   tier2Min: 120,
 } as const;
-export const HOTSPOT_LRU_CEILING = 6;
+/**
+ * Maximum number of hotspots simultaneously promoted to Tier 1+ in
+ * `auto` mode. When exceeded, the oldest-promoted hotspots are demoted
+ * to Tier 0 + their tier1+ groups disposed. `high` mode bypasses this
+ * ceiling entirely — see updateHotspotLOD.
+ *
+ * Bumped to 16 from the original 6 because the original was specced
+ * before /mars hosted 13 hotspots; a 6-ceiling against a 13-hotspot
+ * planet causes LRU thrash in `high` mode where every hotspot fights
+ * to stay promoted and none finishes its 600 ms fade.
+ */
+export const HOTSPOT_LRU_CEILING = 16;
 
 /**
  * HOTSPOTS chip state (PRD-014 / RFC-017 §S7, sub-issue #115).
@@ -143,9 +154,12 @@ function applyTierVisuals(entry: HotspotEntry, progress: number): void {
     setGroupForTier(entry, toTier, 1, true);
     return;
   }
-  // Cross-fade.
-  setGroupForTier(entry, fromTier, 1 - progress, true);
-  setGroupForTier(entry, toTier, progress, true);
+  // Cross-fade with ease-in-out cubic so the swap feels organic
+  // instead of mechanically linear.
+  const t = progress;
+  const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  setGroupForTier(entry, fromTier, 1 - eased, true);
+  setGroupForTier(entry, toTier, eased, true);
 }
 
 function setGroupForTier(
@@ -278,7 +292,12 @@ export function updateHotspotLOD(
     if (currentMode === 'low') {
       desired = 0;
     } else if (currentMode === 'high') {
-      desired = h.maxTier;
+      // High caps at Tier 2 (the always-on orbital surface patch).
+      // Tier 3 is the interactive ground-view panorama — a separate
+      // "Stand at site" UX, not something to force in the orbital
+      // view. Without this cap, showcase sites with maxTier=3 render
+      // nothing in `high` mode (tier 3 group isn't built here).
+      desired = h.maxTier >= 2 ? 2 : h.maxTier;
     } else {
       const projected = projectedPixelRadius(worldPos, camera, canvasHeight);
       desired = pickTargetTier(projected, h.maxTier);
@@ -301,7 +320,12 @@ export function updateHotspotLOD(
     }
     applyTierVisuals(h, h.fadeProgress);
   }
-  evictLRUIfNeeded(hotspots);
+  // `high` mode means the operator explicitly asked for every hotspot
+  // promoted to its maxTier — overriding LRU eviction entirely. Without
+  // this skip, when N hotspots > LRU ceiling, the dispatcher demotes
+  // (ceiling-N) every frame, the page re-promotes them next frame, and
+  // no fade ever completes — curTier stays 0 indefinitely.
+  if (currentMode !== 'high') evictLRUIfNeeded(hotspots);
 }
 
 /**

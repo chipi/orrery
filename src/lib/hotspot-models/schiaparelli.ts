@@ -13,7 +13,6 @@ import * as THREE from 'three';
  * Crashed-site visual treatment per resolved decision #7.
  */
 
-const ESA_BLUE = 0x003299;
 const PARACHUTE_WHITE = 0xe0e0e0;
 const TANK_DARK = 0x282828;
 const ALU = 0x9a9a9a;
@@ -40,7 +39,7 @@ function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.7, roughness: 0.5 });
 }
 
-export function buildSchiaparelliHotspot(accentColor: string): THREE.Group {
+export function buildSchiaparelliHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
   // Heat-shield disc — landed separately ~1 km away. Renders as a
   // dark disc offset from the lander.
@@ -91,21 +90,5 @@ export function buildSchiaparelliHotspot(accentColor: string): THREE.Group {
   crater.position.y = 0.005;
   g.add(crater);
 
-  // Accent ring with reduced opacity (matches Beresheet pattern).
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.28, 0.01, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor || ESA_BLUE,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor || ESA_BLUE,
-      emissiveIntensity: 0.2,
-      transparent: true,
-      opacity: 0.7,
-    }),
-  );
-  ring.position.y = 0.03;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

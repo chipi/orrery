@@ -38,7 +38,7 @@ function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });
 }
 
-export function buildMERRoverHotspot(accentColor: string): THREE.Group {
+export function buildMERRoverHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
   const wheelR = 0.04;
 
@@ -86,19 +86,5 @@ export function buildMERRoverHotspot(accentColor: string): THREE.Group {
   hga.rotation.x = Math.PI / 2;
   g.add(hga);
 
-  // Agency accent ring around the body.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.32, 0.01, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = wheelR + 0.07;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

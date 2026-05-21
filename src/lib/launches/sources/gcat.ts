@@ -13,10 +13,7 @@
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import {
-  assertGcatHeader,
-  parseGcatLaunchTsv,
-} from '../../../../scripts/gcat/parse-launch-log.js';
+import { assertGcatHeader, parseGcatLaunchTsv } from '../../../../scripts/gcat/parse-launch-log.js';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
 import type { RawLaunchEntry } from '../types.js';
 

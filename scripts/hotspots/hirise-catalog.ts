@@ -51,6 +51,17 @@ const COL = {
   SUB_SPACECRAFT_LONGITUDE: { start: 558, len: 10 },
   MAP_SCALE: { start: 652, len: 5 },
   START_TIME: { start: 346, len: 24 },
+  // Projected image corner coordinates — used for actual footprint
+  // containment test (point-in-polygon). LBL START_BYTE values are
+  // 1-indexed; substring extraction here is 0-indexed (subtract 1).
+  CORNER1_LATITUDE: { start: 732, len: 10 },
+  CORNER1_LONGITUDE: { start: 743, len: 10 },
+  CORNER2_LATITUDE: { start: 754, len: 10 },
+  CORNER2_LONGITUDE: { start: 765, len: 10 },
+  CORNER3_LATITUDE: { start: 776, len: 10 },
+  CORNER3_LONGITUDE: { start: 787, len: 10 },
+  CORNER4_LATITUDE: { start: 798, len: 10 },
+  CORNER4_LONGITUDE: { start: 809, len: 10 },
 } as const;
 
 export interface HiriseFrame {
@@ -62,12 +73,28 @@ export interface HiriseFrame {
   startTime: string; // ISO
   imageLines: number;
   lineSamples: number;
+  /**
+   * 4 corner coordinates of the projected image footprint. Used to
+   * test whether a given target lat/lon actually falls inside the
+   * image (sub-spacecraft proximity alone is not enough — orbital
+   * track passes within km of many sites without the 6-km-wide swath
+   * covering them).
+   */
+  corners: Array<{ lat: number; lon: number }>;
 }
 
 export interface HiriseCandidatesInput {
   targetLat: number;
   targetLon: number;
-  /** Max planetocentric great-circle distance in km. Default 5. */
+  /**
+   * Pre-filter great-circle distance in km from SUB_SPACECRAFT to
+   * target. Default 50 — a coarse pre-filter to cheaply discard the
+   * ~120k frames whose track is nowhere near the target. The actual
+   * containment test is point-in-polygon against the 4 image corners
+   * (see CORNER1-4_LATITUDE/LONGITUDE). 50 km comfortably covers
+   * the worst-case ~15 km along-track sweep plus a margin for
+   * cross-track offset.
+   */
   searchRadiusKm?: number;
 }
 
@@ -109,13 +136,13 @@ export async function ensureHiriseIndex(opts: { cacheRefreshDays?: number } = {}
  */
 export async function findHiriseCandidates(input: HiriseCandidatesInput): Promise<HiriseFrame[]> {
   await ensureHiriseIndex();
-  const radiusKm = input.searchRadiusKm ?? 5;
+  const radiusKm = input.searchRadiusKm ?? 50;
   const candidates: Array<HiriseFrame & { distKm: number }> = [];
 
   const stream = createReadStream(INDEX_CACHE_PATH, { encoding: 'utf-8' });
   const rl = readline.createInterface({ input: stream, crlfDelay: Infinity });
   for await (const line of rl) {
-    if (line.length < COL.MAP_SCALE.start + COL.MAP_SCALE.len) continue;
+    if (line.length < COL.CORNER4_LONGITUDE.start + COL.CORNER4_LONGITUDE.len) continue;
     const frame = parseRow(line);
     if (!frame) continue;
     const distKm = greatCircleKm(
@@ -125,11 +152,17 @@ export async function findHiriseCandidates(input: HiriseCandidatesInput): Promis
       frame.centerLon,
       MARS_RADIUS_KM,
     );
-    if (distKm <= radiusKm) {
-      candidates.push({ ...frame, distKm });
-    }
+    // Coarse pre-filter: drop frames whose orbital track is nowhere near.
+    if (distKm > radiusKm) continue;
+    // Actual containment: target must fall inside the 4-corner footprint.
+    if (!pointInFrame(input.targetLat, input.targetLon, frame.corners)) continue;
+    candidates.push({ ...frame, distKm });
   }
-  candidates.sort((a, b) => compositeScore(a) - compositeScore(b));
+  candidates.sort(
+    (a, b) =>
+      compositeScore(a, input.targetLat, input.targetLon) -
+      compositeScore(b, input.targetLat, input.targetLon),
+  );
   return candidates;
 }
 
@@ -138,8 +171,15 @@ const MARS_RADIUS_KM = 3389.5;
 function parseRow(line: string): HiriseFrame | null {
   const productIdRaw = extractField(line, COL.PRODUCT_ID);
   if (!productIdRaw) return null;
-  const productId = productIdRaw.replace(/^"|"$/g, '').trim();
-  if (!productId || !/^[A-Z]+_\d+_\d+/.test(productId)) return null;
+  const raw = productIdRaw.replace(/^"|"$/g, '').trim();
+  if (!raw) return null;
+  // Catalog IDs include the channel suffix (_RED, _COLOR, _IRB).
+  // We only want _RED (full-coverage greyscale; COLOR/IRB are
+  // centre-swath only, smaller footprint + larger files).
+  if (!/_RED$/.test(raw)) return null;
+  // Strip channel suffix so the URL builder gets the bare observation id.
+  const productId = raw.replace(/_RED$/, '');
+  if (!/^[A-Z]+_\d+_\d+$/.test(productId)) return null;
   const lat = parseFloat(extractField(line, COL.SUB_SPACECRAFT_LATITUDE));
   const lon = parseFloat(extractField(line, COL.SUB_SPACECRAFT_LONGITUDE));
   if (Number.isNaN(lat) || Number.isNaN(lon)) return null;
@@ -148,6 +188,26 @@ function parseRow(line: string): HiriseFrame | null {
   const imageLines = parseInt(extractField(line, COL.IMAGE_LINES), 10);
   const lineSamples = parseInt(extractField(line, COL.LINE_SAMPLES), 10);
   const startTime = extractField(line, COL.START_TIME).replace(/^"|"$/g, '').trim();
+  const corners = [
+    {
+      lat: parseFloat(extractField(line, COL.CORNER1_LATITUDE)),
+      lon: parseFloat(extractField(line, COL.CORNER1_LONGITUDE)),
+    },
+    {
+      lat: parseFloat(extractField(line, COL.CORNER2_LATITUDE)),
+      lon: parseFloat(extractField(line, COL.CORNER2_LONGITUDE)),
+    },
+    {
+      lat: parseFloat(extractField(line, COL.CORNER3_LATITUDE)),
+      lon: parseFloat(extractField(line, COL.CORNER3_LONGITUDE)),
+    },
+    {
+      lat: parseFloat(extractField(line, COL.CORNER4_LATITUDE)),
+      lon: parseFloat(extractField(line, COL.CORNER4_LONGITUDE)),
+    },
+  ];
+  // Reject frames with any missing corner — can't do containment test.
+  if (corners.some((c) => Number.isNaN(c.lat) || Number.isNaN(c.lon))) return null;
   return {
     productId,
     centerLat: lat,
@@ -157,7 +217,47 @@ function parseRow(line: string): HiriseFrame | null {
     startTime,
     imageLines: Number.isNaN(imageLines) ? 0 : imageLines,
     lineSamples: Number.isNaN(lineSamples) ? 0 : lineSamples,
+    corners,
   };
+}
+
+/**
+ * Point-in-polygon test for the target falling inside the image's
+ * 4-corner footprint. Ray-casting algorithm; works on small enough
+ * quadrilaterals that planet curvature is negligible (HiRISE frames
+ * are at most ~25 km on a side, far below the threshold where great-
+ * circle vs. plane geometry meaningfully diverges).
+ *
+ * Longitudes are normalised relative to the target before the test
+ * to handle the 0°/360° wrap-around (a frame straddling the prime
+ * meridian has corners like 358°, 2°, 5°, 359° — naive ray-casting
+ * would reject the target at 0° even though it's inside).
+ */
+function pointInFrame(
+  targetLat: number,
+  targetLon: number,
+  corners: Array<{ lat: number; lon: number }>,
+): boolean {
+  // Shift each corner's longitude into the (targetLon-180, targetLon+180] band.
+  const normLon = (lon: number): number => {
+    let d = lon - targetLon;
+    while (d > 180) d -= 360;
+    while (d <= -180) d += 360;
+    return targetLon + d;
+  };
+  const poly = corners.map((c) => ({ lat: c.lat, lon: normLon(c.lon) }));
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const xi = poly[i].lon;
+    const yi = poly[i].lat;
+    const xj = poly[j].lon;
+    const yj = poly[j].lat;
+    const intersect =
+      yi > targetLat !== yj > targetLat &&
+      targetLon < ((xj - xi) * (targetLat - yi)) / (yj - yi) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
 }
 
 function extractField(line: string, col: { start: number; len: number }): string {
@@ -168,13 +268,47 @@ function extractField(line: string, col: { start: number; len: number }): string
  * Composite score for ranking candidates. Lower = better.
  *   - MAP_SCALE: primary — smaller m/px = higher resolution.
  *   - INCIDENCE_ANGLE deviation from 50°: penalty for too steep
- *     (flat lighting, no shadows) or too shallow (dramatic shadows
- *     but features lost in shadow).
+ *     (flat lighting, no shadows) or too shallow (features lost in
+ *     shadow).
+ *   - CENTER_DISTANCE_KM: penalty for the target sitting near the
+ *     edge of the image footprint. The corner-PIP test is necessary
+ *     but not sufficient: HiRISE projected rasters may include
+ *     no-data padding between the polygon boundary and the actual
+ *     image data, so frames where the target lands near the polygon
+ *     edge often produce mostly-black crops. Preferring frames
+ *     where the target is centred drastically reduces this failure
+ *     mode without needing to download + crop to find out.
  */
-function compositeScore(frame: HiriseFrame): number {
+function compositeScore(frame: HiriseFrame, targetLat: number, targetLon: number): number {
   const scalePenalty = frame.mapScale; // 0.25-1.0 m/px range
   const incDelta = Math.abs(frame.incidenceAngle - 50); // 0-50° range
-  return scalePenalty + incDelta * 0.02;
+  const centroid = polygonCentroid(frame.corners);
+  const centerKm = greatCircleKm(targetLat, targetLon, centroid.lat, centroid.lon, MARS_RADIUS_KM);
+  // Frames are ~6×15-25 km. 1 km from centre is well within the
+  // image; 10 km may be near the edge. Weight 0.1 scales km cleanly
+  // into the same range as scalePenalty (0.25-1.0).
+  return scalePenalty + incDelta * 0.02 + centerKm * 0.1;
+}
+
+/**
+ * Centroid of a 4-corner polygon in lat/lon space. Normalises
+ * longitudes to handle 0°/360° wrap-around (corners straddling the
+ * prime meridian average correctly).
+ */
+function polygonCentroid(corners: Array<{ lat: number; lon: number }>): {
+  lat: number;
+  lon: number;
+} {
+  const refLon = corners[0].lon;
+  const normLon = (lon: number): number => {
+    let d = lon - refLon;
+    while (d > 180) d -= 360;
+    while (d <= -180) d += 360;
+    return refLon + d;
+  };
+  const sumLat = corners.reduce((s, c) => s + c.lat, 0);
+  const sumLon = corners.reduce((s, c) => s + normLon(c.lon), 0);
+  return { lat: sumLat / corners.length, lon: sumLon / corners.length };
 }
 
 /**

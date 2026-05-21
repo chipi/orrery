@@ -98,7 +98,20 @@ export const ALL_DECADES = [
 /** Format ISO date → "MMM YYYY" or "MMM DD, YYYY" or T-0 countdown. */
 export function formatNet(iso: string, precision: string): string {
   const dt = new Date(iso);
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
   if (precision === 'year') return String(dt.getUTCFullYear());
   if (precision === 'month') return `${months[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
   if (precision === 'day') {
@@ -128,7 +141,20 @@ export function formatCountdown(iso: string, now = new Date()): string {
 export function groupByMonth(
   entries: LaunchEntry[],
 ): Array<{ key: string; label: string; entries: LaunchEntry[] }> {
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
   const map = new Map<string, LaunchEntry[]>();
   for (const e of entries) {
     const dt = new Date(e.net);

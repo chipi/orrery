@@ -59,7 +59,13 @@
         },
         "source_type": {
           "type": "string",
-          "enum": ["wikimedia-commons", "nasa-images-api", "direct-agency", "direct-other"]
+          "enum": [
+            "wikimedia-commons",
+            "nasa-images-api",
+            "direct-agency",
+            "direct-other",
+            "derived-mosaic"
+          ]
         },
         "title": {
           "type": "string",

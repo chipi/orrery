@@ -120,11 +120,6 @@ function buildVikingTripod(color: string): THREE.Group {
   arm.position.set(0, 0.45, 0.4);
   arm.rotation.x = Math.PI / 2;
   g.add(arm);
-  // Accent ring at base.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.36, 0.014, 6, 18), accentMat(color));
-  ring.position.y = 0.22;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -170,11 +165,6 @@ function buildPathfinder(color: string): THREE.Group {
   }
   soj.position.set(0.55, 0, 0.1);
   g.add(soj);
-  // Accent ring around the deployment footprint.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.48, 0.012, 6, 24), accentMat(color));
-  ring.position.y = 0.015;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -212,11 +202,6 @@ function buildMERRover(color: string): THREE.Group {
   const lga = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.2, 4), silverMat());
   lga.position.set(-0.2, 0.5, 0);
   g.add(lga);
-  // Accent ring around the rover footprint.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.36, 0.012, 6, 18), accentMat(color));
-  ring.position.y = 0.015;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -268,11 +253,6 @@ function buildMSLClass(color: string, withHelicopter: boolean): THREE.Group {
   arm.position.set(0.42, 0.32, 0.18);
   arm.rotation.z = 0.5;
   g.add(arm);
-  // Accent ring.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.46, 0.014, 6, 20), accentMat(color));
-  ring.position.y = 0.02;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   if (withHelicopter) {
     g.add(buildIngenuity(color));
   }
@@ -353,11 +333,6 @@ function buildPhoenixClass(color: string): THREE.Group {
   const dome = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 8), darkMat());
   dome.position.set(0, 0.5, 0);
   g.add(dome);
-  // Accent ring.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.012, 6, 18), accentMat(color));
-  ring.position.y = 0.21;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -388,11 +363,6 @@ function buildSovietPetal(color: string): THREE.Group {
   const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.4, 4), silverMat());
   antenna.position.y = 0.95;
   g.add(antenna);
-  // Accent ring at base.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.44, 0.014, 6, 20), accentMat(color));
-  ring.position.y = 0.04;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -455,11 +425,6 @@ function buildSchiaparelli(color: string): THREE.Group {
   const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.36, 4), silverMat());
   antenna.position.y = 0.55;
   g.add(antenna);
-  // Accent ring.
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.46, 0.012, 6, 20), accentMat(color));
-  ring.position.y = 0.075;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 
@@ -475,10 +440,6 @@ function buildGenericLander(color: string): THREE.Group {
   const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 0.5, 4), silverMat());
   antenna.position.y = 1.05;
   g.add(antenna);
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(0.48, 0.012, 6, 18), accentMat(color));
-  ring.position.y = 0.02;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }
 

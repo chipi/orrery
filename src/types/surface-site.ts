@@ -13,7 +13,16 @@
 
 import type { LinkTier, DataQuality } from './mission';
 
-export type SurfaceAgency = 'NASA' | 'ROSCOSMOS' | 'CNSA' | 'ISRO' | 'JAXA' | 'ESA' | 'UAESA';
+export type SurfaceAgency =
+  | 'NASA'
+  | 'ROSCOSMOS'
+  | 'CNSA'
+  | 'ISRO'
+  | 'JAXA'
+  | 'ESA'
+  | 'UAESA'
+  | 'SpaceIL'
+  | 'ESA-UK';
 export type SurfaceNation =
   | 'USA'
   | 'USSR'
@@ -22,7 +31,9 @@ export type SurfaceNation =
   | 'India'
   | 'Japan'
   | 'Europe'
-  | 'UAE';
+  | 'UAE'
+  | 'Israel'
+  | 'UK';
 export type SurfaceStatus = 'completed' | 'ongoing' | 'planned';
 export type SiteKind = 'surface' | 'orbiter';
 export type SiteStatus = 'FLOWN' | 'PLANNED' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST';
@@ -75,6 +86,21 @@ export interface SurfaceSite {
    * 1:1 pre-cropped variant URL.
    */
   hotspot_tier2_source?: string;
+  /**
+   * Path to the Tier 2a regional context patch — Murray Lab CTX
+   * mosaic at 5 m/px (Mars) / LROC WAC for Moon (future). Wider
+   * landing-zone view that sits BELOW the detail tier-2 patch.
+   * Optional — sites without this render only the detail layer.
+   */
+  hotspot_tier2_regional_source?: string;
+  /**
+   * Operator override for the auto-pick HiRISE product. When set,
+   * the fetch pipeline skips the catalog candidate ranking and
+   * pulls this specific product ID. Also surfaced in the info card
+   * as the source attribution string ("HiRISE ESP_030313_1755").
+   * Format: UAhirise product ID (e.g. ESP_030313_1755).
+   */
+  hotspot_tier2_force_product_id?: string;
   /**
    * Path to the equirectangular Tier 3 ground-view panorama for
    * this site (V2 / #118, ADR-061). PD-NASA: Apollo Lunar Surface

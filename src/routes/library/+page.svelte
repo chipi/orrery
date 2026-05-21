@@ -157,16 +157,13 @@
         <a
           href="https://planet4589.org/space/gcat/"
           rel="noopener noreferrer external"
-          hreflang="en"
-          >Jonathan McDowell — General Catalog of Artificial Space Objects (GCAT)</a
+          hreflang="en">Jonathan McDowell — General Catalog of Artificial Space Objects (GCAT)</a
         >, CC&nbsp;BY&nbsp;4.0.
       </p>
       <p>
         Upcoming gap-fill:
-        <a
-          href="https://thespacedevs.com/llapi"
-          rel="noopener noreferrer external"
-          hreflang="en">Launch Library 2 — The Space Devs</a
+        <a href="https://thespacedevs.com/llapi" rel="noopener noreferrer external" hreflang="en"
+          >Launch Library 2 — The Space Devs</a
         >.
       </p>
       <p>

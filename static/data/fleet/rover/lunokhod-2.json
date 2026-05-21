@@ -27,5 +27,8 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "luna21"
   ]
 }

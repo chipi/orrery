@@ -67,52 +67,32 @@ describe('computeTier — overrides', () => {
       featured: [{ launch_id: 'x', reason: 'featured' }],
       demoted: [],
     };
-    const r = computeTier(
-      base({ mission_type: 'Human Spaceflight' }),
-      curation,
-      noFirstFlight,
-    );
+    const r = computeTier(base({ mission_type: 'Human Spaceflight' }), curation, noFirstFlight);
     expect(r.tier_reason).toBe('featured-override');
   });
 });
 
 describe('computeTier — heuristic', () => {
   it('crewed mission → T1 / crewed', () => {
-    const r = computeTier(
-      base({ mission_name: 'Crew-12' }),
-      emptyCuration,
-      noFirstFlight,
-    );
+    const r = computeTier(base({ mission_name: 'Crew-12' }), emptyCuration, noFirstFlight);
     expect(r.tier).toBe('T1');
     expect(r.tier_reason).toBe('crewed');
   });
 
   it('lunar orbit → T1 / lunar', () => {
-    const r = computeTier(
-      base({ orbit_abbrev: 'LO' }),
-      emptyCuration,
-      noFirstFlight,
-    );
+    const r = computeTier(base({ orbit_abbrev: 'LO' }), emptyCuration, noFirstFlight);
     expect(r.tier).toBe('T1');
     expect(r.tier_reason).toBe('lunar');
   });
 
   it('GTO → T1 / interplanetary (bucket)', () => {
-    const r = computeTier(
-      base({ orbit_abbrev: 'GTO' }),
-      emptyCuration,
-      noFirstFlight,
-    );
+    const r = computeTier(base({ orbit_abbrev: 'GTO' }), emptyCuration, noFirstFlight);
     expect(r.tier).toBe('T1');
     expect(r.tier_reason).toBe('interplanetary');
   });
 
   it('Mars destination → T1 / mars', () => {
-    const r = computeTier(
-      base({ orbit_abbrev: 'MARS' }),
-      emptyCuration,
-      noFirstFlight,
-    );
+    const r = computeTier(base({ orbit_abbrev: 'MARS' }), emptyCuration, noFirstFlight);
     expect(r.tier_reason).toBe('mars');
   });
 
@@ -139,9 +119,7 @@ describe('computeTier — heuristic', () => {
   it('first-flight-vehicle when entry net matches the earliest for its family AND count >= 2', () => {
     const e = base({ rocket_family: 'Starship', orbit_abbrev: 'LEO' });
     const ctx = {
-      firstFlightByConfig: new Map([
-        ['Starship', { earliestNet: e.net, count: 2 }],
-      ]),
+      firstFlightByConfig: new Map([['Starship', { earliestNet: e.net, count: 2 }]]),
     };
     const r = computeTier(e, emptyCuration, ctx);
     expect(r.tier).toBe('T1');
@@ -151,9 +129,7 @@ describe('computeTier — heuristic', () => {
   it('does NOT tag first-flight when only one entry exists for the family (false-positive guard)', () => {
     const e = base({ rocket_family: 'Rare Rocket', orbit_abbrev: 'LEO' });
     const ctx = {
-      firstFlightByConfig: new Map([
-        ['Rare Rocket', { earliestNet: e.net, count: 1 }],
-      ]),
+      firstFlightByConfig: new Map([['Rare Rocket', { earliestNet: e.net, count: 1 }]]),
     };
     const r = computeTier(e, emptyCuration, ctx);
     expect(r.tier).toBe('T3');

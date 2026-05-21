@@ -91,9 +91,7 @@ export default defineConfig({
             // users always get the freshest schedule when online, with a
             // 3-second fallback to the cached copy when offline.
             urlPattern: ({ url }) =>
-              /\/data\/launches\.json$|\/data\/launches-historic\/.+\.json$/.test(
-                url.pathname,
-              ),
+              /\/data\/launches\.json$|\/data\/launches-historic\/.+\.json$/.test(url.pathname),
             handler: 'NetworkFirst',
             options: {
               cacheName: 'orrery-launches-manifests',

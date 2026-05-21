@@ -40,9 +40,7 @@ export function parseSpaceXHtml(html: string): ParsedArticle[] {
     const block = m[1];
     const title = block.match(/<h2[^>]*class="launch__title"[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.trim();
     const isoDate = block.match(/<time[^>]*datetime="([^"]+)"/)?.[1];
-    const vehicle = block
-      .match(/<p[^>]*class="launch__vehicle"[^>]*>([\s\S]*?)<\/p>/)?.[1]
-      ?.trim();
+    const vehicle = block.match(/<p[^>]*class="launch__vehicle"[^>]*>([\s\S]*?)<\/p>/)?.[1]?.trim();
     const pad = block.match(/<p[^>]*class="launch__pad"[^>]*>([\s\S]*?)<\/p>/)?.[1]?.trim();
     if (title && isoDate && vehicle) {
       out.push({ title, isoDate, vehicle, pad: pad ?? '' });

@@ -77,7 +77,7 @@ function buildZhurong(): THREE.Group {
   return g;
 }
 
-export function buildTianwenZhurongHotspot(accentColor: string): THREE.Group {
+export function buildTianwenZhurongHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
 
   // Tianwen-1 lander — boxy body on 4 legs (similar form factor to
@@ -108,19 +108,5 @@ export function buildTianwenZhurongHotspot(accentColor: string): THREE.Group {
   zhurong.position.set(0.7, 0, 0);
   g.add(zhurong);
 
-  // Agency accent ring around the lander.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.28, 0.01, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = 0.22;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

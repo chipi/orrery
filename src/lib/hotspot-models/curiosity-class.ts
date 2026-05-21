@@ -145,19 +145,5 @@ export function buildCuriosityClassHotspot(
     g.add(ingenuity);
   }
 
-  // Agency accent ring.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.4, 0.01, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = wheelR + 0.1;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

@@ -147,9 +147,9 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     const outer = MISSIONS.filter((m) =>
       ['jupiter', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
     );
-    if (mars.length !== 16 || moon.length !== 17 || outer.length !== 4) {
+    if (mars.length !== 17 || moon.length !== 21 || outer.length !== 4) {
       throw new Error(
-        `Expected 16 Mars + 17 Moon + 4 outer; got ${mars.length} + ${moon.length} + ${outer.length}`,
+        `Expected 17 Mars + 21 Moon + 4 outer; got ${mars.length} + ${moon.length} + ${outer.length}`,
       );
     }
   });

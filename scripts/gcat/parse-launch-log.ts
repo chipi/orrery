@@ -8,7 +8,12 @@
  *
  * GCAT is released CC-BY by J.C. McDowell. PRD-020 / RFC-023 §12.1.
  */
-import type { LaunchNetPrecision, LaunchStatus, LaunchStatusCode, RawLaunchEntry } from '../../src/lib/launches/types.js';
+import type {
+  LaunchNetPrecision,
+  LaunchStatus,
+  LaunchStatusCode,
+  RawLaunchEntry,
+} from '../../src/lib/launches/types.js';
 import { buildStableId, slugify } from '../../src/lib/launches/id.js';
 
 /**
@@ -112,9 +117,7 @@ export function parseGcatLaunchDate(
     const [, y, mon, d, h, mm, ss] = m;
     const month = MONTH_MAP[mon];
     if (month === undefined) return null;
-    const dt = new Date(
-      Date.UTC(Number(y), month, Number(d), Number(h), Number(mm), Number(ss)),
-    );
+    const dt = new Date(Date.UTC(Number(y), month, Number(d), Number(h), Number(mm), Number(ss)));
     return { iso: dt.toISOString(), precision: 'second' };
   }
   // YYYY Mmm DD HHMM  (minute precision)

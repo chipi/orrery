@@ -17,6 +17,7 @@
   import {
     createHotspotEntry,
     getHotspotModelBuilder,
+    getHotspotMode,
     registerHotspotModelBuilder,
     setHotspotMode,
     updateHotspotLOD,
@@ -96,6 +97,155 @@
   let autoSpin = $state(true);
   let resetMarsCamera: () => void = () => {};
 
+  // Surface Hotspots dev-debug overlay (enable with ?debug=1) —
+  // surfaces current LOD state without round-tripping through
+  // DevTools. Removed once Tier 2 ships clean.
+  let debugInfo = $state<{
+    sidecarStatus: string;
+    siteCount: number;
+    hotspotCount: number;
+    maxTierAcrossSites: number;
+    currentTopTier: number;
+    targetTopTier: number;
+    pageMode: string;
+    dispatcherMode: string;
+    camR: number;
+    projectedPxSample: string;
+    tier2Status: string;
+    patchDetail: string;
+  }>({
+    sidecarStatus: 'pending',
+    siteCount: 0,
+    hotspotCount: 0,
+    maxTierAcrossSites: 0,
+    currentTopTier: 0,
+    targetTopTier: 0,
+    pageMode: 'auto',
+    dispatcherMode: 'auto',
+    camR: 0,
+    projectedPxSample: '',
+    tier2Status: '',
+    patchDetail: '',
+  });
+  let showDebug = $state(false);
+  // Current camera altitude above Mars surface, in km — surfaced in
+  // the corner overlay so the user has a sense of "how zoomed am I"
+  // (Google Maps shows it as a scale bar; we show altitude in km).
+  let altitudeKm = $state(0);
+
+  /**
+   * Contextual info card state (PRD-014 §v0.7.x + RFC-017 §OQ-12).
+   * When the camera is in the Tier 2 zoom band on a hotspot, the
+   * card surfaces (a) site context — name, agency, brief mission
+   * tagline — and (b) the dominant imagery layer's source +
+   * attribution + resolution. Honest disclosure of where each
+   * pixel came from, in-context with the imagery itself.
+   */
+  type TierLayer = {
+    layerLabel: string; // 'Regional view' | 'Detail view'
+    sourceTitle: string;
+    sourceAuthor: string;
+    resolutionText: string;
+    sourceUrl?: string;
+    licenseShort: string;
+  };
+  type TierContext = {
+    siteId: string;
+    siteName: string;
+    nation: string;
+    nationColor: string;
+    missionContext: string;
+    /**
+     * One entry per active layer at this zoom. With the two-layer
+     * Tier 2 composition (CTX regional + HiRISE detail) both can be
+     * on-screen simultaneously, so the card stacks an attribution
+     * block per layer. Ordered regional → detail (top → bottom).
+     */
+    layers: TierLayer[];
+    uncertaintyM?: number;
+  };
+  let tierContext = $state<TierContext | null>(null);
+
+  /**
+   * Nation chip label + colour for the info card's site header.
+   * Maps the site's agency / nation to a one-word label + the
+   * NATION_COLORS palette used elsewhere on /mars. Used by the
+   * info card and (transitively) by the photo gallery in #PE.
+   */
+  function nationChipFor(site: MarsSite): { label: string; color: string } {
+    const nation = site.nation ?? '';
+    const agency = site.agency ?? '';
+    if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
+    if (nation === 'USSR' || agency === 'ROSCOSMOS')
+      return { label: 'USSR · Roscosmos', color: '#ef4444' };
+    if (nation === 'China' || agency === 'CNSA') return { label: 'China · CNSA', color: '#dc2626' };
+    if (nation === 'India' || agency === 'ISRO') return { label: 'India · ISRO', color: '#f97316' };
+    if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
+    if (nation === 'Israel' || agency === 'SpaceIL')
+      return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
+    if (nation === 'Europe' || agency === 'ESA') return { label: 'Europe · ESA', color: '#1d4ed8' };
+    if (nation === 'UK' || agency === 'ESA-UK') return { label: 'UK · ESA', color: '#1d4ed8' };
+    return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
+  }
+
+  /**
+   * Compact mission-context tagline: "Mars Science Laboratory rover ·
+   * landed 2012-08-06" — feeds the info card's second line. Pulls
+   * mission_type + landing_date from the site's MarsSite record.
+   */
+  function missionContextFor(site: MarsSite): string {
+    const bits: string[] = [];
+    if (site.mission_type) bits.push(site.mission_type);
+    if (site.landing_date) bits.push(`landed ${site.landing_date}`);
+    return bits.join(' · ') || '';
+  }
+
+  /**
+   * Great-circle distance on the Mars sphere (R = 3389 km). Inputs in
+   * decimal degrees, output in km. Used to convert a rover traverse
+   * polyline into a "traversed N km" number for the info card.
+   */
+  function greatCircleKmMars(a: [number, number], b: [number, number]): number {
+    const R = 3389;
+    const lat1 = (a[0] * Math.PI) / 180;
+    const lat2 = (b[0] * Math.PI) / 180;
+    const dlat = lat2 - lat1;
+    const dlon = ((b[1] - a[1]) * Math.PI) / 180;
+    const h = Math.sin(dlat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlon / 2) ** 2;
+    return 2 * R * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+  }
+
+  /** Sum of great-circle segments along a polyline. */
+  function traversePathKm(points: Array<[number, number]>): number {
+    let total = 0;
+    for (let i = 1; i < points.length; i++) total += greatCircleKmMars(points[i - 1], points[i]);
+    return total;
+  }
+
+  /** Whole-day count between two ISO dates (or ISO + Date). */
+  function daysBetween(startIso: string, endIso: string): number {
+    const start = new Date(startIso).getTime();
+    const end = new Date(endIso).getTime();
+    if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) return 0;
+    return Math.floor((end - start) / (1000 * 60 * 60 * 24));
+  }
+
+  /**
+   * Linear taper from full editorial scale at the overview to a
+   * smaller "fits on the surface patch" scale at the closest zoom.
+   * camR ≥ 60 → 1.0 (overview)
+   * camR ≤ 30.6 → 0.2 (closest zoom — rover sits readably on the HiRISE patch)
+   * Linear between. Per-frame; cheap.
+   */
+  function computeTierScale(camR: number): number {
+    const minR = 30.6;
+    const maxR = 60;
+    const minScale = 0.2;
+    if (camR >= maxR) return 1;
+    if (camR <= minR) return minScale;
+    return minScale + (1 - minScale) * ((camR - minR) / (maxR - minR));
+  }
+
   // Surface Hotspots mode — see /moon for the full pattern.
   let hotspotsMode: HotspotMode = $state('auto');
   let panoramaActive = $state(false);
@@ -120,6 +270,16 @@
   }
   onMount(() => {
     hotspotsMode = resolveInitialHotspotsMode($page.url);
+    showDebug = $page.url.searchParams.get('debug') === '1';
+    // Sidecar fetch probe — fills the overlay's sidecarStatus.
+    fetch('/data/surface-hotspots.json')
+      .then((r) => r.json())
+      .then((d) => {
+        debugInfo.sidecarStatus = `ok ${Object.keys(d.entries || {}).length} entries · curiosity tier ${d.entries?.curiosity?.hotspot_tier_max ?? '?'}`;
+      })
+      .catch((e) => {
+        debugInfo.sidecarStatus = `FAIL ${(e as Error).message}`;
+      });
   });
   $effect(() => {
     setHotspotMode(hotspotsMode);
@@ -136,10 +296,6 @@
       void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
     }
   });
-  let hoverLabelText = $state('');
-  let hoverLabelVisible = $state(false);
-  let hoverLabelLeft = $state(0);
-  let hoverLabelTop = $state(0);
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});
 
@@ -248,7 +404,11 @@
     const camera = new THREE.PerspectiveCamera(
       45,
       container.clientWidth / container.clientHeight,
-      0.5,
+      // Near plane lowered from 0.5 → 0.05 so the camera can fly
+      // close (camR≈30.15, ~0.15u above surface) to inspect Tier 2
+      // HiRISE patches without the near-hemisphere getting clipped
+      // and the user seeing through the planet to the far side.
+      0.05,
       400,
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
@@ -320,16 +480,38 @@
     );
     marsAxis.add(marsMesh);
 
-    // Issue #227 — face-the-site deep-link rotation. Rotates marsMesh
-    // (NOT marsAxis — keeping the 25.19° obliquity intact) so the
-    // selected site's longitude lands on the camera-facing +Z
-    // hemisphere. Latitude isn't adjusted; the obliquity already
-    // gives most non-polar sites adequate visibility once the
-    // longitude is right.
+    // Issue #227 — face-the-site deep-link. Orbits the camera through
+    // the planet centre to align the screen-centre ray with the site's
+    // world position (factors in both the 25.19° axial tilt and any
+    // current marsMesh.rotation.y), then pulls the camera in to a
+    // near-orbit distance so the user lands "on" the site instead of
+    // looking at it from afar. Replaces the previous mesh-rotation
+    // approach which only handled longitude and left high-latitude
+    // sites off-screen-centre vertically.
     faceMarsAtSite = (site: MarsSite) => {
       if (site.lat == null || site.lon == null) return;
-      const { x, z } = latLonToUnitSphere(site.lat, site.lon);
-      marsMesh.rotation.y = -Math.atan2(x, z);
+      const v = latLonToUnitSphere(site.lat, site.lon);
+      marsMesh.updateMatrixWorld(true);
+      const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(marsMesh.matrixWorld);
+      const dir = worldPos.clone().normalize();
+      // Set up the fly-in tween — RAF interpolates camP/camT/camR
+      // over FLY_DURATION_MS with ease-out cubic. The camera lands at
+      // a Tier-1-friendly distance (50u) so the lander model resolves;
+      // user can scroll-zoom further to reach Tier 2.
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      // Shortest-path interpolation around the longitude circle:
+      // adjust target so |to - from| ≤ π and lerp goes through the
+      // shorter arc instead of the long way around.
+      let to = Math.atan2(dir.z, dir.x);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      flyToR = 50;
+      flyStart = performance.now();
+      flyActive = true;
       autoSpin = false;
     };
 
@@ -374,6 +556,13 @@
       group: THREE.Group;
       siteId: string;
       halo?: THREE.Mesh;
+      labelGroup?: THREE.Group;
+      /** Reference to the Tier-0 silhouette sub-group, so the
+       *  hover OutlinePass can target the lander mesh-tree directly
+       *  instead of the wrapper group (the wrapper includes the
+       *  label sprite + invisible hit sphere, which makes the
+       *  outline read as nothing on surface markers). */
+      tier0Group?: THREE.Group;
     };
 
     // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S4).
@@ -428,9 +617,17 @@
     const orbitalMarkers: OrbitalMarker[] = [];
     type TraverseLine = {
       line: THREE.Line;
+      startDot: THREE.Mesh;
       endDot: THREE.Mesh;
       roverId: string;
       isActive: boolean;
+      /** In-scene caption groups next to the start (landing date)
+       *  and end (km · days) dots — same visibility gate as the dots
+       *  themselves. Disposed alongside dots in rebuildTraverses. */
+      startLabel?: THREE.Group;
+      endLabel?: THREE.Group;
+      startLabelTexture?: THREE.Texture;
+      endLabelTexture?: THREE.Texture;
     };
     const traverseLines: TraverseLine[] = [];
 
@@ -533,14 +730,35 @@
           if (builder) {
             const accent = color;
             const tier2Source = site.hotspot_tier2_source;
+            const tier2RegionalSource = site.hotspot_tier2_regional_source;
             const annotations = site.hotspot_annotations;
             const tier2Builder =
               maxTier >= 2 && tier2Source
                 ? () => {
+                    // Prefer the layout-specific variant URL from
+                    // image-vision.json when present. If the sidecar
+                    // hasn't been generated yet (operator hasn't run
+                    // images:score on hotspots), fall back to the
+                    // base 2048² JPEG at the sidecar's
+                    // hotspot_tier2_source path — soft-fail keeps
+                    // Tier 2 visible during development.
                     const entry = getImageEntry(tier2Source);
-                    const textureUrl = entry ? pickVariant(entry, 'thumbnail', false) : undefined;
+                    const textureUrl =
+                      (entry ? pickVariant(entry, 'thumbnail', false) : undefined) ?? tier2Source;
+                    // Same resolution chain for the regional CTX
+                    // layer if the operator has fetched it. Sites
+                    // without a regional layer pass undefined and
+                    // the patch builder skips the regional disc.
+                    let regionalTextureUrl: string | undefined;
+                    if (tier2RegionalSource) {
+                      const rEntry = getImageEntry(tier2RegionalSource);
+                      regionalTextureUrl =
+                        (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
+                        tier2RegionalSource;
+                    }
                     return buildHotspotSurfacePatch({
                       textureUrl,
+                      regionalTextureUrl,
                       accentColor: accent,
                       siteId: site.id,
                       annotations,
@@ -561,7 +779,13 @@
         }
 
         marsMesh.add(group);
-        surfaceMarkers.push({ group, siteId: site.id, halo });
+        surfaceMarkers.push({
+          group,
+          siteId: site.id,
+          halo,
+          labelGroup: label.group,
+          tier0Group,
+        });
       }
     }
 
@@ -664,12 +888,83 @@
       }
     }
 
+    /**
+     * Mini caption sprite for the traverse start/end dots. Same idea
+     * as buildLabel but: wider canvas (text doesn't crop), smaller
+     * font, no leader line, and a translucent dark backplate so the
+     * coloured text stays readable against the HiRISE / CTX patch
+     * underneath. Returns a Group so the caller can position +
+     * orient it like any Object3D.
+     */
+    function buildTraverseCaption(
+      text: string,
+      color: string,
+      worldSize: number,
+    ): { group: THREE.Group; texture: THREE.Texture } {
+      const canvas = document.createElement('canvas');
+      // 512×96 is enough for "LANDED 2012-08-06" + "10.2 KM · DAY 5,037"
+      // at the bold 22 px font below, with side padding.
+      canvas.width = 512;
+      canvas.height = 96;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        // Backplate — rounded translucent black, gives any colour text
+        // enough contrast against bright HiRISE swatches.
+        ctx.fillStyle = 'rgba(8, 10, 22, 0.72)';
+        const radius = 12;
+        const w = canvas.width;
+        const h = canvas.height;
+        const inset = 6;
+        ctx.beginPath();
+        ctx.moveTo(inset + radius, inset);
+        ctx.arcTo(w - inset, inset, w - inset, inset + radius, radius);
+        ctx.arcTo(w - inset, h - inset, w - inset - radius, h - inset, radius);
+        ctx.arcTo(inset, h - inset, inset, h - inset - radius, radius);
+        ctx.arcTo(inset, inset, inset + radius, inset, radius);
+        ctx.closePath();
+        ctx.fill();
+
+        // Text — bold mono so digits + letters line up cleanly.
+        ctx.font = "bold 38px 'Space Mono', monospace";
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+        ctx.shadowBlur = 4;
+        ctx.fillStyle = color;
+        ctx.fillText(text.toUpperCase(), canvas.width / 2, canvas.height / 2);
+      }
+      const texture = new THREE.Texture(canvas);
+      texture.needsUpdate = true;
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false });
+      const sprite = new THREE.Sprite(mat);
+      // Aspect 512:96 ≈ 5.33:1; preserve that in world units so the
+      // backplate isn't squashed.
+      sprite.scale.set(worldSize, worldSize * (96 / 512), 1);
+      const group = new THREE.Group();
+      group.add(sprite);
+      return { group, texture };
+    }
+
     function rebuildTraverses() {
       for (const tl of traverseLines) {
         disposeMesh(tl.line);
         marsMesh.remove(tl.line);
         disposeMesh(tl.endDot);
         marsMesh.remove(tl.endDot);
+        disposeMesh(tl.startDot);
+        marsMesh.remove(tl.startDot);
+        if (tl.startLabel) {
+          disposeMesh(tl.startLabel);
+          marsMesh.remove(tl.startLabel);
+        }
+        if (tl.endLabel) {
+          disposeMesh(tl.endLabel);
+          marsMesh.remove(tl.endLabel);
+        }
+        tl.startLabelTexture?.dispose();
+        tl.endLabelTexture?.dispose();
       }
       traverseLines.length = 0;
       for (const tr of Object.values(traverses)) {
@@ -701,16 +996,103 @@
         );
         line.userData = { roverId: tr.rover_id, kind: 'traverse' };
         marsMesh.add(line);
-        // End-of-track dot — pulses for active rovers (animation loop).
+        // (No separate start dot — the green patch-centre pin in
+        // buildHotspotSurfacePatch sits at the same lat/lon as the
+        // traverse origin and serves as the "start / landing site"
+        // marker. We still keep a `startDot` object so the
+        // TraverseLine bookkeeping stays consistent, but it's an
+        // invisible zero-radius placeholder.)
+        const TRAVERSE_END_ACTIVE_COLOR = 0xef4444; // red — current rover
+        const TRAVERSE_END_FINISHED_COLOR = 0xf59e0b; // amber — last point reached
+        const first = tr.points[0];
+        const firstPos = latLonToUnitSphere(first[0], first[1]);
+        const startDot = new THREE.Mesh(
+          new THREE.BufferGeometry(),
+          new THREE.MeshBasicMaterial({ visible: false }),
+        );
+        startDot.visible = false;
+        startDot.position.set(firstPos.x * r, firstPos.y * r, firstPos.z * r);
+        marsMesh.add(startDot);
+        // End-of-track dot — current position for ACTIVE rovers (red),
+        // last point reached for ENDED missions (amber). Solid sphere
+        // so it reads as a discrete marker at distance, sized the same
+        // as the start ring so the two visually pair as path endpoints.
         const last = tr.points[tr.points.length - 1];
         const lastPos = latLonToUnitSphere(last[0], last[1]);
         const dot = new THREE.Mesh(
-          new THREE.SphereGeometry(0.45, 12, 12),
-          new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 1 }),
+          new THREE.SphereGeometry(0.022, 12, 12),
+          new THREE.MeshBasicMaterial({
+            color: isActive ? TRAVERSE_END_ACTIVE_COLOR : TRAVERSE_END_FINISHED_COLOR,
+            transparent: true,
+            opacity: 0.95,
+            depthWrite: false,
+          }),
         );
         dot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
         marsMesh.add(dot);
-        traverseLines.push({ line, endDot: dot, roverId: tr.rover_id, isActive });
+
+        // In-scene captions next to each dot. Same green/red/amber
+        // colour as the dot they describe — the dot supplies the
+        // visual cue, the caption supplies the data (landing date /
+        // km · days). Sprites billboard to the camera, so the 3D
+        // position determines where they land in screen space.
+        //
+        // Position each caption ALONG the path tangent, AWAY from the
+        // other endpoint, so labels sit beyond the dots rather than
+        // covering them or the connecting line:
+        //
+        //   [start label] ← 🟢 ───────── 🔴 → [end label]
+        //
+        // TANGENT_OFFSET is in world units (≈ 1 u = 113 km on Mars
+        // at this scale). The dots are 0.022 u radius, so 0.025 u
+        // is just past the dot edge — close enough that each caption
+        // reads as labelling THIS dot, without sitting on top of the
+        // dot itself or the path line between the two.
+        const startPosWorld = new THREE.Vector3(firstPos.x * r, firstPos.y * r, firstPos.z * r);
+        const endPosWorld = new THREE.Vector3(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        const tangent = new THREE.Vector3().subVectors(endPosWorld, startPosWorld).normalize();
+        const TANGENT_OFFSET = 0.025;
+        const RADIAL_OFFSET = 0.03;
+
+        function placeCaption(at: THREE.Vector3, awayFromOther: THREE.Vector3): THREE.Vector3 {
+          // Slide AWAY from the other endpoint along the path tangent,
+          // then re-project to a small radial bump above the surface so
+          // the caption clears the patch / dot in z.
+          const out = at.clone().addScaledVector(awayFromOther, TANGENT_OFFSET);
+          return out.normalize().multiplyScalar(r + RADIAL_OFFSET);
+        }
+
+        const startLabelText = site?.landing_date ? `LANDED ${site.landing_date}` : 'LANDING SITE';
+        const startBuilt = buildTraverseCaption(startLabelText, '#22c55e', 0.32);
+        startBuilt.group.position.copy(
+          placeCaption(startPosWorld, tangent.clone().negate()), // away from end
+        );
+        marsMesh.add(startBuilt.group);
+
+        const pathKm = traversePathKm(tr.points);
+        const endIso = isActive ? new Date().toISOString() : tr.snapshot_date;
+        const days = site?.landing_date ? daysBetween(site.landing_date, endIso) : 0;
+        const kmText = pathKm >= 100 ? pathKm.toFixed(0) : pathKm.toFixed(1);
+        const endLabelText = isActive
+          ? `${kmText} KM · DAY ${days.toLocaleString()}`
+          : `${kmText} KM · ${days.toLocaleString()} D`;
+        const endBuilt = buildTraverseCaption(endLabelText, isActive ? '#ef4444' : '#f59e0b', 0.34);
+        endBuilt.group.position.copy(
+          placeCaption(endPosWorld, tangent), // away from start
+        );
+        marsMesh.add(endBuilt.group);
+
+        traverseLines.push({
+          line,
+          startDot,
+          endDot: dot,
+          roverId: tr.rover_id,
+          isActive,
+          startLabel: startBuilt.group,
+          endLabel: endBuilt.group,
+          startLabelTexture: startBuilt.texture,
+          endLabelTexture: endBuilt.texture,
+        });
       }
     }
 
@@ -726,6 +1108,9 @@
       for (const tl of traverseLines) {
         tl.line.visible = layerTraverses;
         tl.endDot.visible = layerTraverses;
+        tl.startDot.visible = layerTraverses;
+        if (tl.startLabel) tl.startLabel.visible = layerTraverses;
+        if (tl.endLabel) tl.endLabel.visible = layerTraverses;
       }
     }
 
@@ -773,6 +1158,9 @@
       for (const tl of traverseLines) {
         tl.line.visible = trav;
         tl.endDot.visible = trav;
+        tl.startDot.visible = trav;
+        if (tl.startLabel) tl.startLabel.visible = trav;
+        if (tl.endLabel) tl.endLabel.visible = trav;
       }
     });
 
@@ -785,6 +1173,27 @@
     const camR0 = camR;
     const camP0 = camP;
     const camT0 = camT;
+    // Smooth zoom: wheel pixels update camRTarget; RAF lerps camR
+    // toward it each frame so fast scrolls settle gracefully instead
+    // of stepping.
+    let camRTarget = camR;
+    // Drag inertia: track angular velocity (radians per ms) and apply
+    // an exponential decay after the user releases the mouse so the
+    // planet keeps rotating briefly. Industry-standard "feels alive".
+    let camTVelocity = 0;
+    let camPVelocity = 0;
+    // Animated faceMarsAtSite fly-in. Set when a deep-link or
+    // selection triggers the camera to move to a specific site;
+    // RAF interpolates camP/camT/camR with ease-out over flyDuration.
+    let flyActive = false;
+    let flyStart = 0;
+    const FLY_DURATION_MS = 800;
+    let flyFromP = 0,
+      flyFromT = 0,
+      flyFromR = 0;
+    let flyToP = 0,
+      flyToT = 0,
+      flyToR = 0;
     function applyCamera() {
       camera.position.x = camR * Math.sin(camP) * Math.cos(camT);
       camera.position.y = camR * Math.cos(camP);
@@ -794,8 +1203,12 @@
     applyCamera();
     resetMarsCamera = () => {
       camR = camR0;
+      camRTarget = camR0;
       camP = camP0;
       camT = camT0;
+      camTVelocity = 0;
+      camPVelocity = 0;
+      flyActive = false;
       applyCamera();
     };
 
@@ -810,6 +1223,8 @@
       marsMesh.visible = false;
       savedCamR = camR;
       camR = 0.5;
+      camRTarget = camR;
+      flyActive = false;
       applyCamera();
       panoramaActive = true;
     };
@@ -822,6 +1237,7 @@
       setTimeout(() => handle?.dispose(), 1300);
       marsMesh.visible = true;
       camR = savedCamR;
+      camRTarget = savedCamR;
       applyCamera();
     };
     const onPanoramaKey = (e: KeyboardEvent) => {
@@ -845,10 +1261,24 @@
       const dx = e.clientX - dragStartX;
       const dy = e.clientY - dragStartY;
       if (Math.abs(dx) + Math.abs(dy) > 4) dragMoved = true;
-      camT -= dx * 0.005;
-      camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP - dy * 0.005));
+      // Drag sensitivity scales with how close the camera is to the
+      // surface. Floor at 0.0005 so even at the closest zoom drag
+      // still moves the view (was clamping to 0 at camR=30, made
+      // close-zoom controls feel dead).
+      const dragK = Math.max(0.0005, 0.005 * Math.min(1, (camR - 30) / 60));
+      const dT = -dx * dragK;
+      const dP = -dy * dragK;
+      camT += dT;
+      camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
+      // Track velocity for the inertia decay after release. Per-event
+      // delta is close to per-frame at 60Hz, good enough for feel.
+      camTVelocity = dT;
+      camPVelocity = dP;
       dragStartX = e.clientX;
       dragStartY = e.clientY;
+      // Any user drag cancels an in-flight fly-in animation so the
+      // operator stays in control.
+      flyActive = false;
       applyCamera();
     }
     function onMouseUp(e: MouseEvent) {
@@ -858,8 +1288,18 @@
     }
     function onWheel(e: WheelEvent) {
       e.preventDefault();
-      camR = Math.max(45, Math.min(180, camR + e.deltaY * 0.05));
-      applyCamera();
+      // Wheel updates the SMOOTH target — RAF lerps camR toward it.
+      // Multiplicative scaling keeps the feel consistent across the
+      // overview-to-close zoom range. Lower bound 30.05 (camera
+      // ≈ 0.05u from surface) lets the HiRISE detail patch (now
+      // 1.0u diameter, 0.5u radius) cover the full viewport at max
+      // zoom, where its 2048² texture renders close to 1:1 with
+      // screen pixels and the 25 cm/px detail is fully legible.
+      // Earlier floors (30.5, 30.15) kept the patch too small on
+      // screen, forcing aggressive downsampling that made HiRISE
+      // look indistinguishable from the CTX layer beneath it.
+      const factor = 1 + e.deltaY * 0.0008;
+      camRTarget = Math.max(30.05, Math.min(180, camRTarget * factor));
     }
 
     // Touch
@@ -894,7 +1334,8 @@
         const dx = e.touches[0].clientX - e.touches[1].clientX;
         const dy = e.touches[0].clientY - e.touches[1].clientY;
         const d = Math.hypot(dx, dy);
-        camR = Math.max(45, Math.min(180, camR * (pinchDist / d)));
+        camR = Math.max(30.05, Math.min(180, camR * (pinchDist / d)));
+        camRTarget = camR;
         pinchDist = d;
         applyCamera();
         e.preventDefault();
@@ -934,13 +1375,36 @@
     }
 
     let hoveredSiteId: string | null = null;
-    let hoveredClientX = 0;
-    let hoveredClientY = 0;
+    // Texture pre-fetch on hover: when the user hovers a lander, kick
+    // off a background load of its Tier 2 HiRISE patch. By the time
+    // they zoom in past the threshold the texture is already in the
+    // browser cache so the patch renders instantly instead of going
+    // through the "blank → load → appear" beat.
+    const preloadedHotspotIds = new Set<string>();
+    function preloadHotspotTexture(siteId: string) {
+      if (preloadedHotspotIds.has(siteId)) return;
+      const site = sites.find((s) => s.id === siteId);
+      if (!site?.hotspot_tier2_source) return;
+      preloadedHotspotIds.add(siteId);
+      const loader = new THREE.TextureLoader();
+      // Detail (HiRISE) layer.
+      const dEntry = getImageEntry(site.hotspot_tier2_source);
+      const dUrl =
+        (dEntry ? pickVariant(dEntry, 'thumbnail', false) : undefined) ?? site.hotspot_tier2_source;
+      if (dUrl) loader.load(dUrl);
+      // Regional (CTX) layer — preload if the site has it.
+      if (site.hotspot_tier2_regional_source) {
+        const rEntry = getImageEntry(site.hotspot_tier2_regional_source);
+        const rUrl =
+          (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
+          site.hotspot_tier2_regional_source;
+        if (rUrl) loader.load(rUrl);
+      }
+    }
     function handleHover(e: MouseEvent) {
       if (dragging) return;
-      hoveredClientX = e.clientX;
-      hoveredClientY = e.clientY;
       const id = pickSiteAt(e.clientX, e.clientY);
+      if (id && id !== hoveredSiteId) preloadHotspotTexture(id);
       hoveredSiteId = id;
     }
     renderer.domElement.addEventListener('mousemove', handleHover);
@@ -968,19 +1432,160 @@
       const now = performance.now();
       const dt = (now - lastT) / 1000;
       lastT = now;
+      // ── Camera smoothing pipeline ────────────────────────────────
+      // (a) Fly-in tween (deep-link or selectSite{face:true}). When
+      //     active, drives camP/camT/camR directly with ease-out
+      //     cubic over FLY_DURATION_MS. Cancelled by user drag.
+      let cameraChanged = false;
+      if (flyActive) {
+        const t = (now - flyStart) / FLY_DURATION_MS;
+        if (t >= 1) {
+          camP = flyToP;
+          camT = flyToT;
+          camR = flyToR;
+          camRTarget = flyToR;
+          flyActive = false;
+        } else {
+          // Ease-out cubic: 1 - (1-t)^3 — fast start, gentle landing.
+          const e = 1 - Math.pow(1 - t, 3);
+          camP = flyFromP + (flyToP - flyFromP) * e;
+          camT = flyFromT + (flyToT - flyFromT) * e;
+          camR = flyFromR + (flyToR - flyFromR) * e;
+          camRTarget = camR;
+        }
+        cameraChanged = true;
+      } else {
+        // (b) Smooth zoom: lerp camR toward camRTarget at 15%/frame
+        //     (~250 ms half-life at 60 Hz). Stops when within 0.001u.
+        if (Math.abs(camR - camRTarget) > 0.001) {
+          camR += (camRTarget - camR) * 0.15;
+          cameraChanged = true;
+        }
+        // (c) Drag inertia: after release, decay angular velocity
+        //     ~92%/frame (~200 ms to half) and apply to camT/camP
+        //     until below threshold. Skips while user is actively
+        //     dragging (velocity is being set fresh each move event).
+        if (!dragging && (Math.abs(camTVelocity) > 0.0001 || Math.abs(camPVelocity) > 0.0001)) {
+          camT += camTVelocity;
+          camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + camPVelocity));
+          camTVelocity *= 0.92;
+          camPVelocity *= 0.92;
+          cameraChanged = true;
+        } else if (dragging) {
+          // While dragging, velocity is recomputed per move event;
+          // the value sitting here represents the last frame's drag.
+          // Clear it so release doesn't double-fire the inertia.
+          // (The move-handler will reset on next move.)
+          camTVelocity *= 0.5;
+          camPVelocity *= 0.5;
+        }
+      }
+      if (cameraChanged) applyCamera();
+      // Altitude indicator + contextual info card derivation — both
+      // throttled to ~10 Hz to avoid Svelte 5 reactivity churn per
+      // frame.
+      if (Math.floor(now / 100) !== Math.floor((now - dt * 1000) / 100)) {
+        altitudeKm = Math.max(0, (camR - 30) * (3389 / 30));
+        // Info card: find the hotspot most likely being looked at
+        // (highest currentTier; if tie, smallest camera→site
+        // distance). Only show when a hotspot reaches Tier 2+ —
+        // otherwise the existing label + Panel are sufficient.
+        let bestH: HotspotEntry | null = null;
+        let bestDist = Infinity;
+        for (const h of hotspots) {
+          if (h.currentTier < 2) continue;
+          const wp = new THREE.Vector3();
+          h.group.getWorldPosition(wp);
+          const d = camera.position.distanceTo(wp);
+          if (d < bestDist) {
+            bestDist = d;
+            bestH = h;
+          }
+        }
+        if (bestH) {
+          const site = sites.find((s) => s.id === bestH.siteId);
+          if (site) {
+            // Show every layer that's actually on-screen — when both
+            // CTX and HiRISE are loaded for a site, both get an
+            // attribution row in the card, regardless of which one
+            // "dominates" the frame. The user can see both layers
+            // rendered, so both deserve credit.
+            const hasRegional = !!site.hotspot_tier2_regional_source;
+            const hasDetail = !!site.hotspot_tier2_source;
+            const agencyChip = nationChipFor(site);
+            const layers: TierLayer[] = [];
+            if (hasRegional) {
+              layers.push({
+                layerLabel: 'Regional view',
+                sourceTitle: 'Murray Lab Global CTX Mosaic V01',
+                sourceAuthor:
+                  'Caltech Murray Lab (Dickson et al. 2024) · CTX from NASA / JPL / MSSS',
+                resolutionText: '5 m/px',
+                sourceUrl: 'https://murray-lab.caltech.edu/CTX/',
+                licenseShort: 'CC-BY-Murray-Lab',
+              });
+            }
+            if (hasDetail) {
+              layers.push({
+                layerLabel: 'Detail view',
+                sourceTitle: `HiRISE ${site.hotspot_tier2_force_product_id ?? ''}`.trim(),
+                sourceAuthor: 'NASA / JPL-Caltech / University of Arizona',
+                resolutionText: '25 cm/px',
+                sourceUrl: site.hotspot_tier2_force_product_id
+                  ? `https://www.uahirise.org/${site.hotspot_tier2_force_product_id}`
+                  : undefined,
+                licenseShort: 'PD-NASA',
+              });
+            }
+            tierContext = {
+              siteId: site.id,
+              siteName: site.name ?? site.id,
+              nation: agencyChip.label,
+              nationColor: agencyChip.color,
+              missionContext: missionContextFor(site),
+              layers,
+              uncertaintyM: site.location_uncertainty_m,
+            };
+          }
+        } else if (tierContext !== null) {
+          tierContext = null;
+        }
+      }
       // Mars rotation gated on autoSpin so the user can pause/resume
       // from the HUD. Reduced-motion users always pause.
       if (!reduced && autoSpin) marsMesh.rotation.y += dt * 0.05;
-      // Traverse end-dot pulse — only for active rovers, only when
-      // visible. Uses sine-wave scale (0.85 → 1.25) at ~1 Hz.
+      // Traverse end-dot pulse + zoom-gated visibility. The dot marks
+      // the rover's CURRENT position on its traverse polyline; with
+      // marsRadius=30u and Curiosity's traverse spanning ~10 km
+      // (≈0.09u), the polyline only reads as a path at close zoom.
+      // Above that (overview), the polyline is a near-pixel squiggle
+      // and the end-dot just plops a blob on top of the lander marker
+      // for no information gain. So gate both end+start dots on
+      // zoomScale < 0.45 (≈ camR < 40), where the polyline curves are
+      // legible. Pulse uses sine-wave scale (0.85 → 1.25) at ~1 Hz,
+      // multiplied by the zoom factor so the dot stays proportional to
+      // the lander model rather than dominating it.
       const pulse = 1.05 + 0.2 * Math.sin(now * 0.006);
+      const dotZoomScale = computeTierScale(camR);
+      const traverseDotsVisible = layerTraverses && dotZoomScale < 0.45;
       for (const tl of traverseLines) {
+        tl.endDot.visible = traverseDotsVisible;
+        tl.startDot.visible = traverseDotsVisible;
+        if (tl.startLabel) tl.startLabel.visible = traverseDotsVisible;
+        if (tl.endLabel) tl.endLabel.visible = traverseDotsVisible;
         if (!tl.endDot.visible) continue;
+        const base = dotZoomScale;
         if (tl.isActive && !reduced) {
-          tl.endDot.scale.setScalar(pulse);
+          tl.endDot.scale.setScalar(base * pulse);
         } else {
-          tl.endDot.scale.setScalar(1);
+          tl.endDot.scale.setScalar(base);
         }
+        // Start dot (landing site) — same zoom taper, no pulse.
+        if (tl.startDot.visible) tl.startDot.scale.setScalar(base);
+        // Labels follow the same zoom taper so they shrink alongside
+        // the dots they describe.
+        if (tl.startLabel) tl.startLabel.scale.setScalar(base);
+        if (tl.endLabel) tl.endLabel.scale.setScalar(base);
       }
       // Orbital dot motion — perception-scaled; one ring per ~30s.
       for (const om of orbitalMarkers) {
@@ -1007,34 +1612,49 @@
       const selectedId = selected?.id;
       if (hoveredSiteId && hoveredSiteId !== selectedId) {
         const sm = surfaceMarkers.find((s) => s.siteId === hoveredSiteId);
-        if (sm) outlineMeshes.push(sm.group);
+        // Target the Tier-0 silhouette rather than the wrapper group:
+        // OutlinePass traverses children, so passing the wrapper would
+        // outline the label sprite + halo + invisible hit sphere too,
+        // which reads as a blurry rectangle / nothing on screen. The
+        // tier0 sub-group is just the lander mesh-tree.
+        if (sm?.tier0Group) outlineMeshes.push(sm.tier0Group);
         const om = orbitalMarkers.find((o) => o.dotGroup.userData.siteId === hoveredSiteId);
         if (om) outlineMeshes.push(om.dotGroup);
       }
       outlinePass.selectedObjects = outlineMeshes;
 
-      // Scale-pulse on selected marker group.
-      const pulseScale = 1 + Math.sin(now * 0.0026) * 0.06;
+      // Scale-pulse on selected marker group. Strength tapers with
+      // camera zoom: full ±6 % at overview (find-the-site cue) and
+      // hard-zero by camR ≈ 50 (zoomScale ≤ 0.5) — once the user has
+      // zoomed in, they know where the lander is and the pulse just
+      // jiggles the surface patch + halo unhelpfully.
+      const zoomScalePulse = computeTierScale(camR);
+      const pulseStrength = Math.max(0, (zoomScalePulse - 0.5) / 0.5);
+      const pulseScale = 1 + Math.sin(now * 0.0026) * 0.06 * pulseStrength;
+      // Selection halo opacity: full at overview (find-the-site cue),
+      // fully hidden BEFORE the Tier-2 patch + green pin appear so the
+      // two cues don't overlap. Tier-2 promotion kicks in around camR
+      // ≈ 38 (zoomScale ≈ 0.4); we end the fade at zoomScale = 0.5
+      // (camR ≈ 42), one full step earlier, leaving a clean handoff.
+      // Full opacity at zoomScale ≥ 0.8 (camR ≥ ~53), linear between.
+      const haloFade = Math.max(0, Math.min(1, (zoomScalePulse - 0.5) / 0.3));
       for (const sm of surfaceMarkers) {
         sm.group.scale.setScalar(sm.siteId === selectedId ? pulseScale : 1);
+        // Selection halo: shrink with zoom AND fade out as the user
+        // commits to the site. Geometry still scales (radius 1.4u
+        // would dome over the view at close zoom) but the opacity
+        // taper means the halo is gone before its shrunk size would
+        // overlap with the patch elements anyway.
+        if (sm.halo) {
+          sm.halo.scale.setScalar(zoomScalePulse);
+          const mat = sm.halo.material as THREE.Material & { opacity?: number };
+          if ('opacity' in mat) mat.opacity = 0.9 * haloFade;
+          sm.halo.visible = haloFade > 0.02 && sm.siteId === selectedId;
+        }
       }
       for (const om of orbitalMarkers) {
         const id = om.dotGroup.userData.siteId as string | undefined;
         om.dotGroup.scale.setScalar(id === selectedId ? pulseScale : 1);
-      }
-
-      // Hover label HTML overlay (suppressed under @media (hover:none)).
-      if (hoveredSiteId) {
-        const site = sites.find((s) => s.id === hoveredSiteId);
-        if (site && container) {
-          const rect = container.getBoundingClientRect();
-          hoverLabelText = site.name ?? site.id;
-          hoverLabelLeft = hoveredClientX - rect.left;
-          hoverLabelTop = hoveredClientY - rect.top;
-          hoverLabelVisible = true;
-        }
-      } else if (hoverLabelVisible) {
-        hoverLabelVisible = false;
       }
 
       // Surface Hotspots LOD (PRD-014 / RFC-017 S4).
@@ -1047,6 +1667,104 @@
         const attr = target.getAttribute('data-hotspot-tier');
         const next = String(topTier);
         if (attr !== next) target.setAttribute('data-hotspot-tier', next);
+        // Zoom-aware tier scaling. The hand-authored tier-0 markers
+        // and tier-1 lander models are sized for overview-level reading.
+        // As the camera zooms in (camR shrinks toward marsRadius=30),
+        // those models become disproportionately huge against the
+        // HiRISE patch underneath. Shrink them toward 0.2× at the
+        // closest zoom (camR≈30.6) so the rover sits readably on the
+        // patch rather than dominating it. Tier 2 patches stay at
+        // world scale — they're sized in surface metres and shouldn't
+        // shrink with camera.
+        const zoomScale = computeTierScale(camR);
+        for (const h of hotspots) {
+          if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
+          if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
+        }
+        // Site labels: shrink with zoomScale AND hide entirely once the
+        // camera is close enough to read the HiRISE patch (zoomScale ≤
+        // 0.3 ≈ camR ≤ 38). At that range labels cover more of the
+        // patch than they're worth.
+        for (const sm of surfaceMarkers) {
+          if (sm.labelGroup) {
+            sm.labelGroup.scale.setScalar(zoomScale);
+            sm.labelGroup.visible = zoomScale > 0.3;
+          }
+        }
+      }
+      if (showDebug) {
+        let maxAcross = 0;
+        for (const h of hotspots) if (h.maxTier > maxAcross) maxAcross = h.maxTier;
+        let curTop = 0;
+        for (const h of hotspots) if (h.currentTier > curTop) curTop = h.currentTier;
+        let tgtTop = 0;
+        for (const h of hotspots) if (h.targetTier > tgtTop) tgtTop = h.targetTier;
+        debugInfo.siteCount = sites.length;
+        debugInfo.hotspotCount = hotspots.length;
+        debugInfo.maxTierAcrossSites = maxAcross;
+        debugInfo.currentTopTier = curTop;
+        debugInfo.targetTopTier = tgtTop;
+        debugInfo.pageMode = hotspotsMode;
+        debugInfo.dispatcherMode = getHotspotMode();
+        debugInfo.camR = camR;
+        // Sample the projected px radius for the first hotspot — sanity
+        // check that the auto-mode math is reaching tier thresholds.
+        if (hotspots.length > 0) {
+          const h = hotspots[0];
+          const wp = new THREE.Vector3();
+          h.group.getWorldPosition(wp);
+          const canvasH = renderer.domElement.clientHeight || 1;
+          const distance = camera.position.distanceTo(wp);
+          const halfH = distance * Math.tan((camera.fov * Math.PI) / 360);
+          const pxPerUnit = canvasH / (2 * halfH);
+          debugInfo.projectedPxSample = `${h.siteId} dist=${distance.toFixed(1)}u px/u=${pxPerUnit.toFixed(0)}`;
+        }
+        // Survey: how many hotspots have a built tier2Group + how many are visible?
+        let t2built = 0,
+          t2visible = 0;
+        for (const h of hotspots) {
+          if (h.tier2Group) {
+            t2built++;
+            if (h.tier2Group.visible) t2visible++;
+          }
+        }
+        debugInfo.tier2Status = `${t2built} built / ${t2visible} visible`;
+        // Drill into the first hotspot's tier2Group: child count, first
+        // mesh visibility, material opacity, world position.
+        const h0 = hotspots[0];
+        if (h0?.tier2Group) {
+          const tg = h0.tier2Group;
+          // Single-element array sidesteps TS's flow analysis narrowing
+          // callback-mutated closure scalars to `never` after the
+          // initial null.
+          const fmRef: Array<THREE.Mesh> = [];
+          tg.traverse((o) => {
+            if (fmRef.length === 0 && o instanceof THREE.Mesh) fmRef.push(o);
+          });
+          const firstMesh: THREE.Mesh | null = fmRef[0] ?? null;
+          // Mesh world position, not group's — the patch mesh sits at
+          // group + (Z_FIGHT_OFFSET in outward direction), so this
+          // reflects what actually gets rendered.
+          const wp = new THREE.Vector3();
+          if (firstMesh) firstMesh.getWorldPosition(wp);
+          else tg.getWorldPosition(wp);
+          let reachable = false;
+          // Walk parent chain to see if any ancestor is hidden.
+          let cur: THREE.Object3D | null = tg as THREE.Object3D;
+          let hidden = false;
+          while (cur) {
+            if (!cur.visible) {
+              hidden = true;
+              break;
+            }
+            cur = cur.parent;
+          }
+          reachable = !hidden;
+          const m = firstMesh
+            ? (firstMesh.material as THREE.Material & { opacity?: number })
+            : null;
+          debugInfo.patchDetail = `tg.children=${tg.children.length} tg.visible=${tg.visible} reachable=${reachable} meshVis=${firstMesh?.visible ?? '?'} matOp=${m?.opacity ?? '?'} worldR=${wp.length().toFixed(2)}`;
+        }
       }
 
       // 2D draw on each frame so rotation + dots stay live.
@@ -1448,14 +2166,76 @@
     </div>
   {/if}
 
-  <div
-    class="hover-label"
-    class:hidden={!hoverLabelVisible || view !== '3d'}
-    style="left: {hoverLabelLeft}px; top: {hoverLabelTop}px"
-    aria-hidden="true"
-  >
-    {hoverLabelText}
-  </div>
+  {#if view === '3d'}
+    <div class="altitude-indicator" aria-hidden="true">
+      {altitudeKm >= 1000
+        ? `${(altitudeKm / 1000).toFixed(1)} Mm`
+        : altitudeKm >= 1
+          ? `${altitudeKm.toFixed(0)} km`
+          : `${(altitudeKm * 1000).toFixed(0)} m`} altitude
+    </div>
+  {/if}
+  {#if view === '3d' && tierContext && !panoramaActive}
+    <div class="tier-context-card" aria-live="polite">
+      <div class="tcc-head">
+        <span class="tcc-site">{tierContext.siteName}</span>
+        <span class="tcc-chip" style="color: {tierContext.nationColor};">{tierContext.nation}</span>
+      </div>
+      {#if tierContext.missionContext}
+        <div class="tcc-mission">{tierContext.missionContext}</div>
+      {/if}
+      {#each tierContext.layers as layer, i (layer.layerLabel)}
+        <div class="tcc-layer-block" class:tcc-layer-block-next={i > 0}>
+          <div class="tcc-layer">{layer.layerLabel} · {layer.resolutionText}</div>
+          <div class="tcc-source">{layer.sourceTitle}</div>
+          <div class="tcc-author">{layer.sourceAuthor}</div>
+          <div class="tcc-footer">
+            <span class="tcc-license">{layer.licenseShort}</span>
+            {#if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
+              <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
+            {/if}
+            {#if layer.sourceUrl}
+              <a
+                class="tcc-link"
+                href={layer.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer external"
+                title="Open the source page in a new tab">source ↗</a
+              >
+            {/if}
+          </div>
+        </div>
+      {/each}
+    </div>
+  {/if}
+  {#if showDebug}
+    {@const debugText = `hotspots debug
+sidecar     ${debugInfo.sidecarStatus}
+sites       ${debugInfo.siteCount}
+hotspots    ${debugInfo.hotspotCount}
+maxTier     ${debugInfo.maxTierAcrossSites}  (sidecar joined to sites)
+targetTier  ${debugInfo.targetTopTier}  (dispatcher's intended top tier)
+curTier     ${debugInfo.currentTopTier}  (dispatcher's settled top tier)
+pageMode    ${debugInfo.pageMode}
+dispMode    ${debugInfo.dispatcherMode}  (currentMode in dispatcher module)
+tier2       ${debugInfo.tier2Status}
+patch[0]    ${debugInfo.patchDetail}
+camR        ${debugInfo.camR.toFixed(1)}
+sample      ${debugInfo.projectedPxSample}`}
+    <div
+      style="position:fixed;top:80px;left:12px;z-index:9999;background:rgba(0,0,0,0.85);color:#0f0;font:11px/1.4 ui-monospace,SFMono-Regular,monospace;padding:8px 10px;border:1px solid #0f0;border-radius:4px;user-select:text;-webkit-user-select:text;"
+    >
+      <pre
+        style="margin:0;color:inherit;font:inherit;white-space:pre;user-select:text;">{debugText}</pre>
+      <button
+        type="button"
+        style="margin-top:6px;background:#0f0;color:#000;border:0;padding:2px 8px;font:inherit;cursor:pointer;border-radius:2px;"
+        onclick={() => {
+          void navigator.clipboard?.writeText(debugText);
+        }}>copy</button
+      >
+    </div>
+  {/if}
 </div>
 
 <Panel
@@ -1867,29 +2647,118 @@
     }
   }
 
-  .hover-label {
+  .altitude-indicator {
     position: absolute;
+    right: 12px;
+    bottom: 56px;
     z-index: 5;
     pointer-events: none;
-    transform: translate(-50%, calc(-100% - 16px));
-    padding: 4px 8px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    padding: 4px 10px;
+    background: rgba(8, 10, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 4px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 1px;
-    color: #4ecdc4;
-    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     backdrop-filter: blur(4px);
   }
-  .hover-label.hidden {
-    display: none;
+  .tier-context-card {
+    position: absolute;
+    left: 12px;
+    bottom: 56px;
+    z-index: 6;
+    max-width: 360px;
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    animation: tcc-fade-in 600ms ease-out;
   }
-  @media (hover: none) {
-    .hover-label {
-      display: none;
+  .tcc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .tcc-site {
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  .tcc-chip {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tcc-mission {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  /* .tcc-layer-block is just a container — first block flush, later
+     blocks get a divider via .tcc-layer-block-next so the CTX and
+     HiRISE attribution rows read as separate stacked credits. */
+  .tcc-layer-block-next {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .tcc-layer {
+    color: #4ecdc4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  .tcc-source {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+  }
+  .tcc-author {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .tcc-footer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .tcc-license {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    padding: 1px 6px;
+    letter-spacing: 0.5px;
+  }
+  .tcc-uncertainty {
+    color: rgba(255, 200, 100, 0.7);
+  }
+  .tcc-link {
+    margin-left: auto;
+    color: rgba(78, 205, 196, 0.85);
+    text-decoration: none;
+  }
+  .tcc-link:hover {
+    text-decoration: underline;
+  }
+  @keyframes tcc-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
   .legend-3d {

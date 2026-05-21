@@ -25,9 +25,7 @@ test.describe('Launches calendar citation visibility (CC-BY ship-gate)', () => {
     await expect(gcatLink).toHaveAttribute('hreflang', 'en');
   });
 
-  test('/credits page surfaces GCAT McDowell entry under launch data sources', async ({
-    page,
-  }) => {
+  test('/credits page surfaces GCAT McDowell entry under launch data sources', async ({ page }) => {
     await page.goto('/credits');
     await page.waitForLoadState('networkidle');
     // The credits page auto-includes any source-logos entry that has

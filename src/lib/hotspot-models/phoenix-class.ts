@@ -34,7 +34,7 @@ function aluMat(): THREE.MeshStandardMaterial {
   return new THREE.MeshStandardMaterial({ color: ALU, metalness: 0.75, roughness: 0.4 });
 }
 
-export function buildPhoenixClassHotspot(accentColor: string): THREE.Group {
+export function buildPhoenixClassHotspot(_accentColor: string): THREE.Group {
   const g = new THREE.Group();
 
   // Hex body — the "deck" carrying instruments.
@@ -98,19 +98,5 @@ export function buildPhoenixClassHotspot(accentColor: string): THREE.Group {
   dish.rotation.x = Math.PI / 3;
   g.add(dish);
 
-  // Agency accent ring around the hex body.
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(0.22, 0.01, 6, 24),
-    new THREE.MeshStandardMaterial({
-      color: accentColor,
-      metalness: 0.4,
-      roughness: 0.4,
-      emissive: accentColor,
-      emissiveIntensity: 0.3,
-    }),
-  );
-  ring.position.y = 0.28;
-  ring.rotation.x = Math.PI / 2;
-  g.add(ring);
   return g;
 }

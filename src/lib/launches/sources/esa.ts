@@ -15,8 +15,7 @@ import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from '
 import type { RawLaunchEntry } from '../types.js';
 import { buildStableId } from '../id.js';
 
-const ESA_URL =
-  'https://www.esa.int/rssfeed/Our_Activities/Space_Transportation';
+const ESA_URL = 'https://www.esa.int/rssfeed/Our_Activities/Space_Transportation';
 const CACHE_PATH = '.launches-cache/esa/space-transportation.xml';
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
 /**

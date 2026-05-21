@@ -57,7 +57,14 @@ function mapLL2NetPrecision(raw: { name?: string } | undefined): LaunchNetPrecis
 }
 
 function mapLL2Agency(
-  lsp: { id?: number; name?: string; type?: { name?: string }; country?: Array<{ alpha_2_code?: string }> } | undefined,
+  lsp:
+    | {
+        id?: number;
+        name?: string;
+        type?: { name?: string };
+        country?: Array<{ alpha_2_code?: string }>;
+      }
+    | undefined,
 ): {
   agency_id: string;
   agency_name: string;
@@ -127,9 +134,9 @@ export function ll2RawToRawEntry(
   if (!isoMatch) return null;
   const iso = new Date(raw.net).toISOString();
 
-  const lvFull = raw.rocket?.configuration?.full_name ?? raw.rocket?.configuration?.name ?? 'Unknown vehicle';
-  const lvFamily =
-    raw.rocket?.configuration?.family ?? raw.rocket?.configuration?.name ?? lvFull;
+  const lvFull =
+    raw.rocket?.configuration?.full_name ?? raw.rocket?.configuration?.name ?? 'Unknown vehicle';
+  const lvFamily = raw.rocket?.configuration?.family ?? raw.rocket?.configuration?.name ?? lvFull;
   const missionName = raw.mission?.name ?? raw.name ?? 'Unknown mission';
 
   const agency = mapLL2Agency(raw.launch_service_provider);
@@ -166,7 +173,9 @@ export function ll2RawToRawEntry(
   };
 }
 
-async function fetchLL2Page(endpoint: string): Promise<{ results: LL2LaunchRaw[]; next: string | null }> {
+async function fetchLL2Page(
+  endpoint: string,
+): Promise<{ results: LL2LaunchRaw[]; next: string | null }> {
   const res = await fetch(endpoint);
   if (res.status === 429) {
     const wait = Number(res.headers.get('retry-after') ?? '60') * 1000;
@@ -224,7 +233,9 @@ export class LL2Source implements LaunchSource {
   readonly defaultRole = 'fallback-primary';
 
   constructor(
-    private readonly downloader: (input: LaunchSourceWindow) => Promise<LL2LaunchRaw[]> = fetchLL2WithCache,
+    private readonly downloader: (
+      input: LaunchSourceWindow,
+    ) => Promise<LL2LaunchRaw[]> = fetchLL2WithCache,
   ) {}
 
   async fetchWindow(input: LaunchSourceWindow): Promise<RawLaunchEntry[]> {

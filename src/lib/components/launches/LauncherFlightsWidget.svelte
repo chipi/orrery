@@ -144,8 +144,12 @@
     font-size: 11px;
   }
 
-  .status-success { color: #4ecdc4; }
-  .status-failure { color: #ff5252; }
+  .status-success {
+    color: #4ecdc4;
+  }
+  .status-failure {
+    color: #ff5252;
+  }
 
   .see-all {
     display: inline-block;

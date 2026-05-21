@@ -1029,14 +1029,12 @@ if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
   };
   const launches = readJson(LAUNCHES_PATH) as { entries: Record<string, unknown> };
   const knownLaunchIds = new Set(Object.keys(launches.entries));
-  let unresolvedOverrides = 0;
   for (const [list, name] of [
     [curation.featured, 'featured'],
     [curation.demoted, 'demoted'],
   ] as const) {
     for (const ov of list) {
       if (!knownLaunchIds.has(ov.launch_id)) {
-        unresolvedOverrides++;
         console.warn(
           `  ⚠ launches-curation.json[${name}]: launch_id '${ov.launch_id}' not in current manifest (override re-applies once launch reappears)`,
         );

@@ -168,7 +168,17 @@ export default defineConfig({
         'src/routes/**/+layout.ts',
         'scripts/migrate-*.ts',
         'scripts/capture-screenshots.ts',
-        'scripts/wave23/',
+        // Hotspot + launches I/O modules: exercised via integration runs
+        // (`npm run images:hotspots`, `npm run fetch:launches`), not
+        // unit-tested per the same policy as `scripts/fetch-assets.ts`.
+        // Their pure-function parsers + entry mappers are covered
+        // separately by *.test.ts files alongside.
+        'scripts/_*.ts',
+        'scripts/hotspots/',
+        'scripts/gcat/',
+        'src/lib/launches/sources/',
+        'scripts/fetch-launches.ts',
+        'scripts/audit-report-launches.ts',
         '*.config.{js,ts}',
         '.svelte-kit/',
       ],

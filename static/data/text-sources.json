@@ -3,7 +3,9 @@
   "entries": [
     {
       "id": "missions.descriptions.baseline",
-      "location": { "file": "static/data/i18n/en-US/missions/" },
+      "location": {
+        "file": "static/data/i18n/en-US/missions/"
+      },
       "category": "mission",
       "relationship": "paraphrased-from",
       "snippet": "Editorial mission descriptions across the library are short syntheses paraphrased from each mission's primary source: NASA / ESA / JAXA / ISRO / CNSA / Roscosmos / MBRSC press kits and the corresponding Wikipedia mission articles. Per-mission entries below capture the dominant primary source per mission.",
@@ -89,7 +91,9 @@
     },
     {
       "id": "planets.descriptions.baseline",
-      "location": { "file": "static/data/planets.json" },
+      "location": {
+        "file": "static/data/planets.json"
+      },
       "category": "planet",
       "relationship": "paraphrased-from",
       "snippet": "Planet overview copy paraphrased from NASA solar-system fact sheets and the corresponding Wikipedia articles. Numerical figures (orbital periods, masses, etc.) come from the IAU and NASA's solar-system fact sheets, which are factual and uncopyrightable.",
@@ -101,7 +105,9 @@
     },
     {
       "id": "sun.descriptions.baseline",
-      "location": { "file": "static/data/i18n/en-US/sun.json" },
+      "location": {
+        "file": "static/data/i18n/en-US/sun.json"
+      },
       "category": "sun",
       "relationship": "paraphrased-from",
       "snippet": "Sun overview copy paraphrased from NASA's Solar Dynamics Observatory and Heliophysics Division materials and the Wikipedia article on the Sun.",
@@ -112,7 +118,9 @@
     },
     {
       "id": "small-bodies.descriptions.baseline",
-      "location": { "file": "static/data/small-bodies.json" },
+      "location": {
+        "file": "static/data/small-bodies.json"
+      },
       "category": "small-body",
       "relationship": "paraphrased-from",
       "snippet": "Dwarf-planet, asteroid, and comet overview copy paraphrased from JPL's Small-Body Database, NASA Solar System Exploration entries, and the corresponding Wikipedia articles.",
@@ -124,7 +132,9 @@
     },
     {
       "id": "moon-sites.descriptions.baseline",
-      "location": { "file": "static/data/moon-sites.json" },
+      "location": {
+        "file": "static/data/moon-sites.json"
+      },
       "category": "moon-site",
       "relationship": "paraphrased-from",
       "snippet": "Lunar landing-site descriptions paraphrased from NASA Apollo mission press kits, the LROC site inventory, and the Wikipedia entries for each site.",
@@ -135,7 +145,9 @@
     },
     {
       "id": "earth-objects.descriptions.baseline",
-      "location": { "file": "static/data/earth-objects.json" },
+      "location": {
+        "file": "static/data/earth-objects.json"
+      },
       "category": "earth-object",
       "relationship": "paraphrased-from",
       "snippet": "Earth-object overview copy (ISS, Hubble, JWST, GPS, BeiDou, Galileo, GLONASS, Tiangong, Chandra, XMM-Newton, Gaia) paraphrased from each spacecraft's operating-agency mission page and the corresponding Wikipedia article.",
@@ -146,7 +158,9 @@
     },
     {
       "id": "iss-modules.descriptions.baseline",
-      "location": { "file": "static/data/iss-modules.json" },
+      "location": {
+        "file": "static/data/iss-modules.json"
+      },
       "category": "iss-module",
       "relationship": "paraphrased-from",
       "snippet": "ISS module descriptions paraphrased from NASA's ISS structural fact sheets, ESA Columbus material, JAXA Kibo material, and the corresponding Wikipedia articles.",
@@ -157,7 +171,9 @@
     },
     {
       "id": "rockets.descriptions.baseline",
-      "location": { "file": "static/data/rockets.json" },
+      "location": {
+        "file": "static/data/rockets.json"
+      },
       "category": "rocket",
       "relationship": "paraphrased-from",
       "snippet": "Launch-vehicle reference copy paraphrased from each manufacturer's published mission planner / data sheet and the corresponding Wikipedia article.",
@@ -169,7 +185,9 @@
     },
     {
       "id": "ui.strings.original",
-      "location": { "file": "messages/" },
+      "location": {
+        "file": "messages/"
+      },
       "category": "ui",
       "relationship": "original",
       "snippet": "All chrome / HUD / panel / nav UI strings are original, written for Orrery. Non-English locales are translated from en-US.",
@@ -187,6 +205,21 @@
       "snippet": "Acknowledgement copy on the /credits page is original to Orrery, written by the project maintainers.",
       "license_short": "Orrery-Original",
       "license_rationale": "Original prose by the Orrery maintainers, MIT-licensed alongside the source code."
+    },
+    {
+      "id": "launches.source.gcat",
+      "location": {
+        "file": "static/data/launches.json"
+      },
+      "category": "launches",
+      "relationship": "quoted-from",
+      "snippet": "Historic launch data (1957–today) is sourced directly from Jonathan McDowell's General Catalog of Artificial Space Objects (GCAT), the canonical register that other public aggregators draw from. Required citation per CC-BY 4.0.",
+      "source_url": "https://planet4589.org/space/gcat/",
+      "source_publisher": "Jonathan C. McDowell",
+      "source_author": "Jonathan C. McDowell",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "GCAT is released under CC BY 4.0; attribution is mandatory. PRD-020 / RFC-023 ship-gate."
     }
   ]
 }

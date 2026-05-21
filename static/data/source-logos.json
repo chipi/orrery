@@ -204,6 +204,20 @@
       "kind": "private-operator",
       "url": "https://www.ulalaunch.com/",
       "license_summary": "Outbound reference links only; no ULA copy or imagery is redistributed in-app."
+    },
+    {
+      "id": "gcat-mcdowell",
+      "name": "Jonathan's Space Report / GCAT",
+      "kind": "research-institute",
+      "url": "https://planet4589.org/space/gcat/",
+      "license_summary": "General Catalog of Artificial Space Objects — Creative Commons CC BY 4.0; citation mandatory."
+    },
+    {
+      "id": "ll2-thespacedevs",
+      "name": "Launch Library 2 — The Space Devs",
+      "kind": "encyclopedic",
+      "url": "https://thespacedevs.com/llapi",
+      "license_summary": "Permissive use with attribution encouraged; used as gap-fill aggregator only."
     }
   ]
 }

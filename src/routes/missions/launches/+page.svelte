@@ -2,11 +2,12 @@
   /**
    * /missions/launches — global launches calendar (PRD-020 / RFC-023).
    *
-   * Hybrid UI: horizontal month strip + vertical chronological timeline.
-   * Two modes: UPCOMING (default) and HISTORIC. URL-encoded filter state.
-   *
-   * S8b: year-grouped month strip, decade picker for HISTORIC (lazy
-   * loads each decade file on demand), tier + agency + outcome filters.
+   * Layout consolidated to mirror /missions and /fleet:
+   * - No H1 / subtitle / explainer in the page body (title in svelte:head).
+   * - Single `.launches` container (max-width 1400 px, matches .library).
+   * - Single `.filters-toggle` button (FILTERS ▸ N/total).
+   * - When expanded: `.filters` nav with .filter-group × N of .pill buttons.
+   * - Timeline below, full-width.
    */
 
   import { onMount, untrack } from 'svelte';
@@ -21,15 +22,11 @@
     ALL_DECADES,
     type Manifest,
   } from '$lib/launches/manifest.js';
-  import MonthStrip from '$lib/components/launches/MonthStrip.svelte';
-  import DecadePicker from '$lib/components/launches/DecadePicker.svelte';
-  import FilterStrip from '$lib/components/launches/FilterStrip.svelte';
-  import AboutStrip from '$lib/components/launches/AboutStrip.svelte';
   import Timeline from '$lib/components/launches/Timeline.svelte';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
-  type OutcomeFilter = 'ALL' | 'SUCCESS' | 'FAILURE' | 'PARTIAL';
+  type OutcomeFilter = 'ALL' | 'SUCCESS' | 'FAILURE';
 
   let mode: Mode = $state('upcoming');
   let manifest: Manifest = $state({
@@ -39,24 +36,11 @@
     entries: {},
   });
   let loading = $state(true);
-  let activeMonth: string | null = $state(null);
   let activeDecade: string = $state(decadeForYear(new Date().getUTCFullYear()));
   let tierFilter: TierFilter = $state('ALL');
   let agencyFilter: string = $state('ALL');
   let outcomeFilter: OutcomeFilter = $state('ALL');
-
-  // Per-decade entry counts populated as the user clicks through. Lets
-  // the DecadePicker show "n entries" hints without forcing eager load
-  // of all 7 files.
-  let decadeCounts: Record<string, number | null> = $state({
-    '1957-1969': null,
-    '1970-1979': null,
-    '1980-1989': null,
-    '1990-1999': null,
-    '2000-2009': null,
-    '2010-2019': null,
-    '2020-2026': null,
-  });
+  let filtersExpanded = $state(false);
 
   let allEntries = $derived(Object.values(manifest.entries));
   let agencies = $derived(
@@ -91,19 +75,14 @@
       const d = decade ?? activeDecade;
       activeDecade = d;
       manifest = await loadHistoricDecade(d);
-      decadeCounts = { ...decadeCounts, [d]: Object.keys(manifest.entries).length };
     }
     loading = false;
-    if (months.length > 0) activeMonth = months[0].key;
   }
 
   function setMode(m: Mode) {
     if (m === mode) return;
     mode = m;
-    activeMonth = null;
-    if (m === 'upcoming') {
-      outcomeFilter = 'ALL'; // outcome doesn't apply to upcoming
-    }
+    if (m === 'upcoming') outcomeFilter = 'ALL';
     pushUrl();
     void loadForMode(m);
   }
@@ -111,7 +90,6 @@
   function setDecade(d: string) {
     if (d === activeDecade) return;
     activeDecade = d;
-    activeMonth = null;
     pushUrl();
     void loadForMode('historic', d);
   }
@@ -148,8 +126,16 @@
     const a = url.searchParams.get('agency');
     agencyFilter = a ?? 'ALL';
     const o = url.searchParams.get('outcome');
-    outcomeFilter =
-      o === 'SUCCESS' || o === 'FAILURE' || o === 'PARTIAL' ? o : 'ALL';
+    outcomeFilter = o === 'SUCCESS' || o === 'FAILURE' ? o : 'ALL';
+    if (
+      url.searchParams.has('mode') ||
+      url.searchParams.has('decade') ||
+      url.searchParams.has('tier') ||
+      url.searchParams.has('agency') ||
+      url.searchParams.has('outcome')
+    ) {
+      filtersExpanded = true;
+    }
   }
 
   function pushUrl() {
@@ -168,12 +154,6 @@
     }
   }
 
-  function jumpToMonth(key: string) {
-    activeMonth = key;
-    const el = document.getElementById(`month-${key}`);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
   onMount(() => {
     applyUrl($page.url);
     void loadForMode(mode);
@@ -186,216 +166,329 @@
       void loadForMode(mode);
     });
   });
-
 </script>
 
 <svelte:head>
-  <title>Launches Calendar — Orrery</title>
+  <title>Launches — Orrery</title>
   <meta
     name="description"
-    content="Global spaceflight launches calendar — upcoming and historic. Sourced agency-first from NASA, SpaceX, ESA, Jonathan McDowell's GCAT, and Launch Library 2."
+    content="Global spaceflight launches — upcoming and historic. Agency-first sourcing with provenance per row."
   />
 </svelte:head>
 
-<main
-  class="launches-page"
+<div
+  class="launches"
   data-route-ready={!loading}
   data-loading={loading ? 'true' : null}
   data-mode={mode}
 >
-  <header class="page-header">
-    <div class="col-meta">
-      <h1 class="page-title">Launches Calendar</h1>
-      <p class="page-subtitle">
-        Upcoming and historic global spaceflight launches. Agency-first sourcing with
-        provenance per row.
-      </p>
-      <AboutStrip gcatRelease={manifest.gcat_release} />
-    </div>
-    <div class="col-controls">
-      <nav class="mode-tabs" aria-label="Launches view mode">
+  <button
+    type="button"
+    class="filters-toggle"
+    aria-expanded={filtersExpanded}
+    aria-controls="launches-filters"
+    onclick={() => (filtersExpanded = !filtersExpanded)}
+  >
+    <span class="filters-eyebrow">FILTERS</span>
+    <span class="filters-right">
+      {#if filtered.length !== allEntries.length}
+        <span class="filters-count count-fraction">{filtered.length} / {allEntries.length}</span>
+      {:else}
+        <span class="filters-count count-total-only">{allEntries.length}</span>
+      {/if}
+      <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
+    </span>
+  </button>
+
+  {#if filtersExpanded}
+    <nav id="launches-filters" class="filters" aria-label="Launches filters">
+      <div class="filter-group" role="radiogroup" aria-label="View">
+        <span class="filter-label">VIEW</span>
         <button
           type="button"
-          class="tab"
+          class="pill"
           class:active={mode === 'upcoming'}
-          onclick={() => setMode('upcoming')}
+          role="radio"
+          aria-checked={mode === 'upcoming'}
+          onclick={() => setMode('upcoming')}>UPCOMING</button
         >
-          Upcoming
-        </button>
         <button
           type="button"
-          class="tab"
+          class="pill"
           class:active={mode === 'historic'}
-          onclick={() => setMode('historic')}
+          role="radio"
+          aria-checked={mode === 'historic'}
+          onclick={() => setMode('historic')}>HISTORIC</button
         >
-          Historic
-        </button>
-      </nav>
-      <FilterStrip
-        {mode}
-        tier={tierFilter}
-        agency={agencyFilter}
-        outcome={outcomeFilter}
-        {agencies}
-        onTierChange={setTier}
-        onAgencyChange={setAgency}
-        onOutcomeChange={setOutcome}
-        onClear={clearFilters}
-        matchCount={filtered.length}
-        totalCount={allEntries.length}
-      />
+      </div>
+
+      <div class="filter-group" role="radiogroup" aria-label="Tier">
+        <span class="filter-label">TIER</span>
+        <button
+          type="button"
+          class="pill"
+          class:active={tierFilter === 'ALL'}
+          role="radio"
+          aria-checked={tierFilter === 'ALL'}
+          onclick={() => setTier('ALL')}>ALL</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={tierFilter === 'FEATURED'}
+          role="radio"
+          aria-checked={tierFilter === 'FEATURED'}
+          onclick={() => setTier('FEATURED')}
+          title="Crewed, beyond-LEO, or first flights of new vehicles. Operator-tunable."
+          >FEATURED</button
+        >
+      </div>
+
       {#if mode === 'historic'}
-        <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
+        <div class="filter-group" role="radiogroup" aria-label="Decade">
+          <span class="filter-label">DECADE</span>
+          {#each ALL_DECADES as d (d)}
+            <button
+              type="button"
+              class="pill"
+              class:active={d === activeDecade}
+              role="radio"
+              aria-checked={d === activeDecade}
+              onclick={() => setDecade(d)}>{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</button
+            >
+          {/each}
+        </div>
+
+        <div class="filter-group" role="radiogroup" aria-label="Outcome">
+          <span class="filter-label">OUTCOME</span>
+          <button
+            type="button"
+            class="pill"
+            class:active={outcomeFilter === 'ALL'}
+            role="radio"
+            aria-checked={outcomeFilter === 'ALL'}
+            onclick={() => setOutcome('ALL')}>ALL</button
+          >
+          <button
+            type="button"
+            class="pill"
+            class:active={outcomeFilter === 'SUCCESS'}
+            role="radio"
+            aria-checked={outcomeFilter === 'SUCCESS'}
+            onclick={() => setOutcome('SUCCESS')}>SUCCESS</button
+          >
+          <button
+            type="button"
+            class="pill"
+            class:active={outcomeFilter === 'FAILURE'}
+            role="radio"
+            aria-checked={outcomeFilter === 'FAILURE'}
+            onclick={() => setOutcome('FAILURE')}>FAILURE</button
+          >
+        </div>
       {/if}
-      {#if !loading}
-        <MonthStrip {months} activeKey={activeMonth} onSelect={jumpToMonth} />
+
+      <div class="filter-group">
+        <span class="filter-label">AGENCY</span>
+        <select
+          class="select"
+          value={agencyFilter}
+          onchange={(e) => setAgency((e.target as HTMLSelectElement).value)}
+        >
+          <option value="ALL">All</option>
+          {#each agencies as a (a)}
+            <option value={a}>{a}</option>
+          {/each}
+        </select>
+      </div>
+
+      {#if tierFilter !== 'ALL' || agencyFilter !== 'ALL' || outcomeFilter !== 'ALL'}
+        <button type="button" class="clear-btn" onclick={clearFilters}>CLEAR ✕</button>
       {/if}
-    </div>
-  </header>
+    </nav>
+  {/if}
 
   {#if loading}
     <p class="loading">Loading launches…</p>
+  {:else if months.length === 0}
+    <p class="empty">No launches match these filters.</p>
   {:else}
     <Timeline {months} {mode} />
   {/if}
 
-  <footer class="citations">
+  <footer class="footer-note">
     <p>
       Sources: NASA · SpaceX · ESA ·
-      <a
-        href="https://planet4589.org/space/gcat/"
-        rel="noopener noreferrer external"
-        hreflang="en">GCAT</a
+      <a href="https://planet4589.org/space/gcat/" rel="noopener noreferrer external" hreflang="en"
+        >McDowell's GCAT (CC&nbsp;BY&nbsp;4.0)</a
       >
       ·
       <a href="https://thespacedevs.com/llapi" rel="noopener noreferrer external" hreflang="en"
-        >LL2</a
-      >. Full provenance per row.
+        >Launch Library 2</a
+      >. Per-row provenance on every entry.
     </p>
   </footer>
-</main>
+</div>
 
 <style>
-  .launches-page {
-    min-height: 100vh;
-    padding-top: 52px;
-    background: #04040c;
-    color: #e6e8ee;
+  /* Container mirrors .library on /missions and .fleet on /fleet. */
+  .launches {
+    padding: 18px 22px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
   }
 
-  /* Two-column header. Tight column gap so the controls column has
-     maximum width for the month chip row on a typical 14" laptop. */
-  .page-header {
-    padding: 18px 12px 0;
+  /* ── Filters toggle strip + count, copied verbatim from /missions
+       for visual consistency. ─────────────────────────────────────── */
+  .filters-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition: border-color 120ms, color 120ms;
+  }
+  .filters-toggle:hover,
+  .filters-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.92);
+    outline: none;
+  }
+  .filters-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .filters-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .filters-count {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .count-fraction {
+    color: #4ecdc4;
+  }
+  .count-total-only {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .filters-chevron {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  /* ── Filter groups + pills, same shape as /missions. ─────────── */
+  .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px 12px;
-    align-items: flex-start;
+    gap: 18px;
+    padding: 8px 0 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 14px;
+    align-items: center;
   }
-
-  @media (min-width: 768px) {
-    .page-header {
-      padding: 24px 24px 0;
-    }
-  }
-
-  /* Both columns stop growing once they reach their preferred basis.
-     Extra horizontal space stays as empty gutter on the right rather
-     than stretching the controls ugly-wide. */
-  .col-meta {
-    flex: 0 1 360px;
-    min-width: 0;
-  }
-
-  .col-controls {
-    flex: 0 1 580px;
-    max-width: 580px;
-    min-width: 0;
+  .filter-group {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-
-  .page-title {
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    letter-spacing: 1px;
-    color: #fff;
-  }
-
-  .page-subtitle {
-    margin: 4px 0 16px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(230, 232, 238, 0.7);
-    max-width: 60ch;
-  }
-
-  .mode-tabs {
-    display: flex;
-    gap: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 0 -12px;
-    padding: 0 12px;
-  }
-
-  @media (min-width: 768px) {
-    .mode-tabs {
-      margin: 0 -24px;
-      padding: 0 24px;
-    }
-  }
-
-  .tab {
-    padding: 12px 16px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: rgba(230, 232, 238, 0.6);
+  .filter-label {
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    min-height: 44px;
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-right: 4px;
   }
-
-  .tab:hover {
+  .pill {
+    min-height: 32px;
+    padding: 6px 12px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pill:hover:not(.active) {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .pill.active {
+    background: rgba(68, 102, 255, 0.25);
+    border-color: rgba(68, 102, 255, 0.5);
     color: #fff;
   }
-
-  .tab.active {
-    color: #4466ff;
-    border-bottom-color: #4466ff;
+  .pill:focus-visible {
+    outline: 2px solid #4466ff;
+    outline-offset: 2px;
   }
 
-  .loading {
-    padding: 32px 16px;
+  .select {
+    min-height: 32px;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    background: rgba(4, 4, 12, 0.8);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .clear-btn {
+    margin-left: auto;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid rgba(255, 82, 82, 0.4);
+    border-radius: 3px;
+    color: #ff5252;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .clear-btn:hover {
+    background: rgba(255, 82, 82, 0.12);
+  }
+
+  .loading,
+  .empty {
+    padding: 40px 16px;
     color: rgba(230, 232, 238, 0.5);
     font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
     text-align: center;
   }
 
-  .citations {
-    padding: 24px 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  .footer-note {
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(230, 232, 238, 0.6);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: rgba(230, 232, 238, 0.45);
     line-height: 1.6;
   }
-
-  .citations a {
+  .footer-note a {
     color: #4ecdc4;
     text-decoration: underline;
     text-underline-offset: 2px;
-  }
-
-  @media (min-width: 768px) {
-    .citations {
-      padding: 28px 24px;
-    }
   }
 </style>

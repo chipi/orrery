@@ -62,6 +62,17 @@ export interface PadInput {
   palette?: Partial<MarsColourPalette>;
   /** JPEG quality. */
   jpegQuality?: number;
+  /** Replace near-black pixels in the source with palette colour
+   *  (sky above horizon row, regolith below). NASA cylindrical
+   *  panoramas pad missing data (rover-deck cutouts, edge bars where
+   *  the camera didn't sweep) with black; pasting those into our
+   *  output preserves the holes verbatim. Recolouring them blends
+   *  the cutouts into the surrounding palette so the user sees a
+   *  continuous landscape instead of black wedges at mid-image.
+   *  Threshold defaults to 30 (sum of R+G+B) — picks up #000-#0a0a0a
+   *  but spares deep-shadow imagery (Curiosity sol-3070 shadows are
+   *  ~#3a2a20). */
+  recolourBlackThreshold?: number;
 }
 
 /**
@@ -172,13 +183,58 @@ export async function padToEquirectangular(input: PadInput): Promise<Buffer> {
     }
   }
 
-  // 4. Copy the source image into its row band.
+  // 4. Copy the source image into its row band, optionally recolouring
+  //    near-black pixels to blend rover-deck cutouts / edge-bars into
+  //    the surrounding sky / regolith.
   const srcBuf = resizedSource.data;
+  const recolourThreshold = input.recolourBlackThreshold ?? 0;
   for (let row = 0; row < srcOutHeight; row++) {
     const outRow = topRow + row;
-    const srcRowStart = row * srcOutWidth * 3;
-    const outRowStart = outRow * outWidth * 3;
-    srcBuf.copy(canvas, outRowStart, srcRowStart, srcRowStart + srcOutWidth * 3);
+    if (recolourThreshold > 0) {
+      // Per-row palette: above horizon → sky gradient at that row's
+      // position (interpolated zenith→horizon); below horizon → flat
+      // regolith. halfH separates the two regimes.
+      const isAboveHorizon = outRow < halfH;
+      let fillR: number;
+      let fillG: number;
+      let fillB: number;
+      if (isAboveHorizon) {
+        const t = topRow > 0 ? outRow / topRow : 1;
+        fillR = Math.round(
+          palette.skyZenith[0] + (palette.skyHorizon[0] - palette.skyZenith[0]) * t,
+        );
+        fillG = Math.round(
+          palette.skyZenith[1] + (palette.skyHorizon[1] - palette.skyZenith[1]) * t,
+        );
+        fillB = Math.round(
+          palette.skyZenith[2] + (palette.skyHorizon[2] - palette.skyZenith[2]) * t,
+        );
+      } else {
+        [fillR, fillG, fillB] = palette.regolith;
+      }
+      const srcRowStart = row * srcOutWidth * 3;
+      const outRowStart = outRow * outWidth * 3;
+      for (let col = 0; col < srcOutWidth; col++) {
+        const sIdx = srcRowStart + col * 3;
+        const r = srcBuf[sIdx];
+        const g = srcBuf[sIdx + 1];
+        const b = srcBuf[sIdx + 2];
+        const oIdx = outRowStart + col * 3;
+        if (r + g + b < recolourThreshold) {
+          canvas[oIdx] = fillR;
+          canvas[oIdx + 1] = fillG;
+          canvas[oIdx + 2] = fillB;
+        } else {
+          canvas[oIdx] = r;
+          canvas[oIdx + 1] = g;
+          canvas[oIdx + 2] = b;
+        }
+      }
+    } else {
+      const srcRowStart = row * srcOutWidth * 3;
+      const outRowStart = outRow * outWidth * 3;
+      srcBuf.copy(canvas, outRowStart, srcRowStart, srcRowStart + srcOutWidth * 3);
+    }
   }
 
   // 5. JPEG-encode.

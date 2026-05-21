@@ -58,6 +58,13 @@ interface MarsPanoramaConfig {
   /** Optional sky/regolith palette override for landers whose
    *  imagery has a distinct colour balance. */
   palette?: Partial<MarsColourPalette>;
+  /** Replace near-black pixels in the source with palette colour
+   *  (default 30). Set higher for NASA cylindrical sources with
+   *  visible rover-deck cutouts / edge bars (Curiosity Mt Mercou,
+   *  Perseverance Van Zyl) — they pad missing data with black and
+   *  the cutouts read as conspicuous holes if pasted as-is.
+   *  Set to 0 to disable. */
+  recolourBlackThreshold?: number;
 }
 
 /**
@@ -286,6 +293,11 @@ async function processOne(
       srcElevationTopDeg: cfg.srcElevationTopDeg,
       srcElevationBottomDeg: cfg.srcElevationBottomDeg,
       palette: cfg.palette,
+      // Default-on for all sites: NASA's cylindrical panoramas
+      // routinely pad rover-deck cutouts + edge bars with black.
+      // 60 picks up #000-#141414 — well below even Curiosity's
+      // deepest natural shadows (~#3a2a20).
+      recolourBlackThreshold: cfg.recolourBlackThreshold ?? 60,
     });
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, padded);

@@ -571,6 +571,16 @@
     // in the animate loop; data-hotspot-tier attribute is published
     // on the canvas for e2e assertions.
     const hotspots: HotspotEntry[] = [];
+    // Tier 2 (HiRISE) "delayed reveal" set — traverse polylines + the
+    // end-of-track red/amber dots + traverse captions. These ride the
+    // same opacity ramp as the HiRISE detail patch: invisible while
+    // the user is in overview / CTX-regional zoom, then fade in as
+    // the camera dollies into HiRISE-readable distance. They're high-
+    // frequency surface annotations whose detail isn't legible until
+    // you're close enough to read the HiRISE patch underneath them.
+    // Populated as traverses are built (right after the construction
+    // of each line + dot + caption sprite, ~line 1019 onward).
+    const tier2DelayedReveal: Array<THREE.Line | THREE.Mesh | THREE.Sprite | THREE.Group> = [];
     registerHotspotModelBuilder('viking-tripod', buildVikingTripodHotspot);
     registerHotspotModelBuilder('pathfinder-sojourner', buildPathfinderSojournerHotspot);
     registerHotspotModelBuilder('mer-rover', buildMERRoverHotspot);
@@ -1017,6 +1027,7 @@
         );
         line.userData = { roverId: tr.rover_id, kind: 'traverse' };
         marsMesh.add(line);
+        tier2DelayedReveal.push(line);
         // (No separate start dot — the green patch-centre pin in
         // buildHotspotSurfacePatch sits at the same lat/lon as the
         // traverse origin and serves as the "start / landing site"
@@ -1034,6 +1045,7 @@
         startDot.visible = false;
         startDot.position.set(firstPos.x * r, firstPos.y * r, firstPos.z * r);
         marsMesh.add(startDot);
+        tier2DelayedReveal.push(startDot);
         // End-of-track dot — current position for ACTIVE rovers (red),
         // last point reached for ENDED missions (amber). Solid sphere
         // so it reads as a discrete marker at distance, sized the same
@@ -1051,6 +1063,7 @@
         );
         dot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
         marsMesh.add(dot);
+        tier2DelayedReveal.push(dot);
 
         // In-scene captions next to each dot. Same green/red/amber
         // colour as the dot they describe — the dot supplies the
@@ -1089,6 +1102,7 @@
           placeCaption(startPosWorld, tangent.clone().negate()), // away from end
         );
         marsMesh.add(startBuilt.group);
+        tier2DelayedReveal.push(startBuilt.group);
 
         const pathKm = traversePathKm(tr.points);
         const endIso = isActive ? new Date().toISOString() : tr.snapshot_date;
@@ -1102,6 +1116,7 @@
           placeCaption(endPosWorld, tangent), // away from start
         );
         marsMesh.add(endBuilt.group);
+        tier2DelayedReveal.push(endBuilt.group);
 
         traverseLines.push({
           line,
@@ -1304,11 +1319,31 @@
       // surface. Floor at 0.0005 so even at the closest zoom drag
       // still moves the view (was clamping to 0 at camR=30, made
       // close-zoom controls feel dead).
-      const dragK = Math.max(0.0005, 0.005 * Math.min(1, (camR - 30) / 60));
+      // In panorama mode the camera is at radius ≈ 0.5 (inside the
+      // skybox); the planet-surface dragK formula evaluates to the
+      // 0.0005 floor — too sluggish for the look-around use case.
+      // Use a fixed sensitivity (~3× the planet-close value) so a
+      // single drag sweep covers a comfortable arc of the panorama.
+      const dragK = panoramaActive
+        ? 0.0025
+        : Math.max(0.0005, 0.005 * Math.min(1, (camR - 30) / 60));
       const dT = -dx * dragK;
       const dP = -dy * dragK;
       camT += dT;
-      camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
+      // Panorama-mode tilt clamp (2026-05-21 feedback): NASA cylindrical
+      // sources cover ~25-35° above horizon to ~25° below — letting
+      // the user pitch all the way to the zenith / nadir would just
+      // reveal the regolith pad fill. Clamp to roughly ±35° from
+      // horizon (camP = π/2 ± 0.611 rad) — slightly wider than the
+      // tightest source so the source's edge is still visible at the
+      // limit, but no further. Outside panorama mode the existing
+      // [0.15, π − 0.15] near-poles clamp applies.
+      if (panoramaActive) {
+        const tiltClamp = 0.611; // ≈ 35° in radians
+        camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
+      } else {
+        camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
+      }
       // Track velocity for the inertia decay after release. Per-event
       // delta is close to per-frame at 60Hz, good enough for feel.
       camTVelocity = dT;
@@ -1741,18 +1776,24 @@
             sm.labelGroup.visible = zoomScale > 0.3;
           }
         }
-        // Detail-layer (HiRISE) opacity ramp INSIDE Tier 2 so the
-        // HiRISE inner disc reveals LATER than the CTX regional disc
-        // (2026-05-21 feedback). The dispatcher fades the whole
-        // tier2Group at the Tier 1→2 boundary; on top of that we ramp
-        // the detail patch's own material opacity from 0 at camR ≥ 40
-        // (CTX-only — user sees the regional landing zone in context)
-        // to 1 at camR ≤ 33 (camera close enough that the 25 cm/px
-        // HiRISE detail is legible at 1:1 pixel-to-pixel). CTX stays
-        // at the dispatcher's group opacity unchanged. The inner mesh
-        // is tagged userData.layer === 'detail' by the patch builder.
-        const detailFadeStart = 40;
-        const detailFadeEnd = 33;
+        // Tier 2 detail-layer reveal ramp (2026-05-21 feedback). Two
+        // groups of geometry share this ramp:
+        //   1. The HiRISE inner disc inside each tier2Group (tagged
+        //      userData.layer === 'detail' by the patch builder).
+        //   2. The "delayed-reveal" surface annotations — rover
+        //      traverse polylines, start/end dots, traverse caption
+        //      sprites. These are high-frequency annotations whose
+        //      detail is illegible at CTX-regional zoom and clutter
+        //      the overview view.
+        // Both stay hidden until camR drops below 33 (just past the
+        // dispatcher's Tier 1→2 promotion), then ramp to fully
+        // visible at camR ≤ 30.5 — the last ~2.5u of dolly-in.
+        // Earlier values (40 → 33) had HiRISE already at 80% opacity
+        // by the time tier2 became visible, defeating the "later
+        // than CTX" effect; the new range delays HiRISE strictly
+        // until after the CTX disc has settled.
+        const detailFadeStart = 33;
+        const detailFadeEnd = 30.5;
         const detailOpacity =
           camR >= detailFadeStart
             ? 0
@@ -1768,6 +1809,28 @@
             mat.opacity = detailOpacity;
             mat.transparent = detailOpacity < 0.99;
           });
+        }
+        for (const obj of tier2DelayedReveal) {
+          obj.visible = detailOpacity > 0.01;
+          // Lines + dots + caption sprites all carry a `material`
+          // ref with opacity. Walk meshes/groups uniformly.
+          if (obj instanceof THREE.Group) {
+            obj.traverse((child) => {
+              if (child instanceof THREE.Mesh || child instanceof THREE.Sprite) {
+                const mat = child.material as THREE.Material & { opacity: number };
+                if (mat && 'opacity' in mat) {
+                  mat.opacity = detailOpacity;
+                  mat.transparent = detailOpacity < 0.99;
+                }
+              }
+            });
+          } else {
+            const mat = (obj as { material?: THREE.Material & { opacity: number } }).material;
+            if (mat && 'opacity' in mat) {
+              mat.opacity = detailOpacity;
+              mat.transparent = detailOpacity < 0.99;
+            }
+          }
         }
       }
       if (showDebug) {
@@ -2226,8 +2289,13 @@
         You are standing at the landing site on Mars. The lander is in front of you. Drag to look
         around.
       </span>
-      <button type="button" class="panorama-exit" onclick={exitPanorama}>
-        ↑ Return to orbit
+      <button
+        type="button"
+        class="panorama-exit"
+        onclick={exitPanorama}
+        title="Exit panorama (Esc)"
+      >
+        Exit panorama
       </button>
     </div>
   {/if}
@@ -2610,23 +2678,38 @@ sample      ${debugInfo.projectedPxSample}`}
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 50;
+    z-index: 1000;
   }
   .panorama-exit {
     position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: calc(var(--nav-height, 56px) + 12px);
+    right: 16px;
     pointer-events: auto;
-    padding: 8px 16px;
-    background: rgba(4, 4, 12, 0.8);
+    padding: 10px 18px;
+    background: rgba(4, 4, 12, 0.78);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
+    border: 1px solid var(--accent, #cc7a55);
+    border-radius: 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
     cursor: pointer;
     backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .panorama-exit::before {
+    content: '✕  ';
+    color: var(--accent, #cc7a55);
+  }
+  .panorama-exit:hover,
+  .panorama-exit:focus-visible {
+    background: rgba(204, 122, 85, 0.18);
+    outline: none;
   }
   .sr-only {
     position: absolute;

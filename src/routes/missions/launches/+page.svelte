@@ -5,9 +5,8 @@
    * Hybrid UI: horizontal month strip + vertical chronological timeline.
    * Two modes: UPCOMING (default) and HISTORIC. URL-encoded filter state.
    *
-   * v0.1 ships the route + UPCOMING/HISTORIC toggle + month-strip jump-
-   * to-month + timeline. Full filter palette (agency / vehicle / orbit /
-   * outcome / year-range / tier) lands as polish in S8b.
+   * S8b: year-grouped month strip, decade picker for HISTORIC (lazy
+   * loads each decade file on demand), tier + agency + outcome filters.
    */
 
   import { onMount, untrack } from 'svelte';
@@ -19,12 +18,17 @@
     loadHistoricDecade,
     decadeForYear,
     groupByMonth,
+    ALL_DECADES,
     type Manifest,
   } from '$lib/launches/manifest.js';
   import MonthStrip from '$lib/components/launches/MonthStrip.svelte';
+  import DecadePicker from '$lib/components/launches/DecadePicker.svelte';
+  import FilterStrip from '$lib/components/launches/FilterStrip.svelte';
   import Timeline from '$lib/components/launches/Timeline.svelte';
 
   type Mode = 'upcoming' | 'historic';
+  type TierFilter = 'ALL' | 'FEATURED';
+  type OutcomeFilter = 'ALL' | 'SUCCESS' | 'FAILURE' | 'PARTIAL';
 
   let mode: Mode = $state('upcoming');
   let manifest: Manifest = $state({
@@ -35,23 +39,58 @@
   });
   let loading = $state(true);
   let activeMonth: string | null = $state(null);
+  let activeDecade: string = $state(decadeForYear(new Date().getUTCFullYear()));
+  let tierFilter: TierFilter = $state('ALL');
+  let agencyFilter: string = $state('ALL');
+  let outcomeFilter: OutcomeFilter = $state('ALL');
 
-  let entries = $derived(Object.values(manifest.entries));
+  // Per-decade entry counts populated as the user clicks through. Lets
+  // the DecadePicker show "n entries" hints without forcing eager load
+  // of all 7 files.
+  let decadeCounts: Record<string, number | null> = $state({
+    '1957-1969': null,
+    '1970-1979': null,
+    '1980-1989': null,
+    '1990-1999': null,
+    '2000-2009': null,
+    '2010-2019': null,
+    '2020-2026': null,
+  });
+
+  let allEntries = $derived(Object.values(manifest.entries));
+  let agencies = $derived(
+    Array.from(new Set(allEntries.map((e) => e.agency_name).filter(Boolean))).sort(),
+  );
+
+  let filtered = $derived(
+    allEntries.filter((e) => {
+      if (tierFilter === 'FEATURED' && e.tier !== 'T1') return false;
+      if (agencyFilter !== 'ALL' && e.agency_name !== agencyFilter) return false;
+      if (mode === 'historic' && outcomeFilter !== 'ALL' && e.status.code !== outcomeFilter)
+        return false;
+      return true;
+    }),
+  );
+
   let sorted = $derived(
-    entries
+    filtered
       .slice()
       .sort((a, b) =>
         mode === 'upcoming' ? a.net.localeCompare(b.net) : b.net.localeCompare(a.net),
       ),
   );
-  let months = $derived(groupByMonth(mode === 'upcoming' ? sorted : sorted.slice(0, 200)));
 
-  async function loadForMode(m: Mode) {
+  let months = $derived(groupByMonth(sorted));
+
+  async function loadForMode(m: Mode, decade?: string) {
     loading = true;
     if (m === 'upcoming') {
       manifest = await loadUpcoming();
     } else {
-      manifest = await loadHistoricDecade(decadeForYear(new Date().getUTCFullYear()));
+      const d = decade ?? activeDecade;
+      activeDecade = d;
+      manifest = await loadHistoricDecade(d);
+      decadeCounts = { ...decadeCounts, [d]: Object.keys(manifest.entries).length };
     }
     loading = false;
     if (months.length > 0) activeMonth = months[0].key;
@@ -60,18 +99,67 @@
   function setMode(m: Mode) {
     if (m === mode) return;
     mode = m;
+    activeMonth = null;
+    if (m === 'upcoming') {
+      outcomeFilter = 'ALL'; // outcome doesn't apply to upcoming
+    }
     pushUrl();
     void loadForMode(m);
+  }
+
+  function setDecade(d: string) {
+    if (d === activeDecade) return;
+    activeDecade = d;
+    activeMonth = null;
+    pushUrl();
+    void loadForMode('historic', d);
+  }
+
+  function setTier(t: TierFilter) {
+    tierFilter = t;
+    pushUrl();
+  }
+
+  function setAgency(a: string) {
+    agencyFilter = a;
+    pushUrl();
+  }
+
+  function setOutcome(o: OutcomeFilter) {
+    outcomeFilter = o;
+    pushUrl();
+  }
+
+  function clearFilters() {
+    tierFilter = 'ALL';
+    agencyFilter = 'ALL';
+    outcomeFilter = 'ALL';
+    pushUrl();
   }
 
   function applyUrl(url: URL) {
     const m = url.searchParams.get('mode');
     mode = m === 'historic' ? 'historic' : 'upcoming';
+    const d = url.searchParams.get('decade');
+    if (d && (ALL_DECADES as readonly string[]).includes(d)) activeDecade = d;
+    const t = url.searchParams.get('tier');
+    tierFilter = t === 'FEATURED' ? 'FEATURED' : 'ALL';
+    const a = url.searchParams.get('agency');
+    agencyFilter = a ?? 'ALL';
+    const o = url.searchParams.get('outcome');
+    outcomeFilter =
+      o === 'SUCCESS' || o === 'FAILURE' || o === 'PARTIAL' ? o : 'ALL';
   }
 
   function pushUrl() {
     const params = new URLSearchParams();
     if (mode !== 'upcoming') params.set('mode', mode);
+    if (mode === 'historic' && activeDecade !== decadeForYear(new Date().getUTCFullYear())) {
+      params.set('decade', activeDecade);
+    }
+    if (tierFilter !== 'ALL') params.set('tier', tierFilter);
+    if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
+    if (mode === 'historic' && outcomeFilter !== 'ALL') params.set('outcome', outcomeFilter);
     const qs = params.toString();
     const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -98,7 +186,6 @@
     });
   });
 
-  // GCAT release surfaced in citation strip.
   let gcatRelease = $derived(manifest.gcat_release);
 </script>
 
@@ -142,6 +229,24 @@
     </nav>
   </header>
 
+  {#if mode === 'historic'}
+    <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
+  {/if}
+
+  <FilterStrip
+    {mode}
+    tier={tierFilter}
+    agency={agencyFilter}
+    outcome={outcomeFilter}
+    {agencies}
+    onTierChange={setTier}
+    onAgencyChange={setAgency}
+    onOutcomeChange={setOutcome}
+    onClear={clearFilters}
+    matchCount={filtered.length}
+    totalCount={allEntries.length}
+  />
+
   {#if loading}
     <p class="loading">Loading launches…</p>
   {:else}
@@ -169,7 +274,7 @@
 <style>
   .launches-page {
     min-height: 100vh;
-    padding-top: 52px; /* nav bar */
+    padding-top: 52px;
     background: #04040c;
     color: #e6e8ee;
   }

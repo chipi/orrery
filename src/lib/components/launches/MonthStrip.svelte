@@ -1,8 +1,10 @@
 <script lang="ts">
   /**
-   * Horizontal-scroll month strip for the /missions/launches calendar
-   * (PRD-020 §M8 / RFC-023 §8.2). Mobile: thumb-scrollable. Desktop:
-   * mouse-wheel scrolls horizontally on hover.
+   * Year-grouped month strip for /missions/launches (PRD-020 M8).
+   *
+   * Replaces the single-line horizontal-scroll pattern with year rows
+   * that wrap naturally on narrow viewports. Each year-row shows its
+   * months as compact chips with launch counts.
    */
 
   type MonthBucket = { key: string; label: string; entries: { id: string }[] };
@@ -16,52 +18,103 @@
     activeKey: string | null;
     onSelect: (key: string) => void;
   } = $props();
+
+  // Group monthly buckets by year. The bucket key is "YYYY-MM"; label
+  // is "Mmm 'YY" — we strip the 4-digit year off the chip label since
+  // it's redundant once we have the year header.
+  type YearGroup = { year: string; months: Array<{ key: string; mLabel: string; count: number }> };
+  let yearGroups = $derived.by<YearGroup[]>(() => {
+    const map = new Map<string, YearGroup['months']>();
+    for (const b of months) {
+      const y = b.key.split('-')[0];
+      const mLabel = b.label.split(' ')[0]; // "Jun '26" → "Jun"
+      const list = map.get(y) ?? [];
+      list.push({ key: b.key, mLabel, count: b.entries.length });
+      map.set(y, list);
+    }
+    return [...map.entries()]
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([year, months]) => ({ year, months }));
+  });
 </script>
 
 <nav class="month-strip" aria-label="Jump to month">
-  {#each months as bucket (bucket.key)}
-    <button
-      type="button"
-      class="chip"
-      class:active={bucket.key === activeKey}
-      onclick={() => onSelect(bucket.key)}
-      data-month-key={bucket.key}
-      aria-current={bucket.key === activeKey}
-    >
-      <span class="label">{bucket.label}</span>
-      <span class="count">{bucket.entries.length}</span>
-    </button>
+  {#each yearGroups as group (group.year)}
+    <div class="year-row">
+      <span class="year-label">{group.year}</span>
+      <div class="month-chips">
+        {#each group.months as month (month.key)}
+          <button
+            type="button"
+            class="chip"
+            class:active={month.key === activeKey}
+            onclick={() => onSelect(month.key)}
+            data-month-key={month.key}
+            aria-current={month.key === activeKey}
+            title="{month.count} launches"
+          >
+            <span class="m-label">{month.mLabel}</span>
+            <span class="m-count">{month.count}</span>
+          </button>
+        {/each}
+      </div>
+    </div>
   {/each}
 </nav>
 
 <style>
   .month-strip {
-    display: flex;
-    gap: 8px;
-    padding: 8px 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    padding: 10px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .month-strip {
+      padding: 12px 18px;
+      gap: 10px;
+    }
+  }
+
+  .year-row {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .year-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #4466ff;
+    line-height: 28px;
+    text-align: right;
+    padding-right: 4px;
+    border-right: 1px solid rgba(68, 102, 255, 0.25);
+  }
+
+  .month-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 
   .chip {
     display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 14px;
-    min-width: 64px;
-    min-height: 44px;
+    align-items: baseline;
+    gap: 5px;
+    padding: 5px 9px;
+    min-height: 28px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
+    border-radius: 3px;
     background: rgba(255, 255, 255, 0.02);
     color: #e6e8ee;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     cursor: pointer;
-    flex-shrink: 0;
     transition: background-color 120ms, border-color 120ms;
   }
 
@@ -78,14 +131,17 @@
     color: #fff;
   }
 
-  .label {
+  .m-label {
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
-  .count {
-    font-size: 14px;
-    font-weight: 700;
-    margin-top: 2px;
+  .m-count {
+    color: rgba(230, 232, 238, 0.6);
+    font-size: 10px;
+  }
+
+  .chip.active .m-count {
+    color: #4ecdc4;
   }
 </style>

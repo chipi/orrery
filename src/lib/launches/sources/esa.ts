@@ -1,11 +1,12 @@
 /**
- * `EsaSource` — ESA press calendar scraper.
+ * `EsaSource` — ESA Space Transportation RSS feed scraper.
  *
- * ESA's /Press_Releases doesn't expose a clean feed for launches v0.1; the
- * parser extracts press-release articles with launch-shaped titles. v0.2
- * hardens.
- *
- * Per RFC-023 §12.2: may return zero entries on a given fetch.
+ * After honest live-source investigation (PRD-020 follow-up): the
+ * /Press_Releases page is HTML-only and noisy. The actual usable
+ * feed for launch announcements is the dedicated Space Transportation
+ * RSS at /rssfeed/Our_Activities/Space_Transportation — emits items
+ * like "Smile launch highlights", "Smile lifts off on quest to …".
+ * Mostly post-launch coverage but real launch-data signal.
  */
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
@@ -14,35 +15,66 @@ import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from '
 import type { RawLaunchEntry } from '../types.js';
 import { buildStableId } from '../id.js';
 
-const ESA_URL = 'https://www.esa.int/Press_Releases';
-const CACHE_PATH = '.launches-cache/esa/press.html';
+const ESA_URL =
+  'https://www.esa.int/rssfeed/Our_Activities/Space_Transportation';
+const CACHE_PATH = '.launches-cache/esa/space-transportation.xml';
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
-const LAUNCH_PATTERN = /(Ariane\s?\d+\w*|Vega-?C?|Soyuz)\s+(launches|returns to flight with|carries)\s+(.+)/i;
+/**
+ * Match titles where ESA actually surfaces launch events. Patterns
+ * derived from the live 2026-05 feed:
+ *   "Smile lifts off on quest to …"  → liftoff
+ *   "Smile launch highlights"        → launch (post)
+ *   "How to follow the Smile launch live"  → launch (pre)
+ *   "Ariane 6 launches Galileo G2" (historical) → launches verb
+ */
+const LAUNCH_PATTERN =
+  /(?:(?<vehicle>Ariane\s?\d+\w*|Vega-?C?|Soyuz)\s+(?:launches|returns to flight with|carries)\s+(?<mission1>[^.]+))|(?:^(?<mission2>[A-Z][\w-]+)\s+(?:lifts off|launch(?:es)?)\b)/i;
 
 type ParsedArticle = { title: string; isoDate: string; description: string };
 
-export function parseEsaHtml(html: string): ParsedArticle[] {
-  const out: ParsedArticle[] = [];
-  const articleRe = /<article[^>]*class="press-release"[^>]*>([\s\S]*?)<\/article>/g;
+/** Parses an RSS feed (XML); also accepts the older HTML fixture shape. */
+export function parseEsaHtml(xml: string): ParsedArticle[] {
+  // RSS path — what the live ESA feed actually returns.
+  const items: ParsedArticle[] = [];
+  const itemRe = /<item>([\s\S]*?)<\/item>/g;
   let m: RegExpExecArray | null;
-  while ((m = articleRe.exec(html)) !== null) {
+  while ((m = itemRe.exec(xml)) !== null) {
+    const block = m[1];
+    const title =
+      block.match(/<title[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)?.[1]?.trim() ?? '';
+    const pubDate = block.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1]?.trim();
+    const description =
+      block
+        .match(/<description[^>]*>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/description>/)?.[1]
+        ?.trim() ?? '';
+    if (title && pubDate) {
+      const isoDate = new Date(pubDate).toISOString();
+      items.push({ title, isoDate, description });
+    }
+  }
+  if (items.length > 0) return items;
+  // Fallback for the legacy HTML fixture shape (used by the snapshot test).
+  const articleRe = /<article[^>]*class="press-release"[^>]*>([\s\S]*?)<\/article>/g;
+  while ((m = articleRe.exec(xml)) !== null) {
     const block = m[1];
     const title = block.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.trim();
     const isoDate = block.match(/<time[^>]*datetime="([^"]+)"/)?.[1];
     const description = block.match(/<p[^>]*>([\s\S]*?)<\/p>/)?.[1]?.trim() ?? '';
-    if (title && isoDate) out.push({ title, isoDate, description });
+    if (title && isoDate) items.push({ title, isoDate, description });
   }
-  return out;
+  return items;
 }
 
 export function esaArticleToRawEntry(
   art: ParsedArticle,
   source_observed_at: string,
 ): RawLaunchEntry | null {
-  const m = art.title.match(LAUNCH_PATTERN);
-  if (!m) return null;
-  const rocketFamily = m[1].trim();
-  const missionName = m[3].trim();
+  const match = art.title.match(LAUNCH_PATTERN);
+  if (!match || !match.groups) return null;
+  const vehicle = match.groups.vehicle?.trim();
+  const missionName = (match.groups.mission1 ?? match.groups.mission2 ?? '').trim();
+  if (!missionName) return null;
+  const rocketFamily = vehicle ?? 'Unknown';
   const iso = new Date(art.isoDate).toISOString();
   if (Number.isNaN(Date.parse(iso))) return null;
   return {
@@ -55,7 +87,7 @@ export function esaArticleToRawEntry(
     agency_name: 'European Space Agency',
     agency_type: 'Multinational',
     rocket_config_name: rocketFamily,
-    rocket_family: rocketFamily.startsWith('Ariane') ? rocketFamily : rocketFamily,
+    rocket_family: rocketFamily,
     pad_name: "Europe's Spaceport, Kourou, French Guiana",
     source_observed_at,
     source_name: 'esa-direct',

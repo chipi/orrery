@@ -1,13 +1,18 @@
 /**
  * `SpaceXSource` — spacex.com/launches scraper.
  *
- * SpaceX's /launches page is JS-rendered; the first-paint HTML is a thin
- * shell. v0.1 parser walks `<article class="launch">` elements which the
- * page documents using. Live-source extraction (with proper SPA hydration
- * or unofficial endpoint) is a v0.2 hardening task.
+ * REALITY CHECK (after live-source investigation, 2026-05-21):
+ * spacex.com/launches returns ~3 KB of HTML shell with zero launch
+ * markup. The page hydrates client-side from a JSON GraphQL endpoint
+ * (not publicly documented). Static-HTML scrapers therefore cannot
+ * extract anything; the snapshot test fixture in
+ * `__fixtures__/spacex-launches.html` documents the shape we'd need
+ * if SpaceX ever serves static markup again, but live runs return 0.
  *
- * Per RFC-023 §12.2: provider may return zero entries v0.1. Orchestrator
- * falls back to LL2.
+ * A proper fix requires either (a) Playwright at build time to render
+ * the SPA + parse the hydrated DOM, or (b) reverse-engineering and
+ * shipping a fragile call to their internal GraphQL endpoint. Both
+ * are out of scope for v0.7. LL2 fallback covers SpaceX launches.
  */
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';

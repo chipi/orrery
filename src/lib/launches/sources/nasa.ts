@@ -1,16 +1,19 @@
 /**
- * `NasaSource` — NASA news-release RSS feed as a launch-announcement source.
+ * `NasaSource` — NASA news-release RSS feed.
  *
- * NASA does NOT publish a machine-readable launch schedule. Their news-
- * release RSS surfaces launch announcements after-the-fact, and most are
- * suborbital / press / research releases. v0.1 of this provider extracts
- * the small subset of items whose title matches the "<Agency> Launches
- * <Mission>" pattern + recent past launches; v0.2 hardens with mission
- * page parsing for forward-looking schedule.
+ * REALITY CHECK (after live-source investigation, 2026-05-21): NASA's
+ * /news-release/feed/ contains roughly zero launch-announcement items
+ * at any given time. Press releases are dominated by competition
+ * announcements, mission-progress updates, and educational programmes.
+ * Actual launch announcements live in per-mission press kits hosted
+ * under launches.nasa.gov, kennedy.nasa.gov, and per-centre subsites —
+ * each of which would require a bespoke scraper.
  *
- * Per RFC-023 §12.2 brittleness posture: this provider may return zero
- * entries on any given fetch; the audit-report flags the gap so we can
- * prioritise v0.2 improvements. Orchestrator falls back to LL2.
+ * For PRD-020 we therefore accept that NasaSource returns ~zero entries
+ * on most days. The orchestrator's audit-report.html surfaces this gap
+ * (every NASA-led launch falls through to LL2 fallback-primary). A
+ * proper fix would need per-mission press-kit discovery + ATS-friendly
+ * structured parsing — out of scope for v0.7.
  */
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';

@@ -143,6 +143,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'CC-BY-Murray-Lab',
+    display: 'Murray Lab CTX Global Mosaic (CC BY 4.0)',
+    url: 'https://murray-lab.caltech.edu/CTX/',
+    rationale:
+      'The Murray Lab Global CTX Mosaic (Caltech) is released under CC BY 4.0; this short-name preserves the partner provenance for the credits page while inheriting standard CC BY 4.0 terms.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'CC-BY-SA-1.0',
     display: 'Creative Commons Attribution-ShareAlike 1.0',
     url: 'https://creativecommons.org/licenses/by-sa/1.0/',

@@ -85,6 +85,22 @@ export default defineConfig({
               expiration: { maxEntries: 10 },
             },
           },
+          {
+            // Launches manifests (PRD-020) — the 6h cron-refreshed data
+            // file + per-decade historic chunks. NetworkFirst so active
+            // users always get the freshest schedule when online, with a
+            // 3-second fallback to the cached copy when offline.
+            urlPattern: ({ url }) =>
+              /\/data\/launches\.json$|\/data\/launches-historic\/.+\.json$/.test(
+                url.pathname,
+              ),
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'orrery-launches-manifests',
+              networkTimeoutSeconds: 3,
+              expiration: { maxEntries: 10 },
+            },
+          },
         ],
         // SPA fallback so deep links work offline. SvelteKit's static
         // adapter writes 404.html as fallback (svelte.config.js:13).

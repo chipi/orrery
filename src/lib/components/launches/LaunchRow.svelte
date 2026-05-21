@@ -9,6 +9,7 @@
    */
 
   import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
+  import ProvenanceChip from './ProvenanceChip.svelte';
 
   let { entry, mode }: { entry: LaunchEntry; mode: 'upcoming' | 'historic' } = $props();
 
@@ -67,6 +68,9 @@
       <span class={tierChipClass(entry.tier)}>ROUTINE</span>
     {/if}
     <span class="status status-{entry.status.code.toLowerCase()}">{entry.status.label}</span>
+    {#if entry.provenance_chain && entry.provenance_chain.length > 0}
+      <ProvenanceChip chain={entry.provenance_chain} />
+    {/if}
   </div>
 </article>
 

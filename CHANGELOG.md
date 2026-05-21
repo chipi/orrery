@@ -10,6 +10,34 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+### Added
+
+- **Launches Calendar** (PRD-020 / RFC-023, epic #232). New `/missions/launches`
+  route surfaces upcoming and historic global spaceflight launches in a single
+  filterable calendar — banner of next 4 featured launches on `/missions`,
+  consolidated filter strip (VIEW · TIER · DECADE · OUTCOME · AGENCY · YEAR)
+  matching the `/missions` and `/fleet` pattern, chronological timeline with
+  sticky month headers, per-row ProvenanceChip showing the full source chain.
+  - **Multi-source agency-first data pipeline**: GCAT direct (Jonathan
+    McDowell's General Catalog, CC-BY-4.0) is the historic primary; NASA RSS
+    + SpaceX + ESA RSS are agency-direct upcoming sources where available;
+    Launch Library 2 fills the gap for uncovered launches. Provenance chain
+    on every entry, validated fail-closed.
+  - **CC-BY ship-gate**: McDowell citation visible on `/missions/launches`
+    footer, `/credits` LAUNCH DATA section, AND `/library` Launches data
+    aside. Enforced by `validate-data.ts`.
+  - **Build-cron refresh** (`refresh-launches.yml`): every 6 h pulls all
+    providers + commits the diff under `orrery-launches-bot`.
+  - **Mission-catalog backlinks**: 15 launches across the historic register
+    auto-link to their `/missions` catalogue entry via a conservative
+    name-substring heuristic — false-positive-NOT-OK.
+  - **Per-launcher widget**: `/fleet/launcher/*` panels surface NEXT FLIGHT
+    + RECENT FLIGHTS for the matching vehicle family.
+- **`PillDropdown` shared component** (`$lib/components/PillDropdown.svelte`)
+  — chip-styled dropdown with optional logo + search input. Used on
+  `/missions/launches` AGENCY filter to handle 60+ agencies; designed to
+  extend to other high-cardinality filters later.
+
 ## [0.6.3] — 2026-05-16
 
 Mobile UX + reliability pass. Five user-filed mobile polish issues (#125-#129) plus three v0.6.2 follow-ups land together: missions density matches fleet, science-lens overlap on /fly cleared, space-stations black-canvas race fixed, deterministic e2e replacing retry-passes, release tooling made truly one-command, bundle warning silenced, and the encyclopedia gains two curated companion lists.

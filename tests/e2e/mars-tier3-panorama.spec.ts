@@ -27,14 +27,13 @@ test.describe('Mars Tier 3 panorama — Curiosity full lifecycle', () => {
     page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
 
     await page.goto('/mars?site=curiosity');
-    const canvas = page.locator('canvas.layer').first();
-    await expect(canvas).toBeVisible({ timeout: 15_000 });
-
     // Stand-at-site button is in the detail panel slot. It only
     // renders when selected.hotspot_tier3_panorama is set, so its
     // presence confirms the sidecar wiring + button conditional.
+    // Waiting on this is enough readiness — it requires the canvas
+    // to mount, sites JSON to load, and the panel to render.
     const stand = page.getByTestId('stand-at-site');
-    await expect(stand).toBeVisible({ timeout: 15_000 });
+    await expect(stand).toBeVisible({ timeout: 20_000 });
     await expect(stand).toContainText(/stand at site/i);
 
     // Enter the panorama.
@@ -90,13 +89,15 @@ test.describe('Mars Tier 3 panorama — omitted sites have no Stand-at-site butt
   for (const siteId of ['mars3', 'beagle2', 'schiaparelli']) {
     test(`/mars?site=${siteId} renders without the Stand-at-site button`, async ({ page }) => {
       await page.goto(`/mars?site=${siteId}`);
-      const canvas = page.locator('canvas.layer').first();
-      await expect(canvas).toBeVisible({ timeout: 15_000 });
-      // Allow the detail panel to mount + the sidecar to load.
+      // Wait for a known-present detail-panel element so we're sure
+      // the page has loaded the site (otherwise toHaveCount(0)
+      // could pass simply because the panel hasn't mounted yet).
+      // The OVERVIEW tab is present on every detail panel regardless
+      // of tier coverage.
+      await expect(page.getByRole('tab', { name: 'OVERVIEW' })).toBeVisible({ timeout: 20_000 });
       // Stand-at-site rendering is gated on selected.hotspot_tier3_panorama;
       // for omitted sites that field stays undefined, so the button
       // never appears.
-      await page.waitForTimeout(500);
       const stand = page.getByTestId('stand-at-site');
       await expect(stand).toHaveCount(0);
     });

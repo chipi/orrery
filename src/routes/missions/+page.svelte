@@ -9,6 +9,7 @@
   import { isMissionDestination } from '$lib/mission-dest';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
+  import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
@@ -235,6 +236,8 @@
 </script>
 
 <svelte:head><title>{m.missions_page_title()}</title></svelte:head>
+
+<LaunchesBanner />
 
 <div class="library">
   <!-- Filters + timeline collapsed by default. The count lives at the

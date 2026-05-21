@@ -24,6 +24,7 @@
   import MonthStrip from '$lib/components/launches/MonthStrip.svelte';
   import DecadePicker from '$lib/components/launches/DecadePicker.svelte';
   import FilterStrip from '$lib/components/launches/FilterStrip.svelte';
+  import AboutStrip from '$lib/components/launches/AboutStrip.svelte';
   import Timeline from '$lib/components/launches/Timeline.svelte';
 
   type Mode = 'upcoming' | 'historic';
@@ -229,6 +230,8 @@
     </nav>
   </header>
 
+  <AboutStrip {gcatRelease} />
+
   {#if mode === 'historic'}
     <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
   {/if}
@@ -256,17 +259,16 @@
 
   <footer class="citations">
     <p>
-      Launch data sourced agency-first from NASA, SpaceX, ESA, and Jonathan
-      McDowell's <a
+      Sources: NASA · SpaceX · ESA ·
+      <a
         href="https://planet4589.org/space/gcat/"
         rel="noopener noreferrer external"
-        hreflang="en"
-        >General Catalog of Artificial Space Objects (GCAT){gcatRelease ? ` Release ${gcatRelease}` : ''}</a
+        hreflang="en">GCAT</a
       >
-      (CC-BY-4.0); gap-fill from
+      ·
       <a href="https://thespacedevs.com/llapi" rel="noopener noreferrer external" hreflang="en"
-        >Launch Library 2</a
-      >.
+        >LL2</a
+      >. Full provenance per row.
     </p>
   </footer>
 </main>

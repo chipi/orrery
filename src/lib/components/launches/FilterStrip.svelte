@@ -55,7 +55,9 @@
       class:active={tier === 'FEATURED'}
       role="radio"
       aria-checked={tier === 'FEATURED'}
-      onclick={() => onTierChange('FEATURED')}>Featured only</button
+      onclick={() => onTierChange('FEATURED')}
+      title="Featured = crewed, beyond-LEO (Moon/Mars/deep space), or first flights of new vehicles. Operator picks can promote/demote per launch."
+      >Featured only</button
     >
   </div>
 

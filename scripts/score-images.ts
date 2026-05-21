@@ -79,8 +79,18 @@ async function main(): Promise<void> {
   }
   console.log(`In scope: ${inScope.length} entries`);
 
-  const provider = createAnthropicVisionProvider();
-  console.log(`Provider: ${provider.name} · model: ${provider.model}`);
+  // Provider is only needed when an entry needs a fresh score. Lazy-init so a
+  // re-crop pass (`--skip-scoring`, all entries cache-hit) doesn't fail with
+  // "ANTHROPIC_API_KEY missing" when the key isn't set. Variant generation
+  // and manifest construction don't talk to the vision API.
+  let providerCache: ReturnType<typeof createAnthropicVisionProvider> | null = null;
+  const getProvider = (): ReturnType<typeof createAnthropicVisionProvider> => {
+    if (!providerCache) {
+      providerCache = createAnthropicVisionProvider();
+      console.log(`Provider: ${providerCache.name} · model: ${providerCache.model}`);
+    }
+    return providerCache;
+  };
 
   const perImage: Awaited<ReturnType<typeof processOneImage>>[] = [];
   let totalCost = 0;
@@ -88,7 +98,7 @@ async function main(): Promise<void> {
     const entry = inScope[i];
     const prefix = `[${i + 1}/${inScope.length}]`;
     try {
-      const result = await processOneImage({ provenance: entry, provider, args });
+      const result = await processOneImage({ provenance: entry, getProvider, args });
       perImage.push(result);
       totalCost += result.cached.cost_usd;
       const fresh = result.cacheHit ? 'cached' : `$${result.cached.cost_usd.toFixed(4)}`;
@@ -110,8 +120,11 @@ async function main(): Promise<void> {
       cached: p.cached,
       variants: p.variants,
     })),
-    vision_provider: provider.name,
-    vision_model: provider.model,
+    // Cached provider name/model — falls back to the existing manifest's
+    // values when no provider was actually instantiated this run (re-crop
+    // only, all cache hits).
+    vision_provider: providerCache?.name ?? 'cached',
+    vision_model: providerCache?.model ?? 'cached',
     preserveExistingEntries: !isFullCorpus,
   });
   console.log(
@@ -269,9 +282,15 @@ async function asyncFilter<T>(arr: T[], pred: (t: T) => Promise<boolean>): Promi
   return arr.filter((_, i) => flags[i]);
 }
 
+// Provider identity used by the cache key. Hardcoded so --skip-scoring
+// can read cache entries without instantiating the (key-requiring)
+// provider. Must match createAnthropicVisionProvider()'s defaults.
+const PROVIDER_NAME = 'anthropic';
+const PROVIDER_MODEL = 'claude-sonnet-4-6';
+
 async function processOneImage(input: {
   provenance: ProvenanceEntry;
-  provider: ReturnType<typeof createAnthropicVisionProvider>;
+  getProvider: () => ReturnType<typeof createAnthropicVisionProvider>;
   args: CliArgs;
 }): Promise<{
   provenanceEntry: ProvenanceEntry;
@@ -283,16 +302,16 @@ async function processOneImage(input: {
   const bytes = await fs.readFile(fsPath);
   let cacheHit = true;
   let cached: Awaited<ReturnType<typeof resolveScoreFromCacheOrProvider>>;
+  const key = computeScoreCacheKey({
+    imageBytes: bytes,
+    providerName: PROVIDER_NAME,
+    modelName: PROVIDER_MODEL,
+  });
   if (input.args.skipScoring) {
     // Re-crop only: read existing cache if present; if not, fall
     // through to the resolver which will populate it (and incur the
     // API call). --skip-scoring without an existing cache is a
     // misconfiguration but should not silently break.
-    const key = computeScoreCacheKey({
-      imageBytes: bytes,
-      providerName: input.provider.name,
-      modelName: input.provider.model,
-    });
     const hit = await readCachedScore(key);
     if (hit) {
       cached = hit;
@@ -301,16 +320,11 @@ async function processOneImage(input: {
       cached = await resolveScoreFromCacheOrProvider({
         imageBytes: bytes,
         imagePath: input.provenance.path,
-        provider: input.provider,
+        provider: input.getProvider(),
         denyListExamples: [],
       });
     }
   } else {
-    const key = computeScoreCacheKey({
-      imageBytes: bytes,
-      providerName: input.provider.name,
-      modelName: input.provider.model,
-    });
     const hit = !input.args.forceScore ? await readCachedScore(key) : null;
     if (hit) {
       cached = hit;
@@ -319,7 +333,7 @@ async function processOneImage(input: {
       cached = await resolveScoreFromCacheOrProvider({
         imageBytes: bytes,
         imagePath: input.provenance.path,
-        provider: input.provider,
+        provider: input.getProvider(),
         denyListExamples: [],
         forceRefresh: input.args.forceScore,
       });

@@ -287,6 +287,20 @@ After a fetch run, image-read each `tier3-pan.jpg`:
 
 End-to-end: `/mars?site=<id>` → "Stand at site" button → panorama loads in skybox → drag rotates camera horizontally + tilts vertically → escape returns to orbital view.
 
+### Pre-cropped variants ship as static assets
+
+Tier 2 (HiRISE + CTX) and Tier 3 (panorama) base sources alone aren't enough — the Image Pipeline v2 manifest (`static/data/image-vision.json`) advertises pre-cropped `.1x1.jpg / .4x3.jpg / .16x9.jpg` variants alongside the base path, and the frontend's `pickVariant(...)` resolves to those URLs when present. **The variant files must be committed to git** alongside the base sources — they are not generated at build time and there's no fallback path that regenerates them on demand. A missing variant 404s in the dev server and renders as a blank disc on /mars (regression discovered post-#PD-mars, see commit `a918942a2`).
+
+After running `npm run images:hotspots`, the orchestrator's auto-`images:score` step writes the variants next to each base source. Stage them with the rest of the hotspot delta:
+
+```bash
+git add 'static/images/hotspots/mars/*/tier2-hirise.{1x1,4x3,16x9}.jpg' \
+        'static/images/hotspots/mars/*/tier2-ctx.{1x1,4x3,16x9}.jpg' \
+        'static/images/hotspots/mars/*/tier3-pan.{1x1,4x3,16x9}.jpg'
+```
+
+`scripts/score-images.ts` lazy-loads the Anthropic provider so a re-crop-only pass (`--skip-scoring`, all entries cache-hit) does NOT require `ANTHROPIC_API_KEY`. The key is only needed when at least one entry needs a fresh score (new source, or source bytes changed → cache invalidated).
+
 ### Failure-mode matrix (Tier 3)
 
 | Symptom | Cause | Fix |

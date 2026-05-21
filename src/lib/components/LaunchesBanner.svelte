@@ -8,6 +8,7 @@
 
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
   import {
     loadUpcoming,
     formatCountdown,
@@ -73,8 +74,8 @@
 {#if loaded && entries.length > 0}
   <aside class="banner" aria-label="Next featured launches">
     <header class="banner-header">
-      <h2 class="eyebrow">Next launches</h2>
-      <a class="all-link" href="{base}/missions/launches">All launches →</a>
+      <h2 class="eyebrow">{m.launches_banner_eyebrow()}</h2>
+      <a class="all-link" href="{base}/missions/launches">{m.launches_banner_all()}</a>
     </header>
     <div class="cards">
       {#each entries as e (e.id)}

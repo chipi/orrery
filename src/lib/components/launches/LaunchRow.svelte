@@ -10,6 +10,7 @@
 
   import { base } from '$app/paths';
   import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
+  import * as m from '$lib/paraglide/messages';
   import ProvenanceChip from './ProvenanceChip.svelte';
 
   let { entry, mode }: { entry: LaunchEntry; mode: 'upcoming' | 'historic' } = $props();
@@ -38,7 +39,7 @@
   <div class="time-col">
     <time datetime={entry.net} class="net">{timeLabel}</time>
     {#if entry.webcast_live}
-      <span class="live-chip" title="Webcast live"><span class="dot"></span>LIVE</span>
+      <span class="live-chip" title="Webcast live"><span class="dot"></span>{m.launches_live_badge()}</span>
     {/if}
   </div>
   <div class="main-col">
@@ -56,7 +57,7 @@
         href="{base}/missions?id={entry.orrery_mission_ref}"
         data-sveltekit-preload-data="hover"
       >
-        → Open in Orrery
+        {m.launches_open_in_orrery()}
       </a>
     {/if}
     <p class="meta">
@@ -73,9 +74,9 @@
   </div>
   <div class="badges-col">
     {#if entry.tier === 'T1'}
-      <span class={tierChipClass(entry.tier)}>FEATURED</span>
+      <span class={tierChipClass(entry.tier)}>{m.launches_tier_featured()}</span>
     {:else if entry.tier === 'T4'}
-      <span class={tierChipClass(entry.tier)}>ROUTINE</span>
+      <span class={tierChipClass(entry.tier)}>{m.launches_tier_routine()}</span>
     {/if}
     <span class="status status-{entry.status.code.toLowerCase()}">{entry.status.label}</span>
     {#if entry.provenance_chain && entry.provenance_chain.length > 0}

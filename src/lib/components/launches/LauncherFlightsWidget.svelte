@@ -11,6 +11,7 @@
 
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
+  import * as m from '$lib/paraglide/messages';
   import {
     loadUpcoming,
     loadHistoricDecade,
@@ -49,7 +50,7 @@
   <section class="launcher-flights" aria-label="Flights of this launcher">
     {#if next}
       <article class="next">
-        <h3 class="section-title">Next flight</h3>
+        <h3 class="section-title">{m.launches_widget_next_flight_one()}</h3>
         <a class="row" href="{base}/missions/launches?id={next.id}">
           <span class="when">{formatCountdown(next.net)}</span>
           <span class="payload">{next.mission_name ?? next.name}</span>
@@ -59,7 +60,7 @@
     {/if}
     {#if recent.length > 0}
       <article class="recent">
-        <h3 class="section-title">Recent flights</h3>
+        <h3 class="section-title">{m.launches_widget_recent_flights_label()}</h3>
         <ul class="rows">
           {#each recent as e (e.id)}
             <li class="row">
@@ -74,7 +75,7 @@
           {/each}
         </ul>
         <a class="see-all" href="{base}/missions/launches?vehicle={launcherId}"
-          >See all flights of this vehicle →</a
+          >{m.launches_widget_see_all_for_vehicle()}</a
         >
       </article>
     {/if}

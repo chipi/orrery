@@ -4,6 +4,7 @@
    * hover (desktop) / tap (mobile). PRD-020 US-9 / RFC-023 §9.
    */
 
+  import * as m from '$lib/paraglide/messages';
   import type { ProvenanceLink } from '$lib/launches/manifest.js';
 
   let { chain }: { chain: ProvenanceLink[] } = $props();
@@ -12,13 +13,13 @@
   function roleLabel(role: ProvenanceLink['role']): string {
     switch (role) {
       case 'primary':
-        return 'PRIMARY';
+        return m.launches_provenance_role_primary();
       case 'fallback-primary':
-        return 'FALLBACK PRIMARY';
+        return m.launches_provenance_role_fallback_primary();
       case 'confirmed-via':
-        return 'CONFIRMED';
+        return m.launches_provenance_role_confirmed_via();
       case 'augmented-with':
-        return 'AUGMENTED';
+        return m.launches_provenance_role_augmented_with();
     }
   }
 </script>
@@ -28,9 +29,9 @@
   class="provenance-chip"
   onclick={() => (open = !open)}
   aria-expanded={open}
-  aria-label="View provenance chain"
+  aria-label={m.launches_meta_view_provenance()}
 >
-  via {chain[0]?.source ?? 'unknown'}
+  {m.launches_provenance_chip_via({ source: chain[0]?.source ?? 'unknown' })}
 </button>
 
 {#if open}

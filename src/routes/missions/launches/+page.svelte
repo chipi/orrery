@@ -25,6 +25,7 @@
   import Timeline from '$lib/components/launches/Timeline.svelte';
   import PillDropdown from '$lib/components/PillDropdown.svelte';
   import { launchAgencyLogo, launchAgencyShortName } from '$lib/launches/agency-logos.js';
+  import * as m from '$lib/paraglide/messages';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
@@ -208,7 +209,7 @@
     aria-controls="launches-filters"
     onclick={() => (filtersExpanded = !filtersExpanded)}
   >
-    <span class="filters-eyebrow">FILTERS</span>
+    <span class="filters-eyebrow">{m.launches_filters_label().toUpperCase()}</span>
     <span class="filters-right">
       {#if filtered.length !== allEntries.length}
         <span class="filters-count count-fraction">{filtered.length} / {allEntries.length}</span>
@@ -220,16 +221,16 @@
   </button>
 
   {#if filtersExpanded}
-    <nav id="launches-filters" class="filters" aria-label="Launches filters">
-      <div class="filter-group" role="radiogroup" aria-label="View">
-        <span class="filter-label">VIEW</span>
+    <nav id="launches-filters" class="filters" aria-label={m.launches_filters_label()}>
+      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_view()}>
+        <span class="filter-label">{m.launches_filter_view()}</span>
         <button
           type="button"
           class="pill"
           class:active={mode === 'upcoming'}
           role="radio"
           aria-checked={mode === 'upcoming'}
-          onclick={() => setMode('upcoming')}>UPCOMING</button
+          onclick={() => setMode('upcoming')}>{m.launches_tab_upcoming().toUpperCase()}</button
         >
         <button
           type="button"
@@ -237,19 +238,19 @@
           class:active={mode === 'historic'}
           role="radio"
           aria-checked={mode === 'historic'}
-          onclick={() => setMode('historic')}>HISTORIC</button
+          onclick={() => setMode('historic')}>{m.launches_tab_historic().toUpperCase()}</button
         >
       </div>
 
-      <div class="filter-group" role="radiogroup" aria-label="Tier">
-        <span class="filter-label">TIER</span>
+      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_tier()}>
+        <span class="filter-label">{m.launches_filter_tier()}</span>
         <button
           type="button"
           class="pill"
           class:active={tierFilter === 'ALL'}
           role="radio"
           aria-checked={tierFilter === 'ALL'}
-          onclick={() => setTier('ALL')}>ALL</button
+          onclick={() => setTier('ALL')}>{m.launches_filter_all()}</button
         >
         <button
           type="button"
@@ -257,15 +258,13 @@
           class:active={tierFilter === 'FEATURED'}
           role="radio"
           aria-checked={tierFilter === 'FEATURED'}
-          onclick={() => setTier('FEATURED')}
-          title="Crewed, beyond-LEO, or first flights of new vehicles. Operator-tunable."
-          >FEATURED</button
+          onclick={() => setTier('FEATURED')}>{m.launches_tier_featured()}</button
         >
       </div>
 
       {#if mode === 'historic'}
-        <div class="filter-group" role="radiogroup" aria-label="Decade">
-          <span class="filter-label">DECADE</span>
+        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_decade()}>
+          <span class="filter-label">{m.launches_filter_decade()}</span>
           {#each ALL_DECADES as d (d)}
             <button
               type="button"
@@ -278,15 +277,15 @@
           {/each}
         </div>
 
-        <div class="filter-group" role="radiogroup" aria-label="Outcome">
-          <span class="filter-label">OUTCOME</span>
+        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_outcome()}>
+          <span class="filter-label">{m.launches_filter_outcome()}</span>
           <button
             type="button"
             class="pill"
             class:active={outcomeFilter === 'ALL'}
             role="radio"
             aria-checked={outcomeFilter === 'ALL'}
-            onclick={() => setOutcome('ALL')}>ALL</button
+            onclick={() => setOutcome('ALL')}>{m.launches_outcome_all()}</button
           >
           <button
             type="button"
@@ -294,7 +293,7 @@
             class:active={outcomeFilter === 'SUCCESS'}
             role="radio"
             aria-checked={outcomeFilter === 'SUCCESS'}
-            onclick={() => setOutcome('SUCCESS')}>SUCCESS</button
+            onclick={() => setOutcome('SUCCESS')}>{m.launches_outcome_success()}</button
           >
           <button
             type="button"
@@ -302,18 +301,18 @@
             class:active={outcomeFilter === 'FAILURE'}
             role="radio"
             aria-checked={outcomeFilter === 'FAILURE'}
-            onclick={() => setOutcome('FAILURE')}>FAILURE</button
+            onclick={() => setOutcome('FAILURE')}>{m.launches_outcome_failure()}</button
           >
         </div>
       {/if}
 
       <div class="filter-group">
-        <span class="filter-label">AGENCY</span>
+        <span class="filter-label">{m.launches_filter_agency()}</span>
         <PillDropdown
           value={agencyFilter}
           options={agencies}
-          placeholder="ALL"
-          label="Agency filter"
+          placeholder={m.launches_filter_all()}
+          label={m.launches_filter_agency()}
           logoFor={launchAgencyLogo}
           shortNameFor={launchAgencyShortName}
           searchable
@@ -322,15 +321,15 @@
       </div>
 
       {#if years.length > 1}
-        <div class="filter-group" role="radiogroup" aria-label="Year">
-          <span class="filter-label">YEAR</span>
+        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_year()}>
+          <span class="filter-label">{m.launches_filter_year()}</span>
           <button
             type="button"
             class="pill"
             class:active={yearFilter === 'ALL'}
             role="radio"
             aria-checked={yearFilter === 'ALL'}
-            onclick={() => setYear('ALL')}>ALL</button
+            onclick={() => setYear('ALL')}>{m.launches_filter_all()}</button
           >
           {#each years as y (y)}
             <button
@@ -346,29 +345,29 @@
       {/if}
 
       {#if tierFilter !== 'ALL' || agencyFilter !== 'ALL' || outcomeFilter !== 'ALL' || yearFilter !== 'ALL'}
-        <button type="button" class="clear-btn" onclick={clearFilters}>CLEAR ✕</button>
+        <button type="button" class="clear-btn" onclick={clearFilters}>{m.launches_clear()}</button>
       {/if}
     </nav>
   {/if}
 
   {#if loading}
-    <p class="loading">Loading launches…</p>
+    <p class="loading">{m.launches_loading()}</p>
   {:else if months.length === 0}
-    <p class="empty">No launches match these filters.</p>
+    <p class="empty">{m.launches_no_matches()}</p>
   {:else}
     <Timeline {months} {mode} />
   {/if}
 
   <footer class="footer-note">
     <p>
-      Sources: NASA · SpaceX · ESA ·
+      {m.launches_footer_sources_lead()}
       <a href="https://planet4589.org/space/gcat/" rel="noopener noreferrer external" hreflang="en"
-        >McDowell's GCAT (CC&nbsp;BY&nbsp;4.0)</a
+        >{m.launches_citation_gcat_label()} (CC&nbsp;BY&nbsp;4.0)</a
       >
       ·
       <a href="https://thespacedevs.com/llapi" rel="noopener noreferrer external" hreflang="en"
-        >Launch Library 2</a
-      >. Per-row provenance on every entry.
+        >{m.launches_citation_ll2_label()}</a
+      >. {m.launches_footer_per_row_provenance()}
     </p>
   </footer>
 </div>

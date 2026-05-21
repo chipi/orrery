@@ -10,7 +10,6 @@
   import MissionPanel from '$lib/components/MissionPanel.svelte';
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
-  import PillDropdown from '$lib/components/PillDropdown.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
@@ -369,17 +368,50 @@
       </div>
 
       {#if agencies.length > 0}
-        <div class="filter-group">
+        <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
           <span class="filter-label">{m.lib_filter_agency_label()}</span>
-          <PillDropdown
-            value={agencyFilter}
-            options={agencies}
-            placeholder={m.lib_filter_agency_all()}
-            label={m.lib_filter_agency_label()}
-            logoFor={(a) => logoFor(a)}
-            fullNameFor={(a) => fullNameFor(a)}
-            onChange={setAgency}
-          />
+          <button
+            type="button"
+            class="pill"
+            class:active={agencyFilter === 'ALL'}
+            role="radio"
+            aria-checked={agencyFilter === 'ALL'}
+            onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
+          >
+          {#each agencies as agency (agency)}
+            {@const logo = logoFor(agency)}
+            {@const fullName = fullNameFor(agency)}
+            <button
+              type="button"
+              class="pill agency-pill"
+              class:active={agencyFilter === agency}
+              class:logo-pill={logo != null}
+              role="radio"
+              aria-checked={agencyFilter === agency}
+              aria-label={fullName}
+              title={fullName}
+              onclick={() => setAgency(agency)}
+            >
+              {#if logo}
+                <img
+                  src={logo}
+                  alt={fullName}
+                  class="agency-pill-logo"
+                  onerror={(e) => {
+                    // Logo missing → fall back to text label so the pill
+                    // never renders blank.
+                    const img = e.currentTarget as HTMLImageElement;
+                    img.style.display = 'none';
+                    const fb = img.nextElementSibling as HTMLElement | null;
+                    if (fb) fb.style.display = 'inline';
+                  }}
+                />
+                <span class="agency-pill-fallback" hidden>{agency}</span>
+              {:else}
+                {agency}
+              {/if}
+            </button>
+          {/each}
         </div>
       {/if}
     </nav>
@@ -598,6 +630,38 @@
   .pill:focus-visible {
     outline: 2px solid #4466ff;
     outline-offset: 2px;
+  }
+
+  /* Logo-mode agency pill: tighter padding (the logo is the label),
+     fixed minimum width so all agency pills line up uniformly, and
+     a subtle white tint that hover/active darkens. The image itself
+     is sized to match the pill's text metrics so the row reads as
+     one consistent strip. */
+  .pill.logo-pill {
+    padding: 4px 10px;
+    min-width: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .agency-pill-logo {
+    height: 22px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+    display: block;
+    /* Most logos are full-color SVGs; lift contrast on the dark UI
+       and de-saturate the inactive state so the active one pops. */
+    opacity: 0.6;
+    transition: opacity 0.15s;
+  }
+  .pill.logo-pill:hover .agency-pill-logo,
+  .pill.logo-pill.active .agency-pill-logo {
+    opacity: 1;
+  }
+  .pill.logo-pill.active {
+    background: rgba(68, 102, 255, 0.18);
+    border-color: rgba(68, 102, 255, 0.55);
   }
 
   .grid {

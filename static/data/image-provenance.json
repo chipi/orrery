@@ -28911,6 +28911,174 @@
       "pageid": null,
       "nasa_id": "ESP_026643_2485",
       "fetched_at": "2026-05-21T15:03:42.587Z"
+    },
+    {
+      "id": "a06aad9410579070",
+      "path": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama",
+      "author": "NASA / JPL-Caltech / MSSS",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46054_PIA24626-Curiositys_360-degree_View_Atop_Mont_Mercou.png",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46054_PIA24626-Curiositys_360-degree_View_Atop_Mont_Mercou.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA24626",
+      "fetched_at": "2026-05-21T19:22:51.092Z"
+    },
+    {
+      "id": "a9f218d251741050",
+      "path": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Spirit at Winter Haven, sols 814-980 — McMurdo Pancam panorama",
+      "author": "NASA / JPL-Caltech / Cornell",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/6/36529_PIA16440_McMurdo_Merged_Cyl_L456atc_br2.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/6/36529_PIA16440_McMurdo_Merged_Cyl_L456atc_br2.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA16440",
+      "fetched_at": "2026-05-21T19:23:05.774Z"
+    },
+    {
+      "id": "52fd3cdefd4e6c00",
+      "path": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Opportunity Legacy Pan, sols 5084-5111 — final mission panorama (May-Jun 2018)",
+      "author": "NASA / JPL-Caltech / Cornell",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42560_PIA22908-LegacyPan-ANNOTATED.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42560_PIA22908-LegacyPan-ANNOTATED.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA22908",
+      "fetched_at": "2026-05-21T19:23:16.098Z"
+    },
+    {
+      "id": "e46042a07ce68fcf",
+      "path": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Phoenix lander deck + landing site, full-circle panorama (May 2008)",
+      "author": "NASA / JPL-Caltech / U Arizona / Texas A&M",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/downloadable_items/3/5/35317_phx20110310b_PIA13804_phoenix_msp_deck.jpg",
+      "image_url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/downloadable_items/3/5/35317_phx20110310b_PIA13804_phoenix_msp_deck.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA13804",
+      "fetched_at": "2026-05-21T19:23:22.632Z"
+    },
+    {
+      "id": "693a79962f23b9f2",
+      "path": "/images/hotspots/mars/insight/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "InSight Homestead Hollow, sol 14 — IDC arm-camera 290° panorama",
+      "author": "NASA / JPL-Caltech",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42655_PIA23136.png",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42655_PIA23136.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA23136",
+      "fetched_at": "2026-05-21T19:23:29.860Z"
+    },
+    {
+      "id": "f066c1a5c91705af",
+      "path": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Mars Pathfinder IMP 360° colour panorama, Twin Peaks visible on horizon (sols 8-10)",
+      "author": "NASA / JPL",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39960_PIA01005.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39960_PIA01005.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA01005",
+      "fetched_at": "2026-05-21T19:23:36.393Z"
+    },
+    {
+      "id": "eb4afa36a939534d",
+      "path": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Viking 2 lander, Utopia Planitia — first colour image of the site (Sept 1976)",
+      "author": "NASA / JPL",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00568/PIA00568.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00568/PIA00568.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00568",
+      "fetched_at": "2026-05-21T19:23:42.430Z"
+    },
+    {
+      "id": "b5c9dd0d82e67923",
+      "path": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Perseverance Mastcam-Z first 360° panorama, Jezero Crater, sol 3 (Feb 21, 2021)",
+      "author": "NASA / JPL-Caltech / ASU / MSSS",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/deepzooms/2/5/25640_PIA2464-Perseverance_Sol3_Mastcam-Z_panorama.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/deepzooms/2/5/25640_PIA2464-Perseverance_Sol3_Mastcam-Z_panorama.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA2464",
+      "fetched_at": "2026-05-21T19:24:09.380Z"
     }
   ]
 }

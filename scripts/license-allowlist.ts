@@ -152,6 +152,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'CNSA-EDU',
+    display: 'CNSA imagery (educational fair-use)',
+    url: 'https://www.cnsa.gov.cn/english/',
+    rationale:
+      'China National Space Administration publishes Tianwen-1 / Zhurong (Mars) and Chang’e (Moon) imagery on cnsa.gov.cn without a formal Creative Commons license. Standard practice across the planetary-science community (Planetary Society, academic publications, Xinhua redistribution) is editorial / educational reuse with full attribution. Orrery embeds with the canonical "CNSA / PEC" attribution string under this tag. Reused across #PD-mars (Zhurong panorama) and the upcoming #PC (Chang’e 2 regional + Chang’e lander panoramas). This entry is the deliberate precedent for non-Western agencies that publish imagery without formal CC licensing.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'CC-BY-SA-1.0',
     display: 'Creative Commons Attribution-ShareAlike 1.0',
     url: 'https://creativecommons.org/licenses/by-sa/1.0/',

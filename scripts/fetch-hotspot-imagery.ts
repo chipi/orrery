@@ -4,6 +4,7 @@ import { existsSync, promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fetchMarsHotspots } from './hotspots/fetch-mars.ts';
 import { fetchMarsCtxHotspots } from './hotspots/fetch-mars-ctx.ts';
+import { fetchMarsPanoramas } from './hotspots/fetch-mars-panoramas.ts';
 import {
   buildHiriseProvenanceEntry,
   buildCtxMosaicProvenanceEntry,
@@ -69,7 +70,7 @@ interface CliArgs {
   dryRun: boolean;
   skipScore: boolean;
   missingOnly: boolean;
-  layer: 'hirise' | 'ctx' | 'all';
+  layer: 'hirise' | 'ctx' | 'tier3' | 'all';
 }
 
 function parseArgs(): CliArgs {
@@ -90,8 +91,8 @@ function parseArgs(): CliArgs {
       out.site = args[++i];
     } else if (args[i] === '--layer' && i + 1 < args.length) {
       const v = args[++i];
-      if (v !== 'hirise' && v !== 'ctx' && v !== 'all') {
-        throw new Error(`--layer must be hirise|ctx|all (got ${v})`);
+      if (v !== 'hirise' && v !== 'ctx' && v !== 'tier3' && v !== 'all') {
+        throw new Error(`--layer must be hirise|ctx|tier3|all (got ${v})`);
       }
       out.layer = v;
     }
@@ -226,6 +227,15 @@ async function main(): Promise<void> {
   }
 
   // Moon — not yet in scope this slice.
+  // Mars Tier 3 — ground-view panoramas (#PD-mars / #249).
+  if (marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'tier3')) {
+    await fetchMarsPanoramas({
+      site: args.site,
+      dryRun: args.dryRun,
+      missingOnly: args.missingOnly,
+    });
+  }
+
   if (moonHotspots.length > 0) {
     console.log(`\n=== Moon (LROC) ===`);
     console.log(`  Tier B for Moon is not yet implemented (decision pending — see`);

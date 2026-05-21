@@ -170,6 +170,57 @@ export function buildLrocProvenanceEntry(input: {
 }
 
 /**
+ * Build an image-provenance entry for a Mars Tier 3 ground-view
+ * panorama. Per-mission credit chain — for NASA missions the
+ * attribution string already encodes the full chain ("NASA /
+ * JPL-Caltech / MSSS" for Curiosity, "NASA / JPL-Caltech / Cornell"
+ * for MER, etc.); for CNSA (Zhurong) the attribution is "CNSA / PEC"
+ * with the CNSA-EDU license-allowlist tag covering the fair-use
+ * rationale.
+ *
+ * Source media is the agency-published panorama (cylindrical or
+ * partial-360); we pad it to equirectangular 4096×2048 for the
+ * skybox renderer — recorded in `modifications`.
+ */
+export function buildPanoramaProvenanceEntry(input: {
+  siteId: string;
+  publicPath: string;
+  sourceLabel: string;
+  sourceUrl: string;
+  attribution: string;
+  license: 'PD-NASA' | 'CNSA-EDU';
+  caption: string;
+}): ProvenanceEntry {
+  const id = createHash('sha256').update(input.publicPath).digest('hex').slice(0, 16);
+  const licenseUrl =
+    input.license === 'PD-NASA'
+      ? 'https://www.nasa.gov/nasa-brand-center/images-and-media/'
+      : 'https://www.cnsa.gov.cn/english/';
+  const licenseRationale =
+    input.license === 'PD-NASA'
+      ? 'Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.'
+      : 'China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.';
+  return {
+    id,
+    path: input.publicPath,
+    source_type: input.license === 'PD-NASA' ? 'direct-agency' : 'partner-redistribution',
+    title: input.caption,
+    author: input.attribution,
+    agency: input.license === 'PD-NASA' ? 'NASA' : 'CNSA',
+    source_url: input.sourceUrl,
+    image_url: input.sourceUrl,
+    license_short: input.license,
+    license_url: licenseUrl,
+    license_rationale: licenseRationale,
+    modifications: ['padded-to-4096x2048-equirectangular', 'reencoded-jpeg-q88'],
+    revid: null,
+    pageid: null,
+    nasa_id: input.license === 'PD-NASA' ? input.sourceLabel : null,
+    fetched_at: new Date().toISOString(),
+  };
+}
+
+/**
  * Read image-provenance.json, upsert the given entries (matched by
  * `path`), write back. Preserves entry order — new entries appended
  * to the end of an array OR added as keys for object-style manifests.

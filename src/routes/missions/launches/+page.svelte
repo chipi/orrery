@@ -24,6 +24,7 @@
   } from '$lib/launches/manifest.js';
   import Timeline from '$lib/components/launches/Timeline.svelte';
   import PillDropdown from '$lib/components/PillDropdown.svelte';
+  import { launchAgencyLogo, launchAgencyShortName } from '$lib/launches/agency-logos.js';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
@@ -313,6 +314,9 @@
           options={agencies}
           placeholder="ALL"
           label="Agency filter"
+          logoFor={launchAgencyLogo}
+          shortNameFor={launchAgencyShortName}
+          searchable
           onChange={setAgency}
         />
       </div>

@@ -20,6 +20,8 @@
     label,
     logoFor,
     fullNameFor,
+    shortNameFor,
+    searchable,
     onChange,
   }: {
     value: string;
@@ -27,13 +29,29 @@
     placeholder?: string;
     label: string;
     logoFor?: (value: string) => string | null;
+    /** Long-form display name shown in the option rows. */
     fullNameFor?: (value: string) => string;
+    /** Compact display name shown on the trigger pill. Defaults to value. */
+    shortNameFor?: (value: string) => string;
+    /** Show a text-filter input at the top of the popover when option count is high. */
+    searchable?: boolean;
     onChange: (next: string) => void;
   } = $props();
 
   let open = $state(false);
+  let query = $state('');
   let triggerEl: HTMLButtonElement | undefined = $state();
   let popoverEl: HTMLDivElement | undefined = $state();
+  let searchEl: HTMLInputElement | undefined = $state();
+
+  let filteredOptions = $derived.by(() => {
+    if (!searchable || !query.trim()) return options;
+    const q = query.toLowerCase();
+    return options.filter((o) => {
+      const full = (fullNameFor ? fullNameFor(o) : o).toLowerCase();
+      return o.toLowerCase().includes(q) || full.includes(q);
+    });
+  });
 
   $effect(() => {
     if (!open) return;
@@ -64,17 +82,27 @@
   function pick(next: string) {
     onChange(next);
     open = false;
+    query = '';
     triggerEl?.focus();
   }
+
+  // Auto-focus the search box when opening a searchable popover.
+  $effect(() => {
+    if (open && searchable) {
+      queueMicrotask(() => searchEl?.focus());
+    }
+  });
 
   let active = $derived(value !== 'ALL');
   let triggerLogo = $derived(active && logoFor ? logoFor(value) : null);
   let triggerLabel = $derived(
     value === 'ALL'
       ? placeholder
-      : fullNameFor
-        ? fullNameFor(value)
-        : value,
+      : shortNameFor
+        ? shortNameFor(value)
+        : fullNameFor
+          ? fullNameFor(value)
+          : value,
   );
 </script>
 
@@ -100,34 +128,53 @@
 
   {#if open}
     <div class="popover" role="listbox" bind:this={popoverEl}>
-      <button
-        type="button"
-        class="opt"
-        class:active={value === 'ALL'}
-        role="option"
-        aria-selected={value === 'ALL'}
-        onclick={() => pick('ALL')}
-      >
-        <span class="opt-label">{placeholder}</span>
-      </button>
-      {#each options as o (o)}
-        {@const logo = logoFor ? logoFor(o) : null}
-        {@const full = fullNameFor ? fullNameFor(o) : o}
-        <button
-          type="button"
-          class="opt"
-          class:active={value === o}
-          role="option"
-          aria-selected={value === o}
-          onclick={() => pick(o)}
-          title={full}
-        >
-          {#if logo}
-            <img src={logo} alt="" class="opt-logo" />
-          {/if}
-          <span class="opt-label">{full}</span>
-        </button>
-      {/each}
+      {#if searchable}
+        <div class="search-row">
+          <input
+            type="text"
+            class="search"
+            bind:this={searchEl}
+            bind:value={query}
+            placeholder="Type to filter…"
+            aria-label="Filter {label}"
+          />
+        </div>
+      {/if}
+      <div class="opts">
+        {#if !query.trim()}
+          <button
+            type="button"
+            class="opt"
+            class:active={value === 'ALL'}
+            role="option"
+            aria-selected={value === 'ALL'}
+            onclick={() => pick('ALL')}
+          >
+            <span class="opt-label">{placeholder}</span>
+          </button>
+        {/if}
+        {#each filteredOptions as o (o)}
+          {@const logo = logoFor ? logoFor(o) : null}
+          {@const full = fullNameFor ? fullNameFor(o) : o}
+          <button
+            type="button"
+            class="opt"
+            class:active={value === o}
+            role="option"
+            aria-selected={value === o}
+            onclick={() => pick(o)}
+            title={full}
+          >
+            {#if logo}
+              <img src={logo} alt="" class="opt-logo" />
+            {/if}
+            <span class="opt-label">{full}</span>
+          </button>
+        {/each}
+        {#if filteredOptions.length === 0 && query.trim()}
+          <p class="empty">No match for "{query}".</p>
+        {/if}
+      </div>
     </div>
   {/if}
 </div>
@@ -195,15 +242,54 @@
     top: calc(100% + 4px);
     left: 0;
     z-index: 30;
-    min-width: 240px;
-    max-width: 360px;
-    max-height: 360px;
-    overflow-y: auto;
+    width: 320px;
+    max-width: calc(100vw - 32px);
     background: rgba(4, 4, 12, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    max-height: 420px;
+  }
+
+  .search-row {
+    padding: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .search {
+    width: 100%;
+    padding: 6px 8px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    color: #e6e8ee;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  .search:focus {
+    outline: none;
+    border-color: rgba(68, 102, 255, 0.6);
+  }
+  .search::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .opts {
+    overflow-y: auto;
     padding: 4px;
+  }
+
+  .empty {
+    margin: 0;
+    padding: 12px;
+    color: rgba(230, 232, 238, 0.5);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-align: center;
   }
 
   .opt {

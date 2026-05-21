@@ -29079,6 +29079,48 @@
       "pageid": null,
       "nasa_id": "PIA2464",
       "fetched_at": "2026-05-21T19:24:09.380Z"
+    },
+    {
+      "id": "247820c8fecce195",
+      "path": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Viking 1 lander, Chryse Planitia — \"Morning on Chryse\" Camera 1 mosaic (PIA03163)",
+      "author": "NASA / JPL",
+      "agency": "NASA",
+      "source_url": "https://archive.org/download/PIA03163/PIA03163.jpg",
+      "image_url": "https://archive.org/download/PIA03163/PIA03163.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA03163",
+      "fetched_at": "2026-05-21T20:09:07.706Z"
+    },
+    {
+      "id": "e8195df2ef34df32",
+      "path": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Zhurong rover surface view, Utopia Planitia — from He Zhu et al. 2024 (CC BY 4.0)",
+      "author": "CNSA / Beijing Institute of Space Mechanics & Electricity (BISME), He Zhu et al. (2024)",
+      "agency": "CNSA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Mars_surface_by_Zhurong_rover.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Mars_surface_by_Zhurong_rover.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Creative Commons Attribution 4.0 International. Source: academic publication / Wikimedia Commons. Permitted with attribution to the original authors.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-05-21T20:09:13.180Z"
     }
   ]
 }

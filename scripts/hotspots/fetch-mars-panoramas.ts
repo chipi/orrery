@@ -45,7 +45,7 @@ interface MarsPanoramaConfig {
   /** Per-mission credit chain — exact string used in provenance. */
   attribution: string;
   /** License-allowlist short tag. */
-  license: 'PD-NASA' | 'CNSA-EDU';
+  license: 'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0';
   /** Azimuth coverage of the source image (360 = full wrap; 342 =
    *  Viking-class partial). */
   srcAzimuthDeg: number;
@@ -168,6 +168,44 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     srcElevationTopDeg: 25,
     srcElevationBottomDeg: 30,
     caption: 'Viking 2 lander, Utopia Planitia — first colour image of the site (Sept 1976)',
+  },
+  {
+    siteId: 'viking1-lander',
+    sourceUrl: 'https://archive.org/download/PIA03163/PIA03163.jpg',
+    sourceLabel: 'PIA03163',
+    attribution: 'NASA / JPL',
+    license: 'PD-NASA',
+    // Viking Lander 1 Camera 1 mosaic — "Morning on Chryse Planitia",
+    // 342.5° azimuth (partial — leftmost 17.5° is the gap), 5° above
+    // horizon to 60° below. The asymmetric elevation is real: Viking
+    // landers' cameras were mounted ~1.3 m off the ground looking
+    // mostly downward into the workspace. Mirrored via Internet
+    // Archive since science.nasa.gov no longer hosts the original
+    // photojournal page.
+    srcAzimuthDeg: 342.5,
+    srcElevationTopDeg: 5,
+    srcElevationBottomDeg: 60,
+    caption: 'Viking 1 lander, Chryse Planitia — "Morning on Chryse" Camera 1 mosaic (PIA03163)',
+  },
+  {
+    siteId: 'zhurong',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/4/48/Mars_surface_by_Zhurong_rover.jpg',
+    sourceLabel: 'Mars surface by Zhurong (He Zhu et al. 2024, doi:10.1093/nsr/nwae084)',
+    attribution:
+      'CNSA / Beijing Institute of Space Mechanics & Electricity (BISME), He Zhu et al. (2024)',
+    license: 'CC-BY-4.0',
+    // 2008×1141 wide-angle composite from a 2024 research publication
+    // — not a true 360° pano, but the cleanest CC-licensed Zhurong
+    // surface imagery we could find. ~120° azimuth coverage (rough
+    // estimate from the framing); the remaining 240° is filled with
+    // the regolith-tinted azimuth-gap fill, so the skybox shows a
+    // bounded "looking forward" view rather than a full sphere. CC
+    // BY 4.0 license inherited from the source paper.
+    srcAzimuthDeg: 120,
+    srcElevationTopDeg: 20,
+    srcElevationBottomDeg: 40,
+    caption: 'Zhurong rover surface view, Utopia Planitia — from He Zhu et al. 2024 (CC BY 4.0)',
   },
 ];
 

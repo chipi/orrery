@@ -188,25 +188,41 @@ export function buildPanoramaProvenanceEntry(input: {
   sourceLabel: string;
   sourceUrl: string;
   attribution: string;
-  license: 'PD-NASA' | 'CNSA-EDU';
+  license: 'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0';
   caption: string;
 }): ProvenanceEntry {
   const id = createHash('sha256').update(input.publicPath).digest('hex').slice(0, 16);
   const licenseUrl =
     input.license === 'PD-NASA'
       ? 'https://www.nasa.gov/nasa-brand-center/images-and-media/'
-      : 'https://www.cnsa.gov.cn/english/';
+      : input.license === 'CC-BY-4.0'
+        ? 'https://creativecommons.org/licenses/by/4.0/'
+        : 'https://www.cnsa.gov.cn/english/';
   const licenseRationale =
     input.license === 'PD-NASA'
       ? 'Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.'
-      : 'China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.';
+      : input.license === 'CC-BY-4.0'
+        ? 'Creative Commons Attribution 4.0 International. Source: academic publication / Wikimedia Commons. Permitted with attribution to the original authors.'
+        : 'China National Space Administration publishes Tianwen-1 / Zhurong imagery without a formal Creative Commons license; embedded here under educational fair-use with full attribution per CNSA release page (cnsa.gov.cn). See license-allowlist.ts CNSA-EDU entry for the full rationale.';
+  // Map source URL → schema-valid source_type.
+  // Wikimedia URLs → wikimedia-commons; PD-NASA → direct-agency;
+  // anything else (e.g. CNSA direct from cnsa.gov.cn) → direct-other.
+  const sourceType = /wikimedia\.org|wikipedia\.org/.test(input.sourceUrl)
+    ? 'wikimedia-commons'
+    : input.license === 'PD-NASA'
+      ? 'direct-agency'
+      : 'direct-other';
   return {
     id,
     path: input.publicPath,
-    source_type: input.license === 'PD-NASA' ? 'direct-agency' : 'partner-redistribution',
+    source_type: sourceType,
     title: input.caption,
     author: input.attribution,
     agency: input.license === 'PD-NASA' ? 'NASA' : 'CNSA',
+    // For CC-BY-4.0 entries (e.g. Zhurong via Wikimedia Commons),
+    // agency stays "CNSA" since that's who operated the rover; the
+    // license tag carries the redistribution path. Identical to how
+    // Murray Lab's CTX tag inherits NASA imagery via Caltech.
     source_url: input.sourceUrl,
     image_url: input.sourceUrl,
     license_short: input.license,

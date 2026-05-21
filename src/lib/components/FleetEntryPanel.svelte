@@ -4,6 +4,7 @@
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { track } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
+  import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -274,6 +275,10 @@
               </li>
             {/each}
           </ul>
+        {/if}
+
+        {#if entry.category === 'launcher'}
+          <LauncherFlightsWidget launcherId={entry.id} />
         {/if}
 
         <p class="credit">{entry.credit}</p>

@@ -38,6 +38,7 @@ export type LaunchEntry = {
   rocket_config_name: string;
   rocket_family: string;
   orrery_launcher_ref: string | null;
+  orrery_mission_ref?: string | null;
   pad_name?: string;
   pad_location?: string;
   image_url?: string;

@@ -87,6 +87,10 @@
         "orrery_launcher_ref": {
           "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }]
         },
+        "orrery_mission_ref": {
+          "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }],
+          "description": "Best-effort backlink to one of the 37 hand-curated catalogue missions in static/data/missions/index.json. Set by the orchestrator when the launch entry's name + mission_name normalises to contain a catalog id AND the year matches exactly. False-positives must NOT happen — heuristic is intentionally narrow (PRD-020 M17)."
+        },
         "pad_name": { "type": "string" },
         "pad_location": { "type": "string" },
         "image_url": { "type": "string" },

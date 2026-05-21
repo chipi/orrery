@@ -13,7 +13,7 @@
  * Run via `npm run fetch:launches`.
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 import { GcatSource, GCAT_RELEASE_PIN } from '../src/lib/launches/sources/gcat.js';
@@ -22,7 +22,11 @@ import { NasaSource } from '../src/lib/launches/sources/nasa.js';
 import { SpaceXSource } from '../src/lib/launches/sources/spacex.js';
 import { EsaSource } from '../src/lib/launches/sources/esa.js';
 import { mergeAllContributions, type SourceContribution } from '../src/lib/launches/merge.js';
-import { buildFirstFlightMap, computeTier, type CurationFile as TierCurationFile } from '../src/lib/launches/tier.js';
+import {
+  buildFirstFlightMap,
+  computeTier,
+  type CurationFile as TierCurationFile,
+} from '../src/lib/launches/tier.js';
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
 
@@ -41,8 +45,11 @@ type RocketMappingFile = {
   config_exceptions?: Record<string, string>;
 };
 
+type CatalogMission = { id: string; year: number };
+
 type ManifestEntry = Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source_observed_at'> & {
   orrery_launcher_ref: string | null;
+  orrery_mission_ref: string | null;
   tier: 'T1' | 'T2' | 'T3' | 'T4';
   tier_reason: string;
   editorial_note: string | null;
@@ -88,7 +95,44 @@ function resolveLauncherRef(
   );
 }
 
+/**
+ * Conservative best-effort match against the 37-mission catalogue
+ * (PRD-020 M17). Returns the matching mission id when:
+ *   - the launch entry's year equals the catalogue mission's year, AND
+ *   - the catalogue id (normalised to lowercase alphanumeric) appears
+ *     as a substring of the launch entry's name + mission_name (same
+ *     normalisation).
+ * False-positives must NOT happen, so the heuristic intentionally
+ * misses launches like Apollo 11 whose LL2/GCAT name is "Apollo CM-107".
+ */
+function normaliseForMatch(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
 
+function findCatalogMatch(
+  entry: { net: string; name: string; mission_name?: string },
+  catalogue: CatalogMission[],
+): string | null {
+  const year = new Date(entry.net).getUTCFullYear();
+  const haystack = normaliseForMatch(`${entry.name} ${entry.mission_name ?? ''}`);
+  for (const m of catalogue) {
+    if (m.year !== year) continue;
+    const id = normaliseForMatch(m.id);
+    if (id.length >= 4 && haystack.includes(id)) return m.id;
+  }
+  return null;
+}
+
+function loadCatalogue(): CatalogMission[] {
+  try {
+    const idx = readJson<Array<{ id: string; year: number }>>(
+      join(DATA_ROOT, 'missions', 'index.json'),
+    );
+    return idx.map((m) => ({ id: m.id, year: m.year }));
+  } catch {
+    return [];
+  }
+}
 
 async function pullSource(
   source: LaunchSource,
@@ -177,6 +221,7 @@ async function main(): Promise<void> {
   ];
   const firstFlightByConfig = buildFirstFlightMap(allEntries);
   const tierContext = { firstFlightByConfig };
+  const catalogue = loadCatalogue();
 
   // ── Phase 4+5: tier + curation + provenance_chain ───────────────
   function enrich(
@@ -201,9 +246,14 @@ async function main(): Promise<void> {
       } = m.entry;
       void _src;
       void _url;
+      const missionRef = findCatalogMatch(
+        { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
+        catalogue,
+      );
       const entry: ManifestEntry = {
         ...(flat as Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source_observed_at'>),
         orrery_launcher_ref: launcherRef,
+        orrery_mission_ref: missionRef,
         ...tierBits,
         provenance_chain: m.provenance_chain,
         fetched_at: observed,
@@ -225,9 +275,7 @@ async function main(): Promise<void> {
     entries: upcomingEntries,
   };
   writeJson(join(DATA_ROOT, 'launches.json'), upcomingManifest);
-  console.log(
-    `  ✓ launches.json — ${Object.keys(upcomingEntries).length} upcoming entries`,
-  );
+  console.log(`  ✓ launches.json — ${Object.keys(upcomingEntries).length} upcoming entries`);
 
   // Page historic per decade for git friendliness.
   const byDecade: Record<string, Record<string, ManifestEntry>> = {};

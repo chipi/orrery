@@ -8,6 +8,7 @@
    * PRD-020 M8 + M18 + M20.
    */
 
+  import { base } from '$app/paths';
   import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
   import ProvenanceChip from './ProvenanceChip.svelte';
 
@@ -48,6 +49,15 @@
     </h3>
     {#if entry.editorial_note}
       <p class="editorial-note">{entry.editorial_note}</p>
+    {/if}
+    {#if entry.orrery_mission_ref}
+      <a
+        class="catalog-link"
+        href="{base}/missions?id={entry.orrery_mission_ref}"
+        data-sveltekit-preload-data="hover"
+      >
+        → Open in Orrery
+      </a>
     {/if}
     <p class="meta">
       <span class="agency">{entry.agency_name}</span>
@@ -154,6 +164,25 @@
     font-style: italic;
     font-size: 13px;
     color: rgba(230, 232, 238, 0.85);
+  }
+
+  .catalog-link {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 8px;
+    background: rgba(78, 205, 196, 0.12);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    border-radius: 2px;
+    color: #4ecdc4;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: background-color 120ms;
+  }
+  .catalog-link:hover {
+    background: rgba(78, 205, 196, 0.22);
   }
 
   .meta {

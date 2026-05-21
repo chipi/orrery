@@ -1265,6 +1265,8 @@
     // skybox geometry, and the user perceives a "planet stuck across
     // the panorama" smear when looking past the horizon.
     let savedCamR = camR;
+    let savedCamP = camP;
+    let savedCamT = camT;
     const hiddenForPanorama: THREE.Object3D[] = [];
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
@@ -1280,9 +1282,24 @@
           child.visible = false;
         }
       }
+      // Save orbital camera so we can restore exactly where the user
+      // left off when they exit. Reset panorama camera to a neutral
+      // "horizon centred" pose: camP = π/2 puts the horizon line at
+      // the middle of the view (the equator of the skybox sphere);
+      // camT = 0 picks an azimuth in the panorama's native frame —
+      // the source was downloaded as a full 360° wrap so any starting
+      // azimuth shows landscape, and 0 keeps the entry deterministic
+      // regardless of which lat/lon the user had clicked. Without
+      // this reset the panorama opened at whatever pitch/yaw the
+      // orbital camera happened to be at — typically an oblique
+      // angle that looked broken (2026-05-22 feedback).
       savedCamR = camR;
+      savedCamP = camP;
+      savedCamT = camT;
       camR = 0.5;
       camRTarget = camR;
+      camP = Math.PI / 2;
+      camT = 0;
       flyActive = false;
       applyCamera();
       panoramaActive = true;
@@ -1301,6 +1318,8 @@
       hiddenForPanorama.length = 0;
       camR = savedCamR;
       camRTarget = savedCamR;
+      camP = savedCamP;
+      camT = savedCamT;
       applyCamera();
     };
     const onPanoramaKey = (e: KeyboardEvent) => {

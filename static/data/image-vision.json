@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-18T21:39:52.432Z",
+  "vision_provider": "anthropic",
+  "vision_model": "claude-sonnet-4-6",
+  "prompt_version": "v1.0.0",
+  "entries": {
+    "/images/hotspots/mars/curiosity/tier2-hirise.jpg": {
+      "score": 3,
+      "subject": "Grayscale overhead view of a featureless rocky or dusty planetary surface with no distinct focal subject",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/curiosity/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/curiosity/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/curiosity/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:37:58.026Z",
+      "scoring_cost_usd": 0.007524
+    },
+    "/images/hotspots/mars/phoenix/tier2-hirise.jpg": {
+      "score": 1,
+      "subject": "Uniform dark gray textured surface with no identifiable space-related subject.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/phoenix/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/phoenix/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/phoenix/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:07.665Z",
+      "scoring_cost_usd": 0.007389000000000001
+    },
+    "/images/hotspots/mars/opportunity/tier2-hirise.jpg": {
+      "score": 2,
+      "subject": "Featureless grey planetary surface with barely visible small craters and linear markings, likely a low-contrast orbital or radar image.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/opportunity/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/opportunity/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/opportunity/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:15.547Z",
+      "scoring_cost_usd": 0.007614
+    },
+    "/images/hotspots/mars/perseverance/tier2-hirise.jpg": {
+      "score": 4,
+      "subject": "Close-up grayscale orbital image of a dark, textured planetary surface showing erosional or aeolian features with no clear focal subject.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/perseverance/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/perseverance/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/perseverance/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:24.564Z",
+      "scoring_cost_usd": 0.007734
+    },
+    "/images/hotspots/mars/insight/tier2-hirise.jpg": {
+      "score": 3,
+      "subject": "Extremely dark and low-contrast orbital image of a cratered planetary surface, likely the Moon, showing two overlapping swath segments with poor illumination.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.35,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/insight/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/insight/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/insight/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:32.863Z",
+      "scoring_cost_usd": 0.007944
+    },
+    "/images/hotspots/mars/zhurong/tier2-hirise.jpg": {
+      "score": 3,
+      "subject": "Featureless grey textured surface with scattered dark splatters and marks, likely a planetary or lunar terrain map with no clear focal subject.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/zhurong/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/zhurong/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/zhurong/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:43.617Z",
+      "scoring_cost_usd": 0.007704000000000001
+    },
+    "/images/hotspots/mars/beagle2/tier2-hirise.jpg": {
+      "score": 4,
+      "subject": "Low-contrast grayscale orbital or surface image showing a heavily textured, cratered or fractured terrain with a dark strip along the right edge, likely a planetary or lunar surface scan.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/beagle2/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/beagle2/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/beagle2/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:38:53.045Z",
+      "scoring_cost_usd": 0.007989
+    },
+    "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg": {
+      "score": 1,
+      "subject": "A featureless dark grey rocky or stone texture with no identifiable space-related subject.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:02.947Z",
+      "scoring_cost_usd": 0.007794000000000001
+    },
+    "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg": {
+      "score": 1,
+      "subject": "A dark, featureless grainy texture with no identifiable space-related subject matter.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking1-lander/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking1-lander/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking1-lander/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:12.289Z",
+      "scoring_cost_usd": 0.007494000000000001
+    },
+    "/images/hotspots/mars/spirit/tier2-hirise.jpg": {
+      "score": 3,
+      "subject": "Grayscale orbital or radar surface map showing a cratered and fractured planetary terrain with no distinct focal feature.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/spirit/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/spirit/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/spirit/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:20.629Z",
+      "scoring_cost_usd": 0.007569
+    },
+    "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg": {
+      "score": 3,
+      "subject": "Heavily processed or low-contrast grayscale image of a cratered planetary or lunar surface with very low visual definition",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.75,
+        "y": 0.08
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/schiaparelli/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/schiaparelli/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/schiaparelli/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:29.702Z",
+      "scoring_cost_usd": 0.007824000000000001
+    },
+    "/images/hotspots/mars/mars3/tier2-hirise.jpg": {
+      "score": 1,
+      "subject": "A nearly uniform dark gray/black textured surface with no identifiable space-related subject matter.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/mars3/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/mars3/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/mars3/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:37.485Z",
+      "scoring_cost_usd": 0.007554
+    },
+    "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg": {
+      "score": 1,
+      "subject": "A featureless dark textured surface with no identifiable space-related subject matter.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking2-lander/tier2-hirise.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking2-lander/tier2-hirise.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking2-lander/tier2-hirise.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-18T21:39:50.645Z",
+      "scoring_cost_usd": 0.007674
+    }
+  }
+}

@@ -24,6 +24,7 @@
   import MonthStrip from '$lib/components/launches/MonthStrip.svelte';
   import DecadePicker from '$lib/components/launches/DecadePicker.svelte';
   import FilterStrip from '$lib/components/launches/FilterStrip.svelte';
+  import AboutStrip from '$lib/components/launches/AboutStrip.svelte';
   import Timeline from '$lib/components/launches/Timeline.svelte';
 
   type Mode = 'upcoming' | 'historic';
@@ -208,6 +209,7 @@
       Upcoming and historic global spaceflight launches. Agency-first sourcing with
       provenance per row.
     </p>
+    <AboutStrip gcatRelease={manifest.gcat_release} />
     <nav class="mode-tabs" aria-label="Launches view mode">
       <button
         type="button"

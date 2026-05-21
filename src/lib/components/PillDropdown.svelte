@@ -1,27 +1,33 @@
 <script lang="ts">
   /**
-   * Chip-styled dropdown picker — visual extension of the .pill system
-   * used across /missions and /fleet, for filter axes that have too
-   * many options to fit as a pill row (e.g. AGENCY with 60+ launches
-   * sources).
+   * Chip-styled dropdown picker — shared filter primitive used across
+   * /missions, /fleet, and /missions/launches so the AGENCY (and any
+   * future high-cardinality filter) reads the same on every page.
    *
-   * The trigger is a `.pill` (with `.active` styling when a non-default
-   * value is set). Click it → a popover opens below with the full
-   * option list as one-per-row chip-styled buttons. Outside click /
-   * Escape closes the popover.
+   * Visual language mirrors the .pill system: the trigger is a pill
+   * (with .active when a non-default value is set), and each option
+   * row in the popover uses the same monospace + letter-spacing.
+   * When a `logoFor` prop is supplied, each option renders its logo
+   * inline (e.g. NASA/ESA/SpaceX SVGs) — same agency-recognition
+   * affordance the per-pill version used to provide on /missions
+   * and /fleet.
    */
 
   let {
     value,
     options,
-    placeholder = 'All',
+    placeholder = 'ALL',
     label,
+    logoFor,
+    fullNameFor,
     onChange,
   }: {
     value: string;
     options: string[];
     placeholder?: string;
     label: string;
+    logoFor?: (value: string) => string | null;
+    fullNameFor?: (value: string) => string;
     onChange: (next: string) => void;
   } = $props();
 
@@ -29,7 +35,6 @@
   let triggerEl: HTMLButtonElement | undefined = $state();
   let popoverEl: HTMLDivElement | undefined = $state();
 
-  // Outside click + Escape close.
   $effect(() => {
     if (!open) return;
     function onDocClick(e: MouseEvent) {
@@ -62,8 +67,15 @@
     triggerEl?.focus();
   }
 
-  let displayLabel = $derived(value === 'ALL' ? placeholder : value);
   let active = $derived(value !== 'ALL');
+  let triggerLogo = $derived(active && logoFor ? logoFor(value) : null);
+  let triggerLabel = $derived(
+    value === 'ALL'
+      ? placeholder
+      : fullNameFor
+        ? fullNameFor(value)
+        : value,
+  );
 </script>
 
 <div class="pill-dropdown">
@@ -71,13 +83,18 @@
     type="button"
     class="pill"
     class:active
+    class:has-logo={triggerLogo != null}
     aria-haspopup="listbox"
     aria-expanded={open}
     aria-label={label}
+    title={triggerLabel}
     bind:this={triggerEl}
     onclick={() => (open = !open)}
   >
-    <span class="trigger-label">{displayLabel}</span>
+    {#if triggerLogo}
+      <img src={triggerLogo} alt="" class="trigger-logo" />
+    {/if}
+    <span class="trigger-label">{triggerLabel}</span>
     <span class="caret" aria-hidden="true">▾</span>
   </button>
 
@@ -91,9 +108,11 @@
         aria-selected={value === 'ALL'}
         onclick={() => pick('ALL')}
       >
-        {placeholder}
+        <span class="opt-label">{placeholder}</span>
       </button>
       {#each options as o (o)}
+        {@const logo = logoFor ? logoFor(o) : null}
+        {@const full = fullNameFor ? fullNameFor(o) : o}
         <button
           type="button"
           class="opt"
@@ -101,8 +120,12 @@
           role="option"
           aria-selected={value === o}
           onclick={() => pick(o)}
+          title={full}
         >
-          {o}
+          {#if logo}
+            <img src={logo} alt="" class="opt-logo" />
+          {/if}
+          <span class="opt-label">{full}</span>
         </button>
       {/each}
     </div>
@@ -115,8 +138,6 @@
     display: inline-block;
   }
 
-  /* Mirror .pill from /missions exactly so the trigger reads as part
-     of the same filter row. */
   .pill {
     min-height: 32px;
     padding: 6px 10px 6px 12px;
@@ -147,6 +168,16 @@
     outline: 2px solid #4466ff;
     outline-offset: 2px;
   }
+  .pill.has-logo {
+    padding-left: 8px;
+  }
+  .trigger-logo {
+    height: 16px;
+    width: auto;
+    max-width: 24px;
+    object-fit: contain;
+    opacity: 0.95;
+  }
   .trigger-label {
     max-width: 18ch;
     overflow: hidden;
@@ -156,6 +187,7 @@
   .caret {
     font-size: 9px;
     color: rgba(255, 255, 255, 0.5);
+    margin-left: 2px;
   }
 
   .popover {
@@ -163,8 +195,8 @@
     top: calc(100% + 4px);
     left: 0;
     z-index: 30;
-    min-width: 220px;
-    max-width: 320px;
+    min-width: 240px;
+    max-width: 360px;
     max-height: 360px;
     overflow-y: auto;
     background: rgba(4, 4, 12, 0.98);
@@ -175,18 +207,20 @@
   }
 
   .opt {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    text-align: left;
     padding: 8px 10px;
     background: transparent;
     border: none;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.75);
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 1px;
     cursor: pointer;
+    text-align: left;
     transition: background-color 100ms, color 100ms;
   }
   .opt:hover,
@@ -198,5 +232,22 @@
   .opt.active {
     background: rgba(68, 102, 255, 0.28);
     color: #fff;
+  }
+  .opt-logo {
+    height: 18px;
+    width: auto;
+    max-width: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+  .opt.active .opt-logo,
+  .opt:hover .opt-logo {
+    opacity: 1;
+  }
+  .opt-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 </style>

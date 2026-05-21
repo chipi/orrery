@@ -13,6 +13,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
+  import PillDropdown from '$lib/components/PillDropdown.svelte';
 
   // ─── State ───────────────────────────────────────────────────────
   let entries: FleetIndexEntry[] = $state([]);
@@ -402,48 +403,17 @@
         </div>
 
         {#if agencies.length > 0}
-          <div class="filter-group" role="radiogroup" aria-label="Agency">
+          <div class="filter-group">
             <span class="filter-label">AGENCY</span>
-            <button
-              type="button"
-              class="pill"
-              class:active={agencyFilter === 'ALL'}
-              role="radio"
-              aria-checked={agencyFilter === 'ALL'}
-              onclick={() => setAgency('ALL')}>ALL</button
-            >
-            {#each agencies as agency (agency)}
-              {@const logo = logoFor(agency)}
-              {@const fullName = fullNameFor(agency)}
-              <button
-                type="button"
-                class="pill agency-pill"
-                class:active={agencyFilter === agency}
-                class:logo-pill={logo != null}
-                role="radio"
-                aria-checked={agencyFilter === agency}
-                aria-label={fullName}
-                title={fullName}
-                onclick={() => setAgency(agency)}
-              >
-                {#if logo}
-                  <img
-                    src={logo}
-                    alt={fullName}
-                    class="agency-pill-logo"
-                    onerror={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      img.style.display = 'none';
-                      const fb = img.nextElementSibling as HTMLElement | null;
-                      if (fb) fb.style.display = 'inline';
-                    }}
-                  />
-                  <span class="agency-pill-fallback" hidden>{agency}</span>
-                {:else}
-                  {agency}
-                {/if}
-              </button>
-            {/each}
+            <PillDropdown
+              value={agencyFilter}
+              options={agencies}
+              placeholder="ALL"
+              label="Agency filter"
+              logoFor={(a) => logoFor(a)}
+              fullNameFor={(a) => fullNameFor(a)}
+              onChange={setAgency}
+            />
           </div>
         {/if}
 

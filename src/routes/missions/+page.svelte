@@ -10,6 +10,7 @@
   import MissionPanel from '$lib/components/MissionPanel.svelte';
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
+  import PillDropdown from '$lib/components/PillDropdown.svelte';
   import * as m from '$lib/paraglide/messages';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
@@ -368,50 +369,17 @@
       </div>
 
       {#if agencies.length > 0}
-        <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
+        <div class="filter-group">
           <span class="filter-label">{m.lib_filter_agency_label()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={agencyFilter === 'ALL'}
-            role="radio"
-            aria-checked={agencyFilter === 'ALL'}
-            onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
-          >
-          {#each agencies as agency (agency)}
-            {@const logo = logoFor(agency)}
-            {@const fullName = fullNameFor(agency)}
-            <button
-              type="button"
-              class="pill agency-pill"
-              class:active={agencyFilter === agency}
-              class:logo-pill={logo != null}
-              role="radio"
-              aria-checked={agencyFilter === agency}
-              aria-label={fullName}
-              title={fullName}
-              onclick={() => setAgency(agency)}
-            >
-              {#if logo}
-                <img
-                  src={logo}
-                  alt={fullName}
-                  class="agency-pill-logo"
-                  onerror={(e) => {
-                    // Logo missing → fall back to text label so the pill
-                    // never renders blank.
-                    const img = e.currentTarget as HTMLImageElement;
-                    img.style.display = 'none';
-                    const fb = img.nextElementSibling as HTMLElement | null;
-                    if (fb) fb.style.display = 'inline';
-                  }}
-                />
-                <span class="agency-pill-fallback" hidden>{agency}</span>
-              {:else}
-                {agency}
-              {/if}
-            </button>
-          {/each}
+          <PillDropdown
+            value={agencyFilter}
+            options={agencies}
+            placeholder={m.lib_filter_agency_all()}
+            label={m.lib_filter_agency_label()}
+            logoFor={(a) => logoFor(a)}
+            fullNameFor={(a) => fullNameFor(a)}
+            onChange={setAgency}
+          />
         </div>
       {/if}
     </nav>

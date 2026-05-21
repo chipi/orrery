@@ -23,7 +23,7 @@
     type Manifest,
   } from '$lib/launches/manifest.js';
   import Timeline from '$lib/components/launches/Timeline.svelte';
-  import PillDropdown from '$lib/components/launches/PillDropdown.svelte';
+  import PillDropdown from '$lib/components/PillDropdown.svelte';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';

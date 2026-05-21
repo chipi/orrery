@@ -40,11 +40,15 @@
   let tierFilter: TierFilter = $state('ALL');
   let agencyFilter: string = $state('ALL');
   let outcomeFilter: OutcomeFilter = $state('ALL');
+  let yearFilter: string = $state('ALL'); // 'ALL' or 4-digit year
   let filtersExpanded = $state(false);
 
   let allEntries = $derived(Object.values(manifest.entries));
   let agencies = $derived(
     Array.from(new Set(allEntries.map((e) => e.agency_name).filter(Boolean))).sort(),
+  );
+  let years = $derived(
+    Array.from(new Set(allEntries.map((e) => e.net.slice(0, 4)))).sort(),
   );
 
   let filtered = $derived(
@@ -53,6 +57,7 @@
       if (agencyFilter !== 'ALL' && e.agency_name !== agencyFilter) return false;
       if (mode === 'historic' && outcomeFilter !== 'ALL' && e.status.code !== outcomeFilter)
         return false;
+      if (yearFilter !== 'ALL' && !e.net.startsWith(yearFilter)) return false;
       return true;
     }),
   );
@@ -83,6 +88,7 @@
     if (m === mode) return;
     mode = m;
     if (m === 'upcoming') outcomeFilter = 'ALL';
+    yearFilter = 'ALL'; // reset year when switching modes; available years change
     pushUrl();
     void loadForMode(m);
   }
@@ -90,8 +96,14 @@
   function setDecade(d: string) {
     if (d === activeDecade) return;
     activeDecade = d;
+    yearFilter = 'ALL'; // reset year when switching decades
     pushUrl();
     void loadForMode('historic', d);
+  }
+
+  function setYear(y: string) {
+    yearFilter = y;
+    pushUrl();
   }
 
   function setTier(t: TierFilter) {
@@ -113,6 +125,7 @@
     tierFilter = 'ALL';
     agencyFilter = 'ALL';
     outcomeFilter = 'ALL';
+    yearFilter = 'ALL';
     pushUrl();
   }
 
@@ -127,12 +140,15 @@
     agencyFilter = a ?? 'ALL';
     const o = url.searchParams.get('outcome');
     outcomeFilter = o === 'SUCCESS' || o === 'FAILURE' ? o : 'ALL';
+    const y = url.searchParams.get('year');
+    yearFilter = y && /^\d{4}$/.test(y) ? y : 'ALL';
     if (
       url.searchParams.has('mode') ||
       url.searchParams.has('decade') ||
       url.searchParams.has('tier') ||
       url.searchParams.has('agency') ||
-      url.searchParams.has('outcome')
+      url.searchParams.has('outcome') ||
+      url.searchParams.has('year')
     ) {
       filtersExpanded = true;
     }
@@ -147,6 +163,7 @@
     if (tierFilter !== 'ALL') params.set('tier', tierFilter);
     if (agencyFilter !== 'ALL') params.set('agency', agencyFilter);
     if (mode === 'historic' && outcomeFilter !== 'ALL') params.set('outcome', outcomeFilter);
+    if (yearFilter !== 'ALL') params.set('year', yearFilter);
     const qs = params.toString();
     const target = `${base}/missions/launches${qs ? `?${qs}` : ''}`;
     if (target !== $page.url.pathname + $page.url.search) {
@@ -302,7 +319,31 @@
         </select>
       </div>
 
-      {#if tierFilter !== 'ALL' || agencyFilter !== 'ALL' || outcomeFilter !== 'ALL'}
+      {#if years.length > 1}
+        <div class="filter-group" role="radiogroup" aria-label="Year">
+          <span class="filter-label">YEAR</span>
+          <button
+            type="button"
+            class="pill"
+            class:active={yearFilter === 'ALL'}
+            role="radio"
+            aria-checked={yearFilter === 'ALL'}
+            onclick={() => setYear('ALL')}>ALL</button
+          >
+          {#each years as y (y)}
+            <button
+              type="button"
+              class="pill"
+              class:active={y === yearFilter}
+              role="radio"
+              aria-checked={y === yearFilter}
+              onclick={() => setYear(y)}>{y}</button
+            >
+          {/each}
+        </div>
+      {/if}
+
+      {#if tierFilter !== 'ALL' || agencyFilter !== 'ALL' || outcomeFilter !== 'ALL' || yearFilter !== 'ALL'}
         <button type="button" class="clear-btn" onclick={clearFilters}>CLEAR ✕</button>
       {/if}
     </nav>

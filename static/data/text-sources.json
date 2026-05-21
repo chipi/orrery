@@ -220,6 +220,19 @@
       "license_short": "CC-BY-4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "license_rationale": "GCAT is released under CC BY 4.0; attribution is mandatory. PRD-020 / RFC-023 ship-gate."
+    },
+    {
+      "id": "launches.source.ll2",
+      "location": {
+        "file": "static/data/launches.json"
+      },
+      "category": "launches",
+      "relationship": "quoted-from",
+      "snippet": "Upcoming-launch gap-fill from Launch Library 2 (TheSpaceDevs). Used as fallback aggregator where agency-direct sources do not cover a launch. PRD-020 architectural posture: LL2 is a leaf, not the trunk.",
+      "source_url": "https://thespacedevs.com/llapi",
+      "source_publisher": "TheSpaceDevs",
+      "license_short": "CC0",
+      "license_rationale": "LL2 terms: free use, attribution encouraged but not mandatory. Always cited regardless per Orrery editorial discipline."
     }
   ]
 }

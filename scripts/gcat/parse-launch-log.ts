@@ -9,6 +9,7 @@
  * GCAT is released CC-BY by J.C. McDowell. PRD-020 / RFC-023 §12.1.
  */
 import type { LaunchNetPrecision, LaunchStatus, LaunchStatusCode, RawLaunchEntry } from '../../src/lib/launches/types.js';
+import { buildStableId, slugify } from '../../src/lib/launches/id.js';
 
 /**
  * Authoritative column order (28 fields) — matches Release 1.8.0 of the
@@ -181,29 +182,10 @@ export function parseGcatLaunchCode(raw: string): LaunchStatus {
   return { code: status, label: code };
 }
 
-/**
- * Slugify a free-form rocket / mission name to the URL-safe form the
- * stable Orrery-internal id uses.
- */
-export function slugify(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 60);
-}
-
-/** Build the stable Orrery-internal id from a launch's date + LV + mission. */
-export function buildStableId(opts: {
-  iso: string;
-  rocketFamily: string;
-  missionName: string;
-}): string {
-  const datePart = opts.iso.slice(0, 10); // YYYY-MM-DD
-  const familyPart = slugify(opts.rocketFamily) || 'unknown-vehicle';
-  const missionPart = slugify(opts.missionName) || 'unknown-mission';
-  return `${datePart}-${familyPart}-${missionPart}`;
-}
+// Stable-id helpers live in src/lib/launches/id.ts so other sources
+// (LL2, NASA, ESA) reuse the same slugification rule. Re-exported here
+// for backwards-compat with existing test imports.
+export { buildStableId, slugify };
 
 /** Extract the rocket family from `LV_Type` — Saturn V, Falcon 9, etc. */
 export function rocketFamilyFromLvType(lv: string): string {
@@ -223,38 +205,28 @@ export function gcatRowToRawEntry(opts: {
   source_name: string;
   source_observed_at: string;
 }): RawLaunchEntry | null {
-  const [
-    launchTag,
-    ,
-    launchDate,
-    lvType,
-    ,
-    ,
-    ,
-    mission,
-    ,
-    ,
-    launchSite,
-    launchPad,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    dest,
-    ,
-    agency,
-    launchCode,
-    ,
-    ,
-    ,
-    ,
-    ,
-    notes,
-  ] = opts.row.map((c) => c.trim());
+  const cols = opts.row.map((c) => c.trim());
+  const launchTag = cols[0];
+  const launchDate = cols[2];
+  const lvType = cols[3];
+  const mission = cols[7];
+  const launchSite = cols[10];
+  const launchPad = cols[11];
+  const dest = cols[18];
+  const agency = cols[20];
+  const launchCode = cols[21];
+  const category = cols[24];
+  const notes = cols[27];
 
   if (!launchTag || !launchDate || !lvType) return null;
+
+  // The calendar surfaces orbital-class launches only. GCAT's Category
+  // field discriminates: 'Sat *' = satellite-bearing launch (orbital);
+  // 'Spc', 'Lunar', 'Deep' = beyond-LEO probes. Skip Meteo / Aeron /
+  // Test / Weapon etc. that bloat the manifest with non-launch rows.
+  const catFirst = category.split(/\s+/)[0];
+  const allowed = ['Sat', 'Spc', 'Lunar', 'Deep'];
+  if (!allowed.includes(catFirst)) return null;
   const dateRes = parseGcatLaunchDate(launchDate);
   if (!dateRes) return null;
   const status = parseGcatLaunchCode(launchCode);

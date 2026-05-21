@@ -1,6 +1,6 @@
 {
   "name": "orrery",
-  "version": "0.6.3",
+  "version": "0.7.0-wip",
   "description": "Browser-based solar system explorer + Mars / lunar mission simulator. Real Keplerian orbital mechanics, real missions from Luna 9 to Artemis II, fully static SPA.",
   "homepage": "https://chipi.github.io/orrery/",
   "repository": {
@@ -60,6 +60,7 @@
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
     "images:score": "tsx scripts/score-images.ts",
     "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
+    "fetch:launches": "tsx scripts/fetch-launches.ts",
     "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && npm run check-tech-bom",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",

@@ -571,6 +571,14 @@
     // in the animate loop; data-hotspot-tier attribute is published
     // on the canvas for e2e assertions.
     const hotspots: HotspotEntry[] = [];
+    // siteId → the sidecar's hotspot_tier_max — the *capability* ceiling.
+    // The dispatcher reads entry.maxTier each frame, so we mutate
+    // that field down to 1 for non-selected sites (in the render
+    // loop) to suppress Tier-2 discs on sites that aren't the user's
+    // focus. Two nearby sites both promoting to Tier 2 simultaneously
+    // gave a "discs overlapping in weird ways" appearance — only the
+    // selected site's CTX + HiRISE should occupy that real estate.
+    const originalMaxTier = new Map<string, 0 | 1 | 2 | 3>();
     // Tier 2 (HiRISE) "delayed reveal" set — traverse polylines + the
     // end-of-track red/amber dots + traverse captions. These ride the
     // same opacity ramp as the HiRISE detail patch: invisible while
@@ -785,6 +793,7 @@
                 tier2Builder,
               }),
             );
+            originalMaxTier.set(site.id, maxTier);
           }
         }
 
@@ -1330,16 +1339,16 @@
       const dT = -dx * dragK;
       const dP = -dy * dragK;
       camT += dT;
-      // Panorama-mode tilt clamp (2026-05-21 feedback): NASA cylindrical
-      // sources cover ~25-35° above horizon to ~25° below — letting
-      // the user pitch all the way to the zenith / nadir would just
-      // reveal the regolith pad fill. Clamp to roughly ±35° from
-      // horizon (camP = π/2 ± 0.611 rad) — slightly wider than the
-      // tightest source so the source's edge is still visible at the
-      // limit, but no further. Outside panorama mode the existing
-      // [0.15, π − 0.15] near-poles clamp applies.
+      // Panorama-mode tilt clamp (2026-05-21 feedback, round 2):
+      // tightened to ±20° from horizon — the intersection of every
+      // shipped source's vertical coverage (Viking 1 covers only +5°
+      // above horizon, so anything looser exposes the sky pad for
+      // that site; symmetrically Curiosity goes only -25° down).
+      // ±20° gives a comfortable look-around within imagery on
+      // every site without per-site bookkeeping. Outside panorama
+      // mode the existing [0.15, π − 0.15] near-poles clamp applies.
       if (panoramaActive) {
-        const tiltClamp = 0.611; // ≈ 35° in radians
+        const tiltClamp = 0.349; // ≈ 20° in radians
         camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
       } else {
         camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
@@ -1653,24 +1662,36 @@
       const pulse = 1.05 + 0.2 * Math.sin(now * 0.006);
       const dotZoomScale = computeTierScale(camR);
       const traverseDotsVisible = layerTraverses && dotZoomScale < 0.45;
+      // Labels should stay readable at close zoom — the original
+      // "labels follow dot zoom taper" rule shrank them to 0.2× by
+      // camR=30.5, where the start/end caption sprites became
+      // unreadable (2026-05-21 feedback). Decouple: dots stay at
+      // dotZoomScale (proportional to the lander model), labels
+      // floor at 0.55 (≈ comfortable reading scale on the HiRISE
+      // patch without overshooting it).
+      const labelZoomScale = Math.max(0.55, dotZoomScale);
       for (const tl of traverseLines) {
         tl.endDot.visible = traverseDotsVisible;
         tl.startDot.visible = traverseDotsVisible;
         if (tl.startLabel) tl.startLabel.visible = traverseDotsVisible;
         if (tl.endLabel) tl.endLabel.visible = traverseDotsVisible;
         if (!tl.endDot.visible) continue;
-        const base = dotZoomScale;
+        // Dot scale also floored — at camR=30.5 the unfloored
+        // dotZoomScale was 0.2, which made the green/red dots
+        // essentially vanish on the HiRISE patch underneath. 0.35
+        // keeps them small enough not to dominate but legible.
+        const dotScale = Math.max(0.35, dotZoomScale);
         if (tl.isActive && !reduced) {
-          tl.endDot.scale.setScalar(base * pulse);
+          tl.endDot.scale.setScalar(dotScale * pulse);
         } else {
-          tl.endDot.scale.setScalar(base);
+          tl.endDot.scale.setScalar(dotScale);
         }
         // Start dot (landing site) — same zoom taper, no pulse.
-        if (tl.startDot.visible) tl.startDot.scale.setScalar(base);
-        // Labels follow the same zoom taper so they shrink alongside
-        // the dots they describe.
-        if (tl.startLabel) tl.startLabel.scale.setScalar(base);
-        if (tl.endLabel) tl.endLabel.scale.setScalar(base);
+        if (tl.startDot.visible) tl.startDot.scale.setScalar(dotScale);
+        // Labels use the FLOORED scale so they remain readable at
+        // close zoom even when the dots are tiny.
+        if (tl.startLabel) tl.startLabel.scale.setScalar(labelZoomScale);
+        if (tl.endLabel) tl.endLabel.scale.setScalar(labelZoomScale);
       }
       // Orbital dot motion — perception-scaled; one ring per ~30s.
       for (const om of orbitalMarkers) {
@@ -1744,6 +1765,23 @@
 
       // Surface Hotspots LOD (PRD-014 / RFC-017 S4).
       if (hotspots.length) {
+        // Selected-site clamp: only the user's currently-selected
+        // hotspot is allowed to promote past Tier 1. Sites without
+        // a selection use their full data-driven maxTier (overview
+        // behaviour unchanged). With a selection, non-selected sites
+        // clamp to min(originalMaxTier, 1) so their CTX + HiRISE
+        // discs don't render and overlap weirdly when adjacent
+        // landing sites are both visible. Dispatcher reads
+        // entry.maxTier each frame, so mutating it here is safe.
+        const selectedId = selected?.id;
+        for (const h of hotspots) {
+          const orig = originalMaxTier.get(h.siteId) ?? (h.maxTier as 0 | 1 | 2 | 3);
+          if (selectedId == null || selectedId === h.siteId) {
+            h.maxTier = orig;
+          } else {
+            h.maxTier = Math.min(1, orig) as 0 | 1;
+          }
+        }
         const canvasH = renderer.domElement.clientHeight || 1;
         updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
         let topTier = 0;
@@ -2287,16 +2325,8 @@
     >
       <span class="sr-only">
         You are standing at the landing site on Mars. The lander is in front of you. Drag to look
-        around.
+        around. Press ESC, or use the Exit panorama view button in the detail panel, to return.
       </span>
-      <button
-        type="button"
-        class="panorama-exit"
-        onclick={exitPanorama}
-        title="Exit panorama (Esc)"
-      >
-        Exit panorama
-      </button>
     </div>
   {/if}
 
@@ -2352,6 +2382,11 @@
           </div>
         </div>
       {/each}
+      <div class="tcc-scale-note">
+        Discs are not drawn to scale. CTX covers ~10 km × 10 km of ground; HiRISE ~500 m × 500 m at
+        the centre. The 3:1 visual ratio is a stylized "you are HERE" callout — at true scale HiRISE
+        would be a sub-pixel speck inside the CTX disc.
+      </div>
     </div>
   {/if}
   {#if showDebug}
@@ -2449,19 +2484,31 @@ sample      ${debugInfo.projectedPxSample}`}
           </span>
           <span class="badge kind">{selected.kind === 'orbiter' ? 'IN ORBIT' : 'ON SURFACE'}</span>
         </div>
-        {#if selected.hotspot_tier3_panorama && !panoramaActive}
-          <button
-            type="button"
-            class="stand-at-site"
-            data-testid="stand-at-site"
-            onclick={() =>
-              enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
-            title={isSaveDataActive()
-              ? 'Tap to load panorama (~8 MB) — saveData is on'
-              : 'Stand at this landing site — wrap-around ground view'}
-          >
-            🌐 Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
-          </button>
+        {#if selected.hotspot_tier3_panorama}
+          {#if panoramaActive}
+            <button
+              type="button"
+              class="stand-at-site stand-at-site--exit"
+              data-testid="exit-panorama"
+              onclick={exitPanorama}
+              title="Exit panorama view (Esc)"
+            >
+              Exit panorama view
+            </button>
+          {:else}
+            <button
+              type="button"
+              class="stand-at-site"
+              data-testid="stand-at-site"
+              onclick={() =>
+                enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
+              title={isSaveDataActive()
+                ? 'Tap to load panorama (~8 MB) — saveData is on'
+                : 'Stand at this landing site — wrap-around ground view'}
+            >
+              Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
+            </button>
+          {/if}
         {/if}
         {#if selected.mission_type}
           <p class="mission-type">
@@ -2667,6 +2714,13 @@ sample      ${debugInfo.projectedPxSample}`}
     line-height: 1;
     color: var(--accent, #cc7a55);
   }
+  .stand-at-site--exit::before {
+    /* Same button slot as Stand-at-site so the user finds the exit
+     * in the place they entered from; different glyph + colour so
+     * the toggle state is unambiguous. */
+    content: '✕';
+    color: var(--accent, #cc7a55);
+  }
   .stand-at-site:hover,
   .stand-at-site:focus-visible {
     background: rgba(255, 255, 255, 0.08);
@@ -2675,41 +2729,13 @@ sample      ${debugInfo.projectedPxSample}`}
     outline: none;
   }
   .panorama-overlay {
+    /* Now SR-only — the Exit button moved into the detail-panel's
+     * Stand-at-site slot (2026-05-21 feedback). The overlay div stays
+     * so the live-region label is reachable to screen readers. */
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 1000;
-  }
-  .panorama-exit {
-    position: absolute;
-    top: calc(var(--nav-height, 56px) + 12px);
-    right: 16px;
-    pointer-events: auto;
-    padding: 10px 18px;
-    background: rgba(4, 4, 12, 0.78);
-    color: #fff;
-    border: 1px solid var(--accent, #cc7a55);
-    border-radius: 2px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease;
-  }
-  .panorama-exit::before {
-    content: '✕  ';
-    color: var(--accent, #cc7a55);
-  }
-  .panorama-exit:hover,
-  .panorama-exit:focus-visible {
-    background: rgba(204, 122, 85, 0.18);
-    outline: none;
   }
   .sr-only {
     position: absolute;
@@ -2926,6 +2952,15 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .tcc-link:hover {
     text-decoration: underline;
+  }
+  .tcc-scale-note {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 9.5px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.45);
+    font-style: italic;
   }
   @keyframes tcc-fade-in {
     from {

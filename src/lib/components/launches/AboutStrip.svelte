@@ -39,8 +39,12 @@
 
 <style>
   .about-panel {
-    flex: 1 1 280px; /* inline-grow next to the title; wraps when too narrow */
-    min-width: 0;
+    /* Minimal width — sits between the subtitle text and the tabs,
+       sized to its own content (no flex-grow). max-width caps the
+       prose at a readable measure on wide screens. */
+    display: inline-block;
+    max-width: 56ch;
+    margin: 8px 0 14px;
     border: 1px solid rgba(78, 205, 196, 0.22);
     border-radius: 4px;
     background: linear-gradient(180deg, rgba(78, 205, 196, 0.05), rgba(78, 205, 196, 0.015));

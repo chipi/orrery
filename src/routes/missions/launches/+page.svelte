@@ -205,14 +205,12 @@
   data-mode={mode}
 >
   <header class="page-header">
-    <div class="title-row">
-      <h1 class="page-title">Launches Calendar</h1>
-      <AboutStrip {gcatRelease} />
-    </div>
+    <h1 class="page-title">Launches Calendar</h1>
     <p class="page-subtitle">
       Upcoming and historic global spaceflight launches. Agency-first sourcing with
       provenance per row.
     </p>
+    <AboutStrip {gcatRelease} />
     <nav class="mode-tabs" aria-label="Launches view mode">
       <button
         type="button"
@@ -292,16 +290,7 @@
     }
   }
 
-  /* Title + About inline. On wide screens they sit on the same line
-     (h1 takes its natural width, About panel takes the rest). On
-     narrow screens they wrap — About slides directly beneath the
-     title, no fixed gutter, no empty whitespace. */
-  .title-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px 18px;
-  }
+
 
   .page-title {
     margin: 0;

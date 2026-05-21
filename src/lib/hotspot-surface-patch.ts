@@ -44,14 +44,16 @@ import type { HotspotAnnotation } from '$types/surface-site';
 const PATCH_DIAMETER_WORLD_UNITS = 1.0;
 /**
  * Regional patch geometry diameter (Tier 2a — Murray Lab CTX
- * mosaic, ~10 km × 10 km of ground at 5 m/px, 2048² source). 1.5u
- * world-units gives the CTX a ring of context around the detail
- * patch (1.0u) — the detail patch fills the centre, the CTX
- * margin reads as "you are HERE in the wider landing zone".
- * polygonOffset ordering keeps the detail patch on top of the
- * regional patch.
+ * mosaic, ~10 km × 10 km of ground at 5 m/px, 2048² source). 3.0u
+ * world-units = 2× the detail patch diameter, giving a generous
+ * ring of context around the HiRISE detail patch (1.0u — covers
+ * about 1/9 of the regional patch's area). 2026-05-21 feedback:
+ * the prior 1.5u value made the regional ring read as a thin
+ * surround rather than a proper "you are HERE in the wider
+ * landing zone" frame. polygonOffset ordering keeps the detail
+ * patch on top of the regional patch.
  */
-const REGIONAL_PATCH_DIAMETER_WORLD_UNITS = 1.5;
+const REGIONAL_PATCH_DIAMETER_WORLD_UNITS = 3.0;
 
 /**
  * +Y offset above the planet surface. Kept small — the actual
@@ -138,7 +140,13 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   const material = createPatchMaterial(input.textureUrl);
   const mesh = new THREE.Mesh(geom, material);
   mesh.position.y = Z_FIGHT_OFFSET_Y;
-  mesh.userData = { siteId: input.siteId };
+  // userData.layer === 'detail' lets the route's render loop find
+  // the HiRISE inner disc and ramp its opacity independently of the
+  // regional CTX layer — the detail patch fades in LATER as the user
+  // continues to zoom in past the CTX-reveal threshold (2026-05-21
+  // feedback: showing HiRISE at the same zoom as CTX gives the user
+  // no visual sense of progressive detail).
+  mesh.userData = { siteId: input.siteId, layer: 'detail' };
   g.add(mesh);
 
   // Centre pin — small dot at the lander's exact position on the

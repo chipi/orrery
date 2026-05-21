@@ -67,6 +67,24 @@
   // "Install Orrery") — the manifest + SW still qualify the site as
   // installable; we just don't nag.
 
+  // Image-save lock (2026-05-21 site policy). Suppress the
+  // right-click context menu on <img> and <canvas> so "Save image
+  // as…" / "Copy image" is one less obvious affordance. Doesn't
+  // touch context menus on any other element (links, text, etc.) —
+  // copying a URL is still trivial. This is friction, not protection.
+  onMount(() => {
+    if (typeof window === 'undefined') return;
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+      if (target instanceof HTMLImageElement || target instanceof HTMLCanvasElement) {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('contextmenu', handler);
+    return () => document.removeEventListener('contextmenu', handler);
+  });
+
   onMount(async () => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
     try {
@@ -196,6 +214,19 @@
 <style>
   main {
     min-height: calc(100vh - var(--nav-height));
+  }
+  /* Image-save lock (2026-05-21 site policy): block the most common
+   * "save image" affordances (right-click context menu, drag-to-
+   * desktop) on every <img> and <canvas>. Public-domain NASA + CC-BY
+   * imagery is still discoverable via image-provenance.json source
+   * URLs; this is a friction layer, not a true content protection.
+   * pointer-events stays unchanged so click handlers, hover, and
+   * touch still work — only browser-level affordances are denied. */
+  :global(img),
+  :global(canvas) {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
   }
   /* Persistent footer link strip — always visible at the
    * bottom-trailing corner so the bill of materials is one click

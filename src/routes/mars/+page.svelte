@@ -969,12 +969,33 @@
       traverseLines.length = 0;
       for (const tr of Object.values(traverses)) {
         if (!tr.points || tr.points.length < 2) continue;
+        // Prepend the rover's published landing-site lat/lon (from
+        // mars-sites.json) if the traverse's first waypoint isn't
+        // already at that exact coordinate. Without this the green
+        // patch-centre pin (which sits at the published landing
+        // coords) hovers visibly off the polyline's first point —
+        // not by much for Curiosity/Perseverance whose traverses
+        // start within a few metres of the lander, but the visual
+        // disconnect was the complaint on 2026-05-21. Threshold
+        // ~0.001° ≈ 60 m on Mars — looser than that and we'd hide
+        // a real handoff (e.g. an egress traverse that doesn't
+        // start at the lander deck).
+        const trSite = sites.find((s) => s.id === tr.rover_id);
+        const points = tr.points.slice();
+        if (trSite?.lat != null && trSite?.lon != null) {
+          const [firstLat, firstLon] = points[0];
+          const dLat = Math.abs(firstLat - trSite.lat);
+          const dLon = Math.abs(firstLon - trSite.lon);
+          if (dLat > 1e-3 || dLon > 1e-3) {
+            points.unshift([trSite.lat, trSite.lon]);
+          }
+        }
         // Map each [lat, lon] waypoint onto the unit sphere, scale to
         // marsRadius + 0.05u so the line sits visibly above the
         // surface without z-fighting.
         const verts: number[] = [];
         const r = marsRadius + 0.05;
-        for (const [lat, lon] of tr.points) {
+        for (const [lat, lon] of points) {
           const { x, y, z } = latLonToUnitSphere(lat, lon);
           verts.push(x * r, y * r, z * r);
         }
@@ -1214,13 +1235,27 @@
 
     // Phase 6 (#118) — panorama enter/exit hooks. Same pattern as
     // /moon: skybox at scene origin + camera pulled in close.
+    // Isolation: hide EVERY direct child of `scene` except the
+    // skybox itself + lights. Without this, marsAtmosphere /
+    // marsAtmoRing / any orbital ring still render through the
+    // skybox geometry, and the user perceives a "planet stuck across
+    // the panorama" smear when looking past the horizon.
     let savedCamR = camR;
+    const hiddenForPanorama: THREE.Object3D[] = [];
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
       panoramaSkybox = createSkybox({ textureUrl, siteId });
       scene.add(panoramaSkybox.group);
       panoramaSkybox.activate();
-      marsMesh.visible = false;
+      hiddenForPanorama.length = 0;
+      for (const child of scene.children) {
+        if (child === panoramaSkybox.group) continue;
+        if (child instanceof THREE.Light) continue; // ambient + sun stay on
+        if (child.visible) {
+          hiddenForPanorama.push(child);
+          child.visible = false;
+        }
+      }
       savedCamR = camR;
       camR = 0.5;
       camRTarget = camR;
@@ -1235,7 +1270,11 @@
       const handle = panoramaSkybox;
       panoramaSkybox = null;
       setTimeout(() => handle?.dispose(), 1300);
-      marsMesh.visible = true;
+      // Restore everything we hid. Note: we ONLY restore objects we
+      // explicitly hid — anything that was already invisible (layer
+      // toggle, dispatcher tier mask) stays as it was.
+      for (const obj of hiddenForPanorama) obj.visible = true;
+      hiddenForPanorama.length = 0;
       camR = savedCamR;
       camRTarget = savedCamR;
       applyCamera();
@@ -1288,18 +1327,23 @@
     }
     function onWheel(e: WheelEvent) {
       e.preventDefault();
+      // Panorama mode owns its own (zero) zoom range — the user is
+      // INSIDE the skybox sphere at the origin; wheel-scroll would
+      // jerk the camera back out to the planet surface and the
+      // skybox texture would project as a smear across the (now-
+      // visible) planet. Hard no-op while panoramaActive.
+      if (panoramaActive) return;
       // Wheel updates the SMOOTH target — RAF lerps camR toward it.
       // Multiplicative scaling keeps the feel consistent across the
-      // overview-to-close zoom range. Lower bound 30.05 (camera
-      // ≈ 0.05u from surface) lets the HiRISE detail patch (now
-      // 1.0u diameter, 0.5u radius) cover the full viewport at max
-      // zoom, where its 2048² texture renders close to 1:1 with
-      // screen pixels and the 25 cm/px detail is fully legible.
-      // Earlier floors (30.5, 30.15) kept the patch too small on
-      // screen, forcing aggressive downsampling that made HiRISE
-      // look indistinguishable from the CTX layer beneath it.
+      // overview-to-close zoom range. Lower bound 30.2 (camera
+      // ≈ 0.2u from surface) keeps the user comfortably above the
+      // surface — closer than that and the HiRISE patch's edge
+      // clipping at the horizon becomes objectionable. The wider CTX
+      // ring (now 3.0u — doubled from 1.5u per 2026-05-21 feedback)
+      // also benefits from a slightly higher floor so its edge stays
+      // inside the camera frustum.
       const factor = 1 + e.deltaY * 0.0008;
-      camRTarget = Math.max(30.05, Math.min(180, camRTarget * factor));
+      camRTarget = Math.max(30.2, Math.min(180, camRTarget * factor));
     }
 
     // Touch
@@ -1331,10 +1375,16 @@
         applyCamera();
         e.preventDefault();
       } else if (e.touches.length === 2 && pinchDist) {
+        // Panorama mode: same no-op as wheel — pinch would translate
+        // the camera off the skybox centre.
+        if (panoramaActive) {
+          e.preventDefault();
+          return;
+        }
         const dx = e.touches[0].clientX - e.touches[1].clientX;
         const dy = e.touches[0].clientY - e.touches[1].clientY;
         const d = Math.hypot(dx, dy);
-        camR = Math.max(30.05, Math.min(180, camR * (pinchDist / d)));
+        camR = Math.max(30.2, Math.min(180, camR * (pinchDist / d)));
         camRTarget = camR;
         pinchDist = d;
         applyCamera();
@@ -1690,6 +1740,34 @@
             sm.labelGroup.scale.setScalar(zoomScale);
             sm.labelGroup.visible = zoomScale > 0.3;
           }
+        }
+        // Detail-layer (HiRISE) opacity ramp INSIDE Tier 2 so the
+        // HiRISE inner disc reveals LATER than the CTX regional disc
+        // (2026-05-21 feedback). The dispatcher fades the whole
+        // tier2Group at the Tier 1→2 boundary; on top of that we ramp
+        // the detail patch's own material opacity from 0 at camR ≥ 40
+        // (CTX-only — user sees the regional landing zone in context)
+        // to 1 at camR ≤ 33 (camera close enough that the 25 cm/px
+        // HiRISE detail is legible at 1:1 pixel-to-pixel). CTX stays
+        // at the dispatcher's group opacity unchanged. The inner mesh
+        // is tagged userData.layer === 'detail' by the patch builder.
+        const detailFadeStart = 40;
+        const detailFadeEnd = 33;
+        const detailOpacity =
+          camR >= detailFadeStart
+            ? 0
+            : camR <= detailFadeEnd
+              ? 1
+              : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+        for (const h of hotspots) {
+          if (!h.tier2Group) continue;
+          h.tier2Group.traverse((obj) => {
+            if (!(obj instanceof THREE.Mesh)) return;
+            if (obj.userData?.layer !== 'detail') return;
+            const mat = obj.material as THREE.Material & { opacity: number };
+            mat.opacity = detailOpacity;
+            mat.transparent = detailOpacity < 0.99;
+          });
         }
       }
       if (showDebug) {
@@ -2495,23 +2573,38 @@ sample      ${debugInfo.projectedPxSample}`}
   .stand-at-site {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    margin-top: 8px;
-    background: var(--accent, #cc7a55);
-    color: #04040c;
-    border: none;
-    border-radius: 4px;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.5px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
     cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .stand-at-site::before {
+    content: '◐';
+    font-size: 13px;
+    line-height: 1;
+    color: var(--accent, #cc7a55);
   }
   .stand-at-site:hover,
   .stand-at-site:focus-visible {
-    filter: brightness(1.1);
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent, #cc7a55);
+    color: #fff;
+    outline: none;
   }
   .panorama-overlay {
     position: fixed;

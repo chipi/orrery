@@ -247,13 +247,15 @@
       {#if mode === 'historic'}
         <DecadePicker {activeDecade} counts={decadeCounts} onSelect={setDecade} />
       {/if}
+      {#if !loading}
+        <MonthStrip {months} activeKey={activeMonth} onSelect={jumpToMonth} />
+      {/if}
     </div>
   </header>
 
   {#if loading}
     <p class="loading">Loading launches…</p>
   {:else}
-    <MonthStrip {months} activeKey={activeMonth} onSelect={jumpToMonth} />
     <Timeline {months} {mode} />
   {/if}
 

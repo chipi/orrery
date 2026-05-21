@@ -23,6 +23,7 @@
     type Manifest,
   } from '$lib/launches/manifest.js';
   import Timeline from '$lib/components/launches/Timeline.svelte';
+  import PillDropdown from '$lib/components/launches/PillDropdown.svelte';
 
   type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
@@ -307,16 +308,13 @@
 
       <div class="filter-group">
         <span class="filter-label">AGENCY</span>
-        <select
-          class="select"
+        <PillDropdown
           value={agencyFilter}
-          onchange={(e) => setAgency((e.target as HTMLSelectElement).value)}
-        >
-          <option value="ALL">All</option>
-          {#each agencies as a (a)}
-            <option value={a}>{a}</option>
-          {/each}
-        </select>
+          options={agencies}
+          placeholder="ALL"
+          label="Agency filter"
+          onChange={setAgency}
+        />
       </div>
 
       {#if years.length > 1}
@@ -476,18 +474,6 @@
   .pill:focus-visible {
     outline: 2px solid #4466ff;
     outline-offset: 2px;
-  }
-
-  .select {
-    min-height: 32px;
-    padding: 4px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    background: rgba(4, 4, 12, 0.8);
-    color: rgba(255, 255, 255, 0.75);
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1px;
   }
 
   .clear-btn {

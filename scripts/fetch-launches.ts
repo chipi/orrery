@@ -18,6 +18,9 @@ import { dirname, join } from 'node:path';
 
 import { GcatSource, GCAT_RELEASE_PIN } from '../src/lib/launches/sources/gcat.js';
 import { LL2Source } from '../src/lib/launches/sources/ll2.js';
+import { NasaSource } from '../src/lib/launches/sources/nasa.js';
+import { SpaceXSource } from '../src/lib/launches/sources/spacex.js';
+import { EsaSource } from '../src/lib/launches/sources/esa.js';
 import { mergeAllContributions, type SourceContribution } from '../src/lib/launches/merge.js';
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
@@ -127,7 +130,13 @@ async function main(): Promise<void> {
   );
 
   // ── Phase 1+2: pull providers in priority order ─────────────────
-  const sources: LaunchSource[] = [new GcatSource(), new LL2Source()];
+  const sources: LaunchSource[] = [
+    new NasaSource(),
+    new SpaceXSource(),
+    new EsaSource(),
+    new GcatSource(),
+    new LL2Source(),
+  ];
   sources.sort((a, b) => a.priority - b.priority);
 
   const upcomingWindow = {

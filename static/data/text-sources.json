@@ -233,6 +233,45 @@
       "source_publisher": "TheSpaceDevs",
       "license_short": "CC0",
       "license_rationale": "LL2 terms: free use, attribution encouraged but not mandatory. Always cited regardless per Orrery editorial discipline."
+    },
+    {
+      "id": "launches.source.nasa-direct",
+      "location": {
+        "file": "static/data/launches.json"
+      },
+      "category": "launches",
+      "relationship": "paraphrased-from",
+      "snippet": "NASA news-release feed used as agency-direct source for launch announcements. Public domain (17 U.S.C. §105).",
+      "source_url": "https://www.nasa.gov/news/",
+      "source_publisher": "NASA",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105)."
+    },
+    {
+      "id": "launches.source.spacex-direct",
+      "location": {
+        "file": "static/data/launches.json"
+      },
+      "category": "launches",
+      "relationship": "paraphrased-from",
+      "snippet": "SpaceX upcoming-launches page used as agency-direct source for their flight schedule.",
+      "source_url": "https://www.spacex.com/launches/",
+      "source_publisher": "SpaceX",
+      "license_short": "PD-trivial",
+      "license_rationale": "Factual schedule data (date / vehicle / mission) is below the threshold of originality."
+    },
+    {
+      "id": "launches.source.esa-direct",
+      "location": {
+        "file": "static/data/launches.json"
+      },
+      "category": "launches",
+      "relationship": "paraphrased-from",
+      "snippet": "ESA Press Releases page used as agency-direct source for European launch schedule.",
+      "source_url": "https://www.esa.int/Press_Releases",
+      "source_publisher": "European Space Agency",
+      "license_short": "CC-BY-3.0-IGO",
+      "license_rationale": "ESA press content released under CC BY 3.0 IGO; attribution required."
     }
   ]
 }

@@ -9,7 +9,7 @@
  */
 
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname } from 'node:path';
 import type { LaunchSource, LaunchSourceAttribution, LaunchSourceWindow } from './provider.js';
 import type { RawLaunchEntry } from '../types.js';
 import { buildStableId } from '../id.js';

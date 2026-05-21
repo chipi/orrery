@@ -11,7 +11,128 @@
  * - ADR-046 / ADR-047 image-provenance license waivers (`isWaived`)
  * - ADR-052 bidirectional fleet ↔ missions cross-reference drift
  * - ADR-052 bidirectional fleet ↔ sites/earth-objects cross-reference drift
+ * - PRD-020 / RFC-023 launches manifest integrity gates
  */
+
+// ─── PRD-020 / RFC-023 launches manifest integrity ────────────────────
+
+export type LaunchProvenanceRole = 'primary' | 'confirmed-via' | 'augmented-with' | 'fallback-primary';
+
+export type LaunchProvenanceLink = {
+  source: string;
+  role: LaunchProvenanceRole;
+};
+
+export type LaunchEntryMinimal = {
+  id: string;
+  orrery_launcher_ref?: string | null;
+  provenance_chain: ReadonlyArray<LaunchProvenanceLink>;
+};
+
+export type LaunchIntegrityFailure =
+  | { kind: 'missing-primary-provenance'; launch_id: string }
+  | { kind: 'missing-citation'; source: string; expected_text_source_id: string }
+  | { kind: 'orphan-launcher-ref'; launch_id: string; orrery_launcher_ref: string }
+  | { kind: 'orphan-rocket-mapping-target'; mapping_key: string; launcher_id: string };
+
+/**
+ * Returns failures for every launch entry whose `provenance_chain` lacks a
+ * `primary` or `fallback-primary` role. Per RFC-023 §9 gate (2): every
+ * manifest row must trace to at least one first-party source.
+ */
+export function findLaunchesMissingPrimaryProvenance(
+  entries: ReadonlyArray<LaunchEntryMinimal>,
+): LaunchIntegrityFailure[] {
+  const failures: LaunchIntegrityFailure[] = [];
+  for (const e of entries) {
+    const hasPrimary = e.provenance_chain.some(
+      (p) => p.role === 'primary' || p.role === 'fallback-primary',
+    );
+    if (!hasPrimary) {
+      failures.push({ kind: 'missing-primary-provenance', launch_id: e.id });
+    }
+  }
+  return failures;
+}
+
+/**
+ * Returns failures for every distinct `source` value referenced across the
+ * given launch entries that lacks a matching `text-sources.json` entry
+ * keyed `launches.source.<source>`. This is the CC-BY ship-gate from
+ * PRD-020 M14 — missing citation = build fails.
+ */
+export function findLaunchesMissingCitations(
+  entries: ReadonlyArray<LaunchEntryMinimal>,
+  knownTextSourceIds: ReadonlySet<string>,
+): LaunchIntegrityFailure[] {
+  const distinct = new Set<string>();
+  for (const e of entries) {
+    for (const p of e.provenance_chain) distinct.add(p.source);
+  }
+  const failures: LaunchIntegrityFailure[] = [];
+  for (const src of distinct) {
+    const expected = `launches.source.${src}`;
+    if (!knownTextSourceIds.has(expected)) {
+      failures.push({ kind: 'missing-citation', source: src, expected_text_source_id: expected });
+    }
+  }
+  return failures;
+}
+
+/**
+ * Returns failures for every launch entry whose non-null
+ * `orrery_launcher_ref` doesn't resolve to an existing fleet launcher.
+ */
+export function findLaunchesOrphanLauncherRefs(
+  entries: ReadonlyArray<LaunchEntryMinimal>,
+  fleetLauncherExists: (launcherId: string) => boolean,
+): LaunchIntegrityFailure[] {
+  const failures: LaunchIntegrityFailure[] = [];
+  for (const e of entries) {
+    if (e.orrery_launcher_ref == null) continue;
+    if (!fleetLauncherExists(e.orrery_launcher_ref)) {
+      failures.push({
+        kind: 'orphan-launcher-ref',
+        launch_id: e.id,
+        orrery_launcher_ref: e.orrery_launcher_ref,
+      });
+    }
+  }
+  return failures;
+}
+
+/**
+ * Returns failures for every target in `launches-rocket-mapping.json` that
+ * doesn't resolve to an existing fleet launcher.
+ */
+export function findLaunchesOrphanRocketMappingTargets(
+  mapping: {
+    families: Record<string, string>;
+    config_exceptions?: Record<string, string>;
+  },
+  fleetLauncherExists: (launcherId: string) => boolean,
+): LaunchIntegrityFailure[] {
+  const failures: LaunchIntegrityFailure[] = [];
+  for (const [family, launcherId] of Object.entries(mapping.families)) {
+    if (!fleetLauncherExists(launcherId)) {
+      failures.push({
+        kind: 'orphan-rocket-mapping-target',
+        mapping_key: `families/${family}`,
+        launcher_id: launcherId,
+      });
+    }
+  }
+  for (const [config, launcherId] of Object.entries(mapping.config_exceptions ?? {})) {
+    if (!fleetLauncherExists(launcherId)) {
+      failures.push({
+        kind: 'orphan-rocket-mapping-target',
+        mapping_key: `config_exceptions/${config}`,
+        launcher_id: launcherId,
+      });
+    }
+  }
+  return failures;
+}
 
 // ─── Image-provenance license waiver matching ────────────────────────
 

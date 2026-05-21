@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://orrery.local/schemas/launches-rocket-mapping.schema.json",
+  "title": "Launches rocket family → fleet launcher mapping (PRD-020 / RFC-023)",
+  "description": "Manual mapping from source-side rocket family/config strings (LL2 / agency / GCAT) to the canonical Orrery fleet launcher ids used to populate orrery_launcher_ref on each launch entry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "families"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "families": {
+      "type": "object",
+      "description": "Default mapping by rocket_family string → fleet launcher id.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    },
+    "config_exceptions": {
+      "type": "object",
+      "description": "Override by specific rocket_config_name when the family default isn't right.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]*$"
+      }
+    }
+  }
+}

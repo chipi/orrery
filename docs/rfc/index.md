@@ -24,3 +24,4 @@
 | RFC-020 | Sensory Layer — gyroscope (G-C), sonification (S-C 11-route), Capacitor haptics, audio-bus ducking under narration | Draft v0.4 | PRD-017 | v1.x |
 | RFC-021 | Immersive Mode — WebXR (Android) + ARKit Capacitor Swift plugin (iPhone wrapped), Three.js whole-codebase upgrade, Exhibit Mode | Draft v0.4 | PRD-019 | v1.x |
 | RFC-022 | Image Pipeline v2 — VisionProvider abstraction, sidecar manifest (ADR-047 untouched), smart-crop sharp variants, curation deny-list loop, granular CLI scope flags | Draft v0.4 | PRD-018 | v1.x |
+| RFC-023 | Launches Calendar — multi-source agency-first pipeline (NASA / ESA / SpaceX direct + GCAT primary historic + LL2 augmentation), provenance_chain manifest, heuristic + curated tier overrides, CC-BY citation gate | Draft v0.1 | PRD-020 | v0.7 |

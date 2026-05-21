@@ -22,3 +22,4 @@
 | PRD-017 | Sensory Layer — gyroscope, sonification, haptics | Draft v0.4 | mobile + accessibility audience |
 | PRD-018 | Image Pipeline v2 — vision scoring + smart cropping + curation loop | Draft v0.4 | curators, editors, mobile audience |
 | PRD-019 | Immersive Mode — WebXR (Android) + ARKit (iPhone wrapped) + Exhibit Mode | Draft v0.4 | all audiences (capstone feature) |
+| PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Draft v0.1 | curious learner, STEM student, space enthusiast, educator/journalist |

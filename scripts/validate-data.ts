@@ -15,10 +15,15 @@ import {
   findBidirectionalFleetMissionDrift,
   findBidirectionalFleetSiteDrift,
   findProvenanceFailures,
+  findLaunchesMissingPrimaryProvenance,
+  findLaunchesMissingCitations,
+  findLaunchesOrphanLauncherRefs,
+  findLaunchesOrphanRocketMappingTargets,
   type FleetRef,
   type LicenseWaiver,
   type SiteType,
   type ProvenanceRow,
+  type LaunchEntryMinimal,
 } from './validate-data-helpers.js';
 
 const DATA_ROOT = 'static/data';
@@ -76,6 +81,10 @@ const linkProvenanceSchema = loadSchema('link-provenance.schema.json');
 const fleetEntrySchema = loadSchema('fleet-entry.schema.json');
 const fleetIndexSchema = loadSchema('fleet-index.schema.json');
 const fleetOverlaySchema = loadSchema('fleet-overlay.schema.json');
+// PRD-020 / RFC-023 — Launches Calendar (multi-source agency-first pipeline).
+const launchSchema = loadSchema('launch.schema.json');
+const launchesCurationSchema = loadSchema('launches-curation.schema.json');
+const launchesRocketMappingSchema = loadSchema('launches-rocket-mapping.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -111,6 +120,9 @@ const validateLinkProvenance = ajv.compile(linkProvenanceSchema);
 const validateFleetEntry = ajv.compile(fleetEntrySchema);
 const validateFleetIndex = ajv.compile(fleetIndexSchema);
 const validateFleetOverlay = ajv.compile(fleetOverlaySchema);
+const validateLaunches = ajv.compile(launchSchema);
+const validateLaunchesCuration = ajv.compile(launchesCurationSchema);
+const validateLaunchesRocketMapping = ajv.compile(launchesRocketMappingSchema);
 
 let failed = 0;
 let passed = 0;
@@ -182,6 +194,10 @@ validateFile(join(DATA_ROOT, 'source-logos.json'), validateSourceLogos);
 validateFile(join(DATA_ROOT, 'text-sources.json'), validateTextSources);
 // ADR-051 Milestone L-B: outbound LEARN-link provenance manifest.
 validateFile(join(DATA_ROOT, 'link-provenance.json'), validateLinkProvenance);
+// PRD-020 / RFC-023: launches manifest + curation override + rocket mapping.
+validateFile(join(DATA_ROOT, 'launches.json'), validateLaunches);
+validateFile(join(DATA_ROOT, 'launches-curation.json'), validateLaunchesCuration);
+validateFile(join(DATA_ROOT, 'launches-rocket-mapping.json'), validateLaunchesRocketMapping);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {
@@ -893,6 +909,143 @@ if (existsSync(LINK_PROVENANCE_PATH)) {
 }
 
 // ──────────────────────────────────────────────────────────────────────
+// PRD-020 / RFC-023 — Launches manifest integrity (S1 gates)
+//
+// Schema validation already happens in the top reference-data block.
+// These runtime gates layer on the constraints schema can't easily
+// express:
+//   1. Every launch entry's provenance_chain must contain ≥ 1 entry
+//      with role ∈ { 'primary', 'fallback-primary' }. Catches the
+//      future bug where a provider strips the role.
+//   2. CC-BY compliance: every distinct `source` value referenced by
+//      any entry must have a corresponding text-sources.json entry
+//      keyed as `launches.source.<source-name>`. This is the McDowell-
+//      citation ship-gate from PRD-020 M14.
+//   3. Every non-null orrery_launcher_ref must resolve to a real
+//      fleet launcher file (catches mapping bugs early).
+//   4. Every launches-rocket-mapping target id must exist as a
+//      fleet launcher file.
+//   5. Curation file: every override launch_id is a syntactically
+//      valid stable id (covered by schema); referenced ids that
+//      don't yet exist in the manifest are a WARN, not a fail
+//      (a curated upcoming launch can slip to historic between
+//      fetches — RFC-023 §13).
+// ──────────────────────────────────────────────────────────────────────
+
+let launchesFailed = 0;
+const LAUNCHES_PATH = join(DATA_ROOT, 'launches.json');
+const LAUNCHES_CURATION_PATH = join(DATA_ROOT, 'launches-curation.json');
+const LAUNCHES_ROCKET_MAPPING_PATH = join(DATA_ROOT, 'launches-rocket-mapping.json');
+const TEXT_SOURCES_PATH_FOR_LAUNCHES = join(DATA_ROOT, 'text-sources.json');
+
+function fleetLauncherExists(launcherId: string): boolean {
+  return existsSync(join(DATA_ROOT, 'fleet', 'launcher', `${launcherId}.json`));
+}
+
+if (existsSync(LAUNCHES_PATH)) {
+  console.log('\nValidating launches integrity (PRD-020 / RFC-023)...');
+
+  const launches = readJson(LAUNCHES_PATH) as {
+    entries: Record<string, LaunchEntryMinimal>;
+  };
+  const entries = Object.values(launches.entries);
+
+  const knownTextSourceIds: Set<string> = existsSync(TEXT_SOURCES_PATH_FOR_LAUNCHES)
+    ? new Set(
+        (
+          readJson(TEXT_SOURCES_PATH_FOR_LAUNCHES) as {
+            entries: Array<{ id: string }>;
+          }
+        ).entries.map((e) => e.id),
+      )
+    : new Set();
+
+  const failures = [
+    ...findLaunchesMissingPrimaryProvenance(entries),
+    ...findLaunchesMissingCitations(entries, knownTextSourceIds),
+    ...findLaunchesOrphanLauncherRefs(entries, fleetLauncherExists),
+  ];
+  let missingPrimary = 0;
+  let missingCitations = 0;
+  let orphanLauncherRefs = 0;
+  for (const f of failures) {
+    if (f.kind === 'missing-primary-provenance') {
+      missingPrimary++;
+      console.error(
+        `  ✗ launches[${f.launch_id}]: provenance_chain has no entry with role 'primary' or 'fallback-primary'`,
+      );
+    } else if (f.kind === 'missing-citation') {
+      missingCitations++;
+      console.error(
+        `  ✗ launches: source '${f.source}' missing citation — text-sources.json needs entry id '${f.expected_text_source_id}'`,
+      );
+    } else if (f.kind === 'orphan-launcher-ref') {
+      orphanLauncherRefs++;
+      console.error(
+        `  ✗ launches[${f.launch_id}]: orrery_launcher_ref '${f.orrery_launcher_ref}' does not resolve to a fleet launcher`,
+      );
+    }
+  }
+
+  launchesFailed = missingPrimary + missingCitations + orphanLauncherRefs;
+  if (launchesFailed === 0) {
+    console.log(
+      `  ✓ ${entries.length} launch entries — primary provenance present, citations registered, launcher refs resolve`,
+    );
+  } else {
+    console.error(
+      `  ${launchesFailed} launches integrity failure(s) (${missingPrimary} missing primary, ${missingCitations} missing citation, ${orphanLauncherRefs} orphan launcher ref)`,
+    );
+  }
+}
+
+// Gate 4: rocket-mapping targets must exist as fleet launcher files.
+if (existsSync(LAUNCHES_ROCKET_MAPPING_PATH)) {
+  const mapping = readJson(LAUNCHES_ROCKET_MAPPING_PATH) as {
+    families: Record<string, string>;
+    config_exceptions?: Record<string, string>;
+  };
+  const orphanTargets = findLaunchesOrphanRocketMappingTargets(mapping, fleetLauncherExists);
+  for (const f of orphanTargets) {
+    if (f.kind === 'orphan-rocket-mapping-target') {
+      console.error(
+        `  ✗ launches-rocket-mapping.json[${f.mapping_key}] = '${f.launcher_id}' does not resolve to a fleet launcher`,
+      );
+    }
+  }
+  launchesFailed += orphanTargets.length;
+  const targetCount =
+    Object.keys(mapping.families).length + Object.keys(mapping.config_exceptions ?? {}).length;
+  if (orphanTargets.length === 0 && targetCount > 0) {
+    console.log(`  ✓ ${targetCount} rocket-mapping target(s) resolve to fleet launchers`);
+  }
+}
+
+// Gate 5: curation overrides reference known launches (WARN only).
+if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
+  const curation = readJson(LAUNCHES_CURATION_PATH) as {
+    featured: Array<{ launch_id: string }>;
+    demoted: Array<{ launch_id: string }>;
+  };
+  const launches = readJson(LAUNCHES_PATH) as { entries: Record<string, unknown> };
+  const knownLaunchIds = new Set(Object.keys(launches.entries));
+  let unresolvedOverrides = 0;
+  for (const [list, name] of [
+    [curation.featured, 'featured'],
+    [curation.demoted, 'demoted'],
+  ] as const) {
+    for (const ov of list) {
+      if (!knownLaunchIds.has(ov.launch_id)) {
+        unresolvedOverrides++;
+        console.warn(
+          `  ⚠ launches-curation.json[${name}]: launch_id '${ov.launch_id}' not in current manifest (override re-applies once launch reappears)`,
+        );
+      }
+    }
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────
 // Asset-size guard — fail any image under static/images/ that exceeds
 // the workbox precache cap configured in vite.config.ts. Without this
 // the build silently fails late, after lint + tests + most of vite's
@@ -952,6 +1105,7 @@ if (
     provenanceFailed +
     credBomFailed +
     linkProvenanceFailed +
+    launchesFailed +
     assetSizeFailed >
   0
 )

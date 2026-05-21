@@ -1,0 +1,58 @@
+name: Refresh launches manifest
+
+# PRD-020 M11 / RFC-023 §11.
+#
+# Runs every 6h at minute 17 (off-the-hour to avoid the round-minute
+# thundering herd against LL2's 15 req/hour anonymous tier). Pulls the
+# multi-source pipeline (NASA / SpaceX / ESA agency-direct + GCAT
+# historic + LL2 fallback), regenerates launches.json +
+# launches-historic/*.json, commits the diff if non-empty so the
+# standard CI deploy chain picks up the refresh.
+#
+# Bot identity: orrery-launches-bot.
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Pull launches from all sources
+        env:
+          # Optional Patreon-tier LL2 key. Anonymous tier is fine for
+          # v0.1's 6h cadence (~30 calls per refresh, well under the
+          # 15/hour anonymous cap when amortised).
+          LL2_PATREON_KEY: ${{ secrets.LL2_PATREON_KEY }}
+        run: npm run fetch:launches
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          git config user.name 'orrery-launches-bot'
+          git config user.email 'launches-bot@orrery.local'
+          if [[ -n "$(git status --porcelain static/data/launches.json static/data/launches-historic/)" ]]; then
+            git add static/data/launches.json static/data/launches-historic/
+            # Stats are emitted by the orchestrator's audit-report — fall back to a
+            # simple ISO-timestamped message when not present.
+            TS=$(date -u +%Y-%m-%dT%H:%MZ)
+            git commit -m "chore(launches): refresh — ${TS}"
+            git push
+          else
+            echo "No launches manifest changes — skipping commit."
+          fi

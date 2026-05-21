@@ -34,4 +34,18 @@ test.describe('Launches calendar citation visibility (CC-BY ship-gate)', () => {
     // matching text-sources rows — gcat-mcdowell qualifies.
     await expect(page.locator('body')).toContainText(/GCAT|Jonathan/i);
   });
+
+  test('/library page lists GCAT + LL2 in the Launches data sources aside', async ({ page }) => {
+    await page.goto('/library');
+    await page.waitForSelector('section.library[data-route-ready="true"]', { timeout: 30_000 });
+    const aside = page.locator('aside.data-sources');
+    await expect(aside).toBeVisible();
+    await expect(aside).toContainText(/Jonathan McDowell|GCAT|General Catalog/i);
+    await expect(aside).toContainText(/Launch Library 2|LL2|Space Devs/i);
+    // Both outbound links carry the required rel attrs (ADR-051).
+    const gcatLink = aside.locator('a[href*="planet4589.org/space/gcat"]');
+    await expect(gcatLink).toHaveAttribute('rel', /noopener.*noreferrer.*external/);
+    const ll2Link = aside.locator('a[href*="thespacedevs.com"]');
+    await expect(ll2Link).toHaveAttribute('rel', /noopener.*noreferrer.*external/);
+  });
 });

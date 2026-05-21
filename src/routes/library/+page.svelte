@@ -149,6 +149,33 @@
       </p>
     {/if}
     <p class="disclaimer">{m.no_endorsement_disclaimer()}</p>
+
+    <aside class="data-sources" aria-label="Data sources for the launches calendar">
+      <h3>Launches data</h3>
+      <p>
+        Historic launches:
+        <a
+          href="https://planet4589.org/space/gcat/"
+          rel="noopener noreferrer external"
+          hreflang="en"
+          >Jonathan McDowell — General Catalog of Artificial Space Objects (GCAT)</a
+        >, CC&nbsp;BY&nbsp;4.0.
+      </p>
+      <p>
+        Upcoming gap-fill:
+        <a
+          href="https://thespacedevs.com/llapi"
+          rel="noopener noreferrer external"
+          hreflang="en">Launch Library 2 — The Space Devs</a
+        >.
+      </p>
+      <p>
+        Agency-direct sources: NASA · SpaceX · ESA. Per-row provenance chain on every entry of
+        <a href="{base}/missions/launches" data-sveltekit-preload-data="hover"
+          >the launches calendar</a
+        >.
+      </p>
+    </aside>
   </header>
 
   {#if !loaded}

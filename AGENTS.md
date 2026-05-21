@@ -84,13 +84,13 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
 | `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
 | Service worker / PWA | `@vite-pwa/sveltekit`; offline shell after first paint; `data-high-contrast` attribute on `<html>` is the pattern Science Lens copies | ADR-029 |
-| Translation workflow | LLM-first-pass + argos-translate offline-NMT batch fallback; sr-Cyrl hand-authored (no Cyrillic Serbian model); `scripts/wave23/` toolchain | ADR-033 |
+| Translation workflow | LLM-direct (in the Claude Code session — no offline-NMT pipeline, no model downloads); sr-Cyrl hand-authored | ADR-033 |
 | Fonts + script strategy | Wave 1 (Latin+Cyrillic) bundled Inter + Crimson Pro; Wave 2 CJK Noto Sans/Serif CJK; RTL Arabic via `dir="rtl"`; sr-Cyrl Cyrillic gate | ADR-032, ADR-043, ADR-044, ADR-045 |
 | `/fly` trajectory math | Pure-function isolation + per-mission validation harness; committed expected values catch regressions | ADR-030 |
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |
 | Science Lens + multi-layer state | Attribute-on-`<html>` + MutationObserver subscription; 12 per-layer toggles gated on the master lens; CSS reacts via `:global([data-science-layer-*='on'])` with zero imports | ADR-055 |
 | Fleet schema + cross-refs | Per-category folders + generated index manifest; bidirectional `fleet_refs` ↔ `linked_missions`/`linked_sites` enforced by symmetric-link validator (fail-closed) | ADR-052 |
-| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; 137 entries × 14 locales = 1,918 overlay files via argos-translate batch | ADR-053, ADR-054 |
+| Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; 137 entries × 14 locales = 1,918 overlay files translated in-session by the LLM | ADR-053, ADR-054 |
 | E2e readiness signals | Every canvas route exposes `window.__pickAt(x, y)` + `data-route-ready` + `data-loading` attributes; no `sleep(N)` polling in Playwright tests | ADR-056 |
 | Locale persistence | Single `orrery_locale` cookie is the ONLY exception to "no client storage"; everything else stays runtime-only | ADR-057 |
 
@@ -227,10 +227,6 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── fix-fleet-heroes.ts              ← Wikipedia-API filename substitution helper (ADR-053)
 │   ├── scaffold-fleet-entries.ts        ← one-time fleet entry scaffolder (archival)
 │   ├── migrate-fleet-*.ts               ← one-time fleet migrations (archival; do not re-run)
-│   ├── wave23/                          ← i18n translation pipeline (ADR-033, ADR-054)
-│   │   ├── catalog.ts  ← extracts en-US strings
-│   │   ├── maps.ts     ← argos-translate batch → per-locale string maps
-│   │   └── apply-translations.ts ← writes per-locale overlay files
 │   ├── license-allowlist.ts             ← canonical license allowlist + normaliser (ADR-047)
 │   ├── precompute-porkchops.ts          ← pre-computes 9 per-destination porkchop grids (ADR-026 + ADR-028)
 │   ├── build-science-index.ts           ← Cmd-K search index + ?-chip vocabulary for /science

@@ -299,13 +299,17 @@
     }
   }
 
+  /* Both columns stop growing once they reach their preferred basis.
+     Extra horizontal space stays as empty gutter on the right rather
+     than stretching the controls ugly-wide. */
   .col-meta {
     flex: 0 1 360px;
     min-width: 0;
   }
 
   .col-controls {
-    flex: 1 1 540px;
+    flex: 0 1 580px;
+    max-width: 580px;
     min-width: 0;
     display: flex;
     flex-direction: column;

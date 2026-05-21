@@ -8,7 +8,7 @@ The Mars `/mars` route renders each landing site through four progressive tiers 
 | **1** | Vendored 3D lander/rover model | Three.js geometry | mid-zoom (camR ≈ 40-60) |
 | **2a** | **Murray Lab CTX mosaic** (5 m/px) | wide disc, regional context | close-zoom (camR ≈ 35-50) |
 | **2b** | **UAhirise HiRISE RDR** (25 cm/px) | smaller disc, detail centre | closest-zoom (camR ≤ 38) |
-| **3** | NASA panorama (planned, #PD-mars) | inside-out skybox | "Stand at site" button |
+| **3** | NASA / CNSA equirectangular panorama (8 of 13 Mars sites) | inside-out skybox | "Stand at site" button |
 
 This guide focuses on the **Tier 2 imagery pipeline** — the bit that downloads CTX + HiRISE rasters, crops them to a 2048×2048 patch around each lander's coordinates, and writes the per-site JPEGs that `/mars` actually displays.
 
@@ -208,6 +208,93 @@ CTX tiles are 8-bit (`Byte` GDAL datatype), so the `stretchToUint8` is a no-op. 
 Tile sizes are 1-2 GB each. The cache is ~8 GB for the 13 tiles needed for the current Mars sites; if you add more sites, allow ~500 MB-2 GB per new tile (each tile may serve multiple nearby sites).
 
 **Caltech TLS chain note**: Caltech serves the tile ZIPs from a cert chain that Node's bundled `fetch` doesn't fully validate. `ensureCtxMosaicTile()` shells out to `curl` for the download (curl uses the system trust store).
+
+---
+
+## Tier 3 pipeline — `scripts/hotspots/fetch-mars-panoramas.ts`
+
+The Tier 3 layer is the "Stand at site" panorama — an equirectangular skybox the user enters from each landing site's detail panel. The skybox renderer (`src/lib/hotspot-tier3-skybox.ts`) is already in production on `/moon` for Apollo 11 + 17; the Mars side is **purely data + provenance**. The "Stand at site" button (`src/routes/mars/+page.svelte`) is conditional on `selected.hotspot_tier3_panorama` being set, so adding a panorama is just sidecar + JPEG, and omitting a site is just leaving the field unset.
+
+### Coverage status (2026-05-21)
+
+| Status | Sites | Notes |
+|---|---|---|
+| ✅ Shipped | curiosity, perseverance, spirit, opportunity, phoenix, insight, mars-pathfinder, viking2-lander | 8 NASA-PD panoramas via science.nasa.gov |
+| ⏳ Follow-up | viking1-lander, zhurong | viking1 needs Wikimedia Commons fallback (no stable science.nasa.gov URL). zhurong needs a clean mirror for the CNSA navcam pano (CNSA-EDU allowlist tag already in place). |
+| ❌ Omitted | mars3, beagle2, schiaparelli | No usable surface imagery exists — button absent (conditional render). |
+
+### Per-site source URLs (the 8 shipped)
+
+All from `assets.science.nasa.gov` — the canonical NASA imagery CDN that survived the 2023+ photojournal.jpl.nasa.gov → science.nasa.gov migration. PIA numbers are preserved in filenames.
+
+| Site | PIA | Source size | Output size | Caption |
+|---|---|---|---|---|
+| curiosity | PIA24626 | 29163 × 7891 PNG, 291 MB | 472 KB | Mt Mercou, sol 3070 — Mastcam 360° |
+| perseverance | PIA2464 | 36952 × 11570 JPEG | 490 KB | Jezero, sol 3 — Mastcam-Z first 360° |
+| spirit | PIA16440 | 1240 × 351 JPEG | 396 KB | Winter Haven — McMurdo Pancam |
+| opportunity | PIA22908 | 23123 × 5163 JPEG | 522 KB | Legacy Pan, final mission panorama |
+| phoenix | PIA13804 | 2000 × 576 JPEG | 418 KB | First-weeks full-circle, polar plain |
+| insight | PIA23136 | 6446 × 962 PNG | 277 KB | Homestead Hollow 290° arm-cam |
+| mars-pathfinder | PIA01005 | 6283 × 1090 JPEG | 560 KB | Twin Peaks, IMP 360° colour (sols 8-10) |
+| viking2-lander | PIA00568 | 626 × 512 JPEG | 332 KB | Utopia Planitia, first colour (1976) |
+
+The PIA URL pattern that worked: `https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/<N>/<NN>/<file>.jpg` for content-managed assets, or `…/deepzooms/<N>/<NN>/…` for very large panoramas (Perseverance is in deepzooms). The `assets.science.nasa.gov/dynamicimage/…` pattern works for Phoenix-class smaller resources.
+
+**Source resolutions vary wildly** (626×512 for Viking 2 to 36952×11570 for Perseverance). Sharp's default 268 MP input limit is exceeded by Perseverance; the padder sets `limitInputPixels: false`. For low-res sources (Viking, Spirit, Phoenix), the output is upscaled — acceptable for skybox immersion but visually softer than the high-res sites.
+
+### Cylindrical → equirectangular padding
+
+NASA panoramas are typically **cylindrical** projections (360° horizontal, partial vertical — 50°-90° tall, the camera tilt range). The skybox expects **equirectangular 2:1-aspect** (360° × 180°, full sphere). The `panorama-padder.ts` helper bridges the formats:
+
+```
+output canvas (4096 × 2048):
+  rows 0..topRow       → sky gradient (zenith → horizon)
+  rows topRow..botRow  → source image, resized to (srcOutWidth × srcOutHeight)
+  rows botRow..end     → regolith fill
+```
+
+`srcOutWidth = outWidth * (srcAzimuthDeg / 360)`. For 360° sources this is the full width; for partial-360 like Viking (342°) the remaining 18° band is filled with `palette.azimuthGap` colour.
+
+`topRow / botRow` are derived from `srcElevationTopDeg` / `srcElevationBottomDeg`. Horizon line is row `outHeight / 2`.
+
+### Sky / regolith colour palette
+
+Mars sky is **NOT blue**. Default palette (`DEFAULT_MARS_PALETTE`):
+
+```ts
+skyHorizon:  rgb(200, 165, 130)  // warm tan at the horizon line
+skyZenith:   rgb(120, 80, 55)    // deep salmon at zenith
+regolith:    rgb(120, 70, 50)    // ground colour for the bottom pad
+azimuthGap:  rgb(100, 75, 60)    // partial-360 azimuth gap fill
+```
+
+Per-site overrides supported via `palette` in the `MarsPanoramaConfig` entry. Viking 1 has a famously pinker sky tone than later missions; if/when its panorama ships, override `skyHorizon` accordingly.
+
+### CNSA-EDU license tag
+
+`scripts/license-allowlist.ts` has a `CNSA-EDU` entry covering CNSA imagery (Zhurong Mars, future Chang'e Moon under `#PC`). CNSA does not publish a formal CC license on `cnsa.gov.cn`; the entry documents standard educational fair-use with full attribution. Reused across Mars + Moon multi-agency expansions.
+
+### Validation (Tier 3 specific)
+
+After a fetch run, image-read each `tier3-pan.jpg`:
+
+| ✅ Looks right | ❌ Symptoms of regression |
+|---|---|
+| Sky-coloured pad at top, regolith at bottom, source panorama in the middle band | Sky pad at top and bottom (elevation values swapped) |
+| Horizon line ≈ middle row | Horizon at top or bottom edge (elevation values way off) |
+| Source content cleanly transitions to pad colours | Hard black bars where source didn't reach output dimensions (source had its own frame margins — visible but acceptable) |
+| Aspect ratio 2:1 (4096 × 2048) | Wrong aspect (likely `outWidth`/`outHeight` mismatch — fix the `padToEquirectangular` call) |
+
+End-to-end: `/mars?site=<id>` → "Stand at site" button → panorama loads in skybox → drag rotates camera horizontally + tilts vertically → escape returns to orbital view.
+
+### Failure-mode matrix (Tier 3)
+
+| Symptom | Cause | Fix |
+|---|---|---|
+| "Input image exceeds pixel limit" sharp error | Source > 268 MP; sharp's default | Confirm `limitInputPixels: false` is set on both `sharp(input.source, …)` calls in `panorama-padder.ts` |
+| Downloaded "image" is actually HTML | URL doesn't return a raw image — either changed slug or a 404 → redirect to catalog | Find the correct `assets.science.nasa.gov/content/dam/...` URL via WebFetch on the science.nasa.gov resource page |
+| Visible black bars in source band | NASA's source has its own frame margins (camera deck shadows, masking) | Accept — usually small. If unacceptable, crop the source before passing to padder. |
+| Stretched horizon | `srcElevationTopDeg + srcElevationBottomDeg ≠` actual source elevation coverage | Verify against the source page's caption (usually states the vertical FOV) |
 
 ---
 

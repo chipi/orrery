@@ -126,14 +126,14 @@
   .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    padding: 8px 12px;
+    gap: 4px;
+    padding: 6px 10px;
   }
 
   @media (min-width: 768px) {
     .row {
-      gap: 8px;
-      padding: 10px 18px;
+      gap: 5px;
+      padding: 8px 12px;
     }
   }
 
@@ -186,9 +186,9 @@
   .month-chip {
     display: inline-flex;
     align-items: baseline;
-    gap: 5px;
-    padding: 5px 9px;
-    min-height: 28px;
+    gap: 4px;
+    padding: 4px 7px;
+    min-height: 26px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.02);

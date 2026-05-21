@@ -283,15 +283,13 @@
     color: #e6e8ee;
   }
 
-  /* Two-column header: meta on the left (title + subtitle + AboutStrip),
-     controls on the right (tabs + filters + decade picker). Each column
-     takes equal space when both fit on one row; the controls column
-     wraps under the meta column on narrower viewports. */
+  /* Two-column header. Tight column gap so the controls column has
+     maximum width for the month chip row on a typical 14" laptop. */
   .page-header {
     padding: 18px 12px 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px 28px;
+    gap: 16px 12px;
     align-items: flex-start;
   }
 
@@ -302,16 +300,16 @@
   }
 
   .col-meta {
-    flex: 1 1 380px;
+    flex: 0 1 360px;
     min-width: 0;
   }
 
   .col-controls {
-    flex: 1 1 420px;
+    flex: 1 1 540px;
     min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .page-title {

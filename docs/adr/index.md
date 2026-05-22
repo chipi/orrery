@@ -61,7 +61,7 @@
 | ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
 | ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Accepted (closes #73 Gap 2) | May 2026 |
 | ADR-058 | Cislunar view: Earth-centered second camera + per-mission Moon trajectory profiles | Accepted | May 2026 |
-| ADR-063 | Web container: multi-stage Dockerfile, nginx serves `adapter-static` bundle | Draft | May 2026 |
-| ADR-064 | Pipeline runner: single `tsx`-entrypoint image, `docker compose run --rm` on-demand, no scheduler service | Draft | May 2026 |
-| ADR-065 | Live `/data` volume: pipelines write, web reads, no rebuild between refreshes | Draft | May 2026 |
-| ADR-066 | Docker-stack e2e CI workflow — Playwright against the running compose stack | Draft | May 2026 |
+| ADR-063 | Web container: nginx:alpine with host bind-mounts (no custom Dockerfile after Amendment) | Accepted | May 2026 |
+| ADR-064 | Pipeline runner: single `tsx`-entrypoint image, `docker compose run --rm` on-demand, no scheduler service | Accepted | May 2026 |
+| ADR-065 | Live `/data` surface: host bind-mount of `./static/data`, pipelines write, web reads, no rebuild between refreshes | Accepted | May 2026 |
+| ADR-066 | Docker-stack e2e CI workflow — Playwright against the running compose stack | Accepted | May 2026 |

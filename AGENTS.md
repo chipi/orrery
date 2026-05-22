@@ -518,6 +518,7 @@ Reading order for any non-trivial task:
 4. `docs/prd/` — product specs (the user-value argument + V1 scope).
 5. `docs/uxs/` — UX specifications.
 6. `docs/guides/i18n-style-guide.md` — per-language translation conventions (binding per ADR-033).
+7. `docs/guides/docker-stack.md` — local `docker compose` stack (web nginx + on-demand pipeline runners, RFC-024 / ADR-063-066). For exercising the production-shape artefact locally, running data pipelines without host gdal, or understanding the docker-e2e CI gate.
 
 When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
 

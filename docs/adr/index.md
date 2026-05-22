@@ -65,3 +65,5 @@
 | ADR-064 | Pipeline runner: single `tsx`-entrypoint image, `docker compose run --rm` on-demand, no scheduler service | Accepted | May 2026 |
 | ADR-065 | Live `/data` surface: host bind-mount of `./static/data`, pipelines write, web reads, no rebuild between refreshes | Accepted | May 2026 |
 | ADR-066 | Docker-stack e2e CI workflow — Playwright against the running compose stack | Accepted | May 2026 |
+| ADR-067 | Sentry as client-side error-tracking layer (errors only, env-var-gated, no committed secrets) | Draft | May 2026 |
+| ADR-068 | Grafana Cloud Agent as docker-stack log shipper (profile-gated, env-var-gated, silent without credentials) | Draft | May 2026 |

@@ -74,7 +74,7 @@ export const LROC_CURATED_PRODUCTS: Record<string, LrocCuratedProduct> = {
     notes:
       'Apollo 11 / Tranquillity Base NAC ROI, 5 m/px downsample of ' +
       'the full BDR mosaic. LM Eagle descent stage visible at the ROI ' +
-      "centre. Published by LROC team under PDS RDR V1.0; backed by " +
+      'centre. Published by LROC team under PDS RDR V1.0; backed by ' +
       'M168000580 + many other NAC observations.',
   },
 
@@ -108,7 +108,7 @@ export const LROC_CURATED_PRODUCTS: Record<string, LrocCuratedProduct> = {
       'DATA/BDR/NAC_ROI/APOLLO15HIA/NAC_ROI_APOLLO15HIA_E259N0036_5M.IMG',
     notes:
       'Apollo 15 / Hadley Rille NAC ROI. Falcon LM + Lunar Roving ' +
-      "Vehicle + rille edge in frame. 5 m/px.",
+      'Vehicle + rille edge in frame. 5 m/px.',
   },
 
   apollo16: {
@@ -183,7 +183,7 @@ export const LROC_CURATED_PRODUCTS: Record<string, LrocCuratedProduct> = {
       'DATA/BDR/NAC_ROI/AITKNCTRHIA/NAC_ROI_AITKNCTRHIA_E168S1734_5M.IMG',
     notes:
       "Aitken Center / Von Kármán crater (Chang'e 4 region) NAC ROI. " +
-      "First far-side landing (2019). Only LROC view of any far-side " +
+      'First far-side landing (2019). Only LROC view of any far-side ' +
       'landing — no NASA-Apollo equivalent. 5 m/px.',
   },
 

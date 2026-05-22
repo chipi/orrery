@@ -70,7 +70,10 @@ export interface LrocFetchResult {
  *   2. then the curated map.
  * Returns { productId, sourceUrl } or throws LrocFetchError.
  */
-export function resolveLrocUrl(siteId: string, overrideUrl?: string): {
+export function resolveLrocUrl(
+  siteId: string,
+  overrideUrl?: string,
+): {
   productId: string;
   sourceUrl: string;
 } {
@@ -120,10 +123,7 @@ async function headCheck(url: string): Promise<void> {
       );
     }
     if (!res.ok) {
-      throw new LrocFetchError(
-        'HEAD_FAILED',
-        `LROC source URL returned ${res.status}: ${url}`,
-      );
+      throw new LrocFetchError('HEAD_FAILED', `LROC source URL returned ${res.status}: ${url}`);
     }
   } catch (err) {
     if (err instanceof LrocFetchError) throw err;

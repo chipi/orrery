@@ -9,7 +9,14 @@ name: Refresh launches manifest
 # launches-historic/*.json, commits the diff if non-empty so the
 # standard CI deploy chain picks up the refresh.
 #
-# Bot identity: orrery-launches-bot.
+# Bot identity: orrery-launches-bot. Pushes direct to main —
+# main's branch protection must allow this workflow (either via
+# a PAT in secrets.LAUNCHES_BOT_TOKEN with bypass-protection rights,
+# OR via "Allow specified actors to bypass required pull requests"
+# configured for the bot in repo settings → Branches → main). The
+# default workflow GITHUB_TOKEN cannot bypass protection — that's
+# what produces GH006 "Protected branch update failed" if the PAT
+# fallback isn't configured.
 
 on:
   schedule:
@@ -25,6 +32,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          # Prefer the bypass-capable PAT when configured; fall through
+          # to the default token for first-run / locally-tested cases.
+          # actions/checkout configures git remote with whichever token
+          # we hand it, so the subsequent `git push` reuses the same
+          # credentials.
+          token: ${{ secrets.LAUNCHES_BOT_TOKEN || secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:

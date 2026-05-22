@@ -47,13 +47,22 @@ function attachConsoleAndError(page: Page): string[] {
   return errors;
 }
 
+// Locator note (2026-05-22 fix): the `canvas.layer` class is only on
+// the *2D* canvas — the 3D mode renders a <div class="layer"> whose
+// THREE.js child <canvas> has no class. Both /mars and /moon default
+// to 3D, so `canvas.layer` always matches the 2D canvas, which is
+// display:none in 3D mode → toBeVisible fails. The THREE.js canvas
+// — where data-hotspot-tier is set on renderer.domElement — sits
+// INSIDE the .layer div, so `.layer:not(canvas) canvas` resolves to
+// the right element. Same pattern as tests/e2e/earth.spec.ts:13.
+const THREE_CANVAS = '.layer:not(canvas) canvas';
+
 test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
   for (const siteId of V1_MOON_SITES) {
     test(`/moon?site=${siteId} loads with hotspot dispatcher active`, async ({ page }) => {
       const errors = attachConsoleAndError(page);
       await page.goto(`/moon?site=${siteId}`);
-      // Canvas mounts immediately; sites JSON loads async (PRD-009 pattern).
-      const canvas = page.locator('canvas.layer').first();
+      const canvas = page.locator(THREE_CANVAS).first();
       await expect(canvas).toBeVisible({ timeout: 10_000 });
       // Wait for the hotspot dispatcher to publish a tier on the canvas
       // — present once at least one HotspotEntry runs through
@@ -79,7 +88,7 @@ test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
     test(`/mars?site=${siteId} loads with hotspot dispatcher active`, async ({ page }) => {
       const errors = attachConsoleAndError(page);
       await page.goto(`/mars?site=${siteId}`);
-      const canvas = page.locator('canvas.layer').first();
+      const canvas = page.locator(THREE_CANVAS).first();
       await expect(canvas).toBeVisible({ timeout: 10_000 });
       await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, { timeout: 15_000 });
       const chip = page.locator('[data-testid="layer-hotspots"]');

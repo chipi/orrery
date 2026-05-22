@@ -97,7 +97,7 @@ test.describe('/missions — catalog', () => {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     await expect(panel).toContainText(/Curiosity/i);
     await expect(panel).toContainText(/2011/);
@@ -117,7 +117,7 @@ test.describe('/missions — catalog', () => {
   test('?id=[id] deep-link opens a mission panel pre-selected', async ({ page }) => {
     await page.goto('/missions?id=curiosity');
     await page.waitForLoadState('networkidle');
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Curiosity/i);
   });
@@ -125,7 +125,7 @@ test.describe('/missions — catalog', () => {
   test('Curiosity card shows ON THE SURFACE cross-link to /mars', async ({ page }) => {
     await page.goto('/missions?id=curiosity');
     await page.waitForLoadState('networkidle');
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     const link = panel.getByTestId('surface-link');
     await expect(link).toBeVisible();
@@ -138,7 +138,7 @@ test.describe('/missions — catalog', () => {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     // Gallery tab renders at least one thumbnail. Asserting on the
     // first thumbnail (not an exact count) keeps the test stable when
@@ -161,7 +161,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-curiosity"]').click();
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     const flightTab = page.getByRole('tab', { name: /^FLIGHT$/ });
     await expect(flightTab).toBeVisible({ timeout: 5_000 });
@@ -179,7 +179,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-mars3"]').click();
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     await page.getByRole('tab', { name: /^FLIGHT$/ }).click();
     // mars3 is flight_data_quality: "sparse" → shows the caveat.
@@ -195,7 +195,7 @@ test.describe('/missions — flight params (v0.1.7 / ADR-027)', () => {
       timeout: 10_000,
     });
     await page.locator('[data-testid="mission-card-starship-demo"]').click();
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     await page.getByRole('tab', { name: /^FLIGHT$/ }).click();
     await expect(panel).toContainText(/FLIGHT DATA NOT YET RESEARCHED/i);

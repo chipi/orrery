@@ -856,6 +856,20 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
  *   luna16          → [luna16, luna-16]
  *   change5         → [change5, change-5]
  */
+/**
+ * Hand-curated aliases for cases where a site id and its gallery's
+ * curated id are semantically related but not derivable by
+ * normalization. Add cautiously — only when a real gallery exists
+ * under a name that wouldn't be reached by the variant generator.
+ */
+const GALLERY_ID_ALIASES: Record<string, string> = {
+  // Luna 21's surface mission was the Lunokhod 2 rover; the gallery
+  // under fleet-galleries/lunokhod-2/ is the right surface imagery
+  // for the luna21 site, but neither "luna21" nor "luna-21" derives
+  // from "lunokhod-2" by id-variant rules.
+  luna21: 'lunokhod-2',
+};
+
 function gallerySiteIdVariants(id: string): string[] {
   const variants = new Set<string>([id]);
   const stripped = id.replace(/-(lander|orbiter|rover)$/, '');
@@ -865,6 +879,8 @@ function gallerySiteIdVariants(id: string): string[] {
     const dashed = candidate.replace(/^([a-z]+)(\d+)$/, '$1-$2');
     if (dashed !== candidate) variants.add(dashed);
   }
+  // Hand-curated alias (e.g. luna21 → lunokhod-2).
+  if (GALLERY_ID_ALIASES[id]) variants.add(GALLERY_ID_ALIASES[id]);
   return Array.from(variants);
 }
 

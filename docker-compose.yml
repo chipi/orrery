@@ -65,6 +65,13 @@ services:
       # Source code bind-mount, read-only. Local-dev only — the future
       # VPS image will bake source in (RFC-024 §10).
       - .:/repo:ro
+      # Anonymous volume masks the host's darwin-arm64 node_modules so
+      # the image's linux-arm64 node_modules (with native bindings
+      # compiled for the container's platform) wins. Without this,
+      # esbuild / gdal-async / sharp would try to load the host's
+      # macOS binaries inside the linux container and crash on first
+      # tsx invocation.
+      - /repo/node_modules
     environment:
       - LL2_PATREON_KEY=${LL2_PATREON_KEY:-}
       - NODE_OPTIONS=--max-old-space-size=4096

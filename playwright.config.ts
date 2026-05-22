@@ -27,7 +27,10 @@ export default defineConfig({
   expect: { timeout: 5_000 },
 
   use: {
-    baseURL: 'http://127.0.0.1:4173',
+    // PLAYWRIGHT_BASE_URL overrides the default. The docker-e2e workflow
+    // (ADR-066) sets it to http://localhost:8080 so the Playwright run
+    // targets the live docker nginx stack instead of vite preview.
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -46,14 +49,20 @@ export default defineConfig({
     },
   ],
 
-  webServer: {
-    // Build is run beforehand by `test:e2e` to keep this command fast
-    // and the timeout small. Preview-only typically starts in < 2 s.
-    command: 'npx vite preview --port 4173 --host 127.0.0.1',
-    url: 'http://127.0.0.1:4173',
-    reuseExistingServer: !process.env.CI,
-    timeout: 30_000,
-    stdout: 'pipe',
-    stderr: 'pipe',
-  },
+  // Skip starting our own preview server when an external base URL is
+  // provided. The docker-e2e workflow (ADR-066) brings up the nginx
+  // container itself and just points Playwright at it via
+  // PLAYWRIGHT_BASE_URL; we'd collide with port 4173 otherwise.
+  webServer: process.env.PLAYWRIGHT_BASE_URL
+    ? undefined
+    : {
+        // Build is run beforehand by `test:e2e` to keep this command fast
+        // and the timeout small. Preview-only typically starts in < 2 s.
+        command: 'npx vite preview --port 4173 --host 127.0.0.1',
+        url: 'http://127.0.0.1:4173',
+        reuseExistingServer: !process.env.CI,
+        timeout: 30_000,
+        stdout: 'pipe',
+        stderr: 'pipe',
+      },
 });

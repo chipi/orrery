@@ -1,0 +1,101 @@
+name: docker-e2e
+
+# Stands up the local docker-compose stack inside the GH Actions runner
+# and runs Playwright against it. This is the VPS-readiness gate per
+# ADR-066: it asserts the nginx-serving contract (cache headers, SPA
+# fallback, mime types, the live /data overlay) that the standard
+# e2e.yml workflow doesn't exercise — that one targets `vite preview`.
+#
+# Path-gated on PRs so a Svelte-only change doesn't pay the docker tax;
+# always runs on push to main so trunk health is known.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'Dockerfile'
+      - 'docker-compose.yml'
+      - '.dockerignore'
+      - 'ops/docker/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'playwright.config.ts'
+      - '.github/workflows/docker-e2e.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: docker-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Produce build/ on the runner. The web container bind-mounts it,
+      # so this step is the precondition for `docker compose up -d web`
+      # to serve anything.
+      - run: npm run build
+
+      - name: Bring up web container
+        run: docker compose up -d web
+
+      - name: Wait for web to be healthy
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf http://localhost:8080/ >/dev/null; then
+              echo "Web container responding on :8080"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Web container failed to respond within 120s — dumping logs:"
+          docker compose logs web
+          exit 1
+
+      - name: Smoke-test critical paths
+        run: |
+          set -e
+          # Production-shape nginx must serve: SPA root, a sub-route,
+          # the data manifest with no-cache, and an immutable hashed
+          # asset with the year-long cache header.
+          curl -sf http://localhost:8080/ >/dev/null
+          curl -sf http://localhost:8080/missions/launches >/dev/null
+          curl -sfI http://localhost:8080/data/launches.json | grep -i 'cache-control: no-cache'
+          curl -sfI http://localhost:8080/data/launches.json | grep -i 'content-type: application/json'
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright against docker web
+        env:
+          PLAYWRIGHT_BASE_URL: http://localhost:8080
+        # Desktop-only — mobile-chromium is covered by e2e.yml and
+        # doesn't exercise additional nginx-serving behaviour.
+        run: npx playwright test --project=desktop-chromium
+
+      - name: Capture web logs on failure
+        if: failure()
+        run: docker compose logs web
+
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: docker-e2e-playwright-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Tear down stack
+        if: always()
+        run: docker compose down

@@ -185,7 +185,7 @@
       void getMoonSiteGallery(selected.id, selected.mission_id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
       });
-      void getSiteStory(selected.id).then((story) => {
+      void getSiteStory(selected.id, localeFromPage($page)).then((story) => {
         if (selected && selected.id === lastSelectedId) panelStory = story;
       });
     }
@@ -1440,7 +1440,7 @@
             onclick={() => (panelTab = 'story')}
             role="tab"
             aria-selected={panelTab === 'story'}
-            data-testid="panel-tab-story">STORY</button
+            data-testid="panel-tab-story">{m.panel_tab_story()}</button
           >
         {/if}
         {#if panelHasLinks}

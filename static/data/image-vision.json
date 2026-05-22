@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-05-22T08:34:01.942Z",
-  "vision_provider": "cached",
-  "vision_model": "cached",
+  "generated_at": "2026-05-22T08:42:00.927Z",
+  "vision_provider": "anthropic",
+  "vision_model": "claude-sonnet-4-6",
   "prompt_version": "v1.0.0",
   "entries": {
     "/images/hotspots/mars/curiosity/tier2-hirise.jpg": {
-      "score": 3,
-      "subject": "Grayscale overhead view of a featureless rocky or dusty planetary surface with no distinct focal subject",
+      "score": 5,
+      "subject": "Close-up grayscale orbital image of a heavily cratered and rocky planetary or lunar surface showing varied terrain textures and relief.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -18,15 +18,15 @@
         "4x3": "/images/hotspots/mars/curiosity/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/curiosity/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:37:58.026Z",
-      "scoring_cost_usd": 0.007524
+      "scored_at": "2026-05-22T08:40:39.866Z",
+      "scoring_cost_usd": 0.007479
     },
     "/images/hotspots/mars/phoenix/tier2-hirise.jpg": {
-      "score": 1,
-      "subject": "Uniform dark gray textured surface with no identifiable space-related subject.",
-      "category": "other",
+      "score": 5,
+      "subject": "Close-up grayscale radar or microscopic image showing a textured polygonal surface pattern, possibly Martian or Venusian terrain imaged by orbital radar.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -36,32 +36,32 @@
         "4x3": "/images/hotspots/mars/phoenix/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/phoenix/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:07.665Z",
-      "scoring_cost_usd": 0.007389000000000001
+      "scored_at": "2026-05-22T08:41:15.670Z",
+      "scoring_cost_usd": 0.007404000000000001
     },
     "/images/hotspots/mars/opportunity/tier2-hirise.jpg": {
-      "score": 2,
-      "subject": "Featureless grey planetary surface with barely visible small craters and linear markings, likely a low-contrast orbital or radar image.",
+      "score": 6,
+      "subject": "Black-and-white orbital image of a cratered and fractured planetary surface, likely the Moon or Mercury, showing impact craters with bright ejecta rays and surface fissures.",
       "category": "surface",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.52,
+        "y": 0.57
       },
       "variants": {
         "1x1": "/images/hotspots/mars/opportunity/tier2-hirise.1x1.jpg",
         "4x3": "/images/hotspots/mars/opportunity/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/opportunity/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:15.547Z",
-      "scoring_cost_usd": 0.007614
+      "scored_at": "2026-05-22T08:40:46.702Z",
+      "scoring_cost_usd": 0.007449000000000001
     },
     "/images/hotspots/mars/perseverance/tier2-hirise.jpg": {
-      "score": 4,
-      "subject": "Close-up grayscale orbital image of a dark, textured planetary surface showing erosional or aeolian features with no clear focal subject.",
+      "score": 6,
+      "subject": "Close-up black-and-white orbital image of a planetary surface showing complex terrain with ridges, craters, and textured geological features, likely Mars or another rocky body.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -72,17 +72,17 @@
         "4x3": "/images/hotspots/mars/perseverance/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/perseverance/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:24.564Z",
-      "scoring_cost_usd": 0.007734
+      "scored_at": "2026-05-22T08:40:51.438Z",
+      "scoring_cost_usd": 0.007419
     },
     "/images/hotspots/mars/insight/tier2-hirise.jpg": {
-      "score": 3,
-      "subject": "Extremely dark and low-contrast orbital image of a cratered planetary surface, likely the Moon, showing two overlapping swath segments with poor illumination.",
+      "score": 5,
+      "subject": "Grayscale orbital image of a heavily cratered planetary surface, likely the Moon or Mercury, showing varied albedo terrain with numerous impact craters.",
       "category": "surface",
       "focal_point": {
-        "x": 0.35,
+        "x": 0.38,
         "y": 0.5
       },
       "variants": {
@@ -90,14 +90,14 @@
         "4x3": "/images/hotspots/mars/insight/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/insight/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:32.863Z",
-      "scoring_cost_usd": 0.007944
+      "scored_at": "2026-05-22T08:40:54.511Z",
+      "scoring_cost_usd": 0.007209
     },
     "/images/hotspots/mars/zhurong/tier2-hirise.jpg": {
-      "score": 3,
-      "subject": "Featureless grey textured surface with scattered dark splatters and marks, likely a planetary or lunar terrain map with no clear focal subject.",
+      "score": 5,
+      "subject": "Grayscale orbital or close-approach image of a cratered planetary or lunar surface showing scattered boulders and impact craters",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -108,17 +108,17 @@
         "4x3": "/images/hotspots/mars/zhurong/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/zhurong/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:43.617Z",
-      "scoring_cost_usd": 0.007704000000000001
+      "scored_at": "2026-05-22T08:41:03.213Z",
+      "scoring_cost_usd": 0.007149000000000001
     },
     "/images/hotspots/mars/beagle2/tier2-hirise.jpg": {
-      "score": 4,
-      "subject": "Low-contrast grayscale orbital or surface image showing a heavily textured, cratered or fractured terrain with a dark strip along the right edge, likely a planetary or lunar surface scan.",
+      "score": 6,
+      "subject": "Close-up grayscale orbital image of a cratered planetary surface with diagonal streaks and linear features, likely Mars or the Moon.",
       "category": "surface",
       "focal_point": {
-        "x": 0.45,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
@@ -126,15 +126,15 @@
         "4x3": "/images/hotspots/mars/beagle2/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/beagle2/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:38:53.045Z",
-      "scoring_cost_usd": 0.007989
+      "scored_at": "2026-05-22T08:41:11.104Z",
+      "scoring_cost_usd": 0.007164
     },
     "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg": {
-      "score": 1,
-      "subject": "A featureless dark grey rocky or stone texture with no identifiable space-related subject.",
-      "category": "other",
+      "score": 5,
+      "subject": "Grayscale orbital or close-up image of a rocky, cratered planetary surface covered with boulders and small impact craters.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -144,15 +144,15 @@
         "4x3": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:02.947Z",
-      "scoring_cost_usd": 0.007794000000000001
+      "scored_at": "2026-05-22T08:40:36.766Z",
+      "scoring_cost_usd": 0.007299
     },
     "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg": {
-      "score": 1,
-      "subject": "A dark, featureless grainy texture with no identifiable space-related subject matter.",
-      "category": "other",
+      "score": 4,
+      "subject": "Grayscale close-up orbital image of a heavily cratered and rocky planetary or lunar surface with no distinct focal feature.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -164,12 +164,12 @@
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:12.289Z",
-      "scoring_cost_usd": 0.007494000000000001
+      "scored_at": "2026-05-22T08:40:29.933Z",
+      "scoring_cost_usd": 0.0075840000000000005
     },
     "/images/hotspots/mars/spirit/tier2-hirise.jpg": {
-      "score": 3,
-      "subject": "Grayscale orbital or radar surface map showing a cratered and fractured planetary terrain with no distinct focal feature.",
+      "score": 5,
+      "subject": "Black-and-white orbital image of a heavily cratered planetary surface, likely Mars, showing numerous impact craters and rocky terrain texture.",
       "category": "surface",
       "focal_point": {
         "x": 0.5,
@@ -180,51 +180,51 @@
         "4x3": "/images/hotspots/mars/spirit/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/spirit/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:20.629Z",
-      "scoring_cost_usd": 0.007569
+      "scored_at": "2026-05-22T08:40:43.144Z",
+      "scoring_cost_usd": 0.0072840000000000005
     },
     "/images/hotspots/mars/schiaparelli/tier2-hirise.jpg": {
-      "score": 3,
-      "subject": "Heavily processed or low-contrast grayscale image of a cratered planetary or lunar surface with very low visual definition",
+      "score": 5,
+      "subject": "Grayscale orbital image of a heavily cratered lunar or planetary surface with numerous small impact craters and linear fractures visible across a flat plain.",
       "category": "surface",
       "focal_point": {
-        "x": 0.75,
-        "y": 0.08
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/hotspots/mars/schiaparelli/tier2-hirise.1x1.jpg",
         "4x3": "/images/hotspots/mars/schiaparelli/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/schiaparelli/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:29.702Z",
-      "scoring_cost_usd": 0.007824000000000001
+      "scored_at": "2026-05-22T08:41:06.563Z",
+      "scoring_cost_usd": 0.007209
     },
     "/images/hotspots/mars/mars3/tier2-hirise.jpg": {
-      "score": 1,
-      "subject": "A nearly uniform dark gray/black textured surface with no identifiable space-related subject matter.",
-      "category": "other",
+      "score": 5,
+      "subject": "Close-up grayscale orbital or aerial image of a cratered and textured planetary surface, likely Mars or the Moon, showing polygonal terrain and dark dust deposits.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.55
       },
       "variants": {
         "1x1": "/images/hotspots/mars/mars3/tier2-hirise.1x1.jpg",
         "4x3": "/images/hotspots/mars/mars3/tier2-hirise.4x3.jpg",
         "16x9": "/images/hotspots/mars/mars3/tier2-hirise.16x9.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:37.485Z",
-      "scoring_cost_usd": 0.007554
+      "scored_at": "2026-05-22T08:40:58.890Z",
+      "scoring_cost_usd": 0.007389000000000001
     },
     "/images/hotspots/mars/viking2-lander/tier2-hirise.jpg": {
-      "score": 1,
-      "subject": "A featureless dark textured surface with no identifiable space-related subject matter.",
-      "category": "other",
+      "score": 3,
+      "subject": "Close-up grayscale image of a heavily cratered or pitted planetary surface with no distinct focal feature.",
+      "category": "surface",
       "focal_point": {
         "x": 0.5,
         "y": 0.5
@@ -236,8 +236,422 @@
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
-      "scored_at": "2026-05-18T21:39:50.645Z",
+      "scored_at": "2026-05-22T08:40:33.501Z",
+      "scoring_cost_usd": 0.0076890000000000005
+    },
+    "/images/hotspots/mars/curiosity/tier2-ctx.jpg": {
+      "score": 6,
+      "subject": "Orbital grayscale image of a Martian surface showing a steep escarpment or canyon wall with dark slope streaks and scattered impact craters on the surrounding plains.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.72
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/curiosity/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/curiosity/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/curiosity/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:35.359Z",
+      "scoring_cost_usd": 0.007614
+    },
+    "/images/hotspots/mars/schiaparelli/tier2-ctx.jpg": {
+      "score": 3,
+      "subject": "Heavily obscured orbital or surface image showing a faint small crater amid featureless grey terrain, likely a dust-storm-affected Mars orbital view.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.58,
+        "y": 0.58
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/schiaparelli/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/schiaparelli/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/schiaparelli/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:39.505Z",
       "scoring_cost_usd": 0.007674
+    },
+    "/images/hotspots/mars/viking1-lander/tier2-ctx.jpg": {
+      "score": 6,
+      "subject": "Overhead orbital view of a cratered Martian surface with fracture channels and a prominent dome-like feature in the lower left quadrant.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.35,
+        "y": 0.55
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking1-lander/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking1-lander/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking1-lander/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:43.033Z",
+      "scoring_cost_usd": 0.007194000000000001
+    },
+    "/images/hotspots/mars/viking2-lander/tier2-ctx.jpg": {
+      "score": 4,
+      "subject": "Grayscale orbital image of a heavily dust-covered planetary surface showing scattered small impact craters and subtle terrain features, likely Mars.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking2-lander/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking2-lander/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking2-lander/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:47.641Z",
+      "scoring_cost_usd": 0.007554
+    },
+    "/images/hotspots/mars/mars-pathfinder/tier2-ctx.jpg": {
+      "score": 7,
+      "subject": "Overhead black-and-white orbital view of a Martian cratered plain featuring a prominent impact crater with bright ejecta blanket surrounded by numerous smaller craters.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.72
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/mars-pathfinder/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:51.343Z",
+      "scoring_cost_usd": 0.007614
+    },
+    "/images/hotspots/mars/spirit/tier2-ctx.jpg": {
+      "score": 6,
+      "subject": "Orbital grayscale image of a Martian or lunar surface showing intricate lava flow channels, impact craters, and fractured terrain patterns.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/spirit/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/spirit/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/spirit/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:55.116Z",
+      "scoring_cost_usd": 0.007224
+    },
+    "/images/hotspots/mars/opportunity/tier2-ctx.jpg": {
+      "score": 4,
+      "subject": "Grayscale orbital image of a planetary surface showing scattered impact craters and light-toned surface deposits, likely Mars.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.35,
+        "y": 0.62
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/opportunity/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/opportunity/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/opportunity/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:39:58.963Z",
+      "scoring_cost_usd": 0.007374
+    },
+    "/images/hotspots/mars/perseverance/tier2-ctx.jpg": {
+      "score": 7,
+      "subject": "High-resolution orbital grayscale image of the Martian surface showing eroded terrain, impact craters, and layered geological formations.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/perseverance/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/perseverance/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/perseverance/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:02.490Z",
+      "scoring_cost_usd": 0.0071790000000000005
+    },
+    "/images/hotspots/mars/phoenix/tier2-ctx.jpg": {
+      "score": 2,
+      "subject": "Featureless grayscale surface texture with no identifiable planetary, spacecraft, or space-mission subject",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/phoenix/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/phoenix/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/phoenix/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:07.050Z",
+      "scoring_cost_usd": 0.007899
+    },
+    "/images/hotspots/mars/insight/tier2-ctx.jpg": {
+      "score": 5,
+      "subject": "Overhead grayscale orbital image of a cratered planetary surface, likely Mars, showing numerous impact craters of varying sizes scattered across flat terrain.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/insight/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/insight/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/insight/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:10.847Z",
+      "scoring_cost_usd": 0.007194000000000001
+    },
+    "/images/hotspots/mars/mars3/tier2-ctx.jpg": {
+      "score": 7,
+      "subject": "Orbital black-and-white image of a Martian surface showing impact craters, eolian textures, and a large shadowed crater rim at the right edge.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/mars3/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/mars3/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/mars3/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:16.173Z",
+      "scoring_cost_usd": 0.007299
+    },
+    "/images/hotspots/mars/zhurong/tier2-ctx.jpg": {
+      "score": 5,
+      "subject": "Orbital grayscale image of a Martian surface plain showing scattered impact craters and a tectonic fracture or graben along the left side.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/zhurong/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/zhurong/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/zhurong/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:19.898Z",
+      "scoring_cost_usd": 0.007239000000000001
+    },
+    "/images/hotspots/mars/beagle2/tier2-ctx.jpg": {
+      "score": 4,
+      "subject": "Grayscale orbital survey image of a cratered planetary surface, likely Mars, showing numerous small impact craters distributed across a flat plain.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/beagle2/tier2-ctx.1x1.jpg",
+        "4x3": "/images/hotspots/mars/beagle2/tier2-ctx.4x3.jpg",
+        "16x9": "/images/hotspots/mars/beagle2/tier2-ctx.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:40:25.225Z",
+      "scoring_cost_usd": 0.0076890000000000005
+    },
+    "/images/hotspots/mars/curiosity/tier3-pan.jpg": {
+      "score": 6,
+      "subject": "Panoramic self-portrait of NASA's Curiosity rover on the Martian surface with rocky terrain and hazy orange sky, showing the rover's arm and deck visible at the edges of the stitched mosaic.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/curiosity/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/curiosity/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/curiosity/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:20.131Z",
+      "scoring_cost_usd": 0.008355
+    },
+    "/images/hotspots/mars/spirit/tier3-pan.jpg": {
+      "score": 7,
+      "subject": "Panoramic view from the Mars Exploration Rover showing the rover's solar panels in the foreground and the rocky Martian landscape stretching to the horizon under a hazy orange sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.62,
+        "y": 0.52
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/spirit/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/spirit/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/spirit/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:23.920Z",
+      "scoring_cost_usd": 0.007815
+    },
+    "/images/hotspots/mars/opportunity/tier3-pan.jpg": {
+      "score": 4,
+      "subject": "Annotated panoramic mosaic from NASA's Opportunity rover showing Perseverance Valley and Endeavour Crater rim on Mars, with labeled features including tabular rocks, rover tracks, solar panels, and the low-gain antenna.",
+      "category": "diagram",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/opportunity/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/opportunity/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/opportunity/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": "category-diagram",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:29.811Z",
+      "scoring_cost_usd": 0.00852
+    },
+    "/images/hotspots/mars/phoenix/tier3-pan.jpg": {
+      "score": 8,
+      "subject": "NASA Phoenix Mars Lander panoramic view showing solar panels, deck hardware, and the flat arctic Martian plain stretching to the horizon under a hazy pink-purple sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.62
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/phoenix/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/phoenix/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/phoenix/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:33.991Z",
+      "scoring_cost_usd": 0.007785
+    },
+    "/images/hotspots/mars/insight/tier3-pan.jpg": {
+      "score": 6,
+      "subject": "Panoramic view of the Martian surface taken by a Mars lander, showing the spacecraft's solar panels in the foreground and the rocky, rust-colored terrain stretching to the horizon under a hazy orange sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/insight/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/insight/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/insight/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:38.866Z",
+      "scoring_cost_usd": 0.008475
+    },
+    "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg": {
+      "score": 8,
+      "subject": "Panoramic view of the Martian surface taken from the Mars Pathfinder lander, showing the rocky Ares Vallis floodplain with deflated airbags and solar panels in the foreground and a dusty orange sky on the horizon.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/mars-pathfinder/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/mars-pathfinder/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/mars-pathfinder/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:43.034Z",
+      "scoring_cost_usd": 0.00807
+    },
+    "/images/hotspots/mars/viking2-lander/tier3-pan.jpg": {
+      "score": 8,
+      "subject": "Wide panoramic view of the Martian surface showing red rocky terrain stretching to the horizon under a hazy orange-brown sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking2-lander/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking2-lander/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking2-lander/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:46.845Z",
+      "scoring_cost_usd": 0.007635
+    },
+    "/images/hotspots/mars/perseverance/tier3-pan.jpg": {
+      "score": 7,
+      "subject": "Panoramic view of the NASA Perseverance rover's deck and instruments on the Martian surface at Jezero Crater, with the red rocky terrain and hazy horizon stretching into the distance.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.62,
+        "y": 0.55
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/perseverance/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/perseverance/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/perseverance/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:50.725Z",
+      "scoring_cost_usd": 0.007545
+    },
+    "/images/hotspots/mars/viking1-lander/tier3-pan.jpg": {
+      "score": 4,
+      "subject": "Incomplete panoramic mosaic of the Martian surface showing rocky terrain and rover hardware fragments against an artificial reddish-brown background.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.52
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking1-lander/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking1-lander/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking1-lander/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:41:55.820Z",
+      "scoring_cost_usd": 0.00804
+    },
+    "/images/hotspots/mars/zhurong/tier3-pan.jpg": {
+      "score": 2,
+      "subject": "A small Mars surface panorama thumbnail embedded in the lower-left corner of a largely blank brown-gradient background, showing rover wheel tracks and lander hardware on the Martian surface.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.17,
+        "y": 0.62
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/zhurong/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/zhurong/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/zhurong/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-05-22T08:42:00.466Z",
+      "scoring_cost_usd": 0.008295
     }
   }
 }

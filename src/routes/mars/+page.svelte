@@ -335,7 +335,7 @@
       void getMarsSiteGallery(selected.id, selected.mission_id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
       });
-      void getSiteStory(selected.id).then((story) => {
+      void getSiteStory(selected.id, localeFromPage($page)).then((story) => {
         if (selected && selected.id === lastSelectedId) panelStory = story;
       });
     }
@@ -2571,7 +2571,7 @@ sample      ${debugInfo.projectedPxSample}`}
           onclick={() => (panelTab = 'story')}
           data-testid="panel-tab-story"
         >
-          STORY
+          {m.panel_tab_story()}
         </button>
       {/if}
       {#if panelHasLinks}

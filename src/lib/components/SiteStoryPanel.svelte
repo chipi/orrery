@@ -1,6 +1,25 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { type SiteStory, getImageProvenanceManifest, type ImageProvenanceEntry } from '$lib/data';
+  import * as m from '$lib/paraglide/messages';
+
+  // Localized titles for the canonical chapter ids — the story JSON
+  // files use a fixed vocabulary of chapter.id values (hardware /
+  // launch / surface / science / people) and we map those to
+  // translatable messages so the chapter rail reads in the user's
+  // locale. Sites with a custom chapter id fall back to chapter.title
+  // verbatim (English-as-authored).
+  const CHAPTER_TITLE_MESSAGES: Record<string, () => string> = {
+    hardware: m.story_chapter_hardware,
+    launch: m.story_chapter_launch,
+    surface: m.story_chapter_surface,
+    science: m.story_chapter_science,
+    people: m.story_chapter_people,
+  };
+
+  function chapterTitle(id: string, fallback: string): string {
+    return CHAPTER_TITLE_MESSAGES[id]?.() ?? fallback;
+  }
 
   /**
    * Rich multi-agency narrative gallery (PRD-014 v0.7.x #PE path-B).
@@ -65,7 +84,7 @@
   {#each story.chapters as chapter (chapter.id)}
     <section class="chapter">
       <header class="chapter-head">
-        <h4 class="chapter-title">{chapter.title}</h4>
+        <h4 class="chapter-title">{chapterTitle(chapter.id, chapter.title)}</h4>
         {#if chapter.subtitle}<p class="chapter-sub">{chapter.subtitle}</p>{/if}
       </header>
       <div class="images">

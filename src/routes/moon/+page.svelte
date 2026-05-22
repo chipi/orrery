@@ -520,7 +520,12 @@
     // spun underneath, breaking spatial reference). Markers are
     // tangent-aligned via lookAt(origin) so they "stand up" from the
     // surface instead of pointing along world axes.
-    type MarkerObj = { group: THREE.Group; siteId: string; halo?: THREE.Mesh };
+    type MarkerObj = {
+      group: THREE.Group;
+      siteId: string;
+      halo?: THREE.Mesh;
+      labelGroup?: THREE.Group;
+    };
     const markers: MarkerObj[] = [];
 
     // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S1
@@ -827,7 +832,7 @@
         }
 
         moonMesh.add(group);
-        markers.push({ group, siteId: site.id, halo });
+        markers.push({ group, siteId: site.id, halo, labelGroup: label.group });
       }
     }
 
@@ -1301,9 +1306,22 @@
       // Apply layer visibility every frame so chip toggles take effect
       // immediately (cheap — small static arrays).
       const selId = selected?.id ?? null;
+      // Selection-ring hide at Tier 2+ (port of /mars). The halo ring
+      // visually fights the LROC disc once the camera is in close —
+      // hide it when the site's currently-displayed tier ≥ 2 (or
+      // mid-transition with targetTier ≥ 2). Build a quick lookup so
+      // the halo loop stays a single pass.
+      const tierBySiteId = new Map<string, number>();
+      for (const h of hotspots) {
+        const t = Math.max(h.currentTier, h.targetTier);
+        tierBySiteId.set(h.siteId, t);
+      }
       for (const mk of markers) {
         mk.group.visible = layerSurface;
-        if (mk.halo) mk.halo.visible = layerSurface && mk.siteId === selId;
+        if (mk.halo) {
+          const t = tierBySiteId.get(mk.siteId) ?? 0;
+          mk.halo.visible = layerSurface && mk.siteId === selId && t < 2;
+        }
       }
       for (const om of orbitalMarkers) {
         // ORBITERS chip controls the spacecraft model. ORBITS chip
@@ -1396,12 +1414,33 @@
           if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
         }
 
-        // Tier-2 detail opacity ramp (port of /mars's detailFadeStart /
-        // detailFadeEnd). Without this the LROC disc pops in abruptly
-        // once the dispatcher promotes — Mars-style smooth reveal is
-        // a linear opacity climb across the last ~2.5u of dolly-in.
-        const detailFadeStart = 33;
-        const detailFadeEnd = 30.5;
+        // Site labels — shrink with zoomScale but floored at 0.65 so
+        // they stay readable. Hide entirely when promoted to Tier 2+
+        // (the label is at the patch centre and visually crowds the
+        // disc; /mars uses the same pattern).
+        const tierByIdForLabels = new Map<string, number>();
+        for (const h of hotspots) {
+          tierByIdForLabels.set(h.siteId, Math.max(h.currentTier, h.targetTier));
+        }
+        for (const mk of markers) {
+          if (!mk.labelGroup) continue;
+          const t = tierByIdForLabels.get(mk.siteId) ?? 0;
+          if (t >= 2) {
+            mk.labelGroup.visible = false;
+            continue;
+          }
+          mk.labelGroup.visible = true;
+          mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
+        }
+
+        // Tier-2 detail opacity ramp. Widened from /mars's tight
+        // 33→30.5 to 50→33 because Moon users reported the disc
+        // "pops in" — a wider window gives more dolly-in real-estate
+        // for the fade to read as a real transition vs an instant
+        // switch. Patch starts blending in well before the Tier 2
+        // promotion threshold lands.
+        const detailFadeStart = 50;
+        const detailFadeEnd = 33;
         const detailOpacity =
           camR >= detailFadeStart
             ? 0

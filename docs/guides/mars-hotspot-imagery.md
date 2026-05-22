@@ -312,6 +312,47 @@ git add 'static/images/hotspots/mars/*/tier2-hirise.{1x1,4x3,16x9}.jpg' \
 
 ---
 
+## Detail-panel galleries — paths A and B (v0.7.x #PE)
+
+The `/mars` site detail-panel surfaces curated imagery through **two distinct tabs** with different shapes:
+
+### Path A — the GALLERY tab (existing thumbnail strip)
+A 5-image grid + lightbox. Pulled at runtime via `getMarsSiteGallery(siteId, missionId)` in `src/lib/data.ts`. The loader walks a 5-step fallback chain across three manifests so coverage holds even when the per-site override is absent:
+1. `static/data/mars-site-galleries.json` (per-site override — currently empty)
+2. `static/data/mission-galleries.json` by `mission_id`
+3. `static/data/mission-galleries.json` by site id
+4. `static/data/fleet-galleries.json` by `mission_id` — variant-aware (e.g. `tianwen1` → fleet `tianwen1`)
+5. `static/data/fleet-galleries.json` by site id — variant-aware (`viking1-lander` → `viking1` → `viking-1`)
+
+Variants handled by `gallerySiteIdVariants()`: strip `-lander|-orbiter|-rover` suffixes, insert a dash before trailing digits (`luna16` → `luna-16`), apply hand-curated alias map (`luna21` → `lunokhod-2`). Coverage today: **13/13 Mars hotspots have a working GALLERY tab.**
+
+### Path B — the STORY tab (rich multi-agency narrative)
+Distinct UI from GALLERY. Chapter-grouped (Hardware / Launch / Surface / Science / People — sites use whichever apply), per-image captions, agency-coloured badges (NASA blue, CNSA red, ESA navy, Roscosmos blue, ISRO saffron, JAXA navy, SpaceIL blue), full source/license resolved at render time from `image-provenance.json`.
+
+Data: `static/data/site-stories/<siteId>.json`. Schema (see `SiteStory` in `src/lib/data.ts`):
+```json
+{
+  "site": "curiosity",
+  "intro": "…",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "…",
+      "images": [ { "src": "/images/missions/curiosity/01.jpg", "caption": "…" } ]
+    }
+  ]
+}
+```
+
+Component: `src/lib/components/SiteStoryPanel.svelte`. Loader: `getSiteStory(id)` in `src/lib/data.ts`. Sites without a `.json` file simply don't render a STORY tab — graceful absence, no error.
+
+**Auto-switch behaviour (/mars):** when the user zooms into Tier 2 and the info card appears, the panel auto-flips from OVERVIEW to STORY (only on the first Tier-2 promotion per site; doesn't override manual tab choices on re-zoom). Same surface, same component on `/moon`, but without the auto-switch since /moon doesn't run the Tier-2 info card flow.
+
+Coverage today: **31/31 hotspot sites** have a STORY file authored (13 Mars + 18 Moon).
+
+---
+
 ## Validation runbook
 
 After any non-trivial change to `gdal-crop.ts`, `fetch-mars.ts`, `fetch-mars-ctx.ts`, or `ctx-mosaic.ts` — or after re-fetching all sites — run this validation pass.

@@ -15,15 +15,18 @@ v2 calls the Anthropic Vision API directly (Claude Sonnet 4.6). **Anthropic rece
 **Local setup** (one-time, on Marko's machine):
 
 1. Get an API key at <https://console.anthropic.com/settings/keys>.
-2. Add to your shell profile (`~/.zshrc`):
-   ```bash
-   export ANTHROPIC_API_KEY="sk-ant-..."
-   ```
-   Or to `.env.local` in the repo root (gitignored):
+2. **Preferred — `.env` in the repo root** (gitignored, auto-loaded by every script that needs secrets via Node ≥ 20.6's `process.loadEnvFile`):
    ```
    ANTHROPIC_API_KEY=sk-ant-...
    ```
-3. Verify: `node -e 'console.log(process.env.ANTHROPIC_API_KEY?.slice(0,10))'` should print the key prefix.
+   `.env.example` at the repo root documents every supported key. Copy it to `.env` and fill in.
+3. Or, equivalently, export in `~/.zshrc`:
+   ```bash
+   export ANTHROPIC_API_KEY="sk-ant-..."
+   ```
+4. Verify: `node -e 'console.log(process.env.ANTHROPIC_API_KEY?.slice(0,10))'` should print the key prefix.
+
+The ambient shell environment wins where both are set — `.env` only fills holes. This avoids the surprise where `~/.zshrc` exports it but a fresh non-login shell (e.g. agent subshells, container shells) doesn't see it. With `.env` present, every TS script that calls `process.loadEnvFile('.env')` at boot picks the key up consistently.
 
 **GitHub Actions setup** (one-time, for CI builds that need to re-score):
 

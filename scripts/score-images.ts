@@ -1,4 +1,12 @@
 #!/usr/bin/env tsx
+// Load secrets from .env BEFORE any module reads process.env. Node 20.6+
+// has `process.loadEnvFile()` built-in; we don't need the `dotenv` dep.
+// .env is gitignored; .env.example documents the expected keys.
+try {
+  process.loadEnvFile('.env');
+} catch {
+  /* No .env on disk — fall back to the ambient shell environment. */
+}
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';

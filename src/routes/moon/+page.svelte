@@ -175,6 +175,21 @@
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
   }
 
+  /**
+   * Zoom taper for tier 0/1 models. Port of /mars's computeTierScale.
+   * camR ≥ 60 → 1.0 (overview); camR ≤ 30.6 → 0.2 (closest zoom).
+   * As the user zooms in onto the LROC patch, the lander model + tier-0
+   * marker shrink so they don't visually dominate the disc underneath.
+   */
+  function computeTierScale(camR: number): number {
+    const minR = 30.6;
+    const maxR = 60;
+    const minScale = 0.2;
+    if (camR >= maxR) return 1;
+    if (camR <= minR) return minScale;
+    return minScale + (1 - minScale) * ((camR - minR) / (maxR - minR));
+  }
+
   // Debug overlay state — same shape as /mars's debugInfo so a
   // ?debug=1 toggle surfaces dispatcher internals (current/target
   // tier, projected px sample, tier2 built/visible, patch detail).
@@ -515,6 +530,11 @@
     // a hand-authored engineering model when the marker's screen-
     // projected radius exceeds 20 px.
     const hotspots: HotspotEntry[] = [];
+    // Selected-site clamp scaffolding (port of /mars). Remember each
+    // hotspot's data-driven maxTier so the per-frame clamp can read
+    // back the original cap. Selected site keeps full maxTier; others
+    // collapse to ≤ Tier 1 so neighbouring discs don't fight.
+    const originalMaxTier = new Map<string, 0 | 1 | 2 | 3>();
     // Register the Tier 1 builders for ids the dispatcher might need
     // to lazy-instantiate. Per-route registration keeps the import
     // graph small for routes that don't use hotspots.
@@ -802,6 +822,7 @@
                 tier2Builder,
               }),
             );
+            originalMaxTier.set(site.id, maxTier);
           }
         }
 
@@ -1341,6 +1362,20 @@
       // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
       // join the dispatcher as their sub-issues land.
       if (hotspots.length) {
+        // Selected-site clamp (port of /mars). Without a selection
+        // every hotspot uses its data-driven maxTier; with one,
+        // non-selected sites clamp to ≤ Tier 1 so adjacent discs
+        // don't visually fight. Dispatcher reads entry.maxTier each
+        // frame so mutating in-place here is safe.
+        const selectedHotspotId = selected?.id;
+        for (const h of hotspots) {
+          const orig = originalMaxTier.get(h.siteId) ?? (h.maxTier as 0 | 1 | 2 | 3);
+          if (selectedHotspotId == null || selectedHotspotId === h.siteId) {
+            h.maxTier = orig;
+          } else {
+            h.maxTier = Math.min(1, orig) as 0 | 1;
+          }
+        }
         const canvasH = renderer.domElement.clientHeight || 1;
         updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
         // Publish the highest currently-displayed tier on the canvas
@@ -1351,6 +1386,38 @@
         const attr = target.getAttribute('data-hotspot-tier');
         const next = String(topTier);
         if (attr !== next) target.setAttribute('data-hotspot-tier', next);
+
+        // Zoom-aware model scaling. tier0 marker + tier1 lander shrink
+        // toward 0.2× at the closest zoom so they sit readably on the
+        // LROC patch rather than dominating it. Same shape as /mars.
+        const zoomScale = computeTierScale(camR);
+        for (const h of hotspots) {
+          if (h.tier0Group) h.tier0Group.scale.setScalar(zoomScale);
+          if (h.tier1Group) h.tier1Group.scale.setScalar(zoomScale);
+        }
+
+        // Tier-2 detail opacity ramp (port of /mars's detailFadeStart /
+        // detailFadeEnd). Without this the LROC disc pops in abruptly
+        // once the dispatcher promotes — Mars-style smooth reveal is
+        // a linear opacity climb across the last ~2.5u of dolly-in.
+        const detailFadeStart = 33;
+        const detailFadeEnd = 30.5;
+        const detailOpacity =
+          camR >= detailFadeStart
+            ? 0
+            : camR <= detailFadeEnd
+              ? 1
+              : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+        for (const h of hotspots) {
+          if (!h.tier2Group) continue;
+          h.tier2Group.traverse((obj) => {
+            if (!(obj instanceof THREE.Mesh)) return;
+            if (obj.userData?.layer !== 'detail') return;
+            const mat = obj.material as THREE.Material & { opacity: number };
+            mat.opacity = detailOpacity;
+            mat.transparent = detailOpacity < 0.99;
+          });
+        }
 
         // TierContext info card (PRD-014 §v0.7.x). When any hotspot
         // is at Tier 2+, surface attribution for the layers currently

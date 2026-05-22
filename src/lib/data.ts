@@ -806,14 +806,24 @@ export async function getMoonSiteGallery(
   siteId: string,
   missionIdFallback?: string,
 ): Promise<string[]> {
+  // Same fallback ladder as getMarsSiteGallery (#PE 2026-05-22) —
+  // per-site override → mission-gallery (by mission_id then site id)
+  // → fleet-gallery (by mission_id then site id). Captures the cases
+  // where lunar surface missions (e.g. Surveyor-class, early Luna
+  // landers, Chang'e 3/4) have images only in fleet-galleries.json.
   const own = await getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
   if (own.length > 0) return own;
-  // Fallback to mission-gallery via mission_id (e.g. lro → /images/
-  // missions/lro). Captures the new v0.4 lunar orbiters (LRO,
-  // Chandrayaan-1, Chang'e 1/2, etc.) that share an id with their
-  // mission card without needing a separate per-site photo set.
-  const fallbackId = missionIdFallback ?? siteId;
-  return getMissionGallery(fallbackId);
+  if (missionIdFallback) {
+    const byMission = await getMissionGallery(missionIdFallback);
+    if (byMission.length > 0) return byMission;
+  }
+  const bySite = await getMissionGallery(siteId);
+  if (bySite.length > 0) return bySite;
+  if (missionIdFallback) {
+    const fleetByMission = await getFleetGallery(missionIdFallback);
+    if (fleetByMission.length > 0) return fleetByMission;
+  }
+  return getFleetGallery(siteId);
 }
 
 /**
@@ -826,18 +836,42 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
 }
 
 /**
- * Mars site gallery loader. Same fallback ladder as moon-sites: try
- * a mars-site-specific manifest first, then fall through to the
- * mission gallery via mission_id (or the site id if it parries).
+ * Mars site gallery loader. Multi-tier fallback so /mars detail panels
+ * surface SOMETHING from every available image manifest before falling
+ * silent. Order: per-site override → mission-gallery (by mission_id
+ * AND by site id) → fleet-gallery (by mission_id AND by site id).
+ *
+ * Why all four steps: the existing image inventory is split across
+ * three manifests (mars-site-galleries.json, mission-galleries.json,
+ * fleet-galleries.json) due to historical capture pipelines. Some
+ * Mars hotspot sites (spirit, opportunity, phoenix, schiaparelli,
+ * zhurong) only have images in fleet-galleries.json; others
+ * (curiosity, perseverance) are in mission-galleries.json. Walking
+ * all four lookups gives us coverage today without an asset
+ * re-organization pass. #PE-mars (2026-05-22).
  */
 export async function getMarsSiteGallery(
   siteId: string,
   missionIdFallback?: string,
 ): Promise<string[]> {
+  // 1. Per-site override (preferred — currently empty manifest).
   const own = await getCategoryGallery('mars-sites', 'mars-site-galleries.json', siteId);
   if (own.length > 0) return own;
-  const fallbackId = missionIdFallback ?? siteId;
-  return getMissionGallery(fallbackId);
+  // 2. Mission gallery by explicit mission_id, if set.
+  if (missionIdFallback) {
+    const byMission = await getMissionGallery(missionIdFallback);
+    if (byMission.length > 0) return byMission;
+  }
+  // 3. Mission gallery by site id (site_id == mission_id case).
+  const bySite = await getMissionGallery(siteId);
+  if (bySite.length > 0) return bySite;
+  // 4. Fleet gallery by mission_id (e.g. "tianwen1" → fleet/tianwen1).
+  if (missionIdFallback) {
+    const fleetByMission = await getFleetGallery(missionIdFallback);
+    if (fleetByMission.length > 0) return fleetByMission;
+  }
+  // 5. Fleet gallery by site id (e.g. "spirit", "phoenix").
+  return getFleetGallery(siteId);
 }
 
 // ──────────────────────────────────────────────────────────────────────

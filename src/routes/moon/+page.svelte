@@ -876,7 +876,21 @@
       if (!isDrag) return;
       if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > 4) dragMoved = true;
       camT -= (e.clientX - lmx) * 0.005;
-      camP = Math.max(0.05, Math.min(Math.PI - 0.05, camP + (e.clientY - lmy) * 0.005));
+      // Panorama-mode tilt clamp (±20° around horizon). Same shape
+      // as /mars's panorama clamp: skybox padding tops/bottoms only
+      // cover ~25° before exposing the sky band — ±20° keeps the
+      // user inside published imagery on every site without per-site
+      // bookkeeping. Outside panorama the existing near-poles clamp
+      // applies.
+      if (panoramaActive) {
+        const tiltClamp = 0.349; // ≈ 20° in radians
+        camP = Math.max(
+          Math.PI / 2 - tiltClamp,
+          Math.min(Math.PI / 2 + tiltClamp, camP + (e.clientY - lmy) * 0.005),
+        );
+      } else {
+        camP = Math.max(0.05, Math.min(Math.PI - 0.05, camP + (e.clientY - lmy) * 0.005));
+      }
       lmx = e.clientX;
       lmy = e.clientY;
       updateCam();
@@ -888,7 +902,7 @@
       if (!wasDrag && view === '3d') tryPick3d(e.clientX, e.clientY);
     };
     const onWheel = (e: WheelEvent) => {
-      camR = Math.max(45, Math.min(200, camR + e.deltaY * 0.05));
+      camR = Math.max(30.2, Math.min(200, camR + e.deltaY * 0.05));
       updateCam();
     };
 
@@ -915,7 +929,7 @@
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchPrev > 0) {
         const d = tDist(e.touches[0], e.touches[1]);
-        camR = Math.max(45, Math.min(200, camR * (pinchPrev / d)));
+        camR = Math.max(30.2, Math.min(200, camR * (pinchPrev / d)));
         updateCam();
         pinchPrev = d;
         return;
@@ -927,7 +941,19 @@
       )
         touchMoved = true;
       camT -= (e.touches[0].clientX - lmx) * 0.005;
-      camP = Math.max(0.05, Math.min(Math.PI - 0.05, camP + (e.touches[0].clientY - lmy) * 0.005));
+      // Panorama-mode tilt clamp (±20°), same as the mouse path.
+      if (panoramaActive) {
+        const tiltClamp = 0.349;
+        camP = Math.max(
+          Math.PI / 2 - tiltClamp,
+          Math.min(Math.PI / 2 + tiltClamp, camP + (e.touches[0].clientY - lmy) * 0.005),
+        );
+      } else {
+        camP = Math.max(
+          0.05,
+          Math.min(Math.PI - 0.05, camP + (e.touches[0].clientY - lmy) * 0.005),
+        );
+      }
       lmx = e.touches[0].clientX;
       lmy = e.touches[0].clientY;
       updateCam();

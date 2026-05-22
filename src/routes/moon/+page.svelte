@@ -817,16 +817,27 @@
                     });
                   }
                 : undefined;
-            hotspots.push(
-              createHotspotEntry({
-                siteId: site.id,
-                maxTier,
-                group,
-                tier0Group,
-                tier1Builder: () => builder(accent),
-                tier2Builder,
-              }),
-            );
+            const entry = createHotspotEntry({
+              siteId: site.id,
+              maxTier,
+              group,
+              tier0Group,
+              tier1Builder: () => builder(accent),
+              tier2Builder,
+            });
+            // Eager-build the tier2 patch when one is configured so
+            // the camR-based opacity ramp has something to fade in
+            // even before the dispatcher's Tier 2 promotion threshold
+            // (projected radius >= 120 px ≈ camR ~38) fires. Without
+            // this, the patch can only start to materialize once the
+            // dispatcher decides we've earned Tier 2 — too late for
+            // the user-expected "fade starts at camR ~50" smoothness.
+            if (tier2Builder) {
+              entry.tier2Group = tier2Builder();
+              entry.tier2Group.visible = false;
+              group.add(entry.tier2Group);
+            }
+            hotspots.push(entry);
             originalMaxTier.set(site.id, maxTier);
           }
         }
@@ -1433,12 +1444,13 @@
           mk.labelGroup.scale.setScalar(Math.max(0.65, zoomScale));
         }
 
-        // Tier-2 detail opacity ramp. Widened from /mars's tight
-        // 33→30.5 to 50→33 because Moon users reported the disc
-        // "pops in" — a wider window gives more dolly-in real-estate
-        // for the fade to read as a real transition vs an instant
-        // switch. Patch starts blending in well before the Tier 2
-        // promotion threshold lands.
+        // Tier-2 detail opacity ramp. Patch is eager-built at site
+        // creation so tier2Group exists even when curTier < 2; we
+        // override the dispatcher's "tier2 hidden when tier<2"
+        // decision and control visibility 100% via camR. The ramp
+        // runs from detailFadeStart (patch begins to appear) down
+        // to detailFadeEnd (patch fully solid). Window deliberately
+        // wide (50→33 = 17u) so the fade reads as a real transition.
         const detailFadeStart = 50;
         const detailFadeEnd = 33;
         const detailOpacity =
@@ -1449,9 +1461,15 @@
               : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
         for (const h of hotspots) {
           if (!h.tier2Group) continue;
+          // Force group visible when ramp is > 0 (dispatcher would
+          // otherwise hide it whenever currentTier !== 2).
+          h.tier2Group.visible = detailOpacity > 0.01;
           h.tier2Group.traverse((obj) => {
             if (!(obj instanceof THREE.Mesh)) return;
-            if (obj.userData?.layer !== 'detail') return;
+            // Apply ramp to the detail layer; regional layer (when
+            // wired in Phase 2) follows the same opacity for now.
+            const layer = obj.userData?.layer;
+            if (layer !== 'detail' && layer !== 'regional') return;
             const mat = obj.material as THREE.Material & { opacity: number };
             mat.opacity = detailOpacity;
             mat.transparent = detailOpacity < 0.99;

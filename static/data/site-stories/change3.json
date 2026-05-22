@@ -1,0 +1,47 @@
+{
+  "site": "change3",
+  "intro": "Chang'e 3 landed in Mare Imbrium on December 14, 2013 — China's first soft landing on the Moon and the first lunar landing of any kind in 37 years (since Luna 24). Deployed the Yutu rover, which drove ~114 m before a control failure froze it in place for the remaining ~30 lunar days of survival. Confirmed China as the third nation with surface assets on the Moon.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "First Chinese lunar lander + Yutu rover",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/01.jpg",
+          "caption": "Chang'e 3 lander on display — RTG-style heat unit, four legs, ramps for Yutu deployment."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/02.jpg",
+          "caption": "Yutu rover — 140 kg, 6 wheels, ground-penetrating radar mounted under the chassis."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "December 1, 2013 — Long March 3B from Xichang",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/03.jpg",
+          "caption": "Long March 3B lifts off with Chang'e 3 — 5-day transit to the Moon, soft landing on December 14."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Imbrium — landed December 14, 2013",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/change-3/04.jpg",
+          "caption": "Chang'e 3 lander + Yutu rover photograph each other on the lunar surface — first such mutual portrait of Chinese hardware on the Moon."
+        },
+        {
+          "src": "/images/fleet-galleries/change-3/05.jpg",
+          "caption": "Yutu's ground-penetrating radar profile of the Mare Imbrium subsurface — multi-layer basalt flows down to ~330 m."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "site": "luna16",
+  "intro": "Luna 16 touched down in Mare Fecunditatis on September 20, 1970 — the first robotic sample return from another world, drilled 35 cm into the lunar regolith, sealed 101 g into the return capsule, and lifted off 26 hours after landing. The capsule landed in Kazakhstan three days later. Demonstrated that Soviet engineering could return lunar material without crewed flight, a year and two months after Apollo 11.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Soviet E-8-5 lander — first robotic sample-return rig",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/01.jpg",
+          "caption": "Luna 16 spacecraft mockup — descent stage (foreground) + ascent stage carrying the return capsule (top)."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/02.jpg",
+          "caption": "Diagram of the sample-collection mechanism — drill core with sealed transfer to the return capsule."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "September 12, 1970 — Proton-K from Baikonur",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/03.jpg",
+          "caption": "Proton-K with Blok-D upper stage on the pad at Baikonur Cosmodrome."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Fecunditatis — landed September 20, 1970",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/luna-16/04.jpg",
+          "caption": "Luna 16 drilling into the regolith — sealed 101 g of material into the spherical return capsule for the lift-off."
+        },
+        {
+          "src": "/images/fleet-galleries/luna-16/05.jpg",
+          "caption": "Return capsule on the Kazakh steppe, September 24 1970 — first robotic interplanetary sample-return in history."
+        }
+      ]
+    }
+  ]
+}

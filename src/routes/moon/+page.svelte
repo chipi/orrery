@@ -7,7 +7,7 @@
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-  import { getMoonSites, getMoonSiteGallery } from '$lib/data';
+  import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
@@ -37,6 +37,7 @@
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
   import Panel from '$lib/components/Panel.svelte';
+  import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
@@ -164,20 +165,28 @@
   }
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
-  type PanelTab = 'overview' | 'gallery' | 'learn';
+  type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
   let lastSelectedId = $state<string | null>(null);
+  // #PE path-B: rich multi-agency narrative panel (the STORY tab).
+  // Loaded from static/data/site-stories/<id>.json. Null when no
+  // story file exists for this site → tab is hidden.
+  let panelStory: SiteStory | null = $state(null);
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
       panelLightbox = null;
       panelGallery = [];
+      panelStory = null;
       lastSelectedId = selected.id;
       void getMoonSiteGallery(selected.id, selected.mission_id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
+      });
+      void getSiteStory(selected.id).then((story) => {
+        if (selected && selected.id === lastSelectedId) panelStory = story;
       });
     }
   });
@@ -1424,6 +1433,16 @@
             aria-selected={panelTab === 'gallery'}>{m.panel_tab_gallery()}</button
           >
         {/if}
+        {#if panelStory}
+          <button
+            type="button"
+            class:active={panelTab === 'story'}
+            onclick={() => (panelTab = 'story')}
+            role="tab"
+            aria-selected={panelTab === 'story'}
+            data-testid="panel-tab-story">STORY</button
+          >
+        {/if}
         {#if panelHasLinks}
           <button
             type="button"
@@ -1575,6 +1594,8 @@
           </div>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
+      {:else if panelTab === 'story' && panelStory}
+        <SiteStoryPanel story={panelStory} onLightbox={(src) => (panelLightbox = src)} />
       {:else if panelTab === 'learn'}
         {#if !panelHasLinks}
           <p class="empty-tab">{m.panel_no_links()}</p>

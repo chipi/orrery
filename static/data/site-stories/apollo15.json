@@ -1,0 +1,47 @@
+{
+  "site": "apollo15",
+  "intro": "Apollo 15 landed in Hadley Rille / Apennine Mountains on July 30, 1971 — the first \"J-class\" mission with extended surface stay, Lunar Roving Vehicle (LRV), and a scientist-trained pilot (David Scott). Scott and Irwin drove 28 km total across three EVAs, found the Genesis Rock (~4.1 Ga anorthosite, primary crust), and on live TV dropped a feather + hammer to demonstrate Galileo's gravity test.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Endeavour + Falcon + LRV-1 (first lunar car)",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/01.jpg",
+          "caption": "Apollo 15 crew + the Lunar Roving Vehicle in pre-mission training — Scott + Irwin would drive the first wheels on the Moon."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Hadley-Apennine — landed July 30, 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/02.jpg",
+          "caption": "Jim Irwin saluting beside the LRV with Mt Hadley Delta behind — the first images of the Apennine Mountains from the surface."
+        },
+        {
+          "src": "/images/missions/apollo15/03.jpg",
+          "caption": "David Scott at the rim of Hadley Rille — first time astronauts stood at the edge of an ancient lava channel on another world."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+          "caption": "Hadley Plain panorama — Falcon descent stage + LRV + Mt Hadley Delta on the horizon."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Genesis Rock + Galileo experiment",
+      "images": [
+        {
+          "src": "/images/missions/apollo15/04.jpg",
+          "caption": "Sample 15415 \"Genesis Rock\" — pure ferroan anorthosite, ~4.1 billion years old. A fragment of the Moon's primary magma-ocean crust."
+        }
+      ]
+    }
+  ]
+}

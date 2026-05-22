@@ -1,0 +1,58 @@
+{
+  "site": "apollo17",
+  "intro": "Apollo 17 landed in the Taurus-Littrow Valley on December 11, 1972 — the last crewed lunar mission, and the only one with a professional geologist (Harrison Schmitt) on the surface. Cernan and Schmitt spent 22h outside across three EVAs, drove 35 km, and returned 110 kg of samples including the famous Orange Soil (volcanic glass beads from a 3.5 Ga fire fountain). Cernan's footprint is the most recent human mark on another world.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "America + Challenger + LRV-3",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/01.jpg",
+          "caption": "Apollo 17 crew portrait — Gene Cernan (CDR), Ron Evans (CMP), Harrison \"Jack\" Schmitt (LMP, scientist-astronaut)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "December 7, 1972 — last Saturn V flight",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/02.jpg",
+          "caption": "First night launch of Saturn V, 05:33 UTC December 7 1972 — visible from 700 km away. The last Apollo + last Saturn V."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Taurus-Littrow Valley — landed December 11, 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/03.jpg",
+          "caption": "Cernan + the flag with Earth above — \"The Last Man on the Moon\"."
+        },
+        {
+          "src": "/images/missions/apollo17/04.jpg",
+          "caption": "Schmitt at Shorty Crater discovers the Orange Soil — volcanic glass spherules from a 3.5 Ga fire-fountain eruption."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+          "caption": "Taurus-Littrow panorama — Challenger descent stage + LRV + Tortilla Flat in the distance."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "First trained geologist on the Moon",
+      "images": [
+        {
+          "src": "/images/missions/apollo17/05.jpg",
+          "caption": "Sample 70017 — last lunar sample collected by humans, Cernan's final task before lifting off December 14, 1972."
+        }
+      ]
+    }
+  ]
+}

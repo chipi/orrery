@@ -1,0 +1,47 @@
+{
+  "site": "apollo14",
+  "intro": "Apollo 14 landed in the Fra Mauro highlands on February 5, 1971 — the original Apollo 13 target, completed after the 13 explosion. Shepard and Mitchell hauled the Modular Equipment Transporter (a rickshaw) up Cone Crater's flanks and brought back 43 kg of breccia — fragments of the giant impact that formed Mare Imbrium 3.9 billion years ago. Shepard famously hit two golf balls before liftoff.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Kitty Hawk + Antares + the rickshaw",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/01.jpg",
+          "caption": "Apollo 14 crew: Alan Shepard (CDR — first American in space, 10 years earlier), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Fra Mauro highlands — landed February 5, 1971",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/02.jpg",
+          "caption": "Mitchell with the Modular Equipment Transporter (MET) — the \"rickshaw\" hauled tools + samples up the slope toward Cone Crater."
+        },
+        {
+          "src": "/images/missions/apollo14/03.jpg",
+          "caption": "Cone Crater rim — the crew climbed to within ~30 m of the rim but were forced back by exhaustion + comms limits."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+          "caption": "Apollo 14 landing site panorama — Antares descent stage + ALSEP visible."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Imbrium-impact breccia samples",
+      "images": [
+        {
+          "src": "/images/missions/apollo14/04.jpg",
+          "caption": "\"Big Bertha\" — sample 14321, a 8.99 kg breccia containing the oldest Earth rock ever found (4.1 Ga zircon), blasted to the Moon by an early Earth impact."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "site": "insight",
+  "intro": "InSight landed in Elysium Planitia on November 26, 2018 — the first geophysical observatory on Mars. The mission listened for marsquakes with the SEIS seismometer for four years, recording over 1,300 quakes that revealed the planet's core, mantle, and crust in unprecedented detail. The mole drill (HP³) failed to bury itself, but SEIS more than made up for the disappointment. Mission ended December 2022 when dust accumulation killed the solar panels.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "First Mars mission focused on the interior",
+      "images": [
+        {
+          "src": "/images/missions/insight/01.jpg",
+          "caption": "InSight during integration at Lockheed Martin — same lander platform as Phoenix, repurposed for geophysics."
+        },
+        {
+          "src": "/images/missions/insight/02.jpg",
+          "caption": "SEIS seismometer + WTS wind/thermal shield, deployed to the surface by the robotic arm — first seismometer on another planet."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "May 5, 2018 — Atlas V from Vandenberg AFB",
+      "images": [
+        {
+          "src": "/images/missions/insight/03.jpg",
+          "caption": "Atlas V 401 lifts off from SLC-3E Vandenberg — first interplanetary launch from the US West Coast. MarCO CubeSats flew alongside as comms relays."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Elysium Planitia — landed November 26, 2018",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/insight/tier3-pan.jpg",
+          "caption": "Homestead Hollow workspace, sol 14 — Instrument Deployment Camera 290° panorama. SEIS already placed on the ground at lower left."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/02.jpg",
+          "caption": "First Mars selfie composite — InSight's deck after SEIS + HP³ deployment, sol 110."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "1,319 marsquakes — the planet's interior, revealed",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/insight/03.jpg",
+          "caption": "Seismogram of the May 4 2022 magnitude-5 marsquake — the largest event recorded, originating from the Cerberus Fossae fault system."
+        },
+        {
+          "src": "/images/fleet-galleries/insight/04.jpg",
+          "caption": "InSight's last selfie, sol 1211 — solar panels coated in dust. Final transmission December 15, 2022."
+        }
+      ]
+    }
+  ]
+}

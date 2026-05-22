@@ -1,0 +1,40 @@
+{
+  "site": "luna17",
+  "intro": "Luna 17 landed in Mare Imbrium on November 17, 1970 — and deployed Lunokhod 1, the first wheeled vehicle to operate on another world, beating NASA's LRV by seven months. Lunokhod 1 drove 10.5 km over 11 lunar days, controlled by a five-person team in Crimea. Returned 25,000 photographs and 211 panoramas before going silent in September 1971.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "First wheels on the Moon — Lunokhod 1",
+      "images": [
+        {
+          "src": "/images/missions/luna17/01.jpg",
+          "caption": "Lunokhod 1 — 8-wheeled, 756 kg, solar-powered chassis with a polonium-210 RTG for nighttime warmth. Designed for 3 months, lasted 10."
+        },
+        {
+          "src": "/images/missions/luna17/02.jpg",
+          "caption": "Luna 17 lander + ramps for Lunokhod 1 deployment. The Soviet remote-control team operated from a converted submarine on the Crimean coast."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Imbrium — landed November 17, 1970",
+      "images": [
+        {
+          "src": "/images/missions/luna17/03.jpg",
+          "caption": "Lunokhod 1 driving on Mare Imbrium — controlled by a five-person team in real time despite the 2.5 second light-speed delay each way."
+        },
+        {
+          "src": "/images/missions/luna17/04.jpg",
+          "caption": "Lunokhod 1 traverse map — 10.5 km zigzag across Mare Imbrium, with science stops at rocks and craters."
+        },
+        {
+          "src": "/images/missions/luna17/05.jpg",
+          "caption": "Lunokhod 1 retroreflector — still used by Earth-based lunar-laser-ranging stations today, 50+ years later."
+        }
+      ]
+    }
+  ]
+}

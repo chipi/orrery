@@ -1,0 +1,47 @@
+{
+  "site": "change4",
+  "intro": "Chang'e 4 landed in Von Kármán Crater on January 3, 2019 — the first soft landing on the far side of the Moon, where Earth is never visible. Communication was relayed via the Queqiao satellite parked at L2. Deployed Yutu-2 rover, which has driven 1.5+ km and is still operating in 2026, the longest-active lunar surface mission of all time. Found pristine mantle material in South Pole-Aitken basin.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "First far-side lunar lander + L2 relay satellite (Queqiao)",
+      "images": [
+        {
+          "src": "/images/missions/change4/01.jpg",
+          "caption": "Chang'e 4 lander + Yutu-2 rover during pre-launch integration in Beijing."
+        },
+        {
+          "src": "/images/missions/change4/02.jpg",
+          "caption": "Queqiao L2 relay satellite — without it, Chang'e 4 would have no contact with Earth. China built lunar comms infrastructure before going far-side."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Von Kármán Crater, far side — landed January 3, 2019",
+      "images": [
+        {
+          "src": "/images/missions/change4/03.jpg",
+          "caption": "Yutu-2 rover photographed by Chang'e 4 lander — first wheels on the far side of the Moon."
+        },
+        {
+          "src": "/images/missions/change4/04.jpg",
+          "caption": "Yutu-2 inspects a glassy bead on the surface — likely an impact melt fragment from a distant cratering event."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Mantle material in South Pole-Aitken basin",
+      "images": [
+        {
+          "src": "/images/missions/change4/05.jpg",
+          "caption": "VNIS spectra showed olivine + low-Ca pyroxene — minerals from the lunar mantle, exposed by the SPA basin impact ~4.2 billion years ago."
+        }
+      ]
+    }
+  ]
+}

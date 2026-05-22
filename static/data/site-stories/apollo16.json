@@ -1,0 +1,47 @@
+{
+  "site": "apollo16",
+  "intro": "Apollo 16 landed in the Descartes Highlands on April 21, 1972 — the only Apollo mission to a highland (not mare) site, chosen to sample what was believed to be volcanic terrain. Young and Duke found NO volcanic rocks — only impact breccias and anorthosite — overturning the geological model and demonstrating the Moon's highlands are an ancient impact-shattered crust, not later volcanism. Three EVAs, 27 km of LRV traverse, 95 kg of samples returned.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Casper + Orion + LRV-2",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/01.jpg",
+          "caption": "Apollo 16 crew portrait — John Young (CDR), Ken Mattingly (CMP — bumped from Apollo 13), Charlie Duke (LMP)."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Descartes Highlands — landed April 21, 1972",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/02.jpg",
+          "caption": "John Young leaping during the \"Lunar Olympics\" — first crewed lunar high-jump, demonstrating the 1/6 g."
+        },
+        {
+          "src": "/images/missions/apollo16/03.jpg",
+          "caption": "Duke at \"Big Muley\" — sample 61016, the largest single rock returned from the Moon (11.7 kg)."
+        },
+        {
+          "src": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+          "caption": "Descartes Highlands panorama — Orion descent stage + LRV + Stone Mountain backdrop."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Highland breccias overturn the volcanism hypothesis",
+      "images": [
+        {
+          "src": "/images/missions/apollo16/04.jpg",
+          "caption": "Charlie Duke's family photo, left on the lunar surface — the only known portrait of an Earth family left on another world."
+        }
+      ]
+    }
+  ]
+}

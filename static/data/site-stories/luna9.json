@@ -1,0 +1,47 @@
+{
+  "site": "luna9",
+  "intro": "Luna 9 touched down in Oceanus Procellarum on February 3, 1966 — the first soft landing on another world. The 99 kg spherical capsule survived a 22 km/h impact by deploying inflatable cushions, then unfolded petals to right itself and transmitted the first photographs from the lunar surface. Operated for 3 days before battery exhaustion.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Soviet E-6 capsule, soft-lander pioneer",
+      "images": [
+        {
+          "src": "/images/missions/luna9/01.jpg",
+          "caption": "Luna 9 capsule mockup — 99 kg, spherical, with airbag-protected camera and four petal antennas."
+        },
+        {
+          "src": "/images/missions/luna9/02.jpg",
+          "caption": "Cutaway diagram of the Luna 9 hardware — Soviet engineers solved the soft-landing problem before NASA did."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "January 31, 1966 — Molniya-M from Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/luna9/03.jpg",
+          "caption": "Molniya-M rocket prepared at Baikonur — Luna 9 launched in a coast-coast Soviet/American race to the first soft landing."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Oceanus Procellarum — landed February 3, 1966",
+      "images": [
+        {
+          "src": "/images/missions/luna9/04.jpg",
+          "caption": "First images of the lunar surface — coarse, low-bit-rate panoramas showing rocky regolith. The Manchester Jodrell Bank radio telescope intercepted the broadcast and published before the Soviets did."
+        },
+        {
+          "src": "/images/missions/luna9/05.jpg",
+          "caption": "Luna 9 panorama mosaic — first proof the lunar surface was solid enough to support a lander, ending years of speculation about deep dust drifts."
+        }
+      ]
+    }
+  ]
+}

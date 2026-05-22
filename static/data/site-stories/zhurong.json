@@ -1,0 +1,62 @@
+{
+  "site": "zhurong",
+  "intro": "Zhurong landed in Utopia Planitia on May 14, 2021 — China's first successful Mars landing and the first Mars mission by any nation to combine orbiter, lander, and rover in a single launch (Tianwen-1). Named after the Chinese god of fire, Zhurong drove 1.92 km across the southern Utopia plains before being put into hibernation in May 2022 during dust season. CNSA has not confirmed wake-up.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "China's first Mars lander + rover",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/01.jpg",
+          "caption": "Zhurong rover during pre-launch integration in Beijing — 240 kg, solar-powered, instrumented for ground-penetrating radar of the subsurface."
+        },
+        {
+          "src": "/images/missions/tianwen1/02.jpg",
+          "caption": "Tianwen-1 launch stack — orbiter + lander + rover combined, the most ambitious first-attempt Mars mission ever flown."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "July 23, 2020 — Long March 5 from Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/tianwen1/03.jpg",
+          "caption": "Long March 5 launches Tianwen-1 from Wenchang Space Launch Site, Hainan — 7-month transit to Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Utopia Planitia — landed May 14, 2021",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/zhurong/tier3-pan.jpg",
+          "caption": "Zhurong navigation-camera panorama showing lander deck + Mars surface beyond — first ground-view from a non-NASA non-Soviet Mars mission."
+        },
+        {
+          "src": "/images/hotspots/mars/zhurong/tier2-hirise.jpg",
+          "caption": "Zhurong rover + lander, imaged from orbit by NASA's MRO HiRISE — international collaboration in archival imagery."
+        },
+        {
+          "src": "/images/fleet-galleries/zhurong/01.jpg",
+          "caption": "Zhurong + lander on Mars — taken by a remote camera the rover deployed itself, then drove away to photograph."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Ground-penetrating radar of Utopia subsurface",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/zhurong/03.jpg",
+          "caption": "Ground-penetrating radar profile showing subsurface layering down to ~80 m — evidence of ancient flood events in southern Utopia."
+        }
+      ]
+    }
+  ]
+}

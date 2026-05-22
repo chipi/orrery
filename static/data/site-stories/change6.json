@@ -1,0 +1,54 @@
+{
+  "site": "change6",
+  "intro": "Chang'e 6 landed in the South Pole-Aitken basin on June 1, 2024 — the first sample-return mission from the far side of the Moon, the deepest, oldest, largest impact structure in the inner Solar System. Returned 1,935 g of far-side material to Earth on June 25, 2024 — samples that may contain mantle fragments from the 4.2-billion-year-old basin-forming impact.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Chang'e 5 redesign for far-side sample return",
+      "images": [
+        {
+          "src": "/images/missions/change6/01.jpg",
+          "caption": "Chang'e 6 stack — added Queqiao-2 relay for far-side comms, otherwise inheriting Chang'e 5 architecture."
+        },
+        {
+          "src": "/images/missions/change6/02.jpg",
+          "caption": "International payloads — ESA NILS detector, French DORN radon detector, Italian INRRI retroreflector, Pakistan ICUBE-Q nanosatellite."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "May 3, 2024 — Long March 5 from Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change6/03.jpg",
+          "caption": "Long March 5 launches Chang'e 6 — 28-day round trip to the lunar far side, including 14 days waiting for the right relay-comms window."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Apollo Crater (within South Pole-Aitken) — landed June 1, 2024",
+      "images": [
+        {
+          "src": "/images/missions/change6/04.jpg",
+          "caption": "Chang'e 6 lander on the far side — the rover-less stationary sample return, captured by a deployed minirover."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "1,935 g of South Pole-Aitken basin material",
+      "images": [
+        {
+          "src": "/images/missions/change6/05.jpg",
+          "caption": "Sample return capsule on the Inner Mongolian grassland, June 25 2024 — first far-side lunar samples on Earth, ever."
+        }
+      ]
+    }
+  ]
+}

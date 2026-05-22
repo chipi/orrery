@@ -945,6 +945,11 @@
       if (!wasDrag && view === '3d') tryPick3d(e.clientX, e.clientY);
     };
     const onWheel = (e: WheelEvent) => {
+      // preventDefault prevents trackpad pinch-zoom from triggering
+      // browser-level zoom (Cmd-scroll). Registered with passive:false
+      // below so this works (was passive:true → browser zoomed and
+      // the moon stayed put).
+      e.preventDefault();
       camR = Math.max(30.2, Math.min(200, camR + e.deltaY * 0.05));
       updateCam();
     };
@@ -971,6 +976,9 @@
     };
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length === 2 && pinchPrev > 0) {
+        // Two-finger pinch — preventDefault so the browser doesn't
+        // also do its native pinch-zoom on the page itself.
+        e.preventDefault();
         const d = tDist(e.touches[0], e.touches[1]);
         camR = Math.max(30.2, Math.min(200, camR * (pinchPrev / d)));
         updateCam();
@@ -1023,9 +1031,12 @@
     window.addEventListener('mouseup', onMouseUp);
     el3d.addEventListener('mousemove', onHover);
     el3d.addEventListener('mouseleave', onHoverLeave);
-    el3d.addEventListener('wheel', onWheel, { passive: true });
+    // wheel + touchmove must be passive:false so onWheel /
+    // onTouchMove can preventDefault() against browser zoom /
+    // scroll. touchstart stays passive (no preventDefault inside).
+    el3d.addEventListener('wheel', onWheel, { passive: false });
     el3d.addEventListener('touchstart', onTouchStart, { passive: true });
-    el3d.addEventListener('touchmove', onTouchMove, { passive: true });
+    el3d.addEventListener('touchmove', onTouchMove, { passive: false });
     el3d.addEventListener('touchend', onTouchEnd);
     el3d.addEventListener('touchcancel', onTouchEnd);
 

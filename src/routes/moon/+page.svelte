@@ -15,6 +15,7 @@
   import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import {
     createHotspotEntry,
+    getHotspotMode,
     getHotspotModelBuilder,
     registerHotspotModelBuilder,
     setHotspotMode,
@@ -139,6 +140,16 @@
   // through cycleHotspotsMode + the $effect below.
   onMount(() => {
     hotspotsMode = resolveInitialHotspotsMode($page.url);
+    showDebug = $page.url.searchParams.get('debug') === '1';
+    // Sidecar fetch probe — fills the overlay's sidecarStatus.
+    fetch('/data/surface-hotspots.json')
+      .then((r) => r.json())
+      .then((d) => {
+        debugInfo.sidecarStatus = `ok ${Object.keys(d.entries || {}).length} entries · apollo11 tier ${d.entries?.apollo11?.hotspot_tier_max ?? '?'}`;
+      })
+      .catch((e) => {
+        debugInfo.sidecarStatus = `FAIL ${(e as Error).message}`;
+      });
   });
 
   // Reactive: sync mode → dispatcher + URL.
@@ -163,6 +174,38 @@
   function colorFor(site: MoonSite): string {
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
   }
+
+  // Debug overlay state — same shape as /mars's debugInfo so a
+  // ?debug=1 toggle surfaces dispatcher internals (current/target
+  // tier, projected px sample, tier2 built/visible, patch detail).
+  let debugInfo = $state<{
+    sidecarStatus: string;
+    siteCount: number;
+    hotspotCount: number;
+    maxTierAcrossSites: number;
+    currentTopTier: number;
+    targetTopTier: number;
+    pageMode: string;
+    dispatcherMode: string;
+    camR: number;
+    projectedPxSample: string;
+    tier2Status: string;
+    patchDetail: string;
+  }>({
+    sidecarStatus: 'pending',
+    siteCount: 0,
+    hotspotCount: 0,
+    maxTierAcrossSites: 0,
+    currentTopTier: 0,
+    targetTopTier: 0,
+    pageMode: 'auto',
+    dispatcherMode: 'auto',
+    camR: 0,
+    projectedPxSample: '',
+    tier2Status: '',
+    patchDetail: '',
+  });
+  let showDebug = $state(false);
 
   /**
    * Contextual info card state (PRD-014 §v0.7.x + RFC-017 §OQ-12).
@@ -1351,6 +1394,70 @@
         } else if (tierContext !== null) {
           tierContext = null;
         }
+
+        // Debug overlay write — guarded by showDebug (?debug=1).
+        // Same shape as /mars's debugInfo block.
+        if (showDebug) {
+          let maxAcross = 0;
+          for (const h of hotspots) if (h.maxTier > maxAcross) maxAcross = h.maxTier;
+          let curTop = 0;
+          for (const h of hotspots) if (h.currentTier > curTop) curTop = h.currentTier;
+          let tgtTop = 0;
+          for (const h of hotspots) if (h.targetTier > tgtTop) tgtTop = h.targetTier;
+          debugInfo.siteCount = sites.length;
+          debugInfo.hotspotCount = hotspots.length;
+          debugInfo.maxTierAcrossSites = maxAcross;
+          debugInfo.currentTopTier = curTop;
+          debugInfo.targetTopTier = tgtTop;
+          debugInfo.pageMode = hotspotsMode;
+          debugInfo.dispatcherMode = getHotspotMode();
+          debugInfo.camR = camR;
+          if (hotspots.length > 0) {
+            const h = hotspots[0];
+            const wp = new THREE.Vector3();
+            h.group.getWorldPosition(wp);
+            const canvasH = renderer.domElement.clientHeight || 1;
+            const distance = camera.position.distanceTo(wp);
+            const halfH = distance * Math.tan((camera.fov * Math.PI) / 360);
+            const pxPerUnit = canvasH / (2 * halfH);
+            debugInfo.projectedPxSample = `${h.siteId} dist=${distance.toFixed(1)}u px/u=${pxPerUnit.toFixed(0)}`;
+          }
+          let t2built = 0;
+          let t2visible = 0;
+          for (const h of hotspots) {
+            if (h.tier2Group) {
+              t2built++;
+              if (h.tier2Group.visible) t2visible++;
+            }
+          }
+          debugInfo.tier2Status = `${t2built} built / ${t2visible} visible`;
+          const h0 = hotspots[0];
+          if (h0?.tier2Group) {
+            const tg = h0.tier2Group;
+            const fmRef: Array<THREE.Mesh> = [];
+            tg.traverse((o) => {
+              if (fmRef.length === 0 && o instanceof THREE.Mesh) fmRef.push(o);
+            });
+            const firstMesh: THREE.Mesh | null = fmRef[0] ?? null;
+            const wp = new THREE.Vector3();
+            if (firstMesh) firstMesh.getWorldPosition(wp);
+            else tg.getWorldPosition(wp);
+            let cur: THREE.Object3D | null = tg as THREE.Object3D;
+            let hidden = false;
+            while (cur) {
+              if (!cur.visible) {
+                hidden = true;
+                break;
+              }
+              cur = cur.parent;
+            }
+            const reachable = !hidden;
+            const m = firstMesh
+              ? (firstMesh.material as THREE.Material & { opacity?: number })
+              : null;
+            debugInfo.patchDetail = `tg.children=${tg.children.length} tg.visible=${tg.visible} reachable=${reachable} meshVis=${firstMesh?.visible ?? '?'} matOp=${m?.opacity ?? '?'} worldR=${wp.length().toFixed(2)}`;
+          }
+        }
       }
 
       if (view === '3d') composer.render();
@@ -1496,6 +1603,35 @@
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
+  {/if}
+
+  {#if showDebug}
+    {@const debugText = `hotspots debug (moon)
+sidecar     ${debugInfo.sidecarStatus}
+sites       ${debugInfo.siteCount}
+hotspots    ${debugInfo.hotspotCount}
+maxTier     ${debugInfo.maxTierAcrossSites}  (sidecar joined to sites)
+targetTier  ${debugInfo.targetTopTier}  (dispatcher's intended top tier)
+curTier     ${debugInfo.currentTopTier}  (dispatcher's settled top tier)
+pageMode    ${debugInfo.pageMode}
+dispMode    ${debugInfo.dispatcherMode}  (currentMode in dispatcher module)
+tier2       ${debugInfo.tier2Status}
+patch[0]    ${debugInfo.patchDetail}
+camR        ${debugInfo.camR.toFixed(1)}
+sample      ${debugInfo.projectedPxSample}`}
+    <div
+      style="position:fixed;top:80px;left:12px;z-index:9999;background:rgba(0,0,0,0.85);color:#0f0;font:11px/1.4 ui-monospace,SFMono-Regular,monospace;padding:8px 10px;border:1px solid #0f0;border-radius:4px;user-select:text;-webkit-user-select:text;"
+    >
+      <pre
+        style="margin:0;color:inherit;font:inherit;white-space:pre;user-select:text;">{debugText}</pre>
+      <button
+        type="button"
+        style="margin-top:6px;background:#0f0;color:#000;border:0;padding:2px 8px;font:inherit;cursor:pointer;border-radius:2px;"
+        onclick={() => {
+          void navigator.clipboard?.writeText(debugText);
+        }}>copy</button
+      >
+    </div>
   {/if}
 
   <!-- TierContext info card — same shape as /mars. Visible only at

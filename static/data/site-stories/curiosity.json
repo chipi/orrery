@@ -1,0 +1,86 @@
+{
+  "site": "curiosity",
+  "intro": "NASA's Curiosity rover launched November 26, 2011 atop an Atlas V from Cape Canaveral. After 254 days of cruise, Mars Science Laboratory delivered the 899-kg nuclear-powered rover to Gale Crater on August 6, 2012 via the now-famous sky-crane landing. More than a decade later Curiosity is still climbing Mount Sharp, drilling rocks that hold a record of Mars's once-habitable past.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Building a rover for Gale Crater",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/01.jpg",
+          "caption": "Mars Science Laboratory assembled at JPL — Curiosity, descent stage, backshell + heat shield stacked for shipment to Florida.",
+          "chapter": "hardware"
+        },
+        {
+          "src": "/images/missions/curiosity/02.jpg",
+          "caption": "The MMRTG nuclear power source (orange disk, lower right) provides ~110 W continuously for ≥14 years — no solar panels, no winter shutdowns.",
+          "chapter": "hardware"
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "November 26, 2011 — Atlas V from Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/curiosity/03.jpg",
+          "caption": "Atlas V 541 lifts off from SLC-41 carrying Mars Science Laboratory + Curiosity. 10:02 EST, November 26 2011.",
+          "chapter": "launch"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Gale Crater — landed August 6, 2012",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+          "caption": "Mont Mercou panorama, sol 3070 (March 2021). Mastcam-Z 360° sweep showing the rover, the layered cliffs of Mt Mercou, and Mount Sharp on the horizon.",
+          "chapter": "surface"
+        },
+        {
+          "src": "/images/hotspots/mars/curiosity/tier2-hirise.jpg",
+          "caption": "HiRISE overhead view of Curiosity's traverse, captured by Mars Reconnaissance Orbiter at 25 cm/pixel.",
+          "chapter": "surface"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/01.jpg",
+          "caption": "Self-portrait at \"Big Sky\" drill site, sol 1126 — composite of dozens of MAHLI close-ups stitched into a single image.",
+          "chapter": "surface"
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Evidence of an ancient habitable Mars",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/02.jpg",
+          "caption": "Drill hole at Yellowknife Bay — the first sample from Mars's past lake-bed environment, January 2013.",
+          "chapter": "science"
+        },
+        {
+          "src": "/images/fleet-galleries/curiosity/03.jpg",
+          "caption": "Sedimentary rocks at Vera Rubin Ridge — banded iron formations + clay minerals indicate ancient liquid water and a habitable chemical environment.",
+          "chapter": "science"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "title": "People",
+      "subtitle": "Engineers + scientists behind Curiosity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/curiosity/04.jpg",
+          "caption": "JPL mission control celebrates the seven-minutes-of-terror sky-crane landing, August 5/6 2012 — Adam Steltzner and team after the first signals from Gale Crater.",
+          "chapter": "people"
+        }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,13 @@
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-  import { getMarsSites, getMarsTraverse, getMarsSiteGallery } from '$lib/data';
+  import {
+    getMarsSites,
+    getMarsTraverse,
+    getMarsSiteGallery,
+    getSiteStory,
+    type SiteStory,
+  } from '$lib/data';
   import type { Traverse } from '$types/mars-site';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -42,6 +48,7 @@
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { onLayerChange } from '$lib/science-layers';
@@ -300,20 +307,29 @@
   let traverses: Record<string, Traverse> = $state({});
 
   // ─── Detail-panel tabs (mirrors /moon pattern v0.1.10) ───────────
-  type PanelTab = 'overview' | 'gallery' | 'learn';
+  type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let lastSelectedId = $state<string | null>(null);
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // #PE path-B: optional rich multi-agency narrative (the "STORY"
+  // tab). Distinct from GALLERY — chapter-grouped, per-image captions,
+  // agency badges. Loaded from static/data/site-stories/<id>.json on
+  // demand. Null when the site has no story yet → tab is hidden.
+  let panelStory: SiteStory | null = $state(null);
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
       lastSelectedId = selected.id;
       panelGallery = [];
+      panelStory = null;
       panelLightbox = null;
       void getMarsSiteGallery(selected.id, selected.mission_id).then((urls) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
+      });
+      void getSiteStory(selected.id).then((story) => {
+        if (selected && selected.id === lastSelectedId) panelStory = story;
       });
     }
   });
@@ -2520,6 +2536,19 @@ sample      ${debugInfo.projectedPxSample}`}
           GALLERY
         </button>
       {/if}
+      {#if panelStory}
+        <button
+          type="button"
+          role="tab"
+          class="tab-btn"
+          class:active={panelTab === 'story'}
+          aria-selected={panelTab === 'story'}
+          onclick={() => (panelTab = 'story')}
+          data-testid="panel-tab-story"
+        >
+          STORY
+        </button>
+      {/if}
       {#if panelHasLinks}
         <button
           type="button"
@@ -2651,6 +2680,10 @@ sample      ${debugInfo.projectedPxSample}`}
         {#if panelGalleryGrid.length > 0}
           <p class="gallery-credit">{m.panel_gallery_credit()}</p>
         {/if}
+      </div>
+    {:else if panelTab === 'story' && panelStory}
+      <div class="panel-body">
+        <SiteStoryPanel story={panelStory} onLightbox={(src) => (panelLightbox = src)} />
       </div>
     {:else if panelTab === 'learn'}
       <div class="panel-body">

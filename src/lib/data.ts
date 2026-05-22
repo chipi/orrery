@@ -843,6 +843,45 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
 }
 
 /**
+ * #PE path-B (rich multi-agency narrative gallery).
+ *
+ * A site-story is a hand-curated chapter-based photo set with
+ * per-image captions + chapter grouping. Distinct from the existing
+ * GALLERY tab (which is a 5-image thumbnail strip with no captions).
+ *
+ * Stories live under `static/data/site-stories/<siteId>.json`. The
+ * file is missing for sites that don't have a story yet — caller
+ * gets null and renders nothing (the STORY tab hides on those sites).
+ *
+ * Per-image attribution / license / source URL is resolved at render
+ * time from the existing image-provenance.json — no duplication.
+ */
+export interface SiteStoryImage {
+  src: string;
+  caption: string;
+  /** Optional chapter id. If omitted, defaults to the enclosing
+   *  chapter's id. */
+  chapter?: string;
+}
+
+export interface SiteStoryChapter {
+  id: string;
+  title: string;
+  subtitle?: string;
+  images: SiteStoryImage[];
+}
+
+export interface SiteStory {
+  site: string;
+  intro: string;
+  chapters: SiteStoryChapter[];
+}
+
+export async function getSiteStory(siteId: string): Promise<SiteStory | null> {
+  return get<SiteStory>(`site-stories/${siteId}.json`).catch(() => null);
+}
+
+/**
  * Generate id-variants to probe across manifests with inconsistent
  * naming conventions. fleet-galleries.json was hand-curated with
  * dash-separated names ("viking-1", "luna-16"); mission-galleries

@@ -100,8 +100,13 @@
     padding: 0 4px 8px;
   }
   .intro {
-    font-size: 13px;
-    line-height: 1.55;
+    /* Crimson Pro to match the OVERVIEW tab's narrative type. The
+     * page body font is Space Mono (var(--font-mono)) — without an
+     * explicit override the story text inherits the monospace, which
+     * Marko flagged as visually inconsistent with other tabs. */
+    font-family: 'Crimson Pro', serif;
+    font-size: 14px;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
     margin: 0;
     padding-bottom: 14px;
@@ -174,12 +179,15 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
   .caption {
-    font-size: 12px;
-    line-height: 1.5;
+    font-family: 'Crimson Pro', serif;
+    font-size: 13px;
+    line-height: 1.45;
     color: rgba(255, 255, 255, 0.78);
     margin: 0;
   }
   .credit {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
     color: rgba(255, 255, 255, 0.5);
     margin-left: 4px;
   }

@@ -318,6 +318,13 @@
   // agency badges. Loaded from static/data/site-stories/<id>.json on
   // demand. Null when the site has no story yet → tab is hidden.
   let panelStory: SiteStory | null = $state(null);
+  // Track previous tierContext so we can detect the null → Tier-2
+  // transition (when the info card first appears) and auto-promote
+  // the user from OVERVIEW → STORY. Once they've manually picked a
+  // different tab (e.g. clicked GALLERY) we leave them alone — the
+  // auto-switch only fires on the first promotion per site.
+  let prevTierContextActive = $state(false);
+  let storyAutoSwitchedForSite = $state<string | null>(null);
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
@@ -332,6 +339,24 @@
         if (selected && selected.id === lastSelectedId) panelStory = story;
       });
     }
+  });
+  // Auto-promote OVERVIEW → STORY the first time tierContext flips on
+  // for a site (≈ user has zoomed in to Tier 2 and the info card has
+  // just appeared). Only when (a) a story exists, (b) the user hasn't
+  // manually picked another tab, (c) we haven't already auto-switched
+  // for THIS site (so a tab change followed by a re-zoom doesn't undo
+  // the user's choice). 2026-05-22 feedback.
+  $effect(() => {
+    const active = tierContext !== null;
+    const becameActive = active && !prevTierContextActive;
+    prevTierContextActive = active;
+    if (!becameActive) return;
+    if (!selected) return;
+    if (panelStory == null) return;
+    if (panelTab !== 'overview') return;
+    if (storyAutoSwitchedForSite === selected.id) return;
+    panelTab = 'story';
+    storyAutoSwitchedForSite = selected.id;
   });
   type PanelLinks = NonNullable<MarsSite['links']>;
   let panelLinksByTier = $derived.by(() => {

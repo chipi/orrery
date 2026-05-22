@@ -115,6 +115,8 @@ Umami is **cookieless**, does **no fingerprinting**, captures **no PII**, has **
 
 **No `localStorage`**, no IndexedDB, no third-party fonts at runtime (every asset resolved at build time per [ADR-016](docs/adr/ADR-016.md)). **One functional cookie** (`orrery_locale`, 1-year, `SameSite=Lax`, no PII) is written *only* when you explicitly click a locale chip from the LocalePicker — auto-detected locales never write the cookie ([ADR-057](docs/adr/ADR-057.md)). Locale preference also lives in the URL — bookmark `?lang=ja` and you have your locale; share it and they have theirs.
 
+**Error tracking — [Sentry](https://sentry.io/), errors only, no PII, fork-silent.** Production builds on `chipi.github.io` initialise the Sentry SDK when `PUBLIC_SENTRY_DSN` is set at build time — capturing only unhandled JavaScript exceptions and unhandled promise rejections. No performance tracing, no Web Vitals, no session replay. `sendDefaultPii: false` is set explicitly, and a `beforeSend` hook strips URL query parameters and hash, nulls request headers + cookies, and sets `user.ip_address` to `0.0.0.0` (Sentry's discard sentinel); `ui.input` breadcrumbs are dropped entirely. Self-hosters who clone Orrery and build their own fork get **zero Sentry traffic by default** — the env var isn't in their CI secrets, so the SDK init returns early before any network request fires ([ADR-067](docs/adr/ADR-067.md)). See [`src/lib/observability/sentry.ts`](src/lib/observability/sentry.ts) for the full scrubber.
+
 ## Getting started
 
 Requirements: Node 20+, npm 10+.

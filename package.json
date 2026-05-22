@@ -58,6 +58,8 @@
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
     "build-tech-bom": "tsx scripts/build-tech-bom.ts",
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
+    "check-no-secrets": "tsx scripts/check-no-secrets.ts",
+    "check-no-secrets:all": "tsx scripts/check-no-secrets.ts --all",
     "images:score": "tsx scripts/score-images.ts",
     "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
     "fetch:launches": "tsx scripts/fetch-launches.ts",
@@ -68,7 +70,7 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs && cp -R docs/prototypes docs/.vitepress/dist/prototypes",
     "docs:preview": "vitepress preview docs",
-    "preflight": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run build",
+    "preflight": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run check-no-secrets:all && npm run build",
     "ci": "npm run preflight",
     "prepare": "git config core.hooksPath .husky 2>/dev/null || true",
     "docker:build": "docker compose build",
@@ -122,6 +124,7 @@
     "vitest": "^4.1.6"
   },
   "dependencies": {
+    "@sentry/sveltekit": "^10.53.1",
     "katex": "^0.16.45",
     "three": "0.128.0"
   }

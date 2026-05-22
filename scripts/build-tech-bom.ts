@@ -77,6 +77,14 @@ const LICENSE_ALLOWLIST = new Set([
   // its output (JPEG variants) is data, not a derivative of libvips.
   // LGPL applies to libvips itself — we don't modify or redistribute it.
   'LGPL-3.0-or-later',
+  // Sentry CLI ships under Functional Source License (Sentry's own
+  // source-available license, MIT-compatible after a 2-year competitive-
+  // use embargo on running it as a paid Sentry-clone). `@sentry/cli` is
+  // a transitive dep of `@sentry/sveltekit` (RFC-025 / ADR-067); it's
+  // used at build time for source-map upload + release-tagging, never
+  // shipped to the user. Allowlisted as dev-tier per Sentry's own
+  // guidance + the FSL's MIT-after-2y conversion clause.
+  'FSL-1.1-MIT',
 ]);
 
 // Some legacy npm packages declare licenses as compound expressions or

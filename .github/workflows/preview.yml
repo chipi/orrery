@@ -45,6 +45,14 @@ jobs:
       - run: npm run build
         env:
           VITE_BASE: /orrery/
+          # Sentry — RFC-025 / ADR-067. SENTRY_DSN_WEB is set once in
+          # repo settings → Secrets → Actions; forks don't have it, so
+          # their build produces a bundle with empty PUBLIC_SENTRY_DSN
+          # and the SDK no-ops. PUBLIC_SENTRY_RELEASE is the GH SHA so
+          # Sentry can group errors per deploy.
+          PUBLIC_SENTRY_DSN: ${{ secrets.SENTRY_DSN_WEB }}
+          PUBLIC_SENTRY_ENVIRONMENT: production
+          PUBLIC_SENTRY_RELEASE: gha-${{ github.sha }}
       - run: npm run docs:build
         env:
           DOCS_BASE: /orrery/docs/

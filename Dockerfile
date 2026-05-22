@@ -18,6 +18,7 @@ FROM node:20-bookworm-slim
 # bindings against them in one cached layer.
 RUN apt-get update && apt-get install -y --no-install-recommends \
       libgdal-dev gdal-bin \
+      python3 build-essential \
       ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
 

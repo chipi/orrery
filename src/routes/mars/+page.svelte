@@ -345,6 +345,13 @@
     if (s) {
       selected = s;
       panelOpen = true;
+      // Pause Mars auto-spin on any site selection — clicking a marker,
+      // hovering a region, deep-linking via URL. Without this the
+      // chosen site keeps rotating away under the camera while the user
+      // is trying to read the detail panel (2026-05-22 feedback).
+      // The fly-in path (faceMarsAtSite) also pauses spin, so this is
+      // belt-and-braces for the non-fly selection paths.
+      autoSpin = false;
       if (options.face) faceMarsAtSite?.(s);
     }
   }
@@ -719,12 +726,15 @@
         group.add(hit);
 
         // Label with leader-line (same component as /earth + /moon) —
-        // floats above the lander pointing back at it. site.name is
-        // short enough to fit beside the marker without crowding.
+        // 2026-05-22 feedback: offset moved from straight-up
+        // (0, 2.2, 0) to side-and-slightly-up (2.6, 1.4, 0). Straight-
+        // up labels were sitting on the centre of the disc / 3D lander
+        // model at close zoom, obscuring the very content they were
+        // labelling. Side offset keeps the label clear of the disc.
         const label = buildLabel({
           text: site.name ?? site.id,
           color: color,
-          offset: new THREE.Vector3(0, 2.2, 0),
+          offset: new THREE.Vector3(2.6, 1.4, 0),
           size: 1.4,
         });
         group.add(label.group);
@@ -1573,6 +1583,29 @@
         if (Math.abs(camR - camRTarget) > 0.001) {
           camR += (camRTarget - camR) * 0.15;
           cameraChanged = true;
+          // While the zoom is actively interpolating AND the user has a
+          // selected site AND isn't dragging, lerp camP/camT toward
+          // the site's direction at the same 15%/frame rate. The
+          // effect is: zooming in re-centres the site under the cursor
+          // even if the user had drifted slightly off after fly-in.
+          // Only applies on planet zoom (panorama mode never reaches
+          // here because applyCamera there uses radius 0.5).
+          // (2026-05-22 feedback: site drifts off-screen as user zooms.)
+          if (selected?.lat != null && selected?.lon != null && !dragging) {
+            const v = latLonToUnitSphere(selected.lat, selected.lon);
+            const local = new THREE.Vector3(v.x, v.y, v.z);
+            marsMesh.updateMatrixWorld(true);
+            const world = local.applyMatrix4(marsMesh.matrixWorld).normalize();
+            const siteP = Math.acos(Math.max(-1, Math.min(1, world.y)));
+            const siteT = Math.atan2(world.z, world.x);
+            // Lerp camP directly. camT is angular — handle wraparound
+            // by picking the shortest direction.
+            camP += (siteP - camP) * 0.15;
+            let dT = siteT - camT;
+            if (dT > Math.PI) dT -= 2 * Math.PI;
+            if (dT < -Math.PI) dT += 2 * Math.PI;
+            camT += dT * 0.15;
+          }
         }
         // (c) Drag inertia: after release, decay angular velocity
         //     ~92%/frame (~200 ms to half) and apply to camT/camP
@@ -1684,11 +1717,11 @@
       // Labels should stay readable at close zoom — the original
       // "labels follow dot zoom taper" rule shrank them to 0.2× by
       // camR=30.5, where the start/end caption sprites became
-      // unreadable (2026-05-21 feedback). Decouple: dots stay at
-      // dotZoomScale (proportional to the lander model), labels
-      // floor at 0.55 (≈ comfortable reading scale on the HiRISE
-      // patch without overshooting it).
-      const labelZoomScale = Math.max(0.55, dotZoomScale);
+      // unreadable. Floor bumped from 0.55 → 0.85 (2026-05-22 round
+      // 2 — the 0.55 floor was still too small to read on the
+      // HiRISE patch at last-3 zoom levels). Dots stay at
+      // dotZoomScale (proportional to the lander model).
+      const labelZoomScale = Math.max(0.85, dotZoomScale);
       for (const tl of traverseLines) {
         tl.endDot.visible = traverseDotsVisible;
         tl.startDot.visible = traverseDotsVisible;
@@ -1829,8 +1862,15 @@
         // patch than they're worth.
         for (const sm of surfaceMarkers) {
           if (sm.labelGroup) {
-            sm.labelGroup.scale.setScalar(zoomScale);
-            sm.labelGroup.visible = zoomScale > 0.3;
+            // Labels need to stay readable at close zoom — earlier
+            // logic hid them when zoomScale ≤ 0.3 (camR ≈ 38) which
+            // killed the label at the very moment the user was
+            // closest to the site they cared about. Floor at 0.65
+            // (still smaller than overview, never unreadable) and
+            // keep visible at every zoom.
+            const labelScale = Math.max(0.65, zoomScale);
+            sm.labelGroup.scale.setScalar(labelScale);
+            sm.labelGroup.visible = true;
           }
         }
         // Tier 2 detail-layer reveal ramp (2026-05-21 feedback). Two

@@ -808,9 +808,10 @@ export async function getMoonSiteGallery(
 ): Promise<string[]> {
   // Same fallback ladder as getMarsSiteGallery (#PE 2026-05-22) —
   // per-site override → mission-gallery (by mission_id then site id)
-  // → fleet-gallery (by mission_id then site id). Captures the cases
-  // where lunar surface missions (e.g. Surveyor-class, early Luna
-  // landers, Chang'e 3/4) have images only in fleet-galleries.json.
+  // → fleet-gallery (by every id-variant). Captures the cases where
+  // lunar surface missions (e.g. Surveyor-class, early Luna landers,
+  // Chang'e 3/4) have images only in fleet-galleries.json under
+  // dash-separated ids like "luna-16" while site ids use "luna16".
   const own = await getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
   if (own.length > 0) return own;
   if (missionIdFallback) {
@@ -820,10 +821,16 @@ export async function getMoonSiteGallery(
   const bySite = await getMissionGallery(siteId);
   if (bySite.length > 0) return bySite;
   if (missionIdFallback) {
-    const fleetByMission = await getFleetGallery(missionIdFallback);
-    if (fleetByMission.length > 0) return fleetByMission;
+    for (const v of gallerySiteIdVariants(missionIdFallback)) {
+      const g = await getFleetGallery(v);
+      if (g.length > 0) return g;
+    }
   }
-  return getFleetGallery(siteId);
+  for (const v of gallerySiteIdVariants(siteId)) {
+    const g = await getFleetGallery(v);
+    if (g.length > 0) return g;
+  }
+  return [];
 }
 
 /**
@@ -836,18 +843,45 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
 }
 
 /**
+ * Generate id-variants to probe across manifests with inconsistent
+ * naming conventions. fleet-galleries.json was hand-curated with
+ * dash-separated names ("viking-1", "luna-16"); mission-galleries
+ * and site-id conventions tend toward no-dash ("viking1", "luna16",
+ * with site ids sometimes carrying a "-lander" / "-orbiter" suffix).
+ * Try every reasonable form so a single canonical-id callsite hits
+ * whatever the manifests happen to have.
+ *
+ * Examples:
+ *   viking1-lander → [viking1-lander, viking1, viking-1, viking-1-lander]
+ *   luna16          → [luna16, luna-16]
+ *   change5         → [change5, change-5]
+ */
+function gallerySiteIdVariants(id: string): string[] {
+  const variants = new Set<string>([id]);
+  const stripped = id.replace(/-(lander|orbiter|rover)$/, '');
+  if (stripped !== id) variants.add(stripped);
+  // Insert a dash before trailing digits. "viking1" → "viking-1".
+  for (const candidate of [id, stripped]) {
+    const dashed = candidate.replace(/^([a-z]+)(\d+)$/, '$1-$2');
+    if (dashed !== candidate) variants.add(dashed);
+  }
+  return Array.from(variants);
+}
+
+/**
  * Mars site gallery loader. Multi-tier fallback so /mars detail panels
  * surface SOMETHING from every available image manifest before falling
  * silent. Order: per-site override → mission-gallery (by mission_id
- * AND by site id) → fleet-gallery (by mission_id AND by site id).
+ * AND by site id) → fleet-gallery (by mission_id AND by site id),
+ * with id-normalization at every fleet probe.
  *
- * Why all four steps: the existing image inventory is split across
+ * Why all the steps: the existing image inventory is split across
  * three manifests (mars-site-galleries.json, mission-galleries.json,
  * fleet-galleries.json) due to historical capture pipelines. Some
  * Mars hotspot sites (spirit, opportunity, phoenix, schiaparelli,
  * zhurong) only have images in fleet-galleries.json; others
  * (curiosity, perseverance) are in mission-galleries.json. Walking
- * all four lookups gives us coverage today without an asset
+ * all lookups gives us coverage today without an asset
  * re-organization pass. #PE-mars (2026-05-22).
  */
 export async function getMarsSiteGallery(
@@ -865,13 +899,20 @@ export async function getMarsSiteGallery(
   // 3. Mission gallery by site id (site_id == mission_id case).
   const bySite = await getMissionGallery(siteId);
   if (bySite.length > 0) return bySite;
-  // 4. Fleet gallery by mission_id (e.g. "tianwen1" → fleet/tianwen1).
+  // 4 + 5. Fleet gallery by mission_id and by every id-variant of
+  // the site id (covers "luna16" vs "luna-16", "viking1-lander" vs
+  // "viking-1" naming-convention drift).
   if (missionIdFallback) {
-    const fleetByMission = await getFleetGallery(missionIdFallback);
-    if (fleetByMission.length > 0) return fleetByMission;
+    for (const v of gallerySiteIdVariants(missionIdFallback)) {
+      const g = await getFleetGallery(v);
+      if (g.length > 0) return g;
+    }
   }
-  // 5. Fleet gallery by site id (e.g. "spirit", "phoenix").
-  return getFleetGallery(siteId);
+  for (const v of gallerySiteIdVariants(siteId)) {
+    const g = await getFleetGallery(v);
+    if (g.length > 0) return g;
+  }
+  return [];
 }
 
 // ──────────────────────────────────────────────────────────────────────

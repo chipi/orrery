@@ -52,7 +52,7 @@ test.describe('locale cookie persistence (ADR-057)', () => {
       {
         name: 'orrery_locale',
         value: 'it',
-        url: 'http://127.0.0.1:4173/',
+        url: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173/',
         sameSite: 'Lax',
       },
     ]);
@@ -75,7 +75,7 @@ test.describe('locale cookie persistence (ADR-057)', () => {
       {
         name: 'orrery_locale',
         value: 'en-US',
-        url: 'http://127.0.0.1:4173/',
+        url: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173/',
         sameSite: 'Lax',
       },
     ]);
@@ -95,7 +95,7 @@ test.describe('locale cookie persistence (ADR-057)', () => {
       {
         name: 'orrery_locale',
         value: 'it',
-        url: 'http://127.0.0.1:4173/',
+        url: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173/',
         sameSite: 'Lax',
       },
     ]);

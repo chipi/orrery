@@ -1505,9 +1505,7 @@
     <div class="tier-context-card" aria-live="polite">
       <div class="tcc-head">
         <span class="tcc-site">{tierContext.siteName}</span>
-        <span class="tcc-chip" style="color: {tierContext.nationColor};"
-          >{tierContext.nation}</span
-        >
+        <span class="tcc-chip" style="color: {tierContext.nationColor};">{tierContext.nation}</span>
       </div>
       {#if tierContext.missionContext}
         <div class="tcc-mission">{tierContext.missionContext}</div>

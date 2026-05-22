@@ -164,6 +164,84 @@
     return NATION_COLORS[nationKey(site.nation)] ?? '#888';
   }
 
+  /**
+   * Contextual info card state (PRD-014 §v0.7.x + RFC-017 §OQ-12).
+   * Mirrors /mars's TierContext: when the camera is in the Tier 2
+   * zoom band on a hotspot, the card surfaces (a) site context —
+   * name, agency, brief mission tagline — and (b) the dominant
+   * imagery layer's source + attribution + resolution. Two-layer
+   * composition (regional + detail) stacks both attribution rows.
+   */
+  type TierLayer = {
+    layerLabel: string; // 'Regional view' | 'Detail view'
+    sourceTitle: string;
+    sourceAuthor: string;
+    resolutionText: string;
+    sourceUrl?: string;
+    licenseShort: string;
+  };
+  type TierContext = {
+    siteId: string;
+    siteName: string;
+    nation: string;
+    nationColor: string;
+    missionContext: string;
+    layers: TierLayer[];
+    uncertaintyM?: number;
+  };
+  let tierContext = $state<TierContext | null>(null);
+
+  /**
+   * Nation chip label + colour for the info card's site header.
+   * Same shape as /mars's nationChipFor — Moon includes USSR (Luna)
+   * which collapses with Russia for the chip (Roscosmos is the
+   * programmatic continuation of the Soviet space programme).
+   */
+  function nationChipFor(site: MoonSite): { label: string; color: string } {
+    const nation = site.nation ?? '';
+    const agency = site.agency ?? '';
+    if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
+    if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
+      return { label: 'USSR · Roscosmos', color: '#ef4444' };
+    if (nation === 'China' || agency === 'CNSA') return { label: 'China · CNSA', color: '#dc2626' };
+    if (nation === 'India' || agency === 'ISRO') return { label: 'India · ISRO', color: '#f97316' };
+    if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
+    if (nation === 'Israel' || agency === 'SpaceIL')
+      return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
+    if (nation === 'Europe' || agency === 'ESA') return { label: 'Europe · ESA', color: '#1d4ed8' };
+    return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
+  }
+
+  /**
+   * Compact mission-context tagline: "Apollo 11 crewed lander ·
+   * landed 1969-07-20" — feeds the info card's second line.
+   */
+  function missionContextFor(site: MoonSite): string {
+    const bits: string[] = [];
+    if (site.mission_type) bits.push(site.mission_type);
+    if (site.landing_date) bits.push(`landed ${site.landing_date}`);
+    return bits.join(' · ') || '';
+  }
+
+  // Auto-switch OVERVIEW → STORY when tierContext flips on for the
+  // first time on a site. Same rule as /mars: only when (a) story
+  // exists, (b) user hasn't picked a different tab manually,
+  // (c) we haven't already auto-switched for THIS site.
+  let prevTierContextActive = $state(false);
+  let storyAutoSwitchedForSite = $state<string | null>(null);
+  $effect(() => {
+    const active = tierContext !== null;
+    const becameActive = active && !prevTierContextActive;
+    prevTierContextActive = active;
+    if (!becameActive) return;
+    if (!selected) return;
+    if (panelStory == null) return;
+    if (panelTab !== 'overview') return;
+    if (storyAutoSwitchedForSite === selected.id) return;
+    panelTab = 'story';
+    storyAutoSwitchedForSite = selected.id;
+  });
+
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
   type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
   let panelTab: PanelTab = $state('overview');
@@ -1193,6 +1271,60 @@
         const attr = target.getAttribute('data-hotspot-tier');
         const next = String(topTier);
         if (attr !== next) target.setAttribute('data-hotspot-tier', next);
+
+        // TierContext info card (PRD-014 §v0.7.x). When any hotspot
+        // is at Tier 2+, surface attribution for the layers currently
+        // composed on its disc. Same pattern as /mars.
+        let bestH: { siteId: string } | null = null;
+        let bestTier = 0;
+        for (const h of hotspots) {
+          if (h.currentTier >= 2 && h.currentTier > bestTier) {
+            bestTier = h.currentTier;
+            bestH = { siteId: h.siteId };
+          }
+        }
+        if (bestH) {
+          const site = sites.find((s) => s.id === bestH!.siteId);
+          if (site) {
+            const hasRegional = !!site.hotspot_tier2_regional_source;
+            const hasDetail = !!site.hotspot_tier2_source;
+            const agencyChip = nationChipFor(site);
+            const layers: TierLayer[] = [];
+            // Regional layer — undefined on Moon today; Phase 2 with
+            // Chang'e 2 mosaic will fill this. The block is wired so
+            // the moment a regional source lands, the row appears.
+            if (hasRegional) {
+              layers.push({
+                layerLabel: 'Regional view',
+                sourceTitle: 'Regional mosaic',
+                sourceAuthor: 'TBD — placeholder until Phase 2 lands',
+                resolutionText: 'TBD',
+                licenseShort: 'TBD',
+              });
+            }
+            if (hasDetail) {
+              layers.push({
+                layerLabel: 'Detail view',
+                sourceTitle: 'LROC NAC ROI mosaic',
+                sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
+                resolutionText: '5 m/px',
+                sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                licenseShort: 'PD-NASA',
+              });
+            }
+            tierContext = {
+              siteId: site.id,
+              siteName: site.name ?? site.id,
+              nation: agencyChip.label,
+              nationColor: agencyChip.color,
+              missionContext: missionContextFor(site),
+              layers,
+              uncertaintyM: site.location_uncertainty_m,
+            };
+          }
+        } else if (tierContext !== null) {
+          tierContext = null;
+        }
       }
 
       if (view === '3d') composer.render();
@@ -1338,6 +1470,45 @@
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
+  {/if}
+
+  <!-- TierContext info card — same shape as /mars. Visible only at
+       Tier 2+ when not in panorama mode. aria-live so screen-readers
+       announce the layer changes as the user zooms in/out. -->
+  {#if view === '3d' && tierContext && !panoramaActive}
+    <div class="tier-context-card" aria-live="polite">
+      <div class="tcc-head">
+        <span class="tcc-site">{tierContext.siteName}</span>
+        <span class="tcc-chip" style="color: {tierContext.nationColor};"
+          >{tierContext.nation}</span
+        >
+      </div>
+      {#if tierContext.missionContext}
+        <div class="tcc-mission">{tierContext.missionContext}</div>
+      {/if}
+      {#each tierContext.layers as layer, i (layer.layerLabel)}
+        <div class="tcc-layer-block" class:tcc-layer-block-next={i > 0}>
+          <div class="tcc-layer">{layer.layerLabel} · {layer.resolutionText}</div>
+          <div class="tcc-source">{layer.sourceTitle}</div>
+          <div class="tcc-author">{layer.sourceAuthor}</div>
+          <div class="tcc-footer">
+            <span class="tcc-license">{layer.licenseShort}</span>
+            {#if i === tierContext.layers.length - 1 && tierContext.uncertaintyM != null}
+              <span class="tcc-uncertainty">±{tierContext.uncertaintyM} m</span>
+            {/if}
+            {#if layer.sourceUrl}
+              <a
+                class="tcc-link"
+                href={layer.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer external"
+                title="Open the source page in a new tab">source ↗</a
+              >
+            {/if}
+          </div>
+        </div>
+      {/each}
+    </div>
   {/if}
 
   <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"
@@ -2104,6 +2275,104 @@
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
+  }
+
+  /* TierContext info card — port of /mars's .tier-context-card.
+     Visible at Tier 2+ when not in panorama mode. Layered attribution
+     block stacks regional + detail credits with a thin divider. */
+  .tier-context-card {
+    position: absolute;
+    left: 12px;
+    bottom: 56px;
+    z-index: 6;
+    max-width: 360px;
+    padding: 10px 14px;
+    background: rgba(8, 10, 22, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    animation: tcc-fade-in 600ms ease-out;
+  }
+  .tcc-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .tcc-site {
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 0.5px;
+  }
+  .tcc-chip {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tcc-mission {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .tcc-layer-block-next {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .tcc-layer {
+    color: #4ecdc4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+  .tcc-source {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+  }
+  .tcc-author {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .tcc-footer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .tcc-license {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+    padding: 1px 6px;
+    letter-spacing: 0.5px;
+  }
+  .tcc-uncertainty {
+    color: rgba(255, 200, 100, 0.7);
+  }
+  .tcc-link {
+    margin-left: auto;
+    color: rgba(78, 205, 196, 0.85);
+    text-decoration: none;
+  }
+  .tcc-link:hover {
+    text-decoration: underline;
+  }
+  @keyframes tcc-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Detail-panel tabs / gallery / learn / lightbox CSS in src/lib/styles/panel-tabs.css (v0.1.10) */

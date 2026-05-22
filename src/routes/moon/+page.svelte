@@ -636,19 +636,35 @@
           if (builder) {
             const accent = colorFor(site);
             const tier2Source = site.hotspot_tier2_source;
+            const tier2RegionalSource = site.hotspot_tier2_regional_source;
             // Tier 2 builder is wired only when the site declares a
             // tier2 source path. Texture URL is resolved against the
             // image-vision.json manifest (lazy 1:1 variant lookup);
-            // if the manifest doesn't have an entry yet, the patch
-            // renders with a neutral placeholder.
+            // if the manifest doesn't have an entry yet, fall back
+            // to the raw 2048² JPEG at the sidecar's hotspot_tier2_source
+            // path — soft-fail keeps Tier 2 visible during development
+            // (same pattern as /mars).
             const annotations = site.hotspot_annotations;
             const tier2Builder =
               maxTier >= 2 && tier2Source
                 ? () => {
                     const entry = getImageEntry(tier2Source);
-                    const textureUrl = entry ? pickVariant(entry, 'thumbnail', false) : undefined;
+                    const textureUrl =
+                      (entry ? pickVariant(entry, 'thumbnail', false) : undefined) ?? tier2Source;
+                    // Same resolution chain for the regional layer
+                    // (Chang'e 2 mosaic or LROC WAC placeholder when
+                    // wired; undefined today on /moon — patch builder
+                    // skips the regional disc cleanly).
+                    let regionalTextureUrl: string | undefined;
+                    if (tier2RegionalSource) {
+                      const rEntry = getImageEntry(tier2RegionalSource);
+                      regionalTextureUrl =
+                        (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ??
+                        tier2RegionalSource;
+                    }
                     return buildHotspotSurfacePatch({
                       textureUrl,
+                      regionalTextureUrl,
                       accentColor: accent,
                       siteId: site.id,
                       annotations,

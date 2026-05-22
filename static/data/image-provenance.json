@@ -29352,6 +29352,111 @@
       "pageid": null,
       "nasa_id": "APOLLO11HIA",
       "fetched_at": "2026-05-22T18:06:31.305Z"
+    },
+    {
+      "id": "40dbdd8d348cca1f",
+      "path": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO12LOA — patch centred at -3.010°N -23.420°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO12LOA/NAC_ROI_APOLLO12LOA_E024S3368_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO12LOA/NAC_ROI_APOLLO12LOA_E024S3368_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO12LOA",
+      "fetched_at": "2026-05-22T18:21:51.152Z"
+    },
+    {
+      "id": "dd52df60b20b4e05",
+      "path": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO14LOA — patch centred at -3.650°N -17.470°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO14LOA/NAC_ROI_APOLLO14LOA_E038S3426_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO14LOA/NAC_ROI_APOLLO14LOA_E038S3426_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO14LOA",
+      "fetched_at": "2026-05-22T18:21:51.154Z"
+    },
+    {
+      "id": "904f58236cd829f9",
+      "path": "/images/hotspots/moon/apollo15/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO15HIA — patch centred at 26.130°N 3.630°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO15HIA/NAC_ROI_APOLLO15HIA_E259N0036_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO15HIA/NAC_ROI_APOLLO15HIA_E259N0036_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO15HIA",
+      "fetched_at": "2026-05-22T18:21:51.154Z"
+    },
+    {
+      "id": "d0a8d11b632efa48",
+      "path": "/images/hotspots/moon/apollo16/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO16HIA — patch centred at -8.970°N 15.500°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO16HIA/NAC_ROI_APOLLO16HIA_E091S0152_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO16HIA/NAC_ROI_APOLLO16HIA_E091S0152_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO16HIA",
+      "fetched_at": "2026-05-22T18:21:51.154Z"
+    },
+    {
+      "id": "a8df03c5ead7abee",
+      "path": "/images/hotspots/moon/apollo17/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO17HIA — patch centred at 20.190°N 30.770°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO17HIA/NAC_ROI_APOLLO17HIA_E201N0303_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO17HIA/NAC_ROI_APOLLO17HIA_E201N0303_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO17HIA",
+      "fetched_at": "2026-05-22T18:21:51.154Z"
     }
   ]
 }

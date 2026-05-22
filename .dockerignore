@@ -1,0 +1,41 @@
+# Only the pipeline-runner image uses a build context now (web uses
+# stock nginx:alpine + bind mounts; no context at all). The pipeline
+# Dockerfile copies just package.json + package-lock.json — everything
+# else is bind-mounted at runtime. Even so, keep the context lean to
+# speed up build-cache invalidation checks.
+
+node_modules
+.svelte-kit
+build
+test-results
+playwright-report
+.image-cache
+
+# Multi-GB caches from earlier toolchains / parallel agents.
+.linux-node-modules
+.xdg-cache
+.xdg-data
+
+# Caches + dev-only artefacts
+.cache
+.parcel-cache
+coverage
+
+# IDE + OS noise
+.vscode
+.idea
+.DS_Store
+*.log
+
+# Git internals
+.git
+.gitignore
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Docker artefacts themselves
+docker-compose.yml
+.dockerignore

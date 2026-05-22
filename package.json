@@ -70,7 +70,19 @@
     "docs:preview": "vitepress preview docs",
     "preflight": "npm run typecheck && npm run lint && npm run test && npm run validate-data && npm run build",
     "ci": "npm run preflight",
-    "prepare": "git config core.hooksPath .husky 2>/dev/null || true"
+    "prepare": "git config core.hooksPath .husky 2>/dev/null || true",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d web",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f web",
+    "docker:reset-data": "docker volume rm orrery-data orrery-cache 2>/dev/null || true",
+    "docker:fetch-launches": "docker compose run --rm pipeline-runner scripts/fetch-launches.ts",
+    "docker:images:hotspots": "docker compose run --rm pipeline-runner scripts/fetch-hotspot-imagery.ts",
+    "docker:fetch-assets": "docker compose run --rm pipeline-runner scripts/fetch-assets.ts",
+    "docker:validate-data": "docker compose run --rm pipeline-runner scripts/validate-data.ts",
+    "docker:build-image-provenance": "docker compose run --rm pipeline-runner scripts/build-image-provenance.ts",
+    "docker:build-link-provenance": "docker compose run --rm pipeline-runner scripts/build-link-provenance.ts",
+    "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

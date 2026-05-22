@@ -47,7 +47,7 @@ npm run docker:build-link-provenance   # scripts/build-link-provenance.ts
 npm run docker:audit-launches          # scripts/audit-report-launches.ts — emits HTML report
 ```
 
-The first invocation in a fresh checkout triggers a **one-time pipeline-runner image build** (~5-10 min — Node 20 base + apt install gdal-dev + `npm ci`). Subsequent invocations re-use the cached image and start in ~2-3 seconds. Source code is bind-mounted at runtime (read-only), so script edits don't require a rebuild.
+The first invocation in a fresh checkout triggers a **one-time pipeline-runner image build** (~10-15 min on Apple Silicon — Node 20 base + apt install gdal-dev + build-essential + `npm ci` with `gdal-async` source-compile against system gdal). Final image is ~3.4 GB. Subsequent invocations re-use the cached layers and start in ~2-3 seconds. Source code is bind-mounted at runtime (read-only), so script edits don't require a rebuild.
 
 You can pass arguments through:
 
@@ -75,6 +75,7 @@ Pipeline writes land in `./static/data` on the host (bind-mount). The web contai
 Volumes:
 
 - `orrery-cache` (named docker volume) — pipeline-side `.image-cache/` reuse across invocations.
+- Anonymous volume on `/repo/node_modules` (pipeline-runner only) — masks the host repo bind-mount so the image's linux-arm64 `node_modules` wins over your darwin-arm64 one. Without it, `esbuild` / `sharp` / `gdal-async` would try to load the wrong-platform binaries inside the linux container.
 - `./build`, `./static/data`, `./ops/docker/nginx.conf` (bind-mounts) — host paths the web container reads.
 
 The web container itself has no Dockerfile and no persistent volume — it's stock `nginx:alpine` (25 MB image) with three read-only bind-mounts. Easy to reason about, fast to start.
@@ -127,6 +128,16 @@ That was a real bug we fixed early in Slice 1 — adapter-static emits `build/mi
 ### Pipeline image build fails on `libgdal-dev`
 
 The pipeline-runner Dockerfile installs system gdal via `apt-get install libgdal-dev`. If that fails, the apt mirror may be transiently unavailable. Re-run; if it fails again, check `https://www.debian.org/mirror/list` and your network. macOS hosts running Docker Desktop don't need host-side gdal — that's the whole point of the pipeline-runner image.
+
+### Pipeline image build fails with `gyp ERR! not found: make`
+
+Means `node-pre-gyp` couldn't find a prebuilt `gdal-async` binary for your `node-vXXX-linux-arm64` ABI (returns 404 on the GH releases CDN) and fell back to source compile, but `build-essential` is missing from the image. The shipped Dockerfile installs `build-essential` + `python3` alongside `libgdal-dev`; if you derived a slimmer image and dropped them, add them back.
+
+Expect the first pipeline build to take 10-15 min on Apple Silicon — most of that is the `gdal-async` source-compile against system gdal. The image is ~3.4 GB once built; subsequent invocations reuse the cached layers and start in seconds.
+
+### `Error [TransformError]: You installed esbuild for another platform`
+
+The host's `node_modules` (darwin-arm64) is bleeding into the linux-arm64 container through the `:/repo` bind-mount, and esbuild loads the wrong-platform native binary. `docker-compose.yml` mounts an anonymous volume on `/repo/node_modules` specifically to mask this — if you see this error, that volume is missing. Don't delete the line `- /repo/node_modules` from the `pipeline-runner` volumes section. Same root cause applies to `sharp`, `canvas`, and `gdal-async` if you ever see those crash on platform-binary loading.
 
 ### Pipeline writes don't show up on `:8080`
 

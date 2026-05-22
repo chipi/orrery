@@ -145,6 +145,26 @@ npm run preview          # serve ./build at http://localhost:5273
 npm run docs:build       # VitePress docs site at docs/.vitepress/dist
 ```
 
+### Docker (local stack)
+
+A `docker-compose.yml` stack runs the production-shape artefact locally — stock `nginx:alpine` serving the built bundle, plus an on-demand pipeline-runner container with the full Node + gdal toolchain. See **[docs/guides/docker-stack.md](docs/guides/docker-stack.md)** for setup, troubleshooting, and the architecture (RFC-024).
+
+```bash
+npm run build            # produce ./build first (host-side, ~1-2 min)
+npm run docker:up        # web container at http://localhost:8080 (~1 s)
+npm run docker:down      # stop the stack
+```
+
+On-demand pipeline runs without needing system gdal on your host:
+
+```bash
+npm run docker:fetch-launches      # refresh launches manifest
+npm run docker:images:hotspots     # Mars/Moon orbital imagery
+npm run docker:validate-data       # ajv + provenance + diagrams
+```
+
+First pipeline invocation builds the runner image (~10-15 min on Apple Silicon — `gdal-async` source-compile against system gdal); subsequent invocations start in seconds. Web tier production deploy (VPS + Caddy + GHCR) is deferred to a future RFC.
+
 ### Deploy
 
 Push to `main` — `.github/workflows/preview.yml` builds the app + docs and publishes to GitHub Pages. A weekly cron rebuild keeps mission imagery fresh (Mondays 06:00 UTC).

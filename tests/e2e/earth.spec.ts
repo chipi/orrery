@@ -72,7 +72,7 @@ test.describe('/earth', () => {
     if (!box) return;
     const cx = box.x + box.width / 2;
     const cy = box.y + box.height / 2;
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     let opened = false;
     outer: for (let r = 60; r < Math.min(box.width, box.height) / 2 - 20; r += 12) {
       for (let theta = 0; theta < Math.PI * 2; theta += Math.PI / 12) {
@@ -146,7 +146,7 @@ test.describe('/earth', () => {
     const issX = box.x + box.width / 2 + (lx * cn + lz * sn);
     const issY = box.y + box.height / 2 - (-lx * sn + lz * cn);
     await page.mouse.click(issX, issY);
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     return panel;
   }

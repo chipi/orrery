@@ -152,7 +152,7 @@ test.describe('/explore — selection and panel', () => {
 
     // The SunPanel uses Panel.svelte → renders an <aside class="panel">
     // with a title that includes "The Sun" (from sun.json overlay).
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     await expect(panel).toContainText(/The Sun/i);
   });
@@ -175,7 +175,7 @@ test.describe('/explore — selection and panel', () => {
 
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
 
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     await expect(panel).toContainText(/Earth/);
 
@@ -213,7 +213,7 @@ test.describe('/explore — selection and panel', () => {
     if (!box) return;
     // Open the Sun panel.
     await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
-    await expect(page.getByRole('complementary')).toBeVisible();
+    await expect(page.locator('aside.panel')).toBeVisible();
     // Toggle button must still be visible AND clickable. On desktop the
     // .panel-shifted class moves it left by --panel-width; on mobile the
     // panel is a bottom sheet so the toggle stays put.
@@ -240,7 +240,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     expect(box).not.toBeNull();
     if (!box) return;
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
@@ -259,7 +259,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     expect(box).not.toBeNull();
     if (!box) return;
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     // LEARN folded into SCIENCE in the Phase-4 panel cleanup — the
     // tiered links now live inside the SCIENCE tab.
@@ -277,7 +277,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     expect(box).not.toBeNull();
     if (!box) return;
     await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toContainText(/The Sun/i);
     await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
     // LEARN tab folded into SCIENCE — assert the SCIENCE tab is

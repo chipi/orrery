@@ -1,0 +1,74 @@
+name: Regenerate visual snapshots
+
+# Manual-only workflow. When the team intentionally changes a UI
+# surface that's covered by `tests/e2e/visual.spec.ts`, the linux
+# baseline PNGs need to be regenerated to match the new layout.
+# Doing this locally requires Docker + the Playwright image; this
+# workflow runs the regen on a Linux CI runner — same environment
+# the actual e2e job runs in — and commits the refreshed PNGs back
+# to the triggered branch.
+#
+# Trigger:
+#   gh workflow run "Regenerate visual snapshots" --ref <branch>
+#
+# The bot pushes direct to the triggered branch using
+# LAUNCHES_BOT_TOKEN (same PAT as the launches refresher). For main
+# branch this works because the PAT has bypass-protection rights;
+# for feature branches it works because no protection rule fires.
+#
+# Output: a single commit on the triggered branch with the message
+# "chore(visual): regenerate snapshot baselines" carrying the new
+# PNGs. Inspect the commit + merge / continue iteration on the
+# branch.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Use the PAT for fetch so the subsequent push reuses the
+          # same credentials — see .github/workflows/refresh-launches.yml
+          # for the same pattern. Falls through to GITHUB_TOKEN when
+          # the secret isn't configured (push will then 403 on a
+          # protected branch — same trade-off as the launches bot).
+          token: ${{ secrets.LAUNCHES_BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          # Need the full history so we can push back; default depth=1
+          # works for forward-only pushes but breaks if a branch has
+          # diverged.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - run: npm run build
+
+      - name: Regenerate visual baselines
+        run: npx playwright test tests/e2e/visual.spec.ts --update-snapshots
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          git config user.name 'orrery-snapshot-bot'
+          git config user.email 'snapshot-bot@orrery.local'
+          if [[ -n "$(git status --porcelain tests/e2e/visual.spec.ts-snapshots/)" ]]; then
+            git add tests/e2e/visual.spec.ts-snapshots/
+            git commit -m "chore(visual): regenerate snapshot baselines"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No baseline changes — exiting clean."
+          fi

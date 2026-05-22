@@ -74,7 +74,7 @@ test.describe('/moon', () => {
     const px = cx + Math.sin(lonRad) * Math.cos(latRad) * discR;
     const py = cy - Math.sin(latRad) * discR;
     await flat.click({ position: { x: px, y: py } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     // The panel should expose the STILL ON THE SURFACE block — the
     // emotional centrepiece of UXS-006.
@@ -122,7 +122,7 @@ test.describe('/moon', () => {
     const px = cx + Math.sin(lonRad) * Math.cos(latRad) * discR;
     const py = cy - Math.sin(latRad) * discR;
     await flat.click({ position: { x: px, y: py } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
@@ -149,7 +149,7 @@ test.describe('/moon', () => {
     const px = cx + Math.sin(lonRad) * Math.cos(latRad) * discR;
     const py = cy - Math.sin(latRad) * discR;
     await flat.click({ position: { x: px, y: py } });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 5_000 });
     await page.getByRole('tab', { name: /^LEARN$/ }).click();
     await expect(panel.locator('.link-tier a').first()).toBeVisible({ timeout: 5_000 });

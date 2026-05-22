@@ -57,7 +57,7 @@ test.describe('/mars', () => {
   test('?site=curiosity deep-link opens panel pre-selected', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
     await page.waitForLoadState('networkidle');
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Curiosity/i);
   });
@@ -65,7 +65,7 @@ test.describe('/mars', () => {
   test('?site=mro opens an orbital site panel', async ({ page }) => {
     await page.goto('/mars?site=mro');
     await page.waitForLoadState('networkidle');
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel).toContainText(/Mars Reconnaissance Orbiter|MRO/i);
     await expect(panel).toContainText(/IN ORBIT/);
@@ -91,7 +91,7 @@ test.describe('/mars', () => {
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
       timeout: 15_000,
     });
-    const panel = page.getByRole('complementary');
+    const panel = page.locator('aside.panel');
     // Panel opens synchronously inside the sites-loaded .then() block,
     // so once the sites attribute flips, the panel is already mounted.
     // 5 s is plenty for the in-fly transition.

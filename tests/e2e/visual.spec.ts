@@ -33,12 +33,6 @@ const STABLE_ELEMENTS = [
     label: 'credits-head',
     selector: 'section.credits > header.head',
   },
-  // /library header — same shape as /credits.
-  {
-    path: '/library',
-    label: 'library-head',
-    selector: 'section.library > header.head',
-  },
   // /science Space-101 landing card grid — the page is a static
   // chapter list with hand-authored SVG covers, no manifest hydration.
   // Captures the tab-card row.
@@ -47,21 +41,29 @@ const STABLE_ELEMENTS = [
     label: 'science-tabs',
     selector: 'main, .science-page, nav.tabs, body',
   },
+  // PREVIOUSLY: a third baseline on `/library` (library-head) was
+  // dropped 2026-05-22. Library header is a high-churn surface
+  // (every launches-calendar / library-section feature grows it
+  // by a row); the snapshot was failing more often than it was
+  // catching real regressions. Net negative as a tripwire — see
+  // docs/guides/visual-regression-baselines.md §"What to snapshot"
+  // for the criteria.
 ];
 
 test.describe('visual regression baselines (S8 — element-scoped, stable surfaces only)', () => {
-  // Baselines committed for both darwin (maintainer's machine) and
-  // linux (CI runners). The linux PNGs are generated via the official
-  // Playwright Docker image (`mcr.microsoft.com/playwright:v1.60.0-noble`)
-  // so they match the GH Actions ubuntu-latest runner pixel-for-pixel.
+  // Baselines are committed for LINUX ONLY (CI runners). Maintainer
+  // local runs on macOS would produce `*-darwin.png` files; those are
+  // gitignored to prevent platform drift accumulating in the repo.
   //
-  // Full regeneration workflow + failure-mode reference:
-  //   docs/guides/visual-regression-baselines.md
+  // Regeneration workflow (one click, no Docker needed):
+  //   gh workflow run "Regenerate visual snapshots" --ref <branch>
   //
-  // TL;DR — regenerate BOTH sets in lockstep on layout changes:
-  //   • darwin: `npx playwright test tests/e2e/visual.spec.ts --update-snapshots`
-  //   • linux:  `npm run regen-visual-baselines-linux`
-  // Commit both *-darwin.png and *-linux.png in the same change.
+  // The workflow runs Playwright in CI's Linux environment, commits
+  // the refreshed PNGs back to the triggered branch via
+  // LAUNCHES_BOT_TOKEN. Manual `--update-snapshots` locally still
+  // works but the result lands as `*-darwin.png` which CI ignores.
+  //
+  // Full failure-mode reference: docs/guides/visual-regression-baselines.md
 
   for (const { path, label, selector } of STABLE_ELEMENTS) {
     test(`${label} — element screenshot baseline`, async ({ page }, testInfo) => {

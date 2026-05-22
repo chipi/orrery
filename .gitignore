@@ -19,6 +19,11 @@ Thumbs.db
 playwright-report/
 test-results/
 playwright/.cache/
+# Visual baselines are CI-platform (linux) only. Don't commit
+# maintainer-machine snapshots (darwin / win32) — they drift from
+# CI baselines and produce confusion (2026-05-22 lesson).
+tests/e2e/visual.spec.ts-snapshots/*-darwin.png
+tests/e2e/visual.spec.ts-snapshots/*-win32.png
 
 # Vitest coverage (@vitest/coverage-v8, S1)
 coverage/

@@ -76,6 +76,33 @@ services:
       - LL2_PATREON_KEY=${LL2_PATREON_KEY:-}
       - NODE_OPTIONS=--max-old-space-size=4096
 
+  # ─── Observability (RFC-025 / ADR-068) ─────────────────────────────
+  # Grafana Cloud Agent — tails web + pipeline-runner container logs
+  # and ships them to Grafana Cloud Loki. Profile-gated to
+  # `observability`; `docker compose up -d web` neither builds nor
+  # starts it. Silent default: if any GRAFANA_CLOUD_* env var is
+  # empty, the agent runs but the Loki client has no remote target
+  # and emits zero outbound traffic.
+  #
+  # Bring up with:
+  #   docker compose --profile observability up -d
+  grafana-agent:
+    image: grafana/agent:v0.43.4
+    container_name: orrery-grafana-agent
+    profiles: ['observability']
+    volumes:
+      - ./ops/observability/grafana-agent.yaml:/etc/grafana-agent.yaml:ro
+      # Read-only docker socket — agent uses docker_sd_configs to
+      # discover orrery-* containers and tail their stdout/stderr.
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
+      - GRAFANA_CLOUD_LOKI_USER=${GRAFANA_CLOUD_LOKI_USER:-}
+      - GRAFANA_CLOUD_API_KEY=${GRAFANA_CLOUD_API_KEY:-}
+      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-local-dev}
+    command: ['-config.file=/etc/grafana-agent.yaml']
+    restart: unless-stopped
+
 volumes:
   orrery-cache:
     name: orrery-cache

@@ -1,0 +1,66 @@
+# Grafana Cloud Agent config for the Orrery docker stack
+# (RFC-025 / ADR-068).
+#
+# Tails Docker container logs for the `orrery-web` and any
+# `orrery-pipeline-runner-*` containers, ships them to Grafana Cloud
+# Loki. Profile-gated by docker-compose; this file only loads when
+# `docker compose --profile observability up` is invoked.
+#
+# Silent default: if any of GRAFANA_CLOUD_LOKI_URL,
+# GRAFANA_CLOUD_LOKI_USER, or GRAFANA_CLOUD_API_KEY is empty, the Loki
+# client's remote_write target is empty and the agent never sends a
+# byte upstream. Confirm with:
+#   docker exec orrery-grafana-agent ss -tn
+# should report zero established outbound connections.
+
+server:
+  log_level: warn
+
+# Logs subsystem only — no metrics scraping today (Orrery has no
+# /metrics endpoint until the future VPS RFC adds nginx-prometheus-
+# exporter). The `metrics:` block would live alongside `logs:` once
+# we have something to scrape.
+logs:
+  configs:
+    - name: orrery
+      clients:
+        - url: ${GRAFANA_CLOUD_LOKI_URL}
+          # basic_auth.password reads the API key as a token. Grafana
+          # Cloud's Loki accepts `glc_*` tokens in either the password
+          # field or as a Bearer header; password field is the
+          # documented default.
+          basic_auth:
+            username: ${GRAFANA_CLOUD_LOKI_USER}
+            password: ${GRAFANA_CLOUD_API_KEY}
+          # Labels attached to every log stream. `env` lets us slice
+          # local-dev vs the future VPS without two separate stacks.
+          external_labels:
+            env: ${GRAFANA_AGENT_ENV}
+            app: orrery
+      positions:
+        filename: /tmp/positions.yaml
+      scrape_configs:
+        - job_name: orrery-docker
+          # docker_sd_configs uses the Docker socket to discover
+          # containers; new pipeline-runner invocations get picked up
+          # within `refresh_interval`. Read-only mount on the agent
+          # side (see docker-compose.yml).
+          docker_sd_configs:
+            - host: unix:///var/run/docker.sock
+              refresh_interval: 30s
+          relabel_configs:
+            # Restrict to Orrery containers. Without this we'd ship
+            # logs from every container on the host — fine on the
+            # future VPS (single-purpose), wrong on a laptop running
+            # other docker-compose projects.
+            - source_labels: ['__meta_docker_container_name']
+              regex: '/(orrery-web|orrery-pipeline-runner-.*)'
+              action: keep
+            # Pretty container label for queries — strip the leading
+            # slash docker prepends.
+            - source_labels: ['__meta_docker_container_name']
+              target_label: container
+              regex: '/(.*)'
+              replacement: '$1'
+            - source_labels: ['__meta_docker_container_log_stream']
+              target_label: stream

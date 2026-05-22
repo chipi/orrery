@@ -1,0 +1,116 @@
+{
+  "uid": "orrery-pipelines",
+  "title": "Orrery — Pipelines",
+  "tags": ["orrery", "pipelines", "loki"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "refresh": "1m",
+  "time": { "from": "now-24h", "to": "now" },
+  "templating": {
+    "list": [
+      {
+        "name": "env",
+        "label": "Environment",
+        "type": "custom",
+        "query": "local-dev,staging,production-vps",
+        "current": { "selected": false, "text": "production-vps", "value": "production-vps" },
+        "options": [
+          { "selected": false, "text": "local-dev", "value": "local-dev" },
+          { "selected": false, "text": "staging", "value": "staging" },
+          { "selected": true, "text": "production-vps", "value": "production-vps" }
+        ]
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Pipeline invocations (24h)",
+      "gridPos": { "x": 0, "y": 0, "w": 6, "h": 6 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-logs" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "count(count by (container) (count_over_time({app=\"orrery\", env=\"$env\", container=~\"orrery-pipeline-runner-.*\"}[24h])))",
+          "queryType": "instant"
+        }
+      ],
+      "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"] }, "colorMode": "value" }
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Error / failure lines (24h) — investigate if > 0",
+      "gridPos": { "x": 6, "y": 0, "w": 6, "h": 6 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-logs" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(count_over_time({app=\"orrery\", env=\"$env\", container=~\"orrery-pipeline-runner-.*\"} |~ \"(?i)error|panic|traceback|failed\"[24h]))",
+          "queryType": "instant"
+        }
+      ],
+      "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"] } },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "orange", "value": 1 },
+              { "color": "red", "value": 10 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Pipeline log volume / min (per container)",
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-logs" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (container) (count_over_time({app=\"orrery\", env=\"$env\", container=~\"orrery-pipeline-runner-.*\"}[1m]))",
+          "legendFormat": "{{container}}",
+          "queryType": "range"
+        }
+      ],
+      "fieldConfig": { "defaults": { "unit": "lines", "custom": { "drawStyle": "line", "lineWidth": 2 } } }
+    },
+    {
+      "id": 4,
+      "type": "logs",
+      "title": "Recent pipeline logs (last 24h, all pipelines)",
+      "gridPos": { "x": 0, "y": 6, "w": 24, "h": 9 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-logs" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "{app=\"orrery\", env=\"$env\", container=~\"orrery-pipeline-runner-.*\"}",
+          "queryType": "range"
+        }
+      ],
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" }
+    },
+    {
+      "id": 5,
+      "type": "logs",
+      "title": "Error / failure lines (last 24h)",
+      "gridPos": { "x": 0, "y": 15, "w": 24, "h": 9 },
+      "datasource": { "type": "loki", "uid": "grafanacloud-logs" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "{app=\"orrery\", env=\"$env\", container=~\"orrery-pipeline-runner-.*\"} |~ \"(?i)error|panic|traceback|failed\"",
+          "queryType": "range"
+        }
+      ],
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" }
+    }
+  ],
+  "annotations": { "list": [] }
+}

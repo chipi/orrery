@@ -29331,6 +29331,27 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-05-22T07:23:18.781Z"
+    },
+    {
+      "id": "4e18140b2402b7d4",
+      "path": "/images/hotspots/moon/apollo11/tier2-lroc.jpg",
+      "source_type": "direct-agency",
+      "title": "LROC NAC APOLLO11HIA — patch centred at 0.670°N 23.470°E",
+      "author": "NASA / GSFC / Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO11HIA/NAC_ROI_APOLLO11HIA_E010N0234_5M.IMG",
+      "image_url": "https://pds.lroc.im-ldi.com/data/LRO-L-LROC-5-RDR-V1.0/LROLRC_2001/DATA/BDR/NAC_ROI/APOLLO11HIA/NAC_ROI_APOLLO11HIA_E010N0234_5M.IMG",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "LROC NAC imagery is produced by NASA/GSFC/Arizona State University; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution.",
+      "modifications": [
+        "cropped-2048x2048-around-site-coords",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "APOLLO11HIA",
+      "fetched_at": "2026-05-22T18:06:31.305Z"
     }
   ]
 }

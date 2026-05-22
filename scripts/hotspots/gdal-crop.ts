@@ -319,6 +319,66 @@ function blackRatio(buf: Uint8Array | Buffer): number {
 function stretchToUint8(data: ArrayLike<number> & { BYTES_PER_ELEMENT?: number }): Uint8Array {
   if (data instanceof Uint8Array) return data;
   const n = data.length;
+  // LROC NAC BDR ROIs deliver Float32 reflectance in [0..1] (typical
+  // mare regolith ≈ 0.045, brightest highlands ≈ 0.25). Truncating
+  // these to int (line below `const v = data[i] | 0`) would zero
+  // every pixel; treat Float32 with a separate percentile stretch
+  // that operates in the float domain.
+  if (data instanceof Float32Array || data instanceof Float64Array) {
+    const out = new Uint8Array(n);
+    let lo = Infinity;
+    let hi = -Infinity;
+    let nonZero = 0;
+    for (let i = 0; i < n; i++) {
+      const v = data[i];
+      if (!Number.isFinite(v) || v <= 0) continue;
+      if (v < lo) lo = v;
+      if (v > hi) hi = v;
+      nonZero++;
+    }
+    if (nonZero === 0) return out; // all zero/nan → all zero
+    // Robust percentile from a coarse histogram in [lo..hi].
+    const buckets = 1024;
+    const hist = new Uint32Array(buckets);
+    const span = hi - lo || 1e-9;
+    for (let i = 0; i < n; i++) {
+      const v = data[i];
+      if (!Number.isFinite(v) || v <= 0) continue;
+      const b = Math.min(buckets - 1, Math.max(0, Math.floor(((v - lo) / span) * buckets)));
+      hist[b]++;
+    }
+    const lowCount = Math.floor(nonZero * 0.02);
+    const highCount = Math.floor(nonZero * 0.98);
+    let pLo = lo;
+    let pHi = hi;
+    let acc = 0;
+    for (let b = 0; b < buckets; b++) {
+      acc += hist[b];
+      if (acc >= lowCount) {
+        pLo = lo + (b / buckets) * span;
+        break;
+      }
+    }
+    acc = 0;
+    for (let b = 0; b < buckets; b++) {
+      acc += hist[b];
+      if (acc >= highCount) {
+        pHi = lo + ((b + 1) / buckets) * span;
+        break;
+      }
+    }
+    const range = Math.max(1e-9, pHi - pLo);
+    for (let i = 0; i < n; i++) {
+      const v = data[i];
+      if (!Number.isFinite(v) || v <= 0) {
+        out[i] = 0;
+        continue;
+      }
+      const norm = (v - pLo) / range;
+      out[i] = norm <= 0 ? 0 : norm >= 1 ? 255 : Math.round(norm * 255);
+    }
+    return out;
+  }
   // Sample non-zero values to find percentile bounds. For a 2048×2048
   // crop that's ~4 M samples — sort would be slow, so use a
   // histogram. 16-bit values fit a 65536-bucket histogram.

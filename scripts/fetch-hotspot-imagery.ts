@@ -5,9 +5,11 @@ import path from 'node:path';
 import { fetchMarsHotspots } from './hotspots/fetch-mars.ts';
 import { fetchMarsCtxHotspots } from './hotspots/fetch-mars-ctx.ts';
 import { fetchMarsPanoramas } from './hotspots/fetch-mars-panoramas.ts';
+import { fetchMoonHotspots } from './hotspots/fetch-moon.ts';
 import {
   buildHiriseProvenanceEntry,
   buildCtxMosaicProvenanceEntry,
+  buildLrocProvenanceEntry,
   upsertProvenanceEntries,
 } from './hotspots/provenance.ts';
 
@@ -61,8 +63,16 @@ interface MarsSite {
   lon?: number;
 }
 
+interface MoonSite {
+  id: string;
+  kind?: string;
+  lat?: number;
+  lon?: number;
+}
+
 const SIDECAR_PATH = path.join('static', 'data', 'surface-hotspots.json');
 const MARS_SITES_PATH = path.join('static', 'data', 'mars-sites.json');
+const MOON_SITES_PATH = path.join('static', 'data', 'moon-sites.json');
 
 interface CliArgs {
   list: boolean;
@@ -70,7 +80,8 @@ interface CliArgs {
   dryRun: boolean;
   skipScore: boolean;
   missingOnly: boolean;
-  layer: 'hirise' | 'ctx' | 'tier3' | 'all';
+  layer: 'hirise' | 'ctx' | 'tier3' | 'lroc' | 'all';
+  dest: 'mars' | 'moon' | 'all';
 }
 
 function parseArgs(): CliArgs {
@@ -81,6 +92,7 @@ function parseArgs(): CliArgs {
     skipScore: false,
     missingOnly: false,
     layer: 'all',
+    dest: 'all',
   };
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--list') out.list = true;
@@ -91,10 +103,16 @@ function parseArgs(): CliArgs {
       out.site = args[++i];
     } else if (args[i] === '--layer' && i + 1 < args.length) {
       const v = args[++i];
-      if (v !== 'hirise' && v !== 'ctx' && v !== 'tier3' && v !== 'all') {
-        throw new Error(`--layer must be hirise|ctx|tier3|all (got ${v})`);
+      if (v !== 'hirise' && v !== 'ctx' && v !== 'tier3' && v !== 'lroc' && v !== 'all') {
+        throw new Error(`--layer must be hirise|ctx|tier3|lroc|all (got ${v})`);
       }
       out.layer = v;
+    } else if (args[i] === '--dest' && i + 1 < args.length) {
+      const v = args[++i];
+      if (v !== 'mars' && v !== 'moon' && v !== 'all') {
+        throw new Error(`--dest must be mars|moon|all (got ${v})`);
+      }
+      out.dest = v;
     }
   }
   return out;
@@ -142,8 +160,11 @@ async function main(): Promise<void> {
     if (args.list) return;
   }
 
+  const wantMars = args.dest === 'all' || args.dest === 'mars';
+  const wantMoon = args.dest === 'all' || args.dest === 'moon';
+
   // Mars Tier B (HiRISE detail layer) — auto-fetch via catalog query.
-  if (marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'hirise')) {
+  if (wantMars && marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'hirise')) {
     console.log(`\n=== Mars Tier B (HiRISE detail) ===`);
     const marsResult = await fetchMarsHotspots({
       onlySite: args.site,
@@ -186,7 +207,7 @@ async function main(): Promise<void> {
   }
 
   // Mars Tier 2a (CTX regional layer) — Murray Lab global mosaic tiles.
-  if (marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'ctx')) {
+  if (wantMars && marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'ctx')) {
     console.log(`\n=== Mars Tier 2a (CTX regional) ===`);
     const ctxResult = await fetchMarsCtxHotspots({
       onlySite: args.site,
@@ -226,9 +247,8 @@ async function main(): Promise<void> {
     }
   }
 
-  // Moon — not yet in scope this slice.
   // Mars Tier 3 — ground-view panoramas (#PD-mars / #249).
-  if (marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'tier3')) {
+  if (wantMars && marsHotspots.length > 0 && (args.layer === 'all' || args.layer === 'tier3')) {
     await fetchMarsPanoramas({
       site: args.site,
       dryRun: args.dryRun,
@@ -236,18 +256,44 @@ async function main(): Promise<void> {
     });
   }
 
-  if (moonHotspots.length > 0) {
-    console.log(`\n=== Moon (LROC) ===`);
-    console.log(`  Tier B for Moon is not yet implemented (decision pending — see`);
-    console.log(`  scripts/hotspots/lroc-products.ts for curated-map approach).`);
-    for (const [id, e] of moonHotspots) {
-      const sourcePath = `static${e.hotspot_tier2_source}`;
-      const present = existsSync(sourcePath);
-      if (!present) {
-        console.log(`  · ${id} — no NAC patch on disk yet`);
-      } else {
-        console.log(`  ✓ ${id} — patch already present`);
-      }
+  // Moon Tier 2 (LROC NAC detail layer) — curated product map.
+  if (wantMoon && moonHotspots.length > 0 && (args.layer === 'all' || args.layer === 'lroc')) {
+    console.log(`\n=== Moon Tier 2 (LROC NAC detail) ===`);
+    const moonResult = await fetchMoonHotspots({
+      onlySite: args.site,
+      dryRun: args.dryRun,
+      missingOnly: args.missingOnly,
+    });
+    for (const f of moonResult.fetched) {
+      console.log(
+        `  ✓ ${f.siteId} ← ${f.productId} (${f.cropMeta.resolutionMPerPx.toFixed(2)} m/px, ${(f.cropMeta.bytes / 1024).toFixed(0)} KB)`,
+      );
+    }
+    for (const s of moonResult.skipped) {
+      console.log(`  · ${s.siteId} skipped — ${s.reason}`);
+    }
+    for (const fl of moonResult.failed) {
+      console.log(`  ✗ ${fl.siteId} FAILED — ${fl.error}`);
+    }
+    if (!args.dryRun && moonResult.fetched.length > 0) {
+      const moonSites = JSON.parse(await fs.readFile(MOON_SITES_PATH, 'utf-8')) as MoonSite[];
+      const siteById = new Map(moonSites.map((s) => [s.id, s]));
+      const provenanceEntries = moonResult.fetched
+        .map((f) => {
+          const site = siteById.get(f.siteId);
+          if (!site || site.lat == null || site.lon == null) return null;
+          return buildLrocProvenanceEntry({
+            outputPath: f.outputPath,
+            sourceUrl: f.sourceUrl,
+            productId: f.productId,
+            siteId: f.siteId,
+            centerLat: site.lat,
+            centerLon: site.lon,
+          });
+        })
+        .filter((e) => e !== null);
+      await upsertProvenanceEntries(provenanceEntries);
+      console.log(`  Provenance: ${provenanceEntries.length} LROC entries upserted`);
     }
   }
 

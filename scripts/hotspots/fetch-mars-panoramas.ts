@@ -146,6 +146,14 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     srcElevationTopDeg: 25,
     srcElevationBottomDeg: 50,
     caption: 'Phoenix lander deck + landing site, full-circle panorama (May 2008)',
+    // Phoenix sat at 68°N during arctic summer — the sky carried a
+    // distinctive pale-blue-toward-zenith tint visible in its SSI
+    // panoramas, unlike the warm-tan default of lower-latitude
+    // landers. The horizon stays warm-tan; the zenith blends cooler.
+    palette: {
+      skyHorizon: [195, 165, 140],
+      skyZenith: [110, 110, 135],
+    },
   },
   {
     siteId: 'insight',
@@ -200,6 +208,18 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     srcElevationTopDeg: 5,
     srcElevationBottomDeg: 60,
     caption: 'Viking 1 lander, Chryse Planitia — "Morning on Chryse" Camera 1 mosaic (PIA03163)',
+    // Viking 1's "pink sky" was the famous early-mission colour-
+    // calibration story: the dusty Martian sky at Chryse appears
+    // pinker / dustier than other landing sites in the Viking-era
+    // colour-corrected mosaics. Bump the horizon toward salmon and
+    // lift the regolith into the rusty range to match the
+    // characteristic Viking-1 colour palette.
+    palette: {
+      skyHorizon: [210, 165, 145],
+      skyZenith: [165, 105, 85],
+      regolith: [140, 80, 55],
+      azimuthGap: [120, 75, 55],
+    },
   },
   {
     siteId: 'zhurong',

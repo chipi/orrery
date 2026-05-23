@@ -519,6 +519,7 @@ Reading order for any non-trivial task:
 5. `docs/uxs/` — UX specifications.
 6. `docs/guides/i18n-style-guide.md` — per-language translation conventions (binding per ADR-033).
 7. `docs/guides/docker-stack.md` — local `docker compose` stack (web nginx + on-demand pipeline runners, RFC-024 / ADR-063-066). For exercising the production-shape artefact locally, running data pipelines without host gdal, or understanding the docker-e2e CI gate.
+8. `docs/guides/observability.md` — Sentry (client-side JS errors) + Grafana Cloud Agent (docker logs), both env-var-gated and silent by default, RFC-025 / ADR-067-068. For setting up the operator accounts, populating env vars, verifying silence in local dev, and importing the dashboards.
 
 When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
 

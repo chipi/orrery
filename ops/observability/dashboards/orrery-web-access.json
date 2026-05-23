@@ -37,7 +37,9 @@
           "queryType": "range"
         }
       ],
-      "fieldConfig": { "defaults": { "unit": "lines", "custom": { "drawStyle": "line", "lineWidth": 2 } } }
+      "fieldConfig": {
+        "defaults": { "unit": "lines", "custom": { "drawStyle": "line", "lineWidth": 2 } }
+      }
     },
     {
       "id": 2,
@@ -52,7 +54,10 @@
           "queryType": "instant"
         }
       ],
-      "options": { "reduceOptions": { "values": false, "calcs": ["lastNotNull"] }, "colorMode": "value" }
+      "options": {
+        "reduceOptions": { "values": false, "calcs": ["lastNotNull"] },
+        "colorMode": "value"
+      }
     },
     {
       "id": 3,

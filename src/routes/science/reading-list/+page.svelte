@@ -11,6 +11,8 @@
   Issue #128. Curator: the maintainer; PRs welcome.
 -->
 <script lang="ts">
+  import { base } from '$app/paths';
+
   type Book = {
     title: string;
     author: string;
@@ -18,13 +20,42 @@
     blurb: string;
     audience: 'beginner' | 'intermediate' | 'advanced';
     link?: string;
+    /** Optional cover image path under static/images/recommendations/books/<slug>.jpg
+     *  When missing, a deterministic colour-block placeholder renders instead. */
+    cover?: string;
   };
   type Resource = {
     title: string;
     publisher: string;
     blurb: string;
     href: string;
+    /** Optional logo/cover path under static/images/recommendations/blogs/<slug>.jpg */
+    cover?: string;
   };
+
+  // Tiny deterministic title→hue mapping so placeholders are colourful
+  // but stable (the same book always gets the same gradient on every
+  // render + every machine). Orrery palette: gold, teal, indigo, mars
+  // red, neptune blue, mercury bronze.
+  const PALETTE: Array<[string, string]> = [
+    ['#4466ff', '#7f55ff'], // indigo → purple
+    ['#4ecdc4', '#2196a0'], // teal
+    ['#ffc850', '#ff8a3d'], // gold → orange
+    ['#c1440e', '#fa7268'], // mars red → coral
+    ['#7f55ff', '#ff4e8b'], // purple → magenta
+    ['#2196a0', '#4466ff'], // sea → indigo
+    ['#a0844c', '#6f5530'], // bronze
+    ['#3d8b8b', '#0e6b7a'], // deep teal
+  ];
+  function gradientFor(title: string): string {
+    let h = 0;
+    for (let i = 0; i < title.length; i++) h = (h * 31 + title.charCodeAt(i)) | 0;
+    const [a, b] = PALETTE[Math.abs(h) % PALETTE.length];
+    return `linear-gradient(135deg, ${a} 0%, ${b} 100%)`;
+  }
+  function initialFor(title: string): string {
+    return (title.match(/[A-Za-z0-9]/)?.[0] ?? '·').toUpperCase();
+  }
 
   const books: Book[] = [
     {
@@ -156,11 +187,6 @@
       for the reader's time — the entries here are short, focused, and from authors who explain
       rather than perform.
     </p>
-    <p class="caveat">
-      <strong>Draft seed (v0.6.3).</strong> If you have a recommendation that fits this list, open an
-      issue or PR. The curation bar: accessible to a curious non-specialist, written by someone who worked
-      on the subject, and worth a re-read.
-    </p>
   </header>
 
   <section class="block">
@@ -168,18 +194,35 @@
     <ul class="entries">
       {#each books as book (book.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>
-              {#if book.link}<a href={book.link} target="_blank" rel="noopener noreferrer external"
-                  >{book.title}</a
-                >{:else}{book.title}{/if}
-            </h3>
-            <span class="meta">
-              {book.author} · {book.year} ·
-              <span class="audience audience-{book.audience}">{book.audience}</span>
-            </span>
+          {#if book.cover}
+            <div class="thumb thumb--portrait" aria-hidden="true">
+              <img src="{base}{book.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--portrait thumb--placeholder"
+              style:background={gradientFor(book.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(book.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                {#if book.link}<a
+                    href={book.link}
+                    target="_blank"
+                    rel="noopener noreferrer external">{book.title}</a
+                  >{:else}{book.title}{/if}
+              </h3>
+              <span class="meta">
+                {book.author} · {book.year} ·
+                <span class="audience audience-{book.audience}">{book.audience}</span>
+              </span>
+            </div>
+            <p class="blurb">{book.blurb}</p>
           </div>
-          <p class="blurb">{book.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -190,14 +233,30 @@
     <ul class="entries">
       {#each blogs as blog (blog.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>
-              <a href={blog.href} target="_blank" rel="noopener noreferrer external">{blog.title}</a
-              >
-            </h3>
-            <span class="meta">{blog.publisher}</span>
+          {#if blog.cover}
+            <div class="thumb thumb--square" aria-hidden="true">
+              <img src="{base}{blog.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--square thumb--placeholder"
+              style:background={gradientFor(blog.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(blog.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                <a href={blog.href} target="_blank" rel="noopener noreferrer external"
+                  >{blog.title}</a
+                >
+              </h3>
+              <span class="meta">{blog.publisher}</span>
+            </div>
+            <p class="blurb">{blog.blurb}</p>
           </div>
-          <p class="blurb">{blog.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -226,15 +285,6 @@
     margin: 0 0 16px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .head .caveat {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.6);
-    border-left: 2px solid rgba(255, 200, 80, 0.5);
-    padding: 8px 12px;
-    background: rgba(255, 200, 80, 0.05);
-  }
   .block {
     margin-top: 40px;
   }
@@ -253,7 +303,58 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+  }
+  .entry {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .entry-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .thumb {
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .thumb--portrait {
+    width: 80px;
+    aspect-ratio: 2 / 3;
+  }
+  .thumb--square {
+    width: 80px;
+    aspect-ratio: 1 / 1;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb-initial {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+  }
+  .thumb--placeholder::after {
+    /* subtle inner highlight to give the gradient depth */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.18), transparent 60%);
+    pointer-events: none;
   }
   .entry-head {
     display: flex;
@@ -318,6 +419,16 @@
     }
     .head .lede {
       font-size: 17px;
+    }
+    .entry {
+      gap: 12px;
+    }
+    .thumb--portrait,
+    .thumb--square {
+      width: 60px;
+    }
+    .thumb-initial {
+      font-size: 28px;
     }
   }
 </style>

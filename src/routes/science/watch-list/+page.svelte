@@ -8,13 +8,40 @@
   Issue #129. Curator: the maintainer; PRs welcome.
 -->
 <script lang="ts">
+  import { base } from '$app/paths';
+
   type Entry = {
     title: string;
     creator: string;
     year?: number;
     blurb: string;
     href?: string;
+    /** Optional cover/poster/avatar under static/images/recommendations/<films|docs|podcasts|channels>/<slug>.jpg
+     *  When missing, a deterministic colour-block placeholder renders instead. */
+    cover?: string;
   };
+
+  // Tiny deterministic title→gradient mapping so placeholders look
+  // intentional + varied. Same palette as /science/reading-list.
+  const PALETTE: Array<[string, string]> = [
+    ['#4466ff', '#7f55ff'],
+    ['#4ecdc4', '#2196a0'],
+    ['#ffc850', '#ff8a3d'],
+    ['#c1440e', '#fa7268'],
+    ['#7f55ff', '#ff4e8b'],
+    ['#2196a0', '#4466ff'],
+    ['#a0844c', '#6f5530'],
+    ['#3d8b8b', '#0e6b7a'],
+  ];
+  function gradientFor(title: string): string {
+    let h = 0;
+    for (let i = 0; i < title.length; i++) h = (h * 31 + title.charCodeAt(i)) | 0;
+    const [a, b] = PALETTE[Math.abs(h) % PALETTE.length];
+    return `linear-gradient(135deg, ${a} 0%, ${b} 100%)`;
+  }
+  function initialFor(title: string): string {
+    return (title.match(/[A-Za-z0-9]/)?.[0] ?? '·').toUpperCase();
+  }
 
   const films: Entry[] = [
     {
@@ -175,10 +202,6 @@
       didn't have to read. Curated for what's actually accurate (or beautifully wrong on purpose),
       not for what's popular.
     </p>
-    <p class="caveat">
-      <strong>Draft seed (v0.6.3).</strong> If you have a recommendation that fits this list, open an
-      issue or PR. The bar: respects the science, made by people who care, holds up on a re-watch.
-    </p>
   </header>
 
   <section class="block">
@@ -186,11 +209,26 @@
     <ul class="entries">
       {#each films as f (f.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>{f.title}</h3>
-            <span class="meta">{f.creator}{f.year ? ` · ${f.year}` : ''}</span>
+          {#if f.cover}
+            <div class="thumb thumb--portrait" aria-hidden="true">
+              <img src="{base}{f.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--portrait thumb--placeholder"
+              style:background={gradientFor(f.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(f.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>{f.title}</h3>
+              <span class="meta">{f.creator}{f.year ? ` · ${f.year}` : ''}</span>
+            </div>
+            <p class="blurb">{f.blurb}</p>
           </div>
-          <p class="blurb">{f.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -201,15 +239,30 @@
     <ul class="entries">
       {#each docs as d (d.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>
-              {#if d.href}<a href={d.href} target="_blank" rel="noopener noreferrer external"
-                  >{d.title}</a
-                >{:else}{d.title}{/if}
-            </h3>
-            <span class="meta">{d.creator}{d.year ? ` · ${d.year}` : ''}</span>
+          {#if d.cover}
+            <div class="thumb thumb--portrait" aria-hidden="true">
+              <img src="{base}{d.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--portrait thumb--placeholder"
+              style:background={gradientFor(d.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(d.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                {#if d.href}<a href={d.href} target="_blank" rel="noopener noreferrer external"
+                    >{d.title}</a
+                  >{:else}{d.title}{/if}
+              </h3>
+              <span class="meta">{d.creator}{d.year ? ` · ${d.year}` : ''}</span>
+            </div>
+            <p class="blurb">{d.blurb}</p>
           </div>
-          <p class="blurb">{d.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -220,13 +273,28 @@
     <ul class="entries">
       {#each podcasts as p (p.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>
-              <a href={p.href} target="_blank" rel="noopener noreferrer external">{p.title}</a>
-            </h3>
-            <span class="meta">{p.creator}</span>
+          {#if p.cover}
+            <div class="thumb thumb--square" aria-hidden="true">
+              <img src="{base}{p.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--square thumb--placeholder"
+              style:background={gradientFor(p.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(p.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                <a href={p.href} target="_blank" rel="noopener noreferrer external">{p.title}</a>
+              </h3>
+              <span class="meta">{p.creator}</span>
+            </div>
+            <p class="blurb">{p.blurb}</p>
           </div>
-          <p class="blurb">{p.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -237,13 +305,28 @@
     <ul class="entries">
       {#each channels as c (c.title)}
         <li class="entry">
-          <div class="entry-head">
-            <h3>
-              <a href={c.href} target="_blank" rel="noopener noreferrer external">{c.title}</a>
-            </h3>
-            <span class="meta">{c.creator}</span>
+          {#if c.cover}
+            <div class="thumb thumb--square" aria-hidden="true">
+              <img src="{base}{c.cover}" alt="" loading="lazy" />
+            </div>
+          {:else}
+            <div
+              class="thumb thumb--square thumb--placeholder"
+              style:background={gradientFor(c.title)}
+              aria-hidden="true"
+            >
+              <span class="thumb-initial">{initialFor(c.title)}</span>
+            </div>
+          {/if}
+          <div class="entry-content">
+            <div class="entry-head">
+              <h3>
+                <a href={c.href} target="_blank" rel="noopener noreferrer external">{c.title}</a>
+              </h3>
+              <span class="meta">{c.creator}</span>
+            </div>
+            <p class="blurb">{c.blurb}</p>
           </div>
-          <p class="blurb">{c.blurb}</p>
         </li>
       {/each}
     </ul>
@@ -275,15 +358,6 @@
     margin: 0 0 16px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .head .caveat {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.6);
-    border-left: 2px solid rgba(255, 200, 80, 0.5);
-    padding: 8px 12px;
-    background: rgba(255, 200, 80, 0.05);
-  }
   .block {
     margin-top: 40px;
   }
@@ -302,7 +376,57 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+  }
+  .entry {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .entry-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .thumb {
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .thumb--portrait {
+    width: 80px;
+    aspect-ratio: 2 / 3;
+  }
+  .thumb--square {
+    width: 80px;
+    aspect-ratio: 1 / 1;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .thumb-initial {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+  }
+  .thumb--placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 80% at 30% 20%, rgba(255, 255, 255, 0.18), transparent 60%);
+    pointer-events: none;
   }
   .entry-head {
     display: flex;
@@ -349,6 +473,16 @@
     }
     .head .lede {
       font-size: 17px;
+    }
+    .entry {
+      gap: 12px;
+    }
+    .thumb--portrait,
+    .thumb--square {
+      width: 60px;
+    }
+    .thumb-initial {
+      font-size: 28px;
     }
   }
 </style>

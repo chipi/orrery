@@ -58,6 +58,40 @@ interface MoonPanoramaConfig {
 
 const PANORAMAS: MoonPanoramaConfig[] = [
   {
+    siteId: 'apollo14',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/c/cc/' +
+      'Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg',
+    sourceLabel: "Apollo 14 LM 12 O'clock Pan Hi-Res",
+    attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal',
+    license: 'PD-NASA',
+    // LM 12 O'clock pan ≈ 180° in front of the LM. Multi-frame stitched composite.
+    srcAzimuthDeg: 180,
+    srcElevationTopDeg: 14,
+    srcElevationBottomDeg: 14,
+    caption:
+      "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). " +
+      'Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. ' +
+      'Apollo 14, Feb 5–6 1971. NASA / Shepard / Mitchell via ALSJ.',
+  },
+  {
+    siteId: 'change4',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/1/1b/' +
+      'The_first_panorama_from_the_far_side_of_the_moon.jpg',
+    sourceLabel: "Chang'e 4 first farside panorama (CNSA, Feb 2019)",
+    attribution: 'CNSA / Chinese Academy of Sciences · CC-BY-4.0',
+    license: 'CC-BY-4.0',
+    // 10000×1229 (8.1:1) — assembled from 80 frames by CNSA. ~360° wraparound, modest vertical.
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 11,
+    srcElevationBottomDeg: 11,
+    caption:
+      "Chang'e 4 lander 360° panorama from Von Kármán crater, South Pole-Aitken basin — the first " +
+      'surface panorama from the lunar far side (Feb 2019). Yutu-2 rover visible at left with its ' +
+      'tracks. CNSA released image, assembled from 80 Lander Topographic Camera frames.',
+  },
+  {
     siteId: 'apollo11',
     sourceUrl:
       'https://upload.wikimedia.org/wikipedia/commons/8/8a/' +

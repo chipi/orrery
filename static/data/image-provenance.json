@@ -29708,7 +29708,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "JSC2007-E-045375",
-      "fetched_at": "2026-05-23T02:43:38.143Z"
+      "fetched_at": "2026-05-23T02:49:32.363Z"
     },
     {
       "id": "6b534d68d29eed8d",
@@ -29729,7 +29729,49 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Jack's Color ALSEP Pan (USGS)",
-      "fetched_at": "2026-05-23T02:43:38.144Z"
+      "fetched_at": "2026-05-23T02:49:32.363Z"
+    },
+    {
+      "id": "3fc54a1d390c99da",
+      "path": "/images/hotspots/moon/apollo14/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. Apollo 14, Feb 5–6 1971. NASA / Shepard / Mitchell via ALSJ.",
+      "author": "NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Apollo_14_-_LM_12_O%27clock_Pan_Hi-Res.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Apollo 14 LM 12 O'clock Pan Hi-Res",
+      "fetched_at": "2026-05-23T02:49:32.362Z"
+    },
+    {
+      "id": "a57e8ad227a8f74b",
+      "path": "/images/hotspots/moon/change4/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Chang'e 4 lander 360° panorama from Von Kármán crater, South Pole-Aitken basin — the first surface panorama from the lunar far side (Feb 2019). Yutu-2 rover visible at left with its tracks. CNSA released image, assembled from 80 Lander Topographic Camera frames.",
+      "author": "CNSA / Chinese Academy of Sciences · CC-BY-4.0",
+      "agency": "CNSA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_first_panorama_from_the_far_side_of_the_moon.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/The_first_panorama_from_the_far_side_of_the_moon.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Creative Commons Attribution 4.0 International. Source: academic publication / Wikimedia Commons. Permitted with attribution to the original authors.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-05-23T02:49:32.363Z"
     }
   ]
 }

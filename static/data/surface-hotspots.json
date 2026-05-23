@@ -1,7 +1,7 @@
 {
   "version": 1,
   "generated_at": "2026-05-17T00:00:00Z",
-  "schema_doc": "PRD-014 / RFC-017 — surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
+  "schema_doc": "PRD-014 / RFC-017 \u2014 surface-hotspot tier metadata sidecar. Joins to moon-sites.json + mars-sites.json by site id. Sites without an entry render Tier 0 only (silhouette via existing moon-lander-models.ts / mars-lander-models.ts dispatcher). Sites with hotspot_tier_max >= 1 get progressive LOD via the hotspot dispatcher. tier2_source paths are provenance-style; the frontend joins them to image-vision.json (Image Pipeline v2 #148 manifest) to find the 1:1 pre-cropped variant URL. Showcase flag = polished editorial treatment (4-6 annotations in S5).",
   "entries": {
     "apollo11": {
       "hotspot_tier_max": 3,
@@ -51,11 +51,12 @@
       "hotspot_annotations": []
     },
     "apollo14": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo14/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo14/tier3-pan.jpg"
     },
     "apollo15": {
       "hotspot_tier_max": 2,
@@ -218,11 +219,12 @@
       "hotspot_annotations": []
     },
     "change4": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg"
     },
     "change5": {
       "hotspot_tier_max": 2,

@@ -2,8 +2,10 @@
   "id": "node-module",
   "tab": "space-stations",
   "order": 2,
-  "diagram": "node-module.svg",
-  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/node-module-harmony.jpg",
+    "credit": "NASA \u00b7 Harmony (Node 2) photographed during STS-134 (May 2011). The connecting hub between the US lab Destiny, the European Columbus, and the Japanese Kibo modules \u2014 and the canonical example of an ISS node module's job: route crew, power, data, thermal, and life-support across the segment boundary."
+  },
   "see_in_app": [
     {
       "route": "/iss",
@@ -16,14 +18,16 @@
   ],
   "links": [
     {
-      "l": "Wikipedia · Unity (ISS module)",
+      "l": "Wikipedia \u00b7 Unity (ISS module)",
       "u": "https://en.wikipedia.org/wiki/Unity_(ISS_module)",
       "t": "intro"
     },
     {
-      "l": "NASA · Harmony module overview",
+      "l": "NASA \u00b7 Harmony module overview",
       "u": "https://www.nasa.gov/international-space-station/harmony/",
       "t": "core"
     }
-  ]
+  ],
+  "diagram": "node-module.svg",
+  "diagram_quality": "polished"
 }

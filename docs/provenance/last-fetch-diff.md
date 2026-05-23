@@ -1,56 +1,55 @@
 # Image provenance — last fetch diff
 
-Generated: 2026-05-23T14:37:17.296Z
+Generated: 2026-05-23T23:29:56.309Z
 Script: build-image-provenance@1.0.0
-Commit: 96d757bd320c186aad5f794fe18d1d22898ff571
-Total entries: 1386
+Commit: cc41f82beb21f1071e1fc90d8ab250f202b97b2d
+Total entries: 1408
 
-## Added (41)
+## Added (22)
 
-- `/images/recommendations/blogs/ars-technica.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/blogs/casey-handmer.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/blogs/damn-interesting.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/blogs/nasaspaceflight.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/blogs/the-planetary-society.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/a-brief-history-of-time.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/cosmos.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/fundamentals-of-astrodynamics.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/how-to-read-the-solar-system.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/packing-for-mars.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/pale-blue-dot.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/rocket-propulsion-elements.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/books/the-right-stuff.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/channels/everyday-astronaut.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/channels/pbs-space-time.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/channels/scott-manley.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/channels/veritasium.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/docs/cosmos-personal-voyage.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/docs/for-all-mankind-1989.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/docs/in-the-shadow-of-the-moon.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/docs/when-we-left-earth.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/2001-a-space-odyssey.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/apollo-13.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/contact.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/for-all-mankind-tv.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/interstellar.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/moon.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/films/the-martian.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/podcasts/are-we-there-yet.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/podcasts/main-engine-cut-off.jpg` — fair-use-cover via wikimedia-commons
-- `/images/recommendations/podcasts/off-nominal.jpg` — fair-use-cover via wikimedia-commons
-- `/images/science/crew-dynamics-mir.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/crew-selection-mercury-seven.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/crewed-station-design-iss.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/eclss-life-support-rack.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/eva-operations-sts117.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/lunar-surface-ops-apollo17.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/mars-human-architecture.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/pre-flight-training.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/sleep-nutrition-iss.jpg` — PD-NASA via wikimedia-commons
-- `/images/science/suit-lineage-sokol.jpg` — CC-BY-SA-3.0 via wikimedia-commons
+- `/images/science/bone-density-loss-ared.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/c3-parker-launch.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/expedition-cadence-exp1.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/keplers-laws-portrait.jpg` — PD-Old via wikimedia-commons
+- `/images/science/lagrange-jwst.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/long-duration-twins.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/met-mission-control.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/node-module-harmony.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/nrho.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/oberth-cassini.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/orbit-insertion-mro.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/orbit-regimes-leo.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/pressurized-volume-destiny.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/radiation-solar-flare.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/solar-power-iss-arrays.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/specific-impulse-rs25.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/star-tracker.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/trans-lunar-injection.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/transfer-ellipse-hohmann.jpg` — CC-BY-SA-3.0 via wikimedia-commons
+- `/images/science/tsiolkovsky-portrait.jpg` — PD-Old via wikimedia-commons
+- `/images/science/v-infinity-voyager.jpg` — PD-NASA via wikimedia-commons
+- `/images/science/vestibular-system.jpg` — PD-NASA via wikimedia-commons
 
-## Removed (0)
+## Removed (18)
 
+- `/images/hotspots/moon/apollo12/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/apollo14/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/change4/tier3-pan.jpg` — was CC-BY-4.0 via wikimedia-commons
+- `/images/hotspots/moon/apollo11/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/apollo15/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/apollo16/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/luna9/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/apollo17/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/change3/tier3-pan.jpg` — was CNSA-EDU via direct-other
+- `/images/hotspots/moon/change5/tier3-pan.jpg` — was CNSA-EDU via direct-other
+- `/images/hotspots/moon/change6/tier3-pan.jpg` — was CNSA-EDU via direct-other
+- `/images/hotspots/moon/chandrayaan3/tier3-pan.jpg` — was ISRO-EDU via wikimedia-commons
+- `/images/hotspots/moon/slim/tier3-pan.jpg` — was JAXA-OPEN via direct-other
+- `/images/hotspots/moon/luna16/tier3-pan.jpg` — was PD-NASA via direct-agency
+- `/images/hotspots/moon/luna17/tier3-pan.jpg` — was PD-Russia via wikimedia-commons
+- `/images/hotspots/moon/luna21/tier3-pan.jpg` — was PD-Russia via wikimedia-commons
+- `/images/hotspots/moon/luna24/tier3-pan.jpg` — was PD-NASA via wikimedia-commons
+- `/images/hotspots/moon/beresheet/tier3-pan.jpg` — was SpaceIL-EDU via direct-other
 
 ## Changed (0)
 

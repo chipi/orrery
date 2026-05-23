@@ -1349,6 +1349,146 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'PD-NASA',
     fallbackAuthor: 'NASA (Mir from Endeavour, STS-89, Jan 1998)',
   },
+  // Photo coverage expansion 2026-05-24 — 22 articles previously missing photos.
+  // life-in-space (4):
+  'bone-density-loss-ared.jpg': {
+    commons: 'ISS-44 Kjell Lindgren exercises using the Advanced Resistive Exercise Device.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (ISS Expedition 44, Aug 2015)',
+  },
+  'long-duration-twins.jpg': {
+    commons: 'One-Year Crew Mission commemorative poster.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — One-Year Crew Mission (Scott Kelly + Mikhail Kornienko, 2015-16)',
+  },
+  'radiation-solar-flare.jpg': {
+    commons: 'X Class Solar Flare Sends ‘Shockwaves’ on The Sun (6819094556).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Solar Dynamics Observatory (X-class flare, March 2012)',
+  },
+  'vestibular-system.jpg': {
+    commons: 'Vertigo.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (vestibular adaptation reference diagram)',
+  },
+  // mission-phases (5):
+  'nrho.jpg': {
+    commons: 'Near Rectilinear Halo Orbit (NRHO).png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — Near-Rectilinear Halo Orbit (Lunar Gateway reference)',
+  },
+  'star-tracker.jpg': {
+    commons: 'STARS on EBEX ld2012 image.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — STARS star-tracker on EBEX balloon experiment (LDB 2012)',
+  },
+  'trans-lunar-injection.jpg': {
+    commons: 'Trans-lunar injection.svg.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — Trans-lunar injection trajectory diagram',
+  },
+  'orbit-insertion-mro.jpg': {
+    commons: "Mars Reconnaissance Orbiter, front view, artist's concept (PIA07245).jpg",
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: "NASA / JPL-Caltech (Mars Reconnaissance Orbiter artist's concept, PIA07245)",
+  },
+  'met-mission-control.jpg': {
+    commons: 'Expedition 55 Soyuz Docking (NHQ201803230003).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Joel Kowsky (Mission Control during Soyuz MS-08 docking, March 2018)',
+  },
+  // orbits (3):
+  'keplers-laws-portrait.jpg': {
+    commons: 'JKepler.jpg',
+    agency: 'public-domain',
+    fallbackLicense: 'PD-Old',
+    fallbackAuthor: 'Unknown artist — Johannes Kepler portrait (c. 1610)',
+  },
+  'lagrange-jwst.jpg': {
+    commons: 'JWST spacecraft model 3.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Northrop Grumman — JWST spacecraft model (deployed at L2)',
+  },
+  'orbit-regimes-leo.jpg': {
+    commons: 'ISS-44 Milky Way.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (ISS Expedition 44 — Milky Way above the limb, Aug 2015)',
+  },
+  // propulsion (5):
+  'tsiolkovsky-portrait.jpg': {
+    commons: 'Константин Циолковский.jpg',
+    agency: 'public-domain',
+    fallbackLicense: 'PD-Old',
+    fallbackAuthor: 'Soviet press archive — Konstantin Tsiolkovsky portrait',
+  },
+  'specific-impulse-rs25.jpg': {
+    commons: 'Shuttle Main Engine Test Firing.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Stennis Space Center (SSME / RS-25 hot-fire test)',
+  },
+  'oberth-cassini.jpg': {
+    commons: 'Cassini Saturn Orbit Insertion.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / JPL-Caltech (Cassini Saturn Orbit Insertion artist concept, July 2004)',
+  },
+  'v-infinity-voyager.jpg': {
+    commons: 'Voyager probes with the outer worlds.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / JPL-Caltech (Voyager probes + outer worlds composite)',
+  },
+  'c3-parker-launch.jpg': {
+    commons: 'Parker Solar Probe spacecraft model.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Johns Hopkins APL (Parker Solar Probe spacecraft, 2018)',
+  },
+  // space-stations (4):
+  'expedition-cadence-exp1.jpg': {
+    commons: 'S97e5009.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Expedition 1 crew aboard ISS, STS-97 photograph, Dec 2000)',
+  },
+  'node-module-harmony.jpg': {
+    commons: 'Node 2 - STS-134.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Harmony / Node 2 photographed during STS-134, May 2011)',
+  },
+  'pressurized-volume-destiny.jpg': {
+    commons: 'ISS Destiny Lab.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Destiny laboratory module interior, ISS)',
+  },
+  'solar-power-iss-arrays.jpg': {
+    commons:
+      'Earth horizon and International Space Station solar panel array (Expedition 17 crew, August 2008).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (ISS Expedition 17 — solar array against Earth limb, Aug 2008)',
+  },
+  // transfers (1):
+  'transfer-ellipse-hohmann.jpg': {
+    commons: 'Hohmann transfer orbit.svg.png',
+    agency: 'public-domain',
+    fallbackLicense: 'CC-BY-SA-3.0',
+    fallbackAuthor: 'Wikimedia Commons contributor — Hohmann transfer orbit diagram',
+  },
 };
 
 async function buildScienceEntries(): Promise<ProvenanceEntry[]> {

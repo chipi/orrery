@@ -2,8 +2,10 @@
   "id": "orbit-regimes",
   "tab": "orbits",
   "order": 9,
-  "diagram": "orbit-regimes.svg",
-  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/orbit-regimes-leo.jpg",
+    "credit": "NASA \u00b7 The Milky Way above Earth's limb, photographed from the ISS (Expedition 44, Aug 2015). The ISS orbits at ~400 km \u2014 the canonical Low Earth Orbit regime, beneath the inner Van Allen belt and within atmospheric drag's reach."
+  },
   "see_in_app": [
     {
       "route": "/earth",
@@ -16,14 +18,16 @@
   ],
   "links": [
     {
-      "l": "Wikipedia · Geocentric orbit",
+      "l": "Wikipedia \u00b7 Geocentric orbit",
       "u": "https://en.wikipedia.org/wiki/Geocentric_orbit",
       "t": "intro"
     },
     {
-      "l": "NASA · Catalog of Earth Satellite Orbits",
+      "l": "NASA \u00b7 Catalog of Earth Satellite Orbits",
       "u": "https://earthobservatory.nasa.gov/features/OrbitsCatalog",
       "t": "core"
     }
-  ]
+  ],
+  "diagram": "orbit-regimes.svg",
+  "diagram_quality": "polished"
 }

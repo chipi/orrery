@@ -2,12 +2,23 @@
   "id": "met",
   "tab": "mission-phases",
   "order": 6,
-  "diagram": "met.svg",
-  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/met-mission-control.jpg",
+    "credit": "NASA / Joel Kowsky \u00b7 Mission Control Center during Soyuz MS-08 docking (March 2018). Mission Elapsed Time \u2014 the time since launch, displayed everywhere in mission control \u2014 is the canonical clock against which every mission event is sequenced."
+  },
   "see_in_app": [
-    { "route": "/fly", "context_key": "/fly's HUD shows MET in days since launch" }
+    {
+      "route": "/fly",
+      "context_key": "/fly's HUD shows MET in days since launch"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Mission elapsed time", "u": "https://en.wikipedia.org/wiki/Mission_Elapsed_Time", "t": "intro" }
-  ]
+    {
+      "l": "Wikipedia \u00b7 Mission elapsed time",
+      "u": "https://en.wikipedia.org/wiki/Mission_Elapsed_Time",
+      "t": "intro"
+    }
+  ],
+  "diagram": "met.svg",
+  "diagram_quality": "polished"
 }

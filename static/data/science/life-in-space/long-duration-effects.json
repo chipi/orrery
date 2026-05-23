@@ -2,23 +2,33 @@
   "id": "long-duration-effects",
   "tab": "life-in-space",
   "order": 10,
+  "photo": {
+    "src": "/images/science/long-duration-twins.jpg",
+    "credit": "NASA \u00b7 One-Year Crew Mission commemorative poster \u2014 Scott Kelly + Mikhail Kornienko (2015\u201316). Scott's twin Mark stayed on Earth as the control; the resulting Twins Study is the longest-running identical-twin Earth-vs-space dataset in any operational environment."
+  },
   "see_in_app": [
-    { "route": "/fly", "context_key": "MET counter — multi-month cruise phases on outer-planet missions" },
-    { "route": "/missions", "context_key": "Mars-class mission risk badges where total duration exceeds 6 months" }
+    {
+      "route": "/fly",
+      "context_key": "MET counter \u2014 multi-month cruise phases on outer-planet missions"
+    },
+    {
+      "route": "/missions",
+      "context_key": "Mars-class mission risk badges where total duration exceeds 6 months"
+    }
   ],
   "links": [
     {
-      "l": "NASA · One-Year Mission",
+      "l": "NASA \u00b7 One-Year Mission",
       "u": "https://www.nasa.gov/humans-in-space/nasas-twins-study/",
       "t": "intro"
     },
     {
-      "l": "NASA HRP · Space Associated Neuro-ocular Syndrome (SANS)",
+      "l": "NASA HRP \u00b7 Space Associated Neuro-ocular Syndrome (SANS)",
       "u": "https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=105",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Space-Associated Neuro-Ocular Syndrome",
+      "l": "Wikipedia \u00b7 Space-Associated Neuro-Ocular Syndrome",
       "u": "https://en.wikipedia.org/wiki/Space-associated_neuro-ocular_syndrome",
       "t": "deep"
     }

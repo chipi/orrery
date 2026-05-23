@@ -2,28 +2,41 @@
   "id": "lagrange-points",
   "tab": "orbits",
   "order": 10,
-  "diagram": "lagrange-points.svg",
-  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/lagrange-jwst.jpg",
+    "credit": "NASA / Northrop Grumman \u00b7 James Webb Space Telescope spacecraft model. JWST orbits the Sun\u2013Earth L2 point \u2014 a Lagrange point in the Sun\u2013Earth system where the spacecraft co-rotates with Earth at 1.5 million km behind us, with the Sun, Earth and Moon all on the same side for optimal infrared shielding."
+  },
   "see_in_app": [
-    { "route": "/explore", "context_key": "JWST + Spektr-RG live at Sun-Earth L2; SOHO at Sun-Earth L1" },
-    { "route": "/fleet", "context_key": "Observatory category: JWST, Euclid, and Spektr-RG are all SEL2-stationed" },
-    { "route": "/moon", "context_key": "Gateway will live in NRHO near the Earth-Moon system; Queqiao relay sits at EML2" }
+    {
+      "route": "/explore",
+      "context_key": "JWST + Spektr-RG live at Sun-Earth L2; SOHO at Sun-Earth L1"
+    },
+    {
+      "route": "/fleet",
+      "context_key": "Observatory category: JWST, Euclid, and Spektr-RG are all SEL2-stationed"
+    },
+    {
+      "route": "/moon",
+      "context_key": "Gateway will live in NRHO near the Earth-Moon system; Queqiao relay sits at EML2"
+    }
   ],
   "links": [
     {
-      "l": "NASA · Lagrange Points",
+      "l": "NASA \u00b7 Lagrange Points",
       "u": "https://science.nasa.gov/resource/what-is-a-lagrange-point/",
       "t": "intro"
     },
     {
-      "l": "ESA · L1 and L2 Halo Orbits",
+      "l": "ESA \u00b7 L1 and L2 Halo Orbits",
       "u": "https://sci.esa.int/web/jwst-nirspec/-/45727-jwst-orbit-around-the-second-lagrange-point",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Lagrange point",
+      "l": "Wikipedia \u00b7 Lagrange point",
       "u": "https://en.wikipedia.org/wiki/Lagrange_point",
       "t": "deep"
     }
-  ]
+  ],
+  "diagram": "lagrange-points.svg",
+  "diagram_quality": "polished"
 }

@@ -2,13 +2,28 @@
   "id": "nrho",
   "tab": "mission-phases",
   "order": 7,
-  "diagram": "nrho.svg",
-  "diagram_quality": "polished",
+  "photo": {
+    "src": "/images/science/nrho.jpg",
+    "credit": "NASA \u00b7 Near-Rectilinear Halo Orbit (NRHO) \u2014 the Artemis-era reference orbit for the Lunar Gateway. The orbit stays close to the lunar south-polar region, minimises eclipse durations, and is dynamically stable enough to be maintained with low-\u0394V station-keeping."
+  },
   "see_in_app": [
-    { "route": "/missions", "context_key": "Artemis II / III rendezvous with Lunar Gateway in NRHO" }
+    {
+      "route": "/missions",
+      "context_key": "Artemis II / III rendezvous with Lunar Gateway in NRHO"
+    }
   ],
   "links": [
-    { "l": "Wikipedia · Near-rectilinear halo orbit", "u": "https://en.wikipedia.org/wiki/Near-rectilinear_halo_orbit", "t": "intro" },
-    { "l": "NASA · Lunar Gateway Orbit", "u": "https://www.nasa.gov/feature/about-the-gateway/", "t": "core" }
-  ]
+    {
+      "l": "Wikipedia \u00b7 Near-rectilinear halo orbit",
+      "u": "https://en.wikipedia.org/wiki/Near-rectilinear_halo_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "NASA \u00b7 Lunar Gateway Orbit",
+      "u": "https://www.nasa.gov/feature/about-the-gateway/",
+      "t": "core"
+    }
+  ],
+  "diagram": "nrho.svg",
+  "diagram_quality": "polished"
 }

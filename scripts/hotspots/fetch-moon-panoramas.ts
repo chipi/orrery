@@ -82,10 +82,14 @@ const PANORAMAS: MoonPanoramaConfig[] = [
     sourceLabel: "Apollo 14 LM 12 O'clock Pan Hi-Res",
     attribution: 'NASA / Alan Shepard / Edgar Mitchell · via Apollo Lunar Surface Journal',
     license: 'PD-NASA',
-    // LM 12 O'clock pan ≈ 180° in front of the LM. Multi-frame stitched composite.
+    // 12893×3185 ≈ 4.05:1 — at 180° hAz the implied vFOV is 44°
+    // (180/4.05). Earlier 14+14=28° configuration squished the
+    // source vertically by 1.57x and shrank the LM ascent stage
+    // + ALSEP equipment into a thin band. 22+22=44 matches the
+    // source aspect ratio so 1px ≈ 1px angular size on output.
     srcAzimuthDeg: 180,
-    srcElevationTopDeg: 14,
-    srcElevationBottomDeg: 14,
+    srcElevationTopDeg: 22,
+    srcElevationBottomDeg: 22,
     caption:
       "Fra Mauro panorama looking forward of Antares LM (12 o'clock position). " +
       'Cone Crater rim visible in distance; ALSEP package + MET (Modular Equipment Transporter) tracks. ' +

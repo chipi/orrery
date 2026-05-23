@@ -94,9 +94,14 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     sourceLabel: 'PIA24626',
     attribution: 'NASA / JPL-Caltech / MSSS',
     license: 'PD-NASA',
+    // 29163×7891 ≈ 3.69:1 — at 360° hAz the source covers ~98°
+    // vFOV. Earlier 30+45=75° squished the rover deck + foreground
+    // vertically; 35+58=93° matches the aspect ratio so the Mastcam
+    // foreground (rover wheels, drill arm, immediate workspace)
+    // renders at correct angular size instead of being crammed.
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 45,
+    srcElevationTopDeg: 35,
+    srcElevationBottomDeg: 58,
     caption: 'Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama',
   },
   {
@@ -106,9 +111,17 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     sourceLabel: 'PIA2464',
     attribution: 'NASA / JPL-Caltech / ASU / MSSS',
     license: 'PD-NASA',
+    // 36952×11570 ≈ 3.19:1 — at 360° hAz the source covers ~113°
+    // vFOV. Earlier 35+45=80° vertically compressed the Mastcam-Z
+    // panorama by 1.4x and left dark shadow patches inside the
+    // rover deck region reading as visible "black holes." 50+62=112°
+    // matches the aspect ratio. Bumped recolourBlackThreshold to 85
+    // so the deck-shadow patches recolour into Mars regolith tone
+    // instead of staying near-black.
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 35,
-    srcElevationBottomDeg: 45,
+    srcElevationTopDeg: 50,
+    srcElevationBottomDeg: 62,
+    recolourBlackThreshold: 85,
     caption: 'Perseverance Mastcam-Z first 360° panorama, Jezero Crater, sol 3 (Feb 21, 2021)',
   },
   {

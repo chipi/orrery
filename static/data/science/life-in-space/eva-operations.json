@@ -1,0 +1,37 @@
+{
+  "id": "eva-operations",
+  "tab": "life-in-space",
+  "order": 12,
+  "photo": {
+    "src": "/images/science/eva-operations-sts117.jpg",
+    "credit": "NASA · STS-117 (June 2007) — Astronaut Jim Reilly working on the S3/S4 truss during the third EVA of the mission. The yellow-and-silver foot-restraint on the right is the mobile-base-system worksite — every modern EVA happens with that or an equivalent restraint engaged."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Quest (US-side airlock), Pirs (decommissioned 2021), Poisk (Russian airlock) — where every modern EVA begins" },
+    { "route": "/tiangong", "context_key": "Wentian module — Tiangong's primary airlock + EVA staging" },
+    { "route": "/fleet", "context_key": "EMU, Orlan-MKS, Feitian, AxEMU — the four EVA suits currently in active service across the international fleet" },
+    { "route": "/missions", "context_key": "Apollo lunar EVAs, every Shuttle assembly flight, ISS construction expeditions — each mission's flight-events timeline lists its EVAs" }
+  ],
+  "links": [
+    {
+      "l": "NASA · EVA Reference",
+      "u": "https://www.nasa.gov/reference/extravehicular-activity-eva/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Spacewalking the Hard Way (overview)",
+      "u": "https://www.nasa.gov/missions/station/iss-research/spacewalking-the-hard-way/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Extravehicular activity",
+      "u": "https://en.wikipedia.org/wiki/Extravehicular_activity",
+      "t": "core"
+    },
+    {
+      "l": "NASA Technical Reports · Neutral Buoyancy Laboratory training methodology",
+      "u": "https://ntrs.nasa.gov/citations/20140002942",
+      "t": "deep"
+    }
+  ]
+}

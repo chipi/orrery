@@ -6,6 +6,7 @@ import { fetchMarsHotspots } from './hotspots/fetch-mars.ts';
 import { fetchMarsCtxHotspots } from './hotspots/fetch-mars-ctx.ts';
 import { fetchMarsPanoramas } from './hotspots/fetch-mars-panoramas.ts';
 import { fetchMoonHotspots } from './hotspots/fetch-moon.ts';
+import { fetchMoonPanoramas } from './hotspots/fetch-moon-panoramas.ts';
 import {
   buildHiriseProvenanceEntry,
   buildCtxMosaicProvenanceEntry,
@@ -295,6 +296,15 @@ async function main(): Promise<void> {
       await upsertProvenanceEntries(provenanceEntries);
       console.log(`  Provenance: ${provenanceEntries.length} LROC entries upserted`);
     }
+  }
+
+  // Moon Tier 3 — ground-view panoramas (#PC / Step 8).
+  if (wantMoon && moonHotspots.length > 0 && (args.layer === 'all' || args.layer === 'tier3')) {
+    await fetchMoonPanoramas({
+      site: args.site,
+      dryRun: args.dryRun,
+      missingOnly: args.missingOnly,
+    });
   }
 
   if (!args.skipScore && !args.dryRun) {

@@ -42,6 +42,19 @@ export const DEFAULT_MARS_PALETTE: MarsColourPalette = {
   azimuthGap: [100, 75, 60],
 };
 
+/**
+ * Lunar palette — Moon has NO atmosphere so sky is BLACK at every
+ * elevation. Surface regolith is mid-grey. Same MarsColourPalette
+ * shape; just different RGB values. Default for Moon panoramas
+ * (caller can per-site override).
+ */
+export const DEFAULT_MOON_PALETTE: MarsColourPalette = {
+  skyHorizon: [0, 0, 0],
+  skyZenith: [0, 0, 0],
+  regolith: [120, 120, 120],
+  azimuthGap: [70, 70, 70],
+};
+
 export interface PadInput {
   /** Source image bytes. */
   source: Buffer;

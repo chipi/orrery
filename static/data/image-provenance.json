@@ -29688,6 +29688,48 @@
       "pageid": null,
       "nasa_id": "LROC_FEATURED_BERESHEET",
       "fetched_at": "2026-05-23T02:35:30.345Z"
+    },
+    {
+      "id": "8792eed7b3518b9b",
+      "path": "/images/hotspots/moon/apollo11/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Tranquillity Base panoramic mosaic — Apollo 11 LM Eagle, deployed flag, EASEP instrument, lunar regolith and crater field. 32454×2554 px Hasselblad composite (NASA JSC, 2007).",
+      "author": "NASA / JSC / Apollo Lunar Surface Journal (mosaic by JSC, 2007)",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Apollo_11_Tranquility_Base_panoramic_%28JSC2007-E-045375%29.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Apollo_11_Tranquility_Base_panoramic_%28JSC2007-E-045375%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "JSC2007-E-045375",
+      "fetched_at": "2026-05-23T02:43:38.143Z"
+    },
+    {
+      "id": "6b534d68d29eed8d",
+      "path": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Taurus-Littrow Valley ALSEP panorama, EVA-1. Jack Schmitt assembled colour pan, Lunar Roving Vehicle and Lunar Module Challenger visible. Captured Dec 12 1972; USGS-prepared composite via NASA Apollo Lunar Surface Journal.",
+      "author": "NASA / Gene Cernan / Jack Schmitt / USGS · via Apollo Lunar Surface Journal",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/019_Jack's_Color_ALSEP_Pan_USGS.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Jack's Color ALSEP Pan (USGS)",
+      "fetched_at": "2026-05-23T02:43:38.144Z"
     }
   ]
 }

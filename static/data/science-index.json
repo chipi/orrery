@@ -50,6 +50,27 @@
   },
   {
     "tab": "life-in-space",
+    "section": "crewed-station-design",
+    "title": "Crewed-station design — Salyut to ISS to Tiangong",
+    "intro": "Six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke.",
+    "haystack": "crewed-station design — salyut to iss to tiangong six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke. a space station is four problems stacked: a pressurised hull strong enough to hold 1 atm against vacuum, a docking system that lets crew + cargo arrive, a life-support stack that recycles air/water/heat, and crew quarters that don't drive the occupants to mutiny. every station ever flown made a different trade-off on those four. salyut 1 (soviet, 1971) was essentially a tin can with a docking port and one airlock; its first long-duration crew (soyuz 11, 1971) died on the return because the iva suit problem hadn't been solved yet. skylab (us, 1973) was a converted saturn v third stage — enormous interior volume (~360 m³) and one shot at it; the micrometeoroid shield tore off on launch and the first crew had to deploy a parasol from outside to keep the workshop from cooking. each station's first crew is the one that finds the design flaws."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eclss-life-support",
+    "title": "Life support — ECLSS, the air and water loop",
+    "intro": "Six people breathe 6 kg of oxygen a day, drink 18 L of water, and exhale 7 kg of CO₂. None of it is launched from Earth if the station can help it — every gram has to be recovered.",
+    "haystack": "life support — eclss, the air and water loop six people breathe 6 kg of oxygen a day, drink 18 l of water, and exhale 7 kg of co₂. none of it is launched from earth if the station can help it — every gram has to be recovered. environmental control and life support system — eclss — is the part of a station that nobody sees and everybody depends on. its job is to keep four numbers inside the green band: oxygen partial pressure (~21 kpa, like sea level), carbon dioxide partial pressure (<0.7 kpa nominal; humans get headaches above 1 kpa), cabin temperature (~22 °c), and relative humidity (40-60%). get any of those wrong and the crew gets sick within hours. get oxygen or co₂ wrong badly enough and the crew dies. the system is engineered with at least one redundant subsystem for every function, and the us segment + russian segment of iss each run their own complete eclss so a fault on one side doesn't take both."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eva-operations",
+    "title": "EVA operations — the spacewalk procedure end to end",
+    "intro": "Crack the airlock and 6–8 hours later you've put a payload on the truss. In between is the most procedural activity in spaceflight — 50+ choreographed steps, every one a chance to fail safely.",
+    "haystack": "eva operations — the spacewalk procedure end to end crack the airlock and 6–8 hours later you've put a payload on the truss. in between is the most procedural activity in spaceflight — 50+ choreographed steps, every one a chance to fail safely. a modern eva starts about 24 hours before egress. the crew reviews the procedure binder (now a tablet) — every tether transfer, every bolt torque, every contingency. tools are pre-staged on the airlock wall in the order they'll be needed. the night before, the crew sleeps at reduced cabin pressure (10.2 psi on the us side; the russian orlan side skips this step because of suit-pressure differences — see the `eva-physiology` article). at t-minus 4 hours the crew is in-suit, mask-breathing pure oxygen to wash nitrogen out of body tissues — the prebreathe protocol. pre-breathe is non-negotiable; skipping it causes decompression sickness ('the bends') from n₂ bubbling out as the suit depressurises."
+  },
+  {
+    "tab": "life-in-space",
     "section": "eva-physiology",
     "title": "EVA physiology",
     "intro": "A spacewalk is a 6–8 hour endurance event in a 1/3-atmosphere oxygen-pressurised suit — preceded by hours of pre-breathe to keep the bends at bay.",

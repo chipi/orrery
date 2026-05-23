@@ -24,6 +24,25 @@
  */
 
 import { writeFile, mkdir, readdir, readFile, copyFile } from 'node:fs/promises';
+import { coerceToJpeg } from './lib/image-bytes.ts';
+
+/**
+ * GH #251: bytes downloaded from the wire are not necessarily the
+ * mime type their extension implies (Wikimedia `?format=jpg` URLs
+ * routinely return PNG). Anthropic's vision API strict-checks the
+ * declared mime; mismatched files break scoring silently. Every
+ * write to a `.jpg`/`.jpeg` path round-trips through `sharp().jpeg()`
+ * so the on-disk bytes are guaranteed-valid JPEG regardless of source.
+ * Other extensions pass through unchanged.
+ */
+async function writeImageBytes(dest: string, buffer: Buffer): Promise<void> {
+  const lower = dest.toLowerCase();
+  if (lower.endsWith('.jpg') || lower.endsWith('.jpeg')) {
+    await writeFile(dest, await coerceToJpeg(buffer));
+  } else {
+    await writeFile(dest, buffer);
+  }
+}
 import { fetchAgencyPrimaryImageUrls, normalizeAgency } from './agency-mission-sources.js';
 import type { Destination } from '../src/types/mission.js';
 import { join, dirname } from 'node:path';
@@ -244,7 +263,7 @@ async function downloadFromWikimedia(url: string, dest: string): Promise<void> {
   const res = await fetch(url, { headers: { 'User-Agent': WIKIMEDIA_UA } });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   const buffer = Buffer.from(await res.arrayBuffer());
-  await writeFile(dest, buffer);
+  await writeImageBytes(dest, buffer);
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -1162,9 +1181,9 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
         const imgRes = await fetch(urls[n]);
         if (!imgRes.ok) continue;
         const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await writeFile(join(missionDir, filename), buffer);
+        await writeImageBytes(join(missionDir, filename), buffer);
         if (!hasLegacyCover && filename === '01.jpg') {
-          await writeFile(legacyCoverPath, buffer);
+          await writeImageBytes(legacyCoverPath, buffer);
           hasLegacyCover = true;
         }
         saved++;
@@ -1215,9 +1234,9 @@ async function fetchMissionImages(onlyIds?: string[]): Promise<number> {
           const imgRes = await fetch(urls[n]);
           if (!imgRes.ok) continue;
           const buffer = Buffer.from(await imgRes.arrayBuffer());
-          await writeFile(join(missionDir, filename), buffer);
+          await writeImageBytes(join(missionDir, filename), buffer);
           if (!hasLegacyCover && filename === '01.jpg') {
-            await writeFile(legacyCoverPath, buffer);
+            await writeImageBytes(legacyCoverPath, buffer);
             hasLegacyCover = true;
           }
           saved++;
@@ -1564,7 +1583,7 @@ async function fetchIssModuleImages(onlyIds?: string[]): Promise<number> {
         const imgRes = await fetch(urls[n]);
         if (!imgRes.ok) continue;
         const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await writeFile(join(moduleDir, filename), buffer);
+        await writeImageBytes(join(moduleDir, filename), buffer);
         saved++;
       } catch {
         // Single-image fail; continue with the rest.
@@ -1759,7 +1778,7 @@ async function fetchTiangongModuleImages(onlyIds?: string[]): Promise<number> {
         const imgRes = await fetch(urls[n]);
         if (!imgRes.ok) continue;
         const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await writeFile(join(moduleDir, filename), buffer);
+        await writeImageBytes(join(moduleDir, filename), buffer);
         saved++;
       } catch {
         // Single-image fail; continue with the rest.
@@ -2136,7 +2155,7 @@ async function fetchPanelGallery(
         const imgRes = await fetch(urls[n]);
         if (!imgRes.ok) continue;
         const buffer = Buffer.from(await imgRes.arrayBuffer());
-        await writeFile(join(entityDir, filename), buffer);
+        await writeImageBytes(join(entityDir, filename), buffer);
         saved++;
       } catch {
         // Single-image fail; continue with the rest.
@@ -3250,7 +3269,7 @@ async function downloadFile(url: string, dest: string): Promise<void> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Failed to download ${url}: HTTP ${res.status}`);
   const buffer = Buffer.from(await res.arrayBuffer());
-  await writeFile(dest, buffer);
+  await writeImageBytes(dest, buffer);
 }
 
 // ──────────────────────────────────────────────────────────────────────

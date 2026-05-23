@@ -40,6 +40,32 @@ The ambient shell environment wins where both are set — `.env` only fills hole
 
 ---
 
+## Mime/extension contract — bytes on disk match the extension (GH #251)
+
+**Rule:** every byte that lands at a `.jpg` or `.jpeg` path passes through `sharp(buf).jpeg({ quality: 85, mozjpeg: true }).toBuffer()` first. No exceptions.
+
+**Why:** the original v0.6 fetcher pasted source URL bodies verbatim — and Wikimedia `?format=jpg` URLs routinely return PNG bytes. Browsers + `sharp` sniff and render either way, so the mismatch was invisible until Anthropic's vision API (which strict-checks declared mime) rejected 110 fleet-gallery files with `image/jpeg vs image/png`.
+
+**Enforced by:**
+- `scripts/lib/image-bytes.ts` — shared `coerceToJpeg(buf)` helper; every fetcher uses it.
+- `scripts/fetch-assets.ts` — `writeImageBytes(dest, buf)` wraps `writeFile` with a dest-extension check; all gallery-image writes route through it.
+- All `scripts/hotspots/fetch-*.ts` panorama + patch fetchers — already produce JPEG bytes via `panorama-padder.ts` / `gdal-crop.ts` (sharp-based), unaffected.
+- `scripts/audit-image-mime.ts` — CLI audit (`--repair` to fix in place).
+- `scripts/validate-data.ts` — wired into `npm run preflight`; CI blocks PRs that ship mime-mismatched `.jpg` files.
+
+**Operator commands:**
+```bash
+# CI-friendly audit (exits non-zero on any mismatch)
+npx tsx scripts/audit-image-mime.ts
+
+# Fix in place — runs every flagged file through sharp.jpeg()
+npx tsx scripts/audit-image-mime.ts --repair
+```
+
+If you write a new fetcher: import `coerceToJpeg` from `scripts/lib/image-bytes.ts` and run every JPEG-bound write through it. Skip this and the preflight gate catches you on push.
+
+---
+
 ## What v2 produces
 
 After a successful pipeline run, three new artefacts exist:

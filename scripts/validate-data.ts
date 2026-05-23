@@ -8,9 +8,18 @@
 import Ajv, { type AnySchema, type ErrorObject, type ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
 import { execSync } from 'node:child_process';
-import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
+import {
+  readFileSync,
+  readdirSync,
+  existsSync,
+  statSync,
+  openSync,
+  readSync,
+  closeSync,
+} from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
+import { isJpegBytes } from './lib/image-bytes.ts';
 import {
   findBidirectionalFleetMissionDrift,
   findBidirectionalFleetSiteDrift,
@@ -1096,6 +1105,42 @@ if (oversized.length === 0) {
   );
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// Image mime/extension match (GH #251). Walks .jpg files only and
+// confirms each starts with the JPEG SOI marker (ff d8 ff). Anthropic's
+// vision API strict-checks declared mime; mismatched files (PNG bytes
+// with .jpg extension etc.) silently break vision scoring. Browsers +
+// sharp sniff and render anyway, so the mismatch is otherwise invisible.
+// Repair: `npx tsx scripts/audit-image-mime.ts --repair`.
+// ──────────────────────────────────────────────────────────────────────
+
+let imageMimeFailed = 0;
+console.log('\nValidating image mime/extension match (.jpg files start with JPEG SOI)...');
+const mimeMismatched: string[] = [];
+for (const file of walkImages(IMAGE_ROOT)) {
+  const lower = file.toLowerCase();
+  if (!(lower.endsWith('.jpg') || lower.endsWith('.jpeg'))) continue;
+  const fd = openSync(file, 'r');
+  try {
+    const buf = Buffer.alloc(3);
+    readSync(fd, buf, 0, 3, 0);
+    if (!isJpegBytes(buf)) mimeMismatched.push(file);
+  } finally {
+    closeSync(fd);
+  }
+}
+if (mimeMismatched.length === 0) {
+  console.log(`  ✓ all .jpg files have valid JPEG magic bytes`);
+} else {
+  imageMimeFailed = mimeMismatched.length;
+  for (const path of mimeMismatched) {
+    console.error(`  ✗ ${path}: .jpg extension but non-JPEG bytes`);
+  }
+  console.error(
+    `  ${imageMimeFailed} mime/extension mismatch(es) — fix: npx tsx scripts/audit-image-mime.ts --repair`,
+  );
+}
+
 if (
   failed +
     docFailed +
@@ -1104,7 +1149,8 @@ if (
     credBomFailed +
     linkProvenanceFailed +
     launchesFailed +
-    assetSizeFailed >
+    assetSizeFailed +
+    imageMimeFailed >
   0
 )
   process.exit(1);

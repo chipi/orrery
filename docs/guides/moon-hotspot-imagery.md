@@ -166,6 +166,10 @@ After a fetch run:
 
 ## What's next (deferred per PRD-014)
 
-- **Phase 2 — Chang'e 2 mosaic regional layer.** Two-layer Tier 2 like Mars's CTX + HiRISE compose. Needs research into the Chang'e 2 7 m/px global mosaic public tile-server (RFC-017 OQ-4); fallback is per-site large-area JPEGs from cnsa.gov.cn published releases.
+- **Phase 2 — Chang'e 2 mosaic regional layer.** Two-layer Tier 2 like Mars's CTX + HiRISE compose. **Research complete** (RFC-017 OQ-4 answered 2026-05-23):
+  - CNSA publishes the full Chang'e 2 7 m/px global mosaic free since April 2018 at [moon.bao.ac.cn](https://moon.bao.ac.cn/ce5web/searchOrder-ce2En.do) (Chang'E-2 CCD Stereo Camera Level 2C scientific dataset, National Astronomical Observatories of China).
+  - **No REST/tile API.** The portal requires JS-heavy interactive ordering — no URL-addressable tile pattern, no programmatic batch download. Auto-fetch is not feasible.
+  - **Operator path**: manual download of mosaic sheets covering each landing site (746 sheets at 7 m/px globally; per-site fetch is manageable), upload as `static/images/hotspots/moon/<site>/tier2-regional.jpg`, set `hotspot_tier2_regional_source` in sidecar.
+  - Frontend already handles two-layer composition (the moon route's `tier2Builder` reads `regionalTextureUrl` and `buildHotspotSurfacePatch` renders both discs). Once the per-site JPEG is on disk + the sidecar field is set, the layer just appears.
 - **Phase 2.5 — site-specific premium detail.** Where Kaguya TC or Chandrayaan-2 OHRC offers sharper imagery than LROC NAC (SLIM Shioli pre-imagery, Chandrayaan-3 OHRC south-pole sub-30 cm/px), pin via sidecar's `hotspot_tier2_force_product_url`.
-- **Tier 3 expansion.** Apollo 12/15/16, Chang'e 3/5/6, Chandrayaan-3 Pragyan, SLIM, Lunokhod 1/2, Luna 9 historic monochrome panoramas. Reuses every piece of the existing pipeline.
+- **Tier 3 expansion.** Remaining 10/18: Chang'e 3/5/6, Chandrayaan-3 Pragyan, SLIM Sora-Q, Lunokhod 1/2 rover-cam, Luna 16/17/21/24. Not redistributed on Wikimedia in suitable wide-aspect cylindrical form; needs direct CNSA/ISRO/JAXA/Soviet-archive scrapes per agency.

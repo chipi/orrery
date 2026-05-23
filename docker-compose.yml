@@ -91,16 +91,26 @@ services:
     container_name: orrery-grafana-agent
     profiles: ['observability']
     volumes:
+      # Three configs: real (shipping), silent (no shipping), and the
+      # entrypoint that picks between them based on env-var presence.
       - ./ops/observability/grafana-agent.yaml:/etc/grafana-agent.yaml:ro
+      - ./ops/observability/grafana-agent.silent.yaml:/etc/grafana-agent.silent.yaml:ro
+      - ./ops/observability/agent-entrypoint.sh:/agent-entrypoint.sh:ro
       # Read-only docker socket — agent uses docker_sd_configs to
       # discover orrery-* containers and tail their stdout/stderr.
+      # Only mounted on the shipping path; silent config doesn't touch it.
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
       - GRAFANA_CLOUD_LOKI_USER=${GRAFANA_CLOUD_LOKI_USER:-}
       - GRAFANA_CLOUD_API_KEY=${GRAFANA_CLOUD_API_KEY:-}
       - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-local-dev}
-    command: ['-config.file=/etc/grafana-agent.yaml']
+    # Override the image's default entrypoint with our wrapper, which
+    # picks the right config based on env-var presence. Without this
+    # an empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a restart
+    # loop on "client needs target URL".
+    entrypoint: ['/bin/sh', '/agent-entrypoint.sh']
+    command: []
     restart: unless-stopped
 
 volumes:

@@ -29835,6 +29835,27 @@
       "pageid": null,
       "nasa_id": "Luna 9 first surface photo (1966)",
       "fetched_at": "2026-05-23T04:16:28.010Z"
+    },
+    {
+      "id": "6722694c6db47fea",
+      "path": "/images/hotspots/moon/apollo12/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Ocean of Storms ALSEP panorama. Intrepid LM + ALSEP central station + radioisotope thermoelectric generator. Surveyor 3 crater rim visible in the distance — the only Apollo site where astronauts walked to a previous robotic lander. Apollo 12, Nov 19 1969.",
+      "author": "NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via ALSJ",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Apollo 12 Pete's ALSEP Site Pan",
+      "fetched_at": "2026-05-23T04:20:23.769Z"
     }
   ]
 }

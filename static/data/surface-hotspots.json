@@ -44,11 +44,12 @@
       ]
     },
     "apollo12": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "apollo-lm",
       "hotspot_tier2_source": "/images/hotspots/moon/apollo12/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/apollo12/tier3-pan.jpg"
     },
     "apollo14": {
       "hotspot_tier_max": 3,

@@ -58,6 +58,23 @@ interface MoonPanoramaConfig {
 
 const PANORAMAS: MoonPanoramaConfig[] = [
   {
+    siteId: 'apollo12',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/9/98/' +
+      'Apollo_12_-_Pete%27s_ALSEP_Site_Pan.webp',
+    sourceLabel: "Apollo 12 Pete's ALSEP Site Pan",
+    attribution: 'NASA / Pete Conrad / Alan Bean · assembled by Dave Byrne · via ALSJ',
+    license: 'PD-NASA',
+    // 7559×1035 ≈ 7.3:1 — wide cylindrical, ~220° × ~30°.
+    srcAzimuthDeg: 220,
+    srcElevationTopDeg: 15,
+    srcElevationBottomDeg: 15,
+    caption:
+      'Ocean of Storms ALSEP panorama. Intrepid LM + ALSEP central station + radioisotope ' +
+      'thermoelectric generator. Surveyor 3 crater rim visible in the distance — the only ' +
+      'Apollo site where astronauts walked to a previous robotic lander. Apollo 12, Nov 19 1969.',
+  },
+  {
     siteId: 'apollo14',
     sourceUrl:
       'https://upload.wikimedia.org/wikipedia/commons/c/cc/' +

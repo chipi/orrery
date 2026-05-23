@@ -161,6 +161,33 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'ISRO-EDU',
+    display: 'ISRO imagery (educational fair-use)',
+    url: 'https://www.isro.gov.in/',
+    rationale:
+      'Indian Space Research Organisation publishes Chandrayaan-2/3 (Moon) and Mangalyaan / MOM (Mars) imagery on isro.gov.in for "personal, educational, and non-commercial" use with attribution. No formal Creative Commons license. Mirrors the CNSA-EDU precedent for agencies that publish openly without formal CC licensing. Canonical attribution: "ISRO / Chandrayaan-3 Team" or similar mission-specific string.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
+    short: 'JAXA-OPEN',
+    display: 'JAXA imagery (open distribution)',
+    url: 'https://global.jaxa.jp/policy.html',
+    rationale:
+      'Japan Aerospace Exploration Agency publishes mission imagery (Hayabusa2, SLIM, MMX, ISAS planetary missions) under a permissive "open data" policy permitting non-commercial reuse with attribution. No formal Creative Commons label. Mirrors the CNSA-EDU / ISRO-EDU precedent. Canonical attribution: "JAXA" or mission-specific string ("JAXA / SLIM Team", "JAXA / Sora-Q LEV-2").',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
+    short: 'SpaceIL-EDU',
+    display: 'SpaceIL imagery (educational fair-use)',
+    url: 'https://www.spaceil.com/',
+    rationale:
+      'SpaceIL is the Israeli non-profit behind the Beresheet lunar lander (2019, crashed at ~149 m altitude). Beresheet final-descent imagery was released through SpaceIL communications + Israeli news outlets without a formal Creative Commons license, but with broad permission for editorial / educational reuse. Mirrors the CNSA-EDU precedent. Canonical attribution: "SpaceIL · IAI · Beresheet mission".',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'fair-use-cover',
     display: 'Cover / poster thumbnail (nominative fair use)',
     url: 'https://www.copyright.gov/title17/92chap1.html#107',

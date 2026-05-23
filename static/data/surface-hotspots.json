@@ -178,32 +178,36 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna9/tier3-pan.jpg"
     },
     "luna16": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna16/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/luna16/tier3-pan.jpg"
     },
     "luna17": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna17/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/luna17/tier3-pan.jpg"
     },
     "luna21": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna21/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/luna21/tier3-pan.jpg"
     },
     "luna24": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "luna-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/luna24/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/luna24/tier3-pan.jpg"
     },
     "mars3": {
       "hotspot_tier_max": 2,
@@ -215,11 +219,12 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg"
     },
     "change3": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "chang-e-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/change3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change3/tier3-pan.jpg"
     },
     "change4": {
       "hotspot_tier_max": 3,
@@ -230,18 +235,20 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg"
     },
     "change5": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change5/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change5/tier3-pan.jpg"
     },
     "change6": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "chang-e-lander-sample-return",
       "hotspot_tier2_source": "/images/hotspots/moon/change6/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change6/tier3-pan.jpg"
     },
     "zhurong": {
       "hotspot_tier_max": 3,
@@ -253,26 +260,29 @@
       "hotspot_tier3_panorama": "/images/hotspots/mars/zhurong/tier3-pan.jpg"
     },
     "chandrayaan3": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "chandrayaan-3-vikram",
       "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg"
     },
     "slim": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "slim-precision-lander",
       "hotspot_tier2_source": "/images/hotspots/moon/slim/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/slim/tier3-pan.jpg"
     },
     "beresheet": {
-      "hotspot_tier_max": 2,
+      "hotspot_tier_max": 3,
       "hotspot_model": "beresheet",
       "hotspot_tier2_source": "/images/hotspots/moon/beresheet/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "crashed": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "hotspot_tier3_panorama": "/images/hotspots/moon/beresheet/tier3-pan.jpg"
     },
     "schiaparelli": {
       "hotspot_tier_max": 2,

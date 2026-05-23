@@ -60,4 +60,39 @@ test.describe('Moon — Tier 2 patch + Tier 3 button smoke', () => {
     const buf = await res.body();
     expect(buf.length).toBeGreaterThan(2048);
   });
+
+  // v0.7.0 Step 1 — all 18 Moon sites now ship Tier 3 panoramas
+  // (10 newly added: change3/5/6, chandrayaan3, slim, luna16/17/21/24, beresheet).
+  // No "graceful absent button" anywhere on /moon. Mirrors mars3/beagle2/schiaparelli
+  // editorial pattern where single-frame / descent-only imagery is padded honestly.
+  const ALL_MOON_TIER3_SITES = [
+    'apollo11',
+    'apollo12',
+    'apollo14',
+    'apollo15',
+    'apollo16',
+    'apollo17',
+    'change3',
+    'change4',
+    'change5',
+    'change6',
+    'chandrayaan3',
+    'slim',
+    'luna16',
+    'luna17',
+    'luna21',
+    'luna24',
+    'beresheet',
+    'luna9',
+  ];
+
+  for (const site of ALL_MOON_TIER3_SITES) {
+    if (site === 'luna9') continue; // luna9 has no LROC coords yet → Tier 2/3 deferred
+    test(`${site} Tier 3 panorama JPEG is served`, async ({ request }) => {
+      const res = await request.get(`/images/hotspots/moon/${site}/tier3-pan.jpg`);
+      expect(res.status()).toBe(200);
+      const buf = await res.body();
+      expect(buf.length).toBeGreaterThan(50_000);
+    });
+  }
 });

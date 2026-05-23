@@ -207,6 +207,208 @@ const PANORAMAS: MoonPanoramaConfig[] = [
       'Lunar Roving Vehicle and Lunar Module Challenger visible. ' +
       'Captured Dec 12 1972; USGS-prepared composite via NASA Apollo Lunar Surface Journal.',
   },
+
+  // ── v0.7 #PC Phase 2 ship-all-10: agency-direct (not Wikimedia where
+  // a true agency source exists). Sites without a published surface
+  // panorama (Luna 16/24 telephotometer-only; Lunokhod 2 only museum
+  // model on Commons; Beresheet crashed pre-imaging) ship with the
+  // best-available editorial substitute + honest caption — same
+  // pattern as /mars's mars3 / beagle2 / schiaparelli.
+
+  {
+    siteId: 'change3',
+    sourceUrl: 'https://cdn.mos.cms.futurecdn.net/2UmRx9rkjZfauYdoQi8aAT.jpg',
+    sourceLabel: "Chang'e 3 1st Color Panorama (CNSA, Dec 2013)",
+    attribution: "CNSA / Chinanews / Ken Kremer / Marco Di Lorenzo · Chang'e 3 lander PCAM",
+    license: 'CNSA-EDU',
+    // 5084×744 ≈ 6.83:1 wide colour panorama. Treat as full 360° wrap
+    // — Yutu rover tracks visible across the frame.
+    srcAzimuthDeg: 360,
+    srcElevationTopDeg: 26,
+    srcElevationBottomDeg: 27,
+    caption:
+      "Chang'e 3 first colour panorama, Mare Imbrium / Bay of Rainbows. Yutu rover tracks " +
+      'cross the foreground; lander solar panels visible at edges. Captured Dec 15 2013, ' +
+      'PCAM stereo pair stitched by Marco Di Lorenzo. CNSA / Chang’e 3 mission team.',
+  },
+  {
+    siteId: 'change5',
+    sourceUrl:
+      'https://planetary.s3.amazonaws.com/web/assets/pictures/lunar-surface-pano-from-change-5.jpg',
+    sourceLabel: "Chang'e 5 lunar surface panorama (CNSA, Dec 2020)",
+    attribution: "CNSA / CLEP · Chang'e 5 lander panoramic camera",
+    license: 'CNSA-EDU',
+    // 15000×7947 ≈ 1.89:1. Forward-facing fan view (~200° azimuth)
+    // showing lander deck, Mons Rümker terrain, and the gold-foil
+    // thermal blanket. vFOV math: 200/1.89 ≈ 106° → 53+53.
+    srcAzimuthDeg: 200,
+    srcElevationTopDeg: 53,
+    srcElevationBottomDeg: 53,
+    caption:
+      "Chang'e 5 lander forward panorama, Oceanus Procellarum / Mons Rümker. Lander " +
+      'solar-cell deck + sample-drill foreground; nearer terrain shows fresh-impact ' +
+      'ejecta. Captured Dec 1 2020. CNSA / CLEP.',
+  },
+  {
+    siteId: 'change6',
+    sourceUrl:
+      'https://news.cgtn.com/news/2024-06-04/China-s-Chang-e-6-sends-back-images-from-the-far-side-of-the-moon-1u9v8l9xdUk/img/52549cd8b951460bb6fe186a2495c8fb/52549cd8b951460bb6fe186a2495c8fb.jpeg',
+    sourceLabel: "Chang'e 6 first surface panorama (CNSA, June 2024)",
+    attribution: "CNSA / CLEP · Chang'e 6 lander panoramic camera · via CGTN",
+    license: 'CNSA-EDU',
+    // 1600×841 ≈ 1.9:1 fan-shaped forward view, first far-side
+    // sample-return surface frame ever. Transmitted via Queqiao-2 relay.
+    srcAzimuthDeg: 180,
+    srcElevationTopDeg: 45,
+    srcElevationBottomDeg: 50,
+    caption:
+      "Chang'e 6 first surface image — Apollo crater, lunar far side (the first surface " +
+      'panorama ever transmitted from the far side of any planetary body, via the Queqiao-2 ' +
+      'relay satellite). Captured June 2 2024. CNSA / CLEP / China Lunar Exploration Program.',
+  },
+  {
+    siteId: 'chandrayaan3',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/a/aa/Chandrayaan-3_%E2%80%93_Image_of_Vikram_lander_on_lunar_surface_taken_by_Pragyan_rover_navcam_at_1104_IST%2C_30_August_2023_from_15_meters_away_%28with_text%29.webp',
+    sourceLabel: 'Chandrayaan-3 Vikram lander by Pragyan rover navcam (ISRO, Aug 2023)',
+    attribution: 'ISRO · Pragyan rover NavCam (LEOS/ISRO) · SAC/ISRO processing',
+    license: 'ISRO-EDU',
+    // 1125×1125 ≈ 1:1. Single Navcam frame of Vikram lander on lunar
+    // surface from 15 m away. Not a full panorama — Pragyan navcam was
+    // a stereo pair, not a 360° system. Treat as narrow forward view.
+    srcAzimuthDeg: 50,
+    srcElevationTopDeg: 25,
+    srcElevationBottomDeg: 25,
+    caption:
+      'Chandrayaan-3 Vikram lander photographed by Pragyan rover NavCam from 15 m away — ' +
+      'Shiv Shakti Point, 69.37°S 32.32°E (highest-latitude soft landing of any mission). ' +
+      'Captured 11:04 IST Aug 30 2023, six days after touchdown. ISRO. No 360° panorama ' +
+      'exists; Pragyan carried a stereo NavCam pair, not a panoramic camera.',
+  },
+  {
+    siteId: 'slim',
+    sourceUrl: 'https://global.jaxa.jp/press/2024/01/images/20240125-4_e_01.jpg',
+    sourceLabel: 'SLIM imaged by Sora-Q LEV-2 (JAXA, Jan 2024)',
+    attribution: 'JAXA / TOMY / Sony Group / Doshisha University · Sora-Q (LEV-2) MBC',
+    license: 'JAXA-OPEN',
+    // 640×480 ≈ 1.33:1. Single frame from Sora-Q hopper showing SLIM
+    // lander on its nose at Shioli crater. Sora-Q is an 8 cm hopper,
+    // not a pan camera; ship the iconic single frame.
+    srcAzimuthDeg: 50,
+    srcElevationTopDeg: 19,
+    srcElevationBottomDeg: 19,
+    caption:
+      'SLIM lander photographed by Sora-Q (LEV-2) micro-hopper after touchdown — ' +
+      'Shioli crater. SLIM came down on its nose (engine fault during the final descent) ' +
+      'but survived to operate for three days. Captured Jan 25 2024 by the 8 cm Sora-Q ' +
+      'transformable hopper (TOMY / Sony / Doshisha co-development). No surface panorama ' +
+      'system on SLIM; the Sora-Q stereo MBC frame is the canonical surface view. JAXA.',
+  },
+  {
+    siteId: 'luna16',
+    sourceUrl:
+      'https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia12/pia12984/PIA12984.jpg',
+    sourceLabel: 'Luna 16 landing site, LRO NAC orbital view (NASA, 2010)',
+    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
+    license: 'PD-NASA',
+    // 900×900 ≈ 1:1 LRO NAC orbital view of the Luna 16 lander
+    // remnants in Mare Fecunditatis. Luna 16 carried only a descent-
+    // stage telephotometer (not a panoramic camera); no Earth-trans-
+    // mitted surface panorama exists. Per the "ship-with-honest-
+    // caption" editorial principle (same as mars3 / beagle2), this
+    // modern orbital view from LRO is the closest available "stand
+    // at the landing site" surface tier.
+    srcAzimuthDeg: 60,
+    srcElevationTopDeg: 30,
+    srcElevationBottomDeg: 30,
+    caption:
+      'Luna 16 landing site, Mare Fecunditatis (1970) — modern LRO NAC orbital view. ' +
+      'Luna 16 was the first robotic sample-return mission and carried only a descent-stage ' +
+      'telephotometer; no Earth-transmitted surface panorama exists. This LRO image (PIA12984, ' +
+      'captured 2010) is the closest available landing-site view. NASA / GSFC / Arizona State.',
+  },
+  {
+    siteId: 'luna17',
+    sourceUrl: 'https://upload.wikimedia.org/wikipedia/en/8/86/Lk101.jpg',
+    sourceLabel: 'Lunokhod 1 surface panorama (USSR, 1970)',
+    attribution: 'Soviet Academy of Sciences · Lunokhod 1 vidicon TV camera',
+    license: 'PD-Russia',
+    // 651×153 ≈ 4.25:1 wide horizon view — rover deck + tracks across
+    // Mare Imbrium. Real surface panorama from Lunokhod 1's vidicon
+    // panoramic scanner. Soviet pre-1973 work, PD-Russia.
+    srcAzimuthDeg: 240,
+    srcElevationTopDeg: 28,
+    srcElevationBottomDeg: 28,
+    caption:
+      'Lunokhod 1 surface panorama — Mare Imbrium, Nov 1970. Rover deck + wheel tracks ' +
+      'visible across the foreground. Lunokhod 1 returned 206 panoramas over its 322 Earth-day ' +
+      'operation, all monochrome via the vidicon panoramic scanner. The first wheeled rover ' +
+      'on another world. Soviet Academy of Sciences (PD-Russia).',
+    palette: {
+      regolith: [110, 110, 110],
+    },
+    recolourBlackThreshold: 20, // preserve historic transmission texture
+  },
+  {
+    siteId: 'luna21',
+    sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Lunokhod-2_model.jpg',
+    sourceLabel: 'Lunokhod 2 engineering model (Memorial Museum of Cosmonautics, Moscow)',
+    attribution: 'Memorial Museum of Cosmonautics, Moscow · public exhibit photograph',
+    license: 'PD-Russia',
+    // 1360×1024 ≈ 1.33:1. Museum engineering model of Lunokhod 2 — no
+    // surface panorama published on Wikimedia or accessible to Western
+    // archives (planetology.ru / mentallandscape archives require manual
+    // navigation). Per ship-with-honest-caption: use the canonical
+    // public reference photo of the rover hardware and caption it
+    // honestly.
+    srcAzimuthDeg: 50,
+    srcElevationTopDeg: 19,
+    srcElevationBottomDeg: 19,
+    caption:
+      'Lunokhod 2 (Luna 21) engineering model, Memorial Museum of Cosmonautics, Moscow. ' +
+      'Lunokhod 2 traversed 39 km across Le Monnier crater Jan–May 1973 — still the longest ' +
+      'off-Earth distance covered by any rover until Opportunity passed it in 2014. The flight ' +
+      'rover returned 86 surface panoramas, archived in Russia at the Vernadsky Institute ' +
+      '(planetology.ru) — not redistributed in Western archives. PD-Russia.',
+  },
+  {
+    siteId: 'luna24',
+    sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png',
+    sourceLabel: 'Luna 24 landing site, LRO NAC orbital view (NASA / NSSDC)',
+    attribution: 'NASA / GSFC / Arizona State University · LRO Camera (NAC)',
+    license: 'PD-NASA',
+    // 1000×1000 ≈ 1:1 LRO orbital view of Luna 24 lander remnants in
+    // Mare Crisium with 25 m scale bar. Luna 24 had only a fixed TV
+    // camera on the descent stage; no surface panorama exists.
+    // Per ship-with-honest-caption pattern (mars3 / luna16): ship
+    // the LRO orbital view as the closest landing-site reference.
+    srcAzimuthDeg: 60,
+    srcElevationTopDeg: 30,
+    srcElevationBottomDeg: 30,
+    caption:
+      'Luna 24 landing site, Mare Crisium (Aug 1976) — modern LRO NAC orbital view. ' +
+      'Luna 24 was the last Soviet Moon mission and the final lunar sample return until ' +
+      "Chang'e 5 in 2020. It carried only a fixed descent-stage TV camera, not a panoramic " +
+      'system; no Earth-transmitted surface panorama exists. NASA / GSFC / Arizona State.',
+  },
+  {
+    siteId: 'beresheet',
+    sourceUrl: 'https://cdn.mos.cms.futurecdn.net/9n8MuELHBDaLe5cxtrKMbj.jpeg',
+    sourceLabel: 'Beresheet final descent frame (SpaceIL, April 2019)',
+    attribution: 'SpaceIL · IAI · Beresheet descent camera (final transmission)',
+    license: 'SpaceIL-EDU',
+    // 999×577 ≈ 1.73:1 final transmitted frame at ~22 km altitude
+    // before main-engine failure + LOS. No surface imagery exists.
+    srcAzimuthDeg: 80,
+    srcElevationTopDeg: 25,
+    srcElevationBottomDeg: 46,
+    caption:
+      'Beresheet final descent frame — last image transmitted at ~22 km altitude over ' +
+      'Mare Serenitatis (April 11 2019) before main-engine failure and loss of comms. ' +
+      'Beresheet was the first privately-funded lunar lander and the first Israeli Moon ' +
+      'mission; the descent camera transmitted continuous frames during the powered descent. ' +
+      'No surface imagery exists. SpaceIL · Israel Aerospace Industries.',
+  },
 ];
 
 interface FetchResult {

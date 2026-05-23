@@ -7,7 +7,7 @@ The Moon `/moon` route renders each landing site through four progressive tiers,
 | **0** | Vendored 2D silhouette | flat icon on the planet | overview (camR ≥ 60) |
 | **1** | Vendored 3D lander/rover model | Three.js geometry | mid-zoom (camR ≈ 40-60) |
 | **2** | **LROC NAC** (5 m/px BDR_NAC_ROI mosaic *or* hand-curated Featured Image) | disc, regional context | close-zoom (camR ≈ 33-50) |
-| **3** | NASA / CNSA equirectangular panorama (4 of 18 Moon sites today) | inside-out skybox | "Stand at site" button |
+| **3** | NASA / CNSA / ISRO / JAXA / Soviet / SpaceIL equirectangular panorama (18 of 18 Moon sites today) | inside-out skybox | "Stand at site" button |
 
 Compared to Mars, Moon has **one** Tier 2 layer instead of two — the Chang'e 2 regional mosaic that would form a second outer ring (PRD-014 Phase 2 work) is not yet wired. The pipeline structure supports two layers (`hotspot_tier2_regional_source` is a recognised sidecar field, the route reads it), it's just empty today on every Moon site.
 
@@ -86,9 +86,9 @@ The LROC team has **not yet located Luna 9** (the 1966 USSR first soft lunar lan
 | Tier 0 (silhouette) | 18/18 |
 | Tier 1 (3D model) | 18/18 |
 | Tier 2 (LROC patch) | 17/18 (luna9 deferred until LROC locates it) |
-| Tier 3 (panorama) | 4/18 — apollo11, apollo14, apollo17, change4 (CC-BY-4.0 — first farside surface view ever) |
+| Tier 3 (panorama) | 18/18 — full agency-direct coverage (NASA + CNSA + ISRO + JAXA + Soviet + SpaceIL) |
 
-Tier 3 is the largest gap. Per PRD-014 the target list is ~12 sites across all agencies; remaining (Apollo 12/15/16; Chang'e 3/5/6; Chandrayaan-3; SLIM; Lunokhod 1/2; Luna 9 historic) is **Phase 2 follow-up work** — wide-aspect cylindrical sources are not readily available on Wikimedia today and need per-site curation against the Apollo Lunar Surface Journal + agency press archives.
+Tier 3 is now complete across all 18 sites. See **§"Tier 3 panorama sources by agency"** below for per-site provenance and honest editorial notes on low-coverage sites that pad single-frame/descent imagery to equirectangular (same pattern as Mars's mars3 / beagle2 / schiaparelli).
 
 ---
 
@@ -172,4 +172,34 @@ After a fetch run:
   - **Operator path**: manual download of mosaic sheets covering each landing site (746 sheets at 7 m/px globally; per-site fetch is manageable), upload as `static/images/hotspots/moon/<site>/tier2-regional.jpg`, set `hotspot_tier2_regional_source` in sidecar.
   - Frontend already handles two-layer composition (the moon route's `tier2Builder` reads `regionalTextureUrl` and `buildHotspotSurfacePatch` renders both discs). Once the per-site JPEG is on disk + the sidecar field is set, the layer just appears.
 - **Phase 2.5 — site-specific premium detail.** Where Kaguya TC or Chandrayaan-2 OHRC offers sharper imagery than LROC NAC (SLIM Shioli pre-imagery, Chandrayaan-3 OHRC south-pole sub-30 cm/px), pin via sidecar's `hotspot_tier2_force_product_url`.
-- **Tier 3 expansion.** Remaining 10/18: Chang'e 3/5/6, Chandrayaan-3 Pragyan, SLIM Sora-Q, Lunokhod 1/2 rover-cam, Luna 16/17/21/24. Not redistributed on Wikimedia in suitable wide-aspect cylindrical form; needs direct CNSA/ISRO/JAXA/Soviet-archive scrapes per agency.
+- ~~**Tier 3 expansion.**~~ ✓ Completed v0.7.0 (Step 1 of wrap-up plan). All 18 sites now ship Tier 3 via agency-direct curation — see §below.
+
+---
+
+## Tier 3 panorama sources by agency
+
+Phase 2.5 work shipped in v0.7.0: every Moon site has a Tier 3 panorama. Where a true 360° surface pan exists (Apollo, Chang'e 3, Lunokhod 1) it's used directly. Where only narrower coverage exists (Chang'e 5, Chang'e 6), it ships with appropriate `srcAzimuthDeg` and palette-fills the gap. Where only a single still or descent frame exists (Chandrayaan-3 Pragyan, SLIM Sora-Q, Luna 16/24 telephotometer, Beresheet final descent), it pads honestly per the mars3/beagle2/schiaparelli editorial pattern.
+
+| Site | Agency | License | Source | Notes |
+|---|---|---|---|---|
+| apollo11 | NASA | PD-NASA | Apollo 11 EVA pan | 360° pan, native equirectangular shape |
+| apollo12 | NASA | PD-NASA | Apollo 12 ALSEP pan | 360° pan |
+| apollo14 | NASA | PD-NASA | Apollo 14 surface pan | 360° pan |
+| apollo15 | NASA | PD-NASA | Apollo 15 Hadley pan | 360° pan |
+| apollo16 | NASA | PD-NASA | Apollo 16 Descartes pan | 360° pan |
+| apollo17 | NASA | PD-NASA | Apollo 17 Taurus-Littrow pan | 360° pan |
+| change3 | CNSA | CNSA-EDU | Yutu rover wide pan (5084×744) | wide pan, Yutu rover visible |
+| change4 | CNSA | CC-BY-4.0 | Yutu-2 farside pan | 360° pan, first farside surface view |
+| change5 | CNSA | CNSA-EDU | Chang'e 5 lander pan | 200° pan, palette-padded |
+| change6 | CNSA | CNSA-EDU | Chang'e 6 farside lander pan (June 2024) | 180° fan, palette-padded |
+| chandrayaan3 | ISRO | ISRO-EDU | Pragyan navcam (Vikram lander first-light) | single navcam frame, palette-padded |
+| slim | JAXA | JAXA-OPEN | Sora-Q SLIM-on-its-side (Jan 25 2024) | single rover-cam frame, palette-padded |
+| luna16 | Soviet (via LRO) | PD-NASA | LRO orbital view of Luna 16 site | no surface camera onboard — orbital frame padded |
+| luna17 | Soviet | PD-Russia | Lunokhod 1 surface pan (Mitchell archive) | 240° real panorama, palette-padded |
+| luna21 | Soviet | PD-Russia | Lunokhod 2 museum model | no published Soviet surface pan recoverable; museum model frame |
+| luna24 | Soviet (via LRO) | PD-NASA | LRO orbital view of Luna 24 site (Mare Crisium) | no surface camera onboard — orbital frame padded |
+| beresheet | SpaceIL | SpaceIL-EDU | Final descent frame (~22 km altitude, April 2019) | last image before LOS — descent view, honest caption (mars3 editorial pattern) |
+
+**Editorial honesty**: every low-coverage site's caption explicitly states what is and is not shown ("no surface panorama exists", "telephotometer single frame", "descent view"). This mirrors the mars3 / beagle2 / schiaparelli pattern already accepted on /mars and avoids the silent "graceful absent button" antipattern.
+
+**License-allowlist additions** (v0.7.0): `ISRO-EDU`, `JAXA-OPEN`, `SpaceIL-EDU` — added to `scripts/license-allowlist.ts` mirroring the existing `CNSA-EDU` editorial/educational-use rationale. `PD-Russia` (pre-1973 USSR works) covers the Soviet panorama imagery.

@@ -50,6 +50,7 @@
       year: 1997,
       blurb:
         "From Sagan's novel. The most respectful Hollywood film about SETI ever made — gets the science right, the politics right, and treats faith as a serious counterweight rather than a strawman.",
+      cover: '/images/recommendations/films/contact.jpg',
     },
     {
       title: 'Interstellar',
@@ -57,6 +58,7 @@
       year: 2014,
       blurb:
         'Kip Thorne consulted on the physics; the black-hole render in the film led to a peer-reviewed paper. Hard SF wrapped in a family story. The hour-on-the-water-planet scene is the best illustration of time dilation in any medium.',
+      cover: '/images/recommendations/films/interstellar.jpg',
     },
     {
       title: '2001: A Space Odyssey',
@@ -64,6 +66,7 @@
       year: 1968,
       blurb:
         "Made before Apollo 11 landed. Kubrick refused to fake anything he couldn't justify physically: rotating-habitat gravity, vacuum silence, slow ballistic trajectories. The visual language of every serious space film since.",
+      cover: '/images/recommendations/films/2001-a-space-odyssey.jpg',
     },
     {
       title: 'The Martian',
@@ -71,6 +74,7 @@
       year: 2015,
       blurb:
         'An astronaut survives by running the numbers. Hab fabric, RTG, perchlorates, water synthesis — every problem in the film is a real problem and every solution is the one a real engineer would try. Pair with /mars site=curiosity.',
+      cover: '/images/recommendations/films/the-martian.jpg',
     },
     {
       title: 'Apollo 13',
@@ -78,6 +82,7 @@
       year: 1995,
       blurb:
         "Procedural drama for the procedural-drama age. The CO₂ scrubber scene is the platonic ideal of mission-engineer competence; the navigation-by-Earth's-terminator scene is good orbital mechanics.",
+      cover: '/images/recommendations/films/apollo-13.jpg',
     },
     {
       title: 'Moon',
@@ -85,6 +90,7 @@
       year: 2009,
       blurb:
         'Small, quiet, claustrophobic. Sam Rockwell as a lone helium-3 miner on the far side. Practical effects, sparse music, a single performance. The opposite of spectacle SF.',
+      cover: '/images/recommendations/films/moon.jpg',
     },
     {
       title: 'For All Mankind',
@@ -92,6 +98,7 @@
       year: 2019,
       blurb:
         'Alt-history series: what if the Soviets landed on the Moon first? Becomes a multi-decade serious treatment of a near-future space industry. The hardware details are unusually accurate for prestige TV.',
+      cover: '/images/recommendations/films/for-all-mankind-tv.jpg',
     },
   ];
 
@@ -103,6 +110,7 @@
       blurb:
         "Apollo documentary using only the astronauts' own narration over NASA's restored footage. No talking heads, no historians — just the missions. Brian Eno scored it. The reference text.",
       href: 'https://en.wikipedia.org/wiki/For_All_Mankind_(film)',
+      cover: '/images/recommendations/docs/for-all-mankind-1989.jpg',
     },
     {
       title: 'In the Shadow of the Moon',
@@ -111,6 +119,7 @@
       blurb:
         'Interviews with all the surviving Apollo astronauts (no Armstrong; he declined). Layered against archival footage. Best companion piece to the Apollo missions in the /missions catalogue.',
       href: 'https://en.wikipedia.org/wiki/In_the_Shadow_of_the_Moon_(2007_film)',
+      cover: '/images/recommendations/docs/in-the-shadow-of-the-moon.jpg',
     },
     {
       title: 'Cosmos: A Personal Voyage',
@@ -119,6 +128,7 @@
       blurb:
         '13 episodes. Still the best long-form science television ever made. The Voyager imagery was state-of-the-art when it aired; the Library of Alexandria reconstruction still works 45 years later.',
       href: 'https://en.wikipedia.org/wiki/Cosmos:_A_Personal_Voyage',
+      cover: '/images/recommendations/docs/cosmos-personal-voyage.jpg',
     },
     {
       title: 'When We Left Earth: The NASA Missions',
@@ -127,6 +137,7 @@
       blurb:
         'Six episodes covering Mercury, Gemini, Apollo, Shuttle, ISS, and Hubble. NASA opened the archives for it; the unscored mission footage is the highlight.',
       href: 'https://en.wikipedia.org/wiki/When_We_Left_Earth',
+      cover: '/images/recommendations/docs/when-we-left-earth.jpg',
     },
   ];
 
@@ -137,6 +148,7 @@
       blurb:
         "Two space podcasters who actually know what they're talking about, riffing on the week's industry news. Best place to get caught up on commercial spaceflight policy + launch operations.",
       href: 'https://offnominal.space/',
+      cover: '/images/recommendations/podcasts/off-nominal.jpg',
     },
     {
       title: 'Main Engine Cut Off',
@@ -144,6 +156,7 @@
       blurb:
         'Solo deep-dives on specific commercial / NASA program decisions. Tightly edited; ~30 min per episode. Listen to the back catalogue chronologically for a clear narrative of the 2015-2025 launch industry.',
       href: 'https://mainenginecutoff.com/podcast',
+      cover: '/images/recommendations/podcasts/main-engine-cut-off.jpg',
     },
     {
       title: 'Are We There Yet?',
@@ -151,6 +164,7 @@
       blurb:
         'Florida-public-radio space coverage. Strong on Kennedy Space Center + commercial launch site operations. Short episodes, news-driven.',
       href: 'https://www.wmfe.org/podcasts/are-we-there-yet',
+      cover: '/images/recommendations/podcasts/are-we-there-yet.jpg',
     },
   ];
 
@@ -161,6 +175,7 @@
       blurb:
         'KSP-famous Scottish astronomer-turned-explainer. Best at making active mission news comprehensible 24 hours after it happens. Mix of launch breakdowns + historical deep dives.',
       href: 'https://www.youtube.com/@scottmanley',
+      cover: '/images/recommendations/channels/scott-manley.jpg',
     },
     {
       title: 'Everyday Astronaut',
@@ -168,6 +183,7 @@
       blurb:
         'Tim Dodd; long-form interviews with rocket engineers + visual explainers of propulsion concepts. The Raptor-engine series is a free graduate course in modern liquid-fuel design.',
       href: 'https://www.youtube.com/@EverydayAstronaut',
+      cover: '/images/recommendations/channels/everyday-astronaut.jpg',
     },
     {
       title: 'Veritasium',
@@ -175,6 +191,7 @@
       blurb:
         'Derek Muller; broader science channel but the space episodes (light cones, Kessler syndrome, gravitational lensing) are unusually careful with the physics. Good production budget put to honest use.',
       href: 'https://www.youtube.com/@veritasium',
+      cover: '/images/recommendations/channels/veritasium.jpg',
     },
     {
       title: 'PBS Space Time',
@@ -182,6 +199,7 @@
       blurb:
         "For when you want the math. Matt O'Dowd walks through relativity, cosmology, quantum gravity at a level where you'll still need to pause and think. The graduate-level companion to the rest of this list.",
       href: 'https://www.youtube.com/@pbsspacetime',
+      cover: '/images/recommendations/channels/pbs-space-time.jpg',
     },
   ];
 </script>

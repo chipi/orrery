@@ -1287,6 +1287,67 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'PD-NASA',
     fallbackAuthor: 'NASA / Neil Armstrong (Apollo 11, Jul 1969)',
   },
+  // Life-in-Space expansion (RFC follow-ups to the audit, May 2026)
+  'crewed-station-design-iss.jpg': {
+    commons: 'The station pictured from the SpaceX Crew Dragon 5.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (SpaceX Crew-2 Dragon, Nov 2021)',
+  },
+  'eva-operations-sts117.jpg': {
+    commons: 'STS-117 EVA3c.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (STS-117, Jun 2007)',
+  },
+  'eclss-life-support-rack.jpg': {
+    commons: 'SpaceStationCycle.svg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — ISS atmosphere + water + waste cycling overview',
+  },
+  'crew-selection-mercury-seven.jpg': {
+    commons: 'The Mercury 7 (15258556433).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Mercury Seven group photograph, April 1959)',
+  },
+  'pre-flight-training.jpg': {
+    commons: 'Reduced Gravity Walking Simulator - NASA 1963.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA Langley Research Center (Reduced Gravity Walking Simulator, 1963)',
+  },
+  'sleep-nutrition-iss.jpg': {
+    commons: 'Iss016e008792.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (ISS Expedition 16, 2007)',
+  },
+  'suit-lineage-sokol.jpg': {
+    commons: 'Sokol KV2.JPG',
+    agency: 'Roscosmos',
+    fallbackLicense: 'CC-BY-SA-3.0',
+    fallbackAuthor: 'Wikimedia Commons contributor — Sokol KV-2 IVA suit display',
+  },
+  'lunar-surface-ops-apollo17.jpg': {
+    commons: 'Eugene Cernan at the LM, Apollo 17, AS17-134-20378.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Harrison Schmitt (Apollo 17, Dec 1972)',
+  },
+  'mars-human-architecture.jpg': {
+    commons: 'Mars Ice Home concept.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA Langley Research Center / Clouds AO / SEArch (Mars Ice Home concept, 2016)',
+  },
+  'crew-dynamics-mir.jpg': {
+    commons: 'Mir Space Station viewed from Endeavour during STS-89.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Mir from Endeavour, STS-89, Jan 1998)',
+  },
 };
 
 async function buildScienceEntries(): Promise<ProvenanceEntry[]> {
@@ -1315,6 +1376,117 @@ async function buildScienceEntries(): Promise<ProvenanceEntry[]> {
         modifications: ['downloaded-via-commons-filepath', 'reencoded-jpeg'],
       }),
     );
+  }
+  return out;
+}
+
+// ──────────────────────────────────────────────────────────────────────
+// Recommendation thumbnails  (/science/reading-list + /science/watch-list)
+// ──────────────────────────────────────────────────────────────────────
+//
+// 31 thumbnails fetched from publisher-controlled CDNs for recommendation
+// purposes. Each one is a low-resolution cover / poster / avatar used
+// here for *identification* of the work — the same nominative-fair-use
+// pattern every online bookshop, podcast directory, and film database
+// uses. See `static/images/recommendations/README.md` for the rationale +
+// the issue-tracker takedown contact.
+//
+// We file each under the project's existing "fair-use-cover" license
+// rationale (registered in scripts/license-allowlist.ts via this
+// expansion). Source URLs preserved so the Credits page can credit
+// the originator.
+
+type RecommendationSource = {
+  /** Path under static/images/recommendations/, e.g. 'books/cosmos.jpg' */
+  rel: string;
+  /** Title of the underlying work (book title / film title / podcast / channel). */
+  title: string;
+  /** Author / publisher / studio / network as appropriate. */
+  author: string;
+  /** URL of the page or API endpoint we fetched from. */
+  source_url: string;
+};
+
+const RECOMMENDATION_SOURCES: RecommendationSource[] = [
+  // ── Books — Open Library Covers API ──────────────────────────────
+  { rel: 'books/cosmos.jpg', title: 'Cosmos (Carl Sagan, 1980)', author: 'Random House (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780375508325-L.jpg' },
+  { rel: 'books/pale-blue-dot.jpg', title: 'Pale Blue Dot (Carl Sagan, 1994)', author: 'Random House (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780345376596-L.jpg' },
+  { rel: 'books/a-brief-history-of-time.jpg', title: 'A Brief History of Time (Stephen Hawking, 1988)', author: 'Bantam Books (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg' },
+  { rel: 'books/the-right-stuff.jpg', title: 'The Right Stuff (Tom Wolfe, 1979)', author: 'Farrar, Straus and Giroux (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780553381351-L.jpg' },
+  { rel: 'books/packing-for-mars.jpg', title: 'Packing for Mars (Mary Roach, 2010)', author: 'W. W. Norton (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780393339918-L.jpg' },
+  { rel: 'books/rocket-propulsion-elements.jpg', title: 'Rocket Propulsion Elements (Sutton & Biblarz, 2016)', author: 'Wiley (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9781118753651-L.jpg' },
+  { rel: 'books/fundamentals-of-astrodynamics.jpg', title: 'Fundamentals of Astrodynamics (Bate, Mueller & White, 1971)', author: 'Dover Publications (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9780486600611-L.jpg' },
+  { rel: 'books/how-to-read-the-solar-system.jpg', title: 'How to Read the Solar System (Riley & Campbell, 2014)', author: 'Aurum Press (publisher)', source_url: 'https://covers.openlibrary.org/b/isbn/9781845137748-L.jpg' },
+
+  // ── Films — Wikipedia infobox posters ────────────────────────────
+  { rel: 'films/contact.jpg', title: 'Contact (1997 film)', author: 'Warner Bros. (poster designer per Wikipedia infobox)', source_url: 'https://en.wikipedia.org/wiki/Contact_(1997_American_film)' },
+  { rel: 'films/interstellar.jpg', title: 'Interstellar (2014 film)', author: 'Paramount Pictures / Warner Bros.', source_url: 'https://en.wikipedia.org/wiki/Interstellar_(film)' },
+  { rel: 'films/2001-a-space-odyssey.jpg', title: '2001: A Space Odyssey (1968 film)', author: 'MGM (poster designer per Wikipedia infobox)', source_url: 'https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)' },
+  { rel: 'films/the-martian.jpg', title: 'The Martian (2015 film)', author: '20th Century Fox', source_url: 'https://en.wikipedia.org/wiki/The_Martian_(film)' },
+  { rel: 'films/apollo-13.jpg', title: 'Apollo 13 (1995 film)', author: 'Universal Pictures', source_url: 'https://en.wikipedia.org/wiki/Apollo_13_(film)' },
+  { rel: 'films/moon.jpg', title: 'Moon (2009 film)', author: 'Sony Pictures Classics', source_url: 'https://en.wikipedia.org/wiki/Moon_(2009_film)' },
+  { rel: 'films/for-all-mankind-tv.jpg', title: 'For All Mankind (Apple TV+ series, 2019)', author: 'Apple Inc. / Sony Pictures Television', source_url: 'https://en.wikipedia.org/wiki/For_All_Mankind_(TV_series)' },
+
+  // ── Documentaries — Wikipedia infobox posters ────────────────────
+  { rel: 'docs/for-all-mankind-1989.jpg', title: 'For All Mankind (1989 documentary)', author: 'Apollo Associates / Al Reinert', source_url: 'https://en.wikipedia.org/wiki/For_All_Mankind_(film)' },
+  { rel: 'docs/in-the-shadow-of-the-moon.jpg', title: 'In the Shadow of the Moon (2007 documentary)', author: 'ThinkFilm / Velocity Films', source_url: 'https://en.wikipedia.org/wiki/In_the_Shadow_of_the_Moon_(2007_film)' },
+  { rel: 'docs/cosmos-personal-voyage.jpg', title: 'Cosmos: A Personal Voyage (PBS, 1980)', author: 'PBS / KCET', source_url: 'https://en.wikipedia.org/wiki/Cosmos:_A_Personal_Voyage' },
+  { rel: 'docs/when-we-left-earth.jpg', title: 'When We Left Earth: The NASA Missions (Discovery, 2008)', author: 'Discovery Communications', source_url: 'https://en.wikipedia.org/wiki/When_We_Left_Earth' },
+
+  // ── Podcasts — iTunes Search API artwork ─────────────────────────
+  { rel: 'podcasts/off-nominal.jpg', title: 'Off-Nominal (podcast)', author: 'Jake Robins & Anthony Colangelo', source_url: 'https://itunes.apple.com/search?term=Off-Nominal&entity=podcast' },
+  { rel: 'podcasts/main-engine-cut-off.jpg', title: 'Main Engine Cut Off (podcast)', author: 'Anthony Colangelo', source_url: 'https://itunes.apple.com/search?term=Main+Engine+Cut+Off&entity=podcast' },
+  { rel: 'podcasts/are-we-there-yet.jpg', title: 'Are We There Yet? (podcast)', author: 'WMFE / Brendan Byrne', source_url: 'https://itunes.apple.com/search?term=Are+We+There+Yet+WMFE+space&entity=podcast' },
+
+  // ── YouTube channels — public yt3.googleusercontent.com avatars ─
+  { rel: 'channels/scott-manley.jpg', title: 'Scott Manley (YouTube channel)', author: 'Scott Manley', source_url: 'https://www.youtube.com/@scottmanley' },
+  { rel: 'channels/everyday-astronaut.jpg', title: 'Everyday Astronaut (YouTube channel)', author: 'Tim Dodd', source_url: 'https://www.youtube.com/@EverydayAstronaut' },
+  { rel: 'channels/veritasium.jpg', title: 'Veritasium (YouTube channel)', author: 'Derek Muller', source_url: 'https://www.youtube.com/@veritasium' },
+  { rel: 'channels/pbs-space-time.jpg', title: 'PBS Space Time (YouTube channel)', author: 'PBS Digital Studios / Matt O\'Dowd', source_url: 'https://www.youtube.com/@pbsspacetime' },
+
+  // ── Blogs — OG-image / apple-touch-icon ──────────────────────────
+  { rel: 'blogs/the-planetary-society.jpg', title: 'The Planetary Society (site logo)', author: 'The Planetary Society', source_url: 'https://www.planetary.org/' },
+  { rel: 'blogs/casey-handmer.jpg', title: 'Casey Handmer\'s Blog (site avatar)', author: 'Casey Handmer', source_url: 'https://caseyhandmer.wordpress.com/' },
+  { rel: 'blogs/ars-technica.jpg', title: 'Ars Technica (site logo)', author: 'Ars Technica / Condé Nast', source_url: 'https://arstechnica.com/' },
+  { rel: 'blogs/nasaspaceflight.jpg', title: 'NASA Spaceflight (site logo)', author: 'NASASpaceflight.com', source_url: 'https://www.nasaspaceflight.com/' },
+  { rel: 'blogs/damn-interesting.jpg', title: 'Damn Interesting (site logo)', author: 'Alan Bellows / Damn Interesting', source_url: 'https://www.damninteresting.com/' },
+];
+
+async function buildRecommendationEntries(): Promise<ProvenanceEntry[]> {
+  const root = 'static/images/recommendations';
+  if (!(await pathExists(root))) return [];
+  const out: ProvenanceEntry[] = [];
+
+  // Index for O(1) lookup of the curated metadata.
+  const byRel = new Map(RECOMMENDATION_SOURCES.map((s) => [s.rel, s]));
+
+  // Walk every JPG under each subdir.
+  const subdirs = ['books', 'films', 'docs', 'podcasts', 'channels', 'blogs'];
+  for (const sub of subdirs) {
+    const dir = `${root}/${sub}`;
+    if (!(await pathExists(dir))) continue;
+    const files = (await readdir(dir)).sort();
+    for (const f of files) {
+      if (!/\.(jpe?g|png|webp)$/i.test(f)) continue;
+      const rel = `${sub}/${f}`;
+      const meta = byRel.get(rel);
+      if (!meta) {
+        console.warn(`    ⚠ recommendation thumbnail without source mapping: ${rel}`);
+        continue;
+      }
+      out.push(
+        await buildCuratedEntry({
+          localPath: `${root}/${rel}`,
+          filename: meta.title,
+          source_url: meta.source_url,
+          source_type: 'direct-other',
+          author: meta.author,
+          agency: 'publisher',
+          license: 'fair-use-cover',
+          modifications: ['downloaded', 'resized-300px', 'reencoded-jpeg-q80'],
+        }),
+      );
+    }
   }
   return out;
 }
@@ -1446,6 +1618,9 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
       }),
     );
   }
+
+  console.log('Recommendation thumbnails (/science/reading-list + /science/watch-list)…');
+  out.push(...(await buildRecommendationEntries()));
 
   console.log('Solar System Scope textures…');
   const textureDir = 'static/textures';

@@ -1,0 +1,36 @@
+{
+  "id": "mars-human-architecture",
+  "tab": "life-in-space",
+  "order": 19,
+  "photo": {
+    "src": "/images/science/mars-human-architecture.jpg",
+    "credit": "NASA Langley Research Center / Clouds AO / SEArch · Mars Ice Home concept (2016). One of dozens of architecture studies for crewed Mars surface stays — this one uses on-site water-ice as inflatable-shell radiation shielding. The actual deployed architecture isn't yet decided; this image stands for the design conversation."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Mars sample-return (planned), Artemis-bound architecture studies (long-term), the existing /mars rover catalogue is the closest operational analog" },
+    { "route": "/mars", "context_key": "Hotspots + rovers + their landing zones — every site in the catalogue is a candidate landing ellipse for crewed Mars" },
+    { "route": "/fleet", "context_key": "Crewed-Mars-class spacecraft are largely conceptual today; the Mars transit habitat is the limiting design problem" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Mars Design Reference Architecture (DRA 5.0)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2015/02/373665main_nasa-sp-2009-566.pdf",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Moon to Mars Architecture",
+      "u": "https://www.nasa.gov/moontomarsarchitecture/",
+      "t": "core"
+    },
+    {
+      "l": "NASA Technical Reports · Human Mars Mission Architecture Trade Study",
+      "u": "https://ntrs.nasa.gov/citations/20140017546",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Human mission to Mars",
+      "u": "https://en.wikipedia.org/wiki/Human_mission_to_Mars",
+      "t": "deep"
+    }
+  ]
+}

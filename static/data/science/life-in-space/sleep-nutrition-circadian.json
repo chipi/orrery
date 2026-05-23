@@ -1,0 +1,36 @@
+{
+  "id": "sleep-nutrition-circadian",
+  "tab": "life-in-space",
+  "order": 16,
+  "photo": {
+    "src": "/images/science/sleep-nutrition-iss.jpg",
+    "credit": "NASA · ISS Expedition 16 (2007). Sleep stations on station are personal closet-sized telephone-booths with a wall-anchored sleeping bag, ventilation fan, and personal lighting. The architecture is closer to a submarine bunk than a hotel room — privacy in microgravity is a designed-in luxury."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Harmony (Node 2) — the dining + sleep-quarters cluster; Tranquility (Node 3) — exercise equipment + waste/water; Destiny — galley microwave + dining table" },
+    { "route": "/tiangong", "context_key": "Tianhe core module — the Chinese architecture has sleep + dining inside the single living module" },
+    { "route": "/missions", "context_key": "ISS expeditions, future Mars-class transits — 6+ month missions are where the sleep + nutrition stack matters most" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Crew Sleep and Performance",
+      "u": "https://www.nasa.gov/humans-in-space/sleep-in-space/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Technical Reports · Sleep, Circadian Rhythms, and Performance During Space Missions",
+      "u": "https://ntrs.nasa.gov/citations/20140002942",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Space Food Systems Laboratory",
+      "u": "https://www.nasa.gov/audience/foreducators/spacefood/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Sleep in space",
+      "u": "https://en.wikipedia.org/wiki/Sleep_in_space",
+      "t": "deep"
+    }
+  ]
+}

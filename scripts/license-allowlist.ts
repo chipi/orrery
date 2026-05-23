@@ -161,6 +161,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'fair-use-cover',
+    display: 'Cover / poster thumbnail (nominative fair use)',
+    url: 'https://www.copyright.gov/title17/92chap1.html#107',
+    rationale:
+      'Low-resolution thumbnail of a commercial work (book cover, film poster, podcast art, channel avatar, site logo) used for identification + recommendation purposes on /science/reading-list and /science/watch-list. The standard nominative-fair-use pattern recognised in US 17 USC §107 + equivalent doctrine internationally, used by every online bookshop / podcast directory / film database. Copyright remains with the rightsholder; takedown contact in static/images/recommendations/README.md.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'CC-BY-SA-1.0',
     display: 'Creative Commons Attribution-ShareAlike 1.0',
     url: 'https://creativecommons.org/licenses/by-sa/1.0/',

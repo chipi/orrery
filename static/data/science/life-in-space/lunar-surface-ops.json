@@ -1,0 +1,36 @@
+{
+  "id": "lunar-surface-ops",
+  "tab": "life-in-space",
+  "order": 18,
+  "photo": {
+    "src": "/images/science/lunar-surface-ops-apollo17.jpg",
+    "credit": "NASA · Apollo 17 (Dec 1972) — Eugene Cernan at the Lunar Module before the last EVA of the program. Three lunar EVAs in three days, 22 hours total outside the LM, 110 kg of samples — the most ambitious lunar surface stay ever attempted. Artemis III's planned ~6.5-day stay will be the first crewed surface operation to exceed it."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Apollo 11–17 (crewed), Artemis II–III (planned), Chang'e 5/6 sample-return as comparison robotic analogs — every lunar surface mission has different physiological + operational profiles" },
+    { "route": "/moon", "context_key": "Apollo 11–17 + Artemis III landing sites — each carries duration + sample-mass + traverse-distance fields that lunar-surface ops directly constrain" },
+    { "route": "/fleet", "context_key": "A7L, A7LB (Apollo lunar suits), AxEMU (Artemis lunar suit, Axiom Space build) — surface-rated suits are a distinct class from station EVA suits" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Artemis Surface Operations",
+      "u": "https://www.nasa.gov/humans-in-space/artemis/",
+      "t": "intro"
+    },
+    {
+      "l": "Lunar and Planetary Institute · Apollo Surface Operations",
+      "u": "https://www.lpi.usra.edu/lunar/missions/apollo/",
+      "t": "core"
+    },
+    {
+      "l": "NASA Technical Reports · Apollo Lunar Surface Journal (full crew transcripts)",
+      "u": "https://www.hq.nasa.gov/alsj/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Lunar dust",
+      "u": "https://en.wikipedia.org/wiki/Lunar_soil",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "suit-lineage",
+  "tab": "life-in-space",
+  "order": 17,
+  "photo": {
+    "src": "/images/science/suit-lineage-sokol.jpg",
+    "credit": "Wikimedia Commons · Sokol-KV2 IVA suit on display. The Soviet Sokol family — designed in 1973 after the Soyuz 11 fatal decompression — is the parent design of every modern launch-and-entry suit in service, including the Chinese Shenzhou IVA and (philosophically) the SpaceX Crew Dragon IVA."
+  },
+  "see_in_app": [
+    { "route": "/fleet", "context_key": "Sokol KV-2, Sokol-M, Orlan-MKS, Feitian, A7L, A7LB, AxEMU, EMU, Krechet-94, ACES, SpaceX IVA, Starliner IVA, Shenzhou IVA — every spacesuit in the fleet catalogue traces back to one of three design lineages described in this article" },
+    { "route": "/missions", "context_key": "Apollo 11–17 (A7L / A7LB), all post-1973 Soyuz flights (Sokol family), all Shuttle EVAs (EMU), Shenzhou EVAs (Feitian), Artemis II/III (AxEMU)" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Spacesuit Reference",
+      "u": "https://www.nasa.gov/general/spacesuits/",
+      "t": "intro"
+    },
+    {
+      "l": "Smithsonian Air and Space · Spacesuit Collection",
+      "u": "https://airandspace.si.edu/explore/topics/space/spacesuits",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Space suit",
+      "u": "https://en.wikipedia.org/wiki/Space_suit",
+      "t": "core"
+    },
+    {
+      "l": "NASA Technical Reports · A History of U.S. Space Suits (NASA SP-2007-562)",
+      "u": "https://ntrs.nasa.gov/citations/20070030291",
+      "t": "deep"
+    }
+  ]
+}

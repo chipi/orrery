@@ -1,0 +1,36 @@
+{
+  "id": "crew-dynamics-psychology",
+  "tab": "life-in-space",
+  "order": 20,
+  "photo": {
+    "src": "/images/science/crew-dynamics-mir.jpg",
+    "credit": "NASA · Mir Space Station as photographed from Space Shuttle Endeavour during STS-89 (January 1998). Mir's 15-year operational life included a fire, a depressurisation, and the longest continuous-occupation crew rotation in history before ISS. Most of what we know about crew dynamics under stress was learned on Mir."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "ISS expeditions (Expedition 1, 2000 → current), Mir expeditions (especially EO-23 / EO-24 / EO-25 in 1997 covering the fire + collision), long-duration analog campaigns" },
+    { "route": "/iss", "context_key": "Modular international architecture — multi-national crews working together is the operational norm now, but it was hard-won" },
+    { "route": "/tiangong", "context_key": "Single-agency station — the comparison case to ISS's international model" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Behavioral Health and Performance",
+      "u": "https://www.nasa.gov/hrp/elements/behavioral-health-and-performance/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Technical Reports · Lessons from the Soviet/Russian Crewed Spaceflight Program (NASA SP-2004-571)",
+      "u": "https://ntrs.nasa.gov/citations/20050020082",
+      "t": "core"
+    },
+    {
+      "l": "Patricia Santy · Choosing the Right Stuff (1994 — astronaut psychology overview)",
+      "u": "https://www.google.com/books/edition/Choosing_the_Right_Stuff/0nEmAQAAIAAJ",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Effect of spaceflight on the human body — psychology",
+      "u": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body",
+      "t": "deep"
+    }
+  ]
+}

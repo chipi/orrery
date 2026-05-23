@@ -107,6 +107,59 @@ const PANORAMAS: MoonPanoramaConfig[] = [
       'lunar regolith and crater field. 32454×2554 px Hasselblad composite (NASA JSC, 2007).',
   },
   {
+    siteId: 'apollo15',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/d/d4/' +
+      'Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp',
+    sourceLabel: "Apollo 15 Jim's ALSEP Pan EVA-2",
+    attribution: 'NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ',
+    license: 'PD-NASA',
+    // 4167×605 ≈ 6.9:1 — roughly 200° wide, ~30° vertical.
+    srcAzimuthDeg: 200,
+    srcElevationTopDeg: 15,
+    srcElevationBottomDeg: 15,
+    caption:
+      'Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ' +
+      'ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. ' +
+      'NASA / Scott / Irwin via Apollo Lunar Surface Journal.',
+  },
+  {
+    siteId: 'apollo16',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/f/f4/' +
+      'Apollo_16_-_ALSEP_Pan_HR_2_panorama.jpg',
+    sourceLabel: 'Apollo 16 ALSEP Pan HR 2',
+    attribution: 'NASA / John Young / Charlie Duke · assembled by Eric Jones · via ALSJ',
+    license: 'PD-NASA',
+    // 17660×3797 ≈ 4.6:1 — wide cylindrical, ~270° × ~60°.
+    srcAzimuthDeg: 270,
+    srcElevationTopDeg: 30,
+    srcElevationBottomDeg: 30,
+    caption:
+      'Descartes Highlands ALSEP panorama. Orion LM + ALSEP central station + LRV; ' +
+      'Stone Mountain on the horizon. Apollo 16, April 21 1972. ' +
+      'NASA / Young / Duke via Apollo Lunar Surface Journal (Eric Jones composite).',
+  },
+  {
+    siteId: 'luna9',
+    sourceUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/7/78/' +
+      'First_Photo_from_the_Surface_of_the_Moon.jpg',
+    sourceLabel: 'Luna 9 first surface photo (1966)',
+    attribution:
+      'Soviet Academy of Sciences · public domain (Russian copyright law: no creative agency)',
+    license: 'PD-NASA', // treating as PD-equivalent; license_rationale captures the Soviet provenance
+    // 789×550 — historic low-res partial pan. Treat as ~120° × ~40°.
+    srcAzimuthDeg: 120,
+    srcElevationTopDeg: 20,
+    srcElevationBottomDeg: 20,
+    caption:
+      'Luna 9 — the first photograph from the lunar surface, transmitted Feb 4 1966 ' +
+      'from Oceanus Procellarum. Soviet Academy of Sciences, intercepted + decoded by ' +
+      'Jodrell Bank Observatory + Daily Express. Public domain (Russian copyright).',
+    recolourBlackThreshold: 30, // gentler — Luna 9 transmission noise is naturally dark
+  },
+  {
     siteId: 'apollo17',
     sourceUrl:
       'https://upload.wikimedia.org/wikipedia/commons/1/18/' +

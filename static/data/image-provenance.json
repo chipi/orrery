@@ -29708,7 +29708,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "JSC2007-E-045375",
-      "fetched_at": "2026-05-23T02:49:32.363Z"
+      "fetched_at": "2026-05-23T04:16:28.010Z"
     },
     {
       "id": "6b534d68d29eed8d",
@@ -29729,7 +29729,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Jack's Color ALSEP Pan (USGS)",
-      "fetched_at": "2026-05-23T02:49:32.363Z"
+      "fetched_at": "2026-05-23T04:16:28.010Z"
     },
     {
       "id": "3fc54a1d390c99da",
@@ -29750,7 +29750,7 @@
       "revid": null,
       "pageid": null,
       "nasa_id": "Apollo 14 LM 12 O'clock Pan Hi-Res",
-      "fetched_at": "2026-05-23T02:49:32.362Z"
+      "fetched_at": "2026-05-23T04:16:28.010Z"
     },
     {
       "id": "a57e8ad227a8f74b",
@@ -29771,7 +29771,70 @@
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-05-23T02:49:32.363Z"
+      "fetched_at": "2026-05-23T04:16:28.010Z"
+    },
+    {
+      "id": "25d8f4ce079a76f7",
+      "path": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Hadley Rille ALSEP panorama, end of EVA-2. Falcon LM + Lunar Roving Vehicle + ALSEP central station; Mount Hadley massif visible. Apollo 15, Aug 1 1971. NASA / Scott / Irwin via Apollo Lunar Surface Journal.",
+      "author": "NASA / Dave Scott / Jim Irwin · assembled by Dave Byrne · via ALSJ",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Jim%27s_ALSEP_Pan_at_the_end_of_EVA-2.webp",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Apollo 15 Jim's ALSEP Pan EVA-2",
+      "fetched_at": "2026-05-23T04:16:28.010Z"
+    },
+    {
+      "id": "b6983c06c0ce8b71",
+      "path": "/images/hotspots/moon/apollo16/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Descartes Highlands ALSEP panorama. Orion LM + ALSEP central station + LRV; Stone Mountain on the horizon. Apollo 16, April 21 1972. NASA / Young / Duke via Apollo Lunar Surface Journal (Eric Jones composite).",
+      "author": "NASA / John Young / Charlie Duke · assembled by Eric Jones · via ALSJ",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apollo_16_-_ALSEP_Pan_HR_2_panorama.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apollo_16_-_ALSEP_Pan_HR_2_panorama.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Apollo 16 ALSEP Pan HR 2",
+      "fetched_at": "2026-05-23T04:16:28.010Z"
+    },
+    {
+      "id": "280e1b038ab8bd57",
+      "path": "/images/hotspots/moon/luna9/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Luna 9 — the first photograph from the lunar surface, transmitted Feb 4 1966 from Oceanus Procellarum. Soviet Academy of Sciences, intercepted + decoded by Jodrell Bank Observatory + Daily Express. Public domain (Russian copyright).",
+      "author": "Soviet Academy of Sciences · public domain (Russian copyright law: no creative agency)",
+      "agency": "NASA",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/First_Photo_from_the_Surface_of_the_Moon.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/First_Photo_from_the_Surface_of_the_Moon.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Luna 9 first surface photo (1966)",
+      "fetched_at": "2026-05-23T04:16:28.010Z"
     }
   ]
 }

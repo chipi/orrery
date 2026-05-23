@@ -1818,10 +1818,8 @@ sample      ${debugInfo.projectedPxSample}`}
     >
       <span class="sr-only">
         You are standing at the landing site. The lander is in front of you. Drag to look around.
+        Press the Exit panorama view button in the detail panel, or press Esc, to return to orbit.
       </span>
-      <button type="button" class="panorama-exit" onclick={exitPanorama}>
-        ↑ Return to orbit
-      </button>
     </div>
   {/if}
 
@@ -1869,19 +1867,31 @@ sample      ${debugInfo.projectedPxSample}`}
             {/if}
           </p>
         {/if}
-        {#if selected.hotspot_tier3_panorama && !panoramaActive}
-          <button
-            type="button"
-            class="stand-at-site"
-            data-testid="stand-at-site"
-            onclick={() =>
-              enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
-            title={isSaveDataActive()
-              ? 'Tap to load panorama (~8 MB) — saveData is on'
-              : 'Stand at this landing site — wrap-around ground view'}
-          >
-            🌐 Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
-          </button>
+        {#if selected.hotspot_tier3_panorama}
+          {#if panoramaActive}
+            <button
+              type="button"
+              class="stand-at-site stand-at-site--exit"
+              data-testid="exit-panorama"
+              onclick={exitPanorama}
+              title="Exit panorama view (Esc)"
+            >
+              Exit panorama view
+            </button>
+          {:else}
+            <button
+              type="button"
+              class="stand-at-site"
+              data-testid="stand-at-site"
+              onclick={() =>
+                enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
+              title={isSaveDataActive()
+                ? 'Tap to load panorama (~8 MB) — saveData is on'
+                : 'Stand at this landing site — wrap-around ground view'}
+            >
+              Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
+            </button>
+          {/if}
         {/if}
       </div>
 
@@ -2187,26 +2197,49 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     pointer-events: auto;
   }
+  /* Port of /mars's stand-at-site button — same slot in the detail
+     panel handles both enter + exit states. Glyph + transparent
+     dark-glass styling match Mars; enter glyph "◐" (planet at
+     night), exit glyph "✕". */
   .stand-at-site {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    margin-top: 8px;
-    background: var(--accent, #4ecdc4);
-    color: #04040c;
-    border: none;
-    border-radius: 4px;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2px;
     font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.5px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
     cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .stand-at-site::before {
+    content: '◐';
+    font-size: 13px;
+    line-height: 1;
+    color: var(--accent, #4ecdc4);
+  }
+  .stand-at-site--exit::before {
+    content: '✕';
+    color: var(--accent, #4ecdc4);
   }
   .stand-at-site:hover,
   .stand-at-site:focus-visible {
-    filter: brightness(1.1);
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent, #4ecdc4);
+    color: #fff;
+    outline: none;
   }
   .panorama-overlay {
     position: fixed;

@@ -173,7 +173,6 @@
     "luna9": {
       "hotspot_tier_max": 3,
       "hotspot_model": "luna-9-spherical",
-      "hotspot_tier2_source": "/images/hotspots/moon/luna9/tier2-lroc.jpg",
       "location_uncertainty_m": 100,
       "hotspot_annotations": [],
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna9/tier3-pan.jpg"

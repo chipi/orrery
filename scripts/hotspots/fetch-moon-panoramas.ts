@@ -116,8 +116,11 @@ const PANORAMAS: MoonPanoramaConfig[] = [
     sourceLabel: 'JSC2007-E-045375',
     attribution: 'NASA / JSC / Apollo Lunar Surface Journal (mosaic by JSC, 2007)',
     license: 'PD-NASA',
+    // 32454×2554 → 12.7:1 aspect. LM Eagle is tall in the source —
+    // bumped elevationTop 14→26 so the LM ascent stage + flag don't
+    // crop at the upper edge.
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 14,
+    srcElevationTopDeg: 26,
     srcElevationBottomDeg: 14,
     caption:
       'Tranquillity Base panoramic mosaic — Apollo 11 LM Eagle, deployed flag, EASEP instrument, ' +
@@ -165,16 +168,23 @@ const PANORAMAS: MoonPanoramaConfig[] = [
     sourceLabel: 'Luna 9 first surface photo (1966)',
     attribution:
       'Soviet Academy of Sciences · public domain (Russian copyright law: no creative agency)',
-    license: 'PD-NASA', // treating as PD-equivalent; license_rationale captures the Soviet provenance
-    // 789×550 — historic low-res partial pan. Treat as ~120° × ~40°.
-    srcAzimuthDeg: 120,
+    license: 'PD-NASA', // PD-equivalent; license_rationale captures the Soviet provenance
+    // 789×550 — the highest-quality version of the historic 1966
+    // radiofax transmission on Wikimedia. There IS no high-res
+    // version; the image is intrinsically low-res because of how
+    // it was originally transmitted. Narrow azimuth (60°) keeps
+    // the source pixels visually larger in the skybox rather than
+    // stretching them across a wider sweep.
+    srcAzimuthDeg: 60,
     srcElevationTopDeg: 20,
-    srcElevationBottomDeg: 20,
+    srcElevationBottomDeg: 25,
     caption:
       'Luna 9 — the first photograph from the lunar surface, transmitted Feb 4 1966 ' +
-      'from Oceanus Procellarum. Soviet Academy of Sciences, intercepted + decoded by ' +
-      'Jodrell Bank Observatory + Daily Express. Public domain (Russian copyright).',
-    recolourBlackThreshold: 30, // gentler — Luna 9 transmission noise is naturally dark
+      'from Oceanus Procellarum via Soviet radiofax. Intercepted + decoded by Jodrell Bank ' +
+      'Observatory + Daily Express. The visible noise + low resolution are intrinsic to ' +
+      'the 1966 transmission tech, not the rendering — this IS the best surviving copy of ' +
+      'the historic first-ever photograph from another world. Soviet Academy of Sciences, PD.',
+    recolourBlackThreshold: 20, // gentle — preserve historic transmission texture
   },
   {
     siteId: 'apollo17',

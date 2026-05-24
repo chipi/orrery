@@ -4,9 +4,7 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+  import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import {
     getMarsSites,
     getMarsTraverse,
@@ -43,7 +41,7 @@
   import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
-  import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
+  import { STAR_FIELD } from '$lib/three-constants';
   import * as m from '$lib/paraglide/messages';
   import type { MarsSite } from '$types/mars-site';
   import Panel from '$lib/components/Panel.svelte';
@@ -466,21 +464,13 @@
     container.appendChild(renderer.domElement);
 
     // EffectComposer for hover-outline (matches /iss post-V1 pattern).
-    const composer = new EffectComposer(renderer);
-    composer.setSize(container.clientWidth, container.clientHeight);
-    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    composer.addPass(new RenderPass(scene, camera));
-    const outlinePass = new OutlinePass(
-      new THREE.Vector2(container.clientWidth, container.clientHeight),
+    const { composer, outlinePass } = createOutlinePassSetup({
+      renderer,
       scene,
       camera,
-    );
-    outlinePass.edgeStrength = OUTLINE_PASS.edgeStrength;
-    outlinePass.edgeGlow = OUTLINE_PASS.edgeGlow;
-    outlinePass.edgeThickness = OUTLINE_PASS.edgeThickness;
-    outlinePass.visibleEdgeColor.setHex(OUTLINE_PASS.visibleEdgeColor);
-    outlinePass.hiddenEdgeColor.setHex(OUTLINE_PASS.hiddenEdgeColor);
-    composer.addPass(outlinePass);
+      width: container.clientWidth,
+      height: container.clientHeight,
+    });
 
     scene.add(new THREE.AmbientLight(0x886655, 0.8));
     const sun = new THREE.DirectionalLight(0xfff4d0, 1.2);

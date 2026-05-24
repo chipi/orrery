@@ -6,15 +6,13 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
+  import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-  import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
+  import { STAR_FIELD } from '$lib/three-constants';
   import { getTiangongModules, getTiangongVisitors, getTiangongModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
@@ -407,21 +405,13 @@
     controls.minDistance = initialDistance * 0.6;
     controls.maxDistance = initialDistance * 3;
 
-    const composer = new EffectComposer(renderer);
-    composer.setSize(container.clientWidth, container.clientHeight);
-    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    composer.addPass(new RenderPass(scene, camera));
-    const outlinePass = new OutlinePass(
-      new THREE.Vector2(container.clientWidth, container.clientHeight),
+    const { composer, outlinePass } = createOutlinePassSetup({
+      renderer,
       scene,
       camera,
-    );
-    outlinePass.edgeStrength = OUTLINE_PASS.edgeStrength;
-    outlinePass.edgeGlow = OUTLINE_PASS.edgeGlow;
-    outlinePass.edgeThickness = OUTLINE_PASS.edgeThickness;
-    outlinePass.visibleEdgeColor.setHex(OUTLINE_PASS.visibleEdgeColor);
-    outlinePass.hiddenEdgeColor.setHex(OUTLINE_PASS.hiddenEdgeColor);
-    composer.addPass(outlinePass);
+      width: container.clientWidth,
+      height: container.clientHeight,
+    });
 
     scene.add(new THREE.AmbientLight(0x445566, 0.55));
     const key = new THREE.DirectionalLight(0xfff4e8, 1.15);

@@ -3,9 +3,7 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
+  import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
@@ -183,21 +181,13 @@
     container.appendChild(renderer.domElement);
 
     // EffectComposer for hover-outline (mirrors /iss + /mars + /moon).
-    const composer = new EffectComposer(renderer);
-    composer.setSize(container.clientWidth, container.clientHeight);
-    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    composer.addPass(new RenderPass(scene, camera));
-    const outlinePass = new OutlinePass(
-      new THREE.Vector2(container.clientWidth, container.clientHeight),
+    const { composer, outlinePass } = createOutlinePassSetup({
+      renderer,
       scene,
       camera,
-    );
-    outlinePass.edgeStrength = 4;
-    outlinePass.edgeGlow = 0.4;
-    outlinePass.edgeThickness = 1.5;
-    outlinePass.visibleEdgeColor.setHex(0x4ecdc4);
-    outlinePass.hiddenEdgeColor.setHex(0x224a48);
-    composer.addPass(outlinePass);
+      width: container.clientWidth,
+      height: container.clientHeight,
+    });
 
     scene.add(new THREE.AmbientLight(0x444466, 0.6));
     const sun = new THREE.DirectionalLight(0xfff4d0, 1.4);

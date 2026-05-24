@@ -11,10 +11,7 @@
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
-  import { OUTLINE_PASS } from '$lib/three-constants';
+  import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
@@ -441,21 +438,13 @@
     controls.minDistance = initialDistance * 0.6;
     controls.maxDistance = initialDistance * 3;
 
-    const composer = new EffectComposer(renderer);
-    composer.setSize(container.clientWidth, container.clientHeight);
-    composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    composer.addPass(new RenderPass(scene, camera));
-    const outlinePass = new OutlinePass(
-      new THREE.Vector2(container.clientWidth, container.clientHeight),
+    const { composer, outlinePass } = createOutlinePassSetup({
+      renderer,
       scene,
       camera,
-    );
-    outlinePass.edgeStrength = OUTLINE_PASS.edgeStrength;
-    outlinePass.edgeGlow = OUTLINE_PASS.edgeGlow;
-    outlinePass.edgeThickness = OUTLINE_PASS.edgeThickness;
-    outlinePass.visibleEdgeColor.setHex(OUTLINE_PASS.visibleEdgeColor);
-    outlinePass.hiddenEdgeColor.setHex(OUTLINE_PASS.hiddenEdgeColor);
-    composer.addPass(outlinePass);
+      width: container.clientWidth,
+      height: container.clientHeight,
+    });
 
     scene.add(new THREE.AmbientLight(0x445566, 0.55));
     const key = new THREE.DirectionalLight(0xfff4e8, 1.15);

@@ -6,6 +6,7 @@
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
+  import { attachPickableHit } from '$lib/three/pickable-hit';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -829,18 +830,7 @@
             }
           });
         }
-        dotGroup.traverse((o) => {
-          if (o instanceof THREE.Mesh || o instanceof THREE.Sprite) {
-            o.userData = { siteId: site.id };
-          }
-        });
-        const hit = new THREE.Mesh(
-          new THREE.SphereGeometry(3, 8, 8),
-          new THREE.MeshBasicMaterial({ visible: false }),
-        );
-        hit.userData = { siteId: site.id };
-        dotGroup.add(hit);
-        dotGroup.userData = { siteId: site.id };
+        attachPickableHit({ dotGroup, siteId: site.id });
         group.add(dotGroup);
 
         // Label + halo (same treatment as surface markers and /earth).

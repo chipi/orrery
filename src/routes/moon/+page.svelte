@@ -6,17 +6,11 @@
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
-  import {
-    NATION_COLORS,
-    colorFor,
-    nationChipFor,
-  } from '$lib/surface-map/nation-palette';
+  import LayerChipRow from '$lib/components/LayerChipRow.svelte';
+  import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
-  import {
-    resolveInitialHotspotsMode,
-    nextHotspotsMode,
-  } from '$lib/surface-map/hotspots-mode';
+  import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -1646,39 +1640,31 @@
       {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-      <button
-        type="button"
-        class="chip"
-        class:active={layerSurface}
-        aria-pressed={layerSurface}
-        onclick={() => (layerSurface = !layerSurface)}
-        title={m.moon_layer_tip_surface()}
-        data-testid="layer-surface"
-      >
-        {m.ui_layer_surface()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layerOrbiters}
-        aria-pressed={layerOrbiters}
-        onclick={() => (layerOrbiters = !layerOrbiters)}
-        title={m.moon_layer_tip_orbiters()}
-        data-testid="layer-orbiters"
-      >
-        {m.ui_layer_orbiters()}
-      </button>
-      <button
-        type="button"
-        class="chip"
-        class:active={layerOrbits}
-        aria-pressed={layerOrbits}
-        onclick={() => (layerOrbits = !layerOrbits)}
-        title={m.moon_layer_tip_orbit_rings()}
-        data-testid="layer-orbits"
-      >
-        {m.ui_layer_orbits()}
-      </button>
+      <LayerChipRow
+        chips={[
+          {
+            testid: 'layer-surface',
+            label: m.ui_layer_surface(),
+            title: m.moon_layer_tip_surface(),
+            active: () => layerSurface,
+            toggle: () => (layerSurface = !layerSurface),
+          },
+          {
+            testid: 'layer-orbiters',
+            label: m.ui_layer_orbiters(),
+            title: m.moon_layer_tip_orbiters(),
+            active: () => layerOrbiters,
+            toggle: () => (layerOrbiters = !layerOrbiters),
+          },
+          {
+            testid: 'layer-orbits',
+            label: m.ui_layer_orbits(),
+            title: m.moon_layer_tip_orbit_rings(),
+            active: () => layerOrbits,
+            toggle: () => (layerOrbits = !layerOrbits),
+          },
+        ]}
+      />
       <button
         type="button"
         class="chip chip-hotspots"

@@ -15,7 +15,9 @@ import type { SurfaceSite } from '$types/surface-site';
  * Returns empty string when the site has neither mission_type nor
  * landing_date — caller can hide the line.
  */
-export function missionContextFor(site: Pick<SurfaceSite, 'mission_type' | 'landing_date'>): string {
+export function missionContextFor(
+  site: Pick<SurfaceSite, 'mission_type' | 'landing_date'>,
+): string {
   const bits: string[] = [];
   if (site.mission_type) bits.push(site.mission_type);
   if (site.landing_date) bits.push(`landed ${site.landing_date}`);

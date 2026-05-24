@@ -36,9 +36,10 @@ export function colorFor(site: Pick<SurfaceSite, 'nation'>): string {
 /** Per-site nation-+-agency badge used by the side panel + tier-context
  *  card. Returns `{ label, color }` for direct render. Falls back to
  *  the raw nation string when no specific mapping matches. */
-export function nationChipFor(
-  site: Pick<SurfaceSite, 'nation' | 'agency'>,
-): { label: string; color: string } {
+export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
+  label: string;
+  color: string;
+} {
   const nation = site.nation ?? '';
   const agency = site.agency ?? '';
   if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };

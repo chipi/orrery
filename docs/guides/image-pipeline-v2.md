@@ -73,8 +73,8 @@ After a successful pipeline run, three new artefacts exist:
 ```
 static/data/image-vision.json              ← machine-generated, committed
 static/data/image-curation.json            ← human-edited, committed
-static/data/audit-report.html              ← gitignored, dev-only
-static/data/image-vision-cost-ledger.json  ← committed (audit trail of API spend)
+static/audit-report.html                   ← gitignored, dev-only (built by scripts/build-audit-report.ts)
+static/data/cost-ledger.json               ← committed (audit trail of API spend)
 .image-cache/                              ← gitignored (per-image hash-keyed scoring + variant cache)
 static/images/<path>/<base>.1x1.jpg        ← machine-generated, committed
 static/images/<path>/<base>.4x3.jpg        ← machine-generated, committed
@@ -225,24 +225,31 @@ The deny-list is permanent. Old entries rotate out of the prompt-context window 
 
 ## Cost ledger — watch the spend
 
-`static/data/image-vision-cost-ledger.json` records every API call:
+`static/data/cost-ledger.json` records every scoring run that actually called the provider (cache-only runs are skipped to keep noise down). One row per CLI invocation:
 
 ```jsonc
 {
-  "version": 1,
+  "version": "1.0",
+  "thresholds": { "soft_usd": 50, "hard_usd": 200 },
   "entries": [
-    { "ts": "2026-05-16T14:32Z", "image_path": "...", "model": "claude-sonnet-4-6",
-      "chars_input": 0, "chars_output": 184, "cost_usd": 0.0512 }
-  ],
-  "monthly_totals": { "2026-05": { "anthropic": 22.45 } }
+    {
+      "ts": "2026-05-24T18:00Z",
+      "scope": "all",
+      "images_processed": 1414,
+      "images_cached": 601,
+      "cost_usd": 6.23,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
 }
 ```
 
-CI cost-cap policy (matches PRD-016 audio):
-- **$50/build soft warn** — pipeline continues, log shows a banner.
-- **$200/build hard halt** — pipeline exits non-zero, cache for completed images preserved, you investigate before re-running.
+Per-image cost detail lives in the `scoring_cost_usd` field on each `image-vision.json` entry (same source of truth). `src/lib/cost-ledger.ts` exposes `loadLedger()`, `appendLedgerEntry()`, `totalSpend()`, `rollingSpend()` (30-day window), and `checkThresholds(ledger, forecastUsd)` for pre-flight cost checks before spending.
 
-If a single `--all` cold build hits $80, that's expected (sized for the whole 1345-entry corpus). The hard halt only triggers on runaway loops or pricing surprises.
+Threshold policy (rolling 30-day spend, matches PRD-016 audio):
+- **$50 soft warn** — pipeline continues, prints `⚠` banner at run end.
+- **$200 hard halt** — `checkThresholds()` returns status `'hard'` and callers should refuse to spend without operator override.
 
 ---
 

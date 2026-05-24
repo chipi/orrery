@@ -8,6 +8,7 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+  import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
   import { OUTLINE_PASS, STAR_FIELD } from '$lib/three-constants';
@@ -689,8 +690,7 @@
     const perfStart = performance.now();
     let perfFrames = 0;
     let raf = 0;
-    let spinTimeAccum = 0;
-    let lastFrameT = 0;
+    const spin = createSpinAccumulator();
 
     function onResize() {
       if (!container) return;
@@ -727,11 +727,8 @@
         }
       }
       const t = performance.now() / 1000;
-      if (lastFrameT === 0) lastFrameT = t;
-      const dt = t - lastFrameT;
-      if (autoSpin) spinTimeAccum += dt;
-      lastFrameT = t;
-      station.rotation.y = spinTimeAccum * 0.028;
+      spin.tick(t, autoSpin);
+      station.rotation.y = spin.value() * 0.028;
       // Sun-tracking solar arrays — slow continuous rotation around each
       // array's SADA axis (one full revolution every ~4 minutes).
       const sunPhase = t * 0.026;

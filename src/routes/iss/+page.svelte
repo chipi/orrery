@@ -8,6 +8,7 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
+  import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
@@ -39,10 +40,7 @@
   let lowMemBanner = $state(false);
   let autoSpin = $state(true);
   let indexOpen = $state(false);
-  let hoverLabelText = $state('');
-  let hoverLabelVisible = $state(false);
-  let hoverLabelLeft = $state(0);
-  let hoverLabelTop = $state(0);
+  let hoverLabel: HoverLabel | undefined = $state();
 
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
@@ -587,27 +585,17 @@
     const hoverLabelAnchor = new THREE.Vector3();
     function updateHoverLabel() {
       const hov = issVisualRef.hoveredId;
-      if (!hov || !container) {
-        if (hoverLabelVisible) hoverLabelVisible = false;
-        return;
-      }
+      if (!hov || !container) return hoverLabel?.hide();
       const mod = moduleListRef.list.find((x) => x.id === hov);
       const meshes = meshById.get(hov);
-      if (!mod || !meshes || meshes.length === 0) {
-        if (hoverLabelVisible) hoverLabelVisible = false;
-        return;
-      }
+      if (!mod || !meshes || meshes.length === 0) return hoverLabel?.hide();
       meshes[0].getWorldPosition(hoverLabelAnchor);
       hoverLabelAnchor.project(camera);
       // Behind camera or off-screen → hide.
-      if (hoverLabelAnchor.z > 1 || hoverLabelAnchor.z < -1) {
-        if (hoverLabelVisible) hoverLabelVisible = false;
-        return;
-      }
-      hoverLabelLeft = (hoverLabelAnchor.x * 0.5 + 0.5) * container.clientWidth;
-      hoverLabelTop = (-hoverLabelAnchor.y * 0.5 + 0.5) * container.clientHeight;
-      hoverLabelText = mod.name;
-      hoverLabelVisible = true;
+      if (hoverLabelAnchor.z > 1 || hoverLabelAnchor.z < -1) return hoverLabel?.hide();
+      const x = (hoverLabelAnchor.x * 0.5 + 0.5) * container.clientWidth;
+      const y = (-hoverLabelAnchor.y * 0.5 + 0.5) * container.clientHeight;
+      hoverLabel?.show(mod.name, x, y);
     }
 
     requestIssMaterialRefresh = () => refreshIssMeshMaterials(performance.now() / 1000);
@@ -821,7 +809,7 @@
       renderer.dispose();
       renderer.domElement.remove();
       issVisualRef.hoveredId = null;
-      hoverLabelVisible = false;
+      hoverLabel?.hide();
       resetIssCamera = () => {};
       requestIssMaterialRefresh = () => {};
     };
@@ -975,14 +963,7 @@
       {/if}
     </aside>
 
-    <div
-      class="hover-label"
-      class:hidden={!hoverLabelVisible || viewMode !== '3d'}
-      style="left: {hoverLabelLeft}px; top: {hoverLabelTop}px"
-      aria-hidden="true"
-    >
-      {hoverLabelText}
-    </div>
+    <HoverLabel bind:this={hoverLabel} suppressed={viewMode !== '3d'} />
 
     <div class="hud-controls" role="group" aria-label={m.iss_hud_aria()}>
       {#if perfBanner}
@@ -1222,29 +1203,10 @@
     margin-top: 28px;
     color: rgba(78, 205, 196, 0.85);
   }
-  .hover-label {
-    position: absolute;
-    z-index: 5;
-    pointer-events: none;
-    transform: translate(-50%, calc(-100% - 12px));
-    padding: 4px 8px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.5);
-    border-radius: 4px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: #4ecdc4;
-    white-space: nowrap;
-    text-transform: uppercase;
-    backdrop-filter: blur(4px);
-  }
-  .hover-label.hidden {
-    display: none;
-  }
-  /* Touch devices: no hover, suppress the label entirely. */
+  /* Touch devices: no hover, suppress the label entirely.
+     Component-side .hover-label lives in $lib/components/HoverLabel.svelte. */
   @media (hover: none) {
-    .hover-label {
+    :global(.hover-label) {
       display: none;
     }
   }

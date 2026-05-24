@@ -34,10 +34,12 @@ describe('science-layers — config', () => {
     expect(new Set(LAYER_ORDER)).toEqual(new Set(Object.keys(LAYER_DEFAULTS) as LayerKey[]));
   });
 
-  it('LAYER_ORDER has 12 layers (matches docs)', () => {
-    // Tracked by README + user-guide as "12 sub-toggleable layers"; this
+  it('LAYER_ORDER has 13 layers (matches docs)', () => {
+    // Tracked by README + user-guide as "13 sub-toggleable layers"; this
     // test breaks if a layer is added/removed without doc update.
-    expect(LAYER_ORDER.length).toBe(12);
+    // 12th was ozone (v0.6); 13th added v0.7 = 'galaxies' (Local Group
+    // billboards on /explore — GH #86).
+    expect(LAYER_ORDER.length).toBe(13);
   });
 });
 

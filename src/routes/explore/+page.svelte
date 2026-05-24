@@ -27,6 +27,7 @@
     BODY_MASS_KG,
     buildArrowTipLabel,
   } from '$lib/orbit-overlays';
+  import { buildLocalGroupLayer } from '$lib/galaxies-layer';
   import { onLayerChange } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
   import * as m from '$lib/paraglide/messages';
@@ -710,6 +711,16 @@
       };
     });
 
+    // Local Group galaxies — billboard sprites on celestial sphere
+    // (GH #86 Lite). Sky-overlay only, not true scale. Hidden by
+    // default; toggled by the 'galaxies' science-layer.
+    const localGroup = buildLocalGroupLayer();
+    localGroup.group.visible = false;
+    scene.add(localGroup.group);
+    const stopExploreGalaxiesLayer = onLayerChange('galaxies', (on) => {
+      localGroup.group.visible = on;
+    });
+
     const stopExploreGravityLayer = onLayerChange('gravity', (on) => {
       overlayPerPlanet.forEach((o) => {
         o.gravity.visible = on;
@@ -867,18 +878,35 @@
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      // First: solar-system pickables (planets / Sun / small bodies)
       const hits = ray3d.intersectObjects(pickables, false);
       const hit = hits.find(
         (h) =>
           typeof h.object.userData.planetId === 'string' ||
           typeof h.object.userData.smallBodyId === 'string',
       );
-      if (!hit) return;
-      const planetId = hit.object.userData.planetId as string | undefined;
-      const smallBodyId = hit.object.userData.smallBodyId as string | undefined;
-      if (planetId === '__sun__') selectSun();
-      else if (planetId) selectPlanet(planetId);
-      else if (smallBodyId) selectSmallBody(smallBodyId);
+      if (hit) {
+        const planetId = hit.object.userData.planetId as string | undefined;
+        const smallBodyId = hit.object.userData.smallBodyId as string | undefined;
+        if (planetId === '__sun__') selectSun();
+        else if (planetId) selectPlanet(planetId);
+        else if (smallBodyId) selectSmallBody(smallBodyId);
+        return;
+      }
+      // Second: galaxy sprites (only pickable when the layer is on,
+      // since group.visible gates them). Deep-link to the matching
+      // /science/observation article rather than opening an in-app
+      // panel — the article is the canonical place to read about it.
+      if (localGroup.group.visible) {
+        const galaxyHits = ray3d.intersectObjects(localGroup.group.children, false);
+        const galaxyHit = galaxyHits.find(
+          (h) => typeof h.object.userData.galaxyScienceSection === 'string',
+        );
+        if (galaxyHit) {
+          const section = galaxyHit.object.userData.galaxyScienceSection as string;
+          goto(`${base}/science/observation/${section}`);
+        }
+      }
     };
 
     // ── 3D hover tooltip — mean orbital velocity (vis-viva at r=a) ──
@@ -1846,6 +1874,8 @@
       stopExploreGravityLayer?.();
       stopExploreVelocityLayer?.();
       stopExploreCentripetalLayer?.();
+      stopExploreGalaxiesLayer?.();
+      localGroup.dispose();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);
       window.removeEventListener('mouseup', on3dMouseUp);
@@ -2082,7 +2112,7 @@
   body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
   tab="orbits"
   section="keplerian-orbit"
-  available={['hover', 'gravity', 'velocity', 'centripetal']}
+  available={['hover', 'gravity', 'velocity', 'centripetal', 'galaxies']}
 />
 
 <style>

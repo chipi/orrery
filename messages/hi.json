@@ -542,6 +542,8 @@
   "science_layer_tidal_lock_desc": "चंद्रमा के निकट-साइड (always-Earth-facing) गोलार्ध को चिह्नित करता है - तुल्यकालिक रोटेशन का परिणाम।",
   "science_layer_ozone_label": "ओजोन छेद",
   "science_layer_ozone_desc": "ध्रुवीय ओजोन-निर्भरता क्षेत्र - अंटार्कटिक + आर्कटिक - जो मौसम में क्लिओ और BrO उत्प्रेरक के रूप में खुलता है समताप मंडल में O3 विनाश।",
+  "science_layer_galaxies_label": "स्थानीय समूह की आकाशगंगाएँ",
+  "science_layer_galaxies_desc": "~15 पड़ोसी आकाशगंगाओं (एंड्रोमेडा, मैगेलैनिक बादल, बौनी गोलाकार) के बिलबोर्ड स्प्राइट खगोलीय गोले पर सही RA/Dec के साथ — केवल आकाश ओवरले, वास्तविक स्केल नहीं।",
   "fly_info_card_eyebrow": "SPACECRAFT · लाइव",
   "conics_eyebrow": "नीति आयोग",
   "conics_read_more": "→ Read in /science",

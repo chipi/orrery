@@ -680,6 +680,8 @@
   "science_layer_atmosphere_desc": "Capa translúcida en el borde atmosférico efectivo del cuerpo: línea de Kármán en la Tierra, ~120 km en Marte.",
   "science_layer_tidal_lock_desc": "Marca el hemisferio cercano de la Luna (siempre orientado a la Tierra), resultado de la rotación síncrona.",
   "science_layer_ozone_desc": "Zonas polares de agotamiento del ozono — Antártico + Ártico — que se abren estacionalmente cuando ClO y BrO catalizan la destrucción de O₃ en la estratosfera.",
+  "science_layer_galaxies_label": "Galaxias del Grupo Local",
+  "science_layer_galaxies_desc": "Sprites en cartel de ~15 galaxias vecinas (Andrómeda, Nubes de Magallanes, esferoidales enanas) en la esfera celeste con AR/Dec correctos — superposición celeste, no a escala real.",
   "conics_blurb_circle": "Radio efectivamente constante: la velocidad y la distancia nunca cambian.",
   "conics_blurb_ellipse": "Órbita ligada. Sol en un foco; la velocidad alcanza el pico en el perihelio y cae en el afelio.",
   "conics_blurb_parabola": "Escape al filo: exactamente la velocidad justa para irse pero nunca para volver.",

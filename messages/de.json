@@ -680,6 +680,8 @@
   "science_layer_atmosphere_desc": "Durchscheinende Hülle am effektiven Atmosphärenrand des Körpers — Kármán-Linie auf der Erde, ~120 km auf dem Mars.",
   "science_layer_tidal_lock_desc": "Markiert die erdzugewandte Hemisphäre des Mondes — Folge der gebundenen Rotation.",
   "science_layer_ozone_desc": "Polare Ozonabbauzonen — Antarktis + Arktis — die sich saisonal öffnen, wenn ClO und BrO die Zerstörung von O₃ in der Stratosphäre katalysieren.",
+  "science_layer_galaxies_label": "Galaxien der Lokalen Gruppe",
+  "science_layer_galaxies_desc": "Billboard-Sprites von ~15 Nachbargalaxien (Andromeda, Magellansche Wolken, Zwergsphäroide) auf der Himmelskugel mit korrekten RA/Dec — nur Himmelsüberlagerung, nicht echter Maßstab.",
   "conics_blurb_circle": "Faktisch konstanter Radius — Geschwindigkeit und Distanz ändern sich nie.",
   "conics_blurb_ellipse": "Gebundene Bahn. Sonne in einem Brennpunkt; Geschwindigkeit gipfelt im Perihel, fällt im Aphel.",
   "conics_blurb_parabola": "Messerscharfer Entkommen — exakt genug Geschwindigkeit zum Verlassen, nie zur Rückkehr.",

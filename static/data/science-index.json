@@ -316,6 +316,13 @@
   },
   {
     "tab": "observation",
+    "section": "andromeda-galaxy",
+    "title": "Andromeda Galaxy (M31) — the closest large spiral",
+    "intro": "Andromeda is the closest large galaxy to the Milky Way at 2.5 million light-years. It is the most distant object the unaided human eye can see, and it is heading directly toward us at 110 km/s.",
+    "haystack": "andromeda galaxy (m31) — the closest large spiral andromeda is the closest large galaxy to the milky way at 2.5 million light-years. it is the most distant object the unaided human eye can see, and it is heading directly toward us at 110 km/s. andromeda — catalogued as m31 (messier 31) and ngc 224 — is a barred spiral galaxy slightly larger than the milky way. mass estimates from gaia dr3 stellar dynamics put it at about 1.5 × 10¹² solar masses, comparable to or slightly more massive than the milky way. it hosts an estimated trillion stars, has a structurally similar central bar and disc, two prominent spiral arms, and a quiescent supermassive black hole at its centre (m31's nucleus is a 1.4 × 10⁸ solar-mass black hole; the milky way's sagittarius a* is 'only' 4.3 × 10⁶ solar masses). to the naked eye from a dark site, andromeda is a small smudge in the constellation that gives it its name — the most distant object the human eye can perceive without instruments, at about 2.5 million light-years. the light arriving on earth tonight left andromeda when homo habilis was first making stone tools."
+  },
+  {
+    "tab": "observation",
     "section": "black-holes",
     "title": "Black holes",
     "intro": "A region of spacetime where mass is so compressed that even light can't climb out — and we've now imaged the shadows of two of them.",
@@ -330,10 +337,38 @@
   },
   {
     "tab": "observation",
+    "section": "dwarf-spheroidals",
+    "title": "Dwarf spheroidals — small, faint, and almost entirely dark matter",
+    "intro": "Dwarf spheroidal galaxies are the most numerous galaxies in the Local Group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral.",
+    "haystack": "dwarf spheroidals — small, faint, and almost entirely dark matter dwarf spheroidal galaxies are the most numerous galaxies in the local group and the most dark-matter-dominated objects we have ever measured — mass-to-light ratios of 100, 500, even 1000 — far higher than any spiral. dwarf spheroidals (often abbreviated dsph) are small, faint, gas-poor, roughly elliptical satellites of larger galaxies. around the milky way, the brighter members are sagittarius, sculptor, fornax, draco, ursa minor, leo i, leo ii, sextans, carina, canes venatici i, plus a long tail of ultra-faint dwarfs discovered by sdss, des, pan-starrs, and now the vera c. rubin observatory's lsst. the total count of known milky way dsph satellites is now over 60 and rising. each typically has only millions to tens of millions of stars — compared to the milky way's hundreds of billions — and was for decades dismissed as boring stragglers. the picture changed in the 1980s when stellar-velocity-dispersion measurements showed they were anything but boring."
+  },
+  {
+    "tab": "observation",
+    "section": "galaxy-types",
+    "title": "Galaxy types — spirals, ellipticals, irregulars, dwarfs",
+    "intro": "Galaxies fall into a handful of structural families: spirals (Milky Way, Andromeda), ellipticals (M87, NGC 4889), irregulars (Magellanic Clouds), and dwarfs of several sub-classes. The taxonomy is Hubble's 1936 framework, refined.",
+    "haystack": "galaxy types — spirals, ellipticals, irregulars, dwarfs galaxies fall into a handful of structural families: spirals (milky way, andromeda), ellipticals (m87, ngc 4889), irregulars (magellanic clouds), and dwarfs of several sub-classes. the taxonomy is hubble's 1936 framework, refined. spiral galaxies are flat rotating discs of stars and gas surrounding a central bulge, with one or more prominent spiral arms wrapping outward. the arms are not rigid structures — they are density waves where star formation is currently elevated, plus young blue stars and pink hii regions that make the arms look brighter than the inter-arm disc. about two-thirds of bright nearby galaxies are spirals. the milky way and andromeda are both barred spirals (their central bulges are elongated into a bar 'cigar' shape that funnels gas inward, fuelling central star formation and feeding the supermassive black hole). the triangulum galaxy m33 in the local group is an unbarred spiral. the third hubble category — sc / sbc — has loose, well-separated spiral arms; the milky way is type sbbc or sbc."
+  },
+  {
+    "tab": "observation",
     "section": "interferometry",
     "title": "Interferometry",
     "intro": "Stitch separate telescopes into one virtual aperture larger than any of them — the Event Horizon Telescope is an Earth-sized radio interferometer built from antennas on four continents.",
     "haystack": "interferometry stitch separate telescopes into one virtual aperture larger than any of them — the event horizon telescope is an earth-sized radio interferometer built from antennas on four continents. a single telescope's resolving power depends on its aperture (diameter / wavelength). a radio antenna 30 m across imaging at 1 mm wavelength has an angular resolution of about 7 arcseconds — too coarse to see most things. but two antennas 1000 km apart, observing the same source simultaneously and combining their signals, behave like a single telescope **1000 km across** at that resolution — milliarcseconds."
+  },
+  {
+    "tab": "observation",
+    "section": "local-group",
+    "title": "The Local Group — our gravitationally bound neighbourhood",
+    "intro": "The Local Group is the small cluster of ~80 known galaxies bound to the Milky Way and Andromeda by mutual gravity. It is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in.",
+    "haystack": "the local group — our gravitationally bound neighbourhood the local group is the small cluster of ~80 known galaxies bound to the milky way and andromeda by mutual gravity. it is about 3 megaparsecs across and contains essentially every galaxy close enough to study individual stars in. the local group is dominated by three spiral galaxies — the milky way, andromeda (m31), and the triangulum galaxy (m33). around the milky way and andromeda are clouds of satellite galaxies, mostly small and faint — the magellanic clouds, sagittarius dwarf, sculptor, fornax, draco, the leo dwarfs, and many more. total members known today: about 80, and the count keeps rising as deep imaging surveys (des, lsst, euclid) find ultra-faint dwarfs missed by earlier searches. the whole structure is gravitationally bound — it is not expanding with the hubble flow, and the milky way and andromeda are actually approaching each other at about 110 km/s."
+  },
+  {
+    "tab": "observation",
+    "section": "magellanic-clouds",
+    "title": "The Magellanic Clouds — LMC and SMC, our nearest galactic neighbours",
+    "intro": "The Large and Small Magellanic Clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the Milky Way's south-galactic pole, ~50 and ~62 kpc away.",
+    "haystack": "the magellanic clouds — lmc and smc, our nearest galactic neighbours the large and small magellanic clouds are the closest galaxies large enough to see with the naked eye — irregular dwarf galaxies trailing the milky way's south-galactic pole, ~50 and ~62 kpc away. the magellanic clouds dominate the southern hemisphere sky from any reasonably dark site below about +20° latitude. they look exactly as they sound — two detached fuzzy patches in the night sky, the lmc about 5° across and the smc about 3°. they are catalogued under several names, but magellanic comes from ferdinand magellan's 1519-1522 circumnavigation, during which the clouds were the most reliable navigation reference his crew had in the south atlantic. the clouds have been continuously observed by humanity for as long as humans have lived in the southern hemisphere; rock art and oral traditions from aboriginal australia, the khoisan, and andean cultures reference them by name in ways that long predate european contact."
   },
   {
     "tab": "observation",

@@ -1538,6 +1538,38 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackAuthor:
       'NASA (Apollo 17 — Harrison Schmitt inside LM after EVA, dust contamination visible, Dec 1972)',
   },
+  // observation — Local Group galaxies (5 — GH #86 Lite):
+  'local-group-map.jpg': {
+    commons: 'The Local Group Top View.jpg',
+    agency: 'public-domain',
+    fallbackLicense: 'CC-BY-SA-3.0',
+    fallbackAuthor: 'Wikimedia Commons contributor — Local Group top-view schematic map',
+  },
+  'andromeda-galaxy-m31.jpg': {
+    commons: 'Andromeda galaxy - GALEX (rotated).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Galaxy Evolution Explorer (GALEX) — Andromeda Galaxy (M31) UV imaging',
+  },
+  'magellanic-clouds-eso.jpg': {
+    commons: 'Magellanic Clouds at Paranal (beletsky paranal 10f).jpg',
+    agency: 'ESA',
+    fallbackLicense: 'CC-BY-4.0',
+    fallbackAuthor: 'ESO / Y. Beletsky (LMC + SMC above the VLT at Paranal Observatory, Chile)',
+  },
+  'dwarf-spheroidals-fornax.jpg': {
+    commons: 'Fornax dwarf galaxy.jpg',
+    agency: 'ESA',
+    fallbackLicense: 'CC-BY-4.0',
+    fallbackAuthor: 'ESO / Digitized Sky Survey — Fornax Dwarf Spheroidal galaxy',
+  },
+  'galaxy-types-hubble-tuning-fork.jpg': {
+    commons: 'HubbleTuningFork nl.png',
+    agency: 'public-domain',
+    fallbackLicense: 'CC-BY-SA-3.0',
+    fallbackAuthor:
+      'Wikimedia Commons contributor — Hubble galaxy-morphology tuning-fork diagram (1936 framework)',
+  },
   // space-stations (4):
   'expedition-cadence-exp1.jpg': {
     commons: 'S97e5009.jpg',

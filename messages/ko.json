@@ -542,6 +542,8 @@
   "science_layer_tidal_lock_desc": "Moon's near-side (always-Earth-facing) hemisphere를 표시하십시오.",
   "science_layer_ozone_label": "Ozone 구멍",
   "science_layer_ozone_desc": "Polar ozone-depletion Zone — Antarctic + Arctic — ClO와 BrO 촉매로 계절적으로 열리는 스트로토구의 O3 파괴.",
+  "science_layer_galaxies_label": "국부은하군 은하",
+  "science_layer_galaxies_desc": "약 15개 이웃 은하(안드로메다, 마젤란 구름, 왜소 타원체)의 빌보드 스프라이트를 정확한 RA/Dec로 천구에 배치 — 하늘 오버레이일 뿐, 실제 축척 아님.",
   "fly_info_card_eyebrow": "SPACECRAFT · 라이브",
   "conics_eyebrow": "CONIC 단면도",
   "conics_read_more": "→ /science에서 읽기",

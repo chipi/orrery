@@ -1,0 +1,34 @@
+{
+  "id": "magellanic-clouds",
+  "tab": "observation",
+  "order": 10,
+  "photo": {
+    "src": "/images/science/magellanic-clouds-eso.jpg",
+    "credit": "ESO / Y. Beletsky · Large and Small Magellanic Clouds visible above the VLT at Paranal, Chile. These two irregular satellite galaxies of the Milky Way are the most prominent extragalactic objects in the southern hemisphere sky, visible to the naked eye as detached fuzzy patches."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "LMC + SMC sprites in the Local Group overlay, clickable, deep-link here" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Large Magellanic Cloud",
+      "u": "https://en.wikipedia.org/wiki/Large_Magellanic_Cloud",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Small Magellanic Cloud",
+      "u": "https://en.wikipedia.org/wiki/Small_Magellanic_Cloud",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · LMC + SMC overview",
+      "u": "https://science.nasa.gov/resource/the-large-and-small-magellanic-clouds/",
+      "t": "core"
+    },
+    {
+      "l": "arXiv · Besla et al. 2007 — LMC + SMC on a first-passage orbit",
+      "u": "https://arxiv.org/abs/astro-ph/0703196",
+      "t": "deep"
+    }
+  ]
+}

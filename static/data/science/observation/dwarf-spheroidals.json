@@ -1,0 +1,34 @@
+{
+  "id": "dwarf-spheroidals",
+  "tab": "observation",
+  "order": 11,
+  "photo": {
+    "src": "/images/science/dwarf-spheroidals-fornax.jpg",
+    "credit": "ESO / Digitized Sky Survey · The Fornax Dwarf Spheroidal galaxy — one of the brighter satellites of the Milky Way at 147 kpc. Dwarf spheroidals are the most dark-matter-dominated objects in the Local Group, with mass-to-light ratios reaching 100 and beyond."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Multiple dwarf-spheroidal sprites in the Local Group overlay (Sagittarius, Sculptor, Fornax, Draco, Ursa Minor, Leo I, Leo II, Sextans)" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Dwarf spheroidal galaxy",
+      "u": "https://en.wikipedia.org/wiki/Dwarf_spheroidal_galaxy",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Dwarf galaxies and dark matter overview",
+      "u": "https://science.nasa.gov/universe/galaxies/types/",
+      "t": "core"
+    },
+    {
+      "l": "arXiv · Walker & Peñarrubia 2011 — dwarf-spheroidal mass profiles + dark matter",
+      "u": "https://arxiv.org/abs/1108.2404",
+      "t": "deep"
+    },
+    {
+      "l": "ESA · Gaia DR3 dwarf-spheroidal stellar dynamics",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Gaia/Gaia_data_release_3",
+      "t": "deep"
+    }
+  ]
+}

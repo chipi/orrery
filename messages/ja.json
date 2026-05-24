@@ -542,6 +542,8 @@
   "science_layer_tidal_lock_desc": "月間近辺(対地)半球 — 同期回転の結果。",
   "science_layer_ozone_label": "オゾン穴",
   "science_layer_ozone_desc": "極オゾン層破壊ゾーン — サルト + アークティック — 季節限定のClOとBrO触媒 ストラトスフィアでのO3破壊。",
+  "science_layer_galaxies_label": "局所銀河群の銀河",
+  "science_layer_galaxies_desc": "近隣15銀河（アンドロメダ、マゼラン雲、矮小楕円体）のビルボードスプライトを正確なRA/Decで天球に配置 — 空オーバーレイのみ、実スケールではない。",
   "fly_info_card_eyebrow": "スペースクラフト・ライブ",
   "conics_eyebrow": "コニックセクション",
   "conics_read_more": "→ /scienceで読む",

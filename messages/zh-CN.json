@@ -542,6 +542,8 @@
   "science_layer_tidal_lock_desc": "标记月球近侧(总是-地球-变形)半球——同步旋转的结果.",
   "science_layer_ozone_label": "臭氧洞",
   "science_layer_ozone_desc": "极地臭氧消耗区——南极+北极——作为氯O和BrO催化的季节性开放区 O3在平流层的破坏.",
+  "science_layer_galaxies_label": "本星系群",
+  "science_layer_galaxies_desc": "约15个邻近星系（仙女座、麦哲伦云、矮椭球星系）的广告牌精灵，以正确的RA/Dec绘制在天球上 — 仅为天空叠加，非实际尺度。",
   "fly_info_card_eyebrow": "航天飞机 飞行器",
   "conics_eyebrow": "内容部分",
   "conics_read_more": "科学阅读",

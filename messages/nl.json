@@ -517,6 +517,8 @@
   "science_layer_tidal_lock_desc": "Markeert de naar-de-Aarde-gerichte halfrond van de Maan — het resultaat van synchrone rotatie.",
   "science_layer_ozone_label": "Ozongaten",
   "science_layer_ozone_desc": "Polaire ozonafnamezones — Antarctisch + Arctisch — die seizoensgewijs openen wanneer ClO en BrO O₃-vernietiging in de stratosfeer katalyseren.",
+  "science_layer_galaxies_label": "Sterrenstelsels van de Lokale Groep",
+  "science_layer_galaxies_desc": "Billboard-sprites van ~15 nabije sterrenstelsels (Andromeda, Magelhaense Wolken, dwergsferoïden) op de hemelbol met juiste RA/Dec — alleen hemeloverlay, niet op ware schaal.",
   "fly_info_card_eyebrow": "RUIMTEVAARTUIG · LIVE",
   "conics_eyebrow": "KEGELSNEDE",
   "conics_read_more": "→ Lees in /science",

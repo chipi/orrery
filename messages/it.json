@@ -680,6 +680,8 @@
   "science_layer_atmosphere_desc": "Guscio traslucido al bordo atmosferico effettivo del corpo — linea di Kármán sulla Terra, ~120 km su Marte.",
   "science_layer_tidal_lock_desc": "Marca l'emisfero vicino della Luna (sempre rivolto verso la Terra) — risultato della rotazione sincrona.",
   "science_layer_ozone_desc": "Zone polari di esaurimento dell'ozono — Antartico + Artico — che si aprono stagionalmente quando ClO e BrO catalizzano la distruzione di O₃ nella stratosfera.",
+  "science_layer_galaxies_label": "Galassie del Gruppo Locale",
+  "science_layer_galaxies_desc": "Sprite a cartello di ~15 galassie vicine (Andromeda, Nubi di Magellano, sferoidali nane) sulla sfera celeste con AR/Dec corretti — solo sovrapposizione celeste, non in scala reale.",
   "conics_blurb_circle": "Raggio effettivamente costante — velocità e distanza non cambiano mai.",
   "conics_blurb_ellipse": "Orbita legata. Sole in un fuoco; la velocità raggiunge il picco al perielio e cala all'afelio.",
   "conics_blurb_parabola": "Fuga al filo — esattamente la velocità giusta per andarsene ma mai per tornare.",

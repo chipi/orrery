@@ -680,6 +680,8 @@
   "science_layer_atmosphere_desc": "Coque translucide au bord atmosphérique effectif du corps — ligne de Kármán sur Terre, ~120 km sur Mars.",
   "science_layer_tidal_lock_desc": "Marque l'hémisphère proche de la Lune (toujours face à la Terre) — résultat de la rotation synchrone.",
   "science_layer_ozone_desc": "Zones polaires d'appauvrissement de l'ozone — Antarctique + Arctique — qui s'ouvrent saisonnièrement quand ClO et BrO catalysent la destruction de l'O₃ dans la stratosphère.",
+  "science_layer_galaxies_label": "Galaxies du Groupe local",
+  "science_layer_galaxies_desc": "Sprites en panneau de ~15 galaxies voisines (Andromède, Nuages de Magellan, sphéroïdales naines) sur la sphère céleste aux AD/Déc corrects — simple superposition céleste, pas à l'échelle.",
   "conics_blurb_circle": "Rayon effectivement constant — la vitesse et la distance ne changent jamais.",
   "conics_blurb_ellipse": "Orbite liée. Soleil à un foyer ; la vitesse culmine au périhélie, retombe à l'aphélie.",
   "conics_blurb_parabola": "Évasion en lame de couteau — exactement la vitesse pour partir, jamais pour revenir.",

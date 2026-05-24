@@ -1,0 +1,34 @@
+{
+  "id": "andromeda-galaxy",
+  "tab": "observation",
+  "order": 9,
+  "photo": {
+    "src": "/images/science/andromeda-galaxy-m31.jpg",
+    "credit": "NASA / Galaxy Evolution Explorer (GALEX) · The Andromeda Galaxy (M31) — closest large spiral to the Milky Way, 2.5 million light-years away, visible to the naked eye from dark sites in the northern hemisphere as a small smudge in the constellation Andromeda."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Andromeda sprite in the Local Group overlay — clickable, deep-links here" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Andromeda Galaxy",
+      "u": "https://en.wikipedia.org/wiki/Andromeda_Galaxy",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · M31 (Andromeda) — multi-wavelength imaging campaigns",
+      "u": "https://www.nasa.gov/image-article/andromeda-galaxy-galex-image/",
+      "t": "core"
+    },
+    {
+      "l": "arXiv · van der Marel et al. 2019 — Gaia DR2 proper motion + merger forecast",
+      "u": "https://arxiv.org/abs/1805.04079",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Andromeda–Milky Way collision",
+      "u": "https://en.wikipedia.org/wiki/Andromeda%E2%80%93Milky_Way_collision",
+      "t": "deep"
+    }
+  ]
+}

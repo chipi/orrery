@@ -76,6 +76,7 @@
     atmosphere: false,
     'tidal-lock': false,
     ozone: false,
+    galaxies: false,
   });
 
   let stops: Array<() => void> = [];
@@ -156,6 +157,11 @@
         return {
           label: m.science_layer_ozone_label(),
           description: m.science_layer_ozone_desc(),
+        };
+      case 'galaxies':
+        return {
+          label: m.science_layer_galaxies_label(),
+          description: m.science_layer_galaxies_desc(),
         };
     }
   }

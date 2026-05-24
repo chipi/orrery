@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { createMarkerHalo } from '$lib/three/marker-halo';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -480,20 +481,6 @@
     // Selection-halo helper — small flat ring around a marker so the
     // user can tell which one they picked. Visibility toggled by the
     // $effect tied to `selected`.
-    function makeHalo(color: string, radius: number): THREE.Mesh {
-      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
-      const haloMat = new THREE.MeshBasicMaterial({
-        color,
-        side: THREE.DoubleSide,
-        transparent: true,
-        opacity: 0.9,
-        depthWrite: false,
-      });
-      const halo = new THREE.Mesh(haloGeo, haloMat);
-      halo.visible = false;
-      return halo;
-    }
-
     // Per-mission surface markers come from `moon-lander-models.ts`,
     // mirroring the `earth-satellite-models.ts` pattern: each known
     // mission id gets a recognisable silhouette built from primitives
@@ -594,7 +581,7 @@
 
         // Selection halo attached to dotGroup so it travels with the
         // orbiter around its ring.
-        const halo = makeHalo(color, 1.8);
+        const halo = createMarkerHalo(color, 1.8);
         dotGroup.add(halo);
 
         scene.add(group);
@@ -679,7 +666,7 @@
         group.add(label.group);
 
         // Selection halo (visible only while site === selected).
-        const halo = makeHalo(colorFor(site), 1.8);
+        const halo = createMarkerHalo(colorFor(site), 1.8);
         halo.position.y = 0.02;
         halo.rotation.x = -Math.PI / 2;
         group.add(halo);

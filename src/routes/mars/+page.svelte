@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { createMarkerHalo } from '$lib/three/marker-halo';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -596,19 +597,6 @@
     // a marker so users can tell at a glance which one they picked.
     // Returns an invisible mesh; visibility flips via $effect tied to
     // the `selected` state below.
-    function makeHalo(color: string, radius: number): THREE.Mesh {
-      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
-      const haloMat = new THREE.MeshBasicMaterial({
-        color,
-        side: THREE.DoubleSide,
-        transparent: true,
-        opacity: 0.9,
-        depthWrite: false,
-      });
-      const halo = new THREE.Mesh(haloGeo, haloMat);
-      halo.visible = false;
-      return halo;
-    }
     const surfaceMarkers: SurfaceMarker[] = [];
     const orbitalMarkers: OrbitalMarker[] = [];
     type TraverseLine = {
@@ -712,7 +700,7 @@
 
         // Selection halo — flat ring around the marker base. Visible
         // only while this site === selected (toggled by $effect).
-        const halo = makeHalo(color, 1.4);
+        const halo = createMarkerHalo(color, 1.4);
         halo.position.y = 0.02;
         halo.rotation.x = -Math.PI / 2;
         group.add(halo);
@@ -866,7 +854,7 @@
         });
         dotGroup.add(label.group);
 
-        const halo = makeHalo(color, 1.8);
+        const halo = createMarkerHalo(color, 1.8);
         dotGroup.add(halo);
 
         marsAxis.add(group);

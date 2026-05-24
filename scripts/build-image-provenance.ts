@@ -1570,6 +1570,39 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackAuthor:
       'Wikimedia Commons contributor — Hubble galaxy-morphology tuning-fork diagram (1936 framework)',
   },
+  // orbits — GH #83 (5 new orbit articles):
+  'sun-synchronous-sentinel.jpg': {
+    commons: 'South Georgia Island as seen by Sentinel-2.jpg',
+    agency: 'ESA',
+    fallbackLicense: 'CC-BY-SA-3.0-IGO',
+    fallbackAuthor: 'ESA / Copernicus Sentinel-2 (South Georgia Island, sun-synchronous LEO)',
+  },
+  'special-orbits-molniya.jpg': {
+    commons: 'Molniya.jpg',
+    agency: 'public-domain',
+    fallbackLicense: 'CC-BY-SA-3.0',
+    fallbackAuthor: 'Wikimedia Commons contributor — Molniya orbit ground-track diagram',
+  },
+  'cislunar-orbits-gateway.jpg': {
+    commons: 'Gateway with docked logistics module in lunar orbit.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — Lunar Gateway with docked logistics module concept (NRHO)',
+  },
+  'disposal-end-of-life-deorbit.jpg': {
+    commons: 'Hypothetical ISS Deorbit and Re-entry Scenarios Targeting Late 2030.png',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA — ISS hypothetical deorbit + re-entry scenarios (Point Nemo / SPOUA)',
+  },
+  'space-debris-population.jpg': {
+    commons:
+      'Tracking Satellites and Space Debris in Earth Orbit (Feb 2024) (SVS5258 - cos ir deb 2024 03750 print).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA Scientific Visualization Studio — Earth orbit debris population (Feb 2024)',
+  },
   // space-stations (4):
   'expedition-cadence-exp1.jpg': {
     commons: 'S97e5009.jpg',

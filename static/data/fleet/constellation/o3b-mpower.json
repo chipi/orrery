@@ -1,0 +1,32 @@
+{
+  "id": "o3b-mpower",
+  "name": "O3b / O3b mPOWER (MEO comms)",
+  "category": "constellation",
+  "agency": "SES",
+  "country": "Luxembourg",
+  "manufacturer": "Thales Alenia Space / Boeing",
+  "first_flight": "2013-06-25",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Only operational MEO commercial broadband — 20 O3b satellites at 8,063 km equatorial orbit, plus next-gen O3b mPOWER series (since 2022); low-latency alternative to GEO comsats",
+  "credit": "SES O3b constellation. Original O3b deployed 2013-2019; mPOWER successors launching since 2022 with software-defined beam allocation.",
+  "links": [
+    {
+      "l": "O3b satellite constellation — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/O3b_(satellite_constellation)",
+      "t": "intro"
+    },
+    {
+      "l": "SES O3b mPOWER official site",
+      "u": "https://www.ses.com/networks/networks-and-platforms/o3b-mpower",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "o3b"
+    }
+  ]
+}

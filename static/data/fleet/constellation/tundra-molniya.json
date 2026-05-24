@@ -1,0 +1,37 @@
+{
+  "id": "tundra-molniya",
+  "name": "Molniya + Tundra (HEO comms + early warning)",
+  "category": "constellation",
+  "agency": "Roscosmos / US Space Force / Sirius XM",
+  "country": "Russia / USA",
+  "manufacturer": "NPO Lavochkin / ISS Reshetnev / Loral / Northrop Grumman",
+  "first_flight": "1965-04-23",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "High-eccentricity orbits at 63.4° critical inclination — Molniya (12-hour, ~600 × 40,000 km) for Russian high-latitude comms + Oko/Meridian; Tundra (24-hour, ~25,000 × 35,786 km) for Sirius XM + SBIRS-HEO early warning",
+  "credit": "Russian Molniya satellites operational since 1965 (Molniya 1A); Tundra used by Sirius XM (since 2000) + US SBIRS-HEO. Both exploit J2 critical-inclination apsidal lock.",
+  "links": [
+    {
+      "l": "Molniya orbit — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Molniya_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "Tundra orbit — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tundra_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "SBIRS — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space-Based_Infrared_System",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tundra-molniya"
+    }
+  ]
+}

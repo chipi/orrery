@@ -1,0 +1,37 @@
+{
+  "id": "starlink",
+  "name": "Starlink",
+  "category": "constellation",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "SpaceX",
+  "first_flight": "2018-02-22",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Largest LEO constellation ever flown — ~6,000 active satellites delivering broadband internet globally; pioneered autonomous collision avoidance + laser inter-satellite links",
+  "credit": "SpaceX commercial constellation. Public deployment + status data from FCC filings + Jonathan McDowell's tracking + Starlink.com.",
+  "links": [
+    {
+      "l": "Starlink — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Starlink",
+      "t": "intro"
+    },
+    {
+      "l": "Starlink official site",
+      "u": "https://www.starlink.com/",
+      "t": "core"
+    },
+    {
+      "l": "Jonathan McDowell · Starlink shells + status",
+      "u": "https://planet4589.org/space/con/star/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "starlink"
+    }
+  ]
+}

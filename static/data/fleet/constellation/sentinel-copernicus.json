@@ -1,0 +1,37 @@
+{
+  "id": "sentinel-copernicus",
+  "name": "Sentinel (Copernicus)",
+  "category": "constellation",
+  "agency": "ESA / European Commission",
+  "country": "Multi (Europe)",
+  "manufacturer": "Airbus / Thales Alenia Space / OHB",
+  "first_flight": "2014-04-03",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Europe's flagship Earth-observation programme — Sentinel-1 (C-band SAR), Sentinel-2 (multispectral imaging), Sentinel-3 (ocean + land), Sentinel-5P (atmospheric); free + open data policy",
+  "credit": "ESA / European Commission Copernicus programme. Series 1-6 covers radar imaging, optical imaging, ocean monitoring, atmospheric chemistry, and altimetry.",
+  "links": [
+    {
+      "l": "Copernicus Programme — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Copernicus_Programme",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Sentinel missions overview",
+      "u": "https://sentinels.copernicus.eu/web/sentinel/missions",
+      "t": "core"
+    },
+    {
+      "l": "Copernicus Open Access Hub",
+      "u": "https://scihub.copernicus.eu/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "sentinel-copernicus"
+    }
+  ]
+}

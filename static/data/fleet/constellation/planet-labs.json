@@ -1,0 +1,32 @@
+{
+  "id": "planet-labs",
+  "name": "Planet Labs (PlanetScope + SkySat)",
+  "category": "constellation",
+  "agency": "Planet Labs PBC",
+  "country": "USA",
+  "manufacturer": "Planet Labs",
+  "first_flight": "2013-04-19",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Daily-revisit Earth imaging — ~150 PlanetScope 3U CubeSats at 475 km SSO + ~21 SkySat high-resolution satellites; images every patch of Earth's land surface every day",
+  "credit": "Planet Labs commercial Earth observation. PlanetScope (Doves) provides daily 3-5 m global; SkySats provide 50 cm tasked imaging.",
+  "links": [
+    {
+      "l": "Planet Labs — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Planet_Labs",
+      "t": "intro"
+    },
+    {
+      "l": "Planet Labs official site",
+      "u": "https://www.planet.com/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "planet-labs"
+    }
+  ]
+}

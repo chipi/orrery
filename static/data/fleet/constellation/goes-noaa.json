@@ -1,0 +1,37 @@
+{
+  "id": "goes-noaa",
+  "name": "GOES (NOAA Weather)",
+  "category": "constellation",
+  "agency": "NOAA / NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin (GOES-R series)",
+  "first_flight": "1975-10-16",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "US geostationary weather satellites — pair of GOES-East (75.2°W) + GOES-West (137.0°W) gives continuous coverage of Americas; GOES-16 onward use the Advanced Baseline Imager for 30-second mesoscale scans",
+  "credit": "NOAA + NASA Geostationary Operational Environmental Satellite programme. Operational pair always positioned to cover Americas weather + hurricane tracking.",
+  "links": [
+    {
+      "l": "GOES — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite",
+      "t": "intro"
+    },
+    {
+      "l": "NOAA GOES official site",
+      "u": "https://www.goes.noaa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "NASA GOES-R Series",
+      "u": "https://www.nasa.gov/mission/goes-r-series/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "goes"
+    }
+  ]
+}

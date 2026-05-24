@@ -62,7 +62,11 @@
   // every frame so toggles are immediate.
   let layerStations = $state(true);
   let layerObservatories = $state(true);
-  let layerConstellations = $state(true);
+  // GH #83: constellations OFF by default. The category grew from 4
+  // GNSS markers to 14+ once Starlink / OneWeb / Iridium / Kuiper /
+  // Planet / Sentinel / Landsat / Tundra-Molniya / O3b landed — too
+  // busy for an unconditional-on default. Users opt in via the chip.
+  let layerConstellations = $state(false);
   let layerComsats = $state(true);
   let layerMoonOrbiters = $state(true);
   let autoSpin = $state(true);

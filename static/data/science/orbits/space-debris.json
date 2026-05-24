@@ -1,0 +1,50 @@
+{
+  "id": "space-debris",
+  "tab": "orbits",
+  "order": 15,
+  "photo": {
+    "src": "/images/science/space-debris-population.jpg",
+    "credit": "ESA Space Debris Office · Visualisation of catalogued objects in Earth orbit. ~36,000 tracked objects larger than 10 cm; ~1 million estimated 1-10 cm; >100 million estimated 1 mm-1 cm. Almost all of it is debris, not active spacecraft."
+  },
+  "see_in_app": [
+    { "route": "/earth", "context_key": "The high-density LEO + GEO shells are where the bulk of catalogued debris lives — visible as 'rings' in debris-population maps" },
+    { "route": "/missions", "context_key": "ISS, Tiangong, and most large LEO assets perform periodic Conjunction Assessment Risk Avoidance manoeuvres (CARA) — debris avoidance burns" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Space debris",
+      "u": "https://en.wikipedia.org/wiki/Space_debris",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Space Debris Office · Annual environment report",
+      "u": "https://www.esa.int/Space_Safety/Space_Debris/About_space_debris",
+      "t": "core"
+    },
+    {
+      "l": "NASA Orbital Debris Program Office",
+      "u": "https://www.orbitaldebris.jsc.nasa.gov/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Kessler syndrome",
+      "u": "https://en.wikipedia.org/wiki/Kessler_syndrome",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · 2009 satellite collision (Iridium 33 / Cosmos 2251)",
+      "u": "https://en.wikipedia.org/wiki/2009_satellite_collision",
+      "t": "deep"
+    },
+    {
+      "l": "Wikipedia · 2007 Chinese anti-satellite missile test (Fengyun-1C)",
+      "u": "https://en.wikipedia.org/wiki/2007_Chinese_anti-satellite_missile_test",
+      "t": "deep"
+    },
+    {
+      "l": "ESA · ClearSpace-1 active debris removal mission",
+      "u": "https://www.esa.int/Space_Safety/ClearSpace-1",
+      "t": "deep"
+    }
+  ]
+}

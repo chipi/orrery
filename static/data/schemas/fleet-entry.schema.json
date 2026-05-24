@@ -37,7 +37,8 @@
         "lander",
         "orbiter",
         "observatory",
-        "space-suit"
+        "space-suit",
+        "constellation"
       ]
     },
     "agency": { "type": "string", "minLength": 1 },

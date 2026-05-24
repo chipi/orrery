@@ -1,0 +1,40 @@
+{
+  "id": "disposal-end-of-life",
+  "tab": "orbits",
+  "order": 14,
+  "photo": {
+    "src": "/images/science/disposal-end-of-life-deorbit.jpg",
+    "credit": "NASA · A controlled deorbit burn over the South Pacific Ocean Uninhabited Area (SPOUA) — the 'spacecraft cemetery' where most large LEO satellites end their lives. International standards require LEO objects to deorbit within 25 years of mission end."
+  },
+  "see_in_app": [
+    { "route": "/earth", "context_key": "Comparison toggle to see graveyard orbit altitudes (~300 km above GEO) where retired comsats park" },
+    { "route": "/missions", "context_key": "Modern missions declare end-of-life disposal strategy as part of regulatory licensing" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Graveyard orbit",
+      "u": "https://en.wikipedia.org/wiki/Graveyard_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Space debris mitigation",
+      "u": "https://en.wikipedia.org/wiki/Space_debris_mitigation",
+      "t": "core"
+    },
+    {
+      "l": "IADC · Space Debris Mitigation Guidelines",
+      "u": "https://www.iadc-home.org/documents_public/file_down/id/4119",
+      "t": "core"
+    },
+    {
+      "l": "FCC · 5-year deorbit rule (2022)",
+      "u": "https://www.fcc.gov/document/fcc-adopts-new-5-year-deorbit-rule",
+      "t": "deep"
+    },
+    {
+      "l": "NASA Orbital Debris Program Office · Disposal practices",
+      "u": "https://www.orbitaldebris.jsc.nasa.gov/mitigate/disposal.html",
+      "t": "deep"
+    }
+  ]
+}

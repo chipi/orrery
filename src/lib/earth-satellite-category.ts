@@ -26,10 +26,22 @@ export function categoriseEarthSatellite(id: string): EarthSatelliteCategory {
     case 'iss':
     case 'tiangong':
       return 'station';
+    // Navigation + GH #83 constellations (LEO comms, LEO imaging,
+    // HEO early-warning, MEO comms) all share the visual archetype of
+    // "multi-satellite cluster" until they need separate icons.
     case 'gps':
     case 'galileo':
     case 'glonass':
     case 'beidou':
+    case 'starlink':
+    case 'oneweb':
+    case 'iridium-next':
+    case 'kuiper':
+    case 'planet-labs':
+    case 'sentinel-copernicus':
+    case 'landsat':
+    case 'tundra-molniya':
+    case 'o3b':
       return 'constellation';
     case 'hubble':
     case 'chandra':
@@ -37,7 +49,10 @@ export function categoriseEarthSatellite(id: string): EarthSatelliteCategory {
     case 'jwst':
     case 'gaia':
       return 'telescope';
+    // GEO comms cluster — generic 'geo' marker + GH #83 additions
     case 'geo':
+    case 'goes':
+    case 'inmarsat':
       return 'comsat';
     case 'lro':
     case 'luna10':
@@ -49,9 +64,7 @@ export function categoriseEarthSatellite(id: string): EarthSatelliteCategory {
     case 'chandrayaan1':
       return 'moon-orbiter';
     default:
-      // Unknown id — treat as a generic telescope-style probe. The
-      // schema only validates the existing 13, so this only fires for
-      // future additions that bypass the schema (shouldn't happen).
+      // Unknown id — treat as a generic telescope-style probe.
       return 'telescope';
   }
 }

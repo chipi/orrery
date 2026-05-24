@@ -252,6 +252,7 @@ const FLEET_CATEGORIES = [
   'orbiter',
   'observatory',
   'space-suit',
+  'constellation',
 ];
 
 type FleetLinkedSite = { type: 'moon' | 'mars' | 'earth-object'; site_id: string };

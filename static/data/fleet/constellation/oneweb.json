@@ -1,0 +1,32 @@
+{
+  "id": "oneweb",
+  "name": "OneWeb",
+  "category": "constellation",
+  "agency": "Eutelsat OneWeb",
+  "country": "UK / Multi",
+  "manufacturer": "Airbus OneWeb Satellites (joint venture)",
+  "first_flight": "2019-02-27",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First-generation LEO broadband constellation — ~650 satellites at 1,200 km in 12 orbital planes; merged with Eutelsat in 2023",
+  "credit": "Eutelsat OneWeb commercial constellation. Public satellite count + orbital data from FCC + ITU filings.",
+  "links": [
+    {
+      "l": "OneWeb — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/OneWeb",
+      "t": "intro"
+    },
+    {
+      "l": "Eutelsat OneWeb official site",
+      "u": "https://oneweb.net/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "oneweb"
+    }
+  ]
+}

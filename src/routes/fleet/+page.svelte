@@ -144,6 +144,7 @@
     'orbiter',
     'observatory',
     'space-suit',
+    'constellation',
   ];
 
   const CATEGORY_LABEL: Record<FleetCategory, string> = {
@@ -156,6 +157,7 @@
     orbiter: 'Orbiter',
     observatory: 'Observatory',
     'space-suit': 'Suit',
+    constellation: 'Constellation',
   };
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
@@ -168,6 +170,7 @@
     orbiter: '#7a4ecd', // violet — outer space
     observatory: '#4ecdc4', // teal — scientific
     'space-suit': '#cbd5e1', // ice-white — pressure shell
+    constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];

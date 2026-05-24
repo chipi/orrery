@@ -1,0 +1,37 @@
+{
+  "id": "landsat",
+  "name": "Landsat",
+  "category": "constellation",
+  "agency": "NASA / USGS",
+  "country": "USA",
+  "manufacturer": "Ball Aerospace / Lockheed Martin (varied by generation)",
+  "first_flight": "1972-07-23",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "best_known_for": "Longest continuous Earth-imaging record in history — Landsat 1 through 9 spanning 50+ years; 30 m resolution multispectral imaging in sun-synchronous orbit at 705 km",
+  "credit": "NASA + USGS Landsat programme. Started 1972 as ERTS-1; current operational satellites Landsat 8 (2013) + Landsat 9 (2021). Free public data archive since 2008.",
+  "links": [
+    {
+      "l": "Landsat program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Landsat_program",
+      "t": "intro"
+    },
+    {
+      "l": "USGS Landsat Missions",
+      "u": "https://www.usgs.gov/landsat-missions",
+      "t": "core"
+    },
+    {
+      "l": "NASA Landsat Science",
+      "u": "https://landsat.gsfc.nasa.gov/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "landsat"
+    }
+  ]
+}

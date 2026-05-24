@@ -12,6 +12,7 @@
     nationChipFor,
   } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
+  import { missionContextFor } from '$lib/surface-map/site-formatters';
   import {
     resolveInitialHotspotsMode,
     nextHotspotsMode,
@@ -179,12 +180,7 @@
    * landed 2012-08-06" — feeds the info card's second line. Pulls
    * mission_type + landing_date from the site's MarsSite record.
    */
-  function missionContextFor(site: MarsSite): string {
-    const bits: string[] = [];
-    if (site.mission_type) bits.push(site.mission_type);
-    if (site.landing_date) bits.push(`landed ${site.landing_date}`);
-    return bits.join(' · ') || '';
-  }
+  // missionContextFor extracted to $lib/surface-map/site-formatters.ts (#42).
 
   /**
    * Great-circle distance on the Mars sphere (R = 3389 km). Inputs in

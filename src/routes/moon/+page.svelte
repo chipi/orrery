@@ -12,6 +12,7 @@
     nationChipFor,
   } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
+  import { missionContextFor } from '$lib/surface-map/site-formatters';
   import {
     resolveInitialHotspotsMode,
     nextHotspotsMode,
@@ -221,12 +222,7 @@
    * Compact mission-context tagline: "Apollo 11 crewed lander ·
    * landed 1969-07-20" — feeds the info card's second line.
    */
-  function missionContextFor(site: MoonSite): string {
-    const bits: string[] = [];
-    if (site.mission_type) bits.push(site.mission_type);
-    if (site.landing_date) bits.push(`landed ${site.landing_date}`);
-    return bits.join(' · ') || '';
-  }
+  // missionContextFor extracted to $lib/surface-map/site-formatters.ts (#42).
 
   // Auto-switch OVERVIEW → STORY when tierContext flips on for the
   // first time on a site. Same rule as /mars: only when (a) story

@@ -9,6 +9,7 @@
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
+  import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
   import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
@@ -719,14 +720,7 @@
       station.rotation.y = spin.value() * 0.028;
       // Sun-tracking solar arrays — slow continuous rotation around each
       // array's SADA axis (one full revolution every ~4 minutes).
-      const sunPhase = t * 0.026;
-      station.traverse((obj) => {
-        if (obj.userData.tracksSun) {
-          const axis = obj.userData.sadaAxis as 'x' | 'y' | 'z';
-          const base = (obj.userData.baseRotation as number) ?? 0;
-          obj.rotation[axis] = base + sunPhase;
-        }
-      });
+      tickSunTrackingArrays(station, t);
       refreshMeshMaterials(t);
       controls.update();
       composer.render();

@@ -7,6 +7,16 @@
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import {
+    NATION_COLORS,
+    colorFor,
+    nationChipFor,
+  } from '$lib/surface-map/nation-palette';
+  import { computeTierScale } from '$lib/surface-map/tier-scale';
+  import {
+    resolveInitialHotspotsMode,
+    nextHotspotsMode,
+  } from '$lib/surface-map/hotspots-mode';
+  import {
     getMarsSites,
     getMarsTraverse,
     getMarsSiteGallery,
@@ -61,24 +71,8 @@
   // Soviet space programme, so on a Mars map their landers belong to
   // the same lineage. Inline (not from --color-*) because the 2D canvas
   // legend can't read CSS custom properties cheaply.
-  const NATION_COLORS: Record<string, string> = {
-    USA: '#0B3D91',
-    'USSR/Russia': '#8B0000',
-    Europe: '#003299',
-    China: '#DE2910',
-    India: '#FF9933',
-    Japan: '#003087',
-    UAE: '#00732F',
-  };
-
-  function nationKey(nation: string): string {
-    if (nation === 'USSR' || nation === 'Russia') return 'USSR/Russia';
-    return nation;
-  }
-
-  function colorFor(site: MarsSite): string {
-    return NATION_COLORS[nationKey(site.nation)] ?? '#888';
-  }
+  // NATION_COLORS + nationKey + colorFor extracted to
+  // $lib/surface-map/nation-palette.ts (#42).
 
   // ─── State ───────────────────────────────────────────────────────
   let view: '3d' | '2d' = $state('3d');
@@ -178,21 +172,7 @@
    * NATION_COLORS palette used elsewhere on /mars. Used by the
    * info card and (transitively) by the photo gallery in #PE.
    */
-  function nationChipFor(site: MarsSite): { label: string; color: string } {
-    const nation = site.nation ?? '';
-    const agency = site.agency ?? '';
-    if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
-    if (nation === 'USSR' || agency === 'ROSCOSMOS')
-      return { label: 'USSR · Roscosmos', color: '#ef4444' };
-    if (nation === 'China' || agency === 'CNSA') return { label: 'China · CNSA', color: '#dc2626' };
-    if (nation === 'India' || agency === 'ISRO') return { label: 'India · ISRO', color: '#f97316' };
-    if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
-    if (nation === 'Israel' || agency === 'SpaceIL')
-      return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
-    if (nation === 'Europe' || agency === 'ESA') return { label: 'Europe · ESA', color: '#1d4ed8' };
-    if (nation === 'UK' || agency === 'ESA-UK') return { label: 'UK · ESA', color: '#1d4ed8' };
-    return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
-  }
+  // nationChipFor extracted to $lib/surface-map/nation-palette.ts (#42).
 
   /**
    * Compact mission-context tagline: "Mars Science Laboratory rover ·
@@ -243,14 +223,7 @@
    * camR ≤ 30.6 → 0.2 (closest zoom — rover sits readably on the HiRISE patch)
    * Linear between. Per-frame; cheap.
    */
-  function computeTierScale(camR: number): number {
-    const minR = 30.6;
-    const maxR = 60;
-    const minScale = 0.2;
-    if (camR >= maxR) return 1;
-    if (camR <= minR) return minScale;
-    return minScale + (1 - minScale) * ((camR - minR) / (maxR - minR));
-  }
+  // computeTierScale extracted to $lib/surface-map/tier-scale.ts (#42).
 
   // Surface Hotspots mode — see /moon for the full pattern.
   let hotspotsMode: HotspotMode = $state('auto');
@@ -258,22 +231,9 @@
   let panoramaSkybox: SkyboxHandle | null = null;
   let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
   let exitPanorama: () => void = $state(() => {});
-  function resolveInitialHotspotsMode(url: URL): HotspotMode {
-    const param = url.searchParams.get('hotspots');
-    if (param === 'low' || param === 'high' || param === 'auto') return param;
-    if (typeof window !== 'undefined') {
-      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
-      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-      const saveData = conn?.saveData === true;
-      if (reduced || saveData) return 'low';
-    }
-    return 'auto';
-  }
-  function cycleHotspotsMode(): void {
-    const next: HotspotMode =
-      hotspotsMode === 'auto' ? 'low' : hotspotsMode === 'low' ? 'high' : 'auto';
-    hotspotsMode = next;
-  }
+  // resolveInitialHotspotsMode + nextHotspotsMode extracted to
+  // $lib/surface-map/hotspots-mode.ts (#42).
+  const cycleHotspotsMode = () => (hotspotsMode = nextHotspotsMode(hotspotsMode));
   onMount(() => {
     hotspotsMode = resolveInitialHotspotsMode($page.url);
     showDebug = $page.url.searchParams.get('debug') === '1';

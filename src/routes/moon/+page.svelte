@@ -6,6 +6,16 @@
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
+  import {
+    NATION_COLORS,
+    colorFor,
+    nationChipFor,
+  } from '$lib/surface-map/nation-palette';
+  import { computeTierScale } from '$lib/surface-map/tier-scale';
+  import {
+    resolveInitialHotspotsMode,
+    nextHotspotsMode,
+  } from '$lib/surface-map/hotspots-mode';
   import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -56,21 +66,7 @@
   // Soviet ministry's lunar/Mars assets); their landers belong to the
   // same lineage on a moon map. Inline (not from --color-*) because
   // the 2D canvas legend can't read CSS custom properties cheaply.
-  const NATION_COLORS: Record<string, string> = {
-    USA: '#0B3D91',
-    'USSR/Russia': '#8B0000',
-    China: '#DE2910',
-    India: '#FF9933',
-    Japan: '#003087',
-  };
-
-  // Resolve a site's nation field to a legend key. USSR + Russia
-  // collapse to one entry so the lineage reads as a single space
-  // programme on the legend.
-  function nationKey(nation: string): string {
-    if (nation === 'USSR' || nation === 'Russia') return 'USSR/Russia';
-    return nation;
-  }
+  // NATION_COLORS + nationKey extracted to $lib/surface-map/nation-palette.ts (#42).
 
   let view: '3d' | '2d' = $state('3d');
   let container: HTMLDivElement | undefined = $state();
@@ -112,27 +108,9 @@
   let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
   let exitPanorama: () => void = $state(() => {});
 
-  /** Resolve the initial HOTSPOTS mode from URL + accessibility hints. */
-  function resolveInitialHotspotsMode(url: URL): HotspotMode {
-    const param = url.searchParams.get('hotspots');
-    if (param === 'low' || param === 'high' || param === 'auto') return param;
-    // Reduced-motion users default to LOW (less GPU work + lower
-    // visual motion as zoom triggers tier swaps). Save-Data
-    // (Chromium) users also default to LOW (skips texture fetches).
-    if (typeof window !== 'undefined') {
-      const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
-      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-      const saveData = conn?.saveData === true;
-      if (reduced || saveData) return 'low';
-    }
-    return 'auto';
-  }
-
-  function cycleHotspotsMode(): void {
-    const next: HotspotMode =
-      hotspotsMode === 'auto' ? 'low' : hotspotsMode === 'low' ? 'high' : 'auto';
-    hotspotsMode = next;
-  }
+  // resolveInitialHotspotsMode + nextHotspotsMode extracted to
+  // $lib/surface-map/hotspots-mode.ts (#42).
+  const cycleHotspotsMode = () => (hotspotsMode = nextHotspotsMode(hotspotsMode));
 
   // Resolve initial mode once on mount (needs window for
   // matchMedia + navigator.connection). Subsequent changes go
@@ -170,24 +148,7 @@
     }
   });
 
-  function colorFor(site: MoonSite): string {
-    return NATION_COLORS[nationKey(site.nation)] ?? '#888';
-  }
-
-  /**
-   * Zoom taper for tier 0/1 models. Port of /mars's computeTierScale.
-   * camR ≥ 60 → 1.0 (overview); camR ≤ 30.6 → 0.2 (closest zoom).
-   * As the user zooms in onto the LROC patch, the lander model + tier-0
-   * marker shrink so they don't visually dominate the disc underneath.
-   */
-  function computeTierScale(camR: number): number {
-    const minR = 30.6;
-    const maxR = 60;
-    const minScale = 0.2;
-    if (camR >= maxR) return 1;
-    if (camR <= minR) return minScale;
-    return minScale + (1 - minScale) * ((camR - minR) / (maxR - minR));
-  }
+  // colorFor + computeTierScale extracted to $lib/surface-map/* (#42).
 
   // Debug overlay state — same shape as /mars's debugInfo so a
   // ?debug=1 toggle surfaces dispatcher internals (current/target
@@ -254,20 +215,7 @@
    * which collapses with Russia for the chip (Roscosmos is the
    * programmatic continuation of the Soviet space programme).
    */
-  function nationChipFor(site: MoonSite): { label: string; color: string } {
-    const nation = site.nation ?? '';
-    const agency = site.agency ?? '';
-    if (nation === 'USA' || agency === 'NASA') return { label: 'USA · NASA', color: '#3b82f6' };
-    if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
-      return { label: 'USSR · Roscosmos', color: '#ef4444' };
-    if (nation === 'China' || agency === 'CNSA') return { label: 'China · CNSA', color: '#dc2626' };
-    if (nation === 'India' || agency === 'ISRO') return { label: 'India · ISRO', color: '#f97316' };
-    if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
-    if (nation === 'Israel' || agency === 'SpaceIL')
-      return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
-    if (nation === 'Europe' || agency === 'ESA') return { label: 'Europe · ESA', color: '#1d4ed8' };
-    return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
-  }
+  // nationChipFor extracted to $lib/surface-map/nation-palette.ts (#42).
 
   /**
    * Compact mission-context tagline: "Apollo 11 crewed lander ·

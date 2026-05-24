@@ -203,9 +203,13 @@ describe('reference data', () => {
     expect(data).toHaveLength(13);
   });
 
-  it('earthObjects() returns 20 objects (13 Earth-orbital + 7 lunar orbiters)', async () => {
+  it('earthObjects() returns 31 objects (12 single craft + 11 constellations + 8 lunar orbiters)', async () => {
+    // GH #83 added 11 constellation markers (Starlink, OneWeb, Iridium,
+    // Kuiper, Planet, Sentinel, Landsat, GOES, Inmarsat, Tundra/Molniya,
+    // O3b) on top of the existing 20 (4 of which were upgraded with
+    // constellation metadata).
     const data = await earthObjects();
-    expect(data).toHaveLength(20);
+    expect(data).toHaveLength(31);
     const lunar = data.filter((o) => o.regime === 'MOON');
     expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
@@ -324,9 +328,9 @@ describe('getMissionsForLibrary', () => {
 });
 
 describe('getEarthObjects', () => {
-  it('returns 20 objects merged with their en-US overlay', async () => {
+  it('returns 31 objects merged with their en-US overlay', async () => {
     const list = await getEarthObjects();
-    expect(list).toHaveLength(20);
+    expect(list).toHaveLength(31);
     const iss = list.find((o) => o.id === 'iss');
     expect(iss).toBeDefined();
     expect(iss!.altitude_km).toBe(408);
@@ -339,7 +343,7 @@ describe('getEarthObjects', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getEarthObjects('xx-TEST');
-    expect(list).toHaveLength(20);
+    expect(list).toHaveLength(31);
     const iss = list.find((o) => o.id === 'iss');
     expect(iss?.short).toBe('ISS');
   });
@@ -610,8 +614,9 @@ describe('getScienceSection', () => {
 describe('getScienceTab', () => {
   it('returns orbits sections sorted by order', async () => {
     const sections = await getScienceTab('orbits');
-    // 10 sections after lagrange-points (v0.6.x).
-    expect(sections.length).toBe(10);
+    // 15 sections after GH #83 added sun-synchronous, special-orbits,
+    // cislunar-orbits, disposal-end-of-life, space-debris.
+    expect(sections.length).toBe(15);
     for (let i = 1; i < sections.length; i++) {
       expect(sections[i].order).toBeGreaterThanOrEqual(sections[i - 1].order);
     }

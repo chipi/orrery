@@ -78,6 +78,19 @@
   // change without restructuring the scene.
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$data/i18n/en-US/scenarios/orrery-1.json';
+  import {
+    buildHistoricalMarsArcs,
+    arcColorForStatus,
+    type MarsMissionInput,
+  } from '$lib/historical-mars-arcs';
+
+  // Vite-glob every Mars mission JSON at build time — the historical-arcs
+  // overlay needs the full list (PRD-014 #PF Step 2b / GH #255).
+  const marsModules = import.meta.glob('$data/missions/mars/*.json', {
+    eager: true,
+    import: 'default',
+  }) as Record<string, MarsMissionInput>;
+  const MARS_MISSIONS_FOR_OVERLAY: MarsMissionInput[] = Object.values(marsModules);
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
@@ -2048,6 +2061,42 @@
     // Hoist the builder so the $effect can re-use it on mission swap.
     rebuildTubeGeometry = buildTubeGeometry;
 
+    // ─── Historical Mars-mission overlay (PRD-014 #PF Step 2b / GH #255) ──
+    // Faded background arcs for every Mars mission with departure_date +
+    // arrival_date. Shown only when activeDestination === 'mars'; hidden
+    // otherwise via applyDestinationVisuals. Built once per mount, since
+    // mission JSONs are static at runtime.
+    const historicalMarsArcsGroup = new THREE.Group();
+    historicalMarsArcsGroup.visible = activeDestination === 'mars';
+    {
+      const arcs = buildHistoricalMarsArcs(MARS_MISSIONS_FOR_OVERLAY);
+      for (const arc of arcs) {
+        const [r, g, b] = arcColorForStatus(arc.status);
+        const positions = new Float32Array(arc.points.length * 3);
+        for (let i = 0; i < arc.points.length; i++) {
+          positions[i * 3] = arc.points[i].x * SCALE_3D;
+          positions[i * 3 + 1] = 0;
+          positions[i * 3 + 2] = arc.points[i].z * SCALE_3D;
+        }
+        const geom = new THREE.BufferGeometry();
+        geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const line = new THREE.Line(
+          geom,
+          new THREE.LineBasicMaterial({
+            color: new THREE.Color(r, g, b),
+            transparent: true,
+            opacity: 0.18,
+            depthWrite: false,
+          }),
+        );
+        line.userData.missionId = arc.id;
+        line.userData.missionName = arc.name;
+        line.userData.missionYear = arc.year;
+        historicalMarsArcsGroup.add(line);
+      }
+    }
+    scene.add(historicalMarsArcsGroup);
+
     // Earth + destination meshes. `marsMesh` is the destination body
     // mesh — Mars by default; mutated in place by
     // applyDestinationVisuals() when a mission targets Jupiter,
@@ -2103,6 +2152,8 @@
       (marsOrbitLine.material as THREE.Material).dispose();
       marsOrbitLine = orbit(orbitRadius, style.color);
       scene.add(marsOrbitLine);
+      // Toggle the historical-Mars overlay along with destination.
+      historicalMarsArcsGroup.visible = id === 'mars';
     }
     applyDestinationVisualsRef = applyDestinationVisuals;
 

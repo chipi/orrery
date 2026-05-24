@@ -3,12 +3,13 @@
   import { onMount, onDestroy } from 'svelte';
   import { get } from 'svelte/store';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
+  import { syncStationUrl } from '$lib/routes/sync-station-url';
+  import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
   import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
@@ -327,25 +328,8 @@
     return dm != null && dm <= 2;
   }
 
-  function syncUrl(partial: {
-    view?: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list';
-    moduleId?: string | null;
-  }) {
-    const params = new URLSearchParams(get(page).url.searchParams);
-    if (partial.view === 'list') params.set('view', 'list');
-    else if (partial.view === '2d-top') params.set('view', '2d-top');
-    else if (partial.view === '2d-side') params.set('view', '2d-side');
-    else if (partial.view === '2d-front') params.set('view', '2d-front');
-    else if (partial.view === '3d') params.delete('view');
-    if (partial.moduleId === null) params.delete('module');
-    else if (partial.moduleId !== undefined) params.set('module', partial.moduleId);
-    const qs = params.toString();
-    const target = `${base}/iss${qs ? `?${qs}` : ''}`;
-    const cur = `${get(page).url.pathname}${get(page).url.search}`;
-    if (target !== cur) {
-      void goto(target, { replaceState: true, keepFocus: true, noScroll: true });
-    }
-  }
+  const syncUrl = (partial: Parameters<typeof syncStationUrl>[1]) =>
+    syncStationUrl('/iss', partial);
 
   function closePanel() {
     ignoreModuleParamUntilClear = true;
@@ -555,30 +539,15 @@
     });
 
     function refreshIssMeshMaterials(timeSec: number) {
-      const sel = issVisualRef.selectedId;
-      const pan = issVisualRef.panelOpen;
-      const hov = issVisualRef.hoveredId;
-      const pulseScale = 1 + Math.sin(timeSec * 2.6) * 0.04;
-      meshById.forEach((meshes, id) => {
-        const isSel = id === sel;
-        const targetScale = isSel && pan ? pulseScale : 1;
-        for (const mesh of meshes) {
-          mesh.scale.setScalar(targetScale);
-          const mat = mesh.material;
-          if (!(mat instanceof THREE.MeshStandardMaterial)) continue;
-          if (isSel && pan) {
-            mat.emissive.setHex(0x4466ff);
-            mat.emissiveIntensity = 0.32 + Math.sin(timeSec * 2.6) * 0.14;
-          } else if (isSel) {
-            mat.emissive.setHex(0x4466ff);
-            mat.emissiveIntensity = 0.38;
-          } else {
-            mat.emissive.setHex(0x000000);
-            mat.emissiveIntensity = 0;
-          }
-        }
+      refreshStationSelectionStyling({
+        meshById,
+        selectedId: issVisualRef.selectedId,
+        panelOpen: issVisualRef.panelOpen,
+        timeSec,
       });
       // Hover feedback now lives on OutlinePass instead of emissive.
+      const hov = issVisualRef.hoveredId;
+      const sel = issVisualRef.selectedId;
       const hoveredMeshes = hov && hov !== sel ? (meshById.get(hov) ?? []) : [];
       outlinePass.selectedObjects = hoveredMeshes;
     }

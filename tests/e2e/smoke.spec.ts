@@ -61,7 +61,11 @@ test('nav bar is visible on every screen and links target primary routes', async
   const menuToggle = page.locator('button.menu-toggle');
   const isMobile = await menuToggle.isVisible().catch(() => false);
   if (isMobile) {
-    await menuToggle.click();
+    // tap() instead of click() — mobile-chromium synthetic clicks have
+    // been flaky on CI (GH #253). Wait for the hamburger's onclick
+    // binding to flush via networkidle before activating.
+    await page.waitForLoadState('networkidle');
+    await menuToggle.tap();
   }
   const linkSelector = isMobile
     ? (path: string) => `a.drawer-link[href$="${path}"]`

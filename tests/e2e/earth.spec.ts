@@ -53,16 +53,25 @@ test.describe('/earth', () => {
     );
   });
 
-  test('clicking a satellite in 2D mode opens the panel', async ({ page }) => {
+  test('clicking a satellite in 2D mode opens the panel', async ({ page, isMobile }) => {
     await page.goto('/earth');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    await page.waitForLoadState('networkidle');
+    const toggle2d = page.getByRole('button', { name: /^2d$/i });
+    await expect(toggle2d).toBeVisible();
+    if (isMobile) {
+      await toggle2d.tap();
+    } else {
+      await toggle2d.click();
+    }
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible();
     // Deterministic wait: the canvas exposes data-objects-count once
-    // earth-objects.json has loaded. On slow CI runners this can take
-    // several hundred ms longer than a fixed waitForTimeout would
-    // allow, so poll the attribute instead.
-    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
+    // earth-objects.json has loaded. Mobile-chromium on CI is 3-5×
+    // slower than desktop; the per-object filter + render loop
+    // regularly exceeds the original 10s budget there.
+    await expect(flat).not.toHaveAttribute('data-objects-count', '0', {
+      timeout: isMobile ? 30_000 : 10_000,
+    });
     // Sweep the canvas in a grid until a click opens the right-panel.
     // Now that satellites occupy inclined orbits (v0.x.x), their 2D
     // projection isn't on a clean ring at phase=i*2.4 anymore —

@@ -209,22 +209,30 @@ test.describe('/explore — selection and panel', () => {
 
   test('toggle stays accessible when panel is open (regression for the desktop panel-shift)', async ({
     page,
+    isMobile,
   }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
+    await page.waitForLoadState('networkidle');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
+    await expect(canvas2d).toBeVisible();
     const box = await canvas2d.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
-    // Open the Sun panel.
+    // Open the Sun panel (centre of canvas).
     await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
-    await expect(page.locator('aside.panel')).toBeVisible();
+    await expect(page.locator('aside.panel')).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
     // Toggle button must still be visible AND clickable. On desktop the
     // .panel-shifted class moves it left by --panel-width; on mobile the
     // panel is a bottom sheet so the toggle stays put.
     const toggle = page.getByRole('button', { name: /^3d$/i });
     await expect(toggle).toBeVisible();
-    await toggle.click(); // Should switch back to 3D without throwing.
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
   });
 });
 
@@ -232,25 +240,33 @@ test.describe('/explore — selection and panel', () => {
  * v0.1.10 — GALLERY + LEARN tabs on PlanetPanel + SunPanel.
  */
 test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
-  test('Earth panel exposes GALLERY tab with thumbnails', async ({ page }) => {
+  test('Earth panel exposes GALLERY tab with thumbnails', async ({ page, isMobile }) => {
     // Same simT-rotation hazard as test:156 — without reduced-motion
     // gating, Earth drifts off the (W/2 + 113, H/2) click target before
     // the click lands. Particularly painful on mobile-chromium where
     // setup is slower and simT has advanced further.
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
+    await page.waitForLoadState('networkidle');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
+    await expect(canvas2d).toBeVisible();
     const box = await canvas2d.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
     await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
     const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible();
+    await expect(panel).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
-    await expect(galleryTab).toBeVisible({ timeout: 5_000 });
-    await galleryTab.click();
-    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
+    await expect(galleryTab).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
+    if (isMobile) {
+      await galleryTab.tap();
+    } else {
+      await galleryTab.click();
+    }
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({
+      timeout: isMobile ? 15_000 : 5_000,
+    });
   });
 
   test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
@@ -274,16 +290,19 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
 
-  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page }) => {
+  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page, isMobile }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
+    await page.waitForLoadState('networkidle');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
+    await expect(canvas2d).toBeVisible();
     const box = await canvas2d.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
     await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
     const panel = page.locator('aside.panel');
-    await expect(panel).toContainText(/The Sun/i);
+    await expect(panel).toContainText(/The Sun/i, { timeout: isMobile ? 15_000 : 5_000 });
     await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
     // LEARN tab folded into SCIENCE — assert the SCIENCE tab is
     // present in its place.

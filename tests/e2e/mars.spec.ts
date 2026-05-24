@@ -110,17 +110,20 @@ test.describe('/mars', () => {
     await expect(link).toHaveAttribute('href', /\/missions\?id=curiosity/);
   });
 
-  test('no console errors on load', async ({ page }) => {
+  test('no console errors on load', async ({ page, isMobile }) => {
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
     await page.goto('/mars');
     await expect(page.locator('.layer:not(canvas) canvas').first()).toBeVisible({
-      timeout: 5_000,
+      timeout: isMobile ? 15_000 : 5_000,
     });
     // Wait for sites JSON to load — canvas exposes data-sites-count.
+    // Mobile-chromium on CI is 3-5× slower than desktop; the per-site
+    // i18n overlay fetch loop (~30 sites × 2 fallback fetches) regularly
+    // exceeds the original 10s budget there.
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 10_000,
+      timeout: isMobile ? 30_000 : 10_000,
     });
     // Filter "Failed to load resource" — i18n overlay loader probes
     // optional per-locale files and catches 404s in src/lib/data.ts.

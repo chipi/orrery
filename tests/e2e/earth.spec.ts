@@ -180,11 +180,24 @@ test.describe('/earth', () => {
     await expect(page.getByTestId('layer-orbits')).toBeVisible();
   });
 
-  test('chip toggle flips aria-pressed', async ({ page }) => {
+  test('chip toggle flips aria-pressed', async ({ page, isMobile }) => {
     await page.goto('/earth');
+    // Wait for HUD hydration to flush before the click — on mobile-chromium
+    // the chip onclick binding sometimes hasn't attached when the test
+    // sends the synthetic event (GH #253). networkidle is a cheap proxy
+    // for "page is done initialising" without spec-specific waits.
+    await page.waitForLoadState('networkidle');
     const stations = page.getByTestId('layer-stations');
+    await expect(stations).toBeVisible();
     await expect(stations).toHaveAttribute('aria-pressed', 'true');
-    await stations.click();
+    // On mobile-chromium, prefer tap() (touch event) over click() (mouse)
+    // — matches how the user actually interacts with the chip on a phone
+    // and avoids the synthetic-click-event timing race that #253 captured.
+    if (isMobile) {
+      await stations.tap();
+    } else {
+      await stations.click();
+    }
     await expect(stations).toHaveAttribute('aria-pressed', 'false');
   });
 });

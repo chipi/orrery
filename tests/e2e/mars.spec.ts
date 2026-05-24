@@ -22,10 +22,17 @@ test.describe('/mars', () => {
     expect(dim.h).toBeGreaterThan(0);
   });
 
-  test('2D toggle reveals the equirectangular Mars map', async ({ page }) => {
+  test('2D toggle reveals the equirectangular Mars map', async ({ page, isMobile }) => {
     await page.goto('/mars');
-    await page.getByTestId('mode-toggle').click();
-    await expect(page.getByTestId('mode-toggle')).toHaveText('3D');
+    await page.waitForLoadState('networkidle');
+    const toggle = page.getByTestId('mode-toggle');
+    await expect(toggle).toBeVisible();
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
+    await expect(toggle).toHaveText('3D');
     // The 2D canvas has class="layer" and is the only `<canvas>` in
     // the route's tree (the 3D canvas is created inside the
     // bound <div class="layer"> by Three.js but doesn't carry the

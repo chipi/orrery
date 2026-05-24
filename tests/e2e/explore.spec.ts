@@ -186,15 +186,20 @@ test.describe('/explore — selection and panel', () => {
     await expect(panel).toContainText(/ECCENTRICITY/);
   });
 
-  test('SIZES overlay opens via toggle button + closes via ESC', async ({ page }) => {
+  test('SIZES overlay opens via toggle button + closes via ESC', async ({ page, isMobile }) => {
     // SIZES is no longer a per-planet tab (each planet panel was
     // rendering the same chart) — it's now a single global overlay
     // toggled from a button next to the 2D/3D toggle. The chart
     // highlights whichever planet panel is open, if any.
     await page.goto('/explore');
+    await page.waitForLoadState('networkidle');
     const toggle = page.getByTestId('sizes-toggle');
     await expect(toggle).toBeVisible();
-    await toggle.click();
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     const sizesCanvas = page.getByLabel(/Planet size comparison/i);
     await expect(sizesCanvas).toBeVisible();
     // ESC dismisses the overlay.

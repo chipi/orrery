@@ -1163,7 +1163,8 @@ console.log('\nValidating image-pipeline v2 manifests (image-vision + image-cura
       let bad = 0;
       for (const [p, e] of Object.entries(m.entries)) {
         if (typeof e.score !== 'number' || e.score < 0 || e.score > 10) bad++;
-        if (!p.startsWith('/images/')) bad++;
+        // Any leading `/` path is fine — corpus includes /images/, /textures/, /logos/
+        if (!p.startsWith('/')) bad++;
       }
       if (bad > 0) problems.push(`image-vision.json: ${bad} malformed entries`);
     }

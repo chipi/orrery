@@ -269,7 +269,10 @@ async function applyScopeFilters(
     !args.fleetAsset &&
     !args.segment &&
     !args.changedSince;
-  let filtered = entries;
+  // SVG logos can't be scored — Anthropic vision API rejects them with
+  // "Could not process image" (400). Always exclude so they don't burn
+  // request budget on every run. Curate agency logos separately.
+  let filtered = entries.filter((e) => !e.path.toLowerCase().endsWith('.svg'));
   if (args.mission) {
     const id = args.mission;
     filtered = filtered.filter((e) => e.path.includes(`/missions/${id}/`));

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
@@ -127,20 +127,7 @@
   // Reactive: sync mode → dispatcher + URL.
   $effect(() => {
     setHotspotMode(hotspotsMode);
-    if (typeof window === 'undefined') return;
-    const url = new URL($page.url);
-    const current = url.searchParams.get('hotspots');
-    // Strip the param when mode is the default ('auto'), otherwise
-    // write it explicitly. replaceState to keep back-button clean.
-    if (hotspotsMode === 'auto') {
-      if (current !== null) {
-        url.searchParams.delete('hotspots');
-        void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
-      }
-    } else if (current !== hotspotsMode) {
-      url.searchParams.set('hotspots', hotspotsMode);
-      void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
-    }
+    syncHotspotsModeUrl($page.url, hotspotsMode);
   });
 
   // colorFor + computeTierScale extracted to $lib/surface-map/* (#42).

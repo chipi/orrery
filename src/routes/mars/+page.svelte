@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
-  import { goto } from '$app/navigation';
+  import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
@@ -239,18 +239,7 @@
   });
   $effect(() => {
     setHotspotMode(hotspotsMode);
-    if (typeof window === 'undefined') return;
-    const url = new URL($page.url);
-    const current = url.searchParams.get('hotspots');
-    if (hotspotsMode === 'auto') {
-      if (current !== null) {
-        url.searchParams.delete('hotspots');
-        void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
-      }
-    } else if (current !== hotspotsMode) {
-      url.searchParams.set('hotspots', hotspotsMode);
-      void goto(url, { replaceState: true, keepFocus: true, noScroll: true });
-    }
+    syncHotspotsModeUrl($page.url, hotspotsMode);
   });
   // Per-rover traverses keyed by rover_id, populated after fetch.
   let traverses: Record<string, Traverse> = $state({});

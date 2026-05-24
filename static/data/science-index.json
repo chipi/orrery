@@ -400,6 +400,20 @@
   },
   {
     "tab": "orbits",
+    "section": "cislunar-orbits",
+    "title": "Cislunar orbits — DRO, NRHO, halo, lunar frozen",
+    "intro": "Between Earth and the Moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from Gateway to robotic probes.",
+    "haystack": "cislunar orbits — dro, nrho, halo, lunar frozen between earth and the moon's surface lies a zoo of carefully-engineered orbits — none of them obvious from two-body physics, all of them exploited by the modern lunar architecture from gateway to robotic probes. near-rectilinear halo orbit (nrho) is the orbit class nasa chose for the lunar gateway. geometrically: a six-day-period halo orbit around the earth-moon l2 lagrange point, with perilune ~3,000 km above the lunar south pole and apolune ~70,000 km away from the moon. the 'near-rectilinear' name comes from the orbit's shape in the earth-moon rotating frame — it sweeps a long, narrow loop perpendicular to the earth-moon line, almost like a rectangle. three properties made it the winning choice for gateway. first, station-keeping δv is extraordinarily low (~5 m/s/year) compared to lunar low orbits (>100 m/s/year). second, earth communication is unobstructed because the orbit stays out of the moon's radio shadow. third, the perilune over the south pole gives the shortest descent δv to the artemis base camp site at shackleton crater rim. the trade is that descent from nrho to lunar surface is harder than from a low circular lunar orbit (~2.5 km/s vs ~1.8 km/s) — but for a programme that needs an enduring staging point, the trade is worth it."
+  },
+  {
+    "tab": "orbits",
+    "section": "disposal-end-of-life",
+    "title": "End-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule",
+    "intro": "Every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. Mismanaged disposal is what produces the orbital-debris problem covered in the next article.",
+    "haystack": "end-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule every satellite must have an end-of-life disposal plan to launch — either deorbit into the atmosphere, or boost to a stable graveyard orbit. mismanaged disposal is what produces the orbital-debris problem covered in the next article. leo disposal: deorbit. spacecraft in leo are dragged down by residual atmospheric density (negligible per orbit, accumulative over years). a satellite at 400 km decays naturally within a year if propulsion fails; at 800 km the natural decay time is ~50 years; at 1500 km it's centuries. the international standard codified by the iadc (inter-agency space debris coordination committee) in 2002 and adopted by every spacefaring nation: leo objects must be deorbited within 25 years of end of mission. the fcc tightened this for us-licensed satellites to 5 years in 2022. mechanism: at end of life, the spacecraft uses its remaining propellant to lower perigee into the upper atmosphere (typically 200-300 km perigee), guaranteeing rapid drag-driven decay within months. large objects (iss modules, hubble, retired leo comsats) are targeted at spoua — the south pacific ocean uninhabited area, a remote stretch of open ocean centred near point nemo, the official 'spacecraft cemetery' since the soviet salyut deorbits in the 1970s. mir was deorbited there in 2001 (130 tonnes); the iss is scheduled for controlled deorbit there in 2031."
+  },
+  {
+    "tab": "orbits",
     "section": "eccentricity",
     "title": "Eccentricity",
     "intro": "How stretched the orbit is — zero is a perfect circle, one is a parabolic escape.",
@@ -446,6 +460,27 @@
     "title": "Semi-Major Axis",
     "intro": "Half the longest diameter of the orbit ellipse — and the single number that sets the orbital period.",
     "haystack": "semi-major axis half the longest diameter of the orbit ellipse — and the single number that sets the orbital period. if you flatten a keplerian ellipse into its longest dimension, the line you've drawn is the major axis. cut that in half and you have the semi-major axis — written `a`. it's the average distance from the orbiting body to the focus, kind of: an arithmetic mean of perihelion (closest) and aphelion (farthest)."
+  },
+  {
+    "tab": "orbits",
+    "section": "space-debris",
+    "title": "Space debris — Kessler syndrome, ASAT events, and the cleanup attempts",
+    "intro": "Earth orbit holds ~36,000 tracked debris objects bigger than 10 cm and an estimated 100+ million pieces smaller. Two ASAT events and one accidental collision created most of it. Cleanup is just beginning to ramp.",
+    "haystack": "space debris — kessler syndrome, asat events, and the cleanup attempts earth orbit holds ~36,000 tracked debris objects bigger than 10 cm and an estimated 100+ million pieces smaller. two asat events and one accidental collision created most of it. cleanup is just beginning to ramp. the numbers are blunt. esa's space debris office, nasa's orbital debris program office, and the us space force's 18th space defense squadron maintain converging estimates of the orbital population (as of 2024-2025): ~36,000 catalogued objects with diameter ≥10 cm, of which ~9,000 are active spacecraft and the rest are debris. ~1 million pieces estimated between 1 cm and 10 cm, mostly untracked. >100 million pieces between 1 mm and 1 cm, completely untracked but individually capable of disabling a spacecraft on impact (a 1 cm aluminium fragment at 14 km/s closing speed delivers the kinetic energy of a hand grenade). total mass in earth orbit: roughly 11,000 tonnes. of that, perhaps 8,000 tonnes is the debris fraction — derelicts, spent upper stages, fragments from breakups, paint flakes, rocket-engine slag."
+  },
+  {
+    "tab": "orbits",
+    "section": "special-orbits",
+    "title": "Special orbits — Molniya, Tundra, GTO, frozen",
+    "intro": "Beyond LEO / MEO / GEO / HEO, a handful of named special orbits do specific jobs: communications above 70° latitude, geostationary transfer, drift-free station-keeping. Each is a clever exploit of orbital mechanics.",
+    "haystack": "special orbits — molniya, tundra, gto, frozen beyond leo / meo / geo / heo, a handful of named special orbits do specific jobs: communications above 70° latitude, geostationary transfer, drift-free station-keeping. each is a clever exploit of orbital mechanics. molniya orbit (russia, since 1965). high-eccentricity (e ≈ 0.74), low perigee (~600 km), high apogee (~40,000 km), inclination 63.4°, period exactly 12 hours. two design decisions make it work. first, the 63.4° inclination is the 'critical inclination' at which earth's j2 perturbation does not cause the line of apsides to rotate (at any other inclination the perigee drifts around the orbit over months); apogee stays locked over the northern hemisphere where you want it. second, with a 12-hour period the satellite spends about 8 hours near apogee, slowly tracing across the northern sky, then races through perigee in 4 hours. a constellation of three molniya satellites at staggered phase angles provides continuous coverage of latitudes north of 70°, where geo comsats can't reach because they sit on the equator. used by russia for civilian phone + tv (molniya i/ii/iii series), military comms (meridian), and oko early-warning satellites watching for us icbm launches."
+  },
+  {
+    "tab": "orbits",
+    "section": "sun-synchronous",
+    "title": "Sun-synchronous + polar orbits — the Earth-observation backbone",
+    "intro": "Sun-synchronous orbits cross every point on Earth at the same local solar time daily. Nearly polar, retrograde, tuned to use Earth's equatorial bulge as a precession motor — the trick behind consistent Earth observation.",
+    "haystack": "sun-synchronous + polar orbits — the earth-observation backbone sun-synchronous orbits cross every point on earth at the same local solar time daily. nearly polar, retrograde, tuned to use earth's equatorial bulge as a precession motor — the trick behind consistent earth observation. a sun-synchronous orbit (sso) is a near-polar orbit (inclination usually 96-99°) at low to mid-leo altitude (600-900 km) whose orbital plane rotates eastward at exactly the same rate earth orbits the sun — 360°/year, or about 0.9856°/day. the effect: the angle between the satellite's orbital plane and the sun stays constant year-round, so the satellite always crosses any given latitude at the same local solar time. a sentinel-2 spacecraft, for instance, crosses the equator on the descending node at 10:30 local time every single day; this is what lets you compare a landsat image of a forest from 2010 to one from 2025 and know the lighting conditions are similar."
   },
   {
     "tab": "orbits",

@@ -12,6 +12,28 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ### Added
 
+- **Surface Hotspots — full 4-tier stack across all 49 sites** (PRD-014 / RFC-017, epic #108). Mars + Moon landing sites render through a progressive zoom-aware tier system: Tier 0 silhouettes at overview → Tier 1 3D models at mid-zoom → Tier 2 LROC NAC / HiRISE patches at close-zoom → Tier 3 equirectangular skybox panoramas via "Stand at site". Coverage:
+  - **Moon**: 18/18 sites with Tier 0-3 — Apollo 11-17 (NASA), Luna 9/16/17/21/24 (USSR / Soviet archive), Chang'e 3/4/5/6 (CNSA), Chandrayaan-3 (ISRO), SLIM (JAXA), Beresheet (SpaceIL). Honest editorial captions on low-coverage sites (telephotometer single-frames, descent-frame for Beresheet, museum-model frame for Lunokhod 2) — same pattern as Mars's mars3 / beagle2 / schiaparelli.
+  - **Mars**: 18/18 sites with Tier 0-3 — Viking 1/2, Pathfinder/Sojourner, Phoenix, InSight, Spirit, Opportunity, Curiosity, Perseverance (NASA); Mars 3, Beagle 2, Schiaparelli, Zhurong (CNSA via Wikimedia), plus 5 historical landers with honest single-frame captions.
+  - **License-allowlist additions**: CNSA-EDU, ISRO-EDU, JAXA-OPEN, SpaceIL-EDU, PD-Russia.
+- **Image Pipeline v2 — vision-model scoring + smart cropping + curation loop** (PRD-018 / RFC-022, epic #148). Anthropic Sonnet 4.6 scores every image in the 1414-entry corpus (~$9 whole-corpus cost on Sonnet 4.6, far under the $80 ceiling). Per-image content-hash cache; granular CLI (`--segment` / `--mission` / `--agency` / `--source` / `--fleet-asset` / `--new-only` / `--changed-since`). Two new sidecars: `image-vision.json` (machine-scored) + `image-curation.json` (human deny-list). 1:1 / 4:3 / 16:9 pre-cropped variants enable MOBILE=1 bundle savings. Cost ledger with $50 soft / $200 hard 30-day rolling thresholds. Curation feedback loop: top-5 recent deny reasons injected as in-context bias into every scoring prompt.
+- **Trans-Mars trajectory overlay on /fly** (PRD-014 #PF / GH #255). Heliocentric transfer-ellipse arcs for every Mars mission with departure_date + arrival_date — Mariner 4, Viking 1, MRO, Mars Express, Mangalyaan, Curiosity, Perseverance, Tianwen-1, Hope Probe, etc. Rendered as faded background arcs alongside the active simulation when activeDestination === 'mars'. Color-coded by status: neutral white (FLOWN), red-tinged (FAILED), teal (PLANNED).
+- **a11y v0.7.0 subset** (PRD-007 / GH #256). Axe-core CI gate across 11 routes with 0 critical-violations enforcement (previously a logging-only pilot on 5 routes). Reduced-motion guardrail unit test banning re-introduction of `transition:fly/fade/slide/scale/blur/draw`. Screen-reader-only parallel `<ul>` navigation surface on 6 canvas routes (/missions, /tiangong, /moon, /mars, /iss, /earth) — each `<button>` fires the same panel-open handler as a canvas-marker click. Locale-aware alt-text accessor (`src/lib/image-alt.ts`) with en-US baseline auto-generated from `image-provenance.json` (3210 entries). Automated RTL probe spec asserting `<html dir="rtl">` on Arabic locale.
+- **Trans-Mars overlay math reusable** — NEW `src/lib/historical-mars-arcs.ts` with `buildHistoricalMarsArcs()` helper + 5 unit tests. Pure function over mission JSONs; sim-day-zero epoch = 2026-01-01.
+
+### Changed
+
+- **Image-mime contract enforced** (GH #251). All fetchers now route .jpg writes through `coerceToJpeg()` (sharp round-trip, mozjpeg q85). New `scripts/audit-image-mime.ts` walks every static/images/**/*.jpg + asserts JPEG magic-byte (`ff d8 ff`); wired into `npm run preflight` as a fail-closed gate. One-shot repair fixed 167 PNG-bytes-in-jpg-extension files surfaced by the audit. Mime-contract documentation added to `docs/guides/image-pipeline-v2.md`.
+- **Cislunar trajectory profiles populated for all 21 Moon missions** — change3, luna16, luna21, beresheet got their first `flight.cislunar_profile` entries via PRD-014 #PF Step 2a. Brings non-NASA Moon mission cislunar parity with NASA.
+- **Fleet + mission gallery manifests** rebuilt from disk reality. NEW `scripts/rebuild-gallery-manifests.ts` walks every `static/images/{fleet-galleries,missions}/<id>/` and writes the truthful count map. Caught 6 stale-manifest false positives in the prior non-NASA audit.
+- **Mobile-chromium e2e hardening** (GH #253). 7 flaky specs across earth/mars/explore/smoke gained `isMobile ? .tap() : .click()` + `networkidle` waits + 30s data-load timeouts.
+
+### Fixed
+
+- **SVG / corrupt-JPEG vision-scoring failures** — `scripts/score-images.ts` auto-skips `.svg` files (Anthropic vision API rejects them) and `.1x1/.4x3/.16x9.jpg` variant files (cascade-on-rescore bug).
+
+### Earlier
+
 - **Launches Calendar** (PRD-020 / RFC-023, epic #232). New `/missions/launches`
   route surfaces upcoming and historic global spaceflight launches in a single
   filterable calendar — banner of next 4 featured launches on `/missions`,

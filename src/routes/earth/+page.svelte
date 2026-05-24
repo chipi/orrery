@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
@@ -1198,33 +1199,14 @@
         </div>
       {/if}
 
-      <div class="tabs" role="tablist">
-        <button
-          type="button"
-          class:active={panelTab === 'overview'}
-          onclick={() => (panelTab = 'overview')}
-          role="tab"
-          aria-selected={panelTab === 'overview'}>{m.panel_tab_overview()}</button
-        >
-        {#if panelGallery.length > 0}
-          <button
-            type="button"
-            class:active={panelTab === 'gallery'}
-            onclick={() => (panelTab = 'gallery')}
-            role="tab"
-            aria-selected={panelTab === 'gallery'}>{m.panel_tab_gallery()}</button
-          >
-        {/if}
-        {#if panelHasLinks}
-          <button
-            type="button"
-            class:active={panelTab === 'learn'}
-            onclick={() => (panelTab = 'learn')}
-            role="tab"
-            aria-selected={panelTab === 'learn'}>{m.panel_tab_learn()}</button
-          >
-        {/if}
-      </div>
+      <PanelTabRow
+        tabs={[
+          { id: 'overview', label: m.panel_tab_overview() },
+          { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
+          { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
+        ]}
+        bind:active={panelTab}
+      />
 
       {#if panelTab === 'overview'}
         <div class="grid">

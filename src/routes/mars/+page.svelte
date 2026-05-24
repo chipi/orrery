@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import {
     getMarsSites,
     getMarsTraverse,
@@ -2551,55 +2552,22 @@ sample      ${debugInfo.projectedPxSample}`}
         </button>
       </div>
     {/if}
-    <div class="panel-tabs" role="tablist">
-      <button
-        type="button"
-        role="tab"
-        class="tab-btn"
-        class:active={panelTab === 'overview'}
-        aria-selected={panelTab === 'overview'}
-        onclick={() => (panelTab = 'overview')}
-      >
-        OVERVIEW
-      </button>
-      {#if panelGallery.length > 0}
-        <button
-          type="button"
-          role="tab"
-          class="tab-btn"
-          class:active={panelTab === 'gallery'}
-          aria-selected={panelTab === 'gallery'}
-          onclick={() => (panelTab = 'gallery')}
-        >
-          GALLERY
-        </button>
-      {/if}
-      {#if panelStory}
-        <button
-          type="button"
-          role="tab"
-          class="tab-btn"
-          class:active={panelTab === 'story'}
-          aria-selected={panelTab === 'story'}
-          onclick={() => (panelTab = 'story')}
-          data-testid="panel-tab-story"
-        >
-          {m.panel_tab_story()}
-        </button>
-      {/if}
-      {#if panelHasLinks}
-        <button
-          type="button"
-          role="tab"
-          class="tab-btn"
-          class:active={panelTab === 'learn'}
-          aria-selected={panelTab === 'learn'}
-          onclick={() => (panelTab = 'learn')}
-        >
-          LEARN
-        </button>
-      {/if}
-    </div>
+    <PanelTabRow
+      rowClass="panel-tabs"
+      buttonClass="tab-btn"
+      tabs={[
+        { id: 'overview', label: m.panel_tab_overview() },
+        { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
+        {
+          id: 'story',
+          label: m.panel_tab_story(),
+          visible: !!panelStory,
+          testid: 'panel-tab-story',
+        },
+        { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
+      ]}
+      bind:active={panelTab}
+    />
 
     {#if panelTab === 'overview'}
       <div class="panel-body">
@@ -3149,14 +3117,15 @@ sample      ${debugInfo.projectedPxSample}`}
     z-index: 40;
   }
 
-  /* Panel internals */
-  .panel-tabs {
+  /* Panel internals — :global because the .panel-tabs / .tab-btn DOM
+     is rendered inside <PanelTabRow> which has its own scoped CSS. */
+  :global(.panel-tabs) {
     display: flex;
     gap: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 12px;
   }
-  .tab-btn {
+  :global(.tab-btn) {
     background: transparent;
     border: 0;
     padding: 8px 4px;
@@ -3167,7 +3136,7 @@ sample      ${debugInfo.projectedPxSample}`}
     cursor: pointer;
     border-bottom: 2px solid transparent;
   }
-  .tab-btn.active {
+  :global(.tab-btn.active) {
     color: #fff;
     border-bottom-color: #c1440e;
   }

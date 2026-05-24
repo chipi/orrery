@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -1921,43 +1922,20 @@ sample      ${debugInfo.projectedPxSample}`}
         </div>
       {/if}
 
-      <div class="tabs" role="tablist">
-        <button
-          type="button"
-          class:active={panelTab === 'overview'}
-          onclick={() => (panelTab = 'overview')}
-          role="tab"
-          aria-selected={panelTab === 'overview'}>{m.panel_tab_overview()}</button
-        >
-        {#if panelGallery.length > 0}
-          <button
-            type="button"
-            class:active={panelTab === 'gallery'}
-            onclick={() => (panelTab = 'gallery')}
-            role="tab"
-            aria-selected={panelTab === 'gallery'}>{m.panel_tab_gallery()}</button
-          >
-        {/if}
-        {#if panelStory}
-          <button
-            type="button"
-            class:active={panelTab === 'story'}
-            onclick={() => (panelTab = 'story')}
-            role="tab"
-            aria-selected={panelTab === 'story'}
-            data-testid="panel-tab-story">{m.panel_tab_story()}</button
-          >
-        {/if}
-        {#if panelHasLinks}
-          <button
-            type="button"
-            class:active={panelTab === 'learn'}
-            onclick={() => (panelTab = 'learn')}
-            role="tab"
-            aria-selected={panelTab === 'learn'}>{m.panel_tab_learn()}</button
-          >
-        {/if}
-      </div>
+      <PanelTabRow
+        tabs={[
+          { id: 'overview', label: m.panel_tab_overview() },
+          { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
+          {
+            id: 'story',
+            label: m.panel_tab_story(),
+            visible: !!panelStory,
+            testid: 'panel-tab-story',
+          },
+          { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
+        ]}
+        bind:active={panelTab}
+      />
 
       {#if panelTab === 'overview'}
         <div class="grid">

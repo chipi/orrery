@@ -7,6 +7,7 @@
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
+  import { disposeObject3d } from '$lib/three/dispose-object3d';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -616,23 +617,9 @@
     };
     const traverseLines: TraverseLine[] = [];
 
-    function disposeMesh(obj: THREE.Object3D) {
-      obj.traverse((o) => {
-        if (o instanceof THREE.Mesh) {
-          o.geometry?.dispose();
-          if (Array.isArray(o.material)) o.material.forEach((mat) => mat.dispose());
-          else o.material?.dispose();
-        } else if (o instanceof THREE.Line) {
-          o.geometry?.dispose();
-          if (Array.isArray(o.material)) o.material.forEach((mat) => mat.dispose());
-          else o.material?.dispose();
-        }
-      });
-    }
-
     function rebuildSurfaceMarkers() {
       for (const mk of surfaceMarkers) {
-        disposeMesh(mk.group);
+        disposeObject3d(mk.group);
         marsMesh.remove(mk.group);
       }
       surfaceMarkers.length = 0;
@@ -780,7 +767,7 @@
 
     function rebuildOrbitalMarkers() {
       for (const om of orbitalMarkers) {
-        disposeMesh(om.group);
+        disposeObject3d(om.group);
         marsAxis.remove(om.group);
       }
       orbitalMarkers.length = 0;
@@ -927,18 +914,18 @@
 
     function rebuildTraverses() {
       for (const tl of traverseLines) {
-        disposeMesh(tl.line);
+        disposeObject3d(tl.line);
         marsMesh.remove(tl.line);
-        disposeMesh(tl.endDot);
+        disposeObject3d(tl.endDot);
         marsMesh.remove(tl.endDot);
-        disposeMesh(tl.startDot);
+        disposeObject3d(tl.startDot);
         marsMesh.remove(tl.startDot);
         if (tl.startLabel) {
-          disposeMesh(tl.startLabel);
+          disposeObject3d(tl.startLabel);
           marsMesh.remove(tl.startLabel);
         }
         if (tl.endLabel) {
-          disposeMesh(tl.endLabel);
+          disposeObject3d(tl.endLabel);
           marsMesh.remove(tl.endLabel);
         }
         tl.startLabelTexture?.dispose();
@@ -2193,8 +2180,8 @@
       renderer.domElement.removeEventListener('touchmove', onTouchMove);
       renderer.domElement.removeEventListener('touchend', onTouchEnd);
       c2.removeEventListener('click', on2dClick);
-      for (const sm of surfaceMarkers) disposeMesh(sm.group);
-      for (const om of orbitalMarkers) disposeMesh(om.group);
+      for (const sm of surfaceMarkers) disposeObject3d(sm.group);
+      for (const om of orbitalMarkers) disposeObject3d(om.group);
       marsMesh.geometry.dispose();
       (marsMesh.material as THREE.Material).dispose();
       outlinePass.dispose();

@@ -7,6 +7,7 @@
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
+  import { disposeObject3d } from '$lib/three/dispose-object3d';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -508,13 +509,7 @@
 
     function rebuildOrbitalMarkers() {
       for (const om of orbitalMarkers) {
-        om.group.traverse((o) => {
-          if (o instanceof THREE.Mesh) {
-            o.geometry?.dispose();
-            if (Array.isArray(o.material)) o.material.forEach((mat) => mat.dispose());
-            else o.material?.dispose();
-          }
-        });
+        disposeObject3d(om.group);
         scene.remove(om.group);
       }
       orbitalMarkers.length = 0;
@@ -590,13 +585,7 @@
 
     function rebuildMarkers() {
       for (const mk of markers) {
-        mk.group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh) {
-            obj.geometry?.dispose();
-            if (Array.isArray(obj.material)) obj.material.forEach((m) => m.dispose());
-            else obj.material?.dispose();
-          }
-        });
+        disposeObject3d(mk.group);
         moonMesh.remove(mk.group);
       }
       markers.length = 0;

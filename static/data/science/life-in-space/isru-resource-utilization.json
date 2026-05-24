@@ -1,0 +1,35 @@
+{
+  "id": "isru-resource-utilization",
+  "tab": "life-in-space",
+  "order": 23,
+  "photo": {
+    "src": "/images/science/isru-resource-utilization-moxie.jpg",
+    "credit": "NASA / JPL-Caltech · MOXIE (Mars OXygen ISRU Experiment) — first demonstration of producing oxygen on another planet. Mounted on the Perseverance rover, MOXIE made 122 g of O₂ across 16 runs from 2021 to 2023."
+  },
+  "see_in_app": [
+    { "route": "/mars", "context_key": "Perseverance rover at Jezero crater — MOXIE site + Mars Sample Return cache site + subsurface-ice prospecting" },
+    { "route": "/moon", "context_key": "Permanently-shadowed crater bottoms (Shackleton, Cabeus, de Gerlache) — water-ice deposits confirmed by LCROSS impact + Chandrayaan-1 M3 spectroscopy" }
+  ],
+  "links": [
+    {
+      "l": "NASA · MOXIE post-mission summary (122g O₂ on Mars)",
+      "u": "https://www.nasa.gov/news-release/nasas-oxygen-generating-experiment-moxie-completes-mars-mission/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · In situ resource utilization (ISRU)",
+      "u": "https://en.wikipedia.org/wiki/In_situ_resource_utilization",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Lunar water-ice mining concepts",
+      "u": "https://ntrs.nasa.gov/citations/20200002074",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Sabatier reaction (CH₄ from CO₂ + H₂)",
+      "u": "https://en.wikipedia.org/wiki/Sabatier_reaction",
+      "t": "deep"
+    }
+  ]
+}

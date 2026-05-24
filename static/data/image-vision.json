@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-05-24T01:03:55.270Z",
+  "generated_at": "2026-05-24T02:37:01.214Z",
   "vision_provider": "anthropic",
   "vision_model": "claude-sonnet-4-6",
   "prompt_version": "v1.0.0",
@@ -25258,6 +25258,150 @@
       "fallback": false,
       "scored_at": "2026-05-24T01:03:55.016Z",
       "scoring_cost_usd": 0.007626
+    },
+    "/images/fleet-galleries/feitian/02.jpg": {
+      "score": 7,
+      "subject": "A Chinese Feitian extravehicular activity (EVA) spacesuit displayed on a stand in a museum exhibit, showing the gold visor, CMSA patch, and Chinese flag markings.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/feitian/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/feitian/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/feitian/02.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:30.131Z",
+      "scoring_cost_usd": 0.0074340000000000005
+    },
+    "/images/fleet-galleries/shenzhou-iva/02.jpg": {
+      "score": 4,
+      "subject": "Chinese taikonaut in a white spacesuit performing a spacewalk (EVA) outside a spacecraft, holding a Chinese national flag, with subtitle text and news watermark overlaid on the low-resolution video frame.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.35,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/shenzhou-iva/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/shenzhou-iva/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/shenzhou-iva/02.16x9.jpg"
+      },
+      "rejected_by": "category-people",
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:34.570Z",
+      "scoring_cost_usd": 0.007782
+    },
+    "/images/fleet-galleries/hitomi/02.jpg": {
+      "score": 2,
+      "subject": "Labelled diagram of the ASTRO-H (Hitomi) X-ray astronomy satellite showing major components including mirrors, optical bench, solar arrays, and detectors.",
+      "category": "diagram",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/hitomi/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/hitomi/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/hitomi/02.16x9.jpg"
+      },
+      "rejected_by": "category-diagram",
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:38.159Z",
+      "scoring_cost_usd": 0.00504
+    },
+    "/images/fleet-galleries/krechet-94/02.jpg": {
+      "score": 7,
+      "subject": "Soviet-era spacesuit on museum display stand, featuring gold-visored helmet, white pressure garment with orange seams, chest-mounted equipment panel, and orange wheeled support frame.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/krechet-94/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/krechet-94/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/krechet-94/02.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:41.641Z",
+      "scoring_cost_usd": 0.007437
+    },
+    "/images/fleet-galleries/orlan-mks/02.jpg": {
+      "score": 3,
+      "subject": "A cosmonaut floating between two Orlan EVA spacesuits stored aboard an ISS module.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/orlan-mks/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/orlan-mks/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/orlan-mks/02.16x9.jpg"
+      },
+      "rejected_by": "category-people",
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:45.880Z",
+      "scoring_cost_usd": 0.007545
+    },
+    "/images/fleet-galleries/sokol-kv-2/02.jpg": {
+      "score": 7,
+      "subject": "Russian Sokol KV-2 spacecraft pressure suit displayed on a mannequin in a museum glass case, with a separate helmet on the floor beside it.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.45
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/sokol-kv-2/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/sokol-kv-2/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/sokol-kv-2/02.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:50.156Z",
+      "scoring_cost_usd": 0.006129
+    },
+    "/images/fleet-galleries/sokol-m/02.jpg": {
+      "score": 9,
+      "subject": "A Soyuz crewed spacecraft with deployed solar panels photographed against a black space background, showing Russian and Japanese flag markings on the orbital module.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.48
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/sokol-m/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/sokol-m/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/sokol-m/02.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-24T02:36:53.652Z",
+      "scoring_cost_usd": 0.007314
+    },
+    "/images/fleet-galleries/crew-dragon-iva/02.jpg": {
+      "score": 9,
+      "subject": "SpaceX Crew Dragon spacecraft with open docking port and deployed solar arrays photographed against the black void of space during ISS approach.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/fleet-galleries/crew-dragon-iva/02.1x1.jpg",
+        "4x3": "/images/fleet-galleries/crew-dragon-iva/02.4x3.jpg",
+        "16x9": "/images/fleet-galleries/crew-dragon-iva/02.16x9.jpg"
+      },
+      "rejected_by": null,
+      "fallback": false,
+      "scored_at": "2026-05-24T02:37:00.514Z",
+      "scoring_cost_usd": 0.007224
     }
   }
 }

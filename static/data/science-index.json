@@ -99,6 +99,20 @@
   },
   {
     "tab": "life-in-space",
+    "section": "food-production-off-world",
+    "title": "Food production off-world — from Veggie to greenhouses on Mars",
+    "intro": "ISS crew have been eating food they grew themselves since 2015. The leap from 'salad supplement' to 'closed-loop daily diet' is the open frontier between the ISS today and any Mars settlement worth the name.",
+    "haystack": "food production off-world — from veggie to greenhouses on mars iss crew have been eating food they grew themselves since 2015. the leap from 'salad supplement' to 'closed-loop daily diet' is the open frontier between the iss today and any mars settlement worth the name. iss started its food-from-orbit programme in 2014 with veggie, a small chamber bolted into the destiny lab with red and blue led lighting and pillow-style root modules. the first crop the crew was cleared to eat was 'outredgeous' red romaine lettuce, in august 2015 — half the harvest eaten on-orbit, half returned for analysis. since then veggie has cycled mizuna, pak choi, mustard greens, tatsoi, kale, peppers, and zinnia flowers (the flowers were a deliberate test for crops with reproductive structures), plus the advanced plant habitat (aph, installed 2017) adding a closed-environment 0.4 m² growing volume with sensor-monitored co₂, humidity, and light. the contribution to crew nutrition is small — measured in handfuls per crew per month — but the psychological contribution is large, and validated against the recommendations from the mir 1980s isolation studies which flagged 'connection with growing things' as a core countermeasure against asthenia."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "isru-resource-utilization",
+    "title": "ISRU — making oxygen, water, and fuel on the Moon and Mars",
+    "intro": "Hauling oxygen and propellant from Earth scales badly. ISRU — extracting them from local regolith, ice, and atmosphere — is the technology that turns surface stays from 30-day flag-planting into year-long living.",
+    "haystack": "isru — making oxygen, water, and fuel on the moon and mars hauling oxygen and propellant from earth scales badly. isru — extracting them from local regolith, ice, and atmosphere — is the technology that turns surface stays from 30-day flag-planting into year-long living. moxie was the proof-of-concept. bolted to the perseverance rover, the toaster-sized solid-oxide electrolysis unit ran 16 times between 2021 and 2023, pulling co₂ from the 6 mbar martian atmosphere, splitting it electrochemically at ~800 °c, venting co, and producing pure o₂. total yield: 122 g of oxygen, peak rate 12 g/hour. the point was not the quantity but the proof: that solid-oxide electrolysis works through dust storms, through martian temperature swings, through the 6 mbar pressure regime. scale-up factor for a crewed mission: ~200× by mass — a 1-tonne moxie-class plant running for 18-26 months pre-deployed before crew arrival produces ~25 tonnes of o₂, enough for ascent-vehicle oxidiser plus crew breathing margin. the architecture has matured enough that nasa's planning documents now treat mars o₂ isru as committed baseline rather than research goal."
+  },
+  {
+    "tab": "life-in-space",
     "section": "iva-suits",
     "title": "IVA pressure suits",
     "intro": "The flight suit — worn inside the spacecraft during the high-risk minutes of launch, ascent abort, re-entry, and landing — is a pressure container with arms that buys the crew enough time to land if cabin pressure fails.",
@@ -113,6 +127,13 @@
   },
   {
     "tab": "life-in-space",
+    "section": "lunar-habitat-design",
+    "title": "Lunar habitat design — Artemis Base Camp, ILRS, sustained surface stays",
+    "intro": "Two parallel architectures are now committed: NASA's Artemis Base Camp + the Chinese-Russian ILRS. Both target the lunar south pole, both stake their water-ice strategy on the same dozen craters.",
+    "haystack": "lunar habitat design — artemis base camp, ilrs, sustained surface stays two parallel architectures are now committed: nasa's artemis base camp + the chinese-russian ilrs. both target the lunar south pole, both stake their water-ice strategy on the same dozen craters. the site choice is no longer open. both nasa's artemis programme and the chinese-russian international lunar research station (ilrs) have selected the lunar south pole, specifically the rims and inner walls of permanently-shadowed craters near 89°s: shackleton, de gerlache, haworth, faustini, shoemaker. three things make this region uniquely valuable. first, the permanently-shadowed regions (psrs) at the crater bottoms hold water-ice deposits — confirmed by lcross (2009) impacting cabeus crater and detecting oh/h₂o in the ejecta plume, and by chandrayaan-1's m3 instrument seeing the spectral signature directly. second, peaks-of-eternal-light along the crater rims see the sun for >85% of every year, giving near-continuous solar power without lunar-night batteries. third, the south pole is the only region where both prerequisites — water and sunlight — coexist within ~10 km of each other, making short surface-traverse logistics possible."
+  },
+  {
+    "tab": "life-in-space",
     "section": "lunar-suits",
     "title": "Lunar surface suits",
     "intro": "A lunar suit has to do everything an orbital EVA suit does, plus walk for 7 hours on a dusty regolith floor at temperatures that swing from −170 °C in shadow to +120 °C in sunlight — and survive the dust.",
@@ -124,6 +145,13 @@
     "title": "Lunar surface operations — 1/6 g, regolith, day/night",
     "intro": "Apollo gave humanity 12 lunar walkers, 22 EVAs, 73 surface-hours, 382 kg of samples. Every crew came back wishing for different things. Artemis is rebuilding the lunar EVA playbook against what those 12 learned.",
     "haystack": "lunar surface operations — 1/6 g, regolith, day/night apollo gave humanity 12 lunar walkers, 22 evas, 73 surface-hours, 382 kg of samples. every crew came back wishing for different things. artemis is rebuilding the lunar eva playbook against what those 12 learned. locomotion in 1/6 g is the first surprise. apollo crews trained at the langley 9.5° simulator + kc-135 parabolas, and everyone still landed expecting a clumsy walk. reality was the opposite: walking at 1/6 g is *over*-stable in some axes (the body's mass-times-1/6g restoring force is small, so you settle slowly), and *under*-stable in others (forward momentum from a step persists much longer than on earth, and there's no atmosphere to slow you). the apollo crews converged on three locomotion modes: walking (good for slow + careful), the loping-jog (good for medium-distance, both feet off the ground for an extended period), and the kangaroo-hop (aldrin's discovery on apollo 11 — push off with both feet, glide). the apollo 17 eva-3 transcript has cernan and schmitt openly negotiating which mode to use for each segment of the traverse; the answer is mostly loping."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "mars-habitat-design",
+    "title": "Mars habitat design — pre-deployed, ISRU-fed, perchlorate-aware",
+    "intro": "Mars adds three problems the Moon doesn't have: a 25-month round-trip with no abort, dust storms that can blanket the planet, and a regolith laced with chlorinated salts that poison anyone who breathes it.",
+    "haystack": "mars habitat design — pre-deployed, isru-fed, perchlorate-aware mars adds three problems the moon doesn't have: a 25-month round-trip with no abort, dust storms that can blanket the planet, and a regolith laced with chlorinated salts that poison anyone who breathes it. every credible mars human architecture since the early 1990s has been built around the same observation: you cannot fly the habitat and the crew on the same launch window. the trip is too long (6-9 months one-way) and the surface stay too long (typically 500 days, dictated by orbital mechanics — the next mars-to-earth hohmann window is 500 days after arrival) for the architecture to fit on a single launch. solution: the habitat lands first, on a launch window 26 months before the crew, fully autonomous. by the time the crew arrives, the habitat has been operating for 26 months, the isru plant has been making oxygen and methane from the atmosphere and from subsurface ice for 18 months, the return vehicle is fully fuelled and pre-tested. nasa's design reference architecture 5.0 (2009) codified this; spacex's starship mars architecture inherits it; every mars architecture variation since then has retained the pre-deployment pattern."
   },
   {
     "tab": "life-in-space",
@@ -173,6 +201,20 @@
     "title": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
     "intro": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
     "haystack": "suit lineage — sokol to orlan to feitian, a7l to axemu every modern spacesuit traces to one of three families: american apollo-derived, soviet/russian sokol + orlan, and chinese feitian (itself derived from orlan). six decades, three lineages, lots of cross-pollination. the original iva suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. vostok and voskhod cosmonauts wore sk-1 / berkut suits. mercury used a modified navy mark iv. gemini used the g3c / g4c. none of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. then in june 1971 soyuz 11 returned with the crew dead from rapid decompression during separation — dobrovolsky, volkov, patsayev were in shirtsleeves because the soyuz cabin couldn't fit three suited cosmonauts. the soviet response was the sokol k-v (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the soyuz couch and inflate in seconds if the cabin failed. every soyuz crew since wears a descendant of sokol — the current sokol-m (introduced 2023) is the fifth-generation variant."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "surface-dust-mitigation",
+    "title": "Surface dust — the lunar + Mars hazard everyone underestimated",
+    "intro": "Apollo crews returned with suits abraded after 10 EVAs and airlocks jamming on dust. Mars regolith is chemically toxic. Every long-stay architecture is built around dust protocols — they are the operational hazard nothing makes go away.",
+    "haystack": "surface dust — the lunar + mars hazard everyone underestimated apollo crews returned with suits abraded after 10 evas and airlocks jamming on dust. mars regolith is chemically toxic. every long-stay architecture is built around dust protocols — they are the operational hazard nothing makes go away. lunar dust is mechanically dangerous in a way no terrestrial dust prepares you for. the surface is a fine regolith — particle sizes from sub-micron up to coarse sand, with a median of 70 µm — that was created by 4 billion years of micrometeorite impacts. each impact is a tiny explosion that fragments existing rock; the fragments cool in vacuum without water to round their edges. the result is a powder of angular glass shards, sharper than ground glass. adding to the hazard: lunar regolith is electrostatically charged by uv photoionisation on the day side and by plasma exposure in the lunar terminator zone. charged dust clings to everything — sticks to suit fabric via electrostatic adhesion at a level that brushing alone cannot remove. apollo crews reported that lunar dust degraded eva suit joint seals after about 10 evas (apollo 17 was the only mission to make three back-to-back evas, and cernan's suit zipper was showing wear by the third)."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "surface-mobility-rovers",
+    "title": "Surface mobility — from Apollo's LRV to pressurised rovers for Moon and Mars",
+    "intro": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 27 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
+    "haystack": "surface mobility — from apollo's lrv to pressurised rovers for moon and mars crewed surface stays live and die by how far the crew can travel. apollo's lrv pushed traverse range from 1 km to 27 km. the next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions. apollo's lunar roving vehicle (lrv) flew on the last three apollo missions (15, 16, 17, 1971-72). before the lrv, surface traverses were limited by suit consumables to about 1 km radius from the lm — and eva fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. the lrv was deliberately scoped to fit folded into the lm quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on four 36-v silver-zinc batteries (no recharge — the lrv was a single-mission asset). top speed: 18 km/h. range per battery: ~57 km, with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). apollo 17 logged 35.7 km total over three evas, the all-time human surface-driving record. the lrv's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what artemis is rebuilding now as the ltv."
   },
   {
     "tab": "life-in-space",

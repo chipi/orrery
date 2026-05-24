@@ -1,0 +1,35 @@
+{
+  "id": "lunar-habitat-design",
+  "tab": "life-in-space",
+  "order": 21,
+  "photo": {
+    "src": "/images/science/lunar-habitat-design-base-camp.jpg",
+    "credit": "NASA · Artemis Base Camp concept rendering — the architecture NASA has committed to for sustained lunar surface stays: a fixed habitat at the lunar south pole, a pressurised mobility platform, and unpressurised LTV rovers."
+  },
+  "see_in_app": [
+    { "route": "/moon", "context_key": "Lunar south pole surface sites — Shackleton crater rim is the target zone for both Artemis Base Camp and the Chinese-Russian ILRS" },
+    { "route": "/missions", "context_key": "Artemis III (first crewed lunar landing since 1972), Artemis IV onward (Gateway + Base Camp build-out), ILRS scheduled milestones 2026-2035" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Artemis Base Camp concept (Lunar Surface Sustainability)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2020/12/artemis_plan-20200921.pdf",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · International Lunar Research Station (ILRS)",
+      "u": "https://en.wikipedia.org/wiki/International_Lunar_Research_Station",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Lunar habitat radiation shielding using regolith",
+      "u": "https://ntrs.nasa.gov/citations/20200002053",
+      "t": "core"
+    },
+    {
+      "l": "ESA · Lunar village concept",
+      "u": "https://www.esa.int/About_Us/Ministerial_Council_2019/Moon_Village",
+      "t": "deep"
+    }
+  ]
+}

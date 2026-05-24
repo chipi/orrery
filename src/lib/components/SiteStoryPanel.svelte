@@ -2,6 +2,8 @@
   import { base } from '$app/paths';
   import { type SiteStory, getImageProvenanceManifest, type ImageProvenanceEntry } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getImageAlt } from '$lib/image-alt';
+  import { languageTag } from '$lib/paraglide/runtime';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -97,7 +99,12 @@
               onclick={() => onLightbox(`${base}${img.src}`)}
               aria-label="Open {img.caption}"
             >
-              <img src="{base}{img.src}" alt={img.caption} loading="lazy" decoding="async" />
+              <img
+                src="{base}{img.src}"
+                alt={getImageAlt(img.src, languageTag()) || img.caption}
+                loading="lazy"
+                decoding="async"
+              />
               <span class="agency-badge" style="background: {meta.accent}">{meta.label}</span>
             </button>
             <figcaption class="caption">

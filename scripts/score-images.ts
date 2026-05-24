@@ -272,7 +272,16 @@ async function applyScopeFilters(
   // SVG logos can't be scored — Anthropic vision API rejects them with
   // "Could not process image" (400). Always exclude so they don't burn
   // request budget on every run. Curate agency logos separately.
-  let filtered = entries.filter((e) => !e.path.toLowerCase().endsWith('.svg'));
+  //
+  // Variant files (.1x1.jpg / .4x3.jpg / .16x9.jpg) are crop outputs of
+  // their parent source — scoring them as primary entries cascades
+  // (Step 3c shipped variants which got re-entered into provenance on a
+  // subsequent run, producing .1x1.1x1.jpg etc). Always exclude the
+  // variant-suffix shapes — only score the unsuffixed source files.
+  const VARIANT_SUFFIX = /\.(1x1|4x3|16x9)\.jpg$/i;
+  let filtered = entries.filter(
+    (e) => !e.path.toLowerCase().endsWith('.svg') && !VARIANT_SUFFIX.test(e.path),
+  );
   if (args.mission) {
     const id = args.mission;
     filtered = filtered.filter((e) => e.path.includes(`/missions/${id}/`));

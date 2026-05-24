@@ -31,6 +31,15 @@
       "cost_usd": 0.24433199999999997,
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-05-24T02:37:01.220Z",
+      "scope": "new-only segment=fleet-galleries",
+      "images_processed": 8,
+      "images_cached": 0,
+      "cost_usd": 0.055905,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

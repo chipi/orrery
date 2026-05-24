@@ -1,0 +1,35 @@
+{
+  "id": "mars-habitat-design",
+  "tab": "life-in-space",
+  "order": 22,
+  "photo": {
+    "src": "/images/science/mars-habitat-design-concept.jpg",
+    "credit": "NASA / SAIC · Mars Design Reference Architecture 5.0 habitat concept — a pre-deployed surface habitat with regolith-piled radiation shielding, the canonical baseline for human Mars architectures since 2009."
+  },
+  "see_in_app": [
+    { "route": "/mars", "context_key": "Mars surface — InSight + Perseverance + Curiosity landing sites, plus future crewed-mission candidate zones (Jezero, Holden, NE Syrtis)" },
+    { "route": "/missions", "context_key": "Mars Sample Return (precursor for understanding Martian dust + perchlorate hazards); SpaceX Starship Mars HLS architecture; NASA Design Reference Architecture 5.0" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Human Exploration of Mars Design Reference Architecture 5.0",
+      "u": "https://ntrs.nasa.gov/citations/20090012109",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Colonization of Mars",
+      "u": "https://en.wikipedia.org/wiki/Colonization_of_Mars",
+      "t": "core"
+    },
+    {
+      "l": "NASA · MOXIE — Mars Oxygen In-Situ Resource Utilization Experiment results",
+      "u": "https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/nasa-s-mars-moxie/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Perchlorate in Mars regolith — biological hazard analysis",
+      "u": "https://ntrs.nasa.gov/citations/20160001833",
+      "t": "deep"
+    }
+  ]
+}

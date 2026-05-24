@@ -21,23 +21,32 @@ import { expect, test } from '@playwright/test';
  *   - `/library`   outbound link bill (the disclosure surface; ADR-051)
  */
 
-const PILOT_ROUTES = [
+/* v0.7.0 raised the floor: axe-core scans now run on 11 routes (was 5)
+ * and the assertion is `0 critical violations` (was: scan completed).
+ * Color-contrast `serious` violations are still surfaced as warnings
+ * but do not break CI — most are intentional editorial dim-text. */
+const GATED_ROUTES = [
   { path: '/', label: 'landing' },
   { path: '/missions', label: 'mission catalog' },
   { path: '/fly', label: 'fly (HUD chrome only — canvas is opaque to axe)' },
   { path: '/science', label: 'science encyclopedia' },
   { path: '/library', label: 'library / outbound-link disclosure' },
+  { path: '/explore', label: 'explore (planet bodies)' },
+  { path: '/earth', label: 'earth (orbit bodies)' },
+  { path: '/moon', label: 'moon (landing sites)' },
+  { path: '/mars', label: 'mars (landing sites)' },
+  { path: '/iss', label: 'ISS (modules)' },
+  { path: '/tiangong', label: 'Tiangong (modules)' },
 ];
 
-test.describe('a11y pilot (ADR-025 tier-1; pilot mode, no CI gate)', () => {
-  for (const { path, label } of PILOT_ROUTES) {
-    test(`${label} (${path}) — axe scan runs and logs violations`, async ({ page }) => {
+test.describe('a11y gate (ADR-025 v0.7.0 — 0 critical violations)', () => {
+  for (const { path, label } of GATED_ROUTES) {
+    test(`${label} (${path}) — 0 critical axe violations`, async ({ page }) => {
       // /library carries 678 outbound-link rows; axe scans every rule
       // against every node, so the per-test 30 s playwright budget
       // isn't enough on cold CI Ubuntu runners (35–43 s on the last
       // failing runs). Other routes finish in <5 s and stay on the
-      // default. Pilot mode = no CI gate; this is just to keep the
-      // scan from being the suite's long pole.
+      // default.
       if (path === '/library') {
         test.setTimeout(90_000);
       }
@@ -52,7 +61,7 @@ test.describe('a11y pilot (ADR-025 tier-1; pilot mode, no CI gate)', () => {
         .disableRules(['region'])
         .analyze();
 
-      // Log violation summary to console (pilot mode: report, don't fail).
+      // Surface ALL violations to the console for triage visibility.
       if (results.violations.length > 0) {
         console.log(`\n  ⚠️  ${path} — ${results.violations.length} a11y violation(s):`);
         for (const v of results.violations) {
@@ -64,11 +73,15 @@ test.describe('a11y pilot (ADR-025 tier-1; pilot mode, no CI gate)', () => {
         console.log(`\n  ✓ ${path} — 0 a11y violations`);
       }
 
-      // The only assertion in pilot mode: the axe scan completed.
-      // `results.violations` is always an array; we assert that the
-      // scanner produced a result object. The actual violation count is
-      // surfaced via the console log above.
-      expect(Array.isArray(results.violations)).toBe(true);
+      // CI gate (v0.7.0): fail on any `critical`-impact violation.
+      // `serious` (color-contrast on dim editorial text) intentionally
+      // does NOT fail — surfaced as warning only. Raise the floor in
+      // v0.7.1 if the serious list stabilises.
+      const criticals = results.violations.filter((v) => v.impact === 'critical');
+      expect(
+        criticals,
+        `${path} has ${criticals.length} critical a11y violation(s) — see console output above.`,
+      ).toHaveLength(0);
     });
   }
 });

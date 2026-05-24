@@ -1456,6 +1456,44 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'PD-NASA',
     fallbackAuthor: 'NASA / Johns Hopkins APL (Parker Solar Probe spacecraft, 2018)',
   },
+  // propulsion (6 — GH #99 rocket-engines expansion):
+  'engine-types-raptor.jpg': {
+    commons: 'SpaceX sea-level Raptor at Hawthorne - 2.jpg',
+    agency: 'SpaceX',
+    fallbackLicense: 'CC-BY-2.0',
+    fallbackAuthor: 'SpaceX (Raptor sea-level engine at Hawthorne)',
+  },
+  'fuels-and-oxidizers-lox-loading.jpg': {
+    commons:
+      'Artemis III Liquid Oxygen Tank Lifted to Mate to Intertank (MAF 20251107 CS3 LOX & IT mate-188).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Michoud Assembly Facility (Artemis III SLS LOX tank, Nov 2025)',
+  },
+  'thrust-and-twr-f1-static.jpg': {
+    commons: 'F-1 rocket engine.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Marshall Space Flight Center (Saturn V F-1 engine)',
+  },
+  'engine-clustering-super-heavy.jpg': {
+    commons: 'NASA Marshall visit to Super Heavy booster.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / SpaceX (Super Heavy booster with 33 Raptor engines, Starbase, 2023)',
+  },
+  'rocket-stages-saturn-v.jpg': {
+    commons: 'Apollo 11 Saturn V in VAB during stacking (48292558152).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA / Kennedy Space Center (Apollo 11 Saturn V stacking in VAB, 1969)',
+  },
+  'throttling-and-gimbaling-merlin-gimbal.jpg': {
+    commons: 'Falcon 9 first stage in hangar; upgraded Merlin engines close-up (24175842635).jpg',
+    agency: 'SpaceX',
+    fallbackLicense: 'CC-BY-2.0',
+    fallbackAuthor: 'SpaceX (Falcon 9 first-stage Merlin engines + gimbal hardware close-up)',
+  },
   // space-stations (4):
   'expedition-cadence-exp1.jpg': {
     commons: 'S97e5009.jpg',

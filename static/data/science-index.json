@@ -50,6 +50,20 @@
   },
   {
     "tab": "life-in-space",
+    "section": "crew-dynamics-psychology",
+    "title": "Crew dynamics & psychology — Mir crises, ISS protocols, isolation",
+    "intro": "Most of what we know about humans-in-space psychology was learned on Mir between 1986 and 2001. Fifteen years, 28 expeditions, four near-loss events, and a permanent shift in how every space agency thinks about crew composition.",
+    "haystack": "crew dynamics & psychology — mir crises, iss protocols, isolation most of what we know about humans-in-space psychology was learned on mir between 1986 and 2001. fifteen years, 28 expeditions, four near-loss events, and a permanent shift in how every space agency thinks about crew composition. salyut 6 (soviet, 1977-82) was the first station with deliberate long-duration crews, and the first to encounter the psychological problem that every subsequent long-mission station has had: at roughly 4-6 weeks into a mission, even highly-screened crews enter a phase soviet psychologists called *asthenia* — fatigue, irritability, withdrawal from communication with ground, declining motivation. it was first attributed to physical deconditioning but became clear during salyut 7 + mir that it's primarily psychological — the novelty of orbit wears off, the work becomes routine, the crew is acutely aware they can't leave for another 5 months, and the relationship with ground control turns adversarial. soviet ground controllers used to deliberately schedule unstructured personal time + family video calls + occasional surprise resupply gifts (chocolate, fresh fruit) as countermeasures; the practice is now standard on iss + tiangong + every analog station."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "crew-selection",
+    "title": "Crew selection — the funnel from applicant to astronaut",
+    "intro": "Every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. The bottleneck is crew dynamics under stress.",
+    "haystack": "crew selection — the funnel from applicant to astronaut every space agency runs roughly the same selection funnel — physical, cognitive, psychological, operational — narrowing ~10,000 applicants to ~10 selectees. the bottleneck is crew dynamics under stress. the first generation of selection was driven by hardware constraints. mercury (nasa, 1959) accepted only military jet test pilots under 5'11\" (180 cm — the mercury capsule cabin limit), under 40 years old, with engineering degrees, and parachute-jump experience. the soviet vostok program (1959-60) accepted only fighter pilots under 5'7\" (170 cm — the vostok hatch), under 30, under 70 kg. the reasoning was that the vehicle didn't have enough margin to fly someone larger or older, and a test pilot already had the airmanship + stress-tolerance the program needed. of the original 20-person soviet cosmonaut group (1960), only 12 ever flew; of the mercury seven, all seven flew. both numbers tell you the selection bar was set very high relative to mission availability."
+  },
+  {
+    "tab": "life-in-space",
     "section": "crewed-station-design",
     "title": "Crewed-station design — Salyut to ISS to Tiangong",
     "intro": "Six decades of crewed stations, six generations of architecture — the answer to 'how do you keep humans alive in orbit for months' got refined every time the previous answer broke.",
@@ -106,6 +120,20 @@
   },
   {
     "tab": "life-in-space",
+    "section": "lunar-surface-ops",
+    "title": "Lunar surface operations — 1/6 g, regolith, day/night",
+    "intro": "Apollo gave humanity 12 lunar walkers, 22 EVAs, 73 surface-hours, 382 kg of samples. Every crew came back wishing for different things. Artemis is rebuilding the lunar EVA playbook against what those 12 learned.",
+    "haystack": "lunar surface operations — 1/6 g, regolith, day/night apollo gave humanity 12 lunar walkers, 22 evas, 73 surface-hours, 382 kg of samples. every crew came back wishing for different things. artemis is rebuilding the lunar eva playbook against what those 12 learned. locomotion in 1/6 g is the first surprise. apollo crews trained at the langley 9.5° simulator + kc-135 parabolas, and everyone still landed expecting a clumsy walk. reality was the opposite: walking at 1/6 g is *over*-stable in some axes (the body's mass-times-1/6g restoring force is small, so you settle slowly), and *under*-stable in others (forward momentum from a step persists much longer than on earth, and there's no atmosphere to slow you). the apollo crews converged on three locomotion modes: walking (good for slow + careful), the loping-jog (good for medium-distance, both feet off the ground for an extended period), and the kangaroo-hop (aldrin's discovery on apollo 11 — push off with both feet, glide). the apollo 17 eva-3 transcript has cernan and schmitt openly negotiating which mode to use for each segment of the traverse; the answer is mostly loping."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "mars-human-architecture",
+    "title": "Mars human architecture — what crewed Mars actually requires",
+    "intro": "Apollo went to the Moon and came home in 8 days. Crewed Mars is a 2-3 year mission with 6-9 month transits each way, conjunction blackouts, and a self-sufficient surface stay. None of the technology is fully ready.",
+    "haystack": "mars human architecture — what crewed mars actually requires apollo went to the moon and came home in 8 days. crewed mars is a 2-3 year mission with 6-9 month transits each way, conjunction blackouts, and a self-sufficient surface stay. none of the technology is fully ready. the transit problem dominates the architecture. earth-mars transfer windows open every 26 months; the cheapest (lowest-δv) hohmann-class transfers take ~7-9 months one-way, with a forced surface stay of 18-20 months until the next launch window aligns. faster transits exist but cost much more δv — nasa's dra 5.0 baseline assumes a 6-month transit using nuclear thermal propulsion (ntp) that doesn't yet exist at flight scale. spacex's starship architecture relies on aerocapture + propulsive landing using methane/oxygen propellant (the isru portion is provided in-situ from the mars co₂ atmosphere); the starship approach plausibly enables ~3-4 month transits at higher δv. china's cnsa mars-2033 architecture is in the same conceptual family, with a different isru profile. russia's iki mars proposals predate the modern engineering studies. india's isro gaganyaan-derived crewed-mars studies are conceptual."
+  },
+  {
+    "tab": "life-in-space",
     "section": "microgravity-physiology",
     "title": "Microgravity physiology",
     "intro": "What happens when gravity stops pulling on the human body — fluids redistribute, bones thin, muscles fade, and the inner ear loses its compass.",
@@ -120,10 +148,31 @@
   },
   {
     "tab": "life-in-space",
+    "section": "pre-flight-training",
+    "title": "Pre-flight training — the years before launch",
+    "intro": "Modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. Apollo crews trained 5 years for a 10-day mission. Ground-to-flight ratio is the highest of any operational profession.",
+    "haystack": "pre-flight training — the years before launch modern astronauts train 18-24 months basic + 2-3 years mission-specific before flying. apollo crews trained 5 years for a 10-day mission. ground-to-flight ratio is the highest of any operational profession. basic training is roughly the same across nasa, roscosmos, esa, jaxa, csa, and cnsa: scuba certification (for the neutral-buoyancy pool work that will later teach eva), aircraft flight time (t-38 jets at jsc, l-39s at star city, kj-200 trainers at china's astronaut center), parabolic flight (~30s zero-g exposure in a converted aircraft — the 'vomit comet' name is accurate the first 10 flights), centrifuge to 8g (soyuz re-entry profile), altitude chamber to 30,000 ft, sea + desert + arctic survival training (in case of off-nominal landing). nasa's basic-training cohort runs houston-cologne-tsukuba-tsukuba for 18-24 months; roscosmos's gctc programme is similar but longer (24-30 months) and includes more centrifuge time. the basic phase isn't about specific missions — it's about producing a body of qualified astronauts who could be assigned to any future flight."
+  },
+  {
+    "tab": "life-in-space",
     "section": "radiation-exposure",
     "title": "Radiation exposure",
     "intro": "Galactic cosmic rays + solar particle events + Earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human Mars mission.",
     "haystack": "radiation exposure galactic cosmic rays + solar particle events + earth's trapped belts — the radiation environment outside the magnetosphere is the biggest unsolved problem for a human mars mission. earth's surface gets about 3 msv (millisieverts) of background radiation per year — radon, rocks, food, cosmic rays attenuated by 100 km of atmosphere. the iss, in low earth orbit and still partially shielded by the magnetosphere, gets about **200 msv per year**. deep space, outside the magnetosphere, gets about **600 msv per year** — and that's with no solar storms."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "sleep-nutrition-circadian",
+    "title": "Sleep, nutrition & circadian rhythms",
+    "intro": "ISS sees 16 sunrises a day. The crew is on Greenwich Mean Time anyway, eats food engineered to not float, and routinely sleeps worse than they would on Earth. Long-duration missions live or die by how well this stack works.",
+    "haystack": "sleep, nutrition & circadian rhythms iss sees 16 sunrises a day. the crew is on greenwich mean time anyway, eats food engineered to not float, and routinely sleeps worse than they would on earth. long-duration missions live or die by how well this stack works. circadian rhythm is the hardest invariant in low-earth orbit. the iss orbits earth every 92 minutes, which means the crew sees a sunrise (or a sunset) every 46 minutes — about 16 of each per 24-hour day. the human circadian system is built around a single sunrise / sunset cycle, so a steady stream of 'is it morning?' light cues overrides every other signal. the countermeasure is a rigid schedule (greenwich mean time, fixed wake at 06:00 gmt, fixed sleep at 21:30 gmt), heavy blackout curtains in each sleep station, and active circadian-aligned lighting throughout the cabin — daytime light is bluish-white at ~5500k, evening light shifts to amber ~2700k, matching what would be expected on earth. even with all that, iss crew sleep about 6 hours/night vs ~7-8 on earth, and use sleep aids more often than ground controls. the data from iss expedition sleep studies (now ~30 years of records) is one of the better-characterised sleep-disruption datasets in any operational environment."
+  },
+  {
+    "tab": "life-in-space",
+    "section": "suit-lineage",
+    "title": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
+    "intro": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
+    "haystack": "suit lineage — sokol to orlan to feitian, a7l to axemu every modern spacesuit traces to one of three families: american apollo-derived, soviet/russian sokol + orlan, and chinese feitian (itself derived from orlan). six decades, three lineages, lots of cross-pollination. the original iva suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. vostok and voskhod cosmonauts wore sk-1 / berkut suits. mercury used a modified navy mark iv. gemini used the g3c / g4c. none of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. then in june 1971 soyuz 11 returned with the crew dead from rapid decompression during separation — dobrovolsky, volkov, patsayev were in shirtsleeves because the soyuz cabin couldn't fit three suited cosmonauts. the soviet response was the sokol k-v (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the soyuz couch and inflate in seconds if the cabin failed. every soyuz crew since wears a descendant of sokol — the current sokol-m (introduced 2023) is the fifth-generation variant."
   },
   {
     "tab": "life-in-space",
@@ -393,6 +442,27 @@
   },
   {
     "tab": "propulsion",
+    "section": "engine-clustering",
+    "title": "Engine clustering — Saturn V's 5 vs Starship's 33",
+    "intro": "Two opposite philosophies for getting megaton-class thrust: build one giant engine and use a few of them (F-1, RS-25), or build a medium engine and use a lot of them (Merlin, Raptor). The second won.",
+    "haystack": "engine clustering — saturn v's 5 vs starship's 33 two opposite philosophies for getting megaton-class thrust: build one giant engine and use a few of them (f-1, rs-25), or build a medium engine and use a lot of them (merlin, raptor). the second won. saturn v's first stage clustered five f-1 engines. each f-1 produced 6.77 mn of thrust at sea level — at the time and for fifty years afterwards, the largest liquid engine ever flown. the development arc was long and painful: combustion instability nearly killed the programme through the early 1960s; rocketdyne ultimately solved it by tuning the injector plate to interrupt resonant modes. the apollo programme's bet was that fewer, larger engines meant fewer points of failure during a 165-second first-stage burn. the soviet response was the opposite: the n1's first stage clustered *thirty* nk-15 engines. without an f-1-class engine in their inventory and with nk-15s small and cheap to produce, the soviets chose engine count over engine size. all four n1 flights failed — though the failures were as much about plumbing and kord shutdown-controller software as the cluster itself."
+  },
+  {
+    "tab": "propulsion",
+    "section": "engine-types",
+    "title": "Engine types — chemical, electric, nuclear",
+    "intro": "There are three families of rocket engine that have ever flown: chemical (everything that gets things off Earth), electric (everything that does long deep-space cruise), and nuclear thermal (NERVA tested, none yet operational).",
+    "haystack": "engine types — chemical, electric, nuclear there are three families of rocket engine that have ever flown: chemical (everything that gets things off earth), electric (everything that does long deep-space cruise), and nuclear thermal (nerva tested, none yet operational). chemical engines are the only family with enough thrust to lift their own weight against earth's gravity, so every launcher in history has been chemical. they split into three sub-families. solid motors are basically a steel tube filled with rubbery propellant cast around a hollow core — you light one end, it burns at a controlled rate, and you cannot turn it off. cheap, simple, reliable, but no throttling and no shut-down: the space shuttle srbs, ariane 5 / ariane 6 boosters, sls boosters, indian pslv stages, every icbm, and most military missiles are solid. liquid bipropellant engines pump a fuel and an oxidiser separately into a combustion chamber — far more flexible (throttling, restart, shutdown, throttling deep) but mechanically intricate: the saturn v f-1, falcon 9 merlin, rs-25, vulcain, raptor, yf-100. hybrid engines (solid fuel + liquid or gaseous oxidiser) are a quiet third path used by spaceshiptwo and a handful of sounding rockets — they trade liquid's complexity for solid's lack of shutdown."
+  },
+  {
+    "tab": "propulsion",
+    "section": "fuels-and-oxidizers",
+    "title": "Fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids",
+    "intro": "Five propellant combinations cover almost every orbital flight ever flown. Each one is a trade between specific impulse, density, storability, handling, and what you can make on Mars.",
+    "haystack": "fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids five propellant combinations cover almost every orbital flight ever flown. each one is a trade between specific impulse, density, storability, handling, and what you can make on mars. kerolox (kerosene + liquid oxygen) is the workhorse of orbital launch. the kerosene is a tightly specified grade called rp-1 (rocket propellant 1) — ordinary jet fuel, refined to remove the wax and sulphur that would coke a rocket engine and stripped of the alkenes that polymerise under heat. lox is loaded chilled. the combination gives moderate isp (~300 s sea level, ~340 vacuum), high density (so the tanks stay small), and clean ground handling. saturn v first stage, falcon 9, atlas v, soyuz, long march 2/3/4, india's pslv upper stages are all kerolox. the downside is soot: kerosene burns dirty, coking the engine internally and limiting reusability — merlin works around this with sea-level chamber pressures kept well below the staged-combustion sweet spot."
+  },
+  {
+    "tab": "propulsion",
     "section": "oberth-effect",
     "title": "Oberth Effect",
     "intro": "Burn deep in a gravity well and your fuel does more work — physically the same engine produces more orbital energy when it's moving fast.",
@@ -400,10 +470,31 @@
   },
   {
     "tab": "propulsion",
+    "section": "rocket-stages",
+    "title": "Stages — why no rocket has ever flown single-stage to orbit",
+    "intro": "Tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. Every orbital launcher in history has dropped at least one stage. Most drop two or three.",
+    "haystack": "stages — why no rocket has ever flown single-stage to orbit tsiolkovsky's equation makes single-stage-to-orbit possible only with impossibly light dry mass. every orbital launcher in history has dropped at least one stage. most drop two or three. the mass ratio for orbit (~9.4 km/s of ∆v from a coastal launch site) is roughly 12-15 with the best chemical engines. that means 92-93% of a notional single-stage-to-orbit (ssto) vehicle is propellant; the dry mass — tanks, engines, avionics, payload, recovery hardware — must fit inside the remaining 7-8%. no one has ever built one. the x-33 / venturestar ssto programme of the 1990s shut down when the composite hydrogen tank failed pressure-test. skylon (uk, sabre-based) is still on paper. starship is sometimes described as ssto-capable but flies as a two-stage vehicle for very good reasons: dropping the booster saves dry mass and lets the upper stage continue with much higher twr-fed acceleration. staging is the trick that turns the logarithmic rocket equation from impossible to merely difficult."
+  },
+  {
+    "tab": "propulsion",
     "section": "specific-impulse",
     "title": "Specific Impulse (Isp)",
     "intro": "How efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust.",
     "haystack": "specific impulse (isp) how efficient an engine is — how many seconds a kilogram of propellant produces a kilogram of thrust. isp is the fuel-economy number for rockets. higher is better. definition: divide thrust by propellant mass-flow rate, divide by `g₀` (standard gravity), get a number in seconds. burn one kilogram of propellant per second, get `isp × g₀` newtons of thrust."
+  },
+  {
+    "tab": "propulsion",
+    "section": "throttling-and-gimbaling",
+    "title": "Throttling and gimbaling — how rockets steer and how they hover",
+    "intro": "Once an engine is lit, two control inputs remain: how hard it pushes (throttle) and where it points (gimbal). Together they steer ascent, manage crew g-loads, and allow propulsive landings.",
+    "haystack": "throttling and gimbaling — how rockets steer and how they hover once an engine is lit, two control inputs remain: how hard it pushes (throttle) and where it points (gimbal). together they steer ascent, manage crew g-loads, and allow propulsive landings. throttling sounds trivial — turn a valve — but is one of the hardest things a rocket engine does. combustion chambers are tuned for a specific operating point: chamber pressure, mass-flow ratio, injector velocity. drop the flow and combustion becomes unstable; rough burning starts to chew the engine apart within seconds. most engines have a narrow band: merlin 1d throttles 40-100%, raptor 2 throttles 40-100%, rs-25 throttles 67-109% but is qualified only for full power throughout an ascent. the f-1 had no throttling at all — its only control was 'on'. solid boosters cannot throttle at any throughput; the burn profile is locked when the grain is cast."
+  },
+  {
+    "tab": "propulsion",
+    "section": "thrust-and-twr",
+    "title": "Thrust and TWR — how much push per kilogram you actually need",
+    "intro": "A rocket has to push harder than it weighs, or it sits on the pad. The ratio is called TWR. Every operational launcher in history has lifted off in a narrow band around 1.2 to 1.5.",
+    "haystack": "thrust and twr — how much push per kilogram you actually need a rocket has to push harder than it weighs, or it sits on the pad. the ratio is called twr. every operational launcher in history has lifted off in a narrow band around 1.2 to 1.5. thrust is force. the unit is newtons (or kilonewtons / meganewtons for anything that flies). a merlin 1d produces 845 kn at sea level. a single f-1 produced 6770 kn. sls boosters each produce 16,000 kn. thrust is not specific impulse: thrust says how *hard* the engine pushes; isp says how *efficiently* it does so. a high-thrust low-isp engine (a solid booster) and a low-thrust high-isp engine (an ion drive) can both be useful — for different jobs in different parts of a mission. the thrust equation is simple: thrust equals the propellant mass flow rate multiplied by exhaust velocity, plus a small pressure term where the nozzle exit pressure differs from ambient. that is why staged combustion engines with high chamber pressure produce more thrust per kilogram of engine mass — they push more propellant through the same throat per second at higher velocity."
   },
   {
     "tab": "propulsion",

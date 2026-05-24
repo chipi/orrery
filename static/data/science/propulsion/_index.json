@@ -5,6 +5,12 @@
     "specific-impulse",
     "c3",
     "v-infinity",
-    "oberth-effect"
+    "oberth-effect",
+    "engine-types",
+    "fuels-and-oxidizers",
+    "thrust-and-twr",
+    "engine-clustering",
+    "rocket-stages",
+    "throttling-and-gimbaling"
   ]
 }

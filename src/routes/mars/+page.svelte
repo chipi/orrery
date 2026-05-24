@@ -11,6 +11,7 @@
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
+  import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
@@ -2433,16 +2434,11 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if selected}
     {@const tone = statusTone(selected.status)}
     {#if panelGallery.length > 0}
-      <div class="panel-hero">
-        <button
-          type="button"
-          class="panel-hero-btn"
-          onclick={() => (panelLightbox = panelGallery[0]!)}
-          aria-label={m.panel_hero_aria({ name: selected.name ?? selected.id })}
-        >
-          <img src={panelGallery[0]} alt="" fetchpriority="high" decoding="async" />
-        </button>
-      </div>
+      <PanelHeroImage
+        src={panelGallery[0]!}
+        name={selected.name ?? selected.id}
+        onOpen={() => (panelLightbox = panelGallery[0]!)}
+      />
     {/if}
     <PanelTabRow
       rowClass="panel-tabs"

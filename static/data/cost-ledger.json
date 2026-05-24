@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "thresholds": {
+    "soft_usd": 50,
+    "hard_usd": 200
+  },
+  "entries": [
+    {
+      "ts": "2026-05-22T09:15:12.164Z",
+      "scope": "backfill from image-vision.json sidecar (segments: fleet-galleries + hotspots)",
+      "images_processed": 601,
+      "images_cached": 0,
+      "cost_usd": 4.63,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}

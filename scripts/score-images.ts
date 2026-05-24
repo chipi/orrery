@@ -20,6 +20,7 @@ import {
 import { generateVariants } from './vision/crop-variants.ts';
 import { buildAndWriteManifest, MANIFEST_PATH } from './vision/build-manifest.ts';
 import type { ImageVisionManifest } from './vision/build-manifest.ts';
+import { appendLedgerEntry, checkThresholds } from '../src/lib/cost-ledger.ts';
 
 /**
  * Image Pipeline v2 orchestrator CLI (PRD-018 / RFC-022 §6).
@@ -73,12 +74,43 @@ interface ProvenanceFile {
 }
 
 const PROVENANCE_PATH = path.join('static', 'data', 'image-provenance.json');
+const CURATION_PATH = path.join('static', 'data', 'image-curation.json');
+
+interface CurationFile {
+  version: '1.0';
+  entries: Array<{ path: string; reason: string; flaggedAt: string }>;
+}
+
+/** Load the top 5 most-recent deny-list reasons from image-curation.json
+ *  (RFC-022 §8 — S7). Injected as in-context bias into every scoring
+ *  prompt so the model learns from operator corrections over time. */
+async function loadDenyListExamples(): Promise<string[]> {
+  try {
+    const raw = await fs.readFile(CURATION_PATH, 'utf-8');
+    const cur = JSON.parse(raw) as CurationFile;
+    return cur.entries
+      .slice()
+      .sort((a, b) => b.flaggedAt.localeCompare(a.flaggedAt))
+      .slice(0, 5)
+      .map((e) => e.reason);
+  } catch {
+    return [];
+  }
+}
 
 async function main(): Promise<void> {
   const args = parseCliArgs();
   const provenance = await readProvenance();
   const allEntries = provenanceArray(provenance);
   console.log(`Image Pipeline v2 — ${allEntries.length} provenance entries`);
+
+  // Curation deny-list (RFC-022 §8). Recent flagged-image reasons are
+  // injected as in-context bias into every scoring prompt (S7) so the
+  // model learns from operator corrections over time. Top 5 most-recent.
+  const denyListExamples = await loadDenyListExamples();
+  if (denyListExamples.length > 0) {
+    console.log(`Curation: ${denyListExamples.length} recent deny-list example(s) injected`);
+  }
 
   const inScope = await applyScopeFilters(allEntries, args);
   if (inScope.length === 0) {
@@ -106,7 +138,12 @@ async function main(): Promise<void> {
     const entry = inScope[i];
     const prefix = `[${i + 1}/${inScope.length}]`;
     try {
-      const result = await processOneImage({ provenance: entry, getProvider, args });
+      const result = await processOneImage({
+        provenance: entry,
+        getProvider,
+        args,
+        denyListExamples,
+      });
       perImage.push(result);
       totalCost += result.cached.cost_usd;
       const fresh = result.cacheHit ? 'cached' : `$${result.cached.cost_usd.toFixed(4)}`;
@@ -138,6 +175,41 @@ async function main(): Promise<void> {
   console.log(
     `Manifest written: ${MANIFEST_PATH} (${Object.keys(manifest.entries).length} entries)`,
   );
+
+  // Cost ledger append — only when at least one image actually called
+  // the provider (skip pure-cache runs to keep the ledger noise-free).
+  const freshCount = perImage.filter((p) => !p.cacheHit).length;
+  if (freshCount > 0) {
+    const scope = describeScope(args);
+    const ledger = await appendLedgerEntry({
+      ts: new Date().toISOString(),
+      scope,
+      images_processed: perImage.length,
+      images_cached: perImage.length - freshCount,
+      cost_usd: totalCost,
+      provider: providerCache?.name ?? 'unknown',
+      model: providerCache?.model ?? 'unknown',
+    });
+    const check = checkThresholds(ledger, 0);
+    console.log(`Cost ledger updated · ${check.message}`);
+    if (check.status === 'soft') console.warn(`⚠ ${check.message}`);
+  }
+}
+
+function describeScope(args: CliArgs): string {
+  const parts: string[] = [];
+  if (args.all) parts.push('all');
+  if (args.newOnly) parts.push('new-only');
+  if (args.changedSince) parts.push(`changed-since=${args.changedSince}`);
+  if (args.segment) parts.push(`segment=${args.segment}`);
+  if (args.mission) parts.push(`mission=${args.mission}`);
+  if (args.agency) parts.push(`agency=${args.agency}`);
+  if (args.source) parts.push(`source=${args.source}`);
+  if (args.fleetAsset) parts.push(`fleet-asset=${args.fleetAsset}`);
+  if (args.forceScore) parts.push('force-score');
+  if (args.skipCrops) parts.push('skip-crops');
+  if (args.skipScoring) parts.push('skip-scoring');
+  return parts.length > 0 ? parts.join(' ') : '(default)';
 }
 
 function parseCliArgs(): CliArgs {
@@ -300,6 +372,7 @@ async function processOneImage(input: {
   provenance: ProvenanceEntry;
   getProvider: () => ReturnType<typeof createAnthropicVisionProvider>;
   args: CliArgs;
+  denyListExamples: string[];
 }): Promise<{
   provenanceEntry: ProvenanceEntry;
   cached: Awaited<ReturnType<typeof resolveScoreFromCacheOrProvider>>;
@@ -329,7 +402,7 @@ async function processOneImage(input: {
         imageBytes: bytes,
         imagePath: input.provenance.path,
         provider: input.getProvider(),
-        denyListExamples: [],
+        denyListExamples: input.denyListExamples,
       });
     }
   } else {
@@ -342,7 +415,7 @@ async function processOneImage(input: {
         imageBytes: bytes,
         imagePath: input.provenance.path,
         provider: input.getProvider(),
-        denyListExamples: [],
+        denyListExamples: input.denyListExamples,
         forceRefresh: input.args.forceScore,
       });
     }

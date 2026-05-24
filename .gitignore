@@ -46,6 +46,7 @@ static/audit-report-launches.html
 # Image Pipeline v2 audit report — gitignored dev-only artefact
 # (RFC-022 §8). Regenerated on every scoring run.
 static/data/audit-report.html
+static/audit-report.html
 
 # Claude Code local state (per-user; runtime locks etc.)
 .claude/

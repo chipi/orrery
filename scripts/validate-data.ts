@@ -1141,6 +1141,64 @@ if (mimeMismatched.length === 0) {
   );
 }
 
+// Image Pipeline v2 — schema sanity for image-vision.json + image-curation.json
+// (PRD-018 M8, RFC-022 §6). Lightweight structural checks; full JSON-Schema
+// validation can be added later if drift becomes a problem.
+let imagePipelineFailed = 0;
+console.log('\nValidating image-pipeline v2 manifests (image-vision + image-curation)...');
+{
+  const visionPath = join(DATA_ROOT, 'image-vision.json');
+  const curationPath = join(DATA_ROOT, 'image-curation.json');
+  const problems: string[] = [];
+  try {
+    const raw = readFileSync(visionPath, 'utf-8');
+    const m = JSON.parse(raw) as {
+      version?: string;
+      entries?: Record<string, { score: number; subject: string; category: string }>;
+    };
+    if (!m.version) problems.push('image-vision.json: missing top-level "version"');
+    if (!m.entries || typeof m.entries !== 'object') {
+      problems.push('image-vision.json: missing "entries" object');
+    } else {
+      let bad = 0;
+      for (const [p, e] of Object.entries(m.entries)) {
+        if (typeof e.score !== 'number' || e.score < 0 || e.score > 10) bad++;
+        if (!p.startsWith('/images/')) bad++;
+      }
+      if (bad > 0) problems.push(`image-vision.json: ${bad} malformed entries`);
+    }
+  } catch (err) {
+    problems.push(`image-vision.json: ${(err as Error).message}`);
+  }
+  try {
+    const raw = readFileSync(curationPath, 'utf-8');
+    const c = JSON.parse(raw) as {
+      version?: string;
+      entries?: Array<{ path: string; reason: string; flaggedAt: string }>;
+    };
+    if (!c.version) problems.push('image-curation.json: missing top-level "version"');
+    if (!Array.isArray(c.entries)) {
+      problems.push('image-curation.json: "entries" must be an array');
+    } else {
+      let bad = 0;
+      for (const e of c.entries) {
+        if (!e.path?.startsWith('/images/')) bad++;
+        if (!e.reason || typeof e.reason !== 'string') bad++;
+        if (!e.flaggedAt || isNaN(Date.parse(e.flaggedAt))) bad++;
+      }
+      if (bad > 0) problems.push(`image-curation.json: ${bad} malformed entries`);
+    }
+  } catch (err) {
+    problems.push(`image-curation.json: ${(err as Error).message}`);
+  }
+  if (problems.length === 0) {
+    console.log('  ✓ image-vision + image-curation manifests structurally valid');
+  } else {
+    for (const p of problems) console.log(`  ✗ ${p}`);
+    imagePipelineFailed = problems.length;
+  }
+}
+
 if (
   failed +
     docFailed +
@@ -1150,7 +1208,8 @@ if (
     linkProvenanceFailed +
     launchesFailed +
     assetSizeFailed +
-    imageMimeFailed >
+    imageMimeFailed +
+    imagePipelineFailed >
   0
 )
   process.exit(1);

@@ -10,6 +10,7 @@
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
+  import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
@@ -59,7 +60,6 @@
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { onLayerChange } from '$lib/science-layers';
-  import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
   // ─── Nation palette (PRD-009 / RFC-012) ──────────────────────────
@@ -2614,20 +2614,7 @@ sample      ${debugInfo.projectedPxSample}`}
   {/if}
 </Panel>
 
-{#if panelLightbox}
-  <button
-    type="button"
-    class="lightbox"
-    aria-label={m.panel_lightbox_close()}
-    onclick={() => (panelLightbox = null)}
-  >
-    <img src={panelLightbox} alt="" />
-    <span class="lightbox-close" aria-hidden="true">×</span>
-  </button>
-  <div class="lightbox-meta">
-    <ImageCredit src={panelLightbox} />
-  </div>
-{/if}
+<PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
 
 <!-- J.2 — Science Lens banner on /mars. Top-center, lens-gated;
      links into the EDL chapter — the seven-minute gauntlet every
@@ -3196,32 +3183,5 @@ sample      ${debugInfo.projectedPxSample}`}
   .gallery-thumb:focus-visible {
     outline: 2px solid #c1440e;
     outline-offset: 2px;
-  }
-
-  /* Lightbox */
-  :global(.lightbox) {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    border: 0;
-    padding: 0;
-    cursor: zoom-out;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  :global(.lightbox img) {
-    max-width: 92vw;
-    max-height: 92vh;
-    object-fit: contain;
-  }
-  :global(.lightbox-close) {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 32px;
-    line-height: 1;
   }
 </style>

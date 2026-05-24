@@ -10,6 +10,7 @@
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
+  import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
@@ -52,7 +53,6 @@
   import { onLayerChange } from '$lib/science-layers';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
-  import ImageCredit from '$lib/components/ImageCredit.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
@@ -2006,20 +2006,7 @@ sample      ${debugInfo.projectedPxSample}`}
     {/if}
   </Panel>
 
-  {#if panelLightbox}
-    <button
-      type="button"
-      class="lightbox"
-      aria-label={m.panel_lightbox_close()}
-      onclick={() => (panelLightbox = null)}
-    >
-      <img src={panelLightbox} alt="" />
-      <span class="lightbox-close" aria-hidden="true">×</span>
-    </button>
-    <div class="lightbox-meta">
-      <ImageCredit src={panelLightbox} />
-    </div>
-  {/if}
+  <PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
 </div>
 
 <!-- J.2 — Science Lens banner on /moon. Top-center, lens-gated;

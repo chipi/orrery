@@ -55,11 +55,7 @@ async function loadCurrent(p: string): Promise<Record<string, number>> {
   }
 }
 
-function diff(
-  label: string,
-  cur: Record<string, number>,
-  fresh: Record<string, number>,
-): string[] {
+function diff(label: string, cur: Record<string, number>, fresh: Record<string, number>): string[] {
   const changes: string[] = [];
   const ids = new Set([...Object.keys(cur), ...Object.keys(fresh)]);
   for (const id of [...ids].sort()) {

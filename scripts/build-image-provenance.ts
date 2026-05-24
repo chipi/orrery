@@ -1494,6 +1494,50 @@ const SCIENCE_PHOTO_SOURCES: Record<
     fallbackLicense: 'CC-BY-2.0',
     fallbackAuthor: 'SpaceX (Falcon 9 first-stage Merlin engines + gimbal hardware close-up)',
   },
+  // life-in-space surface-stay (6 — GH #98 living on other planets):
+  'lunar-habitat-design-base-camp.jpg': {
+    commons: 'Lunar base concept drawing s78 23252.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA (lunar base concept drawing, 1978 — historical reference for sustained-surface architectures)',
+  },
+  'mars-habitat-design-concept.jpg': {
+    commons: 'PIA23302-FirstHumansOnMars-ArtistConcept.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA / JPL-Caltech (First Humans on Mars artist concept, Mars Design Reference Architecture)',
+  },
+  'isru-resource-utilization-moxie.jpg': {
+    commons:
+      'PIA23154 MOXIE experience is installed into the chassis of the Mars rover Perseverance.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA / JPL-Caltech (MOXIE being installed in Perseverance rover chassis, 2019)',
+  },
+  'food-production-veggie.jpg': {
+    commons: 'ISS-44 VEGGIE Red Romaine Lettuce.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA (ISS Expedition 44 — Veggie facility with Outredgeous red romaine lettuce, Aug 2015)',
+  },
+  'surface-mobility-lrv.jpg': {
+    commons: 'Apollo 15 flag, rover, LM, Irwin.jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor: 'NASA (Apollo 15 LRV at Hadley Rille with US flag, LM, James Irwin, July 1971)',
+  },
+  'surface-dust-cernan.jpg': {
+    commons:
+      'Astronaut Harrison Schmitt inside the lunar module on lunar surface after EVA (as17-134-20530).jpg',
+    agency: 'NASA',
+    fallbackLicense: 'PD-NASA',
+    fallbackAuthor:
+      'NASA (Apollo 17 — Harrison Schmitt inside LM after EVA, dust contamination visible, Dec 1972)',
+  },
   // space-stations (4):
   'expedition-cadence-exp1.jpg': {
     commons: 'S97e5009.jpg',

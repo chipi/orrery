@@ -504,10 +504,16 @@
               {#if mission.type}
                 <p class="card-type">{mission.type}</p>
               {/if}
-              <div class="card-meta">
-                <span class="card-year">{mission.year}</span>
-                <span class="card-dest">{mission.dest}</span>
-              </div>
+              <!-- <dl> upgrade (PRD-007 / GH #256 / ADR-025 v0.7.0):
+                   year + dest expressed as definition pairs so screen
+                   readers announce them as labelled facts ("Year: 1969",
+                   "Destination: MOON") rather than two adjacent spans. -->
+              <dl class="card-meta">
+                <dt class="sr-only">{m.missions_card_year_label()}</dt>
+                <dd class="card-year">{mission.year}</dd>
+                <dt class="sr-only">{m.missions_card_dest_label()}</dt>
+                <dd class="card-dest">{mission.dest}</dd>
+              </dl>
               {#if mission.first}
                 <p class="card-first">{mission.first}</p>
               {/if}
@@ -526,6 +532,19 @@
     padding: 18px 22px 40px;
     max-width: 1400px;
     margin: 0 auto;
+  }
+  /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
+     Used for the <dl><dt> labels on card metadata (GH #256). */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   /* Inline count chip on the right end of the filters toggle bar.

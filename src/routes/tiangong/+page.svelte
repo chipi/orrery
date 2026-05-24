@@ -833,6 +833,35 @@
   {#if loadFailed}
     <p class="load-banner" role="alert">{m.tiangong_load_failed()}</p>
   {:else}
+    <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
+         Screen-reader-only mirror of the canvas modules — the in-DOM
+         drawer list already exists but aria-hidden flips with viewMode,
+         so this is the always-accessible parallel surface. -->
+    <ul class="sr-only sr-module-list" aria-label={m.a11y_tiangong_modules_list_aria()}>
+      {#each sortedModules as mod (mod.id)}
+        <li>
+          <button
+            type="button"
+            onclick={() => openModule(mod)}
+            aria-current={selected?.id === mod.id ? 'true' : undefined}
+          >
+            {m.a11y_select_module_template({ name: mod.name, agency: mod.agency })}
+          </button>
+        </li>
+      {/each}
+      {#each sortedVisitors as ship (ship.id)}
+        <li>
+          <button
+            type="button"
+            onclick={() => openModule(ship)}
+            aria-current={selected?.id === ship.id ? 'true' : undefined}
+          >
+            {m.a11y_select_module_template({ name: ship.name, agency: ship.agency })}
+          </button>
+        </li>
+      {/each}
+    </ul>
+
     <div
       class="layer canvas-layer"
       bind:this={container}
@@ -1047,6 +1076,19 @@
     inset: var(--nav-height) 0 0 0;
     overflow: hidden;
     background: #04040c;
+  }
+  /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
+     Used for the non-visual parallel module list (GH #256). */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .layer {
     position: absolute;

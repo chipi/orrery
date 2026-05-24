@@ -1646,6 +1646,29 @@
 <svelte:head><title>{m.moon_page_title()}</title></svelte:head>
 
 <div class="moon">
+  <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
+       Screen-reader-only mirror of the 3D-canvas site markers. Each
+       button fires the same selectSite handler that a canvas click
+       does, so a screen-reader user can navigate to any landing
+       site without sighted help. Visually hidden via .sr-only;
+       always present in the DOM + tab order. -->
+  <ul class="sr-only sr-site-list" aria-label={m.a11y_moon_sites_list_aria()}>
+    {#each sites as site (site.id)}
+      <li>
+        <button
+          type="button"
+          onclick={() => selectSite(site.id, { face: true })}
+          aria-current={selected?.id === site.id ? 'true' : undefined}
+        >
+          {m.a11y_select_site_template({
+            name: site.name ?? site.site_name ?? site.id,
+            agency: site.agency ?? '',
+          })}
+        </button>
+      </li>
+    {/each}
+  </ul>
+
   <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
   <canvas
     class="layer"

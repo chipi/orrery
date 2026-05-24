@@ -70,9 +70,7 @@ describe('reduced-motion guardrail — no unguarded Svelte transition directives
     }
 
     if (offenders.length > 0) {
-      const report = offenders
-        .map((o) => `  ${o.file} → ${o.matches.join(', ')}`)
-        .join('\n');
+      const report = offenders.map((o) => `  ${o.file} → ${o.matches.join(', ')}`).join('\n');
       throw new Error(
         `${offenders.length} file(s) use banned Svelte transition directives:\n${report}\n\n` +
           `Fix: gate the transition with prefersReducedMotion() from $lib/reduced-motion, ` +

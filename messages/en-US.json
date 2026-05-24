@@ -853,5 +853,17 @@
   "story_chapter_launch": "Launch",
   "story_chapter_surface": "Surface",
   "story_chapter_science": "Science",
-  "story_chapter_people": "People"
+  "story_chapter_people": "People",
+  "a11y_moon_sites_list_aria": "Moon landing sites — list view (parallel to the 3D map)",
+  "a11y_mars_sites_list_aria": "Mars landing sites — list view (parallel to the 3D map)",
+  "a11y_iss_modules_list_aria": "ISS modules — list view (parallel to the 3D model)",
+  "a11y_tiangong_modules_list_aria": "Tiangong modules — list view (parallel to the 3D model)",
+  "a11y_earth_bodies_list_aria": "Earth-orbit bodies — list view (parallel to the 3D map)",
+  "a11y_select_site_template": "Select {name} ({agency})",
+  "a11y_select_module_template": "Select {name} ({agency})",
+  "a11y_select_body_template": "Select {name} ({category})",
+  "missions_card_year_label": "Year",
+  "missions_card_dest_label": "Destination",
+  "ui_layer_stations": "Stations",
+  "ui_layer_observatories": "Observatories"
 }

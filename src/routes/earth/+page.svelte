@@ -1017,6 +1017,37 @@
 <svelte:head><title>{m.earth_page_title()}</title></svelte:head>
 
 <div class="earth">
+  <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
+       Screen-reader-only mirror of the 3D-canvas Earth-orbit bodies,
+       grouped by category, mirroring the visible chip-filter state.
+       Each button fires the same selectObject handler the canvas
+       does. Always present in DOM + tab order; visually hidden. -->
+  <ul class="sr-only sr-body-list" aria-label={m.a11y_earth_bodies_list_aria()}>
+    {#each [{ key: 'station', items: objects.filter((o) => categoriseEarthSatellite(o.id) === 'station'), active: layerStations, label: m.ui_layer_stations() }, { key: 'telescope', items: objects.filter((o) => categoriseEarthSatellite(o.id) === 'telescope'), active: layerObservatories, label: m.ui_layer_observatories() }, { key: 'constellation', items: objects.filter((o) => categoriseEarthSatellite(o.id) === 'constellation'), active: layerConstellations, label: m.ui_layer_constellations() }, { key: 'comsat', items: objects.filter((o) => categoriseEarthSatellite(o.id) === 'comsat'), active: layerComsats, label: m.ui_layer_comsats() }, { key: 'moon-orbiter', items: objects.filter((o) => categoriseEarthSatellite(o.id) === 'moon-orbiter'), active: layerMoonOrbiters, label: m.ui_layer_moon_orbiters() }] as group (group.key)}
+      {#if group.active && group.items.length > 0}
+        <li>
+          <h2>{group.label}</h2>
+          <ul>
+            {#each group.items as o (o.id)}
+              <li>
+                <button
+                  type="button"
+                  onclick={() => selectObject(o.id)}
+                  aria-current={selected?.id === o.id ? 'true' : undefined}
+                >
+                  {m.a11y_select_body_template({
+                    name: o.name ?? o.id,
+                    category: group.label,
+                  })}
+                </button>
+              </li>
+            {/each}
+          </ul>
+        </li>
+      {/if}
+    {/each}
+  </ul>
+
   <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
   <canvas
     class="layer"
@@ -1394,6 +1425,19 @@
     position: absolute;
     inset: var(--nav-height) 0 0 0;
     overflow: hidden;
+  }
+  /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
+     Used for the non-visual parallel bodies list (GH #256). */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   .layer {
     position: absolute;

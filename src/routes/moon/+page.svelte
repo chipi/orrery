@@ -8,6 +8,8 @@
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
+  import { dimMaterials } from '$lib/three/dim-materials';
+  import { createOrbiterRing } from '$lib/three/orbiter-ring';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -508,20 +510,15 @@
         // (SMART-1). Compress with log scale so all rings fit cleanly
         // around the 30u Moon sphere without overlapping.
         const altScale = moonRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
-        const inc = (site.inclination_deg * Math.PI) / 180;
+        const inclinationRad = (site.inclination_deg * Math.PI) / 180;
         const group = new THREE.Group();
         const dimmed = site.status !== 'ACTIVE';
-        const ringMat = new THREE.MeshBasicMaterial({
+        const ringMesh = createOrbiterRing({
+          ringRadius: altScale,
+          inclinationRad,
           color,
-          transparent: true,
-          opacity: dimmed ? 0.2 : 0.4,
-          side: THREE.DoubleSide,
+          dimmed,
         });
-        const ringMesh = new THREE.Mesh(
-          new THREE.RingGeometry(altScale - 0.06, altScale + 0.06, 96),
-          ringMat,
-        );
-        ringMesh.rotation.x = inc;
         group.add(ringMesh);
 
         // 3D model — use the shared earth-satellite-models factory so
@@ -532,20 +529,7 @@
         // earthRadius 8); without scaling the model reads as a dot.
         const dotGroup = buildSatelliteModel(site.id, color);
         dotGroup.scale.setScalar(2.0);
-        if (dimmed) {
-          dotGroup.traverse((o) => {
-            if (o instanceof THREE.Mesh) {
-              const mat = o.material as THREE.Material & {
-                opacity?: number;
-                transparent?: boolean;
-              };
-              if (mat) {
-                mat.transparent = true;
-                mat.opacity = 0.5;
-              }
-            }
-          });
-        }
+        if (dimmed) dimMaterials(dotGroup);
         attachPickableHit({ dotGroup, siteId: site.id });
         group.add(dotGroup);
 

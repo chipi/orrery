@@ -8,6 +8,8 @@
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
+  import { dimMaterials } from '$lib/three/dim-materials';
+  import { createOrbiterRing } from '$lib/three/orbiter-ring';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -761,20 +763,17 @@
         // Compress with log scale so all rings are readable on screen.
         // Ring radius: marsRadius + log-scaled offset.
         const altScale = marsRadius + 4 + Math.log10(1 + site.altitude_km / 100) * 5; // 50km→~5; 1000→~9; 20000→~16
-        const inc = (site.inclination_deg * Math.PI) / 180;
+        const inclinationRad = (site.inclination_deg * Math.PI) / 180;
         const group = new THREE.Group();
-        // Faint inclined ring at altScale radius.
-        const ringGeo = new THREE.RingGeometry(altScale - 0.06, altScale + 0.06, 96);
         const dimmed = site.status !== 'ACTIVE';
-        const ringMat = new THREE.MeshBasicMaterial({
+        const ringMesh = createOrbiterRing({
+          ringRadius: altScale,
+          inclinationRad,
           color,
-          transparent: true,
-          opacity: dimmed ? 0.18 : 0.35,
-          side: THREE.DoubleSide,
+          dimmed,
+          activeOpacity: 0.35,
+          dimmedOpacity: 0.18,
         });
-        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-        // Ring is in XY plane by default; tilt around X for inclination.
-        ringMesh.rotation.x = inc;
         group.add(ringMesh);
 
         // 3D model — shared earth-satellite-models factory. Mars
@@ -783,20 +782,7 @@
         // + dish + accent ring). Scaled 2x for the larger Mars scene.
         const dotGroup = buildSatelliteModel(site.id, color);
         dotGroup.scale.setScalar(2.0);
-        if (dimmed) {
-          dotGroup.traverse((o) => {
-            if (o instanceof THREE.Mesh) {
-              const mat = o.material as THREE.Material & {
-                opacity?: number;
-                transparent?: boolean;
-              };
-              if (mat) {
-                mat.transparent = true;
-                mat.opacity = 0.5;
-              }
-            }
-          });
-        }
+        if (dimmed) dimMaterials(dotGroup);
         attachPickableHit({ dotGroup, siteId: site.id });
         group.add(dotGroup);
 

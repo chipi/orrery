@@ -1,0 +1,6 @@
+{
+  "name": "OneWeb",
+  "short": "OneWeb",
+  "description": "648 satellites at 1,200 km in 12 polar orbital planes — first-generation LEO broadband. Operated by Eutelsat OneWeb since the 2023 merger. Polar orbits give pole-to-pole coverage that mid-inclination Starlink shells can't reach.",
+  "scale_fact": "OneWeb chose 1,200 km — twice Starlink's altitude — to reduce latency penalties from longer signal paths. Trade: harder to deorbit at end of life."
+}

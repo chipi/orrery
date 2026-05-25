@@ -1,0 +1,6 @@
+{
+  "name": "Landsat",
+  "short": "Landsat",
+  "description": "Longest continuous Earth-imaging record in history — Landsat 1 through 9 spanning 50+ years (since 1972). Currently Landsat 8 + 9 at 705 km sun-synchronous, 98.2° inclination, 10:00 local descending node. 30 m multispectral; the climate-change reference dataset.",
+  "scale_fact": "Landsat's archive is so long that you can compare 1972 Manhattan to 2025 Manhattan in the same instrument's coordinate frame."
+}

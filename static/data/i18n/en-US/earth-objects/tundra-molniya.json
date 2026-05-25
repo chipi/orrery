@@ -1,0 +1,6 @@
+{
+  "name": "Molniya + Tundra (HEO 63.4°)",
+  "short": "Molniya/Tundra",
+  "description": "High-eccentricity orbits at 63.4° critical inclination. Molniya (12-hour, 600 × 40,000 km) — Russian high-latitude comms + Oko/Meridian early warning since 1965. Tundra (24-hour, 25,000 × 35,786 km) — Sirius XM Satellite Radio + US SBIRS-HEO sensors.",
+  "scale_fact": "The 63.4° inclination is no accident — it's the 'critical inclination' where Earth's J2 perturbation locks the apogee in place over the chosen hemisphere."
+}

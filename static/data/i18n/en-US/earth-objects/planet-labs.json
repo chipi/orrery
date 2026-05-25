@@ -1,0 +1,6 @@
+{
+  "name": "Planet Labs (PlanetScope + SkySat)",
+  "short": "Planet",
+  "description": "~150 PlanetScope 3U CubeSats + ~21 SkySats at 475 km sun-synchronous — daily-revisit Earth imaging. PlanetScope gives 3-5 m global daily; SkySats give 50 cm on-demand tasking. Every patch of Earth's land surface photographed every day.",
+  "scale_fact": "Planet's Doves fleet generates roughly 25 terabytes of imagery per day — more than NASA's entire Earth-observation programme."
+}

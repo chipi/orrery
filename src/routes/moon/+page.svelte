@@ -32,6 +32,7 @@
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
+  import { groupLinksByTier } from '$lib/surface-map/link-tiers';
   import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -252,18 +253,9 @@
       });
     }
   });
-  type PanelLinks = NonNullable<MoonSite['links']>;
-  let panelLinksByTier = $derived.by(() => {
-    const links = selected?.links;
-    if (!links) return { intro: [] as PanelLinks, core: [] as PanelLinks, deep: [] as PanelLinks };
-    const out = {
-      intro: [] as PanelLinks,
-      core: [] as PanelLinks,
-      deep: [] as PanelLinks,
-    };
-    for (const link of links) out[link.t].push(link);
-    return out;
-  });
+  let panelLinksByTier = $derived(
+    groupLinksByTier<MoonSite['links'][number]>((selected as MoonSite | null)?.links),
+  );
   // The `as MoonSite | null` cast guards against a Svelte 5 flow-
   // analysis quirk where `selected` is narrowed to `never` after the
   // earlier $derived.by reads it inside another closure. The cast

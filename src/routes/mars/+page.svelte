@@ -33,6 +33,7 @@
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
+  import { groupLinksByTier } from '$lib/surface-map/link-tiers';
   import {
     getMarsSites,
     getMarsTraverse,
@@ -293,18 +294,9 @@
     panelTab = 'story';
     storyAutoSwitchedForSite = selected.id;
   });
-  type PanelLinks = NonNullable<MarsSite['links']>;
-  let panelLinksByTier = $derived.by(() => {
-    const links = selected?.links;
-    if (!links) return { intro: [] as PanelLinks, core: [] as PanelLinks, deep: [] as PanelLinks };
-    const out = {
-      intro: [] as PanelLinks,
-      core: [] as PanelLinks,
-      deep: [] as PanelLinks,
-    };
-    for (const link of links) out[link.t].push(link);
-    return out;
-  });
+  let panelLinksByTier = $derived(
+    groupLinksByTier<MarsSite['links'][number]>((selected as MarsSite | null)?.links),
+  );
   let panelHasLinks = $derived.by(() => {
     const sel = selected as MarsSite | null;
     return sel != null && sel.links.length > 0;

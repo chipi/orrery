@@ -34,6 +34,7 @@
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
+  import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import {
     getMarsSites,
     getMarsTraverse,
@@ -1967,18 +1968,9 @@
 
       // Legend
       const legendY = H - 24;
-      let legendX = 36;
       ctx2.font = "bold 7px 'Space Mono', monospace";
       ctx2.textAlign = 'left';
-      for (const [nation, color] of Object.entries(NATION_COLORS)) {
-        ctx2.beginPath();
-        ctx2.arc(legendX + 5, legendY + 6, 3, 0, Math.PI * 2);
-        ctx2.fillStyle = color;
-        ctx2.fill();
-        ctx2.fillStyle = 'rgba(255,255,255,0.7)';
-        ctx2.fillText(nation, legendX + 12, legendY + 9);
-        legendX += ctx2.measureText(nation).width + 32;
-      }
+      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: NATION_COLORS });
     }
 
     function on2dClick(e: MouseEvent) {

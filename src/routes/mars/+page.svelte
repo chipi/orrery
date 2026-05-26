@@ -37,6 +37,7 @@
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
+  import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { getMarsSites, getMarsTraverse, getMarsSiteGallery, type SiteStory } from '$lib/data';
@@ -242,7 +243,6 @@
   let traverses: Record<string, Traverse> = $state({});
 
   // ─── Detail-panel tabs (mirrors /moon pattern v0.1.10) ───────────
-  type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let lastSelectedId = $state<string | null>(null);
   let panelGallery: string[] = $state([]);

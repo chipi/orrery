@@ -36,6 +36,7 @@
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
+  import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { getMoonSites, getMoonSiteGallery, type SiteStory } from '$lib/data';
@@ -233,7 +234,6 @@
   });
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────
-  type PanelTab = 'overview' | 'gallery' | 'story' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));

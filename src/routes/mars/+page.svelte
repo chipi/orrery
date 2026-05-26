@@ -22,6 +22,7 @@
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
+  import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -1339,13 +1340,16 @@
       hoveredSiteId = null;
     });
 
-    renderer.domElement.addEventListener('mousedown', onMouseDown);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onMouseUp);
-    renderer.domElement.addEventListener('wheel', onWheel, { passive: false });
-    renderer.domElement.addEventListener('touchstart', onTouchStart, { passive: true });
-    renderer.domElement.addEventListener('touchmove', onTouchMove, { passive: false });
-    renderer.domElement.addEventListener('touchend', onTouchEnd);
+    const stopCanvasInputs = bindCanvasInputs({
+      el: renderer.domElement,
+      onMouseDown,
+      onMouseMove,
+      onMouseUp,
+      onWheel,
+      onTouchStart,
+      onTouchMove,
+      onTouchEnd,
+    });
 
     // ──────────────────────────────────────────────────────────────
     // Animation loop
@@ -2013,13 +2017,7 @@
       stopRm();
       stopMarsAtmosphereLayer?.();
       window.removeEventListener('resize', onResize);
-      renderer.domElement.removeEventListener('mousedown', onMouseDown);
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', onMouseUp);
-      renderer.domElement.removeEventListener('wheel', onWheel);
-      renderer.domElement.removeEventListener('touchstart', onTouchStart);
-      renderer.domElement.removeEventListener('touchmove', onTouchMove);
-      renderer.domElement.removeEventListener('touchend', onTouchEnd);
+      stopCanvasInputs();
       c2.removeEventListener('click', on2dClick);
       for (const sm of surfaceMarkers) disposeObject3d(sm.group);
       for (const om of orbitalMarkers) disposeObject3d(om.group);

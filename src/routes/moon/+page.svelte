@@ -21,6 +21,7 @@
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
+  import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -825,19 +826,18 @@
     };
 
     el3d.style.cursor = 'grab';
-    el3d.addEventListener('mousedown', onMouseDown);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onMouseUp);
-    el3d.addEventListener('mousemove', onHover);
-    el3d.addEventListener('mouseleave', onHoverLeave);
-    // wheel + touchmove must be passive:false so onWheel /
-    // onTouchMove can preventDefault() against browser zoom /
-    // scroll. touchstart stays passive (no preventDefault inside).
-    el3d.addEventListener('wheel', onWheel, { passive: false });
-    el3d.addEventListener('touchstart', onTouchStart, { passive: true });
-    el3d.addEventListener('touchmove', onTouchMove, { passive: false });
-    el3d.addEventListener('touchend', onTouchEnd);
-    el3d.addEventListener('touchcancel', onTouchEnd);
+    const stopCanvasInputs = bindCanvasInputs({
+      el: el3d,
+      onMouseDown,
+      onMouseMove,
+      onMouseUp,
+      onWheel,
+      onTouchStart,
+      onTouchMove,
+      onTouchEnd,
+      onHover,
+      onHoverLeave,
+    });
 
     // 2D context + lunar disc photos for the orthographic discs.
     // Loading async; until ready, draw2d falls back to the gradient.
@@ -1338,14 +1338,7 @@
       _stopTidalLockLayer?.();
       stopPanoramaEscape();
       panoramaSkybox?.dispose();
-      el3d.removeEventListener('mousedown', onMouseDown);
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', onMouseUp);
-      el3d.removeEventListener('wheel', onWheel);
-      el3d.removeEventListener('touchstart', onTouchStart);
-      el3d.removeEventListener('touchmove', onTouchMove);
-      el3d.removeEventListener('touchend', onTouchEnd);
-      el3d.removeEventListener('touchcancel', onTouchEnd);
+      stopCanvasInputs();
       c2.removeEventListener('click', on2dClick);
       window.removeEventListener('resize', onResize);
       const disposeMatTextures = (mat: THREE.Material) => {

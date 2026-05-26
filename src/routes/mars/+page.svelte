@@ -29,6 +29,7 @@
   import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
+  import HotspotsLodChip from '$lib/components/HotspotsLodChip.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -2127,18 +2128,7 @@
           },
         ]}
       />
-      <button
-        type="button"
-        class="chip chip-hotspots"
-        class:active={hotspotsMode !== 'low'}
-        onclick={cycleHotspotsMode}
-        title="Surface Hotspots LOD · click to cycle AUTO ↔ LOW ↔ HIGH"
-        aria-label="Hotspots tier: {hotspotsMode}"
-        data-testid="layer-hotspots"
-        data-hotspots-mode={hotspotsMode}
-      >
-        HOTSPOTS · {hotspotsMode.toUpperCase()}
-      </button>
+      <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />
     </div>
   </div>
 

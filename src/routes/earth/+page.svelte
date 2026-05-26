@@ -4,6 +4,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { createStarField } from '$lib/three/star-field';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
@@ -207,31 +208,7 @@
     const earthshine = new THREE.HemisphereLight(0x4b9cd3, 0x080a14, 0.35);
     scene.add(earthshine);
 
-    // Stars
-    const STAR_COUNT = 1500;
-    const sp = new Float32Array(STAR_COUNT * 3);
-    for (let i = 0; i < STAR_COUNT; i++) {
-      const r = 200 + Math.random() * 80;
-      const t = Math.random() * Math.PI * 2;
-      const p = Math.acos(2 * Math.random() - 1);
-      sp[i * 3] = r * Math.sin(p) * Math.cos(t);
-      sp[i * 3 + 1] = r * Math.sin(p) * Math.sin(t);
-      sp[i * 3 + 2] = r * Math.cos(p);
-    }
-    const starGeo = new THREE.BufferGeometry();
-    starGeo.setAttribute('position', new THREE.BufferAttribute(sp, 3));
-    scene.add(
-      new THREE.Points(
-        starGeo,
-        new THREE.PointsMaterial({
-          color: 0xdde4ff,
-          size: 1.0,
-          sizeAttenuation: false,
-          transparent: true,
-          opacity: 0.55,
-        }),
-      ),
-    );
+    scene.add(createStarField());
 
     // Earth
     const textureLoader = new THREE.TextureLoader();

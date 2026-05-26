@@ -7,6 +7,7 @@
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
+  import { createStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
   import { syncStationUrl } from '$lib/routes/sync-station-url';
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
@@ -463,30 +464,7 @@
     fill.position.set(-30, -10, -40);
     scene.add(fill);
 
-    const STAR_COUNT = 1200;
-    const sp = new Float32Array(STAR_COUNT * 3);
-    for (let i = 0; i < STAR_COUNT; i++) {
-      const r = 180 + Math.random() * 100;
-      const t = Math.random() * Math.PI * 2;
-      const p = Math.acos(2 * Math.random() - 1);
-      sp[i * 3] = r * Math.sin(p) * Math.cos(t);
-      sp[i * 3 + 1] = r * Math.sin(p) * Math.sin(t);
-      sp[i * 3 + 2] = r * Math.cos(p);
-    }
-    const starGeo = new THREE.BufferGeometry();
-    starGeo.setAttribute('position', new THREE.BufferAttribute(sp, 3));
-    scene.add(
-      new THREE.Points(
-        starGeo,
-        new THREE.PointsMaterial({
-          color: 0xdde4ff,
-          size: 1.0,
-          sizeAttenuation: false,
-          transparent: true,
-          opacity: 0.5,
-        }),
-      ),
-    );
+    scene.add(createStarField({ count: 1200, radius: 180, jitter: 100, opacity: 0.5 }));
 
     const texLoader = new THREE.TextureLoader();
     const cloudsTex = texLoader.load(`${base}/textures/2k_earth_daymap.jpg`);

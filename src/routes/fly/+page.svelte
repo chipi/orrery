@@ -3,6 +3,7 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { createStarField } from '$lib/three/star-field';
   import {
     earthPos,
     marsPos,
@@ -1892,31 +1893,7 @@
     );
     scene.add(sunGlow);
 
-    // Stars
-    const STAR_COUNT = 2000;
-    const starsArr = new Float32Array(STAR_COUNT * 3);
-    for (let i = 0; i < STAR_COUNT; i++) {
-      const r = 1500 + Math.random() * 500;
-      const t = Math.random() * Math.PI * 2;
-      const p = Math.acos(2 * Math.random() - 1);
-      starsArr[i * 3] = r * Math.sin(p) * Math.cos(t);
-      starsArr[i * 3 + 1] = r * Math.sin(p) * Math.sin(t);
-      starsArr[i * 3 + 2] = r * Math.cos(p);
-    }
-    const starsGeo = new THREE.BufferGeometry();
-    starsGeo.setAttribute('position', new THREE.BufferAttribute(starsArr, 3));
-    scene.add(
-      new THREE.Points(
-        starsGeo,
-        new THREE.PointsMaterial({
-          color: 0xdde4ff,
-          size: 1.0,
-          sizeAttenuation: false,
-          transparent: true,
-          opacity: 0.7,
-        }),
-      ),
-    );
+    scene.add(createStarField({ count: 2000, radius: 1500, jitter: 500, opacity: 0.7 }));
 
     // Earth orbit + Mars orbit. Opacity 0.4 reads clearly against the
     // dark background — was 0.18 before but on monitors with high

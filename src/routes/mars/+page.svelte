@@ -11,6 +11,7 @@
   import { dimMaterials } from '$lib/three/dim-materials';
   import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
+  import { addSurfaceLights } from '$lib/three/surface-lights';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -396,10 +397,7 @@
       height: container.clientHeight,
     });
 
-    scene.add(new THREE.AmbientLight(0x886655, 0.8));
-    const sun = new THREE.DirectionalLight(0xfff4d0, 1.2);
-    sun.position.set(120, 60, 100);
-    scene.add(sun);
+    addSurfaceLights({ scene, ambientColor: 0x886655, ambientIntensity: 0.8 });
 
     scene.add(createStarField({ count: STAR_FIELD.planet }));
 

@@ -17,6 +17,7 @@
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
+  import { pickClosest2d } from '$lib/three/pick-closest-2d';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -1040,15 +1041,14 @@
     }
 
     function on2dClick(e: MouseEvent) {
-      const rect = c2.getBoundingClientRect();
-      const cx = e.clientX - rect.left;
-      const cy = e.clientY - rect.top;
-      let best: { id: string; d: number } | null = null;
-      for (const [id, pos] of sitePos2d.entries()) {
-        const d = Math.hypot(cx - pos.x, cy - pos.y);
-        if (d < 22 && (!best || d < best.d)) best = { id, d };
-      }
-      if (best) selectSite(best.id);
+      const id = pickClosest2d({
+        canvas: c2,
+        clientX: e.clientX,
+        clientY: e.clientY,
+        positions: sitePos2d,
+        tolerance: 22,
+      });
+      if (id) selectSite(id);
     }
     c2.addEventListener('click', on2dClick);
 

@@ -34,7 +34,8 @@
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
-  import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
+  import { loadPanelData } from '$lib/surface-map/load-panel-data';
+  import { getMoonSites, getMoonSiteGallery, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
@@ -246,11 +247,14 @@
       panelGallery = [];
       panelStory = null;
       lastSelectedId = selected.id;
-      void getMoonSiteGallery(selected.id, selected.mission_id).then((urls) => {
-        if (selected && selected.id === lastSelectedId) panelGallery = urls;
-      });
-      void getSiteStory(selected.id, localeFromPage($page)).then((story) => {
-        if (selected && selected.id === lastSelectedId) panelStory = story;
+      loadPanelData({
+        siteId: selected.id,
+        missionId: selected.mission_id,
+        locale: localeFromPage($page),
+        fetchGallery: getMoonSiteGallery,
+        isStillCurrent: () => selected != null && selected.id === lastSelectedId,
+        onGallery: (urls) => (panelGallery = urls),
+        onStory: (story) => (panelStory = story),
       });
     }
   });

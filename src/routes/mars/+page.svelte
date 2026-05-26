@@ -35,13 +35,8 @@
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
-  import {
-    getMarsSites,
-    getMarsTraverse,
-    getMarsSiteGallery,
-    getSiteStory,
-    type SiteStory,
-  } from '$lib/data';
+  import { loadPanelData } from '$lib/surface-map/load-panel-data';
+  import { getMarsSites, getMarsTraverse, getMarsSiteGallery, type SiteStory } from '$lib/data';
   import type { Traverse } from '$types/mars-site';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -269,11 +264,14 @@
       panelGallery = [];
       panelStory = null;
       panelLightbox = null;
-      void getMarsSiteGallery(selected.id, selected.mission_id).then((urls) => {
-        if (selected && selected.id === lastSelectedId) panelGallery = urls;
-      });
-      void getSiteStory(selected.id, localeFromPage($page)).then((story) => {
-        if (selected && selected.id === lastSelectedId) panelStory = story;
+      loadPanelData({
+        siteId: selected.id,
+        missionId: selected.mission_id,
+        locale: localeFromPage($page),
+        fetchGallery: getMarsSiteGallery,
+        isStillCurrent: () => selected != null && selected.id === lastSelectedId,
+        onGallery: (urls) => (panelGallery = urls),
+        onStory: (story) => (panelStory = story),
       });
     }
   });

@@ -39,6 +39,7 @@
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
   import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
+  import { buildSurfacePanelTabs } from '$lib/surface-map/build-panel-tabs';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { getMoonSites, getMoonSiteGallery, type SiteStory } from '$lib/data';
@@ -1578,17 +1579,11 @@ sample      ${debugInfo.projectedPxSample}`}
       {/if}
 
       <PanelTabRow
-        tabs={[
-          { id: 'overview', label: m.panel_tab_overview() },
-          { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
-          {
-            id: 'story',
-            label: m.panel_tab_story(),
-            visible: !!panelStory,
-            testid: 'panel-tab-story',
-          },
-          { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
-        ]}
+        tabs={buildSurfacePanelTabs({
+          hasGallery: panelGallery.length > 0,
+          hasStory: !!panelStory,
+          hasLinks: panelHasLinks,
+        })}
         bind:active={panelTab}
       />
 

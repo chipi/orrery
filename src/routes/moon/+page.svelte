@@ -37,6 +37,7 @@
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
+  import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { getMoonSites, getMoonSiteGallery, type SiteStory } from '$lib/data';
@@ -218,19 +219,18 @@
   // first time on a site. Same rule as /mars: only when (a) story
   // exists, (b) user hasn't picked a different tab manually,
   // (c) we haven't already auto-switched for THIS site.
-  let prevTierContextActive = $state(false);
-  let storyAutoSwitchedForSite = $state<string | null>(null);
+  const storyAutopromote = createStoryAutopromoteTracker();
   $effect(() => {
-    const active = tierContext !== null;
-    const becameActive = active && !prevTierContextActive;
-    prevTierContextActive = active;
-    if (!becameActive) return;
-    if (!selected) return;
-    if (panelStory == null) return;
-    if (panelTab !== 'overview') return;
-    if (storyAutoSwitchedForSite === selected.id) return;
-    panelTab = 'story';
-    storyAutoSwitchedForSite = selected.id;
+    if (
+      storyAutopromote.check({
+        tierContextActive: tierContext !== null,
+        selectedId: selected?.id ?? null,
+        hasStory: panelStory != null,
+        currentTab: panelTab,
+      })
+    ) {
+      panelTab = 'story';
+    }
   });
 
   // ─── Detail-panel tabs (v0.1.10) ─────────────────────────────────

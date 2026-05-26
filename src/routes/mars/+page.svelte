@@ -38,6 +38,7 @@
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
+  import { createStoryAutopromoteTracker } from '$lib/surface-map/story-autopromote';
   import { drawNationLegend2d } from '$lib/surface-map/draw-nation-legend-2d';
   import { loadPanelData } from '$lib/surface-map/load-panel-data';
   import { getMarsSites, getMarsTraverse, getMarsSiteGallery, type SiteStory } from '$lib/data';
@@ -258,8 +259,7 @@
   // the user from OVERVIEW → STORY. Once they've manually picked a
   // different tab (e.g. clicked GALLERY) we leave them alone — the
   // auto-switch only fires on the first promotion per site.
-  let prevTierContextActive = $state(false);
-  let storyAutoSwitchedForSite = $state<string | null>(null);
+  const storyAutopromote = createStoryAutopromoteTracker();
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
@@ -285,16 +285,16 @@
   // for THIS site (so a tab change followed by a re-zoom doesn't undo
   // the user's choice). 2026-05-22 feedback.
   $effect(() => {
-    const active = tierContext !== null;
-    const becameActive = active && !prevTierContextActive;
-    prevTierContextActive = active;
-    if (!becameActive) return;
-    if (!selected) return;
-    if (panelStory == null) return;
-    if (panelTab !== 'overview') return;
-    if (storyAutoSwitchedForSite === selected.id) return;
-    panelTab = 'story';
-    storyAutoSwitchedForSite = selected.id;
+    if (
+      storyAutopromote.check({
+        tierContextActive: tierContext !== null,
+        selectedId: selected?.id ?? null,
+        hasStory: panelStory != null,
+        currentTab: panelTab,
+      })
+    ) {
+      panelTab = 'story';
+    }
   });
   let panelLinksByTier = $derived(
     groupLinksByTier<MarsSite['links'][number]>((selected as MarsSite | null)?.links),

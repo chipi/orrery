@@ -9,6 +9,7 @@
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -514,10 +515,7 @@
         group.add(tier0Group);
         // Anchor on the surface; orient the group so +Y points away from
         // Moon centre (radially outward), so cone-style markers stand up.
-        group.position.set(x * r, y * r, z * r);
-        const up = new THREE.Vector3(x, y, z);
-        const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
-        group.quaternion.copy(quat);
+        placeOnSphereTangent(group, { x, y, z }, r);
         attachPickableHit({ dotGroup: group, siteId: site.id });
         // Label with leader line, floating radially outward (along the
         // group's local +Y, which is surface-normal away from Moon

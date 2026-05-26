@@ -10,6 +10,7 @@
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import { dimMaterials } from '$lib/three/dim-materials';
   import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -594,10 +595,7 @@
         // dashed-outline marker carries the same info on the flat map.
         if (isFailed) dimMaterials(tier0Group, 0.55);
         // Anchor on surface; orient so +Y points outward.
-        group.position.set(x * r, y * r, z * r);
-        const up = new THREE.Vector3(x, y, z);
-        const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
-        group.quaternion.copy(quat);
+        placeOnSphereTangent(group, { x, y, z }, r);
         attachPickableHit({ dotGroup: group, siteId: site.id });
 
         // Label with leader-line (same component as /earth + /moon) —

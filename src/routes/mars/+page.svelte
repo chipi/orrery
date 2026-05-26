@@ -620,14 +620,7 @@
         const up = new THREE.Vector3(x, y, z);
         const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
         group.quaternion.copy(quat);
-        group.userData = { siteId: site.id };
-        // Invisible click target — 3u sphere for forgiving picking.
-        const hit = new THREE.Mesh(
-          new THREE.SphereGeometry(3.0, 8, 8),
-          new THREE.MeshBasicMaterial({ visible: false }),
-        );
-        hit.userData = { siteId: site.id };
-        group.add(hit);
+        attachPickableHit({ dotGroup: group, siteId: site.id });
 
         // Label with leader-line (same component as /earth + /moon) —
         // 2026-05-22 feedback: offset moved from straight-up

@@ -558,25 +558,7 @@
         const up = new THREE.Vector3(x, y, z);
         const quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
         group.quaternion.copy(quat);
-        group.userData = { siteId: site.id };
-
-        // Invisible hit sphere — gives the click target a much larger
-        // effective radius (3u vs the visible marker's ~0.6u) so the
-        // user can grab a marker without the moon's rotation making
-        // it slip away. Material is non-rendering but raycast-active.
-        const hitSphere = new THREE.Mesh(
-          new THREE.SphereGeometry(3.0, 8, 8),
-          new THREE.MeshBasicMaterial({ visible: false }),
-        );
-        hitSphere.userData = { siteId: site.id };
-        group.add(hitSphere);
-
-        // Make every child (mesh + label sprite) pickable.
-        group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh || obj instanceof THREE.Sprite) {
-            obj.userData = { siteId: site.id };
-          }
-        });
+        attachPickableHit({ dotGroup: group, siteId: site.id });
         // Label with leader line, floating radially outward (along the
         // group's local +Y, which is surface-normal away from Moon
         // centre after the tangent-orient quat above).

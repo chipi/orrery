@@ -9,7 +9,7 @@
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import { dimMaterials } from '$lib/three/dim-materials';
-  import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
@@ -1557,21 +1557,7 @@
       // Orbital dot motion — perception-scaled; one ring per ~30s.
       for (const om of orbitalMarkers) {
         if (!om.group.visible) continue;
-        if (!reduced) om.orbitPhase += dt * om.orbitSpeed;
-        // Position the dot on the inclined ring at ringRadius and
-        // angle orbitPhase. Ring is rotated around X by inclination,
-        // so dot position in ring's local frame is (cos a, 0, sin a) * R,
-        // then transformed by the ring's rotation. We replicate that
-        // here so the dot tracks the ring exactly.
-        const a = om.orbitPhase;
-        const lx = Math.cos(a) * om.ringRadius;
-        const ly = 0;
-        const lz = Math.sin(a) * om.ringRadius;
-        // Apply ringMesh's rotation.x to the dot's local position.
-        const inc = om.ringMesh.rotation.x;
-        const cosI = Math.cos(inc);
-        const sinI = Math.sin(inc);
-        om.dotGroup.position.set(lx, ly * cosI - lz * sinI, ly * sinI + lz * cosI);
+        tickOrbiterDot(om, dt, reduced);
       }
 
       // Outline-on-hover: pass the hovered marker group to OutlinePass.

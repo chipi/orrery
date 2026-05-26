@@ -99,3 +99,21 @@ export function buildOrbiterGroup({
     halo,
   };
 }
+
+/**
+ * Per-frame orbiter dot positioning (#42).
+ *
+ * Advances `orbitPhase` by `dt * orbitSpeed` (skipped under reduced
+ * motion to comply with ADR-025), then computes the dot's local
+ * position on the inclined ring. The ring is rotated around X by its
+ * inclination — replicate that rotation here so the dot tracks the
+ * ring exactly. Mutates `om.orbitPhase` and `om.dotGroup.position`.
+ */
+export function tickOrbiterDot(om: OrbiterMarker, dt: number, reducedMotion: boolean): void {
+  if (!reducedMotion) om.orbitPhase += dt * om.orbitSpeed;
+  const a = om.orbitPhase;
+  const lx = Math.cos(a) * om.ringRadius;
+  const lz = Math.sin(a) * om.ringRadius;
+  const inc = om.ringMesh.rotation.x;
+  om.dotGroup.position.set(lx, -lz * Math.sin(inc), lz * Math.cos(inc));
+}

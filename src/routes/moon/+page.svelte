@@ -8,7 +8,7 @@
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
-  import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
@@ -1110,16 +1110,7 @@
       // Orbital dot motion — perception-scaled, ~30 s per ring.
       for (const om of orbitalMarkers) {
         if (!om.group.visible) continue;
-        if (!reducedMotion) om.orbitPhase += dt * om.orbitSpeed;
-        const a = om.orbitPhase;
-        const lx = Math.cos(a) * om.ringRadius;
-        const lz = Math.sin(a) * om.ringRadius;
-        const inc = om.ringMesh.rotation.x;
-        const cosI = Math.cos(inc);
-        const sinI = Math.sin(inc);
-        // Apply ringMesh's rotation.x to the dot's local position so
-        // the dot tracks the inclined ring exactly (mirror of /mars).
-        om.dotGroup.position.set(lx, -lz * sinI, lz * cosI);
+        tickOrbiterDot(om, dt, reducedMotion);
       }
 
       // Outline-on-hover (skipped if hovered === selected).

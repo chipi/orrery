@@ -12,6 +12,7 @@
   import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
+  import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -1140,10 +1141,10 @@
       camT = savedCamT;
       applyCamera();
     };
-    const onPanoramaKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && panoramaActive) exitPanorama();
-    };
-    window.addEventListener('keydown', onPanoramaKey);
+    const stopPanoramaEscape = bindPanoramaEscape({
+      isActive: () => panoramaActive,
+      onExit: () => exitPanorama(),
+    });
 
     let dragging = false;
     let dragStartX = 0;
@@ -2026,7 +2027,7 @@
 
     cleanup = () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('keydown', onPanoramaKey);
+      stopPanoramaEscape();
       panoramaSkybox?.dispose();
       stopRm();
       stopMarsAtmosphereLayer?.();

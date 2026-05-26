@@ -11,6 +11,7 @@
   import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
+  import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -664,11 +665,10 @@
       camR = savedCamR;
       updateCam();
     };
-    // ESC exits panorama mode.
-    const onPanoramaKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && panoramaActive) exitPanorama();
-    };
-    window.addEventListener('keydown', onPanoramaKey);
+    const stopPanoramaEscape = bindPanoramaEscape({
+      isActive: () => panoramaActive,
+      onExit: () => exitPanorama(),
+    });
 
     const el3d = renderer.domElement;
     let isDrag = false;
@@ -1351,7 +1351,7 @@
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
       _stopTidalLockLayer?.();
-      window.removeEventListener('keydown', onPanoramaKey);
+      stopPanoramaEscape();
       panoramaSkybox?.dispose();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);

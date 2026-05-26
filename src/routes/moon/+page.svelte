@@ -7,7 +7,7 @@
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
-  import { disposeObject3d } from '$lib/three/dispose-object3d';
+  import { disposeObject3d, disposeScene } from '$lib/three/dispose-object3d';
   import {
     applyOrbiterLayerVisibility,
     buildOrbiterGroup,
@@ -1339,24 +1339,7 @@
       stopCanvasInputs();
       c2.removeEventListener('click', on2dClick);
       window.removeEventListener('resize', onResize);
-      const disposeMatTextures = (mat: THREE.Material) => {
-        const m = mat as THREE.Material & { map?: THREE.Texture | null };
-        m.map?.dispose();
-      };
-      scene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material))
-            obj.material.forEach((mat) => {
-              disposeMatTextures(mat);
-              mat.dispose();
-            });
-          else if (obj.material) {
-            disposeMatTextures(obj.material);
-            (obj.material as THREE.Material).dispose();
-          }
-        }
-      });
+      disposeScene(scene);
       disposeSceneRenderer({ renderer, outlinePass });
     };
   });

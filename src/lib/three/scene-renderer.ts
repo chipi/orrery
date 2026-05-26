@@ -22,3 +22,22 @@ export function createSceneRenderer(
   container.appendChild(renderer.domElement);
   return renderer;
 }
+
+/**
+ * Standard renderer + composer teardown for cleanup paths (#42).
+ *
+ * Disposes the OutlinePass + the WebGLRenderer, then removes the
+ * canvas from the DOM. Both surface routes' cleanup blocks end with
+ * this trio.
+ */
+export function disposeSceneRenderer({
+  renderer,
+  outlinePass,
+}: {
+  renderer: THREE.WebGLRenderer;
+  outlinePass: { dispose: () => void };
+}): void {
+  outlinePass.dispose();
+  renderer.dispose();
+  renderer.domElement.remove();
+}

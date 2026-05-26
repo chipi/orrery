@@ -20,7 +20,7 @@
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { pickClosest2d } from '$lib/three/pick-closest-2d';
   import { createStarField } from '$lib/three/star-field';
-  import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -2025,9 +2025,7 @@
       for (const om of orbitalMarkers) disposeObject3d(om.group);
       marsMesh.geometry.dispose();
       (marsMesh.material as THREE.Material).dispose();
-      outlinePass.dispose();
-      renderer.dispose();
-      renderer.domElement.remove();
+      disposeSceneRenderer({ renderer, outlinePass });
     };
   });
 

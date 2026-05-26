@@ -19,7 +19,7 @@
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { pickClosest2d } from '$lib/three/pick-closest-2d';
   import { createStarField } from '$lib/three/star-field';
-  import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
@@ -1361,9 +1361,7 @@
           }
         }
       });
-      outlinePass.dispose();
-      renderer.dispose();
-      el3d.remove();
+      disposeSceneRenderer({ renderer, outlinePass });
     };
   });
 

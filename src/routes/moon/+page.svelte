@@ -18,6 +18,7 @@
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
+  import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -1540,19 +1541,10 @@ sample      ${debugInfo.projectedPxSample}`}
   <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"
        button is the visible exit; ESC also exits. Hidden-text desc
        is read by screen readers for vision-impaired users. -->
-  {#if panoramaActive}
-    <div
-      class="panorama-overlay"
-      role="region"
-      aria-label="Ground-view panorama mode — press ESC to return to orbit"
-      data-testid="panorama-overlay"
-    >
-      <span class="sr-only">
-        You are standing at the landing site. The lander is in front of you. Drag to look around.
-        Press the Exit panorama view button in the detail panel, or press Esc, to return to orbit.
-      </span>
-    </div>
-  {/if}
+  <PanoramaOverlay
+    active={panoramaActive}
+    description="You are standing at the landing site. The lander is in front of you. Drag to look around. Press the Exit panorama view button in the detail panel, or press Esc, to return to orbit."
+  />
 
   <!-- Nation legend overlay. The 2D view paints this directly into
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js
@@ -1930,12 +1922,6 @@ sample      ${debugInfo.projectedPxSample}`}
     border-color: var(--accent, #4ecdc4);
     color: #fff;
     outline: none;
-  }
-  .panorama-overlay {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 50;
   }
   .panorama-exit {
     position: absolute;

@@ -19,6 +19,7 @@
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
+  import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -2180,19 +2181,10 @@
     <div class="load-failed" role="alert">{m.mars_load_failed()}</div>
   {/if}
 
-  {#if panoramaActive}
-    <div
-      class="panorama-overlay"
-      role="region"
-      aria-label="Ground-view panorama mode — press ESC to return to orbit"
-      data-testid="panorama-overlay"
-    >
-      <span class="sr-only">
-        You are standing at the landing site on Mars. The lander is in front of you. Drag to look
-        around. Press ESC, or use the Exit panorama view button in the detail panel, to return.
-      </span>
-    </div>
-  {/if}
+  <PanoramaOverlay
+    active={panoramaActive}
+    description="You are standing at the landing site on Mars. The lander is in front of you. Drag to look around. Press ESC, or use the Exit panorama view button in the detail panel, to return."
+  />
 
   <!-- Legend overlay (3D view; 2D paints its own legend on the canvas) -->
   {#if view === '3d'}
@@ -2525,15 +2517,6 @@ sample      ${debugInfo.projectedPxSample}`}
     border-color: var(--accent, #cc7a55);
     color: #fff;
     outline: none;
-  }
-  .panorama-overlay {
-    /* Now SR-only — the Exit button moved into the detail-panel's
-     * Stand-at-site slot (2026-05-21 feedback). The overlay div stays
-     * so the live-region label is reachable to screen readers. */
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1000;
   }
   .sr-only {
     position: absolute;

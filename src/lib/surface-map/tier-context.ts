@@ -34,3 +34,34 @@ export type TierContext = {
   layers: TierLayer[];
   uncertaintyM?: number;
 };
+
+import type { SurfaceSite } from '$types/surface-site';
+import { missionContextFor } from './site-formatters';
+
+/**
+ * Assemble a `TierContext` from the site + agency chip + the
+ * dispatcher-computed `layers` array. Both routes built this record
+ * with the same 9-line literal pre-extraction.
+ */
+export function buildTierContext({
+  site,
+  agencyChip,
+  layers,
+}: {
+  site: Pick<
+    SurfaceSite,
+    'id' | 'name' | 'mission_type' | 'landing_date' | 'location_uncertainty_m'
+  >;
+  agencyChip: { label: string; color: string };
+  layers: TierLayer[];
+}): TierContext {
+  return {
+    siteId: site.id,
+    siteName: site.name ?? site.id,
+    nation: agencyChip.label,
+    nationColor: agencyChip.color,
+    missionContext: missionContextFor(site),
+    layers,
+    uncertaintyM: site.location_uncertainty_m,
+  };
+}

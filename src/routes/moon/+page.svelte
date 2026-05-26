@@ -32,10 +32,13 @@
   import HotspotsLodChip from '$lib/components/HotspotsLodChip.svelte';
   import PanoramaToggleButton from '$lib/components/PanoramaToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
-  import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
+  import {
+    buildTierContext,
+    type TierContext,
+    type TierLayer,
+  } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
   import { computeTierScale } from '$lib/surface-map/tier-scale';
-  import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
   import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import type { PanelTab } from '$lib/surface-map/panel-tabs';
@@ -1251,15 +1254,7 @@
                 licenseShort: 'PD-NASA',
               });
             }
-            tierContext = {
-              siteId: site.id,
-              siteName: site.name ?? site.id,
-              nation: agencyChip.label,
-              nationColor: agencyChip.color,
-              missionContext: missionContextFor(site),
-              layers,
-              uncertaintyM: site.location_uncertainty_m,
-            };
+            tierContext = buildTierContext({ site, agencyChip, layers });
           }
         } else if (tierContext !== null) {
           tierContext = null;

@@ -8,7 +8,12 @@
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
-  import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import {
+    applyOrbiterLayerVisibility,
+    buildOrbiterGroup,
+    tickOrbiterDot,
+    type OrbiterMarker,
+  } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
@@ -1091,11 +1096,7 @@
         }
       }
       for (const om of orbitalMarkers) {
-        // ORBITERS chip controls the spacecraft model. ORBITS chip
-        // independently hides the ring lines (cleaner sky for users
-        // who just want to see where the orbiters are right now).
-        om.dotGroup.visible = layerOrbiters;
-        om.ringMesh.visible = layerOrbiters && layerOrbits;
+        applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
         if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
       }
 

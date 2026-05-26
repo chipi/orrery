@@ -117,3 +117,18 @@ export function tickOrbiterDot(om: OrbiterMarker, dt: number, reducedMotion: boo
   const inc = om.ringMesh.rotation.x;
   om.dotGroup.position.set(lx, -lz * Math.sin(inc), lz * Math.cos(inc));
 }
+
+/**
+ * Show/hide an orbiter marker based on the two relevant layer chips:
+ * ORBITERS toggles the spacecraft model, ORBITS toggles the ring line
+ * independently (cleaner sky for users who just want to see current
+ * positions). Halo visibility is route-specific (varies by zoom +
+ * selection state) so it stays per-route.
+ */
+export function applyOrbiterLayerVisibility(
+  om: OrbiterMarker,
+  { showOrbiters, showOrbits }: { showOrbiters: boolean; showOrbits: boolean },
+): void {
+  om.dotGroup.visible = showOrbiters;
+  om.ringMesh.visible = showOrbiters && showOrbits;
+}

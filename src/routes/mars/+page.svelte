@@ -9,7 +9,12 @@
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import { dimMaterials } from '$lib/three/dim-materials';
-  import { buildOrbiterGroup, tickOrbiterDot, type OrbiterMarker } from '$lib/three/orbiter-group';
+  import {
+    applyOrbiterLayerVisibility,
+    buildOrbiterGroup,
+    tickOrbiterDot,
+    type OrbiterMarker,
+  } from '$lib/three/orbiter-group';
   import { placeOnSphereTangent } from '$lib/three/place-on-sphere';
   import { addSurfaceLights } from '$lib/three/surface-lights';
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
@@ -966,8 +971,7 @@
     function applyLayerVisibility() {
       for (const sm of surfaceMarkers) sm.group.visible = layerSurface;
       for (const om of orbitalMarkers) {
-        om.dotGroup.visible = layerOrbiters;
-        om.ringMesh.visible = layerOrbiters && layerOrbits;
+        applyOrbiterLayerVisibility(om, { showOrbiters: layerOrbiters, showOrbits: layerOrbits });
       }
       for (const tl of traverseLines) {
         tl.line.visible = layerTraverses;
@@ -1016,8 +1020,7 @@
       const trav = layerTraverses;
       for (const sm of surfaceMarkers) sm.group.visible = surf;
       for (const om of orbitalMarkers) {
-        om.dotGroup.visible = orb;
-        om.ringMesh.visible = orb && orbR;
+        applyOrbiterLayerVisibility(om, { showOrbiters: orb, showOrbits: orbR });
       }
       for (const tl of traverseLines) {
         tl.line.visible = trav;

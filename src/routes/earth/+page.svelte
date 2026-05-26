@@ -5,6 +5,7 @@
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createStarField } from '$lib/three/star-field';
+  import { createSceneRenderer } from '$lib/three/scene-renderer';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
@@ -180,11 +181,7 @@
       0.5,
       400,
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x04040c, 1);
-    container.appendChild(renderer.domElement);
+    const renderer = createSceneRenderer(container);
 
     // EffectComposer for hover-outline (mirrors /iss + /mars + /moon).
     const { composer, outlinePass } = createOutlinePassSetup({

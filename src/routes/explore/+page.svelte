@@ -5,6 +5,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createStarField } from '$lib/three/star-field';
+  import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
@@ -459,11 +460,7 @@
       0.5,
       8000,
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x04040c, 1);
-    container.appendChild(renderer.domElement);
+    const renderer = createSceneRenderer(container);
 
     scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2500, 1.2));
     scene.add(new THREE.AmbientLight(0x111133, 0.8));

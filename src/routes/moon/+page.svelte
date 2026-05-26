@@ -11,6 +11,8 @@
   import { dimMaterials } from '$lib/three/dim-materials';
   import { createOrbiterRing } from '$lib/three/orbiter-ring';
   import { createStarField } from '$lib/three/star-field';
+  import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -314,11 +316,7 @@
       0.5,
       400,
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setClearColor(0x04040c, 1);
-    container.appendChild(renderer.domElement);
+    const renderer = createSceneRenderer(container);
 
     // EffectComposer for hover-outline (mirrors /iss + /mars pattern).
     const { composer, outlinePass } = createOutlinePassSetup({
@@ -1113,14 +1111,7 @@
     c2.addEventListener('click', on2dClick);
 
     // Resize + animation loop
-    const onResize = () => {
-      if (!container) return;
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      composer.setSize(container.clientWidth, container.clientHeight);
-      outlinePass.resolution.set(container.clientWidth, container.clientHeight);
-    };
+    const onResize = createCanvasResizer({ container, camera, renderer, composer, outlinePass });
     window.addEventListener('resize', onResize);
 
     let lastTime = performance.now();

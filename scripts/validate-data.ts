@@ -1311,6 +1311,42 @@ let overlayFailed = 0;
     }
   }
 
+  // (f) fleet-galleries.json — every fleet/index.json id must have either
+  // a fleet-galleries.json entry (count ≥1 + matching /01.jpg on disk) or
+  // be explicitly opt-out via count 0. GH #83 follow-up: 15 constellation
+  // fleet entries shipped without any gallery, causing fleet:40 + fleet:110
+  // e2e 404s on /images/fleet-galleries/<id>/01.jpg.
+  try {
+    const fleetIndexRaw = readFileSync(FLEET_INDEX_PATH, 'utf-8');
+    const fleetEntries = JSON.parse(fleetIndexRaw) as Array<{ id: string; category: string }>;
+    const galleriesPath = join(DATA_ROOT, 'fleet-galleries.json');
+    let galleries: Record<string, number> = {};
+    try {
+      galleries = JSON.parse(readFileSync(galleriesPath, 'utf-8')) as Record<string, number>;
+    } catch {
+      problems.push('fleet-galleries.json missing or unparseable');
+    }
+    for (const f of fleetEntries) {
+      const count = galleries[f.id];
+      if (count === undefined) {
+        problems.push(
+          `fleet "${f.id}" (${f.category}) missing gallery entry in fleet-galleries.json (set 0 to opt out, ≥1 to declare)`,
+        );
+        continue;
+      }
+      if (count >= 1) {
+        const heroPath = join(DATA_ROOT, '..', 'images', 'fleet-galleries', f.id, '01.jpg');
+        if (!existsSync(heroPath)) {
+          problems.push(
+            `fleet "${f.id}" declares count ${count} but /images/fleet-galleries/${f.id}/01.jpg missing on disk`,
+          );
+        }
+      }
+    }
+  } catch (err) {
+    problems.push(`fleet-galleries cross-check error: ${(err as Error).message}`);
+  }
+
   if (problems.length === 0) {
     console.log('  ✓ every registry ID has its required en-US overlay');
   } else {

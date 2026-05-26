@@ -30,6 +30,7 @@
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import HotspotsLodChip from '$lib/components/HotspotsLodChip.svelte';
+  import PanoramaToggleButton from '$lib/components/PanoramaToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -67,7 +68,7 @@
   import { buildSLIMPrecisionLanderHotspot } from '$lib/hotspot-models/slim-precision-lander';
   import { buildBeresheetHotspot } from '$lib/hotspot-models/beresheet';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
-  import { createSkybox, isSaveDataActive, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
+  import { createSkybox, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
@@ -1542,32 +1543,13 @@ sample      ${debugInfo.projectedPxSample}`}
             {/if}
           </p>
         {/if}
-        {#if selected.hotspot_tier3_panorama}
-          {#if panoramaActive}
-            <button
-              type="button"
-              class="stand-at-site stand-at-site--exit"
-              data-testid="exit-panorama"
-              onclick={exitPanorama}
-              title="Exit panorama view (Esc)"
-            >
-              Exit panorama view
-            </button>
-          {:else}
-            <button
-              type="button"
-              class="stand-at-site"
-              data-testid="stand-at-site"
-              onclick={() =>
-                enterPanorama(`${base}${selected!.hotspot_tier3_panorama!}`, selected!.id)}
-              title={isSaveDataActive()
-                ? 'Tap to load panorama (~8 MB) — saveData is on'
-                : 'Stand at this landing site — wrap-around ground view'}
-            >
-              Stand at site{isSaveDataActive() ? ' (tap to load)' : ''}
-            </button>
-          {/if}
-        {/if}
+        <PanoramaToggleButton
+          panoramaUrl={selected.hotspot_tier3_panorama}
+          siteId={selected.id}
+          {panoramaActive}
+          onEnter={enterPanorama}
+          onExit={exitPanorama}
+        />
       </div>
 
       {#if panelGallery.length > 0}
@@ -1829,7 +1811,7 @@ sample      ${debugInfo.projectedPxSample}`}
      panel handles both enter + exit states. Glyph + transparent
      dark-glass styling match Mars; enter glyph "◐" (planet at
      night), exit glyph "✕". */
-  .stand-at-site {
+  .head :global(.stand-at-site) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1852,18 +1834,18 @@ sample      ${debugInfo.projectedPxSample}`}
       border-color 0.15s ease,
       color 0.15s ease;
   }
-  .stand-at-site::before {
+  .head :global(.stand-at-site::before) {
     content: '◐';
     font-size: 13px;
     line-height: 1;
     color: var(--accent, #4ecdc4);
   }
-  .stand-at-site--exit::before {
+  .head :global(.stand-at-site--exit::before) {
     content: '✕';
     color: var(--accent, #4ecdc4);
   }
-  .stand-at-site:hover,
-  .stand-at-site:focus-visible {
+  .head :global(.stand-at-site:hover),
+  .head :global(.stand-at-site:focus-visible) {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--accent, #4ecdc4);
     color: #fff;
@@ -1903,7 +1885,7 @@ sample      ${debugInfo.projectedPxSample}`}
     width: 140px;
     align-items: stretch;
   }
-  .chip {
+  .hud-controls :global(.chip) {
     min-height: 32px;
     min-width: 110px;
     padding: 0 10px;
@@ -1922,13 +1904,13 @@ sample      ${debugInfo.projectedPxSample}`}
       background 120ms,
       color 120ms;
   }
-  .chip:hover,
-  .chip:focus-visible {
+  .hud-controls :global(.chip:hover),
+  .hud-controls :global(.chip:focus-visible) {
     color: #fff;
     border-color: rgba(190, 195, 210, 0.55);
     outline: none;
   }
-  .chip.active {
+  .hud-controls :global(.chip.active) {
     background: rgba(190, 195, 210, 0.16);
     border-color: rgba(190, 195, 210, 0.7);
     color: #c8cdda;
@@ -1940,7 +1922,7 @@ sample      ${debugInfo.projectedPxSample}`}
       min-width: 92px;
     }
   }
-  .toggle {
+  .hud-controls :global(.toggle) {
     min-width: 44px;
     min-height: 36px;
     max-width: 70px;
@@ -1961,8 +1943,8 @@ sample      ${debugInfo.projectedPxSample}`}
       border-color 120ms,
       background 120ms;
   }
-  .toggle:hover,
-  .toggle:focus-visible {
+  .hud-controls :global(.toggle:hover),
+  .hud-controls :global(.toggle:focus-visible) {
     border-color: rgba(220, 225, 240, 0.7);
     background: rgba(34, 38, 56, 0.95);
     outline: none;
@@ -1988,13 +1970,13 @@ sample      ${debugInfo.projectedPxSample}`}
       left: 8px;
       gap: 6px;
     }
-    .toggle {
+    .hud-controls :global(.toggle) {
       padding: 3px 5px;
       font-size: 9px;
       max-width: 54px;
       min-height: 32px;
     }
-    .chip {
+    .hud-controls :global(.chip) {
       padding: 0 6px;
       font-size: 8.5px;
       min-width: 78px;

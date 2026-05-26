@@ -8,8 +8,7 @@
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
-  import { dimMaterials } from '$lib/three/dim-materials';
-  import { createOrbiterRing } from '$lib/three/orbiter-ring';
+  import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -28,7 +27,6 @@
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
   import { buildMoonLanderModel } from '$lib/moon-lander-models';
-  import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import {
     createHotspotEntry,
     getHotspotMode,
@@ -458,17 +456,7 @@
     // Parented to scene rather than moonMesh so the dots don't
     // co-rotate with the Moon's tidally-locked-Earth-facing rotation —
     // orbiters track an inertial frame.
-    type OrbitalMarker = {
-      group: THREE.Group;
-      ringMesh: THREE.Mesh;
-      dotGroup: THREE.Group;
-      siteId: string;
-      ringRadius: number;
-      orbitSpeed: number;
-      orbitPhase: number;
-      halo?: THREE.Mesh;
-    };
-    const orbitalMarkers: OrbitalMarker[] = [];
+    const orbitalMarkers: OrbiterMarker[] = [];
 
     function rebuildOrbitalMarkers() {
       for (const om of orbitalMarkers) {
@@ -484,46 +472,18 @@
         // Lunar orbital altitudes range from ~50 km (LRO) to ~470 km
         // (SMART-1). Compress with log scale so all rings fit cleanly
         // around the 30u Moon sphere without overlapping.
-        const altScale = moonRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
-        const inclinationRad = (site.inclination_deg * Math.PI) / 180;
-        const group = new THREE.Group();
+        const ringRadius = moonRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
         const dimmed = site.status !== 'ACTIVE';
-        const ringMesh = createOrbiterRing({
-          ringRadius: altScale,
-          inclinationRad,
+        const marker = buildOrbiterGroup({
+          site,
           color,
+          ringRadius,
+          inclinationRad: (site.inclination_deg * Math.PI) / 180,
           dimmed,
-        });
-        group.add(ringMesh);
-
-        // 3D model — use the shared earth-satellite-models factory so
-        // each spacecraft gets its real silhouette (LRO's asymmetric
-        // single-wing bus, Clementine's compact tower, generic-orbiter
-        // for the rest). Scale up 2x because the /moon scene is at
-        // a larger world-unit scale than /earth (moonRadius 30 vs
-        // earthRadius 8); without scaling the model reads as a dot.
-        const dotGroup = buildSatelliteModel(site.id, color);
-        dotGroup.scale.setScalar(2.0);
-        if (dimmed) dimMaterials(dotGroup);
-        attachPickableHit({ dotGroup, siteId: site.id });
-        group.add(dotGroup);
-
-        // Selection halo attached to dotGroup so it travels with the
-        // orbiter around its ring.
-        const halo = createMarkerHalo(color, 1.8);
-        dotGroup.add(halo);
-
-        scene.add(group);
-        orbitalMarkers.push({
-          group,
-          ringMesh,
-          dotGroup,
-          siteId: site.id,
-          ringRadius: altScale,
-          orbitSpeed: dimmed ? 0.06 : 0.2,
           orbitPhase: phase,
-          halo,
         });
+        scene.add(marker.group);
+        orbitalMarkers.push(marker);
         phase += Math.PI / 5;
       }
     }

@@ -9,7 +9,7 @@
   import { attachPickableHit } from '$lib/three/pickable-hit';
   import { disposeObject3d } from '$lib/three/dispose-object3d';
   import { dimMaterials } from '$lib/three/dim-materials';
-  import { createOrbiterRing } from '$lib/three/orbiter-ring';
+  import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -34,7 +34,6 @@
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { latLonToUnitSphere } from '$lib/moon-projection';
-  import { buildSatelliteModel } from '$lib/earth-satellite-models';
   import { buildMarsLanderModel } from '$lib/mars-lander-models';
   import {
     createHotspotEntry,
@@ -540,24 +539,13 @@
     registerHotspotModelBuilder('schiaparelli', buildSchiaparelliHotspot);
     registerHotspotModelBuilder('beagle-2', buildBeagle2Hotspot);
     void loadImageVisionManifest();
-    type OrbitalMarker = {
-      group: THREE.Group;
-      ringMesh: THREE.Mesh;
-      dotGroup: THREE.Group;
-      siteId: string;
-      altitude: number;
-      ringRadius: number;
-      orbitSpeed: number;
-      orbitPhase: number;
-      halo?: THREE.Mesh;
-    };
 
     // Selection-halo helper — small camera-facing ring rendered around
     // a marker so users can tell at a glance which one they picked.
     // Returns an invisible mesh; visibility flips via $effect tied to
     // the `selected` state below.
     const surfaceMarkers: SurfaceMarker[] = [];
-    const orbitalMarkers: OrbitalMarker[] = [];
+    const orbitalMarkers: OrbiterMarker[] = [];
     type TraverseLine = {
       line: THREE.Line;
       startDot: THREE.Mesh;
@@ -604,17 +592,7 @@
         // Crashed/lost markers get reduced opacity so the wreckage is
         // visually de-emphasised vs. operational hardware. The 2D
         // dashed-outline marker carries the same info on the flat map.
-        if (isFailed) {
-          tier0Group.traverse((o) => {
-            if (o instanceof THREE.Mesh) {
-              const om = o.material as THREE.Material & { opacity?: number; transparent?: boolean };
-              if (om) {
-                om.transparent = true;
-                om.opacity = 0.55;
-              }
-            }
-          });
-        }
+        if (isFailed) dimMaterials(tier0Group, 0.55);
         // Anchor on surface; orient so +Y points outward.
         group.position.set(x * r, y * r, z * r);
         const up = new THREE.Vector3(x, y, z);
@@ -730,59 +708,24 @@
         // altitudes range from ~50 (LRO) to ~80,000 (Mangalyaan apoapsis).
         // Compress with log scale so all rings are readable on screen.
         // Ring radius: marsRadius + log-scaled offset.
-        const altScale = marsRadius + 4 + Math.log10(1 + site.altitude_km / 100) * 5; // 50km→~5; 1000→~9; 20000→~16
-        const inclinationRad = (site.inclination_deg * Math.PI) / 180;
-        const group = new THREE.Group();
+        // Visual altitude — scale altitude in km to scene units. Real
+        // altitudes range from ~50 (LRO) to ~80,000 (Mangalyaan apoapsis).
+        // Compress with log scale so all rings are readable on screen.
+        const ringRadius = marsRadius + 4 + Math.log10(1 + site.altitude_km / 100) * 5;
         const dimmed = site.status !== 'ACTIVE';
-        const ringMesh = createOrbiterRing({
-          ringRadius: altScale,
-          inclinationRad,
+        const marker = buildOrbiterGroup({
+          site,
           color,
+          ringRadius,
+          inclinationRad: (site.inclination_deg * Math.PI) / 180,
           dimmed,
-          activeOpacity: 0.35,
-          dimmedOpacity: 0.18,
-        });
-        group.add(ringMesh);
-
-        // 3D model — shared earth-satellite-models factory. Mars
-        // orbiter ids don't match any dedicated builder, so they fall
-        // through to the generic-orbiter silhouette (hex bus + wings
-        // + dish + accent ring). Scaled 2x for the larger Mars scene.
-        const dotGroup = buildSatelliteModel(site.id, color);
-        dotGroup.scale.setScalar(2.0);
-        if (dimmed) dimMaterials(dotGroup);
-        attachPickableHit({ dotGroup, siteId: site.id });
-        group.add(dotGroup);
-
-        // Label + halo (same treatment as surface markers and /earth).
-        // Label is attached to the dotGroup so it travels with the
-        // orbiting spacecraft, not to the static parent.
-        const label = buildLabel({
-          text: site.name ?? site.id,
-          color: color,
-          offset: new THREE.Vector3(0, 2.4, 0),
-          size: 1.4,
-        });
-        dotGroup.add(label.group);
-
-        const halo = createMarkerHalo(color, 1.8);
-        dotGroup.add(halo);
-
-        marsAxis.add(group);
-        orbitalMarkers.push({
-          group,
-          ringMesh,
-          dotGroup,
-          siteId: site.id,
-          altitude: altScale,
-          ringRadius: altScale,
-          // Animation policy (RFC-012 OQ-7): perception-scaled, not
-          // ephemeris-correct. Each dot completes a full ring in
-          // ~30s real time; offset so rings don't all line up.
-          orbitSpeed: dimmed ? 0.06 : 0.2,
           orbitPhase: phase,
-          halo,
+          activeRingOpacity: 0.35,
+          dimmedRingOpacity: 0.18,
+          label: {},
         });
+        marsAxis.add(marker.group);
+        orbitalMarkers.push(marker);
         phase += Math.PI / 5;
       }
     }

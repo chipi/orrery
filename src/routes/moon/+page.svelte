@@ -529,9 +529,7 @@
         group.add(label.group);
 
         // Selection halo (visible only while site === selected).
-        const halo = createMarkerHalo(colorFor(site), 1.8);
-        halo.position.y = 0.02;
-        halo.rotation.x = -Math.PI / 2;
+        const halo = createMarkerHalo(colorFor(site), 1.8, { lay: true });
         group.add(halo);
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).

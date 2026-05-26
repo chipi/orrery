@@ -614,9 +614,7 @@
 
         // Selection halo — flat ring around the marker base. Visible
         // only while this site === selected (toggled by $effect).
-        const halo = createMarkerHalo(color, 1.4);
-        halo.position.y = 0.02;
-        halo.rotation.x = -Math.PI / 2;
+        const halo = createMarkerHalo(color, 1.4, { lay: true });
         group.add(halo);
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S4).

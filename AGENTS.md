@@ -431,7 +431,15 @@ npx playwright test --workers=1 --project=mobile-chromium tests/e2e/i18n-de.spec
 
 **Why BOTH projects:** desktop-chromium and mobile-chromium hit different viewport breakpoints (≤640 px collapses the nav into the hamburger drawer, the science rail loses its Search button, /fly HUD collapses, etc.). The mobile project catches the layout regressions desktop can't see. Skipping mobile is how the v0.6.0 → v0.6.1 release cycle ended up with 60+ mobile failures discovered post-tag.
 
-**Visual regression baselines (`tests/e2e/visual.spec.ts`):** baselines are committed as `*-darwin.png` (maintainer's local machine). The suite `test.skip()`s on non-darwin until linux baselines exist too. Local darwin runs DO execute the assertions — if you change a header layout, regenerate baselines with `npx playwright test tests/e2e/visual.spec.ts --update-snapshots` and commit them.
+**Visual regression baselines (`tests/e2e/visual.spec.ts`):** baselines are committed as `*-darwin.png` (maintainer's local machine) AND `*-linux.png` (CI runner). Each platform pair must stay in lockstep. Local darwin runs use the darwin baselines; CI runs use the linux baselines.
+
+**When to regenerate linux baselines (NON-NEGOTIABLE):** any change that affects the rendered DOM under the watched selectors — `section.credits > header.head` on `/credits` and `main / .science-page / nav.tabs / body` on `/science` — must be followed by a manual trigger of the regen workflow BEFORE pushing:
+
+```bash
+gh workflow run "Regenerate visual snapshots" --ref <branch>
+```
+
+The bot regenerates the four linux baselines (credits-head + science-tabs × desktop + mobile) on a linux CI runner and commits them back to the branch. CI e2e will fail on push if you skip this step and changed the layout — that's the system working. **History note:** the visual:69 + science-tabs failures of 2026-05-25 were caused by parallel /credits + /science layout work that didn't queue the regen workflow. ADR-069 follow-up: AGENTS.md now flags this rule. See `docs/guides/visual-regression-baselines.md` for the full lifecycle.
 
 **Pre-tag dry run checklist:**
 

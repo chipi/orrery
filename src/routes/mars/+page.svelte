@@ -27,6 +27,7 @@
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
+  import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -2079,15 +2080,11 @@
   <!-- Top-left HUD (matches /explore convention) -->
   <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
-      <button
-        type="button"
-        class="toggle"
-        onclick={toggleView}
-        aria-pressed={view === '2d'}
-        data-testid="mode-toggle"
-      >
-        {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-      </button>
+      <ViewToggleButton
+        is2d={view === '2d'}
+        label={view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
+        onToggle={toggleView}
+      />
       {#if view === '3d'}
         <button
           type="button"

@@ -28,6 +28,7 @@
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
+  import View3dControls from '$lib/components/View3dControls.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
   import type { TierContext, TierLayer } from '$lib/surface-map/tier-context';
   import { NATION_COLORS, colorFor, nationChipFor } from '$lib/surface-map/nation-palette';
@@ -2086,23 +2087,11 @@
         onToggle={toggleView}
       />
       {#if view === '3d'}
-        <button
-          type="button"
-          class="toggle"
-          data-testid="reset-camera"
-          onclick={() => resetMarsCamera()}
-        >
-          {m.iss_reset_camera()}
-        </button>
-        <button
-          type="button"
-          class="toggle"
-          data-testid="spin-toggle"
-          aria-pressed={!autoSpin}
-          onclick={() => (autoSpin = !autoSpin)}
-        >
-          {autoSpin ? m.iss_pause_spin() : m.iss_resume_spin()}
-        </button>
+        <View3dControls
+          onReset={() => resetMarsCamera()}
+          {autoSpin}
+          onToggleSpin={() => (autoSpin = !autoSpin)}
+        />
       {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>

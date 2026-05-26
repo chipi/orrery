@@ -1916,7 +1916,7 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #c8cdda;
   }
   @media (max-width: 500px) {
-    .chip {
+    .hud-controls :global(.chip) {
       padding: 0 8px;
       font-size: 9px;
       min-width: 92px;

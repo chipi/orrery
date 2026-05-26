@@ -67,3 +67,4 @@
 | ADR-066 | Docker-stack e2e CI workflow — Playwright against the running compose stack | Accepted | May 2026 |
 | ADR-067 | Sentry as client-side error-tracking layer (errors only, env-var-gated, no committed secrets) | Accepted | May 2026 |
 | ADR-068 | Grafana Cloud Agent as docker-stack log shipper (profile-gated, env-var-gated, silent without credentials) | Accepted | May 2026 |
+| ADR-069 | Three-layer overlay-completeness policy (validate-data check + opt-in smoke pre-push + AGENTS.md rule) | Accepted | May 2026 |

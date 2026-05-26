@@ -136,6 +136,8 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Preflight chain** (`npm run preflight`) — `typecheck && lint && test && validate-data && build`. Husky pre-push hook enforces. Mirrors CI exactly.
 
+**Overlay-completeness gate** (inside `validate-data`, ADR-069) — for every ID in `earth-objects.json` / `fleet/index.json` / `moon-sites.json` / `mars-sites.json` / `science/<tab>/_index.json`, verify the canonical en-US overlay exists. Closes the GH #83 defect class where missing overlays passed preflight but 404ed at e2e runtime. Optional Layer-2 smoke-subset e2e in pre-push via `PREFLIGHT_INCLUDE_SMOKE=1` (`landing.spec.ts` + `smoke.spec.ts`, ~30-60s, off by default).
+
 ### Documentation site
 
 **VitePress + vitepress-sidebar** — `/docs/` hosted on the same GitHub Pages deploy as the app. Sidebar auto-generated from the docs tree. Renders ADRs, RFCs, PRDs, prototypes, research notes. See ADR-021.

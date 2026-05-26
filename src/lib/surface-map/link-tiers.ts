@@ -21,3 +21,14 @@ export function groupLinksByTier<L extends { t: LinkTier }>(
   for (const link of links) out[link.t].push(link);
   return out;
 }
+
+/**
+ * Truthy when the site exists and has at least one Learn-tab link.
+ * Used both as a Panel tab `visible` gate and as an empty-state guard
+ * inside the Learn tab body.
+ */
+export function siteHasLinks(
+  site: { links?: { length: number } | null } | null | undefined,
+): boolean {
+  return site != null && (site.links?.length ?? 0) > 0;
+}

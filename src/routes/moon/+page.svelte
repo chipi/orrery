@@ -32,7 +32,7 @@
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
-  import { groupLinksByTier } from '$lib/surface-map/link-tiers';
+  import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import { getMoonSites, getMoonSiteGallery, getSiteStory, type SiteStory } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
@@ -256,14 +256,7 @@
   let panelLinksByTier = $derived(
     groupLinksByTier<MoonSite['links'][number]>((selected as MoonSite | null)?.links),
   );
-  // The `as MoonSite | null` cast guards against a Svelte 5 flow-
-  // analysis quirk where `selected` is narrowed to `never` after the
-  // earlier $derived.by reads it inside another closure. The cast
-  // restores the union type for length-checking.
-  let panelHasLinks = $derived.by(() => {
-    const sel = selected as MoonSite | null;
-    return sel != null && sel.links.length > 0;
-  });
+  let panelHasLinks = $derived(siteHasLinks(selected as MoonSite | null));
 
   // `face: true` is set by the URL-deep-link path so the moon rotates
   // to bring the selected site to camera-facing (otherwise the

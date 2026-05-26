@@ -33,7 +33,7 @@
   import { computeTierScale } from '$lib/surface-map/tier-scale';
   import { missionContextFor } from '$lib/surface-map/site-formatters';
   import { resolveInitialHotspotsMode, nextHotspotsMode } from '$lib/surface-map/hotspots-mode';
-  import { groupLinksByTier } from '$lib/surface-map/link-tiers';
+  import { groupLinksByTier, siteHasLinks } from '$lib/surface-map/link-tiers';
   import {
     getMarsSites,
     getMarsTraverse,
@@ -297,10 +297,7 @@
   let panelLinksByTier = $derived(
     groupLinksByTier<MarsSite['links'][number]>((selected as MarsSite | null)?.links),
   );
-  let panelHasLinks = $derived.by(() => {
-    const sel = selected as MarsSite | null;
-    return sel != null && sel.links.length > 0;
-  });
+  let panelHasLinks = $derived(siteHasLinks(selected as MarsSite | null));
 
   // `face: true` is set by the URL-deep-link path so Mars rotates
   // to bring the selected site to camera-facing. Click handlers

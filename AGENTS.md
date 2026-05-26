@@ -284,6 +284,20 @@ Locale overlay files add: `name`, `description`, `first`, `type`, `events[].note
 
 Fleet entries, surface sites, and other localised records follow the same base + overlay pattern. Full contract shapes live in `docs/adr/TA.md` §contracts and in `static/data/schemas/`. For fleet specifically: bidirectional `fleet_refs` ↔ `linked_missions`/`linked_sites` is enforced by the symmetric-link validator (ADR-052).
 
+**NON-NEGOTIABLE — overlay-completeness rule.** When you add a new ID to any base-data registry, you MUST create the matching en-US overlay file in the same commit:
+
+| Base registry | Required en-US overlay |
+|---|---|
+| `static/data/earth-objects.json` (any new id) | `static/data/i18n/en-US/earth-objects/{id}.json` |
+| `static/data/fleet/index.json` (any new id) | `static/data/fleet/{category}/{id}.json` + `static/data/i18n/en-US/fleet/{category}/{id}.json` |
+| `static/data/moon-sites.json` (any new id) | `static/data/i18n/en-US/moon-sites/{id}.json` |
+| `static/data/mars-sites.json` (any new id) | `static/data/i18n/en-US/mars-sites/{id}.json` |
+| `static/data/science/{tab}/_index.json` (any new id) | `static/data/i18n/en-US/science/{tab}/{id}.json` + `static/data/science/{tab}/{id}.json` |
+| `static/data/iss-modules.json` / `static/data/tiangong-modules.json` (any new id) | `static/data/i18n/en-US/{file}/{id}.json` |
+| `static/data/launches.json` (any new id) | (no overlay required — schema is monolingual) |
+
+`validate-data` enforces this at preflight (and pre-push) — missing overlays will fail before push. Other locales fall back to en-US, so en-US alone is enough to ship; translations follow in a separate commit per the i18n pipeline. **History note:** GH #83 (May 2026) shipped 11 constellation entries without overlays, causing CI e2e failures + a follow-up fix commit. Layer 1 validator (added that same day) prevents recurrence.
+
 ---
 
 ## Mobile-first rules
@@ -390,6 +404,13 @@ Hooks self-activate after `npm install` via the `prepare` script (`git config co
 > **Caveat — `tsc --noEmit` ≠ svelte-check:** `tsc` only type-checks `.ts` files. CI uses `svelte-check`, which type-checks `.svelte` content too. Use `npm run typecheck` (which calls svelte-check) when validating Svelte component changes. Errors like "Property X does not exist on type Y" inside a `.svelte` file will only surface via svelte-check.
 
 > **Caveat — preflight does NOT run e2e.** Preflight covers typecheck / lint / unit / validate / build, but the Playwright e2e suite only runs on push-to-main in CI. Routine PR pushes may pass preflight and still break e2e. For tag / release readiness, see the next section.
+
+> **Optional smoke layer — `PREFLIGHT_INCLUDE_SMOKE=1` (GH #83 follow-up).** The pre-push hook will additionally run `landing.spec.ts` + `smoke.spec.ts` (desktop-chromium, ~30-60s) when this env var is set. Catches runtime route 404s that preflight cannot see (e.g. missing i18n overlays). Recommended when your tree change touches `/earth`, `/moon`, `/mars`, or `/fleet` data files; not needed for typical refactors. Toggle:
+> ```bash
+> PREFLIGHT_INCLUDE_SMOKE=1 git push
+> ```
+
+> **Layer 1 — overlay-completeness check (also GH #83 follow-up).** `validate-data` now verifies every ID in earth-objects / fleet-index / moon-sites / mars-sites / science _index has a matching `i18n/en-US/...` overlay. Missing overlays fail validate-data → fail preflight → block push. This closes the exact gap that caused the #83 e2e regression. See the data-layer "overlay-completeness rule" above.
 
 ---
 

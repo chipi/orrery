@@ -1201,6 +1201,124 @@ console.log('\nValidating image-pipeline v2 manifests (image-vision + image-cura
   }
 }
 
+// ─────────────────────────────────────────────────────────────────────
+// Overlay-completeness check (AGENTS.md non-negotiable, GH #83 follow-up).
+//
+// History: GH #83 added 11 constellation entries to earth-objects.json but
+// missed the corresponding en-US overlay files. CI e2e caught the runtime
+// 404s — preflight did NOT. This check closes that gap so a missing
+// overlay fails validate-data (and therefore preflight + pre-push) BEFORE
+// the push lands on origin.
+//
+// Other locales fall back to en-US per the existing i18n loader, so we
+// only verify en-US presence here. Translation completeness is handled
+// by the separate i18n pipeline.
+console.log('\nValidating overlay-completeness (AGENTS.md non-negotiable)...');
+let overlayFailed = 0;
+{
+  const I18N_EN = join(DATA_ROOT, 'i18n', 'en-US');
+  const problems: string[] = [];
+
+  // (a) earth-objects.json (flat array, id field) → i18n/en-US/earth-objects/{id}.json
+  try {
+    const raw = readFileSync(join(DATA_ROOT, 'earth-objects.json'), 'utf-8');
+    const items = JSON.parse(raw) as Array<{ id: string }>;
+    for (const o of items) {
+      const overlayPath = join(I18N_EN, 'earth-objects', `${o.id}.json`);
+      if (!existsSync(overlayPath)) {
+        problems.push(
+          `earth-objects "${o.id}" missing en-US overlay at i18n/en-US/earth-objects/${o.id}.json`,
+        );
+      }
+    }
+  } catch (err) {
+    problems.push(`earth-objects.json read error: ${(err as Error).message}`);
+  }
+
+  // (b) fleet/index.json (flat array, id+category) → i18n/en-US/fleet/{category}/{id}.json
+  try {
+    const raw = readFileSync(FLEET_INDEX_PATH, 'utf-8');
+    const items = JSON.parse(raw) as Array<{ id: string; category: string }>;
+    for (const f of items) {
+      const overlayPath = join(I18N_EN, 'fleet', f.category, `${f.id}.json`);
+      if (!existsSync(overlayPath)) {
+        problems.push(
+          `fleet "${f.id}" (${f.category}) missing en-US overlay at i18n/en-US/fleet/${f.category}/${f.id}.json`,
+        );
+      }
+    }
+  } catch (err) {
+    problems.push(`fleet/index.json read error: ${(err as Error).message}`);
+  }
+
+  // (c) moon-sites.json (flat array, id) → i18n/en-US/moon-sites/{id}.json
+  try {
+    const raw = readFileSync(join(DATA_ROOT, 'moon-sites.json'), 'utf-8');
+    const items = JSON.parse(raw) as Array<{ id: string }>;
+    for (const s of items) {
+      const overlayPath = join(I18N_EN, 'moon-sites', `${s.id}.json`);
+      if (!existsSync(overlayPath)) {
+        problems.push(
+          `moon-sites "${s.id}" missing en-US overlay at i18n/en-US/moon-sites/${s.id}.json`,
+        );
+      }
+    }
+  } catch (err) {
+    problems.push(`moon-sites.json read error: ${(err as Error).message}`);
+  }
+
+  // (d) mars-sites.json (flat array, id) → i18n/en-US/mars-sites/{id}.json
+  try {
+    const raw = readFileSync(join(DATA_ROOT, 'mars-sites.json'), 'utf-8');
+    const items = JSON.parse(raw) as Array<{ id: string }>;
+    for (const s of items) {
+      const overlayPath = join(I18N_EN, 'mars-sites', `${s.id}.json`);
+      if (!existsSync(overlayPath)) {
+        problems.push(
+          `mars-sites "${s.id}" missing en-US overlay at i18n/en-US/mars-sites/${s.id}.json`,
+        );
+      }
+    }
+  } catch (err) {
+    problems.push(`mars-sites.json read error: ${(err as Error).message}`);
+  }
+
+  // (e) science/{tab}/_index.json (object with `ids` array) → both the base
+  // per-id file AND the i18n/en-US/science/{tab}/{id}.json overlay.
+  const scienceDir = join(DATA_ROOT, 'science');
+  if (existsSync(scienceDir)) {
+    for (const tab of readdirSync(scienceDir)) {
+      const indexFile = join(scienceDir, tab, '_index.json');
+      if (!existsSync(indexFile)) continue;
+      try {
+        const raw = readFileSync(indexFile, 'utf-8');
+        const index = JSON.parse(raw) as { ids?: string[] };
+        for (const id of index.ids ?? []) {
+          const baseFile = join(scienceDir, tab, `${id}.json`);
+          if (!existsSync(baseFile)) {
+            problems.push(`science/${tab} "${id}" missing base file at science/${tab}/${id}.json`);
+          }
+          const overlayFile = join(I18N_EN, 'science', tab, `${id}.json`);
+          if (!existsSync(overlayFile)) {
+            problems.push(
+              `science/${tab} "${id}" missing en-US overlay at i18n/en-US/science/${tab}/${id}.json`,
+            );
+          }
+        }
+      } catch (err) {
+        problems.push(`science/${tab}/_index.json read error: ${(err as Error).message}`);
+      }
+    }
+  }
+
+  if (problems.length === 0) {
+    console.log('  ✓ every registry ID has its required en-US overlay');
+  } else {
+    for (const p of problems) console.log(`  ✗ ${p}`);
+    overlayFailed = problems.length;
+  }
+}
+
 if (
   failed +
     docFailed +
@@ -1211,7 +1329,8 @@ if (
     launchesFailed +
     assetSizeFailed +
     imageMimeFailed +
-    imagePipelineFailed >
+    imagePipelineFailed +
+    overlayFailed >
   0
 )
   process.exit(1);

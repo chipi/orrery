@@ -12,6 +12,14 @@
 # sessions wrap Bash output in a way that hides Prettier diagnostics
 # (replaces "[warn] file.ts" with "All files formatted correctly" while
 # still exiting non-zero). Trust the EXIT CODE, not the prose.
+#
+# Optional smoke-e2e layer (GH #83 follow-up, Layer 2 policy):
+#   PREFLIGHT_INCLUDE_SMOKE=1 git push
+# runs landing.spec.ts + smoke.spec.ts (desktop-chromium, ~30-60s) after
+# preflight succeeds. Catches runtime route 404s that preflight cannot
+# (e.g. missing i18n overlays would 404 at hydration time). Off by
+# default because daily commits do not pay the cost; on for release-cut
+# pushes or when a tree change touches /earth /moon /mars /fleet data.
 
 set -e
 
@@ -22,3 +30,11 @@ echo "  to skip: git push --no-verify"
 echo
 
 npm run preflight
+
+if [ "${PREFLIGHT_INCLUDE_SMOKE:-0}" = "1" ]; then
+  echo
+  echo "▶ smoke e2e (landing + smoke specs, desktop-chromium, ~30-60s)"
+  echo "  this is the PREFLIGHT_INCLUDE_SMOKE=1 layer"
+  echo
+  npm run test:e2e:smoke
+fi

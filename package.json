@@ -84,7 +84,8 @@
     "docker:validate-data": "docker compose run --rm pipeline-runner scripts/validate-data.ts",
     "docker:build-image-provenance": "docker compose run --rm pipeline-runner scripts/build-image-provenance.ts",
     "docker:build-link-provenance": "docker compose run --rm pipeline-runner scripts/build-link-provenance.ts",
-    "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts"
+    "docker:audit-launches": "docker compose run --rm pipeline-runner scripts/audit-report-launches.ts",
+    "test:e2e:smoke": "npm run build && playwright test --workers=1 --project=desktop-chromium tests/e2e/landing.spec.ts tests/e2e/smoke.spec.ts"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

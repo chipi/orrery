@@ -68,7 +68,11 @@
   import { buildSLIMPrecisionLanderHotspot } from '$lib/hotspot-models/slim-precision-lander';
   import { buildBeresheetHotspot } from '$lib/hotspot-models/beresheet';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
-  import { createSkybox, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
+  import {
+    createSkybox,
+    teardownPanoramaSkybox,
+    type SkyboxHandle,
+  } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import type { MoonSite } from '$types/moon-site';
@@ -658,11 +662,8 @@
     exitPanorama = () => {
       if (!panoramaActive) return;
       panoramaActive = false;
-      panoramaSkybox?.deactivate();
-      // Defer dispose so the fade-out completes.
-      const handle = panoramaSkybox;
+      teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
-      setTimeout(() => handle?.dispose(), 1300);
       moonMesh.visible = true;
       camR = savedCamR;
       updateCam();

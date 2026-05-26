@@ -70,7 +70,11 @@
   import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
   import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
-  import { createSkybox, type SkyboxHandle } from '$lib/hotspot-tier3-skybox';
+  import {
+    createSkybox,
+    teardownPanoramaSkybox,
+    type SkyboxHandle,
+  } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
   import { STAR_FIELD } from '$lib/three-constants';
@@ -1124,10 +1128,8 @@
     exitPanorama = () => {
       if (!panoramaActive) return;
       panoramaActive = false;
-      panoramaSkybox?.deactivate();
-      const handle = panoramaSkybox;
+      teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
-      setTimeout(() => handle?.dispose(), 1300);
       // Restore everything we hid. Note: we ONLY restore objects we
       // explicitly hid — anything that was already invisible (layer
       // toggle, dispatcher tier mask) stays as it was.

@@ -198,6 +198,22 @@ function easeInOutCubic(t: number): number {
  * by the route to suppress panorama prefetch (the texture only
  * loads when the user explicitly taps "Stand at site").
  */
+/**
+ * Fire-and-forget skybox teardown for the exit-panorama path (#42).
+ *
+ * Calls `deactivate()` immediately to start the fade-out, then defers
+ * `dispose()` until the fade animation completes. Both surface routes
+ * had the same 4-line block; collapses to one call.
+ */
+export function teardownPanoramaSkybox(
+  handle: SkyboxHandle | null,
+  fadeOutMs = SKYBOX_TRANSITION_MS + 100,
+): void {
+  if (!handle) return;
+  handle.deactivate();
+  setTimeout(() => handle.dispose(), fadeOutMs);
+}
+
 export function isSaveDataActive(): boolean {
   if (typeof navigator === 'undefined') return false;
   const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;

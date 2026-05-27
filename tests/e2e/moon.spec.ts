@@ -92,6 +92,11 @@ test.describe('/moon', () => {
     page,
     isMobile,
   }) => {
+    // enterMoonTwoDMode ceiling on mobile: 15s 3D-button + 15s canvas
+    // visible + 30s sites-count = 60s; the rest of the test (click,
+    // panel, text assertion) easily pushes past the 30s global budget.
+    // test.slow() triples it (→ 90s) for mobile only.
+    test.slow(isMobile, 'mobile-chromium enterMoonTwoDMode ceiling > global 30 s budget');
     await page.goto('/moon');
     const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();
@@ -139,6 +144,7 @@ test.describe('/moon', () => {
 
   /* ── v0.1.10 — GALLERY + LEARN tabs on the site detail panel ── */
   test('Apollo 11 site GALLERY tab shows mission photos (v0.1.10)', async ({ page, isMobile }) => {
+    test.slow(isMobile, 'mobile-chromium enterMoonTwoDMode + gallery mount > global 30 s budget');
     await page.goto('/moon');
     const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();
@@ -162,6 +168,7 @@ test.describe('/moon', () => {
   });
 
   test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
+    test.slow(isMobile, 'mobile-chromium enterMoonTwoDMode + panel mount > global 30 s budget');
     await page.goto('/moon');
     const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();

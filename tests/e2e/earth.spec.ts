@@ -22,8 +22,18 @@ test.describe('/earth', () => {
 
   test('2D toggle reveals a top-down concentric-ring view', async ({ page, isMobile }) => {
     await page.goto('/earth');
-    await page.getByRole('button', { name: /^2d$/i }).click();
-    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+    await page.waitForLoadState('networkidle');
+    // Mobile-chromium: tap, not click, to match the real touch event and
+    // avoid the Svelte onclick binding race (same fix as :204).
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
+    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible({
+      timeout: isMobile ? 10_000 : 5_000,
+    });
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible({ timeout: 5_000 });
     // Wait until the 2D map has painted at least one frame (Earth disc
@@ -133,9 +143,21 @@ test.describe('/earth', () => {
     return ((h % 360) / 360) * Math.PI * 2;
   }
 
-  async function openIssPanel(page: import('@playwright/test').Page) {
+  async function openIssPanel(page: import('@playwright/test').Page, isMobile = false) {
     await page.goto('/earth');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    // Mobile-chromium: bare click() races Svelte's onclick binding —
+    // the click lands before the handler is wired, the 2D mode never
+    // engages, and the canvas stays hidden, hanging the waitForFunction
+    // below for the entire test budget. waitForLoadState('networkidle')
+    // ensures hydration is complete; tap() matches a real touch event.
+    // Same pattern as explore.spec.ts:enterTwoDMode + moon.spec.ts:enterMoonTwoDMode.
+    await page.waitForLoadState('networkidle');
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     // Both `class:hidden` (display:none) and `data-objects-count` are
     // bound on `canvas.layer`. The objects-count attribute can flip
     // non-zero while the canvas is still hidden behind the 2D toggle,
@@ -172,8 +194,11 @@ test.describe('/earth', () => {
     return panel;
   }
 
-  test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page }) => {
-    const panel = await openIssPanel(page);
+  test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page, isMobile }) => {
+    // test.slow() ensures even slow CI runs fit; openIssPanel itself
+    // now defends against the 2D-toggle binding race on mobile.
+    test.slow(isMobile, 'mobile-chromium openIssPanel mount ceiling > global 30 s budget');
+    const panel = await openIssPanel(page, isMobile);
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
@@ -183,8 +208,9 @@ test.describe('/earth', () => {
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 10_000 });
   });
 
-  test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {
-    const panel = await openIssPanel(page);
+  test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
+    test.slow(isMobile, 'mobile-chromium openIssPanel mount ceiling > global 30 s budget');
+    const panel = await openIssPanel(page, isMobile);
     await page.getByRole('tab', { name: /^LEARN$/ }).click();
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();

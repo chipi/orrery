@@ -314,6 +314,15 @@ test.describe('/explore — selection and panel', () => {
  */
 test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   test('Earth panel exposes GALLERY tab with thumbnails', async ({ page, isMobile }) => {
+    // Mobile-chromium hits the 30 s per-test ceiling on this mount path:
+    // helper paint-confirm (up to 20 s) + panel (15 s) + tab (15 s) +
+    // thumb (30 s) sum to a worst-case ceiling > 80 s, but the global
+    // timeout is 30 s. test.slow() multiplies test + expect timeouts by
+    // 3 (→ 90 s budget) only when condition matches — desktop runs
+    // unaffected. CI evidence: GH e2e run 26490050460 hit
+    // "Test timeout of 30000ms exceeded" even though the locator wait
+    // itself was 30 s.
+    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
     // Same simT-rotation hazard as test:156 — without reduced-motion
     // gating, Earth drifts off the (W/2 + 113, H/2) click target before
     // the click lands. Particularly painful on mobile-chromium where
@@ -345,6 +354,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   });
 
   test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page, isMobile }) => {
+    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
     // Reduced-motion freezes simT so Earth stays at the deterministic
     // (W/2 + 113, H/2) position throughout the click.
     await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -363,6 +373,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
   });
 
   test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page, isMobile }) => {
+    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');

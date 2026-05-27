@@ -59,7 +59,10 @@ const THREE_CANVAS = '.layer:not(canvas) canvas';
 
 test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
   for (const siteId of V1_MOON_SITES) {
-    test(`/moon?site=${siteId} loads with hotspot dispatcher active`, async ({ page }) => {
+    test(`/moon?site=${siteId} loads with hotspot dispatcher active`, async ({
+      page,
+      isMobile,
+    }) => {
       const errors = attachConsoleAndError(page);
       await page.goto(`/moon?site=${siteId}`);
       const canvas = page.locator(THREE_CANVAS).first();
@@ -69,7 +72,9 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
       // updateHotspotLOD. data-hotspot-tier=0|1|2|3 is the expected
       // shape; appearing at all proves the dispatcher is wired and
       // running each frame.
-      await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, { timeout: 15_000 });
+      await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, {
+        timeout: isMobile ? 30_000 : 15_000,
+      });
       // The HOTSPOTS chip is visible and reads a valid mode.
       const chip = page.locator('[data-testid="layer-hotspots"]');
       await expect(chip).toBeVisible();
@@ -85,12 +90,17 @@ test.describe('Surface Hotspots — V1 Moon (6 Apollo sites)', () => {
 
 test.describe('Surface Hotspots — V1 Mars (9 NASA sites)', () => {
   for (const siteId of V1_MARS_SITES) {
-    test(`/mars?site=${siteId} loads with hotspot dispatcher active`, async ({ page }) => {
+    test(`/mars?site=${siteId} loads with hotspot dispatcher active`, async ({
+      page,
+      isMobile,
+    }) => {
       const errors = attachConsoleAndError(page);
       await page.goto(`/mars?site=${siteId}`);
       const canvas = page.locator(THREE_CANVAS).first();
       await expect(canvas).toBeVisible({ timeout: 10_000 });
-      await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, { timeout: 15_000 });
+      await expect(canvas).toHaveAttribute('data-hotspot-tier', /^[0-3]$/, {
+        timeout: isMobile ? 30_000 : 15_000,
+      });
       const chip = page.locator('[data-testid="layer-hotspots"]');
       await expect(chip).toBeVisible();
       await expect(chip).toHaveAttribute('data-hotspots-mode', /^(auto|low|high)$/);

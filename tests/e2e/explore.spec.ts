@@ -8,6 +8,49 @@ import { test, expect, type Page } from '@playwright/test';
  * once. This avoids relying on rAF timing, which Chromium throttles
  * under parallel-test load.
  */
+/**
+ * Click Earth's 2D dot at canvas-local position (offsetX, 0) from
+ * centre, after waiting for the pixel at that position to actually
+ * carry the Earth fill colour. Without this paint-confirmation wait,
+ * mobile-chromium under CI load can fire the click before draw2d has
+ * painted Earth at simT=0 (even with reduced-motion), and the click
+ * lands on empty background — no panel opens, test times out.
+ *
+ * Earth's drawn colour at simT=0 is the planet's CSS swatch (`#4b9cd3`
+ * RGB ≈ 75, 156, 211). Sample a 3×3 region and accept anything that's
+ * not the dark space background.
+ */
+async function clickPlanetIn2D(
+  page: Page,
+  canvas: ReturnType<Page['locator']>,
+  offsetX: number,
+): Promise<void> {
+  const box = await canvas.boundingBox();
+  if (!box) throw new Error('canvas not laid out');
+  await page.waitForFunction(
+    ({ ox }) => {
+      const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
+      if (!c) return false;
+      const ctx = c.getContext('2d');
+      if (!ctx) return false;
+      const cx = Math.floor(c.width / 2 + ox);
+      const cy = Math.floor(c.height / 2);
+      const data = ctx.getImageData(cx - 1, cy - 1, 3, 3).data;
+      for (let i = 0; i < data.length; i += 4) {
+        const isBg =
+          Math.abs(data[i] - 4) < 8 &&
+          Math.abs(data[i + 1] - 4) < 8 &&
+          Math.abs(data[i + 2] - 12) < 12;
+        if (!isBg) return true;
+      }
+      return false;
+    },
+    { ox: offsetX },
+    { timeout: 7_000 },
+  );
+  await canvas.click({ position: { x: box.width / 2 + offsetX, y: box.height / 2 } });
+}
+
 async function enterTwoDMode(page: Page): Promise<void> {
   await page.getByRole('button', { name: /^2d$/i }).click();
   await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
@@ -251,10 +294,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
     await expect(canvas2d).toBeVisible();
-    const box = await canvas2d.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
+    await clickPlanetIn2D(page, canvas2d, 113);
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
@@ -276,10 +316,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await page.goto('/explore');
     await enterTwoDMode(page);
     const canvas2d = page.locator('canvas.layer');
-    const box = await canvas2d.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    await canvas2d.click({ position: { x: box.width / 2 + 113, y: box.height / 2 } });
+    await clickPlanetIn2D(page, canvas2d, 113);
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible();
     // LEARN folded into SCIENCE in the Phase-4 panel cleanup — the

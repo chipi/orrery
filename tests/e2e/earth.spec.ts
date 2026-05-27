@@ -20,14 +20,16 @@ test.describe('/earth', () => {
     expect(dim.h).toBeGreaterThan(0);
   });
 
-  test('2D toggle reveals a top-down concentric-ring view', async ({ page }) => {
+  test('2D toggle reveals a top-down concentric-ring view', async ({ page, isMobile }) => {
     await page.goto('/earth');
     await page.getByRole('button', { name: /^2d$/i }).click();
     await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible({ timeout: 5_000 });
     // Wait until the 2D map has painted at least one frame (Earth disc
-    // is the most reliable non-bg signal — sits dead-centre).
+    // is the most reliable non-bg signal — sits dead-centre). Mobile
+    // CI is 3-5× slower than desktop; the 7 s budget that worked on
+    // desktop regularly times out on mobile-chromium.
     await page.waitForFunction(
       () => {
         const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
@@ -49,7 +51,7 @@ test.describe('/earth', () => {
         }
         return false;
       },
-      { timeout: 7_000 },
+      { timeout: isMobile ? 20_000 : 7_000 },
     );
   });
 

@@ -87,17 +87,18 @@
 
   onMount(async () => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
+    // Register the SW from the absolute root path. Previously delegated
+    // to `virtual:pwa-register/svelte`'s `useRegisterSW`, which on
+    // sub-routes (`/missions`, `/science`, …) issued the registration
+    // request as a *relative* path → `GET /missions/sw.js` 404s pollute
+    // CI logs and slow mobile init under cumulative network noise.
+    // The SvelteKit + vite-pwa pipeline always emits the SW at `/sw.js`
+    // regardless of the current page, so register absolute + scope root.
     try {
-      const { useRegisterSW } = await import('virtual:pwa-register/svelte');
-      useRegisterSW({
-        onRegisteredSW(_url: string, registration: ServiceWorkerRegistration | undefined) {
-          // Hourly check for new builds. The registration auto-installs
-          // any new bundle the check finds, no user prompt required.
-          if (registration) {
-            setInterval(() => void registration.update(), 60 * 60 * 1000);
-          }
-        },
-      });
+      const registration = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      // Hourly check for new builds. autoUpdate strategy installs any
+      // new bundle the check finds, no user prompt required.
+      setInterval(() => void registration.update(), 60 * 60 * 1000);
     } catch {
       // SW registration failed; carry on. Manifest-only install still
       // works on Android.

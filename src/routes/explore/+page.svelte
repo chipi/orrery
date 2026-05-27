@@ -409,6 +409,24 @@
     sunPanelOpen = false;
   }
 
+  // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
+  // directly, mirroring the /mars?site= and /fly?mission= patterns.
+  // Bookmarkable + share-friendly; also lets e2e tests open a planet
+  // panel without depending on canvas-pixel pick math (which is fragile
+  // under mobile-chromium DPR + animation timing).
+  $effect(() => {
+    const id = $page.url.searchParams.get('id');
+    if (!id) return;
+    if (id === 'sun') {
+      selectSun();
+    } else if (planetById.has(id)) {
+      selectPlanet(id);
+    } else if (smallBodyById.has(id)) {
+      selectSmallBody(id);
+    }
+    // Unknown id → no-op; do not crash.
+  });
+
   function closePanel() {
     panelOpen = false;
   }

@@ -8,49 +8,6 @@ import { test, expect, type Page } from '@playwright/test';
  * once. This avoids relying on rAF timing, which Chromium throttles
  * under parallel-test load.
  */
-/**
- * Click Earth's 2D dot at canvas-local position (offsetX, 0) from
- * centre, after waiting for the pixel at that position to actually
- * carry the Earth fill colour. Without this paint-confirmation wait,
- * mobile-chromium under CI load can fire the click before draw2d has
- * painted Earth at simT=0 (even with reduced-motion), and the click
- * lands on empty background — no panel opens, test times out.
- *
- * Earth's drawn colour at simT=0 is the planet's CSS swatch (`#4b9cd3`
- * RGB ≈ 75, 156, 211). Sample a 3×3 region and accept anything that's
- * not the dark space background.
- */
-async function clickPlanetIn2D(
-  page: Page,
-  canvas: ReturnType<Page['locator']>,
-  offsetX: number,
-): Promise<void> {
-  const box = await canvas.boundingBox();
-  if (!box) throw new Error('canvas not laid out');
-  await page.waitForFunction(
-    ({ ox }) => {
-      const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
-      if (!c) return false;
-      const ctx = c.getContext('2d');
-      if (!ctx) return false;
-      const cx = Math.floor(c.width / 2 + ox);
-      const cy = Math.floor(c.height / 2);
-      const data = ctx.getImageData(cx - 1, cy - 1, 3, 3).data;
-      for (let i = 0; i < data.length; i += 4) {
-        const isBg =
-          Math.abs(data[i] - 4) < 8 &&
-          Math.abs(data[i + 1] - 4) < 8 &&
-          Math.abs(data[i + 2] - 12) < 12;
-        if (!isBg) return true;
-      }
-      return false;
-    },
-    { ox: offsetX },
-    { timeout: 7_000 },
-  );
-  await canvas.click({ position: { x: box.width / 2 + offsetX, y: box.height / 2 } });
-}
-
 async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // Ensure hydration is complete before tapping. Without this, an
   // order-sensitive flake reproduces locally in broad sweeps: when this
@@ -313,79 +270,48 @@ test.describe('/explore — selection and panel', () => {
  * v0.1.10 — GALLERY + LEARN tabs on PlanetPanel + SunPanel.
  */
 test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
-  test('Earth panel exposes GALLERY tab with thumbnails', async ({ page, isMobile }) => {
-    // Mobile-chromium hits the 30 s per-test ceiling on this mount path:
-    // helper paint-confirm (up to 20 s) + panel (15 s) + tab (15 s) +
-    // thumb (30 s) sum to a worst-case ceiling > 80 s, but the global
-    // timeout is 30 s. test.slow() multiplies test + expect timeouts by
-    // 3 (→ 90 s budget) only when condition matches — desktop runs
-    // unaffected. CI evidence: GH e2e run 26490050460 hit
-    // "Test timeout of 30000ms exceeded" even though the locator wait
-    // itself was 30 s.
-    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
-    // Same simT-rotation hazard as test:156 — without reduced-motion
-    // gating, Earth drifts off the (W/2 + 113, H/2) click target before
-    // the click lands. Particularly painful on mobile-chromium where
-    // setup is slower and simT has advanced further.
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/explore');
-    await page.waitForLoadState('networkidle');
-    await enterTwoDMode(page, isMobile);
-    const canvas2d = page.locator('canvas.layer');
-    await expect(canvas2d).toBeVisible();
-    await clickPlanetIn2D(page, canvas2d, 113);
+  // Both Earth panel tests use ?id=earth to open the panel directly,
+  // bypassing the canvas-pixel pick (which was fragile on mobile-chromium
+  // — simT drift, DPR canvas sizing, and zoom2d pan state all interacted
+  // to occasionally hit Mars instead of Earth, producing the
+  // "Mars panel open, GALLERY tab still on OVERVIEW" failure mode that
+  // hard-failed GH e2e run 26514846316). The deep-link is a real product
+  // feature (bookmarkable planet URLs, mirrors /mars?site=) — the tests
+  // exercise it in the same path users get from a shared link.
+  test('Earth panel exposes GALLERY tab with thumbnails', async ({ page }) => {
+    await page.goto('/explore?id=earth');
     const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
-    await expect(galleryTab).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
-    if (isMobile) {
-      await galleryTab.tap();
-    } else {
-      await galleryTab.click();
-    }
-    // Locally this passes 3/3 in ~6 s on mobile-chromium; CI runner is
-    // consistently slower for the Earth-panel gallery mount + manifest
-    // fetch chain — 15 s was insufficient on GH e2e run 26488194639.
-    // 30 s is 2× margin over the observed CI ceiling without masking a
-    // structural regression (a true mount failure would never resolve).
-    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({
-      timeout: isMobile ? 30_000 : 5_000,
-    });
+    await expect(galleryTab).toBeVisible({ timeout: 10_000 });
+    await galleryTab.click();
+    // Verify the tab click registered before asserting on its content —
+    // closes the Svelte-onclick-binding-race window that caused the
+    // "GALLERY tapped but tab still on OVERVIEW" failure mode on CI.
+    await expect(galleryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
+    await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 10_000 });
   });
 
-  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page, isMobile }) => {
-    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
-    // Reduced-motion freezes simT so Earth stays at the deterministic
-    // (W/2 + 113, H/2) position throughout the click.
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/explore');
-    await enterTwoDMode(page, isMobile);
-    const canvas2d = page.locator('canvas.layer');
-    await clickPlanetIn2D(page, canvas2d, 113);
+  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
+    await page.goto('/explore?id=earth');
     const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible();
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     // LEARN folded into SCIENCE in the Phase-4 panel cleanup — the
     // tiered links now live inside the SCIENCE tab.
-    await page.getByRole('tab', { name: /^SCIENCE$/ }).click();
+    const scienceTab = page.getByRole('tab', { name: /^SCIENCE$/ });
+    await expect(scienceTab).toBeVisible({ timeout: 10_000 });
+    await scienceTab.click();
+    await expect(scienceTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
     // Earth overlay carries 5 links across intro/core/deep tiers.
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();
   });
 
-  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page, isMobile }) => {
-    test.slow(isMobile, 'mobile-chromium gallery mount ceiling > global 30 s budget');
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/explore');
-    await page.waitForLoadState('networkidle');
-    await enterTwoDMode(page, isMobile);
-    const canvas2d = page.locator('canvas.layer');
-    await expect(canvas2d).toBeVisible();
-    const box = await canvas2d.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    await canvas2d.click({ position: { x: box.width / 2, y: box.height / 2 } });
+  test('Sun panel exposes GALLERY + SCIENCE tabs', async ({ page }) => {
+    // Open via deep-link (same rationale as the Earth-panel tests above).
+    await page.goto('/explore?id=sun');
     const panel = page.locator('aside.panel');
-    await expect(panel).toContainText(/The Sun/i, { timeout: isMobile ? 15_000 : 5_000 });
+    await expect(panel).toContainText(/The Sun/i, { timeout: 10_000 });
     await expect(page.getByRole('tab', { name: /^GALLERY$/ })).toBeVisible({ timeout: 5_000 });
     // LEARN tab folded into SCIENCE — assert the SCIENCE tab is
     // present in its place.

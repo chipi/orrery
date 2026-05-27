@@ -8,6 +8,10 @@ name: docker-e2e
 #
 # Path-gated on PRs so a Svelte-only change doesn't pay the docker tax;
 # always runs on push to main so trunk health is known.
+#
+# On green main push, the `publish` job builds + pushes the
+# `orrery-pipeline-runner` image to GHCR as multi-arch (amd64 + arm64).
+# Pattern adapted from podcast_scraper's stack-test.yml (RFC-081 §Layer 1).
 
 on:
   push:
@@ -22,6 +26,7 @@ on:
       - 'package-lock.json'
       - 'playwright.config.ts'
       - '.github/workflows/docker-e2e.yml'
+      - 'scripts/check-no-secrets-in-image.sh'
   workflow_dispatch:
 
 concurrency:
@@ -77,12 +82,16 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run Playwright against docker web
+      - name: Run Playwright against docker web (desktop + mobile)
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:8080
-        # Desktop-only — mobile-chromium is covered by e2e.yml and
-        # doesn't exercise additional nginx-serving behaviour.
-        run: npx playwright test --project=desktop-chromium
+        # Both viewports against the production-shape nginx stack. Closes
+        # the desktop/mobile asymmetry that's bitten multiple release
+        # cycles (v0.6.0 → v0.6.1 mobile-only failures, May 2026 mobile
+        # regressions on /moon /mars /explore). Mobile-on-nginx is NOT
+        # redundant with e2e.yml's mobile-on-vite-preview — different
+        # webserver + asset serving can surface different timing edges.
+        run: npx playwright test --project=desktop-chromium --project=mobile-chromium
 
       - name: Capture web logs on failure
         if: failure()
@@ -99,3 +108,132 @@ jobs:
       - name: Tear down stack
         if: always()
         run: docker compose down
+
+  # ════════════════════════════════════════════════════════════════════
+  # publish — pushes the pipeline-runner image to GHCR (multi-arch).
+  #
+  # Pattern adapted from podcast_scraper's stack-test.yml (RFC-081 §Layer 1).
+  # Two-stage buildx per image:
+  #   1. amd64-only `--load` so check-no-secrets-in-image.sh can run
+  #      against a real local image. BuildKit multi-arch output can't
+  #      be --load'd (single-arch daemon).
+  #   2. amd64+arm64 `--push` directly to GHCR with cache reused from
+  #      step 1 (amd64 layer is near-instant; arm64 is the new cost).
+  #
+  # NOT published:
+  #   - `web` container — it's stock nginx:alpine + bind-mounted ./build
+  #     per ADR-063. The deploy unit is the static bundle, not an image.
+  #   - `grafana-agent` — vendor image (grafana/agent:v0.43.4).
+  #
+  # Tags pushed:
+  #   :main         — track-latest-green-main tag
+  #   :sha-<short>  — pin-and-rollback tag for incident response
+  # ════════════════════════════════════════════════════════════════════
+  publish:
+    needs: docker-e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Strict gate: only on main pushes from canonical repo, and only
+    # when docker-e2e succeeded. Forks + PRs + branch pushes skip.
+    if: |
+      github.repository == 'chipi/orrery'
+      && github.ref == 'refs/heads/main'
+      && github.event_name == 'push'
+    permissions:
+      contents: read
+      packages: write
+    env:
+      REGISTRY: ghcr.io
+      OWNER: chipi
+    steps:
+      - uses: actions/checkout@v6
+
+      # arm64 builds via QEMU emulation on this amd64 runner. setup-qemu
+      # must come before setup-buildx so the builder picks up the
+      # registered binfmt_misc handlers.
+      - name: Set up QEMU (arm64 emulation)
+        uses: docker/setup-qemu-action@v4
+        with:
+          platforms: linux/arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute tags
+        id: tags
+        run: |
+          set -euo pipefail
+          SHORT="${GITHUB_SHA:0:7}"
+          echo "short_sha=${SHORT}" >> "$GITHUB_OUTPUT"
+
+      # Step 1: amd64-only --load so the no-secrets gate can docker run
+      # against a real local image. Step 2: multi-arch --push reusing
+      # the cache from step 1 for amd64.
+      - name: Build + assert + push (pipeline-runner)
+        env:
+          IMAGE: ${{ env.REGISTRY }}/${{ env.OWNER }}/orrery-pipeline-runner
+          SHORT_SHA: ${{ steps.tags.outputs.short_sha }}
+        run: |
+          set -euo pipefail
+          docker buildx build \
+            --platform linux/amd64 \
+            --tag "${IMAGE}:build-${SHORT_SHA}" \
+            --load \
+            --cache-from "type=gha,scope=publish-pipeline-runner" \
+            --cache-to "type=gha,scope=publish-pipeline-runner,mode=max" \
+            -f Dockerfile .
+          scripts/check-no-secrets-in-image.sh "${IMAGE}:build-${SHORT_SHA}"
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --tag "${IMAGE}:main" \
+            --tag "${IMAGE}:sha-${SHORT_SHA}" \
+            --push \
+            --cache-from "type=gha,scope=publish-pipeline-runner" \
+            --cache-to "type=gha,scope=publish-pipeline-runner,mode=max" \
+            -f Dockerfile .
+
+      # #712-style acceptance gate (per podcast_scraper RFC-081): assert
+      # the pushed manifest actually carries both linux/amd64 + linux/arm64.
+      # Belt-and-suspenders against silent platform regressions if someone
+      # later removes --platform.
+      - name: Verify multi-arch manifest
+        env:
+          IMAGE: ${{ env.REGISTRY }}/${{ env.OWNER }}/orrery-pipeline-runner
+          SHORT_SHA: ${{ steps.tags.outputs.short_sha }}
+        run: |
+          set -euo pipefail
+          echo "==> Inspecting ${IMAGE}:sha-${SHORT_SHA}"
+          MANIFEST=$(docker buildx imagetools inspect "${IMAGE}:sha-${SHORT_SHA}" --raw)
+          for ARCH in amd64 arm64; do
+            if ! echo "$MANIFEST" | grep -q "\"architecture\": \"${ARCH}\""; then
+              echo "::error::${IMAGE}:sha-${SHORT_SHA} missing linux/${ARCH} in manifest"
+              echo "$MANIFEST"
+              exit 1
+            fi
+          done
+          echo "  ${IMAGE}:sha-${SHORT_SHA} OK (amd64 + arm64)"
+
+      - name: Summary
+        run: |
+          set -euo pipefail
+          SHORT="${{ steps.tags.outputs.short_sha }}"
+          {
+            echo "## GHCR publish complete (multi-arch)"
+            echo ""
+            echo "Pushed the pipeline-runner image with tags \`:main\` + \`:sha-${SHORT}\`,"
+            echo "as a multi-arch manifest covering \`linux/amd64\` + \`linux/arm64\`."
+            echo ""
+            echo "* \`ghcr.io/${{ env.OWNER }}/orrery-pipeline-runner:main\`"
+            echo "* \`ghcr.io/${{ env.OWNER }}/orrery-pipeline-runner:sha-${SHORT}\`"
+            echo ""
+            echo "The \`web\` container is intentionally NOT published — it's"
+            echo "stock nginx:alpine + bind-mounted \`./build\` per ADR-063."
+            echo "The static bundle is the deploy artefact, not an image."
+          } >> "$GITHUB_STEP_SUMMARY"

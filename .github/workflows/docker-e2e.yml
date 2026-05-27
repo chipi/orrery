@@ -35,6 +35,17 @@ concurrency:
 
 jobs:
   docker-e2e:
+    # Matrix: desktop-chromium + mobile-chromium run as parallel jobs.
+    # Each leg gets its own runner, so wall-clock is ~the same as
+    # desktop-only used to be. CI minutes 2x; that's the trade for
+    # closing the desktop/mobile asymmetry without blowing through
+    # the workflow timeout. Sequential mobile+desktop on workers=1
+    # hit 30+ min and timed out (May 2026 mobile-extension first run).
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [desktop-chromium, mobile-chromium]
+    name: docker-e2e (${{ matrix.project }})
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -82,16 +93,13 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run Playwright against docker web (desktop + mobile)
+      - name: Run Playwright against docker web (${{ matrix.project }})
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:8080
-        # Both viewports against the production-shape nginx stack. Closes
-        # the desktop/mobile asymmetry that's bitten multiple release
-        # cycles (v0.6.0 → v0.6.1 mobile-only failures, May 2026 mobile
-        # regressions on /moon /mars /explore). Mobile-on-nginx is NOT
-        # redundant with e2e.yml's mobile-on-vite-preview — different
-        # webserver + asset serving can surface different timing edges.
-        run: npx playwright test --project=desktop-chromium --project=mobile-chromium
+        # Both viewports run as separate matrix legs; this leg runs
+        # only its own --project. fail-fast: false so a mobile failure
+        # doesn't suppress useful desktop diagnostics + vice versa.
+        run: npx playwright test --project=${{ matrix.project }}
 
       - name: Capture web logs on failure
         if: failure()
@@ -101,7 +109,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v7
         with:
-          name: docker-e2e-playwright-report
+          name: docker-e2e-playwright-report-${{ matrix.project }}
           path: playwright-report/
           retention-days: 14
 

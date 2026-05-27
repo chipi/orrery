@@ -134,11 +134,21 @@ test.describe('/earth', () => {
   async function openIssPanel(page: import('@playwright/test').Page) {
     await page.goto('/earth');
     await page.getByRole('button', { name: /^2d$/i }).click();
+    // Both `class:hidden` (display:none) and `data-objects-count` are
+    // bound on `canvas.layer`. The objects-count attribute can flip
+    // non-zero while the canvas is still hidden behind the 2D toggle,
+    // so the count-only wait races on mobile and boundingBox() returns
+    // null. Wait for BOTH: count non-zero AND canvas laid out with
+    // non-zero pixel dims (mirrors /explore's enterTwoDMode helper).
     const flat = page.locator('canvas.layer');
-    // Wait until earth-objects.json has loaded (canvas exposes
-    // data-objects-count which flips from 0 → N once satellites are in
-    // state). Replaces a fixed 800ms wait that raced slow CI.
     await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
+    await page.waitForFunction(
+      () => {
+        const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
+        return !!(c && c.width > 0 && c.height > 0 && c.offsetParent !== null);
+      },
+      { timeout: 10_000 },
+    );
     const box = await flat.boundingBox();
     if (!box) throw new Error('canvas not found');
     // ISS: id="iss", inclination=51.64°, index 0 → phase=0.

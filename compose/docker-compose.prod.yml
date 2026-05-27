@@ -1,0 +1,89 @@
+# orrery prod compose stack — GH #260 phase 1 (tailnet-only).
+#
+# Designed to run alongside podcast_scraper on the existing Hetzner VPS.
+# Co-tenancy mechanics (per #260):
+#   1. project name `orrery` (set via COMPOSE_PROJECT_NAME in the VPS .env
+#      or via `docker compose --project-name orrery -f ...`)
+#   2. host port `${ORRERY_PORT:-8090}` (podcast_scraper holds 8080)
+#   3. filesystem root `/srv/orrery/` on the VPS
+#   4. tailscale serve on a different HTTPS port (`--https=8443` per
+#      #260 recommendation (a)) — see infra/cloud-init/orrery-tailscale-serve.sh
+#
+# What's different from the dev `docker-compose.yml` at repo root:
+#   - `pipeline-runner` pulls `ghcr.io/chipi/orrery-pipeline-runner` from
+#     GHCR (published by `.github/workflows/docker-e2e.yml` -> publish job)
+#     instead of building locally
+#   - `web` healthcheck declared explicitly (compose-level, not Dockerfile)
+#   - `restart: unless-stopped` on long-running services
+#   - `grafana-agent` left out of phase 1 (env-var-gated per ADR-068;
+#      add later once observability is wired on the VPS)
+#   - the `orrery-cache` and any other dev-only services are NOT here
+#
+# Volume strategy:
+#   - `./build` (host) bind-mounted into nginx as the static-bundle source.
+#     Uploaded by the deploy workflow as a release artefact; VPS does not
+#     run `npm run build`.
+#   - `./static/data` (host) bind-mounted into nginx + pipeline-runner per
+#     ADR-065 (live `/data` overlay; cron-driven pipeline writes,
+#     web reads on next request — no rebuild needed).
+#
+# Bring up:
+#   COMPOSE_PROJECT_NAME=orrery \
+#     ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
+#     docker compose -f compose/docker-compose.prod.yml pull
+#   COMPOSE_PROJECT_NAME=orrery \
+#     ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
+#     docker compose -f compose/docker-compose.prod.yml up -d
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: orrery-web
+    restart: unless-stopped
+    ports:
+      # Host-side port is parametric so the operator can shift it
+      # without editing this file. 8090 default avoids podcast_scraper's
+      # 8080. Container-internal is plain :80 (nginx default).
+      - '${ORRERY_PORT:-8090}:80'
+    volumes:
+      # Static bundle (deployed as a release artefact by the deploy
+      # workflow; VPS does not run `npm run build` per ADR-063).
+      - ./build:/usr/share/nginx/html:ro
+      # Live data overlay (ADR-065). Pipeline-runner writes here; nginx
+      # reads on next request.
+      - ./static/data:/usr/share/nginx/html/data:ro
+    healthcheck:
+      # busybox wget on alpine; accept any HTTP/ response line as proof
+      # nginx is alive (mirrors podcast_scraper's compose pattern).
+      test: ['CMD-SHELL', "wget -qSO /dev/null http://127.0.0.1/ 2>&1 | grep -q 'HTTP/'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # Pipeline-runner image pulled from GHCR. One-shot invocations spawned
+  # by host cron (or `docker compose run --rm pipeline-runner ...`).
+  # Image tag pinned via env var so the deploy workflow can roll forward
+  # or back without compose-file edits.
+  pipeline-runner:
+    image: ghcr.io/chipi/orrery-pipeline-runner:${ORRERY_PIPELINE_IMAGE_TAG:-main}
+    container_name: orrery-pipeline-runner
+    # Not long-running — the API design (RFC-024) spawns `docker compose
+    # run --rm pipeline-runner ...` on demand. The service declaration
+    # exists so `docker compose run` resolves the image + volume mounts;
+    # `restart` is intentionally omitted to keep the runner ephemeral.
+    profiles: ['manual']
+    volumes:
+      # Pipelines write to static/data on the host; the web container's
+      # bind-mount picks up the change on next request.
+      - ./static/data:/repo/static/data
+      # Read-only repo bind so the runner can invoke any
+      # scripts/<name>.ts entry-point.
+      - .:/repo:ro
+    environment:
+      # No secrets by default — RFC-025 §3, ADR-067 / ADR-068 env vars
+      # set by the operator's /srv/orrery/.env (Sentry, Grafana Cloud)
+      # are env_file-loaded below.
+      NODE_ENV: production
+    env_file:
+      - .env

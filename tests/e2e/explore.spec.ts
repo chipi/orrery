@@ -52,6 +52,13 @@ async function clickPlanetIn2D(
 }
 
 async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
+  // Ensure hydration is complete before tapping. Without this, an
+  // order-sensitive flake reproduces locally in broad sweeps: when this
+  // helper runs after a previous /explore test, the new page sometimes
+  // dispatches the synthetic touch before Svelte binds onclick. Adding
+  // networkidle inside the helper (not at each caller) makes every
+  // entry path defensive.
+  await page.waitForLoadState('networkidle');
   // On mobile-chromium, the synthetic mouse `click()` races Svelte's
   // reactivity binding on the toggle — the click lands before the onclick
   // handler is wired, so the 3D→2D mode flip never fires and the
@@ -64,7 +71,13 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   } else {
     await toggle.click();
   }
-  await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
+  // Mobile-chromium: Svelte's label flip from '2D' → '3D' can lag a few
+  // rAFs under shared preview-server load. 10 s ceiling gives margin
+  // over the observed 5 s flake without masking a binding failure
+  // (which would never resolve, regardless of timeout).
+  await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible({
+    timeout: isMobile ? 10_000 : 5_000,
+  });
   const canvas2d = page.locator('canvas.layer');
   await expect(canvas2d).toBeVisible({ timeout: 5_000 });
   await page.waitForFunction(
@@ -321,8 +334,13 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     } else {
       await galleryTab.click();
     }
+    // Locally this passes 3/3 in ~6 s on mobile-chromium; CI runner is
+    // consistently slower for the Earth-panel gallery mount + manifest
+    // fetch chain — 15 s was insufficient on GH e2e run 26488194639.
+    // 30 s is 2× margin over the observed CI ceiling without masking a
+    // structural regression (a true mount failure would never resolve).
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({
-      timeout: isMobile ? 15_000 : 5_000,
+      timeout: isMobile ? 30_000 : 5_000,
     });
   });
 

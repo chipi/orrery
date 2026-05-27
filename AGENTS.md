@@ -453,6 +453,26 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 ---
 
+### No fix-and-pray on CI — local reproduction is mandatory
+
+**Rule: when CI e2e fails, the next step is `npx playwright test --workers=1 --project=<failing-project> <failing-spec>` locally — not a speculative patch pushed straight to CI.** Push only after the failure reproduces locally AND the fix makes the local run green. Every speculative push pollutes the workflow history, wastes 15-40 min of CI time, races the launches-bot cron (which auto-cancels in-flight runs), and burns runner-minutes for no information gain — CI tells you "still red" but not "why a different way".
+
+**The expected loop is:**
+
+1. Pull the failing test name + error-context.md from the CI artifact (`gh run view <id> --log` → find the `>` line + locator + timeout).
+2. Run that exact spec locally on the failing project: `npx playwright test --workers=1 --project=mobile-chromium tests/e2e/<spec>.ts`. If it doesn't reproduce, raise that explicitly — don't guess at fixes for failures you can't see.
+3. Iterate the fix until the local run is green. Re-run 2-3 times to confirm the fix isn't itself flaky.
+4. Run the broader spec set the change touches (e.g. all of `explore.spec.ts moon.spec.ts mars.spec.ts` if the fix is cross-cutting).
+5. *Then* push. The CI run becomes the final verification, not the debugging tool.
+
+**Push-and-wait-for-CI is a debugging anti-pattern.** Each iteration costs at least 25 min wall-clock vs. ~2 min for a single local spec. The maintainer (Marko) has flagged this explicitly: deliberate, precise, expected — not "let's see what CI says".
+
+**When to escape this rule (rare):** the failure depends on a CI-only condition that genuinely can't be reproduced locally — Ubuntu+Docker filesystem case-sensitivity, runner network latency, GH Actions concurrency racing the launches-bot cron. In those cases, say so out loud, and instrument the push (e.g. add a CI-only debug log) so the next CI run yields new information. "Let's try this and see" is not in scope.
+
+**Stale-monitor caveat:** when a CI run shows `cancelled` from a successor push, that's the auto-supersede behaviour, not a real cancel — confirm by checking whether a newer run exists on a newer sha. Don't treat supersede-cancellations as either pass or fail; just re-arm the monitor on the live run.
+
+---
+
 ### Spec-writing patterns — viewport-aware, locale-resilient
 
 E2e tests must run identically on desktop-chromium and mobile-chromium. Most regressions in this codebase land because a spec was written for the desktop layout and silently failed on mobile-chromium for months until a release exposed it. Follow these patterns:

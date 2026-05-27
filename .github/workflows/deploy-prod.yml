@@ -1,0 +1,205 @@
+name: Deploy to prod VPS (orrery)
+
+# GH #260 phase 1 (tailnet-only). Deploys orrery to the Hetzner VPS that
+# also hosts podcast_scraper, via Tailscale SSH.
+#
+# Manual-trigger only at first land. After the operator's first VPS
+# bootstrap + a few green manual runs, add the `workflow_run: [docker-e2e]`
+# trigger to complete the GitOps deploy loop. Until then, `workflow_dispatch`
+# is the only entry.
+#
+# Operator prerequisites (set on the canonical repo, settings → secrets/vars):
+#   - secrets.TS_AUTHKEY              — tailnet auth key with tag:gha-deployer
+#   - secrets.PROD_SSH_PRIVATE_KEY     — Ed25519 PEM for deploy@ user
+#                                        on the VPS
+#   - vars.PROD_TAILNET_FQDN          — e.g. "orrery-prod.<tailnet>.ts.net"
+#                                        (the host orrery shares with
+#                                        podcast_scraper)
+#
+# VPS prerequisites (one-time, see docs/ops/deploy-prod-vps.md):
+#   - /srv/orrery/ checkout
+#   - /srv/orrery/.env with ORRERY_PORT + COMPOSE_PROJECT_NAME=orrery
+#   - infra/cloud-init/orrery-tailscale-serve.sh installed as a systemd
+#     ExecStartPost on the tailscaled.service
+#   - deploy@ user can `docker compose ...` in /srv/orrery/
+
+on:
+  workflow_dispatch:
+    inputs:
+      override_image_sha:
+        description: "Image :sha-<7> tag to deploy (blank = current main HEAD short SHA)"
+        required: false
+        default: ""
+
+permissions:
+  actions: read
+  contents: read
+
+concurrency:
+  # Serialize prod deploys. Don't cancel-in-progress; cancelling mid
+  # `compose up` leaves the stack in an unknown state.
+  group: deploy-prod-orrery
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Pre-flight — required secrets/variables present?
+        id: preflight
+        env:
+          TS_AUTHKEY: ${{ secrets.TS_AUTHKEY }}
+          PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          PROD_TAILNET_FQDN: ${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          set -euo pipefail
+          MISSING=""
+          [ -z "${TS_AUTHKEY:-}" ]            && MISSING="$MISSING TS_AUTHKEY"
+          [ -z "${PROD_SSH_PRIVATE_KEY:-}" ]  && MISSING="$MISSING PROD_SSH_PRIVATE_KEY"
+          [ -z "${PROD_TAILNET_FQDN:-}" ]     && MISSING="$MISSING PROD_TAILNET_FQDN"
+          if [ -n "$MISSING" ]; then
+            echo "::warning::Missing prereqs:$MISSING"
+            echo "::warning::Stage them per docs/ops/deploy-prod-vps.md then re-run."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v6
+        if: steps.preflight.outputs.skip != 'true'
+        with:
+          fetch-depth: 1
+
+      - name: Resolve target image SHA
+        id: sha
+        if: steps.preflight.outputs.skip != 'true'
+        run: |
+          SHA_SHORT="${{ github.event.inputs.override_image_sha }}"
+          if [ -z "$SHA_SHORT" ]; then
+            SHA_SHORT=$(echo "${GITHUB_SHA}" | cut -c1-7)
+          fi
+          echo "short=$SHA_SHORT" >> "$GITHUB_OUTPUT"
+          echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=sha-$SHA_SHORT"
+
+      - name: Setup Node 20 (build static bundle for deploy)
+        if: steps.preflight.outputs.skip != 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+        if: steps.preflight.outputs.skip != 'true'
+
+      - name: Build static bundle (the deploy unit)
+        # Per ADR-063 the web container is stock nginx:alpine + bind-mount.
+        # The static bundle is the deploy artefact. CI builds it; VPS
+        # rsyncs it. VPS does not need Node installed.
+        if: steps.preflight.outputs.skip != 'true'
+        run: npm run build
+
+      - name: Join the tailnet
+        if: steps.preflight.outputs.skip != 'true'
+        uses: tailscale/github-action@v4
+        with:
+          authkey: ${{ secrets.TS_AUTHKEY }}
+          tags: tag:gha-deployer
+          # Pin to a known-good version. `latest` has broken sha256
+          # verification in GHA before (podcast_scraper RFC-082).
+          version: 1.96.4
+
+      - name: Install SSH identity for deploy@
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
+            >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: Wire image tag into VPS .env (idempotent)
+        # Reused on every deploy. Prior ORRERY_PIPELINE_IMAGE_TAG line is
+        # removed before the new one is appended, so re-runs don't
+        # accumulate duplicates.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SHA_SHORT: ${{ steps.sha.outputs.short }}
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; cd /srv/orrery; \
+             test -f .env || install -m 600 /dev/null .env; \
+             sed -i '/^ORRERY_PIPELINE_IMAGE_TAG=/d' .env; \
+             echo 'ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}' >> .env; \
+             chmod 600 .env"
+
+      - name: Rsync static bundle to VPS
+        # ADR-063: web container is stock nginx:alpine + bind-mount of
+        # ./build. CI builds, VPS rsyncs.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          set -euo pipefail
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+                  -o StrictHostKeyChecking=accept-new -o BatchMode=yes" \
+            build/ "${SSH_TARGET}:/srv/orrery/build/"
+
+      - name: Deploy (git pull repo + compose pull + compose up + healthcheck)
+        # Sequence:
+        #   1. `git pull` so compose file + tailscale-serve.sh on the
+        #      VPS match this commit's view of them.
+        #   2. `docker compose pull` for the pinned pipeline-runner SHA.
+        #   3. `docker compose up -d` to bring up `web` (and ensure
+        #      pipeline-runner image is cached locally for `run` use).
+        #   4. Internal healthcheck via curl against the orrery port.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; cd /srv/orrery; \
+             git pull --ff-only; \
+             docker compose -p orrery -f compose/docker-compose.prod.yml \
+               --env-file .env pull web pipeline-runner; \
+             docker compose -p orrery -f compose/docker-compose.prod.yml \
+               --env-file .env up -d web; \
+             PORT=\$(grep -E '^ORRERY_PORT=' .env | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
+             PORT=\${PORT:-8090} ; \
+             for i in \$(seq 1 30); do \
+               if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
+                 echo OK; exit 0; \
+               fi; \
+               sleep 2; \
+             done; \
+             echo 'orrery web did not respond within 60s'; \
+             docker compose -p orrery -f compose/docker-compose.prod.yml logs web; \
+             exit 1"
+
+      - name: External health probe over Tailscale
+        # Belt-and-suspenders: the deploy step already hit GET / on the
+        # VPS's :ORRERY_PORT loopback. This probes via tailnet MagicDNS
+        # so `tailscale serve` is also validated end-to-end.
+        # 60s timeout (12 × 5s).
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          PROBE_URL: https://${{ vars.PROD_TAILNET_FQDN }}:8443/
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 12); do
+            if curl -fsS -o /dev/null "$PROBE_URL"; then
+              echo "::notice::tailnet probe OK after $((i * 5))s — orrery is live at $PROBE_URL"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::tailnet probe did not succeed within 60s at $PROBE_URL"
+          exit 1

@@ -1,8 +1,47 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 /**
  * /moon — Moon Map (3D textured sphere + 2D equirectangular map).
  */
+
+/**
+ * Shared 2D-mode entry helper for the moon route. Defends against three
+ * mobile-chromium races observed locally in broad-sweep runs:
+ *
+ *  1. Synthetic mouse click() races Svelte's onclick binding when
+ *     hydration hasn't completed yet → tap on mobile + wait for
+ *     networkidle first.
+ *  2. Svelte's reactive label flip from '2D' → '3D' can lag a few rAFs
+ *     under shared preview-server load → 10s ceiling on the 3D-button
+ *     visibility check.
+ *  3. canvas.layer's hidden→visible transition + sites-count fetch
+ *     chain → wait for both visibility AND non-zero data-sites-count
+ *     before any boundingBox call (null box otherwise).
+ *
+ * Returns the populated canvas.layer locator ready for boundingBox /
+ * click. Same pattern as explore.spec.ts:enterTwoDMode.
+ */
+async function enterMoonTwoDMode(page: Page, isMobile = false) {
+  await page.waitForLoadState('networkidle');
+  const toggle = page.getByRole('button', { name: /^2d$/i });
+  if (isMobile) {
+    await toggle.tap();
+  } else {
+    await toggle.click();
+  }
+  await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible({
+    timeout: isMobile ? 10_000 : 5_000,
+  });
+  const flat = page.locator('canvas.layer');
+  await expect(flat).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
+  // N+2 sequential fetch chain (list + hotspots + per-site overlay)
+  // takes 11-15 s on mobile per the L94 'no console errors' benchmark.
+  // 30 s ceiling gives 2× margin without masking a real hang.
+  await expect(flat).not.toHaveAttribute('data-sites-count', '0', {
+    timeout: isMobile ? 30_000 : 10_000,
+  });
+  return flat;
+}
 
 test.describe('/moon', () => {
   test('default loads in 3D mode with the WebGL canvas sized', async ({ page }) => {
@@ -19,19 +58,7 @@ test.describe('/moon', () => {
 
   test('2D toggle reveals the orthographic moon discs (v0.1.8)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    // Mobile-chromium: synthetic mouse click() races Svelte's reactivity
-    // wiring on the 2D toggle — the click lands before the onclick is
-    // bound and the mode never flips, leaving canvas.layer hidden. tap()
-    // mirrors a real touch and matches earth.spec.ts:204 chip-toggle fix.
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
-    const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible({ timeout: 5_000 });
+    await enterMoonTwoDMode(page, isMobile);
     // Sample a pixel near the centre of the LEFT disc — should be
     // moon-grey (the radial gradient body), not bg-black.
     await page.waitForFunction(
@@ -66,20 +93,7 @@ test.describe('/moon', () => {
     isMobile,
   }) => {
     await page.goto('/moon');
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
-    // Mobile-chromium needs more headroom for the N+2 sequential fetch
-    // chain (list + hotspots + per-site overlay) — matches the
-    // L94 'no console errors on load' wait that already runs 30 s.
-    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: isMobile ? 30_000 : 10_000,
-    }); // let sites populate
+    const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
@@ -126,16 +140,7 @@ test.describe('/moon', () => {
   /* ── v0.1.10 — GALLERY + LEARN tabs on the site detail panel ── */
   test('Apollo 11 site GALLERY tab shows mission photos (v0.1.10)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    const flat = page.locator('canvas.layer');
-    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: isMobile ? 30_000 : 10_000,
-    });
+    const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;
@@ -158,16 +163,7 @@ test.describe('/moon', () => {
 
   test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    const flat = page.locator('canvas.layer');
-    await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: isMobile ? 30_000 : 10_000,
-    });
+    const flat = await enterMoonTwoDMode(page, isMobile);
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
     if (!box) return;

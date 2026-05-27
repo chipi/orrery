@@ -17,9 +17,18 @@ test.describe('/moon', () => {
     expect(dim.h).toBeGreaterThan(0);
   });
 
-  test('2D toggle reveals the orthographic moon discs (v0.1.8)', async ({ page }) => {
+  test('2D toggle reveals the orthographic moon discs (v0.1.8)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    // Mobile-chromium: synthetic mouse click() races Svelte's reactivity
+    // wiring on the 2D toggle — the click lands before the onclick is
+    // bound and the mode never flips, leaving canvas.layer hidden. tap()
+    // mirrors a real touch and matches earth.spec.ts:204 chip-toggle fix.
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
     const flat = page.locator('canvas.layer');
     await expect(flat).toBeVisible({ timeout: 5_000 });
@@ -52,13 +61,24 @@ test.describe('/moon', () => {
     );
   });
 
-  test('clicking an Apollo 11 site on the near-side disc opens the panel', async ({ page }) => {
+  test('clicking an Apollo 11 site on the near-side disc opens the panel', async ({
+    page,
+    isMobile,
+  }) => {
     await page.goto('/moon');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible();
+    await expect(flat).toBeVisible({ timeout: isMobile ? 15_000 : 5_000 });
+    // Mobile-chromium needs more headroom for the N+2 sequential fetch
+    // chain (list + hotspots + per-site overlay) — matches the
+    // L94 'no console errors on load' wait that already runs 30 s.
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 10_000,
+      timeout: isMobile ? 30_000 : 10_000,
     }); // let sites populate
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
@@ -104,12 +124,17 @@ test.describe('/moon', () => {
   });
 
   /* ── v0.1.10 — GALLERY + LEARN tabs on the site detail panel ── */
-  test('Apollo 11 site GALLERY tab shows mission photos (v0.1.10)', async ({ page }) => {
+  test('Apollo 11 site GALLERY tab shows mission photos (v0.1.10)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     const flat = page.locator('canvas.layer');
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 10_000,
+      timeout: isMobile ? 30_000 : 10_000,
     });
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();
@@ -131,12 +156,17 @@ test.describe('/moon', () => {
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 5_000 });
   });
 
-  test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page }) => {
+  test('Apollo 11 site LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
     await page.goto('/moon');
-    await page.getByRole('button', { name: /^2d$/i }).click();
+    const toggle = page.getByRole('button', { name: /^2d$/i });
+    if (isMobile) {
+      await toggle.tap();
+    } else {
+      await toggle.click();
+    }
     const flat = page.locator('canvas.layer');
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 10_000,
+      timeout: isMobile ? 30_000 : 10_000,
     });
     const box = await flat.boundingBox();
     expect(box).not.toBeNull();

@@ -51,8 +51,19 @@ async function clickPlanetIn2D(
   await canvas.click({ position: { x: box.width / 2 + offsetX, y: box.height / 2 } });
 }
 
-async function enterTwoDMode(page: Page): Promise<void> {
-  await page.getByRole('button', { name: /^2d$/i }).click();
+async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
+  // On mobile-chromium, the synthetic mouse `click()` races Svelte's
+  // reactivity binding on the toggle — the click lands before the onclick
+  // handler is wired, so the 3D→2D mode flip never fires and the
+  // canvas.layer stays hidden. tap() issues a touch event which matches
+  // how a real user interacts with the chip on a phone (same fix as
+  // earth.spec.ts chip toggle). #253 / GH e2e run 26485179917.
+  const toggle = page.getByRole('button', { name: /^2d$/i });
+  if (isMobile) {
+    await toggle.tap();
+  } else {
+    await toggle.click();
+  }
   await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible();
   const canvas2d = page.locator('canvas.layer');
   await expect(canvas2d).toBeVisible({ timeout: 5_000 });
@@ -77,7 +88,7 @@ async function enterTwoDMode(page: Page): Promise<void> {
       }
       return false;
     },
-    { timeout: 7_000 },
+    { timeout: isMobile ? 20_000 : 7_000 },
   );
 }
 
@@ -117,9 +128,12 @@ test.describe('/explore — load and toggle', () => {
     expect(dim.cssH).toBeGreaterThan(0);
   });
 
-  test('2D toggle reveals a non-blank canvas (regression for 3a-4 bug)', async ({ page }) => {
+  test('2D toggle reveals a non-blank canvas (regression for 3a-4 bug)', async ({
+    page,
+    isMobile,
+  }) => {
     await page.goto('/explore');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
     const canvas2d = page.locator('canvas.layer');
 
     // Sample 50 random points and require at least one to differ from
@@ -179,9 +193,9 @@ test.describe('/explore — load and toggle', () => {
 });
 
 test.describe('/explore — selection and panel', () => {
-  test('clicking the Sun in 2D opens the Sun panel', async ({ page }) => {
+  test('clicking the Sun in 2D opens the Sun panel', async ({ page, isMobile }) => {
     await page.goto('/explore');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
 
     const canvas2d = page.locator('canvas.layer');
     const box = await canvas2d.boundingBox();
@@ -200,7 +214,10 @@ test.describe('/explore — selection and panel', () => {
     await expect(panel).toContainText(/The Sun/i);
   });
 
-  test('clicking Earth in 2D opens the planet panel with TECHNICAL data', async ({ page }) => {
+  test('clicking Earth in 2D opens the planet panel with TECHNICAL data', async ({
+    page,
+    isMobile,
+  }) => {
     // Earth's orbitR is 113 in world space and at simT=0 it sits at
     // (W/2 + 113, H/2). simT advances at 0.04 scale, so on slow CI a
     // 6+ second test gap can rotate Earth ~90° off that spot and the
@@ -209,7 +226,7 @@ test.describe('/explore — selection and panel', () => {
     // deterministic position.
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
 
     const canvas2d = page.locator('canvas.layer');
     const box = await canvas2d.boundingBox();
@@ -257,7 +274,7 @@ test.describe('/explore — selection and panel', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
     const canvas2d = page.locator('canvas.layer');
     await expect(canvas2d).toBeVisible();
     const box = await canvas2d.boundingBox();
@@ -291,7 +308,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
     const canvas2d = page.locator('canvas.layer');
     await expect(canvas2d).toBeVisible();
     await clickPlanetIn2D(page, canvas2d, 113);
@@ -309,12 +326,12 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     });
   });
 
-  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page }) => {
+  test('Earth panel SCIENCE tab shows tiered LEARN links', async ({ page, isMobile }) => {
     // Reduced-motion freezes simT so Earth stays at the deterministic
     // (W/2 + 113, H/2) position throughout the click.
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
     const canvas2d = page.locator('canvas.layer');
     await clickPlanetIn2D(page, canvas2d, 113);
     const panel = page.locator('aside.panel');
@@ -331,7 +348,7 @@ test.describe('/explore — GALLERY + LEARN tabs (v0.1.10)', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/explore');
     await page.waitForLoadState('networkidle');
-    await enterTwoDMode(page);
+    await enterTwoDMode(page, isMobile);
     const canvas2d = page.locator('canvas.layer');
     await expect(canvas2d).toBeVisible();
     const box = await canvas2d.boundingBox();

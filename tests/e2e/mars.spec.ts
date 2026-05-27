@@ -78,7 +78,7 @@ test.describe('/mars', () => {
     await expect(panel).toContainText(/IN ORBIT/);
   });
 
-  test('curiosity panel surfaces FULL MISSION CARD cross-link', async ({ page }) => {
+  test('curiosity panel surfaces FULL MISSION CARD cross-link', async ({ page, isMobile }) => {
     await page.goto('/mars?site=curiosity');
     // Deterministic readiness: wait for the sites JSON to land before
     // asserting on the panel. `canvas.layer` exposes `data-sites-count`
@@ -95,8 +95,12 @@ test.describe('/mars', () => {
     // networkidle and pass; this test had additional cross-link
     // hydration that pushed it past the network-quiet window.
     // Issue #228-followup (CI regression on top of #222 retry-pass fix).
+    // Mobile-chromium under GH Actions load: the N+2 sequential fetch
+    // chain (list + hotspots + per-site i18n overlay) consistently took
+    // > 15 s on the 26485179917 run, even after #228-followup. 30 s on
+    // mobile gives 2× margin without masking a real hang on desktop.
     await expect(page.locator('canvas.layer')).not.toHaveAttribute('data-sites-count', '0', {
-      timeout: 15_000,
+      timeout: isMobile ? 30_000 : 15_000,
     });
     const panel = page.locator('aside.panel');
     // Panel opens synchronously inside the sites-loaded .then() block,

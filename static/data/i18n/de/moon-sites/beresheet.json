@@ -1,0 +1,9 @@
+{
+  "name": "Beresheet",
+  "mission_type": "Robotic Lander (failed)",
+  "site_name": "Mare Serenitatis",
+  "crew": [],
+  "left": "Crash-impact debris field (April 2019)",
+  "fact": "First privately-funded lunar landing attempt — Israeli non-profit SpaceIL, 585 kg lander. Reached lunar orbit but a gyroscope failure during descent led to engine shutdown and a crash at ~150 m/s. Carrying a 'lunar library' of human knowledge etched on nickel discs, plus a sample of tardigrades — extremophiles capable of cryptobiosis — that may or may not have survived the impact. Inspired Beresheet 2 (planned).",
+  "capability": "Demonstrated that a small private team can reach the Moon. The crash itself surfaced lessons about descent-engine restart and IMU redundancy adopted by later commercial landers."
+}

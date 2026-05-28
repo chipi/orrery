@@ -117,6 +117,11 @@ jobs:
           version: 1.96.4
 
       - name: Install SSH identity for deploy@
+        # PEM private keys need a trailing newline or libcrypto rejects
+        # them ("error in libcrypto"). GH UI sometimes strips the
+        # trailing newline when secrets are pasted via the web form,
+        # so we explicitly append one with printf and verify the key
+        # is loadable with ssh-keygen before continuing.
         if: steps.preflight.outputs.skip != 'true'
         env:
           PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
@@ -124,8 +129,16 @@ jobs:
           set -euo pipefail
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
-          echo "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$PROD_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 > /dev/null 2>&1; then
+            echo "::error::PROD_SSH_PRIVATE_KEY is not a loadable OpenSSH/PEM private key."
+            echo "::error::Common causes: wrong format (PuTTY .ppk), encrypted key, or"
+            echo "::error::corrupted paste. Regenerate the key as ed25519 PEM and re-paste"
+            echo "::error::INCLUDING the -----BEGIN OPENSSH PRIVATE KEY----- header and"
+            echo "::error::-----END OPENSSH PRIVATE KEY----- footer."
+            exit 1
+          fi
           ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
             >> ~/.ssh/known_hosts 2>/dev/null || true
 
@@ -149,12 +162,7 @@ jobs:
              fi; \
              cd /srv/orrery; \
              if [ ! -f .env ]; then \
-               install -m 600 /dev/null .env; \
-               cat > .env <<'BOOTSTRAP_ENV'
-          COMPOSE_PROJECT_NAME=orrery
-          ORRERY_PORT=8090
-          ORRERY_PIPELINE_IMAGE_TAG=main
-          BOOTSTRAP_ENV
+               printf '%s\n' 'COMPOSE_PROJECT_NAME=orrery' 'ORRERY_PORT=8090' 'ORRERY_PIPELINE_IMAGE_TAG=main' > .env; \
                chmod 600 .env; \
                echo 'first-deploy: scaffolded /srv/orrery/.env'; \
              fi"

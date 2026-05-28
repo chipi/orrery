@@ -137,32 +137,47 @@ jobs:
   #   :main         — track-latest-green-main tag
   #   :sha-<short>  — pin-and-rollback tag for incident response
   # ════════════════════════════════════════════════════════════════════
-  publish:
+  # Per-platform build jobs run in PARALLEL on NATIVE runners — no QEMU.
+  # Each pushes a digest-only image (no tag) to GHCR; the `publish-manifest`
+  # job then assembles them into a multi-arch tag list (:main + :sha-XXX).
+  #
+  # Why native runners (was: single job + QEMU): `npm ci` in the Dockerfile
+  # compiles sharp + canvas + gdal-async bindings against the target arch.
+  # On amd64-via-QEMU the arm64 build took ~20-25 min, pushing the whole
+  # publish job past its 30-min timeout (cancelled run 26545911605, May
+  # 2026). Native arm64 runners (free for public repos since 2025-01)
+  # drop arm64 to ~3-5 min — same speed as amd64.
+  publish-platforms:
     needs: docker-e2e
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    # Strict gate: only on main pushes from canonical repo, and only
-    # when docker-e2e succeeded. Forks + PRs + branch pushes skip.
     if: |
       github.repository == 'chipi/orrery'
       && github.ref == 'refs/heads/main'
       && github.event_name == 'push'
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            platform: linux/amd64
+            arch: amd64
+          - runner: ubuntu-24.04-arm
+            platform: linux/arm64
+            arch: arm64
+    name: publish (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
     permissions:
       contents: read
       packages: write
     env:
       REGISTRY: ghcr.io
       OWNER: chipi
+      IMAGE: ghcr.io/chipi/orrery-pipeline-runner
+    outputs:
+      digest-amd64: ${{ steps.export.outputs.digest-amd64 }}
+      digest-arm64: ${{ steps.export.outputs.digest-arm64 }}
     steps:
       - uses: actions/checkout@v6
-
-      # arm64 builds via QEMU emulation on this amd64 runner. setup-qemu
-      # must come before setup-buildx so the builder picks up the
-      # registered binfmt_misc handlers.
-      - name: Set up QEMU (arm64 emulation)
-        uses: docker/setup-qemu-action@v4
-        with:
-          platforms: linux/arm64
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
@@ -174,72 +189,139 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Compute tags
-        id: tags
+      # amd64 only: build with --load so the no-secrets gate can `docker
+      # run` against a real local image. arm64 skips this (the assert
+      # already passes on amd64; reproducing it on arm64 buys nothing).
+      - name: Build amd64 + assert no secrets
+        if: matrix.arch == 'amd64'
+        env:
+          SHORT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          SHORT="${SHORT_SHA:0:7}"
+          docker buildx build \
+            --platform linux/amd64 \
+            --tag "${IMAGE}:build-${SHORT}" \
+            --load \
+            --cache-from "type=gha,scope=publish-pipeline-runner-amd64" \
+            --cache-to "type=gha,scope=publish-pipeline-runner-amd64,mode=max" \
+            -f Dockerfile .
+          scripts/check-no-secrets-in-image.sh "${IMAGE}:build-${SHORT}"
+
+      # Push per-platform digest. No tag — the manifest job tags later.
+      # Reuses the cache from the assert-step above on amd64 so the
+      # actual rebuild is nearly free.
+      - name: Build + push digest-only
+        id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile
+          platforms: ${{ matrix.platform }}
+          push: true
+          outputs: type=image,name=${{ env.IMAGE }},push-by-digest=true,name-canonical=true,push=true
+          cache-from: type=gha,scope=publish-pipeline-runner-${{ matrix.arch }}
+          cache-to: type=gha,scope=publish-pipeline-runner-${{ matrix.arch }},mode=max
+
+      # Export the digest for the manifest job. Per-arch artifact name
+      # avoids cross-matrix file collisions.
+      - name: Export digest
+        id: export
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/digests
+          DIGEST="${{ steps.build.outputs.digest }}"
+          # Strip "sha256:" prefix; manifest job re-adds it.
+          echo "${DIGEST#sha256:}" > "/tmp/digests/${{ matrix.arch }}"
+          echo "digest-${{ matrix.arch }}=${DIGEST}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload digest
+        uses: actions/upload-artifact@v4
+        with:
+          name: digest-${{ matrix.arch }}
+          path: /tmp/digests/${{ matrix.arch }}
+          if-no-files-found: error
+          retention-days: 1
+
+  # Assembles the two per-platform digests into a multi-arch manifest
+  # under the user-facing tags (:main + :sha-XXX). Cheap step (~30 s) —
+  # no build, just `buildx imagetools create`.
+  publish-manifest:
+    needs: publish-platforms
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      packages: write
+    env:
+      REGISTRY: ghcr.io
+      OWNER: chipi
+      IMAGE: ghcr.io/chipi/orrery-pipeline-runner
+    steps:
+      - name: Download all digests
+        uses: actions/download-artifact@v4
+        with:
+          path: /tmp/digests
+          pattern: digest-*
+          merge-multiple: true
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Assemble + push multi-arch manifest
         run: |
           set -euo pipefail
           SHORT="${GITHUB_SHA:0:7}"
-          echo "short_sha=${SHORT}" >> "$GITHUB_OUTPUT"
-
-      # Step 1: amd64-only --load so the no-secrets gate can docker run
-      # against a real local image. Step 2: multi-arch --push reusing
-      # the cache from step 1 for amd64.
-      - name: Build + assert + push (pipeline-runner)
-        env:
-          IMAGE: ${{ env.REGISTRY }}/${{ env.OWNER }}/orrery-pipeline-runner
-          SHORT_SHA: ${{ steps.tags.outputs.short_sha }}
-        run: |
-          set -euo pipefail
-          docker buildx build \
-            --platform linux/amd64 \
-            --tag "${IMAGE}:build-${SHORT_SHA}" \
-            --load \
-            --cache-from "type=gha,scope=publish-pipeline-runner" \
-            --cache-to "type=gha,scope=publish-pipeline-runner,mode=max" \
-            -f Dockerfile .
-          scripts/check-no-secrets-in-image.sh "${IMAGE}:build-${SHORT_SHA}"
-          docker buildx build \
-            --platform linux/amd64,linux/arm64 \
+          DIGEST_AMD64="sha256:$(cat /tmp/digests/amd64)"
+          DIGEST_ARM64="sha256:$(cat /tmp/digests/arm64)"
+          docker buildx imagetools create \
             --tag "${IMAGE}:main" \
-            --tag "${IMAGE}:sha-${SHORT_SHA}" \
-            --push \
-            --cache-from "type=gha,scope=publish-pipeline-runner" \
-            --cache-to "type=gha,scope=publish-pipeline-runner,mode=max" \
-            -f Dockerfile .
+            --tag "${IMAGE}:sha-${SHORT}" \
+            "${IMAGE}@${DIGEST_AMD64}" \
+            "${IMAGE}@${DIGEST_ARM64}"
 
       # #712-style acceptance gate (per podcast_scraper RFC-081): assert
       # the pushed manifest actually carries both linux/amd64 + linux/arm64.
       # Belt-and-suspenders against silent platform regressions if someone
-      # later removes --platform.
+      # later removes the arm64 leg from the matrix.
       - name: Verify multi-arch manifest
-        env:
-          IMAGE: ${{ env.REGISTRY }}/${{ env.OWNER }}/orrery-pipeline-runner
-          SHORT_SHA: ${{ steps.tags.outputs.short_sha }}
         run: |
           set -euo pipefail
-          echo "==> Inspecting ${IMAGE}:sha-${SHORT_SHA}"
-          MANIFEST=$(docker buildx imagetools inspect "${IMAGE}:sha-${SHORT_SHA}" --raw)
+          SHORT="${GITHUB_SHA:0:7}"
+          echo "==> Inspecting ${IMAGE}:sha-${SHORT}"
+          MANIFEST=$(docker buildx imagetools inspect "${IMAGE}:sha-${SHORT}" --raw)
           for ARCH in amd64 arm64; do
             if ! echo "$MANIFEST" | grep -q "\"architecture\": \"${ARCH}\""; then
-              echo "::error::${IMAGE}:sha-${SHORT_SHA} missing linux/${ARCH} in manifest"
+              echo "::error::${IMAGE}:sha-${SHORT} missing linux/${ARCH} in manifest"
               echo "$MANIFEST"
               exit 1
             fi
           done
-          echo "  ${IMAGE}:sha-${SHORT_SHA} OK (amd64 + arm64)"
+          echo "  ${IMAGE}:sha-${SHORT} OK (amd64 + arm64)"
 
       - name: Summary
         run: |
           set -euo pipefail
-          SHORT="${{ steps.tags.outputs.short_sha }}"
+          SHORT="${GITHUB_SHA:0:7}"
           {
-            echo "## GHCR publish complete (multi-arch)"
+            echo "## GHCR publish complete (multi-arch, native runners)"
             echo ""
             echo "Pushed the pipeline-runner image with tags \`:main\` + \`:sha-${SHORT}\`,"
             echo "as a multi-arch manifest covering \`linux/amd64\` + \`linux/arm64\`."
             echo ""
-            echo "* \`ghcr.io/${{ env.OWNER }}/orrery-pipeline-runner:main\`"
-            echo "* \`ghcr.io/${{ env.OWNER }}/orrery-pipeline-runner:sha-${SHORT}\`"
+            echo "Each platform built on its own native runner (no QEMU):"
+            echo "* amd64 on \`ubuntu-latest\`"
+            echo "* arm64 on \`ubuntu-24.04-arm\` (free for public repos since 2025-01)"
+            echo ""
+            echo "* \`${IMAGE}:main\`"
+            echo "* \`${IMAGE}:sha-${SHORT}\`"
             echo ""
             echo "The \`web\` container is intentionally NOT published — it's"
             echo "stock nginx:alpine + bind-mounted \`./build\` per ADR-063."

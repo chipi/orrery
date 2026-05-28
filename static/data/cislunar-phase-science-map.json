@@ -1,0 +1,43 @@
+{
+  "$schema_note": "Maps cislunar phase types + flight event types to /science encyclopedia sections. Consumed by src/lib/cislunar-events.ts. Both keys are unions defined in src/lib/cislunar-geometry.ts (phase) + static/data/schemas/mission.schema.json (event). When a phase or event has multiple natural references (e.g. tli_coast covers both the manoeuvre and the free-return arc), `refs` is an ordered array — the first entry is the primary chip; additional entries appear in the panel's expanded view. ADR-058 § science-chip integration. GH #107.",
+  "phase_refs": {
+    "parking": [{ "tab": "orbits", "slug": "orbit-regimes" }],
+    "tli_coast": [
+      { "tab": "mission-phases", "slug": "trans-x-injection" },
+      { "tab": "transfers", "slug": "free-return" }
+    ],
+    "lunar_orbit": [
+      { "tab": "orbits", "slug": "cislunar-orbits" },
+      { "tab": "mission-phases", "slug": "orbit-insertion" }
+    ],
+    "lunar_flyby": [
+      { "tab": "transfers", "slug": "gravity-assist" },
+      { "tab": "transfers", "slug": "free-return" }
+    ],
+    "descent": [{ "tab": "mission-phases", "slug": "edl" }],
+    "ascent": [{ "tab": "mission-phases", "slug": "edl" }],
+    "tei_coast": [{ "tab": "mission-phases", "slug": "trans-x-injection" }],
+    "reentry": [{ "tab": "mission-phases", "slug": "edl" }],
+    "spiral_earth": [{ "tab": "transfers", "slug": "hohmann-transfer" }],
+    "spiral_lunar": [{ "tab": "transfers", "slug": "hohmann-transfer" }]
+  },
+  "event_refs": {
+    "launch": [{ "tab": "mission-phases", "slug": "launch" }],
+    "parking_orbit_exit": [{ "tab": "orbits", "slug": "orbit-regimes" }],
+    "tli_or_tmi": [
+      { "tab": "mission-phases", "slug": "trans-x-injection" },
+      { "tab": "transfers", "slug": "free-return" }
+    ],
+    "tcm": [{ "tab": "mission-phases", "slug": "tcm" }],
+    "loi": [
+      { "tab": "mission-phases", "slug": "orbit-insertion" },
+      { "tab": "orbits", "slug": "cislunar-orbits" }
+    ],
+    "descent_start": [{ "tab": "mission-phases", "slug": "edl" }],
+    "ascent": [{ "tab": "mission-phases", "slug": "edl" }],
+    "tei": [{ "tab": "mission-phases", "slug": "trans-x-injection" }],
+    "earth_return": [{ "tab": "mission-phases", "slug": "edl" }],
+    "flyby": [{ "tab": "transfers", "slug": "gravity-assist" }],
+    "arrival": [{ "tab": "mission-phases", "slug": "edl" }]
+  }
+}

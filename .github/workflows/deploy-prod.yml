@@ -45,6 +45,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # Bind to the `prod` environment so this job can see the
+    # environment-scoped secrets (TS_AUTHKEY, PROD_SSH_PRIVATE_KEY) +
+    # variables (PROD_TAILNET_FQDN) staged in repo settings →
+    # Environments → prod. Environment binding also enables protection
+    # rules (required reviewers, deployment-branch policies) if you
+    # want them later — settings → environments → prod → protection.
+    environment: prod
     steps:
       - name: Pre-flight — required secrets/variables present?
         id: preflight

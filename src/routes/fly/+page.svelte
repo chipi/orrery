@@ -46,6 +46,19 @@
     type CislunarTrajectory,
     type Vec3Km,
   } from '$lib/cislunar-geometry';
+  import {
+    phaseMarkerKmPositions,
+    type PhaseMarker,
+    type ScienceRef,
+  } from '$lib/cislunar-events';
+  import {
+    eciKmToScreenPx,
+    eciKmToCanvas2dPx,
+    type ScreenPoint,
+    type MinimalProjector,
+  } from '$lib/cislunar-screen-projection';
+  import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
+  import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
@@ -323,13 +336,68 @@
   let container: HTMLDivElement | undefined = $state();
   let canvas2d: HTMLCanvasElement | undefined = $state();
   let simDay = $state(INITIAL_TIMELINE.dep_day);
+
+  // GH #107 — cislunar phase markers. PhaseMarker descriptors (event
+  // + ECI km position + science ref) are derived from the trajectory
+  // and mission events; the per-frame render path projects each one
+  // to screen pixels via the projection helpers and writes the result
+  // here. $state.raw because we re-assign the whole array each frame
+  // (deep reactivity would over-trigger).
+  interface PhaseMarkerRenderState {
+    event: PhaseMarker['event'];
+    scienceRef: ScienceRef | null;
+    screen: ScreenPoint;
+    reveal: RevealResult;
+    eventLabel: string;
+  }
+  let phaseMarkers: PhaseMarker[] = $derived.by(() =>
+    isMoonMission ? phaseMarkerKmPositions(mission.flight?.events, cislunarTrajectory) : [],
+  );
+  let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
+
+  /** Map a FlightEvent.type to an inline English label. C7 swaps these
+   *  to paraglide messages + 13-locale wave23 roll. Kept here as
+   *  a small dispatch so the C5 commit doesn't depend on the i18n
+   *  strings landing first. */
+  function defaultEventLabel(type: PhaseMarker['event']['type']): string {
+    switch (type) {
+      case 'launch':
+        return 'Launch';
+      case 'parking_orbit_exit':
+        return 'Parking orbit exit';
+      case 'tli_or_tmi':
+        return 'TLI';
+      case 'tcm':
+        return 'TCM';
+      case 'loi':
+        return 'LOI';
+      case 'descent_start':
+        return 'Descent';
+      case 'ascent':
+        return 'Ascent';
+      case 'tei':
+        return 'TEI';
+      case 'earth_return':
+        return 'Earth return';
+      case 'flyby':
+        return 'Flyby';
+      case 'arrival':
+        return 'Arrival';
+      default:
+        return type;
+    }
+  }
   let simSpeed = $state(7); // days/sec
   // ADR-025: reduced-motion users start paused. They can press play
   // to step forward manually. We also subscribe to changes so an
   // OS-level toggle mid-session pauses the sim live (post-v1.0
   // audit — /explore + /moon already did this; /fly was init-only).
   let isPlaying = $state(!prefersReducedMotion());
+  // GH #107 — phase marker reveal animation gates on this; pulled
+  // out as $state so the marker per-frame projection can pass it in.
+  let reducedMotion = $state(prefersReducedMotion());
   const stopReducedMotionWatch = onReducedMotionChange((reduced) => {
+    reducedMotion = reduced;
     if (reduced && isPlaying) isPlaying = false;
   });
   let cleanup: (() => void) | undefined;
@@ -3454,6 +3522,28 @@
         ctx2.lineWidth = 1.5;
         ctx2.stroke();
       }
+
+      // GH #107 — phase marker projection (2D view). Same shape as
+      // the 3D path above; markers render as HTML overlays positioned
+      // by eciKmToCanvas2dPx output. Skipped for non-Moon missions.
+      if (isMoonMission && phaseMarkers.length > 0) {
+        const view2d = {
+          canvasWidth: W,
+          canvasHeight: H,
+          baseScale2dPerAu: BASE_SCALE_2D,
+        };
+        const simMet = simDay - mission.timeline.dep_day;
+        const next: PhaseMarkerRenderState[] = phaseMarkers.map((mk) => ({
+          event: mk.event,
+          scienceRef: mk.scienceRef,
+          screen: eciKmToCanvas2dPx(mk.posKm, view2d),
+          reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+          eventLabel: defaultEventLabel(mk.event.type),
+        }));
+        phaseMarkerScreens = next;
+      } else if (!isMoonMission && phaseMarkerScreens.length > 0) {
+        phaseMarkerScreens = [];
+      }
     }
 
     const onResize = () => {
@@ -4028,6 +4118,41 @@
         } else {
           renderer.render(scene, camera);
         }
+        // GH #107 — phase marker projection (3D view). Compute pixel
+        // positions for every event marker against the active cislunar
+        // camera + canvas size, then write the resulting
+        // PhaseMarkerRenderState[] in a single $state.raw assignment so
+        // the template re-renders once per frame.
+        if (viewMode === 'cislunar' && phaseMarkers.length > 0 && container) {
+          const cw = container.clientWidth;
+          const ch = container.clientHeight;
+          const simMet = simDay - mission.timeline.dep_day;
+          const factory = (x: number, y: number, z: number): MinimalProjector => {
+            const v = new THREE.Vector3(x, y, z);
+            return {
+              project(cam) {
+                v.project(cam as unknown as THREE.Camera);
+                return v;
+              },
+            };
+          };
+          const next: PhaseMarkerRenderState[] = phaseMarkers.map((m) => ({
+            event: m.event,
+            scienceRef: m.scienceRef,
+            screen: eciKmToScreenPx(
+              m.posKm,
+              factory,
+              cislunarCamera,
+              cw,
+              ch,
+            ),
+            reveal: markerStateFor(m.event.met_days ?? 0, simMet, { reducedMotion }),
+            eventLabel: defaultEventLabel(m.event.type),
+          }));
+          phaseMarkerScreens = next;
+        } else if (viewMode === 'heliocentric' && phaseMarkerScreens.length > 0) {
+          phaseMarkerScreens = [];
+        }
       } else draw2d();
     };
     animate(performance.now());
@@ -4112,6 +4237,27 @@
     class:hidden={view !== '2d'}
     aria-label={m.fly_canvas_aria_2d()}
   ></canvas>
+
+  <!-- GH #107 — phase marker overlay. Renders one PhaseMarkerLabel per
+       event on the cislunar trajectory, positioned at the projected
+       (screen.x, screen.y) computed each frame in the animate loop.
+       Same overlay covers both 3D and 2D views (the projection helper
+       chosen per-frame determines which path's coordinates feed
+       phaseMarkerScreens). Hidden entirely off Moon missions. -->
+  {#if isMoonMission && phaseMarkerScreens.length > 0}
+    <div class="phase-markers-overlay" data-testid="phase-markers-overlay">
+      {#each phaseMarkerScreens as marker (marker.event.type + '@' + (marker.event.met_days ?? 0))}
+        <PhaseMarkerLabel
+          screenX={marker.screen.x}
+          screenY={marker.screen.y}
+          onScreen={marker.screen.onScreen}
+          eventLabel={marker.eventLabel}
+          scienceRef={marker.scienceRef}
+          reveal={marker.reveal}
+        />
+      {/each}
+    </div>
+  {/if}
 
   <!-- Hidden render-state hook (Layer 2 of /fly validation strategy,
        ADR-030 follow-up). Mirrors the live spacecraft + arc + HUD state
@@ -4568,6 +4714,16 @@
   }
   :global(.fly canvas) {
     display: block;
+  }
+  /* GH #107 — phase marker overlay sits over both 3D and 2D layers.
+     Pointer-events: none on the container so the underlying canvas
+     still receives camera input; individual markers re-enable
+     pointer-events for their chip via the PhaseMarkerLabel CSS. */
+  .phase-markers-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 11;
   }
 
   /* Flight Director banner anchor — bottom-left, just to the right of

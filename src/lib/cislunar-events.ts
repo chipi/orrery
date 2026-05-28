@@ -35,21 +35,13 @@ export interface ScienceRef {
   slug: string;
 }
 
-// Event types that can appear in `flight.events[].type` per the schema.
-// Mirrors the mission.schema.json enum + the cislunar additions from
-// ADR-058 (parking_orbit_exit, loi, tei, descent_start, ascent).
-export type FlightEventType =
-  | 'launch'
-  | 'parking_orbit_exit'
-  | 'tli_or_tmi'
-  | 'tcm'
-  | 'loi'
-  | 'descent_start'
-  | 'ascent'
-  | 'tei'
-  | 'earth_return'
-  | 'flyby'
-  | 'arrival';
+// Re-export the canonical union from src/types/mission.ts (matches the
+// mission.schema.json enum) so cislunar-events and the rest of the
+// app agree on the same set of event types. The science-ref map only
+// has entries for the cislunar-relevant subset; unmapped types
+// (anomaly, edl_or_oi when used for Mars) get scienceRefsFor → [].
+export type { FlightEventType } from '$types/mission';
+import type { FlightEventType } from '$types/mission';
 
 export interface FlightEvent {
   type: FlightEventType;

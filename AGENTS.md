@@ -244,7 +244,14 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── playwright.config.ts
 └── .github/workflows/
     ├── ci.yml
-    └── preview.yml
+    ├── e2e.yml
+    ├── docker-e2e.yml         # docker-stack e2e + GHCR publish (ADR-066, #260)
+    ├── deploy-docs.yml        # docs site, CI-gated (ADR-070)
+    ├── preview.yml            # full app+docs, e2e-gated (ADR-070)
+    ├── deploy-prod.yml        # tailnet VPS deploy, manual (#260)
+    ├── refresh-launches.yml   # cron — launches.json refresh
+    ├── regen-snapshots.yml    # manual — visual-baseline regen
+    └── release.yml            # tag → GitHub Release
 ```
 
 ---

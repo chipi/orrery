@@ -4267,7 +4267,12 @@
        chosen per-frame determines which path's coordinates feed
        phaseMarkerScreens). Hidden entirely off Moon missions. -->
   {#if isMoonMission && phaseMarkerScreens.length > 0}
-    <div class="phase-markers-overlay" data-testid="phase-markers-overlay">
+    <div
+      class="phase-markers-overlay"
+      data-testid="phase-markers-overlay"
+      data-marker-count={phaseMarkerScreens.length}
+      data-on-screen-count={phaseMarkerScreens.filter((m) => m.screen.onScreen).length}
+    >
       {#each phaseMarkerScreens as marker (marker.event.type + '@' + (marker.event.met_days ?? 0))}
         <PhaseMarkerLabel
           screenX={marker.screen.x}

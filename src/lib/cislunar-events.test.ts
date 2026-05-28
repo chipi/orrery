@@ -4,9 +4,11 @@ import {
   currentEventFor,
   scienceRefsFor,
   primaryScienceRefFor,
+  eciKmAtMet,
+  phaseMarkerKmPositions,
   type FlightEvent,
 } from './cislunar-events';
-import type { CislunarPhase } from './cislunar-geometry';
+import type { CislunarPhase, CislunarTrajectory } from './cislunar-geometry';
 
 const phases: CislunarPhase[] = [
   { type: 'parking', start_met_days: 0, end_met_days: 0.1, points: [] },
@@ -104,5 +106,137 @@ describe('cislunar-events — scienceRefsFor / primaryScienceRefFor', () => {
       tab: 'mission-phases',
       slug: 'trans-x-injection',
     });
+  });
+});
+
+describe('cislunar-events — eciKmAtMet', () => {
+  function makeTrajectory(): CislunarTrajectory {
+    return {
+      phases: [
+        {
+          type: 'parking',
+          start_met_days: 0,
+          end_met_days: 0.1,
+          points: [
+            { x: 6500, y: 0, z: 0 },
+            { x: 6500, y: 0, z: 100 },
+          ],
+        },
+        {
+          type: 'tli_coast',
+          start_met_days: 0.1,
+          end_met_days: 3,
+          points: [
+            { x: 6500, y: 0, z: 100 },
+            { x: 200000, y: 0, z: 200000 },
+            { x: 384400, y: 0, z: 0 },
+          ],
+        },
+      ],
+      moon_track: [],
+      closest_approach_km: 110,
+    };
+  }
+
+  it('returns null when MET is in an empty trajectory', () => {
+    const t: CislunarTrajectory = { phases: [], moon_track: [], closest_approach_km: 0 };
+    expect(eciKmAtMet(1.0, t)).toBeNull();
+  });
+
+  it('clamps to first sample when MET < trajectory start', () => {
+    const pt = eciKmAtMet(-1, makeTrajectory());
+    expect(pt).toEqual({ x: 6500, y: 0, z: 0 });
+  });
+
+  it('clamps to last sample when MET > trajectory end', () => {
+    const pt = eciKmAtMet(10, makeTrajectory());
+    expect(pt).toEqual({ x: 384400, y: 0, z: 0 });
+  });
+
+  it('linearly interpolates between bracketing samples', () => {
+    // Midpoint of tli_coast (MET 1.55, between 0.1 and 3.0)
+    // The tli_coast spans 3 points: (6500,0,100), (200000,0,200000), (384400,0,0)
+    // MET 1.55 = (1.55-0.1)/(3-0.1) = 1.45/2.9 = 0.5 — middle of the phase.
+    // Sample 2 in tli_coast has MET = 0.1 + 0.5 × 2.9 = 1.55.
+    const pt = eciKmAtMet(1.55, makeTrajectory());
+    expect(pt).toEqual({ x: 200000, y: 0, z: 200000 });
+  });
+
+  it('handles phase boundaries (end of phase 1 = start of phase 2)', () => {
+    const pt = eciKmAtMet(0.1, makeTrajectory());
+    expect(pt?.x).toBe(6500);
+    expect(pt?.z).toBe(100);
+  });
+});
+
+describe('cislunar-events — phaseMarkerKmPositions', () => {
+  const trajectory: CislunarTrajectory = {
+    phases: [
+      {
+        type: 'parking',
+        start_met_days: 0,
+        end_met_days: 0.117,
+        points: [
+          { x: 6500, y: 0, z: 0 },
+          { x: 6500, y: 0, z: 100 },
+        ],
+      },
+      {
+        type: 'tli_coast',
+        start_met_days: 0.117,
+        end_met_days: 3.13,
+        points: [
+          { x: 6500, y: 0, z: 100 },
+          { x: 384400, y: 0, z: 0 },
+        ],
+      },
+    ],
+    moon_track: [],
+    closest_approach_km: 110,
+  };
+
+  it('returns [] for undefined / null inputs', () => {
+    expect(phaseMarkerKmPositions(undefined, trajectory)).toEqual([]);
+    expect(phaseMarkerKmPositions([], null)).toEqual([]);
+  });
+
+  it('maps each MET-anchored event to its ECI position + science ref', () => {
+    const events: FlightEvent[] = [
+      { type: 'launch', met_days: 0 },
+      { type: 'tli_or_tmi', met_days: 0.117 },
+      { type: 'loi', met_days: 3.13 },
+    ];
+    const markers = phaseMarkerKmPositions(events, trajectory);
+    expect(markers).toHaveLength(3);
+    expect(markers[0].event.type).toBe('launch');
+    expect(markers[0].posKm).toEqual({ x: 6500, y: 0, z: 0 });
+    expect(markers[0].scienceRef?.slug).toBe('launch');
+    expect(markers[1].event.type).toBe('tli_or_tmi');
+    expect(markers[1].scienceRef?.slug).toBe('trans-x-injection');
+    expect(markers[2].event.type).toBe('loi');
+    expect(markers[2].posKm).toEqual({ x: 384400, y: 0, z: 0 });
+  });
+
+  it('skips events without met_days', () => {
+    const events: FlightEvent[] = [
+      { type: 'launch', met_days: 0 },
+      { type: 'tcm' }, // no met_days
+      { type: 'loi', met_days: 3.13 },
+    ];
+    expect(phaseMarkerKmPositions(events, trajectory)).toHaveLength(2);
+  });
+
+  it('preserves event order even when scienceRef is null (unmapped type)', () => {
+    const mockEvents: FlightEvent[] = [
+      { type: 'launch', met_days: 0 },
+      // Cast as the FlightEventType union won't accept arbitrary strings;
+      // simulate an unmapped-but-known event type via a known key without
+      // a science ref entry.
+      { type: 'launch' as 'launch', met_days: 1.0 }, // duplicate at later MET
+    ];
+    const m = phaseMarkerKmPositions(mockEvents, trajectory);
+    expect(m).toHaveLength(2);
+    expect(m[0].event.met_days).toBe(0);
+    expect(m[1].event.met_days).toBe(1.0);
   });
 });

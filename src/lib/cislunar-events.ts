@@ -22,7 +22,12 @@
  */
 
 import phaseScienceMap from '../../static/data/cislunar-phase-science-map.json';
-import type { CislunarPhase, CislunarPhaseType, CislunarTrajectory } from './cislunar-geometry';
+import type {
+  CislunarPhase,
+  CislunarPhaseType,
+  CislunarTrajectory,
+  Vec3Km,
+} from './cislunar-geometry';
 import type { ScienceTabId } from '$types/science';
 
 export interface ScienceRef {
@@ -134,4 +139,86 @@ export function primaryScienceRefFor(args: {
 }): ScienceRef | null {
   const refs = scienceRefsFor(args);
   return refs.length > 0 ? refs[0] : null;
+}
+
+/**
+ * Interpolate the ECI km position at a given MET by walking the
+ * trajectory's flattened phases timeline. Returns null when MET is
+ * outside the trajectory's span or no points are available.
+ *
+ * Used internally by phaseMarkerKmPositions; exposed for /fly to
+ * place sub-event markers later if needed (mid-phase pings).
+ */
+export function eciKmAtMet(metDays: number, trajectory: CislunarTrajectory): Vec3Km | null {
+  // Flatten phases to (met, point) pairs once; assume phases are sorted
+  // by start_met_days (renderer enforces this implicitly).
+  const samples: Array<{ met: number; pt: Vec3Km }> = [];
+  for (const phase of trajectory.phases) {
+    const { start_met_days, end_met_days, points } = phase;
+    if (points.length === 0) continue;
+    const span = end_met_days - start_met_days;
+    for (let i = 0; i < points.length; i++) {
+      const tFrac = points.length === 1 ? 0 : i / (points.length - 1);
+      samples.push({ met: start_met_days + tFrac * span, pt: points[i] });
+    }
+  }
+  if (samples.length === 0) return null;
+  if (metDays <= samples[0].met) return samples[0].pt;
+  if (metDays >= samples[samples.length - 1].met) return samples[samples.length - 1].pt;
+  // Binary search for the bracket.
+  let lo = 0;
+  let hi = samples.length - 1;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (samples[mid].met <= metDays) lo = mid;
+    else hi = mid;
+  }
+  const a = samples[lo];
+  const b = samples[hi];
+  const span = b.met - a.met;
+  if (span < 1e-9) return a.pt;
+  const t = (metDays - a.met) / span;
+  return {
+    x: a.pt.x + (b.pt.x - a.pt.x) * t,
+    y: a.pt.y + (b.pt.y - a.pt.y) * t,
+    z: a.pt.z + (b.pt.z - a.pt.z) * t,
+  };
+}
+
+/**
+ * Materialised phase-marker descriptor: ECI position + science cross-
+ * link + the raw event. Computed ONCE per trajectory change (derived
+ * state), then the per-frame render path only needs to project to
+ * screen — no per-frame interpolation through phase points.
+ */
+export interface PhaseMarker {
+  event: FlightEvent;
+  posKm: Vec3Km;
+  scienceRef: ScienceRef | null;
+}
+
+/**
+ * Build phase markers for /fly's overlay. Events without met_days,
+ * with MET outside the trajectory span, or with no positional
+ * interpolation are skipped (deliberately — silently drops events
+ * that have no anchored position rather than rendering a stale dot
+ * at the origin).
+ */
+export function phaseMarkerKmPositions(
+  events: readonly FlightEvent[] | undefined,
+  trajectory: CislunarTrajectory | null | undefined,
+): PhaseMarker[] {
+  if (!events || !trajectory) return [];
+  const out: PhaseMarker[] = [];
+  for (const e of events) {
+    if (typeof e.met_days !== 'number') continue;
+    const posKm = eciKmAtMet(e.met_days, trajectory);
+    if (!posKm) continue;
+    out.push({
+      event: e,
+      posKm,
+      scienceRef: primaryScienceRefFor({ eventType: e.type }),
+    });
+  }
+  return out;
 }

@@ -48,6 +48,8 @@
   } from '$lib/cislunar-geometry';
   import {
     phaseMarkerKmPositions,
+    currentPhaseFor,
+    primaryScienceRefFor,
     type PhaseMarker,
     type ScienceRef,
   } from '$lib/cislunar-events';
@@ -663,6 +665,27 @@
           ? m.fly_phase_return()
           : m.fly_phase_arrived(),
   );
+
+  // GH #107 — science chip on the HUD phase pill.
+  // For Moon missions: derive the precise cislunar phase from
+  // currentPhaseFor(simMet, trajectory) and look up the matching
+  // /science section via primaryScienceRefFor. Falls back to a
+  // coarse map for heliocentric / non-cislunar phases.
+  let phaseScienceRef: ScienceRef | null = $derived.by(() => {
+    if (isMoonMission && cislunarTrajectory) {
+      const simMet = simDay - mission.timeline.dep_day;
+      const cur = currentPhaseFor(simMet, cislunarTrajectory);
+      if (cur) {
+        return primaryScienceRefFor({ phaseType: cur.type });
+      }
+    }
+    // Coarse heliocentric map. Each entry returns the closest /science
+    // explainer for the current journey state.
+    if (phase === 'pre-launch') return { tab: 'mission-phases', slug: 'launch' };
+    if (phase === 'outbound') return { tab: 'transfers', slug: 'transfer-ellipse' };
+    if (phase === 'return') return { tab: 'mission-phases', slug: 'edl' };
+    return { tab: 'mission-phases', slug: 'edl' }; // arrived
+  });
 
   // ─── Live derived navigation values ──────────────────────────────
   // Pure functions in fly-physics.ts (v0.2.0 / ADR-030).
@@ -4139,13 +4162,7 @@
           const next: PhaseMarkerRenderState[] = phaseMarkers.map((m) => ({
             event: m.event,
             scienceRef: m.scienceRef,
-            screen: eciKmToScreenPx(
-              m.posKm,
-              factory,
-              cislunarCamera,
-              cw,
-              ch,
-            ),
+            screen: eciKmToScreenPx(m.posKm, factory, cislunarCamera, cw, ch),
             reveal: markerStateFor(m.event.met_days ?? 0, simMet, { reducedMotion }),
             eventLabel: defaultEventLabel(m.event.type),
           }));
@@ -4301,7 +4318,16 @@
       data-testid="mission-name"
     >
       <span class="hud-title">{mission.name}</span>
-      <span class="hud-phase phase-{phase}">{phaseLabel}</span>
+      <span class="hud-phase phase-{phase}" data-testid="hud-phase-pill">
+        {phaseLabel}
+        {#if phaseScienceRef}
+          <ScienceChip
+            tab={phaseScienceRef.tab}
+            section={phaseScienceRef.slug}
+            label={phaseLabel}
+          />
+        {/if}
+      </span>
       {#if mission.name === 'ORRERY DEMO'}
         <p class="hud-demo-hint">{m.fly_demo_hint()}</p>
         <a href="{base}/plan" class="hud-demo-cta">{m.fly_demo_cta()}</a>

@@ -23,9 +23,10 @@
 
 import phaseScienceMap from '../../static/data/cislunar-phase-science-map.json';
 import type { CislunarPhase, CislunarPhaseType, CislunarTrajectory } from './cislunar-geometry';
+import type { ScienceTabId } from '$types/science';
 
 export interface ScienceRef {
-  tab: string;
+  tab: ScienceTabId;
   slug: string;
 }
 

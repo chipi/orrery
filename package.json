@@ -64,7 +64,7 @@
     "images:hotspots": "tsx scripts/fetch-hotspot-imagery.ts",
     "fetch:launches": "tsx scripts/fetch-launches.ts",
     "audit:launches": "tsx scripts/audit-report-launches.ts",
-    "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && npm run check-tech-bom",
+    "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && tsx scripts/cislunar/check-science-map-refs.ts && npm run check-tech-bom",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
     "docs:dev": "vitepress dev docs",

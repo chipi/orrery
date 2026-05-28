@@ -1,8 +1,10 @@
 # Deploy orrery to prod VPS — operator runbook
 
-GH #260 phase 1 (tailnet-only). Standing orrery up on the existing always-on Hetzner VPS that also hosts podcast_scraper.
+GH #260 phase 1 (tailnet-only) + #261 thin-deploy pivot. Standing orrery up on the existing always-on Hetzner VPS that also hosts podcast_scraper.
 
 Phase 2 (public DNS + TLS) is **deferred** — see #260 §"Phase 2".
+
+The deploy workflow follows the same ownership split as podcast_scraper: **cloud-init owns bootstrap** (runs as root, once, at VPS first-boot), **the workflow owns deploy** (runs as `deploy`, idempotent, every push).
 
 ---
 
@@ -39,35 +41,37 @@ Co-tenancy is enforced by four mechanics:
 
 ---
 
-## VPS prerequisites — already satisfied by podcast_scraper
+## VPS prerequisites — owned by podcast_scraper cloud-init
 
-orrery rides on the existing tailnet node where podcast_scraper runs. The following are already in place via podcast_scraper's Terraform / cloud-init in its own repo:
+orrery rides on the existing tailnet node where podcast_scraper runs. The following are owned by podcast_scraper's Terraform / cloud-init in its own repo. Some pre-existed (✅); two were added for orrery (➕, tracked under chipi/podcast_scraper#834 + #261-Move-1):
 
 - ✅ VPS provisioned (Hetzner CAX) with tailnet identity registered
 - ✅ `deploy@` user exists, in the `docker` group
-- ✅ `deploy@` `~/.ssh/authorized_keys` includes the deploy key matching `PROD_SSH_PRIVATE_KEY`
 - ✅ Docker engine + `docker compose` plugin installed
 - ✅ Hetzner firewall: 22/SSH + ICMP only; all other ports private
+- ➕ `deploy@` `~/.ssh/authorized_keys` includes the orrery deploy pubkey matching `PROD_SSH_PRIVATE_KEY` (in addition to the pre-existing podcast_scraper deploy key)
+- ➕ `/srv/orrery/` exists as a `deploy:deploy`-owned git checkout of `chipi/orrery` `main`
 
-orrery adds **zero** to that list. The deploy workflow handles everything else idempotently on each run.
+The reason the last two ride in podcast_scraper's cloud-init: terraform owns the VPS state. An imperative `mkdir + cat >> authorized_keys` from this repo would be overwritten on the next `tofu apply`. Doing it via the cloud-init that already templates the host keeps it durable across VPS rebuilds.
+
+orrery adds **zero ad-hoc steps** at deploy time. The workflow assumes the checkout exists and just `git fetch+reset --hard origin/main`s.
 
 ---
 
-## Zero-touch first deploy
+## The deploy flow
 
-The deploy workflow auto-bootstraps `/srv/orrery/` on first run:
+After the prereqs above land, every deploy is just:
 
 1. SSHes into VPS as `deploy@`
-2. Clones the repo into `/srv/orrery` if missing
-3. Scaffolds `/srv/orrery/.env` if missing (with `ORRERY_PORT=8090` + `COMPOSE_PROJECT_NAME=orrery`)
-4. Rewrites `ORRERY_PIPELINE_IMAGE_TAG` to the current deploy SHA
-5. Rsyncs the CI-built `build/` into `/srv/orrery/build/`
-6. `git pull` + `docker compose pull web pipeline-runner` + `docker compose up -d web`
-7. Loopback healthcheck on `:ORRERY_PORT`
-8. `tailscale serve --bg --https=8443 8090` (registers if not already; no-op if already registered to the right backend)
-9. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
+2. Rsyncs the CI-built `build/` into `/srv/orrery/build/` (the static-bundle deploy artefact — ADR-063)
+3. `git fetch --depth=50 origin main` + `git reset --hard origin/main` — brings the on-VPS checkout in lockstep with the deploying commit
+4. `ORRERY_PIPELINE_IMAGE_TAG=sha-<7> docker compose --env-file compose/.env.prod pull web pipeline-runner` — shell env overrides the `:main` fallback in the committed `compose/.env.prod`
+5. `docker compose --env-file compose/.env.prod up -d web` — brings up nginx (pipeline-runner stays `profiles: manual`, invoked on-demand)
+6. Loopback healthcheck on `:ORRERY_PORT` (read from `compose/.env.prod`)
+7. `tailscale serve --bg --https=8443 8090` (registers if not already; no-op if already registered to the right backend)
+8. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
 
-**No sudo. No systemd touch. No `/usr/local/sbin` writes.** All operations run as the `deploy@` user. The whole bootstrap surface is captured in `.github/workflows/deploy-prod.yml`.
+**No sudo. No `.env` scaffolding. No `mkdir`.** All operations run as the `deploy@` user. The `compose/.env.prod` file (with `COMPOSE_PROJECT_NAME=orrery`, `ORRERY_PORT=8090`, `ORRERY_PIPELINE_IMAGE_TAG=main`) is committed to the repo and arrives via the `git reset --hard` step — no per-deploy file mutation on the VPS.
 
 ---
 
@@ -151,10 +155,10 @@ The workflow:
 3. Resolves the target image SHA (defaults to current main HEAD short).
 4. Builds the static bundle on the runner (`npm ci && npm run build`).
 5. Joins the tailnet.
-6. Installs the SSH key.
-7. Updates `/srv/orrery/.env` with the resolved image tag (idempotent).
-8. Rsyncs `build/` to `/srv/orrery/build/`.
-9. SSH'es in: `git pull` + `docker compose pull web pipeline-runner` + `docker compose up -d web` + loopback healthcheck on `:ORRERY_PORT`.
+6. Installs the SSH key (validates it's a loadable OpenSSH PEM before continuing).
+7. Rsyncs `build/` to `/srv/orrery/build/`.
+8. SSH'es in: `git fetch + reset --hard origin/main` + `ORRERY_PIPELINE_IMAGE_TAG=sha-X docker compose --env-file compose/.env.prod pull/up web` + loopback healthcheck on `:ORRERY_PORT`.
+9. Registers `tailscale serve --bg --https=8443 8090` (idempotent — no-op if already pointed at the right backend).
 10. External healthcheck over tailnet at `https://<PROD_TAILNET_FQDN>:8443/`.
 
 Total: ~3–5 min for a no-op deploy, ~5–7 min when the pipeline-runner image is a fresh SHA (new layers to pull).

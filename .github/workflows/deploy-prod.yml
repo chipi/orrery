@@ -1,27 +1,42 @@
 name: Deploy to prod VPS (orrery)
 
-# GH #260 phase 1 (tailnet-only). Deploys orrery to the Hetzner VPS that
-# also hosts podcast_scraper, via Tailscale SSH.
+# GH #260 phase 1 (tailnet-only) + #261 thin-deploy pivot. Deploys
+# orrery to the Hetzner VPS that also hosts podcast_scraper, via
+# Tailscale SSH.
 #
-# Manual-trigger only at first land. After the operator's first VPS
-# bootstrap + a few green manual runs, add the `workflow_run: [docker-e2e]`
-# trigger to complete the GitOps deploy loop. Until then, `workflow_dispatch`
-# is the only entry.
+# Ownership split (mirrors podcast_scraper exactly — see #261):
+#   - **Bootstrap** (creating /srv/orrery as deploy-owned, initial
+#     git clone) lives in podcast_scraper's cloud-init, runs as root
+#     at VPS first-boot. NOT in this workflow.
+#   - **Deploy** (this workflow) assumes /srv/orrery already exists
+#     as a deploy@-owned git checkout. It just `git fetch+reset`s
+#     and `docker compose`s. Runs as `deploy`, idempotent.
+#   - **Static-bundle delivery** stays in this workflow (rsync
+#     build/ to VPS) — per ADR-063 the web container is stock
+#     nginx:alpine + bind-mount of build/, and CI is the only place
+#     Node runs.
 #
-# Operator prerequisites (set on the canonical repo, settings → secrets/vars):
-#   - secrets.TS_AUTHKEY              — tailnet auth key with tag:gha-deployer
-#   - secrets.PROD_SSH_PRIVATE_KEY     — Ed25519 PEM for deploy@ user
-#                                        on the VPS
-#   - vars.PROD_TAILNET_FQDN          — e.g. "orrery-prod.<tailnet>.ts.net"
-#                                        (the host orrery shares with
-#                                        podcast_scraper)
+# Manual-trigger only at first land. After the operator's first
+# few green manual runs, add the `workflow_run: [docker-e2e]`
+# trigger to complete the GitOps deploy loop. Until then,
+# `workflow_dispatch` is the only entry.
 #
-# VPS prerequisites (one-time, see docs/ops/deploy-prod-vps.md):
-#   - /srv/orrery/ checkout
-#   - /srv/orrery/.env with ORRERY_PORT + COMPOSE_PROJECT_NAME=orrery
-#   - infra/cloud-init/orrery-tailscale-serve.sh installed as a systemd
-#     ExecStartPost on the tailscaled.service
+# Operator prerequisites (set on the canonical repo, settings →
+# environments → prod → secrets/vars):
+#   - secrets.TS_AUTHKEY              — tailnet auth key with
+#                                        tag:gha-deployer
+#   - secrets.PROD_SSH_PRIVATE_KEY     — Ed25519 PEM for deploy@
+#                                        user on the VPS
+#   - vars.PROD_TAILNET_FQDN          — e.g.
+#                                        "orrery-prod.<tailnet>.ts.net"
+#                                        (the host orrery shares
+#                                        with podcast_scraper)
+#
+# VPS prerequisites (one-time, owned by podcast_scraper cloud-init —
+# see docs/ops/deploy-prod-vps.md §"VPS prerequisites"):
+#   - /srv/orrery/ exists as a deploy:deploy-owned git checkout
 #   - deploy@ user can `docker compose ...` in /srv/orrery/
+#   - The orrery deploy pubkey is in deploy@'s authorized_keys
 
 on:
   workflow_dispatch:
@@ -142,47 +157,6 @@ jobs:
           ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
             >> ~/.ssh/known_hosts 2>/dev/null || true
 
-      - name: Bootstrap /srv/orrery on VPS (idempotent, zero sudo)
-        # First-deploy bootstrap: creates /srv/orrery checkout + .env
-        # template if absent. Re-runs are no-ops. Runs as `deploy@`
-        # user with NO sudo — keeps the manual-VPS-prereq surface
-        # to just (1) the existing deploy@ user, (2) docker group
-        # membership, and (3) authorized_keys. Both already exist
-        # on the shared VPS because podcast_scraper uses the same.
-        if: steps.preflight.outputs.skip != 'true'
-        env:
-          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
-        run: |
-          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
-            "set -euo pipefail; \
-             if [ ! -d /srv/orrery/.git ]; then \
-               mkdir -p /srv/orrery; \
-               git clone https://github.com/chipi/orrery.git /srv/orrery; \
-             fi; \
-             cd /srv/orrery; \
-             if [ ! -f .env ]; then \
-               printf '%s\n' 'COMPOSE_PROJECT_NAME=orrery' 'ORRERY_PORT=8090' 'ORRERY_PIPELINE_IMAGE_TAG=main' > .env; \
-               chmod 600 .env; \
-               echo 'first-deploy: scaffolded /srv/orrery/.env'; \
-             fi"
-
-      - name: Wire image tag into VPS .env (idempotent)
-        # Reused on every deploy. Prior ORRERY_PIPELINE_IMAGE_TAG line is
-        # removed before the new one is appended, so re-runs don't
-        # accumulate duplicates.
-        if: steps.preflight.outputs.skip != 'true'
-        env:
-          SHA_SHORT: ${{ steps.sha.outputs.short }}
-          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
-        run: |
-          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
-            "set -euo pipefail; cd /srv/orrery; \
-             sed -i '/^ORRERY_PIPELINE_IMAGE_TAG=/d' .env; \
-             echo 'ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}' >> .env; \
-             chmod 600 .env"
-
       - name: Rsync static bundle to VPS
         # ADR-063: web container is stock nginx:alpine + bind-mount of
         # ./build. CI builds, VPS rsyncs.
@@ -196,27 +170,36 @@ jobs:
                   -o StrictHostKeyChecking=accept-new -o BatchMode=yes" \
             build/ "${SSH_TARGET}:/srv/orrery/build/"
 
-      - name: Deploy (git pull repo + compose pull + compose up + healthcheck)
-        # Sequence:
-        #   1. `git pull` so compose file + tailscale-serve.sh on the
-        #      VPS match this commit's view of them.
+      - name: Deploy (fetch + reset + compose up + healthcheck)
+        # Mirror of podcast_scraper's deploy.sh — thin, idempotent,
+        # zero-bootstrap. Sequence:
+        #   1. `git fetch + reset --hard origin/main` brings the on-VPS
+        #      checkout in lockstep with this workflow's commit. Uses
+        #      reset --hard (not pull --ff-only) so any drift on the
+        #      VPS — e.g. operator-edited compose/.env.prod — is
+        #      discarded in favour of the repo source of truth.
         #   2. `docker compose pull` for the pinned pipeline-runner SHA.
-        #   3. `docker compose up -d` to bring up `web` (and ensure
-        #      pipeline-runner image is cached locally for `run` use).
-        #   4. Internal healthcheck via curl against the orrery port.
+        #      Shell env ORRERY_PIPELINE_IMAGE_TAG overrides the
+        #      `:main` fallback in compose/.env.prod.
+        #   3. `docker compose up -d web` brings up nginx (pipeline-runner
+        #      stays `profiles: manual` — invoked on-demand by cron).
+        #   4. Internal healthcheck against ORRERY_PORT.
         if: steps.preflight.outputs.skip != 'true'
         env:
+          SHA_SHORT: ${{ steps.sha.outputs.short }}
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
         run: |
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
             "set -euo pipefail; cd /srv/orrery; \
-             git pull --ff-only; \
-             docker compose -p orrery -f compose/docker-compose.prod.yml \
-               --env-file .env pull web pipeline-runner; \
-             docker compose -p orrery -f compose/docker-compose.prod.yml \
-               --env-file .env up -d web; \
-             PORT=\$(grep -E '^ORRERY_PORT=' .env | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
+             git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
+             git reset --hard origin/main; \
+             export ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}; \
+             docker compose -f compose/docker-compose.prod.yml \
+               --env-file compose/.env.prod pull web pipeline-runner; \
+             docker compose -f compose/docker-compose.prod.yml \
+               --env-file compose/.env.prod up -d web; \
+             PORT=\$(grep -E '^ORRERY_PORT=' compose/.env.prod | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
              PORT=\${PORT:-8090} ; \
              for i in \$(seq 1 30); do \
                if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
@@ -225,7 +208,7 @@ jobs:
                sleep 2; \
              done; \
              echo 'orrery web did not respond within 60s'; \
-             docker compose -p orrery -f compose/docker-compose.prod.yml logs web; \
+             docker compose -f compose/docker-compose.prod.yml logs web; \
              exit 1"
 
       - name: Register tailscale serve for orrery (idempotent, no sudo)
@@ -251,7 +234,7 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
             "set -euo pipefail; \
-             PORT=\$(grep -E '^ORRERY_PORT=' /srv/orrery/.env | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
+             PORT=\$(grep -E '^ORRERY_PORT=' /srv/orrery/compose/.env.prod | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
              PORT=\${PORT:-8090} ; \
              # Check if :8443 is already correctly pointed at the orrery port.
              # If yes, skip (idempotent). If no, register.

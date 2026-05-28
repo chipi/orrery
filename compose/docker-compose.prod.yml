@@ -27,13 +27,17 @@
 #     ADR-065 (live `/data` overlay; cron-driven pipeline writes,
 #     web reads on next request — no rebuild needed).
 #
-# Bring up:
-#   COMPOSE_PROJECT_NAME=orrery \
-#     ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
-#     docker compose -f compose/docker-compose.prod.yml pull
-#   COMPOSE_PROJECT_NAME=orrery \
-#     ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
-#     docker compose -f compose/docker-compose.prod.yml up -d
+# Bring up (from /srv/orrery on the VPS):
+#   ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
+#     docker compose -f compose/docker-compose.prod.yml \
+#       --env-file compose/.env.prod pull web pipeline-runner
+#   ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
+#     docker compose -f compose/docker-compose.prod.yml \
+#       --env-file compose/.env.prod up -d web
+#
+# Shell env var overrides the committed .env.prod default for the
+# image tag — that's how the deploy workflow rolls the SHA forward
+# without editing this file.
 
 services:
   web:
@@ -82,8 +86,13 @@ services:
       - .:/repo:ro
     environment:
       # No secrets by default — RFC-025 §3, ADR-067 / ADR-068 env vars
-      # set by the operator's /srv/orrery/.env (Sentry, Grafana Cloud)
-      # are env_file-loaded below.
+      # (Sentry, Grafana Cloud) are blank in phase 1. Wire later by
+      # adding an operator-staged `/srv/orrery/.env.secrets` as a
+      # second env_file with `required: false`.
       NODE_ENV: production
     env_file:
-      - .env
+      # Committed defaults (COMPOSE_PROJECT_NAME, ORRERY_PORT, image
+      # tag fallback). Tracked in repo so cloud-init + deploy stay
+      # symmetric with podcast_scraper. Path is relative to this
+      # compose file's directory.
+      - .env.prod

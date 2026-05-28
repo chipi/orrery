@@ -162,6 +162,83 @@ function validateFile(path: string, validator: ValidateFunction): void {
   }
 }
 
+// ADR-058 / GH #107 — Tier 2 cislunar trajectory consistency checks.
+// JSON Schema catches shape (array-of-4-tuple-of-number). The shape
+// alone permits malformed sequences (unsorted, missing launch anchor,
+// last-point past round-trip duration). These three invariants are
+// what the renderer's buildFromWaypoints assumes — violating any of
+// them produces a silently-wrong trajectory rather than a crash.
+//
+// Skipped when source_tier !== 'tier_2_published' or waypoints_km
+// absent (Tier 1 missions are parametric, no waypoint array).
+function checkCislunarWaypoints(file: string): void {
+  const m = readJson(file) as {
+    id?: string;
+    flight?: {
+      transit_days?: number;
+      arrival?: { type?: string };
+      cislunar_profile?: {
+        source_tier?: string;
+        waypoints_km?: Array<[number, number, number, number]>;
+      };
+    };
+  };
+  const profile = m.flight?.cislunar_profile;
+  if (!profile || profile.source_tier !== 'tier_2_published') return;
+  const wp = profile.waypoints_km;
+  if (!wp || wp.length < 2) {
+    failed++;
+    console.error(`\n  ✗ ${file}`);
+    console.error(
+      `      /flight/cislunar_profile tier_2_published requires waypoints_km with ≥2 entries`,
+    );
+    return;
+  }
+  const violations: string[] = [];
+  // Sort: strictly increasing met_days.
+  for (let i = 1; i < wp.length; i++) {
+    if (wp[i][0] <= wp[i - 1][0]) {
+      violations.push(
+        `waypoints_km[${i}].met_days (${wp[i][0]}) must be > waypoints_km[${i - 1}].met_days (${wp[i - 1][0]})`,
+      );
+      break; // one error per file is enough; the operator can re-sort
+    }
+  }
+  // Endpoint 1: launch anchor at MET 0.
+  if (wp[0][0] !== 0) {
+    violations.push(`waypoints_km[0].met_days must be 0 (launch), got ${wp[0][0]}`);
+  }
+  // Endpoint 2: last sample within mission window.
+  // Round-trip missions (return.type=tei_*) cap at 2× transit_days; one-way at 1×.
+  // transit_days is the outbound-only duration in the mission schema.
+  const transit = m.flight?.transit_days;
+  if (typeof transit === 'number' && transit > 0) {
+    const isRoundTrip = m.flight?.arrival?.type === 'landing' || profile['return' as never];
+    const cap = isRoundTrip ? transit * 2 : transit;
+    const lastMet = wp[wp.length - 1][0];
+    if (lastMet > cap * 1.05) {
+      // 5% slack: real missions overrun the nominal transit slightly
+      // (Apollo 11's actual mission was 8.13d vs nominal ~8d). Hard
+      // failure only when last point is implausibly far past.
+      violations.push(
+        `waypoints_km[last].met_days (${lastMet}) exceeds transit_days*${isRoundTrip ? 2 : 1} × 1.05 (${cap * 1.05})`,
+      );
+    }
+  }
+  // Budget: GH #107 specifies ~50-100 waypoints. Hard cap at 200 to
+  // catch accidental over-sampling (memory + render cost).
+  if (wp.length > 200) {
+    violations.push(`waypoints_km has ${wp.length} entries; cap is 200`);
+  }
+  if (violations.length > 0) {
+    failed++;
+    console.error(`\n  ✗ ${file}`);
+    for (const v of violations) console.error(`      ${v}`);
+  } else {
+    passed++;
+  }
+}
+
 /** Every subdirectory of `missions/` (excludes loose files like index.json). */
 function listMissionDataDirs(): string[] {
   const root = join(DATA_ROOT, 'missions');
@@ -324,6 +401,7 @@ const missionFleetRefs = new Map<string, FleetRef[]>();
 for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
+    checkCislunarWaypoints(file);
     try {
       const mission = readJson(file) as { id: string; fleet_refs?: FleetRef[] };
       missionIds.add(mission.id);

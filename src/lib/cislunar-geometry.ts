@@ -365,7 +365,23 @@ export function spiralLunar(
  *  the origin; the function solves the second focus in 2D and projects
  *  back to 3D. Same focus-finding method as transferEllipse() in
  *  src/lib/mission-arc.ts but Earth-centric instead of heliocentric. */
-function keplerianArcEarthFocus(p1: Vec3Km, p2: Vec3Km, steps: number): Vec3Km[] {
+/**
+ * Sample `steps + 1` points along an Earth-focused Keplerian arc from
+ * `p1` to `p2`. Both endpoints are in ECI km. The returned array starts
+ * with `p1` and ends with `p2` (endpoints pinned exactly to avoid
+ * floating-point drift biting downstream consumers).
+ *
+ * Used internally by `translunarCoast` + `transEarthCoast`; exported
+ * for the GH #107 hybrid Tier 2 Apollo waypoints work, which anchors
+ * NASA-published state vectors at phase boundaries (launch, TLI cutoff,
+ * LOI, TEI, reentry) and fills the ~10 between-anchor samples per gap
+ * via this primitive. The anchors carry the published reality; the
+ * interpolation between is physics-correct by construction.
+ *
+ * For lunar-orbit segments (LOI → TEI on Apollo) use `lunarOrbit`
+ * instead — the focus is the Moon, not Earth.
+ */
+export function keplerianArcEarthFocus(p1: Vec3Km, p2: Vec3Km, steps: number): Vec3Km[] {
   const r1 = Math.hypot(p1.x, p1.y, p1.z);
   const r2 = Math.hypot(p2.x, p2.y, p2.z);
   const a = (r1 + r2) / 2;

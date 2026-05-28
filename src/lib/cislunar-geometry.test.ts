@@ -8,8 +8,10 @@ import {
   parkingOrbit,
   translunarCoast,
   transEarthCoast,
+  keplerianArcEarthFocus,
   buildCislunarTrajectory,
   type CislunarProfile,
+  type Vec3Km,
 } from './cislunar-geometry';
 
 describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
@@ -230,6 +232,57 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
       expect(traj.phases.length).toBe(1);
       expect(traj.phases[0].points.length).toBe(wp.length);
       expect(traj.phases[0].points[0]).toEqual({ x: wp[0][1], y: wp[0][2], z: wp[0][3] });
+    });
+  });
+
+  // GH #107 — exported primitive for hybrid Tier 2 Apollo waypoint
+  // interpolation. Anchors (NASA-published) carry reality; this fills
+  // the gaps between with physics-correct samples.
+  describe('keplerianArcEarthFocus (exported primitive for #107)', () => {
+    it('starts at p1 and ends at p2 exactly (no FP drift on endpoints)', () => {
+      const p1: Vec3Km = { x: 6678, y: 0, z: 0 }; // LEO ~300 km altitude
+      const p2: Vec3Km = { x: 0, y: 0, z: 6678 }; // 90° around
+      const pts = keplerianArcEarthFocus(p1, p2, 10);
+      expect(pts[0]).toEqual(p1);
+      expect(pts[pts.length - 1]).toEqual(p2);
+    });
+
+    it('returns steps + 1 samples', () => {
+      const p1: Vec3Km = { x: 6678, y: 0, z: 0 };
+      const p2: Vec3Km = { x: 0, y: 0, z: 384400 };
+      for (const steps of [1, 5, 12, 50]) {
+        expect(keplerianArcEarthFocus(p1, p2, steps).length).toBe(steps + 1);
+      }
+    });
+
+    it('intermediate samples stay within both endpoint radii (no crashes into Earth, no escape past p2)', () => {
+      // TLI-ellipse approximation: perigee 6,478 km, apogee 384,400 km.
+      const p1: Vec3Km = { x: 6478, y: 0, z: 0 };
+      const p2: Vec3Km = { x: -384400, y: 0, z: 0 };
+      const pts = keplerianArcEarthFocus(p1, p2, 20);
+      const r1 = Math.hypot(p1.x, p1.y, p1.z);
+      const r2 = Math.hypot(p2.x, p2.y, p2.z);
+      const rMin = Math.min(r1, r2);
+      const rMax = Math.max(r1, r2);
+      for (let i = 1; i < pts.length - 1; i++) {
+        const r = Math.hypot(pts[i].x, pts[i].y, pts[i].z);
+        // Mild tolerance — the arc is an ellipse with foci at Earth +
+        // some second focus; semi-major = (r1 + r2) / 2 = 195,439 km.
+        // Apsides can exceed both endpoint radii by a small amount.
+        expect(r).toBeGreaterThanOrEqual(rMin * 0.99);
+        expect(r).toBeLessThanOrEqual(rMax * 1.05);
+      }
+    });
+
+    it('samples lie in the plane spanned by p1 and p2 (no out-of-plane drift)', () => {
+      const p1: Vec3Km = { x: 6478, y: 0, z: 0 };
+      const p2: Vec3Km = { x: -100000, y: 0, z: 350000 };
+      const pts = keplerianArcEarthFocus(p1, p2, 15);
+      // Normal to the (p1, p2, origin) plane is along ±y. Each sample's
+      // y must be ~0 to lie in the plane.
+      for (const p of pts) {
+        expect(Math.abs(p.y)).toBeLessThan(1e-6);
+      }
     });
   });
 });

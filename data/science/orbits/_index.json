@@ -9,6 +9,11 @@
     "keplers-laws",
     "apsides",
     "orbit-regimes",
-    "lagrange-points"
+    "lagrange-points",
+    "sun-synchronous",
+    "special-orbits",
+    "cislunar-orbits",
+    "disposal-end-of-life",
+    "space-debris"
   ]
 }

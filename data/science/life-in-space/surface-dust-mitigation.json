@@ -1,0 +1,35 @@
+{
+  "id": "surface-dust-mitigation",
+  "tab": "life-in-space",
+  "order": 26,
+  "photo": {
+    "src": "/images/science/surface-dust-cernan.jpg",
+    "credit": "NASA · Apollo 17 lunar module pilot Harrison Schmitt inside the LM after EVA, December 1972 — face and suit caked in lunar dust. Dust contamination was the single most underrated operational hazard of every Apollo mission."
+  },
+  "see_in_app": [
+    { "route": "/moon", "context_key": "Apollo landing sites — dust hazard was operational reality on every mission; Artemis EVA architecture is built around suitlock dust airlocks" },
+    { "route": "/mars", "context_key": "Mars regolith perchlorate hazard (Phoenix, Curiosity, Perseverance confirmations) drives dust-protocol design for crewed missions" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Apollo lunar dust lessons learned",
+      "u": "https://ntrs.nasa.gov/citations/20090029327",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Lunar regolith — dust hazard properties",
+      "u": "https://en.wikipedia.org/wiki/Lunar_regolith",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Mars perchlorate hazard analysis (Phoenix + MSL)",
+      "u": "https://ntrs.nasa.gov/citations/20160001833",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Electrostatic Dust Shield (ESD) — NASA mitigation tech",
+      "u": "https://en.wikipedia.org/wiki/Electrostatic_dust_shield",
+      "t": "deep"
+    }
+  ]
+}

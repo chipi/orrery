@@ -151,7 +151,9 @@
                   "loi",
                   "tei",
                   "descent_start",
-                  "ascent"
+                  "ascent",
+                  "separation",
+                  "phasing"
                 ]
               },
               "dv_km_s": {

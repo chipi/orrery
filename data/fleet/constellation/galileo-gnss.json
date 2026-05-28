@@ -1,0 +1,37 @@
+{
+  "id": "galileo-gnss",
+  "name": "Galileo (GNSS)",
+  "category": "constellation",
+  "agency": "ESA / EU Agency for the Space Programme (EUSPA)",
+  "country": "Multi (Europe)",
+  "manufacturer": "OHB System / Thales Alenia Space",
+  "first_flight": "2011-10-21",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Europe's civilian GNSS — 28 satellites at 23,222 km MEO / 56° inclination / 3 planes; designed for sub-metre positioning; full operational capability declared 2024",
+  "credit": "ESA / EUSPA Galileo programme. Civilian-managed (unlike GPS / GLONASS military operators); open + commercial + Public Regulated Service tiers.",
+  "links": [
+    {
+      "l": "Galileo (satellite navigation) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Galileo_(satellite_navigation)",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Galileo overview",
+      "u": "https://www.esa.int/Applications/Satellite_navigation/Galileo",
+      "t": "core"
+    },
+    {
+      "l": "EUSPA Galileo programme",
+      "u": "https://www.euspa.europa.eu/european-space/galileo",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "galileo"
+    }
+  ]
+}

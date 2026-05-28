@@ -1,0 +1,35 @@
+{
+  "id": "throttling-and-gimbaling",
+  "tab": "propulsion",
+  "order": 12,
+  "photo": {
+    "src": "/images/science/throttling-and-gimbaling-merlin-gimbal.jpg",
+    "credit": "SpaceX · Falcon 9 Merlin 1D engine gimbal pivot installation. Engine gimbaling — vectoring thrust by physically tilting the engine bell — is how every modern liquid rocket steers, and how Falcon 9 boosters can return to the launch pad."
+  },
+  "see_in_app": [
+    { "route": "/fleet", "context_key": "Throttle ranges by vehicle: Merlin 1D (40-100%), Raptor 2 (40-100%), RS-25 (67-109%, no shutdown-mid-burn), F-1 (no throttle), solid boosters (zero throttle, profile cast at manufacture)" },
+    { "route": "/missions", "context_key": "Apollo LM descent engine — throttled deep (10-65%) for the powered descent; landings on Moon and Mars rely on deep throttle to hover-then-touch" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Thrust vectoring",
+      "u": "https://en.wikipedia.org/wiki/Thrust_vectoring",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Variable thrust rocket engine (throttling)",
+      "u": "https://en.wikipedia.org/wiki/Variable_thrust_rocket_engine",
+      "t": "core"
+    },
+    {
+      "l": "NASA · RS-25 throttle envelope",
+      "u": "https://www.nasa.gov/wp-content/uploads/2018/06/rs-25_fact_sheet.pdf",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Apollo LM Descent Engine — deep-throttle development",
+      "u": "https://history.nasa.gov/SP-287/ch4.htm",
+      "t": "deep"
+    }
+  ]
+}

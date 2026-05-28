@@ -1,0 +1,47 @@
+{
+  "site": "chandrayaan3",
+  "intro": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole by any nation. The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Vikram lander + Pragyan rover",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/01.jpg",
+          "caption": "Chandrayaan-3 spacecraft stack during pre-launch integration at ISRO Sriharikota."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/02.jpg",
+          "caption": "Pragyan rover — 26 kg, solar-powered, 6-wheeled. Designed to drive across the lunar south-pole regolith looking for volatiles."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "July 14, 2023 — LVM3 from Satish Dhawan Space Centre",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/03.jpg",
+          "caption": "LVM3 (\"Bahubali\") launches Chandrayaan-3 — 40-day transit including multi-loop lunar capture, intentional slow trajectory to maximize fuel margin."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Shiv Shakti Point, near lunar south pole — landed August 23, 2023",
+      "images": [
+        {
+          "src": "/images/missions/chandrayaan3/04.jpg",
+          "caption": "Vikram lander on the south-polar surface — touchdown 69.37°S, the highest-latitude lunar landing ever performed."
+        },
+        {
+          "src": "/images/missions/chandrayaan3/05.jpg",
+          "caption": "Pragyan rover descending the ramp — first wheels at the lunar south pole, photographed by Vikram's onboard cameras."
+        }
+      ]
+    }
+  ]
+}

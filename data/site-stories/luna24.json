@@ -1,0 +1,47 @@
+{
+  "site": "luna24",
+  "intro": "Luna 24 landed in Mare Crisium on August 18, 1976 — the last Soviet (and last robotic) lunar sample-return mission of the 20th century, and the last lunar lander of any kind until China's Chang'e 3 in 2013. Drilled 2 m into the regolith, returned 170.1 g of samples to Earth, including evidence of lunar water ice (re-confirmed decades later by SOFIA + LCROSS). The Soviet lunar program ended here.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Soviet E-8-5M lander — improved sample-return rig",
+      "images": [
+        {
+          "src": "/images/missions/luna24/01.jpg",
+          "caption": "Luna 24 spacecraft on display at a Soviet space museum — descent stage + ascent vehicle + return capsule."
+        },
+        {
+          "src": "/images/missions/luna24/02.jpg",
+          "caption": "The drill mechanism — went 2 m deep, three times farther than Luna 16's 35 cm. Returned the deepest samples ever brought from another world."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Crisium — landed August 18, 1976",
+      "images": [
+        {
+          "src": "/images/missions/luna24/03.jpg",
+          "caption": "Mare Crisium landing site — Luna 24 touched down ~2 km from Luna 23's failed 1974 landing in the same region."
+        },
+        {
+          "src": "/images/missions/luna24/04.jpg",
+          "caption": "Return capsule in Siberia, August 22 1976 — last Soviet sample-return from beyond Earth orbit until VKS programs of the 2020s."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Water in the regolith — pre-confirmed",
+      "images": [
+        {
+          "src": "/images/missions/luna24/05.jpg",
+          "caption": "Re-analysis of Luna 24 samples in 1978 reported 0.1% water content — initially dismissed, confirmed by LCROSS impact + SOFIA in 2020."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "级 — 为何从无火箭以单级飞抵轨道",
+  "intro_sentence": "齐奥尔科夫斯基方程使单级入轨仅在干质量轻得不可能时才可行。历史上每个轨道运载器都至少抛掉一级。多数抛两级或三级。",
+  "body_paragraphs": [
+    "入轨质量比(从海岸发射点约9.4 km/s ∆v)在最好的化学发动机下约为12~15。这意味着假想的SSTO载具92~93%是推进剂;干质量 — 箱体、发动机、航电、载荷、回收硬件 — 必须挤在剩余7~8%。从未有人造出。1990年代X-33 / VentureStar SSTO计划在复合材料氢箱压力测试失败后关停。Skylon(英国、基于SABRE)仍在纸面上。Starship有时被描述为具备SSTO能力,但作为两级载具飞行有充分理由:抛掉助推器节省干质量,让上面级以更高TWR驱动的加速度继续。分级是把对数火箭方程从不可能变成只是困难的窍门。",
+    "两级架构是现代最低标配。Falcon 9(助推器 + 二级)、Falcon Heavy(三芯助推 + 二级)、Starship(Super Heavy + Starship)、Electron(煤油液氧一级 + 煤油液氧二级 + 有时一个Curie末级)、Neutron(规划)、Terran R(规划)。助推器在推力比Isp更重要的稠密低层大气中做重活;上面级在真空中以较低TWR运行,高Isp更有回报。为什么不用三级? 因为每个分级事件都是独立的故障模式(分离火工品、热分级羽流管理、级间段碎片),而现代发动机足够好,可一次完成上面级燃烧。例外通常是GTO或行星际任务,末级(Star 48、Briz-M、Fregat、YZ-1/2、作为第三级的Centaur)给出最终精密点火 — Voyager、New Horizons、Solar Orbiter、JUICE、所有火星车。",
+    "三级架构是Apollo时代的标准,因为当时的发动机产生的Isp或推力不足以直接降到两级。Saturn V:S-IC煤油液氧助推器(5台F-1、~2.5分钟)、S-II液氢液氧维持级(5台J-2、~6分钟)、S-IVB液氢液氧上面级(1台J-2、两次点火 — 一次圆化、一次跨月喷射)。Soyuz至今仍以三级加四个一级捆绑助推器飞行,这套1957年架构比载人航天本身还古老。中国的Long March 3B/E和Long March 5是2.5级(芯级 + 捆绑助推 + 上面级),配独立末级用于GEO/逃逸。印度的PSLV独树一帜为四级,固体和液体交替 — 来自1970年代一个没有任何单一推进剂家族能完成全部工作的计划遗产。",
+    "分级以三种方式之一发生。火工螺栓分离:爆炸螺栓起爆、弹簧推走耗尽的级、上面级在出现的间隙中点火。几乎所有人都使用(Soyuz、Atlas、Ariane、Long March)。Fire-in-the-hole / 热分级:上面级在分离*之前*点火、用其尾流吹走助推器。苏联(Soyuz、Proton)以及现在的SpaceX(Starship) — 上面级喷向级间段损失1~2% Isp,但消除分离过程中重力阻力吞噬速度的死时间。推动分级:下面级在上面级点火前给一个小反向点火以后退 — Falcon 9在MECO到二级点火之间本质上就是这样,加上回收助推器时的返回机动。每种是机械风险、重力损失、运行简便性之间不同的权衡。"
+  ],
+  "diagram_caption": "两级:现代最低标配(Falcon 9、Starship、Electron)。三级:Apollo时代 + Soyuz遗产(Saturn V、Soyuz、Long March 3B)。2.5级:芯级 + 捆绑助推(Long March 5、Ariane 5/6、Delta IV Heavy、SLS)。另加可选末级用于精密最终轨道(Star 48、Centaur、Fregat、Briz-M、YZ-1)。"
+}

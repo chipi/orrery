@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://orrery.local/schemas/launches-curation.schema.json",
+  "title": "Launches curation overrides (PRD-020 / RFC-023)",
+  "description": "Operator-edited override file. Force-promote launches to T1 (featured) or force-demote to T4 (demoted). Optional editorial_note flows through to the manifest entry for Orrery editorial voice on featured launches.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "featured", "demoted"],
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "featured": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Override" }
+    },
+    "demoted": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Override" }
+    }
+  },
+  "definitions": {
+    "Override": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["launch_id", "reason"],
+      "properties": {
+        "launch_id": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9][a-z0-9-]*-[a-z0-9][a-z0-9-]*(-[0-9]+)?$"
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "editorial_note": { "type": "string" },
+        "added_by": { "type": "string" },
+        "added_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

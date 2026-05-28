@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "thresholds": {
+    "soft_usd": 50,
+    "hard_usd": 200
+  },
+  "entries": [
+    {
+      "ts": "2026-05-22T09:15:12.164Z",
+      "scope": "backfill from image-vision.json sidecar (segments: fleet-galleries + hotspots)",
+      "images_processed": 601,
+      "images_cached": 0,
+      "cost_usd": 4.63,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-05-24T01:00:48.545Z",
+      "scope": "all",
+      "images_processed": 1363,
+      "images_cached": 750,
+      "cost_usd": 8.40441299999999,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-05-24T01:03:55.275Z",
+      "scope": "new-only",
+      "images_processed": 40,
+      "images_cached": 3,
+      "cost_usd": 0.24433199999999997,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-05-24T02:37:01.220Z",
+      "scope": "new-only segment=fleet-galleries",
+      "images_processed": 8,
+      "images_cached": 0,
+      "cost_usd": 0.055905,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}

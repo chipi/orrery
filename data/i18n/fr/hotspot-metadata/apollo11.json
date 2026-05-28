@@ -1,0 +1,34 @@
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Étage de descente du LM (Eagle)",
+      "lat_offset_m": 0,
+      "lon_offset_m": 0
+    },
+    {
+      "id": "us-flag",
+      "label": "Drapeau américain (planté à ~8 m à l'ouest du LM)",
+      "lat_offset_m": 2,
+      "lon_offset_m": -8
+    },
+    {
+      "id": "lrrr",
+      "label": "Rétroréflecteur laser (LRRR)",
+      "lat_offset_m": -10,
+      "lon_offset_m": 14
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (paquet ALSEP simplifié)",
+      "lat_offset_m": -15,
+      "lon_offset_m": 18
+    },
+    {
+      "id": "plaque",
+      "label": "Plaque : « Nous sommes venus en paix pour toute l'humanité »",
+      "lat_offset_m": 0,
+      "lon_offset_m": 0
+    }
+  ]
+}

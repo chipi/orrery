@@ -2,22 +2,29 @@
   "id": "bone-density-loss",
   "tab": "life-in-space",
   "order": 2,
+  "photo": {
+    "src": "/images/science/bone-density-loss-ared.jpg",
+    "credit": "NASA \u00b7 ISS Expedition 44 (Aug 2015) \u2014 Astronaut Kjell Lindgren on the Advanced Resistive Exercise Device (ARED). 2 hours of resistance + cardio per day is the standard countermeasure against the 1\u20132%/month bone loss that the bones of weight-bearing skeleton see in microgravity."
+  },
   "see_in_app": [
-    { "route": "/iss", "context_key": "Exercise modules (ARED + treadmill) on the ISS hardware tour" }
+    {
+      "route": "/iss",
+      "context_key": "Exercise modules (ARED + treadmill) on the ISS hardware tour"
+    }
   ],
   "links": [
     {
-      "l": "NASA · Bone Loss in Space",
+      "l": "NASA \u00b7 Bone Loss in Space",
       "u": "https://www.nasa.gov/humans-in-space/why-go-to-space/",
       "t": "intro"
     },
     {
-      "l": "NASA HRP · Bone Mineral Loss Evidence Report",
+      "l": "NASA HRP \u00b7 Bone Mineral Loss Evidence Report",
       "u": "https://humanresearchroadmap.nasa.gov/Evidence/reports/Bone.pdf",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Spaceflight osteopenia",
+      "l": "Wikipedia \u00b7 Spaceflight osteopenia",
       "u": "https://en.wikipedia.org/wiki/Spaceflight_osteopenia",
       "t": "deep"
     }

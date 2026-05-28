@@ -1,0 +1,114 @@
+{
+  "id": "luna21",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1973,
+  "status": "FLOWN",
+  "departure_date": "1973-01-08",
+  "arrival_date": "1973-01-15",
+  "transit_days": 7,
+  "vehicle": "Proton-K / D",
+  "payload": "5700 kg launch mass; 836 kg Lunokhod 2 rover (traversed 39 km — longest rover distance until 2014)",
+  "delta_v": "~3 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). Carried Lunokhod 2, which set a rover distance record (~39 km, Le Monnier crater) that stood for 40+ years until Opportunity surpassed it in 2014.",
+  "links": [
+    {
+      "l": "Lunokhod 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Lunokhod_2",
+      "t": "intro"
+    },
+    {
+      "l": "Луноход-2 — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%BE%D1%85%D0%BE%D0%B4-2",
+      "t": "core"
+    },
+    {
+      "l": "Luna 21 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-001A",
+      "t": "core"
+    },
+    {
+      "l": "LRO discovers Lunokhod 2 final resting site",
+      "u": "https://www.nasa.gov/history/lunokhod-2-on-the-moon/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "lunokhod-2",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Blok-D upper stage",
+      "mass_at_tli_kg": 5700,
+      "source": "NASA NSSDCA Luna 21 archive"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "NASA NSSDCA Luna 21 archive"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.4,
+      "periapsis_km": 90,
+      "inclination_deg": 60,
+      "source": "NASA NSSDCA Luna 21 archive; lunar-orbit insertion 1973-01-12, landing 1973-01-15"
+    },
+    "totals": {
+      "total_dv_km_s": 3.0,
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Siddiqi 'Beyond Earth' (NASA SP-2018-4041); Proton-K/D + lunar TCMs + descent ∆v"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 4,
+        "type": "tcm"
+      },
+      {
+        "met_days": 4.5,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 7,
+        "type": "arrival"
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 200,
+        "inclination_deg": 51.5,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.1
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 90,
+        "inclination_deg": 60,
+        "periselene_km": 90
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
+}

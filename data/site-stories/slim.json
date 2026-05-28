@@ -1,0 +1,47 @@
+{
+  "site": "slim",
+  "intro": "SLIM (Smart Lander for Investigating Moon) landed in Shioli Crater on January 20, 2024 — Japan's first soft landing on the Moon and a precision-landing technology demonstrator. SLIM touched down within 100 m of its target (the previous best was 1+ km), but flipped onto its side and operated upside-down on its remaining solar cells until power ran out. Two surface micro-rovers, LEV-1 and LEV-2 (Sora-Q), deployed before the awkward final orientation.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Tipped-over precision lander + 2 micro-rovers",
+      "images": [
+        {
+          "src": "/images/missions/slim/01.jpg",
+          "caption": "SLIM lander pre-launch — 200 kg, pencil-shaped, designed for low-mass precision landing demos."
+        },
+        {
+          "src": "/images/missions/slim/02.jpg",
+          "caption": "LEV-2 \"Sora-Q\" — a baseball-sized transformer ball-rover developed by TOMY (the toy company) + JAXA + Sony."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "September 6, 2023 — H-IIA from Tanegashima",
+      "images": [
+        {
+          "src": "/images/missions/slim/03.jpg",
+          "caption": "H-IIA-47 lifts off carrying SLIM + XRISM observatory — a co-launch with a major X-ray science mission."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Shioli Crater — landed January 20, 2024",
+      "images": [
+        {
+          "src": "/images/missions/slim/04.jpg",
+          "caption": "SLIM photographed by Sora-Q on the lunar surface — landed nose-down, solar panels facing the wrong way."
+        },
+        {
+          "src": "/images/missions/slim/05.jpg",
+          "caption": "Despite the unintended orientation, SLIM operated three times — at lunar sunrise it caught angled sun on its inverted-facing panels and woke up briefly."
+        }
+      ]
+    }
+  ]
+}

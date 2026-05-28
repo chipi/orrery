@@ -2,22 +2,29 @@
   "id": "star-trackers",
   "tab": "mission-phases",
   "order": 10,
+  "photo": {
+    "src": "/images/science/star-tracker.jpg",
+    "credit": "NASA \u00b7 The STARS star-tracker mounted on the EBEX long-duration balloon experiment (2012). Every modern spacecraft carries one or more star trackers as the primary attitude-determination reference \u2014 they photograph the sky, match the pattern against an onboard catalogue, and solve for orientation to arcsecond precision."
+  },
   "see_in_app": [
-    { "route": "/fly", "context_key": "Attitude alignment phase between burns: where the spacecraft \"knows which way is up\"" }
+    {
+      "route": "/fly",
+      "context_key": "Attitude alignment phase between burns: where the spacecraft \"knows which way is up\""
+    }
   ],
   "links": [
     {
-      "l": "NASA · How Spacecraft Find Their Way",
+      "l": "NASA \u00b7 How Spacecraft Find Their Way",
       "u": "https://science.nasa.gov/learn/basics-of-space-flight/",
       "t": "intro"
     },
     {
-      "l": "NASA · Star Tracker Reference",
+      "l": "NASA \u00b7 Star Tracker Reference",
       "u": "https://www.nasa.gov/smallsat-institute/sst-soa/star-trackers/",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Star tracker",
+      "l": "Wikipedia \u00b7 Star tracker",
       "u": "https://en.wikipedia.org/wiki/Star_tracker",
       "t": "deep"
     }

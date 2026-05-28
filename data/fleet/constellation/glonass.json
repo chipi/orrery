@@ -1,0 +1,32 @@
+{
+  "id": "glonass",
+  "name": "GLONASS",
+  "category": "constellation",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "ISS Reshetnev (formerly NPO PM)",
+  "first_flight": "1982-10-12",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Russia's GNSS — 24 active satellites at 19,130 km MEO / 64.8° inclination / 3 planes; first operational GNSS outside GPS; full coverage restored 2011 after 1990s collapse",
+  "credit": "Roscosmos GLONASS programme. First launched 1982; collapsed in the 1990s post-Soviet funding crisis; restored to 24-satellite operational status 2011.",
+  "links": [
+    {
+      "l": "GLONASS — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/GLONASS",
+      "t": "intro"
+    },
+    {
+      "l": "GLONASS Information-Analytical Centre",
+      "u": "https://www.glonass-iac.ru/en/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "glonass"
+    }
+  ]
+}

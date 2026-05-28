@@ -1,0 +1,8 @@
+{
+  "title": "Mensgerichte Mars-architectuur — wat bemand Mars werkelijk vereist",
+  "intro_sentence": "Apollo ging naar de Maan en kwam terug in 8 dagen. Bemand Mars is een 2–3-jarige missie met 6–9 maanden transit per richting, conjunctie-blackouts en zelfvoorzienend oppervlakteverblijf. Geen enkele technologie is volledig klaar.",
+  "body_paragraphs": [
+    "Het transitprobleem domineert de architectuur. Aarde-Mars overdrachtsvensters openen elke 26 maanden; goedkoopste Hohmann-transfers nemen ~7–9 maanden per richting, met gedwongen verblijf van 18–20 maanden. NASA's DRA 5.0 gaat uit van 6-maands transit met nucleaire thermische voortstuwing (NTP, nog niet op vluchtschaal). SpaceX's Starship-architectuur gebaseerd op aerocapture + voortstuwende landing met methaan/zuurstof ISRU. Straling is het onopgeloste fysiologische probleem: ~0,5 mSv/dag galactische kosmische straling tijdens transit. 6 maanden transit + 18 maanden oppervlakte ≈ 1 Sv totaal — ~5% verhoogd levensduurkankerrisico. Tegenmaatregelen: passieve afscherming water/polyethyleen, actieve elektromagnetische afscherming (onderzocht, niet vluchtbewezen), Marsregoliet-bermen. ISRU is de enabler: MOXIE op Perseverance demonstreerde elektrolyse van atmosferisch CO₂ naar O₂. EDL is het knelpunt: huidige Marslanders ~1 t; bemande lander ~20–30 t."
+  ],
+  "diagram_caption": "Vijf vluchtonopgeloste problemen: transitduur vs ΔV (NTP / Starship), straling (passieve + actieve afscherming), 1/3 g langetermijnfysiologie (ongemeten), ISRU (methaan + O₂ uit CO₂ + ijs), Mars-EDL op mensschaal (supersonische retrothrust bij 20 t)."
+}

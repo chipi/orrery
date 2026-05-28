@@ -1,0 +1,34 @@
+{
+  "id": "galaxy-types",
+  "tab": "observation",
+  "order": 12,
+  "photo": {
+    "src": "/images/science/galaxy-types-hubble-tuning-fork.jpg",
+    "credit": "NASA / ESA / Hubble · Hubble's galaxy-morphology classification diagram (the 'tuning fork', 1936). Edwin Hubble's original taxonomy — ellipticals, spirals (barred + unbarred), and irregulars — is still the working vocabulary almost a century later, with major refinements."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "All Local Group sprites are labelled by type (spiral, irregular, dwarf-spheroidal) — this article explains what each type is" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Galaxy morphological classification",
+      "u": "https://en.wikipedia.org/wiki/Galaxy_morphological_classification",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Hubble sequence",
+      "u": "https://en.wikipedia.org/wiki/Hubble_sequence",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Galaxy types overview (Hubble + JWST)",
+      "u": "https://science.nasa.gov/universe/galaxies/types/",
+      "t": "core"
+    },
+    {
+      "l": "arXiv · Sandage 2005 — historical review of galaxy classification",
+      "u": "https://arxiv.org/abs/astro-ph/0509584",
+      "t": "deep"
+    }
+  ]
+}

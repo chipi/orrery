@@ -1,0 +1,115 @@
+{
+  "id": "luna16",
+  "agency": "ROSCOSMOS",
+  "agency_full": "Soviet Academy of Sciences (continued by Roscosmos)",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#cc4444",
+  "year": 1970,
+  "status": "FLOWN",
+  "departure_date": "1970-09-12",
+  "arrival_date": "1970-09-20",
+  "transit_days": 8,
+  "vehicle": "Proton-K / D",
+  "payload": "5727 kg launch mass; 1880 kg lander; 0.101 kg lunar regolith returned",
+  "delta_v": "~3.5 km/s",
+  "data_quality": "good",
+  "credit": "© Soviet Academy of Sciences (historical). First robotic sample-return mission from another world — predated American sample-return ambitions by decades.",
+  "links": [
+    {
+      "l": "Luna 16 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Luna_16",
+      "t": "intro"
+    },
+    {
+      "l": "Луна-16 — русская Википедия",
+      "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-16",
+      "t": "core"
+    },
+    {
+      "l": "Luna 16 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-072A",
+      "t": "core"
+    },
+    {
+      "l": "Siddiqi — Beyond Earth (NASA SP-2018-4041)",
+      "u": "https://www.nasa.gov/history/history-publications-and-resources/nasa-history-series/beyond-earth/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "luna-16",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Blok-D upper stage",
+      "mass_at_tli_kg": 5727,
+      "source": "NASA NSSDCA Luna 16 archive"
+    },
+    "cruise": {
+      "tcm_count": 1,
+      "source": "NASA NSSDCA Luna 16 archive"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.3,
+      "periapsis_km": 110,
+      "inclination_deg": 70,
+      "source": "NASA NSSDCA Luna 16 archive; lunar-orbit insertion 1970-09-17"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Siddiqi 'Beyond Earth' (NASA SP-2018-4041); Proton-K/D capability + lunar TCMs + descent + ascent + Earth-return ∆v"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.005,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 5,
+        "type": "tcm"
+      },
+      {
+        "met_days": 5.1,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 8,
+        "type": "arrival"
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 200,
+        "inclination_deg": 51.5,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.1
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 110,
+        "inclination_deg": 70,
+        "periselene_km": 110
+      },
+      "return": {
+        "type": "tei_direct",
+        "dv_kms": 2.7
+      }
+    }
+  }
+}

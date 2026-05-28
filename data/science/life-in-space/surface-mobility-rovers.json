@@ -1,0 +1,35 @@
+{
+  "id": "surface-mobility-rovers",
+  "tab": "life-in-space",
+  "order": 25,
+  "photo": {
+    "src": "/images/science/surface-mobility-lrv.jpg",
+    "credit": "NASA · Apollo 15 Lunar Roving Vehicle at Hadley Rille, July 1971. The LRV extended Apollo surface traverses from ~1 km of walking to 27 km of driving — the design lineage every modern lunar rover (LTV, ILRS rovers) inherits."
+  },
+  "see_in_app": [
+    { "route": "/moon", "context_key": "Apollo 15/16/17 LRV traverses (Hadley, Descartes, Taurus-Littrow); Yutu-1, Yutu-2, Pragyan, Rashid robotic rovers; Artemis LTV + pressurised-rover landing zones" },
+    { "route": "/mars", "context_key": "Sojourner, Spirit, Opportunity, Curiosity, Perseverance, Zhurong — robotic rover heritage informing crewed pressurised-rover architectures" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Lunar Roving Vehicle (Apollo LRV)",
+      "u": "https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Lunar Terrain Vehicle (Artemis LTV) programme",
+      "u": "https://www.nasa.gov/lunar-terrain-vehicle/",
+      "t": "core"
+    },
+    {
+      "l": "JAXA · Lunar Cruiser pressurised rover (Toyota collaboration)",
+      "u": "https://global.jaxa.jp/projects/sas/manned_lunar_rover/",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Lunar Cruiser (Toyota / JAXA pressurised rover)",
+      "u": "https://en.wikipedia.org/wiki/Lunar_Cruiser",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "food-production-off-world",
+  "tab": "life-in-space",
+  "order": 24,
+  "photo": {
+    "src": "/images/science/food-production-veggie.jpg",
+    "credit": "NASA · Veggie plant growth facility aboard ISS — first regularly-eaten space-grown crop. The 'Outredgeous' red romaine lettuce harvest in 2015 was the first food grown in orbit that astronauts were cleared to consume."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Destiny (US lab — Veggie + APH facility), Kibo (JAXA lab — plant growth experiments), Nauka (Russian lab — Lada greenhouse heritage)" },
+    { "route": "/missions", "context_key": "Long-duration crewed missions — every Mars-class plan includes greenhouse modules as part of psychological + nutritional + closed-loop design" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Veggie + APH (Advanced Plant Habitat) on ISS",
+      "u": "https://www.nasa.gov/centers-and-facilities/kennedy/growing-plants-in-space/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Space-grown food",
+      "u": "https://en.wikipedia.org/wiki/Space-grown_food",
+      "t": "core"
+    },
+    {
+      "l": "ESA · MELiSSA — bioregenerative life support project",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/MELiSSA",
+      "t": "core"
+    },
+    {
+      "l": "NASA · CHAPEA — year-long Mars analogue with crop cycling",
+      "u": "https://www.nasa.gov/humans-in-space/chapea/",
+      "t": "deep"
+    }
+  ]
+}

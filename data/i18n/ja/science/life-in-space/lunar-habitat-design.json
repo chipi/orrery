@@ -1,0 +1,11 @@
+{
+  "title": "月面ハビタット設計 — Artemis Base Camp、ILRS、持続的表面滞在",
+  "intro_sentence": "2つの並行アーキテクチャが現在確定:NASAのArtemis Base Camp+中露ILRS。両者とも月南極を目標とし、両者とも水氷戦略を同じ12のクレーターに賭ける。",
+  "body_paragraphs": [
+    "サイト選定はもはや未定ではない。NASAのArtemisプログラムも中露International Lunar Research Station (ILRS)も月南極を選択 — 具体的には89°S付近の永久影クレーター(Shackleton、de Gerlache、Haworth、Faustini、Shoemaker)のリムと内壁。3つの要素がこの地域を独自に価値あるものにしている。第一に、クレーター底の永久影領域(PSR)には水氷堆積物が存在 — LCROSS(2009)がCabeusに衝突し噴出プルームでOH/H₂Oを検出、Chandrayaan-1のM3装置がスペクトル特徴を直接観測。第二に、クレーターリムの永遠の光のピークは年間>85%太陽を見る — 月夜バッテリーなしでほぼ連続太陽電力。第三に、南極は両方の前提条件 — 水と日光 — が約10km以内に共存する唯一の地域、短距離表面トラバース物流を可能にする。",
+    "Artemis Base Campは2028年以降の持続的月面プレゼンス向けの統合NASA+パートナーアーキテクチャ。3要素:(1) Foundational Surface Habitat — 固定加圧構造、~50 m³居住容積、2名乗組員約30日支援;(2) Lunar Terrain Vehicle (LTV) — Apollo Lunar Roving Vehicleの非加圧バギー後継、Intuitive Machines / Lunar Outpost / Astrolabに2030年配送で契約;(3) 加圧ローバー — Toyota / JAXA製クローラー、小型バスサイズ、30日耐久、ボードECLSS、基地に戻らず数週間のトラバース可能。IOC時の表面総質量~12トン、Starship-HLS、SpaceX Cargo、並行成熟中の中国商用カーゴランダーで配送。",
+    "ILRSは中露版、2021年発表、パキスタン、ベラルーシ、南アフリカ、エジプト、タイ、ベネズエラなどを含む連合。アーキテクチャは類似だがスケジュールはより積極的:Chang'e-7(2026予定)+ Chang'e-8(2028)前駆体、ロボット前哨基地構築2030-2035、有人着陸2030前(主に願望)、完全基地2035-2045。基地設計はChang'e Mission Module変種で着陸するTianhe由来加圧モジュールを中心とし、膨張式BEAMスタイル居住区で補完。Base Campとの相違は教義的:ILRSは核分裂表面電力(ロシア提供10 kWe原子炉)を計画、Artemisは太陽光のまま;ILRSサイトは潜在採掘サイト近くに集まり、Artemisは冗長性のため広がる。",
+    "2つの構造的問題がハビタット設計を支配 — 月と火星は共有するが、月が先に当たる。放射線:銀河宇宙線+断続的太陽粒子イベントが月面で~0.5 mSv/日、地球磁気圏内ISSの~0.04 mSv vs — 約10倍高い線量。設計中の緩和戦略:固定ハビタット周囲のレゴリス土塁(1-2 mで線量~80%遮断)、溶岩チューブ内部(表面下~80-100 m、Selene / LROが崩壊スカイライトから検出 — Marius HillsとMare Tranquillitatisピットが標準サイト)、または事前配置水壁シールド。塵:Apollo乗組員は月塵がEVAスーツを~10 EVAで劣化させ、エアロックを詰まらせ、シールを摩耗させ、火薬のような匂いがし、LM内でアレルギー反応を引き起こしたと報告。表面ハビタット設計はすべてsuitlock塵エアロック(スーツは外に保管、乗組員は内側から入りスーツを加圧容積に塵を持ち込まない)を組み込む — Artemis EVAスーツとILRS計画で使われる同じアーキテクチャ。"
+  ],
+  "diagram_caption": "両アーキテクチャ:水氷+日光共配置のための月南極クレーターリムサイト(Shackleton、de Gerlacheなど)。Base Camp = Foundational Habitat + LTV +加圧ローバー、太陽光、2028-2035構築。ILRS = Tianhe由来モジュール+膨張式+ロシア提供10 kWe核分裂、2030-2045。両者とも同じ塵+放射線問題と戦う。"
+}

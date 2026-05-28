@@ -1,0 +1,171 @@
+{
+  "version": "1.0",
+  "description": "Local Group galaxies plotted as billboard sprites on the /explore celestial sphere. Positions are J2000 ICRS (RA/Dec in decimal degrees). Distances from Solar System in kiloparsecs. Source: NASA NED + Karachentsev et al. (2013) updated catalogue + recent Gaia DR3 / HST distance measurements.",
+  "entries": [
+    {
+      "id": "andromeda",
+      "name": "Andromeda Galaxy (M31)",
+      "ra": 10.6847,
+      "dec": 41.269,
+      "distance_kpc": 778,
+      "type": "spiral",
+      "group": "andromeda-subgroup",
+      "science_section": "andromeda-galaxy",
+      "wikidata": "Q2469"
+    },
+    {
+      "id": "triangulum",
+      "name": "Triangulum Galaxy (M33)",
+      "ra": 23.4621,
+      "dec": 30.6602,
+      "distance_kpc": 859,
+      "type": "spiral",
+      "group": "andromeda-subgroup",
+      "science_section": "local-group",
+      "wikidata": "Q47105"
+    },
+    {
+      "id": "lmc",
+      "name": "Large Magellanic Cloud",
+      "ra": 80.8939,
+      "dec": -69.7561,
+      "distance_kpc": 49.97,
+      "type": "irregular",
+      "group": "milky-way-subgroup",
+      "science_section": "magellanic-clouds",
+      "wikidata": "Q10861"
+    },
+    {
+      "id": "smc",
+      "name": "Small Magellanic Cloud",
+      "ra": 13.1583,
+      "dec": -72.8003,
+      "distance_kpc": 62.1,
+      "type": "irregular",
+      "group": "milky-way-subgroup",
+      "science_section": "magellanic-clouds",
+      "wikidata": "Q10876"
+    },
+    {
+      "id": "sagittarius-dwarf",
+      "name": "Sagittarius Dwarf Spheroidal",
+      "ra": 283.83,
+      "dec": -30.55,
+      "distance_kpc": 22,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q220402"
+    },
+    {
+      "id": "sculptor-dwarf",
+      "name": "Sculptor Dwarf",
+      "ra": 15.04,
+      "dec": -33.7,
+      "distance_kpc": 86,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q857651"
+    },
+    {
+      "id": "fornax-dwarf",
+      "name": "Fornax Dwarf",
+      "ra": 39.997,
+      "dec": -34.45,
+      "distance_kpc": 147,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q903021"
+    },
+    {
+      "id": "draco-dwarf",
+      "name": "Draco Dwarf",
+      "ra": 260.05,
+      "dec": 57.92,
+      "distance_kpc": 76,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q920225"
+    },
+    {
+      "id": "ursa-minor-dwarf",
+      "name": "Ursa Minor Dwarf",
+      "ra": 227.29,
+      "dec": 67.22,
+      "distance_kpc": 76,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q956030"
+    },
+    {
+      "id": "leo-i",
+      "name": "Leo I Dwarf",
+      "ra": 152.117,
+      "dec": 12.306,
+      "distance_kpc": 254,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q1361401"
+    },
+    {
+      "id": "leo-ii",
+      "name": "Leo II Dwarf",
+      "ra": 168.37,
+      "dec": 22.15,
+      "distance_kpc": 233,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q1361414"
+    },
+    {
+      "id": "sextans-dwarf",
+      "name": "Sextans Dwarf",
+      "ra": 153.26,
+      "dec": -1.61,
+      "distance_kpc": 86,
+      "type": "dwarf-spheroidal",
+      "group": "milky-way-subgroup",
+      "science_section": "dwarf-spheroidals",
+      "wikidata": "Q1419720"
+    },
+    {
+      "id": "ngc-6822",
+      "name": "Barnard's Galaxy (NGC 6822)",
+      "ra": 296.24,
+      "dec": -14.8,
+      "distance_kpc": 500,
+      "type": "irregular",
+      "group": "free",
+      "science_section": "galaxy-types",
+      "wikidata": "Q857769"
+    },
+    {
+      "id": "ic-1613",
+      "name": "IC 1613",
+      "ra": 16.2,
+      "dec": 2.13,
+      "distance_kpc": 730,
+      "type": "irregular",
+      "group": "free",
+      "science_section": "galaxy-types",
+      "wikidata": "Q12521"
+    },
+    {
+      "id": "wlm",
+      "name": "WLM (Wolf-Lundmark-Melotte)",
+      "ra": 0.49,
+      "dec": -15.46,
+      "distance_kpc": 933,
+      "type": "irregular",
+      "group": "free",
+      "science_section": "galaxy-types",
+      "wikidata": "Q1156555"
+    }
+  ]
+}

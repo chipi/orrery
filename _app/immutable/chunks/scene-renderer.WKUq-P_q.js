@@ -1,0 +1,1 @@
+import{a9 as n}from"./star-field.DiFGHy1Y.js";function s(e,{clearColor:t=263180}={}){const i=new n({antialias:!0,alpha:!1});return i.setPixelRatio(Math.min(window.devicePixelRatio,2)),i.setSize(e.clientWidth,e.clientHeight),i.setClearColor(t,1),e.appendChild(i.domElement),i}function a({renderer:e,outlinePass:t}){t.dispose(),e.dispose(),e.domElement.remove()}export{s as c,a as d};

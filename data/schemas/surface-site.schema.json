@@ -7,6 +7,12 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
+    "patternProperties": {
+      "^_": {
+        "description": "Underscore-prefixed annotation fields (e.g. _lat_note) are reserved for internal operator commentary and are not surfaced in the UI.",
+        "type": "string"
+      }
+    },
     "required": [
       "id",
       "kind",
@@ -43,7 +49,7 @@
       "surface_duration_days": { "type": "number", "minimum": 0 },
       "eva_duration_hours": { "type": "number", "minimum": 0 },
       "samples_kg": { "type": "number", "minimum": 0 },
-      "data_quality": { "enum": ["good", "partial", "reconstructed"] },
+      "data_quality": { "enum": ["good", "partial", "reconstructed", "fair"] },
       "credit": { "type": "string", "minLength": 1 },
       "mission_id": {
         "type": "string",

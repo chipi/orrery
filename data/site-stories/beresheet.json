@@ -1,0 +1,47 @@
+{
+  "site": "beresheet",
+  "intro": "Beresheet — Hebrew for \"In the beginning\" — was Israel's first lunar landing attempt, built privately by SpaceIL on a $100M shoestring budget. It launched February 22, 2019, captured into lunar orbit April 4, then crashed in Mare Serenitatis on April 11, 2019 after the IMU and onboard computer reset during descent. The wreckage carried a tardigrade-laden time capsule. Israel became the seventh nation to reach the Moon, even if only kinetically.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Smallest interplanetary lander attempted to that date — 585 kg",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/01.jpg",
+          "caption": "Beresheet spacecraft during pre-launch integration — built by SpaceIL with Israel Aerospace Industries, the first privately-funded lunar landing attempt."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/02.jpg",
+          "caption": "Time capsule payload — Israeli memorabilia + 30 million pages of human knowledge etched onto nickel plates + (controversially) tardigrades, the world's most resilient micro-animals."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "February 22, 2019 — Falcon 9 from Cape Canaveral (rideshare)",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/03.jpg",
+          "caption": "Falcon 9 launches Beresheet as a rideshare with PSN-6 communications satellite — a 6-week multi-loop transit to lunar orbit."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Serenitatis — impacted April 11, 2019",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beresheet/04.jpg",
+          "caption": "Final selfie sent from Beresheet during powered descent — \"Small country, big dreams\" plaque visible. Communication lost at ~150 m altitude."
+        },
+        {
+          "src": "/images/fleet-galleries/beresheet/05.jpg",
+          "caption": "Impact site imaged by NASA's LRO — bright halo from regolith disturbance. Some tardigrades may have survived the impact intact."
+        }
+      ]
+    }
+  ]
+}

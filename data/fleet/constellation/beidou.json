@@ -1,0 +1,32 @@
+{
+  "id": "beidou",
+  "name": "BeiDou (北斗)",
+  "category": "constellation",
+  "agency": "CNSA / China Satellite Navigation Office",
+  "country": "China",
+  "manufacturer": "CAST (China Academy of Space Technology)",
+  "first_flight": "2000-10-31",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "China's GNSS — 30+ satellites mixing MEO (21,500 km), IGSO (35,786 km inclined), GEO; full global coverage declared 2020; only GNSS with short-message satellite communication built in",
+  "credit": "CNSA + China Satellite Navigation Office BeiDou-3 system. Spans MEO (24 sats) + IGSO (3 sats) + GEO (3 sats), unique hybrid architecture.",
+  "links": [
+    {
+      "l": "BeiDou Navigation Satellite System — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/BeiDou",
+      "t": "intro"
+    },
+    {
+      "l": "BeiDou official site",
+      "u": "http://en.beidou.gov.cn/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "beidou"
+    }
+  ]
+}

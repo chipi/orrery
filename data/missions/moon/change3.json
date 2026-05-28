@@ -1,0 +1,114 @@
+{
+  "id": "change3",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2013,
+  "status": "FLOWN",
+  "departure_date": "2013-12-01",
+  "arrival_date": "2013-12-14",
+  "transit_days": 13,
+  "vehicle": "Long March 3B / E",
+  "payload": "3780 kg launch mass; 1200 kg lander; 140 kg Yutu rover",
+  "delta_v": "~3.8 km/s",
+  "data_quality": "good",
+  "credit": "© China National Space Administration. First successful uncrewed lunar landing for 37 years (since Luna 24, 1976). Mare Imbrium site; Yutu rover operated through 31 lunar days despite locomotion failure on day 42.",
+  "links": [
+    {
+      "l": "Chang'e 3 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_3",
+      "t": "intro"
+    },
+    {
+      "l": "嫦娥三号 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E5%AC%A6%E5%A8%A5%E4%B8%89%E5%8F%B7",
+      "t": "core"
+    },
+    {
+      "l": "Chang'e 3 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-070A",
+      "t": "core"
+    },
+    {
+      "l": "Chinese Academy of Sciences — Chang'e program archive",
+      "u": "https://www.cas.cn/syky/201312/t20131214_4001075.shtml",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "change-3",
+      "role": "spacecraft"
+    },
+    {
+      "id": "yutu",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Long March 3B/E with YZ-1 upper stage",
+      "mass_at_tli_kg": 3780,
+      "source": "CNSA mission archive; Xinhua News official release 2013-12-02"
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "CNSA mission archive; first TCM 36 hours after launch, second TCM at lunar orbit insertion"
+    },
+    "arrival": {
+      "v_infinity_km_s": 2.4,
+      "periapsis_km": 100,
+      "inclination_deg": 90,
+      "source": "CNSA mission archive; lunar-orbit insertion 2013-12-06, landing 2013-12-14"
+    },
+    "totals": {
+      "total_dv_km_s": 3.8,
+      "tli_or_tmi_dv_km_s": 3.1,
+      "source": "Long March 3B/E capability + lunar TCMs + powered descent ∆v (~1.7 km/s)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 0.01,
+        "type": "tli_or_tmi"
+      },
+      {
+        "met_days": 5,
+        "type": "edl_or_oi"
+      },
+      {
+        "met_days": 13,
+        "type": "arrival"
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "parking_orbit": {
+        "altitude_km": 200,
+        "inclination_deg": 28.5,
+        "revs": 1
+      },
+      "tli": {
+        "dv_kms": 3.1
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 100,
+        "inclination_deg": 90,
+        "periselene_km": 100
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Architettura umana per Marte — cosa richiede davvero Marte con equipaggio",
+  "intro_sentence": "Apollo andò sulla Luna e tornò in 8 giorni. Marte con equipaggio è una missione di 2–3 anni con 6–9 mesi di transito a tratta, blackout di congiunzione e soggiorno autosufficiente. Nessuna tecnologia è completamente pronta.",
+  "body_paragraphs": [
+    "Il problema del transito domina l'architettura. Finestre di trasferimento Terra-Marte si aprono ogni 26 mesi; trasferimenti Hohmann meno costosi richiedono ~7–9 mesi a tratta, con soggiorno forzato di 18–20 mesi. DRA 5.0 NASA assume transito di 6 mesi con propulsione nucleare termica (NTP, non ancora a scala di volo). L'architettura Starship di SpaceX si basa su aerocaptura + atterraggio propulsivo con metano/ossigeno ISRU. La radiazione è il problema fisiologico irrisolto: ~0,5 mSv/giorno di raggi cosmici durante il transito. 6 mesi transito + 18 mesi superficie ≈ 1 Sv totale — ~5% aumento del rischio cancro a vita. Contromisure: schermatura passiva acqua/polietilene, schermatura attiva elettromagnetica (ricercata, non provata in volo), bermini di regolite marziana. ISRU è l'abilitatore: MOXIE su Perseverance ha dimostrato elettrolisi del CO₂ atmosferico in O₂. EDL è il collo di bottiglia: lander attuali ~1 t; lander con equipaggio ~20–30 t."
+  ],
+  "diagram_caption": "Cinque problemi irrisolti in volo: durata transito vs ΔV (NTP / Starship), radiazione (schermatura passiva + attiva), fisiologia 1/3 g a lungo termine (non misurata), ISRU (metano + O₂ da CO₂ + ghiaccio), EDL Marte scala umana (retropropulsione supersonica a 20 t)."
+}

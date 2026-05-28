@@ -1,0 +1,47 @@
+{
+  "site": "mars3",
+  "intro": "Mars 3 touched down in Terra Sirenum on December 2, 1971 — the first lander to survive Martian atmospheric entry and reach the surface, two weeks after sister Mars 2 crashed. Communications stopped after 14.5 seconds, returning a single partial degraded greyscale image fragment. The lander likely arrived in the middle of a planet-encircling dust storm. Mars 3's exact resting location is still debated; HiRISE imaged candidate hardware in 2013.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Soviet 4MS-class lander, first Mars touchdown of any kind",
+      "images": [
+        {
+          "src": "/images/missions/mars3/01.jpg",
+          "caption": "Mars 3 lander mockup at the NPO Lavochkin space-history museum — 1,210 kg total mass, included a 4.5 kg Prop-M rover (never deployed)."
+        },
+        {
+          "src": "/images/missions/mars3/02.jpg",
+          "caption": "Cutaway diagram of the Mars 3 lander hardware — the basic design heritage informed later Soviet-era Venera and Mars hardware."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "May 28, 1971 — Proton-K from Baikonur",
+      "images": [
+        {
+          "src": "/images/missions/mars3/03.jpg",
+          "caption": "Proton-K with Blok-D upper stage prepared at Baikonur Cosmodrome — 6-month transit to Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Terra Sirenum — landed December 2, 1971",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars3/tier2-hirise.jpg",
+          "caption": "HiRISE detail of the candidate Mars 3 hardware site in Terra Sirenum — released 2013 by NASA/UA HiRISE team, identified by Russian amateur space historians."
+        },
+        {
+          "src": "/images/missions/mars3/04.jpg",
+          "caption": "The single fragmentary image returned by Mars 3 — 79 lines, no horizon, no detail. The first picture from another planet's surface, however faint."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "featured": [],
+  "demoted": [
+    {
+      "launch_id": "2026-05-29-atlas-v-551-amazon-leo-la-07",
+      "reason": "Atlas V 551 first flew with New Horizons in 2006; the orchestrator's first-flight heuristic mistook the upcoming-only manifest's lone Atlas V 551 entry for a debut. Routine ULA flight.",
+      "added_by": "marko",
+      "added_at": "2026-05-21T00:00:00Z"
+    },
+    {
+      "launch_id": "2026-07-31-h3-24-htv-x2",
+      "reason": "H3 family first flew 2023-03-07; H3-24 variant flagged as first-flight-vehicle by the heuristic because the manifest only has this variant's entry. Routine JAXA cargo flight to ISS.",
+      "added_by": "marko",
+      "added_at": "2026-05-21T00:00:00Z"
+    }
+  ]
+}

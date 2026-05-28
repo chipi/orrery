@@ -2658,5 +2658,65 @@
   "krechet-94/01.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Soviet%20Union%20lunar%20spacesuit%20-%20Smithsonian%20Air%20and%20Space%20Museum%20-%202012-05-15%20%287276435486%29.jpg"
+  },
+  "starlink/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Starlink%20Satellites%20Imaged%20from%20CTIO.jpg"
+  },
+  "oneweb/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/OneWeb%20satellite%20manufacturing%20facility%2C%20Merritt%20Island%2C%20Florida%2C%202019%2001.jpg"
+  },
+  "iridium-next/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Iridium%20satellite.jpg"
+  },
+  "kuiper/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Kuiper%203%20Launches%20from%20Cape%20Canaveral%20Space%20Force%20Station%20(9339794).jpg"
+  },
+  "planet-labs/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Planet%20Labs%20satellite%20launch%20from%20ISS.jpg"
+  },
+  "sentinel-copernicus/01.jpg": {
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sentinel-2A%20satellite%20-%20CSG%20-%20Carefully%20aligning%20the%20satellite%20to%20the%20adapter.jpg"
+  },
+  "landsat/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Landsat%209%20Spacecraft%20(Observatory)%20Move%20from%20High%20Bay%20into%20Cell%203.jpg"
+  },
+  "gps-gnss/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GPS%20Block%20IIIA.jpg"
+  },
+  "galileo-gnss/01.jpg": {
+    "agency": "ESA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GalileoSatModel.jpg"
+  },
+  "glonass/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Glonass-K%20-%20MAKS2015part8-12.jpg"
+  },
+  "beidou/01.jpg": {
+    "agency": "CNSA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Beidou-3%20Satellite%20Mockup.jpg"
+  },
+  "goes-noaa/01.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/GOES-R%20Spacecraft%20With%20Earth%20Reflection%20(14213141670).png"
+  },
+  "inmarsat/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Satellite%20Inmarsat%20GX5.jpg"
+  },
+  "tundra-molniya/01.jpg": {
+    "agency": "ROSCOSMOS",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Molniya-1%20satellite.jpg"
+  },
+  "o3b-mpower/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/O3b%20mPower%20Satellite%20Model.jpg"
   }
 }

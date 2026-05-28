@@ -1,0 +1,41 @@
+{
+  "id": "eclss-life-support",
+  "tab": "life-in-space",
+  "order": 13,
+  "photo": {
+    "src": "/images/science/eclss-life-support-rack.jpg",
+    "credit": "NASA · ISS atmosphere, water, and waste cycling overview. Every gas and every drop of water aboard a long-duration station is in a closed loop or near-closed loop — open-loop consumables are paid for in launch mass."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Destiny (US lab — Atmosphere Revitalisation rack), Tranquility (Node 3 — Water Recovery + Oxygen Generation), Nauka (Russian segment lab + redundant ECLSS), Columbus (ESA lab — air-quality experiments)" },
+    { "route": "/tiangong", "context_key": "Tianhe core module — life-support stack for the Chinese segment, including the Sabatier-derived water recovery" },
+    { "route": "/missions", "context_key": "Long-duration missions where ECLSS performance is mission-critical: ISS expeditions, Mars-class transit studies, lunar surface stays" }
+  ],
+  "links": [
+    {
+      "l": "NASA · International Space Station Environmental Control and Life Support",
+      "u": "https://www.nasa.gov/wp-content/uploads/2015/01/eclss_fact_sheet.pdf",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Technical Reports · Water Recovery System Status (ECLSS overview)",
+      "u": "https://ntrs.nasa.gov/citations/20140017540",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Environmental control and life-support system",
+      "u": "https://en.wikipedia.org/wiki/Environmental_control_and_life_support_system",
+      "t": "core"
+    },
+    {
+      "l": "ESA · ACLS — Advanced Closed-Loop System (Sabatier reactor)",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Advanced_Closed_Loop_System",
+      "t": "deep"
+    },
+    {
+      "l": "NASA Technical Reports · Sabatier Reactor Integration on ISS",
+      "u": "https://ntrs.nasa.gov/citations/20140002971",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "月面栖息地设计 — Artemis Base Camp、ILRS、可持续表面驻留",
+  "intro_sentence": "两个并行架构现已确定:NASA的Artemis Base Camp+中俄ILRS。两者都瞄准月球南极,两者都将水冰策略押在同一批陨石坑上。",
+  "body_paragraphs": [
+    "选址不再开放。NASA的Artemis计划和中俄International Lunar Research Station (ILRS)都选择了月球南极,具体是89°S附近永久阴影陨石坑的边缘和内壁:Shackleton、de Gerlache、Haworth、Faustini、Shoemaker。三个因素使该地区独一无二地有价值。第一,陨石坑底部的永久阴影区(PSR)蕴藏水冰沉积物 — 由LCROSS(2009)撞击Cabeus并在喷射羽流中探测到OH/H₂O,以及Chandrayaan-1的M3仪器直接看到光谱特征所证实。第二,陨石坑边缘的永恒光峰每年看到太阳>85%的时间,提供近乎连续的太阳能而无需月夜电池。第三,南极是两个先决条件 — 水和阳光 — 在~10 km范围内共存的唯一区域,使短距离表面穿越后勤成为可能。",
+    "Artemis Base Camp是2028年后可持续月面驻留的整合NASA+合作伙伴架构。三要素:(1) Foundational Surface Habitat — 固定加压结构,~50 m³可居住容积,支持2名乘员~30天;(2) Lunar Terrain Vehicle (LTV) — 源自Apollo Lunar Roving Vehicle的非加压越野车,签约Intuitive Machines / Lunar Outpost / Astrolab于2030年交付;(3) 加压月球车 — Toyota / JAXA制造的履带车辆,小型巴士尺寸,30天续航,机载ECLSS,允许不返回基地的多周穿越。IOC时表面总质量约12吨,由Starship-HLS、SpaceX Cargo和并行成熟的中国商业货运着陆器交付。",
+    "ILRS是中俄版本,2021年宣布,联盟现包括巴基斯坦、白俄罗斯、南非、埃及、泰国、委内瑞拉等。架构相似但时间表更激进:Chang'e-7(2026计划)+ Chang'e-8(2028)前驱体,机器人前哨建设2030-2035,2030前有人着陆(多为愿景),完整基地2035-2045。基地设计以经Chang'e Mission Module变体着陆的Tianhe衍生加压舱为中心,辅以可充气BEAM式栖息地。与Base Camp的差异是教义性的:ILRS计划核裂变表面电力(俄罗斯提供10 kWe反应堆),Artemis保持太阳能;ILRS站点更靠近潜在采矿点,Artemis为冗余而分散。",
+    "两个结构性问题主导栖息地设计 — 月球和火星都有,但月球先遇到。辐射:银河宇宙射线+间歇性太阳粒子事件在月面提供~0.5 mSv/天,而ISS在地球磁层中约0.04 mSv — 大约高10倍。设计中的缓解策略:在固定栖息地周围推土的月壤护堤(1-2 m月壤阻挡~80%剂量),熔岩管内部(表面下~80-100 m,Selene / LRO从坍塌天窗探测到的管道 — Marius Hills和Mare Tranquillitatis坑是经典位点),或预置水墙屏蔽。尘埃:Apollo乘员报告月尘在~10次EVA后降解EVA服,卡住气闸,磨损密封,闻起来像火药,并在LM内触发过敏反应。表面栖息地设计都纳入suitlock尘埃气闸(服装存放在外,乘员从内攀入而不把尘埃带入加压容积) — 与Artemis EVA服和ILRS计划使用的相同架构。"
+  ],
+  "diagram_caption": "两种架构:月球南极陨石坑边缘位点(Shackleton、de Gerlache等)用于水冰+阳光共址。Base Camp = Foundational Habitat + LTV +加压月球车,太阳能,2028-2035建设。ILRS = Tianhe衍生舱+可充气+俄供10 kWe裂变,2030-2045。两者对抗同样的尘埃+辐射问题。"
+}

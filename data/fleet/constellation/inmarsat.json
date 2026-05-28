@@ -1,0 +1,32 @@
+{
+  "id": "inmarsat",
+  "name": "Inmarsat",
+  "category": "constellation",
+  "agency": "Viasat (formerly Inmarsat plc)",
+  "country": "UK / Multi",
+  "manufacturer": "Airbus / Boeing / Thales (varied by series)",
+  "first_flight": "1990-10-30",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Geostationary mobile satellite comms — 14+ satellites at GEO providing maritime, aviation, and remote-area voice + data; backbone of GMDSS (Global Maritime Distress and Safety System)",
+  "credit": "Viasat-owned Inmarsat constellation (acquired 2023). Originally founded 1979 as International Maritime Satellite Organization, an intergovernmental treaty body.",
+  "links": [
+    {
+      "l": "Inmarsat — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Inmarsat",
+      "t": "intro"
+    },
+    {
+      "l": "Inmarsat / Viasat official site",
+      "u": "https://www.inmarsat.com/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "inmarsat"
+    }
+  ]
+}

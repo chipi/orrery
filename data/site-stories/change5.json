@@ -1,0 +1,54 @@
+{
+  "site": "change5",
+  "intro": "Chang'e 5 landed in Mons Rümker on December 1, 2020 — China's first lunar sample-return mission and the first lunar sample return by any nation since Luna 24 (1976), 44 years earlier. Returned 1,731 g of samples from young volcanic terrain (~2 billion years old, compared to ~3.5 Ga Apollo samples), proving that lunar volcanism continued far later than previously known.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Lander + ascender + orbiter + reentry capsule",
+      "images": [
+        {
+          "src": "/images/missions/change5/01.jpg",
+          "caption": "Chang'e 5 stack — four-element vehicle: lander/ascender (surface), orbiter (lunar rendezvous), reentry capsule (Earth return)."
+        },
+        {
+          "src": "/images/missions/change5/02.jpg",
+          "caption": "Drill + scoop subsystem — collected samples from both the surface and 1+ m depth."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "November 23, 2020 — Long March 5 from Wenchang",
+      "images": [
+        {
+          "src": "/images/missions/change5/03.jpg",
+          "caption": "Long March 5 launches Chang'e 5 — China's most ambitious lunar mission to that point, fully automated 23-day round trip."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mons Rümker — landed December 1, 2020",
+      "images": [
+        {
+          "src": "/images/missions/change5/04.jpg",
+          "caption": "Chang'e 5 on the surface near Mons Rümker — 19 hours of operations before ascent stage liftoff."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "2-billion-year-old lunar volcanism rewrites Moon thermal history",
+      "images": [
+        {
+          "src": "/images/missions/change5/05.jpg",
+          "caption": "Sample return capsule on the snow in Inner Mongolia, December 17 2020 — 1,731 g of young basalt back on Earth."
+        }
+      ]
+    }
+  ]
+}

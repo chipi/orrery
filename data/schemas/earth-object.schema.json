@@ -63,6 +63,47 @@
       },
       "count": { "type": "integer", "minimum": 1, "description": "Number of dots to render (full constellations like GPS show as a sample subset)" },
       "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+      "group": {
+        "enum": [
+          "crewed-station",
+          "science",
+          "nav",
+          "comms",
+          "imaging",
+          "weather",
+          "early-warning",
+          "moon-orbiter"
+        ],
+        "description": "Filter-group classification for /earth UI filter chips (GH #83)"
+      },
+      "is_constellation": {
+        "type": "boolean",
+        "description": "True when this entry represents a multi-satellite constellation rather than a single craft (GH #83). Drives /earth marker rendering + /fleet category link"
+      },
+      "eccentricity": {
+        "type": "number",
+        "minimum": 0,
+        "exclusiveMaximum": 1,
+        "description": "Eccentricity for highly-elliptical orbits (Molniya, Tundra) — alternative to perigee/apogee for display"
+      },
+      "inclination_shells": {
+        "type": "array",
+        "items": { "type": "number", "minimum": -90, "maximum": 180 },
+        "description": "Multiple inclination shells for constellations that fly across several (e.g. Starlink shell-1 53°, shell-2 70°, shell-3 97.6°)"
+      },
+      "science_refs": {
+        "type": "array",
+        "description": "Cross-reference to /science articles explaining the orbit type (GH #83)",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["section"],
+          "properties": {
+            "section": { "type": "string", "minLength": 1 },
+            "context": { "type": "string", "minLength": 1 }
+          }
+        }
+      },
       "agencies": {
         "type": "array",
         "minItems": 1,
@@ -81,7 +122,7 @@
           "required": ["id", "role"],
           "properties": {
             "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*[a-z0-9]$" },
-            "role": { "enum": ["launcher", "spacecraft", "payload", "station"] }
+            "role": { "enum": ["launcher", "spacecraft", "payload", "station", "constellation"] }
           }
         }
       },

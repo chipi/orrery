@@ -1,0 +1,51 @@
+{
+  "site": "mars-pathfinder",
+  "intro": "Mars Pathfinder landed in Ares Vallis on July 4, 1997 — the first US mission to Mars since the Vikings 21 years earlier. The lander deployed Sojourner, the first wheels on Mars, demonstrating airbag-landing + roving in a $265M low-cost \"faster-better-cheaper\" mission that returned ~16,500 images. Sojourner's 100-meter traverse mapped twelve rocks named after cartoon characters (Yogi, Barnacle Bill, Scooby Doo) before the lander died.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "First Mars rover — and the first US-Mars lander since Viking",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/01.jpg",
+          "caption": "Pathfinder during pre-launch testing — base station + petal-deploy ramps for Sojourner."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/02.jpg",
+          "caption": "Sojourner microrover — 11.5 kg, 6 wheels, solar-powered, designed to operate for 7 sols (lasted 83)."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "December 4, 1996 — Delta II from Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/mars-pathfinder/03.jpg",
+          "caption": "Delta II 7925 launches Pathfinder on its 7-month transit to Mars."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Ares Vallis — landed July 4, 1997",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier3-pan.jpg",
+          "caption": "Improved Presidential Panorama — 360° colour view of Ares Vallis. Twin Peaks visible on the horizon (named for the TV show)."
+        },
+        {
+          "src": "/images/hotspots/mars/mars-pathfinder/tier2-hirise.jpg",
+          "caption": "Pathfinder lander imaged from orbit decades later by MRO HiRISE — petals + Sojourner's last known position visible."
+        },
+        {
+          "src": "/images/missions/mars-pathfinder/04.jpg",
+          "caption": "Sojourner inspecting Yogi rock — first close-up chemistry on Martian terrain."
+        }
+      ]
+    }
+  ]
+}

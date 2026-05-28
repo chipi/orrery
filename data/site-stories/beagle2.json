@@ -1,0 +1,51 @@
+{
+  "site": "beagle2",
+  "intro": "Beagle 2 was a small UK-led ESA lander released from Mars Express on December 19, 2003 — and went silent six days later, presumed crashed. For 12 years its fate was unknown. On January 16, 2015, NASA's HiRISE camera spotted the lander on the surface, intact but with solar panels only partially deployed, blocking the antenna. A successful landing, just no way to phone home. The find rehabilitated the mission as a partial success.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "33 kg, the smallest interplanetary lander ever attempted",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/01.jpg",
+          "caption": "Beagle 2 lander render — petal-deploy solar arrays + Pillinger Lab + atmospheric instruments inside the clam-shell."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/03.jpg",
+          "caption": "Beagle 2 Earth replica on display — gives a sense of the lander's compact, frisbee-like form."
+        },
+        {
+          "src": "/images/fleet-galleries/beagle2/05.jpg",
+          "caption": "Beagle 2 engineering model at Spaceport, Seacombe — solar petals fully open as designed."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "June 2, 2003 — Soyuz/Fregat from Baikonur, piggyback on Mars Express",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/02.jpg",
+          "caption": "Beagle 2 separation from Mars Express, December 19 2003 — six days before scheduled landing, on a ballistic entry trajectory."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Isidis Planitia — landed (without comms) December 25, 2003",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/beagle2/04.jpg",
+          "caption": "Beagle 2 found! MRO HiRISE image (January 2015) — partial solar-panel deployment visible, antenna blocked, hardware intact. 12-year mystery solved."
+        },
+        {
+          "src": "/images/hotspots/mars/beagle2/tier2-hirise.jpg",
+          "caption": "HiRISE detail of the Beagle 2 landing site in Isidis Planitia — the lander itself is a sub-pixel speck at this scale; the find requires multi-scene + multi-illumination matching."
+        }
+      ]
+    }
+  ]
+}

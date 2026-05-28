@@ -1,0 +1,51 @@
+{
+  "site": "phoenix",
+  "intro": "Phoenix landed at 68.22°N on May 25, 2008 — the first NASA lander to touch down in the Martian high arctic. Within days it had scooped up the first sample of Martian water ice and watched it sublimate in the camera frame. The lander operated for 157 sols until the polar winter killed it; CO₂ frost formation buried the solar panels, ending the mission.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Reconstituted from the cancelled Mars Surveyor 2001 lander",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/01.jpg",
+          "caption": "Phoenix lander pre-shipment — 350 kg, robotic arm, ice scoop, TEGA wet-chemistry lab."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Vastitas Borealis — landed May 25, 2008",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/phoenix/tier3-pan.jpg",
+          "caption": "Phoenix landing site 360° panorama, sol 14 — workspace + footpad + thrust-cleared ice exposure visible at lower right."
+        },
+        {
+          "src": "/images/hotspots/mars/phoenix/tier2-hirise.jpg",
+          "caption": "Phoenix lander, parachute and backshell — all imaged by MRO HiRISE after the landing."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/02.jpg",
+          "caption": "Robotic arm digging the \"Snow White\" trench — bright water ice exposed centimeters below the surface, then watched as it sublimated over four sols."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Water, perchlorates, and the first Martian weather",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/phoenix/03.jpg",
+          "caption": "Detection of perchlorate salts in Martian soil — chemistry that would shape every subsequent Mars-habitability discussion."
+        },
+        {
+          "src": "/images/fleet-galleries/phoenix/04.jpg",
+          "caption": "Lidar profiles of falling snow over the Phoenix site, late mission — the first Martian precipitation directly observed."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "site": "spirit",
+  "intro": "Spirit landed in Gusev Crater on January 4, 2004 — three weeks before its twin Opportunity touched down on the opposite side of Mars. Designed for 90 sols, Spirit operated for 6 years and traversed 7.7 km until its wheels became permanently mired in soft soil at \"Troy\". From a stranded rover, it continued as a stationary science platform until contact was lost in March 2010.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Solar-powered rover, twin of Opportunity",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/01.jpg",
+          "caption": "Mars Exploration Rover during integration — 185 kg, 6 wheels, Pancam mast camera, RAT rock-abrasion tool."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Gusev Crater — landed January 4, 2004",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+          "caption": "Winter Haven at McMurdo, sols 814-980 (2006) — Pancam 360° panorama. The Columbia Hills, named for the lost STS-107 crew, dominate the horizon."
+        },
+        {
+          "src": "/images/hotspots/mars/spirit/tier2-hirise.jpg",
+          "caption": "Spirit's Troy stuck-rover site, captured by MRO HiRISE after wheel embedment in May 2009."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/02.jpg",
+          "caption": "Drilling at the Adirondack rock, sol 34 — first use of the rock-abrasion tool on Mars."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Climbing Husband Hill, finding silica at Home Plate",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/spirit/03.jpg",
+          "caption": "Silica-rich soil exposed by Spirit's broken right-front wheel at Home Plate — evidence of past hydrothermal activity in Gusev Crater."
+        },
+        {
+          "src": "/images/fleet-galleries/spirit/04.jpg",
+          "caption": "Sunset over Gusev Crater photographed by Pancam, sol 489 (May 19 2005). One of the iconic blue-tinged Martian dusk images."
+        }
+      ]
+    }
+  ]
+}

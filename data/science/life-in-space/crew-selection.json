@@ -1,0 +1,35 @@
+{
+  "id": "crew-selection",
+  "tab": "life-in-space",
+  "order": 14,
+  "photo": {
+    "src": "/images/science/crew-selection-mercury-seven.jpg",
+    "credit": "NASA · The original Mercury Seven (April 1959). Of 508 military test pilots screened, 110 were invited to Lovelace Clinic, 56 cleared the medical phase, 32 went to Wright-Patterson for stress testing, and seven were selected. Every astronaut-selection process since has been a variation on the same funnel."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Every crewed mission carries the crew that selection produced — Mercury through Artemis, Vostok through Shenzhou, the selection criteria show up in the demographics" },
+    { "route": "/fleet", "context_key": "Crewed spacecraft (Mercury, Gemini, Apollo CSM/LM, Soyuz, Crew Dragon, Shenzhou, Orion, Gaganyaan) — the rated vehicle determines what the crew has to be able to tolerate" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Astronaut Selection",
+      "u": "https://www.nasa.gov/humans-in-space/astronauts/astronaut-selection/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Technical Reports · Mercury Astronaut Selection Process (1959)",
+      "u": "https://ntrs.nasa.gov/citations/19980215983",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Astronaut",
+      "u": "https://en.wikipedia.org/wiki/Astronaut",
+      "t": "core"
+    },
+    {
+      "l": "ESA · Astronaut selection process (2021–22 class)",
+      "u": "https://www.esa.int/About_Us/Careers_at_ESA/ESA_Astronaut_Selection",
+      "t": "deep"
+    }
+  ]
+}

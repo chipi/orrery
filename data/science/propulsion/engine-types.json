@@ -1,0 +1,40 @@
+{
+  "id": "engine-types",
+  "tab": "propulsion",
+  "order": 7,
+  "photo": {
+    "src": "/images/science/engine-types-raptor.jpg",
+    "credit": "SpaceX · Raptor 2 full-flow staged-combustion methalox engine on the test stand at McGregor, Texas. Raptor is the first methalox engine to reach operational flight (Starship), and the first full-flow staged-combustion engine ever flown."
+  },
+  "see_in_app": [
+    { "route": "/fleet", "context_key": "Falcon 9 (Merlin gas-generator kerolox), SLS (RS-25 staged-combustion hydrolox + solid boosters), Starship (Raptor full-flow staged-combustion methalox), Long March 5 (YF-77 hydrolox + YF-100 kerolox)" },
+    { "route": "/missions", "context_key": "Dawn and BepiColombo used Hall-effect / gridded-ion drives for years-long deep-space cruises after chemical ascent" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Rocket engine",
+      "u": "https://en.wikipedia.org/wiki/Rocket_engine",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Rocket engine cycles overview",
+      "u": "https://www.grc.nasa.gov/www/k-12/airplane/rktpow.html",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Staged combustion cycle (full-flow, fuel-rich, oxidizer-rich)",
+      "u": "https://en.wikipedia.org/wiki/Staged_combustion_cycle",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Ion thruster",
+      "u": "https://en.wikipedia.org/wiki/Ion_thruster",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Nuclear thermal propulsion (DRACO programme)",
+      "u": "https://www.nasa.gov/space-technology-mission-directorate/nuclear-thermal-propulsion-draco-program/",
+      "t": "deep"
+    }
+  ]
+}

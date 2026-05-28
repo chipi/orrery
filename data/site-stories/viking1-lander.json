@@ -1,0 +1,62 @@
+{
+  "site": "viking1-lander",
+  "intro": "Viking 1 touched down in Chryse Planitia on July 20, 1976 — the first successful US lander on Mars, exactly seven years after Apollo 11. Its 2,307-sol surface mission (6.3 years) included the first colour images from Mars, the first in-situ biology experiments (with ambiguous results), and a daily weather record. Final transmission November 1982 after a command upload accidentally overwrote the antenna-pointing parameters.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Lander + orbiter pair, RTG-powered, ~600 kg",
+      "images": [
+        {
+          "src": "/images/missions/viking1/01.jpg",
+          "caption": "Viking 1 lander undergoing pre-flight testing — RTG visible at rear, surface sampler arm extended."
+        },
+        {
+          "src": "/images/missions/viking1/02.jpg",
+          "caption": "Mockup deployment of the surface-sampler arm in the JPL test environment."
+        }
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Launch",
+      "subtitle": "August 20, 1975 — Titan IIIE from Cape Canaveral",
+      "images": [
+        {
+          "src": "/images/missions/viking1/03.jpg",
+          "caption": "Titan IIIE / Centaur launches Viking 1 — 10-month transit, Mars orbit insertion June 1976, lander touchdown July 20."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Chryse Planitia — landed July 20, 1976",
+      "images": [
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier3-pan.jpg",
+          "caption": "Chryse Planitia 360° panorama — first colour landscape from another planet's surface."
+        },
+        {
+          "src": "/images/hotspots/mars/viking1-lander/tier2-hirise.jpg",
+          "caption": "Viking 1 lander, photographed from orbit 30+ years later by MRO HiRISE — first hardware-archaeology view of a 1970s Mars mission."
+        },
+        {
+          "src": "/images/missions/viking1/04.jpg",
+          "caption": "First view of the Martian surface, captured minutes after touchdown by Camera 2."
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "title": "Science",
+      "subtitle": "Biology experiments, weather, and the search for life",
+      "images": [
+        {
+          "src": "/images/missions/viking1/05.jpg",
+          "caption": "Trench dug by the surface sampler — Viking biology experiments tested for organic compounds (none detected; result still debated)."
+        }
+      ]
+    }
+  ]
+}

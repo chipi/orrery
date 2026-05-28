@@ -1,0 +1,37 @@
+{
+  "id": "gps-gnss",
+  "name": "GPS (Global Positioning System)",
+  "category": "constellation",
+  "agency": "US Space Force",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin / Boeing (varied by block)",
+  "first_flight": "1978-02-22",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Original GNSS — 31 active satellites in MEO at 20,180 km / 55° inclination / 6 planes; defines global positioning standard, free public service since 2000",
+  "credit": "US Space Force GPS Operations. Originally a Department of Defense system; civilian unencrypted L1 C/A signal freely available worldwide.",
+  "links": [
+    {
+      "l": "Global Positioning System — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Global_Positioning_System",
+      "t": "intro"
+    },
+    {
+      "l": "GPS.gov (US government info)",
+      "u": "https://www.gps.gov/",
+      "t": "core"
+    },
+    {
+      "l": "US Space Force GPS operations",
+      "u": "https://www.spaceforce.mil/News/Topics/GPS/",
+      "t": "deep"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "gps"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "fuels-and-oxidizers",
+  "tab": "propulsion",
+  "order": 8,
+  "photo": {
+    "src": "/images/science/fuels-and-oxidizers-lox-loading.jpg",
+    "credit": "NASA · Kennedy Space Center · Liquid oxygen being loaded into the SLS core stage. LOX is the dominant oxidiser of orbital launch — every cryogenic stack (hydrolox, kerolox, methalox) needs hundreds of tonnes of it."
+  },
+  "see_in_app": [
+    { "route": "/fleet", "context_key": "Falcon 9 / Atlas V (kerolox), SLS / Delta IV / Ariane 6 upper / Long March 5 (hydrolox), Starship / Vulcan / Neutron (methalox), older Russian / Chinese / Indian craft (hypergolic UDMH/N2O4)" },
+    { "route": "/missions", "context_key": "Interplanetary missions almost all use hypergolic storables for course corrections — the propellant can sit unrefrigerated for years and ignites on contact" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Rocket propellant",
+      "u": "https://en.wikipedia.org/wiki/Rocket_propellant",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Hypergolic propellant",
+      "u": "https://en.wikipedia.org/wiki/Hypergolic_propellant",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · RP-1 (kerosene rocket grade)",
+      "u": "https://en.wikipedia.org/wiki/RP-1",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Methalox (liquid methane / liquid oxygen)",
+      "u": "https://en.wikipedia.org/wiki/Liquid_methane_rocket",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Solid propellant history",
+      "u": "https://www.nasa.gov/centers-and-facilities/marshall/solid-rocket-boosters/",
+      "t": "deep"
+    }
+  ]
+}

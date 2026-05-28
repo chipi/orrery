@@ -42,7 +42,8 @@
         "id": "iss",
         "role": "station"
       }
-    ]
+    ],
+    "group": "crewed-station"
   },
   {
     "id": "tiangong",
@@ -88,7 +89,8 @@
         "id": "tiangong",
         "role": "station"
       }
-    ]
+    ],
+    "group": "crewed-station"
   },
   {
     "id": "hubble",
@@ -135,7 +137,8 @@
         "id": "hubble",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "science"
   },
   {
     "id": "gps",
@@ -145,7 +148,7 @@
     "altitude_km": 20180,
     "period_min": 717.97,
     "inclination": 55,
-    "count": 4,
+    "count": 31,
     "color": "#0B3D91",
     "agencies": [
       "USAF",
@@ -171,6 +174,20 @@
         "u": "https://en.wikipedia.org/wiki/Global_navigation_satellite_system",
         "t": "core"
       }
+    ],
+    "group": "nav",
+    "is_constellation": true,
+    "fleet_refs": [
+      {
+        "id": "gps-gnss",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "MEO 20,180 km"
+      }
     ]
   },
   {
@@ -181,7 +198,7 @@
     "altitude_km": 23222,
     "period_min": 844.7,
     "inclination": 56,
-    "count": 4,
+    "count": 28,
     "color": "#1C3C8A",
     "agencies": [
       "ESA"
@@ -201,6 +218,20 @@
         "u": "https://www.esa.int/Applications/Navigation/Galileo",
         "t": "intro"
       }
+    ],
+    "group": "nav",
+    "is_constellation": true,
+    "fleet_refs": [
+      {
+        "id": "galileo-gnss",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "MEO 23,222 km"
+      }
     ]
   },
   {
@@ -211,7 +242,7 @@
     "altitude_km": 19130,
     "period_min": 675.7,
     "inclination": 64.8,
-    "count": 4,
+    "count": 24,
     "color": "#003087",
     "agencies": [
       "ROSCOSMOS"
@@ -236,6 +267,20 @@
         "u": "https://ru.wikipedia.org/wiki/%D0%93%D0%9B%D0%9E%D0%9D%D0%90%D0%A1%D0%A1",
         "t": "core"
       }
+    ],
+    "group": "nav",
+    "is_constellation": true,
+    "fleet_refs": [
+      {
+        "id": "glonass",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "MEO 19,130 km"
+      }
     ]
   },
   {
@@ -246,7 +291,7 @@
     "altitude_km": 21528,
     "period_min": 773,
     "inclination": 55,
-    "count": 4,
+    "count": 30,
     "color": "#DE2910",
     "agencies": [
       "CNSA"
@@ -270,6 +315,20 @@
         "l": "北斗卫星导航系统 — 中文维基百科",
         "u": "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%96%97%E5%8D%AB%E6%98%9F%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F",
         "t": "core"
+      }
+    ],
+    "group": "nav",
+    "is_constellation": true,
+    "fleet_refs": [
+      {
+        "id": "beidou",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "MEO + IGSO + GEO hybrid"
       }
     ]
   },
@@ -308,7 +367,8 @@
         "u": "https://www.goes.noaa.gov/",
         "t": "core"
       }
-    ]
+    ],
+    "group": "comms"
   },
   {
     "id": "chandra",
@@ -353,7 +413,8 @@
         "id": "chandra",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "science"
   },
   {
     "id": "xmm",
@@ -393,7 +454,8 @@
         "id": "xmm-newton",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "science"
   },
   {
     "id": "lro",
@@ -427,7 +489,8 @@
         "u": "https://en.wikipedia.org/wiki/Lunar_water",
         "t": "core"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "luna10",
@@ -456,7 +519,8 @@
         "u": "https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D0%BD%D0%B0-10",
         "t": "core"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "clementine",
@@ -480,7 +544,8 @@
         "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)",
         "t": "intro"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "lunar-prospector",
@@ -509,7 +574,8 @@
         "u": "https://science.nasa.gov/mission/lunar-prospector/",
         "t": "intro"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "smart-1",
@@ -538,7 +604,8 @@
         "u": "https://www.esa.int/Science_Exploration/Space_Science/SMART-1",
         "t": "intro"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "change1",
@@ -567,7 +634,8 @@
         "u": "http://www.clep.org.cn/",
         "t": "intro"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "chandrayaan1",
@@ -596,7 +664,8 @@
         "u": "https://www.isro.gov.in/Chandrayaan_1.html",
         "t": "intro"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "change2",
@@ -631,7 +700,8 @@
         "id": "change-2",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "moon-orbiter"
   },
   {
     "id": "jwst",
@@ -686,7 +756,8 @@
         "id": "jwst",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "science"
   },
   {
     "id": "gaia",
@@ -724,6 +795,457 @@
         "id": "gaia",
         "role": "spacecraft"
       }
-    ]
+    ],
+    "group": "science"
+  },
+  {
+    "id": "starlink",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 550,
+    "altitude_km": 550,
+    "period_min": 95.5,
+    "inclination": 53,
+    "inclination_shells": [
+      53,
+      70,
+      97.6
+    ],
+    "count": 6000,
+    "color": "#5a9bd4",
+    "agencies": [
+      "SpaceX"
+    ],
+    "launched": 2018,
+    "status": "ACTIVE",
+    "credit": "SpaceX — public FCC + ITU filings + Jonathan McDowell tracking",
+    "links": [
+      {
+        "l": "Starlink — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Starlink",
+        "t": "intro"
+      },
+      {
+        "l": "Starlink official",
+        "u": "https://www.starlink.com/",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "starlink",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "LEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "oneweb",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 1200,
+    "altitude_km": 1200,
+    "period_min": 109,
+    "inclination": 87.9,
+    "count": 648,
+    "color": "#7a9bd4",
+    "agencies": [
+      "Eutelsat OneWeb"
+    ],
+    "launched": 2019,
+    "status": "ACTIVE",
+    "credit": "Eutelsat OneWeb — public FCC/ITU filings",
+    "links": [
+      {
+        "l": "OneWeb — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/OneWeb",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "oneweb",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "LEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "iridium-next",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 780,
+    "altitude_km": 780,
+    "period_min": 100.4,
+    "inclination": 86.4,
+    "count": 75,
+    "color": "#9bbcd4",
+    "agencies": [
+      "Iridium Communications"
+    ],
+    "launched": 2017,
+    "status": "ACTIVE",
+    "credit": "Iridium Communications — public catalogue",
+    "links": [
+      {
+        "l": "Iridium NEXT — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Iridium_satellite_constellation#Iridium_NEXT",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "iridium-next",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "LEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "kuiper",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 590,
+    "altitude_km": 590,
+    "period_min": 96.4,
+    "inclination": 51.9,
+    "count": 3236,
+    "color": "#a89bd4",
+    "agencies": [
+      "Amazon"
+    ],
+    "launched": 2023,
+    "status": "ACTIVE",
+    "credit": "Amazon Project Kuiper — FCC license + public filings",
+    "links": [
+      {
+        "l": "Project Kuiper — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Project_Kuiper",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "kuiper",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "LEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "planet-labs",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "imaging",
+    "is_constellation": true,
+    "earth_distance_km": 475,
+    "altitude_km": 475,
+    "period_min": 94,
+    "inclination": 97.5,
+    "count": 170,
+    "color": "#4ec96d",
+    "agencies": [
+      "Planet Labs PBC"
+    ],
+    "launched": 2013,
+    "status": "ACTIVE",
+    "credit": "Planet Labs — PlanetScope (~150) + SkySat (~21)",
+    "links": [
+      {
+        "l": "Planet Labs — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Planet_Labs",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "planet-labs",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/sun-synchronous",
+        "context": "SSO 475 km"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "sentinel-copernicus",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "imaging",
+    "is_constellation": true,
+    "earth_distance_km": 700,
+    "altitude_km": 700,
+    "period_min": 98.6,
+    "inclination": 98.6,
+    "count": 10,
+    "color": "#3ea863",
+    "agencies": [
+      "ESA",
+      "European Commission"
+    ],
+    "launched": 2014,
+    "status": "ACTIVE",
+    "credit": "ESA Copernicus — Sentinel-1/2/3/5P/6 in SSO",
+    "links": [
+      {
+        "l": "Copernicus Programme — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Copernicus_Programme",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "sentinel-copernicus",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/sun-synchronous",
+        "context": "SSO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "landsat",
+    "body": "EARTH",
+    "regime": "LEO",
+    "group": "imaging",
+    "is_constellation": true,
+    "earth_distance_km": 705,
+    "altitude_km": 705,
+    "period_min": 99,
+    "inclination": 98.2,
+    "count": 2,
+    "color": "#5bbf6f",
+    "agencies": [
+      "NASA",
+      "USGS"
+    ],
+    "launched": 1972,
+    "status": "ACTIVE",
+    "credit": "NASA/USGS — Landsat 8 (2013) + Landsat 9 (2021), SSO",
+    "links": [
+      {
+        "l": "Landsat program — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Landsat_program",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "landsat",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/sun-synchronous",
+        "context": "SSO 705 km"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "goes",
+    "body": "EARTH",
+    "regime": "GEO",
+    "group": "weather",
+    "is_constellation": true,
+    "earth_distance_km": 35786,
+    "altitude_km": 35786,
+    "period_min": 1436,
+    "inclination": 0,
+    "count": 4,
+    "color": "#f0a657",
+    "agencies": [
+      "NOAA",
+      "NASA"
+    ],
+    "launched": 1975,
+    "status": "ACTIVE",
+    "credit": "NOAA — GOES-East (75.2°W) + GOES-West (137.0°W) operational pair + standbys",
+    "links": [
+      {
+        "l": "GOES — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Geostationary_Operational_Environmental_Satellite",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "goes-noaa",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "GEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "inmarsat",
+    "body": "EARTH",
+    "regime": "GEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 35786,
+    "altitude_km": 35786,
+    "period_min": 1436,
+    "inclination": 0,
+    "count": 14,
+    "color": "#d4a47a",
+    "agencies": [
+      "Viasat / Inmarsat"
+    ],
+    "launched": 1990,
+    "status": "ACTIVE",
+    "credit": "Viasat / Inmarsat — GEO mobile + maritime comms",
+    "links": [
+      {
+        "l": "Inmarsat — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Inmarsat",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "inmarsat",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "GEO"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "tundra-molniya",
+    "body": "EARTH",
+    "regime": "HEO",
+    "group": "early-warning",
+    "is_constellation": true,
+    "earth_distance_km": 39000,
+    "altitude_km": 39000,
+    "period_min": 718,
+    "inclination": 63.4,
+    "eccentricity": 0.74,
+    "count": 8,
+    "color": "#e58566",
+    "agencies": [
+      "Roscosmos",
+      "US Space Force",
+      "Sirius XM"
+    ],
+    "launched": 1965,
+    "status": "ACTIVE",
+    "credit": "Russian Molniya (since 1965) + US SBIRS-HEO + Sirius XM Tundra — 63.4° critical inclination",
+    "links": [
+      {
+        "l": "Molniya orbit — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Molniya_orbit",
+        "t": "intro"
+      },
+      {
+        "l": "Tundra orbit — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Tundra_orbit",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "tundra-molniya",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/special-orbits",
+        "context": "Molniya + Tundra at 63.4°"
+      }
+    ],
+    "crew": 0
+  },
+  {
+    "id": "o3b",
+    "body": "EARTH",
+    "regime": "MEO",
+    "group": "comms",
+    "is_constellation": true,
+    "earth_distance_km": 8063,
+    "altitude_km": 8063,
+    "period_min": 288,
+    "inclination": 0,
+    "count": 20,
+    "color": "#8ed4bf",
+    "agencies": [
+      "SES"
+    ],
+    "launched": 2013,
+    "status": "ACTIVE",
+    "credit": "SES O3b + O3b mPOWER — only operational MEO commercial broadband",
+    "links": [
+      {
+        "l": "O3b satellite constellation — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/O3b_(satellite_constellation)",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "o3b-mpower",
+        "role": "constellation"
+      }
+    ],
+    "science_refs": [
+      {
+        "section": "orbits/orbit-regimes",
+        "context": "MEO"
+      }
+    ],
+    "crew": 0
   }
 ]

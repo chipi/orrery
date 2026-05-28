@@ -1,0 +1,36 @@
+{
+  "id": "pre-flight-training",
+  "tab": "life-in-space",
+  "order": 15,
+  "photo": {
+    "src": "/images/science/pre-flight-training.jpg",
+    "credit": "NASA · Langley Research Center reduced-gravity walking simulator (1963). Apollo crews trained for lunar gait by being suspended at a 9.5° angle, simulating 1/6 g. Half a century later, the same problem — predicting how the human body moves in unfamiliar gravity — still drives ground-training architecture."
+  },
+  "see_in_app": [
+    { "route": "/missions", "context_key": "Crewed expeditions — the training pipeline that produced each crew is encoded in the mission's pre-launch timeline" },
+    { "route": "/fleet", "context_key": "Crewed spacecraft (Soyuz, Crew Dragon, Starliner, Shenzhou, Orion) — each requires its own vehicle-specific training cycle" },
+    { "route": "/iss", "context_key": "ISS module training — every astronaut on station has trained on every module they'll touch" }
+  ],
+  "links": [
+    {
+      "l": "NASA · Astronaut Training Pipeline",
+      "u": "https://www.nasa.gov/humans-in-space/astronauts/training/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA · Astronaut Training at EAC",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Astronauts/Training",
+      "t": "core"
+    },
+    {
+      "l": "Roscosmos / GCTC · Yuri Gagarin Cosmonaut Training Centre",
+      "u": "https://www.gctc.ru/main.php?id=85",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Astronaut training",
+      "u": "https://en.wikipedia.org/wiki/Astronaut_training",
+      "t": "deep"
+    }
+  ]
+}

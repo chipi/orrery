@@ -1,0 +1,32 @@
+{
+  "id": "iridium-next",
+  "name": "Iridium NEXT",
+  "category": "constellation",
+  "agency": "Iridium Communications",
+  "country": "USA",
+  "manufacturer": "Thales Alenia Space",
+  "first_flight": "2017-01-14",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "75 LEO comms satellites + spares at 780 km in 6 polar planes — global voice + data + machine-to-machine; replaced original 1998 Iridium fleet",
+  "credit": "Iridium NEXT commercial constellation. Replaced the 1998-era Iridium 1 fleet; deployment completed 2019.",
+  "links": [
+    {
+      "l": "Iridium NEXT — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Iridium_satellite_constellation#Iridium_NEXT",
+      "t": "intro"
+    },
+    {
+      "l": "Iridium Communications official site",
+      "u": "https://www.iridium.com/",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "iridium-next"
+    }
+  ]
+}

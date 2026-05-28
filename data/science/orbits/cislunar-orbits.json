@@ -1,0 +1,40 @@
+{
+  "id": "cislunar-orbits",
+  "tab": "orbits",
+  "order": 13,
+  "photo": {
+    "src": "/images/science/cislunar-orbits-gateway.jpg",
+    "credit": "NASA · Lunar Gateway concept rendering in its target Near-Rectilinear Halo Orbit (NRHO) — a cislunar orbit class chosen specifically for low station-keeping cost, continuous Earth communication, and easy access to the lunar south pole."
+  },
+  "see_in_app": [
+    { "route": "/moon", "context_key": "Artemis Base Camp + Gateway both depend on cislunar orbit design — lunar surface accessibility from NRHO" },
+    { "route": "/missions", "context_key": "Artemis III/IV/V mission profiles use the NRHO Gateway as the orbital staging point" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Near-rectilinear halo orbit (NRHO)",
+      "u": "https://en.wikipedia.org/wiki/Near-rectilinear_halo_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Distant retrograde orbit (DRO)",
+      "u": "https://en.wikipedia.org/wiki/Distant_retrograde_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Lunar Gateway NRHO selection paper",
+      "u": "https://ntrs.nasa.gov/citations/20200000546",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Lyapunov + halo orbit families at Lagrange points",
+      "u": "https://en.wikipedia.org/wiki/Halo_orbit",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Artemis cislunar architecture",
+      "u": "https://www.nasa.gov/wp-content/uploads/2020/12/artemis_plan-20200921.pdf",
+      "t": "deep"
+    }
+  ]
+}

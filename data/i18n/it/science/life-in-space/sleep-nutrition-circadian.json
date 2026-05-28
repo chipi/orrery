@@ -1,0 +1,8 @@
+{
+  "title": "Sonno, nutrizione e ritmi circadiani",
+  "intro_sentence": "L'ISS vede 16 albe al giorno. L'equipaggio è comunque su GMT, mangia cibo progettato per non fluttuare, e dorme regolarmente peggio che sulla Terra. Le missioni di lunga durata vivono o muoiono di questa pila.",
+  "body_paragraphs": [
+    "Il ritmo circadiano è l'invariante più dura in orbita bassa. L'ISS orbita la Terra ogni 92 minuti — 16 albe per 24 ore. Il sistema circadiano umano è costruito attorno a un singolo ciclo alba/tramonto, quindi un flusso costante di segnali luminosi sovrasta tutti gli altri. Contromisura: orario rigido (GMT, sveglia 06:00, sonno 21:30), tende oscuranti pesanti, illuminazione attiva allineata al ritmo circadiano. Anche così, gli equipaggi ISS dormono ~6 h/notte vs ~7–8 sulla Terra. Le stazioni di sonno sono cabine telefoniche imbottite 0,9 × 0,9 × 2 m. L'ingegneria alimentare: microgravità cambia deglutizione, gusto (~30% in meno percezione olfattiva → cibi insipidi), appetito (5–10% perdita peso primo mese). Risposta: niente pane (tortillas), salse per tenere insieme i pasti, sapori forti (hot sauce icona), zero bevande gassate. Acqua: 2,0–2,5 L/giorno, quasi tutta dal Water Recovery System (~93% lato US; obiettivo Marte >98%)."
+  ],
+  "diagram_caption": "Corpo vuole: una alba, gravità per deglutire, gravità per separare bolle, 7–8 h sonno. ISS dà: 16 albe/giorno, 0 g, niente gasata, ~6 h sonno. Contromisure: orario GMT + illuminazione circadiana + cabine sigillate + cibo ingegnerizzato + acqua riciclata."
+}

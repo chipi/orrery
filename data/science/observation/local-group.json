@@ -1,0 +1,34 @@
+{
+  "id": "local-group",
+  "tab": "observation",
+  "order": 8,
+  "photo": {
+    "src": "/images/science/local-group-map.jpg",
+    "credit": "ESA / Gaia / DPAC · Local Group map showing the Milky Way + Andromeda + Triangulum as the three dominant spirals, surrounded by ~80 known dwarf companions. The structure is gravitationally bound and approximately 10 million light-years across."
+  },
+  "see_in_app": [
+    { "route": "/explore", "context_key": "Local Group billboard overlay — 15 named members plotted on the celestial sphere via the Science Lens 'Galaxies' layer" }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Local Group",
+      "u": "https://en.wikipedia.org/wiki/Local_Group",
+      "t": "intro"
+    },
+    {
+      "l": "NASA NED · Local Group object catalogue",
+      "u": "https://ned.ipac.caltech.edu/level5/March02/Tully/Tully2.html",
+      "t": "core"
+    },
+    {
+      "l": "ESA · Gaia mission overview (Local Group dynamics)",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Gaia",
+      "t": "core"
+    },
+    {
+      "l": "arXiv · Karachentsev et al. 2013 — Updated Local Volume catalogue",
+      "u": "https://arxiv.org/abs/1303.5328",
+      "t": "deep"
+    }
+  ]
+}

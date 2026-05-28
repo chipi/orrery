@@ -1,0 +1,41 @@
+{
+  "id": "crewed-station-design",
+  "tab": "life-in-space",
+  "order": 11,
+  "photo": {
+    "src": "/images/science/crewed-station-design-iss.jpg",
+    "credit": "NASA · The ISS photographed from a departing SpaceX Crew Dragon (Nov 2021). The international+modular architecture that has been continuously crewed since 2000 is the assembled outcome of every space-station design lesson since Salyut 1."
+  },
+  "see_in_app": [
+    { "route": "/iss", "context_key": "Module catalogue — 16 pressurised + assembly elements across US / Russian / European / Japanese contributions" },
+    { "route": "/tiangong", "context_key": "Tianhe core + Wentian + Mengtian — the second continuously crewed station, with a deliberately tighter architecture" },
+    { "route": "/missions", "context_key": "Crewed expeditions to Salyut 1–7, Skylab, Mir, ISS, and Tiangong appear in the missions catalogue" }
+  ],
+  "links": [
+    {
+      "l": "NASA · International Space Station Reference",
+      "u": "https://www.nasa.gov/international-space-station/",
+      "t": "intro"
+    },
+    {
+      "l": "CMSA · China Manned Space — Tiangong Architecture",
+      "u": "http://en.cmse.gov.cn/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Space station",
+      "u": "https://en.wikipedia.org/wiki/Space_station",
+      "t": "core"
+    },
+    {
+      "l": "Roscosmos / NASA · Mir Hardware Heritage (NASA SP-1357)",
+      "u": "https://ntrs.nasa.gov/citations/19950028188",
+      "t": "deep"
+    },
+    {
+      "l": "NASA Technical Reports · Skylab — A Chronology (NASA SP-4011)",
+      "u": "https://history.nasa.gov/SP-4011/contents.htm",
+      "t": "deep"
+    }
+  ]
+}

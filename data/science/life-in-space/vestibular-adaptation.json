@@ -2,19 +2,23 @@
   "id": "vestibular-adaptation",
   "tab": "life-in-space",
   "order": 5,
+  "photo": {
+    "src": "/images/science/vestibular-system.jpg",
+    "credit": "NASA reference diagram \u2014 vestibular system. The semicircular canals and otolith organs that on Earth tell the brain \u00abwhich way is up\u00bb receive no consistent signal in microgravity; the adaptation takes 2\u20133 days, the re-adaptation back on Earth takes weeks."
+  },
   "links": [
     {
-      "l": "NASA · Space Adaptation Syndrome",
+      "l": "NASA \u00b7 Space Adaptation Syndrome",
       "u": "https://www.nasa.gov/humans-in-space/why-go-to-space/",
       "t": "intro"
     },
     {
-      "l": "NASA HRP · Sensorimotor Adaptation Evidence",
+      "l": "NASA HRP \u00b7 Sensorimotor Adaptation Evidence",
       "u": "https://humanresearchroadmap.nasa.gov/Evidence/reports/Sensorimotor.pdf",
       "t": "core"
     },
     {
-      "l": "Wikipedia · Space adaptation syndrome",
+      "l": "Wikipedia \u00b7 Space adaptation syndrome",
       "u": "https://en.wikipedia.org/wiki/Space_adaptation_syndrome",
       "t": "deep"
     }

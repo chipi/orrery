@@ -357,34 +357,39 @@
   );
   let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
 
-  /** Map a FlightEvent.type to an inline English label. C7 swaps these
-   *  to paraglide messages + 13-locale wave23 roll. Kept here as
-   *  a small dispatch so the C5 commit doesn't depend on the i18n
-   *  strings landing first. */
+  /** Resolve a FlightEvent.type to its localised label via paraglide
+   *  messages (C7 — 14-locale roll, EN placeholders pending wave23
+   *  translation pass). Unknown types fall through to the raw key
+   *  string (defensive — shouldn't happen with the schema's closed
+   *  FlightEventType union). */
   function defaultEventLabel(type: PhaseMarker['event']['type']): string {
     switch (type) {
       case 'launch':
-        return 'Launch';
+        return m.fly_event_launch();
       case 'parking_orbit_exit':
-        return 'Parking orbit exit';
+        return m.fly_event_parking_orbit_exit();
       case 'tli_or_tmi':
-        return 'TLI';
+        return m.fly_event_tli_or_tmi();
       case 'tcm':
-        return 'TCM';
+        return m.fly_event_tcm();
       case 'loi':
-        return 'LOI';
+        return m.fly_event_loi();
       case 'descent_start':
-        return 'Descent';
+        return m.fly_event_descent_start();
       case 'ascent':
-        return 'Ascent';
+        return m.fly_event_ascent();
       case 'tei':
-        return 'TEI';
+        return m.fly_event_tei();
       case 'earth_return':
-        return 'Earth return';
+        return m.fly_event_earth_return();
       case 'flyby':
-        return 'Flyby';
+        return m.fly_event_flyby();
       case 'arrival':
-        return 'Arrival';
+        return m.fly_event_arrival();
+      case 'anomaly':
+        return m.fly_event_anomaly();
+      case 'edl_or_oi':
+        return m.fly_event_edl_or_oi();
       default:
         return type;
     }

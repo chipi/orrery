@@ -39,80 +39,86 @@ Co-tenancy is enforced by four mechanics:
 
 ---
 
-## One-time VPS bootstrap
+## VPS prerequisites — already satisfied by podcast_scraper
 
-Run these as the operator (root or `deploy@` with sudo) on the VPS. **Skip if you've already done it.**
+orrery rides on the existing tailnet node where podcast_scraper runs. The following are already in place via podcast_scraper's Terraform / cloud-init in its own repo:
 
-### 1. Clone the repo
+- ✅ VPS provisioned (Hetzner CAX) with tailnet identity registered
+- ✅ `deploy@` user exists, in the `docker` group
+- ✅ `deploy@` `~/.ssh/authorized_keys` includes the deploy key matching `PROD_SSH_PRIVATE_KEY`
+- ✅ Docker engine + `docker compose` plugin installed
+- ✅ Hetzner firewall: 22/SSH + ICMP only; all other ports private
 
-```bash
-sudo install -d -o deploy -g deploy /srv/orrery
-sudo -u deploy git clone https://github.com/chipi/orrery.git /srv/orrery
+orrery adds **zero** to that list. The deploy workflow handles everything else idempotently on each run.
+
+---
+
+## Zero-touch first deploy
+
+The deploy workflow auto-bootstraps `/srv/orrery/` on first run:
+
+1. SSHes into VPS as `deploy@`
+2. Clones the repo into `/srv/orrery` if missing
+3. Scaffolds `/srv/orrery/.env` if missing (with `ORRERY_PORT=8090` + `COMPOSE_PROJECT_NAME=orrery`)
+4. Rewrites `ORRERY_PIPELINE_IMAGE_TAG` to the current deploy SHA
+5. Rsyncs the CI-built `build/` into `/srv/orrery/build/`
+6. `git pull` + `docker compose pull web pipeline-runner` + `docker compose up -d web`
+7. Loopback healthcheck on `:ORRERY_PORT`
+8. `tailscale serve --bg --https=8443 8090` (registers if not already; no-op if already registered to the right backend)
+9. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
+
+**No sudo. No systemd touch. No `/usr/local/sbin` writes.** All operations run as the `deploy@` user. The whole bootstrap surface is captured in `.github/workflows/deploy-prod.yml`.
+
+---
+
+## Caveat — tailscale-serve durability
+
+`tailscale serve --bg` registers the `:8443` → `127.0.0.1:8090` mapping in tailscaled's runtime state. **This does not persist across `tailscaled` restarts** (VPS reboot, tailscale package upgrade). The deploy workflow re-registers on every run, so a successful deploy after a restart re-arms the serve config.
+
+For true persistence (survive between deploys when there is no operator action), the systemd `ExecStartPost` pattern from podcast_scraper should be replicated in the **same Terraform / cloud-init that provisioned the VPS** (which lives in the podcast_scraper repo). The snippet below is ready to paste:
+
+```yaml
+# Add to podcast_scraper's infra/cloud-init/prod.user-data, alongside
+# the existing podcast-tailscale-serve.sh write_files entry:
+write_files:
+  - path: /usr/local/sbin/orrery-tailscale-serve.sh
+    permissions: '0755'
+    content: |
+      #!/bin/sh
+      # Mirrors podcast-tailscale-serve.sh, publishing orrery's host
+      # ORRERY_PORT (default 8090) on the tailnet at HTTPS :8443.
+      # Source of truth: orrery repo infra/cloud-init/orrery-tailscale-serve.sh
+      set -eu
+      PORT=8090
+      if [ -f /srv/orrery/.env ]; then
+        line=$(grep -E '^ORRERY_PORT=' /srv/orrery/.env | tail -1 || true)
+        if [ -n "$line" ]; then
+          v=$(echo "$line" | cut -d= -f2- | tr -d ' \t"' | tr -d "'")
+          if [ -n "$v" ]; then PORT="$v"; fi
+        fi
+      fi
+      i=1
+      while [ "$i" -le 60 ]; do
+        if curl -fsS "http://127.0.0.1:${PORT}/" >/dev/null 2>&1; then
+          break
+        fi
+        sleep 2
+        i=$((i + 1))
+      done
+      /usr/bin/tailscale serve --bg --https=8443 "$PORT"
+  - path: /etc/systemd/system/tailscaled.service.d/orrery-serve.conf
+    permissions: '0644'
+    content: |
+      [Service]
+      ExecStartPost=/usr/local/sbin/orrery-tailscale-serve.sh
+
+# In the runcmd section of the same cloud-init, add:
+runcmd:
+  - systemctl daemon-reload
+  - systemctl restart tailscaled.service
 ```
 
-### 2. Create `/srv/orrery/.env`
-
-```bash
-sudo -u deploy install -m 600 /dev/null /srv/orrery/.env
-cat <<'EOF' | sudo -u deploy tee /srv/orrery/.env
-COMPOSE_PROJECT_NAME=orrery
-ORRERY_PORT=8090
-# ORRERY_PIPELINE_IMAGE_TAG is rewritten by the deploy workflow on each
-# deploy; leave it blank or set to "main" for the floating tag.
-ORRERY_PIPELINE_IMAGE_TAG=main
-# Sentry + Grafana Cloud env vars are env-var-gated per RFC-025 — leave
-# blank for silent observability. Set later if you want telemetry.
-# SENTRY_DSN_ORRERY=
-# GRAFANA_CLOUD_LOKI_URL=
-# GRAFANA_CLOUD_LOKI_USER=
-# GRAFANA_CLOUD_API_KEY=
-EOF
-```
-
-### 3. Install the tailscale-serve script + systemd unit
-
-```bash
-sudo cp /srv/orrery/infra/cloud-init/orrery-tailscale-serve.sh \
-  /usr/local/sbin/orrery-tailscale-serve.sh
-sudo chmod +x /usr/local/sbin/orrery-tailscale-serve.sh
-```
-
-Add an `ExecStartPost=/usr/local/sbin/orrery-tailscale-serve.sh` line to `/etc/systemd/system/tailscaled.service.d/serve.conf` (drop-in overlay alongside podcast_scraper's). Existing structure:
-
-```ini
-[Service]
-# Existing podcast_scraper serve
-ExecStartPost=/usr/local/sbin/podcast-tailscale-serve.sh
-# Added for orrery (GH #260)
-ExecStartPost=/usr/local/sbin/orrery-tailscale-serve.sh
-```
-
-Then:
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl restart tailscaled.service
-```
-
-Verify both serves register:
-
-```bash
-sudo tailscale serve status
-# Should show:
-#   443  → http://127.0.0.1:8080   (podcast_scraper)
-#   8443 → http://127.0.0.1:8090   (orrery)
-```
-
-### 4. Pull GHCR images + test compose
-
-```bash
-sudo -u deploy bash -c 'cd /srv/orrery &&
-  docker compose -p orrery -f compose/docker-compose.prod.yml --env-file .env pull web pipeline-runner'
-```
-
-If `pipeline-runner` pull fails with "manifest unknown", the publish job hasn't shipped its first image yet. Wait for one green push-to-main of `docker-e2e.yml` (both matrix legs green) — then `ghcr.io/chipi/orrery-pipeline-runner:main` will exist.
-
-The first build/ doesn't exist yet — the deploy workflow rsyncs it. So skip `compose up` here; the first real deploy will do it.
+Once that's in podcast_scraper's Terraform + a `tofu apply` lands, the tailscale-serve registration persists across reboots automatically. **Until then, every orrery deploy re-arms it** — which is fine for the test-and-iterate phase.
 
 ---
 

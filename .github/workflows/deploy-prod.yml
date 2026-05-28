@@ -122,6 +122,36 @@ jobs:
           ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
             >> ~/.ssh/known_hosts 2>/dev/null || true
 
+      - name: Bootstrap /srv/orrery on VPS (idempotent, zero sudo)
+        # First-deploy bootstrap: creates /srv/orrery checkout + .env
+        # template if absent. Re-runs are no-ops. Runs as `deploy@`
+        # user with NO sudo — keeps the manual-VPS-prereq surface
+        # to just (1) the existing deploy@ user, (2) docker group
+        # membership, and (3) authorized_keys. Both already exist
+        # on the shared VPS because podcast_scraper uses the same.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; \
+             if [ ! -d /srv/orrery/.git ]; then \
+               mkdir -p /srv/orrery; \
+               git clone https://github.com/chipi/orrery.git /srv/orrery; \
+             fi; \
+             cd /srv/orrery; \
+             if [ ! -f .env ]; then \
+               install -m 600 /dev/null .env; \
+               cat > .env <<'BOOTSTRAP_ENV'
+          COMPOSE_PROJECT_NAME=orrery
+          ORRERY_PORT=8090
+          ORRERY_PIPELINE_IMAGE_TAG=main
+          BOOTSTRAP_ENV
+               chmod 600 .env; \
+               echo 'first-deploy: scaffolded /srv/orrery/.env'; \
+             fi"
+
       - name: Wire image tag into VPS .env (idempotent)
         # Reused on every deploy. Prior ORRERY_PIPELINE_IMAGE_TAG line is
         # removed before the new one is appended, so re-runs don't
@@ -134,7 +164,6 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
             "set -euo pipefail; cd /srv/orrery; \
-             test -f .env || install -m 600 /dev/null .env; \
              sed -i '/^ORRERY_PIPELINE_IMAGE_TAG=/d' .env; \
              echo 'ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}' >> .env; \
              chmod 600 .env"
@@ -183,6 +212,41 @@ jobs:
              echo 'orrery web did not respond within 60s'; \
              docker compose -p orrery -f compose/docker-compose.prod.yml logs web; \
              exit 1"
+
+      - name: Register tailscale serve for orrery (idempotent, no sudo)
+        # Publishes the host's ORRERY_PORT (8090) on the tailnet at
+        # https://<host>:8443/. Runs as `deploy@` user — `tailscale serve`
+        # does NOT require root on most setups (acts on the node-level
+        # tailnet identity that podcast_scraper deploy also uses).
+        #
+        # Idempotent: if port 8443 is already registered to the right
+        # backend, this is a no-op. `tailscale serve --bg --https=8443`
+        # overwrites just that port; does NOT touch :443 (podcast_scraper).
+        #
+        # CAVEAT: this registration is NOT persistent across `tailscaled`
+        # restarts (VPS reboot, package update). For durability, the
+        # operator should add the equivalent `ExecStartPost` to the VPS's
+        # systemd config — best done in podcast_scraper's Terraform
+        # cloud-init (see docs/ops/deploy-prod-vps.md §"Provisioning").
+        # Until that lands, every deploy re-registers, which is fine.
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; \
+             PORT=\$(grep -E '^ORRERY_PORT=' /srv/orrery/.env | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
+             PORT=\${PORT:-8090} ; \
+             # Check if :8443 is already correctly pointed at the orrery port.
+             # If yes, skip (idempotent). If no, register.
+             if tailscale serve status 2>/dev/null | grep -qE \":8443.*127\\.0\\.0\\.1:\${PORT}\"; then \
+               echo 'tailscale serve :8443 already configured for orrery — no-op'; \
+             else \
+               tailscale serve --bg --https=8443 \${PORT}; \
+               echo 'registered tailscale serve :8443 → 127.0.0.1:\${PORT}'; \
+             fi; \
+             tailscale serve status"
 
       - name: External health probe over Tailscale
         # Belt-and-suspenders: the deploy step already hit GET / on the

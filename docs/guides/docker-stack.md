@@ -92,7 +92,7 @@ LL2_PATREON_KEY=lk_xxx        # optional Launch Library 2 Patreon tier key
 
 `docker-compose` reads `.env` automatically and threads the values into the pipeline-runner container's environment. The web container doesn't read any secrets.
 
-CI sets these directly via `${{ secrets.LL2_PATREON_KEY }}` in `docker-e2e.yml`; the `.env` file is local-only.
+CI sets these directly via `${‌{ secrets.LL2_PATREON_KEY }}` in `docker-e2e.yml`; the `.env` file is local-only.
 
 ---
 

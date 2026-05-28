@@ -504,7 +504,6 @@ Both scripts only work if the JP2 has been previously downloaded by a full fetch
 - [RFC-017](../rfc/RFC-017.md) — Tier 0–3 architecture, two-layer composition, source-attribution info card UX
 - [PRD-014](../prd/PRD-014.md) — Surface Hotspots product requirements
 - [ADR-046](../adr/ADR-046.md) — image-provenance fail-closed gate
-- [ADR-059](../adr/ADR-059.md) — Tier 2 LOD dispatcher
 - [`scripts/hotspots/gdal-crop.ts`](../../scripts/hotspots/gdal-crop.ts) — the crop primitive
 - [`scripts/hotspots/fetch-mars.ts`](../../scripts/hotspots/fetch-mars.ts) — HiRISE orchestrator
 - [`scripts/hotspots/fetch-mars-ctx.ts`](../../scripts/hotspots/fetch-mars-ctx.ts) — CTX orchestrator

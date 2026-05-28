@@ -113,7 +113,7 @@ docker logs orrery-grafana-agent
 #   [agent-entrypoint] Grafana Cloud creds NOT present → starting in silent mode (no shipping)
 
 # Host-side outbound check from the agent container's PID:
-lsof -p $(docker inspect -f '{{.State.Pid}}' orrery-grafana-agent) | grep TCP
+lsof -p $(docker inspect -f '{‌{.State.Pid}}' orrery-grafana-agent) | grep TCP
 # → no ESTABLISHED outbound connections, only the local listener on :12345
 ```
 

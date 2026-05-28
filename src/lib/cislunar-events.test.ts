@@ -232,7 +232,7 @@ describe('cislunar-events — phaseMarkerKmPositions', () => {
       // Cast as the FlightEventType union won't accept arbitrary strings;
       // simulate an unmapped-but-known event type via a known key without
       // a science ref entry.
-      { type: 'launch' as 'launch', met_days: 1.0 }, // duplicate at later MET
+      { type: 'launch' as const, met_days: 1.0 }, // duplicate at later MET
     ];
     const m = phaseMarkerKmPositions(mockEvents, trajectory);
     expect(m).toHaveLength(2);

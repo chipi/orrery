@@ -5,6 +5,9 @@ import {
   sceneToScreenPx,
   eciKmToScreenPx,
   eciKmToCanvas2dPx,
+  helioAuToSceneUnits,
+  helioAuToScreenPx,
+  helioAuToCanvas2dPx,
   type MinimalCamera,
   type MinimalProjector,
 } from './cislunar-screen-projection';
@@ -133,5 +136,62 @@ describe('eciKmToCanvas2dPx — Earth-centred Moon-mode 2D projection', () => {
     const farKm = (view.canvasWidth / 2 / (view.baseScale2dPerAu * 6)) * 1.5 * 149_597_870.7;
     const r = eciKmToCanvas2dPx({ x: farKm, y: 0, z: 0 }, view);
     expect(r.onScreen).toBe(false);
+  });
+});
+
+describe('helioAuToCanvas2dPx — Sun-centred heliocentric 2D projection', () => {
+  // Mars-mode BASE_SCALE_2D used directly (no ×6 multiplier).
+  const view = { canvasWidth: 800, canvasHeight: 600, baseScale2dPerAu: 150 };
+
+  it('Sun (helio origin) maps to canvas centre', () => {
+    const r = helioAuToCanvas2dPx({ x: 0, y: 0, z: 0 }, view);
+    expect(r.x).toBe(400);
+    expect(r.y).toBe(300);
+    expect(r.onScreen).toBe(true);
+  });
+
+  it('Earth (1 AU on +x) maps 150 px from centre', () => {
+    const r = helioAuToCanvas2dPx({ x: 1, y: 0, z: 0 }, view);
+    expect(r.x).toBe(550);
+    expect(r.y).toBe(300);
+    expect(r.onScreen).toBe(true);
+  });
+
+  it('Mars (1.524 AU on +z) maps to canvas centre+ in y direction', () => {
+    const r = helioAuToCanvas2dPx({ x: 0, y: 0, z: 1.524 }, view);
+    expect(r.x).toBe(400);
+    expect(r.y).toBeCloseTo(528.6, 1);
+    expect(r.onScreen).toBe(true);
+  });
+
+  it('flags onScreen=false when point projects outside the canvas', () => {
+    const r = helioAuToCanvas2dPx({ x: 10, y: 0, z: 0 }, view);
+    expect(r.onScreen).toBe(false);
+  });
+});
+
+describe('helioAuToSceneUnits + helioAuToScreenPx', () => {
+  it('helioAuToSceneUnits is the identity transform (1 AU = 1 scene unit)', () => {
+    const u = helioAuToSceneUnits({ x: 1.524, y: 0, z: 0 });
+    expect(u).toEqual({ x: 1.524, y: 0, z: 0 });
+  });
+
+  it('helioAuToScreenPx wraps sceneToScreenPx via the factory', () => {
+    const projected = mockVec(0, 0, 0, (v) => {
+      v.x = 0; // NDC centre
+      v.y = 0;
+      v.z = 0;
+    });
+    const factory = () => projected;
+    const r = helioAuToScreenPx(
+      { x: 1.524, y: 0, z: 0 },
+      factory as unknown as (x: number, y: number, z: number) => MinimalProjector,
+      stubCamera,
+      800,
+      600,
+    );
+    expect(r.x).toBe(400);
+    expect(r.y).toBe(300);
+    expect(r.onScreen).toBe(true);
   });
 });

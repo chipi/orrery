@@ -139,3 +139,50 @@ export function eciKmToCanvas2dPx(pt: Vec3Km, view: Canvas2dViewState): ScreenPo
   const onScreen = x >= 0 && x <= view.canvasWidth && y >= 0 && y <= view.canvasHeight;
   return { x, y, onScreen };
 }
+
+// ===========================================================================
+// Heliocentric (interplanetary) projection helpers — #107 Step 6e.
+// Mirror the cislunar set above but for Vec3Au coords (Sun at origin).
+// /fly's existing heliocentric scene uses raw AU as scene units (no
+// scaling), so helioAuToSceneUnits is the identity transform —
+// retained as a function for symmetry with the cislunar API.
+// ===========================================================================
+
+/** Heliocentric AU position vector (parallels Vec3Km, but in AU). */
+export interface Vec3Au {
+  x: number;
+  y: number;
+  z: number;
+}
+
+/** AU → scene units. Identity for the heliocentric scene (1 AU = 1 unit). */
+export function helioAuToSceneUnits(pt: Vec3Au): Vec3Au {
+  return { x: pt.x, y: pt.y, z: pt.z };
+}
+
+/** One-shot: helio AU → CSS pixels via a Three.js camera. Wraps
+ *  helioAuToSceneUnits + sceneToScreenPx using a caller-provided
+ *  Vector3 factory. */
+export function helioAuToScreenPx(
+  pt: Vec3Au,
+  vec3Factory: (x: number, y: number, z: number) => MinimalProjector,
+  camera: MinimalCamera,
+  canvasWidth: number,
+  canvasHeight: number,
+): ScreenPoint {
+  const scene = helioAuToSceneUnits(pt);
+  return sceneToScreenPx(vec3Factory(scene.x, scene.y, scene.z), camera, canvasWidth, canvasHeight);
+}
+
+/** Heliocentric 2D canvas projection — Sun at canvas centre, x/z in AU.
+ *  Uses the unscaled BASE_SCALE_2D (no Moon-mode ×6 multiplier — the
+ *  heliocentric volume already fits via the larger SCALE constant). */
+export function helioAuToCanvas2dPx(pt: Vec3Au, view: Canvas2dViewState): ScreenPoint {
+  const cx = view.canvasWidth / 2;
+  const cy = view.canvasHeight / 2;
+  const scalePerAu = view.baseScale2dPerAu;
+  const x = cx + pt.x * scalePerAu;
+  const y = cy + pt.z * scalePerAu;
+  const onScreen = x >= 0 && x <= view.canvasWidth && y >= 0 && y <= view.canvasHeight;
+  return { x, y, onScreen };
+}

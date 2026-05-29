@@ -85,9 +85,11 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 37 missions', async () => {
+  it('returns 42 missions', async () => {
+    // v0.7 #107 Step 6 — index gained beresheet, change3, luna16,
+    // luna21, schiaparelli (pre-existing JSONs registered).
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(37);
+    expect(missions).toHaveLength(42);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -104,15 +106,15 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 16', async () => {
+  it('MARS filter returns 17', async () => {
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(16);
+    expect(mars).toHaveLength(17);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 17', async () => {
+  it('MOON filter returns 21', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(17);
+    expect(moon).toHaveLength(21);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -299,9 +301,9 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 37 missions merged with their en-US overlays', async () => {
+  it('returns all 42 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(37);
+    expect(list).toHaveLength(42);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -317,7 +319,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(37);
+    expect(list).toHaveLength(42);
   });
 
   it('count matches what filterMissions reports', async () => {

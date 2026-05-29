@@ -1148,11 +1148,18 @@
       // trajectory for Mars/outer-system missions with events. Used
       // by the phase-marker overlay to anchor each event MET to its
       // heliocentric AU position.
+      // Round-trip detection mirrors the cislunar pattern: sample-
+      // return missions (MMX, future Mars Sample Return) set
+      // interplanetary_profile.return.type = 'tei_helio_direct' so
+      // /fly renders both legs. Default = absent = one-way.
+      const interplanetaryReturnType = m.flight?.interplanetary_profile?.return?.type;
+      const isInterplanetaryReturnTrip =
+        !!interplanetaryReturnType && interplanetaryReturnType !== 'none';
       if (m.flight?.events && m.flight.events.length > 0) {
         interplanetaryTrajectory = buildInterplanetaryTrajectory(m.flight?.interplanetary_profile, {
           dep_day_sim: newTimeline.dep_day,
           transit_days: m.transit_days ?? 0,
-          is_return_trip: false,
+          is_return_trip: isInterplanetaryReturnTrip,
           arrival_vinf_kms: m.flight?.arrival?.v_infinity_km_s ?? null,
         });
       } else {

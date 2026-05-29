@@ -109,6 +109,9 @@ export interface FlightParams {
     arrival_body?: 'mars' | 'ceres' | 'jupiter' | 'neptune' | 'pluto';
     transfer_type?: 'hohmann' | 'type1_lambert' | 'type2_lambert';
     tcm_count?: number;
+    /** Optional return-leg semantics for sample-return missions
+     *  (MMX, future Mars Sample Return). Field absent = one-way. */
+    return?: { type?: 'none' | 'tei_helio_direct' | 'tei_helio_lor' };
     waypoints_helio_au?: Array<[number, number, number, number]>;
   };
 }

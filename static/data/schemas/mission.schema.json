@@ -273,6 +273,17 @@
               "maximum": 20,
               "description": "Trajectory Correction Maneuver count during cruise. Carried for parity with flight.cruise.tcm_count (some missions populate one, some the other)."
             },
+            "return": {
+              "type": "object",
+              "additionalProperties": false,
+              "description": "Optional return-leg semantics for sample-return missions (MMX → Phobos sample to Earth; future Mars Sample Return; Hayabusa-pattern missions adapted to /fly). Parallels cislunar_profile.return for Earth-Moon round trips. Default (field absent): mission is one-way.",
+              "properties": {
+                "type": {
+                  "enum": ["none", "tei_helio_direct", "tei_helio_lor"],
+                  "description": "none = one-way (default); tei_helio_direct = direct Trans-Earth Injection back to Earth; tei_helio_lor = Lunar Orbit Rendezvous on return (used in Apollo-style mission profiles adapted to interplanetary range)."
+                }
+              }
+            },
             "waypoints_helio_au": {
               "type": "array",
               "description": "Tier 1.5/2 only: heliocentric position samples in AU. Each tuple = [met_days, x_au, y_au, z_au]. Sorted by met_days. waypoints_helio_au[0].met_days MUST equal 0 (launch). The renderer prefers waypoints when present, otherwise falls back to parametric (transferEllipse + analytic launch/arrival arcs).",

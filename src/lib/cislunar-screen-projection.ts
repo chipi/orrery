@@ -24,6 +24,7 @@
 
 import { AU_TO_KM } from './orbital';
 import type { Vec3Km } from './cislunar-geometry';
+import type { Vec3Au } from './interplanetary-geometry';
 
 /** Scene-unit scaling for the Earth-centred cislunar view (ADR-058). */
 export const SCALE_CISLUNAR = 1 / 10000;
@@ -148,14 +149,10 @@ export function eciKmToCanvas2dPx(pt: Vec3Km, view: Canvas2dViewState): ScreenPo
 // retained as a function for symmetry with the cislunar API.
 // ===========================================================================
 
-/** Heliocentric AU position vector (parallels Vec3Km, but in AU). */
-export interface Vec3Au {
-  x: number;
-  y: number;
-  z: number;
-}
-
-/** AU → scene units. Identity for the heliocentric scene (1 AU = 1 unit). */
+/** AU → scene units. Identity for the heliocentric scene (1 AU = 1 unit).
+ *  Vec3Au is owned by interplanetary-geometry.ts; imported here for
+ *  the projection signatures (same pattern as Vec3Km from
+ *  cislunar-geometry.ts). */
 export function helioAuToSceneUnits(pt: Vec3Au): Vec3Au {
   return { x: pt.x, y: pt.y, z: pt.z };
 }

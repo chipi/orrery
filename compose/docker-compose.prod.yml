@@ -1,13 +1,22 @@
-# orrery prod compose stack — GH #260 phase 1 (tailnet-only).
+# orrery prod compose stack — GH #260 phase 1 (tailnet-only) + #263
+# observability wiring.
 #
 # Designed to run alongside podcast_scraper on the existing Hetzner VPS.
 # Co-tenancy mechanics (per #260):
-#   1. project name `orrery` (set via COMPOSE_PROJECT_NAME in the VPS .env
-#      or via `docker compose --project-name orrery -f ...`)
+#   1. project name `orrery` (set via COMPOSE_PROJECT_NAME in the
+#      staged /srv/orrery/.env)
 #   2. host port `${ORRERY_PORT:-8090}` (podcast_scraper holds 8080)
 #   3. filesystem root `/srv/orrery/` on the VPS
 #   4. tailscale serve on a different HTTPS port (`--https=8443` per
-#      #260 recommendation (a)) — see infra/cloud-init/orrery-tailscale-serve.sh
+#      #260 recommendation (a)) — root-owned wrapper invoked via
+#      narrow sudoers, per podcast_scraper#838.
+#
+# Env source-of-truth (#263, mirrors podcast_scraper deploy.yml#L147-218):
+#   /srv/orrery/.env is rendered every deploy from GH `prod`-scoped
+#   secrets by the workflow's "Stage /srv/orrery/.env" step. The file is
+#   atomic (mktemp + scp + mv), shm-tmp on the runner, never committed.
+#   Missing secrets → empty values → `${VAR:-}` defaults take over,
+#   integrations silently no-op, stack still starts.
 #
 # What's different from the dev `docker-compose.yml` at repo root:
 #   - `pipeline-runner` pulls `ghcr.io/chipi/orrery-pipeline-runner` from
@@ -15,8 +24,6 @@
 #     instead of building locally
 #   - `web` healthcheck declared explicitly (compose-level, not Dockerfile)
 #   - `restart: unless-stopped` on long-running services
-#   - `grafana-agent` left out of phase 1 (env-var-gated per ADR-068;
-#      add later once observability is wired on the VPS)
 #   - the `orrery-cache` and any other dev-only services are NOT here
 #
 # Volume strategy:
@@ -28,16 +35,15 @@
 #     web reads on next request — no rebuild needed).
 #
 # Bring up (from /srv/orrery on the VPS):
-#   ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
-#     docker compose -f compose/docker-compose.prod.yml \
-#       --env-file compose/.env.prod pull web pipeline-runner
-#   ORRERY_PIPELINE_IMAGE_TAG=sha-abc1234 \
-#     docker compose -f compose/docker-compose.prod.yml \
-#       --env-file compose/.env.prod up -d web
+#   docker compose -f compose/docker-compose.prod.yml \
+#     --project-directory . --env-file .env \
+#     --profile observability pull
+#   docker compose -f compose/docker-compose.prod.yml \
+#     --project-directory . --env-file .env \
+#     --profile observability up -d
 #
-# Shell env var overrides the committed .env.prod default for the
-# image tag — that's how the deploy workflow rolls the SHA forward
-# without editing this file.
+# The staged /srv/orrery/.env contains the per-deploy
+# ORRERY_PIPELINE_IMAGE_TAG=sha-<7> set by the workflow.
 
 services:
   web:
@@ -91,8 +97,52 @@ services:
       # second env_file with `required: false`.
       NODE_ENV: production
     env_file:
-      # Committed defaults (COMPOSE_PROJECT_NAME, ORRERY_PORT, image
-      # tag fallback). Tracked in repo so cloud-init + deploy stay
-      # symmetric with podcast_scraper. Path is relative to this
-      # compose file's directory.
-      - .env.prod
+      # Staged from GH `prod`-scoped secrets every deploy (#263).
+      # Path is project-directory-relative (workflow passes
+      # --project-directory .) so this resolves to /srv/orrery/.env.
+      - .env
+
+  # ───────────────────────────────────────────────────────────────────
+  # Observability: Grafana Cloud Agent (ADR-068 / #263).
+  #
+  # Tails Docker container stdout/stderr of orrery-* containers via the
+  # docker_sd_configs in ops/observability/grafana-agent.yaml and ships
+  # them to Grafana Cloud Loki. Sidecar-shaped — no orrery code knows it
+  # exists; it watches via the read-only docker socket.
+  #
+  # Profile-gated: only spins up when the operator passes
+  # `--profile observability`. The deploy workflow always passes it; if
+  # GRAFANA_CLOUD_* env vars are empty the agent-entrypoint.sh wrapper
+  # swaps in grafana-agent.silent.yaml so the agent runs (idempotent
+  # restart) but ships zero bytes. This keeps the deploy idempotent —
+  # adding/rotating creds is just a re-run.
+  #
+  # Same Grafana Cloud stack as podcast_scraper is intentional — both
+  # apps' logs stream to the same Loki, separated by the `app` label
+  # (set by external_labels in grafana-agent.yaml). Query orrery-only
+  # with `{app="orrery"}`.
+  grafana-agent:
+    image: grafana/agent:v0.43.4
+    container_name: orrery-grafana-agent
+    profiles: ['observability']
+    restart: unless-stopped
+    volumes:
+      # Three configs: real (shipping), silent (no-op), and the
+      # entrypoint wrapper that picks based on env-var presence. Same
+      # files as the dev stack — committed in ops/observability/.
+      - ./ops/observability/grafana-agent.yaml:/etc/grafana-agent.yaml:ro
+      - ./ops/observability/grafana-agent.silent.yaml:/etc/grafana-agent.silent.yaml:ro
+      - ./ops/observability/agent-entrypoint.sh:/agent-entrypoint.sh:ro
+      # Read-only docker socket for docker_sd discovery of orrery-*
+      # containers.
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - GRAFANA_CLOUD_LOKI_URL=${GRAFANA_CLOUD_LOKI_URL:-}
+      - GRAFANA_CLOUD_LOKI_USER=${GRAFANA_CLOUD_LOKI_USER:-}
+      - GRAFANA_CLOUD_API_KEY=${GRAFANA_CLOUD_API_KEY:-}
+      - GRAFANA_AGENT_ENV=${GRAFANA_AGENT_ENV:-production-orrery}
+    # Wrapper picks shipping vs silent config based on env-var presence.
+    # Without it, empty GRAFANA_CLOUD_LOKI_URL crashes the agent in a
+    # restart loop on "client needs target URL".
+    entrypoint: ['/bin/sh', '/agent-entrypoint.sh']
+    command: []

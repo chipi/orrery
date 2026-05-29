@@ -63,15 +63,18 @@ orrery adds **zero ad-hoc steps** at deploy time. The workflow assumes the check
 After the prereqs above land, every deploy is just:
 
 1. SSHes into VPS as `deploy@`
-2. Rsyncs the CI-built `build/` into `/srv/orrery/build/` (the static-bundle deploy artefact — ADR-063)
-3. `git fetch --depth=50 origin main` + `git reset --hard origin/main` — brings the on-VPS checkout in lockstep with the deploying commit
-4. `ORRERY_PIPELINE_IMAGE_TAG=sha-<7> docker compose --env-file compose/.env.prod pull web pipeline-runner` — shell env overrides the `:main` fallback in the committed `compose/.env.prod`
-5. `docker compose --env-file compose/.env.prod up -d web` — brings up nginx (pipeline-runner stays `profiles: manual`, invoked on-demand)
-6. Loopback healthcheck on `:ORRERY_PORT` (read from `compose/.env.prod`)
-7. `tailscale serve --bg --https=8443 8090` (registers if not already; no-op if already registered to the right backend)
-8. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
+2. Builds the static bundle on the runner with `PUBLIC_SENTRY_*` env exported (vite/SvelteKit bakes them in)
+3. Rsyncs the CI-built `build/` into `/srv/orrery/build/` (the static-bundle deploy artefact — ADR-063)
+4. **Stages `/srv/orrery/.env`** from GH `prod` env secrets (atomic: `mktemp -p /dev/shm` + trap shred + `printf` + scp `.env.deploy-staged` + atomic `mv`). Single source of truth — missing secrets → empty values → integrations no-op
+5. `git fetch --depth=50 origin main` + `git reset --hard origin/main` — brings the on-VPS checkout in lockstep with the deploying commit
+6. `source ./.env` then `docker compose --env-file .env --profile observability pull/up web grafana-agent` — pipeline-runner stays `profiles: manual` (invoked on-demand); grafana-agent ships logs to Loki when creds are present, otherwise runs silent
+7. Loopback healthcheck on `:ORRERY_PORT`
+8. Re-arms tailscale serve via the root-owned wrapper `sudo -n /usr/local/sbin/orrery-tailscale-serve.sh` (narrow NOPASSWD entry; podcast_scraper#838)
+9. External tailnet probe at `https://<PROD_TAILNET_FQDN>:8443/`
 
-**No sudo. No `.env` scaffolding. No `mkdir`.** All operations run as the `deploy@` user. The `compose/.env.prod` file (with `COMPOSE_PROJECT_NAME=orrery`, `ORRERY_PORT=8090`, `ORRERY_PIPELINE_IMAGE_TAG=main`) is committed to the repo and arrives via the `git reset --hard` step — no per-deploy file mutation on the VPS.
+**No sudo for the bulk of the work. No `.env` scaffolding by the operator. No `mkdir`.** All operations run as the `deploy@` user except the one narrow `sudo -n` call to the root-owned tailscale-serve wrapper.
+
+**The staged `/srv/orrery/.env`** is RAM-rendered + shipped atomically + `chmod 600` — never persists on the runner's disk. It contains both static config (`COMPOSE_PROJECT_NAME`, `ORRERY_PORT`, `ORRERY_PIPELINE_IMAGE_TAG`) AND runtime Grafana credentials. Regenerated every deploy from GH Secrets — those are the source of truth.
 
 ---
 
@@ -128,13 +131,30 @@ Once that's in podcast_scraper's Terraform + a `tofu apply` lands, the tailscale
 
 ## GitHub Actions setup (one-time)
 
-In the orrery repo settings → **Secrets and variables → Actions**:
+In the orrery repo settings → **Environments → prod → Environment secrets/variables**:
+
+### Required (deploy will skip with warning if missing)
 
 | Type | Name | Value |
 |---|---|---|
 | Secret | `TS_AUTHKEY` | Tailscale auth key with `tag:gha-deployer`. Reusable, 90-day expiry recommended. |
 | Secret | `PROD_SSH_PRIVATE_KEY` | Ed25519 PEM (private key matching `~/.ssh/authorized_keys` of `deploy@` on the VPS). |
-| Variable | `PROD_TAILNET_FQDN` | The MagicDNS host of the VPS, e.g. `orrery-host.<tailnet>.ts.net`. Same host that serves podcast_scraper; orrery uses a different tailscale-serve port (:8443). |
+| Variable | `PROD_TAILNET_FQDN` | The MagicDNS host of the VPS, e.g. `prod-podcast.<tailnet>.ts.net`. Same host that serves podcast_scraper; orrery uses a different tailscale-serve port (:8443). |
+
+### Optional — observability (#263)
+
+All four can be left unset; integrations silently no-op (`${VAR:-}` defaults in compose) and the stack still comes up. Set when you're ready to wire telemetry. Per ADR-067 / ADR-068.
+
+| Type | Name | Value |
+|---|---|---|
+| Secret | `PUBLIC_SENTRY_DSN` | Sentry project DSN. Public-by-design (identifies the project, doesn't authenticate). Baked into the static bundle at build time. Note: name omits `PROD_` prefix because the workflow passes it through unchanged as a `PUBLIC_*` SvelteKit env. |
+| Secret | `PROD_GRAFANA_CLOUD_LOKI_URL` | `https://logs-prod-<NN>.grafana.net/loki/api/v1/push` from your Grafana Cloud stack's Loki integration page. |
+| Secret | `PROD_GRAFANA_CLOUD_LOKI_USER` | Numeric instance ID, same page. |
+| Secret | `PROD_GRAFANA_CLOUD_API_KEY` | `glc_…` token from Grafana Cloud → Access policies. Same key as podcast_scraper if reusing the stack. |
+
+The workflow's **Stage `/srv/orrery/.env`** step renders all the runtime env (project name, port, image tag, Grafana creds) into `/srv/orrery/.env` atomically each deploy — mirrors podcast_scraper deploy.yml lines 147-218 exactly. Sentry vars are passed to the build step directly (PUBLIC_ prefix means SvelteKit bakes them into the bundle).
+
+Same Grafana Cloud stack as podcast_scraper is the recommended pattern — both apps' logs ship to the same Loki, separated by the `app` label (orrery's agent stamps `app=orrery` via `external_labels` in `ops/observability/grafana-agent.yaml`). Query orrery-only with `{app="orrery"}`.
 
 ---
 
@@ -150,16 +170,17 @@ Optional input: `override_image_sha` to pin a specific `:sha-<7>` tag (useful fo
 
 The workflow:
 
-1. Pre-flight checks all three secrets/vars are set; warns + skips on missing.
+1. Pre-flight checks the three required secrets/vars are set; warns + skips on missing.
 2. Checks out the repo.
 3. Resolves the target image SHA (defaults to current main HEAD short).
-4. Builds the static bundle on the runner (`npm ci && npm run build`).
+4. Builds the static bundle on the runner (`npm ci && npm run build`) with `PUBLIC_SENTRY_DSN`/`PUBLIC_SENTRY_ENVIRONMENT`/`PUBLIC_SENTRY_RELEASE` exported so vite bakes them in.
 5. Joins the tailnet.
 6. Installs the SSH key (validates it's a loadable OpenSSH PEM before continuing).
 7. Rsyncs `build/` to `/srv/orrery/build/`.
-8. SSH'es in: `git fetch + reset --hard origin/main` + `ORRERY_PIPELINE_IMAGE_TAG=sha-X docker compose --env-file compose/.env.prod pull/up web` + loopback healthcheck on `:ORRERY_PORT`.
-9. Registers `tailscale serve --bg --https=8443 8090` (idempotent — no-op if already pointed at the right backend).
-10. External healthcheck over tailnet at `https://<PROD_TAILNET_FQDN>:8443/`.
+8. **Stages `/srv/orrery/.env`** from GH `prod`-scoped secrets — atomic, shm-backed tmpfile, never on the runner's disk.
+9. SSH'es in: `git fetch + reset --hard origin/main` + `source ./.env` + `docker compose --env-file .env --profile observability pull/up web grafana-agent` + loopback healthcheck on `:ORRERY_PORT`.
+10. Re-arms tailscale serve via the root-owned wrapper (`sudo -n /usr/local/sbin/orrery-tailscale-serve.sh`, 3-attempt retry, WARN-not-fail).
+11. External healthcheck over tailnet at `https://<PROD_TAILNET_FQDN>:8443/`.
 
 Total: ~3–5 min for a no-op deploy, ~5–7 min when the pipeline-runner image is a fresh SHA (new layers to pull).
 

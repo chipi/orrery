@@ -118,7 +118,17 @@ jobs:
         # Per ADR-063 the web container is stock nginx:alpine + bind-mount.
         # The static bundle is the deploy artefact. CI builds it; VPS
         # rsyncs it. VPS does not need Node installed.
+        #
+        # PUBLIC_SENTRY_* env (ADR-067, #263): vite/SvelteKit bakes
+        # these into the static bundle at build time. PUBLIC_ prefix
+        # means $env/dynamic/public exposes them client-side.
+        # Empty DSN → initSentry() returns immediately, no SDK init,
+        # no outbound traffic (fork-silent default).
         if: steps.preflight.outputs.skip != 'true'
+        env:
+          PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
+          PUBLIC_SENTRY_ENVIRONMENT: production
+          PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
         run: npm run build
 
       - name: Join the tailnet
@@ -170,19 +180,62 @@ jobs:
                   -o StrictHostKeyChecking=accept-new -o BatchMode=yes" \
             build/ "${SSH_TARGET}:/srv/orrery/build/"
 
+      - name: Stage /srv/orrery/.env from GH Secrets (#263)
+        # Mirror of podcast_scraper deploy.yml lines 147-218. Renders
+        # the host-side .env from `prod`-scoped GH secrets every deploy.
+        # GH Secrets is the source of truth; .env is a transient artifact
+        # regenerated on every run. Missing secrets → empty values →
+        # compose's `${VAR:-}` defaults take over → integration silently
+        # off, stack still starts.
+        #
+        # Atomic delivery: tmpfile in /dev/shm (RAM-backed, never on
+        # disk), trap shred-on-exit, SCP to .env.deploy-staged on host,
+        # then atomic ssh `mv .env.deploy-staged .env` so the host
+        # never sees a partial file. `printf '%s=%s\n'` keeps values
+        # shell-safe (no interpolation of secret content).
+        if: steps.preflight.outputs.skip != 'true'
+        env:
+          SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
+          SHA_SHORT: ${{ steps.sha.outputs.short }}
+          # Grafana Cloud (ADR-068). Empty → silent.
+          PROD_GRAFANA_CLOUD_LOKI_URL:  ${{ secrets.PROD_GRAFANA_CLOUD_LOKI_URL }}
+          PROD_GRAFANA_CLOUD_LOKI_USER: ${{ secrets.PROD_GRAFANA_CLOUD_LOKI_USER }}
+          PROD_GRAFANA_CLOUD_API_KEY:   ${{ secrets.PROD_GRAFANA_CLOUD_API_KEY }}
+        run: |
+          set -euo pipefail
+          ENVTMP=$(mktemp -p /dev/shm orrery-env.XXXXXX)
+          trap 'shred -u "$ENVTMP" 2>/dev/null || rm -f "$ENVTMP"' EXIT
+          chmod 600 "$ENVTMP"
+          {
+            # Co-tenancy + per-deploy
+            printf '%s=%s\n' COMPOSE_PROJECT_NAME      orrery
+            printf '%s=%s\n' ORRERY_PORT               8090
+            printf '%s=%s\n' ORRERY_PIPELINE_IMAGE_TAG "sha-${SHA_SHORT}"
+            # Grafana Cloud (label distinguishes from podcast_scraper)
+            printf '%s=%s\n' GRAFANA_CLOUD_LOKI_URL  "$PROD_GRAFANA_CLOUD_LOKI_URL"
+            printf '%s=%s\n' GRAFANA_CLOUD_LOKI_USER "$PROD_GRAFANA_CLOUD_LOKI_USER"
+            printf '%s=%s\n' GRAFANA_CLOUD_API_KEY   "$PROD_GRAFANA_CLOUD_API_KEY"
+            printf '%s=%s\n' GRAFANA_AGENT_ENV       production-orrery
+          } > "$ENVTMP"
+          scp -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes \
+            "$ENVTMP" "${SSH_TARGET}:/srv/orrery/.env.deploy-staged"
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            "set -euo pipefail; cd /srv/orrery; \
+             mv .env.deploy-staged .env; chmod 600 .env"
+
       - name: Deploy (fetch + reset + compose up + healthcheck)
         # Mirror of podcast_scraper's deploy.sh — thin, idempotent,
         # zero-bootstrap. Sequence:
         #   1. `git fetch + reset --hard origin/main` brings the on-VPS
-        #      checkout in lockstep with this workflow's commit. Uses
-        #      reset --hard (not pull --ff-only) so any drift on the
-        #      VPS — e.g. operator-edited compose/.env.prod — is
-        #      discarded in favour of the repo source of truth.
-        #   2. `docker compose pull` for the pinned pipeline-runner SHA.
-        #      Shell env ORRERY_PIPELINE_IMAGE_TAG overrides the
-        #      `:main` fallback in compose/.env.prod.
-        #   3. `docker compose up -d web` brings up nginx (pipeline-runner
-        #      stays `profiles: manual` — invoked on-demand by cron).
+        #      checkout in lockstep with this workflow's commit.
+        #   2. `. ./.env` sources the just-staged env vars (from the
+        #      preceding Stage step) so docker compose CLI sees
+        #      ORRERY_PIPELINE_IMAGE_TAG and friends.
+        #   3. `docker compose pull/up` brings up `web` + `grafana-agent`
+        #      (under --profile observability). pipeline-runner stays
+        #      profiles: manual — invoked on-demand by cron.
         #   4. Internal healthcheck against ORRERY_PORT.
         if: steps.preflight.outputs.skip != 'true'
         env:
@@ -194,12 +247,13 @@ jobs:
             "set -euo pipefail; cd /srv/orrery; \
              git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
              git reset --hard origin/main; \
-             . compose/.env.prod; \
-             export ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}; \
+             . ./.env; \
              docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file compose/.env.prod pull web pipeline-runner; \
+               --project-directory . --env-file .env --profile observability \
+               pull web pipeline-runner grafana-agent; \
              docker compose -f compose/docker-compose.prod.yml \
-               --project-directory . --env-file compose/.env.prod up -d web; \
+               --project-directory . --env-file .env --profile observability \
+               up -d web grafana-agent; \
              PORT=\${ORRERY_PORT:-8090}; \
              for i in \$(seq 1 30); do \
                if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
@@ -208,7 +262,7 @@ jobs:
                sleep 2; \
              done; \
              echo 'orrery web did not respond within 60s'; \
-             docker compose -f compose/docker-compose.prod.yml --project-directory . logs web; \
+             docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env logs web; \
              exit 1"
 
       - name: Re-arm tailscale serve via root-owned wrapper (NOPASSWD sudo)

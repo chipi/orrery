@@ -67,6 +67,8 @@
   } from '$lib/interplanetary-geometry';
   import {
     phaseMarkerAuPositions,
+    currentInterplanetaryPhaseFor,
+    primaryInterplanetaryPhaseScienceRef,
     type InterplanetaryPhaseMarker,
   } from '$lib/interplanetary-events';
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';

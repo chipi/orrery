@@ -41,13 +41,24 @@ jobs:
     # closing the desktop/mobile asymmetry without blowing through
     # the workflow timeout. Sequential mobile+desktop on workers=1
     # hit 30+ min and timed out (May 2026 mobile-extension first run).
+    #
+    # Timeout history (mobile-chromium leg, single-project):
+    #   - 30 min was the original cap (matches GH Actions free-tier
+    #     "step deadline" patterns).
+    #   - Run 26622390344 (May 2026): 28m01s success — within 2 min of
+    #     the cap. Subsequent runs touched 30m15s — timeout-cancelled
+    #     by 15 sec. Desktop leg consistently 17-19 min on the same
+    #     codebase, so the mobile project is naturally slower under
+    #     docker-nginx (smaller viewport → extra layout passes,
+    #     #207 site-stories full corpus). Bumped to 45 to give
+    #     comfortable headroom without masking real test slowness.
     strategy:
       fail-fast: false
       matrix:
         project: [desktop-chromium, mobile-chromium]
     name: docker-e2e (${{ matrix.project }})
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v6
 

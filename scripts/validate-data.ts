@@ -169,8 +169,10 @@ function validateFile(path: string, validator: ValidateFunction): void {
 // what the renderer's buildFromWaypoints assumes — violating any of
 // them produces a silently-wrong trajectory rather than a crash.
 //
-// Skipped when source_tier !== 'tier_2_published' or waypoints_km
-// absent (Tier 1 missions are parametric, no waypoint array).
+// Skipped when waypoints_km absent (Tier 1 analytic missions are
+// parametric, no waypoint array). When waypoints_km IS present, the
+// invariants apply regardless of source_tier (tier_1_5_hybrid +
+// tier_2_published both populate waypoints_km).
 function checkCislunarWaypoints(file: string): void {
   const m = readJson(file) as {
     id?: string;
@@ -184,14 +186,12 @@ function checkCislunarWaypoints(file: string): void {
     };
   };
   const profile = m.flight?.cislunar_profile;
-  if (!profile || profile.source_tier !== 'tier_2_published') return;
+  if (!profile?.waypoints_km) return;
   const wp = profile.waypoints_km;
-  if (!wp || wp.length < 2) {
+  if (wp.length < 2) {
     failed++;
     console.error(`\n  ✗ ${file}`);
-    console.error(
-      `      /flight/cislunar_profile tier_2_published requires waypoints_km with ≥2 entries`,
-    );
+    console.error(`      /flight/cislunar_profile waypoints_km requires ≥2 entries when present`);
     return;
   }
   const violations: string[] = [];

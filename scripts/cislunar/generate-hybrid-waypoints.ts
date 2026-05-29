@@ -1,8 +1,8 @@
 /**
- * Generate Tier 2 cislunar waypoints from an existing Tier 1 mission
- * profile (GH #107).
+ * Generate hybrid (Tier 1.5) cislunar waypoints from an existing Tier 1
+ * mission profile (GH #107).
  *
- *   npx tsx scripts/cislunar/generate-tier2-waypoints.ts \
+ *   npx tsx scripts/cislunar/generate-hybrid-waypoints.ts \
  *     static/data/missions/moon/apollo11.json
  *
  * What it does:
@@ -17,15 +17,18 @@
  *      `flight.events[].met_days` values to within ~0.04 days
  *      (1 / 100 × 4 = ~57 minutes per slot for Apollo 11).
  *   5. Writes the result back to `cislunar_profile.waypoints_km` and
- *      flips `source_tier` to `tier_2_published`.
+ *      flips `source_tier` to `tier_1_5_hybrid`.
  *
- * Why this counts as Tier 2 (not "Tier 1 in disguise"):
+ * Why tier_1_5_hybrid (and NOT tier_2_published):
  *   The parametric values in the mission JSON (parking_orbit.altitude_km,
  *   tli.dv_kms, lunar_arrival.periselene_km, etc.) ARE NASA-published
  *   reality from MSC-00171 / equivalent Mission Reports — already
  *   sourced in the file. The cislunar-geometry primitives produce
- *   real-shape Keplerian arcs from those values. Freezing as waypoints
- *   gives the renderer + UI:
+ *   real-shape Keplerian arcs from those values. But the output is
+ *   still resampled analytic geometry, not real published state vectors.
+ *   `tier_2_published` is reserved for direct NASA TND ingest (see
+ *   scripts/cislunar/ingest-nasa-tnd.ts when it lands for Apollo 11/13/17
+ *   + Artemis II). Freezing as hybrid waypoints gives the renderer + UI:
  *     - Deterministic phase-marker positions (waypoint index N = a
  *       specific event's MET) for the GH #107 marker reveal UX.
  *     - Reproducibility — a code change to a Tier 1 primitive doesn't
@@ -58,7 +61,7 @@ interface MissionJson {
 
 const file = process.argv[2];
 if (!file) {
-  console.error('usage: generate-tier2-waypoints.ts <path-to-mission-json>');
+  console.error('usage: generate-hybrid-waypoints.ts <path-to-mission-json>');
   process.exit(1);
 }
 
@@ -181,7 +184,7 @@ const waypoints: Array<[number, number, number, number]> = targetMets.map((met) 
 });
 
 // Stamp the JSON.
-flight.cislunar_profile.source_tier = 'tier_2_published';
+flight.cislunar_profile.source_tier = 'tier_1_5_hybrid';
 flight.cislunar_profile.waypoints_km = waypoints;
 
 writeFileSync(file, JSON.stringify(json, null, 2) + '\n', 'utf8');

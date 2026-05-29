@@ -65,7 +65,7 @@ export interface FlightTimelineEvent {
   dv_km_s?: number;
 }
 
-export type CislunarSourceTier = 'tier_1_analytic' | 'tier_2_published';
+export type CislunarSourceTier = 'tier_1_analytic' | 'tier_1_5_hybrid' | 'tier_2_published';
 export type TranslunarType = 'direct' | 'free_return' | 'hybrid_free_return' | 'spiral';
 export type LunarArrivalType = 'impact' | 'orbit' | 'orbit_and_land' | 'flyby' | 'lor_orbit';
 export type CislunarReturnType = 'none' | 'tei_direct' | 'tei_lor';

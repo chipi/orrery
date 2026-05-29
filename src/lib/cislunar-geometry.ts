@@ -47,7 +47,7 @@ export interface CislunarTrajectory {
 }
 
 export interface CislunarProfile {
-  source_tier?: 'tier_1_analytic' | 'tier_2_published';
+  source_tier?: 'tier_1_analytic' | 'tier_1_5_hybrid' | 'tier_2_published';
   parking_orbit?: { altitude_km?: number; inclination_deg?: number; revs?: number };
   tli?: { dv_kms?: number; c3_km2_s2?: number };
   translunar?: { type?: 'direct' | 'free_return' | 'hybrid_free_return' | 'spiral' };

@@ -225,7 +225,7 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
         [8, -(R_EARTH_KM + 120), 0, 0],
       ];
       const profile: CislunarProfile = {
-        source_tier: 'tier_2_published',
+        source_tier: 'tier_1_5_hybrid',
         waypoints_km: wp,
       };
       const traj = buildCislunarTrajectory(profile, { ...baseOpts, is_return_trip: true });

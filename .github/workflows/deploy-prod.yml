@@ -194,13 +194,13 @@ jobs:
             "set -euo pipefail; cd /srv/orrery; \
              git fetch --depth=50 origin '+refs/heads/main:refs/remotes/origin/main'; \
              git reset --hard origin/main; \
+             . compose/.env.prod; \
              export ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}; \
              docker compose -f compose/docker-compose.prod.yml \
                --env-file compose/.env.prod pull web pipeline-runner; \
              docker compose -f compose/docker-compose.prod.yml \
                --env-file compose/.env.prod up -d web; \
-             PORT=\$(grep -E '^ORRERY_PORT=' compose/.env.prod | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
-             PORT=\${PORT:-8090} ; \
+             PORT=\${ORRERY_PORT:-8090}; \
              for i in \$(seq 1 30); do \
                if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
                  echo OK; exit 0; \
@@ -234,8 +234,8 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
             "set -euo pipefail; \
-             PORT=\$(grep -E '^ORRERY_PORT=' /srv/orrery/compose/.env.prod | cut -d= -f2 | tr -d ' \"\\\\\\'') ; \
-             PORT=\${PORT:-8090} ; \
+             . /srv/orrery/compose/.env.prod; \
+             PORT=\${ORRERY_PORT:-8090}; \
              # Check if :8443 is already correctly pointed at the orrery port.
              # If yes, skip (idempotent). If no, register.
              if tailscale serve status 2>/dev/null | grep -qE \":8443.*127\\.0\\.0\\.1:\${PORT}\"; then \

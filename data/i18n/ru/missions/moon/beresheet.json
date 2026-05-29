@@ -1,0 +1,15 @@
+{
+  "name": "Beresheet",
+  "type": "PRIVATE LANDER · CRASHED",
+  "first": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
+  "description": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from Cape Canaveral 2019-02-22.", "type": "nominal" },
+    { "met": 0.01, "label": "PHASING BURN", "note": "First of seven perigee raises to climb from LEO to lunar approach.", "type": "info" },
+    { "met": 10, "label": "TCM 1", "note": "Trajectory correction during multi-orbit climb.", "type": "info" },
+    { "met": 20, "label": "TCM 2", "note": "Second TCM. Apogee approaching lunar capture distance.", "type": "info" },
+    { "met": 41, "label": "LUNAR APPROACH", "note": "Final translunar burn — Beresheet on direct lunar trajectory.", "type": "nominal" },
+    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
+    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "IMU reset during powered descent → engine shutdown → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
+  ]
+}

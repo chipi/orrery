@@ -19,7 +19,24 @@
     "tei_coast": [{ "tab": "mission-phases", "slug": "trans-x-injection" }],
     "reentry": [{ "tab": "mission-phases", "slug": "edl" }],
     "spiral_earth": [{ "tab": "transfers", "slug": "hohmann-transfer" }],
-    "spiral_lunar": [{ "tab": "transfers", "slug": "hohmann-transfer" }]
+    "spiral_lunar": [{ "tab": "transfers", "slug": "hohmann-transfer" }],
+    "parking_earth": [{ "tab": "orbits", "slug": "orbit-regimes" }],
+    "tmi_coast": [
+      { "tab": "mission-phases", "slug": "trans-x-injection" },
+      { "tab": "transfers", "slug": "hohmann-transfer" }
+    ],
+    "helio_cruise": [
+      { "tab": "transfers", "slug": "hohmann-transfer" },
+      { "tab": "porkchop", "slug": "what-is-a-porkchop" }
+    ],
+    "mid_course": [{ "tab": "mission-phases", "slug": "tcm" }],
+    "arrival_approach": [{ "tab": "mission-phases", "slug": "edl" }],
+    "arrival_orbit": [{ "tab": "mission-phases", "slug": "orbit-insertion" }],
+    "mars_descent": [{ "tab": "mission-phases", "slug": "edl" }],
+    "mars_surface": [{ "tab": "mission-phases", "slug": "edl" }],
+    "mars_ascent": [{ "tab": "mission-phases", "slug": "edl" }],
+    "tei_helio": [{ "tab": "mission-phases", "slug": "trans-x-injection" }],
+    "earth_return_helio": [{ "tab": "mission-phases", "slug": "edl" }]
   },
   "event_refs": {
     "launch": [{ "tab": "mission-phases", "slug": "launch" }],

@@ -82,7 +82,18 @@ if (typeof transitDays !== 'number' || transitDays <= 0) {
 // missions (impactors, flybys) we cap at 1 × transit_days.
 const isReturnTrip =
   flight.cislunar_profile.return?.type !== 'none' && !!flight.cislunar_profile.return?.type;
-const missionEndMet = transitDays * (isReturnTrip ? 2 : 1);
+const transitWindow = transitDays * (isReturnTrip ? 2 : 1);
+// Some published timelines extend beyond transit_days × multiplier
+// (e.g. Apollo 17 surface stay; Apollo 13 free-return swingby with
+// late earth_return event; cancelled-LOI missions). Pad the mission
+// window so every event_met_days lands inside the waypoint range —
+// add 5% headroom past the last event's MET, since the renderer
+// interpolates linearly and we want events to anchor cleanly.
+const latestEventMet = (flight.events ?? [])
+  .map((e) => e.met_days)
+  .filter((v): v is number => typeof v === 'number')
+  .reduce((max, v) => (v > max ? v : max), 0);
+const missionEndMet = Math.max(transitWindow, latestEventMet * 1.05);
 
 // Build the Tier 1 trajectory via the same code path the renderer uses.
 const trajectory = buildCislunarTrajectory(flight.cislunar_profile, {

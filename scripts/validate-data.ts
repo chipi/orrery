@@ -176,11 +176,13 @@ function validateFile(path: string, validator: ValidateFunction): void {
 function checkCislunarWaypoints(file: string): void {
   const m = readJson(file) as {
     id?: string;
+    transit_days?: number; // top-level per mission schema
     flight?: {
-      transit_days?: number;
+      events?: Array<{ met_days?: number; type?: string }>;
       arrival?: { type?: string };
       cislunar_profile?: {
         source_tier?: string;
+        return?: { type?: string };
         waypoints_km?: Array<[number, number, number, number]>;
       };
     };
@@ -210,18 +212,28 @@ function checkCislunarWaypoints(file: string): void {
   }
   // Endpoint 2: last sample within mission window.
   // Round-trip missions (return.type=tei_*) cap at 2× transit_days; one-way at 1×.
-  // transit_days is the outbound-only duration in the mission schema.
-  const transit = m.flight?.transit_days;
+  // transit_days is the outbound-only duration in the mission schema and
+  // lives at the top of the mission JSON (not under flight).
+  // Some published timelines extend beyond transit × multiplier (Apollo 13
+  // free-return swing; Apollo 17 surface stay; etc.). The generator extends
+  // the window to cover the latest event MET — the validator allows the
+  // same: cap = max(transit × multiplier × 1.05, latest_event_met × 1.1).
+  const transit = m.transit_days;
   if (typeof transit === 'number' && transit > 0) {
-    const isRoundTrip = m.flight?.arrival?.type === 'landing' || profile['return' as never];
-    const cap = isRoundTrip ? transit * 2 : transit;
+    const isRoundTrip =
+      m.flight?.arrival?.type === 'landing' ||
+      (m.flight?.cislunar_profile?.return?.type && m.flight.cislunar_profile.return.type !== 'none');
+    const transitCap = (isRoundTrip ? transit * 2 : transit) * 1.05;
+    const latestEventMet = (m.flight?.events ?? [])
+      .map((e) => e.met_days)
+      .filter((v): v is number => typeof v === 'number')
+      .reduce((max, v) => (v > max ? v : max), 0);
+    const eventCap = latestEventMet * 1.1;
+    const cap = Math.max(transitCap, eventCap);
     const lastMet = wp[wp.length - 1][0];
-    if (lastMet > cap * 1.05) {
-      // 5% slack: real missions overrun the nominal transit slightly
-      // (Apollo 11's actual mission was 8.13d vs nominal ~8d). Hard
-      // failure only when last point is implausibly far past.
+    if (lastMet > cap) {
       violations.push(
-        `waypoints_km[last].met_days (${lastMet}) exceeds transit_days*${isRoundTrip ? 2 : 1} × 1.05 (${cap * 1.05})`,
+        `waypoints_km[last].met_days (${lastMet}) exceeds mission window cap (${cap.toFixed(2)} = max(transit×${isRoundTrip ? 2 : 1}×1.05, latest_event_met×1.1))`,
       );
     }
   }

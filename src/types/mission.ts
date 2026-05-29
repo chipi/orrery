@@ -97,6 +97,20 @@ export interface FlightParams {
    *  cislunar view for Moon missions. Optional; if absent, defaults
    *  are inferred from flight.arrival + flight.totals. */
   cislunar_profile?: CislunarProfile;
+  /** Heliocentric interplanetary trajectory profile (#107 Step 6d).
+   *  Parallels cislunar_profile for Mars + outer-system missions.
+   *  Optional; if absent, /fly's parametric path (transferEllipse) is
+   *  used. Schema is intentionally loose at the TS level — fields are
+   *  enforced by mission.schema.json. */
+  interplanetary_profile?: {
+    source_tier?: 'tier_1_analytic' | 'tier_1_5_hybrid' | 'tier_2_published';
+    reference_frame?: 'heliocentric_ecliptic_J2000';
+    departure_body?: 'earth';
+    arrival_body?: 'mars' | 'ceres' | 'jupiter' | 'neptune' | 'pluto';
+    transfer_type?: 'hohmann' | 'type1_lambert' | 'type2_lambert';
+    tcm_count?: number;
+    waypoints_helio_au?: Array<[number, number, number, number]>;
+  };
 }
 
 export interface MissionIndex {

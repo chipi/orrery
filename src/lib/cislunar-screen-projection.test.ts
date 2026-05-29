@@ -178,9 +178,10 @@ describe('helioAuToSceneUnits + helioAuToScreenPx', () => {
 
   it('helioAuToScreenPx wraps sceneToScreenPx via the factory', () => {
     const projected = mockVec(0, 0, 0, (v) => {
-      v.x = 0; // NDC centre
-      v.y = 0;
-      v.z = 0;
+      const vv = v as unknown as { x: number; y: number; z: number };
+      vv.x = 0; // NDC centre
+      vv.y = 0;
+      vv.z = 0;
     });
     const factory = () => projected;
     const r = helioAuToScreenPx(

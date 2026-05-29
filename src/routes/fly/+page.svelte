@@ -56,9 +56,19 @@
   import {
     eciKmToScreenPx,
     eciKmToCanvas2dPx,
+    helioAuToScreenPx,
+    helioAuToCanvas2dPx,
     type ScreenPoint,
     type MinimalProjector,
   } from '$lib/cislunar-screen-projection';
+  import {
+    buildInterplanetaryTrajectory,
+    type InterplanetaryTrajectory,
+  } from '$lib/interplanetary-geometry';
+  import {
+    phaseMarkerAuPositions,
+    type InterplanetaryPhaseMarker,
+  } from '$lib/interplanetary-events';
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
@@ -354,6 +364,20 @@
   }
   let phaseMarkers: PhaseMarker[] = $derived.by(() =>
     isMoonMission ? phaseMarkerKmPositions(mission.flight?.events, cislunarTrajectory) : [],
+  );
+  // GH #107 Step 6e — Mars + outer-system phase markers (heliocentric).
+  // interplanetaryTrajectory is built in the mission loader; markers
+  // derive from flight.events + the heliocentric trajectory, mirroring
+  // the cislunar pipeline.
+  let interplanetaryTrajectory: InterplanetaryTrajectory | null = $state(null);
+  let interplanetaryPhaseMarkers: InterplanetaryPhaseMarker[] = $derived.by(() =>
+    !isMoonMission ? phaseMarkerAuPositions(mission.flight?.events, interplanetaryTrajectory) : [],
+  );
+  /** True when the mission should render phase markers — Moon path
+   *  (cislunar) OR Mars/outer-system path (interplanetary). The two
+   *  branches are mutually exclusive: a mission is one or the other. */
+  const hasPhaseMarkers = $derived(
+    phaseMarkers.length > 0 || interplanetaryPhaseMarkers.length > 0,
   );
   let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
 
@@ -678,14 +702,23 @@
   // GH #107 — science chip on the HUD phase pill.
   // For Moon missions: derive the precise cislunar phase from
   // currentPhaseFor(simMet, trajectory) and look up the matching
-  // /science section via primaryScienceRefFor. Falls back to a
-  // coarse map for heliocentric / non-cislunar phases.
+  // /science section via primaryScienceRefFor.
+  // For Mars + outer-system missions (Step 6e): same shape but via
+  // currentInterplanetaryPhaseFor + interplanetary_phase_refs.
+  // Falls back to a coarse map for missions without a trajectory.
   let phaseScienceRef: ScienceRef | null = $derived.by(() => {
     if (isMoonMission && cislunarTrajectory) {
       const simMet = simDay - mission.timeline.dep_day;
       const cur = currentPhaseFor(simMet, cislunarTrajectory);
       if (cur) {
         return primaryScienceRefFor({ phaseType: cur.type });
+      }
+    }
+    if (!isMoonMission && interplanetaryTrajectory) {
+      const simMet = simDay - mission.timeline.dep_day;
+      const cur = currentInterplanetaryPhaseFor(simMet, interplanetaryTrajectory);
+      if (cur) {
+        return primaryInterplanetaryPhaseScienceRef(cur.type);
       }
     }
     // Coarse heliocentric map. Each entry returns the closest /science
@@ -1093,6 +1126,21 @@
       rebuildCislunarLinesRef?.(null);
       rebuildCislunarAnnotationsRef?.(null, undefined);
 
+      // GH #107 Step 6e — build the heliocentric interplanetary
+      // trajectory for Mars/outer-system missions with events. Used
+      // by the phase-marker overlay to anchor each event MET to its
+      // heliocentric AU position.
+      if (m.flight?.events && m.flight.events.length > 0) {
+        interplanetaryTrajectory = buildInterplanetaryTrajectory(m.flight?.interplanetary_profile, {
+          dep_day_sim: newTimeline.dep_day,
+          transit_days: m.transit_days ?? 0,
+          is_return_trip: false,
+          arrival_vinf_kms: m.flight?.arrival?.v_infinity_km_s ?? null,
+        });
+      } else {
+        interplanetaryTrajectory = null;
+      }
+
       // Pass real arrival V∞ when the mission has flight data so the
       // outbound arc shape reflects the mission's actual transfer
       // energy (v0.1.10). Falls back to the Hohmann baseline geometry
@@ -1164,6 +1212,7 @@
     activeDestination = 'mars';
     applyDestinationVisualsRef?.(activeDestination);
     isMoonMission = false;
+    interplanetaryTrajectory = null;
     const arcs = buildArcs(newTimeline, true);
     outPts = arcs.out;
     retPts = arcs.ret;
@@ -1234,6 +1283,7 @@
     activeDestination = dest;
     applyDestinationVisualsRef?.(activeDestination);
     isMoonMission = false;
+    interplanetaryTrajectory = null;
     const arcs = buildArcs(newTimeline, isFlyby, dest);
     outPts = arcs.out;
     retPts = arcs.ret;
@@ -3557,23 +3607,42 @@
 
       // GH #107 — phase marker projection (2D view). Same shape as
       // the 3D path above; markers render as HTML overlays positioned
-      // by eciKmToCanvas2dPx output. Skipped for non-Moon missions.
-      if (isMoonMission && phaseMarkers.length > 0) {
+      // by eciKmToCanvas2dPx output (Moon) or helioAuToCanvas2dPx
+      // (Mars/outer-system). Skipped only when the mission has neither.
+      if (hasPhaseMarkers) {
         const view2d = {
           canvasWidth: W,
           canvasHeight: H,
           baseScale2dPerAu: BASE_SCALE_2D,
         };
         const simMet = simDay - mission.timeline.dep_day;
-        const next: PhaseMarkerRenderState[] = phaseMarkers.map((mk) => ({
-          event: mk.event,
-          scienceRef: mk.scienceRef,
-          screen: eciKmToCanvas2dPx(mk.posKm, view2d),
-          reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
-          eventLabel: defaultEventLabel(mk.event.type),
-        }));
+        const next: PhaseMarkerRenderState[] = [];
+        // Moon path: ECI km → Earth-centred canvas pixels.
+        if (isMoonMission) {
+          for (const mk of phaseMarkers) {
+            next.push({
+              event: mk.event,
+              scienceRef: mk.scienceRef,
+              screen: eciKmToCanvas2dPx(mk.posKm, view2d),
+              reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+              eventLabel: defaultEventLabel(mk.event.type),
+            });
+          }
+        }
+        // Mars / outer-system path: heliocentric AU → Sun-centred canvas pixels.
+        if (!isMoonMission) {
+          for (const mk of interplanetaryPhaseMarkers) {
+            next.push({
+              event: mk.event,
+              scienceRef: mk.scienceRef,
+              screen: helioAuToCanvas2dPx(mk.posAu, view2d),
+              reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+              eventLabel: defaultEventLabel(mk.event.type),
+            });
+          }
+        }
         phaseMarkerScreens = next;
-      } else if (!isMoonMission && phaseMarkerScreens.length > 0) {
+      } else if (phaseMarkerScreens.length > 0) {
         phaseMarkerScreens = [];
       }
     }
@@ -4155,7 +4224,7 @@
         // camera + canvas size, then write the resulting
         // PhaseMarkerRenderState[] in a single $state.raw assignment so
         // the template re-renders once per frame.
-        if (viewMode === 'cislunar' && phaseMarkers.length > 0 && container) {
+        if (hasPhaseMarkers && container) {
           const cw = container.clientWidth;
           const ch = container.clientHeight;
           const simMet = simDay - mission.timeline.dep_day;
@@ -4168,15 +4237,34 @@
               },
             };
           };
-          const next: PhaseMarkerRenderState[] = phaseMarkers.map((m) => ({
-            event: m.event,
-            scienceRef: m.scienceRef,
-            screen: eciKmToScreenPx(m.posKm, factory, cislunarCamera, cw, ch),
-            reveal: markerStateFor(m.event.met_days ?? 0, simMet, { reducedMotion }),
-            eventLabel: defaultEventLabel(m.event.type),
-          }));
+          const next: PhaseMarkerRenderState[] = [];
+          // Moon path: ECI km → CSS pixels via the cislunar camera.
+          if (viewMode === 'cislunar' && phaseMarkers.length > 0) {
+            for (const mk of phaseMarkers) {
+              next.push({
+                event: mk.event,
+                scienceRef: mk.scienceRef,
+                screen: eciKmToScreenPx(mk.posKm, factory, cislunarCamera, cw, ch),
+                reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+                eventLabel: defaultEventLabel(mk.event.type),
+              });
+            }
+          }
+          // Mars / outer-system path: heliocentric AU → CSS pixels via
+          // the main camera (helio scene already uses AU as scene units).
+          if (viewMode === 'heliocentric' && interplanetaryPhaseMarkers.length > 0) {
+            for (const mk of interplanetaryPhaseMarkers) {
+              next.push({
+                event: mk.event,
+                scienceRef: mk.scienceRef,
+                screen: helioAuToScreenPx(mk.posAu, factory, camera, cw, ch),
+                reveal: markerStateFor(mk.event.met_days ?? 0, simMet, { reducedMotion }),
+                eventLabel: defaultEventLabel(mk.event.type),
+              });
+            }
+          }
           phaseMarkerScreens = next;
-        } else if (viewMode === 'heliocentric' && phaseMarkerScreens.length > 0) {
+        } else if (phaseMarkerScreens.length > 0) {
           phaseMarkerScreens = [];
         }
       } else draw2d();
@@ -4269,8 +4357,10 @@
        (screen.x, screen.y) computed each frame in the animate loop.
        Same overlay covers both 3D and 2D views (the projection helper
        chosen per-frame determines which path's coordinates feed
-       phaseMarkerScreens). Hidden entirely off Moon missions. -->
-  {#if isMoonMission && phaseMarkerScreens.length > 0}
+       phaseMarkerScreens). Hidden when the mission has no
+       phase-marker pipeline (no Moon cislunar nor Mars heliocentric
+       trajectory + events). -->
+  {#if hasPhaseMarkers && phaseMarkerScreens.length > 0}
     <div
       class="phase-markers-overlay"
       data-testid="phase-markers-overlay"

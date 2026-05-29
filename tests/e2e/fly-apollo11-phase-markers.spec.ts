@@ -168,14 +168,24 @@ test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
     await expect(launchLabel.first()).toBeVisible({ timeout: 10_000 });
   });
 
-  test('phase-marker overlay does not render on non-Moon missions', async ({ page }) => {
-    // Mariner 4 is a Mars flyby — heliocentric view, no cislunar
-    // markers. The overlay {#if} should evaluate false.
+  test('phase-marker overlay renders on Mars missions too (#107 Step 6e)', async ({ page }) => {
+    // Step 6e generalised the overlay from Moon-only to any mission
+    // with flight.events + a trajectory. Mariner 4 has both (its
+    // interplanetary_profile carries hybrid Tier 1.5 helio
+    // waypoints per Step 6d). The overlay should render in
+    // heliocentric mode using the helio-AU → screen projection
+    // path. Earlier the assertion was toHaveCount(0); updated for
+    // the new behaviour.
     await page.goto('/fly?mission=mariner4');
     await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 10_000 });
-    // Brief beat for the animate loop.
-    await page.waitForTimeout(500);
-    await expect(page.locator('[data-testid="phase-markers-overlay"]')).toHaveCount(0);
+    await expect(page.locator('[data-testid="phase-markers-overlay"]')).toBeVisible({
+      timeout: 10_000,
+    });
+    const count = await page
+      .locator('[data-testid="phase-markers-overlay"]')
+      .getAttribute('data-marker-count');
+    // Mariner 4 has 4 events anchored in its interplanetary_profile.
+    expect(Number(count)).toBe(4);
   });
 
   test('every rendered marker dot has the event name in its title attribute (a11y)', async ({

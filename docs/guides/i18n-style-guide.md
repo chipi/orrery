@@ -17,7 +17,7 @@ You are translating Orrery into a new language. Before you start:
 
 Files you will be touching:
 - `messages/<code>.json` — Paraglide UI strings (~276 keys; informal register where the en-US source uses a friendly tone).
-- `static/data/i18n/<code>/missions/{mars,moon}/*.json` — 36 mission overlay files. Translate `name` (display name), `description`, `first` (claim-to-fame), `type` (e.g. `LANDER · FLOWN`), `events[].label`, `events[].note`. Keep mission `id` and proper nouns intact.
+- `static/data/i18n/<code>/missions/{mars,moon,ceres,jupiter,neptune,pluto}/*.json` — 42 mission overlay files (21 Moon, 17 Mars, 4 outer-system). Translate `name` (display name), `description`, `first` (claim-to-fame), `type` (e.g. `LANDER · FLOWN`), `events[].label`, `events[].note`. Keep mission `id` and proper nouns intact.
 - `static/data/i18n/<code>/{planets,rockets,sun,scenarios,earth-objects,moon-sites}/*.json` — same overlay pattern, smaller files.
 
 Per ADR-017's fallback chain, any key you omit will fall back to en-US — broken translation is bounded, not user-blocking.

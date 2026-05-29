@@ -73,7 +73,28 @@ Beresheet ends with an `anomaly` event at MET 48.01d (impact on the Moon). The g
 
 ### Sample-return missions
 
-Set `cislunar_profile.return.type` to something other than `none` (`tei_direct`, `tei_lor`). The generator multiplies the transit window by 2 to cover both outbound + return. Examples: Apollo 11/13/17, Chang'e 5/6, Artemis 2, sample-return Luna missions, MMX (Mars sample return).
+**Moon (`cislunar_profile.return.type`):** Set to one of:
+- `none` (default — one-way; flyby missions, impactors, orbiters that stay)
+- `tei_direct` (direct Trans-Earth Injection)
+- `tei_lor` (Lunar Orbit Rendezvous on return)
+
+The generator multiplies the transit window by 2 to cover both outbound + return. Examples: Apollo 11/13/17, Chang'e 5/6, Artemis 2, sample-return Luna missions.
+
+**Mars + outer-system (`interplanetary_profile.return.type`):** Same shape, different enum:
+- `none` (default — every current Mars + outer-system mission)
+- `tei_helio_direct` (direct heliocentric Trans-Earth Injection)
+- `tei_helio_lor` (LOR-pattern adapted to interplanetary range)
+
+Example: MMX (JAXA Mars/Phobos sample return, 2026) is planned as sample-return; when its event timeline is backfilled with `earth_return`, set `interplanetary_profile.return.type = "tei_helio_direct"` so /fly renders both legs.
+
+### Outer-system missions (Galileo, Voyager 2, New Horizons, Dawn)
+
+Outer-system missions use the same `interplanetary_profile` schema as Mars. Differences worth knowing:
+
+- **Multiple flybys past target body.** Voyager 2 (Grand Tour: Jupiter → Saturn → Uranus → Neptune) and Galileo (Venus + 2× Earth + 2× asteroid gravity assists before Jupiter arrival) have events extending well past `transit_days` (Voyager 2: 4607d events vs 4388d transit). The window-extension rule covers this automatically.
+- **No descent / EDL.** Most outer-system missions are flybys or orbit-only — the cislunar `descent` / `ascent` / `edl` event types don't apply. Use `flyby`, `arrival`, `edl_or_oi` (for atmospheric probes like Galileo's Jupiter probe) as appropriate.
+- **arrival_body enum.** Set to one of `ceres`, `jupiter`, `neptune`, `pluto`. The generator's `destinationPos()` provides the correct heliocentric position at arrival; Mars-specific `marsPos()` is bypassed.
+- **No sample-return.** All current outer-system missions are one-way; leave `return.type` absent.
 
 ---
 
@@ -107,14 +128,14 @@ Keyboard-focusable; aria-label includes the MET ("LOI at MET 3.13 days. Click to
 
 ## Real NASA TND state-vector ingest (`tier_2_published`)
 
-Currently deferred (post-v0.7). When implemented, the ingest path will:
+Currently deferred to v0.8+ (tracked as **[GH #262](https://github.com/chipi/orrery/issues/262)**). When implemented, the ingest path will:
 
 - Read NASA Mission Report PDFs (Apollo 11 MSC-00171, Apollo 13 MSC-02680, Apollo 17 JSC-07904, Artemis II post-flight reconstruction).
 - Parse the state-vector tables (each Mission Report has its own table format — per-mission adapter).
 - Emit `waypoints_km` directly with `source_tier: tier_2_published`.
 - Visual delta vs. the `tier_1_5_hybrid` curve should be within a few percent (geometry is already faithful to first-order).
 
-The reserved tier label exists in the schema enums today; only the ingest path is open.
+The reserved tier label exists in the schema enums today; only the ingest path is open. Same shape applies to a future Mars / outer-system `tier_2_published` path via JPL Horizons or ESA SPICE state-vector kernels.
 
 ---
 

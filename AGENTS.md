@@ -29,7 +29,7 @@ Then drill into the matching doc by question type:
 
 ## What this project is
 
-Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Eleven primary nav destinations, real orbital mechanics, **37 missions** in the catalog (Mars + Moon + four outer-system catalogue entries), **137 fleet entries** across 9 categories cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
+Orrery is a browser-based solar system explorer, mission simulator, encyclopedia, station explorer, and spaceflight fleet inventory rolled into one. Eleven primary nav destinations, real orbital mechanics, **42 missions** in the catalog (21 Moon + 17 Mars + 4 outer-system: Galileo, Voyager 2, New Horizons, Dawn), **137 fleet entries** across 9 categories cross-linked bidirectionally to the rest of the corpus, and a canonical **ORRERY-1** free-return Mars flyby scenario for generic `/fly` runs. It runs entirely in the browser, deploys offline, and has no backend or user accounts. Built for millions of users worldwide — mobile-first, internationalised in **14 locales** at 100% UI parity (en-US + es / fr / de / pt-BR / it / nl / zh-CN / ja / ko / hi / ar / ru / sr-Cyrl).
 
 The eleven primary nav destinations:
 
@@ -183,10 +183,10 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── images/crew/                    ← per-flight crew portraits (ADR-053)
 │   ├── data/               ← all app JSON: missions, fleet, i18n overlays, schemas, planets, porkchop, …
 │   │   ├── missions/
-│   │   │   ├── index.json  ← lightweight manifest (37 entries)
-│   │   │   ├── mars/       ← base mission files (language-neutral)
-│   │   │   ├── moon/       ← Moon missions (incl. optional `flight.cislunar_profile` per ADR-058)
-│   │   │   └── outer-system/
+│   │   │   ├── index.json  ← lightweight manifest (42 entries)
+│   │   │   ├── mars/       ← base mission files (language-neutral) — `flight.interplanetary_profile` per ADR-058 third amendment
+│   │   │   ├── moon/       ← Moon missions (incl. `flight.cislunar_profile` per ADR-058)
+│   │   │   ├── ceres/ jupiter/ neptune/ pluto/  ← outer-system missions (`flight.interplanetary_profile`)
 │   │   ├── fleet/          ← 137 entries × 9 categories (ADR-052; PRD-012 / RFC-016)
 │   │   │   ├── index.json                    ← generated manifest (drives /fleet card grid)
 │   │   │   ├── launcher/                     ← per-entry base files (language-neutral)

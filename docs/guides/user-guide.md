@@ -92,8 +92,10 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 - **▶ / ⏸ + speed pills** — autoplay at 1× / 7× / 30× / 90× (Mars-class missions) or 0.1× / 0.5× / 1× / 3× (lunar).
 - **`2D` toggle** — switch between the 3D scene and a top-down 2D view.
 - **CAPCOM panel** (right) — live mission events (TLI, TCM, EDL, etc.) tick by as you scrub.
-- **Pre-built missions**: try `/fly?mission=<id>` for any of the 37 missions in the catalog.
+- **Pre-built missions**: try `/fly?mission=<id>` for any of the 42 missions in the catalog.
+- **Phase markers** appear on every mission with timeline events — click any marker dot to jump the sim to that event's MET (LOI, TCM, descent, arrival, EDL). Each marker carries a science-chip linking to the matching `/science` encyclopedia section. Keyboard-focusable + screen-reader-readable. Reduced-motion: snap, no animation.
 - **Lunar missions** (Apollo, Artemis II, Blue Moon, Chang'e, Chandrayaan, Luna, SLIM) auto-open in a dedicated **cislunar view** (ADR-058) anchored at Earth, rendering each mission's actual flight architecture — Apollo free-return figure-8 with parking orbit + lunar orbit + descent, Artemis II hybrid free-return at 9 200 km periselene, Chandrayaan-3 multi-burn Earth spiral + lunar spiral + descent, Chang'e 5 lunar-orbit-rendezvous sample-return, etc. The camera zooms in as the spacecraft approaches the Moon and pulls back as it leaves.
+- **Mars + outer-system missions** render the heliocentric transfer arc (Earth → target body) via `flight.interplanetary_profile` waypoints (ADR-058 third amendment), with the same phase-marker overlay + science chips as Moon missions. Mariner 4 (1964) through Hope Probe (2020), Voyager 2's Grand Tour flybys, New Horizons' Jupiter assist + Pluto + Arrokoth, Dawn's Vesta-then-Ceres.
 
 [![Apollo 11 fly](../screenshots/03-fly-apollo11.png)](screenshots/03-fly-apollo11.png)
 
@@ -115,7 +117,7 @@ Each phase title is a deep link into the matching `/science` chapter. The lens a
 
 ## Mission Catalog · `/missions`
 
-All 37 missions in the dataset. 16 Mars + 17 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](../adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
+All 42 missions in the dataset. 17 Mars + 21 Moon + 4 outer-system entries (Galileo, Voyager 2, New Horizons, Dawn), spanning Mariner 4 (1964) through Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](../adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
 
 [![Catalog](../screenshots/04-missions.png)](screenshots/04-missions.png)
 

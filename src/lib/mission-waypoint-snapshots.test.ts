@@ -205,3 +205,48 @@ describe('#107 Step 6i — interplanetary waypoint golden snapshots', () => {
     });
   }
 });
+
+// #107 review finding 10 — invariants the validate-data runtime checks
+// but the per-mission snapshot tests above don't surface explicitly.
+// Catches edge cases (over-200 waypoints, heliocentric radius outside
+// sane AU bounds) that would otherwise only fail at preflight time.
+describe('#107 review finding 10 — waypoint invariants beyond the snapshots', () => {
+  it('every interplanetary waypoint has heliocentric radius in [0.1, 50] AU', () => {
+    for (const snap of HELIO_SNAPSHOTS) {
+      const m = readMission(snap.dest, snap.slug);
+      const wp = m.flight?.interplanetary_profile?.waypoints_helio_au as number[][] | undefined;
+      if (!wp) continue;
+      for (let i = 0; i < wp.length; i++) {
+        const r = Math.hypot(wp[i][1], wp[i][2], wp[i][3]);
+        // Earth ~1 AU; Pluto ~40 AU; nothing in our corpus should go
+        // beyond ~45 AU. The validator caps at 50 AU.
+        expect(r, `${snap.slug} waypoint[${i}] r=${r.toFixed(3)} AU`).toBeGreaterThan(0.1);
+        expect(r, `${snap.slug} waypoint[${i}] r=${r.toFixed(3)} AU`).toBeLessThan(50);
+      }
+    }
+  });
+
+  it('no mission exceeds the 200-waypoint hard cap', () => {
+    for (const snap of [...MOON_SNAPSHOTS, ...HELIO_SNAPSHOTS]) {
+      const m = readMission(snap.dest, snap.slug);
+      const km = m.flight?.cislunar_profile?.waypoints_km as number[][] | undefined;
+      const au = m.flight?.interplanetary_profile?.waypoints_helio_au as number[][] | undefined;
+      if (km) expect(km.length).toBeLessThanOrEqual(200);
+      if (au) expect(au.length).toBeLessThanOrEqual(200);
+    }
+  });
+
+  it('every interplanetary waypoint has y ≈ 0 (ecliptic-plane assumption)', () => {
+    for (const snap of HELIO_SNAPSHOTS) {
+      const m = readMission(snap.dest, snap.slug);
+      const wp = m.flight?.interplanetary_profile?.waypoints_helio_au as number[][] | undefined;
+      if (!wp) continue;
+      for (let i = 0; i < wp.length; i++) {
+        // The generator emits y=0 for in-plane transfers (every
+        // mission today). If a future inclined-transfer mission ships
+        // with non-zero y, update this assertion to a tolerance.
+        expect(wp[i][2], `${snap.slug} waypoint[${i}].y`).toBe(0);
+      }
+    }
+  });
+});

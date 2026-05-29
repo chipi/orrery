@@ -724,11 +724,18 @@
       }
     }
     // Coarse heliocentric map. Each entry returns the closest /science
-    // explainer for the current journey state.
+    // explainer for the current journey state. This fallback only
+    // fires when the trajectory isn't built or has no current phase
+    // at simMet — the primary path goes through currentPhaseFor /
+    // currentInterplanetaryPhaseFor with their specific science refs.
     if (phase === 'pre-launch') return { tab: 'mission-phases', slug: 'launch' };
     if (phase === 'outbound') return { tab: 'transfers', slug: 'transfer-ellipse' };
     if (phase === 'return') return { tab: 'mission-phases', slug: 'edl' };
-    return { tab: 'mission-phases', slug: 'edl' }; // arrived
+    // arrived — prefer orbit-insertion over edl since the majority of
+    // arrived Mars missions (Maven, Mars Express, MRO, MAVEN, MMX
+    // pre-descent) are in captured orbit rather than the EDL phase
+    // (#107 review finding 9).
+    return { tab: 'mission-phases', slug: 'orbit-insertion' };
   });
 
   // ─── Live derived navigation values ──────────────────────────────

@@ -211,22 +211,22 @@ jobs:
              docker compose -f compose/docker-compose.prod.yml --project-directory . logs web; \
              exit 1"
 
-      - name: Register tailscale serve for orrery (idempotent, no sudo)
-        # Publishes the host's ORRERY_PORT (8090) on the tailnet at
-        # https://<host>:8443/. Runs as `deploy@` user — `tailscale serve`
-        # does NOT require root on most setups (acts on the node-level
-        # tailnet identity that podcast_scraper deploy also uses).
+      - name: Re-arm tailscale serve via root-owned wrapper (NOPASSWD sudo)
+        # Mirrors podcast_scraper/infra/deploy/deploy.sh:131-144 exactly.
+        # Calls the cloud-init-installed wrapper at
+        # /usr/local/sbin/orrery-tailscale-serve.sh, which is the only
+        # tailscale-serve command `deploy@` is allowed to invoke
+        # (per the narrow /etc/sudoers.d/99-orrery-deploy-tailscale-serve
+        # allowlist provisioned in podcast_scraper#838).
         #
-        # Idempotent: if port 8443 is already registered to the right
-        # backend, this is a no-op. `tailscale serve --bg --https=8443`
-        # overwrites just that port; does NOT touch :443 (podcast_scraper).
+        # The wrapper is the durability source of truth — it's also
+        # invoked by cloud-init runcmd at first boot, so the serve
+        # registration survives VPS rebuilds even if no deploy has
+        # happened. This step is the deploy-time repair path.
         #
-        # CAVEAT: this registration is NOT persistent across `tailscaled`
-        # restarts (VPS reboot, package update). For durability, the
-        # operator should add the equivalent `ExecStartPost` to the VPS's
-        # systemd config — best done in podcast_scraper's Terraform
-        # cloud-init (see docs/ops/deploy-prod-vps.md §"Provisioning").
-        # Until that lands, every deploy re-registers, which is fine.
+        # 3-attempt retry, WARN on final failure, does NOT fail the
+        # deploy. The External health probe step that follows is the
+        # actual end-to-end check.
         if: steps.preflight.outputs.skip != 'true'
         env:
           SSH_TARGET: deploy@${{ vars.PROD_TAILNET_FQDN }}
@@ -234,15 +234,16 @@ jobs:
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
             "set -euo pipefail; \
-             . /srv/orrery/compose/.env.prod; \
-             PORT=\${ORRERY_PORT:-8090}; \
-             # Check if :8443 is already correctly pointed at the orrery port.
-             # If yes, skip (idempotent). If no, register.
-             if tailscale serve status 2>/dev/null | grep -qE \":8443.*127\\.0\\.0\\.1:\${PORT}\"; then \
-               echo 'tailscale serve :8443 already configured for orrery — no-op'; \
-             else \
-               tailscale serve --bg --https=8443 \${PORT}; \
-               echo 'registered tailscale serve :8443 → 127.0.0.1:\${PORT}'; \
+             ts_ok=0; \
+             for a in 1 2 3; do \
+               if sudo -n /usr/local/sbin/orrery-tailscale-serve.sh; then \
+                 ts_ok=1; break; \
+               fi; \
+               echo \"[\$(date -u +%FT%TZ)] orrery-tailscale-serve.sh attempt \$a failed; retrying in 5s...\" >&2; \
+               sleep 5; \
+             done; \
+             if [ \"\$ts_ok\" != 1 ]; then \
+               echo 'WARNING: orrery-tailscale-serve.sh failed after 3 attempts (tailnet :8443 may be down). Deploy continues; fix script on host or reprovision cloud-init.' >&2; \
              fi; \
              tailscale serve status"
 

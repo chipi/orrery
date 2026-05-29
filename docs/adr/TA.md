@@ -33,7 +33,7 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 | `/explore` | Solar System Explorer · 3D orrery + per-body Science Lens layers | PRD-001 / ADR-012 |
 | `/plan` | Mission Configurator · porkchop plot (9 destinations) | PRD-002 / RFC-006 / ADR-023 / ADR-026 / ADR-028 |
 | `/fly` | Mission Arc · heliocentric transfer (+ cislunar Earth-centered view) | PRD-003 / ADR-030 / ADR-058 |
-| `/missions` | Mission Catalog · 37 flown / active / planned / concept missions | PRD-004 / ADR-020 / ADR-027 |
+| `/missions` | Mission Catalog · 42 flown / active / planned / concept missions | PRD-004 / ADR-020 / ADR-027 |
 | `/earth` | Earth Orbit Viewer · ISS, Tiangong, Hubble, JWST, GNSS constellations | PRD-005 / ADR-046 |
 | `/moon` | Moon Map · 16 surface sites + lunar orbiters with per-mission 3D models | PRD-006 / ADR-037 / ADR-038 |
 | `/mars` | Mars Surface Map · equirectangular + 3D globe; 16 surface sites + 11 orbiters; rover traverses | PRD-007 / ADR-037 / ADR-038 / RFC-012 |
@@ -63,6 +63,8 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 **Fly-physics** (`src/lib/fly-physics.ts`) — transfer-ellipse math (`transferEllipse`), Tsiolkovsky rocket equation, per-mission validation harness. See ADR-030.
 
 **Cislunar geometry** (`src/lib/cislunar-geometry.ts`) — Earth-Centered Inertial trajectory builder for Moon missions. `buildCislunarTrajectory` consumes the optional `flight.cislunar_profile` block on Moon missions (parking orbit → TLI → translunar arc → lunar arrival → TEI). Drives the second `/fly` camera. See ADR-058.
+
+**Interplanetary geometry** (`src/lib/interplanetary-geometry.ts`) — heliocentric trajectory builder for Mars + outer-system missions, parallel to cislunar. `buildInterplanetaryTrajectory` consumes the optional `flight.interplanetary_profile` block (departure body, arrival body, transfer type, hybrid waypoints). 11 phase types: parking_earth → tmi_coast → helio_cruise → mid_course → arrival_approach → arrival_orbit → mars_descent/surface/ascent → tei_helio → earth_return_helio. Operator guide for adding a new mission's waypoints + phase markers: [docs/guides/mission-trajectories.md](../guides/mission-trajectories.md). See ADR-058 (third amendment).
 
 ### 3D model builders
 

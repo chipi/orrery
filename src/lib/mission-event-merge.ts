@@ -46,6 +46,8 @@ const DEFAULT_FLIGHT_LABELS: Record<FlightEventType, FlightEventLabels> = {
   tei: { label: 'TRANS-EARTH INJECTION', note: '', type: 'nominal' },
   descent_start: { label: 'POWERED DESCENT', note: '', type: 'nominal' },
   ascent: { label: 'LUNAR ASCENT', note: '', type: 'nominal' },
+  separation: { label: 'SEPARATION', note: '', type: 'nominal' },
+  phasing: { label: 'PHASING BURN', note: '', type: 'nominal' },
 };
 
 /** MET collision tolerance in days. Editorial and structural events

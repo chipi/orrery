@@ -390,6 +390,10 @@
         return m.fly_event_anomaly();
       case 'edl_or_oi':
         return m.fly_event_edl_or_oi();
+      case 'phasing':
+        return m.fly_event_phasing();
+      case 'separation':
+        return m.fly_event_separation();
       default:
         return type;
     }

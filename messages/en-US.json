@@ -384,6 +384,8 @@
   "fly_event_arrival": "ARRIVAL",
   "fly_event_anomaly": "ANOMALY",
   "fly_event_edl_or_oi": "EDL/OI",
+  "fly_event_phasing": "PHASING BURN",
+  "fly_event_separation": "SEPARATION",
   "fly_label_view_3d": "3D",
   "fly_label_view_2d": "2D",
   "fly_hud_vehicle": "VEHICLE",

@@ -26,7 +26,9 @@ export type FlightEventType =
   | 'loi'
   | 'tei'
   | 'descent_start'
-  | 'ascent';
+  | 'ascent'
+  | 'separation'
+  | 'phasing';
 
 export interface FlightLaunch {
   vehicle_stage?: string;

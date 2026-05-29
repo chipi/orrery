@@ -38,6 +38,12 @@
     "tei": [{ "tab": "mission-phases", "slug": "trans-x-injection" }],
     "earth_return": [{ "tab": "mission-phases", "slug": "edl" }],
     "flyby": [{ "tab": "transfers", "slug": "gravity-assist" }],
-    "arrival": [{ "tab": "mission-phases", "slug": "edl" }]
+    "arrival": [{ "tab": "mission-phases", "slug": "edl" }],
+    "phasing": [
+      { "tab": "mission-phases", "slug": "trans-x-injection" },
+      { "tab": "propulsion", "slug": "dv-budget" }
+    ],
+    "separation": [{ "tab": "mission-phases", "slug": "edl" }],
+    "anomaly": [{ "tab": "transfers", "slug": "free-return" }]
   }
 }

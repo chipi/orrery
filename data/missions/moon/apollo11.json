@@ -106,7 +106,7 @@
       }
     ],
     "cislunar_profile": {
-      "source_tier": "tier_2_published",
+      "source_tier": "tier_1_5_hybrid",
       "parking_orbit": {
         "altitude_km": 191,
         "inclination_deg": 32.5,

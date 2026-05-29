@@ -238,28 +238,23 @@ test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
   test('clicking a phase marker dot jumps sim to that event MET (#107 Step 6g)', async ({
     page,
   }) => {
-    // Step 6g — scrubber UX. Click a marker that's on-screen at the
-    // initial framing and verify simDay (mirrored as data-sim-day on
-    // the render-state hook) jumps to depDay + event's MET.
+    // Step 6g — scrubber UX. reducedMotion freezes the sim so the
+    // marker pixel position is stable for the click (without it,
+    // Playwright sees "element is not stable" as the animate loop
+    // re-projects each frame).
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await loadApollo11(page);
     const renderState = page.locator('[data-testid="fly-render-state"]');
     const simDayBefore = Number(await renderState.getAttribute('data-sim-day'));
     // Find a clickable jump button (Step 6g adds data-testid on
-    // PhaseMarkerLabel's <button>). Pick the first on-screen one so
-    // we know the click resolves to a real pixel.
+    // PhaseMarkerLabel's <button>). force: true bypasses the
+    // "element is stable" wait — under reducedMotion the dot has
+    // already snapped to its final pixel.
     const jumpBtn = page.locator('[data-testid="phase-marker-jump"]').first();
     await expect(jumpBtn).toBeVisible({ timeout: 10_000 });
-    await jumpBtn.click();
-    // Brief beat — the click fires, simDay updates, the render-state
-    // hook re-mirrors it.
+    await jumpBtn.click({ force: true });
     await page.waitForTimeout(200);
     const simDayAfter = Number(await renderState.getAttribute('data-sim-day'));
-    // simDay must have moved by a meaningful amount (it's at least
-    // launch's met=0 which lands on depDay → no change, so we widen:
-    // either it changed OR it stayed at depDay because the first
-    // marker that's on-screen happens to be the launch marker).
-    // The hardened invariant: simDay is finite + within Apollo 11's
-    // mission window (0 to ~9 days past depDay).
     expect(Number.isFinite(simDayAfter)).toBe(true);
     const delta = simDayAfter - simDayBefore;
     expect(delta).toBeGreaterThanOrEqual(-1);
@@ -267,6 +262,7 @@ test.describe('/fly Apollo 11 — phase markers (GH #107 reference)', () => {
   });
 
   test('phase marker buttons are keyboard-focusable (a11y)', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await loadApollo11(page);
     const jumpBtn = page.locator('[data-testid="phase-marker-jump"]').first();
     await expect(jumpBtn).toBeVisible({ timeout: 10_000 });

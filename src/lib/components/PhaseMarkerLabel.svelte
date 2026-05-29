@@ -49,12 +49,34 @@
     reveal: RevealResult;
     /** Optional intro_sentence for the chip's hover tooltip. */
     scienceLabel?: string;
+    /** #107 Step 6g — clickable scrubber. When provided, the dot
+     *  becomes a button that calls onJump(metDays) so the sim can jump
+     *  to this event's moment. Default no-op = the marker stays a
+     *  decorative dot (back-compat). */
+    onJump?: () => void;
+    /** Event's MET in days, for the aria-label when clickable. */
+    eventMetDays?: number;
   }
 
-  let { screenX, screenY, onScreen, eventLabel, scienceRef, reveal, scienceLabel }: Props =
-    $props();
+  let {
+    screenX,
+    screenY,
+    onScreen,
+    eventLabel,
+    scienceRef,
+    reveal,
+    scienceLabel,
+    onJump,
+    eventMetDays,
+  }: Props = $props();
 
   let dotOpacity = $derived(intensityToOpacity(reveal.intensity));
+  let clickable = $derived(typeof onJump === 'function');
+  let ariaLabel = $derived(
+    clickable && typeof eventMetDays === 'number'
+      ? `${eventLabel} at MET ${eventMetDays.toFixed(2)} days. Click to jump.`
+      : eventLabel,
+  );
 </script>
 
 {#if onScreen}
@@ -67,7 +89,19 @@
     data-testid="phase-marker"
     data-phase-state={reveal.state}
   >
-    <span class="dot" aria-hidden="true" title={eventLabel} style="opacity: {dotOpacity};"></span>
+    {#if clickable}
+      <button
+        type="button"
+        class="dot dot-btn"
+        title={eventLabel}
+        aria-label={ariaLabel}
+        style="opacity: {dotOpacity};"
+        data-testid="phase-marker-jump"
+        onclick={() => onJump?.()}
+      ></button>
+    {:else}
+      <span class="dot" aria-hidden="true" title={eventLabel} style="opacity: {dotOpacity};"></span>
+    {/if}
     {#if reveal.labelVisible}
       <span class="label" data-testid="phase-marker-label">
         {eventLabel}
@@ -98,6 +132,22 @@
     background: #4ecdc4;
     box-shadow: 0 0 6px rgba(78, 205, 196, 0.55);
     transition: opacity 220ms ease-out;
+  }
+  .dot-btn {
+    /* Reset button styles to look like the decorative dot but stay
+       clickable + keyboard-focusable for the scrubber UX (#107 Step 6g). */
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  .dot-btn:focus-visible {
+    outline: 2px solid rgba(78, 205, 196, 0.95);
+    outline-offset: 3px;
+  }
+  .dot-btn:hover {
+    transform: scale(1.4);
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.85);
   }
   .marker.fresh .dot {
     /* Brief halo pulse during the fresh-reveal window. */

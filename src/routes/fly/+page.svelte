@@ -1000,6 +1000,22 @@
     if (wasPlayingBeforeScrub) isPlaying = true;
     wasPlayingBeforeScrub = false;
   }
+
+  /**
+   * #107 Step 6g — click-event-to-jump scrubber. Called when a user
+   * clicks a phase marker dot. Sets simDay to (mission depart day +
+   * event's MET in days) and pauses the sim so the moment can be
+   * examined. The user can press play to resume from there.
+   *
+   * Mirrors onScrub semantics for state coherence — no animation, just
+   * a snap, even outside reduced-motion (reduced-motion users get the
+   * same behaviour; the sim was already paused for them).
+   */
+  function jumpToMet(metDays: number) {
+    if (!Number.isFinite(metDays) || metDays < 0) return;
+    simDay = mission.timeline.dep_day + metDays;
+    if (isPlaying) isPlaying = false;
+  }
   function onScrub(event: Event) {
     const t = parseFloat((event.target as HTMLInputElement).value);
     simDay = arcTimeline.dep_day + t * arcTotalDays;
@@ -4377,6 +4393,8 @@
           eventLabel={marker.eventLabel}
           scienceRef={marker.scienceRef}
           reveal={marker.reveal}
+          eventMetDays={marker.event.met_days}
+          onJump={() => jumpToMet(marker.event.met_days ?? 0)}
         />
       {/each}
     </div>

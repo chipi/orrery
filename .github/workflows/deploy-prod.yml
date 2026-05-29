@@ -197,9 +197,9 @@ jobs:
              . compose/.env.prod; \
              export ORRERY_PIPELINE_IMAGE_TAG=sha-${SHA_SHORT}; \
              docker compose -f compose/docker-compose.prod.yml \
-               --env-file compose/.env.prod pull web pipeline-runner; \
+               --project-directory . --env-file compose/.env.prod pull web pipeline-runner; \
              docker compose -f compose/docker-compose.prod.yml \
-               --env-file compose/.env.prod up -d web; \
+               --project-directory . --env-file compose/.env.prod up -d web; \
              PORT=\${ORRERY_PORT:-8090}; \
              for i in \$(seq 1 30); do \
                if curl -fsS \"http://127.0.0.1:\${PORT}/\" >/dev/null 2>&1; then \
@@ -208,7 +208,7 @@ jobs:
                sleep 2; \
              done; \
              echo 'orrery web did not respond within 60s'; \
-             docker compose -f compose/docker-compose.prod.yml logs web; \
+             docker compose -f compose/docker-compose.prod.yml --project-directory . logs web; \
              exit 1"
 
       - name: Register tailscale serve for orrery (idempotent, no sudo)

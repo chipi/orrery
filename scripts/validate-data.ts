@@ -222,7 +222,8 @@ function checkCislunarWaypoints(file: string): void {
   if (typeof transit === 'number' && transit > 0) {
     const isRoundTrip =
       m.flight?.arrival?.type === 'landing' ||
-      (m.flight?.cislunar_profile?.return?.type && m.flight.cislunar_profile.return.type !== 'none');
+      (m.flight?.cislunar_profile?.return?.type &&
+        m.flight.cislunar_profile.return.type !== 'none');
     const transitCap = (isRoundTrip ? transit * 2 : transit) * 1.05;
     const latestEventMet = (m.flight?.events ?? [])
       .map((e) => e.met_days)

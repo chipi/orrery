@@ -252,6 +252,86 @@ function checkCislunarWaypoints(file: string): void {
   }
 }
 
+// #107 Step 6d — interplanetary waypoint invariants. Parallels
+// checkCislunarWaypoints but for flight.interplanetary_profile
+// .waypoints_helio_au (Mars + outer-system missions). Same gating
+// pattern: skipped when waypoints_helio_au absent.
+function checkInterplanetaryWaypoints(file: string): void {
+  const m = readJson(file) as {
+    id?: string;
+    transit_days?: number;
+    flight?: {
+      events?: Array<{ met_days?: number; type?: string }>;
+      interplanetary_profile?: {
+        source_tier?: string;
+        waypoints_helio_au?: Array<[number, number, number, number]>;
+      };
+    };
+  };
+  const profile = m.flight?.interplanetary_profile;
+  if (!profile?.waypoints_helio_au) return;
+  const wp = profile.waypoints_helio_au;
+  if (wp.length < 2) {
+    failed++;
+    console.error(`\n  ✗ ${file}`);
+    console.error(
+      `      /flight/interplanetary_profile waypoints_helio_au requires ≥2 entries when present`,
+    );
+    return;
+  }
+  const violations: string[] = [];
+  // Strictly-increasing MET.
+  for (let i = 1; i < wp.length; i++) {
+    if (wp[i][0] <= wp[i - 1][0]) {
+      violations.push(
+        `waypoints_helio_au[${i}].met_days (${wp[i][0]}) must be > waypoints_helio_au[${i - 1}].met_days (${wp[i - 1][0]})`,
+      );
+      break;
+    }
+  }
+  // Launch anchor at MET 0.
+  if (wp[0][0] !== 0) {
+    violations.push(`waypoints_helio_au[0].met_days must be 0 (launch), got ${wp[0][0]}`);
+  }
+  // Mission window: max(transit_days × 1, latest_event_met × 1.1).
+  // No round-trip multiplier — Mars/outer-system are one-way today
+  // (Step 6h opens that door when sample-return missions land).
+  const transit = m.transit_days;
+  if (typeof transit === 'number' && transit > 0) {
+    const latestEventMet = (m.flight?.events ?? [])
+      .map((e) => e.met_days)
+      .filter((v): v is number => typeof v === 'number')
+      .reduce((max, v) => (v > max ? v : max), 0);
+    const cap = Math.max(transit * 1.05, latestEventMet * 1.1);
+    const lastMet = wp[wp.length - 1][0];
+    if (lastMet > cap) {
+      violations.push(
+        `waypoints_helio_au[last].met_days (${lastMet}) exceeds mission window cap (${cap.toFixed(2)} = max(transit_days × 1.05, latest_event_met × 1.1))`,
+      );
+    }
+  }
+  // Coordinate sanity: heliocentric AU magnitudes should be < 50 (Pluto ~40 AU).
+  for (let i = 0; i < wp.length; i++) {
+    const r = Math.hypot(wp[i][1], wp[i][2], wp[i][3]);
+    if (!Number.isFinite(r) || r > 50 || r < 0.1) {
+      violations.push(
+        `waypoints_helio_au[${i}] heliocentric radius ${r.toFixed(3)} AU is outside [0.1, 50] AU`,
+      );
+      break;
+    }
+  }
+  if (wp.length > 200) {
+    violations.push(`waypoints_helio_au has ${wp.length} entries; cap is 200`);
+  }
+  if (violations.length > 0) {
+    failed++;
+    console.error(`\n  ✗ ${file}`);
+    for (const v of violations) console.error(`      ${v}`);
+  } else {
+    passed++;
+  }
+}
+
 /** Every subdirectory of `missions/` (excludes loose files like index.json). */
 function listMissionDataDirs(): string[] {
   const root = join(DATA_ROOT, 'missions');
@@ -415,6 +495,7 @@ for (const dest of missionDataDirs) {
   for (const file of listJson(join(DATA_ROOT, 'missions', dest))) {
     validateFile(file, validateMission);
     checkCislunarWaypoints(file);
+    checkInterplanetaryWaypoints(file);
     try {
       const mission = readJson(file) as { id: string; fleet_refs?: FleetRef[] };
       missionIds.add(mission.id);

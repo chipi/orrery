@@ -241,6 +241,49 @@
               }
             }
           }
+        },
+        "interplanetary_profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Heliocentric interplanetary trajectory profile (#107 Step 6d). Parallels cislunar_profile but for Mars + outer-system missions. Reference frame is heliocentric ecliptic J2000 — coordinates expressed in AU (Earth-Sun distance ≈ 1 AU). Tier 1 (analytic) uses transferEllipse() from src/lib/mission-arc.ts seeded by departure_date + arrival_date. Tier 1.5 (hybrid) populates waypoints_helio_au by resampling that analytic curve to 100 MET-evenly-spaced points + pinning event-MET anchors to slot indices (matches the Moon-side generate-hybrid-waypoints.ts pattern). Tier 2 (published) is reserved for direct ingest from agency mission reports (NASA JPL Horizons, ESA SPICE kernels, etc.).",
+          "properties": {
+            "source_tier": {
+              "enum": ["tier_1_analytic", "tier_1_5_hybrid", "tier_2_published"],
+              "description": "Same semantics as cislunar_profile.source_tier."
+            },
+            "reference_frame": {
+              "enum": ["heliocentric_ecliptic_J2000"],
+              "description": "Coordinate frame of waypoints_helio_au. Currently only heliocentric_ecliptic_J2000 — Sun at origin, x-y in ecliptic plane (so most missions render with z ≈ 0). Future: mars_centred_J2000 for orbiter-detail phases."
+            },
+            "departure_body": {
+              "enum": ["earth"],
+              "description": "Origin body for the interplanetary transfer. Currently only earth — other origins (Venus assist, Saturn flyby start) require additional Lambert seeding logic."
+            },
+            "arrival_body": {
+              "enum": ["mars", "ceres", "jupiter", "neptune", "pluto"],
+              "description": "Target body. Drives which position function provides arrival point + which mu is used for arrival_orbit seeding."
+            },
+            "transfer_type": {
+              "enum": ["hohmann", "type1_lambert", "type2_lambert"],
+              "description": "Trajectory shape between dep + arr. hohmann = idealised 180° transfer (cheapest, longest); type1_lambert = short-way Lambert (< 180° heliocentric arc, typical for Mars); type2_lambert = long-way Lambert (> 180°, used in some Mars launches and most outer-system missions). Determines how transferEllipse() samples the cruise."
+            },
+            "tcm_count": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 20,
+              "description": "Trajectory Correction Maneuver count during cruise. Carried for parity with flight.cruise.tcm_count (some missions populate one, some the other)."
+            },
+            "waypoints_helio_au": {
+              "type": "array",
+              "description": "Tier 1.5/2 only: heliocentric position samples in AU. Each tuple = [met_days, x_au, y_au, z_au]. Sorted by met_days. waypoints_helio_au[0].met_days MUST equal 0 (launch). The renderer prefers waypoints when present, otherwise falls back to parametric (transferEllipse + analytic launch/arrival arcs).",
+              "items": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": { "type": "number" }
+              }
+            }
+          }
         }
       }
     }

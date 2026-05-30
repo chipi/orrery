@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T04:16:34.920Z",
+  "generated_at": "2026-05-30T04:20:29.169Z",
   "script_version": "scripts/audio/generate@0.1.0",
   "commit_sha": null,
   "entries": [
@@ -49,7 +49,7 @@
       "provider": "google",
       "voice_id": "en-US-Neural2-D",
       "tts_model": "neural2",
-      "route": "/fly",
+      "route": "/plan",
       "context": "porkchop",
       "title": "Porkchop plot — arguing with the solar system",
       "duration_target_sec": 130,
@@ -57,7 +57,7 @@
       "path_vtt": "/audio/en-US/enthusiast/porkchop.affcc901.vtt",
       "path_txt": "/audio/en-US/enthusiast/porkchop.affcc901.txt",
       "chars": 1647,
-      "generated_at": "2026-05-30T02:18:57.141Z",
+      "generated_at": "2026-05-30T04:20:18.290Z",
       "text_authorship": "claude-drafted",
       "text_author_model": "claude-opus-4-7"
     },
@@ -370,6 +370,24 @@
       "path_txt": "/audio/en-US/curator/pale-blue-dot.42aa2a82.txt",
       "chars": 1188,
       "generated_at": "2026-05-30T04:16:34.920Z",
+      "text_authorship": "claude-drafted",
+      "text_author_model": "claude-opus-4-7"
+    },
+    {
+      "episode_id": "guide-plan",
+      "locale": "en-US",
+      "persona": "guide",
+      "provider": "google",
+      "voice_id": "en-US-Neural2-F",
+      "tts_model": "neural2",
+      "route": "/plan",
+      "title": "Plan — configuring a mission against the solar system",
+      "duration_target_sec": 220,
+      "path_mp3": "/audio/en-US/guide/guide-plan.e8a3f3f3.mp3",
+      "path_vtt": "/audio/en-US/guide/guide-plan.e8a3f3f3.vtt",
+      "path_txt": "/audio/en-US/guide/guide-plan.e8a3f3f3.txt",
+      "chars": 2244,
+      "generated_at": "2026-05-30T04:20:29.169Z",
       "text_authorship": "claude-drafted",
       "text_author_model": "claude-opus-4-7"
     }

@@ -2,7 +2,7 @@
 id: porkchop
 persona: enthusiast
 locale: en-US
-route: /fly
+route: /plan
 context: porkchop
 title: 'Porkchop plot — arguing with the solar system'
 duration_target_sec: 130

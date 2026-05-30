@@ -69,7 +69,7 @@
   } from '$lib/hotspot-tier3-skybox';
   import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
   import { buildLabel } from '$lib/three-label';
-  import type { SurfaceSite } from '$types/surface-site';
+  import type { SurfaceSite, Traverse } from '$types/surface-site';
   import Panel from '$lib/components/Panel.svelte';
   import SiteStoryPanel from '$lib/components/SiteStoryPanel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
@@ -90,8 +90,14 @@
     config: SurfaceSceneConfig;
     loadSites: (locale: string) => Promise<SurfaceSite[]>;
     loadGallery: (siteId: string, missionIdFallback?: string) => Promise<string[]>;
+    /** Vendored rover-traverse data, keyed by rover_id. When provided,
+     *  SurfaceScene renders traverse polylines + end-of-track captions
+     *  and shows the TRAVERSES layer chip. Mars passes a function that
+     *  Promise.all's getMarsTraverse for each known rover; Moon omits
+     *  this prop today (Apollo/Lunokhod paths future). */
+    loadTraverses?: () => Promise<Record<string, Traverse>>;
   }
-  let { config, loadSites, loadGallery }: Props = $props();
+  let { config, loadSites, loadGallery, loadTraverses }: Props = $props();
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
   // Mirrors the agency tokens in `src/lib/styles/tokens.css` where the
@@ -119,6 +125,9 @@
   let layerSurface = $state(true);
   let layerOrbiters = $state(true);
   let layerOrbits = $state(true);
+  // TRAVERSES chip — visible only when route passes loadTraverses
+  // (rover-path data exists for this body). Defaults on.
+  let layerTraverses = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
@@ -126,6 +135,11 @@
   // ↔ km-per-unit ratio. Surfaced in the corner HUD as "how zoomed am
   // I" feedback. ADR-072 §Drift 16 — was Mars-only, now both bodies.
   let altitudeKm = $state(0);
+
+  // Vendored rover-traverse data, populated from the loadTraverses()
+  // prop in onMount. Empty record when the route doesn't pass that prop
+  // (Moon today). Keyed by rover_id.
+  let traverses: Record<string, Traverse> = $state({});
 
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
@@ -276,6 +290,34 @@
   }
   function toggleView() {
     view = view === '3d' ? '2d' : '3d';
+  }
+
+  // ─── Traverse helpers (Mars today; Moon EVA/Lunokhod future) ──────
+  // Body-agnostic great-circle distance via config.radiusKm. Used to
+  // surface "N km traversed" on the end-of-track caption + info card.
+  function greatCircleKm(a: [number, number], b: [number, number]): number {
+    const R = config.radiusKm;
+    const lat1 = (a[0] * Math.PI) / 180;
+    const lat2 = (b[0] * Math.PI) / 180;
+    const dlat = lat2 - lat1;
+    const dlon = ((b[1] - a[1]) * Math.PI) / 180;
+    const h = Math.sin(dlat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlon / 2) ** 2;
+    return 2 * R * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+  }
+
+  /** Sum of great-circle segments along a polyline. */
+  function traversePathKm(points: Array<[number, number]>): number {
+    let total = 0;
+    for (let i = 1; i < points.length; i++) total += greatCircleKm(points[i - 1], points[i]);
+    return total;
+  }
+
+  /** Whole-day count between two ISO dates (or ISO + Date). */
+  function daysBetween(startIso: string, endIso: string): number {
+    const start = new Date(startIso).getTime();
+    const end = new Date(endIso).getTime();
+    if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) return 0;
+    return Math.floor((end - start) / (1000 * 60 * 60 * 24));
   }
 
   // Site canvas positions for 2D hit-testing.
@@ -459,6 +501,199 @@
       labelGroup?: THREE.Group;
     };
     const markers: MarkerObj[] = [];
+
+    // ─── Traverses (Mars rover paths today, Moon EVA paths future) ───
+    type TraverseLine = {
+      line: THREE.Line;
+      startDot: THREE.Mesh;
+      endDot: THREE.Mesh;
+      roverId: string;
+      isActive: boolean;
+      startLabel?: THREE.Group;
+      endLabel?: THREE.Group;
+      startLabelTexture?: THREE.Texture;
+      endLabelTexture?: THREE.Texture;
+    };
+    const traverseLines: TraverseLine[] = [];
+    // Tier-2 delayed-reveal stack — entries fade in past the Tier-2
+    // promotion threshold (camR < detailFadeStart). Lines + dots +
+    // captions go in here so they ramp opacity in lockstep with the
+    // hotspot detail patches.
+    const tier2DelayedReveal: Array<THREE.Line | THREE.Mesh | THREE.Sprite | THREE.Group> = [];
+
+    function buildTraverseCaption(
+      text: string,
+      color: string,
+      worldSize: number,
+    ): { group: THREE.Group; texture: THREE.Texture } {
+      const canvas = document.createElement('canvas');
+      canvas.width = 512;
+      canvas.height = 96;
+      const ctx2 = canvas.getContext('2d');
+      if (ctx2) {
+        ctx2.fillStyle = 'rgba(8, 10, 22, 0.72)';
+        const radius = 12;
+        const w = canvas.width;
+        const h = canvas.height;
+        const inset = 6;
+        ctx2.beginPath();
+        ctx2.moveTo(inset + radius, inset);
+        ctx2.arcTo(w - inset, inset, w - inset, inset + radius, radius);
+        ctx2.arcTo(w - inset, h - inset, w - inset - radius, h - inset, radius);
+        ctx2.arcTo(inset, h - inset, inset, h - inset - radius, radius);
+        ctx2.arcTo(inset, inset, inset + radius, inset, radius);
+        ctx2.closePath();
+        ctx2.fill();
+        ctx2.font = "bold 38px 'Space Mono', monospace";
+        ctx2.textAlign = 'center';
+        ctx2.textBaseline = 'middle';
+        ctx2.shadowColor = 'rgba(0, 0, 0, 0.85)';
+        ctx2.shadowBlur = 4;
+        ctx2.fillStyle = color;
+        ctx2.fillText(text.toUpperCase(), canvas.width / 2, canvas.height / 2);
+      }
+      const texture = new THREE.Texture(canvas);
+      texture.needsUpdate = true;
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      const mat = new THREE.SpriteMaterial({ map: texture, transparent: true, depthWrite: false });
+      const sprite = new THREE.Sprite(mat);
+      sprite.scale.set(worldSize, worldSize * (96 / 512), 1);
+      const group = new THREE.Group();
+      group.add(sprite);
+      return { group, texture };
+    }
+
+    function rebuildTraverses() {
+      if (loadTraverses == null) return;
+      for (const tl of traverseLines) {
+        disposeObject3d(tl.line);
+        planetMesh.remove(tl.line);
+        disposeObject3d(tl.endDot);
+        planetMesh.remove(tl.endDot);
+        disposeObject3d(tl.startDot);
+        planetMesh.remove(tl.startDot);
+        if (tl.startLabel) {
+          disposeObject3d(tl.startLabel);
+          planetMesh.remove(tl.startLabel);
+        }
+        if (tl.endLabel) {
+          disposeObject3d(tl.endLabel);
+          planetMesh.remove(tl.endLabel);
+        }
+        tl.startLabelTexture?.dispose();
+        tl.endLabelTexture?.dispose();
+      }
+      traverseLines.length = 0;
+      for (const tr of Object.values(traverses)) {
+        if (!tr.points || tr.points.length < 2) continue;
+        // Prepend the rover's published landing lat/lon when the first
+        // waypoint isn't already there (~60 m threshold) — keeps the
+        // green patch-centre pin lined up with the polyline start.
+        const trSite = sites.find((s) => s.id === tr.rover_id);
+        const points = tr.points.slice();
+        if (trSite?.lat != null && trSite?.lon != null) {
+          const [firstLat, firstLon] = points[0];
+          if (Math.abs(firstLat - trSite.lat) > 1e-3 || Math.abs(firstLon - trSite.lon) > 1e-3) {
+            points.unshift([trSite.lat, trSite.lon]);
+          }
+        }
+        const verts: number[] = [];
+        const r = planetRadius + 0.05;
+        for (const [lat, lon] of points) {
+          const { x, y, z } = latLonToUnitSphere(lat, lon);
+          verts.push(x * r, y * r, z * r);
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
+        const site = sites.find((s) => s.id === tr.rover_id);
+        const color = site ? colorFor(site) : '#ffffff';
+        const isActive = tr.status === 'ACTIVE';
+        const line = new THREE.Line(
+          geo,
+          new THREE.LineBasicMaterial({
+            color,
+            transparent: true,
+            opacity: isActive ? 0.95 : 0.7,
+          }),
+        );
+        line.userData = { roverId: tr.rover_id, kind: 'traverse' };
+        planetMesh.add(line);
+        tier2DelayedReveal.push(line);
+        const TRAVERSE_END_ACTIVE_COLOR = 0xef4444;
+        const TRAVERSE_END_FINISHED_COLOR = 0xf59e0b;
+        const first = tr.points[0];
+        const firstPos = latLonToUnitSphere(first[0], first[1]);
+        const startDot = new THREE.Mesh(
+          new THREE.BufferGeometry(),
+          new THREE.MeshBasicMaterial({ visible: false }),
+        );
+        startDot.visible = false;
+        startDot.position.set(firstPos.x * r, firstPos.y * r, firstPos.z * r);
+        planetMesh.add(startDot);
+        tier2DelayedReveal.push(startDot);
+        const last = tr.points[tr.points.length - 1];
+        const lastPos = latLonToUnitSphere(last[0], last[1]);
+        const endDot = new THREE.Mesh(
+          new THREE.SphereGeometry(0.022, 12, 12),
+          new THREE.MeshBasicMaterial({
+            color: isActive ? TRAVERSE_END_ACTIVE_COLOR : TRAVERSE_END_FINISHED_COLOR,
+            transparent: true,
+            opacity: 0.95,
+            depthWrite: false,
+          }),
+        );
+        endDot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        planetMesh.add(endDot);
+        tier2DelayedReveal.push(endDot);
+        // Captions along path tangent, offset away from each other
+        // so labels don't overlap the dots or the line.
+        const startPosWorld = new THREE.Vector3(firstPos.x * r, firstPos.y * r, firstPos.z * r);
+        const endPosWorld = new THREE.Vector3(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        const tangent = new THREE.Vector3().subVectors(endPosWorld, startPosWorld).normalize();
+        const TANGENT_OFFSET = 0.025;
+        const RADIAL_OFFSET = 0.03;
+        function placeCaption(at: THREE.Vector3, awayFromOther: THREE.Vector3): THREE.Vector3 {
+          const out = at.clone().addScaledVector(awayFromOther, TANGENT_OFFSET);
+          return out.normalize().multiplyScalar(r + RADIAL_OFFSET);
+        }
+        const startLabelText = site?.landing_date ? `LANDED ${site.landing_date}` : 'LANDING SITE';
+        const startBuilt = buildTraverseCaption(startLabelText, '#22c55e', 0.32);
+        startBuilt.group.position.copy(placeCaption(startPosWorld, tangent.clone().negate()));
+        planetMesh.add(startBuilt.group);
+        tier2DelayedReveal.push(startBuilt.group);
+        const pathKm = traversePathKm(tr.points);
+        const endIso = isActive ? new Date().toISOString() : tr.snapshot_date;
+        const days = site?.landing_date ? daysBetween(site.landing_date, endIso) : 0;
+        const kmText = pathKm >= 100 ? pathKm.toFixed(0) : pathKm.toFixed(1);
+        const endLabelText = isActive
+          ? `${kmText} KM · DAY ${days.toLocaleString()}`
+          : `${kmText} KM · ${days.toLocaleString()} D`;
+        const endBuilt = buildTraverseCaption(endLabelText, isActive ? '#ef4444' : '#f59e0b', 0.34);
+        endBuilt.group.position.copy(placeCaption(endPosWorld, tangent));
+        planetMesh.add(endBuilt.group);
+        tier2DelayedReveal.push(endBuilt.group);
+        traverseLines.push({
+          line,
+          startDot,
+          endDot,
+          roverId: tr.rover_id,
+          isActive,
+          startLabel: startBuilt.group,
+          endLabel: endBuilt.group,
+          startLabelTexture: startBuilt.texture,
+          endLabelTexture: endBuilt.texture,
+        });
+      }
+    }
+
+    // Initial traverse load + reactive rebuild on data change.
+    if (loadTraverses != null && loadTraverses) {
+      loadTraverses().then((data) => {
+        traverses = data;
+        rebuildTraverses();
+      });
+    }
 
     // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S1
     // — Apollo 11 Tier 0+1 swap demo). One entry per site whose
@@ -1219,12 +1454,13 @@
         // Tier-2 detail opacity ramp. Patch is eager-built at site
         // creation so tier2Group exists even when curTier < 2; we
         // override the dispatcher's "tier2 hidden when tier<2"
-        // decision and control visibility 100% via camR. The ramp
-        // runs from detailFadeStart (patch begins to appear) down
-        // to detailFadeEnd (patch fully solid). Window deliberately
-        // wide (50→33 = 17u) so the fade reads as a real transition.
-        const detailFadeStart = 50;
-        const detailFadeEnd = 33;
+        // decision and control visibility 100% via camR. ADR-072
+        // §Drift 7: range consolidated to 33→30.5 (was 50→33 on
+        // Moon — Mars's tighter window matches actual Tier-2 patch
+        // dimensions). Traverse polylines + end-dots + captions
+        // share this ramp via tier2DelayedReveal.
+        const detailFadeStart = 33;
+        const detailFadeEnd = 30.5;
         const detailOpacity =
           camR >= detailFadeStart
             ? 0
@@ -1246,6 +1482,54 @@
             mat.opacity = detailOpacity;
             mat.transparent = detailOpacity < 0.99;
           });
+        }
+
+        // Apply ramp to traverse layer (lines + dots + captions push
+        // themselves into tier2DelayedReveal). Combines with the
+        // TRAVERSES layer toggle: invisible if layer off OR camR
+        // too far for detail. End-dots pulse (sine wave) when active.
+        const travVisible = loadTraverses != null && layerTraverses && detailOpacity > 0.01;
+        for (const obj of tier2DelayedReveal) {
+          if (
+            obj.userData?.kind === 'traverse' ||
+            (obj as { userData?: { kind?: string } }).userData?.kind === 'traverse'
+          ) {
+            obj.visible = travVisible;
+            const mat = (obj as THREE.Line).material as THREE.Material & { opacity: number };
+            if (mat) {
+              mat.opacity = detailOpacity * 0.95;
+              mat.transparent = true;
+            }
+          }
+        }
+        if (loadTraverses != null) {
+          const pulse = 0.7 + Math.sin(now * 0.006) * 0.25;
+          for (const tl of traverseLines) {
+            tl.line.visible = travVisible;
+            tl.endDot.visible = travVisible;
+            if (tl.startLabel) tl.startLabel.visible = travVisible;
+            if (tl.endLabel) tl.endLabel.visible = travVisible;
+            const lineMat = tl.line.material as THREE.LineBasicMaterial;
+            lineMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
+            const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
+            dotMat.opacity = detailOpacity * (tl.isActive ? pulse : 0.85);
+            if (tl.startLabel) {
+              tl.startLabel.traverse((o) => {
+                if (o instanceof THREE.Sprite) {
+                  const m2 = o.material as THREE.SpriteMaterial;
+                  m2.opacity = detailOpacity;
+                }
+              });
+            }
+            if (tl.endLabel) {
+              tl.endLabel.traverse((o) => {
+                if (o instanceof THREE.Sprite) {
+                  const m2 = o.material as THREE.SpriteMaterial;
+                  m2.opacity = detailOpacity;
+                }
+              });
+            }
+          }
         }
 
         // TierContext info card (PRD-014 §v0.7.x). When any hotspot
@@ -1458,6 +1742,19 @@
             active: () => layerOrbits,
             toggle: () => (layerOrbits = !layerOrbits),
           },
+          // TRAVERSES chip shows only when this body has vendored
+          // rover paths (Mars today; Moon EVA / Lunokhod future).
+          ...(loadTraverses != null
+            ? [
+                {
+                  testid: 'layer-traverses',
+                  label: m.ui_layer_traverses(),
+                  title: m.mars_layer_tip_traverses(),
+                  active: () => layerTraverses,
+                  toggle: () => (layerTraverses = !layerTraverses),
+                },
+              ]
+            : []),
         ]}
       />
       <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />

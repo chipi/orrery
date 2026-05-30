@@ -123,8 +123,6 @@ describe('cost-ledger', () => {
 });
 
 function currentMonthTotalInTestMonth(month: string): Record<string, number> {
-  const ledger = JSON.parse(
-    readFileSync(join(tmp, 'static/data/audio/cost-ledger.json'), 'utf-8'),
-  );
+  const ledger = JSON.parse(readFileSync(join(tmp, 'static/data/audio/cost-ledger.json'), 'utf-8'));
   return ledger.monthly_totals[month] ?? {};
 }

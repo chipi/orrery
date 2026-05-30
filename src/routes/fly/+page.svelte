@@ -10,19 +10,12 @@
     earthPos,
     marsPos,
     destinationPos,
-    returnArc,
     spacecraftPos,
     spacecraftHeading,
     type MissionTimeline,
     type Vec2,
   } from '$lib/mission-arc';
-  import {
-    ARC_STEPS,
-    MOON_FLY_RADIUS_AU,
-    moonHelioPos,
-    moonHelioArc,
-    buildArcs,
-  } from '$lib/fly-moon-arc';
+  import { MOON_FLY_RADIUS_AU, moonHelioPos } from '$lib/fly-moon-arc';
   import { defaultEventLabel } from '$lib/fly-event-labels';
   import {
     SCALE_3D,
@@ -87,7 +80,7 @@
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
-  import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
+  import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
   import ScienceChip from '$lib/components/ScienceChip.svelte';

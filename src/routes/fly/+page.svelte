@@ -1059,7 +1059,6 @@
     const cislunarScene = cislunarHandles.scene;
     const cislunarCamera = cislunarHandles.camera;
     const SCALE_CISLUNAR = cislunarHandles.scaleCislunar;
-    const cislunarEarth = cislunarHandles.earth;
     const cislunarMoon = cislunarHandles.moon;
     const cislunarEarthSoI = cislunarHandles.earthSoI;
     const cislunarMoonSoI = cislunarHandles.moonSoI;

@@ -15,7 +15,7 @@
     type MissionTimeline,
     type Vec2,
   } from '$lib/mission-arc';
-  import { MOON_FLY_RADIUS_AU, moonHelioPos } from '$lib/fly-moon-arc';
+  import { MOON_FLY_RADIUS_AU, moonHelioPos, buildArcs } from '$lib/fly-moon-arc';
   import { defaultEventLabel } from '$lib/fly-event-labels';
   import {
     SCALE_3D,

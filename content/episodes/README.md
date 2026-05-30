@@ -68,3 +68,21 @@ used as voice-quality reference takes when curating per-locale voices.
 | curiosity-persistence    | enthusiast | /mars             | Four cm/s across years, alone on a planet                       |
 
 Filename convention: kebab-case, descriptive, no version numbers.
+
+## Attribution (PRD-016 §transparency)
+
+Every episode carries its origin on disk and on `/credits`. AI involvement is
+disclosed by default — never obscured.
+
+- **`text_authorship`** (frontmatter field, optional): one of `claude-drafted`,
+  `claude-translated`, `human-authored`, `human-edited-claude-draft`. Defaults
+  to `claude-drafted` for the v0.7 corpus (Claude Opus 4.7 first drafts pending
+  human editorial review). Override per-script when a piece is genuinely
+  human-authored.
+- **`text_author_model`** (frontmatter field, optional): when the authorship
+  references an LLM, the model identifier (e.g. `claude-opus-4-7`).
+- **Voice attribution** (machine-derived at generation time): provider +
+  `voice_id` + `tts_model` get written into `static/data/audio/audio-provenance.json`.
+
+The `/credits` page surfaces a per-episode row showing text origin and voice
+origin. The AudioOverlay footer surfaces a compact one-liner whenever it's open.

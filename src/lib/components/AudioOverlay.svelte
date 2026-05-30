@@ -95,6 +95,11 @@
         </p>
       </section>
     {/if}
+
+    <footer class="origin-disclosure" aria-label="Audio origin disclosure">
+      <span>Voices · Google Cloud TTS · Scripts · drafted by Claude (Anthropic)</span>
+      <span class="origin-detail">Per-episode attribution on <a href="/credits">/credits</a></span>
+    </footer>
   </div>
 {/if}
 
@@ -265,6 +270,27 @@
     margin: 0;
     font-size: 13px;
     line-height: 1.55;
+  }
+
+  .origin-disclosure {
+    margin-top: auto;
+    padding: 12px 18px 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .origin-disclosure a {
+    color: rgba(150, 175, 255, 0.8);
+    text-decoration: underline;
+    text-decoration-color: rgba(150, 175, 255, 0.4);
+  }
+  .origin-detail {
+    color: rgba(255, 255, 255, 0.4);
   }
 
   /* Bottom-sheet on narrow viewports (PRD-016 M1 / RFC-019 §7.1). */

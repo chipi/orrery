@@ -29,7 +29,8 @@
         "path_vtt",
         "path_txt",
         "chars",
-        "generated_at"
+        "generated_at",
+        "text_authorship"
       ],
       "additionalProperties": false,
       "properties": {
@@ -41,11 +42,31 @@
           "enum": ["google", "elevenlabs", "openai", "azure", "coqui-local"]
         },
         "voice_id": { "type": "string", "minLength": 1 },
+        "tts_model": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional provider-specific model identifier (e.g. neural2, eleven_multilingual_v2)."
+        },
         "path_mp3": { "type": "string", "pattern": "^/audio/.+\\.mp3$" },
         "path_vtt": { "type": "string", "pattern": "^/audio/.+\\.vtt$" },
         "path_txt": { "type": "string", "pattern": "^/audio/.+\\.txt$" },
         "chars": { "type": "integer", "minimum": 1 },
-        "generated_at": { "type": "string", "format": "date-time" }
+        "generated_at": { "type": "string", "format": "date-time" },
+        "text_authorship": {
+          "type": "string",
+          "enum": [
+            "claude-drafted",
+            "claude-translated",
+            "human-authored",
+            "human-edited-claude-draft"
+          ],
+          "description": "Origin of the text being voiced. Surfaced on /credits + in the AudioOverlay footer — AI involvement is disclosed by default."
+        },
+        "text_author_model": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional model identifier when text_authorship references an LLM (e.g. claude-opus-4-7)."
+        }
       }
     }
   }

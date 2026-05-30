@@ -4,6 +4,16 @@
 import { audioBus } from './audio-bus';
 
 export type Persona = 'curator' | 'guide' | 'enthusiast';
+export type ProviderName = 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+
+export interface EpisodeVariant {
+  provider: ProviderName;
+  voice_id: string;
+  tts_model?: string;
+  mp3: string;
+  vtt: string;
+  txt: string;
+}
 
 export interface Episode {
   id: string;
@@ -12,10 +22,14 @@ export interface Episode {
   persona: Persona;
   route?: string;
   durationSec: number;
-  // Public URLs under /audio/{locale}/{persona}/{id}.{hash8}.{mp3|vtt|txt}
+  // The active variant's URLs (mirrored from variants[activeProvider]) —
+  // kept at top level so the <audio> binding stays simple.
   mp3: string;
   vtt: string;
   txt: string;
+  // All available provider variants for A/B comparison.
+  variants: EpisodeVariant[];
+  activeProvider: ProviderName;
 }
 
 class AudioState {
@@ -46,6 +60,23 @@ class AudioState {
     this.durationSec = ep.durationSec;
     this.playing = false;
     this.currentCaption = '';
+  }
+
+  // Swap the active variant on the currently-loaded episode (A/B testing).
+  // Preserves position; the <audio> element reloads + the position $effect
+  // restores it on the new variant.
+  switchVariant(provider: ProviderName): void {
+    const ep = this.currentEpisode;
+    if (!ep) return;
+    const v = ep.variants.find((x) => x.provider === provider);
+    if (!v) return;
+    this.currentEpisode = {
+      ...ep,
+      mp3: v.mp3,
+      vtt: v.vtt,
+      txt: v.txt,
+      activeProvider: provider,
+    };
   }
 
   // Play / pause / end emit on the audio-bus (PRD-017 sensory ducking

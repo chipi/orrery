@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T02:24:30.733Z",
+  "generated_at": "2026-05-30T04:16:34.920Z",
   "script_version": "scripts/audio/generate@0.1.0",
   "commit_sha": null,
   "entries": [
@@ -351,6 +351,25 @@
       "path_txt": "/audio/en-US/guide/guide-fleet.6c1cc828.txt",
       "chars": 2178,
       "generated_at": "2026-05-30T02:24:30.733Z",
+      "text_authorship": "claude-drafted",
+      "text_author_model": "claude-opus-4-7"
+    },
+    {
+      "episode_id": "pale-blue-dot",
+      "locale": "en-US",
+      "persona": "curator",
+      "provider": "elevenlabs",
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "tts_model": "eleven_multilingual_v2",
+      "route": "/",
+      "context": "tour-open",
+      "title": "Pale blue dot — Voyager looking back",
+      "duration_target_sec": 115,
+      "path_mp3": "/audio/en-US/curator/pale-blue-dot.42aa2a82.mp3",
+      "path_vtt": "/audio/en-US/curator/pale-blue-dot.42aa2a82.vtt",
+      "path_txt": "/audio/en-US/curator/pale-blue-dot.42aa2a82.txt",
+      "chars": 1188,
+      "generated_at": "2026-05-30T04:16:34.920Z",
       "text_authorship": "claude-drafted",
       "text_author_model": "claude-opus-4-7"
     }

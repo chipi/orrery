@@ -12,6 +12,7 @@ import { createHash } from 'node:crypto';
 import { parseArgs } from 'node:util';
 
 import { GoogleTtsProvider } from './tts/google';
+import { ElevenLabsTtsProvider } from './tts/elevenlabs';
 import type { Persona, ProviderName, TtsProvider } from './tts/provider';
 import { appendEntry, THRESHOLDS } from './cost-ledger';
 import { recordProvenance, type TextAuthorship } from './provenance';
@@ -83,6 +84,15 @@ function pickProvider(name: ProviderName): TtsProvider {
       // GOOGLE_APPLICATION_CREDENTIALS env var is checked inside the
       // constructor; the SDK handles OAuth from the JSON automatically.
       return new GoogleTtsProvider();
+    case 'elevenlabs': {
+      const key = process.env.ELEVENLABS_API_KEY;
+      if (!key) {
+        throw new Error(
+          'ELEVENLABS_API_KEY is not set; add it to .env. Get a key at https://elevenlabs.io/app/settings/api-keys.',
+        );
+      }
+      return new ElevenLabsTtsProvider(key);
+    }
     default:
       throw new Error(`provider '${name}' not implemented yet (see issues #153 / #219).`);
   }
@@ -93,11 +103,14 @@ async function main(): Promise<void> {
     options: {
       episode: { type: 'string' },
       locale: { type: 'string', default: 'en-US' },
+      provider: { type: 'string' },
     },
   });
 
   if (!values.episode) {
-    console.error('usage: npm run audio:generate -- --episode <episode-id> [--locale <bcp47>]');
+    console.error(
+      'usage: npm run audio:generate -- --episode <episode-id> [--locale <bcp47>] [--provider google|elevenlabs]',
+    );
     process.exit(2);
   }
   const episodeId = values.episode;
@@ -118,8 +131,8 @@ async function main(): Promise<void> {
     throw new Error(`frontmatter persona must be curator|guide|enthusiast (got: ${persona})`);
   }
 
-  // Resolve provider + voice.
-  const providerName = (process.env.TTS_PROVIDER ?? 'google') as ProviderName;
+  // Resolve provider + voice. CLI --provider beats TTS_PROVIDER env beats default.
+  const providerName = (values.provider ?? process.env.TTS_PROVIDER ?? 'google') as ProviderName;
   const voices = JSON.parse(
     readFileSync(join('static', 'data', 'audio', 'voices.json'), 'utf-8'),
   ) as VoicesFile;

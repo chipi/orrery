@@ -12,6 +12,14 @@
   let audioEl: HTMLAudioElement | null = $state(null);
   let scope: 'screen' | 'all' = $state('screen');
 
+  const PROVIDER_LABEL: Record<string, string> = {
+    google: 'Google',
+    elevenlabs: 'ElevenLabs',
+    openai: 'OpenAI',
+    azure: 'Azure',
+    'coqui-local': 'Coqui',
+  };
+
   onMount(() => {
     void audioRegistry.load();
   });
@@ -51,6 +59,21 @@
       if (audioEl) {
         audioEl.load();
         audio.play();
+      }
+    });
+  }
+
+  function switchToProvider(provider: string): void {
+    if (!audio.currentEpisode) return;
+    const wasPlaying = audio.playing;
+    const pos = audio.positionSec;
+    audio.switchVariant(provider as 'google' | 'elevenlabs');
+    // Reload the audio element with the new variant + restore position.
+    queueMicrotask(() => {
+      if (audioEl) {
+        audioEl.load();
+        audioEl.currentTime = pos;
+        if (wasPlaying) audio.play();
       }
     });
   }
@@ -128,6 +151,23 @@
             default
           />
         </audio>
+
+        {#if audio.currentEpisode.variants.length > 1}
+          <div class="provider-switcher" role="group" aria-label="Voice provider (A/B compare)">
+            <span class="provider-eyebrow">VOICE</span>
+            {#each audio.currentEpisode.variants as v (v.provider)}
+              <button
+                type="button"
+                class="provider-btn"
+                class:active={v.provider === audio.currentEpisode.activeProvider}
+                aria-pressed={v.provider === audio.currentEpisode.activeProvider}
+                onclick={() => switchToProvider(v.provider)}
+              >
+                {PROVIDER_LABEL[v.provider] ?? v.provider}
+              </button>
+            {/each}
+          </div>
+        {/if}
 
         <div class="transport">
           <button
@@ -216,6 +256,10 @@
                           .toString()
                           .padStart(2, '0')}
                       </span>{/if}
+                    {#if ep.variants.length > 1}<span
+                        class="ab-tag"
+                        aria-label="A/B variants available">A/B {ep.variants.length}</span
+                      >{/if}
                     {#if heard}<span class="heard-tag" aria-label="Played">✓</span>{/if}
                   </span>
                 </button>
@@ -502,6 +546,56 @@
   }
   .heard-tag {
     color: rgba(111, 201, 159, 0.85);
+  }
+  .ab-tag {
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: rgba(255, 200, 80, 0.1);
+    border: 1px solid rgba(255, 200, 80, 0.4);
+    color: #ffc850;
+    font-weight: 600;
+  }
+
+  .provider-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  .provider-eyebrow {
+    font-family: var(--font-display, inherit);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-right: 4px;
+  }
+  .provider-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 10px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .provider-btn:hover,
+  .provider-btn:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    outline: none;
+  }
+  .provider-btn.active {
+    background: rgba(68, 102, 255, 0.22);
+    border-color: rgba(68, 102, 255, 0.6);
+    color: #96afff;
   }
   .inventory-empty {
     margin: 0;

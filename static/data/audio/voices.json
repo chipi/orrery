@@ -9,7 +9,13 @@
         "enthusiast": { "voiceId": "en-US-Neural2-D", "model": "neural2" }
       }
     },
-    "elevenlabs": {},
+    "elevenlabs": {
+      "en-US": {
+        "curator": { "voiceId": "pNInz6obpgDQGcFmaJgB", "model": "eleven_multilingual_v2" },
+        "guide": { "voiceId": "EXAVITQu4vr4xnSDxMaL", "model": "eleven_multilingual_v2" },
+        "enthusiast": { "voiceId": "ErXwobaYiN019PkySvjV", "model": "eleven_multilingual_v2" }
+      }
+    },
     "openai": {},
     "azure": {},
     "coqui-local": {}

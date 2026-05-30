@@ -62,11 +62,16 @@ function save(m: Manifest): void {
 
 export function recordProvenance(entry: ProvenanceEntry): void {
   const m = load();
-  // Replace any existing entry for the same (episode_id, locale, persona)
-  // so re-generation overwrites rather than duplicates.
+  // Upsert by (episode_id, locale, persona, provider) so multi-provider
+  // variants for A/B comparison coexist as separate rows. Re-running the
+  // same provider overwrites in place; running a different provider adds
+  // a sibling row.
   const idx = m.entries.findIndex(
     (e) =>
-      e.episode_id === entry.episode_id && e.locale === entry.locale && e.persona === entry.persona,
+      e.episode_id === entry.episode_id &&
+      e.locale === entry.locale &&
+      e.persona === entry.persona &&
+      e.provider === entry.provider,
   );
   if (idx >= 0) {
     m.entries[idx] = entry;

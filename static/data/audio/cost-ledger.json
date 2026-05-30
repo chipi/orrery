@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T02:24:30.733Z",
+  "generated_at": "2026-05-30T04:16:34.920Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -298,11 +298,23 @@
       "cost_usd": 0.055439999999999996,
       "voice_id": "en-US-Neural2-F",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:16:34.919Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "curator",
+      "episode_id": "pale-blue-dot",
+      "chars": 1188,
+      "cost_usd": 0.3564,
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
-      "google": 0.8401280000000001
+      "google": 0.8401280000000001,
+      "elevenlabs": 0.3564
     }
   }
 }

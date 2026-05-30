@@ -3,8 +3,6 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import * as THREE from 'three';
-  import { createStarField } from '$lib/three/star-field';
-  import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { disposeScene } from '$lib/three/dispose-object3d';
   import {
     earthPos,
@@ -25,6 +23,7 @@
   } from '$lib/fly-scene-constants';
   import { classifyConicEarth } from '$lib/fly-conics-earth';
   import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
+  import { buildHelioScene } from '$lib/three/fly-helio-scene';
   import {
     computeMissionApply,
     computeScenarioApply,
@@ -1030,19 +1029,30 @@
     if (!container || !canvas2d) return;
 
     // ──────────────────────────────────────────────────────────────
-    // 3D — Three.js scene. Units = AU × SCALE_3D (component scope).
+    // 3D — heliocentric Three.js scene. Units = AU × SCALE_3D.
+    // Static scene setup (scene, camera, renderer, lights, Sun, star
+    // field, Earth + destination meshes + orbit rings, destination-
+    // swap method) lives in $lib/three/fly-helio-scene (W9 wave A).
+    // Mission-specific layers (tubes, dep/arr markers, label sprites,
+    // historical-Mars arcs, science overlays) stay in this component
+    // for now — extracted in wave B as the per-frame updater factory.
     // ──────────────────────────────────────────────────────────────
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      55,
-      container.clientWidth / container.clientHeight,
-      0.5,
-      4000,
-    );
-    const renderer = createSceneRenderer(container);
-
-    scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
-    scene.add(new THREE.AmbientLight(0x111133, 0.8));
+    const helioHandles = buildHelioScene({
+      container,
+      aspect: container.clientWidth / container.clientHeight,
+      onDestinationChange: (id) => {
+        historicalMarsArcsGroup.visible = id === 'mars';
+      },
+    });
+    const scene = helioHandles.scene;
+    const camera = helioHandles.camera;
+    const renderer = helioHandles.renderer;
+    const sunCore = helioHandles.sunCore;
+    const sunGlow = helioHandles.sunGlow;
+    const earthMesh = helioHandles.earthMesh;
+    const marsMesh = helioHandles.destinationMesh;
+    const earthOrbitLine = helioHandles.earthOrbitLine;
+    const applyDestinationVisuals = helioHandles.setDestination;
 
     // ──────────────────────────────────────────────────────────────
     // Cislunar scene (ADR-058) — Earth-centred, km-scale. Static
@@ -1517,54 +1527,8 @@
     cislunarMoonMeshRef = cislunarMoon;
     cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
 
-    // Sun (named so Moon-mode can hide it — the cislunar scene is
-    // Earth-centred with the Moon at scaled distance, no Sun reference).
-    const sunCore = new THREE.Mesh(
-      new THREE.SphereGeometry(8, 32, 32),
-      new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
-    );
-    scene.add(sunCore);
-    const sunGlow = new THREE.Mesh(
-      new THREE.SphereGeometry(20, 32, 32),
-      new THREE.MeshBasicMaterial({
-        color: 0xff9922,
-        transparent: true,
-        opacity: 0.06,
-        side: THREE.BackSide,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      }),
-    );
-    scene.add(sunGlow);
-
-    scene.add(createStarField({ count: 2000, radius: 1500, jitter: 500, opacity: 0.7 }));
-
-    // Earth orbit + Mars orbit. Opacity 0.4 reads clearly against the
-    // dark background — was 0.18 before but on monitors with high
-    // ambient light the rings disappeared into the starfield.
-    const orbit = (radius: number, color: number) => {
-      const pts: THREE.Vector3[] = [];
-      for (let i = 0; i <= 128; i++) {
-        const a = (i / 128) * Math.PI * 2;
-        pts.push(
-          new THREE.Vector3(Math.cos(a) * radius * SCALE_3D, 0, Math.sin(a) * radius * SCALE_3D),
-        );
-      }
-      return new THREE.LineLoop(
-        new THREE.BufferGeometry().setFromPoints(pts),
-        new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.4 }),
-      );
-    };
-    const earthOrbitLine = orbit(R_EARTH_AU, 0x4b9cd3);
-    // Mars-by-default destination orbit ring. Replaced in place by
-    // applyDestinationVisuals() when the active mission targets a
-    // different body (Jupiter for Galileo, Neptune for Voyager 2,
-    // Pluto for New Horizons, Ceres for Dawn, etc.). Variable name
-    // stays `marsOrbitLine` for historic reasons; the comment is the
-    // source of truth.
-    let marsOrbitLine = orbit(R_MARS_AU, 0xc1440e);
-    scene.add(earthOrbitLine);
-    scene.add(marsOrbitLine);
+    // Sun + star field + orbit rings: built by the helio scene builder
+    // (W9 wave A); refs already destructured into scope above.
 
     // v0.6.3 #228 rewrite: ONE tube per leg. The fragment shader paints
     // each fragment bright (visited) if vT < uProgress, dim (preview)
@@ -1718,64 +1682,12 @@
     }
     scene.add(historicalMarsArcsGroup);
 
-    // Earth + destination meshes. `marsMesh` is the destination body
-    // mesh — Mars by default; mutated in place by
-    // applyDestinationVisuals() when a mission targets Jupiter,
-    // Saturn, Neptune, Pluto, Ceres, etc. Variable name kept as
-    // `marsMesh` for historic reasons.
-    const earthMesh = new THREE.Mesh(
-      new THREE.SphereGeometry(2.6, 24, 24),
-      new THREE.MeshPhongMaterial({ color: 0x3a8fcc, emissive: 0x3a8fcc, emissiveIntensity: 0.2 }),
-    );
-    scene.add(earthMesh);
-    const marsMesh = new THREE.Mesh(
-      new THREE.SphereGeometry(1.9, 24, 24),
-      new THREE.MeshPhongMaterial({ color: 0xc1440e, emissive: 0xc1440e, emissiveIntensity: 0.2 }),
-    );
-    scene.add(marsMesh);
-
-    // Per-destination visual styling (sphere radius + colour). Sizes
-    // are tuned for /fly's heliocentric scale — smaller than /explore
-    // because the camera there sits much closer to the body. Outer-
-    // planet diameters compressed so even Jupiter doesn't dominate
-    // the scene at default zoom.
-    const DEST_STYLE: Record<string, { size: number; color: number }> = {
-      mercury: { size: 1.0, color: 0x9b9b9b },
-      venus: { size: 2.5, color: 0xc9b870 },
-      mars: { size: 1.9, color: 0xc1440e },
-      jupiter: { size: 5.5, color: 0xc88b3a },
-      saturn: { size: 4.8, color: 0xe4d191 },
-      uranus: { size: 3.4, color: 0x7de8e8 },
-      neptune: { size: 3.4, color: 0x3f54ba },
-      pluto: { size: 0.9, color: 0xb9a895 },
-      ceres: { size: 0.6, color: 0xa8a499 },
-    };
-
-    /** Mutate the (historically Mars) destination mesh + orbit line in
-     *  place so they match the active mission's destination body.
-     *  Called from applyMissionAsLoaded / applyScenarioAsLoaded /
-     *  applyPlanSelection right after `activeDestination` is updated.
-     *  Earth + Sun stay constant; only the destination body swaps. */
-    function applyDestinationVisuals(id: DestinationId): void {
-      const style = DEST_STYLE[id] ?? DEST_STYLE.mars;
-      // Geometry — dispose old, build new at the right radius.
-      marsMesh.geometry.dispose();
-      marsMesh.geometry = new THREE.SphereGeometry(style.size, 24, 24);
-      // Material — recolour in place.
-      const mat = marsMesh.material as THREE.MeshPhongMaterial;
-      mat.color.setHex(style.color);
-      mat.emissive.setHex(style.color);
-      // Orbit ring — replace with one at the destination's semi-major
-      // axis. Reuse `orbit()` helper closed over above.
-      const orbitRadius = DESTINATIONS[id].a;
-      scene.remove(marsOrbitLine);
-      marsOrbitLine.geometry.dispose();
-      (marsOrbitLine.material as THREE.Material).dispose();
-      marsOrbitLine = orbit(orbitRadius, style.color);
-      scene.add(marsOrbitLine);
-      // Toggle the historical-Mars overlay along with destination.
-      historicalMarsArcsGroup.visible = id === 'mars';
-    }
+    // earthMesh + destination mesh (`marsMesh` for historic reasons),
+    // orbit rings, DEST_STYLE catalogue, and the destination-swap
+    // method all live in $lib/three/fly-helio-scene (W9 wave A). Refs
+    // already destructured from helioHandles above. The historical-
+    // Mars arcs visibility toggle is wired via the onDestinationChange
+    // callback at builder construction.
     applyDestinationVisualsRef = applyDestinationVisuals;
 
     // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────

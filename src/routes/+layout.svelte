@@ -7,6 +7,7 @@
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
+  import { audio } from '$lib/audio-state.svelte';
   import { setLanguageTag } from '$lib/paraglide/runtime';
   import {
     localeFromPage,
@@ -55,6 +56,21 @@
       noScroll: true,
       keepFocus: true,
     });
+  });
+
+  // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.
+  // Per-id one-shot: opens the overlay the first time we see a given id
+  // in this session, so closing it doesn't bounce open on next navigation.
+  // Episode registry lookup + loadEpisode wire up alongside S3 + S6 once
+  // content lands; for now the overlay surfaces the empty state.
+  const handledAudioIds = new Set<string>();
+  $effect(() => {
+    if (!browser) return;
+    const id = $page.url.searchParams.get('audio');
+    if (!id) return;
+    if (handledAudioIds.has(id)) return;
+    handledAudioIds.add(id);
+    audio.openOverlay();
   });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────

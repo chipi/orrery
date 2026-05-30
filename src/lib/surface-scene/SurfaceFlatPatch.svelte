@@ -333,6 +333,15 @@
     kmPerPx = Math.max(0.0001, Math.min(10, kmPerPx * factor));
   }
 
+  // Native resolving power of the body's highest-res orbital imagery:
+  // Mars HiRISE ≈ 25 cm/px, Moon LROC NAC ≈ 50 cm/px. When the user
+  // zooms in past kmPerPx < native, they're upsampling — the imagery
+  // doesn't have new detail to reveal. Show a subtle vignette + a
+  // "approaching pixel limit" microcopy so they don't read the blur as
+  // "the planet is fuzzy." Per ADR-072 Slice 5 §"upsample warning."
+  let nativeKmPerPx = $derived(config.planet === 'mars' ? 0.00025 : 0.0005);
+  let upsampling = $derived(kmPerPx < nativeKmPerPx);
+
   // Scale-bar length & label — pick a "round" km value that fits in
   // ~120 px of screen real estate.
   let scaleBar = $derived.by(() => {
@@ -401,6 +410,15 @@
   <div class="hud-latlon mono" aria-hidden="true">
     LON {centroidLon.toFixed(4)}° · LAT {centroidLat.toFixed(4)}°
   </div>
+
+  {#if upsampling}
+    <div class="upsample-warning mono" aria-hidden="true">
+      ⚠ Approaching native pixel limit ({config.planet === 'mars'
+        ? 'HiRISE 25 cm/px'
+        : 'LROC NAC 50 cm/px'})
+    </div>
+    <div class="upsample-vignette" aria-hidden="true"></div>
+  {/if}
 </div>
 
 <style>
@@ -502,5 +520,28 @@
   }
   .mono {
     font-family: 'Space Mono', monospace;
+  }
+  .upsample-warning {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(255, 200, 80, 0.45);
+    color: #ffc850;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+  }
+  .upsample-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: 2;
   }
 </style>

@@ -58,8 +58,6 @@ export interface TidalLockOverlayConfig {
   color: number;
   /** Opacity (0..1), typically 0.18 */
   opacity: number;
-  /** Science Lens layer key — e.g. `'tidal-lock'` */
-  layerKey: string;
 }
 
 /**

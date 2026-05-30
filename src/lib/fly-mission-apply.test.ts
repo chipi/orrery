@@ -251,7 +251,9 @@ describe('computeScenarioApply', () => {
   });
 
   it('passes through scenario events verbatim', () => {
-    const events = [{ met: 0, label: 'launch', type: 'launch' }] as unknown as LocalizedScenario['events'];
+    const events = [
+      { met: 0, label: 'launch', type: 'launch' },
+    ] as unknown as LocalizedScenario['events'];
     const r = computeScenarioApply({ ...SCENARIO, events });
     expect(r.missionEvents).toBe(events);
   });

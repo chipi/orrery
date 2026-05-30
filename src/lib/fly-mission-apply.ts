@@ -1,15 +1,7 @@
-import {
-  earthPos,
-  returnArc,
-  type MissionTimeline,
-  type Vec2,
-} from '$lib/mission-arc';
+import { earthPos, returnArc, type MissionTimeline, type Vec2 } from '$lib/mission-arc';
 import { type DestinationId } from '$lib/lambert-grid.constants';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
-import {
-  buildCislunarTrajectory,
-  type CislunarTrajectory,
-} from '$lib/cislunar-geometry';
+import { buildCislunarTrajectory, type CislunarTrajectory } from '$lib/cislunar-geometry';
 import {
   buildInterplanetaryTrajectory,
   type InterplanetaryTrajectory,
@@ -18,12 +10,7 @@ import { parseDeltaV } from '$lib/parse-delta-v';
 import { dateToSimDay } from '$lib/sim-day';
 import { mergeFlightEvents } from '$lib/mission-event-merge';
 import { missionDestToHeliocentricDestinationId } from '$lib/mission-dest';
-import type {
-  FlightDataQuality,
-  FlightParams,
-  Mission,
-  MissionEvent,
-} from '$types/mission';
+import type { FlightDataQuality, FlightParams, Mission, MissionEvent } from '$types/mission';
 import type { LocalizedScenario } from '$types/scenario';
 
 /**
@@ -148,13 +135,7 @@ function buildCislunarArcs(
   );
   const earthAtReturnArr = earthPos(timeline.arr_day);
   const retPts = isReturnTrip
-    ? moonHelioArc(
-        timeline.flyby_day,
-        timeline.arr_day,
-        moonAtFlyby,
-        earthAtReturnArr,
-        ARC_STEPS,
-      )
+    ? moonHelioArc(timeline.flyby_day, timeline.arr_day, moonAtFlyby, earthAtReturnArr, ARC_STEPS)
     : [];
   return { outPts, retPts };
 }

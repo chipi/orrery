@@ -61,6 +61,11 @@ export interface HelioSceneHandles {
    *  ring + geometry from DEST_STYLE[id], and fires onDestinationChange.
    *  Idempotent — calling repeatedly with the same id rebuilds. */
   setDestination: (id: DestinationId) => void;
+  /** Toggle visibility of the destination orbit line. Stable across
+   *  destination swaps — the builder applies the visibility flag to
+   *  whichever line is currently active. Used by the animate loop to
+   *  hide the destination ring during cislunar Moon-mode rendering. */
+  setDestinationOrbitVisible: (visible: boolean) => void;
 }
 
 interface DestinationStyle {
@@ -167,6 +172,11 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   const destinationMesh = buildDestinationMesh(DEST_STYLE.mars);
   scene.add(destinationMesh);
 
+  /** Mutable visibility flag preserved across destination swaps so a
+   *  cislunar mode-set followed by a setDestination still hides the
+   *  newly-built ring. */
+  let destinationOrbitVisible = true;
+
   function setDestination(id: DestinationId): void {
     const style = DEST_STYLE[id] ?? DEST_STYLE.mars;
     // Mesh geometry — dispose old, build new at the destination radius.
@@ -182,8 +192,14 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     destinationOrbitLine.geometry.dispose();
     (destinationOrbitLine.material as THREE.Material).dispose();
     destinationOrbitLine = buildOrbitRing(orbitRadius, style.color);
+    destinationOrbitLine.visible = destinationOrbitVisible;
     scene.add(destinationOrbitLine);
     opts.onDestinationChange?.(id);
+  }
+
+  function setDestinationOrbitVisible(visible: boolean): void {
+    destinationOrbitVisible = visible;
+    destinationOrbitLine.visible = visible;
   }
 
   return {
@@ -196,5 +212,6 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     destinationMesh,
     earthOrbitLine,
     setDestination,
+    setDestinationOrbitVisible,
   };
 }

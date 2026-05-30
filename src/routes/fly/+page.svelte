@@ -3095,7 +3095,7 @@
         sunCore.visible = true;
         sunGlow.visible = true;
         earthOrbitLine.visible = true;
-        marsOrbitLine.visible = false;
+        helioHandles.setDestinationOrbitVisible(false);
         moonMesh.visible = true;
         const ePos = earthPos(simDay);
         const mPos = moonHelioPos(simDay);
@@ -3111,7 +3111,7 @@
         sunCore.visible = true;
         sunGlow.visible = true;
         earthOrbitLine.visible = true;
-        marsOrbitLine.visible = true;
+        helioHandles.setDestinationOrbitVisible(true);
         moonMesh.visible = false;
         if (moonOrbitRing) moonOrbitRing.visible = false;
         // Earth + Mars orbit the Sun in real time as the spacecraft

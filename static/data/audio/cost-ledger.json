@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T02:05:42.607Z",
+  "generated_at": "2026-05-30T02:24:30.733Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -89,11 +89,220 @@
       "cost_usd": 0.039584,
       "voice_id": "en-US-Neural2-D",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:18:56.300Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "curator",
+      "episode_id": "pale-blue-dot",
+      "chars": 2151,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-J",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:56.726Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "signal-delay",
+      "chars": 1881,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-D",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:57.139Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "porkchop",
+      "chars": 2448,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-D",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:57.558Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "one-way-light-time",
+      "chars": 2154,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-D",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:57.975Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "curator",
+      "episode_id": "capability-ladder-close",
+      "chars": 2509,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-J",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:58.390Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "cernan-last-words",
+      "chars": 2521,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-F",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:58.804Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "far-side",
+      "chars": 2625,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-F",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:18:59.219Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "curiosity-persistence",
+      "chars": 2474,
+      "cost_usd": 0,
+      "voice_id": "en-US-Neural2-D",
+      "status": "cached"
+    },
+    {
+      "ts": "2026-05-30T02:22:40.442Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-home",
+      "chars": 3001,
+      "cost_usd": 0.048015999999999996,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:22:51.124Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-explore",
+      "chars": 2888,
+      "cost_usd": 0.046208,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:00.456Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-missions",
+      "chars": 2840,
+      "cost_usd": 0.04544,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:09.814Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-fly",
+      "chars": 3076,
+      "cost_usd": 0.049215999999999996,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:20.427Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-earth",
+      "chars": 3329,
+      "cost_usd": 0.053264,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:30.408Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-moon",
+      "chars": 3123,
+      "cost_usd": 0.049968,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:42.460Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-mars",
+      "chars": 3145,
+      "cost_usd": 0.05032,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:23:55.252Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-iss",
+      "chars": 3101,
+      "cost_usd": 0.049616,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:24:06.351Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-tiangong",
+      "chars": 2709,
+      "cost_usd": 0.043344,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:24:16.249Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-science",
+      "chars": 3068,
+      "cost_usd": 0.049088,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:24:30.733Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-fleet",
+      "chars": 3465,
+      "cost_usd": 0.055439999999999996,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
-      "google": 0.300208
+      "google": 0.8401280000000001
     }
   }
 }

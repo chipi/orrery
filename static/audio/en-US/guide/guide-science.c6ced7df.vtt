@@ -1,0 +1,137 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.817
+Every other screen in this Orrery refers to physics.
+
+00:00:03.817 --> 00:00:05.139
+Hohmann transfers.
+
+00:00:05.139 --> 00:00:06.460
+Lambert solutions.
+
+00:00:06.460 --> 00:00:07.121
+Vis-viva.
+
+00:00:07.121 --> 00:00:08.662
+Free-return geometry.
+
+00:00:08.662 --> 00:00:10.350
+Tsiolkovsky's equation.
+
+00:00:10.350 --> 00:00:10.938
+C three.
+
+00:00:10.938 --> 00:00:11.525
+Delta-V.
+
+00:00:11.525 --> 00:00:12.332
+V-infinity.
+
+00:00:12.332 --> 00:00:21.288
+This screen is where those terms get explained — with diagrams, with worked-out math, and with the missions that use them.
+
+00:00:21.288 --> 00:00:25.619
+The encyclopedia is organized into ten tabs across the top.
+
+00:00:25.619 --> 00:00:26.133
+Orbits.
+
+00:00:26.133 --> 00:00:26.867
+Maneuvers.
+
+00:00:26.867 --> 00:00:27.675
+Propulsion.
+
+00:00:27.675 --> 00:00:28.335
+Re-entry.
+
+00:00:28.335 --> 00:00:29.290
+Solar System.
+
+00:00:29.290 --> 00:00:29.730
+Stars.
+
+00:00:29.730 --> 00:00:30.684
+Astrophysics.
+
+00:00:30.684 --> 00:00:31.565
+Instruments.
+
+00:00:31.565 --> 00:00:32.519
+Life support.
+
+00:00:32.519 --> 00:00:33.327
+Operations.
+
+00:00:33.327 --> 00:00:38.392
+Each tab opens to a list of sections — eighty-five sections in total.
+
+00:00:38.392 --> 00:00:40.080
+Click any section card.
+
+00:00:40.080 --> 00:00:48.155
+The full article opens with worked math rendered by KaTeX, hand-drawn SVG diagrams, and links to read further.
+
+00:00:48.155 --> 00:01:08.709
+Where a section explains a phenomenon you can see in action elsewhere in Orrery, a chip at the top of the article links straight to it — Hohmann transfer to the Fly screen, free-return to the Plan screen, vis-viva to the Explore screen with the orbital-velocity overlay turned on.
+
+00:01:08.709 --> 00:01:13.774
+Notice the small question-mark chips throughout the rest of the site.
+
+00:01:13.774 --> 00:01:18.546
+Each one is a hyperlink directly into a specific Science section.
+
+00:01:18.546 --> 00:01:22.583
+Whenever you see one and don't know the term, click it.
+
+00:01:22.583 --> 00:01:25.593
+The encyclopedia opens at the right page.
+
+00:01:25.593 --> 00:01:26.694
+Try the search.
+
+00:01:26.694 --> 00:01:30.731
+Press Cmd-K — or Ctrl-K on a Windows or Linux keyboard.
+
+00:01:30.731 --> 00:01:32.346
+A search dialog opens.
+
+00:01:32.346 --> 00:01:33.374
+Type anything.
+
+00:01:33.374 --> 00:01:41.669
+The full text of all eighty-five sections is searchable, and results jump you directly to the matching paragraph.
+
+00:01:41.669 --> 00:01:44.605
+Seventy-one diagrams are hand-drawn SVG.
+
+00:01:44.605 --> 00:01:57.892
+Each one was authored from a primary source — a textbook, a paper, a NASA technical memo — and the source files for the SVGs are committed to the same repository as the site itself.
+
+00:01:57.892 --> 00:02:01.416
+Click any diagram for the credit and the source.
+
+00:02:01.416 --> 00:02:03.544
+Every formula has a citation.
+
+00:02:03.544 --> 00:02:05.820
+Every constant has a reference.
+
+00:02:05.820 --> 00:02:08.903
+Every diagram has an author and a license.
+
+00:02:08.903 --> 00:02:10.225
+This isn't a wiki.
+
+00:02:10.225 --> 00:02:16.684
+It's a working reference written specifically to make the rest of Orrery understandable.
+
+00:02:16.684 --> 00:02:17.492
+Pick a tab.
+
+00:02:17.492 --> 00:02:18.593
+Pick a section.
+
+00:02:18.593 --> 00:02:18.960
+Read.
+

@@ -47,6 +47,26 @@
           "minLength": 1,
           "description": "Optional provider-specific model identifier (e.g. neural2, eleven_multilingual_v2)."
         },
+        "route": {
+          "type": "string",
+          "pattern": "^/[a-z-]*$",
+          "description": "Orrery route this episode anchors to (e.g. /, /mars, /moon). Used by AudioOverlay to filter 'for this screen' inventory."
+        },
+        "context": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Optional sub-context within the route (e.g. 'curiosity', 'apollo-17', 'tour-open')."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Human-readable episode title, displayed in the AudioOverlay header + inventory."
+        },
+        "duration_target_sec": {
+          "type": "integer",
+          "minimum": 30,
+          "description": "Authoring-time target duration in seconds. Useful for cost projections + inventory layout."
+        },
         "path_mp3": { "type": "string", "pattern": "^/audio/.+\\.mp3$" },
         "path_vtt": { "type": "string", "pattern": "^/audio/.+\\.vtt$" },
         "path_txt": { "type": "string", "pattern": "^/audio/.+\\.txt$" },

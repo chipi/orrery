@@ -20,6 +20,10 @@ export interface ProvenanceEntry {
   provider: 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
   voice_id: string;
   tts_model?: string;
+  route?: string;
+  context?: string;
+  title?: string;
+  duration_target_sec?: number;
   path_mp3: string;
   path_vtt: string;
   path_txt: string;

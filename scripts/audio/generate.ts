@@ -149,6 +149,16 @@ async function main(): Promise<void> {
   const textAuthorModel = meta.text_author_model ?? DEFAULT_TEXT_AUTHOR_MODEL;
   const ttsModel = PROVIDER_MODELS[providerName];
 
+  // Forward editorial metadata from frontmatter into the provenance record so
+  // the runtime AudioOverlay can filter "episodes for this screen" + render
+  // titles without re-parsing markdown.
+  const provenanceMetaCommon = {
+    route: meta.route,
+    context: meta.context,
+    title: meta.title,
+    duration_target_sec: meta.duration_target_sec,
+  };
+
   // Cache hit — skip generation, log a `cached` row in the ledger.
   if (existsSync(mp3Path) && existsSync(vttPath) && existsSync(txtPath)) {
     const txt = readFileSync(txtPath, 'utf-8');
@@ -170,6 +180,7 @@ async function main(): Promise<void> {
       provider: providerName,
       voice_id: voiceRef.voiceId,
       tts_model: ttsModel,
+      ...provenanceMetaCommon,
       path_mp3: publicMp3,
       path_vtt: publicVtt,
       path_txt: publicTxt,
@@ -217,6 +228,7 @@ async function main(): Promise<void> {
     provider: providerName,
     voice_id: voiceRef.voiceId,
     tts_model: ttsModel,
+    ...provenanceMetaCommon,
     path_mp3: publicMp3,
     path_vtt: publicVtt,
     path_txt: publicTxt,

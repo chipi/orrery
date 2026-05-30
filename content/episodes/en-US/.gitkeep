@@ -1,3 +1,0 @@
-# content/episodes/en-US/ — human-authored episode scripts (PRD-016 / RFC-019 §1).
-# Markdown + SSML. Pipeline 1 translates to other locales; Pipeline 2 voices to .mp3 + .vtt + .txt.
-# First scripts land in S6 (8 Atmospheric Moves, issue #155) + S8 (Guide screen episodes, issue #157).

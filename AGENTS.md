@@ -421,6 +421,8 @@ Mirrors CI step-for-step locally. Runs typecheck → lint → test → validate-
 
 Hooks self-activate after `npm install` via the `prepare` script (`git config core.hooksPath .husky`). No new dependencies — `.husky/pre-push` is a plain bash script.
 
+> **Concurrency lock — parallel agents in the same checkout.** `npm run preflight` is wrapped by `scripts/with-lock.mjs` so two simultaneous invocations (e.g. two agents working the same branch) serialize instead of racing the `.svelte-kit/output` rimraf at build start. The second caller prints the offender's pid + command and polls every 2 s; lock auto-clears after 30 min if a process crashed mid-run. Coverage is `npm run preflight` only — direct `npx vitest`, `npx playwright test`, and raw `vite build` are NOT locked, so prefer the npm script for anything that touches the build output. If you need to lock another command, the wrapper takes any child: `node scripts/with-lock.mjs <name> -- <cmd> [args...]`.
+
 > **Caveat — `tsc --noEmit` ≠ svelte-check:** `tsc` only type-checks `.ts` files. CI uses `svelte-check`, which type-checks `.svelte` content too. Use `npm run typecheck` (which calls svelte-check) when validating Svelte component changes. Errors like "Property X does not exist on type Y" inside a `.svelte` file will only surface via svelte-check.
 
 > **Caveat — preflight does NOT run e2e.** Preflight covers typecheck / lint / unit / validate / build, but the Playwright e2e suite only runs on push-to-main in CI. Routine PR pushes may pass preflight and still break e2e. For tag / release readiness, see the next section.

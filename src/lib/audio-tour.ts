@@ -417,6 +417,12 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
 // =============================================================================
 // CURATOR_FULL_TOUR — the ordered sequence "Take the Curator Tour" plays.
 // 21 episodes · ~70 min · documentary order from Sagan open to capability close.
+//
+// Default-active provider when an episode has multiple variants:
+// audio-registry.svelte.ts PROVIDER_PRIORITY puts ElevenLabs first
+// (museum-grade prosody), Google second (free-tier baseline). The user
+// can toggle mid-playback via the AudioOverlay variant switcher; change
+// the priority array if you want Google as the default-active instead.
 // =============================================================================
 
 export const CURATOR_FULL_TOUR: string[] = [

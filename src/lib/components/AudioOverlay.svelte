@@ -67,6 +67,12 @@
   // the listener sees the screen they're hearing about. Only runs while
   // a tour is active — manual episode loads from the inventory leave
   // navigation under the user's control.
+  //
+  // Intentional behaviour: if the user manually navigates away from the
+  // tour's current route mid-episode (Nav link click, browser back), the
+  // NEXT tour episode advance will pull them back to its anchored route.
+  // Stop the tour first (the stop button in the tour-bar) to free
+  // navigation entirely.
   $effect(() => {
     if (!browser || !audio.tourActive) return;
     const ep = audio.currentEpisode;

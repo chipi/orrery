@@ -107,6 +107,21 @@ Orrery makes a few claims a screen reader can verify:
 - **Real outbound links.** Per-link provenance per [ADR-051](docs/adr/ADR-051.md): every external LEARN link is sourced, validated, and freshness-gated. Native-language priority for non-US entities (Roscosmos before NASA's mirror, ISRO before press releases). Public [`/library`](https://chipi.github.io/orrery/library) bill-of-links.
 - **Real translation.** Each language follows its own space-agency glossary (ESA Spanish, JAXA Japanese, CNSA Mandarin, etc.) — not literal machine translation. See [`docs/guides/i18n-style-guide.md`](docs/guides/i18n-style-guide.md).
 
+## Audio narration (v0.7 ship — en-US)
+
+Every primary route has a Guide-persona screen episode plus, on the high-density routes, additional Atmospheric Moves (`/`, `/moon`, `/mars`, `/plan`, `/missions`) and Enthusiast object-level deep-dives. **33 logical episodes, each voiced in two providers (Google Cloud Neural2 + ElevenLabs) so the overlay's A/B switcher lets you compare on the fly.**
+
+Open the audio overlay via the waveform icon in the nav (between the menu hamburger and the locale switcher). The overlay surfaces:
+
+- **For-this-screen inventory** — episodes anchored to the current route, persona-tagged.
+- **All-episodes inventory** — the full 33 with route + duration + heard-state tags.
+- **Take the Curator Tour** — 21-episode auto-advancing playlist (~70 min) with route-by-route auto-navigation, prev / stop / next controls, and 68 timed directive banners across the tour episodes.
+- **Provider A/B switcher** — flip between Google and ElevenLabs mid-playback; position preserved.
+- **Captions** (CC button) — VTT track with auto-on triggers for `prefers-reduced-motion`, muted-at-start, and slow `effectiveType`. Transcript `.txt` download per episode.
+- **Deep-link share** — `?audio={episode-id}` opens the overlay + auto-loads the matching episode.
+
+Every episode carries its origin on /credits — text authorship (Claude-drafted / human-authored / etc.) and voice provider per row. Operator-side details: [`docs/guides/audio-pipeline-setup.md`](docs/guides/audio-pipeline-setup.md). v0.8 adds Anthropic translation pipeline + 12-locale Curator Tour.
+
 ## Privacy
 
 **Analytics — [Umami](https://umami.is/), EU-hosted, aggregate-only.** The live site at `chipi.github.io` loads a single Umami `script.js` from the hosted Umami Cloud (Frankfurt, Germany — EU data residency). It records anonymous **page-view counts per route** and a handful of structured custom events (`mission-load`, `lens-toggle`, `science-section-view`, `locale-switch` — see [`src/lib/analytics.ts`](src/lib/analytics.ts) for the full list). That is the entire collected dataset.

@@ -63,7 +63,10 @@ either:
   gcloud auth application-default login
   gcloud auth application-default set-quota-project <your-project-id>
   ```
-  Then point `GOOGLE_APPLICATION_CREDENTIALS=/Users/you/.config/gcloud/application_default_credentials.json`.
+  Then point `GOOGLE_APPLICATION_CREDENTIALS=` at the ADC file. Path varies
+  by platform:
+  - macOS / Linux: `~/.config/gcloud/application_default_credentials.json`
+  - Windows: `%APPDATA%\gcloud\application_default_credentials.json`
 
 **The Cloud Text-to-Speech API must be enabled on the GCP project** — Console →
 APIs & Services → Library → "Cloud Text-to-Speech API" → Enable. **DO NOT

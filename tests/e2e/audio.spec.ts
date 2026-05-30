@@ -1,0 +1,119 @@
+import { test, expect, type Page } from '@playwright/test';
+
+/**
+ * Audio overlay smoke tests (PRD-016 / RFC-019).
+ *
+ * Coverage at this layer (catches the catastrophic regression class):
+ *  - Waveform icon in Nav opens the overlay.
+ *  - Episode inventory loads from /data/audio/audio-provenance.json.
+ *  - Clicking an episode loads it into the player + audio element src updates.
+ *  - "Take the Curator Tour" starts a playlist.
+ *  - ?audio=<id> deep-link opens overlay + loads matching episode.
+ *
+ * Deliberately does NOT assert audio actually plays — Playwright's
+ * default browser denies autoplay without user gesture, and that's
+ * an honest reflection of production. We assert the wiring up to
+ * "audio element has the right src and is not in error state" and
+ * trust the unit tests for the inner state machine.
+ */
+
+const AUDIO_TOGGLE_SELECTOR = 'button[aria-label="Toggle audio episodes"]';
+const OVERLAY_SELECTOR = '#audio-overlay';
+const FIRST_EPISODE_BUTTON = '.episode-row';
+
+async function openOverlay(page: Page) {
+  await page.locator(AUDIO_TOGGLE_SELECTOR).click();
+  await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible();
+}
+
+test.describe('AudioOverlay smoke', () => {
+  test('waveform icon opens + closes the overlay', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    const toggle = page.locator(AUDIO_TOGGLE_SELECTOR);
+    await expect(toggle).toBeVisible();
+
+    await toggle.click();
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible();
+
+    await page.locator(`${OVERLAY_SELECTOR} button[aria-label="Close audio overlay"]`).click();
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeHidden();
+  });
+
+  test('episode inventory loads from audio-provenance.json', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await openOverlay(page);
+
+    // Wait for registry to finish loading — the scope tabs appear once
+    // audioRegistry.loaded flips true.
+    await expect(page.locator(`${OVERLAY_SELECTOR} .scope-tabs`)).toBeVisible({ timeout: 10000 });
+
+    const rows = page.locator(FIRST_EPISODE_BUTTON);
+    await expect(rows.first()).toBeVisible();
+    const count = await rows.count();
+    expect(count).toBeGreaterThan(0);
+  });
+
+  test('clicking an episode loads it into the player', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await openOverlay(page);
+
+    await expect(page.locator(`${OVERLAY_SELECTOR} .scope-tabs`)).toBeVisible({ timeout: 10000 });
+
+    const firstRow = page.locator(FIRST_EPISODE_BUTTON).first();
+    const epTitle = await firstRow.locator('.ep-title').textContent();
+    await firstRow.click();
+
+    // After click, the now-playing section renders with the episode title.
+    await expect(page.locator(`${OVERLAY_SELECTOR} .overlay-title`)).toContainText(
+      epTitle?.trim() ?? '',
+    );
+
+    // The hidden <audio> element gets a real src.
+    const src = await page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src');
+    expect(src).toMatch(/\.mp3$/);
+  });
+
+  test('Take the Curator Tour starts a playlist', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await openOverlay(page);
+
+    const tourBtn = page.locator(`${OVERLAY_SELECTOR} .tour-start`);
+    await expect(tourBtn).toBeVisible({ timeout: 10000 });
+    await tourBtn.click();
+
+    // Tour-active bar shows position indicator.
+    const tourPos = page.locator(`${OVERLAY_SELECTOR} .tour-position`);
+    await expect(tourPos).toBeVisible();
+    await expect(tourPos).toContainText('/'); // e.g. "1 / 21"
+
+    // First tour episode is pale-blue-dot — the now-playing title reflects.
+    await expect(page.locator(`${OVERLAY_SELECTOR} .overlay-title`)).toContainText(
+      /pale.blue.dot/i,
+    );
+  });
+
+  test('?audio=<id> deep-link opens overlay and loads the matching episode', async ({ page }) => {
+    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
+
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+    await expect(page.locator(`${OVERLAY_SELECTOR} .overlay-title`)).toContainText(
+      /pale.blue.dot/i,
+      { timeout: 10000 },
+    );
+
+    const src = await page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src');
+    expect(src).toMatch(/curator\/pale-blue-dot\..+\.mp3$/);
+  });
+
+  test('A/B variant switcher appears for episodes with two providers', async ({ page }) => {
+    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+
+    const switcher = page.locator(`${OVERLAY_SELECTOR} .provider-switcher`);
+    await expect(switcher).toBeVisible({ timeout: 10000 });
+
+    const buttons = switcher.locator('.provider-btn');
+    const count = await buttons.count();
+    expect(count).toBeGreaterThanOrEqual(2); // Google + ElevenLabs at least
+  });
+});

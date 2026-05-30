@@ -31,9 +31,24 @@ class AudioRegistry {
   loaded = $state(false);
   loading = $state(false);
   loadError = $state<string | null>(null);
+  // Shared in-flight promise so concurrent callers (AudioOverlay onMount +
+  // +layout.svelte ?audio= deep-link handler) await the same fetch instead
+  // of racing — the second caller previously returned early on `loading`
+  // and proceeded with empty episodes[] (deep-link load silently failed).
+  private inflight: Promise<void> | null = null;
 
   async load(): Promise<void> {
-    if (this.loaded || this.loading || !browser) return;
+    if (this.loaded || !browser) return;
+    if (this.inflight) return this.inflight;
+    this.inflight = this.doLoad();
+    try {
+      await this.inflight;
+    } finally {
+      this.inflight = null;
+    }
+  }
+
+  private async doLoad(): Promise<void> {
     this.loading = true;
     try {
       const res = await fetch(`${base}/data/audio/audio-provenance.json`);

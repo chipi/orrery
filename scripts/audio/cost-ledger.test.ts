@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { mkdtempSync, rmSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, rmSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
@@ -11,7 +11,6 @@ const ORIG_CWD = process.cwd();
 
 let tmp: string;
 let appendEntry: typeof import('./cost-ledger').appendEntry;
-let currentMonthTotal: typeof import('./cost-ledger').currentMonthTotal;
 let assertUnderHardCap: typeof import('./cost-ledger').assertUnderHardCap;
 let THRESHOLDS: typeof import('./cost-ledger').THRESHOLDS;
 

@@ -40,8 +40,8 @@ The eleven primary nav destinations:
 | `/fly` | Mission Arc (heliocentric + cislunar Earth-centered scenes) | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Catalog | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
-| `/moon` | Moon Map (surface markers + lunar orbiters with per-mission 3D models) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
-| `/mars` | Mars Map (equirectangular + 3D, rover traverses, orbital probes) | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
+| `/moon` | Lunar surface map — rectangular hotspot regions (ADR-061), per-mission lander glyphs, lunar orbiters, tidal-lock overlay, sphere → flat-patch view at deep zoom (ADR-062) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
+| `/mars` | Martian surface map — rectangular hotspot regions, per-mission lander glyphs, rover traverses with curated stops, atmosphere shell, 25.19° axial tilt, sphere → flat-patch view at deep zoom | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer (Tianhe + Wentian + Mengtian with module overlays) | `src/routes/tiangong/+page.svelte` |
 | `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |

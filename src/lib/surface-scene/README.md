@@ -1,6 +1,6 @@
 # `src/lib/surface-scene/`
 
-The shared renderer for `/moon` and `/mars`. Will own ~90 % of the surface-route behaviour. Routes will consume `SurfaceScene.svelte` and pass a planet config.
+The shared renderer for rocky-surface bodies — `/moon` and `/mars` today, future candidates `/mercury`, `/earth-launchpads` (#285). **Not used by orbital views (`/earth`, `/iss`, `/tiangong`) or trajectory views (`/fly`)** — those have their own scene architectures because their domain isn't a planetary surface. SurfaceScene owns ~90 % of the rocky-surface route behaviour. Routes consume `SurfaceScene.svelte` and pass a planet config.
 
 **Status (2026-05-30):** the *contract* is written; the `SurfaceScene.svelte` component file is **not yet implemented**. The lib currently ships the contract docs (this file, `types.ts`) and the Wave A pure-helper extractions (`debug-info.ts`, `register-moon-hotspot-builders.ts`, `register-mars-hotspot-builders.ts`). Next-session work: write the `SurfaceScene.svelte` body following `types.ts`, migrate `/moon` to consume it (Task #10 / Wave D), then `/mars` (Task #11 / Wave E). Tracked in #283 Slice 2.
 

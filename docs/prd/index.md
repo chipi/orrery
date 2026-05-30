@@ -3,23 +3,23 @@
 | Doc | Title | Status | Audiences |
 |---|---|---|---|
 | PA | Product Authority | v1.0 | — |
-| PRD-001 | Solar System Explorer | Draft v0.1 | curious learner, STEM student |
-| PRD-002 | Mission Configurator | Draft v0.1 | curious learner, STEM student |
-| PRD-003 | Mission Arc | Draft v0.1 | curious learner, STEM student |
-| PRD-004 | Mission Library | Draft v0.1 | all three |
-| PRD-005 | Earth Orbit Viewer | Draft v0.1 | curious learner, STEM student |
-| PRD-006 | Moon Map | Draft v0.1 | curious learner, STEM student |
-| PRD-007 | Multi-Language Support | Draft v0.1 | all audiences (cross-cutting) |
-| PRD-008 | Science (in-app encyclopedia) | Draft v0.1 | curious learner, STEM student |
-| PRD-009 | Mars Surface Map | Draft v0.1 | curious learner, STEM student, space enthusiast |
-| PRD-010 | ISS Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
-| PRD-011 | Tiangong Explorer | Draft v0.1 | curious learner, STEM student, space enthusiast |
-| PRD-012 | Spaceflight Fleet | Draft v0.1 | curious learner, STEM student, space enthusiast |
-| PRD-013 | Landing page (root `/`) | Draft v0.1 | first-time visitor, returning user, educator/journalist |
-| PRD-014 | Surface Hotspots · progressive-quality landing-site exploration | Draft v0.1 | curious lay person, space enthusiast, astrodynamicist |
+| PRD-001 | Solar System Explorer | Accepted (v0.2) | curious learner, STEM student |
+| PRD-002 | Mission Configurator | Accepted (v0.1.6) | curious learner, STEM student |
+| PRD-003 | Mission Arc | Accepted (v0.7.0) | curious learner, STEM student |
+| PRD-004 | Mission Library | Accepted (v0.2) | all three |
+| PRD-005 | Earth Orbit Viewer | Accepted (v0.4) | curious learner, STEM student |
+| PRD-006 | Moon Map | Accepted (v0.4) | curious learner, STEM student |
+| PRD-007 | Multi-Language Support | Accepted (v0.3.x foundation; rolling) | all audiences (cross-cutting) |
+| PRD-008 | Science (in-app encyclopedia) | Accepted (v0.5) | curious learner, STEM student |
+| PRD-009 | Mars Surface Map | Accepted (v0.4) | curious learner, STEM student, space enthusiast |
+| PRD-010 | ISS Explorer | Accepted (v0.4) | curious learner, STEM student, space enthusiast |
+| PRD-011 | Tiangong Explorer | Accepted (v0.5) | curious learner, STEM student, space enthusiast |
+| PRD-012 | Spaceflight Fleet | Accepted (v0.6) | curious learner, STEM student, space enthusiast |
+| PRD-013 | Landing page (root `/`) | Accepted (v0.6) | first-time visitor, returning user, educator/journalist |
+| PRD-014 | Surface Hotspots · progressive-quality landing-site exploration | Accepted (v0.7) | curious lay person, space enthusiast, astrodynamicist |
 | PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.3 | curious learner, space enthusiast (mobile-first audience) |
-| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.4 | all audiences (editorial layer) |
+| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.4 — in flight (v0.7) | all audiences (editorial layer) |
 | PRD-017 | Sensory Layer — gyroscope, sonification, haptics | Draft v0.4 | mobile + accessibility audience |
 | PRD-018 | Image Pipeline v2 — vision scoring + smart cropping + curation loop | Draft v0.4 | curators, editors, mobile audience |
 | PRD-019 | Immersive Mode — WebXR (Android) + ARKit (iPhone wrapped) + Exhibit Mode | Draft v0.4 | all audiences (capstone feature) |
-| PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Draft v0.1 | curious learner, STEM student, space enthusiast, educator/journalist |
+| PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Accepted (v0.7) | curious learner, STEM student, space enthusiast, educator/journalist |

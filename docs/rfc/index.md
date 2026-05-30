@@ -12,18 +12,18 @@
 | RFC-008 | Outer planets + dwarf planets in /plan | Decided · closed by ADR-028 | ADR-028 | v0.3.0 |
 | RFC-009 | Mission flight params + timeline navigator | Closed · closed by ADR-027 | ADR-027 | v0.1.9 |
 | RFC-010 | Translation & internationalisation strategy | Closed · closed by ADR-031 / ADR-032 / ADR-033 | ADR-031 / 032 / 033 | v0.3.x |
-| RFC-011 | Science page · render pipeline & content authoring | Open | ADR-034 / 035 / 036 | v0.4 |
-| RFC-012 | Mars Surface Map · technical strategy | Open | ADR-037 / 038 / 039 | v0.4 |
+| RFC-011 | Science page · render pipeline & content authoring | Closed (v0.5.0) | ADR-034 / 035 / 036 | v0.5 |
+| RFC-012 | Mars Surface Map · technical strategy | Closed (v0.4.0) | ADR-037 / 038 / 039 | v0.4 |
 | RFC-013 | ISS Explorer · 3D model pipeline & module pickability | Closed · closed by ADR-040 / ADR-041 / ADR-042 | ADR-040 / 041 / 042 | v0.4 |
-| RFC-014 | Tiangong Explorer · 3D model pipeline & module pickability | Open | ADR-048 / 049 / 050 | v0.5 |
+| RFC-014 | Tiangong Explorer · 3D model pipeline & module pickability | Closed (v0.5) · closed by ADR-048 / ADR-049 / ADR-050 | ADR-048 / 049 / 050 | v0.5 |
 | RFC-015 | LEARN-link rollout | Closed · closed by ADR-051 | ADR-051 | v0.5 |
-| RFC-016 | Spaceflight Fleet · architecture, schema, and dataset boundaries | Open | ADR-052 / 053 / 054 | v0.6 |
-| RFC-017 | Surface Hotspots · LOD architecture, texture pipeline, ground-view skybox, hardware models | Open | ADR-059 / 060 / 061 / 062 | v0.7 |
+| RFC-016 | Spaceflight Fleet · architecture, schema, and dataset boundaries | Closed (v0.6) · closed by ADR-052 / ADR-053 / ADR-054 | ADR-052 / 053 / 054 | v0.6 |
+| RFC-017 | Surface Hotspots · LOD architecture, texture pipeline, ground-view skybox, hardware models | Closed (v0.7) · closed by ADR-059 / ADR-060 / ADR-061 / ADR-062 | ADR-059 / 060 / 061 / 062 | v0.7 |
 | RFC-018 | Capacitor mobile wrapper — Android + iOS, bundle-slimming, PWA × Capacitor interaction | Draft v0.3 | PRD-015 | v0.8 |
-| RFC-019 | Science Overlay & Episode System — TtsProvider abstraction, cost analysis, async pipeline, host-agnostic asset layout | Draft v0.4 | PRD-016 | v0.9 |
+| RFC-019 | Science Overlay & Episode System — TtsProvider abstraction, cost analysis, async pipeline, host-agnostic asset layout | Draft v0.4 — in flight (v0.7) | PRD-016 | v0.7 |
 | RFC-020 | Sensory Layer — gyroscope (G-C), sonification (S-C 11-route), Capacitor haptics, audio-bus ducking under narration | Draft v0.4 | PRD-017 | v1.x |
 | RFC-021 | Immersive Mode — WebXR (Android) + ARKit Capacitor Swift plugin (iPhone wrapped), Three.js whole-codebase upgrade, Exhibit Mode | Draft v0.4 | PRD-019 | v1.x |
 | RFC-022 | Image Pipeline v2 — VisionProvider abstraction, sidecar manifest (ADR-047 untouched), smart-crop sharp variants, curation deny-list loop, granular CLI scope flags | Draft v0.4 | PRD-018 | v1.x |
-| RFC-023 | Launches Calendar — multi-source agency-first pipeline (NASA / ESA / SpaceX direct + GCAT primary historic + LL2 augmentation), provenance_chain manifest, heuristic + curated tier overrides, CC-BY citation gate | Draft v0.1 | PRD-020 | v0.7 |
-| RFC-024 | Containerized local stack — `docker compose` web + on-demand pipeline runners + docker-e2e CI gate (VPS deploy deferred) | Draft v0.1 | ADR-063 / 064 / 065 / 066 | v0.7.x |
-| RFC-025 | Observability — Sentry for client-side JS errors + Grafana Cloud Agent (env-var-gated, no committed secrets, reuses podcast_scraper RFC-081 credentials) | Draft v0.1 | ADR-067 / 068 | v0.7.x |
+| RFC-023 | Launches Calendar — multi-source agency-first pipeline (NASA / ESA / SpaceX direct + GCAT primary historic + LL2 augmentation), provenance_chain manifest, heuristic + curated tier overrides, CC-BY citation gate | Closed (v0.7) | PRD-020 | v0.7 |
+| RFC-024 | Containerized local stack — `docker compose` web + on-demand pipeline runners + docker-e2e CI gate (VPS deploy deferred) | Closed (v0.7.x) | ADR-063 / 064 / 065 / 066 | v0.7.x |
+| RFC-025 | Observability — Sentry for client-side JS errors + Grafana Cloud Agent (env-var-gated, no committed secrets, reuses podcast_scraper RFC-081 credentials) | Closed (v0.7.x) | ADR-067 / 068 | v0.7.x |

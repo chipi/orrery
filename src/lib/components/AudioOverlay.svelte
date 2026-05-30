@@ -5,6 +5,8 @@
 
   import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+  import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
   import { audioRegistry, CURATOR_FULL_TOUR } from '$lib/audio-registry.svelte';
@@ -50,6 +52,29 @@
   // Sync playback speed.
   $effect(() => {
     if (audioEl) audioEl.playbackRate = audio.speed;
+  });
+
+  // Virtual-walkthrough auto-navigation. When the tour advances to an
+  // episode anchored to a different route, drive the browser there so
+  // the listener sees the screen they're hearing about. Only runs while
+  // a tour is active — manual episode loads from the inventory leave
+  // navigation under the user's control.
+  $effect(() => {
+    if (!browser || !audio.tourActive) return;
+    const ep = audio.currentEpisode;
+    if (!ep?.route) return;
+    const target = `${base}${ep.route === '/' ? '' : ep.route}` || '/';
+    // Strip query string + hash for the compare; preserve scroll reset
+    // because each route's content is its own scene.
+    const current = $page.url.pathname.replace(/\/+$/, '') || '/';
+    const want = (target.replace(/\/+$/, '') || '/').replace(base, '') || '/';
+    const have = current.replace(base, '') || '/';
+    if (have === want) return;
+    void goto(target, {
+      replaceState: false,
+      noScroll: false,
+      keepFocus: true,
+    });
   });
 
   async function loadAndPlay(ep: Episode): Promise<void> {

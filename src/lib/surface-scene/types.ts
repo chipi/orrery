@@ -64,15 +64,17 @@ export interface TidalLockOverlayConfig {
  * Per-mission lander glyph builder. Returns a small primitive-composed
  * 3D group identifiable as the specific mission (Apollo LM vs Lunokhod
  * vs Curiosity vs Viking, etc.). Per-planet because the catalogues
- * differ (moon-lander-models.ts vs mars-lander-models.ts) and the
- * function signatures are slightly different.
+ * differ (moon-lander-models.ts vs mars-lander-models.ts).
+ *
+ * Canonical signature: (siteId, missionType, color, agency?). Moon's
+ * native builder matches this exactly. Mars's native builder takes
+ * agency BEFORE color, so the /mars route wraps `buildMarsLanderModel`
+ * in a small adapter that reorders the args.
  */
 export type LanderModelBuilder = (
-  id: string,
+  siteId: string,
   missionType: string | undefined,
-  color: THREE.Color | string | number,
-  // mars's builder takes an agency string; moon's doesn't.
-  // Type widening with optional 4th param accepts both shapes.
+  color: string,
   agency?: string,
 ) => THREE.Group;
 

@@ -1327,9 +1327,7 @@
   onDestroy(() => cleanup?.());
 </script>
 
-<svelte:head><title>{m.moon_page_title()}</title></svelte:head>
-
-<div class="moon">
+<div class="surface-scene">
   <!-- Non-visual parallel mode (PRD-007 / GH #256 / ADR-025 v0.7.0).
        Screen-reader-only mirror of the 3D-canvas site markers. Each
        button fires the same selectSite handler that a canvas click
@@ -1730,7 +1728,7 @@ sample      ${debugInfo.projectedPxSample}`}
 />
 
 <style>
-  .moon {
+  .surface-scene {
     position: absolute;
     inset: var(--nav-height) 0 0 0;
     overflow: hidden;

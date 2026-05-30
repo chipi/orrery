@@ -13,6 +13,7 @@
   import { refreshStationSelectionStyling } from '$lib/three/station-selection-styling';
   import HoverLabel from '$lib/components/HoverLabel.svelte';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
+  import { disposeScene } from '$lib/three/dispose-object3d';
   import { getIssModules, getIssVisitors, getIssModuleGallery } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { buildIssProxyStation, MODULE_BOXES } from '$lib/iss-proxy-model';
@@ -716,24 +717,7 @@
       renderer.domElement.removeEventListener('pointermove', onPointerMove);
       renderer.domElement.removeEventListener('pointerleave', onPointerLeave);
       controls.dispose();
-      const disposeMatTex = (mat: THREE.Material) => {
-        const mm = mat as THREE.MeshStandardMaterial & { map?: THREE.Texture | null };
-        mm.map?.dispose();
-      };
-      scene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material)) {
-            obj.material.forEach((m) => {
-              disposeMatTex(m);
-              m.dispose();
-            });
-          } else if (obj.material) {
-            disposeMatTex(obj.material);
-            obj.material.dispose();
-          }
-        }
-      });
+      disposeScene(scene);
       cloudsTex.dispose();
       outlinePass.dispose();
       renderer.dispose();

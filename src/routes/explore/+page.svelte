@@ -6,6 +6,7 @@
   import * as THREE from 'three';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { disposeScene } from '$lib/three/dispose-object3d';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
@@ -1888,38 +1889,7 @@
       c2.removeEventListener('touchmove', on2dTouchMove);
       c2.removeEventListener('touchend', on2dTouchEnd);
       window.removeEventListener('resize', onResize);
-
-      // Dispose any textures attached to materials before disposing
-      // the materials themselves — Three.js doesn't cascade.
-      const disposeMatTextures = (m: THREE.Material) => {
-        const mat = m as THREE.Material & {
-          map?: THREE.Texture | null;
-          emissiveMap?: THREE.Texture | null;
-          normalMap?: THREE.Texture | null;
-        };
-        mat.map?.dispose();
-        mat.emissiveMap?.dispose();
-        mat.normalMap?.dispose();
-      };
-      scene.traverse((obj) => {
-        // GH #271 / W1 — Line / Points walks added: the explore scene
-        // wires its own star-field as THREE.Points (and orbit/connector
-        // primitives as THREE.Line). Without these branches their
-        // geometry + material handles never get released on route
-        // leave, leaking VRAM in long sessions.
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material)) {
-            obj.material.forEach((m) => {
-              disposeMatTextures(m);
-              m.dispose();
-            });
-          } else if (obj.material) {
-            disposeMatTextures(obj.material);
-            obj.material.dispose();
-          }
-        }
-      });
+      disposeScene(scene);
       renderer.dispose();
       el3d.remove();
     };

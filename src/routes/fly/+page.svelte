@@ -5,6 +5,7 @@
   import * as THREE from 'three';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { disposeScene } from '$lib/three/dispose-object3d';
   import {
     earthPos,
     marsPos,
@@ -4328,21 +4329,9 @@
       el3d.removeEventListener('touchend', onTouchEnd);
       el3d.removeEventListener('touchcancel', onTouchEnd);
       window.removeEventListener('resize', onResize);
-      scene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material)) obj.material.forEach((mat) => mat.dispose());
-          else (obj.material as THREE.Material | undefined)?.dispose();
-        }
-      });
+      disposeScene(scene);
       // ADR-058: dispose the cislunar scene's GPU resources too.
-      cislunarScene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material)) obj.material.forEach((mat) => mat.dispose());
-          else (obj.material as THREE.Material | undefined)?.dispose();
-        }
-      });
+      disposeScene(cislunarScene);
       renderer.dispose();
       el3d.remove();
     };

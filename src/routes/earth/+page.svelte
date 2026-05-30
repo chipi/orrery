@@ -6,6 +6,7 @@
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
+  import { disposeScene } from '$lib/three/dispose-object3d';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import { getEarthObjects, getEarthObjectGallery, getMissionIndex } from '$lib/data';
   import { formatNumber } from '$lib/format';
@@ -956,24 +957,7 @@
       el3d.removeEventListener('touchcancel', onTouchEnd);
       c2.removeEventListener('click', on2dClick);
       window.removeEventListener('resize', onResize);
-      const disposeMatTextures = (mat: THREE.Material) => {
-        const m = mat as THREE.Material & { map?: THREE.Texture | null };
-        m.map?.dispose();
-      };
-      scene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh || obj instanceof THREE.Line || obj instanceof THREE.Points) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material))
-            obj.material.forEach((mat) => {
-              disposeMatTextures(mat);
-              mat.dispose();
-            });
-          else if (obj.material) {
-            disposeMatTextures(obj.material);
-            (obj.material as THREE.Material).dispose();
-          }
-        }
-      });
+      disposeScene(scene);
       outlinePass.dispose();
       renderer.dispose();
       el3d.remove();

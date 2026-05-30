@@ -558,24 +558,24 @@
     onwheel={onWheel}
   ></canvas>
 
-  <button class="hud-back" type="button" onclick={onClose} aria-label="Back to planet">
-    ← BACK TO PLANET
+  <button class="hud-back" type="button" onclick={onClose} aria-label={m.surface_flat_back_aria()}>
+    {m.surface_flat_back_to_planet()}
   </button>
 
-  <div class="hud-layers" role="group" aria-label="Layer toggles">
+  <div class="hud-layers" role="group" aria-label={m.surface_flat_layer_toggles_aria()}>
     <button
       type="button"
       class="chip {layerRegional ? 'on' : 'off'}"
       onclick={() => (layerRegional = !layerRegional)}
     >
-      REGIONAL
+      {m.surface_flat_layer_regional()}
     </button>
     <button
       type="button"
       class="chip {layerDetail ? 'on' : 'off'}"
       onclick={() => (layerDetail = !layerDetail)}
     >
-      DETAIL
+      {m.surface_flat_layer_detail()}
     </button>
     {#if traverses && traverses[selected.id]}
       <button
@@ -583,26 +583,29 @@
         class="chip {layerTraverse ? 'on' : 'off'}"
         onclick={() => (layerTraverse = !layerTraverse)}
       >
-        TRAVERSE
+        {m.surface_flat_layer_traverse()}
       </button>
     {/if}
   </div>
 
   <div class="hud-scale" aria-hidden="true">
-    <span>SCALE</span>
+    <span>{m.surface_flat_scale_label()}</span>
     <span class="bar" style:width="{scaleBar.widthPx}px"></span>
     <span class="mono">{scaleBar.label}</span>
   </div>
 
   <div class="hud-latlon mono" aria-hidden="true">
-    LON {centroidLon.toFixed(4)}° · LAT {centroidLat.toFixed(4)}°
+    {m.surface_flat_lat_lon({
+      lon: centroidLon.toFixed(4),
+      lat: centroidLat.toFixed(4),
+    })}
   </div>
 
   {#if upsampling}
     <div class="upsample-warning mono" aria-hidden="true">
-      ⚠ Approaching native pixel limit ({config.planet === 'mars'
-        ? 'HiRISE 25 cm/px'
-        : 'LROC NAC 50 cm/px'})
+      {config.planet === 'mars'
+        ? m.surface_flat_upsample_warning_mars()
+        : m.surface_flat_upsample_warning_moon()}
     </div>
     <div class="upsample-vignette" aria-hidden="true"></div>
   {/if}

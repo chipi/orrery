@@ -9,10 +9,15 @@
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
-  import { audioRegistry, CURATOR_FULL_TOUR } from '$lib/audio-registry.svelte';
+  import { audioRegistry } from '$lib/audio-registry.svelte';
+  import { CURATOR_FULL_TOUR, stagesForEpisode, type AudioStage } from '$lib/audio-tour';
 
   let audioEl: HTMLAudioElement | null = $state(null);
   let scope: 'screen' | 'all' = $state('screen');
+  // Tour Phase 2 — track which stage timings already fired this play.
+  // Keyed by `${episode_id}:${at_sec}:${action}` so re-loading the same
+  // episode (or clicking it again) restarts the stage sequence.
+  let firedStages = $state<Set<string>>(new Set());
 
   const PROVIDER_LABEL: Record<string, string> = {
     google: 'Google',
@@ -76,6 +81,50 @@
       keepFocus: true,
     });
   });
+
+  // Tour Phase 2 — fire stage hooks during playback. Watches position
+  // against the current episode's stage timings; each stage fires once.
+  $effect(() => {
+    if (!browser || !audio.currentEpisode) return;
+    const stages = stagesForEpisode(audio.currentEpisode.id);
+    if (stages.length === 0) return;
+    const pos = audio.positionSec;
+    const epId = audio.currentEpisode.id;
+    for (const stage of stages) {
+      if (pos < stage.at_sec) continue;
+      const key = `${epId}:${stage.at_sec}:${stage.action}:${stage.target}`;
+      if (firedStages.has(key)) continue;
+      firedStages = new Set([...firedStages, key]);
+      executeStage(stage);
+    }
+  });
+
+  // Reset fired stages whenever the loaded episode changes so re-plays
+  // get the full sequence again.
+  $effect(() => {
+    const _key = audio.currentEpisode?.id ?? '';
+    firedStages = new Set();
+    void _key;
+  });
+
+  function executeStage(stage: AudioStage): void {
+    if (typeof document === 'undefined') return;
+    const el = document.querySelector(stage.target) as HTMLElement | null;
+    if (!el) return;
+    switch (stage.action) {
+      case 'flash':
+        el.classList.add('audio-stage-flash');
+        window.setTimeout(() => el.classList.remove('audio-stage-flash'), 1800);
+        break;
+      case 'scroll-to':
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        break;
+      case 'click':
+      case 'open-tab':
+        if (typeof el.click === 'function') el.click();
+        break;
+    }
+  }
 
   async function loadAndPlay(ep: Episode): Promise<void> {
     // Stop the prior track first — explicitly, not via the playing-state
@@ -813,6 +862,27 @@
   }
   .origin-detail {
     color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Tour Phase 2 — global flash highlight used by stage hooks. Defined
+     here (scoped via :global so it can target arbitrary route elements).
+     Audio-stage-flash gives a brief warm-gold pulse via box-shadow so
+     it works regardless of an element's background. */
+  :global(.audio-stage-flash) {
+    animation: audio-stage-flash 1.8s ease-out;
+    position: relative;
+    z-index: 1;
+  }
+  @keyframes audio-stage-flash {
+    0% {
+      box-shadow: 0 0 0 0 rgba(255, 200, 80, 0.85);
+    }
+    50% {
+      box-shadow: 0 0 24px 10px rgba(255, 200, 80, 0.55);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(255, 200, 80, 0);
+    }
   }
 
   /* Bottom-sheet on narrow viewports (PRD-016 M1 / RFC-019 §7.1). */

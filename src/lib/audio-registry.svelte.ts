@@ -75,37 +75,10 @@ const PROVIDER_PRIORITY: ProviderName[] = [
   'coqui-local',
 ];
 
-// Curator Full Tour — hand-curated documentary order (PRD-016 US-3 /
-// RFC-019 §2). 21 episodes, ~70 min listen-through. Opens with the
-// Curator pale-blue-dot, walks Earth → Moon → ISS/Tiangong → Missions →
-// Mars → Fly/Plan → Fleet → Science → close with capability-ladder.
-// Atmospheric Moves anchored to a route are interleaved after that route's
-// Guide screen episode. Curator deep-time pieces (moon-one-lifetime,
-// mars-what-for) sit after the Guide screen for their route, before that
-// route's Enthusiast anchors.
-export const CURATOR_FULL_TOUR: string[] = [
-  'pale-blue-dot',
-  'guide-explore',
-  'guide-earth',
-  'guide-moon',
-  'moon-one-lifetime',
-  'cernan-last-words',
-  'far-side',
-  'guide-iss',
-  'guide-tiangong',
-  'guide-missions',
-  'guide-mars',
-  'mars-what-for',
-  'signal-delay',
-  'one-way-light-time',
-  'curiosity-persistence',
-  'guide-fly',
-  'guide-plan',
-  'porkchop',
-  'guide-fleet',
-  'guide-science',
-  'capability-ladder-close',
-];
+// Curator Full Tour sequence + per-episode stage hooks live in
+// src/lib/audio-tour.ts — one declarative file for both. Re-export here
+// for backwards-compatible imports; new code should import from audio-tour.
+export { CURATOR_FULL_TOUR } from './audio-tour';
 
 function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
   const byKey = new Map<string, Episode>();

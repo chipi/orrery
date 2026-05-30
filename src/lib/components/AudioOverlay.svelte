@@ -54,7 +54,7 @@
             class="play-pause"
             aria-label={audio.playing ? 'Pause' : 'Play'}
             aria-pressed={audio.playing}
-            onclick={() => (audio.playing = !audio.playing)}
+            onclick={() => audio.togglePlay()}
           >
             {audio.playing ? '⏸' : '▶'}
           </button>

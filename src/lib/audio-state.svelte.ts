@@ -1,6 +1,8 @@
 // Runtime audio state (PRD-016 M8 / ADR-057 — no localStorage; lost on reload).
 // Shared Svelte 5 reactive state, consumed by AudioOverlay + Nav.
 
+import { audioBus } from './audio-bus';
+
 export type Persona = 'curator' | 'guide' | 'enthusiast';
 
 export interface Episode {
@@ -43,6 +45,35 @@ class AudioState {
     this.durationSec = ep.durationSec;
     this.playing = false;
     this.currentCaption = '';
+  }
+
+  // Play / pause / end emit on the audio-bus (PRD-017 sensory ducking
+  // listens here). Callers should use these instead of mutating
+  // `playing` directly so the bus stays in sync.
+  play(): void {
+    if (this.playing) return;
+    this.playing = true;
+    audioBus.emit('play', { episode: this.currentEpisode });
+  }
+
+  pause(): void {
+    if (!this.playing) return;
+    this.playing = false;
+    audioBus.emit('pause', { episode: this.currentEpisode });
+  }
+
+  togglePlay(): void {
+    if (this.playing) this.pause();
+    else this.play();
+  }
+
+  endEpisode(): void {
+    const ep = this.currentEpisode;
+    this.playing = false;
+    if (ep) {
+      this.markHeard(ep.id);
+      audioBus.emit('ended', { episode: ep });
+    }
   }
 
   markHeard(id: string): void {

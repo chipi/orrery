@@ -10,13 +10,27 @@
     earthPos,
     marsPos,
     destinationPos,
-    transferEllipse,
     returnArc,
     spacecraftPos,
     spacecraftHeading,
     type MissionTimeline,
     type Vec2,
   } from '$lib/mission-arc';
+  import {
+    ARC_STEPS,
+    MOON_FLY_RADIUS_AU,
+    moonHelioPos,
+    moonHelioArc,
+    buildArcs,
+  } from '$lib/fly-moon-arc';
+  import { defaultEventLabel } from '$lib/fly-event-labels';
+  import {
+    SCALE_3D,
+    GRAVITY_ASSIST_CAVEAT_DESTINATIONS,
+    DESTINATION_LABEL_COLORS,
+    cameraDistanceFor,
+  } from '$lib/fly-scene-constants';
+  import { classifyConicEarth } from '$lib/fly-conics-earth';
   import {
     DESTINATIONS,
     R_EARTH_AU,
@@ -186,94 +200,10 @@
   // Free-return scenarios additionally render a long-CCW return arc;
   // historical Mars-bound missions land there and don't return, so
   // their retPts is empty (no return arc rendered).
-  // 600 segments: enough that the linear-interp spacecraft position
-  // sits visually on the CatmullRom-splined tube (chord-vs-spline gap
-  // is sub-pixel between adjacent waypoints at this density).
-  const ARC_STEPS = 600;
-
-  // Moon's heliocentric visual orbit radius around Earth, in AU. Real
-  // is 0.0026 AU (~0.21 scene units) — too small to see at the same
-  // SCALE_3D where Mars sits 80 units from the Sun. Exaggerated to
-  // 0.4 AU (~32 scene units) so the cislunar trip occupies roughly the
-  // same visual span as Earth→Mars (≈40 units) and the trajectory has
-  // room to read as a real journey rather than a compressed arc next
-  // to a fat Earth mesh. Earth's heliocentric orbit ring (radius 80u)
-  // still encloses the Moon, just with more visible breathing room
-  // around it.
-  const MOON_FLY_RADIUS_AU = 0.4;
-  // Sidereal lunar month — Moon's heliocentric visual orbit period.
-  const MOON_PERIOD_DAYS = 27.32;
-
-  /** Heliocentric position of the Moon at simDay (live), with the
-   *  exaggerated MOON_FLY_RADIUS_AU offset. */
-  function moonHelioPos(day: number): Vec2 {
-    const earth = earthPos(day);
-    const angle = ((day % MOON_PERIOD_DAYS) / MOON_PERIOD_DAYS) * Math.PI * 2;
-    return {
-      x: earth.x + Math.cos(angle) * MOON_FLY_RADIUS_AU,
-      z: earth.z + Math.sin(angle) * MOON_FLY_RADIUS_AU,
-    };
-  }
-
-  /** Cislunar trajectory in heliocentric AU. Both endpoints are
-   *  pinned exactly (start at depDay, end at arrDay); intermediate
-   *  points ride Earth's orbital motion + linearly blend the
-   *  Earth-relative offset from start-offset to end-offset. For 4-day
-   *  Apollo this is essentially a slow drift along Earth's orbit + a
-   *  small hop, which reads correctly at the heliocentric scale used
-   *  by the rest of /fly. Symmetric: pass start=Earth, end=Moon for
-   *  outbound; start=Moon, end=Earth for return. */
-  function moonHelioArc(
-    depDay: number,
-    arrDay: number,
-    start: Vec2,
-    end: Vec2,
-    steps: number,
-  ): Vec2[] {
-    const startOffX = start.x - earthPos(depDay).x;
-    const startOffZ = start.z - earthPos(depDay).z;
-    const endOffX = end.x - earthPos(arrDay).x;
-    const endOffZ = end.z - earthPos(arrDay).z;
-    const pts: Vec2[] = [];
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      const earthAtT = earthPos(depDay + t * (arrDay - depDay));
-      const offX = startOffX + (endOffX - startOffX) * t;
-      const offZ = startOffZ + (endOffZ - startOffZ) * t;
-      pts.push({ x: earthAtT.x + offX, z: earthAtT.z + offZ });
-    }
-    return pts;
-  }
-
-  function buildArcs(
-    timeline: MissionTimeline,
-    isFreeReturn: boolean,
-    destinationId: DestinationId = 'mars',
-    arrivalVInfKms?: number | null,
-  ): { out: Vec2[]; ret: Vec2[] } {
-    // Outbound: true two-point Keplerian ellipse with Sun at one focus.
-    // Both endpoints land EXACTLY on live planet positions — Earth at
-    // dep_day, destination at arr_day (or flyby_day for free-return).
-    // Replaces the older outboundArc + post-hoc rotation, which could
-    // only pin one endpoint.
-    const earthDep = earthPos(timeline.dep_day);
-    // Outbound terminates at flyby_day for free-return AND round-trip
-    // Mars / Moon (the destination rendezvous is mid-mission). For
-    // one-way landings flyby_day == arr_day so this is also the
-    // landing day. Always using flyby_day keeps the math uniform.
-    const destArr =
-      destinationId === 'mars'
-        ? marsPos(timeline.flyby_day)
-        : destinationPos(timeline.flyby_day, destinationId);
-    const out = transferEllipse(earthDep, destArr, ARC_STEPS, arrivalVInfKms);
-    if (!isFreeReturn) return { out, ret: [] };
-    // Free-return Mars: return arc starts at the outbound terminus
-    // (== Mars at flyby_day) and ends at live Earth at arr_day, so
-    // re-entry visually meets Earth.
-    const earthRet = earthPos(timeline.arr_day);
-    const ret = returnArc(out[out.length - 1], earthRet, ARC_STEPS);
-    return { out, ret };
-  }
+  //
+  // The arc + Moon-mode heliocentric math lives in $lib/fly-moon-arc
+  // (W9 wave 1 / #279) — pure functions, unit-tested. This component
+  // owns only the reactive state + Three.js side effects.
 
   // Initial timeline + arc come from the default ORRERY DEMO scenario
   // (which is a free-return). Mutated by applyMissionAsLoaded /
@@ -384,47 +314,7 @@
   );
   let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
 
-  /** Resolve a FlightEvent.type to its localised label via paraglide
-   *  messages (C7 — 14-locale roll, EN placeholders pending wave23
-   *  translation pass). Unknown types fall through to the raw key
-   *  string (defensive — shouldn't happen with the schema's closed
-   *  FlightEventType union). */
-  function defaultEventLabel(type: PhaseMarker['event']['type']): string {
-    switch (type) {
-      case 'launch':
-        return m.fly_event_launch();
-      case 'parking_orbit_exit':
-        return m.fly_event_parking_orbit_exit();
-      case 'tli_or_tmi':
-        return m.fly_event_tli_or_tmi();
-      case 'tcm':
-        return m.fly_event_tcm();
-      case 'loi':
-        return m.fly_event_loi();
-      case 'descent_start':
-        return m.fly_event_descent_start();
-      case 'ascent':
-        return m.fly_event_ascent();
-      case 'tei':
-        return m.fly_event_tei();
-      case 'earth_return':
-        return m.fly_event_earth_return();
-      case 'flyby':
-        return m.fly_event_flyby();
-      case 'arrival':
-        return m.fly_event_arrival();
-      case 'anomaly':
-        return m.fly_event_anomaly();
-      case 'edl_or_oi':
-        return m.fly_event_edl_or_oi();
-      case 'phasing':
-        return m.fly_event_phasing();
-      case 'separation':
-        return m.fly_event_separation();
-      default:
-        return type;
-    }
-  }
+  // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
   let simSpeed = $state(7); // days/sec
   // ADR-025: reduced-motion users start paused. They can press play
   // to step forward manually. We also subscribe to changes so an
@@ -521,51 +411,14 @@
         arrColor: string,
       ) => void)
     | undefined;
-  const SCALE_3D = 80;
-
-  /** ADR-028: direct-Hohmann caveat for giants + Pluto on /plan-driven flights. */
-  const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
-    'jupiter',
-    'saturn',
-    'uranus',
-    'neptune',
-    'pluto',
-  ];
-
-  // Per-destination accent for the ARRIVAL sprite. Earth blue (#4b9cd3)
-  // is reserved for LAUNCH so the two sprites always read as a pair.
-  const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = {
-    mercury: '#b8b8b8',
-    venus: '#e8d175',
-    mars: '#c1440e',
-    jupiter: '#d4a373',
-    saturn: '#e8c890',
-    uranus: '#7de8e8',
-    neptune: '#6b8cff',
-    pluto: '#c8a98a',
-    ceres: '#7c8b9a',
-    moon: '#cfcfcf',
-  };
+  // SCALE_3D, GRAVITY_ASSIST_CAVEAT_DESTINATIONS, DESTINATION_LABEL_COLORS,
+  // and cameraDistanceFor live in $lib/fly-scene-constants (W9 / #279).
 
   let showPlanOuterTrajectoryCaveat = $derived(
     !isMoonMission &&
       mission.name.startsWith('EARTH →') &&
       GRAVITY_ASSIST_CAVEAT_DESTINATIONS.includes(activeDestination),
   );
-
-  // Per-destination camera reset distance, scene units. Tuned so the
-  // destination's orbit ring fills a comfortable fraction of the view.
-  // Scene scale: 1 AU = SCALE_3D = 80 units. Moon-mode is a separate
-  // Earth-Moon scale where the Moon sits at MOON_VISUAL_DISTANCE = 100.
-  function cameraDistanceFor(destinationId: DestinationId, moonMode: boolean): number {
-    // Moon-mode: framed for the Earth+Moon pair (Apollo arc now spans
-    // ~32 scene units after the MOON_FLY_RADIUS_AU bump from 0.15 →
-    // 0.4 AU). Camera at ~100u gives both planets + the full arc room
-    // to breathe — Sun stays off-camera unless the user pans out.
-    if (moonMode) return 100;
-    const orbitUnits = DESTINATIONS[destinationId].a * SCALE_3D;
-    return Math.max(180, orbitUnits * 2.0);
-  }
 
   // Update the Three.js Tube geometry whenever the arc-point arrays
   // change. The Mesh refs are created in onMount, so this effect is
@@ -873,37 +726,7 @@
     return classifyConic(r, v);
   });
 
-  /** Earth-centric conic classifier — same energy/angular-momentum
-   *  math as classifyConic() but with μ_earth in km³/s². Used for the
-   *  cislunar Conics overlay when a Moon mission is active. */
-  function classifyConicEarth(
-    r: { x: number; y: number; z: number },
-    v: { x: number; y: number; z: number },
-  ): {
-    shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
-    a: number;
-    e: number;
-    epsilon: number;
-  } {
-    const MU = 398600.4418; // km³/s²
-    const rMag = Math.hypot(r.x, r.y, r.z);
-    const vMag2 = v.x * v.x + v.y * v.y + v.z * v.z;
-    const epsilon = vMag2 / 2 - MU / rMag;
-    const hx = r.y * v.z - r.z * v.y;
-    const hy = r.z * v.x - r.x * v.z;
-    const hz = r.x * v.y - r.y * v.x;
-    const h2 = hx * hx + hy * hy + hz * hz;
-    const eSquared = 1 + (2 * epsilon * h2) / (MU * MU);
-    const e = Math.sqrt(Math.max(0, eSquared));
-    const a = epsilon !== 0 ? -MU / (2 * epsilon) : Infinity;
-    const refScale = MU / rMag;
-    let shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
-    if (Math.abs(epsilon) < 0.005 * refScale) shape = 'parabola';
-    else if (epsilon > 0) shape = 'hyperbola';
-    else if (e < 0.001) shape = 'circle';
-    else shape = 'ellipse';
-    return { shape, a, e, epsilon };
-  }
+  // classifyConicEarth: extracted to $lib/fly-conics-earth (W9 / #279).
   // Naive ∆v ledger: full burn at TMI plus a small TCM allocation; we
   // surface the scenario's headline numbers without re-running an
   // optimal-burn schedule. A future slice with per-burn data could

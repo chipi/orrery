@@ -57,21 +57,13 @@
     createHotspotEntry,
     getHotspotModelBuilder,
     getHotspotMode,
-    registerHotspotModelBuilder,
     setHotspotMode,
     updateHotspotLOD,
     type HotspotEntry,
     type HotspotMode,
   } from '$lib/hotspot-lod-dispatcher';
-  import { buildVikingTripodHotspot } from '$lib/hotspot-models/viking-tripod';
-  import { buildPathfinderSojournerHotspot } from '$lib/hotspot-models/pathfinder-sojourner';
-  import { buildMERRoverHotspot } from '$lib/hotspot-models/mer-rover';
-  import { buildCuriosityClassHotspot } from '$lib/hotspot-models/curiosity-class';
-  import { buildPhoenixClassHotspot } from '$lib/hotspot-models/phoenix-class';
-  import { buildMars3PetalHotspot } from '$lib/hotspot-models/mars-3-petal';
-  import { buildTianwenZhurongHotspot } from '$lib/hotspot-models/tianwen-zhurong';
-  import { buildSchiaparelliHotspot } from '$lib/hotspot-models/schiaparelli';
-  import { buildBeagle2Hotspot } from '$lib/hotspot-models/beagle-2';
+  import { registerMarsHotspotBuilders } from '$lib/surface-scene/register-mars-hotspot-builders';
+  import { createSurfaceDebugInfo, type SurfaceDebugInfo } from '$lib/surface-scene/debug-info';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import {
     createSkybox,
@@ -125,35 +117,9 @@
   let resetMarsCamera: () => void = () => {};
 
   // Surface Hotspots dev-debug overlay (enable with ?debug=1) —
-  // surfaces current LOD state without round-tripping through
-  // DevTools. Removed once Tier 2 ships clean.
-  let debugInfo = $state<{
-    sidecarStatus: string;
-    siteCount: number;
-    hotspotCount: number;
-    maxTierAcrossSites: number;
-    currentTopTier: number;
-    targetTopTier: number;
-    pageMode: string;
-    dispatcherMode: string;
-    camR: number;
-    projectedPxSample: string;
-    tier2Status: string;
-    patchDetail: string;
-  }>({
-    sidecarStatus: 'pending',
-    siteCount: 0,
-    hotspotCount: 0,
-    maxTierAcrossSites: 0,
-    currentTopTier: 0,
-    targetTopTier: 0,
-    pageMode: 'auto',
-    dispatcherMode: 'auto',
-    camR: 0,
-    projectedPxSample: '',
-    tier2Status: '',
-    patchDetail: '',
-  });
+  // shape + defaults shared with /moon via $lib/surface-scene/
+  // debug-info.ts (issue #283 Slice 2).
+  let debugInfo: SurfaceDebugInfo = $state(createSurfaceDebugInfo());
   let showDebug = $state(false);
   // Current camera altitude above Mars surface, in km — surfaced in
   // the corner overlay so the user has a sense of "how zoomed am I"
@@ -534,18 +500,8 @@
     // Populated as traverses are built (right after the construction
     // of each line + dot + caption sprite, ~line 1019 onward).
     const tier2DelayedReveal: Array<THREE.Line | THREE.Mesh | THREE.Sprite | THREE.Group> = [];
-    registerHotspotModelBuilder('viking-tripod', buildVikingTripodHotspot);
-    registerHotspotModelBuilder('pathfinder-sojourner', buildPathfinderSojournerHotspot);
-    registerHotspotModelBuilder('mer-rover', buildMERRoverHotspot);
-    registerHotspotModelBuilder('curiosity-class', buildCuriosityClassHotspot);
-    registerHotspotModelBuilder('curiosity-class-with-ingenuity', (accent) =>
-      buildCuriosityClassHotspot(accent, { withIngenuity: true }),
-    );
-    registerHotspotModelBuilder('phoenix-class', buildPhoenixClassHotspot);
-    registerHotspotModelBuilder('mars-3-petal', buildMars3PetalHotspot);
-    registerHotspotModelBuilder('tianwen-zhurong', buildTianwenZhurongHotspot);
-    registerHotspotModelBuilder('schiaparelli', buildSchiaparelliHotspot);
-    registerHotspotModelBuilder('beagle-2', buildBeagle2Hotspot);
+    // Bundled in $lib/surface-scene/ for shared route plumbing (#283 Slice 2).
+    registerMarsHotspotBuilders();
     void loadImageVisionManifest();
 
     // Selection-halo helper — small camera-facing ring rendered around

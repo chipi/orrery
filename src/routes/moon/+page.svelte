@@ -55,21 +55,13 @@
     createHotspotEntry,
     getHotspotMode,
     getHotspotModelBuilder,
-    registerHotspotModelBuilder,
     setHotspotMode,
     updateHotspotLOD,
     type HotspotEntry,
     type HotspotMode,
   } from '$lib/hotspot-lod-dispatcher';
-  import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
-  import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
-  import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
-  import { buildLunaSampleReturnHotspot } from '$lib/hotspot-models/luna-sample-return';
-  import { buildLunokhodHotspot } from '$lib/hotspot-models/lunokhod-rover';
-  import { buildChangeLanderHotspot } from '$lib/hotspot-models/chang-e-lander';
-  import { buildChandrayaan3VikramHotspot } from '$lib/hotspot-models/chandrayaan-3-vikram';
-  import { buildSLIMPrecisionLanderHotspot } from '$lib/hotspot-models/slim-precision-lander';
-  import { buildBeresheetHotspot } from '$lib/hotspot-models/beresheet';
+  import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
+  import { createSurfaceDebugInfo, type SurfaceDebugInfo } from '$lib/surface-scene/debug-info';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import {
     createSkybox,
@@ -169,36 +161,10 @@
 
   // colorFor + computeTierScale extracted to $lib/surface-map/* (#42).
 
-  // Debug overlay state — same shape as /mars's debugInfo so a
-  // ?debug=1 toggle surfaces dispatcher internals (current/target
-  // tier, projected px sample, tier2 built/visible, patch detail).
-  let debugInfo = $state<{
-    sidecarStatus: string;
-    siteCount: number;
-    hotspotCount: number;
-    maxTierAcrossSites: number;
-    currentTopTier: number;
-    targetTopTier: number;
-    pageMode: string;
-    dispatcherMode: string;
-    camR: number;
-    projectedPxSample: string;
-    tier2Status: string;
-    patchDetail: string;
-  }>({
-    sidecarStatus: 'pending',
-    siteCount: 0,
-    hotspotCount: 0,
-    maxTierAcrossSites: 0,
-    currentTopTier: 0,
-    targetTopTier: 0,
-    pageMode: 'auto',
-    dispatcherMode: 'auto',
-    camR: 0,
-    projectedPxSample: '',
-    tier2Status: '',
-    patchDetail: '',
-  });
+  // Debug overlay state — ?debug=1 surfaces dispatcher internals.
+  // Shape + defaults extracted to $lib/surface-scene/debug-info.ts
+  // so /moon and /mars share a single source of truth (issue #283).
+  let debugInfo: SurfaceDebugInfo = $state(createSurfaceDebugInfo());
   let showDebug = $state(false);
 
   /**
@@ -431,20 +397,9 @@
     // collapse to ≤ Tier 1 so neighbouring discs don't fight.
     const originalMaxTier = new Map<string, 0 | 1 | 2 | 3>();
     // Register the Tier 1 builders for ids the dispatcher might need
-    // to lazy-instantiate. Per-route registration keeps the import
-    // graph small for routes that don't use hotspots.
-    registerHotspotModelBuilder('apollo-lm', buildApolloLMHotspot);
-    registerHotspotModelBuilder('apollo-lm-extended', buildApolloLMExtendedHotspot);
-    registerHotspotModelBuilder('luna-9-spherical', buildLuna9Hotspot);
-    registerHotspotModelBuilder('luna-sample-return', buildLunaSampleReturnHotspot);
-    registerHotspotModelBuilder('lunokhod-rover', buildLunokhodHotspot);
-    registerHotspotModelBuilder('chang-e-lander', buildChangeLanderHotspot);
-    registerHotspotModelBuilder('chang-e-lander-sample-return', (accent) =>
-      buildChangeLanderHotspot(accent, { withAscentStage: true }),
-    );
-    registerHotspotModelBuilder('chandrayaan-3-vikram', buildChandrayaan3VikramHotspot);
-    registerHotspotModelBuilder('slim-precision-lander', buildSLIMPrecisionLanderHotspot);
-    registerHotspotModelBuilder('beresheet', buildBeresheetHotspot);
+    // to lazy-instantiate (bundled in $lib/surface-scene/ for shared
+    // route plumbing — issue #283 Slice 2).
+    registerMoonHotspotBuilders();
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to

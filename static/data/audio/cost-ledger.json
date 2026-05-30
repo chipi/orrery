@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T04:42:15.078Z",
+  "generated_at": "2026-05-30T04:57:26.773Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -584,12 +584,254 @@
       "cost_usd": 0.5487,
       "voice_id": "pNInz6obpgDQGcFmaJgB",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:52:18.900Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "saturn-rings",
+      "chars": 2297,
+      "cost_usd": 0.036752,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:52:37.188Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "saturn-rings",
+      "chars": 1628,
+      "cost_usd": 0.48839999999999995,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:52:46.348Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "jupiter-storm",
+      "chars": 2308,
+      "cost_usd": 0.036927999999999996,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:53:04.703Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "jupiter-storm",
+      "chars": 1619,
+      "cost_usd": 0.48569999999999997,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:53:14.003Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "voyager-grand-tour",
+      "chars": 2402,
+      "cost_usd": 0.038432,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:53:35.061Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "voyager-grand-tour",
+      "chars": 1861,
+      "cost_usd": 0.5582999999999999,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:53:43.134Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "cassini-finale",
+      "chars": 2304,
+      "cost_usd": 0.036864,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:54:03.792Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "cassini-finale",
+      "chars": 1725,
+      "cost_usd": 0.5175,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:54:12.438Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "cislunar-frame",
+      "chars": 2375,
+      "cost_usd": 0.038,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:54:30.967Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "cislunar-frame",
+      "chars": 1618,
+      "cost_usd": 0.48539999999999994,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:54:39.420Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "jwst-l2-halo",
+      "chars": 2559,
+      "cost_usd": 0.040944,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:55:01.118Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "jwst-l2-halo",
+      "chars": 1767,
+      "cost_usd": 0.5300999999999999,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:55:09.431Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "queqiao-magpie",
+      "chars": 2453,
+      "cost_usd": 0.039248,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:55:31.354Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "queqiao-magpie",
+      "chars": 1833,
+      "cost_usd": 0.5498999999999999,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:55:40.070Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "zarya-first-module",
+      "chars": 2332,
+      "cost_usd": 0.037312,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:56:00.555Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "zarya-first-module",
+      "chars": 1724,
+      "cost_usd": 0.5172,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:56:09.505Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "tianhe-core",
+      "chars": 2207,
+      "cost_usd": 0.035311999999999996,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:56:27.258Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "tianhe-core",
+      "chars": 1492,
+      "cost_usd": 0.44759999999999994,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:56:36.175Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "vis-viva",
+      "chars": 2398,
+      "cost_usd": 0.038368,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:56:55.824Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "vis-viva",
+      "chars": 1625,
+      "cost_usd": 0.48749999999999993,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:57:04.937Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "saturn-v-anchor",
+      "chars": 2602,
+      "cost_usd": 0.041631999999999995,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:57:26.772Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "saturn-v-anchor",
+      "chars": 1801,
+      "cost_usd": 0.5403,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
-      "google": 0.9942560000000001,
-      "elevenlabs": 12.080699999999997
+      "google": 1.4140480000000002,
+      "elevenlabs": 17.688599999999994
     }
   }
 }

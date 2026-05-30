@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.544
+Open the Orbits tab.
+
+00:00:01.544 --> 00:00:04.093
+Find the section called Vis-viva.
+
+00:00:04.093 --> 00:00:15.754
+What you're looking at is a single equation that determines the velocity of every spacecraft in this orrery, at every point along every orbit it flies.
+
+00:00:15.754 --> 00:00:22.472
+In symbols: v squared equals G times M, times the quantity two over r minus one over a.
+
+00:00:22.472 --> 00:00:23.631
+V for velocity.
+
+00:00:23.631 --> 00:00:26.179
+G for the gravitational constant.
+
+00:00:26.179 --> 00:00:35.523
+M for the mass of the central body — the Sun, for heliocentric orbits; Earth, for cislunar; the parent planet, for moons.
+
+00:00:35.523 --> 00:00:39.230
+R is the current distance from the central body.
+
+00:00:39.230 --> 00:00:45.872
+A is the orbit's semi-major axis — the average of the closest and furthest approaches.
+
+00:00:45.872 --> 00:00:58.150
+What it says, in plain words: your velocity at any point in an orbit depends only on two things — where you are right now, and the size of the orbit you're in.
+
+00:00:58.150 --> 00:01:06.568
+When you're at perihelion — closest to the central body — r is small, so the bracket is large, so v is large.
+
+00:01:06.568 --> 00:01:07.649
+You move fast.
+
+00:01:07.649 --> 00:01:14.290
+When you're at aphelion — furthest out — r is large, the bracket is small, v is small.
+
+00:01:14.290 --> 00:01:15.526
+You move slowly.
+
+00:01:15.526 --> 00:01:21.318
+Kepler's second law — equal areas in equal times — falls right out of this.
+
+00:01:21.318 --> 00:01:26.801
+Mercury at perihelion moves at almost fifty-nine kilometers per second.
+
+00:01:26.801 --> 00:01:29.117
+At aphelion, only thirty-nine.
+
+00:01:29.117 --> 00:01:32.824
+Earth varies between twenty-nine and thirty-one.
+
+00:01:32.824 --> 00:01:39.311
+Halley's Comet at perihelion races past the Sun at fifty-five kilometers per second.
+
+00:01:39.311 --> 00:01:42.014
+Out near Neptune, it crawls at one.
+
+00:01:42.014 --> 00:01:47.651
+Every transfer ellipse on the Plan screen is computed from this equation.
+
+00:01:47.651 --> 00:01:49.428
+Every porkchop contour.
+
+00:01:49.428 --> 00:01:51.049
+Every C three number.
+
+00:01:51.049 --> 00:01:56.532
+Every burn schedule for every mission you'll see fly on the Fly screen.
+
+00:01:56.532 --> 00:01:57.536
+One equation.
+
+00:01:57.536 --> 00:01:58.772
+Three variables.
+
+00:01:58.772 --> 00:02:00.857
+Six decades of spaceflight.
+
+00:02:00.857 --> 00:02:03.405
+This is what physics-first means.
+

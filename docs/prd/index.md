@@ -23,3 +23,4 @@
 | PRD-018 | Image Pipeline v2 — vision scoring + smart cropping + curation loop | Draft v0.4 | curators, editors, mobile audience |
 | PRD-019 | Immersive Mode — WebXR (Android) + ARKit (iPhone wrapped) + Exhibit Mode | Draft v0.4 | all audiences (capstone feature) |
 | PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Accepted (v0.7) | curious learner, STEM student, space enthusiast, educator/journalist |
+| PRD-021 | Surface texture LOD — sphere sharpness at mid-zoom on `/mars`, `/moon`, `/earth` | Draft | curious learner, science writer, educator |

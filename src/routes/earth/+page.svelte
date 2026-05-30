@@ -208,14 +208,68 @@
 
     scene.add(createStarField());
 
-    // Earth
+    // Earth — base sphere uses 2K daymap at default zoom. When the
+    // user pulls the camera in close (camR <= LOD_SWAP_THRESHOLD), a
+    // 4K texture is lazy-loaded and swapped in via material.map
+    // reassignment. Hysteresis (LOD_SWAP_HYSTERESIS) keeps the swap
+    // from thrashing at the boundary. Spike for #284 — proves the
+    // r128 swap mechanism works; the 4K texture itself is currently a
+    // placeholder upscale of the 2K source pending a real high-res
+    // fetch (Solar System Scope's download endpoint started returning
+    // HTML; TODO: fix scripts/fetch-assets.ts texture pipeline).
     const textureLoader = new THREE.TextureLoader();
-    const earthMap = textureLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    const earthMap2K = textureLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    let earthMap4K: THREE.Texture | null = null;
+    let earthLodLevel: '2k' | '4k' = '2k';
     const earthMesh = new THREE.Mesh(
       new THREE.SphereGeometry(EARTH_RADIUS, 64, 64),
-      new THREE.MeshPhongMaterial({ map: earthMap, color: 0xffffff, shininess: 12 }),
+      new THREE.MeshPhongMaterial({ map: earthMap2K, color: 0xffffff, shininess: 12 }),
     );
     scene.add(earthMesh);
+
+    // Camera-distance thresholds for the Earth texture LOD swap (#284
+    // spike). camR is the orbital camera distance in scene units (Earth
+    // radius = 8u). Swap to 4K when the camera approaches; swap back to
+    // 2K when it pulls back. The 5-unit deadband prevents per-frame
+    // thrashing if camR sits right on the boundary.
+    const EARTH_LOD_4K_IN = 22; // camR <= this → load + swap to 4K
+    const EARTH_LOD_2K_OUT = 28; // camR >= this → swap back to 2K
+    // Lazy-load the 4K texture on first threshold cross. Promise gates
+    // the swap so we don't try to set material.map before the bytes
+    // have arrived.
+    let earth4KLoadStarted = false;
+    function ensureEarth4KLoaded(): void {
+      if (earth4KLoadStarted) return;
+      earth4KLoadStarted = true;
+      textureLoader.load(
+        `${base}/textures/4k_earth_daymap.jpg`,
+        (tex) => {
+          // Preserve the equirectangular wrap modes that the texture
+          // loader would apply by default; nothing custom for now.
+          earthMap4K = tex;
+        },
+        undefined,
+        (err) => {
+          console.warn('[earth] 4K texture load failed; staying on 2K', err);
+          earth4KLoadStarted = false; // allow retry on next threshold cross
+        },
+      );
+    }
+    /** Per-frame LOD-swap check. Called from the animate loop. */
+    function updateEarthTextureLod(): void {
+      if (camR <= EARTH_LOD_4K_IN) {
+        ensureEarth4KLoaded();
+        if (earthMap4K && earthLodLevel !== '4k') {
+          (earthMesh.material as THREE.MeshPhongMaterial).map = earthMap4K;
+          (earthMesh.material as THREE.MeshPhongMaterial).needsUpdate = true;
+          earthLodLevel = '4k';
+        }
+      } else if (camR >= EARTH_LOD_2K_OUT && earthLodLevel !== '2k') {
+        (earthMesh.material as THREE.MeshPhongMaterial).map = earthMap2K;
+        (earthMesh.material as THREE.MeshPhongMaterial).needsUpdate = true;
+        earthLodLevel = '2k';
+      }
+    }
 
     // J.3 — Atmosphere shell at the Kármán line (100 km altitude).
     // Translucent dome that visually sets where "Earth" ends and
@@ -876,6 +930,11 @@
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
 
+      // #284 spike — Earth texture LOD swap based on camera distance.
+      // Per-frame check is cheap: a single number comparison + a
+      // material.map reassignment that only fires on threshold cross.
+      updateEarthTextureLod();
+
       // Rebuild satellites once when data loads (cheap; happens once).
       if (objects.length !== prevSatLen) {
         rebuildSats();
@@ -958,6 +1017,10 @@
       c2.removeEventListener('click', on2dClick);
       window.removeEventListener('resize', onResize);
       disposeScene(scene);
+      // #284 spike — explicitly dispose the lazy-loaded 4K Earth texture
+      // (held by a local ref, not reachable via the scene graph when the
+      // active LOD is 2K). disposeScene walks the active material.map only.
+      earthMap4K?.dispose();
       outlinePass.dispose();
       renderer.dispose();
       el3d.remove();

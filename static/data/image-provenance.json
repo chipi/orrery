@@ -67112,6 +67112,27 @@
       "fetched_at": "2026-05-26T14:06:54.855Z"
     },
     {
+      "id": "5e73e1e833f62911",
+      "path": "/textures/4k_earth_daymap.jpg",
+      "source_type": "direct-other",
+      "title": "4k_earth_daymap.jpg (placeholder upscale of 2k_earth_daymap.jpg)",
+      "author": "Solar System Scope",
+      "agency": "Solar System Scope",
+      "source_url": "https://www.solarsystemscope.com/textures/",
+      "image_url": null,
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "Reuse with attribution; this asset is a 4096x2048 placeholder upscale (sips bicubic) of the published 2K source pending a real 4K fetch when scripts/fetch-assets.ts texture pipeline is updated. Same Solar System Scope attribution applies.",
+      "modifications": [
+        "downloaded-from-publisher",
+        "upscaled-to-4096x2048-via-sips-placeholder"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-05-30T18:35:00.000Z"
+    },
+    {
       "id": "831effcbffc52f9a",
       "path": "/textures/2k_jupiter.16x9.jpg",
       "source_type": "direct-other",

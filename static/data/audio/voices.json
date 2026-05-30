@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-29T00:00:00Z",
+  "providers": {
+    "google": {
+      "en-US": {
+        "curator": { "voiceId": "en-US-Neural2-J", "model": "neural2" },
+        "guide": { "voiceId": "en-US-Neural2-F", "model": "neural2" },
+        "enthusiast": { "voiceId": "en-US-Neural2-D", "model": "neural2" }
+      }
+    },
+    "elevenlabs": {},
+    "openai": {},
+    "azure": {},
+    "coqui-local": {}
+  }
+}

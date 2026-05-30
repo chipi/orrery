@@ -94,6 +94,10 @@ const fleetOverlaySchema = loadSchema('fleet-overlay.schema.json');
 const launchSchema = loadSchema('launch.schema.json');
 const launchesCurationSchema = loadSchema('launches-curation.schema.json');
 const launchesRocketMappingSchema = loadSchema('launches-rocket-mapping.schema.json');
+// PRD-016 / RFC-019 — Audio narration episode system (S1 foundation, epic #146).
+const voicesSchema = loadSchema('voices.schema.json');
+const costLedgerSchema = loadSchema('cost-ledger.schema.json');
+const audioProvenanceSchema = loadSchema('audio-provenance.schema.json');
 
 const validateMission = ajv.compile(missionSchema);
 const validateMissionIndex = ajv.compile(missionIndexSchema);
@@ -132,6 +136,9 @@ const validateFleetOverlay = ajv.compile(fleetOverlaySchema);
 const validateLaunches = ajv.compile(launchSchema);
 const validateLaunchesCuration = ajv.compile(launchesCurationSchema);
 const validateLaunchesRocketMapping = ajv.compile(launchesRocketMappingSchema);
+const validateVoices = ajv.compile(voicesSchema);
+const validateCostLedger = ajv.compile(costLedgerSchema);
+const validateAudioProvenance = ajv.compile(audioProvenanceSchema);
 
 let failed = 0;
 let passed = 0;
@@ -377,6 +384,10 @@ validateFile(join(DATA_ROOT, 'link-provenance.json'), validateLinkProvenance);
 validateFile(join(DATA_ROOT, 'launches.json'), validateLaunches);
 validateFile(join(DATA_ROOT, 'launches-curation.json'), validateLaunchesCuration);
 validateFile(join(DATA_ROOT, 'launches-rocket-mapping.json'), validateLaunchesRocketMapping);
+// PRD-016 / RFC-019 (S1): audio voices registry + cost ledger + audio provenance manifest.
+validateFile(join(DATA_ROOT, 'audio', 'voices.json'), validateVoices);
+validateFile(join(DATA_ROOT, 'audio', 'cost-ledger.json'), validateCostLedger);
+validateFile(join(DATA_ROOT, 'audio', 'audio-provenance.json'), validateAudioProvenance);
 
 // Scenario base records
 for (const file of listJson(join(DATA_ROOT, 'scenarios'))) {

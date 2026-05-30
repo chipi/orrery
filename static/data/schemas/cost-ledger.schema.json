@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cost-ledger.schema.json",
+  "title": "TTS cost ledger (PRD-016 / RFC-019 §4.4)",
+  "description": "Append-only record of every TTS call (provider, locale, persona, chars, USD). Threshold guards: $50/mo soft warn, $200/mo hard halt per PRD-016 §resolved-decisions item 11. monthly_totals is recomputed from entries on every append.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "entries", "monthly_totals"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    },
+    "monthly_totals": {
+      "type": "object",
+      "description": "YYYY-MM → provider → USD total. Regenerated on every append.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": { "type": "number", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["ts", "provider", "locale", "persona", "episode_id", "chars", "cost_usd"],
+      "additionalProperties": false,
+      "properties": {
+        "ts": { "type": "string", "format": "date-time" },
+        "provider": {
+          "type": "string",
+          "enum": ["google", "elevenlabs", "openai", "azure", "coqui-local"]
+        },
+        "locale": { "type": "string", "minLength": 2 },
+        "persona": { "type": "string", "enum": ["curator", "guide", "enthusiast"] },
+        "episode_id": { "type": "string", "minLength": 1 },
+        "chars": { "type": "integer", "minimum": 0 },
+        "cost_usd": { "type": "number", "minimum": 0 },
+        "voice_id": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["success", "failed", "cached"] }
+      }
+    }
+  }
+}

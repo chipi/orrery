@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "voices.schema.json",
+  "title": "TTS voice registry (PRD-016 / RFC-019 §3.2)",
+  "description": "Per-provider × per-locale × per-persona voice ID registry. Mixed-provider corpus is the design — any (locale, persona) pair may resolve to a different provider via TTS_PROVIDER env var. Empty provider keys are allowed for forward extensibility.",
+  "type": "object",
+  "required": ["schema_version", "generated_at", "providers"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "providers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "google": { "$ref": "#/$defs/providerLocaleMap" },
+        "elevenlabs": { "$ref": "#/$defs/providerLocaleMap" },
+        "openai": { "$ref": "#/$defs/providerLocaleMap" },
+        "azure": { "$ref": "#/$defs/providerLocaleMap" },
+        "coqui-local": { "$ref": "#/$defs/providerLocaleMap" }
+      }
+    }
+  },
+  "$defs": {
+    "providerLocaleMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["curator", "guide", "enthusiast"],
+        "properties": {
+          "curator": { "$ref": "#/$defs/voiceRef" },
+          "guide": { "$ref": "#/$defs/voiceRef" },
+          "enthusiast": { "$ref": "#/$defs/voiceRef" }
+        }
+      }
+    },
+    "voiceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["voiceId", "model"],
+      "properties": {
+        "voiceId": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

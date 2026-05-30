@@ -3,7 +3,7 @@
   // Right-panel on desktop ≥800 px; bottom-sheet on mobile <800 px.
   // S5.1 — real playback. <audio> element + per-route inventory + transport.
 
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
@@ -52,30 +52,32 @@
     if (audioEl) audioEl.playbackRate = audio.speed;
   });
 
-  function loadAndPlay(ep: Episode): void {
+  async function loadAndPlay(ep: Episode): Promise<void> {
+    // Stop the prior track first — explicitly, not via the playing-state
+    // effect — so the browser doesn't keep streaming the old src while we
+    // swap to the new one.
+    if (audioEl && !audioEl.paused) audioEl.pause();
     audio.loadEpisode(ep);
-    // Defer to next microtask so the new <audio src> is attached before play.
-    queueMicrotask(() => {
-      if (audioEl) {
-        audioEl.load();
-        audio.play();
-      }
-    });
+    // Wait for Svelte to flush the new src attribute onto <audio>. Without
+    // this, .load() below would re-read the OLD src and the previous
+    // episode would resume from position 0.
+    await tick();
+    if (!audioEl) return;
+    audioEl.load();
+    audio.play();
   }
 
-  function switchToProvider(provider: string): void {
+  async function switchToProvider(provider: string): Promise<void> {
     if (!audio.currentEpisode) return;
     const wasPlaying = audio.playing;
     const pos = audio.positionSec;
+    if (audioEl && !audioEl.paused) audioEl.pause();
     audio.switchVariant(provider as 'google' | 'elevenlabs');
-    // Reload the audio element with the new variant + restore position.
-    queueMicrotask(() => {
-      if (audioEl) {
-        audioEl.load();
-        audioEl.currentTime = pos;
-        if (wasPlaying) audio.play();
-      }
-    });
+    await tick();
+    if (!audioEl) return;
+    audioEl.load();
+    audioEl.currentTime = pos;
+    if (wasPlaying) audio.play();
   }
 
   function onTimeUpdate(): void {

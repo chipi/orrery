@@ -115,6 +115,13 @@ export interface SurfaceSceneConfig {
   textureUrl: string;
 
   /**
+   * Real-world body radius in km. Used to convert the dimensionless
+   * scene `camR` into an altitude readout (and back, for the
+   * atmosphere shell sizing). Mars: 3389. Moon: 1737.4.
+   */
+  radiusKm: number;
+
+  /**
    * Atmosphere shell — Mars only today. Omit on Moon (vacuum).
    */
   atmosphere?: AtmosphereConfig;

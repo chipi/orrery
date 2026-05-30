@@ -122,6 +122,11 @@
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
+  // Live altitude readout (km above surface), driven by the camera-distance
+  // ↔ km-per-unit ratio. Surfaced in the corner HUD as "how zoomed am
+  // I" feedback. ADR-072 §Drift 16 — was Mars-only, now both bodies.
+  let altitudeKm = $state(0);
+
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
   // sites pinned to Tier 0 silhouette; 'high' = all sites pinned
@@ -345,9 +350,10 @@
     let _stopAtmosphereLayer: (() => void) | undefined;
     if (config.atmosphere) {
       const atm = config.atmosphere;
-      // Scene scale: planetRadius=30 → real ≈ 3389 km for Mars,
-      // so 1 unit ≈ 113 km. Shell radius scales with altitudeKm.
-      const shellR = planetRadius + atm.altitudeKm / 113;
+      // Scene scale: planetRadius=30 → real = config.radiusKm,
+      // so 1 unit ≈ radiusKm/30 km. Shell radius scales with altitudeKm.
+      const kmPerUnit = config.radiusKm / planetRadius;
+      const shellR = planetRadius + atm.altitudeKm / kmPerUnit;
       const atmShell = new THREE.Mesh(
         new THREE.SphereGeometry(shellR, 48, 48),
         new THREE.MeshBasicMaterial({
@@ -1305,6 +1311,9 @@
           debugInfo.pageMode = hotspotsMode;
           debugInfo.dispatcherMode = getHotspotMode();
           debugInfo.camR = camR;
+          // Live altitude (km above surface). camR is in scene units;
+          // multiply by `radiusKm/planetRadius` km/unit to get real km.
+          altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
           if (hotspots.length > 0) {
             const h = hotspots[0];
             const wp = new THREE.Vector3();
@@ -1485,6 +1494,18 @@ sample      ${debugInfo.projectedPxSample}`}
           void navigator.clipboard?.writeText(debugText);
         }}>copy</button
       >
+    </div>
+  {/if}
+
+  <!-- Live altitude readout — "how zoomed am I" feedback for both
+       routes (Drift 16 consolidation, was Mars-only). -->
+  {#if view === '3d'}
+    <div class="altitude-indicator" aria-hidden="true">
+      {altitudeKm >= 1000
+        ? `${(altitudeKm / 1000).toFixed(1)} Mm`
+        : altitudeKm >= 1
+          ? `${altitudeKm.toFixed(0)} km`
+          : `${(altitudeKm * 1000).toFixed(0)} m`} altitude
     </div>
   {/if}
 
@@ -1781,6 +1802,23 @@ sample      ${debugInfo.projectedPxSample}`}
     position: absolute;
     inset: var(--nav-height) 0 0 0;
     overflow: hidden;
+  }
+  .altitude-indicator {
+    position: absolute;
+    right: 12px;
+    bottom: 56px;
+    z-index: 5;
+    pointer-events: none;
+    padding: 4px 10px;
+    background: rgba(8, 10, 22, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
   }
   .layer {
     position: absolute;

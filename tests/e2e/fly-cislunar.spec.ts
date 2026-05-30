@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * /fly — cislunar view (ADR-058).
@@ -33,7 +34,11 @@ test.describe('/fly — cislunar view (ADR-058)', () => {
     test(`${id} loads without console errors`, async ({ page }) => {
       const consoleErrors: string[] = [];
       page.on('console', (msg) => {
-        if (msg.type() === 'error') consoleErrors.push(msg.text());
+        if (msg.type() !== 'error') return;
+        // isExpectedNoise: drops favicon / webgl / hot-module noise and
+        // overlay-probe 404s; real asset 404s still surface.
+        if (isExpectedNoise(msg)) return;
+        consoleErrors.push(msg.text());
       });
       page.on('pageerror', (err) => consoleErrors.push(err.message));
 
@@ -44,12 +49,7 @@ test.describe('/fly — cislunar view (ADR-058)', () => {
       // errors land before we assert on the buffer.
       await page.waitForTimeout(500);
 
-      const benignNoise = consoleErrors.filter(
-        (msg) =>
-          // Common dev-only warnings unrelated to cislunar feature.
-          !/favicon|404|webgl warning|hot module/i.test(msg),
-      );
-      expect(benignNoise, `console errors for ${id}: ${benignNoise.join(' | ')}`).toEqual([]);
+      expect(consoleErrors, `console errors for ${id}: ${consoleErrors.join(' | ')}`).toEqual([]);
     });
   }
 });

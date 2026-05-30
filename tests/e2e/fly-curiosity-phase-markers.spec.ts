@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * Curiosity (Mars heliocentric) phase-marker reference spec — #107
@@ -79,15 +80,18 @@ test.describe('/fly Curiosity — phase markers (#107 finding 6 — Mars depth r
     const errors: string[] = [];
     page.on('pageerror', (err) => errors.push(err.message));
     page.on('console', (msg) => {
-      if (msg.type() === 'error') errors.push(msg.text());
+      if (msg.type() !== 'error') return;
+      // isExpectedNoise narrows 404s to overlay-probe URLs so real
+      // mission-asset 404s still fail this gate.
+      if (isExpectedNoise(msg)) return;
+      errors.push(msg.text());
     });
     await loadCuriosity(page);
     const toggle2d = page.getByRole('button', { name: /^2d$/i });
     await toggle2d.click();
     await page.getByRole('button', { name: /^3d$/i }).click();
     await page.waitForTimeout(300);
-    const real = errors.filter((e) => !/favicon|404|webgl warning|hot module/i.test(e));
-    expect(real, real.join('\n')).toEqual([]);
+    expect(errors, errors.join('\n')).toEqual([]);
   });
 
   test('reduced-motion: at least one fresh marker mounted at sim start', async ({ page }) => {

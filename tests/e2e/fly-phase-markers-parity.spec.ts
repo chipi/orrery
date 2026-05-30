@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * Phase-marker parity smoke spec — #107 Step 6i.
@@ -74,7 +75,11 @@ async function loadMission(page: Page, mission: string): Promise<string[]> {
   const errors: string[] = [];
   page.on('pageerror', (err) => errors.push(err.message));
   page.on('console', (msg) => {
-    if (msg.type() === 'error') errors.push(msg.text());
+    if (msg.type() !== 'error') return;
+    // Drop favicon / webgl / hot-module noise and overlay-probe 404s;
+    // real asset 404s (patch, portrait, gallery) still surface.
+    if (isExpectedNoise(msg)) return;
+    errors.push(msg.text());
   });
   await page.goto(`/fly?mission=${mission}`);
   await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({ timeout: 15_000 });
@@ -103,9 +108,9 @@ test.describe('/fly phase-marker parity smoke (#107 Step 6i)', () => {
       await expect(pill).toBeVisible();
       await expect(pill.locator('[data-science-chip]')).toBeVisible();
 
-      // 4. No console errors during load. Filter known noise.
-      const real = errors.filter((e) => !/favicon|404|webgl warning|hot module/i.test(e));
-      expect(real, real.join('\n')).toEqual([]);
+      // 4. No console errors during load. `errors` is already narrowed
+      // via isExpectedNoise at capture time (see top-of-file handler).
+      expect(errors, errors.join('\n')).toEqual([]);
     });
   }
 });

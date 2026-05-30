@@ -25,7 +25,10 @@ test.describe('/earth', () => {
     await page.waitForLoadState('networkidle');
     // Mobile-chromium: tap, not click, to match the real touch event and
     // avoid the Svelte onclick binding race (same fix as :204).
-    const toggle = page.getByRole('button', { name: /^2d$/i });
+    // Use test-id for the action target — the label flips from 2D→3D
+    // on click, and getByRole('button', /2d/) can resolve post-flip
+    // under CI load (same race class as the /fly #222 fix).
+    const toggle = page.locator('[data-testid="mode-toggle"]');
     if (isMobile) {
       await toggle.tap();
     } else {

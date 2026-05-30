@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * Layers 3 + 4 of the /fly rendering validation strategy.
@@ -306,12 +307,12 @@ test.describe('/fly render validation — Layer 5 (visual screenshot pass)', () 
       const consoleErrors: string[] = [];
       page.on('console', (msg) => {
         if (msg.type() !== 'error') return;
-        const text = msg.text();
-        // The data-loader probes scenarios/ → mars/ → moon/ in order
-        // and emits a 404 for each miss before resolving. Those aren't
-        // real errors — ignore them in this sanity gate.
-        if (/404 \(Not Found\)/.test(text)) return;
-        consoleErrors.push(text);
+        // isExpectedNoise narrows the 404 pass to overlay-probe URLs
+        // (`/data/i18n/...`) so real patch / portrait / gallery 404s
+        // still fail this sanity gate. The data-loader probes
+        // scenarios/ → mars/ → moon/ overlays — those 404s are expected.
+        if (isExpectedNoise(msg)) return;
+        consoleErrors.push(msg.text());
       });
       await page.goto(`/fly?mission=${c.id}`);
       await expect(page.locator('[data-testid="mission-name"]')).toBeVisible({

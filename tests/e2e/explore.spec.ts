@@ -22,7 +22,12 @@ async function enterTwoDMode(page: Page, isMobile = false): Promise<void> {
   // canvas.layer stays hidden. tap() issues a touch event which matches
   // how a real user interacts with the chip on a phone (same fix as
   // earth.spec.ts chip toggle). #253 / GH e2e run 26485179917.
-  const toggle = page.getByRole('button', { name: /^2d$/i });
+  //
+  // We target the test-id rather than the label, because the label flips
+  // from "2D" to "3D" on click — under CI load, getByRole('button', /2d/)
+  // can resolve after the flip has already happened, which is the same
+  // class of race the /fly fix (#222) addressed.
+  const toggle = page.locator('[data-testid="explore-view-toggle"]');
   if (isMobile) {
     await toggle.tap();
   } else {

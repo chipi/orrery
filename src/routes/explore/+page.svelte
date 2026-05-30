@@ -1925,7 +1925,13 @@
        opposite side of the detail panel so they never collide. -->
   <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
-      <button class="toggle" type="button" onclick={toggleView} aria-pressed={view === '2d'}>
+      <button
+        class="toggle"
+        type="button"
+        onclick={toggleView}
+        aria-pressed={view === '2d'}
+        data-testid="explore-view-toggle"
+      >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
       <button

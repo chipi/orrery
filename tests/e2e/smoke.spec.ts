@@ -1,4 +1,5 @@
 import { test, expect, type Page, type ConsoleMessage } from '@playwright/test';
+import { isExpectedNoise } from './_helpers/console-errors';
 
 /**
  * Smoke tests — every route loads without console errors and shows
@@ -16,14 +17,27 @@ const ROUTES = [
   { path: '/missions', titleHint: 'Mission Catalog' },
   { path: '/earth', titleHint: 'Earth Orbit' },
   { path: '/iss', titleHint: 'ISS Explorer' },
+  { path: '/tiangong', titleHint: 'Tiangong Explorer' },
   { path: '/moon', titleHint: 'Moon Map' },
   { path: '/mars', titleHint: 'Mars' },
+  { path: '/science', titleHint: 'Science' },
+  { path: '/fleet', titleHint: 'Fleet' },
+  // Disclosure / gallery pages — covered by smoke for first-load gate
+  // even though they're not in the primary nav (per ADR-047 / ADR-051).
+  { path: '/credits', titleHint: 'Credits' },
+  { path: '/library', titleHint: 'Library' },
+  { path: '/posters', titleHint: 'Gallery' },
 ];
 
 function attachConsoleAndError(page: Page) {
   const errors: string[] = [];
   page.on('console', (msg: ConsoleMessage) => {
-    if (msg.type() === 'error') errors.push(`console.error: ${msg.text()}`);
+    if (msg.type() !== 'error') return;
+    // isExpectedNoise: ignores favicon / webgl / hot-module noise and
+    // 404s on the i18n overlay probe path; everything else (incl. real
+    // asset 404s on patches / portraits / galleries) is captured.
+    if (isExpectedNoise(msg)) return;
+    errors.push(`console.error: ${msg.text()}`);
   });
   page.on('pageerror', (err: Error) => {
     errors.push(`pageerror: ${err.message}`);
@@ -38,13 +52,7 @@ for (const route of ROUTES) {
     const errors = attachConsoleAndError(page);
     await page.goto(route.path, { waitUntil: 'networkidle' });
     await expect(page).toHaveTitle(new RegExp(route.titleHint, 'i'));
-    // Filter "Failed to load resource" — i18n overlay loader probes
-    // optional per-locale files (some sites have no overlay, e.g.
-    // luna9 has no /data/i18n/en-US/moon-sites/luna9.json) and the
-    // data layer catches the 404 via `.catch(() => null)`. The probe
-    // is intentional, the 404 is expected, browser still logs it.
-    const real = errors.filter((e) => !e.includes('Failed to load resource'));
-    expect(real, `Console/page errors on ${route.path}:\n${real.join('\n')}`).toEqual([]);
+    expect(errors, `Console/page errors on ${route.path}:\n${errors.join('\n')}`).toEqual([]);
   });
 }
 

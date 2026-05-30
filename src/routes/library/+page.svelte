@@ -377,6 +377,12 @@
     margin-top: 32px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* W4 (GH #274) — per-source blocks can carry many entities + links;
+     * content-visibility lets the browser skip layout + paint for
+     * off-screen source groups while preserving DOM presence for
+     * anchor-link navigation + axe scans. */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
   }
   .src-head {
     display: flex;

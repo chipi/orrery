@@ -751,6 +751,20 @@
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 14px;
   }
+  /* W4 (GH #274) — content-visibility: auto lets the browser skip
+   * layout + paint for off-screen cards (152 fleet entries × ~280px
+   * each = ~21000px tall before virtualisation; we only need ~3-4
+   * rows visible at any time). `contain-intrinsic-size` is the
+   * scrollbar-friendly height hint that prevents jump-scroll when
+   * cards come back into view. CSS-native solution — no JS, no
+   * virtualizer library, no scroll-listener; relies on Chromium
+   * (mobile-chromium e2e target) + modern Safari/Firefox support.
+   * Trade-off vs DOM virtualisation: DOM nodes still exist (cheap
+   * memory), but layout/paint cost drops to ~0 for off-screen items. */
+  .fleet-grid > .card-li {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 280px;
+  }
 
   /* Card grid — visually identical to /missions per route-parity directive. */
   .card-li {
@@ -928,6 +942,13 @@
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  /* W4 (GH #274) — same content-visibility treatment as the grid; list
+   * rows are ~50px each so a list-view scroll skips layout/paint for
+   * the ~140 off-screen rows. See note on .fleet-grid above. */
+  .fleet-list > li {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 50px;
   }
   .list-row {
     width: 100%;

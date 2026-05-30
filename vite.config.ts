@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
+import { compression } from 'vite-plugin-compression2';
 import { defineConfig } from 'vitest/config';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -41,6 +42,17 @@ export default defineConfig({
   preview: { port: 5273, strictPort: true },
   plugins: [
     sveltekit(),
+    // Emit .br and .gz alongside every text-ish asset at build time
+    // (GH #273 / W3). nginx serves them with brotli_static / gzip_static
+    // when the client's Accept-Encoding allows. Images and fonts are
+    // already format-compressed — skip those to avoid wasted CPU and
+    // larger-than-original .br files.
+    compression({
+      algorithms: ['brotliCompress', 'gzip'],
+      include: [/\.(js|mjs|cjs|css|html|json|svg|ico|webmanifest|map)$/],
+      threshold: 1024,
+      deleteOriginalAssets: false,
+    }),
     SvelteKitPWA({
       strategies: 'generateSW',
       // `autoUpdate` (vs the prior `prompt`) installs new service-worker

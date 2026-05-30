@@ -250,7 +250,10 @@ jobs:
              . ./.env; \
              docker compose -f compose/docker-compose.prod.yml \
                --project-directory . --env-file .env --profile observability \
-               pull web pipeline-runner grafana-agent; \
+               pull pipeline-runner grafana-agent; \
+             docker compose -f compose/docker-compose.prod.yml \
+               --project-directory . --env-file .env \
+               build web; \
              docker compose -f compose/docker-compose.prod.yml \
                --project-directory . --env-file .env --profile observability \
                up -d web grafana-agent; \

@@ -47,7 +47,16 @@
 
 services:
   web:
-    image: nginx:alpine
+    # Custom image: nginx:alpine + brotli module + baked nginx.conf
+    # (GH #273 / W3). Image is built fresh on each deploy by the
+    # workflow's `docker compose build web` step — see
+    # .github/workflows/deploy-prod.yml. `context: ..` resolves to the
+    # repo root from this file's compose/ subdirectory; the Dockerfile
+    # path is relative to that context.
+    build:
+      context: ..
+      dockerfile: ops/docker/Dockerfile.web
+    image: orrery-web:local
     container_name: orrery-web
     restart: unless-stopped
     ports:

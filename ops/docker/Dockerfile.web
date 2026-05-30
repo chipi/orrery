@@ -1,0 +1,27 @@
+# Web tier image (GH #273 / W3 — brotli support).
+#
+# Stock nginx:alpine doesn't include the brotli module. We layer
+# `nginx-mod-http-brotli` from Alpine's package repo on top — that
+# installs the dynamic module .so files into /usr/lib/nginx/modules
+# AND drops the `load_module` directives into /etc/nginx/modules/
+# which alpine's stock nginx.conf already includes via the
+# `include /etc/nginx/modules/*.conf;` line.
+#
+# Outcome: brotli_static + brotli filter directives become available
+# in the site config (ops/docker/nginx.conf) without further wiring.
+#
+# Pinned to nginx:alpine (no explicit tag) on purpose — matches the
+# `image: nginx:alpine` that docker-compose previously pulled. To pin
+# tighter for prod, swap the FROM line to e.g. `nginx:1.27-alpine`.
+
+FROM nginx:alpine
+
+RUN apk add --no-cache nginx-mod-http-brotli
+
+# Bake the site config into the image — single source of truth for both
+# local docker (which bind-mounts and shadows this) and prod (which
+# does NOT bind-mount, so this is what actually runs). Without this
+# COPY, the previously-shipped CSP + security-header changes
+# (commits 656cb02e6 / docs(security)) never reached prod nginx — they
+# were only mounted in the local docker-compose.yml stack.
+COPY ops/docker/nginx.conf /etc/nginx/conf.d/default.conf

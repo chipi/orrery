@@ -1,10 +1,13 @@
 # docker-compose.yml — local docker stack for orrery (RFC-024).
 #
 # Lightweight by design:
-#   - `web` uses the stock nginx:alpine image with bind-mounts. No
-#     custom Dockerfile, no SvelteKit rebuild inside the container.
-#     Operator builds the bundle on the host with `npm run build`
-#     (same as for GH Pages); web container just serves it.
+#   - `web` is nginx:alpine with the brotli dynamic module layered on
+#     (GH #273 / W3 — ops/docker/Dockerfile.web). No SvelteKit rebuild
+#     inside the container. Operator builds the bundle on the host with
+#     `npm run build` (same as for GH Pages); web container just serves
+#     it. Brotli + gzip pre-compressed siblings come from the vite
+#     build (vite-plugin-compression2); nginx serves them via
+#     brotli_static + gzip_static when Accept-Encoding allows.
 #   - `pipeline-runner` has its own Dockerfile (gdal-async + sharp +
 #     tsx) but is profile-gated — `docker compose up` does NOT build
 #     or start it. Its image only builds on first
@@ -22,7 +25,10 @@
 
 services:
   web:
-    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: ops/docker/Dockerfile.web
+    image: orrery-web:local
     container_name: orrery-web
     ports:
       - '8080:80'

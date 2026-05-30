@@ -68,7 +68,7 @@
     "audio:generate": "tsx scripts/audio/generate.ts",
     "audio:build": "tsx scripts/audio/build.ts",
     "audio:check-cost": "tsx scripts/audio/check-cost-thresholds.ts",
-    "validate-data": "tsx scripts/validate-data.ts && npm run validate-diagrams && tsx scripts/cislunar/check-science-map-refs.ts && npm run check-tech-bom",
+    "validate-data": "tsx scripts/validate-data-runner.ts",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
     "docs:dev": "vitepress dev docs",
@@ -125,6 +125,7 @@
     "typescript": "5.7.2",
     "typescript-eslint": "^8.59.3",
     "vite": "5.4.11",
+    "vite-plugin-compression2": "^2.5.3",
     "vitepress": "1.5.0",
     "vitepress-sidebar": "1.25.2",
     "vitest": "^4.1.6"

@@ -1,7 +1,23 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-29T00:00:00Z",
-  "script_version": "build-audio-provenance@0.1.0",
+  "generated_at": "2026-05-30T02:02:13.290Z",
+  "script_version": "scripts/audio/generate@0.1.0",
   "commit_sha": null,
-  "entries": []
+  "entries": [
+    {
+      "episode_id": "pale-blue-dot",
+      "locale": "en-US",
+      "persona": "curator",
+      "provider": "google",
+      "voice_id": "en-US-Neural2-J",
+      "tts_model": "neural2",
+      "path_mp3": "/audio/en-US/curator/pale-blue-dot.8fb31037.mp3",
+      "path_vtt": "/audio/en-US/curator/pale-blue-dot.8fb31037.vtt",
+      "path_txt": "/audio/en-US/curator/pale-blue-dot.8fb31037.txt",
+      "chars": 1188,
+      "generated_at": "2026-05-30T02:02:13.290Z",
+      "text_authorship": "claude-drafted",
+      "text_author_model": "claude-opus-4-7"
+    }
+  ]
 }

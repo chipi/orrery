@@ -1,10 +1,12 @@
 // Google Cloud Text-to-Speech provider (PRD-016 / RFC-019 §3 + §4).
-// REST client (no SDK) so a single API key in GOOGLE_TTS_API_KEY suffices —
-// no service-account JSON required. Per Marko's setup choice 2026-05-29.
+// Uses the official @google-cloud/text-to-speech SDK with GOOGLE_APPLICATION_
+// CREDENTIALS env var (service account JSON path or ADC). Cloud TTS doesn't
+// accept API keys for server-side use; the SDK handles OAuth from the JSON.
+
+import { TextToSpeechClient } from '@google-cloud/text-to-speech';
+import type { google as ttsProto } from '@google-cloud/text-to-speech/build/protos/protos';
 
 import type { TtsInput, TtsOutput, TtsProvider, ProviderName } from './provider';
-
-const ENDPOINT = 'https://texttospeech.googleapis.com/v1/text:synthesize';
 
 // Cloud TTS Neural2 / WaveNet pricing — $16 per 1M chars.
 // Free tier: 1M chars/mo for the first 12 months. Studio voices are $160/1M.
@@ -12,17 +14,19 @@ const USD_PER_CHAR_NEURAL2 = 16 / 1_000_000;
 
 export class GoogleTtsProvider implements TtsProvider {
   readonly name: ProviderName = 'google';
-  private readonly apiKey: string;
+  private readonly client: TextToSpeechClient;
 
-  constructor(apiKey: string) {
-    if (!apiKey) {
-      throw new Error('GOOGLE_TTS_API_KEY is not set; add it to .env');
+  constructor() {
+    if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
+      throw new Error(
+        'GOOGLE_APPLICATION_CREDENTIALS is not set. Add the absolute path to your service-account JSON (or gcloud ADC file) in .env.',
+      );
     }
-    this.apiKey = apiKey;
+    this.client = new TextToSpeechClient();
   }
 
   async generate(input: TtsInput): Promise<TtsOutput> {
-    const body = {
+    const request: ttsProto.cloud.texttospeech.v1.ISynthesizeSpeechRequest = {
       input: { ssml: input.ssml },
       voice: {
         languageCode: input.locale,
@@ -36,25 +40,17 @@ export class GoogleTtsProvider implements TtsProvider {
       },
     };
 
-    const res = await fetch(`${ENDPOINT}?key=${this.apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-      const text = await res.text().catch(() => '');
-      throw new Error(
-        `Google TTS request failed (${res.status} ${res.statusText}): ${text.slice(0, 500)}`,
-      );
-    }
-
-    const json = (await res.json()) as { audioContent?: string };
-    if (!json.audioContent) {
+    const [response] = await this.client.synthesizeSpeech(request);
+    if (!response.audioContent) {
       throw new Error('Google TTS response missing audioContent');
     }
 
-    const audio = Buffer.from(json.audioContent, 'base64');
+    // The SDK returns audioContent as a Buffer (Uint8Array) when streaming
+    // is off, or as a base64 string in some transport modes.
+    const audio = Buffer.isBuffer(response.audioContent)
+      ? response.audioContent
+      : Buffer.from(response.audioContent as Uint8Array | string);
+
     const transcript = stripSsml(input.ssml);
     const chars = countBillableChars(input.ssml);
     const cost_usd = chars * USD_PER_CHAR_NEURAL2;

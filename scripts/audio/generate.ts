@@ -79,13 +79,10 @@ function parseFrontmatter(raw: string): { meta: EpisodeMeta; body: string } {
 
 function pickProvider(name: ProviderName): TtsProvider {
   switch (name) {
-    case 'google': {
-      const key = process.env.GOOGLE_TTS_API_KEY;
-      if (!key) {
-        throw new Error('GOOGLE_TTS_API_KEY is not set in .env or shell environment.');
-      }
-      return new GoogleTtsProvider(key);
-    }
+    case 'google':
+      // GOOGLE_APPLICATION_CREDENTIALS env var is checked inside the
+      // constructor; the SDK handles OAuth from the JSON automatically.
+      return new GoogleTtsProvider();
     default:
       throw new Error(`provider '${name}' not implemented yet (see issues #153 / #219).`);
   }

@@ -120,7 +120,7 @@
     onclick={() => (open = !open)}
   >
     {#if triggerLogo}
-      <img src={triggerLogo} alt="" class="trigger-logo" />
+      <img src={triggerLogo} alt="" class="trigger-logo" loading="lazy" decoding="async" />
     {/if}
     <span class="trigger-label">{triggerLabel}</span>
     <span class="caret" aria-hidden="true">▾</span>
@@ -166,7 +166,7 @@
             title={full}
           >
             {#if logo}
-              <img src={logo} alt="" class="opt-logo" />
+              <img src={logo} alt="" class="opt-logo" loading="lazy" decoding="async" />
             {/if}
             <span class="opt-label">{full}</span>
           </button>

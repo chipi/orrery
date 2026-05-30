@@ -2309,7 +2309,7 @@ sample      ${debugInfo.projectedPxSample}`}
               onclick={() => (panelLightbox = src)}
               aria-label={m.mars_lightbox_open_aria()}
             >
-              <img {src} alt="" loading="lazy" />
+              <img {src} alt="" loading="lazy" decoding="async" />
             </button>
           {/each}
         </div>

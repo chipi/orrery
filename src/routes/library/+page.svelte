@@ -203,8 +203,7 @@
               alt=""
               width="56"
               height="56"
-              loading="lazy"
-            />
+              loading="lazy" decoding="async" />
           {/if}
           <div class="src-meta">
             <h2>

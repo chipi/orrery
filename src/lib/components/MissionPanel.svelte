@@ -329,8 +329,7 @@
             onerror={(e) => {
               const fig = (e.currentTarget as HTMLImageElement).closest('figure');
               if (fig) fig.style.display = 'none';
-            }}
-          />
+            }} decoding="async" />
         </figure>
         {#if flightCaveat}
           <div class="flight-caveat" role="note">
@@ -638,7 +637,7 @@
                 onclick={() => (lightboxSrc = src)}
                 aria-label={mission.name ?? mission.id}
               >
-                <img {src} alt="" loading="lazy" />
+                <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
           </div>
@@ -687,7 +686,7 @@
     aria-label={m.panel_lightbox_close()}
     onclick={() => (lightboxSrc = null)}
   >
-    <img src={lightboxSrc} alt="" />
+    <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
   <div class="lightbox-meta">

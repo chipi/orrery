@@ -67,7 +67,7 @@
         <li>
           <a class="card" href="{base}/fleet?id={item.entry.id}">
             <figure>
-              <img src={item.heroUrl} alt="{item.entry.name} hero image" loading="lazy" />
+              <img src={item.heroUrl} alt="{item.entry.name} hero image" loading="lazy" decoding="async" />
               <figcaption>
                 <span class="name">{item.entry.name}</span>
                 <span class="meta">

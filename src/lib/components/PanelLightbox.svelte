@@ -26,7 +26,7 @@
 
 {#if src}
   <button type="button" class="lightbox" aria-label={m.panel_lightbox_close()} onclick={onClose}>
-    <img {src} alt="" />
+    <img {src} alt="" loading="lazy" decoding="async" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
   <div class="lightbox-meta">

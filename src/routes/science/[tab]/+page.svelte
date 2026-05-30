@@ -38,7 +38,7 @@
 </header>
 
 <figure class="tab-cover">
-  <img src="{base}/diagrams/science/_cover-{data.tab}.svg" alt="" />
+  <img src="{base}/diagrams/science/_cover-{data.tab}.svg" alt="" loading="lazy" decoding="async" />
 </figure>
 
 {#if data.intro}

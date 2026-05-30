@@ -229,7 +229,7 @@
         <li class="entry">
           {#if f.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
-              <img src="{base}{f.cover}" alt="" loading="lazy" />
+              <img src="{base}{f.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div
@@ -259,7 +259,7 @@
         <li class="entry">
           {#if d.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
-              <img src="{base}{d.cover}" alt="" loading="lazy" />
+              <img src="{base}{d.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div
@@ -293,7 +293,7 @@
         <li class="entry">
           {#if p.cover}
             <div class="thumb thumb--square" aria-hidden="true">
-              <img src="{base}{p.cover}" alt="" loading="lazy" />
+              <img src="{base}{p.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div
@@ -325,7 +325,7 @@
         <li class="entry">
           {#if c.cover}
             <div class="thumb thumb--square" aria-hidden="true">
-              <img src="{base}{c.cover}" alt="" loading="lazy" />
+              <img src="{base}{c.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div

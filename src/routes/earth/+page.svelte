@@ -1288,7 +1288,7 @@
                 onclick={() => (panelLightbox = src)}
                 aria-label={selected.name ?? selected.id}
               >
-                <img {src} alt="" loading="lazy" />
+                <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
           </div>
@@ -1348,7 +1348,7 @@
       aria-label={m.panel_lightbox_close()}
       onclick={() => (panelLightbox = null)}
     >
-      <img src={panelLightbox} alt="" />
+      <img src={panelLightbox} alt="" loading="lazy" decoding="async" />
       <span class="lightbox-close" aria-hidden="true">×</span>
     </button>
     <div class="lightbox-meta">

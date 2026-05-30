@@ -1902,7 +1902,16 @@
         mat.normalMap?.dispose();
       };
       scene.traverse((obj) => {
-        if (obj instanceof THREE.Mesh) {
+        // GH #271 / W1 — Line / Points walks added: the explore scene
+        // wires its own star-field as THREE.Points (and orbit/connector
+        // primitives as THREE.Line). Without these branches their
+        // geometry + material handles never get released on route
+        // leave, leaking VRAM in long sessions.
+        if (
+          obj instanceof THREE.Mesh ||
+          obj instanceof THREE.Line ||
+          obj instanceof THREE.Points
+        ) {
           obj.geometry?.dispose();
           if (Array.isArray(obj.material)) {
             obj.material.forEach((m) => {

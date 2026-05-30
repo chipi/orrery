@@ -1680,7 +1680,7 @@ sample      ${debugInfo.projectedPxSample}`}
                 onclick={() => (panelLightbox = src)}
                 aria-label={selected.name ?? selected.id}
               >
-                <img {src} alt="" loading="lazy" />
+                <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
           </div>

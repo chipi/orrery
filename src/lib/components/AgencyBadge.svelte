@@ -12,7 +12,7 @@
 {#if paths.length > 0}
   <span class="badges" aria-hidden="true">
     {#each paths as p (p)}
-      <img src={p} alt="" class="badge" />
+      <img src={p} alt="" class="badge" loading="lazy" decoding="async" />
     {/each}
   </span>
 {/if}

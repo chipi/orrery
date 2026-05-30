@@ -338,7 +338,7 @@
                 onclick={() => (lightboxSrc = src)}
                 aria-label={planet.name}
               >
-                <img {src} alt="" loading="lazy" />
+                <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
           </div>
@@ -354,7 +354,7 @@
         aria-label={m.panel_lightbox_close()}
         onclick={() => (lightboxSrc = null)}
       >
-        <img src={lightboxSrc} alt="" />
+        <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
         <span class="lightbox-close" aria-hidden="true">×</span>
       </button>
       <div class="lightbox-meta">

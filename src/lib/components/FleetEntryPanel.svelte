@@ -292,14 +292,14 @@
                 onclick={() => (lightboxSrc = src)}
                 aria-label="View photo"
               >
-                <img {src} alt="" loading="lazy" />
+                <img {src} alt="" loading="lazy" decoding="async" />
               </button>
             {/each}
           </div>
         {/if}
       {:else if tab === 'anatomy' && diagramPath}
         <div class="anatomy">
-          <img src={diagramPath} alt="Anatomy diagram for {entry.name}" />
+          <img src={diagramPath} alt="Anatomy diagram for {entry.name}" loading="lazy" decoding="async" />
           <p class="anatomy-caption">
             Hand-drawn schematic in the canonical /science chapter style.
           </p>
@@ -319,14 +319,14 @@
                 </a>
               </header>
               {#if flight.patch_path}
-                <img class="patch" src={flight.patch_path} alt="" />
+                <img class="patch" src={flight.patch_path} alt="" loading="lazy" decoding="async" />
               {/if}
               {#if flight.crew && flight.crew.length > 0}
                 <ul class="crew-grid">
                   {#each flight.crew as crew (crew.name)}
                     <li class="crew-card">
                       {#if crew.portrait_path}
-                        <img src={crew.portrait_path} alt="" loading="lazy" />
+                        <img src={crew.portrait_path} alt="" loading="lazy" decoding="async" />
                       {:else}
                         <div class="crew-portrait-empty" aria-hidden="true">—</div>
                       {/if}
@@ -411,7 +411,7 @@
     onclick={() => (lightboxSrc = null)}
     aria-label="Close photo"
   >
-    <img src={lightboxSrc} alt="" />
+    <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
   </button>
 {/if}
 

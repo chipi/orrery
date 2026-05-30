@@ -209,7 +209,7 @@
         <li class="entry">
           {#if book.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
-              <img src="{base}{book.cover}" alt="" loading="lazy" />
+              <img src="{base}{book.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div
@@ -248,7 +248,7 @@
         <li class="entry">
           {#if blog.cover}
             <div class="thumb thumb--square" aria-hidden="true">
-              <img src="{base}{blog.cover}" alt="" loading="lazy" />
+              <img src="{base}{blog.cover}" alt="" loading="lazy" decoding="async" />
             </div>
           {:else}
             <div

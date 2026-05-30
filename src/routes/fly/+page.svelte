@@ -24,6 +24,7 @@
     cameraDistanceFor,
   } from '$lib/fly-scene-constants';
   import { classifyConicEarth } from '$lib/fly-conics-earth';
+  import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
   import {
     computeMissionApply,
     computeScenarioApply,
@@ -1044,184 +1045,44 @@
     scene.add(new THREE.AmbientLight(0x111133, 0.8));
 
     // ──────────────────────────────────────────────────────────────
-    // Cislunar scene (ADR-058) — Earth-centred, units = km × SCALE_CISLUNAR.
-    // Lives alongside the heliocentric scene; the active scene/camera
-    // is picked in the render loop based on viewMode. Object meshes
-    // are built once here and updated each frame from cislunarTrajectory.
+    // Cislunar scene (ADR-058) — Earth-centred, km-scale. Static
+    // construction (scene, camera, lights, Earth+Moon meshes, SoI
+    // rings) lives in $lib/three/fly-cislunar-scene (W9 wave 8).
+    // Layer-toggle subscription stays here because it owns the
+    // cleanup contract for onDestroy.
     // ──────────────────────────────────────────────────────────────
-    const SCALE_CISLUNAR = 1 / 10000; // 1 km → 1e-4 units. 384,400 km → 38.44 u.
-    const cislunarScene = new THREE.Scene();
-    const cislunarCamera = new THREE.PerspectiveCamera(
-      55,
-      container.clientWidth / container.clientHeight,
-      0.01,
-      4000,
-    );
-    cislunarScene.add(new THREE.AmbientLight(0xeeeeff, 0.7));
-    const cislunarSun = new THREE.DirectionalLight(0xfff4d0, 1.6);
-    cislunarSun.position.set(1000, 200, 1000);
-    cislunarScene.add(cislunarSun);
-
-    // Earth at origin — visually exaggerated 3× so the planet reads at
-    // the same on-screen size as the Moon while the Earth-Moon distance
-    // stays geometrically true.
-    // Earth + Moon are dual-layered:
-    //   - Inner core: SOLID at TRUE physical radius (R_BODY × SCALE),
-    //     full opacity, strong colour. This is "the planet" — clearly
-    //     readable, not fuzzy. Earth's true radius is 0.638u at this
-    //     scale, Moon's is 0.174u.
-    //   - Outer hint: FAINT translucent shell at 3× radius, low alpha,
-    //     no strong colour. Suggests body presence at wide zoom
-    //     without overwhelming the rest of the scene.
-    // The orbit ring + spacecraft sprite read clearly between the two
-    // layers when zoomed in on the Moon.
-    const cislunarTexLoader = new THREE.TextureLoader();
-    const cislunarEarthTex = cislunarTexLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
-    const cislunarEarth = new THREE.Mesh(
-      new THREE.SphereGeometry(R_EARTH_KM * SCALE_CISLUNAR, 32, 32),
-      new THREE.MeshStandardMaterial({
-        map: cislunarEarthTex,
-        color: 0xffffff,
-        roughness: 0.6,
-      }),
-    );
-    cislunarScene.add(cislunarEarth);
-
-    // Moon — position updated each frame from moonEciPos(simDay).
-    const cislunarMoonTex = cislunarTexLoader.load(`${base}/textures/2k_moon.jpg`);
-    const cislunarMoon = new THREE.Mesh(
-      new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR, 24, 24),
-      new THREE.MeshStandardMaterial({
-        map: cislunarMoonTex,
-        color: 0xffffff,
-        roughness: 0.95,
-      }),
-    );
-    cislunarScene.add(cislunarMoon);
-
-    // SoI (Sphere-of-Influence) rings — wired to the Science Lens
-    // 'soi' layer toggle. Earth SoI = 924,000 km radius, Moon SoI =
-    // 66,100 km. In cislunar scale these come out to ~92u and ~6.6u
-    // respectively — both visible in the wide view. The Moon ring is
-    // child of cislunarMoon so it tracks the Moon's motion.
-    const cislunarEarthSoI = new THREE.Mesh(
-      new THREE.TorusGeometry(924_000 * SCALE_CISLUNAR, 0.08, 8, 96),
-      new THREE.MeshBasicMaterial({
-        color: 0x6aa9ff,
-        transparent: true,
-        opacity: 0.35,
-        depthWrite: false,
-      }),
-    );
-    cislunarEarthSoI.rotation.x = Math.PI / 2;
-    cislunarEarthSoI.visible = false;
-    cislunarScene.add(cislunarEarthSoI);
-
-    const cislunarMoonSoI = new THREE.Mesh(
-      new THREE.TorusGeometry(66_100 * SCALE_CISLUNAR, 0.04, 8, 64),
-      new THREE.MeshBasicMaterial({
-        color: 0xff9b6a,
-        transparent: true,
-        opacity: 0.45,
-        depthWrite: false,
-      }),
-    );
-    cislunarMoonSoI.rotation.x = Math.PI / 2;
-    cislunarMoonSoI.visible = false;
-    cislunarMoon.add(cislunarMoonSoI);
+    const cislunarHandles = buildCislunarScene({
+      aspect: container.clientWidth / container.clientHeight,
+      earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
+      moonTextureUrl: `${base}/textures/2k_moon.jpg`,
+    });
+    const cislunarScene = cislunarHandles.scene;
+    const cislunarCamera = cislunarHandles.camera;
+    const SCALE_CISLUNAR = cislunarHandles.scaleCislunar;
+    const cislunarEarth = cislunarHandles.earth;
+    const cislunarMoon = cislunarHandles.moon;
+    const cislunarEarthSoI = cislunarHandles.earthSoI;
+    const cislunarMoonSoI = cislunarHandles.moonSoI;
 
     // Subscribe to the 'soi' layer toggle so checking/unchecking in
-    // the Science Layers panel actually flips visibility.
+    // the Science Layers panel actually flips ring visibility.
     const stopSoiLayerCislunar = onLayerChange('soi', (on) => {
       cislunarEarthSoI.visible = on;
       cislunarMoonSoI.visible = on;
     });
 
     // ─── Cislunar Science Layers (ADR-058 follow-up) ─────────────────
-    // Gravity / velocity / centripetal arrows + apsides markers + coast
-    // preview rendered in the cislunar scene, mirroring the heliocentric
-    // overlays but anchored to ECI km coords and using Earth/Moon as
-    // central bodies. Conics state is derived separately (Earth-frame
-    // classifyConic) and fed into the existing ConicSectionPanel.
-
-    // Gravity arrows: Earth (blue) + Moon (gray). Anchored at the
-    // spacecraft, point at the body, length log-scaled.
-    const cisGravEarthArrow = new THREE.ArrowHelper(
-      new THREE.Vector3(-1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      4,
-      0x6aa9ff,
-      0.7,
-      0.4,
-    );
-    cisGravEarthArrow.visible = false;
-    cislunarScene.add(cisGravEarthArrow);
-
-    const cisGravMoonArrow = new THREE.ArrowHelper(
-      new THREE.Vector3(1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      4,
-      0xcfcfcf,
-      0.7,
-      0.4,
-    );
-    cisGravMoonArrow.visible = false;
-    cislunarScene.add(cisGravMoonArrow);
-
-    // Velocity tangent arrow (teal).
-    const cisVelocityArrow = new THREE.ArrowHelper(
-      new THREE.Vector3(1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      4,
-      0x4ecdc4,
-      0.7,
-      0.4,
-    );
-    cisVelocityArrow.visible = false;
-    cislunarScene.add(cisVelocityArrow);
-
-    // Centripetal arrow (red), points toward the dominant body.
-    const cisCentripetalArrow = new THREE.ArrowHelper(
-      new THREE.Vector3(-1, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      4,
-      0xff6b6b,
-      0.7,
-      0.4,
-    );
-    cisCentripetalArrow.visible = false;
-    cislunarScene.add(cisCentripetalArrow);
-
-    // Apsides markers — pink perigee + blue apogee. Placed each frame
-    // at min/max distance from the current phase's central body.
-    const cisPeriMarker = new THREE.Mesh(
-      new THREE.SphereGeometry(0.3, 12, 12),
-      new THREE.MeshBasicMaterial({ color: 0xff6b6b, transparent: true, opacity: 0.85 }),
-    );
-    cisPeriMarker.visible = false;
-    cislunarScene.add(cisPeriMarker);
-    const cisApoMarker = new THREE.Mesh(
-      new THREE.SphereGeometry(0.3, 12, 12),
-      new THREE.MeshBasicMaterial({ color: 0x6aa9ff, transparent: true, opacity: 0.85 }),
-    );
-    cisApoMarker.visible = false;
-    cislunarScene.add(cisApoMarker);
-
-    // Coast preview — dashed yellow line projecting the spacecraft's
-    // future trajectory under Earth gravity (Tier 1: simple two-body
-    // integrator, ignores Moon gravity outside Moon SoI).
-    const cisCoastLine = new THREE.Line(
-      new THREE.BufferGeometry(),
-      new THREE.LineDashedMaterial({
-        color: 0xffd166,
-        transparent: true,
-        opacity: 0.75,
-        dashSize: 0.5,
-        gapSize: 0.3,
-      }),
-    );
-    cisCoastLine.visible = false;
-    cislunarScene.add(cisCoastLine);
+    // Overlay object construction (gravity / velocity / centripetal
+    // arrows + apsides markers + coast line) moved to the scene
+    // builder; component owns the per-layer subscriptions and the
+    // per-frame position / direction updates.
+    const cisGravEarthArrow = cislunarHandles.overlays.gravityEarth;
+    const cisGravMoonArrow = cislunarHandles.overlays.gravityMoon;
+    const cisVelocityArrow = cislunarHandles.overlays.velocity;
+    const cisCentripetalArrow = cislunarHandles.overlays.centripetal;
+    const cisPeriMarker = cislunarHandles.overlays.periMarker;
+    const cisApoMarker = cislunarHandles.overlays.apoMarker;
+    const cisCoastLine = cislunarHandles.overlays.coastLine;
 
     const stopGravityLayerCislunar = onLayerChange('gravity', (on) => {
       cisGravEarthArrow.visible = on;

@@ -11,7 +11,11 @@ import type { Persona, ProviderName } from './audio-types';
 export interface EpisodeVariant {
   provider: ProviderName;
   voice_id: string;
-  tts_model?: string;
+  // Required — every variant ships with a model id. The pipeline writes
+  // provider-specific defaults from PROVIDER_MODELS when the operator
+  // doesn't override (scripts/audio/tts/provider.ts). Keep this strict
+  // so /credits never has to fall back to "—".
+  tts_model: string;
   mp3: string;
   vtt: string;
   txt: string;

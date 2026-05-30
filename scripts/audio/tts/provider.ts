@@ -18,7 +18,18 @@ export interface TtsOutput {
   audio: Buffer;
   captions: string;
   transcript: string;
+  /**
+   * Stripped transcript character count — the human-readable text size.
+   * Used as the provenance manifest's `chars` field so the value means
+   * the same thing across providers.
+   */
   chars: number;
+  /**
+   * Billable character count under this provider's pricing model.
+   * Google counts SSML markup; ElevenLabs counts stripped transcript.
+   * Used only by the cost ledger so per-provider rates apply correctly.
+   */
+  billable_chars: number;
   cost_usd: number;
 }
 

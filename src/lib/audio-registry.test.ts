@@ -1,98 +1,16 @@
 import { describe, it, expect } from 'vitest';
+import { collapseVariants, PROVIDER_PRIORITY, type ProvenanceEntry } from './audio-registry.svelte';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-// We test the collapseVariants logic indirectly via a fixture-driven
-// approach: construct provenance entries and assert the resulting Episode
-// objects have variants grouped + active-provider chosen by priority.
-//
-// collapseVariants isn't exported; we exercise it through a mock of the
-// AudioRegistry.load() path by simulating what fetch() would return.
-// Instead of exposing internals, we replicate the priority + grouping
-// logic in a unit-pure helper and test it directly.
-
-type ProviderName = 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
-type Persona = 'curator' | 'guide' | 'enthusiast';
-
-interface ProvenanceEntry {
-  episode_id: string;
-  locale: string;
-  persona: Persona;
-  provider: ProviderName;
-  voice_id: string;
-  route?: string;
-  title?: string;
-  duration_target_sec?: number;
-  path_mp3: string;
-  path_vtt: string;
-  path_txt: string;
-}
-
-interface Variant {
-  provider: ProviderName;
-  voice_id: string;
-  mp3: string;
-  vtt: string;
-  txt: string;
-}
-
-interface Episode {
-  id: string;
-  title: string;
-  locale: string;
-  persona: Persona;
-  route?: string;
-  variants: Variant[];
-  activeProvider: ProviderName;
-}
-
-// Mirror of audio-registry.svelte.ts PROVIDER_PRIORITY + collapseVariants.
-// Tests both this helper AND the live module's behaviour stay aligned —
-// any drift will fail one of these assertions.
-const PROVIDER_PRIORITY: ProviderName[] = [
-  'elevenlabs',
-  'google',
-  'openai',
-  'azure',
-  'coqui-local',
-];
-
-function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
-  const byKey = new Map<string, Episode>();
-  for (const e of entries) {
-    const key = `${e.episode_id}|${e.locale}|${e.persona}`;
-    const variant: Variant = {
-      provider: e.provider,
-      voice_id: e.voice_id,
-      mp3: e.path_mp3,
-      vtt: e.path_vtt,
-      txt: e.path_txt,
-    };
-    const existing = byKey.get(key);
-    if (existing) {
-      existing.variants.push(variant);
-    } else {
-      byKey.set(key, {
-        id: e.episode_id,
-        title: e.title ?? e.episode_id,
-        locale: e.locale,
-        persona: e.persona,
-        route: e.route,
-        variants: [variant],
-        activeProvider: variant.provider,
-      });
-    }
-  }
-  for (const ep of byKey.values()) {
-    ep.variants.sort(
-      (a, b) => PROVIDER_PRIORITY.indexOf(a.provider) - PROVIDER_PRIORITY.indexOf(b.provider),
-    );
-    ep.activeProvider = ep.variants[0].provider;
-  }
-  return [...byKey.values()];
-}
+// Test the LIVE collapseVariants exported from audio-registry.svelte.ts
+// — previously this file mirrored the helper inline, which meant a
+// refactor of the real module wouldn't be caught here (#7). Importing
+// the real function ensures every drift surfaces as a test failure.
 
 const sampleEntry = (
   episode_id: string,
-  provider: ProviderName,
+  provider: ProvenanceEntry['provider'],
   overrides: Partial<ProvenanceEntry> = {},
 ): ProvenanceEntry => ({
   episode_id,
@@ -100,6 +18,7 @@ const sampleEntry = (
   persona: 'curator',
   provider,
   voice_id: `${provider}-voice`,
+  tts_model: provider === 'google' ? 'neural2' : 'eleven_multilingual_v2',
   route: '/',
   title: episode_id,
   path_mp3: `/audio/en-US/curator/${episode_id}.aaaa.mp3`,
@@ -122,7 +41,6 @@ describe('collapseVariants', () => {
   });
 
   it('puts elevenlabs first in variants[] per PROVIDER_PRIORITY', () => {
-    // Order-agnostic input — elevenlabs should bubble to position 0 regardless.
     const entries = [
       sampleEntry('saturn-rings', 'google'),
       sampleEntry('saturn-rings', 'elevenlabs'),
@@ -167,5 +85,56 @@ describe('collapseVariants', () => {
     const result = collapseVariants(entries);
     expect(result[0].route).toBe('/mars');
     expect(result[0].title).toBe('Mars Guide');
+  });
+
+  it('preserves tts_model per variant', () => {
+    const entries = [
+      sampleEntry('pale-blue-dot', 'google', { tts_model: 'neural2' }),
+      sampleEntry('pale-blue-dot', 'elevenlabs', { tts_model: 'eleven_multilingual_v2' }),
+    ];
+    const result = collapseVariants(entries);
+    const byProvider = Object.fromEntries(result[0].variants.map((v) => [v.provider, v.tts_model]));
+    expect(byProvider.google).toBe('neural2');
+    expect(byProvider.elevenlabs).toBe('eleven_multilingual_v2');
+  });
+
+  it('PROVIDER_PRIORITY puts elevenlabs ahead of google', () => {
+    expect(PROVIDER_PRIORITY.indexOf('elevenlabs')).toBeLessThan(
+      PROVIDER_PRIORITY.indexOf('google'),
+    );
+  });
+});
+
+// ─── Live-corpus integrity ───────────────────────────────────────────────
+// Cross-check the shipping audio-provenance.json against the schema's
+// uniqueness contract: every (episode_id, locale, persona, provider) tuple
+// MUST be unique. A duplicate would cause collapseVariants to drop one of
+// the provider rows and break A/B in production.
+
+describe('audio-provenance.json integrity', () => {
+  it('has no duplicate (episode_id, locale, persona, provider) tuples', () => {
+    const raw = readFileSync(
+      join(process.cwd(), 'static/data/audio/audio-provenance.json'),
+      'utf-8',
+    );
+    const data = JSON.parse(raw) as { entries: ProvenanceEntry[] };
+    const seen = new Set<string>();
+    const dupes: string[] = [];
+    for (const e of data.entries) {
+      const k = `${e.episode_id}|${e.locale}|${e.persona}|${e.provider}`;
+      if (seen.has(k)) dupes.push(k);
+      seen.add(k);
+    }
+    expect(dupes).toEqual([]);
+  });
+
+  it('every entry has tts_model populated (required after #40 tightening)', () => {
+    const raw = readFileSync(
+      join(process.cwd(), 'static/data/audio/audio-provenance.json'),
+      'utf-8',
+    );
+    const data = JSON.parse(raw) as { entries: ProvenanceEntry[] };
+    const missing = data.entries.filter((e) => !e.tts_model);
+    expect(missing.map((e) => `${e.episode_id}/${e.provider}`)).toEqual([]);
   });
 });

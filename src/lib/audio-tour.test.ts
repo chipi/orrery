@@ -1,5 +1,17 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { CURATOR_FULL_TOUR, EPISODE_STAGES, stagesForEpisode } from './audio-tour';
+
+interface MinimalProvenanceEntry {
+  episode_id: string;
+}
+
+function loadProvenanceIds(): Set<string> {
+  const raw = readFileSync(join(process.cwd(), 'static/data/audio/audio-provenance.json'), 'utf-8');
+  const data = JSON.parse(raw) as { entries: MinimalProvenanceEntry[] };
+  return new Set(data.entries.map((e) => e.episode_id));
+}
 
 describe('CURATOR_FULL_TOUR', () => {
   it('opens with pale-blue-dot and closes with capability-ladder-close', () => {
@@ -76,5 +88,23 @@ describe('stagesForEpisode', () => {
         ).toBeGreaterThanOrEqual(stages[i - 1].at_sec);
       }
     }
+  });
+});
+
+// Tour ↔ provenance integrity (#8). Every id in CURATOR_FULL_TOUR and
+// every key in EPISODE_STAGES must resolve to an actual provenance row,
+// otherwise the tour will silently skip episodes and stage hooks will
+// no-op against episodes that never play.
+describe('tour ↔ provenance integrity', () => {
+  it('every CURATOR_FULL_TOUR id has a provenance entry', () => {
+    const ids = loadProvenanceIds();
+    const missing = CURATOR_FULL_TOUR.filter((id) => !ids.has(id));
+    expect(missing).toEqual([]);
+  });
+
+  it('every EPISODE_STAGES key has a provenance entry', () => {
+    const ids = loadProvenanceIds();
+    const missing = Object.keys(EPISODE_STAGES).filter((id) => !ids.has(id));
+    expect(missing).toEqual([]);
   });
 });

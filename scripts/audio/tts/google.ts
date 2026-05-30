@@ -2,11 +2,19 @@
 // Uses the official @google-cloud/text-to-speech SDK with GOOGLE_APPLICATION_
 // CREDENTIALS env var (service account JSON path or ADC). Cloud TTS doesn't
 // accept API keys for server-side use; the SDK handles OAuth from the JSON.
+//
+// Audio format note (PRD-016 M6): Google MP3 output bitrate is governed by
+// the encoder, not exposed as a tunable. We use the MP3 encoding (Cloud TTS
+// defaults to 64 kbps for that target) at a 24 kHz sample rate to keep the
+// frequency band centred on speech. ElevenLabs is the 96 kbps side of the
+// A/B; consistent file SIZE expectations across providers are surfaced via
+// the cost ledger, not bitrate uniformity.
 
 import { TextToSpeechClient } from '@google-cloud/text-to-speech';
 import type { google as ttsProto } from '@google-cloud/text-to-speech/build/protos/protos';
 
 import type { TtsInput, TtsOutput, TtsProvider, ProviderName } from './provider';
+import { withRetry, type TransientError } from './retry';
 
 // Cloud TTS Neural2 / WaveNet pricing — $16 per 1M chars.
 // Free tier: 1M chars/mo for the first 12 months. Studio voices are $160/1M.
@@ -40,7 +48,22 @@ export class GoogleTtsProvider implements TtsProvider {
       },
     };
 
-    const [response] = await this.client.synthesizeSpeech(request);
+    const response = await withRetry(async () => {
+      try {
+        const [res] = await this.client.synthesizeSpeech(request);
+        return res;
+      } catch (err) {
+        // The Google SDK throws GoogleError with a `code` field. Map
+        // codes 13/14 (INTERNAL, UNAVAILABLE) + 4 (DEADLINE_EXCEEDED) +
+        // 8 (RESOURCE_EXHAUSTED) to retryable transients.
+        const e = err as Error & { code?: number };
+        const t: TransientError = e;
+        if (e.code === 13 || e.code === 14 || e.code === 4) t.status = 503;
+        else if (e.code === 8) t.status = 429;
+        throw t;
+      }
+    });
+
     if (!response.audioContent) {
       throw new Error('Google TTS response missing audioContent');
     }
@@ -52,11 +75,12 @@ export class GoogleTtsProvider implements TtsProvider {
       : Buffer.from(response.audioContent as Uint8Array | string);
 
     const transcript = stripSsml(input.ssml);
-    const chars = countBillableChars(input.ssml);
-    const cost_usd = chars * USD_PER_CHAR_NEURAL2;
+    const billable_chars = countBillableChars(input.ssml);
+    const chars = transcript.length;
+    const cost_usd = billable_chars * USD_PER_CHAR_NEURAL2;
     const captions = buildApproxVtt(transcript, audio.byteLength);
 
-    return { audio, captions, transcript, chars, cost_usd };
+    return { audio, captions, transcript, chars, billable_chars, cost_usd };
   }
 }
 

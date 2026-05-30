@@ -2,7 +2,7 @@
 // Mirrors the image-provenance pattern (ADR-047); per-asset attribution
 // surfaced on /credits + enforced by validate-data.
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 
 const PATH = join('static', 'data', 'audio', 'audio-provenance.json');
@@ -18,7 +18,7 @@ export interface ProvenanceEntry {
   persona: Persona;
   provider: ProviderName;
   voice_id: string;
-  tts_model?: string;
+  tts_model: string;
   route?: string;
   context?: string;
   title?: string;
@@ -56,7 +56,35 @@ function load(): Manifest {
 }
 
 function save(m: Manifest): void {
-  writeFileSync(PATH, JSON.stringify(m, null, 2) + '\n');
+  // Atomic write — crash mid-write leaves the prior valid manifest
+  // rather than truncating the file the runtime registry reads from.
+  const tmp = `${PATH}.tmp`;
+  writeFileSync(tmp, JSON.stringify(m, null, 2) + '\n');
+  renameSync(tmp, PATH);
+}
+
+function isStructurallyEqual(a: ProvenanceEntry, b: ProvenanceEntry): boolean {
+  // Compare every field except `generated_at` — re-running the same
+  // provider on unchanged input is a no-op and shouldn't churn the
+  // manifest's top-level generated_at timestamp (#35).
+  return (
+    a.episode_id === b.episode_id &&
+    a.locale === b.locale &&
+    a.persona === b.persona &&
+    a.provider === b.provider &&
+    a.voice_id === b.voice_id &&
+    a.tts_model === b.tts_model &&
+    a.route === b.route &&
+    a.context === b.context &&
+    a.title === b.title &&
+    a.duration_target_sec === b.duration_target_sec &&
+    a.path_mp3 === b.path_mp3 &&
+    a.path_vtt === b.path_vtt &&
+    a.path_txt === b.path_txt &&
+    a.chars === b.chars &&
+    a.text_authorship === b.text_authorship &&
+    a.text_author_model === b.text_author_model
+  );
 }
 
 export function recordProvenance(entry: ProvenanceEntry): void {
@@ -73,6 +101,11 @@ export function recordProvenance(entry: ProvenanceEntry): void {
       e.provider === entry.provider,
   );
   if (idx >= 0) {
+    if (isStructurallyEqual(m.entries[idx], entry)) {
+      // No-op: identical input. Leave the file alone so re-running
+      // generate.ts on a cached corpus doesn't churn git diffs.
+      return;
+    }
     m.entries[idx] = entry;
   } else {
     m.entries.push(entry);

@@ -219,7 +219,8 @@ Google Neural2/Studio voices: search at https://cloud.google.com/text-to-speech/
 **Single declarative file**: `src/lib/audio-tour.ts`. Two exports:
 
 - `CURATOR_FULL_TOUR: string[]` — ordered episode ids. Shuffle to change the
-  listen-through order. Currently 21 episodes, ~70 minutes.
+  listen-through order. Currently 21 episodes, ~66 minutes (sum of
+  `duration_target_sec` across the tour rows of `audio-provenance.json`).
 - `EPISODE_STAGES: Record<episode_id, AudioStage[]>` — time-coded UI hooks
   that fire during playback. Five actions:
   - `cue` — text banner inside the overlay (no DOM hook needed; works on
@@ -275,10 +276,12 @@ Check that `static/data/audio/audio-provenance.json` has a row for the
 episode. The runtime registry reads from this file; without an entry,
 the episode doesn't appear in the inventory.
 
-**Tour skips episodes mid-play.**
-`audio-tour.ts → CURATOR_FULL_TOUR` lists episode ids; the runtime filters
-to ids present in `audio-provenance.json`. Missing audio assets just get
-skipped — generate them and they reappear.
+**Tour starts with fewer episodes than expected.**
+The filter happens **once at `startTour()`** (`AudioOverlay.svelte`) — the
+runtime keeps only `CURATOR_FULL_TOUR` ids that resolve in
+`audio-provenance.json`. There is no mid-play skipping; once the tour is
+running, it plays its filtered list to the end. Missing ids stay missing
+until you regenerate the affected episodes.
 
 **Captions appear too early/late.**
 VTT timing is sentence-level approximate (character-distribution against

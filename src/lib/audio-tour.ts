@@ -100,7 +100,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     {
       at_sec: 90,
       action: 'cue',
-      target: 'The same hurricane for 350 years. Triple Earth’s strongest.',
+      target: "The same hurricane for 350 years. Triple Earth's strongest.",
     },
   ],
 
@@ -218,7 +218,11 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /moon · moon-one-lifetime — Curator ───────────────────────────
   'moon-one-lifetime': [
     { at_sec: 60, action: 'cue', target: 'Look at the cluster of Apollo sites on the near side.' },
-    { at_sec: 100, action: 'cue', target: 'Six landings in 3.5 years. Then 52 years of silence.' },
+    {
+      at_sec: 100,
+      action: 'cue',
+      target: 'Six landings in 3.5 years. Then a half-century of silence.',
+    },
   ],
 
   // ── /moon · cernan-last-words — Guide (anchored Atmospheric Move) ─
@@ -227,14 +231,14 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     {
       at_sec: 100,
       action: 'cue',
-      target: 'Cernan was the last person on the Moon for fifty-two years.',
+      target: 'Apollo 17 left in December 1972. The footprint has been alone since.',
     },
   ],
 
   // ── /moon · far-side — Guide (anchored Atmospheric Move) ──────────
   'far-side': [
     { at_sec: 8, action: 'cue', target: 'Rotate the sphere to the far side.' },
-    { at_sec: 90, action: 'cue', target: 'Find Von Kármán crater — Chang’e 4 lives there.' },
+    { at_sec: 90, action: 'cue', target: "Find Von Kármán crater — Chang'e 4 lives there." },
     {
       at_sec: 150,
       action: 'cue',
@@ -416,7 +420,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
 
 // =============================================================================
 // CURATOR_FULL_TOUR — the ordered sequence "Take the Curator Tour" plays.
-// 21 episodes · ~70 min · documentary order from Sagan open to capability close.
+// 21 episodes · ~66 min · documentary order from Sagan open to capability close.
 //
 // Default-active provider when an episode has multiple variants:
 // audio-registry.svelte.ts PROVIDER_PRIORITY puts ElevenLabs first
@@ -431,7 +435,7 @@ export const CURATOR_FULL_TOUR: string[] = [
   'guide-earth', //             Earth's orbital neighborhood
   'guide-moon', //              Moon map
   'moon-one-lifetime', //       Curator deep-time: Kitty Hawk → Tranquillity
-  'cernan-last-words', //       Apollo 17 + the 50-year silence
+  'cernan-last-words', //       Apollo 17 + the half-century of silence
   'far-side', //                Chang'e 4 + Queqiao
   'guide-iss', //               ISS modules
   'guide-tiangong', //          Tiangong

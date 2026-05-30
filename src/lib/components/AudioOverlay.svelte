@@ -3,7 +3,7 @@
   // Right-panel on desktop ≥800 px; bottom-sheet on mobile <800 px.
   // S5.1 — real playback. <audio> element + per-route inventory + transport.
 
-  import { onMount, tick } from 'svelte';
+  import { onMount, tick, untrack } from 'svelte';
   import { page } from '$app/stores';
   import { goto } from '$app/navigation';
   import { browser } from '$app/environment';
@@ -11,8 +11,10 @@
   import { audio, type Episode } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR, stagesForEpisode, type AudioStage } from '$lib/audio-tour';
+  import { localeFromPage } from '$lib/locale';
 
   let audioEl: HTMLAudioElement | null = $state(null);
+  let overlayRoot: HTMLDivElement | null = $state(null);
   let scope: 'screen' | 'all' = $state('screen');
   // Tour Phase 2 — track which stage timings already fired this play.
   // Keyed by `${episode_id}:${at_sec}:${action}` so re-loading the same
@@ -20,7 +22,12 @@
   let firedStages = $state<Set<string>>(new Set());
   // Active cue message (banner inside overlay) — null = no cue showing.
   let activeCue = $state<string | null>(null);
-  let cueTimer: number | null = null;
+  // Reactive so episode swaps can cancel a pending cue dismissal without
+  // a stale timer trampling the new cue.
+  let cueTimer = $state<number | null>(null);
+  // Captures focus origin so closing the overlay restores focus to the
+  // element that opened it (PRD-016 M14 — desktop focus discipline).
+  let focusReturnTo: HTMLElement | null = null;
 
   const PROVIDER_LABEL: Record<string, string> = {
     google: 'Google',
@@ -34,6 +41,52 @@
     void audioRegistry.load();
   });
 
+  // Focus management (PRD-016 M14 — keyboard focus discipline).
+  // When the overlay opens, capture the launching element and move focus
+  // into the panel so Tab/Shift+Tab cycles inside it. When it closes,
+  // restore focus to the launcher. Escape also closes the panel.
+  $effect(() => {
+    if (!browser) return;
+    if (audio.open) {
+      const active = document.activeElement as HTMLElement | null;
+      if (active && active !== document.body) focusReturnTo = active;
+      // Defer focus move until the overlay's DOM is in place.
+      void tick().then(() => {
+        if (!overlayRoot) return;
+        const firstBtn = overlayRoot.querySelector(
+          'button:not([disabled]), [href], input:not([disabled])',
+        ) as HTMLElement | null;
+        firstBtn?.focus();
+      });
+    } else if (focusReturnTo) {
+      focusReturnTo.focus();
+      focusReturnTo = null;
+    }
+  });
+
+  function onOverlayKeydown(e: KeyboardEvent): void {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      audio.closeOverlay();
+      return;
+    }
+    if (e.key !== 'Tab' || !overlayRoot) return;
+    const focusables = overlayRoot.querySelectorAll<HTMLElement>(
+      'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
+    if (focusables.length === 0) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    const activeEl = document.activeElement as HTMLElement | null;
+    if (e.shiftKey && activeEl === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && activeEl === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
   const routeEpisodes = $derived(audioRegistry.forRoute($page.url.pathname));
   const visibleEpisodes = $derived(scope === 'screen' ? routeEpisodes : audioRegistry.episodes);
 
@@ -44,10 +97,22 @@
     }
   });
 
-  // Sync playing-state to the audio element.
+  // Sync playing-state to the audio element. On overlay re-open mid-episode
+  // the <audio> element is freshly mounted at currentTime=0 — restore the
+  // saved positionSec before playing (#13 — pause-on-close resume). Without
+  // this, closing the panel mid-track and reopening would silently rewind.
   $effect(() => {
     if (!audioEl) return;
     if (audio.playing && audioEl.paused) {
+      const savedPos = untrack(() => audio.positionSec);
+      if (savedPos > 0 && Math.abs(audioEl.currentTime - savedPos) > 0.25) {
+        try {
+          audioEl.currentTime = savedPos;
+        } catch {
+          // The audio element may not have a duration yet — the seek will
+          // retry on the next play attempt once metadata loads.
+        }
+      }
       void audioEl.play().catch(() => {
         // Browser blocked autoplay or load failed — flip state back.
         audio.pause();
@@ -93,12 +158,29 @@
 
   // Tour Phase 2 — fire stage hooks during playback. Watches position
   // against the current episode's stage timings; each stage fires once.
+  // Episode-change handling: reset firedStages + clear pending cue inside
+  // an untrack() so the reset is part of this single effect and doesn't
+  // need a sibling $effect (the previous sibling-reset effect had no
+  // ordering guarantee with this one — sibling-effect race could fire
+  // a stage from the prior episode against the new positionSec).
+  let lastEpisodeIdForStages = $state<string | null>(null);
   $effect(() => {
     if (!browser || !audio.currentEpisode) return;
-    const stages = stagesForEpisode(audio.currentEpisode.id);
+    const epId = audio.currentEpisode.id;
+    if (epId !== lastEpisodeIdForStages) {
+      untrack(() => {
+        firedStages = new Set();
+        if (cueTimer !== null) {
+          window.clearTimeout(cueTimer);
+          cueTimer = null;
+        }
+        activeCue = null;
+      });
+      lastEpisodeIdForStages = epId;
+    }
+    const stages = stagesForEpisode(epId);
     if (stages.length === 0) return;
     const pos = audio.positionSec;
-    const epId = audio.currentEpisode.id;
     for (const stage of stages) {
       if (pos < stage.at_sec) continue;
       const key = `${epId}:${stage.at_sec}:${stage.action}:${stage.target}`;
@@ -117,14 +199,6 @@
     if (audio.positionSec / audio.durationSec < 0.8) return;
     if (audio.isHeard(ep.id)) return;
     audio.markHeard(ep.id);
-  });
-
-  // Reset fired stages whenever the loaded episode changes so re-plays
-  // get the full sequence again.
-  $effect(() => {
-    const _key = audio.currentEpisode?.id ?? '';
-    firedStages = new Set();
-    void _key;
   });
 
   function executeStage(stage: AudioStage): void {
@@ -242,6 +316,17 @@
     return `${m}:${s.toString().padStart(2, '0')}`;
   }
 
+  // Caption <track> label — Intl.DisplayNames where available, locale
+  // string as fallback. Avoids hardcoded "English" once v0.8 adds locales.
+  function localeLabel(locale: string): string {
+    try {
+      const dn = new Intl.DisplayNames([locale], { type: 'language' });
+      return dn.of(locale) ?? locale;
+    } catch {
+      return locale;
+    }
+  }
+
   // ─── Captions (S9 — PRD-016 M9 / RFC-019 §7.5) ─────────────────────────
   // The <track> element is wired to the VTT URL; we keep its mode `hidden`
   // so cuechange fires without the browser drawing its native caption UI
@@ -266,30 +351,83 @@
     return () => track.removeEventListener('cuechange', onCueChange);
   });
 
-  // Auto-on triggers (PRD-016 M9). Three signals that flip captions on by
-  // default; the user can still override with the manual toggle.
+  // Auto-on triggers (PRD-016 M9 / RFC-019 §7.5). Four signals that flip
+  // captions on by default; the user can still override with the manual
+  // toggle.
   // - prefers-reduced-motion: assume reduced sensory load preferred
   // - <audio> muted at episode start: caption is the only path to content
   // - navigator.connection effectiveType slow: bandwidth-bound listener
+  // - assistive-tech hint: forced-colors active OR
+  //   inverted-colors active OR navigator.userActivation indicates a
+  //   pointer-only session is unlikely. Browsers don't expose a stable
+  //   "is a screen reader attached" API on purpose; we use the strongest
+  //   accessibility-preference signals available cross-browser as a
+  //   proxy. False positives default-on captions — harmless because the
+  //   user can still hide them.
   $effect(() => {
     if (!browser) return;
-    let mq: MediaQueryList | null = null;
-    try {
-      mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    } catch {
-      mq = null;
+    const queries = [
+      '(prefers-reduced-motion: reduce)',
+      '(forced-colors: active)',
+      '(inverted-colors: inverted)',
+      '(prefers-contrast: more)',
+    ];
+    const mqs: MediaQueryList[] = [];
+    for (const q of queries) {
+      try {
+        mqs.push(window.matchMedia(q));
+      } catch {
+        // unsupported query — skip silently
+      }
     }
     const evaluate = () => {
-      const reduced = mq?.matches === true;
+      const reduced = mqs[0]?.matches === true;
+      const a11yHint = mqs.slice(1).some((mq) => mq.matches === true);
       const muted = audioEl?.muted === true;
       const eff = (navigator as Navigator & { connection?: { effectiveType?: string } }).connection
         ?.effectiveType;
       const slowConn = eff === 'slow-2g' || eff === '2g' || eff === '3g';
-      if (reduced || muted || slowConn) audio.captionsOn = true;
+      if (reduced || a11yHint || muted || slowConn) audio.captionsOn = true;
     };
     evaluate();
-    mq?.addEventListener?.('change', evaluate);
-    return () => mq?.removeEventListener?.('change', evaluate);
+    for (const mq of mqs) mq.addEventListener?.('change', evaluate);
+    return () => {
+      for (const mq of mqs) mq.removeEventListener?.('change', evaluate);
+    };
+  });
+
+  // Locale-switch mid-playback (PRD-016 US-5 / S4, RFC-019 §7.4).
+  // When the page-level locale flips, swap the current episode to the
+  // matching-locale variant if one exists and seek to the proportional
+  // timestamp. v0.7 ships en-US only so this is dormant; wiring it now
+  // lands the contract in code so v0.8 i18n surfaces it on first ride.
+  $effect(() => {
+    if (!browser) return;
+    const targetLocale = localeFromPage($page);
+    const ep = audio.currentEpisode;
+    if (!ep || ep.locale === targetLocale) return;
+    const dur = audio.durationSec;
+    const pos = audio.positionSec;
+    const ratio = dur > 0 ? pos / dur : 0;
+    const wasPlaying = audio.playing;
+    const swap = audioRegistry.byIdLocale(ep.id, targetLocale);
+    if (!swap) return;
+    untrack(() => {
+      audio.loadEpisode(swap);
+    });
+    void tick().then(() => {
+      if (!audioEl) return;
+      audioEl.load();
+      const seekTo = (swap.durationSec || dur) * ratio;
+      try {
+        audioEl.currentTime = seekTo;
+      } catch {
+        // Pre-metadata seek may throw — onDurationChange will pick up
+        // the saved positionSec via untrack-restore below.
+      }
+      audio.positionSec = seekTo;
+      if (wasPlaying) audio.play();
+    });
   });
 
   function toggleCaptions(): void {
@@ -320,11 +458,14 @@
 
 {#if audio.open}
   <div
+    bind:this={overlayRoot}
     id="audio-overlay"
     class="audio-overlay"
     role="dialog"
     aria-modal="false"
     aria-label="Audio episode player"
+    tabindex="-1"
+    onkeydown={onOverlayKeydown}
   >
     <header class="overlay-header">
       <div class="title-block">
@@ -384,7 +525,7 @@
           disabled={!audioRegistry.loaded}
         >
           ▶ Take the Curator Tour
-          <span class="tour-meta">{CURATOR_FULL_TOUR.length} episodes · ~70 min</span>
+          <span class="tour-meta">{CURATOR_FULL_TOUR.length} episodes · ~66 min</span>
         </button>
       {/if}
     </section>
@@ -402,8 +543,8 @@
         >
           <track
             kind="subtitles"
-            srclang="en"
-            label="English"
+            srclang={audio.currentEpisode.locale.split('-')[0]}
+            label={localeLabel(audio.currentEpisode.locale)}
             src={audio.currentEpisode.vtt}
             default
           />
@@ -472,22 +613,26 @@
           oninput={onScrub}
         />
 
+        <!-- Single aria-live channel: cues take priority over captions
+             when both are present so screen readers don't read both
+             simultaneously (#24). Caption text still renders silently
+             via the caption banner when no cue is active. -->
+        {#if activeCue}
+          <div class="cue-banner" role="status" aria-live="polite" aria-atomic="true">
+            <span class="cue-arrow" aria-hidden="true">→</span>
+            <span class="cue-text">{activeCue}</span>
+          </div>
+        {/if}
+
         {#if audio.captionsOn && audio.currentCaption}
           <div
             class="caption-banner"
             role="region"
             aria-label="Captions"
-            aria-live="polite"
+            aria-live={activeCue ? 'off' : 'polite'}
             aria-atomic="true"
           >
             {audio.currentCaption}
-          </div>
-        {/if}
-
-        {#if activeCue}
-          <div class="cue-banner" role="status" aria-live="polite">
-            <span class="cue-arrow" aria-hidden="true">→</span>
-            <span class="cue-text">{activeCue}</span>
           </div>
         {/if}
 

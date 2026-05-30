@@ -49,8 +49,10 @@
   });
 
   // Audio rows grouped by logical episode (episode_id + locale + persona);
-  // each row shows every provider variant in a compact comma-joined list.
-  type AudioRowVariant = { provider: string; voice_id: string };
+  // each row surfaces every provider variant with model + voice id so
+  // /credits matches PRD-016 §transparency promise (provider, voice_id,
+  // tts_model all visible).
+  type AudioRowVariant = { provider: string; voice_id: string; tts_model: string };
   type AudioRow = {
     episode_id: string;
     title: string;
@@ -70,9 +72,14 @@
     const map = new Map<string, AudioRow>();
     for (const e of entries) {
       const key = `${e.episode_id}|${e.locale}|${e.persona}`;
+      const variant: AudioRowVariant = {
+        provider: e.provider,
+        voice_id: e.voice_id,
+        tts_model: e.tts_model ?? '—',
+      };
       const row = map.get(key);
       if (row) {
-        row.variants.push({ provider: e.provider, voice_id: e.voice_id });
+        row.variants.push(variant);
       } else {
         map.set(key, {
           episode_id: e.episode_id,
@@ -82,7 +89,7 @@
           route: e.route ?? '—',
           text_authorship: e.text_authorship,
           text_author_model: e.text_author_model,
-          variants: [{ provider: e.provider, voice_id: e.voice_id }],
+          variants: [variant],
         });
       }
     }
@@ -398,7 +405,7 @@
               <th scope="col">Route</th>
               <th scope="col">Persona</th>
               <th scope="col">Text author</th>
-              <th scope="col">Voice provider(s)</th>
+              <th scope="col">Voice provider(s) · model · voice id</th>
             </tr>
           </thead>
           <tbody>
@@ -412,10 +419,21 @@
                 <td class="persona-cell">{row.persona}</td>
                 <td class="text-author">{formatTextAuthorship(row)}</td>
                 <td class="voice-cell">
-                  {#each row.variants as v, i (v.provider)}{i > 0 ? ' · ' : ''}<span
-                      class="voice-tag voice-{v.provider}"
-                      title={v.voice_id}>{v.provider}</span
-                    >{/each}
+                  {#each row.variants as v (v.provider)}
+                    <div class="variant-row">
+                      <span
+                        class="voice-tag voice-{v.provider}"
+                        aria-label="Voice provider {v.provider}"
+                      >
+                        <span class="voice-glyph" aria-hidden="true">
+                          {#if v.provider === 'google'}G{:else if v.provider === 'elevenlabs'}11{:else}·{/if}
+                        </span>
+                        <span class="voice-name">{v.provider}</span>
+                      </span>
+                      <code class="voice-model" title="TTS model">{v.tts_model}</code>
+                      <code class="voice-id" title="Voice id">{v.voice_id}</code>
+                    </div>
+                  {/each}
                 </td>
               </tr>
             {/each}
@@ -485,14 +503,42 @@
   .text-author {
     color: rgba(255, 255, 255, 0.78);
   }
+  .voice-cell {
+    min-width: 280px;
+  }
+  .variant-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 2px 0;
+  }
   .voice-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     padding: 1px 6px;
     border-radius: 2px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 11px;
     letter-spacing: 0.3px;
+  }
+  .voice-glyph {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: currentColor;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0;
+  }
+  .voice-name {
+    font-family: var(--font-mono, monospace);
   }
   .voice-tag.voice-google {
     color: #6fb3c9;
@@ -503,6 +549,19 @@
     color: #c9aa6f;
     border-color: rgba(201, 170, 111, 0.4);
     background: rgba(201, 170, 111, 0.08);
+  }
+  .voice-model,
+  .voice-id {
+    font-family: var(--font-mono, monospace);
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.65);
+    word-break: break-all;
+  }
+  .voice-id {
+    color: rgba(255, 255, 255, 0.55);
   }
 
   .credits {

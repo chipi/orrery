@@ -12,6 +12,8 @@ const ORIG_CWD = process.cwd();
 let tmp: string;
 let appendEntry: typeof import('./cost-ledger').appendEntry;
 let assertUnderHardCap: typeof import('./cost-ledger').assertUnderHardCap;
+let currentMonthTotal: typeof import('./cost-ledger').currentMonthTotal;
+let recomputeMonthlyTotals: typeof import('./cost-ledger').recomputeMonthlyTotals;
 let THRESHOLDS: typeof import('./cost-ledger').THRESHOLDS;
 
 beforeEach(async () => {
@@ -23,6 +25,8 @@ beforeEach(async () => {
   const mod = await import('./cost-ledger?fresh=' + Date.now());
   appendEntry = mod.appendEntry;
   assertUnderHardCap = mod.assertUnderHardCap;
+  currentMonthTotal = mod.currentMonthTotal;
+  recomputeMonthlyTotals = mod.recomputeMonthlyTotals;
   THRESHOLDS = mod.THRESHOLDS;
 });
 
@@ -117,6 +121,29 @@ describe('cost-ledger', () => {
       readFileSync(join(tmp, 'static/data/audio/cost-ledger.json'), 'utf-8'),
     );
     expect(ledger.monthly_totals['2026-05'].google).toBeCloseTo(10, 6);
+  });
+
+  it('currentMonthTotal() returns the live month sum across providers', () => {
+    const month = new Date().toISOString().slice(0, 7);
+    appendEntry(sampleEntry({ ts: `${month}-15T10:00:00.000Z`, cost_usd: 7, provider: 'google' }));
+    appendEntry(
+      sampleEntry({ ts: `${month}-15T10:01:00.000Z`, cost_usd: 3, provider: 'elevenlabs' }),
+    );
+    expect(currentMonthTotal()).toBeCloseTo(10, 6);
+  });
+
+  it('rejects non-UTC ts (catches local-time drift)', () => {
+    expect(() => appendEntry(sampleEntry({ ts: '2026-05-29T12:00:00.000' }))).toThrow(/UTC/);
+  });
+
+  it('recomputeMonthlyTotals matches the incremental totals (regression guard)', () => {
+    appendEntry(sampleEntry({ cost_usd: 5, provider: 'google' }));
+    appendEntry(sampleEntry({ cost_usd: 7, provider: 'elevenlabs' }));
+    appendEntry(sampleEntry({ ts: '2026-06-01T00:00:00.000Z', cost_usd: 11, provider: 'google' }));
+    const ledger = JSON.parse(
+      readFileSync(join(tmp, 'static/data/audio/cost-ledger.json'), 'utf-8'),
+    );
+    expect(recomputeMonthlyTotals(ledger.entries)).toEqual(ledger.monthly_totals);
   });
 });
 

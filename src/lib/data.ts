@@ -1209,7 +1209,7 @@ export interface AudioProvenanceEntry {
   persona: Persona;
   provider: ProviderName;
   voice_id: string;
-  tts_model?: string;
+  tts_model: string;
   route?: string;
   context?: string;
   title?: string;

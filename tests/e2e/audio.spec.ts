@@ -116,4 +116,81 @@ test.describe('AudioOverlay smoke', () => {
     const count = await buttons.count();
     expect(count).toBeGreaterThanOrEqual(2); // Google + ElevenLabs at least
   });
+
+  test('clicking the inactive A/B variant swaps the audio src', async ({ page }) => {
+    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+
+    const switcher = page.locator(`${OVERLAY_SELECTOR} .provider-switcher`);
+    await expect(switcher).toBeVisible({ timeout: 10000 });
+
+    const srcBefore = await page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src');
+    expect(srcBefore).toBeTruthy();
+
+    // Click the variant button that is NOT currently active.
+    const inactive = switcher.locator('.provider-btn:not(.active)').first();
+    await expect(inactive).toBeVisible();
+    await inactive.click();
+
+    await expect
+      .poll(async () => page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src'), {
+        timeout: 5000,
+      })
+      .not.toBe(srcBefore);
+  });
+
+  test('captions toggle (CC) flips aria-pressed', async ({ page }) => {
+    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+
+    const cc = page.locator(`${OVERLAY_SELECTOR} .cc-toggle`);
+    await expect(cc).toBeVisible({ timeout: 10000 });
+
+    const initial = await cc.getAttribute('aria-pressed');
+    await cc.click();
+    const after = await cc.getAttribute('aria-pressed');
+    expect(after).not.toBe(initial);
+  });
+
+  test('deep-link is a one-shot — closing overlay does not re-pop on re-render', async ({
+    page,
+  }) => {
+    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+
+    await page.locator(`${OVERLAY_SELECTOR} button[aria-label="Close audio overlay"]`).click();
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeHidden();
+
+    // Trigger a no-op state churn (toggle science lens off/on isn't reliable
+    // cross-route; instead trigger a small router event by reloading the URL
+    // hash). The handledAudioIds Set should keep the overlay closed.
+    await page.evaluate(() => {
+      history.replaceState({}, '', window.location.pathname + window.location.search + '#test');
+    });
+    await page.waitForTimeout(200);
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeHidden();
+  });
+
+  test('deep-link to /mars episode auto-navigates from / to /mars', async ({ page }) => {
+    await page.goto('/?audio=signal-delay', { waitUntil: 'networkidle' });
+
+    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
+
+    // After the registry loads, the layout effect should goto() the
+    // episode's anchored route. signal-delay anchors to /mars.
+    await expect.poll(() => page.url(), { timeout: 10000 }).toMatch(/\/mars/);
+  });
+
+  test('stopping a tour does not bounce-back the overlay-title state', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await openOverlay(page);
+
+    await page.locator(`${OVERLAY_SELECTOR} .tour-start`).click();
+    await expect(page.locator(`${OVERLAY_SELECTOR} .tour-position`)).toBeVisible();
+
+    await page.locator(`${OVERLAY_SELECTOR} .tour-stop`).click();
+
+    // After stopping, tour-bar shows the start button again (idle state).
+    await expect(page.locator(`${OVERLAY_SELECTOR} .tour-start`)).toBeVisible();
+  });
 });

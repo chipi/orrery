@@ -63,6 +63,12 @@
   // Per-id one-shot: opens + loads + auto-plays the first time we see a
   // given id in this session, so closing it doesn't bounce open on next
   // navigation. Waits for the registry to load if it's still in flight.
+  // If the episode anchors to a route other than the current pathname,
+  // we goto() there first so cues + stage hooks have their DOM targets
+  // (per PRD-016 M15 / RFC-019 §7.7 "navigates to the episode's home
+  // route if not already there"). The `?audio=` param is preserved on
+  // the destination URL so the effect re-fires after navigation and
+  // the play action lands on the right page.
   const handledAudioIds = new Set<string>();
   $effect(() => {
     if (!browser) return;
@@ -74,10 +80,20 @@
     void (async () => {
       await audioRegistry.load();
       const ep = audioRegistry.byId(id);
-      if (ep) {
-        audio.loadEpisode(ep);
-        audio.play();
+      if (!ep) return;
+      const here = $page.url.pathname.replace(/\/+$/, '') || '/';
+      const target = ep.route ? (base + ep.route).replace(/\/+$/, '') || '/' : null;
+      if (target && target !== here) {
+        // Re-arm so the post-nav effect actually plays. Carry the
+        // ?audio= param onto the target URL so the layout re-evaluates.
+        handledAudioIds.delete(id);
+        const destUrl = new URL($page.url);
+        destUrl.pathname = target;
+        await goto(destUrl.pathname + destUrl.search, { noScroll: true, keepFocus: true });
+        return;
       }
+      audio.loadEpisode(ep);
+      audio.play();
     })();
   });
 

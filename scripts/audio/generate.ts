@@ -25,10 +25,25 @@ import { recordProvenance, type TextAuthorship } from './provenance';
 const DEFAULT_TEXT_AUTHORSHIP: TextAuthorship = 'claude-drafted';
 const DEFAULT_TEXT_AUTHOR_MODEL = 'claude-opus-4-7';
 
-const PROVIDER_MODELS: Partial<Record<ProviderName, string>> = {
+const PROVIDER_MODELS: Record<ProviderName, string> = {
   google: 'neural2',
   elevenlabs: 'eleven_multilingual_v2',
+  openai: 'tts-1',
+  azure: 'neural',
+  'coqui-local': 'xtts-v2',
 };
+
+const PROVIDER_NAMES: readonly ProviderName[] = [
+  'google',
+  'elevenlabs',
+  'openai',
+  'azure',
+  'coqui-local',
+];
+
+function isProviderName(s: string): s is ProviderName {
+  return (PROVIDER_NAMES as readonly string[]).includes(s);
+}
 
 // Node 20.6+ — load .env into process.env before anything reads it.
 if (typeof process.loadEnvFile === 'function') {
@@ -68,12 +83,40 @@ function parseFrontmatter(raw: string): { meta: EpisodeMeta; body: string } {
   const [, fm, body] = m;
   const meta = {} as Record<string, string | number>;
   for (const line of fm.split(/\r?\n/)) {
-    const kv = line.match(/^(\w+):\s*['"]?(.*?)['"]?\s*$/);
-    if (!kv) continue;
-    const [, k, v] = kv;
-    if (!v && !v.match(/^[a-zA-Z]/)) continue;
-    const asNum = Number(v);
-    meta[k] = Number.isFinite(asNum) && v.trim() !== '' && /^\d/.test(v) ? asNum : v;
+    // Ignore blanks + YAML comments.
+    if (!line.trim() || line.trim().startsWith('#')) continue;
+    // Reject the YAML edge cases we know we don't support — lists,
+    // multi-line block scalars, nested maps — so a silently-dropped
+    // field can't masquerade as "the parser accepted it". See
+    // content/episodes/README.md for the supported frontmatter set.
+    if (/^\s+/.test(line)) {
+      throw new Error(
+        `frontmatter contains indented line — multi-line scalars and nested maps are not supported by the lightweight parser. Use a flat key: value pair. Got: '${line}'`,
+      );
+    }
+    const colonIdx = line.indexOf(':');
+    if (colonIdx <= 0) continue;
+    const k = line.slice(0, colonIdx).trim();
+    const rest = line.slice(colonIdx + 1).trim();
+    if (!/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(k)) continue;
+    if (
+      rest.startsWith('[') ||
+      rest.startsWith('{') ||
+      rest.startsWith('|') ||
+      rest.startsWith('>')
+    ) {
+      throw new Error(`frontmatter key '${k}' uses an unsupported YAML form ('${rest[0]}')`);
+    }
+    // Strip surrounding matching quotes.
+    let v = rest;
+    const quoted = v.match(/^(['"])(.*)\1$/);
+    if (quoted) v = quoted[2];
+    // Numeric (incl. signed + decimals) when the whole token is numeric.
+    if (/^-?\d+(\.\d+)?$/.test(v)) {
+      meta[k] = Number(v);
+    } else {
+      meta[k] = v;
+    }
   }
   return { meta: meta as unknown as EpisodeMeta, body: body.trim() };
 }
@@ -132,7 +175,13 @@ async function main(): Promise<void> {
   }
 
   // Resolve provider + voice. CLI --provider beats TTS_PROVIDER env beats default.
-  const providerName = (values.provider ?? process.env.TTS_PROVIDER ?? 'google') as ProviderName;
+  const providerArg = values.provider ?? process.env.TTS_PROVIDER ?? 'google';
+  if (!isProviderName(providerArg)) {
+    throw new Error(
+      `unknown provider '${providerArg}'. Must be one of: ${PROVIDER_NAMES.join(', ')}.`,
+    );
+  }
+  const providerName: ProviderName = providerArg;
   const voices = JSON.parse(
     readFileSync(join('static', 'data', 'audio', 'voices.json'), 'utf-8'),
   ) as VoicesFile;
@@ -161,6 +210,9 @@ async function main(): Promise<void> {
   const textAuthorship: TextAuthorship = meta.text_authorship ?? DEFAULT_TEXT_AUTHORSHIP;
   const textAuthorModel = meta.text_author_model ?? DEFAULT_TEXT_AUTHOR_MODEL;
   const ttsModel = PROVIDER_MODELS[providerName];
+  if (!ttsModel) {
+    throw new Error(`PROVIDER_MODELS missing model id for '${providerName}'`);
+  }
 
   // Forward editorial metadata from frontmatter into the provenance record so
   // the runtime AudioOverlay can filter "episodes for this screen" + render
@@ -175,13 +227,16 @@ async function main(): Promise<void> {
   // Cache hit — skip generation, log a `cached` row in the ledger.
   if (existsSync(mp3Path) && existsSync(vttPath) && existsSync(txtPath)) {
     const txt = readFileSync(txtPath, 'utf-8');
+    // Cached rows: zero billable_chars + zero cost. The point of the
+    // ledger is to count what we actually paid for; cached re-uses
+    // burn 0 chars.
     appendEntry({
       ts: new Date().toISOString(),
       provider: providerName,
       locale,
       persona,
       episode_id: episodeId,
-      chars: ssml.length,
+      chars: 0,
       cost_usd: 0,
       voice_id: voiceRef.voiceId,
       status: 'cached',
@@ -222,13 +277,16 @@ async function main(): Promise<void> {
   writeFileSync(vttPath, output.captions);
   writeFileSync(txtPath, output.transcript);
 
+  // Ledger gets billable_chars (provider-specific — Google counts SSML,
+  // ElevenLabs counts transcript). Provenance gets transcript chars
+  // (stable human-readable size, comparable across providers).
   const breach = appendEntry({
     ts: new Date().toISOString(),
     provider: providerName,
     locale,
     persona,
     episode_id: episodeId,
-    chars: output.chars,
+    chars: output.billable_chars,
     cost_usd: output.cost_usd,
     voice_id: voiceRef.voiceId,
     status: 'success',
@@ -245,7 +303,7 @@ async function main(): Promise<void> {
     path_mp3: publicMp3,
     path_vtt: publicVtt,
     path_txt: publicTxt,
-    chars: output.transcript.length,
+    chars: output.chars,
     generated_at: new Date().toISOString(),
     text_authorship: textAuthorship,
     text_author_model: textAuthorModel,
@@ -253,7 +311,7 @@ async function main(): Promise<void> {
 
   const kb = (output.audio.byteLength / 1024).toFixed(1);
   console.log(
-    `✓ ${baseName}.mp3 (${kb} KB · ${output.chars} chars · $${output.cost_usd.toFixed(4)})`,
+    `✓ ${baseName}.mp3 (${kb} KB · ${output.chars} transcript chars · ${output.billable_chars} billable chars · $${output.cost_usd.toFixed(4)})`,
   );
   console.log(
     `  month total: $${breach.monthTotal.toFixed(4)} / soft $${THRESHOLDS.soft} / hard $${THRESHOLDS.hard}`,

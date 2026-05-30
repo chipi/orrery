@@ -11,13 +11,13 @@ import { browser } from '$app/environment';
 import { base } from '$app/paths';
 import type { Episode, EpisodeVariant, Persona, ProviderName } from './audio-state.svelte';
 
-interface ProvenanceEntry {
+export interface ProvenanceEntry {
   episode_id: string;
   locale: string;
   persona: Persona;
   provider: ProviderName;
   voice_id: string;
-  tts_model?: string;
+  tts_model: string;
   route?: string;
   title?: string;
   duration_target_sec?: number;
@@ -58,7 +58,15 @@ class AudioRegistry {
         const ra = a.route ?? '~';
         const rb = b.route ?? '~';
         if (ra !== rb) return ra.localeCompare(rb);
-        if (a.persona !== b.persona) return a.persona.localeCompare(b.persona);
+        // Within the same route: Guide pieces lead (orienting),
+        // Enthusiast pieces follow (technical/lateral), Curator pieces
+        // last (slower deep-time anchors that work alone or as Tour
+        // bookends). Within the same persona, ascending duration so
+        // a curious tap surfaces the short piece first.
+        const pa = PERSONA_WEIGHT[a.persona] ?? 9;
+        const pb = PERSONA_WEIGHT[b.persona] ?? 9;
+        if (pa !== pb) return pa - pb;
+        if (a.durationSec !== b.durationSec) return a.durationSec - b.durationSec;
         return a.title.localeCompare(b.title);
       });
       this.loaded = true;
@@ -86,12 +94,25 @@ class AudioRegistry {
   byId(id: string): Episode | undefined {
     return this.episodes.find((e) => e.id === id);
   }
+
+  // Locale-aware lookup used by the AudioOverlay's locale-switch effect
+  // (PRD-016 US-5 / S4). When v0.8 i18n lands and the registry holds
+  // multiple locales per episode_id, this picks the variant matching
+  // the active page locale. Falls back to `byId` so v0.7's en-US-only
+  // corpus still resolves when called.
+  byIdLocale(id: string, locale: string): Episode | undefined {
+    return (
+      this.episodes.find((e) => e.id === id && e.locale === locale) ??
+      this.episodes.find((e) => e.id === id)
+    );
+  }
 }
 
 // Provider preference for the default-active variant when an episode has
 // multiple. ElevenLabs leads on prosody for the editorial anchor takes;
-// Google is the baseline for the rest of the corpus.
-const PROVIDER_PRIORITY: ProviderName[] = [
+// Google is the baseline for the rest of the corpus. Exported so tests
+// can pin the ordering instead of replicating it.
+export const PROVIDER_PRIORITY: ProviderName[] = [
   'elevenlabs',
   'google',
   'openai',
@@ -99,12 +120,19 @@ const PROVIDER_PRIORITY: ProviderName[] = [
   'coqui-local',
 ];
 
+// Within-route persona ordering (#37 — registry sort).
+const PERSONA_WEIGHT: Record<Persona, number> = {
+  guide: 0,
+  enthusiast: 1,
+  curator: 2,
+};
+
 // Curator Full Tour sequence + per-episode stage hooks live in
 // src/lib/audio-tour.ts — one declarative file for both. Re-export here
 // for backwards-compatible imports; new code should import from audio-tour.
 export { CURATOR_FULL_TOUR } from './audio-tour';
 
-function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
+export function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
   const byKey = new Map<string, Episode>();
   for (const e of entries) {
     const key = `${e.episode_id}|${e.locale}|${e.persona}`;

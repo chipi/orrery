@@ -1,10 +1,15 @@
 // ElevenLabs Text-to-Speech provider (PRD-016 / RFC-019 §3 + §4).
 // REST client — ElevenLabs returns audio/mpeg bytes directly, no JSON wrap.
 // Auth via xi-api-key header sourced from ELEVENLABS_API_KEY env var.
+//
+// Audio format (PRD-016 M6): explicit mp3_44100_96 — 44.1 kHz, 96 kbps mono.
+// Matches the budget projection in PRD-016 §goal table (97 MB corpus).
 
 import type { TtsInput, TtsOutput, TtsProvider, ProviderName } from './provider';
+import { withRetry, type TransientError } from './retry';
 
 const ENDPOINT_BASE = 'https://api.elevenlabs.io/v1/text-to-speech';
+const OUTPUT_FORMAT = 'mp3_44100_96';
 
 // ElevenLabs pricing (Pro tier baseline): $0.30 per 1k characters.
 // Starter tier includes 10k chars/mo free; Creator tier 30k chars/mo.
@@ -55,30 +60,42 @@ export class ElevenLabsTtsProvider implements TtsProvider {
       },
     };
 
-    const res = await fetch(`${ENDPOINT_BASE}/${encodeURIComponent(input.voiceId)}`, {
-      method: 'POST',
-      headers: {
-        'xi-api-key': this.apiKey,
-        'Content-Type': 'application/json',
-        Accept: 'audio/mpeg',
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (!res.ok) {
-      const text = await res.text().catch(() => '');
-      throw new Error(
-        `ElevenLabs request failed (${res.status} ${res.statusText}): ${text.slice(0, 500)}`,
+    const url = `${ENDPOINT_BASE}/${encodeURIComponent(input.voiceId)}?output_format=${OUTPUT_FORMAT}`;
+    const res = await withRetry(async () => {
+      const r = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'xi-api-key': this.apiKey,
+          'Content-Type': 'application/json',
+          Accept: 'audio/mpeg',
+        },
+        body: JSON.stringify(body),
+      });
+      if (r.ok) return r;
+      const text = await r.text().catch(() => '');
+      const err: TransientError = new Error(
+        `ElevenLabs request failed (${r.status} ${r.statusText}): ${text.slice(0, 500)}`,
       );
-    }
+      err.status = r.status;
+      const retryAfter = r.headers.get('retry-after');
+      if (retryAfter) {
+        const asInt = Number.parseInt(retryAfter, 10);
+        if (!Number.isNaN(asInt) && asInt > 0) err.retryAfterSec = asInt;
+      }
+      throw err;
+    });
 
     const audio = Buffer.from(await res.arrayBuffer());
     const transcript = stripSsml(input.ssml);
-    const chars = transcript.length; // ElevenLabs bills on stripped text, not SSML tags.
-    const cost_usd = chars * USD_PER_CHAR;
+    // ElevenLabs bills on stripped text, not SSML tags — billable_chars
+    // == transcript.length on this provider. Google bills SSML so the
+    // two diverge there; see google.ts.
+    const chars = transcript.length;
+    const billable_chars = chars;
+    const cost_usd = billable_chars * USD_PER_CHAR;
     const captions = buildApproxVtt(transcript, audio.byteLength);
 
-    return { audio, captions, transcript, chars, cost_usd };
+    return { audio, captions, transcript, chars, billable_chars, cost_usd };
   }
 }
 
@@ -90,8 +107,8 @@ function stripSsml(ssml: string): string {
 }
 
 function buildApproxVtt(transcript: string, audioBytes: number): string {
-  // ElevenLabs MP3 default is 128 kbps ≈ 16 KB/sec.
-  const durationSec = audioBytes / 16000;
+  // mp3_44100_96 → 96 kbps ≈ 12 KB/sec.
+  const durationSec = audioBytes / 12000;
   const sentences = (transcript.match(/[^.!?]+[.!?]+/g) ?? [transcript]).map((s) => s.trim());
   if (sentences.length === 0) return 'WEBVTT\n\n';
   const totalChars = sentences.reduce((a, s) => a + s.length, 0) || 1;

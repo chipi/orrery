@@ -25,6 +25,7 @@
         "persona",
         "provider",
         "voice_id",
+        "tts_model",
         "path_mp3",
         "path_vtt",
         "path_txt",
@@ -45,7 +46,7 @@
         "tts_model": {
           "type": "string",
           "minLength": 1,
-          "description": "Optional provider-specific model identifier (e.g. neural2, eleven_multilingual_v2)."
+          "description": "Provider-specific model identifier (e.g. neural2, eleven_multilingual_v2). Always written by the pipeline; surfaced on /credits."
         },
         "route": {
           "type": "string",

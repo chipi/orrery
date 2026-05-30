@@ -154,6 +154,7 @@
       type="button"
       class="audio-toggle"
       class:active={audio.open}
+      class:playing={audio.playing}
       aria-label="Toggle audio episodes"
       aria-pressed={audio.open}
       aria-controls="audio-overlay"
@@ -161,7 +162,10 @@
       onclick={() => audio.toggle()}
     >
       <!-- Waveform glyph (PRD-016 / RFC-019 §7.2 — "〜 glyph"). Inline SVG
-           so it renders consistently across fonts. -->
+           so it renders consistently across fonts. The discreet pulse
+           while audio.playing comes from the .playing class — bounded
+           opacity oscillation, no transform churn (keeps the icon
+           readable + respects prefers-reduced-motion via CSS). -->
       <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
         <path
           d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
@@ -462,6 +466,31 @@
     background: rgba(68, 102, 255, 0.18);
     border-color: rgba(68, 102, 255, 0.65);
     color: #96afff;
+  }
+  /* Discreet pulse while audio.playing — bounded opacity wave on the
+     icon stroke (PRD-016 S3 / RFC-019 §7.2). Animation suspended under
+     prefers-reduced-motion so motion-sensitive users see only the
+     border-color treatment. */
+  .audio-toggle.playing {
+    border-color: rgba(150, 175, 255, 0.6);
+  }
+  .audio-toggle.playing svg {
+    animation: audio-toggle-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes audio-toggle-pulse {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .audio-toggle.playing svg {
+      animation: none;
+      opacity: 1;
+    }
   }
 
   /* Hamburger menu toggle — hidden on desktop, shown on mobile. */

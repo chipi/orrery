@@ -111,6 +111,35 @@ export default defineConfig({
               expiration: { maxEntries: 10 },
             },
           },
+          {
+            // PRD-016 M13 — audio assets (.mp3 / .vtt / .txt) are content-
+            // hashed in their filenames (`{episode-id}.{hash8}.{ext}`) so
+            // they never need refresh. CacheFirst caches on first play and
+            // serves forever offline; cache invalidation is automatic on
+            // script edit because the hash changes the URL.
+            //
+            // Not precached on SW install — 97 MB of audio would dominate
+            // the install download. Marko's success-criterion #6 (>90% SW
+            // hit-rate for replays) is met by post-first-play persistence.
+            urlPattern: ({ url }) => /\/audio\/.+\.(mp3|vtt|txt)$/.test(url.pathname),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'orrery-audio',
+              expiration: { maxEntries: 500, maxAgeSeconds: 60 * 60 * 24 * 365 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
+            // Audio-provenance manifest — small JSON, refreshed on every
+            // audio:generate. StaleWhileRevalidate so the inventory list
+            // updates without blocking the player UI.
+            urlPattern: ({ url }) => /\/data\/audio\/audio-provenance\.json$/.test(url.pathname),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'orrery-audio-provenance',
+              expiration: { maxEntries: 2, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
         ],
         // SPA fallback so deep links work offline. SvelteKit's static
         // adapter writes 404.html as fallback (svelte.config.js:13).

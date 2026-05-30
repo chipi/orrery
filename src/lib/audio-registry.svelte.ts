@@ -56,7 +56,16 @@ class AudioRegistry {
 
   forRoute(pathname: string): Episode[] {
     const route = normalizeRoute(pathname);
-    return this.episodes.filter((e) => e.route === route);
+    // Exact route match OR parent-route match for sub-routes:
+    // listening from /missions/launches surfaces /missions episodes too.
+    // Root '/' deliberately does NOT match every sub-route — that would
+    // bury the home-only Curator pieces under every page's inventory.
+    return this.episodes.filter((e) => {
+      if (!e.route) return false;
+      if (e.route === route) return true;
+      if (e.route === '/') return false;
+      return route.startsWith(e.route + '/');
+    });
   }
 
   byId(id: string): Episode | undefined {

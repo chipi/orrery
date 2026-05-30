@@ -3,8 +3,10 @@
 
 import { audioBus } from './audio-bus';
 
-export type Persona = 'curator' | 'guide' | 'enthusiast';
-export type ProviderName = 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+// Persona + ProviderName literal unions live in src/lib/audio-types.ts as
+// the single source of truth. Re-exported here for consumer ergonomics.
+export type { Persona, ProviderName } from './audio-types';
+import type { Persona, ProviderName } from './audio-types';
 
 export interface EpisodeVariant {
   provider: ProviderName;

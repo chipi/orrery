@@ -46,6 +46,10 @@ function save(ledger: Ledger): void {
 function recomputeMonthlyTotals(entries: LedgerEntry[]): Ledger['monthly_totals'] {
   const totals: Ledger['monthly_totals'] = {};
   for (const e of entries) {
+    // Failed entries are kept defensively — generate.ts currently throws
+    // before appendEntry runs on failure, so no `failed` rows reach the
+    // ledger today, but the filter is here so a future "log-failures"
+    // change doesn't accidentally count them toward billed totals.
     if (e.status === 'failed') continue;
     const month = e.ts.slice(0, 7);
     totals[month] ??= {};

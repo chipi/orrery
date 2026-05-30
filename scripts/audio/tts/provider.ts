@@ -1,8 +1,11 @@
 // TtsProvider — pluggable text-to-speech provider abstraction (PRD-016 / RFC-019 §3).
 // Swap providers via TTS_PROVIDER env var; mixed-provider corpus supported via voices.json.
 
-export type Persona = 'curator' | 'guide' | 'enthusiast';
-export type ProviderName = 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+// Persona + ProviderName literal unions are owned by src/lib/audio-types.ts
+// so the runtime side (AudioOverlay) and build side (this file) share one
+// definition. Add a new provider there — every consumer recompiles.
+export type { Persona, ProviderName } from '../../../src/lib/audio-types';
+import type { Persona, ProviderName } from '../../../src/lib/audio-types';
 
 export interface TtsInput {
   ssml: string;

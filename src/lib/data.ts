@@ -1201,11 +1201,13 @@ export async function getTextSources(): Promise<TextSourcesManifest> {
 // Mirrors the image-provenance pattern. Read by /credits to surface every
 // audio asset's text-author + voice-provider attribution.
 
+import type { Persona, ProviderName, TextAuthorship } from './audio-types';
+
 export interface AudioProvenanceEntry {
   episode_id: string;
   locale: string;
-  persona: 'curator' | 'guide' | 'enthusiast';
-  provider: 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+  persona: Persona;
+  provider: ProviderName;
   voice_id: string;
   tts_model?: string;
   route?: string;
@@ -1217,11 +1219,7 @@ export interface AudioProvenanceEntry {
   path_txt: string;
   chars: number;
   generated_at: string;
-  text_authorship:
-    | 'claude-drafted'
-    | 'claude-translated'
-    | 'human-authored'
-    | 'human-edited-claude-draft';
+  text_authorship: TextAuthorship;
   text_author_model?: string;
 }
 

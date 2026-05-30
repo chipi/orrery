@@ -77,9 +77,11 @@ en-US v0.7 corpus (~70K chars) sits well inside it.
 Get a key at https://elevenlabs.io/app/settings/api-keys (newer UI: profile
 avatar → Settings → API Keys → Create).
 
-Free Starter tier covers 10K chars/mo — enough for the 8 Atmospheric Moves
-anchors and not much else. Creator tier ($22/mo, 100K chars/mo) covers the
-entire v0.7 corpus with 50K chars of headroom for voice tuning.
+ElevenLabs bills in **credits**, not characters (1 credit ≈ 1 char for standard
+v2 models; 2 credits/char for some flash-tier models). Starter free tier:
+10K credits/mo — covers the 8 Atmospheric Moves anchors and not much else.
+Creator tier ($22/mo, 100K credits/mo) covers the entire v0.7 en-US corpus
+(~65K credits used) with comfortable headroom for voice tuning and re-runs.
 
 ---
 

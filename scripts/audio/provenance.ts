@@ -7,17 +7,16 @@ import { join } from 'node:path';
 
 const PATH = join('static', 'data', 'audio', 'audio-provenance.json');
 
-export type TextAuthorship =
-  | 'claude-drafted'
-  | 'claude-translated'
-  | 'human-authored'
-  | 'human-edited-claude-draft';
+// TextAuthorship / Persona / ProviderName literal unions live in
+// src/lib/audio-types.ts as the single source of truth.
+export type { TextAuthorship } from '../../src/lib/audio-types';
+import type { TextAuthorship, Persona, ProviderName } from '../../src/lib/audio-types';
 
 export interface ProvenanceEntry {
   episode_id: string;
   locale: string;
-  persona: 'curator' | 'guide' | 'enthusiast';
-  provider: 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+  persona: Persona;
+  provider: ProviderName;
   voice_id: string;
   tts_model?: string;
   route?: string;

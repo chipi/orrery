@@ -23,8 +23,6 @@ route: /mars                  # which Orrery route this episode anchors to
 context: curiosity            # optional sub-context (object id, screen segment)
 title: 'Signal delay — light-time on Mars'
 duration_target_sec: 95       # target spoken duration; used by cost projections
-source_refs:                  # optional — for /credits attribution + fact-check
-  - https://mars.nasa.gov/msl/mission/communications/
 ---
 ```
 
@@ -39,6 +37,12 @@ The body is SSML 1.1 wrapped in `<speak>`. Use:
 
 SSML tags must be preserved verbatim during translation (RFC-019 §8.4). Pipeline
 1 validates SSML AST integrity before writing the target locale file.
+
+Note on parser limits: `scripts/audio/generate.ts` parses frontmatter as flat
+`key: value` pairs only. Array / nested-object frontmatter fields (e.g. a
+hypothetical `source_refs: [...]`) are silently dropped. If you need richer
+metadata, either inline-flow it (`tags: [a, b]` won't parse; only scalars
+work today) or extend `parseFrontmatter` first.
 
 ## The three personas (RFC-019 §2.1)
 

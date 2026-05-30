@@ -102,6 +102,17 @@
     }
   });
 
+  // Mark heard at ≥80 % completion (PRD-016 US-4). The Set guards against
+  // re-firing on positions past the threshold — markHeard is idempotent
+  // anyway, but the guard avoids state churn.
+  $effect(() => {
+    const ep = audio.currentEpisode;
+    if (!ep || audio.durationSec <= 0) return;
+    if (audio.positionSec / audio.durationSec < 0.8) return;
+    if (audio.isHeard(ep.id)) return;
+    audio.markHeard(ep.id);
+  });
+
   // Reset fired stages whenever the loaded episode changes so re-plays
   // get the full sequence again.
   $effect(() => {
@@ -455,7 +466,7 @@
           oninput={onScrub}
         />
 
-        {#if audio.captionsOn}
+        {#if audio.captionsOn && audio.currentCaption}
           <div
             class="caption-banner"
             role="region"
@@ -463,7 +474,7 @@
             aria-live="polite"
             aria-atomic="true"
           >
-            {audio.currentCaption || ' '}
+            {audio.currentCaption}
           </div>
         {/if}
 
@@ -526,7 +537,7 @@
                   class="episode-row"
                   class:current
                   class:heard
-                  onclick={() => loadAndPlay(ep)}
+                  onclick={() => void loadAndPlay(ep)}
                 >
                   <span class="ep-title">{ep.title}</span>
                   <span class="ep-meta">

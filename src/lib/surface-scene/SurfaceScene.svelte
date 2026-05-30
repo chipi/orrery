@@ -1649,15 +1649,12 @@
       }
       outlinePass.selectedObjects = outlineMeshes;
 
-      // Scale-pulse on selected marker.
-      const pulseScale = 1 + Math.sin(now * 0.0026) * 0.06;
-      for (const mk of markers) {
-        mk.group.scale.setScalar(mk.siteId === selectedId ? pulseScale : 1);
-      }
-      for (const om of orbitalMarkers) {
-        const id = om.dotGroup.userData.siteId as string | undefined;
-        om.dotGroup.scale.setScalar(id === selectedId ? pulseScale : 1);
-      }
+      // Selection state is communicated by the bounding-rect outline +
+      // panel state; no scale pulsing (removed per ADR-072 Slice 3
+      // §"Remove disc pulse animation"). Markers stay at constant
+      // scale 1 — the halo + outline already convey "selected".
+      // (Orbiter dot scale also stays constant; the orbital ring +
+      // halo do the selection signalling.)
 
       // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
       // Per-frame tier selection based on screen-projected marker size.
@@ -1748,6 +1745,25 @@
             mat.opacity = detailOpacity;
             mat.transparent = detailOpacity < 0.99;
           });
+          // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
+          // is active": once the rectangular Tier-2 patch is the active
+          // representation (ramp > ~0.5), the Tier-1 engineering mesh
+          // would compete visually with the region polygon + its photo
+          // content. Cross-fade the Tier-1 group opacity inversely to
+          // the patch's ramp so they swap cleanly. Engineering model
+          // resurfaces at Tier 3 panorama / "stand at site" entry.
+          if (h.tier1Group) {
+            const tier1Fade = Math.max(0, 1 - detailOpacity);
+            h.tier1Group.visible = tier1Fade > 0.01;
+            h.tier1Group.traverse((obj) => {
+              if (!(obj instanceof THREE.Mesh)) return;
+              const mat = obj.material as THREE.Material & { opacity: number };
+              if ('opacity' in mat) {
+                mat.opacity = tier1Fade;
+                mat.transparent = tier1Fade < 0.99;
+              }
+            });
+          }
         }
 
         // Apply ramp to traverse layer (lines + dots + captions push

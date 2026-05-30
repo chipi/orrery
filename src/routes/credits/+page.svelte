@@ -17,9 +17,12 @@
     getSourceLogos,
     getImageProvenanceManifest,
     getTextSources,
+    getAudioProvenanceManifest,
     type ImageProvenanceManifest,
     type SourceLogosManifest,
     type TextSourcesManifest,
+    type AudioProvenanceManifest,
+    type AudioProvenanceEntry,
   } from '$lib/data';
   import { groupBySource, pathToRouteKey, type CreditsGroup } from '$lib/credits-grouping';
   import * as m from '$lib/paraglide/messages';
@@ -27,18 +30,84 @@
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<ImageProvenanceManifest | null>(null);
   let textSources = $state<TextSourcesManifest | null>(null);
+  let audioProvenance = $state<AudioProvenanceManifest | null>(null);
   let loaded = $state(false);
 
   $effect(() => {
-    void Promise.all([getSourceLogos(), getImageProvenanceManifest(), getTextSources()]).then(
-      ([s, p, t]) => {
-        logos = s;
-        provenance = p;
-        textSources = t;
-        loaded = true;
-      },
-    );
+    void Promise.all([
+      getSourceLogos(),
+      getImageProvenanceManifest(),
+      getTextSources(),
+      getAudioProvenanceManifest(),
+    ]).then(([s, p, t, a]) => {
+      logos = s;
+      provenance = p;
+      textSources = t;
+      audioProvenance = a;
+      loaded = true;
+    });
   });
+
+  // Audio rows grouped by logical episode (episode_id + locale + persona);
+  // each row shows every provider variant in a compact comma-joined list.
+  type AudioRowVariant = { provider: string; voice_id: string };
+  type AudioRow = {
+    episode_id: string;
+    title: string;
+    locale: string;
+    persona: string;
+    route: string;
+    text_authorship: string;
+    text_author_model?: string;
+    variants: AudioRowVariant[];
+  };
+
+  let audioRows = $derived<AudioRow[]>(
+    audioProvenance ? groupAudioByEpisode(audioProvenance.entries) : [],
+  );
+
+  function groupAudioByEpisode(entries: AudioProvenanceEntry[]): AudioRow[] {
+    const map = new Map<string, AudioRow>();
+    for (const e of entries) {
+      const key = `${e.episode_id}|${e.locale}|${e.persona}`;
+      const row = map.get(key);
+      if (row) {
+        row.variants.push({ provider: e.provider, voice_id: e.voice_id });
+      } else {
+        map.set(key, {
+          episode_id: e.episode_id,
+          title: e.title ?? e.episode_id,
+          locale: e.locale,
+          persona: e.persona,
+          route: e.route ?? '—',
+          text_authorship: e.text_authorship,
+          text_author_model: e.text_author_model,
+          variants: [{ provider: e.provider, voice_id: e.voice_id }],
+        });
+      }
+    }
+    return [...map.values()].sort((a, b) => {
+      if (a.route !== b.route) return a.route.localeCompare(b.route);
+      if (a.persona !== b.persona) return a.persona.localeCompare(b.persona);
+      return a.title.localeCompare(b.title);
+    });
+  }
+
+  function formatTextAuthorship(row: AudioRow): string {
+    const model = row.text_author_model ? ` (${row.text_author_model})` : '';
+    switch (row.text_authorship) {
+      case 'claude-drafted':
+        return `Claude drafted${model}`;
+      case 'claude-translated':
+        return `Claude translated${model}`;
+      case 'human-edited-claude-draft':
+        return `Claude draft, human-edited${model}`;
+      case 'human-authored':
+        return 'Human-authored';
+      default:
+        return row.text_authorship;
+    }
+  }
 
   let groups = $derived<CreditsGroup[]>(
     logos && provenance && textSources
@@ -309,9 +378,133 @@
       </article>
     {/each}
   {/if}
+
+  {#if loaded && audioRows.length > 0}
+    <article class="source-card audio-card" aria-labelledby="audio-credits-title">
+      <header class="head-row">
+        <div class="title-block">
+          <h3 id="audio-credits-title" class="source-title">Audio narration</h3>
+          <p class="source-meta">
+            {audioRows.length} episodes · text and voice attribution per PRD-016 §transparency
+          </p>
+        </div>
+      </header>
+
+      <div class="audio-table-wrap" role="region" aria-labelledby="audio-credits-title">
+        <table class="audio-table">
+          <thead>
+            <tr>
+              <th scope="col">Episode</th>
+              <th scope="col">Route</th>
+              <th scope="col">Persona</th>
+              <th scope="col">Text author</th>
+              <th scope="col">Voice provider(s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each audioRows as row (row.episode_id + ':' + row.locale + ':' + row.persona)}
+              <tr>
+                <td class="ep-title">
+                  <code>{row.episode_id}</code>
+                  <span class="ep-title-text">{row.title}</span>
+                </td>
+                <td><code>{row.route}</code></td>
+                <td class="persona-cell">{row.persona}</td>
+                <td class="text-author">{formatTextAuthorship(row)}</td>
+                <td class="voice-cell">
+                  {#each row.variants as v, i (v.provider)}{i > 0 ? ' · ' : ''}<span
+                      class="voice-tag voice-{v.provider}"
+                      title={v.voice_id}>{v.provider}</span
+                    >{/each}
+                </td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  {/if}
 </section>
 
 <style>
+  .audio-card .head-row {
+    margin-bottom: 12px;
+  }
+  .audio-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+  }
+  .audio-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .audio-table th,
+  .audio-table td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    vertical-align: top;
+  }
+  .audio-table th {
+    background: rgba(255, 255, 255, 0.04);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.5px;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  .audio-table tr:last-child td {
+    border-bottom: none;
+  }
+  .audio-table code {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1px 4px;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .ep-title {
+    min-width: 200px;
+  }
+  .ep-title-text {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+  }
+  .persona-cell {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .text-author {
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .voice-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+  .voice-tag.voice-google {
+    color: #6fb3c9;
+    border-color: rgba(111, 179, 201, 0.4);
+    background: rgba(111, 179, 201, 0.08);
+  }
+  .voice-tag.voice-elevenlabs {
+    color: #c9aa6f;
+    border-color: rgba(201, 170, 111, 0.4);
+    background: rgba(201, 170, 111, 0.08);
+  }
+
   .credits {
     max-width: 1080px;
     margin: 0 auto;

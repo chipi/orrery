@@ -1197,6 +1197,55 @@ export async function getTextSources(): Promise<TextSourcesManifest> {
   return get<TextSourcesManifest>('text-sources.json');
 }
 
+// ─── Audio provenance (PRD-016 §transparency / RFC-019 §5.4) ─────────────
+// Mirrors the image-provenance pattern. Read by /credits to surface every
+// audio asset's text-author + voice-provider attribution.
+
+export interface AudioProvenanceEntry {
+  episode_id: string;
+  locale: string;
+  persona: 'curator' | 'guide' | 'enthusiast';
+  provider: 'google' | 'elevenlabs' | 'openai' | 'azure' | 'coqui-local';
+  voice_id: string;
+  tts_model?: string;
+  route?: string;
+  context?: string;
+  title?: string;
+  duration_target_sec?: number;
+  path_mp3: string;
+  path_vtt: string;
+  path_txt: string;
+  chars: number;
+  generated_at: string;
+  text_authorship:
+    | 'claude-drafted'
+    | 'claude-translated'
+    | 'human-authored'
+    | 'human-edited-claude-draft';
+  text_author_model?: string;
+}
+
+export interface AudioProvenanceManifest {
+  schema_version: number;
+  generated_at: string;
+  script_version: string;
+  commit_sha: string | null;
+  entries: AudioProvenanceEntry[];
+}
+
+let audioProvenance: AudioProvenanceManifest | null = null;
+
+export async function getAudioProvenanceManifest(): Promise<AudioProvenanceManifest | null> {
+  if (audioProvenance) return audioProvenance;
+  try {
+    const m = await get<AudioProvenanceManifest>('audio/audio-provenance.json');
+    audioProvenance = m;
+    return m;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * /science encyclopedia (PRD-008 / ADR-034 / ADR-017). Each section is
  * a base JSON record at `science/[tab]/[id].json` merged with a locale

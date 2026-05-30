@@ -40,8 +40,9 @@ services:
       # write here; web serves on next request. PWA SW's NetworkFirst
       # strategy (vite.config.ts:90) handles client-side freshness.
       - ./static/data:/usr/share/nginx/html/data:ro
-      # nginx config (cache headers, SPA fallback, gzip).
-      - ./ops/docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      # nginx config (cache headers, SPA fallback, brotli + gzip).
+      # Alpine's nginx uses /etc/nginx/http.d/, not conf.d/.
+      - ./ops/docker/nginx.conf:/etc/nginx/http.d/default.conf:ro
     restart: unless-stopped
     healthcheck:
       test: ['CMD-SHELL', 'wget -qO- http://127.0.0.1/ >/dev/null 2>&1 || exit 1']

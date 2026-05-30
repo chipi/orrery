@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T04:26:37.442Z",
+  "generated_at": "2026-05-30T04:37:45.416Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -408,12 +408,144 @@
       "cost_usd": 0.45449999999999996,
       "voice_id": "ErXwobaYiN019PkySvjV",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:33:25.884Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-home",
+      "chars": 1869,
+      "cost_usd": 0.5607,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:33:48.302Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-explore",
+      "chars": 1935,
+      "cost_usd": 0.5804999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:34:12.104Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-plan",
+      "chars": 2244,
+      "cost_usd": 0.6731999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:34:34.950Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-fly",
+      "chars": 2122,
+      "cost_usd": 0.6365999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:34:56.070Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-missions",
+      "chars": 1797,
+      "cost_usd": 0.5390999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:35:22.222Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-earth",
+      "chars": 2342,
+      "cost_usd": 0.7025999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:35:47.492Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-moon",
+      "chars": 2288,
+      "cost_usd": 0.6863999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:36:12.032Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-mars",
+      "chars": 2114,
+      "cost_usd": 0.6342,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:36:36.971Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-iss",
+      "chars": 2178,
+      "cost_usd": 0.6534,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:36:59.355Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-tiangong",
+      "chars": 1861,
+      "cost_usd": 0.5582999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:37:20.813Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-science",
+      "chars": 1937,
+      "cost_usd": 0.5811,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:37:45.415Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "guide-fleet",
+      "chars": 2178,
+      "cost_usd": 0.6534,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
       "google": 0.8900160000000001,
-      "elevenlabs": 3.4403999999999995
+      "elevenlabs": 10.899899999999997
     }
   }
 }

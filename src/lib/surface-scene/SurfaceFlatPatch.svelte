@@ -338,23 +338,28 @@
     }
     ctx.stroke();
     ctx.globalAlpha = 1;
-    // Start dot (green) + end dot (red active / amber ended)
+    // Start dot (lander = 5 m footprint) + end dot (rover = 3 m).
+    // Scale-aware: tracks true scale at deep zoom, floors at clickable
+    // size at wide zoom. Rover gets the smaller dot per its smaller
+    // physical footprint.
     const start = tr.points[0];
     const end = tr.points[tr.points.length - 1];
     const sp = project(start[0], start[1], W, H);
     const ep = project(end[0], end[1], W, H);
+    const startR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
+    const endR = scaleAwareRadius(ROVER_FOOTPRINT_KM);
     ctx.fillStyle = '#22c55e';
     ctx.beginPath();
-    ctx.arc(sp.x, sp.y, 5, 0, Math.PI * 2);
+    ctx.arc(sp.x, sp.y, startR, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = tr.status === 'ACTIVE' ? '#ef4444' : '#f59e0b';
     ctx.beginPath();
-    ctx.arc(ep.x, ep.y, 5, 0, Math.PI * 2);
+    ctx.arc(ep.x, ep.y, endR, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.arc(ep.x, ep.y, 5.5, 0, Math.PI * 2);
+    ctx.arc(ep.x, ep.y, endR + 0.5, 0, Math.PI * 2);
     ctx.stroke();
     // Curated stops along the path (sample / drill / panorama / etc.).
     // Drawn as tube pins (kind-coloured drop shapes with white outline)
@@ -390,8 +395,15 @@
       // Skip off-screen stops.
       if (p.x < -50 || p.x > W + 50 || p.y < -50 || p.y > H + 50) continue;
       const color = KIND_COLOR[stop.kind] ?? '#fde047';
-      // Drop-shape: teardrop pointing down. r is the visual radius.
-      const r = 6;
+      // Drop-shape: teardrop pointing down. Radius is scale-aware
+      // around the stop footprint (sample tube ~80 cm; rover ~3 m if
+      // helicopter/feature). Floor at clickable size so wide-zoom
+      // pins stay tappable.
+      const footprint =
+        stop.kind === 'helicopter' || stop.kind === 'feature'
+          ? ROVER_FOOTPRINT_KM
+          : STOP_FOOTPRINT_KM;
+      const r = scaleAwareRadius(footprint);
       ctx.fillStyle = color;
       ctx.strokeStyle = '#ffffff';
       ctx.lineWidth = 1;
@@ -422,18 +434,21 @@
 
   function drawMarkers(ctx: CanvasRenderingContext2D, W: number, H: number) {
     // If no traverse, draw a single landing-site marker at lat/lon.
+    // Scale-aware: lander footprint ~5 m, capped at the clickable
+    // minimum at wide zoom.
     if (traverses && traverses[selected.id]) return;
     if (selected.lat == null || selected.lon == null) return;
     const p = project(selected.lat, selected.lon, W, H);
     const tone = statusTone(selected.status);
+    const r = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     ctx.fillStyle = tone.color;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 6.5, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, r + 0.5, 0, Math.PI * 2);
     ctx.stroke();
   }
 
@@ -487,6 +502,22 @@
     // Zoom about the centroid. Cap at sensible bounds.
     const factor = e.deltaY > 0 ? 1.1 : 0.9;
     kmPerPx = Math.max(0.0001, Math.min(10, kmPerPx * factor));
+  }
+
+  // Scale-aware marker sizing per ADR-072 §"scale-aware marker rule".
+  // Each marker has a real-world footprint in km. Displayed pixel size
+  // is footprintKm / kmPerPx (= true scale), floored at MIN_VISIBLE_PX
+  // so wide-zoom markers stay clickable. Capped at MAX_PX so deep-zoom
+  // markers don't dominate the frame.
+  const MARKER_MIN_PX = 4;
+  const MARKER_MAX_PX = 32;
+  const ROVER_FOOTPRINT_KM = 0.003; // ~3 m (Curiosity-class, MER, Zhurong)
+  const LANDER_FOOTPRINT_KM = 0.005; // ~5 m (Apollo LM, Phoenix, Viking)
+  const STOP_FOOTPRINT_KM = 0.0008; // ~80 cm (sample tube cluster, drill bit)
+
+  function scaleAwareRadius(footprintKm: number): number {
+    const trueScalePx = footprintKm / kmPerPx;
+    return Math.max(MARKER_MIN_PX, Math.min(MARKER_MAX_PX, trueScalePx));
   }
 
   // Native resolving power of the body's highest-res orbital imagery:

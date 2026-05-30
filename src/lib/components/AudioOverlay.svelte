@@ -18,6 +18,9 @@
   // Keyed by `${episode_id}:${at_sec}:${action}` so re-loading the same
   // episode (or clicking it again) restarts the stage sequence.
   let firedStages = $state<Set<string>>(new Set());
+  // Active cue message (banner inside overlay) — null = no cue showing.
+  let activeCue = $state<string | null>(null);
+  let cueTimer: number | null = null;
 
   const PROVIDER_LABEL: Record<string, string> = {
     google: 'Google',
@@ -109,6 +112,17 @@
 
   function executeStage(stage: AudioStage): void {
     if (typeof document === 'undefined') return;
+    // `cue` is the DOM-free action — `target` is the message text, not a selector.
+    if (stage.action === 'cue') {
+      activeCue = stage.target;
+      const ms = stage.duration_ms ?? 6000;
+      if (cueTimer) window.clearTimeout(cueTimer);
+      cueTimer = window.setTimeout(() => {
+        activeCue = null;
+        cueTimer = null;
+      }, ms);
+      return;
+    }
     const el = document.querySelector(stage.target) as HTMLElement | null;
     if (!el) return;
     switch (stage.action) {
@@ -354,6 +368,13 @@
           aria-label="Episode position"
           oninput={onScrub}
         />
+
+        {#if activeCue}
+          <div class="cue-banner" role="status" aria-live="polite">
+            <span class="cue-arrow" aria-hidden="true">→</span>
+            <span class="cue-text">{activeCue}</span>
+          </div>
+        {/if}
       </section>
     {/if}
 
@@ -862,6 +883,41 @@
   }
   .origin-detail {
     color: rgba(255, 255, 255, 0.4);
+  }
+
+  .cue-banner {
+    margin-top: 4px;
+    padding: 10px 12px;
+    background: rgba(255, 200, 80, 0.1);
+    border: 1px solid rgba(255, 200, 80, 0.4);
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #ffd680;
+    animation: cue-appear 250ms ease-out;
+  }
+  .cue-arrow {
+    color: #ffc850;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .cue-text {
+    flex: 1;
+  }
+  @keyframes cue-appear {
+    from {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* Tour Phase 2 — global flash highlight used by stage hooks. Defined

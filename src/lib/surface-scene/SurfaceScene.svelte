@@ -1177,27 +1177,42 @@
       onHoverLeave,
     });
 
-    // 2D context + lunar disc photos for the orthographic discs.
-    // Loading async; until ready, draw2d falls back to the gradient.
+    // 2D context + body-specific raster source. Two projection modes:
+    //   - 'lunar-polar-discs' (Moon): near + far hemispheres as separate
+    //     orthographic discs. Loads two moon_near/_far.jpg assets.
+    //   - 'equirectangular' (Mars, future Earth): single 2:1 flat map.
+    //     Loads config.textureUrl directly into an HTMLImageElement.
+    // Per ADR-038 / ADR-072 — Moon is tidally locked so two-disc is
+    // the only honest projection; Mars rotates so equirectangular fits.
     const c2 = canvas2d;
     const _maybeCtx = c2.getContext('2d');
     if (!_maybeCtx) throw new Error('2D context unavailable');
     const ctx2: CanvasRenderingContext2D = _maybeCtx;
 
     const moonNearImg = new Image();
-    moonNearImg.src = `${base}/textures/moon_near.jpg`;
     const moonFarImg = new Image();
-    moonFarImg.src = `${base}/textures/moon_far.jpg`;
+    const equirectImg = new Image();
     let nearReady = false;
     let farReady = false;
-    moonNearImg.onload = () => {
-      nearReady = true;
-      if (view === '2d') draw2d();
-    };
-    moonFarImg.onload = () => {
-      farReady = true;
-      if (view === '2d') draw2d();
-    };
+    let equirectReady = false;
+    if (config.twoDMode === 'lunar-polar-discs') {
+      moonNearImg.src = `${base}/textures/moon_near.jpg`;
+      moonFarImg.src = `${base}/textures/moon_far.jpg`;
+      moonNearImg.onload = () => {
+        nearReady = true;
+        if (view === '2d') draw2d();
+      };
+      moonFarImg.onload = () => {
+        farReady = true;
+        if (view === '2d') draw2d();
+      };
+    } else {
+      equirectImg.src = config.textureUrl;
+      equirectImg.onload = () => {
+        equirectReady = true;
+        if (view === '2d') draw2d();
+      };
+    }
 
     function draw2d() {
       // Defensive resize
@@ -1208,6 +1223,10 @@
       const W = c2.width;
       const H = c2.height;
       if (W === 0 || H === 0) return;
+      if (config.twoDMode === 'equirectangular') {
+        drawEquirectangular(W, H);
+        return;
+      }
 
       ctx2.fillStyle = '#04040c';
       ctx2.fillRect(0, 0, W, H);
@@ -1362,13 +1381,144 @@
       drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: NATION_COLORS });
     }
 
+    // Equirectangular 2D mode — Mars (and future Earth-surface). Single
+    // 2:1 flat map with optional graticule + traverses + markers +
+    // orbiter strip. Port of /mars's draw2d (per ADR-038 / ADR-072
+    // Drift 18 — 2D pick tolerance set to 20 in on2dClick below).
+    function drawEquirectangular(W: number, H: number) {
+      ctx2.clearRect(0, 0, W, H);
+      ctx2.fillStyle = '#04040c';
+      ctx2.fillRect(0, 0, W, H);
+
+      // Equirectangular map: 2:1 aspect → fit within container.
+      const mapW = Math.min(W - 40, (H - 80) * 2);
+      const mapH = mapW / 2;
+      const mapX = (W - mapW) / 2;
+      const mapY = (H - mapH) / 2;
+
+      if (equirectReady) {
+        ctx2.drawImage(equirectImg, mapX, mapY, mapW, mapH);
+      } else {
+        const gr = ctx2.createLinearGradient(mapX, mapY, mapX, mapY + mapH);
+        gr.addColorStop(0, '#3a1a0e');
+        gr.addColorStop(1, '#2a0e06');
+        ctx2.fillStyle = gr;
+        ctx2.fillRect(mapX, mapY, mapW, mapH);
+      }
+
+      // Subtle frame
+      ctx2.strokeStyle = 'rgba(255,255,255,0.15)';
+      ctx2.lineWidth = 1;
+      ctx2.strokeRect(mapX, mapY, mapW, mapH);
+
+      // Lat/lon graticule — every 30°
+      ctx2.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx2.lineWidth = 0.5;
+      for (let lat = -60; lat <= 60; lat += 30) {
+        const y = mapY + ((90 - lat) / 180) * mapH;
+        ctx2.beginPath();
+        ctx2.moveTo(mapX, y);
+        ctx2.lineTo(mapX + mapW, y);
+        ctx2.stroke();
+      }
+      for (let lon = 30; lon < 360; lon += 30) {
+        const x = mapX + (lon / 360) * mapW;
+        ctx2.beginPath();
+        ctx2.moveTo(x, mapY);
+        ctx2.lineTo(x, mapY + mapH);
+        ctx2.stroke();
+      }
+
+      // Traverse polylines beneath markers (active = bright, ended = muted).
+      if (layerTraverses && loadTraverses != null) {
+        for (const tr of Object.values(traverses)) {
+          if (!tr.points || tr.points.length < 2) continue;
+          const site = sites.find((s) => s.id === tr.rover_id);
+          ctx2.strokeStyle = site ? colorFor(site) : '#ffffff';
+          ctx2.globalAlpha = tr.status === 'ACTIVE' ? 0.95 : 0.7;
+          ctx2.lineWidth = 1.6;
+          ctx2.beginPath();
+          for (let i = 0; i < tr.points.length; i++) {
+            let pLon = tr.points[i][1];
+            if (pLon < 0) pLon += 360;
+            const px = mapX + (pLon / 360) * mapW;
+            const py = mapY + ((90 - tr.points[i][0]) / 180) * mapH;
+            if (i === 0) ctx2.moveTo(px, py);
+            else ctx2.lineTo(px, py);
+          }
+          ctx2.stroke();
+          ctx2.globalAlpha = 1;
+        }
+      }
+
+      // Surface markers
+      sitePos2d.clear();
+      if (layerSurface) {
+        for (const site of sites) {
+          if (site.kind !== 'surface') continue;
+          if (site.lat == null || site.lon == null) continue;
+          let lon = site.lon;
+          if (lon < 0) lon += 360;
+          const x = mapX + (lon / 360) * mapW;
+          const y = mapY + ((90 - site.lat) / 180) * mapH;
+          sitePos2d.set(site.id, { x, y });
+          const isFailed = site.status === 'CRASHED' || site.status === 'LOST';
+          if (selected?.id === site.id) {
+            ctx2.fillStyle = colorFor(site);
+            ctx2.shadowColor = colorFor(site);
+            ctx2.shadowBlur = 12;
+            ctx2.beginPath();
+            ctx2.arc(x, y, 7, 0, Math.PI * 2);
+            ctx2.fill();
+            ctx2.shadowBlur = 0;
+          }
+          ctx2.fillStyle = colorFor(site);
+          ctx2.beginPath();
+          ctx2.arc(x, y, 4, 0, Math.PI * 2);
+          ctx2.fill();
+          ctx2.strokeStyle = '#ffffff';
+          ctx2.lineWidth = 1;
+          if (isFailed) ctx2.setLineDash([2, 2]);
+          ctx2.beginPath();
+          ctx2.arc(x, y, 4.5, 0, Math.PI * 2);
+          ctx2.stroke();
+          ctx2.setLineDash([]);
+        }
+      }
+
+      // Orbiter "presence indicator" strip along the top.
+      if (layerOrbiters) {
+        const strip = mapY - 16;
+        let x = mapX;
+        ctx2.font = "bold 7px 'Space Mono',monospace";
+        ctx2.fillStyle = 'rgba(255,255,255,0.5)';
+        ctx2.textAlign = 'left';
+        ctx2.fillText('IN ORBIT', x, strip);
+        x += 60;
+        for (const o of sites.filter((s) => s.kind === 'orbiter')) {
+          ctx2.fillStyle = colorFor(o);
+          ctx2.beginPath();
+          ctx2.arc(x, strip - 3, 4, 0, Math.PI * 2);
+          ctx2.fill();
+          sitePos2d.set(o.id, { x, y: strip - 3 });
+          x += 14;
+        }
+      }
+
+      // Legend
+      const legendY = H - 24;
+      ctx2.font = "bold 7px 'Space Mono',monospace";
+      ctx2.textAlign = 'left';
+      drawNationLegend2d(ctx2, { startX: 36, y: legendY, palette: NATION_COLORS });
+    }
+
     function on2dClick(e: MouseEvent) {
       const id = pickClosest2d({
         canvas: c2,
         clientX: e.clientX,
         clientY: e.clientY,
         positions: sitePos2d,
-        tolerance: 22,
+        tolerance: 20,
       });
       if (id) selectSite(id);
     }

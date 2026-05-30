@@ -8,6 +8,7 @@
   import Nav from '$lib/components/Nav.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import { audioRegistry } from '$lib/audio-registry.svelte';
   import { setLanguageTag } from '$lib/paraglide/runtime';
   import {
     localeFromPage,
@@ -59,10 +60,9 @@
   });
 
   // PRD-016 M15 / RFC-019 §7.7 (S11) — ?audio={episode-id} deep-link.
-  // Per-id one-shot: opens the overlay the first time we see a given id
-  // in this session, so closing it doesn't bounce open on next navigation.
-  // Episode registry lookup + loadEpisode wire up alongside S3 + S6 once
-  // content lands; for now the overlay surfaces the empty state.
+  // Per-id one-shot: opens + loads + auto-plays the first time we see a
+  // given id in this session, so closing it doesn't bounce open on next
+  // navigation. Waits for the registry to load if it's still in flight.
   const handledAudioIds = new Set<string>();
   $effect(() => {
     if (!browser) return;
@@ -71,6 +71,14 @@
     if (handledAudioIds.has(id)) return;
     handledAudioIds.add(id);
     audio.openOverlay();
+    void (async () => {
+      await audioRegistry.load();
+      const ep = audioRegistry.byId(id);
+      if (ep) {
+        audio.loadEpisode(ep);
+        audio.play();
+      }
+    })();
   });
 
   // ─── PWA service worker (v0.1.12 / ADR-029) ────────────────────────

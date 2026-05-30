@@ -1,20 +1,83 @@
 <script lang="ts">
   // Audio episode overlay (PRD-016 M1 / RFC-019 §7).
   // Right-panel on desktop ≥800 px; bottom-sheet on mobile <800 px.
-  // S5 v0.1 — visual shell + empty state. Transport controls + <audio>
-  // wiring light up alongside first content drop (S3 + S6).
+  // S5.1 — real playback. <audio> element + per-route inventory + transport.
 
-  import { audio } from '$lib/audio-state.svelte';
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
+  import { base } from '$app/paths';
+  import { audio, type Episode } from '$lib/audio-state.svelte';
+  import { audioRegistry } from '$lib/audio-registry.svelte';
+
+  let audioEl: HTMLAudioElement | null = $state(null);
+  let scope: 'screen' | 'all' = $state('screen');
+
+  onMount(() => {
+    void audioRegistry.load();
+  });
+
+  const routeEpisodes = $derived(audioRegistry.forRoute($page.url.pathname));
+  const visibleEpisodes = $derived(scope === 'screen' ? routeEpisodes : audioRegistry.episodes);
+
+  // When the visible list is empty under 'screen' scope, fall back to 'all'.
+  $effect(() => {
+    if (audioRegistry.loaded && scope === 'screen' && routeEpisodes.length === 0) {
+      scope = 'all';
+    }
+  });
+
+  // Sync playing-state to the audio element.
+  $effect(() => {
+    if (!audioEl) return;
+    if (audio.playing && audioEl.paused) {
+      void audioEl.play().catch(() => {
+        // Browser blocked autoplay or load failed — flip state back.
+        audio.pause();
+      });
+    } else if (!audio.playing && !audioEl.paused) {
+      audioEl.pause();
+    }
+  });
+
+  // Sync playback speed.
+  $effect(() => {
+    if (audioEl) audioEl.playbackRate = audio.speed;
+  });
+
+  function loadAndPlay(ep: Episode): void {
+    audio.loadEpisode(ep);
+    // Defer to next microtask so the new <audio src> is attached before play.
+    queueMicrotask(() => {
+      if (audioEl) {
+        audioEl.load();
+        audio.play();
+      }
+    });
+  }
+
+  function onTimeUpdate(): void {
+    if (audioEl) audio.positionSec = audioEl.currentTime;
+  }
+  function onDurationChange(): void {
+    if (audioEl && Number.isFinite(audioEl.duration)) audio.durationSec = audioEl.duration;
+  }
+  function onEnded(): void {
+    audio.endEpisode();
+  }
+  function onScrub(e: Event): void {
+    const t = Number((e.currentTarget as HTMLInputElement).value);
+    audio.positionSec = t;
+    if (audioEl) audioEl.currentTime = t;
+  }
+  function onSpeedChange(e: Event): void {
+    audio.speed = Number((e.currentTarget as HTMLSelectElement).value);
+  }
 
   function fmtTime(sec: number): string {
     if (!Number.isFinite(sec) || sec < 0) return '0:00';
     const m = Math.floor(sec / 60);
     const s = Math.floor(sec % 60);
     return `${m}:${s.toString().padStart(2, '0')}`;
-  }
-
-  function onSpeedChange(e: Event) {
-    audio.speed = Number((e.currentTarget as HTMLSelectElement).value);
   }
 </script>
 
@@ -48,6 +111,24 @@
 
     {#if audio.currentEpisode}
       <section class="now-playing" aria-label="Now playing">
+        <!-- Hidden audio element — UI controls drive it through state. -->
+        <audio
+          bind:this={audioEl}
+          src={audio.currentEpisode.mp3}
+          preload="metadata"
+          ontimeupdate={onTimeUpdate}
+          ondurationchange={onDurationChange}
+          onended={onEnded}
+        >
+          <track
+            kind="subtitles"
+            srclang="en"
+            label="English"
+            src={audio.currentEpisode.vtt}
+            default
+          />
+        </audio>
+
         <div class="transport">
           <button
             type="button"
@@ -77,28 +158,87 @@
           class="scrubber"
           min="0"
           max={audio.durationSec || 0}
+          step="0.1"
           value={audio.positionSec}
           aria-label="Episode position"
-          oninput={(e) => (audio.positionSec = Number((e.currentTarget as HTMLInputElement).value))}
+          oninput={onScrub}
         />
-
-        {#if audio.captionsOn}
-          <div class="captions" aria-live="polite">{audio.currentCaption}</div>
-        {/if}
-      </section>
-    {:else}
-      <section class="empty-state">
-        <p class="empty-headline">No episodes yet.</p>
-        <p class="empty-detail">
-          The first audio episodes (8 Atmospheric Moves in en-US) land alongside the v0.7 audio
-          narration epic. This overlay opens automatically when an episode loads.
-        </p>
       </section>
     {/if}
 
+    <section class="inventory" aria-label="Episode inventory">
+      {#if audioRegistry.loaded}
+        <div class="scope-tabs" role="tablist" aria-label="Episode scope">
+          <button
+            type="button"
+            role="tab"
+            class="scope-tab"
+            class:active={scope === 'screen'}
+            aria-selected={scope === 'screen'}
+            disabled={routeEpisodes.length === 0}
+            onclick={() => (scope = 'screen')}
+          >
+            For this screen{routeEpisodes.length > 0 ? ` (${routeEpisodes.length})` : ''}
+          </button>
+          <button
+            type="button"
+            role="tab"
+            class="scope-tab"
+            class:active={scope === 'all'}
+            aria-selected={scope === 'all'}
+            onclick={() => (scope = 'all')}
+          >
+            All episodes ({audioRegistry.episodes.length})
+          </button>
+        </div>
+
+        {#if visibleEpisodes.length === 0}
+          <p class="inventory-empty">No episodes for this screen yet — try "All episodes".</p>
+        {:else}
+          <ul class="episode-list" role="list">
+            {#each visibleEpisodes as ep (ep.id)}
+              {@const heard = audio.isHeard(ep.id)}
+              {@const current = ep.id === audio.currentEpisode?.id}
+              <li>
+                <button
+                  type="button"
+                  class="episode-row"
+                  class:current
+                  class:heard
+                  onclick={() => loadAndPlay(ep)}
+                >
+                  <span class="ep-title">{ep.title}</span>
+                  <span class="ep-meta">
+                    <span class="persona-tag persona-{ep.persona}">{ep.persona}</span>
+                    {#if ep.route}<span class="route-tag">{ep.route}</span>{/if}
+                    {#if ep.durationSec}<span class="dur-tag">
+                        {Math.floor(ep.durationSec / 60)}:{(ep.durationSec % 60)
+                          .toString()
+                          .padStart(2, '0')}
+                      </span>{/if}
+                    {#if heard}<span class="heard-tag" aria-label="Played">✓</span>{/if}
+                  </span>
+                </button>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      {:else if audioRegistry.loading}
+        <p class="inventory-empty">Loading episodes…</p>
+      {:else if audioRegistry.loadError}
+        <p class="inventory-empty error">
+          Could not load episode registry: {audioRegistry.loadError}
+        </p>
+      {:else}
+        <p class="inventory-empty">No episodes yet.</p>
+      {/if}
+    </section>
+
     <footer class="origin-disclosure" aria-label="Audio origin disclosure">
       <span>Voices · Google Cloud TTS · Scripts · drafted by Claude (Anthropic)</span>
-      <span class="origin-detail">Per-episode attribution on <a href="/credits">/credits</a></span>
+      <span class="origin-detail"
+        >Per-episode attribution on <a href="{base}/credits">/credits</a></span
+      >
     </footer>
   </div>
 {/if}
@@ -182,6 +322,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .transport {
@@ -228,16 +369,6 @@
     accent-color: #4466ff;
   }
 
-  .captions {
-    padding: 10px 12px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-    font-size: 13px;
-    line-height: 1.45;
-    min-height: 2.5em;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
   .sr-only {
     position: absolute;
     width: 1px;
@@ -250,26 +381,137 @@
     border: 0;
   }
 
-  .empty-state {
-    padding: 24px 20px 28px;
+  .inventory {
+    padding: 12px 0 4px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.7);
+    gap: 6px;
   }
-
-  .empty-headline {
-    margin: 0;
-    font-family: var(--font-display, inherit);
-    font-size: 14px;
-    letter-spacing: 1.5px;
+  .scope-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 0 14px 8px;
+  }
+  .scope-tab {
+    flex: 1;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .scope-tab:hover:not(:disabled) {
+    border-color: rgba(255, 255, 255, 0.3);
     color: rgba(255, 255, 255, 0.85);
   }
-
-  .empty-detail {
+  .scope-tab:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .scope-tab.active {
+    background: rgba(68, 102, 255, 0.18);
+    border-color: rgba(68, 102, 255, 0.5);
+    color: rgba(150, 175, 255, 0.95);
+  }
+  .episode-list {
+    list-style: none;
     margin: 0;
+    padding: 0 6px;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+  .episode-row {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .episode-row:hover,
+  .episode-row:focus-visible {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.14);
+    color: var(--color-text);
+    outline: none;
+  }
+  .episode-row.current {
+    background: rgba(68, 102, 255, 0.16);
+    border-color: rgba(68, 102, 255, 0.45);
+    color: var(--color-text);
+  }
+  .episode-row.heard:not(.current) .ep-title {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .ep-title {
     font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+  .ep-meta {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .persona-tag {
+    text-transform: uppercase;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .persona-tag.persona-curator {
+    color: #c9aa6f;
+    border-color: rgba(201, 170, 111, 0.4);
+    background: rgba(201, 170, 111, 0.08);
+  }
+  .persona-tag.persona-guide {
+    color: #6fb3c9;
+    border-color: rgba(111, 179, 201, 0.4);
+    background: rgba(111, 179, 201, 0.08);
+  }
+  .persona-tag.persona-enthusiast {
+    color: #6fc99f;
+    border-color: rgba(111, 201, 159, 0.4);
+    background: rgba(111, 201, 159, 0.08);
+  }
+  .route-tag {
+    font-family: var(--font-mono, monospace);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .dur-tag {
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .heard-tag {
+    color: rgba(111, 201, 159, 0.85);
+  }
+  .inventory-empty {
+    margin: 0;
+    padding: 12px 18px 16px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+  }
+  .inventory-empty.error {
+    color: rgba(255, 132, 132, 0.85);
   }
 
   .origin-disclosure {
@@ -301,7 +543,7 @@
       right: 0;
       left: 0;
       width: 100vw;
-      max-height: 60vh;
+      max-height: 70vh;
       border-left: none;
       border-top: 1px solid var(--color-border);
       box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);

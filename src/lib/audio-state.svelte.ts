@@ -10,6 +10,7 @@ export interface Episode {
   title: string;
   locale: string;
   persona: Persona;
+  route?: string;
   durationSec: number;
   // Public URLs under /audio/{locale}/{persona}/{id}.{hash8}.{mp3|vtt|txt}
   mp3: string;

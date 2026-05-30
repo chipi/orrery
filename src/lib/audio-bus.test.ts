@@ -15,6 +15,7 @@ const fakeEpisode = (id: string): Episode => ({
     {
       provider: 'google',
       voice_id: 'en-US-Neural2-J',
+      tts_model: 'neural2',
       mp3: `/audio/en-US/curator/${id}.aaaaaaaa.mp3`,
       vtt: `/audio/en-US/curator/${id}.aaaaaaaa.vtt`,
       txt: `/audio/en-US/curator/${id}.aaaaaaaa.txt`,

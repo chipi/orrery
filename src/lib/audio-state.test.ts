@@ -14,6 +14,7 @@ const ep = (id: string, persona: 'curator' | 'guide' | 'enthusiast' = 'curator')
     {
       provider: 'google',
       voice_id: `g-${persona}`,
+      tts_model: 'neural2',
       mp3: `/audio/en-US/${persona}/${id}.aaaa.mp3`,
       vtt: `/audio/en-US/${persona}/${id}.aaaa.vtt`,
       txt: `/audio/en-US/${persona}/${id}.aaaa.txt`,
@@ -21,6 +22,7 @@ const ep = (id: string, persona: 'curator' | 'guide' | 'enthusiast' = 'curator')
     {
       provider: 'elevenlabs',
       voice_id: `e-${persona}`,
+      tts_model: 'eleven_multilingual_v2',
       mp3: `/audio/en-US/${persona}/${id}.bbbb.mp3`,
       vtt: `/audio/en-US/${persona}/${id}.bbbb.vtt`,
       txt: `/audio/en-US/${persona}/${id}.bbbb.txt`,

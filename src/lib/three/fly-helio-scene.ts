@@ -1,7 +1,12 @@
 import * as THREE from 'three';
 import { createStarField } from '$lib/three/star-field';
 import { createSceneRenderer } from '$lib/three/scene-renderer';
-import { DESTINATIONS, R_EARTH_AU, R_MARS_AU, type DestinationId } from '$lib/lambert-grid.constants';
+import {
+  DESTINATIONS,
+  R_EARTH_AU,
+  R_MARS_AU,
+  type DestinationId,
+} from '$lib/lambert-grid.constants';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 
 /**
@@ -103,7 +108,9 @@ function buildOrbitRing(radius: number, color: number): THREE.LineLoop {
   const pts: THREE.Vector3[] = [];
   for (let i = 0; i <= 128; i++) {
     const a = (i / 128) * Math.PI * 2;
-    pts.push(new THREE.Vector3(Math.cos(a) * radius * SCALE_3D, 0, Math.sin(a) * radius * SCALE_3D));
+    pts.push(
+      new THREE.Vector3(Math.cos(a) * radius * SCALE_3D, 0, Math.sin(a) * radius * SCALE_3D),
+    );
   }
   return new THREE.LineLoop(
     new THREE.BufferGeometry().setFromPoints(pts),

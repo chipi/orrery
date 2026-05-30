@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T04:20:29.168Z",
+  "generated_at": "2026-05-30T04:26:37.442Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -331,12 +331,89 @@
       "cost_usd": 0.049887999999999995,
       "voice_id": "en-US-Neural2-F",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:24:52.828Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "signal-delay",
+      "chars": 1214,
+      "cost_usd": 0.36419999999999997,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:25:11.822Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "porkchop",
+      "chars": 1647,
+      "cost_usd": 0.4941,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:25:27.107Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "one-way-light-time",
+      "chars": 1372,
+      "cost_usd": 0.41159999999999997,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:25:42.415Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "curator",
+      "episode_id": "capability-ladder-close",
+      "chars": 1295,
+      "cost_usd": 0.38849999999999996,
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:25:59.775Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "cernan-last-words",
+      "chars": 1558,
+      "cost_usd": 0.4674,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:26:19.881Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "far-side",
+      "chars": 1679,
+      "cost_usd": 0.5036999999999999,
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T04:26:37.440Z",
+      "provider": "elevenlabs",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "curiosity-persistence",
+      "chars": 1515,
+      "cost_usd": 0.45449999999999996,
+      "voice_id": "ErXwobaYiN019PkySvjV",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
       "google": 0.8900160000000001,
-      "elevenlabs": 0.3564
+      "elevenlabs": 3.4403999999999995
     }
   }
 }

@@ -710,6 +710,43 @@
         endBuilt.group.position.copy(placeCaption(endPosWorld, tangent));
         planetMesh.add(endBuilt.group);
         tier2DelayedReveal.push(endBuilt.group);
+
+        // Curated traverse stops (Slice 5b — sample sites, drill sites,
+        // notable sols). Each renders as a small kind-tinted sphere on
+        // the planet surface, joining the tier2DelayedReveal stack so it
+        // fades in lockstep with the line + dots.
+        if (tr.stops) {
+          const STOP_KIND_COLOR: Record<string, number> = {
+            sample: 0xfb923c,
+            drill: 0xf97316,
+            panorama: 0x22d3ee,
+            helicopter: 0xe879f9,
+            feature: 0xfde047,
+          };
+          for (const stop of tr.stops) {
+            const stopPos = latLonToUnitSphere(stop.lat, stop.lon);
+            const stopMesh = new THREE.Mesh(
+              new THREE.SphereGeometry(0.018, 10, 10),
+              new THREE.MeshBasicMaterial({
+                color: STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
+                transparent: true,
+                opacity: 0.95,
+                depthWrite: false,
+              }),
+            );
+            stopMesh.position.set(stopPos.x * r, stopPos.y * r, stopPos.z * r);
+            stopMesh.userData = {
+              roverId: tr.rover_id,
+              kind: 'traverse-stop',
+              stopKind: stop.kind,
+              stopSol: stop.sol,
+              stopLabel: stop.label,
+            };
+            planetMesh.add(stopMesh);
+            tier2DelayedReveal.push(stopMesh);
+          }
+        }
+
         traverseLines.push({
           line,
           startDot,
@@ -1592,6 +1629,16 @@
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
 
+      // RAF pause: when the flat patch is fully visible, the sphere is
+      // hidden behind it (opacity 0 via the CSS cross-fade) and the
+      // entire scene render is wasted CPU/battery. Short-circuit the
+      // per-frame body — RAF still queues so we resume cleanly on the
+      // 'leaving' phase. Per ADR-062 §"Animation timing" — pause is
+      // gated on 'visible' specifically (the entering / leaving phases
+      // still need the sphere rendered so the cross-fade reads as a
+      // cross-fade rather than a flicker).
+      if (flatPatchPhase === 'visible') return;
+
       // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):
       //   (a) Fly-in tween — ease-out cubic interpolation of camP/T/R.
       //   (b) Smooth zoom — lerp camR toward camRTarget at 15%/frame.
@@ -2179,7 +2226,10 @@ sample      ${debugInfo.projectedPxSample}`}
        Tier 2+ when not in panorama mode. aria-live so screen-readers
        announce the layer changes as the user zooms in/out. -->
   {#if view === '3d' && tierContext && !panoramaActive}
-    <TierContextCard {tierContext} />
+    <TierContextCard
+      {tierContext}
+      scaleNote={'Tier-2 rectangles on the sphere are stylized — true ground extent is sub-pixel at this zoom. Zoom further in to enter the flat-patch view (true scale).'}
+    />
   {/if}
 
   <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"

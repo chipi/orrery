@@ -17,25 +17,18 @@ import { test, expect, type Page } from '@playwright/test';
  * then wait for the flat-patch wrapper to appear.
  */
 
-async function zoomIntoSurface(page: Page, isMobile: boolean): Promise<void> {
+async function zoomIntoSurface(page: Page): Promise<void> {
   // Wait for the 3D canvas to mount + sites to load before any input.
   await page.waitForLoadState('networkidle');
   const layer = page.locator('canvas.layer, div.layer').first();
   await expect(layer).toBeVisible({ timeout: 10000 });
-  // Each wheel event moves camR by ~5 units (deltaY=100, factor 0.05).
-  // From camR=85 to camR=30.5 = need ~11 events at deltaY=100, but the
-  // smooth-zoom lerp dampens this — pump many wheels to be safe.
+  // Each wheel event moves camRTarget by ~5 units (deltaY=100, factor 0.05).
+  // From camR=85 to camR=30.5 = need ~11 events, but the smooth-zoom
+  // lerp (15%/frame) dampens this — pump many wheels with small waits.
   const box = await layer.boundingBox();
   if (!box) throw new Error('canvas layer has no bounding box');
   const cx = box.x + box.width / 2;
   const cy = box.y + box.height / 2;
-  if (isMobile) {
-    // Mobile-chromium doesn't fire wheel events the same way; pinch via
-    // two-finger gesture isn't trivial in Playwright. Skip the trigger
-    // and just assert the page mounts. Full mobile coverage is a
-    // follow-up once Playwright touch-pinch helpers stabilise.
-    return;
-  }
   await page.mouse.move(cx, cy);
   for (let i = 0; i < 25; i++) {
     await page.mouse.wheel(0, 100);
@@ -45,22 +38,20 @@ async function zoomIntoSurface(page: Page, isMobile: boolean): Promise<void> {
   }
 }
 
-test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
+test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)', () => {
+  test.beforeEach(({ isMobile }) => {
+    // Mobile-chromium can't simulate the wheel-zoom that fires the
+    // sphere → flat-patch trigger. Playwright's touch-pinch helpers
+    // aren't stable enough for v1. Mobile coverage is in the
+    // mobile-smoke describe block below (mount + panel open only).
+    test.skip(!!isMobile, 'desktop-only — pinch-zoom not simulated');
+  });
+
   test('mars / curiosity — deep-link, zoom in, flat patch materialises with HUD', async ({
     page,
-    isMobile,
   }) => {
     await page.goto('/mars?site=curiosity');
-    await zoomIntoSurface(page, isMobile ?? false);
-    if (isMobile) {
-      // Mobile pinch-zoom helper not yet stable; just confirm the page
-      // mounts with the Curiosity panel open (proves the data + URL
-      // deep-link still work after #283 changes).
-      await expect(page.getByRole('heading', { name: /curiosity/i }).first()).toBeVisible({
-        timeout: 15000,
-      });
-      return;
-    }
+    await zoomIntoSurface(page);
     // Flat-patch wrapper appears once camR < 30.5.
     const flatPatch = page.locator('.flat-patch');
     await expect(flatPatch).toBeVisible({ timeout: 8000 });
@@ -72,10 +63,9 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
     await expect(page.getByText(/^TRAVERSE$/i)).toBeVisible();
   });
 
-  test('mars / curiosity — back button returns to sphere', async ({ page, isMobile }) => {
-    if (isMobile) test.skip();
+  test('mars / curiosity — back button returns to sphere', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
-    await zoomIntoSurface(page, false);
+    await zoomIntoSurface(page);
     const flatPatch = page.locator('.flat-patch');
     await expect(flatPatch).toBeVisible({ timeout: 8000 });
     await page.getByRole('button', { name: /back to planet/i }).click();
@@ -83,10 +73,9 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
     await expect(flatPatch).toBeHidden({ timeout: 5000 });
   });
 
-  test('mars / curiosity — Esc dismisses the flat patch', async ({ page, isMobile }) => {
-    if (isMobile) test.skip();
+  test('mars / curiosity — Esc dismisses the flat patch', async ({ page }) => {
     await page.goto('/mars?site=curiosity');
-    await zoomIntoSurface(page, false);
+    await zoomIntoSurface(page);
     const flatPatch = page.locator('.flat-patch');
     await expect(flatPatch).toBeVisible({ timeout: 8000 });
     await page.keyboard.press('Escape');
@@ -95,11 +84,9 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
 
   test('moon / apollo11 — region-bound site triggers flat patch (landing-ellipse, no traverse)', async ({
     page,
-    isMobile,
   }) => {
-    if (isMobile) test.skip();
     await page.goto('/moon?site=apollo11');
-    await zoomIntoSurface(page, false);
+    await zoomIntoSurface(page);
     const flatPatch = page.locator('.flat-patch');
     await expect(flatPatch).toBeVisible({ timeout: 8000 });
     // Apollo 11 is a stationary landing — no TRAVERSE chip.
@@ -108,8 +95,7 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
     await expect(page.getByText(/^TRAVERSE$/i)).toBeHidden();
   });
 
-  test('no console errors during sphere → flat-patch → back flow', async ({ page, isMobile }) => {
-    if (isMobile) test.skip();
+  test('no console errors during sphere → flat-patch → back flow', async ({ page }) => {
     const errors: string[] = [];
     page.on('console', (msg) => {
       if (msg.type() === 'error') {
@@ -121,10 +107,44 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition', () => {
       }
     });
     await page.goto('/mars?site=curiosity');
-    await zoomIntoSurface(page, false);
+    await zoomIntoSurface(page);
     await expect(page.locator('.flat-patch')).toBeVisible({ timeout: 8000 });
     await page.getByRole('button', { name: /back to planet/i }).click();
     await page.waitForTimeout(800); // give the cross-fade + camera-back lerp time
     expect(errors).toEqual([]);
+  });
+});
+
+test.describe('SurfaceFlatPatch — mobile smoke (mount-only)', () => {
+  // Mobile doesn't have a stable wheel/pinch primitive in Playwright,
+  // so we can't fire the sphere → flat-patch trigger. These tests
+  // verify the route mounts + the panel opens for a region-bound site
+  // — the bare-minimum signal that #283's surface routes still load
+  // on mobile after the SurfaceScene refactor. Full mobile pinch-zoom
+  // coverage of the flat-patch flow is a future slice once Playwright
+  // touch-input helpers stabilise.
+
+  test.beforeEach(({ isMobile }) => {
+    test.skip(!isMobile, 'mobile-only smoke');
+  });
+
+  test('mars / curiosity — page mounts, panel opens', async ({ page }) => {
+    await page.goto('/mars?site=curiosity');
+    await page.waitForLoadState('networkidle');
+    await expect(page.getByRole('heading', { name: /curiosity/i }).first()).toBeVisible({
+      timeout: 15000,
+    });
+    // Flat-patch should NOT appear (no trigger fired) — confirms the
+    // sphere is the active view on mount.
+    await expect(page.locator('.flat-patch')).toBeHidden();
+  });
+
+  test('moon / apollo11 — page mounts, panel opens', async ({ page }) => {
+    await page.goto('/moon?site=apollo11');
+    await page.waitForLoadState('networkidle');
+    await expect(page.getByRole('heading', { name: /apollo 11/i }).first()).toBeVisible({
+      timeout: 15000,
+    });
+    await expect(page.locator('.flat-patch')).toBeHidden();
   });
 });

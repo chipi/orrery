@@ -144,10 +144,23 @@
   // (Moon today). Keyed by rover_id.
   let traverses: Record<string, Traverse> = $state({});
 
-  // Flat-patch view state (ADR-062 / #283 Slice 4). When true, the
-  // sphere fades to a 2D flat ground-patch of the selected region.
-  // Triggered when selection + region_bounds + camR < threshold.
-  let flatPatchActive = $state(false);
+  // Flat-patch view state (ADR-062 / #283 Slice 4). Four-phase machine
+  // drives the 600 ms ease-in-out cross-fade between sphere and flat
+  // patch:
+  //   'hidden'   — sphere fully visible, flat patch unmounted (default)
+  //   'entering' — both mounted; sphere fading out, flat patch fading in
+  //   'visible'  — flat patch fully visible, sphere hidden
+  //   'leaving'  — both mounted; reverse fade (back to sphere)
+  // The flat patch stays mounted during 'entering' / 'visible' / 'leaving'
+  // so CSS opacity transitions can run; only 'hidden' unmounts.
+  type FlatPatchPhase = 'hidden' | 'entering' | 'visible' | 'leaving';
+  let flatPatchPhase: FlatPatchPhase = $state('hidden');
+  let flatPatchActive = $derived(flatPatchPhase !== 'hidden');
+  // Phase transitions are timestamped via setTimeout. Track the pending
+  // timeout so we can cancel mid-transition (e.g. user clicks back
+  // while still fading in).
+  let flatPatchTransitionTimer: ReturnType<typeof setTimeout> | null = null;
+  const FLAT_PATCH_FADE_MS = 600;
   // Close handler — assigned inside onMount so it can bump camRTarget
   // back up past the trigger threshold (otherwise the patch would
   // immediately re-open on the next frame).
@@ -947,10 +960,16 @@
     // Wire the flat-patch close handler — bump camRTarget back above
     // the sphere→flat trigger threshold so the smooth-zoom lerp
     // animates the camera back out and the trigger doesn't re-fire
-    // on the next frame.
+    // on the next frame. Drive the 'leaving' phase (sphere fading
+    // back in, flat patch fading out over 600 ms) before unmounting.
     closeFlatPatch = () => {
-      flatPatchActive = false;
+      if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
+      flatPatchPhase = 'leaving';
       camRTarget = 50;
+      flatPatchTransitionTimer = setTimeout(() => {
+        flatPatchPhase = 'hidden';
+        flatPatchTransitionTimer = null;
+      }, FLAT_PATCH_FADE_MS);
     };
 
     // Drag-inertia velocities (Drift 12 consolidation). On mouse-up /
@@ -1900,17 +1919,23 @@
           // multiply by `radiusKm/planetRadius` km/unit to get real km.
           altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
           // Sphere → flat-patch transition trigger (ADR-062). When the
-          // user zooms past 30.5 with a region selected, materialise
-          // the flat-patch view. Only TRIGGERS the transition — the
-          // back gesture (Esc / button) is what clears flatPatchActive.
+          // user zooms past 30.5 with a region selected, start the
+          // entering-fade (sphere out, flat-patch in over 600 ms ease-
+          // in-out). Only TRIGGERS the entering phase — the back
+          // gesture is what reverses it.
           const SPHERE_TO_FLAT_CAM_R = 30.5;
           if (
-            !flatPatchActive &&
+            flatPatchPhase === 'hidden' &&
             selected != null &&
             selected.region_bounds != null &&
             camR < SPHERE_TO_FLAT_CAM_R
           ) {
-            flatPatchActive = true;
+            if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
+            flatPatchPhase = 'entering';
+            flatPatchTransitionTimer = setTimeout(() => {
+              flatPatchPhase = 'visible';
+              flatPatchTransitionTimer = null;
+            }, FLAT_PATCH_FADE_MS);
           }
           if (hotspots.length > 0) {
             const h = hotspots[0];
@@ -2007,7 +2032,12 @@
     {/each}
   </ul>
 
-  <div class="layer" bind:this={container} class:hidden={view !== '3d'}></div>
+  <div
+    class="layer"
+    bind:this={container}
+    class:hidden={view !== '3d'}
+    class:flat-patch-fading={flatPatchPhase !== 'hidden'}
+  ></div>
   <canvas
     class="layer"
     bind:this={canvas2d}
@@ -2125,7 +2155,14 @@ sample      ${debugInfo.projectedPxSample}`}
        Owns the viewport fully while active; back gesture dismisses
        and returns to the sphere at the saved camR/camP/camT. -->
   {#if flatPatchActive && selected && selected.region_bounds}
-    <SurfaceFlatPatch {selected} {config} {traverses} onClose={closeFlatPatch} />
+    <div
+      class="flat-patch-wrapper"
+      class:entering={flatPatchPhase === 'entering'}
+      class:visible={flatPatchPhase === 'visible'}
+      class:leaving={flatPatchPhase === 'leaving'}
+    >
+      <SurfaceFlatPatch {selected} {config} {traverses} onClose={closeFlatPatch} />
+    </div>
   {/if}
 
   <!-- TierContext info card — same shape as /mars. Visible only at
@@ -2422,6 +2459,30 @@ sample      ${debugInfo.projectedPxSample}`}
     position: absolute;
     inset: var(--nav-height) 0 0 0;
     overflow: hidden;
+  }
+
+  /* Cross-fade between sphere (3D canvas in .layer) and flat-patch
+   * wrapper. 600 ms ease-in-out cubic per ADR-062.
+   * 'entering': sphere → 0 over first 60% (360 ms); flat patch 0 → 1
+   *   over the full 600 ms with the 40 % tail when sphere is gone.
+   * 'leaving': reverse. */
+  .layer.flat-patch-fading {
+    transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+  }
+  .flat-patch-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flat-patch-wrapper.visible,
+  .flat-patch-wrapper.entering {
+    opacity: 1;
+  }
+  .flat-patch-wrapper.leaving {
+    opacity: 0;
   }
   .altitude-indicator {
     position: absolute;

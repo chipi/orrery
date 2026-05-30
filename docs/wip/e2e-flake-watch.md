@@ -1,10 +1,13 @@
-# e2e flake watch — parked until end of v0.7.x
+# e2e flake watch — RESOLVED (2026-05-29)
 
-Tracking GH: **[#253](https://github.com/chipi/orrery/issues/253)**
+Tracking GH: **[#253](https://github.com/chipi/orrery/issues/253)** (closed)
 
-Small mobile-chromium e2e flakes that survived Step 0 cleanup. Not
-blockers for #PC (Moon) or #PF (non-NASA missions). Address as a
-single batch near end of v0.7.x with one locator / scroll / tap pass.
+All three parked mobile-chromium flakes are fixed. Hardening landed in
+`31e97146a` (Step 5a — `waitForLoadState('networkidle')` +
+`isMobile ? tap() : click()` + pre-action `toBeVisible()`), followed by
+further mobile-chromium hardening across `3ea2d156e`, `7ed0fdfe1`,
+`7d37aea98`, `fd878a32c`, `99a52b7c2`. Verified 2026-05-29: all three
+specs pass 3/3 on `mobile-chromium` (`--repeat-each=3`, 9/9 green).
 
 ## Parked cases
 
@@ -30,5 +33,7 @@ single batch near end of v0.7.x with one locator / scroll / tap pass.
 - Added `Regenerate visual snapshots` manual workflow for one-click baseline refresh from CI.
 - Batch-fixed `getByRole('complementary')` → `aside.panel` (launches-banner ambiguity) across `mars/moon/earth/explore` specs.
 
-## Resuming work
-At end of v0.7.x: pick up #253, run the reproducer, attempt the tap()/networkidle fix, then full Playwright pass on both projects.
+## Resolution
+- 2026-05-23 — Step 5a (`31e97146a`) applied `networkidle` + tap-on-mobile + `toBeVisible()` to all three specs.
+- Follow-up hardening: `3ea2d156e`, `7ed0fdfe1`, `7d37aea98`, `fd878a32c`, `99a52b7c2`.
+- 2026-05-29 — verification run (`--repeat-each=3` mobile-chromium, `-g "chip toggle flips aria-pressed|SIZES overlay opens via toggle|2D toggle reveals the equirectangular Mars map"`): 9/9 green.

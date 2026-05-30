@@ -35,28 +35,49 @@ concurrency:
 
 jobs:
   docker-e2e:
-    # Matrix: desktop-chromium + mobile-chromium run as parallel jobs.
-    # Each leg gets its own runner, so wall-clock is ~the same as
-    # desktop-only used to be. CI minutes 2x; that's the trade for
-    # closing the desktop/mobile asymmetry without blowing through
-    # the workflow timeout. Sequential mobile+desktop on workers=1
-    # hit 30+ min and timed out (May 2026 mobile-extension first run).
+    # Matrix: desktop runs in 1 leg; mobile is sharded across 2 parallel
+    # legs via Playwright's `--shard=N/M` (GH #277 / W7).
     #
-    # Timeout history (mobile-chromium leg, single-project):
-    #   - 30 min was the original cap (matches GH Actions free-tier
-    #     "step deadline" patterns).
-    #   - Run 26622390344 (May 2026): 28m01s success — within 2 min of
-    #     the cap. Subsequent runs touched 30m15s — timeout-cancelled
-    #     by 15 sec. Desktop leg consistently 17-19 min on the same
-    #     codebase, so the mobile project is naturally slower under
-    #     docker-nginx (smaller viewport → extra layout passes,
-    #     #207 site-stories full corpus). Bumped to 45 to give
-    #     comfortable headroom without masking real test slowness.
+    # Sharding history:
+    #   - Originally desktop + mobile each ran as a single matrix entry
+    #     (CI 2x desktop-only, no shards). On `--workers=1` (mandatory
+    #     because the vite preview server can't handle parallel workers
+    #     against the same docker-nginx stack), mobile-chromium hit 26+
+    #     min Playwright runtime — within 2 min of the 30-min cap.
+    #   - Run 26622390344 (May 2026): 28m01s success. Subsequent runs
+    #     touched 30m15s — timeout-cancelled by 15 sec. 61b865a6d bumped
+    #     the cap to 45 min to give comfortable headroom without masking
+    #     real test slowness.
+    #   - W7 finding (issue #277): /moon route specs dominate the slow
+    #     tail (15 of the top 15 slowest specs are on /moon or
+    #     /library); 6 Apollo hotspot tests alone cost ~125s serial.
+    #     Sharding splits the 370 specs across N matrix legs running in
+    #     parallel — Playwright distributes tests across shards by file
+    #     count.
+    #
+    # Why only mobile is sharded: desktop runs 17-19 min consistently —
+    # adding shards would only marginally improve wall-clock at full 2x
+    # runner cost. Mobile is the actual bottleneck.
+    #
+    # Why 2 shards and not 4: the per-leg overhead (checkout + setup-
+    # node + npm ci + npm run build + docker stack up + playwright
+    # install) is ~1.7 min. At 4 shards you spend more on overhead than
+    # you save. 2 shards keeps each leg's Playwright runtime at ~13 min
+    # while keeping setup overhead a sane fraction.
     strategy:
       fail-fast: false
       matrix:
-        project: [desktop-chromium, mobile-chromium]
-    name: docker-e2e (${{ matrix.project }})
+        include:
+          - project: desktop-chromium
+            shard: '1/1'
+            shard_id: 'full'
+          - project: mobile-chromium
+            shard: '1/2'
+            shard_id: '1-of-2'
+          - project: mobile-chromium
+            shard: '2/2'
+            shard_id: '2-of-2'
+    name: docker-e2e (${{ matrix.project }} ${{ matrix.shard_id }})
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -104,13 +125,16 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run Playwright against docker web (${{ matrix.project }})
+      - name: Run Playwright against docker web (${{ matrix.project }} ${{ matrix.shard_id }})
         env:
           PLAYWRIGHT_BASE_URL: http://localhost:8080
-        # Both viewports run as separate matrix legs; this leg runs
-        # only its own --project. fail-fast: false so a mobile failure
-        # doesn't suppress useful desktop diagnostics + vice versa.
-        run: npx playwright test --project=${{ matrix.project }}
+        # Per-shard run. `--shard=1/1` is the no-op shard (whole suite,
+        # used by the unsharded desktop leg). Mobile legs use `1/2` +
+        # `2/2`; Playwright partitions tests across shards by file
+        # count. fail-fast: false on the strategy so a mobile-shard-1
+        # failure doesn't suppress mobile-shard-2 or desktop
+        # diagnostics.
+        run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shard }}
 
       - name: Capture web logs on failure
         if: failure()
@@ -120,7 +144,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          name: docker-e2e-playwright-report-${{ matrix.project }}
+          name: docker-e2e-playwright-report-${{ matrix.project }}-${{ matrix.shard_id }}
           path: playwright-report/
           retention-days: 14
 

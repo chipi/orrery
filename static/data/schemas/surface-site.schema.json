@@ -53,12 +53,6 @@
         "enum": ["landing_ellipse", "traverse_bbox", "roi_quad", "image_swath"],
         "description": "Drives visual treatment of region_bounds. landing_ellipse = single-touchdown footprint (Apollos, stationary landers); traverse_bbox = rover wander envelope (Curiosity, Perseverance); roi_quad = semantic region of interest (Shackleton Connecting Ridge, Mt. Sharp); image_swath = literal high-res imagery footprint (HiRISE strip, LROC NAC ROI). Optional but recommended when region_bounds is set."
       },
-      "region_bearing_deg": {
-        "type": "number",
-        "minimum": 0,
-        "exclusiveMaximum": 360,
-        "description": "Optional bearing (deg, 0..360, +E from N) for non-axis-aligned landing ellipses — primarily Mars rovers where the descent ellipse's major axis is rotated. When set, region_bounds defines the AABB of the rotated ellipse; rendering may use this to draw the actual ellipse inside the box. Skipped for v1 = treat as 0 (axis-aligned)."
-      },
       "altitude_km": { "type": "number", "minimum": 0, "description": "Representative orbital altitude (km). Required for kind:orbiter. Use periapsis for highly elliptical orbits." },
       "inclination_deg": { "type": "number", "minimum": 0, "maximum": 180, "description": "Orbital inclination (deg). Required for kind:orbiter." },
       "eccentricity": { "type": "number", "minimum": 0, "maximum": 1, "description": "Orbital eccentricity (dimensionless). Optional for kind:orbiter; defaults to 0 (circular)." },

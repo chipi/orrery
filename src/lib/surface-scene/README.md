@@ -61,10 +61,6 @@ interface SurfaceSceneConfig {
   // 2D projection convention — see ADR-038
   twoDMode: 'lunar-polar-discs' | 'equirectangular';
 
-  // Vendored traverse polylines + captions. Mars rovers today.
-  // Moon Apollo EVA / Lunokhod tracks → future slice.
-  traverses?: TraverseRegistry;
-
   // Per-route Tier 1 hotspot model builder registration bundle
   registerHotspotBuilders: () => void;
 

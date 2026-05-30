@@ -71,12 +71,6 @@ export interface SurfaceSite {
   region_bounds?: RegionBounds;
   /** Drives visual treatment of region_bounds. */
   region_kind?: RegionKind;
-  /**
-   * Optional bearing (deg, 0..360, +E from N) for non-axis-aligned landing
-   * ellipses — primarily Mars rovers where the descent ellipse's major axis
-   * is rotated. v1 treats unset as axis-aligned.
-   */
-  region_bearing_deg?: number;
   /** Orbital parameters — required when kind === 'orbiter'. */
   altitude_km?: number;
   inclination_deg?: number;

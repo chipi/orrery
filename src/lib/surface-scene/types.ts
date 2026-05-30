@@ -79,24 +79,6 @@ export type LanderModelBuilder = (
 ) => THREE.Group;
 
 /**
- * Vendored rover-traverse polylines. Mars has 4 today (Curiosity,
- * Perseverance, Spirit, Opportunity). Moon has historical EVA paths
- * (Apollo 14/15/16/17) and Lunokhod tracks that should be added in
- * a future slice but aren't vendored yet.
- */
-export interface TraverseRegistry {
-  byRoverId: Record<
-    string,
-    {
-      points: Array<[number, number]>; // [lat, lon] in degrees
-      status: 'ACTIVE' | 'ENDED';
-      snapshotDate: string;
-      credit: string;
-    }
-  >;
-}
-
-/**
  * Per-planet Tier 1 hotspot model builder registration. Already
  * implemented as `registerMoonHotspotBuilders()` /
  * `registerMarsHotspotBuilders()` (Slice 2A). Just plumb through.
@@ -143,12 +125,6 @@ export interface SurfaceSceneConfig {
 
   /** 2D fallback projection convention */
   twoDMode: SurfaceTwoDMode;
-
-  /**
-   * Vendored rover-traverse data. Mars has it today; Moon's historical
-   * EVA paths would be added here once vendored.
-   */
-  traverses?: TraverseRegistry;
 
   /**
    * Per-planet Tier 1 hotspot model builder registration bundle.

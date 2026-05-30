@@ -8,12 +8,25 @@
     "landing_date": "1971-11-27",
     "lat": -45,
     "lon": 313,
+    "region_bounds": {
+      "lat_min": -45.5,
+      "lat_max": -44.5,
+      "lon_min": 312.5,
+      "lon_max": 313.5
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "CRASHED",
     "surface_status": "completed",
     "samples_kg": 0,
     "data_quality": "partial",
     "credit": "© Soviet Academy of Sciences (historical) — landing site approximate, NSSDCA catalogue.",
+    "fleet_refs": [
+      {
+        "id": "mars-2",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Mars 2 — Wikipedia",
@@ -30,12 +43,6 @@
         "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A",
         "t": "core"
       }
-    ],
-    "fleet_refs": [
-      {
-        "id": "mars-2",
-        "role": "spacecraft"
-      }
     ]
   },
   {
@@ -44,10 +51,16 @@
     "agency": "ROSCOSMOS",
     "nation": "USSR",
     "year": 1971,
-    "_lat_note": "Original prediction lat=-45; nudged to -45.05 to land inside the ESP_031036_1345 candidate-hardware HiRISE image (which covers -45.001 to -45.114). Within the documented ±10 km uncertainty.",
     "landing_date": "1971-12-02",
     "lat": -45.05,
     "lon": 202,
+    "region_bounds": {
+      "lat_min": -45.55,
+      "lat_max": -44.55,
+      "lon_min": 201.5,
+      "lon_max": 202.5
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "CRASHED",
     "surface_status": "completed",
@@ -56,6 +69,12 @@
     "data_quality": "partial",
     "credit": "© Soviet Academy of Sciences — first soft landing on Mars; transmitted ~14.5 s before signal loss. Coordinates: NSSDCA.",
     "mission_id": "mars3",
+    "fleet_refs": [
+      {
+        "id": "mars-3",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Mars 3 — Wikipedia",
@@ -73,12 +92,7 @@
         "t": "core"
       }
     ],
-    "fleet_refs": [
-      {
-        "id": "mars-3",
-        "role": "spacecraft"
-      }
-    ]
+    "_lat_note": "Original prediction lat=-45; nudged to -45.05 to land inside the ESP_031036_1345 candidate-hardware HiRISE image (which covers -45.001 to -45.114). Within the documented ±10 km uncertainty."
   },
   {
     "id": "mars6",
@@ -89,6 +103,13 @@
     "landing_date": "1974-03-12",
     "lat": -23.9,
     "lon": -19.4,
+    "region_bounds": {
+      "lat_min": -24.4,
+      "lat_max": -23.4,
+      "lon_min": -19.9,
+      "lon_max": -18.9
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "LOST",
     "surface_status": "completed",
@@ -117,6 +138,13 @@
     "landing_date": "1976-07-20",
     "lat": 22.4856,
     "lon": 312.0228,
+    "region_bounds": {
+      "lat_min": 22.3,
+      "lat_max": 22.65,
+      "lon_min": 311.85,
+      "lon_max": 312.2
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -125,6 +153,12 @@
     "data_quality": "good",
     "credit": "© NASA / Viking Project — Chryse Planitia landing site, NASA Planetary Data System.",
     "mission_id": "viking1",
+    "fleet_refs": [
+      {
+        "id": "viking-1",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Viking program — Wikipedia",
@@ -135,12 +169,6 @@
         "l": "Viking 1 — NASA",
         "u": "https://science.nasa.gov/mission/viking-1/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "viking-1",
-        "role": "spacecraft"
       }
     ]
   },
@@ -153,6 +181,13 @@
     "landing_date": "1976-09-03",
     "lat": 47.673,
     "lon": 134.3,
+    "region_bounds": {
+      "lat_min": 47.52,
+      "lat_max": 47.82,
+      "lon_min": 134.15,
+      "lon_max": 134.45
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -160,6 +195,12 @@
     "samples_kg": 0,
     "data_quality": "good",
     "credit": "© NASA / Viking Project — Utopia Planitia landing site.",
+    "fleet_refs": [
+      {
+        "id": "viking-1",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Viking 2 — Wikipedia",
@@ -170,12 +211,6 @@
         "l": "Viking 2 — NASA",
         "u": "https://science.nasa.gov/mission/viking-2/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "viking-1",
-        "role": "spacecraft"
       }
     ]
   },
@@ -188,6 +223,13 @@
     "landing_date": "1997-07-04",
     "lat": 19.0949,
     "lon": 326.7773,
+    "region_bounds": {
+      "lat_min": 19.08,
+      "lat_max": 19.11,
+      "lon_min": 326.76,
+      "lon_max": 326.8
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -196,6 +238,12 @@
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Ares Vallis landing site; deployed Sojourner rover.",
     "mission_id": "mars-pathfinder",
+    "fleet_refs": [
+      {
+        "id": "sojourner",
+        "role": "payload"
+      }
+    ],
     "links": [
       {
         "l": "Mars Pathfinder — Wikipedia",
@@ -206,12 +254,6 @@
         "l": "Mars Pathfinder — NASA",
         "u": "https://science.nasa.gov/mission/mars-pathfinder/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "sojourner",
-        "role": "payload"
       }
     ]
   },
@@ -224,6 +266,13 @@
     "landing_date": "2003-12-25",
     "lat": 11.53,
     "lon": 90.43,
+    "region_bounds": {
+      "lat_min": 11.45,
+      "lat_max": 11.61,
+      "lon_min": 90.35,
+      "lon_max": 90.51
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "LOST",
     "surface_status": "completed",
@@ -252,6 +301,13 @@
     "landing_date": "2004-01-04",
     "lat": -14.57,
     "lon": 175.47,
+    "region_bounds": {
+      "lat_min": -14.65,
+      "lat_max": -14.5,
+      "lon_min": 175.4,
+      "lon_max": 175.55
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -259,6 +315,12 @@
     "samples_kg": 0,
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Gusev Crater landing site; rover stuck 2009, last contact 2010.",
+    "fleet_refs": [
+      {
+        "id": "spirit",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Spirit — Wikipedia",
@@ -269,12 +331,6 @@
         "l": "MER — NASA",
         "u": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "spirit",
-        "role": "spacecraft"
       }
     ]
   },
@@ -287,6 +343,13 @@
     "landing_date": "2004-01-25",
     "lat": -1.95,
     "lon": -5.53,
+    "region_bounds": {
+      "lat_min": -2.35,
+      "lat_max": -1.85,
+      "lon_min": -5.8,
+      "lon_max": -5.3
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -294,6 +357,12 @@
     "samples_kg": 0,
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Meridiani Planum landing site; 45.16 km traverse total. Last contact during 2018 global dust storm.",
+    "fleet_refs": [
+      {
+        "id": "opportunity",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Opportunity — Wikipedia",
@@ -304,12 +373,6 @@
         "l": "Opportunity end-of-mission — NASA",
         "u": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "opportunity",
-        "role": "spacecraft"
       }
     ]
   },
@@ -322,6 +385,13 @@
     "landing_date": "2008-05-25",
     "lat": 68.22,
     "lon": -125.7,
+    "region_bounds": {
+      "lat_min": 67.92,
+      "lat_max": 68.52,
+      "lon_min": -126.1,
+      "lon_max": -125.3
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -329,6 +399,12 @@
     "samples_kg": 0,
     "data_quality": "good",
     "credit": "© NASA/JPL/U. of Arizona — northern polar plain; first to confirm subsurface water ice on Mars.",
+    "fleet_refs": [
+      {
+        "id": "phoenix",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Phoenix lander — Wikipedia",
@@ -339,12 +415,6 @@
         "l": "Phoenix — NASA",
         "u": "https://science.nasa.gov/mission/phoenix/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "phoenix",
-        "role": "spacecraft"
       }
     ]
   },
@@ -357,6 +427,13 @@
     "landing_date": "2012-08-06",
     "lat": -4.59,
     "lon": 137.44,
+    "region_bounds": {
+      "lat_min": -4.7,
+      "lat_max": -4.5,
+      "lon_min": 137.35,
+      "lon_max": 137.55
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ACTIVE",
     "surface_status": "ongoing",
@@ -364,6 +441,12 @@
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Gale Crater landing site; nuclear-powered rover (RTG), still operational.",
     "mission_id": "curiosity",
+    "fleet_refs": [
+      {
+        "id": "curiosity",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Curiosity rover — Wikipedia",
@@ -374,12 +457,6 @@
         "l": "MSL — NASA",
         "u": "https://science.nasa.gov/mission/msl-curiosity/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "curiosity",
-        "role": "spacecraft"
       }
     ]
   },
@@ -392,12 +469,25 @@
     "landing_date": "2016-10-19",
     "lat": -2.07,
     "lon": -6.21,
+    "region_bounds": {
+      "lat_min": -2.15,
+      "lat_max": -1.99,
+      "lon_min": -6.29,
+      "lon_max": -6.13
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "CRASHED",
     "surface_status": "completed",
     "samples_kg": 0,
     "data_quality": "partial",
     "credit": "© ESA / Roscosmos — ExoMars 2016 EDM. Premature parachute release caused free-fall impact at Meridiani Planum.",
+    "fleet_refs": [
+      {
+        "id": "schiaparelli",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Schiaparelli EDM — Wikipedia",
@@ -408,12 +498,6 @@
         "l": "Schiaparelli — ESA",
         "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars/ExoMars_Factsheet",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "schiaparelli",
-        "role": "spacecraft"
       }
     ]
   },
@@ -426,6 +510,13 @@
     "landing_date": "2018-11-26",
     "lat": 4.5,
     "lon": 135.62,
+    "region_bounds": {
+      "lat_min": 4.1,
+      "lat_max": 4.9,
+      "lon_min": 135.27,
+      "lon_max": 135.97
+    },
+    "region_kind": "landing_ellipse",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -434,6 +525,12 @@
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Elysium Planitia landing site; first dedicated seismograph on Mars.",
     "mission_id": "insight",
+    "fleet_refs": [
+      {
+        "id": "insight",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "InSight — Wikipedia",
@@ -444,12 +541,6 @@
         "l": "InSight — NASA",
         "u": "https://science.nasa.gov/mission/insight/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "insight",
-        "role": "spacecraft"
       }
     ]
   },
@@ -462,6 +553,13 @@
     "landing_date": "2021-02-18",
     "lat": 18.44,
     "lon": 77.45,
+    "region_bounds": {
+      "lat_min": 18.3,
+      "lat_max": 18.55,
+      "lon_min": 77.3,
+      "lon_max": 77.6
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ACTIVE",
     "surface_status": "ongoing",
@@ -469,6 +567,12 @@
     "data_quality": "good",
     "credit": "© NASA/JPL-Caltech — Jezero Crater landing site; carries the Ingenuity helicopter (88 flights, retired Jan 2024).",
     "mission_id": "perseverance",
+    "fleet_refs": [
+      {
+        "id": "perseverance",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Perseverance — Wikipedia",
@@ -479,12 +583,6 @@
         "l": "Mars 2020 — NASA",
         "u": "https://science.nasa.gov/mission/mars-2020-perseverance/",
         "t": "core"
-      }
-    ],
-    "fleet_refs": [
-      {
-        "id": "perseverance",
-        "role": "spacecraft"
       }
     ]
   },
@@ -497,6 +595,13 @@
     "landing_date": "2021-05-14",
     "lat": 25.1,
     "lon": 109.93,
+    "region_bounds": {
+      "lat_min": 25.06,
+      "lat_max": 25.12,
+      "lon_min": 109.9,
+      "lon_max": 109.96
+    },
+    "region_kind": "traverse_bbox",
     "crewed": false,
     "status": "ENDED",
     "surface_status": "completed",
@@ -505,6 +610,12 @@
     "data_quality": "good",
     "credit": "© CNSA / China National Space Administration — Utopia Planitia landing site of Tianwen-1 lander + Zhurong rover.",
     "mission_id": "tianwen1",
+    "fleet_refs": [
+      {
+        "id": "zhurong",
+        "role": "spacecraft"
+      }
+    ],
     "links": [
       {
         "l": "Zhurong rover — Wikipedia",
@@ -521,12 +632,6 @@
         "u": "https://www.nature.com/articles/d41586-021-01357-5",
         "t": "core"
       }
-    ],
-    "fleet_refs": [
-      {
-        "id": "zhurong",
-        "role": "spacecraft"
-      }
     ]
   },
   {
@@ -537,6 +642,13 @@
     "year": 2028,
     "lat": 18.2,
     "lon": -35.05,
+    "region_bounds": {
+      "lat_min": 17.5,
+      "lat_max": 18.9,
+      "lon_min": -35.7,
+      "lon_max": -34.4
+    },
+    "region_kind": "roi_quad",
     "crewed": false,
     "status": "PLANNED",
     "surface_status": "planned",

@@ -37,6 +37,28 @@
       "landing_date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
       "lat": { "type": "number", "minimum": -90, "maximum": 90, "description": "Surface latitude (deg, +N). Required for kind:surface." },
       "lon": { "type": "number", "minimum": -180, "maximum": 360, "description": "Surface longitude (deg). Required for kind:surface. Mars convention: +E 0..360. Moon: +E -180..+180." },
+      "region_bounds": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["lat_min", "lat_max", "lon_min", "lon_max"],
+        "description": "Optional axis-aligned (lat,lon) bounding box for the site's geographic extent — landing ellipse, rover traverse bbox, ROI quad, or image-swath footprint (per region_kind). When present, /moon and /mars render this as a rectangular region polygon instead of the legacy circular disc (ADR-061). Must satisfy lat_min ≤ lat_max and lon_min ≤ lon_max (no antimeridian crossing in v1 — split sites that cross into two entries). Only valid when kind:surface.",
+        "properties": {
+          "lat_min": { "type": "number", "minimum": -90, "maximum": 90 },
+          "lat_max": { "type": "number", "minimum": -90, "maximum": 90 },
+          "lon_min": { "type": "number", "minimum": -180, "maximum": 360 },
+          "lon_max": { "type": "number", "minimum": -180, "maximum": 360 }
+        }
+      },
+      "region_kind": {
+        "enum": ["landing_ellipse", "traverse_bbox", "roi_quad", "image_swath"],
+        "description": "Drives visual treatment of region_bounds. landing_ellipse = single-touchdown footprint (Apollos, stationary landers); traverse_bbox = rover wander envelope (Curiosity, Perseverance); roi_quad = semantic region of interest (Shackleton Connecting Ridge, Mt. Sharp); image_swath = literal high-res imagery footprint (HiRISE strip, LROC NAC ROI). Optional but recommended when region_bounds is set."
+      },
+      "region_bearing_deg": {
+        "type": "number",
+        "minimum": 0,
+        "exclusiveMaximum": 360,
+        "description": "Optional bearing (deg, 0..360, +E from N) for non-axis-aligned landing ellipses — primarily Mars rovers where the descent ellipse's major axis is rotated. When set, region_bounds defines the AABB of the rotated ellipse; rendering may use this to draw the actual ellipse inside the box. Skipped for v1 = treat as 0 (axis-aligned)."
+      },
       "altitude_km": { "type": "number", "minimum": 0, "description": "Representative orbital altitude (km). Required for kind:orbiter. Use periapsis for highly elliptical orbits." },
       "inclination_deg": { "type": "number", "minimum": 0, "maximum": 180, "description": "Orbital inclination (deg). Required for kind:orbiter." },
       "eccentricity": { "type": "number", "minimum": 0, "maximum": 1, "description": "Orbital eccentricity (dimensionless). Optional for kind:orbiter; defaults to 0 (circular)." },
@@ -91,6 +113,10 @@
       {
         "if": { "properties": { "kind": { "const": "orbiter" } } },
         "then": { "required": ["altitude_km", "inclination_deg"] }
+      },
+      {
+        "if": { "required": ["region_bounds"] },
+        "then": { "properties": { "kind": { "const": "surface" } } }
       }
     ]
   }

@@ -38,6 +38,20 @@ export type SurfaceStatus = 'completed' | 'ongoing' | 'planned';
 export type SiteKind = 'surface' | 'orbiter';
 export type SiteStatus = 'FLOWN' | 'PLANNED' | 'ACTIVE' | 'ENDED' | 'CRASHED' | 'LOST';
 
+/**
+ * Axis-aligned bounding box for a surface site's geographic extent.
+ * Source of truth for the rectangular region polygon rendered on /moon and
+ * /mars (replaces the legacy circular disc — ADR-061, issue #283 Slice 1).
+ */
+export interface RegionBounds {
+  lat_min: number;
+  lat_max: number;
+  lon_min: number;
+  lon_max: number;
+}
+
+export type RegionKind = 'landing_ellipse' | 'traverse_bbox' | 'roi_quad' | 'image_swath';
+
 export interface SurfaceSite {
   id: string;
   kind: SiteKind;
@@ -48,6 +62,21 @@ export interface SurfaceSite {
   /** Surface coordinates — required when kind === 'surface'. */
   lat?: number;
   lon?: number;
+  /**
+   * Axis-aligned (lat, lon) bounding box for the site's geographic extent.
+   * When set, /moon and /mars render the site as a rectangular region polygon
+   * instead of the legacy circular disc (ADR-061, issue #283). Only valid
+   * for kind === 'surface'.
+   */
+  region_bounds?: RegionBounds;
+  /** Drives visual treatment of region_bounds. */
+  region_kind?: RegionKind;
+  /**
+   * Optional bearing (deg, 0..360, +E from N) for non-axis-aligned landing
+   * ellipses — primarily Mars rovers where the descent ellipse's major axis
+   * is rotated. v1 treats unset as axis-aligned.
+   */
+  region_bearing_deg?: number;
   /** Orbital parameters — required when kind === 'orbiter'. */
   altitude_km?: number;
   inclination_deg?: number;
@@ -103,9 +132,9 @@ export interface SurfaceSite {
   hotspot_tier2_force_product_id?: string;
   /**
    * Path to the equirectangular Tier 3 ground-view panorama for
-   * this site (V2 / #118, ADR-061). PD-NASA: Apollo Lunar Surface
-   * Journal panoramas for Moon, NASA/JPL-Caltech/MSSS Mastcam-Z
-   * for Mars. Only Showcase sites carry this in v0.7.
+   * this site (V2 / #118). PD-NASA: Apollo Lunar Surface Journal
+   * panoramas for Moon, NASA/JPL-Caltech/MSSS Mastcam-Z for Mars.
+   * Only Showcase sites carry this in v0.7.
    */
   hotspot_tier3_panorama?: string;
   /** Showcase tier flag — 4-6 annotations, polished treatment. */

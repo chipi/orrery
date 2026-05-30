@@ -3,7 +3,7 @@
 The orbital mechanics tools NASA uses to reach Mars, rebuilt for anyone who's curious. Real physics, real missions from Sputnik to Artemis II, in **14 languages**. Beautiful, educational, self-hostable.
 
 [![CI](https://github.com/chipi/orrery/actions/workflows/ci.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/ci.yml)
-[![E2E](https://github.com/chipi/orrery/actions/workflows/e2e.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/e2e.yml)
+[![docker-e2e](https://github.com/chipi/orrery/actions/workflows/docker-e2e.yml/badge.svg)](https://github.com/chipi/orrery/actions/workflows/docker-e2e.yml)
 [![Live Preview](https://img.shields.io/badge/live-chipi.github.io%2Forrery-4ecdc4?style=flat)](https://chipi.github.io/orrery/)
 [![Latest tag](https://img.shields.io/github/v/tag/chipi/orrery?label=release&color=4ecdc4)](https://github.com/chipi/orrery/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)

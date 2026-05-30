@@ -1,34 +1,45 @@
 name: docker-e2e
 
-# Stands up the local docker-compose stack inside the GH Actions runner
-# and runs Playwright against it. This is the VPS-readiness gate per
-# ADR-066: it asserts the nginx-serving contract (cache headers, SPA
-# fallback, mime types, the live /data overlay) that the standard
-# e2e.yml workflow doesn't exercise — that one targets `vite preview`.
+# Canonical Playwright gate (ADR-071). Stands up the docker-compose
+# stack inside the GH Actions runner and runs the full Playwright suite
+# against the live nginx-served bundle. Asserts the production-shape
+# serving contract: cache headers, CSP, brotli + gzip negotiation, the
+# /data volume overlay, and the SPA fallback via try_files.
 #
-# Path-gated on PRs so a Svelte-only change doesn't pay the docker tax;
-# always runs on push to main so trunk health is known.
+# Triggers (per ADR-071, superseding ADR-066's push:main + path-gated PR):
+#   1. After CI succeeds on main — workflow_run gate. CI is fast
+#      (~2-3 min); docker-e2e is heavy (~17-25 min). Chaining means a
+#      cheap typecheck/lint/unit-test failure short-circuits the heavy
+#      docker build + Playwright run, and the downstream preview.yml
+#      deploys only when both CI and docker-e2e are green.
+#   2. Manual workflow_dispatch — ad-hoc reruns.
+#   3. Nightly cron — catches EXTERNAL state drift (CDN outages,
+#      upstream asset URL changes, Wikimedia rate-limit issues) that
+#      isn't tied to a code push. Time chosen to land before EU devs
+#      start the day (05:07 UTC = 06:07 CET = 22:07 PST), with the
+#      off-minute (:07) to dodge GitHub Actions' top-of-hour scheduler
+#      contention. Inherited from the deleted e2e.yml.
 #
 # On green main push, the `publish` job builds + pushes the
 # `orrery-pipeline-runner` image to GHCR as multi-arch (amd64 + arm64).
 # Pattern adapted from podcast_scraper's stack-test.yml (RFC-081 §Layer 1).
 
 on:
-  push:
+  workflow_run:
+    workflows: ['CI']
+    types: [completed]
     branches: [main]
-  pull_request:
-    paths:
-      - 'Dockerfile'
-      - 'docker-compose.yml'
-      - '.dockerignore'
-      - 'ops/docker/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - 'playwright.config.ts'
-      - '.github/workflows/docker-e2e.yml'
-      - 'scripts/check-no-secrets-in-image.sh'
   workflow_dispatch:
+  schedule:
+    - cron: '7 5 * * *'
 
+# When a newer push to main lands while an earlier docker-e2e is still
+# running, cancel the older run rather than letting it complete after
+# the new code is already on main. Without this, fast-consecutive
+# pushes leave a string of "cancelled" runs as the latest workflow
+# status, which renders as a red/grey badge on the README even though
+# every commit eventually passes. Pre-empting cleanly keeps the badge
+# accurate.
 concurrency:
   group: docker-e2e-${{ github.ref }}
   cancel-in-progress: true
@@ -79,9 +90,21 @@ jobs:
             shard_id: '2-of-2'
     name: docker-e2e (${{ matrix.project }} ${{ matrix.shard_id }})
     runs-on: ubuntu-latest
+    # workflow_run fires on EVERY completion of the upstream workflow
+    # (success + failure + cancelled). Skip the run unless CI passed,
+    # so a typecheck/lint/unit-test failure doesn't waste 17-25 min of
+    # docker-e2e runtime. Manual + cron triggers always proceed.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          # When triggered via workflow_run, pin to the exact SHA that
+          # passed CI — not the latest of main (which may have moved on
+          # if a newer commit landed between CI completing and
+          # docker-e2e starting). For manual + cron triggers, falls
+          # through to the default (latest of main).
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:

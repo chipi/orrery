@@ -1,25 +1,29 @@
 name: Deploy preview
 
-# Pipeline position: APP-bundle + docs deploy runs ONLY after e2e
-# succeeds on main. Chain: ci.yml ──► e2e.yml ──► preview.yml.
-# Replaces the prior `push: main` trigger so a CI or e2e failure
+# Pipeline position: APP-bundle + docs deploy runs ONLY after docker-e2e
+# succeeds on main. Chain: ci.yml ──► docker-e2e.yml ──► preview.yml.
+# Replaces the prior `push: main` trigger so a CI or docker-e2e failure
 # short-circuits the pipeline instead of deploying broken code to
 # GitHub Pages.
+#
+# Per ADR-071: docker-e2e is the canonical Playwright gate; e2e.yml was
+# retired because vite preview was never a real deploy target and W7
+# sharding had already made mobile-chromium run in both workflows.
 #
 # Manual + weekly cron triggers stay independent of the chain so a
 # Monday rebuild for fresh imagery (ADR-016) still fires even if the
 # repo hasn't been touched in a week.
 #
 # Split from `deploy-docs.yml` per ADR-070: docs site fires on CI
-# success regardless of e2e state (mobile-only flakes shouldn't block
-# docs publish). This workflow continues to publish the full build/
-# (app + docs) on e2e green. Shared concurrency group
+# success regardless of docker-e2e state (mobile-only flakes shouldn't
+# block docs publish). This workflow continues to publish the full
+# build/ (app + docs) on docker-e2e green. Shared concurrency group
 # `gh-pages-publish` serializes against deploy-docs so two workflows
 # don't race on the gh-pages branch.
 
 on:
   workflow_run:
-    workflows: ['e2e']
+    workflows: ['docker-e2e']
     types: [completed]
     branches: [main]
   workflow_dispatch:
@@ -49,9 +53,9 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
-          # Deploy the exact SHA that passed e2e (not the latest of main,
-          # which may have moved on). For manual + cron triggers, falls
-          # through to the default (latest of main).
+          # Deploy the exact SHA that passed docker-e2e (not the latest
+          # of main, which may have moved on). For manual + cron
+          # triggers, falls through to the default (latest of main).
           ref: ${{ github.event.workflow_run.head_sha || github.ref }}
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:

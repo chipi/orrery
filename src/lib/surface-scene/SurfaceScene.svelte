@@ -431,23 +431,35 @@
       });
     }
 
-    // Issue #227 — `faceCameraAtSite(site)` rotates the moon mesh so
-    // the site sits on the +Z hemisphere (camera-facing), and stops
-    // autoSpin so the site stays put while the user reads the
-    // panel. Only invoked from the URL deep-link path; ordinary
-    // click selection doesn't trigger it (would feel jarring to
-    // have the moon lurch under the user's cursor). Latitude isn't
-    // adjusted — handling that would require moving the camera or
-    // tilting the moon, both heavier changes; the longitude flip
-    // alone covers the "site is on the far side" cases that
-    // motivated the issue.
+    // Issue #227 — `faceCameraAtSite(site)` orbits the camera through
+    // the planet centre to align the screen-centre ray with the site's
+    // world position (accounting for axial tilt + any current
+    // planetMesh.rotation.y), then pulls the camera in to a near-orbit
+    // distance so the user lands "on" the site. Replaces Moon's older
+    // longitude-flip-only behavior with Mars's full 3D fly-in tween
+    // (ADR-072 §Drift 14 consolidation — Moon adopts the smoother UX).
+    // RAF interpolates camP/camT/camR over FLY_DURATION_MS with ease-
+    // out cubic. User drag cancels mid-flight.
     faceCameraAtSite = (site: SurfaceSite) => {
       if (site.lat == null || site.lon == null) return;
-      const { x, z } = latLonToUnitSphere(site.lat, site.lon);
-      // Atan2(x, z) returns the longitude angle of the marker in
-      // local frame; negate to rotate that angle TO +Z (the
-      // default camera-facing axis).
-      planetMesh.rotation.y = -Math.atan2(x, z);
+      const v = latLonToUnitSphere(site.lat, site.lon);
+      planetMesh.updateMatrixWorld(true);
+      const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
+      const dir = worldPos.clone().normalize();
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      // Shortest-path interpolation around the longitude circle.
+      let to = Math.atan2(dir.z, dir.x);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      // Land at a Tier-1-friendly distance (50u) so the lander model
+      // resolves; user can scroll-zoom further to reach Tier 2.
+      flyToR = 50;
+      flyStart = performance.now();
+      flyActive = true;
       autoSpin = false;
     };
 
@@ -910,6 +922,34 @@
     const camR0 = camR;
     const camP0 = camP;
     const camT0 = camT;
+
+    // Smooth-zoom target (Drift 13 consolidation). Wheel/pinch update
+    // camRTarget; RAF lerps camR toward it at 15%/frame so zoom feels
+    // viscous rather than snapping. Initialised to current camR so the
+    // first frame is a no-op.
+    let camRTarget = camR;
+
+    // Drag-inertia velocities (Drift 12 consolidation). On mouse-up /
+    // touch-end, the move handler's last frame velocity stays in these;
+    // RAF decays them at 0.92/frame until below threshold. Cancelled
+    // when the user starts a new drag (velocity reset on first move).
+    let camTVelocity = 0;
+    let camPVelocity = 0;
+
+    // Fly-in tween (Drift 14 consolidation). Deep-link or
+    // selectSite({face:true}) initialises the tween; RAF interpolates
+    // camP/camT/camR with ease-out cubic over FLY_DURATION_MS. User
+    // drag cancels mid-flight.
+    const FLY_DURATION_MS = 800;
+    let flyActive = false;
+    let flyStart = 0;
+    let flyFromP = 0;
+    let flyFromT = 0;
+    let flyFromR = 0;
+    let flyToP = 0;
+    let flyToT = 0;
+    let flyToR = 0;
+
     const updateCam = () => {
       camera.position.set(
         camR * Math.sin(camP) * Math.sin(camT),
@@ -921,8 +961,12 @@
     updateCam();
     resetCamera = () => {
       camR = camR0;
+      camRTarget = camR0;
       camP = camP0;
       camT = camT0;
+      camTVelocity = 0;
+      camPVelocity = 0;
+      flyActive = false;
       updateCam();
     };
 
@@ -1002,26 +1046,27 @@
       lmy = e.clientY;
       downX = e.clientX;
       downY = e.clientY;
+      // Cancel an in-flight fly-in if the user grabs the planet.
+      flyActive = false;
+      // Reset inertia velocities — fresh drag starts from rest.
+      camTVelocity = 0;
+      camPVelocity = 0;
       el3d.style.cursor = 'grabbing';
     };
     const onMouseMove = (e: MouseEvent) => {
       if (!isDrag) return;
       if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > 4) dragMoved = true;
-      camT -= (e.clientX - lmx) * 0.005;
-      // Panorama-mode tilt clamp (±20° around horizon). Same shape
-      // as /mars's panorama clamp: skybox padding tops/bottoms only
-      // cover ~25° before exposing the sky band — ±20° keeps the
-      // user inside published imagery on every site without per-site
-      // bookkeeping. Outside panorama the existing near-poles clamp
-      // applies.
+      const dT = -(e.clientX - lmx) * 0.005;
+      const dP = (e.clientY - lmy) * 0.005;
+      camTVelocity = dT;
+      camPVelocity = dP;
+      camT += dT;
+      // Panorama-mode tilt clamp (±20°); normal mode has near-pole clamp.
       if (panoramaActive) {
         const tiltClamp = 0.349; // ≈ 20° in radians
-        camP = Math.max(
-          Math.PI / 2 - tiltClamp,
-          Math.min(Math.PI / 2 + tiltClamp, camP + (e.clientY - lmy) * 0.005),
-        );
+        camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
       } else {
-        camP = Math.max(0.05, Math.min(Math.PI - 0.05, camP + (e.clientY - lmy) * 0.005));
+        camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
       }
       lmx = e.clientX;
       lmy = e.clientY;
@@ -1036,11 +1081,13 @@
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering
       // browser-level zoom (Cmd-scroll). Registered with passive:false
-      // below so this works (was passive:true → browser zoomed and
-      // the moon stayed put).
+      // below so this works.
       e.preventDefault();
-      camR = Math.max(30.2, Math.min(200, camR + e.deltaY * 0.05));
-      updateCam();
+      // Update camRTarget instead of camR directly — RAF lerps toward
+      // the target at 15%/frame for a smooth viscous-zoom feel.
+      // ADR-072 §Drift 13 consolidation.
+      camRTarget = Math.max(30.2, Math.min(200, camRTarget + e.deltaY * 0.05));
+      flyActive = false; // wheel cancels any in-flight fly-in
     };
 
     // Touch — single-finger orbit + two-finger pinch
@@ -1058,6 +1105,9 @@
         lmy = e.touches[0].clientY;
         touchDownX = lmx;
         touchDownY = lmy;
+        flyActive = false;
+        camTVelocity = 0;
+        camPVelocity = 0;
       } else if (e.touches.length === 2) {
         touchActive = false;
         pinchPrev = tDist(e.touches[0], e.touches[1]);
@@ -1069,8 +1119,9 @@
         // also do its native pinch-zoom on the page itself.
         e.preventDefault();
         const d = tDist(e.touches[0], e.touches[1]);
-        camR = Math.max(30.2, Math.min(200, camR * (pinchPrev / d)));
-        updateCam();
+        // Update camRTarget — smooth-zoom lerp picks it up in RAF.
+        camRTarget = Math.max(30.2, Math.min(200, camRTarget * (pinchPrev / d)));
+        flyActive = false;
         pinchPrev = d;
         return;
       }
@@ -1080,19 +1131,17 @@
         6
       )
         touchMoved = true;
-      camT -= (e.touches[0].clientX - lmx) * 0.005;
+      const dT = -(e.touches[0].clientX - lmx) * 0.005;
+      const dP = (e.touches[0].clientY - lmy) * 0.005;
+      camTVelocity = dT;
+      camPVelocity = dP;
+      camT += dT;
       // Panorama-mode tilt clamp (±20°), same as the mouse path.
       if (panoramaActive) {
         const tiltClamp = 0.349;
-        camP = Math.max(
-          Math.PI / 2 - tiltClamp,
-          Math.min(Math.PI / 2 + tiltClamp, camP + (e.touches[0].clientY - lmy) * 0.005),
-        );
+        camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
       } else {
-        camP = Math.max(
-          0.05,
-          Math.min(Math.PI - 0.05, camP + (e.touches[0].clientY - lmy) * 0.005),
-        );
+        camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
       }
       lmx = e.touches[0].clientX;
       lmy = e.touches[0].clientY;
@@ -1339,6 +1388,54 @@
       rafId = requestAnimationFrame(animate);
       const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
+
+      // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):
+      //   (a) Fly-in tween — ease-out cubic interpolation of camP/T/R.
+      //   (b) Smooth zoom — lerp camR toward camRTarget at 15%/frame.
+      //   (c) Drag inertia — angular velocity decay 92%/frame.
+      // All three are mutually exclusive per-frame: fly-in supersedes
+      // zoom + inertia; zoom + inertia run together when fly isn't.
+      let cameraChanged = false;
+      if (flyActive) {
+        const t = (now - flyStart) / FLY_DURATION_MS;
+        if (t >= 1) {
+          camP = flyToP;
+          camT = flyToT;
+          camR = flyToR;
+          camRTarget = flyToR;
+          flyActive = false;
+        } else {
+          const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
+          camP = flyFromP + (flyToP - flyFromP) * e;
+          camT = flyFromT + (flyToT - flyFromT) * e;
+          camR = flyFromR + (flyToR - flyFromR) * e;
+          camRTarget = camR;
+        }
+        cameraChanged = true;
+      } else {
+        // (b) Smooth zoom: lerp camR toward camRTarget at 15%/frame.
+        if (Math.abs(camR - camRTarget) > 0.001) {
+          camR += (camRTarget - camR) * 0.15;
+          cameraChanged = true;
+        }
+        // (c) Drag inertia: after release, decay velocity ~92%/frame
+        // and apply to camT/camP until below threshold. Skips while
+        // user is actively dragging.
+        const dragging = isDrag || touchActive;
+        if (!dragging && (Math.abs(camTVelocity) > 0.0001 || Math.abs(camPVelocity) > 0.0001)) {
+          camT += camTVelocity;
+          camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + camPVelocity));
+          camTVelocity *= 0.92;
+          camPVelocity *= 0.92;
+          cameraChanged = true;
+        } else if (dragging) {
+          // While dragging, the move handler resets velocity each move;
+          // decay the residual so release doesn't double-fire inertia.
+          camTVelocity *= 0.5;
+          camPVelocity *= 0.5;
+        }
+      }
+      if (cameraChanged) updateCam();
 
       // Rebuild markers if the site list changed (cheap — happens once
       // when the data loads). Same trigger covers the orbital ring

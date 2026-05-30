@@ -327,11 +327,59 @@
     const textureLoader = new THREE.TextureLoader();
     const planetMap = textureLoader.load(config.textureUrl);
     const planetRadius = 30;
+    // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
+    // is visible (no-op rotation for Moon's ~0°). Orbital markers
+    // attach to scene (NOT planetAxis) per ADR-072 §Drift 22 — orbits
+    // are inertial, they don't inherit the planet's tilt.
+    const planetAxis = new THREE.Group();
+    planetAxis.rotation.z = (config.axialTiltDeg * Math.PI) / 180;
+    scene.add(planetAxis);
     const planetMesh = new THREE.Mesh(
       new THREE.SphereGeometry(planetRadius, 64, 64),
       new THREE.MeshPhongMaterial({ map: planetMap, color: 0xffffff, shininess: 4 }),
     );
-    scene.add(planetMesh);
+    planetAxis.add(planetMesh);
+
+    // Body-specific atmosphere shell (Mars: thin CO₂; Moon: vacuum,
+    // skip the block). Toggled via the Science Lens 'atmosphere' layer.
+    let _stopAtmosphereLayer: (() => void) | undefined;
+    if (config.atmosphere) {
+      const atm = config.atmosphere;
+      // Scene scale: planetRadius=30 → real ≈ 3389 km for Mars,
+      // so 1 unit ≈ 113 km. Shell radius scales with altitudeKm.
+      const shellR = planetRadius + atm.altitudeKm / 113;
+      const atmShell = new THREE.Mesh(
+        new THREE.SphereGeometry(shellR, 48, 48),
+        new THREE.MeshBasicMaterial({
+          color: atm.color,
+          transparent: true,
+          opacity: atm.meshOpacity,
+          side: THREE.BackSide,
+          depthWrite: false,
+        }),
+      );
+      const atmRing = new THREE.Mesh(
+        new THREE.RingGeometry(shellR * 0.999, shellR * 1.002, 64),
+        new THREE.MeshBasicMaterial({
+          color: atm.color,
+          transparent: true,
+          opacity: atm.ringOpacity,
+          side: THREE.DoubleSide,
+          depthWrite: false,
+        }),
+      );
+      atmRing.rotation.x = Math.PI / 2;
+      atmShell.userData.layerKey = 'atmosphere';
+      atmRing.userData.layerKey = 'atmosphere';
+      atmShell.visible = false;
+      atmRing.visible = false;
+      scene.add(atmShell);
+      scene.add(atmRing);
+      _stopAtmosphereLayer = onLayerChange('atmosphere', (on) => {
+        atmShell.visible = on;
+        atmRing.visible = on;
+      });
+    }
 
     // Issue #227 — `faceCameraAtSite(site)` rotates the moon mesh so
     // the site sits on the +Z hemisphere (camera-facing), and stops
@@ -1314,6 +1362,7 @@
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
       _stopTidalLockLayer?.();
+      _stopAtmosphereLayer?.();
       stopPanoramaEscape();
       panoramaSkybox?.dispose();
       stopCanvasInputs();

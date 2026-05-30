@@ -1,0 +1,38 @@
+{
+  "id": "lc-39a",
+  "name": "Launch Complex 39A",
+  "category": "launch-site",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA Kennedy Space Center",
+  "first_flight": "1967-11-09",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "lat": 28.6082,
+  "lon": -80.6041,
+  "best_known_for": "Launched all Apollo lunar missions; today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "credit": "Operational pad at NASA Kennedy Space Center. Saturn V era 1967-1973 (Apollo 4 through Skylab); Shuttle era 1981-2011 (STS); SpaceX Crew Dragon + Falcon Heavy era 2017-present. Coordinates and operational history from NASA KSC fact sheets and FAA registry.",
+  "links": [
+    {
+      "l": "Launch Complex 39A — NASA KSC",
+      "u": "https://www.nasa.gov/feature/launch-complex-39a",
+      "t": "intro"
+    },
+    {
+      "l": "Launch Complex 39 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39A",
+      "t": "core"
+    },
+    {
+      "l": "Apollo Program — NASA history",
+      "u": "https://www.nasa.gov/history/the-apollo-program/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "apollo11",
+    "apollo13",
+    "apollo17"
+  ]
+}

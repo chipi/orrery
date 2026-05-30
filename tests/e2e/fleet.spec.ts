@@ -84,6 +84,19 @@ test.describe('/fleet', () => {
     expect(await cards.count()).toBeGreaterThanOrEqual(10);
   });
 
+  test('launch-site category filter (#285 Phase 1) shows 14 launchpads', async ({ page }) => {
+    await page.goto('/fleet');
+    await waitForFleetReady(page);
+    await expandFilters(page);
+    await page.getByRole('radio', { name: /^Launch site$/ }).click();
+    await expect(page).toHaveURL(/category=launch-site/);
+    const cards = page.locator('.fleet-grid .card');
+    // 14 launch-sites shipped: LC-39A/B, SLC-40, Baikonur 1/5+31/6, Vandenberg
+    // SLC-4E, Wenchang LC-101, Jiuquan SLC-43, Kourou ELA-3+4, Tanegashima,
+    // Sriharikota, Starbase, Plesetsk.
+    expect(await cards.count()).toBeGreaterThanOrEqual(12);
+  });
+
   test('epoch chip filter works (mobile carousel)', async ({ page }) => {
     // Mobile viewport activates the chip carousel rather than the axis.
     await page.setViewportSize({ width: 375, height: 800 });

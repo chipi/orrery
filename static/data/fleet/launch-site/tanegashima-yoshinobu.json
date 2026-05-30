@@ -1,0 +1,34 @@
+{
+  "id": "tanegashima-yoshinobu",
+  "name": "Tanegashima Yoshinobu LP-1",
+  "category": "launch-site",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Heavy Industries / JAXA",
+  "first_flight": "1996-08-17",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 30.4007,
+  "lon": 130.9755,
+  "best_known_for": "Japan's heavy-lift gateway — H-IIA + H3, HTV / HTV-X cargo to the ISS",
+  "credit": "Yoshinobu Launch Complex at the Tanegashima Space Center on Japan's southern island. Original H-II first flight August 1996; H-IIA from 2001 (a workhorse with a 49-out-of-50 success rate); HTV cargo to the ISS from 2009 to 2020; HTV-X from 2025 onward. LP-1 was upgraded for the new H3 in 2023. Tanegashima's 30°N latitude is workable for geostationary launches with the southern Pacific corridor downrange. Coordinates from JAXA fact sheets.",
+  "links": [
+    {
+      "l": "Tanegashima Space Center — JAXA",
+      "u": "https://global.jaxa.jp/about/centers/tnsc/index.html",
+      "t": "intro"
+    },
+    {
+      "l": "H-IIA — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/H-IIA",
+      "t": "core"
+    },
+    {
+      "l": "H3 — JAXA",
+      "u": "https://global.jaxa.jp/projects/rockets/h3/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

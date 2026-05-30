@@ -39,7 +39,8 @@
           "orbiter",
           "observatory",
           "space-suit",
-          "constellation"
+          "constellation",
+          "launch-site"
         ]
       },
       "agency": { "type": "string", "minLength": 1 },

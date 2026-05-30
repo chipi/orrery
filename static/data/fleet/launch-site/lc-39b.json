@@ -1,0 +1,37 @@
+{
+  "id": "lc-39b",
+  "name": "Launch Complex 39B",
+  "category": "launch-site",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA Kennedy Space Center",
+  "first_flight": "1969-05-18",
+  "status": "ACTIVE",
+  "era": "1969-1981",
+  "epoch": "lunar-era",
+  "lat": 28.6273,
+  "lon": -80.6208,
+  "best_known_for": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad",
+  "credit": "Sister pad to 39A at NASA Kennedy Space Center. Apollo 10 + Skylab + 53 Shuttle missions through 2006. Converted to clean-pad configuration in 2007; from 2022 onward serves Artemis I and the SLS Block 1 / Block 1B for the lunar return programme. Coordinates and operational history from NASA KSC fact sheets.",
+  "links": [
+    {
+      "l": "Launch Complex 39B — NASA KSC",
+      "u": "https://www.nasa.gov/launchers/launch-complex-39b/",
+      "t": "intro"
+    },
+    {
+      "l": "Launch Complex 39B — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Kennedy_Space_Center_Launch_Complex_39B",
+      "t": "core"
+    },
+    {
+      "l": "Artemis — NASA",
+      "u": "https://www.nasa.gov/specials/artemis/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "artemis2",
+    "artemis3"
+  ]
+}

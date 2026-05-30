@@ -1,0 +1,35 @@
+{
+  "id": "kourou-ela-3",
+  "name": "Kourou ELA-3",
+  "category": "launch-site",
+  "agency": "ESA / Arianespace",
+  "country": "French Guiana",
+  "manufacturer": "ESA / CNES",
+  "first_flight": "1996-06-04",
+  "last_flight": "2023-07-05",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 5.239,
+  "lon": -52.769,
+  "best_known_for": "Ariane 5's home pad — JWST + Galileo + a quarter of geostationary commercial sats over a decade",
+  "credit": "Ariane 5 pad at the Centre Spatial Guyanais near Kourou, French Guiana, 5.2°N. ELA-3 hosted every Ariane 5 mission from the maiden flight (Cluster, June 1996, that ended in vehicle loss) through the final flight VA261 in July 2023 (Heinrich Hertz + Syracuse 4B). Ariane 5 launched James Webb (December 2021), every Galileo navigation pair through 2014, BepiColombo, Rosetta, Herschel + Planck, JUICE, and the bulk of commercial Western geostationary traffic for two decades. ELA-4 next door now hosts Ariane 6. Coordinates from CNES + ESA records.",
+  "links": [
+    {
+      "l": "Ariane 5 — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane_5",
+      "t": "intro"
+    },
+    {
+      "l": "Centre Spatial Guyanais — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Guiana_Space_Centre",
+      "t": "core"
+    },
+    {
+      "l": "Why Kourou — CNES",
+      "u": "https://centrespatialguyanais.cnes.fr/en",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

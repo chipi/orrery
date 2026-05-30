@@ -145,6 +145,7 @@
     'observatory',
     'space-suit',
     'constellation',
+    'launch-site',
   ];
 
   const CATEGORY_LABEL: Record<FleetCategory, string> = {
@@ -158,6 +159,7 @@
     observatory: 'Observatory',
     'space-suit': 'Suit',
     constellation: 'Constellation',
+    'launch-site': 'Launch site',
   };
 
   const CATEGORY_COLOR: Record<FleetCategory, string> = {
@@ -171,6 +173,7 @@
     observatory: '#4ecdc4', // teal — scientific
     'space-suit': '#cbd5e1', // ice-white — pressure shell
     constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
+    'launch-site': '#6b8e6b', // moss-green — Earth-surface launch sites (#285)
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];

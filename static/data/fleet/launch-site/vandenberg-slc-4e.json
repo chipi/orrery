@@ -1,0 +1,34 @@
+{
+  "id": "vandenberg-slc-4e",
+  "name": "Vandenberg SLC-4E",
+  "category": "launch-site",
+  "agency": "USSF / SpaceX",
+  "country": "USA",
+  "manufacturer": "US Air Force / SpaceX (refit 2011+)",
+  "first_flight": "1963-08-12",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 34.632,
+  "lon": -120.6107,
+  "best_known_for": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation",
+  "credit": "West-coast Falcon 9 pad at Vandenberg Space Force Base. Originally an Atlas-Agena pad (1963-1967); Titan III/IV from 1972 to 2005; refit by SpaceX in 2011 and now flies Falcon 9 to polar / sun-synchronous orbits — the geometry the East Coast can't reach because the launch corridor crosses populated land. Starlink shells, NRO payloads, USSF + commercial earth-observation. Coordinates from FAA + USSF public records.",
+  "links": [
+    {
+      "l": "Vandenberg SFB — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vandenberg_Space_Force_Base_Space_Launch_Complex_4",
+      "t": "intro"
+    },
+    {
+      "l": "SLC-4 history — USSF",
+      "u": "https://www.vandenberg.spaceforce.mil/About-Us/Fact-Sheets/",
+      "t": "core"
+    },
+    {
+      "l": "Sun-synchronous orbits — ESA",
+      "u": "https://www.esa.int/Education/Sun_synchronous_orbits",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-05-30T02:02:13.290Z",
+  "generated_at": "2026-05-30T02:05:42.607Z",
   "entries": [
     {
       "ts": "2026-05-30T02:02:13.289Z",
@@ -12,11 +12,88 @@
       "cost_usd": 0.034415999999999995,
       "voice_id": "en-US-Neural2-J",
       "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:04:53.561Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "signal-delay",
+      "chars": 1881,
+      "cost_usd": 0.030095999999999998,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:01.101Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "porkchop",
+      "chars": 2448,
+      "cost_usd": 0.039168,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:08.058Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "one-way-light-time",
+      "chars": 2154,
+      "cost_usd": 0.034464,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:16.752Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "curator",
+      "episode_id": "capability-ladder-close",
+      "chars": 2509,
+      "cost_usd": 0.040144,
+      "voice_id": "en-US-Neural2-J",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:25.632Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "cernan-last-words",
+      "chars": 2521,
+      "cost_usd": 0.040336,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:35.269Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "guide",
+      "episode_id": "far-side",
+      "chars": 2625,
+      "cost_usd": 0.041999999999999996,
+      "voice_id": "en-US-Neural2-F",
+      "status": "success"
+    },
+    {
+      "ts": "2026-05-30T02:05:42.607Z",
+      "provider": "google",
+      "locale": "en-US",
+      "persona": "enthusiast",
+      "episode_id": "curiosity-persistence",
+      "chars": 2474,
+      "cost_usd": 0.039584,
+      "voice_id": "en-US-Neural2-D",
+      "status": "success"
     }
   ],
   "monthly_totals": {
     "2026-05": {
-      "google": 0.034415999999999995
+      "google": 0.300208
     }
   }
 }

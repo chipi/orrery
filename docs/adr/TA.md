@@ -798,7 +798,9 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | ADR-056 | Accepted | Deterministic e2e readiness signals |
 | ADR-057 | Accepted (closes #73 Gap 2) | Locale-override cookie carve-out |
 | ADR-058 | Accepted | Cislunar Earth-centered second camera |
-| ADR-059 to ADR-062 | _Reserved_ | Planned closure targets for RFC-017 (Surface Hotspots, v0.7) |
+| ADR-059, ADR-060, ADR-062 | _Reserved_ | Planned closure targets for RFC-017 (Surface Hotspots, v0.7) — ADR-062 earmarked for sphere → flat-patch transition (Slice 4 of #283) |
+| ADR-061 | Accepted | Surface hotspots are regions, not points (`region_bounds` on `SurfaceSite`) — Slice 1 of #283 |
+| ADR-072 | Accepted | Surface routes (`/moon`, `/mars`) share `SurfaceScene.svelte`; 8 body-justified knobs, 22 drifts consolidated — Slice 2 of #283 (closes the deferral in ADR-037) |
 
 ---
 

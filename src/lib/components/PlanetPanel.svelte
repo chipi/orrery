@@ -8,6 +8,7 @@
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
+  import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
   import type { ScienceTabId } from '$types/science';
 
   // LEARN folds into SCIENCE (Phase 4 cleanup) — one tab destination, less
@@ -68,15 +69,14 @@
   let hasLinks = $derived((planet?.links?.length ?? 0) > 0);
 
   // ─── Derived technical figures (canonical, IAU-grounded) ─────────
-  // mu_sun ≈ 4π² in AU³/yr², AU/yr → km/s = 4.7404 (IAU 2012).
-  const MU_SUN = 4 * Math.PI ** 2;
-  const AUPYR_TO_KMS = 4.7404;
-  const AU_TO_MKM = 149.5978707;
+  // Constants live in $lib/fly-physics-constants so /fly + /explore + this
+  // panel can't drift on IAU updates.
+  const AU_TO_MKM = AU_TO_KM / 1_000_000;
 
   let perihelion = $derived(planet ? planet.a * (1 - planet.e) : 0);
   let aphelion = $derived(planet ? planet.a * (1 + planet.e) : 0);
   let meanVelKms = $derived(
-    planet ? Math.sqrt(MU_SUN * (2 / planet.a - 1 / planet.a)) * AUPYR_TO_KMS : 0,
+    planet ? Math.sqrt(MU_SUN_AU3_YR2 * (2 / planet.a - 1 / planet.a)) * AU_PER_YR_TO_KMS : 0,
   );
   let speedRatio = $derived(planet ? (1 + planet.e) / (1 - planet.e) : 1);
   let orbitShape = $derived(

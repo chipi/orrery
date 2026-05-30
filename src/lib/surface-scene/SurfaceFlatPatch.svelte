@@ -23,6 +23,7 @@
   import type { SurfaceSite, Traverse } from '$types/surface-site';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
+  import { loadImageVisionManifest, getImageEntry, pickVariant } from '$lib/image-vision';
 
   interface Props {
     selected: SurfaceSite;
@@ -34,6 +35,61 @@
   let { selected, config, traverses, onClose }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
+
+  // ─── Imagery loading ───────────────────────────────────────────────
+  // Resolve regional + detail texture URLs from the selected site's
+  // hotspot_tier2_source / hotspot_tier2_regional_source paths through
+  // the Image Vision manifest (lazy 1:1 variant lookup). Soft-fail to
+  // the raw path if the manifest doesn't have an entry yet. Mirrors the
+  // pattern SurfaceScene uses for the sphere's Tier-2 patch.
+  let regionalImage: HTMLImageElement | null = $state(null);
+  let detailImage: HTMLImageElement | null = $state(null);
+  let regionalReady = $state(false);
+  let detailReady = $state(false);
+
+  // Kick the manifest load once on mount so subsequent lookups are
+  // synchronous. Cheap soft-fail if the manifest 404s.
+  onMount(() => {
+    void loadImageVisionManifest();
+  });
+
+  // Reactive: when `selected` changes, re-resolve and re-load images.
+  $effect(() => {
+    regionalReady = false;
+    detailReady = false;
+    regionalImage = null;
+    detailImage = null;
+
+    const tier2Source = selected.hotspot_tier2_source;
+    if (tier2Source) {
+      const entry = getImageEntry(tier2Source);
+      const url = (entry ? pickVariant(entry, 'thumbnail', false) : undefined) ?? tier2Source;
+      const img = new Image();
+      img.onload = () => {
+        detailImage = img;
+        detailReady = true;
+      };
+      img.onerror = () => {
+        // Soft-fail — keep the translucent-box placeholder visible.
+      };
+      img.src = url;
+    }
+
+    const regionalSource = selected.hotspot_tier2_regional_source;
+    if (regionalSource) {
+      const rEntry = getImageEntry(regionalSource);
+      const rUrl = (rEntry ? pickVariant(rEntry, 'thumbnail', false) : undefined) ?? regionalSource;
+      const rImg = new Image();
+      rImg.onload = () => {
+        regionalImage = rImg;
+        regionalReady = true;
+      };
+      rImg.onerror = () => {
+        // Soft-fail.
+      };
+      rImg.src = rUrl;
+    }
+  });
 
   // ─── View state (lat/lon centred + zoom km-per-pixel) ──────────────
   // Initial view: centroid of the selected region, sized so the region
@@ -181,19 +237,40 @@
     const y = tl.y;
     const w = br.x - tl.x;
     const h = br.y - tl.y;
-    // Translucent fill + crisp border (regional = gold-toned per mockup).
-    ctx.fillStyle = 'rgba(255, 200, 80, 0.10)';
-    ctx.fillRect(x, y, w, h);
+    if (w < 1 || h < 1) return;
+    // Real CTX / LROC WAC imagery clipped to the region bounds. When
+    // the source image is loaded, drawImage maps its full extent onto
+    // the region rectangle (the source image is georegistered to the
+    // site's tier-2 source, sized to match landing-zone coordinates).
+    if (regionalReady && regionalImage) {
+      ctx.save();
+      // Slight desaturation for "regional context" feel vs the detail
+      // layer which renders at full saturation.
+      ctx.globalAlpha = 0.95;
+      ctx.drawImage(regionalImage, x, y, w, h);
+      ctx.globalAlpha = 1;
+      ctx.restore();
+    } else {
+      // Placeholder while image loads / when source isn't wired.
+      ctx.fillStyle = 'rgba(255, 200, 80, 0.10)';
+      ctx.fillRect(x, y, w, h);
+    }
+    // Crisp gold border (regional = gold per mockup frame 04).
     ctx.strokeStyle = 'rgba(255, 200, 80, 0.7)';
     ctx.lineWidth = 1.5;
     ctx.strokeRect(x, y, w, h);
-    // Label in corner
+    // Label in corner — REGIONAL · CTX (Mars) / LROC WAC (Moon).
     ctx.fillStyle = '#ffc850';
     ctx.font = "bold 10px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     const kind = selected.region_kind ?? 'region';
-    ctx.fillText(`${kind.replace('_', ' ').toUpperCase()} · ${selected.id}`, x + 6, y + 6);
+    const sourceLabel = config.planet === 'mars' ? 'CTX 5 m/px' : 'LROC NAC 5 m/px';
+    ctx.fillText(
+      `REGIONAL · ${sourceLabel} · ${kind.replace('_', ' ').toUpperCase()}`,
+      x + 6,
+      y + 6,
+    );
   }
 
   function drawDetailLayer(ctx: CanvasRenderingContext2D, W: number, H: number) {
@@ -212,8 +289,13 @@
     const w = br.x - tl.x;
     const h = br.y - tl.y;
     if (w < 4 || h < 4) return; // too zoomed out to be meaningful
-    ctx.fillStyle = 'rgba(78, 205, 196, 0.10)';
-    ctx.fillRect(x, y, w, h);
+    // Real HiRISE / LROC NAC imagery when loaded.
+    if (detailReady && detailImage) {
+      ctx.drawImage(detailImage, x, y, w, h);
+    } else {
+      ctx.fillStyle = 'rgba(78, 205, 196, 0.10)';
+      ctx.fillRect(x, y, w, h);
+    }
     ctx.strokeStyle = 'rgba(78, 205, 196, 0.85)';
     ctx.lineWidth = 1.5;
     ctx.strokeRect(x, y, w, h);

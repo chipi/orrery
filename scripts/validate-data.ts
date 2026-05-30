@@ -1538,6 +1538,93 @@ let overlayFailed = 0;
   }
 }
 
+// ─── Audio asset cross-check (PRD-016 / RFC-019 §5.4 — S13 release gate) ────
+// Every content/episodes/en-US/*.md script must have at least one matching
+// audio-provenance entry; every audio-provenance entry must have a matching
+// script + the .mp3/.vtt/.txt files on disk. This is the fail-closed gate
+// that prevents the runtime AudioOverlay from advertising an episode whose
+// audio is missing, or shipping an MP3 whose source script was deleted.
+console.log('\nValidating audio asset cross-references (PRD-016 / RFC-019 §5.4)...');
+let audioFailed = 0;
+const AUDIO_PROVENANCE_PATH = join(DATA_ROOT, 'audio', 'audio-provenance.json');
+const EPISODES_DIR = join('content', 'episodes', 'en-US');
+if (existsSync(EPISODES_DIR) && existsSync(AUDIO_PROVENANCE_PATH)) {
+  const audioProblems: string[] = [];
+  let audioManifest: {
+    entries: Array<{
+      episode_id: string;
+      locale: string;
+      path_mp3: string;
+      path_vtt: string;
+      path_txt: string;
+    }>;
+  } | null = null;
+  try {
+    audioManifest = JSON.parse(readFileSync(AUDIO_PROVENANCE_PATH, 'utf-8'));
+  } catch (err) {
+    audioProblems.push(`audio-provenance.json parse error: ${(err as Error).message}`);
+  }
+
+  if (audioManifest) {
+    // Build script id set from disk.
+    const scriptIds = new Set<string>();
+    for (const file of readdirSync(EPISODES_DIR)) {
+      if (!file.endsWith('.md') || file.startsWith('.') || file === 'README.md') continue;
+      scriptIds.add(file.replace(/\.md$/, ''));
+    }
+
+    // Build provenance id × locale → entries map.
+    const provBy: Map<string, typeof audioManifest.entries> = new Map();
+    for (const e of audioManifest.entries) {
+      const key = `${e.episode_id}|${e.locale}`;
+      const arr = provBy.get(key) ?? [];
+      arr.push(e);
+      provBy.set(key, arr);
+    }
+
+    // (a) every script has at least one en-US provenance entry
+    for (const id of scriptIds) {
+      const key = `${id}|en-US`;
+      if (!provBy.has(key)) {
+        audioProblems.push(
+          `script "${id}.md" has no en-US audio-provenance entry — run \`npm run audio:generate -- --episode ${id}\``,
+        );
+      }
+    }
+
+    // (b) every provenance entry's .mp3/.vtt/.txt exists on disk
+    for (const e of audioManifest.entries) {
+      for (const p of [e.path_mp3, e.path_vtt, e.path_txt]) {
+        // path_* fields are public URLs (/audio/…); map to static/audio/…
+        const onDisk = join('static', p.replace(/^\//, ''));
+        if (!existsSync(onDisk)) {
+          audioProblems.push(
+            `provenance "${e.episode_id}/${e.locale}" references missing file: ${p}`,
+          );
+        }
+      }
+    }
+
+    // (c) every provenance entry has a matching script
+    for (const [key] of provBy) {
+      const [id, locale] = key.split('|');
+      if (locale === 'en-US' && !scriptIds.has(id)) {
+        audioProblems.push(
+          `audio-provenance entry "${id}/${locale}" has no script at content/episodes/${locale}/${id}.md`,
+        );
+      }
+    }
+  }
+
+  if (audioProblems.length === 0) {
+    const total = audioManifest?.entries.length ?? 0;
+    console.log(`  ✓ ${total} audio-provenance entries cross-check against scripts + disk`);
+  } else {
+    for (const p of audioProblems) console.log(`  ✗ ${p}`);
+    audioFailed = audioProblems.length;
+  }
+}
+
 if (
   failed +
     docFailed +
@@ -1549,7 +1636,8 @@ if (
     assetSizeFailed +
     imageMimeFailed +
     imagePipelineFailed +
-    overlayFailed >
+    overlayFailed +
+    audioFailed >
   0
 )
   process.exit(1);

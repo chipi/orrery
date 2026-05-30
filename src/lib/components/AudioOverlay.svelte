@@ -224,6 +224,81 @@
     const s = Math.floor(sec % 60);
     return `${m}:${s.toString().padStart(2, '0')}`;
   }
+
+  // ─── Captions (S9 — PRD-016 M9 / RFC-019 §7.5) ─────────────────────────
+  // The <track> element is wired to the VTT URL; we keep its mode `hidden`
+  // so cuechange fires without the browser drawing its native caption UI
+  // (which we replace with our own banner so styling matches the overlay).
+
+  $effect(() => {
+    if (!audioEl) return;
+    const tracks = audioEl.textTracks;
+    if (tracks.length === 0) return;
+    const track = tracks[0];
+    track.mode = 'hidden';
+    const onCueChange = () => {
+      const cues = track.activeCues;
+      if (cues && cues.length > 0) {
+        // VTTCue.text is the rendered string for the active cue.
+        audio.currentCaption = (cues[0] as VTTCue).text;
+      } else {
+        audio.currentCaption = '';
+      }
+    };
+    track.addEventListener('cuechange', onCueChange);
+    return () => track.removeEventListener('cuechange', onCueChange);
+  });
+
+  // Auto-on triggers (PRD-016 M9). Three signals that flip captions on by
+  // default; the user can still override with the manual toggle.
+  // - prefers-reduced-motion: assume reduced sensory load preferred
+  // - <audio> muted at episode start: caption is the only path to content
+  // - navigator.connection effectiveType slow: bandwidth-bound listener
+  $effect(() => {
+    if (!browser) return;
+    let mq: MediaQueryList | null = null;
+    try {
+      mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    } catch {
+      mq = null;
+    }
+    const evaluate = () => {
+      const reduced = mq?.matches === true;
+      const muted = audioEl?.muted === true;
+      const eff = (navigator as Navigator & { connection?: { effectiveType?: string } }).connection
+        ?.effectiveType;
+      const slowConn = eff === 'slow-2g' || eff === '2g' || eff === '3g';
+      if (reduced || muted || slowConn) audio.captionsOn = true;
+    };
+    evaluate();
+    mq?.addEventListener?.('change', evaluate);
+    return () => mq?.removeEventListener?.('change', evaluate);
+  });
+
+  function toggleCaptions(): void {
+    audio.captionsOn = !audio.captionsOn;
+  }
+
+  async function downloadTranscript(): Promise<void> {
+    const ep = audio.currentEpisode;
+    if (!ep) return;
+    try {
+      const res = await fetch(ep.txt);
+      if (!res.ok) return;
+      const text = await res.text();
+      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${ep.id}-${ep.locale}-transcript.txt`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      // network error or browser refused download — silent no-op
+    }
+  }
 </script>
 
 {#if audio.open}
@@ -356,6 +431,17 @@
               <option value={1.5}>1.5×</option>
             </select>
           </label>
+          <button
+            type="button"
+            class="cc-toggle"
+            class:active={audio.captionsOn}
+            aria-label={audio.captionsOn ? 'Hide captions' : 'Show captions'}
+            aria-pressed={audio.captionsOn}
+            title="Toggle captions"
+            onclick={toggleCaptions}
+          >
+            CC
+          </button>
         </div>
 
         <input
@@ -369,12 +455,35 @@
           oninput={onScrub}
         />
 
+        {#if audio.captionsOn}
+          <div
+            class="caption-banner"
+            role="region"
+            aria-label="Captions"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {audio.currentCaption || ' '}
+          </div>
+        {/if}
+
         {#if activeCue}
           <div class="cue-banner" role="status" aria-live="polite">
             <span class="cue-arrow" aria-hidden="true">→</span>
             <span class="cue-text">{activeCue}</span>
           </div>
         {/if}
+
+        <div class="extras">
+          <button
+            type="button"
+            class="link-btn"
+            aria-label="Download transcript as text"
+            onclick={downloadTranscript}
+          >
+            ↓ transcript (.txt)
+          </button>
+        </div>
       </section>
     {/if}
 
@@ -883,6 +992,70 @@
   }
   .origin-detail {
     color: rgba(255, 255, 255, 0.4);
+  }
+
+  .cc-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.65);
+    width: auto;
+    padding: 4px 8px;
+    min-height: 32px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .cc-toggle:hover,
+  .cc-toggle:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+    outline: none;
+  }
+  .cc-toggle.active {
+    background: rgba(68, 102, 255, 0.22);
+    border-color: rgba(68, 102, 255, 0.6);
+    color: #96afff;
+  }
+
+  .caption-banner {
+    margin-top: 4px;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    min-height: 2.4em;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  .extras {
+    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .link-btn {
+    background: transparent;
+    border: none;
+    color: rgba(150, 175, 255, 0.7);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 3px;
+  }
+  .link-btn:hover,
+  .link-btn:focus-visible {
+    color: rgba(150, 175, 255, 1);
+    background: rgba(150, 175, 255, 0.08);
+    outline: none;
   }
 
   .cue-banner {

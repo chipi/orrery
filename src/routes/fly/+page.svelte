@@ -32,6 +32,13 @@
   } from '$lib/fly-scene-constants';
   import { classifyConicEarth } from '$lib/fly-conics-earth';
   import {
+    computeMissionApply,
+    computeScenarioApply,
+    computePlanApply,
+    type LoadedMission,
+    type MissionApplyDefaults,
+  } from '$lib/fly-mission-apply';
+  import {
     DESTINATIONS,
     R_EARTH_AU,
     R_MARS_AU,
@@ -39,13 +46,7 @@
   } from '$lib/lambert-grid.constants';
   import { getMission, getMissionIndex, getScenario } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
-  import { parseDeltaV } from '$lib/parse-delta-v';
-  import { dateToSimDay } from '$lib/sim-day';
-  import { mergeFlightEvents } from '$lib/mission-event-merge';
-  import {
-    missionDestToDataFolder,
-    missionDestToHeliocentricDestinationId,
-  } from '$lib/mission-dest';
+  import { missionDestToDataFolder } from '$lib/mission-dest';
   import {
     auToMkm,
     distanceBetween,
@@ -56,7 +57,6 @@
     A_MOON_KM,
     R_EARTH_KM,
     R_MOON_KM,
-    buildCislunarTrajectory,
     moonEciPos,
     type CislunarTrajectory,
     type Vec3Km,
@@ -76,10 +76,7 @@
     type ScreenPoint,
     type MinimalProjector,
   } from '$lib/cislunar-screen-projection';
-  import {
-    buildInterplanetaryTrajectory,
-    type InterplanetaryTrajectory,
-  } from '$lib/interplanetary-geometry';
+  import { type InterplanetaryTrajectory } from '$lib/interplanetary-geometry';
   import {
     phaseMarkerAuPositions,
     currentInterplanetaryPhaseFor,
@@ -144,21 +141,7 @@
   // scenarios, and the server log was full of dev-time 404 noise.
   const KNOWN_SCENARIO_IDS = new Set<string>([DEFAULT_SCENARIO_ID]);
 
-  type LoadedMission = {
-    name: string;
-    vehicle: string;
-    payload: string;
-    dv_total: number;
-    dv_used: number;
-    dep_label: string;
-    arr_label: string;
-    timeline: MissionTimeline;
-    isFromData: boolean;
-    /** Real flight params from the mission JSON (ADR-027). Optional;
-     *  surfaces in the FLIGHT PARAMS HUD group when present. */
-    flight?: FlightParams;
-    flight_data_quality?: FlightDataQuality;
-  };
+  // LoadedMission: exported from $lib/fly-mission-apply (W9 wave 5).
 
   // Bootstrapped from the static import; replaced by getScenario() in
   // onMount once the locale-overlay-aware fetch resolves.
@@ -866,226 +849,67 @@
   // flake (issue #133). Null until the first apply* function runs.
   let lastAppliedMissionId = $state<string | null>(null);
 
+  const MISSION_APPLY_DEFAULTS: MissionApplyDefaults = {
+    depFallback: defaultScenarioBase.dep_day,
+    dvFallback: defaultScenarioBase.dv_total_km_s,
+    depLabelFallback: defaultScenarioOverlay.dep_label,
+    arrLabelFallback: defaultScenarioOverlay.arr_label,
+  };
+
   function applyMissionAsLoaded(m: Mission) {
-    // Umami custom event: which missions actually get flown. Fires
-    // once per load (mission swap or initial load). Anonymous,
-    // production-host only (see src/lib/analytics.ts).
+    // Umami custom event — anonymous, production-host only.
     track('mission-load', {
       id: m.id,
       dest: m.dest,
       status: m.status ?? 'unknown',
       view: m.dest === 'MOON' ? 'cislunar' : 'heliocentric',
     });
-    // Per-mission arc geometry: parse the mission's actual departure
-    // date into a sim-day count so Earth's heliocentric phase at
-    // launch matches reality. transit_days drives arr_day. For
-    // one-way landings flyby_day == arr_day (landing IS arrival,
-    // there is no separate flyby waypoint); for sample-return /
-    // crewed round-trips flyby_day is 95% of transit (closest
-    // approach before the return burn). The previous unconditional
-    // 0.95*tof flyby left one-way missions with a "rocket waits"
-    // gap between scrub 0.95 and 1.0 — the spacecraft hit the arc
-    // terminus at flyby_day and idled there until arr_day.
-    //
-    // Historical Mars missions don't return to Earth — we render only
-    // the outbound arc. Free-return scenarios get both arcs (handled
-    // by applyScenarioAsLoaded).
-    const totalT = m.transit_days || 250;
-    const dvTotal = parseDeltaV(m.delta_v, defaultScenarioBase.dv_total_km_s);
-    // Fall back to the default scenario's dep_day if the mission's
-    // departure_date is missing or unparseable (defence in depth —
-    // schema requires the field, but the helper returns null on
-    // anything that doesn't match YYYY-MM-DD).
-    const depDay = dateToSimDay(m.departure_date) ?? defaultScenarioBase.dep_day;
-    const missionType = (m.type ?? '').toUpperCase();
-    const isReturnTrip = missionType.includes('SAMPLE RETURN') || missionType.includes('CREWED');
-    // For one-way landings (Curiosity, Chandrayaan-3, etc.) the mission
-    // ends at destination touchdown — flyby_day == arr_day so the
-    // spacecraft doesn't idle between scrub 0.95 and 1.0. For round-
-    // trips (Apollo, Luna 24) transit_days is the one-way leg, so the
-    // full mission spans 2× transit_days: arrives at destination at
-    // flyby_day = dep + transit, returns to Earth at arr_day = dep +
-    // 2*transit. The scrub bar then maps cleanly: scrub 0..0.5 outbound,
-    // 0.5..1.0 return.
-    const flybyOffset = totalT;
-    const arrOffset = isReturnTrip ? totalT * 2 : totalT;
-    const newTimeline: MissionTimeline = {
-      dep_day: depDay,
-      flyby_day: depDay + flybyOffset,
-      arr_day: depDay + arrOffset,
-    };
-    arcTimeline = newTimeline;
-    isFreeReturn = false;
-    isMoonMission = m.dest === 'MOON';
-    activeDestination = missionDestToHeliocentricDestinationId(m.dest) ?? ('mars' as DestinationId);
-    applyDestinationVisualsRef?.(activeDestination);
-    // isReturnTrip is computed above (it gates flybyOffset). Sample-
-    // return missions: Luna 24, Chang'e 5/6. Crewed: Apollo, Artemis 3.
-    // Drives the second tube-mesh rendering of the return arc below.
-    if (isMoonMission) {
-      // ADR-058: build the Earth-centred cislunar trajectory from the
-      // mission's flight.cislunar_profile and auto-switch the view.
-      // The heliocentric moonHelioArc below is still rendered so the
-      // "Solar context" inset (Stage 1) and the toggle-back path
-      // continue to work.
-      cislunarTrajectory = buildCislunarTrajectory(m.flight?.cislunar_profile, {
-        dep_day_sim: newTimeline.dep_day,
-        transit_days: m.transit_days ?? 0,
-        is_return_trip: isReturnTrip,
-      });
-      rebuildCislunarLinesRef?.(cislunarTrajectory);
-      rebuildCislunarAnnotationsRef?.(cislunarTrajectory, m.flight?.cislunar_profile);
-
-      // Apollo / cislunar: heliocentric arc from live Earth at dep_day
-      // to live Moon at flyby_day (Moon arrival). The trajectory
-      // rides Earth's orbital motion + adds a small lateral hop to
-      // the Moon, so it reads at the same heliocentric scale as Mars
-      // missions (Sun + Earth orbit visible, Moon orbiting Earth at
-      // MOON_FLY_RADIUS_AU). Replaces the prior Earth-centred Bezier
-      // which hid the Sun and lost heliocentric context.
-      const earthAtDep = earthPos(newTimeline.dep_day);
-      const moonAtFlyby = moonHelioPos(newTimeline.flyby_day);
-      outPts = moonHelioArc(
-        newTimeline.dep_day,
-        newTimeline.flyby_day,
-        earthAtDep,
-        moonAtFlyby,
-        ARC_STEPS,
-      );
-      // Crewed / sample-return cislunar return leg: Moon-at-flyby →
-      // live Earth at arr_day. Timeline math sets arr_day = dep +
-      // 2*transit_days for round-trips, so this leg has the same
-      // duration as outbound and arrives at the live Earth heliocentric
-      // position eight days after launch (Apollo) or longer for sample-
-      // return cadence missions.
-      const earthAtReturnArr = earthPos(newTimeline.arr_day);
-      retPts = isReturnTrip
-        ? moonHelioArc(
-            newTimeline.flyby_day,
-            newTimeline.arr_day,
-            moonAtFlyby,
-            earthAtReturnArr,
-            ARC_STEPS,
-          )
-        : [];
-    } else {
-      // Non-Moon mission: clear cislunar state and snap back to
-      // heliocentric view.
-      cislunarTrajectory = null;
-      rebuildCislunarLinesRef?.(null);
-      rebuildCislunarAnnotationsRef?.(null, undefined);
-
-      // GH #107 Step 6e — build the heliocentric interplanetary
-      // trajectory for Mars/outer-system missions with events. Used
-      // by the phase-marker overlay to anchor each event MET to its
-      // heliocentric AU position.
-      // Round-trip detection mirrors the cislunar pattern: sample-
-      // return missions (MMX, future Mars Sample Return) set
-      // interplanetary_profile.return.type = 'tei_helio_direct' so
-      // /fly renders both legs. Default = absent = one-way.
-      const interplanetaryReturnType = m.flight?.interplanetary_profile?.return?.type;
-      const isInterplanetaryReturnTrip =
-        !!interplanetaryReturnType && interplanetaryReturnType !== 'none';
-      if (m.flight?.events && m.flight.events.length > 0) {
-        interplanetaryTrajectory = buildInterplanetaryTrajectory(m.flight?.interplanetary_profile, {
-          dep_day_sim: newTimeline.dep_day,
-          transit_days: m.transit_days ?? 0,
-          is_return_trip: isInterplanetaryReturnTrip,
-          arrival_vinf_kms: m.flight?.arrival?.v_infinity_km_s ?? null,
-        });
-      } else {
-        interplanetaryTrajectory = null;
-      }
-
-      // Pass real arrival V∞ when the mission has flight data so the
-      // outbound arc shape reflects the mission's actual transfer
-      // energy (v0.1.10). Falls back to the Hohmann baseline geometry
-      // when V∞ is absent.
-      const vInfKms = m.flight?.arrival?.v_infinity_km_s;
-      const arcs = buildArcs(newTimeline, false, activeDestination, vInfKms);
-      outPts = arcs.out;
-      // Return arc for round-trip Mars missions (e.g., MMX which
-      // returns from Phobos): mirror the outbound arc back to Earth.
-      // For now, no Mars sample-return missions are FLOWN; MMX is
-      // PLANNED. The branch is here for completeness.
-      if (isReturnTrip) {
-        // Round-trip Mars (e.g. MMX): return arc starts at outbound
-        // terminus (= live Mars at flyby_day) and ends at live Earth
-        // at arr_day (= dep + 2*transit_days for round-trips).
-        const earthRet = earthPos(newTimeline.arr_day);
-        retPts = returnArc(arcs.out[arcs.out.length - 1], earthRet, ARC_STEPS);
-      } else {
-        retPts = arcs.ret;
-      }
-    }
+    // Math layer: derive every value from the Mission. See
+    // $lib/fly-mission-apply for the timeline / arc / trajectory
+    // derivations and the round-trip vs one-way semantics.
+    const r = computeMissionApply(m, MISSION_APPLY_DEFAULTS);
+    // Write state in the same order the prior inline impl did, so
+    // any reactive $effect that watched isMoonMission + outPts +
+    // retPts together still sees the same end state.
+    arcTimeline = r.timeline;
+    isFreeReturn = r.isFreeReturn;
+    isMoonMission = r.isMoonMission;
+    activeDestination = r.activeDestination;
+    applyDestinationVisualsRef?.(r.activeDestination);
+    cislunarTrajectory = r.cislunarTrajectory;
+    interplanetaryTrajectory = r.interplanetaryTrajectory;
+    // Three.js side effects for cislunar lines + annotations — fire
+    // on both branches (null clears the previous mission's geometry).
+    rebuildCislunarLinesRef?.(r.cislunarTrajectory);
+    rebuildCislunarAnnotationsRef?.(r.cislunarTrajectory, m.flight?.cislunar_profile);
+    outPts = r.outPts;
+    retPts = r.retPts;
     resetCamera?.();
-    // Prefer the structured `flight.totals.total_dv_km_s` when present
-    // (per ADR-027 backward-compat shim); fall back to parseDeltaV().
-    const dvTotalCanonical = m.flight?.totals?.total_dv_km_s ?? dvTotal;
-    mission = {
-      name: m.name ?? m.id,
-      vehicle: m.vehicle ?? '—',
-      payload: m.payload ?? '—',
-      dv_total: dvTotalCanonical,
-      dv_used: dvTotalCanonical * 0.94,
-      dep_label: m.departure_date ?? defaultScenarioOverlay.dep_label,
-      arr_label: m.arrival_date ?? defaultScenarioOverlay.arr_label,
-      timeline: newTimeline,
-      isFromData: true,
-      flight: m.flight,
-      flight_data_quality: m.flight_data_quality,
-    };
-    simDay = mission.timeline.dep_day;
-    // Moon missions are 4-12 days vs Mars's 200+. Default speed at 0.4×
-    // (was 1×) so the auto-zoom on lunar phases has time to read — at
-    // 1× Apollo 11's 0.6-day lunar-orbit window only got 0.6 s of
-    // playback, shorter than the ~1 s zoom transition itself, so the
-    // camera move looked glitchy. 0.4× stretches a typical lunar phase
-    // to ~1.5–2 s of playback — enough to see the zoom complete, the
-    // orbit detail, and the zoom back out. Users can still pick faster
-    // pills (1×, 3×) if they want.
-    simSpeed = isMoonMission ? 0.4 : 7;
-    // v0.1.13 — fuse editorial overlay events with structural flight
-    // events from mission.flight.events[]. Missions with measured /
-    // sparse flight data (issue #31) now contribute TCMs, EDL, etc.
-    // to the CAPCOM ticker even if their editorial overlay is sparse.
-    missionEvents = mergeFlightEvents(m.events, m.flight?.events);
-    // After all derived state has updated. The hook reads this LAST so
-    // a test that gates on `__flyArcHash() != null` sees an outPts /
-    // hash that already reflects the new mission, never an in-between
-    // state.
+    mission = r.missionMeta;
+    simDay = r.timeline.dep_day;
+    simSpeed = r.simSpeed;
+    missionEvents = r.missionEvents;
+    // After all derived state has updated. The render-state hook
+    // reads this LAST so a test gated on __flyArcHash() != null
+    // sees an outPts / hash that already reflects the new mission.
     lastAppliedMissionId = m.id;
   }
 
   function applyScenarioAsLoaded(s: LocalizedScenario) {
-    const newTimeline: MissionTimeline = {
-      dep_day: s.dep_day,
-      flyby_day: s.flyby_day,
-      arr_day: s.arr_day,
-    };
-    arcTimeline = newTimeline;
-    isFreeReturn = true; // ORRERY DEMO + future free-return scenarios
-    activeDestination = 'mars';
-    applyDestinationVisualsRef?.(activeDestination);
-    isMoonMission = false;
-    interplanetaryTrajectory = null;
-    const arcs = buildArcs(newTimeline, true);
-    outPts = arcs.out;
-    retPts = arcs.ret;
+    const r = computeScenarioApply(s);
+    arcTimeline = r.timeline;
+    isFreeReturn = r.isFreeReturn;
+    activeDestination = r.activeDestination;
+    applyDestinationVisualsRef?.(r.activeDestination);
+    isMoonMission = r.isMoonMission;
+    cislunarTrajectory = r.cislunarTrajectory;
+    interplanetaryTrajectory = r.interplanetaryTrajectory;
+    outPts = r.outPts;
+    retPts = r.retPts;
     resetCamera?.();
-    mission = {
-      name: s.name,
-      vehicle: s.vehicle,
-      payload: s.payload,
-      dv_total: s.dv_total_km_s,
-      dv_used: s.dv_used_km_s,
-      dep_label: s.dep_label,
-      arr_label: s.arr_label,
-      timeline: newTimeline,
-      isFromData: true,
-    };
-    simDay = mission.timeline.dep_day;
-    missionEvents = s.events;
+    mission = r.missionMeta;
+    simDay = r.timeline.dep_day;
+    missionEvents = r.missionEvents;
     // The page-default state initialises with this same scenario at
     // module load, so the test hook can't distinguish "first paint"
     // from "applyScenarioAsLoaded ran" by mission name alone. Setting
@@ -1099,69 +923,33 @@
    * (no `?mission=`), we synthesise a one-way trajectory for the
    * chosen destination instead of falling through to the ORRERY DEMO
    * scenario. Per ADR-026 §FLY-button experience.
+   *
+   * Math (timeline shape, arc construction, synthesised LoadedMission)
+   * lives in $lib/fly-mission-apply → computePlanApply.
    */
-  /** Closest-approach moment as a fraction of total transit time. The
-   *  arc renders the spacecraft's flyby position at this offset. 0.95
-   *  is a teaching simplification — actual closest-approach varies
-   *  per Lambert solution but isn't returned by the pre-computed grid
-   *  or the synthesised /plan-driven path. Document'd here so a future
-   *  improvement (real closest-approach from the solver) has a single
-   *  knob to update. */
-  const FLYBY_OFFSET_FRACTION = 0.95;
-
   function applyPlanSelection(
     dest: DestinationId,
     type: 'LANDING' | 'FLYBY',
     depDay: number,
     tofDays: number,
   ) {
-    // FLYBY = free-return: outbound terminates at the destination
-    // encounter (flyby_day == depDay + tofDays — the porkchop's TOF is
-    // the time-to-target), and the return leg sweeps back to Earth at
-    // a synthesised arr_day. We don't have a precise return-leg ToF
-    // from the porkchop (it solves outbound only), so we approximate
-    // total mission duration as 2× outbound — close enough for the
-    // educational visual; the returnArc geometry adjusts to whatever
-    // Earth position arr_day picks out.
-    //
-    // LANDING = one-way: outbound terminates at flyby_day = 0.95·tof
-    // for the visual flyby waypoint, arr_day = dep + tof for landing.
-    const isFlyby = type === 'FLYBY';
-    const flybyOffset = isFlyby ? tofDays : Math.floor(tofDays * FLYBY_OFFSET_FRACTION);
-    const arrOffset = isFlyby ? tofDays * 2 : tofDays;
-    const newTimeline: MissionTimeline = {
-      dep_day: depDay,
-      flyby_day: depDay + flybyOffset,
-      arr_day: depDay + arrOffset,
-    };
-    arcTimeline = newTimeline;
-    isFreeReturn = isFlyby;
-    activeDestination = dest;
-    applyDestinationVisualsRef?.(activeDestination);
-    isMoonMission = false;
-    interplanetaryTrajectory = null;
-    const arcs = buildArcs(newTimeline, isFlyby, dest);
-    outPts = arcs.out;
-    retPts = arcs.ret;
+    const r = computePlanApply(dest, type, depDay, tofDays, {
+      dvFallback: defaultScenarioBase.dv_total_km_s,
+    });
+    arcTimeline = r.timeline;
+    isFreeReturn = r.isFreeReturn;
+    activeDestination = r.activeDestination;
+    applyDestinationVisualsRef?.(r.activeDestination);
+    isMoonMission = r.isMoonMission;
+    cislunarTrajectory = r.cislunarTrajectory;
+    interplanetaryTrajectory = r.interplanetaryTrajectory;
+    outPts = r.outPts;
+    retPts = r.retPts;
     resetCamera?.();
-    const destLabel = dest.charAt(0).toUpperCase() + dest.slice(1);
-    mission = {
-      name: `EARTH → ${destLabel.toUpperCase()} · ${type}`,
-      vehicle: '—',
-      payload: '—',
-      dv_total: defaultScenarioBase.dv_total_km_s,
-      dv_used: defaultScenarioBase.dv_total_km_s * 0.94,
-      dep_label: `Day ${depDay}`,
-      arr_label: `Day ${depDay + arrOffset}`,
-      timeline: newTimeline,
-      isFromData: true,
-    };
-    simDay = newTimeline.dep_day;
-    missionEvents = [];
-    // Test-hook signal: a /plan-driven entry counts as a committed URL
-    // load. ID is synthesised since this code path doesn't have a
-    // mission JSON; tests don't gate on this specific value.
-    lastAppliedMissionId = `plan-${dest}-${type}`;
+    mission = r.missionMeta;
+    simDay = r.timeline.dep_day;
+    missionEvents = r.missionEvents;
+    lastAppliedMissionId = r.appliedId;
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {

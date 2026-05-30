@@ -6,6 +6,7 @@
   import { browser } from '$app/environment';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
+  import AudioOverlay from '$lib/components/AudioOverlay.svelte';
   import { setLanguageTag } from '$lib/paraglide/runtime';
   import {
     localeFromPage,
@@ -173,6 +174,7 @@
 
 {#key activeLocale}
   <Nav />
+  <AudioOverlay />
   <main>
     {@render children?.()}
   </main>

@@ -8,6 +8,7 @@
   import { track } from '$lib/analytics';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
+  import { audio } from '$lib/audio-state.svelte';
   import type { Snippet } from 'svelte';
 
   type Props = { right?: Snippet };
@@ -147,6 +148,28 @@
           <line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6" />
           <line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6" />
         {/if}
+      </svg>
+    </button>
+    <button
+      type="button"
+      class="audio-toggle"
+      class:active={audio.open}
+      aria-label="Toggle audio episodes"
+      aria-pressed={audio.open}
+      aria-controls="audio-overlay"
+      title="Audio episodes"
+      onclick={() => audio.toggle()}
+    >
+      <!-- Waveform glyph (PRD-016 / RFC-019 §7.2 — "〜 glyph"). Inline SVG
+           so it renders consistently across fonts. -->
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+        <path
+          d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
       </svg>
     </button>
     <LocalePicker />
@@ -403,6 +426,42 @@
     background: rgba(255, 200, 80, 0.18);
     border-color: rgba(255, 200, 80, 0.65);
     color: #ffc850;
+  }
+
+  /* Audio overlay toggle — same shape as the other right-rail toggles
+     for visual consistency. Active state when the overlay is open. */
+  .audio-toggle {
+    width: 32px;
+    height: 32px;
+    min-width: 44px;
+    min-height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms,
+      color 120ms;
+  }
+  .audio-toggle svg {
+    display: block;
+  }
+  .audio-toggle:hover,
+  .audio-toggle:focus-visible {
+    border-color: rgba(68, 102, 255, 0.5);
+    color: rgba(150, 175, 255, 0.95);
+    outline: none;
+  }
+  .audio-toggle.active {
+    background: rgba(68, 102, 255, 0.18);
+    border-color: rgba(68, 102, 255, 0.65);
+    color: #96afff;
   }
 
   /* Hamburger menu toggle — hidden on desktop, shown on mobile. */

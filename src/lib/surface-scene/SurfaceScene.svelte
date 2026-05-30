@@ -62,6 +62,7 @@
   import { createSurfaceDebugInfo, type SurfaceDebugInfo } from '$lib/surface-scene/debug-info';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
+  import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
   import { dimMaterials } from '$lib/three/dim-materials';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import {
@@ -142,6 +143,15 @@
   // prop in onMount. Empty record when the route doesn't pass that prop
   // (Moon today). Keyed by rover_id.
   let traverses: Record<string, Traverse> = $state({});
+
+  // Flat-patch view state (ADR-062 / #283 Slice 4). When true, the
+  // sphere fades to a 2D flat ground-patch of the selected region.
+  // Triggered when selection + region_bounds + camR < threshold.
+  let flatPatchActive = $state(false);
+  // Close handler — assigned inside onMount so it can bump camRTarget
+  // back up past the trigger threshold (otherwise the patch would
+  // immediately re-open on the next frame).
+  let closeFlatPatch: () => void = $state(() => {});
 
   // Surface Hotspots mode (PRD-014 / RFC-017 §S7). 'auto' = LOD
   // dispatcher picks tier from screen-projected size; 'low' = all
@@ -933,6 +943,15 @@
     // viscous rather than snapping. Initialised to current camR so the
     // first frame is a no-op.
     let camRTarget = camR;
+
+    // Wire the flat-patch close handler — bump camRTarget back above
+    // the sphere→flat trigger threshold so the smooth-zoom lerp
+    // animates the camera back out and the trigger doesn't re-fire
+    // on the next frame.
+    closeFlatPatch = () => {
+      flatPatchActive = false;
+      camRTarget = 50;
+    };
 
     // Drag-inertia velocities (Drift 12 consolidation). On mouse-up /
     // touch-end, the move handler's last frame velocity stays in these;
@@ -1880,6 +1899,19 @@
           // Live altitude (km above surface). camR is in scene units;
           // multiply by `radiusKm/planetRadius` km/unit to get real km.
           altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
+          // Sphere → flat-patch transition trigger (ADR-062). When the
+          // user zooms past 30.5 with a region selected, materialise
+          // the flat-patch view. Only TRIGGERS the transition — the
+          // back gesture (Esc / button) is what clears flatPatchActive.
+          const SPHERE_TO_FLAT_CAM_R = 30.5;
+          if (
+            !flatPatchActive &&
+            selected != null &&
+            selected.region_bounds != null &&
+            camR < SPHERE_TO_FLAT_CAM_R
+          ) {
+            flatPatchActive = true;
+          }
           if (hotspots.length > 0) {
             const h = hotspots[0];
             const wp = new THREE.Vector3();
@@ -2078,7 +2110,7 @@ sample      ${debugInfo.projectedPxSample}`}
 
   <!-- Live altitude readout — "how zoomed am I" feedback for both
        routes (Drift 16 consolidation, was Mars-only). -->
-  {#if view === '3d'}
+  {#if view === '3d' && !flatPatchActive}
     <div class="altitude-indicator" aria-hidden="true">
       {altitudeKm >= 1000
         ? `${(altitudeKm / 1000).toFixed(1)} Mm`
@@ -2086,6 +2118,14 @@ sample      ${debugInfo.projectedPxSample}`}
           ? `${altitudeKm.toFixed(0)} km`
           : `${(altitudeKm * 1000).toFixed(0)} m`} altitude
     </div>
+  {/if}
+
+  <!-- Flat ground-patch view (ADR-062 / #283 Slice 4). Materialises
+       when the user zooms past the threshold with a region selected.
+       Owns the viewport fully while active; back gesture dismisses
+       and returns to the sphere at the saved camR/camP/camT. -->
+  {#if flatPatchActive && selected && selected.region_bounds}
+    <SurfaceFlatPatch {selected} {config} {traverses} onClose={closeFlatPatch} />
   {/if}
 
   <!-- TierContext info card — same shape as /mars. Visible only at

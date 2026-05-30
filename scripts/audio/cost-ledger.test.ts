@@ -22,7 +22,6 @@ beforeEach(async () => {
   // (The module reads/writes at runtime so cwd at import time doesn't bind.)
   const mod = await import('./cost-ledger?fresh=' + Date.now());
   appendEntry = mod.appendEntry;
-  currentMonthTotal = mod.currentMonthTotal;
   assertUnderHardCap = mod.assertUnderHardCap;
   THRESHOLDS = mod.THRESHOLDS;
 });

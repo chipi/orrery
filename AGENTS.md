@@ -113,7 +113,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 ├── .gitignore
 │
 ├── src/
-│   ├── routes/             ← SvelteKit file-based routing (11 primary nav + 2 read-only)
+│   ├── routes/             ← SvelteKit file-based routing (11 primary nav + 3 read-only)
 │   │   ├── +layout.svelte  ← nav bar, i18n provider, locale picker, footer
 │   │   ├── explore/+page.svelte
 │   │   ├── plan/+page.svelte
@@ -131,6 +131,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   ├── lib/
 │   │   ├── components/
 │   │   │   ├── Nav.svelte                     ← shared 52px nav bar + locale picker
+│   │   │   ├── AudioOverlay.svelte            ← v0.7 audio narration overlay (PRD-016 / RFC-019)
 │   │   │   ├── ScienceLensBanner.svelte       ← collapsible banner (ADR-055)
 │   │   │   ├── ScienceLayersPanel.svelte      ← per-layer sub-toggles (12 layers)
 │   │   │   ├── ScienceChip.svelte             ← cross-screen `?` chip (ADR-036)
@@ -253,6 +254,18 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
     ├── regen-snapshots.yml    # manual — visual-baseline regen
     └── release.yml            # tag → GitHub Release
 ```
+
+---
+
+## Audio narration — read before touching `src/lib/audio-*` or `scripts/audio/`
+
+v0.7 ships an in-overlay narrated episode system (PRD-016 / RFC-019). en-US only — v0.8 adds the Anthropic translation pipeline + 12-locale Curator Tour.
+
+- **Source of truth.** Episode scripts live in `content/episodes/<locale>/<episode-id>.md` (YAML frontmatter + SSML body). Voice ID map: `static/data/audio/voices.json`. Generated assets: `static/audio/<locale>/<persona>/<id>.<hash8>.{mp3,vtt,txt}` (content-addressed). Manifest: `static/data/audio/audio-provenance.json` (schema: `static/data/schemas/audio-provenance.schema.json`).
+- **Pipeline triggers.** Operator-only: `npm run audio:generate -- --episode <id> [--locale en-US] [--provider google|elevenlabs]`. Cost ledger gates at $50/mo soft, $200/mo hard. `npm run audio:check-cost` is wired into `npm run preflight` so an over-cap state blocks pushes.
+- **Runtime contract.** AudioOverlay reads the manifest via `src/lib/audio-registry.svelte.ts`. Adding/renaming an episode without regenerating provenance leaves it invisible to the runtime. The Curator Tour playlist + cue-banner stage hooks live in `src/lib/audio-tour.ts` — every id in `CURATOR_FULL_TOUR` and every key in `EPISODE_STAGES` MUST resolve to a provenance row (unit test enforces).
+- **Transparency.** Every audio asset's text authorship + voice provider + tts_model + voice id surface on `/credits`. Provider/model/voice-id never elided.
+- **Operator runbook:** [docs/guides/audio-pipeline-setup.md](docs/guides/audio-pipeline-setup.md). Adding a new provider: implement `TtsProvider`, list it in `PROVIDER_NAMES` + `PROVIDER_MODELS` (`scripts/audio/generate.ts`), add a voices.json key, update `ProviderName` in `src/lib/audio-types.ts`. Pipeline picks up the rest.
 
 ---
 

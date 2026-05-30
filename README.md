@@ -33,9 +33,9 @@ First-time visitors land on a 30-second orientation page (`/`) — what Orrery i
 
 Available in **14 languages, all at 100% UI parity**: English · Español · Français · Deutsch · Português (BR) · Italiano · Nederlands · 中文 · 日本語 · 한국어 · हिन्दी · العربية (RTL) · Русский · Српски (Cyrillic). Browser locale is auto-detected on first visit (per ADR-057, locale picks persist via a single functional cookie — no other storage, no tracking).
 
-## Ten screens
+## Eleven screens
 
-The full nav (left to right): `/explore` · `/plan` · `/fly` · `/missions` · `/earth` · `/moon` · `/mars` · `/iss` · `/tiangong` · `/science`.
+The full nav (left to right): `/explore` · `/plan` · `/fly` · `/missions` · `/earth` · `/moon` · `/mars` · `/iss` · `/tiangong` · `/science` · `/fleet`.
 
 | Screen | What it shows |
 |---|---|
@@ -49,8 +49,9 @@ The full nav (left to right): `/explore` · `/plan` · `/fly` · `/missions` · 
 | **ISS Explorer** (`/iss`) | The full station — **18 modules** (every USOS + ROS module + visitors) with raycast pickability, hover outlines, sun-tracking solar arrays, microgravity-axes overlay (zenith/nadir, prograde/retrograde, port/starboard). Per-module ANATOMY tabs with hand-drawn schematics. **9 visiting-spacecraft diagrams** (Crew Dragon, Cargo Dragon, Cygnus, Soyuz MS, Progress MS, HTV-X, Starliner, Shenzhou, Tianzhou). |
 | **Tiangong Explorer** (`/tiangong`) | China's space station — Tianhe core + Wentian + Mengtian labs (4 module overlays) with sun-tracking gallium-arsenide arrays. 2D blueprint views (top + side). Same module-pickability + microgravity-frame overlays as `/iss`. |
 | **Science Encyclopedia** (`/science`) | **85 sections across 10 tabs** — Orbits · Transfers · Propulsion · Mission Phases · Scales & Time · Porkchop · Space Stations · History · **Observation** · **Life in Space** (plus a Space-101 editorial landing page). KaTeX-rendered formulas. **71 hand-coded SVG diagrams** (one per section + 10 tab covers, fail-closed integrity gate on every build). Cmd-K search. Cross-screen `?`-chips deep-link from any other screen straight to the relevant chapter. |
+| **Spaceflight Fleet** (`/fleet`) | **137 entries × 9 categories** (crewed vehicles, rockets, landers, rovers, telescopes, probes, stations, suits, ground-segment) bidirectionally cross-linked to missions + sites. Per-entry detail panel with GALLERY + TECHNICAL + LEARN tabs. Filter chips, search, locale overlays for all 137 × 14 = 1,918 entries. |
 
-Plus two read-only pages: **`/credits`** (per-image provenance manifest + text-source attributions) and **`/library`** (bill-of-links across the entire app — every outbound LEARN link with native-language priority and freshness gating).
+Plus three read-only pages: **`/credits`** (per-image provenance manifest + text-source attributions), **`/library`** (bill-of-links across the entire app — every outbound LEARN link with native-language priority and freshness gating), and **`/posters`** (11 hand-authored SVG art-print posters — JPL travel-poster, era-matched mood-lit, indie-pop halftone — right-click save for a scalable wallpaper).
 
 | Explorer | Configurator | Mission Arc (heliocentric) |
 |---|---|---|
@@ -115,7 +116,7 @@ Open the audio overlay via the waveform icon in the nav (between the menu hambur
 
 - **For-this-screen inventory** — episodes anchored to the current route, persona-tagged.
 - **All-episodes inventory** — the full 33 with route + duration + heard-state tags.
-- **Take the Curator Tour** — 21-episode auto-advancing playlist (~70 min) with route-by-route auto-navigation, prev / stop / next controls, and 68 timed directive banners across the tour episodes.
+- **Take the Curator Tour** — 21-episode auto-advancing playlist (~66 min) with route-by-route auto-navigation, prev / stop / next controls, and 60 timed directive banners during tour playback (83 across the corpus once non-tour episodes are included).
 - **Provider A/B switcher** — flip between Google and ElevenLabs mid-playback; position preserved.
 - **Captions** (CC button) — VTT track with auto-on triggers for `prefers-reduced-motion`, muted-at-start, and slow `effectiveType`. Transcript `.txt` download per episode.
 - **Deep-link share** — `?audio={episode-id}` opens the overlay + auto-loads the matching episode.

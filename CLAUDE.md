@@ -7,7 +7,7 @@ The canonical agent-instruction file for this repo is **[AGENTS.md](AGENTS.md)**
 ## Reading order for any non-trivial task
 
 1. **AGENTS.md** (this folder, ↑) — universal agent instructions: stack, i18n rules, mobile-first, testing, what-not-to-do.
-2. **[`docs/adr/TA.md`](docs/adr/TA.md)** — single-page architecture map (current as of v0.7.0, post-#107 Step 6 — full corpus rollout of phase markers + heliocentric `interplanetary_profile`). Every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it. **Read this before touching anything that crosses one file.**
+2. **[`docs/adr/TA.md`](docs/adr/TA.md)** — single-page architecture map. Check the doc's own header (`v2.x · <month>`) for its current-as-of point; if shipped code has moved past it, fix TA.md before relying on it. Every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it. **Read this before touching anything that crosses one file.**
 3. The specific ADR / PRD / RFC referenced by TA.md for your task area.
 
 If TA.md and the code disagree on a contract or constraint, one is wrong — fix it. Same rule as AGENTS.md.

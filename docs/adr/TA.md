@@ -1,9 +1,11 @@
 # TA — Technical Authority
-*Orrery · Reference document · v2.0 · May 2026*
+*Orrery · Reference document · v2.1 · May 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update `§stack` and `§map` when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs), [`../prd/index.md`](../prd/index.md) (PRDs).
 
-v2.0 catches up from v1.9 (May 2026, ADR-033) through **v0.6.0 reality** — 5 new routes, 25 new ADRs, the Fleet / Science / ISS / Tiangong / Mars / Cislunar subsystems, the Provenance pipeline, the Science Lens, and the multi-layer overlay state machine.
+v2.0 caught up from v1.9 (May 2026, ADR-033) through **v0.6.0 reality** — 5 new routes, 25 new ADRs, the Fleet / Science / ISS / Tiangong / Mars / Cislunar subsystems, the Provenance pipeline, the Science Lens, and the multi-layer overlay state machine.
+
+v2.1 catches up through **v0.7.0 reality** — audio narration system (PRD-016 / RFC-019), surface hotspots (RFC-017) shipped onto the corpus, docker-stack runtime (ADR-063–066) with sharded e2e workflow (W7), build-time compression + nginx static-serving (W3), centralised Three.js disposal (`disposeScene` helper), and content-visibility long-list perf (W4).
 
 ---
 
@@ -134,6 +136,8 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **End-to-end: Playwright + Chromium** — 28+ test files covering every route + per-locale smoke for Wave 1. CI runs on push to main only (not on every PR); 40-minute timeout, single-worker per `playwright.config.ts`. See ADR-015, ADR-056.
 
+**Docker-stack e2e** (ADR-066) — separate workflow runs Playwright against the full compose stack (web + pipeline-runner containers) as the VPS-readiness gate. Sharded per W7: `desktop-chromium` full + `mobile-chromium` split into 2 parallel legs, each with its own 45-min ceiling so a single slow shard can't cancel the whole matrix.
+
 **Deterministic readiness signals** — every canvas route exposes a `window.__pickAt(x, y)` test hook + `data-*` ready attributes so Playwright can synchronise without polling. See ADR-056.
 
 **Preflight chain** (`npm run preflight`) — `typecheck && lint && test && validate-data && build`. Husky pre-push hook enforces. Mirrors CI exactly.
@@ -143,6 +147,24 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 ### Documentation site
 
 **VitePress + vitepress-sidebar** — `/docs/` hosted on the same GitHub Pages deploy as the app. Sidebar auto-generated from the docs tree. Renders ADRs, RFCs, PRDs, prototypes, research notes. See ADR-021.
+
+### Audio narration (v0.7 ship — en-US)
+
+**Overlay shell** (`src/lib/components/AudioOverlay.svelte`) — right-panel on desktop ≥ 800 px, bottom-sheet below. Houses Curator Tour bar, transport (play/pause/scrub/speed/CC), provider A/B switcher, per-route inventory with scope tabs ("for this screen" / "all episodes"), captions banner, cue banner, origin disclosure. Focus-trapped while open, Escape closes, focus restored on close. Triggered by the waveform icon in `Nav.svelte` (icon pulses while playing).
+
+**Reactive state** (`src/lib/audio-state.svelte.ts`) — Svelte 5 singleton (`audio`). Owns `open`, `currentEpisode`, `positionSec`, `durationSec`, `playing`, `speed`, `captionsOn`, `currentCaption`, `heardEpisodeIds`, tour queue (`tourActive`, `tourIndex`, `tourSequence`). In-memory only per ADR-057 — no localStorage.
+
+**Runtime registry** (`src/lib/audio-registry.svelte.ts`) — fetches `static/data/audio/audio-provenance.json` once via a shared in-flight Promise (concurrent callers can't race the load). Collapses multi-provider rows into one `Episode` with a `variants[]` array; `forRoute(pathname)` matches exact route plus sub-routes; `byId` / `byIdLocale` for deep-link + locale-switch lookup. `PROVIDER_PRIORITY` puts ElevenLabs first by default.
+
+**Tour playlist** (`src/lib/audio-tour.ts`) — `CURATOR_FULL_TOUR` (21-episode ordered ids, ~66 min) + `EPISODE_STAGES` (timed `cue` banners + DOM `flash`/`scroll-to`/`click` hooks). Single declarative file. Filtered to registry-present ids at `startTour()`.
+
+**Shared types** (`src/lib/audio-types.ts`) — `Persona`, `ProviderName`, `TextAuthorship` literal unions. Imported by every runtime and build-side consumer; adding a provider edits one file.
+
+**Transparency surface** — `/credits` renders an audio table with text authorship + per-variant provider, `tts_model`, and `voice_id`. Schema-enforced at validate-data time.
+
+**Build pipeline** — see Pipeline 12 below.
+
+**See:** PRD-016 (product), RFC-019 (architecture), [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md) (operator), ADR-057 (no-localStorage), ADR-047 (provenance pattern parallel).
 
 ---
 
@@ -233,7 +255,11 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 
 ### Per-route teardown discipline
 
-Every route's `onDestroy` walks the scene graph and disposes `geometry`, `material`, and any `texture` it can identify, then nulls the renderer and removes the canvas from the DOM. Locale switching, navigation away, or HMR reload triggers this path. Without it, repeated route mounts leak GPU memory across sessions — caught by the `dispose-leak.test.ts` jsdom harness that snapshots `renderer.info.memory` before / after.
+Every route's `onDestroy` calls `disposeScene(scene)` from `src/lib/three/dispose-object3d.ts`, which walks the graph for `Mesh | Line | Points`, disposes their geometry + material(s), and frees the 17 PBR texture slots (`map`, `emissiveMap`, `normalMap`, `bumpMap`, `displacementMap`, `roughnessMap`, `metalnessMap`, `specularMap`, `envMap`, `alphaMap`, `aoMap`, `lightMap`, `matcap`, `gradientMap`, `clearcoatMap`, `clearcoatNormalMap`, `clearcoatRoughnessMap`). The renderer is nulled and the canvas removed from the DOM. Locale switching, navigation away, or HMR reload triggers this path. Without it, repeated route mounts leak GPU memory across sessions — caught by the `dispose-leak.test.ts` jsdom harness that snapshots `renderer.info.memory` before / after. The helper was centralised in v0.7.0 (previously each route inlined a partial traversal that missed `Line` / `Points` and several texture slots).
+
+### Long-list rendering perf
+
+Routes with mostly-text long lists — `/fleet` (137 entries × 9 categories), `/library` (per-entity outbound link blocks), `/credits` (per-image provenance rows) — apply CSS `content-visibility: auto` + `contain-intrinsic-size` per `<li>` / `.source-block`. Browser skips rendering off-screen items until they near the viewport. Browser-native (Chromium ≥ 85, Safari ≥ 18); no JS virtualisation library. Cuts initial paint cost and scroll smoothness on slow devices (W4).
 
 ---
 
@@ -429,6 +455,24 @@ Three-stage pipeline per ADR-033 + ADR-054:
 **sr-Cyrl** is hand-authored (no argos model). The pipeline writes a stub overlay; the curator fills it in.
 
 `scripts/wave23/` is reused identically across mission, fleet, and science content — no per-surface forks.
+
+### Pipeline 11 — Build-time compression (W3)
+
+`vite-plugin-compression2` runs at the tail of `vite build` and emits `.br` (Brotli, quality 11) + `.gz` siblings for every text-ish asset (`.js`, `.mjs`, `.cjs`, `.css`, `.html`, `.json`, `.svg`, `.ico`, `.webmanifest`, `.map`) above 1 KiB threshold. Originals are kept (`deleteOriginalAssets: false`) so clients without compression negotiation still get a valid response. GitHub Pages serves the originals as-is; the docker-stack web container (ADR-063) serves the precompiled siblings via nginx `brotli_static on` + `gzip_static on` — zero CPU cost, a file-existence lookup per request. Live brotli compression is intentionally NOT enabled: an earlier attempt to compress `/data/*.json` on the fly tipped docker-e2e past the 45-min cap (rollback documented in `ops/docker/nginx.conf`).
+
+### Pipeline 12 — Audio narration (`scripts/audio/`)
+
+Operator-triggered, per-episode build pipeline. v0.7 ships en-US only. Inputs are markdown scripts under `content/episodes/<locale>/<episode-id>.md` with YAML frontmatter (`id`, `persona`, `route`, `title`, `duration_target_sec`, optional `text_authorship` / `text_author_model`). Outputs are content-addressed audio + caption + transcript triples under `static/audio/<locale>/<persona>/<id>.<hash8>.{mp3,vtt,txt}`.
+
+Stages:
+
+1. **Provider abstraction** (`scripts/audio/tts/provider.ts`) — `TtsProvider` interface; concrete implementations for Google Cloud TTS (`google.ts`, MP3 default ~64 kbps mono) and ElevenLabs (`elevenlabs.ts`, `mp3_44100_96` explicit), each wrapped in `withRetry` (`retry.ts`) for 3-attempt exponential backoff, honouring `Retry-After` on 429.
+2. **Cache** — SHA-256 over `(provider, voiceId, ssml)` → 8-char hash in the filename. Identical input never re-generates; a cached row logs `chars: 0, cost_usd: 0` to the ledger.
+3. **Cost ledger** (`scripts/audio/cost-ledger.ts`) — append-only `static/data/audio/cost-ledger.json` with per-provider monthly totals. Atomic writes (tmp + rename). UTC ts contract asserted. Thresholds: $50/mo soft warn, $200/mo hard halt. `npm run audio:check-cost` is the operator + CI gate; wired into `npm run preflight`.
+4. **Provenance** (`scripts/audio/provenance.ts`) — upsert by `(episode_id, locale, persona, provider)` into `static/data/audio/audio-provenance.json`. Manifest top-level `generated_at` is quiescent — re-running on unchanged input doesn't churn git diffs.
+5. **Cross-check** (`scripts/validate-data.ts` audio gate) — every provenance row's mp3/vtt/txt must exist on disk; every script under `content/episodes/` must have at least one provenance row. Mismatches fail-closed at preflight.
+
+Schema: `static/data/schemas/audio-provenance.schema.json`. Voice ID map: `static/data/audio/voices.json`. Runbook: [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md). See PRD-016 + RFC-019.
 
 ### Pipeline orchestration (`npm run fetch` + `npm run preflight`)
 
@@ -671,6 +715,7 @@ Locked technical choices. Each entry points to its ADR.
 | Unit / integration tests | Vitest (+ jsdom + canvas polyfill) | ADR-015 |
 | End-to-end tests | Playwright (Chromium, single-worker CI) | ADR-015, ADR-056 |
 | External assets | Resolved at build time via GH Actions | ADR-016 |
+| Build-time compression | vite-plugin-compression2 (.br + .gz siblings); nginx brotli_static + gzip_static | W3 / ADR-063 |
 | Imagery sourcing | Agency-first (NASA / Roscosmos / CNSA / JAXA / ESA / ISRO archives) then Wikimedia Commons | ADR-046 |
 | Provenance manifests | image-provenance + link-provenance + text-sources + source-logos + license-waivers | ADR-047, ADR-051 |
 | Outbound LEARN-link policy | Per-link source + language + last-verified; locale fallback chain | ADR-051 |
@@ -772,3 +817,4 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | v1.8 | April 2026 | RFC-007 closed by ADR-026 |
 | v1.9 | May 2026 | §map extended through RFC-013 and ADR-033 |
 | **v2.0** | **May 2026** | **v0.6.0 catch-up.** Added §components for 5 new routes (`/mars`, `/iss`, `/tiangong`, `/science`, `/fleet`) + 4 new subsystems (Provenance pipeline, Science Encyclopedia, Science Lens + multi-layer state, Cislunar geometry, 3D model builders). Added §contracts for fleet, surface-site, science section, provenance manifests, `flight.cislunar_profile`, e2e readiness. Added §constraints for provenance fail-closed, no artist's impressions, diagram sources, asset cap, symmetric cross-refs, deterministic e2e. Added §stack rows for KaTeX (ADR-034), @vite-pwa/sveltekit (ADR-029), VitePress, argos-translate batch (ADR-033/054), Science Lens (ADR-055), fleet (ADR-052/053/054), cislunar (ADR-058), ISS/Tiangong/Mars/Moon explorers, and 22 other ADRs locked between ADR-034 and ADR-058. §map summarised through RFC-017 and ADR-058 with reserved slots ADR-059–062 for v0.7 surface hotspots. Three fleet ADRs (052/053/054) authored retrospectively in the same commit. |
+| **v2.1** | **May 2026** | **v0.7.0 catch-up.** Named `disposeScene` helper in §rendering teardown (centralised in `src/lib/three/dispose-object3d.ts` after audit found 5 routes inlining partial traversals that missed `Line` / `Points` + texture slots). Added §rendering "Long-list rendering perf" subsection for CSS `content-visibility` on `/fleet` / `/library` / `/credits` (W4). Added §pipelines Pipeline 11 for build-time compression — `vite-plugin-compression2` emits `.br` + `.gz` siblings, nginx serves them via `brotli_static` + `gzip_static` (W3). Added §components Test infrastructure note for sharded docker-stack e2e workflow (W7). Added §stack row for build-time compression. Header updated to v0.7.0 reality. (Audio narration system — PRD-016 / RFC-019 — and surface hotspots ship — RFC-017 — referenced in header but not yet fully cross-sectioned; pending §components / §pipelines deepening in follow-up.) |

@@ -704,10 +704,14 @@ server {
     add_header Cache-Control "public, must-revalidate";
   }
 
-  # Security headers
-  add_header X-Frame-Options SAMEORIGIN;
-  add_header X-Content-Type-Options nosniff;
-  add_header Referrer-Policy strict-origin-when-cross-origin;
+  # Security headers (mirrors ops/docker/nginx.conf — GH #266).
+  # CSP only takes effect on HTML navigation responses; subresource asset
+  # locations override add_header for Cache-Control but that's fine —
+  # browser-enforced CSP applies to the navigation response only.
+  add_header X-Frame-Options "SAMEORIGIN" always;
+  add_header X-Content-Type-Options "nosniff" always;
+  add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+  add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://cloud.umami.is; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://*.sentry.io https://cloud.umami.is; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'" always;
 }
 ```
 

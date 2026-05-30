@@ -121,5 +121,42 @@
       -4.71,
       137.358
     ]
+  ],
+  "stops": [
+    {
+      "sol": 270,
+      "lat": -4.59559,
+      "lon": 137.43158,
+      "label": "John Klein drill",
+      "kind": "drill"
+    },
+    {
+      "sol": 1000,
+      "lat": -4.61205,
+      "lon": 137.41987,
+      "label": "Marias Pass",
+      "kind": "feature"
+    },
+    {
+      "sol": 1647,
+      "lat": -4.63069,
+      "lon": 137.41623,
+      "label": "Murray Buttes",
+      "kind": "panorama"
+    },
+    {
+      "sol": 2300,
+      "lat": -4.65382,
+      "lon": 137.3938,
+      "label": "Vera Rubin Ridge",
+      "kind": "feature"
+    },
+    {
+      "sol": 3500,
+      "lat": -4.67289,
+      "lon": 137.38132,
+      "label": "Greenheugh Pediment",
+      "kind": "feature"
+    }
   ]
 }

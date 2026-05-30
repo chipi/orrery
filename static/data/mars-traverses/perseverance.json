@@ -129,5 +129,42 @@
       18.488,
       77.37
     ]
+  ],
+  "stops": [
+    {
+      "sol": 38,
+      "lat": 18.44532,
+      "lon": 77.4421,
+      "label": "Ingenuity Flight 1",
+      "kind": "helicopter"
+    },
+    {
+      "sol": 200,
+      "lat": 18.44638,
+      "lon": 77.4402,
+      "label": "Sample 1 — Rochette",
+      "kind": "sample"
+    },
+    {
+      "sol": 421,
+      "lat": 18.45313,
+      "lon": 77.42592,
+      "label": "Three Forks sample depot",
+      "kind": "sample"
+    },
+    {
+      "sol": 750,
+      "lat": 18.46316,
+      "lon": 77.41162,
+      "label": "Hawksbill Gap",
+      "kind": "feature"
+    },
+    {
+      "sol": 1000,
+      "lat": 18.47746,
+      "lon": 77.39321,
+      "label": "Margin unit traverse",
+      "kind": "feature"
+    }
   ]
 }

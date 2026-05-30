@@ -314,9 +314,21 @@
     const tr = traverses[selected.id];
     if (!tr || tr.points.length < 2) return;
     const color = colorFor(selected);
-    ctx.strokeStyle = color;
-    ctx.lineWidth = 2.5;
+    // Bold polyline (Slice 5 §"traverse polyline as first-class primitive").
+    // Outer 4 px white glow + inner 2.5 px agency-tinted line.
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.lineWidth = 4;
     ctx.globalAlpha = tr.status === 'ACTIVE' ? 0.95 : 0.75;
+    ctx.beginPath();
+    for (let i = 0; i < tr.points.length; i++) {
+      const [lat, lon] = tr.points[i];
+      const p = project(lat, lon, W, H);
+      if (i === 0) ctx.moveTo(p.x, p.y);
+      else ctx.lineTo(p.x, p.y);
+    }
+    ctx.stroke();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
     ctx.beginPath();
     for (let i = 0; i < tr.points.length; i++) {
       const [lat, lon] = tr.points[i];
@@ -344,6 +356,68 @@
     ctx.beginPath();
     ctx.arc(ep.x, ep.y, 5.5, 0, Math.PI * 2);
     ctx.stroke();
+    // Curated stops along the path (sample / drill / panorama / etc.).
+    // Drawn as tube pins (kind-coloured drop shapes with white outline)
+    // — distinct from the start (green) and end (red/amber) markers.
+    if (tr.stops) drawTraverseStops(ctx, tr.stops, W, H);
+  }
+
+  /**
+   * Drop-shape tube pins for curated traverse stops. Color by `kind`:
+   *   sample      — orange (#fb923c) drill core retrieval
+   *   drill       — red-orange (#f97316) wet science
+   *   panorama    — cyan (#22d3ee) photo waypoint
+   *   helicopter  — magenta (#e879f9) Ingenuity flight site
+   *   feature     — yellow (#fde047) named terrain feature
+   * Each pin shows a small label above with sol number + name.
+   */
+  function drawTraverseStops(
+    ctx: CanvasRenderingContext2D,
+    stops: Array<{ sol: number; lat: number; lon: number; label: string; kind: string }>,
+    W: number,
+    H: number,
+  ) {
+    const KIND_COLOR: Record<string, string> = {
+      sample: '#fb923c',
+      drill: '#f97316',
+      panorama: '#22d3ee',
+      helicopter: '#e879f9',
+      feature: '#fde047',
+    };
+    const showLabels = kmPerPx < 0.5; // only show labels when zoomed in enough
+    for (const stop of stops) {
+      const p = project(stop.lat, stop.lon, W, H);
+      // Skip off-screen stops.
+      if (p.x < -50 || p.x > W + 50 || p.y < -50 || p.y > H + 50) continue;
+      const color = KIND_COLOR[stop.kind] ?? '#fde047';
+      // Drop-shape: teardrop pointing down. r is the visual radius.
+      const r = 6;
+      ctx.fillStyle = color;
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y - r, r, Math.PI * 0.2, Math.PI * 0.8, true);
+      ctx.lineTo(p.x, p.y);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      // Inner core dot
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y - r, 2, 0, Math.PI * 2);
+      ctx.fill();
+      // Label
+      if (showLabels) {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+        ctx.font = "bold 9px 'Space Mono', monospace";
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+        ctx.shadowBlur = 3;
+        ctx.fillText(`SOL ${stop.sol} · ${stop.label}`, p.x, p.y - r * 2 - 4);
+        ctx.shadowBlur = 0;
+      }
+    }
   }
 
   function drawMarkers(ctx: CanvasRenderingContext2D, W: number, H: number) {

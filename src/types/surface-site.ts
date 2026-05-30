@@ -156,6 +156,26 @@ export interface HotspotAnnotation {
 }
 
 /**
+ * A single notable waypoint along a rover traverse (sample-collection
+ * site, drill site, panorama site, etc.). Per ADR-072 §"curated traverse
+ * stops" — surfaces beyond just start + end on the flat-patch view + on
+ * the 3D sphere traverse. Authored sparingly: 4-10 stops per rover is
+ * the right density (one per major mission phase / discovery), not
+ * every sol.
+ */
+export interface TraverseStop {
+  /** Mars sol or Moon EVA day, for label rendering. */
+  sol: number;
+  /** Stop location in decimal degrees. */
+  lat: number;
+  lon: number;
+  /** Display label, ≤ ~30 chars (e.g. "John Klein drill", "Sample 7"). */
+  label: string;
+  /** Kind drives marker glyph + tint. */
+  kind: 'sample' | 'drill' | 'panorama' | 'helicopter' | 'feature';
+}
+
+/**
  * Rover-traverse polyline (PRD-009 §what-comes-after, RFC-012 OQ-6).
  * Vendored as a static snapshot; no live refresh in V1.
  */
@@ -167,4 +187,6 @@ export interface Traverse {
   credit: string;
   /** Polyline vertices: [lat, lon] pairs in degrees. */
   points: Array<[number, number]>;
+  /** Curated notable stops along the traverse. Optional. */
+  stops?: TraverseStop[];
 }

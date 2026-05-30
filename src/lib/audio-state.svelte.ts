@@ -44,6 +44,12 @@ class AudioState {
   // Replace the Set on mutation to trigger reactivity.
   heardEpisodeIds = $state<Set<string>>(new Set());
 
+  // Curator Full Tour (PRD-016 US-3 / RFC-019 §2). In-memory playlist;
+  // AudioOverlay drives the actual episode loads since it has the registry.
+  tourActive = $state(false);
+  tourIndex = $state(0);
+  tourSequence = $state<string[]>([]);
+
   toggle(): void {
     this.open = !this.open;
   }
@@ -116,6 +122,44 @@ class AudioState {
 
   isHeard(id: string): boolean {
     return this.heardEpisodeIds.has(id);
+  }
+
+  // Tour controls. Episode loading is done by AudioOverlay (it has the
+  // registry); these methods just maintain the queue position.
+  startTour(sequence: string[]): void {
+    this.tourSequence = [...sequence];
+    this.tourIndex = 0;
+    this.tourActive = true;
+  }
+
+  stopTour(): void {
+    this.tourActive = false;
+  }
+
+  // Returns the next episode id, or null if the tour has ended (in which
+  // case the tour is auto-deactivated).
+  nextTourId(): string | null {
+    if (!this.tourActive) return null;
+    const next = this.tourIndex + 1;
+    if (next >= this.tourSequence.length) {
+      this.tourActive = false;
+      return null;
+    }
+    this.tourIndex = next;
+    return this.tourSequence[next];
+  }
+
+  prevTourId(): string | null {
+    if (!this.tourActive) return null;
+    const prev = this.tourIndex - 1;
+    if (prev < 0) return null;
+    this.tourIndex = prev;
+    return this.tourSequence[prev];
+  }
+
+  tourCurrentId(): string | null {
+    if (!this.tourActive || this.tourSequence.length === 0) return null;
+    return this.tourSequence[this.tourIndex] ?? null;
   }
 }
 

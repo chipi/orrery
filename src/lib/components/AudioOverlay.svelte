@@ -7,7 +7,7 @@
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
-  import { audioRegistry } from '$lib/audio-registry.svelte';
+  import { audioRegistry, CURATOR_FULL_TOUR } from '$lib/audio-registry.svelte';
 
   let audioEl: HTMLAudioElement | null = $state(null);
   let scope: 'screen' | 'all' = $state('screen');
@@ -88,6 +88,38 @@
   }
   function onEnded(): void {
     audio.endEpisode();
+    // Auto-advance through the tour if active. Stops at the last episode.
+    if (audio.tourActive) {
+      const nextId = audio.nextTourId();
+      if (nextId) {
+        const ep = audioRegistry.byId(nextId);
+        if (ep) void loadAndPlay(ep);
+      }
+    }
+  }
+
+  async function startTour(): Promise<void> {
+    // Filter the canonical sequence down to episodes actually present in
+    // the registry — defensive against partial generation.
+    const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
+    if (available.length === 0) return;
+    audio.startTour(available);
+    const first = audioRegistry.byId(available[0]);
+    if (first) await loadAndPlay(first);
+  }
+
+  async function tourNext(): Promise<void> {
+    const id = audio.nextTourId();
+    if (!id) return;
+    const ep = audioRegistry.byId(id);
+    if (ep) await loadAndPlay(ep);
+  }
+
+  async function tourPrev(): Promise<void> {
+    const id = audio.prevTourId();
+    if (!id) return;
+    const ep = audioRegistry.byId(id);
+    if (ep) await loadAndPlay(ep);
   }
   function onScrub(e: Event): void {
     const t = Number((e.currentTarget as HTMLInputElement).value);
@@ -133,6 +165,49 @@
         </svg>
       </button>
     </header>
+
+    <section class="tour-bar" aria-label="Curator Full Tour">
+      {#if audio.tourActive}
+        <span class="tour-eyebrow">TOUR</span>
+        <span class="tour-position">{audio.tourIndex + 1} / {audio.tourSequence.length}</span>
+        <button
+          type="button"
+          class="tour-btn"
+          aria-label="Previous in tour"
+          onclick={tourPrev}
+          disabled={audio.tourIndex === 0}
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          class="tour-btn tour-stop"
+          aria-label="Stop tour"
+          onclick={() => audio.stopTour()}
+        >
+          stop
+        </button>
+        <button
+          type="button"
+          class="tour-btn"
+          aria-label="Next in tour"
+          onclick={tourNext}
+          disabled={audio.tourIndex >= audio.tourSequence.length - 1}
+        >
+          ›
+        </button>
+      {:else}
+        <button
+          type="button"
+          class="tour-start"
+          onclick={startTour}
+          disabled={!audioRegistry.loaded}
+        >
+          ▶ Take the Curator Tour
+          <span class="tour-meta">{CURATOR_FULL_TOUR.length} episodes · ~70 min</span>
+        </button>
+      {/if}
+    </section>
 
     {#if audio.currentEpisode}
       <section class="now-playing" aria-label="Now playing">
@@ -548,6 +623,90 @@
   }
   .heard-tag {
     color: rgba(111, 201, 159, 0.85);
+  }
+
+  .tour-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(201, 170, 111, 0.04);
+  }
+  .tour-eyebrow {
+    font-family: var(--font-display, inherit);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #c9aa6f;
+  }
+  .tour-position {
+    font-family: var(--font-mono, monospace);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.8);
+    margin-right: auto;
+  }
+  .tour-btn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    width: 32px;
+    height: 28px;
+    min-width: 32px;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .tour-btn:hover:not(:disabled),
+  .tour-btn:focus-visible:not(:disabled) {
+    border-color: rgba(201, 170, 111, 0.6);
+    color: #c9aa6f;
+    outline: none;
+  }
+  .tour-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .tour-btn.tour-stop {
+    width: auto;
+    padding: 0 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tour-start {
+    width: 100%;
+    background: rgba(201, 170, 111, 0.08);
+    color: #c9aa6f;
+    border: 1px solid rgba(201, 170, 111, 0.4);
+    border-radius: 4px;
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 13px;
+    font-family: var(--font-display, inherit);
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  .tour-start:hover,
+  .tour-start:focus-visible {
+    background: rgba(201, 170, 111, 0.14);
+    border-color: rgba(201, 170, 111, 0.7);
+    outline: none;
+  }
+  .tour-start:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .tour-meta {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: var(--font-mono, monospace);
+    text-transform: none;
   }
   .ab-tag {
     padding: 1px 5px;

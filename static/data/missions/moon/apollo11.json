@@ -45,6 +45,10 @@
     {
       "id": "apollo-lm",
       "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
     }
   ],
   "flight": {

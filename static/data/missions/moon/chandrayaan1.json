@@ -717,5 +717,11 @@
         ]
       ]
     }
-  }
+  },
+  "fleet_refs": [
+    {
+      "id": "sriharikota-slp",
+      "role": "launch-site"
+    }
+  ]
 }

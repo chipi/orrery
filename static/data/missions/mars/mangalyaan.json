@@ -37,6 +37,10 @@
     {
       "id": "mangalyaan",
       "role": "spacecraft"
+    },
+    {
+      "id": "sriharikota-slp",
+      "role": "launch-site"
     }
   ],
   "flight": {

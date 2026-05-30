@@ -64,7 +64,7 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
   import { dimMaterials } from '$lib/three/dim-materials';
-  import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
+  import { buildHotspotSurfacePatch, aspectFromRegion } from '$lib/hotspot-surface-patch';
   import {
     createSkybox,
     teardownPanoramaSkybox,
@@ -534,7 +534,7 @@
     type MarkerObj = {
       group: THREE.Group;
       siteId: string;
-      halo?: THREE.Mesh;
+      halo?: THREE.Object3D;
       labelGroup?: THREE.Group;
     };
     const markers: MarkerObj[] = [];
@@ -853,7 +853,17 @@
         group.add(label.group);
 
         // Selection halo (visible only while site === selected).
-        const halo = createMarkerHalo(colorFor(site), 1.8, { lay: true });
+        // ADR-061 / ADR-072 Slice 3 §"selection halo as bounding rect":
+        // when the site has region_bounds, the halo renders as a thin
+        // rectangular outline matching the region's aspect ratio (long
+        // for traverse_bbox, square-ish for landing_ellipse near
+        // equator, wide for polar ROI). Otherwise falls back to the
+        // legacy circular ring.
+        const haloAspect = aspectFromRegion(site.region_bounds);
+        const halo = createMarkerHalo(colorFor(site), 1.4, {
+          lay: true,
+          aspect: haloAspect,
+        });
         group.add(halo);
 
         // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).

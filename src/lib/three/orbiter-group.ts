@@ -30,7 +30,7 @@ export type OrbiterMarker = {
   ringRadius: number;
   orbitSpeed: number;
   orbitPhase: number;
-  halo?: THREE.Mesh;
+  halo?: THREE.Object3D;
 };
 
 export function buildOrbiterGroup({

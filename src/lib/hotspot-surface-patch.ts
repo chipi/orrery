@@ -269,7 +269,7 @@ function addAnnotationDots(
  * Aspect = width / height. Clamped to [0.25, 4] so extreme polar ROIs
  * (e.g. Artemis south pole) don't produce slivers that vanish on screen.
  */
-function aspectFromRegion(rb: RegionBounds | undefined): number {
+export function aspectFromRegion(rb: RegionBounds | undefined): number {
   if (!rb) return 1;
   const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
   const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);

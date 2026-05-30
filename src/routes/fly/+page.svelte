@@ -24,6 +24,7 @@
   import { classifyConicEarth } from '$lib/fly-conics-earth';
   import { buildCislunarScene } from '$lib/three/fly-cislunar-scene';
   import { buildHelioScene } from '$lib/three/fly-helio-scene';
+  import type { FlyUpdaters } from '$lib/three/fly-updaters';
   import {
     computeMissionApply,
     computeScenarioApply,
@@ -324,15 +325,8 @@
   // long comment block in onMount where the tube is built — the
   // previous four-tube + drawRange + vertex-mutation approach had a
   // root-cause arc-length-vs-uniform-t mismatch with TubeGeometry.
-  let rebuildTubeGeometry: ((pts: Vec2[], radius: number) => THREE.BufferGeometry) | undefined;
-  /** Apsides marker recompute (Phase H.4). Hoisted from startThree
-   * so the outPts $effect can refresh marker positions when the
-   * mission changes. */
-  let apsidesRecompute: (() => void) | undefined;
-  // Camera reset callback assigned inside onMount; applyMissionAsLoaded /
-  // applyPlanSelection call it so each new mission gets a fresh frame
-  // showing the new launch + arrival positions.
-  let resetCamera: (() => void) | undefined;
+  // rebuildTubeGeometry + apsidesRecompute + resetCamera all migrated
+  // to flyUpdaters.helio.* (W9 wave B).
   // Departure + arrival markers — per-mission fixed rings at Earth's
   // position on dep_day and Mars's (or destination's) position on
   // arr_day. Updated whenever a new mission loads so each mission has
@@ -352,41 +346,21 @@
   // Stage 1 picture-in-picture inset; kept un-exported for now.
   let cislunarMoonMeshRef: THREE.Mesh | undefined;
   let cislunarMoonFrameGroupRef: THREE.Group | undefined;
-  // Exposed from the onMount scene builder so the mission-load
-  // callbacks (applyMissionAsLoaded / applyScenarioAsLoaded /
-  // applyPlanSelection) can swap the destination mesh + orbit ring to
-  // match the active mission's target body.
-  let applyDestinationVisualsRef: ((id: DestinationId) => void) | undefined;
-  let rebuildCislunarLinesRef: ((traj: CislunarTrajectory | null) => void) | undefined;
-  let rebuildCislunarAnnotationsRef:
-    | ((
-        traj: CislunarTrajectory | null,
-        profile: import('$lib/cislunar-geometry').CislunarProfile | undefined,
-      ) => void)
-    | undefined;
-  let updateCislunarSpacecraftRef:
-    | ((traj: CislunarTrajectory | null, met_days: number) => void)
-    | undefined;
-  // v0.6.3 #228b: drives per-phase uProgress uniforms each frame so
-  // cislunar phase lines render bright (visited) / dim (preview)
-  // around the spacecraft sprite, mirroring the heliocentric tubes.
-  let updateCislunarLineProgressRef:
-    | ((traj: CislunarTrajectory | null, met_days: number) => void)
-    | undefined;
+  // applyDestinationVisualsRef + the 4 cislunar update refs all
+  // migrated onto flyUpdaters.helio / flyUpdaters.cislunar (W9 wave B).
   // Refresh-callback for the LAUNCH / ARRIVAL sprite textures. Assigned
   // in onMount; called from a $effect whenever the mission or its
   // dates change so each mission shows its actual launch/arrival
   // labels — e.g. "LAUNCH · 2011-11-26" and "MARS · 2012-08-06".
-  let refreshLabelSprites:
-    | ((
-        depLine1: string,
-        depLine2: string,
-        depColor: string,
-        arrLine1: string,
-        arrLine2: string,
-        arrColor: string,
-      ) => void)
-    | undefined;
+  // refreshLabelSprites migrated to flyUpdaters.helio.refreshLabelSprites (W9 wave B).
+  /** Aggregate per-frame + per-mission updater handle for both
+   *  scenes (W9 wave B / #279). Typed contract lives in
+   *  $lib/three/fly-updaters. Populated at the end of onMount once
+   *  all the local closures have captured their builder + state
+   *  refs. Coexists with the 9 freestanding refs above during the
+   *  staged migration; future commits will retire the freestanding
+   *  refs as their call sites move onto flyUpdaters.helio / .cislunar. */
+  let flyUpdaters: FlyUpdaters | undefined;
   // SCALE_3D, GRAVITY_ASSIST_CAVEAT_DESTINATIONS, DESTINATION_LABEL_COLORS,
   // and cameraDistanceFor live in $lib/fly-scene-constants (W9 / #279).
 
@@ -411,7 +385,7 @@
     // (e.g. ORRERY DEMO's purple loop persisting after Curiosity loads).
     const outArc = outPts;
     const retArc = retPts;
-    if (!outLine || !retLine || !rebuildTubeGeometry) return;
+    if (!outLine || !retLine || !flyUpdaters) return;
     // Moon-mode tubes get a thinner radius — the cislunar arc spans
     // ~32 scene units (Earth-Moon at exaggerated 0.4 AU, vs ~40 for an
     // Earth→Mars Hohmann), and the camera sits closer (≈100u vs
@@ -422,10 +396,10 @@
     const outRadius = isMoonMission ? 0.25 : 0.6;
     const retRadius = isMoonMission ? 0.2 : 0.5;
     outLine.geometry.dispose();
-    outLine.geometry = rebuildTubeGeometry(outArc, outRadius);
+    outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(outArc, outRadius);
     retLine.geometry.dispose();
-    retLine.geometry = rebuildTubeGeometry(retArc, retRadius);
-    apsidesRecompute?.();
+    retLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(retArc, retRadius);
+    flyUpdaters?.helio.apsidesRecompute();
     retLine.visible = retArc.length >= 2;
   });
 
@@ -508,13 +482,20 @@
     const dest = activeDestination;
     const depLabel = mission.dep_label || '—';
     const arrLabel = mission.arr_label || '—';
-    if (!refreshLabelSprites) return;
+    if (!flyUpdaters) return;
     // Label both ends "LAUNCH" / "ARRIVAL" to match the 2D canvas
     // anchor labels — the destination is already implied by the arc
     // colour (Mars-red torus etc.) and the date stamp on line 2.
     const arrName = 'ARRIVAL';
     const arrColor = moonMode ? DESTINATION_LABEL_COLORS.moon : DESTINATION_LABEL_COLORS[dest];
-    refreshLabelSprites('LAUNCH', depLabel, '#4b9cd3', arrName, arrLabel, arrColor);
+    flyUpdaters.helio.refreshLabelSprites(
+      'LAUNCH',
+      depLabel,
+      '#4b9cd3',
+      arrName,
+      arrLabel,
+      arrColor,
+    );
   });
 
   // Animation always rides the free-return arc; HUDs surface the
@@ -868,16 +849,16 @@
     isFreeReturn = r.isFreeReturn;
     isMoonMission = r.isMoonMission;
     activeDestination = r.activeDestination;
-    applyDestinationVisualsRef?.(r.activeDestination);
+    flyUpdaters?.helio.applyDestination(r.activeDestination);
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
     // Three.js side effects for cislunar lines + annotations — fire
     // on both branches (null clears the previous mission's geometry).
-    rebuildCislunarLinesRef?.(r.cislunarTrajectory);
-    rebuildCislunarAnnotationsRef?.(r.cislunarTrajectory, m.flight?.cislunar_profile);
+    flyUpdaters?.cislunar.rebuildLines(r.cislunarTrajectory);
+    flyUpdaters?.cislunar.rebuildAnnotations(r.cislunarTrajectory, m.flight?.cislunar_profile);
     outPts = r.outPts;
     retPts = r.retPts;
-    resetCamera?.();
+    flyUpdaters?.helio.resetCamera();
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     simSpeed = r.simSpeed;
@@ -893,13 +874,13 @@
     arcTimeline = r.timeline;
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
-    applyDestinationVisualsRef?.(r.activeDestination);
+    flyUpdaters?.helio.applyDestination(r.activeDestination);
     isMoonMission = r.isMoonMission;
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
     outPts = r.outPts;
     retPts = r.retPts;
-    resetCamera?.();
+    flyUpdaters?.helio.resetCamera();
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
@@ -932,13 +913,13 @@
     arcTimeline = r.timeline;
     isFreeReturn = r.isFreeReturn;
     activeDestination = r.activeDestination;
-    applyDestinationVisualsRef?.(r.activeDestination);
+    flyUpdaters?.helio.applyDestination(r.activeDestination);
     isMoonMission = r.isMoonMission;
     cislunarTrajectory = r.cislunarTrajectory;
     interplanetaryTrajectory = r.interplanetaryTrajectory;
     outPts = r.outPts;
     retPts = r.retPts;
-    resetCamera?.();
+    flyUpdaters?.helio.resetCamera();
     mission = r.missionMeta;
     simDay = r.timeline.dep_day;
     missionEvents = r.missionEvents;
@@ -1520,10 +1501,7 @@
 
     // Expose to outer scope so applyMissionAsLoaded can call rebuild
     // when a Moon mission's cislunar_profile lands.
-    rebuildCislunarLinesRef = rebuildCislunarLines;
-    rebuildCislunarAnnotationsRef = rebuildCislunarAnnotations;
-    updateCislunarSpacecraftRef = updateCislunarSpacecraft;
-    updateCislunarLineProgressRef = updateCislunarLineProgress;
+    // Cislunar closures published via flyUpdaters.cislunar at end of onMount.
     cislunarMoonMeshRef = cislunarMoon;
     cislunarMoonFrameGroupRef = cislunarMoonFrameGroup;
 
@@ -1644,7 +1622,7 @@
     scene.add(outLine);
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
-    rebuildTubeGeometry = buildTubeGeometry;
+    // buildTubeGeometry published via flyUpdaters.helio at end of onMount.
 
     // ─── Historical Mars-mission overlay (PRD-014 #PF Step 2b / GH #255) ──
     // Faded background arcs for every Mars mission with departure_date +
@@ -1688,7 +1666,7 @@
     // already destructured from helioHandles above. The historical-
     // Mars arcs visibility toggle is wired via the onDestinationChange
     // callback at builder construction.
-    applyDestinationVisualsRef = applyDestinationVisuals;
+    // applyDestinationVisuals published via flyUpdaters.helio at end of onMount.
 
     // ─── Science Layers G.2 — SoI rings around Earth + Mars ──────────
     // Sized by physical SoI radii (Earth 924 000 km, Mars 577 000 km)
@@ -1855,7 +1833,7 @@
       apoMarker.position.set(apo.x * SCALE_3D, 0, apo.z * SCALE_3D);
     }
     recomputeApsides();
-    apsidesRecompute = recomputeApsides;
+    // recomputeApsides published via flyUpdaters.helio at end of onMount (W9 wave B).
 
     const stopApsidesLayer = onLayerChange('apsides', (on) => {
       periMarker.visible = on;
@@ -2072,9 +2050,17 @@
     scene.add(depLabelSprite);
     scene.add(arrLabelSprite);
 
-    // Hoist the refresh callback so the $effect (defined at component
-    // scope) can re-render the sprite textures on every mission swap.
-    refreshLabelSprites = (depLine1, depLine2, depColor, arrLine1, arrLine2, arrColor) => {
+    // Refresh callback for the LAUNCH / ARRIVAL sprite textures.
+    // Published via flyUpdaters.helio.refreshLabelSprites at end of
+    // onMount; the $effect at component scope calls it on mission swap.
+    const refreshSpriteTextures = (
+      depLine1: string,
+      depLine2: string,
+      depColor: string,
+      arrLine1: string,
+      arrLine2: string,
+      arrColor: string,
+    ) => {
       drawLabelTexture(depCanvas, depLine1, depLine2, depColor);
       drawLabelTexture(arrCanvas, arrLine1, arrLine2, arrColor);
       const depTex = (depLabelSprite!.material as THREE.SpriteMaterial).map;
@@ -2378,7 +2364,7 @@
     // Saturn, 220u for Moon-mode. (camP, camT) restore to a consistent
     // wide overhead frame regardless of how the user had panned the
     // last mission.
-    resetCamera = () => {
+    const helioResetCamera = () => {
       camR = cameraDistanceFor(activeDestination, isMoonMission);
       camP = 1.05;
       camT = 0.6;
@@ -3349,8 +3335,8 @@
           );
         }
         const metDays = simDay - arcTimeline.dep_day;
-        updateCislunarSpacecraftRef?.(cislunarTrajectory, metDays);
-        updateCislunarLineProgressRef?.(cislunarTrajectory, metDays);
+        flyUpdaters?.cislunar.updateSpacecraft(cislunarTrajectory, metDays);
+        flyUpdaters?.cislunar.updateLineProgress(cislunarTrajectory, metDays);
 
         // ─── Cislunar science-layer per-frame updates ─────────────────
         // Drive only the visible overlays so the math is skipped when
@@ -3679,6 +3665,26 @@
       } else draw2d();
     };
     animate(performance.now());
+
+    // W9 wave B: assemble the typed updater handle. Mirrors the 9
+    // freestanding `*Ref` assignments above so callers can address
+    // one typed object instead of nine nullable refs. Future commits
+    // migrate callers off the freestanding refs onto flyUpdaters.*.
+    flyUpdaters = {
+      helio: {
+        rebuildTubeGeometry: buildTubeGeometry,
+        apsidesRecompute: recomputeApsides,
+        resetCamera: helioResetCamera,
+        applyDestination: applyDestinationVisuals,
+        refreshLabelSprites: refreshSpriteTextures,
+      },
+      cislunar: {
+        rebuildLines: rebuildCislunarLines,
+        rebuildAnnotations: rebuildCislunarAnnotations,
+        updateSpacecraft: updateCislunarSpacecraft,
+        updateLineProgress: updateCislunarLineProgress,
+      },
+    };
 
     cleanup = () => {
       cancelAnimationFrame(rafId);

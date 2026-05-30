@@ -217,7 +217,9 @@
               src={diagramPath}
               alt="{mod.name} anatomy diagram"
               class="anatomy-svg"
-              loading="lazy" decoding="async" />
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <p class="anatomy-caption">
             Hand-drawn schematic showing the spacecraft's named subsystems. Not to scale —

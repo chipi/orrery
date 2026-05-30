@@ -91,6 +91,8 @@ for (const result of results) {
 
 const overallSec = (overallDurationMs / 1000).toFixed(1);
 const verdict = worstExit === 0 ? 'all green' : 'failures present';
-process.stdout.write(`\n──── parallel validate-data: ${verdict} (wall-clock ${overallSec}s) ────\n`);
+process.stdout.write(
+  `\n──── parallel validate-data: ${verdict} (wall-clock ${overallSec}s) ────\n`,
+);
 
 process.exit(worstExit);

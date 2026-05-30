@@ -70,7 +70,12 @@
         <h2>{chapter.heading}</h2>
         {#if chapter.diagram}
           <figure class="story-fig">
-            <img src="{base}/diagrams/science/{chapter.diagram}" alt={chapter.diagram_alt ?? ''} loading="lazy" decoding="async" />
+            <img
+              src="{base}/diagrams/science/{chapter.diagram}"
+              alt={chapter.diagram_alt ?? ''}
+              loading="lazy"
+              decoding="async"
+            />
             {#if chapter.diagram_caption}
               <figcaption>{chapter.diagram_caption}</figcaption>
             {/if}

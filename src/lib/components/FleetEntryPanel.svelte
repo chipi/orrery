@@ -299,7 +299,12 @@
         {/if}
       {:else if tab === 'anatomy' && diagramPath}
         <div class="anatomy">
-          <img src={diagramPath} alt="Anatomy diagram for {entry.name}" loading="lazy" decoding="async" />
+          <img
+            src={diagramPath}
+            alt="Anatomy diagram for {entry.name}"
+            loading="lazy"
+            decoding="async"
+          />
           <p class="anatomy-caption">
             Hand-drawn schematic in the canonical /science chapter style.
           </p>

@@ -62,7 +62,12 @@
 
   {#if section.diagram}
     <figure class="hero-diagram">
-      <img src="{base}/diagrams/science/{section.diagram}" alt={section.diagram_caption ?? ''} loading="lazy" decoding="async" />
+      <img
+        src="{base}/diagrams/science/{section.diagram}"
+        alt={section.diagram_caption ?? ''}
+        loading="lazy"
+        decoding="async"
+      />
       {#if section.diagram_caption}
         <figcaption>{section.diagram_caption}</figcaption>
       {/if}
@@ -96,7 +101,12 @@
 
   {#if section.photo}
     <figure class="section-photo">
-      <img src="{base}{section.photo.src}" alt={section.photo.alt_key ?? ''} loading="lazy" decoding="async" />
+      <img
+        src="{base}{section.photo.src}"
+        alt={section.photo.alt_key ?? ''}
+        loading="lazy"
+        decoding="async"
+      />
       <figcaption>{section.photo.credit}</figcaption>
     </figure>
   {/if}

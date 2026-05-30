@@ -940,7 +940,9 @@
               onerror={(e) => {
                 const fig = (e.currentTarget as HTMLImageElement).closest('figure');
                 if (fig) fig.style.display = 'none';
-              }} decoding="async" />
+              }}
+              decoding="async"
+            />
           </figure>
         {/key}
 

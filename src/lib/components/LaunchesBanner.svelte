@@ -83,7 +83,9 @@
                 class="agency-logo"
                 src={logoFor(e.agency_name)}
                 alt="{e.agency_name} logo"
-                loading="lazy" decoding="async" />
+                loading="lazy"
+                decoding="async"
+              />
             {/if}
           </div>
           <h3 class="card-title">{e.rocket_config_name}</h3>

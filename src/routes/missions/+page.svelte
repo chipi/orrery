@@ -404,7 +404,10 @@
                     img.style.display = 'none';
                     const fb = img.nextElementSibling as HTMLElement | null;
                     if (fb) fb.style.display = 'inline';
-                  }} loading="lazy" decoding="async" />
+                  }}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <span class="agency-pill-fallback" hidden>{agency}</span>
               {:else}
                 {agency}
@@ -452,13 +455,17 @@
                 onerror={(e) => {
                   const fig = (e.currentTarget as HTMLImageElement).closest('figure');
                   if (fig) fig.classList.add('cover-missing');
-                }} decoding="async" />
+                }}
+                decoding="async"
+              />
               <img
                 class="card-trajectory"
                 src="{base}/images/missions/thumbnails/{mission.id}.png"
                 alt=""
                 loading="lazy"
-                aria-hidden="true" decoding="async" />
+                aria-hidden="true"
+                decoding="async"
+              />
             </figure>
             <div class="card-body">
               <header class="card-head">
@@ -470,7 +477,10 @@
                       class="agency-logo"
                       aria-hidden="true"
                       onerror={(e) =>
-                        ((e.currentTarget as HTMLImageElement).style.display = 'none')} loading="lazy" decoding="async" />
+                        ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   {/if}
                   {mission.agency}
                 </span>

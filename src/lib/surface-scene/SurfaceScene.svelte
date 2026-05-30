@@ -879,6 +879,11 @@
                       accentColor: accent,
                       siteId: site.id,
                       annotations,
+                      // ADR-061: when region_bounds is set on the site,
+                      // the Tier-2 patch geometry switches from circle
+                      // to a stylized rectangle whose aspect matches
+                      // the region's lon-extent vs lat-extent ratio.
+                      regionBounds: site.region_bounds,
                     });
                   }
                 : undefined;

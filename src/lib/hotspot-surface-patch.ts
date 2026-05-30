@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import type { HotspotAnnotation } from '$types/surface-site';
+import type { HotspotAnnotation, RegionBounds } from '$types/surface-site';
 
 /**
  * Surface-patch quad component (PRD-014 / RFC-017 §ADR-060).
@@ -98,6 +98,17 @@ export interface HotspotPatchBuilderInput {
    * for sites whose annotation arrays haven't been authored yet).
    */
   annotations?: HotspotAnnotation[];
+  /**
+   * Axis-aligned region polygon (ADR-061, Slice 1 of #283). When
+   * provided, the patch geometry switches from circular `CircleGeometry`
+   * to rectangular `PlaneGeometry` with aspect ratio derived from the
+   * region's lat-extent vs lon-extent ratio. Total area preserved at
+   * ~`PATCH_DIAMETER_WORLD_UNITS²` (stylized callout, not literal —
+   * true-scale rectangles ship in Slice 4's flat-ground-patch view).
+   * Backward-compatible: sites without region_bounds keep the legacy
+   * circular geometry.
+   */
+  regionBounds?: RegionBounds;
 }
 
 /**
@@ -112,14 +123,20 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   const g = new THREE.Group();
   g.userData = { siteId: input.siteId };
 
+  // Region-aware aspect ratio: if region_bounds is provided (ADR-061),
+  // derive width/height in world units that preserves total stylized
+  // area but matches the region's actual lon:lat extent ratio. So a
+  // long traverse bbox reads as a horizontal rectangle, a polar ROI
+  // reads as a wider one, etc. Without region_bounds, fall back to
+  // the legacy circular disc.
+  const aspect = aspectFromRegion(input.regionBounds);
+
   // Regional (Tier 2a — CTX mosaic) layer goes FIRST so it renders
   // first / sits under everything that follows. Larger geometry +
   // weaker polygonOffset means it loses depth fights against the
   // detail patch / rim / pin while still beating the planet sphere.
   if (input.regionalTextureUrl) {
-    const regRadius = REGIONAL_PATCH_DIAMETER_WORLD_UNITS / 2;
-    const regGeom = new THREE.CircleGeometry(regRadius, 96);
-    regGeom.rotateX(-Math.PI / 2);
+    const regGeom = buildPatchGeometry(REGIONAL_PATCH_DIAMETER_WORLD_UNITS, aspect, 96);
     const regMat = createPatchMaterial(input.regionalTextureUrl, {
       polygonOffsetFactor: -1,
       polygonOffsetUnits: -1,
@@ -130,12 +147,7 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
     g.add(regMesh);
   }
 
-  const radius = PATCH_DIAMETER_WORLD_UNITS / 2;
-  const geom = new THREE.CircleGeometry(radius, 64);
-  // Lay the disc flat: rotate so its normal aligns with the wrapper
-  // group's local +Y (which is surface-normal after the wrapper's
-  // quaternion has aligned it to the planet surface).
-  geom.rotateX(-Math.PI / 2);
+  const geom = buildPatchGeometry(PATCH_DIAMETER_WORLD_UNITS, aspect, 64);
 
   const material = createPatchMaterial(input.textureUrl);
   const mesh = new THREE.Mesh(geom, material);
@@ -245,6 +257,55 @@ function addAnnotationDots(
     halo.userData = { siteId, annotationId: a.id };
     g.add(halo);
   }
+}
+
+/**
+ * Compute the aspect-ratio multiplier (w/h) for a stylized rectangular
+ * region patch given the region's lat/lon bounds. Returns 1 (square)
+ * when no region is provided — caller treats this as "circle".
+ *
+ * The math: width-in-degrees-of-arc ≈ Δlon × cos(centroidLat), height
+ * = Δlat (no cos correction since latitude lines are great circles).
+ * Aspect = width / height. Clamped to [0.25, 4] so extreme polar ROIs
+ * (e.g. Artemis south pole) don't produce slivers that vanish on screen.
+ */
+function aspectFromRegion(rb: RegionBounds | undefined): number {
+  if (!rb) return 1;
+  const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
+  const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);
+  const centroidLat = ((rb.lat_min + rb.lat_max) / 2) * (Math.PI / 180);
+  const widthDeg = dLon * Math.cos(centroidLat);
+  const aspect = widthDeg / dLat;
+  return Math.max(0.25, Math.min(4, aspect));
+}
+
+/**
+ * Build a flat patch geometry (laid in the XZ plane, normal = +Y) with
+ * the requested base diameter and aspect ratio. When aspect === 1 the
+ * geometry is a `CircleGeometry` (legacy circular patch); otherwise it
+ * is a rectangular `PlaneGeometry` whose width × height preserves the
+ * circle's area while matching the requested aspect.
+ *
+ * Area preservation: for a unit-diameter circle, area = π/4. For a
+ * rectangle with the same area and width/height = aspect, height =
+ * √(π/(4·aspect)), width = aspect × height.
+ */
+function buildPatchGeometry(
+  baseDiameter: number,
+  aspect: number,
+  segments: number,
+): THREE.BufferGeometry {
+  if (Math.abs(aspect - 1) < 0.01) {
+    const g = new THREE.CircleGeometry(baseDiameter / 2, segments);
+    g.rotateX(-Math.PI / 2);
+    return g;
+  }
+  const circleArea = (Math.PI / 4) * baseDiameter * baseDiameter;
+  const height = Math.sqrt(circleArea / aspect);
+  const width = aspect * height;
+  const g = new THREE.PlaneGeometry(width, height);
+  g.rotateX(-Math.PI / 2);
+  return g;
 }
 
 interface PatchMaterialOptions {

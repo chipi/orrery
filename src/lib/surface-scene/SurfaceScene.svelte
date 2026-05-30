@@ -61,6 +61,8 @@
   } from '$lib/hotspot-lod-dispatcher';
   import { createSurfaceDebugInfo, type SurfaceDebugInfo } from '$lib/surface-scene/debug-info';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
+  import { statusTone } from '$lib/surface-scene/status-tone';
+  import { dimMaterials } from '$lib/three/dim-materials';
   import { buildHotspotSurfacePatch } from '$lib/hotspot-surface-patch';
   import {
     createSkybox,
@@ -786,7 +788,19 @@
         // added by the hotspot LOD dispatcher, plus hit sphere + label
         // + halo as siblings.
         const group = new THREE.Group();
-        const tier0Group = config.landerModelBuilder(site.id, site.mission_type, colorFor(site));
+        const tier0Group = config.landerModelBuilder(
+          site.id,
+          site.mission_type,
+          colorFor(site),
+          site.agency,
+        );
+        // Dim crashed/lost markers — the wreckage still has a site but
+        // the mission ended on impact, so the marker reads as a fainter
+        // historical reference rather than competing for attention with
+        // ACTIVE missions. ADR-072 §"True body differences" / lifecycle.
+        if (site.status === 'CRASHED' || site.status === 'LOST') {
+          dimMaterials(tier0Group, 0.55);
+        }
         group.add(tier0Group);
         // Anchor on the surface; orient the group so +Y points away from
         // Moon centre (radially outward), so cone-style markers stand up.
@@ -1842,14 +1856,15 @@ sample      ${debugInfo.projectedPxSample}`}
     onClose={() => (panelOpen = false)}
   >
     {#if selected}
+      {@const tone = statusTone(selected.status)}
       <div class="head" style:--accent={colorFor(selected)}>
         <div class="agency-row">
           <span class="agency-badge" style:background-color={colorFor(selected)}>
             {selected.nation} · {selected.agency}
           </span>
-          <span class="status status-{selected.surface_status}"
-            >{selected.surface_status.toUpperCase()}</span
-          >
+          <span class="status" style="color: {tone.color}; border-color: {tone.color}">
+            {tone.label}
+          </span>
         </div>
         <h1 class="name">{selected.name ?? selected.id}</h1>
         {#if selected.mission_type || selected.site_name}
@@ -2190,22 +2205,6 @@ sample      ${debugInfo.projectedPxSample}`}
     color: #fff;
     outline: none;
   }
-  .panorama-exit {
-    position: absolute;
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: auto;
-    padding: 8px 16px;
-    background: rgba(4, 4, 12, 0.8);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    backdrop-filter: blur(8px);
-  }
   .sr-only {
     position: absolute;
     width: 1px;
@@ -2401,21 +2400,11 @@ sample      ${debugInfo.projectedPxSample}`}
     background: rgba(255, 255, 255, 0.03);
     color: rgba(255, 255, 255, 0.6);
   }
-  .status-completed {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.08);
-  }
-  .status-ongoing {
-    color: #4466ff;
-    border-color: rgba(68, 102, 255, 0.4);
-    background: rgba(68, 102, 255, 0.08);
-  }
-  .status-planned {
-    color: #ffc850;
-    border-color: rgba(255, 200, 80, 0.4);
-    background: rgba(255, 200, 80, 0.08);
-  }
+  /* .status-completed / -ongoing / -planned removed per ADR-072
+   * §Drift 17 — colors now come from statusTone() applied inline as
+   * style="color: ...; border-color: ..." so the badge can render the
+   * full status enum (FLOWN/PLANNED/ACTIVE/ENDED/CRASHED/LOST) without
+   * needing a CSS class per state. */
   .name {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 28px;

@@ -74,9 +74,10 @@ Mission-specific Three.js builders, each composing primitives into a recognisabl
 
 - `src/lib/earth-satellite-models.ts` — ISS, Tiangong, Hubble, JWST, Chandra, XMM, Gaia, LRO, GEO comsat, GNSS constellations (GPS / Galileo / GLONASS / BeiDou), + 7 lunar orbiters as generic-orbiter silhouettes.
 - `src/lib/moon-lander-models.ts` — Apollo LM (descent + ascent) for Apollo 11/12/14, J-mission LM + LRV for Apollo 15/16/17, Luna 9 petal-capsule, Luna sample-return stub, Lunokhod 1/2 bathtub-on-wheels, Chang'e 3/4 lander + Yutu rover, Chang'e 5/6 return stub, Chandrayaan-3 Vikram + Pragyan, SLIM "Moon Sniper" tipped pose, Artemis III HLS placeholder.
+- `src/lib/mars-lander-models.ts` — Viking 1/2 tripod, Pathfinder/Sojourner pair, MER (Spirit/Opportunity), Curiosity-class (Curiosity + Perseverance with Ingenuity option), Phoenix-class (Phoenix + InSight), Mars 3 petal, Tianwen-Zhurong, Schiaparelli + Beagle 2 silhouettes.
 - `src/lib/iss-proxy-model.ts` — ISS module geometry + `userData.moduleId` pickability per ADR-041. 18 USOS + ROS modules.
 - `src/lib/tiangong-proxy-model.ts` — Tianhe + Wentian + Mengtian module geometry + pickability per ADR-049.
-- Mars rover marker geometry — rendered inline in `src/routes/mars/+page.svelte` (per-rover small-3D silhouettes; v0.6 parity with /earth + /moon markers).
+- `src/lib/surface-scene/` — canonical /moon + /mars renderer per ADR-072 (closing ADR-037's deferred-component decision). `SurfaceScene.svelte` owns ~90 % of the surface-route behaviour: scene/camera/renderer setup, axial-tilt wrapper, conditional atmosphere + tidal-lock layers, marker building, hotspot LOD dispatch, per-frame animation loop with fly-in tween + drag inertia + smooth zoom lerp, altitude HUD, traverse rendering with curated stops, panel state, panorama enter/exit, e2e signal attributes. `SurfaceFlatPatch.svelte` is the flat 2D ground-patch view at deep zoom (ADR-062) — rectangular regional + detail CTX/HiRISE/LROC NAC layers, traverse polyline, scale-aware markers, scale bar + lat/lon HUD, upsample warning. Both routes are 37 / 72 LOC thin shells.
 
 ### Provenance pipeline
 

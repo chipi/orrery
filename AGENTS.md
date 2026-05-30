@@ -40,8 +40,8 @@ The eleven primary nav destinations:
 | `/fly` | Mission Arc (heliocentric + cislunar Earth-centered scenes) | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Catalog | `src/routes/missions/+page.svelte` |
 | `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
-| `/moon` | Moon Map (surface markers + lunar orbiters with per-mission 3D models) | `src/routes/moon/+page.svelte` |
-| `/mars` | Mars Map (equirectangular + 3D, rover traverses, orbital probes) | `src/routes/mars/+page.svelte` |
+| `/moon` | Moon Map (surface markers + lunar orbiters with per-mission 3D models) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
+| `/mars` | Mars Map (equirectangular + 3D, rover traverses, orbital probes) | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer (Tianhe + Wentian + Mengtian with module overlays) | `src/routes/tiangong/+page.svelte` |
 | `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
@@ -154,6 +154,13 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── katex.ts                      ← KaTeX server-rendered wrapper (ADR-034)
 │   │   ├── earth-satellite-models.ts     ← 20 per-mission /earth + lunar-orbiter builders
 │   │   ├── moon-lander-models.ts         ← 11 per-mission /moon surface builders (v0.6.0)
+│   │   ├── mars-lander-models.ts         ← 9 per-mission /mars surface builders
+│   │   ├── surface-scene/                 ← canonical /moon + /mars renderer (ADR-072)
+│   │   │   ├── SurfaceScene.svelte       ← shared 3D scene + animation loop + HUD + panel state
+│   │   │   ├── SurfaceFlatPatch.svelte   ← flat 2D ground-patch view at deep zoom (ADR-062)
+│   │   │   ├── types.ts                  ← SurfaceSceneConfig — 8 body-justified knobs
+│   │   │   ├── README.md                 ← contract: before adding a 9th knob, read this
+│   │   │   └── debug-info.ts, register-{moon,mars}-hotspot-builders.ts
 │   │   ├── iss-proxy-model.ts            ← ISS proxy model + module pickability (ADR-040/041)
 │   │   ├── tiangong-proxy-model.ts       ← Tiangong proxy model (ADR-049)
 │   │   ├── moon-marker-category.ts       ← category fallback for unknown lunar mission ids

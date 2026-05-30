@@ -83,8 +83,7 @@ function collapseVariants(entries: ProvenanceEntry[]): Episode[] {
   }
   for (const ep of byKey.values()) {
     ep.variants.sort(
-      (a, b) =>
-        PROVIDER_PRIORITY.indexOf(a.provider) - PROVIDER_PRIORITY.indexOf(b.provider),
+      (a, b) => PROVIDER_PRIORITY.indexOf(a.provider) - PROVIDER_PRIORITY.indexOf(b.provider),
     );
     ep.activeProvider = ep.variants[0].provider;
   }

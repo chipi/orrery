@@ -67119,18 +67119,18 @@
       "author": "Solar System Scope",
       "agency": "Solar System Scope",
       "source_url": "https://www.solarsystemscope.com/textures/",
-      "image_url": null,
+      "image_url": "https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg",
       "license_short": "CC-BY-4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "license_rationale": "Reuse with attribution; this asset is a 4096x2048 placeholder upscale (sips bicubic) of the published 2K source pending a real 4K fetch when scripts/fetch-assets.ts texture pipeline is updated. Same Solar System Scope attribution applies.",
+      "license_rationale": "Solar System Scope publishes a full textures library (equirectangular daymaps + clouds + nightmaps for every Solar System body) under CC-BY 4.0. We download the 8K Earth daymap and downsample to 4096×2048 to fit the workbox cache cap while preserving substantially more detail than the 2K base. The 2K base remains the LOD-out texture for far-camera views.",
       "modifications": [
-        "downloaded-from-publisher",
-        "upscaled-to-4096x2048-via-sips-placeholder"
+        "downloaded-from-solarsystemscope-8k-daymap",
+        "downsampled-to-4096x2048-via-sips-quality85"
       ],
       "revid": null,
       "pageid": null,
       "nasa_id": null,
-      "fetched_at": "2026-05-30T18:35:00.000Z"
+      "fetched_at": "2026-05-30T22:30:00.000Z"
     },
     {
       "id": "831effcbffc52f9a",

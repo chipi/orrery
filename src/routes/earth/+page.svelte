@@ -212,11 +212,9 @@
     // user pulls the camera in close (camR <= LOD_SWAP_THRESHOLD), a
     // 4K texture is lazy-loaded and swapped in via material.map
     // reassignment. Hysteresis (LOD_SWAP_HYSTERESIS) keeps the swap
-    // from thrashing at the boundary. Spike for #284 — proves the
-    // r128 swap mechanism works; the 4K texture itself is currently a
-    // placeholder upscale of the 2K source pending a real high-res
-    // fetch (Solar System Scope's download endpoint started returning
-    // HTML; TODO: fix scripts/fetch-assets.ts texture pipeline).
+    // from thrashing at the boundary. Per #284 the 4K texture is the
+    // Solar System Scope 8K daymap downsampled to 4096×2048 to fit the
+    // workbox cache cap while doubling detail vs the 2K LOD-out.
     const textureLoader = new THREE.TextureLoader();
     const earthMap2K = textureLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
     let earthMap4K: THREE.Texture | null = null;

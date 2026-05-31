@@ -50,8 +50,12 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (nation === 'Japan' || agency === 'JAXA') return { label: 'Japan · JAXA', color: '#1d4ed8' };
   if (nation === 'Israel' || agency === 'SpaceIL')
     return { label: 'Israel · SpaceIL', color: '#1d4ed8' };
-  if (nation === 'Europe' || agency === 'ESA') return { label: 'Europe · ESA', color: '#1d4ed8' };
+  if (nation === 'Europe' || agency === 'ESA' || agency === 'Arianespace')
+    return { label: 'Europe · ESA', color: '#1d4ed8' };
   if (nation === 'UK' || agency === 'ESA-UK') return { label: 'UK · ESA', color: '#1d4ed8' };
   if (nation === 'UAE' || agency === 'UAESA') return { label: 'UAE · UAESA', color: '#00732F' };
+  // SpaceX-operated pads on USSF property (#285 Phase 2). Distinct
+  // from NASA — the operating agency drives the badge attribution.
+  if (agency === 'SpaceX') return { label: 'USA · SpaceX', color: '#3b82f6' };
   return { label: nation || agency || '—', color: 'rgba(255,255,255,0.5)' };
 }

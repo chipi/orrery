@@ -47,6 +47,11 @@ const AGENCY_MAP: Record<string, SurfaceAgency> = {
   'ESA / Arianespace': 'ESA',
   Arianespace: 'Arianespace',
   SpaceX: 'SpaceX',
+  // Cape Canaveral SLC-40 + Vandenberg SLC-4E are pads on USSF
+  // property operated by SpaceX. The operating agency is what
+  // matters for the panel attribution badge.
+  'USSF / SpaceX': 'SpaceX',
+  USSF: 'NASA', // fallback if a pad entry uses bare USSF (no SpaceX op)
 };
 
 /**

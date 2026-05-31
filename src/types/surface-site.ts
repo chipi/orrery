@@ -86,6 +86,14 @@ export interface SurfaceSite {
   data_quality: DataQuality;
   credit: string;
   mission_id?: string;
+  /**
+   * Multiple missions associated with this site (#285 Phase 2 B4).
+   * For Earth launch-sites: every mission that launched from this
+   * pad — drives the "Launches from here" chip list in the panel.
+   * Complements `mission_id` (1:1) for the 1:N case. Optional;
+   * /moon and /mars sites currently don't populate this.
+   */
+  linked_missions?: string[];
   links: Array<{ l: string; u: string; t: LinkTier }>;
   /** Editorial overlay fields merged at fetch time */
   name?: string;

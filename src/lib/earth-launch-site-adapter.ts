@@ -120,6 +120,7 @@ function adaptFleetToSurfaceSite(f: FleetEntry): SurfaceSite | null {
     credit: f.credit ?? '',
     links: f.links ?? [],
     name: f.name,
+    linked_missions: f.linked_missions,
   };
 }
 

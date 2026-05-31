@@ -2427,6 +2427,28 @@ sample      ${debugInfo.projectedPxSample}`}
           </a>
         {/if}
 
+        {#if selected.linked_missions && selected.linked_missions.length > 0}
+          <section
+            class="launches-from-here"
+            aria-label={m.surface_panel_launches_from_here_title()}
+          >
+            <h3>{m.surface_panel_launches_from_here_title()}</h3>
+            <ul class="launches-from-here-chips">
+              {#each selected.linked_missions as missionId (missionId)}
+                <li>
+                  <a
+                    class="launches-chip"
+                    href="{base}/missions?id={missionId}"
+                    data-testid="launches-from-here-chip"
+                  >
+                    {missionId.replace(/([a-z])(\d)/g, '$1 $2').toUpperCase()}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          </section>
+        {/if}
+
         {#if selected.credit}
           <div class="credit">{selected.credit}</div>
         {/if}
@@ -2954,6 +2976,49 @@ sample      ${debugInfo.projectedPxSample}`}
   .mission-link:focus-visible {
     background: rgba(68, 102, 255, 0.32);
     border-color: #4466ff;
+    outline: none;
+  }
+
+  .launches-from-here {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .launches-from-here h3 {
+    margin: 0 0 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 700;
+  }
+  .launches-from-here-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .launches-chip {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(78, 205, 196, 0.1);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: #4ecdc4;
+    text-decoration: none;
+    border-radius: 999px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    transition: all 0.15s;
+  }
+  .launches-chip:hover,
+  .launches-chip:focus-visible {
+    background: rgba(78, 205, 196, 0.22);
+    border-color: rgba(78, 205, 196, 0.75);
+    color: #fff;
     outline: none;
   }
 

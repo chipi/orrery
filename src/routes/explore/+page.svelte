@@ -61,6 +61,14 @@
     hasRings?: boolean;
     /** Filename in static/textures/. ADR-016: assets are local. */
     texture: string;
+    /**
+     * Optional 4K daymap, lazy-loaded when the camera approaches this
+     * planet (#287). Omit for bodies where SSS only publishes a 2K
+     * source — Uranus and Neptune in v1. Earth uses 4k_earth_daymap.jpg
+     * which already shipped with #284. Venus uses the atmosphere map
+     * at native 4K (SSS publishes a native 4K atmosphere variant).
+     */
+    texture4k?: string;
   };
 
   const PLANETS: PlanetVisual[] = [
@@ -76,6 +84,7 @@
       a0: 0.5,
       inc: 7.0,
       texture: '2k_mercury.jpg',
+      texture4k: '4k_mercury.jpg',
     },
     {
       id: 'venus',
@@ -89,6 +98,7 @@
       a0: 2.1,
       inc: 3.4,
       texture: '2k_venus_atmosphere.jpg',
+      texture4k: '4k_venus_atmosphere.jpg',
     },
     {
       id: 'earth',
@@ -102,6 +112,7 @@
       a0: 0,
       inc: 0.0,
       texture: '2k_earth_daymap.jpg',
+      texture4k: '4k_earth_daymap.jpg',
     },
     {
       id: 'mars',
@@ -115,6 +126,7 @@
       a0: 1.8,
       inc: 1.85,
       texture: '2k_mars.jpg',
+      texture4k: '4k_mars.jpg',
     },
     {
       id: 'jupiter',
@@ -128,6 +140,7 @@
       a0: 1.2,
       inc: 1.3,
       texture: '2k_jupiter.jpg',
+      texture4k: '4k_jupiter.jpg',
     },
     {
       id: 'saturn',
@@ -142,6 +155,7 @@
       inc: 2.49,
       hasRings: true,
       texture: '2k_saturn.jpg',
+      texture4k: '4k_saturn.jpg',
     },
     {
       id: 'uranus',
@@ -491,13 +505,59 @@
     const loadTexture = (file: string): THREE.Texture =>
       textureLoader.load(`${base}/textures/${file}`);
 
-    const sunMap = loadTexture('2k_sun.jpg');
-    const sunMesh = new THREE.Mesh(
-      new THREE.SphereGeometry(18, 32, 32),
-      new THREE.MeshBasicMaterial({ map: sunMap, color: 0xfff0a0 }),
-    );
+    // Per-planet texture LOD swap (#287). 2K base loads eagerly so
+    // the first paint of /explore stays cheap. 4K lazy-loads when the
+    // camera approaches a planet (per-body distance threshold). Sun
+    // gets the same treatment via its own pair below. Uranus +
+    // Neptune skip LOD because SSS doesn't publish a 4K source for
+    // either; they stay 2K eagerly.
+    const SUN_RADIUS = 18;
+    const PLANET_LOD_IN_RATIO = 4; // distance / planet_size ≤ this → swap to 4K
+    const PLANET_LOD_OUT_RATIO = 5; // distance / planet_size ≥ this → swap back to 2K
+    type LodState = {
+      currentLevel: '2k' | '4k';
+      tex2k: THREE.Texture;
+      tex4k: THREE.Texture | null;
+      loadStarted: boolean;
+    };
+
+    const sunMap2k = loadTexture('2k_sun.jpg');
+    let sunMap4k: THREE.Texture | null = null;
+    let sun4kLoadStarted = false;
+    let sunLodLevel: '2k' | '4k' = '2k';
+    const sunMaterial = new THREE.MeshBasicMaterial({ map: sunMap2k, color: 0xfff0a0 });
+    const sunMesh = new THREE.Mesh(new THREE.SphereGeometry(SUN_RADIUS, 32, 32), sunMaterial);
     sunMesh.userData = { planetId: '__sun__' };
     scene.add(sunMesh);
+    function ensureSun4kLoaded(): void {
+      if (sun4kLoadStarted) return;
+      sun4kLoadStarted = true;
+      textureLoader.load(
+        `${base}/textures/4k_sun.jpg`,
+        (tex) => {
+          sunMap4k = tex;
+        },
+        undefined,
+        () => {
+          sun4kLoadStarted = false; // allow retry next threshold cross
+        },
+      );
+    }
+    function updateSunLod(distanceToSun: number): void {
+      const ratio = distanceToSun / SUN_RADIUS;
+      if (ratio <= PLANET_LOD_IN_RATIO) {
+        ensureSun4kLoaded();
+        if (sunMap4k && sunLodLevel !== '4k') {
+          sunMaterial.map = sunMap4k;
+          sunMaterial.needsUpdate = true;
+          sunLodLevel = '4k';
+        }
+      } else if (ratio >= PLANET_LOD_OUT_RATIO && sunLodLevel !== '2k') {
+        sunMaterial.map = sunMap2k;
+        sunMaterial.needsUpdate = true;
+        sunLodLevel = '2k';
+      }
+    }
     const glowConfigs: Array<{ r: number; color: number; opacity: number }> = [
       { r: 22, color: 0xffdd66, opacity: 0.18 },
       { r: 40, color: 0xff9922, opacity: 0.08 },
@@ -576,11 +636,14 @@
       mesh: THREE.Mesh;
       pickAid: THREE.Mesh;
       planet: PlanetVisual;
+      material: THREE.MeshPhongMaterial;
+      lod?: LodState;
     };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
+      const tex2k = loadTexture(p.texture);
       const mat = new THREE.MeshPhongMaterial({
-        map: loadTexture(p.texture),
+        map: tex2k,
         color: 0xffffff,
         emissive: p.color3,
         emissiveIntensity: 0.06,
@@ -618,8 +681,56 @@
         group.add(ring);
       }
       scene.add(group);
-      return { group, mesh, pickAid, planet: p };
+      const lod: LodState | undefined = p.texture4k
+        ? { currentLevel: '2k', tex2k, tex4k: null, loadStarted: false }
+        : undefined;
+      return { group, mesh, pickAid, planet: p, material: mat, lod };
     });
+
+    /**
+     * Per-frame LOD swap — for each planet whose `texture4k` is set,
+     * measure the camera-to-planet distance and compare to a
+     * planet-size-normalised ratio. When the camera gets close enough
+     * (≤ PLANET_LOD_IN_RATIO × size3), kick off the 4K fetch + swap
+     * material.map once it lands. Hysteresis (PLANET_LOD_OUT_RATIO)
+     * keeps the swap from thrashing at the boundary. Mirrors the
+     * single-planet pattern shipped on /earth in #284 Layer B.
+     */
+    const tmpWorldPos = new THREE.Vector3();
+    function updatePlanetLods(): void {
+      for (const obj of planetObjs) {
+        const lod = obj.lod;
+        if (!lod || !obj.planet.texture4k) continue;
+        obj.mesh.getWorldPosition(tmpWorldPos);
+        const dist = camera.position.distanceTo(tmpWorldPos);
+        const ratio = dist / obj.planet.size3;
+        if (ratio <= PLANET_LOD_IN_RATIO) {
+          if (!lod.loadStarted) {
+            lod.loadStarted = true;
+            const file = obj.planet.texture4k;
+            textureLoader.load(
+              `${base}/textures/${file}`,
+              (tex) => {
+                lod.tex4k = tex;
+              },
+              undefined,
+              () => {
+                lod.loadStarted = false; // allow retry next cross
+              },
+            );
+          }
+          if (lod.tex4k && lod.currentLevel !== '4k') {
+            obj.material.map = lod.tex4k;
+            obj.material.needsUpdate = true;
+            lod.currentLevel = '4k';
+          }
+        } else if (ratio >= PLANET_LOD_OUT_RATIO && lod.currentLevel !== '2k') {
+          obj.material.map = lod.tex2k;
+          obj.material.needsUpdate = true;
+          lod.currentLevel = '2k';
+        }
+      }
+    }
 
     // ── Phase H — per-planet science overlay arrows ────────────────
     // Each planet gets three ArrowHelpers parented to its group so they
@@ -1025,7 +1136,7 @@
       if (!wasDrag && view === '3d') tryPick3d(e);
     };
     const on3dWheel = (e: WheelEvent) => {
-      camR = Math.max(120, Math.min(1400, camR + e.deltaY * 0.7));
+      camR = Math.max(60, Math.min(1400, camR + e.deltaY * 0.7));
       updateCam();
     };
     let touchActive3d = false;
@@ -1059,7 +1170,7 @@
         const dist = touchDist(e.touches[0], e.touches[1]);
         if (pinchPrev3d > 0) {
           const ratio = pinchPrev3d / dist;
-          camR = Math.max(120, Math.min(1400, camR * ratio));
+          camR = Math.max(60, Math.min(1400, camR * ratio));
           updateCam();
         }
         pinchPrev3d = dist;
@@ -1703,6 +1814,15 @@
       // ADR-025: when prefers-reduced-motion is set we freeze sim
       // time. User-initiated camera drag still works.
       if (!reducedMotion) simT += dt * 0.04;
+
+      // #287 per-planet 4K LOD swap. Cheap per-frame — a single
+      // distance check + threshold compare per planet. Active in 3D
+      // only (2D top-down view doesn't sample texture pixels in a
+      // way that benefits from 4K).
+      if (view === '3d') {
+        updateSunLod(camera.position.length());
+        updatePlanetLods();
+      }
 
       if (view === '3d') {
         // Apply layer visibility (issue #32). Cheap — just sets the

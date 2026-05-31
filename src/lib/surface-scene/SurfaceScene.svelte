@@ -2,10 +2,7 @@
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
-  import {
-    syncPanoramaUrl,
-    readPanoramaUrlState,
-  } from '$lib/surface-map/panorama-url-sync';
+  import { syncPanoramaUrl, readPanoramaUrlState } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';

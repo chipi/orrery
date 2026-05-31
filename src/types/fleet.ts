@@ -93,6 +93,10 @@ export interface FleetEntryBase {
   explorer_route?: string;
   credit: string;
   links: FleetLink[];
+  /** WGS84 latitude, required on launch-site entries (#285 Phase 1). */
+  lat?: number;
+  /** WGS84 longitude, required on launch-site entries (#285 Phase 1). */
+  lon?: number;
 }
 
 /** Locale overlay fields merged at fetch time (Phase G). */

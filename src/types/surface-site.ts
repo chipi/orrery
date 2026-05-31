@@ -22,7 +22,9 @@ export type SurfaceAgency =
   | 'ESA'
   | 'UAESA'
   | 'SpaceIL'
-  | 'ESA-UK';
+  | 'ESA-UK'
+  | 'SpaceX'
+  | 'Arianespace';
 export type SurfaceNation =
   | 'USA'
   | 'USSR'

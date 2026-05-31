@@ -25,7 +25,10 @@
   import EarthOrbitalScene from './EarthOrbitalScene.svelte';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
-  import type { SurfaceSite } from '$types/surface-site';
+  import {
+    getEarthLaunchSites,
+    getEarthLaunchSiteGallery,
+  } from '$lib/earth-launch-site-adapter';
   import * as m from '$lib/paraglide/messages';
 
   // Initial mode reads `?mode=surface`; default is 'orbital' so
@@ -35,20 +38,6 @@
   );
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
-
-  // Stub data loaders — B3 plugs in the real fleet → SurfaceSite
-  // adapter (fleet/launch-site/*.json → SurfaceSite descriptors with
-  // lat/lon already populated) + per-site galleries. B2 ships the
-  // surface mode rendering empty so the framework wiring lands first.
-  async function getEarthLaunchSites(_locale: string): Promise<SurfaceSite[]> {
-    return [];
-  }
-  async function getEarthLaunchSiteGallery(
-    _siteId: string,
-    _missionIdFallback?: string,
-  ): Promise<string[]> {
-    return [];
-  }
 
   function toggleMode(): void {
     mode = mode === 'orbital' ? 'surface' : 'orbital';

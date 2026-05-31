@@ -1,8 +1,10 @@
 import * as THREE from 'three';
+import type { PanoramaAnnotation } from '$types/surface-site';
 
 /**
  * Tier 3 ground-view panorama renderer (PRD-014 / RFC-017 §ADR-061,
- * V2 / #118).
+ * V2 / #118; extended by PRD-022 / ADR-074 / #286 with annotation
+ * sprite mount + click raycast).
  *
  * For the 5 Showcase sites with a curated panorama (Apollo 11,
  * Apollo 17, Curiosity, Perseverance, Viking 1), this renders a
@@ -46,6 +48,34 @@ export interface SkyboxHandle {
   isActive(): boolean;
   /** Texture load promise; resolves on first activate() or on prefetch. */
   ready: Promise<void>;
+  /**
+   * Mount the panorama annotations as 3D Sprites on the interior of
+   * the inverted-sphere skybox at the yaw/pitch direction of each
+   * annotation (PRD-022 / ADR-074). Replaces any previously mounted
+   * set on subsequent calls — caller doesn't have to track them.
+   * Pass [] to clear without disposing the skybox.
+   */
+  mountAnnotations(annotations: PanoramaAnnotation[], tintHex: string): void;
+  /**
+   * Swap the skybox texture in-place to a new panorama URL
+   * (PRD-022 / ADR-074 Phase 2F). Used by the cycler UI when the
+   * user picks a different panorama from the site's panorama_set.
+   * Old texture is disposed once the new one loads; caller updates
+   * annotations + metadata separately via mountAnnotations() etc.
+   */
+  swapTexture(textureUrl: string): Promise<void>;
+  /**
+   * Raycast the mounted annotation sprites against the given normalised
+   * device coordinates (NDC, x/y in [-1, +1]). Returns the closest
+   * annotation under the cursor, or null if none. Caller is expected
+   * to pass the camera that's looking at the skybox interior — same
+   * camera used to render the panorama.
+   */
+  raycastAnnotation(
+    ndcX: number,
+    ndcY: number,
+    camera: THREE.Camera,
+  ): PanoramaAnnotation | null;
 }
 
 /**
@@ -85,6 +115,17 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
 
   let active = false;
   let disposed = false;
+
+  // Annotation sprites mounted inside the skybox sphere (PRD-022 /
+  // ADR-074). Each Sprite carries its source PanoramaAnnotation in
+  // userData for the raycaster to retrieve on click. Re-mounted (full
+  // replace) on every mountAnnotations() call.
+  const annotationGroup = new THREE.Group();
+  annotationGroup.userData = { isPanoramaAnnotationGroup: true };
+  group.add(annotationGroup);
+  const raycaster = new THREE.Raycaster();
+  const ndcPoint = new THREE.Vector2();
+  let pinTextureCached: THREE.CanvasTexture | null = null;
 
   const loader = new THREE.TextureLoader();
   const ready = new Promise<void>((resolve, reject) => {
@@ -146,6 +187,10 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
       material.map?.dispose();
       material.dispose();
       geom.dispose();
+      // Dispose annotation sprites + cached pin texture.
+      disposeAnnotationGroup(annotationGroup);
+      pinTextureCached?.dispose();
+      pinTextureCached = null;
       // Three.js r128 lacks Object3D.removeFromParent() — added in r130.
       // Use parent?.remove() instead (works in any version).
       group.parent?.remove(group);
@@ -153,8 +198,132 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
     isActive(): boolean {
       return active;
     },
+    mountAnnotations(annotations: PanoramaAnnotation[], tintHex: string): void {
+      if (disposed) return;
+      // Replace strategy: dispose previous sprites, build fresh.
+      disposeAnnotationGroup(annotationGroup);
+      if (annotations.length === 0) return;
+      if (!pinTextureCached) pinTextureCached = buildPinTexture();
+      for (const ann of annotations) {
+        const yaw = THREE.MathUtils.degToRad(ann.yaw_deg);
+        const pitch = THREE.MathUtils.degToRad(ann.pitch_deg);
+        // Sphere-interior position: just inside the skybox surface so
+        // the sprite is in front of (not coincident with) the panorama
+        // texture. Standard yaw/pitch → Cartesian (Y up).
+        const r = SKYBOX_RADIUS - 2;
+        const x = r * Math.cos(pitch) * Math.sin(yaw);
+        const y = r * Math.sin(pitch);
+        const z = r * Math.cos(pitch) * Math.cos(yaw);
+        const sm = new THREE.SpriteMaterial({
+          map: pinTextureCached,
+          color: new THREE.Color(tintHex),
+          depthTest: false,
+          transparent: true,
+        });
+        const sprite = new THREE.Sprite(sm);
+        sprite.position.set(x, y, z);
+        // Scale chosen so the sprite reads as ~3% of viewport height at
+        // the default 60° FOV — clickable, not dominant.
+        sprite.scale.set(4, 4, 1);
+        sprite.userData = { panoramaAnnotation: ann };
+        sprite.renderOrder = 10; // draw on top of skybox texture
+        annotationGroup.add(sprite);
+      }
+    },
+    raycastAnnotation(ndcX, ndcY, camera): PanoramaAnnotation | null {
+      if (disposed || annotationGroup.children.length === 0) return null;
+      ndcPoint.set(ndcX, ndcY);
+      raycaster.setFromCamera(ndcPoint, camera);
+      const hits = raycaster.intersectObjects(annotationGroup.children, false);
+      if (hits.length === 0) return null;
+      const ann = hits[0].object.userData?.panoramaAnnotation as
+        | PanoramaAnnotation
+        | undefined;
+      return ann ?? null;
+    },
+    swapTexture(textureUrl: string): Promise<void> {
+      return new Promise((resolve, reject) => {
+        if (disposed) {
+          reject(new Error('swapTexture: skybox disposed'));
+          return;
+        }
+        const swapLoader = new THREE.TextureLoader();
+        swapLoader.load(
+          textureUrl,
+          (tex) => {
+            if (disposed) {
+              tex.dispose();
+              return;
+            }
+            tex.encoding = THREE.sRGBEncoding;
+            tex.wrapS = THREE.ClampToEdgeWrapping;
+            tex.wrapT = THREE.ClampToEdgeWrapping;
+            const old = material.map;
+            material.map = tex;
+            material.needsUpdate = true;
+            old?.dispose();
+            resolve();
+          },
+          undefined,
+          () => reject(new Error(`Failed to swap panorama texture: ${textureUrl}`)),
+        );
+      });
+    },
     ready,
   };
+}
+
+/**
+ * Dispose every Sprite under an annotation group (including its
+ * SpriteMaterial) and clear the group. Idempotent — empty groups
+ * are safe.
+ */
+function disposeAnnotationGroup(g: THREE.Group): void {
+  for (const child of [...g.children]) {
+    if (child instanceof THREE.Sprite) {
+      child.material.dispose();
+    }
+    g.remove(child);
+  }
+}
+
+/**
+ * Build a small canvas-backed pin texture for annotation sprites
+ * (PRD-022 / ADR-074). Single cached texture, runtime-tinted per
+ * sprite via material.color. Cheap — ~32×32 px canvas, drawn once.
+ */
+function buildPinTexture(): THREE.CanvasTexture {
+  const size = 64;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext('2d')!;
+  // White pin glyph on transparent — tinted at runtime per agency
+  // colour. Simple circle + downward triangle (same silhouette as
+  // the SVG mockups in docs/mockups/panorama-redesign/).
+  ctx.fillStyle = '#ffffff';
+  ctx.strokeStyle = '#ffffff';
+  ctx.lineWidth = 4;
+  // Body circle
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2 - 6, 18, 0, Math.PI * 2);
+  ctx.fill();
+  // Stem (downward triangle)
+  ctx.beginPath();
+  ctx.moveTo(size / 2, size - 4);
+  ctx.lineTo(size / 2 - 8, size / 2 + 4);
+  ctx.lineTo(size / 2 + 8, size / 2 + 4);
+  ctx.closePath();
+  ctx.fill();
+  // Hollow inner ring for tint contrast
+  ctx.globalCompositeOperation = 'destination-out';
+  ctx.beginPath();
+  ctx.arc(size / 2, size / 2 - 6, 7, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.globalCompositeOperation = 'source-over';
+  const tex = new THREE.CanvasTexture(c);
+  tex.needsUpdate = true;
+  return tex;
 }
 
 function isReducedMotion(): boolean {

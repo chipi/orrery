@@ -224,6 +224,12 @@ interface SurfaceHotspotsSidecar {
       location_uncertainty_m?: number;
       showcase?: boolean;
       crashed?: boolean;
+      // Panorama schema v2 (PRD-022 / ADR-074, #286). All optional;
+      // sites without these fields fall back to legacy single-URL.
+      panorama_metadata?: import('$types/surface-site').PanoramaMetadata;
+      panorama_annotations?: import('$types/surface-site').PanoramaAnnotation[];
+      panorama_set?: import('$types/surface-site').PanoramaSetEntry[];
+      traverse_stop_link?: string;
     }
   >;
 }

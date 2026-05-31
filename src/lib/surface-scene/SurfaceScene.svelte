@@ -27,6 +27,13 @@
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
   import PanelHeroImage from '$lib/components/PanelHeroImage.svelte';
   import PanoramaOverlay from '$lib/components/PanoramaOverlay.svelte';
+  import PanoramaCaptionOverlay from '$lib/components/PanoramaCaptionOverlay.svelte';
+  import PanoramaCompassRose from '$lib/components/PanoramaCompassRose.svelte';
+  import PanoramaSyntheticRegionMicrocopy from '$lib/components/PanoramaSyntheticRegionMicrocopy.svelte';
+  import PanoramaAnnotationCard from '$lib/components/PanoramaAnnotationCard.svelte';
+  import PanoramaCycler from '$lib/components/PanoramaCycler.svelte';
+  import PanoramaCrossLink from '$lib/components/PanoramaCrossLink.svelte';
+  import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import HotspotsLodChip from '$lib/components/HotspotsLodChip.svelte';
@@ -187,6 +194,39 @@
   // the template handlers when the pointers are updated.
   let enterPanorama: (textureUrl: string, siteId: string) => void = $state(() => {});
   let exitPanorama: () => void = $state(() => {});
+
+  // Panorama v2 HUD state (PRD-022 / ADR-074, #286 Phase 2).
+  // panoramaYawDeg / panoramaPitchDeg are updated per-frame from
+  // animate() when panoramaActive — drive the compass rose + the
+  // synthetic-region microcopy. panoramaActiveAnnotation is non-null
+  // when a clicked annotation's caption card is open.
+  // panoramaCurrentEntryId tracks the active panorama-set entry for
+  // multi-pano sites; null = use the site root's single panorama.
+  let panoramaYawDeg = $state(0);
+  let panoramaPitchDeg = $state(0);
+  let panoramaActiveAnnotation = $state<PanoramaAnnotation | null>(null);
+  let panoramaCurrentEntryId = $state<string | null>(null);
+
+  function resolveSetEntry(
+    set: PanoramaSetEntry[] | undefined,
+    id: string | null,
+  ): PanoramaSetEntry | null {
+    if (!set || set.length === 0) return null;
+    if (id) {
+      const byId = set.find((e) => e.id === id);
+      if (byId) return byId;
+    }
+    return set.find((e) => e.default) ?? set[0] ?? null;
+  }
+
+  let currentPanoramaEntry = $derived.by(() => {
+    const s = selected;
+    if (!s) return null;
+    return resolveSetEntry(s.panorama_set, panoramaCurrentEntryId);
+  });
+  let activePanoramaMetadata = $derived.by(() => {
+    return currentPanoramaEntry?.metadata ?? selected?.panorama_metadata ?? null;
+  });
 
   // resolveInitialHotspotsMode + nextHotspotsMode extracted to
   // $lib/surface-map/hotspots-mode.ts (#42).
@@ -1066,11 +1106,26 @@
     let savedCamR = camR;
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
+      panoramaCurrentEntryId = null; // fresh entry starts with default panorama
       // saveData users get a heads-up affordance handled outside; if
       // we reach here, the user explicitly opted in.
       panoramaSkybox = createSkybox({ textureUrl, siteId });
       scene.add(panoramaSkybox.group);
       panoramaSkybox.activate();
+      // Mount panorama annotations (PRD-022 / ADR-074 Phase 2E/2F).
+      // Resolve set entry to default first; its annotations override
+      // the site-root values when present.
+      const site = sites.find((s) => s.id === siteId);
+      if (site) {
+        const entry = resolveSetEntry(site.panorama_set, null);
+        const annotations = entry?.annotations ?? site.panorama_annotations ?? [];
+        if (annotations.length > 0) {
+          panoramaSkybox.mountAnnotations(annotations, colorFor(site));
+        }
+        if (entry && `${base}${entry.url}` !== textureUrl) {
+          void panoramaSkybox.swapTexture(`${base}${entry.url}`);
+        }
+      }
       planetMesh.visible = false;
       savedCamR = camR;
       // Move camera close to origin so the user's drag-to-rotate
@@ -1082,6 +1137,8 @@
     exitPanorama = () => {
       if (!panoramaActive) return;
       panoramaActive = false;
+      panoramaActiveAnnotation = null;
+      panoramaCurrentEntryId = null;
       teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
       planetMesh.visible = true;
@@ -1116,6 +1173,18 @@
     }
 
     function tryPick3d(clientX: number, clientY: number) {
+      // Panorama mode: raycast annotation sprites first (PRD-022 / ADR-074
+      // Phase 2E). Hit → open annotation card; miss → fall through.
+      if (panoramaActive && panoramaSkybox) {
+        const rect = el3d.getBoundingClientRect();
+        const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+        const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+        const hit = panoramaSkybox.raycastAnnotation(ndcX, ndcY, camera);
+        if (hit) {
+          panoramaActiveAnnotation = hit;
+          return;
+        }
+      }
       const id = pickSiteAt(clientX, clientY);
       if (id) selectSite(id);
     }
@@ -1153,7 +1222,9 @@
       camT += dT;
       // Panorama-mode tilt clamp (±20°); normal mode has near-pole clamp.
       if (panoramaActive) {
-        const tiltClamp = 0.349; // ≈ 20° in radians
+        // ±85° free pitch (PRD-022 / ADR-074 Phase 2D, was ±20°).
+        // Synthetic-region microcopy honest-discloses gaps.
+        const tiltClamp = 1.484;
         camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
       } else {
         camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
@@ -1226,9 +1297,10 @@
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
-      // Panorama-mode tilt clamp (±20°), same as the mouse path.
+      // Panorama-mode ±85° free pitch (PRD-022 / ADR-074 Phase 2D),
+      // same as the mouse path.
       if (panoramaActive) {
-        const tiltClamp = 0.349;
+        const tiltClamp = 1.484;
         camP = Math.max(Math.PI / 2 - tiltClamp, Math.min(Math.PI / 2 + tiltClamp, camP + dP));
       } else {
         camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + dP));
@@ -1638,6 +1710,17 @@
       // still need the sphere rendered so the cross-fade reads as a
       // cross-fade rather than a flicker).
       if (flatPatchPhase === 'visible') return;
+
+      // Panorama HUD yaw + pitch readouts (PRD-022 / ADR-074 Phase 2C/2D).
+      // camT/camP are in radians; convert + normalise for compass-rose
+      // and synthetic-region-microcopy consumption. Cheap when active,
+      // skipped entirely otherwise.
+      if (panoramaActive) {
+        const yawDeg = (camT * 180) / Math.PI;
+        panoramaYawDeg = ((yawDeg % 360) + 360) % 360;
+        // camP π/2 = horizon → pitch 0; camP 0 = top → +90; camP π = bottom → -90.
+        panoramaPitchDeg = 90 - (camP * 180) / Math.PI;
+      }
 
       // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):
       //   (a) Fly-in tween — ease-out cubic interpolation of camP/T/R.
@@ -2239,6 +2322,67 @@ sample      ${debugInfo.projectedPxSample}`}
     active={panoramaActive}
     description="You are standing at the landing site. The lander is in front of you. Drag to look around. Press the Exit panorama view button in the detail panel, or press Esc, to return to orbit."
   />
+
+  <!-- Panorama caption overlay (PRD-022 / ADR-074, #286 Phase 2B). -->
+  {#if selected}
+    <PanoramaCaptionOverlay
+      active={panoramaActive}
+      metadata={activePanoramaMetadata}
+      agency={selected.agency}
+      agencyColor={colorFor(selected)}
+      fallbackCaption={`Surface panorama at ${selected.name ?? selected.id}.`}
+    />
+  {/if}
+
+  <!-- Panorama compass rose (PRD-022 / ADR-074, #286 Phase 2C). -->
+  <PanoramaCompassRose
+    active={panoramaActive}
+    yawDeg={panoramaYawDeg}
+    compassZeroDirection={activePanoramaMetadata?.compass_zero_direction ?? null}
+  />
+
+  <!-- Honest synthetic-region microcopy (PRD-022 / ADR-074, #286 Phase 2D). -->
+  <PanoramaSyntheticRegionMicrocopy
+    active={panoramaActive}
+    pitchDeg={panoramaPitchDeg}
+    syntheticRegions={activePanoramaMetadata?.synthetic_regions ?? null}
+  />
+
+  <!-- Annotation caption card (PRD-022 / ADR-074, #286 Phase 2E). -->
+  <PanoramaAnnotationCard
+    annotation={panoramaActiveAnnotation}
+    onDismiss={() => (panoramaActiveAnnotation = null)}
+  />
+
+  <!-- Multi-panorama cycler (PRD-022 / ADR-074, #286 Phase 2F). -->
+  {#if selected}
+    <PanoramaCycler
+      active={panoramaActive}
+      set={selected.panorama_set}
+      currentId={panoramaCurrentEntryId}
+      onCycle={(entry) => {
+        if (!panoramaSkybox || !selected) return;
+        panoramaCurrentEntryId = entry.id;
+        panoramaActiveAnnotation = null;
+        void panoramaSkybox.swapTexture(`${base}${entry.url}`).then(() => {
+          if (!panoramaSkybox || !selected) return;
+          panoramaSkybox.mountAnnotations(entry.annotations ?? [], colorFor(selected));
+        });
+      }}
+    />
+  {/if}
+
+  <!-- Cross-link footer (PRD-022 / ADR-074, #286 Phase 2G). -->
+  {#if selected}
+    <PanoramaCrossLink
+      active={panoramaActive}
+      routeBase={config.planet === 'mars' ? '/mars' : config.planet === 'moon' ? '/moon' : '/earth'}
+      missionId={selected.id}
+      traverseStopLink={selected.traverse_stop_link ?? null}
+      fleetEntryId={selected.id}
+      audioEpisodeId={null}
+    />
+  {/if}
 
   <!-- Nation legend overlay. The 2D view paints this directly into
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js

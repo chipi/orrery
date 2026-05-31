@@ -145,6 +145,97 @@ export interface SurfaceSite {
   showcase?: boolean;
   /** Marker rendering hint for failed-landing sites (V3c). */
   crashed?: boolean;
+  /** ── Panorama schema v2 (PRD-022 / ADR-074, #286) ────────────
+   * Optional sidecar fields layered on `hotspot_tier3_panorama`.
+   * All optional — sites without these render with a generic caption
+   * and no annotations. See ADR-074 §"Schema — sidecar fields" for
+   * the deterministic resolution rule when both single-pano and set
+   * are present.
+   */
+  panorama_metadata?: PanoramaMetadata;
+  panorama_annotations?: PanoramaAnnotation[];
+  panorama_set?: PanoramaSetEntry[];
+  traverse_stop_link?: string;
+}
+
+/**
+ * Panorama metadata (PRD-022 / ADR-074). Drives the caption overlay
+ * (sol / date / instrument / caption / credit) and the honest-sky
+ * pitch microcopy via `synthetic_regions`. All fields optional —
+ * sites without metadata render a generic caption from the credit
+ * field of the existing image-provenance entry.
+ */
+export interface PanoramaMetadata {
+  /** Mars sol or Moon EVA day number, when applicable. */
+  sol?: number;
+  /** ISO date (YYYY-MM-DD) of the image capture. */
+  date?: string;
+  /** Instrument that captured the panorama (e.g. "Mastcam-Z"). */
+  instrument?: string;
+  /** 1-3 sentence caption explaining what the user is looking at. */
+  caption?: string;
+  /** Imaging-team credit ("NASA/JPL-Caltech/ASU"). */
+  credit_team?: string;
+  /** NASA PIA / press-release id, when applicable. */
+  nasa_id?: string;
+  /**
+   * Percentage of the vertical extent of the equirectangular panorama
+   * that contains real photographic data. 100 = fully real; 30 = ~70%
+   * synthetic. Drives honest-provenance microcopy.
+   */
+  real_extent_pct_vertical?: number;
+  /**
+   * Declared synthetic-region pitch ranges. When the camera's pitch
+   * falls inside one of these, the renderer overlays a
+   * "this region was not photographed" microcopy. Pitch in degrees,
+   * +90 = zenith, -90 = nadir, 0 = horizon.
+   */
+  synthetic_regions?: Array<{
+    pitch_min_deg: number;
+    pitch_max_deg: number;
+    kind: 'synthetic_sky' | 'synthetic_nadir' | 'no_data';
+  }>;
+  /**
+   * The panorama's 0° yaw direction in real-world terms (e.g.
+   * "rover forward"). Drives the compass-rose N-arrow when set;
+   * hidden when absent (no false orientation claim).
+   */
+  compass_zero_direction?: string;
+}
+
+/**
+ * Annotation marker in panorama yaw/pitch space (PRD-022 / ADR-074).
+ * Rendered as a 3D Sprite on the interior of the inverted-sphere
+ * skybox at the yaw/pitch direction. Click opens a caption card.
+ *
+ * Distinct from HotspotAnnotation (which is surface lat/lon offset
+ * space, rendered on Tier-2 patches).
+ */
+export interface PanoramaAnnotation {
+  /** Stable id for cross-link + i18n overlay keys. */
+  id: string;
+  /** Yaw direction in degrees, 0 = panorama centre / forward. */
+  yaw_deg: number;
+  /** Pitch in degrees, +90 = zenith, -90 = nadir, 0 = horizon. */
+  pitch_deg: number;
+  /** Short display label (≤ ~30 chars). */
+  label: string;
+  /** Optional 1-2 sentence body shown in the caption card. */
+  body?: string;
+}
+
+/**
+ * Multi-panorama set entry (PRD-022 / ADR-074). When `panorama_set`
+ * is non-empty, the cycler UI shows arrows + counter; the entry with
+ * `default: true` is the initial view. Each entry's `metadata` and
+ * `annotations` override the entry-root values when active.
+ */
+export interface PanoramaSetEntry {
+  id: string;
+  url: string;
+  metadata?: PanoramaMetadata;
+  annotations?: PanoramaAnnotation[];
+  default?: boolean;
 }
 
 /**

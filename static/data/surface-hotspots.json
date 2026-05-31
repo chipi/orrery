@@ -41,6 +41,40 @@
           "lat_offset_m": 0,
           "lon_offset_m": 0
         }
+      ],
+      "panorama_metadata": {
+        "date": "1969-07-20",
+        "instrument": "Hasselblad 70mm",
+        "caption": "Tranquility Base, EVA-1. Buzz Aldrin photographed the LM Eagle and the U.S. flag soon after landing. Visible Hasselblad seams + chromatic stitching at the LM are part of the published mosaic.",
+        "credit_team": "NASA · Apollo Lunar Surface Journal",
+        "real_extent_pct_vertical": 25,
+        "synthetic_regions": [
+          { "pitch_min_deg": -90, "pitch_max_deg": -30, "kind": "no_data" }
+        ],
+        "compass_zero_direction": "LM forward (per ALSJ panorama orientation)"
+      },
+      "panorama_annotations": [
+        {
+          "id": "lm-eagle",
+          "yaw_deg": 10,
+          "pitch_deg": -2,
+          "label": "LM Eagle",
+          "body": "Descent stage of the Lunar Module, where Armstrong + Aldrin stood for the EVA."
+        },
+        {
+          "id": "us-flag-pan",
+          "yaw_deg": -8,
+          "pitch_deg": -1,
+          "label": "U.S. flag",
+          "body": "Planted ~8 m west of the LM. Knocked over by the ascent stage exhaust on lift-off."
+        },
+        {
+          "id": "buzz-shadow",
+          "yaw_deg": -65,
+          "pitch_deg": -20,
+          "label": "Buzz Aldrin shadow",
+          "body": "Photographer's own shadow in the foreground — Buzz holding the Hasselblad."
+        }
       ]
     },
     "apollo12": {
@@ -140,7 +174,42 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "date": "2022-08-12",
+        "instrument": "Mastcam-Z (mosaic)",
+        "caption": "Approaching Mt. Sharp lower flanks. Curiosity drives south-east; Vera Rubin Ridge visible in the distance, terrain increasingly clay-rich.",
+        "credit_team": "NASA/JPL-Caltech/MSSS",
+        "real_extent_pct_vertical": 35,
+        "synthetic_regions": [
+          { "pitch_min_deg": 15, "pitch_max_deg": 90, "kind": "synthetic_sky" }
+        ],
+        "compass_zero_direction": "rover forward (south-east)"
+      },
+      "panorama_annotations": [
+        {
+          "id": "vera-rubin-ridge",
+          "yaw_deg": -50,
+          "pitch_deg": 0,
+          "label": "Vera Rubin Ridge",
+          "body": "Hematite-rich ridge Curiosity climbed and mapped between sols 1800-2300."
+        },
+        {
+          "id": "mt-sharp-summit",
+          "yaw_deg": 0,
+          "pitch_deg": 4,
+          "label": "Mt. Sharp summit (~5 km)",
+          "body": "Aeolis Mons — the 5 km mountain at the centre of Gale Crater. Curiosity's primary mission target."
+        },
+        {
+          "id": "drill-site-glasgow",
+          "yaw_deg": 70,
+          "pitch_deg": -8,
+          "label": "Drill site — Glasgow",
+          "body": "Sol 3573 drill hole into the Glasgow sample, clay-bearing unit."
+        }
+      ],
+      "traverse_stop_link": "stop-glasgow-drill"
     },
     "perseverance": {
       "hotspot_tier_max": 3,
@@ -150,7 +219,44 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "sol": 46,
+        "date": "2021-04-06",
+        "instrument": "Mastcam-Z",
+        "caption": "Three Forks depot — sample tubes laid out before Perseverance left the area. Ingenuity helicopter visible at right; Jezero crater rim ~25 km away across the floor.",
+        "credit_team": "NASA/JPL-Caltech/ASU",
+        "nasa_id": "PIA24906",
+        "real_extent_pct_vertical": 35,
+        "synthetic_regions": [
+          { "pitch_min_deg": 15, "pitch_max_deg": 90, "kind": "synthetic_sky" }
+        ],
+        "compass_zero_direction": "rover forward"
+      },
+      "panorama_annotations": [
+        {
+          "id": "ingenuity",
+          "yaw_deg": 80,
+          "pitch_deg": -5,
+          "label": "Ingenuity helicopter",
+          "body": "First powered flight on another planet — Apr 19, 2021. Visible right of rover deck."
+        },
+        {
+          "id": "sample-tubes-three-forks",
+          "yaw_deg": -40,
+          "pitch_deg": -8,
+          "label": "Sample tubes — Three Forks",
+          "body": "First Mars sample depot. 10 tubes laid out for a possible future return mission."
+        },
+        {
+          "id": "jezero-crater-rim",
+          "yaw_deg": -150,
+          "pitch_deg": 2,
+          "label": "Jezero crater rim (~25 km)",
+          "body": "The crater wall to the north-west. Perseverance traversed toward this rim on later sols."
+        }
+      ],
+      "traverse_stop_link": "stop-three-forks-depot"
     },
     "phoenix": {
       "hotspot_tier_max": 3,

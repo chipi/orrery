@@ -18,10 +18,11 @@ import type * as THREE from 'three';
 /**
  * Identity used for asset path prefixes (e.g. `texture/2k_${planet}.jpg`),
  * data-attribute e2e signals (`data-planet="moon"`), and debug overlay
- * labels. Currently 'moon' | 'mars'; would extend to a third literal if
- * we ever add 'mercury' / 'venus' / 'earth-surface' (see #285).
+ * labels. `'earth'` was added in #285 Phase 2 B1 to support launchpads
+ * as Earth-surface markers (paralleling /moon and /mars). Future
+ * candidates: 'mercury', 'venus'.
  */
-export type SurfacePlanet = 'moon' | 'mars';
+export type SurfacePlanet = 'moon' | 'mars' | 'earth';
 
 /**
  * 2D fallback projection mode (ADR-038). Mars rotates → equirectangular

@@ -265,7 +265,12 @@
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     const kind = selected.region_kind ?? 'region';
-    const sourceLabel = config.planet === 'mars' ? 'CTX 5 m/px' : 'LROC NAC 5 m/px';
+    const sourceLabel =
+      config.planet === 'mars'
+        ? 'CTX 5 m/px'
+        : config.planet === 'earth'
+          ? 'Sentinel-2 ~10 m/px'
+          : 'LROC NAC 5 m/px';
     ctx.fillText(
       `REGIONAL · ${sourceLabel} · ${kind.replace('_', ' ').toUpperCase()}`,
       x + 6,
@@ -275,8 +280,9 @@
 
   function drawDetailLayer(ctx: CanvasRenderingContext2D, W: number, H: number) {
     if (selected.lat == null || selected.lon == null) return;
-    // Fixed detail-layer extent for v1: 500m square on Mars, 250m on Moon.
-    // Future: derive from the site's published HiRISE/LROC product footprint.
+    // Fixed detail-layer extent for v1: 500m square on Mars, 250m on
+    // Moon, 250m on Earth (launchpads are compact). Future: derive
+    // from the site's published HiRISE/LROC/commercial-sat footprint.
     const detailSizeKm = config.planet === 'mars' ? 0.5 : 0.25;
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
     const cosLat = Math.cos((selected.lat * Math.PI) / 180);
@@ -304,7 +310,12 @@
       ctx.font = "bold 9px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
-      const px = config.planet === 'mars' ? '25 cm/px · HiRISE' : '50 cm/px · LROC NAC';
+      const px =
+        config.planet === 'mars'
+          ? '25 cm/px · HiRISE'
+          : config.planet === 'earth'
+            ? '~30 cm/px · commercial sat'
+            : '50 cm/px · LROC NAC';
       ctx.fillText(`DETAIL · ${px}`, x + 6, y + 6);
     }
   }
@@ -521,12 +532,15 @@
   }
 
   // Native resolving power of the body's highest-res orbital imagery:
-  // Mars HiRISE ≈ 25 cm/px, Moon LROC NAC ≈ 50 cm/px. When the user
+  // Mars HiRISE ≈ 25 cm/px, Moon LROC NAC ≈ 50 cm/px, Earth commercial
+  // sat ≈ 30 cm/px (Maxar / Planet Labs reference). When the user
   // zooms in past kmPerPx < native, they're upsampling — the imagery
   // doesn't have new detail to reveal. Show a subtle vignette + a
   // "approaching pixel limit" microcopy so they don't read the blur as
   // "the planet is fuzzy." Per ADR-072 Slice 5 §"upsample warning."
-  let nativeKmPerPx = $derived(config.planet === 'mars' ? 0.00025 : 0.0005);
+  let nativeKmPerPx = $derived(
+    config.planet === 'mars' ? 0.00025 : config.planet === 'earth' ? 0.0003 : 0.0005,
+  );
   let upsampling = $derived(kmPerPx < nativeKmPerPx);
 
   // Scale-bar length & label — pick a "round" km value that fits in
@@ -609,6 +623,10 @@
     </div>
     <div class="upsample-vignette" aria-hidden="true"></div>
   {/if}
+  <!-- Earth shares the moon-warning copy in v1 (both read as "approaching
+       pixel limit"); a dedicated earth-warning paraglide key will land in
+       the slice that ships commercial-sat Earth insets. -->
+
 </div>
 
 <style>

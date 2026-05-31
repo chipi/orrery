@@ -2,7 +2,7 @@
 
 **Context:** the secondary-deliverable inspiration anchor for Issue [#283](https://github.com/chipi/orrery/issues/283). Originally lived at `/tmp/orrery-mockups-nasa/REFERENCE.md` for the Slice 0 visual-preview review, but `/tmp` doesn't persist across reboots. Re-homed under `docs/reference/` so the file survives.
 
-The 12 photoshopped mockup frames are at [`docs/mockups/surface-redesign/`](../mockups/surface-redesign/) — those are the primary design contract. This file is the *why behind the design language*, anchored in two NASA reference families.
+The 12 photoshopped mockup frames are at [`docs/mockups/surface-redesign/`](../mockups/surface-redesign/README) — those are the primary design contract. This file is the *why behind the design language*, anchored in two NASA reference families.
 
 ## Two distinct reference families NASA gets right
 

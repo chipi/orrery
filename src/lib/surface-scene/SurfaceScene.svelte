@@ -2,6 +2,10 @@
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
+  import {
+    syncPanoramaUrl,
+    readPanoramaUrlState,
+  } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
@@ -207,6 +211,10 @@
   let panoramaPitchDeg = $state(0);
   let panoramaActiveAnnotation = $state<PanoramaAnnotation | null>(null);
   let panoramaCurrentEntryId = $state<string | null>(null);
+  // Throttle timer for the Phase 3B URL state write — populated by
+  // the per-frame yaw/pitch readout in animate(). Reset implicitly on
+  // panorama exit (next entry's first frame writes fresh).
+  let panoramaUrlLastWriteMs = 0;
 
   function resolveSetEntry(
     set: PanoramaSetEntry[] | undefined,
@@ -1158,18 +1166,22 @@
     let savedCamR = camR;
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
-      panoramaCurrentEntryId = null; // fresh entry starts with default panorama
+      // PRD-022 / ADR-074 Phase 3B — read deep-link URL state if present.
+      // ?pano=<entry-id> picks the panorama-set entry; ?yaw=&pitch=
+      // restore camera orientation. Defaults: null entry → default,
+      // 0/0 → looking forward at horizon.
+      const urlState = readPanoramaUrlState($page.url);
+      panoramaCurrentEntryId = urlState?.entryId ?? null;
       // saveData users get a heads-up affordance handled outside; if
       // we reach here, the user explicitly opted in.
       panoramaSkybox = createSkybox({ textureUrl, siteId });
       scene.add(panoramaSkybox.group);
       panoramaSkybox.activate();
       // Mount panorama annotations (PRD-022 / ADR-074 Phase 2E/2F).
-      // Resolve set entry to default first; its annotations override
-      // the site-root values when present.
+      // Resolve set entry to the URL-picked id when present (or default).
       const site = sites.find((s) => s.id === siteId);
       if (site) {
-        const entry = resolveSetEntry(site.panorama_set, null);
+        const entry = resolveSetEntry(site.panorama_set, panoramaCurrentEntryId);
         const annotations = entry?.annotations ?? site.panorama_annotations ?? [];
         if (annotations.length > 0) {
           panoramaSkybox.mountAnnotations(annotations, colorFor(site));
@@ -1183,6 +1195,12 @@
       // Move camera close to origin so the user's drag-to-rotate
       // feels like spinning their head inside the skybox.
       camR = 0.5;
+      // Restore yaw/pitch from URL on deep-link entry — Phase 3B.
+      if (urlState) {
+        camT = (urlState.yawDeg * Math.PI) / 180;
+        // pitch +90 = up, 0 = horizon → camP = π/2 - pitch_rad
+        camP = Math.PI / 2 - (urlState.pitchDeg * Math.PI) / 180;
+      }
       updateCam();
       panoramaActive = true;
     };
@@ -1191,6 +1209,9 @@
       panoramaActive = false;
       panoramaActiveAnnotation = null;
       panoramaCurrentEntryId = null;
+      // PRD-022 / ADR-074 Phase 3B — strip pano/yaw/pitch from URL so
+      // the bar doesn't carry stale state back to the orbital view.
+      syncPanoramaUrl($page.url, null);
       teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
       planetMesh.visible = true;
@@ -1772,6 +1793,19 @@
         panoramaYawDeg = ((yawDeg % 360) + 360) % 360;
         // camP π/2 = horizon → pitch 0; camP 0 = top → +90; camP π = bottom → -90.
         panoramaPitchDeg = 90 - (camP * 180) / Math.PI;
+
+        // Phase 3B — throttled URL state write. Update at most once
+        // every 300 ms so dragging the camera doesn't fire goto() per
+        // frame. Compares against last-written values to skip no-op
+        // writes (e.g. when the user holds the camera still).
+        if (now - panoramaUrlLastWriteMs > 300) {
+          panoramaUrlLastWriteMs = now;
+          syncPanoramaUrl($page.url, {
+            entryId: panoramaCurrentEntryId,
+            yawDeg: panoramaYawDeg,
+            pitchDeg: panoramaPitchDeg,
+          });
+        }
       }
 
       // Camera smoothing pipeline (ADR-072 Drifts 12-14 consolidations):

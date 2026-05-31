@@ -12,6 +12,7 @@
 -->
 <script lang="ts">
   import type { PanoramaSetEntry } from '$types/surface-site';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     active: boolean;
@@ -60,7 +61,7 @@
   <button
     type="button"
     class="arrow arrow-left"
-    aria-label="Previous panorama (←)"
+    aria-label={m.panorama_cycler_prev_aria()}
     onclick={() => step(-1)}
   >
     ‹
@@ -68,15 +69,19 @@
   <button
     type="button"
     class="arrow arrow-right"
-    aria-label="Next panorama (→)"
+    aria-label={m.panorama_cycler_next_aria()}
     onclick={() => step(1)}
   >
     ›
   </button>
   <div class="counter mono" role="status" aria-live="polite" data-testid="panorama-cycler-counter">
-    {currentEntry.metadata?.sol != null
-      ? `Sol ${currentEntry.metadata.sol}`
-      : (currentEntry.id ?? '')} · {totalCount} panoramas at this site
+    {m.panorama_cycler_counter_template({
+      label:
+        currentEntry.metadata?.sol != null
+          ? `Sol ${currentEntry.metadata.sol}`
+          : (currentEntry.id ?? ''),
+      count: totalCount,
+    })}
   </div>
 {/if}
 

@@ -14,6 +14,8 @@
   `yawDeg` prop. Cheap — a CSS transform + a `aria-label` update.
 -->
 <script lang="ts">
+  import * as m from '$lib/paraglide/messages';
+
   interface Props {
     active: boolean;
     /** Camera yaw in degrees, 0 = panorama's 0° direction. */
@@ -37,20 +39,28 @@
   // screen-reader aria-label.
   let facingCardinal = $derived.by(() => {
     const yaw = ((yawDeg % 360) + 360) % 360;
-    if (yaw < 22.5 || yaw >= 337.5) return 'north';
-    if (yaw < 67.5) return 'north-east';
-    if (yaw < 112.5) return 'east';
-    if (yaw < 157.5) return 'south-east';
-    if (yaw < 202.5) return 'south';
-    if (yaw < 247.5) return 'south-west';
-    if (yaw < 292.5) return 'west';
-    return 'north-west';
+    if (yaw < 22.5 || yaw >= 337.5) return m.panorama_facing_north();
+    if (yaw < 67.5) return m.panorama_facing_north_east();
+    if (yaw < 112.5) return m.panorama_facing_east();
+    if (yaw < 157.5) return m.panorama_facing_south_east();
+    if (yaw < 202.5) return m.panorama_facing_south();
+    if (yaw < 247.5) return m.panorama_facing_south_west();
+    if (yaw < 292.5) return m.panorama_facing_west();
+    return m.panorama_facing_north_west();
   });
 
   let ariaLabel = $derived(
     compassZeroDirection
-      ? `Compass — facing ${facingCardinal} relative to ${compassZeroDirection}`
-      : `Compass — orientation relative to panorama start`,
+      ? m.panorama_compass_aria_template({
+          cardinal: facingCardinal,
+          direction: compassZeroDirection,
+        })
+      : m.panorama_compass_aria_generic(),
+  );
+  let titleAttr = $derived(
+    compassZeroDirection
+      ? m.panorama_compass_title_template({ direction: compassZeroDirection })
+      : m.panorama_compass_title_generic(),
   );
 </script>
 
@@ -60,7 +70,7 @@
     role="img"
     aria-label={ariaLabel}
     data-testid="panorama-compass-rose"
-    title={compassZeroDirection ? `Panorama N = ${compassZeroDirection}` : 'Panorama orientation'}
+    title={titleAttr}
   >
     <svg width="68" height="68" viewBox="-34 -34 68 68" aria-hidden="true">
       <circle r="30" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="0.8" />

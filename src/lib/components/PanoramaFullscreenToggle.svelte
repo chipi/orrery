@@ -13,6 +13,8 @@
   no-op, with the title text honest about it.
 -->
 <script lang="ts">
+  import * as m from '$lib/paraglide/messages';
+
   interface Props {
     active: boolean;
   }
@@ -62,12 +64,14 @@
   <button
     type="button"
     class="fullscreen-toggle"
-    aria-label={isFullscreen ? 'Exit fullscreen (F)' : 'Enter fullscreen (F)'}
+    aria-label={isFullscreen
+      ? m.panorama_fullscreen_exit_aria()
+      : m.panorama_fullscreen_enter_aria()}
     title={isSupported
       ? isFullscreen
-        ? 'Exit fullscreen — F'
-        : 'Enter fullscreen — F'
-      : 'Fullscreen not supported in this browser'}
+        ? m.panorama_fullscreen_exit_aria()
+        : m.panorama_fullscreen_enter_aria()
+      : m.panorama_fullscreen_unsupported_title()}
     onclick={() => void toggle()}
     data-testid="panorama-fullscreen-toggle"
     disabled={!isSupported}

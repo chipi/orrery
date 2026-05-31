@@ -17,6 +17,7 @@
 -->
 <script lang="ts">
   import type { PanoramaMetadata } from '$types/surface-site';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     active: boolean;
@@ -50,7 +51,7 @@
     class="caption-overlay"
     style:--agency-color={agencyColor}
     role="region"
-    aria-label="Panorama caption"
+    aria-label={m.panorama_caption_aria_label()}
     data-testid="panorama-caption-overlay"
   >
     {#if header}
@@ -66,7 +67,7 @@
     <button
       type="button"
       class="dismiss"
-      aria-label="Dismiss caption"
+      aria-label={m.panorama_caption_dismiss_aria()}
       onclick={() => (dismissed = true)}
     >
       ×
@@ -76,7 +77,7 @@
   <button
     type="button"
     class="caption-reopen"
-    aria-label="Show panorama caption"
+    aria-label={m.panorama_caption_reopen_aria()}
     onclick={() => (dismissed = false)}
   >
     ⓘ

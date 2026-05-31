@@ -17,6 +17,7 @@
 -->
 <script lang="ts">
   import type { PanoramaAnnotation } from '$types/surface-site';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     active: boolean;
@@ -36,12 +37,12 @@
   <div
     class="panorama-overlay"
     role="region"
-    aria-label="Ground-view panorama mode — press ESC to return to orbit"
+    aria-label={m.panorama_mode_aria_label()}
     data-testid="panorama-overlay"
   >
     <span class="po-sr">{description}</span>
     {#if annotations.length > 0}
-      <ul class="po-sr-list" aria-label="Annotations in this panorama">
+      <ul class="po-sr-list" aria-label={m.panorama_annotations_list_aria()}>
         {#each annotations as ann (ann.id)}
           <li>
             <button

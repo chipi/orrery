@@ -16,6 +16,7 @@
 -->
 <script lang="ts">
   import type { PanoramaMetadata } from '$types/surface-site';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     active: boolean;
@@ -39,20 +40,11 @@
     if (!activeRegion) return null;
     switch (activeRegion.kind) {
       case 'synthetic_sky':
-        return {
-          tag: 'SYNTHETIC SKY',
-          body: 'This region of the sky was not photographed at this site. The visible pattern is synthetic.',
-        };
+        return { tag: m.panorama_synthetic_sky_tag(), body: m.panorama_synthetic_sky_body() };
       case 'synthetic_nadir':
-        return {
-          tag: 'SYNTHETIC NADIR',
-          body: 'This region below the horizon was not captured (or is blocked by the lander deck). The visible pattern is synthetic.',
-        };
+        return { tag: m.panorama_synthetic_nadir_tag(), body: m.panorama_synthetic_nadir_body() };
       case 'no_data':
-        return {
-          tag: 'NO DATA',
-          body: 'No transmitted data covers this region — the visible pattern is synthetic fill honouring the historical artifact.',
-        };
+        return { tag: m.panorama_no_data_tag(), body: m.panorama_no_data_body() };
       default:
         return null;
     }

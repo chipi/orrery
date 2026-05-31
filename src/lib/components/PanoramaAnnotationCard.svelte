@@ -13,6 +13,7 @@
 -->
 <script lang="ts">
   import type { PanoramaAnnotation } from '$types/surface-site';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     annotation: PanoramaAnnotation | null;
@@ -57,7 +58,7 @@
     <button
       type="button"
       class="dismiss"
-      aria-label="Dismiss annotation"
+      aria-label={m.panorama_annotation_dismiss_aria()}
       bind:this={dismissBtn}
       onclick={onDismiss}
     >

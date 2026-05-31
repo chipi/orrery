@@ -28,6 +28,7 @@
 <script lang="ts">
   import type { PanoramaAnnotation } from '$types/surface-site';
   import { onReducedMotionChange } from '$lib/reduced-motion';
+  import * as m from '$lib/paraglide/messages';
 
   interface Props {
     active: boolean;
@@ -143,21 +144,19 @@
       <button
         type="button"
         class="play-btn"
-        aria-label={reducedMotion
-          ? 'Step through panorama annotations'
-          : 'Play guided tour through panorama annotations'}
+        aria-label={reducedMotion ? m.panorama_tour_step_aria() : m.panorama_tour_play_aria()}
         onclick={start}
       >
         <span aria-hidden="true">▶</span>
-        {reducedMotion ? 'Step through' : 'Play tour'}
+        {reducedMotion ? m.panorama_tour_step_label() : m.panorama_tour_play_label()}
       </button>
     {:else}
-      <div class="tour-controls" role="group" aria-label="Panorama tour controls">
+      <div class="tour-controls" role="group" aria-label={m.panorama_tour_controls_aria()}>
         {#if reducedMotion}
           <button
             type="button"
             class="ctl-btn"
-            aria-label="Previous annotation"
+            aria-label={m.panorama_tour_prev_aria()}
             disabled={cursor === 0}
             onclick={manualPrev}
           >
@@ -171,13 +170,18 @@
           <button
             type="button"
             class="ctl-btn"
-            aria-label="Next annotation"
+            aria-label={m.panorama_tour_next_aria()}
             onclick={manualNext}
           >
             ›
           </button>
         {/if}
-        <button type="button" class="ctl-btn" aria-label="Stop tour" onclick={stop}>
+        <button
+          type="button"
+          class="ctl-btn"
+          aria-label={m.panorama_tour_stop_aria()}
+          onclick={stop}
+        >
           <span aria-hidden="true">■</span>
         </button>
       </div>

@@ -20,6 +20,7 @@
    * toggle button writes/clears the param via `history.replaceState`
    * so the back button still navigates between routes, not modes.
    */
+  import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
   import EarthOrbitalScene from './EarthOrbitalScene.svelte';
@@ -31,11 +32,18 @@
   } from '$lib/earth-launch-site-adapter';
   import * as m from '$lib/paraglide/messages';
 
-  // Initial mode reads `?mode=surface`; default is 'orbital' so
-  // existing deep-links and bookmarks land on the unchanged view.
-  let mode = $state<'orbital' | 'surface'>(
-    $page.url.searchParams.get('mode') === 'surface' ? 'surface' : 'orbital',
-  );
+  // Default mode = 'orbital' so existing deep-links + prerendered HTML
+  // render the orbital scene. The `?mode=surface` query param is read
+  // inside onMount because adapter-static prerender forbids accessing
+  // url.searchParams at SSR / module-eval time. Client hydration then
+  // switches to surface mode if the URL asked for it.
+  let mode = $state<'orbital' | 'surface'>('orbital');
+
+  onMount(() => {
+    if ($page.url.searchParams.get('mode') === 'surface') {
+      mode = 'surface';
+    }
+  });
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
 

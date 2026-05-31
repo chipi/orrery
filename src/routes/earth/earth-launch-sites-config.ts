@@ -16,10 +16,7 @@
  * @see {@link file://../../lib/surface-scene/README.md}
  * @see {@link file://../../../docs/adr/ADR-072.md}
  */
-import type {
-  SurfaceSceneConfig,
-  LanderModelBuilder,
-} from '$lib/surface-scene/types';
+import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
 import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
 import { registerEarthHotspotBuilders } from '$lib/surface-scene/register-earth-hotspot-builders';
 

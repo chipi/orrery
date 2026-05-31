@@ -626,7 +626,6 @@
   <!-- Earth shares the moon-warning copy in v1 (both read as "approaching
        pixel limit"); a dedicated earth-warning paraglide key will land in
        the slice that ships commercial-sat Earth insets. -->
-
 </div>
 
 <style>

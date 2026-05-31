@@ -2386,6 +2386,8 @@ sample      ${debugInfo.projectedPxSample}`}
   <PanoramaOverlay
     active={panoramaActive}
     description="You are standing at the landing site. The lander is in front of you. Drag to look around. Press the Exit panorama view button in the detail panel, or press Esc, to return to orbit."
+    annotations={currentPanoramaEntry?.annotations ?? selected?.panorama_annotations ?? []}
+    onAnnotationActivate={(ann) => (panoramaActiveAnnotation = ann)}
   />
 
   <!-- Panorama caption overlay (PRD-022 / ADR-074, #286 Phase 2B). -->

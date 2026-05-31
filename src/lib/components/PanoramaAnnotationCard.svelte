@@ -33,6 +33,17 @@
     window.addEventListener('keydown', onKey, true);
     return () => window.removeEventListener('keydown', onKey, true);
   });
+
+  // PRD-022 / ADR-074 Phase 3E — auto-focus the dismiss button when
+  // the card opens so keyboard users can immediately escape or tab
+  // through the card body. Bound to the DOM element via Svelte's
+  // bind:this rune so the focus only fires once the node is mounted.
+  let dismissBtn: HTMLButtonElement | undefined = $state();
+  $effect(() => {
+    if (annotation && dismissBtn) {
+      dismissBtn.focus();
+    }
+  });
 </script>
 
 {#if annotation}
@@ -43,7 +54,13 @@
     aria-label={annotation.label}
     data-testid="panorama-annotation-card"
   >
-    <button type="button" class="dismiss" aria-label="Dismiss annotation" onclick={onDismiss}>
+    <button
+      type="button"
+      class="dismiss"
+      aria-label="Dismiss annotation"
+      bind:this={dismissBtn}
+      onclick={onDismiss}
+    >
       ×
     </button>
     <div class="label">{annotation.label}</div>

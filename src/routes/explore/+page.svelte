@@ -2010,6 +2010,18 @@
       c2.removeEventListener('touchend', on2dTouchEnd);
       window.removeEventListener('resize', onResize);
       disposeScene(scene);
+      // #287 — dispose lazy-loaded 4K textures that are held in
+      // closures / per-planet state. disposeScene walks the scene
+      // graph, but a planet's `lod.tex4k` may have been loaded
+      // without ever being assigned to material.map (user zoomed
+      // close but the texture finished loading after the camera
+      // pulled back), and the Sun's 4K texture lives outside the
+      // PLANETS loop. Without these explicit disposes those
+      // textures stay resident in GPU memory after route teardown.
+      sunMap4k?.dispose();
+      for (const obj of planetObjs) {
+        obj.lod?.tex4k?.dispose();
+      }
       renderer.dispose();
       el3d.remove();
     };

@@ -32,7 +32,7 @@ The production app ships **12 primary routes** at v0.6.0. Each is a SvelteKit pa
 | Route | Purpose | Anchored by |
 |---|---|---|
 | `/` | 30-second orientation; 11-card route grid | PRD-013 |
-| `/explore` | Solar System Explorer · 3D orrery + per-body Science Lens layers | PRD-001 / ADR-012 |
+| `/explore` | Solar System Explorer · 3D orrery + per-body Science Lens layers · per-planet 4K texture LOD swap (#287) for Mercury/Venus/Earth/Mars/Jupiter/Saturn/Sun; Uranus + Neptune stay 2K (SSS publishes no higher res) | PRD-001 / ADR-012 / #287 |
 | `/plan` | Mission Configurator · porkchop plot (9 destinations) | PRD-002 / RFC-006 / ADR-023 / ADR-026 / ADR-028 |
 | `/fly` | Mission Arc · heliocentric transfer (+ cislunar Earth-centered view) | PRD-003 / ADR-030 / ADR-058 |
 | `/missions` | Mission Catalog · 42 flown / active / planned / concept missions | PRD-004 / ADR-020 / ADR-027 |

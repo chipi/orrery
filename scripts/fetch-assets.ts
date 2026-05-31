@@ -155,12 +155,45 @@ export const TEXTURES = [
   '2k_moon.jpg',
 ];
 
+/**
+ * Native 4K daymaps published by Solar System Scope (#287).
+ *
+ * SSS publishes only one body at native 4K — Venus atmosphere. The
+ * other /explore 4K textures (mercury / earth / mars / jupiter /
+ * saturn / sun) are sips-downsampled from the 8K source and live in
+ * the repo as committed assets. They can't be auto-fetched here
+ * without a cross-platform image library (sharp / jimp), which would
+ * add a build-time native dep we don't want yet.
+ *
+ * If someone needs to rebuild the downsampled 4K assets from scratch:
+ *   1. `curl -L https://www.solarsystemscope.com/textures/download/8k_<body>.jpg`
+ *   2. `sips -Z 4096 -s formatOptions 85 <src> --out static/textures/4k_<body>.jpg`
+ *      (macOS only; Linux equivalent: `magick <src> -resize 4096x2048 -quality 85 <dst>`)
+ *
+ * Uranus + Neptune have no SSS 4K or 8K — they stay 2K-only and don't
+ * appear in any LOD swap.
+ */
+export const FOUR_K_TEXTURES_NATIVE = ['4k_venus_atmosphere.jpg'];
+
+/**
+ * Downsampled-from-8K 4K daymaps that live as committed assets. Listed
+ * here for documentation + so an integrity check can verify presence.
+ */
+export const FOUR_K_TEXTURES_DOWNSAMPLED = [
+  '4k_mercury.jpg',
+  '4k_earth_daymap.jpg',
+  '4k_mars.jpg',
+  '4k_jupiter.jpg',
+  '4k_saturn.jpg',
+  '4k_sun.jpg',
+];
+
 const TEXTURES_DIR = 'static/textures';
 
 async function fetchTextures(): Promise<number> {
   await mkdir(TEXTURES_DIR, { recursive: true });
   let downloaded = 0;
-  for (const filename of TEXTURES) {
+  for (const filename of [...TEXTURES, ...FOUR_K_TEXTURES_NATIVE]) {
     console.log(`  ${filename}…`);
     const url = `${TEXTURE_BASE_URL}/${filename}`;
     const localPath = join(TEXTURES_DIR, filename);

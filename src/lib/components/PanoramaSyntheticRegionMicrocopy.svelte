@@ -30,9 +30,8 @@
   let activeRegion = $derived.by(() => {
     if (!active || !syntheticRegions || syntheticRegions.length === 0) return null;
     return (
-      syntheticRegions.find(
-        (r) => pitchDeg >= r.pitch_min_deg && pitchDeg <= r.pitch_max_deg,
-      ) ?? null
+      syntheticRegions.find((r) => pitchDeg >= r.pitch_min_deg && pitchDeg <= r.pitch_max_deg) ??
+      null
     );
   });
 
@@ -47,12 +46,12 @@
       case 'synthetic_nadir':
         return {
           tag: 'SYNTHETIC NADIR',
-          body: "This region below the horizon was not captured (or is blocked by the lander deck). The visible pattern is synthetic.",
+          body: 'This region below the horizon was not captured (or is blocked by the lander deck). The visible pattern is synthetic.',
         };
       case 'no_data':
         return {
           tag: 'NO DATA',
-          body: "No transmitted data covers this region — the visible pattern is synthetic fill honouring the historical artifact.",
+          body: 'No transmitted data covers this region — the visible pattern is synthetic fill honouring the historical artifact.',
         };
       default:
         return null;

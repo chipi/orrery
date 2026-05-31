@@ -71,11 +71,7 @@ export interface SkyboxHandle {
    * to pass the camera that's looking at the skybox interior — same
    * camera used to render the panorama.
    */
-  raycastAnnotation(
-    ndcX: number,
-    ndcY: number,
-    camera: THREE.Camera,
-  ): PanoramaAnnotation | null;
+  raycastAnnotation(ndcX: number, ndcY: number, camera: THREE.Camera): PanoramaAnnotation | null;
 }
 
 /**
@@ -236,9 +232,7 @@ export function createSkybox(input: SkyboxInput): SkyboxHandle {
       raycaster.setFromCamera(ndcPoint, camera);
       const hits = raycaster.intersectObjects(annotationGroup.children, false);
       if (hits.length === 0) return null;
-      const ann = hits[0].object.userData?.panoramaAnnotation as
-        | PanoramaAnnotation
-        | undefined;
+      const ann = hits[0].object.userData?.panoramaAnnotation as PanoramaAnnotation | undefined;
       return ann ?? null;
     },
     swapTexture(textureUrl: string): Promise<void> {

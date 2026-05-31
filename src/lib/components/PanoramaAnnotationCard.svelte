@@ -43,12 +43,7 @@
     aria-label={annotation.label}
     data-testid="panorama-annotation-card"
   >
-    <button
-      type="button"
-      class="dismiss"
-      aria-label="Dismiss annotation"
-      onclick={onDismiss}
-    >
+    <button type="button" class="dismiss" aria-label="Dismiss annotation" onclick={onDismiss}>
       ×
     </button>
     <div class="label">{annotation.label}</div>

@@ -73,12 +73,7 @@
   >
     ›
   </button>
-  <div
-    class="counter mono"
-    role="status"
-    aria-live="polite"
-    data-testid="panorama-cycler-counter"
-  >
+  <div class="counter mono" role="status" aria-live="polite" data-testid="panorama-cycler-counter">
     {currentEntry.metadata?.sol != null
       ? `Sol ${currentEntry.metadata.sol}`
       : (currentEntry.id ?? '')} · {totalCount} panoramas at this site

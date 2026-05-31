@@ -35,14 +35,8 @@
     /** Audio-episode id; null when no episode covers this view. */
     audioEpisodeId: string | null | undefined;
   }
-  let {
-    active,
-    routeBase,
-    missionId,
-    traverseStopLink,
-    fleetEntryId,
-    audioEpisodeId,
-  }: Props = $props();
+  let { active, routeBase, missionId, traverseStopLink, fleetEntryId, audioEpisodeId }: Props =
+    $props();
 
   // True only when at least one link target exists — otherwise the
   // footer is hidden so we don't render an empty chrome bar.

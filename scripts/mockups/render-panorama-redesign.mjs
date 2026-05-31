@@ -18,7 +18,7 @@
  *
  * Usage:  node scripts/mockups/render-panorama-redesign.mjs
  */
-import { mkdir, writeFile, readFile, copyFile, unlink } from 'node:fs/promises';
+import { mkdir, writeFile, copyFile, unlink } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from '@playwright/test';

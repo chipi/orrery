@@ -130,9 +130,7 @@ function adaptFleetToSurfaceSite(f: FleetEntry): SurfaceSite | null {
  */
 export async function getEarthLaunchSites(locale = 'en-US'): Promise<SurfaceSite[]> {
   const fleetEntries = await getFleetByCategory('launch-site', locale);
-  return fleetEntries
-    .map(adaptFleetToSurfaceSite)
-    .filter((s): s is SurfaceSite => s !== null);
+  return fleetEntries.map(adaptFleetToSurfaceSite).filter((s): s is SurfaceSite => s !== null);
 }
 
 /**

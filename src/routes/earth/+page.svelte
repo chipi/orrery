@@ -26,10 +26,7 @@
   import EarthOrbitalScene from './EarthOrbitalScene.svelte';
   import SurfaceScene from '$lib/surface-scene/SurfaceScene.svelte';
   import { makeEarthLaunchSitesConfig } from './earth-launch-sites-config';
-  import {
-    getEarthLaunchSites,
-    getEarthLaunchSiteGallery,
-  } from '$lib/earth-launch-site-adapter';
+  import { getEarthLaunchSites, getEarthLaunchSiteGallery } from '$lib/earth-launch-site-adapter';
   import * as m from '$lib/paraglide/messages';
 
   // Default mode = 'orbital' so existing deep-links + prerendered HTML

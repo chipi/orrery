@@ -33,6 +33,7 @@
   import PanoramaAnnotationCard from '$lib/components/PanoramaAnnotationCard.svelte';
   import PanoramaCycler from '$lib/components/PanoramaCycler.svelte';
   import PanoramaCrossLink from '$lib/components/PanoramaCrossLink.svelte';
+  import PanoramaFullscreenToggle from '$lib/components/PanoramaFullscreenToggle.svelte';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
@@ -2383,6 +2384,11 @@ sample      ${debugInfo.projectedPxSample}`}
       audioEpisodeId={null}
     />
   {/if}
+
+  <!-- Fullscreen toggle (PRD-022 / ADR-074, #286 Phase 3A). F key
+       shortcut while panorama active. Falls back gracefully when
+       the browser doesn't support requestFullscreen(). -->
+  <PanoramaFullscreenToggle active={panoramaActive} />
 
   <!-- Nation legend overlay. The 2D view paints this directly into
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js

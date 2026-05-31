@@ -116,7 +116,38 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "panorama_metadata": {
+        "date": "1972-12-12",
+        "instrument": "Hasselblad 70mm",
+        "caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
+        "credit_team": "NASA · Apollo 17 / ALSJ",
+        "real_extent_pct_vertical": 40,
+        "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)"
+      },
+      "panorama_annotations": [
+        {
+          "id": "south-massif",
+          "yaw_deg": -75,
+          "pitch_deg": 3,
+          "label": "South Massif",
+          "body": "2.3 km uplifted highland, sampled at Station 2 (the orange-soil discovery site)."
+        },
+        {
+          "id": "camelot-crater",
+          "yaw_deg": 55,
+          "pitch_deg": -2,
+          "label": "Camelot Crater rim",
+          "body": "Large pre-existing impact crater near the Lunar Module; Station 5 boulder field is on the rim."
+        },
+        {
+          "id": "lrv",
+          "yaw_deg": 10,
+          "pitch_deg": -12,
+          "label": "Lunar Roving Vehicle",
+          "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
+        }
+      ]
     },
     "viking1-lander": {
       "hotspot_tier_max": 3,
@@ -322,7 +353,18 @@
       "hotspot_tier2_force_product_id": "ESP_031036_1345",
       "location_uncertainty_m": 10000,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "date": "1971-12-02",
+        "instrument": "Panoramic facsimile",
+        "caption": "First Mars soft landing — 14.5 seconds of transmitted scan data before signal lost. There is no Tier-3 panorama to render at this site (yet); the experience here is the honest-historical-artifact framing of the original fragment via the Tier-2 CTX context.",
+        "credit_team": "USSR · Soviet Academy of Sciences",
+        "real_extent_pct_vertical": 0,
+        "synthetic_regions": [
+          { "pitch_min_deg": -90, "pitch_max_deg": 90, "kind": "no_data" }
+        ]
+      },
+      "panorama_annotations": []
     },
     "change3": {
       "hotspot_tier_max": 3,
@@ -338,7 +380,39 @@
       "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg",
+      "showcase": true,
+      "panorama_metadata": {
+        "date": "2019-01-03",
+        "instrument": "Terrain Camera",
+        "caption": "First panorama ever transmitted from the lunar farside. Von Kármán crater within South Pole–Aitken Basin. Yutu-2 rover visible mid-distance; lander shadow lower-left.",
+        "credit_team": "CNSA · CLEP / CAS",
+        "real_extent_pct_vertical": 40,
+        "compass_zero_direction": "lander camera +X axis"
+      },
+      "panorama_annotations": [
+        {
+          "id": "yutu2",
+          "yaw_deg": -45,
+          "pitch_deg": -3,
+          "label": "Yutu-2 rover",
+          "body": "First rover on the lunar farside; still operational at 5+ years (the record for any lunar rover)."
+        },
+        {
+          "id": "von-karman-rim",
+          "yaw_deg": 30,
+          "pitch_deg": 3,
+          "label": "Von Kármán crater rim",
+          "body": "Inner rim of the 180 km crater inside the South Pole–Aitken Basin — the Moon's largest, oldest impact structure."
+        },
+        {
+          "id": "change4-shadow",
+          "yaw_deg": 0,
+          "pitch_deg": -15,
+          "label": "Chang'e 4 lander shadow",
+          "body": "The lander's own shadow on the regolith — captured by its onboard terrain camera."
+        }
+      ]
     },
     "change5": {
       "hotspot_tier_max": 3,
@@ -371,7 +445,32 @@
       "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg",
+      "showcase": true,
+      "panorama_metadata": {
+        "date": "2023-08-23",
+        "instrument": "Landing Imager",
+        "caption": "Shiv Shakti Point — first panorama from the lunar south pole. Vikram lander shadow visible foreground; Pragyan rover deployed onto the regolith shortly after this image.",
+        "credit_team": "ISRO · Chandrayaan-3 mission",
+        "real_extent_pct_vertical": 50,
+        "compass_zero_direction": "lander imager +X"
+      },
+      "panorama_annotations": [
+        {
+          "id": "pragyan",
+          "yaw_deg": -20,
+          "pitch_deg": -10,
+          "label": "Pragyan rover (deployed sol +1)",
+          "body": "26 kg six-wheeled rover. Deployed via Vikram's ramp the day after landing; operated until lunar nightfall (~14 Earth days)."
+        },
+        {
+          "id": "south-pole-rim",
+          "yaw_deg": 40,
+          "pitch_deg": 5,
+          "label": "South pole crater rim",
+          "body": "First successful soft-landing this close to the lunar south pole — water-ice prospect zone."
+        }
+      ]
     },
     "slim": {
       "hotspot_tier_max": 3,

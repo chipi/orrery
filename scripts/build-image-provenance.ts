@@ -40,6 +40,7 @@ import {
   WIKIMEDIA_TIANGONG_MODULE_GALLERY,
   EARTH_OBJECT_QUERIES,
   MOON_SITE_QUERIES,
+  MARS_SITE_QUERIES,
   SMALL_BODY_QUERIES,
   PLANET_QUERIES,
   SUN_QUERIES,
@@ -920,6 +921,22 @@ async function loadMoonSiteAgencies(): Promise<Map<string, string>> {
   const map = new Map<string, string>();
   try {
     const all = JSON.parse(await readFile('static/data/moon-sites.json', 'utf8')) as Array<{
+      id: string;
+      agency?: string;
+    }>;
+    for (const r of all) {
+      if (r.agency) map.set(r.id, r.agency);
+    }
+  } catch {
+    // empty map → caller falls back to defaultAgency
+  }
+  return map;
+}
+
+async function loadMarsSiteAgencies(): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  try {
+    const all = JSON.parse(await readFile('static/data/mars-sites.json', 'utf8')) as Array<{
       id: string;
       agency?: string;
     }>;
@@ -1970,6 +1987,19 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
       queries: MOON_SITE_QUERIES,
       rootDir: 'static/images/moon-sites',
       agencyById: (id) => moonAgencies.get(id) ?? 'NASA',
+      defaultAgency: 'NASA',
+      defaultLicense: 'PD-NASA',
+      defaultLicenseRationale: getAllowlistEntry('PD-NASA')!.rationale,
+    })),
+  );
+
+  console.log('Mars-site galleries…');
+  const marsAgencies = await loadMarsSiteAgencies();
+  out.push(
+    ...(await buildPanelEntries({
+      queries: MARS_SITE_QUERIES,
+      rootDir: 'static/images/mars-sites',
+      agencyById: (id) => marsAgencies.get(id) ?? 'NASA',
       defaultAgency: 'NASA',
       defaultLicense: 'PD-NASA',
       defaultLicenseRationale: getAllowlistEntry('PD-NASA')!.rationale,

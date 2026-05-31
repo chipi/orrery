@@ -2009,6 +2009,141 @@ export const MOON_SITE_QUERIES: GalleryQuery[] = [
   { id: 'artemis3', query: 'artemis lunar landing', copyFromMission: 'artemis3' },
 ];
 
+/**
+ * Mars-site panel galleries — same shape as MOON_SITE_QUERIES, mounted
+ * under `static/images/mars-sites/{siteId}/NN.jpg` and indexed in
+ * `mars-site-galleries.json`. The data layer's `getMarsSiteGallery`
+ * loader (src/lib/data.ts) already prefers this manifest over the
+ * mission-gallery fallback ladder — see #283 / #286 follow-up.
+ *
+ * Cohorts:
+ *  - Tier A — `copyFromMission` with matching id (10 sites)
+ *  - Tier B — `copyFromMission` with alias (4 sites: viking1-*, hope,
+ *    tianwen1-orbiter — site id differs from mission id)
+ *  - Tier C — NASA Images API + curated Wikimedia Commons fallback
+ *    (13 sites with no matching mission gallery: spirit, opportunity,
+ *    phoenix, beagle2, exomars-rosalind-franklin, mariner9,
+ *    mars-odyssey, mro, schiaparelli, tgo, zhurong, viking2-lander,
+ *    mars3-orbiter)
+ */
+export const MARS_SITE_QUERIES: GalleryQuery[] = [
+  // Tier A — copyFromMission, same id
+  {
+    id: 'curiosity',
+    query: 'mars science laboratory curiosity rover',
+    copyFromMission: 'curiosity',
+  },
+  { id: 'insight', query: 'insight mars lander seismometer', copyFromMission: 'insight' },
+  { id: 'mangalyaan', query: 'mars orbiter mission isro', copyFromMission: 'mangalyaan' },
+  { id: 'mars-express', query: 'mars express esa', copyFromMission: 'mars-express' },
+  { id: 'mars-pathfinder', query: 'mars pathfinder sojourner', copyFromMission: 'mars-pathfinder' },
+  { id: 'mars2', query: 'mars 2 lander soviet', copyFromMission: 'mars2' },
+  { id: 'mars3', query: 'mars 3 lander soviet', copyFromMission: 'mars3' },
+  { id: 'mars6', query: 'mars 6 lander soviet', copyFromMission: 'mars6' },
+  { id: 'maven', query: 'maven mars atmosphere orbiter', copyFromMission: 'maven' },
+  {
+    id: 'perseverance',
+    query: 'mars 2020 perseverance rover jezero crater',
+    copyFromMission: 'perseverance',
+  },
+  // Tier B — copyFromMission, aliased to a same-family mission gallery
+  { id: 'viking1-lander', query: 'viking 1 lander', copyFromMission: 'viking1' },
+  { id: 'viking1-orbiter', query: 'viking 1 orbiter', copyFromMission: 'viking1' },
+  { id: 'hope', query: 'emirates mars mission hope probe', copyFromMission: 'hope-probe' },
+  { id: 'tianwen1-orbiter', query: 'tianwen-1 orbiter mars', copyFromMission: 'tianwen1' },
+  // Tier C — NASA Images API + curated Wikimedia fallback
+  {
+    id: 'spirit',
+    query: 'mars exploration rover spirit gusev',
+    commonsHeroFirst: 'NASA Mars Rover.jpg',
+    wikimediaGallery: [
+      'NASA Mars Rover.jpg',
+      'Spirit Embedded.jpg',
+      'Spirit_at_Husband_Hill_PIA01907_NASA.jpg',
+    ],
+  },
+  {
+    id: 'opportunity',
+    query: 'mars exploration rover opportunity meridiani',
+    commonsHeroFirst: 'NASA Mars Rover.jpg',
+    wikimediaGallery: [
+      'NASA Mars Rover.jpg',
+      'Opportunity Rover at Endurance Crater.jpg',
+      'PIA21496-MarsRoverOpportunity-SelfPortrait-20140101.jpg',
+    ],
+  },
+  {
+    id: 'phoenix',
+    query: 'phoenix mars lander arctic',
+    commonsHeroFirst: 'Phoenix landed.jpg',
+    wikimediaGallery: ['Phoenix landed.jpg', 'Phoenix Mars Lander - Sublimating Ice.gif'],
+  },
+  {
+    id: 'beagle2',
+    query: 'beagle 2 mars lander esa',
+    commonsHeroFirst: 'Beagle 2 replica.jpg',
+    wikimediaGallery: ['Beagle 2 replica.jpg', 'Beagle 2 on Mars.jpg'],
+  },
+  {
+    id: 'exomars-rosalind-franklin',
+    query: 'exomars rosalind franklin rover',
+    commonsHeroFirst: 'ExoMars rover panels (ESA378296).jpg',
+    wikimediaGallery: [
+      'ExoMars rover panels (ESA378296).jpg',
+      'Rosalind Franklin rover replica.jpg',
+    ],
+  },
+  {
+    id: 'mariner9',
+    query: 'mariner 9 mars orbiter',
+    commonsHeroFirst: 'Mariner 9 - GPN-2000-001787.jpg',
+    wikimediaGallery: ['Mariner 9 - GPN-2000-001787.jpg', 'Olympus Mons aurora.jpg'],
+  },
+  {
+    id: 'mars-odyssey',
+    query: '2001 mars odyssey orbiter themis',
+    commonsHeroFirst: '2001 Mars Odyssey - PIA04816.jpg',
+    wikimediaGallery: ['2001 Mars Odyssey - PIA04816.jpg', 'Mars Odyssey illustration.jpg'],
+  },
+  {
+    id: 'mro',
+    query: 'mars reconnaissance orbiter hirise',
+    commonsHeroFirst: 'Mars Reconnaissance Orbiter.jpg',
+    wikimediaGallery: [
+      'Mars Reconnaissance Orbiter.jpg',
+      'PIA10198 Phoenix Lander on Parachute.jpg',
+    ],
+  },
+  {
+    id: 'schiaparelli',
+    query: 'schiaparelli mars lander exomars',
+    commonsHeroFirst: 'Schiaparelli EDM lander testing.jpg',
+    wikimediaGallery: [
+      'Schiaparelli EDM lander testing.jpg',
+      'Schiaparelli Mars lander artist impression.jpg',
+    ],
+  },
+  {
+    id: 'tgo',
+    query: 'exomars trace gas orbiter',
+    commonsHeroFirst: 'ExoMars 2016 - Trace Gas Orbiter and Schiaparelli.jpg',
+    wikimediaGallery: [
+      'ExoMars 2016 - Trace Gas Orbiter and Schiaparelli.jpg',
+      'ExoMars TGO and Schiaparelli at Mars.jpg',
+    ],
+  },
+  {
+    id: 'viking2-lander',
+    query: 'viking 2 lander utopia planitia',
+    commonsHeroFirst: 'Viking2lander1.jpg',
+    wikimediaGallery: ['Viking2lander1.jpg', 'Viking 2 Lander Image of Frost.jpg'],
+  },
+  // Known gaps with no verified Commons source today — left to the
+  // fleet-gallery fallback in the loader, and tracked in the panel-
+  // imagery follow-up issue (#286): `zhurong`, `mars3-orbiter`. Add to
+  // this list once specific PD-CN / PD-Soviet filenames are confirmed.
+];
+
 /** Explore / small-bodies.json — dwarf planets, comets, interstellar (ʻOumuamua). */
 export const SMALL_BODY_QUERIES: GalleryQuery[] = [
   {
@@ -3342,6 +3477,19 @@ async function main() {
     return;
   }
 
+  if (process.argv.includes('--mars-sites-only')) {
+    console.log('Mars-site galleries only — skipping fonts/textures/missions/etc.\n');
+    await fetchPanelGallery(
+      'mars-sites',
+      MARS_SITE_QUERIES,
+      'static/images/mars-sites',
+      'static/data/mars-site-galleries.json',
+      'count-map',
+    );
+    console.log('\nDone.');
+    return;
+  }
+
   if (process.argv.includes('--thumbnails-only')) {
     console.log('Mission trajectory thumbnails only — skipping fonts/textures/etc.\n');
     await fetchMissionThumbnails();
@@ -3431,6 +3579,16 @@ async function main() {
     MOON_SITE_QUERIES,
     'static/images/moon-sites',
     'static/data/moon-site-galleries.json',
+    'count-map',
+  );
+  console.log('');
+
+  console.log('Fetching mars-site galleries:');
+  await fetchPanelGallery(
+    'mars-sites',
+    MARS_SITE_QUERIES,
+    'static/images/mars-sites',
+    'static/data/mars-site-galleries.json',
     'count-map',
   );
   console.log('');

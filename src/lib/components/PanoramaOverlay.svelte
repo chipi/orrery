@@ -29,12 +29,7 @@
      *  panoramaActiveAnnotation in SurfaceScene. */
     onAnnotationActivate?: (annotation: PanoramaAnnotation) => void;
   }
-  let {
-    active,
-    description,
-    annotations = [],
-    onAnnotationActivate,
-  }: Props = $props();
+  let { active, description, annotations = [], onAnnotationActivate }: Props = $props();
 </script>
 
 {#if active}

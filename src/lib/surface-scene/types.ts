@@ -98,6 +98,17 @@ export interface SurfaceSceneConfig {
   textureUrl: string;
 
   /**
+   * Optional 4K daymap, lazy-loaded when the camera approaches the
+   * planet (per ADR-073 Layer B). Omit for bodies where no higher-res
+   * source is available. When set, the route's SurfaceScene swaps
+   * `material.map` from `textureUrl` to `textureUrl4k` once the
+   * camera distance ratio drops below `SURFACE_LOD_4K_IN_RATIO`, with
+   * hysteresis at `SURFACE_LOD_2K_OUT_RATIO` to prevent thrashing.
+   * Mirrors the per-planet pattern shipped on /explore in #287.
+   */
+  textureUrl4k?: string;
+
+  /**
    * Real-world body radius in km. Used to convert the dimensionless
    * scene `camR` into an altitude readout (and back, for the
    * atmosphere shell sizing). Mars: 3389. Moon: 1737.4.

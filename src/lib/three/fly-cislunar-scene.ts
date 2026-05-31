@@ -31,8 +31,12 @@ export interface CislunarSceneOptions {
   aspect: number;
   /** Earth surface texture URL (e.g. `${base}/textures/2k_earth_daymap.jpg`). */
   earthTextureUrl: string;
+  /** Optional 4K Earth daymap, lazy-loaded on close approach (ADR-073 Layer B). */
+  earthTextureUrl4k?: string;
   /** Moon surface texture URL (e.g. `${base}/textures/2k_moon.jpg`). */
   moonTextureUrl: string;
+  /** Optional 4K Moon daymap, lazy-loaded on close approach (ADR-073 Layer B). */
+  moonTextureUrl4k?: string;
 }
 
 export interface CislunarSceneHandles {
@@ -51,6 +55,14 @@ export interface CislunarSceneHandles {
   /** Moon mesh. Position is updated per frame by the component from
    *  moonEciPos(simDay) in the cislunar scale. */
   moon: THREE.Mesh;
+  /** ADR-073 Layer B — call from the animation loop with the current
+   *  camera distance in km so the scene can lazy-load + swap 4K
+   *  daymaps for Earth and Moon on close approach. No-op if the
+   *  corresponding `*TextureUrl4k` wasn't supplied. */
+  updateTextureLod: (cameraDistanceKm: { earth: number; moon: number }) => void;
+  /** ADR-073 Layer B — call from cleanup() to dispose lazy-loaded 4K
+   *  textures that aren't reachable through the scene graph. */
+  disposeLod: () => void;
   /** Earth sphere-of-influence torus (924,000 km radius). Hidden by
    *  default; component flips visibility when the 'soi' Science Lens
    *  layer toggles. */
@@ -104,29 +116,116 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   const texLoader = new THREE.TextureLoader();
 
+  // ADR-073 Layer B — Earth + Moon get the same lazy 2K→4K swap as
+  // the surface routes. Thresholds expressed in km so the same
+  // mechanism applies regardless of the SCALE_CISLUNAR conversion.
+  // Earth radius ≈ 6371 km; Moon ≈ 1737 km. Swap to 4K when camera
+  // gets within ~3× body radius; revert at ~4× (hysteresis).
+  const EARTH_LOD_4K_IN_KM = R_EARTH_KM * 3;
+  const EARTH_LOD_2K_OUT_KM = R_EARTH_KM * 4;
+  const MOON_LOD_4K_IN_KM = R_MOON_KM * 3;
+  const MOON_LOD_2K_OUT_KM = R_MOON_KM * 4;
+
   // Earth at origin. True physical radius scaled by SCALE_CISLUNAR.
-  const earthTex = texLoader.load(opts.earthTextureUrl);
+  const earthTex2k = texLoader.load(opts.earthTextureUrl);
+  let earthTex4k: THREE.Texture | null = null;
+  let earth4kLoadStarted = false;
+  let earthLodLevel: '2k' | '4k' = '2k';
+  const earthMaterial = new THREE.MeshStandardMaterial({
+    map: earthTex2k,
+    color: 0xffffff,
+    roughness: 0.6,
+  });
   const earth = new THREE.Mesh(
     new THREE.SphereGeometry(R_EARTH_KM * SCALE_CISLUNAR, 32, 32),
-    new THREE.MeshStandardMaterial({
-      map: earthTex,
-      color: 0xffffff,
-      roughness: 0.6,
-    }),
+    earthMaterial,
   );
   scene.add(earth);
 
   // Moon — position updated each frame from moonEciPos(simDay).
-  const moonTex = texLoader.load(opts.moonTextureUrl);
+  const moonTex2k = texLoader.load(opts.moonTextureUrl);
+  let moonTex4k: THREE.Texture | null = null;
+  let moon4kLoadStarted = false;
+  let moonLodLevel: '2k' | '4k' = '2k';
+  const moonMaterial = new THREE.MeshStandardMaterial({
+    map: moonTex2k,
+    color: 0xffffff,
+    roughness: 0.95,
+  });
   const moon = new THREE.Mesh(
     new THREE.SphereGeometry(R_MOON_KM * SCALE_CISLUNAR, 24, 24),
-    new THREE.MeshStandardMaterial({
-      map: moonTex,
-      color: 0xffffff,
-      roughness: 0.95,
-    }),
+    moonMaterial,
   );
   scene.add(moon);
+
+  function ensureEarth4kLoaded(): void {
+    if (earth4kLoadStarted || !opts.earthTextureUrl4k) return;
+    earth4kLoadStarted = true;
+    texLoader.load(
+      opts.earthTextureUrl4k,
+      (tex) => {
+        earthTex4k = tex;
+      },
+      undefined,
+      () => {
+        earth4kLoadStarted = false;
+      },
+    );
+  }
+  function ensureMoon4kLoaded(): void {
+    if (moon4kLoadStarted || !opts.moonTextureUrl4k) return;
+    moon4kLoadStarted = true;
+    texLoader.load(
+      opts.moonTextureUrl4k,
+      (tex) => {
+        moonTex4k = tex;
+      },
+      undefined,
+      () => {
+        moon4kLoadStarted = false;
+      },
+    );
+  }
+  function updateTextureLod({
+    earth: earthDistKm,
+    moon: moonDistKm,
+  }: {
+    earth: number;
+    moon: number;
+  }): void {
+    if (opts.earthTextureUrl4k) {
+      if (earthDistKm <= EARTH_LOD_4K_IN_KM) {
+        ensureEarth4kLoaded();
+        if (earthTex4k && earthLodLevel !== '4k') {
+          earthMaterial.map = earthTex4k;
+          earthMaterial.needsUpdate = true;
+          earthLodLevel = '4k';
+        }
+      } else if (earthDistKm >= EARTH_LOD_2K_OUT_KM && earthLodLevel !== '2k') {
+        earthMaterial.map = earthTex2k;
+        earthMaterial.needsUpdate = true;
+        earthLodLevel = '2k';
+      }
+    }
+    if (opts.moonTextureUrl4k) {
+      if (moonDistKm <= MOON_LOD_4K_IN_KM) {
+        ensureMoon4kLoaded();
+        if (moonTex4k && moonLodLevel !== '4k') {
+          moonMaterial.map = moonTex4k;
+          moonMaterial.needsUpdate = true;
+          moonLodLevel = '4k';
+        }
+      } else if (moonDistKm >= MOON_LOD_2K_OUT_KM && moonLodLevel !== '2k') {
+        moonMaterial.map = moonTex2k;
+        moonMaterial.needsUpdate = true;
+        moonLodLevel = '2k';
+      }
+    }
+  }
+  function disposeLod(): void {
+    earthTex4k?.dispose();
+    moonTex4k?.dispose();
+  }
 
   // SoI rings — wired to the Science Lens 'soi' layer toggle (the
   // component owns the subscription). Both hidden by default; component
@@ -246,6 +345,8 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     moon,
     earthSoI,
     moonSoI,
+    updateTextureLod,
+    disposeLod,
     overlays: {
       gravityEarth,
       gravityMoon,

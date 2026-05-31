@@ -1045,7 +1045,9 @@
     const cislunarHandles = buildCislunarScene({
       aspect: container.clientWidth / container.clientHeight,
       earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg`,
+      earthTextureUrl4k: `${base}/textures/4k_earth_daymap.jpg`,
       moonTextureUrl: `${base}/textures/2k_moon.jpg`,
+      moonTextureUrl4k: `${base}/textures/4k_moon.jpg`,
     });
     const cislunarScene = cislunarHandles.scene;
     const cislunarCamera = cislunarHandles.camera;
@@ -2348,6 +2350,13 @@
         cislunarCamTarget.z + cislunarCamR * Math.sin(cislunarCamP) * Math.cos(cislunarCamT),
       );
       cislunarCamera.lookAt(cislunarCamTarget);
+      // ADR-073 Layer B — distance to each body in km, fed to the
+      // cislunar scene's lazy 4K swap. Earth sits at scene origin;
+      // Moon position is in scene units, scale back to km via the
+      // inverse of SCALE_CISLUNAR.
+      const earthDistKm = cislunarCamera.position.length() / SCALE_CISLUNAR;
+      const moonDistKm = cislunarCamera.position.distanceTo(cislunarMoon.position) / SCALE_CISLUNAR;
+      cislunarHandles.updateTextureLod({ earth: earthDistKm, moon: moonDistKm });
       // Spacecraft sprite stays a constant on-screen angular size by
       // scaling inversely with camera distance. At wide (camR=WIDE)
       // scale=1; closer→smaller world-units sprite → same screen size.
@@ -3714,6 +3723,9 @@
       disposeScene(scene);
       // ADR-058: dispose the cislunar scene's GPU resources too.
       disposeScene(cislunarScene);
+      // ADR-073 Layer B — dispose lazy 4K textures held in closures
+      // (not reachable through cislunarScene's scene graph).
+      cislunarHandles.disposeLod();
       renderer.dispose();
       el3d.remove();
     };

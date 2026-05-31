@@ -438,7 +438,7 @@
     scene.add(createStarField());
 
     const textureLoader = new THREE.TextureLoader();
-    const planetMap = textureLoader.load(config.textureUrl);
+    const planetMap2k = textureLoader.load(config.textureUrl);
     const planetRadius = 30;
     // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
     // is visible (no-op rotation for Moon's ~0°). Orbital markers
@@ -447,11 +447,62 @@
     const planetAxis = new THREE.Group();
     planetAxis.rotation.z = (config.axialTiltDeg * Math.PI) / 180;
     scene.add(planetAxis);
+    const planetMaterial = new THREE.MeshPhongMaterial({
+      map: planetMap2k,
+      color: 0xffffff,
+      shininess: 4,
+    });
     const planetMesh = new THREE.Mesh(
       new THREE.SphereGeometry(planetRadius, 64, 64),
-      new THREE.MeshPhongMaterial({ map: planetMap, color: 0xffffff, shininess: 4 }),
+      planetMaterial,
     );
     planetAxis.add(planetMesh);
+
+    // ADR-073 Layer B — lazy 2K → 4K base swap on camera approach. The
+    // 4K texture loads on the first threshold cross (camR ≤ 50, i.e.
+    // ~1.67× planet radius). Hysteresis at camR ≥ 62 prevents per-frame
+    // thrashing at the boundary. Mirrors EarthOrbitalScene.svelte's
+    // pattern from #284; per-body wiring for the SurfaceScene
+    // consumers /moon, /mars, /earth?mode=surface lands with this
+    // commit. Thresholds expressed in absolute scene units (planet
+    // radius = 30) so the same numbers apply across all three bodies;
+    // the user-relative "feel" of when the swap fires is determined by
+    // the per-route initial camera distance and zoom range, both of
+    // which are already body-consistent inside SurfaceScene.
+    const SURFACE_LOD_4K_IN = 50;
+    const SURFACE_LOD_2K_OUT = 62;
+    let planetMap4k: THREE.Texture | null = null;
+    let planetLodLevel: '2k' | '4k' = '2k';
+    let planet4kLoadStarted = false;
+    function ensurePlanet4kLoaded(): void {
+      if (planet4kLoadStarted || !config.textureUrl4k) return;
+      planet4kLoadStarted = true;
+      textureLoader.load(
+        config.textureUrl4k,
+        (tex) => {
+          planetMap4k = tex;
+        },
+        undefined,
+        () => {
+          planet4kLoadStarted = false; // allow retry next threshold cross
+        },
+      );
+    }
+    function updatePlanetTextureLod(camR: number): void {
+      if (!config.textureUrl4k) return; // body has no 4K source
+      if (camR <= SURFACE_LOD_4K_IN) {
+        ensurePlanet4kLoaded();
+        if (planetMap4k && planetLodLevel !== '4k') {
+          planetMaterial.map = planetMap4k;
+          planetMaterial.needsUpdate = true;
+          planetLodLevel = '4k';
+        }
+      } else if (camR >= SURFACE_LOD_2K_OUT && planetLodLevel !== '2k') {
+        planetMaterial.map = planetMap2k;
+        planetMaterial.needsUpdate = true;
+        planetLodLevel = '2k';
+      }
+    }
 
     // Body-specific atmosphere shell (Mars: thin CO₂; Moon: vacuum,
     // skip the block). Toggled via the Science Lens 'atmosphere' layer.
@@ -1856,6 +1907,12 @@
         }
         const canvasH = renderer.domElement.clientHeight || 1;
         updateHotspotLOD(hotspots, camera, canvasH, now, dt * 1000);
+
+        // ADR-073 Layer B per-frame check. Cheap — a single number
+        // comparison + a material.map reassignment that only fires on
+        // threshold cross. camR is the orbital distance in scene units
+        // (planet radius = 30u inside SurfaceScene).
+        updatePlanetTextureLod(camR);
         // Publish the highest currently-displayed tier on the canvas
         // for e2e assertions (#116 S8).
         let topTier = 0;
@@ -2142,6 +2199,13 @@
       c2.removeEventListener('click', on2dClick);
       window.removeEventListener('resize', onResize);
       disposeScene(scene);
+      // ADR-073 Layer B — explicitly dispose the lazy-loaded 4K
+      // texture. disposeScene only walks the scene graph; when the
+      // active LOD is 2K, the 4K texture is held in this closure but
+      // not attached to anything reachable through the scene tree.
+      // Without this dispose the 4K texture stays resident in GPU
+      // memory after route teardown.
+      planetMap4k?.dispose();
       disposeSceneRenderer({ renderer, outlinePass });
     };
   });

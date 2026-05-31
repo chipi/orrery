@@ -41,6 +41,7 @@
   const MARS_CONFIG: SurfaceSceneConfig = {
     planet: 'mars',
     textureUrl: `${base}/textures/2k_mars.jpg`,
+    textureUrl4k: `${base}/textures/4k_mars.jpg`,
     // Real Mars radius — feeds altitude HUD km/unit ratio + atmosphere
     // shell sizing (120 km altitude → ~1.06 scene units at radius 30).
     radiusKm: 3389,

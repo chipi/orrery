@@ -468,18 +468,56 @@
     scene.add(createStarField({ count: 1200, radius: 180, jitter: 100, opacity: 0.5 }));
 
     const texLoader = new THREE.TextureLoader();
-    const cloudsTex = texLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    // ADR-073 Layer B — 2K Earth backdrop, lazy 4K on close approach.
+    // The /iss default camera frames the station with Earth as far
+    // context so the threshold rarely fires in normal use; the swap
+    // exists so a deliberate zoom toward the backdrop reads sharply
+    // and stays consistent with the surface routes.
+    const earthBackdropTex2k = texLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    let earthBackdropTex4k: THREE.Texture | null = null;
+    let earthBackdrop4kLoadStarted = false;
+    let earthBackdropLodLevel: '2k' | '4k' = '2k';
+    const earthBackdropMaterial = new THREE.MeshPhongMaterial({
+      map: earthBackdropTex2k,
+      transparent: true,
+      opacity: 0.88,
+      depthWrite: false,
+    });
     const earthBackdrop = new THREE.Mesh(
       new THREE.SphereGeometry(42, 40, 40),
-      new THREE.MeshPhongMaterial({
-        map: cloudsTex,
-        transparent: true,
-        opacity: 0.88,
-        depthWrite: false,
-      }),
+      earthBackdropMaterial,
     );
     earthBackdrop.position.set(0, -48, -120);
     scene.add(earthBackdrop);
+    function updateEarthBackdropLod(cameraToBackdropUnits: number): void {
+      // Backdrop sphere has radius 42u. Trigger at ~3× radius (≤ 126u)
+      // → swap to 4K; revert at ~4× (≥ 168u). Hysteresis prevents
+      // boundary thrash.
+      if (cameraToBackdropUnits <= 126) {
+        if (!earthBackdrop4kLoadStarted) {
+          earthBackdrop4kLoadStarted = true;
+          texLoader.load(
+            `${base}/textures/4k_earth_daymap.jpg`,
+            (tex) => {
+              earthBackdropTex4k = tex;
+            },
+            undefined,
+            () => {
+              earthBackdrop4kLoadStarted = false;
+            },
+          );
+        }
+        if (earthBackdropTex4k && earthBackdropLodLevel !== '4k') {
+          earthBackdropMaterial.map = earthBackdropTex4k;
+          earthBackdropMaterial.needsUpdate = true;
+          earthBackdropLodLevel = '4k';
+        }
+      } else if (cameraToBackdropUnits >= 168 && earthBackdropLodLevel !== '2k') {
+        earthBackdropMaterial.map = earthBackdropTex2k;
+        earthBackdropMaterial.needsUpdate = true;
+        earthBackdropLodLevel = '2k';
+      }
+    }
 
     const station = buildIssProxyStation();
     scene.add(station);
@@ -703,6 +741,10 @@
       tickSunTrackingArrays(station, t);
       refreshIssMeshMaterials(t);
       controls.update();
+      // ADR-073 Layer B — distance from the orbit camera to the
+      // backdrop sphere's centre. Drives the 2K → 4K swap.
+      const camToBackdrop = camera.position.distanceTo(earthBackdrop.position);
+      updateEarthBackdropLod(camToBackdrop);
       composer.render();
       updateHoverLabel();
     }
@@ -718,7 +760,10 @@
       renderer.domElement.removeEventListener('pointerleave', onPointerLeave);
       controls.dispose();
       disposeScene(scene);
-      cloudsTex.dispose();
+      earthBackdropTex2k.dispose();
+      // ADR-073 Layer B — dispose 4K backdrop texture held in closure
+      // (not reachable through the scene graph when active LOD is 2K).
+      earthBackdropTex4k?.dispose();
       outlinePass.dispose();
       renderer.dispose();
       renderer.domElement.remove();

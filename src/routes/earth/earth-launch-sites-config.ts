@@ -9,9 +9,11 @@
  * Texture choice — uses the 2K Earth daymap to match /moon and /mars,
  * which both ship the 2K base inside SurfaceScene today. The real 4K
  * Earth daymap (committed in #284 Layer B at `34e7591a7`) feeds the
- * bespoke /earth orbital scene's LOD swap; SurfaceScene gains the same
- * 2K→4K swap mechanism in #287, after which all bodies in /explore
- * plus this Earth-surface preset upgrade to 4K LOD-in automatically.
+ * bespoke /earth orbital scene's LOD swap, and #287 wired the same
+ * per-body LOD swap into /explore. Extending the Layer B (2K→4K base)
+ * swap into SurfaceScene — for /moon, /mars, and this Earth-surface
+ * preset — is the remaining unimplemented Phase of ADR-073 / PRD-021;
+ * tracked separately (see ADR-073 §"Scope by body").
  *
  * @see {@link file://../../lib/surface-scene/README.md}
  * @see {@link file://../../../docs/adr/ADR-072.md}
@@ -30,6 +32,7 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
   return {
     planet: 'earth',
     textureUrl: `${textureBaseUrl}/textures/2k_earth_daymap.jpg`,
+    textureUrl4k: `${textureBaseUrl}/textures/4k_earth_daymap.jpg`,
     // Real Earth radius — feeds altitude HUD km/unit ratio + atmosphere
     // shell sizing (100 km Kármán-line altitude → ~0.47 scene units at
     // a planet radius of 30 world units inside SurfaceScene).

@@ -39,13 +39,13 @@ The eleven primary nav destinations:
 | `/plan` | Mission Configurator (Earth → 9 destinations, LANDING/FLYBY) | `src/routes/plan/+page.svelte` |
 | `/fly` | Mission Arc (heliocentric + cislunar Earth-centered scenes) | `src/routes/fly/+page.svelte` |
 | `/missions` | Mission Catalog | `src/routes/missions/+page.svelte` |
-| `/earth` | Earth Orbit | `src/routes/earth/+page.svelte` |
+| `/earth` | Hybrid scene — default orbital mode (ISS, Tiangong, satellites, LEO/MEO/GEO regime rings, atmosphere shell, ozone overlay) + surface mode (`?mode=surface`) with 14 launchpad markers via shared `SurfaceScene` per ADR-072. Mode toggle top-center. | `src/routes/earth/+page.svelte` (router) + `src/routes/earth/EarthOrbitalScene.svelte` (bespoke orbital scene) |
 | `/moon` | Lunar surface map — rectangular hotspot regions (ADR-061), per-mission lander glyphs, lunar orbiters, tidal-lock overlay, sphere → flat-patch view at deep zoom (ADR-062) | `src/routes/moon/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/mars` | Martian surface map — rectangular hotspot regions, per-mission lander glyphs, rover traverses with curated stops, atmosphere shell, 25.19° axial tilt, sphere → flat-patch view at deep zoom | `src/routes/mars/+page.svelte` (thin shell over `src/lib/surface-scene/SurfaceScene.svelte` per ADR-072) |
 | `/iss` | ISS Explorer (18 pickable modules + visiting spacecraft) | `src/routes/iss/+page.svelte` |
 | `/tiangong` | Tiangong Explorer (Tianhe + Wentian + Mengtian with module overlays) | `src/routes/tiangong/+page.svelte` |
 | `/science` | Encyclopedia (85 sections × 10 tabs + Space-101 landing) | `src/routes/science/+page.svelte` |
-| `/fleet` | Spaceflight Fleet (137 entries × 9 categories with cross-links) | `src/routes/fleet/+page.svelte` |
+| `/fleet` | Spaceflight Fleet (166 entries × 11 categories — `launcher`, `crewed-spacecraft`, `cargo-spacecraft`, `station`, `rover`, `lander`, `orbiter`, `observatory`, `space-suit`, `constellation`, `launch-site` — with bidirectional cross-links) | `src/routes/fleet/+page.svelte` |
 
 Plus three read-only pages: `/credits` (per-image provenance + text-source attributions), `/library` (bill-of-links across the entire app — every outbound LEARN link with provenance), and `/posters` (Orrery art-print gallery — 11 hand-authored SVG posters across three style families: JPL travel-poster, era-matched, indie-pop).
 

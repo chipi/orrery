@@ -16,6 +16,7 @@
   const MOON_CONFIG: SurfaceSceneConfig = {
     planet: 'moon',
     textureUrl: `${base}/textures/2k_moon.jpg`,
+    textureUrl4k: `${base}/textures/4k_moon.jpg`,
     // Real Moon radius — feeds altitude HUD km/unit ratio.
     radiusKm: 1737.4,
     // Moon's near-side tidal-lock indicator (Mars rotates freely; no

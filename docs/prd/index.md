@@ -24,3 +24,4 @@
 | PRD-019 | Immersive Mode — WebXR (Android) + ARKit (iPhone wrapped) + Exhibit Mode | Draft v0.4 | all audiences (capstone feature) |
 | PRD-020 | Launches Calendar — upcoming + historic global launches on `/missions` | Accepted (v0.7) | curious learner, STEM student, space enthusiast, educator/journalist |
 | PRD-021 | Surface texture LOD — sphere sharpness at mid-zoom on `/mars`, `/moon`, `/earth` | Draft | curious learner, science writer, educator |
+| PRD-022 | Tier-3 panorama as spatial-context exhibit — honest source, captions, annotations, multi-pano | Draft | curious learner, educator, mission-history reader |

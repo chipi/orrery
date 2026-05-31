@@ -38,6 +38,7 @@
   import PanoramaCycler from '$lib/components/PanoramaCycler.svelte';
   import PanoramaCrossLink from '$lib/components/PanoramaCrossLink.svelte';
   import PanoramaFullscreenToggle from '$lib/components/PanoramaFullscreenToggle.svelte';
+  import PanoramaAutoTour from '$lib/components/PanoramaAutoTour.svelte';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
   import View3dControls from '$lib/components/View3dControls.svelte';
@@ -215,6 +216,12 @@
   // the per-frame yaw/pitch readout in animate(). Reset implicitly on
   // panorama exit (next entry's first frame writes fresh).
   let panoramaUrlLastWriteMs = 0;
+  // Phase 3C — function pointer the AutoTour component calls to pan
+  // the camera to a target yaw/pitch. Assigned inside onMount once
+  // the fly-tween state exists. Reduced-motion path snaps instantly.
+  let panAutoTourTo: (yawDeg: number, pitchDeg: number, reducedMotion: boolean) => void = $state(
+    () => {},
+  );
 
   function resolveSetEntry(
     set: PanoramaSetEntry[] | undefined,
@@ -1139,6 +1146,34 @@
     let flyToP = 0;
     let flyToT = 0;
     let flyToR = 0;
+
+    // Phase 3C — Auto-tour camera pan implementation. Reuses the
+    // existing fly-tween primitive (ease-out cubic over FLY_DURATION_MS).
+    // Keeps camR fixed (we're inside the panorama at 0.5); only camP +
+    // camT change. Reduced-motion users get an instant snap.
+    panAutoTourTo = (yawDeg, pitchDeg, reducedMotion) => {
+      const targetT = (yawDeg * Math.PI) / 180;
+      const targetP = Math.PI / 2 - (pitchDeg * Math.PI) / 180;
+      if (reducedMotion) {
+        camT = targetT;
+        camP = targetP;
+        flyActive = false;
+        updateCam();
+        return;
+      }
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      // Shortest-path yaw interpolation — same wrap math as faceCameraAtSite.
+      let to = targetT;
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      flyToP = targetP;
+      flyToR = camR; // keep panorama distance fixed
+      flyStart = performance.now();
+      flyActive = true;
+    };
 
     const updateCam = () => {
       camera.position.set(
@@ -2489,6 +2524,24 @@ sample      ${debugInfo.projectedPxSample}`}
        shortcut while panorama active. Falls back gracefully when
        the browser doesn't support requestFullscreen(). -->
   <PanoramaFullscreenToggle active={panoramaActive} />
+
+  <!-- Auto-tour guided mode (PRD-022 / ADR-074, #286 Phase 3C).
+       'Play tour' pans through panorama annotations one-by-one,
+       opening the caption card at each stop. Reduced-motion users
+       get a manual stepper instead. Hidden when < 2 annotations. -->
+  <PanoramaAutoTour
+    active={panoramaActive}
+    annotations={currentPanoramaEntry?.annotations ?? selected?.panorama_annotations ?? []}
+    onStep={(ann, reducedMotion) => {
+      panAutoTourTo(ann.yaw_deg, ann.pitch_deg, reducedMotion);
+      panoramaActiveAnnotation = ann;
+    }}
+    onStop={() => {
+      // Tour finished or stopped — leave the last caption card open
+      // unless user dismisses it explicitly. No state cleanup beyond
+      // what the AutoTour component already does.
+    }}
+  />
 
   <!-- Nation legend overlay. The 2D view paints this directly into
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js

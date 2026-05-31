@@ -190,6 +190,12 @@ export function buildPanoramaProvenanceEntry(input: {
   attribution: string;
   license: 'PD-NASA' | 'CNSA-EDU' | 'CC-BY-4.0';
   caption: string;
+  /** Output equirectangular dimensions (PRD-022 / ADR-074, #286 Phase
+   *  1A). Defaults to 4096×2048 — marquee showcase sites pass 8192×4096
+   *  for the higher-resolution master. Recorded in `modifications` so
+   *  the provenance manifest stays accurate. */
+  outWidth?: number;
+  outHeight?: number;
 }): ProvenanceEntry {
   const id = createHash('sha256').update(input.publicPath).digest('hex').slice(0, 16);
   const licenseUrl =
@@ -228,7 +234,10 @@ export function buildPanoramaProvenanceEntry(input: {
     license_short: input.license,
     license_url: licenseUrl,
     license_rationale: licenseRationale,
-    modifications: ['padded-to-4096x2048-equirectangular', 'reencoded-jpeg-q88'],
+    modifications: [
+      `padded-to-${input.outWidth ?? 4096}x${input.outHeight ?? 2048}-equirectangular`,
+      'reencoded-jpeg-q88',
+    ],
     revid: null,
     pageid: null,
     nasa_id: input.license === 'PD-NASA' ? input.sourceLabel : null,

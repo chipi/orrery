@@ -70696,6 +70696,48 @@
       "pageid": 1254946,
       "nasa_id": null,
       "fetched_at": "2026-05-31T05:52:52.790Z"
+    },
+    {
+      "id": "a06aad9410579070",
+      "path": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama",
+      "author": "NASA / JPL-Caltech / MSSS",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46054_PIA24626-Curiositys_360-degree_View_Atop_Mont_Mercou.png",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46054_PIA24626-Curiositys_360-degree_View_Atop_Mont_Mercou.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-8192x4096-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA24626",
+      "fetched_at": "2026-05-31T14:13:40.287Z"
+    },
+    {
+      "id": "b5c9dd0d82e67923",
+      "path": "/images/hotspots/mars/perseverance/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Perseverance Mastcam-Z first 360° panorama, Jezero Crater, sol 3 (Feb 21, 2021)",
+      "author": "NASA / JPL-Caltech / ASU / MSSS",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/deepzooms/2/5/25640_PIA2464-Perseverance_Sol3_Mastcam-Z_panorama.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/resources/deepzooms/2/5/25640_PIA2464-Perseverance_Sol3_Mastcam-Z_panorama.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-8192x4096-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA2464",
+      "fetched_at": "2026-05-31T14:13:45.453Z"
     }
   ]
 }

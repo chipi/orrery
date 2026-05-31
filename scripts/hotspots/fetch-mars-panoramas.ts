@@ -65,6 +65,13 @@ interface MarsPanoramaConfig {
    *  the cutouts read as conspicuous holes if pasted as-is.
    *  Set to 0 to disable. */
   recolourBlackThreshold?: number;
+  /** Override output equirectangular size for hi-res "showcase" sites
+   *  (PRD-022 / ADR-074, #286 Phase 1A). Defaults to 4096×2048 when
+   *  omitted. Marquee sites (Curiosity, Perseverance) ship at 8192×4096
+   *  for the 4× pixel-density jump that closes the gap with NASA's
+   *  interactive viewers. */
+  outWidth?: number;
+  outHeight?: number;
 }
 
 /**
@@ -103,6 +110,10 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     srcElevationTopDeg: 35,
     srcElevationBottomDeg: 58,
     caption: 'Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama',
+    // Marquee showcase site (#286 Phase 1A) — ship at 8K equirectangular
+    // for the 4× pixel-density jump.
+    outWidth: 8192,
+    outHeight: 4096,
   },
   {
     siteId: 'perseverance',
@@ -123,6 +134,9 @@ const PANORAMAS: MarsPanoramaConfig[] = [
     srcElevationBottomDeg: 62,
     recolourBlackThreshold: 85,
     caption: 'Perseverance Mastcam-Z first 360° panorama, Jezero Crater, sol 3 (Feb 21, 2021)',
+    // Marquee showcase site (#286 Phase 1A) — ship at 8K equirectangular.
+    outWidth: 8192,
+    outHeight: 4096,
   },
   {
     siteId: 'spirit',
@@ -338,6 +352,10 @@ async function processOne(
       // 60 picks up #000-#141414 — well below even Curiosity's
       // deepest natural shadows (~#3a2a20).
       recolourBlackThreshold: cfg.recolourBlackThreshold ?? 60,
+      // Per-site output dimensions — marquee showcase sites ship at
+      // 8K (PRD-022 / ADR-074, #286 Phase 1A); rest default to 4K.
+      outWidth: cfg.outWidth,
+      outHeight: cfg.outHeight,
     });
     await fs.mkdir(path.dirname(outPath), { recursive: true });
     await fs.writeFile(outPath, padded);
@@ -384,6 +402,8 @@ export async function fetchMarsPanoramas(args: Args): Promise<void> {
           attribution: cfg.attribution,
           license: cfg.license,
           caption: cfg.caption,
+          outWidth: cfg.outWidth,
+          outHeight: cfg.outHeight,
         }),
       );
     } else if (result.status === 'skipped') {

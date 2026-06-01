@@ -237,6 +237,16 @@ export interface SurfaceSceneConfig {
    * (this commit) only adds the type contract.
    */
   earthOrbitalLayers?: EarthOrbitalLayersConfig;
+
+  /**
+   * Suppress the 2D toggle + 2D canvas drawer entirely (#290 Slice 7).
+   * Set on /earth where the legacy top-down concentric-rings 2D view
+   * doesn't make sense after unification (the equirectangular surface
+   * 2D would lose orbital context, and re-implementing the orbital
+   * top-down would duplicate the 3D view's information). /moon and
+   * /mars omit this; their 2D fallbacks stay.
+   */
+  disable2D?: boolean;
 }
 
 /**

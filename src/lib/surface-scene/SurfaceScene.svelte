@@ -2506,35 +2506,62 @@
           }
         }
 
-        // TierContext info card (PRD-014 §v0.7.x). When any hotspot
-        // is at Tier 2+, surface attribution for the layers currently
-        // composed on its disc. Same pattern as /mars.
+        // TierContext info card (PRD-014 §v0.7.x). Surfaces
+        // attribution for the layers currently composed on the
+        // patch. Trigger condition changed 2026-06-01: show the
+        // card whenever EITHER the regional ramp OR the detail
+        // ramp has anything visible, not only when the dispatcher
+        // has promoted a hotspot to Tier 2 (which fires at
+        // ~camR=38). Before this, the CTX context layer would
+        // fade in at camR 50-38 with no on-screen explanation of
+        // what the user was looking at (image 18 feedback).
         let bestH: { siteId: string } | null = null;
         let bestTier = 0;
         for (const h of hotspots) {
-          if (h.currentTier >= 2 && h.currentTier > bestTier) {
+          if (h.currentTier > bestTier) {
             bestTier = h.currentTier;
             bestH = { siteId: h.siteId };
           }
         }
-        if (bestH) {
+        // Fallback to the selected site when no hotspot is promoted
+        // yet — needed for the wider-zoom CTX window.
+        if (!bestH && selected) {
+          bestH = { siteId: selected.id };
+        }
+        const anyLayerVisible = regionalOpacity > 0.01 || detailOpacity > 0.01;
+        if (bestH && anyLayerVisible) {
           const site = sites.find((s) => s.id === bestH!.siteId);
           if (site) {
             const hasRegional = !!site.hotspot_tier2_regional_source;
             const hasDetail = !!site.hotspot_tier2_source;
             const agencyChip = nationChipFor(site);
             const layers: TierLayer[] = [];
-            // Regional layer — undefined on Moon today; Phase 2 with
-            // Chang'e 2 mosaic will fill this. The block is wired so
-            // the moment a regional source lands, the row appears.
+            // Regional layer — honest per-planet attribution. Mars
+            // patches are 2048² JPEG crops of MRO CTX (Context
+            // Camera) mosaics: ~5-6 m/px native, served over a
+            // ~30 km square = ~15 m/px effective. Moon will fill
+            // with Chang'e 2 / LROC WAC when Phase 2 lands; until
+            // then it stays as a "placeholder" labelled row so
+            // the disagreement is visible.
             if (hasRegional) {
-              layers.push({
-                layerLabel: 'Regional view',
-                sourceTitle: 'Regional mosaic',
-                sourceAuthor: 'TBD — placeholder until Phase 2 lands',
-                resolutionText: 'TBD',
-                licenseShort: 'TBD',
-              });
+              if (config.planet === 'mars') {
+                layers.push({
+                  layerLabel: 'Regional view',
+                  sourceTitle: 'MRO CTX context mosaic',
+                  sourceAuthor: 'NASA / JPL / MSSS / Murray Lab',
+                  resolutionText: '~15 m/px (from CTX ~5 m/px native)',
+                  sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
+                  licenseShort: 'PD-NASA',
+                });
+              } else {
+                layers.push({
+                  layerLabel: 'Regional view',
+                  sourceTitle: 'Regional mosaic',
+                  sourceAuthor: 'TBD — placeholder until Phase 2 lands',
+                  resolutionText: 'TBD',
+                  licenseShort: 'TBD',
+                });
+              }
             }
             if (hasDetail) {
               // Per-planet detail-tier source attribution. Until 2026-06
@@ -2726,10 +2753,15 @@
     class:hidden={view !== '3d'}
     class:flat-patch-fading={flatPatchPhase !== 'hidden'}
   ></div>
+  <!-- 2D fallback canvas — equirectangular for /mars, lunar-polar-discs
+       for /moon. On /earth (config.disable2D) the toggle button + view
+       state are suppressed so the canvas stays permanently hidden;
+       it's still mounted so the 2D-setup code in onMount can read
+       canvas2d without conditional plumbing. -->
   <canvas
     class="layer"
     bind:this={canvas2d}
-    class:hidden={view !== '2d'}
+    class:hidden={view !== '2d' || config.disable2D}
     aria-label={m.moon_canvas_label()}
     data-sites-count={sites.length}
   ></canvas>
@@ -2737,11 +2769,13 @@
   <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4). -->
   <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
-      <ViewToggleButton
-        is2d={view === '2d'}
-        label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-        onToggle={toggleView}
-      />
+      {#if !config.disable2D}
+        <ViewToggleButton
+          is2d={view === '2d'}
+          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+          onToggle={toggleView}
+        />
+      {/if}
       {#if view === '3d'}
         <View3dControls
           onReset={() => resetCamera()}

@@ -1,10 +1,14 @@
 import { test, expect } from '@playwright/test';
 
 /**
- * /earth — Earth & satellites in 3D + 2D top-down view.
+ * /earth — unified surface + orbital scene (#290 Slice 7).
  *
- * Mirrors the /moon dual-mode pattern (post-v0.1.0 redesign): Three.js
- * scene by default with a 2D toggle button.
+ * Pre-#290 the route had a 2D top-down concentric-rings fallback view.
+ * That mode is gone — /earth is now 3D-only (config.disable2D). Tests
+ * that exercised the 2D-mode satellite-rendering path have been
+ * dropped along with it; tests that opened the satellite panel via 2D
+ * canvas clicks now use the `?object=iss` deep-link which mounts the
+ * panel directly via the SurfaceScene wiring.
  */
 
 test.describe('/earth', () => {
@@ -20,200 +24,39 @@ test.describe('/earth', () => {
     expect(dim.h).toBeGreaterThan(0);
   });
 
-  test('2D toggle reveals a top-down concentric-ring view', async ({ page, isMobile }) => {
-    await page.goto('/earth');
-    await page.waitForLoadState('networkidle');
-    // Mobile-chromium: tap, not click, to match the real touch event and
-    // avoid the Svelte onclick binding race (same fix as :204).
-    // Use test-id for the action target — the label flips from 2D→3D
-    // on click, and getByRole('button', /2d/) can resolve post-flip
-    // under CI load (same race class as the /fly #222 fix).
-    const toggle = page.locator('[data-testid="mode-toggle"]');
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    await expect(page.getByRole('button', { name: /^3d$/i })).toBeVisible({
-      timeout: isMobile ? 10_000 : 5_000,
-    });
-    const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible({ timeout: 5_000 });
-    // Wait until the 2D map has painted at least one frame (Earth disc
-    // is the most reliable non-bg signal — sits dead-centre). Mobile
-    // CI is 3-5× slower than desktop; the 7 s budget that worked on
-    // desktop regularly times out on mobile-chromium.
-    await page.waitForFunction(
-      () => {
-        const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
-        if (!c || c.width === 0 || c.height === 0) return false;
-        const ctx = c.getContext('2d');
-        if (!ctx) return false;
-        const data = ctx.getImageData(
-          Math.floor(c.width * 0.5),
-          Math.floor(c.height * 0.5),
-          5,
-          5,
-        ).data;
-        for (let i = 0; i < data.length; i += 4) {
-          const isBg =
-            Math.abs(data[i] - 4) < 6 &&
-            Math.abs(data[i + 1] - 4) < 6 &&
-            Math.abs(data[i + 2] - 12) < 8;
-          if (!isBg) return true;
-        }
-        return false;
-      },
-      { timeout: isMobile ? 20_000 : 7_000 },
-    );
-  });
-
-  test('clicking a satellite in 2D mode opens the panel', async ({ page, isMobile }) => {
-    await page.goto('/earth');
-    await page.waitForLoadState('networkidle');
-    const toggle2d = page.getByRole('button', { name: /^2d$/i });
-    await expect(toggle2d).toBeVisible();
-    if (isMobile) {
-      await toggle2d.tap();
-    } else {
-      await toggle2d.click();
-    }
-    const flat = page.locator('canvas.layer');
-    await expect(flat).toBeVisible();
-    // Deterministic wait: the canvas exposes data-objects-count once
-    // earth-objects.json has loaded. Mobile-chromium on CI is 3-5×
-    // slower than desktop; the per-object filter + render loop
-    // regularly exceeds the original 10s budget there.
-    await expect(flat).not.toHaveAttribute('data-objects-count', '0', {
-      timeout: isMobile ? 30_000 : 10_000,
-    });
-    // Sweep the canvas in a grid until a click opens the right-panel.
-    // Now that satellites occupy inclined orbits (v0.x.x), their 2D
-    // projection isn't on a clean ring at phase=i*2.4 anymore —
-    // hardcoding ISS's old position no longer hits.
-    const box = await flat.boundingBox();
-    expect(box).not.toBeNull();
-    if (!box) return;
-    const cx = box.x + box.width / 2;
-    const cy = box.y + box.height / 2;
-    const panel = page.locator('aside.panel');
-    let opened = false;
-    outer: for (let r = 60; r < Math.min(box.width, box.height) / 2 - 20; r += 12) {
-      for (let theta = 0; theta < Math.PI * 2; theta += Math.PI / 12) {
-        await page.mouse.click(cx + Math.cos(theta) * r, cy + Math.sin(theta) * r);
-        // Give the click 150 ms to register before declaring miss.
-        // The 2D canvas's pickAt fires on mousedown synchronously, but
-        // Svelte's reactive panel-mount needs a microtask + paint frame
-        // to flush. The bare `isVisible()` returned `false` immediately
-        // on mobile-chromium even when a satellite was hit, marching
-        // past the right click. Issue #222 (was flaky retry-pass in
-        // v0.6.2 rehearsal). waitFor short-circuits as soon as the
-        // panel actually appears, so the happy path stays fast.
-        try {
-          await panel.waitFor({ state: 'visible', timeout: 150 });
-          opened = true;
-          break outer;
-        } catch {
-          // sweep continues
-        }
-      }
-    }
-    expect(opened, 'expected at least one click within the satellite cluster to open a panel').toBe(
-      true,
-    );
-  });
-
   test('no console errors on load', async ({ page }) => {
     const errors: string[] = [];
     page.on('console', (msg) => msg.type() === 'error' && errors.push(msg.text()));
     page.on('pageerror', (err) => errors.push(err.message));
     await page.goto('/earth');
-    // Wait for objects to load before sampling errors — earlier we
-    // used waitForTimeout(800) which raced data fetch on slow CI.
-    const flat = page.locator('canvas.layer');
-    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
+    // Wait for the scene to settle — networkidle is a cheap proxy for
+    // "all the async asset / object fetches resolved" without
+    // hardcoding the specific load chain.
+    await page.waitForLoadState('networkidle');
     expect(errors, errors.join('\n')).toEqual([]);
   });
 
   /* ── v0.1.10 — GALLERY + LEARN tabs on the object detail panel ── */
-  // Compute ISS's 2D position from the same hash + incl math used by
-  // the renderer (inclined orbits — v0.x.x — moved satellites off
-  // the equatorial ring so a fixed (cx + R, cy) click no longer
-  // hits ISS reliably).
-  function hashToAngle(s: string): number {
-    let h = 0;
-    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-    return ((h % 360) / 360) * Math.PI * 2;
-  }
-
-  async function openIssPanel(page: import('@playwright/test').Page, isMobile = false) {
-    await page.goto('/earth');
-    // Mobile-chromium: bare click() races Svelte's onclick binding —
-    // the click lands before the handler is wired, the 2D mode never
-    // engages, and the canvas stays hidden, hanging the waitForFunction
-    // below for the entire test budget. waitForLoadState('networkidle')
-    // ensures hydration is complete; tap() matches a real touch event.
-    // Same pattern as explore.spec.ts:enterTwoDMode + moon.spec.ts:enterMoonTwoDMode.
-    await page.waitForLoadState('networkidle');
-    const toggle = page.getByRole('button', { name: /^2d$/i });
-    if (isMobile) {
-      await toggle.tap();
-    } else {
-      await toggle.click();
-    }
-    // Both `class:hidden` (display:none) and `data-objects-count` are
-    // bound on `canvas.layer`. The objects-count attribute can flip
-    // non-zero while the canvas is still hidden behind the 2D toggle,
-    // so the count-only wait races on mobile and boundingBox() returns
-    // null. Wait for BOTH: count non-zero AND canvas laid out with
-    // non-zero pixel dims (mirrors /explore's enterTwoDMode helper).
-    const flat = page.locator('canvas.layer');
-    await expect(flat).not.toHaveAttribute('data-objects-count', '0', { timeout: 10_000 });
-    await page.waitForFunction(
-      () => {
-        const c = document.querySelector('canvas.layer') as HTMLCanvasElement | null;
-        return !!(c && c.width > 0 && c.height > 0 && c.offsetParent !== null);
-      },
-      { timeout: 10_000 },
-    );
-    const box = await flat.boundingBox();
-    if (!box) throw new Error('canvas not found');
-    // ISS: id="iss", inclination=51.64°, index 0 → phase=0.
-    // 2D = projection onto equatorial plane, then node-rotation.
-    const inclRad = (51.64 * Math.PI) / 180;
-    const nodeRad = hashToAngle('iss');
-    const pxPerUnit = Math.min(box.width, box.height) / 70;
-    const orbitR = 10.9 * pxPerUnit;
-    const phase = 0;
-    const lx = Math.cos(phase) * orbitR;
-    const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
-    const cn = Math.cos(nodeRad);
-    const sn = Math.sin(nodeRad);
-    const issX = box.x + box.width / 2 + (lx * cn + lz * sn);
-    const issY = box.y + box.height / 2 - (-lx * sn + lz * cn);
-    await page.mouse.click(issX, issY);
-    const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible({ timeout: 5_000 });
-    return panel;
-  }
 
   test('ISS panel exposes GALLERY tab with thumbnails (v0.1.10)', async ({ page, isMobile }) => {
-    // test.slow() ensures even slow CI runs fit; openIssPanel itself
-    // now defends against the 2D-toggle binding race on mobile.
-    test.slow(isMobile, 'mobile-chromium openIssPanel mount ceiling > global 30 s budget');
-    const panel = await openIssPanel(page, isMobile);
+    test.slow(isMobile, 'mobile-chromium panel-mount + thumbnail manifest > global 30 s budget');
+    // ?object=<id> deep-links straight into the EarthObjectPanel —
+    // SurfaceScene's Slice 6b wiring reads the param, finds the
+    // matching EarthObject, and sets selectedSat. No 2D-canvas dance.
+    await page.goto('/earth?object=iss');
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
-    // Thumbnail manifest fetch + image load can exceed 5 s on
-    // mobile-chromium under CI load (was flaky retry-pass in v0.6.2;
-    // issue #222). 10 s gives 2× margin without masking a regression.
     await expect(panel.locator('.gallery-thumb').first()).toBeVisible({ timeout: 10_000 });
   });
 
   test('ISS panel LEARN tab shows tiered links (v0.1.10)', async ({ page, isMobile }) => {
-    test.slow(isMobile, 'mobile-chromium openIssPanel mount ceiling > global 30 s budget');
-    const panel = await openIssPanel(page, isMobile);
+    test.slow(isMobile, 'mobile-chromium panel-mount > global 30 s budget');
+    await page.goto('/earth?object=iss');
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
     await page.getByRole('tab', { name: /^LEARN$/ }).click();
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();

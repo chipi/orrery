@@ -75,6 +75,11 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // palette (consolidated intensity 0.8 lives inside SurfaceScene
     // per ADR-072 §Drift 5).
     ambientColor: 0x6688aa,
+    // /earth is 3D-only post-#290 — the legacy concentric-rings 2D
+    // view is gone, and the equirectangular surface 2D would lose all
+    // orbital context. Suppresses both the toggle button and the 2D
+    // canvas.
+    disable2D: true,
     // #290 Slice 7 — orbital stack composed onto the surface scene.
     // Mirrors EarthOrbitalScene's exact construction values so the
     // unified route renders identically to the legacy orbital view

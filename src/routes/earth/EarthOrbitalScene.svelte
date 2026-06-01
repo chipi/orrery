@@ -25,6 +25,10 @@
     buildKarmanLineShell,
     buildOzoneOverlay,
   } from '$lib/surface-scene/earth-atmosphere-layer';
+  import {
+    buildMoonGhost,
+    buildOrbitRings,
+  } from '$lib/surface-scene/earth-orbital-rings-layer';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -293,40 +297,35 @@
     scene.add(ozone.south);
     scene.add(ozone.north);
 
-    // Moon — small textured sphere at the Moon-orbit radius. Click goes to /moon.
-    const moonMap = textureLoader.load(`${base}/textures/2k_moon.jpg`);
-    const moonMesh = new THREE.Mesh(
-      new THREE.SphereGeometry(2.0, 32, 32),
-      new THREE.MeshPhongMaterial({ map: moonMap, color: 0xffffff, shininess: 4 }),
-    );
-    const moonR = altToOrbitRadius(MOON_DISTANCE_KM);
-    moonMesh.position.set(moonR, 0, 0);
-    moonMesh.userData = { isMoon: true };
+    // Moon ghost + orbit rings — extracted to $lib/surface-scene/
+    // earth-orbital-rings-layer (#290 Slice 2).
+    const moonGhost = buildMoonGhost({
+      textureUrl: `${base}/textures/2k_moon.jpg`,
+      radiusUnits: 2.0,
+      distanceKm: MOON_DISTANCE_KM,
+      textureLoader,
+    });
+    const moonMesh = moonGhost.mesh;
+    const moonR = moonGhost.moonR;
     scene.add(moonMesh);
 
-    // Orbit rings — one per regime, drawn as a faint torus at the
-    // representative altitude. Inclination not modelled in v1; the
-    // ring sits in the equatorial plane.
-    function buildOrbitRings() {
-      // Find one representative altitude per regime present in the data.
+    // Orbit rings deferred to after-data-load (existing pattern —
+    // depends on which regimes are present in `objects`).
+    let orbitRingsHandle: ReturnType<typeof buildOrbitRings> | null = null;
+    function buildOrbitRingsFromObjects() {
       const repAlt: Record<string, number> = {};
       for (const o of objects) {
         const alt = o.altitude_km ?? o.earth_distance_km;
         if (!(o.regime in repAlt)) repAlt[o.regime] = alt;
       }
-      for (const [regime, alt] of Object.entries(repAlt)) {
-        const r = altToOrbitRadius(alt);
-        const ring = new THREE.Mesh(
-          new THREE.TorusGeometry(r, 0.04, 6, 128),
-          new THREE.MeshBasicMaterial({
-            color: REGIME_COLORS[regime] ?? 0x666666,
-            transparent: true,
-            opacity: 0.35,
-          }),
-        );
-        ring.rotation.x = Math.PI / 2; // equatorial
-        scene.add(ring);
-      }
+      const regimes = Object.entries(repAlt).map(([regime, altitude_km]) => ({
+        regime,
+        altitude_km,
+      }));
+      orbitRingsHandle?.dispose();
+      scene.remove(orbitRingsHandle?.group ?? new THREE.Group());
+      orbitRingsHandle = buildOrbitRings({ regimeColors: REGIME_COLORS, regimes });
+      scene.add(orbitRingsHandle.group);
     }
 
     type SatObj = {
@@ -864,7 +863,7 @@
       reducedMotion = r;
     });
 
-    buildOrbitRings(); // empty first paint draws nothing; second pass after data load adds rings
+    buildOrbitRingsFromObjects(); // empty first paint draws nothing; rebuilt after data loads
 
     const animate = (now: number) => {
       rafId = requestAnimationFrame(animate);
@@ -881,6 +880,7 @@
         rebuildSats();
         // Also rebuild orbit rings now that we know which regimes exist.
         // (Cheap — at most 6 rings.)
+        buildOrbitRingsFromObjects();
         prevSatLen = objects.length;
       }
 
@@ -947,6 +947,8 @@
       stopReducedMotionWatch();
       karmanLine.dispose();
       ozone.dispose();
+      moonGhost.dispose();
+      orbitRingsHandle?.dispose();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);

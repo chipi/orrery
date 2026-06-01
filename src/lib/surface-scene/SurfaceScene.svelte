@@ -155,6 +155,16 @@
   // TRAVERSES chip — visible only when route passes loadTraverses
   // (rover-path data exists for this body). Defaults on.
   let layerTraverses = $state(true);
+
+  // Earth satellite-category chips (#290 Slice 6). Only surfaced when
+  // config.earthOrbitalLayers.satellites is configured. Sub-gating on
+  // top of the master layerOrbiters toggle — each category can be hid
+  // independently. Defaults come from the route config.
+  let layerStations = $state(true);
+  let layerObservatories = $state(true);
+  let layerConstellations = $state(true);
+  let layerComsats = $state(true);
+  let layerMoonOrbiters = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
@@ -167,6 +177,14 @@
   // prop in onMount. Empty record when the route doesn't pass that prop
   // (Moon today). Keyed by rover_id.
   let traverses: Record<string, Traverse> = $state({});
+
+  // Earth-orbital handles (#290 Slice 6) — populated async inside
+  // onMount once eol.satellites.loadObjects resolves. The animate loop
+  // reads these to apply chip-row visibility per frame. Each SatObj
+  // carries its category so the per-frame loop can sub-gate against
+  // the relevant layer{Stations,Observatories,...} flag.
+  let earthSats: Array<import('$lib/surface-scene/earth-satellite-layer').SatObj> = [];
+  let earthRingsGroup: THREE.Group | null = null;
 
   // Flat-patch view state (ADR-062 / #283 Slice 4). Four-phase machine
   // drives the 600 ms ease-in-out cross-fade between sphere and flat
@@ -648,20 +666,37 @@
               });
               rings.group.visible = ringsCfg.visibleByDefault;
               scene.add(rings.group);
+              earthRingsGroup = rings.group;
               earthLayerHandles.push({
                 dispose: () => {
                   rings.dispose();
                   scene.remove(rings.group);
+                  earthRingsGroup = null;
                 },
               });
             }
+
+            // Apply route-provided per-category defaults before the
+            // animate loop's first sub-gating pass.
+            const defaults = satCfg.categoryDefaultVisible;
+            layerStations = defaults.station;
+            layerObservatories = defaults.observatory;
+            layerConstellations = defaults.constellation;
+            layerComsats = defaults.comsat;
+            layerMoonOrbiters = defaults.moonOrbiter;
 
             const satLayer = buildSatelliteLayer({
               scene,
               objects,
               moonR: earthMoonR,
             });
-            earthLayerHandles.push(satLayer);
+            earthSats = satLayer.sats;
+            earthLayerHandles.push({
+              dispose: () => {
+                satLayer.dispose();
+                earthSats = [];
+              },
+            });
           })
           .catch((err) => {
             console.error('SurfaceScene: failed to load earth objects', err);
@@ -2105,6 +2140,31 @@
         if (om.halo) om.halo.visible = layerOrbiters && om.siteId === selId;
       }
 
+      // Earth satellites — gated by master layerOrbiters + per-category
+      // chips. Per-spacecraft orbit rings track the master toggle since
+      // the regime rings (earthRingsGroup) carry the layerOrbits chip.
+      // Empty loop on /moon and /mars (earthSats stays []).
+      if (earthSats.length > 0) {
+        for (const s of earthSats) {
+          const catVisible =
+            s.category === 'station'
+              ? layerStations
+              : s.category === 'telescope'
+                ? layerObservatories
+                : s.category === 'constellation'
+                  ? layerConstellations
+                  : s.category === 'comsat'
+                    ? layerComsats
+                    : s.category === 'moon-orbiter'
+                      ? layerMoonOrbiters
+                      : true;
+          const on = layerOrbiters && catVisible;
+          s.group.visible = on;
+          if (s.ringMesh) s.ringMesh.visible = on;
+        }
+      }
+      if (earthRingsGroup) earthRingsGroup.visible = layerOrbits;
+
       // ADR-025: auto-rotate stops when prefers-reduced-motion is set.
       // Drag-to-orbit still works.
       // v0.1.7+: rotation slowed (was 0.05 rad/s) so users have time
@@ -2552,6 +2612,51 @@
                   title: m.mars_layer_tip_traverses(),
                   active: () => layerTraverses,
                   toggle: () => (layerTraverses = !layerTraverses),
+                },
+              ]
+            : []),
+          // Earth-only satellite-category chips (#290 Slice 6). Sub-
+          // gating on top of the master ORBITERS chip — visible only
+          // when earthOrbitalLayers.satellites is configured. Labels
+          // mirror EarthOrbitalScene's existing strings (STATIONS /
+          // OBSERVATORIES are intentional untranslated literals; the
+          // others use the shared ui_layer_* bundle).
+          ...(config.earthOrbitalLayers?.satellites != null
+            ? [
+                {
+                  testid: 'layer-stations',
+                  label: 'STATIONS',
+                  title: m.earth_layer_tip_habitats(),
+                  active: () => layerStations,
+                  toggle: () => (layerStations = !layerStations),
+                },
+                {
+                  testid: 'layer-observatories',
+                  label: 'OBSERVATORIES',
+                  title: m.earth_layer_tip_telescopes(),
+                  active: () => layerObservatories,
+                  toggle: () => (layerObservatories = !layerObservatories),
+                },
+                {
+                  testid: 'layer-constellations',
+                  label: m.ui_layer_constellations(),
+                  title: m.earth_layer_tip_nav(),
+                  active: () => layerConstellations,
+                  toggle: () => (layerConstellations = !layerConstellations),
+                },
+                {
+                  testid: 'layer-comsats',
+                  label: m.ui_layer_comsats(),
+                  title: m.earth_layer_tip_geo(),
+                  active: () => layerComsats,
+                  toggle: () => (layerComsats = !layerComsats),
+                },
+                {
+                  testid: 'layer-moon-orbiters',
+                  label: m.ui_layer_moon_orbiters(),
+                  title: m.earth_layer_tip_lunar(),
+                  active: () => layerMoonOrbiters,
+                  toggle: () => (layerMoonOrbiters = !layerMoonOrbiters),
                 },
               ]
             : []),

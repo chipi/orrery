@@ -1196,6 +1196,15 @@
     // planetMesh + camR + scene; exposed to the route's outer state
     // via the enterPanorama / exitPanorama function pointers.
     let savedCamR = camR;
+    // Visibility snapshot of scene-parented siblings of planetMesh,
+    // captured on panorama enter so we can restore exactly on exit.
+    // planetMesh children (surface site markers, traverses, tidal-
+    // lock overlay) inherit planetMesh.visible so they don't need
+    // tracking. Orbital ring/dot markers + atmosphere shell + atm
+    // ring are scene children and would otherwise float around the
+    // camera inside the panorama skybox (user-reported "I see orbits
+    // in panorama mode").
+    const panoramaHiddenVisibility = new Map<THREE.Object3D, boolean>();
     enterPanorama = (textureUrl: string, siteId: string) => {
       if (panoramaActive) return;
       // PRD-022 / ADR-074 Phase 3B — read deep-link URL state if present.
@@ -1223,6 +1232,23 @@
         }
       }
       planetMesh.visible = false;
+      // Hide scene-parented siblings of planetMesh (orbital markers,
+      // atmosphere shell + ring, any future scene-direct overlay) so
+      // they don't render inside the panorama skybox. Snapshot the
+      // pre-panorama visibility into panoramaHiddenVisibility so
+      // exitPanorama can restore it exactly (e.g. an orbital marker
+      // hidden via the ORBITERS chip stays hidden after exit).
+      panoramaHiddenVisibility.clear();
+      for (const child of scene.children) {
+        if (panoramaSkybox && child === panoramaSkybox.group) continue;
+        if (child === planetAxis) continue;
+        // Lights stay on — they're scene-parented but don't render
+        // geometry. createStarField adds a THREE.Points; we hide that
+        // too since the panorama skybox provides the sky.
+        if (child instanceof THREE.Light) continue;
+        panoramaHiddenVisibility.set(child, child.visible);
+        child.visible = false;
+      }
       savedCamR = camR;
       // Move camera close to origin so the user's drag-to-rotate
       // feels like spinning their head inside the skybox.
@@ -1247,6 +1273,15 @@
       teardownPanoramaSkybox(panoramaSkybox);
       panoramaSkybox = null;
       planetMesh.visible = true;
+      // Restore visibility of every scene-parented object that
+      // enterPanorama hid. Use the snapshot so chip-driven hides
+      // (orbital markers hidden via the ORBITERS chip, atmosphere
+      // hidden because the Science Lens layer wasn't toggled on)
+      // are preserved through the panorama round-trip.
+      for (const [obj, wasVisible] of panoramaHiddenVisibility) {
+        obj.visible = wasVisible;
+      }
+      panoramaHiddenVisibility.clear();
       camR = savedCamR;
       updateCam();
     };

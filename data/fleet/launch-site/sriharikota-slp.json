@@ -1,0 +1,38 @@
+{
+  "id": "sriharikota-slp",
+  "name": "Sriharikota SLP",
+  "category": "launch-site",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "Indian Space Research Organisation",
+  "first_flight": "2005-05-05",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "lat": 13.7361,
+  "lon": 80.2354,
+  "best_known_for": "India's heavy-lift pad — GSLV Mk III / LVM3 to Chandrayaan-3, Mangalyaan, and the upcoming Gaganyaan crew programme",
+  "credit": "Second Launch Pad at Satish Dhawan Space Centre on Sriharikota Island, 13.7°N on India's east coast. First flight PSLV-C6 in May 2005; supports both the PSLV and the heavier LVM3 (formerly GSLV Mk III). Lifted Chandrayaan-2 (July 2019), Chandrayaan-3 (July 2023, the successful lunar lander), and is the planned Gaganyaan crew pad for India's first indigenous human spaceflight. First Launch Pad (FLP, ~1990s) sits next door for smaller manifests. Coordinates from ISRO + DGCA records.",
+  "links": [
+    {
+      "l": "Satish Dhawan Space Centre — ISRO",
+      "u": "https://www.isro.gov.in/SDSC.html",
+      "t": "intro"
+    },
+    {
+      "l": "Satish Dhawan Space Centre — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Satish_Dhawan_Space_Centre",
+      "t": "core"
+    },
+    {
+      "l": "Gaganyaan — ISRO",
+      "u": "https://www.isro.gov.in/Gaganyaan.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "chandrayaan1",
+    "chandrayaan3",
+    "mangalyaan"
+  ]
+}

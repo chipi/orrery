@@ -46,6 +46,10 @@
     {
       "id": "zhurong",
       "role": "spacecraft"
+    },
+    {
+      "id": "wenchang-lc-101",
+      "role": "launch-site"
     }
   ],
   "flight": {

@@ -41,6 +41,10 @@
     {
       "id": "orion",
       "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
     }
   ],
   "flight": {

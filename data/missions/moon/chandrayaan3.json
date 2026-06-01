@@ -45,6 +45,10 @@
     {
       "id": "pragyan",
       "role": "payload"
+    },
+    {
+      "id": "sriharikota-slp",
+      "role": "launch-site"
     }
   ],
   "flight": {

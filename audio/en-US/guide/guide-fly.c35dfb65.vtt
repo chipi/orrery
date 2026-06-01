@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.349
+This view is called a mission arc .
+
+00:00:02.349 --> 00:00:15.573
+You picked a mission — say, the transfer from Earth to Mars — and the screen shows you the actual trajectory the spacecraft will fly, in heliocentric coordinates, against the orbits of the planets.
+
+00:00:15.573 --> 00:00:16.647
+Look at the arc.
+
+00:00:16.647 --> 00:00:18.392
+It is not a straight line.
+
+00:00:18.392 --> 00:00:20.339
+It cannot be a straight line.
+
+00:00:20.339 --> 00:00:30.877
+When the spacecraft leaves Earth, it leaves with Earth's velocity around the Sun — about thirty kilometers per second — plus whatever the rocket adds on top.
+
+00:00:30.877 --> 00:00:36.113
+That total velocity puts the spacecraft on a Keplerian ellipse around the Sun.
+
+00:00:36.113 --> 00:00:39.469
+The ellipse's perihelion sits at Earth's distance.
+
+00:00:39.469 --> 00:00:44.034
+Its aphelion reaches out to wherever it's going — Mars in this case.
+
+00:00:44.034 --> 00:00:44.772
+Press play.
+
+00:00:44.772 --> 00:00:47.524
+Watch the spacecraft slide along the arc.
+
+00:00:47.524 --> 00:00:50.410
+Watch Earth and Mars move at the same time.
+
+00:00:50.410 --> 00:00:58.130
+Notice how the spacecraft's arrival has to be timed against Mars's own motion — Mars is moving while you're flying.
+
+00:00:58.130 --> 00:01:07.259
+If you leave a month too late, Mars will have moved on, and your arc — which is set by physics, not by you — will arrive at empty space.
+
+00:01:07.259 --> 00:01:11.487
+This is what the porkchop plot on the Plan screen is computing.
+
+00:01:11.487 --> 00:01:19.072
+For every possible launch date and arrival date, what does the arc cost in energy, and does the geometry line up?
+
+00:01:19.072 --> 00:01:23.368
+Some missions add a cislunar view — switchable from the toolbar.
+
+00:01:23.368 --> 00:01:26.389
+Cislunar is Earth-centered, not Sun-centered.
+
+00:01:26.389 --> 00:01:38.404
+It shows you what an Apollo crew or an Artemis crew sees: Earth in the middle, the Moon orbiting around, the spacecraft riding a trans-lunar injection arc to lunar orbit and back.
+
+00:01:38.404 --> 00:01:45.788
+Heliocentric arcs and cislunar arcs are two different geometries — same spacecraft, different reference frame.
+
+00:01:45.788 --> 00:01:48.674
+Use whichever makes the mission make sense.
+
+00:01:48.674 --> 00:01:57.736
+Below the view, the timeline lists the mission's phases — parking orbit, trans-Mars injection, cruise, mid-course corrections, arrival.
+
+00:01:57.736 --> 00:01:59.146
+Click any phase chip.
+
+00:01:59.146 --> 00:02:02.502
+The animation jumps to that moment in the mission.
+
+00:02:02.502 --> 00:02:03.106
+Pause it.
+
+00:02:03.106 --> 00:02:04.247
+Read the numbers.
+
+00:02:04.247 --> 00:02:06.865
+Restart and watch the next phase begin.
+
+00:02:06.865 --> 00:02:11.496
+Every mission you can fly here actually flew, or is scheduled to fly.
+
+00:02:11.496 --> 00:02:12.570
+The arc is real.
+
+00:02:12.570 --> 00:02:13.779
+The clock is real.
+
+00:02:13.779 --> 00:02:20.424
+Only the speed has been adjusted, so a seven-month transfer fits on your screen in seventy seconds.
+

@@ -209,5 +209,42 @@
       -2.27,
       -5.225
     ]
+  ],
+  "stops": [
+    {
+      "sol": 56,
+      "lat": -1.96236,
+      "lon": -5.52157,
+      "label": "Endurance Crater",
+      "kind": "feature"
+    },
+    {
+      "sol": 1232,
+      "lat": -2.01669,
+      "lon": -5.46084,
+      "label": "Erebus Crater",
+      "kind": "feature"
+    },
+    {
+      "sol": 1820,
+      "lat": -2.06171,
+      "lon": -5.41305,
+      "label": "Victoria Crater",
+      "kind": "panorama"
+    },
+    {
+      "sol": 3010,
+      "lat": -2.14493,
+      "lon": -5.35133,
+      "label": "Endeavour Crater rim arrival",
+      "kind": "feature"
+    },
+    {
+      "sol": 4500,
+      "lat": -2.23327,
+      "lon": -5.26031,
+      "label": "Marathon Valley",
+      "kind": "feature"
+    }
   ]
 }

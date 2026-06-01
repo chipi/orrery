@@ -1,0 +1,155 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.603
+This grid is the Spaceflight Fleet.
+
+00:00:02.603 --> 00:00:16.587
+One hundred thirty-seven hardware entries — every rocket, every crewed spacecraft, every rover, every space station, every observatory, every cargo vehicle ever flown or seriously planned.
+
+00:00:16.587 --> 00:00:21.272
+The catalogue is organized into nine categories along the left.
+
+00:00:21.272 --> 00:00:22.016
+Launchers.
+
+00:00:22.016 --> 00:00:23.355
+Crewed spacecraft.
+
+00:00:23.355 --> 00:00:24.619
+Cargo spacecraft.
+
+00:00:24.619 --> 00:00:25.289
+Stations.
+
+00:00:25.289 --> 00:00:25.810
+Rovers.
+
+00:00:25.810 --> 00:00:26.405
+Landers.
+
+00:00:26.405 --> 00:00:27.074
+Orbiters.
+
+00:00:27.074 --> 00:00:28.115
+Observatories.
+
+00:00:28.115 --> 00:00:29.380
+Concept vehicles.
+
+00:00:29.380 --> 00:00:32.206
+Click any category to filter the grid.
+
+00:00:32.206 --> 00:00:33.842
+Try crewed spacecraft.
+
+00:00:33.842 --> 00:00:40.834
+You'll see Vostok at the top — Yuri Gagarin's vehicle, the first time a human flew into space.
+
+00:00:40.834 --> 00:00:41.801
+Then Voskhod.
+
+00:00:41.801 --> 00:00:42.396
+Mercury.
+
+00:00:42.396 --> 00:00:42.917
+Gemini.
+
+00:00:42.917 --> 00:00:43.735
+Apollo CSM.
+
+00:00:43.735 --> 00:00:47.974
+Soyuz, in its many generations — Seven K, T, TM, TMA, MS.
+
+00:00:47.974 --> 00:00:53.404
+Then Shuttle Orbiter, Shenzhou, Crew Dragon, Starliner, Orion, Gaganyaan.
+
+00:00:53.404 --> 00:00:58.611
+Six decades of human spaceflight engineering, lined up across one row.
+
+00:00:58.611 --> 00:01:02.478
+Each Soyuz generation distinguishable from the last.
+
+00:01:02.478 --> 00:01:06.644
+Click any card to read what changed between generations.
+
+00:01:06.644 --> 00:01:07.759
+Click Saturn V.
+
+00:01:07.759 --> 00:01:16.536
+The right panel opens with the spacecraft's anatomy — every stage, every engine, drawn as a hand-authored SVG diagram.
+
+00:01:16.536 --> 00:01:25.982
+The flights tab lists thirteen Apollo missions Saturn V launched, with every crew name, every payload, every mission's outcome.
+
+00:01:25.982 --> 00:01:33.866
+The links tab points to engineering reports, oral histories, and the Marshall Space Flight Center archive.
+
+00:01:33.866 --> 00:01:35.651
+Try filtering by status.
+
+00:01:35.651 --> 00:01:36.172
+Failed.
+
+00:01:36.172 --> 00:01:37.288
+You'll see N-1.
+
+00:01:37.288 --> 00:01:38.255
+Schiaparelli.
+
+00:01:38.255 --> 00:01:38.999
+Beresheet.
+
+00:01:38.999 --> 00:01:39.668
+Hakuto-R.
+
+00:01:39.668 --> 00:01:41.602
+Vikram from Chandrayaan-2.
+
+00:01:41.602 --> 00:01:42.122
+Mars 2.
+
+00:01:42.122 --> 00:01:42.643
+Hitomi.
+
+00:01:42.643 --> 00:01:50.230
+Failed missions are paired in this catalogue with their successors — the spacecraft that made it work.
+
+00:01:50.230 --> 00:01:52.759
+Try the epoch timeline at the top.
+
+00:01:52.759 --> 00:02:02.279
+Drag the time chips to filter by era — Sputnik era, Mercury-Gemini-Vostok era, Apollo era, Shuttle era, ISS era, commercial era.
+
+00:02:02.279 --> 00:02:07.783
+Compare what existed in 1965 to what existed in 1995 to what exists today.
+
+00:02:07.783 --> 00:02:09.866
+Notice the cross-references.
+
+00:02:09.866 --> 00:02:15.072
+When you click a launcher, the panel lists every mission it ever flew.
+
+00:02:15.072 --> 00:02:22.585
+When you click a mission on the Missions screen, the panel links back to the launcher that put it up.
+
+00:02:22.585 --> 00:02:30.320
+Hardware and missions reference each other in both directions — bidirectionally validated at build time.
+
+00:02:30.320 --> 00:02:32.775
+One hundred thirty-seven entries.
+
+00:02:32.775 --> 00:02:33.667
+Sixty years.
+
+00:02:33.667 --> 00:02:34.708
+Many builders.
+
+00:02:34.708 --> 00:02:35.824
+Read the names.
+
+00:02:35.824 --> 00:02:37.163
+Look at the dates.
+
+00:02:37.163 --> 00:02:38.279
+See the ladder.
+

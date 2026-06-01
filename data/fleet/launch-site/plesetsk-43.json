@@ -1,0 +1,34 @@
+{
+  "id": "plesetsk-43",
+  "name": "Plesetsk Site 43",
+  "category": "launch-site",
+  "agency": "Roscosmos",
+  "country": "Russia",
+  "manufacturer": "Soviet space programme",
+  "first_flight": "1968-03-17",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "first-steps",
+  "lat": 62.927,
+  "lon": 40.575,
+  "best_known_for": "World's most northerly orbital launch site — Russia's polar / Molniya military + GLONASS pad",
+  "credit": "Soyuz pad at Plesetsk Cosmodrome, 62.9°N — the highest-latitude orbital launch site that has ever flown. Originally an R-7 / R-9 ICBM base from the late 1950s; converted to space launches in 1966. Site 43 specifically operates Soyuz-2 today and historically hosted more orbital launches than any single site in the world for several decades. Russia's polar / Molniya / GLONASS workhorse, plus military payloads. The high latitude limits useful inclinations but suits sun-synchronous, Molniya, and high-inclination orbits. Coordinates from Russian Ministry of Defence + Roscosmos public records.",
+  "links": [
+    {
+      "l": "Plesetsk Cosmodrome — Roscosmos",
+      "u": "https://en.roscosmos.ru/206/",
+      "t": "intro"
+    },
+    {
+      "l": "Plesetsk Cosmodrome — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome",
+      "t": "core"
+    },
+    {
+      "l": "GLONASS — official",
+      "u": "https://www.glonass-iac.ru/en/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -44,6 +44,10 @@
     {
       "id": "lrv-apollo",
       "role": "payload"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
     }
   ],
   "flight": {

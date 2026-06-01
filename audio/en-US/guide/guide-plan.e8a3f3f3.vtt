@@ -1,0 +1,83 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.238
+This is the Mission Configurator.
+
+00:00:02.238 --> 00:00:09.697
+You pick a destination — Mars, Venus, Mercury, Jupiter, Saturn, Uranus, Neptune, Pluto, or the asteroid Ceres.
+
+00:00:09.697 --> 00:00:23.531
+The screen draws a chart called a porkchop plot , and the chart tells you every possible launch date for that destination, paired with every possible arrival date, with a cost number for each combination.
+
+00:00:23.531 --> 00:00:24.752
+Look at the chart.
+
+00:00:24.752 --> 00:00:27.396
+The horizontal axis is the launch date.
+
+00:00:27.396 --> 00:00:29.973
+The vertical axis is the arrival date.
+
+00:00:29.973 --> 00:00:37.839
+The colored contour lines are constant energy — each one represents a trajectory that costs the same amount of fuel.
+
+00:00:37.839 --> 00:00:41.637
+At the bottom of the C-shape, the contours are cheapest.
+
+00:00:41.637 --> 00:00:44.485
+That's where the spacecraft want to leave.
+
+00:00:44.485 --> 00:00:46.384
+Click anywhere on the chart.
+
+00:00:46.384 --> 00:01:02.387
+The right panel tells you exactly what that launch-and-arrival combination would mean — departure date, arrival date, transit time, departure C three in kilometers squared per second squared, arrival V infinity in kilometers per second.
+
+00:01:02.387 --> 00:01:04.693
+Notice how the cheap window moves.
+
+00:01:04.693 --> 00:01:12.492
+Mars's cheap window appears once every twenty-six months — every time Earth and Mars line up in the right geometry.
+
+00:01:12.492 --> 00:01:17.306
+Drag the time slider above the chart to walk forward five or ten years.
+
+00:01:17.306 --> 00:01:26.596
+You'll see the C-shape recur — same shape, different dates, slightly different energy values because Mars's orbit isn't a perfect circle.
+
+00:01:26.596 --> 00:01:28.495
+Try a different destination.
+
+00:01:28.495 --> 00:01:29.716
+Switch to Jupiter.
+
+00:01:29.716 --> 00:01:37.786
+Notice that the cheap window is rarer — about thirteen months apart — and the transit time is much longer, often years.
+
+00:01:37.786 --> 00:01:39.006
+Switch to Mercury.
+
+00:01:39.006 --> 00:01:49.381
+Notice that the chart looks completely different — Mercury is close, but it moves so fast around the Sun that catching it is its own engineering problem.
+
+00:01:49.381 --> 00:01:56.976
+When you find a point on the chart you like, click the Fly this mission button at the bottom of the right panel.
+
+00:01:56.976 --> 00:02:07.894
+The configurator hands you off to the Fly screen, where you watch the trajectory you just picked play out in heliocentric coordinates against the moving planets.
+
+00:02:07.894 --> 00:02:10.336
+Real missions plan exactly this way.
+
+00:02:10.336 --> 00:02:26.407
+Every Mars rover, every Venus probe, every Galileo and Cassini and Voyager — somebody ran a porkchop plot first, picked the cheap window in the bottom of the C, and the rocket left the launch pad on a date the solar system had agreed to.
+
+00:02:26.407 --> 00:02:27.696
+Pick a destination.
+
+00:02:27.696 --> 00:02:28.781
+Click the chart.
+
+00:02:28.781 --> 00:02:30.408
+Argue with the geometry.
+

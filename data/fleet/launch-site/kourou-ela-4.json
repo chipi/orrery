@@ -1,0 +1,34 @@
+{
+  "id": "kourou-ela-4",
+  "name": "Kourou ELA-4",
+  "category": "launch-site",
+  "agency": "ESA / Arianespace",
+  "country": "French Guiana",
+  "manufacturer": "ESA / CNES",
+  "first_flight": "2024-07-09",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 5.236,
+  "lon": -52.775,
+  "best_known_for": "Ariane 6's home pad — Europe's geostationary access after Ariane 5",
+  "credit": "Ariane 6 pad at the Centre Spatial Guyanais, sibling to ELA-3. Construction began 2015; maiden flight of Ariane 6 on July 9, 2024 (VA262). Inherits the 5.2°N equatorial geometry that made Ariane 5 successful; designed for a higher cadence than ELA-3 with a horizontal-integration assembly building and a sliding mobile gantry. Europe's strategic-autonomy launch capability for institutional + commercial GEO payloads. Coordinates from CNES + ESA records.",
+  "links": [
+    {
+      "l": "Ariane 6 — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane",
+      "t": "intro"
+    },
+    {
+      "l": "ELA-4 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ensemble_de_Lancement_Ariane_4",
+      "t": "core"
+    },
+    {
+      "l": "Ariane 6 user's guide — Arianespace",
+      "u": "https://www.arianespace.com/wp-content/uploads/2021/03/Mua-6_Issue-2-Revision-0_March-2021.pdf",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

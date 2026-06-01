@@ -38,7 +38,8 @@
         "orbiter",
         "observatory",
         "space-suit",
-        "constellation"
+        "constellation",
+        "launch-site"
       ]
     },
     "agency": { "type": "string", "minLength": 1 },
@@ -80,6 +81,18 @@
       ]
     },
     "best_known_for": { "type": "string" },
+    "lat": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90,
+      "description": "Geographic latitude in decimal degrees (WGS84). Required for category 'launch-site'; optional elsewhere. Used by the surface-marker pipeline (#285 Phase 2) to place the entry on the Earth sphere via the shared SurfaceScene contract (ADR-072 / ADR-073)."
+    },
+    "lon": {
+      "type": "number",
+      "minimum": -180,
+      "maximum": 180,
+      "description": "Geographic longitude in decimal degrees (WGS84). Required for category 'launch-site'; optional elsewhere."
+    },
     "specs": {
       "type": "object",
       "description": "Category-specific specs; permissive shape, validated per category in validate-data.ts.",
@@ -161,5 +174,16 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "description": "launch-site entries must carry geographic coordinates (used by #285 Phase 2 to place markers on the Earth sphere via the shared SurfaceScene contract).",
+      "if": {
+        "properties": { "category": { "const": "launch-site" } }
+      },
+      "then": {
+        "required": ["lat", "lon"]
+      }
+    }
+  ]
 }

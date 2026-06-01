@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.917
+What you see on screen is the solar system.
+
+00:00:02.917 --> 00:00:04.410
+The Sun at the center.
+
+00:00:04.410 --> 00:00:06.445
+Eight planets in their orbits.
+
+00:00:06.445 --> 00:00:08.887
+Pluto and Ceres if you ask for them.
+
+00:00:08.887 --> 00:00:16.418
+The positions you see are the actual positions today — Keplerian elements computed for the current Julian date.
+
+00:00:16.418 --> 00:00:18.046
+Drag to rotate the view.
+
+00:00:18.046 --> 00:00:19.810
+Scroll to zoom in and out.
+
+00:00:19.810 --> 00:00:26.459
+Click any planet, and the right panel opens with its physical data, orbit parameters, and gallery.
+
+00:00:26.459 --> 00:00:28.087
+Look at the orbit lines.
+
+00:00:28.087 --> 00:00:31.682
+Mercury makes one trip every eighty-eight Earth days.
+
+00:00:31.682 --> 00:00:34.735
+Mars takes one point eight eight Earth years.
+
+00:00:34.735 --> 00:00:37.992
+Saturn takes twenty-nine point five Earth years.
+
+00:00:37.992 --> 00:00:40.502
+Neptune takes one hundred sixty-five.
+
+00:00:40.502 --> 00:00:47.558
+Neptune has been in its current position, relative to the Sun, exactly once since its discovery in 1846.
+
+00:00:47.558 --> 00:00:51.967
+It just completed its first full orbit, by our calendar, in 2011.
+
+00:00:51.967 --> 00:00:53.528
+Watch the planets move.
+
+00:00:53.528 --> 00:01:00.651
+The time slider at the bottom lets you speed up the simulation — one day per second, ten days, a hundred.
+
+00:01:00.651 --> 00:01:03.908
+Pause it on any date and read off the positions.
+
+00:01:03.908 --> 00:01:05.061
+Notice the scale.
+
+00:01:05.061 --> 00:01:18.019
+The orbit radii in this view are compressed on a logarithmic scale, because if we drew them to true scale you wouldn't be able to see anything past Jupiter without scrolling for half an hour.
+
+00:01:18.019 --> 00:01:20.733
+The orbital velocities are real, though.
+
+00:01:20.733 --> 00:01:25.075
+Earth moves at thirty kilometers per second relative to the Sun.
+
+00:01:25.075 --> 00:01:28.331
+You don't feel it because you're moving with it.
+
+00:01:28.331 --> 00:01:31.384
+Try the Science Lens toggle at the top right.
+
+00:01:31.384 --> 00:01:39.661
+It overlays additional physical data — orbital eccentricity, axial tilt, the inclination of each orbital plane to Earth's.
+
+00:01:39.661 --> 00:01:49.769
+Hover any planet with the lens on and you'll see the velocity number change as it moves along its ellipse — faster at perihelion, slower at aphelion.
+
+00:01:49.769 --> 00:01:51.126
+Vis-viva, in action.
+
+00:01:51.126 --> 00:01:52.076
+Click the Sun.
+
+00:01:52.076 --> 00:01:53.093
+Read the panel.
+
+00:01:53.093 --> 00:01:56.893
+Then click any planet, and trace its path with your eye.
+
+00:01:56.893 --> 00:02:09.240
+Every other screen in this Orrery — the mission maps, the station explorers, the fleet — was made to explain a single object that you can see right now, here, moving with the others.
+

@@ -1,0 +1,35 @@
+{
+  "id": "baikonur-1-5",
+  "name": "Baikonur Site 1/5 (Gagarin's Start)",
+  "category": "launch-site",
+  "agency": "Roscosmos",
+  "country": "Kazakhstan",
+  "manufacturer": "Soviet space programme",
+  "first_flight": "1957-05-15",
+  "last_flight": "2019",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "first-steps",
+  "lat": 45.92,
+  "lon": 63.342,
+  "best_known_for": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad.",
+  "credit": "Soviet R-7 era pad at Baikonur Cosmodrome. Sputnik 1 (October 4, 1957), Vostok 1 (Gagarin, April 12, 1961), every Vostok crewed flight, every Voskhod, and the bulk of the Soyuz manifest through to the final crew launch on September 25, 2019 (Soyuz MS-15). Decommissioned for refurbishment to Soyuz-2.1a; restoration funded but timeline uncertain. Coordinates from Roscosmos and US Naval Observatory records.",
+  "links": [
+    {
+      "l": "Site 1/5 — Roscosmos",
+      "u": "https://en.roscosmos.ru/204/",
+      "t": "intro"
+    },
+    {
+      "l": "Gagarin's Start — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Gagarin%27s_Start",
+      "t": "core"
+    },
+    {
+      "l": "Baikonur Cosmodrome — Encyclopedia Astronautica",
+      "u": "http://www.astronautix.com/b/baikonur.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -1,0 +1,74 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.483
+Open the Fly screen and look at a Mars mission.
+
+00:00:03.483 --> 00:00:05.484
+Now look at a Moon mission.
+
+00:00:05.484 --> 00:00:16.230
+The two views look completely different — even though both spacecraft are doing the same thing: following an elliptical trajectory under gravity.
+
+00:00:16.230 --> 00:00:19.046
+The difference is the reference frame.
+
+00:00:19.046 --> 00:00:21.789
+Mars missions are drawn heliocentric.
+
+00:00:21.789 --> 00:00:24.679
+The Sun sits at the center of the view.
+
+00:00:24.679 --> 00:00:27.940
+Earth and Mars trace their orbits around it.
+
+00:00:27.940 --> 00:00:37.204
+The spacecraft's arc is a piece of an ellipse around the Sun, with perihelion at Earth's distance and aphelion out near Mars.
+
+00:00:37.204 --> 00:00:45.208
+This frame makes the geometry legible — you can see the spacecraft catching up to Mars as Mars itself moves.
+
+00:00:45.208 --> 00:00:47.653
+Moon missions are drawn cislunar.
+
+00:00:47.653 --> 00:00:50.395
+Earth sits at the center of the view.
+
+00:00:50.395 --> 00:00:52.322
+The Moon orbits around it.
+
+00:00:52.322 --> 00:01:08.997
+The spacecraft's arc — a translunar injection from low Earth orbit, cruise to lunar arrival, lunar orbit insertion — is drawn against Earth's reference frame, because everything important is happening in Earth's gravity well.
+
+00:01:08.997 --> 00:01:16.260
+Drawn heliocentric, this trajectory would be a tiny squiggle next to Earth's orbit around the Sun.
+
+00:01:16.260 --> 00:01:18.113
+You'd see nothing useful.
+
+00:01:18.113 --> 00:01:19.817
+Both views are correct.
+
+00:01:19.817 --> 00:01:27.154
+The spacecraft is doing the same thing in both — gravity does not change with your choice of frame.
+
+00:01:27.154 --> 00:01:29.304
+But what you can see changes.
+
+00:01:29.304 --> 00:01:33.380
+A Mars mission needs heliocentric scale to be readable.
+
+00:01:33.380 --> 00:01:37.604
+A Moon mission needs Earth-centered scale to be readable.
+
+00:01:37.604 --> 00:01:41.161
+Use the toolbar to switch frames on any mission.
+
+00:01:41.161 --> 00:01:43.755
+Watch what becomes visible in each.
+
+00:01:43.755 --> 00:01:55.391
+This is the same trick astronomers use when they switch between heliocentric, geocentric, and barycentric coordinates depending on what they want to compute.
+
+00:01:55.391 --> 00:01:58.207
+Choose the frame the problem lives in.
+

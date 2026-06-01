@@ -1,0 +1,34 @@
+{
+  "id": "cape-canaveral-slc-40",
+  "name": "Cape Canaveral SLC-40",
+  "category": "launch-site",
+  "agency": "USSF / SpaceX",
+  "country": "USA",
+  "manufacturer": "US Air Force / SpaceX (refit 2008+)",
+  "first_flight": "1965-06-18",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 28.5618,
+  "lon": -80.5772,
+  "best_known_for": "Highest-cadence Falcon 9 pad on the planet \u2014 workhorse for ISS resupply + Starlink + national-security",
+  "credit": "Operational pad at Cape Canaveral Space Force Station. Originally Titan III / Titan IV (1965-2005); SpaceX leased and refit 2008; supports Falcon 9 commercial + national-security + Crew Dragon launches at the highest cadence of any orbital pad. AMOS-6 explosion 2016 forced a rebuild + capability upgrade. Coordinates from public FAA + USSF records.",
+  "links": [
+    {
+      "l": "SLC-40 \u2014 SpaceX",
+      "u": "https://www.spacex.com/vehicles/falcon-9/",
+      "t": "intro"
+    },
+    {
+      "l": "Cape Canaveral SLC-40 \u2014 Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Cape_Canaveral_Space_Force_Station_Space_Launch_Complex_40",
+      "t": "core"
+    },
+    {
+      "l": "Falcon 9 user's guide \u2014 SpaceX",
+      "u": "https://www.spacex.com/media/falcon-users-guide-2021-09.pdf",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

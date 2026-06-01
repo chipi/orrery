@@ -1,0 +1,34 @@
+{
+  "id": "jiuquan-slc-43",
+  "name": "Jiuquan SLC-43",
+  "category": "launch-site",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "China Aerospace Science and Technology Corp",
+  "first_flight": "1999-11-19",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "lat": 40.9603,
+  "lon": 100.2986,
+  "best_known_for": "China's crewed-spaceflight pad — every Shenzhou crew, every Tianzhou cargo run",
+  "credit": "Long March 2F / Long March 7 pad at Jiuquan Satellite Launch Center. First flight Shenzhou 1 in November 1999; every subsequent Shenzhou crewed flight (1 through 19 as of 2025) lifted from Pad 91 of SLC-43, the dedicated crewed-pad pair. Tianzhou cargo missions to Tiangong (since 2017) fly Long March 7 from the same complex. Inland desert site, traditional inclinations only — Wenchang carries the equatorial / heavy-lift manifest. Coordinates from CNSA + public records.",
+  "links": [
+    {
+      "l": "Jiuquan Satellite Launch Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Jiuquan_Satellite_Launch_Center",
+      "t": "intro"
+    },
+    {
+      "l": "Shenzhou programme — Encyclopedia Astronautica",
+      "u": "http://www.astronautix.com/s/shenzhou.html",
+      "t": "core"
+    },
+    {
+      "l": "Tiangong programme — CNSA",
+      "u": "http://www.cnsa.gov.cn/english/n6465652/n6465653/c6840858/content.html",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

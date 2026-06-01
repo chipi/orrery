@@ -121,5 +121,42 @@
       -14.599,
       175.534
     ]
+  ],
+  "stops": [
+    {
+      "sol": 90,
+      "lat": -14.57267,
+      "lon": 175.48572,
+      "label": "Bonneville Crater rim",
+      "kind": "feature"
+    },
+    {
+      "sol": 590,
+      "lat": -14.58043,
+      "lon": 175.4909,
+      "label": "Husband Hill base",
+      "kind": "feature"
+    },
+    {
+      "sol": 1000,
+      "lat": -14.57983,
+      "lon": 175.50535,
+      "label": "Husband Hill summit",
+      "kind": "panorama"
+    },
+    {
+      "sol": 1500,
+      "lat": -14.59022,
+      "lon": 175.51066,
+      "label": "Home Plate volcanic feature",
+      "kind": "feature"
+    },
+    {
+      "sol": 2210,
+      "lat": -14.59942,
+      "lon": 175.53049,
+      "label": "Last contact — Troy",
+      "kind": "feature"
+    }
   ]
 }

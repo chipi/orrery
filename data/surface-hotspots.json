@@ -41,6 +41,40 @@
           "lat_offset_m": 0,
           "lon_offset_m": 0
         }
+      ],
+      "panorama_metadata": {
+        "date": "1969-07-20",
+        "instrument": "Hasselblad 70mm",
+        "caption": "Tranquility Base, EVA-1. Buzz Aldrin photographed the LM Eagle and the U.S. flag soon after landing. Visible Hasselblad seams + chromatic stitching at the LM are part of the published mosaic.",
+        "credit_team": "NASA · Apollo Lunar Surface Journal",
+        "real_extent_pct_vertical": 25,
+        "synthetic_regions": [
+          { "pitch_min_deg": -90, "pitch_max_deg": -30, "kind": "no_data" }
+        ],
+        "compass_zero_direction": "LM forward (per ALSJ panorama orientation)"
+      },
+      "panorama_annotations": [
+        {
+          "id": "lm-eagle",
+          "yaw_deg": 10,
+          "pitch_deg": -2,
+          "label": "LM Eagle",
+          "body": "Descent stage of the Lunar Module, where Armstrong + Aldrin stood for the EVA."
+        },
+        {
+          "id": "us-flag-pan",
+          "yaw_deg": -8,
+          "pitch_deg": -1,
+          "label": "U.S. flag",
+          "body": "Planted ~8 m west of the LM. Knocked over by the ascent stage exhaust on lift-off."
+        },
+        {
+          "id": "buzz-shadow",
+          "yaw_deg": -65,
+          "pitch_deg": -20,
+          "label": "Buzz Aldrin shadow",
+          "body": "Photographer's own shadow in the foreground — Buzz holding the Hasselblad."
+        }
       ]
     },
     "apollo12": {
@@ -82,7 +116,38 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/apollo17/tier3-pan.jpg",
       "location_uncertainty_m": 50,
       "showcase": true,
-      "hotspot_annotations": []
+      "hotspot_annotations": [],
+      "panorama_metadata": {
+        "date": "1972-12-12",
+        "instrument": "Hasselblad 70mm",
+        "caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
+        "credit_team": "NASA · Apollo 17 / ALSJ",
+        "real_extent_pct_vertical": 40,
+        "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)"
+      },
+      "panorama_annotations": [
+        {
+          "id": "south-massif",
+          "yaw_deg": -75,
+          "pitch_deg": 3,
+          "label": "South Massif",
+          "body": "2.3 km uplifted highland, sampled at Station 2 (the orange-soil discovery site)."
+        },
+        {
+          "id": "camelot-crater",
+          "yaw_deg": 55,
+          "pitch_deg": -2,
+          "label": "Camelot Crater rim",
+          "body": "Large pre-existing impact crater near the Lunar Module; Station 5 boulder field is on the rim."
+        },
+        {
+          "id": "lrv",
+          "yaw_deg": 10,
+          "pitch_deg": -12,
+          "label": "Lunar Roving Vehicle",
+          "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
+        }
+      ]
     },
     "viking1-lander": {
       "hotspot_tier_max": 3,
@@ -140,7 +205,45 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "sol": 3070,
+        "date": "2021-03-26",
+        "instrument": "Mastcam (Atop Mont Mercou 360°)",
+        "caption": "Curiosity atop Mont Mercou — sol 3070, the rover's view after climbing the cliff it had been studying from below. Real Martian sky band visible in upper portion; rover deck dominates foreground; the cliff's layered strata visible on either side.",
+        "credit_team": "NASA/JPL-Caltech/MSSS",
+        "nasa_id": "PIA24626",
+        "real_extent_pct_vertical": 52,
+        "synthetic_regions": [
+          { "pitch_min_deg": 35, "pitch_max_deg": 90, "kind": "synthetic_sky" },
+          { "pitch_min_deg": -90, "pitch_max_deg": -58, "kind": "synthetic_nadir" }
+        ],
+        "compass_zero_direction": "rover forward"
+      },
+      "panorama_annotations": [
+        {
+          "id": "mt-mercou-rim",
+          "yaw_deg": 90,
+          "pitch_deg": -8,
+          "label": "Mont Mercou rim",
+          "body": "Layered cliff face — Curiosity drilled the Nontron sample at its base before driving to the top to capture this 360°."
+        },
+        {
+          "id": "rover-tracks",
+          "yaw_deg": -150,
+          "pitch_deg": -22,
+          "label": "Rover tracks",
+          "body": "Curiosity's wheel tracks looking back at the climb path."
+        },
+        {
+          "id": "mt-sharp-flank",
+          "yaw_deg": 0,
+          "pitch_deg": 2,
+          "label": "Mt. Sharp lower flank",
+          "body": "Layered slopes of Aeolis Mons, the 5 km mountain at the centre of Gale Crater that Curiosity has been climbing since 2014."
+        }
+      ],
+      "traverse_stop_link": "stop-mt-mercou"
     },
     "perseverance": {
       "hotspot_tier_max": 3,
@@ -150,7 +253,45 @@
       "location_uncertainty_m": 50,
       "showcase": true,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/perseverance/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "sol": 3,
+        "date": "2021-02-21",
+        "instrument": "Mastcam-Z (142-image first 360°)",
+        "caption": "First 360° panorama from Perseverance — three days after landing. The rover deck dominates the foreground; Jezero crater floor + the distant rim are visible above the horizon; real Martian sky in the upper bands.",
+        "credit_team": "NASA/JPL-Caltech/ASU/MSSS",
+        "nasa_id": "PIA24264",
+        "real_extent_pct_vertical": 63,
+        "synthetic_regions": [
+          { "pitch_min_deg": 50, "pitch_max_deg": 90, "kind": "synthetic_sky" },
+          { "pitch_min_deg": -90, "pitch_max_deg": -62, "kind": "synthetic_nadir" }
+        ],
+        "compass_zero_direction": "rover +X axis"
+      },
+      "panorama_annotations": [
+        {
+          "id": "mastcam-z-tower",
+          "yaw_deg": 0,
+          "pitch_deg": -5,
+          "label": "Mastcam-Z mast",
+          "body": "The 2 m camera mast — the rover's own \"eyes\" — visible in the centre because the panorama wraps around it."
+        },
+        {
+          "id": "jezero-crater-rim",
+          "yaw_deg": -100,
+          "pitch_deg": 2,
+          "label": "Jezero crater rim",
+          "body": "The crater wall ~2 km away; ancient delta deposits are visible at this rim's western edge — the science target Perseverance drove toward over its first year."
+        },
+        {
+          "id": "rover-deck",
+          "yaw_deg": 60,
+          "pitch_deg": -40,
+          "label": "Rover deck",
+          "body": "Foreground of every Mastcam-Z 360° — solar-panel-style deck, sample-tube cache visible at right."
+        }
+      ],
+      "traverse_stop_link": "stop-octavia-butler-landing-site"
     },
     "phoenix": {
       "hotspot_tier_max": 3,
@@ -216,7 +357,18 @@
       "hotspot_tier2_force_product_id": "ESP_031036_1345",
       "location_uncertainty_m": 10000,
       "hotspot_annotations": [],
-      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg"
+      "hotspot_tier2_regional_source": "/images/hotspots/mars/mars3/tier2-ctx.jpg",
+      "panorama_metadata": {
+        "date": "1971-12-02",
+        "instrument": "Panoramic facsimile",
+        "caption": "First Mars soft landing — 14.5 seconds of transmitted scan data before signal lost. There is no Tier-3 panorama to render at this site (yet); the experience here is the honest-historical-artifact framing of the original fragment via the Tier-2 CTX context.",
+        "credit_team": "USSR · Soviet Academy of Sciences",
+        "real_extent_pct_vertical": 0,
+        "synthetic_regions": [
+          { "pitch_min_deg": -90, "pitch_max_deg": 90, "kind": "no_data" }
+        ]
+      },
+      "panorama_annotations": []
     },
     "change3": {
       "hotspot_tier_max": 3,
@@ -232,7 +384,39 @@
       "hotspot_tier2_source": "/images/hotspots/moon/change4/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/change4/tier3-pan.jpg",
+      "showcase": true,
+      "panorama_metadata": {
+        "date": "2019-01-03",
+        "instrument": "Terrain Camera",
+        "caption": "First panorama ever transmitted from the lunar farside. Von Kármán crater within South Pole–Aitken Basin. Yutu-2 rover visible mid-distance; lander shadow lower-left.",
+        "credit_team": "CNSA · CLEP / CAS",
+        "real_extent_pct_vertical": 40,
+        "compass_zero_direction": "lander camera +X axis"
+      },
+      "panorama_annotations": [
+        {
+          "id": "yutu2",
+          "yaw_deg": -45,
+          "pitch_deg": -3,
+          "label": "Yutu-2 rover",
+          "body": "First rover on the lunar farside; still operational at 5+ years (the record for any lunar rover)."
+        },
+        {
+          "id": "von-karman-rim",
+          "yaw_deg": 30,
+          "pitch_deg": 3,
+          "label": "Von Kármán crater rim",
+          "body": "Inner rim of the 180 km crater inside the South Pole–Aitken Basin — the Moon's largest, oldest impact structure."
+        },
+        {
+          "id": "change4-shadow",
+          "yaw_deg": 0,
+          "pitch_deg": -15,
+          "label": "Chang'e 4 lander shadow",
+          "body": "The lander's own shadow on the regolith — captured by its onboard terrain camera."
+        }
+      ]
     },
     "change5": {
       "hotspot_tier_max": 3,
@@ -265,7 +449,32 @@
       "hotspot_tier2_source": "/images/hotspots/moon/chandrayaan3/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
       "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/moon/chandrayaan3/tier3-pan.jpg",
+      "showcase": true,
+      "panorama_metadata": {
+        "date": "2023-08-23",
+        "instrument": "Landing Imager",
+        "caption": "Shiv Shakti Point — first panorama from the lunar south pole. Vikram lander shadow visible foreground; Pragyan rover deployed onto the regolith shortly after this image.",
+        "credit_team": "ISRO · Chandrayaan-3 mission",
+        "real_extent_pct_vertical": 50,
+        "compass_zero_direction": "lander imager +X"
+      },
+      "panorama_annotations": [
+        {
+          "id": "pragyan",
+          "yaw_deg": -20,
+          "pitch_deg": -10,
+          "label": "Pragyan rover (deployed sol +1)",
+          "body": "26 kg six-wheeled rover. Deployed via Vikram's ramp the day after landing; operated until lunar nightfall (~14 Earth days)."
+        },
+        {
+          "id": "south-pole-rim",
+          "yaw_deg": 40,
+          "pitch_deg": 5,
+          "label": "South pole crater rim",
+          "body": "First successful soft-landing this close to the lunar south pole — water-ice prospect zone."
+        }
+      ]
     },
     "slim": {
       "hotspot_tier_max": 3,

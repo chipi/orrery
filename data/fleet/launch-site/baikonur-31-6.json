@@ -1,0 +1,34 @@
+{
+  "id": "baikonur-31-6",
+  "name": "Baikonur Site 31/6",
+  "category": "launch-site",
+  "agency": "Roscosmos",
+  "country": "Kazakhstan",
+  "manufacturer": "Soviet space programme",
+  "first_flight": "1961-01-14",
+  "status": "ACTIVE",
+  "era": "1957-1969",
+  "epoch": "first-steps",
+  "lat": 46.0708,
+  "lon": 63.5648,
+  "best_known_for": "Active Soyuz crewed pad — every ISS Soyuz crew rotation since 2020 has lifted from Site 31",
+  "credit": "Second active Soyuz pad at Baikonur Cosmodrome. R-7 era from 1961; modernised for Soyuz-2.1a in 2014. Took over the Soyuz crew programme from Site 1/5 in 2020. Every Soyuz MS crew rotation to the ISS since MS-16 has lifted from here. Coordinates from Roscosmos and FAI records.",
+  "links": [
+    {
+      "l": "Site 31 — Roscosmos",
+      "u": "https://en.roscosmos.ru/205/",
+      "t": "intro"
+    },
+    {
+      "l": "Baikonur Site 31 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Baikonur_Cosmodrome_Site_31",
+      "t": "core"
+    },
+    {
+      "l": "Soyuz Manual (NASA history)",
+      "u": "https://history.nasa.gov/SP-4225/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": []
+}

@@ -95,8 +95,7 @@ export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
   const order: string[] = [];
   for (const p of photos) {
     const id = reliableImageId(p);
-    const key =
-      id ?? `fallback§${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
+    const key = id ?? `fallback§${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
     const existing = groups.get(key);
     if (existing) {
       existing.push(p);

@@ -301,10 +301,7 @@ describe('bundlePhotos', () => {
     ]);
     expect(bundles).toHaveLength(1);
     expect(bundles[0].paths).toHaveLength(5);
-    expect(bundles[0].stems).toEqual([
-      '/images/missions/apollo11',
-      '/images/missions/apollo11/01',
-    ]);
+    expect(bundles[0].stems).toEqual(['/images/missions/apollo11', '/images/missions/apollo11/01']);
     // Hero (shortest un-cropped path) wins as representative.
     expect(bundles[0].representative.path).toBe('/images/missions/apollo11.jpg');
   });

@@ -78,11 +78,22 @@
       <text x="22" y="3" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">E</text>
       <text x="0" y="26" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">S</text>
       <text x="-22" y="3" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.25)">W</text>
-      {#if compassZeroDirection}
-        <g style:transform="rotate({arrowAngle}deg)" style:transform-origin="0 0">
-          <polygon points="0,-18 -4,4 0,1 4,4" fill="#ffc850" />
-        </g>
-      {/if}
+      <!-- The arrow always renders so the compass gives visual
+           feedback as the user pans the camera. When the site
+           declares a compass_zero_direction (e.g. "rover forward",
+           "lander north"), the title/aria-label carries that name
+           and the arrow is agency-gold (calibrated). When the site
+           has no declared direction (Viking 2, Mars 3 etc.), the
+           arrow uses a dimmer neutral colour so the calibration
+           distinction is visually honest — the arrow still tracks
+           the panorama's 0° yaw, but the user isn't being told
+           that direction is "north" without ground truth. -->
+      <g style:transform="rotate({arrowAngle}deg)" style:transform-origin="0 0">
+        <polygon
+          points="0,-18 -4,4 0,1 4,4"
+          fill={compassZeroDirection ? '#ffc850' : 'rgba(255,255,255,0.45)'}
+        />
+      </g>
     </svg>
   </div>
 {/if}
@@ -90,8 +101,13 @@
 <style>
   .compass-rose {
     position: fixed;
-    top: 18px;
-    right: 24px;
+    /* Single-row bottom-left panorama-controls layout (#286 audit).
+       Compass anchors the left edge of the row. Fullscreen, mission
+       cross-link, and caption sit to its right at left: 110px+. The
+       exit chip moved out of this row and floats top-left whenever
+       the right-side detail panel is hidden. */
+    bottom: 24px;
+    left: 24px;
     width: 78px;
     height: 78px;
     background: rgba(5, 5, 20, 0.88);

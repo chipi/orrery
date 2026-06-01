@@ -91,8 +91,12 @@
 <style>
   .fullscreen-toggle {
     position: fixed;
-    bottom: 24px;
-    left: 64px;
+    /* Single-row bottom-left panorama-controls layout (#286 audit).
+       Sits to the right of the compass (left: 24px, width 78px) +
+       8px gap = left: 110px. Mission chip + caption follow further
+       right. */
+    bottom: 40px;
+    left: 110px;
     width: 44px;
     height: 44px;
     border-radius: 50%;

@@ -48,17 +48,14 @@
 
 {#if active && hasAnyLink}
   <div class="cross-link-bar" data-testid="panorama-cross-link">
-    {#if traverseStopLink && missionId}
-      <a
-        class="chip"
-        href={`${base}${routeBase}?site=${missionId}&traverse_stop=${traverseStopLink}`}
-      >
-        <span class="hint mono">↗</span>
-        <span>{m.panorama_crosslink_traverse_stop()}</span>
-      </a>
-    {/if}
+    <!-- Order: mission chip first (always present when the site has
+         a fleet entry), then audio, then traverse-stop last because
+         it's the most-optional chip (only rovers with a panorama-
+         pinned traverse stop carry it). Keeping traverse-stop last
+         means its absence doesn't leave a gap between the first
+         chip and whatever follows. -->
     {#if fleetEntryId}
-      <a class="chip" href={`${base}/fleet/${fleetEntryId}`}>
+      <a class="chip" href={`${base}/missions?id=${fleetEntryId}`}>
         <span class="hint mono">↗</span>
         <span>{m.panorama_crosslink_mission()}</span>
       </a>
@@ -69,15 +66,29 @@
         <span>{m.panorama_crosslink_audio()}</span>
       </a>
     {/if}
+    {#if traverseStopLink && missionId}
+      <a
+        class="chip"
+        href={`${base}${routeBase}?site=${missionId}&traverse_stop=${traverseStopLink}`}
+      >
+        <span class="hint mono">↗</span>
+        <span>{m.panorama_crosslink_traverse_stop()}</span>
+      </a>
+    {/if}
   </div>
 {/if}
 
 <style>
   .cross-link-bar {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    /* Single-row bottom-left panorama-controls layout (#286 audit).
+       Sits to the right of compass (24..102) + fullscreen
+       (110..154) → starts at left: 162px. The ⓘ info button
+       lives above the compass column now, not in this row. */
+    bottom: 40px;
+    left: 162px;
     display: flex;
+    flex-direction: row;
     gap: 8px;
     z-index: 60;
     backdrop-filter: blur(6px);

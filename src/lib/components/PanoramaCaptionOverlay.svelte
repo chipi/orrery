@@ -28,10 +28,16 @@
   }
   let { active, metadata, agency, agencyColor, fallbackCaption }: Props = $props();
 
-  let dismissed = $state(false);
+  // Default collapsed — the small ⓘ button is always visible in the
+  // bottom-row controls; the user toggles the full caption card open
+  // when they want the details. Previously default-open auto-popped
+  // a wide caption card that obscured the panorama and competed with
+  // the row of controls; collapsed-by-default keeps the panorama
+  // imagery clear by default.
+  let dismissed = $state(true);
   $effect(() => {
     void metadata;
-    dismissed = false;
+    dismissed = true;
   });
 
   let header = $derived.by(() => {
@@ -87,7 +93,12 @@
 <style>
   .caption-overlay {
     position: fixed;
-    bottom: 24px;
+    /* Expanded caption sits directly above the compass column,
+       left-anchored to the screen edge (left: 24px, matching
+       the compass + the ⓘ button below it). The caption replaces
+       the ⓘ button visually when expanded — they occupy the same
+       slot, alternating via the dismissed state. */
+    bottom: 110px;
     left: 24px;
     max-width: 560px;
     background: rgba(4, 4, 12, 0.78);
@@ -160,10 +171,14 @@
 
   .caption-reopen {
     position: fixed;
-    bottom: 24px;
+    /* Always-visible ⓘ button — sits directly above the compass
+       (which is at bottom: 24px, height 78px) so the user has a
+       persistent, discoverable info-toggle without competing with
+       the controls row underneath. */
+    bottom: 110px;
     left: 24px;
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: rgba(4, 4, 12, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.15);

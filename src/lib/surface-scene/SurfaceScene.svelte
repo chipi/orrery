@@ -2557,6 +2557,24 @@ sample      ${debugInfo.projectedPxSample}`}
        the browser doesn't support requestFullscreen(). -->
   <PanoramaFullscreenToggle active={panoramaActive} />
 
+  <!-- Floating Exit-Panorama chip — only renders when the right-side
+       detail panel is closed (the canonical Exit button lives inside
+       the panel, so if it's open the user has that path). When the
+       panel is closed the chip lands top-left, occupying the now-
+       empty corner. Esc remains the keyboard shortcut. -->
+  {#if panoramaActive && !panelOpen}
+    <button
+      type="button"
+      class="panorama-floating-exit"
+      onclick={() => exitPanorama()}
+      data-testid="panorama-floating-exit"
+      title="Exit panorama view (Esc)"
+    >
+      <span class="x mono" aria-hidden="true">✕</span>
+      <span>Exit panorama</span>
+    </button>
+  {/if}
+
   <!-- Auto-tour guided mode (PRD-022 / ADR-074, #286 Phase 3C).
        'Play tour' pans through panorama annotations one-by-one,
        opening the caption card at each stop. Reduced-motion users
@@ -2579,7 +2597,7 @@ sample      ${debugInfo.projectedPxSample}`}
        the canvas (line 617 of the 2D draw); the 3D view is a Three.js
        scene that can't host text reliably, so we mirror the legend as
        a CSS overlay. Same NATION_COLORS keep the two views in sync. -->
-  {#if view === '3d'}
+  {#if view === '3d' && !panoramaActive}
     <div class="legend-3d" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(NATION_COLORS) as [nation, color] (nation)}
         <span class="legend-item">
@@ -3364,5 +3382,38 @@ sample      ${debugInfo.projectedPxSample}`}
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
+  }
+
+  /* Floating Exit-Panorama chip — only renders when the right-side
+     detail panel is closed. Lands top-left in the now-empty corner
+     so the user has a discoverable exit even without the panel
+     open. (#286 audit — moved out of the bottom-row controls stack
+     to fix the sizing/overlap with the cross-link chips.) */
+  .panorama-floating-exit {
+    position: fixed;
+    top: calc(var(--nav-height, 64px) + 18px);
+    left: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-text-on-dark, #ffffff);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    z-index: 60;
+  }
+  .panorama-floating-exit:hover,
+  .panorama-floating-exit:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+  }
+  .panorama-floating-exit .x {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
   }
 </style>

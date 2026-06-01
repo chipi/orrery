@@ -21,7 +21,10 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
-  import { onLayerChange } from '$lib/science-layers';
+  import {
+    buildKarmanLineShell,
+    buildOzoneOverlay,
+  } from '$lib/surface-scene/earth-atmosphere-layer';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -269,86 +272,26 @@
       }
     }
 
-    // J.3 — Atmosphere shell at the Kármán line (100 km altitude).
-    // Translucent dome that visually sets where "Earth" ends and
-    // "space" begins. Lens-gated via the 'atmosphere' layer.
-    const karmanRadius = altToOrbitRadius(100);
-    const atmosphereShell = new THREE.Mesh(
-      new THREE.SphereGeometry(karmanRadius, 48, 48),
-      new THREE.MeshBasicMaterial({
-        color: 0x4ecdc4,
-        transparent: true,
-        opacity: 0.08,
-        side: THREE.BackSide,
-        depthWrite: false,
-      }),
-    );
-    atmosphereShell.userData.layerKey = 'atmosphere';
-    atmosphereShell.visible = false;
-    scene.add(atmosphereShell);
-    // Karman-line wireframe ring on the equator for legibility — the
-    // dome alone reads as a slight glow, the ring makes the boundary
-    // explicit.
-    const karmanRing = new THREE.Mesh(
-      new THREE.RingGeometry(karmanRadius * 0.999, karmanRadius * 1.002, 64),
-      new THREE.MeshBasicMaterial({
-        color: 0x4ecdc4,
-        transparent: true,
-        opacity: 0.55,
-        side: THREE.DoubleSide,
-        depthWrite: false,
-      }),
-    );
-    karmanRing.rotation.x = Math.PI / 2;
-    karmanRing.userData.layerKey = 'atmosphere';
-    karmanRing.visible = false;
-    scene.add(karmanRing);
-    const stopAtmosphereLayer = onLayerChange('atmosphere', (on) => {
-      atmosphereShell.visible = on;
-      karmanRing.visible = on;
+    // J.3 — Atmosphere shell at the Kármán line (100 km altitude) +
+    // J.5 ozone polar caps. Extracted to $lib/surface-scene/earth-
+    // atmosphere-layer (#290 Slice 1) so #290 Slice 4 can wire the
+    // same helpers into SurfaceScene gated on config.earthOrbitalLayers.
+    const karmanLine = buildKarmanLineShell({
+      color: 0x4ecdc4,
+      altitudeKm: 100,
+      meshOpacity: 0.08,
+      ringOpacity: 0.55,
     });
+    scene.add(karmanLine.shell);
+    scene.add(karmanLine.ring);
 
-    // J.5 — Ozone-hole layer. Translucent purple polar caps over the
-    // ozone shell at ~30 km altitude (stratosphere), representing the
-    // recurring Antarctic spring + Arctic winter depletion zones.
-    // Sized as spherical caps (parametric phi range) at each pole.
-    // Layer-gated; default-off so /earth's pole regions stay clear
-    // unless the user opts in. Click → /science/orbits/orbit-regimes
-    // is via the lens banner; the layer itself is a visual overlay.
-    const ozoneRadius = altToOrbitRadius(30); // stratospheric ozone layer
-    // Antarctic ozone hole — spherical cap at south pole (phi 0..0.45π
-    // measured from south pole = phiStart π, phiLength 0.45π).
-    const ozoneSouth = new THREE.Mesh(
-      new THREE.SphereGeometry(ozoneRadius, 48, 24, 0, Math.PI * 2, Math.PI * 0.66, Math.PI * 0.34),
-      new THREE.MeshBasicMaterial({
-        color: 0xb866ff,
-        transparent: true,
-        opacity: 0.32,
-        side: THREE.DoubleSide,
-        depthWrite: false,
-      }),
-    );
-    // Arctic depletion zone — smaller cap at north pole, less severe.
-    const ozoneNorth = new THREE.Mesh(
-      new THREE.SphereGeometry(ozoneRadius, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.22),
-      new THREE.MeshBasicMaterial({
-        color: 0x9b5dff,
-        transparent: true,
-        opacity: 0.22,
-        side: THREE.DoubleSide,
-        depthWrite: false,
-      }),
-    );
-    ozoneSouth.userData.layerKey = 'ozone';
-    ozoneNorth.userData.layerKey = 'ozone';
-    ozoneSouth.visible = false;
-    ozoneNorth.visible = false;
-    scene.add(ozoneSouth);
-    scene.add(ozoneNorth);
-    const stopOzoneLayer = onLayerChange('ozone', (on) => {
-      ozoneSouth.visible = on;
-      ozoneNorth.visible = on;
+    const ozone = buildOzoneOverlay({
+      altitudeKm: 30,
+      south: { color: 0xb866ff, opacity: 0.32, phiCoverageRatio: 0.34 },
+      north: { color: 0x9b5dff, opacity: 0.22, phiCoverageRatio: 0.22 },
     });
+    scene.add(ozone.south);
+    scene.add(ozone.north);
 
     // Moon — small textured sphere at the Moon-orbit radius. Click goes to /moon.
     const moonMap = textureLoader.load(`${base}/textures/2k_moon.jpg`);
@@ -1002,8 +945,8 @@
     cleanup = () => {
       cancelAnimationFrame(rafId);
       stopReducedMotionWatch();
-      stopAtmosphereLayer?.();
-      stopOzoneLayer?.();
+      karmanLine.dispose();
+      ozone.dispose();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
@@ -1596,7 +1539,9 @@
   }
   .legend-3d {
     position: absolute;
-    bottom: 16px;
+    /* Raised above the global footer bar so the two strips don't
+       overlap. */
+    bottom: 48px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

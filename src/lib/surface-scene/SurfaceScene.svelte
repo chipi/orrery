@@ -26,7 +26,9 @@
     buildKarmanLineShell,
     buildOzoneOverlay,
   } from '$lib/surface-scene/earth-atmosphere-layer';
-  import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
+  import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
+  import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
+  import type { EarthObject } from '$types/earth-object';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
@@ -605,6 +607,7 @@
         scene.add(o.north);
         earthLayerHandles.push(o);
       }
+      let earthMoonR = 0;
       if (eol.moonGhost) {
         const mg = buildMoonGhost({
           textureUrl: eol.moonGhost.textureUrl,
@@ -613,13 +616,57 @@
           textureLoader,
         });
         scene.add(mg.mesh);
-        // mg.moonR is cached for Slice 5 satellite positioning (moon-
-        // orbiters position relative to the moon-ghost, not Earth).
-        // Held inside earthLayerHandles dispose closure; not read yet.
+        earthMoonR = mg.moonR;
         earthLayerHandles.push(mg);
       }
-      // Orbit rings + satellites can't mount until objects[] loads;
-      // wired in Slice 5+6. The config slots are reserved here.
+
+      // Satellites + orbit rings — both depend on the EarthObject set
+      // returned by the route's loadObjects callback. Loaded async then
+      // the helpers materialise scene meshes. Chip-row visibility +
+      // panel polymorphism for satellite selection land in Slice 6.
+      if (eol.satellites) {
+        const satCfg = eol.satellites;
+        const ringsCfg = eol.orbitRings;
+        satCfg
+          .loadObjects(localeFromPage($page))
+          .then((raw) => {
+            const objects = raw as EarthObject[];
+
+            if (ringsCfg) {
+              const repAlt: Record<string, number> = {};
+              for (const o of objects) {
+                const alt = o.altitude_km ?? o.earth_distance_km;
+                if (!(o.regime in repAlt)) repAlt[o.regime] = alt;
+              }
+              const regimes = Object.entries(repAlt).map(([regime, altitude_km]) => ({
+                regime,
+                altitude_km,
+              }));
+              const rings = buildOrbitRings({
+                regimeColors: ringsCfg.regimeColors,
+                regimes,
+              });
+              rings.group.visible = ringsCfg.visibleByDefault;
+              scene.add(rings.group);
+              earthLayerHandles.push({
+                dispose: () => {
+                  rings.dispose();
+                  scene.remove(rings.group);
+                },
+              });
+            }
+
+            const satLayer = buildSatelliteLayer({
+              scene,
+              objects,
+              moonR: earthMoonR,
+            });
+            earthLayerHandles.push(satLayer);
+          })
+          .catch((err) => {
+            console.error('SurfaceScene: failed to load earth objects', err);
+          });
+      }
     }
 
     // Issue #227 — `faceCameraAtSite(site)` orbits the camera through

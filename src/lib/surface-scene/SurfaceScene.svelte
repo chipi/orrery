@@ -20,6 +20,13 @@
   import { bindPanoramaEscape } from '$lib/three/panorama-keys';
   import { pickClosest2d } from '$lib/three/pick-closest-2d';
   import { createStarField } from '$lib/three/star-field';
+  // Earth-orbital layer helpers (#290) — used only when
+  // config.earthOrbitalLayers is set. /moon and /mars omit the field.
+  import {
+    buildKarmanLineShell,
+    buildOzoneOverlay,
+  } from '$lib/surface-scene/earth-atmosphere-layer';
+  import { buildMoonGhost } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
@@ -131,6 +138,11 @@
   let selected: SurfaceSite | null = $state(null);
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
+  // Deep-link bridge: when the URL carries ?traverse_stop=<id>, we
+  // capture it here at site-load time, then resolve it after
+  // traverses load by flying the camera to the stop's lat/lon.
+  // Cleared once consumed so it only fires once per URL.
+  let pendingTraverseStopFocus: { siteId: string; stopId: string } | null = null;
 
   // Layer toggles. SURFACE = lander/rover markers; ORBITERS = dots
   // on inclined rings around the Moon (LRO, Clementine, Chandrayaan-1,
@@ -413,7 +425,20 @@
         // site itself can be on the far side, invisible until the
         // user manually drags.
         const siteParam = $page.url.searchParams.get('site');
-        if (siteParam) selectSite(siteParam, { face: true });
+        const traverseStopParam = $page.url.searchParams.get('traverse_stop');
+        if (siteParam) {
+          // Deep-link with ?traverse_stop=<id> — select the site but
+          // defer the camera fly-in until traverses load so we can
+          // target the stop's lat/lon instead of the site's. The
+          // traverse JSON has stops with stable sol-based ids (added
+          // 2026-06-01 to wire the panorama cross-link chip).
+          if (traverseStopParam) {
+            selectSite(siteParam);
+            pendingTraverseStopFocus = { siteId: siteParam, stopId: traverseStopParam };
+          } else {
+            selectSite(siteParam, { face: true });
+          }
+        }
       })
       .catch((err) => {
         console.error('Failed to load moon sites:', err);
@@ -558,6 +583,45 @@
       });
     }
 
+    // Earth-specific orbital subsystems (#290 Slice 4). Mounts only
+    // when the route's config carries earthOrbitalLayers — /moon and
+    // /mars omit the field, so this branch is dead code on those
+    // routes. Each helper handles its own visibility lensing /
+    // texture loading; SurfaceScene only owns the mount + dispose
+    // wiring. Slice 5 will add panel polymorphism for satellite
+    // clicks; Slice 6 will surface chip-row visibility toggles.
+    const earthLayerHandles: Array<{ dispose: () => void }> = [];
+    if (config.earthOrbitalLayers) {
+      const eol = config.earthOrbitalLayers;
+      if (eol.karmanLineShell) {
+        const k = buildKarmanLineShell(eol.karmanLineShell);
+        scene.add(k.shell);
+        scene.add(k.ring);
+        earthLayerHandles.push(k);
+      }
+      if (eol.ozoneOverlay) {
+        const o = buildOzoneOverlay(eol.ozoneOverlay);
+        scene.add(o.south);
+        scene.add(o.north);
+        earthLayerHandles.push(o);
+      }
+      if (eol.moonGhost) {
+        const mg = buildMoonGhost({
+          textureUrl: eol.moonGhost.textureUrl,
+          radiusUnits: eol.moonGhost.radiusUnits,
+          distanceKm: eol.moonGhost.distanceKm,
+          textureLoader,
+        });
+        scene.add(mg.mesh);
+        // mg.moonR is cached for Slice 5 satellite positioning (moon-
+        // orbiters position relative to the moon-ghost, not Earth).
+        // Held inside earthLayerHandles dispose closure; not read yet.
+        earthLayerHandles.push(mg);
+      }
+      // Orbit rings + satellites can't mount until objects[] loads;
+      // wired in Slice 5+6. The config slots are reserved here.
+    }
+
     // Issue #227 — `faceCameraAtSite(site)` orbits the camera through
     // the planet centre to align the screen-centre ray with the site's
     // world position (accounting for axial tilt + any current
@@ -577,8 +641,16 @@
       flyFromT = camT;
       flyFromR = camR;
       flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      // Camera position formula: x = sin(P)*sin(T), z = sin(P)*cos(T).
+      // Solving for T given a target dir: T = atan2(dir.x, dir.z).
+      // The previous atan2(dir.z, dir.x) call coincidentally landed
+      // close to the right azimuth for Curiosity (lat -4.6°, lon
+      // 137.4° — both x and z components similar magnitude) but
+      // landed ~245° off for Perseverance, which surfaced as the
+      // marker showing on the planet's near-left edge instead of
+      // dead-centre on a fresh ?site=perseverance deep-link.
+      let to = Math.atan2(dir.x, dir.z);
       // Shortest-path interpolation around the longitude circle.
-      let to = Math.atan2(dir.z, dir.x);
       while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
       while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
       flyToT = to;
@@ -870,6 +942,29 @@
       loadTraverses().then((data) => {
         traverses = data;
         rebuildTraverses();
+        // Deep-link consumption: ?site=<rover>&traverse_stop=<sol-id>
+        // — find the named stop in the rover's traverse and fly the
+        // camera to its lat/lon. Falls back to a regular site-face
+        // fly-in if the stop id doesn't resolve (typo'd link, stale
+        // bookmark, etc.) so the deep-link still does something
+        // useful instead of silently no-op-ing.
+        if (pendingTraverseStopFocus) {
+          const { siteId, stopId } = pendingTraverseStopFocus;
+          pendingTraverseStopFocus = null;
+          const traverse = data[siteId];
+          const stop = traverse?.stops?.find((s) => s.id === stopId);
+          const site = sites.find((s) => s.id === siteId);
+          if (stop && faceCameraAtSite) {
+            faceCameraAtSite({
+              ...(site ?? ({ id: siteId } as unknown as SurfaceSite)),
+              lat: stop.lat,
+              lon: stop.lon,
+            } as SurfaceSite);
+          } else if (site && faceCameraAtSite) {
+            // Stop not found — graceful fallback to facing the site.
+            faceCameraAtSite(site);
+          }
+        }
       });
     }
 
@@ -1947,8 +2042,15 @@
       for (const mk of markers) {
         mk.group.visible = layerSurface;
         if (mk.halo) {
-          const t = tierBySiteId.get(mk.siteId) ?? 0;
-          mk.halo.visible = layerSurface && mk.siteId === selId && t < 2;
+          // Keep the selection halo visible at all tiers — previously
+          // hidden at tier ≥ 2 to avoid competing with the surface
+          // patch, but that left the user with no visible selection
+          // marker once they zoomed in (the panel opened, the camera
+          // flew in, but the rectangle disappeared). Now the rect
+          // stays visible throughout, with the semi-transparent fill
+          // providing the visual anchor that the thin-line outline
+          // alone didn't.
+          mk.halo.visible = layerSurface && mk.siteId === selId;
         }
       }
       for (const om of orbitalMarkers) {
@@ -2294,6 +2396,7 @@
       stopReducedMotionWatch();
       _stopTidalLockLayer?.();
       _stopAtmosphereLayer?.();
+      for (const h of earthLayerHandles) h.dispose();
       stopPanoramaEscape();
       panoramaSkybox?.dispose();
       stopCanvasInputs();
@@ -3143,7 +3246,9 @@ sample      ${debugInfo.projectedPxSample}`}
 
   .legend-3d {
     position: absolute;
-    bottom: 16px;
+    /* Raised above the global footer bar (Gallery / Credits /
+       Library / etc.) so the two strips don't overlap. */
+    bottom: 48px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

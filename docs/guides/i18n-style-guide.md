@@ -79,19 +79,19 @@ NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, C
 
 The English column is the source. The accepted-convention column for your target language is the **binding** translation. Cite source where given.
 
-| English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | `sr-Latn` | `sr-Cyrl` | Source |
-|---------|----------------|------|------|---------|------|-----------|-----------|--------|
-| aphelion | afelio | — | — | — | — | — | — | RAE |
-| perihelion | perihelio | — | — | — | — | — | — | RAE |
-| apogee | apogeo | — | — | — | — | — | — | RAE |
-| perigee | perigeo | — | — | — | — | — | — | RAE |
-| eccentricity | excentricidad | — | — | — | — | — | — | RAE |
-| true anomaly | anomalía verdadera | — | — | — | — | — | — | ESA Spanish glossary |
-| line of apsides | línea de los ápsides | — | — | — | — | — | — | ESA Spanish glossary |
-| free-return (trajectory) | trayectoria de retorno libre | — | — | — | — | — | — | NASA-MSFC Spanish |
-| sphere of influence (SOI) | esfera de influencia | — | — | — | — | — | — | ESA Spanish glossary |
-| porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | — | — | ESA Spanish glossary uses English |
-| Astronomical Unit (AU / UA) | UA (unidad astronómica) | UA | AE (Astronomische Einheit) | UA | UA | — | — | IAU |
+| English | `es` (Spanish) | `fr` | `de` | `pt-BR` | `it` | `sr-Cyrl` | Source |
+|---------|----------------|------|------|---------|------|-----------|--------|
+| aphelion | afelio | — | — | — | — | — | RAE |
+| perihelion | perihelio | — | — | — | — | — | RAE |
+| apogee | apogeo | — | — | — | — | — | RAE |
+| perigee | perigeo | — | — | — | — | — | RAE |
+| eccentricity | excentricidad | — | — | — | — | — | RAE |
+| true anomaly | anomalía verdadera | — | — | — | — | — | ESA Spanish glossary |
+| line of apsides | línea de los ápsides | — | — | — | — | — | ESA Spanish glossary |
+| free-return (trajectory) | trayectoria de retorno libre | — | — | — | — | — | NASA-MSFC Spanish |
+| sphere of influence (SOI) | esfera de influencia | — | — | — | — | — | ESA Spanish glossary |
+| porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | — | ESA Spanish glossary uses English |
+| Astronomical Unit (AU / UA) | UA (unidad astronómica) | UA | AE (Astronomische Einheit) | UA | UA | — | IAU |
 
 Empty cells are populated by the translator for that language ticket.
 

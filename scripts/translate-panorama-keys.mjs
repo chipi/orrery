@@ -28,7 +28,8 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const OVERRIDES_PATH = path.join(import.meta.dirname, 'paraglide-key-overrides.json');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
 
-// All locales we ship to (matches messages/<locale>.json, sr-Latn excluded — no file).
+// All locales we ship to (matches messages/<locale>.json).
+// sr-Latn was dropped in v0.5.0 J.5 — sr-Cyrl is the canonical Serbian.
 const LOCALES = [
   'ar',
   'de',

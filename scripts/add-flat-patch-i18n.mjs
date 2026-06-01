@@ -177,19 +177,9 @@ const TRANSLATIONS = {
     surface_flat_upsample_warning_moon:
       '⚠ Приближавање нативном пиксел лимиту (LROC NAC 50 cm/px)',
   },
-  'sr-Latn': {
-    surface_flat_back_to_planet: '← NAZAD NA PLANETU',
-    surface_flat_back_aria: 'Nazad na planetu',
-    surface_flat_layer_regional: 'OBLAST',
-    surface_flat_layer_detail: 'DETALJ',
-    surface_flat_layer_traverse: 'PUTANJA',
-    surface_flat_layer_toggles_aria: 'Prekidači slojeva',
-    surface_flat_scale_label: 'RAZMERA',
-    surface_flat_lat_lon: 'DUŽ {lon}° · ŠIR {lat}°',
-    surface_flat_upsample_warning_mars: '⚠ Približavanje nativnom piksel limitu (HiRISE 25 cm/px)',
-    surface_flat_upsample_warning_moon:
-      '⚠ Približavanje nativnom piksel limitu (LROC NAC 50 cm/px)',
-  },
+  // sr-Latn dropped in v0.5.0 J.5 — sr-Cyrl is the canonical Serbian.
+  // Browser locales sending sr-Latn fall back to sr-Cyrl via
+  // normaliseBrowserLocale (see src/lib/locale.test.ts).
 };
 
 for (const [locale, keys] of Object.entries(TRANSLATIONS)) {

@@ -14,8 +14,6 @@
   import { altToOrbitRadius } from '$lib/scale';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
-  import { buildSatelliteModel } from '$lib/earth-satellite-models';
-  import { buildLabel } from '$lib/three-label';
   import type { EarthObject } from '$types/earth-object';
   import Panel from '$lib/components/Panel.svelte';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
@@ -29,6 +27,11 @@
     buildMoonGhost,
     buildOrbitRings,
   } from '$lib/surface-scene/earth-orbital-rings-layer';
+  import {
+    buildSatelliteLayer,
+    hashIdToNodeAngle,
+    type SatObj,
+  } from '$lib/surface-scene/earth-satellite-layer';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
@@ -328,163 +331,17 @@
       scene.add(orbitRingsHandle.group);
     }
 
-    type SatObj = {
-      group: THREE.Group;
-      id: string;
-      orbitR: number;
-      phase: number;
-      inclRad: number;
-      nodeRad: number;
-      ringMesh?: THREE.Mesh;
-      halo?: THREE.Mesh;
-    };
-
-    // Selection-halo helper — small ring rendered around a marker so
-    // users can tell at a glance which one they picked. Visibility
-    // flips via $effect tied to `selected`.
-    function makeHalo(color: string, radius: number): THREE.Mesh {
-      const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
-      const haloMat = new THREE.MeshBasicMaterial({
-        color,
-        side: THREE.DoubleSide,
-        transparent: true,
-        opacity: 0.9,
-        depthWrite: false,
-      });
-      const halo = new THREE.Mesh(haloGeo, haloMat);
-      halo.visible = false;
-      return halo;
-    }
-
-    // Stable hash → [0, 2π) so each orbit's ascending-node longitude
-    // is deterministic but visually spread out (otherwise every
-    // 51.6° orbit shares a single tilt and they all overlap).
-    function hashToAngle(s: string): number {
-      let h = 0;
-      for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-      return ((h % 360) / 360) * Math.PI * 2;
-    }
-    const sats: SatObj[] = [];
-
+    // Satellite rendering extracted to $lib/surface-scene/earth-
+    // satellite-layer (#290 Slice 3). The helper owns per-satellite
+    // model / label / halo / orbit ring / hit-sphere construction +
+    // dispose. EarthOrbitalScene keeps the rebuild orchestration so
+    // that the helper stays pure (no Svelte reactivity inside).
+    let satLayerHandle: ReturnType<typeof buildSatelliteLayer> | null = null;
+    let sats: SatObj[] = [];
     function rebuildSats() {
-      for (const s of sats) {
-        s.group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh) {
-            obj.geometry?.dispose();
-            if (Array.isArray(obj.material)) obj.material.forEach((m) => m.dispose());
-            else obj.material?.dispose();
-          }
-        });
-        scene.remove(s.group);
-        if (s.ringMesh) {
-          s.ringMesh.geometry.dispose();
-          (s.ringMesh.material as THREE.Material).dispose();
-          scene.remove(s.ringMesh);
-        }
-      }
-      sats.length = 0;
-
-      for (let i = 0; i < objects.length; i++) {
-        const o = objects[i];
-        const category = categoriseEarthSatellite(o.id);
-        // Per-spacecraft 3D model (built from primitives, see
-        // $lib/earth-satellite-models). Falls back to a generic probe
-        // for unknown ids.
-        const group = buildSatelliteModel(o.id, o.color);
-
-        // Phase angle distributes objects around their regime ring so
-        // they don't pile up at +X. Deterministic so the visual is
-        // stable across renders.
-        const phase = (i * 2.4) % (Math.PI * 2);
-
-        let orbitR: number;
-        // Inclination tilts the orbit out of the equatorial plane.
-        // ISS=51.6°, GPS≈55°, Molniya 63.4°, polar≈90°, geostat=0°.
-        // Each orbit also gets a deterministic node-longitude offset
-        // (rotation around Y) so concentric orbits don't all share
-        // a single tilt axis.
-        const inclRad = ((o.inclination ?? 0) * Math.PI) / 180;
-        const nodeRad = hashToAngle(o.id);
-        if (category === 'moon-orbiter') {
-          // LRO sits next to the Moon mesh.
-          group.position.set(moonR + 2.5, 1, 0);
-          orbitR = moonR;
-        } else {
-          const alt = o.altitude_km ?? o.earth_distance_km;
-          orbitR = altToOrbitRadius(alt);
-          // Position: orbit plane is the xy-plane rotated by inclRad
-          // around the X axis, then by nodeRad around the Y axis.
-          const lx = Math.cos(phase) * orbitR;
-          const ly = Math.sin(phase) * orbitR * Math.sin(inclRad);
-          const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);
-          const cn = Math.cos(nodeRad);
-          const sn = Math.sin(nodeRad);
-          group.position.set(lx * cn + lz * sn, ly, -lx * sn + lz * cn);
-        }
-        group.userData = { id: o.id };
-
-        // Invisible hit sphere — gives the click target a much larger
-        // effective radius (3u vs the visible model's ~0.5u) so the
-        // user can grab a moving spacecraft without millimetre-perfect
-        // pointer accuracy. Material is non-rendering but
-        // raycast-active.
-        const hitSphere = new THREE.Mesh(
-          new THREE.SphereGeometry(3.0, 8, 8),
-          new THREE.MeshBasicMaterial({ visible: false }),
-        );
-        hitSphere.userData = { id: o.id };
-        group.add(hitSphere);
-
-        group.traverse((obj) => {
-          if (obj instanceof THREE.Mesh || obj instanceof THREE.Sprite) {
-            obj.userData = { id: o.id };
-          }
-        });
-
-        // Label with leader-line — tag floats above the spacecraft
-        // (offset chosen so text doesn't z-fight with the model body).
-        const label = buildLabel({
-          text: o.short ?? o.name ?? o.id,
-          color: o.color,
-          offset: new THREE.Vector3(0, 1.8, 0),
-          size: 1.2,
-        });
-        group.add(label.group);
-
-        scene.add(group);
-
-        // Per-spacecraft orbital ring (mirrors the /moon + /mars
-        // pattern from PRD-009 / RFC-012). Skip constellations
-        // (count > 1) since their cluster representation already
-        // implies the orbital surface; rendering 24+ overlapping
-        // rings would clutter the view. Skip moon-orbiters too —
-        // they share the Moon position, not Earth-relative rings.
-        let ringMesh: THREE.Mesh | undefined;
-        if (o.count === 1 && category !== 'moon-orbiter') {
-          const ringGeo = new THREE.RingGeometry(orbitR - 0.03, orbitR + 0.03, 96);
-          const ringMat = new THREE.MeshBasicMaterial({
-            color: o.color,
-            transparent: true,
-            opacity: 0.32,
-            side: THREE.DoubleSide,
-          });
-          ringMesh = new THREE.Mesh(ringGeo, ringMat);
-          // Same plane as the satellite: rotate around X by inclRad,
-          // then around Y by nodeRad so the ring's normal matches
-          // the satellite's orbital plane normal.
-          ringMesh.rotation.order = 'YXZ';
-          ringMesh.rotation.x = inclRad;
-          ringMesh.rotation.y = nodeRad;
-          scene.add(ringMesh);
-        }
-        // Selection halo — small flat ring around the satellite,
-        // visible only while this object === selected. Toggled by
-        // $effect below.
-        const halo = makeHalo(o.color, 1.6);
-        group.add(halo);
-
-        sats.push({ group, id: o.id, orbitR, phase, inclRad, nodeRad, ringMesh, halo });
-      }
+      satLayerHandle?.dispose();
+      satLayerHandle = buildSatelliteLayer({ scene, objects, moonR });
+      sats = satLayerHandle.sats;
     }
 
     // Camera + controls
@@ -788,7 +645,7 @@
           // collapses to a line through Earth. Same incl + nodeRad
           // values as the 3D scene keep the two views in sync.
           const inclRad = ((o.inclination ?? 0) * Math.PI) / 180;
-          const nodeRad = hashToAngle(o.id);
+          const nodeRad = hashIdToNodeAngle(o.id);
           const lx = Math.cos(phase) * r;
           const lz = Math.sin(phase) * r * Math.cos(inclRad);
           const cn = Math.cos(nodeRad);
@@ -949,6 +806,7 @@
       ozone.dispose();
       moonGhost.dispose();
       orbitRingsHandle?.dispose();
+      satLayerHandle?.dispose();
       el3d.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);

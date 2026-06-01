@@ -70758,6 +70758,27 @@
       "pageid": null,
       "nasa_id": "NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)",
       "fetched_at": "2026-06-01T15:16:03.255Z"
+    },
+    {
+      "id": "52fd3cdefd4e6c00",
+      "path": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Opportunity at Marathon Valley, Endeavour Crater rim — sols 4347-4375 (Apr-May 2016). Captured at the marathon-running-distance milestone in the rover's mission.",
+      "author": "NASA / JPL-Caltech / Cornell Univ. / Arizona State Univ.",
+      "agency": "NASA",
+      "source_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39226_opportunity-mars-rover-panorama-marathon-valley-pia20749.jpg",
+      "image_url": "https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39226_opportunity-mars-rover-panorama-marathon-valley-pia20749.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA20749",
+      "fetched_at": "2026-06-01T15:25:15.221Z"
     }
   ]
 }

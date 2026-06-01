@@ -158,14 +158,23 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   {
     siteId: 'opportunity',
     sourceUrl:
-      'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/42560_PIA22908-LegacyPan-ANNOTATED.jpg',
-    sourceLabel: 'PIA22908',
-    attribution: 'NASA / JPL-Caltech / Cornell',
+      'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/3/9/39226_opportunity-mars-rover-panorama-marathon-valley-pia20749.jpg',
+    sourceLabel: 'PIA20749',
+    attribution: 'NASA / JPL-Caltech / Cornell Univ. / Arizona State Univ.',
     license: 'PD-NASA',
-    srcAzimuthDeg: 360,
-    srcElevationTopDeg: 30,
-    srcElevationBottomDeg: 45,
-    caption: 'Opportunity Legacy Pan, sols 5084-5111 — final mission panorama (May-Jun 2018)',
+    // 2026-06-01 — switched from PIA22908 'Legacy Pan ANNOTATED' (the
+    // final-mission panorama with NASA's text labels + connecting lines
+    // baked into the pixels — the labels obstruct the actual view) to
+    // PIA20749 'Marathon Valley' (sols 4347-4375, April-May 2016).
+    // The Marathon Valley pan is un-annotated, captures Opportunity's
+    // marathon-distance achievement site on Endeavour Crater rim, and
+    // is dramatically wider and more atmospheric. Rover shadow visible
+    // at the bottom centre. 5000×1709 ≈ 2.93:1 → ~123° vFOV.
+    srcAzimuthDeg: 200,
+    srcElevationTopDeg: 35,
+    srcElevationBottomDeg: 30,
+    caption:
+      "Opportunity at Marathon Valley, Endeavour Crater rim — sols 4347-4375 (Apr-May 2016). Captured at the marathon-running-distance milestone in the rover's mission.",
   },
   {
     siteId: 'phoenix',

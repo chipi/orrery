@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-06-01T15:16:11.305Z",
+  "generated_at": "2026-06-01T15:25:22.708Z",
   "vision_provider": "anthropic",
   "vision_model": "claude-sonnet-4-6",
   "prompt_version": "v1.0.0",
@@ -25420,6 +25420,24 @@
       "fallback": false,
       "scored_at": "2026-06-01T15:16:10.553Z",
       "scoring_cost_usd": 0.008445000000000001
+    },
+    "/images/hotspots/mars/opportunity/tier3-pan.jpg": {
+      "score": 3,
+      "subject": "Incomplete panoramic mosaic of the Martian surface showing rocky terrain and hazy sky, with large unfilled background areas visible as flat color fills.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.28,
+        "y": 0.42
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/opportunity/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/opportunity/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/opportunity/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-06-01T15:25:22.161Z",
+      "scoring_cost_usd": 0.00807
     }
   }
 }

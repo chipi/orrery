@@ -53,6 +53,43 @@ test.describe('/credits — image provenance disclosure', () => {
     await expect(licenseLines).toHaveCount(count);
   });
 
+  test('bundles surface aspect-ratio crops as chips on at least one row', async ({ page }) => {
+    // The bundler (src/lib/credits-grouping.ts) collapses
+    // `<slot>.16x9.jpg / .1x1.jpg / .4x3.jpg / .jpg` variants of one
+    // source image into a single row with chips for the ratios present.
+    // On the production manifest at least one bundle MUST have >1
+    // variant chip (the asset pipeline emits crop families for every
+    // panel image); this assertion fails loudly if a regression flips
+    // the bundler off or breaks the chip render path.
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.credits[data-route-ready="true"]')).toBeVisible();
+    const chips = page.locator('.photo-list .variant-chip');
+    await expect(chips.first()).toBeVisible({ timeout: 10_000 });
+    expect(await chips.count()).toBeGreaterThan(100);
+  });
+
+  test('cross-route reuse renders as one row with multiple stem paths', async ({ page }) => {
+    // Per the reliable-id collapse: when the same upstream image_url
+    // (or nasa_id / pageid / revid) is emitted under multiple distinct
+    // path stems (hero ↔ panel, or cross-route like missions ∪
+    // moon-sites), the row shows >1 <code class="path"> entries under
+    // its .ph-row.stems. On the production manifest there are 159 such
+    // multi-stem bundles; at least one must render correctly.
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('section.credits[data-route-ready="true"]')).toBeVisible();
+    await expect(page.locator('article.source-block').first()).toBeVisible({ timeout: 10_000 });
+    // Match a .ph-row.stems whose 2nd <code class="path"> child is
+    // present — i.e. a multi-stem bundle. `:nth-of-type(2)` selects
+    // the second <code> sibling regardless of intervening <span> sep.
+    const multiStemRow = page
+      .locator('.photo .ph-row.stems')
+      .filter({ has: page.locator('code.path:nth-of-type(2)') })
+      .first();
+    await expect(multiStemRow).toBeVisible({ timeout: 10_000 });
+    const codeCount = await multiStemRow.locator('code.path').count();
+    expect(codeCount).toBeGreaterThanOrEqual(2);
+  });
+
   test('linked from the persistent site footer', async ({ page }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
     const creditsLink = page.locator('.site-footer a[href*="/credits"]').first();

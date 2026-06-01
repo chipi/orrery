@@ -2385,20 +2385,39 @@
             : camR <= detailFadeEnd
               ? 1
               : 1 - (camR - detailFadeEnd) / (detailFadeStart - detailFadeEnd);
+        // Regional CTX patch reveals EARLIER than the HiRISE detail
+        // patch — the user wants to see the wider CTX context first
+        // (~30km bbox) and only commit to the inner HiRISE area
+        // (~5km bbox) when zoomed deeper. Until 2026-06-01 both
+        // layers shared the detailFade window and revealed
+        // simultaneously, which made the "level up" zoom look like
+        // no progressive detail at all (image 14-17 screenshot
+        // sequence — regional + detail both popping in at the same
+        // camR). Regional ramp: 50 → 33 (starts at the same camR
+        // Tier-2 promotion fires for the detail layer, fully
+        // visible by the time detail starts ramping).
+        const regionalFadeStart = 50;
+        const regionalFadeEnd = 33;
+        const regionalOpacity =
+          camR >= regionalFadeStart
+            ? 0
+            : camR <= regionalFadeEnd
+              ? 1
+              : 1 - (camR - regionalFadeEnd) / (regionalFadeStart - regionalFadeEnd);
         for (const h of hotspots) {
           if (!h.tier2Group) continue;
-          // Force group visible when ramp is > 0 (dispatcher would
-          // otherwise hide it whenever currentTier !== 2).
-          h.tier2Group.visible = detailOpacity > 0.01;
+          // Visible when either ramp has anything to show — regional
+          // is the gating signal at wide zoom, detail picks up later.
+          h.tier2Group.visible = regionalOpacity > 0.01 || detailOpacity > 0.01;
           h.tier2Group.traverse((obj) => {
             if (!(obj instanceof THREE.Mesh)) return;
-            // Apply ramp to the detail layer; regional layer (when
-            // wired in Phase 2) follows the same opacity for now.
             const layer = obj.userData?.layer;
             if (layer !== 'detail' && layer !== 'regional') return;
             const mat = obj.material as THREE.Material & { opacity: number };
-            mat.opacity = detailOpacity;
-            mat.transparent = detailOpacity < 0.99;
+            // Split ramps: regional CTX fades in earlier (wider
+            // zoom), detail HiRISE fades in later (closer zoom).
+            mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
+            mat.transparent = mat.opacity < 0.99;
           });
           // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
           // is active": once the rectangular Tier-2 patch is the active

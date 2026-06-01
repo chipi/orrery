@@ -214,14 +214,22 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   {
     siteId: 'viking2-lander',
     sourceUrl:
-      'https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00568/PIA00568.jpg',
-    sourceLabel: 'PIA00568',
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-VikingLander2-1-1976.jpg',
+    sourceLabel: 'NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)',
     attribution: 'NASA / JPL',
     license: 'PD-NASA',
-    srcAzimuthDeg: 360,
-    srcElevationTopDeg: 15,
-    srcElevationBottomDeg: 55,
-    caption: 'Viking 2 lander, Utopia Planitia — first colour image of the site (Sept 1976)',
+    // 2026-06-01 — switched from PIA00568 (landscape-only, no lander deck
+    // visible) to the 330° azimuth Viking Lander 2 surface mosaic that
+    // includes the lander deck + sample arm in the foreground. NASA's
+    // modern /content/dam/ URLs don't expose the high-res Viking 2 deck-
+    // included panorama; Wikimedia Commons hosts the canonical 2592×898
+    // facsimile-camera mosaic. PD-NASA license preserved (Viking imagery
+    // is public-domain regardless of redistribution path).
+    srcAzimuthDeg: 330,
+    srcElevationTopDeg: 25,
+    srcElevationBottomDeg: 35,
+    caption:
+      'Viking 2 lander deck + Utopia Planitia rock field — 330° facsimile-camera mosaic (Sept 1976)',
   },
   {
     siteId: 'viking1-lander',

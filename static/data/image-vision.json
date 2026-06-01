@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-06-01T08:04:13.599Z",
+  "generated_at": "2026-06-01T15:16:11.305Z",
   "vision_provider": "anthropic",
   "vision_model": "claude-sonnet-4-6",
   "prompt_version": "v1.0.0",
@@ -25402,6 +25402,24 @@
       "fallback": false,
       "scored_at": "2026-05-24T02:37:00.514Z",
       "scoring_cost_usd": 0.007224
+    },
+    "/images/hotspots/mars/viking2-lander/tier3-pan.jpg": {
+      "score": 3,
+      "subject": "A heavily processed and composited panoramic view of the Martian surface showing spacecraft hardware in the foreground with rocky terrain extending to the horizon, marred by obvious digital artifacts, color banding, and poorly blended composite seams.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": {
+        "1x1": "/images/hotspots/mars/viking2-lander/tier3-pan.1x1.jpg",
+        "4x3": "/images/hotspots/mars/viking2-lander/tier3-pan.4x3.jpg",
+        "16x9": "/images/hotspots/mars/viking2-lander/tier3-pan.16x9.jpg"
+      },
+      "rejected_by": "score-below-threshold",
+      "fallback": false,
+      "scored_at": "2026-06-01T15:16:10.553Z",
+      "scoring_cost_usd": 0.008445000000000001
     }
   }
 }

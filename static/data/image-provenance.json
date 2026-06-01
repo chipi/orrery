@@ -70737,6 +70737,27 @@
       "pageid": null,
       "nasa_id": "PIA26363",
       "fetched_at": "2026-06-01T08:04:11.551Z"
+    },
+    {
+      "id": "eb4afa36a939534d",
+      "path": "/images/hotspots/mars/viking2-lander/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Viking 2 lander deck + Utopia Planitia rock field — 330° facsimile-camera mosaic (Sept 1976)",
+      "author": "NASA / JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-VikingLander2-1-1976.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama-VikingLander2-1-1976.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "NASA Viking Lander 2 panorama (1976, via Wikimedia Commons)",
+      "fetched_at": "2026-06-01T15:16:03.255Z"
     }
   ]
 }

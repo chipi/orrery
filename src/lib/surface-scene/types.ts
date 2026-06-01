@@ -87,6 +87,84 @@ export type LanderModelBuilder = (
 export type HotspotBuilderRegistrar = () => void;
 
 /**
+ * Earth-specific orbital layer config (#290 — unify /earth so the
+ * route uses SurfaceScene as the base, with orbital subsystems
+ * layered on top as additive togglable layers). All sub-fields
+ * optional; absent = that subsystem doesn't render. Only set on
+ * `/earth`; `/moon` and `/mars` omit the whole field.
+ *
+ * The slices implementing this (Slices 1-7 of #290) each fill in one
+ * sub-field + its lib helper file. Slice 0 (this commit) ships the
+ * types contract only — no SurfaceScene code consumes these fields
+ * yet, so /earth still mounts EarthOrbitalScene unchanged.
+ */
+export interface EarthOrbitalLayersConfig {
+  /**
+   * Karman-line atmosphere shell + equatorial ring at 100 km altitude.
+   * Distinct from Mars's continuous-CO₂ `atmosphere` field — Earth's
+   * version is a discrete Karman-line marker, science-layer-gated by
+   * the `'atmosphere'` lens (ADR-055). Slice 1.
+   */
+  karmanLineShell?: {
+    color: number;
+    altitudeKm: number;
+    meshOpacity: number;
+    ringOpacity: number;
+  };
+
+  /**
+   * Stratospheric ozone-hole overlay — translucent purple polar caps
+   * at ~30 km altitude. South cap (Antarctic ozone hole, larger,
+   * spring depletion) + smaller north cap (Arctic winter depletion).
+   * Science-layer-gated by the `'ozone'` lens. Slice 1.
+   */
+  ozoneOverlay?: {
+    altitudeKm: number;
+    south: { color: number; opacity: number; phiCoverageRatio: number };
+    north: { color: number; opacity: number; phiCoverageRatio: number };
+  };
+
+  /**
+   * Moon ghost mesh — small textured Moon sphere at the real Moon-
+   * orbit distance for spatial context. Click → navigate to `/moon`.
+   * Slice 2.
+   */
+  moonGhost?: {
+    textureUrl: string;
+    radiusUnits: number;
+    distanceKm: number;
+  };
+
+  /**
+   * Orbit-regime torus rings (LEO/MEO/GEO/HEO/MOON/L2) drawn at one
+   * representative altitude per regime present in the loaded data.
+   * Inclination not modelled — rings sit in the equatorial plane.
+   * Slice 2.
+   */
+  orbitRings?: {
+    regimeColors: Record<string, number>;
+    visibleByDefault: boolean;
+  };
+
+  /**
+   * Per-category satellite rendering. Each category gets its own
+   * visibility toggle chip + default state. Loader function returns
+   * the EarthObject array; categorisation drives chip + visibility.
+   * Slice 3.
+   */
+  satellites?: {
+    loadObjects: (locale: string) => Promise<unknown[]>;
+    categoryDefaultVisible: {
+      station: boolean;
+      observatory: boolean;
+      constellation: boolean;
+      comsat: boolean;
+      moonOrbiter: boolean;
+    };
+  };
+}
+
+/**
  * The minimal config a route passes to `<SurfaceScene>`. Everything
  * not listed here is intentionally shared.
  */
@@ -149,6 +227,16 @@ export interface SurfaceSceneConfig {
    * at 0.8 (per ADR-072 §Drifts row 5).
    */
   ambientColor: number;
+
+  /**
+   * Earth-only — optional orbital subsystems layered on top of the
+   * surface scene. Set on /earth to unify the previously-separate
+   * EarthOrbitalScene's atmosphere / ozone / moon-ghost / orbit-rings
+   * / satellites with the launchpad-marker layer. Omit on /moon and
+   * /mars. Slices 1-7 of #290 fill in the consumer code; Slice 0
+   * (this commit) only adds the type contract.
+   */
+  earthOrbitalLayers?: EarthOrbitalLayersConfig;
 }
 
 /**

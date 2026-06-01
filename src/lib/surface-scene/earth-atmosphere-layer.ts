@@ -134,15 +134,7 @@ export function buildOzoneOverlay(opts: OzoneOverlayOpts): OzoneOverlayHandle {
 
   // North cap — phi starts at 0 (north pole), length = coverageRatio * π.
   const northPhiLength = Math.PI * opts.north.phiCoverageRatio;
-  const northGeo = new THREE.SphereGeometry(
-    ozoneRadius,
-    48,
-    24,
-    0,
-    Math.PI * 2,
-    0,
-    northPhiLength,
-  );
+  const northGeo = new THREE.SphereGeometry(ozoneRadius, 48, 24, 0, Math.PI * 2, 0, northPhiLength);
   const northMat = new THREE.MeshBasicMaterial({
     color: opts.north.color,
     transparent: true,

@@ -23,10 +23,7 @@
     buildKarmanLineShell,
     buildOzoneOverlay,
   } from '$lib/surface-scene/earth-atmosphere-layer';
-  import {
-    buildMoonGhost,
-    buildOrbitRings,
-  } from '$lib/surface-scene/earth-orbital-rings-layer';
+  import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
   import {
     buildSatelliteLayer,
     hashIdToNodeAngle,

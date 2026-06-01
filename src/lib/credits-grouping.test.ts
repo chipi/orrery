@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  bundlePhotos,
   groupBySource,
   pathToRouteKey,
   provenanceSourceId,
@@ -186,12 +187,19 @@ describe('groupBySource', () => {
         path: '/images/a.jpg',
         source_type: 'wikimedia-commons',
         agency: 'Wikimedia Commons contributors',
+        source_url: 'https://commons.wikimedia.org/a',
       }),
-      makePhoto({ path: '/images/b.jpg', source_type: 'nasa-images-api', agency: 'NASA' }),
+      makePhoto({
+        path: '/images/b.jpg',
+        source_type: 'nasa-images-api',
+        agency: 'NASA',
+        source_url: 'https://images.nasa.gov/b',
+      }),
       makePhoto({
         path: '/images/c.jpg',
         source_type: 'direct-other',
         agency: 'Solar System Scope',
+        source_url: 'https://solarsystemscope.com/c',
       }),
     ];
     const texts: TextSourceEntry[] = [];
@@ -207,11 +215,98 @@ describe('groupBySource', () => {
   });
   it('sorts photos by path within a group', () => {
     const photos = [
-      makePhoto({ path: '/images/b.jpg', source_type: 'nasa-images-api' }),
-      makePhoto({ path: '/images/a.jpg', source_type: 'nasa-images-api' }),
+      makePhoto({
+        path: '/images/b.jpg',
+        source_type: 'nasa-images-api',
+        source_url: 'https://images.nasa.gov/b',
+      }),
+      makePhoto({
+        path: '/images/a.jpg',
+        source_type: 'nasa-images-api',
+        source_url: 'https://images.nasa.gov/a',
+      }),
     ];
     const groups = groupBySource(SOURCES, photos, []);
     const nasa = groups.find((g) => g.source.id === 'nasa')!;
-    expect(nasa.photos.map((p) => p.path)).toEqual(['/images/a.jpg', '/images/b.jpg']);
+    expect(nasa.bundles.map((b) => b.representative.path)).toEqual([
+      '/images/a.jpg',
+      '/images/b.jpg',
+    ]);
+  });
+});
+
+describe('bundlePhotos', () => {
+  it('collapses aspect-ratio crops of the same source into one bundle with variant chips', () => {
+    const url = 'https://images.nasa.gov/search?q=lro';
+    const photos = [
+      makePhoto({ path: '/images/missions/lro/02.16x9.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/02.1x1.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/02.4x3.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/02.jpg', source_url: url, title: 'lro' }),
+    ];
+    const bundles = bundlePhotos(photos);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].variants).toEqual(['16:9', '4:3', '1:1', 'original']);
+    expect(bundles[0].stem).toBe('/images/missions/lro/02');
+    expect(bundles[0].paths).toHaveLength(4);
+    // Representative is the un-cropped original when present.
+    expect(bundles[0].representative.path).toBe('/images/missions/lro/02.jpg');
+  });
+  it('keeps separate bundles when the same stem has different source attributions', () => {
+    // beidou pattern: /01.16x9.jpg, /01.1x1.jpg, /01.4x3.jpg each
+    // pulled from a DIFFERENT Wikimedia file — attribution must not
+    // be fudged by collapsing.
+    const photos = [
+      makePhoto({
+        path: '/images/earth-objects/beidou/01.16x9.jpg',
+        source_url: 'https://commons.wikimedia.org/wiki/File:A.jpg',
+        title: 'A',
+      }),
+      makePhoto({
+        path: '/images/earth-objects/beidou/01.1x1.jpg',
+        source_url: 'https://commons.wikimedia.org/wiki/File:B.jpg',
+        title: 'B',
+      }),
+      makePhoto({
+        path: '/images/earth-objects/beidou/01.4x3.jpg',
+        source_url: 'https://commons.wikimedia.org/wiki/File:C.jpg',
+        title: 'C',
+      }),
+    ];
+    const bundles = bundlePhotos(photos);
+    expect(bundles).toHaveLength(3);
+    for (const b of bundles) {
+      expect(b.variants).toHaveLength(1);
+      expect(b.paths).toHaveLength(1);
+    }
+  });
+  it('leaves a single-path photo as a one-variant bundle', () => {
+    const bundles = bundlePhotos([makePhoto({ path: '/logos/nasa.svg' })]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].variants).toEqual(['original']);
+    expect(bundles[0].paths).toEqual(['/logos/nasa.svg']);
+    expect(bundles[0].stem).toBe('/logos/nasa');
+  });
+  it('bundles a partial crop set (no 16:9 emitted) correctly', () => {
+    // Some slots only emit 1x1 + 4x3 + original (per the LRO/01 example).
+    const url = 'https://images.nasa.gov/search?q=lro';
+    const bundles = bundlePhotos([
+      makePhoto({ path: '/images/missions/lro/01.1x1.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/01.4x3.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/01.jpg', source_url: url, title: 'lro' }),
+    ]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].variants).toEqual(['4:3', '1:1', 'original']);
+  });
+  it('does NOT collapse different slots that share a source url', () => {
+    // LRO/02 and LRO/03 both come from the same NASA search URL but
+    // are different result images — different slot numbers ⇒
+    // different stems ⇒ different bundles.
+    const url = 'https://images.nasa.gov/search?q=lro';
+    const bundles = bundlePhotos([
+      makePhoto({ path: '/images/missions/lro/02.jpg', source_url: url, title: 'lro' }),
+      makePhoto({ path: '/images/missions/lro/03.jpg', source_url: url, title: 'lro' }),
+    ]);
+    expect(bundles).toHaveLength(2);
   });
 });

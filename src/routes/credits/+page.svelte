@@ -123,7 +123,7 @@
   );
 
   let totals = $derived({
-    photos: provenance?.entries.length ?? 0,
+    photos: groups.reduce((n, g) => n + g.bundles.length, 0),
     texts: textSources?.entries.length ?? 0,
     sources: groups.length,
   });
@@ -230,7 +230,7 @@
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
             <span class="counts">
-              · {m.credits_count_photos({ n: group.photos.length })} ·
+              · {m.credits_count_photos({ n: group.bundles.length })} ·
               {m.credits_count_text({ n: group.texts.length })}
             </span>
           </li>
@@ -265,13 +265,15 @@
           </div>
         </header>
 
-        {#if group.photos.length > 0}
+        {#if group.bundles.length > 0}
           <h3 class="bom-heading">
             {m.credits_section_photos()}
-            <span class="bom-count">{m.credits_count_photos({ n: group.photos.length })}</span>
+            <span class="bom-count">{m.credits_count_photos({ n: group.bundles.length })}</span>
           </h3>
           <ul class="photo-list">
-            {#each group.photos as photo}
+            {#each group.bundles as bundle}
+              {@const photo = bundle.representative}
+              {@const hasVariants = bundle.paths.length > 1}
               <li class="photo">
                 <a
                   class="thumb"
@@ -319,7 +321,14 @@
                   <p class="ph-row used">
                     <span class="lbl">{m.credits_used_on()}:</span>
                     {routeLabel(pathToRouteKey(photo.path))}
-                    <code class="path">{photo.path}</code>
+                    <code class="path">{bundle.stem}{hasVariants ? '.*' : ''}</code>
+                    {#if hasVariants}
+                      <span class="variants" aria-label="Aspect-ratio variants">
+                        {#each bundle.variants as v}
+                          <span class="variant-chip">{v}</span>
+                        {/each}
+                      </span>
+                    {/if}
                   </p>
                   {#if photo.modifications.length > 0}
                     <p class="ph-row mods">{m.image_credit_modifications()}</p>
@@ -783,6 +792,22 @@
   .ph-row.mods {
     color: rgba(255, 255, 255, 0.4);
     font-style: italic;
+  }
+  .ph-row .variants {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: baseline;
+  }
+  .variant-chip {
+    background: rgba(78, 205, 196, 0.12);
+    color: #4ecdc4;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'Space Mono', monospace;
   }
 
   .text-entry {

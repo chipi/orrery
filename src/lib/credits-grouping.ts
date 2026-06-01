@@ -8,10 +8,95 @@
 
 import type { ImageProvenanceEntry, SourceLogo, TextSourceEntry } from '$lib/data';
 
+/**
+ * A single sourced image, plus every emitted aspect-ratio variant
+ * that shares the same source attribution. The asset pipeline writes
+ * each panel image at four aspect crops (`<slot>.16x9.jpg`,
+ * `<slot>.1x1.jpg`, `<slot>.4x3.jpg`, `<slot>.jpg`) — all derived
+ * from one upstream file — so the /credits page collapses them into
+ * one row with chips for the variants present. Reuse credit + license
+ * apply identically to every variant; bundling avoids 3–4× row
+ * duplication on a page that already runs long.
+ */
+export interface PhotoBundle {
+  /** The entry chosen to represent the bundle on the page (original
+   *  un-cropped variant when present, else the first emitted path). */
+  representative: ImageProvenanceEntry;
+  /** Path with the aspect-ratio + extension stripped, e.g.
+   *  `/images/missions/lro/02` for any of `02.16x9.jpg`, `02.1x1.jpg`,
+   *  `02.4x3.jpg`, `02.jpg`. Used for the "used on" path display. */
+  stem: string;
+  /** Aspect-ratio chips present in this bundle, in canonical order:
+   *  `16:9, 4:3, 1:1, original`. Single-element `['original']` for
+   *  paths that have no crop siblings (logos, textures, sun, …). */
+  variants: string[];
+  /** All emitted paths that collapsed into this bundle. */
+  paths: string[];
+}
+
 export interface CreditsGroup {
   source: SourceLogo;
-  photos: ImageProvenanceEntry[];
+  bundles: PhotoBundle[];
   texts: TextSourceEntry[];
+}
+
+const ASPECT_RE = /\.(16x9|1x1|4x3)\.[a-z]+$/;
+const ASPECT_OR_EXT_RE = /(?:\.(?:16x9|1x1|4x3))?\.[a-z]+$/;
+const VARIANT_ORDER = ['16:9', '4:3', '1:1', 'original'];
+
+/** Aspect-ratio suffix between the slot number and the extension, or null. */
+function variantSuffix(path: string): '16x9' | '1x1' | '4x3' | null {
+  const m = ASPECT_RE.exec(path);
+  return (m?.[1] as '16x9' | '1x1' | '4x3' | undefined) ?? null;
+}
+
+/** Strip the aspect-ratio crop suffix + extension to get a stable
+ *  per-source-image stem. `/images/missions/lro/02.16x9.jpg` and
+ *  `/images/missions/lro/02.jpg` both stem to `…/lro/02`;
+ *  `/logos/nasa.svg` stems to `/logos/nasa`. */
+function pathStem(path: string): string {
+  return path.replace(ASPECT_OR_EXT_RE, '');
+}
+
+/**
+ * Collapse photo entries into bundles. Key is
+ * `(stem, source_url, title, author)` — same crop family AND same
+ * upstream attribution. Two photos with the same stem but different
+ * `source_url`s (e.g. `/images/earth-objects/beidou/01.{16x9,1x1,4x3}.jpg`
+ * each from a different Wikimedia file) stay as separate bundles so
+ * attribution isn't fudged.
+ */
+export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
+  const groups = new Map<string, ImageProvenanceEntry[]>();
+  const order: string[] = [];
+  for (const p of photos) {
+    const key = `${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
+    const existing = groups.get(key);
+    if (existing) {
+      existing.push(p);
+    } else {
+      groups.set(key, [p]);
+      order.push(key);
+    }
+  }
+  const bundles: PhotoBundle[] = [];
+  for (const key of order) {
+    const entries = groups.get(key)!;
+    const representative = entries.find((e) => variantSuffix(e.path) === null) ?? entries[0];
+    const present = new Set<string>();
+    for (const e of entries) {
+      const v = variantSuffix(e.path);
+      present.add(v === null ? 'original' : v.replace('x', ':'));
+    }
+    const variants = VARIANT_ORDER.filter((v) => present.has(v));
+    bundles.push({
+      representative,
+      stem: pathStem(representative.path),
+      variants,
+      paths: entries.map((e) => e.path).sort((a, b) => a.localeCompare(b)),
+    });
+  }
+  return bundles;
 }
 
 const SOURCE_TYPE_TO_ID: Record<string, string> = {
@@ -137,14 +222,17 @@ export function pathToRouteKey(p: string): string {
 /**
  * Group all provenance + text entries by source. The returned
  * groups follow the order of `sources` (Milestone D style guide:
- * agencies first, then platforms / publishers).
+ * agencies first, then platforms / publishers). Photos are bundled
+ * by `bundlePhotos` so aspect-ratio crops of the same source image
+ * collapse into one row with variant chips.
  */
 export function groupBySource(
   sources: SourceLogo[],
   photos: ImageProvenanceEntry[],
   texts: TextSourceEntry[],
 ): CreditsGroup[] {
-  const byId = new Map<string, CreditsGroup>(
+  type Acc = { source: SourceLogo; photos: ImageProvenanceEntry[]; texts: TextSourceEntry[] };
+  const byId = new Map<string, Acc>(
     sources.map((s) => [s.id, { source: s, photos: [], texts: [] }]),
   );
   for (const p of photos) {
@@ -157,11 +245,13 @@ export function groupBySource(
     const grp = byId.get(id) ?? byId.get('wikipedia');
     if (grp) grp.texts.push(t);
   }
-  // Sort photos by path inside each group for stable display.
-  for (const grp of byId.values()) {
-    grp.photos.sort((a, b) => a.path.localeCompare(b.path));
-    grp.texts.sort((a, b) => a.id.localeCompare(b.id));
+  const out: CreditsGroup[] = [];
+  for (const acc of byId.values()) {
+    acc.photos.sort((a, b) => a.path.localeCompare(b.path));
+    acc.texts.sort((a, b) => a.id.localeCompare(b.id));
+    const bundles = bundlePhotos(acc.photos);
+    if (bundles.length + acc.texts.length === 0) continue;
+    out.push({ source: acc.source, bundles, texts: acc.texts });
   }
-  // Drop empty groups.
-  return Array.from(byId.values()).filter((g) => g.photos.length + g.texts.length > 0);
+  return out;
 }

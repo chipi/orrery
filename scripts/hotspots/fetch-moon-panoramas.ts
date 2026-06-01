@@ -349,28 +349,16 @@ const PANORAMAS: MoonPanoramaConfig[] = [
     },
     recolourBlackThreshold: 20, // preserve historic transmission texture
   },
-  {
-    siteId: 'luna21',
-    sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0d/Lunokhod-2_model.jpg',
-    sourceLabel: 'Lunokhod 2 engineering model (Memorial Museum of Cosmonautics, Moscow)',
-    attribution: 'Memorial Museum of Cosmonautics, Moscow · public exhibit photograph',
-    license: 'PD-Russia',
-    // 1360×1024 ≈ 1.33:1. Museum engineering model of Lunokhod 2 — no
-    // surface panorama published on Wikimedia or accessible to Western
-    // archives (planetology.ru / mentallandscape archives require manual
-    // navigation). Per ship-with-honest-caption: use the canonical
-    // public reference photo of the rover hardware and caption it
-    // honestly.
-    srcAzimuthDeg: 50,
-    srcElevationTopDeg: 19,
-    srcElevationBottomDeg: 19,
-    caption:
-      'Lunokhod 2 (Luna 21) engineering model, Memorial Museum of Cosmonautics, Moscow. ' +
-      'Lunokhod 2 traversed 39 km across Le Monnier crater Jan–May 1973 — still the longest ' +
-      'off-Earth distance covered by any rover until Opportunity passed it in 2014. The flight ' +
-      'rover returned 86 surface panoramas, archived in Russia at the Vernadsky Institute ' +
-      '(planetology.ru) — not redistributed in Western archives. PD-Russia.',
-  },
+  // luna21 dropped 2026-06-01 from the panorama config. The previous
+  // source was a museum-replica photo of Lunokhod 2 (blue curtain
+  // visible in the background) — not a lunar surface image at all.
+  // The 86 actual Lunokhod 2 surface panoramas live at planetology.ru
+  // / Vernadsky Institute and aren't redistributed in Western archives;
+  // LROC NAC orbital views show only a few-pixel rover dot. Per the
+  // Mars 3 precedent (PRD-022 honest-historical-artifact): no Tier-3
+  // panorama is the right answer when no usable surface source exists,
+  // rather than a misleading museum-replica stand-in. Stand-at-site
+  // button hides; user sees Tier-2 LROC + the surface-site panel.
   {
     siteId: 'luna24',
     sourceUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/Luna24_rev_fig.png',

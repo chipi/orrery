@@ -335,12 +335,11 @@
       "hotspot_tier3_panorama": "/images/hotspots/moon/luna17/tier3-pan.jpg"
     },
     "luna21": {
-      "hotspot_tier_max": 3,
+      "hotspot_tier_max": 2,
       "hotspot_model": "lunokhod-rover",
       "hotspot_tier2_source": "/images/hotspots/moon/luna21/tier2-lroc.jpg",
       "location_uncertainty_m": 50,
-      "hotspot_annotations": [],
-      "hotspot_tier3_panorama": "/images/hotspots/moon/luna21/tier3-pan.jpg"
+      "hotspot_annotations": []
     },
     "luna24": {
       "hotspot_tier_max": 3,

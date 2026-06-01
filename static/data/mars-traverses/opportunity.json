@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ENDED",
   "snapshot_date": "2018-06-10",
-  "credit": "© NASA/JPL-Caltech — Opportunity rover traverse, simplified hand-vendored polyline from Eagle Crater (Jan 2004) southeast across Meridiani Planum to Endeavour Crater (final position June 2018). V1 stub; the real 45.16 km marathon track is in the NASA Mars Exploration Rover archive.",
+  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Opportunity rover traverse, simplified hand-vendored polyline from Eagle Crater (Jan 2004) southeast across Meridiani Planum to Endeavour Crater (final position June 2018). V1 stub; the real 45.16 km marathon track is in the NASA Mars Exploration Rover archive.",
   "points": [
     [
       -1.9462,
@@ -216,35 +216,40 @@
       "lat": -1.96236,
       "lon": -5.52157,
       "label": "Endurance Crater",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-56"
     },
     {
       "sol": 1232,
       "lat": -2.01669,
       "lon": -5.46084,
       "label": "Erebus Crater",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-1232"
     },
     {
       "sol": 1820,
       "lat": -2.06171,
       "lon": -5.41305,
       "label": "Victoria Crater",
-      "kind": "panorama"
+      "kind": "panorama",
+      "id": "sol-1820"
     },
     {
       "sol": 3010,
       "lat": -2.14493,
       "lon": -5.35133,
       "label": "Endeavour Crater rim arrival",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-3010"
     },
     {
       "sol": 4500,
       "lat": -2.23327,
       "lon": -5.26031,
       "label": "Marathon Valley",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-4500"
     }
   ]
 }

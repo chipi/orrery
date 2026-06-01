@@ -41,7 +41,10 @@ export function createMarkerHalo(
   const { lay = false, aspect } = opts;
   let halo: THREE.Object3D;
   if (aspect != null && Math.abs(aspect - 1) >= 0.01) {
-    // Rectangular bounding outline (4 line segments around the rect).
+    // Rectangular bounding outline (4 line segments) + semi-
+    // transparent agency-color fill plane — the fill makes the
+    // region read as a glowing rectangular area from a distance,
+    // not just a thin wireframe outline that's hard to spot.
     // Width × height preserves the circle's area while matching the
     // requested aspect — same area-preserving math as the patch geometry.
     const diameter = radius * 2;
@@ -50,7 +53,23 @@ export function createMarkerHalo(
     const width = aspect * height;
     const w2 = width / 2;
     const h2 = height / 2;
-    // 8 vertices forming 4 line segments along the rect perimeter.
+    const group = new THREE.Group();
+    // (a) Soft fill plane inside the rect (98% inset so the fill
+    // doesn't bleed past the outline edge).
+    const fillGeo = new THREE.PlaneGeometry(width * 0.98, height * 0.98);
+    const fillMat = new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      // Soft glow only — opacity 0.08 is enough to read the region as
+      // "highlighted" without overpowering the surface texture at
+      // wide zoom (was 0.18, which created a solid blue/red blob
+      // dominating the planet view).
+      opacity: 0.08,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    });
+    group.add(new THREE.Mesh(fillGeo, fillMat));
+    // (b) Outline — 4 line segments on top of the fill.
     const verts = new Float32Array([
       -w2,
       -h2,
@@ -80,7 +99,8 @@ export function createMarkerHalo(
     const geo = new THREE.BufferGeometry();
     geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
     const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.95 });
-    halo = new THREE.LineSegments(geo, mat);
+    group.add(new THREE.LineSegments(geo, mat));
+    halo = group;
   } else {
     const haloGeo = new THREE.RingGeometry(radius * 0.92, radius, 32);
     const haloMat = new THREE.MeshBasicMaterial({

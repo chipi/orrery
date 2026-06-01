@@ -259,6 +259,14 @@ export interface HotspotAnnotation {
  * every sol.
  */
 export interface TraverseStop {
+  /**
+   * Stable identifier for deep-link routing — convention is
+   * `sol-<N>` (each rover's sols are unique within that rover, so
+   * sol is naturally sufficient when combined with the rover the
+   * stop belongs to). Added 2026-06-01 to power the panorama
+   * cross-link chip's `?traverse_stop=` URL handler.
+   */
+  id: string;
   /** Mars sol or Moon EVA day, for label rendering. */
   sol: number;
   /** Stop location in decimal degrees. */

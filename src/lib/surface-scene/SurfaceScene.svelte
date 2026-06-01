@@ -5,6 +5,9 @@
   import { syncPanoramaUrl, readPanoramaUrlState } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
   import * as THREE from 'three';
+  import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+  import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+  import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
   import { createOutlinePassSetup } from '$lib/three/outline-pass-setup';
   import { createMarkerHalo } from '$lib/three/marker-halo';
   import { attachPickableHit } from '$lib/three/pickable-hit';
@@ -28,6 +31,8 @@
   } from '$lib/surface-scene/earth-atmosphere-layer';
   import { buildMoonGhost, buildOrbitRings } from '$lib/surface-scene/earth-orbital-rings-layer';
   import { buildSatelliteLayer } from '$lib/surface-scene/earth-satellite-layer';
+  import EarthObjectPanel from '$lib/surface-scene/EarthObjectPanel.svelte';
+  import { getMissionIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import { createSceneRenderer, disposeSceneRenderer } from '$lib/three/scene-renderer';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
@@ -185,6 +190,13 @@
   // the relevant layer{Stations,Observatories,...} flag.
   let earthSats: Array<import('$lib/surface-scene/earth-satellite-layer').SatObj> = [];
   let earthRingsGroup: THREE.Group | null = null;
+  // EarthObject cache + selection state (#290 Slice 6b). Cached for the
+  // pointer-click handler to look up the clicked sat. selectedSat
+  // drives EarthObjectPanel; nulled out when the user selects a
+  // surface site instead (mutual selection — site OR sat, not both).
+  let earthObjectsCache: import('$types/earth-object').EarthObject[] = [];
+  let selectedSat = $state<import('$types/earth-object').EarthObject | null>(null);
+  let earthMissionIds = $state<Set<string>>(new Set());
 
   // Flat-patch view state (ADR-062 / #283 Slice 4). Four-phase machine
   // drives the 600 ms ease-in-out cross-fade between sphere and flat
@@ -638,6 +650,13 @@
         earthLayerHandles.push(mg);
       }
 
+      // Mission-index — populates the "FULL MISSION CARD →" cross-link
+      // inside EarthObjectPanel. Fire-and-forget; the panel renders
+      // with the empty Set until this resolves.
+      void getMissionIndex().then((idx) => {
+        earthMissionIds = new Set(idx.map((mi) => mi.id));
+      });
+
       // Satellites + orbit rings — both depend on the EarthObject set
       // returned by the route's loadObjects callback. Loaded async then
       // the helpers materialise scene meshes. Chip-row visibility +
@@ -691,12 +710,22 @@
               moonR: earthMoonR,
             });
             earthSats = satLayer.sats;
+            earthObjectsCache = objects;
             earthLayerHandles.push({
               dispose: () => {
                 satLayer.dispose();
                 earthSats = [];
+                earthObjectsCache = [];
               },
             });
+
+            // Deep-link: ?object=<id> opens the panel pre-selected.
+            // Same param name as the legacy EarthOrbitalScene.
+            const objParam = $page.url.searchParams.get('object');
+            if (objParam) {
+              const o = objects.find((x) => x.id === objParam);
+              if (o) selectedSat = o;
+            }
           })
           .catch((err) => {
             console.error('SurfaceScene: failed to load earth objects', err);
@@ -799,7 +828,8 @@
 
     // ─── Traverses (Mars rover paths today, Moon EVA paths future) ───
     type TraverseLine = {
-      line: THREE.Line;
+      line: Line2;
+      lineMaterial: LineMaterial;
       startDot: THREE.Mesh;
       endDot: THREE.Mesh;
       roverId: string;
@@ -808,6 +838,7 @@
       endLabel?: THREE.Group;
       startLabelTexture?: THREE.Texture;
       endLabelTexture?: THREE.Texture;
+      stopMeshes: THREE.Mesh[];
     };
     const traverseLines: TraverseLine[] = [];
     // Tier-2 delayed-reveal stack — entries fade in past the Tier-2
@@ -876,6 +907,10 @@
           disposeObject3d(tl.endLabel);
           planetMesh.remove(tl.endLabel);
         }
+        for (const sm of tl.stopMeshes) {
+          disposeObject3d(sm);
+          planetMesh.remove(sm);
+        }
         tl.startLabelTexture?.dispose();
         tl.endLabelTexture?.dispose();
       }
@@ -899,19 +934,30 @@
           const { x, y, z } = latLonToUnitSphere(lat, lon);
           verts.push(x * r, y * r, z * r);
         }
-        const geo = new THREE.BufferGeometry();
-        geo.setAttribute('position', new THREE.Float32BufferAttribute(verts, 3));
         const site = sites.find((s) => s.id === tr.rover_id);
         const color = site ? colorFor(site) : '#ffffff';
         const isActive = tr.status === 'ACTIVE';
-        const line = new THREE.Line(
-          geo,
-          new THREE.LineBasicMaterial({
-            color,
-            transparent: true,
-            opacity: isActive ? 0.95 : 0.7,
-          }),
+        // Thick rover path — THREE.Line is hard-capped at 1 px on most
+        // WebGL platforms, so the traverse polyline disappeared next to
+        // the kind-coloured stop dots (image 11, 2026-06-01). Line2 +
+        // LineMaterial render a screen-pixel-sized extruded ribbon,
+        // honouring `linewidth` reliably. Resolution is set here and
+        // refreshed in the resize hook below.
+        const lineGeo = new LineGeometry();
+        lineGeo.setPositions(verts);
+        const lineMaterial = new LineMaterial({
+          color: new THREE.Color(color).getHex(),
+          linewidth: 3,
+          transparent: true,
+          opacity: isActive ? 0.95 : 0.7,
+          dashed: false,
+        });
+        lineMaterial.resolution.set(
+          container?.clientWidth || window.innerWidth,
+          container?.clientHeight || window.innerHeight,
         );
+        const line = new Line2(lineGeo, lineMaterial);
+        line.computeLineDistances();
         line.userData = { roverId: tr.rover_id, kind: 'traverse' };
         planetMesh.add(line);
         tier2DelayedReveal.push(line);
@@ -973,6 +1019,7 @@
         // notable sols). Each renders as a small kind-tinted sphere on
         // the planet surface, joining the tier2DelayedReveal stack so it
         // fades in lockstep with the line + dots.
+        const stopMeshes: THREE.Mesh[] = [];
         if (tr.stops) {
           const STOP_KIND_COLOR: Record<string, number> = {
             sample: 0xfb923c,
@@ -984,7 +1031,12 @@
           for (const stop of tr.stops) {
             const stopPos = latLonToUnitSphere(stop.lat, stop.lon);
             const stopMesh = new THREE.Mesh(
-              new THREE.SphereGeometry(0.018, 10, 10),
+              // Base radius 0.008u (was 0.018) — at the wide edge of the
+              // Tier-2 reveal window with the per-frame scale curve, the
+              // sphere ends up the size of a small NASA-map sample pin
+              // instead of a fingertip-sized blob (image 11 feedback,
+              // 2026-06-01).
+              new THREE.SphereGeometry(0.008, 10, 10),
               new THREE.MeshBasicMaterial({
                 color: STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
                 transparent: true,
@@ -1002,11 +1054,13 @@
             };
             planetMesh.add(stopMesh);
             tier2DelayedReveal.push(stopMesh);
+            stopMeshes.push(stopMesh);
           }
         }
 
         traverseLines.push({
           line,
+          lineMaterial,
           startDot,
           endDot,
           roverId: tr.rover_id,
@@ -1015,6 +1069,7 @@
           endLabel: endBuilt.group,
           startLabelTexture: startBuilt.texture,
           endLabelTexture: endBuilt.texture,
+          stopMeshes,
         });
       }
     }
@@ -1489,6 +1544,24 @@
       return hit ? (hit.object.userData.siteId as string) : null;
     }
 
+    // #290 Slice 6b — Earth-satellite picker. Raycasts against the
+    // sat-layer hit spheres (3u radius around each spacecraft) so the
+    // user can grab moving satellites without millimetre-perfect
+    // pointer accuracy. Returns the EarthObject id when a satellite
+    // is hit, or null. Empty no-op on /moon and /mars (earthSats [] ).
+    function pickSatAt(clientX: number, clientY: number): string | null {
+      if (earthSats.length === 0) return null;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+      ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const targets: THREE.Object3D[] = [];
+      for (const s of earthSats) if (s.group.visible) targets.push(s.group);
+      const hits = ray.intersectObjects(targets, true);
+      const hit = hits.find((h) => typeof h.object.userData.id === 'string');
+      return hit ? (hit.object.userData.id as string) : null;
+    }
+
     function tryPick3d(clientX: number, clientY: number) {
       // Panorama mode: raycast annotation sprites first (PRD-022 / ADR-074
       // Phase 2E). Hit → open annotation card; miss → fall through.
@@ -1502,8 +1575,25 @@
           return;
         }
       }
+      // #290 Slice 6b — Earth satellites win over surface sites. Sat
+      // hit-spheres are 3u radius and lie outside the planet, so a
+      // click landing on both means the user is targeting the
+      // satellite. Mutual selection: opening a sat clears the surface-
+      // site selection, and selectSite clears selectedSat above.
+      const satId = pickSatAt(clientX, clientY);
+      if (satId) {
+        const o = earthObjectsCache.find((x) => x.id === satId);
+        if (o) {
+          selectedSat = o;
+          selected = null;
+          return;
+        }
+      }
       const id = pickSiteAt(clientX, clientY);
-      if (id) selectSite(id);
+      if (id) {
+        selectedSat = null;
+        selectSite(id);
+      }
     }
 
     let hoveredSiteId: string | null = null;
@@ -1564,7 +1654,7 @@
       // Update camRTarget instead of camR directly — RAF lerps toward
       // the target at 15%/frame for a smooth viscous-zoom feel.
       // ADR-072 §Drift 13 consolidation.
-      camRTarget = Math.max(30.2, Math.min(200, camRTarget + e.deltaY * 0.05));
+      camRTarget = Math.max(30.08, Math.min(200, camRTarget + e.deltaY * 0.05));
       flyActive = false; // wheel cancels any in-flight fly-in
     };
 
@@ -2004,7 +2094,23 @@
     c2.addEventListener('click', on2dClick);
 
     // Resize + animation loop
-    const onResize = createCanvasResizer({ container, camera, renderer, composer, outlinePass });
+    const onResize = createCanvasResizer({
+      container,
+      camera,
+      renderer,
+      composer,
+      outlinePass,
+      onResize: () => {
+        // Line2 LineMaterials need their resolution synced with the
+        // rendered canvas size, otherwise the screen-pixel linewidth
+        // drifts on viewport changes (window resize, sidebar open).
+        const w = container?.clientWidth || window.innerWidth;
+        const h = container?.clientHeight || window.innerHeight;
+        for (const tl of traverseLines) {
+          tl.lineMaterial.resolution.set(w, h);
+        }
+      },
+    });
     window.addEventListener('resize', onResize);
 
     let lastTime = performance.now();
@@ -2269,7 +2375,10 @@
         // dimensions). Traverse polylines + end-dots + captions
         // share this ramp via tier2DelayedReveal.
         const detailFadeStart = 33;
-        const detailFadeEnd = 30.5;
+        // 30.5 → 30.32 (2026-06-01): hold detail fully visible right
+        // up to the new SPHERE_TO_FLAT_CAM_R floor, instead of
+        // peaking and then having a dead band before flat-patch.
+        const detailFadeEnd = 30.32;
         const detailOpacity =
           camR >= detailFadeStart
             ? 0
@@ -2332,16 +2441,29 @@
         }
         if (loadTraverses != null) {
           const pulse = 0.7 + Math.sin(now * 0.006) * 0.25;
+          // Zoom-aware shrink for stop spheres + start/end captions:
+          // their world-size is fixed at build time (0.018u sphere,
+          // 0.32u caption sprite) which feels right at the outer edge
+          // of the Tier-2 reveal ramp (camR≈33, distance to surface ≈
+          // 3u). At full close zoom (camR→30.05, distance→0.05u) the
+          // same world-size occupies ~60× more screen — the labels
+          // dominate and the stops cluster into solid blobs. Scale
+          // them down proportionally to camAlt with a floor so they
+          // stay visible at very close zoom (image 2/3 feedback,
+          // 2026-06-01).
+          const camAlt = Math.max(0, camR - 30.05);
+          const stopScale = Math.max(0.3, Math.min(1.4, camAlt / 2.0));
           for (const tl of traverseLines) {
             tl.line.visible = travVisible;
             tl.endDot.visible = travVisible;
             if (tl.startLabel) tl.startLabel.visible = travVisible;
             if (tl.endLabel) tl.endLabel.visible = travVisible;
-            const lineMat = tl.line.material as THREE.LineBasicMaterial;
-            lineMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
+            tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
             const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
             dotMat.opacity = detailOpacity * (tl.isActive ? pulse : 0.85);
+            tl.endDot.scale.setScalar(stopScale);
             if (tl.startLabel) {
+              tl.startLabel.scale.setScalar(stopScale);
               tl.startLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;
@@ -2350,12 +2472,17 @@
               });
             }
             if (tl.endLabel) {
+              tl.endLabel.scale.setScalar(stopScale);
               tl.endLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;
                   m2.opacity = detailOpacity;
                 }
               });
+            }
+            for (const sm of tl.stopMeshes) {
+              sm.visible = travVisible;
+              sm.scale.setScalar(stopScale);
             }
           }
         }
@@ -2391,14 +2518,36 @@
               });
             }
             if (hasDetail) {
-              layers.push({
-                layerLabel: 'Detail view',
-                sourceTitle: 'LROC NAC ROI mosaic',
-                sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
-                resolutionText: '5 m/px',
-                sourceUrl: 'https://pds.lroc.im-ldi.com/',
-                licenseShort: 'PD-NASA',
-              });
+              // Per-planet detail-tier source attribution. Until 2026-06
+              // this was hardcoded to LROC NAC across all planets, which
+              // surfaced "LROC NAC ROI mosaic / NASA / GSFC / ASU LROC
+              // team" on Mars Tier-2 patches — false provenance, since
+              // the patches actually come from MRO HiRISE / CTX. Dispatch
+              // by config.planet so each route reads honest credit.
+              if (config.planet === 'mars') {
+                layers.push({
+                  layerLabel: 'Detail view',
+                  sourceTitle: 'HiRISE detail patch',
+                  sourceAuthor: 'NASA / JPL / UArizona / HiRISE team',
+                  // We serve 2048² JPEG crops of HiRISE products, which
+                  // works out to ~7 m/px on a typical landing-region
+                  // bounding box. Source HiRISE is ~0.25 m/px native;
+                  // raising the patch resolution is fetch-pipeline work
+                  // tracked separately.
+                  resolutionText: '~7 m/px (from HiRISE 0.25 m/px native)',
+                  sourceUrl: 'https://www.uahirise.org/',
+                  licenseShort: 'PD-NASA',
+                });
+              } else {
+                layers.push({
+                  layerLabel: 'Detail view',
+                  sourceTitle: 'LROC NAC ROI mosaic',
+                  sourceAuthor: 'NASA / GSFC / Arizona State University LROC team',
+                  resolutionText: '5 m/px',
+                  sourceUrl: 'https://pds.lroc.im-ldi.com/',
+                  licenseShort: 'PD-NASA',
+                });
+              }
             }
             tierContext = buildTierContext({ site, agencyChip, layers });
           }
@@ -2431,7 +2580,11 @@
           // entering-fade (sphere out, flat-patch in over 600 ms ease-
           // in-out). Only TRIGGERS the entering phase — the back
           // gesture is what reverses it.
-          const SPHERE_TO_FLAT_CAM_R = 30.5;
+          // Lowered 30.5 → 30.3 (2026-06-01) so the user can zoom
+          // closer on the sphere (with Tier-2 patch fully visible)
+          // before the flat-patch overlay takes over — gives ~2×
+          // more "stand-on-sphere" range for inspection.
+          const SPHERE_TO_FLAT_CAM_R = 30.3;
           if (
             flatPatchPhase === 'hidden' &&
             selected != null &&
@@ -3129,6 +3282,20 @@ sample      ${debugInfo.projectedPxSample}`}
   </Panel>
 
   <PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
+
+  <!-- #290 Slice 6b — Earth-satellite info panel. Mounted only when
+       the route configured earthOrbitalLayers; on /moon and /mars the
+       block renders open=false. selectedSat is mutually exclusive
+       with `selected` (the surface-site panel) — click handlers null
+       one when setting the other. -->
+  {#if config.earthOrbitalLayers}
+    <EarthObjectPanel
+      selected={selectedSat}
+      open={selectedSat != null}
+      onClose={() => (selectedSat = null)}
+      missionIds={earthMissionIds}
+    />
+  {/if}
 </div>
 
 <!-- J.2 — Science Lens banner on /moon. Top-center, lens-gated;

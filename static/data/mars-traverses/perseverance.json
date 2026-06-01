@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ACTIVE",
   "snapshot_date": "2025-12-15",
-  "credit": "© NASA/JPL-Caltech — Perseverance rover traverse, simplified hand-vendored polyline through Jezero Crater from Octavia E. Butler Landing (Feb 2021) toward the western delta. V1 stub for visual continuity.",
+  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Perseverance rover traverse, simplified hand-vendored polyline through Jezero Crater from Octavia E. Butler Landing (Feb 2021) toward the western delta. V1 stub for visual continuity.",
   "points": [
     [
       18.4447,
@@ -136,35 +136,40 @@
       "lat": 18.44532,
       "lon": 77.4421,
       "label": "Ingenuity Flight 1",
-      "kind": "helicopter"
+      "kind": "helicopter",
+      "id": "sol-38"
     },
     {
       "sol": 200,
       "lat": 18.44638,
       "lon": 77.4402,
-      "label": "Sample 1 — Rochette",
-      "kind": "sample"
+      "label": "Sample 1 \u2014 Rochette",
+      "kind": "sample",
+      "id": "sol-200"
     },
     {
       "sol": 421,
       "lat": 18.45313,
       "lon": 77.42592,
       "label": "Three Forks sample depot",
-      "kind": "sample"
+      "kind": "sample",
+      "id": "sol-421"
     },
     {
       "sol": 750,
       "lat": 18.46316,
       "lon": 77.41162,
       "label": "Hawksbill Gap",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-750"
     },
     {
       "sol": 1000,
       "lat": 18.47746,
       "lon": 77.39321,
       "label": "Margin unit traverse",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-1000"
     }
   ]
 }

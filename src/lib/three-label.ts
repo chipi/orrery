@@ -48,14 +48,41 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
   group.add(line);
 
   // ─── Sprite text ──────────────────────────────────────────────────
+  //
+  // Canvas + sprite are sized PROPORTIONALLY to the rendered text
+  // width. Short labels (e.g. "ISS") get a narrow sprite that doesn't
+  // overlap nearby markers; long labels (e.g. "PATHFINDER + SOJOURNER"
+  // or "ROSALIND FRANKLIN R") get a wider sprite so the full text
+  // renders instead of being centre-clipped to ~14 chars (the old
+  // fixed 256×64 canvas symptom).
+  const upperText = opts.text.toUpperCase();
+  const MAX_CANVAS_WIDTH = 512;
+  const MIN_CANVAS_WIDTH = 128;
+  const PADDING_PX = 24;
+
+  const measureCanvas = document.createElement('canvas');
+  const measureCtx = measureCanvas.getContext('2d');
+  let fontPx = 28;
+  let textWidth = 0;
+  if (measureCtx) {
+    do {
+      measureCtx.font = `bold ${fontPx}px 'Space Mono', monospace`;
+      textWidth = measureCtx.measureText(upperText).width;
+      if (textWidth <= MAX_CANVAS_WIDTH - 32) break;
+      fontPx -= 2;
+    } while (fontPx >= 14);
+  }
+
   const canvas = document.createElement('canvas');
-  // Power-of-two sizes give cleaner mipmaps. 256×64 fits short labels
-  // (≤14 chars at 32px) without scaling artefacts.
-  canvas.width = 256;
+  const targetCanvasWidth = Math.max(
+    MIN_CANVAS_WIDTH,
+    Math.min(MAX_CANVAS_WIDTH, Math.ceil((textWidth + PADDING_PX) / 64) * 64),
+  );
+  canvas.width = targetCanvasWidth;
   canvas.height = 64;
   const ctx = canvas.getContext('2d');
   if (ctx) {
-    ctx.font = "bold 28px 'Space Mono', monospace";
+    ctx.font = `bold ${fontPx}px 'Space Mono', monospace`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     // Soft glow under the text so it stays legible against bright
@@ -63,7 +90,7 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
     ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
     ctx.shadowBlur = 6;
     ctx.fillStyle = opts.color;
-    ctx.fillText(opts.text.toUpperCase(), canvas.width / 2, canvas.height / 2);
+    ctx.fillText(upperText, canvas.width / 2, canvas.height / 2);
   }
   const texture = new THREE.Texture(canvas);
   texture.needsUpdate = true;
@@ -76,8 +103,13 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
     depthWrite: false,
   });
   const sprite = new THREE.Sprite(spriteMat);
-  // Aspect ratio: 256:64 = 4:1. Width = size×2, height = size×0.5.
-  sprite.scale.set(size * 2, size * 0.5, 1);
+  // Sprite scale proportional to canvas aspect — narrow for short
+  // labels, wide for long labels. Height stays size×0.5; width is
+  // derived as `size * 0.5 * aspect` where aspect = w/h. So a
+  // canvas of 128×64 (aspect 2:1) → sprite width size×1; canvas
+  // 512×64 (aspect 8:1) → sprite width size×4.
+  const aspect = canvas.width / canvas.height;
+  sprite.scale.set(size * 0.5 * aspect, size * 0.5, 1);
   sprite.position.copy(offset);
   group.add(sprite);
 

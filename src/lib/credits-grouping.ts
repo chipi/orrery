@@ -9,28 +9,41 @@
 import type { ImageProvenanceEntry, SourceLogo, TextSourceEntry } from '$lib/data';
 
 /**
- * A single sourced image, plus every emitted aspect-ratio variant
- * that shares the same source attribution. The asset pipeline writes
- * each panel image at four aspect crops (`<slot>.16x9.jpg`,
- * `<slot>.1x1.jpg`, `<slot>.4x3.jpg`, `<slot>.jpg`) — all derived
- * from one upstream file — so the /credits page collapses them into
- * one row with chips for the variants present. Reuse credit + license
- * apply identically to every variant; bundling avoids 3–4× row
- * duplication on a page that already runs long.
+ * A single sourced image, plus every emitted variant — aspect-ratio
+ * crops AND cross-surface reuse — that share the same upstream file.
+ *
+ * Two collapse mechanisms run in `bundlePhotos`:
+ *
+ *   1. **Reliable-id bundle (primary)** — when an entry carries a
+ *      per-image identifier that can't collide across distinct images
+ *      (`image_url` / `nasa_id` / `pageid` / `revid`), every path
+ *      sharing that id collapses into one bundle. Catches hero ↔ panel
+ *      reuse within one surface (e.g. `/images/missions/apollo11.jpg`
+ *      + `/images/missions/apollo11/01.*.jpg`) AND cross-route reuse
+ *      (e.g. same Aldrin photo on `/missions/apollo11` and
+ *      `/moon-sites/apollo11`).
+ *
+ *   2. **Stem-fallback bundle** — when no reliable id is available
+ *      (notably NASA Images API search-URL entries where `source_url`
+ *      is a generic query that doesn't identify a specific image), the
+ *      key falls back to `(stem, source_url, title, author)`. This
+ *      still collapses aspect-ratio crops of one slot but never merges
+ *      distinct images that happen to share a conduit URL.
  */
 export interface PhotoBundle {
   /** The entry chosen to represent the bundle on the page (original
    *  un-cropped variant when present, else the first emitted path). */
   representative: ImageProvenanceEntry;
-  /** Path with the aspect-ratio + extension stripped, e.g.
-   *  `/images/missions/lro/02` for any of `02.16x9.jpg`, `02.1x1.jpg`,
-   *  `02.4x3.jpg`, `02.jpg`. Used for the "used on" path display. */
-  stem: string;
-  /** Aspect-ratio chips present in this bundle, in canonical order:
-   *  `16:9, 4:3, 1:1, original`. Single-element `['original']` for
-   *  paths that have no crop siblings (logos, textures, sun, …). */
+  /** All distinct path stems this bundle covers. Length 1 for the
+   *  common aspect-crop-of-one-slot case; >1 when the same upstream
+   *  image was emitted under multiple surfaces (hero ↔ panel, or
+   *  cross-route reuse like missions ↔ moon-sites). Sorted. */
+  stems: string[];
+  /** Aspect-ratio chips present anywhere in this bundle, in canonical
+   *  order: `16:9, 4:3, 1:1, original`. Single-element `['original']`
+   *  for paths that have no crop siblings (logos, textures, sun, …). */
   variants: string[];
-  /** All emitted paths that collapsed into this bundle. */
+  /** All emitted paths that collapsed into this bundle, sorted. */
   paths: string[];
 }
 
@@ -58,19 +71,32 @@ function pathStem(path: string): string {
   return path.replace(ASPECT_OR_EXT_RE, '');
 }
 
+/** Per-image identifier that can't collide across distinct images.
+ *  Returns `null` when the entry has no reliable hard id (notably
+ *  NASA Images search-result rows where `source_url` is a generic
+ *  query URL shared across many distinct results). */
+function reliableImageId(p: ImageProvenanceEntry): string | null {
+  if (p.image_url) return `image_url|${p.image_url}`;
+  if (p.nasa_id) return `nasa_id|${p.nasa_id}`;
+  if (p.pageid != null) return `pageid|${p.pageid}`;
+  if (p.revid != null) return `revid|${p.revid}`;
+  return null;
+}
+
 /**
- * Collapse photo entries into bundles. Key is
- * `(stem, source_url, title, author)` — same crop family AND same
- * upstream attribution. Two photos with the same stem but different
- * `source_url`s (e.g. `/images/earth-objects/beidou/01.{16x9,1x1,4x3}.jpg`
- * each from a different Wikimedia file) stay as separate bundles so
- * attribution isn't fudged.
+ * Collapse photo entries into bundles. See `PhotoBundle` for the
+ * two-tier keying strategy: reliable per-image id when available
+ * (catches cross-route + hero/panel reuse), `(stem, source_url, title,
+ * author)` fallback otherwise (catches aspect-ratio crops while
+ * keeping distinct images apart when only the conduit URL is shared).
  */
 export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
   const groups = new Map<string, ImageProvenanceEntry[]>();
   const order: string[] = [];
   for (const p of photos) {
-    const key = `${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
+    const id = reliableImageId(p);
+    const key =
+      id ?? `fallback§${pathStem(p.path)}§${p.source_url}§${p.title}§${p.author ?? ''}`;
     const existing = groups.get(key);
     if (existing) {
       existing.push(p);
@@ -82,16 +108,23 @@ export function bundlePhotos(photos: ImageProvenanceEntry[]): PhotoBundle[] {
   const bundles: PhotoBundle[] = [];
   for (const key of order) {
     const entries = groups.get(key)!;
-    const representative = entries.find((e) => variantSuffix(e.path) === null) ?? entries[0];
+    // Representative: prefer an un-cropped path (no aspect suffix);
+    // among those, prefer the shortest path (hero card `…/apollo11.jpg`
+    // wins over panel `…/apollo11/01.jpg` when both share an image_url).
+    const uncropped = entries.filter((e) => variantSuffix(e.path) === null);
+    const representative = (uncropped.length > 0 ? uncropped : entries).reduce((a, b) =>
+      a.path.length <= b.path.length ? a : b,
+    );
     const present = new Set<string>();
     for (const e of entries) {
       const v = variantSuffix(e.path);
       present.add(v === null ? 'original' : v.replace('x', ':'));
     }
     const variants = VARIANT_ORDER.filter((v) => present.has(v));
+    const stems = Array.from(new Set(entries.map((e) => pathStem(e.path)))).sort();
     bundles.push({
       representative,
-      stem: pathStem(representative.path),
+      stems,
       variants,
       paths: entries.map((e) => e.path).sort((a, b) => a.localeCompare(b)),
     });

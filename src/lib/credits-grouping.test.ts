@@ -247,7 +247,7 @@ describe('bundlePhotos', () => {
     const bundles = bundlePhotos(photos);
     expect(bundles).toHaveLength(1);
     expect(bundles[0].variants).toEqual(['16:9', '4:3', '1:1', 'original']);
-    expect(bundles[0].stem).toBe('/images/missions/lro/02');
+    expect(bundles[0].stems).toEqual(['/images/missions/lro/02']);
     expect(bundles[0].paths).toHaveLength(4);
     // Representative is the un-cropped original when present.
     expect(bundles[0].representative.path).toBe('/images/missions/lro/02.jpg');
@@ -285,7 +285,78 @@ describe('bundlePhotos', () => {
     expect(bundles).toHaveLength(1);
     expect(bundles[0].variants).toEqual(['original']);
     expect(bundles[0].paths).toEqual(['/logos/nasa.svg']);
-    expect(bundles[0].stem).toBe('/logos/nasa');
+    expect(bundles[0].stems).toEqual(['/logos/nasa']);
+  });
+  it('collapses hero ↔ panel reuse within one surface via image_url', () => {
+    // /images/missions/apollo11.jpg (hero card) and
+    // /images/missions/apollo11/01.{16x9,1x1,4x3,jpg} (first panel slot)
+    // are all the same Wikimedia upload — same image_url. Collapse.
+    const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Aldrin_Apollo_11.jpg';
+    const bundles = bundlePhotos([
+      makePhoto({ path: '/images/missions/apollo11.jpg', image_url: imageUrl }),
+      makePhoto({ path: '/images/missions/apollo11/01.16x9.jpg', image_url: imageUrl }),
+      makePhoto({ path: '/images/missions/apollo11/01.1x1.jpg', image_url: imageUrl }),
+      makePhoto({ path: '/images/missions/apollo11/01.4x3.jpg', image_url: imageUrl }),
+      makePhoto({ path: '/images/missions/apollo11/01.jpg', image_url: imageUrl }),
+    ]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].paths).toHaveLength(5);
+    expect(bundles[0].stems).toEqual([
+      '/images/missions/apollo11',
+      '/images/missions/apollo11/01',
+    ]);
+    // Hero (shortest un-cropped path) wins as representative.
+    expect(bundles[0].representative.path).toBe('/images/missions/apollo11.jpg');
+  });
+  it('collapses cross-route reuse via image_url', () => {
+    // Same Aldrin photo used on /missions and /moon-sites.
+    const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Aldrin.jpg';
+    const bundles = bundlePhotos([
+      makePhoto({ path: '/images/missions/apollo11/01.jpg', image_url: imageUrl }),
+      makePhoto({ path: '/images/moon-sites/apollo11/01.jpg', image_url: imageUrl }),
+    ]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].stems).toEqual([
+      '/images/missions/apollo11/01',
+      '/images/moon-sites/apollo11/01',
+    ]);
+  });
+  it('collapses via nasa_id when image_url is absent', () => {
+    const bundles = bundlePhotos([
+      makePhoto({
+        path: '/images/missions/lro/02.jpg',
+        nasa_id: 'PIA-12345',
+        source_url: 'https://images.nasa.gov/search?q=lro',
+      }),
+      makePhoto({
+        path: '/images/earth-objects/lro/02.jpg',
+        nasa_id: 'PIA-12345',
+        source_url: 'https://images.nasa.gov/search?q=lro',
+      }),
+    ]);
+    expect(bundles).toHaveLength(1);
+    expect(bundles[0].stems).toHaveLength(2);
+  });
+  it('does NOT collapse NASA-search rows that share only a generic source_url', () => {
+    // These rows share a search-query source_url but represent
+    // DISTINCT NASA images (different search results). Without a
+    // reliable per-image id, they MUST stay separate to preserve
+    // honest attribution.
+    const url = 'https://images.nasa.gov/search?q=apollo11';
+    const bundles = bundlePhotos([
+      makePhoto({
+        path: '/images/missions/apollo11/02.jpg',
+        source_url: url,
+        title: 'apollo11',
+        // no image_url / nasa_id / pageid / revid
+      }),
+      makePhoto({
+        path: '/images/missions/apollo11/03.jpg',
+        source_url: url,
+        title: 'apollo11',
+      }),
+    ]);
+    expect(bundles).toHaveLength(2);
   });
   it('bundles a partial crop set (no 16:9 emitted) correctly', () => {
     // Some slots only emit 1x1 + 4x3 + original (per the LRO/01 example).

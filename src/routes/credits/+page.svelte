@@ -182,6 +182,36 @@
     }
   }
 
+  /** Distinct app-route labels covered by a bundle's stems, in stem-sort
+   *  order. A single-stem bundle returns one route; a cross-route bundle
+   *  (e.g. missions ∪ moon-sites) returns two. */
+  function bundleRoutes(stems: string[]): string[] {
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const s of stems) {
+      const r = pathToRouteKey(s);
+      if (!seen.has(r)) {
+        seen.add(r);
+        out.push(r);
+      }
+    }
+    return out;
+  }
+
+  /** Does this stem have aspect-ratio crop siblings emitted (e.g.
+   *  `/images/missions/apollo11/01.{16x9,1x1,4x3,jpg}`)? Drives the
+   *  `.*` glob suffix on the per-stem code path display. */
+  function stemIsMultiVariant(stem: string, paths: string[]): boolean {
+    let n = 0;
+    for (const p of paths) {
+      if (p.startsWith(stem + '.')) {
+        n++;
+        if (n > 1) return true;
+      }
+    }
+    return false;
+  }
+
   function relationshipLabel(r: string): string {
     switch (r) {
       case 'original':
@@ -273,7 +303,6 @@
           <ul class="photo-list">
             {#each group.bundles as bundle}
               {@const photo = bundle.representative}
-              {@const hasVariants = bundle.paths.length > 1}
               <li class="photo">
                 <a
                   class="thumb"
@@ -320,15 +349,23 @@
                   </p>
                   <p class="ph-row used">
                     <span class="lbl">{m.credits_used_on()}:</span>
-                    {routeLabel(pathToRouteKey(photo.path))}
-                    <code class="path">{bundle.stem}{hasVariants ? '.*' : ''}</code>
-                    {#if hasVariants}
+                    {#each bundleRoutes(bundle.stems) as route, i}
+                      {#if i > 0}<span class="sep">·</span>{/if}
+                      <span>{routeLabel(route)}</span>
+                    {/each}
+                    {#if bundle.variants.length > 1 || bundle.stems.length > 1}
                       <span class="variants" aria-label="Aspect-ratio variants">
                         {#each bundle.variants as v}
                           <span class="variant-chip">{v}</span>
                         {/each}
                       </span>
                     {/if}
+                  </p>
+                  <p class="ph-row stems">
+                    {#each bundle.stems as s, i}
+                      {#if i > 0}<span class="stem-sep">,</span>{/if}
+                      <code class="path">{s}{stemIsMultiVariant(s, bundle.paths) ? '.*' : ''}</code>
+                    {/each}
                   </p>
                   {#if photo.modifications.length > 0}
                     <p class="ph-row mods">{m.image_credit_modifications()}</p>
@@ -808,6 +845,15 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-family: 'Space Mono', monospace;
+  }
+  .ph-row.stems {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, 0.45);
+    gap: 4px;
+  }
+  .stem-sep {
+    color: rgba(255, 255, 255, 0.25);
+    margin-right: 2px;
   }
 
   .text-entry {

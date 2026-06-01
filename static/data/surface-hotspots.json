@@ -207,37 +207,37 @@
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/curiosity/tier2-ctx.jpg",
       "panorama_metadata": {
-        "sol": 3070,
-        "date": "2021-03-26",
-        "instrument": "Mastcam (Atop Mont Mercou 360°)",
-        "caption": "Curiosity atop Mont Mercou — sol 3070, the rover's view after climbing the cliff it had been studying from below. Real Martian sky band visible in upper portion; rover deck dominates foreground; the cliff's layered strata visible on either side.",
+        "sol": 4220,
+        "date": "2024-06-19",
+        "instrument": "Mastcam (336-image mosaic)",
+        "caption": "Curiosity at Gediz Vallis Channel — the rover's 360° view from sol 4220 after drilling the Mammoth Lakes sample, its 41st on Mars. Robotic arm visible at left, just finished drilling; rover deck on the right; real Martian sky in the upper band; Gediz Vallis channel descending through the centre — first place pure sulfur crystals were ever found on Mars.",
         "credit_team": "NASA/JPL-Caltech/MSSS",
-        "nasa_id": "PIA24626",
-        "real_extent_pct_vertical": 52,
+        "nasa_id": "PIA26363",
+        "real_extent_pct_vertical": 57,
         "synthetic_regions": [
-          { "pitch_min_deg": 35, "pitch_max_deg": 90, "kind": "synthetic_sky" },
-          { "pitch_min_deg": -90, "pitch_max_deg": -58, "kind": "synthetic_nadir" }
+          { "pitch_min_deg": 50, "pitch_max_deg": 90, "kind": "synthetic_sky" },
+          { "pitch_min_deg": -90, "pitch_max_deg": -52, "kind": "synthetic_nadir" }
         ],
         "compass_zero_direction": "rover forward"
       },
       "panorama_annotations": [
         {
-          "id": "mt-mercou-rim",
-          "yaw_deg": 90,
-          "pitch_deg": -8,
-          "label": "Mont Mercou rim",
-          "body": "Layered cliff face — Curiosity drilled the Nontron sample at its base before driving to the top to capture this 360°."
+          "id": "gediz-vallis-channel",
+          "yaw_deg": 0,
+          "pitch_deg": -5,
+          "label": "Gediz Vallis channel",
+          "body": "Ancient water-carved channel descending Mt. Sharp's slopes. Curiosity drilled the Mammoth Lakes sample here — first pure sulfur crystals ever found on Mars."
         },
         {
-          "id": "rover-tracks",
-          "yaw_deg": -150,
-          "pitch_deg": -22,
-          "label": "Rover tracks",
-          "body": "Curiosity's wheel tracks looking back at the climb path."
+          "id": "robotic-arm",
+          "yaw_deg": -90,
+          "pitch_deg": -15,
+          "label": "Robotic arm",
+          "body": "2 m articulated arm with the drill, brush, and APXS spectrometer — visible at left after completing the Mammoth Lakes drill on this sol."
         },
         {
           "id": "mt-sharp-flank",
-          "yaw_deg": 0,
+          "yaw_deg": 60,
           "pitch_deg": 2,
           "label": "Mt. Sharp lower flank",
           "body": "Layered slopes of Aeolis Mons, the 5 km mountain at the centre of Gale Crater that Curiosity has been climbing since 2014."

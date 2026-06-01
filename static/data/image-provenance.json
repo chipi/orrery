@@ -70716,6 +70716,27 @@
       "pageid": 1254946,
       "nasa_id": null,
       "fetched_at": "2026-05-31T14:14:57.391Z"
+    },
+    {
+      "id": "a06aad9410579070",
+      "path": "/images/hotspots/mars/curiosity/tier3-pan.jpg",
+      "source_type": "direct-agency",
+      "title": "Curiosity at Gediz Vallis Channel, sol 4220 — Mastcam 360° panorama (336 images, June 19 2024)",
+      "author": "NASA / JPL-Caltech / MSSS",
+      "agency": "NASA",
+      "source_url": "https://science.nasa.gov/wp-content/uploads/2024/07/pia26363-curiosity-takes-a-360-degree-view-of-gediz-vallis-channel.png",
+      "image_url": "https://science.nasa.gov/wp-content/uploads/2024/07/pia26363-curiosity-takes-a-360-degree-view-of-gediz-vallis-channel.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Surface panorama produced by NASA / JPL or partner institution; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted with source attribution.",
+      "modifications": [
+        "padded-to-8192x4096-equirectangular",
+        "reencoded-jpeg-q88"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA26363",
+      "fetched_at": "2026-06-01T08:04:11.551Z"
     }
   ]
 }

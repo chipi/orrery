@@ -97,19 +97,24 @@ const PANORAMAS: MarsPanoramaConfig[] = [
   {
     siteId: 'curiosity',
     sourceUrl:
-      'https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46054_PIA24626-Curiositys_360-degree_View_Atop_Mont_Mercou.png',
-    sourceLabel: 'PIA24626',
+      'https://science.nasa.gov/wp-content/uploads/2024/07/pia26363-curiosity-takes-a-360-degree-view-of-gediz-vallis-channel.png',
+    sourceLabel: 'PIA26363',
     attribution: 'NASA / JPL-Caltech / MSSS',
     license: 'PD-NASA',
-    // 29163×7891 ≈ 3.69:1 — at 360° hAz the source covers ~98°
-    // vFOV. Earlier 30+45=75° squished the rover deck + foreground
-    // vertically; 35+58=93° matches the aspect ratio so the Mastcam
-    // foreground (rover wheels, drill arm, immediate workspace)
-    // renders at correct angular size instead of being crammed.
+    // 2026-06-01 — switched from PIA24269 "Approaching Mont Mercou"
+    // (sol 3048, 89° vFOV) to PIA26363 "Gediz Vallis Channel"
+    // (sol 4220, June 19 2024 — 336 stitched images, 29240×8311 ≈
+    // 3.52:1 → ~102° vFOV, drilling arm visible at left where rover
+    // is captured in the panorama). The earlier Mt Mercou variants
+    // had empty nadir cutouts that recolour-black filled with
+    // regolith colour, leaving large brown patches where rover deck
+    // should be. Gediz Vallis covers ~14° more vertical FOV with
+    // the robotic arm naturally in frame.
     srcAzimuthDeg: 360,
-    srcElevationTopDeg: 35,
-    srcElevationBottomDeg: 58,
-    caption: 'Curiosity at Mont Mercou, sol 3070 — Mastcam 360° panorama',
+    srcElevationTopDeg: 50,
+    srcElevationBottomDeg: 52,
+    caption:
+      'Curiosity at Gediz Vallis Channel, sol 4220 — Mastcam 360° panorama (336 images, June 19 2024)',
     // Marquee showcase site (#286 Phase 1A) — ship at 8K equirectangular
     // for the 4× pixel-density jump.
     outWidth: 8192,

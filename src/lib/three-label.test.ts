@@ -36,7 +36,13 @@ describe('buildLabel', () => {
     expect(s.position.equals(offset)).toBe(true);
   });
 
-  it('produces a 4:1 aspect ratio sprite at the requested size', () => {
+  it('produces a sprite scaled to the dynamic canvas aspect', () => {
+    // Canvas is no longer fixed at 256×64 — width adjusts to the
+    // measured text width (snap to 64 px buckets, clamped 128–512 px,
+    // height stays at 64 px). Sprite scale is derived as
+    // (size × 0.5 × aspect, size × 0.5, 1). For short text ("X") the
+    // canvas collapses to the 128 px minimum → aspect = 2 → width
+    // scale = 0.6. Height is always size × 0.5 = 0.3.
     const { group } = buildLabel({ text: 'X', color: '#fff', size: 0.6 });
     let sprite: THREE.Sprite | null = null;
     group.traverse((obj) => {
@@ -45,10 +51,32 @@ describe('buildLabel', () => {
     expect(sprite).not.toBeNull();
     if (!sprite) return;
     const s = sprite as THREE.Sprite;
-    // size×2 = 1.2 width, size×0.5 = 0.3 height — ratio 4:1 matches
-    // the 256×64 canvas
-    expect(s.scale.x).toBeCloseTo(1.2, 6);
     expect(s.scale.y).toBeCloseTo(0.3, 6);
+    // Width is aspect-driven; assert ≥ height (never narrower than
+    // square) and ≤ height × 8 (canvas max aspect, 512/64).
+    expect(s.scale.x).toBeGreaterThanOrEqual(s.scale.y);
+    expect(s.scale.x).toBeLessThanOrEqual(s.scale.y * 8);
+  });
+
+  it('widens the sprite for long text', () => {
+    // A long label produces a wider canvas → wider sprite. Pair with
+    // a short-label control so the test doesn't depend on jsdom's
+    // exact measureText return values.
+    const short = buildLabel({ text: 'X', color: '#fff', size: 0.6 });
+    const long = buildLabel({
+      text: 'PATHFINDER + SOJOURNER ROVER',
+      color: '#fff',
+      size: 0.6,
+    });
+    let shortX = 0;
+    let longX = 0;
+    short.group.traverse((obj) => {
+      if (obj instanceof THREE.Sprite) shortX = obj.scale.x;
+    });
+    long.group.traverse((obj) => {
+      if (obj instanceof THREE.Sprite) longX = obj.scale.x;
+    });
+    expect(longX).toBeGreaterThanOrEqual(shortX);
   });
 
   it('returns a Texture handle for later disposal', () => {

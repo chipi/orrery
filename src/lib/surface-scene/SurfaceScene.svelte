@@ -838,7 +838,8 @@
       endLabel?: THREE.Group;
       startLabelTexture?: THREE.Texture;
       endLabelTexture?: THREE.Texture;
-      stopMeshes: THREE.Mesh[];
+      stopPins: THREE.Sprite[];
+      stopPinTextures: THREE.Texture[];
     };
     const traverseLines: TraverseLine[] = [];
     // Tier-2 delayed-reveal stack — entries fade in past the Tier-2
@@ -890,6 +891,67 @@
       return { group, texture };
     }
 
+    // ── Traverse-stop balloon-pin marker (NASA-map style) ───────────
+    // Tear-drop balloon with kind-tinted body, thin white outline,
+    // soft drop shadow, sol number painted inside the head. Anchored
+    // at the tip via sprite.center=(0.5, 0) so the bottom of the
+    // image sits exactly at the supplied surface point. Replaces the
+    // earlier 0.008u coloured-sphere markers — those read as blobs
+    // and lost all kind/sol context; the pin matches the visual
+    // language of NASA's Perseverance sample-site maps + JPL drive-
+    // path animations (image 13 reference, 2026-06-02).
+    function buildTraverseStopPin(
+      hexColor: number,
+      sol: number,
+    ): { sprite: THREE.Sprite; texture: THREE.Texture } {
+      const hex = `#${hexColor.toString(16).padStart(6, '0')}`;
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 96;
+      const cx = 32;
+      const headR = 22;
+      const headY = 28;
+      const tipY = 86;
+      const ctx2 = canvas.getContext('2d');
+      if (ctx2) {
+        ctx2.shadowColor = 'rgba(0, 0, 0, 0.55)';
+        ctx2.shadowBlur = 5;
+        ctx2.shadowOffsetY = 2;
+        ctx2.beginPath();
+        ctx2.arc(cx, headY, headR, Math.PI * 0.78, Math.PI * 0.22, false);
+        ctx2.lineTo(cx, tipY);
+        ctx2.closePath();
+        ctx2.fillStyle = hex;
+        ctx2.fill();
+        ctx2.shadowColor = 'transparent';
+        ctx2.shadowBlur = 0;
+        ctx2.shadowOffsetY = 0;
+        ctx2.lineWidth = 3;
+        ctx2.strokeStyle = '#ffffff';
+        ctx2.stroke();
+        const solText = String(sol);
+        const fontPx = solText.length >= 4 ? 16 : solText.length === 3 ? 19 : 22;
+        ctx2.font = `bold ${fontPx}px 'Space Mono', monospace`;
+        ctx2.textAlign = 'center';
+        ctx2.textBaseline = 'middle';
+        ctx2.fillStyle = '#ffffff';
+        ctx2.fillText(solText, cx, headY);
+      }
+      const texture = new THREE.Texture(canvas);
+      texture.needsUpdate = true;
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      const mat = new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true,
+        depthWrite: false,
+      });
+      const sprite = new THREE.Sprite(mat);
+      sprite.scale.set(0.035, 0.052, 1);
+      sprite.center.set(0.5, 0);
+      return { sprite, texture };
+    }
+
     function rebuildTraverses() {
       if (loadTraverses == null) return;
       for (const tl of traverseLines) {
@@ -907,10 +969,11 @@
           disposeObject3d(tl.endLabel);
           planetMesh.remove(tl.endLabel);
         }
-        for (const sm of tl.stopMeshes) {
-          disposeObject3d(sm);
-          planetMesh.remove(sm);
+        for (const sp of tl.stopPins) {
+          planetMesh.remove(sp);
+          (sp.material as THREE.SpriteMaterial).dispose();
         }
+        for (const t of tl.stopPinTextures) t.dispose();
         tl.startLabelTexture?.dispose();
         tl.endLabelTexture?.dispose();
       }
@@ -1016,10 +1079,11 @@
         tier2DelayedReveal.push(endBuilt.group);
 
         // Curated traverse stops (Slice 5b — sample sites, drill sites,
-        // notable sols). Each renders as a small kind-tinted sphere on
-        // the planet surface, joining the tier2DelayedReveal stack so it
-        // fades in lockstep with the line + dots.
-        const stopMeshes: THREE.Mesh[] = [];
+        // notable sols). NASA-style balloon-pin sprites with the sol
+        // number painted inside the head. Joining tier2DelayedReveal
+        // lets them fade in lockstep with the line + dots.
+        const stopPins: THREE.Sprite[] = [];
+        const stopPinTextures: THREE.Texture[] = [];
         if (tr.stops) {
           const STOP_KIND_COLOR: Record<string, number> = {
             sample: 0xfb923c,
@@ -1030,31 +1094,22 @@
           };
           for (const stop of tr.stops) {
             const stopPos = latLonToUnitSphere(stop.lat, stop.lon);
-            const stopMesh = new THREE.Mesh(
-              // Base radius 0.008u (was 0.018) — at the wide edge of the
-              // Tier-2 reveal window with the per-frame scale curve, the
-              // sphere ends up the size of a small NASA-map sample pin
-              // instead of a fingertip-sized blob (image 11 feedback,
-              // 2026-06-01).
-              new THREE.SphereGeometry(0.008, 10, 10),
-              new THREE.MeshBasicMaterial({
-                color: STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
-                transparent: true,
-                opacity: 0.95,
-                depthWrite: false,
-              }),
+            const { sprite: pinSprite, texture: pinTexture } = buildTraverseStopPin(
+              STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
+              stop.sol,
             );
-            stopMesh.position.set(stopPos.x * r, stopPos.y * r, stopPos.z * r);
-            stopMesh.userData = {
+            pinSprite.position.set(stopPos.x * r, stopPos.y * r, stopPos.z * r);
+            pinSprite.userData = {
               roverId: tr.rover_id,
               kind: 'traverse-stop',
               stopKind: stop.kind,
               stopSol: stop.sol,
               stopLabel: stop.label,
             };
-            planetMesh.add(stopMesh);
-            tier2DelayedReveal.push(stopMesh);
-            stopMeshes.push(stopMesh);
+            planetMesh.add(pinSprite);
+            tier2DelayedReveal.push(pinSprite);
+            stopPins.push(pinSprite);
+            stopPinTextures.push(pinTexture);
           }
         }
 
@@ -1069,7 +1124,8 @@
           endLabel: endBuilt.group,
           startLabelTexture: startBuilt.texture,
           endLabelTexture: endBuilt.texture,
-          stopMeshes,
+          stopPins,
+          stopPinTextures,
         });
       }
     }
@@ -2499,9 +2555,13 @@
                 }
               });
             }
-            for (const sm of tl.stopMeshes) {
-              sm.visible = travVisible;
-              sm.scale.setScalar(stopScale);
+            for (const sp of tl.stopPins) {
+              sp.visible = travVisible;
+              // Pin scale is (0.035, 0.052, 1) at base. Apply the
+              // same zoom-relative shrink as the end-dot + captions
+              // so the pins don't dominate at close zoom.
+              sp.scale.set(0.035 * stopScale, 0.052 * stopScale, 1);
+              (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
             }
           }
         }

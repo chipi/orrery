@@ -8,18 +8,26 @@
  * Colour palette mirrors the Mars implementation's tones — teal for
  * active, red for crashed, orange for lost, blue for planned, dim for
  * historical (ended / flown).
+ *
+ * Optional `kind` argument refines the label for orbital sites — an
+ * ACTIVE spacecraft sitting in orbit reads more honestly as "IN ORBIT"
+ * than as "ACTIVE" (which fits surface landers + ground stations). The
+ * tone colour stays the same active teal regardless of kind.
  */
-import type { SiteStatus } from '$types/surface-site';
+import type { SiteStatus, SiteKind } from '$types/surface-site';
 
 export interface StatusBadgeTone {
   label: string;
   color: string;
 }
 
-export function statusTone(s: SiteStatus | string): StatusBadgeTone {
+export function statusTone(s: SiteStatus | string, kind?: SiteKind): StatusBadgeTone {
   switch (s) {
     case 'ACTIVE':
-      return { label: 'ACTIVE', color: '#4ecdc4' };
+      return {
+        label: kind === 'orbiter' ? 'IN ORBIT' : 'ACTIVE',
+        color: '#4ecdc4',
+      };
     case 'CRASHED':
       return { label: 'CRASHED', color: '#ff6b6b' };
     case 'LOST':

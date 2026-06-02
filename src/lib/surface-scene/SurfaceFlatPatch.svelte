@@ -450,7 +450,7 @@
     if (traverses && traverses[selected.id]) return;
     if (selected.lat == null || selected.lon == null) return;
     const p = project(selected.lat, selected.lon, W, H);
-    const tone = statusTone(selected.status);
+    const tone = statusTone(selected.status, selected.kind);
     const r = scaleAwareRadius(LANDER_FOOTPRINT_KM);
     ctx.fillStyle = tone.color;
     ctx.beginPath();

@@ -3075,7 +3075,7 @@ sample      ${debugInfo.projectedPxSample}`}
     onClose={() => (panelOpen = false)}
   >
     {#if selected}
-      {@const tone = statusTone(selected.status)}
+      {@const tone = statusTone(selected.status, selected.kind)}
       <div class="head" style:--accent={colorFor(selected)}>
         <div class="agency-row">
           <span class="agency-badge" style:background-color={colorFor(selected)}>

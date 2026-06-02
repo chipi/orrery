@@ -43,9 +43,14 @@ test.describe('/earth', () => {
     // ?object=<id> deep-links straight into the EarthObjectPanel —
     // SurfaceScene's Slice 6b wiring reads the param, finds the
     // matching EarthObject, and sets selectedSat. No 2D-canvas dance.
+    // SurfaceScene awaits both getEarthLaunchSites (14 launchpads +
+    // i18n overlays) AND getEarthObjects (50+ satellites + per-object
+    // i18n overlays) before the deep-link wiring fires — the chain
+    // runs ~8 s cold on desktop-chromium, longer on mobile. 25 s budget
+    // gives ≈3× headroom without masking a real regression.
     await page.goto('/earth?object=iss');
     const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible({ timeout: 10_000 });
+    await expect(panel).toBeVisible({ timeout: 25_000 });
     const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 5_000 });
     await galleryTab.click();
@@ -56,7 +61,7 @@ test.describe('/earth', () => {
     test.slow(isMobile, 'mobile-chromium panel-mount > global 30 s budget');
     await page.goto('/earth?object=iss');
     const panel = page.locator('aside.panel');
-    await expect(panel).toBeVisible({ timeout: 10_000 });
+    await expect(panel).toBeVisible({ timeout: 25_000 });
     await page.getByRole('tab', { name: /^LEARN$/ }).click();
     await expect(panel).toContainText(/INTRO/);
     await expect(panel.locator('.link-tier a').first()).toBeVisible();

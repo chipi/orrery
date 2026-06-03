@@ -943,17 +943,17 @@
 
     // ── Traverse-stop balloon-pin marker (NASA-map style) ───────────
     // Tear-drop balloon with kind-tinted body, thin white outline,
-    // soft drop shadow, sol number painted inside the head. Anchored
-    // at the tip via sprite.center=(0.5, 0) so the bottom of the
-    // image sits exactly at the supplied surface point. Replaces the
-    // earlier 0.008u coloured-sphere markers — those read as blobs
-    // and lost all kind/sol context; the pin matches the visual
-    // language of NASA's Perseverance sample-site maps + JPL drive-
-    // path animations (image 13 reference, 2026-06-02).
-    function buildTraverseStopPin(
-      hexColor: number,
-      sol: number,
-    ): { sprite: THREE.Sprite; texture: THREE.Texture } {
+    // soft drop shadow, small white centre dot. Sol info is surfaced
+    // only via the hover tooltip so the pin face doesn't duplicate
+    // it — duplicate text was illegible at close zoom anyway (image
+    // 19 feedback, 2026-06-02). Anchored at the tip via
+    // sprite.center=(0.5, 0). Base scale is 1.0 here because the
+    // animate loop computes a screen-pixel-stable target size and
+    // sets sprite.scale per frame.
+    function buildTraverseStopPin(hexColor: number): {
+      sprite: THREE.Sprite;
+      texture: THREE.Texture;
+    } {
       const hex = `#${hexColor.toString(16).padStart(6, '0')}`;
       const canvas = document.createElement('canvas');
       canvas.width = 64;
@@ -979,13 +979,10 @@
         ctx2.lineWidth = 3;
         ctx2.strokeStyle = '#ffffff';
         ctx2.stroke();
-        const solText = String(sol);
-        const fontPx = solText.length >= 4 ? 16 : solText.length === 3 ? 19 : 22;
-        ctx2.font = `bold ${fontPx}px 'Space Mono', monospace`;
-        ctx2.textAlign = 'center';
-        ctx2.textBaseline = 'middle';
         ctx2.fillStyle = '#ffffff';
-        ctx2.fillText(solText, cx, headY);
+        ctx2.beginPath();
+        ctx2.arc(cx, headY, 6, 0, Math.PI * 2);
+        ctx2.fill();
       }
       const texture = new THREE.Texture(canvas);
       texture.needsUpdate = true;
@@ -997,7 +994,7 @@
         depthWrite: false,
       });
       const sprite = new THREE.Sprite(mat);
-      sprite.scale.set(0.035, 0.052, 1);
+      sprite.scale.set(1, 1.5, 1);
       sprite.center.set(0.5, 0);
       return { sprite, texture };
     }
@@ -1060,7 +1057,11 @@
         lineGeo.setPositions(verts);
         const lineMaterial = new LineMaterial({
           color: new THREE.Color(color).getHex(),
-          linewidth: 3,
+          // 3 → 4: with the smaller balloon pins + endDot the line
+          // now reads as the primary trail with the markers
+          // anchored along it, rather than the markers floating
+          // above a hairline (image 19 proportion feedback).
+          linewidth: 4,
           transparent: true,
           opacity: isActive ? 0.95 : 0.7,
           dashed: false,
@@ -1146,7 +1147,6 @@
             const stopPos = latLonToUnitSphere(stop.lat, stop.lon);
             const { sprite: pinSprite, texture: pinTexture } = buildTraverseStopPin(
               STOP_KIND_COLOR[stop.kind] ?? 0xfde047,
-              stop.sol,
             );
             pinSprite.position.set(stopPos.x * r, stopPos.y * r, stopPos.z * r);
             pinSprite.userData = {
@@ -1755,8 +1755,15 @@
     const onMouseMove = (e: MouseEvent) => {
       if (!isDrag) return;
       if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > 4) dragMoved = true;
-      const dT = -(e.clientX - lmx) * 0.005;
-      const dP = (e.clientY - lmy) * 0.005;
+      // Zoom-relative drag sensitivity. Original 0.005 was right at
+      // wide zoom but threw the view across the patch on a single
+      // mouse twitch at camR ≈ 30. Curve: linear (camR/100) was too
+      // soft at close zoom (still lost the traverse on light touch
+      // — image 19 feedback). Power 1.8 makes it 8× slower at
+      // camR=30 vs the wide-zoom feel (was ~3× with linear).
+      const dragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
+      const dT = -(e.clientX - lmx) * dragK;
+      const dP = (e.clientY - lmy) * dragK;
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
@@ -1787,7 +1794,13 @@
       // Update camRTarget instead of camR directly — RAF lerps toward
       // the target at 15%/frame for a smooth viscous-zoom feel.
       // ADR-072 §Drift 13 consolidation.
-      camRTarget = Math.max(30.08, Math.min(200, camRTarget + e.deltaY * 0.05));
+      // Zoom-relative wheel sensitivity — same curve as the drag
+      // sensitivity so a wheel notch is proportional to current
+      // zoom (one notch at camR=200 zooms a lot; at camR=30 zooms a
+      // little). Avoids over-shooting through the patch on a single
+      // scroll click.
+      const wheelK = 0.05 * Math.min(1, Math.pow(camR / 100, 1.8));
+      camRTarget = Math.max(30.08, Math.min(200, camRTarget + e.deltaY * wheelK));
       flyActive = false; // wheel cancels any in-flight fly-in
     };
 
@@ -1832,8 +1845,11 @@
         6
       )
         touchMoved = true;
-      const dT = -(e.touches[0].clientX - lmx) * 0.005;
-      const dP = (e.touches[0].clientY - lmy) * 0.005;
+      // Mirror the mouse drag's zoom-relative curve so touch users
+      // get the same close-zoom calm-down.
+      const touchDragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
+      const dT = -(e.touches[0].clientX - lmx) * touchDragK;
+      const dP = (e.touches[0].clientY - lmy) * touchDragK;
       camTVelocity = dT;
       camPVelocity = dP;
       camT += dT;
@@ -2593,18 +2609,40 @@
         }
         if (loadTraverses != null) {
           const pulse = 0.7 + Math.sin(now * 0.006) * 0.25;
-          // Zoom-aware shrink for stop spheres + start/end captions:
-          // their world-size is fixed at build time (0.018u sphere,
-          // 0.32u caption sprite) which feels right at the outer edge
-          // of the Tier-2 reveal ramp (camR≈33, distance to surface ≈
-          // 3u). At full close zoom (camR→30.05, distance→0.05u) the
-          // same world-size occupies ~60× more screen — the labels
-          // dominate and the stops cluster into solid blobs. Scale
-          // them down proportionally to camAlt with a floor so they
-          // stay visible at very close zoom (image 2/3 feedback,
-          // 2026-06-01).
-          const camAlt = Math.max(0, camR - 30.05);
-          const stopScale = Math.max(0.3, Math.min(1.4, camAlt / 2.0));
+          // Screen-pixel-stable sizing for every traverse marker
+          // (pins, end-dot, captions). World-fixed sizes turned the
+          // markers into screen-filling blobs at deep zoom and into
+          // invisible dots at wide zoom — neither read as a useful
+          // map. Compute the world units that correspond to ONE
+          // screen pixel at the camera's current distance to the
+          // patch, then size each marker for a fixed screen-pixel
+          // target (image 19 feedback, 2026-06-02).
+          //
+          // worldPerPx = (2 * d * tan(fovY/2)) / viewportH
+          // where d ≈ distance from camera to surface (camR - 30).
+          const surfaceDistance = Math.max(0.05, camR - 30);
+          const viewportH = renderer.domElement.clientHeight || window.innerHeight;
+          const worldPerPx =
+            (2 * surfaceDistance * Math.tan((camera.fov * Math.PI) / 360)) / viewportH;
+          // Target screen sizes (px). Smaller pin head reads as a
+          // map marker rather than a road sign; caption is large
+          // enough to scan-read; end-dot is a tight punctuation mark.
+          const pinHeightPx = 26;
+          const endDotPx = 8;
+          const captionWidthPx = 140;
+          // Pin sprite has base scale (1, 1.5, 1) and canvas 64×96,
+          // so the visible-height-to-base-Y-scale ratio is 1 (=> the
+          // base Y scale IS the world height when stopScale is 1).
+          const pinWorldH = pinHeightPx * worldPerPx;
+          const pinWorldW = (64 / 96) * pinWorldH;
+          // End-dot sphere geometry has radius 0.022u (diameter 0.044u).
+          // Target diameter in world units = endDotPx * worldPerPx.
+          const endDotScale = (endDotPx * worldPerPx) / 0.044;
+          // Caption inner sprite scale is (0.32 wide, 0.32*(96/512)
+          // tall) when buildTraverseCaption is called with worldSize
+          // 0.32 — so a group.scale multiplier of (target / 0.32)
+          // yields the requested screen width.
+          const captionScale = (captionWidthPx * worldPerPx) / 0.32;
           for (const tl of traverseLines) {
             tl.line.visible = travVisible;
             tl.endDot.visible = travVisible;
@@ -2613,9 +2651,9 @@
             tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
             const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
             dotMat.opacity = detailOpacity * (tl.isActive ? pulse : 0.85);
-            tl.endDot.scale.setScalar(stopScale);
+            tl.endDot.scale.setScalar(endDotScale);
             if (tl.startLabel) {
-              tl.startLabel.scale.setScalar(stopScale);
+              tl.startLabel.scale.setScalar(captionScale);
               tl.startLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;
@@ -2624,7 +2662,7 @@
               });
             }
             if (tl.endLabel) {
-              tl.endLabel.scale.setScalar(stopScale);
+              tl.endLabel.scale.setScalar(captionScale);
               tl.endLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;
@@ -2634,10 +2672,7 @@
             }
             for (const sp of tl.stopPins) {
               sp.visible = travVisible;
-              // Pin scale is (0.035, 0.052, 1) at base. Apply the
-              // same zoom-relative shrink as the end-dot + captions
-              // so the pins don't dominate at close zoom.
-              sp.scale.set(0.035 * stopScale, 0.052 * stopScale, 1);
+              sp.scale.set(pinWorldW, pinWorldH, 1);
               (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
             }
           }

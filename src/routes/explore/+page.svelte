@@ -2443,10 +2443,27 @@
 
         // Track selected planet with the 3D selection ring (lying in
         // the planet's orbital plane). Hidden when nothing is selected.
+        // Ring radius lerps with camera-distance ratio so at the planet-
+        // focus pose (#287) the ring hugs the silhouette instead of
+        // eating the viewport; at heliocentric framing it stays at the
+        // chunky 1.9× radius the wide-zoom view relies on.
         if (selectedId) {
           const selObj = planetObjs.find((o) => o.planet.id === selectedId);
           if (selObj) {
-            const ringR = selObj.planet.size3 * 1.9;
+            selObj.mesh.getWorldPosition(tmpWorldPos);
+            const ratio = camera.position.distanceTo(tmpWorldPos) / selObj.planet.size3;
+            // Smoothstep across the same threshold the 4K LOD + moon
+            // reveal use: ≤4 (close) → 1.1× radius (hugs the planet);
+            // ≥5 (wide) → 1.9× (original wide-zoom anchor); lerp between.
+            const t = Math.max(
+              0,
+              Math.min(
+                1,
+                (ratio - PLANET_LOD_IN_RATIO) / (PLANET_LOD_OUT_RATIO - PLANET_LOD_IN_RATIO),
+              ),
+            );
+            const mult = 1.1 + (1.9 - 1.1) * t;
+            const ringR = selObj.planet.size3 * mult;
             selRing.scale.set(ringR, ringR, 1);
             selRing.position.copy(selObj.group.position);
             // Lay flat in the ecliptic plane (XZ), then tilt to the planet's

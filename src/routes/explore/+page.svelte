@@ -951,6 +951,13 @@
       lagrangeL2: THREE.Mesh;
       lagrangeL1Label: THREE.Sprite;
       lagrangeL2Label: THREE.Sprite;
+      /** PRD-023 Slice D — stylised magnetosphere shell. Only planets
+       *  with substantial magnetic fields get one (Earth + the gas
+       *  giants); rocky bodies sans dynamo skip. Null when absent. */
+      magnetosphere: THREE.Mesh | null;
+      /** PRD-023 Slice D — sub-solar point marker. Small bright sprite
+       *  at the planet's surface noon longitude. Universal. */
+      subSolar: THREE.Mesh;
     };
     type OrbiterObj = {
       group: THREE.Group;
@@ -1164,6 +1171,48 @@
       lagrangeL2Label.visible = false;
       group.add(lagrangeL2Label);
 
+      // Magnetosphere shell (PRD-023 Slice D) — stylised emissive
+      // ellipsoid stretched along the planet→anti-sun axis (the
+      // direction the magnetotail extends). Real magnetospheres are
+      // teardrop-shaped + scaled wildly (Jupiter's tail reaches past
+      // Saturn's orbit); we render a compact 4× planet radius
+      // ellipsoid as a sci-fi-flavoured indicator. Only planets with
+      // significant dynamos get one: Earth + the four gas giants.
+      let magnetosphere: THREE.Mesh | null = null;
+      if (
+        p.id === 'earth' ||
+        p.id === 'jupiter' ||
+        p.id === 'saturn' ||
+        p.id === 'uranus' ||
+        p.id === 'neptune'
+      ) {
+        const magGeo = new THREE.SphereGeometry(p.size3 * 4, 24, 16);
+        const magMat = new THREE.MeshBasicMaterial({
+          color: p.id === 'jupiter' ? 0xff66dd : 0x66ddff,
+          transparent: true,
+          opacity: 0.08,
+          side: THREE.BackSide,
+          depthWrite: false,
+        });
+        magnetosphere = new THREE.Mesh(magGeo, magMat);
+        magnetosphere.scale.set(1, 0.7, 2.4); // stretched along Z
+        magnetosphere.userData.layerKey = 'magnetosphere';
+        magnetosphere.visible = false;
+        group.add(magnetosphere);
+      }
+
+      // Sub-solar point marker (PRD-023 Slice D) — small bright dot
+      // at the planet's surface where the Sun is directly overhead
+      // (i.e. the noon longitude). Per-frame the position is set
+      // from the planet→Sun unit vector × planet radius.
+      const subSolar = new THREE.Mesh(
+        new THREE.SphereGeometry(p.size3 * 0.08, 12, 12),
+        new THREE.MeshBasicMaterial({ color: 0xffe066, transparent: true, opacity: 0.95 }),
+      );
+      subSolar.userData.layerKey = 'sub-solar';
+      subSolar.visible = false;
+      group.add(subSolar);
+
       // Spin-axis indicator (PRD-023 Slice A) — a thin line through
       // the planet's centre at the real obliquity. Rendered along
       // (sin(tilt), cos(tilt), 0) so the tilt is visible from the
@@ -1238,6 +1287,8 @@
         lagrangeL2,
         lagrangeL1Label,
         lagrangeL2Label,
+        magnetosphere,
+        subSolar,
       };
     });
 
@@ -1494,6 +1545,21 @@
         o.lagrangeL2.visible = on;
         o.lagrangeL1Label.visible = on;
         o.lagrangeL2Label.visible = on;
+      });
+    });
+    // PRD-023 Slice D — Magnetosphere shell. Only the 5 bodies with
+    // significant dynamos get one (Earth + the 4 gas giants); the
+    // .magnetosphere ref is null on the rest so the visibility flip
+    // skips them.
+    const stopExploreMagnetosphereLayer = onLayerChange('magnetosphere', (on) => {
+      planetObjs.forEach((o) => {
+        if (o.magnetosphere) o.magnetosphere.visible = on;
+      });
+    });
+    // PRD-023 Slice D — Sub-solar point marker. Universal.
+    const stopExploreSubSolarLayer = onLayerChange('sub-solar', (on) => {
+      planetObjs.forEach((o) => {
+        o.subSolar.visible = on;
       });
     });
 
@@ -2643,21 +2709,55 @@
           // planet's group (translation only) so the local position
           // equals the world direction.
           const obj = planetObjs[idx];
-          if (obj.hillSphere.visible || obj.lagrangeL1.visible || obj.lagrangeL2.visible) {
+          // PRD-023 Slice B + D — bodies needing the planet→Sun unit
+          // vector each frame: L1/L2 markers, sub-solar marker on the
+          // sunlit surface, magnetosphere orientation (stretches
+          // along anti-sun axis).
+          if (
+            obj.hillSphere.visible ||
+            obj.lagrangeL1.visible ||
+            obj.lagrangeL2.visible ||
+            obj.subSolar.visible ||
+            (obj.magnetosphere?.visible ?? false)
+          ) {
             const sunDir = group.position.length();
             if (sunDir > 0.0001) {
               const ux = -group.position.x / sunDir;
               const uy = -group.position.y / sunDir;
               const uz = -group.position.z / sunDir;
-              const lagrangeDist = planet.size3 * 6;
-              obj.lagrangeL1.position.set(ux * lagrangeDist, uy * lagrangeDist, uz * lagrangeDist);
-              obj.lagrangeL2.position.set(
-                -ux * lagrangeDist,
-                -uy * lagrangeDist,
-                -uz * lagrangeDist,
-              );
-              obj.lagrangeL1Label.position.copy(obj.lagrangeL1.position).multiplyScalar(1.18);
-              obj.lagrangeL2Label.position.copy(obj.lagrangeL2.position).multiplyScalar(1.18);
+              if (obj.lagrangeL1.visible || obj.lagrangeL2.visible) {
+                const lagrangeDist = planet.size3 * 6;
+                obj.lagrangeL1.position.set(
+                  ux * lagrangeDist,
+                  uy * lagrangeDist,
+                  uz * lagrangeDist,
+                );
+                obj.lagrangeL2.position.set(
+                  -ux * lagrangeDist,
+                  -uy * lagrangeDist,
+                  -uz * lagrangeDist,
+                );
+                obj.lagrangeL1Label.position.copy(obj.lagrangeL1.position).multiplyScalar(1.18);
+                obj.lagrangeL2Label.position.copy(obj.lagrangeL2.position).multiplyScalar(1.18);
+              }
+              if (obj.subSolar.visible) {
+                // Sub-solar point on the planet surface, at the
+                // longitude where the Sun is directly overhead.
+                obj.subSolar.position.set(ux * planet.size3, uy * planet.size3, uz * planet.size3);
+              }
+              if (obj.magnetosphere?.visible) {
+                // Orient the magnetotail along the anti-sun axis —
+                // the ellipsoid's long axis (scale Z=2.4) points
+                // AWAY from the Sun. lookAt() points the local Z
+                // toward the given world coordinate; passing planet
+                // position - sun-direction = planet position +
+                // anti-sun-direction gives the right orientation.
+                obj.magnetosphere.lookAt(
+                  group.position.x - ux,
+                  group.position.y - uy,
+                  group.position.z - uz,
+                );
+              }
             }
           }
 
@@ -2851,6 +2951,8 @@
       stopExploreGalaxiesLayer?.();
       stopExploreHillSphereLayer?.();
       stopExploreLagrangeLayer?.();
+      stopExploreMagnetosphereLayer?.();
+      stopExploreSubSolarLayer?.();
       localGroup.dispose();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);

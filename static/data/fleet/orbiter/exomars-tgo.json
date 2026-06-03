@@ -1,0 +1,31 @@
+{
+  "id": "exomars-tgo",
+  "name": "ExoMars TGO",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Europe",
+  "manufacturer": "Thales Alenia Space",
+  "first_flight": "2016-03-14",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Trace gas analysis at Mars (methane, water vapor); relay for ESA + NASA surface missions",
+  "credit": "Added for PRD-023 Slice A — active Mars orbiter rendered as 3D glyph on /explore.",
+  "links": [
+    {
+      "l": "ExoMars Trace Gas Orbiter — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/ExoMars_Trace_Gas_Orbiter",
+      "t": "intro"
+    },
+    {
+      "l": "ExoMars TGO — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Exploration/ExoMars",
+      "t": "core"
+    },
+    {
+      "l": "TGO mission status (ESA Mars Express + ExoMars)",
+      "u": "https://exploration.esa.int/web/mars/-/56602-mission-information",
+      "t": "deep"
+    }
+  ]
+}

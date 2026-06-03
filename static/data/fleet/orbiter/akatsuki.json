@@ -1,0 +1,31 @@
+{
+  "id": "akatsuki",
+  "name": "Akatsuki",
+  "category": "orbiter",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Electric",
+  "first_flight": "2010-05-20",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Only active Venus orbiter; cloud-top winds + atmosphere dynamics. Recovered after a 2010 orbit-insertion failure; achieved orbit on a backup attempt in 2015",
+  "credit": "Added for PRD-023 Slice A — active Venus orbiter rendered as 3D glyph on /explore. Memory feedback_global_space_program_representation — JAXA explicit, not silently dropped.",
+  "links": [
+    {
+      "l": "Akatsuki (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "Akatsuki mission overview — JAXA",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/current/akatsuki.html",
+      "t": "core"
+    },
+    {
+      "l": "Akatsuki science results (Planetary and Space Science)",
+      "u": "https://akatsuki.isas.jaxa.jp/en/",
+      "t": "deep"
+    }
+  ]
+}

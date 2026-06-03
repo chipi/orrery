@@ -87,6 +87,14 @@
      * atmosphere (Mercury / Mars / Uranus / Neptune today) omit it.
      */
     halo?: { color: number; opacityMax: number };
+    /**
+     * Real obliquity in degrees, from planets.json — used to render
+     * the spin-axis indicator line through the planet's poles at the
+     * correct tilt. Most planets are within 30° of upright; Uranus
+     * sits at 97.77° (effectively rolled onto its side), Venus at
+     * 177.36° (upside-down + retrograde). PRD-023 Slice A.
+     */
+    axialTiltDeg: number;
   };
 
   /**
@@ -130,6 +138,7 @@
       period: 0.241,
       a0: 0.5,
       inc: 7.0,
+      axialTiltDeg: 0.034,
       texture: '2k_mercury.jpg',
       texture4k: '4k_mercury.jpg',
     },
@@ -144,6 +153,7 @@
       period: 0.615,
       a0: 2.1,
       inc: 3.4,
+      axialTiltDeg: 177.36,
       texture: '2k_venus_atmosphere.jpg',
       texture4k: '4k_venus_atmosphere.jpg',
       // Sulfuric-acid cloud deck — dense yellow atmosphere, 92×
@@ -161,6 +171,7 @@
       period: 1.0,
       a0: 0,
       inc: 0.0,
+      axialTiltDeg: 23.4393,
       texture: '2k_earth_daymap.jpg',
       texture4k: '4k_earth_daymap.jpg',
       // Rayleigh-blue limb glow — Earth's signature atmosphere read.
@@ -197,6 +208,7 @@
       period: 1.881,
       a0: 1.8,
       inc: 1.85,
+      axialTiltDeg: 25.19,
       texture: '2k_mars.jpg',
       texture4k: '4k_mars.jpg',
       // Phobos + Deimos (#287 Slice D). Real bodies are 22 km + 12 km
@@ -247,6 +259,7 @@
       period: 11.86,
       a0: 1.2,
       inc: 1.3,
+      axialTiltDeg: 3.13,
       texture: '2k_jupiter.jpg',
       texture4k: '4k_jupiter.jpg',
       // Beige cloud-band glow — dense H/He envelope, Great Red Spot
@@ -302,6 +315,7 @@
       period: 29.46,
       a0: 3.5,
       inc: 2.49,
+      axialTiltDeg: 26.73,
       hasRings: true,
       texture: '2k_saturn.jpg',
       texture4k: '4k_saturn.jpg',
@@ -353,6 +367,11 @@
       period: 84.01,
       a0: 5.1,
       inc: 0.77,
+      // Uranus rotates on its side — 97.77° tilt is the system's most
+      // dramatic, the result of a giant collision early in the planet's
+      // history. The spin-axis indicator from PRD-023 Slice A renders
+      // this visibly: a near-horizontal line through the planet's body.
+      axialTiltDeg: 97.77,
       texture: '2k_uranus.jpg',
     },
     {
@@ -366,6 +385,7 @@
       period: 164.8,
       a0: 2.8,
       inc: 1.77,
+      axialTiltDeg: 28.32,
       texture: '2k_neptune.jpg',
     },
     // Pluto-Charon binary (#287 Slice E). Promoted from SMALL_BODIES so
@@ -390,6 +410,7 @@
       period: 247.94,
       a0: 4.2,
       inc: 17.16,
+      axialTiltDeg: 122.53,
       texture: '4k_pluto.jpg',
       texture4k: '4k_pluto.jpg',
       satellites: [
@@ -895,6 +916,10 @@
        *  absent (Mercury / Mars / Uranus / Neptune). */
       haloMesh: THREE.Mesh | null;
       haloMaterial: THREE.MeshBasicMaterial | null;
+      /** PRD-023 Slice A — spin-axis indicator. Thin line through
+       *  the planet at its real obliquity. Universal across planets
+       *  (every body has a tilt); revealed at close zoom only. */
+      spinAxis: THREE.Line;
     };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
@@ -968,6 +993,37 @@
       });
       group.add(satellitesGroup);
 
+      // Spin-axis indicator (PRD-023 Slice A) — a thin line through
+      // the planet's centre at the real obliquity. Rendered along
+      // (sin(tilt), cos(tilt), 0) so the tilt is visible from the
+      // default camera azimuth. Extends 1.5× planet radius past each
+      // pole. Hidden by default; reveals at close zoom alongside the
+      // moon + halo layers.
+      const spinAxisLen = p.size3 * 1.5;
+      const spinTiltRad = (p.axialTiltDeg * Math.PI) / 180;
+      const spinAxisPts = [
+        new THREE.Vector3(
+          Math.sin(spinTiltRad) * spinAxisLen,
+          Math.cos(spinTiltRad) * spinAxisLen,
+          0,
+        ),
+        new THREE.Vector3(
+          -Math.sin(spinTiltRad) * spinAxisLen,
+          -Math.cos(spinTiltRad) * spinAxisLen,
+          0,
+        ),
+      ];
+      const spinAxisGeo = new THREE.BufferGeometry().setFromPoints(spinAxisPts);
+      const spinAxisMat = new THREE.LineBasicMaterial({
+        color: 0xffd766,
+        transparent: true,
+        opacity: 0.5,
+        depthWrite: false,
+      });
+      const spinAxis = new THREE.Line(spinAxisGeo, spinAxisMat);
+      spinAxis.visible = false;
+      group.add(spinAxis);
+
       // Atmospheric halo (#287 Slice F) — thin emissive shell ~6% larger
       // than the planet sphere, BackSide so the limb glow appears as a
       // soft halo on the silhouette rather than a colored sphere
@@ -1003,6 +1059,7 @@
         satellitesGroup,
         haloMesh,
         haloMaterial,
+        spinAxis,
       };
     });
 
@@ -1066,6 +1123,10 @@
         // Atmospheric halo reveal — shares the satellite threshold.
         if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
           obj.haloMesh.visible = shouldShow;
+        }
+        // Spin-axis indicator (PRD-023 Slice A) — same gating.
+        if (obj.spinAxis.visible !== shouldShow) {
+          obj.spinAxis.visible = shouldShow;
         }
       }
     }

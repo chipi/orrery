@@ -1,0 +1,31 @@
+{
+  "id": "tianwen-1",
+  "name": "Tianwen-1",
+  "category": "orbiter",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "China Academy of Space Technology (CAST)",
+  "first_flight": "2020-07-23",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "First Chinese Mars mission; orbiter delivered the Zhurong rover (May 2021) and continues solo science operations",
+  "credit": "Added for PRD-023 Slice A — active Mars orbiter rendered as 3D glyph on /explore.",
+  "links": [
+    {
+      "l": "Tianwen-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tianwen-1",
+      "t": "intro"
+    },
+    {
+      "l": "Tianwen-1 mission overview — CNSA",
+      "u": "https://www.cnsa.gov.cn/english/n6465645/n6465648/c6812114/content.html",
+      "t": "core"
+    },
+    {
+      "l": "Tianwen-1 science results (Nature)",
+      "u": "https://www.nature.com/articles/s41550-021-01473-2",
+      "t": "deep"
+    }
+  ]
+}

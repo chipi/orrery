@@ -1296,6 +1296,66 @@
     "tagline": "Polar Jupiter orbiter; magnetosphere studies"
   },
   {
+    "id": "maven",
+    "name": "MAVEN",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2013-11-18",
+    "tagline": "Mars atmospheric loss to solar wind"
+  },
+  {
+    "id": "exomars-tgo",
+    "name": "ExoMars TGO",
+    "category": "orbiter",
+    "agency": "ESA",
+    "country": "Europe",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2016-03-14",
+    "tagline": "Trace-gas analysis + ESA/NASA surface relay"
+  },
+  {
+    "id": "tianwen-1",
+    "name": "Tianwen-1",
+    "category": "orbiter",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2020-07-23",
+    "tagline": "First Chinese Mars mission; delivered Zhurong"
+  },
+  {
+    "id": "hope",
+    "name": "Hope (EMM)",
+    "category": "orbiter",
+    "agency": "UAESA",
+    "country": "UAE",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2020-07-19",
+    "tagline": "First Arab interplanetary mission"
+  },
+  {
+    "id": "akatsuki",
+    "name": "Akatsuki",
+    "category": "orbiter",
+    "agency": "JAXA",
+    "country": "Japan",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2010-05-20",
+    "tagline": "Only active Venus orbiter"
+  },
+  {
     "id": "mangalyaan",
     "name": "Mangalyaan (MOM)",
     "category": "orbiter",

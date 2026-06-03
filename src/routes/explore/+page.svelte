@@ -1017,7 +1017,8 @@
      */
     const tmpWorldPos = new THREE.Vector3();
     function updatePlanetLods(): void {
-      for (const obj of planetObjs) {
+      for (let idx = 0; idx < planetObjs.length; idx++) {
+        const obj = planetObjs[idx];
         obj.mesh.getWorldPosition(tmpWorldPos);
         const dist = camera.position.distanceTo(tmpWorldPos);
         const ratio = dist / obj.planet.size3;
@@ -1065,6 +1066,28 @@
         // Atmospheric halo reveal — shares the satellite threshold.
         if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
           obj.haloMesh.visible = shouldShow;
+        }
+
+        // Science-lens arrows (gravity / centripetal / velocity) are
+        // heliocentric vectors that point toward the Sun. At the
+        // planet-focus zoom they (a) point off-screen toward a Sun
+        // hundreds of units away, (b) overlap awkwardly with the
+        // selection halo + satellite group, and (c) report values
+        // (e.g. 0.22 mm/s²) that aren't intuitive at close range.
+        // Hide them for the focused planet at close zoom; the user
+        // can hit RESET VIEW to bring back the heliocentric framing
+        // where the arrows actually communicate something. Reported
+        // 2026-06-03 with reference screenshot at Jupiter focus.
+        if (focusedPlanetObj === obj && ratio <= PLANET_LOD_IN_RATIO) {
+          const ov = overlayPerPlanet[idx];
+          if (ov) {
+            ov.gravity.visible = false;
+            ov.centripetal.visible = false;
+            ov.velocity.visible = false;
+            ov.gravityLabel.visible = false;
+            ov.centripetalLabel.visible = false;
+            ov.velocityLabel.visible = false;
+          }
         }
       }
     }
@@ -2327,13 +2350,23 @@
         // tick without rebuilding any geometry.
         for (const line of planetOrbitLines) line.visible = layers.planets;
         for (const o of planetObjs) o.group.visible = layers.planets;
+        // Small-body markers (dwarfs / comets / interstellar) clutter
+        // the focused-planet view at close zoom — the orange swarm of
+        // dwarfs sits between Mars and Jupiter, right where Jupiter's
+        // focused-zoom field of view crosses them. Hide the whole
+        // small-body layer when the user is focused on a planet so
+        // the moons + halo read cleanly. Heliocentric framing keeps
+        // the full layer-toggle behaviour (reported 2026-06-03 with
+        // reference screenshot at Jupiter focus).
+        const suppressSmallBodies = focusedPlanetObj !== null;
         for (const o of smallBodyObjs) {
-          const on =
+          const layerOn =
             o.body.type === 'dwarf'
               ? layers.dwarfs
               : o.body.type === 'comet'
                 ? layers.comets
                 : layers.interstellar;
+          const on = layerOn && !suppressSmallBodies;
           o.mesh.visible = on;
           o.pickAid.visible = on;
           o.orbit.visible = on;

@@ -1112,9 +1112,7 @@
         // for active rovers, days alive since landing; for ended,
         // days between landing and snapshot.
         const endIsoForUserData = isActive ? new Date().toISOString() : tr.snapshot_date;
-        const endSol = site?.landing_date
-          ? daysBetween(site.landing_date, endIsoForUserData)
-          : 0;
+        const endSol = site?.landing_date ? daysBetween(site.landing_date, endIsoForUserData) : 0;
         endDot.userData = {
           siteId: tr.rover_id,
           kind: 'traverse-end',

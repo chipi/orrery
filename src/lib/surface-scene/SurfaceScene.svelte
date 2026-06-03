@@ -2672,6 +2672,24 @@
               }
             });
           }
+          // Same cross-fade for the Tier 0 silhouette. Before
+          // 2026-06-03 the silhouette stayed fully visible past
+          // patch promotion (only its scale shrank), so at close
+          // zoom a tiny lander glyph kept sitting on top of the
+          // HiRISE imagery. Marker is hidden whenever the detail
+          // patch is dominant; reappears as the user pulls back.
+          if (h.tier0Group) {
+            const tier0Fade = Math.max(0, 1 - detailOpacity);
+            h.tier0Group.visible = tier0Fade > 0.01;
+            h.tier0Group.traverse((obj) => {
+              if (!(obj instanceof THREE.Mesh)) return;
+              const mat = obj.material as THREE.Material & { opacity: number };
+              if ('opacity' in mat) {
+                mat.opacity = tier0Fade;
+                mat.transparent = tier0Fade < 0.99;
+              }
+            });
+          }
         }
 
         // Apply ramp to traverse layer (lines + dots + captions push

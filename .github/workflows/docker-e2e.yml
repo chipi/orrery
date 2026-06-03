@@ -159,17 +159,34 @@ jobs:
         # diagnostics.
         run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shard }}
 
-      - name: Capture web logs on failure
-        if: failure()
+      # Diagnostics fire on both failure AND cancellation. A job that
+      # times out after 45 min reports `cancelled`, not `failed`, so
+      # `if: failure()` alone silently dropped the playwright-report
+      # whenever the suite hit the timeout — which is exactly when we
+      # most need the report. Same gating for the web container logs.
+      - name: Capture web logs on failure or cancellation
+        if: failure() || cancelled()
         run: docker compose logs web
 
-      - name: Upload Playwright report on failure
-        if: failure()
+      - name: Upload Playwright report on failure or cancellation
+        if: failure() || cancelled()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: docker-e2e-playwright-report-${{ matrix.project }}-${{ matrix.shard_id }}
           path: playwright-report/
           retention-days: 14
+
+      # test-results/ holds per-spec error-context.md + screenshots —
+      # smaller than the full HTML report and faster to grep when
+      # triaging cascade failures. Same cancellation gating.
+      - name: Upload raw test-results on failure or cancellation
+        if: failure() || cancelled()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: docker-e2e-test-results-${{ matrix.project }}-${{ matrix.shard_id }}
+          path: test-results/
+          retention-days: 14
+          if-no-files-found: ignore
 
       - name: Tear down stack
         if: always()

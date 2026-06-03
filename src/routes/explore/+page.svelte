@@ -70,6 +70,15 @@
      */
     texture4k?: string;
     /**
+     * Optional emissive (night-side glow) texture — PRD-023 Slice A.
+     * Used for Earth's city lights. Applied as MeshPhongMaterial's
+     * `emissiveMap` so the glow only reads on the unlit hemisphere
+     * (the bright day texture overwhelms the emission contribution
+     * on the lit side). Omit on bodies with no significant
+     * night-side luminosity.
+     */
+    emissiveMap?: string;
+    /**
      * Optional natural-satellite list — only renders when the camera
      * is zoomed in close enough that the parent body itself has
      * promoted to 4K (same threshold as the LOD-in ratio, so satellites
@@ -174,6 +183,9 @@
       axialTiltDeg: 23.4393,
       texture: '2k_earth_daymap.jpg',
       texture4k: '4k_earth_daymap.jpg',
+      // Earth's night-side city lights — NASA Black Marble derivative
+      // via Solar System Scope (CC-BY-4.0). PRD-023 Slice A.
+      emissiveMap: '2k_earth_nightmap.jpg',
       // Rayleigh-blue limb glow — Earth's signature atmosphere read.
       halo: { color: 0x6aa8ff, opacityMax: 0.25 },
       satellites: [
@@ -924,11 +936,21 @@
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
       const tex2k = loadTexture(p.texture);
+      // PRD-023 Slice A — optional emissive (night-side) texture for
+      // Earth's city lights. MeshPhongMaterial adds emission on top
+      // of the lighting calculation; emission isn't multiplied by
+      // light direction, so on the day side the bright day texture
+      // overwhelms the city lights, and on the night side the lit-
+      // up cities glow against the dark surface. emissiveIntensity
+      // is bumped from the default 0.06 (faint planet-tint glow) to
+      // 1.0 when an emissiveMap is supplied so the cities read.
+      const emissiveMapTex = p.emissiveMap ? loadTexture(p.emissiveMap) : undefined;
       const mat = new THREE.MeshPhongMaterial({
         map: tex2k,
         color: 0xffffff,
-        emissive: p.color3,
-        emissiveIntensity: 0.06,
+        emissive: p.emissiveMap ? 0xffffff : p.color3,
+        emissiveMap: emissiveMapTex,
+        emissiveIntensity: p.emissiveMap ? 1.0 : 0.06,
         shininess: 25,
         specular: 0x222222,
       });

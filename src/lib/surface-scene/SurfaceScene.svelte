@@ -1706,10 +1706,7 @@
     // Raycast against every traverse-stop pin sprite across all
     // loaded rovers. Returns the pin's userData hit (sol + label)
     // so the hover handler can populate the tooltip state.
-    function pickStopAt(
-      clientX: number,
-      clientY: number,
-    ): { sol: number; label: string } | null {
+    function pickStopAt(clientX: number, clientY: number): { sol: number; label: string } | null {
       if (traverseLines.length === 0) return null;
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
@@ -1734,9 +1731,7 @@
       if (isDrag) return;
       hoveredSiteId = pickSiteAt(e.clientX, e.clientY);
       const stopHit = pickStopAt(e.clientX, e.clientY);
-      hoveredStopInfo = stopHit
-        ? { ...stopHit, clientX: e.clientX, clientY: e.clientY }
-        : null;
+      hoveredStopInfo = stopHit ? { ...stopHit, clientX: e.clientX, clientY: e.clientY } : null;
     };
     const onHoverLeave = () => {
       hoveredSiteId = null;

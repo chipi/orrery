@@ -508,9 +508,46 @@
   }
   function onWheel(e: WheelEvent) {
     e.preventDefault();
-    // Zoom about the centroid. Cap at sensible bounds.
+    // Zoom about the centroid. Cap at sensible bounds — the
+    // closest-zoom floor adapts to whichever is larger of the
+    // selected site's region_bounds span or its traverse polyline
+    // span, so the user can't zoom in past the point where every
+    // marker stays visible (image 21 follow-up: "on the last zoom
+    // I see only green circle, nothing should be gone").
     const factor = e.deltaY > 0 ? 1.1 : 0.9;
-    kmPerPx = Math.max(0.0001, Math.min(10, kmPerPx * factor));
+    let extentKm = 0;
+    if (selected.region_bounds) {
+      const rb = selected.region_bounds;
+      const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
+      const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);
+      const cosLat = Math.cos(((rb.lat_min + rb.lat_max) / 2) * (Math.PI / 180));
+      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
+      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
+      extentKm = Math.max(extentKm, widthKm, heightKm);
+    }
+    const tr = traverses?.[selected.id];
+    if (tr && tr.points.length >= 2) {
+      // Polyline bounding-box extent in km (great-circle approximation).
+      let latMin = Infinity;
+      let latMax = -Infinity;
+      let lonMin = Infinity;
+      let lonMax = -Infinity;
+      for (const [la, lo] of tr.points) {
+        if (la < latMin) latMin = la;
+        if (la > latMax) latMax = la;
+        if (lo < lonMin) lonMin = lo;
+        if (lo > lonMax) lonMax = lo;
+      }
+      const dLat = Math.max(1e-6, latMax - latMin);
+      const dLon = Math.max(1e-6, lonMax - lonMin);
+      const cosLat = Math.cos(((latMin + latMax) / 2) * (Math.PI / 180));
+      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
+      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
+      extentKm = Math.max(extentKm, widthKm, heightKm);
+    }
+    const vp = Math.max(300, Math.min(window.innerWidth, window.innerHeight));
+    const minKmPerPx = Math.max(0.001, extentKm / (vp * 0.8));
+    kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 
   // Scale-aware marker sizing per ADR-072 §"scale-aware marker rule".

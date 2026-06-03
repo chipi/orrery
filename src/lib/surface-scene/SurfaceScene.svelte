@@ -331,6 +331,20 @@
   let tierContext = $state<TierContext | null>(null);
 
   /**
+   * Hover-tooltip for the traverse-stop balloon pins. When the pointer
+   * is over a pin sprite, surface its sol + label in a small panel
+   * floating near the cursor. Cleared on hover-leave or any non-pin
+   * frame. Position is page-space (clientX/clientY) so the template
+   * can render via fixed positioning.
+   */
+  let hoveredStopInfo = $state<{
+    sol: number;
+    label: string;
+    clientX: number;
+    clientY: number;
+  } | null>(null);
+
+  /**
    * Nation chip label + colour for the info card's site header.
    * Same shape as /mars's nationChipFor — Moon includes USSR (Luna)
    * which collapses with Russia for the chip (Roscosmos is the
@@ -402,6 +416,16 @@
   // Click handlers don't pass `face` so picking a marker on screen
   // doesn't lurch the camera off whatever the user was looking at.
   let faceCameraAtSite: ((site: SurfaceSite) => void) | undefined;
+  /**
+   * "Zoom to detail" — fly the camera in to the close range where the
+   * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
+   * above the SPHERE_TO_FLAT_CAM_R = 30.3 flat-patch trigger). Same
+   * tween primitive as faceCameraAtSite, just a closer landing R.
+   * Wired to a button in the detail panel so the user has a direct
+   * "see the actual surface imagery" affordance instead of having to
+   * scroll-wheel-hunt for it.
+   */
+  let flyToDetail: ((site: SurfaceSite) => void) | undefined;
   function selectSite(id: string, options: { face?: boolean } = {}) {
     const s = sites.find((x) => x.id === id);
     if (s) {
@@ -768,6 +792,32 @@
       // Land at a Tier-1-friendly distance (50u) so the lander model
       // resolves; user can scroll-zoom further to reach Tier 2.
       flyToR = 50;
+      flyStart = performance.now();
+      flyActive = true;
+      autoSpin = false;
+    };
+
+    // Zoom-to-detail variant: same lat/lon facing math, but lands at
+    // camR ≈ 31 so the HiRISE detail patch is fully visible (just
+    // above the flat-patch trigger). Skips the fly if the user is
+    // already at deep zoom so the button doesn't bounce on click.
+    flyToDetail = (site: SurfaceSite) => {
+      if (site.lat == null || site.lon == null) return;
+      if (camR < 32) return;
+      const v = latLonToUnitSphere(site.lat, site.lon);
+      planetMesh.updateMatrixWorld(true);
+      const worldPos = new THREE.Vector3(v.x, v.y, v.z).applyMatrix4(planetMesh.matrixWorld);
+      const dir = worldPos.clone().normalize();
+      flyFromP = camP;
+      flyFromT = camT;
+      flyFromR = camR;
+      flyToP = Math.acos(Math.max(-1, Math.min(1, dir.y)));
+      let to = Math.atan2(dir.x, dir.z);
+      while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
+      while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
+      flyToT = to;
+      flyToR = 31;
+      camRTarget = 31;
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;
@@ -1653,12 +1703,44 @@
     }
 
     let hoveredSiteId: string | null = null;
+    // Raycast against every traverse-stop pin sprite across all
+    // loaded rovers. Returns the pin's userData hit (sol + label)
+    // so the hover handler can populate the tooltip state.
+    function pickStopAt(
+      clientX: number,
+      clientY: number,
+    ): { sol: number; label: string } | null {
+      if (traverseLines.length === 0) return null;
+      const rect = el3d.getBoundingClientRect();
+      const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
+      const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
+      ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      const targets: THREE.Object3D[] = [];
+      for (const tl of traverseLines) for (const sp of tl.stopPins) targets.push(sp);
+      if (targets.length === 0) return null;
+      const hits = ray.intersectObjects(targets, false);
+      const hit = hits.find(
+        (h) =>
+          typeof h.object.userData?.stopSol === 'number' &&
+          typeof h.object.userData?.stopLabel === 'string',
+      );
+      if (!hit) return null;
+      return {
+        sol: hit.object.userData.stopSol as number,
+        label: hit.object.userData.stopLabel as string,
+      };
+    }
     const onHover = (e: MouseEvent) => {
       if (isDrag) return;
       hoveredSiteId = pickSiteAt(e.clientX, e.clientY);
+      const stopHit = pickStopAt(e.clientX, e.clientY);
+      hoveredStopInfo = stopHit
+        ? { ...stopHit, clientX: e.clientX, clientY: e.clientY }
+        : null;
     };
     const onHoverLeave = () => {
       hoveredSiteId = null;
+      hoveredStopInfo = null;
     };
 
     const onMouseDown = (e: MouseEvent) => {
@@ -3002,6 +3084,23 @@ sample      ${debugInfo.projectedPxSample}`}
     />
   {/if}
 
+  <!-- Traverse-stop hover tooltip — small floating card with sol +
+       human label ("John Klein drill") that follows the pointer when
+       hovering a balloon pin. Pointer-events: none so it doesn't
+       break the pin's own pickability on click. Offsets the cursor
+       (16px right, 18px down) so the tooltip clears the cursor body
+       on standard desktop sizes. -->
+  {#if hoveredStopInfo && !panoramaActive}
+    <div
+      class="traverse-stop-tooltip"
+      style="left: {hoveredStopInfo.clientX + 16}px; top: {hoveredStopInfo.clientY + 18}px"
+      data-testid="traverse-stop-tooltip"
+    >
+      <span class="sol mono">SOL {hoveredStopInfo.sol}</span>
+      <span class="label">{hoveredStopInfo.label}</span>
+    </div>
+  {/if}
+
   <!-- Panorama mode overlay (Phase 6 / #118). The "Return to orbit"
        button is the visible exit; ESC also exits. Hidden-text desc
        is read by screen readers for vision-impaired users. -->
@@ -3166,6 +3265,22 @@ sample      ${debugInfo.projectedPxSample}`}
           onEnter={enterPanorama}
           onExit={exitPanorama}
         />
+        <!-- "Zoom to detail" — flies the camera in to the close range
+             where the HiRISE/LROC detail patch is fully visible. Only
+             rendered when the site declares a Tier-2 source (otherwise
+             the patch wouldn't load and the button would be a no-op).
+             Hidden during panorama mode — you're already there. -->
+        {#if selected.hotspot_tier2_source && !panoramaActive}
+          <button
+            type="button"
+            class="zoom-to-detail-button"
+            data-testid="zoom-to-detail"
+            onclick={() => selected && flyToDetail?.(selected)}
+          >
+            <span class="icon" aria-hidden="true">⤓</span>
+            <span>Zoom to detail</span>
+          </button>
+        {/if}
       </div>
 
       {#if panelGallery.length > 0}
@@ -3539,6 +3654,44 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .head :global(.stand-at-site:hover),
   .head :global(.stand-at-site:focus-visible) {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent, #4ecdc4);
+    color: #fff;
+    outline: none;
+  }
+  /* "Zoom to detail" button — sibling of stand-at-site, same dark-
+     glass chrome but with a downward-arrow glyph instead of the
+     panorama half-moon. Stacks below stand-at-site when both render. */
+  .head .zoom-to-detail-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 2px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+  .head .zoom-to-detail-button .icon {
+    color: var(--accent, #4ecdc4);
+    font-size: 13px;
+    line-height: 1;
+  }
+  .head .zoom-to-detail-button:hover,
+  .head .zoom-to-detail-button:focus-visible {
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--accent, #4ecdc4);
     color: #fff;
@@ -3926,6 +4079,34 @@ sample      ${debugInfo.projectedPxSample}`}
      so the user has a discoverable exit even without the panel
      open. (#286 audit — moved out of the bottom-row controls stack
      to fix the sizing/overlap with the cross-link chips.) */
+  .traverse-stop-tooltip {
+    position: fixed;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px 10px;
+    background: rgba(5, 5, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    color: var(--color-text-on-dark, #ffffff);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(4px);
+    z-index: 70;
+    max-width: 240px;
+  }
+  .traverse-stop-tooltip .sol {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 220, 140, 0.95);
+    text-transform: uppercase;
+  }
+  .traverse-stop-tooltip .label {
+    color: rgba(255, 255, 255, 0.92);
+  }
+
   .panorama-floating-exit {
     position: fixed;
     top: calc(var(--nav-height, 64px) + 18px);

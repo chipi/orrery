@@ -2396,6 +2396,16 @@
               // planet's silhouette and the inner moon ring.
               const closeBase = planet.size3 * 1.3;
               const closeLen = planet.size3 * 1.5;
+              // Label sprites are built at worldScale=14 (constant
+              // world units). At close zoom that's wider than the
+              // planet itself; lerp scale down so labels stay
+              // readable but proportional. Aspect 4:1 preserved.
+              const labelScale = 4 + (14 - 4) * tWide;
+              // Arrow head ratios — at close zoom the default
+              // 0.22 / 0.13 made the cone ~1/5 of planet diameter.
+              // Halve them at close zoom.
+              const headRatio = 0.11 + (0.22 - 0.11) * tWide;
+              const headWidthRatio = 0.065 + (0.13 - 0.065) * tWide;
 
               // Group has only translation (no rotation), so world dir
               // == local dir — pass directly to setDirection.
@@ -2410,10 +2420,11 @@
                 const base = closeBase * (1 - tWide);
                 ov.gravity.setDirection(worldToSun);
                 ov.gravity.position.copy(worldToSun).multiplyScalar(base);
-                ov.gravity.setLength(len, len * 0.22, len * 0.13);
+                ov.gravity.setLength(len, len * headRatio, len * headWidthRatio);
                 // Label sits past the arrow tip = base + length, +20%
                 // overshoot so the arrow head doesn't occlude the text.
                 ov.gravityLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
+                ov.gravityLabel.scale.set(labelScale, labelScale * 0.25, 1);
               }
               if (ov.centripetal.visible) {
                 // Same direction (inward) as gravity — for a circular
@@ -2426,13 +2437,14 @@
                 const base = closeBase * (1 - tWide);
                 ov.centripetal.setDirection(worldToSun);
                 ov.centripetal.position.copy(worldToSun).multiplyScalar(base);
-                ov.centripetal.setLength(len, len * 0.22, len * 0.13);
+                ov.centripetal.setLength(len, len * headRatio, len * headWidthRatio);
                 ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
                 // Lift label by the same Y offset as the arrow base so
                 // it tracks the arrow's offset position. At close zoom
                 // the offset is smaller (proportional to the now
                 // shorter overall length).
                 ov.centripetalLabel.position.y += planet.size3 * (0.6 + tWide * 1.0);
+                ov.centripetalLabel.scale.set(labelScale, labelScale * 0.25, 1);
               }
               if (ov.velocity.visible) {
                 // Tangent to orbit, in the planet's orbital plane. Cross
@@ -2451,8 +2463,9 @@
                 const base = closeBase * (1 - tWide);
                 ov.velocity.setDirection(tangent);
                 ov.velocity.position.copy(tangent).multiplyScalar(base);
-                ov.velocity.setLength(len, len * 0.22, len * 0.13);
+                ov.velocity.setLength(len, len * headRatio, len * headWidthRatio);
                 ov.velocityLabel.position.copy(tangent).multiplyScalar(base + len * 1.2);
+                ov.velocityLabel.scale.set(labelScale, labelScale * 0.25, 1);
               }
             }
           }

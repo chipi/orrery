@@ -2754,8 +2754,8 @@
             tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
             const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
             // No pulse — flat 95% opacity for active rovers, 85% for ended (was
-// `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
-dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
+            // `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
+            dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
             tl.endDot.scale.setScalar(endDotScale);
             // Reposition captions each frame so they sit ~70 px
             // tangentially + ~30 px outward from the anchor dot
@@ -2818,8 +2818,7 @@ dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
           const surfaceDistanceForBar = Math.max(0.05, camR - 30);
           const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
           const worldPerPxForBar =
-            (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) /
-            viewportHForBar;
+            (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) / viewportHForBar;
           const kmPerWorldUnit = config.radiusKm / planetRadius;
           const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
           const TARGET_BAR_PX = 110;
@@ -2841,11 +2840,7 @@ dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
                 : `${(niceKm * 1000).toFixed(1)} m`;
           // Skip the assignment if values are unchanged — keeps
           // Svelte from re-rendering the overlay every frame.
-          if (
-            !scaleBar ||
-            Math.abs(scaleBar.widthPx - widthPx) > 0.5 ||
-            scaleBar.label !== label
-          ) {
+          if (!scaleBar || Math.abs(scaleBar.widthPx - widthPx) > 0.5 || scaleBar.label !== label) {
             scaleBar = { widthPx, label };
           }
         } else if (scaleBar !== null) {
@@ -3138,109 +3133,109 @@ dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
   {#if !panoramaActive}
     <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
-    <div class="ctrl-row">
-      {#if !config.disable2D}
-        <ViewToggleButton
-          is2d={view === '2d'}
-          label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
-          onToggle={toggleView}
+      <div class="ctrl-row">
+        {#if !config.disable2D}
+          <ViewToggleButton
+            is2d={view === '2d'}
+            label={view === '3d' ? m.moon_label_view_2d() : m.moon_label_view_3d()}
+            onToggle={toggleView}
+          />
+        {/if}
+        {#if view === '3d'}
+          <View3dControls
+            onReset={() => resetCamera()}
+            {autoSpin}
+            onToggleSpin={() => (autoSpin = !autoSpin)}
+          />
+        {/if}
+      </div>
+      <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
+        <LayerChipRow
+          chips={[
+            {
+              testid: 'layer-surface',
+              label: m.ui_layer_surface(),
+              title: m.moon_layer_tip_surface(),
+              active: () => layerSurface,
+              toggle: () => (layerSurface = !layerSurface),
+            },
+            {
+              testid: 'layer-orbiters',
+              label: m.ui_layer_orbiters(),
+              title: m.moon_layer_tip_orbiters(),
+              active: () => layerOrbiters,
+              toggle: () => (layerOrbiters = !layerOrbiters),
+            },
+            {
+              testid: 'layer-orbits',
+              label: m.ui_layer_orbits(),
+              title: m.moon_layer_tip_orbit_rings(),
+              active: () => layerOrbits,
+              toggle: () => (layerOrbits = !layerOrbits),
+            },
+            // TRAVERSES chip shows only when this body has vendored
+            // rover paths (Mars today; Moon EVA / Lunokhod future).
+            ...(loadTraverses != null
+              ? [
+                  {
+                    testid: 'layer-traverses',
+                    label: m.ui_layer_traverses(),
+                    title: m.mars_layer_tip_traverses(),
+                    active: () => layerTraverses,
+                    toggle: () => (layerTraverses = !layerTraverses),
+                  },
+                ]
+              : []),
+            // Earth-only satellite-category chips (#290 Slice 6). Sub-
+            // gating on top of the master ORBITERS chip — visible only
+            // when earthOrbitalLayers.satellites is configured. Labels
+            // mirror EarthOrbitalScene's existing strings (STATIONS /
+            // OBSERVATORIES are intentional untranslated literals; the
+            // others use the shared ui_layer_* bundle).
+            ...(config.earthOrbitalLayers?.satellites != null
+              ? [
+                  {
+                    testid: 'layer-stations',
+                    label: 'STATIONS',
+                    title: m.earth_layer_tip_habitats(),
+                    active: () => layerStations,
+                    toggle: () => (layerStations = !layerStations),
+                  },
+                  {
+                    testid: 'layer-observatories',
+                    label: 'OBSERVATORIES',
+                    title: m.earth_layer_tip_telescopes(),
+                    active: () => layerObservatories,
+                    toggle: () => (layerObservatories = !layerObservatories),
+                  },
+                  {
+                    testid: 'layer-constellations',
+                    label: m.ui_layer_constellations(),
+                    title: m.earth_layer_tip_nav(),
+                    active: () => layerConstellations,
+                    toggle: () => (layerConstellations = !layerConstellations),
+                  },
+                  {
+                    testid: 'layer-comsats',
+                    label: m.ui_layer_comsats(),
+                    title: m.earth_layer_tip_geo(),
+                    active: () => layerComsats,
+                    toggle: () => (layerComsats = !layerComsats),
+                  },
+                  {
+                    testid: 'layer-moon-orbiters',
+                    label: m.ui_layer_moon_orbiters(),
+                    title: m.earth_layer_tip_lunar(),
+                    active: () => layerMoonOrbiters,
+                    toggle: () => (layerMoonOrbiters = !layerMoonOrbiters),
+                  },
+                ]
+              : []),
+          ]}
         />
-      {/if}
-      {#if view === '3d'}
-        <View3dControls
-          onReset={() => resetCamera()}
-          {autoSpin}
-          onToggleSpin={() => (autoSpin = !autoSpin)}
-        />
-      {/if}
+        <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />
+      </div>
     </div>
-    <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-      <LayerChipRow
-        chips={[
-          {
-            testid: 'layer-surface',
-            label: m.ui_layer_surface(),
-            title: m.moon_layer_tip_surface(),
-            active: () => layerSurface,
-            toggle: () => (layerSurface = !layerSurface),
-          },
-          {
-            testid: 'layer-orbiters',
-            label: m.ui_layer_orbiters(),
-            title: m.moon_layer_tip_orbiters(),
-            active: () => layerOrbiters,
-            toggle: () => (layerOrbiters = !layerOrbiters),
-          },
-          {
-            testid: 'layer-orbits',
-            label: m.ui_layer_orbits(),
-            title: m.moon_layer_tip_orbit_rings(),
-            active: () => layerOrbits,
-            toggle: () => (layerOrbits = !layerOrbits),
-          },
-          // TRAVERSES chip shows only when this body has vendored
-          // rover paths (Mars today; Moon EVA / Lunokhod future).
-          ...(loadTraverses != null
-            ? [
-                {
-                  testid: 'layer-traverses',
-                  label: m.ui_layer_traverses(),
-                  title: m.mars_layer_tip_traverses(),
-                  active: () => layerTraverses,
-                  toggle: () => (layerTraverses = !layerTraverses),
-                },
-              ]
-            : []),
-          // Earth-only satellite-category chips (#290 Slice 6). Sub-
-          // gating on top of the master ORBITERS chip — visible only
-          // when earthOrbitalLayers.satellites is configured. Labels
-          // mirror EarthOrbitalScene's existing strings (STATIONS /
-          // OBSERVATORIES are intentional untranslated literals; the
-          // others use the shared ui_layer_* bundle).
-          ...(config.earthOrbitalLayers?.satellites != null
-            ? [
-                {
-                  testid: 'layer-stations',
-                  label: 'STATIONS',
-                  title: m.earth_layer_tip_habitats(),
-                  active: () => layerStations,
-                  toggle: () => (layerStations = !layerStations),
-                },
-                {
-                  testid: 'layer-observatories',
-                  label: 'OBSERVATORIES',
-                  title: m.earth_layer_tip_telescopes(),
-                  active: () => layerObservatories,
-                  toggle: () => (layerObservatories = !layerObservatories),
-                },
-                {
-                  testid: 'layer-constellations',
-                  label: m.ui_layer_constellations(),
-                  title: m.earth_layer_tip_nav(),
-                  active: () => layerConstellations,
-                  toggle: () => (layerConstellations = !layerConstellations),
-                },
-                {
-                  testid: 'layer-comsats',
-                  label: m.ui_layer_comsats(),
-                  title: m.earth_layer_tip_geo(),
-                  active: () => layerComsats,
-                  toggle: () => (layerComsats = !layerComsats),
-                },
-                {
-                  testid: 'layer-moon-orbiters',
-                  label: m.ui_layer_moon_orbiters(),
-                  title: m.earth_layer_tip_lunar(),
-                  active: () => layerMoonOrbiters,
-                  toggle: () => (layerMoonOrbiters = !layerMoonOrbiters),
-                },
-              ]
-            : []),
-        ]}
-      />
-      <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />
-    </div>
-  </div>
   {/if}
 
   {#if loadFailed}

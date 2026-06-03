@@ -91,7 +91,13 @@
             : m.panel_orbit_shape_highly(),
   );
   let mkmFromSun = $derived(planet ? planet.a * AU_TO_MKM : 0);
-  let auLabel = $derived(planet ? `${planet.a.toFixed(2)} AU` : '');
+  // PRD-023 Slice E — light-time + AU readout. AU is the canonical
+  // astronomical unit; light-minutes give an intuitive grasp of how
+  // far the planet sits. Speed of light at the Earth-Sun distance is
+  // ~8.317 light-minutes per AU (planets.json constant `au_to_lmin`).
+  let auLabel = $derived(
+    planet ? `${planet.a.toFixed(2)} AU · ${(planet.a * 8.317).toFixed(1)} light-min` : '',
+  );
   let periodLabel = $derived(
     !planet
       ? ''

@@ -1302,17 +1302,24 @@
     // Selection ring (3D) — single torus reused for whichever planet is
     // selected. Hidden when nothing is selected. Pulses by modulating
     // material opacity in the animation loop.
-    const selRingGeo = new THREE.TorusGeometry(1, 0.18, 12, 64);
-    const selRingMat = new THREE.MeshBasicMaterial({
+    // Selection cue — spherical halo (BackSide) that hugs the focused
+    // body's silhouette. Replaced the older Torus ring (#287 follow-up
+    // 2026-06-03) — the flat ring read as a Saturn-ring artifact at
+    // close zoom + collided visually with the per-planet ring layer.
+    // The sphere sits OUTSIDE the per-planet atmospheric halo (1.06×
+    // planet radius) so the two don't overlap; opacity pulses in the
+    // animate loop to communicate "selected".
+    const selHaloGeo = new THREE.SphereGeometry(1, 32, 32);
+    const selHaloMat = new THREE.MeshBasicMaterial({
       color: 0x4466ff,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.35,
       depthWrite: false,
-      side: THREE.DoubleSide,
+      side: THREE.BackSide,
     });
-    const selRing = new THREE.Mesh(selRingGeo, selRingMat);
-    selRing.visible = false;
-    scene.add(selRing);
+    const selHalo = new THREE.Mesh(selHaloGeo, selHaloMat);
+    selHalo.visible = false;
+    scene.add(selHalo);
 
     let camR = 680;
     let camP = 1.05;
@@ -2441,44 +2448,26 @@
           }
         });
 
-        // Track selected planet with the 3D selection ring (lying in
-        // the planet's orbital plane). Hidden when nothing is selected.
-        // Ring radius lerps with camera-distance ratio so at the planet-
-        // focus pose (#287) the ring hugs the silhouette instead of
-        // eating the viewport; at heliocentric framing it stays at the
-        // chunky 1.9× radius the wide-zoom view relies on.
+        // Track selected planet with the 3D selection halo — a thin
+        // BackSide sphere that reads as a soft glow on the silhouette.
+        // Sized just outside the per-planet atmospheric halo (1.06×
+        // size3) so the two don't overlap at close zoom; at wide
+        // heliocentric framing it's still visually distinct against
+        // the starfield. Opacity pulses to communicate "selected".
         if (selectedId) {
           const selObj = planetObjs.find((o) => o.planet.id === selectedId);
           if (selObj) {
-            selObj.mesh.getWorldPosition(tmpWorldPos);
-            const ratio = camera.position.distanceTo(tmpWorldPos) / selObj.planet.size3;
-            // Smoothstep across the same threshold the 4K LOD + moon
-            // reveal use: ≤4 (close) → 1.1× radius (hugs the planet);
-            // ≥5 (wide) → 1.9× (original wide-zoom anchor); lerp between.
-            const t = Math.max(
-              0,
-              Math.min(
-                1,
-                (ratio - PLANET_LOD_IN_RATIO) / (PLANET_LOD_OUT_RATIO - PLANET_LOD_IN_RATIO),
-              ),
-            );
-            const mult = 1.1 + (1.9 - 1.1) * t;
-            const ringR = selObj.planet.size3 * mult;
-            selRing.scale.set(ringR, ringR, 1);
-            selRing.position.copy(selObj.group.position);
-            // Lay flat in the ecliptic plane (XZ), then tilt to the planet's
-            // orbital inclination so the ring matches the local orbit normal.
-            selRing.rotation.set(Math.PI / 2, 0, 0);
-            const incRad = (selObj.planet.inc * Math.PI) / 180;
-            selRing.rotateZ(incRad);
+            const haloR = selObj.planet.size3 * 1.18;
+            selHalo.scale.set(haloR, haloR, haloR);
+            selHalo.position.copy(selObj.group.position);
             const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selRingMat.opacity = 0.35 + pulse * 0.45;
-            selRing.visible = true;
+            selHaloMat.opacity = 0.22 + pulse * 0.28;
+            selHalo.visible = true;
           } else {
-            selRing.visible = false;
+            selHalo.visible = false;
           }
         } else {
-          selRing.visible = false;
+          selHalo.visible = false;
         }
 
         renderer.render(scene, camera);

@@ -1067,28 +1067,6 @@
         if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
           obj.haloMesh.visible = shouldShow;
         }
-
-        // Science-lens arrows (gravity / centripetal / velocity) are
-        // heliocentric vectors that point toward the Sun. At the
-        // planet-focus zoom they (a) point off-screen toward a Sun
-        // hundreds of units away, (b) overlap awkwardly with the
-        // selection halo + satellite group, and (c) report values
-        // (e.g. 0.22 mm/s²) that aren't intuitive at close range.
-        // Hide them for the focused planet at close zoom; the user
-        // can hit RESET VIEW to bring back the heliocentric framing
-        // where the arrows actually communicate something. Reported
-        // 2026-06-03 with reference screenshot at Jupiter focus.
-        if (focusedPlanetObj === obj && ratio <= PLANET_LOD_IN_RATIO) {
-          const ov = overlayPerPlanet[idx];
-          if (ov) {
-            ov.gravity.visible = false;
-            ov.centripetal.visible = false;
-            ov.velocity.visible = false;
-            ov.gravityLabel.visible = false;
-            ov.centripetalLabel.visible = false;
-            ov.velocityLabel.visible = false;
-          }
-        }
       }
     }
 
@@ -2350,23 +2328,13 @@
         // tick without rebuilding any geometry.
         for (const line of planetOrbitLines) line.visible = layers.planets;
         for (const o of planetObjs) o.group.visible = layers.planets;
-        // Small-body markers (dwarfs / comets / interstellar) clutter
-        // the focused-planet view at close zoom — the orange swarm of
-        // dwarfs sits between Mars and Jupiter, right where Jupiter's
-        // focused-zoom field of view crosses them. Hide the whole
-        // small-body layer when the user is focused on a planet so
-        // the moons + halo read cleanly. Heliocentric framing keeps
-        // the full layer-toggle behaviour (reported 2026-06-03 with
-        // reference screenshot at Jupiter focus).
-        const suppressSmallBodies = focusedPlanetObj !== null;
         for (const o of smallBodyObjs) {
-          const layerOn =
+          const on =
             o.body.type === 'dwarf'
               ? layers.dwarfs
               : o.body.type === 'comet'
                 ? layers.comets
                 : layers.interstellar;
-          const on = layerOn && !suppressSmallBodies;
           o.mesh.visible = on;
           o.pickAid.visible = on;
           o.orbit.visible = on;
@@ -2387,6 +2355,17 @@
           // Phase H — overlay arrow updates. Group is at planet's world
           // pos; arrows live in the group's local frame, so directions
           // need transforming back from world space.
+          //
+          // Close-zoom polish (2026-06-03): at heliocentric framing the
+          // arrows use log-scaled lengths optimised for cross-system
+          // comparison. When the camera focuses on a single planet
+          // those same lengths overshoot the planet sphere with the
+          // base hidden INSIDE the silhouette and labels sitting on
+          // top of the planet's body. The `closeZoom` lerp below
+          // smoothly transitions to a planet-relative pose: arrow
+          // base offset just outside the selection halo, length
+          // compacted to ~1.5× planet radius, labels follow the new
+          // tip.
           const ov = overlayPerPlanet[idx];
           if (!ov) return;
           if (ov.gravity.visible || ov.centripetal.visible || ov.velocity.visible) {
@@ -2399,6 +2378,25 @@
             const dist = worldToSun.length();
             if (dist > 0.0001) {
               worldToSun.divideScalar(dist);
+
+              // Distance ratio drives the wide→close lerp. Same
+              // threshold the moon-reveal + 4K LOD already use.
+              mesh.getWorldPosition(tmpWorldPos);
+              const camRatio = camera.position.distanceTo(tmpWorldPos) / planet.size3;
+              const tWide = Math.max(
+                0,
+                Math.min(
+                  1,
+                  (camRatio - PLANET_LOD_IN_RATIO) / (PLANET_LOD_OUT_RATIO - PLANET_LOD_IN_RATIO),
+                ),
+              );
+              // Close-zoom presentation: base just past the selection
+              // halo (1.18× radius), length ~1.5× planet radius — so
+              // the whole arrow sits in the empty space between the
+              // planet's silhouette and the inner moon ring.
+              const closeBase = planet.size3 * 1.3;
+              const closeLen = planet.size3 * 1.5;
+
               // Group has only translation (no rotation), so world dir
               // == local dir — pass directly to setDirection.
               if (ov.gravity.visible) {
@@ -2407,13 +2405,15 @@
                 // dynamic range across Mercury → Pluto.
                 const aAU = Math.pow(planet.period, 2 / 3);
                 const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
-                const len = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
+                const wideLen = logScaleLength(aG, 6, 26, 1e-7, 1e-2);
+                const len = closeLen + (wideLen - closeLen) * tWide;
+                const base = closeBase * (1 - tWide);
                 ov.gravity.setDirection(worldToSun);
+                ov.gravity.position.copy(worldToSun).multiplyScalar(base);
                 ov.gravity.setLength(len, len * 0.22, len * 0.13);
-                // Position the value label slightly past the arrow tip
-                // along the same direction. +20% beyond tip avoids the
-                // arrow head occluding the text.
-                ov.gravityLabel.position.copy(worldToSun).multiplyScalar(len * 1.2);
+                // Label sits past the arrow tip = base + length, +20%
+                // overshoot so the arrow head doesn't occlude the text.
+                ov.gravityLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
               }
               if (ov.centripetal.visible) {
                 // Same direction (inward) as gravity — for a circular
@@ -2421,13 +2421,18 @@
                 // acceleration (F = ma). Y-offset prevents overlap.
                 const aAU = Math.pow(planet.period, 2 / 3);
                 const aG = gravityAccel(BODY_MASS_KG.sun, aAU * 149_597_870.7);
-                const len = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
+                const wideLen = logScaleLength(aG, 5, 22, 1e-7, 1e-2);
+                const len = closeLen + (wideLen - closeLen) * tWide;
+                const base = closeBase * (1 - tWide);
                 ov.centripetal.setDirection(worldToSun);
+                ov.centripetal.position.copy(worldToSun).multiplyScalar(base);
                 ov.centripetal.setLength(len, len * 0.22, len * 0.13);
-                ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(len * 1.2);
+                ov.centripetalLabel.position.copy(worldToSun).multiplyScalar(base + len * 1.2);
                 // Lift label by the same Y offset as the arrow base so
-                // it tracks the arrow's offset position.
-                ov.centripetalLabel.position.y += planet.size3 * 1.6;
+                // it tracks the arrow's offset position. At close zoom
+                // the offset is smaller (proportional to the now
+                // shorter overall length).
+                ov.centripetalLabel.position.y += planet.size3 * (0.6 + tWide * 1.0);
               }
               if (ov.velocity.visible) {
                 // Tangent to orbit, in the planet's orbital plane. Cross
@@ -2441,10 +2446,13 @@
                 const aAU = Math.pow(planet.period, 2 / 3);
                 const v = Math.sqrt((4 * Math.PI * Math.PI) / aAU) * 4.7404; // km/s
                 // Linear scale on velocity, clamped for visibility.
-                const vLen = Math.min(20, Math.max(4, v * 0.3));
+                const wideLen = Math.min(20, Math.max(4, v * 0.3));
+                const len = closeLen + (wideLen - closeLen) * tWide;
+                const base = closeBase * (1 - tWide);
                 ov.velocity.setDirection(tangent);
-                ov.velocity.setLength(vLen, vLen * 0.22, vLen * 0.13);
-                ov.velocityLabel.position.copy(tangent).multiplyScalar(vLen * 1.2);
+                ov.velocity.position.copy(tangent).multiplyScalar(base);
+                ov.velocity.setLength(len, len * 0.22, len * 0.13);
+                ov.velocityLabel.position.copy(tangent).multiplyScalar(base + len * 1.2);
               }
             }
           }

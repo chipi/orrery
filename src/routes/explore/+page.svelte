@@ -69,6 +69,45 @@
      * at native 4K (SSS publishes a native 4K atmosphere variant).
      */
     texture4k?: string;
+    /**
+     * Optional natural-satellite list — only renders when the camera
+     * is zoomed in close enough that the parent body itself has
+     * promoted to 4K (same threshold as the LOD-in ratio, so satellites
+     * appear at the same moment the parent's detail kicks in). Kept
+     * hidden at heliocentric framing to avoid crowding /explore's
+     * default top-down view. v1 ships Earth-Moon only; Galilean +
+     * Saturn + Martian + Pluto-Charon land in follow-up slices.
+     */
+    satellites?: SatelliteDef[];
+  };
+
+  /**
+   * A single natural-satellite around a parent planet. Distances and
+   * sizes are scene-units, not km — scaled so the moon reads as
+   * meaningful (visually present + clickable) at the parent's 4K zoom
+   * level without overlapping the parent sphere. Real km values live
+   * in the related /science articles; this is presentation geometry.
+   */
+  type SatelliteDef = {
+    id: string;
+    name: string;
+    /** Filename under static/textures/. Same provenance contract as
+     *  PlanetVisual.texture — Solar System Scope where available, NASA
+     *  / USGS Astrogeology for outer-system bodies. */
+    texture: string;
+    /** Scene-units radius of the satellite mesh. Sized so the body is
+     *  visible at parent's 4K zoom without dominating. */
+    sizeUnits: number;
+    /** Scene-units orbital radius (distance from parent centre to
+     *  satellite centre). For Earth-Moon scaled to ~6 × Earth's size3
+     *  unit (real ratio ~30; condensed for legibility). */
+    orbitUnits: number;
+    /** Sidereal period in days. Drives the per-frame angular
+     *  position via the same simT clock that moves the planets. */
+    periodDays: number;
+    /** Orbital inclination relative to the parent's equator,
+     *  degrees. */
+    inclDeg?: number;
   };
 
   const PLANETS: PlanetVisual[] = [
@@ -113,6 +152,26 @@
       inc: 0.0,
       texture: '2k_earth_daymap.jpg',
       texture4k: '4k_earth_daymap.jpg',
+      satellites: [
+        {
+          id: 'moon',
+          name: 'Moon',
+          // 4k_moon.jpg already shipped — Solar System Scope, CC BY 4.0.
+          texture: '4k_moon.jpg',
+          // Real Moon : Earth radius ≈ 0.27. Compressed slightly so the
+          // moon reads at the parent's zoom level without dominating.
+          sizeUnits: 1.4,
+          // Real Moon-Earth distance / Earth radius ≈ 60. At that ratio
+          // the moon would sit at ~312 scene units from Earth's centre,
+          // way off-frame from the planet's 4K zoom. Compressed to 12
+          // so both are simultaneously legible.
+          orbitUnits: 12,
+          // Sidereal month — 27.32 days.
+          periodDays: 27.32,
+          // Lunar orbit is inclined 5.14° to the ecliptic.
+          inclDeg: 5.14,
+        },
+      ],
     },
     {
       id: 'mars',
@@ -641,6 +700,16 @@
       scene.add(line);
     });
 
+    type SatelliteObj = {
+      def: SatelliteDef;
+      mesh: THREE.Mesh;
+      /** Per-frame angular phase (radians) — incremented from simT
+       *  scaled by 1 / periodDays. */
+      angle: number;
+      /** Cached inclination radians so the per-frame loop avoids the
+       *  per-call deg→rad multiply. */
+      inclRad: number;
+    };
     type PlanetObj = {
       group: THREE.Group;
       mesh: THREE.Mesh;
@@ -648,6 +717,14 @@
       planet: PlanetVisual;
       material: THREE.MeshPhongMaterial;
       lod?: LodState;
+      /** Optional natural-satellite layer. Each satellite is a child
+       *  of this PlanetObj's `group` so it inherits the parent's
+       *  orbital motion; per-frame code positions it relative to the
+       *  parent and gates visibility on camera→parent distance. */
+      satellites: SatelliteObj[];
+      /** Group holding all satellites — hidden until the camera
+       *  zooms close. Single visibility flip per planet per frame. */
+      satellitesGroup: THREE.Group;
     };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
@@ -690,11 +767,42 @@
         ring.rotation.x = Math.PI / 2.2;
         group.add(ring);
       }
+      // Satellites — built up-front (no lazy load) since their
+      // textures share the same lazy 4K LOD philosophy as the parent
+      // planet: only loaded once but only revealed when the camera
+      // zooms in close. Hidden by default so the heliocentric default
+      // view stays uncluttered.
+      const satellitesGroup = new THREE.Group();
+      satellitesGroup.visible = false;
+      const satellites: SatelliteObj[] = (p.satellites ?? []).map((s) => {
+        const satTex = loadTexture(s.texture);
+        const satMat = new THREE.MeshPhongMaterial({
+          map: satTex,
+          color: 0xffffff,
+          shininess: 8,
+        });
+        const satMesh = new THREE.Mesh(new THREE.SphereGeometry(s.sizeUnits, 32, 32), satMat);
+        satMesh.userData = { satelliteId: s.id, parentPlanetId: p.id };
+        satellitesGroup.add(satMesh);
+        return {
+          def: s,
+          mesh: satMesh,
+          // Initial angle deterministically spread by id-hash so
+          // multiple moons around a single parent don't pile up at
+          // phase 0 when the page first loads.
+          angle:
+            ([...s.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0) % 360) *
+            (Math.PI / 180),
+          inclRad: ((s.inclDeg ?? 0) * Math.PI) / 180,
+        };
+      });
+      group.add(satellitesGroup);
+
       scene.add(group);
       const lod: LodState | undefined = p.texture4k
         ? { currentLevel: '2k', tex2k, tex4k: null, loadStarted: false }
         : undefined;
-      return { group, mesh, pickAid, planet: p, material: mat, lod };
+      return { group, mesh, pickAid, planet: p, material: mat, lod, satellites, satellitesGroup };
     });
 
     /**
@@ -709,35 +817,82 @@
     const tmpWorldPos = new THREE.Vector3();
     function updatePlanetLods(): void {
       for (const obj of planetObjs) {
-        const lod = obj.lod;
-        if (!lod || !obj.planet.texture4k) continue;
         obj.mesh.getWorldPosition(tmpWorldPos);
         const dist = camera.position.distanceTo(tmpWorldPos);
         const ratio = dist / obj.planet.size3;
-        if (ratio <= PLANET_LOD_IN_RATIO) {
-          if (!lod.loadStarted) {
-            lod.loadStarted = true;
-            const file = obj.planet.texture4k;
-            textureLoader.load(
-              `${base}/textures/${file}`,
-              (tex) => {
-                lod.tex4k = tex;
-              },
-              undefined,
-              () => {
-                lod.loadStarted = false; // allow retry next cross
-              },
-            );
-          }
-          if (lod.tex4k && lod.currentLevel !== '4k') {
-            obj.material.map = lod.tex4k;
+
+        // 4K texture swap (#287). Skip when the planet has no 4K
+        // variant (Uranus, Neptune today).
+        const lod = obj.lod;
+        if (lod && obj.planet.texture4k) {
+          if (ratio <= PLANET_LOD_IN_RATIO) {
+            if (!lod.loadStarted) {
+              lod.loadStarted = true;
+              const file = obj.planet.texture4k;
+              textureLoader.load(
+                `${base}/textures/${file}`,
+                (tex) => {
+                  lod.tex4k = tex;
+                },
+                undefined,
+                () => {
+                  lod.loadStarted = false; // allow retry next cross
+                },
+              );
+            }
+            if (lod.tex4k && lod.currentLevel !== '4k') {
+              obj.material.map = lod.tex4k;
+              obj.material.needsUpdate = true;
+              lod.currentLevel = '4k';
+            }
+          } else if (ratio >= PLANET_LOD_OUT_RATIO && lod.currentLevel !== '2k') {
+            obj.material.map = lod.tex2k;
             obj.material.needsUpdate = true;
-            lod.currentLevel = '4k';
+            lod.currentLevel = '2k';
           }
-        } else if (ratio >= PLANET_LOD_OUT_RATIO && lod.currentLevel !== '2k') {
-          obj.material.map = lod.tex2k;
-          obj.material.needsUpdate = true;
-          lod.currentLevel = '2k';
+        }
+
+        // Natural-satellite reveal — same threshold as 4K LOD-in so
+        // the moons appear at the moment the parent's detail kicks
+        // in. Single group-level visibility flip per planet per frame.
+        // Always-hidden when ratio > PLANET_LOD_OUT_RATIO so the
+        // heliocentric framing stays uncluttered.
+        if (obj.satellites.length > 0) {
+          const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
+          if (obj.satellitesGroup.visible !== shouldShow) {
+            obj.satellitesGroup.visible = shouldShow;
+          }
+        }
+      }
+    }
+
+    /**
+     * Per-frame satellite motion — advances each moon's angular phase
+     * at its real sidereal rate (scaled by the global simT clock) and
+     * positions the mesh on a circle of radius `orbitUnits` inclined
+     * by `inclRad`. Skipped entirely on planets with no satellites.
+     * Cheap: at most a handful of trig ops per frame per moon.
+     */
+    function updateSatellites(dt: number): void {
+      if (reducedMotion) return;
+      for (const obj of planetObjs) {
+        if (obj.satellites.length === 0) continue;
+        for (const s of obj.satellites) {
+          // Sidereal rate — same time-compression as the planets
+          // (simT advances at 0.04 × dt per second elsewhere). The
+          // moon's angular velocity scales as 1 / periodDays so a
+          // sidereal month plays out in the same compressed window
+          // as Earth's orbital year.
+          s.angle += (dt * 0.04 * (2 * Math.PI)) / s.def.periodDays;
+          const ca = Math.cos(s.angle);
+          const sa = Math.sin(s.angle);
+          const ci = Math.cos(s.inclRad);
+          const si = Math.sin(s.inclRad);
+          s.mesh.position.set(
+            ca * s.def.orbitUnits,
+            sa * s.def.orbitUnits * si,
+            sa * s.def.orbitUnits * ci,
+          );
         }
       }
     }
@@ -1936,10 +2091,13 @@
       // #287 per-planet 4K LOD swap. Cheap per-frame — a single
       // distance check + threshold compare per planet. Active in 3D
       // only (2D top-down view doesn't sample texture pixels in a
-      // way that benefits from 4K).
+      // way that benefits from 4K). Same loop now also gates moon
+      // visibility on the same threshold so satellites appear at
+      // the moment the parent's detail kicks in.
       if (view === '3d') {
         updateSunLod(camera.position.length());
         updatePlanetLods();
+        updateSatellites(dt);
       }
 
       if (view === '3d') {

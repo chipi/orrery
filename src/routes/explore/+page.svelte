@@ -15,6 +15,7 @@
   import { dateToSimDay } from '$lib/sim-day';
   import { DESTINATIONS, type DestinationId } from '$lib/lambert-grid.constants';
   import smallBodiesData from '$data/small-bodies.json';
+  import exploreOrbitersData from '$data/explore-orbiters.json';
   import { onReducedMotionChange } from '$lib/reduced-motion';
   import type { LocalizedPlanet } from '$types/planet';
   import type { LocalizedSun } from '$types/sun';
@@ -932,6 +933,22 @@
        *  the planet at its real obliquity. Universal across planets
        *  (every body has a tilt); revealed at close zoom only. */
       spinAxis: THREE.Line;
+      /** PRD-023 Slice A.3 — active orbiters as 3D glyphs (MRO, Juno,
+       *  Akatsuki, etc). Per-orbiter angular phase + cached
+       *  inclination radians for the per-frame motion update. */
+      orbiters: OrbiterObj[];
+      /** Group holding all orbiter glyphs; flipped visible at close
+       *  zoom alongside moons + halo + spin axis. */
+      orbitersGroup: THREE.Group;
+    };
+    type OrbiterObj = {
+      group: THREE.Group;
+      fleetId: string | null;
+      orbitU: number;
+      phase: number;
+      inclRad: number;
+      nodeRad: number;
+      periodFrac: number;
     };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
@@ -1015,6 +1032,77 @@
       });
       group.add(satellitesGroup);
 
+      // Active orbiters as 3D glyphs (PRD-023 Slice A.3) — small
+      // spacecraft markers around the parent planet, sourced from
+      // static/data/explore-orbiters.json. Each glyph is a tiny
+      // colored cylinder + solar panel; not photo-realistic but
+      // identifiable as "active spacecraft" + clickable for fleet
+      // cross-link in a follow-up sub-slice. Altitude_km is
+      // compressed via a planet-relative scale so multi-orbiter
+      // systems (Mars has 7) read with visible spread instead of
+      // piling up on one altitude band.
+      const orbitersGroup = new THREE.Group();
+      orbitersGroup.visible = false;
+      const orbiterDefs = exploreOrbitersData.orbiters.filter((o) => o.parent === p.id);
+      const orbiters: OrbiterObj[] = orbiterDefs.map((o, i) => {
+        // Scale altitude into scene units. Linear: scale so the lowest
+        // orbiter (~300 km MRO) sits 0.4 × planet size3 above the
+        // surface and the highest (~76 000 km Mangalyaan) sits 4.0 ×
+        // planet size3 above. Logarithmic feels more honest given
+        // the range, but planet-size scale stays read at this view.
+        const km = o.altitude_km;
+        const lowKm = 300;
+        const highKm = 76000;
+        const lowU = p.size3 * 1.4;
+        const highU = p.size3 * 5;
+        const tAlt = Math.max(
+          0,
+          Math.min(
+            1,
+            (Math.log10(km) - Math.log10(lowKm)) / (Math.log10(highKm) - Math.log10(lowKm)),
+          ),
+        );
+        const orbitU = lowU + (highU - lowU) * tAlt;
+
+        // Simple glyph: small cylinder bus + flat solar panel. Color
+        // from the JSON entry (agency-tinted).
+        const orbGroup = new THREE.Group();
+        const colorInt = parseInt(o.color.slice(1), 16);
+        const bus = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.18, 0.18, 0.45, 8),
+          new THREE.MeshBasicMaterial({ color: 0xeeeeee }),
+        );
+        bus.rotation.z = Math.PI / 2;
+        orbGroup.add(bus);
+        const panel = new THREE.Mesh(
+          new THREE.BoxGeometry(0.05, 0.6, 0.9),
+          new THREE.MeshBasicMaterial({ color: colorInt }),
+        );
+        orbGroup.add(panel);
+        orbGroup.userData = { orbiterId: o.fleet_id, parentPlanet: o.parent };
+        orbitersGroup.add(orbGroup);
+
+        // Initial angular spread — hash-deterministic so multiple
+        // orbiters per planet don't pile up at phase 0.
+        const phaseHash = [...(o.fleet_id ?? o.name)].reduce(
+          (h, c) => (h * 31 + c.charCodeAt(0)) >>> 0,
+          0,
+        );
+        return {
+          group: orbGroup,
+          fleetId: o.fleet_id,
+          orbitU,
+          phase: ((phaseHash % 360) / 360) * Math.PI * 2,
+          inclRad: (o.inclination_deg * Math.PI) / 180,
+          // Random-ish per-orbiter period offset so they visibly
+          // separate over time. Roughly: 1 + i/4 orbital periods per
+          // sim-time cycle. Not real Kepler — visualization motion.
+          nodeRad: (((phaseHash >> 4) % 360) / 360) * Math.PI * 2,
+          periodFrac: 1 + i * 0.25,
+        };
+      });
+      group.add(orbitersGroup);
+
       // Spin-axis indicator (PRD-023 Slice A) — a thin line through
       // the planet's centre at the real obliquity. Rendered along
       // (sin(tilt), cos(tilt), 0) so the tilt is visible from the
@@ -1082,6 +1170,8 @@
         haloMesh,
         haloMaterial,
         spinAxis,
+        orbiters,
+        orbitersGroup,
       };
     });
 
@@ -1150,6 +1240,10 @@
         if (obj.spinAxis.visible !== shouldShow) {
           obj.spinAxis.visible = shouldShow;
         }
+        // Orbiters group (PRD-023 Slice A.3) — same gating.
+        if (obj.orbiters.length > 0 && obj.orbitersGroup.visible !== shouldShow) {
+          obj.orbitersGroup.visible = shouldShow;
+        }
       }
     }
 
@@ -1163,23 +1257,44 @@
     function updateSatellites(dt: number): void {
       if (reducedMotion) return;
       for (const obj of planetObjs) {
-        if (obj.satellites.length === 0) continue;
-        for (const s of obj.satellites) {
-          // Sidereal rate — same time-compression as the planets
-          // (simT advances at 0.04 × dt per second elsewhere). The
-          // moon's angular velocity scales as 1 / periodDays so a
-          // sidereal month plays out in the same compressed window
-          // as Earth's orbital year.
-          s.angle += (dt * 0.04 * (2 * Math.PI)) / s.def.periodDays;
-          const ca = Math.cos(s.angle);
-          const sa = Math.sin(s.angle);
-          const ci = Math.cos(s.inclRad);
-          const si = Math.sin(s.inclRad);
-          s.mesh.position.set(
-            ca * s.def.orbitUnits,
-            sa * s.def.orbitUnits * si,
-            sa * s.def.orbitUnits * ci,
-          );
+        if (obj.satellites.length > 0) {
+          for (const s of obj.satellites) {
+            // Sidereal rate — same time-compression as the planets
+            // (simT advances at 0.04 × dt per second elsewhere). The
+            // moon's angular velocity scales as 1 / periodDays so a
+            // sidereal month plays out in the same compressed window
+            // as Earth's orbital year.
+            s.angle += (dt * 0.04 * (2 * Math.PI)) / s.def.periodDays;
+            const ca = Math.cos(s.angle);
+            const sa = Math.sin(s.angle);
+            const ci = Math.cos(s.inclRad);
+            const si = Math.sin(s.inclRad);
+            s.mesh.position.set(
+              ca * s.def.orbitUnits,
+              sa * s.def.orbitUnits * si,
+              sa * s.def.orbitUnits * ci,
+            );
+          }
+        }
+        // Active orbiters (PRD-023 Slice A.3) — same orbital-circle
+        // motion as moons, but with the additional node-rotation so
+        // multi-orbiter planets (Mars has 7) don't collapse onto a
+        // single equatorial plane. Rate is `periodFrac × dt` —
+        // visualization motion, not real Kepler.
+        if (obj.orbiters.length > 0) {
+          for (const o of obj.orbiters) {
+            o.phase += dt * 0.2 * o.periodFrac;
+            const ca = Math.cos(o.phase);
+            const sa = Math.sin(o.phase);
+            const ci = Math.cos(o.inclRad);
+            const si = Math.sin(o.inclRad);
+            const lx = ca * o.orbitU;
+            const ly = sa * o.orbitU * si;
+            const lz = sa * o.orbitU * ci;
+            const cn = Math.cos(o.nodeRad);
+            const sn = Math.sin(o.nodeRad);
+            o.group.position.set(lx * cn + lz * sn, ly, -lx * sn + lz * cn);
+          }
         }
       }
     }

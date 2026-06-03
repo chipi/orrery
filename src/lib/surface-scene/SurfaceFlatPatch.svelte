@@ -108,6 +108,47 @@
   let lmx = 0;
   let lmy = 0;
 
+  // Compute the deepest-zoom floor for the current site — used both
+  // by the wheel handler AND the initialiser, so the state always
+  // reflects the latest fix without depending on HMR resetting it.
+  function deepestZoomFloor(): number {
+    let extentKm = 0;
+    if (selected.region_bounds) {
+      const rb = selected.region_bounds;
+      const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
+      const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);
+      const cosLat = Math.cos(((rb.lat_min + rb.lat_max) / 2) * (Math.PI / 180));
+      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
+      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
+      extentKm = Math.max(extentKm, widthKm, heightKm);
+    }
+    const tr = traverses?.[selected.id];
+    if (tr && tr.points.length >= 2) {
+      let latMin = Infinity;
+      let latMax = -Infinity;
+      let lonMin = Infinity;
+      let lonMax = -Infinity;
+      for (const [la, lo] of tr.points) {
+        if (la < latMin) latMin = la;
+        if (la > latMax) latMax = la;
+        if (lo < lonMin) lonMin = lo;
+        if (lo > lonMax) lonMax = lo;
+      }
+      const dLat = Math.max(1e-6, latMax - latMin);
+      const dLon = Math.max(1e-6, lonMax - lonMin);
+      const cosLat = Math.cos(((latMin + latMax) / 2) * (Math.PI / 180));
+      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
+      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
+      extentKm = Math.max(extentKm, widthKm, heightKm);
+    }
+    if (extentKm === 0) return 0.001;
+    const vp =
+      typeof window !== 'undefined'
+        ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
+        : 1080;
+    return Math.max(0.001, extentKm / (vp * 0.4));
+  }
+
   // ─── Initialisation from selected region ───────────────────────────
   $effect(() => {
     if (!selected.region_bounds) return;
@@ -125,6 +166,15 @@
     const regionKm = Math.max(widthKm, heightKm);
     // Map to ~60% of an estimated viewport min(w, h)=600 px.
     kmPerPx = regionKm / (0.6 * 600);
+  });
+
+  // Unconditionally clamp kmPerPx to the current floor on every
+  // run — protects against HMR-stuck state values from before the
+  // floor existed, and against the user landing in flat-patch with
+  // a pre-deepened kmPerPx from another route action.
+  $effect(() => {
+    const floor = deepestZoomFloor();
+    if (kmPerPx < floor) kmPerPx = floor;
   });
 
   // ─── Esc to close ──────────────────────────────────────────────────
@@ -508,53 +558,11 @@
   }
   function onWheel(e: WheelEvent) {
     e.preventDefault();
-    // Zoom about the centroid. Cap at sensible bounds — the
-    // closest-zoom floor adapts to whichever is larger of the
-    // selected site's region_bounds span or its traverse polyline
-    // span, so the user can't zoom in past the point where every
-    // marker stays visible (image 21 follow-up: "on the last zoom
-    // I see only green circle, nothing should be gone").
+    // Zoom about the centroid. Floor is whichever of the region or
+    // polyline extent fills 40 % of the shorter viewport dimension
+    // — keeps every marker on-screen at the deepest zoom.
     const factor = e.deltaY > 0 ? 1.1 : 0.9;
-    let extentKm = 0;
-    if (selected.region_bounds) {
-      const rb = selected.region_bounds;
-      const dLat = Math.max(1e-6, rb.lat_max - rb.lat_min);
-      const dLon = Math.max(1e-6, rb.lon_max - rb.lon_min);
-      const cosLat = Math.cos(((rb.lat_min + rb.lat_max) / 2) * (Math.PI / 180));
-      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
-      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
-      extentKm = Math.max(extentKm, widthKm, heightKm);
-    }
-    const tr = traverses?.[selected.id];
-    if (tr && tr.points.length >= 2) {
-      // Polyline bounding-box extent in km (great-circle approximation).
-      let latMin = Infinity;
-      let latMax = -Infinity;
-      let lonMin = Infinity;
-      let lonMax = -Infinity;
-      for (const [la, lo] of tr.points) {
-        if (la < latMin) latMin = la;
-        if (la > latMax) latMax = la;
-        if (lo < lonMin) lonMin = lo;
-        if (lo > lonMax) lonMax = lo;
-      }
-      const dLat = Math.max(1e-6, latMax - latMin);
-      const dLon = Math.max(1e-6, lonMax - lonMin);
-      const cosLat = Math.cos(((latMin + latMax) / 2) * (Math.PI / 180));
-      const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
-      const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
-      extentKm = Math.max(extentKm, widthKm, heightKm);
-    }
-    const vp = Math.max(300, Math.min(window.innerWidth, window.innerHeight));
-    // The previous floor used `extentKm / (vp * 0.8)` and was a bit
-    // too tight: the centroid sits at the patch centre but the
-    // polyline can extend asymmetrically (Perseverance: 11.5 km from
-    // landing toward the delta), so the deepest zoom still let the
-    // far endpoint clip off-screen. Use `vp * 0.4` so the extent
-    // fills ~40 % of the viewport at the deepest zoom — leaves a
-    // generous margin around the polyline regardless of which side
-    // of the centroid it extends to.
-    const minKmPerPx = Math.max(0.001, extentKm / (vp * 0.4));
+    const minKmPerPx = deepestZoomFloor();
     kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 

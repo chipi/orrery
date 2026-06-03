@@ -77,6 +77,10 @@
     'tidal-lock': false,
     ozone: false,
     galaxies: false,
+    'hill-sphere': false,
+    'lagrange-points': false,
+    magnetosphere: false,
+    'sub-solar': false,
   });
 
   let stops: Array<() => void> = [];
@@ -162,6 +166,30 @@
         return {
           label: m.science_layer_galaxies_label(),
           description: m.science_layer_galaxies_desc(),
+        };
+      case 'hill-sphere':
+        return {
+          label: 'Hill Sphere',
+          description:
+            'The boundary where this planet’s gravity dominates over the Sun’s. Stylised radius (real Hill spheres can exceed the planet’s orbit).',
+        };
+      case 'lagrange-points':
+        return {
+          label: 'Lagrange Points',
+          description:
+            'L1 + L2 markers along the planet→Sun line. JWST orbits Earth’s L2; SOHO sits at Earth’s L1.',
+        };
+      case 'magnetosphere':
+        return {
+          label: 'Magnetosphere',
+          description:
+            'Stylised magnetic-field shell. Jupiter’s mag-tail extends past Saturn’s orbit in reality.',
+        };
+      case 'sub-solar':
+        return {
+          label: 'Sub-solar Point',
+          description:
+            'Marker at the longitude where it’s currently noon — the point directly under the Sun.',
         };
     }
   }

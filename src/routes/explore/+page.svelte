@@ -940,6 +940,17 @@
       /** Group holding all orbiter glyphs; flipped visible at close
        *  zoom alongside moons + halo + spin axis. */
       orbitersGroup: THREE.Group;
+      /** PRD-023 Slice B — Hill-sphere wireframe (gravity dominance
+       *  boundary). Sized 6× planet radius — stylised, not real-scale
+       *  (real Hill spheres can exceed the planet's orbit). Lens-
+       *  gated by 'hill-sphere' layer. */
+      hillSphere: THREE.LineSegments;
+      /** PRD-023 Slice B — L1 + L2 markers along the planet-Sun line.
+       *  L3 / L4 / L5 are off-frame at planet-focus zoom; skipped. */
+      lagrangeL1: THREE.Mesh;
+      lagrangeL2: THREE.Mesh;
+      lagrangeL1Label: THREE.Sprite;
+      lagrangeL2Label: THREE.Sprite;
     };
     type OrbiterObj = {
       group: THREE.Group;
@@ -1103,6 +1114,56 @@
       });
       group.add(orbitersGroup);
 
+      // Hill sphere (PRD-023 Slice B) — stylised wireframe sphere
+      // marking the planet's gravity-dominance boundary. Real Hill
+      // spheres can be larger than the planet's orbit (Earth's is
+      // ~236 Earth radii); at /explore's compressed scene scale we
+      // render at 6× planet radius for legibility. Lens-gated by
+      // the 'hill-sphere' layer.
+      const hillGeo = new THREE.WireframeGeometry(new THREE.SphereGeometry(p.size3 * 6, 16, 12));
+      const hillMat = new THREE.LineBasicMaterial({
+        color: 0xff66cc,
+        transparent: true,
+        opacity: 0.18,
+        depthWrite: false,
+      });
+      const hillSphere = new THREE.LineSegments(hillGeo, hillMat);
+      hillSphere.userData.layerKey = 'hill-sphere';
+      hillSphere.visible = false;
+      group.add(hillSphere);
+
+      // Lagrange L1 + L2 markers (PRD-023 Slice B) — two small dots
+      // along the planet-Sun line, at ~Hill-radius distance. L1 sits
+      // between planet and Sun; L2 on the far side (where JWST
+      // orbits Earth's L2). Lens-gated by 'lagrange-points'.
+      const lagrangeMat = new THREE.MeshBasicMaterial({
+        color: 0xffd766,
+        transparent: true,
+        opacity: 0.95,
+      });
+      const lagrangeL1 = new THREE.Mesh(
+        new THREE.SphereGeometry(p.size3 * 0.18, 16, 16),
+        lagrangeMat,
+      );
+      lagrangeL1.userData.layerKey = 'lagrange-points';
+      lagrangeL1.visible = false;
+      group.add(lagrangeL1);
+      const lagrangeL2 = new THREE.Mesh(
+        new THREE.SphereGeometry(p.size3 * 0.18, 16, 16),
+        lagrangeMat,
+      );
+      lagrangeL2.userData.layerKey = 'lagrange-points';
+      lagrangeL2.visible = false;
+      group.add(lagrangeL2);
+      const lagrangeL1Label = buildArrowTipLabel('L1', '#ffd766', 3.2);
+      lagrangeL1Label.userData.layerKey = 'lagrange-points';
+      lagrangeL1Label.visible = false;
+      group.add(lagrangeL1Label);
+      const lagrangeL2Label = buildArrowTipLabel('L2', '#ffd766', 3.2);
+      lagrangeL2Label.userData.layerKey = 'lagrange-points';
+      lagrangeL2Label.visible = false;
+      group.add(lagrangeL2Label);
+
       // Spin-axis indicator (PRD-023 Slice A) — a thin line through
       // the planet's centre at the real obliquity. Rendered along
       // (sin(tilt), cos(tilt), 0) so the tilt is visible from the
@@ -1172,6 +1233,11 @@
         spinAxis,
         orbiters,
         orbitersGroup,
+        hillSphere,
+        lagrangeL1,
+        lagrangeL2,
+        lagrangeL1Label,
+        lagrangeL2Label,
       };
     });
 
@@ -1411,6 +1477,23 @@
       overlayPerPlanet.forEach((o) => {
         o.centripetal.visible = on;
         o.centripetalLabel.visible = on;
+      });
+    });
+    // PRD-023 Slice B — Hill sphere + Lagrange points. Universal across
+    // planets (every body has both); reveal gated on the lens layer
+    // sub-toggle. Per-frame positions in the animate loop position L1
+    // + L2 along the live planet→Sun vector + 6× planet radius.
+    const stopExploreHillSphereLayer = onLayerChange('hill-sphere', (on) => {
+      planetObjs.forEach((o) => {
+        o.hillSphere.visible = on;
+      });
+    });
+    const stopExploreLagrangeLayer = onLayerChange('lagrange-points', (on) => {
+      planetObjs.forEach((o) => {
+        o.lagrangeL1.visible = on;
+        o.lagrangeL2.visible = on;
+        o.lagrangeL1Label.visible = on;
+        o.lagrangeL2Label.visible = on;
       });
     });
 
@@ -2550,6 +2633,34 @@
           // in v1.0 — planets kept spinning even with simT frozen.
           if (!reducedMotion) mesh.rotation.y += 0.005;
 
+          // PRD-023 Slice B — position L1 + L2 markers along the planet→
+          // Sun line. Sun is at origin, planet at group.position; the
+          // unit vector from planet to Sun in WORLD space is
+          // -group.position.normalize(). L1 sits inside the planet's
+          // orbit (toward Sun); L2 outside (away from Sun). Distance
+          // from planet matches the stylised Hill-sphere radius
+          // (6 × planet size3). Markers + labels are parented to the
+          // planet's group (translation only) so the local position
+          // equals the world direction.
+          const obj = planetObjs[idx];
+          if (obj.hillSphere.visible || obj.lagrangeL1.visible || obj.lagrangeL2.visible) {
+            const sunDir = group.position.length();
+            if (sunDir > 0.0001) {
+              const ux = -group.position.x / sunDir;
+              const uy = -group.position.y / sunDir;
+              const uz = -group.position.z / sunDir;
+              const lagrangeDist = planet.size3 * 6;
+              obj.lagrangeL1.position.set(ux * lagrangeDist, uy * lagrangeDist, uz * lagrangeDist);
+              obj.lagrangeL2.position.set(
+                -ux * lagrangeDist,
+                -uy * lagrangeDist,
+                -uz * lagrangeDist,
+              );
+              obj.lagrangeL1Label.position.copy(obj.lagrangeL1.position).multiplyScalar(1.18);
+              obj.lagrangeL2Label.position.copy(obj.lagrangeL2.position).multiplyScalar(1.18);
+            }
+          }
+
           // Phase H — overlay arrow updates. Group is at planet's world
           // pos; arrows live in the group's local frame, so directions
           // need transforming back from world space.
@@ -2738,6 +2849,8 @@
       stopExploreVelocityLayer?.();
       stopExploreCentripetalLayer?.();
       stopExploreGalaxiesLayer?.();
+      stopExploreHillSphereLayer?.();
+      stopExploreLagrangeLayer?.();
       localGroup.dispose();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);
@@ -2984,7 +3097,17 @@
   body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
   tab="orbits"
   section="keplerian-orbit"
-  available={['hover', 'gravity', 'velocity', 'centripetal', 'galaxies']}
+  available={[
+    'hover',
+    'gravity',
+    'velocity',
+    'centripetal',
+    'galaxies',
+    'hill-sphere',
+    'lagrange-points',
+    'magnetosphere',
+    'sub-solar',
+  ]}
 />
 
 <style>

@@ -404,17 +404,27 @@
   let planetById = $derived(new Map(localizedPlanets.map((p) => [p.id, p])));
   let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
 
+  // Plumbed into the 3D scene's RAF tween from inside onMount once
+  // the planetObjs array is built. Top-level selectPlanet / selectSun
+  // wrappers call through so the camera flies to the target body when
+  // the user picks one — without this the camera was stuck looking at
+  // the Sun, and per-planet 4K LOD swaps (#287) never fired for
+  // anything past Mercury. See `focusOnBody` inside onMount.
+  let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+
   function selectPlanet(id: string) {
     selectedId = id;
     panelOpen = true;
     sunPanelOpen = false;
     smallBodyPanelOpen = false;
+    flyToBodyFn?.(id);
   }
 
   function selectSun() {
     sunPanelOpen = true;
     panelOpen = false;
     smallBodyPanelOpen = false;
+    flyToBodyFn?.(null);
   }
 
   function selectSmallBody(id: string) {
@@ -942,15 +952,95 @@
     let camR = 680;
     let camP = 1.05;
     let camT = 0.6;
+    // Focus origin — the point the camera orbits + looks at. Heliocentric
+    // by default (Sun at origin); when the user picks a planet, this
+    // tweens to that planet's world position so wheel/pinch zoom +
+    // drag-orbit become planet-relative. The per-planet 4K LOD swap
+    // (#287) reads camera→planet distance, so planet-relative camR is
+    // what makes the 4K texture fire for anything past Mercury.
+    const focusOrigin = new THREE.Vector3(0, 0, 0);
+    // Per-mode zoom envelope. Heliocentric is the original [60, 1400].
+    // When focused on a planet, the floor drops to ~1.5 × planet
+    // radius (close enough that the camera grazes the LOD threshold
+    // at 4 × radius and digs well inside it for the 4K view) and the
+    // ceiling caps at 50× radius so the user can pan outward without
+    // accidentally re-entering heliocentric framing.
+    let camRMin = 60;
+    let camRMax = 1400;
+    // Default heliocentric pose — captured once so the Reset View
+    // button can fly back to a stable known framing.
+    const HELIO_DEFAULT_CAMR = 680;
+    const HELIO_DEFAULT_CAMP = 1.05;
+    const HELIO_DEFAULT_CAMT = 0.6;
+
     const updateCam = () => {
       camera.position.set(
-        camR * Math.sin(camP) * Math.sin(camT),
-        camR * Math.cos(camP),
-        camR * Math.sin(camP) * Math.cos(camT),
+        focusOrigin.x + camR * Math.sin(camP) * Math.sin(camT),
+        focusOrigin.y + camR * Math.cos(camP),
+        focusOrigin.z + camR * Math.sin(camP) * Math.cos(camT),
       );
-      camera.lookAt(0, 0, 0);
+      camera.lookAt(focusOrigin);
     };
     updateCam();
+
+    // ── Fly-to-body tween (#287 polish) ───────────────────────────────
+    // Tweens focusOrigin from current to the target body's world
+    // position + camR/camP/camT to a close-orbit pose around it. Pass
+    // null to fly back to the heliocentric default. Ease-out cubic
+    // over 600 ms; cancelled by any subsequent fly-to call. Read by
+    // the animate loop below (`if (flyActive) ...`).
+    const FLY_DURATION_MS = 600;
+    let flyActive = false;
+    let flyStart = 0;
+    const flyFromOrigin = new THREE.Vector3();
+    const flyToOrigin = new THREE.Vector3();
+    let flyFromR = 0;
+    let flyToR = 0;
+    let flyFromP = 0;
+    let flyToP = 0;
+    let flyFromT = 0;
+    let flyToT = 0;
+    let flyToMinR = 60;
+    let flyToMaxR = 1400;
+
+    let focusedPlanetObj: (typeof planetObjs)[number] | null = null;
+
+    function focusOnBody(bodyId: string | null): void {
+      const next = bodyId ? (planetObjs.find((o) => o.planet.id === bodyId) ?? null) : null;
+      flyFromOrigin.copy(focusOrigin);
+      flyFromR = camR;
+      flyFromP = camP;
+      flyFromT = camT;
+      if (next) {
+        const target = new THREE.Vector3();
+        next.mesh.getWorldPosition(target);
+        flyToOrigin.copy(target);
+        // Land at 3× planet radius — inside the 4× LOD-in ratio so the
+        // 4K texture is already swapped in by the time the tween ends.
+        flyToR = next.planet.size3 * 3;
+        flyToMinR = next.planet.size3 * 1.5;
+        flyToMaxR = next.planet.size3 * 50;
+        // Pose: look at the planet from roughly the same angle the user
+        // had before (camP/camT carry over). For very oblique entries
+        // we clamp camP into the legal envelope to avoid flipping.
+        flyToP = Math.max(0.08, Math.min(Math.PI * 0.48, camP));
+        flyToT = camT;
+        focusedPlanetObj = next;
+      } else {
+        flyToOrigin.set(0, 0, 0);
+        flyToR = HELIO_DEFAULT_CAMR;
+        flyToP = HELIO_DEFAULT_CAMP;
+        flyToT = HELIO_DEFAULT_CAMT;
+        flyToMinR = 60;
+        flyToMaxR = 1400;
+        focusedPlanetObj = null;
+      }
+      flyStart = performance.now();
+      flyActive = true;
+    }
+
+    // Exposed to the top-level selectPlanet / selectSun handlers.
+    flyToBodyFn = focusOnBody;
 
     const el3d = renderer.domElement;
     let isDrag3d = false;
@@ -1136,7 +1226,7 @@
       if (!wasDrag && view === '3d') tryPick3d(e);
     };
     const on3dWheel = (e: WheelEvent) => {
-      camR = Math.max(60, Math.min(1400, camR + e.deltaY * 0.7));
+      camR = Math.max(camRMin, Math.min(camRMax, camR + e.deltaY * 0.7));
       updateCam();
     };
     let touchActive3d = false;
@@ -1170,7 +1260,7 @@
         const dist = touchDist(e.touches[0], e.touches[1]);
         if (pinchPrev3d > 0) {
           const ratio = pinchPrev3d / dist;
-          camR = Math.max(60, Math.min(1400, camR * ratio));
+          camR = Math.max(camRMin, Math.min(camRMax, camR * ratio));
           updateCam();
         }
         pinchPrev3d = dist;
@@ -1815,6 +1905,34 @@
       // time. User-initiated camera drag still works.
       if (!reducedMotion) simT += dt * 0.04;
 
+      // Fly-to-body tween (#287 polish). When focused on a planet, the
+      // target world position drifts with the planet's own orbital
+      // motion — re-read it each frame so the tween lands on the
+      // planet's current position, not where it was when focus() fired.
+      if (flyActive) {
+        if (focusedPlanetObj) {
+          focusedPlanetObj.mesh.getWorldPosition(flyToOrigin);
+        }
+        const t = Math.min(1, (now - flyStart) / FLY_DURATION_MS);
+        const e = 1 - Math.pow(1 - t, 3); // ease-out cubic
+        focusOrigin.lerpVectors(flyFromOrigin, flyToOrigin, e);
+        camR = flyFromR + (flyToR - flyFromR) * e;
+        camP = flyFromP + (flyToP - flyFromP) * e;
+        camT = flyFromT + (flyToT - flyFromT) * e;
+        if (t >= 1) {
+          flyActive = false;
+          camRMin = flyToMinR;
+          camRMax = flyToMaxR;
+        }
+        updateCam();
+      } else if (focusedPlanetObj) {
+        // Steady-state planet focus — keep focusOrigin glued to the
+        // planet's drifting world position so wheel-zoom and drag
+        // stay planet-relative across orbital motion.
+        focusedPlanetObj.mesh.getWorldPosition(focusOrigin);
+        updateCam();
+      }
+
       // #287 per-planet 4K LOD swap. Cheap per-frame — a single
       // distance check + threshold compare per planet. Active in 3D
       // only (2D top-down view doesn't sample texture pixels in a
@@ -2076,6 +2194,23 @@
       >
         {m.explore_sizes_toggle()}
       </button>
+      {#if selectedId || selectedSmallBodyId}
+        <button
+          class="toggle"
+          type="button"
+          onclick={() => {
+            selectedId = null;
+            selectedSmallBodyId = null;
+            panelOpen = false;
+            sunPanelOpen = false;
+            smallBodyPanelOpen = false;
+            flyToBodyFn?.(null);
+          }}
+          data-testid="explore-reset-view"
+        >
+          RESET VIEW
+        </button>
+      {/if}
     </div>
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <button

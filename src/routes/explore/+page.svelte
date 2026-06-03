@@ -75,10 +75,18 @@
      * promoted to 4K (same threshold as the LOD-in ratio, so satellites
      * appear at the same moment the parent's detail kicks in). Kept
      * hidden at heliocentric framing to avoid crowding /explore's
-     * default top-down view. v1 ships Earth-Moon only; Galilean +
-     * Saturn + Martian + Pluto-Charon land in follow-up slices.
+     * default top-down view.
      */
     satellites?: SatelliteDef[];
+    /**
+     * Optional atmospheric / limb-glow halo — thin emissive shell
+     * around the planet's silhouette, gated on the same zoom-in
+     * threshold as the satellite layer (#287 Slice F). Earth gets a
+     * blue Rayleigh-scattering tint; Venus a pale sulfuric yellow;
+     * Jupiter + Saturn beige cloud-band glow. Bodies with thin or no
+     * atmosphere (Mercury / Mars / Uranus / Neptune today) omit it.
+     */
+    halo?: { color: number; opacityMax: number };
   };
 
   /**
@@ -138,6 +146,9 @@
       inc: 3.4,
       texture: '2k_venus_atmosphere.jpg',
       texture4k: '4k_venus_atmosphere.jpg',
+      // Sulfuric-acid cloud deck — dense yellow atmosphere, 92×
+      // Earth surface pressure. The thickest of any rocky body.
+      halo: { color: 0xe8cda0, opacityMax: 0.28 },
     },
     {
       id: 'earth',
@@ -152,6 +163,8 @@
       inc: 0.0,
       texture: '2k_earth_daymap.jpg',
       texture4k: '4k_earth_daymap.jpg',
+      // Rayleigh-blue limb glow — Earth's signature atmosphere read.
+      halo: { color: 0x6aa8ff, opacityMax: 0.25 },
       satellites: [
         {
           id: 'moon',
@@ -186,6 +199,42 @@
       inc: 1.85,
       texture: '2k_mars.jpg',
       texture4k: '4k_mars.jpg',
+      // Phobos + Deimos (#287 Slice D). Real bodies are 22 km + 12 km
+      // irregular fragments — almost certainly captured asteroids
+      // from the Mars-Jupiter belt. Sized small + presented as spheres
+      // (their real shapes would need custom geometry; tracked as a
+      // follow-up polish item if anyone asks).
+      satellites: [
+        {
+          id: 'phobos',
+          name: 'Phobos',
+          texture: '2k_phobos.jpg',
+          // Real Phobos mean radius 11 km — tiny. Bumped to 0.45 units
+          // (still small vs Earth-Moon 1.4) so it's pickable at zoom.
+          sizeUnits: 0.45,
+          // Real Phobos-Mars distance 9376 km ≈ 2.76 Mars radii. With
+          // real geometry it would orbit inside the 4K view —
+          // condensed slightly to 12 for visual separation.
+          orbitUnits: 12,
+          // 7.65 h sidereal period (Phobos orbits faster than Mars
+          // rotates — only known moon to rise in the west on its
+          // parent body).
+          periodDays: 0.3189,
+          inclDeg: 1.08,
+        },
+        {
+          id: 'deimos',
+          name: 'Deimos',
+          texture: '2k_deimos.jpg',
+          // Real Deimos mean radius 6.2 km — about half of Phobos.
+          sizeUnits: 0.32,
+          // Real Deimos-Mars distance 23 463 km ≈ 6.9 Mars radii.
+          orbitUnits: 18,
+          // 30.3 h sidereal period.
+          periodDays: 1.263,
+          inclDeg: 1.79,
+        },
+      ],
     },
     {
       id: 'jupiter',
@@ -200,6 +249,47 @@
       inc: 1.3,
       texture: '2k_jupiter.jpg',
       texture4k: '4k_jupiter.jpg',
+      // Beige cloud-band glow — dense H/He envelope, Great Red Spot
+      // tone. Low opacity so the band detail underneath still reads.
+      halo: { color: 0xd0b07a, opacityMax: 0.18 },
+      // Galilean moons (#287 Slice B). All four discovered by Galileo
+      // in 1610 — the observation that broke geocentrism. Relative
+      // sizing + orbit ordering preserved; orbital distances
+      // condensed for legibility. Periods are real sidereal values.
+      satellites: [
+        {
+          id: 'io',
+          name: 'Io',
+          texture: '4k_io.jpg',
+          sizeUnits: 1.3,
+          orbitUnits: 24,
+          periodDays: 1.769,
+        },
+        {
+          id: 'europa',
+          name: 'Europa',
+          texture: '2k_europa.jpg',
+          sizeUnits: 1.1,
+          orbitUnits: 30,
+          periodDays: 3.551,
+        },
+        {
+          id: 'ganymede',
+          name: 'Ganymede',
+          texture: '2k_ganymede.jpg',
+          sizeUnits: 1.7,
+          orbitUnits: 38,
+          periodDays: 7.155,
+        },
+        {
+          id: 'callisto',
+          name: 'Callisto',
+          texture: '2k_callisto.jpg',
+          sizeUnits: 1.6,
+          orbitUnits: 48,
+          periodDays: 16.689,
+        },
+      ],
     },
     {
       id: 'saturn',
@@ -215,6 +305,42 @@
       hasRings: true,
       texture: '2k_saturn.jpg',
       texture4k: '4k_saturn.jpg',
+      // Pale gold halo — similar H/He envelope to Jupiter.
+      halo: { color: 0xd0c08a, opacityMax: 0.15 },
+      // Titan + Enceladus (#287 Slice C). Two of the system's most
+      // scientifically iconic moons — Titan has a thick nitrogen
+      // atmosphere + methane lakes; Enceladus has a subsurface ocean
+      // venting through south-pole tiger stripes. Sized for legibility
+      // at Saturn's zoom level; periods are real.
+      satellites: [
+        {
+          id: 'titan',
+          name: 'Titan',
+          texture: '4k_titan.jpg',
+          // Titan radius 2575 km — solar system's second-largest moon,
+          // bigger than Mercury. Sized accordingly (1.7 vs Ganymede's
+          // 1.7 — they're effectively peers).
+          sizeUnits: 1.7,
+          // Real distance 1 222 000 km ≈ 20 Saturn radii. Condensed
+          // to ~3.3 × Saturn.size3 so Titan clears the rings.
+          orbitUnits: 36,
+          periodDays: 15.945,
+          inclDeg: 0.33,
+        },
+        {
+          id: 'enceladus',
+          name: 'Enceladus',
+          texture: '4k_enceladus.jpg',
+          // Enceladus radius 252 km — tiny vs Titan, but iconic.
+          // Bumped to 0.8 units for visual presence (would be 0.17 at
+          // Titan's scale ratio).
+          sizeUnits: 0.8,
+          // Real distance 238 000 km ≈ 3.95 Saturn radii. Condensed.
+          orbitUnits: 22,
+          periodDays: 1.37,
+          inclDeg: 0.02,
+        },
+      ],
     },
     {
       id: 'uranus',
@@ -241,6 +367,45 @@
       a0: 2.8,
       inc: 1.77,
       texture: '2k_neptune.jpg',
+    },
+    // Pluto-Charon binary (#287 Slice E). Promoted from SMALL_BODIES so
+    // the planet-relative camera + Charon satellite work pick it up.
+    // Real Pluto orbit is eccentric (e=0.25) and inclined 17° —
+    // modelled here as a circular ring at 580 units for visual
+    // consistency with the other planets. The dwarf-planet panel
+    // copy was authored as a fresh i18n overlay (planets/pluto.json)
+    // and matching planets.json entry; SMALL_BODIES filters Pluto
+    // out at both 3D and 2D render paths to avoid double-rendering.
+    // Charon is half Pluto's diameter — biggest moon:planet mass
+    // ratio in the system; they co-orbit a barycenter outside
+    // Pluto's surface.
+    {
+      id: 'pluto',
+      name: 'Pluto',
+      orbitR: 580,
+      size3: 1.5,
+      size2: 1.8,
+      color3: 0xd0b48c,
+      css: '#d0b48c',
+      period: 247.94,
+      a0: 4.2,
+      inc: 17.16,
+      texture: '4k_pluto.jpg',
+      texture4k: '4k_pluto.jpg',
+      satellites: [
+        {
+          id: 'charon',
+          name: 'Charon',
+          texture: '2k_charon.jpg',
+          // Charon radius 606 km vs Pluto 1188 km — half Pluto's
+          // diameter. Sized proportionally.
+          sizeUnits: 0.78,
+          // Real Charon-Pluto distance 19 591 km ≈ 16.5 Pluto radii.
+          orbitUnits: 6,
+          periodDays: 6.387,
+          inclDeg: 0.0,
+        },
+      ],
     },
   ];
 
@@ -725,6 +890,11 @@
       /** Group holding all satellites — hidden until the camera
        *  zooms close. Single visibility flip per planet per frame. */
       satellitesGroup: THREE.Group;
+      /** Optional atmospheric halo shell — same reveal gating as
+       *  the satellite layer. null when the planet's halo field is
+       *  absent (Mercury / Mars / Uranus / Neptune). */
+      haloMesh: THREE.Mesh | null;
+      haloMaterial: THREE.MeshBasicMaterial | null;
     };
     const planetObjs: PlanetObj[] = PLANETS.map((p) => {
       const group = new THREE.Group();
@@ -798,11 +968,42 @@
       });
       group.add(satellitesGroup);
 
+      // Atmospheric halo (#287 Slice F) — thin emissive shell ~6% larger
+      // than the planet sphere, BackSide so the limb glow appears as a
+      // soft halo on the silhouette rather than a colored sphere
+      // covering the planet. Hidden by default; same reveal gating as
+      // the satellite layer flips it on at close zoom.
+      let haloMesh: THREE.Mesh | null = null;
+      let haloMaterial: THREE.MeshBasicMaterial | null = null;
+      if (p.halo) {
+        haloMaterial = new THREE.MeshBasicMaterial({
+          color: p.halo.color,
+          transparent: true,
+          opacity: p.halo.opacityMax,
+          side: THREE.BackSide,
+          depthWrite: false,
+        });
+        haloMesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3 * 1.06, 32, 32), haloMaterial);
+        haloMesh.visible = false;
+        group.add(haloMesh);
+      }
+
       scene.add(group);
       const lod: LodState | undefined = p.texture4k
         ? { currentLevel: '2k', tex2k, tex4k: null, loadStarted: false }
         : undefined;
-      return { group, mesh, pickAid, planet: p, material: mat, lod, satellites, satellitesGroup };
+      return {
+        group,
+        mesh,
+        pickAid,
+        planet: p,
+        material: mat,
+        lod,
+        satellites,
+        satellitesGroup,
+        haloMesh,
+        haloMaterial,
+      };
     });
 
     /**
@@ -857,11 +1058,13 @@
         // in. Single group-level visibility flip per planet per frame.
         // Always-hidden when ratio > PLANET_LOD_OUT_RATIO so the
         // heliocentric framing stays uncluttered.
-        if (obj.satellites.length > 0) {
-          const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
-          if (obj.satellitesGroup.visible !== shouldShow) {
-            obj.satellitesGroup.visible = shouldShow;
-          }
+        const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
+        if (obj.satellites.length > 0 && obj.satellitesGroup.visible !== shouldShow) {
+          obj.satellitesGroup.visible = shouldShow;
+        }
+        // Atmospheric halo reveal — shares the satellite threshold.
+        if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
+          obj.haloMesh.visible = shouldShow;
         }
       }
     }
@@ -1028,7 +1231,14 @@
       orbit: THREE.Object3D;
       body: SmallBody;
     };
-    const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES.map((b) => {
+    // #287 Slice E — Pluto promoted to PLANETS so the planet-relative
+    // camera + Charon satellite pick it up. Filter from the small-body
+    // render path so Pluto doesn't render twice. SMALL_BODIES keeps
+    // the original entry so any code that lookups via smallBodyById
+    // still resolves (no current call-site does though — selection
+    // routes via planet path now).
+    const SMALL_BODIES_RENDERED = SMALL_BODIES.filter((b) => b.id !== 'pluto');
+    const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES_RENDERED.map((b) => {
       // Orbit path — closed ellipse for dwarf/comet, open hyperbola
       // for interstellar bodies. Use Line (open) for interstellar so
       // the trajectory doesn't visually close back on itself. Ref
@@ -1973,6 +2183,9 @@
         if (b.type === 'dwarf' && !layers.dwarfs) return;
         if (b.type === 'comet' && !layers.comets) return;
         if (b.type === 'interstellar' && !layers.interstellar) return;
+        // #287 Slice E — Pluto rendered as a planet, skip the 2D
+        // small-body draw to avoid duplicate dot + orbit ring.
+        if (b.id === 'pluto') return;
         const { x: px, z: py } = smallBodyPosition(b, simT);
         smallBody2dPos.set(b.id, { x: px, y: py });
 

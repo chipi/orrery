@@ -188,6 +188,15 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'BJJ-attribution',
+    display: 'Björn Jónsson planetary maps (attribution-required)',
+    url: 'https://bjj.mmedia.is/acknow.html',
+    rationale:
+      'Björn Jónsson processes NASA PDS public-domain imaging data (Voyager + Galileo SSI etc.) into ready-to-use equirectangular planetary maps. The source data is PD-NASA; his processing is publicly available with attribution per the site policy ("e.g. created by Björn Jónsson or something equivalent"). Used for the /explore Galilean-moon textures (#287 Slice B) since Solar System Scope doesn\'t publish maps for the outer-system bodies.',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'fair-use-cover',
     display: 'Cover / poster thumbnail (nominative fair use)',
     url: 'https://www.copyright.gov/title17/92chap1.html#107',

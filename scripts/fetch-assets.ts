@@ -188,6 +188,36 @@ export const FOUR_K_TEXTURES_DOWNSAMPLED = [
   '4k_sun.jpg',
 ];
 
+/**
+ * Natural-satellite textures (#287 Slices B-E). Committed assets,
+ * sourced from outside Solar System Scope (which only publishes
+ * planet + Earth-Moon maps). Two providers:
+ *
+ *   • Björn Jónsson's planetary maps catalogue (bjj.mmedia.is) —
+ *     publicly available with attribution. Original source data NASA
+ *     PDS; processing by BJJ. Used for the Galilean moons.
+ *   • Wikimedia Commons — NASA mission imagery, public domain by
+ *     federal work-product rule. Used for Titan, Enceladus,
+ *     Phobos, Deimos, Pluto, Charon.
+ *
+ * Attribution lives in build-image-provenance.ts → textureLicense()
+ * (look for BJJ_TEXTURES / WIKIMEDIA_TEXTURES). Re-run
+ * `npx tsx scripts/build-image-provenance.ts` after adding new
+ * satellite textures so the credits page stays current.
+ */
+export const SATELLITE_TEXTURES = [
+  '4k_io.jpg',
+  '2k_europa.jpg',
+  '2k_ganymede.jpg',
+  '2k_callisto.jpg',
+  '4k_titan.jpg',
+  '4k_enceladus.jpg',
+  '2k_phobos.jpg',
+  '2k_deimos.jpg',
+  '4k_pluto.jpg',
+  '2k_charon.jpg',
+];
+
 const TEXTURES_DIR = 'static/textures';
 
 async function fetchTextures(): Promise<number> {

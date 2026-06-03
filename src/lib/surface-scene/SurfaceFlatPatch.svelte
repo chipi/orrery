@@ -546,7 +546,15 @@
       extentKm = Math.max(extentKm, widthKm, heightKm);
     }
     const vp = Math.max(300, Math.min(window.innerWidth, window.innerHeight));
-    const minKmPerPx = Math.max(0.001, extentKm / (vp * 0.8));
+    // The previous floor used `extentKm / (vp * 0.8)` and was a bit
+    // too tight: the centroid sits at the patch centre but the
+    // polyline can extend asymmetrically (Perseverance: 11.5 km from
+    // landing toward the delta), so the deepest zoom still let the
+    // far endpoint clip off-screen. Use `vp * 0.4` so the extent
+    // fills ~40 % of the viewport at the deepest zoom — leaves a
+    // generous margin around the polyline regardless of which side
+    // of the centroid it extends to.
+    const minKmPerPx = Math.max(0.001, extentKm / (vp * 0.4));
     kmPerPx = Math.max(minKmPerPx, Math.min(10, kmPerPx * factor));
   }
 

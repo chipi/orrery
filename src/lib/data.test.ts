@@ -194,9 +194,12 @@ describe('getMission', () => {
 });
 
 describe('reference data', () => {
-  it('planets() returns 8 planets and constants', async () => {
+  it('planets() returns 9 planets (8 majors + Pluto) and constants', async () => {
+    // Pluto was promoted from SMALL_BODIES to PLANETS in #287 Slice E
+    // so the planet-relative camera + Charon satellite render
+    // pick it up. Schema maxItems bumped 8 → 9 to admit it.
     const data = await planets();
-    expect(data.planets).toHaveLength(8);
+    expect(data.planets).toHaveLength(9);
     expect(data.constants.mu_sun).toBeCloseTo(39.4784, 3);
   });
 
@@ -229,9 +232,9 @@ describe('reference data', () => {
 });
 
 describe('getPlanets', () => {
-  it('returns 8 planets merged with en-US overlay', async () => {
+  it('returns 9 planets merged with en-US overlay (8 majors + Pluto)', async () => {
     const list = await getPlanets();
-    expect(list).toHaveLength(8);
+    expect(list).toHaveLength(9);
     const earth = list.find((p) => p.id === 'earth');
     expect(earth).toBeDefined();
     expect(earth!.a).toBeCloseTo(1.0, 4); // base orbital data
@@ -254,7 +257,7 @@ describe('getPlanets', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getPlanets('xx-TEST');
-    expect(list).toHaveLength(8);
+    expect(list).toHaveLength(9);
     expect(list[2].id).toBe('earth');
     expect(list[2].fact).toContain('Every human');
   });

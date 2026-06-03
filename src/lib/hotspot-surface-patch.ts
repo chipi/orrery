@@ -169,7 +169,14 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // surface. Also replaces the separate traverse start ring on /mars
   // (rovers' start coordinate == landing site == patch centre).
   const pinCore = new THREE.Mesh(
-    new THREE.CircleGeometry(0.005, 16),
+    // 0.005 → 0.0025 (radius). At close zoom (camR ≈ 30.3) the
+    // previous 0.005u disc subtended ~50 px and dominated the
+    // patch view with a giant green ball where the rover-traverse
+    // start needed to be a small "you-landed-here" punctuation
+    // (image 20 feedback, 2026-06-02). Halving the radius drops
+    // the screen footprint to ~25 px while still reading at the
+    // wider Tier-2 distances where the patch is visible.
+    new THREE.CircleGeometry(0.0025, 16),
     new THREE.MeshBasicMaterial({
       color: 0x22c55e,
       transparent: true,

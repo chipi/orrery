@@ -890,6 +890,12 @@
       endLabelTexture?: THREE.Texture;
       stopPins: THREE.Sprite[];
       stopPinTextures: THREE.Texture[];
+      /** Anchor positions for screen-pixel-stable caption placement. */
+      startAnchor: THREE.Vector3;
+      endAnchor: THREE.Vector3;
+      tangent: THREE.Vector3;
+      /** Patch radius — used to renormalise caption positions to surface. */
+      surfaceRadius: number;
     };
     const traverseLines: TraverseLine[] = [];
     // Tier-2 delayed-reveal stack — entries fade in past the Tier-2
@@ -1176,38 +1182,55 @@
           endLabelTexture: endBuilt.texture,
           stopPins,
           stopPinTextures,
+          startAnchor: startPosWorld.clone(),
+          endAnchor: endPosWorld.clone(),
+          tangent: tangent.clone(),
+          surfaceRadius: r,
         });
       }
     }
 
     // Initial traverse load + reactive rebuild on data change.
+    // Defer rebuildTraverses until `sites` is populated — the build
+    // closure reads site?.landing_date to compute the rover "DAY N"
+    // counter and the "LANDED YYYY-MM-DD" green caption; if the
+    // sites loader hasn't resolved yet, both labels stamp out as
+    // "LANDING SITE" + "DAY 0" instead of the real values (image 20
+    // feedback, 2026-06-02). RAF-poll until sites are in.
     if (loadTraverses != null && loadTraverses) {
       loadTraverses().then((data) => {
         traverses = data;
-        rebuildTraverses();
-        // Deep-link consumption: ?site=<rover>&traverse_stop=<sol-id>
-        // — find the named stop in the rover's traverse and fly the
-        // camera to its lat/lon. Falls back to a regular site-face
-        // fly-in if the stop id doesn't resolve (typo'd link, stale
-        // bookmark, etc.) so the deep-link still does something
-        // useful instead of silently no-op-ing.
-        if (pendingTraverseStopFocus) {
-          const { siteId, stopId } = pendingTraverseStopFocus;
-          pendingTraverseStopFocus = null;
-          const traverse = data[siteId];
-          const stop = traverse?.stops?.find((s) => s.id === stopId);
-          const site = sites.find((s) => s.id === siteId);
-          if (stop && faceCameraAtSite) {
-            faceCameraAtSite({
-              ...(site ?? ({ id: siteId } as unknown as SurfaceSite)),
-              lat: stop.lat,
-              lon: stop.lon,
-            } as SurfaceSite);
-          } else if (site && faceCameraAtSite) {
-            // Stop not found — graceful fallback to facing the site.
-            faceCameraAtSite(site);
+        const tryBuild = () => {
+          if (sites.length === 0) {
+            requestAnimationFrame(tryBuild);
+            return;
           }
-        }
+          rebuildTraverses();
+          // Deep-link consumption: ?site=<rover>&traverse_stop=<sol-id>
+          // — find the named stop in the rover's traverse and fly the
+          // camera to its lat/lon. Falls back to a regular site-face
+          // fly-in if the stop id doesn't resolve (typo'd link, stale
+          // bookmark, etc.) so the deep-link still does something
+          // useful instead of silently no-op-ing.
+          if (pendingTraverseStopFocus) {
+            const { siteId, stopId } = pendingTraverseStopFocus;
+            pendingTraverseStopFocus = null;
+            const traverse = data[siteId];
+            const stop = traverse?.stops?.find((s) => s.id === stopId);
+            const site = sites.find((s) => s.id === siteId);
+            if (stop && faceCameraAtSite) {
+              faceCameraAtSite({
+                ...(site ?? ({ id: siteId } as unknown as SurfaceSite)),
+                lat: stop.lat,
+                lon: stop.lon,
+              } as SurfaceSite);
+            } else if (site && faceCameraAtSite) {
+              // Stop not found — graceful fallback to facing the site.
+              faceCameraAtSite(site);
+            }
+          }
+        };
+        tryBuild();
       });
     }
 
@@ -2643,6 +2666,13 @@
           // 0.32 — so a group.scale multiplier of (target / 0.32)
           // yields the requested screen width.
           const captionScale = (captionWidthPx * worldPerPx) / 0.32;
+          // Caption position offsets — kept tight to the anchor so
+          // labels stick close to the start/end dots rather than
+          // floating off-screen at close zoom (image 20 feedback).
+          const captionTangentOffsetPx = 70;
+          const captionRadialOffsetPx = 30;
+          const tangentOffsetWorld = captionTangentOffsetPx * worldPerPx;
+          const radialOffsetWorld = captionRadialOffsetPx * worldPerPx;
           for (const tl of traverseLines) {
             tl.line.visible = travVisible;
             tl.endDot.visible = travVisible;
@@ -2652,8 +2682,20 @@
             const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
             dotMat.opacity = detailOpacity * (tl.isActive ? pulse : 0.85);
             tl.endDot.scale.setScalar(endDotScale);
+            // Reposition captions each frame so they sit ~70 px
+            // tangentially + ~30 px outward from the anchor dot
+            // regardless of zoom level. World-fixed offsets either
+            // overlapped the dot at wide zoom or floated 1000 px
+            // away at close zoom.
             if (tl.startLabel) {
               tl.startLabel.scale.setScalar(captionScale);
+              const startTangent = tl.tangent.clone().negate();
+              const startCaptionPos = tl.startAnchor
+                .clone()
+                .addScaledVector(startTangent, tangentOffsetWorld)
+                .normalize()
+                .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+              tl.startLabel.position.copy(startCaptionPos);
               tl.startLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;
@@ -2663,6 +2705,12 @@
             }
             if (tl.endLabel) {
               tl.endLabel.scale.setScalar(captionScale);
+              const endCaptionPos = tl.endAnchor
+                .clone()
+                .addScaledVector(tl.tangent, tangentOffsetWorld)
+                .normalize()
+                .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
+              tl.endLabel.position.copy(endCaptionPos);
               tl.endLabel.traverse((o) => {
                 if (o instanceof THREE.Sprite) {
                   const m2 = o.material as THREE.SpriteMaterial;

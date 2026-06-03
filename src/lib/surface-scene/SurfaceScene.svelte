@@ -338,8 +338,11 @@
    * can render via fixed positioning.
    */
   let hoveredStopInfo = $state<{
-    sol: number;
-    label: string;
+    title: string;
+    sol?: number;
+    label?: string;
+    lat?: number;
+    lon?: number;
     clientX: number;
     clientY: number;
   } | null>(null);
@@ -1105,6 +1108,21 @@
           }),
         );
         endDot.position.set(lastPos.x * r, lastPos.y * r, lastPos.z * r);
+        // Compute the sol number at the current rover position —
+        // for active rovers, days alive since landing; for ended,
+        // days between landing and snapshot.
+        const endIsoForUserData = isActive ? new Date().toISOString() : tr.snapshot_date;
+        const endSol = site?.landing_date
+          ? daysBetween(site.landing_date, endIsoForUserData)
+          : 0;
+        endDot.userData = {
+          siteId: tr.rover_id,
+          kind: 'traverse-end',
+          stopLat: last[0],
+          stopLon: last[1],
+          stopSol: endSol,
+          stopLabel: isActive ? 'Current rover position' : 'Final rover position',
+        };
         planetMesh.add(endDot);
         tier2DelayedReveal.push(endDot);
         // Captions along path tangent, offset away from each other
@@ -1726,29 +1744,64 @@
     }
 
     let hoveredSiteId: string | null = null;
-    // Raycast against every traverse-stop pin sprite across all
-    // loaded rovers. Returns the pin's userData hit (sol + label)
-    // so the hover handler can populate the tooltip state.
-    function pickStopAt(clientX: number, clientY: number): { sol: number; label: string } | null {
-      if (traverseLines.length === 0) return null;
+    // Raycast against every traverse-stop pin sprite, the
+    // traverse-end dot, and the patch-pin landing marker across
+    // all loaded rovers / hotspots. Returns a compact tooltip
+    // payload (title + optional sol + optional lat/lon).
+    function pickStopAt(
+      clientX: number,
+      clientY: number,
+    ): { title: string; sol?: number; label?: string; lat?: number; lon?: number } | null {
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((clientY - rect.top) / rect.height) * 2 + 1;
       ray.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       const targets: THREE.Object3D[] = [];
-      for (const tl of traverseLines) for (const sp of tl.stopPins) targets.push(sp);
+      // (a) in-between traverse-stop pin sprites
+      for (const tl of traverseLines) {
+        for (const sp of tl.stopPins) targets.push(sp);
+        targets.push(tl.endDot);
+      }
+      // (b) per-hotspot patch-pin (landing marker, green flat disc)
+      for (const h of hotspots) {
+        if (!h.tier2Group || !h.tier2Group.visible) continue;
+        h.tier2Group.traverse((obj) => {
+          if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin') {
+            targets.push(obj);
+          }
+        });
+      }
       if (targets.length === 0) return null;
       const hits = ray.intersectObjects(targets, false);
-      const hit = hits.find(
-        (h) =>
-          typeof h.object.userData?.stopSol === 'number' &&
-          typeof h.object.userData?.stopLabel === 'string',
-      );
+      const hit = hits.find((h) => h.object.userData?.kind);
       if (!hit) return null;
-      return {
-        sol: hit.object.userData.stopSol as number,
-        label: hit.object.userData.stopLabel as string,
-      };
+      const ud = hit.object.userData;
+      if (ud.kind === 'traverse-stop') {
+        return {
+          title: `Sol ${ud.stopSol}`,
+          sol: ud.stopSol,
+          label: ud.stopLabel,
+        };
+      }
+      if (ud.kind === 'traverse-end') {
+        return {
+          title: ud.stopLabel ?? 'Current position',
+          sol: ud.stopSol,
+          lat: ud.stopLat,
+          lon: ud.stopLon,
+        };
+      }
+      if (ud.kind === 'patch-pin') {
+        const site = sites.find((s) => s.id === ud.siteId);
+        if (!site) return null;
+        return {
+          title: 'Landing site',
+          label: site.landing_date ? `Landed ${site.landing_date}` : undefined,
+          lat: site.lat,
+          lon: site.lon,
+        };
+      }
+      return null;
     }
     const onHover = (e: MouseEvent) => {
       if (isDrag) return;
@@ -2661,6 +2714,18 @@
           // End-dot sphere geometry has radius 0.022u (diameter 0.044u).
           // Target diameter in world units = endDotPx * worldPerPx.
           const endDotScale = (endDotPx * worldPerPx) / 0.044;
+          // Patch-pin (green landing disc) has geometry radius 0.005u
+          // (diameter 0.01u). Per-frame scale to the same screen-px
+          // size as endDot so green + red read as a matched pair.
+          const patchPinScale = (endDotPx * worldPerPx) / 0.01;
+          for (const h of hotspots) {
+            if (!h.tier2Group) continue;
+            h.tier2Group.traverse((obj) => {
+              if (obj instanceof THREE.Mesh && obj.userData?.kind === 'patch-pin') {
+                obj.scale.set(patchPinScale, patchPinScale, 1);
+              }
+            });
+          }
           // Caption inner sprite scale is (0.32 wide, 0.32*(96/512)
           // tall) when buildTraverseCaption is called with worldSize
           // 0.32 — so a group.scale multiplier of (target / 0.32)
@@ -2668,9 +2733,9 @@
           const captionScale = (captionWidthPx * worldPerPx) / 0.32;
           // Caption position offsets — kept tight to the anchor so
           // labels stick close to the start/end dots rather than
-          // floating off-screen at close zoom (image 20 feedback).
-          const captionTangentOffsetPx = 70;
-          const captionRadialOffsetPx = 30;
+          // floating off (caps-lock feedback after image 20).
+          const captionTangentOffsetPx = 30;
+          const captionRadialOffsetPx = 10;
           const tangentOffsetWorld = captionTangentOffsetPx * worldPerPx;
           const radialOffsetWorld = captionRadialOffsetPx * worldPerPx;
           for (const tl of traverseLines) {
@@ -3162,20 +3227,31 @@ sample      ${debugInfo.projectedPxSample}`}
     />
   {/if}
 
-  <!-- Traverse-stop hover tooltip — small floating card with sol +
-       human label ("John Klein drill") that follows the pointer when
-       hovering a balloon pin. Pointer-events: none so it doesn't
-       break the pin's own pickability on click. Offsets the cursor
-       (16px right, 18px down) so the tooltip clears the cursor body
-       on standard desktop sizes. -->
+  <!-- Hover tooltip — small floating card beside the cursor.
+       Renders for: (a) in-between traverse-stop pins (Sol + curated
+       label), (b) the red traverse-end dot (current/final position +
+       sol + lat/lon), (c) the green patch-pin landing marker
+       (landing date + lat/lon). Pointer-events: none so it doesn't
+       break the marker's own pickability. -->
   {#if hoveredStopInfo && !panoramaActive}
     <div
       class="traverse-stop-tooltip"
       style="left: {hoveredStopInfo.clientX + 16}px; top: {hoveredStopInfo.clientY + 18}px"
       data-testid="traverse-stop-tooltip"
     >
-      <span class="sol mono">SOL {hoveredStopInfo.sol}</span>
-      <span class="label">{hoveredStopInfo.label}</span>
+      <span class="sol mono">{hoveredStopInfo.title}</span>
+      {#if hoveredStopInfo.label}
+        <span class="label">{hoveredStopInfo.label}</span>
+      {/if}
+      {#if typeof hoveredStopInfo.sol === 'number'}
+        <span class="label mono">Sol {hoveredStopInfo.sol.toLocaleString()}</span>
+      {/if}
+      {#if typeof hoveredStopInfo.lat === 'number' && typeof hoveredStopInfo.lon === 'number'}
+        <span class="label mono">
+          {hoveredStopInfo.lat.toFixed(3)}°{hoveredStopInfo.lat >= 0 ? 'N' : 'S'} ·
+          {hoveredStopInfo.lon.toFixed(3)}°{hoveredStopInfo.lon >= 0 ? 'E' : 'W'}
+        </span>
+      {/if}
     </div>
   {/if}
 

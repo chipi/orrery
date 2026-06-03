@@ -168,15 +168,15 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // HiRISE background. Slightly elevated to sit above the patch
   // surface. Also replaces the separate traverse start ring on /mars
   // (rovers' start coordinate == landing site == patch centre).
+  // Landing-site pin (green disc). Built at radius 0.005u so the
+  // geometry has a known base; the SurfaceScene animate loop finds
+  // this mesh via userData.kind = 'patch-pin' and per-frame scales
+  // it to ~10 px diameter on screen — matching the red endDot's
+  // screen-pixel-stable sizing (image 20 feedback, 2026-06-02).
+  // Without that scaling the disc stays at 0.005u world size and
+  // at close zoom subtends 50+ px → the screen-filling green blob.
   const pinCore = new THREE.Mesh(
-    // 0.005 → 0.0025 (radius). At close zoom (camR ≈ 30.3) the
-    // previous 0.005u disc subtended ~50 px and dominated the
-    // patch view with a giant green ball where the rover-traverse
-    // start needed to be a small "you-landed-here" punctuation
-    // (image 20 feedback, 2026-06-02). Halving the radius drops
-    // the screen footprint to ~25 px while still reading at the
-    // wider Tier-2 distances where the patch is visible.
-    new THREE.CircleGeometry(0.0025, 16),
+    new THREE.CircleGeometry(0.005, 16),
     new THREE.MeshBasicMaterial({
       color: 0x22c55e,
       transparent: true,
@@ -189,6 +189,7 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   );
   pinCore.rotation.x = -Math.PI / 2;
   pinCore.position.y = Z_FIGHT_OFFSET_Y + 0.0015;
+  pinCore.userData = { siteId: input.siteId, kind: 'patch-pin' };
   g.add(pinCore);
   // (No pin ring — the green core is high-contrast enough against
   // any HiRISE / CTX background on its own. The agency-blue ring

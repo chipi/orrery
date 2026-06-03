@@ -34,12 +34,14 @@ describe('science-layers — config', () => {
     expect(new Set(LAYER_ORDER)).toEqual(new Set(Object.keys(LAYER_DEFAULTS) as LayerKey[]));
   });
 
-  it('LAYER_ORDER has 13 layers (matches docs)', () => {
-    // Tracked by README + user-guide as "13 sub-toggleable layers"; this
-    // test breaks if a layer is added/removed without doc update.
-    // 12th was ozone (v0.6); 13th added v0.7 = 'galaxies' (Local Group
-    // billboards on /explore — GH #86).
-    expect(LAYER_ORDER.length).toBe(13);
+  it('LAYER_ORDER has 17 layers (matches docs)', () => {
+    // Tracked by README + user-guide as the sub-toggleable layer
+    // count; this test breaks if a layer is added/removed without
+    // doc update. 12th was ozone (v0.6); 13th added v0.7 = galaxies
+    // (Local Group billboards on /explore — GH #86); 14th–17th
+    // added 2026-06-03 by PRD-023 Slice B — Hill sphere + Lagrange
+    // point markers (#301).
+    expect(LAYER_ORDER.length).toBe(17);
   });
 });
 

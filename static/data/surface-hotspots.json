@@ -189,7 +189,16 @@
       "location_uncertainty_m": 100,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/spirit/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/spirit/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/spirit/tier3-pan.jpg",
+      "panorama_metadata": {
+        "sol": 590,
+        "date": "2005-08-23",
+        "instrument": "Pancam",
+        "caption": "Spirit's view from the summit of Husband Hill — first Martian summit reached by a rover. Looking south across the Inner Basin of Gusev Crater toward the Columbia Hills.",
+        "credit_team": "NASA/JPL-Caltech/Cornell",
+        "nasa_id": "PIA01906"
+      },
+      "traverse_stop_link": "sol-590"
     },
     "opportunity": {
       "hotspot_tier_max": 3,
@@ -199,7 +208,16 @@
       "location_uncertainty_m": 100,
       "hotspot_annotations": [],
       "hotspot_tier2_regional_source": "/images/hotspots/mars/opportunity/tier2-ctx.jpg",
-      "hotspot_tier3_panorama": "/images/hotspots/mars/opportunity/tier3-pan.jpg"
+      "hotspot_tier3_panorama": "/images/hotspots/mars/opportunity/tier3-pan.jpg",
+      "panorama_metadata": {
+        "sol": 56,
+        "date": "2004-03-21",
+        "instrument": "Pancam",
+        "caption": "Opportunity's view from inside Eagle Crater, the airbag-bounce landing site — the layered Burns Cliff outcrop visible across the crater wall would become the rover's first major science target.",
+        "credit_team": "NASA/JPL-Caltech/Cornell",
+        "nasa_id": "PIA05783"
+      },
+      "traverse_stop_link": "sol-56"
     },
     "curiosity": {
       "hotspot_tier_max": 3,

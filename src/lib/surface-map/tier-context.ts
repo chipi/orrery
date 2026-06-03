@@ -17,6 +17,15 @@ export type TierLayer = {
   resolutionText: string;
   sourceUrl?: string;
   licenseShort: string;
+  /**
+   * Optional per-layer absolute georeferencing uncertainty (metres).
+   * When set, the card renders "±N m" alongside the licence badge on
+   * THIS layer's footer. Mars Regional CTX typically reports ~50–100 m
+   * absolute; HiRISE detail patches inherit the site's published
+   * landing-coordinate uncertainty (50–100 m). Falls back to the
+   * site-level `uncertaintyM` on the last layer when omitted.
+   */
+  uncertaintyM?: number;
 };
 
 export type TierContext = {

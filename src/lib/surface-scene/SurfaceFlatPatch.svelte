@@ -400,46 +400,44 @@
       helicopter: '#e879f9',
       feature: '#fde047',
     };
-    const showLabels = kmPerPx < 0.5; // only show labels when zoomed in enough
+    // 2026-06-03: inline "SOL N · label" text removed so the
+    // flat-patch pin style matches the 3D balloon-pin handoff —
+    // both show just a kind-tinted tear-drop with a white centre
+    // dot, sol/label info is surfaced via the hover tooltip on
+    // 3D, and on the flat-patch users can read it from the
+    // detail panel + stop chip cross-link. Avoids the perceived
+    // "traverse vanishes at deepest zoom" jolt during the
+    // sphere → flat-patch 600 ms cross-fade.
     for (const stop of stops) {
       const p = project(stop.lat, stop.lon, W, H);
-      // Skip off-screen stops.
       if (p.x < -50 || p.x > W + 50 || p.y < -50 || p.y > H + 50) continue;
       const color = KIND_COLOR[stop.kind] ?? '#fde047';
-      // Drop-shape: teardrop pointing down. Radius is scale-aware
-      // around the stop footprint (sample tube ~80 cm; rover ~3 m if
-      // helicopter/feature). Floor at clickable size so wide-zoom
-      // pins stay tappable.
-      const footprint =
-        stop.kind === 'helicopter' || stop.kind === 'feature'
-          ? ROVER_FOOTPRINT_KM
-          : STOP_FOOTPRINT_KM;
-      const r = scaleAwareRadius(footprint);
+      // Match the 3D pin's tear-drop proportions — head 22 / tip 38
+      // → ratio 4:7. Anchor `p` at the tip so the bottom of the
+      // glyph sits on the surface point (same anchoring rule as
+      // sprite.center = (0.5, 0) in the 3D path).
+      const headR = 9; // ≈ 26 px head/2 - outline; comparable to 3D pin
+      const tipDrop = headR * 2; // pointer length from head centre
+      const headY = p.y - tipDrop;
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.55)';
+      ctx.shadowBlur = 4;
+      ctx.shadowOffsetY = 1;
       ctx.fillStyle = color;
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.arc(p.x, p.y - r, r, Math.PI * 0.2, Math.PI * 0.8, true);
+      ctx.arc(p.x, headY, headR, Math.PI * 0.78, Math.PI * 0.22, false);
       ctx.lineTo(p.x, p.y);
       ctx.closePath();
       ctx.fill();
+      ctx.shadowColor = 'transparent';
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.5;
       ctx.stroke();
-      // Inner core dot
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
-      ctx.arc(p.x, p.y - r, 2, 0, Math.PI * 2);
+      ctx.arc(p.x, headY, headR * 0.35, 0, Math.PI * 2);
       ctx.fill();
-      // Label
-      if (showLabels) {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-        ctx.font = "bold 9px 'Space Mono', monospace";
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
-        ctx.shadowBlur = 3;
-        ctx.fillText(`SOL ${stop.sol} · ${stop.label}`, p.x, p.y - r * 2 - 4);
-        ctx.shadowBlur = 0;
-      }
     }
   }
 
@@ -524,7 +522,9 @@
   const MARKER_MAX_PX = 32;
   const ROVER_FOOTPRINT_KM = 0.003; // ~3 m (Curiosity-class, MER, Zhurong)
   const LANDER_FOOTPRINT_KM = 0.005; // ~5 m (Apollo LM, Phoenix, Viking)
-  const STOP_FOOTPRINT_KM = 0.0008; // ~80 cm (sample tube cluster, drill bit)
+  // STOP_FOOTPRINT_KM was used by drawTraverseStops before 2026-06-03;
+  // the pin now uses a fixed-pixel head (matching the 3D handoff) so
+  // the per-stop footprint no longer drives its radius.
 
   function scaleAwareRadius(footprintKm: number): number {
     const trueScalePx = footprintKm / kmPerPx;

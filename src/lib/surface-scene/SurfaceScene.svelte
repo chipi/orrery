@@ -348,6 +348,17 @@
   } | null>(null);
 
   /**
+   * Distance scale bar (image 21 ask, 2026-06-03). Bottom-right
+   * overlay: a horizontal line at a "nice" round-number width that
+   * tells the user the on-screen kilometer scale at the current
+   * zoom. Visible whenever Tier-2 content is fading in (so the
+   * scale only appears when the planet is rendered at a zoom that
+   * has a meaningful local scale). Width in CSS px + the label
+   * are computed per frame from worldPerPx × kmPerWorldUnit.
+   */
+  let scaleBar = $state<{ widthPx: number; label: string } | null>(null);
+
+  /**
    * Nation chip label + colour for the info card's site header.
    * Same shape as /mars's nationChipFor — Moon includes USSR (Luna)
    * which collapses with Russia for the chip (Roscosmos is the
@@ -2682,7 +2693,6 @@
           }
         }
         if (loadTraverses != null) {
-          const pulse = 0.7 + Math.sin(now * 0.006) * 0.25;
           // Screen-pixel-stable sizing for every traverse marker
           // (pins, end-dot, captions). World-fixed sizes turned the
           // markers into screen-filling blobs at deep zoom and into
@@ -2743,7 +2753,9 @@
             if (tl.endLabel) tl.endLabel.visible = travVisible;
             tl.lineMaterial.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.7);
             const dotMat = tl.endDot.material as THREE.MeshBasicMaterial;
-            dotMat.opacity = detailOpacity * (tl.isActive ? pulse : 0.85);
+            // No pulse — flat 95% opacity for active rovers, 85% for ended (was
+// `tl.isActive ? pulse : 0.85` with pulse = sin(now*0.006)*0.25+0.7).
+dotMat.opacity = detailOpacity * (tl.isActive ? 0.95 : 0.85);
             tl.endDot.scale.setScalar(endDotScale);
             // Reposition captions each frame so they sit ~70 px
             // tangentially + ~30 px outward from the anchor dot
@@ -2781,12 +2793,63 @@
                 }
               });
             }
+            // Gate the in-between stop pins on a tighter threshold
+            // than the line — pins only make sense once HiRISE detail
+            // is substantially in (detailOpacity > 0.6 ≈ camR < ~31.5),
+            // otherwise they read as confetti scattered across an
+            // un-textured rectangle (image 21 feedback, 2026-06-03).
+            // Line + start/end + captions stay on the wider gate so
+            // the user gets a path-preview earlier in the zoom.
+            const stopPinsVisible = travVisible && detailOpacity > 0.6;
             for (const sp of tl.stopPins) {
-              sp.visible = travVisible;
+              sp.visible = stopPinsVisible;
               sp.scale.set(pinWorldW, pinWorldH, 1);
               (sp.material as THREE.SpriteMaterial).opacity = detailOpacity;
             }
           }
+        }
+
+        // Distance scale bar — visible whenever either tier-2 layer
+        // is fading in (regional CTX or detail HiRISE). Picks a
+        // "nice" 1 / 2 / 5 × 10ⁿ round-number km value whose pixel
+        // width is closest to TARGET_BAR_PX (≈ 110 px); the bar
+        // overlay below the canvas renders at the resolved width.
+        if (regionalOpacity > 0.01 || detailOpacity > 0.01) {
+          const surfaceDistanceForBar = Math.max(0.05, camR - 30);
+          const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
+          const worldPerPxForBar =
+            (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) /
+            viewportHForBar;
+          const kmPerWorldUnit = config.radiusKm / planetRadius;
+          const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
+          const TARGET_BAR_PX = 110;
+          const targetKm = kmPerPx * TARGET_BAR_PX;
+          const exp = Math.floor(Math.log10(targetKm));
+          const base = targetKm / Math.pow(10, exp);
+          let mantissa: number;
+          if (base < 1.5) mantissa = 1;
+          else if (base < 3.5) mantissa = 2;
+          else if (base < 7.5) mantissa = 5;
+          else mantissa = 10;
+          const niceKm = mantissa * Math.pow(10, exp);
+          const widthPx = niceKm / kmPerPx;
+          const label =
+            niceKm >= 1
+              ? `${niceKm} km`
+              : niceKm >= 0.001
+                ? `${Math.round(niceKm * 1000)} m`
+                : `${(niceKm * 1000).toFixed(1)} m`;
+          // Skip the assignment if values are unchanged — keeps
+          // Svelte from re-rendering the overlay every frame.
+          if (
+            !scaleBar ||
+            Math.abs(scaleBar.widthPx - widthPx) > 0.5 ||
+            scaleBar.label !== label
+          ) {
+            scaleBar = { widthPx, label };
+          }
+        } else if (scaleBar !== null) {
+          scaleBar = null;
         }
 
         // TierContext info card (PRD-014 §v0.7.x). Surfaces
@@ -2798,16 +2861,31 @@
         // ~camR=38). Before this, the CTX context layer would
         // fade in at camR 50-38 with no on-screen explanation of
         // what the user was looking at (image 18 feedback).
+        // Prefer the user-selected site whenever it has any tier
+        // promotion — multiple hotspots can be at the same Tier 2
+        // simultaneously (e.g. Viking 2 + Perseverance both
+        // visible at this zoom), and letting array-order win the
+        // tie surfaced the wrong card text on the wrong patch
+        // (image 21 feedback: card said "Viking 2 lander" while
+        // the highlighted rectangle was Perseverance).
         let bestH: { siteId: string } | null = null;
-        let bestTier = 0;
-        for (const h of hotspots) {
-          if (h.currentTier > bestTier) {
-            bestTier = h.currentTier;
-            bestH = { siteId: h.siteId };
+        if (selected) {
+          const selectedH = hotspots.find((h) => h.siteId === selected!.id);
+          if (selectedH && selectedH.currentTier > 0) {
+            bestH = { siteId: selectedH.siteId };
           }
         }
-        // Fallback to the selected site when no hotspot is promoted
-        // yet — needed for the wider-zoom CTX window.
+        if (!bestH) {
+          let bestTier = 0;
+          for (const h of hotspots) {
+            if (h.currentTier > bestTier) {
+              bestTier = h.currentTier;
+              bestH = { siteId: h.siteId };
+            }
+          }
+        }
+        // Final fallback to the selected site when no hotspot is
+        // promoted yet — needed for the wider-zoom CTX window.
         if (!bestH && selected) {
           bestH = { siteId: selected.id };
         }
@@ -2835,6 +2913,10 @@
                   resolutionText: '~15 m/px (from CTX ~5 m/px native)',
                   sourceUrl: 'https://www.msss.com/mars_images/moc/MENU.html',
                   licenseShort: 'PD-NASA',
+                  // CTX absolute georeferencing — typically ~100 m on
+                  // Mars (better in regions tied to HRSC / MOLA, worse
+                  // where it isn't). Honest middle estimate.
+                  uncertaintyM: 100,
                 });
               } else {
                 layers.push({
@@ -3049,8 +3131,13 @@
     data-sites-count={sites.length}
   ></canvas>
 
-  <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4). -->
-  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
+  <!-- Top-left HUD cluster (matches /explore + /mars convention from v0.4).
+       Hidden in panorama mode — the 2D / Surface / Orbiters / Hotspots
+       chips control the planet sphere view and don't apply to the
+       ground-view skybox, and their stack visually buried the
+       Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
+  {#if !panoramaActive}
+    <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
     <div class="ctrl-row">
       {#if !config.disable2D}
         <ViewToggleButton
@@ -3154,6 +3241,7 @@
       <HotspotsLodChip mode={hotspotsMode} onCycle={cycleHotspotsMode} />
     </div>
   </div>
+  {/if}
 
   {#if loadFailed}
     <div class="load-banner" role="alert">{m.moon_load_failed()}</div>
@@ -3250,6 +3338,18 @@ sample      ${debugInfo.projectedPxSample}`}
           {hoveredStopInfo.lon.toFixed(3)}°{hoveredStopInfo.lon >= 0 ? 'E' : 'W'}
         </span>
       {/if}
+    </div>
+  {/if}
+
+  <!-- Distance scale bar — appears in the bottom-right corner of the
+       3D canvas whenever a tier-2 layer is fading in. Width + label
+       reflect the on-screen km scale at the current camera zoom
+       (image 21 ask, 2026-06-03). Hidden during panorama since
+       ground distance is meaningless inside the inverted skybox. -->
+  {#if scaleBar && view === '3d' && !panoramaActive}
+    <div class="distance-scale" data-testid="distance-scale">
+      <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
+      <div class="distance-scale-label mono">{scaleBar.label}</div>
     </div>
   {/if}
 
@@ -4231,6 +4331,44 @@ sample      ${debugInfo.projectedPxSample}`}
      so the user has a discoverable exit even without the panel
      open. (#286 audit — moved out of the bottom-row controls stack
      to fix the sizing/overlap with the cross-link chips.) */
+  /* Distance scale bar — fixed in the canvas bottom-right corner.
+     Above the legend strip but below z-index 60 floating exits. */
+  .distance-scale {
+    position: fixed;
+    right: 24px;
+    bottom: 56px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 6px 10px;
+    background: rgba(5, 5, 20, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    z-index: 40;
+  }
+  .distance-scale-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 2px solid rgba(255, 255, 255, 0.95);
+    border-right: 2px solid rgba(255, 255, 255, 0.95);
+    box-sizing: content-box;
+  }
+  .distance-scale-label {
+    font-family: 'Space Mono', 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.92);
+  }
+  @media (max-width: 767px) {
+    .distance-scale {
+      right: 12px;
+      bottom: 72px;
+    }
+  }
+
   .traverse-stop-tooltip {
     position: fixed;
     pointer-events: none;

@@ -216,9 +216,14 @@
           name: 'Moon',
           // 4k_moon.jpg already shipped — Solar System Scope, CC BY 4.0.
           texture: '4k_moon.jpg',
-          // Real Moon : Earth radius ≈ 0.27. Compressed slightly so the
-          // moon reads at the parent's zoom level without dominating.
-          sizeUnits: 1.4,
+          // Real Moon : Earth radius ≈ 0.27. Pushed past the true ratio
+          // (was 1.4 = 27 %) up to 2.4 = 46 % — at the post-fly-to
+          // framing the true-scale Moon was a 4 px speck in the corner
+          // that users were missing entirely (2026-06-03 feedback).
+          // Orbit distance was already heavily compressed (12 vs real
+          // ratio 60) for the same reason, so size is the consistent
+          // place to compensate.
+          sizeUnits: 2.4,
           // Real Moon-Earth distance / Earth radius ≈ 60. At that ratio
           // the moon would sit at ~312 scene units from Earth's centre,
           // way off-frame from the planet's 4K zoom. Compressed to 12
@@ -257,9 +262,10 @@
           id: 'phobos',
           name: 'Phobos',
           texture: '2k_phobos.jpg',
-          // Real Phobos mean radius 11 km — tiny. Bumped to 0.45 units
-          // (still small vs Earth-Moon 1.4) so it's pickable at zoom.
-          sizeUnits: 0.45,
+          // Real Phobos mean radius 11 km — tiny. Bumped well past
+          // true ratio (was 0.45 → 1.1) so it's clearly visible at
+          // post-fly-to framing, not a pickable speck (2026-06-03).
+          sizeUnits: 1.1,
           // Real Phobos-Mars distance 9376 km ≈ 2.76 Mars radii. With
           // real geometry it would orbit inside the 4K view —
           // condensed slightly to 12 for visual separation.
@@ -275,7 +281,8 @@
           name: 'Deimos',
           texture: '2k_deimos.jpg',
           // Real Deimos mean radius 6.2 km — about half of Phobos.
-          sizeUnits: 0.32,
+          // Bumped 0.32 → 0.85 for visibility (2026-06-03).
+          sizeUnits: 0.85,
           // Real Deimos-Mars distance 23 463 km ≈ 6.9 Mars radii.
           orbitUnits: 18,
           // 30.3 h sidereal period.
@@ -388,9 +395,9 @@
           name: 'Enceladus',
           texture: '4k_enceladus.jpg',
           // Enceladus radius 252 km — tiny vs Titan, but iconic.
-          // Bumped to 0.8 units for visual presence (would be 0.17 at
-          // Titan's scale ratio).
-          sizeUnits: 0.8,
+          // Bumped 0.8 → 1.3 so it's visible alongside Titan from the
+          // post-fly-to Saturn framing (2026-06-03 visibility pass).
+          sizeUnits: 1.3,
           // Real distance 238 000 km ≈ 3.95 Saturn radii. Condensed.
           orbitUnits: 22,
           periodDays: 1.37,

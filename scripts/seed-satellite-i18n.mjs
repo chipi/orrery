@@ -12,7 +12,7 @@
  */
 import { readFile, writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
-import { join, dirname } from 'path';
+import { join } from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = join(fileURLToPath(import.meta.url), '..', '..');

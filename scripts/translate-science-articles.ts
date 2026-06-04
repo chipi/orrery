@@ -139,7 +139,24 @@ Constraints — read carefully:
   • Maintain the editorial register: third-person, accessible, scientifically accurate but not academic.
   • narrative_101 paragraphs are deliberately conversational — keep them so. body_paragraphs are denser — preserve their density.
   • Output VALID JSON ONLY. No code fences. No commentary. The output must parse with JSON.parse.
-  • The output object must have the same keys as the input. Same array lengths. Same field types.`;
+  • The output object must have the same keys as the input. Same array lengths. Same field types.
+
+JSON QUOTE-ESCAPING — read this twice:
+
+  • Inside a JSON string value, you MUST NOT include an unescaped double-quote (").
+  • If your translation would naturally want a double-quote — e.g. quoting an English term in German prose, or a section title in Russian — use ONE of:
+      a) Unicode typographic quotes for the target language: « » (French/Russian), „ " (German), 「 」 (Japanese / Chinese), ' ' (single typographic).
+      b) Escape it: \\" (two characters: backslash + double-quote).
+  • Same rule for backslashes — escape every \\ as \\\\.
+  • Mentally walk the output: scan every string value for raw ". Each one is either part of the JSON syntax (delimiter) or it's a bug.
+
+Common failures we've seen:
+
+  • German: ' "Planet", stimmt das ' → INVALID. Use „Planet" or ‚Planet'.
+  • Serbian: ' "планета", то је ' → INVALID. Use „планета" or «планета».
+  • Chinese: ' "行星" ' → INVALID. Use 「行星」 or 「行星」.
+
+Output JUST the JSON object. The first character must be { and the last character must be }.`;
 
 function buildUserPrompt(locale: string, article: ArticleOverlay): string {
   const langName = LOCALE_NAME[locale as (typeof LOCALES)[number]];
@@ -155,22 +172,40 @@ async function translate(
   locale: string,
   article: ArticleOverlay,
 ): Promise<ArticleOverlay> {
+  // Opus-4-7 with tool_use for guaranteed structured output. Plain-text
+  // Sonnet + Opus both repeatedly produced unescaped quotes in German
+  // (' "Planet", stimmt das ' patterns) which broke JSON.parse on every
+  // retry. Tool-use forces the model to emit input matching our schema,
+  // and the Anthropic SDK validates / parses it for us. (#56 fix.)
+  const tool = {
+    name: 'submit_translation',
+    description: 'Submit the translated article. Every field that was a string in the source is translated; every key is preserved exactly.',
+    input_schema: {
+      type: 'object' as const,
+      properties: {
+        title: { type: 'string' },
+        intro_sentence: { type: 'string' },
+        narrative_101: { type: 'array', items: { type: 'string' } },
+        body_paragraphs: { type: 'array', items: { type: 'string' } },
+        diagram_caption: { type: 'string' },
+        headline: { type: 'string' },
+        paragraphs: { type: 'array', items: { type: 'string' } },
+      },
+    },
+  };
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-opus-4-7',
     max_tokens: 4096,
     system: SYSTEM_PROMPT,
+    tools: [tool],
+    tool_choice: { type: 'tool', name: 'submit_translation' },
     messages: [{ role: 'user', content: buildUserPrompt(locale, article) }],
   });
-  const block = response.content[0];
-  if (block.type !== 'text') {
-    throw new Error(`Unexpected non-text response for locale ${locale}`);
+  const toolUseBlock = response.content.find((b) => b.type === 'tool_use');
+  if (!toolUseBlock || toolUseBlock.type !== 'tool_use') {
+    throw new Error(`No tool_use block in response for locale ${locale}`);
   }
-  // Strip any accidental code fences the model produced.
-  let raw = block.text.trim();
-  if (raw.startsWith('```')) {
-    raw = raw.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/i, '');
-  }
-  const parsed = JSON.parse(raw) as ArticleOverlay;
+  const parsed = toolUseBlock.input as ArticleOverlay;
   // Sanity check: keys must match.
   const sourceKeys = new Set(Object.keys(article));
   const targetKeys = new Set(Object.keys(parsed));

@@ -1,15 +1,15 @@
 <script lang="ts">
   /**
    * SatellitePanel — detail panel for natural satellites on /explore
-   * (#304 Slice 1). Modelled after SmallBodyPanel; tabs: overview /
-   * gallery / technical / library.
+   * (#304). Mirrors SmallBodyPanel + SunPanel typography + layout so
+   * the satellite panel reads as a peer of the existing detail
+   * panels. Tabs: overview / gallery / technical / library.
    *
-   * Slice 1 ships with hardcoded Moon content + a placeholder lookup
-   * so the picker → panel chain is verifiable end-to-end. Slice 2
-   * extracts the data layer into `static/data/satellites.json` and
-   * widens content to all 10 currently-rendered moons. Localized
-   * description text + library labels land in Slice 6 via the
-   * existing wave23 translation pipeline.
+   * Slice 1 ships the picker → panel chain with hardcoded Moon
+   * content. Slice 2 extracts the data layer into satellites.json
+   * and widens to all 10 currently-rendered moons. Slice 3 adds
+   * Uranus + Neptune (16 total). Slice 6 wires the per-locale
+   * overlay loader for translated content.
    */
   import Panel from './Panel.svelte';
   import { page } from '$app/stores';
@@ -56,9 +56,6 @@
       ? (satellites.find((s) => `${s.parent_planet_id}:${s.id}` === satelliteKey) ?? null)
       : null,
   );
-  // Locale overlay merged on top of the English base — missing
-  // fields fall back to English. Library link labels are remapped
-  // per-entry via library_labels keyed by link.id.
   function mergeOverlay(base: SatelliteEntry, ov: SatelliteI18n | null): SatelliteEntry {
     return {
       ...base,
@@ -214,103 +211,112 @@
 </Panel>
 
 <style>
+  /* Identical font + colour tokens to SmallBodyPanel + SunPanel so
+     the SatellitePanel reads as a peer of the existing detail
+     panels rather than a one-off (#304 sub-slice C feedback,
+     2026-06-04). */
   .head {
-    padding: 4px 0 12px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 12px;
   }
-  .parent-row {
+  .kind-row {
     display: flex;
+    align-items: center;
     gap: 8px;
-    align-items: baseline;
+  }
+  .kind {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(160, 200, 255, 0.85);
   }
-  .parent-label {
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+  .panel-hero {
+    margin: 0 0 14px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
   }
-  .parent-name {
-    color: rgba(160, 200, 255, 0.95);
+  .panel-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   .tabs {
     display: flex;
-    gap: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 12px;
+    gap: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 14px;
   }
   .tabs button {
     background: transparent;
     border: 0;
-    color: rgba(255, 255, 255, 0.6);
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 8px 10px;
-    cursor: pointer;
     border-bottom: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 8px 12px;
+    cursor: pointer;
   }
   .tabs button.active {
     color: #fff;
-    border-bottom-color: rgba(160, 200, 255, 0.85);
+    border-bottom-color: #4466ff;
   }
-  .tab-content {
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 13.5px;
-    line-height: 1.55;
+  .tabs button:hover:not(.active),
+  .tabs button:focus-visible {
+    color: rgba(255, 255, 255, 0.8);
+    outline: none;
   }
   .editorial {
-    margin: 0 0 12px;
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .editorial.empty {
+    color: rgba(255, 255, 255, 0.4);
   }
   .composition {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .cell-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 4px;
+  }
+  .cell-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.45;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+  }
+  .mission-block {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .mission-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin: 8px 0 0;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .prop-label {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .empty {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-  }
-  .tech {
-    margin: 0;
-    display: grid;
-    gap: 12px;
-  }
-  .tech > div {
-    display: grid;
-    gap: 2px;
-  }
-  .tech dt {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  .tech dd {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.92);
-  }
-  .tech ul {
-    margin: 0;
-    padding-left: 16px;
-  }
-  .wiki-temp {
-    margin: 12px 0 0;
-  }
-  .wiki-temp a {
-    color: rgba(160, 200, 255, 0.95);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.45;
   }
   .gallery-grid {
     margin: 0;
@@ -329,42 +335,28 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     display: block;
   }
-  .library {
-    margin: 0;
-    padding: 0;
+  .learn-list {
     list-style: none;
-    display: grid;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
-  .library-item {
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    align-items: baseline;
-    gap: 10px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .library-item.library-tier-intro {
-    background: rgba(160, 200, 255, 0.04);
-    padding: 8px 8px;
-    border-radius: 3px;
-    border-bottom: 0;
-  }
-  .library-kind {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255, 220, 160, 0.85);
-  }
-  .library-label {
-    color: rgba(220, 235, 255, 0.92);
+  .learn-list a {
+    color: #4ecdc4;
     text-decoration: none;
-    line-height: 1.4;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    background: rgba(78, 205, 196, 0.06);
+    border-left: 2px solid rgba(78, 205, 196, 0.5);
+    display: block;
   }
-  .library-label:hover,
-  .library-label:focus-visible {
-    color: #fff;
-    text-decoration: underline;
+  .learn-list a:hover,
+  .learn-list a:focus-visible {
+    background: rgba(78, 205, 196, 0.12);
+    outline: none;
   }
 </style>

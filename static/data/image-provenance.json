@@ -70963,6 +70963,278 @@
       "pageid": 1254946,
       "nasa_id": null,
       "fetched_at": "2026-06-03T10:00:32.458Z"
+    },
+    {
+      "id": "sat_moon_01",
+      "path": "/images/satellites/moon/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:FullMoon2010.jpg",
+      "author": "Gregory H. Revera",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/FullMoon2010.jpg",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "license_rationale": "CC-BY-SA license requires attribution + share-alike.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:52.298Z"
+    },
+    {
+      "id": "sat_phobos_01",
+      "path": "/images/satellites/phobos/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Phobos_colour_2008.jpg",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Phobos_colour_2008.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Phobos_colour_2008.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:53.681Z"
+    },
+    {
+      "id": "sat_deimos_01",
+      "path": "/images/satellites/deimos/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Deimos-MRO.jpg",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deimos-MRO.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Deimos-MRO.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:55.048Z"
+    },
+    {
+      "id": "sat_io_01",
+      "path": "/images/satellites/io/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Io_highest_resolution_true_color.jpg",
+      "author": "NASA/JPL/USGS",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Io_highest_resolution_true_color.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Io_highest_resolution_true_color.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:56.492Z"
+    },
+    {
+      "id": "sat_europa_01",
+      "path": "/images/satellites/europa/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Europa-moon-with-margins.jpg",
+      "author": "NASA/JPL-Caltech/SETI Institute",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Europa-moon-with-margins.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Europa-moon-with-margins.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:58.106Z"
+    },
+    {
+      "id": "sat_ganymede_01",
+      "path": "/images/satellites/ganymede/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Ganymede_g1_true-edit1.jpg",
+      "author": "NASA/JPL/DLR",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ganymede_g1_true-edit1.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ganymede_g1_true-edit1.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:41:59.526Z"
+    },
+    {
+      "id": "sat_callisto_01",
+      "path": "/images/satellites/callisto/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Callisto.jpg",
+      "author": "NASA/JPL/DLR",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Callisto.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Callisto.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:00.933Z"
+    },
+    {
+      "id": "sat_titan_01",
+      "path": "/images/satellites/titan/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Titan_in_true_color.jpg",
+      "author": "NASA/JPL-Caltech/Space Science Institute",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Titan_in_true_color.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titan_in_true_color.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:02.299Z"
+    },
+    {
+      "id": "sat_enceladus_01",
+      "path": "/images/satellites/enceladus/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:PIA17202 - Approaching Enceladus.jpg",
+      "author": "NASA/JPL-Caltech/Space Science Institute",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:PIA17202_-_Approaching_Enceladus.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/PIA17202_-_Approaching_Enceladus.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:03.796Z"
+    },
+    {
+      "id": "sat_miranda_01",
+      "path": "/images/satellites/miranda/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Miranda.jpg",
+      "author": "NASA/JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Miranda.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Miranda.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:05.217Z"
+    },
+    {
+      "id": "sat_ariel_01",
+      "path": "/images/satellites/ariel/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Ariel (moon).jpg",
+      "author": "NASA/JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ariel_(moon).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ariel_(moon).jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:06.777Z"
+    },
+    {
+      "id": "sat_umbriel_01",
+      "path": "/images/satellites/umbriel/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Umbriel (moon).jpg",
+      "author": "NASA/JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Umbriel_(moon).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Umbriel_(moon).jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:08.300Z"
+    },
+    {
+      "id": "sat_titania_01",
+      "path": "/images/satellites/titania/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Titania (moon) color cropped.jpg",
+      "author": "NASA/JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Titania_(moon)_color_cropped.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Titania_(moon)_color_cropped.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:09.714Z"
+    },
+    {
+      "id": "sat_oberon_01",
+      "path": "/images/satellites/oberon/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Voyager 2 picture of Oberon.jpg",
+      "author": "NASA/JPL",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Voyager_2_picture_of_Oberon.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Voyager_2_picture_of_Oberon.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:11.063Z"
+    },
+    {
+      "id": "sat_triton_01",
+      "path": "/images/satellites/triton/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Triton moon mosaic Voyager 2 (large).jpg",
+      "author": "NASA/JPL/USGS",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Triton_moon_mosaic_Voyager_2_(large).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Triton_moon_mosaic_Voyager_2_(large).jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:12.506Z"
+    },
+    {
+      "id": "sat_charon_01",
+      "path": "/images/satellites/charon/01.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Charon in True Color - High-Res.jpg",
+      "author": "NASA/JHUAPL/SwRI",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Charon_in_True_Color_-_High-Res.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charon_in_True_Color_-_High-Res.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted.",
+      "modifications": [
+        "downloaded-via-special-filepath"
+      ],
+      "fetched_at": "2026-06-04T13:42:13.872Z"
     }
   ]
 }

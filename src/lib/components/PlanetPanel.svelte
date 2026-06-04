@@ -15,9 +15,10 @@
   // strip crowding. Tiered link list renders below the curated ScienceCards.
   type Tab = 'overview' | 'gallery' | 'technical' | 'science';
 
-  // Curated /science cross-section list — the Keplerian-mechanics core.
-  // Same for every planet; the user's planet-specific values live on the
-  // TECHNICAL tab and the cards here unpack what those values mean.
+  // Curated /science cross-section list — the Keplerian-mechanics core +
+  // the planets-tab PRD-024 set. Same for every planet; the user's
+  // planet-specific values live on the TECHNICAL tab and the cards
+  // here unpack what those values mean.
   const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string }[] = [
     { tab: 'orbits', section: 'keplerian-orbit' },
     { tab: 'orbits', section: 'semi-major-axis' },
@@ -26,6 +27,9 @@
     { tab: 'orbits', section: 'apsides' },
     { tab: 'orbits', section: 'vis-viva' },
     { tab: 'orbits', section: 'keplers-laws' },
+    { tab: 'planets', section: 'axial-tilt-and-seasons' },
+    { tab: 'planets', section: 'moons-of-the-system' },
+    { tab: 'planets', section: 'active-spacecraft-survey' },
   ];
 
   type Props = {

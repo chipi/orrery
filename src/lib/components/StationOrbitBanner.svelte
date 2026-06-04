@@ -155,7 +155,7 @@
         <a class="banner-link" href="{base}/science/scales-time/long-duration">
           {m.station_banner_long_duration_link()}
         </a>
-        <a class="banner-link" href="{base}/science/mission-phases/eva">
+        <a class="banner-link" href="{base}/science/life-in-space/eva-operations">
           {m.station_banner_eva_link()}
         </a>
       </p>

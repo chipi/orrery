@@ -172,8 +172,8 @@
               {m.iss_label_mass()}<WhyPopover
                 title={m.why_module_mass_title()}
                 body={m.why_module_mass_body()}
-                tab="propulsion"
-                section="dv-budget"
+                tab="space-stations"
+                section="pressurized-volume"
               />
             </div>
             <div class="cell-value">{formatNumber(mod.mass_kg, loc)} kg</div>
@@ -183,6 +183,8 @@
               {m.iss_label_length()}<WhyPopover
                 title={m.why_module_length_title()}
                 body={m.why_module_length_body()}
+                tab="space-stations"
+                section="node-module"
               />
             </div>
             <div class="cell-value">{formatNumber(mod.length_m, loc, 1)} m</div>

@@ -90,15 +90,28 @@
     ];
     const f = mission?.flight;
     if (f?.launch?.c3_km2_s2 != null) list.push({ tab: 'propulsion', section: 'c3' });
-    if (f?.launch != null) list.push({ tab: 'mission-phases', section: 'trans-x-injection' });
+    if (f?.launch != null) {
+      list.push({ tab: 'mission-phases', section: 'trans-x-injection' });
+      // Launch-vehicle context — every mission's launcher draws from
+      // these foundational topics (issue #303 close-out).
+      list.push({ tab: 'propulsion', section: 'thrust-and-twr' });
+      list.push({ tab: 'propulsion', section: 'rocket-stages' });
+      list.push({ tab: 'propulsion', section: 'engine-types' });
+      list.push({ tab: 'propulsion', section: 'engine-clustering' });
+      list.push({ tab: 'propulsion', section: 'fuels-and-oxidizers' });
+      list.push({ tab: 'history', section: 'tsiolkovsky-equation-1903' });
+    }
     if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
       list.push({ tab: 'mission-phases', section: 'tcm' });
     if (f?.arrival?.v_infinity_km_s != null)
       list.push({ tab: 'propulsion', section: 'v-infinity' });
     if (f?.arrival?.orbit_insertion_dv_km_s != null)
       list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
-    if (f?.arrival?.entry_velocity_km_s != null)
+    if (f?.arrival?.entry_velocity_km_s != null) {
       list.push({ tab: 'mission-phases', section: 'edl' });
+      // EDL phase pairs with throttling-and-gimbaling (powered descent).
+      list.push({ tab: 'propulsion', section: 'throttling-and-gimbaling' });
+    }
     list.push({ tab: 'mission-phases', section: 'mission-types' });
     return list;
   });

@@ -79,19 +79,23 @@ interface ArticleOverlay {
 
 interface CliArgs {
   tab: string | null;
+  id: string | null;
   force: boolean;
   dryRun: boolean;
 }
 
 function parseArgs(): CliArgs {
   const args = process.argv.slice(2);
-  const out: CliArgs = { tab: null, force: false, dryRun: false };
+  const out: CliArgs = { tab: null, id: null, force: false, dryRun: false };
   for (let i = 0; i < args.length; i++) {
     const a = args[i];
     if (a === '--force') out.force = true;
     else if (a === '--dry-run') out.dryRun = true;
     else if (a === '--tab') {
       out.tab = args[i + 1] ?? null;
+      i++;
+    } else if (a === '--id') {
+      out.id = args[i + 1] ?? null;
       i++;
     }
   }
@@ -202,7 +206,15 @@ async function main() {
   const errors: { locale: string; file: string; error: string }[] = [];
 
   for (const tab of tabs) {
-    const files = listArticleFiles(tab);
+    let files = listArticleFiles(tab);
+    if (args.id) {
+      const idFile = `${args.id}.json`;
+      files = files.filter((f) => f === idFile);
+      if (files.length === 0) {
+        console.error(`No article found at ${tab}/${idFile}`);
+        process.exit(1);
+      }
+    }
     for (const file of files) {
       const srcPath = join(EN_US_ROOT, tab, file);
       const article = readArticle(srcPath);

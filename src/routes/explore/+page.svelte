@@ -1839,23 +1839,57 @@
     // Selection ring (3D) — single torus reused for whichever planet is
     // selected. Hidden when nothing is selected. Pulses by modulating
     // material opacity in the animation loop.
-    // Selection cue — spherical halo (BackSide) that hugs the focused
-    // body's silhouette. Replaced the older Torus ring (#287 follow-up
-    // 2026-06-03) — the flat ring read as a Saturn-ring artifact at
-    // close zoom + collided visually with the per-planet ring layer.
-    // The sphere sits OUTSIDE the per-planet atmospheric halo (1.06×
-    // planet radius) so the two don't overlap; opacity pulses in the
-    // animate loop to communicate "selected".
-    const selHaloGeo = new THREE.SphereGeometry(1, 32, 32);
-    const selHaloMat = new THREE.MeshBasicMaterial({
-      color: 0x4466ff,
+    // Selection cue — camera-facing thin ring sprite. The previous
+    // BackSide spherical halo (1.18×) read as a second translucent
+    // shell stacked outside the atmospheric halo (1.06×); user
+    // feedback 2026-06-03: "selected halo on planets when zoomed in
+    // is too thin and like there are 2 of them. Can we trim this
+    // down and be more sophisticated."
+    //
+    // A camera-facing ring sprite is the canonical "this is selected"
+    // cue in 3D modelling apps: always renders as a clean circle
+    // outline regardless of view angle, doesn't compete with the
+    // atmospheric halo's full-shell illumination, scales with planet
+    // size, and pulses via material opacity.
+    const selRingCanvas = document.createElement('canvas');
+    selRingCanvas.width = 256;
+    selRingCanvas.height = 256;
+    {
+      const c = selRingCanvas.getContext('2d')!;
+      const cx = 128;
+      const cy = 128;
+      const outerR = 120;
+      const ringW = 3;
+      // Soft outer glow → crisp inner stroke.
+      const grad = c.createRadialGradient(cx, cy, outerR - ringW * 4, cx, cy, outerR + ringW);
+      grad.addColorStop(0, 'rgba(160, 200, 255, 0)');
+      grad.addColorStop(0.85, 'rgba(160, 200, 255, 0)');
+      grad.addColorStop(0.95, 'rgba(180, 220, 255, 0.55)');
+      grad.addColorStop(1.0, 'rgba(160, 200, 255, 0)');
+      c.fillStyle = grad;
+      c.fillRect(0, 0, 256, 256);
+      // Crisp 2 px ring on top of the glow.
+      c.strokeStyle = 'rgba(200, 225, 255, 0.92)';
+      c.lineWidth = 2;
+      c.beginPath();
+      c.arc(cx, cy, outerR, 0, Math.PI * 2);
+      c.stroke();
+    }
+    const selRingTexture = new THREE.Texture(selRingCanvas);
+    selRingTexture.needsUpdate = true;
+    selRingTexture.minFilter = THREE.LinearFilter;
+    selRingTexture.magFilter = THREE.LinearFilter;
+    const selRingMat = new THREE.SpriteMaterial({
+      map: selRingTexture,
       transparent: true,
-      opacity: 0.35,
       depthWrite: false,
-      side: THREE.BackSide,
+      depthTest: false,
     });
-    const selHalo = new THREE.Mesh(selHaloGeo, selHaloMat);
+    const selHalo = new THREE.Sprite(selRingMat);
     selHalo.visible = false;
+    // Renders on top of the planet sphere so the ring outline is
+    // never occluded by the body itself at any view angle.
+    selHalo.renderOrder = 999;
     scene.add(selHalo);
 
     let camR = 680;
@@ -3120,11 +3154,19 @@
         if (selectedId) {
           const selObj = planetObjs.find((o) => o.planet.id === selectedId);
           if (selObj) {
-            const haloR = selObj.planet.size3 * 1.18;
-            selHalo.scale.set(haloR, haloR, haloR);
+            // Sprite is camera-facing — set scale by planet diameter
+            // ×1.25 so the ring sits just outside the silhouette with
+            // a small visual margin. Sprite uses x/y scale only (z is
+            // ignored for billboards). The sprite canvas is 256² with
+            // the ring at radius 120 = 47 % of canvas; combined with
+            // the 1.25× sprite scale the ring lands at ~0.94× planet
+            // radius from the centre on screen — flush with the limb
+            // with a thin bright outline.
+            const diam = selObj.planet.size3 * 2.5;
+            selHalo.scale.set(diam, diam, 1);
             selHalo.position.copy(selObj.group.position);
             const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
-            selHaloMat.opacity = 0.22 + pulse * 0.28;
+            selRingMat.opacity = 0.55 + pulse * 0.35;
             selHalo.visible = true;
           } else {
             selHalo.visible = false;

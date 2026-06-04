@@ -1,0 +1,199 @@
+{
+  "_meta": {
+    "version": 1,
+    "description": "Natural satellites surfaced via the /explore SatellitePanel (GH #304). One entry per moon, keyed by `${parent_planet_id}:${id}`. English content authored at Slice 2; translations into the 12 paraglide locales land via the wave23 pipeline at Slice 6.",
+    "schema_url": null,
+    "last_updated": "2026-06-03"
+  },
+  "satellites": [
+    {
+      "id": "moon",
+      "name": "Moon",
+      "parent_planet_id": "earth",
+      "parent_planet_name": "Earth",
+      "radius_km": 1737.4,
+      "mass_kg": 7.342e22,
+      "semi_major_axis_km": 384400,
+      "orbital_period_days": 27.32,
+      "axial_tilt_deg": 6.68,
+      "discovered": "prehistoric",
+      "mission_visits": [
+        "Luna 2 — USSR, 1959 (first artificial object on the Moon)",
+        "Apollo 11 — USA, 1969 (first crewed landing)",
+        "Luna 16 — USSR, 1970 (first robotic sample return)",
+        "Chang'e 4 — China, 2019 (first far-side landing)",
+        "Chandrayaan-3 — India, 2023 (first south-pole landing)"
+      ],
+      "surface_composition": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
+      "description": "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
+      "wiki": "https://en.wikipedia.org/wiki/Moon"
+    },
+    {
+      "id": "phobos",
+      "name": "Phobos",
+      "parent_planet_id": "mars",
+      "parent_planet_name": "Mars",
+      "radius_km": 11.1,
+      "mass_kg": 1.0659e16,
+      "semi_major_axis_km": 9376,
+      "orbital_period_days": 0.3189,
+      "discovered": "1877 by Asaph Hall",
+      "mission_visits": [
+        "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+        "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+        "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+      ],
+      "surface_composition": "Heavily-cratered carbonaceous chondrite-like body, possibly a captured asteroid or accretion remnant; surface dominated by the 9 km Stickney crater and parallel grooves likely tied to ejecta from that impact.",
+      "description": "The larger and inner of Mars's two moons — irregular potato-shaped body just 22 km across at its widest. Phobos orbits Mars every 7 hours 39 minutes, faster than Mars itself rotates, so from the Martian surface it rises in the west and sets in the east twice per Martian day. Its orbit is decaying at ~2 cm per year; in 30–50 million years tidal forces will either tear it apart into a temporary ring or crash it into the planet. Japan's MMX mission (launch ~2026) will return surface samples.",
+      "wiki": "https://en.wikipedia.org/wiki/Phobos_(moon)"
+    },
+    {
+      "id": "deimos",
+      "name": "Deimos",
+      "parent_planet_id": "mars",
+      "parent_planet_name": "Mars",
+      "radius_km": 6.2,
+      "mass_kg": 1.4762e15,
+      "semi_major_axis_km": 23463,
+      "orbital_period_days": 1.263,
+      "discovered": "1877 by Asaph Hall",
+      "mission_visits": [
+        "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+        "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+      ],
+      "surface_composition": "Carbonaceous chondrite-like; smoother surface than Phobos because its weaker gravity lets ejecta from impacts escape into Mars orbit rather than re-accumulating. Two named craters: Swift and Voltaire (both ~3 km).",
+      "description": "The smaller and outer of Mars's two moons, just 12 km across — the smallest known body in the solar system that still resolves as a disc rather than a point from a typical orbital camera. Its smoother surface (compared to Phobos's crater-grooved terrain) and slower orbit (30 hours vs Phobos's 8) make it the more sedate of Mars's moon pair. Asaph Hall named both moons for the Greek personifications of Fear (Phobos) and Dread (Deimos) — the war horses pulling Ares's chariot in Iliad XV.",
+      "wiki": "https://en.wikipedia.org/wiki/Deimos_(moon)"
+    },
+    {
+      "id": "io",
+      "name": "Io",
+      "parent_planet_id": "jupiter",
+      "parent_planet_name": "Jupiter",
+      "radius_km": 1821.6,
+      "mass_kg": 8.9319e22,
+      "semi_major_axis_km": 421700,
+      "orbital_period_days": 1.769,
+      "discovered": "1610 by Galileo Galilei",
+      "mission_visits": [
+        "Voyager 1 — USA, 1979 (discovered active volcanism)",
+        "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+        "Juno — USA, 2023–2024 (closest-ever approaches)"
+      ],
+      "surface_composition": "Sulfur + sulfur-dioxide frost over silicate crust; surface paint regularly resurfaced by volcanic flows — no impact craters survive long enough to be visible.",
+      "description": "The most geologically active body in the solar system. Tidal heating from Jupiter's gravity plus orbital resonance with Europa and Ganymede pumps roughly 100 terawatts of heat into Io's interior — enough to drive ~400 simultaneously-active volcanoes and surface temperatures that swing from -130 °C (frozen sulfur dioxide) to +1,600 °C (ultra-mafic lava). Its surface is repainted faster than impact cratering can mark it. Loki Patera, a 200 km lava lake, is the single most powerful volcanic feature in the solar system.",
+      "wiki": "https://en.wikipedia.org/wiki/Io_(moon)"
+    },
+    {
+      "id": "europa",
+      "name": "Europa",
+      "parent_planet_id": "jupiter",
+      "parent_planet_name": "Jupiter",
+      "radius_km": 1560.8,
+      "mass_kg": 4.7998e22,
+      "semi_major_axis_km": 671034,
+      "orbital_period_days": 3.551,
+      "discovered": "1610 by Galileo Galilei",
+      "mission_visits": [
+        "Voyager 1 + 2 — USA, 1979 (mapping)",
+        "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+        "Juno — USA, 2022 (closest pass since Galileo)",
+        "Europa Clipper — USA, launch 2024 (mission underway)"
+      ],
+      "surface_composition": "Water-ice crust ~15–25 km thick, fractured by chaos terrain into a network of arcuate ridges and lenticulae; salts (likely magnesium sulfate + sodium chloride) tint the ice red-brown in the chaos regions.",
+      "description": "Smoothest large body in the solar system — no mountain on Europa rises higher than a few hundred metres. Beneath its 20-km ice crust lies a global salt-water ocean ~100 km deep, holding more than twice the water in all of Earth's oceans combined. Tidal flexing from Jupiter keeps that ocean liquid and chemically active; magnetic-field signatures and Hubble observations of plumes suggest material from the subsurface ocean reaches the surface periodically. NASA's Europa Clipper (en route) and ESA's JUICE will both scrutinise the ice shell and ocean dynamics through the early 2030s.",
+      "wiki": "https://en.wikipedia.org/wiki/Europa_(moon)"
+    },
+    {
+      "id": "ganymede",
+      "name": "Ganymede",
+      "parent_planet_id": "jupiter",
+      "parent_planet_name": "Jupiter",
+      "radius_km": 2634.1,
+      "mass_kg": 1.4819e23,
+      "semi_major_axis_km": 1070412,
+      "orbital_period_days": 7.155,
+      "discovered": "1610 by Galileo Galilei",
+      "mission_visits": [
+        "Voyager 1 + 2 — USA, 1979 (mapping)",
+        "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+        "Juno — USA, 2021 (close flyby)",
+        "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+      ],
+      "surface_composition": "Roughly half water ice + half silicate rock; surface a mix of dark cratered terrain (~4 Gyr old) and lighter grooved terrain (tectonic resurfacing ~2 Gyr ago); thin oxygen exosphere.",
+      "description": "The solar system's largest moon — bigger than Mercury, 8% larger than the Moon. Ganymede is the only moon with a self-generated magnetic field, evidence of a partially-molten iron core. Beneath ~150 km of ice lies a saltwater ocean larger than all of Earth's oceans combined; some models suggest a layered structure with multiple oceans separated by ice phases of different densities. ESA's JUICE mission will become the first orbiter of a moon other than Earth's when it enters Ganymede orbit in December 2034.",
+      "wiki": "https://en.wikipedia.org/wiki/Ganymede_(moon)"
+    },
+    {
+      "id": "callisto",
+      "name": "Callisto",
+      "parent_planet_id": "jupiter",
+      "parent_planet_name": "Jupiter",
+      "radius_km": 2410.3,
+      "mass_kg": 1.0759e23,
+      "semi_major_axis_km": 1882709,
+      "orbital_period_days": 16.689,
+      "discovered": "1610 by Galileo Galilei",
+      "mission_visits": [
+        "Voyager 1 + 2 — USA, 1979 (mapping)",
+        "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+      ],
+      "surface_composition": "Roughly 40% water ice + 60% silicate rock; surface the most heavily-cratered in the solar system — almost saturated, untouched by resurfacing. Notable feature: the 3,800 km Valhalla multi-ring impact basin.",
+      "description": "Callisto sits outside the Laplace resonance that drives the tidal heating in Io, Europa, and Ganymede — so its interior never melted enough to differentiate fully or resurface its crust. The result is the most pristine record of impact bombardment in the inner Galilean system, including the spectacular Valhalla basin's 15-ring system stretching nearly half the moon's circumference. Despite the lack of tidal heating, Galileo's magnetometer detected an induced magnetic field consistent with a deep salty ocean ~100 km below the surface. Its low radiation environment (compared to Europa or Ganymede) and long-lived water make it a likely staging point for future crewed missions to the Jupiter system.",
+      "wiki": "https://en.wikipedia.org/wiki/Callisto_(moon)"
+    },
+    {
+      "id": "titan",
+      "name": "Titan",
+      "parent_planet_id": "saturn",
+      "parent_planet_name": "Saturn",
+      "radius_km": 2574.7,
+      "mass_kg": 1.3452e23,
+      "semi_major_axis_km": 1221870,
+      "orbital_period_days": 15.945,
+      "discovered": "1655 by Christiaan Huygens",
+      "mission_visits": [
+        "Pioneer 11 — USA, 1979 (first close imagery)",
+        "Voyager 1 — USA, 1980 (atmospheric profile)",
+        "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+        "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+      ],
+      "surface_composition": "Water-ice bedrock under organic dunes + hydrocarbon lakes (methane / ethane) + a nitrogen-methane atmosphere 1.45× Earth's sea-level pressure. Tholin haze tints the sky orange.",
+      "description": "Second-largest moon in the solar system and the only moon with a substantial atmosphere — thicker than Earth's. Below the orange tholin haze sits the only known body besides Earth with stable liquid on its surface: hydrocarbon lakes and seas of methane and ethane in the polar regions, fed by an active methane hydrologic cycle that includes clouds, rain, and rivers carving water-ice bedrock. Huygens (ESA) made the first landing on a moon other than Earth's in 2005. NASA's Dragonfly will arrive in 2034 as a nuclear-powered rotorcraft, hopping between Titan's organic-rich landscapes.",
+      "wiki": "https://en.wikipedia.org/wiki/Titan_(moon)"
+    },
+    {
+      "id": "enceladus",
+      "name": "Enceladus",
+      "parent_planet_id": "saturn",
+      "parent_planet_name": "Saturn",
+      "radius_km": 252.1,
+      "mass_kg": 1.08e20,
+      "semi_major_axis_km": 237948,
+      "orbital_period_days": 1.370,
+      "discovered": "1789 by William Herschel",
+      "mission_visits": [
+        "Voyager 2 — USA, 1981 (preliminary mapping)",
+        "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+      ],
+      "surface_composition": "Pristine water-ice crust over a global subsurface ocean; south-polar 'tiger stripe' fractures venting plumes of water vapour, organics, salts, silica nanograins, and molecular hydrogen.",
+      "description": "Tiny — just 504 km across — but the most reflective body in the solar system and one of the strongest candidates for present-day habitability beyond Earth. Cassini flew directly through plumes erupting from four 130-km-long fractures at the south pole; the spectrometer detected molecular hydrogen, organics including methane, salts, and silica nanograins indicating active hydrothermal chemistry on the ocean floor. The ocean is in direct contact with rocky seafloor — the same energy and chemistry conditions that gave rise to life at Earth's own deep-sea hydrothermal vents.",
+      "wiki": "https://en.wikipedia.org/wiki/Enceladus"
+    },
+    {
+      "id": "charon",
+      "name": "Charon",
+      "parent_planet_id": "pluto",
+      "parent_planet_name": "Pluto",
+      "radius_km": 606,
+      "mass_kg": 1.586e21,
+      "semi_major_axis_km": 19591,
+      "orbital_period_days": 6.387,
+      "discovered": "1978 by James Christy",
+      "mission_visits": ["New Horizons — USA, 2015 (first and only flyby)"],
+      "surface_composition": "Water-ice crust with ammonia hydrates and tholins; the dark reddish polar cap (Mordor Macula) is methane gas escaped from Pluto and processed into tholins on Charon's frigid surface.",
+      "description": "Half Pluto's diameter — the largest moon-to-planet size ratio in the solar system. Charon and Pluto are mutually tidally locked, orbiting a common centre of mass 1,700 km above Pluto's surface — effectively a binary planet system. New Horizons revealed a startlingly varied terrain: the smooth Vulcan Planitia plain to the south, an ancient cratered hemisphere to the north, and a dark red polar cap (Mordor Macula) of tholins formed when methane molecules escaping from Pluto's atmosphere collected on Charon and were processed by ultraviolet light. The four smaller Pluto moons (Styx, Nix, Kerberos, Hydra) orbit the Pluto-Charon barycentre with chaotic rotations driven by the binary system's shifting gravity.",
+      "wiki": "https://en.wikipedia.org/wiki/Charon_(moon)"
+    }
+  ]
+}

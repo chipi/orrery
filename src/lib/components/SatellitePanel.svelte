@@ -16,52 +16,9 @@
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { getSatellites, type SatelliteEntry } from '$lib/data';
 
-  // formatKm requires a locale arg (PRD-304 Slice 1 scaffold called
-  // it with 1 arg — #303 follow-up: thread the page locale through
-  // to unblock preflight).
   const loc = $derived(localeFromPage($page));
-
-  type SatelliteEntry = {
-    id: string;
-    name: string;
-    parent_planet_id: string;
-    parent_planet_name: string;
-    radius_km: number;
-    semi_major_axis_km: number;
-    orbital_period_days: number;
-    discovered: string;
-    mission_visits: string[];
-    surface_composition?: string;
-    description: string;
-    wiki?: string;
-  };
-
-  // Slice 1 — inline content. Slice 2 moves this to satellites.json.
-  // Keys are compound: `${parentPlanetId}:${satelliteId}`.
-  const SATELLITES_DATA: Record<string, SatelliteEntry> = {
-    'earth:moon': {
-      id: 'moon',
-      name: 'Moon',
-      parent_planet_id: 'earth',
-      parent_planet_name: 'Earth',
-      radius_km: 1737.4,
-      semi_major_axis_km: 384400,
-      orbital_period_days: 27.32,
-      discovered: 'prehistoric',
-      mission_visits: [
-        'Luna 2 — USSR, 1959 (first impact)',
-        'Apollo 11 — USA, 1969 (first crewed landing)',
-        "Chang'e 4 — China, 2019 (first far-side landing)",
-        'Chandrayaan-3 — India, 2023 (first south-pole landing)',
-      ],
-      surface_composition:
-        'Anorthosite highlands (calcium-aluminium silicates) + basaltic mare (iron + magnesium); regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.',
-      description:
-        "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
-      wiki: 'https://en.wikipedia.org/wiki/Moon',
-    },
-  };
 
   type Tab = 'overview' | 'gallery' | 'technical' | 'library';
 
@@ -72,10 +29,23 @@
   };
   let { satelliteKey, open, onClose }: Props = $props();
 
+  let satellites: SatelliteEntry[] = $state([]);
+  let loaded = $state(false);
+  $effect(() => {
+    if (!loaded) {
+      void getSatellites().then((sats) => {
+        satellites = sats;
+        loaded = true;
+      });
+    }
+  });
+
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
   let entry = $derived<SatelliteEntry | null>(
-    satelliteKey ? (SATELLITES_DATA[satelliteKey] ?? null) : null,
+    satelliteKey
+      ? (satellites.find((s) => `${s.parent_planet_id}:${s.id}` === satelliteKey) ?? null)
+      : null,
   );
 
   $effect(() => {

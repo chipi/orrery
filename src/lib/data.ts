@@ -849,6 +849,40 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
 }
 
 /**
+ * /explore satellite panel (Moon + other natural satellites). GH
+ * #304 Slice 2. Single JSON manifest containing all satellite
+ * entries — fetched once, cached for subsequent panel opens. Gallery
+ * + library tabs read from sibling manifest files added in Slices 4–5.
+ */
+export type SatelliteEntry = {
+  id: string;
+  name: string;
+  parent_planet_id: string;
+  parent_planet_name: string;
+  radius_km: number;
+  mass_kg: number;
+  semi_major_axis_km: number;
+  orbital_period_days: number;
+  axial_tilt_deg?: number;
+  discovered: string;
+  mission_visits: string[];
+  surface_composition?: string;
+  description: string;
+  wiki?: string;
+};
+export async function getSatellites(): Promise<SatelliteEntry[]> {
+  try {
+    const data = await get<{ satellites: SatelliteEntry[] }>('satellites.json');
+    return data.satellites ?? [];
+  } catch {
+    return [];
+  }
+}
+export async function getSatelliteGallery(satelliteId: string): Promise<string[]> {
+  return getCategoryGallery('satellites', 'satellite-galleries.json', satelliteId);
+}
+
+/**
  * #PE path-B (rich multi-agency narrative gallery).
  *
  * A site-story is a hand-curated chapter-based photo set with

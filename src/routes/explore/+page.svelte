@@ -24,6 +24,7 @@
   import SunPanel from '$lib/components/SunPanel.svelte';
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
+  import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import {
     gravityAccel,
@@ -617,10 +618,8 @@
   // Natural-satellite selection (#304 Slice 1). Each satellite is
   // uniquely keyed by `${parentPlanetId}:${satelliteId}` to keep
   // collisions impossible if two parents ever share a moon name.
-  // Re-added when the next slice wires the panel open/close handlers.
-  // (#303 follow-up: removed unused PRD-304 Slice 1 stubs to unblock
-  // preflight — svelte-check noUnusedLocals trips on `let x = $state()`
-  // with no reader anywhere in the module.)
+  let selectedSatelliteKey: string | null = $state(null);
+  let satellitePanelOpen = $state(false);
 
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
@@ -2108,10 +2107,7 @@
       for (const sat of po.satellites) {
         satelliteMeshes.push(sat.mesh);
         for (const child of sat.mesh.children) {
-          if (
-            child instanceof THREE.Mesh &&
-            typeof child.userData?.satelliteId === 'string'
-          ) {
+          if (child instanceof THREE.Mesh && typeof child.userData?.satelliteId === 'string') {
             satellitePickAids.push(child);
           }
         }
@@ -3605,6 +3601,12 @@
   body={selectedSmallBody}
   open={smallBodyPanelOpen}
   onClose={() => (smallBodyPanelOpen = false)}
+/>
+
+<SatellitePanel
+  satelliteKey={selectedSatelliteKey}
+  open={satellitePanelOpen}
+  onClose={() => (satellitePanelOpen = false)}
 />
 
 <!-- Unified Science Lens panel — lens story + layer toggles in one

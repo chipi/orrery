@@ -158,6 +158,12 @@
         <a class="banner-link" href="{base}/science/life-in-space/eva-operations">
           {m.station_banner_eva_link()}
         </a>
+        <a class="banner-link" href="{base}/science/space-stations/expedition-cadence">
+          {m.chip_label_expedition_cadence()}
+        </a>
+        <a class="banner-link" href="{base}/science/space-stations/solar-power-budget">
+          {m.chip_label_solar_power_budget()}
+        </a>
       </p>
     {/if}
   </section>

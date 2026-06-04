@@ -112,52 +112,12 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
   },
 
   // ── IN-PROGRESS — issue #303 backlog. Remove as inbound refs land. ──
-  // orbits (5)
-  { id: 'orbits/cislunar-orbits', reason: 'IN-PROGRESS #303 — /moon + /fly cislunar' },
-  { id: 'orbits/disposal-end-of-life', reason: 'IN-PROGRESS #303 — /earth ISS decommissioning' },
-  { id: 'orbits/space-debris', reason: 'IN-PROGRESS #303 — /earth + /fleet retired-satellites' },
-  { id: 'orbits/special-orbits', reason: 'IN-PROGRESS #303 — /earth + /moon orbit-regime chip' },
-  { id: 'orbits/sun-synchronous', reason: 'IN-PROGRESS #303 — /earth observation-sat category' },
   // history (6 — entire tab orphan)
   { id: 'history/apollo-11-1969', reason: 'IN-PROGRESS #303 — /moon Apollo 11 mission panel' },
   { id: 'history/goddard-liquid-rocket-1926', reason: 'IN-PROGRESS #303 — /history or /fleet' },
   { id: 'history/keplers-laws-1609', reason: 'IN-PROGRESS #303 — /explore Foundation lens footer' },
   { id: 'history/newton-principia-1687', reason: 'IN-PROGRESS #303 — /explore lens-story footer' },
   { id: 'history/sputnik-1957', reason: 'IN-PROGRESS #303 — /earth ISS where-it-began' },
-  // space-stations (4 — entire tab orphan)
-  {
-    id: 'space-stations/expedition-cadence',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong expedition',
-  },
-  { id: 'space-stations/node-module', reason: 'IN-PROGRESS #303 — /iss module architecture' },
-  {
-    id: 'space-stations/pressurized-volume',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong volume stat',
-  },
-  {
-    id: 'space-stations/solar-power-budget',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong power stat',
-  },
-  // life-in-space (8 needs-anchor)
-  {
-    id: 'life-in-space/crew-dynamics-psychology',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong crew',
-  },
-  { id: 'life-in-space/crew-selection', reason: 'IN-PROGRESS #303 — /iss crew panel' },
-  { id: 'life-in-space/crewed-station-design', reason: 'IN-PROGRESS #303 — /iss + /tiangong arch' },
-  {
-    id: 'life-in-space/eclss-life-support',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong life-support',
-  },
-  {
-    id: 'life-in-space/pre-flight-training',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong crew panel',
-  },
-  {
-    id: 'life-in-space/sleep-nutrition-circadian',
-    reason: 'IN-PROGRESS #303 — /iss + /tiangong life-support',
-  },
-  { id: 'life-in-space/suit-lineage', reason: 'IN-PROGRESS #303 — /iss + /tiangong EVA panel' },
 ];
 
 const NON_CONTENT_TABS = new Set(['reading-list', 'watch-list']);
@@ -255,6 +215,6 @@ describe('PRD-024 audit — /science orphan detector', () => {
     // initial 35 #303 batch. New IN-PROGRESS entries beyond that need
     // a fresh issue + their own tracking. (Started at 38; planets-tab
     // 3 closed via PlanetPanel science-sections list.)
-    expect(count, `IN-PROGRESS allowlist size: ${count}`).toBeLessThanOrEqual(21);
+    expect(count, `IN-PROGRESS allowlist size: ${count}`).toBeLessThanOrEqual(5);
   });
 });

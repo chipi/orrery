@@ -93,13 +93,6 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       section: 'orbit-regimes',
       available: ['atmosphere', 'ozone'],
     },
-    // Pull the camera closer at start so the lens-gated Kármán shell
-    // (just outside the 30-unit planet radius) and ozone caps are on
-    // screen the moment the user toggles them on. The default camR=85
-    // started so far out that the layers looked like they hadn't done
-    // anything; 55 fits the planet + 100km shell + south polar cap in
-    // the same frame.
-    initialCamR: 55,
     // #290 Slice 7 — orbital stack composed onto the surface scene.
     // Mirrors EarthOrbitalScene's exact construction values so the
     // unified route renders identically to the legacy orbital view

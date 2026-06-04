@@ -81,6 +81,7 @@
     'lagrange-points': false,
     magnetosphere: false,
     'sub-solar': false,
+    'planet-stats': false,
   });
 
   let stops: Array<() => void> = [];
@@ -190,6 +191,12 @@
           label: 'Sub-solar Point',
           description:
             'Marker at the longitude where it’s currently noon — the point directly under the Sun.',
+        };
+      case 'planet-stats':
+        return {
+          label: 'Tactical Scan',
+          description:
+            'Floating overlay with surface gravity, atmospheric pressure, and rotation period. Visible only at planet focus.',
         };
     }
   }

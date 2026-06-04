@@ -105,6 +105,21 @@
      * 177.36° (upside-down + retrograde). PRD-023 Slice A.
      */
     axialTiltDeg: number;
+    /**
+     * Sidereal rotation period in hours. Negative = retrograde
+     * (Venus + Uranus). Used by the rotation-direction arrow on the
+     * spin axis (Slice E.3a) — direction of curl reflects the sign.
+     */
+    rotationHours: number;
+    /**
+     * Magnetic dipole tilt relative to the rotation axis (degrees).
+     * `undefined` = no intrinsic global dipole (Venus, Mars, Pluto).
+     * Saturn ≈ 0° (uniquely aligned); Uranus 58.6° and Neptune 46.9°
+     * are wildly off-axis with the dipole also offset from planet
+     * centre. PRD-023 Slice E.3b — gated on the magnetosphere lens
+     * layer alongside the magnetotail shell.
+     */
+    magneticTiltDeg?: number;
   };
 
   /**
@@ -149,6 +164,8 @@
       a0: 0.5,
       inc: 7.0,
       axialTiltDeg: 0.034,
+      rotationHours: 1407.5,
+      magneticTiltDeg: 0.7, // weak but present
       texture: '2k_mercury.jpg',
       texture4k: '4k_mercury.jpg',
     },
@@ -164,6 +181,8 @@
       a0: 2.1,
       inc: 3.4,
       axialTiltDeg: 177.36,
+      rotationHours: -5832.5, // retrograde
+      // magneticTiltDeg omitted — Venus has no intrinsic dipole.
       texture: '2k_venus_atmosphere.jpg',
       texture4k: '4k_venus_atmosphere.jpg',
       // Sulfuric-acid cloud deck — dense yellow atmosphere, 92×
@@ -182,6 +201,8 @@
       a0: 0,
       inc: 0.0,
       axialTiltDeg: 23.4393,
+      rotationHours: 23.9345,
+      magneticTiltDeg: 10.5,
       texture: '2k_earth_daymap.jpg',
       texture4k: '4k_earth_daymap.jpg',
       // Earth's night-side city lights — NASA Black Marble derivative
@@ -222,6 +243,8 @@
       a0: 1.8,
       inc: 1.85,
       axialTiltDeg: 25.19,
+      rotationHours: 24.6229,
+      // magneticTiltDeg omitted — Mars lost its global dynamo ~4 Gyr ago.
       texture: '2k_mars.jpg',
       texture4k: '4k_mars.jpg',
       // Phobos + Deimos (#287 Slice D). Real bodies are 22 km + 12 km
@@ -273,6 +296,8 @@
       a0: 1.2,
       inc: 1.3,
       axialTiltDeg: 3.13,
+      rotationHours: 9.925,
+      magneticTiltDeg: 9.6,
       texture: '2k_jupiter.jpg',
       texture4k: '4k_jupiter.jpg',
       // Beige cloud-band glow — dense H/He envelope, Great Red Spot
@@ -329,6 +354,10 @@
       a0: 3.5,
       inc: 2.49,
       axialTiltDeg: 26.73,
+      rotationHours: 10.656,
+      // Saturn's magnetic dipole is uniquely aligned with its rotation
+      // axis to within 1° — no other planet does this. PRD-023 Slice E.3b.
+      magneticTiltDeg: 0.0,
       hasRings: true,
       texture: '2k_saturn.jpg',
       texture4k: '4k_saturn.jpg',
@@ -385,6 +414,11 @@
       // history. The spin-axis indicator from PRD-023 Slice A renders
       // this visibly: a near-horizontal line through the planet's body.
       axialTiltDeg: 97.77,
+      rotationHours: -17.24, // retrograde
+      // Magnetic dipole sits 58.6° off the rotation axis (which is
+      // itself tilted 97°) AND is offset from planet centre by ~30%
+      // of the planet's radius. PRD-023 Slice E.3b.
+      magneticTiltDeg: 58.6,
       texture: '2k_uranus.jpg',
     },
     {
@@ -399,6 +433,10 @@
       a0: 2.8,
       inc: 1.77,
       axialTiltDeg: 28.32,
+      rotationHours: 16.11,
+      // Similar dynamo chaos to Uranus — 46.9° off-axis + offset
+      // from planet centre.
+      magneticTiltDeg: 46.9,
       texture: '2k_neptune.jpg',
     },
     // Pluto-Charon binary (#287 Slice E). Promoted from SMALL_BODIES so
@@ -424,6 +462,8 @@
       a0: 4.2,
       inc: 17.16,
       axialTiltDeg: 122.53,
+      rotationHours: -153.3, // retrograde
+      // magneticTiltDeg omitted — no measured global dipole.
       texture: '4k_pluto.jpg',
       texture4k: '4k_pluto.jpg',
       satellites: [
@@ -661,6 +701,42 @@
   // Lookup keyed by id; reactive to localizedPlanets.
   let planetById = $derived(new Map(localizedPlanets.map((p) => [p.id, p])));
   let selectedPlanet = $derived(selectedId ? (planetById.get(selectedId) ?? null) : null);
+
+  // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
+  // overlays. `focusedOnPlanet` flips true when the camera completes
+  // a fly-to a planet, false on Reset View / Sun selection. Drives
+  // the Earth-comparison ghost (E.2, always-on at focus) and the
+  // tactical stats overlay (E.4, lens-gated).
+  let focusedOnPlanet = $state(false);
+
+  // Per-planet stats for the tactical overlay. Values are real
+  // (surface gravity in g, atmospheric pressure in bar, sidereal
+  // rotation period in hours, mean diameter in km). Earth-diameter
+  // ratio drives the comparison ghost label.
+  type PlanetStats = {
+    diameterKm: number;
+    diameterRatioEarth: number;
+    surfaceGravityG: number;
+    /** Surface atmospheric pressure in bar. 0 for airless bodies;
+     *  gas giants use the 1-bar pressure level by convention. */
+    atmoBar: number;
+  };
+  const PLANET_STATS: Record<string, PlanetStats> = {
+    mercury: { diameterKm: 4880, diameterRatioEarth: 0.38, surfaceGravityG: 0.38, atmoBar: 0 },
+    venus: { diameterKm: 12104, diameterRatioEarth: 0.95, surfaceGravityG: 0.91, atmoBar: 92 },
+    earth: { diameterKm: 12742, diameterRatioEarth: 1.0, surfaceGravityG: 1.0, atmoBar: 1.0 },
+    mars: { diameterKm: 6779, diameterRatioEarth: 0.53, surfaceGravityG: 0.38, atmoBar: 0.006 },
+    jupiter: { diameterKm: 139820, diameterRatioEarth: 10.97, surfaceGravityG: 2.53, atmoBar: 1 },
+    saturn: { diameterKm: 116460, diameterRatioEarth: 9.14, surfaceGravityG: 1.07, atmoBar: 1 },
+    uranus: { diameterKm: 50724, diameterRatioEarth: 3.98, surfaceGravityG: 0.89, atmoBar: 1 },
+    neptune: { diameterKm: 49244, diameterRatioEarth: 3.86, surfaceGravityG: 1.14, atmoBar: 1 },
+    pluto: { diameterKm: 2376, diameterRatioEarth: 0.19, surfaceGravityG: 0.06, atmoBar: 1e-6 },
+  };
+  let focusedStats = $derived(selectedId ? (PLANET_STATS[selectedId] ?? null) : null);
+  let focusedRotationHours = $derived(
+    selectedId ? (PLANETS.find((p) => p.id === selectedId)?.rotationHours ?? null) : null,
+  );
+  let statsOverlayOn = $state(false);
 
   // Plumbed into the 3D scene's RAF tween from inside onMount once
   // the planetObjs array is built. Top-level selectPlanet / selectSun
@@ -958,6 +1034,16 @@
       /** PRD-023 Slice D — sub-solar point marker. Small bright sprite
        *  at the planet's surface noon longitude. Universal. */
       subSolar: THREE.Mesh;
+      /** PRD-023 Slice E.3a — N + S badges at the ends of the spin
+       *  axis line + a curved arrow on the equator showing rotation
+       *  direction. Always-on with the spin axis. */
+      northBadge: THREE.Sprite;
+      southBadge: THREE.Sprite;
+      rotationArrow: THREE.Line;
+      /** PRD-023 Slice E.3b — magnetic dipole axis (cyan line). Null
+       *  when the planet has no intrinsic dipole (Venus, Mars, Pluto).
+       *  Gated by the magnetosphere lens layer. */
+      magneticAxis: THREE.Line | null;
     };
     type OrbiterObj = {
       group: THREE.Group;
@@ -1244,6 +1330,85 @@
       spinAxis.visible = false;
       group.add(spinAxis);
 
+      // PRD-023 Slice E.3a — N + S badges at the spin-axis endpoints.
+      // The labels make N pole position explicit at a glance — critical
+      // for Venus (177° tilt = N "down") and Uranus (97° tilt = N
+      // pointing toward the orbit). Plus a curved arrow on the equator
+      // showing rotation direction (counterclockwise viewed from N for
+      // prograde rotation; flipped for Venus + Uranus's negative
+      // rotation period). Always-on at close zoom alongside the spin
+      // axis itself.
+      const northBadge = buildArrowTipLabel('N', '#ffd766', 1.6);
+      northBadge.position.copy(spinAxisPts[0]).multiplyScalar(1.15);
+      northBadge.visible = false;
+      group.add(northBadge);
+      const southBadge = buildArrowTipLabel('S', '#9aa6b8', 1.6);
+      southBadge.position.copy(spinAxisPts[1]).multiplyScalar(1.15);
+      southBadge.visible = false;
+      group.add(southBadge);
+
+      // Rotation-direction arrow — a small arc on the equator (in the
+      // tilted equatorial plane) with a chevron at one end. Direction
+      // (forward / backward) tracks the sign of rotationHours so Venus
+      // + Uranus visibly curl the other way.
+      const isRetrograde = p.rotationHours < 0;
+      const rotArcPts: THREE.Vector3[] = [];
+      const rotArcR = p.size3 * 1.1;
+      const arcSpan = Math.PI / 1.5; // about 120° of arc
+      // Equatorial plane = perpendicular to the spin axis. Spin axis
+      // points along (sin(tilt), cos(tilt), 0); the equator lies in
+      // the plane containing the Z-axis + the tilted-X-direction.
+      // For visual clarity we sweep a fixed arc + flip its direction
+      // based on retrograde sign.
+      for (let i = 0; i <= 24; i++) {
+        const t = (i / 24) * arcSpan * (isRetrograde ? -1 : 1);
+        const ex = Math.cos(t) * rotArcR;
+        const ez = Math.sin(t) * rotArcR;
+        // Rotate the (ex, 0, ez) point into the planet's equatorial
+        // plane (perpendicular to the tilted spin axis). For now we
+        // approximate by tilting around Z by spinTiltRad.
+        rotArcPts.push(
+          new THREE.Vector3(ex * Math.cos(spinTiltRad), -ex * Math.sin(spinTiltRad), ez),
+        );
+      }
+      const rotArcGeo = new THREE.BufferGeometry().setFromPoints(rotArcPts);
+      const rotArcMat = new THREE.LineBasicMaterial({
+        color: 0xffd766,
+        transparent: true,
+        opacity: 0.55,
+        depthWrite: false,
+      });
+      const rotationArrow = new THREE.Line(rotArcGeo, rotArcMat);
+      rotationArrow.visible = false;
+      group.add(rotationArrow);
+
+      // PRD-023 Slice E.3b — magnetic dipole axis. Only planets with
+      // an intrinsic dipole get one (Venus + Mars + Pluto skip). Color
+      // is cyan to distinguish from the yellow spin axis. Length
+      // matches the spin axis so the two read as parallel structures.
+      // Tilted from the rotation axis by magneticTiltDeg — Saturn's
+      // perfect alignment (0°), Earth's 10.5°, Uranus's 58.6° all
+      // show up directly. Gated by the magnetosphere lens layer.
+      let magneticAxis: THREE.Line | null = null;
+      if (p.magneticTiltDeg !== undefined) {
+        const magTilt = ((p.axialTiltDeg + p.magneticTiltDeg) * Math.PI) / 180;
+        const magPts = [
+          new THREE.Vector3(Math.sin(magTilt) * spinAxisLen, Math.cos(magTilt) * spinAxisLen, 0),
+          new THREE.Vector3(-Math.sin(magTilt) * spinAxisLen, -Math.cos(magTilt) * spinAxisLen, 0),
+        ];
+        const magGeo = new THREE.BufferGeometry().setFromPoints(magPts);
+        const magMat = new THREE.LineBasicMaterial({
+          color: 0x66ddff,
+          transparent: true,
+          opacity: 0.65,
+          depthWrite: false,
+        });
+        magneticAxis = new THREE.Line(magGeo, magMat);
+        magneticAxis.userData.layerKey = 'magnetosphere';
+        magneticAxis.visible = false;
+        group.add(magneticAxis);
+      }
+
       // Atmospheric halo (#287 Slice F) — thin emissive shell ~6% larger
       // than the planet sphere, BackSide so the limb glow appears as a
       // soft halo on the silhouette rather than a colored sphere
@@ -1289,6 +1454,10 @@
         lagrangeL2Label,
         magnetosphere,
         subSolar,
+        northBadge,
+        southBadge,
+        rotationArrow,
+        magneticAxis,
       };
     });
 
@@ -1356,6 +1525,17 @@
         // Spin-axis indicator (PRD-023 Slice A) — same gating.
         if (obj.spinAxis.visible !== shouldShow) {
           obj.spinAxis.visible = shouldShow;
+        }
+        // PRD-023 Slice E.3a — N/S badges + rotation arrow ride
+        // alongside the spin axis itself (always-on at close zoom).
+        if (obj.northBadge.visible !== shouldShow) {
+          obj.northBadge.visible = shouldShow;
+        }
+        if (obj.southBadge.visible !== shouldShow) {
+          obj.southBadge.visible = shouldShow;
+        }
+        if (obj.rotationArrow.visible !== shouldShow) {
+          obj.rotationArrow.visible = shouldShow;
         }
         // Orbiters group (PRD-023 Slice A.3) — same gating.
         if (obj.orbiters.length > 0 && obj.orbitersGroup.visible !== shouldShow) {
@@ -1554,6 +1734,9 @@
     const stopExploreMagnetosphereLayer = onLayerChange('magnetosphere', (on) => {
       planetObjs.forEach((o) => {
         if (o.magnetosphere) o.magnetosphere.visible = on;
+        // PRD-023 Slice E.3b — magnetic axis is the same physics as
+        // the magnetosphere shell; they toggle together.
+        if (o.magneticAxis) o.magneticAxis.visible = on;
       });
     });
     // PRD-023 Slice D — Sub-solar point marker. Universal.
@@ -1561,6 +1744,12 @@
       planetObjs.forEach((o) => {
         o.subSolar.visible = on;
       });
+    });
+    // PRD-023 Slice E.4 — tactical-scan overlay. DOM-driven (HUD
+    // element below); just track the layer's on/off state in a
+    // script-level $state so the template's {#if} reads it directly.
+    const stopExplorePlanetStatsLayer = onLayerChange('planet-stats', (on) => {
+      statsOverlayOn = on;
     });
 
     // ── Small bodies (3D) ─────────────────────────────────────────
@@ -1746,6 +1935,7 @@
         flyToP = Math.max(0.08, Math.min(Math.PI * 0.48, camP));
         flyToT = camT;
         focusedPlanetObj = next;
+        focusedOnPlanet = true;
       } else {
         flyToOrigin.set(0, 0, 0);
         flyToR = HELIO_DEFAULT_CAMR;
@@ -1754,6 +1944,7 @@
         flyToMinR = 60;
         flyToMaxR = 1400;
         focusedPlanetObj = null;
+        focusedOnPlanet = false;
       }
       flyStart = performance.now();
       flyActive = true;
@@ -2953,6 +3144,7 @@
       stopExploreLagrangeLayer?.();
       stopExploreMagnetosphereLayer?.();
       stopExploreSubSolarLayer?.();
+      stopExplorePlanetStatsLayer?.();
       localGroup.dispose();
       el3d.removeEventListener('mousedown', on3dMouseDown);
       window.removeEventListener('mousemove', on3dMouseMove);
@@ -3014,6 +3206,61 @@
     class:hidden={view !== '2d'}
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
+
+  <!-- PRD-023 Slice E.2 — Earth-comparison ghost. Always-on at
+       planet focus; hidden at heliocentric framing and on Earth
+       itself (you don't compare Earth to Earth). Bottom-right
+       corner so it doesn't collide with the HUD cluster or panel. -->
+  {#if focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
+    <div class="earth-compare" aria-hidden="true">
+      <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
+      <div class="earth-compare-label">
+        EARTH FOR SCALE<br />
+        <span class="ratio">{focusedStats.diameterRatioEarth.toFixed(2)}× diameter</span>
+      </div>
+    </div>
+  {/if}
+
+  <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
+       atmospheric pressure, rotation period. Lens-gated by the
+       'planet-stats' layer. Only when also focused on a planet. -->
+  {#if focusedOnPlanet && statsOverlayOn && selectedId && focusedStats}
+    <div class="tactical-scan" aria-hidden="true">
+      <div class="scan-eyebrow">TACTICAL SCAN · {selectedId.toUpperCase()}</div>
+      <div class="scan-row">
+        <span class="scan-label">GRAVITY</span>
+        <span class="scan-value">{focusedStats.surfaceGravityG.toFixed(2)} g</span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">ATMOSPHERE</span>
+        <span class="scan-value">
+          {focusedStats.atmoBar === 0
+            ? 'none'
+            : focusedStats.atmoBar < 0.01
+              ? `${(focusedStats.atmoBar * 1000).toFixed(2)} mbar`
+              : focusedStats.atmoBar < 10
+                ? `${focusedStats.atmoBar.toFixed(2)} bar`
+                : `${focusedStats.atmoBar.toFixed(0)} bar`}
+        </span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">ROTATION</span>
+        <span class="scan-value">
+          {#if focusedRotationHours !== null}
+            {Math.abs(focusedRotationHours) < 48
+              ? `${Math.abs(focusedRotationHours).toFixed(2)} h`
+              : `${(Math.abs(focusedRotationHours) / 24).toFixed(1)} d`}
+            {focusedRotationHours < 0 ? '· retrograde' : ''}
+          {/if}
+        </span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">DIAMETER</span>
+        <span class="scan-value">{focusedStats.diameterKm.toLocaleString()} km</span>
+      </div>
+    </div>
+  {/if}
+
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
        opposite side of the detail panel so they never collide. -->
@@ -3209,6 +3456,7 @@
     'lagrange-points',
     'magnetosphere',
     'sub-solar',
+    'planet-stats',
   ]}
 />
 
@@ -3232,6 +3480,102 @@
   }
   :global(.explore canvas) {
     display: block;
+  }
+  /* PRD-023 Slice E.2 — Earth comparison ghost. Bottom-right corner. */
+  .earth-compare {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px 6px 6px;
+    background: rgba(8, 10, 22, 0.6);
+    border: 1px solid rgba(75, 156, 211, 0.25);
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+  }
+  .earth-compare img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: block;
+  }
+  .earth-compare-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+  }
+  .earth-compare-label .ratio {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+  @media (max-width: 600px) {
+    .earth-compare {
+      bottom: 8px;
+      left: 8px;
+      padding: 4px 8px 4px 4px;
+    }
+    .earth-compare img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  /* PRD-023 Slice E.4 — Tactical scan overlay. Bottom-center, between
+     the layer chips and the detail panel on desktop. */
+  .tactical-scan {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    min-width: 220px;
+    padding: 8px 14px;
+    background: rgba(8, 10, 22, 0.7);
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    font-family: 'Space Mono', monospace;
+  }
+  .scan-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(78, 205, 196, 0.85);
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(78, 205, 196, 0.15);
+  }
+  .scan-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 2px 0;
+    font-size: 11px;
+  }
+  .scan-label {
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 1.3px;
+    font-size: 9px;
+  }
+  .scan-value {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 700;
+  }
+  @media (max-width: 600px) {
+    .tactical-scan {
+      min-width: 180px;
+      bottom: 56px;
+      padding: 6px 10px;
+    }
+    .scan-row {
+      font-size: 10px;
+    }
   }
   /* HUD controls cluster — top-left, opposite the detail panel.
      Two rows (mode toggles + visibility chips). Stays under the nav

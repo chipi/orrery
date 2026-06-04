@@ -35,8 +35,9 @@ export type LayerKey =
   | 'galaxies' // K — Local Group galaxy billboards (/explore only, GH #86)
   | 'hill-sphere' // L1 — gravity-dominance boundary (/explore only, PRD-023 Slice B)
   | 'lagrange-points' // L2 — L1/L2 markers around each planet (PRD-023 Slice B)
-  | 'magnetosphere' // L3 — stylised magnetic-field shell around gas giants + Earth (PRD-023 Slice D)
-  | 'sub-solar'; // L4 — noon-longitude marker + terminator emphasis (PRD-023 Slice D)
+  | 'magnetosphere' // L3 — stylised magnetic-field shell + magnetic axis (PRD-023 Slice D/E.3b)
+  | 'sub-solar' // L4 — noon-longitude marker + terminator emphasis (PRD-023 Slice D)
+  | 'planet-stats'; // L5 — tactical scan overlay (GRAVITY / ATMO / ROTATION) at planet focus (PRD-023 Slice E.4)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -57,6 +58,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'lagrange-points',
   'magnetosphere',
   'sub-solar',
+  'planet-stats',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -80,6 +82,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'lagrange-points': false,
   magnetosphere: false,
   'sub-solar': false,
+  'planet-stats': false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

@@ -2007,9 +2007,16 @@
         const target = new THREE.Vector3();
         next.mesh.getWorldPosition(target);
         flyToOrigin.copy(target);
-        // Land at 3× planet radius — inside the 4× LOD-in ratio so the
-        // 4K texture is already swapped in by the time the tween ends.
-        flyToR = next.planet.size3 * 3;
+        // Land at 6× planet radius (was 3) — far enough out that the
+        // whole satellite system fits on screen with margin for
+        // further zoom-in, but still inside the 15× LOD-in ratio so
+        // the 4K texture is already in by tween end. User direction
+        // 2026-06-03: "Adjust default zoom when we click on planet
+        // to half of what it is so I can see all moons at screen
+        // and have space to further zoom in if I want." Earth's
+        // Moon at orbitUnits 24 is well inside the 6 × 5.2 = 31 unit
+        // landing camR (the camera is further than the moon orbit).
+        flyToR = next.planet.size3 * 6;
         flyToMinR = next.planet.size3 * 1.5;
         flyToMaxR = next.planet.size3 * 50;
         // Pose: look at the planet from roughly the same angle the user

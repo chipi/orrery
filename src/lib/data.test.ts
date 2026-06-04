@@ -551,8 +551,10 @@ describe('panel gallery loaders (v0.1.10)', () => {
 
 describe('SCIENCE_TABS', () => {
   it('exposes the encyclopedia tab ids in canonical order', () => {
-    // 10 teaching tabs + 2 curated companion lists (reading + watch)
-    // added at the bottom in v0.6.3 (issue #128 + #129).
+    // 11 teaching tabs + 2 curated companion lists (reading + watch)
+    // added at the bottom in v0.6.3 (issue #128 + #129). 11th tab
+    // 'planets' added 2026-06-03 by PRD-024 — pairs with the
+    // PRD-023 /explore lens annotations (#301).
     expect(SCIENCE_TABS).toEqual([
       'orbits',
       'transfers',
@@ -564,6 +566,7 @@ describe('SCIENCE_TABS', () => {
       'history',
       'observation',
       'life-in-space',
+      'planets',
       'reading-list',
       'watch-list',
     ]);

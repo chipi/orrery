@@ -109,7 +109,14 @@
     setLayer(key, !layerState[key]);
   }
 
-  type LayerMeta = { label: string; description: string };
+  type LayerMeta = {
+    label: string;
+    description: string;
+    // PRD-024 — optional deeplink to a /science article for layers
+    // that have a paired editorial section. Renders a small "→ science"
+    // link inside the layer row when provided.
+    learn?: { tab: ScienceTabId; section: string };
+  };
   function metaFor(key: LayerKey): LayerMeta {
     switch (key) {
       case 'soi':
@@ -173,30 +180,35 @@
           label: 'Hill Sphere',
           description:
             'The boundary where this planet’s gravity dominates over the Sun’s. Stylised radius (real Hill spheres can exceed the planet’s orbit).',
+          learn: { tab: 'orbits', section: 'hill-sphere' },
         };
       case 'lagrange-points':
         return {
           label: 'Lagrange Points',
           description:
             'L1 + L2 markers along the planet→Sun line. JWST orbits Earth’s L2; SOHO sits at Earth’s L1.',
+          learn: { tab: 'orbits', section: 'lagrange-points' },
         };
       case 'magnetosphere':
         return {
           label: 'Magnetosphere',
           description:
-            'Stylised magnetic-field shell. Jupiter’s mag-tail extends past Saturn’s orbit in reality.',
+            'Stylised magnetic-field shell + dipole axis. Jupiter’s mag-tail extends past Saturn’s orbit in reality.',
+          learn: { tab: 'planets', section: 'magnetic-fields' },
         };
       case 'sub-solar':
         return {
           label: 'Sub-solar Point',
           description:
             'Marker at the longitude where it’s currently noon — the point directly under the Sun.',
+          learn: { tab: 'planets', section: 'sub-solar-and-terminator' },
         };
       case 'planet-stats':
         return {
           label: 'Tactical Scan',
           description:
             'Floating overlay with surface gravity, atmospheric pressure, and rotation period. Visible only at planet focus.',
+          learn: { tab: 'planets', section: 'planetary-stats' },
         };
     }
   }
@@ -249,7 +261,14 @@
                   />
                   <span class="row-name">{meta.label}</span>
                 </label>
-                <span class="row-desc">{meta.description}</span>
+                <span class="row-desc">
+                  {meta.description}
+                  {#if meta.learn}
+                    <a class="row-learn" href="{base}/science/{meta.learn.tab}/{meta.learn.section}"
+                      >→ science</a
+                    >
+                  {/if}
+                </span>
               </li>
             {/each}
           </ul>
@@ -432,6 +451,23 @@
     font-size: 11px;
     line-height: 1.3;
     color: rgba(255, 255, 255, 0.55);
+  }
+  .row-learn {
+    display: inline-block;
+    margin-left: 6px;
+    color: rgba(255, 215, 102, 0.85);
+    font-family: 'Space Mono', monospace;
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 215, 102, 0.25);
+  }
+  .row-learn:hover,
+  .row-learn:focus-visible {
+    color: rgba(255, 215, 102, 1);
+    border-bottom-color: rgba(255, 215, 102, 0.8);
+    outline: none;
   }
 
   /* Mobile: bottom-anchored drawer. Single column for legibility.

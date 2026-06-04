@@ -1,0 +1,36 @@
+{
+  "id": "moons-of-the-system",
+  "tab": "planets",
+  "order": 4,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Zoom in on Jupiter to see the four Galilean moons — Io, Europa, Ganymede, Callisto"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Titan (atmosphere thicker than Mars's) + Enceladus (south-pole geyser plumes)"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Pluto and Charon orbit a barycentre outside Pluto — a true binary"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Moons of the Solar System",
+      "u": "https://science.nasa.gov/solar-system/moons/",
+      "t": "intro"
+    },
+    {
+      "l": "JPL Solar System Dynamics · Planetary Satellites",
+      "u": "https://ssd.jpl.nasa.gov/sats/",
+      "t": "core"
+    },
+    {
+      "l": "Galileo Galilei · Sidereus Nuncius (1610)",
+      "u": "https://www.loc.gov/resource/rbc0001.2008rosen0775/",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "magnetic-fields",
+  "tab": "planets",
+  "order": 2,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Toggle the Magnetosphere lens to see each planet's stylised field shell + dipole axis"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Saturn's magnetic axis is uniquely aligned with its rotation axis — no other planet does this"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Uranus's dipole is tilted 58.6° from a rotation axis that's already tilted 97°"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Magnetospheres",
+      "u": "https://science.nasa.gov/heliophysics/focus-areas/magnetosphere-ionosphere/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Magnetosphere",
+      "u": "https://en.wikipedia.org/wiki/Magnetosphere",
+      "t": "core"
+    },
+    {
+      "l": "Stevenson · Planetary magnetic fields (Annual Reviews)",
+      "u": "https://www.annualreviews.org/doi/10.1146/annurev.earth.31.100901.141502",
+      "t": "deep"
+    }
+  ]
+}

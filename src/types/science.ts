@@ -11,6 +11,9 @@ export type ScienceTabId =
   | 'history'
   | 'observation'
   | 'life-in-space'
+  // PRD-024 — planet-level body science. Hosts the articles that pair
+  // with PRD-023's /explore lens annotations + always-on overlays.
+  | 'planets'
   // v0.6.3 — curated companion lists (issue #128 + #129). Standalone
   // pages (no sections); the rail's tab card links straight to
   // /science/reading-list and /science/watch-list. Layout's

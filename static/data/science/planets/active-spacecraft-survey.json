@@ -1,0 +1,27 @@
+{
+  "id": "active-spacecraft-survey",
+  "tab": "planets",
+  "order": 6,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Zoom in on Mars / Jupiter / Venus — small spacecraft glyphs render at their real orbital altitudes"
+    },
+    {
+      "route": "/fleet",
+      "context_key": "Click any active orbiter for its hardware specs + mission profile + gallery"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Solar System Exploration Missions",
+      "u": "https://science.nasa.gov/missions/?observation_type=12",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · List of active Solar System probes",
+      "u": "https://en.wikipedia.org/wiki/List_of_active_Solar_System_probes",
+      "t": "core"
+    }
+  ]
+}

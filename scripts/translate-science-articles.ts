@@ -160,7 +160,27 @@ Output JUST the JSON object. The first character must be { and the last characte
 
 function buildUserPrompt(locale: string, article: ArticleOverlay): string {
   const langName = LOCALE_NAME[locale as (typeof LOCALES)[number]];
-  return `Translate the following JSON into ${langName} (${locale}). Output JSON only.
+  const arrayHints: string[] = [];
+  if (Array.isArray(article.narrative_101)) {
+    arrayHints.push(
+      `  • narrative_101 has ${article.narrative_101.length} paragraphs (must be an array of ${article.narrative_101.length} strings)`,
+    );
+  }
+  if (Array.isArray(article.body_paragraphs)) {
+    arrayHints.push(
+      `  • body_paragraphs has ${article.body_paragraphs.length} paragraphs (must be an array of ${article.body_paragraphs.length} strings)`,
+    );
+  }
+  if (Array.isArray(article.paragraphs)) {
+    arrayHints.push(
+      `  • paragraphs has ${article.paragraphs.length} paragraphs (must be an array of ${article.paragraphs.length} strings)`,
+    );
+  }
+  const hints =
+    arrayHints.length > 0
+      ? `\n\nArray shape (use real arrays via tool_use, do NOT stringify):\n${arrayHints.join('\n')}`
+      : '';
+  return `Translate the following JSON into ${langName} (${locale}). Use the submit_translation tool with proper array values.${hints}
 
 Source (en-US):
 
@@ -182,7 +202,7 @@ async function translate(
   const tool = {
     name: 'submit_translation',
     description:
-      'Submit the translated article. Every field that was a string in the source is translated; every key is preserved exactly.',
+      'Submit the translated article. Every field that was a string in the source is translated; every key is preserved exactly. CRITICAL: narrative_101, body_paragraphs, and paragraphs MUST be arrays of strings — NOT a single string containing a JSON-encoded array. Each paragraph is a separate array element.',
     input_schema: {
       type: 'object' as const,
       properties: {

@@ -664,13 +664,13 @@
     if (config.earthOrbitalLayers) {
       const eol = config.earthOrbitalLayers;
       if (eol.karmanLineShell) {
-        const k = buildKarmanLineShell(eol.karmanLineShell);
+        const k = buildKarmanLineShell({ ...eol.karmanLineShell, planetRadius });
         scene.add(k.shell);
         scene.add(k.ring);
         earthLayerHandles.push(k);
       }
       if (eol.ozoneOverlay) {
-        const o = buildOzoneOverlay(eol.ozoneOverlay);
+        const o = buildOzoneOverlay({ ...eol.ozoneOverlay, planetRadius });
         scene.add(o.south);
         scene.add(o.north);
         earthLayerHandles.push(o);
@@ -682,6 +682,7 @@
           radiusUnits: eol.moonGhost.radiusUnits,
           distanceKm: eol.moonGhost.distanceKm,
           textureLoader,
+          planetRadius,
         });
         scene.add(mg.mesh);
         earthMoonR = mg.moonR;
@@ -720,6 +721,7 @@
               const rings = buildOrbitRings({
                 regimeColors: ringsCfg.regimeColors,
                 regimes,
+                planetRadius,
               });
               rings.group.visible = ringsCfg.visibleByDefault;
               scene.add(rings.group);
@@ -746,6 +748,7 @@
               scene,
               objects,
               moonR: earthMoonR,
+              planetRadius,
             });
             earthSats = satLayer.sats;
             earthObjectsCache = objects;

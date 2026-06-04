@@ -3354,17 +3354,28 @@
         // size3) so the two don't overlap at close zoom; at wide
         // heliocentric framing it's still visually distinct against
         // the starfield. Opacity pulses to communicate "selected".
-        if (selectedId) {
+        // Selection halo prefers the satellite when one is picked —
+        // ring follows the moon mesh instead of staying on the parent
+        // planet (#304 follow-up, 2026-06-04). Falls back to the
+        // planet halo when no satellite is selected.
+        if (selectedSatelliteKey) {
+          const [parentId, satId] = selectedSatelliteKey.split(':');
+          const parentObj = planetObjs.find((o) => o.planet.id === parentId);
+          const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
+          if (satObj) {
+            satObj.mesh.getWorldPosition(tmpWorldPos);
+            const diam = satObj.def.sizeUnits * 2.5;
+            selHalo.scale.set(diam, diam, 1);
+            selHalo.position.copy(tmpWorldPos);
+            const pulse = 0.5 + 0.5 * Math.sin(simT * 80);
+            selRingMat.opacity = 0.55 + pulse * 0.35;
+            selHalo.visible = true;
+          } else {
+            selHalo.visible = false;
+          }
+        } else if (selectedId) {
           const selObj = planetObjs.find((o) => o.planet.id === selectedId);
           if (selObj) {
-            // Sprite is camera-facing — set scale by planet diameter
-            // ×1.25 so the ring sits just outside the silhouette with
-            // a small visual margin. Sprite uses x/y scale only (z is
-            // ignored for billboards). The sprite canvas is 256² with
-            // the ring at radius 120 = 47 % of canvas; combined with
-            // the 1.25× sprite scale the ring lands at ~0.94× planet
-            // radius from the centre on screen — flush with the limb
-            // with a thin bright outline.
             const diam = selObj.planet.size3 * 2.5;
             selHalo.scale.set(diam, diam, 1);
             selHalo.position.copy(selObj.group.position);

@@ -216,17 +216,17 @@
           name: 'Moon',
           // 4k_moon.jpg already shipped — Solar System Scope, CC BY 4.0.
           texture: '4k_moon.jpg',
-          // 2026-06-03 user direction: "Honestly maybe we can [show
-          // moons] at start as well, small enough to be well visible,
-          // where Ceres size is good reference." Ceres in this scene
-          // renders at 1.8 units (sphere radius); Moon dropped to
-          // 0.9 — half Ceres so it reads as a sub-Ceres dot at wide
-          // zoom + a clearly-smaller-than-Earth body at fly-to
-          // framing, without ever dominating its parent.
+          // 2026-06-03 user direction: "Small enough to be well
+          // visible, where Ceres size is good reference." Ceres in
+          // this scene renders at 1.8 units; Moon at 0.9 = half
+          // Ceres so it reads as a sub-Ceres dot at wide zoom + a
+          // clearly-smaller-than-Earth body at fly-to framing.
           sizeUnits: 0.9,
           // Real Moon-Earth distance / Earth radius ≈ 60. Compressed
           // 60 → 24 so the Moon clears Earth's silhouette by a body
-          // diameter at post-fly-to framing.
+          // diameter at post-fly-to framing; the fly-to landing
+          // distance below is what was tuned (further than 6×) so
+          // both Earth + Moon fit on screen at every orbital phase.
           orbitUnits: 24,
           // Sidereal month — 27.32 days.
           periodDays: 27.32,
@@ -2007,16 +2007,15 @@
         const target = new THREE.Vector3();
         next.mesh.getWorldPosition(target);
         flyToOrigin.copy(target);
-        // Land at 6× planet radius (was 3) — far enough out that the
-        // whole satellite system fits on screen with margin for
-        // further zoom-in, but still inside the 15× LOD-in ratio so
-        // the 4K texture is already in by tween end. User direction
-        // 2026-06-03: "Adjust default zoom when we click on planet
-        // to half of what it is so I can see all moons at screen
-        // and have space to further zoom in if I want." Earth's
-        // Moon at orbitUnits 24 is well inside the 6 × 5.2 = 31 unit
-        // landing camR (the camera is further than the moon orbit).
-        flyToR = next.planet.size3 * 6;
+        // Land at 8× planet radius (was 3, bumped to 6 was still too
+        // close per user feedback). For Earth (size3=5.2) that's
+        // ~41.6 units of camR; Moon at orbitUnits=24 means the
+        // camera-to-Moon distance stays in the 17.6 → 65.6 range
+        // at every orbital phase, with both Earth + Moon comfortably
+        // in frame and headroom to wheel-zoom in further. Still
+        // inside the 15× LOD-in ratio so the 4K texture is in by
+        // tween end.
+        flyToR = next.planet.size3 * 8;
         flyToMinR = next.planet.size3 * 1.5;
         flyToMaxR = next.planet.size3 * 50;
         // Pose: look at the planet from roughly the same angle the user

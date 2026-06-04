@@ -86,3 +86,24 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hidden tour-anchor utility (PRD-016 §S11 / RFC-019 §12). Used by
+ * every route that wires the Curator Tour to programmatically click
+ * into elements the user would normally select via canvas raycaster
+ * or grid card. Visually offscreen but click()-able from the audio
+ * executor. The wrapping div is pointer-events:none so the absolute-
+ * positioned buttons don't capture real user clicks; the buttons
+ * themselves restore pointer-events for the executor's el.click(). */
+.tour-anchors {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.tour-anchors button {
+  pointer-events: auto;
+}

@@ -82,3 +82,34 @@
   loadGallery={getMarsSiteGallery}
   loadTraverses={loadMarsTraverses}
 />
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="mars-select-curiosity"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('curiosity')}>select curiosity</button
+  >
+  <button
+    type="button"
+    data-audio-stage="mars-select-perseverance"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('perseverance')}>select perseverance</button
+  >
+  <button
+    type="button"
+    data-audio-stage="mars-select-pathfinder"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('mars-pathfinder')}>select pathfinder</button
+  >
+</div>

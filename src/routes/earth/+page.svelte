@@ -32,3 +32,46 @@
   loadSites={getEarthLaunchSites}
   loadGallery={getEarthLaunchSiteGallery}
 />
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
+     entry points for the Curator Tour's narration "Click ISS or
+     Tiangong" / "JWST orbits there" — calls into SurfaceScene's
+     selectSite via the window hook it exposes on mount. -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="earth-select-iss"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('iss')}>select iss</button
+  >
+  <button
+    type="button"
+    data-audio-stage="earth-select-tiangong"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('tiangong')}>select tiangong</button
+  >
+  <button
+    type="button"
+    data-audio-stage="earth-select-hubble"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('hubble')}>select hubble</button
+  >
+  <button
+    type="button"
+    data-audio-stage="earth-select-jwst"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('jwst')}>select jwst</button
+  >
+</div>

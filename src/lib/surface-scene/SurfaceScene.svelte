@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
+  import { audio } from '$lib/audio-state.svelte';
   import { syncHotspotsModeUrl } from '$lib/surface-map/hotspots-url-sync';
   import { syncPanoramaUrl, readPanoramaUrlState } from '$lib/surface-map/panorama-url-sync';
   import { base } from '$app/paths';
@@ -145,6 +146,20 @@
   let selected: SurfaceSite | null = $state(null);
   let panelOpen = $state(false);
   let cleanup: (() => void) | undefined;
+  // Audio-tour teardown — set inside onMount where camR/camT closures
+  // live; called from the main cleanup so listeners don't leak on
+  // route change.
+  let tourCameraTeardown: (() => void) | undefined;
+
+  // Tour collaboration (PRD-016 §S8 / RFC-019 §12): when the surface
+  // site panel opens during an active Curator Tour, collapse the audio
+  // overlay to compact mode so the panel is fully visible. Mirrors the
+  // pattern wired into /explore for planet panels.
+  $effect(() => {
+    if (audio.tourActive && panelOpen && !audio.compact) {
+      audio.compact = true;
+    }
+  });
   // Deep-link bridge: when the URL carries ?traverse_stop=<id>, we
   // capture it here at site-load time, then resolve it after
   // traverses load by flying the camera to the stop's lat/lon.
@@ -485,6 +500,17 @@
 
   onMount(() => {
     if (!container || !canvas2d) return;
+
+    // Expose programmatic site-selection for the audio-tour executor
+    // (PRD-016 §S11 / RFC-019 §12). Hidden tour-anchor buttons in
+    // each surface route call this so the tour can demo "Click
+    // Curiosity" / "Find Tranquillity Base" without raycasting a
+    // canvas pixel.
+    if (typeof window !== 'undefined') {
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite = (id: string) => selectSite(id, { face: true });
+    }
 
     loadSites(localeFromPage($page))
       .then((list) => {
@@ -1494,6 +1520,60 @@
     const camR0 = camR;
     const camP0 = camP;
     const camT0 = camT;
+
+    // ─── Audio-tour camera demos (PRD-016 §S11 / RFC-019 §12) ─────
+    // Dispatched by the audio executor when narration says "Drag to
+    // rotate" / "Rotate the sphere" / "Zoom in to Curiosity". Drives
+    // camT (azimuth) and camRTarget (smooth-zoom) over the requested
+    // duration. Anchored to the .surface container so all three rocky-
+    // body routes share the same handler.
+    function easeInOutTour(t: number): number {
+      return t * t * (3 - 2 * t);
+    }
+    function animateCamTour(
+      get: () => number,
+      set: (v: number) => void,
+      to: number,
+      durationMs: number,
+    ): void {
+      const start = get();
+      const startTime = performance.now();
+      const step = (): void => {
+        const t = Math.min(1, (performance.now() - startTime) / durationMs);
+        set(start + (to - start) * easeInOutTour(t));
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    const onTourDragSurface = (e: Event): void => {
+      const d = (e as CustomEvent).detail as
+        | { durationMs?: number; rotateRad?: number }
+        | undefined;
+      const rotate = d?.rotateRad ?? Math.PI / 3;
+      animateCamTour(
+        () => camT,
+        (v) => (camT = v),
+        camT + rotate,
+        d?.durationMs ?? 1500,
+      );
+    };
+    const onTourZoomSurface = (e: Event): void => {
+      const d = (e as CustomEvent).detail as { durationMs?: number; factor?: number } | undefined;
+      const factor = d?.factor ?? 0.55;
+      const target = Math.max(10, Math.min(800, camR * factor));
+      animateCamTour(
+        () => camRTarget,
+        (v) => (camRTarget = v),
+        target,
+        d?.durationMs ?? 1500,
+      );
+    };
+    container?.addEventListener('audio-stage-drag', onTourDragSurface);
+    container?.addEventListener('audio-stage-zoom', onTourZoomSurface);
+    tourCameraTeardown = () => {
+      container?.removeEventListener('audio-stage-drag', onTourDragSurface);
+      container?.removeEventListener('audio-stage-zoom', onTourZoomSurface);
+    };
 
     // Smooth-zoom target (Drift 13 consolidation). Wheel/pinch update
     // camRTarget; RAF lerps camR toward it at 15%/frame so zoom feels
@@ -3116,7 +3196,10 @@
     };
   });
 
-  onDestroy(() => cleanup?.());
+  onDestroy(() => {
+    cleanup?.();
+    tourCameraTeardown?.();
+  });
 </script>
 
 <div class="surface-scene">

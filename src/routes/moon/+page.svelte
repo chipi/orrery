@@ -47,3 +47,43 @@
 <svelte:head><title>{m.moon_page_title()}</title></svelte:head>
 
 <SurfaceScene config={MOON_CONFIG} loadSites={getMoonSites} loadGallery={getMoonSiteGallery} />
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="moon-select-apollo11"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('apollo11')}>select apollo 11</button
+  >
+  <button
+    type="button"
+    data-audio-stage="moon-select-change4"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('change4')}>select chang'e 4</button
+  >
+  <button
+    type="button"
+    data-audio-stage="moon-select-chandrayaan3"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('chandrayaan3')}>select chandrayaan-3</button
+  >
+  <button
+    type="button"
+    data-audio-stage="moon-select-apollo17"
+    tabindex="-1"
+    onclick={() =>
+      (
+        window as Window & { __surfaceSceneSelectSite?: (id: string) => void }
+      ).__surfaceSceneSelectSite?.('apollo17')}>select apollo 17</button
+  >
+</div>

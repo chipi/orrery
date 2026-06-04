@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from '$app/environment';
   import { onMount, onDestroy } from 'svelte';
+  import { audio } from '$lib/audio-state.svelte';
   import { get } from 'svelte/store';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
@@ -36,6 +37,14 @@
   let viewMode: '3d' | '2d-top' | '2d-side' | '2d-front' | 'list' = $state('3d');
   let selected: IssModule | null = $state(null);
   let panelOpen = $state(false);
+
+  // Auto-compact the Curator Tour overlay when a module panel opens
+  // during an active tour (PRD-016 §S8 / RFC-019 §12).
+  $effect(() => {
+    if (audio.tourActive && panelOpen && !audio.compact) {
+      audio.compact = true;
+    }
+  });
   let ignoreModuleParamUntilClear = $state(false);
   let perfBanner = $state(false);
   let lowMemBanner = $state(false);
@@ -1014,6 +1023,36 @@
       {/if}
     </div>
   {/if}
+
+  <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
+       module selection so the tour can demo "Click Destiny / Kibo /
+       Zarya" without raycasting the 3D model. -->
+  <div class="tour-anchors" aria-hidden="true">
+    <button
+      type="button"
+      data-audio-stage="iss-select-zarya"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('zarya')}>select zarya</button
+    >
+    <button
+      type="button"
+      data-audio-stage="iss-select-destiny"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('destiny')}>select destiny</button
+    >
+    <button
+      type="button"
+      data-audio-stage="iss-select-kibo"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('kibo')}>select kibo</button
+    >
+    <button
+      type="button"
+      data-audio-stage="iss-select-columbus"
+      tabindex="-1"
+      onclick={() => blueprintModuleClick('columbus')}>select columbus</button
+    >
+  </div>
 
   <StationModulePanel
     module={selected}

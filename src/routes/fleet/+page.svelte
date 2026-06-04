@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, untrack } from 'svelte';
   import { page } from '$app/stores';
+  import { audio } from '$lib/audio-state.svelte';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { getFleet, getFleetGallery, getFleetIndex } from '$lib/data';
@@ -21,6 +22,14 @@
 
   let selectedEntry: FleetEntry | null = $state(null);
   let panelOpen = $state(false);
+
+  // Auto-compact the Curator Tour overlay when the fleet detail panel
+  // opens during an active tour (PRD-016 §S8 / RFC-019 §12).
+  $effect(() => {
+    if (audio.tourActive && panelOpen && !audio.compact) {
+      audio.compact = true;
+    }
+  });
   let panelLoadingId = $state<string | null>(null);
 
   let categoryFilter: FleetCategory | 'ALL' = $state('ALL');
@@ -558,6 +567,30 @@
       </ul>
     {/if}
   {/if}
+</div>
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
+     handles for the audio executor's `click` action so the tour can
+     demonstrate "Click Saturn V" without simulating a grid-card click. -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="fleet-select-saturn-v"
+    tabindex="-1"
+    onclick={() => void loadEntry('saturn-v')}>select saturn v</button
+  >
+  <button
+    type="button"
+    data-audio-stage="fleet-select-iss"
+    tabindex="-1"
+    onclick={() => void loadEntry('iss')}>select iss</button
+  >
+  <button
+    type="button"
+    data-audio-stage="fleet-select-hubble"
+    tabindex="-1"
+    onclick={() => void loadEntry('hubble')}>select hubble</button
+  >
 </div>
 
 <FleetEntryPanel

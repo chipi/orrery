@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
+  import { audio } from '$lib/audio-state.svelte';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import { getMissionsForLibrary } from '$lib/data';
@@ -182,6 +183,14 @@
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
   let panelOpen = $state(false);
+
+  // Auto-compact the Curator Tour overlay when the mission detail panel
+  // opens during an active tour (PRD-016 §S8 / RFC-019 §12).
+  $effect(() => {
+    if (audio.tourActive && panelOpen && !audio.compact) {
+      audio.compact = true;
+    }
+  });
 
   let selectedMission = $derived(
     selectedId ? (missions.find((mission) => mission.id === selectedId) ?? null) : null,
@@ -537,6 +546,30 @@
 </div>
 
 <MissionPanel mission={selectedMission} open={panelOpen} onClose={closePanel} onFly={flyMission} />
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
+     handles for the audio executor's `click` action so the tour can
+     demonstrate "Click any mission card" without a real raycaster hit. -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="missions-select-apollo11"
+    tabindex="-1"
+    onclick={() => selectMission('apollo11')}>select apollo 11</button
+  >
+  <button
+    type="button"
+    data-audio-stage="missions-select-curiosity"
+    tabindex="-1"
+    onclick={() => selectMission('curiosity')}>select curiosity</button
+  >
+  <button
+    type="button"
+    data-audio-stage="missions-select-voyager-2"
+    tabindex="-1"
+    onclick={() => selectMission('voyager-2')}>select voyager 2</button
+  >
+</div>
 
 <style>
   .library {

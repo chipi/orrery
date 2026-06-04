@@ -227,48 +227,86 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /plan · guide-plan ─────────────────────────────────────────────
+  // ── /plan · guide-plan — VTT 149 s ─────────────────────────────────
   'guide-plan': [
-    { at_sec: 6, action: 'cue', target: 'Pick a destination — Mars is the default.' },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="plan-selector-bar"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="plan-selector-bar"]' },
+    // VTT § 00:00:02.2 "You pick a destination — Mars, Venus, Mercury…"
+    { at_sec: 2, action: 'scroll-to', target: '[data-audio-stage="plan-selector-bar"]' },
+    { at_sec: 4, action: 'flash', target: '[data-audio-stage="plan-selector-bar"]' },
     {
-      at_sec: 60,
+      at_sec: 6,
+      action: 'cue',
+      target: 'Pick a destination — Mars is the default.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:00:23.3 "Look at the chart"
+    { at_sec: 23, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
+    { at_sec: 25, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
+    // VTT § 00:00:44.1 "Click anywhere on the chart"
+    {
+      at_sec: 44,
       action: 'cue',
       target: 'Click anywhere on the C-shape; the panel reads the numbers.',
+      duration_ms: 4000,
     },
-    { at_sec: 60, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
-    { at_sec: 62, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
+    // VTT § 00:01:25.8 "Try a different destination"
     {
-      at_sec: 150,
+      at_sec: 86,
       action: 'cue',
       target: 'Try Jupiter or Mercury — notice how the geometry shifts.',
+      duration_ms: 4000,
+    },
+    { at_sec: 88, action: 'flash', target: '[data-audio-stage="plan-selector-bar"]' },
+    // VTT § 00:02:25.1 "Pick a destination. Click the chart."
+    {
+      at_sec: 145,
+      action: 'cue',
+      target: 'Pick a destination. Click the chart.',
+      duration_ms: 4000,
     },
   ],
 
-  // ── /plan · porkchop — Enthusiast ─────────────────────────────────
+  // ── /plan · porkchop — Enthusiast, VTT 120 s ──────────────────────
   porkchop: [
+    // VTT § 00:00:00.0 "This chart is called a porkchop plot"
+    { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
+    { at_sec: 3, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
+    // VTT § 00:01:08.2 "Look at the chart"
     {
-      at_sec: 40,
+      at_sec: 68,
       action: 'cue',
       target: 'Trace the bottom of the C with your eye — that is the cheap window.',
+      duration_ms: 4500,
     },
-    { at_sec: 40, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
-    { at_sec: 42, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
+    { at_sec: 70, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
+    // VTT § 00:01:42.5 "Every Mars launch in history sits on the bottom of one of these C-shapes"
     {
-      at_sec: 100,
+      at_sec: 102,
       action: 'cue',
       target: 'Every Mars launch in history sits on the bottom of one of these.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /fly · guide-fly ───────────────────────────────────────────────
+  // ── /fly · guide-fly — VTT 143 s ───────────────────────────────────
   'guide-fly': [
-    { at_sec: 6, action: 'cue', target: 'Press play. Watch the spacecraft slide along the arc.' },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="fly-hud"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="fly-hud"]' },
-    { at_sec: 80, action: 'cue', target: 'Try the cislunar view toggle in the toolbar.' },
-    { at_sec: 150, action: 'cue', target: 'Click any phase chip below to jump to that moment.' },
+    // VTT § 00:00:16.0 "Look at the arc"
+    { at_sec: 16, action: 'scroll-to', target: '[data-audio-stage="fly-hud"]' },
+    { at_sec: 18, action: 'flash', target: '[data-audio-stage="fly-hud"]' },
+    // VTT § 00:00:44.8 "Press play. Watch the spacecraft slide along the arc."
+    {
+      at_sec: 44,
+      action: 'cue',
+      target: 'Press play — watch the spacecraft slide along the arc.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:01:55.0 "Click any phase chip"
+    {
+      at_sec: 115,
+      action: 'cue',
+      target: 'Click any phase chip to jump to that moment.',
+      duration_ms: 4000,
+    },
+    { at_sec: 117, action: 'flash', target: '[data-audio-stage="fly-hud"]' },
   ],
 
   // ── /fly · cislunar-frame — Enthusiast ────────────────────────────
@@ -285,23 +323,34 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /missions · guide-missions ────────────────────────────────────
+  // ── /missions · guide-missions — VTT 136 s ────────────────────────
   'guide-missions': [
+    // VTT § 00:00:20.6 "Use the filters at the top"
+    { at_sec: 20, action: 'scroll-to', target: '[data-audio-stage="missions-filters"]' },
+    { at_sec: 22, action: 'flash', target: '[data-audio-stage="missions-filters"]' },
     {
-      at_sec: 6,
+      at_sec: 23,
       action: 'cue',
-      target: 'Try the filter chips at the top — status, destination, agency.',
+      target: 'Filter by destination, status, agency.',
+      duration_ms: 4000,
     },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="missions-filters"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="missions-filters"]' },
+    // VTT § 00:01:18.5 "Click any mission card"
     {
-      at_sec: 70,
+      at_sec: 78,
       action: 'cue',
-      target: 'Filter status = FAILED. See the redemption-arc pairings.',
+      target: 'Click any card — like this one.',
+      duration_ms: 4000,
     },
-    { at_sec: 160, action: 'cue', target: 'Click any card to open the full mission panel.' },
-    { at_sec: 160, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
-    { at_sec: 162, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
+    { at_sec: 80, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
+    { at_sec: 82, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
+    { at_sec: 84, action: 'click', target: '[data-audio-stage="missions-select-apollo11"]' },
+    // VTT § 00:01:42.9 "Look at the timeline"
+    {
+      at_sec: 103,
+      action: 'cue',
+      target: 'Look at the timeline.',
+      duration_ms: 3500,
+    },
   ],
 
   // ── /missions · voyager-grand-tour — Enthusiast ───────────────────
@@ -320,22 +369,41 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 60, action: 'cue', target: 'The Grand Finale — 22 orbits through the ring gap.' },
   ],
 
-  // ── /earth · guide-earth ──────────────────────────────────────────
+  // ── /earth · guide-earth — VTT 161 s ──────────────────────────────
   'guide-earth': [
+    // VTT § 00:00:13.6 "Look at the bottom of the diagram" / ISS+Tiangong
+    { at_sec: 13, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 15, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
-      at_sec: 6,
+      at_sec: 16,
       action: 'cue',
-      target: 'Look at the bottom — ISS and Tiangong at 400 km altitude.',
+      target: 'ISS and Tiangong at ~400 km altitude.',
+      duration_ms: 5000,
     },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 60, action: 'cue', target: 'Higher — Hubble at 550 km.' },
+    // VTT § 00:00:33.2 "Look slightly higher" / Hubble at 550 km
     {
-      at_sec: 100,
+      at_sec: 33,
+      action: 'cue',
+      target: 'Higher — Hubble at 550 km.',
+      duration_ms: 4000,
+    },
+    { at_sec: 35, action: 'click', target: '[data-audio-stage="earth-select-hubble"]' },
+    // VTT § 00:01:33.8 "JWST orbits there"
+    {
+      at_sec: 93,
       action: 'cue',
       target: 'Top of the view — JWST at the Sun-Earth L2, 1.5 million km out.',
+      duration_ms: 5000,
     },
-    { at_sec: 170, action: 'cue', target: 'Click any spacecraft for its story.' },
+    { at_sec: 96, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
+    // VTT § 00:02:09.8 "Click any spacecraft"
+    {
+      at_sec: 130,
+      action: 'cue',
+      target: 'Click any spacecraft for its story — like this.',
+      duration_ms: 4000,
+    },
+    { at_sec: 133, action: 'click', target: '[data-audio-stage="earth-select-iss"]' },
   ],
 
   // ── /earth · jwst-l2-halo — Enthusiast ────────────────────────────
@@ -344,47 +412,122 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 60, action: 'cue', target: 'L2 is 1.5 million km out, along the Sun-Earth line.' },
   ],
 
-  // ── /moon · guide-moon ────────────────────────────────────────────
+  // ── /moon · guide-moon — VTT 161 s ────────────────────────────────
   'guide-moon': [
-    { at_sec: 6, action: 'cue', target: 'Drag the sphere — each yellow marker is a landing site.' },
+    // VTT § 00:00:06.6 "Drag to rotate"
     { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 50, action: 'cue', target: 'Find Tranquillity Base — Apollo 11.' },
-    { at_sec: 130, action: 'cue', target: 'Now look near the south pole — Chandrayaan-3, 2023.' },
-    { at_sec: 200, action: 'cue', target: 'Click any marker to read its mission record.' },
+    {
+      at_sec: 7,
+      action: 'drag',
+      target: '[data-audio-stage="surface-hud"]',
+      params: { rotateRad: 0.7 },
+      duration_ms: 1800,
+    },
+    {
+      at_sec: 10,
+      action: 'cue',
+      target: 'Drag the sphere — each yellow marker is a landing site.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:00:22.7 "Tranquillity Base"
+    {
+      at_sec: 22,
+      action: 'cue',
+      target: 'Find Tranquillity Base — Apollo 11.',
+      duration_ms: 4000,
+    },
+    { at_sec: 24, action: 'click', target: '[data-audio-stage="moon-select-apollo11"]' },
+    // VTT § 00:00:42.4 "Chandrayaan-3 placed the Vikram lander near the south pole"
+    {
+      at_sec: 42,
+      action: 'cue',
+      target: 'Near the south pole — Chandrayaan-3, 2023.',
+      duration_ms: 4000,
+    },
+    { at_sec: 44, action: 'click', target: '[data-audio-stage="moon-select-chandrayaan3"]' },
+    // VTT § 00:00:54.6 "Click any marker"
+    {
+      at_sec: 54,
+      action: 'cue',
+      target: 'Click any marker to read its mission record.',
+      duration_ms: 4000,
+    },
   ],
 
-  // ── /moon · moon-one-lifetime — Curator ───────────────────────────
+  // ── /moon · moon-one-lifetime — Curator, VTT 154 s ────────────────
   'moon-one-lifetime': [
-    { at_sec: 60, action: 'cue', target: 'Look at the cluster of Apollo sites on the near side.' },
-    { at_sec: 62, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:02:10.7 "Look at the map"
     {
-      at_sec: 100,
+      at_sec: 130,
       action: 'cue',
-      target: 'Six landings in 3.5 years. Then a half-century of silence.',
+      target: 'Look at the cluster of Apollo sites on the near side.',
+      duration_ms: 4000,
+    },
+    { at_sec: 132, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:02:14.4 "Zero on the far side" — Curator close
+    {
+      at_sec: 134,
+      action: 'cue',
+      target: 'Six landings in 3.5 years. Then half a century of silence.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /moon · cernan-last-words — Guide (anchored Atmospheric Move) ─
+  // ── /moon · cernan-last-words — Guide (Atmospheric Move), VTT 111 s ─
   'cernan-last-words': [
-    { at_sec: 5, action: 'cue', target: 'Find Taurus-Littrow — Apollo 17, the last footstep.' },
-    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:00.0 "Look at this map of the Moon"
+    { at_sec: 0, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 2, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:16.1 "Taurus-Littrow"
     {
-      at_sec: 100,
+      at_sec: 16,
       action: 'cue',
-      target: 'Apollo 17 left in December 1972. The footprint has been alone since.',
+      target: 'Find Taurus-Littrow — Apollo 17, the last footstep.',
+      duration_ms: 4500,
+    },
+    { at_sec: 18, action: 'click', target: '[data-audio-stage="moon-select-apollo17"]' },
+    // VTT § 00:00:36.3 — Cernan's last-words reading begins
+    {
+      at_sec: 36,
+      action: 'cue',
+      target: 'Apollo 17 left December 1972. The footprint has been alone since.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /moon · far-side — Guide (anchored Atmospheric Move) ──────────
+  // ── /moon · far-side — Guide (Atmospheric Move), VTT 115 s ────────
   'far-side': [
-    { at_sec: 8, action: 'cue', target: 'Rotate the sphere to the far side.' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 90, action: 'cue', target: "Find Von Kármán crater — Chang'e 4 lives there." },
+    // VTT § 00:00:10.7 "The other side — the far side — permanently turned away"
+    { at_sec: 10, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 12, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:44.0 "You can rotate this map and see the far side"
     {
-      at_sec: 150,
+      at_sec: 44,
+      action: 'cue',
+      target: 'Rotate the sphere to the far side.',
+      duration_ms: 4000,
+    },
+    {
+      at_sec: 46,
+      action: 'drag',
+      target: '[data-audio-stage="surface-hud"]',
+      params: { rotateRad: 3.14 },
+      duration_ms: 2200,
+    },
+    // VTT § 00:00:52.0 "Chang'e 4 made the first soft landing on the far side, inside Von Kármán crater"
+    {
+      at_sec: 52,
+      action: 'cue',
+      target: "Find Von Kármán crater — Chang'e 4 lives there.",
+      duration_ms: 4500,
+    },
+    { at_sec: 54, action: 'click', target: '[data-audio-stage="moon-select-change4"]' },
+    // VTT § 00:01:52.8 "Look at this map and pick the spot"
+    {
+      at_sec: 112,
       action: 'cue',
       target: 'No human has ever set foot on the side you are looking at.',
+      duration_ms: 5000,
     },
   ],
 
@@ -402,84 +545,170 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /mars · guide-mars ────────────────────────────────────────────
+  // ── /mars · guide-mars — VTT 152 s ────────────────────────────────
   'guide-mars': [
+    { at_sec: 4, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 6, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
-      at_sec: 6,
+      at_sec: 8,
       action: 'cue',
       target: 'Drag to rotate Mars. Every marker is a spacecraft we sent.',
+      duration_ms: 4500,
     },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
-      at_sec: 50,
+      at_sec: 10,
+      action: 'drag',
+      target: '[data-audio-stage="surface-hud"]',
+      params: { rotateRad: 0.8 },
+      duration_ms: 1800,
+    },
+    // VTT § 00:00:29.2 "Click Pathfinder's marker"
+    { at_sec: 29, action: 'click', target: '[data-audio-stage="mars-select-pathfinder"]' },
+    // VTT § 00:00:48.9 "Click Curiosity, in Gale Crater"
+    {
+      at_sec: 48,
       action: 'cue',
-      target: 'Find Curiosity at Gale Crater — center-south, still operating.',
+      target: 'Find Curiosity at Gale Crater — still operating.',
+      duration_ms: 4500,
     },
+    { at_sec: 50, action: 'click', target: '[data-audio-stage="mars-select-curiosity"]' },
+    // VTT § 00:01:06.5 "Click Perseverance, in Jezero Crater"
     {
-      at_sec: 110,
+      at_sec: 66,
       action: 'cue',
-      target: 'Look for Perseverance at Jezero — the sample-cache rover.',
+      target: 'Perseverance at Jezero — the sample-cache rover.',
+      duration_ms: 4500,
     },
+    { at_sec: 68, action: 'click', target: '[data-audio-stage="mars-select-perseverance"]' },
+    // VTT § 00:02:07.4 "Zoom in to Curiosity in Gale Crater to see its full route"
     {
-      at_sec: 180,
+      at_sec: 127,
       action: 'cue',
       target: 'Zoom in to Curiosity — the thin line is twelve years of driving.',
+      duration_ms: 5000,
     },
-  ],
-
-  // ── /mars · mars-what-for — Curator ───────────────────────────────
-  'mars-what-for': [
-    { at_sec: 50, action: 'cue', target: 'Look at the rovers on the map. Silent. But there.' },
-    { at_sec: 52, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 130,
-      action: 'cue',
-      target: 'Every Moon base, every ISS module, every reusable booster — rehearsal.',
+      action: 'zoom',
+      target: '[data-audio-stage="surface-hud"]',
+      params: { factor: 0.35 },
+      duration_ms: 2000,
     },
   ],
 
-  // ── /mars · signal-delay — Enthusiast ─────────────────────────────
-  'signal-delay': [
+  // ── /mars · mars-what-for — Curator, VTT 139 s ────────────────────
+  'mars-what-for': [
+    // VTT § 00:00:24.6 "Look at the screens in this orrery"
     {
-      at_sec: 30,
+      at_sec: 24,
       action: 'cue',
-      target: 'Imagine pressing a button now. Fourteen minutes until anything happens.',
+      target: 'Every Moon base, every ISS module — rehearsal for here.',
+      duration_ms: 5000,
     },
-    { at_sec: 30, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 32, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 26, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:01:52.7 "Look at the rovers already on it — silent, persistent"
     {
-      at_sec: 80,
+      at_sec: 112,
+      action: 'cue',
+      target: 'Look at the rovers on the map. Silent. But there.',
+      duration_ms: 5000,
+    },
+    { at_sec: 114, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+  ],
+
+  // ── /mars · signal-delay — Enthusiast, VTT 79 s ───────────────────
+  'signal-delay': [
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:26.5 "This is why no human on Earth has ever driven Curiosity in real time"
+    {
+      at_sec: 26,
+      action: 'cue',
+      target: 'No human has ever driven Curiosity in real time.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:00:48.2 "Each Martian day — each sol — the team at JPL sends a sequence"
+    {
+      at_sec: 48,
       action: 'cue',
       target: 'No joystick. A planner. Each sol — one sequence at a time.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /mars · one-way-light-time — Enthusiast ───────────────────────
+  // ── /mars · one-way-light-time — Enthusiast, VTT 86 s ─────────────
   'one-way-light-time': [
-    { at_sec: 35, action: 'cue', target: 'Apollo had 1.3-second light-time. Mars has 14 minutes.' },
-    { at_sec: 37, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 90, action: 'cue', target: 'There is no manual mode on the rover. There cannot be.' },
-  ],
-
-  // ── /mars · curiosity-persistence — Enthusiast ────────────────────
-  'curiosity-persistence': [
-    { at_sec: 25, action: 'cue', target: 'Four centimeters per second. A baby crawls faster.' },
-    { at_sec: 27, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
-    { at_sec: 80, action: 'cue', target: 'Twelve years. Thirty-five kilometers. Alone.' },
-  ],
-
-  // ── /iss · guide-iss ──────────────────────────────────────────────
-  'guide-iss': [
-    { at_sec: 5, action: 'cue', target: 'Drag to rotate the station. Each module is clickable.' },
-    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="iss-module-list"]' },
-    { at_sec: 9, action: 'flash', target: '[data-audio-stage="iss-module-list"]' },
-    { at_sec: 50, action: 'cue', target: 'Find Zarya — the back end. The first module.' },
-    { at_sec: 130, action: 'cue', target: 'Click Destiny — the US lab. Or Kibo — the Japanese.' },
+    // VTT § 00:00:39.1 "Now imagine you tried to drive a Mars rover"
     {
-      at_sec: 190,
+      at_sec: 39,
+      action: 'cue',
+      target: 'Apollo had 1.3-second light-time. Mars has 14 minutes.',
+      duration_ms: 5000,
+    },
+    { at_sec: 41, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:01:05.8 "This is why there is no manual mode on the rover"
+    {
+      at_sec: 65,
+      action: 'cue',
+      target: 'There is no manual mode on the rover. There cannot be.',
+      duration_ms: 5000,
+    },
+  ],
+
+  // ── /mars · curiosity-persistence — Enthusiast, VTT 102 s ─────────
+  'curiosity-persistence': [
+    // VTT § 00:00:00.0 "Curiosity drives at a top speed of about four centimeters per second"
+    {
+      at_sec: 1,
+      action: 'cue',
+      target: 'Four centimeters per second. A baby crawls faster.',
+      duration_ms: 5000,
+    },
+    { at_sec: 3, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:44.9 "Every single sol of those twelve years, Curiosity has woken up"
+    {
+      at_sec: 44,
+      action: 'cue',
+      target: 'Twelve years. Thirty-five kilometers. Alone.',
+      duration_ms: 5000,
+    },
+  ],
+
+  // ── /iss · guide-iss — VTT 152 s ──────────────────────────────────
+  'guide-iss': [
+    // VTT § 00:00:17.7 "Drag to rotate. Each module is clickable."
+    { at_sec: 15, action: 'scroll-to', target: '[data-audio-stage="iss-module-list"]' },
+    { at_sec: 17, action: 'flash', target: '[data-audio-stage="iss-module-list"]' },
+    {
+      at_sec: 19,
+      action: 'cue',
+      target: 'Drag to rotate. Each module is clickable.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:00:28.8 "Zarya — the Functional Cargo Block — was the first module"
+    {
+      at_sec: 28,
+      action: 'cue',
+      target: 'Find Zarya — the back end. The first module.',
+      duration_ms: 4000,
+    },
+    { at_sec: 30, action: 'click', target: '[data-audio-stage="iss-select-zarya"]' },
+    // VTT § 00:01:07.0 "Click Destiny" / 01:19.5 "Click Columbus" / 01:25.2 "Click Kibo"
+    {
+      at_sec: 67,
+      action: 'cue',
+      target: 'Click Destiny — the US lab.',
+      duration_ms: 4000,
+    },
+    { at_sec: 69, action: 'click', target: '[data-audio-stage="iss-select-destiny"]' },
+    { at_sec: 79, action: 'click', target: '[data-audio-stage="iss-select-columbus"]' },
+    { at_sec: 86, action: 'click', target: '[data-audio-stage="iss-select-kibo"]' },
+    // VTT § 00:02:16.3 "Eighteen pressurized modules"
+    {
+      at_sec: 136,
       action: 'cue',
       target: 'Eighteen modules. Twenty-six countries. People living there now.',
+      duration_ms: 5000,
     },
   ],
 
@@ -489,13 +718,35 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 70, action: 'cue', target: 'Russian-built. American-owned. NASA paid the bill.' },
   ],
 
-  // ── /tiangong · guide-tiangong ────────────────────────────────────
+  // ── /tiangong · guide-tiangong — VTT 136 s ────────────────────────
   'guide-tiangong': [
-    { at_sec: 5, action: 'cue', target: 'Rotate the T-shape. Three modules, four solar arrays.' },
-    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="tiangong-module-list"]' },
-    { at_sec: 9, action: 'flash', target: '[data-audio-stage="tiangong-module-list"]' },
-    { at_sec: 60, action: 'cue', target: 'Click Tianhe — the upright of the T. The core module.' },
-    { at_sec: 130, action: 'cue', target: 'Click Wentian or Mengtian — the two laboratories.' },
+    // VTT § 00:00:18.7 "Drag to rotate. Three modules."
+    { at_sec: 16, action: 'scroll-to', target: '[data-audio-stage="tiangong-module-list"]' },
+    { at_sec: 18, action: 'flash', target: '[data-audio-stage="tiangong-module-list"]' },
+    {
+      at_sec: 20,
+      action: 'cue',
+      target: 'Rotate the T-shape. Three modules, four solar arrays.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:00:22.1 "The core of the T is Tianhe"
+    {
+      at_sec: 22,
+      action: 'cue',
+      target: 'Tianhe — the upright of the T. The core module.',
+      duration_ms: 4000,
+    },
+    { at_sec: 24, action: 'click', target: '[data-audio-stage="tiangong-select-tianhe"]' },
+    // VTT § 00:00:37.3 "Click Wentian — the arm to one side" / 00:55.4 "Click Mengtian"
+    { at_sec: 39, action: 'click', target: '[data-audio-stage="tiangong-select-wentian"]' },
+    { at_sec: 57, action: 'click', target: '[data-audio-stage="tiangong-select-mengtian"]' },
+    // VTT § 00:01:55.7 "Click any module"
+    {
+      at_sec: 115,
+      action: 'cue',
+      target: 'Click any module — three modules, twelve flights, seventeen months.',
+      duration_ms: 5000,
+    },
   ],
 
   // ── /tiangong · tianhe-core — Enthusiast ──────────────────────────
@@ -508,21 +759,38 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /science · guide-science ──────────────────────────────────────
+  // ── /science · guide-science — VTT 135 s ──────────────────────────
   'guide-science': [
+    // VTT § 00:00:20.7 "The encyclopedia is organized into ten tabs across the top"
+    { at_sec: 18, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
+    { at_sec: 20, action: 'flash', target: '[data-audio-stage="science-tabs"]' },
     {
-      at_sec: 6,
+      at_sec: 21,
       action: 'cue',
-      target: 'Look at the ten tabs across the top — every physics domain.',
+      target: 'Ten tabs across the top — every physics domain.',
+      duration_ms: 4500,
     },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="science-tabs"]' },
-    { at_sec: 60, action: 'cue', target: 'Press Cmd-K — full text search across every section.' },
-    { at_sec: 62, action: 'flash', target: '[data-audio-stage="science-search-button"]' },
+    // VTT § 00:00:37.4 "Click any section card"
     {
-      at_sec: 130,
+      at_sec: 37,
       action: 'cue',
       target: 'Click any section card — math rendered, diagrams hand-drawn.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:01:23.4 "Try the search" / 00:01:24.4 "Press Cmd-K"
+    {
+      at_sec: 83,
+      action: 'cue',
+      target: 'Press Cmd-K — full text search across every section.',
+      duration_ms: 4500,
+    },
+    { at_sec: 85, action: 'flash', target: '[data-audio-stage="science-search-button"]' },
+    // VTT § 00:02:13.1 "Pick a tab"
+    {
+      at_sec: 133,
+      action: 'cue',
+      target: 'Pick a tab. Read the section. Click the chip back into the orrery.',
+      duration_ms: 5000,
     },
   ],
 
@@ -536,20 +804,42 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /fleet · guide-fleet ──────────────────────────────────────────
+  // ── /fleet · guide-fleet — VTT 167 s ──────────────────────────────
   'guide-fleet': [
+    // VTT § 00:00:23.2 "Crewed spacecraft. Cargo spacecraft." (category list)
+    { at_sec: 24, action: 'scroll-to', target: '[data-audio-stage="fleet-filters"]' },
+    { at_sec: 26, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
     {
-      at_sec: 6,
+      at_sec: 28,
       action: 'cue',
-      target: 'Use the category list on the left — Launchers, Crewed, Cargo...',
+      target: 'Use the category list — Launchers, Crewed, Cargo, Probes…',
+      duration_ms: 4500,
     },
-    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="fleet-filters"]' },
-    { at_sec: 8, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
-    { at_sec: 60, action: 'cue', target: 'Filter to Crewed Spacecraft. Vostok at the top.' },
-    { at_sec: 90, action: 'cue', target: 'Click Saturn V. Read the anatomy diagram.' },
-    { at_sec: 160, action: 'cue', target: 'Try the epoch timeline — compare 1965 to 2025.' },
-    { at_sec: 160, action: 'scroll-to', target: '[data-audio-stage="fleet-grid"]' },
-    { at_sec: 162, action: 'flash', target: '[data-audio-stage="fleet-grid"]' },
+    // VTT § 00:00:35.7 "Try crewed spacecraft. Vostok at the top."
+    {
+      at_sec: 35,
+      action: 'cue',
+      target: 'Filter to Crewed Spacecraft. Vostok at the top.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:01:11.5 "Click Saturn V"
+    {
+      at_sec: 71,
+      action: 'cue',
+      target: 'Click Saturn V — read the anatomy diagram.',
+      duration_ms: 4000,
+    },
+    { at_sec: 73, action: 'scroll-to', target: '[data-audio-stage="fleet-grid"]' },
+    { at_sec: 75, action: 'flash', target: '[data-audio-stage="fleet-grid"]' },
+    { at_sec: 77, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
+    // VTT § 00:01:58.9 "Try the epoch timeline at the top"
+    {
+      at_sec: 118,
+      action: 'cue',
+      target: 'Try the epoch timeline — compare 1965 to 2025.',
+      duration_ms: 4500,
+    },
+    { at_sec: 120, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
   ],
 
   // ── /fleet · saturn-v-anchor — Enthusiast ─────────────────────────
@@ -563,20 +853,22 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── / · capability-ladder-close — Curator tour close ──────────────
+  // ── / · capability-ladder-close — Curator tour close, VTT 106 s ───
   'capability-ladder-close': [
     {
-      at_sec: 40,
+      at_sec: 30,
       action: 'cue',
       target: 'NASA · ESA · Roscosmos · CNSA · ISRO · JAXA · CSA · SpaceIL.',
+      duration_ms: 5000,
     },
     {
-      at_sec: 110,
+      at_sec: 90,
       action: 'cue',
       target: 'End of the tour. Pick a card and begin your own visit.',
+      duration_ms: 5000,
     },
-    { at_sec: 112, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
-    { at_sec: 114, action: 'flash', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 92, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 94, action: 'flash', target: '[data-audio-stage="route-grid"]' },
   ],
 };
 

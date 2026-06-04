@@ -231,6 +231,11 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       // Shared chrome components that carry tour anchors used across routes.
       'src/lib/components/Nav.svelte',
       'src/lib/components/PlanetPanel.svelte',
+      // Surface-scene routes (anchors live in route-level pages and call
+      // into the SurfaceScene window-hook).
+      'src/routes/earth/+page.svelte',
+      'src/routes/moon/+page.svelte',
+      'src/routes/mars/+page.svelte',
     ];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',

@@ -15,7 +15,7 @@
  * plane. Inclination not modelled in v1.
  */
 import * as THREE from 'three';
-import { altToOrbitRadius } from '$lib/scale';
+import { altToSurfaceScene } from '$lib/scale';
 
 export interface MoonGhostOpts {
   /** Loader-resolved URL for the Moon's surface texture. */
@@ -26,13 +26,18 @@ export interface MoonGhostOpts {
   distanceKm: number;
   /** Pre-configured TextureLoader (caller usually shares one). */
   textureLoader: THREE.TextureLoader;
+  /** SurfaceScene planetRadius (always 30) — required to shift the
+   *  log-compressed orbit math out of the planet sphere. The legacy
+   *  `altToOrbitRadius` baseline placed Moon at radius 25.6 — inside
+   *  the 30-unit Earth → fully occluded. (#303 follow-up.) */
+  planetRadius: number;
 }
 
 export interface MoonGhostHandle {
   /** The mesh — caller adds to scene + uses for raycaster + 2D draw. */
   mesh: THREE.Mesh;
-  /** The scene-space radius (= altToOrbitRadius(distanceKm)). Cached
-   *  because callers reference it for moon-orbiter positioning. */
+  /** The scene-space radius. Cached because callers reference it for
+   *  moon-orbiter positioning. */
   moonR: number;
   dispose: () => void;
 }
@@ -42,7 +47,7 @@ export function buildMoonGhost(opts: MoonGhostOpts): MoonGhostHandle {
   const geo = new THREE.SphereGeometry(opts.radiusUnits, 32, 32);
   const mat = new THREE.MeshPhongMaterial({ map, color: 0xffffff, shininess: 4 });
   const mesh = new THREE.Mesh(geo, mat);
-  const moonR = altToOrbitRadius(opts.distanceKm);
+  const moonR = altToSurfaceScene(opts.planetRadius, opts.distanceKm);
   mesh.position.set(moonR, 0, 0);
   mesh.userData = { isMoon: true };
   return {
@@ -71,6 +76,8 @@ export interface OrbitRingsOpts {
   tubeRadius?: number;
   /** Opacity (0..1) — default 0.35. */
   opacity?: number;
+  /** See MoonGhostOpts.planetRadius. */
+  planetRadius: number;
 }
 
 export interface OrbitRingsHandle {
@@ -88,7 +95,7 @@ export function buildOrbitRings(opts: OrbitRingsOpts): OrbitRingsHandle {
   const geos: THREE.BufferGeometry[] = [];
   const mats: THREE.Material[] = [];
   for (const { regime, altitude_km } of opts.regimes) {
-    const r = altToOrbitRadius(altitude_km);
+    const r = altToSurfaceScene(opts.planetRadius, altitude_km);
     const geo = new THREE.TorusGeometry(r, tube, 6, 128);
     const mat = new THREE.MeshBasicMaterial({
       color: opts.regimeColors[regime] ?? 0x666666,

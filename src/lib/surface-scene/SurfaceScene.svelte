@@ -682,6 +682,7 @@
           radiusUnits: eol.moonGhost.radiusUnits,
           distanceKm: eol.moonGhost.distanceKm,
           textureLoader,
+          planetRadius,
         });
         scene.add(mg.mesh);
         earthMoonR = mg.moonR;
@@ -720,6 +721,7 @@
               const rings = buildOrbitRings({
                 regimeColors: ringsCfg.regimeColors,
                 regimes,
+                planetRadius,
               });
               rings.group.visible = ringsCfg.visibleByDefault;
               scene.add(rings.group);
@@ -746,6 +748,7 @@
               scene,
               objects,
               moonR: earthMoonR,
+              planetRadius,
             });
             earthSats = satLayer.sats;
             earthObjectsCache = objects;

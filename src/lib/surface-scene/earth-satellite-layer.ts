@@ -16,7 +16,7 @@
  * ring since their cluster representation already implies the ring.
  */
 import * as THREE from 'three';
-import { altToOrbitRadius } from '$lib/scale';
+import { altToSurfaceScene } from '$lib/scale';
 import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
 import { buildSatelliteModel } from '$lib/earth-satellite-models';
 import { buildLabel } from '$lib/three-label';
@@ -41,6 +41,11 @@ export interface SatelliteLayerOpts {
   objects: EarthObject[];
   /** Scene-space radius of the moon ghost (for moon-orbiter positioning). */
   moonR: number;
+  /** SurfaceScene planetRadius (always 30) — required to shift the
+   *  log-compressed orbit math out of the planet sphere. The legacy
+   *  `altToOrbitRadius` baseline placed ISS at radius 10.9 — inside
+   *  the 30-unit Earth → fully occluded. (#303 follow-up.) */
+  planetRadius: number;
 }
 
 /**
@@ -103,7 +108,7 @@ export function buildSatelliteLayer(opts: SatelliteLayerOpts): {
       orbitR = opts.moonR;
     } else {
       const alt = o.altitude_km ?? o.earth_distance_km;
-      orbitR = altToOrbitRadius(alt);
+      orbitR = altToSurfaceScene(opts.planetRadius, alt);
       const lx = Math.cos(phase) * orbitR;
       const ly = Math.sin(phase) * orbitR * Math.sin(inclRad);
       const lz = Math.sin(phase) * orbitR * Math.cos(inclRad);

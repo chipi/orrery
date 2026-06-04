@@ -60,3 +60,27 @@ export function auToPx(au: number): number {
 export function altToOrbitRadius(altKm: number): number {
   return 8.5 + 5.2 * Math.log10(1 + altKm / 200);
 }
+
+/**
+ * Shift `altToOrbitRadius` so altitude 0 km lands AT the SurfaceScene
+ * planet surface (`planetRadius` scene units) instead of at the legacy
+ * EarthOrbitalScene `EARTH_RADIUS = 8` baseline (where 0 km mapped to
+ * 8.5). Preserves the log compression that keeps LEO/MEO/GEO/Moon all
+ * in the same camera frame.
+ *
+ * Before this shift the unified /earth route (#290) was rendering every
+ * orbital layer (Kármán shell, ozone caps, orbit rings, satellites,
+ * moon-ghost) at radii 8.5–25.6 — entirely inside the 30-unit planet
+ * sphere, fully occluded. (#303 follow-up.)
+ *
+ * Reference radii at canonical altitudes (planetRadius=30):
+ *   surface (0 km)        → 30
+ *   ozone (30 km)         → ~30.3
+ *   Kármán (100 km)       → ~30.9
+ *   ISS (408 km)          → ~32.4
+ *   GEO (35786 km)        → ~42
+ *   Moon (384400 km)      → ~47.1
+ */
+export function altToSurfaceScene(planetRadius: number, altKm: number): number {
+  return planetRadius + (altToOrbitRadius(altKm) - altToOrbitRadius(0));
+}

@@ -16,7 +16,13 @@
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import { getSatellites, getSatelliteGallery, type SatelliteEntry } from '$lib/data';
+  import {
+    getSatellites,
+    getSatelliteGallery,
+    getSatelliteI18n,
+    type SatelliteEntry,
+    type SatelliteI18n,
+  } from '$lib/data';
   import { base } from '$app/paths';
 
   const loc = $derived(localeFromPage($page));
@@ -44,19 +50,41 @@
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
   let gallery: string[] = $state([]);
-  let entry = $derived<SatelliteEntry | null>(
+  let overlay: SatelliteI18n | null = $state(null);
+  let baseEntry = $derived<SatelliteEntry | null>(
     satelliteKey
       ? (satellites.find((s) => `${s.parent_planet_id}:${s.id}` === satelliteKey) ?? null)
       : null,
   );
+  // Locale overlay merged on top of the English base — missing
+  // fields fall back to English. Library link labels are remapped
+  // per-entry via library_labels keyed by link.id.
+  function mergeOverlay(base: SatelliteEntry, ov: SatelliteI18n | null): SatelliteEntry {
+    return {
+      ...base,
+      description: ov?.description ?? base.description,
+      surface_composition: ov?.surface_composition ?? base.surface_composition,
+      mission_visits: ov?.mission_visits ?? base.mission_visits,
+      library: base.library?.map((l) => ({
+        ...l,
+        label: ov?.library_labels?.[l.id] ?? l.label,
+      })),
+    };
+  }
+  let entry = $derived<SatelliteEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
 
   $effect(() => {
-    if (entry && entry.id !== lastKey) {
+    if (baseEntry && baseEntry.id !== lastKey) {
       tab = 'overview';
-      lastKey = entry.id;
+      lastKey = baseEntry.id;
       gallery = [];
-      void getSatelliteGallery(entry.id).then((urls) => {
-        if (entry && entry.id === lastKey) gallery = urls;
+      overlay = null;
+      const id = baseEntry.id;
+      void getSatelliteGallery(id).then((urls) => {
+        if (baseEntry && baseEntry.id === lastKey) gallery = urls;
+      });
+      void getSatelliteI18n(loc, id).then((o) => {
+        if (baseEntry && baseEntry.id === lastKey) overlay = o;
       });
     }
   });

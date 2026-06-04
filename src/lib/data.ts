@@ -895,6 +895,34 @@ export async function getSatelliteGallery(satelliteId: string): Promise<string[]
 }
 
 /**
+ * Per-locale satellite overlay (#304 Slice 6). Mirrors the
+ * mission / science overlay pattern: each locale ships a
+ * `static/data/i18n/<locale>/satellites/<id>.json` file with the
+ * translatable fields (description, surface_composition,
+ * mission_visits, library labels). The panel reads the English
+ * base from satellites.json and overlays the locale-specific
+ * strings; missing fields fall back to English. Empty overlay
+ * files are valid — they just mean the satellite renders fully
+ * in English until the wave23 translation batch lands.
+ */
+export type SatelliteI18n = {
+  description?: string;
+  surface_composition?: string;
+  mission_visits?: string[];
+  library_labels?: Record<string, string>;
+};
+export async function getSatelliteI18n(
+  locale: string,
+  satelliteId: string,
+): Promise<SatelliteI18n | null> {
+  try {
+    return await get<SatelliteI18n>(`i18n/${locale}/satellites/${satelliteId}.json`);
+  } catch {
+    return null;
+  }
+}
+
+/**
  * #PE path-B (rich multi-agency narrative gallery).
  *
  * A site-story is a hand-curated chapter-based photo set with

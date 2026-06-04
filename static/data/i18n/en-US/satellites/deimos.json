@@ -1,0 +1,13 @@
+{
+  "description": "The smaller and outer of Mars's two moons, just 12 km across — the smallest known body in the solar system that still resolves as a disc rather than a point from a typical orbital camera. Its smoother surface (compared to Phobos's crater-grooved terrain) and slower orbit (30 hours vs Phobos's 8) make it the more sedate of Mars's moon pair. Asaph Hall named both moons for the Greek personifications of Fear (Phobos) and Dread (Deimos) — the war horses pulling Ares's chariot in Iliad XV.",
+  "surface_composition": "Carbonaceous chondrite-like; smoother surface than Phobos because its weaker gravity lets ejecta from impacts escape into Mars orbit rather than re-accumulating. Two named craters: Swift and Voltaire (both ~3 km).",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — Deimos",
+    "deimos-nasa": "NASA Science — Deimos overview",
+    "deimos-mrohirise": "HiRISE — Deimos in Mars-orbit imagery"
+  }
+}

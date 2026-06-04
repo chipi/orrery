@@ -1,0 +1,18 @@
+{
+  "description": "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
+  "surface_composition": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
+  "mission_visits": [
+    "Luna 2 — USSR, 1959 (first artificial object on the Moon)",
+    "Apollo 11 — USA, 1969 (first crewed landing)",
+    "Luna 16 — USSR, 1970 (first robotic sample return)",
+    "Chang'e 4 — China, 2019 (first far-side landing)",
+    "Chandrayaan-3 — India, 2023 (first south-pole landing)"
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipedia — Moon",
+    "moon-nasa-overview": "NASA Science — Earth's Moon overview",
+    "moon-apollo": "NASA Apollo program — landing-mission archive",
+    "moon-artemis": "NASA Artemis — return-to-Moon crewed program",
+    "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera image archive"
+  }
+}

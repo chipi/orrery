@@ -1,0 +1,12 @@
+{
+  "description": "Half Pluto's diameter — the largest moon-to-planet size ratio in the solar system. Charon and Pluto are mutually tidally locked, orbiting a common centre of mass 1,700 km above Pluto's surface — effectively a binary planet system. New Horizons revealed a startlingly varied terrain: the smooth Vulcan Planitia plain to the south, an ancient cratered hemisphere to the north, and a dark red polar cap (Mordor Macula) of tholins formed when methane molecules escaping from Pluto's atmosphere collected on Charon and were processed by ultraviolet light. The four smaller Pluto moons (Styx, Nix, Kerberos, Hydra) orbit the Pluto-Charon barycentre with chaotic rotations driven by the binary system's shifting gravity.",
+  "surface_composition": "Water-ice crust with ammonia hydrates and tholins; the dark reddish polar cap (Mordor Macula) is methane gas escaped from Pluto and processed into tholins on Charon's frigid surface.",
+  "mission_visits": [
+    "New Horizons — USA, 2015 (first and only flyby)"
+  ],
+  "library_labels": {
+    "charon-wiki": "Wikipedia — Charon",
+    "charon-nasa": "NASA Science — Charon overview",
+    "charon-new-horizons": "NASA New Horizons — Pluto-Charon flyby (2015)"
+  }
+}

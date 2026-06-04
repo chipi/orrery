@@ -1,0 +1,16 @@
+{
+  "description": "The solar system's largest moon — bigger than Mercury, 8% larger than the Moon. Ganymede is the only moon with a self-generated magnetic field, evidence of a partially-molten iron core. Beneath ~150 km of ice lies a saltwater ocean larger than all of Earth's oceans combined; some models suggest a layered structure with multiple oceans separated by ice phases of different densities. ESA's JUICE mission will become the first orbiter of a moon other than Earth's when it enters Ganymede orbit in December 2034.",
+  "surface_composition": "Roughly half water ice + half silicate rock; surface a mix of dark cratered terrain (~4 Gyr old) and lighter grooved terrain (tectonic resurfacing ~2 Gyr ago); thin oxygen exosphere.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "Juno — USA, 2021 (close flyby)",
+    "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+  ],
+  "library_labels": {
+    "ganymede-wiki": "Wikipedia — Ganymede",
+    "ganymede-nasa": "NASA Science — Ganymede overview",
+    "ganymede-juice": "ESA JUICE — Ganymede orbiter mission",
+    "ganymede-magfield": "NASA Galileo — Ganymede magnetic-field discovery"
+  }
+}

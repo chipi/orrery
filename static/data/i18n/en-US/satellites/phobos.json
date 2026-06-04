@@ -1,0 +1,15 @@
+{
+  "description": "The larger and inner of Mars's two moons — irregular potato-shaped body just 22 km across at its widest. Phobos orbits Mars every 7 hours 39 minutes, faster than Mars itself rotates, so from the Martian surface it rises in the west and sets in the east twice per Martian day. Its orbit is decaying at ~2 cm per year; in 30–50 million years tidal forces will either tear it apart into a temporary ring or crash it into the planet. Japan's MMX mission (launch ~2026) will return surface samples.",
+  "surface_composition": "Heavily-cratered carbonaceous chondrite-like body, possibly a captured asteroid or accretion remnant; surface dominated by the 9 km Stickney crater and parallel grooves likely tied to ejecta from that impact.",
+  "mission_visits": [
+    "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+    "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+  ],
+  "library_labels": {
+    "phobos-wiki": "Wikipedia — Phobos",
+    "phobos-nasa": "NASA Science — Phobos overview",
+    "phobos-mmx": "JAXA MMX — sample-return mission to Phobos",
+    "phobos-hirise": "HiRISE — Phobos at 0.25 m/px from Mars orbit"
+  }
+}

@@ -216,18 +216,17 @@
           name: 'Moon',
           // 4k_moon.jpg already shipped — Solar System Scope, CC BY 4.0.
           texture: '4k_moon.jpg',
-          // Real Moon : Earth radius ≈ 0.27. Trial-and-error landed at
-          // 1.4 (= 27 % of Earth's 5.2 unit radius — true ratio).
-          // The earlier bump to 2.4 made the Moon read as Earth's
-          // binary partner; back to true scale (2026-06-03 feedback).
-          sizeUnits: 1.4,
-          // Real Moon-Earth distance / Earth radius ≈ 60 — true scale
-          // would put the Moon at 312 scene units, way off-frame.
-          // Compressed 60 → 24 so the Moon clears Earth's silhouette
-          // by a body diameter at post-fly-to framing (was 12 = both
-          // bodies in the same focal plane → Moon perspective-grew
-          // because it sat half-way between camera + Earth when its
-          // orbital phase put it on the near side).
+          // 2026-06-03 user direction: "Honestly maybe we can [show
+          // moons] at start as well, small enough to be well visible,
+          // where Ceres size is good reference." Ceres in this scene
+          // renders at 1.8 units (sphere radius); Moon dropped to
+          // 0.9 — half Ceres so it reads as a sub-Ceres dot at wide
+          // zoom + a clearly-smaller-than-Earth body at fly-to
+          // framing, without ever dominating its parent.
+          sizeUnits: 0.9,
+          // Real Moon-Earth distance / Earth radius ≈ 60. Compressed
+          // 60 → 24 so the Moon clears Earth's silhouette by a body
+          // diameter at post-fly-to framing.
           orbitUnits: 24,
           // Sidereal month — 27.32 days.
           periodDays: 27.32,
@@ -1113,10 +1112,12 @@
       // Satellites — built up-front (no lazy load) since their
       // textures share the same lazy 4K LOD philosophy as the parent
       // planet: only loaded once but only revealed when the camera
-      // zooms in close. Hidden by default so the heliocentric default
-      // view stays uncluttered.
+      // 2026-06-03: visible at construction (was hidden default) per
+      // user direction — moons should appear at heliocentric framing
+      // as well, not only after fly-to. Their small size (Moon at 0.9
+      // vs Earth at 5.2) keeps the wide-zoom view uncluttered.
       const satellitesGroup = new THREE.Group();
-      satellitesGroup.visible = false;
+      satellitesGroup.visible = true;
       const satellites: SatelliteObj[] = (p.satellites ?? []).map((s) => {
         const satTex = loadTexture(s.texture);
         const satMat = new THREE.MeshPhongMaterial({
@@ -1514,16 +1515,20 @@
           }
         }
 
-        // Natural-satellite reveal — same threshold as 4K LOD-in so
-        // the moons appear at the moment the parent's detail kicks
-        // in. Single group-level visibility flip per planet per frame.
-        // Always-hidden when ratio > PLANET_LOD_OUT_RATIO so the
-        // heliocentric framing stays uncluttered.
-        const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
-        if (obj.satellites.length > 0 && obj.satellitesGroup.visible !== shouldShow) {
-          obj.satellitesGroup.visible = shouldShow;
+        // Natural-satellite reveal — 2026-06-03 user direction:
+        // "Honestly maybe we can [show moons] at start as well, small
+        // enough to be well visible." Satellites now always visible
+        // at any zoom level — sized small enough (Moon at 0.9 vs
+        // Earth at 5.2) to read as a tiny dot at heliocentric framing
+        // and a clearly-smaller-than-parent body at fly-to framing.
+        // No zoom gate; the natural perspective scaling handles the
+        // reveal.
+        if (obj.satellites.length > 0 && !obj.satellitesGroup.visible) {
+          obj.satellitesGroup.visible = true;
         }
-        // Atmospheric halo reveal — shares the satellite threshold.
+        // Atmospheric halo reveal — keeps the original LOD-in gating
+        // (Earth's blue limb tint at close zoom only).
+        const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
         if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
           obj.haloMesh.visible = shouldShow;
         }
@@ -1542,9 +1547,14 @@
         if (obj.rotationArrow.visible !== shouldShow) {
           obj.rotationArrow.visible = shouldShow;
         }
-        // Orbiters group (PRD-023 Slice A.3) — same gating.
-        if (obj.orbiters.length > 0 && obj.orbitersGroup.visible !== shouldShow) {
-          obj.orbitersGroup.visible = shouldShow;
+        // Orbiters group (PRD-023 Slice A.3) permanently hidden per
+        // 2026-06-03 user direction: "Drop all orbiters from explore
+        // and keep focus on natural bodies only." Group stays in the
+        // scene graph (visibility flipped at construction time) so
+        // we can flip it back on if the decision is reversed; the
+        // per-frame motion code below short-circuits when invisible.
+        if (obj.orbiters.length > 0 && obj.orbitersGroup.visible) {
+          obj.orbitersGroup.visible = false;
         }
       }
     }

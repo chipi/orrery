@@ -91,9 +91,7 @@
   {#if entry}
     <div class="head">
       <div class="kind-row">
-        <span class="kind"
-          >{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span
-        >
+        <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
       </div>
     </div>
 

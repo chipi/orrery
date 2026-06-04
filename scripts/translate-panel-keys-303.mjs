@@ -7,7 +7,21 @@ const MESSAGES_DIR = path.join(ROOT, 'messages');
 const OVERRIDES_PATH = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 const EN_PATH = path.join(MESSAGES_DIR, 'en-US.json');
 
-const LOCALES = ['ar','de','es','fr','hi','it','ja','ko','nl','pt-BR','ru','sr-Cyrl','zh-CN'];
+const LOCALES = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
 
 const KEYS = [
   'panel_tab_library',
@@ -18,10 +32,19 @@ const KEYS = [
 ];
 
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish',
-  fr: 'French', hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean',
-  nl: 'Dutch', 'pt-BR': 'Brazilian Portuguese', ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
 const SYSTEM = `Translate Orrery satellite-panel UI labels.
@@ -39,8 +62,14 @@ async function tx(client, locale, payload) {
     system: SYSTEM,
     messages: [{ role: 'user', content: msg }],
   });
-  const text = r.content.filter(b => b.type === 'text').map(b => b.text).join('');
-  const cleaned = text.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
+  const text = r.content
+    .filter((b) => b.type === 'text')
+    .map((b) => b.text)
+    .join('');
+  const cleaned = text
+    .replace(/^```(?:json)?\s*/i, '')
+    .replace(/\s*```$/i, '')
+    .trim();
   return JSON.parse(cleaned);
 }
 

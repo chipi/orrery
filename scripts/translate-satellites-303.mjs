@@ -20,22 +20,55 @@ const ROOT = path.resolve(import.meta.dirname, '..');
 const EN_DIR = path.join(ROOT, 'static/data/i18n/en-US/satellites');
 const I18N_ROOT = path.join(ROOT, 'static/data/i18n');
 
-const LOCALES = ['ar','de','es','fr','hi','it','ja','ko','nl','pt-BR','ru','sr-Cyrl','zh-CN'];
+const LOCALES = [
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
+];
 
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish',
-  fr: 'French', hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean',
-  nl: 'Dutch', 'pt-BR': 'Brazilian Portuguese', ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
 // All moons except 'moon' itself (already translated in #304 close).
 const MOONS = [
-  'phobos', 'deimos',
-  'io', 'europa', 'ganymede', 'callisto',
-  'titan', 'enceladus',
-  'miranda', 'ariel', 'umbriel', 'titania', 'oberon',
-  'triton', 'charon',
+  'phobos',
+  'deimos',
+  'io',
+  'europa',
+  'ganymede',
+  'callisto',
+  'titan',
+  'enceladus',
+  'miranda',
+  'ariel',
+  'umbriel',
+  'titania',
+  'oberon',
+  'triton',
+  'charon',
 ];
 
 const SYSTEM = `Translate Orrery satellite (moon) editorial content from en-US.
@@ -93,10 +126,16 @@ async function main() {
     process.exit(1);
   }
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  let ok = 0, fail = 0, skip = 0;
+  let ok = 0,
+    fail = 0,
+    skip = 0;
   for (const moon of MOONS) {
     const enPath = path.join(EN_DIR, `${moon}.json`);
-    if (!fs.existsSync(enPath)) { console.log(`skip ${moon} — no en-US`); skip++; continue; }
+    if (!fs.existsSync(enPath)) {
+      console.log(`skip ${moon} — no en-US`);
+      skip++;
+      continue;
+    }
     const overlay = JSON.parse(fs.readFileSync(enPath, 'utf8'));
     console.log(`=== ${moon} ===`);
     for (const locale of LOCALES) {

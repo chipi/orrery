@@ -155,7 +155,9 @@ async function main() {
   }
   fs.writeFileSync(OVERRIDES_PATH, JSON.stringify(overrides, null, 2) + '\n', 'utf8');
   console.log(`\n✓ ${OVERRIDES_PATH} updated`);
-  console.log('Run `npx paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide` to regenerate paraglide message exports.');
+  console.log(
+    'Run `npx paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide` to regenerate paraglide message exports.',
+  );
 }
 
 main();

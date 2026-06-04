@@ -172,14 +172,17 @@ async function translate(
   locale: string,
   article: ArticleOverlay,
 ): Promise<ArticleOverlay> {
-  // Opus-4-7 with tool_use for guaranteed structured output. Plain-text
-  // Sonnet + Opus both repeatedly produced unescaped quotes in German
-  // (' "Planet", stimmt das ' patterns) which broke JSON.parse on every
-  // retry. Tool-use forces the model to emit input matching our schema,
-  // and the Anthropic SDK validates / parses it for us. (#56 fix.)
+  // Sonnet 4.6 with tool_use for guaranteed structured output. The
+  // unescaped-quote failure pattern we hit on plain-text JSON output
+  // (' "Planet", stimmt das ' in German prose) is solved by tool_use
+  // independent of model — the SDK validates the model's tool input
+  // against our schema. Sonnet is ~5× cheaper than Opus and produces
+  // equivalent results once the structured-output constraint is in
+  // place. (Opus was used during the #56 close-out before switching.)
   const tool = {
     name: 'submit_translation',
-    description: 'Submit the translated article. Every field that was a string in the source is translated; every key is preserved exactly.',
+    description:
+      'Submit the translated article. Every field that was a string in the source is translated; every key is preserved exactly.',
     input_schema: {
       type: 'object' as const,
       properties: {
@@ -194,7 +197,7 @@ async function translate(
     },
   };
   const response = await client.messages.create({
-    model: 'claude-opus-4-7',
+    model: 'claude-sonnet-4-5',
     max_tokens: 4096,
     system: SYSTEM_PROMPT,
     tools: [tool],

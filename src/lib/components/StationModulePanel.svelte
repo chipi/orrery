@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { base } from '$app/paths';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import { page } from '$app/stores';
@@ -269,6 +270,59 @@
             </section>
           {/if}
         {/if}
+        <!--
+          Related crew + life-support topics — issue #303 close-out.
+          Module-agnostic cross-link cluster covering the seven
+          life-in-space + 2 space-stations articles that lacked a
+          natural anchor elsewhere. Always rendered; complements the
+          tier-driven external-link rails above.
+        -->
+        <section class="related-science">
+          <h3>{m.panel_links_core()}</h3>
+          <ul>
+            <li>
+              <a href="{base}/science/space-stations/pressurized-volume"
+                >{m.chip_label_pressurized_volume()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/space-stations/node-module">{m.chip_label_node_module()}</a>
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/crewed-station-design"
+                >{m.chip_label_crewed_station_design()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/eclss-life-support"
+                >{m.chip_label_eclss_life_support()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/crew-selection"
+                >{m.chip_label_crew_selection()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/pre-flight-training"
+                >{m.chip_label_pre_flight_training()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/crew-dynamics-psychology"
+                >{m.chip_label_crew_dynamics_psychology()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/sleep-nutrition-circadian"
+                >{m.chip_label_sleep_nutrition_circadian()}</a
+              >
+            </li>
+            <li>
+              <a href="{base}/science/life-in-space/suit-lineage">{m.chip_label_suit_lineage()}</a>
+            </li>
+          </ul>
+        </section>
       {/if}
     </div>
   {/if}

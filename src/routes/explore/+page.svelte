@@ -968,10 +968,13 @@
         const zf = Math.sin(a) * p.orbitR;
         pts.push(new THREE.Vector3(x, zf * Math.sin(inc), zf * Math.cos(inc)));
       }
+      // 2026-06-03 user direction: "Make planet orbits look more
+      // like moon orbits (more visible)." Bumped opacity 0.06 → 0.25
+      // and tinted the line pale-blue to match the moon-orbit style.
       const mat = new THREE.LineBasicMaterial({
-        color: 0xffffff,
+        color: 0xc0d0ff,
         transparent: true,
-        opacity: 0.06,
+        opacity: 0.25,
         depthWrite: false,
       });
       const line = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat);
@@ -1153,10 +1156,14 @@
           );
         }
         const orbitGeo = new THREE.BufferGeometry().setFromPoints(orbitPts);
+        // 2026-06-03 user direction: "Make moon orbits look more
+        // like planet orbits (less visible)." Dropped opacity
+        // 0.25 → 0.06 and switched colour to plain white to match
+        // the (previously) ultra-subtle planet-orbit style.
         const orbitMat = new THREE.LineBasicMaterial({
-          color: 0xc0d0ff,
+          color: 0xffffff,
           transparent: true,
-          opacity: 0.25,
+          opacity: 0.06,
           depthWrite: false,
         });
         const orbitLine = new THREE.LineLoop(orbitGeo, orbitMat);

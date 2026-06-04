@@ -19,6 +19,7 @@
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { getEarthObjectGallery } from '$lib/data';
@@ -199,6 +200,56 @@
           FULL MISSION CARD →
         </a>
       {/if}
+
+      <!--
+        Related orbital concepts — five PRD-024 cross-link chips covering
+        the Earth-orbital topics not already linked from the cell rows
+        (orbit-regimes, keplers-laws, inclination are pinned above).
+        Each row is a label + tiny info chip; the label is the click
+        target (anchor wraps the text). Issue #303 close-out.
+      -->
+      <ul class="related-orbital-concepts">
+        <li>
+          <a href="{base}/science/orbits/cislunar-orbits">{m.chip_label_cislunar_orbits()}</a
+          ><ScienceChip
+            tab="orbits"
+            section="cislunar-orbits"
+            label={m.chip_label_cislunar_orbits()}
+          />
+        </li>
+        <li>
+          <a href="{base}/science/orbits/sun-synchronous">{m.chip_label_sun_synchronous()}</a
+          ><ScienceChip
+            tab="orbits"
+            section="sun-synchronous"
+            label={m.chip_label_sun_synchronous()}
+          />
+        </li>
+        <li>
+          <a href="{base}/science/orbits/special-orbits">{m.chip_label_special_orbits()}</a
+          ><ScienceChip
+            tab="orbits"
+            section="special-orbits"
+            label={m.chip_label_special_orbits()}
+          />
+        </li>
+        <li>
+          <a href="{base}/science/orbits/space-debris">{m.chip_label_space_debris()}</a><ScienceChip
+            tab="orbits"
+            section="space-debris"
+            label={m.chip_label_space_debris()}
+          />
+        </li>
+        <li>
+          <a href="{base}/science/orbits/disposal-end-of-life"
+            >{m.chip_label_disposal_end_of_life()}</a
+          ><ScienceChip
+            tab="orbits"
+            section="disposal-end-of-life"
+            label={m.chip_label_disposal_end_of_life()}
+          />
+        </li>
+      </ul>
 
       {#if selected.credit}
         <div class="credit">{selected.credit}</div>
@@ -412,6 +463,32 @@
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
+  }
+  .related-orbital-concepts {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 8px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+  }
+  .related-orbital-concepts li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .related-orbital-concepts a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+  .related-orbital-concepts a:hover,
+  .related-orbital-concepts a:focus-visible {
+    color: rgba(120, 220, 200, 0.95);
+    outline: none;
   }
   /* Detail-panel tabs / gallery / learn / lightbox CSS in src/lib/styles/panel-tabs.css (v0.1.10) */
 </style>

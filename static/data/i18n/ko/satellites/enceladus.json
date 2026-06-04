@@ -1,1 +1,14 @@
-{}
+{
+  "description": "작지만 — 지름이 겨우 504 km — 태양계에서 가장 반사율이 높은 천체이며 지구 밖에서 현재 생명체 거주 가능성이 가장 높은 후보 중 하나입니다. Cassini는 남극의 130 km 길이 균열 4개에서 분출되는 플룸을 직접 통과 비행했으며, 분광기는 분자 수소, 메테인을 포함한 유기물, 염류, 그리고 해저 바닥에서 활발한 열수 화학작용이 일어나고 있음을 나타내는 실리카 나노입자를 검출했습니다. 이 해양은 암석 해저 바닥과 직접 접촉하고 있습니다 — 이는 지구 자체의 심해 열수 분출구에서 생명을 탄생시킨 것과 동일한 에너지 및 화학 조건입니다.",
+  "surface_composition": "전 지구적 지하 해양 위의 순수한 물-얼음 지각; 남극 '호랑이 줄무늬' 균열에서 수증기, 유기물, 염류, 실리카 나노입자, 분자 수소의 플룸을 분출.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Enceladus",
+    "enceladus-nasa": "NASA Science — Enceladus 개요",
+    "enceladus-cassini": "NASA Cassini — 플룸 근접비행 기록 아카이브",
+    "enceladus-habitability": "Astrobiology — 생명체 탐사 대상으로서의 Enceladus"
+  }
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "description": "해왕성의 가장 큰 위성이자 태양계에서 지질학적으로 가장 활발한 천체 중 하나입니다. 트리톤은 해왕성을 역행 방향으로 공전하며 극단적인 궤도 경사를 가지고 있습니다 — 이는 포획된 카이퍼 벨트 천체의 특징으로, 해왕성 고유의 위성이라기보다는 명왕성의 형제일 가능성이 높습니다. Voyager 2는 희박한 질소 대기 속으로 어두운 유기 먼지를 8 km 높이까지 분출하는 활동적인 질소 간헐천을 발견했습니다. 남반구에는 '캔털루프 지형' — 태양계 어디에서도 볼 수 없는 움푹 패인 곳과 융기부의 네트워크가 있습니다. 트리톤의 역행 궤도는 조석력으로 인해 붕괴되고 있으며, 약 3.6 Gyr 후에는 토성과 같은 고리로 찢어지거나 해왕성에 충돌할 것입니다.",
+  "surface_composition": "얼어붙은 질소 + 물 얼음 + 이산화탄소 얼음; 표면은 태양계에서 유일한 캔털루프 질감의 지형과 희박한 질소 대기 속으로 어두운 기둥을 8 km 높이까지 분출하는 활동적인 질소 극저온 간헐천으로 덮여 있습니다.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — Triton 개요",
+    "triton-voyager2": "NASA Voyager 2 — Neptune 시스템 조우 (1989)",
+    "triton-trident": "Trident — 제안된 Discovery급 Triton 근접 비행"
+  }
+}

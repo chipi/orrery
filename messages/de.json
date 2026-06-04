@@ -962,5 +962,10 @@
   "panel_satellite_period_label": "Orbital period",
   "panel_satellite_discovered_label": "Discovered",
   "panel_satellite_missions_label": "Visited by",
-  "panel_satellite_library_pending": "Library entries land in #304 Slice 5."
+  "panel_satellite_library_pending": "Library entries land in #304 Slice 5.",
+  "panel_tab_library": "Bibliothek",
+  "panel_satellite_gallery_empty": "Für diesen Mond sind noch keine Galeriebilder verfügbar.",
+  "panel_satellite_library_empty": "Für diesen Mond sind noch keine Bibliothekseinträge verfügbar.",
+  "panel_satellite_period_unit_days": "{value} Tage",
+  "panel_satellite_kind": "Natürlicher Mond · umkreist {planet}"
 }

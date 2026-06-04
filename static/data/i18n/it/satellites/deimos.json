@@ -1,1 +1,13 @@
-{}
+{
+  "description": "La più piccola e più esterna delle due lune di Marte, di appena 12 km di diametro — il più piccolo corpo conosciuto del sistema solare che si risolve ancora come un disco anziché come un punto se osservato da una tipica fotocamera orbitale. La sua superficie più liscia (rispetto al terreno solcato da crateri di Phobos) e la sua orbita più lenta (30 ore contro le 8 di Phobos) la rendono la più tranquilla della coppia di lune di Marte. Asaph Hall diede ad entrambe le lune i nomi delle personificazioni greche della Paura (Phobos) e del Terrore (Deimos) — i cavalli da guerra che trainavano il carro di Ares nel libro XV dell'Iliade.",
+  "surface_composition": "Simile a una condrite carbonacea; superficie più liscia rispetto a Phobos perché la sua gravità più debole permette ai detriti degli impatti di sfuggire nell'orbita di Marte invece di riaccumularsi. Due crateri con nome: Swift e Voltaire (entrambi di ~3 km).",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — Deimos",
+    "deimos-nasa": "NASA Science — panoramica su Deimos",
+    "deimos-mrohirise": "HiRISE — Deimos nelle immagini dall'orbita di Marte"
+  }
+}

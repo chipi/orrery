@@ -962,5 +962,10 @@
   "panel_satellite_period_label": "Orbital period",
   "panel_satellite_discovered_label": "Discovered",
   "panel_satellite_missions_label": "Visited by",
-  "panel_satellite_library_pending": "Library entries land in #304 Slice 5."
+  "panel_satellite_library_pending": "Library entries land in #304 Slice 5.",
+  "panel_tab_library": "Bibliothèque",
+  "panel_satellite_gallery_empty": "Aucune image de galerie disponible pour ce satellite.",
+  "panel_satellite_library_empty": "Aucune entrée de bibliothèque disponible pour ce satellite.",
+  "panel_satellite_period_unit_days": "{value} jours",
+  "panel_satellite_kind": "Satellite naturel · orbite {planet}"
 }

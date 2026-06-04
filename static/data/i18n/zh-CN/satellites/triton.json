@@ -1,1 +1,13 @@
-{}
+{
+  "description": "海王星最大的卫星,也是太阳系中地质活动最活跃的天体之一。Triton以逆行方式围绕海王星运行,且轨道倾角极大——这是被捕获的柯伊伯带天体的典型特征,这使它更可能是冥王星的兄弟而非海王星的原生卫星。Voyager 2探测到活跃的氮气间歇泉,向稀薄的氮气大气中喷射出8公里高的暗色有机尘埃;南半球呈现\"哈密瓜地形\"——这是一种由凹坑和山脊构成的网络结构,在太阳系其他任何地方都未曾见过。Triton的逆行轨道正在因潮汐作用而衰减;大约在36亿年后,它要么会被撕裂成类似土星的行星环,要么会撞入海王星。",
+  "surface_composition": "冻结的氮 + 水冰 + 二氧化碳冰;表面覆盖着太阳系中独一无二的哈密瓜纹理地形,以及活跃的氮气冷喷泉,向稀薄的氮气大气中喷射出8公里高的暗色羽流。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — Triton 概述",
+    "triton-voyager2": "NASA Voyager 2 — Neptune 系统飞掠 (1989)",
+    "triton-trident": "Trident — 提议的 Discovery 级 Triton 飞掠任务"
+  }
+}

@@ -1,1 +1,16 @@
-{}
+{
+  "description": "La mayor luna del sistema solar — más grande que Mercurio, un 8 % mayor que la Luna. Ganímedes es la única luna con un campo magnético generado por sí misma, prueba de un núcleo de hierro parcialmente fundido. Bajo unos ~150 km de hielo se encuentra un océano de agua salada mayor que todos los océanos de la Tierra juntos; algunos modelos sugieren una estructura estratificada con múltiples océanos separados por fases de hielo de distintas densidades. La misión JUICE de la ESA se convertirá en el primer orbitador de una luna distinta a la de la Tierra cuando entre en órbita de Ganímedes en diciembre de 2034.",
+  "surface_composition": "Aproximadamente mitad hielo de agua y mitad roca silicatada; la superficie es una mezcla de terreno oscuro y craterizado (~4 Ga de antigüedad) y terreno más claro y surcado (resurgimiento tectónico hace ~2 Ga); exosfera tenue de oxígeno.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "Juno — USA, 2021 (close flyby)",
+    "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+  ],
+  "library_labels": {
+    "ganymede-wiki": "Wikipedia — Ganímedes",
+    "ganymede-nasa": "NASA Science — Ganímedes, visión general",
+    "ganymede-juice": "ESA JUICE — misión orbitadora de Ganímedes",
+    "ganymede-magfield": "NASA Galileo — descubrimiento del campo magnético de Ganímedes"
+  }
+}

@@ -1,1 +1,12 @@
-{}
+{
+  "description": "La plus grande lune d'Uranus et la huitième plus grande du système solaire. Les images de Voyager 2 ont révélé une surface traversée par d'énormes systèmes de canyons — Messina Chasma à lui seul s'étend sur 1 500 km à travers l'hémisphère sud — aux côtés de grands bassins d'impact et du petit cratère Ursula à l'aspect récent. Une occultation stellaire en 2017 a détecté de manière provisoire une fine atmosphère de dioxyde de carbone, ce qui serait la première atmosphère découverte sur une lune uranienne.",
+  "surface_composition": "Glace d'eau + roche silicatée ; terrain ancien criblé de cratères traversé par de vastes systèmes de canyons longs de centaines de kilomètres — Messina Chasma s'étend sur ~1 500 km à travers la lune.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "titania-wiki": "Wikipedia — Titania",
+    "titania-nasa": "NASA Science — aperçu de Titania",
+    "titania-voyager2": "NASA Voyager 2 — images du système uranien"
+  }
+}

@@ -1,1 +1,12 @@
-{}
+{
+  "description": "명왕성 지름의 절반 크기로, 태양계에서 가장 큰 위성 대 행성 크기 비율을 자랑한다. Charon과 명왕성은 상호 조석 고정되어 있으며, 명왕성 표면에서 1,700 km 위에 있는 공통 질량 중심을 공전한다—사실상 쌍성계 행성 시스템이다. New Horizons는 놀랍도록 다양한 지형을 밝혀냈다: 남쪽의 매끄러운 Vulcan Planitia 평원, 북쪽의 고대 크레이터로 뒤덮인 반구, 그리고 명왕성 대기에서 탈출한 메테인 분자가 Charon에 모여 자외선에 의해 처리되어 형성된 어두운 붉은색 극관(Mordor Macula)의 톨린. 네 개의 더 작은 명왕성 위성들(Styx, Nix, Kerberos, Hydra)은 쌍성계의 변화하는 중력에 의해 발생하는 혼돈 회전을 하며 명왕성-Charon 무게중심을 공전한다.",
+  "surface_composition": "암모니아 수화물과 톨린을 포함한 물-얼음 지각; 어두운 붉은색 극관(Mordor Macula)은 명왕성에서 탈출한 메테인 가스가 Charon의 극저온 표면에서 톨린으로 처리된 것이다.",
+  "mission_visits": [
+    "New Horizons — USA, 2015 (first and only flyby)"
+  ],
+  "library_labels": {
+    "charon-wiki": "Wikipedia — Charon",
+    "charon-nasa": "NASA Science — Charon 개요",
+    "charon-new-horizons": "NASA New Horizons — 명왕성-Charon 플라이바이 (2015)"
+  }
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "description": "火星两颗卫星中较小、较外侧的一颗，直径仅 12 km——是太阳能系统中已知最小的、从典型轨道相机看仍能解析为圆盘而非点状的天体。与火卫一布满陨石坑与沟槽的地形相比，其表面更为平滑；与火卫一 8 小时的公转周期相比，其 30 小时的轨道也更为缓慢——使其成为火星这对卫星中更为安静的一颗。Asaph Hall 以希腊神话中\"恐惧\"（Phobos）与\"惊惧\"（Deimos）的人格化形象为两颗卫星命名——它们是《伊利亚特》第十五卷中拉动战神 Ares 战车的两匹战马。",
+  "surface_composition": "类碳质球粒陨石成分；表面比火卫一更平滑，因为其较弱的引力使撞击溅射物得以逃逸进入火星轨道，而非重新堆积回卫星表面。两座已命名的陨石坑：Swift 与 Voltaire（均约 3 km）。",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — 火卫二",
+    "deimos-nasa": "NASA Science — 火卫二概览",
+    "deimos-mrohirise": "HiRISE — 火星轨道影像中的火卫二"
+  }
+}

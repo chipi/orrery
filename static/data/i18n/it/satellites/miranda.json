@@ -1,1 +1,12 @@
-{}
+{
+  "description": "La più interna e piccola delle cinque lune maggiori di Urano — e visivamente la più estrema. Le immagini del sorvolo di Voyager 2 hanno rivelato una superficie che sembra assemblata da pezzi incompatibili: scogliere enormi, altipiani fratturati e corone concentriche che sporgono da un terreno più antico fortemente craterizzato. L'ipotesi principale è che Miranda sia stata disgregata da un impatto almeno una volta, con i frammenti che si sono riassemblati sotto la propria gravità. Verona Rupes scende per ~20 km — sotto la bassa gravità di Miranda, un oggetto in caduta impiegherebbe circa 12 minuti per raggiungere il fondo.",
+  "surface_composition": "Ghiaccio d'acqua + roccia silicatica; superficie composta da un mosaico di terreno antico craterizzato attraversato da enormi corone — creste e solchi concentrici che includono Verona Rupes, la scogliera più alta conosciuta nel sistema solare (dislivello verticale di ~20 km).",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — panoramica di Miranda",
+    "miranda-voyager2": "NASA Voyager 2 — unico sorvolo del sistema uraniano (1986)"
+  }
+}

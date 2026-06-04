@@ -1,1 +1,15 @@
-{}
+{
+  "description": "화성의 두 위성 중 더 크고 안쪽에 있는 위성 — 가장 긴 부분이 22km에 불과한 불규칙한 감자 모양의 천체. 포보스는 7시간 39분마다 화성을 공전하는데, 이는 화성의 자전보다 빠르기 때문에 화성 표면에서 보면 화성일 하루에 두 번 서쪽에서 떠서 동쪽으로 진다. 궤도는 매년 약 2cm씩 줄어들고 있으며, 3,000만~5,000만 년 후에는 조석력이 이 위성을 찢어 일시적인 고리로 만들거나 화성에 충돌시킬 것이다. 일본의 MMX 임무(2026년경 발사 예정)는 표면 시료를 가지고 귀환할 예정이다.",
+  "surface_composition": "충돌구가 빽빽한 탄소질 콘드라이트와 유사한 천체로, 포획된 소행성이거나 강착 잔재일 가능성이 있다. 표면은 지름 9km의 스티크니(Stickney) 충돌구와 그 충돌에서 비롯된 분출물과 관련 있을 가능성이 큰 평행한 홈들이 두드러진다.",
+  "mission_visits": [
+    "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+    "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+  ],
+  "library_labels": {
+    "phobos-wiki": "Wikipedia — 포보스",
+    "phobos-nasa": "NASA Science — 포보스 개요",
+    "phobos-mmx": "JAXA MMX — 포보스 시료 귀환 임무",
+    "phobos-hirise": "HiRISE — 화성 궤도에서 촬영한 0.25 m/px 해상도의 포보스"
+  }
+}

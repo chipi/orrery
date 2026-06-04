@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Deuxième plus grande lune du système solaire et seule lune dotée d'une atmosphère substantielle — plus épaisse que celle de la Terre. Sous la brume orangée de tholins se trouve le seul corps connu en dehors de la Terre à posséder des liquides stables à sa surface : des lacs et mers d'hydrocarbures composés de méthane et d'éthane dans les régions polaires, alimentés par un cycle hydrologique actif du méthane comprenant nuages, pluies et rivières qui creusent un substrat rocheux de glace d'eau. Huygens (ESA) a réalisé en 2005 le premier atterrissage sur une lune autre que la nôtre. Dragonfly de la NASA arrivera en 2034 sous la forme d'un giravion à propulsion nucléaire, sautillant entre les paysages riches en composés organiques de Titan.",
+  "surface_composition": "Substrat rocheux de glace d'eau sous des dunes organiques + lacs d'hydrocarbures (méthane / éthane) + atmosphère d'azote et de méthane à 1,45× la pression au niveau de la mer terrestre. La brume de tholins teinte le ciel en orange.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titan",
+    "titan-nasa": "NASA Science — aperçu de Titan",
+    "titan-dragonfly": "NASA Dragonfly — mission de giravion nucléaire vers Titan",
+    "titan-huygens": "ESA Huygens — premier atterrissage sur une lune autre que la nôtre"
+  }
+}

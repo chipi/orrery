@@ -1,1 +1,12 @@
-{}
+{
+  "description": "A menor e mais interna das cinco grandes luas de Urano — e visualmente a mais extrema. As imagens do sobrevoo da Voyager 2 revelaram uma superfície que parece ter sido montada a partir de peças incompatíveis: penhascos enormes, planaltos fraturados e coronae concêntricas emergindo de terrenos antigos fortemente craterizados. A hipótese principal é que Miranda foi destruída por um impacto pelo menos uma vez, com os fragmentos se reagrupando sob sua própria gravidade. Verona Rupes cai ~20 km — sob a baixa gravidade de Miranda, um objeto em queda levaria aproximadamente 12 minutos para atingir o fundo.",
+  "surface_composition": "Gelo de água + rocha de silicato; superfície é um mosaico de terreno antigo craterizado atravessado por enormes coronae — cristas e sulcos concêntricos que incluem Verona Rupes, o penhasco mais alto conhecido no sistema solar (queda vertical de ~20 km).",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — visão geral de Miranda",
+    "miranda-voyager2": "NASA Voyager 2 — único sobrevoo do sistema uraniano (1986)"
+  }
+}

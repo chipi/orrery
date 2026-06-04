@@ -1,1 +1,16 @@
-{}
+{
+  "description": "太阳系最大的卫星——比水星还大,比月球大 8%。木卫三是唯一拥有自生磁场的卫星,这表明其内部存在部分熔融的铁核。在约 150 km 厚的冰层之下,蕴藏着一片比地球所有海洋加起来还要大的咸水海洋;一些模型认为其呈分层结构,由不同密度的冰相隔开多层海洋。ESA 的 JUICE 任务将于 2034 年 12 月进入木卫三轨道,届时它将成为首个环绕地球之外卫星运行的轨道器。",
+  "surface_composition": "大致一半为水冰 + 一半为硅酸盐岩石;表面由深色的撞击坑地形(约 40 亿年历史)与较亮的沟纹地形(约 20 亿年前的构造重塑)混合构成;具有稀薄的氧气外逸层。",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "Juno — USA, 2021 (close flyby)",
+    "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+  ],
+  "library_labels": {
+    "ganymede-wiki": "Wikipedia — 木卫三",
+    "ganymede-nasa": "NASA Science — 木卫三概览",
+    "ganymede-juice": "ESA JUICE — 木卫三轨道器任务",
+    "ganymede-magfield": "NASA Galileo — 木卫三磁场发现"
+  }
+}

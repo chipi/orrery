@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Metà del diametro di Plutone — il più grande rapporto dimensionale luna-pianeta del sistema solare. Caronte e Plutone sono mutuamente bloccati in rotazione sincrona, orbitando attorno a un centro di massa comune 1.700 km sopra la superficie di Plutone — effettivamente un sistema di pianeti binari. New Horizons ha rivelato un terreno sorprendentemente vario: la liscia pianura Vulcan Planitia a sud, un emisfero antico e craterizzato a nord, e una calotta polare rosso scuro (Mordor Macula) di toline formatesi quando molecole di metano fuggite dall'atmosfera di Plutone si sono raccolte su Caronte e sono state trasformate dalla luce ultravioletta. Le quattro lune minori di Plutone (Styx, Nix, Kerberos, Hydra) orbitano attorno al baricentro Plutone-Caronte con rotazioni caotiche determinate dalla gravità mutevole del sistema binario.",
+  "surface_composition": "Crosta di ghiaccio d'acqua con idrati di ammoniaca e toline; la calotta polare rossastra scura (Mordor Macula) è gas metano fuggito da Plutone e trasformato in toline sulla superficie gelida di Caronte.",
+  "mission_visits": [
+    "New Horizons — USA, 2015 (first and only flyby)"
+  ],
+  "library_labels": {
+    "charon-wiki": "Wikipedia — Charon",
+    "charon-nasa": "NASA Science — panoramica di Charon",
+    "charon-new-horizons": "NASA New Horizons — sorvolo di Pluto-Charon (2015)"
+  }
+}

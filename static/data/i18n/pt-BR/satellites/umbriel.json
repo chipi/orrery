@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Umbriel é o gêmeo escuro do sistema uraniano — aproximadamente do mesmo tamanho que Ariel, mas refletindo menos da metade da luz solar, com uma superfície antiga e craterada que mostra poucas evidências de ressurgimento desde sua formação. A característica mais marcante é Wunda, uma cratera de 131 km cercada por material brilhante semelhante a gelo ao redor de sua borda, situada próxima ao equador da lua. A causa da coloração escura geral de Umbriel é desconhecida; uma hipótese a relaciona à poeira das luas externas irregulares de Urano varrendo o sistema interno.",
+  "surface_composition": "Gelo de água + regolito tingido de carbonáceo; superfície escura e densamente craterada — a menos refletiva das principais luas de Urano. Exceção notável: a cratera brilhante Wunda próxima ao equador.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "umbriel-wiki": "Wikipedia — Umbriel",
+    "umbriel-nasa": "NASA Science — panorama de Umbriel",
+    "umbriel-voyager2": "NASA Voyager 2 — imagens do sistema uraniano"
+  }
+}

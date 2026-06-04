@@ -1,1 +1,12 @@
-{}
+{
+  "description": "La superficie más brillante y (después de Miranda) de aspecto más joven del sistema uraniano — las imágenes de Voyager 2 muestran amplios valles de falla y lo que podrían ser rasgos de flujo que sugieren actividad criovolcánica pasada o presente. El calentamiento de marea procedente de una resonancia orbital 2:1 con Umbriel que existió en el pasado remoto podría haber fundido el interior; se desconoce si queda agua líquida en la actualidad. Como las demás lunas principales de Urano, solo su hemisferio sur ha sido fotografiado de cerca.",
+  "surface_composition": "Corteza de hielo de agua + interior de roca silicatada / carbonácea; la superficie es la más brillante de las lunas principales de Urano, con relativamente pocos cráteres — interpretado como evidencia de resurgimiento criovolcánico en los últimos ~1 Ga.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "ariel-wiki": "Wikipedia — Ariel",
+    "ariel-nasa": "NASA Science — panorama general de Ariel",
+    "ariel-voyager2": "NASA Voyager 2 — imágenes del sistema uraniano"
+  }
+}

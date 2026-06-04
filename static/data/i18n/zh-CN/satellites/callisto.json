@@ -1,1 +1,13 @@
-{}
+{
+  "description": "木卫四位于驱动木卫一、木卫二和木卫三潮汐加热的拉普拉斯共振之外——因此其内部从未充分熔融以完成完全分异或刷新地壳。其结果是它保留了内伽利略系统中最原始的撞击轰炸记录,其中包括壮观的瓦尔哈拉盆地15环系统,几乎延伸了该卫星周长的一半。尽管缺乏潮汐加热,Galileo 的磁强计仍探测到一个感应磁场,与表面之下约 100 km 处的深层咸水海洋相吻合。其较低的辐射环境(相较于木卫二或木卫三)以及长期存在的液态水,使其有望成为未来载人前往木星系任务的中转据点。",
+  "surface_composition": "约 40% 水冰 + 60% 硅酸盐岩石;表面是太阳系中陨击坑最密集的——几乎达到饱和,未受任何地表更新作用影响。显著特征:直径 3,800 km 的瓦尔哈拉多环撞击盆地。",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+  ],
+  "library_labels": {
+    "callisto-wiki": "Wikipedia — 木卫四",
+    "callisto-nasa": "NASA Science — 木卫四概述",
+    "callisto-galileo": "NASA Galileo 任务遗产档案"
+  }
+}

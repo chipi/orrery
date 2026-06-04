@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Die hellste und (nach Miranda) am jüngsten wirkende Oberfläche im Uranus-System — Voyager-2-Aufnahmen zeigen breite Grabenbrüche und möglicherweise Fließstrukturen, die auf vergangene oder gegenwärtige kryovulkanische Aktivität hindeuten. Gezeitenheizung durch eine 2:1-Bahnresonanz mit Umbriel, die in der fernen Vergangenheit existierte, könnte das Innere geschmolzen haben; ob heute noch flüssiges Wasser vorhanden ist, ist unbekannt. Wie bei den anderen großen Uranus-Monden wurde nur die Südhalbkugel aus der Nähe abgebildet.",
+  "surface_composition": "Wassereiskruste + Silikat-/kohlenstoffhaltiges Gesteinsinneres; Oberfläche die hellste der großen Uranus-Monde, mit relativ wenigen Kratern — interpretiert als Hinweis auf kryovulkanische Oberflächenerneuerung innerhalb der letzten ~1 Gyr.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "ariel-wiki": "Wikipedia — Ariel",
+    "ariel-nasa": "NASA Science — Ariel-Übersicht",
+    "ariel-voyager2": "NASA Voyager 2 — Uranus-System-Aufnahmen"
+  }
+}

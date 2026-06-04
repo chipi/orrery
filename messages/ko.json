@@ -962,5 +962,10 @@
   "panel_satellite_period_label": "Orbital period",
   "panel_satellite_discovered_label": "Discovered",
   "panel_satellite_missions_label": "Visited by",
-  "panel_satellite_library_pending": "Library entries land in #304 Slice 5."
+  "panel_satellite_library_pending": "Library entries land in #304 Slice 5.",
+  "panel_tab_library": "라이브러리",
+  "panel_satellite_gallery_empty": "이 위성에 대한 갤러리 이미지가 아직 없습니다.",
+  "panel_satellite_library_empty": "이 위성에 대한 라이브러리 항목이 아직 없습니다.",
+  "panel_satellite_period_unit_days": "{value}일",
+  "panel_satellite_kind": "자연 위성 · {planet} 공전"
 }

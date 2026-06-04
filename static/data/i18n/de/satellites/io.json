@@ -1,1 +1,15 @@
-{}
+{
+  "description": "Der geologisch aktivste Körper im Sonnensystem. Gezeitenerwärmung durch Jupiters Gravitation in Verbindung mit der Bahnresonanz mit Europa und Ganymed pumpt rund 100 Terawatt Wärme in Ios Inneres — genug, um ~400 gleichzeitig aktive Vulkane anzutreiben und Oberflächentemperaturen zu erzeugen, die von -130 °C (gefrorenes Schwefeldioxid) bis +1.600 °C (ultramafische Lava) schwanken. Ihre Oberfläche wird schneller neu überzogen, als Einschlagskrater sie zeichnen können. Loki Patera, ein 200 km großer Lavasee, ist das leistungsstärkste vulkanische Gebilde im gesamten Sonnensystem.",
+  "surface_composition": "Schwefel + Schwefeldioxid-Reif über silikatischer Kruste; die Oberflächenfärbung wird regelmäßig durch vulkanische Ströme erneuert — keine Einschlagskrater überdauern lange genug, um sichtbar zu bleiben.",
+  "mission_visits": [
+    "Voyager 1 — USA, 1979 (discovered active volcanism)",
+    "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "Juno — USA, 2023–2024 (closest-ever approaches)"
+  ],
+  "library_labels": {
+    "io-wiki": "Wikipedia — Io",
+    "io-nasa": "NASA Science — Überblick zu Io",
+    "io-juno": "NASA Juno — jüngste nahe Vorbeiflüge an Io",
+    "io-volcanism": "USGS — Katalog vulkanischer Strukturen auf Io"
+  }
+}

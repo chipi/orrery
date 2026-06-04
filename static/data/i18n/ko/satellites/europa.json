@@ -1,1 +1,16 @@
-{}
+{
+  "description": "태양계에서 가장 매끄러운 대형 천체로, 유로파의 어떤 산도 수백 미터를 넘지 않는다. 두께 20 km의 얼음 지각 아래에는 깊이 약 100 km의 전 지구적 염수 바다가 있으며, 이는 지구의 모든 바닷물을 합친 양의 두 배가 넘는 물을 담고 있다. 목성의 조석 굴곡 작용이 이 바다를 액체 상태로 유지하고 화학적으로 활성화시키며, 자기장 신호와 허블의 플룸 관측은 지하 바다의 물질이 주기적으로 표면에 도달함을 시사한다. NASA의 Europa Clipper(항행 중)와 ESA의 JUICE는 2030년대 초반에 걸쳐 얼음 껍질과 해양 역학을 정밀 조사할 예정이다.",
+  "surface_composition": "두께 약 15–25 km의 물-얼음 지각으로, 카오스 지형에 의해 활 모양 능선과 렌티큘레(lenticulae)의 망상 구조로 갈라져 있다. 염류(아마도 황산마그네슘 + 염화나트륨)가 카오스 지역의 얼음을 적갈색으로 물들인다.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — 유로파",
+    "europa-nasa": "NASA Science — 유로파 개요",
+    "europa-clipper": "NASA Europa Clipper — 미션 사이트",
+    "europa-juice": "ESA JUICE — 목성 얼음 위성 탐사선"
+  }
+}

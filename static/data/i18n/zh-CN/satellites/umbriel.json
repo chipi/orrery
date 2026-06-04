@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Umbriel是天王星系统中的暗黑双子——大小与Ariel相近,但反射的阳光不到后者的一半,拥有古老的撞击坑表面,自形成以来几乎没有重新铺设的迹象。最显著的特征是Wunda,一个直径131公里的撞击坑,边缘环绕着明亮的霜状物质,位于该卫星赤道附近。Umbriel整体暗黑色的成因尚不清楚;一种假说认为这与来自天王星不规则外卫星的尘埃扫过内侧系统有关。",
+  "surface_composition": "水冰 + 含碳色调的风化层;表面暗黑、布满撞击坑——是天王星主要卫星中反射率最低的。显著例外:赤道附近明亮的Wunda撞击坑。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "umbriel-wiki": "Wikipedia — Umbriel",
+    "umbriel-nasa": "NASA Science — Umbriel概况",
+    "umbriel-voyager2": "NASA Voyager 2 — 天王星系统图像"
+  }
+}

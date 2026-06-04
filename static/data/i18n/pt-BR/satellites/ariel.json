@@ -1,1 +1,12 @@
-{}
+{
+  "description": "A superfície mais brilhante e (depois de Miranda) de aparência mais jovem do sistema uraniano — as imagens da Voyager 2 mostram amplos vales de rifte e o que podem ser feições de fluxo sugerindo atividade criovulcânica passada ou presente. O aquecimento de maré proveniente de uma ressonância orbital de 2:1 com Umbriel que existiu no passado remoto poderia ter derretido o interior; se ainda resta alguma água líquida hoje é desconhecido. Como as outras grandes luas uranianas, apenas seu hemisfério sul foi imageado de perto.",
+  "surface_composition": "Crosta de gelo de água + interior de rocha silicática / carbonácea; superfície a mais brilhante das grandes luas de Urano, com relativamente poucas crateras — interpretado como evidência de recapeamento criovulcânico nos últimos ~1 Gyr.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "ariel-wiki": "Wikipedia — Ariel",
+    "ariel-nasa": "NASA Science — visão geral de Ariel",
+    "ariel-voyager2": "NASA Voyager 2 — imagens do sistema uraniano"
+  }
+}

@@ -1,1 +1,15 @@
-{}
+{
+  "description": "火星两颗卫星中较大且更靠内的一颗——形状不规则、形似土豆，最宽处仅 22 km。火卫一每 7 小时 39 分钟绕火星一周，比火星自转还快，因此从火星表面看，它每个火星日两次自西方升起、自东方落下。其轨道正在以约每年 2 cm 的速度衰减；在 3000 万到 5000 万年内，潮汐力要么会将其撕裂为一道临时的环，要么使其撞向行星。日本的 MMX 任务（约 2026 年发射）将带回其表面样本。",
+  "surface_composition": "布满撞击坑、类似碳质球粒陨石的天体，可能是被俘获的小行星或吸积残余物；表面以直径 9 km 的 Stickney 撞击坑及与之平行的沟槽为主，后者很可能与该次撞击的喷出物有关。",
+  "mission_visits": [
+    "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+    "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+  ],
+  "library_labels": {
+    "phobos-wiki": "Wikipedia — 火卫一",
+    "phobos-nasa": "NASA Science — 火卫一概览",
+    "phobos-mmx": "JAXA MMX — 前往火卫一的样本返回任务",
+    "phobos-hirise": "HiRISE — 从火星轨道以 0.25 m/px 拍摄的火卫一"
+  }
+}

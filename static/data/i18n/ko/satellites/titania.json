@@ -1,1 +1,12 @@
-{}
+{
+  "description": "천왕성의 가장 큰 위성이자 태양계에서 여덟 번째로 큰 위성. Voyager 2 이미지는 거대한 협곡 시스템으로 갈라진 표면을 드러냈다 — Messina Chasma만 해도 남반구를 가로질러 1,500 km에 걸쳐 뻗어 있다 — 큰 충돌 분지들과 신선해 보이는 작은 Ursula 크레이터도 함께 발견되었다. 2017년 항성 엄폐 관측에서는 얇은 이산화탄소 대기를 잠정적으로 검출했는데, 이는 천왕성 위성에서 발견된 최초의 대기가 될 것이다.",
+  "surface_composition": "물-얼음 + 규산염 암석; 수백 킬로미터 길이의 광대한 협곡 시스템으로 갈라진 고대 크레이터 지형 — Messina Chasma는 위성을 가로질러 ~1,500 km 뻗어 있다.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "titania-wiki": "Wikipedia — Titania",
+    "titania-nasa": "NASA Science — Titania 개요",
+    "titania-voyager2": "NASA Voyager 2 — Uranian-system 이미지"
+  }
+}

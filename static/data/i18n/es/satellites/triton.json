@@ -1,1 +1,13 @@
-{}
+{
+  "description": "La luna más grande de Neptuno y uno de los mundos geológicamente más activos del sistema solar. Tritón orbita Neptuno hacia atrás (retrógrado) y con una inclinación extrema, indicios diagnósticos de un objeto capturado del Cinturón de Kuiper, lo que hace probable que sea un hermano de Plutón en lugar de una luna neptuniana nativa. La Voyager 2 detectó géiseres activos de nitrógeno expulsando polvo orgánico oscuro a 8 km de altura en una tenue atmósfera de nitrógeno; el hemisferio sur presenta 'terreno de melón' — una red de hoyuelos y crestas que no se observa en ningún otro lugar del sistema solar. La órbita retrógrada de Tritón está decayendo por efectos de marea; en aproximadamente 3,6 Gyr será despedazado formando un anillo similar al de Saturno o se estrellará contra Neptuno.",
+  "surface_composition": "Nitrógeno congelado + hielo de agua + hielo de dióxido de carbono; superficie cubierta con terreno de textura de melón único en el sistema solar, y criogeiseres activos de nitrógeno expulsando penachos oscuros a 8 km de altura en una delgada atmósfera de nitrógeno.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — descripción general de Tritón",
+    "triton-voyager2": "NASA Voyager 2 — encuentro con el sistema de Neptuno (1989)",
+    "triton-trident": "Trident — sobrevuelo de Tritón propuesto clase Discovery"
+  }
+}

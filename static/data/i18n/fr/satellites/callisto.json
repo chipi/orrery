@@ -1,1 +1,13 @@
-{}
+{
+  "description": "Callisto se trouve en dehors de la résonance de Laplace qui entraîne le chauffage par effet de marée d'Io, Europe et Ganymède — son intérieur ne s'est donc jamais suffisamment réchauffé pour se différencier complètement ou renouveler sa croûte. Le résultat est l'enregistrement le plus intact du bombardement par impacts dans le système galiléen interne, y compris le spectaculaire système à 15 anneaux du bassin de Valhalla, qui s'étend sur près de la moitié de la circonférence de la lune. Malgré l'absence de chauffage de marée, le magnétomètre de Galileo a détecté un champ magnétique induit compatible avec un océan salé profond situé à environ 100 km sous la surface. Son environnement de faible radiation (comparé à Europe ou Ganymède) et son eau de longue durée en font un point d'étape probable pour de futures missions habitées vers le système jovien.",
+  "surface_composition": "Environ 40 % de glace d'eau + 60 % de roche silicatée ; surface la plus cratérisée du système solaire — presque saturée, intacte de tout renouvellement. Caractéristique notable : le bassin d'impact multi-anneaux de Valhalla, de 3 800 km.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+  ],
+  "library_labels": {
+    "callisto-wiki": "Wikipedia — Callisto",
+    "callisto-nasa": "NASA Science — Callisto, aperçu",
+    "callisto-galileo": "NASA Galileo, archives patrimoniales"
+  }
+}

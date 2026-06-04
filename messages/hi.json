@@ -962,5 +962,10 @@
   "panel_satellite_period_label": "Orbital period",
   "panel_satellite_discovered_label": "Discovered",
   "panel_satellite_missions_label": "Visited by",
-  "panel_satellite_library_pending": "Library entries land in #304 Slice 5."
+  "panel_satellite_library_pending": "Library entries land in #304 Slice 5.",
+  "panel_tab_library": "पुस्तकालय",
+  "panel_satellite_gallery_empty": "इस उपग्रह के लिए अभी तक कोई गैलरी चित्र उपलब्ध नहीं हैं।",
+  "panel_satellite_library_empty": "इस उपग्रह के लिए अभी तक कोई पुस्तकालय प्रविष्टि उपलब्ध नहीं है।",
+  "panel_satellite_period_unit_days": "{value} दिन",
+  "panel_satellite_kind": "प्राकृतिक उपग्रह · {planet} की परिक्रमा करता है"
 }

@@ -1,1 +1,14 @@
-{}
+{
+  "description": "直径わずか504 kmの小さな天体だが、太陽系で最も反射率の高い天体であり、地球外で現在居住可能性が最も有望視される候補の一つである。Cassiniは南極にある4本の長さ130 kmの亀裂から噴出するプルームを直接通過飛行し、分光計は分子状水素、メタンを含む有機物、塩類、そして海底で活発な熱水化学反応が進行していることを示すシリカナノ粒子を検出した。海洋は岩石質の海底と直接接触しており、これは地球自身の深海熱水噴出孔で生命が誕生した時と同じエネルギーおよび化学条件である。",
+  "surface_composition": "全球的な地下海洋の上に広がる純粋な水氷地殻。南極の「タイガーストライプ」亀裂から水蒸気、有機物、塩類、シリカナノ粒子、分子状水素のプルームを噴出。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Enceladus",
+    "enceladus-nasa": "NASA Science — Enceladus 概要",
+    "enceladus-cassini": "NASA Cassini — プルーム通過飛行レガシーアーカイブ",
+    "enceladus-habitability": "Astrobiology — 生命探査ターゲットとしてのEnceladus"
+  }
+}

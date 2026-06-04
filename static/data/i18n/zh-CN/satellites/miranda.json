@@ -1,1 +1,12 @@
-{}
+{
+  "description": "天王星五颗主要卫星中最内侧、最小的一颗——也是视觉上最极端的一颗。Voyager 2 的飞掠影像揭示了一个看起来像是由不匹配碎片拼装而成的表面:巨大的悬崖、破碎的高原,以及从布满陨石坑的古老地形中突出的同心圆冠状结构。主流假说认为,Miranda 至少经历过一次撞击破坏,碎片在自身引力作用下重新聚合。Verona Rupes 落差约 20 km——在 Miranda 的低重力环境下,坠落物体到达底部大约需要 12 分钟。",
+  "surface_composition": "水冰 + 硅酸盐岩石;表面是古老陨石坑地形的拼接体,其上交错分布着巨大的冠状结构——包括 Verona Rupes 在内的同心脊和沟槽,这是太阳系已知最高的悬崖(垂直落差约 20 km)。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — Miranda 概述",
+    "miranda-voyager2": "NASA Voyager 2 — 唯一的天王星系统飞掠 (1986)"
+  }
+}

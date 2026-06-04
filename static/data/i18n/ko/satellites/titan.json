@@ -1,1 +1,16 @@
-{}
+{
+  "description": "태양계에서 두 번째로 큰 위성이자 상당한 대기를 가진 유일한 위성으로, 지구보다 두껍다. 주황색 톨린 연무 아래에는 지구를 제외하고 표면에 안정적인 액체가 존재하는 유일한 천체가 있다. 극지방에는 메테인과 에테인으로 이루어진 탄화수소 호수와 바다가 있으며, 구름, 비, 그리고 물-얼음 기반암을 깎아내는 강을 포함하는 활발한 메테인 물순환에 의해 공급된다. Huygens(ESA)는 2005년 지구의 달 이외의 위성에 처음으로 착륙했다. NASA의 Dragonfly는 2034년에 핵동력 회전익기로 도착하여 타이탄의 유기물이 풍부한 지형 사이를 이동할 예정이다.",
+  "surface_composition": "유기물 모래언덕 아래의 물-얼음 기반암 + 탄화수소 호수(메테인 / 에테인) + 지구 해수면 기압의 1.45배인 질소-메테인 대기. 톨린 연무가 하늘을 주황색으로 물들인다.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titan",
+    "titan-nasa": "NASA Science — Titan 개요",
+    "titan-dragonfly": "NASA Dragonfly — 타이탄 핵동력 회전익기 임무",
+    "titan-huygens": "ESA Huygens — 우리의 달 이외의 위성 최초 착륙"
+  }
+}

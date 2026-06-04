@@ -91,7 +91,8 @@
   {#if entry}
     <div class="head">
       <div class="kind-row">
-        <span class="kind">NATURAL SATELLITE · ORBITS {entry.parent_planet_name.toUpperCase()}</span
+        <span class="kind"
+          >{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span
         >
       </div>
     </div>
@@ -137,7 +138,7 @@
         onclick={() => (tab = 'library')}
         role="tab"
         aria-selected={tab === 'library'}
-        aria-controls="sat-tabpanel">LIBRARY</button
+        aria-controls="sat-tabpanel">{m.panel_tab_library()}</button
       >
     </div>
 
@@ -146,7 +147,7 @@
         <p class="editorial">{entry.description}</p>
         {#if entry.surface_composition}
           <div class="composition">
-            <div class="cell-label">COMPOSITION</div>
+            <div class="cell-label">{m.panel_satellite_composition_label()}</div>
             <div class="cell-value">{entry.surface_composition}</div>
           </div>
         {/if}
@@ -160,30 +161,32 @@
             {/each}
           </ul>
         {:else}
-          <p class="editorial empty">No gallery images sourced yet for this satellite.</p>
+          <p class="editorial empty">{m.panel_satellite_gallery_empty()}</p>
         {/if}
       {:else if tab === 'technical'}
         <div class="grid">
           <div>
-            <div class="cell-label">RADIUS</div>
+            <div class="cell-label">{m.panel_satellite_radius_label()}</div>
             <div class="cell-value">{formatKm(entry.radius_km, loc)}</div>
           </div>
           <div>
-            <div class="cell-label">ORBIT</div>
+            <div class="cell-label">{m.panel_satellite_orbit_label()}</div>
             <div class="cell-value">{formatKm(entry.semi_major_axis_km, loc)}</div>
           </div>
           <div>
-            <div class="cell-label">PERIOD</div>
-            <div class="cell-value">{entry.orbital_period_days.toFixed(2)} days</div>
+            <div class="cell-label">{m.panel_satellite_period_label()}</div>
+            <div class="cell-value">
+              {m.panel_satellite_period_unit_days({ value: entry.orbital_period_days.toFixed(2) })}
+            </div>
           </div>
           <div>
-            <div class="cell-label">DISCOVERED</div>
+            <div class="cell-label">{m.panel_satellite_discovered_label()}</div>
             <div class="cell-value">{entry.discovered}</div>
           </div>
         </div>
         {#if entry.mission_visits.length > 0}
           <div class="mission-block">
-            <div class="cell-label">VISITED BY</div>
+            <div class="cell-label">{m.panel_satellite_missions_label()}</div>
             <ul class="mission-list">
               {#each entry.mission_visits as mission}
                 <li>{mission}</li>
@@ -203,7 +206,7 @@
             {/each}
           </ul>
         {:else}
-          <p class="editorial empty">No library entries yet for this satellite.</p>
+          <p class="editorial empty">{m.panel_satellite_library_empty()}</p>
         {/if}
       {/if}
     </div>
@@ -230,6 +233,7 @@
     font-size: 8px;
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
+    text-transform: uppercase;
   }
   .panel-hero {
     margin: 0 0 14px;
@@ -289,6 +293,7 @@
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.45);
     margin-bottom: 4px;
+    text-transform: uppercase;
   }
   .cell-value {
     font-family: 'Space Mono', monospace;

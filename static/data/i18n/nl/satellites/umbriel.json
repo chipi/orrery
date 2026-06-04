@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Umbriel is de donkere tweeling in het Uranus-systeem — ongeveer even groot als Ariel maar met minder dan de helft van de weerkaatste zonnestraling, met een oud gekraterd oppervlak dat weinig bewijs toont van herhaalde oppervlaktevorming sinds de oorsprong. Het opvallendste kenmerk is Wunda, een 131 km grote krater omringd met helder rijpachtig materiaal rond de rand, gelegen nabij de evenaar van de maan. De oorzaak van Umbriels algehele donkere kleur is onbekend; een hypothese verbindt dit met stof van Uranus' onregelmatige buitenste manen dat door het binnenste systeem beweegt.",
+  "surface_composition": "Waterijs + koolstofhoudend getint regoliet; donker, zwaar gekraterd oppervlak — de minst reflectieve van de grote manen van Uranus. Opvallende uitzondering: de heldere Wunda-krater nabij de evenaar.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "umbriel-wiki": "Wikipedia — Umbriel",
+    "umbriel-nasa": "NASA Science — Umbriel-overzicht",
+    "umbriel-voyager2": "NASA Voyager 2 — Uranus-systeembeelden"
+  }
+}

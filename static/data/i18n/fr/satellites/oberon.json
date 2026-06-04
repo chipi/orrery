@@ -1,1 +1,12 @@
-{}
+{
+  "description": "La plus externe des lunes majeures d'Uranus. La surface d'Oberon est fortement cratérisée et teintée de rouge — plus ancienne que celle de Titania, sans preuve évidente de resurfaçage depuis le grand bombardement tardif il y a ~4 Ga. Plusieurs grands cratères présentent des fonds remarquablement sombres ; les spectres sont cohérents avec des résidus d'hydrocarbures laissés par des composés organiques altérés par l'espace. Une montagne de 6 km — peut-être le pic central d'un grand bassin d'impact — s'élève près du limbe dans la meilleure image de Voyager 2.",
+  "surface_composition": "Glace d'eau + roche silicatée ; surface ancienne cratérisée teintée de rouge ; les fonds sombres de plusieurs grands cratères sont recouverts d'un matériau sombre non identifié, possiblement des hydrocarbures ou des carbonates.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "oberon-wiki": "Wikipedia — Oberon",
+    "oberon-nasa": "NASA Science — aperçu d'Oberon",
+    "oberon-voyager2": "NASA Voyager 2 — imagerie du système uranien"
+  }
+}

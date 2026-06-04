@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Segunda luna más grande del sistema solar y la única con una atmósfera sustancial — más densa que la de la Tierra. Bajo la neblina anaranjada de tolinas se encuentra el único cuerpo conocido, además de la Tierra, con líquido estable en su superficie: lagos y mares de hidrocarburos compuestos de metano y etano en las regiones polares, alimentados por un ciclo hidrológico activo del metano que incluye nubes, lluvia y ríos que esculpen un lecho rocoso de hielo de agua. Huygens (ESA) realizó en 2005 el primer aterrizaje en una luna distinta a la nuestra. Dragonfly, de la NASA, llegará en 2034 como un rotorcóptero de propulsión nuclear, saltando entre los paisajes ricos en compuestos orgánicos de Titán.",
+  "surface_composition": "Lecho rocoso de hielo de agua bajo dunas orgánicas + lagos de hidrocarburos (metano / etano) + una atmósfera de nitrógeno y metano con 1,45× la presión al nivel del mar de la Tierra. La neblina de tolinas tiñe el cielo de naranja.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titán",
+    "titan-nasa": "NASA Science — Titán, vista general",
+    "titan-dragonfly": "NASA Dragonfly — misión de rotorcóptero nuclear a Titán",
+    "titan-huygens": "ESA Huygens — primer aterrizaje en una luna distinta a la nuestra"
+  }
+}

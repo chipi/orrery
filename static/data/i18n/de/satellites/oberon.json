@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Der äußerste der großen Monde des Uranus. Oberons Oberfläche ist stark verkratert und rötlich gefärbt — älter als die von Titania, ohne klare Anzeichen von Oberflächenerneuerung seit dem späten schweren Bombardement vor ~4 Mrd. Jahren. Mehrere große Krater haben auffallend dunkle Böden; Spektren sind konsistent mit Kohlenwasserstoffrückständen, die von weltraumverwitterten Organika hinterlassen wurden. Ein 6 km hoher Berg — möglicherweise der Zentralgipfel eines großen Einschlagbeckens — erhebt sich nahe dem Rand in Voyager 2's bester Aufnahme.",
+  "surface_composition": "Wassereis + Silikatgestein; rötlich gefärbte alte verkraterte Oberfläche; die dunklen Böden mehrerer großer Krater sind mit nicht identifiziertem dunklem Material bedeckt, möglicherweise Kohlenwasserstoffe oder Karbonate.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "oberon-wiki": "Wikipedia — Oberon",
+    "oberon-nasa": "NASA Science — Oberon Übersicht",
+    "oberon-voyager2": "NASA Voyager 2 — Uranus-System-Bilder"
+  }
+}

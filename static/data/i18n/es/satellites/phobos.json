@@ -1,1 +1,15 @@
-{}
+{
+  "description": "La mayor y más interna de las dos lunas de Marte — un cuerpo irregular con forma de patata de apenas 22 km en su parte más ancha. Phobos orbita Marte cada 7 horas y 39 minutos, más rápido de lo que el propio Marte rota, por lo que desde la superficie marciana sale por el oeste y se pone por el este dos veces por día marciano. Su órbita se está degradando a ~2 cm por año; dentro de 30–50 millones de años las fuerzas de marea lo desgarrarán formando un anillo temporal o lo harán estrellarse contra el planeta. La misión MMX de Japón (lanzamiento ~2026) traerá muestras de la superficie.",
+  "surface_composition": "Cuerpo fuertemente craterizado de composición similar a las condritas carbonáceas, posiblemente un asteroide capturado o un remanente de acreción; la superficie está dominada por el cráter Stickney, de 9 km, y por surcos paralelos probablemente asociados a los eyectos de ese impacto.",
+  "mission_visits": [
+    "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+    "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+  ],
+  "library_labels": {
+    "phobos-wiki": "Wikipedia — Phobos",
+    "phobos-nasa": "NASA Science — Phobos: visión general",
+    "phobos-mmx": "JAXA MMX — misión de retorno de muestras a Phobos",
+    "phobos-hirise": "HiRISE — Phobos a 0,25 m/px desde la órbita de Marte"
+  }
+}

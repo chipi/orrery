@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Zweitgrößter Mond des Sonnensystems und der einzige Mond mit einer substanziellen Atmosphäre — dichter als die der Erde. Unter dem orangefarbenen Tholin-Dunst liegt der einzige bekannte Himmelskörper außer der Erde mit stabilen Flüssigkeiten an seiner Oberfläche: Kohlenwasserstoffseen und -meere aus Methan und Ethan in den Polregionen, gespeist von einem aktiven Methan-Wasserkreislauf mit Wolken, Regen und Flüssen, die ein Grundgestein aus Wassereis ausformen. Huygens (ESA) führte 2005 die erste Landung auf einem anderen Mond als dem der Erde durch. NASAs Dragonfly wird 2034 als nuklear betriebener Drehflügler eintreffen und zwischen Titans organikreichen Landschaften umherspringen.",
+  "surface_composition": "Grundgestein aus Wassereis unter organischen Dünen + Kohlenwasserstoffseen (Methan / Ethan) + eine Stickstoff-Methan-Atmosphäre mit dem 1,45-fachen des irdischen Meeresspiegeldrucks. Tholin-Dunst färbt den Himmel orange.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titan",
+    "titan-nasa": "NASA Science — Titan im Überblick",
+    "titan-dragonfly": "NASA Dragonfly — nukleare Drehflüglermission zum Titan",
+    "titan-huygens": "ESA Huygens — erste Landung auf einem anderen Mond als unserem"
+  }
+}

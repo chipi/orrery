@@ -87,7 +87,12 @@
     "chip_label_suit_lineage": "Linaje de trajes — Mercury hasta xEMU; trajes de presión + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "Operaciones EVA — protocolos de pre-respiración, disciplina de anclaje, fatiga de guantes",
     "chip_label_long_duration_effects": "Efectos de larga duración — SANS, cognición, sueño, deriva inmunitaria",
-    "chip_label_mission_phase_eva": "Fase de misión EVA — cuándo encaja la caminata espacial en el cronograma"
+    "chip_label_mission_phase_eva": "Fase de misión EVA — cuándo encaja la caminata espacial en el cronograma",
+    "panel_tab_library": "Biblioteca",
+    "panel_satellite_gallery_empty": "Aún no se han obtenido imágenes de galería para este satélite.",
+    "panel_satellite_library_empty": "Aún no se han obtenido entradas de biblioteca para este satélite.",
+    "panel_satellite_period_unit_days": "{value} días",
+    "panel_satellite_kind": "Satélite natural · orbita {planet}"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -177,7 +182,12 @@
     "chip_label_suit_lineage": "Lignée de combinaisons — Mercury jusqu'à xEMU ; combinaisons à pression + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "Opérations EVA — protocoles de pré-respiration, discipline des attaches, fatigue des gants",
     "chip_label_long_duration_effects": "Effets longue durée — SANS, cognition, sommeil, dérive immunitaire",
-    "chip_label_mission_phase_eva": "Phase de mission EVA — quand la sortie extravéhiculaire s'inscrit dans le calendrier"
+    "chip_label_mission_phase_eva": "Phase de mission EVA — quand la sortie extravéhiculaire s'inscrit dans le calendrier",
+    "panel_tab_library": "Bibliothèque",
+    "panel_satellite_gallery_empty": "Aucune image de galerie disponible pour ce satellite.",
+    "panel_satellite_library_empty": "Aucune entrée de bibliothèque disponible pour ce satellite.",
+    "panel_satellite_period_unit_days": "{value} jours",
+    "panel_satellite_kind": "Satellite naturel · orbite {planet}"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -267,7 +277,12 @@
     "chip_label_suit_lineage": "Anzug-Linie — Mercury bis xEMU; Druckanzüge + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA-Operationen — Pre-Breathe-Protokolle, Halteseil-Disziplin, Handschuhermüdung",
     "chip_label_long_duration_effects": "Langzeiteffekte — SANS, Kognition, Schlaf, Immundrift",
-    "chip_label_mission_phase_eva": "EVA-Missionsphase — wann der Weltraumspaziergang in den Zeitplan passt"
+    "chip_label_mission_phase_eva": "EVA-Missionsphase — wann der Weltraumspaziergang in den Zeitplan passt",
+    "panel_tab_library": "Bibliothek",
+    "panel_satellite_gallery_empty": "Für diesen Mond sind noch keine Galeriebilder verfügbar.",
+    "panel_satellite_library_empty": "Für diesen Mond sind noch keine Bibliothekseinträge verfügbar.",
+    "panel_satellite_period_unit_days": "{value} Tage",
+    "panel_satellite_kind": "Natürlicher Mond · umkreist {planet}"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -357,7 +372,12 @@
     "chip_label_suit_lineage": "Linhagem de trajes — Mercury até xEMU; trajes pressurizados + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "Operações EVA — protocolos de pré-respiração, disciplina de amarração, fadiga das luvas",
     "chip_label_long_duration_effects": "Efeitos de longa duração — SANS, cognição, sono, deriva imunológica",
-    "chip_label_mission_phase_eva": "Fase de missão EVA — quando a caminhada espacial se encaixa na programação"
+    "chip_label_mission_phase_eva": "Fase de missão EVA — quando a caminhada espacial se encaixa na programação",
+    "panel_tab_library": "Biblioteca",
+    "panel_satellite_gallery_empty": "Nenhuma imagem de galeria disponível ainda para este satélite.",
+    "panel_satellite_library_empty": "Nenhuma entrada de biblioteca disponível ainda para este satélite.",
+    "panel_satellite_period_unit_days": "{value} dias",
+    "panel_satellite_kind": "Satélite natural · orbita {planet}"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -447,7 +467,12 @@
     "chip_label_suit_lineage": "Genealogia tute — da Mercury a xEMU; tute pressurizzate + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "Operazioni EVA — protocolli pre-respirazione, disciplina cavi, affaticamento guanti",
     "chip_label_long_duration_effects": "Effetti lunga durata — SANS, cognizione, sonno, deriva immunitaria",
-    "chip_label_mission_phase_eva": "Fase missione EVA — quando la passeggiata spaziale si inserisce nel programma"
+    "chip_label_mission_phase_eva": "Fase missione EVA — quando la passeggiata spaziale si inserisce nel programma",
+    "panel_tab_library": "Libreria",
+    "panel_satellite_gallery_empty": "Nessuna immagine disponibile per questo satellite.",
+    "panel_satellite_library_empty": "Nessuna voce disponibile per questo satellite.",
+    "panel_satellite_period_unit_days": "{value} giorni",
+    "panel_satellite_kind": "Satellite naturale · orbita {planet}"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -537,7 +562,12 @@
     "chip_label_suit_lineage": "Лоза одела — Mercury до xEMU; притисна одела + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA операције — протоколи пре-дисања, дисциплина привеза, замор рукавица",
     "chip_label_long_duration_effects": "Ефекти дуготрајног боравка — SANS, когниција, сан, имунолошко одступање",
-    "chip_label_mission_phase_eva": "EVA фаза мисије — када се свемирска шетња уклапа у распоред"
+    "chip_label_mission_phase_eva": "EVA фаза мисије — када се свемирска шетња уклапа у распоред",
+    "panel_tab_library": "Библиотека",
+    "panel_satellite_gallery_empty": "Још нема слика у галерији за овај сателит.",
+    "panel_satellite_library_empty": "Још нема уноса у библиотеци за овај сателит.",
+    "panel_satellite_period_unit_days": "{value} дана",
+    "panel_satellite_kind": "Природни сателит · кружи око {planet}"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -627,7 +657,12 @@
     "chip_label_suit_lineage": "航天服谱系 — Mercury至xEMU；压力服、EMU、Orlan与Feitian",
     "chip_label_eva_operations": "EVA操作 — 预呼吸程序、系绳规范、手套疲劳",
     "chip_label_long_duration_effects": "长期效应 — SANS、认知、睡眠、免疫漂移",
-    "chip_label_mission_phase_eva": "EVA任务阶段 — 太空行走在时间表中的安排"
+    "chip_label_mission_phase_eva": "EVA任务阶段 — 太空行走在时间表中的安排",
+    "panel_tab_library": "资料库",
+    "panel_satellite_gallery_empty": "该卫星暂无图库图片。",
+    "panel_satellite_library_empty": "该卫星暂无资料库条目。",
+    "panel_satellite_period_unit_days": "{value} 天",
+    "panel_satellite_kind": "天然卫星 · 环绕 {planet}"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -717,7 +752,12 @@
     "chip_label_suit_lineage": "宇宙服系譜 — MercuryからxEMUまで; 与圧服 + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA運用 — 事前脱窒素プロトコル、テザー規律、グローブ疲労",
     "chip_label_long_duration_effects": "長期滞在影響 — SANS、認知機能、睡眠、免疫変化",
-    "chip_label_mission_phase_eva": "EVAミッションフェーズ — 船外活動がスケジュールに組み込まれるタイミング"
+    "chip_label_mission_phase_eva": "EVAミッションフェーズ — 船外活動がスケジュールに組み込まれるタイミング",
+    "panel_tab_library": "ライブラリ",
+    "panel_satellite_gallery_empty": "この衛星のギャラリー画像はまだありません。",
+    "panel_satellite_library_empty": "この衛星のライブラリエントリはまだありません。",
+    "panel_satellite_period_unit_days": "{value}日",
+    "panel_satellite_kind": "自然衛星 · {planet}を周回"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -807,7 +847,12 @@
     "chip_label_suit_lineage": "우주복 계보 — Mercury부터 xEMU까지; 압력복 + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA 운용 — 사전 호흡 절차, 테더 규율, 장갑 피로",
     "chip_label_long_duration_effects": "장기 체류 영향 — SANS, 인지, 수면, 면역 변화",
-    "chip_label_mission_phase_eva": "EVA 임무 단계 — 선외활동이 일정에 들어가는 시점"
+    "chip_label_mission_phase_eva": "EVA 임무 단계 — 선외활동이 일정에 들어가는 시점",
+    "panel_tab_library": "라이브러리",
+    "panel_satellite_gallery_empty": "이 위성에 대한 갤러리 이미지가 아직 없습니다.",
+    "panel_satellite_library_empty": "이 위성에 대한 라이브러리 항목이 아직 없습니다.",
+    "panel_satellite_period_unit_days": "{value}일",
+    "panel_satellite_kind": "자연 위성 · {planet} 공전"
   },
   "hi": {
     "mars_meta_description": "मानव जाति ने मंगल पर जो भी छोड़ा है — लैंडर, रोवर और सक्रिय कक्षीय यान — पूर्ण मिशन इतिहास के साथ एक संचालित 3D ग्लोब पर।",
@@ -897,7 +942,12 @@
     "chip_label_suit_lineage": "सूट वंशावली — Mercury से xEMU तक; दबाव सूट + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA संचालन — पूर्व-श्वास प्रोटोकॉल, टेदर अनुशासन, दस्ताने थकान",
     "chip_label_long_duration_effects": "दीर्घकालिक प्रभाव — SANS, अनुभूति, नींद, प्रतिरक्षा विचलन",
-    "chip_label_mission_phase_eva": "EVA मिशन चरण — जब अंतरिक्ष यात्रा अनुसूची में फिट हो"
+    "chip_label_mission_phase_eva": "EVA मिशन चरण — जब अंतरिक्ष यात्रा अनुसूची में फिट हो",
+    "panel_tab_library": "पुस्तकालय",
+    "panel_satellite_gallery_empty": "इस उपग्रह के लिए अभी तक कोई गैलरी चित्र उपलब्ध नहीं हैं।",
+    "panel_satellite_library_empty": "इस उपग्रह के लिए अभी तक कोई पुस्तकालय प्रविष्टि उपलब्ध नहीं है।",
+    "panel_satellite_period_unit_days": "{value} दिन",
+    "panel_satellite_kind": "प्राकृतिक उपग्रह · {planet} की परिक्रमा करता है"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -987,7 +1037,12 @@
     "chip_label_suit_lineage": "سلالة البدلات — من Mercury حتى xEMU؛ بدلات الضغط + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "عمليات EVA — بروتوكولات التنفس المسبق، انضباط الحبال، إرهاق القفازات",
     "chip_label_long_duration_effects": "تأثيرات المدة الطويلة — SANS، الإدراك، النوم، انحراف المناعة",
-    "chip_label_mission_phase_eva": "مرحلة مهمة EVA — متى يتناسب السير الفضائي مع الجدول الزمني"
+    "chip_label_mission_phase_eva": "مرحلة مهمة EVA — متى يتناسب السير الفضائي مع الجدول الزمني",
+    "panel_tab_library": "المكتبة",
+    "panel_satellite_gallery_empty": "لا توجد صور في المعرض لهذا القمر بعد.",
+    "panel_satellite_library_empty": "لا توجد مدخلات في المكتبة لهذا القمر بعد.",
+    "panel_satellite_period_unit_days": "{value} يوم",
+    "panel_satellite_kind": "قمر طبيعي · يدور حول {planet}"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -1077,7 +1132,12 @@
     "chip_label_suit_lineage": "Линейка скафандров — от Mercury до xEMU; высотные костюмы + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "Операции EVA — протоколы предварительной дыхательной подготовки, дисциплина фала, усталость перчаток",
     "chip_label_long_duration_effects": "Эффекты длительного пребывания — SANS, когнитивные функции, сон, дрейф иммунитета",
-    "chip_label_mission_phase_eva": "Фаза миссии EVA — когда выход в открытый космос вписывается в график"
+    "chip_label_mission_phase_eva": "Фаза миссии EVA — когда выход в открытый космос вписывается в график",
+    "panel_tab_library": "Библиотека",
+    "panel_satellite_gallery_empty": "Для этого спутника пока нет изображений в галерее.",
+    "panel_satellite_library_empty": "Для этого спутника пока нет записей в библиотеке.",
+    "panel_satellite_period_unit_days": "{value} дн.",
+    "panel_satellite_kind": "Естественный спутник · обращается вокруг {planet}"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -1149,6 +1209,11 @@
     "chip_label_suit_lineage": "Pak afstamming — Mercury tot xEMU; drukpakken + EMU + Orlan + Feitian",
     "chip_label_eva_operations": "EVA operaties — pre-breathe protocollen, kabel discipline, handschoen vermoeidheid",
     "chip_label_long_duration_effects": "Lange-duur effecten — SANS, cognitie, slaap, immuun drift",
-    "chip_label_mission_phase_eva": "EVA missie fase — wanneer de ruimtewandeling in het schema past"
+    "chip_label_mission_phase_eva": "EVA missie fase — wanneer de ruimtewandeling in het schema past",
+    "panel_tab_library": "Bibliotheek",
+    "panel_satellite_gallery_empty": "Nog geen galerij-afbeeldingen beschikbaar voor deze maan.",
+    "panel_satellite_library_empty": "Nog geen bibliotheekitems beschikbaar voor deze maan.",
+    "panel_satellite_period_unit_days": "{value} dagen",
+    "panel_satellite_kind": "Natuurlijke maan · draait om {planet}"
   }
 }

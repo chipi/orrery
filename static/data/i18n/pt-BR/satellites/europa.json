@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Corpo grande mais liso do sistema solar — nenhuma montanha em Europa se eleva mais que algumas centenas de metros. Sob sua crosta de gelo de 20 km existe um oceano global de água salgada com ~100 km de profundidade, contendo mais que o dobro de toda a água dos oceanos da Terra somados. A flexão de maré causada por Júpiter mantém esse oceano líquido e quimicamente ativo; assinaturas do campo magnético e observações de plumas pelo Hubble sugerem que material do oceano subterrâneo chega periodicamente à superfície. O Europa Clipper da NASA (em trânsito) e o JUICE da ESA examinarão minuciosamente a casca de gelo e a dinâmica do oceano até o início da década de 2030.",
+  "surface_composition": "Crosta de gelo de água com ~15–25 km de espessura, fraturada por terreno caótico numa rede de cristas arqueadas e lenticulae; sais (provavelmente sulfato de magnésio + cloreto de sódio) tingem o gelo de vermelho-amarronzado nas regiões caóticas.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — Europa",
+    "europa-nasa": "NASA Science — visão geral de Europa",
+    "europa-clipper": "NASA Europa Clipper — site da missão",
+    "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
+  }
+}

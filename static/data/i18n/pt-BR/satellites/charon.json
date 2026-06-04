@@ -1,1 +1,12 @@
-{}
+{
+  "description": "Metade do diâmetro de Plutão — a maior proporção de tamanho lua-planeta do sistema solar. Caronte e Plutão estão mutuamente travados por força de maré, orbitando um centro de massa comum 1.700 km acima da superfície de Plutão — efetivamente um sistema de planeta binário. A New Horizons revelou um terreno surpreendentemente variado: a planície lisa Vulcan Planitia ao sul, um hemisfério antigo repleto de crateras ao norte, e uma calota polar vermelha escura (Mordor Macula) de tolinas formadas quando moléculas de metano que escapam da atmosfera de Plutão se acumularam em Caronte e foram processadas pela luz ultravioleta. As quatro luas menores de Plutão (Styx, Nix, Kerberos, Hydra) orbitam o baricentro Plutão-Caronte com rotações caóticas impulsionadas pela gravidade oscilante do sistema binário.",
+  "surface_composition": "Crosta de gelo de água com hidratos de amônia e tolinas; a calota polar vermelha escura (Mordor Macula) é gás metano que escapou de Plutão e foi processado em tolinas na superfície gélida de Caronte.",
+  "mission_visits": [
+    "New Horizons — USA, 2015 (first and only flyby)"
+  ],
+  "library_labels": {
+    "charon-wiki": "Wikipedia — Charon",
+    "charon-nasa": "NASA Science — visão geral de Charon",
+    "charon-new-horizons": "NASA New Horizons — sobrevoo de Plutão-Caronte (2015)"
+  }
+}

@@ -1,1 +1,13 @@
-{}
+{
+  "description": "La más pequeña y exterior de las dos lunas de Marte, de apenas 12 km de diámetro — el cuerpo más pequeño conocido del sistema solar que aún se resuelve como un disco, y no como un punto, desde una cámara orbital típica. Su superficie más lisa (en comparación con el terreno surcado de cráteres de Fobos) y su órbita más lenta (30 horas frente a las 8 de Fobos) la convierten en la más apacible del par lunar de Marte. Asaph Hall bautizó ambas lunas con los nombres de las personificaciones griegas del Miedo (Fobos) y el Terror (Deimos) — los caballos de guerra que tiraban del carro de Ares en el canto XV de la Ilíada.",
+  "surface_composition": "Similar a una condrita carbonácea; superficie más lisa que la de Fobos porque su menor gravedad permite que los materiales eyectados por los impactos escapen a la órbita de Marte en lugar de volver a acumularse. Dos cráteres con nombre: Swift y Voltaire (ambos de ~3 km).",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — Deimos",
+    "deimos-nasa": "NASA Science — Deimos, visión general",
+    "deimos-mrohirise": "HiRISE — Deimos en imágenes desde la órbita de Marte"
+  }
+}

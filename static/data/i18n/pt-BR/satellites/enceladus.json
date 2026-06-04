@@ -1,1 +1,14 @@
-{}
+{
+  "description": "Minúsculo — apenas 504 km de diâmetro — mas o corpo mais reflexivo do sistema solar e um dos candidatos mais fortes à habitabilidade nos dias de hoje além da Terra. A Cassini voou diretamente através de plumas em erupção de quatro fraturas de 130 km de comprimento no polo sul; o espectrômetro detectou hidrogênio molecular, orgânicos incluindo metano, sais e nanograos de sílica indicando química hidrotermal ativa no leito oceânico. O oceano está em contato direto com o leito rochoso submarino — as mesmas condições de energia e química que deram origem à vida nas próprias fontes hidrotermais de alto-mar da Terra.",
+  "surface_composition": "Crosta pristina de gelo de água sobre um oceano subsuperficial global; fraturas polares sul tipo 'tiger stripe' expelindo plumas de vapor de água, orgânicos, sais, nanograos de sílica e hidrogênio molecular.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Enceladus",
+    "enceladus-nasa": "NASA Science — panorama de Enceladus",
+    "enceladus-cassini": "NASA Cassini — arquivo histórico de sobrevoo de plumas",
+    "enceladus-habitability": "Astrobiology — Enceladus como alvo de busca por vida"
+  }
+}

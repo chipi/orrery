@@ -1,1 +1,13 @@
-{}
+{
+  "description": "La plus petite et la plus extérieure des deux lunes de Mars, mesurant à peine 12 km de diamètre — le plus petit corps connu du système solaire qui apparaisse encore comme un disque plutôt que comme un point depuis une caméra orbitale typique. Sa surface plus lisse (comparée au terrain cratérisé et strié de Phobos) et son orbite plus lente (30 heures contre 8 pour Phobos) en font la plus paisible des deux lunes martiennes. Asaph Hall a nommé les deux lunes d'après les personnifications grecques de la Peur (Phobos) et de la Terreur (Deimos) — les chevaux de guerre tirant le char d'Arès dans le chant XV de l'Iliade.",
+  "surface_composition": "Semblable à une chondrite carbonée ; surface plus lisse que celle de Phobos, car sa gravité plus faible permet aux éjectas d'impacts de s'échapper en orbite martienne plutôt que de se réaccumuler. Deux cratères nommés : Swift et Voltaire (tous deux d'environ 3 km).",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — Deimos",
+    "deimos-nasa": "NASA Science — Deimos, aperçu",
+    "deimos-mrohirise": "HiRISE — Deimos dans l'imagerie en orbite martienne"
+  }
+}

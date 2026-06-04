@@ -1,1 +1,12 @@
-{}
+{
+  "description": "De binnenste en kleinste van de vijf grote manen van Uranus — en visueel de meest extreme. De voorbijimagery van Voyager 2 onthulde een oppervlak dat eruitziet alsof het is samengesteld uit niet-bijpassende stukken: enorme kliffen, gefragmenteerde plateaus en concentrische coronae die uitsteken uit zwaar gekraterd ouder terrein. De voornaamste hypothese is dat Miranda minstens één keer door een inslag is verstoord, waarbij de fragmenten zich onder hun eigen zwaartekracht opnieuw hebben samengevoegd. Verona Rupes daalt ~20 km — onder Miranda's lage zwaartekracht zou een vallend object ongeveer 12 minuten nodig hebben om de bodem te bereiken.",
+  "surface_composition": "Waterijs + silicaatgesteente; oppervlak een lappendeken van oud gekraterd terrein doorkruist door enorme coronae — concentrische richels en groeven die Verona Rupes omvatten, de hoogste bekende klif in het zonnestelsel (~20 km verticale val).",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — Miranda-overzicht",
+    "miranda-voyager2": "NASA Voyager 2 — enige voorbiivlucht van het Uranus-systeem (1986)"
+  }
+}

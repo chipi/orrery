@@ -1,1 +1,13 @@
-{}
+{
+  "description": "A menor e mais externa das duas luas de Marte, com apenas 12 km de diâmetro — o menor corpo conhecido do sistema solar que ainda se resolve como um disco, e não como um ponto, para uma câmera orbital típica. Sua superfície mais lisa (em comparação com o terreno marcado por crateras e sulcos de Phobos) e sua órbita mais lenta (30 horas contra 8 horas de Phobos) fazem dela a mais tranquila do par de luas marcianas. Asaph Hall batizou as duas luas com os nomes das personificações gregas do Medo (Phobos) e do Pavor (Deimos) — os cavalos de guerra que puxavam o carro de Ares no canto XV da Ilíada.",
+  "surface_composition": "Semelhante a condrito carbonáceo; superfície mais lisa que a de Phobos porque sua gravidade mais fraca permite que os ejetos dos impactos escapem para a órbita de Marte em vez de se reacumularem. Duas crateras nomeadas: Swift e Voltaire (ambas com cerca de 3 km).",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — Deimos",
+    "deimos-nasa": "NASA Science — visão geral de Deimos",
+    "deimos-mrohirise": "HiRISE — Deimos em imagens da órbita de Marte"
+  }
+}

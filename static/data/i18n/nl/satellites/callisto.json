@@ -1,1 +1,13 @@
-{}
+{
+  "description": "Callisto bevindt zich buiten de Laplace-resonantie die de getijdenverwarming in Io, Europa en Ganymedes aandrijft — daardoor smolt zijn binnenste nooit genoeg om volledig te differentiëren of zijn korst te vernieuwen. Het resultaat is het meest ongerepte bombardementsverslag in het binnen-Galileïsche systeem, inclusief het spectaculaire 15-ringensysteem van het Valhalla-bekken dat zich uitstrekt over bijna de helft van de omtrek van de maan. Ondanks het ontbreken van getijdenverwarming detecteerde de magnetometer van Galileo een geïnduceerd magnetisch veld dat consistent is met een diepe zoute oceaan ~100 km onder het oppervlak. De lage stralingsomgeving (vergeleken met Europa of Ganymedes) en het langlevende water maken het een waarschijnlijke tussenstop voor toekomstige bemande missies naar het Jupiter-systeem.",
+  "surface_composition": "Ongeveer 40% waterijs + 60% silicaatgesteente; oppervlak is het zwaarst bekraterde in het zonnestelsel — bijna verzadigd, onaangeroerd door oppervlaktevernieuwing. Opvallend kenmerk: het 3.800 km grote Valhalla multi-ring inslagbekken.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+  ],
+  "library_labels": {
+    "callisto-wiki": "Wikipedia — Callisto",
+    "callisto-nasa": "NASA Science — Callisto overzicht",
+    "callisto-galileo": "NASA Galileo nalatenschapsarchief"
+  }
+}

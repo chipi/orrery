@@ -1,1 +1,12 @@
-{}
+{
+  "description": "天王星最大的卫星，也是太阳系第八大卫星。Voyager 2的图像揭示了一个被巨大峡谷系统切割的表面——仅Messina Chasma一处就横跨南半球1,500 km——还有大型撞击盆地和看起来较新的小型Ursula陨石坑。2017年的一次恒星掩星观测初步探测到稀薄的二氧化碳大气层，这将是在天王星卫星上发现的第一个大气层。",
+  "surface_composition": "水冰 + 硅酸盐岩石；古老的陨石坑地形被数百公里长的巨大峡谷系统切割——Messina Chasma横跨卫星约1,500 km。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "titania-wiki": "Wikipedia — Titania",
+    "titania-nasa": "NASA Science — Titania概述",
+    "titania-voyager2": "NASA Voyager 2 — 天王星系统图像"
+  }
+}

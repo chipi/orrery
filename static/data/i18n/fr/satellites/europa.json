@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Corps de grande taille le plus lisse du système solaire — aucune montagne sur Europe ne s'élève à plus de quelques centaines de mètres. Sous sa croûte de glace de 20 km se trouve un océan global d'eau salée d'environ 100 km de profondeur, contenant plus de deux fois l'eau de tous les océans terrestres réunis. Le fléchissement de marée induit par Jupiter maintient cet océan liquide et chimiquement actif ; les signatures du champ magnétique et les observations de panaches par Hubble suggèrent que des matériaux de l'océan souterrain atteignent la surface périodiquement. Europa Clipper de la NASA (en route) et JUICE de l'ESA scruteront tous deux la coquille de glace et la dynamique océanique jusqu'au début des années 2030.",
+  "surface_composition": "Croûte de glace d'eau d'environ 15 à 25 km d'épaisseur, fracturée par un terrain chaotique en un réseau de crêtes arquées et de lenticules ; des sels (probablement du sulfate de magnésium + du chlorure de sodium) teintent la glace de rouge-brun dans les régions chaotiques.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — Europe",
+    "europa-nasa": "NASA Science — aperçu d'Europe",
+    "europa-clipper": "NASA Europa Clipper — site de la mission",
+    "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
+  }
+}

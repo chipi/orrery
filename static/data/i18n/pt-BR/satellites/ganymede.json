@@ -1,1 +1,16 @@
-{}
+{
+  "description": "A maior lua do sistema solar — maior que Mercúrio, 8% maior que a Lua. Ganimedes é a única lua com um campo magnético gerado internamente, evidência de um núcleo de ferro parcialmente fundido. Sob ~150 km de gelo encontra-se um oceano de água salgada maior que todos os oceanos da Terra somados; alguns modelos sugerem uma estrutura em camadas com múltiplos oceanos separados por fases de gelo de diferentes densidades. A missão JUICE da ESA se tornará a primeira sonda a orbitar uma lua que não a da Terra quando entrar na órbita de Ganimedes em dezembro de 2034.",
+  "surface_composition": "Aproximadamente metade gelo de água + metade rocha silicática; superfície é uma mistura de terreno escuro craterizado (~4 Ga de idade) e terreno mais claro com sulcos (ressurfaceamento tectônico há ~2 Ga); exosfera tênue de oxigênio.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "Juno — USA, 2021 (close flyby)",
+    "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+  ],
+  "library_labels": {
+    "ganymede-wiki": "Wikipedia — Ganimedes",
+    "ganymede-nasa": "NASA Science — visão geral de Ganimedes",
+    "ganymede-juice": "ESA JUICE — missão orbital a Ganimedes",
+    "ganymede-magfield": "NASA Galileo — descoberta do campo magnético de Ganimedes"
+  }
+}

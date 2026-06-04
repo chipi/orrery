@@ -14,7 +14,7 @@
  * its scene + calling dispose() on teardown.
  */
 import * as THREE from 'three';
-import { altToOrbitRadius } from '$lib/scale';
+import { altToSurfaceScene } from '$lib/scale';
 import { onLayerChange } from '$lib/science-layers';
 
 export interface KarmanLineShellOpts {
@@ -25,6 +25,11 @@ export interface KarmanLineShellOpts {
   meshOpacity: number;
   /** Equatorial ring opacity (0..1) — for legibility */
   ringOpacity: number;
+  /** SurfaceScene planetRadius (always 30) — required to shift the
+   *  log-compressed altitude math out of the planet sphere. The legacy
+   *  `altToOrbitRadius` baseline placed shells at 9.4 (inside the
+   *  30-unit Earth) → fully occluded. (#303 follow-up.) */
+  planetRadius: number;
 }
 
 export interface KarmanLineShellHandle {
@@ -39,7 +44,7 @@ export interface KarmanLineShellHandle {
  * visibility based on the `atmosphere` science lens.
  */
 export function buildKarmanLineShell(opts: KarmanLineShellOpts): KarmanLineShellHandle {
-  const karmanRadius = altToOrbitRadius(opts.altitudeKm);
+  const karmanRadius = altToSurfaceScene(opts.planetRadius, opts.altitudeKm);
 
   const shellGeo = new THREE.SphereGeometry(karmanRadius, 48, 48);
   const shellMat = new THREE.MeshBasicMaterial({
@@ -89,6 +94,8 @@ export interface OzoneOverlayOpts {
   altitudeKm: number;
   south: { color: number; opacity: number; phiCoverageRatio: number };
   north: { color: number; opacity: number; phiCoverageRatio: number };
+  /** See KarmanLineShellOpts.planetRadius. */
+  planetRadius: number;
 }
 
 export interface OzoneOverlayHandle {
@@ -105,7 +112,7 @@ export interface OzoneOverlayHandle {
  * depletion). Both layer-gated by the 'ozone' science lens.
  */
 export function buildOzoneOverlay(opts: OzoneOverlayOpts): OzoneOverlayHandle {
-  const ozoneRadius = altToOrbitRadius(opts.altitudeKm);
+  const ozoneRadius = altToSurfaceScene(opts.planetRadius, opts.altitudeKm);
 
   // South cap — phi starts at (π - coverageRatio*π) so the cap wraps
   // the south pole. Antarctic hole defaults to ~0.34π = ~61° opening

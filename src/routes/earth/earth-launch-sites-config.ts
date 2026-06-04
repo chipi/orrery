@@ -52,15 +52,16 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // shell sizing (100 km Kármán-line altitude → ~0.47 scene units at
     // a planet radius of 30 world units inside SurfaceScene).
     radiusKm: 6371,
-    // Thin Rayleigh-blue atmosphere shell. Color and opacities tuned
-    // to read as "Earth's blue limb glow" without overpowering the
-    // surface map. Differs from Mars's dusty CO₂ (0xffaa66) by being
-    // cooler + slightly more transparent in the mesh.
+    // Thin Rayleigh-blue atmosphere shell. Color and opacities bumped
+    // for the unified /earth route (#303): at the consolidated camR=85
+    // framing the prior 0.06/0.45 opacities were nearly imperceptible
+    // even with the lens on. 0.18 mesh + 0.80 ring read as a clear
+    // blue limb glow without overpowering the surface map.
     atmosphere: {
       color: 0x4488dd,
       altitudeKm: 100,
-      meshOpacity: 0.06,
-      ringOpacity: 0.45,
+      meshOpacity: 0.18,
+      ringOpacity: 0.8,
     },
     // Earth's real axial obliquity drives seasons / day-night terminator.
     axialTiltDeg: 23.4,
@@ -93,28 +94,37 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
       section: 'orbit-regimes',
       available: ['atmosphere', 'ozone'],
     },
+    // /earth needs more camera headroom than /moon and /mars because
+    // the scene includes the full orbital stack (Kármán shell at the
+    // surface + LEO ring just above + moon-ghost at ~1814 scene units
+    // out for context). 110 keeps Earth visually similar in size to
+    // Moon/Mars at 85 while leaving room for the in-scene LEO ring +
+    // satellite glyphs to land on screen. The prior consolidated 85
+    // had Earth filling most of the viewport on first paint.
+    initialCamR: 110,
     // #290 Slice 7 — orbital stack composed onto the surface scene.
     // Mirrors EarthOrbitalScene's exact construction values so the
     // unified route renders identically to the legacy orbital view
     // (modulo additive launchpad markers + chip-row sub-gating).
     earthOrbitalLayers: {
-      // Discrete Kármán-line marker (science-lensed via 'atmosphere'),
-      // distinct from the always-on continuous atmosphere shell above.
+      // Discrete Kármán-line marker (science-lensed via 'atmosphere').
       // Teal limb-glow at exactly 100 km, surfaced when the user opens
-      // the atmosphere lens.
+      // the atmosphere lens. Opacities bumped for #303 visibility on
+      // the consolidated /earth framing.
       karmanLineShell: {
         color: 0x4ecdc4,
         altitudeKm: 100,
-        meshOpacity: 0.08,
-        ringOpacity: 0.55,
+        meshOpacity: 0.2,
+        ringOpacity: 0.85,
       },
       // Polar ozone caps at ~30 km — Antarctic (south, larger spring
       // depletion) + smaller Arctic (north, winter depletion). Gated
-      // by the 'ozone' science lens.
+      // by the 'ozone' science lens. Opacities bumped for #303
+      // visibility at the consolidated framing.
       ozoneOverlay: {
         altitudeKm: 30,
-        south: { color: 0xb866ff, opacity: 0.32, phiCoverageRatio: 0.34 },
-        north: { color: 0x9b5dff, opacity: 0.22, phiCoverageRatio: 0.22 },
+        south: { color: 0xb866ff, opacity: 0.55, phiCoverageRatio: 0.34 },
+        north: { color: 0x9b5dff, opacity: 0.45, phiCoverageRatio: 0.22 },
       },
       // Small textured Moon sphere at the real Moon-orbit radius —
       // anchors moon-orbiter satellites and acts as a wayfinding cue.

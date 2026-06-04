@@ -1686,10 +1686,17 @@
           obj.satellitesGroup.visible = true;
         }
         // Atmospheric halo reveal — keeps the original LOD-in gating
-        // (Earth's blue limb tint at close zoom only).
+        // (Earth's blue limb tint at close zoom only). Suppressed when
+        // a satellite of THIS planet is selected so only the moon's
+        // selection ring reads as the active halo (#304 follow-up,
+        // 2026-06-04: user saw earth's atmospheric halo + moon's
+        // selection ring simultaneously and read both as "selected").
         const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
-        if (obj.haloMesh && obj.haloMesh.visible !== shouldShow) {
-          obj.haloMesh.visible = shouldShow;
+        const satOfThisPlanetSelected =
+          selectedSatelliteKey !== null && selectedSatelliteKey.startsWith(obj.planet.id + ':');
+        const haloVisible = shouldShow && !satOfThisPlanetSelected;
+        if (obj.haloMesh && obj.haloMesh.visible !== haloVisible) {
+          obj.haloMesh.visible = haloVisible;
         }
         // Spin-axis indicator (PRD-023 Slice A) — same gating.
         if (obj.spinAxis.visible !== shouldShow) {

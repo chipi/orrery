@@ -2470,6 +2470,11 @@
     // doesn't pop a menu after each pan stroke.
     const onContextMenu = (e: MouseEvent) => e.preventDefault();
     const onWheel = (e: WheelEvent) => {
+      // Trackpad pinch on macOS dispatches a synthetic wheel event
+      // with ctrlKey=true; without preventDefault the browser zooms
+      // the whole page. preventDefault keeps the gesture bound to
+      // the 3D camera. Listener also needs `passive: false`.
+      e.preventDefault();
       if (viewMode === 'cislunar') {
         const minR = R_MOON_KM * SCALE_CISLUNAR * 5;
         const maxR = A_MOON_KM * SCALE_CISLUNAR * 6;
@@ -2556,7 +2561,9 @@
     el3d.addEventListener('contextmenu', onContextMenu);
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('mouseup', onMouseUp);
-    el3d.addEventListener('wheel', onWheel, { passive: true });
+    // passive: false so onWheel can preventDefault against trackpad
+    // pinch (macOS Ctrl+wheel) hijacking browser zoom.
+    el3d.addEventListener('wheel', onWheel, { passive: false });
     el3d.addEventListener('touchstart', onTouchStart, { passive: true });
     el3d.addEventListener('touchmove', onTouchMove, { passive: true });
     el3d.addEventListener('touchend', onTouchEnd);

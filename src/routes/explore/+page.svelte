@@ -2137,6 +2137,13 @@
       if (!wasDrag && view === '3d') tryPick3d(e);
     };
     const on3dWheel = (e: WheelEvent) => {
+      // Trackpad pinch on macOS dispatches a synthetic wheel event
+      // with ctrlKey=true; without preventDefault the browser zooms
+      // the whole page (nav + chrome) instead of the canvas. Same
+      // for Ctrl+scroll on desktop. preventDefault keeps the gesture
+      // bound to the 3D camera. Listener also needs `passive: false`
+      // — see the addEventListener call below.
+      e.preventDefault();
       camR = Math.max(camRMin, Math.min(camRMax, camR + e.deltaY * 0.7));
       updateCam();
     };
@@ -2215,7 +2222,9 @@
     el3d.addEventListener('mousedown', on3dMouseDown);
     window.addEventListener('mousemove', on3dMouseMove);
     window.addEventListener('mouseup', on3dMouseUp);
-    el3d.addEventListener('wheel', on3dWheel, { passive: true });
+    // passive: false so on3dWheel can preventDefault against trackpad
+    // pinch (macOS Ctrl+wheel) hijacking browser zoom.
+    el3d.addEventListener('wheel', on3dWheel, { passive: false });
     el3d.addEventListener('touchstart', on3dTouchStart, { passive: true });
     el3d.addEventListener('touchmove', on3dTouchMove, { passive: true });
     el3d.addEventListener('touchend', on3dTouchEnd);

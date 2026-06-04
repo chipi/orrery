@@ -16,7 +16,8 @@
   import { formatKm } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
-  import { getSatellites, type SatelliteEntry } from '$lib/data';
+  import { getSatellites, getSatelliteGallery, type SatelliteEntry } from '$lib/data';
+  import { base } from '$app/paths';
 
   const loc = $derived(localeFromPage($page));
 
@@ -42,6 +43,7 @@
 
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
+  let gallery: string[] = $state([]);
   let entry = $derived<SatelliteEntry | null>(
     satelliteKey
       ? (satellites.find((s) => `${s.parent_planet_id}:${s.id}` === satelliteKey) ?? null)
@@ -52,6 +54,10 @@
     if (entry && entry.id !== lastKey) {
       tab = 'overview';
       lastKey = entry.id;
+      gallery = [];
+      void getSatelliteGallery(entry.id).then((urls) => {
+        if (entry && entry.id === lastKey) gallery = urls;
+      });
     }
   });
 </script>
@@ -114,7 +120,17 @@
           </p>
         {/if}
       {:else if tab === 'gallery'}
-        <p class="empty">Gallery images land in #304 Slice 4.</p>
+        {#if gallery.length > 0}
+          <ul class="gallery-grid">
+            {#each gallery as src (src)}
+              <li>
+                <img src={`${base}${src}`} alt="" loading="lazy" decoding="async" />
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <p class="empty">No gallery images sourced yet for this satellite.</p>
+        {/if}
       {:else if tab === 'technical'}
         <dl class="tech">
           <div>
@@ -269,6 +285,23 @@
   }
   .wiki-temp a {
     color: rgba(160, 200, 255, 0.95);
+  }
+  .gallery-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: block;
   }
   .library {
     margin: 0;

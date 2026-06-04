@@ -952,5 +952,15 @@
   "chip_label_sleep_nutrition_circadian": "Sleep + nutrition + circadian — 16 sunrises/day, 90-min cycles, ISS galley",
   "chip_label_suit_lineage": "Suit lineage — Mercury through xEMU; pressure suits + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA operations — pre-breathe protocols, tether discipline, glove fatigue",
-  "chip_label_mission_phase_eva": "EVA mission phase — when the spacewalk fits in the schedule"
+  "chip_label_mission_phase_eva": "EVA mission phase — when the spacewalk fits in the schedule",
+  "panel_tab_science": "LIBRARY",
+  "panel_satellite_orbits_label": "orbits",
+  "panel_satellite_composition_label": "Composition",
+  "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
+  "panel_satellite_radius_label": "Radius",
+  "panel_satellite_orbit_label": "Orbit semi-major axis",
+  "panel_satellite_period_label": "Orbital period",
+  "panel_satellite_discovered_label": "Discovered",
+  "panel_satellite_missions_label": "Visited by",
+  "panel_satellite_library_pending": "Library entries land in #304 Slice 5."
 }

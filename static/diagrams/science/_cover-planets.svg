@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="A planets chapter cover — a row of progressively larger planet silhouettes against a deep starfield, suggesting the diversity of solar-system bodies.">
+  <style>
+    .star { fill: rgba(255,255,255,0.5); }
+    .dim-star { fill: rgba(255,255,255,0.25); }
+    .mercury { fill: #b5b5b5; }
+    .venus { fill: #e8cda0; }
+    .earth { fill: #4b9cd3; }
+    .mars { fill: #c1440e; }
+    .jupiter { fill: #c88b3a; }
+    .saturn { fill: #e4d191; }
+    .uranus { fill: #7de8e8; }
+    .neptune { fill: #3f54ba; }
+    .pluto { fill: #d0b48c; }
+    .axis-line { stroke: rgba(255,215,102,0.4); stroke-width: 0.8; fill: none; }
+    .ring { stroke: rgba(255,255,255,0.18); stroke-width: 0.8; fill: none; }
+  </style>
+  <!-- starfield -->
+  <circle class="star" cx="40" cy="40" r="1.0"/>
+  <circle class="dim-star" cx="120" cy="35" r="0.8"/>
+  <circle class="star" cx="200" cy="55" r="0.9"/>
+  <circle class="dim-star" cx="80" cy="80" r="0.6"/>
+  <circle class="star" cx="280" cy="25" r="1.0"/>
+  <circle class="dim-star" cx="350" cy="65" r="0.7"/>
+  <circle class="star" cx="450" cy="30" r="0.9"/>
+  <circle class="dim-star" cx="520" cy="55" r="0.8"/>
+  <circle class="star" cx="570" cy="20" r="1.0"/>
+  <circle class="dim-star" cx="60" cy="200" r="0.7"/>
+  <circle class="star" cx="180" cy="225" r="0.9"/>
+  <circle class="dim-star" cx="320" cy="210" r="0.6"/>
+  <circle class="star" cx="440" cy="230" r="0.8"/>
+  <circle class="dim-star" cx="530" cy="215" r="0.7"/>
+  <!-- planet row at scale (relative diameters) -->
+  <!-- Mercury -->
+  <circle class="mercury" cx="40" cy="155" r="3"/>
+  <!-- Venus -->
+  <circle class="venus" cx="75" cy="155" r="6.5"/>
+  <!-- Earth -->
+  <circle class="earth" cx="120" cy="155" r="7"/>
+  <line class="axis-line" x1="120" y1="143" x2="123" y2="167"/>
+  <!-- Mars -->
+  <circle class="mars" cx="160" cy="157" r="4"/>
+  <!-- Jupiter -->
+  <circle class="jupiter" cx="245" cy="150" r="40"/>
+  <line class="axis-line" x1="245" y1="105" x2="247" y2="195"/>
+  <!-- Saturn with ring -->
+  <circle class="saturn" cx="365" cy="153" r="34"/>
+  <ellipse class="ring" cx="365" cy="153" rx="55" ry="9" transform="rotate(-15 365 153)"/>
+  <line class="axis-line" x1="349" y1="113" x2="381" y2="193"/>
+  <!-- Uranus, rolled on its side -->
+  <circle class="uranus" cx="465" cy="155" r="18"/>
+  <line class="axis-line" x1="447" y1="155" x2="483" y2="155"/>
+  <!-- Neptune -->
+  <circle class="neptune" cx="515" cy="155" r="17"/>
+  <!-- Pluto -->
+  <circle class="pluto" cx="560" cy="158" r="2"/>
+</svg>

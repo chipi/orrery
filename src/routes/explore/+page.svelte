@@ -135,8 +135,14 @@
     name: string;
     /** Filename under static/textures/. Same provenance contract as
      *  PlanetVisual.texture — Solar System Scope where available, NASA
-     *  / USGS Astrogeology for outer-system bodies. */
-    texture: string;
+     *  / USGS Astrogeology for outer-system bodies. Optional: bodies
+     *  without a sourced texture (e.g. Uranus + Neptune moons today)
+     *  fall back to a flat-coloured sphere via `fallbackColor`. */
+    texture?: string;
+    /** Hex colour for fallback rendering when `texture` is omitted.
+     *  Required when `texture` is missing. Approximates the body's
+     *  real visual hue (icy moons → off-white; Triton → pinkish-tan). */
+    fallbackColor?: number;
     /** Scene-units radius of the satellite mesh. Sized so the body is
      *  visible at parent's 4K zoom without dominating. */
     sizeUnits: number;
@@ -425,6 +431,59 @@
       // of the planet's radius. PRD-023 Slice E.3b.
       magneticTiltDeg: 58.6,
       texture: '2k_uranus.jpg',
+      // Five major Uranian moons — all named for Shakespeare /
+      // Pope characters (the only system with that convention).
+      // No equirectangular maps sourced today (Voyager 2's 1986
+      // flyby imaged only the southern hemisphere of each, and
+      // none have been re-imaged since); fallback colours
+      // approximate their telescopic albedo + tint. #304 Slice 3.
+      satellites: [
+        {
+          id: 'miranda',
+          name: 'Miranda',
+          fallbackColor: 0xb8b8c0,
+          sizeUnits: 0.6,
+          orbitUnits: 14,
+          periodDays: 1.413,
+          inclDeg: 4.34,
+        },
+        {
+          id: 'ariel',
+          name: 'Ariel',
+          fallbackColor: 0xd4d4d4,
+          sizeUnits: 0.95,
+          orbitUnits: 20,
+          periodDays: 2.52,
+          inclDeg: 0.04,
+        },
+        {
+          id: 'umbriel',
+          name: 'Umbriel',
+          fallbackColor: 0x8c8a86,
+          sizeUnits: 0.95,
+          orbitUnits: 26,
+          periodDays: 4.144,
+          inclDeg: 0.13,
+        },
+        {
+          id: 'titania',
+          name: 'Titania',
+          fallbackColor: 0xc4b8a8,
+          sizeUnits: 1.2,
+          orbitUnits: 33,
+          periodDays: 8.706,
+          inclDeg: 0.08,
+        },
+        {
+          id: 'oberon',
+          name: 'Oberon',
+          fallbackColor: 0xb8a898,
+          sizeUnits: 1.15,
+          orbitUnits: 40,
+          periodDays: 13.463,
+          inclDeg: 0.07,
+        },
+      ],
     },
     {
       id: 'neptune',
@@ -443,6 +502,24 @@
       // from planet centre.
       magneticTiltDeg: 46.9,
       texture: '2k_neptune.jpg',
+      // Triton — the only large moon of Neptune, retrograde, almost
+      // certainly a captured KBO. Voyager 2's 1989 flyby imaged the
+      // southern hemisphere; no global equirectangular map exists.
+      // Fallback colour approximates the pinkish-tan tholin terrain.
+      // #304 Slice 3.
+      satellites: [
+        {
+          id: 'triton',
+          name: 'Triton',
+          fallbackColor: 0xd4b8a0,
+          sizeUnits: 1.5,
+          orbitUnits: 22,
+          // Negative period = retrograde orbit (only large moon to
+          // do so in the solar system).
+          periodDays: -5.877,
+          inclDeg: 156.86,
+        },
+      ],
     },
     // Pluto-Charon binary (#287 Slice E). Promoted from SMALL_BODIES so
     // the planet-relative camera + Charon satellite work pick it up.
@@ -1145,12 +1222,19 @@
       const satellitesGroup = new THREE.Group();
       satellitesGroup.visible = true;
       const satellites: SatelliteObj[] = (p.satellites ?? []).map((s) => {
-        const satTex = loadTexture(s.texture);
-        const satMat = new THREE.MeshPhongMaterial({
-          map: satTex,
-          color: 0xffffff,
-          shininess: 8,
-        });
+        // Texture optional: bodies without a sourced equirectangular
+        // map (e.g. Uranus + Neptune moons today) fall back to a flat
+        // colour. #304 Slice 3 — texture sourcing tracked separately.
+        const satMat = s.texture
+          ? new THREE.MeshPhongMaterial({
+              map: loadTexture(s.texture),
+              color: 0xffffff,
+              shininess: 8,
+            })
+          : new THREE.MeshPhongMaterial({
+              color: s.fallbackColor ?? 0xc8c8c8,
+              shininess: 6,
+            });
         const satMesh = new THREE.Mesh(new THREE.SphereGeometry(s.sizeUnits, 32, 32), satMat);
         satMesh.userData = { satelliteId: s.id, parentPlanetId: p.id };
         satellitesGroup.add(satMesh);

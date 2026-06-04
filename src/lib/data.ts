@@ -854,6 +854,17 @@ export async function getSmallBodyGallery(bodyId: string): Promise<string[]> {
  * entries — fetched once, cached for subsequent panel opens. Gallery
  * + library tabs read from sibling manifest files added in Slices 4–5.
  */
+export type SatelliteLibraryLink = {
+  id: string;
+  label: string;
+  url: string;
+  /** Tier ranks how prominently the link surfaces in the panel:
+   *  - intro: first row, anchor link (Wikipedia / NASA overview)
+   *  - core: second-tier, mission or science deep-dive
+   *  - extra: third-tier, niche / interactive / video */
+  tier: 'intro' | 'core' | 'extra';
+  kind: 'wikipedia' | 'nasa' | 'mission' | 'video' | 'article';
+};
 export type SatelliteEntry = {
   id: string;
   name: string;
@@ -869,6 +880,7 @@ export type SatelliteEntry = {
   surface_composition?: string;
   description: string;
   wiki?: string;
+  library?: SatelliteLibraryLink[];
 };
 export async function getSatellites(): Promise<SatelliteEntry[]> {
   try {

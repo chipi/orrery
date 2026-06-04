@@ -147,13 +147,24 @@
           {/if}
         </dl>
       {:else if tab === 'library'}
-        <p class="empty">Library entries land in #304 Slice 5.</p>
-        {#if entry.wiki}
-          <p class="wiki-temp">
-            <a href={entry.wiki} target="_blank" rel="noopener noreferrer external">
-              Wikipedia: {entry.name} ↗
-            </a>
-          </p>
+        {#if entry.library && entry.library.length > 0}
+          <ul class="library">
+            {#each entry.library as link (link.id)}
+              <li class="library-item library-tier-{link.tier}">
+                <span class="library-kind">{link.kind}</span>
+                <a
+                  class="library-label"
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer external"
+                >
+                  {link.label} ↗
+                </a>
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <p class="empty">No library entries yet for this satellite.</p>
         {/if}
       {/if}
     </div>
@@ -258,5 +269,43 @@
   }
   .wiki-temp a {
     color: rgba(160, 200, 255, 0.95);
+  }
+  .library {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .library-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: baseline;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .library-item.library-tier-intro {
+    background: rgba(160, 200, 255, 0.04);
+    padding: 8px 8px;
+    border-radius: 3px;
+    border-bottom: 0;
+  }
+  .library-kind {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 220, 160, 0.85);
+  }
+  .library-label {
+    color: rgba(220, 235, 255, 0.92);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+  .library-label:hover,
+  .library-label:focus-visible {
+    color: #fff;
+    text-decoration: underline;
   }
 </style>

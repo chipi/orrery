@@ -26,7 +26,14 @@
       ],
       "surface_composition": "Anorthosite highlands (calcium-aluminium silicates) + basaltic mare flooded by ancient lava; regolith depth 4–15 m; trace water ice in permanently-shadowed polar craters.",
       "description": "Earth's only natural satellite and the only world other than Earth that humans have walked on. Its 1:1 tidal lock keeps the same hemisphere facing Earth at all times — the near side dominated by lava-flooded mare basins, the far side an ancient highland-cratered terrain crowned by the South Pole–Aitken basin, the largest impact structure in the solar system (~2,500 km wide, ~13 km deep). The Moon's slow recession from Earth (~3.8 cm/year) is gradually lengthening Earth's day; in the distant past it appeared nearly three times its current angular size in the sky.",
-      "wiki": "https://en.wikipedia.org/wiki/Moon"
+      "wiki": "https://en.wikipedia.org/wiki/Moon",
+      "library": [
+        { "id": "moon-wiki", "label": "Wikipedia — Moon", "url": "https://en.wikipedia.org/wiki/Moon", "tier": "intro", "kind": "wikipedia" },
+        { "id": "moon-nasa-overview", "label": "NASA Science — Earth's Moon overview", "url": "https://science.nasa.gov/moon/", "tier": "intro", "kind": "nasa" },
+        { "id": "moon-apollo", "label": "NASA Apollo program — landing-mission archive", "url": "https://www.nasa.gov/mission/apollo/", "tier": "core", "kind": "mission" },
+        { "id": "moon-artemis", "label": "NASA Artemis — return-to-Moon crewed program", "url": "https://www.nasa.gov/humans-in-space/artemis/", "tier": "core", "kind": "mission" },
+        { "id": "moon-lroc", "label": "LROC — Lunar Reconnaissance Orbiter Camera image archive", "url": "https://www.lroc.asu.edu/", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "phobos",
@@ -45,7 +52,13 @@
       ],
       "surface_composition": "Heavily-cratered carbonaceous chondrite-like body, possibly a captured asteroid or accretion remnant; surface dominated by the 9 km Stickney crater and parallel grooves likely tied to ejecta from that impact.",
       "description": "The larger and inner of Mars's two moons — irregular potato-shaped body just 22 km across at its widest. Phobos orbits Mars every 7 hours 39 minutes, faster than Mars itself rotates, so from the Martian surface it rises in the west and sets in the east twice per Martian day. Its orbit is decaying at ~2 cm per year; in 30–50 million years tidal forces will either tear it apart into a temporary ring or crash it into the planet. Japan's MMX mission (launch ~2026) will return surface samples.",
-      "wiki": "https://en.wikipedia.org/wiki/Phobos_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Phobos_(moon)",
+      "library": [
+        { "id": "phobos-wiki", "label": "Wikipedia — Phobos", "url": "https://en.wikipedia.org/wiki/Phobos_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "phobos-nasa", "label": "NASA Science — Phobos overview", "url": "https://science.nasa.gov/mars/moons/phobos/", "tier": "intro", "kind": "nasa" },
+        { "id": "phobos-mmx", "label": "JAXA MMX — sample-return mission to Phobos", "url": "https://www.mmx.jaxa.jp/en/", "tier": "core", "kind": "mission" },
+        { "id": "phobos-hirise", "label": "HiRISE — Phobos at 0.25 m/px from Mars orbit", "url": "https://www.uahirise.org/phobos/", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "deimos",
@@ -63,7 +76,12 @@
       ],
       "surface_composition": "Carbonaceous chondrite-like; smoother surface than Phobos because its weaker gravity lets ejecta from impacts escape into Mars orbit rather than re-accumulating. Two named craters: Swift and Voltaire (both ~3 km).",
       "description": "The smaller and outer of Mars's two moons, just 12 km across — the smallest known body in the solar system that still resolves as a disc rather than a point from a typical orbital camera. Its smoother surface (compared to Phobos's crater-grooved terrain) and slower orbit (30 hours vs Phobos's 8) make it the more sedate of Mars's moon pair. Asaph Hall named both moons for the Greek personifications of Fear (Phobos) and Dread (Deimos) — the war horses pulling Ares's chariot in Iliad XV.",
-      "wiki": "https://en.wikipedia.org/wiki/Deimos_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Deimos_(moon)",
+      "library": [
+        { "id": "deimos-wiki", "label": "Wikipedia — Deimos", "url": "https://en.wikipedia.org/wiki/Deimos_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "deimos-nasa", "label": "NASA Science — Deimos overview", "url": "https://science.nasa.gov/mars/moons/deimos/", "tier": "intro", "kind": "nasa" },
+        { "id": "deimos-mrohirise", "label": "HiRISE — Deimos in Mars-orbit imagery", "url": "https://www.uahirise.org/ESP_012068_9000", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "io",
@@ -82,7 +100,13 @@
       ],
       "surface_composition": "Sulfur + sulfur-dioxide frost over silicate crust; surface paint regularly resurfaced by volcanic flows — no impact craters survive long enough to be visible.",
       "description": "The most geologically active body in the solar system. Tidal heating from Jupiter's gravity plus orbital resonance with Europa and Ganymede pumps roughly 100 terawatts of heat into Io's interior — enough to drive ~400 simultaneously-active volcanoes and surface temperatures that swing from -130 °C (frozen sulfur dioxide) to +1,600 °C (ultra-mafic lava). Its surface is repainted faster than impact cratering can mark it. Loki Patera, a 200 km lava lake, is the single most powerful volcanic feature in the solar system.",
-      "wiki": "https://en.wikipedia.org/wiki/Io_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Io_(moon)",
+      "library": [
+        { "id": "io-wiki", "label": "Wikipedia — Io", "url": "https://en.wikipedia.org/wiki/Io_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "io-nasa", "label": "NASA Science — Io overview", "url": "https://science.nasa.gov/jupiter/moons/io/", "tier": "intro", "kind": "nasa" },
+        { "id": "io-juno", "label": "NASA Juno — recent close flybys of Io", "url": "https://www.missionjuno.swri.edu/", "tier": "core", "kind": "mission" },
+        { "id": "io-volcanism", "label": "USGS — Io volcanic feature catalog", "url": "https://astrogeology.usgs.gov/search/map/Io/Geology", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "europa",
@@ -102,7 +126,13 @@
       ],
       "surface_composition": "Water-ice crust ~15–25 km thick, fractured by chaos terrain into a network of arcuate ridges and lenticulae; salts (likely magnesium sulfate + sodium chloride) tint the ice red-brown in the chaos regions.",
       "description": "Smoothest large body in the solar system — no mountain on Europa rises higher than a few hundred metres. Beneath its 20-km ice crust lies a global salt-water ocean ~100 km deep, holding more than twice the water in all of Earth's oceans combined. Tidal flexing from Jupiter keeps that ocean liquid and chemically active; magnetic-field signatures and Hubble observations of plumes suggest material from the subsurface ocean reaches the surface periodically. NASA's Europa Clipper (en route) and ESA's JUICE will both scrutinise the ice shell and ocean dynamics through the early 2030s.",
-      "wiki": "https://en.wikipedia.org/wiki/Europa_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Europa_(moon)",
+      "library": [
+        { "id": "europa-wiki", "label": "Wikipedia — Europa", "url": "https://en.wikipedia.org/wiki/Europa_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "europa-nasa", "label": "NASA Science — Europa overview", "url": "https://science.nasa.gov/jupiter/moons/europa/", "tier": "intro", "kind": "nasa" },
+        { "id": "europa-clipper", "label": "NASA Europa Clipper — mission site", "url": "https://europa.nasa.gov/", "tier": "core", "kind": "mission" },
+        { "id": "europa-juice", "label": "ESA JUICE — Jupiter Icy Moons Explorer", "url": "https://www.esa.int/Science_Exploration/Space_Science/Juice", "tier": "core", "kind": "mission" }
+      ]
     },
     {
       "id": "ganymede",
@@ -122,7 +152,13 @@
       ],
       "surface_composition": "Roughly half water ice + half silicate rock; surface a mix of dark cratered terrain (~4 Gyr old) and lighter grooved terrain (tectonic resurfacing ~2 Gyr ago); thin oxygen exosphere.",
       "description": "The solar system's largest moon — bigger than Mercury, 8% larger than the Moon. Ganymede is the only moon with a self-generated magnetic field, evidence of a partially-molten iron core. Beneath ~150 km of ice lies a saltwater ocean larger than all of Earth's oceans combined; some models suggest a layered structure with multiple oceans separated by ice phases of different densities. ESA's JUICE mission will become the first orbiter of a moon other than Earth's when it enters Ganymede orbit in December 2034.",
-      "wiki": "https://en.wikipedia.org/wiki/Ganymede_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Ganymede_(moon)",
+      "library": [
+        { "id": "ganymede-wiki", "label": "Wikipedia — Ganymede", "url": "https://en.wikipedia.org/wiki/Ganymede_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "ganymede-nasa", "label": "NASA Science — Ganymede overview", "url": "https://science.nasa.gov/jupiter/moons/ganymede/", "tier": "intro", "kind": "nasa" },
+        { "id": "ganymede-juice", "label": "ESA JUICE — Ganymede orbiter mission", "url": "https://www.esa.int/Science_Exploration/Space_Science/Juice", "tier": "core", "kind": "mission" },
+        { "id": "ganymede-magfield", "label": "NASA Galileo — Ganymede magnetic-field discovery", "url": "https://solarsystem.nasa.gov/news/1996/", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "callisto",
@@ -140,7 +176,12 @@
       ],
       "surface_composition": "Roughly 40% water ice + 60% silicate rock; surface the most heavily-cratered in the solar system — almost saturated, untouched by resurfacing. Notable feature: the 3,800 km Valhalla multi-ring impact basin.",
       "description": "Callisto sits outside the Laplace resonance that drives the tidal heating in Io, Europa, and Ganymede — so its interior never melted enough to differentiate fully or resurface its crust. The result is the most pristine record of impact bombardment in the inner Galilean system, including the spectacular Valhalla basin's 15-ring system stretching nearly half the moon's circumference. Despite the lack of tidal heating, Galileo's magnetometer detected an induced magnetic field consistent with a deep salty ocean ~100 km below the surface. Its low radiation environment (compared to Europa or Ganymede) and long-lived water make it a likely staging point for future crewed missions to the Jupiter system.",
-      "wiki": "https://en.wikipedia.org/wiki/Callisto_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Callisto_(moon)",
+      "library": [
+        { "id": "callisto-wiki", "label": "Wikipedia — Callisto", "url": "https://en.wikipedia.org/wiki/Callisto_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "callisto-nasa", "label": "NASA Science — Callisto overview", "url": "https://science.nasa.gov/jupiter/moons/callisto/", "tier": "intro", "kind": "nasa" },
+        { "id": "callisto-galileo", "label": "NASA Galileo legacy archive", "url": "https://solarsystem.nasa.gov/missions/galileo/overview/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "titan",
@@ -160,7 +201,13 @@
       ],
       "surface_composition": "Water-ice bedrock under organic dunes + hydrocarbon lakes (methane / ethane) + a nitrogen-methane atmosphere 1.45× Earth's sea-level pressure. Tholin haze tints the sky orange.",
       "description": "Second-largest moon in the solar system and the only moon with a substantial atmosphere — thicker than Earth's. Below the orange tholin haze sits the only known body besides Earth with stable liquid on its surface: hydrocarbon lakes and seas of methane and ethane in the polar regions, fed by an active methane hydrologic cycle that includes clouds, rain, and rivers carving water-ice bedrock. Huygens (ESA) made the first landing on a moon other than Earth's in 2005. NASA's Dragonfly will arrive in 2034 as a nuclear-powered rotorcraft, hopping between Titan's organic-rich landscapes.",
-      "wiki": "https://en.wikipedia.org/wiki/Titan_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Titan_(moon)",
+      "library": [
+        { "id": "titan-wiki", "label": "Wikipedia — Titan", "url": "https://en.wikipedia.org/wiki/Titan_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "titan-nasa", "label": "NASA Science — Titan overview", "url": "https://science.nasa.gov/saturn/moons/titan/", "tier": "intro", "kind": "nasa" },
+        { "id": "titan-dragonfly", "label": "NASA Dragonfly — nuclear rotorcraft mission to Titan", "url": "https://dragonfly.jhuapl.edu/", "tier": "core", "kind": "mission" },
+        { "id": "titan-huygens", "label": "ESA Huygens — first landing on a moon other than ours", "url": "https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens", "tier": "core", "kind": "mission" }
+      ]
     },
     {
       "id": "enceladus",
@@ -178,7 +225,13 @@
       ],
       "surface_composition": "Pristine water-ice crust over a global subsurface ocean; south-polar 'tiger stripe' fractures venting plumes of water vapour, organics, salts, silica nanograins, and molecular hydrogen.",
       "description": "Tiny — just 504 km across — but the most reflective body in the solar system and one of the strongest candidates for present-day habitability beyond Earth. Cassini flew directly through plumes erupting from four 130-km-long fractures at the south pole; the spectrometer detected molecular hydrogen, organics including methane, salts, and silica nanograins indicating active hydrothermal chemistry on the ocean floor. The ocean is in direct contact with rocky seafloor — the same energy and chemistry conditions that gave rise to life at Earth's own deep-sea hydrothermal vents.",
-      "wiki": "https://en.wikipedia.org/wiki/Enceladus"
+      "wiki": "https://en.wikipedia.org/wiki/Enceladus",
+      "library": [
+        { "id": "enceladus-wiki", "label": "Wikipedia — Enceladus", "url": "https://en.wikipedia.org/wiki/Enceladus", "tier": "intro", "kind": "wikipedia" },
+        { "id": "enceladus-nasa", "label": "NASA Science — Enceladus overview", "url": "https://science.nasa.gov/saturn/moons/enceladus/", "tier": "intro", "kind": "nasa" },
+        { "id": "enceladus-cassini", "label": "NASA Cassini — plume-flyby legacy archive", "url": "https://solarsystem.nasa.gov/missions/cassini/overview/", "tier": "core", "kind": "mission" },
+        { "id": "enceladus-habitability", "label": "Astrobiology — Enceladus as life-search target", "url": "https://astrobiology.nasa.gov/news/enceladus-as-target/", "tier": "extra", "kind": "article" }
+      ]
     },
     {
       "id": "miranda",
@@ -193,7 +246,12 @@
       "mission_visits": ["Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"],
       "surface_composition": "Water-ice + silicate rock; surface a patchwork of ancient cratered terrain crossed by huge coronae — concentric ridges and grooves that include Verona Rupes, the tallest known cliff in the solar system (~20 km vertical drop).",
       "description": "The innermost and smallest of Uranus's five major moons — and visually the most extreme. Voyager 2's flyby imagery revealed a surface that looks like it was assembled from mismatched pieces: enormous cliffs, fractured plateaus, and concentric coronae jutting from heavily-cratered older terrain. The leading hypothesis is that Miranda was disrupted by an impact at least once, with the fragments reassembling under their own gravity. Verona Rupes drops ~20 km — under Miranda's low gravity, a falling object would take roughly 12 minutes to reach the bottom.",
-      "wiki": "https://en.wikipedia.org/wiki/Miranda_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Miranda_(moon)",
+      "library": [
+        { "id": "miranda-wiki", "label": "Wikipedia — Miranda", "url": "https://en.wikipedia.org/wiki/Miranda_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "miranda-nasa", "label": "NASA Science — Miranda overview", "url": "https://science.nasa.gov/uranus/moons/miranda/", "tier": "intro", "kind": "nasa" },
+        { "id": "miranda-voyager2", "label": "NASA Voyager 2 — only Uranian-system flyby (1986)", "url": "https://voyager.jpl.nasa.gov/mission/science/uranus/", "tier": "core", "kind": "mission" }
+      ]
     },
     {
       "id": "ariel",
@@ -208,7 +266,12 @@
       "mission_visits": ["Voyager 2 — USA, 1986 (southern-hemisphere flyby)"],
       "surface_composition": "Water-ice crust + silicate / carbonaceous rock interior; surface the brightest of Uranus's major moons, with relatively few craters — interpreted as evidence of cryovolcanic resurfacing within the last ~1 Gyr.",
       "description": "The brightest and (after Miranda) youngest-looking surface in the Uranian system — Voyager 2 imagery shows broad rift valleys and what may be flow features hinting at past or present cryovolcanic activity. Tidal heating from a 2:1 orbital resonance with Umbriel that existed in the deep past could have melted the interior; whether any liquid water remains today is unknown. Like the other Uranian major moons, only its southern hemisphere has been imaged at close range.",
-      "wiki": "https://en.wikipedia.org/wiki/Ariel_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Ariel_(moon)",
+      "library": [
+        { "id": "ariel-wiki", "label": "Wikipedia — Ariel", "url": "https://en.wikipedia.org/wiki/Ariel_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "ariel-nasa", "label": "NASA Science — Ariel overview", "url": "https://science.nasa.gov/uranus/moons/ariel/", "tier": "intro", "kind": "nasa" },
+        { "id": "ariel-voyager2", "label": "NASA Voyager 2 — Uranian-system imagery", "url": "https://voyager.jpl.nasa.gov/mission/science/uranus/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "umbriel",
@@ -223,7 +286,12 @@
       "mission_visits": ["Voyager 2 — USA, 1986 (southern-hemisphere flyby)"],
       "surface_composition": "Water-ice + carbonaceous-tinted regolith; dark, heavily-cratered surface — the least reflective of Uranus's major moons. Striking exception: the bright Wunda crater near the equator.",
       "description": "Umbriel is the dark twin in the Uranian system — about the same size as Ariel but reflecting less than half the sunlight, with an ancient cratered surface that shows little evidence of resurfacing since formation. The standout feature is Wunda, a 131 km crater ringed with bright frost-like material around its rim, sitting near the moon's equator. The cause of Umbriel's overall dark colour is unknown; one hypothesis ties it to dust from Uranus's irregular outer moons sweeping across the inner system.",
-      "wiki": "https://en.wikipedia.org/wiki/Umbriel_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Umbriel_(moon)",
+      "library": [
+        { "id": "umbriel-wiki", "label": "Wikipedia — Umbriel", "url": "https://en.wikipedia.org/wiki/Umbriel_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "umbriel-nasa", "label": "NASA Science — Umbriel overview", "url": "https://science.nasa.gov/uranus/moons/umbriel/", "tier": "intro", "kind": "nasa" },
+        { "id": "umbriel-voyager2", "label": "NASA Voyager 2 — Uranian-system imagery", "url": "https://voyager.jpl.nasa.gov/mission/science/uranus/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "titania",
@@ -238,7 +306,12 @@
       "mission_visits": ["Voyager 2 — USA, 1986 (southern-hemisphere flyby)"],
       "surface_composition": "Water-ice + silicate rock; ancient cratered terrain cut by vast canyon systems hundreds of kilometres long — Messina Chasma stretches ~1,500 km across the moon.",
       "description": "The largest moon of Uranus and eighth-largest in the solar system. Voyager 2 imagery revealed a surface cut by enormous canyon systems — Messina Chasma alone stretches 1,500 km across the southern hemisphere — alongside large impact basins and the small fresh-looking Ursula crater. A 2017 stellar occultation tentatively detected a thin carbon-dioxide atmosphere, which would be the first atmosphere found on a Uranian moon.",
-      "wiki": "https://en.wikipedia.org/wiki/Titania_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Titania_(moon)",
+      "library": [
+        { "id": "titania-wiki", "label": "Wikipedia — Titania", "url": "https://en.wikipedia.org/wiki/Titania_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "titania-nasa", "label": "NASA Science — Titania overview", "url": "https://science.nasa.gov/uranus/moons/titania/", "tier": "intro", "kind": "nasa" },
+        { "id": "titania-voyager2", "label": "NASA Voyager 2 — Uranian-system imagery", "url": "https://voyager.jpl.nasa.gov/mission/science/uranus/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "oberon",
@@ -253,7 +326,12 @@
       "mission_visits": ["Voyager 2 — USA, 1986 (southern-hemisphere flyby)"],
       "surface_composition": "Water-ice + silicate rock; reddish-tinged ancient cratered surface; the dark floors of several large craters are coated in unidentified dark material, possibly hydrocarbons or carbonates.",
       "description": "The outermost of Uranus's major moons. Oberon's surface is heavily cratered and reddish-tinged — older than Titania's, with no clear evidence of resurfacing since the late heavy bombardment ~4 Gyr ago. Several large craters have notably dark floors; spectra are consistent with hydrocarbon residues left by space-weathered organics. A 6 km mountain — possibly the central peak of a large impact basin — rises near the limb in Voyager 2's best image.",
-      "wiki": "https://en.wikipedia.org/wiki/Oberon_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Oberon_(moon)",
+      "library": [
+        { "id": "oberon-wiki", "label": "Wikipedia — Oberon", "url": "https://en.wikipedia.org/wiki/Oberon_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "oberon-nasa", "label": "NASA Science — Oberon overview", "url": "https://science.nasa.gov/uranus/moons/oberon/", "tier": "intro", "kind": "nasa" },
+        { "id": "oberon-voyager2", "label": "NASA Voyager 2 — Uranian-system imagery", "url": "https://voyager.jpl.nasa.gov/mission/science/uranus/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "triton",
@@ -268,7 +346,13 @@
       "mission_visits": ["Voyager 2 — USA, 1989 (closest approach ~40,000 km)"],
       "surface_composition": "Frozen nitrogen + water ice + carbon dioxide ice; surface covered with cantaloupe-textured terrain unique in the solar system, and active nitrogen cryogeysers venting dark plumes 8 km into a thin nitrogen atmosphere.",
       "description": "Neptune's largest moon and one of the most geologically active worlds in the solar system. Triton orbits Neptune backwards (retrograde) and at an extreme tilt — diagnostic of a captured Kuiper Belt object, making it likely a sibling of Pluto rather than a native Neptunian moon. Voyager 2 detected active nitrogen geysers venting dark organic dust 8 km into a tenuous nitrogen atmosphere; the southern hemisphere features 'cantaloupe terrain' — a network of dimples and ridges seen nowhere else in the solar system. Triton's retrograde orbit is decaying tidally; in roughly 3.6 Gyr it will either be torn into a Saturn-like ring or crash into Neptune.",
-      "wiki": "https://en.wikipedia.org/wiki/Triton_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Triton_(moon)",
+      "library": [
+        { "id": "triton-wiki", "label": "Wikipedia — Triton", "url": "https://en.wikipedia.org/wiki/Triton_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "triton-nasa", "label": "NASA Science — Triton overview", "url": "https://science.nasa.gov/neptune/moons/triton/", "tier": "intro", "kind": "nasa" },
+        { "id": "triton-voyager2", "label": "NASA Voyager 2 — Neptune-system encounter (1989)", "url": "https://voyager.jpl.nasa.gov/mission/science/neptune/", "tier": "core", "kind": "mission" },
+        { "id": "triton-trident", "label": "Trident — proposed Discovery-class Triton flyby", "url": "https://www.jpl.nasa.gov/news/nasas-trident-mission-to-icy-titan-and-trojan-asteroids/", "tier": "extra", "kind": "mission" }
+      ]
     },
     {
       "id": "charon",
@@ -283,7 +367,12 @@
       "mission_visits": ["New Horizons — USA, 2015 (first and only flyby)"],
       "surface_composition": "Water-ice crust with ammonia hydrates and tholins; the dark reddish polar cap (Mordor Macula) is methane gas escaped from Pluto and processed into tholins on Charon's frigid surface.",
       "description": "Half Pluto's diameter — the largest moon-to-planet size ratio in the solar system. Charon and Pluto are mutually tidally locked, orbiting a common centre of mass 1,700 km above Pluto's surface — effectively a binary planet system. New Horizons revealed a startlingly varied terrain: the smooth Vulcan Planitia plain to the south, an ancient cratered hemisphere to the north, and a dark red polar cap (Mordor Macula) of tholins formed when methane molecules escaping from Pluto's atmosphere collected on Charon and were processed by ultraviolet light. The four smaller Pluto moons (Styx, Nix, Kerberos, Hydra) orbit the Pluto-Charon barycentre with chaotic rotations driven by the binary system's shifting gravity.",
-      "wiki": "https://en.wikipedia.org/wiki/Charon_(moon)"
+      "wiki": "https://en.wikipedia.org/wiki/Charon_(moon)",
+      "library": [
+        { "id": "charon-wiki", "label": "Wikipedia — Charon", "url": "https://en.wikipedia.org/wiki/Charon_(moon)", "tier": "intro", "kind": "wikipedia" },
+        { "id": "charon-nasa", "label": "NASA Science — Charon overview", "url": "https://science.nasa.gov/dwarf-planets/pluto/moons/charon/", "tier": "intro", "kind": "nasa" },
+        { "id": "charon-new-horizons", "label": "NASA New Horizons — Pluto-Charon flyby (2015)", "url": "https://www.nasa.gov/mission/new-horizons/", "tier": "core", "kind": "mission" }
+      ]
     }
   ]
 }

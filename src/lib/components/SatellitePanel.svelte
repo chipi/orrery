@@ -93,11 +93,17 @@
 <Panel {open} {onClose} title={entry?.name ?? ''}>
   {#if entry}
     <div class="head">
-      <div class="parent-row">
-        <span class="parent-label">orbits</span>
-        <span class="parent-name">{entry.parent_planet_name}</span>
+      <div class="kind-row">
+        <span class="kind">NATURAL SATELLITE · ORBITS {entry.parent_planet_name.toUpperCase()}</span
+        >
       </div>
     </div>
+
+    {#if gallery.length > 0}
+      <div class="panel-hero">
+        <img src={`${base}${gallery[0]}`} alt="" fetchpriority="high" decoding="async" />
+      </div>
+    {/if}
 
     <div class="tabs" role="tablist">
       <button
@@ -142,10 +148,10 @@
       {#if tab === 'overview'}
         <p class="editorial">{entry.description}</p>
         {#if entry.surface_composition}
-          <p class="composition">
-            <span class="prop-label">Composition</span>
-            <span>{entry.surface_composition}</span>
-          </p>
+          <div class="composition">
+            <div class="cell-label">COMPOSITION</div>
+            <div class="cell-value">{entry.surface_composition}</div>
+          </div>
         {/if}
       {:else if tab === 'gallery'}
         {#if gallery.length > 0}
@@ -157,58 +163,50 @@
             {/each}
           </ul>
         {:else}
-          <p class="empty">No gallery images sourced yet for this satellite.</p>
+          <p class="editorial empty">No gallery images sourced yet for this satellite.</p>
         {/if}
       {:else if tab === 'technical'}
-        <dl class="tech">
+        <div class="grid">
           <div>
-            <dt>Radius</dt>
-            <dd>{formatKm(entry.radius_km, loc)}</dd>
+            <div class="cell-label">RADIUS</div>
+            <div class="cell-value">{formatKm(entry.radius_km, loc)}</div>
           </div>
           <div>
-            <dt>Orbit semi-major axis</dt>
-            <dd>{formatKm(entry.semi_major_axis_km, loc)}</dd>
+            <div class="cell-label">ORBIT</div>
+            <div class="cell-value">{formatKm(entry.semi_major_axis_km, loc)}</div>
           </div>
           <div>
-            <dt>Orbital period</dt>
-            <dd>{entry.orbital_period_days.toFixed(2)} days</dd>
+            <div class="cell-label">PERIOD</div>
+            <div class="cell-value">{entry.orbital_period_days.toFixed(2)} days</div>
           </div>
           <div>
-            <dt>Discovered</dt>
-            <dd>{entry.discovered}</dd>
+            <div class="cell-label">DISCOVERED</div>
+            <div class="cell-value">{entry.discovered}</div>
           </div>
-          {#if entry.mission_visits.length > 0}
-            <div>
-              <dt>Visited by</dt>
-              <dd>
-                <ul>
-                  {#each entry.mission_visits as mission}
-                    <li>{mission}</li>
-                  {/each}
-                </ul>
-              </dd>
-            </div>
-          {/if}
-        </dl>
+        </div>
+        {#if entry.mission_visits.length > 0}
+          <div class="mission-block">
+            <div class="cell-label">VISITED BY</div>
+            <ul class="mission-list">
+              {#each entry.mission_visits as mission}
+                <li>{mission}</li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
       {:else if tab === 'library'}
         {#if entry.library && entry.library.length > 0}
-          <ul class="library">
+          <ul class="learn-list">
             {#each entry.library as link (link.id)}
-              <li class="library-item library-tier-{link.tier}">
-                <span class="library-kind">{link.kind}</span>
-                <a
-                  class="library-label"
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer external"
-                >
+              <li>
+                <a href={link.url} target="_blank" rel="noopener noreferrer external">
                   {link.label} ↗
                 </a>
               </li>
             {/each}
           </ul>
         {:else}
-          <p class="empty">No library entries yet for this satellite.</p>
+          <p class="editorial empty">No library entries yet for this satellite.</p>
         {/if}
       {/if}
     </div>

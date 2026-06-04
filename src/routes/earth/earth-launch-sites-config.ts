@@ -80,6 +80,26 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // orbital context. Suppresses both the toggle button and the 2D
     // canvas.
     disable2D: true,
+    // Science Lens panel for the unified /earth route (#303 fix). Pre-
+    // #303 SurfaceScene mounted /moon's hardcoded panel for every route
+    // — so /earth users saw "The Moon · 384 000 km out…" with only the
+    // dead `tidal-lock` chip even though the atmosphere + ozone layers
+    // are fully wired internally. Earth-specific copy + the two LayerKeys
+    // whose visualisations actually live in this scene.
+    lensPanel: {
+      title: 'Earth · 6371 km radius, our orbital perch',
+      body: 'A 100 km Kármán-line shell separates atmosphere from space; LEO begins another 100 km up. The ozone column at ~30 km blocks the UV-C that would otherwise sterilise the surface — its polar depletion is one of the few global atmospheric measurements visible from orbit.',
+      tab: 'orbits',
+      section: 'orbit-regimes',
+      available: ['atmosphere', 'ozone'],
+    },
+    // Pull the camera closer at start so the lens-gated Kármán shell
+    // (just outside the 30-unit planet radius) and ozone caps are on
+    // screen the moment the user toggles them on. The default camR=85
+    // started so far out that the layers looked like they hadn't done
+    // anything; 55 fits the planet + 100km shell + south polar cap in
+    // the same frame.
+    initialCamR: 55,
     // #290 Slice 7 — orbital stack composed onto the surface scene.
     // Mirrors EarthOrbitalScene's exact construction values so the
     // unified route renders identically to the legacy orbital view

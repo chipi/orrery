@@ -60,6 +60,17 @@
     // Slight-red ambient tint hints at Martian palette (consolidated
     // intensity 0.8 lives inside SurfaceScene per ADR-072 §Drift 5).
     ambientColor: 0x886655,
+    // Science Lens panel for /mars (#303 fix). Pre-#303 SurfaceScene
+    // mounted /moon's hardcoded panel here so the /mars user saw lunar
+    // tidal-lock copy + a dead chip. Mars's atmosphere is the lensable
+    // overlay on the surface scene.
+    lensPanel: {
+      title: 'Mars · thin CO₂ shell + a dynamo gone quiet',
+      body: "Mars' atmospheric pressure sits at 0.6 % of Earth's — enough for parachute aerobraking but not aerocapture. The global magnetic dynamo died ~4 Gyr ago; the residual crustal magnetism in the southern highlands is the only fossil record of when it was alive.",
+      tab: 'planets',
+      section: 'magnetic-fields',
+      available: ['atmosphere'],
+    },
   };
 </script>
 

@@ -1482,8 +1482,10 @@
     // Camera + controls.
     // Initial camR=85 (consolidation per ADR-072 §Drift 2 — was 80
     // Moon / 90 Mars). Initial camP=45° (Drift 3 — was π/2 Moon /
-    // 45° Mars; Mars's angled view is more inviting).
-    let camR = 85;
+    // 45° Mars; Mars's angled view is more inviting). /earth overrides
+    // via config.initialCamR so the lens-gated layers (Karman shell,
+    // ozone caps, satellite belt) sit on screen at toggle-on.
+    let camR = config.initialCamR ?? 85;
     let camP = Math.PI / 4;
     let camT = 0;
     const camR0 = camR;
@@ -3804,17 +3806,20 @@ sample      ${debugInfo.projectedPxSample}`}
   {/if}
 </div>
 
-<!-- J.2 — Science Lens banner on /moon. Top-center, lens-gated;
-     links into the free-return chapter that's central to lunar
-     mission architecture. -->
-<!-- Unified Science Lens panel — lens story + tidal-lock indicator in
-     one collapse. -->
+<!-- Unified Science Lens panel — lens story + per-route layer toggles.
+     Pre-#303 this was hardcoded with /moon's title/body/available
+     for every route mounting SurfaceScene (#290 unification artifact:
+     /earth + /mars inherited /moon's lens copy and a single dead
+     `tidal-lock` chip). config.lensPanel now drives per-route content;
+     /moon kept its prior values as the explicit fallback so any caller
+     that forgets to set lensPanel still gets the original behaviour. -->
 <ScienceLayersPanel
-  title="The Moon · 384 000 km out, three days each way"
-  body="Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path."
-  tab="transfers"
-  section="free-return"
-  available={['tidal-lock']}
+  title={config.lensPanel?.title ?? 'The Moon · 384 000 km out, three days each way'}
+  body={config.lensPanel?.body ??
+    "Lunar surface gravity is 1/6 g; a vacuum-thin exosphere offers no aerobraking, so every mission has to carry full ∆v for the descent. Apollo's free-return trajectory let the Earth-Moon-Earth figure-8 act as a built-in abort path."}
+  tab={config.lensPanel?.tab ?? 'transfers'}
+  section={config.lensPanel?.section ?? 'free-return'}
+  available={config.lensPanel?.available ?? ['tidal-lock']}
 />
 
 <style>

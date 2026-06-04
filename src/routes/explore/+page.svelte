@@ -614,6 +614,14 @@
     selectedSmallBodyId ? (smallBodyById.get(selectedSmallBodyId) ?? null) : null,
   );
 
+  // Natural-satellite selection (#304 Slice 1). Each satellite is
+  // uniquely keyed by `${parentPlanetId}:${satelliteId}` to keep
+  // collisions impossible if two parents ever share a moon name.
+  // Re-added when the next slice wires the panel open/close handlers.
+  // (#303 follow-up: removed unused PRD-304 Slice 1 stubs to unblock
+  // preflight — svelte-check noUnusedLocals trips on `let x = $state()`
+  // with no reader anywhere in the module.)
+
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
   // the scene). All default to true so first paint matches today.
@@ -755,6 +763,7 @@
     panelOpen = true;
     sunPanelOpen = false;
     smallBodyPanelOpen = false;
+    satellitePanelOpen = false;
     flyToBodyFn?.(id);
   }
 
@@ -762,6 +771,7 @@
     sunPanelOpen = true;
     panelOpen = false;
     smallBodyPanelOpen = false;
+    satellitePanelOpen = false;
     flyToBodyFn?.(null);
   }
 
@@ -770,6 +780,20 @@
     smallBodyPanelOpen = true;
     panelOpen = false;
     sunPanelOpen = false;
+    satellitePanelOpen = false;
+  }
+
+  // Natural-satellite selection (#304 Slice 1). Compound key
+  // `${parentPlanetId}:${satelliteId}` so e.g. selecting Charon
+  // reads as `"pluto:charon"` — the data layer can split on `:`
+  // when looking up the parent body. Same panel-mutex pattern as
+  // the other select* — only one detail panel is ever open.
+  function selectSatellite(parentPlanetId: string, satelliteId: string) {
+    selectedSatelliteKey = `${parentPlanetId}:${satelliteId}`;
+    satellitePanelOpen = true;
+    panelOpen = false;
+    sunPanelOpen = false;
+    smallBodyPanelOpen = false;
   }
 
   // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
@@ -1131,6 +1155,17 @@
         const satMesh = new THREE.Mesh(new THREE.SphereGeometry(s.sizeUnits, 32, 32), satMat);
         satMesh.userData = { satelliteId: s.id, parentPlanetId: p.id };
         satellitesGroup.add(satMesh);
+        // Invisible pick aid — co-located child of satMesh so it
+        // inherits world position automatically. Sized 3× the visible
+        // radius (floor at 4 units) so the moon stays clickable at
+        // wide zoom where the visible body is sub-pixel (#304 Slice
+        // 1, 2026-06-03).
+        const satPickAid = new THREE.Mesh(
+          new THREE.SphereGeometry(Math.max(s.sizeUnits * 3, 4), 12, 12),
+          new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }),
+        );
+        satPickAid.userData = { satelliteId: s.id, parentPlanetId: p.id };
+        satMesh.add(satPickAid);
 
         // 2026-06-03 user direction: "When we zoom in to Earth that
         // [it] is normal with texture with orbit around it and that
@@ -2062,19 +2097,41 @@
     const planetPickAids = planetObjs.map((o) => o.pickAid);
     const smallBodyMeshes = smallBodyObjs.map((o) => o.mesh);
     const smallBodyPickAids = smallBodyObjs.map((o) => o.pickAid);
+    // Flatten satellite meshes across all planets — each moon mesh
+    // already carries its own (invisible, larger-radius) pickAid as
+    // a child, so adding the mesh alone is sufficient: ray.intersectObjects
+    // with `recursive=true` would over-pick, but we use false everywhere,
+    // so we collect both the satMesh + its pickAid explicitly. #304 Slice 1.
+    const satelliteMeshes: THREE.Object3D[] = [];
+    const satellitePickAids: THREE.Object3D[] = [];
+    for (const po of planetObjs) {
+      for (const sat of po.satellites) {
+        satelliteMeshes.push(sat.mesh);
+        for (const child of sat.mesh.children) {
+          if (
+            child instanceof THREE.Mesh &&
+            typeof child.userData?.satelliteId === 'string'
+          ) {
+            satellitePickAids.push(child);
+          }
+        }
+      }
+    }
     // Pickables: Sun (never selected planet), all planets, all small
-    // bodies (visible mesh + invisible pickAid). The pickAid widens
-    // the click target for the 1.2-1.8u small-body spheres so they're
-    // not effectively unclickable in 3D. Raycaster respects
-    // `.visible: false` on the visible mesh; the LAYERS panel toggles
-    // both `mesh.visible` and `pickAid.visible` for hidden bodies so
-    // they can't be selected when filtered out.
+    // bodies (visible mesh + invisible pickAid), all natural satellites
+    // (visible mesh + invisible pickAid). The pickAid widens the click
+    // target for tiny bodies so they're not effectively unclickable
+    // at wide zoom. Raycaster respects `.visible: false`; the LAYERS
+    // panel toggles both `mesh.visible` and `pickAid.visible` for
+    // hidden bodies so they can't be selected when filtered out.
     const pickables: THREE.Object3D[] = [
       ...planetMeshes,
       ...planetPickAids,
       sunMesh,
       ...smallBodyMeshes,
       ...smallBodyPickAids,
+      ...satelliteMeshes,
+      ...satellitePickAids,
     ];
 
     const tryPick3d = (e: MouseEvent) => {
@@ -2087,14 +2144,18 @@
       const hit = hits.find(
         (h) =>
           typeof h.object.userData.planetId === 'string' ||
-          typeof h.object.userData.smallBodyId === 'string',
+          typeof h.object.userData.smallBodyId === 'string' ||
+          typeof h.object.userData.satelliteId === 'string',
       );
       if (hit) {
         const planetId = hit.object.userData.planetId as string | undefined;
         const smallBodyId = hit.object.userData.smallBodyId as string | undefined;
+        const satelliteId = hit.object.userData.satelliteId as string | undefined;
+        const parentPlanetId = hit.object.userData.parentPlanetId as string | undefined;
         if (planetId === '__sun__') selectSun();
         else if (planetId) selectPlanet(planetId);
         else if (smallBodyId) selectSmallBody(smallBodyId);
+        else if (satelliteId && parentPlanetId) selectSatellite(parentPlanetId, satelliteId);
         return;
       }
       // Second: galaxy sprites (only pickable when the layer is on,

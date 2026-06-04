@@ -14,6 +14,8 @@
  * @see {@link file://../../../docs/adr/ADR-072.md}
  */
 import type * as THREE from 'three';
+import type { LayerKey } from '$lib/science-layers';
+import type { ScienceTabId } from '$types/science';
 
 /**
  * Identity used for asset path prefixes (e.g. `texture/2k_${planet}.jpg`),
@@ -237,6 +239,41 @@ export interface SurfaceSceneConfig {
    * (this commit) only adds the type contract.
    */
   earthOrbitalLayers?: EarthOrbitalLayersConfig;
+
+  /**
+   * Science Lens panel content per route (#303 follow-up). Pre-existing
+   * code hardcoded the /moon panel title/body/tab/section/available[]
+   * inside SurfaceScene, leaving /earth + /mars showing /moon's lens
+   * story + only the `tidal-lock` toggle (which doesn't even apply
+   * to those routes). When set, SurfaceScene mounts the panel with
+   * these values; when omitted, falls back to the /moon defaults so
+   * existing /moon callers don't break.
+   *
+   * Each route should provide:
+   *   • `title` + `body` — the route-appropriate lens-story copy
+   *   • `tab` + `section` — the /science article the "Read more →"
+   *     link points to
+   *   • `available[]` — the LayerKeys whose sub-toggle chips render
+   *     in the panel. Only include keys that actually have on-scene
+   *     visualization wired up; un-wired keys render a dead chip.
+   */
+  lensPanel?: {
+    title: string;
+    body: string;
+    tab: ScienceTabId;
+    section: string;
+    available: LayerKey[];
+  };
+
+  /**
+   * Optional override for the initial camera distance (camR).
+   * Default is 85 (consolidated per ADR-072 §Drift 2 from 80 Moon /
+   * 90 Mars). /earth wants a smaller start so the lens-gated
+   * atmosphere shell + ozone caps + satellite layer all sit on screen
+   * the moment the user toggles them on; without it the camera starts
+   * so far out the toggles look like they did nothing.
+   */
+  initialCamR?: number;
 
   /**
    * Suppress the 2D toggle + 2D canvas drawer entirely (#290 Slice 7).

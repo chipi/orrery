@@ -2985,6 +2985,41 @@
 
         // Debug overlay write — guarded by showDebug (?debug=1).
         // Same shape as /mars's debugInfo block.
+        // Live altitude (km above surface). camR is in scene units;
+        // multiply by `radiusKm/planetRadius` km/unit to get real km.
+        // Updated every frame regardless of ?debug=1 so the HUD chip
+        // (altitude indicator) stays correct.
+        altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
+
+        // Sphere → flat-patch transition trigger (ADR-062). Once the
+        // camera crosses SPHERE_TO_FLAT_CAM_R = 30.3 with a region
+        // selected, start the entering-fade (sphere out, flat-patch
+        // in over 600 ms ease-in-out). Only TRIGGERS the entering
+        // phase — the back gesture reverses it.
+        //
+        // 2026-06-03 — bug fix: this trigger was previously nested
+        // INSIDE `if (showDebug)` along with the debug-only readouts.
+        // Without `?debug=1` the user could wheel-zoom all the way
+        // to the sphere camR floor (30.08) and flat-patch never
+        // fired — stuck at near-tangent camera with only the green
+        // patch-pin visible. Trigger lifted to top-level so it runs
+        // every frame; debug block below now contains only debug
+        // overlay state.
+        const SPHERE_TO_FLAT_CAM_R = 30.3;
+        if (
+          flatPatchPhase === 'hidden' &&
+          selected != null &&
+          selected.region_bounds != null &&
+          camR < SPHERE_TO_FLAT_CAM_R
+        ) {
+          if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
+          flatPatchPhase = 'entering';
+          flatPatchTransitionTimer = setTimeout(() => {
+            flatPatchPhase = 'visible';
+            flatPatchTransitionTimer = null;
+          }, FLAT_PATCH_FADE_MS);
+        }
+
         if (showDebug) {
           let maxAcross = 0;
           for (const h of hotspots) if (h.maxTier > maxAcross) maxAcross = h.maxTier;
@@ -3000,32 +3035,6 @@
           debugInfo.pageMode = hotspotsMode;
           debugInfo.dispatcherMode = getHotspotMode();
           debugInfo.camR = camR;
-          // Live altitude (km above surface). camR is in scene units;
-          // multiply by `radiusKm/planetRadius` km/unit to get real km.
-          altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
-          // Sphere → flat-patch transition trigger (ADR-062). When the
-          // user zooms past 30.5 with a region selected, start the
-          // entering-fade (sphere out, flat-patch in over 600 ms ease-
-          // in-out). Only TRIGGERS the entering phase — the back
-          // gesture is what reverses it.
-          // Lowered 30.5 → 30.3 (2026-06-01) so the user can zoom
-          // closer on the sphere (with Tier-2 patch fully visible)
-          // before the flat-patch overlay takes over — gives ~2×
-          // more "stand-on-sphere" range for inspection.
-          const SPHERE_TO_FLAT_CAM_R = 30.3;
-          if (
-            flatPatchPhase === 'hidden' &&
-            selected != null &&
-            selected.region_bounds != null &&
-            camR < SPHERE_TO_FLAT_CAM_R
-          ) {
-            if (flatPatchTransitionTimer) clearTimeout(flatPatchTransitionTimer);
-            flatPatchPhase = 'entering';
-            flatPatchTransitionTimer = setTimeout(() => {
-              flatPatchPhase = 'visible';
-              flatPatchTransitionTimer = null;
-            }, FLAT_PATCH_FADE_MS);
-          }
           if (hotspots.length > 0) {
             const h = hotspots[0];
             const wp = new THREE.Vector3();

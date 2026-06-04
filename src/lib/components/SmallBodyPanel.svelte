@@ -351,32 +351,9 @@
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
   }
-  .tabs {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 14px;
-  }
-  .tabs button {
-    background: transparent;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.45);
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  .tabs button.active {
-    color: #fff;
-    border-bottom-color: #4466ff;
-  }
-  .tabs button:hover:not(.active),
-  .tabs button:focus-visible {
-    color: rgba(255, 255, 255, 0.8);
-    outline: none;
-  }
+  /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
+     matches the rest of the detail-panel family (Planet, Sun, Mission,
+     Fleet, Station). */
   .editorial {
     font-family: 'Crimson Pro', serif;
     font-style: italic;

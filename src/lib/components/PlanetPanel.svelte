@@ -165,6 +165,7 @@
       <button
         type="button"
         id="pp-tab-technical"
+        data-audio-stage="planet-tab-technical"
         class:active={tab === 'technical'}
         onclick={() => (tab = 'technical')}
         role="tab"

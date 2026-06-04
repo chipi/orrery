@@ -20,7 +20,25 @@
 // system doesn't latch onto CSS classes that may churn for styling reasons.
 // =============================================================================
 
-export type AudioStageAction = 'flash' | 'scroll-to' | 'click' | 'open-tab' | 'cue';
+// Action types — see executor in AudioOverlay.svelte for runtime behaviour.
+//   flash       — pulse a warm-gold glow around the target element (1.8 s).
+//   scroll-to   — smooth-scroll the target element into view.
+//   click       — programmatically click the target.
+//   open-tab    — alias for click; semantic intent on tab buttons.
+//   cue         — show a directive banner inside the overlay (target = msg).
+//   drag        — dispatch CustomEvent('audio-stage-drag') on the target.
+//                 Canvas-driven routes listen and rotate their camera.
+//                 Optional `params.rotateRad` + `params.durationMs`.
+//   zoom        — dispatch CustomEvent('audio-stage-zoom') on the target.
+//                 Optional `params.factor` (e.g. 0.55 = closer) + `durationMs`.
+export type AudioStageAction =
+  | 'flash'
+  | 'scroll-to'
+  | 'click'
+  | 'open-tab'
+  | 'cue'
+  | 'drag'
+  | 'zoom';
 
 export interface AudioStage {
   /** Seconds into the episode when this stage fires. */
@@ -37,8 +55,17 @@ export interface AudioStage {
   action: AudioStageAction;
   /** For DOM actions: CSS selector. For `cue`: the message text. */
   target: string;
-  /** Optional duration in ms for `cue` banner (default 6000 ms). */
+  /** Optional duration in ms — semantics depend on action:
+   *  cue     → banner visibility (default 6000 ms).
+   *  drag    → animation duration (default 1500 ms).
+   *  zoom    → animation duration (default 1500 ms). */
   duration_ms?: number;
+  /** Optional extra parameters for `drag` / `zoom` actions, passed as the
+   *  CustomEvent's `detail` to the route's listener. Examples:
+   *    `{ rotateRad: 1.57 }` — drag rotates camera by 90°
+   *    `{ factor: 0.55 }`    — zoom multiplies camera radius by 0.55
+   */
+  params?: Record<string, number | string>;
   /** Optional authoring note — surfaced in dev console only. */
   note?: string;
 }
@@ -50,17 +77,64 @@ export interface AudioStage {
 // =============================================================================
 
 export const EPISODE_STAGES: Record<string, AudioStage[]> = {
-  // ── / · pale-blue-dot — Curator tour open ───────────────────────────
+  // ── / · pale-blue-dot — Curator tour open (PILOT for stage authoring,
+  //    RFC-019 §12). Mixed sequence: scroll-to + flash + cue across the
+  //    115 s narration. Anchored to data-audio-stage attrs on +page.svelte. ─
   'pale-blue-dot': [
     {
       at_sec: 4,
       action: 'cue',
-      target: 'Take in the route grid in front of you — every screen Orrery has.',
+      target: 'On February 14th, 1990 — Voyager 1 turned around to look back at Earth.',
+      duration_ms: 7000,
+      note: 'Scene-setter while Sagan-register opening prose plays.',
     },
     {
-      at_sec: 80,
+      at_sec: 30,
+      action: 'scroll-to',
+      target: '[data-audio-stage="hero-illustration"]',
+      note: 'Bring the orrery illustration into view before "Take a photograph" lands.',
+    },
+    {
+      at_sec: 32,
+      action: 'flash',
+      target: '[data-audio-stage="hero-illustration"]',
+      note: 'Pulse the illustration on "Turn around. Look back."',
+    },
+    {
+      at_sec: 50,
       action: 'cue',
-      target: 'You are looking at this orrery now — the same view Voyager had, scaled down.',
+      target: 'Find Earth in the illustration — small label, centre-right.',
+      duration_ms: 7000,
+    },
+    {
+      at_sec: 52,
+      action: 'flash',
+      target: '[data-audio-stage="hero-earth-label"]',
+      note: 'Pulse the EARTH text label on "That dot is Earth."',
+    },
+    {
+      at_sec: 95,
+      action: 'cue',
+      target: 'Scroll down — every screen Orrery has lives in the grid below.',
+      duration_ms: 7000,
+    },
+    {
+      at_sec: 97,
+      action: 'scroll-to',
+      target: '[data-audio-stage="route-grid"]',
+      note: 'Reveal the route grid as "You are looking at it now" lands.',
+    },
+    {
+      at_sec: 100,
+      action: 'flash',
+      target: '[data-audio-stage="route-grid"]',
+      note: 'Pulse the whole grid to anchor where the tour will travel.',
+    },
+    {
+      at_sec: 110,
+      action: 'flash',
+      target: '[data-audio-stage="route-card-explore"]',
+      note: 'Pulse the /explore card on "Take the tour. See where we are."',
     },
   ],
 
@@ -71,13 +145,62 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Drag the view to rotate the solar system around the Sun.',
     },
-    { at_sec: 70, action: 'cue', target: 'Watch Saturn — one orbit takes 29.5 years.' },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="explore-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="explore-hud"]' },
+    // Timings derived directly from the VTT caption track (the
+    // SSML-target-duration is 240 s; actual ElevenLabs audio runs ~140 s).
+    // VTT § 00:00:17.8 — "Drag to rotate the view." → camera rotates ~60°.
     {
-      at_sec: 130,
-      action: 'cue',
-      target: 'Try the time slider at the bottom — speed up the simulation.',
+      at_sec: 17,
+      action: 'drag',
+      target: '[data-audio-stage="explore-scene"]',
+      duration_ms: 1800,
+      params: { rotateRad: 1.05 },
     },
-    { at_sec: 200, action: 'cue', target: 'Click any planet for its detail panel.' },
+    // VTT § 00:00:19.6 — "Scroll to zoom in and out." → camera zooms in then back.
+    {
+      at_sec: 19,
+      action: 'zoom',
+      target: '[data-audio-stage="explore-scene"]',
+      duration_ms: 1500,
+      params: { factor: 0.6 },
+    },
+    {
+      at_sec: 22,
+      action: 'zoom',
+      target: '[data-audio-stage="explore-scene"]',
+      duration_ms: 1500,
+      params: { factor: 1.67 },
+      note: 'Zoom back out so the Saturn click below has the full system in frame.',
+    },
+    // VTT § 00:00:21.5 — "Click any planet, and the right panel opens
+    // with its physical data, orbit parameters, and gallery."
+    // Demo: open Saturn → switch to the TECHNICAL tab so the listener
+    // sees the orbit parameters the narrator just named.
+    { at_sec: 24, action: 'cue', target: 'Click any planet — like this.', duration_ms: 4000 },
+    { at_sec: 29, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    {
+      at_sec: 31,
+      action: 'click',
+      target: '[data-audio-stage="planet-tab-technical"]',
+      note: 'Reveal the actual orbit parameters mid-sentence so "orbit parameters" lands on real numbers.',
+    },
+    // VTT § 00:00:58.0 narration mentions "the time slider at the bottom"
+    // but no such control exists on /explore today (script/UI drift —
+    // SSML referenced a planned-but-never-shipped speed control). Cue
+    // intentionally omitted; SSML edit + audio re-render is the proper
+    // fix and lives outside this slice.
+    // VTT § 00:01:35.8 — "Try the Science Lens toggle at the top right."
+    { at_sec: 95, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
+    { at_sec: 97, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // Toggle lens back OFF a few seconds later so the listener sees the
+    // visual difference and the next beats render without the overlay.
+    { at_sec: 110, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },
+    // VTT § 00:02:00.5 — "Click the Sun." / § 00:02:02.6 — "Then click any planet."
+    { at_sec: 117, action: 'cue', target: 'Click the Sun — read its panel.', duration_ms: 4000 },
+    { at_sec: 122, action: 'click', target: '[data-audio-stage="explore-select-sun"]' },
+    { at_sec: 127, action: 'cue', target: 'Then click any planet.', duration_ms: 4000 },
+    { at_sec: 132, action: 'click', target: '[data-audio-stage="explore-select-earth"]' },
   ],
 
   // ── /explore · saturn-rings — Enthusiast ──────────────────────────
@@ -107,11 +230,15 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /plan · guide-plan ─────────────────────────────────────────────
   'guide-plan': [
     { at_sec: 6, action: 'cue', target: 'Pick a destination — Mars is the default.' },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="plan-selector-bar"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="plan-selector-bar"]' },
     {
       at_sec: 60,
       action: 'cue',
       target: 'Click anywhere on the C-shape; the panel reads the numbers.',
     },
+    { at_sec: 60, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
+    { at_sec: 62, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
     {
       at_sec: 150,
       action: 'cue',
@@ -126,6 +253,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Trace the bottom of the C with your eye — that is the cheap window.',
     },
+    { at_sec: 40, action: 'scroll-to', target: '[data-audio-stage="porkchop-plot"]' },
+    { at_sec: 42, action: 'flash', target: '[data-audio-stage="porkchop-plot"]' },
     {
       at_sec: 100,
       action: 'cue',
@@ -136,6 +265,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /fly · guide-fly ───────────────────────────────────────────────
   'guide-fly': [
     { at_sec: 6, action: 'cue', target: 'Press play. Watch the spacecraft slide along the arc.' },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="fly-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="fly-hud"]' },
     { at_sec: 80, action: 'cue', target: 'Try the cislunar view toggle in the toolbar.' },
     { at_sec: 150, action: 'cue', target: 'Click any phase chip below to jump to that moment.' },
   ],
@@ -161,12 +292,16 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Try the filter chips at the top — status, destination, agency.',
     },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="missions-filters"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="missions-filters"]' },
     {
       at_sec: 70,
       action: 'cue',
       target: 'Filter status = FAILED. See the redemption-arc pairings.',
     },
     { at_sec: 160, action: 'cue', target: 'Click any card to open the full mission panel.' },
+    { at_sec: 160, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
+    { at_sec: 162, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
   ],
 
   // ── /missions · voyager-grand-tour — Enthusiast ───────────────────
@@ -192,6 +327,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Look at the bottom — ISS and Tiangong at 400 km altitude.',
     },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 60, action: 'cue', target: 'Higher — Hubble at 550 km.' },
     {
       at_sec: 100,
@@ -210,6 +347,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /moon · guide-moon ────────────────────────────────────────────
   'guide-moon': [
     { at_sec: 6, action: 'cue', target: 'Drag the sphere — each yellow marker is a landing site.' },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 50, action: 'cue', target: 'Find Tranquillity Base — Apollo 11.' },
     { at_sec: 130, action: 'cue', target: 'Now look near the south pole — Chandrayaan-3, 2023.' },
     { at_sec: 200, action: 'cue', target: 'Click any marker to read its mission record.' },
@@ -218,6 +357,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /moon · moon-one-lifetime — Curator ───────────────────────────
   'moon-one-lifetime': [
     { at_sec: 60, action: 'cue', target: 'Look at the cluster of Apollo sites on the near side.' },
+    { at_sec: 62, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 100,
       action: 'cue',
@@ -228,6 +368,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /moon · cernan-last-words — Guide (anchored Atmospheric Move) ─
   'cernan-last-words': [
     { at_sec: 5, action: 'cue', target: 'Find Taurus-Littrow — Apollo 17, the last footstep.' },
+    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 100,
       action: 'cue',
@@ -238,6 +379,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /moon · far-side — Guide (anchored Atmospheric Move) ──────────
   'far-side': [
     { at_sec: 8, action: 'cue', target: 'Rotate the sphere to the far side.' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 90, action: 'cue', target: "Find Von Kármán crater — Chang'e 4 lives there." },
     {
       at_sec: 150,
@@ -267,6 +409,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Drag to rotate Mars. Every marker is a spacecraft we sent.',
     },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 50,
       action: 'cue',
@@ -287,6 +431,7 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /mars · mars-what-for — Curator ───────────────────────────────
   'mars-what-for': [
     { at_sec: 50, action: 'cue', target: 'Look at the rovers on the map. Silent. But there.' },
+    { at_sec: 52, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 130,
       action: 'cue',
@@ -301,6 +446,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Imagine pressing a button now. Fourteen minutes until anything happens.',
     },
+    { at_sec: 30, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 32, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     {
       at_sec: 80,
       action: 'cue',
@@ -311,18 +458,22 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /mars · one-way-light-time — Enthusiast ───────────────────────
   'one-way-light-time': [
     { at_sec: 35, action: 'cue', target: 'Apollo had 1.3-second light-time. Mars has 14 minutes.' },
+    { at_sec: 37, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 90, action: 'cue', target: 'There is no manual mode on the rover. There cannot be.' },
   ],
 
   // ── /mars · curiosity-persistence — Enthusiast ────────────────────
   'curiosity-persistence': [
     { at_sec: 25, action: 'cue', target: 'Four centimeters per second. A baby crawls faster.' },
+    { at_sec: 27, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
     { at_sec: 80, action: 'cue', target: 'Twelve years. Thirty-five kilometers. Alone.' },
   ],
 
   // ── /iss · guide-iss ──────────────────────────────────────────────
   'guide-iss': [
     { at_sec: 5, action: 'cue', target: 'Drag to rotate the station. Each module is clickable.' },
+    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="iss-module-list"]' },
+    { at_sec: 9, action: 'flash', target: '[data-audio-stage="iss-module-list"]' },
     { at_sec: 50, action: 'cue', target: 'Find Zarya — the back end. The first module.' },
     { at_sec: 130, action: 'cue', target: 'Click Destiny — the US lab. Or Kibo — the Japanese.' },
     {
@@ -341,6 +492,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
   // ── /tiangong · guide-tiangong ────────────────────────────────────
   'guide-tiangong': [
     { at_sec: 5, action: 'cue', target: 'Rotate the T-shape. Three modules, four solar arrays.' },
+    { at_sec: 7, action: 'scroll-to', target: '[data-audio-stage="tiangong-module-list"]' },
+    { at_sec: 9, action: 'flash', target: '[data-audio-stage="tiangong-module-list"]' },
     { at_sec: 60, action: 'cue', target: 'Click Tianhe — the upright of the T. The core module.' },
     { at_sec: 130, action: 'cue', target: 'Click Wentian or Mengtian — the two laboratories.' },
   ],
@@ -362,7 +515,10 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Look at the ten tabs across the top — every physics domain.',
     },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="science-tabs"]' },
     { at_sec: 60, action: 'cue', target: 'Press Cmd-K — full text search across every section.' },
+    { at_sec: 62, action: 'flash', target: '[data-audio-stage="science-search-button"]' },
     {
       at_sec: 130,
       action: 'cue',
@@ -387,9 +543,13 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'Use the category list on the left — Launchers, Crewed, Cargo...',
     },
+    { at_sec: 6, action: 'scroll-to', target: '[data-audio-stage="fleet-filters"]' },
+    { at_sec: 8, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
     { at_sec: 60, action: 'cue', target: 'Filter to Crewed Spacecraft. Vostok at the top.' },
     { at_sec: 90, action: 'cue', target: 'Click Saturn V. Read the anatomy diagram.' },
     { at_sec: 160, action: 'cue', target: 'Try the epoch timeline — compare 1965 to 2025.' },
+    { at_sec: 160, action: 'scroll-to', target: '[data-audio-stage="fleet-grid"]' },
+    { at_sec: 162, action: 'flash', target: '[data-audio-stage="fleet-grid"]' },
   ],
 
   // ── /fleet · saturn-v-anchor — Enthusiast ─────────────────────────
@@ -415,6 +575,8 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
       action: 'cue',
       target: 'End of the tour. Pick a card and begin your own visit.',
     },
+    { at_sec: 112, action: 'scroll-to', target: '[data-audio-stage="route-grid"]' },
+    { at_sec: 114, action: 'flash', target: '[data-audio-stage="route-grid"]' },
   ],
 };
 

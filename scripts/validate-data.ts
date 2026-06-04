@@ -1626,6 +1626,66 @@ if (existsSync(EPISODES_DIR) && existsSync(AUDIO_PROVENANCE_PATH)) {
   }
 }
 
+// PRD-016 §S10 / RFC-019 §11.4 — episode-sources sidecar consistency.
+// Sources sidecar is optional (starts empty; editorial fill is per-
+// episode follow-up work). When present, every episode_id must exist
+// in audio-provenance.json and every source_id must exist in
+// source-logos.json. Missing per-episode sources WARN — fail-closed
+// only on dangling references that would render brokenly.
+console.log('\nValidating episode-sources sidecar (PRD-016 §S10)...');
+let episodeSourcesFailed = 0;
+const EPISODE_SOURCES_PATH = join(DATA_ROOT, 'audio', 'episode-sources.json');
+const SOURCE_LOGOS_PATH_FOR_EPS = join(DATA_ROOT, 'source-logos.json');
+if (existsSync(EPISODE_SOURCES_PATH) && existsSync(AUDIO_PROVENANCE_PATH)) {
+  const epSrcProblems: string[] = [];
+  try {
+    const sidecar = JSON.parse(readFileSync(EPISODE_SOURCES_PATH, 'utf-8')) as {
+      episodes: Array<{ episode_id: string; sources: Array<{ source_id: string; label: string }> }>;
+    };
+    const audioManifest = JSON.parse(readFileSync(AUDIO_PROVENANCE_PATH, 'utf-8')) as {
+      entries: Array<{ episode_id: string }>;
+    };
+    const knownEpisodeIds = new Set(audioManifest.entries.map((e) => e.episode_id));
+    const knownSourceIds = existsSync(SOURCE_LOGOS_PATH_FOR_EPS)
+      ? new Set(
+          (
+            JSON.parse(readFileSync(SOURCE_LOGOS_PATH_FOR_EPS, 'utf-8')) as {
+              sources: Array<{ id: string }>;
+            }
+          ).sources.map((s) => s.id),
+        )
+      : null;
+
+    for (const ep of sidecar.episodes) {
+      if (!knownEpisodeIds.has(ep.episode_id)) {
+        epSrcProblems.push(
+          `episode-sources references unknown episode_id "${ep.episode_id}" — no matching audio-provenance entry`,
+        );
+      }
+      if (knownSourceIds) {
+        for (const s of ep.sources) {
+          if (!knownSourceIds.has(s.source_id)) {
+            epSrcProblems.push(
+              `episode-sources for "${ep.episode_id}" cites unknown source_id "${s.source_id}" — add to source-logos.json or fix the reference`,
+            );
+          }
+        }
+      }
+    }
+    if (epSrcProblems.length === 0) {
+      console.log(
+        `  ✓ ${sidecar.episodes.length} episode-sources entries cross-check against provenance + logos`,
+      );
+    } else {
+      for (const p of epSrcProblems) console.log(`  ✗ ${p}`);
+      episodeSourcesFailed = epSrcProblems.length;
+    }
+  } catch (err) {
+    console.log(`  ✗ episode-sources.json parse error: ${(err as Error).message}`);
+    episodeSourcesFailed = 1;
+  }
+}
+
 if (
   failed +
     docFailed +
@@ -1638,7 +1698,8 @@ if (
     imageMimeFailed +
     imagePipelineFailed +
     overlayFailed +
-    audioFailed >
+    audioFailed +
+    episodeSourcesFailed >
   0
 )
   process.exit(1);

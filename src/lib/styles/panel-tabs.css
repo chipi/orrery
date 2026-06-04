@@ -36,14 +36,14 @@
 }
 .tabs button {
   flex: 0 0 auto;
-  padding: 10px 12px;
+  padding: 10px 10px;
   min-height: 44px;
   font-family: 'Space Mono', monospace;
   /* 10px to match /mars's .tab-btn — 8px was too small to read
    * across MissionPanel, PlanetPanel, SunPanel, /earth, /moon,
    * StationModulePanel, SmallBodyPanel (2026-05-22 feedback). */
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
   white-space: nowrap;
   font-weight: 700;
   background: transparent;

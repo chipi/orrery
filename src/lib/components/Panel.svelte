@@ -11,7 +11,7 @@
   };
   let { open, onClose, title, children }: Props = $props();
 
-  let closeButton: HTMLButtonElement | undefined = $state();
+  let panelEl: HTMLElement | undefined = $state();
   let previousActiveElement: HTMLElement | null = null;
 
   $effect(() => {
@@ -22,9 +22,12 @@
     previousActiveElement = (
       typeof document !== 'undefined' ? document.activeElement : null
     ) as HTMLElement | null;
-    // Move focus into the panel (the close button is a safe landing —
-    // every panel has one and it's predictable for keyboard users).
-    queueMicrotask(() => closeButton?.focus());
+    // Move focus to the panel container itself (tabindex=-1) — keyboard
+    // users land inside the panel without us having to pick a single
+    // "right" focus target. Consumers render their own visible close
+    // button in their first content row (PRD-016 §S8 follow-up — the
+    // top of the panel is reserved as an empty dock zone).
+    queueMicrotask(() => panelEl?.focus());
 
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -61,6 +64,8 @@
 {#if open}
   <aside
     class="panel"
+    bind:this={panelEl}
+    tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
     style:transform={touchDeltaY > 0 ? `translateY(${touchDeltaY}px)` : ''}
     ontouchstart={onTouchStart}
@@ -69,12 +74,21 @@
     in:fly={{ y: 14, x: 14, duration: 220 }}
     out:fly={{ y: 14, x: 14, duration: 160 }}
   >
-    <header>
-      <span class="title">{title ?? ''}</span>
-      <button bind:this={closeButton} class="close" onclick={onClose} aria-label={m.panel_close()}
-        >×</button
-      >
-    </header>
+    <!-- Empty dock zone (PRD-016 §S8 follow-up). The compact Curator
+         Tour overlay anchors at top: var(--nav-height), right: 0 with
+         the same panel width — this reserved space lets it sit visibly
+         atop the panel instead of being covered by it. Other top-
+         docked affordances (HUD chips, breadcrumb, etc.) can land here
+         in future without re-plumbing every consumer panel. -->
+    <div class="panel-dock" aria-hidden="true"></div>
+    <!-- Global close affordance — lives on Panel itself so every
+         consumer (Planet/Sun/SmallBody/Mission/Fleet/Station/etc) gets
+         the same control without re-implementing it. Floats on top of
+         the content's first row so consumers don't need to leave room
+         for it in their layout. -->
+    <button type="button" class="panel-close" onclick={onClose} aria-label={m.panel_close()}
+      >×</button
+    >
     <div class="content">
       {@render children?.()}
     </div>
@@ -117,41 +131,52 @@
     }
   }
 
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--color-border);
+  .panel:focus {
+    outline: none;
+  }
+
+  /* Empty top dock zone — same height as the compact tour bar so it
+     visually slots in cleanly when the Curator Tour is in compact
+     mode. Border-bottom is intentionally absent so panel content
+     reads as continuous below it. */
+  .panel-dock {
+    height: 64px;
     flex-shrink: 0;
   }
-
-  .title {
-    font-family: var(--font-display);
-    font-size: 18px;
-    letter-spacing: 2px;
-    color: var(--color-text);
+  @media (max-width: 767px) {
+    .panel-dock {
+      height: 56px;
+    }
   }
 
-  .close {
-    width: 44px;
-    height: 44px;
+  .panel-close {
+    position: absolute;
+    top: calc(64px + 14px);
+    right: 14px;
+    width: 32px;
+    height: 32px;
     background: transparent;
-    border: 1px solid transparent;
-    color: var(--color-text-dim);
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    font-size: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 18px;
     line-height: 1;
-    display: flex;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.15s;
+    z-index: 1;
   }
-
-  .close:hover {
+  .panel-close:hover,
+  .panel-close:focus-visible {
+    border-color: rgba(255, 255, 255, 0.4);
     color: var(--color-text);
-    border-color: rgba(255, 255, 255, 0.12);
+    outline: none;
+  }
+  @media (max-width: 767px) {
+    .panel-close {
+      top: calc(56px + 14px);
+    }
   }
 
   .content {

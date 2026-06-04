@@ -26,6 +26,7 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
+  import { audio } from '$lib/audio-state.svelte';
   import {
     gravityAccel,
     logScaleLength,
@@ -688,6 +689,15 @@
   let sizesOpen = $state(false);
   let selectedSmallBodyId: string | null = $state(null);
   let smallBodyPanelOpen = $state(false);
+
+  // Tour collaboration (PRD-016 §S11 / RFC-019 §12): when a detail panel
+  // opens while the Curator Tour is active, collapse the audio overlay to
+  // compact mode so the panel the narrator just opened is fully visible.
+  $effect(() => {
+    if (audio.tourActive && (panelOpen || sunPanelOpen || smallBodyPanelOpen) && !audio.compact) {
+      audio.compact = true;
+    }
+  });
   let selectedSmallBody = $derived(
     selectedSmallBodyId ? (smallBodyById.get(selectedSmallBodyId) ?? null) : null,
   );
@@ -746,6 +756,10 @@
   let tooltipVisible = $derived(hoverData !== null && (!lensOn || hoverLayerOn));
   let tooltipExpanded = $derived(lensOn && hoverLayerOn);
   let cleanup: (() => void) | undefined;
+  // Audio-tour camera-control listener teardown — set inside onMount
+  // where camR / camT closures live, called from the main cleanup
+  // block at unmount so we don't leak listeners on route change.
+  let tourCameraTeardown: (() => void) | undefined;
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
   // When `/explore?mission=ID` is loaded, fetch the mission and
@@ -2174,6 +2188,62 @@
     // Exposed to the top-level selectPlanet / selectSun handlers.
     flyToBodyFn = focusOnBody;
 
+    // ─── Audio-tour camera demos (PRD-016 §S11 / RFC-019 §12) ─────
+    // The audio-tour executor dispatches `audio-stage-drag` and
+    // `audio-stage-zoom` CustomEvents at scheduled positions so the
+    // Curator narration "Drag to rotate" / "Scroll to zoom" beats
+    // actually show camera motion, not just text overlays. Listeners
+    // animate camT (azimuth) / camR (radius) over the requested ms.
+    const exploreRoot = container?.parentElement; // .explore wrapper
+    function easeInOut(t: number): number {
+      return t * t * (3 - 2 * t);
+    }
+    function animateCamera(
+      get: () => number,
+      set: (v: number) => void,
+      to: number,
+      durationMs: number,
+    ): void {
+      const start = get();
+      const startTime = performance.now();
+      const step = (): void => {
+        const t = Math.min(1, (performance.now() - startTime) / durationMs);
+        set(start + (to - start) * easeInOut(t));
+        updateCam();
+        if (t < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    const onTourDrag = (e: Event): void => {
+      const d = (e as CustomEvent).detail as
+        | { durationMs?: number; rotateRad?: number }
+        | undefined;
+      const rotate = d?.rotateRad ?? Math.PI / 3; // default ~60° azimuth swing
+      animateCamera(
+        () => camT,
+        (v) => (camT = v),
+        camT + rotate,
+        d?.durationMs ?? 1500,
+      );
+    };
+    const onTourZoom = (e: Event): void => {
+      const d = (e as CustomEvent).detail as { durationMs?: number; factor?: number } | undefined;
+      const factor = d?.factor ?? 0.55; // default zoom in to ~55% radius
+      const target = Math.max(60, Math.min(1400, camR * factor));
+      animateCamera(
+        () => camR,
+        (v) => (camR = v),
+        target,
+        d?.durationMs ?? 1500,
+      );
+    };
+    exploreRoot?.addEventListener('audio-stage-drag', onTourDrag);
+    exploreRoot?.addEventListener('audio-stage-zoom', onTourZoom);
+    tourCameraTeardown = () => {
+      exploreRoot?.removeEventListener('audio-stage-drag', onTourDrag);
+      exploreRoot?.removeEventListener('audio-stage-zoom', onTourZoom);
+    };
+
     const el3d = renderer.domElement;
     let isDrag3d = false;
     let lmx3d = 0;
@@ -3455,6 +3525,7 @@
 
   onDestroy(() => {
     cleanup?.();
+    tourCameraTeardown?.();
   });
 
   function toggleView() {
@@ -3464,7 +3535,7 @@
 
 <svelte:head><title>{m.explore_page_title()}</title></svelte:head>
 
-<div class="explore">
+<div class="explore" data-audio-stage="explore-scene">
   <div
     class="layer"
     bind:this={container}
@@ -3536,7 +3607,12 @@
   <!-- HUD controls cluster (top-left). Two rows: mode toggles
        (2D/3D + SIZES) and visibility-layer chips. Sits on the
        opposite side of the detail panel so they never collide. -->
-  <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
+  <div
+    class="hud-controls"
+    data-audio-stage="explore-hud"
+    role="group"
+    aria-label={m.ui_view_controls()}
+  >
     <div class="ctrl-row">
       <button
         class="toggle"
@@ -3710,6 +3786,38 @@
   open={satellitePanelOpen}
   onClose={() => (satellitePanelOpen = false)}
 />
+
+<!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
+     triggers used by the audio executor's `click` action so the tour
+     can demonstrate planet-selection on a canvas-driven scene where
+     there's no clickable DOM element for a planet. These buttons are
+     visually offscreen but click()-able. -->
+<div class="tour-anchors" aria-hidden="true">
+  <button
+    type="button"
+    data-audio-stage="explore-select-saturn"
+    tabindex="-1"
+    onclick={() => selectPlanet('saturn')}>select saturn</button
+  >
+  <button
+    type="button"
+    data-audio-stage="explore-select-jupiter"
+    tabindex="-1"
+    onclick={() => selectPlanet('jupiter')}>select jupiter</button
+  >
+  <button
+    type="button"
+    data-audio-stage="explore-select-earth"
+    tabindex="-1"
+    onclick={() => selectPlanet('earth')}>select earth</button
+  >
+  <button
+    type="button"
+    data-audio-stage="explore-select-sun"
+    tabindex="-1"
+    onclick={() => selectSun()}>select sun</button
+  >
+</div>
 
 <!-- Unified Science Lens panel — lens story + layer toggles in one
      collapse. Replaces the previous two-panel arrangement (banner +
@@ -4103,5 +4211,22 @@
   }
   .tt-val {
     color: rgba(255, 255, 255, 0.92);
+  }
+
+  /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
+     offscreen but click()-able so the audio executor can drive planet
+     selection without a DOM hit on the 3D canvas. */
+  .tour-anchors {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .tour-anchors button {
+    pointer-events: auto;
   }
 </style>

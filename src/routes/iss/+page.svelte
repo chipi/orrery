@@ -866,6 +866,7 @@
       class:fullscreen-mode={viewMode === 'list'}
       class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="iss-list-view"
+      data-audio-stage="iss-module-list"
       aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.iss_list_heading()}
     >

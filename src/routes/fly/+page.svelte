@@ -3837,7 +3837,7 @@
        the previous scattered top-left/top-right/bottom-right layout
        that conflicted with the CAPCOM toggle. User-dismissible via the
        HUD toggle in the top-right row. -->
-  <div class="hud-stack" class:hidden={!showHud}>
+  <div class="hud-stack" data-audio-stage="fly-hud" class:hidden={!showHud}>
     <aside
       class="hud hud-identity"
       role="status"

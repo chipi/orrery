@@ -508,29 +508,9 @@
     display: block;
   }
 
-  .tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1px;
-    margin: 8px 12px 0;
-    padding: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  .tabs button {
-    background: transparent;
-    border: 0;
-    padding: 8px 12px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.55);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-  }
-  .tabs button:hover {
-    color: rgba(255, 255, 255, 0.85);
-  }
+  /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
+     matches the rest of the detail-panel family. Fleet keeps its
+     teal accent on the active-tab indicator as a category cue. */
   .tabs button.active {
     color: #4ecdc4;
     border-bottom-color: #4ecdc4;

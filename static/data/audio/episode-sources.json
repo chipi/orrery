@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "_doc": "Per-episode editorial citations for the audio narration corpus (PRD-016 §S10 / RFC-019 §11.4). Sidecar to audio-provenance.json — joined by episode_id. Edit per-episode as primary sources are identified for each Claude-drafted script. source_id joins static/data/source-logos.json so publisher logos render automatically via /credits and /library pipelines.",
+  "episodes": []
+}

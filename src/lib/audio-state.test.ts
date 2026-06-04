@@ -45,6 +45,7 @@ describe('audio-state', () => {
     audio.stopTour();
     audio.tourSequence = [];
     audio.tourIndex = 0;
+    audio.compact = false;
   });
 
   describe('overlay toggle', () => {
@@ -189,6 +190,47 @@ describe('audio-state', () => {
 
     it('tourCurrentId returns null when tour not active', () => {
       expect(audio.tourCurrentId()).toBeNull();
+    });
+  });
+
+  describe('compact mode (PRD-016 §S8)', () => {
+    it('defaults to expanded (compact=false)', () => {
+      expect(audio.compact).toBe(false);
+    });
+
+    it('toggleCompact flips the flag', () => {
+      audio.toggleCompact();
+      expect(audio.compact).toBe(true);
+      audio.toggleCompact();
+      expect(audio.compact).toBe(false);
+    });
+
+    it('compact is independent of open — overlay can be open in either form', () => {
+      audio.openOverlay();
+      audio.toggleCompact();
+      expect(audio.open).toBe(true);
+      expect(audio.compact).toBe(true);
+      audio.closeOverlay();
+      // closing overlay does not reset compact — next open returns in the
+      // same form, matching the resume-cookie persistence in S9.
+      expect(audio.compact).toBe(true);
+    });
+
+    it('round-trip expanded → compact → expanded preserves tour + episode state', () => {
+      const seq = ['pale-blue-dot', 'guide-explore'];
+      audio.startTour(seq);
+      audio.loadEpisode(ep('pale-blue-dot'));
+      audio.positionSec = 42;
+
+      audio.toggleCompact();
+      audio.toggleCompact();
+
+      expect(audio.tourActive).toBe(true);
+      expect(audio.tourIndex).toBe(0);
+      expect(audio.tourSequence).toEqual(seq);
+      expect(audio.currentEpisode?.id).toBe('pale-blue-dot');
+      expect(audio.positionSec).toBe(42);
+      expect(audio.compact).toBe(false);
     });
   });
 });

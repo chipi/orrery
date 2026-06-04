@@ -59,7 +59,9 @@ describe('stagesForEpisode', () => {
     expect(stages.length).toBeGreaterThan(0);
     for (const stage of stages) {
       expect(stage.at_sec).toBeGreaterThanOrEqual(0);
-      expect(['flash', 'scroll-to', 'click', 'open-tab', 'cue']).toContain(stage.action);
+      expect(['flash', 'scroll-to', 'click', 'open-tab', 'cue', 'drag', 'zoom']).toContain(
+        stage.action,
+      );
       expect(typeof stage.target).toBe('string');
       expect(stage.target.length).toBeGreaterThan(0);
     }
@@ -105,6 +107,149 @@ describe('tour ↔ provenance integrity', () => {
   it('every EPISODE_STAGES key has a provenance entry', () => {
     const ids = loadProvenanceIds();
     const missing = Object.keys(EPISODE_STAGES).filter((id) => !ids.has(id));
+    expect(missing).toEqual([]);
+  });
+});
+
+// PRD-016 §S11 / RFC-019 §12 — guided-tour stage authoring.
+//
+// Stage authoring pilot: pale-blue-dot must demonstrate the mixed-action
+// pattern (cue + scroll-to + flash) so the "proper guided tour" promise
+// is visible from the first segment of every play-through. These tests
+// guard against accidental regressions during the corpus rollout.
+describe('pale-blue-dot pilot (PRD-016 §S11)', () => {
+  const stages = stagesForEpisode('pale-blue-dot');
+
+  it('uses at least three of the five action types', () => {
+    const actions = new Set(stages.map((s) => s.action));
+    expect(actions.size).toBeGreaterThanOrEqual(3);
+  });
+
+  it('includes cue + scroll-to + flash (the showcase trio)', () => {
+    const actions = new Set(stages.map((s) => s.action));
+    expect(actions.has('cue')).toBe(true);
+    expect(actions.has('scroll-to')).toBe(true);
+    expect(actions.has('flash')).toBe(true);
+  });
+
+  it('every non-cue stage targets a [data-audio-stage="..."] selector', () => {
+    for (const stage of stages) {
+      if (stage.action === 'cue') continue;
+      expect(stage.target, `pale-blue-dot stage at ${stage.at_sec}s`).toMatch(
+        /^\[data-audio-stage="[a-z0-9-]+"\]$/,
+      );
+    }
+  });
+
+  it('every targeted data-audio-stage anchor exists on src/routes/+page.svelte', () => {
+    const page = readFileSync(join(process.cwd(), 'src/routes/+page.svelte'), 'utf-8');
+    for (const stage of stages) {
+      if (stage.action === 'cue') continue;
+      const match = stage.target.match(/data-audio-stage="([^"]+)"/);
+      expect(match, `selector ${stage.target} should parse`).not.toBeNull();
+      const name = match![1];
+      // Static check: route-card-* names are emitted dynamically via
+      // `route.slice(1)`, so allow the templated form too.
+      const literalPresent = page.includes(`data-audio-stage="${name}"`);
+      const templatedPresent =
+        name.startsWith('route-card-') && page.includes('data-audio-stage="route-card-');
+      expect(
+        literalPresent || templatedPresent,
+        `pale-blue-dot stage references "${name}" but src/routes/+page.svelte has no matching data-audio-stage attribute`,
+      ).toBe(true);
+    }
+  });
+
+  it('all stages fit inside the episode duration (≤115s)', () => {
+    for (const stage of stages) expect(stage.at_sec).toBeLessThanOrEqual(115);
+  });
+});
+
+// Guard against a future episode silently re-introducing pure-cue stages
+// after the §S11 rollout begins. Tour episodes that have been STAGED
+// (i.e. landed in the corpus authoring pass) should keep at least one
+// non-cue action. Starts permissive (only pale-blue-dot enforced today);
+// add an episode-id to STAGED_EPISODES as each Phase-1/2 episode lands.
+describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
+  // Every tour episode listed here has been rolled out with mixed-action
+  // staging (Phase 0 pilot + Phase 1/2 corpus). Adding a new episode here
+  // is the gate that says "this one has been authored, regress on it."
+  const STAGED_EPISODES = new Set<string>([
+    'pale-blue-dot',
+    'guide-explore',
+    'guide-earth',
+    'guide-moon',
+    'moon-one-lifetime',
+    'cernan-last-words',
+    'far-side',
+    'guide-iss',
+    'guide-tiangong',
+    'guide-missions',
+    'guide-mars',
+    'mars-what-for',
+    'signal-delay',
+    'one-way-light-time',
+    'curiosity-persistence',
+    'guide-fly',
+    'guide-plan',
+    'porkchop',
+    'guide-fleet',
+    'guide-science',
+    'capability-ladder-close',
+  ]);
+
+  for (const id of STAGED_EPISODES) {
+    it(`${id} retains at least one scroll-to / flash / click action`, () => {
+      const actions = stagesForEpisode(id).map((s) => s.action);
+      const hasVisualAction = actions.some(
+        (a) => a === 'scroll-to' || a === 'flash' || a === 'click' || a === 'open-tab',
+      );
+      expect(hasVisualAction).toBe(true);
+    });
+  }
+
+  it('the staged set covers every CURATOR_FULL_TOUR id (corpus rollout complete)', () => {
+    const missing = CURATOR_FULL_TOUR.filter((id) => !STAGED_EPISODES.has(id));
+    expect(missing).toEqual([]);
+  });
+
+  it('every non-cue selector across the staged corpus matches a data-audio-stage anchor somewhere under src/', () => {
+    // Walk a curated set of route + shared-component files where we add
+    // tour anchors. A single missing anchor here means the executor will
+    // silently no-op when it reaches that stage on the live page.
+    const SOURCE_FILES = [
+      'src/routes/+page.svelte',
+      'src/routes/missions/+page.svelte',
+      'src/routes/fleet/+page.svelte',
+      'src/routes/science/+layout.svelte',
+      'src/routes/plan/+page.svelte',
+      'src/routes/fly/+page.svelte',
+      'src/routes/explore/+page.svelte',
+      'src/routes/iss/+page.svelte',
+      'src/routes/tiangong/+page.svelte',
+      'src/lib/surface-scene/SurfaceScene.svelte',
+      // Shared chrome components that carry tour anchors used across routes.
+      'src/lib/components/Nav.svelte',
+      'src/lib/components/PlanetPanel.svelte',
+    ];
+    const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
+      '\n',
+    );
+    const missing: string[] = [];
+    for (const id of STAGED_EPISODES) {
+      for (const stage of stagesForEpisode(id)) {
+        if (stage.action === 'cue') continue;
+        const match = stage.target.match(/data-audio-stage="([^"]+)"/);
+        if (!match) continue;
+        const name = match[1];
+        const literalPresent = haystack.includes(`data-audio-stage="${name}"`);
+        const templatedPresent =
+          name.startsWith('route-card-') && haystack.includes('data-audio-stage="route-card-');
+        if (!literalPresent && !templatedPresent) {
+          missing.push(`${id} → ${name}`);
+        }
+      }
+    }
     expect(missing).toEqual([]);
   });
 });

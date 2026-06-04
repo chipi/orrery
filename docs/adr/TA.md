@@ -153,7 +153,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Overlay shell** (`src/lib/components/AudioOverlay.svelte`) — right-panel on desktop ≥ 800 px, bottom-sheet below. Houses Curator Tour bar, transport (play/pause/scrub/speed/CC), provider A/B switcher, per-route inventory with scope tabs ("for this screen" / "all episodes"), captions banner, cue banner, origin disclosure. Focus-trapped while open, Escape closes, focus restored on close. Triggered by the waveform icon in `Nav.svelte` (icon pulses while playing).
 
-**Reactive state** (`src/lib/audio-state.svelte.ts`) — Svelte 5 singleton (`audio`). Owns `open`, `currentEpisode`, `positionSec`, `durationSec`, `playing`, `speed`, `captionsOn`, `currentCaption`, `heardEpisodeIds`, tour queue (`tourActive`, `tourIndex`, `tourSequence`). In-memory only per ADR-057 — no localStorage.
+**Reactive state** (`src/lib/audio-state.svelte.ts`) — Svelte 5 singleton (`audio`). Owns `open`, `currentEpisode`, `positionSec`, `durationSec`, `playing`, `speed`, `captionsOn`, `currentCaption`, `heardEpisodeIds`, tour queue (`tourActive`, `tourIndex`, `tourSequence`), and (v0.7 tour-v2 per PRD-016 §S8) `compact`. In-memory only per ADR-057, with one narrow exception per ADR-075: the active-tour resume point (`{ep, pos, idx, cmp}`) persists in the `orrery_tour` cookie. Per-episode heard-state stays runtime-only.
 
 **Runtime registry** (`src/lib/audio-registry.svelte.ts`) — fetches `static/data/audio/audio-provenance.json` once via a shared in-flight Promise (concurrent callers can't race the load). Collapses multi-provider rows into one `Episode` with a `variants[]` array; `forRoute(pathname)` matches exact route plus sub-routes; `byId` / `byIdLocale` for deep-link + locale-switch lookup. `PROVIDER_PRIORITY` puts ElevenLabs first by default.
 
@@ -165,7 +165,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Build pipeline** — see Pipeline 12 below.
 
-**See:** PRD-016 (product), RFC-019 (architecture), [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md) (operator), ADR-057 (no-localStorage), ADR-047 (provenance pattern parallel).
+**See:** PRD-016 (product), RFC-019 (architecture; §11 = v0.7 tour-v2), [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md) (operator), ADR-057 (no-localStorage), ADR-075 (`orrery_tour` cookie — narrow exception #2 for tour resume), ADR-047 (provenance pattern parallel).
 
 ---
 
@@ -664,7 +664,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **Browser-only.** No server-side logic. No backend. No API server. The host (GitHub Pages today; nginx, Cloudflare Pages, or any static host in future per ADR-014) serves static files only. The application must work as `http://localhost` and from any static host.
 
-- **No user data, with one carve-out.** No accounts. No login. No `localStorage`. No `sessionStorage`. No tracking. **The single permitted cookie is `orrery_locale`** (ADR-057) — explicit locale-override only. Auto-detected locale, Science Lens, mission filters, install counter, and every other piece of state stay runtime-only.
+- **No user data, with two narrow carve-outs.** No accounts. No login. No `localStorage`. No `sessionStorage`. No tracking. **Two permitted cookies, each ADR-gated:** `orrery_locale` (ADR-057, explicit locale-override only) and `orrery_tour` (ADR-075, Curator Tour resume `{ep, pos, idx, cmp}` only). Auto-detected locale, Science Lens, mission filters, install counter, per-episode heard-state, and every other piece of state stay runtime-only. Each future cookie request needs its own ADR.
 
 - **Three.js r128.** Not r129, not r130. r128 is the pinned version. `THREE.CapsuleGeometry` does not exist in r128 — use `CylinderGeometry` or `SphereGeometry` instead. Production bundles locally.
 
@@ -726,7 +726,8 @@ Locked technical choices. Each entry points to its ADR.
 | Font + script strategy | Wave 1 (Latin+Cyrillic), Wave 2 (CJK), RTL Arabic | ADR-032, ADR-043, ADR-044, ADR-045 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Accessibility | Tier-1 contract: reduced-motion, focus mgmt, role=tablist, canvas aria-labels | ADR-025 |
-| Locale persistence | Single `orrery_locale` cookie (the sole exception to "no client storage") | ADR-057 |
+| Locale persistence | `orrery_locale` cookie (narrow exception #1 to "no client storage") | ADR-057 |
+| Curator Tour resume | `orrery_tour` cookie (narrow exception #2 to "no client storage"; `{ep, pos, idx, cmp}` only) | ADR-075 |
 | Data validation | ajv JSON schema + symmetric cross-reference checks on every build | ADR-019, ADR-052 |
 | Mission data format | Static JSON under `static/data/` (served as `/data/...`) | ADR-006 |
 | Lambert solver | Web Worker with id-based cancellation + 9-destination protocol | ADR-008, ADR-022, ADR-026, ADR-028 |
@@ -798,6 +799,7 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | ADR-055 | Accepted | Science Lens + multi-layer attribute state |
 | ADR-056 | Accepted | Deterministic e2e readiness signals |
 | ADR-057 | Accepted (closes #73 Gap 2) | Locale-override cookie carve-out |
+| ADR-075 | Accepted (PRD-016 §S9, v0.7) | Curator Tour resume cookie — narrow exception #2 |
 | ADR-058 | Accepted | Cislunar Earth-centered second camera |
 | ADR-059, ADR-060 | _Reserved_ | Planned closure targets for RFC-017 (Surface Hotspots, v0.7) |
 | ADR-061 | Accepted | Surface hotspots are regions, not points (`region_bounds` on `SurfaceSite`) — Slice 1 of #283 |

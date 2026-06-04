@@ -362,7 +362,12 @@
 
     {#if filtersExpanded}
       <EpochTimelineStrip {entries} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
-      <nav id="fleet-filters" class="filters" aria-label="Fleet filters">
+      <nav
+        id="fleet-filters"
+        class="filters"
+        data-audio-stage="fleet-filters"
+        aria-label="Fleet filters"
+      >
         <div class="filter-group" role="radiogroup" aria-label="Category">
           <span class="filter-label">CATEGORY</span>
           <button
@@ -489,7 +494,7 @@
         {/each}
       </ul>
     {:else}
-      <ul class="fleet-grid" aria-label="Fleet card grid">
+      <ul class="fleet-grid" data-audio-stage="fleet-grid" aria-label="Fleet card grid">
         {#each filtered as entry (entry.id)}
           {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}
           {@const cardLogo = logoFor(primaryAgency)}

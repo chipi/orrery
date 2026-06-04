@@ -680,7 +680,7 @@
     <!-- Destination + mission-type selectors (v0.1.6 / ADR-026 §URL contract).
          Sits between the nav bar and the porkchop canvas. Mobile collapses
          the row below 768px (see CSS) so the canvas stays the focal point. -->
-    <div class="selector-bar">
+    <div class="selector-bar" data-audio-stage="plan-selector-bar">
       <label class="dest-label">
         <span class="selector-key">{m.plan_label_destination()}</span>
         <select
@@ -721,6 +721,7 @@
     </div>
     <canvas
       class="porkchop"
+      data-audio-stage="porkchop-plot"
       bind:this={canvas}
       onpointermove={onPointerMove}
       onpointerleave={onPointerLeave}

@@ -3168,7 +3168,12 @@
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
   {#if !panoramaActive}
-    <div class="hud-controls" role="group" aria-label={m.ui_view_controls()}>
+    <div
+      class="hud-controls"
+      data-audio-stage="surface-hud"
+      role="group"
+      aria-label={m.ui_view_controls()}
+    >
       <div class="ctrl-row">
         {#if !config.disable2D}
           <ViewToggleButton

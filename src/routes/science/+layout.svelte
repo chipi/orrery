@@ -76,6 +76,7 @@
         <button
           type="button"
           class="search-button"
+          data-audio-stage="science-search-button"
           aria-label="Search the encyclopedia (⌘K)"
           onclick={() => searchEl?.open_()}
         >
@@ -84,7 +85,7 @@
           <kbd class="search-hint">⌘K</kbd>
         </button>
         <h2 class="rail-heading">Sections</h2>
-        <ul class="tab-list">
+        <ul class="tab-list" data-audio-stage="science-tabs">
           {#each SCIENCE_TABS as tab (tab)}
             <li>
               <a

@@ -1324,6 +1324,54 @@ export async function getAudioProvenanceManifest(): Promise<AudioProvenanceManif
   }
 }
 
+// ─── Episode sources sidecar (PRD-016 §S10 / RFC-019 §11.4) ──────────────
+// Per-episode editorial citations, joined to audio-provenance by
+// episode_id. Sidecar starts empty — populated incrementally per-
+// episode as primary sources are identified for Claude-drafted scripts.
+
+export type EpisodeSourceKind =
+  | 'book-primary'
+  | 'book-secondary'
+  | 'agency-primary'
+  | 'agency-secondary'
+  | 'paper-primary'
+  | 'interview'
+  | 'documentary'
+  | 'encyclopedia'
+  | 'memoir';
+
+export interface EpisodeSource {
+  label: string;
+  source_id: string;
+  url?: string;
+  kind: EpisodeSourceKind;
+  language?: string;
+  last_verified?: string;
+}
+
+export interface EpisodeSourcesEntry {
+  episode_id: string;
+  sources: EpisodeSource[];
+}
+
+export interface EpisodeSourcesManifest {
+  schema_version: number;
+  episodes: EpisodeSourcesEntry[];
+}
+
+let episodeSources: EpisodeSourcesManifest | null = null;
+
+export async function getEpisodeSourcesManifest(): Promise<EpisodeSourcesManifest> {
+  if (episodeSources) return episodeSources;
+  try {
+    const m = await get<EpisodeSourcesManifest>('audio/episode-sources.json');
+    episodeSources = m;
+    return m;
+  } catch {
+    return { schema_version: 1, episodes: [] };
+  }
+}
+
 /**
  * /science encyclopedia (PRD-008 / ADR-034 / ADR-017). Each section is
  * a base JSON record at `science/[tab]/[id].json` merged with a locale

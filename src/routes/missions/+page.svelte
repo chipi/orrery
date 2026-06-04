@@ -270,7 +270,12 @@
       onChange={setYearWindow}
       onSelectMission={selectMission}
     />
-    <nav id="missions-filters" class="filters" aria-label={m.missions_filters_aria()}>
+    <nav
+      id="missions-filters"
+      class="filters"
+      data-audio-stage="missions-filters"
+      aria-label={m.missions_filters_aria()}
+    >
       <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
         <span class="filter-label">{m.lib_filter_dest_label()}</span>
         <button
@@ -426,7 +431,7 @@
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}
-    <ul class="grid" aria-label={m.missions_grid_aria()}>
+    <ul class="grid" data-audio-stage="missions-grid" aria-label={m.missions_grid_aria()}>
       {#each filtered as mission (mission.id)}
         <li class="card-li">
           <button

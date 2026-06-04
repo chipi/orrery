@@ -1,0 +1,121 @@
+import { test, expect, type Page } from '@playwright/test';
+
+/**
+ * Tour stage authoring e2e (PRD-016 §S11 / RFC-019 §12).
+ *
+ * Verifies the executor wires `EPISODE_STAGES` actions to the right DOM
+ * targets. Avoids depending on real <audio> playback by driving
+ * `audio.positionSec` directly via the `window.__orreryAudio` test
+ * hook (ADR-056 pattern). This lets the spec assert the exact frame
+ * at which a stage fires without 30 + seconds of wall-clock wait.
+ */
+
+const AUDIO_TOGGLE = 'button[aria-label="Toggle audio episodes"]';
+const OVERLAY = '#audio-overlay';
+
+async function startTour(page: Page) {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await page.locator(AUDIO_TOGGLE).click();
+  await expect(page.locator(OVERLAY)).toBeVisible();
+  const tourBtn = page.locator(`${OVERLAY} .tour-start`);
+  await expect(tourBtn).toBeVisible({ timeout: 10000 });
+  await tourBtn.click();
+  // First tour episode loaded.
+  await expect(page.locator(`${OVERLAY} .overlay-title`)).toContainText(/pale.blue.dot/i);
+}
+
+async function setPosition(page: Page, sec: number) {
+  await page.evaluate((s) => {
+    const w = window as Window & {
+      __orreryAudio?: { setPosition: (n: number) => void };
+    };
+    w.__orreryAudio?.setPosition(s);
+  }, sec);
+}
+
+test.describe('pale-blue-dot guided stages (PRD-016 §S11 pilot)', () => {
+  test('test hook __orreryAudio is exposed once overlay mounts', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await page.locator(AUDIO_TOGGLE).click();
+    await expect(page.locator(OVERLAY)).toBeVisible();
+    const ok = await page.evaluate(() => {
+      const w = window as Window & {
+        __orreryAudio?: { setPosition?: (n: number) => void };
+      };
+      return typeof w.__orreryAudio?.setPosition === 'function';
+    });
+    expect(ok).toBe(true);
+  });
+
+  test('data-audio-stage anchors are present on / for every non-cue stage', async ({ page }) => {
+    await page.goto('/', { waitUntil: 'networkidle' });
+    for (const name of [
+      'hero',
+      'hero-illustration',
+      'hero-earth-label',
+      'route-grid',
+      'route-card-explore',
+    ]) {
+      const count = await page.locator(`[data-audio-stage="${name}"]`).count();
+      expect(count, `data-audio-stage="${name}" should exist on /`).toBeGreaterThan(0);
+    }
+  });
+
+  test('flash fires at 32s on the hero illustration', async ({ page }) => {
+    await startTour(page);
+    const target = page.locator('[data-audio-stage="hero-illustration"]');
+    // Pre-fire — class absent.
+    await expect(target).not.toHaveClass(/audio-stage-flash/);
+    await setPosition(page, 32);
+    await expect(target).toHaveClass(/audio-stage-flash/, { timeout: 2000 });
+  });
+
+  test('flash on hero-earth-label fires at 52s', async ({ page }) => {
+    await startTour(page);
+    await setPosition(page, 52);
+    const target = page.locator('[data-audio-stage="hero-earth-label"]');
+    await expect(target).toHaveClass(/audio-stage-flash/, { timeout: 2000 });
+  });
+
+  test('route-grid flash fires at 100s and route-card-explore flash at 110s', async ({ page }) => {
+    await startTour(page);
+    await setPosition(page, 100);
+    await expect(page.locator('[data-audio-stage="route-grid"]')).toHaveClass(/audio-stage-flash/, {
+      timeout: 2000,
+    });
+    await setPosition(page, 110);
+    await expect(page.locator('[data-audio-stage="route-card-explore"]')).toHaveClass(
+      /audio-stage-flash/,
+      { timeout: 2000 },
+    );
+  });
+
+  test('cue banner appears at 4s with the scene-setter text', async ({ page }) => {
+    await startTour(page);
+    await setPosition(page, 4);
+    const cue = page.locator(`${OVERLAY} .cue-banner`);
+    await expect(cue).toBeVisible({ timeout: 2000 });
+    await expect(cue).toContainText(/Voyager 1 turned around/i);
+  });
+
+  test('stages do not re-fire on a second positionSec update past the same threshold', async ({
+    page,
+  }) => {
+    await startTour(page);
+    await setPosition(page, 32);
+    await expect(page.locator('[data-audio-stage="hero-illustration"]')).toHaveClass(
+      /audio-stage-flash/,
+    );
+    // Wait for the 1.8 s flash class to drop.
+    await page.waitForTimeout(2200);
+    await expect(page.locator('[data-audio-stage="hero-illustration"]')).not.toHaveClass(
+      /audio-stage-flash/,
+    );
+    // Push past 32 again — same stage should NOT re-fire.
+    await setPosition(page, 33);
+    await page.waitForTimeout(300);
+    await expect(page.locator('[data-audio-stage="hero-illustration"]')).not.toHaveClass(
+      /audio-stage-flash/,
+    );
+  });
+});

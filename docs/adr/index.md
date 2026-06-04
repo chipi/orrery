@@ -73,3 +73,4 @@
 | ADR-072 | Shared `SurfaceScene.svelte` for rocky-body surface routes + 23 drift consolidations between /moon and /mars | Accepted | May 2026 |
 | ADR-073 | Surface texture LOD via per-region insets (Layer A) + 2K → 4K base swap (Layer B); no tile streaming | Accepted | May 2026 |
 | ADR-074 | Panorama schema v2 + spatial-context renderer; commit to "exhibit, not embed" | Accepted | May 2026 |
+| ADR-075 | Narrow exception #2 to no-client-storage — `orrery_tour` cookie for Curator Tour resume | Accepted | Jun 2026 |

@@ -150,6 +150,16 @@
     {/if}
     <p class="disclaimer">{m.no_endorsement_disclaimer()}</p>
 
+    <aside class="data-sources" aria-label="Audio episode transcripts index">
+      <h3>Audio episodes</h3>
+      <p>
+        Read every Curator Tour episode without playing the audio —
+        <a href="{base}/library/episodes" data-sveltekit-preload-data="hover"
+          >transcripts + editorial sources for all 33 episodes</a
+        >.
+      </p>
+    </aside>
+
     <aside class="data-sources" aria-label="Data sources for the launches calendar">
       <h3>Launches data</h3>
       <p>
@@ -322,6 +332,41 @@
   }
   .disclaimer {
     margin-top: 4px;
+  }
+
+  /* Audio episodes + Launches data asides — match the surrounding
+     /library cadence (mono eyebrow + serif italic prose) so they read
+     as part of the page, not embedded UI blocks. */
+  .data-sources {
+    margin: 16px 0 0;
+    padding: 0;
+  }
+  .data-sources h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 6px;
+  }
+  .data-sources p {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 6px;
+  }
+  .data-sources a {
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+  .data-sources a:hover,
+  .data-sources a:focus-visible {
+    color: #c9aa6f;
+    outline: none;
   }
 
   .loading {

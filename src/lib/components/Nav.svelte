@@ -180,6 +180,7 @@
     <button
       type="button"
       class="lens-toggle"
+      data-audio-stage="science-lens-toggle"
       class:active={scienceLens}
       aria-label="Toggle science lens"
       aria-pressed={scienceLens}

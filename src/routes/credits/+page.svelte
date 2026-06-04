@@ -488,9 +488,81 @@
       </div>
     </article>
   {/if}
+
+  <article class="storage-card" aria-labelledby="storage-title">
+    <header class="head-row">
+      <h3 id="storage-title">Storage & cookies</h3>
+    </header>
+    <p class="storage-blurb">
+      Orrery stores no accounts and no analytics. Two functional preference cookies, each gated by
+      its own ADR, are the only persistent state:
+    </p>
+    <ul class="storage-list">
+      <li>
+        <code>orrery_locale</code> — your explicit locale pick, when you choose one in the language switcher
+        (ADR-057). 1 year. No tracking, no personal data.
+      </li>
+      <li>
+        <code>orrery_tour</code> — your current Curator Tour position, so you can close the tab and resume
+        where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No
+        tracking, no personal data.
+      </li>
+    </ul>
+    <p class="storage-blurb storage-fine">
+      No <code>localStorage</code>, <code>sessionStorage</code>, IndexedDB, or third-party trackers.
+      Everything else — heard episodes, mission filters, Science Lens — is held in memory only and
+      resets on reload.
+    </p>
+  </article>
 </section>
 
 <style>
+  .storage-card {
+    margin-top: 32px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+  }
+  .storage-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+  }
+  .storage-blurb {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0 0 10px;
+  }
+  .storage-blurb code {
+    font-family: 'Space Mono', monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .storage-list {
+    margin: 0 0 12px;
+    padding-left: 18px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  .storage-list li {
+    margin-bottom: 6px;
+  }
+  .storage-list code {
+    font-family: 'Space Mono', monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: rgba(201, 170, 111, 0.85);
+  }
+  .storage-fine {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 12px;
+  }
+
   .audio-card .head-row {
     margin-bottom: 12px;
   }

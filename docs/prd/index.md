@@ -18,7 +18,7 @@
 | PRD-013 | Landing page (root `/`) | Accepted (v0.6) | first-time visitor, returning user, educator/journalist |
 | PRD-014 | Surface Hotspots · progressive-quality landing-site exploration | Accepted (v0.7) | curious lay person, space enthusiast, astrodynamicist |
 | PRD-015 | Mobile App — Capacitor wrapper for Android + iOS | Draft v0.3 | curious learner, space enthusiast (mobile-first audience) |
-| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.4 — in flight (v0.7) | all audiences (editorial layer) |
+| PRD-016 | Science Overlay & Episode System (audio narration) | Draft v0.5 — v0.7 en-US shipped + tour-v2 in flight (S7..S10 + ADR-075) | all audiences (editorial layer) |
 | PRD-017 | Sensory Layer — gyroscope, sonification, haptics | Draft v0.4 | mobile + accessibility audience |
 | PRD-018 | Image Pipeline v2 — vision scoring + smart cropping + curation loop | Draft v0.4 | curators, editors, mobile audience |
 | PRD-019 | Immersive Mode — WebXR (Android) + ARKit (iPhone wrapped) + Exhibit Mode | Draft v0.4 | all audiences (capstone feature) |

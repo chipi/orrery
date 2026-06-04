@@ -11,6 +11,9 @@
   import { audio, type Episode } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR, stagesForEpisode, type AudioStage } from '$lib/audio-tour';
+  import { tourElapsedSec, tourRemainingSec, tourTotalSec } from '$lib/audio-tour-progress';
+  import { fmtTime } from '$lib/audio-format';
+  import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
   import { localeFromPage } from '$lib/locale';
 
   let audioEl: HTMLAudioElement | null = $state(null);
@@ -25,6 +28,11 @@
   // Reactive so episode swaps can cancel a pending cue dismissal without
   // a stale timer trampling the new cue.
   let cueTimer = $state<number | null>(null);
+  // Drag / zoom / click visual indicator — small toast shown while the
+  // tour is manipulating the scene on the user's behalf, so the motion
+  // reads as "the tour is doing this" not "what just happened to me?".
+  let manualActionLabel = $state<string | null>(null);
+  let manualActionTimer = $state<number | null>(null);
   // Captures focus origin so closing the overlay restores focus to the
   // element that opened it (PRD-016 M14 — desktop focus discipline).
   let focusReturnTo: HTMLElement | null = null;
@@ -39,6 +47,20 @@
 
   onMount(() => {
     void audioRegistry.load();
+    // Test-only hook (RFC-019 §12 / pattern parallel to `window.__flyArcHash`
+    // — ADR-056). Lets the audio-stage e2e suite drive `audio.positionSec`
+    // without depending on real <audio> playback (Playwright denies
+    // autoplay without user gesture). Read-only access is fine; the
+    // setter is the surface specs need.
+    if (browser) {
+      (window as Window & { __orreryAudio?: unknown }).__orreryAudio = {
+        state: audio,
+        registry: audioRegistry,
+        setPosition: (sec: number) => {
+          audio.positionSec = sec;
+        },
+      };
+    }
   });
 
   // Focus management (PRD-016 M14 — keyboard focus discipline).
@@ -138,6 +160,10 @@
   // NEXT tour episode advance will pull them back to its anchored route.
   // Stop the tour first (the stop button in the tour-bar) to free
   // navigation entirely.
+  // Track the last episode id we navigated FOR so we can tell tour-
+  // advance navigation apart from a user link click that we have to
+  // revert. The toast only fires on the latter — silent on the former.
+  let lastAutoNavEpisodeId: string | null = null;
   $effect(() => {
     if (!browser || !audio.tourActive) return;
     const ep = audio.currentEpisode;
@@ -148,12 +174,20 @@
     const current = $page.url.pathname.replace(/\/+$/, '') || '/';
     const want = (target.replace(/\/+$/, '') || '/').replace(base, '') || '/';
     const have = current.replace(base, '') || '/';
-    if (have === want) return;
+    if (have === want) {
+      lastAutoNavEpisodeId = ep.id;
+      return;
+    }
+    const isUserBouncedAway = lastAutoNavEpisodeId === ep.id;
     void goto(target, {
       replaceState: false,
       noScroll: false,
       keepFocus: true,
     });
+    if (isUserBouncedAway) {
+      showManualActionIndicator('Tour is driving — stop it to navigate freely.', 3500);
+    }
+    lastAutoNavEpisodeId = ep.id;
   });
 
   // Tour Phase 2 — fire stage hooks during playback. Watches position
@@ -201,6 +235,15 @@
     audio.markHeard(ep.id);
   });
 
+  function showManualActionIndicator(label: string, ms: number): void {
+    if (manualActionTimer !== null) window.clearTimeout(manualActionTimer);
+    manualActionLabel = label;
+    manualActionTimer = window.setTimeout(() => {
+      manualActionLabel = null;
+      manualActionTimer = null;
+    }, ms);
+  }
+
   function executeStage(stage: AudioStage): void {
     if (typeof document === 'undefined') return;
     // `cue` is the DOM-free action — `target` is the message text, not a selector.
@@ -226,8 +269,39 @@
         break;
       case 'click':
       case 'open-tab':
-        if (typeof el.click === 'function') el.click();
+        if (typeof el.click === 'function') {
+          el.click();
+          // Mirror the cue + drag/zoom pattern: tell the user the tour
+          // just clicked something on their behalf. Aria-label of the
+          // target makes a sensible default when available.
+          const label = el.getAttribute('aria-label')?.trim();
+          showManualActionIndicator(label ? `Opened: ${label}` : 'Opened panel', 2200);
+        }
         break;
+      case 'drag':
+      case 'zoom': {
+        // Dispatch a CustomEvent the route listens for. Each canvas-
+        // driven route wires its own listener and translates the event
+        // into camera motion (see /explore +page.svelte). Keeping the
+        // executor camera-agnostic means /moon, /mars, /fly, /iss,
+        // /tiangong, /earth can all wire the same events without
+        // teaching AudioOverlay about any specific scene controller.
+        const durationMs = stage.duration_ms ?? 1500;
+        el.dispatchEvent(
+          new CustomEvent(`audio-stage-${stage.action}`, {
+            detail: { durationMs, ...(stage.params ?? {}) },
+            bubbles: true,
+          }),
+        );
+        // Visual indicator so the listener can relate the motion to
+        // the tour ("Rotating view…" / "Zooming in…") instead of
+        // wondering why the scene just moved on its own.
+        showManualActionIndicator(
+          stage.action === 'drag' ? 'Rotating view…' : 'Zooming…',
+          durationMs + 400,
+        );
+        break;
+      }
     }
   }
 
@@ -260,7 +334,11 @@
   }
 
   function onTimeUpdate(): void {
-    if (audioEl) audio.positionSec = audioEl.currentTime;
+    if (!audioEl) return;
+    audio.positionSec = audioEl.currentTime;
+    // ADR-075 §write triggers — throttled tour-resume persistence. No-op
+    // when the tour isn't active (single-episode plays don't persist).
+    if (audio.tourActive) audio.persistTourThrottled();
   }
   function onDurationChange(): void {
     if (audioEl && Number.isFinite(audioEl.duration)) audio.durationSec = audioEl.duration;
@@ -309,11 +387,86 @@
     audio.speed = Number((e.currentTarget as HTMLSelectElement).value);
   }
 
-  function fmtTime(sec: number): string {
-    if (!Number.isFinite(sec) || sec < 0) return '0:00';
-    const m = Math.floor(sec / 60);
-    const s = Math.floor(sec % 60);
-    return `${m}:${s.toString().padStart(2, '0')}`;
+  // Tour progress (PRD-016 §S7 / RFC-019 §11.1) — pure derived state from
+  // registry + tourSequence + positionSec. Visible only while tourActive.
+  const tourLookup = (id: string): number | undefined => audioRegistry.byId(id)?.durationSec;
+  const tourTotal = $derived(tourTotalSec(audio.tourSequence, tourLookup));
+  const tourElapsed = $derived(
+    tourElapsedSec(audio.tourSequence, audio.tourIndex, audio.positionSec, tourLookup),
+  );
+  const tourRemaining = $derived(
+    tourRemainingSec(audio.tourSequence, audio.tourIndex, audio.positionSec, tourLookup),
+  );
+  // Tour totals routinely exceed an hour (~66 min for the en-US 21-ep tour),
+  // so format with h:mm:ss; elapsed + remaining follow the same axis so the
+  // numbers line up visually.
+  const tourUseHours = $derived(tourTotal >= 3600);
+
+  // Tour resume offer (ADR-075 / PRD-016 §S9). Read the cookie on overlay
+  // open; surface a one-click [Resume] banner if the saved episode still
+  // exists in the registry. Never autoplays — the click IS the gesture.
+  let resumeOffer = $state<TourResumeState | null>(null);
+  let resumeOfferTitle = $state<string>('');
+  $effect(() => {
+    if (!audio.open) {
+      resumeOffer = null;
+      return;
+    }
+    if (!audioRegistry.loaded) return;
+    if (untrack(() => audio.tourActive)) return; // active tour wins
+    const cookie = readTourCookie();
+    if (!cookie) return;
+    const ep = audioRegistry.byId(cookie.ep);
+    if (!ep) {
+      // Saved episode no longer exists (registry pruned, locale changed,
+      // mis-saved cookie). Clear silently — no user-visible error.
+      clearTourCookie();
+      return;
+    }
+    resumeOffer = cookie;
+    resumeOfferTitle = ep.title;
+  });
+
+  async function acceptResume(): Promise<void> {
+    const offer = resumeOffer;
+    if (!offer) return;
+    const ep = audioRegistry.byId(offer.ep);
+    if (!ep) {
+      clearTourCookie();
+      resumeOffer = null;
+      return;
+    }
+    // Filter the canonical sequence down to what's actually in the
+    // registry, then locate the saved episode by id — using ep id is
+    // more durable than trusting idx across registry changes.
+    const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
+    const realIdx = available.indexOf(offer.ep);
+    if (realIdx < 0) {
+      clearTourCookie();
+      resumeOffer = null;
+      return;
+    }
+    audio.resumeTour(available, realIdx);
+    audio.compact = offer.cmp === 1;
+    resumeOffer = null;
+    await loadAndPlay(ep);
+    // The episode just started at position 0; seek to the saved point.
+    // Use a tick to let the <audio> element mount + load metadata.
+    await tick();
+    if (audioEl && Number.isFinite(offer.pos) && offer.pos > 0) {
+      try {
+        audioEl.currentTime = offer.pos;
+        audio.positionSec = offer.pos;
+      } catch {
+        // Metadata not ready yet — the existing pause-on-close effect
+        // will re-seek on next play.
+      }
+    }
+  }
+
+  function dismissResume(): void {
+    clearTourCookie();
+    resumeOffer = null;
   }
 
   // Caption <track> label — Intl.DisplayNames where available, locale
@@ -461,6 +614,7 @@
     bind:this={overlayRoot}
     id="audio-overlay"
     class="audio-overlay"
+    class:compact={audio.compact}
     role="dialog"
     aria-modal="false"
     aria-label="Audio episode player"
@@ -468,29 +622,121 @@
     onkeydown={onOverlayKeydown}
   >
     <header class="overlay-header">
-      <div class="title-block">
+      <div class="header-top">
         <span class="overlay-eyebrow">AUDIO</span>
-        <h2 class="overlay-title">
-          {audio.currentEpisode?.title ?? 'Audio episodes'}
-        </h2>
+        <div class="header-actions">
+          <button
+            type="button"
+            class="header-btn minimize-btn"
+            aria-label="Minimize tour"
+            onclick={() => audio.toggleCompact()}
+          >
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              <line x1="3" y1="13" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="header-btn close-btn"
+            aria-label="Close audio overlay"
+            onclick={() => audio.closeOverlay()}
+          >
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+              <line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
+              <line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <button
-        type="button"
-        class="close-btn"
-        aria-label="Close audio overlay"
-        onclick={() => audio.closeOverlay()}
-      >
-        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-          <line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="1.6" />
-          <line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="1.6" />
-        </svg>
-      </button>
+      <h2 class="overlay-title">
+        {audio.currentEpisode?.title ?? 'Audio episodes'}
+      </h2>
     </header>
+
+    {#if resumeOffer && !audio.compact}
+      <section class="resume-offer" aria-label="Resume your tour">
+        <span class="resume-text">
+          Resume tour — <strong>{resumeOfferTitle}</strong> at
+          <span class="resume-pos">{fmtTime(resumeOffer.pos)}</span>?
+        </span>
+        <span class="resume-actions">
+          <button type="button" class="resume-btn resume-accept" onclick={acceptResume}>
+            Resume
+          </button>
+          <button
+            type="button"
+            class="resume-btn resume-dismiss"
+            aria-label="Dismiss resume offer"
+            onclick={dismissResume}
+          >
+            ×
+          </button>
+        </span>
+      </section>
+    {/if}
+
+    {#if audio.compact && audio.currentEpisode}
+      <section class="compact-bar" aria-label="Compact tour player">
+        <span class="persona-dot persona-{audio.currentEpisode.persona}" aria-hidden="true"></span>
+        <span class="compact-title" title={audio.currentEpisode.title}>
+          {audio.currentEpisode.title}
+        </span>
+        {#if audio.tourActive}
+          <span class="compact-position" aria-label="Tour position">
+            {audio.tourIndex + 1}/{audio.tourSequence.length}
+          </span>
+        {/if}
+        <span class="compact-clock" aria-label="Elapsed">
+          {fmtTime(audio.tourActive ? tourElapsed : audio.positionSec, {
+            withHours: audio.tourActive && tourUseHours,
+          })}
+        </span>
+        <button
+          type="button"
+          class="compact-btn"
+          aria-label={audio.playing ? 'Pause' : 'Play'}
+          onclick={() => audio.togglePlay()}
+        >
+          {audio.playing ? '❚❚' : '▶'}
+        </button>
+        <button
+          type="button"
+          class="compact-btn"
+          aria-label="Expand tour"
+          title="Expand"
+          onclick={() => audio.toggleCompact()}
+        >
+          ↑
+        </button>
+        {#if audio.tourActive}
+          <button
+            type="button"
+            class="compact-btn compact-stop"
+            aria-label="Stop tour"
+            onclick={() => audio.stopTour()}
+          >
+            ×
+          </button>
+        {/if}
+      </section>
+    {/if}
 
     <section class="tour-bar" aria-label="Curator Full Tour">
       {#if audio.tourActive}
         <span class="tour-eyebrow">TOUR</span>
-        <span class="tour-position">{audio.tourIndex + 1} / {audio.tourSequence.length}</span>
+        <span class="tour-position">{audio.tourIndex + 1}/{audio.tourSequence.length}</span>
+        <span
+          class="tour-clock"
+          aria-label="Tour progress: {fmtTime(tourElapsed, {
+            withHours: tourUseHours,
+          })} of {fmtTime(tourTotal, { withHours: tourUseHours })}, {fmtTime(tourRemaining, {
+            withHours: tourUseHours,
+          })} left"
+        >
+          {fmtTime(tourElapsed, { withHours: tourUseHours })} / {fmtTime(tourTotal, {
+            withHours: tourUseHours,
+          })}
+        </span>
         <button
           type="button"
           class="tour-btn"
@@ -517,6 +763,10 @@
         >
           ›
         </button>
+        <p class="tour-note">
+          Tour is driving the page. Links and nav are paused — click <strong>stop</strong> to explore
+          freely.
+        </p>
       {:else}
         <button
           type="button"
@@ -613,29 +863,6 @@
           oninput={onScrub}
         />
 
-        <!-- Single aria-live channel: cues take priority over captions
-             when both are present so screen readers don't read both
-             simultaneously (#24). Caption text still renders silently
-             via the caption banner when no cue is active. -->
-        {#if activeCue}
-          <div class="cue-banner" role="status" aria-live="polite" aria-atomic="true">
-            <span class="cue-arrow" aria-hidden="true">→</span>
-            <span class="cue-text">{activeCue}</span>
-          </div>
-        {/if}
-
-        {#if audio.captionsOn && audio.currentCaption}
-          <div
-            class="caption-banner"
-            role="region"
-            aria-label="Captions"
-            aria-live={activeCue ? 'off' : 'polite'}
-            aria-atomic="true"
-          >
-            {audio.currentCaption}
-          </div>
-        {/if}
-
         <div class="extras">
           <button
             type="button"
@@ -724,9 +951,46 @@
     <footer class="origin-disclosure" aria-label="Audio origin disclosure">
       <span>Voices · Google Cloud TTS · Scripts · drafted by Claude (Anthropic)</span>
       <span class="origin-detail"
-        >Per-episode attribution on <a href="{base}/credits">/credits</a></span
+        >Per-episode attribution on <a href="{base}/credits">/credits</a> ·
+        <a href="{base}/library/episodes">Read transcripts</a></span
       >
     </footer>
+  </div>
+{/if}
+
+<!-- Floating banner stack — positioned bottom-center of the viewport so
+     the tour's narration overlays (cue / caption) and "the tour is
+     doing this" indicators (drag / zoom / click) stay visible whether
+     the overlay is expanded, compact, or closed. Cue + manual-action
+     share an aria-live channel so screen readers don't double-read.
+     Captions get their own region so a SR user can opt out of cues
+     while keeping captions for accessibility. -->
+{#if activeCue || manualActionLabel || (audio.captionsOn && audio.currentCaption)}
+  <div class="tour-banners" aria-hidden={false}>
+    {#if activeCue}
+      <div class="cue-banner" role="status" aria-live="polite" aria-atomic="true">
+        <span class="cue-arrow" aria-hidden="true">→</span>
+        <span class="cue-text">{activeCue}</span>
+      </div>
+    {/if}
+
+    {#if manualActionLabel}
+      <div class="manual-action" role="status" aria-live={activeCue ? 'off' : 'polite'}>
+        {manualActionLabel}
+      </div>
+    {/if}
+
+    {#if audio.captionsOn && audio.currentCaption}
+      <div
+        class="caption-banner"
+        role="region"
+        aria-label="Captions"
+        aria-live={activeCue || manualActionLabel ? 'off' : 'polite'}
+        aria-atomic="true"
+      >
+        {audio.currentCaption}
+      </div>
+    {/if}
   </div>
 {/if}
 
@@ -735,7 +999,7 @@
     position: fixed;
     top: var(--nav-height);
     right: 0;
-    width: min(360px, 100vw);
+    width: min(var(--panel-width, 400px), 100vw);
     max-height: calc(100vh - var(--nav-height));
     z-index: 50;
     background: var(--color-nav-bg);
@@ -752,17 +1016,18 @@
 
   .overlay-header {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 14px 18px 12px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 14px 10px;
     border-bottom: 1px solid var(--color-border);
   }
 
-  .title-block {
+  .header-top {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 32px;
   }
 
   .overlay-eyebrow {
@@ -782,14 +1047,21 @@
     text-overflow: ellipsis;
   }
 
-  .close-btn {
+  .header-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .header-btn {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 4px;
     width: 32px;
     height: 32px;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 32px;
+    min-height: 32px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -797,8 +1069,8 @@
     cursor: pointer;
     flex-shrink: 0;
   }
-  .close-btn:hover,
-  .close-btn:focus-visible {
+  .header-btn:hover,
+  .header-btn:focus-visible {
     border-color: rgba(255, 255, 255, 0.4);
     color: rgba(255, 255, 255, 0.95);
     outline: none;
@@ -994,8 +1266,9 @@
   .tour-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(201, 170, 111, 0.04);
   }
@@ -1004,13 +1277,37 @@
     font-size: 11px;
     letter-spacing: 2px;
     color: #c9aa6f;
+    flex-shrink: 0;
   }
   .tour-position {
     font-family: var(--font-mono, monospace);
-    font-size: 12px;
+    font-size: 11px;
     font-variant-numeric: tabular-nums;
     color: rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+  }
+  .tour-clock {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.65);
     margin-right: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tour-note {
+    flex-basis: 100%;
+    margin: 6px 0 0;
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.45);
+  }
+  .tour-note strong {
+    color: rgba(201, 170, 111, 0.85);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .tour-btn {
     background: transparent;
@@ -1289,5 +1586,219 @@
       border-top: 1px solid var(--color-border);
       box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.35);
     }
+  }
+
+  /* Compact tour mode (PRD-016 §S8 / RFC-019 §11.2). Collapses the
+     overlay to a thin strip pinned directly under the nav (same top
+     anchor as the expanded form), so it never floats orphaned at the
+     viewport edge. Desktop: panel width, slim bar. Mobile: full-width. */
+  .audio-overlay.compact {
+    top: var(--nav-height);
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: min(var(--panel-width, 400px), 100vw);
+    max-width: 100vw;
+    max-height: none;
+    height: auto;
+    border-left: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+    overflow: visible;
+  }
+  .audio-overlay.compact .overlay-header,
+  .audio-overlay.compact .tour-bar,
+  .audio-overlay.compact .now-playing,
+  .audio-overlay.compact .inventory,
+  .audio-overlay.compact .origin-disclosure {
+    display: none;
+  }
+  /* Banner positioning is now globally bottom-center via .tour-banners
+     (see below) — no overlay-state-specific overrides needed. */
+  @media (max-width: 799px) {
+    .audio-overlay.compact {
+      top: var(--nav-height);
+      bottom: auto;
+      right: 0;
+      left: 0;
+      width: 100vw;
+      max-width: 100vw;
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  .compact-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    min-height: 64px;
+    background: var(--color-nav-bg);
+  }
+  @media (max-width: 799px) {
+    .compact-bar {
+      min-height: 56px;
+      padding: 10px 14px;
+    }
+  }
+  .compact-bar .persona-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.35);
+  }
+  .compact-bar .persona-dot.persona-curator {
+    background: #c9aa6f;
+  }
+  .compact-bar .persona-dot.persona-guide {
+    background: #6fb6c9;
+  }
+  .compact-bar .persona-dot.persona-enthusiast {
+    background: #c96fa0;
+  }
+  .compact-title {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.2;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .compact-position {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.6);
+    flex-shrink: 0;
+  }
+  .compact-clock {
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.6);
+    flex-shrink: 0;
+  }
+  .compact-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .compact-btn:hover,
+  .compact-btn:focus-visible {
+    border-color: rgba(201, 170, 111, 0.6);
+    color: #c9aa6f;
+    outline: none;
+  }
+  .compact-btn.compact-stop {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  /* Floating banner stack — bottom-center of the viewport. Always
+     above other UI so the tour overlays stay legible in expanded /
+     compact / closed states alike. */
+  :global(.tour-banners) {
+    position: fixed;
+    left: 50%;
+    bottom: max(20px, env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: min(560px, calc(100vw - 32px));
+    pointer-events: none;
+  }
+  :global(.tour-banners > *) {
+    pointer-events: auto;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Manual-action indicator (drag / zoom / click while the tour is
+     driving). Small pill, dim background, monospace — distinct from
+     cue + caption banners so the listener reads "the tour is doing X"
+     rather than "the narrator just said X". */
+  :global(.tour-banners .manual-action) {
+    padding: 6px 12px;
+    background: rgba(78, 205, 196, 0.12);
+    border: 1px solid rgba(78, 205, 196, 0.45);
+    border-radius: 4px;
+    color: rgba(78, 205, 196, 0.95);
+    font-family: var(--font-mono, monospace);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Resume-tour offer banner (ADR-075 / PRD-016 §S9). Sits just under
+     the header when a valid cookie is read and no live tour is running. */
+  .resume-offer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(201, 170, 111, 0.08);
+    border-bottom: 1px solid rgba(201, 170, 111, 0.3);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+  }
+  .resume-text {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.3;
+  }
+  .resume-text strong {
+    color: #c9aa6f;
+    font-weight: 500;
+  }
+  .resume-pos {
+    font-family: var(--font-mono, monospace);
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .resume-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .resume-btn {
+    background: transparent;
+    border: 1px solid rgba(201, 170, 111, 0.45);
+    border-radius: 3px;
+    color: #c9aa6f;
+    font-size: 12px;
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+  .resume-btn.resume-dismiss {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .resume-btn:hover,
+  .resume-btn:focus-visible {
+    border-color: rgba(201, 170, 111, 0.8);
+    outline: none;
   }
 </style>

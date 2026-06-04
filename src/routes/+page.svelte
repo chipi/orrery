@@ -54,7 +54,7 @@
 </svelte:head>
 
 <article class="landing" data-testid="landing">
-  <header class="hero">
+  <header class="hero" data-audio-stage="hero">
     <!-- Hero illustration: poster-art orrery, inspired by JPL
          "Visions of the Future" + Eames "Powers of Ten" + the
          vintage planetarium-print tradition. Subject stays
@@ -67,6 +67,7 @@
          anchor. Decorative; aria-hidden via role="img" + label. -->
     <svg
       class="hero-illustration"
+      data-audio-stage="hero-illustration"
       viewBox="0 0 600 320"
       role="img"
       aria-label="Orrery — a stylised solar system with two highlighted mission trajectories"
@@ -355,7 +356,7 @@
       </g>
 
       <!-- ─── Engineering annotations ─────────────────────────── -->
-      <text x="402" y="184" class="h-label">EARTH</text>
+      <text x="402" y="184" class="h-label" data-audio-stage="hero-earth-label">EARTH</text>
       <text x="142" y="184" class="h-label">MARS</text>
       <text x="476" y="142" class="h-label">JUPITER</text>
       <text x="62" y="142" class="h-label">SATURN</text>
@@ -485,13 +486,14 @@
       </defs>
     </svg>
 
-    <ul class="card-grid" data-testid="landing-cards">
+    <ul class="card-grid" data-testid="landing-cards" data-audio-stage="route-grid">
       {#each cards as card (card.route)}
         <li>
           <a
             class="card"
             href={withLang(`${base}${card.route}`)}
             aria-label={`${card.route}: ${card.title}`}
+            data-audio-stage="route-card-{card.route.slice(1)}"
           >
             <span class="card-head">
               <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false">

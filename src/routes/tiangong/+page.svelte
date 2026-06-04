@@ -833,6 +833,7 @@
       class:fullscreen-mode={viewMode === 'list'}
       class:hidden={viewMode !== 'list' && !indexOpen}
       data-testid="tiangong-list-view"
+      data-audio-stage="tiangong-module-list"
       aria-hidden={viewMode !== 'list' && !indexOpen}
       aria-label={m.tiangong_list_heading()}
     >

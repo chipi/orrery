@@ -2,6 +2,13 @@
 // Shared Svelte 5 reactive state, consumed by AudioOverlay + Nav.
 
 import { audioBus } from './audio-bus';
+import {
+  clearTourCookie,
+  flushTourCookieWrite,
+  writeTourCookie,
+  writeTourCookieDebounced,
+  type TourResumeState,
+} from './audio-tour-cookie';
 
 // Persona + ProviderName literal unions live in src/lib/audio-types.ts as
 // the single source of truth. Re-exported here for consumer ergonomics.
@@ -56,6 +63,13 @@ class AudioState {
   tourIndex = $state(0);
   tourSequence = $state<string[]>([]);
 
+  // Compact tour mode (PRD-016 §S8 / RFC-019 §11.2). Collapses the overlay
+  // to a thin pill bar so the visual scene stays unobstructed during long
+  // listen-throughs. Independent of `open` — the overlay can be open in
+  // either expanded or compact form. Persisted via the `orrery_tour`
+  // cookie alongside tour-resume state (ADR-075).
+  compact = $state(false);
+
   toggle(): void {
     this.open = !this.open;
   }
@@ -63,7 +77,46 @@ class AudioState {
     this.open = true;
   }
   closeOverlay(): void {
+    // Flush any pending tour-position write before closing so the user
+    // doesn't lose the last few seconds of progress if they close mid-
+    // throttle-window (ADR-075 §write triggers).
+    if (this.tourActive) this.persistTourImmediate();
     this.open = false;
+  }
+
+  toggleCompact(): void {
+    this.compact = !this.compact;
+    // Compact flag rides on the resume cookie (ADR-075). Immediate write
+    // so the user's last visual state survives a tab close — but only
+    // when a tour is active, since the cookie is tour-scoped.
+    if (this.tourActive) this.persistTourImmediate();
+  }
+
+  // ── Resume-cookie helpers (ADR-075) ───────────────────────────────
+  // Tour-scoped writes: only meaningful while `tourActive` is true.
+  // Throttled writer for steady playback (positionSec changes 60×/s);
+  // immediate writer for edge transitions (advance, pause, close).
+  private currentResumeState(): TourResumeState | null {
+    if (!this.tourActive) return null;
+    const id = this.tourCurrentId();
+    if (!id) return null;
+    return {
+      ep: id,
+      pos: Number.isFinite(this.positionSec) && this.positionSec > 0 ? this.positionSec : 0,
+      idx: this.tourIndex,
+      cmp: this.compact ? 1 : 0,
+    };
+  }
+
+  persistTourThrottled(): void {
+    const s = this.currentResumeState();
+    if (s) writeTourCookieDebounced(s);
+  }
+
+  persistTourImmediate(): void {
+    flushTourCookieWrite();
+    const s = this.currentResumeState();
+    if (s) writeTourCookie(s);
   }
 
   loadEpisode(ep: Episode): void {
@@ -104,6 +157,8 @@ class AudioState {
     if (!this.playing) return;
     this.playing = false;
     audioBus.emit('pause', { episode: this.currentEpisode });
+    // Capture exact pause point (ADR-075 §write triggers).
+    if (this.tourActive) this.persistTourImmediate();
   }
 
   togglePlay(): void {
@@ -136,22 +191,35 @@ class AudioState {
     this.tourSequence = [...sequence];
     this.tourIndex = 0;
     this.tourActive = true;
+    this.persistTourImmediate();
+  }
+
+  // Restore a tour from a resume cookie. Sets sequence + index without
+  // resetting index to 0 (which startTour would do). Caller still loads
+  // the episode + seeks via the registry.
+  resumeTour(sequence: string[], index: number): void {
+    this.tourSequence = [...sequence];
+    this.tourIndex = Math.max(0, Math.min(index, sequence.length - 1));
+    this.tourActive = true;
   }
 
   stopTour(): void {
     this.tourActive = false;
+    clearTourCookie();
   }
 
   // Returns the next episode id, or null if the tour has ended (in which
-  // case the tour is auto-deactivated).
+  // case the tour is auto-deactivated and the resume cookie is cleared).
   nextTourId(): string | null {
     if (!this.tourActive) return null;
     const next = this.tourIndex + 1;
     if (next >= this.tourSequence.length) {
       this.tourActive = false;
+      clearTourCookie();
       return null;
     }
     this.tourIndex = next;
+    this.persistTourImmediate();
     return this.tourSequence[next];
   }
 
@@ -160,6 +228,7 @@ class AudioState {
     const prev = this.tourIndex - 1;
     if (prev < 0) return null;
     this.tourIndex = prev;
+    this.persistTourImmediate();
     return this.tourSequence[prev];
   }
 

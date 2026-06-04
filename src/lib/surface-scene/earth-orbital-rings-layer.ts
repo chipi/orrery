@@ -31,6 +31,18 @@ export interface MoonGhostOpts {
    *  `altToOrbitRadius` baseline placed Moon at radius 25.6 — inside
    *  the 30-unit Earth → fully occluded. (#303 follow-up.) */
   planetRadius: number;
+  /**
+   * Multiplier on the (Moon radius − planetRadius) gap so the Moon
+   * visually clears the satellite-ring cluster. The base
+   * `altToSurfaceScene` puts Moon at radius ~47 — only 5 units past
+   * GEO (42) — which reads as "another satellite" rather than the
+   * Moon. Real-world ratio is 60:1 (Moon 384 400 km / Earth 6371 km)
+   * which is off-screen at any reasonable camera distance; default 6
+   * is the compromise: lifts the gap to ~102, placing Moon at ~132
+   * (~4.4× Earth's scene radius, vs the real 60×). Distinctly the
+   * Moon, not a satellite. Reachable in the default camR=150 view.
+   */
+  distanceMultiplier?: number;
 }
 
 export interface MoonGhostHandle {
@@ -47,7 +59,10 @@ export function buildMoonGhost(opts: MoonGhostOpts): MoonGhostHandle {
   const geo = new THREE.SphereGeometry(opts.radiusUnits, 32, 32);
   const mat = new THREE.MeshPhongMaterial({ map, color: 0xffffff, shininess: 4 });
   const mesh = new THREE.Mesh(geo, mat);
-  const moonR = altToSurfaceScene(opts.planetRadius, opts.distanceKm);
+  const moonR =
+    opts.planetRadius +
+    (altToSurfaceScene(opts.planetRadius, opts.distanceKm) - opts.planetRadius) *
+      (opts.distanceMultiplier ?? 6);
   mesh.position.set(moonR, 0, 0);
   mesh.userData = { isMoon: true };
   return {

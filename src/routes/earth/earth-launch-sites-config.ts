@@ -96,12 +96,11 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     },
     // /earth needs more camera headroom than /moon and /mars because
     // the scene includes the full orbital stack (Kármán shell at the
-    // surface + LEO ring just above + moon-ghost at ~1814 scene units
-    // out for context). 110 keeps Earth visually similar in size to
-    // Moon/Mars at 85 while leaving room for the in-scene LEO ring +
-    // satellite glyphs to land on screen. The prior consolidated 85
-    // had Earth filling most of the viewport on first paint.
-    initialCamR: 110,
+    // surface + LEO/MEO/GEO rings + moon-ghost at ~132 scene units
+    // after the 6× distance multiplier). 150 keeps Earth visually
+    // similar in size to Moon/Mars at 85 while fitting the
+    // pushed-out Moon in the default view.
+    initialCamR: 150,
     // #290 Slice 7 — orbital stack composed onto the surface scene.
     // Mirrors EarthOrbitalScene's exact construction values so the
     // unified route renders identically to the legacy orbital view

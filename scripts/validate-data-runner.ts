@@ -38,6 +38,7 @@ const TASKS: Task[] = [
     args: ['scripts/cislunar/check-science-map-refs.ts'],
   },
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
+  { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
 ];
 
 interface TaskResult {

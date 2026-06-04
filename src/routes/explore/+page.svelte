@@ -1128,6 +1128,40 @@
         const satMesh = new THREE.Mesh(new THREE.SphereGeometry(s.sizeUnits, 32, 32), satMat);
         satMesh.userData = { satelliteId: s.id, parentPlanetId: p.id };
         satellitesGroup.add(satMesh);
+
+        // 2026-06-03 user direction: "When we zoom in to Earth that
+        // [it] is normal with texture with orbit around it and that
+        // it all makes sense." Per-satellite orbit line — thin
+        // LineLoop circle at radius orbitUnits, inclined by inclRad
+        // around the local X axis. Parented to the satellitesGroup
+        // so it inherits the same visibility + parent transform as
+        // the moons themselves; opacity dialled low so the line
+        // reads as a guide, not a competing visual element.
+        const orbitPts: THREE.Vector3[] = [];
+        const inclRad = ((s.inclDeg ?? 0) * Math.PI) / 180;
+        const cosI = Math.cos(inclRad);
+        const sinI = Math.sin(inclRad);
+        const segments = 96;
+        for (let i = 0; i <= segments; i++) {
+          const a = (i / segments) * 2 * Math.PI;
+          orbitPts.push(
+            new THREE.Vector3(
+              Math.cos(a) * s.orbitUnits,
+              Math.sin(a) * s.orbitUnits * sinI,
+              Math.sin(a) * s.orbitUnits * cosI,
+            ),
+          );
+        }
+        const orbitGeo = new THREE.BufferGeometry().setFromPoints(orbitPts);
+        const orbitMat = new THREE.LineBasicMaterial({
+          color: 0xc0d0ff,
+          transparent: true,
+          opacity: 0.25,
+          depthWrite: false,
+        });
+        const orbitLine = new THREE.LineLoop(orbitGeo, orbitMat);
+        satellitesGroup.add(orbitLine);
+
         return {
           def: s,
           mesh: satMesh,
@@ -1137,7 +1171,7 @@
           angle:
             ([...s.id].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0) % 360) *
             (Math.PI / 180),
-          inclRad: ((s.inclDeg ?? 0) * Math.PI) / 180,
+          inclRad,
         };
       });
       group.add(satellitesGroup);

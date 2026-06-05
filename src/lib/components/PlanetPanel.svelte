@@ -179,7 +179,7 @@
         onclick={() => (tab = 'science')}
         role="tab"
         aria-selected={tab === 'science'}
-        aria-controls="pp-tabpanel">SCIENCE</button
+        aria-controls="pp-tabpanel">{m.panel_tab_science()}</button
       >
     </div>
 

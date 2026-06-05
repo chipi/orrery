@@ -27,6 +27,7 @@
   } from '$lib/data';
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
   import { fmtTime } from '$lib/audio-format';
+  import * as m from '$lib/paraglide/messages';
 
   let provenance = $state<AudioProvenanceManifest | null>(null);
   let sources = $state<EpisodeSourcesManifest | null>(null);
@@ -113,24 +114,20 @@
 </script>
 
 <svelte:head>
-  <title>Audio episodes — Library — Orrery</title>
-  <meta
-    name="description"
-    content="Read every Orrery audio episode without playing the tour. Transcripts, anchored route, and editorial sources for each of the 33 episodes."
-  />
+  <title>{m.library_episodes_page_title()}</title>
+  <meta name="description" content={m.library_episodes_meta_description()} />
 </svelte:head>
 
 <section class="ep-index" aria-labelledby="ep-index-title" data-route-ready="true">
   <header class="ep-index-head">
-    <h1 id="ep-index-title">Audio episodes</h1>
-    <p class="ep-index-blurb">
-      Read every episode without playing the tour. Each transcript links to the same prose narrated
-      in the AudioOverlay. Sources are the primary editorial references behind each script.
-    </p>
+    <h1 id="ep-index-title">{m.library_episodes_h1()}</h1>
+    <p class="ep-index-blurb">{m.library_episodes_intro()}</p>
     {#if loaded && provenance}
       <p class="ep-index-meta">
-        {orderedEpisodes.length} episodes · {fmtTime(totalDurationSec, { withHours: true })}
-        total · en-US
+        {m.library_episodes_meta({
+          count: orderedEpisodes.length,
+          duration: fmtTime(totalDurationSec, { withHours: true }),
+        })}
       </p>
     {/if}
   </header>
@@ -145,8 +142,11 @@
             <span class="persona-dot persona-{ep.persona}" aria-hidden="true"></span>
             <h2 class="ep-title">{ep.title ?? ep.episode_id}</h2>
             {#if card.isTour && card.tourIndex !== null}
-              <span class="tour-chip" aria-label="Position in Curator Tour">
-                Tour {card.tourIndex + 1}/{CURATOR_FULL_TOUR.length}
+              <span class="tour-chip" aria-label={m.library_episodes_tour_chip_aria()}>
+                {m.library_episodes_tour_chip({
+                  pos: card.tourIndex + 1,
+                  total: CURATOR_FULL_TOUR.length,
+                })}
               </span>
             {/if}
           </div>
@@ -161,18 +161,20 @@
               >{/if}
             <span class="ep-meta-sep">·</span>
             <span class="ep-author">
-              text {ep.text_authorship.replaceAll('-', ' ')}{#if ep.text_author_model}
+              {m.library_episodes_text_authorship({
+                authorship: ep.text_authorship.replaceAll('-', ' '),
+              })}{#if ep.text_author_model}
                 ({ep.text_author_model}){/if}
             </span>
           </p>
 
           <a class="ep-read" href="{base}{ep.path_txt}" target="_blank" rel="noopener noreferrer">
-            <span aria-hidden="true">↳</span> Read transcript
+            {m.library_episodes_read_transcript()}
           </a>
 
           <div class="ep-sources">
             {#if epSources.length > 0}
-              <span class="ep-sources-label">Sources:</span>
+              <span class="ep-sources-label">{m.library_episodes_sources_label()}</span>
               <ul class="ep-sources-list">
                 {#each epSources as src (src.label)}
                   <li class="ep-source">
@@ -193,20 +195,20 @@
                 {/each}
               </ul>
             {:else}
-              <span class="ep-sources-pending">Sources pending editorial fill.</span>
+              <span class="ep-sources-pending">{m.library_episodes_sources_pending()}</span>
             {/if}
           </div>
         </li>
       {/each}
     </ul>
   {:else}
-    <p class="ep-empty">Loading episodes…</p>
+    <p class="ep-empty">{m.library_episodes_loading()}</p>
   {/if}
 
   <footer class="ep-index-foot">
-    <a href="{base}/library">← back to Library</a>
+    <a href="{base}/library">{m.library_episodes_back()}</a>
     <span class="ep-foot-sep">·</span>
-    <a href="{base}/credits">Audio provenance on /credits</a>
+    <a href="{base}/credits">{m.library_episodes_credits_link()}</a>
   </footer>
 </section>
 

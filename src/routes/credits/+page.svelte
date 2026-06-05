@@ -491,27 +491,32 @@
 
   <article class="storage-card" aria-labelledby="storage-title">
     <header class="head-row">
-      <h3 id="storage-title">Storage & cookies</h3>
+      <h3 id="storage-title">{m.credits_storage_heading()}</h3>
     </header>
-    <p class="storage-blurb">
-      Orrery stores no accounts and no analytics. Two functional preference cookies, each gated by
-      its own ADR, are the only persistent state:
-    </p>
+    <p class="storage-blurb">{m.credits_storage_intro()}</p>
     <ul class="storage-list">
+      <!-- Translations expand the {code} placeholder inline; wrap it
+           visually as <code> via a post-render replace so future locales
+           pick up the typography for free. -->
       <li>
-        <code>orrery_locale</code> — your explicit locale pick, when you choose one in the language switcher
-        (ADR-057). 1 year. No tracking, no personal data.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html m
+          .credits_storage_locale_item({ code: 'orrery_locale' })
+          .replace('orrery_locale', '<code>orrery_locale</code>')}
       </li>
       <li>
-        <code>orrery_tour</code> — your current Curator Tour position, so you can close the tab and resume
-        where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No
-        tracking, no personal data.
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html m
+          .credits_storage_tour_item({ code: 'orrery_tour' })
+          .replace('orrery_tour', '<code>orrery_tour</code>')}
       </li>
     </ul>
     <p class="storage-blurb storage-fine">
-      No <code>localStorage</code>, <code>sessionStorage</code>, IndexedDB, or third-party trackers.
-      Everything else — heard episodes, mission filters, Science Lens — is held in memory only and
-      resets on reload.
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html m
+        .credits_storage_fine({ localStorage: 'localStorage', sessionStorage: 'sessionStorage' })
+        .replace('localStorage', '<code>localStorage</code>')
+        .replace('sessionStorage', '<code>sessionStorage</code>')}
     </p>
   </article>
 </section>
@@ -534,7 +539,7 @@
     color: rgba(255, 255, 255, 0.72);
     margin: 0 0 10px;
   }
-  .storage-blurb code {
+  .storage-blurb :global(code) {
     font-family: 'Space Mono', monospace;
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 5px;
@@ -551,7 +556,7 @@
   .storage-list li {
     margin-bottom: 6px;
   }
-  .storage-list code {
+  .storage-list :global(code) {
     font-family: 'Space Mono', monospace;
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 5px;

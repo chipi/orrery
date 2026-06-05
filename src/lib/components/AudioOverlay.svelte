@@ -20,6 +20,7 @@
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
   import { localeFromPage } from '$lib/locale';
+  import * as m from '$lib/paraglide/messages';
 
   let audioEl: HTMLAudioElement | null = $state(null);
   let overlayRoot: HTMLDivElement | null = $state(null);
@@ -190,7 +191,7 @@
       keepFocus: true,
     });
     if (isUserBouncedAway) {
-      showManualActionIndicator('Tour is driving — stop it to navigate freely.', 3500);
+      showManualActionIndicator(m.audio_action_tour_driving(), 3500);
     }
     lastAutoNavEpisodeId = ep.id;
   });
@@ -280,7 +281,10 @@
           // just clicked something on their behalf. Aria-label of the
           // target makes a sensible default when available.
           const label = el.getAttribute('aria-label')?.trim();
-          showManualActionIndicator(label ? `Opened: ${label}` : 'Opened panel', 2200);
+          showManualActionIndicator(
+            label ? m.audio_action_opened_named({ name: label }) : m.audio_action_opened_generic(),
+            2200,
+          );
         }
         break;
       case 'drag':
@@ -302,7 +306,7 @@
         // the tour ("Rotating view…" / "Zooming in…") instead of
         // wondering why the scene just moved on its own.
         showManualActionIndicator(
-          stage.action === 'drag' ? 'Rotating view…' : 'Zooming…',
+          stage.action === 'drag' ? m.audio_action_rotating() : m.audio_action_zooming(),
           durationMs + 400,
         );
         break;
@@ -628,7 +632,7 @@
     class:compact={audio.compact}
     role="dialog"
     aria-modal="false"
-    aria-label="Audio episode player"
+    aria-label={m.audio_overlay_aria_label()}
     tabindex="-1"
     onkeydown={onOverlayKeydown}
   >
@@ -639,7 +643,8 @@
           <button
             type="button"
             class="header-btn minimize-btn"
-            aria-label="Minimize tour"
+            aria-label={m.audio_minimize_aria()}
+            title={m.audio_minimize_title()}
             onclick={() => audio.toggleCompact()}
           >
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
@@ -649,7 +654,7 @@
           <button
             type="button"
             class="header-btn close-btn"
-            aria-label="Close audio overlay"
+            aria-label={m.audio_close_aria()}
             onclick={() => audio.closeOverlay()}
           >
             <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
@@ -665,19 +670,22 @@
     </header>
 
     {#if resumeOffer && !audio.compact}
-      <section class="resume-offer" aria-label="Resume your tour">
+      <section class="resume-offer" aria-label={m.audio_resume_offer_aria()}>
         <span class="resume-text">
-          Resume tour — <strong>{resumeOfferTitle}</strong> at
-          <span class="resume-pos">{fmtTime(resumeOffer.pos)}</span>?
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          {@html m.audio_resume_prompt({
+            title: `<strong>${resumeOfferTitle}</strong>`,
+            pos: `<span class="resume-pos">${fmtTime(resumeOffer.pos)}</span>`,
+          })}
         </span>
         <span class="resume-actions">
           <button type="button" class="resume-btn resume-accept" onclick={acceptResume}>
-            Resume
+            {m.audio_resume_button()}
           </button>
           <button
             type="button"
             class="resume-btn resume-dismiss"
-            aria-label="Dismiss resume offer"
+            aria-label={m.audio_resume_dismiss_aria()}
             onclick={dismissResume}
           >
             ×
@@ -687,17 +695,17 @@
     {/if}
 
     {#if audio.compact && audio.currentEpisode}
-      <section class="compact-bar" aria-label="Compact tour player">
+      <section class="compact-bar" aria-label={m.audio_compact_bar_aria()}>
         <span class="persona-dot persona-{audio.currentEpisode.persona}" aria-hidden="true"></span>
         <span class="compact-title" title={audio.currentEpisode.title}>
           {audio.currentEpisode.title}
         </span>
         {#if audio.tourActive}
-          <span class="compact-position" aria-label="Tour position">
+          <span class="compact-position" aria-label={m.audio_tour_position_aria()}>
             {audio.tourIndex + 1}/{audio.tourSequence.length}
           </span>
         {/if}
-        <span class="compact-clock" aria-label="Elapsed">
+        <span class="compact-clock" aria-label={m.audio_compact_clock_aria()}>
           {fmtTime(audio.tourActive ? tourElapsed : audio.positionSec, {
             withHours: audio.tourActive && tourUseHours,
           })}
@@ -713,8 +721,8 @@
         <button
           type="button"
           class="compact-btn"
-          aria-label="Expand tour"
-          title="Expand"
+          aria-label={m.audio_compact_expand_aria()}
+          title={m.audio_compact_expand_title()}
           onclick={() => audio.toggleCompact()}
         >
           ↑
@@ -723,7 +731,7 @@
           <button
             type="button"
             class="compact-btn compact-stop"
-            aria-label="Stop tour"
+            aria-label={m.audio_compact_stop_aria()}
             onclick={() => audio.stopTour()}
           >
             ×
@@ -732,17 +740,17 @@
       </section>
     {/if}
 
-    <section class="tour-bar" aria-label="Curator Full Tour">
+    <section class="tour-bar" aria-label={m.audio_tour_bar_aria()}>
       {#if audio.tourActive}
         <span class="tour-eyebrow">TOUR</span>
         <span class="tour-position">{audio.tourIndex + 1}/{audio.tourSequence.length}</span>
         <span
           class="tour-clock"
-          aria-label="Tour progress: {fmtTime(tourElapsed, {
-            withHours: tourUseHours,
-          })} of {fmtTime(tourTotal, { withHours: tourUseHours })}, {fmtTime(tourRemaining, {
-            withHours: tourUseHours,
-          })} left"
+          aria-label={m.audio_tour_progress_aria({
+            elapsed: fmtTime(tourElapsed, { withHours: tourUseHours }),
+            total: fmtTime(tourTotal, { withHours: tourUseHours }),
+            remaining: fmtTime(tourRemaining, { withHours: tourUseHours }),
+          })}
         >
           {fmtTime(tourElapsed, { withHours: tourUseHours })} / {fmtTime(tourTotal, {
             withHours: tourUseHours,
@@ -751,7 +759,7 @@
         <button
           type="button"
           class="tour-btn"
-          aria-label="Previous in tour"
+          aria-label={m.audio_tour_prev_aria()}
           onclick={tourPrev}
           disabled={audio.tourIndex === 0}
         >
@@ -760,7 +768,7 @@
         <button
           type="button"
           class="tour-btn tour-stop"
-          aria-label="Stop tour"
+          aria-label={m.audio_compact_stop_aria()}
           onclick={() => audio.stopTour()}
         >
           stop
@@ -768,15 +776,17 @@
         <button
           type="button"
           class="tour-btn"
-          aria-label="Next in tour"
+          aria-label={m.audio_tour_next_aria()}
           onclick={tourNext}
           disabled={audio.tourIndex >= audio.tourSequence.length - 1}
         >
           ›
         </button>
         <p class="tour-note">
-          Tour is driving the page. Links and nav are paused — click <strong>stop</strong> to explore
-          freely.
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+          {@html m.audio_tour_note({
+            stop: `<strong>${m.audio_tour_note_stop()}</strong>`,
+          })}
         </p>
       {:else}
         <button
@@ -785,8 +795,10 @@
           onclick={startTour}
           disabled={!audioRegistry.loaded}
         >
-          ▶ Take the Curator Tour
-          <span class="tour-meta">{CURATOR_FULL_TOUR.length} episodes · ~66 min</span>
+          {m.audio_tour_start_curator()}
+          <span class="tour-meta">
+            {m.audio_tour_meta_standard({ count: CURATOR_FULL_TOUR.length })}
+          </span>
         </button>
         <button
           type="button"
@@ -794,16 +806,16 @@
           onclick={startExtendedTour}
           disabled={!audioRegistry.loaded}
         >
-          ▶ Take the Extended Tour
+          {m.audio_tour_start_extended()}
           <span class="tour-meta">
-            {CURATOR_EXTENDED_TOUR.length} episodes · ~87 min · adds 10 enthusiast deep-dives
+            {m.audio_tour_meta_extended({ count: CURATOR_EXTENDED_TOUR.length })}
           </span>
         </button>
       {/if}
     </section>
 
     {#if audio.currentEpisode}
-      <section class="now-playing" aria-label="Now playing">
+      <section class="now-playing" aria-label={m.audio_now_playing_aria()}>
         <!-- Hidden audio element — UI controls drive it through state. -->
         <audio
           bind:this={audioEl}
@@ -823,7 +835,7 @@
         </audio>
 
         {#if audio.currentEpisode.variants.length > 1}
-          <div class="provider-switcher" role="group" aria-label="Voice provider (A/B compare)">
+          <div class="provider-switcher" role="group" aria-label={m.audio_provider_aria()}>
             <span class="provider-eyebrow">VOICE</span>
             {#each audio.currentEpisode.variants as v (v.provider)}
               <button
@@ -849,12 +861,12 @@
           >
             {audio.playing ? '⏸' : '▶'}
           </button>
-          <span class="time" aria-label="Current time">
+          <span class="time" aria-label={m.audio_current_time_aria()}>
             {fmtTime(audio.positionSec)} / {fmtTime(audio.durationSec)}
           </span>
           <label class="speed">
-            <span class="sr-only">Playback speed</span>
-            <select aria-label="Playback speed" value={audio.speed} onchange={onSpeedChange}>
+            <span class="sr-only">{m.audio_speed_label()}</span>
+            <select aria-label={m.audio_speed_aria()} value={audio.speed} onchange={onSpeedChange}>
               <option value={0.75}>0.75×</option>
               <option value={1}>1×</option>
               <option value={1.25}>1.25×</option>
@@ -867,7 +879,7 @@
             class:active={audio.captionsOn}
             aria-label={audio.captionsOn ? 'Hide captions' : 'Show captions'}
             aria-pressed={audio.captionsOn}
-            title="Toggle captions"
+            title={m.audio_captions_title()}
             onclick={toggleCaptions}
           >
             CC
@@ -1325,7 +1337,7 @@
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.45);
   }
-  .tour-note strong {
+  .tour-note :global(strong) {
     color: rgba(201, 170, 111, 0.85);
     font-weight: 500;
     text-transform: uppercase;
@@ -1800,7 +1812,7 @@
     min-width: 0;
     line-height: 1.3;
   }
-  .resume-text strong {
+  .resume-text :global(strong) {
     color: #c9aa6f;
     font-weight: 500;
   }

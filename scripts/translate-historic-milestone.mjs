@@ -12,13 +12,34 @@ const MESSAGES = path.join(ROOT, 'messages');
 const OVERRIDES = path.join(ROOT, 'scripts/paraglide-key-overrides.json');
 
 const LOCALES = [
-  'ar', 'de', 'es', 'fr', 'hi', 'it', 'ja', 'ko', 'nl', 'pt-BR', 'ru', 'sr-Cyrl', 'zh-CN',
+  'ar',
+  'de',
+  'es',
+  'fr',
+  'hi',
+  'it',
+  'ja',
+  'ko',
+  'nl',
+  'pt-BR',
+  'ru',
+  'sr-Cyrl',
+  'zh-CN',
 ];
 const NAMES = {
-  ar: 'Modern Standard Arabic', de: 'German', es: 'European Spanish',
-  fr: 'French', hi: 'Hindi', it: 'Italian', ja: 'Japanese', ko: 'Korean',
-  nl: 'Dutch', 'pt-BR': 'Brazilian Portuguese', ru: 'Russian',
-  'sr-Cyrl': 'Serbian (Cyrillic)', 'zh-CN': 'Simplified Chinese',
+  ar: 'Modern Standard Arabic',
+  de: 'German',
+  es: 'European Spanish',
+  fr: 'French',
+  hi: 'Hindi',
+  it: 'Italian',
+  ja: 'Japanese',
+  ko: 'Korean',
+  nl: 'Dutch',
+  'pt-BR': 'Brazilian Portuguese',
+  ru: 'Russian',
+  'sr-Cyrl': 'Serbian (Cyrillic)',
+  'zh-CN': 'Simplified Chinese',
 };
 
 const KEY = 'surface_panel_historic_milestone';
@@ -33,10 +54,15 @@ for (const loc of LOCALES) {
     const r = await client.messages.create({
       model: 'claude-sonnet-4-5',
       max_tokens: 200,
-      system: 'Translate one short Orrery UI label. Output ONLY the translated string (no JSON, no quotes, no commentary). Keep the trailing arrow → exactly. Match all-caps if the target language has case; for scripts without case (Japanese, Chinese, Korean, Hindi, Arabic) use natural script.',
+      system:
+        'Translate one short Orrery UI label. Output ONLY the translated string (no JSON, no quotes, no commentary). Keep the trailing arrow → exactly. Match all-caps if the target language has case; for scripts without case (Japanese, Chinese, Korean, Hindi, Arabic) use natural script.',
       messages: [{ role: 'user', content: `Translate into ${NAMES[loc]}: "${EN}"` }],
     });
-    const t = r.content.filter(b => b.type === 'text').map(b => b.text).join('').trim();
+    const t = r.content
+      .filter((b) => b.type === 'text')
+      .map((b) => b.text)
+      .join('')
+      .trim();
     const mpath = path.join(MESSAGES, `${loc}.json`);
     const messages = JSON.parse(fs.readFileSync(mpath, 'utf8'));
     messages[KEY] = t;

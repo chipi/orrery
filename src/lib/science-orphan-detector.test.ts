@@ -113,11 +113,6 @@ const ORPHAN_ALLOWLIST: AllowlistEntry[] = [
 
   // ── IN-PROGRESS — issue #303 backlog. Remove as inbound refs land. ──
   // history (6 — entire tab orphan)
-  { id: 'history/apollo-11-1969', reason: 'IN-PROGRESS #303 — /moon Apollo 11 mission panel' },
-  { id: 'history/goddard-liquid-rocket-1926', reason: 'IN-PROGRESS #303 — /history or /fleet' },
-  { id: 'history/keplers-laws-1609', reason: 'IN-PROGRESS #303 — /explore Foundation lens footer' },
-  { id: 'history/newton-principia-1687', reason: 'IN-PROGRESS #303 — /explore lens-story footer' },
-  { id: 'history/sputnik-1957', reason: 'IN-PROGRESS #303 — /earth ISS where-it-began' },
 ];
 
 const NON_CONTENT_TABS = new Set(['reading-list', 'watch-list']);
@@ -215,6 +210,6 @@ describe('PRD-024 audit — /science orphan detector', () => {
     // initial 35 #303 batch. New IN-PROGRESS entries beyond that need
     // a fresh issue + their own tracking. (Started at 38; planets-tab
     // 3 closed via PlanetPanel science-sections list.)
-    expect(count, `IN-PROGRESS allowlist size: ${count}`).toBeLessThanOrEqual(5);
+    expect(count, `IN-PROGRESS allowlist size: ${count}`).toBeLessThanOrEqual(0);
   });
 });

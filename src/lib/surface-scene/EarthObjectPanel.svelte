@@ -201,6 +201,17 @@
         </a>
       {/if}
 
+      <!-- Historic-milestone cross-link to /science/history. Issue #303
+           follow-up: closes the Sputnik orphan. ISS gets the
+           "where it began" pointer to the 1957 launch that opened
+           the orbital era. Per-id check keeps the pattern open for
+           additional EarthObject → history mappings later. -->
+      {#if selected.id === 'iss'}
+        <a class="mission-link" href="{base}/science/history/sputnik-1957">
+          {m.surface_panel_historic_milestone()}
+        </a>
+      {/if}
+
       <!--
         Related orbital concepts — five PRD-024 cross-link chips covering
         the Earth-orbital topics not already linked from the cell rows

@@ -3787,6 +3787,16 @@ sample      ${debugInfo.projectedPxSample}`}
           </a>
         {/if}
 
+        <!-- Historic-milestone cross-link to /science/history. Issue #303
+             follow-up: closes Apollo 11 orphan. Per-site map keeps the
+             feature inline (no schema change) and naturally extends as
+             more landmark sites land. -->
+        {#if selected.id === 'apollo11'}
+          <a class="mission-link" href="{base}/science/history/apollo-11-1969">
+            {m.surface_panel_historic_milestone()}
+          </a>
+        {/if}
+
         {#if selected.linked_missions && selected.linked_missions.length > 0}
           <section
             class="launches-from-here"

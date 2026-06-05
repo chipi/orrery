@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "Linhagem de trajes — Mercury até xEMU; trajes pressurizados + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "Operações EVA — protocolos de pré-respiração, disciplina de amarração, fadiga das luvas",
   "chip_label_mission_phase_eva": "Fase de missão EVA — quando a caminhada espacial se encaixa na programação",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "CIÊNCIA",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "Nenhuma imagem de galeria disponível ainda para este satélite.",
   "panel_satellite_library_empty": "Nenhuma entrada de biblioteca disponível ainda para este satélite.",
   "panel_satellite_period_unit_days": "{value} dias",
-  "panel_satellite_kind": "Satélite natural · orbita {planet}"
+  "panel_satellite_kind": "Satélite natural · orbita {planet}",
+  "surface_panel_historic_milestone": "MARCO HISTÓRICO →"
 }

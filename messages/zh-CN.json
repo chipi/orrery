@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "航天服谱系 — Mercury至xEMU；压力服、EMU、Orlan与Feitian",
   "chip_label_eva_operations": "EVA操作 — 预呼吸程序、系绳规范、手套疲劳",
   "chip_label_mission_phase_eva": "EVA任务阶段 — 太空行走在时间表中的安排",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "科学",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "该卫星暂无图库图片。",
   "panel_satellite_library_empty": "该卫星暂无资料库条目。",
   "panel_satellite_period_unit_days": "{value} 天",
-  "panel_satellite_kind": "天然卫星 · 环绕 {planet}"
+  "panel_satellite_kind": "天然卫星 · 环绕 {planet}",
+  "surface_panel_historic_milestone": "历史里程碑 →"
 }

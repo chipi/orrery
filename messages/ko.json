@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "우주복 계보 — Mercury부터 xEMU까지; 압력복 + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA 운용 — 사전 호흡 절차, 테더 규율, 장갑 피로",
   "chip_label_mission_phase_eva": "EVA 임무 단계 — 선외활동이 일정에 들어가는 시점",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "과학",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "이 위성에 대한 갤러리 이미지가 아직 없습니다.",
   "panel_satellite_library_empty": "이 위성에 대한 라이브러리 항목이 아직 없습니다.",
   "panel_satellite_period_unit_days": "{value}일",
-  "panel_satellite_kind": "자연 위성 · {planet} 공전"
+  "panel_satellite_kind": "자연 위성 · {planet} 공전",
+  "surface_panel_historic_milestone": "역사적 이정표 →"
 }

@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "Линейка скафандров — от Mercury до xEMU; высотные костюмы + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "Операции EVA — протоколы предварительной дыхательной подготовки, дисциплина фала, усталость перчаток",
   "chip_label_mission_phase_eva": "Фаза миссии EVA — когда выход в открытый космос вписывается в график",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "НАУКА",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "Для этого спутника пока нет изображений в галерее.",
   "panel_satellite_library_empty": "Для этого спутника пока нет записей в библиотеке.",
   "panel_satellite_period_unit_days": "{value} дн.",
-  "panel_satellite_kind": "Естественный спутник · обращается вокруг {planet}"
+  "panel_satellite_kind": "Естественный спутник · обращается вокруг {planet}",
+  "surface_panel_historic_milestone": "ИСТОРИЧЕСКАЯ ВЕХА →"
 }

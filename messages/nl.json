@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "Pak afstamming — Mercury tot xEMU; drukpakken + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA operaties — pre-breathe protocollen, kabel discipline, handschoen vermoeidheid",
   "chip_label_mission_phase_eva": "EVA missie fase — wanneer de ruimtewandeling in het schema past",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "WETENSCHAP",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "Nog geen galerij-afbeeldingen beschikbaar voor deze maan.",
   "panel_satellite_library_empty": "Nog geen bibliotheekitems beschikbaar voor deze maan.",
   "panel_satellite_period_unit_days": "{value} dagen",
-  "panel_satellite_kind": "Natuurlijke maan · draait om {planet}"
+  "panel_satellite_kind": "Natuurlijke maan · draait om {planet}",
+  "surface_panel_historic_milestone": "HISTORISCHE MIJLPAAL →"
 }

@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "Лоза одела — Mercury до xEMU; притисна одела + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA операције — протоколи пре-дисања, дисциплина привеза, замор рукавица",
   "chip_label_mission_phase_eva": "EVA фаза мисије — када се свемирска шетња уклапа у распоред",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "НАУКА",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "Још нема слика у галерији за овај сателит.",
   "panel_satellite_library_empty": "Још нема уноса у библиотеци за овај сателит.",
   "panel_satellite_period_unit_days": "{value} дана",
-  "panel_satellite_kind": "Природни сателит · кружи око {planet}"
+  "panel_satellite_kind": "Природни сателит · кружи око {planet}",
+  "surface_panel_historic_milestone": "ИСТОРИЈСКА ПРЕКРЕТНИЦА →"
 }

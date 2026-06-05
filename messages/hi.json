@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "सूट वंशावली — Mercury से xEMU तक; दबाव सूट + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA संचालन — पूर्व-श्वास प्रोटोकॉल, टेदर अनुशासन, दस्ताने थकान",
   "chip_label_mission_phase_eva": "EVA मिशन चरण — जब अंतरिक्ष यात्रा अनुसूची में फिट हो",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "विज्ञान",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "इस उपग्रह के लिए अभी तक कोई गैलरी चित्र उपलब्ध नहीं हैं।",
   "panel_satellite_library_empty": "इस उपग्रह के लिए अभी तक कोई पुस्तकालय प्रविष्टि उपलब्ध नहीं है।",
   "panel_satellite_period_unit_days": "{value} दिन",
-  "panel_satellite_kind": "प्राकृतिक उपग्रह · {planet} की परिक्रमा करता है"
+  "panel_satellite_kind": "प्राकृतिक उपग्रह · {planet} की परिक्रमा करता है",
+  "surface_panel_historic_milestone": "ऐतिहासिक मील का पत्थर →"
 }

@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "سلالة البدلات — من Mercury حتى xEMU؛ بدلات الضغط + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "عمليات EVA — بروتوكولات التنفس المسبق، انضباط الحبال، إرهاق القفازات",
   "chip_label_mission_phase_eva": "مرحلة مهمة EVA — متى يتناسب السير الفضائي مع الجدول الزمني",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "العلم",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "لا توجد صور في المعرض لهذا القمر بعد.",
   "panel_satellite_library_empty": "لا توجد مدخلات في المكتبة لهذا القمر بعد.",
   "panel_satellite_period_unit_days": "{value} يوم",
-  "panel_satellite_kind": "قمر طبيعي · يدور حول {planet}"
+  "panel_satellite_kind": "قمر طبيعي · يدور حول {planet}",
+  "surface_panel_historic_milestone": "الإنجاز التاريخي ←"
 }

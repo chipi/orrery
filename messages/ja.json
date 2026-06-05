@@ -953,7 +953,7 @@
   "chip_label_suit_lineage": "宇宙服系譜 — MercuryからxEMUまで; 与圧服 + EMU + Orlan + Feitian",
   "chip_label_eva_operations": "EVA運用 — 事前脱窒素プロトコル、テザー規律、グローブ疲労",
   "chip_label_mission_phase_eva": "EVAミッションフェーズ — 船外活動がスケジュールに組み込まれるタイミング",
-  "panel_tab_science": "LIBRARY",
+  "panel_tab_science": "サイエンス",
   "panel_satellite_orbits_label": "orbits",
   "panel_satellite_composition_label": "Composition",
   "panel_satellite_gallery_pending": "Gallery images land in #304 Slice 4.",
@@ -967,5 +967,6 @@
   "panel_satellite_gallery_empty": "この衛星のギャラリー画像はまだありません。",
   "panel_satellite_library_empty": "この衛星のライブラリエントリはまだありません。",
   "panel_satellite_period_unit_days": "{value}日",
-  "panel_satellite_kind": "自然衛星 · {planet}を周回"
+  "panel_satellite_kind": "自然衛星 · {planet}を周回",
+  "surface_panel_historic_milestone": "歴史的マイルストーン →"
 }

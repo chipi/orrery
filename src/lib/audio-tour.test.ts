@@ -1,7 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { CURATOR_FULL_TOUR, EPISODE_STAGES, stagesForEpisode } from './audio-tour';
+import {
+  CURATOR_FULL_TOUR,
+  CURATOR_EXTENDED_TOUR,
+  EPISODE_STAGES,
+  stagesForEpisode,
+} from './audio-tour';
 
 interface MinimalProvenanceEntry {
   episode_id: string;
@@ -104,10 +109,41 @@ describe('tour ↔ provenance integrity', () => {
     expect(missing).toEqual([]);
   });
 
+  it('every CURATOR_EXTENDED_TOUR id has a provenance entry', () => {
+    const ids = loadProvenanceIds();
+    const missing = CURATOR_EXTENDED_TOUR.filter((id) => !ids.has(id));
+    expect(missing).toEqual([]);
+  });
+
   it('every EPISODE_STAGES key has a provenance entry', () => {
     const ids = loadProvenanceIds();
     const missing = Object.keys(EPISODE_STAGES).filter((id) => !ids.has(id));
     expect(missing).toEqual([]);
+  });
+});
+
+// CURATOR_EXTENDED_TOUR structural invariants (#305).
+describe('CURATOR_EXTENDED_TOUR', () => {
+  it('opens with pale-blue-dot and closes with capability-ladder-close', () => {
+    expect(CURATOR_EXTENDED_TOUR[0]).toBe('pale-blue-dot');
+    expect(CURATOR_EXTENDED_TOUR[CURATOR_EXTENDED_TOUR.length - 1]).toBe('capability-ladder-close');
+  });
+
+  it('contains every CURATOR_FULL_TOUR id (extended is a superset)', () => {
+    const set = new Set(CURATOR_EXTENDED_TOUR);
+    const missing = CURATOR_FULL_TOUR.filter((id) => !set.has(id));
+    expect(missing).toEqual([]);
+  });
+
+  it('contains exactly 10 ids beyond CURATOR_FULL_TOUR (the enthusiast insertions)', () => {
+    const standard = new Set(CURATOR_FULL_TOUR);
+    const extras = CURATOR_EXTENDED_TOUR.filter((id) => !standard.has(id));
+    expect(extras).toHaveLength(10);
+  });
+
+  it('contains no duplicate ids', () => {
+    const set = new Set(CURATOR_EXTENDED_TOUR);
+    expect(set.size).toBe(CURATOR_EXTENDED_TOUR.length);
   });
 });
 
@@ -196,6 +232,19 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
     'guide-fleet',
     'guide-science',
     'capability-ladder-close',
+    // Extended-Tour enthusiast deep-dives (#305) — same authoring bar as
+    // the standard tour: VTT-derived timings + at least one non-cue
+    // action wired to the route the episode anchors to.
+    'saturn-rings',
+    'jupiter-storm',
+    'jwst-l2-halo',
+    'queqiao-magpie',
+    'zarya-first-module',
+    'tianhe-core',
+    'voyager-grand-tour',
+    'cassini-finale',
+    'saturn-v-anchor',
+    'vis-viva',
   ]);
 
   for (const id of STAGED_EPISODES) {
@@ -210,6 +259,11 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
 
   it('the staged set covers every CURATOR_FULL_TOUR id (corpus rollout complete)', () => {
     const missing = CURATOR_FULL_TOUR.filter((id) => !STAGED_EPISODES.has(id));
+    expect(missing).toEqual([]);
+  });
+
+  it('the staged set covers every CURATOR_EXTENDED_TOUR id (#305 rollout complete)', () => {
+    const missing = CURATOR_EXTENDED_TOUR.filter((id) => !STAGED_EPISODES.has(id));
     expect(missing).toEqual([]);
   });
 
@@ -236,7 +290,16 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
       'src/routes/earth/+page.svelte',
       'src/routes/moon/+page.svelte',
       'src/routes/mars/+page.svelte',
+      // Templated anchors (science-tab-{tab}, science-section-{id}).
+      'src/routes/science/+layout.svelte',
     ];
+    // Some anchors are emitted with template interpolation (e.g.
+    //   data-audio-stage="route-card-{card.route.slice(1)}"
+    //   data-audio-stage="science-tab-{tab}"
+    //   data-audio-stage="science-section-{section.id}"
+    // We can't statically resolve the interpolated value, so we allow
+    // any selector whose prefix matches one of these templated bases.
+    const TEMPLATED_PREFIXES = ['route-card-', 'science-tab-', 'science-section-'];
     const haystack = SOURCE_FILES.map((p) => readFileSync(join(process.cwd(), p), 'utf-8')).join(
       '\n',
     );
@@ -248,8 +311,9 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
         if (!match) continue;
         const name = match[1];
         const literalPresent = haystack.includes(`data-audio-stage="${name}"`);
-        const templatedPresent =
-          name.startsWith('route-card-') && haystack.includes('data-audio-stage="route-card-');
+        const templatedPresent = TEMPLATED_PREFIXES.some(
+          (prefix) => name.startsWith(prefix) && haystack.includes(`data-audio-stage="${prefix}`),
+        );
         if (!literalPresent && !templatedPresent) {
           missing.push(`${id} → ${name}`);
         }

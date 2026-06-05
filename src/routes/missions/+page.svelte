@@ -569,6 +569,12 @@
     tabindex="-1"
     onclick={() => selectMission('voyager-2')}>select voyager 2</button
   >
+  <button
+    type="button"
+    data-audio-stage="missions-select-cassini"
+    tabindex="-1"
+    onclick={() => selectMission('cassini')}>select cassini</button
+  >
 </div>
 
 <style>

@@ -10,7 +10,12 @@
   import { base } from '$app/paths';
   import { audio, type Episode } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
-  import { CURATOR_FULL_TOUR, stagesForEpisode, type AudioStage } from '$lib/audio-tour';
+  import {
+    CURATOR_FULL_TOUR,
+    CURATOR_EXTENDED_TOUR,
+    stagesForEpisode,
+    type AudioStage,
+  } from '$lib/audio-tour';
   import { tourElapsedSec, tourRemainingSec, tourTotalSec } from '$lib/audio-tour-progress';
   import { fmtTime } from '$lib/audio-format';
   import { readTourCookie, clearTourCookie, type TourResumeState } from '$lib/audio-tour-cookie';
@@ -355,14 +360,20 @@
     }
   }
 
-  async function startTour(): Promise<void> {
+  async function startTourFromSequence(sequence: string[]): Promise<void> {
     // Filter the canonical sequence down to episodes actually present in
     // the registry — defensive against partial generation.
-    const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
+    const available = sequence.filter((id) => audioRegistry.byId(id));
     if (available.length === 0) return;
     audio.startTour(available);
     const first = audioRegistry.byId(available[0]);
     if (first) await loadAndPlay(first);
+  }
+  async function startTour(): Promise<void> {
+    await startTourFromSequence(CURATOR_FULL_TOUR);
+  }
+  async function startExtendedTour(): Promise<void> {
+    await startTourFromSequence(CURATOR_EXTENDED_TOUR);
   }
 
   async function tourNext(): Promise<void> {
@@ -776,6 +787,17 @@
         >
           ▶ Take the Curator Tour
           <span class="tour-meta">{CURATOR_FULL_TOUR.length} episodes · ~66 min</span>
+        </button>
+        <button
+          type="button"
+          class="tour-start tour-start-extended"
+          onclick={startExtendedTour}
+          disabled={!audioRegistry.loaded}
+        >
+          ▶ Take the Extended Tour
+          <span class="tour-meta">
+            {CURATOR_EXTENDED_TOUR.length} episodes · ~87 min · adds 10 enthusiast deep-dives
+          </span>
         </button>
       {/if}
     </section>
@@ -1337,6 +1359,19 @@
     font-size: 11px;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+  .tour-start + .tour-start {
+    margin-top: 8px;
+  }
+  .tour-start-extended {
+    background: rgba(78, 205, 196, 0.06);
+    color: #4ecdc4;
+    border-color: rgba(78, 205, 196, 0.35);
+  }
+  .tour-start-extended:hover,
+  .tour-start-extended:focus-visible {
+    background: rgba(78, 205, 196, 0.12);
+    border-color: rgba(78, 205, 196, 0.6);
   }
   .tour-start {
     width: 100%;

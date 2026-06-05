@@ -91,6 +91,7 @@
               <a
                 class="tab-card"
                 class:active={tab === activeTab}
+                data-audio-stage="science-tab-{tab}"
                 href="{base}/science/{tab}"
                 aria-current={tab === activeTab ? 'page' : undefined}
               >
@@ -114,6 +115,7 @@
                 <a
                   class="section-row"
                   class:active={section.id === activeSection}
+                  data-audio-stage="science-section-{section.id}"
                   href="{base}/science/{activeTab}/{section.id}"
                   aria-current={section.id === activeSection ? 'page' : undefined}
                 >

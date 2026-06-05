@@ -203,27 +203,51 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 132, action: 'click', target: '[data-audio-stage="explore-select-earth"]' },
   ],
 
-  // ── /explore · saturn-rings — Enthusiast ──────────────────────────
+  // ── /explore · saturn-rings — Enthusiast, VTT 102 s (Extended Tour) ─
   'saturn-rings': [
-    { at_sec: 3, action: 'cue', target: 'Click Saturn in the orrery.' },
+    // VTT § 00:00:00.0 "Click Saturn"
+    { at_sec: 0, action: 'click', target: '[data-audio-stage="explore-select-saturn"]' },
+    // VTT § 00:00:00.8 "Look at the rings"
+    { at_sec: 3, action: 'click', target: '[data-audio-stage="planet-tab-technical"]' },
     {
-      at_sec: 20,
+      at_sec: 4,
       action: 'cue',
-      target: 'Two hundred eighty thousand kilometers wide — ten meters thick.',
+      target: 'Saturn open — see the ring data on the Technical tab.',
+      duration_ms: 4000,
+    },
+    // VTT § 00:00:46.6 "The Cassini Division"
+    {
+      at_sec: 47,
+      action: 'cue',
+      target: 'The Cassini Division — swept clear by Mimas in 2:1 resonance.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /explore · jupiter-storm — Enthusiast ─────────────────────────
+  // ── /explore · jupiter-storm — Enthusiast, VTT 115 s (Extended Tour) ─
   'jupiter-storm': [
+    // VTT § 00:00:00.0 "Click Jupiter"
+    { at_sec: 0, action: 'click', target: '[data-audio-stage="explore-select-jupiter"]' },
+    // VTT § 00:00:01.0 "Find the Great Red Spot — the oval, southern hemisphere"
     {
-      at_sec: 3,
+      at_sec: 2,
       action: 'cue',
-      target: 'Click Jupiter — find the Great Red Spot in the southern hemisphere.',
+      target: 'Find the Great Red Spot — the oval in the southern hemisphere.',
+      duration_ms: 5000,
     },
+    // VTT § 00:00:39.3 "Jupiter rotates once every nine hours fifty-five minutes"
     {
-      at_sec: 90,
+      at_sec: 39,
       action: 'cue',
-      target: "The same hurricane for 350 years. Triple Earth's strongest.",
+      target: 'Jupiter rotates once every 9 h 55 min.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:01:46.2 "Jupiter has had the same hurricane for three and a half centuries"
+    {
+      at_sec: 106,
+      action: 'cue',
+      target: 'The same hurricane for 350 years. Triple Earth’s strongest.',
+      duration_ms: 5000,
     },
   ],
 
@@ -353,20 +377,52 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /missions · voyager-grand-tour — Enthusiast ───────────────────
+  // ── /missions · voyager-grand-tour — Enthusiast, VTT 134 s (Extended Tour) ─
   'voyager-grand-tour': [
-    { at_sec: 30, action: 'cue', target: 'Find Voyager 1 and Voyager 2 in the catalogue.' },
+    { at_sec: 4, action: 'scroll-to', target: '[data-audio-stage="missions-grid"]' },
+    { at_sec: 6, action: 'flash', target: '[data-audio-stage="missions-grid"]' },
+    // VTT § 00:00:41.2 "Voyager 1 and Voyager 2 launched in 1977"
+    { at_sec: 41, action: 'click', target: '[data-audio-stage="missions-select-voyager-2"]' },
     {
-      at_sec: 90,
+      at_sec: 43,
       action: 'cue',
-      target: 'Their current trajectories — still operating, still transmitting.',
+      target: 'Voyager 2 — past Jupiter, Saturn, Uranus, Neptune.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:10.8 "Voyager 1 is the most distant human-made object"
+    {
+      at_sec: 110,
+      action: 'cue',
+      target: 'Voyager 1 — ~24 billion km from the Sun, still transmitting.',
+      duration_ms: 5000,
     },
   ],
 
-  // ── /missions · cassini-finale — Enthusiast ───────────────────────
+  // ── /missions · cassini-finale — Enthusiast, VTT 114 s (Extended Tour) ─
   'cassini-finale': [
-    { at_sec: 5, action: 'cue', target: 'Find Cassini in the mission catalogue.' },
-    { at_sec: 60, action: 'cue', target: 'The Grand Finale — 22 orbits through the ring gap.' },
+    // VTT § 00:00:00.0 "Cassini launched in October 1997"
+    { at_sec: 1, action: 'click', target: '[data-audio-stage="missions-select-cassini"]' },
+    // VTT § 00:00:24.9 "It discovered that Enceladus shoots geysers"
+    {
+      at_sec: 25,
+      action: 'cue',
+      target: 'Enceladus — geysers of water from the south pole.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:00:56.3 "Twenty-two orbits, each threading the gap between cloud tops and rings"
+    {
+      at_sec: 56,
+      action: 'cue',
+      target: 'The Grand Finale — 22 orbits through the ring gap.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:34.1 "No spacecraft has been at Saturn since"
+    {
+      at_sec: 94,
+      action: 'cue',
+      target: 'No spacecraft has been at Saturn since.',
+      duration_ms: 4500,
+    },
   ],
 
   // ── /earth · guide-earth — VTT 161 s ──────────────────────────────
@@ -406,10 +462,26 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 133, action: 'click', target: '[data-audio-stage="earth-select-iss"]' },
   ],
 
-  // ── /earth · jwst-l2-halo — Enthusiast ────────────────────────────
+  // ── /earth · jwst-l2-halo — Enthusiast, VTT 122 s (Extended Tour) ─
   'jwst-l2-halo': [
-    { at_sec: 5, action: 'cue', target: 'Find JWST in the diagram — at the top, far above Earth.' },
-    { at_sec: 60, action: 'cue', target: 'L2 is 1.5 million km out, along the Sun-Earth line.' },
+    // VTT § 00:00:00.0 "Look at the diagram"
+    { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
+    { at_sec: 3, action: 'flash', target: '[data-audio-stage="surface-hud"]' },
+    // VTT § 00:00:50.3 "JWST orbits around L2 in a slow loop"
+    {
+      at_sec: 50,
+      action: 'cue',
+      target: 'JWST — orbits L2, not sits at it. Six-month halo loop.',
+      duration_ms: 5000,
+    },
+    { at_sec: 52, action: 'click', target: '[data-audio-stage="earth-select-jwst"]' },
+    // VTT § 00:01:20.6 "JWST operates at forty Kelvin"
+    {
+      at_sec: 80,
+      action: 'cue',
+      target: 'Forty Kelvin — the heat shield keeps the cold side cold.',
+      duration_ms: 5000,
+    },
   ],
 
   // ── /moon · guide-moon — VTT 161 s ────────────────────────────────
@@ -531,17 +603,39 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /moon · queqiao-magpie — Enthusiast ───────────────────────────
+  // ── /moon · queqiao-magpie — Enthusiast, VTT 119 s (Extended Tour) ─
+  // Queqiao itself isn't a clickable surface site — it's a sat in halo
+  // orbit at Earth-Moon L2. Treatment is scroll-to surface-hud + drag
+  // to face the far side; cues do the heavy lifting.
   'queqiao-magpie': [
+    { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="surface-hud"]' },
     {
-      at_sec: 30,
-      action: 'cue',
-      target: 'The Moon is in the way of any signal from the far side.',
+      at_sec: 3,
+      action: 'drag',
+      target: '[data-audio-stage="surface-hud"]',
+      params: { rotateRad: 3.14 },
+      duration_ms: 2200,
     },
+    // VTT § 00:00:19.9 "A relay satellite called Queqiao"
     {
-      at_sec: 60,
+      at_sec: 20,
       action: 'cue',
-      target: 'Queqiao orbits Earth-Moon L2 — 65,000 km past the Moon.',
+      target: 'Queqiao — the magpie bridge. Earth-Moon L2.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:00:38.2 "Queqiao has line-of-sight to both Earth and the Moon's far side"
+    {
+      at_sec: 38,
+      action: 'cue',
+      target: 'Line-of-sight to both Earth and the far side — at once.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:36.7 "Chang'e 6 ... used Queqiao 2 in 2024"
+    {
+      at_sec: 96,
+      action: 'cue',
+      target: "Chang'e 6 — first samples from the far side, 2024.",
+      duration_ms: 5000,
     },
   ],
 
@@ -712,10 +806,27 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /iss · zarya-first-module — Enthusiast ────────────────────────
+  // ── /iss · zarya-first-module — Enthusiast, VTT 118 s (Extended Tour) ─
   'zarya-first-module': [
-    { at_sec: 5, action: 'cue', target: 'Click Zarya in the rotating station — the back module.' },
-    { at_sec: 70, action: 'cue', target: 'Russian-built. American-owned. NASA paid the bill.' },
+    // VTT § 00:00:00.0 "Look at the back of the ISS — the Russian end"
+    { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="iss-module-list"]' },
+    { at_sec: 3, action: 'flash', target: '[data-audio-stage="iss-module-list"]' },
+    // VTT § 00:00:04.8 "The module furthest back ... is called Zarya"
+    { at_sec: 5, action: 'click', target: '[data-audio-stage="iss-select-zarya"]' },
+    // VTT § 00:00:30.5 "But Zarya isn't really a Russian module"
+    {
+      at_sec: 31,
+      action: 'cue',
+      target: 'Russian-built. American-owned. NASA paid the bill.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:17.0 "Endeavour launched on STS-88 carrying Unity"
+    {
+      at_sec: 77,
+      action: 'cue',
+      target: 'Two weeks later — Unity. The first on-orbit assembly.',
+      duration_ms: 5000,
+    },
   ],
 
   // ── /tiangong · guide-tiangong — VTT 136 s ────────────────────────
@@ -749,13 +860,26 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /tiangong · tianhe-core — Enthusiast ──────────────────────────
+  // ── /tiangong · tianhe-core — Enthusiast, VTT 104 s (Extended Tour) ─
   'tianhe-core': [
-    { at_sec: 5, action: 'cue', target: 'Click Tianhe — the core module of the T.' },
+    // VTT § 00:00:00.0 "Tianhe — the core module of Tiangong — launched April 29th, 2021"
+    { at_sec: 1, action: 'scroll-to', target: '[data-audio-stage="tiangong-module-list"]' },
+    { at_sec: 5, action: 'click', target: '[data-audio-stage="tiangong-select-tianhe"]' },
+    // VTT § 00:00:19.6 "Pressurized volume around 50 m³"
     {
-      at_sec: 70,
+      at_sec: 20,
       action: 'cue',
-      target: 'Seventeen months for the whole station. ISS took twelve years.',
+      target: '~50 m³ pressurized — half Zvezda’s volume.',
+      duration_ms: 4500,
+    },
+    // VTT § 00:00:46.1 "Wentian joined Tianhe in July 2022"
+    { at_sec: 47, action: 'click', target: '[data-audio-stage="tiangong-select-wentian"]' },
+    // VTT § 00:01:28.6 "Look at the T-shape on screen"
+    {
+      at_sec: 88,
+      action: 'cue',
+      target: 'Look at the T — Tianhe is the upright.',
+      duration_ms: 4500,
     },
   ],
 
@@ -794,13 +918,20 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     },
   ],
 
-  // ── /science · vis-viva — Enthusiast ──────────────────────────────
+  // ── /science · vis-viva — Enthusiast, VTT 111 s (Extended Tour) ───
   'vis-viva': [
-    { at_sec: 5, action: 'cue', target: 'Open the Orbits tab. Find the Vis-viva section.' },
+    // VTT § 00:00:00.0 "Open the Orbits tab"
+    { at_sec: 0, action: 'scroll-to', target: '[data-audio-stage="science-tabs"]' },
+    { at_sec: 1, action: 'flash', target: '[data-audio-stage="science-tab-orbits"]' },
+    { at_sec: 2, action: 'click', target: '[data-audio-stage="science-tab-orbits"]' },
+    // VTT § 00:00:01.4 "Find the section called Vis-viva"
+    { at_sec: 4, action: 'flash', target: '[data-audio-stage="science-section-vis-viva"]' },
+    { at_sec: 6, action: 'click', target: '[data-audio-stage="science-section-vis-viva"]' },
     {
-      at_sec: 70,
+      at_sec: 8,
       action: 'cue',
-      target: 'One equation. Three variables. Six decades of spaceflight.',
+      target: 'Vis-viva — one equation; three variables; six decades of spaceflight.',
+      duration_ms: 6000,
     },
   ],
 
@@ -842,14 +973,30 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     { at_sec: 120, action: 'flash', target: '[data-audio-stage="fleet-filters"]' },
   ],
 
-  // ── /fleet · saturn-v-anchor — Enthusiast ─────────────────────────
+  // ── /fleet · saturn-v-anchor — Enthusiast, VTT 134 s (Extended Tour) ─
   'saturn-v-anchor': [
-    { at_sec: 5, action: 'cue', target: 'Click Saturn V in the fleet grid.' },
-    { at_sec: 100, action: 'cue', target: 'Thirteen for thirteen. No catastrophic failures.' },
+    // VTT § 00:00:00.0 "Click Saturn V" → 00:00:01.1 "Look at the diagram"
+    { at_sec: 1, action: 'click', target: '[data-audio-stage="fleet-select-saturn-v"]' },
+    // VTT § 00:00:30.9 "Saturn V flew thirteen times between 1967 and 1973"
     {
-      at_sec: 130,
+      at_sec: 31,
+      action: 'cue',
+      target: 'Thirteen for thirteen. No catastrophic failures.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:01:44.1 "No rocket since has equaled Saturn V's lift capacity"
+    {
+      at_sec: 104,
+      action: 'cue',
+      target: 'No rocket since has equalled Saturn V to LEO or the Moon.',
+      duration_ms: 5000,
+    },
+    // VTT § 00:02:02.4 "For now, Saturn V is the anchor point"
+    {
+      at_sec: 122,
       action: 'cue',
       target: 'Notice which step on the ladder has been empty for fifty years.',
+      duration_ms: 5000,
     },
   ],
 
@@ -905,6 +1052,51 @@ export const CURATOR_FULL_TOUR: string[] = [
   'guide-fleet', //             Hardware story
   'guide-science', //           Physics behind everything
   'capability-ladder-close', // Curator close
+];
+
+// =============================================================================
+// CURATOR_EXTENDED_TOUR — the longer ride (#305).
+//
+// Interleaves the 10 enthusiast deep-dive episodes right after the related
+// guide/curator segment that names their topic. The listener gets
+// "overview → deep dive on the thing the narrator just mentioned" pacing.
+// 31 episodes total · ~87 min (vs Curator Tour's 21 · ~66 min).
+//
+// Each `[+]` entry is enthusiast; the rest mirror CURATOR_FULL_TOUR.
+// =============================================================================
+
+export const CURATOR_EXTENDED_TOUR: string[] = [
+  'pale-blue-dot',
+  'guide-explore',
+  'saturn-rings', //            [+] enthusiast — rings + Cassini Division
+  'jupiter-storm', //           [+] enthusiast — Great Red Spot, 350-year hurricane
+  'guide-earth',
+  'jwst-l2-halo', //            [+] enthusiast — L2 halo orbit, 40 K detectors
+  'guide-moon',
+  'moon-one-lifetime',
+  'cernan-last-words',
+  'far-side',
+  'queqiao-magpie', //          [+] enthusiast — magpie bridge to the far side
+  'guide-iss',
+  'zarya-first-module', //      [+] enthusiast — Russian-built, US-owned
+  'guide-tiangong',
+  'tianhe-core', //             [+] enthusiast — core module + Wentian/Mengtian
+  'guide-missions',
+  'voyager-grand-tour', //      [+] enthusiast — outer-system gravity assist
+  'cassini-finale', //          [+] enthusiast — 22 orbits, Enceladus, the dive
+  'guide-mars',
+  'mars-what-for',
+  'signal-delay',
+  'one-way-light-time',
+  'curiosity-persistence',
+  'guide-fly',
+  'guide-plan',
+  'porkchop',
+  'guide-fleet',
+  'saturn-v-anchor', //         [+] enthusiast — 13 for 13, no catastrophic loss
+  'guide-science',
+  'vis-viva', //                [+] enthusiast — one equation, three variables
+  'capability-ladder-close',
 ];
 
 // =============================================================================

@@ -46,8 +46,16 @@
     tab?: ScienceTabId;
     /** Target section id in `/science` for the link. */
     section?: string;
+    /**
+     * Optional "historical foundations" footer — pre-anchored cross-links
+     * to landmark /science/history articles relevant to this route's
+     * physics. /explore wires Kepler 1609 + Newton 1687 to credit the
+     * humans who worked out the math behind the visible orbits. Rendered
+     * as compact chips at the bottom of the panel body.
+     */
+    historicalFoundations?: Array<{ tab: ScienceTabId; section: string; label: string }>;
   };
-  let { available = [], title, body, tab, section }: Props = $props();
+  let { available = [], title, body, tab, section, historicalFoundations = [] }: Props = $props();
 
   let lensOn = $state(false);
   // Collapse state: panel ships expanded by default on desktop (room
@@ -273,6 +281,23 @@
             {/each}
           </ul>
         {/if}
+        {#if historicalFoundations.length > 0}
+          {#if hasLensStory || hasLayers}
+            <div class="lens-divider" aria-hidden="true"></div>
+          {/if}
+          <div class="foundations">
+            <div class="foundations-eyebrow">FOUNDATIONS</div>
+            <ul class="foundations-list">
+              {#each historicalFoundations as ref (ref.section)}
+                <li>
+                  <a class="foundations-link" href="{base}/science/{ref.tab}/{ref.section}">
+                    {ref.label} →
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
       </div>
     {/if}
   </aside>
@@ -384,6 +409,35 @@
     height: 1px;
     background: rgba(255, 200, 80, 0.18);
     margin: 10px 0 8px;
+  }
+  .foundations {
+    margin-top: 4px;
+  }
+  .foundations-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255, 200, 80, 0.65);
+    margin-bottom: 6px;
+  }
+  .foundations-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+  .foundations-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 220, 150, 0.85);
+    text-decoration: none;
+  }
+  .foundations-link:hover,
+  .foundations-link:focus-visible {
+    color: rgba(255, 200, 80, 1);
+    outline: none;
   }
 
   /* Two-column layer grid when the wider top-center panel has room.

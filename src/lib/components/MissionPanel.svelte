@@ -100,6 +100,10 @@
       list.push({ tab: 'propulsion', section: 'engine-clustering' });
       list.push({ tab: 'propulsion', section: 'fuels-and-oxidizers' });
       list.push({ tab: 'history', section: 'tsiolkovsky-equation-1903' });
+      // Goddard's 1926 first liquid-fueled rocket — the engineering
+      // companion to Tsiolkovsky's 1903 equation, paired in every
+      // MissionPanel that surfaces a launch vehicle. (#303 close-out.)
+      list.push({ tab: 'history', section: 'goddard-liquid-rocket-1926' });
     }
     if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
       list.push({ tab: 'mission-phases', section: 'tcm' });

@@ -512,6 +512,10 @@
         {
           id: 'triton',
           name: 'Triton',
+          // USGS Voyager 2 global color mosaic (1989 flyby), 600m/px
+          // upstream, downsampled to 1024×512 — see scripts/fetch-
+          // satellite-textures.mjs. Fallback retained for pre-load.
+          texture: '2k_triton.jpg',
           fallbackColor: 0xd4b8a0,
           sizeUnits: 1.5,
           orbitUnits: 22,
@@ -3843,6 +3847,10 @@
     'magnetosphere',
     'sub-solar',
     'planet-stats',
+  ]}
+  historicalFoundations={[
+    { tab: 'history', section: 'keplers-laws-1609', label: "Kepler's three laws, 1609" },
+    { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
   ]}
 />
 

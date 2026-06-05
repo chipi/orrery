@@ -136,7 +136,7 @@
       class="menu-toggle"
       aria-label="Open navigation menu"
       aria-expanded={mobileMenuOpen}
-      aria-controls="mobile-nav-drawer"
+      aria-controls={mobileMenuOpen ? 'mobile-nav-drawer' : undefined}
       onclick={toggleMobileMenu}
     >
       <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
@@ -157,7 +157,7 @@
       class:playing={audio.playing}
       aria-label="Toggle audio episodes"
       aria-pressed={audio.open}
-      aria-controls="audio-overlay"
+      aria-controls={audio.open ? 'audio-overlay' : undefined}
       title="Audio episodes"
       onclick={() => audio.toggle()}
     >

@@ -904,6 +904,9 @@
       selectPlanet(id);
     } else if (smallBodyById.has(id)) {
       selectSmallBody(id);
+    } else if (id.includes(':')) {
+      const [parent, sat] = id.split(':', 2);
+      if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
     }
     // Unknown id → no-op; do not crash.
   });

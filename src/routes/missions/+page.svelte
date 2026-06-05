@@ -257,7 +257,7 @@
     type="button"
     class="filters-toggle"
     aria-expanded={filtersExpanded}
-    aria-controls="missions-filters"
+    aria-controls={filtersExpanded ? 'missions-filters' : undefined}
     onclick={() => (filtersExpanded = !filtersExpanded)}
   >
     <span class="filters-eyebrow">FILTERS</span>

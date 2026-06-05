@@ -93,7 +93,10 @@ test.describe('pale-blue-dot guided stages (PRD-016 §S11 pilot)', () => {
   test('cue banner appears at 4s with the scene-setter text', async ({ page }) => {
     await startTour(page);
     await setPosition(page, 4);
-    const cue = page.locator(`${OVERLAY} .cue-banner`);
+    // .cue-banner lives in the global .tour-banners stack (rendered
+    // outside #audio-overlay so it stays visible when the overlay
+    // collapses to compact mode).
+    const cue = page.locator('.tour-banners .cue-banner');
     await expect(cue).toBeVisible({ timeout: 2000 });
     await expect(cue).toContainText(/Voyager 1 turned around/i);
   });
@@ -118,4 +121,67 @@ test.describe('pale-blue-dot guided stages (PRD-016 §S11 pilot)', () => {
       /audio-stage-flash/,
     );
   });
+});
+
+/**
+ * Cross-route anchor presence (c26f0d492 full-corpus stage authoring).
+ *
+ * The pale-blue-dot block above covers the landing page only. The
+ * audio-tour.test.ts unit test enforces source-file presence of every
+ * non-cue selector, but it can't catch a runtime regression where an
+ * anchor never hydrates (e.g. wrapped in an {#if} that defaults closed,
+ * or thrown by an SSR error). One presence check per critical-path
+ * route gives the runtime guarantee at near-zero cost.
+ */
+test.describe('cross-route tour anchors hydrate on first paint (c26f0d492)', () => {
+  // Filter anchors (`missions-filters`, `fleet-filters`) sit inside the
+  // `{#if filtersExpanded}` block — they're real tour targets but won't
+  // be in the DOM on first paint. The tour scroll/flash on those is
+  // currently best-effort: a silent no-op if filters haven't been
+  // expanded. Tracked separately from this presence check; included in
+  // unit-test source-string sweep at audio-tour.test.ts:216-259.
+  const ROUTE_ANCHORS: ReadonlyArray<{ route: string; anchors: readonly string[] }> = [
+    {
+      route: '/missions',
+      anchors: [
+        'missions-grid',
+        'missions-select-apollo11',
+        'missions-select-curiosity',
+        'missions-select-voyager-2',
+      ],
+    },
+    {
+      route: '/fleet',
+      anchors: ['fleet-grid', 'fleet-select-saturn-v', 'fleet-select-iss', 'fleet-select-hubble'],
+    },
+    {
+      route: '/iss',
+      anchors: [
+        'iss-module-list',
+        'iss-select-zarya',
+        'iss-select-destiny',
+        'iss-select-kibo',
+        'iss-select-columbus',
+      ],
+    },
+    {
+      route: '/tiangong',
+      anchors: [
+        'tiangong-module-list',
+        'tiangong-select-tianhe',
+        'tiangong-select-wentian',
+        'tiangong-select-mengtian',
+      ],
+    },
+  ];
+
+  for (const { route, anchors } of ROUTE_ANCHORS) {
+    test(`${route} renders every staged anchor`, async ({ page }) => {
+      await page.goto(route, { waitUntil: 'networkidle' });
+      for (const name of anchors) {
+        const count = await page.locator(`[data-audio-stage="${name}"]`).count();
+        expect(count, `${route} should expose data-audio-stage="${name}"`).toBeGreaterThan(0);
+      }
+    });
+  }
 });

@@ -27,5 +27,8 @@
       "u": "https://voyager.jpl.nasa.gov/mission/status/",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "voyager-1"
   ]
 }

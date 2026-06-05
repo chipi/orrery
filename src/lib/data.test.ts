@@ -85,11 +85,14 @@ beforeEach(() => {
 });
 
 describe('getMissionIndex', () => {
-  it('returns 42 missions', async () => {
+  it('returns 48 missions', async () => {
     // v0.7 #107 Step 6 — index gained beresheet, change3, luna16,
     // luna21, schiaparelli (pre-existing JSONs registered).
+    // #306 A.2 — index gained 6 missing iconic outer-system missions
+    // (voyager-1, pioneer-10, pioneer-11, cassini, juno, messenger)
+    // bringing the total from 42 → 48.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(42);
+    expect(missions).toHaveLength(48);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -97,7 +100,18 @@ describe('getMissionIndex', () => {
     for (const m of missions) {
       expect(m.id).toBeTruthy();
       expect(m.agency).toBeTruthy();
-      expect(['MARS', 'MOON', 'JUPITER', 'NEPTUNE', 'PLUTO', 'CERES']).toContain(m.dest);
+      expect([
+        'MARS',
+        'MOON',
+        'MERCURY',
+        'VENUS',
+        'JUPITER',
+        'SATURN',
+        'URANUS',
+        'NEPTUNE',
+        'PLUTO',
+        'CERES',
+      ]).toContain(m.dest);
       expect(['ACTIVE', 'FLOWN', 'PLANNED']).toContain(m.status);
       expect(['gov', 'private']).toContain(m.sector);
       expect(m.color).toMatch(/^#[0-9A-Fa-f]{6}$/);
@@ -132,11 +146,13 @@ describe('filterMissions', () => {
     }
   });
 
-  it('outer-system dest filters return one mission each (ADR-028 3.0a-5)', async () => {
-    for (const dest of ['JUPITER', 'NEPTUNE', 'PLUTO', 'CERES'] as const) {
+  it('outer-system dest filters return at least one mission each (ADR-028 3.0a-5)', async () => {
+    // #306 A.2 — JUPITER and SATURN now host multiple missions
+    // (Voyager 1/2, Pioneers 10/11, Cassini, Juno, MESSENGER).
+    for (const dest of ['JUPITER', 'SATURN', 'NEPTUNE', 'PLUTO', 'CERES'] as const) {
       const rows = await filterMissions({ dest });
-      expect(rows).toHaveLength(1);
-      expect(rows[0].dest).toBe(dest);
+      expect(rows.length).toBeGreaterThanOrEqual(1);
+      for (const r of rows) expect(r.dest).toBe(dest);
     }
   });
 
@@ -304,13 +320,24 @@ describe('getSun', () => {
 });
 
 describe('getMissionsForLibrary', () => {
-  it('returns all 42 missions merged with their en-US overlays', async () => {
+  it('returns all 48 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(42);
+    expect(list).toHaveLength(48);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
-      expect(['MARS', 'MOON', 'JUPITER', 'NEPTUNE', 'PLUTO', 'CERES']).toContain(m.dest);
+      expect([
+        'MARS',
+        'MOON',
+        'MERCURY',
+        'VENUS',
+        'JUPITER',
+        'SATURN',
+        'URANUS',
+        'NEPTUNE',
+        'PLUTO',
+        'CERES',
+      ]).toContain(m.dest);
       expect(m.year).toBeGreaterThan(1900);
     }
     // …and a sample has the overlay fields merged in.
@@ -322,7 +349,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(42);
+    expect(list).toHaveLength(48);
   });
 
   it('count matches what filterMissions reports', async () => {

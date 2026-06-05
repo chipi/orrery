@@ -10,7 +10,12 @@ describe('mission-dest (3.0a-5)', () => {
   it('isMissionDestination recognises the extended enum', () => {
     expect(isMissionDestination('MARS')).toBe(true);
     expect(isMissionDestination('JUPITER')).toBe(true);
-    expect(isMissionDestination('VENUS')).toBe(false);
+    // #306 A.2 — VENUS / SATURN / MERCURY / URANUS added to the
+    // catalogue. VENUS still has no mission file but the enum accepts it.
+    expect(isMissionDestination('VENUS')).toBe(true);
+    expect(isMissionDestination('SATURN')).toBe(true);
+    expect(isMissionDestination('MERCURY')).toBe(true);
+    expect(isMissionDestination('NEPHEW')).toBe(false);
   });
 
   it('maps every catalogue dest to a data folder slug', () => {

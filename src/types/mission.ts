@@ -1,4 +1,14 @@
-export type Destination = 'MARS' | 'MOON' | 'JUPITER' | 'NEPTUNE' | 'PLUTO' | 'CERES';
+export type Destination =
+  | 'MARS'
+  | 'MOON'
+  | 'MERCURY'
+  | 'VENUS'
+  | 'JUPITER'
+  | 'SATURN'
+  | 'URANUS'
+  | 'NEPTUNE'
+  | 'PLUTO'
+  | 'CERES';
 export type MissionStatus = 'ACTIVE' | 'FLOWN' | 'PLANNED';
 export type Sector = 'gov' | 'private';
 export type DataQuality = 'good' | 'partial' | 'reconstructed';

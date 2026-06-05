@@ -7,6 +7,11 @@
   import { createStarField } from '$lib/three/star-field';
   import { createSceneRenderer } from '$lib/three/scene-renderer';
   import { disposeScene } from '$lib/three/dispose-object3d';
+  import {
+    buildIconicTrajectory,
+    type IconicTrajectoryData,
+    type IconicTrajectoryHandle,
+  } from '$lib/three/iconic-trajectory';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
@@ -728,6 +733,10 @@
     dwarfs: true,
     comets: true,
     interstellar: true,
+    // PATHS — iconic spacecraft trajectories (#306). Default OFF so the
+    // heliocentric view doesn't open visually busy; user opts in via
+    // the chip, or the Curator Tour toggles it on at the relevant beat.
+    paths: false,
   });
   // ESC closes the sizes overlay. Using a window listener here (gated
   // by sizesOpen) so the dialog is keyboard-dismissible without a
@@ -771,6 +780,17 @@
   // where camR / camT closures live, called from the main cleanup
   // block at unmount so we don't leak listeners on route change.
   let tourCameraTeardown: (() => void) | undefined;
+  // Iconic trajectory handles (#306 Slice A). Populated inside onMount
+  // after the scene mounts; exposed at component scope so the layers
+  // toggle effect can flip visibility without touching the scene
+  // directly.
+  let iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
+
+  // PATHS layer visibility binding.
+  $effect(() => {
+    const visible = layers.paths;
+    for (const h of iconicTrajectoryHandles) h.setVisible(visible);
+  });
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
   // When `/explore?mission=ID` is loaded, fetch the mission and
@@ -2452,6 +2472,34 @@
       kuiperBeltPick,
     ];
 
+    // ── Iconic spacecraft trajectories (#306 Slice A: Voyager 2) ────
+    // Fetched async; built once the JSON resolves; group hidden by
+    // default per layers.paths default. The $effect at component scope
+    // binds visibility to the PATHS chip toggle.
+    void (async () => {
+      try {
+        const res = await fetch(`${base}/data/trajectories/voyager-2.json`);
+        if (!res.ok) return;
+        const data = (await res.json()) as IconicTrajectoryData;
+        const handle = buildIconicTrajectory({
+          data,
+          auToPx,
+          width: container?.clientWidth ?? window.innerWidth,
+          height: container?.clientHeight ?? window.innerHeight,
+          visible: layers.paths,
+        });
+        scene.add(handle.group);
+        iconicTrajectoryHandles.push(handle);
+        // The Today marker is the click target — opens the matching
+        // mission record on /missions when picked. Add to pickables so
+        // the existing raycaster catches it.
+        pickables.push(handle.clickTarget);
+      } catch {
+        // Silent — the PATHS chip simply has nothing to render if the
+        // fetch fails. Not a fatal error for /explore.
+      }
+    })();
+
     const tryPick3d = (e: MouseEvent) => {
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -2464,7 +2512,8 @@
           typeof h.object.userData.planetId === 'string' ||
           typeof h.object.userData.smallBodyId === 'string' ||
           typeof h.object.userData.satelliteId === 'string' ||
-          typeof h.object.userData.beltId === 'string',
+          typeof h.object.userData.beltId === 'string' ||
+          h.object.userData.kind === 'iconic-trajectory-today',
       );
       if (hit) {
         const planetId = hit.object.userData.planetId as string | undefined;
@@ -2472,11 +2521,18 @@
         const satelliteId = hit.object.userData.satelliteId as string | undefined;
         const parentPlanetId = hit.object.userData.parentPlanetId as string | undefined;
         const beltId = hit.object.userData.beltId as string | undefined;
+        const trajectoryMissionId = hit.object.userData.missionId as string | undefined;
         if (planetId === '__sun__') selectSun();
         else if (planetId) selectPlanet(planetId);
         else if (smallBodyId) selectSmallBody(smallBodyId);
         else if (satelliteId && parentPlanetId) selectSatellite(parentPlanetId, satelliteId);
         else if (beltId) selectBelt(beltId);
+        else if (hit.object.userData.kind === 'iconic-trajectory-today' && trajectoryMissionId) {
+          // Iconic trajectory's Today marker — deep-link to the mission
+          // record on /missions. Preserves the standard mission-panel
+          // open path rather than reimplementing it on /explore.
+          void goto(`${base}/missions?id=${trajectoryMissionId}`);
+        }
         return;
       }
       // Second: galaxy sprites (only pickable when the layer is on,
@@ -3319,6 +3375,12 @@
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
       resize2d();
+      // Iconic trajectories use Line2 with screen-pixel-aware
+      // LineMaterial — push the new resolution so the stroke width
+      // stays crisp after a viewport change.
+      for (const h of iconicTrajectoryHandles) {
+        h.onResize(container.clientWidth, container.clientHeight);
+      }
     };
     window.addEventListener('resize', onResize);
 
@@ -3726,6 +3788,8 @@
   onDestroy(() => {
     cleanup?.();
     tourCameraTeardown?.();
+    for (const h of iconicTrajectoryHandles) h.dispose();
+    iconicTrajectoryHandles = [];
   });
 
   function toggleView() {
@@ -3896,6 +3960,18 @@
         title={m.explore_layer_tip_interstellar()}
       >
         {m.ui_layer_interstellar_short()}
+      </button>
+      <button
+        type="button"
+        class="chip"
+        class:active={layers.paths}
+        aria-pressed={layers.paths}
+        onclick={() => (layers.paths = !layers.paths)}
+        data-audio-stage="explore-layer-paths"
+        data-testid="layer-paths"
+        title={m.explore_layer_tip_paths()}
+      >
+        {m.ui_layer_paths()}
       </button>
     </div>
   </div>

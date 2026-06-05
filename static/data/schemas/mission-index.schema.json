@@ -7,15 +7,60 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["id", "agency", "dest", "status", "year", "sector", "color"],
+    "required": [
+      "id",
+      "agency",
+      "dest",
+      "status",
+      "year",
+      "sector",
+      "color"
+    ],
     "properties": {
-      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-      "agency": { "type": "string", "minLength": 1 },
-      "dest": { "enum": ["MARS", "MOON", "JUPITER", "NEPTUNE", "PLUTO", "CERES"] },
-      "status": { "enum": ["ACTIVE", "FLOWN", "PLANNED"] },
-      "year": { "type": "integer", "minimum": 1957, "maximum": 2100 },
-      "sector": { "enum": ["gov", "private"] },
-      "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "agency": {
+        "type": "string",
+        "minLength": 1
+      },
+      "dest": {
+        "enum": [
+          "MARS",
+          "MOON",
+          "JUPITER",
+          "NEPTUNE",
+          "PLUTO",
+          "CERES",
+          "SATURN",
+          "MERCURY",
+          "VENUS",
+          "URANUS"
+        ]
+      },
+      "status": {
+        "enum": [
+          "ACTIVE",
+          "FLOWN",
+          "PLANNED"
+        ]
+      },
+      "year": {
+        "type": "integer",
+        "minimum": 1957,
+        "maximum": 2100
+      },
+      "sector": {
+        "enum": [
+          "gov",
+          "private"
+        ]
+      },
+      "color": {
+        "type": "string",
+        "pattern": "^#[0-9A-Fa-f]{6}$"
+      }
     }
   }
 }

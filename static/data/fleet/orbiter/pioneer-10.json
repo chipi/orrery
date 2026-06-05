@@ -27,5 +27,8 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "pioneer-10"
   ]
 }

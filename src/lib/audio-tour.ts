@@ -190,6 +190,28 @@ export const EPISODE_STAGES: Record<string, AudioStage[]> = {
     // SSML referenced a planned-but-never-shipped speed control). Cue
     // intentionally omitted; SSML edit + audio re-render is the proper
     // fix and lives outside this slice.
+    // Voyager 2 PATHS-layer demo (#306 Slice A). Lands during the
+    // Neptune beat (~38 s in VTT, "Neptune takes one hundred sixty-five
+    // [years]"); shows that the spacecraft we sent past every outer
+    // planet is still drawing an arc through them — and into
+    // interstellar space.
+    { at_sec: 76, action: 'flash', target: '[data-audio-stage="explore-layer-paths"]' },
+    { at_sec: 78, action: 'click', target: '[data-audio-stage="explore-layer-paths"]' },
+    {
+      at_sec: 80,
+      action: 'cue',
+      target:
+        'And the spacecraft that travelled every outer planet — Voyager 2, now in interstellar space.',
+      duration_ms: 6000,
+    },
+    {
+      at_sec: 90,
+      action: 'zoom',
+      target: '[data-audio-stage="explore-scene"]',
+      duration_ms: 2000,
+      params: { factor: 1.55 },
+      note: "Zoom out so the full Voyager 2 trajectory reads against Neptune's orbit.",
+    },
     // VTT § 00:01:35.8 — "Try the Science Lens toggle at the top right."
     { at_sec: 95, action: 'flash', target: '[data-audio-stage="science-lens-toggle"]' },
     { at_sec: 97, action: 'click', target: '[data-audio-stage="science-lens-toggle"]' },

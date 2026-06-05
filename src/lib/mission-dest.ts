@@ -10,7 +10,11 @@ import type { DestinationId } from '$lib/lambert-grid.constants';
 export const MISSION_CATALOG_DESTS: readonly Destination[] = [
   'MARS',
   'MOON',
+  'MERCURY',
+  'VENUS',
   'JUPITER',
+  'SATURN',
+  'URANUS',
   'NEPTUNE',
   'PLUTO',
   'CERES',
@@ -35,8 +39,16 @@ export function missionDestToHeliocentricDestinationId(dest: Destination): Desti
       return 'mars';
     case 'MOON':
       return null;
+    case 'MERCURY':
+      return 'mercury';
+    case 'VENUS':
+      return 'venus';
     case 'JUPITER':
       return 'jupiter';
+    case 'SATURN':
+      return 'saturn';
+    case 'URANUS':
+      return 'uranus';
     case 'NEPTUNE':
       return 'neptune';
     case 'PLUTO':

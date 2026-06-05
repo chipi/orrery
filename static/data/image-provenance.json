@@ -69535,6 +69535,26 @@
       "fetched_at": "2026-06-03T10:17:13.908Z"
     },
     {
+      "id": "triton-usgs-clrmosaic-1024",
+      "path": "/textures/2k_triton.jpg",
+      "source_type": "direct-other",
+      "title": "Triton Voyager 2 Global Color Mosaic 600m v1 (1024px sample)",
+      "author": "USGS Astrogeology Science Center",
+      "agency": "USGS / NASA Voyager 2 mission",
+      "source_url": "https://astrogeology.usgs.gov/search/map/triton_voyager_2_global_color_mosaic_600m",
+      "image_url": "https://astrogeology.usgs.gov/ckan/dataset/445b4c39-e87a-4e4d-88a8-e48d8e755c5c/resource/de0ba9f1-303e-4e5f-a99a-3201fba9a764/download/triton_voyager2_clrmosaic_1024.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "USGS Astrogeology mosaic of Voyager 2 imagery (1989 Neptune-system flyby). Both the source spacecraft data (NASA) and the USGS mosaic processing are works of the US federal government, public domain per 17 USC 105.",
+      "modifications": [
+        "downloaded-from-publisher"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "Triton_Voyager2_ClrMosaic_GlobalFill_600m",
+      "fetched_at": "2026-06-05T11:25:00.000Z"
+    },
+    {
       "id": "45fda3f3e85e6893",
       "path": "/textures/2k_charon.jpg",
       "source_type": "direct-other",

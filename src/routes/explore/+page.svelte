@@ -3649,19 +3649,30 @@
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
 
-  <!-- PRD-023 Slice E.2 — Earth-comparison ghost. Always-on at
-       planet focus; hidden at heliocentric framing and on Earth
-       itself (you don't compare Earth to Earth). Bottom-right
-       corner so it doesn't collide with the HUD cluster or panel. -->
-  {#if focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
-    <div class="earth-compare" aria-hidden="true">
-      <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
-      <div class="earth-compare-label">
+  <!-- PRD-023 Slice E.2 — Earth-comparison ghost, doubling as the
+       REFERENCES launcher (2026-06-06 user direction: move the
+       REFERENCES chip from the top HUD to the Earth-for-scale slot;
+       click → open the planet-scales overlay). Always visible at the
+       bottom-left so it's a stable affordance; the ratio line only
+       shows when focused on a non-Earth planet. -->
+  <button
+    type="button"
+    class="earth-compare"
+    aria-label={m.explore_sizes_toggle()}
+    onclick={() => (sizesOpen = !sizesOpen)}
+    data-testid="sizes-toggle"
+  >
+    <img src="{base}/textures/2k_earth_daymap.1x1.jpg" alt="" loading="lazy" decoding="async" />
+    <span class="earth-compare-label">
+      {#if focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
         EARTH FOR SCALE<br />
         <span class="ratio">{focusedStats.diameterRatioEarth.toFixed(2)}× diameter</span>
-      </div>
-    </div>
-  {/if}
+      {:else}
+        {m.explore_sizes_toggle()}<br />
+        <span class="ratio">PLANET SCALES</span>
+      {/if}
+    </span>
+  </button>
 
   <!-- PRD-023 Slice E.4 — Tactical-scan overlay. Surface gravity,
        atmospheric pressure, rotation period. Lens-gated by the
@@ -3721,16 +3732,6 @@
         data-testid="explore-view-toggle"
       >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-      </button>
-      <button
-        class="toggle sizes-toggle"
-        type="button"
-        onclick={() => (sizesOpen = !sizesOpen)}
-        aria-pressed={sizesOpen}
-        aria-label={m.explore_sizes_toggle()}
-        data-testid="sizes-toggle"
-      >
-        {m.explore_sizes_toggle()}
       </button>
       {#if selectedId || selectedSmallBodyId}
         <button
@@ -3984,7 +3985,19 @@
     border: 1px solid rgba(75, 156, 211, 0.25);
     border-radius: 6px;
     backdrop-filter: blur(4px);
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
+    color: inherit;
+    text-align: left;
+    transition:
+      border-color 120ms,
+      background 120ms;
+  }
+  .earth-compare:hover,
+  .earth-compare:focus-visible {
+    border-color: rgba(75, 156, 211, 0.7);
+    background: rgba(12, 16, 32, 0.78);
+    outline: none;
   }
   .earth-compare img {
     width: 32px;
@@ -4077,6 +4090,12 @@
     z-index: 35;
     display: flex;
     flex-direction: column;
+    /* align-items: stretch so the chip column inherits the top-row's
+       computed width — chips visually share the same gutter as the
+       2D + RESET-VIEW toggles instead of being a narrower 110px rail
+       (2026-06-06 user direction: "resize those 4 filter chips to fit
+       new width of remaining 2 buttons on top"). */
+    align-items: stretch;
     gap: 8px;
     pointer-events: none; /* children re-enable */
   }
@@ -4089,8 +4108,9 @@
   .ctrl-row.chips {
     /* Layer chips stack vertically so their on/off state reads as a
        compact left-edge column rather than a wide horizontal strip.
-       align-items: stretch so all chips on the page render at the
-       same width regardless of label length. */
+       Individual chips set width: 100% (below) so they stretch to the
+       chip-row's width, which itself stretches to match the top toggle
+       row via .hud-controls align-items: stretch. */
     flex-direction: column;
     align-items: stretch;
   }
@@ -4124,9 +4144,11 @@
      the 44 px primary toggles above. */
   .chip {
     min-height: 32px;
-    /* Fixed min-width keeps all four chips aligned to a single column
-       width regardless of label length, so the stack reads as a tidy
-       on/off rail rather than a ragged list. */
+    /* width: 100% so each chip stretches to the chip-row's width,
+       which itself stretches to the top toggle row's width via
+       .hud-controls align-items: stretch. min-width kept at 110px as
+       a safety floor when the top row only has the 2D toggle. */
+    width: 100%;
     min-width: 110px;
     padding: 0 10px;
     background: rgba(8, 10, 22, 0.65);

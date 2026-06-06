@@ -25,6 +25,7 @@
   import SizesCanvas from '$lib/components/SizesCanvas.svelte';
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
+  import BeltPanel from '$lib/components/BeltPanel.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import {
@@ -712,6 +713,12 @@
   let selectedSatelliteKey: string | null = $state(null);
   let satellitePanelOpen = $state(false);
 
+  // Belt selection (v0.7.x — user feedback 2026-06-06). One of
+  // 'asteroid' | 'kuiper'; opens the BeltPanel via the same pickAid
+  // raycast path the planets / small bodies use.
+  let selectedBeltId: string | null = $state(null);
+  let beltPanelOpen = $state(false);
+
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
   // the scene). All default to true so first paint matches today.
@@ -858,6 +865,7 @@
     sunPanelOpen = false;
     smallBodyPanelOpen = false;
     satellitePanelOpen = false;
+    beltPanelOpen = false;
     flyToBodyFn?.(id);
   }
 
@@ -866,6 +874,7 @@
     panelOpen = false;
     smallBodyPanelOpen = false;
     satellitePanelOpen = false;
+    beltPanelOpen = false;
     flyToBodyFn?.(null);
   }
 
@@ -875,6 +884,7 @@
     panelOpen = false;
     sunPanelOpen = false;
     satellitePanelOpen = false;
+    beltPanelOpen = false;
   }
 
   // Natural-satellite selection (#304 Slice 1). Compound key
@@ -888,6 +898,17 @@
     panelOpen = false;
     sunPanelOpen = false;
     smallBodyPanelOpen = false;
+    beltPanelOpen = false;
+  }
+
+  // Belt selection (v0.7.x). Same panel-mutex pattern.
+  function selectBelt(id: string) {
+    selectedBeltId = id;
+    beltPanelOpen = true;
+    panelOpen = false;
+    sunPanelOpen = false;
+    smallBodyPanelOpen = false;
+    satellitePanelOpen = false;
   }
 
   // ?id=<planetId|sun|smallBodyId> deep-link → opens the matching panel
@@ -904,6 +925,10 @@
       selectPlanet(id);
     } else if (smallBodyById.has(id)) {
       selectSmallBody(id);
+    } else if (id === 'asteroid-belt' || id === 'belt:asteroid') {
+      selectBelt('asteroid');
+    } else if (id === 'kuiper-belt' || id === 'belt:kuiper') {
+      selectBelt('kuiper');
     } else if (id.includes(':')) {
       const [parent, sat] = id.split(':', 2);
       if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
@@ -1053,29 +1078,87 @@
       createStarField({ count: 3000, radius: 3000, jitter: 1000, size: 1.2, opacity: 0.7 }),
     );
 
-    const BELT_COUNT = 1800;
-    const bp = new Float32Array(BELT_COUNT * 3);
-    for (let i = 0; i < BELT_COUNT; i++) {
-      const a = Math.random() * Math.PI * 2;
-      const r = 195 + Math.random() * 42;
-      bp[i * 3] = Math.cos(a) * r;
-      bp[i * 3 + 1] = (Math.random() - 0.5) * 8;
-      bp[i * 3 + 2] = Math.sin(a) * r;
-    }
-    const beltGeo = new THREE.BufferGeometry();
-    beltGeo.setAttribute('position', new THREE.BufferAttribute(bp, 3));
-    scene.add(
-      new THREE.Points(
-        beltGeo,
-        new THREE.PointsMaterial({
-          color: 0xb8a470,
-          size: 1.0,
-          sizeAttenuation: true,
-          transparent: true,
-          opacity: 0.5,
-        }),
-      ),
+    // Belt geometry helper — fills a Float32 position buffer with `count`
+    // particles uniformly distributed across an annulus between `inner`
+    // and `outer` scene radii with a small vertical jitter `slab`.
+    // Reused for the asteroid belt + Kuiper Belt so both share the same
+    // sampling shape (different radii + colors + densities).
+    const sampleBelt = (count: number, inner: number, outer: number, slab: number) => {
+      const arr = new Float32Array(count * 3);
+      for (let i = 0; i < count; i++) {
+        const a = Math.random() * Math.PI * 2;
+        const r = inner + Math.random() * (outer - inner);
+        arr[i * 3] = Math.cos(a) * r;
+        arr[i * 3 + 1] = (Math.random() - 0.5) * slab;
+        arr[i * 3 + 2] = Math.sin(a) * r;
+      }
+      return arr;
+    };
+
+    // Asteroid Belt — 2.2–3.2 AU compressed to scene 195–237 (between
+    // Mars at 155 and Jupiter at 248). Warm sandy palette.
+    const asteroidBeltGeo = new THREE.BufferGeometry();
+    asteroidBeltGeo.setAttribute(
+      'position',
+      new THREE.BufferAttribute(sampleBelt(1800, 195, 237, 8), 3),
     );
+    const asteroidBelt = new THREE.Points(
+      asteroidBeltGeo,
+      new THREE.PointsMaterial({
+        color: 0xb8a470,
+        size: 1.0,
+        sizeAttenuation: true,
+        transparent: true,
+        opacity: 0.5,
+      }),
+    );
+    scene.add(asteroidBelt);
+
+    // Kuiper Belt — real bounds 30–50 AU. In the compressed outer-system
+    // scale (Neptune at 430, Pluto at 580) we map that to scene 460–620,
+    // a wider, cooler band beyond Neptune (2026-06-06 user direction:
+    // "is there another comet belt further out? I think there is").
+    // Cooler bluish palette to read as icy rather than rocky; sparser
+    // density (smaller particle count over a much larger area).
+    const kuiperBeltGeo = new THREE.BufferGeometry();
+    kuiperBeltGeo.setAttribute(
+      'position',
+      new THREE.BufferAttribute(sampleBelt(2200, 460, 620, 14), 3),
+    );
+    const kuiperBelt = new THREE.Points(
+      kuiperBeltGeo,
+      new THREE.PointsMaterial({
+        color: 0x9fc6e3,
+        size: 1.1,
+        sizeAttenuation: true,
+        transparent: true,
+        opacity: 0.4,
+      }),
+    );
+    scene.add(kuiperBelt);
+
+    // Invisible pick-aid rings — wide flat tori the raycaster can hit
+    // for the otherwise-unhittable particle clouds. visible:true with
+    // opacity:0 keeps them in the raycaster path but invisible to the
+    // user (same trick as the planet pickAids elsewhere). Tilted to
+    // the ecliptic so they stay coplanar with the particles.
+    const buildBeltPickAid = (id: string, inner: number, outer: number) => {
+      // TorusGeometry expects (radius, tube, radialSegments, tubularSegments).
+      // Use a flat disk-like torus: radius = mid, tube = (outer-inner)/2,
+      // tubularSegments high so the ring is smooth at heliocentric framing.
+      const radius = (inner + outer) / 2;
+      const tube = (outer - inner) / 2;
+      const geo = new THREE.TorusGeometry(radius, tube, 2, 96);
+      const mat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.rotation.x = Math.PI / 2; // align to ecliptic plane
+      mesh.userData = { beltId: id };
+      return mesh;
+    };
+    const asteroidBeltPick = buildBeltPickAid('asteroid', 195, 237);
+    const kuiperBeltPick = buildBeltPickAid('kuiper', 460, 620);
+    scene.add(asteroidBeltPick);
+    scene.add(kuiperBeltPick);
 
     // Planet orbit rings — refs kept so the LAYERS panel can toggle
     // the entire planets layer (rings + bodies) in lockstep.
@@ -2361,6 +2444,12 @@
       ...smallBodyPickAids,
       ...satelliteMeshes,
       ...satellitePickAids,
+      // Belt pick-aids appended LAST so a planet/body always wins the
+      // raycast tie-break — the asteroid belt overlaps the inner orbit
+      // ribbon for Vesta + Ceres, and the Kuiper Belt overlaps Pluto's
+      // orbit. Belts are the fallback target, not the primary.
+      asteroidBeltPick,
+      kuiperBeltPick,
     ];
 
     const tryPick3d = (e: MouseEvent) => {
@@ -2374,17 +2463,20 @@
         (h) =>
           typeof h.object.userData.planetId === 'string' ||
           typeof h.object.userData.smallBodyId === 'string' ||
-          typeof h.object.userData.satelliteId === 'string',
+          typeof h.object.userData.satelliteId === 'string' ||
+          typeof h.object.userData.beltId === 'string',
       );
       if (hit) {
         const planetId = hit.object.userData.planetId as string | undefined;
         const smallBodyId = hit.object.userData.smallBodyId as string | undefined;
         const satelliteId = hit.object.userData.satelliteId as string | undefined;
         const parentPlanetId = hit.object.userData.parentPlanetId as string | undefined;
+        const beltId = hit.object.userData.beltId as string | undefined;
         if (planetId === '__sun__') selectSun();
         else if (planetId) selectPlanet(planetId);
         else if (smallBodyId) selectSmallBody(smallBodyId);
         else if (satelliteId && parentPlanetId) selectSatellite(parentPlanetId, satelliteId);
+        else if (beltId) selectBelt(beltId);
         return;
       }
       // Second: galaxy sprites (only pickable when the layer is on,
@@ -3886,6 +3978,8 @@
   open={satellitePanelOpen}
   onClose={() => (satellitePanelOpen = false)}
 />
+
+<BeltPanel beltId={selectedBeltId} open={beltPanelOpen} onClose={() => (beltPanelOpen = false)} />
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
      triggers used by the audio executor's `click` action so the tour

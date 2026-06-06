@@ -923,6 +923,44 @@ export async function getSatelliteI18n(
 }
 
 /**
+ * Population belt (v0.7.x — asteroid belt + Kuiper Belt). Surfaces via
+ * the /explore BeltPanel. Belts are regions, not bodies — entries
+ * carry inner/outer AU bounds, population estimates, total mass, the
+ * largest known members, and a tiered library. Loaded once on first
+ * panel-open and cached via the data layer's standard `get()` cache.
+ */
+export type BeltLibraryLink = {
+  id: string;
+  label: string;
+  url: string;
+  tier: 'intro' | 'core' | 'extra';
+  kind: 'wikipedia' | 'nasa' | 'mission' | 'article';
+};
+export type BeltEntry = {
+  id: string;
+  name: string;
+  kind: string;
+  location: string;
+  inner_au: number;
+  outer_au: number;
+  population_estimate: string;
+  total_mass_relative: string;
+  largest_members: string[];
+  description: string;
+  discovered: string;
+  mission_visits: string[];
+  library?: BeltLibraryLink[];
+};
+export async function getBelts(): Promise<BeltEntry[]> {
+  try {
+    const data = await get<{ belts: BeltEntry[] }>('belts.json');
+    return data.belts ?? [];
+  } catch {
+    return [];
+  }
+}
+
+/**
  * #PE path-B (rich multi-agency narrative gallery).
  *
  * A site-story is a hand-curated chapter-based photo set with

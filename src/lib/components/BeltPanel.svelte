@@ -7,13 +7,30 @@
    * it reads as a peer of the existing detail panels.
    *
    * Belts are regions, not bodies — the panel surfaces population
-   * estimates, mass ratios, location range in AU, the largest known
-   * members, mission flybys, and a tiered library of further reading.
+   * estimates, mass ratios, location range in AU, a gallery of the
+   * belt's largest catalogued members (re-using small-body imagery),
+   * mission flybys, and a tiered library. Members in the MEMBERS tab
+   * cross-link to the SmallBodyPanel for any name that matches an id
+   * in static/data/small-bodies.json (Ceres / Pluto / Eris / Haumea /
+   * Makemake all resolve today).
    */
   import Panel from './Panel.svelte';
-  import { getBelts, type BeltEntry } from '$lib/data';
+  import { page } from '$app/stores';
+  import { base } from '$app/paths';
+  import { goto } from '$app/navigation';
+  import { localeFromPage, DEFAULT_LOCALE } from '$lib/locale';
+  import {
+    getBelts,
+    getBeltGallery,
+    getBeltI18n,
+    type BeltEntry,
+    type BeltGallerySlot,
+    type BeltI18n,
+  } from '$lib/data';
 
-  type Tab = 'overview' | 'members' | 'missions' | 'library';
+  const loc = $derived(localeFromPage($page));
+
+  type Tab = 'overview' | 'gallery' | 'members' | 'missions' | 'library';
 
   type Props = {
     beltId: string | null;
@@ -35,16 +52,78 @@
 
   let tab: Tab = $state('overview');
   let lastKey = $state<string | null>(null);
-  let entry = $derived<BeltEntry | null>(
+  let gallery: BeltGallerySlot[] = $state([]);
+  let overlay: BeltI18n | null = $state(null);
+
+  let baseEntry = $derived<BeltEntry | null>(
     beltId ? (belts.find((b) => b.id === beltId) ?? null) : null,
   );
+  function mergeOverlay(base: BeltEntry, ov: BeltI18n | null): BeltEntry {
+    if (!ov) return base;
+    return {
+      ...base,
+      name: ov.name ?? base.name,
+      kind: ov.kind ?? base.kind,
+      location: ov.location ?? base.location,
+      population_estimate: ov.population_estimate ?? base.population_estimate,
+      total_mass_relative: ov.total_mass_relative ?? base.total_mass_relative,
+      largest_members: ov.largest_members ?? base.largest_members,
+      description: ov.description ?? base.description,
+      discovered: ov.discovered ?? base.discovered,
+      mission_visits: ov.mission_visits ?? base.mission_visits,
+      library: base.library?.map((l) => ({
+        ...l,
+        label: ov.library_labels?.[l.id] ?? l.label,
+      })),
+    };
+  }
+  let entry = $derived<BeltEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
 
   $effect(() => {
-    if (entry && entry.id !== lastKey) {
+    if (baseEntry && baseEntry.id !== lastKey) {
       tab = 'overview';
-      lastKey = entry.id;
+      lastKey = baseEntry.id;
+      gallery = [];
+      overlay = null;
+      const id = baseEntry.id;
+      void getBeltGallery(id).then((g) => {
+        if (baseEntry && baseEntry.id === id) gallery = g;
+      });
+      void getBeltI18n(loc, id).then((o) => {
+        if (baseEntry && baseEntry.id === id) overlay = o;
+      });
     }
   });
+
+  // Cross-link table — the largest_members strings begin with a body
+  // name then a dash. If the leading word matches a small-body id we
+  // ship today (Ceres / Pluto / Eris / Haumea / Makemake), make the
+  // list item clickable; it deep-links into /explore?id=<small-body>
+  // which the existing $effect resolves to a SmallBodyPanel open.
+  // Quaoar etc. that aren't in our small-bodies.json render as plain
+  // text — fall back, not error.
+  const SMALL_BODY_IDS: Record<string, string> = {
+    ceres: 'ceres',
+    pluto: 'pluto',
+    eris: 'eris',
+    haumea: 'haumea',
+    makemake: 'makemake',
+  };
+  function memberLink(member: string): string | null {
+    const firstWord = member
+      .split(/[\s—–-]/)[0]
+      ?.toLowerCase()
+      .trim();
+    if (!firstWord) return null;
+    const sbId = SMALL_BODY_IDS[firstWord];
+    if (!sbId) return null;
+    const qs = loc === DEFAULT_LOCALE ? '' : `&lang=${encodeURIComponent(loc)}`;
+    return `${base}/explore?id=${sbId}${qs}`;
+  }
+  function openMember(href: string, event: Event) {
+    event.preventDefault();
+    void goto(href);
+  }
 </script>
 
 <Panel {open} {onClose} title={entry?.name ?? ''}>
@@ -66,6 +145,12 @@
       </div>
     </div>
 
+    {#if gallery.length > 0}
+      <div class="panel-hero">
+        <img src={`${base}${gallery[0].src}`} alt="" fetchpriority="high" decoding="async" />
+      </div>
+    {/if}
+
     <div class="tabs" role="tablist">
       <button
         type="button"
@@ -75,6 +160,15 @@
         role="tab"
         aria-selected={tab === 'overview'}
         aria-controls="belt-tabpanel">OVERVIEW</button
+      >
+      <button
+        type="button"
+        id="belt-tab-gallery"
+        class:active={tab === 'gallery'}
+        onclick={() => (tab = 'gallery')}
+        role="tab"
+        aria-selected={tab === 'gallery'}
+        aria-controls="belt-tabpanel">GALLERY</button
       >
       <button
         type="button"
@@ -120,11 +214,39 @@
           <div class="cell-label">DISCOVERED</div>
           <div class="cell-value">{entry.discovered}</div>
         </div>
+      {:else if tab === 'gallery'}
+        {#if gallery.length > 0}
+          <ul class="gallery-grid">
+            {#each gallery as slot (slot.src)}
+              <li>
+                <img
+                  src={`${base}${slot.src}`}
+                  alt={slot.caption}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <p class="caption">{slot.caption}</p>
+              </li>
+            {/each}
+          </ul>
+        {:else}
+          <p class="editorial empty">Gallery is still being assembled.</p>
+        {/if}
       {:else if tab === 'members'}
         <p class="editorial">The largest catalogued members of the {entry.name}.</p>
         <ul class="member-list">
           {#each entry.largest_members as member (member)}
-            <li>{member}</li>
+            {@const href = memberLink(member)}
+            <li>
+              {#if href}
+                <a {href} onclick={(e) => openMember(href, e)} class="member-link">
+                  {member}
+                  <span class="member-cta" aria-hidden="true">→ open panel</span>
+                </a>
+              {:else}
+                {member}
+              {/if}
+            </li>
           {/each}
         </ul>
       {:else if tab === 'missions'}
@@ -199,6 +321,17 @@
     font-size: 13px;
     color: var(--color-text);
   }
+  .panel-hero {
+    margin: 0 0 14px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .panel-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   .tabs {
     display: flex;
     gap: 0;
@@ -251,6 +384,29 @@
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.4;
   }
+  .gallery-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .gallery-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .caption {
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 6px 0 0;
+  }
   .member-list {
     margin: 0;
     padding: 0;
@@ -266,6 +422,26 @@
   }
   .member-list li:last-child {
     border-bottom: none;
+  }
+  .member-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 120ms;
+  }
+  .member-link:hover,
+  .member-link:focus-visible {
+    color: rgba(78, 205, 196, 0.95);
+    outline: none;
+  }
+  .member-cta {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    color: rgba(78, 205, 196, 0.7);
+    white-space: nowrap;
   }
   .learn-list {
     margin: 0;

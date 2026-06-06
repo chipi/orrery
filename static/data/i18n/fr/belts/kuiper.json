@@ -1,0 +1,26 @@
+{
+  "name": "Ceinture de Kuiper",
+  "kind": "Trans-neptunienne — population glacée",
+  "location": "Au-delà de Neptune · 30–50 AU du Soleil",
+  "population_estimate": "Plus de 100 000 corps de plus de 100 km ; environ 10⁹–10¹⁰ objets de la taille d'une comète",
+  "total_mass_relative": "≈ 4–10 % de la Terre (200× la masse de la ceinture d'astéroïdes)",
+  "largest_members": [
+    "Pluto — planète naine, ≈ 2 377 km de diamètre, associée à Charon dans un système binaire",
+    "Eris — légèrement plus massive que Pluto, découverte en 2005 (sa découverte a déclenché la reclassification de Pluto)",
+    "Makemake — ≈ 1 430 km, objet classique de la ceinture de Kuiper",
+    "Haumea — ≈ 1 560 km sur son grand axe, rotation rapide avec un système d'anneaux",
+    "Quaoar — ≈ 1 110 km, possède une petite lune Weywot"
+  ],
+  "description": "Un vaste disque de corps glacés — glace d'eau, de méthane et d'ammoniac avec de la roche incorporée — qui orbite autour du Soleil au-delà de Neptune. La ceinture de Kuiper est le réservoir source des comètes à courte période comme Halley et Hartley 2 : les perturbations gravitationnelles de Neptune propulsent parfois des membres vers l'intérieur, où le chauffage solaire transforme les glaces en queues. Contrairement à la ceinture d'astéroïdes, la ceinture de Kuiper n'est pas dynamiquement appauvrie — sa masse est faible non pas parce que Jupiter l'a dispersée, mais parce que rien ne s'est jamais complètement accrété à ces distances. Au-delà de la ceinture de Kuiper classique, le disque dispersé et le nuage d'Oort étendent le réservoir froid jusqu'à des milliers d'AU.",
+  "discovered": "1992 — David Jewitt et Jane Luu détectent 1992 QB1 (maintenant 15760 Albion), le premier objet confirmé de la ceinture de Kuiper après Pluto + Charon. La ceinture elle-même a été prédite en 1951 par Gerard Kuiper comme le matériau résiduel du disque du système solaire primitif.",
+  "mission_visits": [
+    "New Horizons — NASA, 2015 (survol de Pluto + Charon) + 2019 (Arrokoth, premier gros plan d'un objet classique de la ceinture de Kuiper)",
+    "Voyager 1 + Voyager 2 — NASA, années 1980 (ont traversé le bord interne de la ceinture en route vers l'espace interstellaire ; aucune rencontre ciblée)"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Ceinture de Kuiper",
+    "kuiper-belt-nasa": "NASA Science — aperçu de la ceinture de Kuiper",
+    "kuiper-belt-newhorizons": "NASA New Horizons — survols de Pluto + Arrokoth",
+    "kuiper-belt-mpc": "Minor Planet Center — catalogue TNO"
+  }
+}

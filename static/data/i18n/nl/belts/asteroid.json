@@ -1,0 +1,27 @@
+{
+  "name": "Asteroïdengordel",
+  "kind": "Hoofdgordel — rotsachtige populatie",
+  "location": "Tussen Mars en Jupiter · 2,2–3,2 AU van de Zon",
+  "population_estimate": "1,1–1,9 miljoen objecten groter dan 1 km, honderden miljoenen groter dan 100 m",
+  "total_mass_relative": "≈ 4 % van de Maan (≈ 3 % van Pluto)",
+  "largest_members": [
+    "Ceres — dwergplaneet, ≈ 940 km diameter, bevat ongeveer een derde van de totale massa van de gordel",
+    "Vesta — op een na meest massief, waterstofarm rotsachtig gedifferentieerd lichaam",
+    "Pallas — ≈ 510 km, sterk hellende baan",
+    "Hygiea — ≈ 430 km, donker koolstofhoudend"
+  ],
+  "description": "Een ring van rotsachtige en metalen overblijfselen die nooit tot een planeet zijn samengevoegd — de zwaartekracht van Jupiter roerde het materiaal in de binnengordel te krachtig op om toe te laten dat accretie het won van fragmentatie. De meeste gordelobjecten zijn basaltische of koolstofhoudende chondrieten; de moederlichamen van meteorieten die op Aarde vallen zijn bijna allemaal hierheen te herleiden. De gordel is dynamisch gezien leeg — de gemiddelde afstand tussen leden is miljoenen kilometers, niet het dichte rotsenveld van de bioscoop.",
+  "discovered": "1801 — Giuseppe Piazzi ontdekt Ceres vanuit Palermo, oorspronkelijk geclassificeerd als een planeet; het besef dat Ceres er een van velen was, kwam in de daaropvolgende halve eeuw toen Pallas, Juno en Vesta volgden.",
+  "mission_visits": [
+    "Dawn — NASA, 2011 + 2015 (orbitale onderzoeken van Vesta en vervolgens Ceres)",
+    "Galileo — NASA, 1991 (scheervlucht langs Gaspra) + 1993 (ontdekking van Ida + Dactyl)",
+    "Hayabusa2 — JAXA, 2018 (monsterretour van Ryugu — nabij-Aarde-asteroïde maar moederlichaam in de hoofdgordel)",
+    "Lucy — NASA, 2023 (eerste ontmoeting in de hoofdgordel bij Dinkinesh)"
+  ],
+  "library_labels": {
+    "asteroid-belt-wiki": "Wikipedia — Asteroïdengordel",
+    "asteroid-belt-nasa": "NASA Science — overzicht Asteroïdengordel",
+    "asteroid-belt-dawn": "NASA Dawn — orbiter bij Vesta en Ceres",
+    "asteroid-belt-mpc": "Minor Planet Center — IAU-catalogus van alle bekende asteroïden"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Cinturão de Asteroides",
+  "kind": "Cinturão principal — população rochosa",
+  "location": "Entre Marte e Júpiter · 2,2–3,2 AU do Sol",
+  "population_estimate": "1,1–1,9 milhão de corpos maiores que 1 km, centenas de milhões maiores que 100 m",
+  "total_mass_relative": "≈ 4 % da Lua (≈ 3 % de Pluto)",
+  "largest_members": [
+    "Ceres — planeta anão, ≈ 940 km de diâmetro, contém cerca de um terço da massa total do cinturão",
+    "Vesta — segundo corpo mais massivo, corpo diferenciado rochoso pobre em hidrogênio",
+    "Pallas — ≈ 510 km, órbita altamente inclinada",
+    "Hygiea — ≈ 430 km, carbonáceo escuro"
+  ],
+  "description": "Um anel de remanescentes rochosos e metálicos que nunca se fundiram em um planeta — a gravidade de Júpiter agitou o material do cinturão interno com força excessiva para que a acreção vencesse a fragmentação. A maioria dos objetos do cinturão são condritos basálticos ou carbonáceos; os corpos-mãe dos meteoritos que caem na Terra são quase todos rastreáveis aqui. O cinturão é dinamicamente vazio — a separação média entre membros é de milhões de quilômetros, não o denso campo de rochas do cinema.",
+  "discovered": "1801 — Giuseppe Piazzi descobre Ceres em Palermo, originalmente classificado como planeta; o reconhecimento de que Ceres era um entre muitos veio ao longo do meio século seguinte conforme Pallas, Juno e Vesta foram descobertos.",
+  "mission_visits": [
+    "Dawn — NASA, 2011 + 2015 (levantamentos orbitais de Vesta e depois Ceres)",
+    "Galileo — NASA, 1991 (sobrevoo de Gaspra) + 1993 (descoberta de Ida + Dactyl)",
+    "Hayabusa2 — JAXA, 2018 (retorno de amostra de Ryugu — asteroide próximo à Terra mas corpo-mãe no cinturão principal)",
+    "Lucy — NASA, 2023 (primeiro encontro no cinturão principal em Dinkinesh)"
+  ],
+  "library_labels": {
+    "asteroid-belt-wiki": "Wikipedia — Cinturão de Asteroides",
+    "asteroid-belt-nasa": "NASA Science — visão geral do Cinturão de Asteroides",
+    "asteroid-belt-dawn": "NASA Dawn — orbitador em Vesta e Ceres",
+    "asteroid-belt-mpc": "Minor Planet Center — catálogo da IAU de todos os asteroides conhecidos"
+  }
+}

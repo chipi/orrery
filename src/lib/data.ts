@@ -961,6 +961,51 @@ export async function getBelts(): Promise<BeltEntry[]> {
 }
 
 /**
+ * Belt gallery — curated NASA imagery presented as portraits of the
+ * belt's largest catalogued members. Image paths reuse the existing
+ * /images/small-bodies tree (Ceres for the Asteroid Belt; Pluto +
+ * Eris + Haumea + Makemake for the Kuiper Belt) so the gallery
+ * doubles as a tour of the belt's giants without duplicating assets.
+ */
+export type BeltGallerySlot = { src: string; caption: string };
+export async function getBeltGallery(beltId: string): Promise<BeltGallerySlot[]> {
+  try {
+    const data = await get<{ galleries: Record<string, BeltGallerySlot[]> }>('belt-galleries.json');
+    return data.galleries?.[beltId] ?? [];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Per-locale belt overlay (v0.7.x — translation pipeline pattern
+ * mirrors satellites). Each locale ships a
+ * `static/data/i18n/<locale>/belts/<id>.json` file with translatable
+ * fields. Missing fields fall back to the English base. Empty
+ * overlay files are valid — the panel renders fully in English until
+ * the wave23 batch lands.
+ */
+export type BeltI18n = {
+  name?: string;
+  kind?: string;
+  location?: string;
+  population_estimate?: string;
+  total_mass_relative?: string;
+  largest_members?: string[];
+  description?: string;
+  discovered?: string;
+  mission_visits?: string[];
+  library_labels?: Record<string, string>;
+};
+export async function getBeltI18n(locale: string, beltId: string): Promise<BeltI18n | null> {
+  try {
+    return await get<BeltI18n>(`i18n/${locale}/belts/${beltId}.json`);
+  } catch {
+    return null;
+  }
+}
+
+/**
  * #PE path-B (rich multi-agency narrative gallery).
  *
  * A site-story is a hand-curated chapter-based photo set with

@@ -277,9 +277,13 @@
           </ul>
         {/if}
 
-        {#if entry.category === 'launcher'}
-          <LauncherFlightsWidget launcherId={entry.id} />
-        {/if}
+        <!-- Flights widget mounts for every fleet entry. The widget
+             self-hides when there are no matches in launches.json so
+             entries without manifest coverage (today: most spacecraft
+             outside the SpaceX / Arianespace / Long March / H3 set)
+             stay silent without UI noise. Cross-reference gap tracked
+             separately — see commit message. -->
+        <LauncherFlightsWidget launcherId={entry.id} />
 
         <p class="credit">{entry.credit}</p>
       {:else if tab === 'gallery'}

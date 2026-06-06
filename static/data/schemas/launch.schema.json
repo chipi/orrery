@@ -91,6 +91,12 @@
           "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }],
           "description": "Best-effort backlink to one of the 37 hand-curated catalogue missions in static/data/missions/index.json. Set by the orchestrator when the launch entry's name + mission_name normalises to contain a catalog id AND the year matches exactly. False-positives must NOT happen — heuristic is intentionally narrow (PRD-020 M17)."
         },
+        "orrery_spacecraft_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true,
+          "description": "Per-launch fleet-spacecraft cross-references (Crew Dragon, Cargo Dragon, Cygnus, Tianzhou, HTV-X, …). Populated by the build pipeline via resolveSpacecraftRefs — see src/lib/launches/resolve-spacecraft-refs.ts. Lets the LauncherFlightsWidget surface flights on spacecraft-side fleet entry panels in addition to the rocket-side launcher entries `orrery_launcher_ref` already links."
+        },
         "pad_name": { "type": "string" },
         "pad_location": { "type": "string" },
         "image_url": { "type": "string" },

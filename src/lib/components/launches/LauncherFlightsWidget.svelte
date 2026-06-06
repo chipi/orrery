@@ -33,12 +33,19 @@
         loadUpcoming(),
         loadHistoricDecade(decadeForYear(new Date().getUTCFullYear())),
       ]);
+      // Match either by launcher ref (rocket-side: Falcon 9, Ariane 6,
+      // …) OR by spacecraft ref (spacecraft-side: Crew Dragon, Cargo
+      // Dragon, Cygnus, HTV-X, Tianzhou). Spacecraft refs are populated
+      // by the build pipeline via resolveSpacecraftRefs.
+      const matches = (e: LaunchEntry): boolean =>
+        e.orrery_launcher_ref === launcherId ||
+        (e.orrery_spacecraft_refs ?? []).includes(launcherId);
       const upMatches = Object.values(upcoming.entries)
-        .filter((e) => e.orrery_launcher_ref === launcherId)
+        .filter(matches)
         .sort((a, b) => a.net.localeCompare(b.net));
       next = upMatches[0] ?? null;
       const histMatches = Object.values(currentDecade.entries)
-        .filter((e) => e.orrery_launcher_ref === launcherId)
+        .filter(matches)
         .sort((a, b) => b.net.localeCompare(a.net));
       recent = histMatches.slice(0, 5);
       loaded = true;

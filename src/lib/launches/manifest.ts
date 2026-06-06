@@ -39,6 +39,14 @@ export type LaunchEntry = {
   rocket_family: string;
   orrery_launcher_ref: string | null;
   orrery_mission_ref?: string | null;
+  /** Per-launch fleet-spacecraft cross-references, populated by the
+   *  build pipeline via `resolveSpacecraftRefs` (see
+   *  src/lib/launches/resolve-spacecraft-refs.ts). Lets the
+   *  LauncherFlightsWidget surface flights on spacecraft-side fleet
+   *  panels (Crew Dragon, Cargo Dragon, Cygnus, HTV-X, Tianzhou, …)
+   *  in addition to the rocket-side launcher entries the
+   *  `orrery_launcher_ref` already links. Empty when no rule matches. */
+  orrery_spacecraft_refs?: string[];
   pad_name?: string;
   pad_location?: string;
   image_url?: string;

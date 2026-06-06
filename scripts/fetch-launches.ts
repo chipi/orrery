@@ -29,6 +29,7 @@ import {
 } from '../src/lib/launches/tier.js';
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
+import { resolveSpacecraftRefs } from '../src/lib/launches/resolve-spacecraft-refs.js';
 
 const DATA_ROOT = 'static/data';
 const HISTORIC_DIR = join(DATA_ROOT, 'launches-historic');
@@ -50,6 +51,7 @@ type CatalogMission = { id: string; year: number };
 type ManifestEntry = Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source_observed_at'> & {
   orrery_launcher_ref: string | null;
   orrery_mission_ref: string | null;
+  orrery_spacecraft_refs?: string[];
   tier: 'T1' | 'T2' | 'T3' | 'T4';
   tier_reason: string;
   editorial_note: string | null;
@@ -250,10 +252,12 @@ async function main(): Promise<void> {
         { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
         catalogue,
       );
+      const spacecraftRefs = resolveSpacecraftRefs(launcherRef, m.entry.mission_name, m.entry.name);
       const entry: ManifestEntry = {
         ...(flat as Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source_observed_at'>),
         orrery_launcher_ref: launcherRef,
         orrery_mission_ref: missionRef,
+        ...(spacecraftRefs.length > 0 ? { orrery_spacecraft_refs: spacecraftRefs } : {}),
         ...tierBits,
         provenance_chain: m.provenance_chain,
         fetched_at: observed,

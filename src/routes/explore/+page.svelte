@@ -1168,8 +1168,24 @@
       8000,
     );
     const renderer = createSceneRenderer(container);
+    // PRD-023 Slice A — enable shadow maps for Saturn's ring-shadow
+    // effect. PCFSoftShadowMap is the cheap default; we scope the
+    // perf cost by setting castShadow only on the ring mesh and
+    // receiveShadow only on Saturn's planet mesh. Other planets +
+    // moons + small bodies don't participate so the 6 cube-map
+    // passes the PointLight shadow pipeline does each frame render
+    // ~2 objects total. The sun's PointLight is the shadow caster
+    // since its position is the physical Sun in the scene.
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2500, 1.2));
+    const sunLight = new THREE.PointLight(0xfff4d0, 3.5, 2500, 1.2);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.width = 1024;
+    sunLight.shadow.mapSize.height = 1024;
+    sunLight.shadow.camera.near = 0.1;
+    sunLight.shadow.bias = -0.001;
+    scene.add(sunLight);
     scene.add(new THREE.AmbientLight(0x111133, 0.8));
     const fill = new THREE.DirectionalLight(0x223366, 0.3);
     fill.position.set(-200, 100, -200);
@@ -1472,6 +1488,11 @@
       });
       const mesh = new THREE.Mesh(new THREE.SphereGeometry(p.size3, 32, 32), mat);
       mesh.userData = { planetId: p.id };
+      // PRD-023 Slice A — Saturn's planet mesh receives the ring-cast
+      // shadow. Limited to Saturn because no other planet has a ring
+      // system in the catalogue today, and `receiveShadow` adds a per-
+      // pixel shadow-map sample that we don't need elsewhere.
+      if (p.id === 'saturn') mesh.receiveShadow = true;
       group.add(mesh);
       // Pick-aid: invisible larger sphere co-located with the visible
       // mesh so hover-pick is forgiving on small / fast-moving planets.
@@ -1528,7 +1549,14 @@
             side: THREE.DoubleSide,
             depthWrite: false,
           });
-          ringsGroup.add(new THREE.Mesh(rg, rm));
+          const ringMesh = new THREE.Mesh(rg, rm);
+          // PRD-023 Slice A — ring bands cast the shadow that lands on
+          // Saturn's cloud tops. The Cassini Division + Encke Gap bands
+          // also cast, but their low opacity means the shadow they
+          // produce reads as a faint break in the main ring shadow —
+          // matches the real photographic look.
+          ringMesh.castShadow = true;
+          ringsGroup.add(ringMesh);
         }
         ringsGroup.rotation.x = Math.PI / 2.2;
         group.add(ringsGroup);

@@ -550,23 +550,30 @@ describe('panel gallery loaders (v0.1.10)', () => {
 });
 
 describe('SCIENCE_TABS', () => {
-  it('exposes the encyclopedia tab ids in canonical order', () => {
+  it('exposes the encyclopedia tab ids in canonical reading-flow order', () => {
     // 11 teaching tabs + 2 curated companion lists (reading + watch)
-    // added at the bottom in v0.6.3 (issue #128 + #129). 11th tab
-    // 'planets' added 2026-06-03 by PRD-024 — pairs with the
-    // PRD-023 /explore lens annotations (#301).
+    // added at the bottom in v0.6.3 (issue #128 + #129).
+    //
+    // 2026-06-06 — reordered to a pedagogical "read it like a book"
+    // flow: setup chapter (scales-time) → bodies in the system
+    // (planets, PRD-024) → motion of those bodies (orbits) → how to
+    // travel between them (transfers, porkchop, propulsion, mission-
+    // phases) → sustained presence (space-stations, life-in-space) →
+    // looking outward (observation) → what's been done (history).
+    // The previous order opened with `orbits` and buried `planets` at
+    // position #11, which inverted the natural onboarding sequence.
     expect(SCIENCE_TABS).toEqual([
+      'scales-time',
+      'planets',
       'orbits',
       'transfers',
+      'porkchop',
       'propulsion',
       'mission-phases',
-      'scales-time',
-      'porkchop',
       'space-stations',
-      'history',
-      'observation',
       'life-in-space',
-      'planets',
+      'observation',
+      'history',
       'reading-list',
       'watch-list',
     ]);

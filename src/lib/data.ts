@@ -1462,22 +1462,26 @@ export async function getEpisodeSourcesManifest(): Promise<EpisodeSourcesManifes
  * en-US when the requested locale's overlay is missing.
  */
 export const SCIENCE_TABS: readonly ScienceTabId[] = [
-  'orbits',
-  'transfers',
-  'propulsion',
-  'mission-phases',
-  'scales-time',
-  'porkchop',
-  'space-stations',
-  'history',
-  'observation',
-  'life-in-space',
-  // PRD-024 — planet-level body science. Pairs with PRD-023's /explore
-  // lens annotations + always-on overlays. Added 2026-06-03.
-  'planets',
-  // v0.6.3 — curated companion lists, anchored at the bottom of the
-  // rail so the encyclopedia tabs read as a coherent block above them
-  // and these read as "see also" affordances. (Issues #128 + #129.)
+  // 2026-06-06 reorder — read the encyclopedia like a book.
+  // Setup → bodies → motion → engineering → presence → looking → history.
+  // Planets used to sit at #11 (just before reading-list) which inverted
+  // the natural "what is the solar system → how does it move → how do we
+  // travel through it" reading flow; promoted to #2 so the reader meets
+  // the subject before learning the mechanics.
+  'scales-time', // 1. Units, frames, dimensions of the solar system
+  'planets', // 2. The bodies in it (PRD-024)
+  'orbits', // 3. How those bodies move (Kepler, e, i)
+  'transfers', // 4. How to move between them (Hohmann, Lambert, ∆v)
+  'porkchop', // 5. When to launch — transfer + time tradeoff
+  'propulsion', // 6. What engines move you
+  'mission-phases', // 7. The operational arc (launch → TLI → cruise → EDL)
+  'space-stations', // 8. Sustained presence at LEO
+  'life-in-space', // 9. Human physiology in microgravity
+  'observation', // 10. Looking outward (telescopes, optical / radio / IR)
+  'history', // 11. What's been done, when, by whom
+  // v0.6.3 — curated companion lists, anchored at the bottom of the rail
+  // so the encyclopedia tabs read as a coherent block above them and
+  // these read as "see also" affordances. (Issues #128 + #129.)
   'reading-list',
   'watch-list',
 ] as const;

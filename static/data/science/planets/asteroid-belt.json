@@ -1,0 +1,33 @@
+{
+  "id": "asteroid-belt",
+  "tab": "planets",
+  "order": 7,
+  "diagram": "asteroid-belt.svg",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Click the bright ring between Mars and Jupiter to open the Asteroid Belt panel"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Ceres is the belt's largest member — open the Ceres small-body panel for the Dawn-orbiter portrait"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Asteroids overview",
+      "u": "https://science.nasa.gov/solar-system/asteroids/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Dawn · Vesta + Ceres orbital mission",
+      "u": "https://science.nasa.gov/mission/dawn/",
+      "t": "core"
+    },
+    {
+      "l": "Minor Planet Center · IAU asteroid catalogue",
+      "u": "https://www.minorplanetcenter.net/",
+      "t": "deep"
+    }
+  ]
+}

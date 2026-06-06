@@ -512,10 +512,24 @@
   },
   {
     "tab": "planets",
+    "section": "asteroid-belt",
+    "title": "The Asteroid Belt",
+    "intro": "A planet that almost was — the rocky remnants between Mars and Jupiter that Jupiter's gravity wouldn't let coalesce.",
+    "haystack": "the asteroid belt a planet that almost was — the rocky remnants between mars and jupiter that jupiter's gravity wouldn't let coalesce. the belt has internal structure. spectroscopy divides it into three rough zones: the inner belt (2.1–2.5 au) dominated by stony s-type bodies; the middle belt (2.5–3.2 au) where carbonaceous c-types take over (ceres + hygiea live here); and the outer belt blending into the trojan asteroids that share jupiter's orbit at the l4 and l5 lagrange points. different parent populations, different formation temperatures, different histories — preserved in the same belt because jupiter's resonances corralled them."
+  },
+  {
+    "tab": "planets",
     "section": "axial-tilt-and-seasons",
     "title": "Axial Tilt and Seasons",
     "intro": "Why Earth has seasons, why Uranus rolled onto its side, and why Venus spins backward.",
     "haystack": "axial tilt and seasons why earth has seasons, why uranus rolled onto its side, and why venus spins backward. obliquity = the angle between a planet's rotation axis and the line perpendicular to its orbital plane. values: mercury 0.034°, venus 177.36°, earth 23.44°, mars 25.19°, jupiter 3.13°, saturn 26.73°, uranus 97.77°, neptune 28.32°, pluto 122.53°. the two clusters — small-tilt gas giants except uranus, and 23-28° rocky bodies + saturn + neptune — likely reflect different formation histories. uranus's 97° is the canonical \"giant impact\" signature; venus's 177° and pluto's 122° are still actively debated."
+  },
+  {
+    "tab": "planets",
+    "section": "kuiper-belt",
+    "title": "The Kuiper Belt",
+    "intro": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
+    "haystack": "the kuiper belt a disc of icy bodies beyond neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past earth. structurally the belt has three populations. the classical kuiper belt at 42–48 au holds bodies on nearly circular, low-inclination orbits — the dynamically unperturbed remnant of the original disc, albion and quaoar live here. the resonant population is held in 2:3 mean-motion resonance with neptune (pluto is the archetype — for every two pluto orbits, neptune does three); these are called plutinos. then the scattered disc is the eccentric, high-inclination outer extension where eris and sedna roam, with perihelia near neptune and aphelia hundreds of au out. each population is a fossil of a different chapter of the early solar system's gravitational history."
   },
   {
     "tab": "planets",

@@ -124,6 +124,23 @@
     event.preventDefault();
     void goto(href);
   }
+
+  // Cross-link to the matching /science/planets/<id>-belt article. Both
+  // belts ship as `asteroid-belt` and `kuiper-belt` under the existing
+  // PRD-024 planets tab. The path literals below are deliberately
+  // spelled out so the science-orphan-detector regex resolves them
+  // (`/science/planets/asteroid-belt` + `/science/planets/kuiper-belt`).
+  const SCIENCE_PATHS: Record<string, string> = {
+    asteroid: '/science/planets/asteroid-belt',
+    kuiper: '/science/planets/kuiper-belt',
+  };
+  let scienceHref = $derived(
+    entry && SCIENCE_PATHS[entry.id]
+      ? `${base}${SCIENCE_PATHS[entry.id]}${
+          loc === DEFAULT_LOCALE ? '' : `?lang=${encodeURIComponent(loc)}`
+        }`
+      : null,
+  );
 </script>
 
 <Panel {open} {onClose} title={entry?.name ?? ''}>
@@ -214,6 +231,10 @@
           <div class="cell-label">DISCOVERED</div>
           <div class="cell-value">{entry.discovered}</div>
         </div>
+        <a class="science-link" href={scienceHref}>
+          <span class="science-cta">READ THE FULL ARTICLE</span>
+          <span class="science-label">/science/planets/{entry.id}-belt</span>
+        </a>
       {:else if tab === 'gallery'}
         {#if gallery.length > 0}
           <ul class="gallery-grid">
@@ -406,6 +427,39 @@
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
     margin: 6px 0 0;
+  }
+  .science-link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 16px 0 4px;
+    padding: 10px 12px;
+    border: 1px solid rgba(78, 205, 196, 0.35);
+    border-radius: 4px;
+    background: rgba(78, 205, 196, 0.06);
+    text-decoration: none;
+    transition:
+      border-color 120ms,
+      background 120ms;
+  }
+  .science-link:hover,
+  .science-link:focus-visible {
+    border-color: rgba(78, 205, 196, 0.7);
+    background: rgba(78, 205, 196, 0.14);
+    outline: none;
+  }
+  .science-cta {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    color: rgba(78, 205, 196, 0.95);
+    text-transform: uppercase;
+  }
+  .science-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 1.2px;
   }
   .member-list {
     margin: 0;

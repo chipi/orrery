@@ -77,7 +77,10 @@ test.describe('AudioOverlay smoke', () => {
     await page.goto('/', { waitUntil: 'networkidle' });
     await openOverlay(page);
 
-    const tourBtn = page.locator(`${OVERLAY_SELECTOR} .tour-start`);
+    // Curator button only (Extended Tour added a sibling .tour-start
+    // button in commit 4a0df36fb — strict mode rejects the ambiguous
+    // selector otherwise).
+    const tourBtn = page.locator(`${OVERLAY_SELECTOR} .tour-start:not(.tour-start-extended)`);
     await expect(tourBtn).toBeVisible({ timeout: 10000 });
     await tourBtn.click();
 
@@ -185,12 +188,14 @@ test.describe('AudioOverlay smoke', () => {
     await page.goto('/', { waitUntil: 'networkidle' });
     await openOverlay(page);
 
-    await page.locator(`${OVERLAY_SELECTOR} .tour-start`).click();
+    // Curator button only (see test above for the strict-mode rationale).
+    const tourBtn = `${OVERLAY_SELECTOR} .tour-start:not(.tour-start-extended)`;
+    await page.locator(tourBtn).click();
     await expect(page.locator(`${OVERLAY_SELECTOR} .tour-position`)).toBeVisible();
 
     await page.locator(`${OVERLAY_SELECTOR} .tour-stop`).click();
 
     // After stopping, tour-bar shows the start button again (idle state).
-    await expect(page.locator(`${OVERLAY_SELECTOR} .tour-start`)).toBeVisible();
+    await expect(page.locator(tourBtn)).toBeVisible();
   });
 });

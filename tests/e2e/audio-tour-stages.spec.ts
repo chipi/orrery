@@ -17,7 +17,10 @@ async function startTour(page: Page) {
   await page.goto('/', { waitUntil: 'networkidle' });
   await page.locator(AUDIO_TOGGLE).click();
   await expect(page.locator(OVERLAY)).toBeVisible();
-  const tourBtn = page.locator(`${OVERLAY} .tour-start`);
+  // Two tour-start buttons since commit 4a0df36fb (Extended Tour).
+  // Narrow to the curator-only button via :not() on the extended class
+  // — strict-mode otherwise rejects the locator for matching both.
+  const tourBtn = page.locator(`${OVERLAY} .tour-start:not(.tour-start-extended)`);
   await expect(tourBtn).toBeVisible({ timeout: 10000 });
   await tourBtn.click();
   // First tour episode loaded.

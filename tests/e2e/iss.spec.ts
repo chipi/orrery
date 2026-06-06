@@ -44,7 +44,7 @@ test.describe('/iss', () => {
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await expect(panel.getByRole('heading', { level: 1, name: /cupola/i })).toBeVisible();
-    await panel.locator('button.close').click();
+    await panel.locator('button.panel-close').click();
     await expect(page).toHaveURL(/\/iss(?:\?view=list)?$/);
     expect(errors).toEqual([]);
   });

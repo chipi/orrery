@@ -133,7 +133,7 @@ test.describe('/fleet', () => {
     await page.goto('/fleet?id=hubble');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    await panel.locator('button.close').click();
+    await panel.locator('button.panel-close').click();
     await expect(panel).toBeHidden({ timeout: 4_000 });
     await expect(page).toHaveURL(/\/fleet(?:\?[^=]*=[^&]*&?)*$/);
     await expect(page).not.toHaveURL(/[?&]id=/);

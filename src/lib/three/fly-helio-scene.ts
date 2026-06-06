@@ -41,6 +41,26 @@ export interface HelioSceneOptions {
    *  Used by the component to flip the historical-Mars-arcs group
    *  visibility (visible only on Mars destinations). */
   onDestinationChange?: (id: DestinationId) => void;
+  /** Texture URLs for the Sun + Earth + every destination body, so the
+   *  /fly heliocentric scene gets the same /explore-grade photorealism
+   *  for free (2026-06-06 user direction: "we have new amazing way to
+   *  visualise planets on /explore. Can we take that to /fly and use
+   *  same graphics for planets/sun?"). All paths typically built from
+   *  `${base}/textures/<file>.jpg` by the calling component so they
+   *  respect SvelteKit's base. */
+  bodyTextures: {
+    sun: string;
+    earth: string;
+    mercury: string;
+    venus: string;
+    mars: string;
+    jupiter: string;
+    saturn: string;
+    uranus: string;
+    neptune: string;
+    pluto: string;
+    ceres?: string;
+  };
 }
 
 export interface HelioSceneHandles {
@@ -118,16 +138,54 @@ function buildOrbitRing(radius: number, color: number): THREE.LineLoop {
   );
 }
 
-/** Build the destination mesh at the given style. */
-function buildDestinationMesh(style: DestinationStyle): THREE.Mesh {
+/** Build the destination mesh at the given style. Texture-aware: when
+ *  a map is supplied the diffuse color is white (so the texture's true
+ *  colors come through) and emissive stays a faint tint of the fallback
+ *  colour so the body still reads when unlit by the Sun light. */
+function buildDestinationMesh(style: DestinationStyle, map: THREE.Texture | null): THREE.Mesh {
   return new THREE.Mesh(
-    new THREE.SphereGeometry(style.size, 24, 24),
+    new THREE.SphereGeometry(style.size, 32, 32),
     new THREE.MeshPhongMaterial({
-      color: style.color,
+      map: map ?? null,
+      color: map ? 0xffffff : style.color,
       emissive: style.color,
-      emissiveIntensity: 0.2,
+      emissiveIntensity: map ? 0.05 : 0.2,
     }),
   );
+}
+
+/** Build a Saturn-style multi-band ring system around a body of the
+ *  given radius. Re-uses the canonical C / B / A / Cassini / Encke / F
+ *  band ratios shipped for /explore (commit ce7e97a20) but rescaled to
+ *  /fly's much smaller body diameters. Returns a group the caller can
+ *  add/remove as a unit when the destination switches between Saturn
+ *  and another body. */
+function buildSaturnRings(size: number): THREE.Group {
+  const r0 = size * 1.4;
+  const rOuter = size * 2.6;
+  const span = rOuter - r0;
+  const group = new THREE.Group();
+  const bands: Array<{ inner: number; outer: number; color: number; opacity: number }> = [
+    { inner: 0.0, outer: 0.18, color: 0x8a7858, opacity: 0.35 },
+    { inner: 0.18, outer: 0.55, color: 0xf1d7a3, opacity: 0.62 },
+    { inner: 0.55, outer: 0.6, color: 0x4a3f2c, opacity: 0.18 },
+    { inner: 0.6, outer: 0.92, color: 0xddc497, opacity: 0.5 },
+    { inner: 0.92, outer: 0.94, color: 0x4a3f2c, opacity: 0.15 },
+    { inner: 0.94, outer: 1.0, color: 0xe4d191, opacity: 0.28 },
+  ];
+  for (const b of bands) {
+    const geo = new THREE.RingGeometry(r0 + b.inner * span, r0 + b.outer * span, 96);
+    const mat = new THREE.MeshBasicMaterial({
+      color: b.color,
+      transparent: true,
+      opacity: b.opacity,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    });
+    group.add(new THREE.Mesh(geo, mat));
+  }
+  group.rotation.x = Math.PI / 2.2;
+  return group;
 }
 
 export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
@@ -138,11 +196,26 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(new THREE.PointLight(0xfff4d0, 3.5, 2000, 1.2));
   scene.add(new THREE.AmbientLight(0x111133, 0.8));
 
-  // Sun — solid core + additive-blend halo. Sun visibility is owned
-  // by the component (cislunar Moon-mode hides the Sun).
+  // Texture loader shared by Sun + Earth + every destination body.
+  const texLoader = new THREE.TextureLoader();
+  const sunTex = texLoader.load(opts.bodyTextures.sun);
+  const earthTex = texLoader.load(opts.bodyTextures.earth);
+  const destinationTextures: Partial<Record<DestinationId, THREE.Texture>> = {};
+  for (const id of Object.keys(DEST_STYLE) as DestinationId[]) {
+    const url = opts.bodyTextures[id as keyof HelioSceneOptions['bodyTextures']];
+    if (url) destinationTextures[id] = texLoader.load(url);
+  }
+
+  // Sun — textured emissive core + additive-blend halo. The texture
+  // ships as `emissiveMap` so the Sun glows from its own surface
+  // detail (granules, sunspots) without needing to be re-lit by an
+  // external light. The additive halo stays unchanged.
   const sunCore = new THREE.Mesh(
-    new THREE.SphereGeometry(8, 32, 32),
-    new THREE.MeshBasicMaterial({ color: 0xfff0a0 }),
+    new THREE.SphereGeometry(8, 64, 64),
+    new THREE.MeshBasicMaterial({
+      map: sunTex,
+      color: 0xffffff,
+    }),
   );
   scene.add(sunCore);
   const sunGlow = new THREE.Mesh(
@@ -166,18 +239,27 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(earthOrbitLine);
   scene.add(destinationOrbitLine);
 
-  // Earth + initial destination (Mars) meshes.
+  // Earth + initial destination (Mars) meshes — both textured.
   const earthMesh = new THREE.Mesh(
-    new THREE.SphereGeometry(EARTH_RADIUS, 24, 24),
+    new THREE.SphereGeometry(EARTH_RADIUS, 32, 32),
     new THREE.MeshPhongMaterial({
-      color: 0x3a8fcc,
-      emissive: 0x3a8fcc,
-      emissiveIntensity: 0.2,
+      map: earthTex,
+      color: 0xffffff,
+      emissive: 0x081a36,
+      emissiveIntensity: 0.15,
     }),
   );
   scene.add(earthMesh);
-  const destinationMesh = buildDestinationMesh(DEST_STYLE.mars);
+  const destinationMesh = buildDestinationMesh(DEST_STYLE.mars, destinationTextures.mars ?? null);
   scene.add(destinationMesh);
+
+  // Saturn ring system — parented to the destination mesh so it tracks
+  // Saturn's per-frame position automatically. Stays in the scene at
+  // all times but toggles visibility based on the active destination
+  // so we don't need to dispose + rebuild on every swap.
+  const saturnRings = buildSaturnRings(DEST_STYLE.saturn.size);
+  saturnRings.visible = false;
+  destinationMesh.add(saturnRings);
 
   /** Mutable visibility flag preserved across destination swaps so a
    *  cislunar mode-set followed by a setDestination still hides the
@@ -188,11 +270,16 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     const style = DEST_STYLE[id] ?? DEST_STYLE.mars;
     // Mesh geometry — dispose old, build new at the destination radius.
     destinationMesh.geometry.dispose();
-    destinationMesh.geometry = new THREE.SphereGeometry(style.size, 24, 24);
-    // Material — recolour in place.
+    destinationMesh.geometry = new THREE.SphereGeometry(style.size, 32, 32);
+    // Material — swap to the destination's texture (or null + fallback
+    // colour if no texture is shipped for this body).
     const mat = destinationMesh.material as THREE.MeshPhongMaterial;
-    mat.color.setHex(style.color);
+    const map = destinationTextures[id] ?? null;
+    mat.map = map;
+    mat.color.setHex(map ? 0xffffff : style.color);
     mat.emissive.setHex(style.color);
+    mat.emissiveIntensity = map ? 0.05 : 0.2;
+    mat.needsUpdate = true;
     // Orbit ring — full replace (size + colour change together).
     const orbitRadius = DESTINATIONS[id].a;
     scene.remove(destinationOrbitLine);
@@ -201,6 +288,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     destinationOrbitLine = buildOrbitRing(orbitRadius, style.color);
     destinationOrbitLine.visible = destinationOrbitVisible;
     scene.add(destinationOrbitLine);
+    // Saturn rings — reveal only when we're at Saturn; resize the rings
+    // every time so a future tuning of DEST_STYLE.saturn.size carries
+    // through without a code change here.
+    saturnRings.visible = id === 'saturn';
     opts.onDestinationChange?.(id);
   }
 

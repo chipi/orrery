@@ -1024,6 +1024,25 @@
       onDestinationChange: (id) => {
         historicalMarsArcsGroup.visible = id === 'mars';
       },
+      // 2026-06-06 — give /fly the same /explore-grade body imagery for
+      // Sun + Earth + every destination. 2K throughout (camera here
+      // sits closer than /explore but bodies are compressed, so 2K
+      // matches the pixel density without a 4K LOD swap).
+      bodyTextures: {
+        sun: `${base}/textures/2k_sun.jpg`,
+        earth: `${base}/textures/2k_earth_daymap.jpg`,
+        mercury: `${base}/textures/2k_mercury.jpg`,
+        venus: `${base}/textures/2k_venus_atmosphere.jpg`,
+        mars: `${base}/textures/2k_mars.jpg`,
+        jupiter: `${base}/textures/2k_jupiter.jpg`,
+        saturn: `${base}/textures/2k_saturn.jpg`,
+        uranus: `${base}/textures/2k_uranus.jpg`,
+        neptune: `${base}/textures/2k_neptune.jpg`,
+        pluto: `${base}/textures/4k_pluto.jpg`,
+        // No Ceres texture in the catalogue today — falls back to the
+        // DEST_STYLE colour. Add `2k_ceres.jpg` to the texture pack to
+        // light it up automatically.
+      },
     });
     const scene = helioHandles.scene;
     const camera = helioHandles.camera;

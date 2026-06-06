@@ -1002,6 +1002,22 @@
   let focusedRotationHours = $derived(
     selectedId ? (PLANETS.find((p) => p.id === selectedId)?.rotationHours ?? null) : null,
   );
+  // PRD-023 Slice E.1 — light-time from Sun + current Earth distance.
+  // Uses semi-major axes from `planetById` (the localised planet
+  // catalogue) — same source the velocity tooltip uses. 8.317 min =
+  // light-time of 1 AU (IAU 2012).
+  let focusedLightTime = $derived.by(() => {
+    if (!selectedId) return null;
+    const planet = planetById.get(selectedId);
+    if (!planet) return null;
+    const earth = planetById.get('earth');
+    const lminSun = planet.a * 8.317;
+    // Earth-distance: |a_planet − a_earth| as a coarse mean. Real
+    // Earth distance varies wildly through synodic period but this
+    // matches /explore's constant-r-orbit visualisation.
+    const lminEarth = earth ? Math.abs(planet.a - earth.a) * 8.317 : null;
+    return { fromSunMin: lminSun, fromEarthMin: lminEarth };
+  });
   let statsOverlayOn = $state(false);
 
   // Plumbed into the 3D scene's RAF tween from inside onMount once
@@ -4171,6 +4187,21 @@
           {/if}
         </span>
       </div>
+      {#if focusedLightTime}
+        <div class="scan-row">
+          <span class="scan-label">LIGHT-T</span>
+          <span class="scan-value">
+            {focusedLightTime.fromSunMin < 60
+              ? `${focusedLightTime.fromSunMin.toFixed(1)} l-min from Sun`
+              : `${(focusedLightTime.fromSunMin / 60).toFixed(2)} l-hr from Sun`}
+            {#if focusedLightTime.fromEarthMin !== null && selectedId !== 'earth'}
+              · {focusedLightTime.fromEarthMin < 60
+                ? `${focusedLightTime.fromEarthMin.toFixed(1)} l-min`
+                : `${(focusedLightTime.fromEarthMin / 60).toFixed(2)} l-hr`} from Earth
+            {/if}
+          </span>
+        </div>
+      {/if}
     </div>
   {/if}
 

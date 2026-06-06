@@ -202,10 +202,17 @@ async function fetchLL2WithCache(input: LaunchSourceWindow): Promise<LL2LaunchRa
     }
   }
   mkdirSync(dirname(cachePath), { recursive: true });
+  // `include_suborbital=true` brings Blue Origin's New Shepard, Virgin
+  // Galactic, and sounding-rocket suborbital flights into scope. LL2
+  // defaults to orbital-only without this. The orchestrator's tier
+  // step demotes unmapped sounding rockets to T4 (hidden by default
+  // in UI views) so the only user-visible effect is that fleet
+  // entries which match a suborbital launcher (today: new-shepard,
+  // virgin-galactic when its fleet entry lands) start showing flights.
   const endpoint =
     input.mode === 'upcoming'
-      ? `${LL2_BASE}/launches/upcoming/?format=json&limit=${PAGE_LIMIT}`
-      : `${LL2_BASE}/launches/previous/?format=json&limit=${PAGE_LIMIT}&net__gte=${input.fromIso}&net__lt=${input.toIso}`;
+      ? `${LL2_BASE}/launches/upcoming/?format=json&limit=${PAGE_LIMIT}&include_suborbital=true`
+      : `${LL2_BASE}/launches/previous/?format=json&limit=${PAGE_LIMIT}&include_suborbital=true&net__gte=${input.fromIso}&net__lt=${input.toIso}`;
   const all: LL2LaunchRaw[] = [];
   let url: string | null = endpoint;
   let pages = 0;

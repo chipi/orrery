@@ -1133,7 +1133,16 @@ const LAUNCHES_ROCKET_MAPPING_PATH = join(DATA_ROOT, 'launches-rocket-mapping.js
 const TEXT_SOURCES_PATH_FOR_LAUNCHES = join(DATA_ROOT, 'text-sources.json');
 
 function fleetLauncherExists(launcherId: string): boolean {
-  return existsSync(join(DATA_ROOT, 'fleet', 'launcher', `${launcherId}.json`));
+  // Most launcher fleet entries live in fleet/launcher/. Vehicles that
+  // double as a crewed capsule (currently: Blue Origin's New Shepard,
+  // where the booster + crew capsule are sold as one product) are
+  // catalogued under crewed-spacecraft/. The validator accepts either
+  // location so launches.json's `orrery_launcher_ref` can resolve
+  // without forcing a duplicate fleet entry.
+  return (
+    existsSync(join(DATA_ROOT, 'fleet', 'launcher', `${launcherId}.json`)) ||
+    existsSync(join(DATA_ROOT, 'fleet', 'crewed-spacecraft', `${launcherId}.json`))
+  );
 }
 
 if (existsSync(LAUNCHES_PATH)) {

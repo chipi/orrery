@@ -134,7 +134,7 @@
     <button
       type="button"
       class="menu-toggle"
-      aria-label="Open navigation menu"
+      aria-label={m.nav_mobile_menu_open_aria()}
       aria-expanded={mobileMenuOpen}
       aria-controls={mobileMenuOpen ? 'mobile-nav-drawer' : undefined}
       onclick={toggleMobileMenu}
@@ -182,9 +182,9 @@
       class="lens-toggle"
       data-audio-stage="science-lens-toggle"
       class:active={scienceLens}
-      aria-label="Toggle science lens"
+      aria-label={m.nav_science_lens_aria()}
       aria-pressed={scienceLens}
-      title="Show the physics layer (orbital mechanics overlays)"
+      title={m.nav_science_lens_title()}
       onclick={onToggleLens}
     >
       <!-- Inline SVG, not a Unicode glyph: the ⊙/⊕ characters render
@@ -221,7 +221,7 @@
     class="mobile-drawer"
     role="dialog"
     aria-modal="false"
-    aria-label="Site navigation"
+    aria-label={m.nav_site_drawer_aria()}
   >
     {#each linkDefs as { path, label } (path)}
       <a
@@ -238,7 +238,7 @@
       <button
         type="button"
         class="drawer-link drawer-search"
-        aria-label="Search the encyclopedia (⌘K)"
+        aria-label={m.nav_search_aria()}
         onclick={openCmdKFromDrawer}
       >
         ⌕ {m.nav_search()}
@@ -248,7 +248,7 @@
   <button
     type="button"
     class="drawer-backdrop"
-    aria-label="Close navigation menu"
+    aria-label={m.nav_mobile_menu_close_aria()}
     onclick={closeMobileMenu}
   ></button>
 {/if}

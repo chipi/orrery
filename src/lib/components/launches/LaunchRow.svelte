@@ -41,7 +41,7 @@
   <div class="time-col">
     <time datetime={entry.net} class="net">{timeLabel}</time>
     {#if entry.webcast_live}
-      <span class="live-chip" title="Webcast live"
+      <span class="live-chip" title={m.launches_row_live_chip_title()}
         ><span class="dot"></span>{m.launches_live_badge()}</span
       >
     {/if}

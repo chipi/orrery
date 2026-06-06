@@ -6,6 +6,7 @@
    */
 
   import LaunchRow from './LaunchRow.svelte';
+  import * as m from '$lib/paraglide/messages';
   import type { LaunchEntry } from '$lib/launches/manifest.js';
 
   let {
@@ -17,7 +18,7 @@
   } = $props();
 </script>
 
-<section class="timeline" aria-label="Launches timeline">
+<section class="timeline" aria-label={m.launches_timeline_aria()}>
   {#if months.length === 0}
     <p class="empty">No launches in this view. Try widening the filter.</p>
   {/if}

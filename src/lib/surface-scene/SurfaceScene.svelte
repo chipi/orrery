@@ -3570,7 +3570,7 @@ sample      ${debugInfo.projectedPxSample}`}
       class="panorama-floating-exit"
       onclick={() => exitPanorama()}
       data-testid="panorama-floating-exit"
-      title="Exit panorama view (Esc)"
+      title={m.surface_exit_panorama_title()}
     >
       <span class="x mono" aria-hidden="true">✕</span>
       <span>Exit panorama</span>

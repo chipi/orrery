@@ -899,7 +899,7 @@
           max={audio.durationSec || 0}
           step="0.1"
           value={audio.positionSec}
-          aria-label="Episode position"
+          aria-label={m.audio_episode_position_aria()}
           oninput={onScrub}
         />
 
@@ -907,7 +907,7 @@
           <button
             type="button"
             class="link-btn"
-            aria-label="Download transcript as text"
+            aria-label={m.audio_transcript_download_aria()}
             onclick={downloadTranscript}
           >
             ↓ transcript (.txt)
@@ -916,9 +916,9 @@
       </section>
     {/if}
 
-    <section class="inventory" aria-label="Episode inventory">
+    <section class="inventory" aria-label={m.audio_inventory_aria()}>
       {#if audioRegistry.loaded}
-        <div class="scope-tabs" role="tablist" aria-label="Episode scope">
+        <div class="scope-tabs" role="tablist" aria-label={m.audio_inventory_scope_aria()}>
           <button
             type="button"
             role="tab"
@@ -943,7 +943,7 @@
         </div>
 
         {#if visibleEpisodes.length === 0}
-          <p class="inventory-empty">No episodes for this screen yet — try "All episodes".</p>
+          <p class="inventory-empty">{m.audio_inventory_empty_for_screen()}</p>
         {:else}
           <ul class="episode-list" role="list">
             {#each visibleEpisodes as ep (ep.id)}
@@ -966,7 +966,9 @@
                           .toString()
                           .padStart(2, '0')}
                       </span>{/if}
-                    {#if heard}<span class="heard-tag" aria-label="Played">✓</span>{/if}
+                    {#if heard}<span class="heard-tag" aria-label={m.audio_inventory_played_aria()}
+                        >✓</span
+                      >{/if}
                   </span>
                 </button>
               </li>
@@ -974,18 +976,18 @@
           </ul>
         {/if}
       {:else if audioRegistry.loading}
-        <p class="inventory-empty">Loading episodes…</p>
+        <p class="inventory-empty">{m.audio_inventory_loading()}</p>
       {:else if audioRegistry.loadError}
         <p class="inventory-empty error">
-          Could not load episode registry: {audioRegistry.loadError}
+          {m.audio_inventory_error({ error: audioRegistry.loadError ?? '' })}
         </p>
       {:else}
-        <p class="inventory-empty">No episodes yet.</p>
+        <p class="inventory-empty">{m.audio_inventory_empty_no_episodes()}</p>
       {/if}
     </section>
 
-    <footer class="origin-disclosure" aria-label="Audio origin disclosure">
-      <span>Voices · ElevenLabs · Scripts · drafted by Claude (Anthropic)</span>
+    <footer class="origin-disclosure" aria-label={m.audio_origin_disclosure_aria()}>
+      <span>{m.audio_origin_disclosure_text()}</span>
       <span class="origin-detail"
         >Per-episode attribution on <a href="{base}/credits">/credits</a> ·
         <a href="{base}/library/episodes">Read transcripts</a></span
@@ -1020,7 +1022,7 @@
       <div
         class="caption-banner"
         role="region"
-        aria-label="Captions"
+        aria-label={m.audio_captions_aria()}
         aria-live={activeCue || manualActionLabel ? 'off' : 'polite'}
         aria-atomic="true"
       >

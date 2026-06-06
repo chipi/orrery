@@ -4141,16 +4141,16 @@
        'planet-stats' layer. Only when also focused on a planet. -->
   {#if focusedOnPlanet && statsOverlayOn && selectedId && focusedStats}
     <div class="tactical-scan" aria-hidden="true">
-      <div class="scan-eyebrow">TACTICAL SCAN · {selectedId.toUpperCase()}</div>
+      <div class="scan-eyebrow">{m.explore_scan_eyebrow({ planet: selectedId.toUpperCase() })}</div>
       <div class="scan-row">
-        <span class="scan-label">GRAVITY</span>
+        <span class="scan-label">{m.explore_scan_label_gravity()}</span>
         <span class="scan-value">{focusedStats.surfaceGravityG.toFixed(2)} g</span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">PRESSURE</span>
+        <span class="scan-label">{m.explore_scan_label_pressure()}</span>
         <span class="scan-value">
           {focusedStats.atmoBar === 0
-            ? 'none'
+            ? m.explore_scan_value_pressure_none()
             : focusedStats.atmoBar < 0.01
               ? `${(focusedStats.atmoBar * 1000).toFixed(2)} mbar`
               : focusedStats.atmoBar < 10
@@ -4159,73 +4159,84 @@
         </span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">ATMOSPHERE</span>
+        <span class="scan-label">{m.explore_scan_label_atmosphere()}</span>
         <span class="scan-value scan-value-wrap">{focusedStats.atmoComposition}</span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">TEMP</span>
+        <span class="scan-label">{m.explore_scan_label_temp()}</span>
         <span class="scan-value">
-          {focusedStats.surfaceTempK} K ({(focusedStats.surfaceTempK - 273).toFixed(0)} °C)
+          {m.explore_scan_value_temp_format({
+            k: focusedStats.surfaceTempK.toString(),
+            c: (focusedStats.surfaceTempK - 273).toFixed(0),
+          })}
         </span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">WIND</span>
+        <span class="scan-label">{m.explore_scan_label_wind()}</span>
         <span class="scan-value">
           {focusedStats.maxWindMs === 0
-            ? 'none (no atmosphere)'
-            : `up to ${focusedStats.maxWindMs} m/s`}
+            ? m.explore_scan_value_wind_none()
+            : m.explore_scan_value_wind_up_to({ ms: focusedStats.maxWindMs.toString() })}
         </span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">ROTATION</span>
+        <span class="scan-label">{m.explore_scan_label_rotation()}</span>
         <span class="scan-value">
           {#if focusedRotationHours !== null}
             {Math.abs(focusedRotationHours) < 48
               ? `${Math.abs(focusedRotationHours).toFixed(2)} h`
               : `${(Math.abs(focusedRotationHours) / 24).toFixed(1)} d`}
-            {focusedRotationHours < 0 ? '· retrograde' : ''}
+            {focusedRotationHours < 0 ? `· ${m.explore_scan_value_rotation_retrograde()}` : ''}
           {/if}
         </span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">DIAMETER</span>
+        <span class="scan-label">{m.explore_scan_label_diameter()}</span>
         <span class="scan-value">{focusedStats.diameterKm.toLocaleString()} km</span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">ESCAPE V</span>
+        <span class="scan-label">{m.explore_scan_label_escape_v()}</span>
         <span class="scan-value">{focusedStats.escapeKms.toFixed(1)} km/s</span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">SURFACE</span>
+        <span class="scan-label">{m.explore_scan_label_surface()}</span>
         <span class="scan-value">
-          {#if focusedStats.surfaceKind === 'rocky'}rocky
-          {:else if focusedStats.surfaceKind === 'rocky-liquid'}rocky · liquid water
-          {:else if focusedStats.surfaceKind === 'rocky-ice'}rocky · ice mix
-          {:else if focusedStats.surfaceKind === 'gas-giant'}gas giant · no solid
-          {:else}ice giant · no solid{/if}
+          {#if focusedStats.surfaceKind === 'rocky'}{m.explore_scan_value_surface_rocky()}
+          {:else if focusedStats.surfaceKind === 'rocky-liquid'}{m.explore_scan_value_surface_rocky_liquid()}
+          {:else if focusedStats.surfaceKind === 'rocky-ice'}{m.explore_scan_value_surface_rocky_ice()}
+          {:else if focusedStats.surfaceKind === 'gas-giant'}{m.explore_scan_value_surface_gas_giant()}
+          {:else}{m.explore_scan_value_surface_ice_giant()}{/if}
         </span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">RADIATION</span>
+        <span class="scan-label">{m.explore_scan_label_radiation()}</span>
         <span class="scan-value">
-          {#if focusedStats.radiation === 'shielded'}shielded · magnetosphere
-          {:else if focusedStats.radiation === 'moderate'}moderate
-          {:else if focusedStats.radiation === 'high'}high · unshielded
-          {:else}extreme · suit unsafe
+          {#if focusedStats.radiation === 'shielded'}{m.explore_scan_value_radiation_shielded()}
+          {:else if focusedStats.radiation === 'moderate'}{m.explore_scan_value_radiation_moderate()}
+          {:else if focusedStats.radiation === 'high'}{m.explore_scan_value_radiation_high()}
+          {:else}{m.explore_scan_value_radiation_extreme()}
           {/if}
         </span>
       </div>
       {#if focusedLightTime}
         <div class="scan-row">
-          <span class="scan-label">LIGHT-T</span>
+          <span class="scan-label">{m.explore_scan_label_light_time()}</span>
           <span class="scan-value">
             {focusedLightTime.fromSunMin < 60
-              ? `${focusedLightTime.fromSunMin.toFixed(1)} l-min from Sun`
-              : `${(focusedLightTime.fromSunMin / 60).toFixed(2)} l-hr from Sun`}
+              ? m.explore_scan_value_light_time_sun_min({
+                  value: focusedLightTime.fromSunMin.toFixed(1),
+                })
+              : m.explore_scan_value_light_time_sun_hr({
+                  value: (focusedLightTime.fromSunMin / 60).toFixed(2),
+                })}
             {#if focusedLightTime.fromEarthMin !== null && selectedId !== 'earth'}
               · {focusedLightTime.fromEarthMin < 60
-                ? `${focusedLightTime.fromEarthMin.toFixed(1)} l-min`
-                : `${(focusedLightTime.fromEarthMin / 60).toFixed(2)} l-hr`} from Earth
+                ? m.explore_scan_value_light_time_earth_min({
+                    value: focusedLightTime.fromEarthMin.toFixed(1),
+                  })
+                : m.explore_scan_value_light_time_earth_hr({
+                    value: (focusedLightTime.fromEarthMin / 60).toFixed(2),
+                  })}
             {/if}
           </span>
         </div>
@@ -4470,7 +4481,7 @@
      circular orbits at this visual scale, so apsides degenerate to
      single points and SoIs are sub-pixel. -->
 <ScienceLayersPanel
-  title="Heliocentric view · ecliptic plane"
+  title={m.explore_2d_view_title()}
   body="Every planet's orbit is an ellipse with the Sun at one focus. Same five Keplerian numbers (size, shape, tilt, orientation, position) describe each one — same six laws move them."
   tab="orbits"
   section="keplerian-orbit"

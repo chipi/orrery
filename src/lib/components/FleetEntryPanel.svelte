@@ -5,6 +5,7 @@
   import { track } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
+  import * as m from '$lib/paraglide/messages';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -151,7 +152,7 @@
           type="button"
           class="panel-hero-btn"
           onclick={() => (lightboxSrc = gallery[0]!)}
-          aria-label="View hero photo for {entry.name}"
+          aria-label={m.fleet_view_hero_aria({ name: entry.name })}
         >
           <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
         </button>
@@ -294,7 +295,7 @@
                 type="button"
                 class="thumb"
                 onclick={() => (lightboxSrc = src)}
-                aria-label="View photo"
+                aria-label={m.fleet_view_photo_aria()}
               >
                 <img {src} alt="" loading="lazy" decoding="async" />
               </button>
@@ -418,7 +419,7 @@
     type="button"
     class="lightbox"
     onclick={() => (lightboxSrc = null)}
-    aria-label="Close photo"
+    aria-label={m.fleet_close_photo_aria()}
   >
     <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
   </button>

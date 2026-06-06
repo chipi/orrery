@@ -58,7 +58,7 @@
 </script>
 
 {#if loaded && (next || recent.length > 0)}
-  <section class="launcher-flights" aria-label="Flights of this launcher">
+  <section class="launcher-flights" aria-label={m.launches_flights_widget_aria()}>
     {#if next}
       <article class="next">
         <h3 class="section-title">{m.launches_widget_next_flight_one()}</h3>

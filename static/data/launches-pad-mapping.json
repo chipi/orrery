@@ -3,64 +3,257 @@
   "_doc": "Per-launch pad-name → fleet/launch-site id mapping. Used by resolveLaunchSiteRef in src/lib/launches/resolve-launch-site-ref.ts when fetch-launches.ts populates `orrery_launch_site_ref`. Match logic: full pad_name match (case-insensitive) wins first; falls back to a combined `pad_name + pad_location` substring match against any of the per-site `match_patterns` list. Adding a new site here AND a corresponding fleet/launch-site/{id}.json picks up coverage automatically the next time the manifest re-resolves.",
   "sites": {
     "cape-canaveral-slc-40": {
-      "pad_name": ["SLC40", "SLC-40", "Space Launch Complex 40", "Launch Complex 40", "LC40"],
-      "pad_location_includes": ["Cape Canaveral", "cc"]
+      "pad_name": [
+        "SLC40",
+        "SLC-40",
+        "Space Launch Complex 40",
+        "Launch Complex 40",
+        "LC40"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc"
+      ]
     },
     "cape-canaveral-slc-41": {
-      "pad_name": ["SLC41", "SLC-41", "Space Launch Complex 41", "Launch Complex 41", "LC41"],
-      "pad_location_includes": ["Cape Canaveral", "cc"]
+      "pad_name": [
+        "SLC41",
+        "SLC-41",
+        "Space Launch Complex 41",
+        "Launch Complex 41",
+        "LC41"
+      ],
+      "pad_location_includes": [
+        "Cape Canaveral",
+        "cc"
+      ]
     },
     "lc-39a": {
-      "pad_name": ["LC39A", "LC-39A", "Launch Complex 39A", "Pad 39A"],
-      "pad_location_includes": ["Kennedy"]
+      "pad_name": [
+        "LC39A",
+        "LC-39A",
+        "Launch Complex 39A",
+        "Pad 39A"
+      ],
+      "pad_location_includes": [
+        "Kennedy"
+      ]
     },
     "lc-39b": {
-      "pad_name": ["LC39B", "LC-39B", "Launch Complex 39B", "Pad 39B"],
-      "pad_location_includes": ["Kennedy"]
+      "pad_name": [
+        "LC39B",
+        "LC-39B",
+        "Launch Complex 39B",
+        "Pad 39B"
+      ],
+      "pad_location_includes": [
+        "Kennedy"
+      ]
     },
     "vandenberg-slc-4e": {
-      "pad_name": ["SLC4E", "SLC-4E", "Space Launch Complex 4E", "SLC-4 East"],
-      "pad_location_includes": ["Vandenberg"]
+      "pad_name": [
+        "SLC4E",
+        "SLC-4E",
+        "Space Launch Complex 4E",
+        "SLC-4 East"
+      ],
+      "pad_location_includes": [
+        "Vandenberg"
+      ]
     },
     "kourou-ela-3": {
-      "pad_name": ["ELA-3", "Ariane Launch Area 3", "ELA3"],
-      "pad_location_includes": ["Kourou", "French Guiana"]
+      "pad_name": [
+        "ELA-3",
+        "Ariane Launch Area 3",
+        "ELA3"
+      ],
+      "pad_location_includes": [
+        "Kourou",
+        "French Guiana"
+      ]
     },
     "kourou-ela-4": {
-      "pad_name": ["ELA-4", "Ariane Launch Area 4", "ELA4"],
-      "pad_location_includes": ["Kourou", "French Guiana"]
+      "pad_name": [
+        "ELA-4",
+        "Ariane Launch Area 4",
+        "ELA4"
+      ],
+      "pad_location_includes": [
+        "Kourou",
+        "French Guiana"
+      ]
     },
     "baikonur-1-5": {
-      "pad_name": ["1/5", "Site 1/5", "Gagarin's Start", "LC1/5", "LC1"],
-      "pad_location_includes": ["Baikonur", "niip-5", "gik-5"]
+      "pad_name": [
+        "1/5",
+        "Site 1/5",
+        "Gagarin's Start",
+        "LC1/5",
+        "LC1"
+      ],
+      "pad_location_includes": [
+        "Baikonur",
+        "niip-5",
+        "gik-5"
+      ]
     },
     "baikonur-31-6": {
-      "pad_name": ["31/6", "Site 31/6", "LC31/6", "LC31"],
-      "pad_location_includes": ["Baikonur", "niip-5", "gik-5"]
+      "pad_name": [
+        "31/6",
+        "Site 31/6",
+        "LC31/6",
+        "LC31"
+      ],
+      "pad_location_includes": [
+        "Baikonur",
+        "niip-5",
+        "gik-5"
+      ]
     },
     "plesetsk-43": {
-      "pad_name": ["43/4", "43/3", "LC43/4", "LC43/3", "Site 43/4", "Site 43/3"],
-      "pad_location_includes": ["Plesetsk", "niip-53"]
+      "pad_name": [
+        "43/4",
+        "43/3",
+        "LC43/4",
+        "LC43/3",
+        "Site 43/4",
+        "Site 43/3"
+      ],
+      "pad_location_includes": [
+        "Plesetsk",
+        "niip-53"
+      ]
     },
     "jiuquan-slc-43": {
-      "pad_name": ["LC43/94", "LC43/95A", "Site 43/94", "Site 43/95A"],
-      "pad_location_includes": ["Jiuquan"]
+      "pad_name": [
+        "LC43/94",
+        "LC43/95A",
+        "Site 43/94",
+        "Site 43/95A"
+      ],
+      "pad_location_includes": [
+        "Jiuquan"
+      ]
     },
     "wenchang-lc-101": {
-      "pad_name": ["LC101", "LC-101", "Launch Complex 101"],
-      "pad_location_includes": ["Wenchang"]
+      "pad_name": [
+        "LC101",
+        "LC-101",
+        "Launch Complex 101"
+      ],
+      "pad_location_includes": [
+        "Wenchang"
+      ]
     },
     "sriharikota-slp": {
-      "pad_name": ["SLP", "Second Launch Pad", "FLP", "First Launch Pad"],
-      "pad_location_includes": ["Sriharikota", "Satish Dhawan"]
+      "pad_name": [
+        "SLP",
+        "Second Launch Pad",
+        "FLP",
+        "First Launch Pad"
+      ],
+      "pad_location_includes": [
+        "Sriharikota",
+        "Satish Dhawan"
+      ]
     },
     "tanegashima-yoshinobu": {
-      "pad_name": ["Yoshinobu", "LP-1", "LP-2", "Yoshinobu Launch Complex"],
-      "pad_location_includes": ["Tanegashima"]
+      "pad_name": [
+        "Yoshinobu",
+        "LP-1",
+        "LP-2",
+        "Yoshinobu Launch Complex"
+      ],
+      "pad_location_includes": [
+        "Tanegashima"
+      ]
     },
     "starbase-orbital-a": {
-      "pad_name": ["Orbital Launch Mount A", "Orbital Launch Pad A", "OLP-A", "Starbase OLM"],
-      "pad_location_includes": ["Boca Chica", "Starbase"]
+      "pad_name": [
+        "Orbital Launch Mount A",
+        "Orbital Launch Pad A",
+        "OLP-A",
+        "Starbase OLM"
+      ],
+      "pad_location_includes": [
+        "Boca Chica",
+        "Starbase"
+      ]
+    },
+    "plesetsk-41-1": {
+      "pad_name": [
+        "LC41/1",
+        "LC41",
+        "Site 41/1",
+        "41/1"
+      ],
+      "pad_location_includes": [
+        "plesetsk",
+        "niip-53"
+      ]
+    },
+    "kourou-ela-2": {
+      "pad_name": [
+        "ELA2",
+        "ELA-2",
+        "Ariane Launch Area 2"
+      ],
+      "pad_location_includes": [
+        "kourou",
+        "csg",
+        "french guiana"
+      ]
+    },
+    "baikonur-200": {
+      "pad_name": [
+        "LC200/39",
+        "LC200/40",
+        "Site 200/39",
+        "Site 200/40",
+        "PU1S",
+        "PU2"
+      ],
+      "pad_location_includes": [
+        "baikonur",
+        "niip-5",
+        "gik-5"
+      ]
+    },
+    "xichang-lc-2": {
+      "pad_name": [
+        "LC2",
+        "LC-2",
+        "Launch Complex 2",
+        "Pad 2"
+      ],
+      "pad_location_includes": [
+        "xichang",
+        "xsc"
+      ]
+    },
+    "xichang-lc-3": {
+      "pad_name": [
+        "LC3",
+        "LC-3",
+        "Launch Complex 3",
+        "Pad 3"
+      ],
+      "pad_location_includes": [
+        "xichang",
+        "xsc"
+      ]
+    },
+    "taiyuan-lc-9": {
+      "pad_name": [
+        "LC9",
+        "LC-9",
+        "Launch Complex 9",
+        "Pad 9"
+      ],
+      "pad_location_includes": [
+        "taiyuan",
+        "tysc"
+      ]
     }
   }
 }

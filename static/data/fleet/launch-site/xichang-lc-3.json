@@ -1,0 +1,23 @@
+{
+  "id": "xichang-lc-3",
+  "category": "launch-site",
+  "name": "Xichang LC-3",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CASC",
+  "first_flight": "1984-04-08",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 28.246,
+  "lon": 102.027,
+  "best_known_for": "First operational CZ-3 launch pad — DFH-2 first comsat, retired CZ-3 missions",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). XSC LC-3 hosted the maiden Long March 3 flight in 1984 (first Chinese GTO success) and many subsequent Apstar / Asiasat / Sinosat missions.",
+  "links": [
+    {
+      "l": "Xichang Satellite Launch Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Xichang_Satellite_Launch_Center",
+      "t": "intro"
+    }
+  ]
+}

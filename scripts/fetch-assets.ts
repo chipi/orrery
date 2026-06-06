@@ -3234,6 +3234,14 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
     agency: 'JAXA',
     maxImages: 8,
   },
+  // Launch-site cross-correlation gap fills (#306 follow-up).
+  { id: 'cape-canaveral-slc-41', query: 'Cape Canaveral SLC-41 Atlas V launch', agency: 'ULA' },
+  { id: 'plesetsk-41-1', query: 'Plesetsk Tsiklon-3 Kosmos-3M launch', agency: 'ROSCOSMOS' },
+  { id: 'kourou-ela-2', query: 'Kourou ELA-2 Ariane 4 launch', agency: 'ESA' },
+  { id: 'baikonur-200', query: 'Baikonur Site 200 Proton launch', agency: 'ROSCOSMOS' },
+  { id: 'xichang-lc-2', query: 'Xichang Long March 3B launch', agency: 'CMSA' },
+  { id: 'xichang-lc-3', query: 'Xichang Long March 3 first launch', agency: 'CMSA' },
+  { id: 'taiyuan-lc-9', query: 'Taiyuan Long March 4 launch satellite', agency: 'CMSA' },
 ];
 
 /**
@@ -3242,6 +3250,10 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
  * non-NASA hardware (Russian / Chinese / European / Japanese craft).
  */
 const WIKIMEDIA_FLEET_FALLBACK: Record<string, string> = {
+  // #306 launch-site cross-correlation gap fills. Plesetsk LC-41/1
+  // (Tsiklon-3 / Kosmos-3M era) returns 0 from the live Commons
+  // search — curated covers from the Plesetsk Cosmodrome category.
+  'plesetsk-41-1': 'Plececk 10.jpg',
   // Launchers
   'saturn-v': 'Apollo 11 Launch - GPN-2000-000630.jpg',
   'space-shuttle-stack': 'STS120LaunchHiRes-edit1.jpg',

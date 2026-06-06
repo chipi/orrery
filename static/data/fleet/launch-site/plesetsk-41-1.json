@@ -1,0 +1,28 @@
+{
+  "id": "plesetsk-41-1",
+  "category": "launch-site",
+  "name": "Plesetsk LC-41/1",
+  "agency": "ROSCOSMOS",
+  "country": "Russia",
+  "manufacturer": "Soviet/Russian Strategic Rocket Forces",
+  "first_flight": "1967-03-21",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "lat": 62.93,
+  "lon": 40.45,
+  "best_known_for": "Tsiklon-3 / Kosmos-3M workhorse — 310+ launches across the Soviet/Russian era",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). LC-41/1 was the primary Tsiklon-3 / Kosmos-3M pad and one of Plesetsk's busiest, distinct from LC-43 (Soyuz). Decommissioned after Tsiklon-3 retired.",
+  "links": [
+    {
+      "l": "Plesetsk Cosmodrome — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Plesetsk_Cosmodrome",
+      "t": "intro"
+    },
+    {
+      "l": "Plesetsk launch sites (Russian Space Web)",
+      "u": "http://www.russianspaceweb.com/plesetsk.html",
+      "t": "deep"
+    }
+  ]
+}

@@ -792,6 +792,18 @@
     "tagline": "Sputnik 1 (1957). Vostok 1 — Gagarin (1961). Five hundred and forty Soyuz launches from a single pad."
   },
   {
+    "id": "baikonur-200",
+    "name": "Baikonur Site 200",
+    "category": "launch-site",
+    "agency": "ROSCOSMOS",
+    "country": "Kazakhstan",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "ACTIVE",
+    "first_flight": "1980-03-14",
+    "tagline": "Proton-M heavy-lift pad — Mir modules, ISS Zvezda/Zarya, GLONASS, Luna 25"
+  },
+  {
     "id": "baikonur-31-6",
     "name": "Baikonur Site 31/6",
     "category": "launch-site",
@@ -838,6 +850,18 @@
     "status": "ACTIVE",
     "first_flight": "1999-11-19",
     "tagline": "China's crewed-spaceflight pad — every Shenzhou crew, every Tianzhou cargo run"
+  },
+  {
+    "id": "kourou-ela-2",
+    "name": "Kourou ELA-2",
+    "category": "launch-site",
+    "agency": "ESA",
+    "country": "France",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "RETIRED",
+    "first_flight": "1986-03-28",
+    "tagline": "Primary Ariane 4 pad — flew every Ariane 4 mission (1988-2003)"
   },
   {
     "id": "kourou-ela-3",
@@ -888,6 +912,18 @@
     "tagline": "Apollo 10 + Skylab + 53 Shuttle flights; now NASA's SLS / Artemis pad"
   },
   {
+    "id": "plesetsk-41-1",
+    "name": "Plesetsk LC-41/1",
+    "category": "launch-site",
+    "agency": "ROSCOSMOS",
+    "country": "Russia",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1967-03-21",
+    "tagline": "Tsiklon-3 / Kosmos-3M workhorse — 310+ launches across the Soviet/Russian era"
+  },
+  {
     "id": "plesetsk-43",
     "name": "Plesetsk Site 43",
     "category": "launch-site",
@@ -924,6 +960,18 @@
     "tagline": "First Starship orbital flight test; designed for the full reusable Mars-bound stack"
   },
   {
+    "id": "taiyuan-lc-9",
+    "name": "Taiyuan LC-9",
+    "category": "launch-site",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "first_flight": "2008-09-06",
+    "tagline": "Long March 2D / 4B / 4C polar-orbit workhorse — Yaogan, Gaofen, weather sats"
+  },
+  {
     "id": "tanegashima-yoshinobu",
     "name": "Tanegashima Yoshinobu LP-1",
     "category": "launch-site",
@@ -958,6 +1006,30 @@
     "status": "ACTIVE",
     "first_flight": "2016-06-25",
     "tagline": "China's heavy-lift pad — Long March 5 to Tianhe, Chang'e 5/6, Tianwen-1, and the lunar return programme"
+  },
+  {
+    "id": "xichang-lc-2",
+    "name": "Xichang LC-2",
+    "category": "launch-site",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "ACTIVE",
+    "first_flight": "1990-04-07",
+    "tagline": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou/Compass satellites"
+  },
+  {
+    "id": "xichang-lc-3",
+    "name": "Xichang LC-3",
+    "category": "launch-site",
+    "agency": "CNSA",
+    "country": "China",
+    "era": "1981-2011",
+    "epoch": "shuttle-and-mir",
+    "status": "ACTIVE",
+    "first_flight": "1984-04-08",
+    "tagline": "First operational CZ-3 launch pad — DFH-2 first comsat, retired CZ-3 missions"
   },
   {
     "id": "antares",

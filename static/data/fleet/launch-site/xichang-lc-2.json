@@ -1,0 +1,28 @@
+{
+  "id": "xichang-lc-2",
+  "category": "launch-site",
+  "name": "Xichang LC-2",
+  "agency": "CNSA",
+  "country": "China",
+  "manufacturer": "CASC / China Manned Space Agency",
+  "first_flight": "1990-04-07",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "shuttle-and-mir",
+  "lat": 28.246,
+  "lon": 102.027,
+  "best_known_for": "Long March 3A/3B family — most Chinese GTO commercial launches and Beidou/Compass satellites",
+  "credit": "Fleet launch-site entry added during the cross-correlation analysis (#306 follow-up). XSC LC-2 has launched the majority of China's commercial GTO missions plus Beidou/Compass GNSS deployments.",
+  "links": [
+    {
+      "l": "Xichang Satellite Launch Center — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Xichang_Satellite_Launch_Center",
+      "t": "intro"
+    },
+    {
+      "l": "CASC China Aerospace",
+      "u": "http://english.spacechina.com/",
+      "t": "core"
+    }
+  ]
+}

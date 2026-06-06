@@ -816,6 +816,18 @@
     "tagline": "Highest-cadence Falcon 9 pad on the planet — workhorse for ISS resupply + Starlink + national-security"
   },
   {
+    "id": "cape-canaveral-slc-41",
+    "name": "Cape Canaveral SLC-41",
+    "category": "launch-site",
+    "agency": "USSF",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "ACTIVE",
+    "first_flight": "1965-12-21",
+    "tagline": "Atlas V's main pad — flew every Atlas V mission including Mars Perseverance + Lucy + Starliner CFT"
+  },
+  {
     "id": "jiuquan-slc-43",
     "name": "Jiuquan SLC-43",
     "category": "launch-site",

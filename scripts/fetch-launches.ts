@@ -30,6 +30,10 @@ import {
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
 import { resolveSpacecraftRefs } from '../src/lib/launches/resolve-spacecraft-refs.js';
+import {
+  resolveLaunchSiteRef,
+  type PadMappingFile,
+} from '../src/lib/launches/resolve-launch-site-ref.js';
 
 const DATA_ROOT = 'static/data';
 const HISTORIC_DIR = join(DATA_ROOT, 'launches-historic');
@@ -52,6 +56,7 @@ type ManifestEntry = Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source
   orrery_launcher_ref: string | null;
   orrery_mission_ref: string | null;
   orrery_spacecraft_refs?: string[];
+  orrery_launch_site_ref?: string | null;
   tier: 'T1' | 'T2' | 'T3' | 'T4';
   tier_reason: string;
   editorial_note: string | null;
@@ -157,6 +162,7 @@ async function main(): Promise<void> {
   const rocketMapping = readJson<RocketMappingFile>(
     join(DATA_ROOT, 'launches-rocket-mapping.json'),
   );
+  const padMapping = readJson<PadMappingFile>(join(DATA_ROOT, 'launches-pad-mapping.json'));
 
   // ── Phase 1+2: pull providers in priority order ─────────────────
   const sources: LaunchSource[] = [
@@ -253,11 +259,17 @@ async function main(): Promise<void> {
         catalogue,
       );
       const spacecraftRefs = resolveSpacecraftRefs(launcherRef, m.entry.mission_name, m.entry.name);
+      const launchSiteRef = resolveLaunchSiteRef(
+        m.entry.pad_name,
+        m.entry.pad_location,
+        padMapping,
+      );
       const entry: ManifestEntry = {
         ...(flat as Omit<RawLaunchEntry, 'source_name' | 'source_url' | 'source_observed_at'>),
         orrery_launcher_ref: launcherRef,
         orrery_mission_ref: missionRef,
         ...(spacecraftRefs.length > 0 ? { orrery_spacecraft_refs: spacecraftRefs } : {}),
+        ...(launchSiteRef ? { orrery_launch_site_ref: launchSiteRef } : {}),
         ...tierBits,
         provenance_chain: m.provenance_chain,
         fetched_at: observed,

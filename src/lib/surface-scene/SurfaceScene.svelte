@@ -107,6 +107,7 @@
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import LearnLink from '$lib/components/LearnLink.svelte';
+  import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
 
   // ─── Props (planet-specific config + data loaders) ────────────────
   // The component is generic over body; per-planet behaviour comes in
@@ -3831,6 +3832,15 @@ sample      ${debugInfo.projectedPxSample}`}
 
         {#if selected.credit}
           <div class="credit">{selected.credit}</div>
+        {/if}
+
+        <!-- /earth launch-complex overview gets the same next/recent
+             flights widget the fleet panels use. The widget self-hides
+             when there are no manifest matches, so /moon and /mars
+             surface sites stay clean — this is effectively earth-only
+             without a per-route gate. -->
+        {#if config.planet === 'earth'}
+          <LauncherFlightsWidget launcherId={selected.id} />
         {/if}
       {:else if panelTab === 'gallery'}
         {#if panelGallery.length === 0}

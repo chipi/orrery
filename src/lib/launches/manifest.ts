@@ -47,6 +47,12 @@ export type LaunchEntry = {
    *  in addition to the rocket-side launcher entries the
    *  `orrery_launcher_ref` already links. Empty when no rule matches. */
   orrery_spacecraft_refs?: string[];
+  /** Per-launch fleet-launch-site cross-reference, populated at build
+   *  time by `resolveLaunchSiteRef` from a pad-name → site-id mapping
+   *  table. Lets the LauncherFlightsWidget surface upcoming/recent
+   *  launches on the /earth launch-complex panels (LC-39A, SLC-40,
+   *  Kourou ELA-4, Baikonur 1/5, etc.). Null when no rule matches. */
+  orrery_launch_site_ref?: string | null;
   pad_name?: string;
   pad_location?: string;
   image_url?: string;

@@ -33,13 +33,17 @@
         loadUpcoming(),
         loadHistoricDecade(decadeForYear(new Date().getUTCFullYear())),
       ]);
-      // Match either by launcher ref (rocket-side: Falcon 9, Ariane 6,
-      // …) OR by spacecraft ref (spacecraft-side: Crew Dragon, Cargo
-      // Dragon, Cygnus, HTV-X, Tianzhou). Spacecraft refs are populated
-      // by the build pipeline via resolveSpacecraftRefs.
+      // Match by launcher ref (rocket-side: Falcon 9, Ariane 6, …),
+      // spacecraft ref (Crew Dragon, Cygnus, …), OR launch-site ref
+      // (LC-39A, SLC-40, Kourou ELA-4, …). All three are populated by
+      // the build pipeline (resolveSpacecraftRefs +
+      // resolveLaunchSiteRef). Same widget powers all three caller
+      // surfaces; the prop name stays `launcherId` for backwards
+      // compatibility — semantically it's now "any fleet entry id".
       const matches = (e: LaunchEntry): boolean =>
         e.orrery_launcher_ref === launcherId ||
-        (e.orrery_spacecraft_refs ?? []).includes(launcherId);
+        (e.orrery_spacecraft_refs ?? []).includes(launcherId) ||
+        e.orrery_launch_site_ref === launcherId;
       const upMatches = Object.values(upcoming.entries)
         .filter(matches)
         .sort((a, b) => a.net.localeCompare(b.net));

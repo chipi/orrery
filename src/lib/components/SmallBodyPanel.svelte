@@ -100,6 +100,7 @@
       <div class="kind-row">
         <span class="kind">{typeLabel}</span>
       </div>
+      <div class="name">{body.name}</div>
     </div>
 
     {#if gallery.length > 0}
@@ -350,6 +351,14 @@
     font-size: 8px;
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
+  }
+  .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: var(--color-text);
+    line-height: 1;
+    margin: 6px 0 12px;
   }
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family (Planet, Sun, Mission,

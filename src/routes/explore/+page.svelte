@@ -1106,6 +1106,10 @@
     type SatelliteObj = {
       def: SatelliteDef;
       mesh: THREE.Mesh;
+      /** Dashed orbit ring — gated on close zoom via PLANET_LOD_IN_RATIO
+       *  in the per-frame loop so the rings only reveal alongside the
+       *  spin axis + atmospheric halo. */
+      orbitLine: THREE.LineLoop;
       /** Per-frame angular phase (radians) — incremented from simT
        *  scaled by 1 / periodDays. */
       angle: number;
@@ -1221,17 +1225,50 @@
       pickAid.userData = { planetId: p.id };
       group.add(pickAid);
       if (p.hasRings) {
-        const rg = new THREE.RingGeometry(p.size3 * 1.4, p.size3 * 2.6, 64);
-        const rm = new THREE.MeshBasicMaterial({
-          color: 0xe4d191,
-          transparent: true,
-          opacity: 0.45,
-          side: THREE.DoubleSide,
-          depthWrite: false,
-        });
-        const ring = new THREE.Mesh(rg, rm);
-        ring.rotation.x = Math.PI / 2.2;
-        group.add(ring);
+        // Saturn's ring system rendered as concentric bands rather than
+        // a single flat disk (2026-06-06 user direction: "Saturn rings
+        // are rendered in explore as flat disk, let's try to bring some
+        // texture/color and make them more realistic"). Mapped to the
+        // canonical C / B / A ring + Cassini Division boundaries
+        // (Cassini ratio ~2.025–2.07 in Saturn radii). Inner/outer radii
+        // scaled to the existing 1.4–2.6 size3 envelope so the visual
+        // footprint is unchanged.
+        const r0 = p.size3 * 1.4;
+        const rOuter = p.size3 * 2.6;
+        const span = rOuter - r0;
+        const ringsGroup = new THREE.Group();
+        const ringBands: Array<{
+          inner: number;
+          outer: number;
+          color: number;
+          opacity: number;
+        }> = [
+          // C ring — inner, dusky, semi-transparent.
+          { inner: 0.0, outer: 0.18, color: 0x8a7858, opacity: 0.35 },
+          // B ring — densest + brightest band.
+          { inner: 0.18, outer: 0.55, color: 0xf1d7a3, opacity: 0.62 },
+          // Cassini Division — sharp dark gap visible from Earth.
+          { inner: 0.55, outer: 0.6, color: 0x4a3f2c, opacity: 0.18 },
+          // A ring — slightly cooler tone than B.
+          { inner: 0.6, outer: 0.92, color: 0xddc497, opacity: 0.5 },
+          // Encke Gap — narrow dark sliver near A-ring outer.
+          { inner: 0.92, outer: 0.94, color: 0x4a3f2c, opacity: 0.15 },
+          // F ring outer halo — diffuse.
+          { inner: 0.94, outer: 1.0, color: 0xe4d191, opacity: 0.28 },
+        ];
+        for (const b of ringBands) {
+          const rg = new THREE.RingGeometry(r0 + b.inner * span, r0 + b.outer * span, 96);
+          const rm = new THREE.MeshBasicMaterial({
+            color: b.color,
+            transparent: true,
+            opacity: b.opacity,
+            side: THREE.DoubleSide,
+            depthWrite: false,
+          });
+          ringsGroup.add(new THREE.Mesh(rg, rm));
+        }
+        ringsGroup.rotation.x = Math.PI / 2.2;
+        group.add(ringsGroup);
       }
       // Satellites — built up-front (no lazy load) since their
       // textures share the same lazy 4K LOD philosophy as the parent
@@ -1295,22 +1332,35 @@
           );
         }
         const orbitGeo = new THREE.BufferGeometry().setFromPoints(orbitPts);
-        // 2026-06-03 user direction: "Make moon orbits look more
-        // like planet orbits (less visible)." Dropped opacity
-        // 0.25 → 0.06 and switched colour to plain white to match
-        // the (previously) ultra-subtle planet-orbit style.
-        const orbitMat = new THREE.LineBasicMaterial({
+        // 2026-06-06 user direction: "I would like to see some kind of
+        // orbit of natural satellites around planet draw, maybe
+        // different kind of line." Switched to a dashed white line at
+        // moderate opacity so moon orbits read as a distinct visual
+        // grammar from planet orbits (solid pale-blue) — dashed = sub-
+        // orbit, solid = heliocentric. Requires computeLineDistances()
+        // on the geometry for the dash pattern to register.
+        const orbitMat = new THREE.LineDashedMaterial({
           color: 0xffffff,
           transparent: true,
-          opacity: 0.06,
+          opacity: 0.45,
           depthWrite: false,
+          dashSize: s.orbitUnits * 0.06,
+          gapSize: s.orbitUnits * 0.035,
         });
         const orbitLine = new THREE.LineLoop(orbitGeo, orbitMat);
+        orbitLine.computeLineDistances();
         satellitesGroup.add(orbitLine);
 
+        // Hide the dashed orbit ring at default zoom — only reveals at
+        // the same PLANET_LOD_IN_RATIO threshold as the spin axis +
+        // atmospheric halo (2026-06-06 user direction: "show natural
+        // satellite orbits only when zoomed in"). Gated in the per-
+        // frame loop alongside halo/spinAxis visibility.
+        orbitLine.visible = false;
         return {
           def: s,
           mesh: satMesh,
+          orbitLine,
           // Initial angle deterministically spread by id-hash so
           // multiple moons around a single parent don't pile up at
           // phase 0 when the page first loads.
@@ -1722,6 +1772,16 @@
         // Spin-axis indicator (PRD-023 Slice A) — same gating.
         if (obj.spinAxis.visible !== shouldShow) {
           obj.spinAxis.visible = shouldShow;
+        }
+        // Natural-satellite orbit rings (2026-06-06 user direction:
+        // "show satellite orbits only when zoomed in"). Hide at default
+        // zoom so the dashed rings don't compete with planet orbits in
+        // the heliocentric view; reveal alongside spin axis + halo
+        // when the user flies in to a planet.
+        for (const sat of obj.satellites) {
+          if (sat.orbitLine.visible !== shouldShow) {
+            sat.orbitLine.visible = shouldShow;
+          }
         }
         // PRD-023 Slice E.3a — N/S badges + rotation arrow ride
         // alongside the spin axis itself (always-on at close zoom).

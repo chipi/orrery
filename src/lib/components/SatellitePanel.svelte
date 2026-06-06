@@ -93,6 +93,19 @@
       <div class="kind-row">
         <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
       </div>
+      <div class="name">{entry.name}</div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-label">{m.panel_label_orbital_period()}</div>
+          <div class="stat-value">
+            {m.panel_satellite_period_unit_days({ value: entry.orbital_period_days.toFixed(2) })}
+          </div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">{m.panel_satellite_orbit_label()}</div>
+          <div class="stat-value">{formatKm(entry.semi_major_axis_km, loc)}</div>
+        </div>
+      </div>
     </div>
 
     {#if gallery.length > 0}
@@ -232,6 +245,32 @@
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
     text-transform: uppercase;
+  }
+  .name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 3px;
+    color: var(--color-text);
+    line-height: 1;
+    margin: 6px 0 12px;
+  }
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .stat-value {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    color: var(--color-text);
   }
   .panel-hero {
     margin: 0 0 14px;

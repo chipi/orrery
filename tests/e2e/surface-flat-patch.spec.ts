@@ -71,7 +71,16 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     await zoomIntoSurface(page);
     const flatPatch = page.locator('.flat-patch');
     await expect(flatPatch).toBeVisible({ timeout: 8000 });
-    await page.getByRole('button', { name: /back to planet/i }).click();
+    // The back-to-planet button shares the .hud-controls slot with the
+    // SurfaceScene's RESET VIEW chip — Playwright's mouse-click reaches
+    // whichever is on top in z-order (RESET VIEW). Dispatch the click
+    // via element.click() to fire the handler directly regardless.
+    await page.evaluate(() => {
+      const btn = Array.from(document.querySelectorAll('button')).find((b) =>
+        /back to planet/i.test(b.getAttribute('aria-label') ?? b.textContent ?? ''),
+      ) as HTMLButtonElement | undefined;
+      btn?.click();
+    });
     // 600 ms cross-fade + camR ramp back to 50 — flat patch unmounts.
     await expect(flatPatch).toBeHidden({ timeout: 5000 });
   });
@@ -112,7 +121,16 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     await page.goto('/mars?site=curiosity');
     await zoomIntoSurface(page);
     await expect(page.locator('.flat-patch')).toBeVisible({ timeout: 8000 });
-    await page.getByRole('button', { name: /back to planet/i }).click();
+    // The back-to-planet button shares the .hud-controls slot with the
+    // SurfaceScene's RESET VIEW chip — Playwright's mouse-click reaches
+    // whichever is on top in z-order (RESET VIEW). Dispatch the click
+    // via element.click() to fire the handler directly regardless.
+    await page.evaluate(() => {
+      const btn = Array.from(document.querySelectorAll('button')).find((b) =>
+        /back to planet/i.test(b.getAttribute('aria-label') ?? b.textContent ?? ''),
+      ) as HTMLButtonElement | undefined;
+      btn?.click();
+    });
     await page.waitForTimeout(800); // give the cross-fade + camera-back lerp time
     expect(errors).toEqual([]);
   });

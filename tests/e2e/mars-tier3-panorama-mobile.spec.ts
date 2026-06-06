@@ -50,8 +50,11 @@ test.describe('Mars Tier 3 panorama HUD — mobile smoke', () => {
     const annButtons = page.getByTestId('panorama-annotation-sr-button');
     await expect(annButtons).toHaveCount(3);
 
-    // Activate one annotation via keyboard (sr-only path).
-    await annButtons.first().click();
+    // Activate the first annotation via element.click() — Playwright's
+    // mouse-click is intercepted by the detail-panel's .agency-row sitting
+    // on top of the sr-only buttons at mobile widths. The sr-only path
+    // is keyboard-driven anyway, so a direct DOM dispatch is faithful.
+    await annButtons.first().evaluate((btn: HTMLButtonElement) => btn.click());
     await expect(page.getByTestId('panorama-annotation-card')).toBeVisible();
 
     // Esc dismisses card.

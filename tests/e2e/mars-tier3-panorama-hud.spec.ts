@@ -49,12 +49,15 @@ test.describe('Mars Tier 3 panorama HUD — Perseverance', () => {
     // New HUD components — all should mount on panorama entry.
     const caption = page.getByTestId('panorama-caption-overlay');
     await expect(caption).toBeVisible({ timeout: 3_000 });
-    // The seeded perseverance metadata says "SOL 46 · 2021-04-06 · Mastcam-Z".
-    await expect(caption).toContainText(/SOL 46/);
-    await expect(caption).toContainText(/2021-04-06/);
+    // Perseverance metadata header — SOL number + instrument + date.
+    // Editorial content drifts (the seeded panorama updated from SOL 46
+    // to SOL 3 in mid-v0.7 — "First 360°" from three days after landing).
+    // Match on the header SHAPE (`SOL <n>`, ISO date, Mastcam-Z) rather
+    // than the specific numbers so a future re-curation doesn't break the
+    // smoke.
+    await expect(caption).toContainText(/SOL \d/);
+    await expect(caption).toContainText(/\b202\d-\d{2}-\d{2}\b/);
     await expect(caption).toContainText(/Mastcam-Z/);
-    // Caption body mentions Ingenuity (from the seed copy).
-    await expect(caption).toContainText(/Ingenuity/);
     // Credit footer.
     await expect(caption).toContainText(/NASA\/JPL-Caltech\/ASU/);
 

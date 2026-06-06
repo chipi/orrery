@@ -1908,7 +1908,15 @@
       hoveredStopInfo = null;
     };
 
+    // Tracked so the window-level mouseup listener can distinguish
+    // "user clicked the canvas" from "user clicked a panel button and
+    // mouseup bubbled up to window". Without this, a click on a tab
+    // button reaches the window mouseup, raycasts at the button's
+    // coordinates, and accidentally selects whatever hotspot/site
+    // sits behind the cursor in 3D space.
+    let mouseDownOnCanvas = false;
     const onMouseDown = (e: MouseEvent) => {
+      mouseDownOnCanvas = true;
       isDrag = true;
       dragMoved = false;
       lmx = e.clientX;
@@ -1951,10 +1959,12 @@
       updateCam();
     };
     const onMouseUp = (e: MouseEvent) => {
+      const wasOnCanvas = mouseDownOnCanvas;
+      mouseDownOnCanvas = false;
       const wasDrag = dragMoved;
       isDrag = false;
       el3d.style.cursor = 'grab';
-      if (!wasDrag && view === '3d') tryPick3d(e.clientX, e.clientY);
+      if (wasOnCanvas && !wasDrag && view === '3d') tryPick3d(e.clientX, e.clientY);
     };
     const onWheel = (e: WheelEvent) => {
       // preventDefault prevents trackpad pinch-zoom from triggering

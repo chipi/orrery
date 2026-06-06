@@ -2586,7 +2586,9 @@
       hoverData = null;
     };
 
+    let mouseDownOnCanvas = false;
     const on3dMouseDown = (e: MouseEvent) => {
+      mouseDownOnCanvas = true;
       isDrag3d = true;
       dragMoved3d = false;
       // Right-click OR Shift+left-click → pan instead of orbit
@@ -2629,12 +2631,19 @@
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;
       const wasPan = isPan3d;
+      const wasOnCanvas = mouseDownOnCanvas;
       isDrag3d = false;
       isPan3d = false;
+      mouseDownOnCanvas = false;
       el3d.style.cursor = 'grab';
       // Pan release shouldn't open a planet panel — only orbit-mode
       // mouseup that didn't reach drag-threshold counts as a pick.
-      if (!wasDrag && !wasPan && view === '3d') tryPick3d(e);
+      // Also require the mousedown to have started on the canvas —
+      // otherwise clicks on overlay buttons (panel tabs etc.) bubble
+      // mouseup to the window-level listener and raycast through to
+      // whatever 3D pickable happens to sit behind the cursor (e.g.
+      // a Kuiper-Belt torus ring under a SatellitePanel LIBRARY tab).
+      if (wasOnCanvas && !wasDrag && !wasPan && view === '3d') tryPick3d(e);
     };
     // Right-click on the canvas would otherwise pop the browser's
     // context menu; suppress so right-drag pan stays usable.
@@ -4287,6 +4296,18 @@
       flex-wrap: wrap;
       align-items: center;
       max-width: calc(100vw - 24px);
+    }
+    /* Drop the width: 100% the desktop column rail uses so chips can
+       actually flow side-by-side. Without this override chips inherit
+       the full chip-row width and stack vertically anyway, which
+       breaks mobile-layout.spec.ts:68's "chips flow rightward, not
+       downward" invariant. Also unstretch .hud-controls so each row
+       takes its natural width again. */
+    .hud-controls {
+      align-items: flex-start;
+    }
+    .chip {
+      width: auto;
     }
   }
 

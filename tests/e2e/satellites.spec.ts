@@ -58,7 +58,7 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await page.goto('/explore?id=earth:moon');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const galleryTab = panel.getByRole('tab', { name: /^GALLERY$/ });
+    const galleryTab = page.locator('#sat-tab-gallery');
     await expect(galleryTab).toBeVisible({ timeout: 10_000 });
     await galleryTab.click();
     await expect(galleryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
@@ -68,7 +68,7 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await page.goto('/explore?id=earth:moon');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const technicalTab = panel.getByRole('tab', { name: /^TECHNICAL$/ });
+    const technicalTab = page.locator('#sat-tab-technical');
     await expect(technicalTab).toBeVisible({ timeout: 10_000 });
     await technicalTab.click();
     await expect(technicalTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
@@ -79,12 +79,11 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
 
   test('LIBRARY tab shows tiered LEARN links for Moon', async ({ page }) => {
     await page.goto('/explore?id=earth:moon');
-    const panel = page.locator('aside.panel');
+    // Pin to the SatellitePanel by its unique tab id prefix — BeltPanel
+    // can be co-mounted (rarely) and shares the LIBRARY tab role label.
+    const panel = page.locator('aside.panel').filter({ has: page.locator('#sat-tab-library') });
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    // Scope the tab selector to the open satellite panel — BeltPanel
-    // also has a LIBRARY tab and lives in the DOM at the same time
-    // (closed, but present), so a top-level role lookup matches both.
-    const libraryTab = panel.getByRole('tab', { name: /^LIBRARY$/ });
+    const libraryTab = page.locator('#sat-tab-library');
     await expect(libraryTab).toBeVisible({ timeout: 10_000 });
     await libraryTab.click();
     await expect(libraryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });

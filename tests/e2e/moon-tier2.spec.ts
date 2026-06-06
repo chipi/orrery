@@ -88,6 +88,7 @@ test.describe('Moon — Tier 2 patch + Tier 3 button smoke', () => {
 
   for (const site of ALL_MOON_TIER3_SITES) {
     if (site === 'luna9') continue; // luna9 has no LROC coords yet → Tier 2/3 deferred
+    if (site === 'luna21') continue; // luna21 panorama imagery not yet sourced → Tier 3 deferred
     if (site === 'apollo11' || site === 'change4') continue; // covered by explicit tests above
     test(`${site} Tier 3 panorama JPEG is served`, async ({ request }) => {
       const res = await request.get(`/images/hotspots/moon/${site}/tier3-pan.jpg`);

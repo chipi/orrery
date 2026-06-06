@@ -596,7 +596,16 @@
 
   @media (max-width: 500px) {
     nav {
-      padding: 0 12px;
+      padding: 0 6px;
+    }
+    /* Cluster of 5 right-side buttons (menu / audio / locale / lens /
+       contrast) overflowed the 375 px viewport at the default 14 px gap
+       — landing.spec.ts:95 + fleet.spec.ts:173 both flagged ~48 px of
+       horizontal scroll. Tighten the gap so the cluster fits without
+       hiding any controls (each one is reachable here only — the
+       hamburger drawer doesn't surface lens / contrast). */
+    .right {
+      gap: 2px;
     }
   }
 </style>

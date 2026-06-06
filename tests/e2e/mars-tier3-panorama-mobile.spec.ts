@@ -36,6 +36,10 @@ test.describe('Mars Tier 3 panorama HUD — mobile smoke', () => {
     // Sr-only overlay confirms panorama active.
     await expect(page.getByTestId('panorama-overlay')).toBeVisible({ timeout: 5_000 });
 
+    // Caption defaults to collapsed — open via the ⓘ pill so the
+    // panorama-caption-overlay asserts below have something to match.
+    await page.getByRole('button', { name: /show panorama caption/i }).click();
+
     // Visible HUD components.
     await expect(page.getByTestId('panorama-caption-overlay')).toBeVisible();
     await expect(page.getByTestId('panorama-compass-rose')).toBeVisible();

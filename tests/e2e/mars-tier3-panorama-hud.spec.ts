@@ -41,6 +41,11 @@ test.describe('Mars Tier 3 panorama HUD — Perseverance', () => {
     // confirms panorama is active.
     await expect(page.getByTestId('panorama-overlay')).toBeVisible({ timeout: 5_000 });
 
+    // Caption now defaults to dismissed (collapsed ⓘ pill) so the
+    // panorama imagery isn't obscured on entry. Click the ⓘ to open
+    // it before asserting on the caption content.
+    await page.getByRole('button', { name: /show panorama caption/i }).click();
+
     // New HUD components — all should mount on panorama entry.
     const caption = page.getByTestId('panorama-caption-overlay');
     await expect(caption).toBeVisible({ timeout: 3_000 });
@@ -80,15 +85,19 @@ test.describe('Mars Tier 3 panorama HUD — Perseverance', () => {
     await page.goto('/mars?site=perseverance');
     await page.getByTestId('stand-at-site').click();
 
+    // Caption defaults to collapsed — open it first via the ⓘ pill.
+    const reopen = page.getByRole('button', { name: /show panorama caption/i });
+    await expect(reopen).toBeVisible({ timeout: 5_000 });
+    await reopen.click();
+
     const caption = page.getByTestId('panorama-caption-overlay');
-    await expect(caption).toBeVisible({ timeout: 5_000 });
+    await expect(caption).toBeVisible({ timeout: 3_000 });
 
     // The × button inside the caption overlay should dismiss it.
     await caption.getByRole('button', { name: /dismiss caption/i }).click();
     await expect(caption).toHaveCount(0);
 
-    // After dismissal, the ⓘ re-open affordance takes its place.
-    const reopen = page.getByRole('button', { name: /show panorama caption/i });
+    // After dismissal, the ⓘ re-open affordance takes its place again.
     await expect(reopen).toBeVisible();
     await reopen.click();
     await expect(caption).toBeVisible();
@@ -104,6 +113,9 @@ test.describe('Mars Tier 3 panorama HUD — site without metadata', () => {
     const stand = page.getByTestId('stand-at-site');
     await expect(stand).toBeVisible({ timeout: 20_000 });
     await stand.click();
+
+    // Caption defaults dismissed — open via the ⓘ pill.
+    await page.getByRole('button', { name: /show panorama caption/i }).click();
 
     const caption = page.getByTestId('panorama-caption-overlay');
     await expect(caption).toBeVisible({ timeout: 5_000 });

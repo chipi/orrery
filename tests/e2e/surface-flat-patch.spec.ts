@@ -31,7 +31,10 @@ async function zoomIntoSurface(page: Page): Promise<void> {
   const cy = box.y + box.height / 2;
   await page.mouse.move(cx, cy);
   for (let i = 0; i < 25; i++) {
-    await page.mouse.wheel(0, 100);
+    // Negative deltaY = wheel UP = zoom IN per SurfaceScene's wheel handler
+    // (camRTarget + deltaY * wheelK). Pushing positive deltaY zooms OUT
+    // and never crosses the flat-patch threshold.
+    await page.mouse.wheel(0, -100);
     // Small wait between wheels so the smooth-zoom lerp catches up
     // before the next event (15%/frame at 60 Hz ≈ 250 ms half-life).
     await page.waitForTimeout(80);

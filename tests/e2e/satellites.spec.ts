@@ -58,7 +58,7 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await page.goto('/explore?id=earth:moon');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const galleryTab = page.getByRole('tab', { name: /^GALLERY$/ });
+    const galleryTab = panel.getByRole('tab', { name: /^GALLERY$/ });
     await expect(galleryTab).toBeVisible({ timeout: 10_000 });
     await galleryTab.click();
     await expect(galleryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
@@ -68,7 +68,7 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await page.goto('/explore?id=earth:moon');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const technicalTab = page.getByRole('tab', { name: /^TECHNICAL$/ });
+    const technicalTab = panel.getByRole('tab', { name: /^TECHNICAL$/ });
     await expect(technicalTab).toBeVisible({ timeout: 10_000 });
     await technicalTab.click();
     await expect(technicalTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });
@@ -81,7 +81,10 @@ test.describe('/explore — SatellitePanel deep-links (#304)', () => {
     await page.goto('/explore?id=earth:moon');
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 10_000 });
-    const libraryTab = page.getByRole('tab', { name: /^LIBRARY$/ });
+    // Scope the tab selector to the open satellite panel — BeltPanel
+    // also has a LIBRARY tab and lives in the DOM at the same time
+    // (closed, but present), so a top-level role lookup matches both.
+    const libraryTab = panel.getByRole('tab', { name: /^LIBRARY$/ });
     await expect(libraryTab).toBeVisible({ timeout: 10_000 });
     await libraryTab.click();
     await expect(libraryTab).toHaveAttribute('aria-selected', 'true', { timeout: 5_000 });

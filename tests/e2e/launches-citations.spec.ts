@@ -36,7 +36,10 @@ test.describe('Launches calendar citation visibility (CC-BY ship-gate)', () => {
   test('/library page lists GCAT + LL2 in the Launches data sources aside', async ({ page }) => {
     await page.goto('/library');
     await page.waitForSelector('section.library[data-route-ready="true"]', { timeout: 30_000 });
-    const aside = page.locator('aside.data-sources');
+    // Scope by aria-label — the Audio transcripts index (Library v2 §S6)
+    // ships with the same `.data-sources` class, so the bare selector
+    // matches two elements and trips strict mode.
+    const aside = page.getByRole('complementary', { name: /Data sources for the launches/i });
     await expect(aside).toBeVisible();
     await expect(aside).toContainText(/Jonathan McDowell|GCAT|General Catalog/i);
     await expect(aside).toContainText(/Launch Library 2|LL2|Space Devs/i);

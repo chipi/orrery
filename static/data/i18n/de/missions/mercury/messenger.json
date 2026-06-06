@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "ORBITER \u00b7 FLOWN",
-  "first": "First spacecraft to orbit Mercury; first complete surface map of the innermost planet",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years \u2014 Earth, Venus twice, Mercury three times \u2014 to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 \u00b0C and the other at -45 \u00b0C. Discoveries included water ice in permanently shadowed polar craters, previously unknown \u201chollows\u201d geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core ratio in the solar system). Mission ended with a controlled impact onto Mercury\u2019s surface 2015-04-30 after fuel ran out.",
+  "type": "Orbiter · Geflogen",
+  "first": "Erste Sonde im Orbit um Merkur; erste komplette Oberflächenkarte des innersten Planeten",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) nutzte sechs Schwerkraftunterstützungen in sieben Jahren — Erde, zweimal Venus, dreimal Merkur — um am 18.03.2011 in den Merkurorbit einzuschwenken. Schutz durch Sonnenschild mit einer Seite bei 370 °C und der anderen bei -45 °C. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, bislang unbekannte geologische »Hollows«, und Bestätigung, dass Merkurs Eisenkern ~85 % des Planetenradius einnimmt (das größte Kernverhältnis im Sonnensystem). Mission endete am 30.04.2015 mit einem kontrollierten Aufprall, nachdem der Treibstoff verbraucht war.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Delta II 7925H lifts MESSENGER on a six-flyby trajectory.",
+      "label": "START",
+      "note": "Delta II 7925H hebt MESSENGER auf einer Sechs-Vorbeiflug-Trajektorie.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+      "label": "ERDSCHWUNG",
+      "note": "Erste von sechs Unterstützungen, die die Bahn genug verlangsamen, um in den Merkurorbit einzutreten.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERCURY ORBIT INSERTION",
-      "note": "Main-engine burn places MESSENGER into Mercury orbit after seven years of cruise.",
+      "label": "MERKUR-ORBITEINFÜGUNG",
+      "note": "Haupttriebwerk-Manöver setzt MESSENGER nach 7 Jahren Reise in den Merkurorbit.",
       "type": "nominal"
     }
   ]

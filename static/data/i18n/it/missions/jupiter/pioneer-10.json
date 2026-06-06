@@ -1,19 +1,19 @@
 {
   "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "type": "Sorvolo · Effettuato",
+  "first": "Prima sonda a attraversare la fascia degli asteroidi e a sorvolare Giove (04-12-1973)",
+  "description": "Pioneer 10 ha aperto la via — prima sonda ad attraversare la fascia degli asteroidi (rivelatasi assai meno pericolosa del previsto), prima a fotografare Giove da vicino, prima a superare la distanza del perielio di Plutone (1983). Porta la Placca Pioneer, disegnata da Carl Sagan, Frank Drake e Linda Salzman Sagan — il primo messaggio interstellare deliberato dell'umanità. Ultimo contatto riuscito il 23-01-2003 da ~82 UA; la sonda ora va verso la costellazione del Toro, con un passaggio vicino ad Aldebaran fra circa due milioni di anni.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "label": "LANCIO",
+      "note": "Atlas-Centaur solleva Pioneer 10 in ascesa diretta verso Giove.",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "label": "MASSIMO AVVICINAMENTO A GIOVE",
+      "note": "Sorvolo a ~132.000 km — prime immagini ravvicinate del pianeta.",
       "type": "nominal"
     }
   ]

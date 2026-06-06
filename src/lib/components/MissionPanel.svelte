@@ -21,6 +21,22 @@
   // crowding in the strip.
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
 
+  // #306 panel ↔ /explore PATHS-layer backlink. Stays in sync with
+  // ICONIC_TRAJECTORY_IDS in src/routes/explore/+page.svelte —
+  // updating one without the other gives misleading "see on /explore"
+  // chips. Validated by the explore-paths-layer e2e spec.
+  const MISSIONS_WITH_ICONIC_PATH = new Set([
+    'voyager-1',
+    'voyager-2',
+    'pioneer-10',
+    'pioneer-11',
+    'new-horizons',
+    'galileo',
+    'juno',
+    'cassini',
+    'dawn',
+  ]);
+
   type Props = {
     mission: Mission | null;
     open: boolean;
@@ -328,6 +344,22 @@
 
         {#if mission.description}
           <p class="editorial">{mission.description}</p>
+        {/if}
+
+        {#if MISSIONS_WITH_ICONIC_PATH.has(mission.id)}
+          <!-- #306 panel ↔ /explore backlink. The 9 missions with
+               iconic trajectories on /explore (Voyager 1+2, Pioneer
+               10+11, New Horizons, Galileo, Juno, Cassini, Dawn) get
+               a small chip that deep-links to /explore with the
+               PATHS layer active. Cassini also gets the orbital tour
+               at Saturn-system scale on zoom-in (Slice D). -->
+          <a
+            class="explore-backlink"
+            href="{base}/explore?paths=1{mission.id === 'cassini' ? '&focus=saturn' : ''}"
+            data-testid="explore-backlink"
+          >
+            {mission.id === 'cassini' ? m.mp_see_tour_on_explore() : m.mp_see_path_on_explore()}
+          </a>
         {/if}
 
         {#if mission.credit}
@@ -844,6 +876,29 @@
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
+  }
+
+  .explore-backlink {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    text-decoration: none;
+    transition:
+      background 0.12s ease,
+      border-color 0.12s ease;
+  }
+  .explore-backlink:hover,
+  .explore-backlink:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.24);
   }
 
   /* .link-tier / .tier-* / .empty-tab moved to panel-tabs.css */

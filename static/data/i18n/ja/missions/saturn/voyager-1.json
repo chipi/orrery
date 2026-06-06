@@ -1,25 +1,25 @@
 {
-  "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "name": "ボイジャー 1 号",
+  "type": "フライバイ · 飛行済み",
+  "first": "最も遠い人工物 — 現在は太陽から約 165 AU、恒星間空間にある",
+  "description": "ボイジャー 2 から 16 日後に打ち上げられたボイジャー 1 はより速く飛び、木星 (一九七九) と土星 (一九八〇) に先に到達した。タイタン接近で軌道は黄道面から上方に折れ曲がり、惑星ツアーは終了したものの、最短経路で太陽圏界面へ向かった — 二〇一二年八月二十五日に通過し、恒星間空間に到達した初の人工物となった。約 60 億 km の距離から家族写真『ペイル・ブルー・ドット』(一九九〇年二月十四日) を撮影、カール・セーガンが綴ったあの写真である。両ボイジャーは人類の名刺としてゴールデンレコードを搭載している。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "note": "Titan IIIE / Centaur がボイジャー 1 をケープカナベラルから打ち上げる。",
       "type": "nominal"
     },
     {
       "met": 546,
       "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "note": "約 349,000 km での接近通過。イオの火山活動を発見、エウロパ表面を地図化。",
       "type": "nominal"
     },
     {
       "met": 1164,
       "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "note": "タイタン接近で軌道は黄道面外へ — これ以降の惑星遭遇は不可能となった。",
       "type": "nominal"
     }
   ]

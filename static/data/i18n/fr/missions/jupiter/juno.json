@@ -1,25 +1,25 @@
 {
   "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "type": "Orbiteur · Active",
+  "first": "Premier orbiteur polaire de Jupiter ; première utilisation de l'énergie solaire au-delà de la ceinture d'astéroïdes",
+  "description": "Juno est entrée en orbite de Jupiter le 05-07-2016 sur une trajectoire polaire très elliptique de 53 jours, qui la conduit depuis l'intérieur des ceintures de radiations (périjove ~4 200 km au-dessus des sommets des nuages) jusqu'au-delà de Callisto. Alimentée à l'énergie solaire — ses panneaux triple-jonction d'environ 50 m² fournissent 14 kW à la Terre mais seulement ~500 W à Jupiter, première utilisation de l'énergie solaire à cette distance. A confirmé que Jupiter possède un noyau rocheux dilué (pas de frontière nette), a mesuré la disposition des cyclones polaires (huit tempêtes circumpolaires autour de chaque pôle) et a imagé en 2023 le volcanisme d'Io avec un niveau de détail sans précédent. La mission étendue prévoit des survols des quatre lunes galiléennes jusqu'en 2025.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "LANCEMENT",
+      "note": "Atlas V 551 soulève Juno depuis Cap Canaveral.",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+      "note": "La fronde élève l'énergie héliocentrique suffisamment pour atteindre Jupiter.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "MISE EN ORBITE AUTOUR DE JUPITER",
+      "note": "Allumage du moteur principal de 35 minutes place Juno en orbite polaire de Jupiter.",
       "type": "nominal"
     }
   ]

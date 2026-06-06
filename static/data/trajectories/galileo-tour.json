@@ -1,0 +1,111 @@
+{
+  "id": "galileo-tour",
+  "name": "Galileo Jupiter-system tour",
+  "mission_id": "galileo",
+  "parent_planet": "jupiter",
+  "color": "#a5d6a7",
+  "schema_version": 1,
+  "_doc": "Jupiter-anchored orbital tour for /explore PATHS layer (#306 Slice D follow-up). Galileo completed 35 orbits over 8 years (1995-2003) with 34 close Galilean-moon flybys. Same scene convention as cassini-tour.json — semi-major in scene units (Jupiter size3=13.5, Io orbit=24, so 1 R_J ≈ 4 units). Six representative families capture the mission arc: initial capture (high apoapsis), the Io flyby that gave Galileo the radiation dose budget for the rest of the tour, the Europa-focused middle years, the late Io flybys when the orbit was tightened, and the disposal entry to protect Europa from terrestrial-microbe contamination.",
+  "orbits": [
+    {
+      "id": "joi-capture",
+      "label": "Jupiter orbit insertion (1995-12-08)",
+      "phase": "Initial highly elliptical capture, Probe entered Jupiter same day",
+      "semi_major_units": 80,
+      "eccentricity": 0.93,
+      "incl_deg": 4.0,
+      "raan_deg": 0,
+      "opacity": 0.5
+    },
+    {
+      "id": "galilean-tour",
+      "label": "Prime mission — Galilean satellite flybys",
+      "phase": "1996-1999 — orbits shepherded by Europa, Ganymede, Callisto",
+      "semi_major_units": 38,
+      "eccentricity": 0.78,
+      "incl_deg": 1.0,
+      "raan_deg": 40,
+      "opacity": 0.55
+    },
+    {
+      "id": "europa-focused",
+      "label": "Europa mission (extended) — 8 close Europa flybys",
+      "phase": "1997-1999 — orbit tuned for repeated Europa encounters",
+      "semi_major_units": 32,
+      "eccentricity": 0.72,
+      "incl_deg": 0.5,
+      "raan_deg": 95,
+      "opacity": 0.6
+    },
+    {
+      "id": "io-late",
+      "label": "Io late mission (2000-2002)",
+      "phase": "Tightened orbit, close Io flybys inside the radiation belts",
+      "semi_major_units": 22,
+      "eccentricity": 0.55,
+      "incl_deg": 0.5,
+      "raan_deg": 170,
+      "opacity": 0.6
+    },
+    {
+      "id": "high-incl-late",
+      "label": "Final polar pass (2002)",
+      "phase": "Inclined orbit before final disposal sequence",
+      "semi_major_units": 28,
+      "eccentricity": 0.68,
+      "incl_deg": 25.0,
+      "raan_deg": 230,
+      "opacity": 0.5
+    },
+    {
+      "id": "disposal-entry",
+      "label": "Atmospheric entry (2003-09-21)",
+      "phase": "Controlled fall into Jupiter to protect Europa from terrestrial microbes",
+      "semi_major_units": 14,
+      "eccentricity": 0.65,
+      "incl_deg": 1.0,
+      "raan_deg": 290,
+      "opacity": 0.9,
+      "highlight": true
+    }
+  ],
+  "flybys": [
+    {
+      "id": "io-flyby",
+      "body": "Io",
+      "label": "Io close flyby (×7) — radiation dose budget",
+      "distance_units": 24,
+      "angle_deg": 35,
+      "incl_deg": 1.0,
+      "color": "#ffd33d"
+    },
+    {
+      "id": "europa-flyby",
+      "body": "Europa",
+      "label": "Europa close flyby (×11) — subsurface-ocean evidence",
+      "distance_units": 30,
+      "angle_deg": 95,
+      "incl_deg": 0.5,
+      "color": "#79c0ff"
+    },
+    {
+      "id": "ganymede-flyby",
+      "body": "Ganymede",
+      "label": "Ganymede close flyby (×6) — confirmed magnetic field",
+      "distance_units": 38,
+      "angle_deg": -45,
+      "incl_deg": 1.0,
+      "color": "#d2a8ff"
+    },
+    {
+      "id": "atmospheric-entry",
+      "body": "Jupiter",
+      "label": "Atmospheric entry 2003-09-21",
+      "distance_units": 14,
+      "angle_deg": 290,
+      "incl_deg": 1.0,
+      "color": "#f97583",
+      "marker": "diamond"
+    }
+  ]
+}

@@ -1,25 +1,25 @@
 {
-  "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "name": "보이저 1호",
+  "type": "근접 비행 · 완료",
+  "first": "가장 먼 인공물 — 현재 태양으로부터 약 165 AU, 성간 공간에 있음",
+  "description": "보이저 2호보다 16일 늦게 발사된 보이저 1호는 더 빠르게 날아 목성(1979)과 토성(1980)에 먼저 도달했다. 타이탄 근접 비행으로 궤도가 황도면 위쪽으로 휘어 행성 탐사는 끝났지만, 가장 직선에 가까운 경로로 태양권계면을 향해 나아갔고 2012년 8월 25일 이를 통과하며 성간 공간에 진입한 최초의 인공물이 되었다. 약 60억 km 거리에서 가족 초상 '창백한 푸른 점'(1990-02-14)을 촬영했는데, 칼 세이건이 글로 남긴 바로 그 사진이다. 두 보이저는 인류의 명함으로 골든 레코드를 싣고 있다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "발사",
+      "note": "Titan IIIE / Centaur가 보이저 1호를 케이프 커내버럴에서 들어 올린다.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "목성 최근접",
+      "note": "약 349,000 km 근접 비행; 이오의 화산 활동 발견, 유로파 표면 지도화.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "토성 + 타이탄 근접 비행",
+      "note": "타이탄 근접으로 궤도가 황도면 밖으로 휘어짐 — 이후 행성과의 조우는 불가능.",
       "type": "nominal"
     }
   ]

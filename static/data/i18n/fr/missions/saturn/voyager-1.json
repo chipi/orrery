@@ -1,25 +1,25 @@
 {
-  "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "name": "Voyageur 1",
+  "type": "SURVOL · VOLÉ",
+  "first": "Objet humain le plus distant — actuellement à ~165 UA du Soleil, dans l'espace interstellaire",
+  "description": "Lancée 16 jours après Voyager 2, Voyager 1 a volé plus vite et est arrivée en premier à Jupiter (1979) et Saturne (1980). Son survol de Titan a courbé la trajectoire hors du plan de l'écliptique, terminant la tournée planétaire mais l'envoyant sur la voie la plus directe vers l'héliopause — qu'elle a traversée le 25-08-2012, premier objet humain à entrer dans l'espace interstellaire. À environ 6 milliards de km, elle a pris le portrait de famille Pale Blue Dot (14-02-1990), la photo sur laquelle Carl Sagan a écrit. Les deux Voyager portent le Disque d'Or comme carte de visite de l'humanité.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "LANCEMENT",
+      "note": "Titan IIIE / Centaur élève Voyager 1 depuis Cap Canaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "APPROCHE LA PLUS PROCHE DE JUPITER",
+      "note": "Survol à ~349 000 km ; a découvert le volcanisme d'Io, cartographié la surface d'Europe.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "SURVOLS SATURNE + TITAN",
+      "note": "Le survol de Titan a courbé la trajectoire hors de l'écliptique — plus aucune rencontre planétaire possible.",
       "type": "nominal"
     }
   ]

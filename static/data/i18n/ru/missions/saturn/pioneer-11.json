@@ -1,25 +1,25 @@
 {
   "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "type": "ПРОЛЁТ · ОТРАБОТАНА",
+  "first": "Первый аппарат у Сатурна (01.09.1979); продемонстрировал гравитационный манёвр, разогнавший Voyager 2",
+  "description": "Близнец Pioneer 10, запущен на год позже. Pioneer 11 воспользовался гравитацией Юпитера, чтобы повернуть к Сатурну — каноническое доказательство гравитационного манёвра, техники, позволившей Большой тур Voyager. У Сатурна открыты кольцо F и спутник Эпиметей. Несёт ту же пластинку Pioneer, что и его близнец. Сигнал потерян 30.09.1995 с ~43 а.е.; аппарат направляется к созвездию Орла.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "СТАРТ",
+      "note": "Atlas-Centaur с мыса Канаверал по траектории Юпитер—Сатурн.",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "ПРОЛЁТ ЮПИТЕРА",
+      "note": "Использовал гравитационный манёвр Юпитера для разворота к Сатурну.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "БЛИЖАЙШИЙ ПРОЛЁТ У САТУРНА",
+      "note": "Первые снимки планеты с близкого расстояния; открыты кольцо F и Эпиметей.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
-  "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "name": "先驱者 11 号",
+  "type": "飞掠 · 已飞行",
+  "first": "首艘飞掠土星的航天器(1979-09-01);演示了后来送出旅行者 2 号的引力辅助技术",
+  "description": "先驱者 10 号的孪生姊妹,晚一年发射。先驱者 11 号借助木星引力将轨道弯向土星 — 这是引力辅助的经典示范,正是这项技术后来成就了旅行者大巡游。在土星它发现了 F 环和卫星埃皮米修斯,并搭载着与孪生姊妹同款的先驱者镀金板。最后信号于 1995-09-30 自约 43 AU 处中断;探测器如今飞向天鹰座方向。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "发射",
+      "note": "Atlas-Centaur 从卡纳维拉尔角送入木星—土星引力辅助轨道。",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "木星飞掠",
+      "note": "借助木星引力辅助转向土星轨道。",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "土星最近接近",
+      "note": "行星首次近距离影像;发现 F 环与埃皮米修斯。",
       "type": "nominal"
     }
   ]

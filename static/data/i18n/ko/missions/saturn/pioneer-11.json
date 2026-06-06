@@ -1,25 +1,25 @@
 {
-  "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "name": "파이오니어 11호",
+  "type": "근접 비행 · 완료",
+  "first": "토성에 처음 도달한 우주선(1979-09-01); 보이저 2호를 보낸 중력 도움 기법을 증명",
+  "description": "파이오니어 10호의 쌍둥이로 1년 뒤 발사되었다. 파이오니어 11호는 목성 중력을 이용해 궤도를 토성 쪽으로 굽혔다 — 훗날 보이저 그랜드 투어를 가능하게 한 중력 도움 기법의 정수적 증명이다. 토성에서는 F고리와 위성 에피메테우스를 발견했다. 쌍둥이와 동일한 파이오니어 명판을 싣고 있다. 신호는 1995-09-30, 약 43 AU에서 끊겼고, 탐사선은 이제 독수리자리 방향으로 향하고 있다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "발사",
+      "note": "Atlas-Centaur가 케이프 커내버럴에서 목성-토성 중력 도움 궤도로 보낸다.",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "목성 근접 비행",
+      "note": "목성 중력 도움으로 토성 쪽으로 진로를 꺾었다.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "토성 최근접",
+      "note": "행성의 첫 근거리 영상; F고리와 에피메테우스 발견.",
       "type": "nominal"
     }
   ]

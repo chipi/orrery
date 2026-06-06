@@ -1,19 +1,19 @@
 {
-  "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "name": "Пионир 10",
+  "type": "Прелет · Изведена",
+  "first": "Прва летелица кроз астероидни појас и први прелет Јупитера (04.12.1973)",
+  "description": "Пионир 10 је прокрчио пут — прва сонда кроз астероидни појас (који је испао много мање опасан него што се мислило), прва која је Јупитер снимила изблиза и прва која је прешла перихелијску удаљеност Плутона (1983). Носи Пионирску плочицу коју су осмислили Карл Саган, Френк Дрејк и Линда Залцман Саган — прва намерна међузвездана порука човечанства. Последњи успешан контакт 23.01.2003 са ~82 АЈ; сонда сада плови ка сазвежђу Бика, са приближавањем Алдебарану за око два милиона година.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Atlas-Centaur подиже Пионир 10 у директни успон ка Јупитеру.",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "label": "НАЈБЛИЖИ ПРИЛАЗ ЈУПИТЕРУ",
+      "note": "Прелет на ~132.000 км — прве слике планете изблиза.",
       "type": "nominal"
     }
   ]

@@ -1,19 +1,19 @@
 {
   "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "type": "ПРОЛЁТ · ОТРАБОТАНА",
+  "first": "Первый аппарат через пояс астероидов и первый пролёт у Юпитера (04.12.1973)",
+  "description": "Pioneer 10 проложил путь: первый аппарат через пояс астероидов (оказавшийся куда менее опасным, чем опасались), первый, кто сфотографировал Юпитер вблизи, и первый, кто превысил гелиоцентрическое расстояние перигелия Плутона (1983). Несёт пластинку Pioneer, разработанную Карлом Саганом, Фрэнком Дрейком и Линдой Зальцман Саган, — первое сознательное межзвёздное послание человечества. Последний удачный сеанс связи 23.01.2003 с ~82 а.е.; аппарат дрейфует к созвездию Тельца, сближение с Альдебараном — через примерно два миллиона лет.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "label": "СТАРТ",
+      "note": "Atlas-Centaur поднимает Pioneer 10 на прямой выход к Юпитеру.",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "label": "БЛИЖАЙШИЙ ПРОЛЁТ У ЮПИТЕРА",
+      "note": "Пролёт на ~132 000 км — первые снимки планеты с близкого расстояния.",
       "type": "nominal"
     }
   ]

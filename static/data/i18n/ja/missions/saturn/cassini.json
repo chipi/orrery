@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "カッシーニ・ホイヘンス",
+  "type": "オービター + ランダー · 飛行済み",
+  "first": "土星周回 13 年 — ホイヘンスは二〇〇五年一月十四日タイタンに着陸 (外惑星系における初の軟着陸)",
+  "description": "NASA・ESA・ASI 共同ミッション。金星、地球、木星での重力アシストを含む 7 年間の航行の後、カッシーニは二〇〇四年七月一日に土星周回軌道に投入され、13 年にわたり 294 周回および 162 回の至近衛星接近を遂行した。エンケラドゥス南極の水氷プルーム (活動中の間欠泉) を発見、タイタンのメタン湖をレーダーで地図化し、土星の六角形極渦を解像した。グランド・フィナーレ (二〇一七年四月から九月) は環と雲頂の間隙を 22 回縫って通過し、エンケラドゥスやタイタンへの地球微生物汚染を避けるため制御された大気圏突入で締めくくられた。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "note": "Titan IVB / Centaur がカッシーニ・ホイヘンス複合体を打ち上げる。",
       "type": "nominal"
     },
     {
       "met": 207,
       "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "note": "土星到達のエネルギーを蓄える 4 回の重力アシストの最初。",
       "type": "nominal"
     },
     {
       "met": 2451,
       "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "note": "主エンジン噴射でカッシーニを土星周回軌道へ — 13 年のツアー開幕。",
       "type": "nominal"
     }
   ]

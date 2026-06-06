@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "كاسيني-هويغنز",
+  "type": "مدارية + مركبة هبوط · مُنفَّذة",
+  "first": "13 عامًا في مدار زحل — هبطت مركبة هويغنز على تيتان في 14-01-2005 (أول هبوط ناعم في النظام الشمسي الخارجي)",
+  "description": "مهمة مشتركة بين ناسا ووكالة الفضاء الأوروبية ووكالة الفضاء الإيطالية. بعد سبع سنوات من الإبحار مع مساعدات ثقالية عند الزهرة والأرض والمشتري، دخلت كاسيني مدار زحل في 01-07-2004 وعملت لثلاثة عشر عامًا، أنجزت 294 مدارًا و162 تحليقًا قريبًا من الأقمار. اكتشفت أعمدة القطب الجنوبي لإنسيلادوس (نوافير جليد ماء نشطة)، ورسمت بالرادار بحيرات الميثان على تيتان، وحلَّت العاصفة القطبية السداسية لزحل. ضفرت الخاتمة الكبرى (أبريل–سبتمبر 2017) 22 مدارًا في الفجوة بين الحلقات وقمم السحب، وانتهت بدخول جوي مُتَحكَّم فيه لمنع أي تلوث لإنسيلادوس أو تيتان بميكروبات أرضية.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "الإطلاق",
+      "note": "Titan IVB / Centaur يرفع المنظومة المتكاملة كاسيني-هويغنز.",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "مساعدة ثقالية من الزهرة",
+      "note": "أولى أربع مساعدات تُراكم الطاقة اللازمة للوصول إلى زحل.",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "دخول مدار زحل",
+      "note": "حرق المحرك الرئيسي يضع كاسيني في مدار زحل، فاتحًا جولة 13 عامًا.",
       "type": "nominal"
     }
   ]

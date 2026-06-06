@@ -1,25 +1,25 @@
 {
   "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "type": "Orbiteur + Atterrisseur · VOLÉ",
+  "first": "13 ans en orbite autour de Saturne — Huygens s'est posée sur Titan le 14-01-2005 (premier atterrissage en douceur dans le système solaire externe)",
+  "description": "Mission conjointe NASA-ESA-ASI. Après 7 ans de croisière avec assistances gravitationnelles à Vénus, Terre et Jupiter, Cassini est entrée en orbite de Saturne le 01-07-2004 et a fonctionné pendant 13 ans, accomplissant 294 orbites et 162 survols rapprochés de lunes. Elle a découvert les panaches polaires sud d'Encelade (geysers actifs de glace d'eau), cartographié au radar les lacs de méthane de Titan et résolu la tempête hexagonale polaire de Saturne. Le Grand Finale (avril–septembre 2017) a tissé 22 orbites dans l'espace entre les anneaux et les sommets nuageux, se terminant par une entrée atmosphérique contrôlée pour éviter toute contamination d'Encelade ou de Titan par des microbes terrestres.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "LANCEMENT",
+      "note": "Titan IVB / Centaur soulève l'ensemble Cassini-Huygens.",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "ASSISTANCE GRAVITATIONNELLE DE VÉNUS",
+      "note": "Première de quatre assistances qui accumulent l'énergie pour l'arrivée à Saturne.",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "MISE EN ORBITE AUTOUR DE SATURNE",
+      "note": "Allumage du moteur principal place Cassini en orbite saturnienne, ouvrant la tournée de 13 ans.",
       "type": "nominal"
     }
   ]

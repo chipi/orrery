@@ -1,25 +1,25 @@
 {
   "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "type": "SURVOL · VOLÉ",
+  "first": "Premier vaisseau à survoler Saturne (01-09-1979) ; a démontré l'assistance gravitationnelle qui a propulsé Voyager 2",
+  "description": "Jumeau de Pioneer 10, lancé un an plus tard. Pioneer 11 a utilisé la gravité de Jupiter pour courber sa trajectoire vers Saturne — la preuve canonique de l'assistance gravitationnelle, technique qui a permis plus tard le Grand Tour des Voyager. À Saturne, il a découvert l'anneau F et la lune Épiméthée. Porte la même plaque Pioneer que son jumeau. Signal perdu le 30-09-1995 depuis ~43 UA ; la sonde file désormais vers la constellation de l'Aigle.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "LANCEMENT",
+      "note": "Atlas-Centaur depuis Cap Canaveral sur une trajectoire d'assistance Jupiter-Saturne.",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "SURVOL DE JUPITER",
+      "note": "A utilisé l'assistance de Jupiter pour s'orienter vers Saturne.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "APPROCHE LA PLUS PROCHE DE SATURNE",
+      "note": "Premières images rapprochées de la planète ; a découvert l'anneau F et Épiméthée.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
   "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "type": "Scheervlucht · Voltooid",
+  "first": "Het verst van de mens gemaakte object — momenteel zo'n 165 AE van de Zon, in de interstellaire ruimte",
+  "description": "Zestien dagen na Voyager 2 gelanceerd, vloog Voyager 1 sneller en bereikte als eerste Jupiter (1979) en Saturnus (1980). De Titan-scheervlucht boog de baan uit het vlak van de ecliptica, beëindigde de planetentocht maar zond de sonde via de meest directe weg naar de heliopauze — die ze op 25-08-2012 doorkruiste, het eerste door de mens gemaakte object in de interstellaire ruimte. Op ongeveer 6 miljard km maakte ze het familieportret Pale Blue Dot (14-02-1990), de foto waarover Carl Sagan schreef. Beide Voyagers dragen de Gouden Plaat mee als visitekaartje van de mensheid.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "LANCERING",
+      "note": "Titan IIIE / Centaur tilt Voyager 1 op vanaf Cape Canaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "JUPITER DICHTSTE NADERING",
+      "note": "Scheervlucht op ~349.000 km; ontdekte het vulkanisme op Io, bracht het oppervlak van Europa in kaart.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "SATURNUS + TITAN SCHEERVLUCHTEN",
+      "note": "De Titan-scheervlucht boog de baan uit de ecliptica — geen verdere planeetontmoeting meer mogelijk.",
       "type": "nominal"
     }
   ]

@@ -1024,8 +1024,10 @@
   "credits_storage_locale_item": "{code} — your explicit locale pick, when you choose one in the language switcher (ADR-057). 1 year. No tracking, no personal data.",
   "credits_storage_tour_item": "{code} — your current Curator Tour position, so you can close the tab and resume where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No tracking, no personal data.",
   "credits_storage_fine": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
-  "ui_layer_paths": "PATHS",
-  "explore_layer_tip_paths": "Iconic spacecraft trajectories — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
+  "ui_layer_paths": "轨迹",
+  "explore_layer_tip_paths": "标志性航天器轨迹 — 旅行者 1/2、先驱者 10/11、新视野号、卡西尼",
   "explore_voyager2_today_aria": "Voyager 2 current position — click to open mission record",
-  "explore_voyager2_cue_at_neptune": "And the spacecraft that travelled every outer planet — Voyager 2, still going."
+  "explore_voyager2_cue_at_neptune": "And the spacecraft that travelled every outer planet — Voyager 2, still going.",
+  "mp_see_path_on_explore": "在 /explore 中查看航迹",
+  "mp_see_tour_on_explore": "在 /explore 中查看土星轨道巡游"
 }

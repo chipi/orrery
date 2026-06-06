@@ -825,6 +825,39 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     query: 'dawn spacecraft ceres',
     commonsCoverFirst: 'Dawn Flight Configuration 2.jpg',
   },
+  // #306 A.1.a — Voyager 1 + Pioneer 10/11 + Cassini + Juno + MESSENGER.
+  // Hero + gallery sourcing for the six iconic deep-space records the
+  // catalogue had been missing.
+  {
+    id: 'voyager-1',
+    query: 'voyager 1 spacecraft golden record',
+    commonsCoverFirst: 'Voyager.jpg',
+  },
+  {
+    id: 'pioneer-10',
+    query: 'pioneer 10 jupiter spacecraft plaque',
+    commonsCoverFirst: 'Pioneer 10 on its kickmotor.jpg',
+  },
+  {
+    id: 'pioneer-11',
+    query: 'pioneer 11 saturn flyby spacecraft',
+    commonsCoverFirst: 'Pioneer 10-11 - p51.jpg',
+  },
+  {
+    id: 'cassini',
+    query: 'cassini saturn rings huygens probe',
+    commonsCoverFirst: 'Cassini Saturn Orbit Insertion.jpg',
+  },
+  {
+    id: 'juno',
+    query: 'juno jupiter polar orbiter solar panels',
+    commonsCoverFirst: 'Illustration of Juno spacecraft at Jupiter (PIA19639).jpg',
+  },
+  {
+    id: 'messenger',
+    query: 'messenger mercury orbiter sunshade',
+    commonsCoverFirst: 'Messenger spacecraft.jpg',
+  },
 ];
 
 const MISSIONS_DIR = 'static/images/missions';
@@ -929,6 +962,15 @@ export const WIKIMEDIA_MISSION_FALLBACK: Record<string, string> = {
   'voyager-2': 'Voyager spacecraft.jpg',
   'new-horizons': 'New Horizons spacecraft model 1.png',
   dawn: 'Dawn Flight Configuration 2.jpg',
+  // #306 A.1.a — Pale Blue Dot for Voyager 1, Pioneer plaque for both
+  // Pioneers, Saturn-at-equinox for Cassini, polar Jupiter for Juno,
+  // and Mercury globe for MESSENGER. Each picks the most iconic frame.
+  'voyager-1': 'PIA23645-Earth-PaleBlueDot-Voyager1-Original19900214-Updated20200212.jpg',
+  'pioneer-10': 'Pioneer10-plaque.jpg',
+  'pioneer-11': 'Pioneer11.jpg',
+  cassini: 'Saturn during Equinox.jpg',
+  juno: 'Illustration of Juno spacecraft at Jupiter (PIA19639).jpg',
+  messenger: 'Mercury in color - Prockter07-edit1.jpg',
 };
 
 // Gallery-mode top-up for missions where NASA's library has zero or
@@ -1128,6 +1170,59 @@ export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'NewHorizons_39_july14_2015.jpg',
   ],
   dawn: ['Ceres_-_RC3_-_Haulani_Crater_-_21778369873.jpg', 'Vesta_in_natural_color.jpg'],
+  // #306 A.1.a — six iconic deep-space missions the catalogue had no
+  // gallery topups for. Leads with the iconic shot (Pale Blue Dot for
+  // V1, Pioneer plaque for P10, Saturn at equinox for Cassini, etc.)
+  // and backs each with hardware and target-imagery so the gallery
+  // never collapses if Commons moves a file.
+  'voyager-1': [
+    'PIA23645-Earth-PaleBlueDot-Voyager1-Original19900214-Updated20200212.jpg',
+    'The_Sounds_of_Earth_Record_Cover_-_GPN-2000-001978.jpg',
+    'The Sounds of Earth Record - GPN-2000-001976.jpg',
+    'Voyager.jpg',
+    'Voyager_Path.svg',
+    'Family portrait (Voyager 1).png',
+  ],
+  'pioneer-10': [
+    'Pioneer10-plaque.jpg',
+    'Pioneer 10 on its kickmotor.jpg',
+    'Pioneer 10 Construction.jpg',
+    'Pioneer 10 at Jupiter.jpg',
+    'Pioneer 10-11 - p51.jpg',
+    'AC78-0287.jpeg',
+  ],
+  'pioneer-11': [
+    'Pioneer 10-11 - p51.jpg',
+    'Pioneer11.jpg',
+    'Pioneer 11 Image of Saturn with Titan.jpg',
+    'Pioneer 11 Saturn Encounter.jpg',
+    'Pioneer10-plaque.jpg',
+    'Saturn from Pioneer 11.jpg',
+  ],
+  cassini: [
+    'Saturn during Equinox.jpg',
+    'Cassini Saturn Orbit Insertion.jpg',
+    'PIA17172 Saturn eclipse mosaic bright crop.jpg',
+    'Titan in true color.jpg',
+    'Enceladus geysers June 2009.jpg',
+    'Huygens descent images.jpg',
+  ],
+  juno: [
+    'Illustration of Juno spacecraft at Jupiter (PIA19639).jpg',
+    'PIA22946-Jupiter-RedSpot-JunoSpacecraft-20190212.jpg',
+    '(PIA20701) Juno on Jupiter’s Doorstep.jpg',
+    'Juno spacecraft model 1.png',
+    'PIA21972 Jupiter Blues.jpg',
+    'PIA21219 - Juno Captures Jupiter ‘Pearl’.jpg',
+  ],
+  messenger: [
+    'Mercury in color - Prockter07-edit1.jpg',
+    'Messenger.gif',
+    'MESSENGER - spacecraft at Mercury - artist depiction.jpg',
+    'MESSENGER - launch - Delta II 7925H-9.5 - 2004.jpg',
+    'Mercury topography MESSENGER.jpg',
+    'Caloris Basin.jpg',
+  ],
 };
 
 /** Top up a mission's gallery from WIKIMEDIA_MISSION_GALLERY_FALLBACK

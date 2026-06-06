@@ -1,25 +1,25 @@
 {
   "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "type": "Scheervlucht · Voltooid",
+  "first": "Eerste sonde langs Saturnus (01-09-1979); demonstreerde de zwaartekrachtsslinger die Voyager 2 verder hielp",
+  "description": "Tweelingzus van Pioneer 10, een jaar later gelanceerd. Pioneer 11 gebruikte de zwaartekracht van Jupiter om haar koers naar Saturnus te buigen — het canonieke bewijs van de zwaartekrachtsslinger, de techniek die later de Grand Tour van de Voyagers mogelijk maakte. Bij Saturnus ontdekte ze de F-ring en de maan Epimetheus. Draagt dezelfde Pioneer-plaquette als haar zus. Signaal verloren op 30-09-1995 vanaf ~43 AE; de sonde vliegt nu richting het sterrenbeeld Arend.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "LANCERING",
+      "note": "Atlas-Centaur vanaf Cape Canaveral op een Jupiter-Saturnus-slingerbaan.",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "JUPITER-PASSAGE",
+      "note": "Gebruikte de Jupiter-slinger om naar Saturnus te draaien.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "SATURNUS DICHTSTE NADERING",
+      "note": "Eerste opnamen van dichtbij van de planeet; ontdekte de F-ring en Epimetheus.",
       "type": "nominal"
     }
   ]

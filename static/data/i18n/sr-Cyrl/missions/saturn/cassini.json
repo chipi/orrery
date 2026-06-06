@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "Касини-Хајгенс",
+  "type": "Орбитер + Лендер · Изведена",
+  "first": "13 година у орбити Сатурна — Хајгенс је слетео на Титан 14.01.2005 (прво меко слетање у спољашњем Сунчевом систему)",
+  "description": "Заједничка мисија NASA-ESA-ASI. Након седмогодишњег крстарења с гравитационим заматима код Венере, Земље и Јупитера, Касини је ушао у орбиту Сатурна 01.07.2004 и радио 13 година, обавивши 294 пролаза и 162 блиска прелета месеца. Открио је јужнополарне млазеве Енкеладуса (активни гејзири воденог леда), радаром мапирао језера метана на Титану и разрешио шестоугаону поларну олују Сатурна. Велики финале (април—септембар 2017) исткало је 22 пролаза кроз процеп између прстенова и облачног слоја, и завршило се контролисаним атмосферским уласком како би се избегла свака контаминација Енкеладуса или Титана земаљским микробима.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Titan IVB / Centaur подиже комплет Касини-Хајгенс.",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "ГРАВИТАЦИОНИ ЗАМАХ ВЕНЕРЕ",
+      "note": "Први од четири замаха који граде енергију за долазак до Сатурна.",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "УЛАЗАК У ОРБИТУ САТУРНА",
+      "note": "Главни мотор поставља Касини у орбиту Сатурна, отварајући турнеју од 13 година.",
       "type": "nominal"
     }
   ]

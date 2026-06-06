@@ -1,25 +1,25 @@
 {
-  "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "name": "जूनो",
+  "type": "परिक्रामी · सक्रिय",
+  "first": "बृहस्पति का पहला ध्रुवीय परिक्रामी; क्षुद्रग्रह पट्टी से परे पहली बार सौर ऊर्जा का उपयोग",
+  "description": "जूनो ने 05-07-2016 को बृहस्पति की 53-दिवसीय अत्यधिक दीर्घवृत्तीय ध्रुवीय कक्षा में प्रवेश किया, जो विकिरण पट्टियों के भीतर (पेरीजोव लगभग 4,200 किमी मेघ-शीर्ष से ऊपर) से लेकर कैलिस्टो से परे तक जाती है। यह सौर-संचालित है — इसके लगभग 50 m² के ट्रिपल-जंक्शन सरणी पृथ्वी पर 14 kW देते हैं किंतु बृहस्पति पर मात्र ~500 W, इस दूरी पर सौर ऊर्जा का पहला प्रयोग। इसने पुष्टि की कि बृहस्पति की चट्टानी कोर तीक्ष्ण सीमा रहित है, ध्रुवीय चक्रवात विन्यास मापे (प्रत्येक ध्रुव के चारों ओर आठ चक्रवात) और 2023 में आयो के ज्वालामुखी का अभूतपूर्व विवरण लिया। विस्तारित मिशन में 2025 तक चारों गैलिलियन उपग्रहों की फ्लाईबाई शामिल हैं।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "प्रक्षेपण",
+      "note": "Atlas V 551 ने जूनो को केप कैनावेरल से उठाया।",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "पृथ्वी गुरुत्व-सहायता",
+      "note": "गुलेल बृहस्पति तक पहुँचने के लिए सौर-केंद्रित ऊर्जा को पर्याप्त रूप से बढ़ाती है।",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "बृहस्पति कक्षा प्रवेश",
+      "note": "35 मिनट के मुख्य इंजन बर्न से जूनो को बृहस्पति की ध्रुवीय कक्षा में स्थापित किया जाता है।",
       "type": "nominal"
     }
   ]

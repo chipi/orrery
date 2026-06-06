@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "卡西尼-惠更斯",
+  "type": "轨道器 + 着陆器 · 已飞行",
+  "first": "环绕土星 13 年 — 惠更斯于 2005-01-14 着陆土卫六(外太阳系首次软着陆)",
+  "description": "NASA、ESA 与 ASI 联合任务。经金星、地球与木星的引力辅助、历时 7 年巡航,卡西尼于 2004-07-01 进入土星轨道,运行 13 年,共完成 294 次环绕与 162 次近距离卫星飞越。它发现土卫二南极的水冰羽流(活动间歇泉),用雷达绘制土卫六甲烷湖泊,并解析土星六边形极地风暴。「大终章」(2017 年 4 月–9 月)在环与云顶之间的缝隙中编织了 22 圈环绕,最后以受控大气进入收场,以避免地球微生物污染土卫二或土卫六。",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "发射",
+      "note": "Titan IVB / Centaur 将卡西尼-惠更斯组合体送入太空。",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "金星引力辅助",
+      "note": "四次引力辅助中的第一次,为抵达土星积蓄能量。",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "土星轨道注入",
+      "note": "主发动机点火,将卡西尼送入土星轨道,开启 13 年巡游。",
       "type": "nominal"
     }
   ]

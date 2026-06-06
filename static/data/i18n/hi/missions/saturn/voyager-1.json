@@ -1,25 +1,25 @@
 {
-  "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "name": "वॉयजर 1",
+  "type": "फ्लाईबाई · पूर्ण",
+  "first": "मानव-निर्मित सबसे दूर वस्तु — वर्तमान में सूर्य से लगभग 165 AU दूर, अंतरतारकीय अंतरिक्ष में",
+  "description": "वॉयजर 2 के 16 दिन बाद प्रक्षेपित, वॉयजर 1 तेज़ गति से चला और बृहस्पति (1979) तथा शनि (1980) पर पहले पहुँचा। टाइटन फ्लाईबाई ने प्रक्षेप-पथ को क्रांतिवृत्त-तल से ऊपर मोड़ दिया, ग्रहीय यात्रा समाप्त की और इसे हीलियोपॉज़ के सबसे सीधे मार्ग पर भेज दिया — जिसे यान ने 25-08-2012 को पार किया, अंतरतारकीय अंतरिक्ष में प्रवेश करने वाली पहली मानव-निर्मित वस्तु। लगभग 6 अरब किमी की दूरी से इसने पेल ब्लू डॉट पारिवारिक चित्र (14-02-1990) लिया, वही फोटो जिस पर कार्ल सेगन ने लिखा। दोनों वॉयजर मानवता की पहचान के रूप में स्वर्ण रिकॉर्ड ले जा रहे हैं।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "प्रक्षेपण",
+      "note": "Titan IIIE / Centaur ने केप कैनावेरल से वॉयजर 1 को उठाया।",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "बृहस्पति निकटतम दृष्टिकोण",
+      "note": "लगभग 349,000 किमी पर फ्लाईबाई; आयो पर ज्वालामुखी की खोज, यूरोपा की सतह का मानचित्रण।",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "शनि + टाइटन फ्लाईबाई",
+      "note": "टाइटन फ्लाईबाई ने प्रक्षेप-पथ को क्रांतिवृत्त से बाहर मोड़ दिया — आगे कोई ग्रहीय भेंट संभव नहीं।",
       "type": "nominal"
     }
   ]

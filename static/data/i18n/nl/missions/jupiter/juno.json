@@ -1,25 +1,25 @@
 {
   "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "type": "Orbiter · Actief",
+  "first": "Eerste polaire orbiter van Jupiter; voor het eerst zonne-energie voorbij de planetoïdengordel",
+  "description": "Juno trad op 05-07-2016 in een sterk elliptische polaire baan van 53 dagen rond Jupiter, die haar van de binnenste stralingsgordels (perijove ~4.200 km boven de wolkentoppen) tot voorbij Callisto voert. Op zonne-energie — haar driestoffige zonnepanelen van ~50 m² leveren bij de Aarde 14 kW maar bij Jupiter slechts ~500 W, de eerste keer dat zonne-energie op die afstand gebruikt wordt. Bevestigde dat Jupiter een verdunde rotsachtige kern heeft (geen scherpe grens), bracht de polaire-cyclonenstructuur in kaart (acht circumpolaire stormen rond elke pool) en bracht in 2023 het vulkanisme van Io met ongekende details in beeld. Uitgebreide missie met scheervluchten van alle vier de Galileïsche manen tot 2025.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "LANCERING",
+      "note": "Atlas V 551 tilt Juno op vanaf Cape Canaveral.",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "AARDSLINGER",
+      "note": "De zwaartekrachtsslinger verhoogt de heliocentrische energie genoeg om Jupiter te bereiken.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "JUPITER-INTRACETIEMANOEUVRE",
+      "note": "Hoofdmotor-burn van 35 minuten plaatst Juno in een polaire Jupiter-baan.",
       "type": "nominal"
     }
   ]

@@ -1,0 +1,89 @@
+{
+  "id": "juno-tour",
+  "name": "Juno polar Jupiter tour",
+  "mission_id": "juno",
+  "parent_planet": "jupiter",
+  "color": "#79c0ff",
+  "schema_version": 1,
+  "_doc": "Jupiter-anchored polar orbiter tour for /explore PATHS layer (#306 Slice D follow-up). Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory. Period reduced to ~38 days in 2021 and ~33 days in 2023 as gravity assists from Ganymede (2021-06), Europa (2022-09), and Io (2023-12 + 2024-02) lowered the apoapsis. Inclinations near 90° (polar) preserved throughout the mission — same scene convention as galileo-tour.json. The polar geometry is the distinguishing feature: Juno passes over both rotation poles inside the radiation belts (perijove ~1.06 R_J above the cloud tops) and arcs out past Callisto (~26 R_J).",
+  "orbits": [
+    {
+      "id": "joi-polar-53d",
+      "label": "Initial 53-day polar orbit (2016-2021)",
+      "phase": "Perijove inside radiation belts; apojove ~115 R_J",
+      "semi_major_units": 60,
+      "eccentricity": 0.92,
+      "incl_deg": 90.0,
+      "raan_deg": 0,
+      "opacity": 0.55
+    },
+    {
+      "id": "ganymede-shortened",
+      "label": "38-day polar orbit (2021-2022)",
+      "phase": "Ganymede assist 2021-06 lowered apojove; first Europa flyby in 22 years",
+      "semi_major_units": 44,
+      "eccentricity": 0.88,
+      "incl_deg": 90.0,
+      "raan_deg": 60,
+      "opacity": 0.55
+    },
+    {
+      "id": "europa-shortened",
+      "label": "33-day polar orbit (2022-)",
+      "phase": "Europa assist 2022-09 lowered orbit further; Io close passes 2023-12, 2024-02",
+      "semi_major_units": 36,
+      "eccentricity": 0.84,
+      "incl_deg": 90.0,
+      "raan_deg": 120,
+      "opacity": 0.6
+    },
+    {
+      "id": "extended-mission",
+      "label": "Extended mission (2025-)",
+      "phase": "Current operational orbit",
+      "semi_major_units": 30,
+      "eccentricity": 0.78,
+      "incl_deg": 88.0,
+      "raan_deg": 180,
+      "opacity": 0.7
+    }
+  ],
+  "flybys": [
+    {
+      "id": "ganymede-juno",
+      "body": "Ganymede",
+      "label": "Ganymede flyby 2021-06-07 — orbit-shortening assist",
+      "distance_units": 38,
+      "angle_deg": 60,
+      "incl_deg": 90.0,
+      "color": "#d2a8ff"
+    },
+    {
+      "id": "europa-juno",
+      "body": "Europa",
+      "label": "Europa flyby 2022-09-29 — closest view since Galileo",
+      "distance_units": 30,
+      "angle_deg": 120,
+      "incl_deg": 90.0,
+      "color": "#a5d6a7"
+    },
+    {
+      "id": "io-juno",
+      "body": "Io",
+      "label": "Io close flyby 2023-12-30 + 2024-02-03 — volcanism imagery",
+      "distance_units": 24,
+      "angle_deg": 180,
+      "incl_deg": 88.0,
+      "color": "#ffd33d"
+    },
+    {
+      "id": "atmospheric-entry",
+      "body": "Jupiter",
+      "label": "Today — perijove dive between cloud tops and rings",
+      "distance_units": 15,
+      "angle_deg": 220,
+      "incl_deg": 88.0,
+      "color": "#f97583"
+    }
+  ]
+}

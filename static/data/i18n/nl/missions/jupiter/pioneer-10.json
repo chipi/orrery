@@ -1,19 +1,19 @@
 {
   "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "type": "Scheervlucht · Voltooid",
+  "first": "Eerste ruimtevaartuig door de planetoïdengordel en eerste Jupiter-passage (04-12-1973)",
+  "description": "Pioneer 10 was de pionier — eerste sonde door de planetoïdengordel (die veel minder gevaarlijk bleek dan gevreesd), eerste die Jupiter van dichtbij in beeld bracht en eerste die de perihelium-afstand van Pluto overschreed (1983). Ze draagt de Pioneer-plaquette, ontworpen door Carl Sagan, Frank Drake en Linda Salzman Sagan — het eerste bewuste interstellaire bericht van de mensheid. Laatste succesvolle contact 23-01-2003 vanaf ~82 AE; de sonde drijft nu richting het sterrenbeeld Stier, met een nadering tot Aldebaran over ongeveer twee miljoen jaar.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "label": "LANCERING",
+      "note": "Atlas-Centaur tilt Pioneer 10 op in directe klim naar Jupiter.",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "label": "JUPITER DICHTSTE NADERING",
+      "note": "Scheervlucht op ~132.000 km — eerste opnamen van dichtbij van de planeet.",
       "type": "nominal"
     }
   ]

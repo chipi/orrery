@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "ORBITER \u00b7 FLOWN",
-  "first": "First spacecraft to orbit Mercury; first complete surface map of the innermost planet",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years \u2014 Earth, Venus twice, Mercury three times \u2014 to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 \u00b0C and the other at -45 \u00b0C. Discoveries included water ice in permanently shadowed polar craters, previously unknown \u201chollows\u201d geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core ratio in the solar system). Mission ended with a controlled impact onto Mercury\u2019s surface 2015-04-30 after fuel ran out.",
+  "type": "ОРБИТЕР · ОТРАБОТАНА",
+  "first": "Первый аппарат на орбите Меркурия; первая полная карта поверхности самой внутренней планеты",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) использовал шесть гравитационных манёвров за семь лет — Земля, Венера дважды, Меркурий трижды, — чтобы выйти на орбиту Меркурия 18.03.2011. Защищён теплозащитным экраном: одна сторона при +370 °C, другая при -45 °C. Открытия: водный лёд в постоянно затенённых полярных кратерах, ранее неизвестные геологические «hollows» и подтверждение, что железное ядро Меркурия занимает около 85 % радиуса планеты (наибольшая доля ядра в Солнечной системе). Миссия завершена управляемым падением на поверхность 30.04.2015 после исчерпания топлива.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Delta II 7925H lifts MESSENGER on a six-flyby trajectory.",
+      "label": "СТАРТ",
+      "note": "Delta II 7925H выводит MESSENGER на траекторию с шестью гравиманёврами.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+      "label": "ЗЕМНОЙ ГРАВИТАЦИОННЫЙ МАНЁВР",
+      "note": "Первый из шести манёвров, замедляющих траекторию для выхода на орбиту Меркурия.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERCURY ORBIT INSERTION",
-      "note": "Main-engine burn places MESSENGER into Mercury orbit after seven years of cruise.",
+      "label": "ВЫХОД НА ОРБИТУ МЕРКУРИЯ",
+      "note": "Маршевый двигатель выводит MESSENGER на орбиту Меркурия после семи лет перелёта.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
   "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "type": "ОРБИТЕР + ПОСАДОЧНЫЙ МОДУЛЬ · ОТРАБОТАНА",
+  "first": "13 лет на орбите Сатурна — Huygens сел на Титан 14.01.2005 (первая мягкая посадка во внешней Солнечной системе)",
+  "description": "Совместная миссия NASA, ESA и ASI. После семилетнего перелёта с гравитационными манёврами у Венеры, Земли и Юпитера Cassini вышел на орбиту Сатурна 01.07.2004 и работал 13 лет, выполнив 294 витка и 162 близких пролёта у спутников. Открыл южнополярные плюмы Энцелада (действующие водно-ледяные гейзеры), радаром составил карту метановых озёр Титана и разрешил гексагональный полярный шторм Сатурна. «Большой финал» (апрель—сентябрь 2017) — 22 витка в зазоре между кольцами и облачным слоем — завершился управляемым входом в атмосферу, чтобы исключить любое заражение Энцелада или Титана земными микробами.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "СТАРТ",
+      "note": "Titan IVB / Centaur поднимает связку Cassini-Huygens.",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "ГРАВИТАЦИОННЫЙ МАНЁВР У ВЕНЕРЫ",
+      "note": "Первый из четырёх манёвров, набирающих энергию для прибытия к Сатурну.",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "ВЫХОД НА ОРБИТУ САТУРНА",
+      "note": "Маршевый двигатель выводит Cassini на сатурнианскую орбиту — начало 13-летнего тура.",
       "type": "nominal"
     }
   ]

@@ -1,25 +1,25 @@
 {
-  "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "name": "パイオニア 11 号",
+  "type": "フライバイ · 飛行済み",
+  "first": "土星に到達した初の宇宙機 (一九七九年九月一日)。後にボイジャー 2 号を送り出す重力アシストを実証した",
+  "description": "パイオニア 10 号の双子で、一年後に打ち上げられた。パイオニア 11 号は木星の重力を使い、軌道を土星へと曲げた — 後にボイジャーの大旅行を可能にした重力アシスト技術の正準実証である。土星では F リングと衛星エピメテウスを発見。同じパイオニア・プラークを搭載。最後の信号は一九九五年九月三十日、約 43 AU の距離にて。機体は今わし座の方向へ向かっている。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "note": "Atlas-Centaur がケープカナベラルから木星—土星の重力アシスト軌道へ。",
       "type": "nominal"
     },
     {
       "met": 606,
       "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "note": "木星の重力アシストを用い土星方向へ進路転換。",
       "type": "nominal"
     },
     {
       "met": 2339,
       "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "note": "惑星初の近距離画像、F リングとエピメテウスを発見。",
       "type": "nominal"
     }
   ]

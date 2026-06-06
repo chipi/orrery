@@ -1,25 +1,25 @@
 {
   "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "type": "Sobrevoo · Realizado",
+  "first": "Objeto humano mais distante — atualmente a cerca de 165 UA do Sol, no espaço interestelar",
+  "description": "Lançada 16 dias depois da Voyager 2, a Voyager 1 voou mais rápido e chegou primeiro a Júpiter (1979) e a Saturno (1980). Seu sobrevoo de Titã desviou a trajetória para fora do plano da eclíptica, encerrando o tour planetário mas direcionando-a pelo caminho mais direto até a heliopausa — que cruzou em 25-08-2012, tornando-se o primeiro objeto humano a entrar no espaço interestelar. A cerca de 6 bilhões de km tirou o retrato de família Pale Blue Dot (14-02-1990), a fotografia sobre a qual Carl Sagan escreveu. Ambas as Voyager carregam o Disco de Ouro como cartão de visita da humanidade.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "LANÇAMENTO",
+      "note": "Titan IIIE / Centaur eleva a Voyager 1 de Cabo Canaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "MAIOR APROXIMAÇÃO DE JÚPITER",
+      "note": "Sobrevoo a ~349.000 km; descobriu o vulcanismo de Io, mapeou a superfície de Europa.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "SOBREVOOS DE SATURNO + TITÃ",
+      "note": "O sobrevoo de Titã desviou a trajetória para fora da eclíptica — sem mais encontros planetários possíveis.",
       "type": "nominal"
     }
   ]

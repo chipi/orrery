@@ -1,19 +1,19 @@
 {
-  "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "name": "パイオニア 10 号",
+  "type": "フライバイ · 飛行済み",
+  "first": "小惑星帯を通過した初の宇宙機にして、木星に初めて接近した機体 (一九七三年十二月四日)",
+  "description": "パイオニア 10 号は道を切り開いた — 小惑星帯を通過した初の探査機 (危険視されたほどではなかった)、木星を初めて間近に撮影し、冥王星の近日点距離を越えた初の機体 (一九八三)。カール・セーガン、フランク・ドレイク、リンダ・サルツマン・セーガン設計のパイオニア・プラークを搭載 — 人類最初の意図的な恒星間メッセージである。最後の成功通信は二〇〇三年一月二十三日、約 82 AU から。機体は今おうし座の方向に流され、約二百万年後にアルデバラン近傍を通過する。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "note": "Atlas-Centaur がパイオニア 10 号を木星への直接上昇軌道へ。",
       "type": "nominal"
     },
     {
       "met": 641,
       "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "note": "約 132,000 km での接近 — 惑星の初の近距離画像。",
       "type": "nominal"
     }
   ]

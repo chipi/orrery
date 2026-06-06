@@ -1,25 +1,25 @@
 {
-  "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "name": "جونو",
+  "type": "مدارية · نشطة",
+  "first": "أول مركبة قطبية حول المشتري؛ أول استخدام للطاقة الشمسية وراء حزام الكويكبات",
+  "description": "دخلت جونو مدار المشتري في 05-07-2016 على مسار قطبي بيضاوي شديد التمدد مدته 53 يومًا، يأخذها من داخل أحزمة الإشعاع (مدار نقطة الحضيض نحو 4.200 كم فوق قمم السحب) إلى ما وراء كاليستو. تعمل بالطاقة الشمسية — لوحاتها الثلاثية الوصلات بمساحة نحو 50 م² توفر 14 ك.و عند الأرض ولكن نحو 500 وات فقط عند المشتري، وهو أول استخدام للطاقة الشمسية على تلك المسافة. أكدت أن للمشتري نواة صخرية مخفَّفة دون حدٍّ حاد، وقاست توزع الأعاصير القطبية (ثمانية أعاصير محيطة بكل قطب)، وصوَّرت في 2023 بركانية آيو بتفاصيل لم يسبق لها مثيل. تتضمن المهمة الممدَّدة تحليقات لجميع أقمار غاليليو الأربعة حتى 2025.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "الإطلاق",
+      "note": "Atlas V 551 يرفع جونو من كيب كانافيرال.",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "مساعدة ثقالية أرضية",
+      "note": "تَرفع المناورة طاقة المسار حول الشمس بما يكفي للوصول إلى المشتري.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "دخول مدار المشتري",
+      "note": "حرق المحرك الرئيسي لمدة 35 دقيقة يضع جونو في مدار قطبي حول المشتري.",
       "type": "nominal"
     }
   ]

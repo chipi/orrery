@@ -1,25 +1,25 @@
 {
-  "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "name": "بايونير 11",
+  "type": "تحليق · مُنفَّذة",
+  "first": "أول مركبة تحلِّق فوق زحل (01-09-1979)؛ أثبتت المساعدة الثقالية التي دفعت فوياجر 2 لاحقًا",
+  "description": "توأم بايونير 10، أُطلقت بعد عام واحد. استخدمت بايونير 11 جاذبية المشتري لتحرف مسارها نحو زحل — البرهان النموذجي على المساعدة الثقالية، التقنية التي مكَّنت لاحقًا الجولة الكبرى لفوياجر. عند زحل اكتشفت الحلقة F والقمر إبيميثيوس. تحمل اللوحة ذاتها لبايونير. فُقدت الإشارة في 30-09-1995 من نحو 43 وحدة فلكية؛ تتجه السبر الآن نحو كوكبة العقاب.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "الإطلاق",
+      "note": "Atlas-Centaur من كيب كانافيرال على مسار مساعدة ثقالية المشتري-زحل.",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "تحليق المشتري",
+      "note": "استخدمت مساعدة المشتري للانعطاف نحو مسار زحل.",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "أقرب اقتراب من زحل",
+      "note": "أول صور قريبة للكوكب؛ اكتشاف الحلقة F وإبيميثيوس.",
       "type": "nominal"
     }
   ]

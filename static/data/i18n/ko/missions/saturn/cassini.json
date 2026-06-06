@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "카시니-호이겐스",
+  "type": "궤도선 + 착륙선 · 완료",
+  "first": "토성 궤도 13년 — 호이겐스는 2005-01-14 타이탄에 착륙(외태양계 최초의 연착륙)",
+  "description": "NASA·ESA·ASI 공동 임무. 금성, 지구, 목성에서의 중력 도움을 포함한 7년 항해 끝에 카시니는 2004-07-01 토성 궤도에 진입해 13년 동안 운용되며 294회의 공전과 162회의 근접 위성 비행을 수행했다. 엔셀라두스 남극의 수증기-얼음 분출(활동성 간헐천)을 발견했고, 레이더로 타이탄의 메탄 호수를 지도화했으며, 토성의 육각형 극지 폭풍을 분해했다. 그랜드 피날레(2017년 4–9월)는 고리와 구름 상층부 사이의 틈을 22번 누비고, 엔셀라두스나 타이탄을 지구 미생물로 오염시키지 않기 위해 통제된 대기권 재진입으로 막을 내렸다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "발사",
+      "note": "Titan IVB / Centaur가 카시니-호이겐스 결합체를 들어 올린다.",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "금성 중력 도움",
+      "note": "토성 도착에 필요한 에너지를 쌓는 네 번의 도움 중 첫 번째.",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "토성 궤도 진입",
+      "note": "주엔진 점화로 카시니가 토성 궤도에 안착, 13년 투어 개시.",
       "type": "nominal"
     }
   ]

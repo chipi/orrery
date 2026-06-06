@@ -1,0 +1,31 @@
+{
+  "id": "galileo",
+  "name": "Galileo",
+  "mission_id": "galileo",
+  "category": "completed-at-target",
+  "color": "#a5d6a7",
+  "schema_version": 1,
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice A.2). Deployed 1989-10-18 from STS-34 Atlantis on a VEEGA trajectory (Venus → Earth → Earth gravity assists) because Challenger's loss had grounded the Centaur upper stage. Venus assist 1990-02-10, Earth #1 1990-12-08, Earth #2 1992-12-08, Gaspra flyby 1991-10-29, Ida flyby 1993-08-28 (first known asteroid moon — Dactyl). Jupiter orbit insertion 1995-12-08 after dropping the atmospheric Probe. 35 Jupiter orbits, 34 close icy-moon flybys before disposed into Jupiter 2003-09-21 to protect Europa from contamination. Once at Jupiter the orbit loops cluster too tightly for the /explore log-AU scale, so the path terminates at the JOI waypoint with the disposal date as the today label. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [4.5, -3.0, 0.1],
+  "current_distance_au": 5.4,
+  "current_distance_label": "5.4 AU · disposed into Jupiter 2003-09-21 (Europa protection)",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "1989-10-18", "label": "Launch (STS-34)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1989-12", "x": 0.95, "y": -0.25, "z": 0.0 },
+    { "date": "1990-02-10", "label": "Venus", "x": 0.72, "y": -0.05, "z": 0.0 },
+    { "date": "1990-06", "x": 0.85, "y": 0.6, "z": 0.0 },
+    { "date": "1990-12-08", "label": "Earth #1", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1991-04", "x": 1.5, "y": 0.5, "z": 0.0 },
+    { "date": "1991-10-29", "label": "Gaspra", "x": 2.21, "y": 0.4, "z": 0.05 },
+    { "date": "1992-06", "x": 1.8, "y": -0.8, "z": 0.05 },
+    { "date": "1992-12-08", "label": "Earth #2", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1993-04", "x": 1.6, "y": 0.5, "z": 0.05 },
+    { "date": "1993-08-28", "label": "Ida + Dactyl", "x": 2.85, "y": 0.8, "z": 0.08 },
+    { "date": "1994-09", "x": 3.6, "y": -0.5, "z": 0.1 },
+    { "date": "1995-06", "x": 4.3, "y": -2.0, "z": 0.1 },
+    { "date": "1995-12-08", "label": "Jupiter orbit insertion", "x": 4.6, "y": -2.5, "z": 0.1 },
+    { "date": "2003-09-21", "label": "Disposed into Jupiter", "x": 4.5, "y": -3.0, "z": 0.1 }
+  ]
+}

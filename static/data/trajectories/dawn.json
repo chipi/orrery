@@ -1,0 +1,28 @@
+{
+  "id": "dawn",
+  "name": "Dawn",
+  "mission_id": "dawn",
+  "category": "completed-at-target",
+  "color": "#b392f0",
+  "schema_version": 1,
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice A.2). Launch 2007-09-27 on a Delta II 7925H — ion-propulsion mission to orbit two main-belt bodies in sequence (a first). Mars gravity assist 2009-02-17 added the inclination needed to rendezvous with Vesta. Vesta orbit 2011-07-16 to 2012-09-05 — first orbital reconnaissance of a main-belt object. Ceres orbit insertion 2015-03-06 — first orbit of a dwarf planet. EOM 2018-10-31 when hydrazine for attitude control ran out; left in a stable orbit around Ceres that will hold for at least 20 years. Ion-engine cruise produces a heliocentric spiral, not Lambert arcs — the waypoints below approximate the spiral by sampling at key milestones. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [2.0, -2.0, 0.3],
+  "current_distance_au": 2.8,
+  "current_distance_label": "2.8 AU · in stable Ceres orbit since EOM 2018-10-31 (~20-year orbital lifetime)",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2007-09-27", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2008-06", "x": 1.5, "y": 0.5, "z": 0.0 },
+    { "date": "2008-12", "x": 1.6, "y": -0.2, "z": 0.0 },
+    { "date": "2009-02-17", "label": "Mars assist", "x": 1.55, "y": -0.1, "z": 0.02 },
+    { "date": "2010-01", "x": 2.1, "y": 0.4, "z": 0.05 },
+    { "date": "2011-01", "x": 2.4, "y": -0.6, "z": 0.1 },
+    { "date": "2011-07-16", "label": "Vesta orbit", "x": 2.36, "y": -0.4, "z": 0.12 },
+    { "date": "2012-09-05", "label": "Vesta departure", "x": 2.36, "y": 0.5, "z": 0.12 },
+    { "date": "2013-12", "x": 2.6, "y": -1.0, "z": 0.18 },
+    { "date": "2014-12", "x": 2.8, "y": -1.5, "z": 0.22 },
+    { "date": "2015-03-06", "label": "Ceres orbit insertion", "x": 2.77, "y": -1.6, "z": 0.24 },
+    { "date": "2018-10-31", "label": "EOM (Today)", "x": 2.0, "y": -2.0, "z": 0.3 }
+  ]
+}

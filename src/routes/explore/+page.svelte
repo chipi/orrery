@@ -12,6 +12,11 @@
     type IconicTrajectoryData,
     type IconicTrajectoryHandle,
   } from '$lib/three/iconic-trajectory';
+  import {
+    buildOrbiterTour,
+    type OrbiterTourData,
+    type OrbiterTourHandle,
+  } from '$lib/three/orbiter-tour';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
@@ -785,11 +790,17 @@
   // toggle effect can flip visibility without touching the scene
   // directly.
   let iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
+  // #306 Slice D — Saturn-anchored orbiter tour (Cassini today; the
+  // pattern generalises to any orbital tour we want to surface at
+  // planet-zoom). Group rides Saturn's local frame so the orbits only
+  // resolve when the camera is close enough to see them.
+  let orbiterTourHandles: OrbiterTourHandle[] = [];
 
   // PATHS layer visibility binding.
   $effect(() => {
     const visible = layers.paths;
     for (const h of iconicTrajectoryHandles) h.setVisible(visible);
+    for (const h of orbiterTourHandles) h.setVisible(visible);
   });
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
@@ -954,6 +965,17 @@
       if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
     }
     // Unknown id → no-op; do not crash.
+  });
+
+  // #306 deep-link from MissionPanel "See path on /explore" — `?paths=1`
+  // auto-activates the PATHS layer so users land with the iconic
+  // trajectories already visible. `?focus=saturn` additionally selects
+  // Saturn so the Cassini orbital tour is in view at panel zoom.
+  $effect(() => {
+    const paths = $page.url.searchParams.get('paths');
+    const focus = $page.url.searchParams.get('focus');
+    if (paths === '1') layers.paths = true;
+    if (focus && planetById.has(focus)) selectPlanet(focus);
   });
 
   function closePanel() {
@@ -2472,33 +2494,70 @@
       kuiperBeltPick,
     ];
 
-    // ── Iconic spacecraft trajectories (#306 Slice A: Voyager 2) ────
-    // Fetched async; built once the JSON resolves; group hidden by
+    // ── Iconic spacecraft trajectories (#306 A+B+C) ──────────────────
+    // Voyager 1+2 (A, B), Pioneer 10+11 + New Horizons (C), plus the
+    // beyond-Mars catalog rounds (Galileo, Juno, Cassini, Dawn) all
+    // fetched async; built once each JSON resolves; groups hidden by
     // default per layers.paths default. The $effect at component scope
-    // binds visibility to the PATHS chip toggle.
-    void (async () => {
-      try {
-        const res = await fetch(`${base}/data/trajectories/voyager-2.json`);
-        if (!res.ok) return;
-        const data = (await res.json()) as IconicTrajectoryData;
-        const handle = buildIconicTrajectory({
-          data,
-          auToPx,
-          width: container?.clientWidth ?? window.innerWidth,
-          height: container?.clientHeight ?? window.innerHeight,
-          visible: layers.paths,
-        });
-        scene.add(handle.group);
-        iconicTrajectoryHandles.push(handle);
-        // The Today marker is the click target — opens the matching
-        // mission record on /missions when picked. Add to pickables so
-        // the existing raycaster catches it.
-        pickables.push(handle.clickTarget);
-      } catch {
-        // Silent — the PATHS chip simply has nothing to render if the
-        // fetch fails. Not a fatal error for /explore.
-      }
-    })();
+    // binds visibility to the PATHS chip toggle. The Today marker on
+    // each handle is the click target — opens the matching mission
+    // record on /missions when picked.
+    const ICONIC_TRAJECTORY_IDS = [
+      'voyager-1',
+      'voyager-2',
+      'pioneer-10',
+      'pioneer-11',
+      'new-horizons',
+      'galileo',
+      'juno',
+      'cassini',
+      'dawn',
+    ] as const;
+    for (const id of ICONIC_TRAJECTORY_IDS) {
+      void (async () => {
+        try {
+          const res = await fetch(`${base}/data/trajectories/${id}.json`);
+          if (!res.ok) return;
+          const data = (await res.json()) as IconicTrajectoryData;
+          const handle = buildIconicTrajectory({
+            data,
+            auToPx,
+            width: container?.clientWidth ?? window.innerWidth,
+            height: container?.clientHeight ?? window.innerHeight,
+            visible: layers.paths,
+          });
+          scene.add(handle.group);
+          iconicTrajectoryHandles.push(handle);
+          pickables.push(handle.clickTarget);
+        } catch {
+          // Silent — the PATHS chip simply skips this trajectory if
+          // the fetch fails. Not a fatal error for /explore.
+        }
+      })();
+    }
+
+    // ── Saturn-anchored orbiter tour (Cassini · #306 Slice D) ────────
+    // Loaded once, attached to Saturn's local frame so the orbital
+    // loops resolve at Saturn-system scale when the camera zooms in.
+    // No frame switch needed — same pattern as the satellites group.
+    const ORBITER_TOUR_IDS = ['cassini-tour', 'galileo-tour', 'juno-tour'] as const;
+    for (const id of ORBITER_TOUR_IDS) {
+      void (async () => {
+        try {
+          const res = await fetch(`${base}/data/trajectories/${id}.json`);
+          if (!res.ok) return;
+          const data = (await res.json()) as OrbiterTourData;
+          const parent = planetObjs.find((p) => p.planet.id === data.parent_planet);
+          if (!parent) return;
+          const handle = buildOrbiterTour({ data, visible: layers.paths });
+          parent.group.add(handle.group);
+          orbiterTourHandles.push(handle);
+          pickables.push(handle.clickTarget);
+        } catch {
+          // Silent — same convention as iconic trajectories above.
+        }
+      })();
+    }
 
     const tryPick3d = (e: MouseEvent) => {
       const rect = el3d.getBoundingClientRect();
@@ -2513,7 +2572,8 @@
           typeof h.object.userData.smallBodyId === 'string' ||
           typeof h.object.userData.satelliteId === 'string' ||
           typeof h.object.userData.beltId === 'string' ||
-          h.object.userData.kind === 'iconic-trajectory-today',
+          h.object.userData.kind === 'iconic-trajectory-today' ||
+          h.object.userData.kind === 'orbiter-tour-flyby',
       );
       if (hit) {
         const planetId = hit.object.userData.planetId as string | undefined;
@@ -2531,6 +2591,11 @@
           // Iconic trajectory's Today marker — deep-link to the mission
           // record on /missions. Preserves the standard mission-panel
           // open path rather than reimplementing it on /explore.
+          void goto(`${base}/missions?id=${trajectoryMissionId}`);
+        } else if (hit.object.userData.kind === 'orbiter-tour-flyby' && trajectoryMissionId) {
+          // Orbiter-tour flyby marker (Slice D) — deep-link to the
+          // mission record. The tour group rides Saturn so the
+          // marker's world position tracks Saturn automatically.
           void goto(`${base}/missions?id=${trajectoryMissionId}`);
         }
         return;
@@ -3790,6 +3855,8 @@
     tourCameraTeardown?.();
     for (const h of iconicTrajectoryHandles) h.dispose();
     iconicTrajectoryHandles = [];
+    for (const h of orbiterTourHandles) h.dispose();
+    orbiterTourHandles = [];
   });
 
   function toggleView() {

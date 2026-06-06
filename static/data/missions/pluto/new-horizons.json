@@ -25,6 +25,36 @@
       "l": "New Horizons (NASA)",
       "u": "https://science.nasa.gov/mission/new-horizons/",
       "t": "core"
+    },
+    {
+      "l": "New Horizons mission site (APL)",
+      "u": "https://pluto.jhuapl.edu/",
+      "t": "core"
+    },
+    {
+      "l": "NSSDCA catalog — New Horizons (2006-001A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2006-001A",
+      "t": "deep"
+    },
+    {
+      "l": "Pluto system geology — Moore et al. 2016, Science 351",
+      "u": "https://www.science.org/doi/10.1126/science.aad7055",
+      "t": "deep"
+    },
+    {
+      "l": "Arrokoth (2014 MU69) flyby — Stern et al. 2019, Science 364",
+      "u": "https://www.science.org/doi/10.1126/science.aaw9771",
+      "t": "deep"
+    },
+    {
+      "l": "Heliospheric science from New Horizons SWAP/PEPSSI",
+      "u": "https://pluto.jhuapl.edu/Mission/Spacecraft/Payload.php",
+      "t": "deep"
+    },
+    {
+      "l": "Extended mission KEM2 (2022–2028+)",
+      "u": "https://www.nasa.gov/news-release/nasa-extends-new-horizons-mission-through-end-of-decade/",
+      "t": "deep"
     }
   ],
   "flight_data_quality": "sparse",

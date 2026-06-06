@@ -1,25 +1,25 @@
 {
   "name": "Voyager 1",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "Most distant human-made object \u2014 currently ~165 AU from the Sun in interstellar space",
-  "description": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause \u2014 which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity\u2019s calling card.",
+  "type": "Sorvolo · Effettuato",
+  "first": "L'oggetto umano più distante — attualmente a circa 165 UA dal Sole, nello spazio interstellare",
+  "description": "Lanciata 16 giorni dopo Voyager 2, Voyager 1 ha viaggiato più veloce ed è arrivata per prima a Giove (1979) e Saturno (1980). Il sorvolo di Titano ha curvato la traiettoria fuori dal piano dell'eclittica, chiudendo il tour planetario ma instradandola sulla via più diretta verso l'eliopausa — che ha attraversato il 25-08-2012, il primo oggetto umano a entrare nello spazio interstellare. Da una distanza di circa 6 miliardi di km ha scattato il ritratto di famiglia Pale Blue Dot (14-02-1990), la foto su cui scrisse Carl Sagan. Entrambe le Voyager portano il Disco d'Oro come biglietto da visita dell'umanità.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IIIE / Centaur lifts Voyager 1 from Cape Canaveral.",
+      "label": "LANCIO",
+      "note": "Titan IIIE / Centaur solleva Voyager 1 da Cape Canaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~349,000 km; discovered Io volcanism, mapped Europa\u2019s surface.",
+      "label": "MASSIMO AVVICINAMENTO A GIOVE",
+      "note": "Sorvolo a ~349.000 km; ha scoperto il vulcanismo di Io, mappato la superficie di Europa.",
       "type": "nominal"
     },
     {
       "met": 1164,
-      "label": "SATURN + TITAN FLYBYS",
-      "note": "Titan flyby bent trajectory out of the ecliptic plane \u2014 no further planetary encounter possible.",
+      "label": "SORVOLI SATURNO + TITANO",
+      "note": "Il sorvolo di Titano ha curvato la traiettoria fuori dall'eclittica — nessun altro incontro planetario possibile.",
       "type": "nominal"
     }
   ]

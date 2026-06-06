@@ -1,19 +1,19 @@
 {
   "name": "Pioneer 10",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft through the asteroid belt and the first to fly past Jupiter (1973-12-04)",
-  "description": "Pioneer 10 was the trail-blazer \u2014 first to cross the asteroid belt (which we then learned was much less hazardous than predicted), first to image Jupiter at close range, first to reach a heliocentric distance greater than Pluto\u2019s perihelion (1983). It carries the Pioneer plaque designed by Carl Sagan, Frank Drake, and Linda Salzman Sagan \u2014 humanity\u2019s first deliberate interstellar message. Final successful contact 2003-01-23 from ~82 AU; the spacecraft now drifts toward the constellation Taurus, with an encounter near Aldebaran in roughly two million years.",
+  "type": "Sobrevuelo · Realizado",
+  "first": "Primera nave en cruzar el cinturón de asteroides y en sobrevolar Júpiter (04-12-1973)",
+  "description": "Pioneer 10 fue la abridora del camino — primera nave en atravesar el cinturón de asteroides (que resultó mucho menos peligroso de lo previsto), primera en fotografiar Júpiter de cerca y primera en superar la distancia del perihelio de Plutón (1983). Lleva la Placa de Pioneer, diseñada por Carl Sagan, Frank Drake y Linda Salzman Sagan — el primer mensaje interestelar deliberado de la humanidad. Último contacto exitoso el 23-01-2003 desde ~82 UA; ahora deriva hacia la constelación de Tauro, con un acercamiento a Aldebarán en aproximadamente dos millones de años.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur lifts Pioneer 10 on a direct ascent to Jupiter.",
+      "label": "LANZAMIENTO",
+      "note": "Atlas-Centaur eleva a Pioneer 10 en ascenso directo a Júpiter.",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
-      "note": "Flyby at ~132,000 km \u2014 first close-range photographs of the planet.",
+      "label": "MÁXIMO ACERCAMIENTO A JÚPITER",
+      "note": "Sobrevuelo a ~132.000 km — primeras imágenes cercanas del planeta.",
       "type": "nominal"
     }
   ]

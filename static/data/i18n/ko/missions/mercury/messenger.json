@@ -1,25 +1,25 @@
 {
-  "name": "MESSENGER",
-  "type": "ORBITER \u00b7 FLOWN",
-  "first": "First spacecraft to orbit Mercury; first complete surface map of the innermost planet",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years \u2014 Earth, Venus twice, Mercury three times \u2014 to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 \u00b0C and the other at -45 \u00b0C. Discoveries included water ice in permanently shadowed polar craters, previously unknown \u201chollows\u201d geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core ratio in the solar system). Mission ended with a controlled impact onto Mercury\u2019s surface 2015-04-30 after fuel ran out.",
+  "name": "메신저",
+  "type": "궤도선 · 완료",
+  "first": "수성을 공전한 최초의 우주선; 가장 안쪽 행성의 전 표면을 처음으로 지도화",
+  "description": "MESSENGER(MErcury Surface, Space ENvironment, GEochemistry, and Ranging)는 7년에 걸쳐 6회의 중력 도움 — 지구, 금성 2회, 수성 3회 — 을 활용해 감속하고 2011-03-18 수성 궤도에 진입했다. 햇빛 가리개로 보호되어 한쪽 면은 370 °C, 반대쪽은 -45 °C였다. 영구 음영의 극지 충돌구에서 물 얼음을 발견했고, 이전에 알려지지 않은 「hollows」 지형을 확인했으며, 수성의 철 코어가 행성 반지름의 약 85 %를 차지함을 확인했다(태양계에서 가장 큰 코어 비율). 추진제가 바닥난 2015-04-30 통제된 표면 충돌로 임무가 종료되었다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Delta II 7925H lifts MESSENGER on a six-flyby trajectory.",
+      "label": "발사",
+      "note": "Delta II 7925H가 메신저를 6회 근접 비행 궤도로 보낸다.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+      "label": "지구 중력 도움",
+      "note": "수성 궤도에 충분히 감속하기 위한 여섯 차례 도움 중 첫 번째.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERCURY ORBIT INSERTION",
-      "note": "Main-engine burn places MESSENGER into Mercury orbit after seven years of cruise.",
+      "label": "수성 궤도 진입",
+      "note": "주엔진을 점화해 메신저를 7년 항해 끝에 수성 궤도에 진입시킨다.",
       "type": "nominal"
     }
   ]

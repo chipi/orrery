@@ -1,25 +1,25 @@
 {
-  "name": "Pioneer 11",
-  "type": "FLYBY \u00b7 FLOWN",
-  "first": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "description": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter\u2019s gravity to bend its trajectory toward Saturn \u2014 the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and the moon Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+  "name": "पायनियर 11",
+  "type": "फ्लाईबाई · पूर्ण",
+  "first": "शनि पर पहली फ्लाईबाई (01-09-1979); उस गुरुत्व-सहायता का प्रदर्शन किया जिसने वॉयजर 2 को आगे भेजा",
+  "description": "पायनियर 10 की जुड़वाँ, एक वर्ष बाद प्रक्षेपित। पायनियर 11 ने बृहस्पति के गुरुत्व का उपयोग करके अपना प्रक्षेप-पथ शनि की ओर मोड़ा — गुरुत्व-सहायता का यह वही प्रामाणिक प्रमाण था जिसने बाद में वॉयजर के ग्रैंड टूर को संभव बनाया। शनि पर इसने F-वलय तथा चंद्रमा एपिमेथियस की खोज की। यह अपने जुड़वाँ की भाँति वही पायनियर पट्टिका लेकर चलती है। 30-09-1995 को लगभग 43 AU से सिग्नल समाप्त; अब यह उत्तरी आकाश में ईगल तारामंडल की ओर बढ़ रही है।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas-Centaur from Cape Canaveral on a Jupiter-Saturn gravity-assist trajectory.",
+      "label": "प्रक्षेपण",
+      "note": "Atlas-Centaur ने केप कैनावेरल से बृहस्पति-शनि गुरुत्व-सहायता पथ पर भेजा।",
       "type": "nominal"
     },
     {
       "met": 606,
-      "label": "JUPITER FLYBY",
-      "note": "Used Jupiter assist to bend onto a Saturn-bound path.",
+      "label": "बृहस्पति फ्लाईबाई",
+      "note": "बृहस्पति-सहायता से शनि-पथ की ओर मुड़ी।",
       "type": "nominal"
     },
     {
       "met": 2339,
-      "label": "SATURN CLOSEST APPROACH",
-      "note": "First images of the planet at close range; discovered the F ring and Epimetheus.",
+      "label": "शनि निकटतम दृष्टिकोण",
+      "note": "ग्रह की पहली निकट छवियाँ; F-वलय तथा एपिमेथियस की खोज।",
       "type": "nominal"
     }
   ]

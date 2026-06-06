@@ -1,25 +1,25 @@
 {
   "name": "MESSENGER",
-  "type": "ORBITER \u00b7 FLOWN",
-  "first": "First spacecraft to orbit Mercury; first complete surface map of the innermost planet",
-  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) used six gravity assists across seven years \u2014 Earth, Venus twice, Mercury three times \u2014 to slow into Mercury orbit on 2011-03-18. Sunshade-protected with one side at 370 \u00b0C and the other at -45 \u00b0C. Discoveries included water ice in permanently shadowed polar craters, previously unknown \u201chollows\u201d geological features, and confirmation that Mercury's iron core occupies ~85 % of the planet's radius (the largest core ratio in the solar system). Mission ended with a controlled impact onto Mercury\u2019s surface 2015-04-30 after fuel ran out.",
+  "type": "Orbiteur · VOLÉ",
+  "first": "Premier vaisseau en orbite autour de Mercure ; première cartographie complète de la surface de la planète la plus interne",
+  "description": "MESSENGER (MErcury Surface, Space ENvironment, GEochemistry, and Ranging) a utilisé six assistances gravitationnelles en sept ans — Terre, deux fois Vénus, trois fois Mercure — pour ralentir et entrer en orbite mercurienne le 18-03-2011. Protégée par un pare-soleil, un côté à 370 °C et l'autre à -45 °C. Découvertes : glace d'eau dans des cratères polaires en ombre permanente, des « hollows » géologiques jusque-là inconnus et confirmation que le noyau de fer de Mercure occupe ~85 % du rayon planétaire (le plus grand rapport de cœur du système solaire). La mission s'est terminée par un impact contrôlé le 30-04-2015 après épuisement du carburant.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Delta II 7925H lifts MESSENGER on a six-flyby trajectory.",
+      "label": "LANCEMENT",
+      "note": "Delta II 7925H soulève MESSENGER sur une trajectoire à six survols.",
       "type": "nominal"
     },
     {
       "met": 365,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "First of six assists to slow the trajectory enough to enter Mercury orbit.",
+      "label": "ASSISTANCE GRAVITATIONNELLE TERRESTRE",
+      "note": "Première de six assistances qui ralentissent la trajectoire assez pour entrer en orbite mercurienne.",
       "type": "nominal"
     },
     {
       "met": 2419,
-      "label": "MERCURY ORBIT INSERTION",
-      "note": "Main-engine burn places MESSENGER into Mercury orbit after seven years of cruise.",
+      "label": "MISE EN ORBITE AUTOUR DE MERCURE",
+      "note": "Allumage du moteur principal place MESSENGER en orbite mercurienne après sept ans de croisière.",
       "type": "nominal"
     }
   ]

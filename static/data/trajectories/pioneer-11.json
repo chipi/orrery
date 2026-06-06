@@ -1,0 +1,33 @@
+{
+  "id": "pioneer-11",
+  "name": "Pioneer 11",
+  "mission_id": "pioneer-11",
+  "category": "interstellar-bound",
+  "color": "#ff7b72",
+  "schema_version": 1,
+  "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice C). Launch 1973-04-06 → Jupiter gravity-assist 1974-12-02 (bent the path north and outward toward Saturn) → Saturn flyby 1979-09-01 (first ever, demonstrated gravity-assist that later enabled Voyager Grand Tour) → drift outward toward the constellation Aquila / Scutum (ecl. lat ~+11°). Signal lost 1995-09-30 from ~43 AU; coasting today at ~89 AU per JPL Horizons projection. Heliocentric ecliptic J2000 AU. Not ephemeris-grade; sufficient for the heliocentric log-scale view at /explore.",
+  "current_position_au": [-31.0, 80.0, 17.0],
+  "current_distance_au": 89.0,
+  "current_distance_label": "89 AU · ~12.3 light-hours from the Sun (signal lost 1995-09-30)",
+  "interstellar_since": null,
+  "interstellar_since_label": "Signal lost 1995 — coasting toward Aquila, will reach interstellar space around 2027",
+  "waypoints": [
+    { "date": "1973-04-06", "label": "Launch", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1973-09", "x": 1.8, "y": 0.6, "z": 0.0 },
+    { "date": "1974-03", "x": 2.8, "y": 1.4, "z": 0.0 },
+    { "date": "1974-08", "x": 4.0, "y": 2.4, "z": 0.0 },
+    { "date": "1974-12-02", "label": "Jupiter assist", "x": 5.1, "y": 3.0, "z": 0.2 },
+    { "date": "1975-06", "x": 5.6, "y": 4.3, "z": 1.0 },
+    { "date": "1976-06", "x": 6.4, "y": 6.6, "z": 2.5 },
+    { "date": "1977-12", "x": 7.5, "y": 9.0, "z": 4.5 },
+    { "date": "1979-03", "x": 8.4, "y": 11.0, "z": 6.0 },
+    { "date": "1979-09-01", "label": "Saturn + F-ring", "x": 8.8, "y": 12.0, "z": 6.5 },
+    { "date": "1982-06", "x": 7.5, "y": 16.0, "z": 8.0 },
+    { "date": "1986-01", "x": 4.0, "y": 23.0, "z": 9.5 },
+    { "date": "1990-06", "x": -2.0, "y": 31.0, "z": 11.5 },
+    { "date": "1995-09-30", "label": "Last signal", "x": -7.5, "y": 39.0, "z": 13.0 },
+    { "date": "2005-01", "x": -14.0, "y": 52.0, "z": 14.5 },
+    { "date": "2015-06", "x": -22.0, "y": 65.0, "z": 15.8 },
+    { "date": "2026-06-05", "label": "Today", "x": -31.0, "y": 80.0, "z": 17.0 }
+  ]
+}

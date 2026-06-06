@@ -1,25 +1,25 @@
 {
-  "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "name": "주노",
+  "type": "궤도선 · 운용 중",
+  "first": "목성 최초의 극궤도선; 소행성대 너머에서 처음으로 태양 전력 운용",
+  "description": "주노는 2016-07-05 목성 53일 주기의 고이심률 극궤도에 진입해, 방사선대 안쪽(목성 근지점 ~4,200 km 구름 상층부 위)에서 칼리스토 바깥까지 오간다. 태양 전력 운용 — 약 50 m² 삼접합 어레이는 지구에서는 14 kW를 내지만 목성에서는 ~500 W에 불과하며, 이 거리에서 태양 전력을 사용한 최초의 사례이다. 목성에 묽은 암석 코어가 있고 뚜렷한 경계가 없음을 확인했고, 극지방 사이클론 배열(각 극 주변 8개의 환극 폭풍)을 측정했으며, 2023년에는 이오의 화산 활동을 전례 없는 해상도로 영상화했다. 연장 임무는 2025년까지 네 갈릴레이 위성 모두의 근접 비행을 포함한다.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "발사",
+      "note": "Atlas V 551이 주노를 케이프 커내버럴에서 들어 올린다.",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "지구 중력 도움",
+      "note": "도움 비행으로 태양 중심 에너지를 목성 도달에 충분한 수준까지 올린다.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "목성 궤도 진입",
+      "note": "주엔진을 35분간 점화해 주노를 목성 극궤도에 진입시킨다.",
       "type": "nominal"
     }
   ]

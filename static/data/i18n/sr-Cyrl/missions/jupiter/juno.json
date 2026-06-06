@@ -1,25 +1,25 @@
 {
-  "name": "Juno",
-  "type": "ORBITER \u00b7 ACTIVE",
-  "first": "First polar orbiter of Jupiter; solar-powered beyond the asteroid belt for the first time",
-  "description": "Juno entered Jupiter orbit 2016-07-05 on a highly elliptical 53-day polar trajectory that takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto. Solar-powered \u2014 its ~50 m\u00b2 triple-junction arrays deliver 14 kW at Earth but only ~500 W at Jupiter, the first time solar power has been used at that distance. Confirmed Jupiter has a diluted rocky core (not a sharp boundary), measured the polar cyclone arrangement (eight circumpolar storms around each pole), and imaged Io\u2019s volcanism at unprecedented detail in 2023. Extended mission includes flybys of all four Galilean moons through 2025.",
+  "name": "Јуно",
+  "type": "Орбитер · Активна",
+  "first": "Први поларни орбитер Јупитера; први пут соларно напајање иза астероидног појаса",
+  "description": "Јуно је 05.07.2016 ушао у Јупитерову поларну орбиту — изразито елиптичну трајекторију од 53 дана која га води од унутрашњости радијационих појасева (перијове ~4.200 км изнад облака) па преко Калиста. Солар-погонски — његови троспојни панели површине око 50 м² на Земљи дају 14 kW, али код Јупитера само ~500 W: први пут да се соларно напајање користи на тој удаљености. Потврђено је да Јупитер има разблажено стеновито језгро без оштре границе, измерен је распоред поларних циклона (по осам циркумполарних олуја око сваког пола), а 2023. снимљен је вулканизам Иа невиђеном детаљношћу. Продужена мисија укључује прелете свих четири Галилејева месеца до 2025.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 551 lifts Juno from Cape Canaveral.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Atlas V 551 подиже Јуно са Кејп Канаверала.",
       "type": "nominal"
     },
     {
       "met": 749,
-      "label": "EARTH GRAVITY ASSIST",
-      "note": "Slingshot raises heliocentric energy enough to reach Jupiter.",
+      "label": "ЗЕМАЉСКИ ГРАВИТАЦИОНИ ЗАМАХ",
+      "note": "Замах подиже хелиоцентричну енергију довољно да се достигне Јупитер.",
       "type": "nominal"
     },
     {
       "met": 1796,
-      "label": "JUPITER ORBIT INSERTION",
-      "note": "35-minute main-engine burn places Juno into polar Jupiter orbit.",
+      "label": "УЛАЗАК У ЈУПИТЕРОВУ ОРБИТУ",
+      "note": "Главни мотор сагорева 35 минута и поставља Јуно у поларну орбиту Јупитера.",
       "type": "nominal"
     }
   ]

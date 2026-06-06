@@ -1,25 +1,25 @@
 {
-  "name": "Cassini-Huygens",
-  "type": "ORBITER + LANDER \u00b7 FLOWN",
-  "first": "13 years in orbit around Saturn \u2014 Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "description": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus\u2019s south-polar plumes (active water-ice geysers), mapped Titan\u2019s methane lakes via radar, and resolved Saturn\u2019s hexagonal polar storm. The Grand Finale (April\u2013September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+  "name": "कैसिनी-हाइगन्स",
+  "type": "परिक्रामी + अवतरण यान · पूर्ण",
+  "first": "शनि की कक्षा में 13 वर्ष — हाइगन्स ने टाइटन पर 14-01-2005 को अवतरण किया (बाहरी सौर मंडल में पहला कोमल अवतरण)",
+  "description": "नासा-ईएसए-एएसआई की संयुक्त परियोजना। शुक्र, पृथ्वी तथा बृहस्पति पर गुरुत्व-सहायताओं के साथ 7 वर्षीय यात्रा के बाद, कैसिनी ने 01-07-2004 को शनि की कक्षा में प्रवेश किया और 13 वर्षों तक कार्यरत रही, 294 कक्षाएँ तथा 162 निकट चंद्रमा फ्लाईबाई पूरे किए। इसने एन्सेलाडस के दक्षिणी ध्रुवीय जल-बर्फ़ गीज़र, टाइटन की मीथेन झीलों का राडार मानचित्र, तथा शनि के षट्भुजाकार ध्रुवीय तूफ़ान का विश्लेषण किया। ग्रैंड फ़िनाले (अप्रैल–सितंबर 2017) ने वलयों तथा मेघ-शीर्षों के बीच की दरार में 22 कक्षाओं की बुनाई की, और एक नियंत्रित वायुमंडलीय प्रवेश से समाप्त हुआ ताकि स्थलीय सूक्ष्मजीवों से एन्सेलाडस या टाइटन को संदूषण से बचाया जा सके।",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Titan IVB / Centaur lifts the combined Cassini-Huygens stack.",
+      "label": "प्रक्षेपण",
+      "note": "Titan IVB / Centaur ने कैसिनी-हाइगन्स के संयुक्त यान को उठाया।",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
-      "note": "First of four assists building the energy for Saturn arrival.",
+      "label": "शुक्र गुरुत्व-सहायता",
+      "note": "शनि पहुँचने के लिए ऊर्जा संचय करने वाली चार सहायताओं में पहली।",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
-      "note": "Main engine burn places Cassini into Saturn orbit, beginning the 13-year tour.",
+      "label": "शनि कक्षा प्रवेश",
+      "note": "मुख्य इंजन के बर्न से कैसिनी शनि की कक्षा में स्थापित, 13 वर्षीय यात्रा का प्रारम्भ।",
       "type": "nominal"
     }
   ]

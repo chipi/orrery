@@ -1029,5 +1029,9 @@
   "explore_voyager2_today_aria": "Voyager 2 current position — click to open mission record",
   "explore_voyager2_cue_at_neptune": "And the spacecraft that travelled every outer planet — Voyager 2, still going.",
   "mp_see_path_on_explore": "Bekijk baan op /explore",
-  "mp_see_tour_on_explore": "Bekijk orbitale tour bij Saturnus op /explore"
+  "mp_see_tour_on_explore": "Bekijk orbitale tour bij Saturnus op /explore",
+  "nav_audio_tour_aria": "Doe de tour",
+  "nav_audio_tour_tooltip": "Doe de tour",
+  "nav_locale_picker_tooltip": "Kies taal",
+  "audio_overlay_title_default": "Tour"
 }

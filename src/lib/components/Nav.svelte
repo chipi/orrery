@@ -155,10 +155,10 @@
       class="audio-toggle"
       class:active={audio.open}
       class:playing={audio.playing}
-      aria-label="Toggle audio episodes"
+      aria-label={m.nav_audio_tour_aria()}
       aria-pressed={audio.open}
       aria-controls={audio.open ? 'audio-overlay' : undefined}
-      title="Audio episodes"
+      title={m.nav_audio_tour_tooltip()}
       onclick={() => audio.toggle()}
     >
       <!-- Waveform glyph (PRD-016 / RFC-019 §7.2 — "〜 glyph"). Inline SVG

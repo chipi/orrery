@@ -74,6 +74,7 @@
     aria-label={m.nav_locale_picker_aria()}
     aria-haspopup="listbox"
     aria-expanded={open}
+    title={m.nav_locale_picker_tooltip()}
     onclick={() => (open = !open)}
   >
     <span class="flag" aria-hidden="true">{activeEntry.flag}</span>

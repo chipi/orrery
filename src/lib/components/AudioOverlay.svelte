@@ -43,6 +43,11 @@
   // element that opened it (PRD-016 M14 — desktop focus discipline).
   let focusReturnTo: HTMLElement | null = null;
 
+  // Voice picker (Google ↔ ElevenLabs A/B switcher) intentionally
+  // unwired from the UI (Marko 2026-06-06). ElevenLabs is the preferred
+  // provider per PROVIDER_PRIORITY in audio-registry. PROVIDER_LABEL +
+  // switchToProvider are retained for re-wiring without re-authoring;
+  // marked as deliberately-unused via the void references at script end.
   const PROVIDER_LABEL: Record<string, string> = {
     google: 'Google',
     elevenlabs: 'ElevenLabs',
@@ -622,6 +627,12 @@
       // network error or browser refused download — silent no-op
     }
   }
+
+  // Voice picker code retained — see PROVIDER_LABEL block at top of
+  // script. These `void` references silence TS unused-warning without
+  // deleting the underlying provider-switch infrastructure.
+  void PROVIDER_LABEL;
+  void switchToProvider;
 </script>
 
 {#if audio.open}
@@ -665,7 +676,7 @@
         </div>
       </div>
       <h2 class="overlay-title">
-        {audio.currentEpisode?.title ?? 'Audio episodes'}
+        {audio.currentEpisode?.title ?? m.audio_overlay_title_default()}
       </h2>
     </header>
 
@@ -789,28 +800,32 @@
           })}
         </p>
       {:else}
-        <button
-          type="button"
-          class="tour-start"
-          onclick={startTour}
-          disabled={!audioRegistry.loaded}
-        >
-          {m.audio_tour_start_curator()}
-          <span class="tour-meta">
-            {m.audio_tour_meta_standard({ count: CURATOR_FULL_TOUR.length })}
-          </span>
-        </button>
-        <button
-          type="button"
-          class="tour-start tour-start-extended"
-          onclick={startExtendedTour}
-          disabled={!audioRegistry.loaded}
-        >
-          {m.audio_tour_start_extended()}
-          <span class="tour-meta">
-            {m.audio_tour_meta_extended({ count: CURATOR_EXTENDED_TOUR.length })}
-          </span>
-        </button>
+        <!-- Two tour launchers side-by-side on wide viewports, stacked
+             on narrow ones (mobile gets the cramped 320-400 px width). -->
+        <div class="tour-launchers">
+          <button
+            type="button"
+            class="tour-start"
+            onclick={startTour}
+            disabled={!audioRegistry.loaded}
+          >
+            {m.audio_tour_start_curator()}
+            <span class="tour-meta">
+              {m.audio_tour_meta_standard({ count: CURATOR_FULL_TOUR.length })}
+            </span>
+          </button>
+          <button
+            type="button"
+            class="tour-start tour-start-extended"
+            onclick={startExtendedTour}
+            disabled={!audioRegistry.loaded}
+          >
+            {m.audio_tour_start_extended()}
+            <span class="tour-meta">
+              {m.audio_tour_meta_extended({ count: CURATOR_EXTENDED_TOUR.length })}
+            </span>
+          </button>
+        </div>
       {/if}
     </section>
 
@@ -834,22 +849,13 @@
           />
         </audio>
 
-        {#if audio.currentEpisode.variants.length > 1}
-          <div class="provider-switcher" role="group" aria-label={m.audio_provider_aria()}>
-            <span class="provider-eyebrow">VOICE</span>
-            {#each audio.currentEpisode.variants as v (v.provider)}
-              <button
-                type="button"
-                class="provider-btn"
-                class:active={v.provider === audio.currentEpisode.activeProvider}
-                aria-pressed={v.provider === audio.currentEpisode.activeProvider}
-                onclick={() => switchToProvider(v.provider)}
-              >
-                {PROVIDER_LABEL[v.provider] ?? v.provider}
-              </button>
-            {/each}
-          </div>
-        {/if}
+        <!-- Voice picker (Google ↔ ElevenLabs A/B switcher) intentionally
+             unwired from the UI. ElevenLabs is the preferred provider per
+             PROVIDER_PRIORITY in audio-registry; Google variants still
+             load when ElevenLabs is missing. `switchToProvider`,
+             `PROVIDER_LABEL`, and audio store's `switchVariant` retained
+             so the picker can be re-added by uncommenting prior markup
+             once we decide to expose per-episode voice choice again. -->
 
         <div class="transport">
           <button
@@ -960,10 +966,6 @@
                           .toString()
                           .padStart(2, '0')}
                       </span>{/if}
-                    {#if ep.variants.length > 1}<span
-                        class="ab-tag"
-                        aria-label="A/B variants available">A/B {ep.variants.length}</span
-                      >{/if}
                     {#if heard}<span class="heard-tag" aria-label="Played">✓</span>{/if}
                   </span>
                 </button>
@@ -983,7 +985,7 @@
     </section>
 
     <footer class="origin-disclosure" aria-label="Audio origin disclosure">
-      <span>Voices · Google Cloud TTS · Scripts · drafted by Claude (Anthropic)</span>
+      <span>Voices · ElevenLabs · Scripts · drafted by Claude (Anthropic)</span>
       <span class="origin-detail"
         >Per-episode attribution on <a href="{base}/credits">/credits</a> ·
         <a href="{base}/library/episodes">Read transcripts</a></span
@@ -1372,8 +1374,19 @@
     letter-spacing: 1px;
     text-transform: uppercase;
   }
-  .tour-start + .tour-start {
-    margin-top: 8px;
+  .tour-launchers {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: 100%;
+  }
+  .tour-launchers .tour-start {
+    flex: 1 1 0;
+  }
+  @media (max-width: 520px) {
+    .tour-launchers {
+      flex-direction: column;
+    }
   }
   .tour-start-extended {
     background: rgba(78, 205, 196, 0.06);

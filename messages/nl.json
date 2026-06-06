@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Doe de tour",
   "nav_audio_tour_tooltip": "Doe de tour",
   "nav_locale_picker_tooltip": "Kies taal",
-  "audio_overlay_title_default": "Tour"
+  "audio_overlay_title_default": "Tour",
+  "explore_tt_lagrange_l1_title": "Zon–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Zon–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Zonszijde-zwaartekrachtbalanspunt · ~{mkm} Mkm van {planet}",
+  "explore_tt_lagrange_l2_blurb": "Anti-zonszijde-balanspunt · ~{mkm} Mkm voorbij {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Huisvest SOHO · ACE · DSCOVR (heliofysica)",
+  "explore_tt_lagrange_l2_notable_earth": "Huisvest JWST · Gaia · Euclid (ruimtetelescopen)"
 }

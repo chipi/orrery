@@ -765,6 +765,15 @@
     distanceAU: number;
     eccentricity: number;
     inclinationDeg: number;
+    /** Discriminator: planets + small bodies use vis-viva tooltip; the
+     *  Lagrange-points layer uses a different schema (no orbital speed
+     *  of its own — it co-orbits with the planet). When set, the
+     *  template renders the lagrange-specific layout. */
+    kind?: 'planet' | 'small-body' | 'lagrange';
+    /** Lagrange-only — short physics blurb + notable occupants. */
+    lagrangeTitle?: string;
+    lagrangeBlurb?: string;
+    lagrangeNotable?: string;
     x: number;
     y: number;
   } | null = $state(null);
@@ -864,17 +873,130 @@
     /** Surface atmospheric pressure in bar. 0 for airless bodies;
      *  gas giants use the 1-bar pressure level by convention. */
     atmoBar: number;
+    /** Atmospheric composition shorthand — chemistry symbols are
+     *  universal so this string can stay English (matches the rest of
+     *  the tactical-scan label convention). */
+    atmoComposition: string;
+    /** Mean surface temperature in kelvin (1-bar level for gas giants). */
+    surfaceTempK: number;
+    /** Maximum sustained surface wind in m/s. 0 for airless bodies. */
+    maxWindMs: number;
+    /** Escape velocity at the equator in km/s. */
+    escapeKms: number;
+    /** Surface kind — informs the tactical scan's SURFACE row. */
+    surfaceKind: 'rocky' | 'rocky-liquid' | 'rocky-ice' | 'gas-giant' | 'ice-giant';
+    /** Radiation category — informs spaceship approach decisions. */
+    radiation: 'shielded' | 'moderate' | 'high' | 'extreme';
   };
   const PLANET_STATS: Record<string, PlanetStats> = {
-    mercury: { diameterKm: 4880, diameterRatioEarth: 0.38, surfaceGravityG: 0.38, atmoBar: 0 },
-    venus: { diameterKm: 12104, diameterRatioEarth: 0.95, surfaceGravityG: 0.91, atmoBar: 92 },
-    earth: { diameterKm: 12742, diameterRatioEarth: 1.0, surfaceGravityG: 1.0, atmoBar: 1.0 },
-    mars: { diameterKm: 6779, diameterRatioEarth: 0.53, surfaceGravityG: 0.38, atmoBar: 0.006 },
-    jupiter: { diameterKm: 139820, diameterRatioEarth: 10.97, surfaceGravityG: 2.53, atmoBar: 1 },
-    saturn: { diameterKm: 116460, diameterRatioEarth: 9.14, surfaceGravityG: 1.07, atmoBar: 1 },
-    uranus: { diameterKm: 50724, diameterRatioEarth: 3.98, surfaceGravityG: 0.89, atmoBar: 1 },
-    neptune: { diameterKm: 49244, diameterRatioEarth: 3.86, surfaceGravityG: 1.14, atmoBar: 1 },
-    pluto: { diameterKm: 2376, diameterRatioEarth: 0.19, surfaceGravityG: 0.06, atmoBar: 1e-6 },
+    mercury: {
+      diameterKm: 4880,
+      diameterRatioEarth: 0.38,
+      surfaceGravityG: 0.38,
+      atmoBar: 0,
+      atmoComposition: 'Na · K · O · H exosphere (trace)',
+      surfaceTempK: 440,
+      maxWindMs: 0,
+      escapeKms: 4.3,
+      surfaceKind: 'rocky',
+      radiation: 'extreme',
+    },
+    venus: {
+      diameterKm: 12104,
+      diameterRatioEarth: 0.95,
+      surfaceGravityG: 0.91,
+      atmoBar: 92,
+      atmoComposition: 'CO₂ 96.5% · N₂ 3.5% · H₂SO₄ cloud deck',
+      surfaceTempK: 737,
+      maxWindMs: 1,
+      escapeKms: 10.4,
+      surfaceKind: 'rocky',
+      radiation: 'shielded',
+    },
+    earth: {
+      diameterKm: 12742,
+      diameterRatioEarth: 1.0,
+      surfaceGravityG: 1.0,
+      atmoBar: 1.0,
+      atmoComposition: 'N₂ 78% · O₂ 21% · Ar 0.9%',
+      surfaceTempK: 288,
+      maxWindMs: 50,
+      escapeKms: 11.2,
+      surfaceKind: 'rocky-liquid',
+      radiation: 'shielded',
+    },
+    mars: {
+      diameterKm: 6779,
+      diameterRatioEarth: 0.53,
+      surfaceGravityG: 0.38,
+      atmoBar: 0.006,
+      atmoComposition: 'CO₂ 95% · N₂ 2.8% · Ar 2%',
+      surfaceTempK: 210,
+      maxWindMs: 30,
+      escapeKms: 5.0,
+      surfaceKind: 'rocky',
+      radiation: 'high',
+    },
+    jupiter: {
+      diameterKm: 139820,
+      diameterRatioEarth: 10.97,
+      surfaceGravityG: 2.53,
+      atmoBar: 1,
+      atmoComposition: 'H₂ 90% · He 10% · NH₃/H₂O/CH₄ clouds',
+      surfaceTempK: 165,
+      maxWindMs: 100,
+      escapeKms: 59.5,
+      surfaceKind: 'gas-giant',
+      radiation: 'extreme',
+    },
+    saturn: {
+      diameterKm: 116460,
+      diameterRatioEarth: 9.14,
+      surfaceGravityG: 1.07,
+      atmoBar: 1,
+      atmoComposition: 'H₂ 96% · He 3% · CH₄/NH₃ clouds',
+      surfaceTempK: 134,
+      maxWindMs: 500,
+      escapeKms: 35.5,
+      surfaceKind: 'gas-giant',
+      radiation: 'high',
+    },
+    uranus: {
+      diameterKm: 50724,
+      diameterRatioEarth: 3.98,
+      surfaceGravityG: 0.89,
+      atmoBar: 1,
+      atmoComposition: 'H₂ 83% · He 15% · CH₄ 2.3%',
+      surfaceTempK: 76,
+      maxWindMs: 250,
+      escapeKms: 21.3,
+      surfaceKind: 'ice-giant',
+      radiation: 'moderate',
+    },
+    neptune: {
+      diameterKm: 49244,
+      diameterRatioEarth: 3.86,
+      surfaceGravityG: 1.14,
+      atmoBar: 1,
+      atmoComposition: 'H₂ 80% · He 19% · CH₄ 1.5%',
+      surfaceTempK: 72,
+      maxWindMs: 580,
+      escapeKms: 23.5,
+      surfaceKind: 'ice-giant',
+      radiation: 'moderate',
+    },
+    pluto: {
+      diameterKm: 2376,
+      diameterRatioEarth: 0.19,
+      surfaceGravityG: 0.06,
+      atmoBar: 1e-6,
+      atmoComposition: 'N₂ + CH₄ + CO (~10 μbar, sublimates)',
+      surfaceTempK: 44,
+      maxWindMs: 0,
+      escapeKms: 1.2,
+      surfaceKind: 'rocky-ice',
+      radiation: 'shielded',
+    },
   };
   let focusedStats = $derived(selectedId ? (PLANET_STATS[selectedId] ?? null) : null);
   let focusedRotationHours = $derived(
@@ -1600,6 +1722,8 @@
         lagrangeMat,
       );
       lagrangeL1.userData.layerKey = 'lagrange-points';
+      lagrangeL1.userData.lagrangeKind = 'L1';
+      lagrangeL1.userData.lagrangePlanetId = p.id;
       lagrangeL1.visible = false;
       group.add(lagrangeL1);
       const lagrangeL2 = new THREE.Mesh(
@@ -1607,6 +1731,8 @@
         lagrangeMat,
       );
       lagrangeL2.userData.layerKey = 'lagrange-points';
+      lagrangeL2.userData.lagrangeKind = 'L2';
+      lagrangeL2.userData.lagrangePlanetId = p.id;
       lagrangeL2.visible = false;
       group.add(lagrangeL2);
       const lagrangeL1Label = buildArrowTipLabel('L1', '#ffd766', 3.2);
@@ -2638,10 +2764,15 @@
     // Hover targets mirror click pickables minus the Sun (Sun has its
     // own hover handling via SunPanel) so dwarfs / comets / interstellar
     // bodies get the same vis-viva velocity tooltip as planets.
+    const lagrangeMeshes: THREE.Object3D[] = [];
+    for (const po of planetObjs) {
+      lagrangeMeshes.push(po.lagrangeL1, po.lagrangeL2);
+    }
     const hoverTargets: THREE.Object3D[] = [
       ...planetMeshes,
       ...smallBodyMeshes,
       ...smallBodyPickAids,
+      ...lagrangeMeshes,
     ];
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
@@ -2659,9 +2790,54 @@
       }
       const planetId = hits[0].object.userData.planetId as string | undefined;
       const smallBodyId = hits[0].object.userData.smallBodyId as string | undefined;
+      const lagrangeKind = hits[0].object.userData.lagrangeKind as 'L1' | 'L2' | undefined;
+      const lagrangePlanetId = hits[0].object.userData.lagrangePlanetId as string | undefined;
       // Mean velocity via vis-viva at r=a; collapses to sqrt(μ/a).
       // μ ≈ 4π² in AU³/yr², 4.7404 km/s per AU/yr (IAU 2012).
-      if (planetId) {
+      if (lagrangeKind && lagrangePlanetId) {
+        // Lagrange-point tooltip — co-orbits with the parent planet, so
+        // no independent velocity. Distance from the parent planet is
+        // the Hill radius (rendered at) — sunward for L1, anti-sunward
+        // for L2. Notable occupant string is only populated for the
+        // points spaceflight has actually used (Sun–Earth L1 + L2).
+        const planet = planetById.get(lagrangePlanetId);
+        if (!planet) return;
+        const planetName = planet.name;
+        const hillMkm = planet.a * 149.5978707 * Math.cbrt(3e-6); // ~1.5 Mkm at Earth
+        hoverData = {
+          name: `${planetName} ${lagrangeKind}`,
+          velocity: '',
+          distance: '',
+          extras: '',
+          velocityKms: 0,
+          distanceAU: planet.a,
+          eccentricity: planet.e,
+          inclinationDeg: planet.incl,
+          kind: 'lagrange',
+          lagrangeTitle:
+            lagrangeKind === 'L1'
+              ? m.explore_tt_lagrange_l1_title({ planet: planetName })
+              : m.explore_tt_lagrange_l2_title({ planet: planetName }),
+          lagrangeBlurb:
+            lagrangeKind === 'L1'
+              ? m.explore_tt_lagrange_l1_blurb({
+                  planet: planetName,
+                  mkm: hillMkm.toFixed(2),
+                })
+              : m.explore_tt_lagrange_l2_blurb({
+                  planet: planetName,
+                  mkm: hillMkm.toFixed(2),
+                }),
+          lagrangeNotable:
+            lagrangePlanetId === 'earth'
+              ? lagrangeKind === 'L1'
+                ? m.explore_tt_lagrange_l1_notable_earth()
+                : m.explore_tt_lagrange_l2_notable_earth()
+              : '',
+          x: e.clientX,
+          y: e.clientY,
+        };
+      } else if (planetId) {
         const planet = planetById.get(planetId);
         if (!planet) return;
         const v = Math.sqrt((4 * Math.PI ** 2) / planet.a) * 4.7404;
@@ -3927,7 +4103,7 @@
         <span class="scan-value">{focusedStats.surfaceGravityG.toFixed(2)} g</span>
       </div>
       <div class="scan-row">
-        <span class="scan-label">ATMOSPHERE</span>
+        <span class="scan-label">PRESSURE</span>
         <span class="scan-value">
           {focusedStats.atmoBar === 0
             ? 'none'
@@ -3936,6 +4112,24 @@
               : focusedStats.atmoBar < 10
                 ? `${focusedStats.atmoBar.toFixed(2)} bar`
                 : `${focusedStats.atmoBar.toFixed(0)} bar`}
+        </span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">ATMOSPHERE</span>
+        <span class="scan-value scan-value-wrap">{focusedStats.atmoComposition}</span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">TEMP</span>
+        <span class="scan-value">
+          {focusedStats.surfaceTempK} K ({(focusedStats.surfaceTempK - 273).toFixed(0)} °C)
+        </span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">WIND</span>
+        <span class="scan-value">
+          {focusedStats.maxWindMs === 0
+            ? 'none (no atmosphere)'
+            : `up to ${focusedStats.maxWindMs} m/s`}
         </span>
       </div>
       <div class="scan-row">
@@ -3952,6 +4146,30 @@
       <div class="scan-row">
         <span class="scan-label">DIAMETER</span>
         <span class="scan-value">{focusedStats.diameterKm.toLocaleString()} km</span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">ESCAPE V</span>
+        <span class="scan-value">{focusedStats.escapeKms.toFixed(1)} km/s</span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">SURFACE</span>
+        <span class="scan-value">
+          {#if focusedStats.surfaceKind === 'rocky'}rocky
+          {:else if focusedStats.surfaceKind === 'rocky-liquid'}rocky · liquid water
+          {:else if focusedStats.surfaceKind === 'rocky-ice'}rocky · ice mix
+          {:else if focusedStats.surfaceKind === 'gas-giant'}gas giant · no solid
+          {:else}ice giant · no solid{/if}
+        </span>
+      </div>
+      <div class="scan-row">
+        <span class="scan-label">RADIATION</span>
+        <span class="scan-value">
+          {#if focusedStats.radiation === 'shielded'}shielded · magnetosphere
+          {:else if focusedStats.radiation === 'moderate'}moderate
+          {:else if focusedStats.radiation === 'high'}high · unshielded
+          {:else}extreme · suit unsafe
+          {/if}
+        </span>
       </div>
     </div>
   {/if}
@@ -4085,7 +4303,16 @@
       style:left="{Math.min(hoverData.x + 14, (container?.clientWidth ?? 0) - 220)}px"
       style:top="{Math.max(hoverData.y - 60, 60)}px"
     >
-      {#if tooltipExpanded}
+      {#if hoverData.kind === 'lagrange'}
+        <!-- Lagrange-point tooltip — co-orbits with the parent planet,
+             so no orbital velocity. Title + physics blurb + (for the
+             Sun–Earth points) notable spacecraft hosting that point. -->
+        <div class="tt-eyebrow">{hoverData.lagrangeTitle}</div>
+        <div class="tt-line dim">{hoverData.lagrangeBlurb}</div>
+        {#if hoverData.lagrangeNotable}
+          <div class="tt-line dim">{hoverData.lagrangeNotable}</div>
+        {/if}
+      {:else if tooltipExpanded}
         <!-- Lens-on expanded card. The cursor-tracking tooltip can't be
              clicked-through (mouse leaves the planet immediately on
              entry into the card area), so we drop the ScienceChip info
@@ -4292,7 +4519,8 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
-    min-width: 220px;
+    min-width: 320px;
+    max-width: 420px;
     padding: 8px 14px;
     background: rgba(8, 10, 22, 0.7);
     border: 1px solid rgba(78, 205, 196, 0.35);
@@ -4300,6 +4528,13 @@
     backdrop-filter: blur(4px);
     pointer-events: none;
     font-family: 'Space Mono', monospace;
+  }
+  .scan-value-wrap {
+    /* Atmosphere composition string can be long; allow wrap without
+       collapsing the row layout (the label stays pinned-left). */
+    text-align: right;
+    max-width: 60%;
+    word-break: break-word;
   }
   .scan-eyebrow {
     font-size: 8px;

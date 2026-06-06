@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "ツアーを始める",
   "nav_audio_tour_tooltip": "ツアーを始める",
   "nav_locale_picker_tooltip": "言語を選択",
-  "audio_overlay_title_default": "ツアー"
+  "audio_overlay_title_default": "ツアー",
+  "explore_tt_lagrange_l1_title": "太陽–{planet} L1",
+  "explore_tt_lagrange_l2_title": "太陽–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "太陽側の重力均衡点 · {planet}から約{mkm}百万km",
+  "explore_tt_lagrange_l2_blurb": "反太陽側の均衡点 · {planet}の{mkm}百万km背後",
+  "explore_tt_lagrange_l1_notable_earth": "SOHO · ACE · DSCOVRが在駐 (太陽物理学)",
+  "explore_tt_lagrange_l2_notable_earth": "JWST · Gaia · Euclidが在駐 (宇宙望遠鏡)"
 }

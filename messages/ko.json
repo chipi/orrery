@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "투어 시작",
   "nav_audio_tour_tooltip": "투어 시작",
   "nav_locale_picker_tooltip": "언어 선택",
-  "audio_overlay_title_default": "투어"
+  "audio_overlay_title_default": "투어",
+  "explore_tt_lagrange_l1_title": "태양–{planet} L1",
+  "explore_tt_lagrange_l2_title": "태양–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "태양 방향 중력 평형점 · {planet}에서 약 {mkm}백만 km",
+  "explore_tt_lagrange_l2_blurb": "반태양 방향 평형점 · {planet} 너머 {mkm}백만 km",
+  "explore_tt_lagrange_l1_notable_earth": "SOHO · ACE · DSCOVR 자리 (태양 물리학)",
+  "explore_tt_lagrange_l2_notable_earth": "JWST · Gaia · Euclid 자리 (심우주 망원경)"
 }

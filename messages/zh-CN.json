@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "开始巡游",
   "nav_audio_tour_tooltip": "开始巡游",
   "nav_locale_picker_tooltip": "选择语言",
-  "audio_overlay_title_default": "巡游"
+  "audio_overlay_title_default": "巡游",
+  "explore_tt_lagrange_l1_title": "太阳–{planet} L1",
+  "explore_tt_lagrange_l2_title": "太阳–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "朝阳方向引力平衡点 · 距{planet}约 {mkm} 百万公里",
+  "explore_tt_lagrange_l2_blurb": "背阳方向平衡点 · {planet}之后 {mkm} 百万公里",
+  "explore_tt_lagrange_l1_notable_earth": "SOHO · ACE · DSCOVR 驻点(日地物理)",
+  "explore_tt_lagrange_l2_notable_earth": "JWST · Gaia · Euclid 驻点(深空望远镜)"
 }

@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Hacer la gira",
   "nav_audio_tour_tooltip": "Hacer la gira",
   "nav_locale_picker_tooltip": "Elegir idioma",
-  "audio_overlay_title_default": "Gira"
+  "audio_overlay_title_default": "Gira",
+  "explore_tt_lagrange_l1_title": "Sol–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Sol–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Punto de equilibrio gravitacional hacia el Sol · ~{mkm} Mkm de {planet}",
+  "explore_tt_lagrange_l2_blurb": "Punto de equilibrio opuesto al Sol · ~{mkm} Mkm tras {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Acoge SOHO · ACE · DSCOVR (heliofísica)",
+  "explore_tt_lagrange_l2_notable_earth": "Acoge JWST · Gaia · Euclid (telescopios espaciales)"
 }

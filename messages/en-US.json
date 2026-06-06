@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Take the tour",
   "nav_audio_tour_tooltip": "Take the tour",
   "nav_locale_picker_tooltip": "Choose language",
-  "audio_overlay_title_default": "Tour"
+  "audio_overlay_title_default": "Tour",
+  "explore_tt_lagrange_l1_title": "Sun–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Sun–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Sunward gravitational balance point · ~{mkm} Mkm from {planet}",
+  "explore_tt_lagrange_l2_blurb": "Anti-sunward balance point · ~{mkm} Mkm beyond {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Hosts SOHO · ACE · DSCOVR (heliophysics)",
+  "explore_tt_lagrange_l2_notable_earth": "Hosts JWST · Gaia · Euclid (deep-space telescopes)"
 }

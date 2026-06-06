@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Faire la visite",
   "nav_audio_tour_tooltip": "Faire la visite",
   "nav_locale_picker_tooltip": "Choisir la langue",
-  "audio_overlay_title_default": "Visite"
+  "audio_overlay_title_default": "Visite",
+  "explore_tt_lagrange_l1_title": "Soleil–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Soleil–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Point d'équilibre côté Soleil · ~{mkm} Mkm de {planet}",
+  "explore_tt_lagrange_l2_blurb": "Point d'équilibre opposé au Soleil · ~{mkm} Mkm au-delà de {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Accueille SOHO · ACE · DSCOVR (héliophysique)",
+  "explore_tt_lagrange_l2_notable_earth": "Accueille JWST · Gaia · Euclid (télescopes spatiaux)"
 }

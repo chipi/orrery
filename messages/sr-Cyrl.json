@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Прођи турнеју",
   "nav_audio_tour_tooltip": "Прођи турнеју",
   "nav_locale_picker_tooltip": "Изабери језик",
-  "audio_overlay_title_default": "Турнеја"
+  "audio_overlay_title_default": "Турнеја",
+  "explore_tt_lagrange_l1_title": "Сунце–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Сунце–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Гравитациона тачка равнотеже са стране Сунца · ~{mkm} мил. км од {planet}",
+  "explore_tt_lagrange_l2_blurb": "Тачка равнотеже са стране супротне Сунцу · ~{mkm} мил. км иза {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Тачку користе: SOHO · ACE · DSCOVR (хелиофизика)",
+  "explore_tt_lagrange_l2_notable_earth": "Тачку користе: JWST · Gaia · Euclid (свемирски телескопи)"
 }

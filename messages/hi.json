@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "टूर लें",
   "nav_audio_tour_tooltip": "टूर लें",
   "nav_locale_picker_tooltip": "भाषा चुनें",
-  "audio_overlay_title_default": "टूर"
+  "audio_overlay_title_default": "टूर",
+  "explore_tt_lagrange_l1_title": "सूर्य–{planet} L1",
+  "explore_tt_lagrange_l2_title": "सूर्य–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "सूर्य की ओर का गुरुत्व संतुलन बिंदु · ~{mkm} मिलियन किमी {planet} से",
+  "explore_tt_lagrange_l2_blurb": "सूर्य के विपरीत ओर का संतुलन बिंदु · ~{mkm} मिलियन किमी {planet} के परे",
+  "explore_tt_lagrange_l1_notable_earth": "SOHO · ACE · DSCOVR का स्थान (हीलियो-भौतिकी)",
+  "explore_tt_lagrange_l2_notable_earth": "JWST · Gaia · Euclid का स्थान (अंतरिक्ष दूरबीनें)"
 }

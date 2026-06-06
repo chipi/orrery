@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "ابدأ الجولة",
   "nav_audio_tour_tooltip": "ابدأ الجولة",
   "nav_locale_picker_tooltip": "اختر اللغة",
-  "audio_overlay_title_default": "الجولة"
+  "audio_overlay_title_default": "الجولة",
+  "explore_tt_lagrange_l1_title": "الشمس–{planet} L1",
+  "explore_tt_lagrange_l2_title": "الشمس–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "نقطة توازن جذبي باتجاه الشمس · ~{mkm} مليون كم من {planet}",
+  "explore_tt_lagrange_l2_blurb": "نقطة توازن في الجانب المقابل للشمس · ~{mkm} مليون كم خلف {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "تستضيف SOHO · ACE · DSCOVR (فيزياء الشمس)",
+  "explore_tt_lagrange_l2_notable_earth": "تستضيف JWST · Gaia · Euclid (تلسكوبات فضائية)"
 }

@@ -1033,5 +1033,11 @@
   "nav_audio_tour_aria": "Die Tour starten",
   "nav_audio_tour_tooltip": "Die Tour starten",
   "nav_locale_picker_tooltip": "Sprache wählen",
-  "audio_overlay_title_default": "Tour"
+  "audio_overlay_title_default": "Tour",
+  "explore_tt_lagrange_l1_title": "Sonne–{planet} L1",
+  "explore_tt_lagrange_l2_title": "Sonne–{planet} L2",
+  "explore_tt_lagrange_l1_blurb": "Sonnenseitiger Gravitationsbalancepunkt · ~{mkm} Mio. km von {planet}",
+  "explore_tt_lagrange_l2_blurb": "Anti-sonnenseitiger Balancepunkt · ~{mkm} Mio. km hinter {planet}",
+  "explore_tt_lagrange_l1_notable_earth": "Standort SOHO · ACE · DSCOVR (Heliophysik)",
+  "explore_tt_lagrange_l2_notable_earth": "Standort JWST · Gaia · Euclid (Weltraumteleskope)"
 }

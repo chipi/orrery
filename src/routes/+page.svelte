@@ -3,6 +3,9 @@
   import { base } from '$app/paths';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+  import { audio } from '$lib/audio-state.svelte';
+  import { audioRegistry } from '$lib/audio-registry.svelte';
+  import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
 
   const activeLocale = $derived(localeFromPage($page));
 
@@ -10,6 +13,26 @@
     return activeLocale === DEFAULT_LOCALE
       ? path
       : `${path}?lang=${encodeURIComponent(activeLocale)}`;
+  }
+
+  // Hero CTA — kicks off the Curator Tour the same way the audio overlay's
+  // tour-start button does (AudioOverlay startTourFromSequence). Loads the
+  // registry, filters CURATOR_FULL_TOUR to episodes that actually have audio
+  // shipped, opens the overlay, starts the tour, and queues the first
+  // episode (loadEpisode + playing=true). The $effect in AudioOverlay
+  // picks up `audio.playing` and calls audioEl.play() once the overlay's
+  // `<audio>` element has mounted.
+  async function startCuratorTour(): Promise<void> {
+    await audioRegistry.load();
+    const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
+    if (available.length === 0) return;
+    audio.openOverlay();
+    audio.startTour(available);
+    const first = audioRegistry.byId(available[0]);
+    if (first) {
+      audio.loadEpisode(first);
+      audio.playing = true;
+    }
   }
 
   // Card definitions in the canonical order from PRD-013 §scope.
@@ -377,6 +400,23 @@
       >
         {m.landing_cta_primary()}
       </a>
+      <button
+        type="button"
+        class="cta cta-tour"
+        data-testid="landing-cta-tour"
+        onclick={startCuratorTour}
+      >
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" class="cta-tour-glyph">
+          <path
+            d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+        </svg>
+        {m.landing_cta_tour()}
+      </button>
       <a class="cta cta-secondary" href="#how-it-works">
         {m.landing_cta_secondary()}
       </a>
@@ -1056,6 +1096,23 @@
   .cta-primary:focus-visible {
     background: rgba(78, 205, 196, 0.18);
     outline: none;
+  }
+  .cta-tour {
+    border: 1px solid rgba(78, 205, 196, 0.55);
+    color: #fff;
+    background: rgba(78, 205, 196, 0.12);
+    cursor: pointer;
+    gap: 10px;
+  }
+  .cta-tour:hover,
+  .cta-tour:focus-visible {
+    background: rgba(78, 205, 196, 0.24);
+    border-color: #4ecdc4;
+    outline: none;
+  }
+  .cta-tour-glyph {
+    display: inline-block;
+    color: #4ecdc4;
   }
   .cta-secondary {
     border: 1px solid transparent;

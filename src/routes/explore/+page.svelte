@@ -1347,7 +1347,7 @@
         new THREE.SphereGeometry(Math.max(p.size3 * 2.5, 6), 16, 16),
         new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }),
       );
-      pickAid.userData = { planetId: p.id };
+      pickAid.userData = { planetId: p.id, isPickAid: true };
       group.add(pickAid);
       if (p.hasRings) {
         // Saturn's ring system rendered as concentric bands rather than
@@ -1430,7 +1430,7 @@
           new THREE.SphereGeometry(Math.max(s.sizeUnits * 3, 4), 12, 12),
           new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false }),
         );
-        satPickAid.userData = { satelliteId: s.id, parentPlanetId: p.id };
+        satPickAid.userData = { satelliteId: s.id, parentPlanetId: p.id, isPickAid: true };
         satMesh.add(satPickAid);
 
         // 2026-06-03 user direction: "When we zoom in to Earth that
@@ -2203,7 +2203,7 @@
         new THREE.SphereGeometry(b.type === 'comet' ? 4 : 5, 8, 8),
         new THREE.MeshBasicMaterial({ visible: false, depthWrite: false }),
       );
-      pickAid.userData = { smallBodyId: b.id };
+      pickAid.userData = { smallBodyId: b.id, isPickAid: true };
       scene.add(pickAid);
 
       // Comet tail (line, recomputed per frame in animate).
@@ -2566,15 +2566,25 @@
       ray3d.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
       // First: solar-system pickables (planets / Sun / small bodies)
       const hits = ray3d.intersectObjects(pickables, false);
-      const hit = hits.find(
-        (h) =>
-          typeof h.object.userData.planetId === 'string' ||
-          typeof h.object.userData.smallBodyId === 'string' ||
-          typeof h.object.userData.satelliteId === 'string' ||
-          typeof h.object.userData.beltId === 'string' ||
-          h.object.userData.kind === 'iconic-trajectory-today' ||
-          h.object.userData.kind === 'orbiter-tour-flyby',
-      );
+      // Two-pass selection: a planet's wide pick-aid (sized 2.5× the
+      // visible body for wide-zoom click forgiveness) can swallow the
+      // inner moons of giant planets — Io + Europa orbit inside
+      // Jupiter's pick-aid sphere, Enceladus inside Saturn's, Miranda
+      // inside Uranus's. The raycaster's nearest hit was always the
+      // pick-aid, so the inner moons were unclickable. Prefer "real"
+      // hits (visible mesh / explicit marker / non-pickAid) over the
+      // wide pickAid spheres; fall back to a pickAid hit if nothing
+      // specific was hit (preserving wide-zoom forgiveness).
+      const isSelectable = (ud: Record<string, unknown>): boolean =>
+        typeof ud.planetId === 'string' ||
+        typeof ud.smallBodyId === 'string' ||
+        typeof ud.satelliteId === 'string' ||
+        typeof ud.beltId === 'string' ||
+        ud.kind === 'iconic-trajectory-today' ||
+        ud.kind === 'orbiter-tour-flyby';
+      const hit =
+        hits.find((h) => isSelectable(h.object.userData) && !h.object.userData.isPickAid) ??
+        hits.find((h) => isSelectable(h.object.userData));
       if (hit) {
         const planetId = hit.object.userData.planetId as string | undefined;
         const smallBodyId = hit.object.userData.smallBodyId as string | undefined;

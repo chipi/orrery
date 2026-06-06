@@ -2313,11 +2313,16 @@
 
     const el3d = renderer.domElement;
     let isDrag3d = false;
+    let isPan3d = false;
     let lmx3d = 0;
     let lmy3d = 0;
     let dragMoved3d = false;
     let downX3d = 0;
     let downY3d = 0;
+    // Reused per-frame to avoid allocations inside the pan code path.
+    const camRight = new THREE.Vector3();
+    const camUp = new THREE.Vector3();
+    const camForward = new THREE.Vector3();
 
     const ray3d = new THREE.Raycaster();
     const planetMeshes = planetObjs.map((o) => o.mesh);
@@ -2492,11 +2497,16 @@
     const on3dMouseDown = (e: MouseEvent) => {
       isDrag3d = true;
       dragMoved3d = false;
+      // Right-click OR Shift+left-click → pan instead of orbit
+      // (2026-06-06 user note: "either we do not support moving things
+      // left/right or I don't know how to do it"). Standard 3D-scene
+      // convention used by Three.js OrbitControls, Blender, Unity etc.
+      isPan3d = e.button === 2 || e.shiftKey;
       lmx3d = e.clientX;
       lmy3d = e.clientY;
       downX3d = e.clientX;
       downY3d = e.clientY;
-      el3d.style.cursor = 'grabbing';
+      el3d.style.cursor = isPan3d ? 'move' : 'grabbing';
     };
     const on3dMouseMove = (e: MouseEvent) => {
       if (!isDrag3d) return;
@@ -2505,18 +2515,38 @@
       if (Math.abs(e.clientX - downX3d) + Math.abs(e.clientY - downY3d) > 4) {
         dragMoved3d = true;
       }
-      camT -= dx * 0.006;
-      camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
+      if (isPan3d) {
+        // Translate focusOrigin in the screen-aligned plane. Build the
+        // camera's right + up basis from its world matrix so panning
+        // tracks the user's view regardless of current orbit pose.
+        // Speed proportional to camR (and tan(fov/2)) so a finger-
+        // width of mouse motion shifts the scene by ~one finger-width
+        // of world distance at every zoom level.
+        const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / window.innerHeight;
+        camera.matrixWorld.extractBasis(camRight, camUp, camForward);
+        focusOrigin.addScaledVector(camRight, -dx * scale);
+        focusOrigin.addScaledVector(camUp, dy * scale);
+      } else {
+        camT -= dx * 0.006;
+        camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
+      }
       lmx3d = e.clientX;
       lmy3d = e.clientY;
       updateCam();
     };
     const on3dMouseUp = (e: MouseEvent) => {
       const wasDrag = dragMoved3d;
+      const wasPan = isPan3d;
       isDrag3d = false;
+      isPan3d = false;
       el3d.style.cursor = 'grab';
-      if (!wasDrag && view === '3d') tryPick3d(e);
+      // Pan release shouldn't open a planet panel — only orbit-mode
+      // mouseup that didn't reach drag-threshold counts as a pick.
+      if (!wasDrag && !wasPan && view === '3d') tryPick3d(e);
     };
+    // Right-click on the canvas would otherwise pop the browser's
+    // context menu; suppress so right-drag pan stays usable.
+    const onContextMenu3d = (e: MouseEvent) => e.preventDefault();
     const on3dWheel = (e: WheelEvent) => {
       // Trackpad pinch on macOS dispatches a synthetic wheel event
       // with ctrlKey=true; without preventDefault the browser zooms
@@ -2601,6 +2631,7 @@
 
     el3d.style.cursor = 'grab';
     el3d.addEventListener('mousedown', on3dMouseDown);
+    el3d.addEventListener('contextmenu', onContextMenu3d);
     window.addEventListener('mousemove', on3dMouseMove);
     window.addEventListener('mouseup', on3dMouseUp);
     // passive: false so on3dWheel can preventDefault against trackpad
@@ -3556,6 +3587,7 @@
       stopExplorePlanetStatsLayer?.();
       localGroup.dispose();
       el3d.removeEventListener('mousedown', on3dMouseDown);
+      el3d.removeEventListener('contextmenu', onContextMenu3d);
       window.removeEventListener('mousemove', on3dMouseMove);
       window.removeEventListener('mouseup', on3dMouseUp);
       el3d.removeEventListener('wheel', on3dWheel);

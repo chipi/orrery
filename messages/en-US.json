@@ -695,7 +695,7 @@
   "ui_layer_comsats": "COMSATS",
   "ui_layer_moon_orbiters": "MOON ORBITERS",
   "explore_page_title": "Solar System Explorer · Orrery",
-  "explore_canvas_aria_3d": "3D solar system. Drag to orbit, scroll or pinch to zoom. Click the Sun and planets for details.",
+  "explore_canvas_aria_3d": "3D solar system. Drag to orbit, scroll or pinch to zoom, right-drag or shift-drag to pan. Click the Sun and planets for details.",
   "explore_canvas_aria_2d": "2D top-down solar system. Drag to pan, scroll or pinch to zoom. Tap the Sun and planets for details.",
   "explore_layer_tip_planets": "Toggle visibility of the eight major planet orbits",
   "explore_layer_tip_dwarfs": "Toggle visibility of dwarf planets (Pluto, Eris, Ceres, Haumea, Makemake)",

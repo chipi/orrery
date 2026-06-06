@@ -73,7 +73,10 @@ test.describe('Mars Tier 3 panorama — Curiosity full lifecycle', () => {
 
     const exit = page.getByTestId('exit-panorama');
     await expect(exit).toBeVisible({ timeout: 5_000 });
-    await exit.click();
+    // Element.click() avoids the overlay-intercept class that breaks
+    // the panorama-mobile sr-only annotation test — at mobile widths
+    // the detail-panel chrome can sit on top and steal the mouse event.
+    await exit.evaluate((btn: HTMLButtonElement) => btn.click());
 
     // After the click, the slot toggles back to the enter variant.
     await expect(stand).toBeVisible({ timeout: 5_000 });

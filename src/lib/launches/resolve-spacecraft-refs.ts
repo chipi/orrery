@@ -62,6 +62,19 @@ export const SPACECRAFT_REF_RULES: readonly SpacecraftRefRule[] = [
 
   // JAXA's HTV-X cargo spacecraft → H3.
   { launcher: 'h3', pattern: /HTV-?X/i, spacecraft: ['htv-x'] },
+
+  // Roscosmos Soyuz MS crewed spacecraft + Progress MS cargo → Soyuz-2
+  // family (post 2019 — earlier MS flights used Soyuz-FG and have
+  // their own cross-ref via the older launcher).
+  { launcher: 'soyuz-2', pattern: /Soyuz\s*MS-?\d+/i, spacecraft: ['soyuz-ms'] },
+  { launcher: 'soyuz-fg', pattern: /Soyuz\s*MS-?\d+/i, spacecraft: ['soyuz-ms'] },
+  { launcher: 'soyuz-2', pattern: /Progress\s*MS-?\d+/i, spacecraft: ['progress-ms'] },
+
+  // Boeing Starliner (CST-100) → Atlas V historically, Vulcan going
+  // forward. Mission naming uses "Starliner" or "CFT" (Crew Flight
+  // Test).
+  { launcher: 'atlas-v', pattern: /Starliner|CST-100|CFT-?\d|Boe-CFT/i, spacecraft: ['starliner'] },
+  { launcher: 'vulcan', pattern: /Starliner|CST-100/i, spacecraft: ['starliner'] },
 ];
 
 /**

@@ -1,0 +1,31 @@
+{
+  "id": "soyuz-2",
+  "name": "Soyuz-2",
+  "category": "launcher",
+  "agency": "ROSCOSMOS",
+  "country": "Russia",
+  "manufacturer": "RKTs Progress",
+  "first_flight": "2004-11-08",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Modern Soyuz workhorse — carries Soyuz MS crew + Progress MS cargo to the ISS",
+  "credit": "Fleet launcher entry added to wire up modernised Soyuz-2 (2.1a/2.1b/2.1v Fregat) cross-references for the LauncherFlightsWidget (Option 4 follow-up to #306). Older Soyuz-FG / Soyuz-U variants have their own fleet entries.",
+  "links": [
+    {
+      "l": "Soyuz-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz-2",
+      "t": "intro"
+    },
+    {
+      "l": "Soyuz — Roscosmos (Russian)",
+      "u": "https://www.roscosmos.ru/22336/",
+      "t": "core"
+    },
+    {
+      "l": "Soyuz user manual (Roscosmos / TsSKB Progress)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(rocket_family)",
+      "t": "deep"
+    }
+  ]
+}

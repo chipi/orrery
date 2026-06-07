@@ -906,6 +906,26 @@
               class="module-row"
               class:canvas-hovered={canvasHoveredId === mod.id}
               onclick={() => openModule(mod)}
+              onmouseenter={() => {
+                issVisualRef.hoveredId = mod.id;
+                requestIssMaterialRefresh();
+              }}
+              onmouseleave={() => {
+                if (issVisualRef.hoveredId === mod.id) {
+                  issVisualRef.hoveredId = null;
+                  requestIssMaterialRefresh();
+                }
+              }}
+              onfocus={() => {
+                issVisualRef.hoveredId = mod.id;
+                requestIssMaterialRefresh();
+              }}
+              onblur={() => {
+                if (issVisualRef.hoveredId === mod.id) {
+                  issVisualRef.hoveredId = null;
+                  requestIssMaterialRefresh();
+                }
+              }}
               aria-current={selected?.id === mod.id ? 'true' : undefined}
             >
               <span class="mod-name-row">
@@ -927,6 +947,26 @@
                 class="module-row"
                 class:canvas-hovered={canvasHoveredId === ship.id}
                 onclick={() => openModule(ship)}
+                onmouseenter={() => {
+                  issVisualRef.hoveredId = ship.id;
+                  requestIssMaterialRefresh();
+                }}
+                onmouseleave={() => {
+                  if (issVisualRef.hoveredId === ship.id) {
+                    issVisualRef.hoveredId = null;
+                    requestIssMaterialRefresh();
+                  }
+                }}
+                onfocus={() => {
+                  issVisualRef.hoveredId = ship.id;
+                  requestIssMaterialRefresh();
+                }}
+                onblur={() => {
+                  if (issVisualRef.hoveredId === ship.id) {
+                    issVisualRef.hoveredId = null;
+                    requestIssMaterialRefresh();
+                  }
+                }}
                 aria-current={selected?.id === ship.id ? 'true' : undefined}
               >
                 <span class="mod-name-row">

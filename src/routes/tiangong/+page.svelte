@@ -872,6 +872,26 @@
               class="module-row"
               class:canvas-hovered={canvasHoveredId === mod.id}
               onclick={() => openModule(mod)}
+              onmouseenter={() => {
+                visualRef.hoveredId = mod.id;
+                requestMaterialRefresh();
+              }}
+              onmouseleave={() => {
+                if (visualRef.hoveredId === mod.id) {
+                  visualRef.hoveredId = null;
+                  requestMaterialRefresh();
+                }
+              }}
+              onfocus={() => {
+                visualRef.hoveredId = mod.id;
+                requestMaterialRefresh();
+              }}
+              onblur={() => {
+                if (visualRef.hoveredId === mod.id) {
+                  visualRef.hoveredId = null;
+                  requestMaterialRefresh();
+                }
+              }}
               aria-current={selected?.id === mod.id ? 'true' : undefined}
             >
               <span class="mod-name-row">
@@ -893,6 +913,26 @@
                 class="module-row"
                 class:canvas-hovered={canvasHoveredId === ship.id}
                 onclick={() => openModule(ship)}
+                onmouseenter={() => {
+                  visualRef.hoveredId = ship.id;
+                  requestMaterialRefresh();
+                }}
+                onmouseleave={() => {
+                  if (visualRef.hoveredId === ship.id) {
+                    visualRef.hoveredId = null;
+                    requestMaterialRefresh();
+                  }
+                }}
+                onfocus={() => {
+                  visualRef.hoveredId = ship.id;
+                  requestMaterialRefresh();
+                }}
+                onblur={() => {
+                  if (visualRef.hoveredId === ship.id) {
+                    visualRef.hoveredId = null;
+                    requestMaterialRefresh();
+                  }
+                }}
                 aria-current={selected?.id === ship.id ? 'true' : undefined}
               >
                 <span class="mod-name-row">

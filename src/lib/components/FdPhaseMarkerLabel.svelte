@@ -22,8 +22,19 @@
     label: string;
     /** True once arcProgress ≥ this phase's threshold. */
     revealed: boolean;
+    /** 0-based slot — drives the per-label vertical stagger so the
+     *  5 markers don't pile their text on top of each other when the
+     *  trajectory points project close together in screen space (e.g.
+     *  zoomed-out heliocentric view where departure/injection/cruise
+     *  all crowd near the inner planets). */
+    slot?: number;
   }
-  let { screenX, screenY, onScreen, label, revealed }: Props = $props();
+  let { screenX, screenY, onScreen, label, revealed, slot = 0 }: Props = $props();
+
+  // Stagger ~18 px per slot relative to the dot — first label sits
+  // 8 px above the dot, each subsequent one drops 18 px lower. Keeps
+  // every label paired with its own marker via a thin connector line.
+  let labelTop = $derived(-8 + slot * 18);
 </script>
 
 {#if onScreen && revealed}
@@ -34,7 +45,7 @@
     data-fd-phase={label}
   >
     <span class="dot" aria-hidden="true"></span>
-    <span class="label">{label}</span>
+    <span class="label" style="top: {labelTop}px;">{label}</span>
   </div>
 {/if}
 

@@ -335,25 +335,30 @@
     {
       id: 'injection',
       arcThreshold: 0.02,
-      arcPosition: 0.1,
+      // Marker sits AT the phase-entry point on the trajectory (was
+      // 0.1 to space it out from departure; user feedback 2026-06-08
+      // preferred truthful placement at the exact phase boundary +
+      // per-index label stagger to handle overlap, vs lying about
+      // where the phase actually starts).
+      arcPosition: 0.02,
       label: () => m.fly_fd_marker_injection(),
     },
     {
       id: 'cruise',
       arcThreshold: 0.1,
-      arcPosition: 0.45,
+      arcPosition: 0.1,
       label: () => m.fly_fd_marker_cruise(),
     },
     {
       id: 'approach',
       arcThreshold: 0.8,
-      arcPosition: 0.85,
+      arcPosition: 0.8,
       label: () => m.fly_fd_marker_approach(),
     },
     {
       id: 'arrival',
       arcThreshold: 0.95,
-      arcPosition: 1.0,
+      arcPosition: 0.95,
       label: () => m.fly_fd_marker_arrival(),
     },
   ];
@@ -3972,13 +3977,14 @@
       data-testid="fd-phase-markers-overlay"
       data-marker-count={fdPhaseMarkerScreens.length}
     >
-      {#each fdPhaseMarkerScreens as marker (marker.id)}
+      {#each fdPhaseMarkerScreens as marker, slot (marker.id)}
         <FdPhaseMarkerLabel
           screenX={marker.screen.x}
           screenY={marker.screen.y}
           onScreen={marker.screen.onScreen}
           label={marker.label}
           revealed={marker.revealed}
+          {slot}
         />
       {/each}
     </div>

@@ -128,6 +128,10 @@
 
   onMount(async () => {
     if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
+    // Skip in `vite dev` — `devOptions.enabled: false` in vite.config.ts
+    // means /sw.js isn't served, so the registration fetch 404s and
+    // pollutes the dev server log. Preview + prod still register.
+    if (import.meta.env.DEV) return;
     // Register the SW from the absolute root path. Previously delegated
     // to `virtual:pwa-register/svelte`'s `useRegisterSW`, which on
     // sub-routes (`/missions`, `/science`, …) issued the registration

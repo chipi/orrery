@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "Vedi foto",
   "fleet_close_photo_aria": "Chiudi foto",
   "fleet_view_hero_aria": "Vedi foto principale di {name}",
-  "surface_exit_panorama_title": "Esci dalla vista panoramica (Esc)"
+  "surface_exit_panorama_title": "Esci dalla vista panoramica (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

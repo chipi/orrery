@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "عرض الصورة",
   "fleet_close_photo_aria": "إغلاق الصورة",
   "fleet_view_hero_aria": "عرض الصورة الرئيسية — {name}",
-  "surface_exit_panorama_title": "اخرج من عرض البانوراما (Esc)"
+  "surface_exit_panorama_title": "اخرج من عرض البانوراما (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

@@ -18,12 +18,15 @@
     'mercury',
     'venus',
     'mars',
+    'vesta',
+    'ceres',
+    'psyche',
     'jupiter',
     'saturn',
     'uranus',
     'neptune',
     'pluto',
-    'ceres',
+    'bennu',
   ];
   /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
   const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
@@ -35,6 +38,24 @@
     'pluto',
   ];
   let invalidDestWarned = false;
+
+  /** rocket id → fleet entry id. Variants (atlas-v-541 → atlas-v) +
+   *  Fregat-upper Soyuz mapped onto the modern Soyuz-2 fleet entry.
+   *  Rockets absent here (starship, pslv-xl, long-march-3b) have no
+   *  fleet entry yet; their /plan card falls back to the external
+   *  rockets.json links instead of a dead /fleet?id= link. */
+  const ROCKET_FLEET_ID: Record<string, string> = {
+    'falcon-heavy': 'falcon-heavy',
+    'sls-block-1': 'sls-block-1',
+    'long-march-5': 'long-march-5',
+    'ariane-6': 'ariane-6',
+    lvm3: 'lvm3',
+    h3: 'h3',
+    'h-iia': 'h-iia',
+    'proton-m': 'proton-m',
+    'atlas-v-541': 'atlas-v',
+    'soyuz-fregat': 'soyuz-2',
+  };
 
   function destinationLabel(id: DestinationId): string {
     switch (id) {
@@ -56,6 +77,12 @@
         return m.plan_destination_pluto();
       case 'ceres':
         return m.plan_destination_ceres();
+      case 'vesta':
+        return m.plan_destination_vesta();
+      case 'psyche':
+        return m.plan_destination_psyche();
+      case 'bennu':
+        return m.plan_destination_bennu();
       default: {
         const _exhaustive: never = id;
         return _exhaustive;
@@ -954,11 +981,21 @@
           </div>
         {/if}
 
-        {#if selectedRocket.links && selectedRocket.links.length > 0}
-          <!-- Learn-more links: agency / official source first, Wikipedia
-               as fallback. Each rocket carries at least one link in the
-               base rockets.json data; render up to two so the row stays
-               compact in the right panel. -->
+        {#if ROCKET_FLEET_ID[selectedRocket.id]}
+          <!-- Prefer a single in-app link to the fleet detail panel —
+               that's where the agency / spec-sheet / deep-dive links
+               live (tiered intro/core/deep). Falls through to the
+               external rockets.json links below when the rocket has
+               no fleet entry yet. -->
+          <div class="rocket-links">
+            <a
+              class="rocket-link fleet-link"
+              href="{base}/fleet?id={ROCKET_FLEET_ID[selectedRocket.id]}"
+            >
+              {m.plan_view_in_fleet({ label: selectedRocket.name ?? selectedRocket.id })} →
+            </a>
+          </div>
+        {:else if selectedRocket.links && selectedRocket.links.length > 0}
           <div class="rocket-links">
             {#each selectedRocket.links.slice(0, 2) as link (link.u)}
               <a

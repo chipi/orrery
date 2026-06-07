@@ -19,7 +19,7 @@
   "properties": {
     "destination": {
       "type": "string",
-      "enum": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ceres"],
+      "enum": ["mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ceres", "vesta", "psyche", "bennu"],
       "description": "Destination id. Matches the DestinationId enum in $lib/lambert-grid.constants (ADR-026 + ADR-028)."
     },
     "dep_range_days": {

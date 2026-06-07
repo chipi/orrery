@@ -41,6 +41,9 @@ export const DESTINATION_LABEL_COLORS: Record<DestinationId | 'moon', string> = 
   neptune: '#6b8cff',
   pluto: '#c8a98a',
   ceres: '#7c8b9a',
+  vesta: '#b8a890',
+  psyche: '#a8a090',
+  bennu: '#605a55',
   moon: '#cfcfcf',
 };
 

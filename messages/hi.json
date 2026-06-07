@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "फ़ोटो देखें",
   "fleet_close_photo_aria": "फ़ोटो बंद करें",
   "fleet_view_hero_aria": "{name} की प्रमुख फ़ोटो देखें",
-  "surface_exit_panorama_title": "पैनोरमा दृश्य से बाहर (Esc)"
+  "surface_exit_panorama_title": "पैनोरमा दृश्य से बाहर (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

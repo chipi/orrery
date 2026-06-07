@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "查看照片",
   "fleet_close_photo_aria": "关闭照片",
   "fleet_view_hero_aria": "查看 {name} 的主图",
-  "surface_exit_panorama_title": "退出全景视图 (Esc)"
+  "surface_exit_panorama_title": "退出全景视图 (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

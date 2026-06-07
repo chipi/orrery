@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "Foto ansehen",
   "fleet_close_photo_aria": "Foto schließen",
   "fleet_view_hero_aria": "Titelbild von {name} ansehen",
-  "surface_exit_panorama_title": "Panoramaansicht verlassen (Esc)"
+  "surface_exit_panorama_title": "Panoramaansicht verlassen (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

@@ -72,7 +72,10 @@ export type DestinationId =
   | 'uranus'
   | 'neptune'
   | 'pluto'
-  | 'ceres';
+  | 'ceres'
+  | 'vesta'
+  | 'psyche'
+  | 'bennu';
 
 export interface DestinationConstants {
   id: DestinationId;
@@ -108,6 +111,20 @@ function buildDwarfDestination(id: 'ceres' | 'pluto'): DestinationConstants {
   };
 }
 
+function buildAsteroidDestination(id: 'vesta' | 'psyche' | 'bennu'): DestinationConstants {
+  const p = smallBody(id);
+  return {
+    id,
+    a: p.a,
+    a0: p.L0,
+    meanMotionRadPerDay: (2 * Math.PI) / p.T,
+    /** Bennu's e≈0.20 matches Pluto's regime so it gets eccentric arrival;
+     *  Vesta + Psyche stay circular (same Ceres-style approximation —
+     *  their e≈0.09 / 0.13 break Lambert convergence across the grid). */
+    ...(id === 'bennu' ? { e: p.e } : {}),
+  };
+}
+
 /** Lookup table for porkchop / arc destinations. Mars stays in step
  *  with the legacy MARS_* exports above so a misedit shows up as a
  *  test failure rather than a silent drift. */
@@ -121,4 +138,7 @@ export const DESTINATIONS: Record<DestinationId, DestinationConstants> = {
   neptune: buildPlanetDestination('neptune', 'Neptune'),
   pluto: buildDwarfDestination('pluto'),
   ceres: buildDwarfDestination('ceres'),
+  vesta: buildAsteroidDestination('vesta'),
+  psyche: buildAsteroidDestination('psyche'),
+  bennu: buildAsteroidDestination('bennu'),
 };

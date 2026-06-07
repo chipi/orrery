@@ -311,15 +311,27 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   const periMarker = new THREE.Mesh(
     new THREE.SphereGeometry(0.3, 12, 12),
-    new THREE.MeshBasicMaterial({ color: 0xff6b6b, transparent: true, opacity: 0.85 }),
+    new THREE.MeshBasicMaterial({
+      color: 0xff6b6b,
+      transparent: true,
+      opacity: 0.85,
+      depthTest: false,
+    }),
   );
+  periMarker.renderOrder = 999;
   periMarker.visible = false;
   scene.add(periMarker);
 
   const apoMarker = new THREE.Mesh(
     new THREE.SphereGeometry(0.3, 12, 12),
-    new THREE.MeshBasicMaterial({ color: 0x6aa9ff, transparent: true, opacity: 0.85 }),
+    new THREE.MeshBasicMaterial({
+      color: 0x6aa9ff,
+      transparent: true,
+      opacity: 0.85,
+      depthTest: false,
+    }),
   );
+  apoMarker.renderOrder = 999;
   apoMarker.visible = false;
   scene.add(apoMarker);
 

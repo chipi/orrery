@@ -152,6 +152,9 @@ describe('computePorkchopGrid — multi-destination', () => {
     'neptune',
     'pluto',
     'ceres',
+    'vesta',
+    'psyche',
+    'bennu',
   ] as const)('produces a finite-∆v grid for %s', (destinationId) => {
     // Use destination-appropriate TOF range so Lambert can actually
     // converge — a 250-day window won't reach Saturn.
@@ -165,6 +168,9 @@ describe('computePorkchopGrid — multi-destination', () => {
       neptune: [10000, 20000] as [number, number],
       pluto: [12000, 22000] as [number, number],
       ceres: [120, 480] as [number, number],
+      vesta: [100, 420] as [number, number],
+      psyche: [140, 540] as [number, number],
+      bennu: [60, 300] as [number, number],
     };
     const result = computePorkchopGrid(
       { ...REQ, destinationId, arrRange: tofRangeFor[destinationId] },

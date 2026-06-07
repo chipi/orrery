@@ -54,6 +54,7 @@
     },
     // Mars's real axial obliquity drives season/insolation.
     axialTiltDeg: 25.19,
+    initialCamR: 150,
     landerModelBuilder: marsLanderBuilder,
     twoDMode: 'equirectangular',
     registerHotspotBuilders: registerMarsHotspotBuilders,

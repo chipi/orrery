@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "Посмотреть фото",
   "fleet_close_photo_aria": "Закрыть фото",
   "fleet_view_hero_aria": "Посмотреть главное фото {name}",
-  "surface_exit_panorama_title": "Выйти из панорамного вида (Esc)"
+  "surface_exit_panorama_title": "Выйти из панорамного вида (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

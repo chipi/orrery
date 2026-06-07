@@ -101,6 +101,37 @@ const DESTINATIONS: DestinationSpec[] = [
     dv_orbit_insertion: { LANDING: 3.9, FLYBY: 0 },
     tof_axis_unit: 'days',
   },
+  {
+    id: 'vesta',
+    // Inner-belt at 2.36 AU — similar Lambert convergence window as Ceres
+    // but slightly shorter (a is smaller). LANDING ∆v lower than Ceres
+    // because Vesta's escape velocity (~360 m/s) is a fraction of Ceres'.
+    tof_range_days: [100, 420],
+    mission_types: ['LANDING', 'FLYBY'],
+    dv_orbit_insertion: { LANDING: 2.5, FLYBY: 0 },
+    tof_axis_unit: 'days',
+  },
+  {
+    id: 'psyche',
+    // Outer-belt at 2.92 AU — Lambert window stretches longer than Ceres
+    // and the LANDING insertion shows the same low-gravity discount as
+    // Vesta (Psyche is metal-rich but small).
+    tof_range_days: [140, 540],
+    mission_types: ['LANDING', 'FLYBY'],
+    dv_orbit_insertion: { LANDING: 2.5, FLYBY: 0 },
+    tof_axis_unit: 'days',
+  },
+  {
+    id: 'bennu',
+    // Near-Earth asteroid at 1.13 AU — very short Lambert TOFs and an
+    // almost-free insertion (Bennu's escape velocity is < 0.2 m/s; the
+    // 1.0 km/s figure is the OSIRIS-REx rendezvous-and-survey budget,
+    // not actual gravitational capture). Eccentric arrival (e=0.20).
+    tof_range_days: [60, 300],
+    mission_types: ['LANDING', 'FLYBY'],
+    dv_orbit_insertion: { LANDING: 1.0, FLYBY: 0 },
+    tof_axis_unit: 'days',
+  },
 ];
 
 const DEP_RANGE_DAYS: [number, number] = [0, 1460];

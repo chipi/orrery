@@ -181,6 +181,9 @@ describe('destinationPos (v0.1.6 + ADR-028)', () => {
           'neptune',
           'pluto',
           'ceres',
+          'vesta',
+          'psyche',
+          'bennu',
         ] as const) {
           const d = DESTINATIONS[id];
           const e = d.e ?? 0;

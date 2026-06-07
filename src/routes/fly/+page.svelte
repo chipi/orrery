@@ -1807,12 +1807,30 @@
     // (mission swap). Layer-gated.
     const periMarker = new THREE.Mesh(
       new THREE.SphereGeometry(1.6, 16, 16),
-      new THREE.MeshBasicMaterial({ color: 0xff6b6b, transparent: true, opacity: 0.85 }),
+      new THREE.MeshBasicMaterial({
+        color: 0xff6b6b,
+        transparent: true,
+        opacity: 0.85,
+        // Always-on-top so the perihelion marker stays visible when it
+        // coincides with Earth at t=launch (peri ≈ Earth's orbital
+        // distance for an inbound-Hohmann; the marker would otherwise
+        // sit inside the Earth sphere and read as missing). Keeps the
+        // apsides pair symmetric — aphelion at Mars's arrival point is
+        // already exposed because Mars hasn't reached that point yet.
+        depthTest: false,
+      }),
     );
     const apoMarker = new THREE.Mesh(
       new THREE.SphereGeometry(1.6, 16, 16),
-      new THREE.MeshBasicMaterial({ color: 0x6aa9ff, transparent: true, opacity: 0.85 }),
+      new THREE.MeshBasicMaterial({
+        color: 0x6aa9ff,
+        transparent: true,
+        opacity: 0.85,
+        depthTest: false,
+      }),
     );
+    periMarker.renderOrder = 999;
+    apoMarker.renderOrder = 999;
     periMarker.userData.layerKey = 'apsides';
     apoMarker.userData.layerKey = 'apsides';
     periMarker.visible = false;
@@ -4249,24 +4267,39 @@
 {/if}
 
 {#if showFlightDirector}
-  <!-- Flight Director narration. Anchored bottom-left, just to the
-       right of the hud-stack column (which terminates with
-       SpacecraftInfoCard at its bottom). Lens-gated inside the
-       component; dismissible via the FD toggle in the top-right row. -->
-  <div class="fly-fd-anchor">
-    <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+  <!-- Bottom strips row — centers FlightDirectorBanner + ConicSectionPanel
+       above the timeline scrubber, side-by-side at equal height so the
+       two science overlays read as a unified pair (was bottom-left + bottom-right
+       with no alignment + the conic panel disappearing behind CAPCOM). -->
+  <div class="fly-bottom-strips">
+    <div class="fly-fd-anchor">
+      <FlightDirectorBanner arcProgress={Math.max(0, Math.min(1, arcProgress))} />
+    </div>
+    {#if showConicPanel}
+      <div class="fly-conic-anchor">
+        <ConicSectionPanel
+          shape={conicState.shape}
+          a={conicState.a}
+          e={conicState.e}
+          epsilon={conicState.epsilon}
+        />
+      </div>
+    {/if}
   </div>
-{/if}
-
-{#if showConicPanel}
-  <!-- Conic-section family side panel — lens + 'conics' layer gated.
-       CON toggle in the top-right row hides it. -->
-  <ConicSectionPanel
-    shape={conicState.shape}
-    a={conicState.a}
-    e={conicState.e}
-    epsilon={conicState.epsilon}
-  />
+{:else if showConicPanel}
+  <!-- Conic-section panel alone (FD hidden / not lens-gated). Re-uses the
+       same centered strip container so the panel stays in the same
+       horizontal band whether or not FD is present. -->
+  <div class="fly-bottom-strips">
+    <div class="fly-conic-anchor">
+      <ConicSectionPanel
+        shape={conicState.shape}
+        a={conicState.a}
+        e={conicState.e}
+        epsilon={conicState.epsilon}
+      />
+    </div>
+  </div>
 {/if}
 
 <style>
@@ -4299,18 +4332,31 @@
     z-index: 11;
   }
 
-  /* Flight Director banner anchor — bottom-left, just to the right of
-     the hud-stack column (left:16 + width:220 + 16 gap = 252). Sits
-     above the timeline scrubber (bottom:14 + ~50 px) at bottom:80.
-     Inner :global() overrides neutralise FlightDirectorBanner's own
-     position:fixed so it flows from this wrapper instead. */
-  .fly-fd-anchor {
+  /* Bottom strips row — centered band above the timeline scrubber
+     that holds FlightDirectorBanner + ConicSectionPanel side-by-side
+     at equal height. Replaces the prior split layout (FD bottom-left,
+     conic bottom-right) which left them visually unaligned and let
+     the conic panel slip behind the CAPCOM column on narrow viewports.
+     align-items: stretch makes both children share the taller height. */
+  .fly-bottom-strips {
     position: fixed;
     bottom: 80px;
-    left: 252px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 32;
-    max-width: 540px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px;
+    align-items: stretch;
     pointer-events: none;
+    /* Keep the strips inside the channel between the hud-stack (left
+       16+220 = 236) and the CAPCOM column (right 16+320 = 336). */
+    max-width: calc(100vw - 600px);
+  }
+  .fly-fd-anchor {
+    display: flex;
+    max-width: 540px;
+    flex: 0 1 auto;
   }
   .fly-fd-anchor :global(.banner) {
     position: static;
@@ -4319,20 +4365,45 @@
     transform: none;
     pointer-events: auto;
     max-width: 540px;
+    width: 100%;
   }
   .fly-fd-anchor :global(.banner:hover),
   .fly-fd-anchor :global(.banner:focus-visible) {
     transform: translateY(-2px);
   }
+  .fly-conic-anchor {
+    display: flex;
+    flex: 0 0 240px;
+  }
+  .fly-conic-anchor :global(.panel) {
+    /* !important guards against the component's own @media mobile
+       block re-setting position/bottom/right when wrapped. */
+    position: static !important;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    pointer-events: auto;
+    width: 100% !important;
+  }
+  .fly-conic-anchor :global(.panel:hover),
+  .fly-conic-anchor :global(.panel:focus-visible) {
+    transform: translateY(-2px);
+  }
   @media (max-width: 900px) {
-    /* Squeezed viewport: drop FD edge-to-edge above the scrubber so
-       it doesn't clip into the CAPCOM panel on the right rail. */
-    .fly-fd-anchor {
+    /* Squeezed viewport: drop the strip row edge-to-edge above the
+       scrubber and stack vertically so neither panel clips into the
+       CAPCOM column or each other. */
+    .fly-bottom-strips {
       left: 16px;
       right: 16px;
+      transform: none;
       max-width: calc(100vw - 32px);
+      flex-direction: column;
+      align-items: stretch;
     }
-    .fly-fd-anchor :global(.banner) {
+    .fly-fd-anchor,
+    .fly-conic-anchor {
+      flex: 1 1 auto;
       max-width: 100%;
     }
   }

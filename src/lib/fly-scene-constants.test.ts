@@ -20,8 +20,16 @@ describe('GRAVITY_ASSIST_CAVEAT_DESTINATIONS', () => {
     );
   });
 
-  it('does not include the inner system or Ceres', () => {
-    for (const inner of ['mercury', 'venus', 'mars', 'ceres'] as DestinationId[]) {
+  it('does not include the inner system or asteroid-belt bodies', () => {
+    for (const inner of [
+      'mercury',
+      'venus',
+      'mars',
+      'ceres',
+      'vesta',
+      'psyche',
+      'bennu',
+    ] as DestinationId[]) {
       expect(GRAVITY_ASSIST_CAVEAT_DESTINATIONS).not.toContain(inner);
     }
   });

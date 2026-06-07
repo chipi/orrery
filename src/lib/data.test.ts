@@ -471,6 +471,9 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
     'neptune',
     'pluto',
     'ceres',
+    'vesta',
+    'psyche',
+    'bennu',
   ] as const)('returns a valid grid for %s', async (id) => {
     const g = await getPorkchopGrid(id);
     expect(g).not.toBeNull();
@@ -484,8 +487,8 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
     expect(g.tof_range_days[1]).toBeGreaterThan(g.tof_range_days[0]);
   });
 
-  it('inner planets + Ceres offer LANDING + FLYBY; giants + Pluto only FLYBY', async () => {
-    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
+  it('inner planets + asteroid-belt bodies offer LANDING + FLYBY; giants + Pluto only FLYBY', async () => {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres', 'vesta', 'psyche', 'bennu'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.mission_types.sort()).toEqual(['FLYBY', 'LANDING']);
     }
@@ -495,8 +498,8 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
     }
   });
 
-  it('TOF axis: Mercury–Mars + Ceres in days; gas giants + Pluto in years', async () => {
-    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
+  it('TOF axis: inner planets + asteroid-belt bodies in days; gas giants + Pluto in years', async () => {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres', 'vesta', 'psyche', 'bennu'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.tof_axis_unit).toBe('days');
     }
@@ -507,7 +510,7 @@ describe('getPorkchopGrid (v0.1.6 / ADR-026 + ADR-028)', () => {
   });
 
   it('LANDING dv_orbit_insertion is positive where LANDING is offered', async () => {
-    for (const id of ['mercury', 'venus', 'mars', 'ceres'] as const) {
+    for (const id of ['mercury', 'venus', 'mars', 'ceres', 'vesta', 'psyche', 'bennu'] as const) {
       const g = await getPorkchopGrid(id);
       expect(g?.dv_orbit_insertion.LANDING).toBeGreaterThan(0);
     }

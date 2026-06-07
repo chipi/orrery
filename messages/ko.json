@@ -1099,5 +1099,9 @@
   "fleet_view_photo_aria": "사진 보기",
   "fleet_close_photo_aria": "사진 닫기",
   "fleet_view_hero_aria": "{name}의 대표 사진 보기",
-  "surface_exit_panorama_title": "파노라마 보기 종료 (Esc)"
+  "surface_exit_panorama_title": "파노라마 보기 종료 (Esc)",
+  "plan_view_in_fleet": "View {label} in Fleet",
+  "plan_destination_vesta": "Vesta",
+  "plan_destination_psyche": "Psyche",
+  "plan_destination_bennu": "Bennu"
 }

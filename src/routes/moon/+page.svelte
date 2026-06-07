@@ -24,6 +24,7 @@
     tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 },
     // Moon's ~0° obliquity (1.5° in reality, effectively zero here).
     axialTiltDeg: 0,
+    initialCamR: 150,
     landerModelBuilder: buildMoonLanderModel,
     twoDMode: 'lunar-polar-discs',
     registerHotspotBuilders: registerMoonHotspotBuilders,

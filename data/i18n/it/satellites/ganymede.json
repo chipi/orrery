@@ -1,0 +1,16 @@
+{
+  "description": "La luna più grande del sistema solare — più grande di Mercurio e dell'8% più grande della Luna. Ganimede è l'unica luna con un campo magnetico autogenerato, prova di un nucleo di ferro parzialmente fuso. Sotto ~150 km di ghiaccio si trova un oceano di acqua salata più grande di tutti gli oceani della Terra messi insieme; alcuni modelli suggeriscono una struttura stratificata con più oceani separati da fasi di ghiaccio di diverse densità. La missione JUICE dell'ESA diventerà il primo orbiter di una luna diversa da quella terrestre quando entrerà in orbita attorno a Ganimede nel dicembre 2034.",
+  "surface_composition": "Circa metà ghiaccio d'acqua + metà roccia silicatica; superficie costituita da un misto di terreno scuro craterizzato (~4 Gyr di età) e terreno più chiaro solcato (rimodellamento tettonico ~2 Gyr fa); sottile esosfera di ossigeno.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (magnetic-field detection)",
+    "Juno — USA, 2021 (close flyby)",
+    "JUICE — ESA, arrival 2031 (Ganymede orbit insertion 2034)"
+  ],
+  "library_labels": {
+    "ganymede-wiki": "Wikipedia — Ganimede",
+    "ganymede-nasa": "NASA Science — panoramica su Ganimede",
+    "ganymede-juice": "ESA JUICE — missione orbiter di Ganimede",
+    "ganymede-magfield": "NASA Galileo — scoperta del campo magnetico di Ganimede"
+  }
+}

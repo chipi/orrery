@@ -1,0 +1,36 @@
+{
+  "id": "axial-tilt-and-seasons",
+  "tab": "planets",
+  "order": 1,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Zoom in on any planet — the yellow line is its spin axis at the real obliquity"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Uranus rolled on its side: 97.77° tilt — N pole nearly in the orbital plane"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Venus tilted 177.36° — effectively upside-down + spinning backward"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · What causes the seasons?",
+      "u": "https://spaceplace.nasa.gov/seasons/en/",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Axial tilt",
+      "u": "https://en.wikipedia.org/wiki/Axial_tilt",
+      "t": "intro"
+    },
+    {
+      "l": "Laskar & Robutel · The chaotic obliquity of the planets (1993)",
+      "u": "https://www.nature.com/articles/361608a0",
+      "t": "deep"
+    }
+  ]
+}

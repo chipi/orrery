@@ -1,0 +1,12 @@
+{
+  "description": "La mitad del diámetro de Plutón — la mayor proporción de tamaño luna-planeta del sistema solar. Caronte y Plutón están mutuamente anclados por marea, orbitando un centro de masa común a 1.700 km sobre la superficie de Plutón — efectivamente un sistema binario de planetas. New Horizons reveló un terreno sorprendentemente variado: la llanura lisa de Vulcan Planitia al sur, un antiguo hemisferio craterizado al norte, y un casquete polar rojo oscuro (Mordor Macula) de tolinas formadas cuando moléculas de metano que escapan de la atmósfera de Plutón se acumularon en Caronte y fueron procesadas por la luz ultravioleta. Las cuatro lunas más pequeñas de Plutón (Styx, Nix, Kerberos, Hydra) orbitan el baricentro Plutón-Caronte con rotaciones caóticas impulsadas por la gravedad cambiante del sistema binario.",
+  "surface_composition": "Corteza de hielo de agua con hidratos de amoníaco y tolinas; el casquete polar rojizo oscuro (Mordor Macula) es gas metano escapado de Plutón y procesado en tolinas sobre la superficie gélida de Caronte.",
+  "mission_visits": [
+    "New Horizons — USA, 2015 (first and only flyby)"
+  ],
+  "library_labels": {
+    "charon-wiki": "Wikipedia — Charon",
+    "charon-nasa": "NASA Science — descripción general de Charon",
+    "charon-new-horizons": "NASA New Horizons — sobrevuelo de Plutón-Charon (2015)"
+  }
+}

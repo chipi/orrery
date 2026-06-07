@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "version": 1,
+    "description": "Population belts surfaced via the /explore BeltPanel. Each entry describes a region of the solar system, not a single body — population estimates, location, why it exists, key historic discoveries. Keyed by `id`. English content authored at v0.7.x; translations land via wave23 pipeline (audio_tour_start_curator pattern).",
+    "schema_url": null,
+    "last_updated": "2026-06-06"
+  },
+  "belts": [
+    {
+      "id": "asteroid",
+      "name": "Asteroid Belt",
+      "kind": "Main belt — rocky population",
+      "location": "Between Mars and Jupiter · 2.2–3.2 AU from the Sun",
+      "inner_au": 2.2,
+      "outer_au": 3.2,
+      "population_estimate": "1.1–1.9 million bodies larger than 1 km, hundreds of millions larger than 100 m",
+      "total_mass_relative": "≈ 4 % of the Moon (≈ 3 % of Pluto)",
+      "largest_members": [
+        "Ceres — dwarf planet, ≈ 940 km diameter, holds about a third of the belt's total mass",
+        "Vesta — second-most massive, hydrogen-poor rocky differentiated body",
+        "Pallas — ≈ 510 km, highly inclined orbit",
+        "Hygiea — ≈ 430 km, dark carbonaceous"
+      ],
+      "description": "A ring of rocky and metallic remnants that never coalesced into a planet — Jupiter's gravity stirred the inner-belt material too vigorously for accretion to win against fragmentation. Most belt objects are basaltic or carbonaceous chondrites; the parent bodies of meteorites that fall on Earth are nearly all traceable here. The belt is dynamically empty — the average separation between members is millions of kilometres, not the dense rock-field of cinema.",
+      "discovered": "1801 — Giuseppe Piazzi discovers Ceres from Palermo, originally classified as a planet; the recognition that Ceres was one of many came over the next half-century as Pallas, Juno, and Vesta followed.",
+      "mission_visits": [
+        "Dawn — NASA, 2011 + 2015 (orbital surveys of Vesta then Ceres)",
+        "Galileo — NASA, 1991 (Gaspra flyby) + 1993 (Ida + Dactyl discovery)",
+        "Hayabusa2 — JAXA, 2018 (Ryugu sample return — near-Earth asteroid but parent body in the main belt)",
+        "Lucy — NASA, 2023 (first main-belt encounter at Dinkinesh)"
+      ],
+      "library": [
+        {
+          "id": "asteroid-belt-wiki",
+          "label": "Wikipedia — Asteroid Belt",
+          "url": "https://en.wikipedia.org/wiki/Asteroid_belt",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "asteroid-belt-nasa",
+          "label": "NASA Science — Asteroid Belt overview",
+          "url": "https://science.nasa.gov/solar-system/asteroids/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "asteroid-belt-dawn",
+          "label": "NASA Dawn — orbiter at Vesta and Ceres",
+          "url": "https://science.nasa.gov/mission/dawn/",
+          "tier": "core",
+          "kind": "mission"
+        },
+        {
+          "id": "asteroid-belt-mpc",
+          "label": "Minor Planet Center — IAU catalogue of all known asteroids",
+          "url": "https://www.minorplanetcenter.net/",
+          "tier": "extra",
+          "kind": "article"
+        }
+      ]
+    },
+    {
+      "id": "kuiper",
+      "name": "Kuiper Belt",
+      "kind": "Trans-Neptunian — icy population",
+      "location": "Beyond Neptune · 30–50 AU from the Sun",
+      "inner_au": 30,
+      "outer_au": 50,
+      "population_estimate": "Over 100,000 bodies larger than 100 km; estimated 10⁹–10¹⁰ comet-sized objects",
+      "total_mass_relative": "≈ 4–10 % of Earth (200× the asteroid belt's mass)",
+      "largest_members": [
+        "Pluto — dwarf planet, ≈ 2,377 km diameter, paired with Charon as a binary system",
+        "Eris — slightly more massive than Pluto, discovered 2005 (its discovery triggered Pluto's reclassification)",
+        "Makemake — ≈ 1,430 km, classical Kuiper-belt object",
+        "Haumea — ≈ 1,560 km on its long axis, rapid rotator with a ring system",
+        "Quaoar — ≈ 1,110 km, hosts a small moon Weywot"
+      ],
+      "description": "A vast disc of icy bodies — water, methane, and ammonia ice with embedded rock — that orbits the Sun beyond Neptune. The Kuiper Belt is the source reservoir for short-period comets like Halley and Hartley 2: gravitational nudges from Neptune occasionally fling members inward where solar heating turns the ices into tails. Unlike the asteroid belt, the Kuiper Belt isn't dynamically depleted — its mass is small not because Jupiter dispersed it but because nothing ever fully accreted at those distances. Beyond the classical Kuiper Belt the scattered disc and the Oort Cloud extend the cold reservoir out to thousands of AU.",
+      "discovered": "1992 — David Jewitt and Jane Luu detect 1992 QB1 (now 15760 Albion), the first confirmed Kuiper-Belt object after Pluto + Charon. The belt itself was predicted in 1951 by Gerard Kuiper as the leftover disc material from the early solar system.",
+      "mission_visits": [
+        "New Horizons — NASA, 2015 (Pluto + Charon flyby) + 2019 (Arrokoth, first close-up of a classical Kuiper-Belt object)",
+        "Voyager 1 + Voyager 2 — NASA, 1980s (passed through the inner edge of the belt en route to interstellar space; no targeted encounters)"
+      ],
+      "library": [
+        {
+          "id": "kuiper-belt-wiki",
+          "label": "Wikipedia — Kuiper Belt",
+          "url": "https://en.wikipedia.org/wiki/Kuiper_belt",
+          "tier": "intro",
+          "kind": "wikipedia"
+        },
+        {
+          "id": "kuiper-belt-nasa",
+          "label": "NASA Science — Kuiper Belt overview",
+          "url": "https://science.nasa.gov/solar-system/kuiper-belt/",
+          "tier": "intro",
+          "kind": "nasa"
+        },
+        {
+          "id": "kuiper-belt-newhorizons",
+          "label": "NASA New Horizons — Pluto + Arrokoth flybys",
+          "url": "https://science.nasa.gov/mission/new-horizons/",
+          "tier": "core",
+          "kind": "mission"
+        },
+        {
+          "id": "kuiper-belt-mpc",
+          "label": "Minor Planet Center — TNO catalogue",
+          "url": "https://www.minorplanetcenter.net/iau/lists/TNOs.html",
+          "tier": "extra",
+          "kind": "article"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "description": "太陽系で最も地質活動が活発な天体。木星の重力による潮汐加熱と、エウロパおよびガニメデとの軌道共鳴により、約100テラワットの熱がイオの内部に注ぎ込まれており——これは約400もの火山を同時に活動させ、表面温度を-130 °C（凍結した二酸化硫黄）から+1,600 °C（超塩基性溶岩）まで変動させるのに十分なエネルギーである。その表面は、衝突クレーターが刻まれるよりも速く塗り替えられている。直径200 kmの溶岩湖であるLoki Pateraは、太陽系で最も強力な単一の火山地形である。",
+  "surface_composition": "硫黄と二酸化硫黄の霜が珪酸塩地殻を覆う；表面の「塗装」は火山流によって定期的に塗り直され——衝突クレーターは可視化されるほど長くは残らない。",
+  "mission_visits": [
+    "Voyager 1 — USA, 1979 (discovered active volcanism)",
+    "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "Juno — USA, 2023–2024 (closest-ever approaches)"
+  ],
+  "library_labels": {
+    "io-wiki": "Wikipedia — イオ",
+    "io-nasa": "NASA Science — イオ概説",
+    "io-juno": "NASA Juno — イオへの最近の接近フライバイ",
+    "io-volcanism": "USGS — イオ火山地形カタログ"
+  }
+}

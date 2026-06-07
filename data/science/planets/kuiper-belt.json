@@ -1,0 +1,33 @@
+{
+  "id": "kuiper-belt",
+  "tab": "planets",
+  "order": 8,
+  "diagram": "kuiper-belt.svg",
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Click the cool blue ring beyond Neptune to open the Kuiper Belt panel"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Pluto, Eris, Haumea, Makemake — open each from the Members tab for the New Horizons + telescope-discovery story"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Kuiper Belt overview",
+      "u": "https://science.nasa.gov/solar-system/kuiper-belt/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA New Horizons · Pluto + Arrokoth flybys",
+      "u": "https://science.nasa.gov/mission/new-horizons/",
+      "t": "core"
+    },
+    {
+      "l": "Minor Planet Center · Trans-Neptunian Object catalogue",
+      "u": "https://www.minorplanetcenter.net/iau/lists/TNOs.html",
+      "t": "deep"
+    }
+  ]
+}

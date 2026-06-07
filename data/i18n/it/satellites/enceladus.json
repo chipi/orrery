@@ -1,0 +1,14 @@
+{
+  "description": "Minuscolo — appena 504 km di diametro — ma il corpo più riflettente del sistema solare e uno dei candidati più forti per l'abitabilità attuale oltre la Terra. Cassini ha volato direttamente attraverso i pennacchi che eruttano da quattro fratture lunghe 130 km al polo sud; lo spettrometro ha rilevato idrogeno molecolare, composti organici tra cui metano, sali e nanograni di silice che indicano una chimica idrotermale attiva sul fondale oceanico. L'oceano è in contatto diretto con il fondale roccioso — le stesse condizioni energetiche e chimiche che hanno dato origine alla vita presso le sorgenti idrotermali di acque profonde della Terra.",
+  "surface_composition": "Crosta di ghiaccio d'acqua incontaminata sopra un oceano subsuperficiale globale; fratture polari meridionali a 'strisce di tigre' che emettono pennacchi di vapore acqueo, composti organici, sali, nanograni di silice e idrogeno molecolare.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Enceladus",
+    "enceladus-nasa": "NASA Science — panoramica di Enceladus",
+    "enceladus-cassini": "NASA Cassini — archivio storico dei passaggi ravvicinati ai pennacchi",
+    "enceladus-habitability": "Astrobiology — Enceladus come obiettivo di ricerca della vita"
+  }
+}

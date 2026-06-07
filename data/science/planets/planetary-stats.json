@@ -1,0 +1,27 @@
+{
+  "id": "planetary-stats",
+  "tab": "planets",
+  "order": 5,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Toggle the Tactical Scan lens — GRAVITY / ATMOSPHERE / ROTATION / DIAMETER float next to each focused planet"
+    },
+    {
+      "route": "/explore",
+      "context_key": "Earth-comparison ghost in the corner shows each planet's size relative to Earth"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA Planetary Fact Sheet",
+      "u": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/",
+      "t": "core"
+    },
+    {
+      "l": "JPL Solar System Dynamics — Planet Physical Parameters",
+      "u": "https://ssd.jpl.nasa.gov/planets/phys_par.html",
+      "t": "deep"
+    }
+  ]
+}

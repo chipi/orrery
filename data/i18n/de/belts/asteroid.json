@@ -1,0 +1,27 @@
+{
+  "name": "Asteroidengürtel",
+  "kind": "Hauptgürtel — Gesteinspopulation",
+  "location": "Zwischen Mars und Jupiter · 2,2–3,2 AU von der Sonne",
+  "population_estimate": "1,1–1,9 Millionen Körper größer als 1 km, Hunderte Millionen größer als 100 m",
+  "total_mass_relative": "≈ 4 % des Mondes (≈ 3 % von Pluto)",
+  "largest_members": [
+    "Ceres — Zwergplanet, ≈ 940 km Durchmesser, enthält etwa ein Drittel der Gesamtmasse des Gürtels",
+    "Vesta — zweitmassivster Körper, wasserstoffarmer differenzierter Gesteinskörper",
+    "Pallas — ≈ 510 km, stark geneigte Umlaufbahn",
+    "Hygiea — ≈ 430 km, dunkler kohlenstoffhaltiger Körper"
+  ],
+  "description": "Ein Ring aus felsigen und metallischen Überresten, die nie zu einem Planeten verschmolzen sind — Jupiters Schwerkraft hat das Material des inneren Gürtels zu heftig durcheinandergewirbelt, als dass Akkretion gegen Fragmentierung hätte gewinnen können. Die meisten Gürtelobjekte sind basaltische oder kohlige Chondrite; die Mutterkörper der Meteoriten, die auf die Erde fallen, sind fast alle hierher zurückverfolgbar. Der Gürtel ist dynamisch leer — der durchschnittliche Abstand zwischen den Mitgliedern beträgt Millionen von Kilometern, nicht das dichte Gesteinsfeld des Kinos.",
+  "discovered": "1801 — Giuseppe Piazzi entdeckt Ceres von Palermo aus, ursprünglich als Planet klassifiziert; die Erkenntnis, dass Ceres einer von vielen war, kam im Laufe des nächsten halben Jahrhunderts, als Pallas, Juno und Vesta folgten.",
+  "mission_visits": [
+    "Dawn — NASA, 2011 + 2015 (Orbitaluntersuchungen von Vesta und dann Ceres)",
+    "Galileo — NASA, 1991 (Gaspra-Vorbeiflug) + 1993 (Ida + Dactyl-Entdeckung)",
+    "Hayabusa2 — JAXA, 2018 (Ryugu-Probenrückführung — erdnaher Asteroid, aber Mutterkörper im Hauptgürtel)",
+    "Lucy — NASA, 2023 (erste Begegnung im Hauptgürtel bei Dinkinesh)"
+  ],
+  "library_labels": {
+    "asteroid-belt-wiki": "Wikipedia — Asteroidengürtel",
+    "asteroid-belt-nasa": "NASA Science — Asteroidengürtel Überblick",
+    "asteroid-belt-dawn": "NASA Dawn — Orbiter bei Vesta und Ceres",
+    "asteroid-belt-mpc": "Minor Planet Center — IAU-Katalog aller bekannten Asteroiden"
+  }
+}

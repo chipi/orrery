@@ -1,0 +1,13 @@
+{
+  "description": "A maior lua de Netuno e um dos mundos geologicamente mais ativos do sistema solar. Tritão orbita Netuno para trás (retrógrado) e com uma inclinação extrema — diagnóstico de um objeto capturado do Cinturão de Kuiper, tornando-o provavelmente um irmão de Plutão em vez de uma lua nativa de Netuno. A Voyager 2 detectou gêiseres de nitrogênio ativos expelindo poeira orgânica escura a 8 km de altura em uma atmosfera tênue de nitrogênio; o hemisfério sul apresenta 'terreno de melão' — uma rede de depressões e cristas nunca vista em nenhum outro lugar do sistema solar. A órbita retrógrada de Tritão está decaindo por forças de maré; em aproximadamente 3,6 Gyr ele será destruído em um anel semelhante ao de Saturno ou colidirá com Netuno.",
+  "surface_composition": "Nitrogênio congelado + gelo de água + gelo de dióxido de carbono; superfície coberta com terreno de textura de melão único no sistema solar, e criogêiseres de nitrogênio ativos expelindo plumas escuras a 8 km de altura em uma atmosfera tênue de nitrogênio.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — visão geral de Tritão",
+    "triton-voyager2": "NASA Voyager 2 — encontro com o sistema de Netuno (1989)",
+    "triton-trident": "Trident — sobrevoo proposto de Tritão classe Discovery"
+  }
+}

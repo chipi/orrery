@@ -1,0 +1,27 @@
+{
+  "id": "sub-solar-and-terminator",
+  "tab": "planets",
+  "order": 3,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Toggle the Sub-solar Point lens — the yellow dot marks where it's noon right now"
+    },
+    {
+      "route": "/earth",
+      "context_key": "Earth's terminator runs softly because the atmosphere scatters sunlight into the dusk zone"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Terminator (solar)",
+      "u": "https://en.wikipedia.org/wiki/Terminator_(solar)",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Sub-solar Point",
+      "u": "https://eclipse.gsfc.nasa.gov/SEhelp/spaSE.html",
+      "t": "core"
+    }
+  ]
+}

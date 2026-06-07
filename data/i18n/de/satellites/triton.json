@@ -1,0 +1,13 @@
+{
+  "description": "Neptuns größter Mond und eine der geologisch aktivsten Welten im Sonnensystem. Triton umkreist Neptun rückläufig (retrograd) und mit einer extremen Neigung — ein diagnostisches Merkmal für ein eingefangenes Kuipergürtel-Objekt, was ihn wahrscheinlich eher zu einem Geschwister von Pluto macht als zu einem ursprünglichen Neptunmond. Voyager 2 entdeckte aktive Stickstoffgeysire, die dunklen organischen Staub 8 km hoch in eine dünne Stickstoffatmosphäre schleudern; die südliche Hemisphäre weist „Kantalupengelände\" auf — ein Netzwerk aus Dellen und Graten, das nirgendwo sonst im Sonnensystem zu finden ist. Tritons rückläufige Umlaufbahn zerfällt durch Gezeitenkräfte; in etwa 3,6 Gyr wird er entweder zu einem saturnähnlichen Ring zerrissen oder in Neptun stürzen.",
+  "surface_composition": "Gefrorener Stickstoff + Wassereis + Kohlendioxideis; Oberfläche bedeckt mit kantalupenstrukturiertem Gelände, das im Sonnensystem einzigartig ist, und aktiven Stickstoff-Kryogeysiren, die dunkle Fontänen 8 km hoch in eine dünne Stickstoffatmosphäre schleudern.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — Triton Übersicht",
+    "triton-voyager2": "NASA Voyager 2 — Neptun-System Begegnung (1989)",
+    "triton-trident": "Trident — vorgeschlagener Discovery-class Triton Vorbeiflug"
+  }
+}

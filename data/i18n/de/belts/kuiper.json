@@ -1,0 +1,26 @@
+{
+  "name": "Kuipergürtel",
+  "kind": "Transneptunisch — eisige Population",
+  "location": "Jenseits von Neptun · 30–50 AU von der Sonne",
+  "population_estimate": "Über 100.000 Körper größer als 100 km; geschätzte 10⁹–10¹⁰ kometengroße Objekte",
+  "total_mass_relative": "≈ 4–10 % der Erde (200× die Masse des Asteroidengürtels)",
+  "largest_members": [
+    "Pluto — Zwergplanet, ≈ 2.377 km Durchmesser, mit Charon als Doppelsystem verbunden",
+    "Eris — etwas massereicher als Pluto, entdeckt 2005 (seine Entdeckung löste Plutos Neuklassifizierung aus)",
+    "Makemake — ≈ 1.430 km, klassisches Kuipergürtel-Objekt",
+    "Haumea — ≈ 1.560 km auf seiner langen Achse, schneller Rotator mit einem Ringsystem",
+    "Quaoar — ≈ 1.110 km, besitzt einen kleinen Mond Weywot"
+  ],
+  "description": "Eine ausgedehnte Scheibe eisiger Körper — Wasser-, Methan- und Ammoniakeis mit eingebettetem Gestein — die jenseits von Neptun um die Sonne kreist. Der Kuipergürtel ist das Quellreservoir für kurzperiodische Kometen wie Halley und Hartley 2: gravitationsbedingte Störungen durch Neptun schleudern gelegentlich Mitglieder nach innen, wo Sonnenerwärmung das Eis in Schweife verwandelt. Im Gegensatz zum Asteroidengürtel ist der Kuipergürtel nicht dynamisch verarmt — seine Masse ist klein, nicht weil Jupiter ihn zerstreut hat, sondern weil in diesen Entfernungen niemals etwas vollständig akkretiert ist. Jenseits des klassischen Kuipergürtels erstrecken sich die Streuscheibe und die Oortsche Wolke als kaltes Reservoir bis zu Tausenden von AU.",
+  "discovered": "1992 — David Jewitt und Jane Luu entdecken 1992 QB1 (jetzt 15760 Albion), das erste bestätigte Kuipergürtel-Objekt nach Pluto + Charon. Der Gürtel selbst wurde 1951 von Gerard Kuiper als übrig gebliebenes Scheibenmaterial aus dem frühen Sonnensystem vorhergesagt.",
+  "mission_visits": [
+    "New Horizons — NASA, 2015 (Pluto + Charon Vorbeiflug) + 2019 (Arrokoth, erste Nahaufnahme eines klassischen Kuipergürtel-Objekts)",
+    "Voyager 1 + Voyager 2 — NASA, 1980er (passierten den inneren Rand des Gürtels auf dem Weg in den interstellaren Raum; keine gezielten Begegnungen)"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Kuipergürtel",
+    "kuiper-belt-nasa": "NASA Science — Kuipergürtel Überblick",
+    "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth Vorbeiflüge",
+    "kuiper-belt-mpc": "Minor Planet Center — TNO-Katalog"
+  }
+}

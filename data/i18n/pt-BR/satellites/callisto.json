@@ -1,0 +1,13 @@
+{
+  "description": "Calisto está fora da ressonância de Laplace que provoca o aquecimento de maré em Io, Europa e Ganimedes — por isso seu interior nunca derreteu o suficiente para se diferenciar por completo ou renovar sua crosta. O resultado é o registro mais preservado de bombardeio por impactos no sistema galileano interior, incluindo o espetacular sistema de 15 anéis da bacia de Valhalla, que se estende por quase metade da circunferência da lua. Apesar da ausência de aquecimento de maré, o magnetômetro da Galileo detectou um campo magnético induzido compatível com um oceano profundo e salgado a ~100 km abaixo da superfície. Seu ambiente de baixa radiação (em comparação com Europa ou Ganimedes) e sua água de longa duração fazem dela um provável ponto de apoio para futuras missões tripuladas ao sistema de Júpiter.",
+  "surface_composition": "Cerca de 40% de gelo de água + 60% de rocha silicática; a superfície mais densamente craterizada do sistema solar — quase saturada, intocada por qualquer renovação. Característica notável: a bacia de impacto multianelar de Valhalla, com 3.800 km.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+  ],
+  "library_labels": {
+    "callisto-wiki": "Wikipedia — Calisto",
+    "callisto-nasa": "NASA Science — visão geral de Calisto",
+    "callisto-galileo": "NASA — arquivo do legado da Galileo"
+  }
+}

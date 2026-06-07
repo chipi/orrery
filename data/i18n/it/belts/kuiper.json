@@ -1,0 +1,26 @@
+{
+  "name": "Fascia di Kuiper",
+  "kind": "Trans-nettuniana — popolazione ghiacciata",
+  "location": "Oltre Nettuno · 30–50 AU dal Sole",
+  "population_estimate": "Oltre 100.000 corpi più grandi di 100 km; stimati 10⁹–10¹⁰ oggetti di dimensioni cometarie",
+  "total_mass_relative": "≈ 4–10 % della Terra (200× la massa della fascia degli asteroidi)",
+  "largest_members": [
+    "Pluto — pianeta nano, ≈ 2.377 km di diametro, accoppiato con Charon come sistema binario",
+    "Eris — leggermente più massiccio di Pluto, scoperto nel 2005 (la sua scoperta ha innescato la riclassificazione di Pluto)",
+    "Makemake — ≈ 1.430 km, oggetto classico della fascia di Kuiper",
+    "Haumea — ≈ 1.560 km sul suo asse maggiore, rotatore rapido con un sistema di anelli",
+    "Quaoar — ≈ 1.110 km, ospita una piccola luna Weywot"
+  ],
+  "description": "Un vasto disco di corpi ghiacciati — ghiaccio d'acqua, metano e ammoniaca con roccia incorporata — che orbita attorno al Sole oltre Nettuno. La Fascia di Kuiper è il serbatoio sorgente per le comete a corto periodo come Halley e Hartley 2: spinte gravitazionali da Nettuno lanciano occasionalmente membri verso l'interno dove il riscaldamento solare trasforma i ghiacci in code. A differenza della fascia degli asteroidi, la Fascia di Kuiper non è dinamicamente impoverita — la sua massa è piccola non perché Giove l'abbia dispersa ma perché nulla si è mai completamente accresciuto a quelle distanze. Oltre la Fascia di Kuiper classica, il disco diffuso e la Nube di Oort estendono il serbatoio freddo fino a migliaia di AU.",
+  "discovered": "1992 — David Jewitt e Jane Luu rilevano 1992 QB1 (ora 15760 Albion), il primo oggetto confermato della Fascia di Kuiper dopo Pluto + Charon. La fascia stessa fu prevista nel 1951 da Gerard Kuiper come materiale residuo del disco del sistema solare primordiale.",
+  "mission_visits": [
+    "New Horizons — NASA, 2015 (sorvolo di Pluto + Charon) + 2019 (Arrokoth, primo piano ravvicinato di un oggetto classico della Fascia di Kuiper)",
+    "Voyager 1 + Voyager 2 — NASA, anni '80 (attraversarono il margine interno della fascia in rotta verso lo spazio interstellare; nessun incontro mirato)"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Fascia di Kuiper",
+    "kuiper-belt-nasa": "NASA Science — panoramica Fascia di Kuiper",
+    "kuiper-belt-newhorizons": "NASA New Horizons — sorvoli di Pluto + Arrokoth",
+    "kuiper-belt-mpc": "Minor Planet Center — catalogo TNO"
+  }
+}

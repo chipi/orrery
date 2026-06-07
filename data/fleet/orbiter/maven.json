@@ -1,0 +1,31 @@
+{
+  "id": "maven",
+  "name": "MAVEN",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Lockheed Martin",
+  "first_flight": "2013-11-18",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
+  "credit": "Added for PRD-023 Slice A — active Mars orbiter rendered as 3D glyph on /explore.",
+  "links": [
+    {
+      "l": "MAVEN — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/MAVEN",
+      "t": "intro"
+    },
+    {
+      "l": "MAVEN mission — NASA",
+      "u": "https://science.nasa.gov/mission/maven/",
+      "t": "core"
+    },
+    {
+      "l": "MAVEN at University of Colorado LASP",
+      "u": "https://lasp.colorado.edu/maven/",
+      "t": "deep"
+    }
+  ]
+}

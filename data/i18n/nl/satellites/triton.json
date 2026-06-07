@@ -1,0 +1,13 @@
+{
+  "description": "De grootste maan van Neptunus en een van de geologisch meest actieve werelden in het zonnestelsel. Triton draait in tegengestelde richting (retrograde) om Neptunus en met een extreme kanteling — kenmerkend voor een ingevangen Kuipergordel-object, waardoor het waarschijnlijk eerder een broer van Pluto is dan een oorspronkelijke Neptunus-maan. Voyager 2 detecteerde actieve stikstofgeisers die donker organisch stof 8 km hoog een dunne stikstofatmosfeer in spuiten; het zuidelijk halfrond heeft een 'meloenenschil-terrein' — een netwerk van kuiltjes en richels dat nergens anders in het zonnestelsel te zien is. De retrograde baan van Triton vervalt door getijdenkrachten; over ongeveer 3,6 miljard jaar zal hij ofwel verscheurd worden tot een Saturnus-achtige ring of op Neptunus neerstorten.",
+  "surface_composition": "Bevroren stikstof + waterijs + koolstofdioxideijs; oppervlak bedekt met meloenenschil-gestructureerd terrein uniek in het zonnestelsel, en actieve stikstof-cryogeisers die donkere pluimen 8 km hoog een dunne stikstofatmosfeer in spuiten.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — Triton overzicht",
+    "triton-voyager2": "NASA Voyager 2 — Neptunus-systeem ontmoeting (1989)",
+    "triton-trident": "Trident — voorgestelde Discovery-class Triton scheervlucht"
+  }
+}

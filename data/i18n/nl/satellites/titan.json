@@ -1,0 +1,16 @@
+{
+  "description": "Op één na grootste maan in het zonnestelsel en de enige maan met een substantiële atmosfeer — dikker dan die van de aarde. Onder de oranje tholinennevel bevindt zich het enige bekende hemellichaam naast de aarde met stabiele vloeistof op het oppervlak: koolwaterstofmeren en -zeeën van methaan en ethaan in de poolgebieden, gevoed door een actieve methaan-hydrologische cyclus die wolken, regen en rivieren omvat die waterijsbedding uitschuren. Huygens (ESA) maakte in 2005 de eerste landing op een andere maan dan die van de aarde. NASA's Dragonfly zal in 2034 aankomen als een nucleair aangedreven rotorcraft, hoppend tussen de organisch-rijke landschappen van Titan.",
+  "surface_composition": "Waterijsbedding onder organische duinen + koolwaterstofmeren (methaan / ethaan) + een stikstof-methaanatmosfeer 1,45× de zeespiegeldruk van de aarde. Tholinennevel kleurt de lucht oranje.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titan",
+    "titan-nasa": "NASA Science — Titan overzicht",
+    "titan-dragonfly": "NASA Dragonfly — nucleaire rotorcraft-missie naar Titan",
+    "titan-huygens": "ESA Huygens — eerste landing op een andere maan dan de onze"
+  }
+}

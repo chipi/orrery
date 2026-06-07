@@ -421,6 +421,13 @@
   },
   {
     "tab": "orbits",
+    "section": "hill-sphere",
+    "title": "Hill Sphere",
+    "intro": "The volume of space where a planet's gravity wins out over the Sun's.",
+    "haystack": "hill sphere the volume of space where a planet's gravity wins out over the sun's. the hill radius formula approximates the boundary as r_h ≈ a × (1−e) × (m / 3m)^(1/3), where `a` is the planet's semi-major axis, `e` its eccentricity, `m` its mass, and `m` the sun's mass. the (1−e) factor accounts for perihelion shrinkage — a more eccentric orbit means the planet swings closer to the sun and its authority shrinks accordingly. the cube root means doubling a planet's mass only enlarges its hill sphere by ~26%; doubling its orbital distance enlarges it by 100%."
+  },
+  {
+    "tab": "orbits",
     "section": "inclination",
     "title": "Inclination",
     "intro": "The tilt of the orbit plane relative to a reference plane — usually the ecliptic or Earth's equator.",
@@ -495,6 +502,62 @@
     "title": "Vis-Viva Equation",
     "intro": "How fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis.",
     "haystack": "vis-viva equation how fast a body is moving at any point on its orbit — given just its current radius and the orbit's semi-major axis. vis-viva is the workhorse equation of orbital mechanics. it connects three numbers — the gravitational parameter `μ` of whatever you're orbiting, your current distance `r` from the focus, and the orbit's semi-major axis `a` — and spits out the speed `v`. that's it. no time integration, no anomaly chain, just one square root and you know how fast you're going."
+  },
+  {
+    "tab": "planets",
+    "section": "active-spacecraft-survey",
+    "title": "Active Spacecraft Survey",
+    "intro": "What's at each planet right now: from MRO at Mars to Juno at Jupiter to Akatsuki at Venus.",
+    "haystack": "active spacecraft survey what's at each planet right now: from mro at mars to juno at jupiter to akatsuki at venus. mars — orbital fleet as of 2026: mro (nasa, since 2006, 300 km polar orbit, hirise camera + atmosphere observations + data relay). maven (nasa, since 2014, 6200 km orbit, atmospheric escape rates). mars express (esa, since 2003, 4200 km, mineralogy + atmosphere). exomars tgo (esa, since 2016, 400 km, trace gases + russian relay). mangalyaan / mom (isro, 2014–2022, methane + atmosphere — first asian mars mission). tianwen-1 (cnsa, since 2021, 4250 km, delivered zhurong rover + global mapping). hope / emm (uae space agency, since 2021, 30,000 km equatorial, atmospheric science). on the surface: perseverance + curiosity rovers (both nasa) and the now-grounded ingenuity helicopter."
+  },
+  {
+    "tab": "planets",
+    "section": "asteroid-belt",
+    "title": "The Asteroid Belt",
+    "intro": "A planet that almost was — the rocky remnants between Mars and Jupiter that Jupiter's gravity wouldn't let coalesce.",
+    "haystack": "the asteroid belt a planet that almost was — the rocky remnants between mars and jupiter that jupiter's gravity wouldn't let coalesce. the belt has internal structure. spectroscopy divides it into three rough zones: the inner belt (2.1–2.5 au) dominated by stony s-type bodies; the middle belt (2.5–3.2 au) where carbonaceous c-types take over (ceres + hygiea live here); and the outer belt blending into the trojan asteroids that share jupiter's orbit at the l4 and l5 lagrange points. different parent populations, different formation temperatures, different histories — preserved in the same belt because jupiter's resonances corralled them."
+  },
+  {
+    "tab": "planets",
+    "section": "axial-tilt-and-seasons",
+    "title": "Axial Tilt and Seasons",
+    "intro": "Why Earth has seasons, why Uranus rolled onto its side, and why Venus spins backward.",
+    "haystack": "axial tilt and seasons why earth has seasons, why uranus rolled onto its side, and why venus spins backward. obliquity = the angle between a planet's rotation axis and the line perpendicular to its orbital plane. values: mercury 0.034°, venus 177.36°, earth 23.44°, mars 25.19°, jupiter 3.13°, saturn 26.73°, uranus 97.77°, neptune 28.32°, pluto 122.53°. the two clusters — small-tilt gas giants except uranus, and 23-28° rocky bodies + saturn + neptune — likely reflect different formation histories. uranus's 97° is the canonical \"giant impact\" signature; venus's 177° and pluto's 122° are still actively debated."
+  },
+  {
+    "tab": "planets",
+    "section": "kuiper-belt",
+    "title": "The Kuiper Belt",
+    "intro": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
+    "haystack": "the kuiper belt a disc of icy bodies beyond neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past earth. structurally the belt has three populations. the classical kuiper belt at 42–48 au holds bodies on nearly circular, low-inclination orbits — the dynamically unperturbed remnant of the original disc, albion and quaoar live here. the resonant population is held in 2:3 mean-motion resonance with neptune (pluto is the archetype — for every two pluto orbits, neptune does three); these are called plutinos. then the scattered disc is the eccentric, high-inclination outer extension where eris and sedna roam, with perihelia near neptune and aphelia hundreds of au out. each population is a fossil of a different chapter of the early solar system's gravitational history."
+  },
+  {
+    "tab": "planets",
+    "section": "magnetic-fields",
+    "title": "Magnetic Fields",
+    "intro": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
+    "haystack": "magnetic fields every planet's magnetosphere is different. saturn's is uniquely aligned, uranus's is chaotic, venus and mars don't have one at all. magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: mercury 0.7°, earth 10.5°, jupiter 9.6°, saturn ~0°, uranus 58.6°, neptune 46.9°. venus, mars, and pluto have no globally significant dipole today. uranus and neptune's wildly off-axis dipoles are also offset from the planet's centre — uranus's by about 1/3 of the planet's radius. the conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that uranus and neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core."
+  },
+  {
+    "tab": "planets",
+    "section": "moons-of-the-system",
+    "title": "Moons of the System",
+    "intro": "Galileo's four-night observation in 1610 ended geocentrism. The system's moons are still ending old assumptions today.",
+    "haystack": "moons of the system galileo's four-night observation in 1610 ended geocentrism. the system's moons are still ending old assumptions today. the four galilean moons of jupiter are wildly different worlds. io: most volcanically active body in the solar system, with active eruptions visible from telescopes — driven by tidal heating from the others. europa: ice shell over a global water ocean, a top astrobiology priority. ganymede: largest moon in the solar system, bigger than mercury, and the only moon with its own magnetic field. callisto: outermost galilean, ancient cratered surface, possibly a subsurface ocean too. all four discovered in 1610 by galileo from a padua rooftop."
+  },
+  {
+    "tab": "planets",
+    "section": "planetary-stats",
+    "title": "Planetary Stats",
+    "intro": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
+    "haystack": "planetary stats how different is jupiter from earth, really? eleven times the diameter. two and a half times the surface gravity. diameters relative to earth: mercury 0.38, venus 0.95 (nearly earth-sized), earth 1.0, mars 0.53, jupiter 10.97, saturn 9.14, uranus 3.98, neptune 3.86, pluto 0.19. surface gravities in earth-g: mercury 0.38, venus 0.91, earth 1.00, mars 0.38, jupiter 2.53, saturn 1.07, uranus 0.89, neptune 1.14, pluto 0.06. notable surprises: mars and mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. uranus and saturn both have lower-than-earth gravity despite their giant sizes — both are dominated by h/he, much less dense than rocky earth."
+  },
+  {
+    "tab": "planets",
+    "section": "sub-solar-and-terminator",
+    "title": "Sub-solar Point and Terminator",
+    "intro": "Where it's noon on a planet at this instant, and the line dividing day from night.",
+    "haystack": "sub-solar point and terminator where it's noon on a planet at this instant, and the line dividing day from night. the sub-solar point's instantaneous location is calculated from three angles: the planet's rotation phase (which longitude faces the sun right now), its axial tilt (which seasonal latitude the sun illuminates), and its orbital position (which hemisphere is angled sunward). on earth, the sub-solar latitude oscillates between +23.4° and −23.4° in the cycle we call seasons. on mars, the cycle is similar (25.19° tilt) but slower (687-day year) and more eccentric (mars's orbit is more elliptical, so its seasons have unequal durations)."
   },
   {
     "tab": "porkchop",

@@ -1,0 +1,16 @@
+{
+  "description": "सौरमंडल का सबसे चिकना बड़ा पिंड — यूरोपा पर कोई भी पर्वत कुछ सौ मीटर से ऊँचा नहीं उठता। इसकी 20-km मोटी बर्फीली परत के नीचे ~100 km गहरा वैश्विक खारे-पानी का महासागर है, जिसमें पृथ्वी के सभी महासागरों के कुल पानी से दोगुने से भी अधिक पानी समाया है। बृहस्पति से उत्पन्न ज्वारीय खिंचाव इस महासागर को तरल और रासायनिक रूप से सक्रिय बनाए रखता है; चुम्बकीय-क्षेत्र के संकेत और Hubble द्वारा देखे गए प्लूम्स यह संकेत देते हैं कि उप-सतही महासागर का पदार्थ समय-समय पर सतह तक पहुँचता है। NASA का Europa Clipper (मार्ग में) और ESA का JUICE दोनों 2030 के दशक के आरंभ तक बर्फीली परत और महासागर की गतिकी की गहन जाँच करेंगे।",
+  "surface_composition": "~15–25 km मोटी जल-बर्फ की परत, जो कैओस भू-भाग द्वारा चापाकार कटकों (arcuate ridges) और लेंटीकुली (lenticulae) के जाल में विदीर्ण है; लवण (संभवतः मैग्नीशियम सल्फेट + सोडियम क्लोराइड) कैओस क्षेत्रों में बर्फ को लाल-भूरा रंग प्रदान करते हैं।",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — यूरोपा",
+    "europa-nasa": "NASA Science — यूरोपा अवलोकन",
+    "europa-clipper": "NASA Europa Clipper — मिशन साइट",
+    "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
+  }
+}

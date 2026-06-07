@@ -1,0 +1,14 @@
+{
+  "description": "Diminuto —solo 504 km de diámetro— pero el cuerpo más reflectante del sistema solar y uno de los candidatos más sólidos para albergar habitabilidad en la actualidad más allá de la Tierra. Cassini voló directamente a través de penachos que erupcionan desde cuatro fracturas de 130 km de longitud en el polo sur; el espectrómetro detectó hidrógeno molecular, compuestos orgánicos incluido el metano, sales y nanogranos de sílice que indican química hidrotermal activa en el fondo oceánico. El océano está en contacto directo con el fondo marino rocoso —las mismas condiciones de energía y química que dieron origen a la vida en las propias fuentes hidrotermales de aguas profundas de la Tierra.",
+  "surface_composition": "Corteza de hielo de agua prístina sobre un océano subsuperficial global; fracturas de 'rayas de tigre' en el polo sur que expulsan penachos de vapor de agua, compuestos orgánicos, sales, nanogranos de sílice e hidrógeno molecular.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Encélado",
+    "enceladus-nasa": "NASA Science — información general de Encélado",
+    "enceladus-cassini": "NASA Cassini — archivo histórico de sobrevuelos de penachos",
+    "enceladus-habitability": "Astrobiology — Encélado como objetivo de búsqueda de vida"
+  }
+}

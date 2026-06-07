@@ -1,0 +1,12 @@
+{
+  "description": "천왕성의 다섯 주요 위성 중 가장 안쪽에 있고 가장 작으며, 시각적으로 가장 극단적인 천체이다. Voyager 2의 근접 비행 이미지는 마치 서로 맞지 않는 조각들로 조립된 것처럼 보이는 표면을 드러냈다. 거대한 절벽, 균열된 고원, 그리고 동심원 형태의 코로나가 심하게 충돌구가 분포한 오래된 지형에서 돌출되어 있다. 주요 가설은 미란다가 최소 한 번 이상 충돌로 파괴되었고, 파편들이 자체 중력으로 재결합했다는 것이다. Verona Rupes는 약 20 km 낙차를 보이며, 미란다의 낮은 중력 하에서 떨어지는 물체는 바닥에 도달하는 데 약 12분이 걸린다.",
+  "surface_composition": "물 얼음 + 규산염 암석; 표면은 고대의 충돌구 지형이 거대한 코로나(동심원 형태의 융기와 홈)와 교차하는 패치워크 구조이며, 태양계에서 알려진 가장 높은 절벽인 Verona Rupes(약 20 km 수직 낙차)를 포함한다.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — Miranda 개요",
+    "miranda-voyager2": "NASA Voyager 2 — 유일한 천왕성계 근접 비행 (1986)"
+  }
+}

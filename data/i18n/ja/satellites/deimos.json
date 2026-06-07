@@ -1,0 +1,13 @@
+{
+  "description": "火星の2つの衛星のうち、小さい方かつ外側を回る衛星で、直径わずか12 km — 通常の軌道カメラから見て点ではなく円盤として分解できる、太陽系内で知られる最小の天体である。フォボスのクレーターと溝に覆われた地形と比べて滑らかな表面と、より遅い公転周期（30時間、フォボスは8時間）により、火星の衛星ペアの中ではより穏やかな存在となっている。Asaph Hallは両衛星を、ギリシア神話における恐怖（Phobos）と戦慄（Deimos）の擬人化 — 『イーリアス』第15歌でアレースの戦車を引く軍馬 — にちなんで命名した。",
+  "surface_composition": "炭素質コンドライト質に類似。重力が弱いため、衝突によって放出された噴出物が再集積せず火星周回軌道に逃げてしまうため、フォボスより滑らかな表面を持つ。命名されたクレーターは2つ：SwiftとVoltaire（いずれも約3 km）。",
+  "mission_visits": [
+    "Viking 2 orbiter — USA, 1977 (highest-resolution pre-2000 imagery)",
+    "Mars Reconnaissance Orbiter — USA, 2009 (HiRISE close pass)"
+  ],
+  "library_labels": {
+    "deimos-wiki": "Wikipedia — ダイモス",
+    "deimos-nasa": "NASA Science — ダイモス概説",
+    "deimos-mrohirise": "HiRISE — 火星軌道画像に写るダイモス"
+  }
+}

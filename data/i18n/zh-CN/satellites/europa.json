@@ -1,0 +1,16 @@
+{
+  "description": "太阳系中最光滑的大型天体——欧罗巴上没有任何山脉高出几百米。在其约20公里厚的冰壳之下，是一片深约100公里的全球性盐水海洋，所含水量是地球所有海洋总和的两倍以上。木星引发的潮汐挠曲使这片海洋保持液态并具有化学活性；磁场特征以及哈勃望远镜对羽流的观测表明，地下海洋的物质会周期性地抵达表面。NASA的Europa Clipper（正在飞往途中）和ESA的JUICE都将在2030年代初对冰壳与海洋动力学进行细致考察。",
+  "surface_composition": "水冰外壳厚约15–25公里，被混沌地形切割成由弧形脊和透镜状地貌（lenticulae）构成的网络；盐类（可能为硫酸镁与氯化钠）将混沌区域的冰染成红褐色。",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — 欧罗巴",
+    "europa-nasa": "NASA Science — 欧罗巴概览",
+    "europa-clipper": "NASA Europa Clipper — 任务官网",
+    "europa-juice": "ESA JUICE — 木星冰卫星探测器"
+  }
+}

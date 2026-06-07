@@ -1,0 +1,122 @@
+{
+  "$comment": "Active spacecraft rendered as small 3D glyphs around their host planet on /explore at the planet-focus zoom level (PRD-023 Slice A). Each entry links to a /fleet/orbiter/<id>.json record by `fleet_id` so click-through navigates to the mission card; orbital geometry (altitude / inclination / color) lives here because it's a visualization concern, not a hardware-family fact. Missions that don't yet have a fleet entry are flagged with `fleet_id: null` and Slice A adds the fleet entry alongside.",
+  "orbiters": [
+    {
+      "parent": "mars",
+      "fleet_id": "mro",
+      "name": "MRO",
+      "long_name": "Mars Reconnaissance Orbiter",
+      "agency": "NASA",
+      "country": "USA",
+      "altitude_km": 300,
+      "inclination_deg": 92.65,
+      "launched": "2005-08-12",
+      "status": "ACTIVE",
+      "color": "#4ecdc4"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "maven",
+      "name": "MAVEN",
+      "long_name": "Mars Atmosphere and Volatile EvolutioN",
+      "agency": "NASA",
+      "country": "USA",
+      "altitude_km": 6200,
+      "inclination_deg": 75.0,
+      "launched": "2013-11-18",
+      "status": "ACTIVE",
+      "color": "#4ecdc4"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "mars-express",
+      "name": "Mars Express",
+      "long_name": "Mars Express",
+      "agency": "ESA",
+      "country": "Europe",
+      "altitude_km": 4200,
+      "inclination_deg": 86.9,
+      "launched": "2003-06-02",
+      "status": "ACTIVE",
+      "color": "#7b9cff"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "exomars-tgo",
+      "name": "ExoMars TGO",
+      "long_name": "ExoMars Trace Gas Orbiter",
+      "agency": "ESA / Roscosmos",
+      "country": "Europe",
+      "altitude_km": 400,
+      "inclination_deg": 74.0,
+      "launched": "2016-03-14",
+      "status": "ACTIVE",
+      "color": "#7b9cff"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "mangalyaan",
+      "name": "Mangalyaan",
+      "long_name": "Mars Orbiter Mission (MOM)",
+      "agency": "ISRO",
+      "country": "India",
+      "altitude_km": 76000,
+      "inclination_deg": 150.0,
+      "launched": "2013-11-05",
+      "status": "ENDED",
+      "color": "#ff9933"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "tianwen-1",
+      "name": "Tianwen-1",
+      "long_name": "Tianwen-1 orbiter",
+      "agency": "CNSA",
+      "country": "China",
+      "altitude_km": 4250,
+      "inclination_deg": 88.0,
+      "launched": "2020-07-23",
+      "status": "ACTIVE",
+      "color": "#de2910"
+    },
+    {
+      "parent": "mars",
+      "fleet_id": "hope",
+      "name": "Hope",
+      "long_name": "Emirates Mars Mission (Hope / Al-Amal)",
+      "agency": "UAESA",
+      "country": "UAE",
+      "altitude_km": 30000,
+      "inclination_deg": 25.0,
+      "launched": "2020-07-19",
+      "status": "ACTIVE",
+      "color": "#00732f"
+    },
+    {
+      "parent": "jupiter",
+      "fleet_id": "juno",
+      "name": "Juno",
+      "long_name": "Juno",
+      "agency": "NASA",
+      "country": "USA",
+      "altitude_km": 4000,
+      "inclination_deg": 90.0,
+      "launched": "2011-08-05",
+      "status": "ACTIVE",
+      "color": "#4ecdc4"
+    },
+    {
+      "parent": "venus",
+      "fleet_id": "akatsuki",
+      "name": "Akatsuki",
+      "long_name": "Akatsuki (PLANET-C)",
+      "agency": "JAXA",
+      "country": "Japan",
+      "altitude_km": 30000,
+      "inclination_deg": 3.0,
+      "launched": "2010-05-20",
+      "status": "ACTIVE",
+      "color": "#003087"
+    }
+  ]
+}

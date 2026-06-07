@@ -1,0 +1,15 @@
+{
+  "description": "Le corps le plus géologiquement actif du système solaire. Le chauffage par effet de marée dû à la gravité de Jupiter, combiné à la résonance orbitale avec Europe et Ganymède, injecte environ 100 térawatts de chaleur dans l'intérieur d'Io — assez pour entretenir environ 400 volcans actifs simultanément et des températures de surface qui oscillent entre -130 °C (dioxyde de soufre gelé) et +1 600 °C (lave ultramafique). Sa surface est repeinte plus vite que les impacts ne peuvent la marquer. Loki Patera, un lac de lave de 200 km, est la structure volcanique la plus puissante du système solaire.",
+  "surface_composition": "Soufre + givre de dioxyde de soufre sur une croûte silicatée ; la « peinture » de surface est régulièrement renouvelée par les coulées volcaniques — aucun cratère d'impact ne subsiste assez longtemps pour rester visible.",
+  "mission_visits": [
+    "Voyager 1 — USA, 1979 (discovered active volcanism)",
+    "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "Juno — USA, 2023–2024 (closest-ever approaches)"
+  ],
+  "library_labels": {
+    "io-wiki": "Wikipedia — Io",
+    "io-nasa": "NASA Science — Io, aperçu",
+    "io-juno": "NASA Juno — survols rapprochés récents d'Io",
+    "io-volcanism": "USGS — catalogue des structures volcaniques d'Io"
+  }
+}

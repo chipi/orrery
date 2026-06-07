@@ -1,0 +1,12 @@
+{
+  "description": "La plus intérieure et la plus petite des cinq lunes principales d'Uranus — et visuellement la plus extrême. Les images du survol de Voyager 2 ont révélé une surface qui semble avoir été assemblée à partir de morceaux disparates : d'énormes falaises, des plateaux fracturés et des coronae concentriques émergeant d'un terrain ancien fortement cratérisé. L'hypothèse principale est que Miranda a été disloquée par un impact au moins une fois, les fragments se réassemblant sous l'effet de leur propre gravité. Verona Rupes plonge de ~20 km — sous la faible gravité de Miranda, un objet en chute libre mettrait environ 12 minutes pour atteindre le fond.",
+  "surface_composition": "Glace d'eau + roche silicatée ; surface formée d'un assemblage de terrains anciens cratérisés traversés par d'immenses coronae — crêtes et sillons concentriques qui comprennent Verona Rupes, la plus haute falaise connue du système solaire (~20 km de dénivelé vertical).",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (only spacecraft visit; southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "miranda-wiki": "Wikipedia — Miranda",
+    "miranda-nasa": "NASA Science — aperçu de Miranda",
+    "miranda-voyager2": "NASA Voyager 2 — seul survol du système uranien (1986)"
+  }
+}

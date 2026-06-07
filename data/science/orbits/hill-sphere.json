@@ -1,0 +1,32 @@
+{
+  "id": "hill-sphere",
+  "tab": "orbits",
+  "order": 11,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Toggle the Hill-sphere layer to see each planet's gravity-dominance boundary"
+    },
+    {
+      "route": "/moon",
+      "context_key": "The Moon orbits inside Earth's Hill sphere (~1.5 million km), 0.26 × the Hill radius"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Hill sphere",
+      "u": "https://en.wikipedia.org/wiki/Hill_sphere",
+      "t": "intro"
+    },
+    {
+      "l": "NASA Solar System Dynamics · Planetary Satellites",
+      "u": "https://ssd.jpl.nasa.gov/sats/",
+      "t": "core"
+    },
+    {
+      "l": "Hamilton & Krivov · Dynamics of Distant Moons (1997)",
+      "u": "https://www.astro.umd.edu/~hamilton/research/preprints/HamKri97.pdf",
+      "t": "deep"
+    }
+  ]
+}

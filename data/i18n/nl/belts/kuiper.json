@@ -1,0 +1,26 @@
+{
+  "name": "Kuipergordel",
+  "kind": "Trans-Neptunisch — ijzige populatie",
+  "location": "Voorbij Neptunus · 30–50 AU van de zon",
+  "population_estimate": "Meer dan 100.000 objecten groter dan 100 km; geschatte 10⁹–10¹⁰ komeetachtige objecten",
+  "total_mass_relative": "≈ 4–10 % van de aarde (200× de massa van de asteroïdengordel)",
+  "largest_members": [
+    "Pluto — dwergplaneet, ≈ 2.377 km diameter, gekoppeld met Charon als een dubbelsysteem",
+    "Eris — iets massiever dan Pluto, ontdekt in 2005 (de ontdekking leidde tot de herclassificatie van Pluto)",
+    "Makemake — ≈ 1.430 km, klassiek Kuipergordelobject",
+    "Haumea — ≈ 1.560 km op zijn lange as, snelle rotator met een ringensysteem",
+    "Quaoar — ≈ 1.110 km, heeft een kleine maan Weywot"
+  ],
+  "description": "Een uitgestrekte schijf van ijzige objecten — water-, methaan- en ammoniakijs met ingesloten gesteente — die rond de zon draait voorbij Neptunus. De Kuipergordel is het bronreservoir voor kortperiodieke kometen zoals Halley en Hartley 2: zwaartekrachtverstoringen van Neptunus slingeren af en toe leden naar binnen waar zonnestraling het ijs in staarten verandert. In tegenstelling tot de asteroïdengordel is de Kuipergordel niet dynamisch uitgeput — de massa is klein, niet omdat Jupiter het verspreidde, maar omdat er op die afstanden nooit volledig accretie heeft plaatsgevonden. Voorbij de klassieke Kuipergordel strekken de scattered disc en de Oortwolk het koude reservoir uit tot duizenden AU's.",
+  "discovered": "1992 — David Jewitt en Jane Luu detecteren 1992 QB1 (nu 15760 Albion), het eerste bevestigde Kuipergordelobject na Pluto + Charon. De gordel zelf werd in 1951 voorspeld door Gerard Kuiper als het overgebleven schijfmateriaal uit het vroege zonnestelsel.",
+  "mission_visits": [
+    "New Horizons — NASA, 2015 (Pluto + Charon scheervlucht) + 2019 (Arrokoth, eerste close-up van een klassiek Kuipergordelobject)",
+    "Voyager 1 + Voyager 2 — NASA, jaren '80 (passeerden de binnenrand van de gordel op weg naar de interstellaire ruimte; geen gerichte ontmoetingen)"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Kuipergordel",
+    "kuiper-belt-nasa": "NASA Science — Kuipergordel overzicht",
+    "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth scheervluchten",
+    "kuiper-belt-mpc": "Minor Planet Center — TNO catalogus"
+  }
+}

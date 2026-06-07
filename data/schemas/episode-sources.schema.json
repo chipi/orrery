@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://orrery.app/schemas/episode-sources.schema.json",
+  "title": "Episode sources sidecar",
+  "description": "Per-episode editorial citations for the audio narration corpus (PRD-016 §S10 / RFC-019 §11.4). Sidecar to audio-provenance.json joined by episode_id.",
+  "type": "object",
+  "required": ["schema_version", "episodes"],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "_doc": {
+      "type": "string"
+    },
+    "episodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "sources"],
+        "additionalProperties": false,
+        "properties": {
+          "episode_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "source_id", "kind"],
+              "additionalProperties": false,
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Human-readable citation, e.g. 'Sagan, Carl — Pale Blue Dot (1994), Random House'."
+                },
+                "source_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "Must match an entry in source-logos.json. Renders the publisher logo + license summary on /library/episodes."
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "book-primary",
+                    "book-secondary",
+                    "agency-primary",
+                    "agency-secondary",
+                    "paper-primary",
+                    "interview",
+                    "documentary",
+                    "encyclopedia",
+                    "memoir"
+                  ]
+                },
+                "language": {
+                  "type": "string",
+                  "description": "BCP-47, e.g. 'en', 'ru', 'zh'."
+                },
+                "last_verified": {
+                  "type": "string",
+                  "format": "date"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

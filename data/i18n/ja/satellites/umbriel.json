@@ -1,0 +1,12 @@
+{
+  "description": "Umbrielは天王星系の暗い双子である — Arielとほぼ同じ大きさだが、太陽光の反射は半分以下で、形成以来ほとんど再表面化の証拠を示さない古代のクレーター表面を持つ。際立った特徴はWundaであり、月の赤道付近に位置する直径131 kmのクレーターで、縁の周囲に明るい霜のような物質が取り囲んでいる。Umbrielの全体的な暗い色の原因は不明である。一つの仮説は、天王星の不規則な外側の衛星からの塵が内側の系を横切ることに関連付けている。",
+  "surface_composition": "水氷 + 炭素質に着色されたレゴリス。暗く、激しくクレーターが刻まれた表面 — 天王星の主要衛星の中で最も反射率が低い。顕著な例外:赤道付近の明るいWundaクレーター。",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "umbriel-wiki": "Wikipedia — Umbriel",
+    "umbriel-nasa": "NASA Science — Umbriel 概要",
+    "umbriel-voyager2": "NASA Voyager 2 — 天王星系画像"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "description": "Het gladste grote lichaam in het zonnestelsel — geen enkele berg op Europa komt hoger dan een paar honderd meter. Onder de 20 km dikke ijskorst ligt een mondiale zoutwateroceaan van ~100 km diep, die meer dan tweemaal zoveel water bevat als alle oceanen op aarde samen. Getijdenwerking van Jupiter houdt die oceaan vloeibaar en chemisch actief; signaturen in het magnetisch veld en Hubble-waarnemingen van pluimen suggereren dat materiaal uit de ondergrondse oceaan periodiek het oppervlak bereikt. NASA's Europa Clipper (onderweg) en ESA's JUICE zullen beide de ijsschil en oceaandynamiek nauwgezet bestuderen tot in de vroege jaren 2030.",
+  "surface_composition": "Korst van waterijs ~15–25 km dik, doorbroken door chaosterrein in een netwerk van boogvormige ruggen en lenticulae; zouten (waarschijnlijk magnesiumsulfaat + natriumchloride) kleuren het ijs roodbruin in de chaosgebieden.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — Europa",
+    "europa-nasa": "NASA Science — Europa overzicht",
+    "europa-clipper": "NASA Europa Clipper — missiesite",
+    "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "소행성대",
+  "kind": "주 소행성대 — 암석질 천체군",
+  "location": "화성과 목성 사이 · 태양으로부터 2.2–3.2 AU",
+  "population_estimate": "1 km 이상 천체 약 110만–190만 개, 100 m 이상 천체 수억 개",
+  "total_mass_relative": "≈ 달의 4 % (≈ Pluto의 3 %)",
+  "largest_members": [
+    "Ceres — 왜행성, 지름 ≈ 940 km, 소행성대 전체 질량의 약 3분의 1 차지",
+    "Vesta — 두 번째로 무거운 천체, 수소가 결핍된 암석질 분화 천체",
+    "Pallas — ≈ 510 km, 매우 기울어진 궤도",
+    "Hygiea — ≈ 430 km, 어두운 탄소질"
+  ],
+  "description": "행성으로 합쳐지지 못한 암석질 및 금속질 잔해들의 고리 — 목성의 중력이 내부 소행성대 물질을 너무 격렬하게 교란하여 파편화에 맞서 병합이 이루어질 수 없었습니다. 대부분의 소행성대 천체는 현무암질 또는 탄소질 콘드라이트이며, 지구에 떨어지는 운석의 모천체는 거의 모두 여기서 추적할 수 있습니다. 소행성대는 역학적으로 비어 있습니다 — 천체들 사이의 평균 거리는 수백만 킬로미터이며, 영화 속 밀집된 암석 지대가 아닙니다.",
+  "discovered": "1801년 — Giuseppe Piazzi가 팔레르모에서 Ceres를 발견, 처음엔 행성으로 분류되었으나, Pallas, Juno, Vesta가 뒤따라 발견되면서 Ceres가 여러 천체 중 하나임을 인식하게 되기까지 반세기가 걸렸습니다.",
+  "mission_visits": [
+    "Dawn — NASA, 2011 + 2015 (Vesta와 Ceres의 궤도 탐사)",
+    "Galileo — NASA, 1991 (Gaspra 플라이바이) + 1993 (Ida + Dactyl 발견)",
+    "Hayabusa2 — JAXA, 2018 (Ryugu 샘플 회수 — 지구 근접 소행성이지만 모천체는 주 소행성대에 위치)",
+    "Lucy — NASA, 2023 (Dinkinesh에서 첫 주 소행성대 조우)"
+  ],
+  "library_labels": {
+    "asteroid-belt-wiki": "Wikipedia — Asteroid Belt",
+    "asteroid-belt-nasa": "NASA Science — Asteroid Belt 개요",
+    "asteroid-belt-dawn": "NASA Dawn — Vesta와 Ceres의 궤도선",
+    "asteroid-belt-mpc": "Minor Planet Center — IAU 전체 소행성 목록"
+  }
+}

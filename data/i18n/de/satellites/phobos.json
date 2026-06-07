@@ -1,0 +1,15 @@
+{
+  "description": "Der größere und innere der beiden Marsmonde — ein unregelmäßig kartoffelförmiger Körper von gerade einmal 22 km an seiner breitesten Stelle. Phobos umkreist den Mars alle 7 Stunden 39 Minuten, schneller als der Mars selbst rotiert, sodass er von der Marsoberfläche aus gesehen zweimal pro Marstag im Westen aufgeht und im Osten untergeht. Seine Umlaufbahn zerfällt um ~2 cm pro Jahr; in 30–50 Millionen Jahren werden Gezeitenkräfte ihn entweder in einen vorübergehenden Ring zerreißen oder auf den Planeten stürzen lassen. Japans MMX-Mission (Start ~2026) wird Oberflächenproben zurückbringen.",
+  "surface_composition": "Stark verkraterter Körper ähnlich einem kohligen Chondriten, möglicherweise ein eingefangener Asteroid oder ein Akkretionsrest; die Oberfläche wird vom 9 km großen Stickney-Krater und parallelen Rillen dominiert, die wahrscheinlich mit Auswurfmaterial dieses Einschlags zusammenhängen.",
+  "mission_visits": [
+    "Viking 1 orbiter — USA, 1977 (first close-range imagery)",
+    "Mars Global Surveyor — USA, 1998 (high-resolution mapping)",
+    "Mars Express — ESA, 2010 (sub-100 m altitude flyby)"
+  ],
+  "library_labels": {
+    "phobos-wiki": "Wikipedia — Phobos",
+    "phobos-nasa": "NASA Science — Phobos im Überblick",
+    "phobos-mmx": "JAXA MMX — Probenrückführungsmission zu Phobos",
+    "phobos-hirise": "HiRISE — Phobos mit 0,25 m/px aus dem Marsorbit"
+  }
+}

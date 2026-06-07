@@ -1,0 +1,16 @@
+{
+  "description": "Il corpo di grandi dimensioni più liscio del sistema solare — su Europa nessuna montagna si eleva per più di poche centinaia di metri. Sotto la sua crosta di ghiaccio spessa 20 km si trova un oceano globale di acqua salata profondo ~100 km, che contiene più del doppio dell'acqua di tutti gli oceani terrestri messi insieme. La flessione mareale dovuta a Giove mantiene quell'oceano liquido e chimicamente attivo; le firme del campo magnetico e le osservazioni di pennacchi effettuate da Hubble suggeriscono che il materiale dell'oceano sotterraneo raggiunga periodicamente la superficie. Europa Clipper della NASA (in viaggio) e JUICE dell'ESA esamineranno entrambe il guscio di ghiaccio e la dinamica dell'oceano fino ai primi anni 2030.",
+  "surface_composition": "Crosta di ghiaccio d'acqua spessa ~15–25 km, fratturata dal terreno caotico in una rete di dorsali arcuate e lenticulae; i sali (probabilmente solfato di magnesio + cloruro di sodio) tingono il ghiaccio di rosso-bruno nelle regioni caotiche.",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — Europa",
+    "europa-nasa": "NASA Science — panoramica di Europa",
+    "europa-clipper": "NASA Europa Clipper — sito della missione",
+    "europa-juice": "ESA JUICE — Jupiter Icy Moons Explorer"
+  }
+}

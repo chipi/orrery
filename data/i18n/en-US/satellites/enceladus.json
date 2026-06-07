@@ -1,0 +1,14 @@
+{
+  "description": "Tiny — just 504 km across — but the most reflective body in the solar system and one of the strongest candidates for present-day habitability beyond Earth. Cassini flew directly through plumes erupting from four 130-km-long fractures at the south pole; the spectrometer detected molecular hydrogen, organics including methane, salts, and silica nanograins indicating active hydrothermal chemistry on the ocean floor. The ocean is in direct contact with rocky seafloor — the same energy and chemistry conditions that gave rise to life at Earth's own deep-sea hydrothermal vents.",
+  "surface_composition": "Pristine water-ice crust over a global subsurface ocean; south-polar 'tiger stripe' fractures venting plumes of water vapour, organics, salts, silica nanograins, and molecular hydrogen.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1981 (preliminary mapping)",
+    "Cassini — NASA/ESA/ASI, 2005–2015 (plume discovery + flight-through)"
+  ],
+  "library_labels": {
+    "enceladus-wiki": "Wikipedia — Enceladus",
+    "enceladus-nasa": "NASA Science — Enceladus overview",
+    "enceladus-cassini": "NASA Cassini — plume-flyby legacy archive",
+    "enceladus-habitability": "Astrobiology — Enceladus as life-search target"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "The most geologically active body in the solar system. Tidal heating from Jupiter's gravity plus orbital resonance with Europa and Ganymede pumps roughly 100 terawatts of heat into Io's interior — enough to drive ~400 simultaneously-active volcanoes and surface temperatures that swing from -130 °C (frozen sulfur dioxide) to +1,600 °C (ultra-mafic lava). Its surface is repainted faster than impact cratering can mark it. Loki Patera, a 200 km lava lake, is the single most powerful volcanic feature in the solar system.",
+  "surface_composition": "Sulfur + sulfur-dioxide frost over silicate crust; surface paint regularly resurfaced by volcanic flows — no impact craters survive long enough to be visible.",
+  "mission_visits": [
+    "Voyager 1 — USA, 1979 (discovered active volcanism)",
+    "Galileo orbiter — USA, 1995–2003 (multiple close flybys)",
+    "Juno — USA, 2023–2024 (closest-ever approaches)"
+  ],
+  "library_labels": {
+    "io-wiki": "Wikipedia — Io",
+    "io-nasa": "NASA Science — Io overview",
+    "io-juno": "NASA Juno — recent close flybys of Io",
+    "io-volcanism": "USGS — Io volcanic feature catalog"
+  }
+}

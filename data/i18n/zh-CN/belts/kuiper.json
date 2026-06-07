@@ -1,0 +1,26 @@
+{
+  "name": "柯伊伯带",
+  "kind": "海王星外天体 — 冰质群体",
+  "location": "海王星之外 · 距太阳30–50 AU",
+  "population_estimate": "超过10万个直径大于100 km的天体；估计有10⁹–10¹⁰个彗星大小的天体",
+  "total_mass_relative": "≈ 地球质量的4–10 %（为小行星带质量的200×）",
+  "largest_members": [
+    "Pluto — 矮行星，直径≈ 2,377 km，与Charon组成双星系统",
+    "Eris — 质量略大于Pluto，2005年发现（其发现促使Pluto被重新分类）",
+    "Makemake — ≈ 1,430 km，经典柯伊伯带天体",
+    "Haumea — 长轴≈ 1,560 km，快速自转并拥有环系统",
+    "Quaoar — ≈ 1,110 km，拥有一颗小卫星Weywot"
+  ],
+  "description": "一个巨大的冰质天体盘面 — 由水冰、甲烷冰和氨冰与嵌入的岩石构成 — 在海王星之外环绕太阳运行。柯伊伯带是短周期彗星（如Halley和Hartley 2）的源储库：来自海王星的引力扰动偶尔会将成员抛向内侧，太阳加热将冰转化为彗尾。与小行星带不同，柯伊伯带在动力学上并未耗尽 — 其质量较小并非因为木星将其驱散，而是因为在那些距离上从未完全发生过吸积。在经典柯伊伯带之外，离散盘和奥尔特云将这个冷储库延伸至数千AU。",
+  "discovered": "1992年 — David Jewitt和Jane Luu探测到1992 QB1（现编号15760 Albion），这是继Pluto + Charon之后第一个被确认的柯伊伯带天体。柯伊伯带本身由Gerard Kuiper在1951年预言，作为早期太阳系残留的盘面物质。",
+  "mission_visits": [
+    "New Horizons — NASA, 2015（Pluto + Charon飞掠）+ 2019（Arrokoth，首次近距离观测经典柯伊伯带天体）",
+    "Voyager 1 + Voyager 2 — NASA, 1980年代（在前往星际空间途中穿过柯伊伯带内缘；无定向遭遇）"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Kuiper Belt",
+    "kuiper-belt-nasa": "NASA Science — Kuiper Belt概述",
+    "kuiper-belt-newhorizons": "NASA New Horizons — Pluto + Arrokoth飞掠",
+    "kuiper-belt-mpc": "Minor Planet Center — TNO目录"
+  }
+}

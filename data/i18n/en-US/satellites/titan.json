@@ -1,0 +1,16 @@
+{
+  "description": "Second-largest moon in the solar system and the only moon with a substantial atmosphere — thicker than Earth's. Below the orange tholin haze sits the only known body besides Earth with stable liquid on its surface: hydrocarbon lakes and seas of methane and ethane in the polar regions, fed by an active methane hydrologic cycle that includes clouds, rain, and rivers carving water-ice bedrock. Huygens (ESA) made the first landing on a moon other than Earth's in 2005. NASA's Dragonfly will arrive in 2034 as a nuclear-powered rotorcraft, hopping between Titan's organic-rich landscapes.",
+  "surface_composition": "Water-ice bedrock under organic dunes + hydrocarbon lakes (methane / ethane) + a nitrogen-methane atmosphere 1.45× Earth's sea-level pressure. Tholin haze tints the sky orange.",
+  "mission_visits": [
+    "Pioneer 11 — USA, 1979 (first close imagery)",
+    "Voyager 1 — USA, 1980 (atmospheric profile)",
+    "Cassini–Huygens — NASA/ESA/ASI, 2004–2017 (orbital mapping + surface landing)",
+    "Dragonfly — USA, launch 2028 (rotorcraft lander)"
+  ],
+  "library_labels": {
+    "titan-wiki": "Wikipedia — Titan",
+    "titan-nasa": "NASA Science — Titan overview",
+    "titan-dragonfly": "NASA Dragonfly — nuclear rotorcraft mission to Titan",
+    "titan-huygens": "ESA Huygens — first landing on a moon other than ours"
+  }
+}

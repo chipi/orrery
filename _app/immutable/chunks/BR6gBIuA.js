@@ -1,0 +1,1 @@
+function h(o,r={}){const t=Number.isFinite(o)&&o>=0?Math.floor(o):0;if(r.withHours){const i=Math.floor(t/3600),s=Math.floor(t%3600/60),f=t%60;return`${i}:${s.toString().padStart(2,"0")}:${f.toString().padStart(2,"0")}`}const n=Math.floor(t/60),a=t%60;return`${n}:${a.toString().padStart(2,"0")}`}export{h as f};

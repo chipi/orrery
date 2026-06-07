@@ -1,0 +1,26 @@
+{
+  "name": "Cinturão de Kuiper",
+  "kind": "Trans-netuniano — população gelada",
+  "location": "Além de Netuno · 30–50 UA do Sol",
+  "population_estimate": "Mais de 100.000 corpos maiores que 100 km; estimados 10⁹–10¹⁰ objetos do tamanho de cometas",
+  "total_mass_relative": "≈ 4–10 % da Terra (200× a massa do cinturão de asteroides)",
+  "largest_members": [
+    "Pluto — planeta anão, ≈ 2.377 km de diâmetro, emparelhado com Charon como um sistema binário",
+    "Eris — ligeiramente mais massivo que Pluto, descoberto em 2005 (sua descoberta desencadeou a reclassificação de Pluto)",
+    "Makemake — ≈ 1.430 km, objeto clássico do Cinturão de Kuiper",
+    "Haumea — ≈ 1.560 km em seu eixo longo, rotator rápido com um sistema de anéis",
+    "Quaoar — ≈ 1.110 km, hospeda uma pequena lua Weywot"
+  ],
+  "description": "Um vasto disco de corpos gelados — água, metano e gelo de amônia com rocha incorporada — que orbita o Sol além de Netuno. O Cinturão de Kuiper é o reservatório de origem para cometas de curto período como Halley e Hartley 2: empurrões gravitacionais de Netuno ocasionalmente lançam membros para dentro, onde o aquecimento solar transforma os gelos em caudas. Ao contrário do cinturão de asteroides, o Cinturão de Kuiper não está dinamicamente esgotado — sua massa é pequena não porque Júpiter a dispersou, mas porque nada nunca se acretou completamente nessas distâncias. Além do Cinturão de Kuiper clássico, o disco disperso e a Nuvem de Oort estendem o reservatório frio até milhares de UA.",
+  "discovered": "1992 — David Jewitt e Jane Luu detectam 1992 QB1 (agora 15760 Albion), o primeiro objeto confirmado do Cinturão de Kuiper após Pluto + Charon. O próprio cinturão foi previsto em 1951 por Gerard Kuiper como o material remanescente do disco do sistema solar primitivo.",
+  "mission_visits": [
+    "New Horizons — NASA, 2015 (sobrevoo de Pluto + Charon) + 2019 (Arrokoth, primeira visão próxima de um objeto clássico do Cinturão de Kuiper)",
+    "Voyager 1 + Voyager 2 — NASA, década de 1980 (passaram pela borda interna do cinturão a caminho do espaço interestelar; sem encontros direcionados)"
+  ],
+  "library_labels": {
+    "kuiper-belt-wiki": "Wikipedia — Cinturão de Kuiper",
+    "kuiper-belt-nasa": "NASA Science — visão geral do Cinturão de Kuiper",
+    "kuiper-belt-newhorizons": "NASA New Horizons — sobrevoos de Pluto + Arrokoth",
+    "kuiper-belt-mpc": "Minor Planet Center — catálogo de TNO"
+  }
+}

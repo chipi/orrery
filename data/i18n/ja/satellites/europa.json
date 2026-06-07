@@ -1,0 +1,16 @@
+{
+  "description": "太陽系で最も滑らかな大型天体 — エウロパには数百メートルを超える山は存在しない。厚さ約20kmの氷殻の下には、深さ約100kmの全球的な塩水海洋が広がっており、地球の全海洋を合わせた量の2倍以上の水を蓄えている。木星による潮汐変形がこの海洋を液体に保ち、化学的に活発な状態に維持している。磁場の特徴やハッブル宇宙望遠鏡によるプルームの観測は、地下海洋の物質が周期的に地表に到達していることを示唆している。NASAのEuropa Clipper（航行中）とESAのJUICEは、2030年代初頭にかけて氷殻と海洋のダイナミクスを共に詳細に調査する。",
+  "surface_composition": "厚さ約15〜25kmの水氷地殻が、カオス地形によって弧状の尾根群とレンティキュラ（小円形地形）の網目状に分断されている。カオス領域では塩類（おそらく硫酸マグネシウム＋塩化ナトリウム）が氷を赤褐色に染めている。",
+  "mission_visits": [
+    "Voyager 1 + 2 — USA, 1979 (mapping)",
+    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
+    "Juno — USA, 2022 (closest pass since Galileo)",
+    "Europa Clipper — USA, launch 2024 (mission underway)"
+  ],
+  "library_labels": {
+    "europa-wiki": "Wikipedia — エウロパ",
+    "europa-nasa": "NASA Science — エウロパ概説",
+    "europa-clipper": "NASA Europa Clipper — ミッションサイト",
+    "europa-juice": "ESA JUICE — 木星氷衛星探査機"
+  }
+}

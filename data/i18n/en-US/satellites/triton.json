@@ -1,0 +1,13 @@
+{
+  "description": "Neptune's largest moon and one of the most geologically active worlds in the solar system. Triton orbits Neptune backwards (retrograde) and at an extreme tilt — diagnostic of a captured Kuiper Belt object, making it likely a sibling of Pluto rather than a native Neptunian moon. Voyager 2 detected active nitrogen geysers venting dark organic dust 8 km into a tenuous nitrogen atmosphere; the southern hemisphere features 'cantaloupe terrain' — a network of dimples and ridges seen nowhere else in the solar system. Triton's retrograde orbit is decaying tidally; in roughly 3.6 Gyr it will either be torn into a Saturn-like ring or crash into Neptune.",
+  "surface_composition": "Frozen nitrogen + water ice + carbon dioxide ice; surface covered with cantaloupe-textured terrain unique in the solar system, and active nitrogen cryogeysers venting dark plumes 8 km into a thin nitrogen atmosphere.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1989 (closest approach ~40,000 km)"
+  ],
+  "library_labels": {
+    "triton-wiki": "Wikipedia — Triton",
+    "triton-nasa": "NASA Science — Triton overview",
+    "triton-voyager2": "NASA Voyager 2 — Neptune-system encounter (1989)",
+    "triton-trident": "Trident — proposed Discovery-class Triton flyby"
+  }
+}

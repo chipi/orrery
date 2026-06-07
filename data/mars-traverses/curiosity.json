@@ -3,7 +3,7 @@
   "agency": "NASA",
   "status": "ACTIVE",
   "snapshot_date": "2025-12-15",
-  "credit": "© NASA/JPL-Caltech — Curiosity rover traverse, simplified hand-vendored polyline approximating the rover's path through Gale Crater from Bradbury Landing (Aug 2012) toward the upper slopes of Mt. Sharp. V1 stub for visual continuity; refresh from NASA MSL Analyst's Notebook for high-fidelity coordinates.",
+  "credit": "\u00a9 NASA/JPL-Caltech \u2014 Curiosity rover traverse, simplified hand-vendored polyline approximating the rover's path through Gale Crater from Bradbury Landing (Aug 2012) toward the upper slopes of Mt. Sharp. V1 stub for visual continuity; refresh from NASA MSL Analyst's Notebook for high-fidelity coordinates.",
   "points": [
     [
       -4.5895,
@@ -128,35 +128,40 @@
       "lat": -4.59559,
       "lon": 137.43158,
       "label": "John Klein drill",
-      "kind": "drill"
+      "kind": "drill",
+      "id": "sol-270"
     },
     {
       "sol": 1000,
       "lat": -4.61205,
       "lon": 137.41987,
       "label": "Marias Pass",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-1000"
     },
     {
       "sol": 1647,
       "lat": -4.63069,
       "lon": 137.41623,
       "label": "Murray Buttes",
-      "kind": "panorama"
+      "kind": "panorama",
+      "id": "sol-1647"
     },
     {
       "sol": 2300,
       "lat": -4.65382,
       "lon": 137.3938,
       "label": "Vera Rubin Ridge",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-2300"
     },
     {
       "sol": 3500,
       "lat": -4.67289,
       "lon": 137.38132,
       "label": "Greenheugh Pediment",
-      "kind": "feature"
+      "kind": "feature",
+      "id": "sol-3500"
     }
   ]
 }

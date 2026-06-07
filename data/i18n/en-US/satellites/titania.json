@@ -1,0 +1,12 @@
+{
+  "description": "The largest moon of Uranus and eighth-largest in the solar system. Voyager 2 imagery revealed a surface cut by enormous canyon systems — Messina Chasma alone stretches 1,500 km across the southern hemisphere — alongside large impact basins and the small fresh-looking Ursula crater. A 2017 stellar occultation tentatively detected a thin carbon-dioxide atmosphere, which would be the first atmosphere found on a Uranian moon.",
+  "surface_composition": "Water-ice + silicate rock; ancient cratered terrain cut by vast canyon systems hundreds of kilometres long — Messina Chasma stretches ~1,500 km across the moon.",
+  "mission_visits": [
+    "Voyager 2 — USA, 1986 (southern-hemisphere flyby)"
+  ],
+  "library_labels": {
+    "titania-wiki": "Wikipedia — Titania",
+    "titania-nasa": "NASA Science — Titania overview",
+    "titania-voyager2": "NASA Voyager 2 — Uranian-system imagery"
+  }
+}

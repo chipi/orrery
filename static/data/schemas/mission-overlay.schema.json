@@ -5,7 +5,7 @@
   "description": "Editorial overlay per mission per locale (ADR-017, ADR-020). One file per mission per locale at data/i18n/[locale]/missions/[dest]/[id].json. Merged with the base record at fetch time.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["name", "type", "first", "description", "events"],
+  "required": ["name", "type", "first", "description"],
   "properties": {
     "name": { "type": "string", "minLength": 1 },
     "type": { "type": "string", "minLength": 1 },

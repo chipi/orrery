@@ -258,6 +258,7 @@
   "panel_dist_row": "⟦ ⟧ M km from Sun ; rotation {rot} days ⟧",
   "panel_source_iau": "المصدر: IAU · JPL Planetary Fact Sheets ; J2000 epoch",
   "panel_plan_mission_cta": "بعثة إلى",
+  "panel_explore_surface_cta": "▷ استكشف سطح {name}",
   "sun_label_spectral_class": "SPECTRAL CLASS",
   "sun_label_system_mass": "SYSTEM MASS",
   "sun_label_radius": "RADIUS",

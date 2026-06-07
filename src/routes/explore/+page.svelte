@@ -1154,6 +1154,35 @@
     },
   };
   let focusedStats = $derived(selectedId ? (PLANET_STATS[selectedId] ?? null) : null);
+
+  // Satellite stats for the Earth-for-scale widget when a moon is
+  // selected. Real diameters in km. Keyed by satellite id (without
+  // the parent-planet prefix used in selectedSatelliteKey). Only
+  // diameter info is needed today — the tactical-scan overlay still
+  // gates on `focusedOnPlanet` so the gravity / atmo / temp rows
+  // stay planet-only. Earth = 12 742 km.
+  const SATELLITE_STATS: Record<string, { diameterKm: number; diameterRatioEarth: number }> = {
+    moon: { diameterKm: 3474, diameterRatioEarth: 0.273 },
+    phobos: { diameterKm: 22.4, diameterRatioEarth: 0.00176 },
+    deimos: { diameterKm: 12.4, diameterRatioEarth: 0.00097 },
+    io: { diameterKm: 3643, diameterRatioEarth: 0.286 },
+    europa: { diameterKm: 3122, diameterRatioEarth: 0.245 },
+    ganymede: { diameterKm: 5268, diameterRatioEarth: 0.413 },
+    callisto: { diameterKm: 4821, diameterRatioEarth: 0.378 },
+    titan: { diameterKm: 5150, diameterRatioEarth: 0.404 },
+    enceladus: { diameterKm: 504, diameterRatioEarth: 0.04 },
+    miranda: { diameterKm: 471, diameterRatioEarth: 0.037 },
+    ariel: { diameterKm: 1158, diameterRatioEarth: 0.091 },
+    umbriel: { diameterKm: 1169, diameterRatioEarth: 0.092 },
+    titania: { diameterKm: 1577, diameterRatioEarth: 0.124 },
+    oberon: { diameterKm: 1523, diameterRatioEarth: 0.12 },
+    triton: { diameterKm: 2706, diameterRatioEarth: 0.212 },
+  };
+  let focusedSatelliteStats = $derived.by(() => {
+    if (!selectedSatelliteKey) return null;
+    const satId = selectedSatelliteKey.split(':')[1] ?? '';
+    return SATELLITE_STATS[satId] ?? null;
+  });
   let focusedRotationHours = $derived(
     selectedId ? (PLANETS.find((p) => p.id === selectedId)?.rotationHours ?? null) : null,
   );
@@ -4298,6 +4327,13 @@
       {#if focusedOnPlanet && selectedId && selectedId !== 'earth' && focusedStats}
         EARTH FOR SCALE<br />
         <span class="ratio">{focusedStats.diameterRatioEarth.toFixed(2)}× diameter</span>
+      {:else if focusedSatelliteStats}
+        EARTH FOR SCALE<br />
+        <span class="ratio"
+          >{focusedSatelliteStats.diameterRatioEarth < 0.01
+            ? focusedSatelliteStats.diameterRatioEarth.toFixed(4)
+            : focusedSatelliteStats.diameterRatioEarth.toFixed(2)}× diameter</span
+        >
       {:else}
         {m.explore_sizes_toggle()}<br />
         <span class="ratio">PLANET SCALES</span>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
+  import { base } from '$app/paths';
   import { getPlanetGallery } from '$lib/data';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
@@ -380,6 +381,14 @@
         </button>
       </div>
     {/if}
+
+    {#if planet.id === 'earth' || planet.id === 'mars'}
+      <div class="cta-bar">
+        <a class="cta cta-secondary" href="{base}/{planet.id}">
+          {m.panel_explore_surface_cta({ name: planet.name.toUpperCase() })}
+        </a>
+      </div>
+    {/if}
   {/if}
 </Panel>
 
@@ -544,6 +553,25 @@
     background: #2244dd;
     border-color: #4466ff;
     outline: none;
+  }
+  /* Secondary CTA — anchor styled like the primary button, but with
+     a subdued surface so it reads as the second option below the
+     primary mission-planning CTA (or as a standalone link when the
+     primary isn't shown). */
+  .cta-secondary {
+    background: transparent;
+    border-color: rgba(68, 102, 255, 0.55);
+    color: #dde4ff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cta-secondary:hover,
+  .cta-secondary:focus-visible {
+    background: rgba(68, 102, 255, 0.15);
+    border-color: #4466ff;
+    color: #fff;
   }
 
   /* GALLERY + LEARN tab CSS moved to src/lib/styles/panel-tabs.css (v0.1.10) */

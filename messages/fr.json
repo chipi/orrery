@@ -134,6 +134,7 @@
   "panel_dist_row": "{mkm} M km du Soleil · rotation {rot} jours",
   "panel_source_iau": "Source : IAU · JPL Planetary Fact Sheets · époque J2000",
   "panel_plan_mission_cta": "▶ PLANIFIER UNE MISSION VERS {name}",
+  "panel_explore_surface_cta": "▷ EXPLORER LA SURFACE DE {name}",
   "sun_label_spectral_class": "CLASSE SPECTRALE",
   "sun_label_system_mass": "MASSE DU SYSTÈME",
   "sun_label_radius": "RAYON",

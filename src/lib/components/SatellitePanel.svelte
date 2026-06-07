@@ -221,6 +221,13 @@
         {/if}
       {/if}
     </div>
+    {#if entry?.id === 'moon'}
+      <div class="cta-bar">
+        <a class="cta cta-secondary" href="{base}/moon">
+          {m.panel_explore_surface_cta({ name: entry.name.toUpperCase() })}
+        </a>
+      </div>
+    {/if}
   {/if}
 </Panel>
 
@@ -399,6 +406,41 @@
   .learn-list a:hover,
   .learn-list a:focus-visible {
     background: rgba(78, 205, 196, 0.12);
+    outline: none;
+  }
+  .cta-bar {
+    padding: 12px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+    margin-top: 12px;
+  }
+  .cta {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta-secondary {
+    background: transparent;
+    border: 1px solid rgba(68, 102, 255, 0.55);
+    color: #dde4ff;
+    text-decoration: none;
+  }
+  .cta-secondary:hover,
+  .cta-secondary:focus-visible {
+    background: rgba(68, 102, 255, 0.15);
+    border-color: #4466ff;
+    color: #fff;
     outline: none;
   }
 </style>

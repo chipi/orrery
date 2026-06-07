@@ -102,13 +102,21 @@ const LABEL_PIXEL_OFFSET = 10;
 // the user singles one out by hovering its legend row or any waypoint
 // marker. The bright state pops to full intensity for high contrast
 // against its now-faded siblings.
-const LINE_OPACITY_DIM = 0.16;
+const LINE_OPACITY_DIM = 0.1;
 const LINE_OPACITY_BRIGHT = 0.95;
-const MARKER_OPACITY_DIM = 0.28;
+// Encounter + Launch markers vanish almost completely when dim — the
+// PATHS layer reads as faint heliocentric lines until a mission is
+// hovered, at which point its markers + labels surge in. Hover
+// detection still hits the markers because their sprite bounding box
+// is raycastable regardless of pixel opacity.
+const MARKER_OPACITY_DIM = 0.1;
 const MARKER_OPACITY_BRIGHT = 1.0;
-const CLICK_TARGET_OPACITY_DIM = 0.35;
+// Today's click target stays a hair more visible than the encounter
+// markers — it's the anchor "current position" pip per mission, also
+// the click target for opening the inline MissionPanel.
+const CLICK_TARGET_OPACITY_DIM = 0.32;
 const CLICK_TARGET_OPACITY_BRIGHT = 1.0;
-const RING_OPACITY_DIM = 0.1;
+const RING_OPACITY_DIM = 0.08;
 const RING_OPACITY_BRIGHT = 0.55;
 
 /**

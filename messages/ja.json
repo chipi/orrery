@@ -258,6 +258,7 @@
   "panel_dist_row": "⟦00 M km から 太陽・回転 {rot} 日",
   "panel_source_iau": "出典:IAU・JPL惑星事実シート・J2000エポック",
   "panel_plan_mission_cta": "▶ PLAN A ミッション へ {name}",
+  "panel_explore_surface_cta": "▷ {name}の表面を探索",
   "sun_label_spectral_class": "SPECTRALクラス",
   "sun_label_system_mass": "システムマス",
   "sun_label_radius": "ラディウス",

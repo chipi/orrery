@@ -292,6 +292,7 @@
   "panel_dist_row": "{mkm} M km from Sun · rotation {rot} days",
   "panel_source_iau": "Source: IAU · JPL Planetary Fact Sheets · J2000 epoch",
   "panel_plan_mission_cta": "▶ PLAN A MISSION TO {name}",
+  "panel_explore_surface_cta": "▷ EXPLORE {name} SURFACE",
   "sun_label_spectral_class": "SPECTRAL CLASS",
   "sun_label_system_mass": "SYSTEM MASS",
   "sun_label_radius": "RADIUS",

@@ -79,6 +79,7 @@
   } from '$lib/interplanetary-events';
   import { markerStateFor, type RevealResult } from '$lib/cislunar-marker-reveal';
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
+  import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import { AU_TO_KM, MOON_VISUAL_DISTANCE } from '$lib/fly-physics-constants';
   import { onReducedMotionChange, prefersReducedMotion } from '$lib/reduced-motion';
   import type { Mission, MissionEvent } from '$types/mission';
@@ -290,6 +291,62 @@
     phaseMarkers.length > 0 || interplanetaryPhaseMarkers.length > 0,
   );
   let phaseMarkerScreens: PhaseMarkerRenderState[] = $state.raw([]);
+
+  /** FlightDirectorBanner phase boundaries (arcProgress thresholds), used
+   *  to drop a gold marker on the trajectory at each phase the banner
+   *  narrates. Thresholds mirror the FD banner's own `phase` derivation
+   *  in FlightDirectorBanner.svelte — keep the two in sync. The
+   *  `arcThreshold` is the moment the FD switches INTO that phase, so
+   *  a marker placed there reads "this is where FD started talking
+   *  about <phase>". CRUISE gets a mid-cruise position (0.45) instead
+   *  of its FD-entry boundary (0.10, same as injection) because the
+   *  cruise span dominates the arc and a marker at the start would
+   *  overlap injection. */
+  interface FdPhaseBoundary {
+    id: 'departure' | 'injection' | 'cruise' | 'approach' | 'arrival';
+    arcThreshold: number;
+    arcPosition: number;
+    label: () => string;
+  }
+  const FD_PHASE_BOUNDARIES: FdPhaseBoundary[] = [
+    {
+      id: 'departure',
+      arcThreshold: 0.0,
+      arcPosition: 0.0,
+      label: () => m.fly_fd_marker_departure(),
+    },
+    {
+      id: 'injection',
+      arcThreshold: 0.02,
+      arcPosition: 0.1,
+      label: () => m.fly_fd_marker_injection(),
+    },
+    {
+      id: 'cruise',
+      arcThreshold: 0.1,
+      arcPosition: 0.45,
+      label: () => m.fly_fd_marker_cruise(),
+    },
+    {
+      id: 'approach',
+      arcThreshold: 0.8,
+      arcPosition: 0.85,
+      label: () => m.fly_fd_marker_approach(),
+    },
+    {
+      id: 'arrival',
+      arcThreshold: 0.95,
+      arcPosition: 1.0,
+      label: () => m.fly_fd_marker_arrival(),
+    },
+  ];
+  interface FdPhaseMarkerRender {
+    id: FdPhaseBoundary['id'];
+    label: string;
+    screen: ScreenPoint;
+    revealed: boolean;
+  }
+  let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
 
   // defaultEventLabel: extracted to $lib/fly-event-labels (W9 / #279).
   let simSpeed = $state(7); // days/sec
@@ -1890,17 +1947,17 @@
     moonMesh.visible = false;
     scene.add(moonMesh);
 
-    // Spacecraft — small camera-facing sprite glyph at sc.pos. Solid
-    // red filled circle with a thin dark outline + soft glow halo:
-    // - The chevron previous design was rotation-dependent and read
-    //   "wrong direction" against curved arcs. A circle has no
-    //   orientation, so it always reads cleanly.
-    // - Red (#ff3a4c) is distinct from every phase colour (yellow
-    //   tli_coast, blue parking/spiral_earth, purple lunar_orbit/
-    //   spiral_lunar, green tei_coast, pink-red descent/ascent) so
-    //   the spacecraft never blends into its trail.
+    // Spacecraft — small camera-facing sprite glyph at sc.pos. Satellite
+    // billboard: red rounded body + two gold solar-panel wings + a tiny
+    // white antenna stub, surrounded by a soft red glow halo. Rendered
+    // as a THREE.Sprite so it's always face-camera — no orbital
+    // rotation math, sidestepping the chevron's "wrong direction"
+    // problem on curved arcs. The red body preserves the visibility
+    // the prior circle gave; the gold wings carry the spacecraft
+    // identity, matching the FD banner palette.
     const SC_GLYPH_PX = 64;
-    const SC_COLOR = '#ff3a4c';
+    const SC_COLOR_BODY = '#ff3a4c';
+    const SC_COLOR_PANEL = '#ffc850';
     const scTexCanvas = document.createElement('canvas');
     scTexCanvas.width = SC_GLYPH_PX;
     scTexCanvas.height = SC_GLYPH_PX;
@@ -1909,39 +1966,90 @@
       tctx.clearRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
       const cx = SC_GLYPH_PX / 2;
       const cy = SC_GLYPH_PX / 2;
+
       // Soft glow halo for visibility against bright trajectory tubes.
       const glow = tctx.createRadialGradient(cx, cy, 4, cx, cy, SC_GLYPH_PX / 2);
-      glow.addColorStop(0, 'rgba(255,58,76,0.4)');
-      glow.addColorStop(1, 'rgba(255,58,76,0)');
+      glow.addColorStop(0, 'rgba(255,90,90,0.42)');
+      glow.addColorStop(1, 'rgba(255,90,90,0)');
       tctx.fillStyle = glow;
       tctx.fillRect(0, 0, SC_GLYPH_PX, SC_GLYPH_PX);
-      // Outline (dark) — gives definition against bright phases too.
+
+      // Geometry — proportions match the SVG mock (viewBox 40×32).
+      // body: 12×14 centered on (cx,cy)
+      // panels: 10×10 squares flanking the body, gap 2u
+      // antenna: vertical stub above the body
+      const bodyW = SC_GLYPH_PX * 0.3;
+      const bodyH = SC_GLYPH_PX * 0.35;
+      const panelW = SC_GLYPH_PX * 0.25;
+      const panelH = SC_GLYPH_PX * 0.25;
+      const gap = SC_GLYPH_PX * 0.05;
+      const bodyX = cx - bodyW / 2;
+      const bodyY = cy - bodyH / 2;
+      const lPanelX = bodyX - gap - panelW;
+      const rPanelX = bodyX + bodyW + gap;
+      const panelY = cy - panelH / 2;
+
+      // Solar panels — filled gold, outlined white, with a center spar
+      // line that reads as the panel join.
+      function drawPanel(px: number) {
+        tctx.fillStyle = SC_COLOR_PANEL;
+        tctx.globalAlpha = 0.85;
+        tctx.fillRect(px, panelY, panelW, panelH);
+        tctx.globalAlpha = 1;
+        tctx.strokeStyle = 'rgba(255,255,255,0.85)';
+        tctx.lineWidth = 1;
+        tctx.strokeRect(px + 0.5, panelY + 0.5, panelW - 1, panelH - 1);
+        tctx.beginPath();
+        tctx.moveTo(px + panelW / 2, panelY + 1);
+        tctx.lineTo(px + panelW / 2, panelY + panelH - 1);
+        tctx.strokeStyle = 'rgba(255,255,255,0.55)';
+        tctx.stroke();
+      }
+      drawPanel(lPanelX);
+      drawPanel(rPanelX);
+
+      // Antenna stub above the body — thin line + tiny disc tip.
+      const antTopY = bodyY - SC_GLYPH_PX * 0.1;
       tctx.beginPath();
-      tctx.arc(cx, cy, SC_GLYPH_PX * 0.22, 0, Math.PI * 2);
-      tctx.fillStyle = 'rgba(20,8,12,0.9)';
+      tctx.moveTo(cx, bodyY);
+      tctx.lineTo(cx, antTopY);
+      tctx.strokeStyle = 'rgba(255,255,255,0.9)';
+      tctx.lineWidth = 1.4;
+      tctx.stroke();
+      tctx.beginPath();
+      tctx.arc(cx, antTopY, SC_GLYPH_PX * 0.025, 0, Math.PI * 2);
+      tctx.fillStyle = '#fff';
       tctx.fill();
-      // Core disc — solid red.
+
+      // Central body — red rounded rectangle with a thin white outline.
+      // The red core preserves the "I am the spacecraft" visibility the
+      // old circle provided.
+      const r = 3;
       tctx.beginPath();
-      tctx.arc(cx, cy, SC_GLYPH_PX * 0.18, 0, Math.PI * 2);
-      tctx.fillStyle = SC_COLOR;
+      tctx.moveTo(bodyX + r, bodyY);
+      tctx.lineTo(bodyX + bodyW - r, bodyY);
+      tctx.quadraticCurveTo(bodyX + bodyW, bodyY, bodyX + bodyW, bodyY + r);
+      tctx.lineTo(bodyX + bodyW, bodyY + bodyH - r);
+      tctx.quadraticCurveTo(bodyX + bodyW, bodyY + bodyH, bodyX + bodyW - r, bodyY + bodyH);
+      tctx.lineTo(bodyX + r, bodyY + bodyH);
+      tctx.quadraticCurveTo(bodyX, bodyY + bodyH, bodyX, bodyY + bodyH - r);
+      tctx.lineTo(bodyX, bodyY + r);
+      tctx.quadraticCurveTo(bodyX, bodyY, bodyX + r, bodyY);
+      tctx.closePath();
+      tctx.fillStyle = SC_COLOR_BODY;
       tctx.shadowColor = 'rgba(255,58,76,0.8)';
       tctx.shadowBlur = 4;
       tctx.fill();
-      // Inner highlight — slight gradient for depth.
-      const innerGlow = tctx.createRadialGradient(
-        cx - SC_GLYPH_PX * 0.05,
-        cy - SC_GLYPH_PX * 0.05,
-        0,
-        cx,
-        cy,
-        SC_GLYPH_PX * 0.18,
-      );
-      innerGlow.addColorStop(0, 'rgba(255,200,200,0.7)');
-      innerGlow.addColorStop(1, 'rgba(255,200,200,0)');
       tctx.shadowBlur = 0;
-      tctx.fillStyle = innerGlow;
+      tctx.strokeStyle = 'rgba(255,255,255,0.85)';
+      tctx.lineWidth = 1;
+      tctx.stroke();
+
+      // Small white pip at body center to read as the bus's "active"
+      // indicator at very small sizes (camera far away).
       tctx.beginPath();
-      tctx.arc(cx, cy, SC_GLYPH_PX * 0.18, 0, Math.PI * 2);
+      tctx.arc(cx, cy, SC_GLYPH_PX * 0.035, 0, Math.PI * 2);
+      tctx.fillStyle = 'rgba(255,255,255,0.95)';
       tctx.fill();
     }
     const scTex = new THREE.CanvasTexture(scTexCanvas);
@@ -3672,19 +3780,27 @@
         // camera + canvas size, then write the resulting
         // PhaseMarkerRenderState[] in a single $state.raw assignment so
         // the template re-renders once per frame.
-        if (hasPhaseMarkers && container) {
+        // Shared Vector3 factory for the two marker pipelines below.
+        // Hoisted out of the `if (hasPhaseMarkers)` guard so the FD
+        // marker projection (later) can reuse it without depending on
+        // whether the mission has a flight.events[] roster.
+        const factory =
+          container == null
+            ? null
+            : (x: number, y: number, z: number): MinimalProjector => {
+                const v = new THREE.Vector3(x, y, z);
+                return {
+                  project(cam) {
+                    v.project(cam as unknown as THREE.Camera);
+                    return v;
+                  },
+                };
+              };
+
+        if (hasPhaseMarkers && container && factory) {
           const cw = container.clientWidth;
           const ch = container.clientHeight;
           const simMet = simDay - mission.timeline.dep_day;
-          const factory = (x: number, y: number, z: number): MinimalProjector => {
-            const v = new THREE.Vector3(x, y, z);
-            return {
-              project(cam) {
-                v.project(cam as unknown as THREE.Camera);
-                return v;
-              },
-            };
-          };
           const next: PhaseMarkerRenderState[] = [];
           // Moon path: ECI km → CSS pixels via the cislunar camera.
           if (viewMode === 'cislunar' && phaseMarkers.length > 0) {
@@ -3714,6 +3830,32 @@
           phaseMarkerScreens = next;
         } else if (phaseMarkerScreens.length > 0) {
           phaseMarkerScreens = [];
+        }
+
+        // FlightDirectorBanner phase markers (heliocentric only — Moon
+        // missions already have the cislunar PhaseMarker pipeline). Same
+        // projection path as `interplanetaryPhaseMarkers`; positions are
+        // sampled from outPts at each boundary's arcPosition.
+        if (viewMode === 'heliocentric' && outPts.length >= 2 && container && factory) {
+          const fdNext: FdPhaseMarkerRender[] = [];
+          const cwFd = container.clientWidth;
+          const chFd = container.clientHeight;
+          for (const b of FD_PHASE_BOUNDARIES) {
+            const idx = Math.max(
+              0,
+              Math.min(outPts.length - 1, Math.round(b.arcPosition * (outPts.length - 1))),
+            );
+            const pt = outPts[idx];
+            fdNext.push({
+              id: b.id,
+              label: b.label(),
+              screen: helioAuToScreenPx({ x: pt.x, y: 0, z: pt.z }, factory, camera, cwFd, chFd),
+              revealed: arcProgress >= b.arcThreshold,
+            });
+          }
+          fdPhaseMarkerScreens = fdNext;
+        } else if (fdPhaseMarkerScreens.length > 0) {
+          fdPhaseMarkerScreens = [];
         }
       } else draw2d();
     };
@@ -3841,6 +3983,29 @@
     </div>
   {/if}
 
+  <!-- FlightDirectorBanner phase markers — gold dots + labels at the 5
+       narrative-phase boundaries (departure/injection/cruise/approach/
+       arrival). Lens-gated like FD itself: showFlightDirector mirrors
+       the Science Lens, so the markers and the banner appear together.
+       Hidden in 2D mode for now (heliocentric projection only). -->
+  {#if showFlightDirector && view === '3d' && fdPhaseMarkerScreens.length > 0}
+    <div
+      class="fd-phase-markers-overlay"
+      data-testid="fd-phase-markers-overlay"
+      data-marker-count={fdPhaseMarkerScreens.length}
+    >
+      {#each fdPhaseMarkerScreens as marker (marker.id)}
+        <FdPhaseMarkerLabel
+          screenX={marker.screen.x}
+          screenY={marker.screen.y}
+          onScreen={marker.screen.onScreen}
+          label={marker.label}
+          revealed={marker.revealed}
+        />
+      {/each}
+    </div>
+  {/if}
+
   <!-- Hidden render-state hook (Layer 2 of /fly validation strategy,
        ADR-030 follow-up). Mirrors the live spacecraft + arc + HUD state
        into DOM attributes so Playwright can introspect render
@@ -3940,26 +4105,22 @@
         <span class="hud-val">{m.fly_hud_kms({ value: heliocentricKms.toFixed(2) })}</span>
       </div>
       <div class="hud-row">
-        <span class="hud-key">{m.fly_hud_dist_earth()}</span>
-        <span class="hud-val"
-          >{m.fly_hud_mkm({
-            value: distFromEarthMkm < 1 ? distFromEarthMkm.toFixed(2) : distFromEarthMkm.toFixed(0),
-          })}</span
-        >
-      </div>
-      <div class="hud-row">
         <span class="hud-key"
-          >·<ScienceChip
+          >{m.fly_hud_dist_earth()}<ScienceChip
             tab="scales-time"
             section="light-minute"
             label={m.chip_label_light_minute()}
           /></span
         >
-        <span class="hud-val dim"
-          >{m.fly_hud_lmin({
-            value: signalDelayMin < 1 ? signalDelayMin.toFixed(2) : signalDelayMin.toFixed(1),
-          })}</span
-        >
+        <span class="hud-val">
+          {m.fly_hud_mkm({
+            value: distFromEarthMkm < 1 ? distFromEarthMkm.toFixed(2) : distFromEarthMkm.toFixed(0),
+          })}<span class="hud-val-sub"
+            >&nbsp;·&nbsp;{m.fly_hud_lmin({
+              value: signalDelayMin < 1 ? signalDelayMin.toFixed(2) : signalDelayMin.toFixed(1),
+            })}</span
+          >
+        </span>
       </div>
       {#if !isMoonMission}
         <div class="hud-row">
@@ -4331,6 +4492,15 @@
     pointer-events: none;
     z-index: 11;
   }
+  /* FD-phase marker overlay — same shape as phase-markers-overlay above;
+     sits a notch higher in z so it draws on top of the cislunar/inter-
+     planetary event labels if a mission happens to have both. */
+  .fd-phase-markers-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 13;
+  }
 
   /* Bottom strips row — centered band above the timeline scrubber
      that holds FlightDirectorBanner + ConicSectionPanel side-by-side
@@ -4469,13 +4639,21 @@
     line-height: 1.4;
   }
   .hud-demo-cta {
-    align-self: flex-start;
+    /* Stretch to fill the HUD column so both CTAs share an identical
+       width — was align-self:flex-start which sized each button to its
+       content and made "Plan a real mission →" wider than "Replay…"
+       (and pushed the arrow on the longer label onto a second line on
+       narrow viewports). text-align:center + white-space:nowrap keep
+       the arrow tight against the label inside the equal-width box. */
+    align-self: stretch;
     padding: 6px 10px;
     margin-bottom: 4px;
     background: rgba(68, 102, 255, 0.18);
     border: 1px solid rgba(68, 102, 255, 0.55);
     color: #fff;
     text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
     border-radius: 3px;
     font-family: 'Space Mono', monospace;
     font-size: 9px;
@@ -4554,6 +4732,11 @@
   }
   .hud-val.teal {
     color: #4ecdc4;
+  }
+  /* Dim continuation inside a value cell (e.g. light-minute alongside Mkm). */
+  .hud-val-sub {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
   }
 
   .dv-bar {

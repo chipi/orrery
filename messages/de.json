@@ -1103,5 +1103,10 @@
   "plan_view_in_fleet": "View {label} in Fleet",
   "plan_destination_vesta": "Vesta",
   "plan_destination_psyche": "Psyche",
-  "plan_destination_bennu": "Bennu"
+  "plan_destination_bennu": "Bennu",
+  "fly_fd_marker_departure": "Departure",
+  "fly_fd_marker_injection": "Injection",
+  "fly_fd_marker_cruise": "Cruise",
+  "fly_fd_marker_approach": "Approach",
+  "fly_fd_marker_arrival": "Arrival"
 }

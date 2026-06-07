@@ -48,17 +48,17 @@
     <dl class="rows">
       <div class="row">
         <dt>
-          <ScienceChip tab="orbits" section="vis-viva" label={m.chip_label_vis_viva()} />SPEED
+          SPEED<ScienceChip tab="orbits" section="vis-viva" label={m.chip_label_vis_viva()} />
         </dt>
         <dd>{heliocentricKms.toFixed(2)} km/s</dd>
       </div>
       <div class="row">
         <dt>
-          <ScienceChip
+          FROM EARTH<ScienceChip
             tab="scales-time"
             section="light-minute"
             label={m.chip_label_light_minute()}
-          />FROM EARTH
+          />
         </dt>
         <dd>{distFromEarthAu.toFixed(3)} AU · {lightMinFromEarth.toFixed(1)} l-min</dd>
       </div>
@@ -68,7 +68,7 @@
       </div>
       <div class="row">
         <dt>
-          <ScienceChip tab="mission-phases" section="met" label={m.chip_label_met()} />MET
+          MET<ScienceChip tab="mission-phases" section="met" label={m.chip_label_met()} />
         </dt>
         <dd>{Math.round(metDays).toLocaleString()} d</dd>
       </div>
@@ -112,11 +112,16 @@
     align-items: baseline;
     gap: 8px;
   }
+  /* Match the .hud-key / .hud-val typography in /fly's upper panels so
+     this card reads as part of the same column rather than a different
+     family (was 8px/1px letter-spacing/0.55 alpha vs the rest at
+     7px/2px/0.35 — looked off when stacked together). */
   .row dt {
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 7px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.35);
     margin: 0;
     display: inline-flex;
     align-items: baseline;
@@ -124,8 +129,9 @@
   }
   .row dd {
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.92);
+    font-size: 9px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
   }
 </style>

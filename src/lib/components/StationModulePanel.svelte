@@ -475,6 +475,56 @@
     width: 100%;
     height: auto;
   }
+  /* LEARN tab — link-tier list. The global rules in panel-tabs.css
+     weren't applying inside this component because Svelte's scoping
+     was eating the matching selectors. Re-state them scoped so the
+     fonts match the other detail panels. */
+  .link-tier {
+    margin-bottom: 14px;
+  }
+  .link-tier h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+  }
+  .link-tier.tier-intro h3 {
+    color: #4ecdc4;
+  }
+  .link-tier.tier-core h3 {
+    color: #4466ff;
+  }
+  .link-tier.tier-deep h3 {
+    color: #ffc850;
+  }
+  .link-tier ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .link-tier li {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 8px 10px;
+  }
+  .link-tier :global(a) {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    line-height: 1.5;
+    display: block;
+  }
+  .link-tier :global(a:hover),
+  .link-tier :global(a:focus-visible) {
+    color: #fff;
+    outline: none;
+  }
   .anatomy-caption {
     font-family: 'Crimson Pro', serif;
     font-style: italic;

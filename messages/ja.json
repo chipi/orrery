@@ -1024,7 +1024,7 @@
   "credits_storage_locale_item": "{code} — your explicit locale pick, when you choose one in the language switcher (ADR-057). 1 year. No tracking, no personal data.",
   "credits_storage_tour_item": "{code} — your current Curator Tour position, so you can close the tab and resume where you left off (ADR-075). 30 days. Cleared when you stop the tour or it ends naturally. No tracking, no personal data.",
   "credits_storage_fine": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
-  "ui_layer_paths": "軌跡",
+  "ui_layer_paths": "象徴的なミッション",
   "explore_layer_tip_paths": "象徴的な探査機の航跡 — ボイジャー 1/2、パイオニア 10/11、ニュー・ホライズンズ、カッシーニ",
   "explore_voyager2_today_aria": "Voyager 2 current position — click to open mission record",
   "explore_voyager2_cue_at_neptune": "And the spacecraft that travelled every outer planet — Voyager 2, still going.",

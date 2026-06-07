@@ -12,11 +12,6 @@
     type IconicTrajectoryData,
     type IconicTrajectoryHandle,
   } from '$lib/three/iconic-trajectory';
-  import {
-    buildOrbiterTour,
-    type OrbiterTourData,
-    type OrbiterTourHandle,
-  } from '$lib/three/orbiter-tour';
   import { getPlanets, getSun, getMissionIndex, getMission } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { auToPx } from '$lib/scale';
@@ -36,6 +31,7 @@
   import SmallBodyPanel from '$lib/components/SmallBodyPanel.svelte';
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
+  import MissionPanel from '$lib/components/MissionPanel.svelte';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import {
@@ -799,18 +795,53 @@
   // toggle effect can flip visibility without touching the scene
   // directly.
   let iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
-  // #306 Slice D — Saturn-anchored orbiter tour (Cassini today; the
-  // pattern generalises to any orbital tour we want to surface at
-  // planet-zoom). Group rides Saturn's local frame so the orbits only
-  // resolve when the camera is close enough to see them.
-  let orbiterTourHandles: OrbiterTourHandle[] = [];
-
   // PATHS layer visibility binding.
   $effect(() => {
     const visible = layers.paths;
     for (const h of iconicTrajectoryHandles) h.setVisible(visible);
-    for (const h of orbiterTourHandles) h.setVisible(visible);
   });
+
+  // PATHS legend roster — color + display name + mission_id for each
+  // iconic trajectory. Hard-coded (mirrors ICONIC_TRAJECTORY_IDS +
+  // colors in static/data/trajectories/<id>.json) to avoid a second
+  // fetch round-trip just for the legend swatches. The orbiter-tour
+  // variants (cassini-tour, galileo-tour, juno-tour) share colors +
+  // mission with the main entry, so they don't get separate rows.
+  const PATHS_LEGEND = [
+    { mission_id: 'voyager-1', color: '#ffa657', name: 'Voyager 1', launch_year: 1977 },
+    { mission_id: 'voyager-2', color: '#4ecdc4', name: 'Voyager 2', launch_year: 1977 },
+    { mission_id: 'pioneer-10', color: '#f97583', name: 'Pioneer 10', launch_year: 1972 },
+    { mission_id: 'pioneer-11', color: '#ff7b72', name: 'Pioneer 11', launch_year: 1973 },
+    { mission_id: 'new-horizons', color: '#ffd33d', name: 'New Horizons', launch_year: 2006 },
+    { mission_id: 'galileo', color: '#a5d6a7', name: 'Galileo', launch_year: 1989 },
+    { mission_id: 'juno', color: '#79c0ff', name: 'Juno', launch_year: 2011 },
+    { mission_id: 'cassini', color: '#d2a8ff', name: 'Cassini-Huygens', launch_year: 1997 },
+    { mission_id: 'dawn', color: '#b392f0', name: 'Dawn', launch_year: 2007 },
+  ];
+  let pathsLegendMission: Mission | null = $state(null);
+  let pathsLegendOpen = $state(false);
+  // Which trajectory's color is currently solo'd (legend hover, or canvas
+  // hover on the Today marker). null = all dim. Effect below pushes the
+  // value into each handle's setHighlight so the bright/dim state lives
+  // on the materials, not in Svelte.
+  let highlightedMissionId: string | null = $state(null);
+  $effect(() => {
+    const id = highlightedMissionId;
+    for (const h of iconicTrajectoryHandles) h.setHighlight(h.missionId === id);
+  });
+  async function openPathsLegendMission(missionId: string) {
+    // getMission(id, dest) needs the destination because mission JSON
+    // is sharded under static/data/missions/<dest>/<id>.json. Resolve
+    // dest via the index — same convention /missions itself uses.
+    const idx = await getMissionIndex();
+    const entry = idx.find((e) => e.id === missionId);
+    if (!entry) return;
+    const m = await getMission(missionId, entry.dest, localeFromPage($page));
+    if (m) {
+      pathsLegendMission = m;
+      pathsLegendOpen = true;
+    }
+  }
 
   // ─── Mission overlay (Theme A.A1 — v0.1.10 / issue #16) ──────────
   // When `/explore?mission=ID` is loaded, fetch the mission and
@@ -2706,28 +2737,13 @@
       })();
     }
 
-    // ── Saturn-anchored orbiter tour (Cassini · #306 Slice D) ────────
-    // Loaded once, attached to Saturn's local frame so the orbital
-    // loops resolve at Saturn-system scale when the camera zooms in.
-    // No frame switch needed — same pattern as the satellites group.
-    const ORBITER_TOUR_IDS = ['cassini-tour', 'galileo-tour', 'juno-tour'] as const;
-    for (const id of ORBITER_TOUR_IDS) {
-      void (async () => {
-        try {
-          const res = await fetch(`${base}/data/trajectories/${id}.json`);
-          if (!res.ok) return;
-          const data = (await res.json()) as OrbiterTourData;
-          const parent = planetObjs.find((p) => p.planet.id === data.parent_planet);
-          if (!parent) return;
-          const handle = buildOrbiterTour({ data, visible: layers.paths });
-          parent.group.add(handle.group);
-          orbiterTourHandles.push(handle);
-          pickables.push(handle.clickTarget);
-        } catch {
-          // Silent — same convention as iconic trajectories above.
-        }
-      })();
-    }
+    // Orbiter-tour loops (cassini-tour, galileo-tour, juno-tour)
+    // intentionally NOT loaded. The planet-anchored orbital rings made
+    // the PATHS layer hard to read — too many concentric loops crowding
+    // the giants. Heliocentric polylines alone tell the story; the
+    // user can deep-link into a mission's panel for the orbital tour
+    // detail. Keep buildOrbiterTour module around if we want to bring
+    // them back behind a separate chip later.
 
     const tryPick3d = (e: MouseEvent) => {
       const rect = el3d.getBoundingClientRect();
@@ -2767,16 +2783,17 @@
         else if (smallBodyId) selectSmallBody(smallBodyId);
         else if (satelliteId && parentPlanetId) selectSatellite(parentPlanetId, satelliteId);
         else if (beltId) selectBelt(beltId);
-        else if (hit.object.userData.kind === 'iconic-trajectory-today' && trajectoryMissionId) {
-          // Iconic trajectory's Today marker — deep-link to the mission
-          // record on /missions. Preserves the standard mission-panel
-          // open path rather than reimplementing it on /explore.
-          void goto(`${base}/missions?id=${trajectoryMissionId}`);
-        } else if (hit.object.userData.kind === 'orbiter-tour-flyby' && trajectoryMissionId) {
-          // Orbiter-tour flyby marker (Slice D) — deep-link to the
-          // mission record. The tour group rides Saturn so the
-          // marker's world position tracks Saturn automatically.
-          void goto(`${base}/missions?id=${trajectoryMissionId}`);
+        else if (
+          (hit.object.userData.kind === 'iconic-trajectory-today' ||
+            hit.object.userData.kind === 'orbiter-tour-flyby') &&
+          trajectoryMissionId
+        ) {
+          // Iconic trajectory Today marker + orbiter-tour flyby marker
+          // both open the mission's detail panel inline on /explore
+          // instead of navigating away to /missions, so the camera +
+          // scene state survives the click. Same MissionPanel surface
+          // used by the PATHS legend rows.
+          void openPathsLegendMission(trajectoryMissionId);
         }
         return;
       }
@@ -2821,12 +2838,25 @@
     const onHover = (e: MouseEvent) => {
       if (view !== '3d' || isDrag3d) {
         if (hoverData) hoverData = null;
+        if (highlightedMissionId) highlightedMissionId = null;
         return;
       }
       const rect = el3d.getBoundingClientRect();
       const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
       ray3dHover.setFromCamera(new THREE.Vector2(ndcX, ndcY), camera);
+      // Trajectory-marker hover — set highlightedMissionId so the
+      // matching path goes bright. Independent of the tooltip hover
+      // path below: trajectories don't surface a vis-viva tooltip,
+      // only a color-brighten cue.
+      if (layers.paths && iconicTrajectoryHandles.length > 0) {
+        const trajTargets = iconicTrajectoryHandles.map((h) => h.clickTarget);
+        const trajHits = ray3dHover.intersectObjects(trajTargets, false);
+        const newId = (trajHits[0]?.object.userData.missionId as string | undefined) ?? null;
+        if (newId !== highlightedMissionId) highlightedMissionId = newId;
+      } else if (highlightedMissionId) {
+        highlightedMissionId = null;
+      }
       const hits = ray3dHover.intersectObjects(hoverTargets, false);
       if (hits.length === 0) {
         if (hoverData) hoverData = null;
@@ -2935,6 +2965,7 @@
     };
     const onHoverLeave = () => {
       hoverData = null;
+      highlightedMissionId = null;
     };
 
     let mouseDownOnCanvas = false;
@@ -4085,8 +4116,6 @@
     tourCameraTeardown?.();
     for (const h of iconicTrajectoryHandles) h.dispose();
     iconicTrajectoryHandles = [];
-    for (const h of orbiterTourHandles) h.dispose();
-    orbiterTourHandles = [];
   });
 
   function toggleView() {
@@ -4263,16 +4292,20 @@
       >
         {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
       </button>
-      {#if selectedId || selectedSmallBodyId}
+      {#if selectedId || selectedSmallBodyId || selectedSatelliteKey || selectedBeltId}
         <button
           class="toggle"
           type="button"
           onclick={() => {
             selectedId = null;
             selectedSmallBodyId = null;
+            selectedSatelliteKey = null;
+            selectedBeltId = null;
             panelOpen = false;
             sunPanelOpen = false;
             smallBodyPanelOpen = false;
+            satellitePanelOpen = false;
+            beltPanelOpen = false;
             flyToBodyFn?.(null);
           }}
           data-testid="explore-reset-view"
@@ -4339,6 +4372,27 @@
         {m.ui_layer_paths()}
       </button>
     </div>
+    {#if layers.paths}
+      <div class="paths-legend" role="group" aria-label="Iconic trajectory legend">
+        {#each PATHS_LEGEND as entry}
+          <button
+            type="button"
+            class="paths-legend-row"
+            onclick={() => openPathsLegendMission(entry.mission_id)}
+            onmouseenter={() => (highlightedMissionId = entry.mission_id)}
+            onmouseleave={() => (highlightedMissionId = null)}
+            onfocus={() => (highlightedMissionId = entry.mission_id)}
+            onblur={() => (highlightedMissionId = null)}
+            data-testid="paths-legend-row-{entry.mission_id}"
+          >
+            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"
+            ></span>
+            <span class="name">{entry.name}</span>
+            <span class="year">{entry.launch_year}</span>
+          </button>
+        {/each}
+      </div>
+    {/if}
   </div>
 
   {#if sizesOpen}
@@ -4439,6 +4493,12 @@
 />
 
 <BeltPanel beltId={selectedBeltId} open={beltPanelOpen} onClose={() => (beltPanelOpen = false)} />
+
+<MissionPanel
+  mission={pathsLegendMission}
+  open={pathsLegendOpen}
+  onClose={() => (pathsLegendOpen = false)}
+/>
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
      triggers used by the audio executor's `click` action so the tour
@@ -4743,6 +4803,59 @@
     color: #fff;
     background: rgba(78, 205, 196, 0.32);
     border-color: #4ecdc4;
+  }
+
+  .paths-legend {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 10px;
+    background: rgba(15, 18, 35, 0.85);
+    border: 1px solid rgba(68, 102, 255, 0.4);
+    border-radius: 4px;
+  }
+  .paths-legend-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #dde4ff;
+    padding: 4px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    min-height: 28px;
+  }
+  .paths-legend-row:hover,
+  .paths-legend-row:focus-visible {
+    background: rgba(68, 102, 255, 0.15);
+    color: #fff;
+    outline: none;
+  }
+  .paths-legend-row .swatch {
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .paths-legend-row .name {
+    flex: 1;
+  }
+  .paths-legend-row .year {
+    color: rgba(221, 228, 255, 0.55);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    margin-left: 8px;
+  }
+  .paths-legend-row:hover .year,
+  .paths-legend-row:focus-visible .year {
+    color: rgba(255, 255, 255, 0.85);
   }
 
   /* Chip rail wraps as soon as we leave desktop. Was gated on 500 px

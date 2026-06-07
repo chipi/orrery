@@ -43,12 +43,16 @@ export interface IconicTrajectoryHandle {
   group: THREE.Group;
   /** The click-target marker (Today position). Use for raycaster hit-tests. */
   clickTarget: THREE.Mesh;
+  /** Mission ID this trajectory belongs to — used for hover-highlight pairing. */
+  missionId: string;
   /** Update line material resolution on canvas resize. */
   onResize: (width: number, height: number) => void;
   /** Dispose all GL resources. */
   dispose: () => void;
   /** Show / hide the entire trajectory (e.g. PATHS layer toggle). */
   setVisible: (visible: boolean) => void;
+  /** Brighten (true) or dim (false) the line + markers. Default: dim. */
+  setHighlight: (highlighted: boolean) => void;
 }
 
 export interface BuildIconicTrajectoryOpts {
@@ -67,6 +71,19 @@ export interface BuildIconicTrajectoryOpts {
 const DEFAULT_LINE_WIDTH = 2.5;
 const MARKER_RADIUS_PX = 5;
 const CLICK_TARGET_RADIUS_PX = 9;
+
+// Dim / bright opacity pairs. The PATHS layer renders every iconic
+// trajectory simultaneously, so the default is dim — the user can
+// hover a legend row (or a trajectory's Today marker) to single one
+// out at full intensity without the others crowding the read.
+const LINE_OPACITY_DIM = 0.35;
+const LINE_OPACITY_BRIGHT = 0.95;
+const MARKER_OPACITY_DIM = 0.4;
+const MARKER_OPACITY_BRIGHT = 0.95;
+const CLICK_TARGET_OPACITY_DIM = 0.55;
+const CLICK_TARGET_OPACITY_BRIGHT = 1.0;
+const RING_OPACITY_DIM = 0.2;
+const RING_OPACITY_BRIGHT = 0.55;
 
 /**
  * Project a heliocentric-ecliptic AU waypoint into scene units via the
@@ -109,7 +126,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     color: new THREE.Color(data.color).getHex(),
     linewidth: lineWidth,
     transparent: true,
-    opacity: 0.9,
+    opacity: LINE_OPACITY_DIM,
     dashed: false,
   });
   lineMaterial.resolution.set(width, height);
@@ -123,7 +140,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   const markerMaterial = new THREE.MeshBasicMaterial({
     color: new THREE.Color(data.color).getHex(),
     transparent: true,
-    opacity: 0.95,
+    opacity: MARKER_OPACITY_DIM,
   });
   const labeledWaypoints = data.waypoints
     .map((wp, i) => ({ wp, pos: projected[i] }))
@@ -144,7 +161,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   const clickTargetMaterial = new THREE.MeshBasicMaterial({
     color: new THREE.Color(data.color).getHex(),
     transparent: true,
-    opacity: 1.0,
+    opacity: CLICK_TARGET_OPACITY_DIM,
   });
   const clickTarget = new THREE.Mesh(clickTargetGeo, clickTargetMaterial);
   clickTarget.position.copy(todayPos);
@@ -166,7 +183,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   const ringMaterial = new THREE.MeshBasicMaterial({
     color: new THREE.Color(data.color).getHex(),
     transparent: true,
-    opacity: 0.45,
+    opacity: RING_OPACITY_DIM,
     side: THREE.DoubleSide,
   });
   const ring = new THREE.Mesh(ringGeo, ringMaterial);
@@ -177,11 +194,20 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   return {
     group,
     clickTarget,
+    missionId: data.mission_id,
     onResize: (w: number, h: number) => {
       lineMaterial.resolution.set(w, h);
     },
     setVisible: (v: boolean) => {
       group.visible = v;
+    },
+    setHighlight: (highlighted: boolean) => {
+      lineMaterial.opacity = highlighted ? LINE_OPACITY_BRIGHT : LINE_OPACITY_DIM;
+      markerMaterial.opacity = highlighted ? MARKER_OPACITY_BRIGHT : MARKER_OPACITY_DIM;
+      clickTargetMaterial.opacity = highlighted
+        ? CLICK_TARGET_OPACITY_BRIGHT
+        : CLICK_TARGET_OPACITY_DIM;
+      ringMaterial.opacity = highlighted ? RING_OPACITY_BRIGHT : RING_OPACITY_DIM;
     },
     dispose: () => {
       lineGeo.dispose();

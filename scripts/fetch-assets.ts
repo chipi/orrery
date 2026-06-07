@@ -868,40 +868,50 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     query: 'Rosetta spacecraft comet 67P Churyumov-Gerasimenko ESA',
     commonsCoverFirst: 'Comet 67P on 19 September 2014 NavCam mosaic.jpg',
   },
+  // Vega 1 + Vega 2 — twin Soviet/ESA spacecraft. Iconic mission art
+  // showing the balloon-probe deployment is on Commons; share the
+  // same hero since the two vehicles were identical.
   {
     id: 'vega-1',
-    query: 'Vega 1 Venus lander balloon Halley comet Soviet',
-    commonsCoverFirst: 'Vega spacecraft.jpg',
+    query: 'Vega 1 Venus balloon Halley comet Soviet',
+    commonsCoverFirst: 'Vega balloon probe.jpg',
   },
   {
     id: 'vega-2',
-    query: 'Vega 2 Venus lander balloon Halley comet Soviet',
-    commonsCoverFirst: 'Vega spacecraft.jpg',
+    query: 'Vega 2 Venus balloon Halley comet Soviet',
+    commonsCoverFirst: 'Vega balloon probe.jpg',
   },
+  // Venera 13 — actual 1982 Venus surface panorama from the lander.
+  // Iconic Soviet imagery, not a spacecraft model.
   {
     id: 'venera-13',
     query: 'Venera 13 Venus surface color panorama Soviet lander',
-    commonsCoverFirst: 'Venera 13 - venera13-right.jpg',
+    commonsCoverFirst: 'Surface of Venus from Venera 13.jpg',
   },
+  // Giotto — actual 1986 Halley Multicolour Camera close-up of the
+  // cometary nucleus, not a spacecraft model.
   {
     id: 'giotto',
     query: 'Giotto Halley comet ESA spacecraft',
-    commonsCoverFirst: 'Giotto spacecraft.jpg',
+    commonsCoverFirst: 'Comet Halley close up.jpg',
   },
+  // Hayabusa2 — actual JAXA surface image of asteroid Ryugu, not a
+  // bench-test photo of the spacecraft.
   {
     id: 'hayabusa2',
     query: 'Hayabusa2 asteroid Ryugu JAXA sample return',
-    commonsCoverFirst: 'Ryugu by Hayabusa2 mid 2018-06-26.jpg',
+    commonsCoverFirst: 'Ryugu colored.jpg',
   },
+  // JUICE — ESA's launch-kit cover image. Actual mission asset.
   {
     id: 'juice',
     query: 'JUICE Jupiter icy moons explorer ESA spacecraft',
-    commonsCoverFirst: 'JUICE spacecraft model.jpg',
+    commonsCoverFirst: 'Juice launch kit cover close-up.png',
   },
   {
     id: 'bepicolombo',
     query: 'BepiColombo Mercury ESA JAXA spacecraft',
-    commonsCoverFirst: 'BepiColombo spacecraft model.jpg',
+    commonsCoverFirst: 'BepiColombo spacecraft model.png',
   },
   {
     id: 'ulysses',

@@ -164,8 +164,15 @@
     const widthKm = dLon * (Math.PI / 180) * config.radiusKm * cosLat;
     const heightKm = dLat * (Math.PI / 180) * config.radiusKm;
     const regionKm = Math.max(widthKm, heightKm);
-    // Map to ~60% of an estimated viewport min(w, h)=600 px.
-    kmPerPx = regionKm / (0.6 * 600);
+    // Map to ~60 % of the viewport's shorter dimension (real, not the
+    // 600 px estimate the prior implementation used — that left a Moon
+    // landing-ellipse rendering as a ~360 px patch sitting in the
+    // middle of an otherwise-black 1400-px canvas).
+    const vp =
+      typeof window !== 'undefined'
+        ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
+        : 800;
+    kmPerPx = regionKm / (0.6 * vp);
   });
 
   // Unconditionally clamp kmPerPx to the current floor on every
@@ -499,15 +506,40 @@
     if (selected.lat == null || selected.lon == null) return;
     const p = project(selected.lat, selected.lon, W, H);
     const tone = statusTone(selected.status, selected.kind);
-    const r = scaleAwareRadius(LANDER_FOOTPRINT_KM);
-    ctx.fillStyle = tone.color;
+    const trueR = scaleAwareRadius(LANDER_FOOTPRINT_KM);
+    // Floor at 6 px so the marker reads against busy HiRISE/LROC
+    // terrain (the prior 4 px white-50 % dot effectively disappeared on
+    // Mars at deepest zoom). Crosshair + outlined disc together give a
+    // hit-the-eye-instantly cue without losing true scale on the disc.
+    const r = Math.max(6, trueR);
+    // Dark drop shadow + thick white ring for contrast.
+    ctx.save();
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+    ctx.shadowBlur = 6;
+    ctx.fillStyle = tone.color === 'rgba(255,255,255,0.5)' ? '#ffd166' : tone.color;
     ctx.beginPath();
     ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
     ctx.fill();
+    ctx.restore();
     ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.arc(p.x, p.y, r + 0.5, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, r + 1, 0, Math.PI * 2);
+    ctx.stroke();
+    // Cross-hair extending past the disc — locates the spot even when
+    // the disc itself is the same tone as the underlying terrain.
+    const crossExt = r + 14;
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(p.x - crossExt, p.y);
+    ctx.lineTo(p.x - r - 3, p.y);
+    ctx.moveTo(p.x + r + 3, p.y);
+    ctx.lineTo(p.x + crossExt, p.y);
+    ctx.moveTo(p.x, p.y - crossExt);
+    ctx.lineTo(p.x, p.y - r - 3);
+    ctx.moveTo(p.x, p.y + r + 3);
+    ctx.lineTo(p.x, p.y + crossExt);
     ctx.stroke();
   }
 

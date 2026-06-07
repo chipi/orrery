@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 
 /**
  * Mars Tier 3 panorama e2e (PRD-014 §S7, v0.7.x #PD-mars).
@@ -73,10 +74,9 @@ test.describe('Mars Tier 3 panorama — Curiosity full lifecycle', () => {
 
     const exit = page.getByTestId('exit-panorama');
     await expect(exit).toBeVisible({ timeout: 5_000 });
-    // Element.click() avoids the overlay-intercept class that breaks
-    // the panorama-mobile sr-only annotation test — at mobile widths
-    // the detail-panel chrome can sit on top and steal the mouse event.
-    await exit.evaluate((btn: HTMLButtonElement) => btn.click());
+    // Mobile-widths put the detail-panel chrome on top of exit-panorama;
+    // dispatch the click directly so the handler fires regardless.
+    await clickViaEvaluate(exit);
 
     // After the click, the slot toggles back to the enter variant.
     await expect(stand).toBeVisible({ timeout: 5_000 });

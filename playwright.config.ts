@@ -46,6 +46,12 @@ export default defineConfig({
       // needs to install one browser. iPhone profiles use WebKit which
       // doubles install time + image footprint.
       use: { ...devices['Pixel 5'] },
+      // Mobile-chromium concentrates the canvas-timing flakes — same
+      // commit can pass on workflow_run and fail on the 5 am cron
+      // (observed 2026-06-07 on bebe465d8). Extra retry catches the
+      // animation-frame race without masking real regressions, which
+      // would fail all three attempts.
+      retries: process.env.CI ? 3 : 1,
     },
   ],
 

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 
 /**
  * Mars Tier 3 panorama — mobile-chromium smoke (PRD-022 / ADR-074,
@@ -50,11 +51,11 @@ test.describe('Mars Tier 3 panorama HUD — mobile smoke', () => {
     const annButtons = page.getByTestId('panorama-annotation-sr-button');
     await expect(annButtons).toHaveCount(3);
 
-    // Activate the first annotation via element.click() — Playwright's
-    // mouse-click is intercepted by the detail-panel's .agency-row sitting
-    // on top of the sr-only buttons at mobile widths. The sr-only path
-    // is keyboard-driven anyway, so a direct DOM dispatch is faithful.
-    await annButtons.first().evaluate((btn: HTMLButtonElement) => btn.click());
+    // Activate via clickViaEvaluate — the detail-panel's .agency-row
+    // covers the sr-only buttons at mobile widths and steals
+    // Playwright's mouse target. The sr-only path is keyboard-driven
+    // anyway, so a direct DOM dispatch is faithful.
+    await clickViaEvaluate(annButtons.first());
     await expect(page.getByTestId('panorama-annotation-card')).toBeVisible();
 
     // Esc dismisses card.

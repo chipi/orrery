@@ -94,7 +94,24 @@ jobs:
     # (success + failure + cancelled). Skip the run unless CI passed,
     # so a typecheck/lint/unit-test failure doesn't waste 17-25 min of
     # docker-e2e runtime. Manual + cron triggers always proceed.
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    #
+    # Also skip workflow_run triggered by bot-pushed data refresh
+    # commits — launches-refresh + snapshot-regen don't change any
+    # code that affects e2e, but they fire CI which fires this. The
+    # cancel-in-progress concurrency rule + the next "real" push
+    # would then cancel each other in a cascade (observed
+    # 2026-06-06: 4 cancelled docker-e2e runs in 12 hours). Cron +
+    # workflow_dispatch still cover these commits on the daily 5 am
+    # schedule.
+    if: >-
+      ${{
+        github.event_name != 'workflow_run' ||
+        (
+          github.event.workflow_run.conclusion == 'success' &&
+          !startsWith(github.event.workflow_run.head_commit.message, 'chore(launches): refresh') &&
+          !startsWith(github.event.workflow_run.head_commit.message, 'chore(visual): regenerate snapshot')
+        )
+      }}
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6

@@ -1326,9 +1326,7 @@ export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Images of asteroid Ryugu from the wide angle Optical Navigation Cameras (ONC-W1 and ONC-W2) via Hayabusa2.jpg',
     'Hayabusa2 Ion thruster.jpg',
   ],
-  juice: [
-    'Juice launch kit cover close-up.png',
-  ],
+  juice: ['Juice launch kit cover close-up.png'],
   bepicolombo: [
     'BepiColombo spacecraft model.png',
     'BepiColombo approaches Mercury ESA514734.png',

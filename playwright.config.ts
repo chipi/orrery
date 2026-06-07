@@ -33,6 +33,14 @@ export default defineConfig({
     baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
+    // Block the SvelteKit service worker. Without this the SW caches
+    // /moon.html, /mars.html etc. across tests in the same Playwright
+    // session; the second goto to a sibling Mars URL has been observed
+    // (docker-e2e #27086528083) returning a stale /moon.html response
+    // and timing out on a Mars-specific testid. The SW is product
+    // behaviour we want covered by pwa.spec.ts; every other spec is
+    // testing application code, not the cache layer.
+    serviceWorkers: 'block',
   },
 
   projects: [

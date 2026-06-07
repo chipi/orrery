@@ -2,5 +2,31 @@
   "name": "Giotto",
   "type": "SOBREVUELO · FINALIZADA",
   "first": "Primera misión de espacio profundo de la ESA; sobrevuelo cometario más cercano jamás intentado (Halley, 596 km, 1986)",
-  "description": "Sonda de la ESA que pasó a 596 km del núcleo del cometa Halley el 14-3-1986 — primeras imágenes de cerca de un núcleo cometario. Tras hibernar en órbita solar, Giotto fue reactivada en 1990 y usó una asistencia gravitatoria terrestre para reorientarse hacia el cometa Grigg-Skjellerup, donde sobrevoló a 200 km el 10-7-1992 — el sobrevuelo cometario más cercano jamás realizado."
+  "description": "Sonda de la ESA que pasó a 596 km del núcleo del cometa Halley el 14-3-1986 — primeras imágenes de cerca de un núcleo cometario. Tras hibernar en órbita solar, Giotto fue reactivada en 1990 y usó una asistencia gravitatoria terrestre para reorientarse hacia el cometa Grigg-Skjellerup, donde sobrevoló a 200 km el 10-7-1992 — el sobrevuelo cometario más cercano jamás realizado.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Ariane 1 lanza Giotto desde Kourou — primera misión de espacio profundo de la ESA.",
+      "type": "nominal"
+    },
+    {
+      "met": 255,
+      "label": "SOBREVUELO HALLEY",
+      "note": "Aproximación máxima de 596 km al cometa 1P/Halley; primeras imágenes cercanas de un núcleo cometario.",
+      "type": "nominal"
+    },
+    {
+      "met": 1827,
+      "label": "SOBREVUELO TERRESTRE",
+      "note": "La asistencia gravitatoria terrestre reorienta Giotto al cometa 26P/Grigg-Skjellerup.",
+      "type": "nominal"
+    },
+    {
+      "met": 2565,
+      "label": "SOBREVUELO GRIGG-SKJELLERUP",
+      "note": "Aproximación máxima de 200 km — el sobrevuelo cometario más cercano registrado.",
+      "type": "nominal"
+    }
+  ]
 }

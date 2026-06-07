@@ -2,5 +2,43 @@
   "name": "Hayabusa2",
   "type": "RIENTRO CAMPIONI + LANDER · ATTIVA (estesa)",
   "first": "Secondo rientro di campioni di asteroide (Ryugu, 2020); primo cratere artificiale su un asteroide; primo materiale sub-superficiale di asteroide riportato sulla Terra",
-  "description": "Seguito di JAXA all'Hayabusa originale. Lanciata il 3/12/2014, Hayabusa2 ha raggiunto l'asteroide vicino alla Terra (162173) Ryugu il 27/6/2018. Le operazioni di superficie 2018-2019 hanno restituito il primo sondaggio ravvicinato sostenuto di un asteroide di tipo C a cumulo di macerie. La capsula di rientro campioni è atterrata sopra Woomera, Australia il 5/12/2020 consegnando 5,4 g di materiale incontaminato di Ryugu — il primo campione di asteroide con stratigrafia sub-superficiale. Missione estesa: sorvolo di (98943) 2001 CC21 nel luglio 2026; rendezvous con il rapido (1998 KY26) mirato per luglio 2031."
+  "description": "Seguito di JAXA all'Hayabusa originale. Lanciata il 3/12/2014, Hayabusa2 ha raggiunto l'asteroide vicino alla Terra (162173) Ryugu il 27/6/2018. Le operazioni di superficie 2018-2019 hanno restituito il primo sondaggio ravvicinato sostenuto di un asteroide di tipo C a cumulo di macerie. La capsula di rientro campioni è atterrata sopra Woomera, Australia il 5/12/2020 consegnando 5,4 g di materiale incontaminato di Ryugu — il primo campione di asteroide con stratigrafia sub-superficiale. Missione estesa: sorvolo di (98943) 2001 CC21 nel luglio 2026; rendezvous con il rapido (1998 KY26) mirato per luglio 2031.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "L'H-IIA 202 da Tanegashima inizia la crociera di 3,5 anni verso l'asteroide Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "SORVOLO TERRESTRE",
+      "note": "L'assistenza gravitazionale terrestre fasa l'orbita di rendez-vous.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "ARRIVO RYUGU",
+      "note": "Volo stazionario a 20 km — inizio di 1,5 anni di operazioni ravvicinate inclusa la raccolta campioni.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "RIENTRO TERRESTRE",
+      "note": "La capsula campioni atterra a Woomera, Australia con 5,4 g di materiale di Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "SORVOLO 2001 CC21",
+      "note": "Sorvolo della missione estesa dell'asteroide (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "RENDEZ-VOUS 1998 KY26",
+      "note": "Rendez-vous pianificato con l'asteroide a rotazione rapida (1998 KY26).",
+      "type": "info"
+    }
+  ]
 }

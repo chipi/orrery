@@ -2,5 +2,25 @@
   "name": "Vega 1",
   "type": "SOBREVUELO + ATERRIZADOR + GLOBO · FINALIZADA",
   "first": "Primer globo aerostático desplegado en la atmósfera de otro planeta (Venus, 1985)",
-  "description": "Misión soviético-ESA de la armada de Halley. Vega 1 llevaba un aterrizador del linaje Venera y un globo de helio construido por ESA/CNES que flotó 46,5 horas a 54 km de altitud en la atmósfera de Venus. Tras soltar el módulo de descenso, el bus usó una asistencia gravitatoria venusiana para redirigirse al cometa 1P/Halley, donde logró su aproximación máxima (8890 km) el 6-3-1986 — el primer encuentro con un núcleo cometario."
+  "description": "Misión soviético-ESA de la armada de Halley. Vega 1 llevaba un aterrizador del linaje Venera y un globo de helio construido por ESA/CNES que flotó 46,5 horas a 54 km de altitud en la atmósfera de Venus. Tras soltar el módulo de descenso, el bus usó una asistencia gravitatoria venusiana para redirigirse al cometa 1P/Halley, donde logró su aproximación máxima (8890 km) el 6-3-1986 — el primer encuentro con un núcleo cometario.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Proton-K / D-1 lanza Vega 1 desde Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 178,
+      "label": "ENCUENTRO VENUS",
+      "note": "El módulo de descenso se separa + aterriza; el globo se despliega a 54 km de altitud durante 46,5 horas.",
+      "type": "nominal"
+    },
+    {
+      "met": 446,
+      "label": "SOBREVUELO HALLEY",
+      "note": "Aproximación máxima al cometa 1P/Halley a 8890 km — primera observación de un núcleo cometario.",
+      "type": "nominal"
+    }
+  ]
 }

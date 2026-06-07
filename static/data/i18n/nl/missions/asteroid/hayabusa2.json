@@ -2,5 +2,43 @@
   "name": "Hayabusa2",
   "type": "MONSTERS RETOUR + LANDERS · ACTIEF (verlengd)",
   "first": "Tweede asteroïde-monsterretour (Ryugu, 2020); eerste kunstmatige inslagkrater op een asteroïde; eerste ondergrondse asteroïdemateriaal teruggebracht naar de Aarde",
-  "description": "JAXA's vervolg op de oorspronkelijke Hayabusa. Gelanceerd op 3-12-2014, bereikte Hayabusa2 de aardscheerder (162173) Ryugu op 27-6-2018. Oppervlakteoperaties 2018-2019 leverden de eerste aanhoudende close-upsurvey van een puinhoop C-type asteroïde op. De monsterretourcapsule landde op 5-12-2020 boven Woomera, Australië en leverde 5,4 g maagdelijk Ryugu-materiaal — het eerste asteroïdemonster met ondergrondse stratigrafie. Verlengde missie: scheervlucht van (98943) 2001 CC21 in juli 2026; rendezvous met de snel roterende (1998 KY26) gericht voor juli 2031."
+  "description": "JAXA's vervolg op de oorspronkelijke Hayabusa. Gelanceerd op 3-12-2014, bereikte Hayabusa2 de aardscheerder (162173) Ryugu op 27-6-2018. Oppervlakteoperaties 2018-2019 leverden de eerste aanhoudende close-upsurvey van een puinhoop C-type asteroïde op. De monsterretourcapsule landde op 5-12-2020 boven Woomera, Australië en leverde 5,4 g maagdelijk Ryugu-materiaal — het eerste asteroïdemonster met ondergrondse stratigrafie. Verlengde missie: scheervlucht van (98943) 2001 CC21 in juli 2026; rendezvous met de snel roterende (1998 KY26) gericht voor juli 2031.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "De H-IIA 202 vanuit Tanegashima begint de 3,5-jarige reis naar asteroïde Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "AARDSCHEERVLUCHT",
+      "note": "Aardse zwaartekrachtassistentie faseert de rendez-vousbaan.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "RYUGU-AANKOMST",
+      "note": "Hangen op 20 km — start van 1,5 jaar nabijheidsoperaties inclusief monsterverzameling.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "AARDTERUGKEER",
+      "note": "Monstercapsule landt in Woomera, Australië met 5,4 g Ryugu-materiaal.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "2001 CC21-SCHEERVLUCHT",
+      "note": "Verlengde-missie scheervlucht van asteroïde (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "1998 KY26-RENDEZVOUS",
+      "note": "Gepland rendezvous met de snel roterende asteroïde (1998 KY26).",
+      "type": "info"
+    }
+  ]
 }

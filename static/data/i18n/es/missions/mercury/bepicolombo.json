@@ -2,5 +2,43 @@
   "name": "BepiColombo",
   "type": "ORBITADOR · ACTIVA",
   "first": "Primera misión planetaria conjunta Europa-Japón; segunda nave en orbitar Mercurio (tras Messenger)",
-  "description": "Misión conjunta ESA / JAXA a Mercurio, lanzada el 20-10-2018 — nombrada por el matemático italiano Giuseppe (Bepi) Colombo, que diseñó la trayectoria de múltiples sobrevuelos de Mariner 10. El crucero de 8 años usa 9 asistencias gravitatorias (Tierra 2020, Venus 2020, Venus 2021, luego seis sobrevuelos de Mercurio 2021-2024) más empuje iónico-eléctrico continuo. Inserción en órbita de Mercurio el 5-12-2026; las operaciones científicas comienzan a principios de 2027."
+  "description": "Misión conjunta ESA / JAXA a Mercurio, lanzada el 20-10-2018 — nombrada por el matemático italiano Giuseppe (Bepi) Colombo, que diseñó la trayectoria de múltiples sobrevuelos de Mariner 10. El crucero de 8 años usa 9 asistencias gravitatorias (Tierra 2020, Venus 2020, Venus 2021, luego seis sobrevuelos de Mercurio 2021-2024) más empuje iónico-eléctrico continuo. Inserción en órbita de Mercurio el 5-12-2026; las operaciones científicas comienzan a principios de 2027.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Ariane 5 ECA lanza BepiColombo desde Kourou en su crucero iónico de 8 años a Mercurio.",
+      "type": "nominal"
+    },
+    {
+      "met": 538,
+      "label": "SOBREVUELO TERRESTRE",
+      "note": "Asistencia gravitatoria terrestre única inicia la cadena de asistencias gravitatorias del sistema interno.",
+      "type": "nominal"
+    },
+    {
+      "met": 727,
+      "label": "SOBREVUELO VENUS #1",
+      "note": "Primera asistencia gravitatoria de Venus.",
+      "type": "nominal"
+    },
+    {
+      "met": 1026,
+      "label": "SOBREVUELO VENUS #2",
+      "note": "Segunda asistencia gravitatoria de Venus inicia la fase de aproximación a Mercurio.",
+      "type": "nominal"
+    },
+    {
+      "met": 1133,
+      "label": "SOBREVUELO MERCURIO #1",
+      "note": "Primera de seis asistencias gravitatorias de Mercurio.",
+      "type": "nominal"
+    },
+    {
+      "met": 2968,
+      "label": "INSERCIÓN ÓRBITA MERCURIO",
+      "note": "Liberación MTM + separación del orbitador; las operaciones científicas comienzan a principios de 2027.",
+      "type": "info"
+    }
+  ]
 }

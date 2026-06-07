@@ -2,5 +2,37 @@
   "name": "Ulysses",
   "type": "ORBITADOR POLAR SOLAR · CONCLUÍDA",
   "first": "Única espaçonave já colocada em uma órbita heliocêntrica de alta inclinação; únicas medições diretas do vento solar em todas as latitudes heliográficas",
-  "description": "Missão conjunta ESA / NASA. Lançada em 6-10-1990 do STS-41 Discovery, a Ulysses usou uma assistência gravitacional de Júpiter em 8-2-1992 para desviar-se cerca de 80° fora da eclíptica — o único caminho para alcançar uma órbita quase-polar em relação ao Sol a partir do plano orbital quase-equatorial da Terra. Três órbitas polares completas do Sol ao longo de 18,5 anos mapearam o vento solar, o campo magnético heliosférico e as partículas energéticas em todas as latitudes heliográficas. Missão terminada em 30-6-2009 quando a hidrazina congelou nas linhas do propulsor."
+  "description": "Missão conjunta ESA / NASA. Lançada em 6-10-1990 do STS-41 Discovery, a Ulysses usou uma assistência gravitacional de Júpiter em 8-2-1992 para desviar-se cerca de 80° fora da eclíptica — o único caminho para alcançar uma órbita quase-polar em relação ao Sol a partir do plano orbital quase-equatorial da Terra. Três órbitas polares completas do Sol ao longo de 18,5 anos mapearam o vento solar, o campo magnético heliosférico e as partículas energéticas em todas as latitudes heliográficas. Missão terminada em 30-6-2009 quando a hidrazina congelou nas linhas do propulsor.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "STS-41 Discovery implanta Ulysses + estágios superiores IUS / PAM-S.",
+      "type": "nominal"
+    },
+    {
+      "met": 490,
+      "label": "SOBREVOO JÚPITER",
+      "note": "A assistência gravitacional desvia Ulysses ~80° fora da eclíptica em uma órbita polar relativa ao Sol.",
+      "type": "nominal"
+    },
+    {
+      "met": 1359,
+      "label": "PRIMEIRA PASSAGEM POLAR SUL",
+      "note": "Primeiras medições diretas do vento solar sobre um polo solar.",
+      "type": "nominal"
+    },
+    {
+      "met": 1758,
+      "label": "PRIMEIRA PASSAGEM POLAR NORTE",
+      "note": "Conclusão da primeira órbita solar polar completa.",
+      "type": "nominal"
+    },
+    {
+      "met": 6845,
+      "label": "FIM DE MISSÃO",
+      "note": "As linhas do propulsor congelam; comando final emitido em 30-6-2009.",
+      "type": "info"
+    }
+  ]
 }

@@ -2,5 +2,43 @@
   "name": "Rosetta",
   "type": "ORBITER + LANDER · VOLTOOID",
   "first": "Eerste ruimtevaartuig dat een komeet omcirkelde — en erop landde (Philae, 12-11-2014)",
-  "description": "ESA's vlaggenschipmissie voor komeetrendezvous. Na een tienjarige reis met drie aardse zwaartekrachtassists, één Mars-assist, twee asteroïdepassages en 957 dagen diepruimtewinterslaap bereikte Rosetta in augustus 2014 komeet 67P/Tsjoerjoemov-Gerasimenko en draaide er meer dan twee jaar omheen. De lander Philae bereikte het oppervlak van 67P op 12-11-2014 — de eerste zachte landing op een komeet. Rosetta beëindigde de missie met een gecontroleerde afdaling naar 67P op 30-09-2016."
+  "description": "ESA's vlaggenschipmissie voor komeetrendezvous. Na een tienjarige reis met drie aardse zwaartekrachtassists, één Mars-assist, twee asteroïdepassages en 957 dagen diepruimtewinterslaap bereikte Rosetta in augustus 2014 komeet 67P/Tsjoerjoemov-Gerasimenko en draaide er meer dan twee jaar omheen. De lander Philae bereikte het oppervlak van 67P op 12-11-2014 — de eerste zachte landing op een komeet. Rosetta beëindigde de missie met een gecontroleerde afdaling naar 67P op 30-09-2016.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Ariane 5G+ lanceert Rosetta vanuit Kourou voor de tienjarige reis naar komeet 67P.",
+      "type": "nominal"
+    },
+    {
+      "met": 367,
+      "label": "AARDSCHEERVLUCHT #1",
+      "note": "Eerste van drie aardse zwaartekrachtassistenties om snelheid op te bouwen voor het komeetrendezvous.",
+      "type": "nominal"
+    },
+    {
+      "met": 1090,
+      "label": "MARSSCHEERVLUCHT",
+      "note": "Enige Mars-zwaartekrachtassistentie + eerste close-upbeelden van Phobos en Mars op 250 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1671,
+      "label": "ASTEROÏDE 2867 ŠTEINS",
+      "note": "Eerste close-upscheervlucht van een E-type asteroïde.",
+      "type": "nominal"
+    },
+    {
+      "met": 2320,
+      "label": "ASTEROÏDE 21 LUTETIA",
+      "note": "100 km scheervlucht langs een van de grootste hoofdgordel-asteroïden ooit van dichtbij waargenomen.",
+      "type": "nominal"
+    },
+    {
+      "met": 3809,
+      "label": "KOMEET 67P RENDEZVOUS",
+      "note": "Baaninsertie rond komeet 67P/Tsjoerjoemov-Gerasimenko. Philae landt op 12-11-2014.",
+      "type": "nominal"
+    }
+  ]
 }

@@ -2,5 +2,25 @@
   "name": "Vega 2",
   "type": "VORBEIFLUG + LANDER + BALLON · BEENDET",
   "first": "Erste chemische Analyse des venusianischen Hochlandbodens (Phoebe Regio, 1985)",
-  "description": "Zwilling von Vega 1, 6 Tage später gestartet. Das Landemodul setzte am 15.6.1985 im Hochland Phoebe Regio auf und nutzte XRF-Spektroskopie zum Nachweis von Anorthosit-Norit-Troktolith-Material — erste chemische Analyse hoch gelegener venusianischer Kruste. Der Bus flog am 9.3.1986 in 8030 km Abstand am Kometen 1P/Halley vorbei. Gemeinsam lieferten die Vega-Busse die ersten Nahaufnahmen eines Kometenkerns und verfeinerten die Positionsbestimmung, mit der Giotto fünf Tage später einen 596-km-Vorbeiflug an Halley wagen konnte."
+  "description": "Zwilling von Vega 1, 6 Tage später gestartet. Das Landemodul setzte am 15.6.1985 im Hochland Phoebe Regio auf und nutzte XRF-Spektroskopie zum Nachweis von Anorthosit-Norit-Troktolith-Material — erste chemische Analyse hoch gelegener venusianischer Kruste. Der Bus flog am 9.3.1986 in 8030 km Abstand am Kometen 1P/Halley vorbei. Gemeinsam lieferten die Vega-Busse die ersten Nahaufnahmen eines Kometenkerns und verfeinerten die Positionsbestimmung, mit der Giotto fünf Tage später einen 596-km-Vorbeiflug an Halley wagen konnte.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Proton-K / D-1 startet Vega 2 von Baikonur 6 Tage nach Vega 1.",
+      "type": "nominal"
+    },
+    {
+      "met": 176,
+      "label": "VENUS-BEGEGNUNG",
+      "note": "Abstiegsmodul landet in Phoebe Regio + liefert erste chemische Analyse von Hochlandboden.",
+      "type": "nominal"
+    },
+    {
+      "met": 442,
+      "label": "HALLEY-VORBEIFLUG",
+      "note": "Engste Annäherung an Komet 1P/Halley in 8030 km — gepaarte Positionsbestimmung für Giotto.",
+      "type": "nominal"
+    }
+  ]
 }

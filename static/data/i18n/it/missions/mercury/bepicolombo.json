@@ -2,5 +2,43 @@
   "name": "BepiColombo",
   "type": "ORBITER · ATTIVA",
   "first": "Prima missione planetaria congiunta Europa-Giappone; secondo veicolo a orbitare Mercurio (dopo Messenger)",
-  "description": "Missione congiunta ESA / JAXA su Mercurio, lanciata il 20/10/2018 — chiamata in onore del matematico italiano Giuseppe (Bepi) Colombo, che progettò la traiettoria multi-sorvolo di Mariner 10. La crociera di 8 anni usa 9 assistenze gravitazionali (Terra 2020, Venere 2020, Venere 2021, poi sei sorvoli di Mercurio 2021-2024) più spinta ionica-elettrica continua. Inserimento in orbita mercuriana il 5/12/2026; le operazioni scientifiche iniziano a inizio 2027."
+  "description": "Missione congiunta ESA / JAXA su Mercurio, lanciata il 20/10/2018 — chiamata in onore del matematico italiano Giuseppe (Bepi) Colombo, che progettò la traiettoria multi-sorvolo di Mariner 10. La crociera di 8 anni usa 9 assistenze gravitazionali (Terra 2020, Venere 2020, Venere 2021, poi sei sorvoli di Mercurio 2021-2024) più spinta ionica-elettrica continua. Inserimento in orbita mercuriana il 5/12/2026; le operazioni scientifiche iniziano a inizio 2027.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "L'Ariane 5 ECA lancia BepiColombo da Kourou per la sua crociera ionica di 8 anni verso Mercurio.",
+      "type": "nominal"
+    },
+    {
+      "met": 538,
+      "label": "SORVOLO TERRESTRE",
+      "note": "Singola assistenza gravitazionale terrestre inizia la catena di assistenze gravitazionali del sistema interno.",
+      "type": "nominal"
+    },
+    {
+      "met": 727,
+      "label": "SORVOLO VENERE #1",
+      "note": "Prima assistenza gravitazionale venusiana.",
+      "type": "nominal"
+    },
+    {
+      "met": 1026,
+      "label": "SORVOLO VENERE #2",
+      "note": "Seconda assistenza gravitazionale venusiana inizia la fase di avvicinamento a Mercurio.",
+      "type": "nominal"
+    },
+    {
+      "met": 1133,
+      "label": "SORVOLO MERCURIO #1",
+      "note": "Prima di sei assistenze gravitazionali mercuriane.",
+      "type": "nominal"
+    },
+    {
+      "met": 2968,
+      "label": "INSERIMENTO ORBITA MERCURIO",
+      "note": "Rilascio MTM + separazione orbiter; le operazioni scientifiche iniziano a inizio 2027.",
+      "type": "info"
+    }
+  ]
 }

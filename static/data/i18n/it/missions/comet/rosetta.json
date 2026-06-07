@@ -2,5 +2,43 @@
   "name": "Rosetta",
   "type": "ORBITER + LANDER · COMPLETATA",
   "first": "Primo veicolo a orbitare attorno a una cometa — e ad atterrarvi (Philae, 12/11/2014)",
-  "description": "Missione di punta dell'ESA per il rendez-vous con la cometa. Dopo una crociera decennale con tre assistenze gravitazionali terrestri, una di Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov-Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni. Il lander Philae ha raggiunto la superficie di 67P il 12/11/2014 — primo atterraggio morbido su una cometa. Rosetta ha concluso la missione con una discesa controllata su 67P il 30/09/2016."
+  "description": "Missione di punta dell'ESA per il rendez-vous con la cometa. Dopo una crociera decennale con tre assistenze gravitazionali terrestri, una di Marte, due sorvoli di asteroidi e 957 giorni di ibernazione nello spazio profondo, Rosetta ha raggiunto la cometa 67P/Churyumov-Gerasimenko nell'agosto 2014 e l'ha orbitata per oltre due anni. Il lander Philae ha raggiunto la superficie di 67P il 12/11/2014 — primo atterraggio morbido su una cometa. Rosetta ha concluso la missione con una discesa controllata su 67P il 30/09/2016.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Ariane 5G+ lancia Rosetta da Kourou per la crociera decennale verso la cometa 67P.",
+      "type": "nominal"
+    },
+    {
+      "met": 367,
+      "label": "SORVOLO TERRESTRE #1",
+      "note": "Prima di tre assistenze gravitazionali terrestri per costruire velocità verso il rendez-vous cometario.",
+      "type": "nominal"
+    },
+    {
+      "met": 1090,
+      "label": "SORVOLO MARZIANO",
+      "note": "Unica assistenza gravitazionale marziana + prime immagini ravvicinate di Phobos e Marte a 250 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1671,
+      "label": "ASTEROIDE 2867 ŠTEINS",
+      "note": "Primo sorvolo ravvicinato di un asteroide di tipo E.",
+      "type": "nominal"
+    },
+    {
+      "met": 2320,
+      "label": "ASTEROIDE 21 LUTETIA",
+      "note": "Sorvolo a 100 km di uno dei più grandi asteroidi della fascia principale mai osservati da vicino.",
+      "type": "nominal"
+    },
+    {
+      "met": 3809,
+      "label": "RENDEZ-VOUS COMETA 67P",
+      "note": "Inserimento in orbita attorno alla cometa 67P/Churyumov-Gerasimenko. Philae atterra il 12/11/2014.",
+      "type": "nominal"
+    }
+  ]
 }

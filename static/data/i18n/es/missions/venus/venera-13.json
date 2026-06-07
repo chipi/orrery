@@ -2,5 +2,19 @@
   "name": "Venera 13",
   "type": "ATERRIZADOR · FINALIZADA",
   "first": "Mayor supervivencia en superficie de cualquier misión a Venus (127 min); primeras panorámicas a color y primer audio de la superficie de otro planeta",
-  "description": "Cumbre del programa Venera soviético. Venera 13 aterrizó el 1-3-1982 en 7,5°S 303°E en las tierras altas de Phoebe Regio. Condiciones superficiales al aterrizar: 457 °C, 89 bar, neblina de ácido sulfúrico. El aterrizador sobrevivió 127 minutos — superando su meta de diseño en casi una hora — devolvió las primeras panorámicas a color de la superficie de otro planeta, grabó el primer audio con micrófono de viento y usó su taladro para determinar que el basalto del lugar era una composición leucítica alcalina débilmente diferenciada."
+  "description": "Cumbre del programa Venera soviético. Venera 13 aterrizó el 1-3-1982 en 7,5°S 303°E en las tierras altas de Phoebe Regio. Condiciones superficiales al aterrizar: 457 °C, 89 bar, neblina de ácido sulfúrico. El aterrizador sobrevivió 127 minutos — superando su meta de diseño en casi una hora — devolvió las primeras panorámicas a color de la superficie de otro planeta, grabó el primer audio con micrófono de viento y usó su taladro para determinar que el basalto del lugar era una composición leucítica alcalina débilmente diferenciada.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El Proton-K / D-1 lanza Venera 13 desde Baikonur en un crucero de 122 días.",
+      "type": "nominal"
+    },
+    {
+      "met": 122,
+      "label": "ATERRIZAJE SUPERFICIE VENUS",
+      "note": "Aterrizaje en Phoebe Regio a 7,5°S 303°E; 127 minutos de operaciones superficiales a 457 °C / 89 bar.",
+      "type": "nominal"
+    }
+  ]
 }

@@ -2,5 +2,31 @@
   "name": "JUICE",
   "type": "ORBITER · ACTIEF",
   "first": "Grootste interplanetaire ruimtevaartuig ooit in Europa gebouwd; eerste ruimtevaartuig dat een maan van een andere planeet omcirkelt (Ganymedes, 2034)",
-  "description": "JUpiter ICy moons Explorer — ESA's L-klasse vlaggenschipmissie, gelanceerd op 14-4-2023. De 8-jarige reis gebruikt een van de meest complexe zwaartekrachtassistentiesequenties ooit gevlogen: een primeur Maan-Aarde-zwaartekrachtassistentie op 19-8-2024, Venus op 31-8-2025, daarna nog twee Aardpassages in 2026 en 2029. Jupiter-baaninsertie is gepland voor 21-7-2031. Na 35 nauwe scheervluchten van Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE op 31-12-2034 naar een speciale Ganymedes-baan manoeuvreren — het eerste ruimtevaartuig ooit dat een maan van een andere planeet omcirkelt."
+  "description": "JUpiter ICy moons Explorer — ESA's L-klasse vlaggenschipmissie, gelanceerd op 14-4-2023. De 8-jarige reis gebruikt een van de meest complexe zwaartekrachtassistentiesequenties ooit gevlogen: een primeur Maan-Aarde-zwaartekrachtassistentie op 19-8-2024, Venus op 31-8-2025, daarna nog twee Aardpassages in 2026 en 2029. Jupiter-baaninsertie is gepland voor 21-7-2031. Na 35 nauwe scheervluchten van Europa, Ganymedes en Callisto over 3,5 jaar zal JUICE op 31-12-2034 naar een speciale Ganymedes-baan manoeuvreren — het eerste ruimtevaartuig ooit dat een maan van een andere planeet omcirkelt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "De Ariane 5 ECA+ lanceert JUICE vanuit Kourou.",
+      "type": "nominal"
+    },
+    {
+      "met": 493,
+      "label": "MAAN-AARDE-SCHEERVLUCHT",
+      "note": "Eerste Maan-Aarde-zwaartekrachtassistentie ooit uitgevoerd — Maan + Aarde in één zwaai.",
+      "type": "nominal"
+    },
+    {
+      "met": 871,
+      "label": "VENUS-SCHEERVLUCHT",
+      "note": "Venus-zwaartekrachtassistentie op weg terug naar nog twee aardpassages.",
+      "type": "nominal"
+    },
+    {
+      "met": 3020,
+      "label": "JUPITER-BAANINSERTIE",
+      "note": "Hoofdmotor-burn plaatst JUICE in Jupiterbaan voor de ijsmaantour.",
+      "type": "info"
+    }
+  ]
 }

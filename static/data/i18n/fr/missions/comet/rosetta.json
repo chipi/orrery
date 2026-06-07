@@ -2,5 +2,43 @@
   "name": "Rosetta",
   "type": "ORBITEUR + ATTERRISSEUR · TERMINÉE",
   "first": "Premier vaisseau à orbiter une comète — et à s'y poser (Philae, 12/11/2014)",
-  "description": "Mission phare de l'ESA pour rendez-vous cométaire. Après une croisière de 10 ans incluant trois assistances gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation dans l'espace lointain, Rosetta a rejoint la comète 67P/Tchourioumov-Guérassimenko en août 2014 et l'a orbitée pendant plus de deux ans. L'atterrisseur Philae a atteint la surface de 67P le 12/11/2014 — premier atterrissage en douceur sur une comète. Rosetta a terminé sa mission par une descente contrôlée sur 67P le 30/09/2016."
+  "description": "Mission phare de l'ESA pour rendez-vous cométaire. Après une croisière de 10 ans incluant trois assistances gravitationnelles terrestres, une assistance martienne, deux survols d'astéroïdes et 957 jours d'hibernation dans l'espace lointain, Rosetta a rejoint la comète 67P/Tchourioumov-Guérassimenko en août 2014 et l'a orbitée pendant plus de deux ans. L'atterrisseur Philae a atteint la surface de 67P le 12/11/2014 — premier atterrissage en douceur sur une comète. Rosetta a terminé sa mission par une descente contrôlée sur 67P le 30/09/2016.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Ariane 5G+ lance Rosetta depuis Kourou pour la croisière de 10 ans vers la comète 67P.",
+      "type": "nominal"
+    },
+    {
+      "met": 367,
+      "label": "SURVOL TERRESTRE #1",
+      "note": "Première de trois assistances gravitationnelles terrestres pour construire la vitesse vers le rendez-vous cométaire.",
+      "type": "nominal"
+    },
+    {
+      "met": 1090,
+      "label": "SURVOL MARTIEN",
+      "note": "Unique assistance gravitationnelle martienne + premières images rapprochées de Phobos et Mars à 250 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1671,
+      "label": "ASTÉROÏDE 2867 ŠTEINS",
+      "note": "Premier survol rapproché d'un astéroïde de type E.",
+      "type": "nominal"
+    },
+    {
+      "met": 2320,
+      "label": "ASTÉROÏDE 21 LUTETIA",
+      "note": "Survol à 100 km de l'un des plus grands astéroïdes de la ceinture principale jamais observés de près.",
+      "type": "nominal"
+    },
+    {
+      "met": 3809,
+      "label": "RENDEZ-VOUS COMÈTE 67P",
+      "note": "Insertion en orbite autour de la comète 67P/Tchourioumov-Guérassimenko. Philae atterrit le 12/11/2014.",
+      "type": "nominal"
+    }
+  ]
 }

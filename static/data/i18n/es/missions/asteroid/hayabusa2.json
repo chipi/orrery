@@ -2,5 +2,43 @@
   "name": "Hayabusa2",
   "type": "RETORNO DE MUESTRAS + ATERRIZADORES · ACTIVA (ampliada)",
   "first": "Segundo retorno de muestras de asteroide (Ryugu, 2020); primer cráter artificial en un asteroide; primer material subsuperficial de asteroide devuelto a la Tierra",
-  "description": "Continuación de JAXA de la Hayabusa original. Lanzada el 3-12-2014, Hayabusa2 alcanzó el asteroide cercano a la Tierra (162173) Ryugu el 27-6-2018. Operaciones de superficie 2018-2019 devolvieron el primer estudio cercano sostenido de un asteroide de tipo C en pila de escombros. La cápsula de retorno de muestras aterrizó sobre Woomera, Australia el 5-12-2020 entregando 5,4 g de material prístino de Ryugu — la primera muestra de asteroide con estratigrafía subsuperficial. Misión ampliada: sobrevuelo de (98943) 2001 CC21 en julio de 2026; encuentro con el (1998 KY26) de rotación rápida apuntado para julio de 2031."
+  "description": "Continuación de JAXA de la Hayabusa original. Lanzada el 3-12-2014, Hayabusa2 alcanzó el asteroide cercano a la Tierra (162173) Ryugu el 27-6-2018. Operaciones de superficie 2018-2019 devolvieron el primer estudio cercano sostenido de un asteroide de tipo C en pila de escombros. La cápsula de retorno de muestras aterrizó sobre Woomera, Australia el 5-12-2020 entregando 5,4 g de material prístino de Ryugu — la primera muestra de asteroide con estratigrafía subsuperficial. Misión ampliada: sobrevuelo de (98943) 2001 CC21 en julio de 2026; encuentro con el (1998 KY26) de rotación rápida apuntado para julio de 2031.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "El H-IIA 202 desde Tanegashima inicia el crucero de 3,5 años al asteroide Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 366,
+      "label": "SOBREVUELO TERRESTRE",
+      "note": "La asistencia gravitatoria terrestre fasea la órbita de encuentro.",
+      "type": "nominal"
+    },
+    {
+      "met": 1302,
+      "label": "LLEGADA RYUGU",
+      "note": "Vuelo estacionario a 20 km — inicio de 1,5 años de operaciones cercanas incluyendo recolección de muestras.",
+      "type": "nominal"
+    },
+    {
+      "met": 1880,
+      "label": "RETORNO A TIERRA",
+      "note": "La cápsula de muestras aterriza en Woomera, Australia con 5,4 g de material de Ryugu.",
+      "type": "nominal"
+    },
+    {
+      "met": 4250,
+      "label": "SOBREVUELO 2001 CC21",
+      "note": "Sobrevuelo de misión ampliada del asteroide (98943) 2001 CC21.",
+      "type": "info"
+    },
+    {
+      "met": 6092,
+      "label": "ENCUENTRO 1998 KY26",
+      "note": "Encuentro planificado con el asteroide de rotación rápida (1998 KY26).",
+      "type": "info"
+    }
+  ]
 }

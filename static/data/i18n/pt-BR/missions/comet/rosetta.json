@@ -2,5 +2,43 @@
   "name": "Rosetta",
   "type": "ORBITADOR + ATERRISSADOR · CONCLUÍDA",
   "first": "Primeira espaçonave a orbitar um cometa — e a pousar em um (Philae, 12-11-2014)",
-  "description": "Missão carro-chefe da ESA para encontro com cometa. Após um cruzeiro de 10 anos com três assistências gravitacionais terrestres, uma marciana, dois sobrevoos de asteroides e 957 dias de hibernação no espaço profundo, a Rosetta alcançou o cometa 67P/Churyumov-Gerasimenko em agosto de 2014 e o orbitou por mais de dois anos. O módulo Philae alcançou a superfície de 67P em 12-11-2014 — o primeiro pouso suave em um cometa. A Rosetta concluiu a missão com uma descida controlada a 67P em 30-09-2016."
+  "description": "Missão carro-chefe da ESA para encontro com cometa. Após um cruzeiro de 10 anos com três assistências gravitacionais terrestres, uma marciana, dois sobrevoos de asteroides e 957 dias de hibernação no espaço profundo, a Rosetta alcançou o cometa 67P/Churyumov-Gerasimenko em agosto de 2014 e o orbitou por mais de dois anos. O módulo Philae alcançou a superfície de 67P em 12-11-2014 — o primeiro pouso suave em um cometa. A Rosetta concluiu a missão com uma descida controlada a 67P em 30-09-2016.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Ariane 5G+ lança Rosetta de Kourou para o cruzeiro de 10 anos ao cometa 67P.",
+      "type": "nominal"
+    },
+    {
+      "met": 367,
+      "label": "SOBREVOO TERRESTRE #1",
+      "note": "Primeira de três assistências gravitacionais terrestres para construir velocidade para o encontro cometário.",
+      "type": "nominal"
+    },
+    {
+      "met": 1090,
+      "label": "SOBREVOO MARCIANO",
+      "note": "Única assistência gravitacional marciana + primeiras imagens próximas de Phobos e Marte a 250 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1671,
+      "label": "ASTEROIDE 2867 ŠTEINS",
+      "note": "Primeiro sobrevoo próximo de um asteroide de tipo E.",
+      "type": "nominal"
+    },
+    {
+      "met": 2320,
+      "label": "ASTEROIDE 21 LUTETIA",
+      "note": "Sobrevoo a 100 km de um dos maiores asteroides do cinturão principal já observados de perto.",
+      "type": "nominal"
+    },
+    {
+      "met": 3809,
+      "label": "ENCONTRO COMETÁRIO 67P",
+      "note": "Inserção em órbita ao redor do cometa 67P/Churyumov-Gerasimenko. Philae pousa em 12-11-2014.",
+      "type": "nominal"
+    }
+  ]
 }

@@ -1283,6 +1283,66 @@ export const WIKIMEDIA_MISSION_GALLERY_FALLBACK: Record<string, string[]> = {
     'Mercury topography MESSENGER.jpg',
     'Caloris Basin.jpg',
   ],
+  // #306 / #307 global iconic-missions expansion — actual mission
+  // imagery curated from Wikimedia Commons category pages
+  // (mission-output photos prioritised over spacecraft models).
+  rosetta: [
+    'Comet on 19 September 2014 NavCam mosaic.jpg',
+    'ROSETTA - Philae landing-zone by OSIRIS-NAC.png',
+    'Rosetta view of comet 67P-Churyumov–Gerasimenko (eso2001c).jpg',
+    '67P Churyumov-Gerasimenko - Rosetta (32755885495).png',
+    'Rosetta orbiter philae lander 67P comet in scale.svg',
+  ],
+  'vega-1': [
+    'Vega balloon probe.jpg',
+    '1986 Comet Halley.jpg',
+    'Vega-mission.jpg',
+    'Vega Spuskaemiy apparat vega.jpg',
+    '1984 venera galley nh.jpg',
+  ],
+  'vega-2': [
+    'Vega balloon probe.jpg',
+    '1986 Comet Halley.jpg',
+    'Vega-mission.jpg',
+    'Vega Spuskaemiy apparat vega.jpg',
+    '1984 venera galley nh.jpg',
+  ],
+  'venera-13': [
+    'Surface of Venus from Venera 13.jpg',
+    'Surface of Venus taken by Venera 13 (panoramic).jpg',
+    'USSR Venera 13 1982 - Venus ground recolorized.jpg',
+    'Venera 13 probe - illustrated.jpg',
+    'Venera 13 Venus surface images.gif',
+  ],
+  giotto: [
+    'Comet Halley close up.jpg',
+    'Comet Halley close up-cropped.jpg',
+    'Comet Halley (PIA17485).jpg',
+    'Giotto (spacecraft).jpg',
+  ],
+  hayabusa2: [
+    'Ryugu colored.jpg',
+    'Ryugu rotation.gif',
+    'Images of asteroid Ryugu from the wide angle Optical Navigation Cameras (ONC-W1 and ONC-W2) via Hayabusa2.jpg',
+    'Hayabusa2 Ion thruster.jpg',
+  ],
+  juice: [
+    'Juice launch kit cover close-up.png',
+  ],
+  bepicolombo: [
+    'BepiColombo spacecraft model.png',
+    'BepiColombo approaches Mercury ESA514734.png',
+    "BepiColombo's fourth Mercury flyby ESA501140.jpg",
+    "Mercury's magnetosphere during BepiColombo's third flyby (annotated) ESA501746.jpg",
+    'BepiColombo spacecraft stack ESA380846.jpg',
+  ],
+  ulysses: [
+    'Ulysses spacecraft.jpg',
+    'Ulysses at Jupiter H1.jpg',
+    'STS-41 Ulysses deployment.jpg',
+    "Ulysses in Discovery's payload bay.jpg",
+    'Artist picture-Ulysses after deployment.jpg',
+  ],
 };
 
 /** Top up a mission's gallery from WIKIMEDIA_MISSION_GALLERY_FALLBACK

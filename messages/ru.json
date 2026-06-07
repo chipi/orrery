@@ -1108,5 +1108,11 @@
   "fly_fd_marker_injection": "Injection",
   "fly_fd_marker_cruise": "Cruise",
   "fly_fd_marker_approach": "Approach",
-  "fly_fd_marker_arrival": "Arrival"
+  "fly_fd_marker_arrival": "Arrival",
+  "fly_hud_trajectory": "TRAJECTORY",
+  "fly_traj_type_cislunar": "Cislunar transfer",
+  "fly_traj_type_cislunar_free_return": "Cislunar free-return",
+  "fly_traj_type_helio_hohmann": "Heliocentric Hohmann",
+  "fly_traj_type_helio_free_return": "Heliocentric free-return",
+  "fly_traj_type_helio_flyby": "Heliocentric flyby"
 }

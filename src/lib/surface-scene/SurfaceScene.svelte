@@ -1360,6 +1360,71 @@
       }
     }
 
+    /** Pre-pass for label de-overlap (Florida cluster on /earth: SLC-40,
+     *  SLC-41, LC-39A, LC-39B are within ~25 km of each other; their
+     *  default radial-up labels stack on the same screen line). Build
+     *  small clusters of sites that share a neighbour within
+     *  CLUSTER_THRESHOLD on the unit sphere (~75 km at Earth's radius);
+     *  within each cluster, cycle through four offset directions so
+     *  the labels splay around the dot instead of overlapping. Solo
+     *  sites keep the default radial-up offset.  */
+    const CLUSTER_THRESHOLD = 0.012; // unit-sphere chord (~75 km on Earth)
+    const LABEL_OFFSET_CYCLE = [
+      new THREE.Vector3(0, 3.2, 0),
+      new THREE.Vector3(2.6, -2.0, 0),
+      new THREE.Vector3(-2.6, -2.0, 0),
+      new THREE.Vector3(0, -3.2, 0),
+    ];
+    function computeLabelOffsets(siteList: SurfaceSite[]): Map<string, THREE.Vector3> {
+      type Item = { id: string; pos: { x: number; y: number; z: number } };
+      const items: Item[] = [];
+      for (const s of siteList) {
+        if (s.kind === 'orbiter' || s.lat == null || s.lon == null) continue;
+        items.push({ id: s.id, pos: latLonToUnitSphere(s.lat, s.lon) });
+      }
+      const parent = new Map<string, string>();
+      for (const it of items) parent.set(it.id, it.id);
+      function find(id: string): string {
+        let p = parent.get(id) ?? id;
+        while (p !== parent.get(p)) p = parent.get(p) ?? p;
+        parent.set(id, p);
+        return p;
+      }
+      function union(a: string, b: string) {
+        const ra = find(a);
+        const rb = find(b);
+        if (ra !== rb) parent.set(ra, rb);
+      }
+      const T2 = CLUSTER_THRESHOLD * CLUSTER_THRESHOLD;
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const dx = items[i].pos.x - items[j].pos.x;
+          const dy = items[i].pos.y - items[j].pos.y;
+          const dz = items[i].pos.z - items[j].pos.z;
+          if (dx * dx + dy * dy + dz * dz < T2) union(items[i].id, items[j].id);
+        }
+      }
+      const clusters = new Map<string, string[]>();
+      for (const it of items) {
+        const r = find(it.id);
+        const list = clusters.get(r) ?? [];
+        list.push(it.id);
+        clusters.set(r, list);
+      }
+      const out = new Map<string, THREE.Vector3>();
+      for (const [, ids] of clusters) {
+        if (ids.length === 1) {
+          out.set(ids[0], LABEL_OFFSET_CYCLE[0]);
+          continue;
+        }
+        ids.sort();
+        for (let i = 0; i < ids.length; i++) {
+          out.set(ids[i], LABEL_OFFSET_CYCLE[i % LABEL_OFFSET_CYCLE.length]);
+        }
+      }
+      return out;
+    }
+
     function rebuildMarkers() {
       for (const mk of markers) {
         disposeObject3d(mk.group);
@@ -1367,6 +1432,7 @@
       }
       markers.length = 0;
       hotspots.length = 0;
+      const labelOffsets = computeLabelOffsets(sites);
       for (const site of sites) {
         // Skip orbiter entries — they go through rebuildOrbitalMarkers.
         if (site.kind === 'orbiter') continue;
@@ -1406,7 +1472,7 @@
         const label = buildLabel({
           text: site.name ?? site.id,
           color: colorFor(site),
-          offset: new THREE.Vector3(0, 3.2, 0),
+          offset: labelOffsets.get(site.id) ?? new THREE.Vector3(0, 3.2, 0),
           size: 1.6,
         });
         group.add(label.group);
@@ -2632,6 +2698,14 @@
       // (Orbiter dot scale also stays constant; the orbital ring +
       // halo do the selection signalling.)
 
+      // Live altitude (km above surface) — read at the top of the loop
+      // so the bottom-right HUD updates every frame on every route,
+      // including /earth (no hotspot dispatcher). Previously this
+      // assignment was nested inside the `if (hotspots.length)` block
+      // below, so Earth's hotspot-free scene left altitudeKm pinned at
+      // its initial 0 ("0 m altitude" forever).
+      altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
+
       // Surface Hotspots LOD (PRD-014 / RFC-017 S1).
       // Per-frame tier selection based on screen-projected marker size.
       // For S1, only Apollo 11 swaps Tier 0 → Tier 1; other hotspots
@@ -3078,14 +3152,6 @@
         } else if (tierContext !== null) {
           tierContext = null;
         }
-
-        // Debug overlay write — guarded by showDebug (?debug=1).
-        // Same shape as /mars's debugInfo block.
-        // Live altitude (km above surface). camR is in scene units;
-        // multiply by `radiusKm/planetRadius` km/unit to get real km.
-        // Updated every frame regardless of ?debug=1 so the HUD chip
-        // (altitude indicator) stays correct.
-        altitudeKm = Math.max(0, (camR - planetRadius) * (config.radiusKm / planetRadius));
 
         // Sphere → flat-patch transition trigger (ADR-062). Once the
         // camera crosses SPHERE_TO_FLAT_CAM_R = 30.3 with a region
@@ -3977,16 +4043,16 @@ sample      ${debugInfo.projectedPxSample}`}
     position: absolute;
     right: 12px;
     bottom: 56px;
-    z-index: 5;
+    z-index: 55;
     pointer-events: none;
     padding: 4px 10px;
-    background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(8, 10, 22, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.78);
     text-transform: uppercase;
     backdrop-filter: blur(4px);
   }
@@ -4484,22 +4550,26 @@ sample      ${debugInfo.projectedPxSample}`}
      open. (#286 audit — moved out of the bottom-row controls stack
      to fix the sizing/overlap with the cross-link chips.) */
   /* Distance scale bar — fixed in the canvas bottom-right corner.
-     Above the legend strip but below z-index 60 floating exits. */
+     Stacked ABOVE the altitude indicator (which also sits bottom-right
+     at bottom:56) so they read as two stacked HUD chips rather than
+     overlapping rectangles. z-index 60 keeps it above 3D sprite labels
+     for surface sites (the prior z:40 sometimes felt "behind" them
+     against bright planet textures). */
   .distance-scale {
     position: fixed;
-    right: 24px;
-    bottom: 56px;
+    right: 12px;
+    bottom: 90px;
     pointer-events: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
     padding: 6px 10px;
-    background: rgba(5, 5, 20, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(5, 5, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 4px;
-    backdrop-filter: blur(4px);
-    z-index: 40;
+    backdrop-filter: blur(6px);
+    z-index: 60;
   }
   .distance-scale-bar {
     height: 4px;

@@ -114,19 +114,6 @@
   // change without restructuring the scene.
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$data/i18n/en-US/scenarios/orrery-1.json';
-  import {
-    buildHistoricalMarsArcs,
-    arcColorForStatus,
-    type MarsMissionInput,
-  } from '$lib/historical-mars-arcs';
-
-  // Vite-glob every Mars mission JSON at build time — the historical-arcs
-  // overlay needs the full list (PRD-014 #PF Step 2b / GH #255).
-  const marsModules = import.meta.glob('$data/missions/mars/*.json', {
-    eager: true,
-    import: 'default',
-  }) as Record<string, MarsMissionInput>;
-  const MARS_MISSIONS_FOR_OVERLAY: MarsMissionInput[] = Object.values(marsModules);
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
@@ -199,6 +186,36 @@
   let isFreeReturn = $state(true);
   let activeDestination = $state<DestinationId>('mars');
   let isMoonMission = $state(false);
+
+  /** Human-readable orbit/trajectory regime for the identity HUD. The
+   *  five buckets cover every mission /fly renders today:
+   *    - Cislunar free-return: Moon mission with retArc (Apollo 13 / ORRERY-1)
+   *    - Cislunar transfer:    Moon mission, one-way (most Apollo / Chang'e)
+   *    - Heliocentric flyby:   gas/ice giants + Pluto (direct Hohmann to a
+   *                            FLYBY-only destination per ADR-028)
+   *    - Heliocentric free-return: free-return loop around an inner-system body
+   *    - Heliocentric Hohmann: any other one-way interplanetary transfer
+   *  Kept derived here (not in the mission JSON) so legacy mission files
+   *  don't need a backfill; the derivation reads the already-classified
+   *  isMoonMission + isFreeReturn + activeDestination states. */
+  const HELIO_FLYBY_DESTINATIONS = new Set<DestinationId>([
+    'jupiter',
+    'saturn',
+    'uranus',
+    'neptune',
+    'pluto',
+  ]);
+  let trajectoryTypeLabel = $derived(
+    isMoonMission
+      ? isFreeReturn
+        ? m.fly_traj_type_cislunar_free_return()
+        : m.fly_traj_type_cislunar()
+      : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
+        ? m.fly_traj_type_helio_flyby()
+        : isFreeReturn
+          ? m.fly_traj_type_helio_free_return()
+          : m.fly_traj_type_helio_hohmann(),
+  );
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
 
@@ -1078,9 +1095,6 @@
     const helioHandles = buildHelioScene({
       container,
       aspect: container.clientWidth / container.clientHeight,
-      onDestinationChange: (id) => {
-        historicalMarsArcsGroup.visible = id === 'mars';
-      },
       // 2026-06-06 — give /fly the same /explore-grade body imagery for
       // Sun + Earth + every destination. 2K throughout (camera here
       // sits closer than /explore but bodies are compressed, so 2K
@@ -1701,42 +1715,6 @@
     scene.add(retLine);
     // Hoist the builder so the $effect can re-use it on mission swap.
     // buildTubeGeometry published via flyUpdaters.helio at end of onMount.
-
-    // ─── Historical Mars-mission overlay (PRD-014 #PF Step 2b / GH #255) ──
-    // Faded background arcs for every Mars mission with departure_date +
-    // arrival_date. Shown only when activeDestination === 'mars'; hidden
-    // otherwise via applyDestinationVisuals. Built once per mount, since
-    // mission JSONs are static at runtime.
-    const historicalMarsArcsGroup = new THREE.Group();
-    historicalMarsArcsGroup.visible = activeDestination === 'mars';
-    {
-      const arcs = buildHistoricalMarsArcs(MARS_MISSIONS_FOR_OVERLAY);
-      for (const arc of arcs) {
-        const [r, g, b] = arcColorForStatus(arc.status);
-        const positions = new Float32Array(arc.points.length * 3);
-        for (let i = 0; i < arc.points.length; i++) {
-          positions[i * 3] = arc.points[i].x * SCALE_3D;
-          positions[i * 3 + 1] = 0;
-          positions[i * 3 + 2] = arc.points[i].z * SCALE_3D;
-        }
-        const geom = new THREE.BufferGeometry();
-        geom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        const line = new THREE.Line(
-          geom,
-          new THREE.LineBasicMaterial({
-            color: new THREE.Color(r, g, b),
-            transparent: true,
-            opacity: 0.18,
-            depthWrite: false,
-          }),
-        );
-        line.userData.missionId = arc.id;
-        line.userData.missionName = arc.name;
-        line.userData.missionYear = arc.year;
-        historicalMarsArcsGroup.add(line);
-      }
-    }
-    scene.add(historicalMarsArcsGroup);
 
     // earthMesh + destination mesh (`marsMesh` for historic reasons),
     // orbit rings, DEST_STYLE catalogue, and the destination-swap
@@ -4065,6 +4043,10 @@
           >{m.fly_demo_replay_cta()}</a
         >
       {/if}
+      <div class="hud-row">
+        <span class="hud-key">{m.fly_hud_trajectory()}</span>
+        <span class="hud-val">{trajectoryTypeLabel}</span>
+      </div>
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_vehicle()}</span>
         <span class="hud-val">{mission.vehicle}</span>

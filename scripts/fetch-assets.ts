@@ -858,6 +858,56 @@ export const MISSION_IMAGE_QUERIES: MissionImageQuery[] = [
     query: 'messenger mercury orbiter sunshade',
     commonsCoverFirst: 'Messenger spacecraft.jpg',
   },
+  // #306 global iconic-missions expansion (2026-06-07) — non-NASA
+  // roster covering ESA / Roscosmos / JAXA flagship deep-space
+  // missions. Curated Commons covers where available; the script
+  // falls through to the agency-mission-sources query for the
+  // rest of the gallery.
+  {
+    id: 'rosetta',
+    query: 'Rosetta spacecraft comet 67P Churyumov-Gerasimenko ESA',
+    commonsCoverFirst: 'Comet 67P on 19 September 2014 NavCam mosaic.jpg',
+  },
+  {
+    id: 'vega-1',
+    query: 'Vega 1 Venus lander balloon Halley comet Soviet',
+    commonsCoverFirst: 'Vega spacecraft.jpg',
+  },
+  {
+    id: 'vega-2',
+    query: 'Vega 2 Venus lander balloon Halley comet Soviet',
+    commonsCoverFirst: 'Vega spacecraft.jpg',
+  },
+  {
+    id: 'venera-13',
+    query: 'Venera 13 Venus surface color panorama Soviet lander',
+    commonsCoverFirst: 'Venera 13 - venera13-right.jpg',
+  },
+  {
+    id: 'giotto',
+    query: 'Giotto Halley comet ESA spacecraft',
+    commonsCoverFirst: 'Giotto spacecraft.jpg',
+  },
+  {
+    id: 'hayabusa2',
+    query: 'Hayabusa2 asteroid Ryugu JAXA sample return',
+    commonsCoverFirst: 'Ryugu by Hayabusa2 mid 2018-06-26.jpg',
+  },
+  {
+    id: 'juice',
+    query: 'JUICE Jupiter icy moons explorer ESA spacecraft',
+    commonsCoverFirst: 'JUICE spacecraft model.jpg',
+  },
+  {
+    id: 'bepicolombo',
+    query: 'BepiColombo Mercury ESA JAXA spacecraft',
+    commonsCoverFirst: 'BepiColombo spacecraft model.jpg',
+  },
+  {
+    id: 'ulysses',
+    query: 'Ulysses solar polar heliosphere ESA NASA spacecraft',
+    commonsCoverFirst: 'Ulysses spacecraft.jpg',
+  },
 ];
 
 const MISSIONS_DIR = 'static/images/missions';
@@ -2740,9 +2790,13 @@ async function fetchMissionThumbnails(): Promise<number> {
       } else {
         const hid = missionDestToHeliocentricDestinationId(m.dest);
         if (!hid) {
-          throw new Error(
-            `Thumbnail: mission ${m.id} has dest ${m.dest} without heliocentric mapping`,
-          );
+          // #306 expansion (2026-06-07) — non-planetary destinations
+          // (COMET / ASTEROID / SUN) don't have a fixed heliocentric
+          // porkchop body, so we skip thumbnail rendering for them.
+          // Their visual story lives on the /explore PATHS layer; the
+          // /missions card falls back to the gallery hero we fetch
+          // separately above.
+          continue;
         }
         const vInf = m.flight?.arrival?.v_infinity_km_s;
         paintHeliocentricThumbnail(ctx, hid, depDay, vInf, color);

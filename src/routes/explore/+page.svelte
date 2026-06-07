@@ -4550,6 +4550,13 @@
     </div>
     {#if layers.paths}
       <div class="paths-legend" role="group" aria-label="Iconic trajectory legend">
+        <a
+          class="paths-legend-why"
+          href="{base}/science/transfers/coplanar-trajectories"
+          data-testid="paths-legend-why"
+        >
+          ⓘ Why are they all in one plane?
+        </a>
         {#each PATHS_LEGEND as entry}
           <button
             type="button"
@@ -5015,6 +5022,23 @@
   .paths-legend-row:focus-visible {
     background: rgba(68, 102, 255, 0.15);
     color: #fff;
+    outline: none;
+  }
+  .paths-legend-why {
+    display: block;
+    padding: 4px 6px 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(221, 228, 255, 0.65);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .paths-legend-why:hover,
+  .paths-legend-why:focus-visible {
+    color: #fff;
+    background: rgba(68, 102, 255, 0.12);
     outline: none;
   }
   .paths-legend-row .swatch {

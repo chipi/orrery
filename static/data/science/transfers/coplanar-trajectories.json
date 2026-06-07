@@ -1,0 +1,28 @@
+{
+  "id": "coplanar-trajectories",
+  "tab": "transfers",
+  "order": 8,
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "Toggle ICONIC MISSIONS in the layer chips to see the 18 trajectories all hug the ecliptic plane (except Ulysses)"
+    }
+  ],
+  "links": [
+    {
+      "l": "Wikipedia · Ecliptic",
+      "u": "https://en.wikipedia.org/wiki/Ecliptic",
+      "t": "intro"
+    },
+    {
+      "l": "Wikipedia · Inclination change",
+      "u": "https://en.wikipedia.org/wiki/Orbital_inclination_change",
+      "t": "core"
+    },
+    {
+      "l": "Wikipedia · Ulysses (spacecraft) — using Jupiter to reach a polar Sun orbit",
+      "u": "https://en.wikipedia.org/wiki/Ulysses_(spacecraft)",
+      "t": "deep"
+    }
+  ]
+}

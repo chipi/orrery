@@ -73,7 +73,7 @@ export interface BuildIconicTrajectoryOpts {
 }
 
 const DEFAULT_LINE_WIDTH = 2.5;
-const CLICK_TARGET_RADIUS_PX = 9;
+const CLICK_TARGET_RADIUS_PX = 6;
 const LABEL_TEXTURE_W = 256;
 const LABEL_TEXTURE_H = 104;
 const MARKER_TEXTURE_PX = 64;
@@ -82,6 +82,12 @@ const MARKER_TEXTURE_PX = 64;
 // chevron crown around the central dot to read as "trajectory event"
 // rather than "small body".
 const MARKER_SPRITE_SCALE = 18;
+// Launch + current-position markers are the trajectory's endpoints —
+// kept visually small and styled differently from the chevron encounter
+// markers so the eye instantly reads "this is the start" / "this is
+// where the spacecraft is now".
+const ENDPOINT_TEXTURE_PX = 48;
+const ENDPOINT_SPRITE_SCALE = 12;
 // Sprite scale in scene units. The /explore log-AU scale puts the
 // inner planets at ~50-130 units and the outer giants at ~250-400, so
 // 70 lands a label about the width of a Jupiter-orbit gap — readable
@@ -91,17 +97,18 @@ const LABEL_SPRITE_SCALE_Y = 28;
 const LABEL_PIXEL_OFFSET = 10;
 
 // Dim / bright opacity pairs. The PATHS layer renders every iconic
-// trajectory simultaneously, so the default is dim — the user can
-// hover a legend row (or any waypoint marker on the trajectory) to
-// single one out at full intensity without the others crowding the
-// read.
-const LINE_OPACITY_DIM = 0.35;
+// trajectory simultaneously, so the default is *very* dim — paths
+// recede into the background and act as subtle context lines until
+// the user singles one out by hovering its legend row or any waypoint
+// marker. The bright state pops to full intensity for high contrast
+// against its now-faded siblings.
+const LINE_OPACITY_DIM = 0.16;
 const LINE_OPACITY_BRIGHT = 0.95;
-const MARKER_OPACITY_DIM = 0.55;
+const MARKER_OPACITY_DIM = 0.28;
 const MARKER_OPACITY_BRIGHT = 1.0;
-const CLICK_TARGET_OPACITY_DIM = 0.55;
+const CLICK_TARGET_OPACITY_DIM = 0.35;
 const CLICK_TARGET_OPACITY_BRIGHT = 1.0;
-const RING_OPACITY_DIM = 0.2;
+const RING_OPACITY_DIM = 0.1;
 const RING_OPACITY_BRIGHT = 0.55;
 
 /**
@@ -121,6 +128,51 @@ function projectWaypoint(
   if (r < 1e-6) return new THREE.Vector3(0, 0, 0);
   const scaled = auToPx(r);
   return new THREE.Vector3((p.x / r) * scaled, (p.y / r) * scaled, (p.z / r) * scaled);
+}
+
+/**
+ * Build a 2D sprite for the LAUNCH endpoint — small filled dot inside
+ * a hollow square outline. The square shape distinguishes "start of
+ * trajectory" from the round encounter markers and the soon-to-arrive
+ * current-position marker.
+ */
+function buildLaunchMarkerSprite(color: string): {
+  sprite: THREE.Sprite;
+  texture: THREE.CanvasTexture;
+  material: THREE.SpriteMaterial;
+} {
+  const canvas = document.createElement('canvas');
+  canvas.width = ENDPOINT_TEXTURE_PX;
+  canvas.height = ENDPOINT_TEXTURE_PX;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    const cx = ENDPOINT_TEXTURE_PX / 2;
+    const cy = ENDPOINT_TEXTURE_PX / 2;
+    // Hollow square outline — "departure box" / origin frame.
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.lineJoin = 'round';
+    const half = 10;
+    ctx.strokeRect(cx - half, cy - half, half * 2, half * 2);
+    // Small filled center dot.
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.anisotropy = 4;
+  const material = new THREE.SpriteMaterial({
+    map: texture,
+    transparent: true,
+    opacity: MARKER_OPACITY_DIM,
+    depthTest: false,
+    depthWrite: false,
+  });
+  const sprite = new THREE.Sprite(material);
+  sprite.scale.set(ENDPOINT_SPRITE_SCALE, ENDPOINT_SPRITE_SCALE, 1);
+  sprite.renderOrder = 9;
+  return { sprite, texture, material };
 }
 
 /**
@@ -313,10 +365,17 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     .filter((entry) => entry.wp.label && entry.wp.label !== 'Today');
 
   for (const { wp, pos } of labeledWaypoints) {
-    const { sprite: markerSprite, texture, material } = buildEncounterMarkerSprite(data.color);
+    // Launch waypoint gets the square endpoint marker; everything else
+    // (gravity assists, encounters, intermediate fixes) gets the chevron
+    // encounter marker. We detect Launch by label content rather than
+    // index because some trajectories have an unlabeled launch-day
+    // waypoint before the labeled "Launch (vehicle)" entry.
+    const isLaunch = !!wp.label?.toLowerCase().includes('launch');
+    const builder = isLaunch ? buildLaunchMarkerSprite : buildEncounterMarkerSprite;
+    const { sprite: markerSprite, texture, material } = builder(data.color);
     markerSprite.position.copy(pos);
     markerSprite.userData = {
-      kind: 'iconic-trajectory-marker',
+      kind: isLaunch ? 'iconic-trajectory-launch' : 'iconic-trajectory-marker',
       id: data.id,
       missionId: data.mission_id,
       label: wp.label,
@@ -338,8 +397,10 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     }
   }
 
-  // ── "Today" click target — larger, brighter, distinguishes from
-  //    encounter markers so the user reads it as the current location. ─
+  // ── "Today" click target — small filled sphere + thin halo ring.
+  //    Round + glowing visually distinguishes "current position" from
+  //    the square Launch marker + the chevron encounter markers. The
+  //    halo ring also reads as a click affordance on hover. ─
   const todayWp = data.waypoints[data.waypoints.length - 1];
   const todayPos = projected[projected.length - 1];
   const clickTargetGeo = new THREE.SphereGeometry(CLICK_TARGET_RADIUS_PX, 16, 16);

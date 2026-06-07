@@ -53,6 +53,10 @@
   let indexOpen = $state(false);
   let hoverLabel: HoverLabel | undefined = $state();
 
+  /** Reactive mirror of the 3D scene's hovered module id so the
+   *  sidebar list can visually echo the canvas hover. */
+  let canvasHoveredId: string | null = $state(null);
+
   let cleanupThree: (() => void) | undefined;
   let perfCheckPending = true;
 
@@ -605,6 +609,7 @@
       }
       if (found !== visualRef.hoveredId) {
         visualRef.hoveredId = found;
+        canvasHoveredId = found;
         refreshMeshMaterials(performance.now() / 1000);
       }
     }
@@ -612,6 +617,7 @@
     function onPointerLeave() {
       if (visualRef.hoveredId !== null) {
         visualRef.hoveredId = null;
+        canvasHoveredId = null;
         refreshMeshMaterials(performance.now() / 1000);
       }
     }
@@ -864,6 +870,7 @@
             <button
               type="button"
               class="module-row"
+              class:canvas-hovered={canvasHoveredId === mod.id}
               onclick={() => openModule(mod)}
               aria-current={selected?.id === mod.id ? 'true' : undefined}
             >
@@ -884,6 +891,7 @@
               <button
                 type="button"
                 class="module-row"
+                class:canvas-hovered={canvasHoveredId === ship.id}
                 onclick={() => openModule(ship)}
                 aria-current={selected?.id === ship.id ? 'true' : undefined}
               >
@@ -1193,10 +1201,22 @@
       background 120ms;
   }
   .module-row:hover,
-  .module-row:focus-visible {
+  .module-row:focus-visible,
+  .module-row.canvas-hovered {
     border-color: rgba(68, 102, 255, 0.55);
     background: rgba(68, 102, 255, 0.12);
     outline: none;
+  }
+  .module-row[aria-current='true'] {
+    border-color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.16);
+    color: #fff;
+  }
+  .module-row[aria-current='true']:hover,
+  .module-row[aria-current='true']:focus-visible,
+  .module-row[aria-current='true'].canvas-hovered {
+    border-color: #4ecdc4;
+    background: rgba(78, 205, 196, 0.24);
   }
   .mod-name-row {
     display: flex;

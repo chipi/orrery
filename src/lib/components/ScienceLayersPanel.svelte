@@ -309,7 +309,11 @@
      Sits directly under the nav with a small gap. */
   .panel {
     position: fixed;
-    top: calc(var(--nav-height) + 12px);
+    /* Sits below the nav AND below any in-page top-center banner
+       (StationOrbitBanner publishes its height to --lens-banner-height).
+       Without consuming the variable, the science-lens panel would
+       cover the orbit-banner content on /iss + /tiangong. */
+    top: calc(var(--nav-height) + var(--lens-banner-height, 0px) + 12px);
     left: 50%;
     transform: translateX(-50%);
     z-index: 32;

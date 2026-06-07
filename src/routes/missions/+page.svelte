@@ -343,6 +343,30 @@
           aria-checked={destFilter === 'CERES'}
           onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
         >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'COMET'}
+          role="radio"
+          aria-checked={destFilter === 'COMET'}
+          onclick={() => setDest('COMET')}>{m.lib_filter_dest_comet()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'ASTEROID'}
+          role="radio"
+          aria-checked={destFilter === 'ASTEROID'}
+          onclick={() => setDest('ASTEROID')}>{m.lib_filter_dest_asteroid()}</button
+        >
+        <button
+          type="button"
+          class="pill"
+          class:active={destFilter === 'SUN'}
+          role="radio"
+          aria-checked={destFilter === 'SUN'}
+          onclick={() => setDest('SUN')}>{m.lib_filter_dest_sun()}</button
+        >
       </div>
 
       <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_status_label()}>

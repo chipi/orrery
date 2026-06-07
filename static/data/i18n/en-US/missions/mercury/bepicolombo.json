@@ -1,0 +1,44 @@
+{
+  "name": "BepiColombo",
+  "type": "ORBITER · ACTIVE",
+  "first": "First Europe + Japan joint planetary mission; second-ever spacecraft to orbit Mercury (after Messenger)",
+  "description": "Joint ESA / JAXA mission to Mercury, launched 2018-10-20 — named after Italian mathematician Giuseppe (Bepi) Colombo, who designed Mariner 10's multi-flyby trajectory. The 8-year cruise uses 9 gravity assists (Earth 2020, Venus 2020, Venus 2021, then six Mercury flybys 2021–2024) plus continuous ion-electric thrust from the Mercury Transfer Module to bleed off the enormous solar-gravity gradient between Earth and Mercury orbits. Mercury orbit insertion 2026-12-05; science operations begin early 2027 after MTM jettison and separation of the two orbiters — ESA's MPO (planetary surface + composition) and JAXA's Mio (magnetosphere). Tests of general relativity via radio-science range tracking through Mercury's strong solar-gravity environment are also planned.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Ariane 5 ECA lifts BepiColombo from Kourou on its 8-year ion-cruise to Mercury.",
+      "type": "nominal"
+    },
+    {
+      "met": 538,
+      "label": "EARTH FLYBY",
+      "note": "Single Earth gravity assist begins the inner-system gravity-assist chain.",
+      "type": "nominal"
+    },
+    {
+      "met": 727,
+      "label": "VENUS FLYBY #1",
+      "note": "First Venus gravity assist.",
+      "type": "nominal"
+    },
+    {
+      "met": 1026,
+      "label": "VENUS FLYBY #2",
+      "note": "Second Venus gravity assist begins the Mercury approach phase.",
+      "type": "nominal"
+    },
+    {
+      "met": 1133,
+      "label": "MERCURY FLYBY #1",
+      "note": "First of six Mercury gravity assists.",
+      "type": "nominal"
+    },
+    {
+      "met": 2968,
+      "label": "MERCURY ORBIT INSERTION",
+      "note": "MTM jettison + orbiter separation; science operations begin early 2027.",
+      "type": "info"
+    }
+  ]
+}

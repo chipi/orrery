@@ -1,0 +1,22 @@
+{
+  "id": "vega-2",
+  "name": "Vega 2",
+  "mission_id": "vega-2",
+  "category": "completed-at-target",
+  "color": "#ec87c0",
+  "schema_version": 1,
+  "_doc": "Roscosmos / ESA Vega 2 — twin of Vega 1, launched 6 days later. Venus lander + balloon 1985-06-15 (Phoebe Regio highland landing), Halley flyby 1986-03-09 at 8030 km. Hardware remains in heliocentric orbit. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [-0.55, 0.78, 0.0],
+  "current_distance_au": 0.95,
+  "current_distance_label": "0.95 AU · spacecraft in heliocentric orbit since Halley flyby 1986-03-09",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "1984-12-21", "label": "Launch (Proton-K)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "1985-03", "x": 0.86, "y": -0.32, "z": 0.0 },
+    { "date": "1985-06-15", "label": "Venus + balloon", "x": 0.72, "y": 0.05, "z": 0.0 },
+    { "date": "1985-12", "x": 0.93, "y": 0.55, "z": 0.0 },
+    { "date": "1986-03-09", "label": "Halley flyby", "x": 1.0, "y": 0.4, "z": 0.06 },
+    { "date": "2026-06", "x": -0.55, "y": 0.78, "z": 0.0 }
+  ]
+}

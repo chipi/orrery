@@ -36,7 +36,10 @@
           "SATURN",
           "MERCURY",
           "VENUS",
-          "URANUS"
+          "URANUS",
+          "COMET",
+          "ASTEROID",
+          "SUN"
         ]
       },
       "status": {

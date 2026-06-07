@@ -1,0 +1,26 @@
+{
+  "name": "Vega 1",
+  "type": "FLYBY + LANDER + BALLOON · FLOWN",
+  "first": "First-ever balloon aerostat deployed in another planet's atmosphere (Venus, 1985); first spacecraft to carry science to two distinct solar-system targets",
+  "description": "Soviet–ESA flagship of the Halley armada. Vega 1 launched 1984-12-15 with a Venera-lineage lander plus a first-of-kind ESA/CNES-built helium balloon that drifted in Venus's cloud deck at 54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio net. After dropping its descent module the bus used Venus gravity assist to redirect to comet 1P/Halley, achieving a 8890 km closest approach on 1986-03-06 — the first cometary nucleus encounter, and the position fix that ESA's Giotto used to navigate its own much closer Halley flyby a week later.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Proton-K / D-1 lifts Vega 1 from Baikonur.",
+      "type": "nominal"
+    },
+    {
+      "met": 178,
+      "label": "VENUS ENCOUNTER",
+      "note": "Descent module separates + lands; balloon deploys at 54 km altitude for 46.5 hours.",
+      "type": "nominal"
+    },
+    {
+      "met": 446,
+      "label": "HALLEY FLYBY",
+      "note": "Closest approach to comet 1P/Halley at 8890 km — first cometary nucleus observation.",
+      "type": "nominal"
+    }
+  ]
+}

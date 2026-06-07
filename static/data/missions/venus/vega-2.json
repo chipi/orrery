@@ -1,0 +1,58 @@
+{
+  "id": "vega-2",
+  "agency": "ROSCOSMOS / ESA",
+  "agency_full": "Roscosmos / Soviet Academy of Sciences (lead, IKI) — international payload from ESA / CNES / Hungary / Austria / Bulgaria / Czechoslovakia / Poland / East Germany",
+  "sector": "gov",
+  "dest": "VENUS",
+  "color": "#ec87c0",
+  "year": 1984,
+  "status": "FLOWN",
+  "departure_date": "1984-12-21",
+  "arrival_date": "1985-06-15",
+  "transit_days": 176,
+  "vehicle": "Proton-K / D-1",
+  "payload": "Identical twin of Vega 1: 4920 kg flyby bus + ~1500 kg Venus lander + helium aerostat. Launched 6 days after Vega 1 for redundancy + a paired Halley armada solution.",
+  "delta_v": "~3.6 km/s (departure + Halley intercept retarget)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© Roscosmos / IKI / international consortium. Vega 2 launched from Baikonur 1984-12-21, 6 days behind Vega 1. Its descent module landed 1985-06-15 at 7.5°S 177.7°E on Venus, returning soil-composition X-ray spectra (anorthosite-norite-troctolite composition — first chemical analysis of Venusian highland material) before high-temperature failure. The Vega 2 balloon performed identically to Vega 1's at ~54 km, with both balloons drifting at ~240 km/h around the planet in opposite hemispheres for ~46 hours. The flyby bus continued to comet 1P/Halley for closest approach (8030 km) on 1986-03-09 — three days after Vega 1's encounter. Together the Vega buses returned the first close-up images of any cometary nucleus, with Vega 2's data refining Vega 1's position fix and feeding directly into the targeting solution for Giotto's much closer 596 km Halley flyby five days later.",
+  "links": [
+    {
+      "l": "Vega 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_2",
+      "t": "intro"
+    },
+    {
+      "l": "Vega program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_program",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA master catalog — Vega 2 (1984-128A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1984-128A",
+      "t": "core"
+    },
+    {
+      "l": "Surkov et al. (1986) — Vega 2 surface soil X-ray analysis (Nature 322)",
+      "u": "https://www.nature.com/articles/322602a0",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society — Vega / Halley armada retrospective",
+      "u": "https://www.planetary.org/articles/halleys-comet-spacecraft",
+      "t": "core"
+    },
+    {
+      "l": "ESA — international cooperation on the Halley armada",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Giotto/Halley_armada",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 176, "type": "flyby" },
+      { "met_days": 442, "type": "flyby" }
+    ]
+  }
+}

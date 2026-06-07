@@ -82,7 +82,13 @@ function loadAllMissions(): MissionFile[] {
   return out;
 }
 
-const MISSIONS = loadAllMissions();
+const ALL_MISSIONS = loadAllMissions();
+// /fly only renders heliocentric porkchop missions (Mars + Moon + the
+// gas giants + Pluto / Ceres + Venus / Mercury). The 2026-06-07 #306
+// global expansion added 9 missions whose targets — comets, asteroids,
+// Sun polar orbits — have no porkchop arc on /fly; their trajectories
+// are surfaced only on the /explore PATHS layer. Skip them here.
+const MISSIONS = ALL_MISSIONS.filter((m) => !['comet', 'asteroid', 'sun'].includes(m.destDir));
 
 /** Mirrors /fly's `applyMissionAsLoaded` flight-arc construction. */
 function buildMissionArcs(m: MissionFile): {
@@ -141,16 +147,16 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (17 Mars + 21 Moon + 9 outer + 1 inner — #306 A.2)`, () => {
+  it(`fixture loads expected counts (17 Mars + 21 Moon + 10 outer + 5 inner — #306 global expansion)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const outer = MISSIONS.filter((m) =>
       ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto', 'ceres'].includes(m.destDir),
     );
     const inner = MISSIONS.filter((m) => ['mercury', 'venus'].includes(m.destDir));
-    if (mars.length !== 17 || moon.length !== 21 || outer.length !== 9 || inner.length !== 1) {
+    if (mars.length !== 17 || moon.length !== 21 || outer.length !== 10 || inner.length !== 5) {
       throw new Error(
-        `Expected 17 Mars + 21 Moon + 9 outer + 1 inner; got ${mars.length} + ${moon.length} + ${outer.length} + ${inner.length}`,
+        `Expected 17 Mars + 21 Moon + 10 outer + 5 inner; got ${mars.length} + ${moon.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

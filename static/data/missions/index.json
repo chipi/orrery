@@ -430,5 +430,86 @@
     "year": 2031,
     "sector": "private",
     "color": "#005288"
+  },
+  {
+    "id": "venera-13",
+    "agency": "ROSCOSMOS",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1981,
+    "sector": "gov",
+    "color": "#da4453"
+  },
+  {
+    "id": "vega-1",
+    "agency": "ROSCOSMOS / ESA",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1984,
+    "sector": "gov",
+    "color": "#ed5565"
+  },
+  {
+    "id": "vega-2",
+    "agency": "ROSCOSMOS / ESA",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1984,
+    "sector": "gov",
+    "color": "#ec87c0"
+  },
+  {
+    "id": "giotto",
+    "agency": "ESA",
+    "dest": "COMET",
+    "status": "FLOWN",
+    "year": 1985,
+    "sector": "gov",
+    "color": "#5d9cec"
+  },
+  {
+    "id": "ulysses",
+    "agency": "ESA / NASA",
+    "dest": "SUN",
+    "status": "FLOWN",
+    "year": 1990,
+    "sector": "gov",
+    "color": "#aab2bd"
+  },
+  {
+    "id": "rosetta",
+    "agency": "ESA",
+    "dest": "COMET",
+    "status": "FLOWN",
+    "year": 2004,
+    "sector": "gov",
+    "color": "#fc6e51"
+  },
+  {
+    "id": "hayabusa2",
+    "agency": "JAXA",
+    "dest": "ASTEROID",
+    "status": "ACTIVE",
+    "year": 2014,
+    "sector": "gov",
+    "color": "#b2e066"
+  },
+  {
+    "id": "bepicolombo",
+    "agency": "ESA / JAXA",
+    "dest": "MERCURY",
+    "status": "ACTIVE",
+    "year": 2018,
+    "sector": "gov",
+    "color": "#fcbb6d"
+  },
+  {
+    "id": "juice",
+    "agency": "ESA",
+    "dest": "JUPITER",
+    "status": "ACTIVE",
+    "year": 2023,
+    "sector": "gov",
+    "color": "#967bdc"
   }
 ]

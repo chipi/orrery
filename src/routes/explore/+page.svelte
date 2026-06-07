@@ -32,6 +32,7 @@
   import SatellitePanel from '$lib/components/SatellitePanel.svelte';
   import BeltPanel from '$lib/components/BeltPanel.svelte';
   import MissionPanel from '$lib/components/MissionPanel.svelte';
+  import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import {
@@ -807,16 +808,139 @@
   // fetch round-trip just for the legend swatches. The orbiter-tour
   // variants (cassini-tour, galileo-tour, juno-tour) share colors +
   // mission with the main entry, so they don't get separate rows.
+  // Sorted oldest → newest by launch date. Entries are paired with the
+  // mission's primary agency so the legend renders the same logo
+  // affordance as /missions cards (via agencyToLogoPaths). Voyager 2
+  // (Aug 1977) shipped ~2 weeks before Voyager 1 (Sep 1977) — same
+  // year, ordered by actual launch date so the chronology reads
+  // cleanly top-to-bottom.
   const PATHS_LEGEND = [
-    { mission_id: 'voyager-1', color: '#ffa657', name: 'Voyager 1', launch_year: 1977 },
-    { mission_id: 'voyager-2', color: '#4ecdc4', name: 'Voyager 2', launch_year: 1977 },
-    { mission_id: 'pioneer-10', color: '#f97583', name: 'Pioneer 10', launch_year: 1972 },
-    { mission_id: 'pioneer-11', color: '#ff7b72', name: 'Pioneer 11', launch_year: 1973 },
-    { mission_id: 'new-horizons', color: '#ffd33d', name: 'New Horizons', launch_year: 2006 },
-    { mission_id: 'galileo', color: '#a5d6a7', name: 'Galileo', launch_year: 1989 },
-    { mission_id: 'juno', color: '#79c0ff', name: 'Juno', launch_year: 2011 },
-    { mission_id: 'cassini', color: '#d2a8ff', name: 'Cassini-Huygens', launch_year: 1997 },
-    { mission_id: 'dawn', color: '#b392f0', name: 'Dawn', launch_year: 2007 },
+    {
+      mission_id: 'pioneer-10',
+      color: '#f97583',
+      name: 'Pioneer 10',
+      launch_year: 1972,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'pioneer-11',
+      color: '#ff7b72',
+      name: 'Pioneer 11',
+      launch_year: 1973,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'voyager-2',
+      color: '#4ecdc4',
+      name: 'Voyager 2',
+      launch_year: 1977,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'voyager-1',
+      color: '#ffa657',
+      name: 'Voyager 1',
+      launch_year: 1977,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'venera-13',
+      color: '#da4453',
+      name: 'Venera 13',
+      launch_year: 1981,
+      agency: 'Roscosmos',
+    },
+    {
+      mission_id: 'vega-1',
+      color: '#ed5565',
+      name: 'Vega 1',
+      launch_year: 1984,
+      agency: 'Roscosmos / ESA',
+    },
+    {
+      mission_id: 'vega-2',
+      color: '#ec87c0',
+      name: 'Vega 2',
+      launch_year: 1984,
+      agency: 'Roscosmos / ESA',
+    },
+    {
+      mission_id: 'giotto',
+      color: '#5d9cec',
+      name: 'Giotto',
+      launch_year: 1985,
+      agency: 'ESA',
+    },
+    {
+      mission_id: 'galileo',
+      color: '#a5d6a7',
+      name: 'Galileo',
+      launch_year: 1989,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'ulysses',
+      color: '#aab2bd',
+      name: 'Ulysses',
+      launch_year: 1990,
+      agency: 'ESA / NASA',
+    },
+    {
+      mission_id: 'cassini',
+      color: '#d2a8ff',
+      name: 'Cassini-Huygens',
+      launch_year: 1997,
+      agency: 'NASA / ESA',
+    },
+    {
+      mission_id: 'rosetta',
+      color: '#fc6e51',
+      name: 'Rosetta',
+      launch_year: 2004,
+      agency: 'ESA',
+    },
+    {
+      mission_id: 'new-horizons',
+      color: '#ffd33d',
+      name: 'New Horizons',
+      launch_year: 2006,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'dawn',
+      color: '#b392f0',
+      name: 'Dawn',
+      launch_year: 2007,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'juno',
+      color: '#79c0ff',
+      name: 'Juno',
+      launch_year: 2011,
+      agency: 'NASA',
+    },
+    {
+      mission_id: 'hayabusa2',
+      color: '#b2e066',
+      name: 'Hayabusa2',
+      launch_year: 2014,
+      agency: 'JAXA',
+    },
+    {
+      mission_id: 'bepicolombo',
+      color: '#fcbb6d',
+      name: 'BepiColombo',
+      launch_year: 2018,
+      agency: 'ESA / JAXA',
+    },
+    {
+      mission_id: 'juice',
+      color: '#967bdc',
+      name: 'JUICE',
+      launch_year: 2023,
+      agency: 'ESA',
+    },
   ];
   let pathsLegendMission: Mission | null = $state(null);
   let pathsLegendOpen = $state(false);
@@ -2713,6 +2837,18 @@
       'juno',
       'cassini',
       'dawn',
+      // Global expansion 2026-06-07 (#306) — ESA / Roscosmos / JAXA
+      // iconic-mission roster across comet / asteroid / Sun + en-route
+      // Mercury / Jupiter destinations.
+      'rosetta',
+      'vega-1',
+      'vega-2',
+      'venera-13',
+      'giotto',
+      'hayabusa2',
+      'juice',
+      'bepicolombo',
+      'ulysses',
     ] as const;
     for (const id of ICONIC_TRAJECTORY_IDS) {
       void (async () => {
@@ -2850,7 +2986,11 @@
       // path below: trajectories don't surface a vis-viva tooltip,
       // only a color-brighten cue.
       if (layers.paths && iconicTrajectoryHandles.length > 0) {
-        const trajTargets = iconicTrajectoryHandles.map((h) => h.clickTarget);
+        // All hover-able trajectory objects — Today markers + every
+        // encounter sprite. Hover on any one of them brightens the
+        // mission's full path + reveals every waypoint label.
+        const trajTargets: THREE.Object3D[] = [];
+        for (const h of iconicTrajectoryHandles) trajTargets.push(...h.hoverTargets);
         const trajHits = ray3dHover.intersectObjects(trajTargets, false);
         const newId = (trajHits[0]?.object.userData.missionId as string | undefined) ?? null;
         if (newId !== highlightedMissionId) highlightedMissionId = newId;
@@ -4385,9 +4525,13 @@
             onblur={() => (highlightedMissionId = null)}
             data-testid="paths-legend-row-{entry.mission_id}"
           >
-            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"
-            ></span>
+            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
             <span class="name">{entry.name}</span>
+            <span class="logos" aria-hidden="true">
+              {#each agencyToLogoPaths(entry.agency) as logoPath}
+                <img src={logoPath} alt="" loading="lazy" />
+              {/each}
+            </span>
             <span class="year">{entry.launch_year}</span>
           </button>
         {/each}
@@ -4846,6 +4990,26 @@
   }
   .paths-legend-row .name {
     flex: 1;
+  }
+  .paths-legend-row .logos {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    margin-left: 6px;
+  }
+  .paths-legend-row .logos img {
+    height: 14px;
+    width: auto;
+    max-width: 24px;
+    opacity: 0.7;
+    filter: grayscale(0.4);
+    object-fit: contain;
+  }
+  .paths-legend-row:hover .logos img,
+  .paths-legend-row:focus-visible .logos img {
+    opacity: 1;
+    filter: none;
   }
   .paths-legend-row .year {
     color: rgba(221, 228, 255, 0.55);

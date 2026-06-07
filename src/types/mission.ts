@@ -8,7 +8,15 @@ export type Destination =
   | 'URANUS'
   | 'NEPTUNE'
   | 'PLUTO'
-  | 'CERES';
+  | 'CERES'
+  // Non-planetary targets — added 2026-06-07 to host the global
+  // iconic-missions expansion (Rosetta + Giotto comets, Hayabusa
+  // asteroid, Ulysses polar Sun). /explore PATHS layer renders their
+  // heliocentric trajectories; /missions filter pills + MissionPanel
+  // treat them as first-class destinations.
+  | 'COMET'
+  | 'ASTEROID'
+  | 'SUN';
 export type MissionStatus = 'ACTIVE' | 'FLOWN' | 'PLANNED';
 export type Sector = 'gov' | 'private';
 export type DataQuality = 'good' | 'partial' | 'reconstructed';

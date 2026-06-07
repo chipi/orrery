@@ -15,6 +15,12 @@ describe('mission-dest (3.0a-5)', () => {
     expect(isMissionDestination('VENUS')).toBe(true);
     expect(isMissionDestination('SATURN')).toBe(true);
     expect(isMissionDestination('MERCURY')).toBe(true);
+    // #306 expansion (2026-06-07) — non-planetary targets for the
+    // global iconic-missions roster (Rosetta + Giotto comets,
+    // Hayabusa asteroid, Ulysses polar Sun).
+    expect(isMissionDestination('COMET')).toBe(true);
+    expect(isMissionDestination('ASTEROID')).toBe(true);
+    expect(isMissionDestination('SUN')).toBe(true);
     expect(isMissionDestination('NEPHEW')).toBe(false);
   });
 

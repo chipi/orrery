@@ -43,6 +43,10 @@ export interface IconicTrajectoryHandle {
   group: THREE.Group;
   /** The click-target marker (Today position). Use for raycaster hit-tests. */
   clickTarget: THREE.Mesh;
+  /** Every clickable / hover-able object on this trajectory — Today
+   *  marker plus every encounter sprite — each tagged with missionId
+   *  so the page's raycaster can resolve mission identity in one pass. */
+  hoverTargets: THREE.Object3D[];
   /** Mission ID this trajectory belongs to — used for hover-highlight pairing. */
   missionId: string;
   /** Update line material resolution on canvas resize. */
@@ -69,17 +73,32 @@ export interface BuildIconicTrajectoryOpts {
 }
 
 const DEFAULT_LINE_WIDTH = 2.5;
-const MARKER_RADIUS_PX = 5;
 const CLICK_TARGET_RADIUS_PX = 9;
+const LABEL_TEXTURE_W = 256;
+const LABEL_TEXTURE_H = 104;
+const MARKER_TEXTURE_PX = 64;
+// Marker sprite stays in scene units; small enough not to dominate the
+// inner-system but readable at any zoom. Encounter markers get a slim
+// chevron crown around the central dot to read as "trajectory event"
+// rather than "small body".
+const MARKER_SPRITE_SCALE = 18;
+// Sprite scale in scene units. The /explore log-AU scale puts the
+// inner planets at ~50-130 units and the outer giants at ~250-400, so
+// 70 lands a label about the width of a Jupiter-orbit gap — readable
+// without dominating the scene. Sprites always camera-face.
+const LABEL_SPRITE_SCALE_X = 70;
+const LABEL_SPRITE_SCALE_Y = 28;
+const LABEL_PIXEL_OFFSET = 10;
 
 // Dim / bright opacity pairs. The PATHS layer renders every iconic
 // trajectory simultaneously, so the default is dim — the user can
-// hover a legend row (or a trajectory's Today marker) to single one
-// out at full intensity without the others crowding the read.
+// hover a legend row (or any waypoint marker on the trajectory) to
+// single one out at full intensity without the others crowding the
+// read.
 const LINE_OPACITY_DIM = 0.35;
 const LINE_OPACITY_BRIGHT = 0.95;
-const MARKER_OPACITY_DIM = 0.4;
-const MARKER_OPACITY_BRIGHT = 0.95;
+const MARKER_OPACITY_DIM = 0.55;
+const MARKER_OPACITY_BRIGHT = 1.0;
 const CLICK_TARGET_OPACITY_DIM = 0.55;
 const CLICK_TARGET_OPACITY_BRIGHT = 1.0;
 const RING_OPACITY_DIM = 0.2;
@@ -102,6 +121,146 @@ function projectWaypoint(
   if (r < 1e-6) return new THREE.Vector3(0, 0, 0);
   const scaled = auToPx(r);
   return new THREE.Vector3((p.x / r) * scaled, (p.y / r) * scaled, (p.z / r) * scaled);
+}
+
+/**
+ * Build a 2D sprite for an encounter marker — a small filled dot at
+ * the center with four outward-pointing chevrons arranged at the
+ * diagonals. Reads as "trajectory event / deflection point" without
+ * looking like a small planet (the previous sphere + halo combo did).
+ * Pure 2D screen-facing.
+ */
+function buildEncounterMarkerSprite(color: string): {
+  sprite: THREE.Sprite;
+  texture: THREE.CanvasTexture;
+  material: THREE.SpriteMaterial;
+} {
+  const canvas = document.createElement('canvas');
+  canvas.width = MARKER_TEXTURE_PX;
+  canvas.height = MARKER_TEXTURE_PX;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    const cx = MARKER_TEXTURE_PX / 2;
+    const cy = MARKER_TEXTURE_PX / 2;
+    // Center dot — solid mission color.
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5.5, 0, Math.PI * 2);
+    ctx.fill();
+    // Four outward chevrons at NE / NW / SE / SW. The angled stroke
+    // suggests momentum / deflection rather than a closed planet
+    // ring. Thin line, round caps for a clean minimalist read.
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    const angles = [Math.PI / 4, (3 * Math.PI) / 4, (5 * Math.PI) / 4, (7 * Math.PI) / 4];
+    const tipR = 22;
+    const armLen = 5.5;
+    const armSpread = 2.4; // radians between chevron arms
+    for (const a of angles) {
+      const tx = cx + tipR * Math.cos(a);
+      const ty = cy + tipR * Math.sin(a);
+      const a1 = a + Math.PI - armSpread / 2;
+      const a2 = a + Math.PI + armSpread / 2;
+      const x1 = tx + armLen * Math.cos(a1);
+      const y1 = ty + armLen * Math.sin(a1);
+      const x2 = tx + armLen * Math.cos(a2);
+      const y2 = ty + armLen * Math.sin(a2);
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(tx, ty);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.anisotropy = 4;
+  const material = new THREE.SpriteMaterial({
+    map: texture,
+    transparent: true,
+    opacity: MARKER_OPACITY_DIM,
+    depthTest: false,
+    depthWrite: false,
+  });
+  const sprite = new THREE.Sprite(material);
+  sprite.scale.set(MARKER_SPRITE_SCALE, MARKER_SPRITE_SCALE, 1);
+  sprite.renderOrder = 9;
+  return { sprite, texture, material };
+}
+
+/**
+ * Build a canvas-backed sprite texture for a single waypoint label.
+ * Two lines (label / date) with a thin outline so the text reads on
+ * any background. The texture is regenerated per waypoint — cheap
+ * (~10 labels × ~256×80 px = ~200 KB total) and keeps disposal
+ * trivial (one texture per sprite, freed in `dispose()`).
+ */
+function buildLabelSprite(
+  missionName: string,
+  label: string,
+  date: string,
+  color: string,
+): THREE.Sprite {
+  const canvas = document.createElement('canvas');
+  canvas.width = LABEL_TEXTURE_W;
+  canvas.height = LABEL_TEXTURE_H;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Subtle pill background so labels stay legible over the colored
+    // trajectory line + planet orbit rings.
+    ctx.fillStyle = 'rgba(15, 18, 35, 0.78)';
+    const padX = 8;
+    const padY = 6;
+    const rectW = canvas.width - padX * 2;
+    const rectH = canvas.height - padY * 2;
+    const r = 10;
+    ctx.beginPath();
+    ctx.moveTo(padX + r, padY);
+    ctx.lineTo(padX + rectW - r, padY);
+    ctx.quadraticCurveTo(padX + rectW, padY, padX + rectW, padY + r);
+    ctx.lineTo(padX + rectW, padY + rectH - r);
+    ctx.quadraticCurveTo(padX + rectW, padY + rectH, padX + rectW - r, padY + rectH);
+    ctx.lineTo(padX + r, padY + rectH);
+    ctx.quadraticCurveTo(padX, padY + rectH, padX, padY + rectH - r);
+    ctx.lineTo(padX, padY + r);
+    ctx.quadraticCurveTo(padX, padY, padX + r, padY);
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'left';
+    // Mission name (small caps, uppercased) — anchors which path the
+    // waypoint belongs to. Slightly muted so the eye lands on the
+    // encounter label below.
+    ctx.fillStyle = 'rgba(221, 228, 255, 0.7)';
+    ctx.font = 'bold 14px "Space Mono", monospace';
+    ctx.fillText(missionName.toUpperCase(), padX + 12, padY + 14);
+    // Encounter label (primary) — mission color, bold, anchors the
+    // visual link to the trajectory line.
+    ctx.fillStyle = color;
+    ctx.font = 'bold 22px "Space Mono", monospace';
+    ctx.fillText(label, padX + 12, padY + 42);
+    // Date (secondary) — muted, smaller.
+    ctx.fillStyle = 'rgba(221, 228, 255, 0.78)';
+    ctx.font = '15px "Space Mono", monospace';
+    ctx.fillText(date, padX + 12, padY + 72);
+  }
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.anisotropy = 4;
+  const material = new THREE.SpriteMaterial({
+    map: texture,
+    transparent: true,
+    depthTest: false,
+    depthWrite: false,
+  });
+  const sprite = new THREE.Sprite(material);
+  sprite.scale.set(LABEL_SPRITE_SCALE_X, LABEL_SPRITE_SCALE_Y, 1);
+  sprite.renderOrder = 10;
+  return sprite;
 }
 
 export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTrajectoryHandle {
@@ -136,21 +295,47 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   group.add(line);
 
   // ── Encounter markers ────────────────────────────────────────────
-  const markerGeo = new THREE.SphereGeometry(MARKER_RADIUS_PX, 12, 12);
-  const markerMaterial = new THREE.MeshBasicMaterial({
-    color: new THREE.Color(data.color).getHex(),
-    transparent: true,
-    opacity: MARKER_OPACITY_DIM,
-  });
+  // Each labeled waypoint gets a 2D sprite — center dot + four
+  // outward chevrons — and a hidden label sprite that fades in on
+  // highlight. Sprites always face the camera, so the marker reads
+  // the same from every angle the user orbits around.
+  const labelSprites: THREE.Sprite[] = [];
+  const markerTextures: THREE.CanvasTexture[] = [];
+  const markerMaterials: THREE.SpriteMaterial[] = [];
+  const hoverTargets: THREE.Object3D[] = [];
+  const labelGroup = new THREE.Group();
+  labelGroup.visible = false;
+  labelGroup.userData = { kind: 'iconic-trajectory-labels', id: data.id };
+  group.add(labelGroup);
+
   const labeledWaypoints = data.waypoints
     .map((wp, i) => ({ wp, pos: projected[i] }))
     .filter((entry) => entry.wp.label && entry.wp.label !== 'Today');
 
   for (const { wp, pos } of labeledWaypoints) {
-    const marker = new THREE.Mesh(markerGeo, markerMaterial);
-    marker.position.copy(pos);
-    marker.userData = { kind: 'iconic-trajectory-marker', id: data.id, label: wp.label };
-    group.add(marker);
+    const { sprite: markerSprite, texture, material } = buildEncounterMarkerSprite(data.color);
+    markerSprite.position.copy(pos);
+    markerSprite.userData = {
+      kind: 'iconic-trajectory-marker',
+      id: data.id,
+      missionId: data.mission_id,
+      label: wp.label,
+      date: wp.date,
+    };
+    group.add(markerSprite);
+    markerTextures.push(texture);
+    markerMaterials.push(material);
+    hoverTargets.push(markerSprite);
+
+    if (wp.label) {
+      const sprite = buildLabelSprite(data.name, wp.label, wp.date, data.color);
+      // Offset the sprite slightly off the line so it doesn't sit on
+      // top of the marker. Use the ecliptic-up direction (+Y) so the
+      // label floats above the line at typical viewing angles.
+      sprite.position.set(pos.x, pos.y + LABEL_PIXEL_OFFSET, pos.z);
+      labelGroup.add(sprite);
+      labelSprites.push(sprite);
+    }
   }
 
   // ── "Today" click target — larger, brighter, distinguishes from
@@ -190,10 +375,12 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
   ring.position.copy(todayPos);
   ring.userData = { kind: 'iconic-trajectory-today-ring', id: data.id };
   group.add(ring);
+  hoverTargets.push(clickTarget);
 
   return {
     group,
     clickTarget,
+    hoverTargets,
     missionId: data.mission_id,
     onResize: (w: number, h: number) => {
       lineMaterial.resolution.set(w, h);
@@ -203,21 +390,27 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     },
     setHighlight: (highlighted: boolean) => {
       lineMaterial.opacity = highlighted ? LINE_OPACITY_BRIGHT : LINE_OPACITY_DIM;
-      markerMaterial.opacity = highlighted ? MARKER_OPACITY_BRIGHT : MARKER_OPACITY_DIM;
+      for (const m of markerMaterials)
+        m.opacity = highlighted ? MARKER_OPACITY_BRIGHT : MARKER_OPACITY_DIM;
       clickTargetMaterial.opacity = highlighted
         ? CLICK_TARGET_OPACITY_BRIGHT
         : CLICK_TARGET_OPACITY_DIM;
       ringMaterial.opacity = highlighted ? RING_OPACITY_BRIGHT : RING_OPACITY_DIM;
+      labelGroup.visible = highlighted;
     },
     dispose: () => {
       lineGeo.dispose();
       lineMaterial.dispose();
-      markerGeo.dispose();
-      markerMaterial.dispose();
+      for (const t of markerTextures) t.dispose();
+      for (const m of markerMaterials) m.dispose();
       clickTargetGeo.dispose();
       clickTargetMaterial.dispose();
       ringGeo.dispose();
       ringMaterial.dispose();
+      for (const sprite of labelSprites) {
+        sprite.material.map?.dispose();
+        sprite.material.dispose();
+      }
     },
   };
 }

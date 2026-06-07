@@ -1,0 +1,30 @@
+{
+  "id": "rosetta",
+  "name": "Rosetta",
+  "mission_id": "rosetta",
+  "category": "completed-at-target",
+  "color": "#fc6e51",
+  "schema_version": 1,
+  "_doc": "ESA's 10-year cruise to comet 67P/Churyumov–Gerasimenko. Three Earth assists (2005, 2007, 2009), one Mars assist (2007-02-25), two main-belt asteroid encounters (Šteins 2008, Lutetia 2010), 957 days of deep-space hibernation, rendezvous 2014-08-06, controlled descent ending the mission 2016-09-30. Path terminates at the disposal date; waypoints approximate the visual story rather than ephemeris-grade positions. Heliocentric ecliptic J2000 AU.",
+  "current_position_au": [3.4, 2.3, 0.05],
+  "current_distance_au": 4.1,
+  "current_distance_label": "4.1 AU · controlled descent to 67P surface 2016-09-30 (end of mission)",
+  "interstellar_since": null,
+  "interstellar_since_label": null,
+  "waypoints": [
+    { "date": "2004-03-02", "label": "Launch (Ariane 5)", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2005-03-04", "label": "Earth #1", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2006-09", "x": 1.45, "y": 0.4, "z": 0.02 },
+    { "date": "2007-02-25", "label": "Mars", "x": 1.45, "y": 0.5, "z": 0.04 },
+    { "date": "2007-11-13", "label": "Earth #2", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2008-09-05", "label": "Asteroid Šteins", "x": 2.1, "y": 0.6, "z": 0.05 },
+    { "date": "2009-11-13", "label": "Earth #3", "x": 1.0, "y": 0.0, "z": 0.0 },
+    { "date": "2010-07-10", "label": "Asteroid Lutetia", "x": 2.7, "y": 1.0, "z": 0.06 },
+    { "date": "2011-06", "x": 3.5, "y": 1.4, "z": 0.07 },
+    { "date": "2014-01", "x": 4.0, "y": 1.8, "z": 0.08 },
+    { "date": "2014-08-06", "label": "67P rendezvous", "x": 3.6, "y": 2.4, "z": 0.05 },
+    { "date": "2014-11-12", "label": "Philae landing", "x": 3.0, "y": 2.5, "z": 0.05 },
+    { "date": "2015-08-13", "label": "67P perihelion", "x": 1.24, "y": 0.4, "z": 0.05 },
+    { "date": "2016-09-30", "label": "Disposed onto 67P", "x": 3.4, "y": 2.3, "z": 0.05 }
+  ]
+}

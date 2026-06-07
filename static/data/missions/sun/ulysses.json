@@ -1,0 +1,60 @@
+{
+  "id": "ulysses",
+  "agency": "ESA / NASA",
+  "agency_full": "European Space Agency (lead, spacecraft + 6 instruments) / National Aeronautics and Space Administration (launch + DSN + RTG power + 3 instruments)",
+  "sector": "gov",
+  "dest": "SUN",
+  "color": "#aab2bd",
+  "year": 1990,
+  "status": "FLOWN",
+  "departure_date": "1990-10-06",
+  "arrival_date": "1992-02-08",
+  "transit_days": 490,
+  "vehicle": "STS-41 Discovery + IUS + PAM-S",
+  "payload": "366 kg spin-stabilised, 9 instruments (magnetometer, solar wind, energetic particles, radio + plasma waves, dust, cosmic rays, gamma-ray burst detector, solar-wind composition, X-ray + gamma-ray bursts). Powered by a single GPHS-RTG.",
+  "delta_v": "~15.4 km/s (Jupiter gravity assist did the heavy lifting)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© ESA / NASA / Ulysses. Ulysses launched 1990-10-06 from STS-41 Discovery — the only spacecraft ever placed into a high-inclination heliocentric orbit. To reach a near-polar Sun-relative orbit (~80° inclination) from Earth's near-equatorial orbital plane requires impractical chemical ΔV, so Ulysses used a Jupiter gravity assist (1992-02-08) to deflect itself out of the ecliptic. The spacecraft completed three full polar orbits of the Sun over 18.5 years, mapping the solar wind, heliospheric magnetic field, and energetic particle environments at all heliographic latitudes — the only direct measurements ever made of how solar-wind structure varies between the equatorial slow-wind regions and the high-latitude fast-wind streams from coronal holes. Key findings: fast solar wind (~750 km/s) fills high latitudes during solar minimum and contracts to coronal holes near the equator at solar maximum; cosmic-ray flux at high latitudes is unexpectedly modest; interstellar dust enters the heliosphere from the ecliptic plane. Mission terminated 2009-06-30 when telemetry hydrazine froze in the cooling thruster lines. Hardware remains in heliocentric polar orbit.",
+  "links": [
+    {
+      "l": "Ulysses (spacecraft) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Ulysses_(spacecraft)",
+      "t": "intro"
+    },
+    {
+      "l": "ESA Science — Ulysses mission overview",
+      "u": "https://www.esa.int/Science_Exploration/Space_Science/Ulysses",
+      "t": "intro"
+    },
+    {
+      "l": "NSSDCA master catalog — Ulysses (1990-090B)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1990-090B",
+      "t": "core"
+    },
+    {
+      "l": "Marsden + Smith (2001) — Ulysses overview after first solar minimum (Adv. Space Res.)",
+      "u": "https://www.sciencedirect.com/science/article/abs/pii/S0273117701004099",
+      "t": "deep"
+    },
+    {
+      "l": "NASA JPL — Ulysses mission archive",
+      "u": "https://www.jpl.nasa.gov/missions/ulysses/",
+      "t": "core"
+    },
+    {
+      "l": "The Planetary Society — Ulysses retrospective",
+      "u": "https://www.planetary.org/space-missions/ulysses",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 490, "type": "flyby" },
+      { "met_days": 1359, "type": "phasing" },
+      { "met_days": 1758, "type": "phasing" },
+      { "met_days": 6845, "type": "anomaly" }
+    ]
+  }
+}

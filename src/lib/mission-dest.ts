@@ -18,6 +18,9 @@ export const MISSION_CATALOG_DESTS: readonly Destination[] = [
   'NEPTUNE',
   'PLUTO',
   'CERES',
+  'COMET',
+  'ASTEROID',
+  'SUN',
 ] as const;
 
 export function isMissionDestination(s: string): s is Destination {
@@ -55,5 +58,17 @@ export function missionDestToHeliocentricDestinationId(dest: Destination): Desti
       return 'pluto';
     case 'CERES':
       return 'ceres';
+    case 'COMET':
+    case 'ASTEROID':
+      // No fixed heliocentric porkchop body — comet/asteroid targets
+      // (67P, Halley, Ryugu, Itokawa, Steins, Lutetia, etc.) each have
+      // their own ephemeris. /fly doesn't surface them; the iconic
+      // PATHS trajectory in /explore is the only render path.
+      return null;
+    case 'SUN':
+      // Solar polar / heliospheric missions (Ulysses, future Parker
+      // Solar Probe scope) — /fly doesn't model them either; the
+      // PATHS trajectory carries the visual story.
+      return null;
   }
 }

@@ -1,0 +1,61 @@
+{
+  "id": "hayabusa2",
+  "agency": "JAXA",
+  "agency_full": "Japan Aerospace Exploration Agency (lead) — DLR + CNES (MASCOT lander) + NASA (DSN tracking, sample-curation partnership)",
+  "sector": "gov",
+  "dest": "ASTEROID",
+  "color": "#b2e066",
+  "year": 2014,
+  "status": "ACTIVE",
+  "departure_date": "2014-12-03",
+  "arrival_date": "2018-06-27",
+  "transit_days": 1302,
+  "vehicle": "H-IIA 202",
+  "payload": "609 kg dry, ion-electric propulsion (4×μ10 thrusters) + chemical bipropellant + 1.6 m HGA. Onboard payload — Small Carry-on Impactor (SCI, 2.5 kg shaped charge), MASCOT lander (10 kg, DLR/CNES), 3× MINERVA-II rovers (~1 kg each), sample return capsule (16 kg, parachute reentry).",
+  "delta_v": "~2 km/s (ion engine cumulative)",
+  "data_quality": "good",
+  "flight_data_quality": "sparse",
+  "credit": "© JAXA / Hayabusa2 mission. Hayabusa2 launched 2014-12-03 from Tanegashima on a 3.5-year low-thrust ion-engine cruise to near-Earth asteroid (162173) Ryugu, with an Earth gravity assist on 2015-12-03 to phase the rendezvous. Arrival 2018-06-27 at 20 km hover distance. Surface operations 2018-2019 returned the first sustained close-up survey of a rubble-pile C-type asteroid (~1 km diameter, ~1.27 g/cm³ bulk density — implying ~50% porosity). Two touchdown-and-go sample collections (TD1 2019-02-22, TD2 2019-07-11) bracketed the SCI experiment (2019-04-05) which detonated a 2.5 kg copper-lined shaped charge to excavate a 14 m crater and expose fresh subsurface material for the second sample. The DLR/CNES MASCOT lander operated for 17 hours on the surface, and three MINERVA-II hoppers returned the first surface images from an asteroid. Sample-return capsule reentry over Woomera, Australia 2020-12-05 delivered 5.4 g of pristine Ryugu material — the first asteroid sample with subsurface stratigraphy. The Hayabusa2 mothership departed for an extended mission: flyby of (98943) 2001 CC21 in 2026-07, then rendezvous with rapidly-rotating (1998 KY26) targeted for 2031-07.",
+  "links": [
+    {
+      "l": "Hayabusa2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hayabusa2",
+      "t": "intro"
+    },
+    {
+      "l": "JAXA — Hayabusa2 mission portal",
+      "u": "https://www.hayabusa2.jaxa.jp/en/",
+      "t": "intro"
+    },
+    {
+      "l": "Watanabe et al. (2019) — Ryugu shape + density first results (Science 364)",
+      "u": "https://www.science.org/doi/10.1126/science.aav8032",
+      "t": "deep"
+    },
+    {
+      "l": "NSSDCA master catalog — Hayabusa2 (2014-076A)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2014-076A",
+      "t": "core"
+    },
+    {
+      "l": "Yada et al. (2022) — preliminary Ryugu sample analysis (Nature Astronomy)",
+      "u": "https://www.nature.com/articles/s41550-021-01550-6",
+      "t": "deep"
+    },
+    {
+      "l": "The Planetary Society — Hayabusa2 retrospective",
+      "u": "https://www.planetary.org/space-missions/hayabusa2",
+      "t": "core"
+    }
+  ],
+  "flight": {
+    "events": [
+      { "met_days": 0, "type": "launch" },
+      { "met_days": 366, "type": "flyby" },
+      { "met_days": 1302, "type": "arrival" },
+      { "met_days": 1880, "type": "earth_return" },
+      { "met_days": 4250, "type": "flyby" },
+      { "met_days": 6092, "type": "arrival" }
+    ]
+  }
+}

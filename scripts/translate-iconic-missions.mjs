@@ -38,22 +38,6 @@ const MISSION_DEST = {
   ulysses: 'sun',
 };
 
-const LOCALES = [
-  'ar',
-  'de',
-  'es',
-  'fr',
-  'hi',
-  'it',
-  'ja',
-  'ko',
-  'nl',
-  'pt-BR',
-  'ru',
-  'sr-Cyrl',
-  'zh-CN',
-];
-
 // Mission overlay translations.
 // Schema per (mission, locale): { name, type, first, description }.
 // Empty entries fall through to the English base record.

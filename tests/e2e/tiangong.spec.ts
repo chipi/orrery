@@ -49,6 +49,29 @@ test.describe('/tiangong', () => {
     expect(errors).toEqual([]);
   });
 
+  test('TIMELINE toggle reveals strip + click marker opens panel', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/tiangong', { waitUntil: 'networkidle' });
+    const toggle = page.getByTestId('tiangong-timeline-toggle');
+    await expect(toggle).toBeVisible({ timeout: 8_000 });
+    await toggle.click();
+    const strip = page.getByTestId('tiangong-timeline');
+    await expect(strip).toBeVisible({ timeout: 3_000 });
+    const markers = strip.locator('button.marker');
+    await expect(markers.first()).toBeVisible();
+    // Tiangong: 4 modules + 2 visitors = 6 markers expected
+    expect(await markers.count()).toBeGreaterThanOrEqual(5);
+    // Click the last marker chronologically (Mengtian 2022-10-31, alone
+    // in its month). The first marker (Tianhe) overlaps with Chinarm —
+    // both launched 2021-04-29 because Chinarm rode up pre-attached to
+    // Tianhe — so first() collides in DOM z-order.
+    const lastMarker = markers.last();
+    await lastMarker.click();
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    expect(errors).toEqual([]);
+  });
+
   test('3D canvas click opens the module panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/tiangong', { waitUntil: 'networkidle' });

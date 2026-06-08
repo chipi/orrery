@@ -281,6 +281,10 @@
     max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* The span is purely visual; let pointer events fall through to the
+       parent button so overlapping markers (e.g. Tianhe + Chinarm
+       both launched 2021-04-29) don't intercept each other's clicks. */
+    pointer-events: none;
   }
 
   @media (max-width: 640px) {

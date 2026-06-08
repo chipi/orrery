@@ -49,6 +49,29 @@ test.describe('/iss', () => {
     expect(errors).toEqual([]);
   });
 
+  test('TIMELINE toggle reveals strip + click marker opens panel', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
+    await page.goto('/iss', { waitUntil: 'networkidle' });
+    const toggle = page.getByTestId('iss-timeline-toggle');
+    await expect(toggle).toBeVisible({ timeout: 8_000 });
+    await toggle.click();
+    const strip = page.getByTestId('iss-timeline');
+    await expect(strip).toBeVisible({ timeout: 3_000 });
+    // At least one marker rendered (one per module + visitor; 25 total today)
+    const markers = strip.locator('button.marker');
+    await expect(markers.first()).toBeVisible();
+    expect(await markers.count()).toBeGreaterThanOrEqual(20);
+    // Click the last marker chronologically (HTV-X visitor at 2025-10-26).
+    // The first marker (Zarya 1998) overlaps with Unity (1998-12-06 only
+    // 16 days later); using last() avoids cluster collisions in DOM
+    // z-order regardless of CSS hover-promotion.
+    const lastMarker = markers.last();
+    await lastMarker.click();
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 5_000 });
+    expect(errors).toEqual([]);
+  });
+
   test('3D canvas click opens the module panel', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/iss', { waitUntil: 'networkidle' });

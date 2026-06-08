@@ -171,11 +171,27 @@ function agencyToSourceId(agency: string): string | null {
   if (a.includes('jaxa')) return 'jaxa';
   if (a.includes('spacex')) return 'spacex';
   if (a.includes('blue origin')) return 'blue-origin';
-  // Inspiration Mars doesn't have its own source-logos entry —
-  // fall through to source_type so it buckets under the
-  // retrieval conduit (Wikimedia Commons) instead of being
-  // silently mis-attributed.
-  if (a.includes('inspiration mars')) return null;
+  // Phase 3 + Tier 1 additions — new source-logos entries that match
+  // operator names appearing in image-provenance.agency.
+  if (a.includes('northrop grumman')) return 'northrop-grumman';
+  if (a.includes('axiom space')) return 'axiom-space';
+  if (a.includes('intuitive machines')) return 'intuitive-machines';
+  if (a.includes('ispace')) return 'ispace';
+  if (a.includes('arianespace')) return 'arianespace';
+  if (a.includes('boeing')) return 'boeing';
+  if (a.includes('ula') || a.includes('united launch alliance')) return 'ula';
+  if (a.includes('asi') || a.includes('agenzia spaziale italiana')) return 'asi';
+  if (a.includes('usgs')) return 'usgs';
+  if (a.includes('noaa')) return 'noaa';
+  if (a.includes('ussf') || a.includes('us space force') || a.includes('united states space force'))
+    return 'us-space-force';
+  if (a.includes('eutelsat') || a.includes('oneweb')) return 'eutelsat-oneweb';
+  if (a.includes('iridium')) return 'iridium';
+  if (a.includes('planet labs')) return 'planet-labs';
+  if (a.includes('ses')) return 'ses';
+  if (a.includes('sirius')) return 'sirius-xm';
+  if (a.includes('viasat') || a.includes('inmarsat')) return 'viasat';
+  if (a.includes('amazon')) return 'amazon';
   if (a.includes('esa')) return 'esa';
   if (a.includes('nasa')) return 'nasa';
   return null;

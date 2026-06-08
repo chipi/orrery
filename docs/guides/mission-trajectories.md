@@ -65,7 +65,7 @@ Some missions have events past the nominal outbound transit (Apollo 13's return 
 
 ### Mission without a published trajectory shape
 
-For speculative / planned missions with `transit_days` + dates but no event timeline yet, leave the trajectory at `tier_1_analytic` — `/fly` will still render the parametric path via `buildCislunarTrajectory()` / `buildInterplanetaryTrajectory()` directly. Examples currently at `tier_1_analytic`: `inspiration-mars`, `starship-demo`, `starship-mars-crew` (all 0-event speculative Mars missions).
+For speculative / planned missions with `transit_days` + dates but no event timeline yet, leave the trajectory at `tier_1_analytic` — `/fly` will still render the parametric path via `buildCislunarTrajectory()` / `buildInterplanetaryTrajectory()` directly. Examples currently at `tier_1_analytic`: `starship-demo`, `starship-mars-crew` (0-event speculative Mars missions).
 
 ### Truncated trajectories (impacts, anomalies)
 

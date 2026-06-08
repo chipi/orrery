@@ -4,7 +4,7 @@
   "agency_full": "European Space Agency (lead) — international consortium of European universities + institutes for the 10 onboard instruments",
   "sector": "gov",
   "dest": "COMET",
-  "color": "#5d9cec",
+  "color": "#003247",
   "year": 1985,
   "status": "FLOWN",
   "departure_date": "1985-07-02",
@@ -50,10 +50,22 @@
   ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 255, "type": "flyby" },
-      { "met_days": 1827, "type": "flyby" },
-      { "met_days": 2565, "type": "flyby" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 255,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1827,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2565,
+        "type": "flyby"
+      }
     ]
   }
 }

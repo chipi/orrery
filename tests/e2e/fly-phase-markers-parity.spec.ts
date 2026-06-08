@@ -22,8 +22,7 @@ import { isExpectedNoise } from './_helpers/console-errors';
  * regress?" within seconds per mission.
  *
  * Speculative / event-less missions explicitly excluded:
- *  - inspiration-mars, starship-demo, starship-mars-crew (Mars,
- *    speculative — 0 events).
+ *  - starship-demo, starship-mars-crew (Mars, speculative — 0 events).
  */
 
 const MOON_MISSIONS = [

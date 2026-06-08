@@ -12,7 +12,7 @@
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
-  import { agencyLogo, agencyFullName } from '$lib/agencies';
+  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
   // TimelineNavigator.svelte; copied here so the URL coercion logic
@@ -39,10 +39,11 @@
   let toYear: number = $state(TIMELINE_MAX_YEAR);
 
   // Agencies are derived from the loaded mission set so the filter
-  // always reflects what's actually in the data — no hardcoded list
-  // to drift.
+  // always reflects what's actually in the data — no hardcoded list to
+  // drift. Compound agencies like "NASA / ESA / ASI" split into each
+  // component chip so clicking ESA matches Cassini, BepiColombo, etc.
   let agencies = $derived(
-    Array.from(new Set(missions.map((m) => m.agency).filter(Boolean))).sort(),
+    Array.from(new Set(missions.flatMap((m) => splitAgencies(m.agency)))).sort(),
   );
 
   let filtered = $derived(
@@ -51,7 +52,7 @@
         (mission) =>
           (destFilter === 'ALL' || mission.dest === destFilter) &&
           (statusFilter === 'ALL' || mission.status === statusFilter) &&
-          (agencyFilter === 'ALL' || mission.agency === agencyFilter) &&
+          (agencyFilter === 'ALL' || splitAgencies(mission.agency).includes(agencyFilter)) &&
           mission.year >= fromYear &&
           mission.year <= toYear,
       )

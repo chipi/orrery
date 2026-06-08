@@ -4,7 +4,7 @@
   "agency_full": "European Space Agency (lead) — DLR (Philae lander) / CNES / ASI / NASA (DSN tracking + 3 instruments)",
   "sector": "gov",
   "dest": "COMET",
-  "color": "#fc6e51",
+  "color": "#003247",
   "year": 2004,
   "status": "FLOWN",
   "departure_date": "2004-03-02",
@@ -53,16 +53,50 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "ariane-5",
+      "role": "launcher"
+    },
+    {
+      "id": "rosetta",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 367, "type": "flyby" },
-      { "met_days": 1090, "type": "flyby" },
-      { "met_days": 1349, "type": "flyby" },
-      { "met_days": 1671, "type": "flyby" },
-      { "met_days": 2320, "type": "flyby" },
-      { "met_days": 2058, "type": "flyby" },
-      { "met_days": 3809, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 367,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1090,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1349,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1671,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2320,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2058,
+        "type": "flyby"
+      },
+      {
+        "met_days": 3809,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

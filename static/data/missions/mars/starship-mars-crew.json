@@ -27,5 +27,15 @@
       "t": "intro"
     }
   ],
-  "flight_data_quality": "unknown"
+  "flight_data_quality": "unknown",
+  "fleet_refs": [
+    {
+      "id": "starship",
+      "role": "launcher"
+    },
+    {
+      "id": "starship",
+      "role": "spacecraft"
+    }
+  ]
 }

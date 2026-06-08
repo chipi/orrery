@@ -32,5 +32,9 @@
       "u": "https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "starship-demo",
+    "starship-mars-crew"
   ]
 }

@@ -94,7 +94,6 @@ The 42 missions in the catalog include flown classics, outer-system landmarks, r
 | `?mission=curiosity` | One-way Mars landing — watch the live Mars dot meet the spacecraft at arrival |
 | `?mission=mariner4` | First Mars flyby (1964) — short transit, real launch window |
 | `?mission=galileo` | Outer-system gravity assist via Venus + Earth + Earth en route to Jupiter |
-| `?mission=inspiration-mars` | Tito's 2013 free-return Mars flyby concept (501 days) |
 | `?mission=starship-mars-crew` | SpaceX's long-term crewed Mars round-trip architecture |
 | `?mission=tianwen1` | China's first Mars mission |
 

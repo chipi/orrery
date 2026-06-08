@@ -4,51 +4,51 @@
   "agency_full": "National Aeronautics and Space Administration / Jet Propulsion Laboratory / Southwest Research Institute (principal investigator)",
   "sector": "gov",
   "dest": "JUPITER",
-  "color": "#c19bff",
+  "color": "#0B3D91",
   "year": 2011,
   "status": "ACTIVE",
   "departure_date": "2011-08-05",
   "arrival_date": "2016-07-05",
   "transit_days": 1796,
   "vehicle": "Atlas V 551",
-  "payload": "Polar Jupiter orbiter; first solar-powered spacecraft to operate beyond the asteroid belt (~50 m\u00b2 triple-junction solar arrays delivering ~14 kW at Earth, ~500 W at Jupiter)",
+  "payload": "Polar Jupiter orbiter; first solar-powered spacecraft to operate beyond the asteroid belt (~50 m² triple-junction solar arrays delivering ~14 kW at Earth, ~500 W at Jupiter)",
   "delta_v": "~3.7 km/s (Jupiter orbit insertion)",
   "data_quality": "partial",
   "flight_data_quality": "sparse",
-  "credit": "\u00a9 NASA / JPL-Caltech / Southwest Research Institute \u2014 U.S. Government work, public domain. Juno is the first spacecraft to enter a polar orbit around Jupiter, allowing it to map the planet's magnetic field, gravity field, and atmospheric chemistry below the cloud tops. Highly elliptical 53-day orbit takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto's distance. Confirmed Jupiter has a 'diluted' rocky core (not a sharp boundary), measured the polar cyclone configuration (eight circumpolar storms around each pole), imaged Io's volcanism in unprecedented detail (close-pass 2023-12-30, ~1500 km altitude). Mission extension through September 2025 includes flybys of all four Galilean moons.",
+  "credit": "© NASA / JPL-Caltech / Southwest Research Institute — U.S. Government work, public domain. Juno is the first spacecraft to enter a polar orbit around Jupiter, allowing it to map the planet's magnetic field, gravity field, and atmospheric chemistry below the cloud tops. Highly elliptical 53-day orbit takes it from inside the radiation belts (perijove ~4200 km above cloud tops) out past Callisto's distance. Confirmed Jupiter has a 'diluted' rocky core (not a sharp boundary), measured the polar cyclone configuration (eight circumpolar storms around each pole), imaged Io's volcanism in unprecedented detail (close-pass 2023-12-30, ~1500 km altitude). Mission extension through September 2025 includes flybys of all four Galilean moons.",
   "links": [
     {
-      "l": "Juno \u2014 Wikipedia",
+      "l": "Juno — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Juno_(spacecraft)",
       "t": "intro"
     },
     {
-      "l": "NASA Science \u2014 Juno mission overview",
+      "l": "NASA Science — Juno mission overview",
       "u": "https://science.nasa.gov/mission/juno/",
       "t": "intro"
     },
     {
-      "l": "JunoCam \u2014 public image processing community (anyone can edit raw Junocam images)",
+      "l": "JunoCam — public image processing community (anyone can edit raw Junocam images)",
       "u": "https://www.missionjuno.swri.edu/junocam",
       "t": "core"
     },
     {
-      "l": "Southwest Research Institute \u2014 Juno mission home",
+      "l": "Southwest Research Institute — Juno mission home",
       "u": "https://www.missionjuno.swri.edu/",
       "t": "core"
     },
     {
-      "l": "The Planetary Society \u2014 Juno mission profile",
+      "l": "The Planetary Society — Juno mission profile",
       "u": "https://www.planetary.org/space-missions/juno",
       "t": "core"
     },
     {
-      "l": "Bolton et al. (2017) \u2014 Jupiter's interior and deep atmosphere: The initial pole-to-pole passes (Science 356)",
+      "l": "Bolton et al. (2017) — Jupiter's interior and deep atmosphere: The initial pole-to-pole passes (Science 356)",
       "u": "https://www.science.org/doi/10.1126/science.aal2108",
       "t": "deep"
     },
     {
-      "l": "NSSDCA \u2014 Juno master catalog entry",
+      "l": "NSSDCA — Juno master catalog entry",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2011-040A",
       "t": "deep"
     }
@@ -83,9 +83,9 @@
       "waypoints_helio_au": [
         [
           0,
-          1.0,
+          1,
           0,
-          0.0
+          0
         ],
         [
           180,
@@ -95,7 +95,7 @@
         ],
         [
           365,
-          2.0,
+          2,
           0.8,
           0.1
         ],
@@ -107,8 +107,8 @@
         ],
         [
           749,
-          1.0,
-          1.0,
+          1,
+          1,
           0.05
         ],
         [

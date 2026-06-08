@@ -14,7 +14,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
-  import { agencyLogo, agencyFullName } from '$lib/agencies';
+  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
 
   // ─── State ───────────────────────────────────────────────────────
   let entries: FleetIndexEntry[] = $state([]);
@@ -44,23 +44,10 @@
   // grid first and only opt into filtering when they need it.
   let filtersExpanded = $state(false);
 
-  // Agencies derived from the loaded data — filter chips reflect what's
-  // actually present rather than a hard-coded enum. Multi-agency entries
-  // (e.g., "NASA / ESA" for Hubble, "CNSA / CMSA" for Tiangong) split on
-  // " / " so each component agency shows as its own chip. The "Multi (...)"
-  // wrapper used by ISS/HST partners is stripped before splitting so we
-  // get clean chip labels instead of literals like "Multi (NASA" / "Italy)".
-  function splitAgencies(raw: string | null | undefined): string[] {
-    // Strip the "Multi (...)" wrapper only when it actually wraps the whole
-    // string — don't truncate trailing ")" from agencies like "Viasat (formerly
-    // Inmarsat plc)" or "EU Agency for the Space Programme (EUSPA)".
-    const m = (raw ?? '').match(/^\s*Multi\s*\((.*)\)\s*$/i);
-    const inner = m ? m[1] : (raw ?? '');
-    return inner
-      .split(/\s*\/\s*/)
-      .map((a) => a.trim())
-      .filter(Boolean);
-  }
+  // Filter chips reflect what's actually in the loaded data rather than
+  // a hard-coded enum. Multi-agency entries ("NASA / ESA" for Hubble,
+  // "CNSA / CMSA" for Tiangong, "Multi (NASA / ESA / ASI)" for Cassini)
+  // split into one chip per component via splitAgencies in $lib/agencies.
   let agencies = $derived(
     Array.from(new Set(entries.flatMap((e) => splitAgencies(e.agency)))).sort(),
   );

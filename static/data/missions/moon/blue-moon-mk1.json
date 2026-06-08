@@ -33,6 +33,12 @@
     }
   ],
   "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "new-glenn",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "launch": {
       "vehicle_stage": "New Glenn 2nd stage (TLI burn)",

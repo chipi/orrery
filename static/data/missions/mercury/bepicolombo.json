@@ -4,7 +4,7 @@
   "agency_full": "European Space Agency (Mercury Planetary Orbiter + Mercury Transfer Module) / Japan Aerospace Exploration Agency (Mercury Magnetospheric Orbiter, Mio)",
   "sector": "gov",
   "dest": "MERCURY",
-  "color": "#fcbb6d",
+  "color": "#003247",
   "year": 2018,
   "status": "ACTIVE",
   "departure_date": "2018-10-20",
@@ -48,19 +48,58 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "ariane-5",
+      "role": "launcher"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 538, "type": "flyby" },
-      { "met_days": 727, "type": "flyby" },
-      { "met_days": 1026, "type": "flyby" },
-      { "met_days": 1133, "type": "flyby" },
-      { "met_days": 1432, "type": "flyby" },
-      { "met_days": 1819, "type": "flyby" },
-      { "met_days": 2055, "type": "flyby" },
-      { "met_days": 2294, "type": "flyby" },
-      { "met_days": 2421, "type": "flyby" },
-      { "met_days": 2968, "type": "edl_or_oi" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 538,
+        "type": "flyby"
+      },
+      {
+        "met_days": 727,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1026,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1133,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1432,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1819,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2055,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2294,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2421,
+        "type": "flyby"
+      },
+      {
+        "met_days": 2968,
+        "type": "edl_or_oi"
+      }
     ]
   }
 }

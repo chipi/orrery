@@ -16,8 +16,26 @@
   "data_quality": "partial",
   "credit": "© SpaceX — Mars architecture target. Specific demo manifest, mass, and trajectory subject to ongoing iteration. Date is the late-2026 Mars window NET; will likely slip into 2028-2029 based on Starship development pace.",
   "links": [
-    { "l": "Starship — SpaceX", "u": "https://www.spacex.com/vehicles/starship/", "t": "intro" },
-    { "l": "SpaceX Mars program — Wikipedia", "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program", "t": "core" }
+    {
+      "l": "Starship — SpaceX",
+      "u": "https://www.spacex.com/vehicles/starship/",
+      "t": "intro"
+    },
+    {
+      "l": "SpaceX Mars program — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SpaceX_Mars_program",
+      "t": "core"
+    }
   ],
-  "flight_data_quality": "unknown"
+  "flight_data_quality": "unknown",
+  "fleet_refs": [
+    {
+      "id": "starship",
+      "role": "launcher"
+    },
+    {
+      "id": "starship",
+      "role": "spacecraft"
+    }
+  ]
 }

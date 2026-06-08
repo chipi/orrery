@@ -27,5 +27,10 @@
       "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Ariane_5",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "bepicolombo",
+    "juice",
+    "rosetta"
   ]
 }

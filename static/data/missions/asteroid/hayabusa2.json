@@ -4,7 +4,7 @@
   "agency_full": "Japan Aerospace Exploration Agency (lead) — DLR + CNES (MASCOT lander) + NASA (DSN tracking, sample-curation partnership)",
   "sector": "gov",
   "dest": "ASTEROID",
-  "color": "#b2e066",
+  "color": "#003087",
   "year": 2014,
   "status": "ACTIVE",
   "departure_date": "2014-12-03",
@@ -48,14 +48,42 @@
       "t": "core"
     }
   ],
+  "fleet_refs": [
+    {
+      "id": "h-iia",
+      "role": "launcher"
+    },
+    {
+      "id": "hayabusa-2",
+      "role": "spacecraft"
+    }
+  ],
   "flight": {
     "events": [
-      { "met_days": 0, "type": "launch" },
-      { "met_days": 366, "type": "flyby" },
-      { "met_days": 1302, "type": "arrival" },
-      { "met_days": 1880, "type": "earth_return" },
-      { "met_days": 4250, "type": "flyby" },
-      { "met_days": 6092, "type": "arrival" }
+      {
+        "met_days": 0,
+        "type": "launch"
+      },
+      {
+        "met_days": 366,
+        "type": "flyby"
+      },
+      {
+        "met_days": 1302,
+        "type": "arrival"
+      },
+      {
+        "met_days": 1880,
+        "type": "earth_return"
+      },
+      {
+        "met_days": 4250,
+        "type": "flyby"
+      },
+      {
+        "met_days": 6092,
+        "type": "arrival"
+      }
     ]
   }
 }

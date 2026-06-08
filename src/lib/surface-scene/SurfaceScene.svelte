@@ -860,8 +860,13 @@
       while (to - flyFromT > Math.PI) to -= 2 * Math.PI;
       while (to - flyFromT < -Math.PI) to += 2 * Math.PI;
       flyToT = to;
-      flyToR = 31;
-      camRTarget = 31;
+      // Land just past the flat-patch trigger (SPHERE_TO_FLAT_CAM_R =
+      // 30.3) so the crosshair appears as soon as the fly-in completes
+      // instead of one wheel-tick later. Before this, flyToR = 31 left
+      // the camera one click above the trigger, so clicking Zoom to
+      // detail looked like "we got close but the patch didn't open".
+      flyToR = 30.2;
+      camRTarget = 30.2;
       flyStart = performance.now();
       flyActive = true;
       autoSpin = false;

@@ -146,7 +146,14 @@
       typeof window !== 'undefined'
         ? Math.max(300, Math.min(window.innerWidth, window.innerHeight))
         : 1080;
-    return Math.max(0.001, extentKm / (vp * 0.4));
+    // Floor sized so the region's longer dimension fills ~70 % of the
+    // shorter viewport dim at deepest zoom (was 0.4 → ~40 %, which left
+    // a postage-stamp patch sitting in a sea of black at the floor
+    // when users wheeled in). 70 % keeps the markers on-screen + lets
+    // the detail patch read at a usable scale; deeper still hits the
+    // upsample warning ("approaching pixel limit") rather than another
+    // hard wall.
+    return Math.max(0.001, extentKm / (vp * 0.7));
   }
 
   // ─── Initialisation from selected region ───────────────────────────
@@ -337,10 +344,14 @@
 
   function drawDetailLayer(ctx: CanvasRenderingContext2D, W: number, H: number) {
     if (selected.lat == null || selected.lon == null) return;
-    // Fixed detail-layer extent for v1: 500m square on Mars, 250m on
-    // Moon, 250m on Earth (launchpads are compact). Future: derive
-    // from the site's published HiRISE/LROC/commercial-sat footprint.
-    const detailSizeKm = config.planet === 'mars' ? 0.5 : 0.25;
+    // Fixed detail-layer extent: 1.5 km square on Mars, 1.0 km on Moon,
+    // 0.5 km on Earth (launchpads are compact). Bumped from the prior
+    // 500m/250m/250m so the detail patch covers a usable area around the
+    // marker instead of feeling like a postage stamp surrounded by
+    // black — the published HiRISE / LROC NAC ROI products cover well
+    // past these footprints at their native resolution. Future: derive
+    // exactly from the site's published source product.
+    const detailSizeKm = config.planet === 'mars' ? 1.5 : config.planet === 'earth' ? 0.5 : 1.0;
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
     const cosLat = Math.cos((selected.lat * Math.PI) / 180);
     const halfLat = detailSizeKm / 2 / kmPerDegLat;
@@ -627,6 +638,17 @@
     config.planet === 'mars' ? 0.00025 : config.planet === 'earth' ? 0.0003 : 0.0005,
   );
   let upsampling = $derived(kmPerPx < nativeKmPerPx);
+  /** True when the user has wheeled past the clamp floor — further
+   *  wheel events get ignored. Surfaced as a small "deepest zoom" chip
+   *  so the stuck feeling reads as "we hit the source-image extent",
+   *  not "the app got stuck". Inlines the floor calc so the $derived
+   *  re-fires on every kmPerPx change (calling the function would still
+   *  work in Svelte 5, but inlining makes the reactive dep on kmPerPx
+   *  explicit + skips a per-frame function call). */
+  let atDeepestZoom = $derived.by(() => {
+    const floor = deepestZoomFloor();
+    return kmPerPx <= floor * 1.05;
+  });
 
   // Scale-bar length & label — pick a "round" km value that fits in
   // ~120 px of screen real estate.
@@ -707,6 +729,20 @@
         : m.surface_flat_upsample_warning_moon()}
     </div>
     <div class="upsample-vignette" aria-hidden="true"></div>
+  {/if}
+
+  {#if atDeepestZoom}
+    <!-- Deepest-zoom microcopy — surfaces the kmPerPx floor as a
+         deliberate stop rather than a stuck app. Sits opposite the
+         layer chips so it doesn't fight the upsample warning when both
+         are active near the floor. -->
+    <div class="deepest-zoom-chip mono" aria-hidden="true">
+      {config.planet === 'mars'
+        ? 'DEEPEST ZOOM · HiRISE patch limit'
+        : config.planet === 'earth'
+          ? 'DEEPEST ZOOM · commercial-sat limit'
+          : 'DEEPEST ZOOM · LROC NAC patch limit'}
+    </div>
   {/if}
   <!-- Earth shares the moon-warning copy in v1 (both read as "approaching
        pixel limit"); a dedicated earth-warning paraglide key will land in
@@ -835,5 +871,25 @@
     pointer-events: none;
     background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.35) 100%);
     z-index: 2;
+  }
+  /* Deepest-zoom chip — bottom-center HUD, paired with the upsample
+     warning at top-center so the two read as a "pixel-limit" status row
+     when both fire near the floor. */
+  .deepest-zoom-chip {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(78, 205, 196, 0.55);
+    color: #4ecdc4;
+    padding: 6px 12px;
+    border-radius: 3px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    text-transform: uppercase;
   }
 </style>

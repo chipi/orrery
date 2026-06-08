@@ -14,6 +14,7 @@
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
+  import { agencyLogo, agencyFullName } from '$lib/agencies';
 
   // ─── State ───────────────────────────────────────────────────────
   let entries: FleetIndexEntry[] = $state([]);
@@ -46,66 +47,29 @@
   // Agencies derived from the loaded data — filter chips reflect what's
   // actually present rather than a hard-coded enum. Multi-agency entries
   // (e.g., "NASA / ESA" for Hubble, "CNSA / CMSA" for Tiangong) split on
-  // " / " so each component agency shows as its own chip.
+  // " / " so each component agency shows as its own chip. The "Multi (...)"
+  // wrapper used by ISS/HST partners is stripped before splitting so we
+  // get clean chip labels instead of literals like "Multi (NASA" / "Italy)".
+  function splitAgencies(raw: string | null | undefined): string[] {
+    // Strip the "Multi (...)" wrapper only when it actually wraps the whole
+    // string — don't truncate trailing ")" from agencies like "Viasat (formerly
+    // Inmarsat plc)" or "EU Agency for the Space Programme (EUSPA)".
+    const m = (raw ?? '').match(/^\s*Multi\s*\((.*)\)\s*$/i);
+    const inner = m ? m[1] : (raw ?? '');
+    return inner
+      .split(/\s*\/\s*/)
+      .map((a) => a.trim())
+      .filter(Boolean);
+  }
   let agencies = $derived(
-    Array.from(
-      new Set(
-        entries
-          .flatMap((e) => (e.agency ?? '').split(/\s*\/\s*/))
-          .map((a) => a.trim())
-          .filter(Boolean),
-      ),
-    ).sort(),
+    Array.from(new Set(entries.flatMap((e) => splitAgencies(e.agency)))).sort(),
   );
 
-  // Same agency-logo whitelist + full-name table that /missions uses.
-  // Centralising would touch the established /missions code; for V1
-  // the duplication is fine — when a per-route filter helper extracts
-  // (Issue #57's refactor scope) the constants land in one place.
-  // Logos must exist on disk under static/logos/{key}.svg — the page
-  // surfaces a 404 console error if a key here has no matching SVG.
-  const KNOWN_AGENCY_LOGOS = new Set([
-    'nasa',
-    'esa',
-    'jaxa',
-    'isro',
-    'cnsa',
-    'roscosmos',
-    'spacex',
-    'uaesa',
-    'boeing',
-    'csa',
-    'northrop-grumman',
-  ]);
-  function logoFor(agency: string): string | null {
-    const key = agency.toLowerCase().replace(/\s+/g, '-');
-    return KNOWN_AGENCY_LOGOS.has(key) ? `${base}/logos/${key}.svg` : null;
-  }
-  const AGENCY_FULL_NAMES: Record<string, string> = {
-    nasa: 'NASA',
-    esa: 'European Space Agency',
-    jaxa: 'Japan Aerospace Exploration Agency',
-    isro: 'Indian Space Research Organisation',
-    cnsa: 'China National Space Administration',
-    cmsa: 'China Manned Space Agency',
-    roscosmos: 'Roscosmos',
-    spacex: 'SpaceX',
-    uaesa: 'MBRSC / UAE Space Agency',
-    'blue origin': 'Blue Origin',
-    'blue-origin': 'Blue Origin',
-    csa: 'Canadian Space Agency',
-    boeing: 'Boeing',
-    'northrop grumman': 'Northrop Grumman',
-    'northrop-grumman': 'Northrop Grumman',
-    ula: 'United Launch Alliance',
-    ispace: 'ispace',
-    spaceil: 'SpaceIL',
-    'intuitive machines': 'Intuitive Machines',
-  };
-  function fullNameFor(agency: string): string {
-    const key = agency.toLowerCase();
-    return AGENCY_FULL_NAMES[key] ?? AGENCY_FULL_NAMES[key.replace(/\s+/g, '-')] ?? agency;
-  }
+  // Agency logo + full-name lookups delegate to the unified registry
+  // at src/lib/agencies.ts. Add new agencies / logos there — every
+  // consumer (fleet, missions, ISS modules, launches) picks them up.
+  const logoFor = agencyLogo;
+  const fullNameFor = (agency: string) => agencyFullName(agency);
 
   // ─── Filtering + sorting ─────────────────────────────────────────
   function firstFlightYear(e: FleetIndexEntry): number {
@@ -119,7 +83,7 @@
       .filter(
         (e) =>
           (categoryFilter === 'ALL' || e.category === categoryFilter) &&
-          (agencyFilter === 'ALL' || e.agency === agencyFilter) &&
+          (agencyFilter === 'ALL' || splitAgencies(e.agency).includes(agencyFilter)) &&
           (epochFilter === 'ALL' || e.epoch === epochFilter) &&
           (statusFilter === 'ALL' || e.status === statusFilter),
       )

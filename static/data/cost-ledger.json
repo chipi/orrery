@@ -58,6 +58,15 @@
       "cost_usd": 0.016515000000000002,
       "provider": "anthropic",
       "model": "claude-sonnet-4-6"
+    },
+    {
+      "ts": "2026-06-08T11:26:34.631Z",
+      "scope": "(default)",
+      "images_processed": 825,
+      "images_cached": 321,
+      "cost_usd": 4.877150999999998,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6"
     }
   ]
 }

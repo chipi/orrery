@@ -3038,6 +3038,24 @@ const FLEET_IMAGE_QUERIES: FleetImageQuery[] = [
   { id: 'h-iia', query: 'H-IIA JAXA launch', agency: 'JAXA' },
   { id: 'h3', query: 'H3 rocket JAXA launch', agency: 'JAXA' },
   { id: 'lvm3', query: 'LVM3 GSLV Mk III ISRO launch', agency: 'ISRO' },
+  {
+    id: 'pslv-xl',
+    query: 'PSLV ISRO Sriharikota launch',
+    agency: 'ISRO',
+    extraQueries: ['Chandrayaan-1 launch', 'Mars Orbiter Mission launch', 'PSLV C25'],
+  },
+  { id: 'starship', query: 'Starship SpaceX Super Heavy', agency: 'SPACEX' },
+  {
+    id: 'long-march-3b',
+    query: 'Long March rocket Xichang',
+    agency: 'CMSA',
+    extraQueries: ["Chang'e launch Long March", 'Long March 3 Xichang', 'CZ-3B'],
+  },
+  {
+    id: 'new-glenn',
+    query: 'New Glenn Blue Origin LC-36 launch',
+    agency: 'BLUE_ORIGIN',
+  },
   { id: 'energia', query: 'Energia rocket Buran Soviet', agency: 'ROSCOSMOS' },
   { id: 'n1', query: 'N1 Soviet moon rocket launch', agency: 'ROSCOSMOS' },
   {

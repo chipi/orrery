@@ -1177,7 +1177,7 @@
     "color": "#e58566",
     "agencies": [
       "Roscosmos",
-      "US Space Force",
+      "USSF",
       "Sirius XM"
     ],
     "launched": 1965,
@@ -1197,7 +1197,15 @@
     ],
     "fleet_refs": [
       {
-        "id": "tundra-molniya",
+        "id": "molniya",
+        "role": "constellation"
+      },
+      {
+        "id": "tundra-sirius",
+        "role": "constellation"
+      },
+      {
+        "id": "sbirs-heo",
         "role": "constellation"
       }
     ],

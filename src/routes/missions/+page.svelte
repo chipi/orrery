@@ -12,6 +12,7 @@
   import TimelineNavigator from '$lib/components/TimelineNavigator.svelte';
   import LaunchesBanner from '$lib/components/LaunchesBanner.svelte';
   import * as m from '$lib/paraglide/messages';
+  import { agencyLogo, agencyFullName } from '$lib/agencies';
 
   // Timeline navigator bounds (ADR-027). Match the constants in
   // TimelineNavigator.svelte; copied here so the URL coercion logic
@@ -137,48 +138,11 @@
     pushFiltersToUrl();
   }
 
-  // Agency logo path. SVGs are fetched at build by scripts/fetch-assets.ts
-  // (Wikimedia Commons, public-domain). Only the eight agencies whose
-  // logos ship with the build appear in the whitelist below — any
-  // agency outside it (Inspiration Mars, Blue Origin, etc.) returns
-  // null and the <img> is omitted entirely so the browser never fires
-  // a 404 for a known-missing logo (which the smoke-test asserts on).
-  const KNOWN_AGENCY_LOGOS = new Set([
-    'nasa',
-    'esa',
-    'jaxa',
-    'isro',
-    'cnsa',
-    'roscosmos',
-    'spacex',
-    'uaesa',
-  ]);
-  function logoFor(agency: string): string | null {
-    const key = agency.toLowerCase();
-    return KNOWN_AGENCY_LOGOS.has(key) ? `${base}/logos/${key}.svg` : null;
-  }
-
-  // Full-name mapping for the agency filter pills' tooltips. Sourced
-  // from static/data/source-logos.json (the same canonical names the
-  // /credits page renders). Inline because the filter row only needs
-  // names for the agency abbreviations that actually appear in mission
-  // data — about a dozen — and an inline map avoids an extra fetch.
-  const AGENCY_FULL_NAMES: Record<string, string> = {
-    nasa: 'NASA',
-    esa: 'European Space Agency',
-    jaxa: 'Japan Aerospace Exploration Agency',
-    isro: 'Indian Space Research Organisation',
-    cnsa: 'China National Space Administration',
-    roscosmos: 'Roscosmos',
-    spacex: 'SpaceX',
-    uaesa: 'MBRSC / UAE Space Agency',
-    'blue-origin': 'Blue Origin',
-    'blue origin': 'Blue Origin',
-    csa: 'Canadian Space Agency',
-  };
-  function fullNameFor(agency: string): string {
-    return AGENCY_FULL_NAMES[agency.toLowerCase()] ?? agency;
-  }
+  // Agency logo + full-name lookups delegate to the unified registry
+  // at src/lib/agencies.ts. Add new agencies / logos there — every
+  // consumer (fleet, missions, ISS modules, launches) picks them up.
+  const logoFor = agencyLogo;
+  const fullNameFor = (agency: string) => agencyFullName(agency);
 
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);

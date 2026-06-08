@@ -1,0 +1,36 @@
+{
+  "id": "pslv-xl",
+  "name": "PSLV-XL",
+  "category": "launcher",
+  "agency": "ISRO",
+  "country": "India",
+  "manufacturer": "VSSC / ISRO",
+  "first_flight": "2008-10-22",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "ISRO's heavy-strap-on PSLV variant — launched Chandrayaan-1 + Mars Orbiter Mission",
+  "credit": "Fleet launcher entry backfilled to wire PSLV-XL up through /plan's view-in-fleet link. First flight = Chandrayaan-1 (Sriharikota SLP, 2008-10-22). Distinct from base PSLV via the larger PS0M-XL strap-on boosters (~12 t propellant each, up from ~9 t on the standard config).",
+  "links": [
+    {
+      "l": "PSLV-XL — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Polar_Satellite_Launch_Vehicle#PSLV-XL",
+      "t": "intro"
+    },
+    {
+      "l": "PSLV — ISRO",
+      "u": "https://www.isro.gov.in/PSLV.html",
+      "t": "core"
+    },
+    {
+      "l": "Chandrayaan-1 (PSLV-XL maiden) — ISRO mission archive",
+      "u": "https://www.isro.gov.in/Chandrayaan_1.html",
+      "t": "deep"
+    },
+    {
+      "l": "Mars Orbiter Mission launch (PSLV-C25 / XL) — ISRO",
+      "u": "https://www.isro.gov.in/Mars_Orbiter_Mission_Spacecraft.html",
+      "t": "deep"
+    }
+  ]
+}

@@ -10,6 +10,7 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import { loadUpcoming, formatCountdown, type LaunchEntry } from '$lib/launches/manifest.js';
+  import { agencyLogo } from '$lib/agencies';
 
   let entries: LaunchEntry[] = $state([]);
   let now = $state(new Date());
@@ -28,43 +29,8 @@
     return () => clearInterval(t);
   });
 
-  // Logo lookup mirrors /missions catalog cards. LL2 returns full
-  // agency names (e.g. "National Aeronautics and Space Administration"),
-  // so we alias those to the short logo-file keys shipped in
-  // static/logos/.
-  const AGENCY_TO_LOGO: Record<string, string> = {
-    nasa: 'nasa',
-    spacex: 'spacex',
-    esa: 'esa',
-    jaxa: 'jaxa',
-    isro: 'isro',
-    cnsa: 'cnsa',
-    roscosmos: 'roscosmos',
-    uaesa: 'uaesa',
-    boeing: 'boeing',
-    csa: 'csa',
-    'northrop grumman': 'northrop-grumman',
-    // LL2 full-name aliases
-    'national aeronautics and space administration': 'nasa',
-    'european space agency': 'esa',
-    'japan aerospace exploration agency': 'jaxa',
-    'indian space research organization': 'isro',
-    'indian space research organisation': 'isro',
-    'china national space administration': 'cnsa',
-    'china aerospace science and technology corporation': 'cnsa',
-    'russian federal space agency (roscosmos)': 'roscosmos',
-    'russian federal space agency': 'roscosmos',
-    'russian space agency': 'roscosmos',
-    'canadian space agency': 'csa',
-    mbrsc: 'uaesa',
-    'mohammed bin rashid space centre': 'uaesa',
-    'uae space agency': 'uaesa',
-  };
-
-  function logoFor(agency: string): string | null {
-    const key = AGENCY_TO_LOGO[agency.toLowerCase()];
-    return key ? `${base}/logos/${key}.svg` : null;
-  }
+  // Agency logo lookup delegates to $lib/agencies (unified registry).
+  const logoFor = agencyLogo;
 </script>
 
 {#if loaded && entries.length > 0}

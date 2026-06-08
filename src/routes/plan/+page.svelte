@@ -41,20 +41,23 @@
 
   /** rocket id → fleet entry id. Variants (atlas-v-541 → atlas-v) +
    *  Fregat-upper Soyuz mapped onto the modern Soyuz-2 fleet entry.
-   *  Rockets absent here (starship, pslv-xl, long-march-3b) have no
-   *  fleet entry yet; their /plan card falls back to the external
-   *  rockets.json links instead of a dead /fleet?id= link. */
+   *  Every rocket /plan surfaces now has a fleet entry — the prior
+   *  fallback path (external rockets.json links for starship / pslv-xl
+   *  / long-march-3b) was removed after their fleet entries landed. */
   const ROCKET_FLEET_ID: Record<string, string> = {
     'falcon-heavy': 'falcon-heavy',
+    starship: 'starship',
     'sls-block-1': 'sls-block-1',
+    'atlas-v-541': 'atlas-v',
     'long-march-5': 'long-march-5',
     'ariane-6': 'ariane-6',
     lvm3: 'lvm3',
+    'pslv-xl': 'pslv-xl',
     h3: 'h3',
     'h-iia': 'h-iia',
-    'proton-m': 'proton-m',
-    'atlas-v-541': 'atlas-v',
+    'long-march-3b': 'long-march-3b',
     'soyuz-fregat': 'soyuz-2',
+    'proton-m': 'proton-m',
   };
 
   function destinationLabel(id: DestinationId): string {
@@ -982,11 +985,12 @@
         {/if}
 
         {#if ROCKET_FLEET_ID[selectedRocket.id]}
-          <!-- Prefer a single in-app link to the fleet detail panel —
-               that's where the agency / spec-sheet / deep-dive links
-               live (tiered intro/core/deep). Falls through to the
-               external rockets.json links below when the rocket has
-               no fleet entry yet. -->
+          <!-- Single in-app link to the fleet detail panel — that's
+               where the agency / spec-sheet / deep-dive links live
+               (tiered intro/core/deep). Every rocket /plan surfaces
+               now has a fleet entry; the prior external-link fallback
+               row was removed once starship / pslv-xl / long-march-3b
+               were backfilled into fleet/launcher/. -->
           <div class="rocket-links">
             <a
               class="rocket-link fleet-link"
@@ -994,20 +998,6 @@
             >
               {m.plan_view_in_fleet({ label: selectedRocket.name ?? selectedRocket.id })} →
             </a>
-          </div>
-        {:else if selectedRocket.links && selectedRocket.links.length > 0}
-          <div class="rocket-links">
-            {#each selectedRocket.links.slice(0, 2) as link (link.u)}
-              <a
-                class="rocket-link"
-                href={link.u}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={m.plan_link_opens_new_tab({ label: link.l })}
-              >
-                {link.l} ↗
-              </a>
-            {/each}
           </div>
         {/if}
 

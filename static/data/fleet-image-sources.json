@@ -2711,9 +2711,29 @@
     "agency": "MULTI",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Satellite%20Inmarsat%20GX5.jpg"
   },
-  "tundra-molniya/01.jpg": {
+  "molniya/01.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Molniya-1%20satellite.jpg"
+  },
+  "molniya/02.jpg": {
+    "agency": "NASA",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/NASA_molniya_oblique.png"
+  },
+  "tundra-sirius/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Sirius_FM-4_at_the_Steven_F._Udvar-Hazy_Center,_Dec_2017.jpg"
+  },
+  "sbirs-heo/01.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS_GEO_Flight-4_Successfully_Launched_(180122-F-MY948-010).jpg"
+  },
+  "sbirs-heo/02.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS_GEO-1_Satellite_being_processed_for_launch_(041511-F-SH198-001).jpg"
+  },
+  "sbirs-heo/03.jpg": {
+    "agency": "MULTI",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/SBIRS-GEO.jpg"
   },
   "o3b-mpower/01.jpg": {
     "agency": "MULTI",
@@ -2842,5 +2862,85 @@
   "plesetsk-41-1/01.jpg": {
     "agency": "ROSCOSMOS",
     "sourceUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Plececk%2010.jpg?width=800"
+  },
+  "starship/01.jpg": {
+    "agency": "SPACEX",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211220-PH-KLS01_0006/KSC-20211220-PH-KLS01_0006~medium.jpg"
+  },
+  "starship/02.jpg": {
+    "agency": "SPACEX",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211220-PH-KLS01_0002/KSC-20211220-PH-KLS01_0002~medium.jpg"
+  },
+  "starship/03.jpg": {
+    "agency": "SPACEX",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0867/KSC-20211228-PH-MTD01_0867~medium.jpg"
+  },
+  "starship/04.jpg": {
+    "agency": "SPACEX",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0862/KSC-20211228-PH-MTD01_0862~medium.jpg"
+  },
+  "starship/05.jpg": {
+    "agency": "SPACEX",
+    "sourceUrl": "https://images-assets.nasa.gov/image/KSC-20211228-PH-MTD01_0874/KSC-20211228-PH-MTD01_0874~medium.jpg"
+  },
+  "new-glenn/01.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Launch_Complex_36_aerial.webp"
+  },
+  "new-glenn/02.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/80/Launch_Complex_11_aerial.webp"
+  },
+  "new-glenn/03.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/NSF-2019-09-11-16-45-25-803.webp/960px-NSF-2019-09-11-16-45-25-803.webp.png"
+  },
+  "new-glenn/04.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg/960px-Administrator_Isaacman_Visits_Blue_Origin_%28NHQ20260529_admin_0004%29.jpg"
+  },
+  "new-glenn/05.jpg": {
+    "agency": "BLUE_ORIGIN",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg/960px-LC-36_after_anomaly_%28NHQ20260529_admin_0004%29.jpg"
+  },
+  "pslv-xl/01.jpg": {
+    "agency": "ISRO",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/PSLV_C42_First_Launch_Pad_Panorama.jpg/960px-PSLV_C42_First_Launch_Pad_Panorama.jpg"
+  },
+  "pslv-xl/02.jpg": {
+    "agency": "ISRO",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/PSLV-C44_at_First_Launch_Pad_SDSC_SHAR_Sriharikota_07.jpg/960px-PSLV-C44_at_First_Launch_Pad_SDSC_SHAR_Sriharikota_07.jpg"
+  },
+  "pslv-xl/03.jpg": {
+    "agency": "ISRO",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/PSLV-C40-_Lift_off_from_First_Launch_Pad_of_SDSC_SHAR_Sriharikota_004.jpg/960px-PSLV-C40-_Lift_off_from_First_Launch_Pad_of_SDSC_SHAR_Sriharikota_004.jpg"
+  },
+  "pslv-xl/04.jpg": {
+    "agency": "ISRO",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/PSLV_C50_at_second_launch_pad.jpg/960px-PSLV_C50_at_second_launch_pad.jpg"
+  },
+  "pslv-xl/05.jpg": {
+    "agency": "ISRO",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/PSLV-XL_%28C57%29_Aditya-L1_ISRO_2.jpg/960px-PSLV-XL_%28C57%29_Aditya-L1_ISRO_2.jpg"
+  },
+  "long-march-3b/01.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Chang_zheng_3b_and_intelsat708_failure.jpg"
+  },
+  "long-march-3b/02.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/The_Launch_of_Long_March_3B_Rocket.jpg/960px-The_Launch_of_Long_March_3B_Rocket.jpg"
+  },
+  "long-march-3b/03.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/LEOonthecheap.pdf/page1-960px-LEOonthecheap.pdf.jpg"
+  },
+  "long-march-3b/04.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Yaogan-36_satellite_launch.png/960px-Yaogan-36_satellite_launch.png"
+  },
+  "long-march-3b/05.jpg": {
+    "agency": "CMSA",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Yaogan-36_satellite_launch_%28cropped%29.png/960px-Yaogan-36_satellite_launch_%28cropped%29.png"
   }
 }

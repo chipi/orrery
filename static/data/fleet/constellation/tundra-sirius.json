@@ -1,0 +1,47 @@
+{
+  "id": "tundra-sirius",
+  "name": "Sirius Satellite Radio (Tundra)",
+  "category": "constellation",
+  "agency": "Sirius XM",
+  "country": "USA",
+  "manufacturer": "Space Systems/Loral (Maxar)",
+  "first_flight": "2000-06-30",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "Only commercial fleet using the 24-hour Tundra orbit — three satellites at 63.4° critical inclination, each dwelling ~16 hours per day over North America",
+  "credit": "Sirius Satellite Radio launched FM-1 from Baikonur on 2000-06-30 atop a Proton-K. The Tundra orbit (24-hour period, ~25,000 × 35,786 km) at the 63.4° critical inclination keeps each satellite high in the sky over CONUS for two-thirds of every orbit, giving handhelds in urban canyons the elevation angles a geostationary signal can't match. Merged with XM Radio in 2008 to form Sirius XM.",
+  "links": [
+    {
+      "l": "Tundra orbit — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Tundra_orbit",
+      "t": "intro"
+    },
+    {
+      "l": "Sirius Satellite Radio — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Sirius_Satellite_Radio",
+      "t": "core"
+    },
+    {
+      "l": "SiriusXM (merger 2008) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SiriusXM",
+      "t": "core"
+    },
+    {
+      "l": "Sirius FM-1 launch (Proton-K, Baikonur) — Gunter's Space Page",
+      "u": "https://space.skyrocket.de/doc_sdat/sirius-fm-1.htm",
+      "t": "core"
+    },
+    {
+      "l": "Critical inclination — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Critical_inclination",
+      "t": "core"
+    }
+  ],
+  "linked_sites": [
+    {
+      "type": "earth-object",
+      "site_id": "tundra-molniya"
+    }
+  ]
+}

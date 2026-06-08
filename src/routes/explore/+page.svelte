@@ -5001,6 +5001,22 @@
     background: rgba(15, 18, 35, 0.85);
     border: 1px solid rgba(68, 102, 255, 0.4);
     border-radius: 4px;
+    /* Cap height so the 18-row roster doesn't spill off the bottom on
+       short viewports (laptop 13" landscape ≈ 720 px; chips row above
+       eats ~140 px). Scroll inside the panel when it exceeds the
+       available chrome-budget instead of clipping invisibly past the
+       footer. The viewport units leave room for nav + the chips
+       cluster + a 24 px breathing tail at the bottom. */
+    max-height: calc(100vh - var(--nav-height, 60px) - 180px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .paths-legend::-webkit-scrollbar {
+    width: 6px;
+  }
+  .paths-legend::-webkit-scrollbar-thumb {
+    background: rgba(68, 102, 255, 0.5);
+    border-radius: 3px;
   }
   .paths-legend-row {
     display: flex;
